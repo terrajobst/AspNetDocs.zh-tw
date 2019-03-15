@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/index
 title: 舊版-Web Form 使用者入門 |Microsoft Docs
 author: rick-anderson
-description: 說明 ASP.NET Web Form 4 和更早版本的文件。
+description: 在 ASP.NET Web Form 4 和更早版本的教學課程。
 ms.author: riande
 ms.date: 10/18/2014
 ms.assetid: e03585c2-80bf-4083-99ba-9fcbc883ccd8
@@ -11,7 +11,7 @@ msc.type: chapter
 ---
 <a name="older-versions---web-forms-getting-started"></a>舊版-Web Form 使用者入門
 ====================
-> 說明 ASP.NET Web Form 4 和更早版本的文件。
+> 在 ASP.NET Web Form 4 和更早版本的教學課程。
 
 
 - [ASP.NET 4 - Tailspin Spyworks](tailspin-spyworks/index.md)
