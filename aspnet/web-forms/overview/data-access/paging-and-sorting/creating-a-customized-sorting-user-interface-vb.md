@@ -8,12 +8,12 @@ ms.date: 08/15/2006
 ms.assetid: f3897a74-cc6a-4032-8f68-465f155e296a
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b12baa5075b4e67018d8a98a92e807d1778737c8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 63e31d719991dddec2168524187c304256d1b4e0
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054695"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58426103"
 ---
 <a name="creating-a-customized-sorting-user-interface-vb"></a>建立自訂的排序使用者介面 (VB)
 ====================
@@ -79,7 +79,7 @@ GridView 繫結至資料來源，它會建立`GridViewRow`資料來源傳回每�
 **圖 3**:其中一種技術牽涉到將分隔符號資料列加入至資料來源
 
 
-我將使用的詞彙分隔符號記錄以引號括住，因為沒有特殊分隔符號記錄;相反地，我們必須以某種方式的旗標做為分隔符號，而不是一般的資料列的資料來源中的特定記錄。 如需我們的範例，我們重新繫結`ProductsDataTable`執行個體至 GridView，這組成`ProductRows`。 我們可能會加上旗標一筆記錄的分隔符號資料列藉由設定其`CategoryID`屬性設`-1`（因為這類的值無法 t 通常存在）。
+我將使用的詞彙分隔符號記錄以引號括住，因為沒有特殊分隔符號記錄;相反地，我們必須以某種方式的旗標做為分隔符號，而不是一般的資料列的資料來源中的特定記錄。 如需我們的範例，我們重新繫結`ProductsDataTable`執行個體至 GridView，這組成`ProductRows`。 我們可能會加上旗標一筆記錄的分隔符號資料列藉由設定其`CategoryID`屬性設`-1`（因為這類值無法通常存在）。
 
 若要利用這項技術 d 我們需要執行下列步驟：
 

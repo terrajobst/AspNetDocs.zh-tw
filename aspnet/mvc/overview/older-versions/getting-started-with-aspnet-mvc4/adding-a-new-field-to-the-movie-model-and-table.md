@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 9ef2c4f1-a305-4e0a-9fb8-bfbd9ef331d9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
 msc.type: authoredcontent
-ms.openlocfilehash: 0f9b659b67a9a62635091b1e87169bce1218281a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a1f56a48c0c5b16993a853532689a2b524a1f92e
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060695"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425440"
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-table"></a>將新欄位新增至電影模型和資料表
 ====================
@@ -142,7 +142,7 @@ Code First 移轉會建立另一個類別檔案中的*移轉*資料夾 (同名 *
 
 `add-migration`命令會告知移轉架構，檢查目前的電影模型，與目前的電影資料庫結構描述，並建立必要的程式碼將資料庫移轉至新的模型。 AddRatingMig 是任意的用來命名移轉檔案。 您最好使用有意義的名稱，如移轉步驟。
 
-此命令完成時，Visual Studio 會開啟可定義新的類別檔案`DbMIgration`衍生類別，然後在`Up`方法，您可以看到建立新的資料行的程式碼。
+此命令完成時，Visual Studio 會開啟可定義新的類別檔案`DbMigration`衍生類別，然後在`Up`方法，您可以看到建立新的資料行的程式碼。
 
 [!code-csharp[Main](adding-a-new-field-to-the-movie-model-and-table/samples/sample8.cs)]
 

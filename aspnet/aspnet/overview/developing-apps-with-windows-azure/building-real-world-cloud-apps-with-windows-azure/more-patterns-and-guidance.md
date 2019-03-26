@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 7e97cfc3-d830-4002-8ff7-5790d1ff49e6
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 3de929ff7253928f2f9cd9b033ef6c643744e91c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 87dbbc0b598a6592b511383a5487a04b302b0994
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050795"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425661"
 ---
 <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>更多的模式和指導方針 （使用 Azure 建置真實世界的雲端應用程式）
 ====================
@@ -61,7 +61,7 @@ ms.locfileid: "57050795"
 程式碼範例
 
 - [修正其應用程式隨附本電子書](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4?cdn_id=2013-12-03-002)。
-- [雲端服務基本概念，在 Azure 中以 C# for Visual Studio 2012](http://aka.ms/csf)。 可下載的專案，在 Microsoft 的程式碼組件庫網站中，包含程式碼和開發的 Microsoft 客戶諮詢團隊 (CAT) 的文件。 示範許多極力保全和建置巨量的影片系列和保全技術白皮書中的最佳作法。 程式碼庫頁面也會連結至詳盡的文件作者的專案--請參閱特別[雲端服務基本概念 wiki 集合](https://social.technet.microsoft.com/wiki/contents/articles/17987.cloud-service-fundamentals.aspx)專案描述頂端附近的 [藍色] 方塊中的連結。 這個專案和其相關文件仍正在開發，因此可選擇較為理想的許多主題的資訊類似，但較舊的技術白皮書。
+- [雲端服務基本概念，在 Azure 中以 C# for Visual Studio 2012](https://aka.ms/csf)。 可下載的專案，在 Microsoft 的程式碼組件庫網站中，包含程式碼和開發的 Microsoft 客戶諮詢團隊 (CAT) 的文件。 示範許多極力保全和建置巨量的影片系列和保全技術白皮書中的最佳作法。 程式碼庫頁面也會連結至詳盡的文件作者的專案--請參閱特別[雲端服務基本概念 wiki 集合](https://social.technet.microsoft.com/wiki/contents/articles/17987.cloud-service-fundamentals.aspx)專案描述頂端附近的 [藍色] 方塊中的連結。 這個專案和其相關文件仍正在開發，因此可選擇較為理想的許多主題的資訊類似，但較舊的技術白皮書。
 
 硬碟複製活頁簿
 
@@ -101,7 +101,7 @@ ms.locfileid: "57050795"
 - 作者： Edward Wu-供 SSO 一章中的範例程式碼。
 - Guang Yang-撰寫 PowerShell 自動化指令碼。
 
-成員[Microsoft 開發人員指引 Advisory Council](http://aka.ms/DGAC) (DGAC) 也會檢閱，並加上 [草稿] 註解：
+成員[Microsoft 開發人員指引 Advisory Council](https://aka.ms/DGAC) (DGAC) 也會檢閱，並加上 [草稿] 註解：
 
 - : Jean-luc Boucho
 - Catalin Gheorghiu

@@ -8,12 +8,12 @@ ms.date: 07/04/2012
 ms.assetid: eb32a17b-626c-4373-9a7d-3387992f3c04
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: bb4704e7f4f13fab04acdbdd642174884517e18a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 91a6496e2640668c58ec0493d47d909e2de67367
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042405"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421346"
 ---
 <a name="part-7-creating-the-main-page"></a>第 7 部分：建立主要頁面
 ====================
@@ -61,7 +61,7 @@ ms.locfileid: "57042405"
 接下來，新增這些函式來`AppViewModel`:
 
 - `resetCart` 移除購物車中的所有項目。
-- `getDetails` 取得訂單的詳細資料 (由新的 pusing`OrderDetailsViewModel`拖曳至`details`清單)。
+- `getDetails` 取得訂單的詳細資料 (藉由推送新`OrderDetailsViewModel`拖曳至`details`清單)。
 - `createOrder` 建立新的訂單，然後清空購物車。
 
 
@@ -105,7 +105,7 @@ ms.locfileid: "57042405"
 
 [!code-html[Main](using-web-api-with-entity-framework-part-7/samples/sample11.html)]
 
-這會逐一查看在順序中的項目，並顯示產品、 價格和 quanity。 周圍的 div 時，會詳細資料陣列包含一或多個項目，只顯示。
+這會逐一查看在順序中的項目，並顯示產品、 價格和數量。 周圍的 div 時，會詳細資料陣列包含一或多個項目，只顯示。
 
 ## <a name="conclusion"></a>結論
 

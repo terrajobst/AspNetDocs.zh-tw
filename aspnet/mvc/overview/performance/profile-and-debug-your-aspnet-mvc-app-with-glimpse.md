@@ -8,12 +8,12 @@ ms.date: 03/26/2015
 ms.assetid: c205805f-efdd-4fa7-9616-f26eab180611
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: 94a72f22cbcd7fa84528dde502cceaa1e26dcaa1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ea149b6450cf02c993c7690752a05396802336be
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049225"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425050"
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>使用 Glimpse 分析 ASP.NET MVC 應用程式以對其進行偵錯
 ====================
@@ -58,7 +58,7 @@ ms.locfileid: "57049225"
 
 如果您有我的最愛列顯示，您可以拖放 Glimpse 按鈕並將它們新增為 bookmarklets:
 
-![使用 Glimpse boookmarklets IE](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image5.png)
+![使用 Glimpse bookmarklets IE](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image5.png)
 
 您現在可以瀏覽您的應用程式，而**抬頭顯示器**（抬頭顯示器） 會顯示在頁面底部。
 
@@ -104,11 +104,11 @@ ms.locfileid: "57049225"
 <a id="da"></a>
 ## <a name="using-glimpse-on-azure"></a>在 Azure 上使用初探
 
-Glimpse 預設安全性原則只允許從本機主機顯示 Glimpse 資料。 您可以變更此安全性原則，讓您可以檢視這項資料 （例如在 Azure 上的 web 應用程式） 的遠端伺服器上。 針對在 Azure 上的測試環境，新增 反白顯示的標記到底部*web.confg*檔案以啟用 Glimpse:
+Glimpse 預設安全性原則只允許從本機主機顯示 Glimpse 資料。 您可以變更此安全性原則，讓您可以檢視這項資料 （例如在 Azure 上的 web 應用程式） 的遠端伺服器上。 針對在 Azure 上的測試環境，新增 反白顯示的標記到底部*web.config*檔案以啟用 Glimpse:
 
 [!code-xml[Main](profile-and-debug-your-aspnet-mvc-app-with-glimpse/samples/sample3.xml?highlight=2-6)]
 
-透過此單獨的變更，任何使用者可以在遠端站台上查看 Glimpse 資料。 請考慮將上述的標記新增至發行設定檔，因此它只部署套用時使用的發行設定檔的 (程式比方說，是 Azure 的測試 proifle。)若要限制 Glimpse 資料，我們會新增`canViewGlimpseData`角色而只允許這個角色，才能檢視 Glimpse 資料的使用者。
+透過此單獨的變更，任何使用者可以在遠端站台上查看 Glimpse 資料。 請考慮將上述的標記新增至發行設定檔，因此它只部署套用時使用的發行設定檔 （例如，您 Azure 的測試設定檔。）若要限制 Glimpse 資料，我們會新增`canViewGlimpseData`角色而只允許這個角色，才能檢視 Glimpse 資料的使用者。
 
 移除的註解*GlimpseSecurityPolicy.cs*檔案，並變更[IsInRole](https://msdn.microsoft.com/library/system.security.principal.iprincipal.isinrole(v=vs.110).aspx)從呼叫`Administrator`至`canViewGlimpseData`角色：
 

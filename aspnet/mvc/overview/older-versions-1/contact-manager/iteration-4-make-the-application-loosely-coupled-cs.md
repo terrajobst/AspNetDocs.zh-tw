@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 829f589f-e201-4f6e-9ae6-08ae84322065
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 955991c148d48020c66cbc63ec6da45e3a9cc282
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 389627e610eebcdabee9b4db524e5915186db099
+ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045305"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58440348"
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-c"></a>反覆項目 #4 – 讓應用程式鬆散耦合 (C#)
 ====================
@@ -61,7 +61,7 @@ by [Microsoft](https://github.com/microsoft)
 
 當鬆散偶合的應用程式時，相反地，您可以變更應用程式的某一部分但沒有碰觸的應用程式其他部分。 例如，您可以切換資料存取技術，而不需要修改您驗證或控制站的邏輯。
 
-在此反覆項目，我們利用數種軟體設計模式，讓我們重構我們的連絡人管理員應用程式，到更鬆散偶合的應用程式。 當我們完成之後時，贏得 t 的連絡人管理員執行任何動作，它之前執行此嘛 t。 不過，我們可以變更在未來更輕鬆地在應用程式。
+在此反覆項目，我們利用數種軟體設計模式，讓我們重構我們的連絡人管理員應用程式，到更鬆散偶合的應用程式。 當我們完成之後時，請連絡管理員贏得 t 執行任何項目未先。 不過，我們可以變更在未來更輕鬆地在應用程式。
 
 > [!NOTE] 
 > 
@@ -79,7 +79,7 @@ by [Microsoft](https://github.com/microsoft)
 
 首先，我們需要建立可描述資料存取方法，我們需要執行的所有介面。 在 列表 1 中包含 IContactManagerRepository 介面。 此介面描述五種方法：CreateContact()、 DeleteContact()、 EditContact()、 GetContact 和 ListContacts()。
 
-**列表 1-Models\IContactManagerRepositiory.cs**
+**列表 1-Models\IContactManagerRepository.cs**
 
 [!code-csharp[Main](iteration-4-make-the-application-loosely-coupled-cs/samples/sample1.cs)]
 

@@ -8,12 +8,12 @@ ms.date: 08/15/2012
 ms.assetid: c7e4e1ab-4932-4614-9f53-aaf7c706d498
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 0dea8b077878139a3f513cb51447b86a93fe55b8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: abb1ef355bd7614daaab8c205d9d53065856cd23
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057705"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424361"
 ---
 <a name="using-page-inspector-in-aspnet-mvc"></a>在 ASP.NET MVC 中使用 Page Inspector
 ====================
@@ -59,7 +59,7 @@ Page Inspector 隨附於 Microsoft Web Developer Tools。 1.3 為最新版本。
 
 ![新的 ASP.NET MVC 應用程式](using-page-inspector-in-aspnet-mvc/_static/image2.png)
 
-按一下 [確定] 。
+按一下 [確定 **Deploying Office Solutions**]。
 
 在 **新的 ASP.NET MVC 4 專案**對話方塊中，選取**網際網路應用程式**。 離開**Razor**做為預設檢視引擎。
 
@@ -139,7 +139,7 @@ Page Inspector 可讓您尋找其位置可能不明顯的標記。 然後您可�
 
 按一下 **檢查**至 Page Inspector 進入檢查模式。
 
-按一下 顯示 「 您 logohere 」 頁面的上半部。 您正在檢查詳細資料，因此不再會在瀏覽器視窗中的顯示變更，您將滑鼠游標移特定項的目。
+按一下 顯示 「 您標誌的位置 」 頁面的上半部。 您正在檢查詳細資料，因此不再會在瀏覽器視窗中的顯示變更，您將滑鼠游標移特定項的目。
 
 現在將滑鼠指標移到**HTML**視窗。 當您移動滑鼠指標時，Page Inspector 概要說明中的項目**HTML**視窗並反白顯示對應的項目，在瀏覽器視窗。
 
@@ -240,7 +240,7 @@ Page Inspector 立即偵測到的變更*Site.css*檔案，並在 更新列會顯
 > SPA 範本需要[ASP.NET 和 Web 工具 2012.2](https://go.microsoft.com/fwlink/?LinkId=282650)更新。
 
 
-在 Visual Studio 中，選擇**檔案** &gt; **新專案**。 在左側，展開**Visual C#**，選取**Web**，然後選取**ASP.NET MVC4 Web 應用程式**。 按一下 [確定] 。
+在 Visual Studio 中，選擇**檔案** &gt; **新專案**。 在左側，展開**Visual C#**，選取**Web**，然後選取**ASP.NET MVC4 Web 應用程式**。 按一下 [確定 **Deploying Office Solutions**]。
 
 在 **新的 ASP.NET MVC 4 專案**對話方塊中，選取**單一頁面應用程式**。
 

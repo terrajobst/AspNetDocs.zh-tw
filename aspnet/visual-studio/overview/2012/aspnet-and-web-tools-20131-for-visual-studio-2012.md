@@ -8,12 +8,12 @@ ms.date: 11/13/2013
 ms.assetid: ca26e5bb-630e-41d2-8512-2a9386c431cb
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: a0b3d52910ac33c403ecbe2340c12b202c25147b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 008891b72e1fb72458aee00bbf83839d0fbed263
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053025"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423542"
 ---
 <a name="release-notes-for-aspnet-and-web-tools-20131-for-visual-studio-2012"></a>適用於 Visual Studio 2012 的 ASP.NET 和 Web 工具 2013.1 版本資訊
 ====================
@@ -163,7 +163,7 @@ NuGet 2.7 包含一組豐富的新功能所說明的詳細討論[NuGet 2.7 版�
 ### <a name="aspnet-razor-3"></a>ASP.NET Razor 3
 
 <a id="browseissue"></a>
-#### <a name="viewing-cshtml-file-withbrowse-withorf5causes-a-server-error"></a>檢視 cshtml 檔案 withBrowse WithorF5causes 伺服器錯誤
+#### <a name="viewing-cshtml-file-with-browse-with-or-f5-causes-a-server-error"></a>檢視與瀏覽或 F5 的 cshtml 檔案會導致伺服器錯誤
 
 當您在 Visual Studio 2012 （或在 Visual Studio 2013 中建立的 Visual Studio 2012 的 MVC 5 專案中開啟） 中建立的 MVC 5 專案，並嘗試使用瀏覽或 f5 鍵來檢視 cshtml 檔案時，您會收到錯誤訊息-**中發生伺服器錯誤'/' 應用程式**。 伺服器嘗試瀏覽至 `http://localhost:XXXX/Views/../XXXX.cshtml`
 

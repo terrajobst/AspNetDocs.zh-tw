@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: f97a1145-6470-4bca-8f15-ccfb25fb903c
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 7cb9c949936c3af73d4c904d401c36d4d83f3e18
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 998191a21388d76fb18b59fca9bcea7a40507c86
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045685"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425570"
 ---
 <a name="application-lifecycle-management-from-development-to-production"></a>應用程式生命週期管理：從開發到生產
 ====================
@@ -26,7 +26,7 @@ ms.locfileid: "57045685"
 > 本主題旨在提供的高階概觀[系列的教學課程](deploying-web-applications-in-enterprise-scenarios.md)在企業中的 web 部署。 別擔心，如果您不熟悉此處所述的概念&#x2014;遵循這些教學課程提供所有這些工作與技術的詳細的資訊。
 > 
 > > [!NOTE]
-> > 尚未註冊起見，為了簡單起見，本主題不討論資料庫更新部署程序的一部分。 不過，對資料庫功能，進行累加式更新是許多的企業部署案例的需求，而且您可以找到有關如何完成這項作業，稍後在本教學課程系列中的指示。 如需詳細資訊，請參閱 <<c0> [ 部署資料庫專案](../web-deployment-in-the-enterprise/deploying-database-projects.md)。
+> > 為了簡單起見，本主題不討論資料庫更新部署程序的一部分。 不過，對資料庫功能，進行累加式更新是許多的企業部署案例的需求，而且您可以找到有關如何完成這項作業，稍後在本教學課程系列中的指示。 如需詳細資訊，請參閱 <<c0> [ 部署資料庫專案](../web-deployment-in-the-enterprise/deploying-database-projects.md)。
 
 
 ## <a name="overview"></a>總覽

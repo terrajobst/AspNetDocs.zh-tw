@@ -8,12 +8,12 @@ ms.date: 03/27/2007
 ms.assetid: 5776281d-4637-4d1e-a65b-2621d2cade44
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 22ca0d85fac598b2f845be4bd5c18fdcbd3bc3a8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2c23cbac0a94607a05de4e1ef5b8e5b0874a1a5e
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061765"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424192"
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>新增記錄時包含檔案上傳選項 (VB)
 ====================
@@ -73,7 +73,7 @@ ms.locfileid: "57061765"
 [!code-vb[Main](including-a-file-upload-option-when-adding-a-new-record-vb/samples/sample2.vb)]
 
 > [!NOTE]
-> 請確定您已儲存輸入資料集之前加入`InsertWithPicture`BLL 的方法。 由於`CategoriesTableAdapter`類別的程式碼會自動產生型別資料集時，如果您不要先將您的變更儲存至具類型資料集`Adapter`贏得 t 屬性知道`InsertWithPicture`方法。
+> 請確定您已儲存輸入資料集之前加入`InsertWithPicture`BLL 的方法。 由於`CategoriesTableAdapter`類別的程式碼會自動產生型別資料集時，如果您不要先將您的變更儲存至具類型資料集`Adapter`屬性將不會知道`InsertWithPicture`方法。
 
 
 ## <a name="step-3-listing-the-existing-categories-and-their-binary-data"></a>步驟 3：列出現有的類別和其二進位資料
@@ -231,7 +231,7 @@ ObjectDataSource s 前面`Insert()`叫用方法時，就必須先確認使用者
 **圖 9**:一則警告訊息會顯示如果上傳無效的檔案類型 ([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-vb/_static/image16.png))
 
 
-一旦您已確認頁面需要上傳圖片和成交的 t 接受非 PDF 或非 JPG 檔案，新增新的類別，以有效的 JPG 圖片，將摺頁冊欄位保留空白。 頁面會回傳之後按一下 [插入] 按鈕，以及新的記錄將會新增至`Categories`資料表直接在資料庫中儲存的上傳的影像 s 二進位內容。 GridView 會更新，並顯示在新加入的類別中，一個資料列，但是，如 [圖 10] 所示，新的類別目錄的圖片就無法正確呈現。
+一旦您已確認頁面需要上傳並不會接受非 PDF 或非 JPG 檔案，新增新的類別，以有效的 JPG 圖片，圖片將摺頁冊欄位保留空白。 頁面會回傳之後按一下 [插入] 按鈕，以及新的記錄將會新增至`Categories`資料表直接在資料庫中儲存的上傳的影像 s 二進位內容。 GridView 會更新，並顯示在新加入的類別中，一個資料列，但是，如 [圖 10] 所示，新的類別目錄的圖片就無法正確呈現。
 
 
 [![新的類別不會顯示圖片的 s](including-a-file-upload-option-when-adding-a-new-record-vb/_static/image10.gif)](including-a-file-upload-option-when-adding-a-new-record-vb/_static/image17.png)

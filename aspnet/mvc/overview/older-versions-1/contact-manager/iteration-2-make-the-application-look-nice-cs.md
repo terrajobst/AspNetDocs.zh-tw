@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: f1173feb-11ee-4017-8f3f-86599ea6ae13
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c8bbd20cb64fb27a0a6de2cdc14743f6961f4bf0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d5e12f4ec9a6e8c53ee88388355ecfbd81b100c3
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057875"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422256"
 ---
 <a name="iteration-2--make-the-application-look-nice-c"></a>反覆項目 #2 – 讓應用程式看起來不錯 (C#)
 ====================
@@ -112,7 +112,7 @@ ASP.NET MVC 設計資源庫上有不同的設計樣式的好選項。 資源庫�
 
 不過，您可能需要建立完全專為您的網站設計。 在此情況下，它可以合理地使用網站設計公司。 我決定採取這種方式，請連絡管理員應用程式的設計。
 
-我會壓縮設定連絡管理員反覆項目 # 1，並傳送設計公司的專案。 它們沒有 Visual Studio （可惜在其上 ！），但該嘛 t 出現問題。 他們能夠從免費下載 Microsoft Visual Web Developer [ https://www.asp.net ](https://www.asp.net)網站並開啟在 Visual Web Developer 中的連絡人管理員應用程式。 在幾天，它們必須產生圖 7 中的設計。
+我會壓縮設定連絡管理員反覆項目 # 1，並傳送設計公司的專案。 沒有 Visual Studio （可惜在其上 ！），但並未呈現問題。 他們能夠從免費下載 Microsoft Visual Web Developer [ https://www.asp.net ](https://www.asp.net)網站並開啟在 Visual Web Developer 中的連絡人管理員應用程式。 在幾天，它們必須產生圖 7 中的設計。
 
 
 [![[新增專案] 對話方塊](iteration-2-make-the-application-look-nice-cs/_static/image7.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image13.png)

@@ -2,18 +2,18 @@
 uid: web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-cs
 title: 排序自訂的分頁資料 (C#) |Microsoft Docs
 author: rick-anderson
-description: 在上一個教學課程中我們已了解如何實作自訂分頁時 presentating 網頁上的資料。 在本教學課程中，我們了解如何擴充先前的內容...
+description: 在上一個教學課程中，我們了解如何在網頁上呈現資料時，實作自訂分頁的內容。 在本教學課程中，我們了解如何擴充先前的內容...
 ms.author: riande
 ms.date: 08/15/2006
 ms.assetid: 778baa4e-4af8-4665-947e-7a01d1a4dff2
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cc0ca571957f29afd7e3a2657e58272f804fc6ef
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ebc6be8c41251190a0124fe5f3d2c154f1ad4450
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034705"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425642"
 ---
 <a name="sorting-custom-paged-data-c"></a>排序自訂的分頁資料 (C#)
 ====================
@@ -21,7 +21,7 @@ ms.locfileid: "57034705"
 
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_26_CS.exe)或[下載 PDF](sorting-custom-paged-data-cs/_static/datatutorial26cs1.pdf)
 
-> 在上一個教學課程中我們已了解如何實作自訂分頁時 presentating 網頁上的資料。 在本教學課程中，我們看到如何擴充以包含針對排序自訂的分頁支援上述的範例。
+> 在上一個教學課程中，我們了解如何在網頁上呈現資料時，實作自訂分頁的內容。 在本教學課程中，我們看到如何擴充以包含針對排序自訂的分頁支援上述的範例。
 
 
 ## <a name="introduction"></a>簡介

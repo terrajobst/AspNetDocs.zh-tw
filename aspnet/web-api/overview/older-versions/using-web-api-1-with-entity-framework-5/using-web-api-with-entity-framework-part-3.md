@@ -8,12 +8,12 @@ ms.date: 07/04/2012
 ms.assetid: 6b9ae3c4-0274-4170-a1bb-9df9c546b2a9
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 7ad0ec27021514b447e569e479a9e9127e3f75fa
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0fc533fb3673639769ecdfa8b3d02ff40133cb27
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037645"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421619"
 ---
 <a name="part-3-creating-an-admin-controller"></a>第 3 部分：建立系統管理員控制器
 ====================
@@ -95,7 +95,7 @@ Entity Framework 有不錯的功能，可讓您在啟動時，資料庫中填入
 
 到目前為止，我們還沒有撰寫任何用戶端程式碼，但您可以叫用的 web API 使用網頁瀏覽器或 HTTP 偵錯工具，例如[Fiddler](http://www.fiddler2.com/fiddler2/)。 在 Visual Studio 中，按下 f5 鍵啟動偵錯。 您的網頁瀏覽器會開啟`http://localhost:*portnum*/`，其中*portnum*是某些連接埠號碼。
 
-傳送 HTTP 要求，以 「`http://localhost:*portnum*/api/admin`。 第一個要求可能慢而無法完成，因為 Entify Framework，就必須建立並植入資料庫。 回應應該類似如下：
+傳送 HTTP 要求，以 「`http://localhost:*portnum*/api/admin`。 第一個要求可能慢而無法完成，因為 Entity Framework，就必須建立並植入資料庫。 回應應該類似如下：
 
 [!code-console[Main](using-web-api-with-entity-framework-part-3/samples/sample6.cmd)]
 

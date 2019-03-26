@@ -8,12 +8,12 @@ ms.date: 06/26/2007
 ms.assetid: d191a204-d7ea-458d-b81c-0b9049ecb55f
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 76c475b67943b77d99630e087ed46fe6d5f11a03
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: dc40c056aa951b94ca0af2af339d9c7987ffd987
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57078559"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58426025"
 ---
 <a name="batch-updating-vb"></a>批次更新 (VB)
 ====================
@@ -241,7 +241,7 @@ GridView s 自編輯介面定義於其 TemplateFields `ItemTemplate` s， `EditI
 
 每個資料列`ProductID`捕捉來自`DataKeys`收集和適當`ProductsRow`從選取`ProductsDataTable`。 以程式設計方式所參考的四個的 TemplateField 輸入的控制項和其值指派給`ProductsRow`執行個體的內容。 之後每個 GridView 資料列的值已用來更新`ProductsDataTable`，它 s 傳遞到 BLL`UpdateWithTransaction`方法，如我們所見在先前的教學課程中，只要呼叫向下到 DAL 的`UpdateWithTransaction`方法。
 
-本教學課程使用的批次更新演算法更新中的每個資料列`ProductsDataTable`對應至 GridView，不論是否已變更的產品的資訊中的資料列。 而這類 blind 更新通常並不是效能問題，它們可能會導致過多記錄您稽核變更為資料庫資料表。 回到[執行批次更新](../editing-and-deleting-data-through-the-datalist/performing-batch-updates-vb.md)教學課程中我們探討更新介面與批次，並新增程式碼，只會更新使用者實際修改這些記錄。 歡迎使用從技術[執行批次更新](../editing-and-deleting-data-through-the-datalist/performing-batch-updates-vb.md)如有需要，在本教學課程中，更新程式碼。
+本教學課程使用的批次更新演算法更新中的每個資料列`ProductsDataTable`對應至 GridView，不論是否已變更的產品的資訊中的資料列。 而這類盲目更新通常不是效能問題，它們可能會導致過多記錄您稽核變更為資料庫資料表。 回到[執行批次更新](../editing-and-deleting-data-through-the-datalist/performing-batch-updates-vb.md)教學課程中我們探討更新介面與批次，並新增程式碼，只會更新使用者實際修改這些記錄。 歡迎使用從技術[執行批次更新](../editing-and-deleting-data-through-the-datalist/performing-batch-updates-vb.md)如有需要，在本教學課程中，更新程式碼。
 
 > [!NOTE]
 > Visual Studio 時繫結到它的智慧標籤 GridView 資料來源，會自動指派到 GridView 資料來源 s 主要值`DataKeyNames`屬性。 如果您未繫結 ObjectDataSource GridView 透過 GridView s 智慧標籤在步驟 1 中所述，則您必須手動設定 GridView s`DataKeyNames`若要存取的 ProductID 屬性`ProductID`透過每個資料列的值`DataKeys`集合。
@@ -269,7 +269,7 @@ GridView s 自編輯介面定義於其 TemplateFields `ItemTemplate` s， `EditI
 
 `BatchMethodAlternate` 開始建立新的空`ProductsDataTable`名為`products`。 然後 GridView 的逐步`Rows`集合，在每個資料列取得特定產品資訊使用 BLL 的`GetProductByProductID(productID)`方法。 擷取`ProductsRow`執行個體有相同的方式，做為更新的屬性`BatchUpdate`，但在更新匯入的資料列之後`products``ProductsDataTable`經由 DataTable s [ `ImportRow(DataRow)`方法](https://msdn.microsoft.com/library/system.data.datatable.importrow(VS.80).aspx).
 
-在後`For Each`迴圈完成時，`products`包含一個`ProductsRow`GridView 裡的每個資料列的執行個體。 因為每個`ProductsRow`執行個體已新增至`products`（而不是更新），如果我們盲目地將它傳遞給`UpdateWithTransaction`方法`ProductsTableAdatper`會嘗試將每筆記錄插入資料庫。 相反地，我們需要指定，這些資料列的每個已修改 （未加入）。
+在後`For Each`迴圈完成時，`products`包含一個`ProductsRow`GridView 裡的每個資料列的執行個體。 因為每個`ProductsRow`執行個體已新增至`products`（而不是更新），如果我們盲目地將它傳遞給`UpdateWithTransaction`方法`ProductsTableAdapter`會嘗試將每筆記錄插入資料庫。 相反地，我們需要指定，這些資料列的每個已修改 （未加入）。
 
 這可藉由將新方法新增至名為 BLL `UpdateProductsWithTransaction`。 `UpdateProductsWithTransaction`如下所示，設定`RowState`的每個`ProductsRow`中的執行個體`ProductsDataTable`來`Modified`，並接著傳遞`ProductsDataTable`DAL s`UpdateWithTransaction`方法。
 

@@ -8,12 +8,12 @@ ms.date: 01/28/2012
 ms.assetid: c125ca47-606a-4d6f-a1fc-1fc62928af93
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
-ms.openlocfilehash: ba061b26b8527e447f25f6046057542a54f989a8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f3cb0004075ef7687ca1096bd407c342b4d0b7be
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052915"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423738"
 ---
 <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>啟用 ASP.NET Web API 1 中的 CRUD 作業
 ====================
@@ -109,7 +109,7 @@ ms.locfileid: "57052915"
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample2.cs)]
 
-現在將另一個類別新增至 [模型] 資料夾，名為&quot;ProductRepository。&quot;此類別會實作 `IProductRespository` 介面。 新增下列實作：
+現在將另一個類別新增至 [模型] 資料夾，名為&quot;ProductRepository。&quot;此類別會實作 `IProductRepository` 介面。 新增下列實作：
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample3.cs)]
 
@@ -133,7 +133,7 @@ ms.locfileid: "57052915"
 ![](creating-a-web-api-that-supports-crud-operations/_static/image7.png)
 
 > [!NOTE]
-> 您不需要將您的控制器 放入名為控制器的資料夾。 資料夾名稱並不重要;它只是方便方法來組織您的原始程式檔。
+> 您不需要將您的控制站放入名為控制器的資料夾。 資料夾名稱並不重要;它只是方便方法來組織您的原始程式檔。
 
 
 **新增控制器**精靈會建立名為 ProductsController.cs 在 Controllers 資料夾中的檔案。 如果此檔案尚未開啟，按兩下檔案以開啟它。 新增下列**使用**陳述式：
@@ -216,7 +216,7 @@ ASP.NET Web API 可讓您更容易操作的 HTTP 回應訊息。 以下是改進
 
 ## <a name="deleting-a-resource"></a>刪除資源
 
-若要刪除 resourse，定義 「 刪除中...」 方法。
+若要刪除資源，定義 「 刪除中...」方法。
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample12.cs)]
 

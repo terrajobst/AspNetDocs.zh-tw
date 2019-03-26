@@ -8,12 +8,12 @@ ms.date: 04/23/2009
 ms.assetid: 9c31a42f-d8bb-4c0f-9ccc-597d4f70ac42
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d5fe8dc8486cf08e0aaf0e107069972eee7fbada
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 472770477e83fc0bbe24995e5558d0e8624082ae
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041915"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425999"
 ---
 <a name="configuring-a-website-that-uses-application-services-vb"></a>設定使用應用程式服務的網站 (VB)
 ====================
@@ -138,7 +138,7 @@ ASP.NET 隨附有多好[*網站管理工具 (WSAT)* ](https://msdn.microsoft.com
 **圖 4**:確認您的資料庫物件已加入至生產環境資料庫 ([按一下以檢視完整大小的影像](configuring-a-website-that-uses-application-services-vb/_static/image12.jpg))
 
 
-您只需要使用`aspnet_regsql.exe`工具時部署 web 應用程式第一次，或在第一次之後您開始使用應用程式服務。 一旦這些資料庫物件會在生產資料庫上他們贏得 t 需要重新新增或修改。
+您只需要使用`aspnet_regsql.exe`工具時部署 web 應用程式第一次，或在第一次之後您開始使用應用程式服務。 當這些資料庫物件而不需重新新增或修改在生產資料庫上。
 
 ### <a name="copying-user-accounts-from-development-to-production"></a>複製使用者帳戶從開發到生產環境
 
@@ -148,7 +148,7 @@ ASP.NET 隨附有多好[*網站管理工具 (WSAT)* ](https://msdn.microsoft.com
 
 除了`ApplicationId`資料行`aspnet_Applications`表格也包含`ApplicationName`資料行，提供應用程式更方便人類的名稱。 當網站嘗試使用使用者帳戶，例如驗證使用者的認證從登入 頁面中，它必須告訴`SqlMembershipProvider`類別要使用之應用程式。 它通常會藉由提供應用程式名稱，這與這個值來自中的提供者的組態`Web.config`-特別是透過`applicationName`屬性。
 
-但要是`applicationName`屬性中未指定`Web.config`嗎？ 在此情況下的成員資格系統會使用應用程式根路徑，做為`applicationName`值。 如果`applicationName`中未明確設定屬性`Web.config`，，就可能的開發環境和生產環境使用不同的應用程式根目錄，因此會與不同的應用程式相關聯在 應用程式服務的名稱。 如果在開發環境中建立這些使用者就需要，就會發生這種不相符`ApplicationId`的不相符的值`ApplicationId`用於生產環境的值。 最後結果就是贏得 t 那些使用者能夠登入。
+但要是`applicationName`屬性中未指定`Web.config`嗎？ 在此情況下的成員資格系統會使用應用程式根路徑，做為`applicationName`值。 如果`applicationName`中未明確設定屬性`Web.config`，，就可能的開發環境和生產環境使用不同的應用程式根目錄，因此會與不同的應用程式相關聯在 應用程式服務的名稱。 如果在開發環境中建立這些使用者就需要，就會發生這種不相符`ApplicationId`的不相符的值`ApplicationId`用於生產環境的值。 最後結果就是，這些使用者將無法登入。
 
 > [!NOTE]
 > 如果您發現自己處於這種情況下-使用使用者帳戶複製到不符合生產環境`ApplicationId`值-您可以撰寫查詢來更新這些不正確`ApplicationId`值來`ApplicationId`用於生產環境。 更新之後，在開發環境中建立其帳戶的使用者現在能夠登入生產環境的 web 應用程式。

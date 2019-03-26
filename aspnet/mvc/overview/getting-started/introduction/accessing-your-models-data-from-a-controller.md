@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: caa1ba4a-f9f0-4181-ba21-042e3997861d
 msc.legacyurl: /mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 00731fbc0d578afa2df881b205170fb6a4f686e1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c561534a3fa1382c8af23c6ac779fac0c1dc8160
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057865"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424179"
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>從控制器存取模型資料
 ====================
@@ -122,7 +122,7 @@ MVC 也讓您能夠傳遞*強*型別檢視範本的物件。 這個強類型的�
 
 因為`Model`物件已強類型 (為`IEnumerable<Movie>`物件)，每個`item`迴圈中的物件型別為`Movie`。 撇開其他優點，這表示您取得的程式碼的編譯時間檢查，並完整的程式碼編輯器中的 IntelliSense 支援：
 
-![ModelIntellisene](accessing-your-models-data-from-a-controller/_static/image8.png)
+![ModelIntelliSense](accessing-your-models-data-from-a-controller/_static/image8.png)
 
 ## <a name="working-with-sql-server-localdb"></a>使用 SQL Server LocalDB
 

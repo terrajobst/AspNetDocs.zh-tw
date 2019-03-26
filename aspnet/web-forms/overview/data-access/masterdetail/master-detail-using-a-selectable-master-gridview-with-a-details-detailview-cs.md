@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: 0f982827-f8f9-420d-b36b-57b23f5aa519
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9d75c80b4c1bac5011acc896d91ff2fcd5a19298
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a5623c34ad7f8c9b5effed318a04b204ab66ecaa
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064795"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425193"
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-c"></a>使用具有詳細資料 DetailView 之可選取主要 GridView 的主要/詳細資料 (C#)
 ====================
@@ -153,7 +153,7 @@ GridView 的最後一個標記是：
 
 這和上述的三個教學課程中，我們已了解一些技巧可以顯示主版/詳細報告。 在本教學課程中，我們檢查使用可選取的 GridView 存放主要記錄和 DetailsView 相同的頁面上顯示所選的主要記錄的相關詳細資料。 在先前的教學課程中，我們討論過如何顯示主版/詳細資料報表使用 dropdownlist 進行與上一個網頁及詳細的記錄，另一個顯示主要的記錄。
 
-本教學課程結束時，我們檢查主版/詳細報告。 開始下一步 tutorialwe 一開始我們的自訂格式設定與 GridView、 DetailsView 和 FormView 的探勘。 我們會看到如何自訂這些繫結到這些資料為基礎的控制項的外觀、 如何在 GridView 的頁尾中的資料摘述和如何使用範本，以取得更高的版面配置上的控制項。
+本教學課程結束時，我們檢查主版/詳細報告。 我們將開始下一個教學課程來開始探索的自訂格式設定與 GridView、 DetailsView 和 FormView。 我們會看到如何自訂這些繫結到這些資料為基礎的控制項的外觀、 如何在 GridView 的頁尾中的資料摘述和如何使用範本，以取得更高的版面配置上的控制項。
 
 快樂地寫程式 ！
 

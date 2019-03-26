@@ -8,18 +8,18 @@ ms.date: 07/16/2014
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: bc6de2f0c8b2cd958c198abb90fc4ad97613e973
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 315e89c81782edf0875c65afd27153102d733050
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054535"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424244"
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>實際操作實驗室：容易維護的 Azure 網站：管理變更與規模
 ====================
 藉由[Web Camp 小組](https://twitter.com/webcamps)
 
-[下載 Web 研討會訓練套件](http://aka.ms/webcamps-training-kit)
+[下載 Web 研討會訓練套件](https://aka.ms/webcamps-training-kit)
 
 > Microsoft Azure 可讓您輕鬆建置及部署網站至生產環境。 但您未完成時即時應用程式時，您剛開始使用 ！ 您必須處理變更的需求、 資料庫更新、 小數位數和更多功能。 幸運的是，Azure App Service 具有您的後盾，並附上豐富的功能，可協助您保護您的站台順利執行。
 >
@@ -31,7 +31,7 @@ ms.locfileid: "57054535"
 >
 > 使用 SQL 資料庫時，請務必保持產能的資料庫部署應用程式的新版本時。 要感謝**Entity Framework Code First Migrations**，開發和部署您的資料模型已簡化，以更新您的環境，以分鐘為單位。 這個實際操作實驗室會顯示您的 web 應用程式部署到 Microsoft Azure 中的生產環境時，可能會遇到的不同主題。
 >
-> 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)。
+> 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
 >
 > 如需本主題的深入報導，請參閱 <<c0> [ 建置真實世界雲端應用程式與 Azure 的電子書](building-real-world-cloud-apps-with-windows-azure/introduction.md)。
 
@@ -62,10 +62,10 @@ ms.locfileid: "57054535"
 - [GIT 版本控制系統](http://git-scm.com/download)
 - Microsoft Azure 訂用帳戶
 
-    - 註冊[免費試用版](http://aka.ms/watk-freetrial)
-    - 如果您是 Visual Studio Professional、 Test Professional、 Premium 或 Ultimate with MSDN 或 MSDN Platforms 訂閱者時，啟用您[MSDN 權益](http://aka.ms/watk-msdn)現在要開始開發及測試 Azure 上
-    - [BizSpark](http://aka.ms/watk-bizspark)成員會自動獲得 Azure 權益透過其 Visual Studio Ultimate with MSDN 訂用帳戶
-    - 成員[Microsoft Partner Network](http://aka.ms/watk-mpn) Cloud Essentials 方案收到免費的每月 Azure 點數
+    - 註冊[免費試用版](https://aka.ms/watk-freetrial)
+    - 如果您是 Visual Studio Professional、 Test Professional、 Premium 或 Ultimate with MSDN 或 MSDN Platforms 訂閱者時，啟用您[MSDN 權益](https://aka.ms/watk-msdn)現在要開始開發及測試 Azure 上
+    - [BizSpark](https://aka.ms/watk-bizspark)成員會自動獲得 Azure 權益透過其 Visual Studio Ultimate with MSDN 訂用帳戶
+    - 成員[Microsoft Partner Network](https://aka.ms/watk-mpn) Cloud Essentials 方案收到免費的每月 Azure 點數
 
 <a id="Setup"></a>
 ### <a name="setup"></a>安裝程式

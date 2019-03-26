@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 0270e0df-6fde-4a8f-a2cb-2cacc55143f2
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5dc5c0b49a3530988bf42d6d632a061622f0a217
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a8812b3b9f9a34b34a579d6f5595b9ffc175caa4
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029475"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58420982"
 ---
 <a name="executing-animations-using-client-side-code-c"></a>使用用戶端程式碼執行動畫 (C#)
 ====================
@@ -46,7 +46,7 @@ ms.locfileid: "57029475"
 
 [!code-aspx[Main](executing-animations-using-client-side-code-cs/samples/sample4.aspx)]
 
-內`<Animations>`節點，請使用`<OnClick>`執行動畫一次使用者按一下面板上。 新增兩個動畫 parallelly 執行：
+內`<Animations>`節點，請使用`<OnClick>`執行動畫一次使用者按一下面板上。 新增兩個動畫來以平行方式執行：
 
 [!code-xml[Main](executing-animations-using-client-side-code-cs/samples/sample5.xml)]
 

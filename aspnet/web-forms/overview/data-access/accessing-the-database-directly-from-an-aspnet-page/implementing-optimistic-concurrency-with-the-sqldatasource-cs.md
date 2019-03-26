@@ -8,12 +8,12 @@ ms.date: 02/20/2007
 ms.assetid: df999966-ac48-460e-b82b-4877a57d6ab9
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f2590e8e7712d719eb89403ef839f03066a93d2b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6569f8e8f11bb67bc0723908225c7fd663a845b3
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036075"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423955"
 ---
 <a name="implementing-optimistic-concurrency-with-the-sqldatasource-c"></a>使用 SqlDataSource 實作開放式同步存取 (C#)
 ====================
@@ -28,7 +28,7 @@ ms.locfileid: "57036075"
 
 在先前的教學課程中，我們會檢查如何新增插入、 更新和刪除 SqlDataSource 控制項的功能。 簡單地說，若要提供這些功能我們需要指定對應`INSERT`， `UPDATE`，或`DELETE`控制項 s 中的 SQL 陳述式`InsertCommand`， `UpdateCommand`，或`DeleteCommand`搭配適當的屬性中的參數`InsertParameters`， `UpdateParameters`，和`DeleteParameters`集合。 [設定資料來源精靈 s 進階] 按鈕時可以手動指定這些屬性和集合，提供產生`INSERT`， `UPDATE`，和`DELETE`陳述式核取方塊，將會自動建立這些陳述式為基礎`SELECT`陳述式。
 
-以及產生`INSERT`， `UPDATE`，和`DELETE`陳述式] 核取方塊，[進階 SQL 產生選項] 對話方塊中包含使用開放式並行存取選項 （請參閱 [圖 1）。 有選取時，`WHERE`子句中自動產生`UPDATE`和`DELETE`陳述式會修改為只執行更新或刪除使用者已修改基礎資料庫資料的項目 t 如果上一次資料載入至方格。
+以及產生`INSERT`， `UPDATE`，和`DELETE`陳述式] 核取方塊，[進階 SQL 產生選項] 對話方塊中包含使用開放式並行存取選項 （請參閱 [圖 1）。 有選取時，`WHERE`子句中自動產生`UPDATE`和`DELETE`陳述式會修改為只執行更新或刪除基礎資料庫資料尚未被修改，因為使用者最後將資料載入至方格。
 
 
 ![您可以新增開放式並行存取支援從進階 SQL 產生選項對話方塊](implementing-optimistic-concurrency-with-the-sqldatasource-cs/_static/image1.gif)
@@ -52,7 +52,7 @@ Web 應用程式的允許多個同時連接的使用者，若要編輯或刪除�
 **圖 2**:當兩位使用者同時更新那里記錄的可能會變更為 覆寫其他的一個使用者 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-cs/_static/image2.png))
 
 
-若要避免這種情況下展開，一種[並行存取控制](http://en.wikipedia.org/wiki/Concurrency_control)必須實作。 [開放式並行存取](http://en.wikipedia.org/wiki/Optimistic_concurrency_control)時可能會有並行存取衝突不時，大部分的這類衝突贏得 t 時間發生的假設適用於本教學課程的焦點。 因此，如果沒有發生衝突，開放式並行存取控制項只會通知使用者，其變更無法儲存，因為其他使用者已修改相同的資料。
+若要避免這種情況下展開，一種[並行存取控制](http://en.wikipedia.org/wiki/Concurrency_control)必須實作。 [開放式並行存取](http://en.wikipedia.org/wiki/Optimistic_concurrency_control)本教學課程的焦點的運作方式，雖然有可能是並行衝突，不時假設大部分的時間也不會發生這類衝突。 因此，如果沒有發生衝突，開放式並行存取控制項只會通知使用者，其變更無法儲存，因為其他使用者已修改相同的資料。
 
 > [!NOTE]
 > 它會在此假設會有許多並行衝突，或如果這類衝突是不容忍範圍內的應用程式，然後封閉式並行存取控制可以改用。 回頭[實作開放式並行存取](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs.md)封閉式並行存取控制項上的深入討論的教學課程。
@@ -66,7 +66,7 @@ Web 應用程式的允許多個同時連接的使用者，若要編輯或刪除�
 **圖 3**:更新或刪除到成功，原始的值必須是等於目前資料庫的值 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-cs/_static/image4.png))
 
 
-有各種方法來實作開放式同步存取 (請參閱[Peter A.Bromberg](http://www.eggheadcafe.com/articles/pbrombergresume.asp) s [Optmistic 並行更新邏輯](http://www.eggheadcafe.com/articles/20050719.asp)的幾個選項的簡短探討)。 使用 SqlDataSource （以及 ADO.NET 型別資料集用於我們的資料存取層） 的技術擴大`WHERE`子句，以包含所有的原始值的比較。 下列`UPDATE`陳述式，例如，更新的名稱和產品的價格只有當目前資料庫的值會等於原本擷取更新 GridView 中的記錄時的值。 `@ProductName`並`@UnitPrice`參數會包含由使用者輸入的新值，而`@original_ProductName`和`@original_UnitPrice`包含最初載入 GridView 時按下 [編輯] 按鈕的值：
+有各種方法來實作開放式同步存取 (請參閱[Peter A.Bromberg](http://www.eggheadcafe.com/articles/pbrombergresume.asp)的[開放式並行存取更新邏輯](http://www.eggheadcafe.com/articles/20050719.asp)的幾個選項的簡短探討)。 使用 SqlDataSource （以及 ADO.NET 型別資料集用於我們的資料存取層） 的技術擴大`WHERE`子句，以包含所有的原始值的比較。 下列`UPDATE`陳述式，例如，更新的名稱和產品的價格只有當目前資料庫的值會等於原本擷取更新 GridView 中的記錄時的值。 `@ProductName`並`@UnitPrice`參數會包含由使用者輸入的新值，而`@original_ProductName`和`@original_UnitPrice`包含最初載入 GridView 時按下 [編輯] 按鈕的值：
 
 
 [!code-sql[Main](implementing-optimistic-concurrency-with-the-sqldatasource-cs/samples/sample1.sql)]
@@ -129,7 +129,7 @@ Web 應用程式的允許多個同時連接的使用者，若要編輯或刪除�
 
 [!code-sql[Main](implementing-optimistic-concurrency-with-the-sqldatasource-cs/samples/sample6.sql)]
 
-`UnitPrice`中的資料行`Products`資料表可以有`NULL`值。 如果有特定的資料錄`NULL`值`UnitPrice`，則`WHERE`子句部分`[UnitPrice] = @original_UnitPrice`會*一律*評估為 False，因為`NULL = NULL`一律會傳回 False。 因此，記錄，包含`NULL`值無法編輯或刪除，作為`UPDATE`並`DELETE`陳述式`WHERE`子句就贏了 t 傳回時，若要更新或刪除任何資料列。
+`UnitPrice`中的資料行`Products`資料表可以有`NULL`值。 如果有特定的資料錄`NULL`值`UnitPrice`，則`WHERE`子句部分`[UnitPrice] = @original_UnitPrice`會*一律*評估為 False，因為`NULL = NULL`一律會傳回 False。 因此，記錄，包含`NULL`值無法編輯或刪除，作為`UPDATE`並`DELETE`陳述式`WHERE`子句不會傳回任何資料列更新或刪除。
 
 > [!NOTE]
 > 這個 bug 給 Microsoft 在年 6 月的 2004 年中第一次報告已[SqlDataSource 會產生不正確的 SQL 陳述式](https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=93937)並 stage 排定為在 ASP.NET 中的下一個版本中修正。
@@ -189,7 +189,7 @@ Web 應用程式的允許多個同時連接的使用者，若要編輯或刪除�
 > Delete 運作方式相同。 開啟兩個瀏覽器視窗，開始編輯指定的產品，並儲存其變更。 在儲存之後所做的變更一種瀏覽器中，按一下 其他相同產品的 刪除 按鈕。 由於原始的值 don t 匹配`DELETE`陳述式的`WHERE`子句中，刪除以無訊息模式失敗。
 
 
-在第二個瀏覽器視窗之後，按一下方格中的 [更新] 按鈕回到前編輯模式中，但其變更將會遺失使用者 s 觀點。 不過，那里 s 其變更嘛 t 堅持沒有視覺回應。 在理想情況下，如果使用者 s 會失去變更的並行存取違規，我們的 d 通知他們，然後或許保留在編輯模式中的 方格。 可讓 s 看看如何完成這項作業。
+在第二個瀏覽器視窗之後，按一下方格中的 [更新] 按鈕回到前編輯模式中，但其變更將會遺失使用者 s 觀點。 不過，那里 s 他們的變更不堅持沒有視覺回應。 在理想情況下，如果使用者 s 會失去變更的並行存取違規，我們的 d 通知他們，然後或許保留在編輯模式中的 方格。 可讓 s 看看如何完成這項作業。
 
 ## <a name="step-3-determining-when-a-concurrency-violation-has-occurred"></a>步驟 3：判斷何時發生並行存取違規
 

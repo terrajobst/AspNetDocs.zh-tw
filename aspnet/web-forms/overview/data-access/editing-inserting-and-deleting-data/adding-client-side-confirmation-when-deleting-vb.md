@@ -8,12 +8,12 @@ ms.date: 07/17/2006
 ms.assetid: 6331e02e-c465-4cdf-bd3f-f07680c289d6
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: deae088d1daa63e2936aedf80eded18588b1ec60
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2b0d7aeab357a0009c44a29ff66f22ce8a744a90
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026895"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422141"
 ---
 <a name="adding-client-side-confirmation-when-deleting-vb"></a>於刪除時新增用戶端確認 (VB)
 ====================
@@ -38,7 +38,7 @@ JavaScript`confirm(string)`函式會顯示其字串輸入的參數為強制回�
 **圖 1**:JavaScript`confirm(string)`方法會顯示強制回應的用戶端的 Messagebox
 
 
-在表單提交時，如果值為`false`傳回從用戶端事件處理常式中，則會取消送出表單。 使用這項功能，我們可以有刪除按鈕的用戶端`onclick`事件處理常式的傳回值呼叫`confirm("Are you sure you want to delete this product?")`。 如果使用者按一下 [取消]，`confirm(string)`會傳回 false，因而導致取消送出表單。 具有任何回傳中，刪除贏得 t 產品按下的 [刪除] 按鈕。 不過，使用者按一下 [確定] 確認對話方塊中的，回傳會繼續而每況愈下則產品將會被刪除。 請參閱[使用 JavaScript s`confirm()`方法，以控制表單提交](http://www.webreference.com/programming/javascript/confirm/)如需有關這項技術。
+在表單提交時，如果值為`false`傳回從用戶端事件處理常式中，則會取消送出表單。 使用這項功能，我們可以有刪除按鈕的用戶端`onclick`事件處理常式的傳回值呼叫`confirm("Are you sure you want to delete this product?")`。 如果使用者按一下 [取消]，`confirm(string)`會傳回 false，因而導致取消送出表單。 具有任何回傳中，將不會刪除其 [刪除] 按鈕已按下的產品。 不過，使用者按一下 [確定] 確認對話方塊中的，回傳會繼續而每況愈下則產品將會被刪除。 請參閱[使用 JavaScript s`confirm()`方法，以控制表單提交](http://www.webreference.com/programming/javascript/confirm/)如需有關這項技術。
 
 新增必要的用戶端指令碼稍有不同如果使用比使用 CommandField 的範本。 因此，在本教學課程中，我們將看看 FormView 和 GridView 範例。
 

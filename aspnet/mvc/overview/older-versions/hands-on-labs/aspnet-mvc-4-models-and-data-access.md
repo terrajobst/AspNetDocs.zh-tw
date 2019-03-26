@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 634ea84b-f904-4afe-b71b-49cccef4d9cc
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 26896e6ee3c02e8f939296ecbfb8b7d500940765
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 10c2f6379f6d3139dd3bcf1027ff456e074298c3
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061025"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425089"
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 模型和資料存取
 
@@ -148,7 +148,7 @@ Code First 方法可讓我們不會產生類別，通常會結合 framework 定�
     ![新增 StoreDB ADO.NET 實體資料模型](aspnet-mvc-4-models-and-data-access/_static/image6.png "新增 StoreDB ADO.NET 實體資料模型")
 
     *新增 StoreDB ADO.NET 實體資料模型*
-2. **Entity Data Model 精靈**會出現。 此精靈會引導您完成建立模型層。 由於模型應該根據現有的資料庫 recentyl 新增建立，選取**從資料庫產生**然後按一下**下一步**。
+2. **Entity Data Model 精靈**會出現。 此精靈會引導您完成建立模型層。 由於此模型應該根據最近新增的現有資料庫建立，選取**從資料庫產生**然後按一下**下一步**。
 
     ![選擇模型內容](aspnet-mvc-4-models-and-data-access/_static/image7.png "選擇模型內容")
 
@@ -280,7 +280,7 @@ Code First 方法可讓我們不會產生類別，通常會結合 framework 定�
 <a id="Task_1_-_Populating_Sample_Data"></a>
 #### <a name="task-1---populating-sample-data"></a>工作 1-填入範例資料
 
-在這個工作中，您將資料庫中填入範例資料本節一開始建立使用 Code First 時。
+在這個工作中，您將資料庫中填入範例資料一開始建立使用 Code First 時。
 
 1. 開啟**開始**解決方案位於**來源/Ex2-CreatingADatabaseCodeFirst/開始/** 資料夾。 否則，您可能會繼續使用**結束**方案取得完成前一個練習。
 
@@ -580,7 +580,7 @@ Code First 方法可讓我們不會產生類別，通常會結合 framework 定�
 1. 移至[Windows Azure 管理入口網站](https://manage.windowsazure.com/)並使用您的訂用帳戶相關聯的 Microsoft 認證登入。
 
     > [!NOTE]
-    > 使用 Windows Azure，您可以免費託管 10 個 ASP.NET 網站，並再隨著流量成長而調整。 您可以註冊申請[此處](http://aka.ms/aspnet-hol-azure)。
+    > 使用 Windows Azure，您可以免費託管 10 個 ASP.NET 網站，並再隨著流量成長而調整。 您可以註冊申請[此處](https://aka.ms/aspnet-hol-azure)。
 
     ![登入 Windows Azure 入口網站](aspnet-mvc-4-models-and-data-access/_static/image31.png "登入 Windows Azure 入口網站")
 

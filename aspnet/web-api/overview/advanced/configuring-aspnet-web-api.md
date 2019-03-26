@@ -8,12 +8,12 @@ ms.date: 03/31/2014
 ms.assetid: 9e10a700-8d91-4d2e-a31e-b8b569fe867c
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 57066b8ce3254caf59cf927d16d96f8bc22a8acd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 270268b77f398084169843e20b0a2bf9f1c2a011
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046475"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423152"
 ---
 <a name="configuring-aspnet-web-api-2"></a>設定 ASP.NET Web API 2
 ====================
@@ -30,7 +30,7 @@ ms.locfileid: "57046475"
 <a id="settings"></a>
 ## <a name="configuration-settings"></a>組態設定
 
-Web API 組態設定中定義[HttpConfiguration](https://msdn.microsoft.com/library/system.web.http.httpconfiguration.aspx)類別。
+Web API 組態設定會定義在[HttpConfiguration](https://msdn.microsoft.com/library/system.web.http.httpconfiguration.aspx)類別。
 
 | 成員 | 描述 |
 | --- | --- |
@@ -53,7 +53,7 @@ Web API 組態設定中定義[HttpConfiguration](https://msdn.microsoft.com/libr
 <a id="webhost"></a>
 ## <a name="configuring-web-api-with-aspnet-hosting"></a>設定與 ASP.NET 裝載的 Web API
 
-在 ASP.NET 應用程式，請藉由呼叫中設定 Web API [GlobalConfiguration.Configure](https://msdn.microsoft.com/library/system.web.http.globalconfiguration.configure.aspx)中**應用程式\_啟動**方法。 **設定**方法會接受具有單一參數型別的委派**HttpConfiguration**。 執行所有您在委派內的組態。
+在 ASP.NET 應用程式，請藉由呼叫中設定 Web API [GlobalConfiguration.Configure](https://msdn.microsoft.com/library/system.web.http.globalconfiguration.configure.aspx)中**應用程式\_啟動**方法。 **設定**方法會接受具有單一參數型別的委派**HttpConfiguration**。 執行所有程式委派中的設定。
 
 以下是使用匿名委派的範例：
 

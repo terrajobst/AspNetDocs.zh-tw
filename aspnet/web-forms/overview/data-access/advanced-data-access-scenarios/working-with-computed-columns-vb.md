@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: 5811b8ff-ed56-40fc-9397-6b69ae09a8f6
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 81254408252c5e786c938d4eb8beb1c7a2b65218
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 136e4a07422d9f71ed56ac132d93f5eade273ca2
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061305"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423165"
 ---
 <a name="working-with-computed-columns-vb"></a>使用計算資料行 (VB)
 ====================
@@ -32,7 +32,7 @@ Microsoft SQL Server 是用來*[計算資料行](https://msdn.microsoft.com/libr
 
 使用其中一項挑戰的計算資料行，以使用特定 SQL 陳述式的 tableadapter 是 tableadapter`INSERT`和`UPDATE`查詢就會自動重新產生完成 [TableAdapter 組態精靈] 的任何時間。 因此，計算資料行中手動移除從`INSERT`和`UPDATE`重新執行精靈時，查詢將會重新出現。 雖然使用預存程序的 TableAdapters 不受到這個脆弱度，它們可以我們將在步驟 3 中將自己 quirks。
 
-在本教學課程中，我們將增加的計算資料行`Suppliers`Northwind 資料庫中資料表，然後再建立相對應的 TableAdapter，才能使用這個資料表，而且其計算資料行。 我們必須使用預存程序而不是特定 SQL 陳述式中，讓我們的自訂項目不 t 遺失使用 TableAdapter 組態精靈時我們 TableAdapter。
+在本教學課程中，我們將增加的計算資料行`Suppliers`Northwind 資料庫中資料表，然後再建立相對應的 TableAdapter，才能使用這個資料表，而且其計算資料行。 我們必須使用預存程序而不是特定 SQL 陳述式中，讓我們的自訂項目時，不會遺失 TableAdapter 組態精靈用我們 TableAdapter。
 
 讓 s 開始 ！
 

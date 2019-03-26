@@ -8,12 +8,12 @@ ms.date: 02/10/2010
 ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 775286df610df9040cbf04125b1742b6befa055b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 93ee29ae125e9442ee755998768a8105dfb485c0
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043155"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424296"
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 與 Visual Studio 2010 網頁程式開發概觀
 ====================
@@ -945,7 +945,7 @@ ASP.NET 4 中重點之一就是工作的協助呈現 HTML 相容的最新的 HTM
 
 在 ASP.NET 3.5 SP1 和舊版中，架構會呈現*停用*屬性 (attribute) 的 HTML 標記中任何控制其*已啟用*屬性設定為*false*。 不過，根據 HTML 4.01 規格，只有*輸入*項目應具有此屬性。
 
-在 ASP.NET 4 中，您可以設定*controlRenderingCompatabilityVersion* "3.5"，如下列範例所示的屬性：
+在 ASP.NET 4 中，您可以設定*controlRenderingCompatibilityVersion* "3.5"，如下列範例所示的屬性：
 
 [!code-xml[Main](overview/samples/sample70.xml)]
 
@@ -957,7 +957,7 @@ ASP.NET 4 中重點之一就是工作的協助呈現 HTML 相容的最新的 HTM
 
 [!code-html[Main](overview/samples/sample72.html)]
 
-在 ASP.NET 4 中，您可以設定*controlRenderingCompatabilityVersion*設為"4.0"。 在此情況下，只會控制轉譯的*輸入*項目會呈現*停用*屬性時的控制項*已啟用*屬性設定為*false*. 不會轉譯 HTML 的控制項*輸入*項目改為轉譯*類別*參考可用來定義了停用控制項的 CSS 類別的屬性。 例如，*標籤*先前範例所示的控制項就會產生下列標記：
+在 ASP.NET 4 中，您可以設定*controlRenderingCompatibilityVersion*設為"4.0"。 在此情況下，只會控制轉譯的*輸入*項目會呈現*停用*屬性時的控制項*已啟用*屬性設定為*false*. 不會轉譯 HTML 的控制項*輸入*項目改為轉譯*類別*參考可用來定義了停用控制項的 CSS 類別的屬性。 例如，*標籤*先前範例所示的控制項就會產生下列標記：
 
 [!code-html[Main](overview/samples/sample73.html)]
 

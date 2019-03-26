@@ -8,19 +8,18 @@ ms.date: 12/19/2014
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 393d14799973e9126379743f63f79a7131206f38
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b80f2f5cc4702c3e406d8989905c56508711e788
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037815"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58426077"
 ---
-<a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>將現有的網站從 SQL 成員資格移轉至 ASP.NET Identity
-====================
+# <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>將現有的網站從 SQL 成員資格移轉至 ASP.NET Identity
+
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))， [Suhas Joshi](https://github.com/suhasj)
 
 > 本教學課程中說明的步驟來移轉現有的 web 應用程式與使用者和角色的資料建立新的 ASP.NET 身分識別系統中使用 SQL 成員資格。 這種方法涉及將現有的資料庫結構描述變更為 ASP.NET 身分識別及舊/新增至該類別中的勾點所需的一個。 您採用這種方法，一旦移轉您的資料庫之後，會讓您輕鬆處理識別未來的更新。
-
 
 本教學課程中，我們要使用 Visual Studio 2010 來建立使用者和角色的資料建立 web 應用程式範本 (Web Form)。 我們接著將使用 SQL 指令碼，若要將現有的資料庫移轉至身分識別系統所需的資料表。 接下來我們將安裝必要的 NuGet 套件，並新增新的帳戶管理頁面用於成員資格管理的身分識別系統。 為移轉的測試，建立使用 SQL 成員資格的使用者應該能夠登入，而且新的使用者應該無法註冊。 您可以找到完整的範例[此處](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/SQLMembership-Identity-OWIN/)。 另請參閱[從 ASP.NET 成員資格移轉至 ASP.NET Identity](http://travis.io/blog/2015/03/24/migrate-from-aspnet-membership-to-aspnet-identity.html)。
 
@@ -50,7 +49,7 @@ ms.locfileid: "57037815"
 
 1. 安裝 Visual Studio Express 2013 for Web 或搭配 Visual Studio 2013[最新的更新](https://www.microsoft.com/download/details.aspx?id=44921)。
 2. 在您安裝的版本的 Visual Studio 中開啟上述的專案。 如果在電腦上未安裝 SQL Server Express，當您開啟專案，因為連接字串會使用 SQL Express 時，就是會顯示提示。 您可以選擇安裝 SQL Express 或做為因應措施變更 LocalDb 的連接字串。 本文中我們會將它變更 LocalDb。
-3. 開啟 web.config，然後變更連接字串。到 (LocalDb) v11.0 SQLExpess。 移除 ' 的使用者執行個體 = true' 從連接字串。
+3. 開啟 web.config，然後變更連接字串。到 (LocalDb) v11.0 SQLExpress。 移除 ' 的使用者執行個體 = true' 從連接字串。
 
     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image3.jpg)
 4. 開啟 伺服器總管，並確認可以觀察的資料表結構描述和資料。
@@ -115,7 +114,7 @@ ASP.NET 身分識別類別都是現成的現有使用者的資料，我們要將
 
 [!INCLUDE[](../../../includes/identity/alter-command-exception.md)]
 
-此資料庫產生指令碼可用來當做開頭，其中我們將會進行其他變更來加入新的資料行，並複製資料。 這個優點是我們產生`_MigrationHistory`供 EntityFramework 模型類別變更為身分識別發行前版本的未來版本時，修改資料庫結構描述的資料表。 
+此資料庫產生指令碼可用來當做開頭，其中我們將會進行其他變更來加入新的資料行，並複製資料。 這個優點是我們產生`_MigrationHistory`供 EntityFramework 模型類別變更為身分識別發行前版本的未來版本時，修改資料庫結構描述的資料表。
 
 SQL 成員資格使用者資訊有其他屬性，除了在身分識別使用者模型類別中也就是電子郵件、 密碼嘗試次數、 上次登入日期、 最後一個鎖定日期等。這是很有用的資訊，我們希望它結轉到身分識別系統。 做法是將額外的屬性加入至使用者模型，並將它們對應回資料庫中的資料表資料行。 我們這樣可以新增類別子類別化`IdentityUser`模型。 我們可以將此自訂類別的屬性，並編輯 SQL 指令碼，以建立資料表時新增對應的資料行。 此類別的程式碼會進一步說明，文件中。 建立的 SQL 指令碼`AspnetUsers`資料表之後會新增新的屬性
 
@@ -125,7 +124,7 @@ SQL 成員資格使用者資訊有其他屬性，除了在身分識別使用者�
 
 [!code-sql[Main](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/samples/sample2.sql)]
 
-在上述的 SQL 陳述式，從每個使用者的相關資訊*aspnet\_使用者*並*aspnet\_成員資格*資料表已複製到的資料行*AspnetUsers*資料表。 此處作法僅修改時，我們將複製的密碼。 由於 SQL 成員資格中的密碼的加密演算法會使用 'PasswordSalt' 和 'PasswordFormat'，所以我們複製，太以及雜湊的密碼，讓它可以識別所用來解密密碼。 自訂密碼雜湊程式連結時，文件中進一步說明。 
+在上述的 SQL 陳述式，從每個使用者的相關資訊*aspnet\_使用者*並*aspnet\_成員資格*資料表已複製到的資料行*AspnetUsers*資料表。 此處作法僅修改時，我們將複製的密碼。 由於 SQL 成員資格中的密碼的加密演算法會使用 'PasswordSalt' 和 'PasswordFormat'，所以我們複製，太以及雜湊的密碼，讓它可以識別所用來解密密碼。 自訂密碼雜湊程式連結時，文件中進一步說明。
 
 此指令碼檔案是此範例中的特定項目。 有其他資料表的應用程式，開發人員可以依照類似的方法，使用者模型類別上加上額外的屬性，並將它們對應至在 AspnetUsers 資料表中的資料行。 若要執行指令碼，
 
@@ -158,7 +157,7 @@ SQL 成員資格使用者資訊有其他屬性，除了在身分識別使用者�
 
 在我們的範例，AspNetRoles、 AspNetUserClaims、 AspNetLogins 和 AspNetUserRole 資料表會有類似於現有的身分識別系統實作的資料行。 因此我們可以重複使用現有的類別，將對應至這些資料表。 AspNetUser 資料表會有一些額外的資料行用來儲存 SQL 成員資格資料表中的其他資訊。 這可以藉由建立模型類別來擴充現有的 'IdentityUser' 實作，並加入其他屬性對應。
 
-1. 建立模型專案中的資料夾，並新增使用者的類別。 類別的名稱應該符合 'AspnetUsers' 資料表的 '鑑別子' 資料行中新增的資料。
+1. Models 資料夾中建立專案並新增使用者的類別。 類別的名稱應該符合 'AspnetUsers' 資料表的 '鑑別子' 資料行中新增的資料。
 
     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image10.png)
 
@@ -199,7 +198,7 @@ SQL 成員資格使用者資訊有其他屬性，除了在身分識別使用者�
 - Register.aspx.cs 和 Login.aspx.cs 背後的程式碼類別使用`UserManager`從身分識別的封裝建立的使用者。 此範例使用 UserManager Models 資料夾中新增先前所述的步驟。
 - 使用而不是 IdentityUser Register.aspx.cs 和 Login.aspx.cs 類別背後的程式碼中建立的使用者類別。 這在我們的自訂使用者類別連結到 身分識別系統。
 - 若要建立資料庫的部分可略過。
-- 開發人員必須設定新使用者 ApplicationId，以符合目前的應用程式識別碼。 這可以藉由查詢這個應用程式 ApplicationId Register.aspx.cs 類別中建立使用者物件之前，並將它設定建立使用者之前完成。 
+- 開發人員必須設定新使用者 ApplicationId，以符合目前的應用程式識別碼。 這可以藉由查詢這個應用程式 ApplicationId Register.aspx.cs 類別中建立使用者物件之前，並將它設定建立使用者之前完成。
 
     範例：
 

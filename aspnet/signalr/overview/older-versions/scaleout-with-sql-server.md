@@ -8,12 +8,12 @@ ms.date: 05/01/2013
 ms.assetid: 1dca7967-8296-444a-9533-837eb284e78c
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-sql-server
 msc.type: authoredcontent
-ms.openlocfilehash: 7fd05a4487be4cc96fa945cf08226841e3f01806
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: eb0d6cd23563f72bb382b3a3304d03294f783ad8
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032345"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425843"
 ---
 <a name="signalr-scaleout-with-sql-server-signalr-1x"></a>使用 SQL Server 的向外延展 (SignalR 1.x)
 ====================
@@ -97,7 +97,7 @@ Microsoft SQL Server 2005 或更新版本。 後擋板支援桌上型電腦和�
 
 ![](scaleout-with-sql-server/_static/image5.png)
 
-**安裝 Web Deploy 3.0。** 當您執行 IIS 管理員，它會提示您安裝 Microsoft Web Platform，或者您可以[下載 intstaller](https://go.microsoft.com/fwlink/?LinkId=255386)。 在 平台安裝程式中，搜尋 Web Deploy，並安裝 Web Deploy 3.0
+**安裝 Web Deploy 3.0。** 當您執行 IIS 管理員，它會提示您安裝 Microsoft Web Platform，或者您可以[下載安裝程式](https://go.microsoft.com/fwlink/?LinkId=255386)。 在 平台安裝程式中，搜尋 Web Deploy，並安裝 Web Deploy 3.0
 
 ![](scaleout-with-sql-server/_static/image6.png)
 

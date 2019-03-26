@@ -8,12 +8,12 @@ ms.date: 08/15/2006
 ms.assetid: b895e37e-0e69-45cc-a7e4-17ddd2e1b38d
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2e1cc844122b0fdebbc0be09f88baa11a461ab8e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 23f14251c280e1da3a51612ed538ecbc0f5b8d54
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038615"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424348"
 ---
 <a name="paging-and-sorting-report-data-vb"></a>分頁和排序報告資料 (VB)
 ====================
@@ -194,7 +194,7 @@ ms.locfileid: "57038615"
 
 [!code-vb[Main](paging-and-sorting-report-data-vb/samples/sample6.vb)]
 
-此程式碼一開始會清除中的項目`PageList`DropDownList。 這似乎是多餘的因為一個不 t 預期的頁數，若要變更，但其他使用者可能會同時使用系統、 新增或移除記錄從`Products`資料表。 這類插入或刪除無法改變資料的頁數。
+此程式碼一開始會清除中的項目`PageList`DropDownList。 這似乎是多餘的因為其中一個不能期望的頁數，若要變更，但其他使用者可能會同時使用系統、 新增或移除記錄從`Products`資料表。 這類插入或刪除無法改變資料的頁數。
 
 接下來，我們需要建立一次列印的頁碼已對應至目前的 GridView`PageIndex`預設選取。 我們完成這項作業具有從 0 到迴圈`PageCount - 1`，加入新`ListItem`中每個反覆項目和設定其`Selected`屬性設定為 true，如果目前的反覆項目索引等於 GridView 的`PageIndex`屬性。
 
@@ -253,7 +253,7 @@ ms.locfileid: "57038615"
 
 [!code-aspx[Main](paging-and-sorting-report-data-vb/samples/sample9.aspx)]
 
-您可以設定欄位，讓它 s 不可排序清除其`SortExpression`（將它指派給空字串） 的屬性。 若要舉例來說，想像一下，我們不想要讓我們依價格排序產品的客戶。 `UnitPrice` BoundField 的`SortExpression`從宣告式標記，或是透過 [欄位] 對話方塊中 （也就是可存取上的 GridView s 智慧標籤中的 [編輯資料行] 連結即可），就可以移除屬性。
+您可以設定欄位，讓它 s 不可排序清除其`SortExpression`（將它指派給空字串） 的屬性。 為了說明這一點，假設我們不想讓我們依價格排序產品的客戶。 `UnitPrice` BoundField 的`SortExpression`從宣告式標記，或是透過 [欄位] 對話方塊中 （也就是可存取上的 GridView s 智慧標籤中的 [編輯資料行] 連結即可），就可以移除屬性。
 
 
 ![以遞增順序 UnitPrice 已經排序結果](paging-and-sorting-report-data-vb/_static/image27.png)

@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 0bc191b2-4311-479a-a83a-7f1b1c32e6fe
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/build-a-model-with-business-rule-validations
 msc.type: authoredcontent
-ms.openlocfilehash: b735c414c629b9ff6617dbf80782d57543306c00
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f5829aab8cb266a65674d052ab77ab8e10c60670
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065765"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422844"
 ---
 <a name="build-a-model-with-business-rule-validations"></a>使用商務規則驗證建置模型
 ====================
@@ -122,7 +122,7 @@ NerdDinner 應用程式中，我們會定義 DinnerRepository 類別具有下列
 
 ![](build-a-model-with-business-rule-validations/_static/image10.png)
 
-然後，我們可以實作 DinnerRespository 類別使用下列程式碼：
+然後，我們可以實作 DinnerRepository 類別使用下列程式碼：
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample3.cs)]
 

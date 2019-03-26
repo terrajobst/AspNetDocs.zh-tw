@@ -8,12 +8,12 @@ ms.date: 01/30/2013
 ms.assetid: 3bd94827-3c59-448f-abc3-36e6df4858db
 msc.legacyurl: /single-page-application/overview/templates/breezeknockout-template
 msc.type: authoredcontent
-ms.openlocfilehash: 006d360748674a645ceddb82017f68b0f80f041b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 478ee9f851a395c68701347c04534bfe72d94512
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025835"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424855"
 ---
 <a name="breezeknockout-template"></a>Breeze/Knockout 範本
 ====================
@@ -83,7 +83,7 @@ Breeze/Knockout 範本可協助您執行這個重要的第一個步驟，向更�
 
 驗證邏輯是由幫助您輕鬆的執行的用戶端。 在伺服器的模型類別上的驗證屬性會傳播至用戶端，並自動執行前用戶端會聯繫伺服器。
 
-檢閱網路流量。 請注意，任何對伺服器的呼叫時沒有幫助您輕鬆偵測到錯誤。 每個有效的變更會導致 POST 要求為"/ api/Todo/SaveChanges"。 幫助您輕鬆組合所做的變更並將其傳送一起做為單一要求 Web API 控制器的`SaveChanges`方法。 這是從 KockoutJS SPA 範本，可讓 PUT、 POST 和 DELETE 要求每個項目的個別不同。
+檢閱網路流量。 請注意，任何對伺服器的呼叫時沒有幫助您輕鬆偵測到錯誤。 每個有效的變更會導致 POST 要求為"/ api/Todo/SaveChanges"。 幫助您輕鬆組合所做的變更並將其傳送一起做為單一要求 Web API 控制器的`SaveChanges`方法。 這是從 KnockoutJS SPA 範本，可讓 PUT、 POST 和 DELETE 要求每個項目的個別不同。
 
 ## <a name="peek-inside"></a>眼
 
@@ -99,7 +99,7 @@ Breeze/Knockout 範本可協助您執行這個重要的第一個步驟，向更�
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/ServerArchitecture.png)
 
-基本架構是 KockoutJS SPA 範本相同。 不過，實作則更簡單：Dto 已刪除，而且大部分的 Entity Framework 細節已委派給 Breeze.NET。
+基本架構是 KnockoutJS SPA 範本相同。 不過，實作則更簡單：Dto 已刪除，而且大部分的 Entity Framework 細節已委派給 Breeze.NET。
 
 ## <a name="next-steps"></a>後續步驟
 

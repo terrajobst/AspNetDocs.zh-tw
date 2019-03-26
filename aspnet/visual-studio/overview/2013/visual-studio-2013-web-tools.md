@@ -8,18 +8,18 @@ ms.date: 07/16/2014
 ms.assetid: 09e82351-816b-402d-acd1-0f9ac6901d16
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-tools
 msc.type: authoredcontent
-ms.openlocfilehash: 82248efd767c1110b9a4067b7d0c0e2ecafcbef9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 54d86de49bf61305b17fc80964723c518abd467b
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049885"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423243"
 ---
 <a name="hands-on-lab-visual-studio-2013-web-tools"></a>實際操作實驗室：Visual Studio 2013 Web 工具
 ====================
 藉由[Web Camp 小組](https://twitter.com/webcamps)
 
-[下載 Web 研討會訓練套件](http://aka.ms/webcamps-training-kit)
+[下載 Web 研討會訓練套件](https://aka.ms/webcamps-training-kit)
 
 > Visual Studio 是一個絕佳的開發環境來。以.NET 為基礎的 Windows 和 web 專案。 它包含一個功能強大的文字編輯器，可輕鬆用來編輯沒有專案的獨立檔案。
 > 
@@ -27,7 +27,7 @@ ms.locfileid: "57049885"
 > 
 > 所有此能力也可供擴充功能，輕鬆擴充以符合您需求的編輯器使用強大的新功能。 Web Essentials 是 （大多數） web 相關的增強功能至 Visual Studio 的集合。 它包含許多新的 IntelliSense 完成 （特別是針對 CSS)、 新的瀏覽器連結功能、 自動 JSHint 適用於 JavaScript 檔案、 HTML 和 CSS 和其他許多功能，才能使用新式網頁程式開發的新警告。
 > 
-> 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)。
+> 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
 
 
 <a id="Overview"></a>
@@ -224,7 +224,7 @@ ms.locfileid: "57049885"
     ![開啟檔案 Site.css](visual-studio-2013-web-tools/_static/image16.png "開啟檔案 Site.css")
 
     *開啟檔案 Site.css*
-5. 按下**CTRL** + **F**和型別 **.flip containter.front**尋找 CSS 選取器。
+5. 按下**CTRL** + **F**和型別 **.flip 容器.front**尋找 CSS 選取器。
 6. 按一下淺藍色方塊中的類別，以開啟色彩選擇器的框線屬性。
 
     ![開啟色彩選擇器](visual-studio-2013-web-tools/_static/image17.png "開啟色彩選擇器")

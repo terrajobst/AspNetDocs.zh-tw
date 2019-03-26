@@ -8,12 +8,12 @@ ms.date: 10/30/2006
 ms.assetid: 6b073fc6-524d-453d-be7c-0c30986de391
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6fe5fcba322f3d3a37b862f0a85810d8b4dda5f4
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d4d7db91ebd495149bb322487b541e2965d4f5e5
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059335"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424668"
 ---
 <a name="adding-validation-controls-to-the-datalists-editing-interface-vb"></a>將驗證控制項新增至 DataList 的編輯介面 (VB)
 ====================
@@ -156,10 +156,10 @@ ASP.NET 驗證控制項的所有重複回傳時，立即其驗證邏輯，並報
 
 [!code-vb[Main](adding-validation-controls-to-the-datalist-s-editing-interface-vb/samples/sample2.vb)]
 
-此步驟中，產品會嘗試送出的資料無效時，才會更新。 贏得 t 的大部分使用者都能夠回傳無效的資料，因為驗證控制項的用戶端指令碼，但其瀏覽器不支援 JavaScript，或有支援 JavaScript 的使用者停用，可以略過用戶端檢查和送出無效的資料。
+此步驟中，產品會嘗試送出的資料無效時，才會更新。 大部分的使用者將無法回傳無效的資料，因為驗證控制項的用戶端指令碼，但使用者的瀏覽器不支援 JavaScript 或可停用的 JavaScript 支援，可以略過用戶端檢查和送出無效的資料。
 
 > [!NOTE]
-> 使用 GridView，更新資料時，精明的讀者會記得，我們不需要明確檢查`Page.IsValid`我們頁面 s 程式碼後置類別中的屬性。 這是因為 GridView 會查閱`Page.IsValid`屬性只會繼續更新才會傳回值和`True`。
+> 精明的讀者應該記得，在更新資料時使用 GridView，我們並不需要明確檢查`Page.IsValid`我們頁面 s 程式碼後置類別中的屬性。 這是因為 GridView 會查閱`Page.IsValid`屬性只會繼續更新才會傳回值和`True`。
 
 
 ## <a name="step-3-summarizing-data-entry-problems"></a>步驟 3：彙總資料輸入問題

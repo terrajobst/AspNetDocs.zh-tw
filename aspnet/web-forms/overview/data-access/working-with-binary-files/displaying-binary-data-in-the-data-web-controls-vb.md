@@ -8,12 +8,12 @@ ms.date: 03/27/2007
 ms.assetid: 9201656a-e1c2-4020-824b-18fb632d2925
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 42db8122d75689f8a0e6961826b06f53622d6313
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 19c377e0f0cd9b27ac7c05af0ab050d8e213fe69
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035645"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424647"
 ---
 <a name="displaying-binary-data-in-the-data-web-controls-vb"></a>以資料 Web 控制項顯示二進位資料 (VB)
 ====================
@@ -183,7 +183,7 @@ ms.locfileid: "57035645"
 如果，可能也會造成這個例外狀況`CategoriesTableAdapter`s`GetCategoryWithBinaryDataByCategoryID`方法的`SELECT`陳述式已還原回到主查詢 s 資料行清單，如果您使用特定 SQL 陳述式，而且您已重新執行精靈，供使用的 TableAdapter 秒就會發生主要的查詢。 檢查，確定`GetCategoryWithBinaryDataByCategoryID`方法 s`SELECT`陳述式仍包含`Picture`資料行。
 
 > [!NOTE]
-> 每次`DisplayCategoryPicture.aspx`是瀏覽、 存取資料庫，並傳回指定的分類的圖片資料。 如果自使用者上次檢視過它，就會變更類別的圖片項目 t，不過，這會是浪費的精力。 幸運的是，HTTP 是用來*條件式取得*。 使用條件式 GET，提出 HTTP 要求的用戶端會傳送沿著[ `If-Modified-Since` HTTP 標頭](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)所提供的日期和上次從 web 伺服器擷取這項資源的用戶端的時間。 如果內容尚未變更，因為這會指定日期，web 伺服器可能回應[不會修改 (304) 的狀態碼](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)並放棄傳送回要求的資源的內容。 簡單地說，這項技術會減輕不必傳送資源的內容，如果它尚未修改用戶端上次存取後的 web 伺服器。
+> 每次`DisplayCategoryPicture.aspx`是瀏覽、 存取資料庫，並傳回指定的分類的圖片資料。 如果類別的圖片沒有變更，因為使用者上次檢視過它，不過，這會是浪費的精力。 幸運的是，HTTP 是用來*條件式取得*。 使用條件式 GET，提出 HTTP 要求的用戶端會傳送沿著[ `If-Modified-Since` HTTP 標頭](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)所提供的日期和上次從 web 伺服器擷取這項資源的用戶端的時間。 如果內容尚未變更，因為這會指定日期，web 伺服器可能回應[不會修改 (304) 的狀態碼](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)並放棄傳送回要求的資源的內容。 簡單地說，這項技術會減輕不必傳送資源的內容，如果它尚未修改用戶端上次存取後的 web 伺服器。
 
 
 若要實作此行為，不過，會要求您新增`PictureLastModified`資料行`Categories`資料表擷取時`Picture`用以檢查程式碼以及上次更新資料行`If-Modified-Since`標頭。 如需詳細資訊`If-Modified-Since`標頭 」 和 「 條件式 GET 工作流程，請參閱[HTTP 條件式 GET RSS 駭客](http://fishbowl.pastiche.org/2002/10/21/http_conditional_get_for_rss_hackers)並[更深入了解 ASP.NET 網頁中執行 HTTP 要求](http://aspnet.4guysfromrolla.com/articles/122204-1.aspx)。

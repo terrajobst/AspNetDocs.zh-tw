@@ -8,12 +8,12 @@ ms.date: 08/14/2010
 ms.assetid: 7ae696b9-348f-4993-8ebb-a838acbe0c28
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part8
 msc.type: authoredcontent
-ms.openlocfilehash: 22a6c4e5a07e81d5876cc442e68926094e3a243d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a014690078f113e5090f4867c2f384751f16b9f6
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033795"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425349"
 ---
 <a name="adding-a-column-to-the-model"></a>將資料行新增至模型
 ====================
@@ -24,7 +24,7 @@ ms.locfileid: "57033795"
 
 這一節我們要逐步解說如何對資料庫中的結構描述中的變更並在我們的應用程式內處理變更。
 
-讓我們將 「 評等 」 的資料行新增至電影資料表中。 返回 IDE，然後按一下 [資料庫總管] 中。 以滑鼠右鍵按一下之電影資料表，然後選取 開啟資料表定義。
+讓我們加入之電影資料表的 「 評等 」 的資料行。 返回 IDE，然後按一下 [資料庫總管] 中。 以滑鼠右鍵按一下之電影資料表，然後選取 開啟資料表定義。
 
 將 「 評等 」 資料行，如下所示。 我們現在還沒有任何評等，因為資料行可允許 null。 按一下 [儲存]。
 

@@ -8,12 +8,12 @@ ms.date: 10/30/2006
 ms.assetid: f8fd58e2-f932-4f08-ab3d-fbf8ff3295d2
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ebaca5ea34fabe3fcd4979eab2e3f684e8e221be
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 43a43c95e049acab734fa7d9fdcf2b96f12e78d9
+ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038415"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58440270"
 ---
 <a name="handling-bll--and-dal-level-exceptions-c"></a>處理 BLL 和 DAL 層級的例外狀況 (C#)
 ====================
@@ -30,7 +30,7 @@ ms.locfileid: "57038415"
 
 如我們在中所見[處理 BLL 和 DAL 層級例外狀況，在 ASP.NET 網頁](../editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs.md)教學課程中，如果從深海帶上來的商務邏輯或資料存取層級，會引發例外狀況的例外狀況詳細資料都會回到 ObjectDataSource 和然後至 GridView。 我們了解如何依正常程序建立處理這些例外狀況`Updated`或`RowUpdated`ObjectDataSource 或 GridView，檢查例外狀況，以及指出 已處理例外狀況的事件處理常式。
 
-我們 DataList 教學課程中，不過，不 t 使用 ObjectDataSource 的更新和刪除資料。 相反地，我們正努力直接針對 BLL。 若要偵測源自於 BLL 或 DAL 的例外狀況，我們要實作例外狀況處理程式碼後置我們的 ASP.NET 網頁中的程式碼。 在本教學課程中，我們會看到如何更巧妙地向處理可編輯的 DataList s，正在更新工作流程期間引發的例外狀況。
+不過，我們 DataList 教學課程中，不使用 ObjectDataSource 的更新和刪除資料。 相反地，我們正努力直接針對 BLL。 若要偵測源自於 BLL 或 DAL 的例外狀況，我們要實作例外狀況處理程式碼後置我們的 ASP.NET 網頁中的程式碼。 在本教學課程中，我們會看到如何更巧妙地向處理可編輯的 DataList s，正在更新工作流程期間引發的例外狀況。
 
 > [!NOTE]
 > 在 *概觀的編輯和刪除資料 DataList*更新使用 ObjectDataSource 教學課程中我們討論過編輯和刪除資料 DataList 的不同技術，一些技巧，涉及和正在刪除。 如果您採用這些技術，您可以處理從 DAL 的 BLL 透過 ObjectDataSource s 的例外狀況`Updated`或`Deleted`事件處理常式。
@@ -131,7 +131,7 @@ GridView 和 ObjectDataSource 提供後置的層級的事件處理常式，包�
 
 在本教學課程中，我們看到如何新增例外狀況處理來更新工作流程，藉由新增一個可編輯 DataList s`Try ... Catch`封鎖`UpdateCommand`事件處理常式。 如果在更新的工作流程期間引發例外狀況`Catch`區塊 s 程式碼執行時，顯示有用的資訊在`ExceptionDetails`標籤。
 
-此時，DataList 一概不會以防止在第一時間發生例外狀況。 即使我們知道，負數的價格將會導致例外狀況，我們尚未 t 尚未新增任何功能來主動防止使用者輸入這類無效的輸入。 在我們的下一個教學課程中，我們將看到如何協助減少將驗證控制項中的加入無效的使用者輸入所造成的例外狀況`EditItemTemplate`。
+此時，DataList 一概不會以防止在第一時間發生例外狀況。 即使我們已經知道負的價格將會導致例外狀況，我們還沒有尚未新增任何功能來主動防止使用者輸入這類無效的輸入。 在我們的下一個教學課程中，我們將看到如何協助減少將驗證控制項中的加入無效的使用者輸入所造成的例外狀況`EditItemTemplate`。
 
 快樂地寫程式 ！
 

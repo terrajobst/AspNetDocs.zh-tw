@@ -8,12 +8,12 @@ ms.date: 05/30/2007
 ms.assetid: 84afe4ac-cc53-4f2e-a867-27eaf692c2df
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9d997cb0af8487b2a9d849f24f3bff8df8611f6d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ef0a99a1601f40995c81a12f457303e040f57e29
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026645"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424608"
 ---
 <a name="caching-data-at-application-startup-vb"></a>在應用程式啟動時快取資料 (VB)
 ====================
@@ -103,7 +103,7 @@ Northwind 資料庫資料表我們已實作的日期不包含任何傳統的查�
 
 [!code-vb[Main](caching-data-at-application-startup-vb/samples/sample5.vb)]
 
-若要加入無時間為基礎的到期日的資料快取中的項目，請使用`System.Web.Caching.Cache.NoAbsoluteExpiration`和`System.Web.Caching.Cache.NoSlidingExpiration`做為輸入參數的值。 這個多載的資料快取 s`Insert`已選取方法，以便我們可以指定*優先順序*的快取項目。 優先順序用來判斷可用的記憶體不足時，從快取清除項目。 在這裡我們使用優先順序`NotRemovable`，以確保此快取項目贏得 t 清除。
+若要加入無時間為基礎的到期日的資料快取中的項目，請使用`System.Web.Caching.Cache.NoAbsoluteExpiration`和`System.Web.Caching.Cache.NoSlidingExpiration`做為輸入參數的值。 這個多載的資料快取 s`Insert`已選取方法，以便我們可以指定*優先順序*的快取項目。 優先順序用來判斷可用的記憶體不足時，從快取清除項目。 在這裡我們使用優先順序`NotRemovable`，以確保不可以清除此快取項目。
 
 > [!NOTE]
 > 此教學課程的下載實作`StaticCache`類別使用靜態成員變數的方法。 提供的類別檔案中的註解的程式碼的應用程式的狀態和資料快取技術。

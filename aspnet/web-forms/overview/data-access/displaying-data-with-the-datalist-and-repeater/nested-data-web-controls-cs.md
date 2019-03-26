@@ -8,12 +8,12 @@ ms.date: 09/13/2006
 ms.assetid: ad3cb0ec-26cf-42d7-b81b-184a34ec9f86
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 032321b5cf5323058c114e652512854f9866d447
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2fda8883a1cd45a7018c639efcce94cf0e59974c
+ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062605"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58440296"
 ---
 <a name="nested-data-web-controls-c"></a>巢狀資料 Web 控制項 (C#)
 ====================
@@ -140,7 +140,7 @@ Repeater s`DataSource`屬性會使用資料繫結語法來表示其資料是來�
 進行這些變更来使用這個新的技術之後，請花一點時間檢視透過瀏覽器頁面。 使用 ObjectDataSource 時，輸出應該是相同的輸出和`ItemDataBound`事件處理常式方法 （請參閱上一步查看螢幕擷取畫面的 圖 5）。
 
 > [!NOTE]
-> 它看起來好像建立讓`GetProductsInCategory(categoryID)`ASP.NET 頁面 s 程式碼後置類別中的方法。 畢竟，這個方法只會建立的執行個體`ProductsBLL`類別，並傳回的結果，其`GetProductsByCategoryID(categoryID)`方法。 為什麼不只呼叫這個方法直接從資料繫結語法，在內部的重複項，例如： `DataSource='<%# ProductsBLL.GetProductsByCategoryID((int)(Eval("CategoryID"))) %>'`？ 此語法贏得 t 使用我們的目前實作雖然`ProductsBLL`類別 (由於`GetProductsByCategoryID(categoryID)`方法是執行個體方法)，您可以修改`ProductsBLL`包含靜態`GetProductsByCategoryID(categoryID)`方法或有包含靜態類別`Instance()`方法傳回的新執行個體`ProductsBLL`類別。
+> 它看起來好像建立讓`GetProductsInCategory(categoryID)`ASP.NET 頁面 s 程式碼後置類別中的方法。 畢竟，這個方法只會建立的執行個體`ProductsBLL`類別，並傳回的結果，其`GetProductsByCategoryID(categoryID)`方法。 為什麼不只呼叫這個方法直接從資料繫結語法，在內部的重複項，例如： `DataSource='<%# ProductsBLL.GetProductsByCategoryID((int)(Eval("CategoryID"))) %>'`？ 此語法不會使用我們的目前實作雖然`ProductsBLL`類別 (由於`GetProductsByCategoryID(categoryID)`方法是執行個體方法)，您可以修改`ProductsBLL`包含靜態`GetProductsByCategoryID(categoryID)`方法或有包含靜態類別`Instance()`方法傳回的新執行個體`ProductsBLL`類別。
 
 
 雖然這類修改就不需要`GetProductsInCategory(categoryID)`ASP.NET 頁面 s 程式碼後置類別中的方法，程式碼後置類別方法會提供更大的彈性來使用資料擷取，很快就如稍後所示。
@@ -151,7 +151,7 @@ Repeater s`DataSource`屬性會使用資料繫結語法來表示其資料是來�
 
 給定*N*系統中的類別，這種方法網路*N* + 1 呼叫資料庫有一個資料庫查詢，以取得所有的類別，然後*N*呼叫以取得產品每個類別所特有。 我們可以不過，擷取所有所需的資料，只有兩個資料庫來取得所有類別，以取得所有產品的另一種呼叫一次呼叫中。 一旦我們擁有的所有產品，我們可以因此篩選這些產品只比對目前的產品`CategoryID`繫結至該類別 s 內部的重複項。
 
-若要提供這項功能，我們只需要進行稍微修改一下`GetProductsInCategory(categoryID)`我們 ASP.NET 頁面 s 程式碼後置類別中的方法。 而不會盲目地傳回的結果`ProductsBLL`類別 s`GetProductsByCategoryID(categoryID)`方法中，我們可以改為第一次存取*所有*的產品 (如果它們尚未 t 已已經存取)，然後傳回只在已篩選的檢視產品以傳入的`CategoryID`。
+若要提供這項功能，我們只需要進行稍微修改一下`GetProductsInCategory(categoryID)`我們 ASP.NET 頁面 s 程式碼後置類別中的方法。 而不會盲目地傳回的結果`ProductsBLL`類別 s`GetProductsByCategoryID(categoryID)`方法中，我們可以改為第一次存取*所有*的產品 （如果它們還沒有已被存取），然後傳回只在已篩選的檢視產品以傳入的`CategoryID`。
 
 
 [!code-csharp[Main](nested-data-web-controls-cs/samples/sample8.cs)]

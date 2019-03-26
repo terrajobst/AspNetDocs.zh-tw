@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: 4085de68-d243-4378-8a64-86236ea8d2da
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 950ae17ebd6b0f15520c2a4e9372703f5374dfbe
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bcc1de15b49b51461f76c9ac8f1bee4555ea101d
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034095"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422424"
 ---
 <a name="adding-a-new-field"></a>新增欄位
 ====================
@@ -122,7 +122,7 @@ Code First 移轉會建立另一個類別檔案中的*移轉*資料夾 (同名 *
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample8.cshtml?highlight=31-33,52-54)]
 
-接下來，開啟*\Views\Movies\Create.cshtml*檔案，並新增`Rating`下列 highlighed 標記欄位。 這會呈現文字方塊中，如此當您建立新的電影時，您可以指定評等。
+接下來，開啟*\Views\Movies\Create.cshtml*檔案，並新增`Rating`欄位以下列反白顯示標記。 這會呈現文字方塊中，如此當您建立新的電影時，您可以指定評等。
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample9.cshtml?highlight=9-15)]
 

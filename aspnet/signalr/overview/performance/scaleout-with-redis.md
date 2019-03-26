@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 6ecd08c1-e364-4cd7-ad4c-806521911585
 msc.legacyurl: /signalr/overview/performance/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: 22b8379fd2d97aeb85137e1cc128fe5d053f44ed
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c20341a7fa0f5c5382ce7f2f6d459c4a6bec509f
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047525"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424088"
 ---
 <a name="signalr-scaleout-with-redis"></a>使用 Redis 的 SignalR 向外延展
 ====================
@@ -144,7 +144,7 @@ Redis 是記憶體中索引鍵-值存放區。 它也支援發行/訂閱模型�
 
 ![](scaleout-with-redis/_static/image6.png)
 
-**安裝 Web Deploy 3.0。** 當您執行 IIS 管理員，它會提示您安裝 Microsoft Web Platform，或者您可以[下載 intstaller](https://go.microsoft.com/fwlink/?LinkId=255386)。 在 平台安裝程式中，搜尋 Web Deploy，並安裝 Web Deploy 3.0
+**安裝 Web Deploy 3.0。** 當您執行 IIS 管理員，它會提示您安裝 Microsoft Web Platform，或者您可以[下載安裝程式](https://go.microsoft.com/fwlink/?LinkId=255386)。 在 平台安裝程式中，搜尋 Web Deploy，並安裝 Web Deploy 3.0
 
 ![](scaleout-with-redis/_static/image7.png)
 

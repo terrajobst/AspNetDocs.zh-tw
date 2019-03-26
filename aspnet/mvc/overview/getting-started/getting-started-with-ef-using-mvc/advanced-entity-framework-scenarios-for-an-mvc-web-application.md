@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: f35a9b0c-49ef-4cde-b06d-19d1543feb0b
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: d0208c8890467ec6044d807aeee7c7ae02e18790
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d7cc83a5b78a60f575f5c3065079679189296a0c
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032515"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425271"
 ---
 # <a name="tutorial-learn-about-advanced-ef-scenarios-for-an-mvc-5-web-app"></a>教學課程：深入了解的 MVC 5 Web 應用程式的進階 EF 案例
 
@@ -85,7 +85,7 @@ Entity Framework 程式碼的第一個 API 包含可讓您的 SQL 命令直接�
 
 假設 Contoso 大學的系統管理員想要能夠在資料庫中，例如變更每個課程的學分數執行大量變更。 如果該大學有大量的課程，擷取全部課程作為實體並個別進行變更的效率不佳。 在本節中，您將實作網頁，可讓使用者指定要變更所有課程的學分數的因數，您會變更執行 SQL`UPDATE`陳述式。 
 
-在  *CourseContoller.cs*，新增`UpdateCourseCredits`方法`HttpGet`和`HttpPost`:
+在  *CourseController.cs*，新增`UpdateCourseCredits`方法`HttpGet`和`HttpPost`:
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample4.cs)]
 

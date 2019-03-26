@@ -8,12 +8,12 @@ ms.date: 09/17/2012
 ms.assetid: 243db2ec-8f67-4a5e-a382-4ddcec4b4164
 msc.legacyurl: /web-api/overview/advanced/http-cookies
 msc.type: authoredcontent
-ms.openlocfilehash: 61e0c47efdd92a3a0b329930aeec757b446eb9b8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ee717085a02f4c5f5d664cfd2fa82c21864e4055
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044735"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425817"
 ---
 <a name="http-cookies-in-aspnet-web-api"></a>ASP.NET Web API 中的 HTTP Cookie
 ====================
@@ -25,7 +25,7 @@ ms.locfileid: "57044735"
 
 本節提供 cookie 在 HTTP 層級的實作方式的簡短概觀。 如需詳細資訊，請參閱[RFC 6265](http://tools.ietf.org/html/rfc6265)。
 
-Cookie 是一種伺服器會傳送 HTTP 回應中的資料。 用戶端 （選擇性） 儲存在 cookie，然後將它傳回 subsequet 要求。 這可讓用戶端與伺服器共用狀態。 若要設定的 cookie，伺服器會納入回應 Set-cookie 標頭。 Cookie 的格式為名稱 / 值組，以選擇性屬性。 例如: 
+Cookie 是一種伺服器會傳送 HTTP 回應中的資料。 用戶端 （選擇性） 儲存 cookie，並傳回它在後續的要求。 這可讓用戶端與伺服器共用狀態。 若要設定的 cookie，伺服器會納入回應 Set-cookie 標頭。 Cookie 的格式為名稱 / 值組，以選擇性屬性。 例如: 
 
 [!code-powershell[Main](http-cookies/samples/sample1.ps1)]
 

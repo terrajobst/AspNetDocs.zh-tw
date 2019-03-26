@@ -8,12 +8,12 @@ ms.date: 05/15/2013
 ms.assetid: eaa206c4-edb3-487e-8fcb-54a3261fed36
 msc.legacyurl: /signalr/overview/older-versions/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: c8aac09c3d3e06529f7834eb3f60dca2f3073922
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 311976a9d0e79083e02231ab056af3537a3d3d25
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042635"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58420799"
 ---
 <a name="dependency-injection-in-signalr-1x"></a>SignalR 1.x 中的相依性插入
 ====================
@@ -41,7 +41,7 @@ ms.locfileid: "57042635"
 
 [!code-csharp[Main](dependency-injection/samples/sample3.cs)]
 
-現在物件不是負責選取`ILogger`使用。 您可以 swich`ILogger`而不需要變更依存於此物件的實作。
+現在物件不是負責選取`ILogger`使用。 您可以切換`ILogger`而不需要變更依存於此物件的實作。
 
 [!code-csharp[Main](dependency-injection/samples/sample4.cs)]
 
@@ -104,7 +104,7 @@ Visual Studio 可讓這種重構很容易。 開啟檔案 StockTicker.cs，以�
 
 ![](dependency-injection/_static/image1.png)
 
-在 [**擷取介面**] 對話方塊中，按一下**全選**。 保留其他預設值。 按一下 [確定] 。
+在 [**擷取介面**] 對話方塊中，按一下**全選**。 保留其他預設值。 按一下 [確定 **Deploying Office Solutions**]。
 
 ![](dependency-injection/_static/image2.png)
 
@@ -161,7 +161,7 @@ Visual Studio 會建立名為的新介面`IStockTicker`，也會變更`StockTick
 
 [!code-csharp[Main](dependency-injection/samples/sample18.cs)]
 
-此程式碼 creatres 匿名函式會傳回**IHubConnection**。 **WhenInjectedInto**方法會告訴只有在建立時，才使用這個函式的 Ninject`IStockTicker`執行個體。 原因是，會建立 SignalR **IHubConnectionContext**執行個體就內部而言，而且我們不想要覆寫如何 SignalR 便會建立它們。 此函式僅適用於我們`StockTicker`類別。
+此程式碼會建立傳回的匿名函式**IHubConnection**。 **WhenInjectedInto**方法會告訴只有在建立時，才使用這個函式的 Ninject`IStockTicker`執行個體。 原因是，會建立 SignalR **IHubConnectionContext**執行個體就內部而言，而且我們不想要覆寫如何 SignalR 便會建立它們。 此函式僅適用於我們`StockTicker`類別。
 
 傳遞至相依性解析程式**MapHubs**方法：
 

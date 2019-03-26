@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 92c70297-4430-4e4e-919a-9c2333a8d09a
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-vb
 msc.type: authoredcontent
-ms.openlocfilehash: be6ddbdfbe8da33871355c2a7917a7ce7008d81b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a319e2eb71da1bf693b1bd14ae368c844e7daeb1
+ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054865"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58440257"
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-vb"></a>反覆項目 #4 – 讓應用程式鬆散耦合 (VB)
 ====================
@@ -61,7 +61,7 @@ by [Microsoft](https://github.com/microsoft)
 
 當鬆散偶合的應用程式時，相反地，您可以變更應用程式的某一部分但沒有碰觸的應用程式其他部分。 例如，您可以切換資料存取技術，而不需要修改您驗證或控制站的邏輯。
 
-在此反覆項目，我們利用數種軟體設計模式，讓我們重構我們的連絡人管理員應用程式，到更鬆散偶合的應用程式。 當我們完成之後時，贏得 t 的連絡人管理員執行任何動作，它之前執行此嘛 t。 不過，我們可以變更在未來更輕鬆地在應用程式。
+在此反覆項目，我們利用數種軟體設計模式，讓我們重構我們的連絡人管理員應用程式，到更鬆散偶合的應用程式。 當我們完成之後時，請連絡管理員贏得 t 執行任何項目未先。 不過，我們可以變更在未來更輕鬆地在應用程式。
 
 > [!NOTE] 
 > 

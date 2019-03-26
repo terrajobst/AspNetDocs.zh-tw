@@ -8,12 +8,12 @@ ms.date: 05/20/2012
 ms.assetid: 0dd51b30-bf5a-419f-a1b7-2817ccca3c7d
 msc.legacyurl: /web-api/overview/formats-and-model-binding/content-negotiation
 msc.type: authoredcontent
-ms.openlocfilehash: e936bdfa52f786ec86d3e84eac3cd644225b6f92
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9cfbed49c1022fbf26160e89aed3ab474f5e0fdc
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039245"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425687"
 ---
 <a name="content-negotiation-in-aspnet-web-api"></a>ASP.NET Web API 中的內容交涉
 ====================
@@ -48,7 +48,7 @@ HTTP 規格 (RFC 2616) 定義為 「 程序時有多種表示選取最佳的表�
 
 [!code-console[Main](content-negotiation/samples/sample3.cmd)]
 
-在此範例中，用戶端要求 JSON、 Javascript 或 「 任何 」 (\*/\*)。 伺服器回應的 JSON 表示法的`Product`物件。 請注意，在回應中的 Content-type 標頭設定為&quot;application/json&quot;。
+在此範例中，用戶端要求 JSON、 Javascript 或 「 任何 」 (\*/\*)。 伺服器回應的 JSON 表示法`Product`物件。 請注意，在回應中的 Content-type 標頭設定為&quot;application/json&quot;。
 
 也可以傳回一個控制站**HttpResponseMessage**物件。 若要指定，回應主體的 CLR 物件，呼叫**CreateResponse**擴充方法：
 
@@ -62,7 +62,7 @@ HTTP 規格 (RFC 2616) 定義為 「 程序時有多種表示選取最佳的表�
 
 首先，管線會取得**IContentNegotiator**服務**HttpConfiguration**物件。 它也會取得中的媒體格式器的清單**HttpConfiguration.Formatters**集合。
 
-接下來，管線會呼叫**IContentNegotiatior.Negotiate**，並傳入：
+接下來，管線會呼叫**IContentNegotiator.Negotiate**，並傳入：
 
 - 要序列化的物件類型
 - 媒體格式器的集合
@@ -73,7 +73,7 @@ HTTP 規格 (RFC 2616) 定義為 「 程序時有多種表示選取最佳的表�
 - 若要使用的格式器
 - 回應的媒體類型
 
-找不到，如果**交涉**方法會傳回**null**，和用戶端接收 HTTP 錯誤 406 （無法接受）。
+找不到，如果**交涉**方法會傳回**null**，且用戶端收到 HTTP 錯誤 406 （無法接受）。
 
 下列程式碼顯示如何控制站可以直接叫用內容交涉：
 

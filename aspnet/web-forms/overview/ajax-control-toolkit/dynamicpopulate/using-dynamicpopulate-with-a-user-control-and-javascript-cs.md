@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 38ac8250-8854-444c-b9ab-8998faa41c5a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 110f6dd05d038438bc061d3ee907a5e2da8968c6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: cf8b6de7274c3ae025464e1b01a365ec158ae5f8
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062295"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424387"
 ---
 <a name="using-dynamicpopulate-with-a-user-control-and-javascript-c"></a>使用具有使用者控制項的 DynamicPopulate 和 JavaScript (C#)
 ====================
@@ -52,7 +52,7 @@ A &lt; `label` &gt;項目會用來顯示來自伺服器的資料。
 
 [!code-aspx[Main](using-dynamicpopulate-with-a-user-control-and-javascript-cs/samples/sample5.aspx)]
 
-一次您可能注意到控制項中所使用的奇怪識別碼：`mcd1$myDate`而不是`myDate`。 先前，JavaScript 程式碼使用`mcd1_dpe1`若要存取`DynamicPopulateExtender`而不是`dpe1`。使用時，此命名策略是特殊的需求`DynamicPopulateExtender`使用者控制項內。 此外，您必須將使用者要內嵌到正常運作以特定方式。 建立新的 ASP.NET 網頁，並註冊您已實作的使用者控制項的標記前置詞：
+一次您可能注意到控制項中所使用的奇怪識別碼：`mcd1$myDate`而不是`myDate`。 先前，JavaScript 程式碼使用`mcd1_dpe1`若要存取`DynamicPopulateExtender`而不是`dpe1`。使用時，此命名策略是特殊的需求`DynamicPopulateExtender`使用者控制項內。 此外，您必須將使用者控制項內嵌在以特定方式來正常運作。 建立新的 ASP.NET 網頁，並註冊您已實作的使用者控制項的標記前置詞：
 
 [!code-aspx[Main](using-dynamicpopulate-with-a-user-control-and-javascript-cs/samples/sample6.aspx)]
 

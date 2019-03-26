@@ -8,12 +8,12 @@ ms.date: 07/11/2013
 ms.assetid: e42c8388-04ed-4341-9fdb-41b1b4c06320
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 4d29f087cd658faf1fadb0d9a85e9f32c03a2b3f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a022138c594154109ff0bfba85949099e6b2d2a2
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058995"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422749"
 ---
 <a name="parameter-binding-in-aspnet-web-api"></a>ASP.NET Web API 中繫結的參數
 ====================
@@ -182,7 +182,7 @@ Web API 撰寫所有值提供者，因此當模型繫結呼叫**ValueProvider.Ge
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample23.cs)]
 
-除了**ParameterBindingAttribute**，沒有新增自訂的另一個攔截**HttpParameterBinding**。 在  **HttpConfiguration**物件， **ParameterBindingRules**屬性是集合型別的 anomymous 函式 (**HttpParameterDescriptor**  - &gt; **HttpParameterBinding**)。 比方說，您可以在其中新增任何的 GET 方法上的 ETag 參數使用的規則`ETagParameterBinding`與`if-none-match`:
+除了**ParameterBindingAttribute**，沒有新增自訂的另一個攔截**HttpParameterBinding**。 在  **HttpConfiguration**物件， **ParameterBindingRules**屬性是類型的匿名函式的集合 (**HttpParameterDescriptor**  - &gt; **HttpParameterBinding**)。 比方說，您可以在其中新增任何的 GET 方法上的 ETag 參數使用的規則`ETagParameterBinding`與`if-none-match`:
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample24.cs)]
 

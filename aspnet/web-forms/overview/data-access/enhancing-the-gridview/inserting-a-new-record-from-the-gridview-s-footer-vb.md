@@ -8,12 +8,12 @@ ms.date: 03/06/2007
 ms.assetid: 528acc48-f20c-4b4e-aa16-4cc02f068ebb
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0c661190125e818d3abaf54f50a0067d0944a956
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6e56c46d1f2574b9f228190e0e0c8205240015ed
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059385"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423945"
 ---
 <a name="inserting-a-new-record-from-the-gridviews-footer-vb"></a>從 GridView 的頁尾插入新記錄 (VB)
 ====================
@@ -207,7 +207,7 @@ ms.locfileid: "57059385"
 [!code-vb[Main](inserting-a-new-record-from-the-gridview-s-footer-vb/samples/sample6.vb)]
 
 > [!NOTE]
-> 您可能想知道為什麼事件處理常式困擾檢查`Page.IsValid`屬性。 畢竟，如果無效的資料插入介面中提供，會隱藏獲利的 t 回傳嗎？ 這項假設是正確的只要使用者並未停用 JavaScript，或已採取步驟，避免用戶端驗證邏輯。 簡單地說，應該永遠不會依賴完全在用戶端驗證;有效的伺服器端檢查應該一律執行之前使用的資料。
+> 您可能想知道為什麼事件處理常式困擾檢查`Page.IsValid`屬性。 畢竟，不會回傳會隱藏如果無效的資料插入介面中提供？ 這項假設是正確的只要使用者並未停用 JavaScript，或已採取步驟，避免用戶端驗證邏輯。 簡單地說，應該永遠不會依賴完全在用戶端驗證;有效的伺服器端檢查應該一律執行之前使用的資料。
 
 
 我們在步驟 1 中建立`ProductsDataSource`ObjectDataSource，其`Insert()`方法會對應至`ProductsBLL`類別的`AddProduct`方法。 要插入至新的資料錄`Products`資料表中，我們只叫用的 ObjectDataSource s`Insert()`方法：

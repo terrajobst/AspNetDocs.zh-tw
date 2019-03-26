@@ -8,12 +8,12 @@ ms.date: 10/13/2014
 ms.assetid: 681a9204-462e-4260-9a0b-19f0644d6ad7
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: e7461098f93bf64d6ff0d0e4ecdb64338f96be8b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d819fabf4f367c8f6d0ce857bc248a2b812c2b21
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064055"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422203"
 ---
 <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>ASP.NET Identity 的自訂儲存體提供者概觀
 ====================
@@ -82,7 +82,7 @@ ASP.NET 身分識別是由名為管理員和存放區的類別所組成。 管�
 
 您有很多自由設計自訂存放庫時存放區提供者。 您只需要建立存放庫，針對您想要使用您的應用程式中的功能。 例如，如果您不會在您的應用程式中使用角色，您不需要建立儲存體的角色或使用者角色。 您的技術和現有的基礎結構，可能需要與 ASP.NET 身分識別的預設實作非常不同的結構。 在資料存取層，您可以提供的邏輯來處理您的儲存機制的結構。
 
-MySQL 實作，此實作的資料存放庫，針對 ASP.NET 身分識別 2.0，請參閱 < [MySQLIdentity.sql](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/MySQLIdentity.sql)。
+對於 MySQL ASP.NET Identity 2.0 的資料儲存機制的實作，請參閱[MySQLIdentity.sql](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/MySQLIdentity.sql)。
 
 在資料存取層中，您可以提供將 ASP.NET Identity 的資料儲存至資料來源的邏輯。 您的自訂儲存體提供者的資料存取層可能會包含下列類別來儲存使用者和角色的資訊。
 

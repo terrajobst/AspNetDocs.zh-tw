@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 7ba88418-5d0a-437d-b6dc-7c3816d4ec07
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1ef4242ff3bd1dd86f4d58bd04ba08e8b90fdaa4
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 50fdcc1959b8f3a02ec5bbe0eb7417ffb8a260a3
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037515"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425898"
 ---
 <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>使用 Entity Framework 的 ASP.NET MVC 應用程式中更新相關的資料
 ====================
@@ -131,7 +131,7 @@ Scaffold 的程式碼不是您所要的。 設定資料的下拉式清單中，�
 若要參考`RetryLimitExceededException`需要`using`陳述式，將它加入-停留`RetryLimitExceededException`。 會出現下列訊息：![ 重試例外狀況訊息](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image13.png)
 
 
-選取 **顯示 potentital 修正**，然後**使用 System.Data.Entity.Infrastructure**
+選取 **顯示可能的修正**，然後**使用 System.Data.Entity.Infrastructure**
 
 ![解析重試例外狀況](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image14.png)
 

@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: b7dba543-73c3-4534-a9a0-ba70fa2c6a8a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: d8e837a5d56871d271590859c2e82336111cc87a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d3bc39a37cace003c3fda6691f0dd7f893128b07
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029405"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425245"
 ---
 # <a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 基本概念
 
@@ -127,12 +127,12 @@ MVC 模式可協助您建立不同的應用程式 （輸入的邏輯、 商務�
 2. 按一下 [檔案] 功能表上的 [新增專案]。
 3. 在 [**新的專案**] 對話方塊中選取**ASP.NET MVC 4 Web 應用程式**專案類型，位於**Visual C#** **Web**範本清單。
 4. 變更**名稱**要*MvcMusicStore*。
-5. 設定內的新方案的位置**開始**在這個練習中的來源資料夾中，如範例的資料夾 **[您-HOL-PATH] \Source\Ex01-CreatingMusicStoreProject\Begin**。 按一下 [確定] 。
+5. 設定內的新方案的位置**開始**在這個練習中的來源資料夾中，如範例的資料夾 **[您-HOL-PATH] \Source\Ex01-CreatingMusicStoreProject\Begin**。 按一下 [確定 **Deploying Office Solutions**]。
 
     ![建立新專案 對話方塊](aspnet-mvc-4-fundamentals/_static/image2.png "建立新專案 對話方塊")
 
     *建立新專案 對話方塊*
-6. 在 [**新的 ASP.NET MVC 4 專案**] 對話方塊中選取**基本**範本並確定**檢視引擎**選取**Razor**。 按一下 [確定] 。
+6. 在 [**新的 ASP.NET MVC 4 專案**] 對話方塊中選取**基本**範本並確定**檢視引擎**選取**Razor**。 按一下 [確定 **Deploying Office Solutions**]。
 
     ![新 ASP.NET MVC 4 專案 對話方塊](aspnet-mvc-4-fundamentals/_static/image3.png "新 ASP.NET MVC 4 專案 對話方塊")
 
@@ -389,7 +389,7 @@ ASP.NET MVC 架構包括 Visual Studio 專案範本，可協助您建立支援 M
    (C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample7.cshtml)]
-5. 包含要呈現的每個頁面的主體區段的 div。 取代 <strong>@RenderBody（)</strong>下列 higlighted 程式碼：(C#)
+5. 包含要呈現的每個頁面的主體區段的 div。 取代 <strong>@RenderBody（)</strong>下列醒目標示的程式碼：(C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample8.cshtml)]
 
@@ -800,7 +800,7 @@ A **StoreBrowseViewModel**將這項工作中用來顯示符合所選的內容類
    > 
    > 雖然這種方法的運作方式，它會相依於硬式編碼字串。 如果您稍後重新命名該控制站，您必須手動變更這項指示。 更好的替代做法是使用**HTML 協助程式**方法。 ASP.NET MVC 包含 HTML 協助程式方法，這是適用於這類工作的方法。 **Html.ActionLink()** 協助程式方法可讓您輕鬆地建置 HTML **&lt;&gt;** 連結，並確定具有正確的 URL 路徑 URL 編碼。
    > 
-   > Htlm.ActionLink 有數個多載。 在本練習會使用另一個會採用三個參數：
+   > Html.ActionLink 會有數個多載。 在本練習會使用另一個會採用三個參數：
    > 
    > 1. 連結文字，會顯示的內容類型名稱
    > 2. 控制器動作名稱 (**瀏覽**)
@@ -1017,7 +1017,7 @@ A **StoreBrowseViewModel**將這項工作中用來顯示符合所選的內容類
 1. 移至[Windows Azure 管理入口網站](https://manage.windowsazure.com/)並使用您的訂用帳戶相關聯的 Microsoft 認證登入。
 
     > [!NOTE]
-    > 使用 Windows Azure，您可以免費託管 10 個 ASP.NET 網站，並再隨著流量成長而調整。 您可以註冊申請[此處](http://aka.ms/aspnet-hol-azure)。
+    > 使用 Windows Azure，您可以免費託管 10 個 ASP.NET 網站，並再隨著流量成長而調整。 您可以註冊申請[此處](https://aka.ms/aspnet-hol-azure)。
 
     ![登入 Windows Azure 入口網站](aspnet-mvc-4-fundamentals/_static/image48.png "登入 Windows Azure 入口網站")
 

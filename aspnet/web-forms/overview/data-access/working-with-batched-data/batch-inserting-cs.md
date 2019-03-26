@@ -8,12 +8,12 @@ ms.date: 06/26/2007
 ms.assetid: cf025e08-48fc-4385-b176-8610aa7b5565
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 561acc9b473bac7d39e7ed4d511d8b979657131d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: afcfc92b4e0db8092f83b67c6c227af91bdc0cbb
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035745"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58426041"
 ---
 <a name="batch-inserting-c"></a>批次插入 (C#)
 ====================
@@ -195,7 +195,7 @@ ms.locfileid: "57035745"
 插入介面中的出貨和 [取消] 按鈕控制項中的新增產品，接下來，建立事件處理常式。 按一下任一個按鈕時，我們需要回復成顯示介面。 建立`Click`兩個事件處理常式按鈕控制項，好讓它們呼叫`ReturnToDisplayInterface`，我們會暫時新增的方法。 除了隱藏`InsertingInterface`面板，並顯示`DisplayInterface` 面板中，`ReturnToDisplayInterface`方法需要傳回 Web 控制項為其預先編輯的狀態。 這需要設定 dropdownlist 進行`SelectedIndex`屬性為 0，而且清除`Text`文字方塊控制項的屬性。
 
 > [!NOTE]
-> 請考慮可能會發生什麼事如果我們嘛 t 回復到其預先編輯狀態控制項，然後再回到 顯示介面。 使用者可能按一下處理程序產品出貨] 按鈕，輸入的產品出貨，，然後按一下 [新增出貨的產品。 這會將產品加入，並返回顯示介面中的使用者。 此時使用者可能會想要新增另一個出貨。 按一下 [處理程序產品出貨] 按鈕就會傳回插入的介面，但 DropDownList 選取項目和文字方塊值會仍填入其先前的值。
+> 請考慮可能會發生什麼事如果我們未設為預先編輯的狀態傳回控制項，然後再回到 顯示介面。 使用者可能按一下處理程序產品出貨] 按鈕，輸入的產品出貨，，然後按一下 [新增出貨的產品。 這會將產品加入，並返回顯示介面中的使用者。 此時使用者可能會想要新增另一個出貨。 按一下 [處理程序產品出貨] 按鈕就會傳回插入的介面，但 DropDownList 選取項目和文字方塊值會仍填入其先前的值。
 
 
 [!code-csharp[Main](batch-inserting-cs/samples/sample5.cs)]
@@ -215,7 +215,7 @@ ms.locfileid: "57035745"
 
 ## <a name="step-4-adding-the-products"></a>步驟 4：加入產品
 
-全部保留本教學課程是要新增的產品中的資料庫中儲存的產品出貨按鈕 s`Click`事件處理常式。 這可藉由建立`ProductsDataTable`並新增`ProductsRow`提供的產品名稱的每個執行個體。 一次這些`ProductsRow`已加入，我們將呼叫`ProductsBLL`類別 s`UpdateWithTransaction`方法並傳入`ProductsDataTable`。 請記得，`UpdateWithTransaction`方法，以建立回到[資料庫修改包裝在交易](wrapping-database-modifications-within-a-transaction-cs.md)教學課程中，傳遞`ProductsDataTable`來`ProductsTableAdapter`s`UpdateWithTransaction`方法。 從該處啟動 ADO.NET 交易和 TableAdatper 問題`INSERT`陳述式之資料庫的每個已加入`ProductsRow`DataTable 中。 假設所有產品會都加入不會發生錯誤，就會認可交易，否則它會回復。
+全部保留本教學課程是要新增的產品中的資料庫中儲存的產品出貨按鈕 s`Click`事件處理常式。 這可藉由建立`ProductsDataTable`並新增`ProductsRow`提供的產品名稱的每個執行個體。 一次這些`ProductsRow`已加入，我們將呼叫`ProductsBLL`類別 s`UpdateWithTransaction`方法並傳入`ProductsDataTable`。 請記得，`UpdateWithTransaction`方法，以建立回到[資料庫修改包裝在交易](wrapping-database-modifications-within-a-transaction-cs.md)教學課程中，傳遞`ProductsDataTable`來`ProductsTableAdapter`s`UpdateWithTransaction`方法。 從該處啟動 ADO.NET 交易和 TableAdapter 問題`INSERT`陳述式之資料庫的每個已加入`ProductsRow`DataTable 中。 假設所有產品會都加入不會發生錯誤，就會認可交易，否則它會回復。
 
 出貨按鈕 s 中的新增產品的程式碼`Click`事件處理常式也需要執行一些錯誤檢查。 因為沒有用於插入介面沒有 RequiredFieldValidators，使用者無法輸入價格的產品時省略其名稱。 因為產品的名稱是必要的如果事件發生這種情況我們需要提醒使用者並不會進行插入。 完整`Click`事件處理常式程式碼如下：
 

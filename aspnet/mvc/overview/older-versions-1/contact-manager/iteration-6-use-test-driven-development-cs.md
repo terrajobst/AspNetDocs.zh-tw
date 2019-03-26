@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 013c3c26-7dc3-41d1-8064-f233c86008b5
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3c4358a1b979ab95d8ac25551e21ee95d75e5eae
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d456952bea9a1933247382f4786809b0b2f32034
+ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026195"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58440322"
 ---
 <a name="iteration-6--use-test-driven-development-c"></a>反覆項目 #6 – 使用測試導向開發 (C#)
 ====================
@@ -80,9 +80,9 @@ by [Microsoft](https://github.com/microsoft)
 
 ## <a name="what-gets-tested"></a>接受測試的基準
 
-如我們所討論的上一個反覆項目，您通常不撰寫資料存取邏輯的單元測試或檢視邏輯。 您不針對資料存取邏輯的 t 寫入單元測試，因為存取資料庫的相對比較慢的作業。 因為存取檢視需要加速作業相當緩慢的 web 伺服器，您可以不檢視邏輯的 t 寫入單元測試。 除非可以執行測試一再重複速度非常快，您應該不 t 撰寫的單元測試
+如我們所討論的上一個反覆項目，您通常不撰寫資料存取邏輯的單元測試或檢視邏輯。 您不針對資料存取邏輯的 t 寫入單元測試，因為存取資料庫的相對比較慢的作業。 因為存取檢視需要加速作業相當緩慢的 web 伺服器，您可以不檢視邏輯的 t 寫入單元測試。 除非可以執行測試一再重複速度非常快，您不應該撰寫的單元測試
 
-因為測試為導向的開發由單元測試，則我們一開始專注於撰寫控制站和商務邏輯。 我們避免碰觸的資料庫或檢視表。 我們已贏得 t 修改資料庫或建立我們的檢視，直到本教學課程中的最尾端。 我們開始項目可進行測試。
+因為測試為導向的開發由單元測試，則我們一開始專注於撰寫控制站和商務邏輯。 我們避免碰觸的資料庫或檢視表。 我們不會修改資料庫，或者建立我們的檢視，直到本教學課程中的最尾端。 我們開始項目可進行測試。
 
 ## <a name="creating-user-stories"></a>建立使用者劇本
 
@@ -249,7 +249,7 @@ by [Microsoft](https://github.com/microsoft)
 | 名稱 | nvarchar(50) | False |
 
 
-接下來，我們必須從 [連絡人] 資料表中刪除所有資料 (否則我們共贏得 t 能夠建立連絡人和群組的資料表之間的關聯性)。 請依照下列步驟：
+接下來，我們必須從 [連絡人] 資料表中刪除所有資料 （否則我們無法再建立的連絡人和群組的資料表之間的關聯性）。 請依照下列步驟：
 
 1. 以滑鼠右鍵按一下 [連絡人] 資料表，然後選取功能表選項**顯示資料表資料**。
 2. 刪除所有資料列。
@@ -309,7 +309,7 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample14.cs)]
 
-我們尚未 t 實際實作任何使用連絡人群組相關聯的方法。 目前，EntityContactManagerRepository 類別具有虛設常式方法的每個 IContactManagerRepository 介面中所列的連絡人群組方法。 比方說，ListGroups() 方法目前看起來像這樣：
+我們實際上尚未實作任何使用連絡人群組相關聯的方法。 目前，EntityContactManagerRepository 類別具有虛設常式方法的每個 IContactManagerRepository 介面中所列的連絡人群組方法。 比方說，ListGroups() 方法目前看起來像這樣：
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample15.cs)]
 

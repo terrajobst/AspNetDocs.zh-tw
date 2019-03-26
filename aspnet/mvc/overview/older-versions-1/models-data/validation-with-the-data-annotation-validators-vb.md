@@ -8,12 +8,12 @@ ms.date: 05/29/2009
 ms.assetid: 0d23ff2b-f2ec-434a-be3b-1180beeccba3
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8159693adced7f102f6fe1457d7b103f8596d231
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6bfe11a40bbdf0cd9dfe4d81d9c7436a5adb9491
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025545"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58420682"
 ---
 <a name="validation-with-the-data-annotation-validators-vb"></a>驗證與資料註解驗證器 (VB)
 ====================
@@ -55,7 +55,7 @@ by [Microsoft](https://github.com/microsoft)
 當您使用資料註釋的模型繫結時，您會使用驗證程式屬性，來執行驗證。 System.ComponentModel.DataAnnotations 命名空間包含下列的驗證程式屬性：
 
 - 範圍 – 可讓您驗證是否屬性的值介於指定的值範圍之間。
-- ReqularExpression – 可讓您驗證是否屬性的值符合指定的規則運算式模式。
+- RegularExpression – 可讓您驗證是否屬性的值符合指定的規則運算式模式。
 - 所需 – 可讓您將標記所需的屬性。
 - StringLength – 可讓您指定的字串屬性的最大長度。
 - 驗證-驗證程式的所有屬性的基底類別。

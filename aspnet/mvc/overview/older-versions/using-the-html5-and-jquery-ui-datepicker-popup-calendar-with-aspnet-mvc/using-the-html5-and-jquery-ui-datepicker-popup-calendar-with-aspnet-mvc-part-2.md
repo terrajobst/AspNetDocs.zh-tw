@@ -8,12 +8,12 @@ ms.date: 08/29/2011
 ms.assetid: 21a178de-4c5a-4211-8a9c-74ec576c0f30
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 9b27ccc6ce26e8266947c531d299ba69bbec4fde
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5eff66b701d775a553a51437e540619b4524a58f
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055825"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421553"
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-2"></a>使用 HTML5 與 jQuery UI Datepicker 快顯行事曆搭配 ASP.NET MVC-第 2 部分
 ====================
@@ -24,7 +24,7 @@ ms.locfileid: "57055825"
 
 ## <a name="adding-an-automatic-datetime-template"></a>新增自動的 DateTime 範本
 
-在本教學課程的第一個部分，您會看到如何將屬性加入至模型，以明確指定的格式，以及如何明確地指定用來呈現模型的範本。 例如， [Displayformat.{0](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx)屬性，在下列程式碼明確指定的格式`ReleaseDate`屬性。
+在本教學課程的第一個部分，您會看到如何將屬性加入至模型，以明確指定的格式，以及如何明確地指定用來呈現模型的範本。 例如， [Displayformat.{0](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx)屬性，下列程式碼中的明確指定的格式`ReleaseDate`屬性。
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/samples/sample1.cs)]
 
@@ -104,7 +104,7 @@ ms.locfileid: "57055825"
 
 這次`ReleaseDate`屬性來顯示日期不包含的時間而紅色粗體字。 這說明了具有資料的名稱的範本類型 (在此情況下`DateTime`) 自動用來顯示該類型的所有模型屬性。 重新命名之後*DateTime.cshtml*的檔案*LoudDateTime.cshtml*，ASP.NET 導致找不到範本中的*Views\Movies\DisplayTemplates*資料夾，所以使用*DateTime.cshtml*範本，從 * Views\Movies\Shared\*資料夾。
 
-（範本比對是區分大小寫，因此您無法建立範本檔案名稱具有任何大小寫。 例如， *DATETIME.chstml、 datetime.cshtml*，並*DaTeTiMe.cshtml*所有符合`DateTime`型別。)
+（範本比對是區分大小寫，因此您無法建立範本檔案名稱具有任何大小寫。 例如， *DATETIME.cshtml、 datetime.cshtml*，並*DaTeTiMe.cshtml*所有符合`DateTime`型別。)
 
 若要檢閱： 到目前為止，`ReleaseDate`欄位會顯示使用*Views\Movies\DisplayTemplates\DateTime.cshtml*範本，使用簡短日期格式顯示資料，但否則加入沒有特殊的格式。
 

@@ -8,12 +8,12 @@ ms.date: 03/08/2013
 ms.assetid: db31e909-563a-4516-aadd-62aa210ac7e4
 msc.legacyurl: /single-page-application/overview/templates/breezeangular-template
 msc.type: authoredcontent
-ms.openlocfilehash: a3e8b42cdadf99df6971a278834b1429e129ce72
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a3021f166262ee953b0cbe9ea88762a385925b88
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041185"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423096"
 ---
 <a name="breezeangular-template"></a>Breeze/Angular 範本
 ====================
@@ -30,7 +30,7 @@ Breeze/Angular SPA 範本上是一種變化[KnockoutJS SPA 範本](../introducti
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/NgRunningTodoPage.png)
 
-面向外部，應用程式看起來非常類似 KnockoutJS SPA 範本。 但實際上相當不同。 KnockoutJS 範本使用 Knockout 來資料繫結和資料存取的未經處理的 AJAX。 Breeze/Angular 範本會使用 Angular 資料繫結和幫助您輕鬆進行資料存取。 這些庫啟用額外的功能，包括頁面導覽和歷程記錄。
+面向外部，應用程式看起來非常類似 KnockoutJS SPA 範本。 但實際上相當不同。 KnockoutJS 範本使用 Knockout 來資料繫結和資料存取的未經處理的 AJAX。 Breeze/Angular 範本會使用 Angular 資料繫結和幫助您輕鬆進行資料存取。 這些程式庫可讓額外的功能，包括頁面導覽和歷程記錄。
 
 以下是應用程式的 About 頁面：
 
@@ -89,7 +89,7 @@ Breeze/Angular SPA 範本上是一種變化[KnockoutJS SPA 範本](../introducti
 
 驗證邏輯是由幫助您輕鬆的執行的用戶端。 在伺服器的模型類別上的驗證屬性會傳播至用戶端，並自動執行前用戶端會聯繫伺服器。
 
-檢閱網路流量。 請注意，任何對伺服器的呼叫時沒有幫助您輕鬆偵測到錯誤。 每個有效的變更會導致 POST 要求為"/ api/Todo/SaveChanges"。 幫助您輕鬆組合所做的變更並將其傳送一起做為單一要求 Web API 控制器的`SaveChanges`方法。 這是從 KockoutJS SPA 範本，可讓 PUT、 POST 和 DELETE 要求每個項目的個別不同。
+檢閱網路流量。 請注意，任何對伺服器的呼叫時沒有幫助您輕鬆偵測到錯誤。 每個有效的變更會導致 POST 要求為"/ api/Todo/SaveChanges"。 幫助您輕鬆組合所做的變更並將其傳送一起做為單一要求 Web API 控制器的`SaveChanges`方法。 這是從 KnockoutJS SPA 範本，可讓 PUT、 POST 和 DELETE 要求每個項目的個別不同。
 
 此外，請注意沒有網路流量切換 TodoList 之間，以及有關頁面時。 這是因為查詢限定於本機的幫助您輕鬆快取。
 
@@ -107,7 +107,7 @@ UI 架構會將檢視的 HTML widget 分開的控制器中支援的展示程式�
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/ServerArchitecture.png)
 
-基本架構是 KockoutJS SPA 範本相同。 不過，實作則更簡單：Dto 已刪除，而且大部分的 Entity Framework 細節已委派給 Breeze.NET。
+基本架構是 KnockoutJS SPA 範本相同。 不過，實作則更簡單：Dto 已刪除，而且大部分的 Entity Framework 細節已委派給 Breeze.NET。
 
 ## <a name="next-steps"></a>後續步驟
 

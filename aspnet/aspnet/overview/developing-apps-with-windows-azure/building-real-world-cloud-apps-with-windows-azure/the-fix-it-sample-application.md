@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: de3c8ea29f2c271136f58d8165bb92f4ab28ce83
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a73fac6107be45455465b506a019bcc9a41b1deb
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034215"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425518"
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>附錄：修正範例應用程式 （建置使用 Azure 的真實世界的雲端應用程式）
 ====================
@@ -249,7 +249,7 @@ ASP.NET 會自動防止的多種資訊，請在其中惡意使用者可能會在
    3. 在 [方案總管] 中，以滑鼠右鍵按一下 FixIt 方案，然後選取**屬性**。
    4. 選取 **多個啟始專案**。
    5. 在 **動作**MyFixIt 和 MyFixItCloudService，底下的下拉式清單中，選取**開始**。
-   6. 按一下 [確定] 。
+   6. 按一下 [確定 **Deploying Office Solutions**]。
    7. 按下**F5**執行這兩個專案。
 
       當您執行 MyFixItCloudService 專案時，Visual Studio 會啟動 Azure 計算模擬器。 根據您的防火牆設定，您可能需要允許通過防火牆的模擬器。
@@ -376,13 +376,13 @@ ASP.NET 會自動防止的多種資訊，請在其中惡意使用者可能會在
 
 您可以部署雲端服務之前，您需要更新一些組態檔。
 
-在 MyFixIt.WorkerRoler\app.config，底下`connectionStrings`的值取代`appdb`與實際的連接字串的 SQL database 的連接字串。 您可以從入口網站取得連接字串。 在入口網站中，按一下**SQL Database** - **appdb** - **檢視 SQL Database 連接字串，如 Ado.net、 ODBC、 PHP 和 JDBC**。 複製 ADO.NET 連接字串，並將值貼到 app.config 檔案。 取代"{您\_密碼\_此處}"與您的資料庫密碼。 (假設您使用指令碼來部署 MVC 應用程式，您指定的資料庫密碼`SqlDatabasePassword`指令碼參數。)
+在 MyFixIt.WorkerRole\app.config，底下`connectionStrings`的值取代`appdb`與實際的連接字串的 SQL database 的連接字串。 您可以從入口網站取得連接字串。 在入口網站中，按一下**SQL Database** - **appdb** - **檢視 SQL Database 連接字串，如 Ado.net、 ODBC、 PHP 和 JDBC**。 複製 ADO.NET 連接字串，並將值貼到 app.config 檔案。 取代"{您\_密碼\_此處}"與您的資料庫密碼。 (假設您使用指令碼來部署 MVC 應用程式，您指定的資料庫密碼`SqlDatabasePassword`指令碼參數。)
 
 結果看起來應該如下所示：
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample32.xml)]
 
-在相同的 MyFixIt.WorkerRoler\app.config 檔案中，在`appSettings`，Azure 儲存體帳戶的兩個預留位置值取代。
+在相同的 MyFixIt.WorkerRole\app.config 檔案中，在`appSettings`，Azure 儲存體帳戶的兩個預留位置值取代。
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample33.xml?highlight=2-3)]
 

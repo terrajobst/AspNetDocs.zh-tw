@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 87daa99f-3810-407e-b969-dd28a192959d
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 00304f67138873318b63c5e2ad0cd69aa7449521
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f1f5ebbf5170f205be331b6402951fb429196046
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041665"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423711"
 ---
 <a name="build-restful-apis-with-aspnet-web-api"></a>建置使用 ASP.NET Web API 的 RESTful Api
 ====================
@@ -89,7 +89,7 @@ ms.locfileid: "57041665"
     ![建立新的 ASP.NET MVC 4.0 Web 應用程式專案](build-restful-apis-with-aspnet-web-api/_static/image1.png "建立新的 ASP.NET MVC 4.0 Web 應用程式專案")
 
     *建立新的 ASP.NET MVC 4.0 Web 應用程式專案*
-3. 在 ASP.NET MVC 4 專案的 [類型] 對話方塊中，選取**Web API**專案類型。 按一下 [確定] 。
+3. 在 ASP.NET MVC 4 專案的 [類型] 對話方塊中，選取**Web API**專案類型。 按一下 [確定 **Deploying Office Solutions**]。
 
     ![指定的 Web API 專案型別](build-restful-apis-with-aspnet-web-api/_static/image2.png "指定 Web API 專案類型")
 
@@ -528,7 +528,7 @@ ASP.NET 網站有一個專門用來在 ASP.NET Web API 架構的區域[ [ https:
 1. 移至[Azure 管理入口網站](https://manage.windowsazure.com/)並使用您的訂用帳戶相關聯的 Microsoft 認證登入。
 
     > [!NOTE]
-    > 使用 Azure，您可以免費託管 10 個 ASP.NET 網站，並再隨著流量成長而調整。 您可以註冊申請[此處](http://aka.ms/aspnet-hol-azure)。
+    > 使用 Azure，您可以免費託管 10 個 ASP.NET 網站，並再隨著流量成長而調整。 您可以註冊申請[此處](https://aka.ms/aspnet-hol-azure)。
 
     ![登入 Windows Azure 入口網站](build-restful-apis-with-aspnet-web-api/_static/image39.png "登入 Windows Azure 入口網站")
 

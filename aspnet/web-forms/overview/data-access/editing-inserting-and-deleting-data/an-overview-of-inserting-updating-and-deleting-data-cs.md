@@ -8,12 +8,12 @@ ms.date: 07/17/2006
 ms.assetid: b651dc58-93c7-4f83-a74e-3b99f6d60848
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 82f1127b01c211a2af91623d4df7ca10dcad6d8a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6c8a07d7b0819df4deb566644fe36bc504d2a2ca
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041075"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424561"
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-c"></a>插入、 更新和刪除資料 (C#) 的概觀
 ====================
@@ -179,7 +179,7 @@ GridView 控制項提供資料列層級編輯和刪除的內建支援。 設定 
 若要指派的值`DeleteParameters`的值，`DataKeyNames`按下的 [刪除] 按鈕的資料列的欄位。 因此很重要的 GridView`DataKeyNames`正確設定屬性。 如果遺失`DeleteParameters`會指派`null`值在步驟 1，又不會導致任何已刪除的步驟 2 中的記錄。
 
 > [!NOTE]
-> `DataKeys`集合會儲存在 GridView 的控制項狀態，表示`DataKeys`值將會記住跨越回傳，即使已停用的 GridView 的檢視狀態。 不過，它是非常重要的檢視狀態的支援編輯或刪除 （預設行為） 的 Gridview 會維持啟用。 如果您將設定 GridView s`EnableViewState`屬性設`false`、 編輯和刪除行為將會正常運作的單一使用者，但如果沒有刪除資料的並行使用者，有可能發生這些並行的使用者可能不小心刪除或編輯記錄他們嘛 t 想。 請參閱我的部落格項目[警告：並行處理問題與 ASP.NET 2.0 Gridview/DetailsView/FormViews 該支援編輯和/或刪除和的檢視狀態已停用](http://scottonwriting.net/sowblog/archive/2006/10/03/163215.aspx)，如需詳細資訊。
+> `DataKeys`集合會儲存在 GridView 的控制項狀態，表示`DataKeys`值將會記住跨越回傳，即使已停用的 GridView 的檢視狀態。 不過，它是非常重要的檢視狀態的支援編輯或刪除 （預設行為） 的 Gridview 會維持啟用。 如果您將設定 GridView s`EnableViewState`屬性設`false`、 編輯和刪除行為將會正常運作的單一使用者，但如果沒有刪除資料的並行使用者，有可能發生這些並行的使用者可能不小心刪除或編輯它們無意的記錄。 請參閱我的部落格項目[警告：並行處理問題與 ASP.NET 2.0 Gridview/DetailsView/FormViews 該支援編輯和/或刪除和的檢視狀態已停用](http://scottonwriting.net/sowblog/archive/2006/10/03/163215.aspx)，如需詳細資訊。
 
 
 這個相同的警告也適用於 DetailsViews 和 FormViews。

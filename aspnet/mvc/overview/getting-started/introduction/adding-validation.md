@@ -8,12 +8,12 @@ ms.date: 01/06/2019
 ms.assetid: 9f35ca15-e216-4db6-9ebf-24380b0f31b4
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 6831259ce19c3747c179d6fc1b7e2095051a603b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f127f6a7d8a1f949432cc8f6f784dd7ee85ec207
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026025"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422991"
 ---
 <a name="adding-validation"></a>新增驗證
 ====================
@@ -49,7 +49,7 @@ ASP.NET MVC 和 Entity Framework Code First 所提供的驗證支援就是執行
 
 [!code-console[Main](adding-validation/samples/sample2.cmd)]
 
-此命令完成時，Visual Studio 會開啟可定義新的類別檔案`DbMIgration`衍生類別指定名稱 (`DataAnnotations`)，然後在`Up`方法，您可以看到更新的結構描述條件約束的程式碼：
+此命令完成時，Visual Studio 會開啟可定義新的類別檔案`DbMigration`衍生類別指定名稱 (`DataAnnotations`)，然後在`Up`方法，您可以看到更新的結構描述條件約束的程式碼：
 
 [!code-csharp[Main](adding-validation/samples/sample3.cs)]
 

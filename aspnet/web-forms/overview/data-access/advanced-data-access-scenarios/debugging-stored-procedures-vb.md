@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: 9ed8ccb5-5f31-4eb4-976d-cabf4b45ca09
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5d951fab4fea59226e5d34bbf468377d436df944
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 106f7498a70339556d0662a986d71a01a21074ab
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046195"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424530"
 ---
 <a name="debugging-stored-procedures-vb"></a>針對預存程序進行偵錯 (VB)
 ====================
@@ -48,7 +48,7 @@ SQL Server 2005 提供 T-SQL 和 managed 的資料庫物件的偵錯支援。 �
 
 Visual Studio 可以偵錯在本機和遠端 SQL Server 執行個體上的預存程序。 本機的 SQL Server 執行個體是安裝在與 Visual Studio 相同的電腦上。 如果您使用 SQL Server 資料庫並不在您的開發電腦上，它就會視為遠端執行個體。 這些教學課程中我們使用本機 SQL Server 執行個體。 偵錯遠端的 SQL server 執行個體上的預存程序需要比當偵錯在本機執行個體上的預存程序的其他組態步驟。
 
-如果您使用本機的 SQL Server 執行個體，您就可以開始進行步驟 1，並逐步完成本教學課程結尾。 如果您使用遠端 SQL Server 執行個體，不過，您將必須先確定當您偵錯時都會記錄到您的開發電腦的遠端執行個體上擁有 SQL Server 登入的 Windows 使用者帳戶。 Moveover，此資料庫登入和用來從執行的 ASP.NET 應用程式連接到資料庫的資料庫登入必須是成員`sysadmin`角色。 如需有關設定偵錯遠端執行個體的 [Visual Studio 和 SQL Server 的這個教學課程結尾處，在遠端執行個體] 區段中看到 T-SQL 偵錯資料庫物件。
+如果您使用本機的 SQL Server 執行個體，您就可以開始進行步驟 1，並逐步完成本教學課程結尾。 如果您使用遠端 SQL Server 執行個體，不過，您將必須先確定當您偵錯時都會記錄到您的開發電腦的遠端執行個體上擁有 SQL Server 登入的 Windows 使用者帳戶。 此外，此資料庫登入和資料庫登入用來連接到資料庫中，從執行的 ASP.NET 應用程式都必須是成員`sysadmin`角色。 如需有關設定偵錯遠端執行個體的 [Visual Studio 和 SQL Server 的這個教學課程結尾處，在遠端執行個體] 區段中看到 T-SQL 偵錯資料庫物件。
 
 最後，了解偵錯 T-SQL 的資料庫物件的支援不做為偵錯.NET 應用程式的支援豐富的功能。 例如，中斷點條件和篩選不支援，只可以使用偵錯視窗的子集，您無法使用 [編輯後繼續]、 即時運算視窗呈現沒有什麼用處，等等。 請參閱[偵錯工具命令和功能限制](https://msdn.microsoft.com/library/ms165035(VS.80).aspx)如需詳細資訊。
 

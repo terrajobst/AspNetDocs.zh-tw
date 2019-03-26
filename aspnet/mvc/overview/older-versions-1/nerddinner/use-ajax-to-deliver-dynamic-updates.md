@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 18700815-8e6c-4489-91af-7ea9dab6529e
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-deliver-dynamic-updates
 msc.type: authoredcontent
-ms.openlocfilehash: e902881d3dab6a902cb747a197a32f317d199723
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 71e566523d658eb8198453f354a12e63a4c38495
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025985"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421033"
 ---
 <a name="use-ajax-to-deliver-dynamic-updates"></a>使用 AJAX 傳送動態更新
 ====================
@@ -78,7 +78,7 @@ by [Microsoft](https://github.com/microsoft)
 
 第一個程式庫參考的核心 ASP.NET AJAX 用戶端指令碼程式庫。 這個檔案是大約 24 k （壓縮） 的大小，且包含核心用戶端 AJAX 功能。 第二個程式庫包含整合與 ASP.NET MVC 的內建 AJAX helper 方法 （我們將使用） 的公用程式函式。
 
-我們可以接著更新檢視範本程式碼，我們稍早新增以便而不是輸出的 「 您未註冊此事件 」 的訊息，我們改為呈現連結的推入執行叫用我們的 RSVP 控制站上我們 RSVPForEvent 動作方法的 AJAX 呼叫和 RSVPs 使用者：
+我們可以接著更新檢視範本程式碼，我們稍早新增，因此不要輸出 「 您未註冊此事件 」 的訊息，我們改為呈現連結的推入執行叫用我們的 RSVP 控制站上我們 RSVPForEvent 動作方法的 AJAX 呼叫和 RSVPs 使用者：
 
 [!code-aspx[Main](use-ajax-to-deliver-dynamic-updates/samples/sample6.aspx)]
 

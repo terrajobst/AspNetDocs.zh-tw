@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 400db427-27af-4f2f-abf0-5486d5e024b5
 msc.legacyurl: /signalr/overview/deployment/tutorial-signalr-self-host
 msc.type: authoredcontent
-ms.openlocfilehash: 6a6359d59a4b715e13fe2bbcef57da6d6d6294b5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 194f72ce40067e177a23b1eb70bd07ceb2225a04
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039025"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425557"
 ---
 <a name="tutorial-signalr-self-host"></a>教學課程：SignalR 自我裝載
 ====================
@@ -58,7 +58,7 @@ SignalR 伺服器通常裝載在 IIS 中，ASP.NET 應用程式中，但它也�
 
 - 其中 IIS 不提供或需要的資源，例如現有的伺服器陣列，而不使用 IIS 的環境。
 - 若要避免需要 IIS 的效能負荷。
-- SignalR 功能是可以加入至執行 Windows 服務、 Azure 背景工作角色或其他處理序中的現有應用程式。
+- SignalR 功能是可以加入至現有的應用程式在 Windows 服務、 Azure 背景工作角色或其他處理序中執行。
 
 如果正在開發的解決方案中做為自我裝載基於效能考量，建議也是測試應用程式裝載在 IIS 中決定的效能優勢。
 

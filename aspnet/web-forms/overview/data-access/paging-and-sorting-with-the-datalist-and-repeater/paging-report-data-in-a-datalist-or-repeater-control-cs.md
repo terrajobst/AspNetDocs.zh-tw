@@ -8,12 +8,12 @@ ms.date: 11/13/2006
 ms.assetid: e8e0809b-25c4-4c3b-8d12-9a17048148ae
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4212b7bff41d76eaef18d638cf28441b50061159
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bd66affc6ceab864ca753287f484a37c7671f20f
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024625"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423048"
 ---
 <a name="paging-report-data-in-a-datalist-or-repeater-control-c"></a>DataList 或重複項控制項中的分頁報表資料 (C#)
 ====================
@@ -127,7 +127,7 @@ DataList 或 Repeater 控制項中實作預設的分頁功能，我們可以使�
 
 頁面索引和頁面大小值必須記住在回傳之間。 它們可以儲存在檢視狀態、 保存至查詢字串，儲存在工作階段變數，或記住使用一些其他技術。 在本教學課程中，我們將使用查詢字串，好處是允許的資料會設為書籤的特定頁面。
 
-特別是，使用 查詢字串欄位 pageIndex 和的 pageSize`pageIndex`和`pageSize`參數，分別 （請參閱 圖 7）。 為贏得 t 的查詢字串值時必須存在使用者第一次瀏覽此頁面，請花一點時間設定這些參數的預設值。 針對`pageIndex`，設定的預設值為 0 （這會顯示資料的第一頁） 和`pageSize`的預設值為 4。
+特別是，使用 查詢字串欄位 pageIndex 和的 pageSize`pageIndex`和`pageSize`參數，分別 （請參閱 圖 7）。 因為查詢字串值將不會出現在使用者第一次造訪此頁面時，請花一點時間設定這些參數的預設值。 針對`pageIndex`，設定的預設值為 0 （這會顯示資料的第一頁） 和`pageSize`的預設值為 4。
 
 
 [![PageIndex 和 pageSize 參數作為來源的查詢字串](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image14.png)](paging-report-data-in-a-datalist-or-repeater-control-cs/_static/image13.png)

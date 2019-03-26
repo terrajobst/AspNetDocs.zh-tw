@@ -8,12 +8,12 @@ ms.date: 03/12/2012
 ms.assetid: cbebeb37-2594-41f2-b71a-f4f26520d512
 msc.legacyurl: /web-api/overview/error-handling/exception-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 62e6187cd82252e7d30f21e03cc4d08418fa39ee
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e6a04c490a1f7e3b2a450414b4be6f02804b9681
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027195"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422593"
 ---
 <a name="exception-handling-in-aspnet-web-api"></a>ASP.NET Web API 中處理的例外狀況
 ====================
@@ -73,7 +73,7 @@ ms.locfileid: "57027195"
 
 [!code-csharp[Main](exception-handling/samples/sample5.cs)]
 
-若要將篩選全域套用至所有的 Web API 控制器，將新增的篩選，以執行個體**GlobalConfiguration.Configuration.Filters**集合。 在此集合中的例外狀況篩選會套用至任何 Web API 控制器動作。
+若要將篩選全域套用至所有的 Web API 控制器，將新增的篩選，以執行個體**GlobalConfiguration.Configuration.Filters**集合。 在此集合中的例外狀況篩選條件套用至任何 Web API 控制器動作。
 
 [!code-csharp[Main](exception-handling/samples/sample6.cs)]
 

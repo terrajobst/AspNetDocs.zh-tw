@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 2469f7ea-1489-42fb-a8e1-414c90141ce9
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-at-the-same-time-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 20baa40c34dd8c8907b940764987441bc7a91da9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 92191e87ed78d8e549d14412ff4a5a9d8eb4afbb
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041375"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422452"
 ---
 <a name="executing-several-animations-at-the-same-time-vb"></a>執行數個動畫在相同的時間 (VB)
 ====================
@@ -52,7 +52,7 @@ ms.locfileid: "57041375"
 
 [!code-aspx[Main](executing-several-animations-at-the-same-time-vb/samples/sample5.aspx)]
 
-和確實： 當您執行此指令碼，面板會顯示，然後調整大小 (大於 threefolding 其寬度和 halfing 高度) 和淡出，在相同的時間。
+和確實： 當您執行此指令碼，面板會顯示，然後調整大小 （多個增加三倍其寬度和減半來計算其高度） 和淡出，在相同的時間。
 
 
 [![面板淡出，調整大小 （包括其內容，因為瀏覽器的轉譯引擎）](executing-several-animations-at-the-same-time-vb/_static/image2.png)](executing-several-animations-at-the-same-time-vb/_static/image1.png)

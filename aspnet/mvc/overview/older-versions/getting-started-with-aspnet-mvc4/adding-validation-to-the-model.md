@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 5d9a2999-fcc4-4c45-a018-271fddf74a3b
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 5819d789f31b9452d40ae3aa7f821f101ae126ce
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c0cfd4f900c88f953cf7004a987bc267a1e1b4a2
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049475"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422029"
 ---
 <a name="adding-validation-to-the-model"></a>將驗證新增至模型
 ====================
@@ -55,7 +55,7 @@ ASP.NET MVC 和 Entity Framework Code First 所提供的驗證支援就是執行
 
 [!code-console[Main](adding-validation-to-the-model/samples/sample3.cmd)]
 
-此命令完成時，Visual Studio 會開啟可定義新的類別檔案`DbMIgration`衍生類別指定名稱 (*AddDataAnnotationsMig*)，然後在`Up`方法，您可以看到更新的程式碼結構描述條件約束。 `Title`並`Genre`欄位不再是可為 null （也就是您必須輸入的值） 和`Rating`欄位的最大長度為 5。
+此命令完成時，Visual Studio 會開啟可定義新的類別檔案`DbMigration`衍生類別指定名稱 (*AddDataAnnotationsMig*)，然後在`Up`方法，您可以看到更新的程式碼結構描述條件約束。 `Title`並`Genre`欄位不再是可為 null （也就是您必須輸入的值） 和`Rating`欄位的最大長度為 5。
 
 驗證屬性會指定您想要強制執行模型屬性套用的行為。 `Required`屬性會指出屬性必須有值; 在此範例中，電影必須具有值`Title`， `ReleaseDate`， `Genre`，和`Price`屬性才會生效。 `Range` 屬性會將值限制在指定的範圍內。 `StringLength` 屬性可讓您設定字串屬性的最大長度，並選擇性設定其最小長度。 內建類型 (例如`decimal, int, float, DateTime`) 預設為必要項，而且不需要`Required`屬性。
 

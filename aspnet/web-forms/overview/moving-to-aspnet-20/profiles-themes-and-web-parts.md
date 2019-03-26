@@ -8,12 +8,12 @@ ms.date: 02/20/2005
 ms.assetid: 92df4051-77c6-492c-bd34-23d24189cea4
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 msc.type: authoredcontent
-ms.openlocfilehash: 98559c2a378c72bc5664faafe5436753050b574f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 010adaba61b15ca4421c2d3a4a7590becb53897b
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062765"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422841"
 ---
 <a name="profiles-themes-and-web-parts"></a>設定檔、佈景主題與 Web 組件
 ====================
@@ -222,7 +222,7 @@ ASP.NET 設定檔使用的提供者模型。 預設的提供者會將資訊儲�
 3. 從檔案的清單中選擇 Web 組態檔，並按一下 新增。
 4. 以滑鼠右鍵按一下方案總管] 中的專案，然後選擇 [加入新項目。
 5. 選擇面板檔案，然後按一下 [新增]。
-6. 按一下 [是]，當系統詢問過您要將應用程式檔案放\_佈景主題資料夾。
+6. 按一下 [是]，當系統詢問您想要將應用程式檔案放\_佈景主題資料夾。
 7. 以滑鼠右鍵按一下應用程式內的 SkinFile 資料夾\_方案總管] 中的佈景主題資料夾，然後選擇 [加入新項目。
 8. 從檔案的清單中選擇樣式表，並按一下 [新增]。 您現在擁有的所有檔案必須實作新的佈景主題。 不過，Visual Studio 具有名為您的佈景主題資料夾 SkinFile。 以滑鼠右鍵按一下該資料夾，並將名稱變更為 CoolTheme。
 9. 開啟 SkinFile.skin 檔案並新增下列程式碼檔案的結尾： 

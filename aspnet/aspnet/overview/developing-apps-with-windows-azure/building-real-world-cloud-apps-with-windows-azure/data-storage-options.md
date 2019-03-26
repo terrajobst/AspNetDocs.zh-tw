@@ -8,15 +8,15 @@ ms.date: 06/12/2014
 ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
-ms.openlocfilehash: 17e11c33d6bf2a75e99e3bda4d6ab89c5b1631f9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9969a68a3e1aa043845fb5affd6d3b73dec4136d
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042855"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425388"
 ---
-<a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>資料儲存體選項 （使用 Azure 建置真實世界的雲端應用程式）
-====================
+# <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>資料儲存體選項 （使用 Azure 建置真實世界的雲端應用程式）
+
 藉由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
 
 [下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
@@ -62,13 +62,13 @@ ms.locfileid: "57042855"
 
 在 Azure 上[HDInsight](https://azure.microsoft.com/services/hdinsight/)可讓您處理、 分析及深入了解新的巨量資料使用 Hadoop 的強大功能。 例如，您可以使用它來分析 web 伺服器記錄：
 
-- 啟用 web 伺服器記錄，以您的儲存體帳戶。 這會設定 Azure 將記錄檔寫入 Blob 服務，為您的應用程式的每個 HTTP 要求。 Blob 服務基本上是雲端檔案儲存體，並完美整合 HDInsight 與。 
+- 啟用 web 伺服器記錄，以您的儲存體帳戶。 這會設定 Azure 將記錄檔寫入 Blob 服務，為您的應用程式的每個 HTTP 要求。 Blob 服務基本上是雲端檔案儲存體，並完美整合 HDInsight 與。
 
     ![Blob 儲存體的記錄檔](data-storage-options/_static/image2.png)
-- 當應用程式變流量時，網頁伺服器 IIS 記錄檔會寫入 Blob 儲存體。 
+- 當應用程式變流量時，網頁伺服器 IIS 記錄檔會寫入 Blob 儲存體。
 
     ![Web 伺服器記錄](data-storage-options/_static/image3.png)
-- 在入口網站中，按一下**的新** - **Data Services** - **HDInsight** - **快速建立**，指定 HDInsight 叢集名稱、 叢集大小 （HDInsight 叢集資料節點的數目），和使用者名稱和密碼適用於 HDInsight 叢集。 
+- 在入口網站中，按一下**的新** - **Data Services** - **HDInsight** - **快速建立**，指定 HDInsight 叢集名稱、 叢集大小 （HDInsight 叢集資料節點的數目），和使用者名稱和密碼適用於 HDInsight 叢集。
 
     ![HDInsight](data-storage-options/_static/image4.png)
 
@@ -175,7 +175,7 @@ Azure 讓 IaaS 資料儲存體選項一樣容易使用，但 PaaS 供應項目�
 
 ![建立新的 SQL Database](data-storage-options/_static/image10.png)
 
-因此 Azure 會在幾個秒什麼可能要花一天或每週或更長時間才能完成內部部署環境中。 和您輕鬆地自動建立資料庫，在指令碼或使用管理 API，因為您可以動態地相應放大藉由將您的資料分散到多個 < o: p>< > 資料庫，只要您的應用程式的設計。 < /o: p >
+因此 Azure 會在幾個秒什麼可能要花一天或每週或更長時間才能完成內部部署環境中。 因為您很容易會自動建立資料庫，在指令碼或使用管理 API，您可以動態地相應放大藉由將您的資料分散到多個資料庫，只要您的應用程式已針對該程式化。
 
 這是我們的平台為-即服務模型的範例。 您不必管理伺服器，我們執行它。 您不需要擔心備份，我們執行它。 在高可用性 – 執行資料庫中的資料會自動複寫到三部伺服器。 如果機器故障了，我們會自動容錯移轉，您會遺失任何資料。 伺服器會定期修補，您不需要擔心。
 
@@ -267,7 +267,7 @@ SQL Server 和 Azure SQL Database 的好處是相同的核心程式設計模型�
 
 選擇的資料庫平台：
 
-- [高度可調整的解決方案的資料存取權：使用 SQL、 NoSQL 和 Polyglot Persistence](http://aka.ms/dag-doc)。 電子書由 Microsoft Patterns and Practices 會深入了解不同種類的資料會儲存適用於雲端應用程式。
+- [高度可調整的解決方案的資料存取權：使用 SQL、 NoSQL 和 Polyglot Persistence](https://aka.ms/dag-doc)。 電子書由 Microsoft Patterns and Practices 會深入了解不同種類的資料會儲存適用於雲端應用程式。
 - [Microsoft Patterns and Practices-Azure 指引](https://msdn.microsoft.com/library/ff898430.aspx)。 請參閱 < 資料一致性入門、 資料複寫和同步處理的指引，索引資料表模式，具體化檢視模式。
 - [基底：Acid 替代](http://queue.acm.org/detail.cfm?id=1394128)。 發行項的相關資料的一致性和延展性之間的權衡取捨。
 - [七週中的七個資料庫：最新的資料庫和 NoSQL 運動指南](https://www.amazon.com/Seven-Databases-Weeks-Modern-Movement/dp/1934356921)。 本書由 Eric 雷德蒙和 Jim R Wilson。 強烈建議引進您自己的立即可用的資料儲存體平台範圍。

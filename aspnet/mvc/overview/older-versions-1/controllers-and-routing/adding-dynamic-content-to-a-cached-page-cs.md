@@ -8,12 +8,12 @@ ms.date: 01/27/2009
 ms.assetid: 2ddd4407-d143-4a94-877c-21771bfb97a6
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a03f943b936c68215d65dca92e62431642226993
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 26e40ff9659a4b8552b2a087c7c948c9f1f1554c
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043105"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424166"
 ---
 <a name="adding-dynamic-content-to-a-cached-page-c"></a>將動態內容新增至快取的頁面 (C#)
 ====================
@@ -72,7 +72,7 @@ RenderNews 方法會傳遞至 WriteSubstitution() 方法。 請注意，不呼�
 
 列表 4 包含靜態類別會公開兩種方法：RenderBanner() 和 RenderBannerInternal()。 RenderBanner() 方法代表實際的 helper 方法。 此方法會擴充標準的 ASP.NET MVC HtmlHelper 類別，可讓您檢視就像任何其他的 helper 方法中呼叫 Html.RenderBanner()。
 
-RenderBanner() 方法呼叫將 RenderBannerInternal() 方法傳遞至 WriteSubsitution() 方法 HttpResponse.WriteSubstitution() 方法。
+RenderBanner() 方法呼叫將 RenderBannerInternal() 方法傳遞至 WriteSubstitution() 方法 HttpResponse.WriteSubstitution() 方法。
 
 RenderBannerInternal() 方法是私用方法。 這個方法不會公開為 helper 方法。 隨機 RenderBannerInternal() 方法會從三個橫幅廣告映像的清單傳回一個橫幅廣告影像。
 

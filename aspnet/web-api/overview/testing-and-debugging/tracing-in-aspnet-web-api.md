@@ -8,12 +8,12 @@ ms.date: 02/25/2014
 ms.assetid: 66a837e9-600b-4b72-97a9-19804231c64a
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: e0d525e497cf41a79820417a9c832fa6b5cd7f8a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 59bce8c511167e8ba8a8db6f1842e352c90f3039
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031535"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424894"
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的追蹤
 ====================
@@ -89,7 +89,7 @@ ms.locfileid: "57031535"
 
 本節說明如何撰寫自訂的追蹤寫入器，Web api。
 
-Web API 中的較通用的追蹤基礎結構之上建置 Microsoft.AspNet.WebApi.Tracing 套件。 而不是使用 Microsoft.AspNet.WebApi.Tracing，您也可以插入其他追蹤/除掉，然後程式庫，例如[NLog](http://nlog-project.org/)或是[log4net](http://logging.apache.org/log4net/)。
+Web API 中的較通用的追蹤基礎結構之上建置 Microsoft.AspNet.WebApi.Tracing 套件。 而不是使用 Microsoft.AspNet.WebApi.Tracing，您也可以插入其他追蹤/記錄程式庫，例如[NLog](http://nlog-project.org/)或是[log4net](http://logging.apache.org/log4net/)。
 
 若要收集追蹤，實作**ITraceWriter**介面。 以下是簡單的範例：
 
@@ -113,7 +113,7 @@ Web API 中的較通用的追蹤基礎結構之上建置 Microsoft.AspNet.WebApi
 
 在 Web API 中的追蹤會使用*外觀*模式︰當啟用追蹤時，Web API 會包裝要求管線，以執行追蹤呼叫之類別的各個的部分。
 
-例如，當選取控制站，管線會使用**IHttpControllerSelector**介面。 啟用追蹤，pipleline 插入類別可實作**IHttpControllerSelector**但呼叫傳遞給實際的實作：
+例如，當選取控制站，管線會使用**IHttpControllerSelector**介面。 啟用追蹤，管線插入類別可實作**IHttpControllerSelector**但呼叫傳遞給實際的實作：
 
 ![Web API 追蹤會使用外觀樣式。](tracing-in-aspnet-web-api/_static/image8.png)
 

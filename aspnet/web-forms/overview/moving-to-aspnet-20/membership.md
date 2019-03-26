@@ -8,12 +8,12 @@ ms.date: 02/20/2005
 ms.assetid: f2339485-5d78-4c5e-8c0a-dc9b8a315345
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/membership
 msc.type: authoredcontent
-ms.openlocfilehash: d7fa3cb61608ea089141931cb9362359cdc92619
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d4fab68555eeb27420e60a28aca2f2c0fb9a73e3
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031465"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421514"
 ---
 <a name="membership"></a>成員資格
 ====================
@@ -42,7 +42,7 @@ ASP.NET 成員資格的表單驗證模型的成功組建從 ASP.NET 1.x。 ASP.N
 
 ## <a name="creating-the-membership-database"></a>建立成員資格資料庫
 
-如果您正在使用 SQL Server 7.0 或更新版本為您的成員資格儲存區中，您可以使用 aspnet\_regsql 公用程式 （可輕易從 Visual Studio.NET 2005年命令提示字元） 來設定您的資料庫。 Aspnet\_regsql 公用程式可用的命令提示字元工具或透過經由 GUI 精靈。 精靈的方法是最簡單的方式來設定您的資料庫。 若要存取精靈，只要執行下列命令：
+如果您使用 SQL Server 7.0 或更新版本為您的成員資格儲存區中，您可以使用 aspnet\_regsql 公用程式 （可輕易從 Visual Studio.NET 2005年命令提示字元） 來設定您的資料庫。 Aspnet\_regsql 公用程式可用的命令提示字元工具或透過經由 GUI 精靈。 精靈的方法是最簡單的方式來設定您的資料庫。 若要存取精靈，只要執行下列命令：
 
 `aspnet_regsql W`
 
@@ -107,7 +107,7 @@ ASP.NET 2.0 中提供下列登入控制項︰
 
 ## <a name="login-control"></a>Login 控制項
 
-Login 控制項提供有人登入您的成員資格系統的介面。 它會提供您使用者名稱和密碼 textboxt] 和 [登入按鈕。 許多其他常見功能，例如連結的人註冊尚未這樣做，核取方塊，可讓使用者自動登入在後續造訪時，密碼提示，等等的連結。Login 控制項的所有功能都都可透過控制項的屬性自訂項目。
+Login 控制項提供有人登入您的成員資格系統的介面。 它為您提供使用者名稱和密碼的文字方塊和 [登入] 按鈕。 許多其他常見功能，例如連結的人註冊尚未這樣做，核取方塊，可讓使用者自動登入在後續造訪時，密碼提示，等等的連結。Login 控制項的所有功能都都可透過控制項的屬性自訂項目。
 
 在 ASP.NET 1.x 中，開發人員必須撰寫一大堆程式碼來執行查詢，使用表單驗證時。 使用 ASP.NET 2.0 成員資格，也可以驗證使用者，而不需要撰寫任何程式碼完全。 ASP.NET 會自動為您上進行使用者執行的查閱。 (如果您使用 Login 控制項，而不使用 ASP.NET 成員資格，您可以使用**OnAuthenticate**方法以驗證使用者。)
 

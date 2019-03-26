@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 187ee9cd-bc70-479b-bfed-f568b8da96eb
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 8671ae8e9408e6f05135fa27d56480477521c4ba
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 45aab00140f63cd84ea1b7ba22f655b0e4373f97
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056775"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423074"
 ---
 # <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>ASP.NET MVC 4 協助程式、表單和驗證
 
@@ -710,7 +710,7 @@ StoreManager 索引頁面有一項潛在的問題：標題和演出者名稱的�
     > 
     > 此外，您可以將 ClientValidationEnabled 屬性指派至任何控制器，將自訂行為。
 2. 開啟**Create.cshtml**在**Views\StoreManager**。
-3. 下列指令碼檔案中，請確定**jquery.validate**並**jquery.validate.unobtrusive**中檢視透過, 參考&quot; **~/bundles/jqueryval**&quot;套件組合。
+3. 下列指令碼檔案中，請確定**jquery.validate**並**jquery.validate.unobtrusive**，透過檢視所參考&quot; **~/bundles/jqueryval**&quot;套件組合。
 
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample22.cshtml)]
 

@@ -8,21 +8,20 @@ ms.date: 04/09/2015
 ms.assetid: 0f78aec2-f509-46fa-b20f-d5208425d8ec
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-recommended-resources
 msc.type: authoredcontent
-ms.openlocfilehash: 1d5b44ccce423dda8ac77029e361a531b6c91b26
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 14a8ec16fe741d87a23bfa45046386a2c08d2f27
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056345"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424335"
 ---
-<a name="aspnet-identity-recommended-resources"></a>ASP.NET Identity 建議資源
-====================
+# <a name="aspnet-identity-recommended-resources"></a>ASP.NET Identity 建議資源
+
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本主題提供有關如何使用 ASP.NET Identity 的文件資源的連結。
-> 
+>
 > 如果您知道很棒的部落格文章[stackoverflow](http://stackoverflow.com)執行緒或任何其他會很有用的連結[傳送一封電子郵件給我們](mailto:aspnetue@microsoft.com?subject=Identity recommended resources)與連結，或者只是離開此頁面底部的訊息。
-
 
 - [開始使用 ASP.NET Identity](#gettingstarted)
 - [新精選必須閱讀的文章](#feat)
@@ -35,6 +34,7 @@ ms.locfileid: "57056345"
 - [問： &amp; （問題/答案）](#qand)
 
 <a id="gettingstarted"></a>
+
 ## <a name="getting-started-with-aspnet-identity"></a>開始使用 ASP.NET Identity
 
 - [使用 Facebook、 Twitter、 LinkedIn 和 Google OAuth2 登入的 MVC 5 應用程式](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)本教學課程會示範如何撰寫 ASP.NET MVC 5 應用程式使用 Facebook 和 Google OAuth 2 授權。 它也會示範如何新增額外的資料來識別資料庫。
@@ -44,6 +44,7 @@ ms.locfileid: "57056345"
 - [使用 SMS 和電子郵件雙因素驗證的 ASP.NET MVC 5 應用程式](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
 
 <a id="feat"></a>
+
 ## <a name="new-featured-must-read-articles"></a>新精選必須閱讀的文章
 
 - [逐步解說：使用 Microsoft 帳戶驗證的 ASP.NET MVC 身分識別](http://www.benday.com/2014/02/25/walkthrough-asp-net-mvc-identity-with-microsoft-account-authentication/)由[Benjamin Day](http://www.benday.com/about/)
@@ -53,6 +54,7 @@ ms.locfileid: "57056345"
 - [ASP.NET Identity 2.0:自訂的使用者和角色](http://typecastexception.com/post/2014/06/22/ASPNET-Identity-20-Customizing-Users-and-Roles.aspx)
 
 <a id="adv"></a>
+
 ## <a name="intermediate-aspnet-identity"></a>中繼 ASP.NET 身分識別
 
 - [帳戶確認和密碼復原，使用 ASP.NET Identity](../features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
@@ -64,6 +66,7 @@ ms.locfileid: "57056345"
 - [ASP.NET 身分識別 – 使用者鎖定](http://tech.trailmax.info/2014/06/asp-net-identity-user-lockout/)
 
 <a id="samp"></a>
+
 ## <a name="where-to-ask-questions-request-features-report-a-bug-and-nightly-builds"></a>如何提出問題，提出功能要求，報告錯誤和每日組建
 
 - StackOverflow，使用標記[aspnet 識別](http://stackoverflow.com/questions/tagged/asp.net-identity)
@@ -71,6 +74,7 @@ ms.locfileid: "57056345"
 - [在 GitHub 上的 ASP.NET Identity](https://github.com/aspnet/AspNetIdentity)取得夜間組建要求的功能，開啟的 bug。
 
 <a id="blog"></a>
+
 ## <a name="blog-posts-on-identity"></a>身分識別部落格文章
 
 - [使用 ASP.NET identity SecurityStamp 是什麼？](http://stackoverflow.com/questions/19487322/what-is-asp-net-identitys-iusersecuritystampstoretuser-interface/19505060#19505060)
@@ -120,6 +124,7 @@ ms.locfileid: "57056345"
 - [從 ASP.NET 成員資格移至 ASP.NET Identity](http://webdojo.sharepoint.com/ajmatthews/_layouts/15/start.aspx#/Lists/Posts/Post.aspx?ID=2)由 Alistair 騏宇
 
 <a id="video"></a>
+
 ## <a name="videos"></a>視訊
 
 - Channel 9[保護 ASP.NET 應用程式和服務：現代應用程式的安全性外觀](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DEV-B421#fbid=PhVT9E1WRtr?hashlink=fbid)的謝 Flatow
@@ -132,6 +137,7 @@ ms.locfileid: "57056345"
 - [捷克文 ASP.NET Identity](https://www.youtube.com/watch?v=tVbZp5brcpY)在這段演講中，我們將說明如何部署基本驗證、 如何新增 Twitter 或 Facebook 等外部識別提供者的支援和如何使用單次密碼 (OTP)。 [ASP.NET Identity je nástupce 成員資格的角色提供者&#367;v tedy knihovna ASP.NET pro zajišt&#283;ní autentizace uživatel&#367;。 V této p&#345;ednášce si ukážeme 的賈克 nasad]
 
 <a id="cust"></a>
+
 ## <a name="custom-storage-providers-for-aspnet-identity"></a>ASP.NET Identity 的自訂儲存體提供者
 
 如果您想要撰寫自己的提供者，請參閱[概觀的自訂儲存體提供者的 ASP.NET 身分識別](../extensibility/overview-of-custom-storage-providers-for-aspnet-identity.md)並[實作 ASP.NET Identity](http://odetocode.com/blogs/scott/archive/2014/01/20/implementing-asp-net-identity.aspx) ，然後檢查來源的其中一個列出的 OSS 專案下面。
@@ -144,7 +150,7 @@ ms.locfileid: "57056345"
 - [Azure 資料表儲存體](https://www.nuget.org/packages/accidentalfish.aspnet.identity.azure/)>，作者 James Randall。
 - Azure 資料表儲存體：[AspNet.Identity.TableStorage](https://github.com/stuartleeks/leeksnet.AspNet.Identity.TableStorage)所[ @stuartleeks ](https://twitter.com/stuartleeks)。
 - [CouchDB / Cloudant 由 Daniel Wertheim。](https://github.com/danielwertheim/mycouch.aspnet.identity)
-- 彈性搜尋[h:彈性的身分識別](https://github.com/bmbsqd/elastic-identity)由 Bombsquad AB.
+- [Elastic Search:彈性的身分識別](https://github.com/bmbsqd/elastic-identity)由 Bombsquad AB.
 - [MongoDB](http://www.nuget.org/packages/MongoDB.AspNet.Identity/)由 Jonathan Sheely Jonathan Sheely。
 - [NHibernate.AspNet.Identity](https://github.com/milesibastos/NHibernate.AspNet.Identity)由 Antônio Milesi Bastos。
 - [RavenDB](http://www.nuget.org/packages/AspNet.Identity.RavenDB/1.0.0)所[ @tourismgeek ](https://twitter.com/tourismgeek)。
@@ -153,11 +159,13 @@ ms.locfileid: "57056345"
 - T4 範本產生的 「 資料庫第一次 」 的使用者存放區的 EF 程式碼：[AspNet.Identity.EntityFramework](https://github.com/cbfrank/AspNet.Identity.EntityFramework)
 
 <a id="additional"></a>
+
 ## <a name="additional-aspnet-identity-resources"></a>其他 ASP.NET 身分識別的資源
 
 - [簡介 Yahoo 和 LinkedIn OAuth 安全性提供者設定 owin](http://blog.beabigrockstar.com/introducing-the-yahoo-linkedin-oauth-security-providers-for-owin/)由 Jerrie Pelser Yahoo 與 LinkedIn 的指示。
 
 <a id="qand"></a>
+
 ## <a name="qampa-questionanswer"></a>問：&amp;（問題/答案）
 
 - 問：鎖定已啟用 [記住我] （讓他們不必自己在該電腦/瀏覽器通過 2FA） 的使用者不會鎖定。原因和方式防止的？ 答案[此處](http://stackoverflow.com/questions/24312247/locked-out-users-can-login-if-they-have-auth-cookie)。
@@ -177,6 +185,6 @@ ms.locfileid: "57056345"
 - 問：如何讓安全性權杖的失效？ 答案[此處](http://stackoverflow.com/questions/22755700/revoke-token-generated-by-usertokenprovider-in-asp-net-identity-2-0/22767286#22767286)。
 - 問：如何執行會在 cookie 中介軟體中的存放區宣告？ 答案[此處](http://stackoverflow.com/questions/22320632/storing-retrieving-user-data-without-database-when-using-owin-cookie-authenticat/22541856#22541856)。
 - 問：我想要有 PIN 或檢查在我的 MVC 應用程式，每個動作方法上的安全性，但我想要儲存使用者成功，因此他們不需要在每個要求上輸入 pin 碼，該動作方法。 答案[此處](http://stackoverflow.com/questions/22479958/security-check-an-user-to-a-access-controller-action/22486075#22486075)。
-- 問：我想要儲存從社交提供者傳回的電子郵件位址到 DB 中，我該怎麼嗎？ 答案[此處](http://stackoverflow.com/questions/22888397/save-claims-to-db-on-login/22970969#22970969):
+- 問：我想要儲存 DB 中，從社交提供者傳回的電子郵件地址我該如何進行？ 答案[此處](http://stackoverflow.com/questions/22888397/save-claims-to-db-on-login/22970969#22970969):
 - 問：如何偵測當登入這兩個具有/與放大 [記住我] cookie 的使用者？ 答案[此處](http://stackoverflow.com/questions/22956486/how-can-i-detect-when-a-user-logs-in-with-microsoft-aspnet-identity/22970698#22970698)。
 - 問：可以修改中搭配 OWIN ASP.NET 身分識別的宣告後呼叫登入嗎？ 回答：呼叫登入就是您應執行時您想要修改使用者的宣告。 基本上，它會導致要序列化到 cookie，這就是為什麼您會看到新的宣告出現在後續要求 ClaimsIdentity。

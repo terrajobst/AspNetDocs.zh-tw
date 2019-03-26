@@ -8,12 +8,12 @@ ms.date: 08/14/2010
 ms.assetid: ff03dcc0-da97-458d-838f-0823e7482642
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
 msc.type: authoredcontent
-ms.openlocfilehash: 9a8ecac5203234c140783bbe3a518d35f6a57675
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b593c6225c05c7405c9d8b78abfd29a087d47b04
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057995"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421255"
 ---
 <a name="adding-a-controller"></a>新增控制器
 ====================
@@ -56,7 +56,7 @@ MVC 代表模型、 檢視、 控制器。 MVC 是開發應用程式，使每個
 
 /[Controller]/[ActionName]/[Parameters]
 
-URL 的第一個部分會判斷要執行的控制器類別。 因此 /HelloWorld 會對應至 HelloWorldController 類別。 URL 的第二部分會判斷要執行的類別上的動作方法。 /HelloWorld/Index 會導致要執行的 HelloWorldcontroller 類別的 index （） 方法。 請注意，我們只有造訪上述 /HelloWorld 和索引隱含的方法。 這是因為名為"Index"的方法是將在控制器呼叫，如果沒有明確指定的預設方法。
+URL 的第一個部分會判斷要執行的控制器類別。 因此 /HelloWorld 會對應至 HelloWorldController 類別。 URL 的第二部分會判斷要執行的類別上的動作方法。 /HelloWorld/Index 會導致要執行的 HelloWorldController 類別的 index （） 方法。 請注意，我們只有造訪上述 /HelloWorld 和索引隱含的方法。 這是因為名為"Index"的方法是將在控制器呼叫，如果沒有明確指定的預設方法。
 
 [![這是我的預設動作](getting-started-with-mvc-part2/_static/image8.png)](getting-started-with-mvc-part2/_static/image7.png)
 

@@ -8,12 +8,12 @@ ms.date: 02/03/2014
 ms.assetid: 2fc4797c-38ef-4cc7-926c-ca431c4739e8
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/action-results
 msc.type: authoredcontent
-ms.openlocfilehash: b2b5ae5e5cef19e75a184aa28ac838a31e5ef1fd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c255cebfd6b0c632c000d24288a4dd4cf73c8a1c
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061775"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422021"
 ---
 <a name="action-results-in-web-api-2"></a>Web API 2 中的動作結果
 ====================
@@ -83,7 +83,7 @@ HTTP 回應：
 
 如果控制器動作傳回**IHttpActionResult**，Web API 會呼叫**ExecuteAsync**方法，以建立**HttpResponseMessage**。 然後它會將轉換**HttpResponseMessage**至 HTTP 回應訊息。
 
-以下是簡單的實作的**IHttpActionResult**所建立的純文字回應：
+以下是簡單的實作**IHttpActionResult**所建立的純文字回應：
 
 [!code-csharp[Main](action-results/samples/sample7.cs)]
 

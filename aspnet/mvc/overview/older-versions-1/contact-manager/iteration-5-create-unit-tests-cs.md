@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 28ad8f80-b8a5-444e-b478-8b15a846060c
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 68d0ae15db115685b3e1a44f8b3b5b7e33674a8b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b2e96c996905bc73698d1c0b11df97d1dd366172
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036125"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422164"
 ---
 <a name="iteration-5--create-unit-tests-c"></a>反覆項目 #5 – 建立單元測試 (C#)
 ====================
@@ -147,7 +147,7 @@ Visual Studio 不會包含一個模擬物件架構。 不過，有數個商業�
 
 - CreateContact()-測試該 CreateContact() 值為 true 時傳回有效的連絡人會傳遞至方法。
 - CreateContactRequiredFirstName()-錯誤訊息加入至模型狀態時遺失的第一個名稱與連絡人的測試會傳遞至 CreateContact() 方法。
-- CreateContactRequredLastName()-錯誤訊息加入至模型狀態時遺失的最後一個名稱與連絡人的測試會傳遞至 CreateContact() 方法。
+- CreateContactRequiredLastName()-錯誤訊息加入至模型狀態時遺失的最後一個名稱與連絡人的測試會傳遞至 CreateContact() 方法。
 - CreateContactInvalidPhone()-錯誤訊息會加入至模型狀態時具有無效電話號碼的連絡人的測試會傳遞至 CreateContact() 方法。
 - CreateContactInvalidEmail()-錯誤訊息會加入至模型狀態時無效的電子郵件地址的連絡人的測試會傳遞至 CreateContact() 方法...
 

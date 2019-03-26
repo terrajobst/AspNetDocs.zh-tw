@@ -15,7 +15,7 @@ msc.type: chapter
 
 [!INCLUDE [consider RP](../../../../includes/razor.md)]
 
-此下列的教學課程系列涵蓋 ASP.NET MVC:來源位於[GitHub](https://github.com/aspnet/Docs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie)
+此下列的教學課程系列涵蓋 ASP.NET MVC:來源位於[GitHub](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie)
 
 - [快速入門](getting-started.md)
 - [新增控制器](adding-a-controller.md)

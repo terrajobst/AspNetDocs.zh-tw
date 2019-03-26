@@ -8,12 +8,12 @@ ms.date: 02/20/2007
 ms.assetid: a526f0ec-779e-4a2b-a476-6604090d25ce
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/inserting-updating-and-deleting-data-with-the-sqldatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2c52fcf746d80899d7ea568c8110c4dfa610224c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 06c5fea8a058f15e72d455cf0e15b462d8f91e38
+ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041365"
+ms.lasthandoff: 03/26/2019
+ms.locfileid: "58440387"
 ---
 <a name="inserting-updating-and-deleting-data-with-the-sqldatasource-c"></a>使用 SqlDataSource 插入、更新和刪除資料 (C#)
 ====================
@@ -119,7 +119,7 @@ ms.locfileid: "57041365"
 按一下 [刪除] 按鈕，回傳，就會發生指派 GridView`ProductID`參數的值的`DataKeys`集合值的資料列的 [刪除] 按鈕已按下，並叫用 SqlDataSource 的`Delete()`方法。 SqlDataSource 控制項連接至資料庫，然後執行`DELETE`陳述式。 GridView 然後重新繫結與 sqldatasource 取回和顯示目前的產品集 （其中不會再包含只是刪除記錄）。
 
 > [!NOTE]
-> 因為 GridView 會使用其`DataKeys`集合來填入 SqlDataSource 參數，它不可或缺的 s，GridView s`DataKeyNames`屬性設定為資料行構成的主索引鍵，SqlDataSource 的`SelectCommand`傳回這些資料行。 此外，它重要的參數名稱中之 SqlDataSource`DeleteCommand`設為`@ProductID`。 如果`DataKeyNames`未設定屬性或參數名稱不是`@ProductsID`，按一下 [刪除] 按鈕將會導致回傳，但是獲利的 t 實際上會刪除任何記錄。
+> 因為 GridView 會使用其`DataKeys`集合來填入 SqlDataSource 參數，它不可或缺的 s，GridView s`DataKeyNames`屬性設定為資料行構成的主索引鍵，SqlDataSource 的`SelectCommand`傳回這些資料行。 此外，它重要的參數名稱中之 SqlDataSource`DeleteCommand`設為`@ProductID`。 如果`DataKeyNames`未設定屬性或參數名稱不是`@ProductsID`，按一下 [刪除] 按鈕會導致回傳，但不會實際刪除任何記錄。
 
 
 圖 5 以圖形方式描繪此類互動。 回頭[檢查與插入、 更新和刪除事件相關聯](../editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)的插入、 更新及刪除資料 Web 控制項相關聯的事件鏈結的詳細說明的教學課程。
@@ -192,7 +192,7 @@ ms.locfileid: "57041365"
 
 雖然`INSERT`， `UPDATE`，和`DELETE`陳述式可以手動輸入，請考慮下列節省時間的提示。 一開始設定 SqlDataSource，進而讓取回資料只從`Products`資料表。 使用設定資料來源精靈的指定資料行，從資料表或檢視螢幕，讓您可以自動產生`INSERT`， `UPDATE`，和`DELETE`陳述式。 然後完成精靈之後，選擇 設定從 屬性 視窗 SelectQuery （或者，或者，移至 設定資料來源精靈，但使用 指定自訂的 SQL 陳述式或預存程序選項的 上一步）。 然後更新`SELECT`陳述式包含`JOIN`語法。 這項技術提供自動產生 SQL 陳述式，節省時間的優點，而且允許更多自訂`SELECT`陳述式。
 
-自動產生的另一項限制`INSERT`， `UPDATE`，並`DELETE`陳述式是中的資料行`INSERT`並`UPDATE`陳述式會根據所傳回的資料行`SELECT`陳述式。 我們可能需要更新或插入更多或較少的欄位，不過。 例如，在步驟 2 中範例中，或許我們想要有`UnitPrice`BoundField 處於唯讀模式。 在此情況下，它不成問題 t 會出現在`UpdateCommand`。 或者，我們可能想要設定 GridView 中不會出現 [資料表] 欄位的值。 例如，當加入新記錄我們可能會想`QuantityPerUnit`值設定為 待辦事項。
+自動產生的另一項限制`INSERT`， `UPDATE`，並`DELETE`陳述式是中的資料行`INSERT`並`UPDATE`陳述式會根據所傳回的資料行`SELECT`陳述式。 我們可能需要更新或插入更多或較少的欄位，不過。 例如，在步驟 2 中範例中，或許我們想要有`UnitPrice`BoundField 處於唯讀模式。 在此情況下，它不應該出現在`UpdateCommand`。 或者，我們可能想要設定 GridView 中不會出現 [資料表] 欄位的值。 例如，當加入新記錄我們可能會想`QuantityPerUnit`值設定為 待辦事項。
 
 如果這類自訂需要，您需要以手動的方式，讓它們，透過 [屬性] 視窗中，指定自訂的 SQL 陳述式或在精靈中，或透過宣告式語法的預存程序選項。
 
@@ -204,7 +204,7 @@ ms.locfileid: "57041365"
 
 為了讓資料 Web 控制項，以利用其內建的插入、 編輯和刪除功能，它們會繫結至資料來源控制項必須提供這類功能。 這表示，如 SqlDataSource `INSERT`， `UPDATE`，和`DELETE`SQL 陳述式必須指派給`InsertCommand`， `UpdateCommand`，和`DeleteCommand`屬性。 這些屬性和對應的參數集合，則可以是以手動方式加入或透過設定資料來源精靈會自動產生。 在本教學課程中，我們檢查這兩種技巧。
 
-使用 ObjectDataSource 中使用開放式並行存取檢查[實作開放式並行存取](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs.md)教學課程。 SqlDataSource 控制項也支援開放式並行存取。 自動產生時，在步驟 2 中所示`INSERT`， `UPDATE`，和`DELETE`陳述式，精靈會提供使用開放式並行存取選項。 我們將在下一個教學課程中所看到的會使用以 sqldatasource 進行的開放式並行存取修改`WHERE`中的子句`UPDATE`和`DELETE`陳述式，以確保其他資料行的值尚未變更自上次資料的 t在頁面上顯示。
+使用 ObjectDataSource 中使用開放式並行存取檢查[實作開放式並行存取](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs.md)教學課程。 SqlDataSource 控制項也支援開放式並行存取。 自動產生時，在步驟 2 中所示`INSERT`， `UPDATE`，和`DELETE`陳述式，精靈會提供使用開放式並行存取選項。 我們將在下一個教學課程中所看到的會使用以 sqldatasource 進行的開放式並行存取修改`WHERE`中的子句`UPDATE`和`DELETE`以確保未變更的其他資料行的值，因為資料是最後一個陳述式在頁面上顯示。
 
 快樂地寫程式 ！
 

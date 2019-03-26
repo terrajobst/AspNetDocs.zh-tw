@@ -8,12 +8,12 @@ ms.date: 03/02/2009
 ms.assetid: df6cf4b7-0bb3-4c4e-b17a-bd78a759a6bc
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/performing-simple-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1d0bd6917bab61b17d1cafcf0cd9eb1983275dc8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 31faf2e89e6acb25854455902c1a6fdffebd293c
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057645"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423178"
 ---
 <a name="performing-simple-validation-vb"></a>執行簡單的驗證 (VB)
 ====================
@@ -90,7 +90,7 @@ Html.ValidationMessage() 協助程式會呼叫每個 HTML 表單欄位旁邊。 
 
 - 輸入驗證錯誤-套用至&lt;輸入&gt;Html.TextBox() 協助程式所呈現的標記。
 - 欄位驗證錯誤-套用至&lt;跨越&gt;Html.ValidationMessage() 協助程式所呈現的標記。
-- 驗證摘要錯誤-套用至&lt;ul&gt; Html.ValidationSumamry() 協助程式所呈現的標記。
+- 驗證摘要錯誤-套用至&lt;ul&gt; Html.ValidationSummary() 協助程式所呈現的標記。
 
 您可以修改這些階層式樣式表類別，並因此修改藉由修改 Site.css 檔案內容的資料夾中的 驗證錯誤的外觀。
 

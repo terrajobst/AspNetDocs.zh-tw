@@ -8,19 +8,19 @@ ms.date: 04/10/2014
 ms.assetid: 7958d725-e958-4566-a85b-535eeb985f94
 msc.legacyurl: /mvc/overview/getting-started/recommended-resources-for-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: cbd72233fb5688c27d3675e2621eab58a64db80c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f57ce4236abe71de3f6f60cb2d7930f7ae9a8d7a
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047085"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423906"
 ---
-<a name="mvc-recommended-resources"></a>MVC 建議資源
-====================
+# <a name="mvc-recommended-resources"></a>MVC 建議資源
+
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 本主題提供有關 ASP.NET MVC 5 文件資源的連結。 如果您知道很棒的部落格文章[stackoverflow](http://stackoverflow.com/)執行緒或任何其他連結，會很有用，傳送[我](mailto:aspnetue@microsoft.com?subject=Great ASP.NET MVC link)與連結的電子郵件。 此處提供的連結會定期更新。 您可以找到舊版 （但在許多情況下仍有相關） 上的 ASP.NET MVC 連結[MSDN 內容對應](https://msdn.microsoft.com/library/gg416514(v=vs.108).aspx)。
-> 
+>
 > 取得您問題的解答，或尋找問題的解決方案的理想位置是在[ASP.NET MVC 論壇](https://forums.asp.net/1146.aspx/1?MVC)或在[stackoverflow](http://stackoverflow.com/questions/tagged/mvc+asp.net-mvc)。
 > <a id="gettingstarted"></a>
 
@@ -63,8 +63,8 @@ ms.locfileid: "57047085"
     - [祕訣和訣竅 Visual Studio 2013 中](https://channel9.msdn.com/Events/Build/2014/2-582)由 Cathy Sullivan
     - [所有位置使用新的 Sdk，自動化工具和服務在 Azure 中](https://channel9.msdn.com/Events/Build/2014/3-621)由 Brady Gaster，Joe 募集
     - [使用 Azure Web Sites Chris Compy、 Nir Mashkowski 最新消息](https://channel9.msdn.com/Events/Build/2014/3-625)
-    - [巨量的建置：Lessons Learned 來自 Azure 客戶](https://channel9.msdn.com/Events/Build/2014/3-633)由 Chris Clayton、 Mark Simms   
-        [建置使用 ASP.NET 和 AngularJS 單一頁面應用程式](https://channel9.msdn.com/Events/Build/2014/3-644)由 David Catuhe，Jon Galloway
+    - [巨量的建置：Lessons Learned 來自 Azure 客戶](https://channel9.msdn.com/Events/Build/2014/3-633)由 Chris Clayton、 Mark Simms
+    - [建置使用 ASP.NET 和 AngularJS 單一頁面應用程式](https://channel9.msdn.com/Events/Build/2014/3-644)由 David Catuhe，Jon Galloway
     - [設計和實作混合式雲端解決方案的架構設計人員](https://channel9.msdn.com/Events/Build/2014/3-632)
     - [Azure 資源群組模型：適用於現代化雲端現代化管理](https://channel9.msdn.com/Events/Build/2014/2-607)Gautam Thapar，Nathan Totten 所
     - [使用 ASP.NET Web API 2.1 的行動裝置應用程式建置 Web Api](https://channel9.msdn.com/Events/Build/2014/3-603)由 Daniel Roth
@@ -168,8 +168,7 @@ ms.locfileid: "57047085"
 - [環圈圖快取和快取與 Asp.Net MVC 4 的環圈內徑](http://www.dotnet-tricks.com/Tutorial/mvc/ODJa210113-Donut-Caching-and-Donut-Hole-Caching-with-Asp.Net-MVC-4.html)
 - [了解範例的 Asp.Net MVC 中的快取](http://www.dotnet-tricks.com/Tutorial/mvc/4R5c050113-Understanding-Caching-in-Asp.Net-MVC-with-example.html)
 - [http://webdevchecklist.com/asp.net/performance/](http://webdevchecklist.com/asp.net/performance/)
-- [ASP.NET MVC 檢視模型：Entity Framework &amp; JSON 序列化](http://www.dotnetexpertguide.com/2013/06/aspnet-mvc-view-model-entity-framework-json-serialization.html)  
- Nandip Makwana 顯示不錯的提示，以增加效能 （並降低 CPU 使用量） 藉由消除不必要的子系實體的序列化
+- [ASP.NET MVC 檢視模型：Entity Framework &amp; JSON 序列化](http://www.dotnetexpertguide.com/2013/06/aspnet-mvc-view-model-entity-framework-json-serialization.html)Nandip Makwana 顯示不錯的提示，以增加效能 （並降低 CPU 使用量） 藉由消除不必要的子系實體的序列化
 - [Async 和 Await](http://blog.stephencleary.com/2012/02/async-and-await.html)在 ASP.NET 中，作者： Stephen Cleary
 - [偵錯和效能使用初探](http://www.hanselman.com/blog/NuGetPackageOfTheWeek5DebuggingASPNETMVCApplicationsWithGlimpse.aspx)
 - [改善 ASP.NET MVC 網站，以非同步的部分檢視的認知的的效能](http://blog.michaelckennedy.net/2012/11/13/improve-perceived-performance-of-asp-net-mvc-websites-with-async-partialviews/)
@@ -365,7 +364,7 @@ ms.locfileid: "57047085"
 - [使用 ASP.NET MVC 提供 WebP 影像](http://friism.com/serving-webp-images-with-asp-net-mvc)
 - [詳細的 ASP.NET MVC 管線](http://www.dotnet-tricks.com/Tutorial/mvc/LYHK270114-Detailed-ASP.NET-MVC-Pipeline.html)
 - [在 MVC 中的巢狀配置](http://astutelogic.com/nesting-layouts-in-mvc/)由 Russell Waite
-- 我[mplementing RichTextEditor 或 ASP.NET MVC 中的 WYSIWYG (TinyMCE)](http://www.dotnetfunda.com/articles/show/2657/implementing-richtexteditor-or-wysiwyg-tinymce-in-aspnet-mvc)由 Sheo Narayan
+- [在 ASP.NET MVC 中實作 RichTextEditor 或所見即所得 (TinyMCE)](http://www.dotnetfunda.com/articles/show/2657/implementing-richtexteditor-or-wysiwyg-tinymce-in-aspnet-mvc)由 Sheo Narayan
 - [ASP.NET MVC 中的繫結與匿名型別集合的檢視](http://www.dotnetfunda.com/articles/show/2655/binding-views-with-anonymous-type-collection-in-aspnet-mvc)由 Sheo Narayan
 - [為 ASP.NET MVC 中的映像中儲存的 html5 畫布](http://www.dotnetfunda.com/articles/show/2665/saving-html-5-canvas-as-image-in-aspnet-mvc)由 Sheo Narayan
 - [維護映像大小和頁面上使用 ASP.NET MVC 在資料庫中的位置](http://www.dotnetfunda.com/articles/show/2783/maintaining-image-size-and-position-on-the-page-in-database-using-aspn)由 Sheo Narayan

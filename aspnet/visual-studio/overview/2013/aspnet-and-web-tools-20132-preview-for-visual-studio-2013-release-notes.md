@@ -8,12 +8,12 @@ ms.date: 03/06/2014
 ms.assetid: 7ef5f73c-ca60-43c1-bdb2-702800347e7e
 msc.legacyurl: /visual-studio/overview/2013/aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: 2a22c5b686cb8e02054f421f78a8fc910af7ce28
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bbb38ddde49cdeea4255e0e05bd559ddd9e5f692
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062735"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425986"
 ---
 <a name="aspnet-and-web-tools-20132--for-visual-studio-2013-release-notes"></a>適用於 Visual Studio 2013 的 ASP.NET 和 Web 工具 2013.2 版本資訊
 ====================
@@ -112,7 +112,7 @@ Firefox 會使用自己的憑證存放區，因此它會顯示警告。
 
     `<div data-bind="text: foo.bar.baz.etc" />`
 
-    顯示 IntelilSense 是 JavaScript 物件的完整的 IntelliSense。
+    顯示 IntelliSense 是 JavaScript 物件的完整的 IntelliSense。
 
     ![Intellisense 顯示完整的 JavaScript 物件](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes/_static/image15.png)
 - **在 HTML、 Razor、 CSS、 較少的新 URL 選擇器和 Sass 文件**:VS 2013 不隨附於 Web Form 頁面之外的任何 URL 選擇器。 Razor 的 HTML，css，較少的新 URL 選擇器和 Sass 編輯器是對話方塊免費、 fluent 類型選擇器，了解 '..' 並篩選檔列出適當的 img 標記和連結。
@@ -177,12 +177,13 @@ Firefox 會使用自己的憑證存放區，因此它會顯示警告。
 NuGet 2.8.1 RTM 將會發行在 2014 年 4 月。 以下是主要重點，從版本資訊，但請檢查[完整的版本資訊](http://docs.nuget.org/docs/release-notes/nuget-2.8)如需有關這些變更。
 
 - **目標 Windows Phone 8.1 應用程式**:NuGet 2.8.1 現在支援以 Windows Phone 8.1 應用程式使用目標 framework moniker 'WindowsPhoneApp'、 'WPA'、 'WindowsPhoneApp81，' 和 'WPA81' 為目標。
+
 - **修補解析相依性**:當解析套件相依性，NuGet 已在過去實作選取最低的主要和次要封裝版本符合封裝上的相依性的策略。 不同於主要和次要版本，不過，修補程式版本已一律解決的最高版本。 行為是用意良好，但它會建立決定性具有相依性安裝套件的缺乏。
 - **DependencyVersion 參數**:雖然變更 NuGet 2.8*預設*行為解析相依性，它也會加入更精確地控制相依性解析程序-DependencyVersion 參數透過套件管理員主控台中。 參數可讓您解析的相依性，以最低的可能版本 （預設行為）、 最高的可能版本，或最高次要或修補程式版本。 此參數僅適用於安裝套件中的 powershell 命令。
 - **DependencyVersion 屬性**:除了以上詳述，NuGet 也可讓提供的能力的 nuget.config 檔案中設定新的屬性-DependencyVersion 參數定義的預設值為何，如果未指定-DependencyVersion 參數中的引動過程安裝套件。 此值也會遵守任何安裝封裝作業的 [NuGet 套件管理員] 對話方塊。 若要設定此值，請先 nuget.config 檔案中加入以下屬性：
 
     `<config> <add key="dependencyversion" value="Highest" /> </config>`
-- **預覽使用-whatif 的 NuGet 作業**:部分 NuGet 套件可以有深入的相依性圖形，而此情況下，它可以在安裝期間會有幫助、 解除安裝或更新作業，先查看 會發生什麼事。 NuGet 2.8 新增標準的 PowerShell-如果切換到安裝套件、 解除安裝套件和更新套件的命令，以啟用視覺化的命令將會套用的封裝整個關閉。
+- **預覽使用-WhatIf 的 NuGet 作業**:部分 NuGet 套件可以有深入的相依性圖形，而此情況下，它可以在安裝期間會有幫助、 解除安裝或更新作業，先查看 會發生什麼事。 NuGet 2.8 新增標準的 PowerShell-如果切換到安裝套件、 解除安裝套件和更新套件的命令，以啟用視覺化的命令將會套用的封裝整個關閉。
 - **降級封裝**:不常見安裝套件的發行前版本，以便調查的新功能，但後來回復到最新穩定版本。 NuGet 2.8 以前這會是多重步驟的程序解除安裝發行前版本套件和其相依性，然後安裝 先前的版本。 使用 NuGet 2.8，不過，更新套件現在會回復整個封裝結束 （例如套件的相依性樹狀結構） 到之前的版本。
 - **開發相依性**:許多不同類型的功能可能會傳送為 NuGet 套件-包括用來最佳化開發過程的工具。 這些元件，雖然也很有幫助開發新封裝時，不應視為已發佈的更新版本時，新的封裝相依性。 NuGet 2.8 可讓封裝本身識別為 developmentDependency.nuspec 檔案中。 安裝時，此中繼資料也會加入至專案的套件安裝所在的 packages.config 檔案。 Packages.config 檔案稍後分析的 NuGet 相依性期間 nuget.exe 組件，它會排除這些標示為開發相依性的相依性。
 - **適用於不同平台的個別 packages.config 檔案**:在開發用於多個目標平台的應用程式時，常會每個個別的建置環境有不同的專案檔。 它也很常見使用不同的 NuGet 封裝，在不同的專案檔中，因為套件會有各種不同平台的支援層級。 NuGet 2.8 會提供改進的支援此案例中藉由建立不同的平台專屬專案檔的不同的 packages.config 檔案。
@@ -205,7 +206,7 @@ NuGet 2.8.1 RTM 將會發行在 2014 年 4 月。 以下是主要重點，從版
 - [屬性路由的增強功能](../../../mvc/overview/releases/mvc51-release-notes.md#AttributeRouting)
 - [編輯器範本的啟動程序支援](../../../mvc/overview/releases/mvc51-release-notes.md#Bootstrap)
 - [在檢視中的列舉支援](../../../mvc/overview/releases/mvc51-release-notes.md#Enum)
-- [Unobstrusive 支援 MinLength / MaxLength 屬性](../../../mvc/overview/releases/mvc51-release-notes.md#Unobtrusive)
+- [不顯眼的支援，針對 MinLength / MaxLength 屬性](../../../mvc/overview/releases/mvc51-release-notes.md#Unobtrusive)
 - [支援不顯眼的 Ajax 中的 'this' 內容](../../../mvc/overview/releases/mvc51-release-notes.md#thisContext)
 - 各種[bug 修正](https://aspnetwebstack.codeplex.com/workitem/list/advanced?keyword=&status=Closed&type=All&priority=All&release=v5.1%20Preview%7cv5.1%20RTM&assignedTo=All&component=MVC&sortField=AssignedTo&sortDirection=Ascending&page=0&reasonClosed=Fixed)
 

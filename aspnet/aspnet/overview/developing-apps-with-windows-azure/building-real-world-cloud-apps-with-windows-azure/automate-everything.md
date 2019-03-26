@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: d0ce344bcb036819feba6218edc8dd90af501f50
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 18e988279b56e479b0bb27de2f01ab22a2e70301
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039675"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422606"
 ---
 <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>自動化 （建置使用 Azure 的真實世界的雲端應用程式） 的所有項目
 ====================
@@ -159,7 +159,7 @@ ms.locfileid: "57039675"
 - 藉由建立應用程式資料庫和成員資格資料庫`New-AzureSqlDatabase`cmdlet。
 
     [!code-powershell[Main](automate-everything/samples/sample11.ps1?highlight=2,5)]
-- 呼叫每個資料庫的本機定義的函式 tocreates 連接字串。 應用程式會使用這些連接字串來存取資料庫。 
+- 呼叫本機定義的函式，來建立每個資料庫的連接字串。 應用程式會使用這些連接字串來存取資料庫。 
 
     [!code-powershell[Main](automate-everything/samples/sample12.ps1?highlight=1-2)]
 

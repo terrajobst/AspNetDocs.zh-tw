@@ -8,24 +8,24 @@ ms.date: 07/16/2014
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: c18911680b59448cd67190f71e951a3fcf3d0478
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 85e4369ee458043eec59fb27e317d18466f61f32
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044125"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422528"
 ---
 <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>實際操作實驗室：一個 ASP.NET：整合 ASP.NET Web Form、MVC 與 Web API
 ====================
 藉由[Web Camp 小組](https://twitter.com/webcamps)
 
-[下載 Web 研討會訓練套件](http://aka.ms/webcamps-training-kit)
+[下載 Web 研討會訓練套件](https://aka.ms/webcamps-training-kit)
 
 > ASP.NET 是用於建置網站、 應用程式和服務使用特製化的技術，例如 MVC、 Web API 等的架構。 與延伸 ASP.NET 已經看到自建立後，表示需要有整合這些技術中已經有最新的工作來運作**One ASP.NET**。
 > 
 > Visual Studio 2013 導入了新的統一的專案系統可讓您建置應用程式和一個專案中使用所有的 ASP.NET 技術。 這項功能就不需要在開始專案，並隨身碟，挑選一種技術，並改為鼓勵使用一個專案中的多個 ASP.NET 架構。
 > 
-> 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)。
+> 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
 
 
 <a id="Overview"></a>

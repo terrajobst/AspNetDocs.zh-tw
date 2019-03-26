@@ -8,12 +8,12 @@ ms.date: 10/17/2006
 ms.assetid: ee20742f-6fb7-49a0-a009-058fe363aacb
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3a10d6e5f60efad1f88c5acc8371a24dbf8d2cb7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 73a93c93932a004e76cf4ef7be1b3308ef6b991f
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061805"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422892"
 ---
 <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb"></a>使用具有詳細資料 DataList 的主要記錄項目符號清單的主要/詳細 (VB)
 ====================
@@ -100,7 +100,7 @@ ms.locfileid: "57061805"
 [!code-aspx[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/samples/sample4.aspx)]
 
 > [!NOTE]
-> 本教學課程中的重複項必須啟用其檢視狀態 (請注意省略的`EnableViewState="False"`Repeater s 宣告式語法)。 步驟 3 中我們將建立事件處理常式，如 Repeater s`ItemCommand`事件中我們將更新 DataList 的 ObjectDataSource 的`SelectParameters`集合。 Repeater 的`ItemCommand`，不過，如果已停用檢視狀態，贏得 t 引發。 請參閱[ASP.NET 問題的疑惑](http://scottonwriting.net/sowblog/posts/1263.aspx)並[其解決方案](http://scottonwriting.net/sowBlog/posts/1268.aspx)詳細了解為何必須啟用檢視狀態的 Repeater 的`ItemCommand`引發的事件。
+> 本教學課程中的重複項必須啟用其檢視狀態 (請注意省略的`EnableViewState="False"`Repeater s 宣告式語法)。 步驟 3 中我們將建立事件處理常式，如 Repeater s`ItemCommand`事件中我們將更新 DataList 的 ObjectDataSource 的`SelectParameters`集合。 Repeater 的`ItemCommand`，不過，不會觸發已停用檢視狀態。 請參閱[ASP.NET 問題的疑惑](http://scottonwriting.net/sowblog/posts/1263.aspx)並[其解決方案](http://scottonwriting.net/sowBlog/posts/1268.aspx)詳細了解為何必須啟用檢視狀態的 Repeater 的`ItemCommand`引發的事件。
 
 
 使用 LinkButton`ID`屬性值`ViewCategory`並沒有其`Text`屬性集。 如果我們只要有想要顯示類別名稱，我們會設定 Text 屬性以宣告方式，透過資料繫結語法，就像這樣：

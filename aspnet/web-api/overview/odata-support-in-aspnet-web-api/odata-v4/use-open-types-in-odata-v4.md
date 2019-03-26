@@ -2,24 +2,24 @@
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
 title: 使用 ASP.NET Web API OData v4 中開啟類型 |Microsoft Docs
 author: microsoft
-description: OData v4 中開啟的型別是 stuctured 型別包含動態屬性，除了任何型別定義中宣告的屬性。 開啟...
+description: OData v4 中開啟的型別是結構化的型別，其中包含動態屬性，除了任何型別定義中宣告的屬性。 開啟...
 ms.author: riande
 ms.date: 09/15/2014
 ms.assetid: f25f5ac5-4800-4950-abe5-c97750a27fc6
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
 msc.type: authoredcontent
-ms.openlocfilehash: 77771d85532b8b622c2ad4ca219a38990e474c9c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f901e5efc38e5cda6eb606b6bc1ecfe7dea3599c
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042585"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423425"
 ---
 <a name="open-types-in-odata-v4-with-aspnet-web-api"></a>使用 ASP.NET Web API OData v4 中開啟類型
 ====================
 by [Microsoft](https://github.com/microsoft)
 
-> 在 OData v4*開啟輸入*stuctured 型別，其中包含動態屬性，除了任何型別定義中宣告的屬性。 開放式類型可讓您將新增至您的資料模型的彈性。 本教學課程會示範如何使用 ASP.NET Web API OData 中的開放型別。
+> 在 OData v4*開啟輸入*是結構化型別，其中包含動態屬性，除了任何型別定義中宣告的屬性。 開放式類型可讓您將新增至您的資料模型的彈性。 本教學課程會示範如何使用 ASP.NET Web API OData 中的開放型別。
 > 
 > 本教學課程假設您已經知道如何建立 ASP.NET Web API 中的 OData 端點。 如果沒有，請先閱讀[建立 OData v4 端點](create-an-odata-v4-endpoint.md)第一次。
 > 

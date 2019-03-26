@@ -8,12 +8,12 @@ ms.date: 01/30/2013
 ms.assetid: 04d5f142-5f62-494a-b5ea-4f3d068d34cb
 msc.legacyurl: /single-page-application/overview/templates/emberjs-template
 msc.type: authoredcontent
-ms.openlocfilehash: fbc3b1d299ace27d38d895e42b8e3bb3b51b36f8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 69331dc1cf2aacf306b55b49402f7df90f5e2c99
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027315"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421970"
 ---
 <a name="emberjs-template"></a>EmberJS 範本
 ====================
@@ -149,7 +149,7 @@ Ember 會使用命名慣例，來比對 Url、 路由名稱、 控制器及範�
 
 [!code-html[Main](emberjs-template/samples/sample12.html)]
 
-`HtmlHelperExtensions` Controllers/HtmlHelperExensions.cs，所定義的類別定義協助程式函式來快取，並插入範本檔的時機**偵錯**設定為**true** Web.config 檔案中。 此函式呼叫從 Views/Home/App.cshtml 中定義的 ASP.NET MVC 檢視檔案：
+`HtmlHelperExtensions` Controllers/HtmlHelperExtensions.cs，所定義的類別定義協助程式函式來快取，並插入範本檔的時機**偵錯**設定為**true** Web.config 檔案中。 此函式呼叫從 Views/Home/App.cshtml 中定義的 ASP.NET MVC 檢視檔案：
 
 [!code-cshtml[Main](emberjs-template/samples/sample13.cshtml)]
 

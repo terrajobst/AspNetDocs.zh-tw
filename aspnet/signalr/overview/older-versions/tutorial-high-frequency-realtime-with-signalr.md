@@ -8,12 +8,12 @@ ms.date: 04/16/2013
 ms.assetid: ad2a5da5-2e79-40ea-bc84-028d327f5982
 msc.legacyurl: /signalr/overview/older-versions/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 6df35a420a0733003808a12d065b03f08ef56dd9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 60fffd7cd5139b2be34968c1f33474be867f0962
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048045"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422879"
 ---
 <a name="high-frequency-realtime-with-signalr-1x"></a>使用 SignalR 1.x 進行高頻率即時聊天
 ====================
@@ -136,7 +136,7 @@ ms.locfileid: "57048045"
 
 ## <a name="add-the-client-loop"></a>新增用戶端迴圈
 
-由於傳送每一個滑鼠移動事件形狀的位置，會建立網路流量不需要數量，將訊息從用戶端就必須進行節流處理。 我們將使用 javascript`setInterval`函式來設定迴圈，將新的位置資訊傳送到伺服器以固定費率。 這個迴圈是功能的 「 遊戲迴圈 」，重複呼叫的函式的磁碟機的所有遊戲或其他模擬非常基本表示法。
+由於傳送每一個滑鼠移動事件形狀的位置，會建立不必要的網路傳輸量，從用戶端的訊息，就必須進行節流處理。 我們將使用 javascript`setInterval`函式來設定迴圈，將新的位置資訊傳送到伺服器以固定費率。 這個迴圈是功能的 「 遊戲迴圈 」，重複呼叫的函式的磁碟機的所有遊戲或其他模擬非常基本表示法。
 
 1. 更新用戶端中的程式碼的 HTML 網頁，以符合下列程式碼片段。
 

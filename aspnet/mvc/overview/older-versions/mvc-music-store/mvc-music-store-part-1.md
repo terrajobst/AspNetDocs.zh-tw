@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: bd356ca3-5bdb-4067-9dac-c9e9923a86e8
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: d84a525221e40b79853be55069367134d17fb5ec
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0f252fd5c0e5962353720e47ba888d2b6b325a1c
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035955"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421904"
 ---
 <a name="part-1-overview-and-file-new-project"></a>第 1 部份：概觀和 [檔案] -> [新增專案]
 ====================
@@ -60,7 +60,7 @@ MVC Music 市集是介紹，並逐步說明如何使用 ASP.NET MVC 和 Visual W
 
 ![](mvc-music-store-part-1/_static/image6.jpg)
 
-客戶 faceing 除了頁面之外，我們也將建置會顯示一份相簿的系統管理員可以建立、 編輯、 系統管理員一節，並刪除 album:
+客戶面向除了頁面之外，我們也將建置會顯示一份相簿的系統管理員可以建立、 編輯、 系統管理員一節，並刪除 album:
 
 ![](mvc-music-store-part-1/_static/image7.jpg)
 

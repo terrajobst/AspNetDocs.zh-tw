@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 25ebaf1f-5a9f-423d-98c7-1d694e93664f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 132f9f85eccabc890308984b9e78ed1d2212c57a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b390ebfaec695a1c2565a91acaa38dbcc10a8959
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046855"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425791"
 ---
 <a name="triggering-an-animation-in-another-control-vb"></a>觸發另一個控制項中的動畫 (VB)
 ====================
@@ -54,7 +54,7 @@ ms.locfileid: "57046855"
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-vb/samples/sample6.aspx)]
 
-請注意特殊個別動畫顯示的順序。 首先，動畫執行後，便會停用按鈕。 因為沒有任何`AnimationTarget`屬性中`<EnableAction>`項目，這個動畫會套用至原始的控制項: [] 按鈕。 下面兩個動畫步驟都應該實行 parallelly (`<Parallel>`項目)。 兩者都有其`AnimationTarget`屬性設定為`"Panel1"`，因此以動畫顯示的窗格中，不是按鈕。
+請注意特殊個別動畫顯示的順序。 首先，動畫執行後，便會停用按鈕。 因為沒有任何`AnimationTarget`屬性中`<EnableAction>`項目，這個動畫會套用至原始的控制項: [] 按鈕。 下面兩個動畫步驟都應該以平行方式執行 (`<Parallel>`項目)。 兩者都有其`AnimationTarget`屬性設定為`"Panel1"`，因此以動畫顯示的窗格中，不是按鈕。
 
 
 [![在按鈕上的按一下滑鼠開始面板動畫](triggering-an-animation-in-another-control-vb/_static/image2.png)](triggering-an-animation-in-another-control-vb/_static/image1.png)

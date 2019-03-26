@@ -8,12 +8,12 @@ ms.date: 07/17/2006
 ms.assetid: 129d4338-1315-4f40-89b5-2b84b807707d
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 86b8bb00e83f311d311a51a747086356833a8c93
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 968f222742e0bd5f145082e8b2c33bbc43ee78cd
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060915"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423009"
 ---
 <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-vb"></a>處理 ASP.NET 頁面中 BLL 和 DAL 層級的例外狀況 (VB)
 ====================
@@ -98,7 +98,7 @@ ms.locfileid: "57060915"
 
 ## <a name="step-2-gracefully-handling-dal-level-exceptions"></a>步驟 2：依正常程序處理 DAL 層級的例外狀況
 
-雖然我們可以讓您編輯的 GridView 作出可行時使用者輸入的已編輯的產品名稱、 價格和庫存單位數的法律的值，輸入不合法的值會導致例外狀況。 例如，省略`ProductName`值的原因[NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp)自擲回`ProductName`中的屬性`ProdcutsRow`類別具有其`AllowDBNull`屬性設定為`false`; 如果資料庫已關閉，`SqlException`將會擲回 TableAdapter 時嘗試連線到資料庫。 但不採取任何動作，這些例外狀況反昇資料存取層的商業邏輯層，然後 ASP.NET 頁面中，最後到 ASP.NET 執行階段。
+雖然我們可以讓您編輯的 GridView 作出可行時使用者輸入的已編輯的產品名稱、 價格和庫存單位數的法律的值，輸入不合法的值會導致例外狀況。 例如，省略`ProductName`值的原因[NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp)自擲回`ProductName`中的屬性`ProductsRow`類別具有其`AllowDBNull`屬性設定為`false`; 如果資料庫已關閉，`SqlException`將會擲回 TableAdapter 時嘗試連線到資料庫。 但不採取任何動作，這些例外狀況反昇資料存取層的商業邏輯層，然後 ASP.NET 頁面中，最後到 ASP.NET 執行階段。
 
 根據您的 web 應用程式的設定方式和是否您造訪應用程式從`localhost`，未處理的例外狀況可能會導致一般伺服器錯誤頁面、 詳細的錯誤報表或使用者易記的網頁。 請參閱[Web 應用程式在 ASP.NET 中處理的錯誤](http://www.15seconds.com/issue/030102.htm)並[customErrors 項目](https://msdn.microsoft.com/library/h0hfz6fc(VS.80).aspx)如需有關 ASP.NET 執行階段回應無法攔截的例外狀況的方式。
 

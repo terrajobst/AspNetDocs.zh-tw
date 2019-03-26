@@ -8,12 +8,12 @@ ms.date: 03/31/2014
 ms.assetid: 6d497001-fa80-4765-b4cc-181fe90b894e
 msc.legacyurl: /web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception
 msc.type: authoredcontent
-ms.openlocfilehash: 039923a91d957765fa8b2c0cfe11abc8790c1e88
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 067542e8b8aa9909bbb2147f8e11e34604986d87
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052675"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424023"
 ---
 <a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a>ASP.NET Web Form 連線恢復功能與命令攔截
 ====================
@@ -141,7 +141,7 @@ Entity Framework 會自動執行衍生自的類別中找到的程式碼`DbConfig
 
 這行程式碼會造成您的攔截器程式碼，Entity Framework 會將查詢傳送至資料庫時要執行的原因。 請注意，因為您所建立的暫時性錯誤模擬不同的攔截器類別，並記錄，您可以獨立啟用和停用它們。   
   
- 您可以將使用的攔截器`DbInterception.Add`方法中任何位置的程式碼; 它不一定要在`Application_Start`方法。 另一個選項，如果您未新增中的攔截器`Application_Start`方法，就是更新或新增名為的類別*WingtipToysConfiguration.cs* ，並將上述程式碼中的建構函式結尾處放`WingtipToysbConfiguration`類別。
+ 您可以將使用的攔截器`DbInterception.Add`方法中任何位置的程式碼; 它不一定要在`Application_Start`方法。 另一個選項，如果您未新增中的攔截器`Application_Start`方法，就是更新或新增名為的類別*WingtipToysConfiguration.cs* ，並將上述程式碼中的建構函式結尾處放`WingtipToysConfiguration`類別。
 
 只要您將此程式碼，是請小心不要執行`DbInterception.Add`相同的攔截器超過一次，或者您會收到額外的攔截器執行個體。 比方說，如果您新增記錄攔截器兩次，您會看到兩個記錄檔，針對每個 SQL 查詢。
 
@@ -156,7 +156,7 @@ Entity Framework 會自動執行衍生自的類別中找到的程式碼`DbConfig
 3. 輸入新的產品名為 「 擲回 」 使用適當的描述、 價格和映像檔案。
 4. 按下**新增產品** 按鈕。  
    您會發現瀏覽器似乎 Entity Framework 正在重試查詢多次時的幾秒鐘的時間停止回應。 第一個重試會立即完成，則等候會增加每個額外的重試之前。 這個程序的每次重試會在呼叫之前，請等候再*指數型輪詢*。
-5. 頁面已無法載入 atttempting 等候。
+5. 請等到頁面不會再嘗試載入。
 6. 停止專案，並看看 Visual Studio**輸出**視窗來查看追蹤輸出。 您可以找到**輸出**視窗中的選取**偵錯** - &gt; **Windows**  - &gt; **輸出**。 您可能必須捲動過去您記錄器所撰寫的其他數個記錄檔。  
   
    請注意，您可以看到傳送至資料庫的實際 SQL 查詢。 您會看到一些初始查詢和命令的 Entity Framework 會更新，以開始使用，請檢查資料庫版本和移轉歷程記錄資料表。   

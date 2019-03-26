@@ -8,12 +8,12 @@ ms.date: 09/13/2006
 ms.assetid: cf5acaf5-d4f6-4957-badc-b89956b285f3
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f79c446a0c9407309ab65cd993df544e883afb22
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8dd23b960df6511f65882820cb26d4af4ccf5c58
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038425"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421527"
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-c"></a>使用 DataList 控制項在每個資料列顯示多筆記錄 (C#)
 ====================
@@ -66,7 +66,7 @@ Visual Studio 會自動建立之後建立和繫結至 DataList 的新 ObjectData
 
 預設行為時 DataList 是配置以垂直方式在單一資料行中，多重資料列的資料表中，其項目的變更此行為可以輕鬆地透過 DataList s [ `RepeatDirection`屬性](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatdirection.aspx)。 `RepeatDirection`屬性可以接受兩個可能值的其中一個：`Horizontal`或`Vertical`（預設值）。
 
-藉由變更`RepeatDirection`屬性從`Vertical`到`Horizontal`，DataList 呈現其記錄在單一的資料列中，建立一個資料行，每個資料來源項目。 為了說明這種效果，DataList 設計工具中按一下，然後從 [屬性] 視窗中，變更`RepeatDirection`屬性從`Vertical`至`Horiztonal`。 立即在這種方式，設計工具調整 DataList 的配置，建立單一資料列、 多重資料行的介面 （請參閱 [圖 3]）。
+藉由變更`RepeatDirection`屬性從`Vertical`到`Horizontal`，DataList 呈現其記錄在單一的資料列中，建立一個資料行，每個資料來源項目。 為了說明這種效果，DataList 設計工具中按一下，然後從 [屬性] 視窗中，變更`RepeatDirection`屬性從`Vertical`至`Horizontal`。 立即在這種方式，設計工具調整 DataList 的配置，建立單一資料列、 多重資料行的介面 （請參閱 [圖 3]）。
 
 
 [![Flow 屬性會指定如何方向 DataList s 項目會配置](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image8.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image7.png)

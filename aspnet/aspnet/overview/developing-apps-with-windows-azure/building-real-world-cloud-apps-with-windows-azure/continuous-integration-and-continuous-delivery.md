@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: f701488025ec84a17651f9abff43f84531d35689
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b384fe08ebd6a106b9469debfb13014e87534b8f
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046935"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425921"
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>持續整合與持續傳遞 （使用 Azure 建置真實世界的雲端應用程式）
 ====================
@@ -32,7 +32,7 @@ ms.locfileid: "57046935"
 
 通常我們會建議您連續傳遞至您的開發和預備環境。 大部分的團隊，甚至在 Microsoft，需要手動檢閱及核准程序，針對生產環境部署。 對於實際執行部署，您可能想要確定它時會關鍵人士開發小組可如需支援，或在低流量時段。 但沒有東西可以讓您無法完全自動化開發和測試環境，使所有開發人員只需要簽入變更和環境設定為接受度測試。
 
-下圖來自[Microsoft Patterns and Practices 電子書相關持續傳遞](http://aka.ms/ReleasePipeline)說明典型的工作流程。 按一下影像，若要查看其完整的大小，以其原始內容。
+下圖來自[Microsoft Patterns and Practices 電子書相關持續傳遞](https://aka.ms/ReleasePipeline)說明典型的工作流程。 按一下影像，若要查看其完整的大小，以其原始內容。
 
 [![持續傳遞工作流程](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/library/dn449955.aspx)
 
@@ -66,7 +66,7 @@ Azure 的 DevOps 服務提供多種功能，以協助您進行從規劃到部署
 
 另請參閱下列資源：
 
-- [建置與 Team Foundation Server 2012 的發行管線](http://aka.ms/ReleasePipeline)。 電子書的實際操作實驗室和範例程式碼，藉由 Microsoft Patterns and Practices，提供持續傳遞的深入介紹。 涵蓋使用 Visual Studio Lab Management 和 Visual Studio Release Management。
+- [建置與 Team Foundation Server 2012 的發行管線](https://aka.ms/ReleasePipeline)。 電子書的實際操作實驗室和範例程式碼，藉由 Microsoft Patterns and Practices，提供持續傳遞的深入介紹。 涵蓋使用 Visual Studio Lab Management 和 Visual Studio Release Management。
 - [ALM Ranger DevOps 工具和指引](https://aka.ms/vsarsolutions/)。 ALM Ranger 導入的 DevOps Workbench 範例隨附的方案和共同作業的模式中的實用指引&amp;作法的書籍*建置與 TFS 2012 的發行管線*，做為啟動的絕佳方法學習開發營運的概念&amp;Release Management for TFS 2012，並親身。 本指南示範如何一次建置並部署至多個環境。
 - [Testing for Continuous Delivery with Visual Studio 2012](https://msdn.microsoft.com/library/jj159345.aspx)。 電子書由 Microsoft Patterns and Practices，說明如何整合與持續傳遞的自動化測試。
 - [WindowsAzureDeploymentTracker](https://github.com/RyanTBerry/WindowsAzureDeploymentTracker)。 原始碼工具，設計用來擷取從 TFS （根據標籤而定），組建的建置、 封裝、 DevOps 角色，才能設定它的特定層面，允許某人和推送至 Azure。 工具會追蹤部署程序，若要讓 「 回復 」 到先前部署版本的作業。 此工具沒有外部相依性，並可在獨立使用 TFS 的 Api 和 Azure SDK。

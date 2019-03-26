@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 969ab824-1b98-4552-81fe-b60ef5fc6887
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 0170fda6849c1dfb53b44908ea55ba2cad0dd067
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4c8628cc289610e287c0a3bc3c8a4c7a833c9fde
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036615"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423412"
 ---
 # <a name="aspnet-mvc-4-custom-action-filters"></a>ASP.NET MVC 4 自訂動作篩選
 
@@ -261,7 +261,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample9.cs)]
 
     > [!NOTE]
-    > 此自訂動作篩選條件會比您在前一個練習中建立一個幾乎完全相同。 主要差異在於它有*&quot;記錄所&quot;* 更新這個新類別的名稱，以找出根據篩選器的屬性會註冊記錄檔。
+    > 此自訂動作篩選條件會比您在前一個練習中建立一個幾乎完全相同。 主要差異在於它有*&quot;記錄所&quot;* 屬性更新這個新類別的名稱來識別哪一個篩選條件註冊記錄檔。
 
 <a id="Ex2Task2"></a>
 
@@ -292,7 +292,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 <a id="Task_3_Managing_Filter_Ordering"></a>
 #### <a name="task-3-managing-filter-ordering"></a>工作 3:管理篩選器順序
 
-在這個工作中，您將了解如何管理使用順序屬性設定的篩選執行順序。
+在這個工作中，您將學習如何使用 Order 屬性管理篩選器的執行順序。
 
 1. 開啟**StoreController**類別位於**MvcMusicStore\Controllers**並指定**順序**喜歡這兩個篩選中的屬性如下所示。
 
@@ -325,7 +325,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 <a id="Task_4_Registering_Filters_Globally"></a>
 #### <a name="task-4-registering-filters-globally"></a>工作 4:註冊全域篩選器
 
-在這個工作中，您將會更新方案，以註冊新的篩選器 (**MyNewCustomActionFilter**) 做為全域篩選條件。 如此一來，就會觸發的所有動作而執行應用程式中，而且不只用於 StoreController 項目，如前一項工作所示。
+在這個工作中，您將會更新方案，以註冊新的篩選器 (**MyNewCustomActionFilter**) 做為全域篩選條件。 如此一來，就會觸發應用程式中，而不只是在 StoreController 項目，如同先前的工作執行的所有動作。
 
 1. 在  **StoreController**類別中，移除 **[MyNewCustomActionFilter]** 屬性和 [順序] 屬性從 **[CustomActionFilter]**。 它看起來應該如下所示：
 
@@ -375,7 +375,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 
 您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
 
-1. 移至[ [ https://go.microsoft.com/? linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)。 或者，如果您已安裝 Web Platform Installer，您可以開啟它，並搜尋產品&quot; <em>Visual Studio Express 2012 for Web 含 Windows Azure SDK</em>&quot;。
+1. 移至 [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)。 或者，如果您已安裝 Web Platform Installer，您可以開啟它，並搜尋產品&quot; <em>Visual Studio Express 2012 for Web 含 Windows Azure SDK</em>&quot;。
 2. 按一下 **立即安裝**。 如果您不需要**Web Platform Installer**您將會重新導向至下載並安裝第一次。
 3. 一次**Web Platform Installer**已開啟，按一下**安裝**，啟動安裝程式。
 
@@ -419,7 +419,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 1. 移至[Windows Azure 管理入口網站](https://manage.windowsazure.com/)並使用您的訂用帳戶相關聯的 Microsoft 認證登入。
 
     > [!NOTE]
-    > 使用 Windows Azure，您可以免費託管 10 個 ASP.NET 網站，並再隨著流量成長而調整。 您可以註冊申請[此處](http://aka.ms/aspnet-hol-azure)。
+    > 使用 Windows Azure，您可以免費託管 10 個 ASP.NET 網站，並再隨著流量成長而調整。 您可以註冊申請[此處](https://aka.ms/aspnet-hol-azure)。
 
     ![登入 Windows Azure 入口網站](aspnet-mvc-4-custom-action-filters/_static/image17.png "登入 Windows Azure 入口網站")
 

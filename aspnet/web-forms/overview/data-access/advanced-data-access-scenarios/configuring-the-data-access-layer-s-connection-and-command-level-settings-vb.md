@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: d57dfa2b-d627-45cb-b5b1-abbf3159d770
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d44372ef3eaf7634d3bf3a82bd2c1eb1d710f786
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 37c537931008045c5c6438fe2097652438c7e8b1
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032365"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424907"
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-vb"></a>設定資料存取層的連線和命令層級設定 (VB)
 ====================
@@ -106,7 +106,7 @@ TableAdapter 類別具現化時，成員變數`_connection`等於`Nothing`。 �
 
 這個部分的類別會公開基礎連接物件的一個屬性： `ConnectionString`。 如果您想要讓整個連線物件超過 TableAdapter 的範圍內，您也可以變更`Connection`屬性的保護層級。 我們在步驟 1 中檢查的自動產生程式碼所示範的 tableadapter`Connection`屬性標示為`Friend`，這表示，它只能存取相同的組件中的類別。 這可以變更，不過，透過 tableadapter`ConnectionModifier`屬性。
 
-開啟`Northwind`資料集，按一下 `ProductsTableAdatper`在設計師中，並瀏覽至 屬性 視窗。 您會看到`ConnectionModifier`設為預設值， `Assembly`。 若要讓`Connection`外部輸入資料集 s 組件，變更才可以使用屬性`ConnectionModifier`屬性設`Public`。
+開啟`Northwind`資料集，按一下 `ProductsTableAdapter`在設計師中，並瀏覽至 屬性 視窗。 您會看到`ConnectionModifier`設為預設值， `Assembly`。 若要讓`Connection`外部輸入資料集 s 組件，變更才可以使用屬性`ConnectionModifier`屬性設`Public`。
 
 
 [![您可以透過 ConnectionModifier 屬性設定連接屬性 s 存取範圍層級](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb/_static/image6.png)

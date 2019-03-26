@@ -8,12 +8,12 @@ ms.date: 06/06/2012
 ms.assetid: a56572ba-81c3-47af-826d-941e9c4775ec
 msc.legacyurl: /mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 757b15c34f6fa0078d0bca0dfb38d553bb73809d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 20f8d6f459cefc6c1a2e7d5f64c6df4199f8ad24
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033265"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424465"
 ---
 <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>使用 ASP.NET MVC 4 中的非同步方法
 ====================
@@ -152,7 +152,7 @@ ASP.NET MVC 4[控制器](https://msdn.microsoft.com/library/system.web.mvc.contr
 
 [!code-csharp[Main](using-asynchronous-methods-in-aspnet-mvc-4/samples/sample10.cs)]
 
-提供範例應用程式的情況下，選取*取消語彙基元 Demo*連結呼叫`GizmosCancelAsync`方法，並示範取消非同步呼叫。
+提供範例應用程式的情況下，選取*取消語彙基元示範*連結呼叫`GizmosCancelAsync`方法，並示範取消非同步呼叫。
 
 ## <a id="ServerConfig"></a>  高並行/高延遲的 Web 服務呼叫的伺服器組態
 

@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: f731990a-0a81-4d62-81df-87d676cdedd6
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: f7de23ca46e6dc00fe8075e28068a8b3f95d02cd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9beddfcaf568bf374271fb9fcb3af3a38aff4b72
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053255"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424829"
 ---
 <a name="use-ajax-to-implement-mapping-scenarios"></a>使用 AJAX 實作對應實例
 ====================
@@ -150,7 +150,7 @@ JavaScript 函式我們已新增至 「 模糊 」 事件附加至"Address"HTML 
 
 [!code-csharp[Main](use-ajax-to-implement-mapping-scenarios/samples/sample10.cs)]
 
-SearchController SearchByLocation 動作方法在內部呼叫 FindByLocation 方法，以取得一份附近 dinners DinnerRespository 上。 而不是傳回 Dinner 物件直接用戶端，但它改為傳回 JsonDinner 物件。 JsonDinner 類別會公開 Dinner 屬性的子集 (例如： 基於安全理由，它不會揭露吃晚餐具有 rsvp 的活動的人的名稱)。 它也包含 RSVPCount 屬性不存在於上 Dinner – 和它的動態計算方式是計算特定 dinner 與相關聯的 RSVP 物件數目。
+SearchController SearchByLocation 動作方法在內部呼叫 FindByLocation 方法，以取得一份附近 dinners DinnerRepository 上。 而不是傳回 Dinner 物件直接用戶端，但它改為傳回 JsonDinner 物件。 JsonDinner 類別會公開 Dinner 屬性的子集 (例如： 基於安全理由，它不會揭露吃晚餐具有 rsvp 的活動的人的名稱)。 它也包含 RSVPCount 屬性不存在於上 Dinner – 和它的動態計算方式是計算特定 dinner 與相關聯的 RSVP 物件數目。
 
 然後，我們會使用控制器的基底類別上 json （） helper 方法以傳回 dinners 使用 JSON 為基礎的 wire 格式的序列。 JSON 是代表簡單的資料結構的標準文字格式。 以下是範例 JSON 格式的兩個 JsonDinner 物件清單看起來像我們的動作方法傳回時：
 

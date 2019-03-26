@@ -8,12 +8,12 @@ ms.date: 07/04/2012
 ms.assetid: 91ee29ee-0689-40ee-914a-e7dd733b6622
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 642ff4554ed3664af0b5cc8e49d6b236c568131b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 21cfbd0bf691ea033e9a5a873ab49c83507750d5
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054435"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425960"
 ---
 <a name="part-6-creating-product-and-order-controllers"></a>第 6 部分：建立產品和訂單控制器
 ====================
@@ -96,7 +96,7 @@ HTTP 回應將包含數量的產品的陣列：
 
 [!code-json[Main](using-web-api-with-entity-framework-part-6/samples/sample10.json)]
 
-這是以結構良好的順序，和 Entity Framework 會值得高興的是將它插入資料庫。 但它包含不存在先前的產品實體。 用戶端，只在資料庫中建立新的產品 ！ 當使用者查看 koala 引起的訂單時，這會是訂單履約部門的意外。 重點在於，真的小心您接受 POST 或 PUT 要求中的資料。
+這是以結構良好的順序，和 Entity Framework 會值得高興的是將它插入資料庫。 但它包含不存在先前的產品實體。 用戶端，只在資料庫中建立新的產品 ！ 他們會看到 koala 引起的訂單，這會在訂單履行 」 部門的意外。 重點在於，真的小心您接受 POST 或 PUT 要求中的資料。
 
 若要避免這個問題，變更`PostOrder`方法以讓`OrderDTO`執行個體。 使用`OrderDTO`來建立`Order`。
 

@@ -8,18 +8,18 @@ ms.date: 09/30/2015
 ms.assetid: 719727b7-bef3-45ad-bfe9-ba5bcdb2305f
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
 msc.type: authoredcontent
-ms.openlocfilehash: 3c3557bb2be2807b11874937fcc629b5b773e463
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 03409e2fda831a07bbc5321ad842633b23ec25e5
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054565"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422404"
 ---
 <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>實際操作實驗室：使用 ASP.NET Web API 和 Angular.js 建置單一頁面應用程式 (SPA)
 ====================
 藉由[Web Camp 小組](https://twitter.com/webcamps)
 
-[下載 Web 研討會訓練套件](http://aka.ms/webcamps-training-kit)
+[下載 Web 研討會訓練套件](https://aka.ms/webcamps-training-kit)
 
 > 在傳統的 web 應用程式，用戶端 （瀏覽器） 會起始與伺服器通訊，藉由要求的頁面。 伺服器接著會處理要求，並傳送給用戶端網頁的 HTML。 在後續的互動與頁面 – 例如使用者瀏覽至連結或送出表單資料 – 新的要求會傳送到伺服器，並重新啟動流程： 伺服器處理要求，並將新的頁面傳送至新的動作要求回應中的瀏覽器ed 用戶端。
 > 
@@ -29,7 +29,7 @@ ms.locfileid: "57054565"
 > 
 > 在此手動在實驗室中，您會利用這些技術來實作 Geek 測驗，SPA 概念為基礎的邏輯網站。 您第一次會實作 ASP.NET Web API，可擷取測驗問題，並儲存回應所需的端點公開 （expose） 服務層。 然後，您將建置豐富且回應迅速的 UI，使用 AngularJS 和 CSS3 轉換效果。
 > 
-> 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)。
+> 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
 
 
 ## <a name="overview"></a>總覽
@@ -98,7 +98,7 @@ Web API 架構是 ASP.NET 堆疊的一部分，旨在讓您輕鬆地實作 HTTP 
 <a id="Ex1Task1"></a>
 #### <a name="task-1--creating-the-initial-project-for-geek-quiz"></a>工作 1-Geek 測驗建立初始專案
 
-在這項工作會開始使用支援建立新的 ASP.NET MVC 專案，ASP.NET Web API 是依據**One ASP.NET**專案類型隨附於 Visual Studio。 **One ASP.NET**統一所有 ASP.NET 技術，並可讓您混合及比對它們所需的選項。 您接著會新增 Entity Framework 的模型類別和資料庫 initializator，若要插入的測驗問題。
+在這項工作會開始使用支援建立新的 ASP.NET MVC 專案，ASP.NET Web API 是依據**One ASP.NET**專案類型隨附於 Visual Studio。 **One ASP.NET**統一所有 ASP.NET 技術，並可讓您混合及比對它們所需的選項。 您接著會新增 Entity Framework 的模型類別和要插入的測驗問題的資料庫初始設定式。
 
 1. 開啟**Visual Studio Express 2013 for Web** ，然後選取**檔案 |新增專案...** 啟動新的解決方案。
 

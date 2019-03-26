@@ -8,12 +8,12 @@ ms.date: 04/23/2009
 ms.assetid: 07b8905d-78ac-4252-97fb-8675b3fb0bbf
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e07da4b5263ac3c6db19c375ca00cbcf87e0b35a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b44ef5e92df8cc3b8660a8ce9e4ccc9b74c135d2
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042175"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422723"
 ---
 <a name="strategies-for-database-development-and-deployment-vb"></a>資料庫開發及部署策略 (VB)
 ====================
@@ -66,7 +66,7 @@ ms.locfileid: "57042175"
 
 加入註解文字中的資料庫變更的主要優點是簡單。 您不 t 需要熟悉建立和改變資料庫物件的 SQL 語法。 相反地，您可以變更記錄中的文字，並透過 SQL Server Management Studio s 圖形化使用者介面實作它們。
 
-維護您的變更記錄檔中的文字，無可否認地，不非常複雜且獲利 t 適用於特定專案，例如在範圍內，大型的經常變更的資料模型，或是牽涉到多個開發人員。 但是，我曾看過這種方法很適用於小型的工時專案具有只有偶爾變更的資料模型，其中單一的開發人員並沒有強式的背景中建立和改變資料庫物件的 SQL 語法。
+維護您的變更記錄檔中的文字是無可否認地，不會很複雜，也不會使用特定的專案，例如在範圍內，大型的經常變更的資料模型，或是牽涉到多個開發人員。 但是，我曾看過這種方法很適用於小型的工時專案具有只有偶爾變更的資料模型，其中單一的開發人員並沒有強式的背景中建立和改變資料庫物件的 SQL 語法。
 
 > [!NOTE]
 > 雖然變更記錄檔中的資訊，技術上來說，只需要部署階段建議保留變更的歷程記錄。 但是，而不是維護單一日益增長，變更記錄檔，請考慮讓每個資料庫版本的不同的變更記錄檔。 通常您會想要版本資料庫每個部署的時間。 藉由維護的變更記錄檔記錄您可以從基準中，重新建立任何資料庫版本藉由執行從第 1 版的變更記錄檔指令碼，並繼續執行直到您到達版本需要重新建立。

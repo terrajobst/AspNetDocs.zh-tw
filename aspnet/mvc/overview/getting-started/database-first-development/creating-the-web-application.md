@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: bc8f2bd5-ff57-4dcd-8418-a5bd517d8953
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/creating-the-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: dced55386c3f810e406c5c2b3f0071b45e3b2dbd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 481a0ee9b19e5d35d736b2cc937a124900bce446
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041575"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58426129"
 ---
 # <a name="tutorial-create-the-the-web-application-and-data-models-for-ef-database-first-with-aspnet-mvc"></a>教學課程：建立 Web 應用程式和 ef 資料模型資料庫的第一個使用 ASP.NET MVC
 
@@ -38,7 +38,7 @@ ms.locfileid: "57041575"
 
 ![建立專案](creating-the-web-application/_static/image1.png)
 
-按一下 [確定] 。
+按一下 [確定 **Deploying Office Solutions**]。
 
 在 [新增 ASP.NET 專案] 視窗中，選取**MVC**範本。 您可以清除**雲端中的主機**選項現在，因為您將部署更新版本的雲端應用程式。 按一下 **確定**建立應用程式。
 
@@ -64,11 +64,11 @@ ms.locfileid: "57041575"
 
 如果您有在您的開發環境內定義的資料庫連接，您可能會看到其中一個預先選取這些連線。 不過，您會想要建立新的連接到您在本教學課程的第一個部分中建立的資料庫。 按一下 [**新的連接**] 按鈕。
 
-在 [連接屬性] 視窗中，提供您的資料庫建立所在的本機伺服器的名稱 (在此情況下 **(localdb) \Projects13**)。 提供伺服器名稱之後, 請從可用的資料庫選取 ContosoUniversityData。
+在 [連接屬性] 視窗中，提供您的資料庫建立所在的本機伺服器的名稱 (在此情況下 **(localdb) \ProjectsV13**)。 提供伺服器名稱之後, 請從可用的資料庫選取 ContosoUniversityData。
 
 ![設定連接屬性](creating-the-web-application/_static/image8.png)
 
-按一下 [確定] 。
+按一下 [確定 **Deploying Office Solutions**]。
 
 現在會顯示正確的連接屬性。 您可以在 Web.Config 檔案中使用連接的預設名稱。
 

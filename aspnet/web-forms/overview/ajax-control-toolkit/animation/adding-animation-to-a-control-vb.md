@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: c120187e-963e-4439-bb85-32771bc7f1f4
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9392b1bab2289d886baf308d05644afbdc42a13a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c76e488f36690acd1a6c48b87335a8e6f892f2a8
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032755"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58421151"
 ---
 <a name="adding-animation-to-a-control-vb"></a>將動畫新增至控制項 (VB)
 ====================
@@ -65,7 +65,7 @@ ms.locfileid: "57032755"
 - `<Resize>` （變更大小）
 - `<Scale>` （按比例變更大小）
 
-在此範例中，[面板] 中應該會淡出。動畫應採用 1.5 秒 (`Duration`屬性)，顯示每秒 24 畫面格數 （動畫步驟） (`Fps` attributs)。 以下是完成標記`AnimationExtender`控制項：
+在此範例中，[面板] 中應該會淡出。動畫應採用 1.5 秒 (`Duration`屬性)，顯示每秒 24 畫面格數 （動畫步驟） (`Fps`屬性)。 以下是完成標記`AnimationExtender`控制項：
 
 [!code-aspx[Main](adding-animation-to-a-control-vb/samples/sample5.aspx)]
 

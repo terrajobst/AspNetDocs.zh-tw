@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 983f3ffa-08b8-4868-b8c9-aa34593fc683
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/create-a-database
 msc.type: authoredcontent
-ms.openlocfilehash: b6ab0740f251889f0fa0561809cac2bbe79bcb3a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 48ca2984ca8e4ec5b2bc49952a8718aa26138aea
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064905"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423698"
 ---
 <a name="create-a-database"></a>建立資料庫
 ====================
@@ -94,7 +94,7 @@ NerdDinner 資料庫 – 一個用來儲存我們 Dinners，和其他追蹤 RSVP
 
 我們現在會在資料庫裡面有兩個資料表。 我們最後一個結構描述設計步驟會設定 「 一對多 」 之間的關聯性這兩個資料表 –，以便我們可以對其套用的零或多個 RSVP 資料列與相關聯的每一列 Dinner。 我們會設定"Dinners 」 資料表中有"DinnerID 」 資料行的外部索引鍵關聯性的 RSVP 資料表的"DinnerID 」 資料行來執行這項操作。
 
-若要這樣做我們會藉由在 [伺服器總管] 中按兩下開啟資料表設計工具內的 RSVP 資料表。 我們會選取 「 DinnerID 」 內的資料行，以滑鼠右鍵按一下，然後選擇 [Relationshps] 內容功能表命令：
+若要這樣做我們會藉由在 [伺服器總管] 中按兩下開啟資料表設計工具內的 RSVP 資料表。 我們會選取 「 DinnerID 」 內的資料行，以滑鼠右鍵按一下，然後選擇 [關聯性...]內容功能表命令：
 
 ![](create-a-database/_static/image12.png)
 

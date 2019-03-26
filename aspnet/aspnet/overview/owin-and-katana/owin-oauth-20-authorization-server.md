@@ -8,12 +8,12 @@ ms.date: 01/28/2019
 ms.assetid: 20acee16-c70c-41e9-b38f-92bfcf9a4c1c
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
-ms.openlocfilehash: b8451d2d9e346bd5e2f51ba45e48030a5221b549
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d5c8262d48c79616ca3069c37077ba99ffafb650
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059745"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58426040"
 ---
 # <a name="owin-oauth-20-authorization-server"></a>OWIN OAuth 2.0 授權伺服器
 
@@ -238,7 +238,7 @@ OAuth 不在意您何處或如何管理您的使用者帳戶資訊。 它有[ASP
 
 - `UseCors` 方法會允許所有網域的 CORS。
 - `UseOAuthBearerAuthentication` 方法可讓 OAuth 持有人權杖驗證中介軟體會接收及驗證從要求中的授權標頭的持有人權杖。
-- `Config.SuppressDefaultHostAuthenticaiton` 隱藏預設主機驗證的主體，從應用程式，因此所有的要求將會是匿名的這個呼叫之後。
+- `Config.SuppressDefaultHostAuthentication` 隱藏預設主機驗證的主體，從應用程式，因此所有的要求將會是匿名的這個呼叫之後。
 - `HostAuthenticationFilter` 啟用驗證，只針對指定的驗證類型。 在此情況下，它會是持有人驗證類型。
 
 為了示範已驗證的身分識別，我們會建立 ApiController 輸出目前的使用者宣告。

@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: e3d3e7ba-87f0-4032-bdd3-31f3c1aa9d9c
 msc.legacyurl: /web-api/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 318a2f1c587feb360212a390bb5de7bdc127513d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d5011d42d0c2200bc782ab548f6bfa0d952f6e72
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043865"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58420916"
 ---
 <a name="dependency-injection-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的相依性插入
 ====================
@@ -49,7 +49,7 @@ ms.locfileid: "57043865"
 
 - 如果您想要取代`ProductRepository`與不同的實作中，您還需要修改控制器類別。
 - 如果`ProductRepository`具有相依性，您必須設定這些控制器內。 針對大型專案中使用多個控制站，將組態程式碼變得散布在您的專案。
-- 因為控制器是硬式編碼為查詢資料庫，它很難使用單元測試。 如需單元測試，您應該使用模擬或虛設常式儲存機制，也就是不可能以成為目前的設計。
+- 因為控制器是硬式編碼為查詢資料庫，它很難使用單元測試。 單元測試，您應該使用模擬或虛設常式儲存機制，也就是不可能與目前的設計。
 
 我們可以解決這些問題，由*插入*到控制器的存放庫。 首先，重構`ProductRepository`介面的類別：
 

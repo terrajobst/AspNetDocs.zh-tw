@@ -8,18 +8,18 @@ ms.date: 06/09/2009
 ms.assetid: 051296f0-9519-4e78-835c-d868da13b0a0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 29ea7f376f61c242ab93cfb71e1a7b435c575482
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0783d59fe70ebed9f1f074d35a9f2e063720d27a
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57051325"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424738"
 ---
 <a name="processing-unhandled-exceptions-vb"></a>處理未處理的例外狀況 (VB)
 ====================
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[檢視或下載範例程式碼](https://github.com/aspnet/Docs/tree/master/aspnet/web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb/samples) \(英文\) ([如何下載](/aspnet/core/tutorials/index#how-to-download-a-sample))
+[檢視或下載範例程式碼](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb/samples) \(英文\) ([如何下載](/aspnet/core/tutorials/index#how-to-download-a-sample))
 
 > 在生產環境中的 web 應用程式的執行階段錯誤發生時很重要通知開發人員，並記錄錯誤，如此可能會在稍後的時間點中診斷的時間。 本教學課程提供如何 ASP.NET 處理執行階段錯誤，以及查看有自訂程式碼執行時的未處理的例外狀況反昇至 ASP.NET 執行階段的一種方法的概觀。
 
