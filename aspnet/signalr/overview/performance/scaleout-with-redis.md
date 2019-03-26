@@ -8,159 +8,159 @@ ms.date: 06/10/2014
 ms.assetid: 6ecd08c1-e364-4cd7-ad4c-806521911585
 msc.legacyurl: /signalr/overview/performance/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: 22b8379fd2d97aeb85137e1cc128fe5d053f44ed
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c20341a7fa0f5c5382ce7f2f6d459c4a6bec509f
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047525"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424088"
 ---
-<a name="signalr-scaleout-with-redis"></a><span data-ttu-id="1be78-103">使用 Redis 的 SignalR 向外延展</span><span class="sxs-lookup"><span data-stu-id="1be78-103">SignalR Scaleout with Redis</span></span>
+<a name="signalr-scaleout-with-redis"></a><span data-ttu-id="04b0b-103">使用 Redis 的 SignalR 向外延展</span><span class="sxs-lookup"><span data-stu-id="04b0b-103">SignalR Scaleout with Redis</span></span>
 ====================
-<span data-ttu-id="1be78-104">藉由[Mike Wasson](https://github.com/MikeWasson)</span><span class="sxs-lookup"><span data-stu-id="1be78-104">by [Mike Wasson](https://github.com/MikeWasson)</span></span>
+<span data-ttu-id="04b0b-104">藉由[Mike Wasson](https://github.com/MikeWasson)</span><span class="sxs-lookup"><span data-stu-id="04b0b-104">by [Mike Wasson](https://github.com/MikeWasson)</span></span>
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-> ## <a name="software-versions-used-in-this-topic"></a><span data-ttu-id="1be78-105">本主題中使用的軟體版本</span><span class="sxs-lookup"><span data-stu-id="1be78-105">Software versions used in this topic</span></span>
+> ## <a name="software-versions-used-in-this-topic"></a><span data-ttu-id="04b0b-105">本主題中使用的軟體版本</span><span class="sxs-lookup"><span data-stu-id="04b0b-105">Software versions used in this topic</span></span>
 >
 >
-> - [<span data-ttu-id="1be78-106">Visual Studio 2013</span><span class="sxs-lookup"><span data-stu-id="1be78-106">Visual Studio 2013</span></span>](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
-> - <span data-ttu-id="1be78-107">.NET 4.5</span><span class="sxs-lookup"><span data-stu-id="1be78-107">.NET 4.5</span></span>
-> - <span data-ttu-id="1be78-108">SignalR 2.4 版</span><span class="sxs-lookup"><span data-stu-id="1be78-108">SignalR version 2.4</span></span>
+> - [<span data-ttu-id="04b0b-106">Visual Studio 2013</span><span class="sxs-lookup"><span data-stu-id="04b0b-106">Visual Studio 2013</span></span>](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
+> - <span data-ttu-id="04b0b-107">.NET 4.5</span><span class="sxs-lookup"><span data-stu-id="04b0b-107">.NET 4.5</span></span>
+> - <span data-ttu-id="04b0b-108">SignalR 2.4 版</span><span class="sxs-lookup"><span data-stu-id="04b0b-108">SignalR version 2.4</span></span>
 >
 >
 >
-> ## <a name="previous-versions-of-this-topic"></a><span data-ttu-id="1be78-109">本主題的上一個版本</span><span class="sxs-lookup"><span data-stu-id="1be78-109">Previous versions of this topic</span></span>
+> ## <a name="previous-versions-of-this-topic"></a><span data-ttu-id="04b0b-109">本主題的上一個版本</span><span class="sxs-lookup"><span data-stu-id="04b0b-109">Previous versions of this topic</span></span>
 >
-> <span data-ttu-id="1be78-110">如需舊版 SignalR 的資訊，請參閱[SignalR 舊版](../older-versions/index.md)。</span><span class="sxs-lookup"><span data-stu-id="1be78-110">For information about earlier versions of SignalR, see [SignalR Older Versions](../older-versions/index.md).</span></span>
+> <span data-ttu-id="04b0b-110">如需舊版 SignalR 的資訊，請參閱[SignalR 舊版](../older-versions/index.md)。</span><span class="sxs-lookup"><span data-stu-id="04b0b-110">For information about earlier versions of SignalR, see [SignalR Older Versions](../older-versions/index.md).</span></span>
 >
-> ## <a name="questions-and-comments"></a><span data-ttu-id="1be78-111">提出問題或意見</span><span class="sxs-lookup"><span data-stu-id="1be78-111">Questions and comments</span></span>
+> ## <a name="questions-and-comments"></a><span data-ttu-id="04b0b-111">提出問題或意見</span><span class="sxs-lookup"><span data-stu-id="04b0b-111">Questions and comments</span></span>
 >
-> <span data-ttu-id="1be78-112">您喜歡本教學課程中的方式，和我們可以改善在頁面底部的註解中，歡迎留下意見反應。</span><span class="sxs-lookup"><span data-stu-id="1be78-112">Please leave feedback on how you liked this tutorial and what we could improve in the comments at the bottom of the page.</span></span> <span data-ttu-id="1be78-113">如果您有不直接相關的教學課程中的問題，您可以張貼他們[ASP.NET SignalR 論壇](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或是[StackOverflow.com](http://stackoverflow.com/)。</span><span class="sxs-lookup"><span data-stu-id="1be78-113">If you have questions that are not directly related to the tutorial, you can post them to the [ASP.NET SignalR forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) or [StackOverflow.com](http://stackoverflow.com/).</span></span>
+> <span data-ttu-id="04b0b-112">您喜歡本教學課程中的方式，和我們可以改善在頁面底部的註解中，歡迎留下意見反應。</span><span class="sxs-lookup"><span data-stu-id="04b0b-112">Please leave feedback on how you liked this tutorial and what we could improve in the comments at the bottom of the page.</span></span> <span data-ttu-id="04b0b-113">如果您有不直接相關的教學課程中的問題，您可以張貼他們[ASP.NET SignalR 論壇](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或是[StackOverflow.com](http://stackoverflow.com/)。</span><span class="sxs-lookup"><span data-stu-id="04b0b-113">If you have questions that are not directly related to the tutorial, you can post them to the [ASP.NET SignalR forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) or [StackOverflow.com](http://stackoverflow.com/).</span></span>
 
 
-<span data-ttu-id="1be78-114">在本教學課程中，您將使用[Redis](http://redis.io/)將訊息散發到部署兩個個別的 IIS 執行個體的 SignalR 應用程式。</span><span class="sxs-lookup"><span data-stu-id="1be78-114">In this tutorial, you will use [Redis](http://redis.io/) to distribute messages across a SignalR application that is deployed on two separate IIS instances.</span></span>
+<span data-ttu-id="04b0b-114">在本教學課程中，您將使用[Redis](http://redis.io/)將訊息散發到部署兩個個別的 IIS 執行個體的 SignalR 應用程式。</span><span class="sxs-lookup"><span data-stu-id="04b0b-114">In this tutorial, you will use [Redis](http://redis.io/) to distribute messages across a SignalR application that is deployed on two separate IIS instances.</span></span>
 
-<span data-ttu-id="1be78-115">Redis 是記憶體中索引鍵-值存放區。</span><span class="sxs-lookup"><span data-stu-id="1be78-115">Redis is an in-memory key-value store.</span></span> <span data-ttu-id="1be78-116">它也支援發行/訂閱模型的傳訊系統。</span><span class="sxs-lookup"><span data-stu-id="1be78-116">It also supports a messaging system with a publish/subscribe model.</span></span> <span data-ttu-id="1be78-117">Redis 的 SignalR 後擋板會使用發佈/訂閱功能，將訊息轉送到其他伺服器。</span><span class="sxs-lookup"><span data-stu-id="1be78-117">The SignalR Redis backplane uses the pub/sub feature to forward messages to other servers.</span></span>
+<span data-ttu-id="04b0b-115">Redis 是記憶體中索引鍵-值存放區。</span><span class="sxs-lookup"><span data-stu-id="04b0b-115">Redis is an in-memory key-value store.</span></span> <span data-ttu-id="04b0b-116">它也支援發行/訂閱模型的傳訊系統。</span><span class="sxs-lookup"><span data-stu-id="04b0b-116">It also supports a messaging system with a publish/subscribe model.</span></span> <span data-ttu-id="04b0b-117">Redis 的 SignalR 後擋板會使用發佈/訂閱功能，將訊息轉送到其他伺服器。</span><span class="sxs-lookup"><span data-stu-id="04b0b-117">The SignalR Redis backplane uses the pub/sub feature to forward messages to other servers.</span></span>
 
 ![](scaleout-with-redis/_static/image1.png)
 
-<span data-ttu-id="1be78-118">本教學課程中，您會使用三部伺服器：</span><span class="sxs-lookup"><span data-stu-id="1be78-118">For this tutorial, you will use three servers:</span></span>
+<span data-ttu-id="04b0b-118">本教學課程中，您會使用三部伺服器：</span><span class="sxs-lookup"><span data-stu-id="04b0b-118">For this tutorial, you will use three servers:</span></span>
 
-- <span data-ttu-id="1be78-119">執行 Windows，您將使用的 SignalR 應用程式部署的兩部伺服器。</span><span class="sxs-lookup"><span data-stu-id="1be78-119">Two servers running Windows, which you will use to deploy a SignalR application.</span></span>
-- <span data-ttu-id="1be78-120">執行 Linux，您將用來執行 Redis 的一部伺服器。</span><span class="sxs-lookup"><span data-stu-id="1be78-120">One server running Linux, which you will use to run Redis.</span></span> <span data-ttu-id="1be78-121">在本教學課程的螢幕擷取畫面，我會使用 Ubuntu 12.04 TLS。</span><span class="sxs-lookup"><span data-stu-id="1be78-121">For the screenshots in this tutorial, I used Ubuntu 12.04 TLS.</span></span>
+- <span data-ttu-id="04b0b-119">執行 Windows，您將使用的 SignalR 應用程式部署的兩部伺服器。</span><span class="sxs-lookup"><span data-stu-id="04b0b-119">Two servers running Windows, which you will use to deploy a SignalR application.</span></span>
+- <span data-ttu-id="04b0b-120">執行 Linux，您將用來執行 Redis 的一部伺服器。</span><span class="sxs-lookup"><span data-stu-id="04b0b-120">One server running Linux, which you will use to run Redis.</span></span> <span data-ttu-id="04b0b-121">在本教學課程的螢幕擷取畫面，我會使用 Ubuntu 12.04 TLS。</span><span class="sxs-lookup"><span data-stu-id="04b0b-121">For the screenshots in this tutorial, I used Ubuntu 12.04 TLS.</span></span>
 
-<span data-ttu-id="1be78-122">如果您沒有要使用的三個實體伺服器，您可以建立在 HYPER-V 上的 Vm。</span><span class="sxs-lookup"><span data-stu-id="1be78-122">If you don't have three physical servers to use, you can create VMs on Hyper-V.</span></span> <span data-ttu-id="1be78-123">另一個選項是在 Azure 上建立 Vm。</span><span class="sxs-lookup"><span data-stu-id="1be78-123">Another option is to create VMs on Azure.</span></span>
+<span data-ttu-id="04b0b-122">如果您沒有要使用的三個實體伺服器，您可以建立在 HYPER-V 上的 Vm。</span><span class="sxs-lookup"><span data-stu-id="04b0b-122">If you don't have three physical servers to use, you can create VMs on Hyper-V.</span></span> <span data-ttu-id="04b0b-123">另一個選項是在 Azure 上建立 Vm。</span><span class="sxs-lookup"><span data-stu-id="04b0b-123">Another option is to create VMs on Azure.</span></span>
 
-<span data-ttu-id="1be78-124">雖然本教學課程使用官方 Redis 實作，另外還有[Windows 連接埠的 Redis](https://github.com/MSOpenTech/redis)從 MSOpenTech。</span><span class="sxs-lookup"><span data-stu-id="1be78-124">Although this tutorial uses the official Redis implementation, there is also a [Windows port of Redis](https://github.com/MSOpenTech/redis) from MSOpenTech.</span></span> <span data-ttu-id="1be78-125">安裝和設定不同，但除此以外步驟都相同。</span><span class="sxs-lookup"><span data-stu-id="1be78-125">Setup and configuration are different, but otherwise the steps are the same.</span></span>
+<span data-ttu-id="04b0b-124">雖然本教學課程使用官方 Redis 實作，另外還有[Windows 連接埠的 Redis](https://github.com/MSOpenTech/redis)從 MSOpenTech。</span><span class="sxs-lookup"><span data-stu-id="04b0b-124">Although this tutorial uses the official Redis implementation, there is also a [Windows port of Redis](https://github.com/MSOpenTech/redis) from MSOpenTech.</span></span> <span data-ttu-id="04b0b-125">安裝和設定不同，但除此以外步驟都相同。</span><span class="sxs-lookup"><span data-stu-id="04b0b-125">Setup and configuration are different, but otherwise the steps are the same.</span></span>
 
 > [!NOTE]
 >
-> <span data-ttu-id="1be78-126">SignalR 向外的延展與 Redis 不支援 Redis 叢集。</span><span class="sxs-lookup"><span data-stu-id="1be78-126">SignalR scaleout with Redis does not support Redis clusters.</span></span>
+> <span data-ttu-id="04b0b-126">SignalR 向外的延展與 Redis 不支援 Redis 叢集。</span><span class="sxs-lookup"><span data-stu-id="04b0b-126">SignalR scaleout with Redis does not support Redis clusters.</span></span>
 
 
-## <a name="overview"></a><span data-ttu-id="1be78-127">總覽</span><span class="sxs-lookup"><span data-stu-id="1be78-127">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="04b0b-127">總覽</span><span class="sxs-lookup"><span data-stu-id="04b0b-127">Overview</span></span>
 
-<span data-ttu-id="1be78-128">我們會詳細的教學課程之前，以下是您將進行的快速概觀。</span><span class="sxs-lookup"><span data-stu-id="1be78-128">Before we get to the detailed tutorial, here is a quick overview of what you will do.</span></span>
+<span data-ttu-id="04b0b-128">我們會詳細的教學課程之前，以下是您將進行的快速概觀。</span><span class="sxs-lookup"><span data-stu-id="04b0b-128">Before we get to the detailed tutorial, here is a quick overview of what you will do.</span></span>
 
-1. <span data-ttu-id="1be78-129">安裝 Redis 並啟動 Redis 伺服器。</span><span class="sxs-lookup"><span data-stu-id="1be78-129">Install Redis and start the Redis server.</span></span>
-2. <span data-ttu-id="1be78-130">將這些 NuGet 套件新增至您的應用程式中：</span><span class="sxs-lookup"><span data-stu-id="1be78-130">Add these NuGet packages to your application:</span></span>
+1. <span data-ttu-id="04b0b-129">安裝 Redis 並啟動 Redis 伺服器。</span><span class="sxs-lookup"><span data-stu-id="04b0b-129">Install Redis and start the Redis server.</span></span>
+2. <span data-ttu-id="04b0b-130">將這些 NuGet 套件新增至您的應用程式中：</span><span class="sxs-lookup"><span data-stu-id="04b0b-130">Add these NuGet packages to your application:</span></span>
 
-    - [<span data-ttu-id="1be78-131">Microsoft.AspNet.SignalR</span><span class="sxs-lookup"><span data-stu-id="1be78-131">Microsoft.AspNet.SignalR</span></span>](http://nuget.org/packages/Microsoft.AspNet.SignalR)
-    - [<span data-ttu-id="1be78-132">Microsoft.AspNet.SignalR.StackExchangeRedis</span><span class="sxs-lookup"><span data-stu-id="1be78-132">Microsoft.AspNet.SignalR.StackExchangeRedis</span></span>](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.StackExchangeRedis)
+    - [<span data-ttu-id="04b0b-131">Microsoft.AspNet.SignalR</span><span class="sxs-lookup"><span data-stu-id="04b0b-131">Microsoft.AspNet.SignalR</span></span>](http://nuget.org/packages/Microsoft.AspNet.SignalR)
+    - [<span data-ttu-id="04b0b-132">Microsoft.AspNet.SignalR.StackExchangeRedis</span><span class="sxs-lookup"><span data-stu-id="04b0b-132">Microsoft.AspNet.SignalR.StackExchangeRedis</span></span>](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.StackExchangeRedis)
     
-3. <span data-ttu-id="1be78-133">建立 SignalR 應用程式。</span><span class="sxs-lookup"><span data-stu-id="1be78-133">Create a SignalR application.</span></span>
-4. <span data-ttu-id="1be78-134">若要設定的後擋板的 Startup.cs 中加入下列程式碼：</span><span class="sxs-lookup"><span data-stu-id="1be78-134">Add the following code to Startup.cs to configure the backplane:</span></span>
+3. <span data-ttu-id="04b0b-133">建立 SignalR 應用程式。</span><span class="sxs-lookup"><span data-stu-id="04b0b-133">Create a SignalR application.</span></span>
+4. <span data-ttu-id="04b0b-134">若要設定的後擋板的 Startup.cs 中加入下列程式碼：</span><span class="sxs-lookup"><span data-stu-id="04b0b-134">Add the following code to Startup.cs to configure the backplane:</span></span>
 
     [!code-csharp[Main](scaleout-with-redis/samples/sample1.cs)]
 
-## <a name="ubuntu-on-hyper-v"></a><span data-ttu-id="1be78-135">HYPER-V 上的 Ubuntu</span><span class="sxs-lookup"><span data-stu-id="1be78-135">Ubuntu on Hyper-V</span></span>
+## <a name="ubuntu-on-hyper-v"></a><span data-ttu-id="04b0b-135">HYPER-V 上的 Ubuntu</span><span class="sxs-lookup"><span data-stu-id="04b0b-135">Ubuntu on Hyper-V</span></span>
 
-<span data-ttu-id="1be78-136">使用 Windows HYPER-V，可以在 Windows Server 上輕鬆建立 Ubuntu VM。</span><span class="sxs-lookup"><span data-stu-id="1be78-136">Using Windows Hyper-V, you can easily create an Ubuntu VM on Windows Server.</span></span>
+<span data-ttu-id="04b0b-136">使用 Windows HYPER-V，可以在 Windows Server 上輕鬆建立 Ubuntu VM。</span><span class="sxs-lookup"><span data-stu-id="04b0b-136">Using Windows Hyper-V, you can easily create an Ubuntu VM on Windows Server.</span></span>
 
-<span data-ttu-id="1be78-137">下載從 Ubuntu ISO [ http://www.ubuntu.com ](http://www.ubuntu.com/)。</span><span class="sxs-lookup"><span data-stu-id="1be78-137">Download the Ubuntu ISO from [http://www.ubuntu.com](http://www.ubuntu.com/).</span></span>
+<span data-ttu-id="04b0b-137">下載從 Ubuntu ISO [ http://www.ubuntu.com ](http://www.ubuntu.com/)。</span><span class="sxs-lookup"><span data-stu-id="04b0b-137">Download the Ubuntu ISO from [http://www.ubuntu.com](http://www.ubuntu.com/).</span></span>
 
-<span data-ttu-id="1be78-138">在 HYPER-V 中新增新的 VM。</span><span class="sxs-lookup"><span data-stu-id="1be78-138">In Hyper-V, add a new VM.</span></span> <span data-ttu-id="1be78-139">在 **連接虛擬硬碟**步驟中，選取**建立虛擬硬碟**。</span><span class="sxs-lookup"><span data-stu-id="1be78-139">In the **Connect Virtual Hard Disk** step, select **Create a virtual hard disk**.</span></span>
+<span data-ttu-id="04b0b-138">在 HYPER-V 中新增新的 VM。</span><span class="sxs-lookup"><span data-stu-id="04b0b-138">In Hyper-V, add a new VM.</span></span> <span data-ttu-id="04b0b-139">在 **連接虛擬硬碟**步驟中，選取**建立虛擬硬碟**。</span><span class="sxs-lookup"><span data-stu-id="04b0b-139">In the **Connect Virtual Hard Disk** step, select **Create a virtual hard disk**.</span></span>
 
 ![](scaleout-with-redis/_static/image2.png)
 
-<span data-ttu-id="1be78-140">在 **安裝選項**步驟中，選取**映像檔 (.iso)**，按一下 **瀏覽**，並瀏覽至 Ubuntu 安裝 ISO。</span><span class="sxs-lookup"><span data-stu-id="1be78-140">In the **Installation Options** step, select **Image file (.iso)**, click **Browse**, and browse to the Ubuntu installation ISO.</span></span>
+<span data-ttu-id="04b0b-140">在 **安裝選項**步驟中，選取**映像檔 (.iso)**，按一下 **瀏覽**，並瀏覽至 Ubuntu 安裝 ISO。</span><span class="sxs-lookup"><span data-stu-id="04b0b-140">In the **Installation Options** step, select **Image file (.iso)**, click **Browse**, and browse to the Ubuntu installation ISO.</span></span>
 
 ![](scaleout-with-redis/_static/image3.png)
 
-## <a name="install-redis"></a><span data-ttu-id="1be78-141">安裝 Redis</span><span class="sxs-lookup"><span data-stu-id="1be78-141">Install Redis</span></span>
+## <a name="install-redis"></a><span data-ttu-id="04b0b-141">安裝 Redis</span><span class="sxs-lookup"><span data-stu-id="04b0b-141">Install Redis</span></span>
 
-<span data-ttu-id="1be78-142">請遵循的步驟[ http://redis.io/download ](http://redis.io/download)來下載並建置 Redis。</span><span class="sxs-lookup"><span data-stu-id="1be78-142">Follow the steps at [http://redis.io/download](http://redis.io/download) to download and build Redis.</span></span>
+<span data-ttu-id="04b0b-142">請遵循的步驟[ http://redis.io/download ](http://redis.io/download)來下載並建置 Redis。</span><span class="sxs-lookup"><span data-stu-id="04b0b-142">Follow the steps at [http://redis.io/download](http://redis.io/download) to download and build Redis.</span></span>
 
 [!code-console[Main](scaleout-with-redis/samples/sample2.cmd)]
 
-<span data-ttu-id="1be78-143">這會建置 Redis 二進位檔`src`目錄。</span><span class="sxs-lookup"><span data-stu-id="1be78-143">This builds the Redis binaries in the `src` directory.</span></span>
+<span data-ttu-id="04b0b-143">這會建置 Redis 二進位檔`src`目錄。</span><span class="sxs-lookup"><span data-stu-id="04b0b-143">This builds the Redis binaries in the `src` directory.</span></span>
 
-<span data-ttu-id="1be78-144">根據預設，Redis 不需要密碼。</span><span class="sxs-lookup"><span data-stu-id="1be78-144">By default, Redis does not require a password.</span></span> <span data-ttu-id="1be78-145">若要設定密碼，請編輯`redis.conf`位於原始碼的根目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="1be78-145">To set a password, edit the `redis.conf` file, which is located in the root directory of the source code.</span></span> <span data-ttu-id="1be78-146">（請將檔案的備份副本才能進行編輯時） ！新增下列指示詞到`redis.conf`:</span><span class="sxs-lookup"><span data-stu-id="1be78-146">(Make a backup copy of the file before you edit it!) Add the following directive to `redis.conf`:</span></span>
+<span data-ttu-id="04b0b-144">根據預設，Redis 不需要密碼。</span><span class="sxs-lookup"><span data-stu-id="04b0b-144">By default, Redis does not require a password.</span></span> <span data-ttu-id="04b0b-145">若要設定密碼，請編輯`redis.conf`位於原始碼的根目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="04b0b-145">To set a password, edit the `redis.conf` file, which is located in the root directory of the source code.</span></span> <span data-ttu-id="04b0b-146">（請將檔案的備份副本才能進行編輯時） ！新增下列指示詞到`redis.conf`:</span><span class="sxs-lookup"><span data-stu-id="04b0b-146">(Make a backup copy of the file before you edit it!) Add the following directive to `redis.conf`:</span></span>
 
 [!code-powershell[Main](scaleout-with-redis/samples/sample3.ps1)]
 
-<span data-ttu-id="1be78-147">現在開始 Redis 伺服器：</span><span class="sxs-lookup"><span data-stu-id="1be78-147">Now start the Redis server:</span></span>
+<span data-ttu-id="04b0b-147">現在開始 Redis 伺服器：</span><span class="sxs-lookup"><span data-stu-id="04b0b-147">Now start the Redis server:</span></span>
 
 [!code-css[Main](scaleout-with-redis/samples/sample4.css)]
 
 ![](scaleout-with-redis/_static/image4.png)
 
-<span data-ttu-id="1be78-148">開啟連接埠 6379，也就是 Redis 的預設通訊埠接聽時。</span><span class="sxs-lookup"><span data-stu-id="1be78-148">Open port 6379, which is the default port that Redis listens on.</span></span> <span data-ttu-id="1be78-149">（您可以變更組態檔中的連接埠號碼）。</span><span class="sxs-lookup"><span data-stu-id="1be78-149">(You can change the port number in the configuration file.)</span></span>
+<span data-ttu-id="04b0b-148">開啟連接埠 6379，也就是 Redis 的預設通訊埠接聽時。</span><span class="sxs-lookup"><span data-stu-id="04b0b-148">Open port 6379, which is the default port that Redis listens on.</span></span> <span data-ttu-id="04b0b-149">（您可以變更組態檔中的連接埠號碼）。</span><span class="sxs-lookup"><span data-stu-id="04b0b-149">(You can change the port number in the configuration file.)</span></span>
 
-## <a name="create-the-signalr-application"></a><span data-ttu-id="1be78-150">建立 SignalR 應用程式</span><span class="sxs-lookup"><span data-stu-id="1be78-150">Create the SignalR Application</span></span>
+## <a name="create-the-signalr-application"></a><span data-ttu-id="04b0b-150">建立 SignalR 應用程式</span><span class="sxs-lookup"><span data-stu-id="04b0b-150">Create the SignalR Application</span></span>
 
-<span data-ttu-id="1be78-151">依照下列其中一個這些教學課程中建立的 SignalR 應用程式：</span><span class="sxs-lookup"><span data-stu-id="1be78-151">Create a SignalR application by following either of these tutorials:</span></span>
+<span data-ttu-id="04b0b-151">依照下列其中一個這些教學課程中建立的 SignalR 應用程式：</span><span class="sxs-lookup"><span data-stu-id="04b0b-151">Create a SignalR application by following either of these tutorials:</span></span>
 
-- [<span data-ttu-id="1be78-152">開始使用 SignalR 2.0</span><span class="sxs-lookup"><span data-stu-id="1be78-152">Getting Started with SignalR 2.0</span></span>](../getting-started/tutorial-getting-started-with-signalr.md)
-- [<span data-ttu-id="1be78-153">開始使用 SignalR 2.0 和 MVC 5</span><span class="sxs-lookup"><span data-stu-id="1be78-153">Getting Started with SignalR 2.0 and MVC 5</span></span>](../getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
+- [<span data-ttu-id="04b0b-152">開始使用 SignalR 2.0</span><span class="sxs-lookup"><span data-stu-id="04b0b-152">Getting Started with SignalR 2.0</span></span>](../getting-started/tutorial-getting-started-with-signalr.md)
+- [<span data-ttu-id="04b0b-153">開始使用 SignalR 2.0 和 MVC 5</span><span class="sxs-lookup"><span data-stu-id="04b0b-153">Getting Started with SignalR 2.0 and MVC 5</span></span>](../getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
 
-<span data-ttu-id="1be78-154">接下來，我們將修改的聊天應用程式，以支援向外的延展與 Redis。</span><span class="sxs-lookup"><span data-stu-id="1be78-154">Next, we'll modify the chat application to support scaleout with Redis.</span></span> <span data-ttu-id="1be78-155">首先，新增`Microsoft.AspNet.SignalR.StackExchangeRedis`NuGet 封裝加入您的專案。</span><span class="sxs-lookup"><span data-stu-id="1be78-155">First, add the `Microsoft.AspNet.SignalR.StackExchangeRedis` NuGet package to your project.</span></span> <span data-ttu-id="1be78-156">在 Visual Studio 中，從**工具**功能表上，選取**NuGet 套件管理員**，然後選取**Package Manager Console**。</span><span class="sxs-lookup"><span data-stu-id="1be78-156">In Visual Studio, from the **Tools** menu, select **NuGet Package Manager**, then select **Package Manager Console**.</span></span> <span data-ttu-id="1be78-157">在 [套件管理員主控台] 視窗中，輸入下列命令：</span><span class="sxs-lookup"><span data-stu-id="1be78-157">In the Package Manager Console window, enter the following command:</span></span>
+<span data-ttu-id="04b0b-154">接下來，我們將修改的聊天應用程式，以支援向外的延展與 Redis。</span><span class="sxs-lookup"><span data-stu-id="04b0b-154">Next, we'll modify the chat application to support scaleout with Redis.</span></span> <span data-ttu-id="04b0b-155">首先，新增`Microsoft.AspNet.SignalR.StackExchangeRedis`NuGet 封裝加入您的專案。</span><span class="sxs-lookup"><span data-stu-id="04b0b-155">First, add the `Microsoft.AspNet.SignalR.StackExchangeRedis` NuGet package to your project.</span></span> <span data-ttu-id="04b0b-156">在 Visual Studio 中，從**工具**功能表上，選取**NuGet 套件管理員**，然後選取**Package Manager Console**。</span><span class="sxs-lookup"><span data-stu-id="04b0b-156">In Visual Studio, from the **Tools** menu, select **NuGet Package Manager**, then select **Package Manager Console**.</span></span> <span data-ttu-id="04b0b-157">在 [套件管理員主控台] 視窗中，輸入下列命令：</span><span class="sxs-lookup"><span data-stu-id="04b0b-157">In the Package Manager Console window, enter the following command:</span></span>
 
 [!code-powershell[Main](scaleout-with-redis/samples/sample5.ps1)]
 
-<span data-ttu-id="1be78-158">接下來，開啟 Startup.cs 檔案。</span><span class="sxs-lookup"><span data-stu-id="1be78-158">Next, open the Startup.cs file.</span></span> <span data-ttu-id="1be78-159">將下列程式碼加入**組態**方法：</span><span class="sxs-lookup"><span data-stu-id="1be78-159">Add the following code to the **Configuration** method:</span></span>
+<span data-ttu-id="04b0b-158">接下來，開啟 Startup.cs 檔案。</span><span class="sxs-lookup"><span data-stu-id="04b0b-158">Next, open the Startup.cs file.</span></span> <span data-ttu-id="04b0b-159">將下列程式碼加入**組態**方法：</span><span class="sxs-lookup"><span data-stu-id="04b0b-159">Add the following code to the **Configuration** method:</span></span>
 
 [!code-csharp[Main](scaleout-with-redis/samples/sample6.cs)]
 
-- <span data-ttu-id="1be78-160">「 伺服器 」 是正在執行的 Redis 伺服器的名稱。</span><span class="sxs-lookup"><span data-stu-id="1be78-160">"server" is the name of the server that is running Redis.</span></span>
-- <span data-ttu-id="1be78-161">*連接埠*的通訊埠編號</span><span class="sxs-lookup"><span data-stu-id="1be78-161">*port* is the port number</span></span>
-- <span data-ttu-id="1be78-162">「 密碼 」 是指您在 redis.conf 檔案中定義的密碼。</span><span class="sxs-lookup"><span data-stu-id="1be78-162">"password" is the password that you defined in the redis.conf file.</span></span>
-- <span data-ttu-id="1be78-163">:"AppName"是任何字串。</span><span class="sxs-lookup"><span data-stu-id="1be78-163">"AppName" is any string.</span></span> <span data-ttu-id="1be78-164">SignalR 使用此名稱建立 Redis pub/sub 通道。</span><span class="sxs-lookup"><span data-stu-id="1be78-164">SignalR creates a Redis pub/sub channel with this name.</span></span>
+- <span data-ttu-id="04b0b-160">「 伺服器 」 是正在執行的 Redis 伺服器的名稱。</span><span class="sxs-lookup"><span data-stu-id="04b0b-160">"server" is the name of the server that is running Redis.</span></span>
+- <span data-ttu-id="04b0b-161">*連接埠*的通訊埠編號</span><span class="sxs-lookup"><span data-stu-id="04b0b-161">*port* is the port number</span></span>
+- <span data-ttu-id="04b0b-162">「 密碼 」 是指您在 redis.conf 檔案中定義的密碼。</span><span class="sxs-lookup"><span data-stu-id="04b0b-162">"password" is the password that you defined in the redis.conf file.</span></span>
+- <span data-ttu-id="04b0b-163">:"AppName"是任何字串。</span><span class="sxs-lookup"><span data-stu-id="04b0b-163">"AppName" is any string.</span></span> <span data-ttu-id="04b0b-164">SignalR 使用此名稱建立 Redis pub/sub 通道。</span><span class="sxs-lookup"><span data-stu-id="04b0b-164">SignalR creates a Redis pub/sub channel with this name.</span></span>
 
-<span data-ttu-id="1be78-165">例如: </span><span class="sxs-lookup"><span data-stu-id="1be78-165">For example:</span></span>
+<span data-ttu-id="04b0b-165">例如: </span><span class="sxs-lookup"><span data-stu-id="04b0b-165">For example:</span></span>
 
 [!code-csharp[Main](scaleout-with-redis/samples/sample7.cs)]
 
-## <a name="deploy-and-run-the-application"></a><span data-ttu-id="1be78-166">部署和執行應用程式</span><span class="sxs-lookup"><span data-stu-id="1be78-166">Deploy and Run the Application</span></span>
+## <a name="deploy-and-run-the-application"></a><span data-ttu-id="04b0b-166">部署和執行應用程式</span><span class="sxs-lookup"><span data-stu-id="04b0b-166">Deploy and Run the Application</span></span>
 
-<span data-ttu-id="1be78-167">準備您的 Windows Server 執行個體，若要部署的 SignalR 應用程式。</span><span class="sxs-lookup"><span data-stu-id="1be78-167">Prepare your Windows Server instances to deploy the SignalR application.</span></span>
+<span data-ttu-id="04b0b-167">準備您的 Windows Server 執行個體，若要部署的 SignalR 應用程式。</span><span class="sxs-lookup"><span data-stu-id="04b0b-167">Prepare your Windows Server instances to deploy the SignalR application.</span></span>
 
-<span data-ttu-id="1be78-168">新增 IIS 角色。</span><span class="sxs-lookup"><span data-stu-id="1be78-168">Add the IIS role.</span></span> <span data-ttu-id="1be78-169">包含 「 應用程式開發 」 功能，包括 WebSocket 通訊協定。</span><span class="sxs-lookup"><span data-stu-id="1be78-169">Include "Application Development" features, including the WebSocket Protocol.</span></span>
+<span data-ttu-id="04b0b-168">新增 IIS 角色。</span><span class="sxs-lookup"><span data-stu-id="04b0b-168">Add the IIS role.</span></span> <span data-ttu-id="04b0b-169">包含 「 應用程式開發 」 功能，包括 WebSocket 通訊協定。</span><span class="sxs-lookup"><span data-stu-id="04b0b-169">Include "Application Development" features, including the WebSocket Protocol.</span></span>
 
 ![](scaleout-with-redis/_static/image5.png)
 
-<span data-ttu-id="1be78-170">也包含 「 管理 」 服務 （列在 [管理工具]）。</span><span class="sxs-lookup"><span data-stu-id="1be78-170">Also include the Management Service (listed under "Management Tools").</span></span>
+<span data-ttu-id="04b0b-170">也包含 「 管理 」 服務 （列在 [管理工具]）。</span><span class="sxs-lookup"><span data-stu-id="04b0b-170">Also include the Management Service (listed under "Management Tools").</span></span>
 
 ![](scaleout-with-redis/_static/image6.png)
 
-<span data-ttu-id="1be78-171">**安裝 Web Deploy 3.0。**</span><span class="sxs-lookup"><span data-stu-id="1be78-171">**Install Web Deploy 3.0.**</span></span> <span data-ttu-id="1be78-172">當您執行 IIS 管理員，它會提示您安裝 Microsoft Web Platform，或者您可以[下載 intstaller](https://go.microsoft.com/fwlink/?LinkId=255386)。</span><span class="sxs-lookup"><span data-stu-id="1be78-172">When you run IIS Manager, it will prompt you to install Microsoft Web Platform, or you can [download the intstaller](https://go.microsoft.com/fwlink/?LinkId=255386).</span></span> <span data-ttu-id="1be78-173">在 平台安裝程式中，搜尋 Web Deploy，並安裝 Web Deploy 3.0</span><span class="sxs-lookup"><span data-stu-id="1be78-173">In the Platform Installer, search for Web Deploy and install Web Deploy 3.0</span></span>
+<span data-ttu-id="04b0b-171">**安裝 Web Deploy 3.0。**</span><span class="sxs-lookup"><span data-stu-id="04b0b-171">**Install Web Deploy 3.0.**</span></span> <span data-ttu-id="04b0b-172">當您執行 IIS 管理員，它會提示您安裝 Microsoft Web Platform，或者您可以[下載安裝程式](https://go.microsoft.com/fwlink/?LinkId=255386)。</span><span class="sxs-lookup"><span data-stu-id="04b0b-172">When you run IIS Manager, it will prompt you to install Microsoft Web Platform, or you can [download the installer](https://go.microsoft.com/fwlink/?LinkId=255386).</span></span> <span data-ttu-id="04b0b-173">在 平台安裝程式中，搜尋 Web Deploy，並安裝 Web Deploy 3.0</span><span class="sxs-lookup"><span data-stu-id="04b0b-173">In the Platform Installer, search for Web Deploy and install Web Deploy 3.0</span></span>
 
 ![](scaleout-with-redis/_static/image7.png)
 
-<span data-ttu-id="1be78-174">檢查 Web 管理服務正在執行。</span><span class="sxs-lookup"><span data-stu-id="1be78-174">Check that the Web Management Service is running.</span></span> <span data-ttu-id="1be78-175">否則，請啟動服務。</span><span class="sxs-lookup"><span data-stu-id="1be78-175">If not, start the service.</span></span> <span data-ttu-id="1be78-176">（如果您沒有看到 Web 管理服務中的 Windows 服務清單，請確定您新增 IIS 角色時，安裝 「 管理服務。）</span><span class="sxs-lookup"><span data-stu-id="1be78-176">(If you don't see Web Management Service in the list of Windows services, make sure that you installed the Management Service when you added the IIS role.)</span></span>
+<span data-ttu-id="04b0b-174">檢查 Web 管理服務正在執行。</span><span class="sxs-lookup"><span data-stu-id="04b0b-174">Check that the Web Management Service is running.</span></span> <span data-ttu-id="04b0b-175">否則，請啟動服務。</span><span class="sxs-lookup"><span data-stu-id="04b0b-175">If not, start the service.</span></span> <span data-ttu-id="04b0b-176">（如果您沒有看到 Web 管理服務中的 Windows 服務清單，請確定您新增 IIS 角色時，安裝 「 管理服務。）</span><span class="sxs-lookup"><span data-stu-id="04b0b-176">(If you don't see Web Management Service in the list of Windows services, make sure that you installed the Management Service when you added the IIS role.)</span></span>
 
-<span data-ttu-id="1be78-177">根據預設，Web 管理服務會接聽 TCP 連接埠 8172。</span><span class="sxs-lookup"><span data-stu-id="1be78-177">By default, the Web Management Service listens on TCP port 8172.</span></span> <span data-ttu-id="1be78-178">在 [Windows 防火牆] 中，建立新的輸入的規則，以允許連接埠 8172 上的 TCP 流量。</span><span class="sxs-lookup"><span data-stu-id="1be78-178">In Windows Firewall, create a new inbound rule to allow TCP traffic on port 8172.</span></span> <span data-ttu-id="1be78-179">如需詳細資訊，請參閱 <<c0> [ 設定防火牆規則](https://technet.microsoft.com/library/dd448559(WS.10).aspx)。</span><span class="sxs-lookup"><span data-stu-id="1be78-179">For more information, see [Configuring Firewall Rules](https://technet.microsoft.com/library/dd448559(WS.10).aspx).</span></span> <span data-ttu-id="1be78-180">（如果您裝載在 Azure 上的 Vm，您可以直接在 Azure 入口網站中。</span><span class="sxs-lookup"><span data-stu-id="1be78-180">(If you are hosting the VMs on Azure, you can do this directly in the Azure portal.</span></span> <span data-ttu-id="1be78-181">請參閱[如何設定虛擬機器的端點](https://azure.microsoft.com/documentation/articles/virtual-machines-set-up-endpoints/)。)</span><span class="sxs-lookup"><span data-stu-id="1be78-181">See [How to Set Up Endpoints to a Virtual Machine](https://azure.microsoft.com/documentation/articles/virtual-machines-set-up-endpoints/).)</span></span>
+<span data-ttu-id="04b0b-177">根據預設，Web 管理服務會接聽 TCP 連接埠 8172。</span><span class="sxs-lookup"><span data-stu-id="04b0b-177">By default, the Web Management Service listens on TCP port 8172.</span></span> <span data-ttu-id="04b0b-178">在 [Windows 防火牆] 中，建立新的輸入的規則，以允許連接埠 8172 上的 TCP 流量。</span><span class="sxs-lookup"><span data-stu-id="04b0b-178">In Windows Firewall, create a new inbound rule to allow TCP traffic on port 8172.</span></span> <span data-ttu-id="04b0b-179">如需詳細資訊，請參閱 <<c0> [ 設定防火牆規則](https://technet.microsoft.com/library/dd448559(WS.10).aspx)。</span><span class="sxs-lookup"><span data-stu-id="04b0b-179">For more information, see [Configuring Firewall Rules](https://technet.microsoft.com/library/dd448559(WS.10).aspx).</span></span> <span data-ttu-id="04b0b-180">（如果您裝載在 Azure 上的 Vm，您可以直接在 Azure 入口網站中。</span><span class="sxs-lookup"><span data-stu-id="04b0b-180">(If you are hosting the VMs on Azure, you can do this directly in the Azure portal.</span></span> <span data-ttu-id="04b0b-181">請參閱[如何設定虛擬機器的端點](https://azure.microsoft.com/documentation/articles/virtual-machines-set-up-endpoints/)。)</span><span class="sxs-lookup"><span data-stu-id="04b0b-181">See [How to Set Up Endpoints to a Virtual Machine](https://azure.microsoft.com/documentation/articles/virtual-machines-set-up-endpoints/).)</span></span>
 
-<span data-ttu-id="1be78-182">現在，您已準備好要部署到伺服器的 從您的開發電腦的 Visual Studio 專案。</span><span class="sxs-lookup"><span data-stu-id="1be78-182">Now you are ready to deploy the Visual Studio project from your development machine to the server.</span></span> <span data-ttu-id="1be78-183">在 方案總管 中，以滑鼠右鍵按一下方案，然後按一下 **發佈**。</span><span class="sxs-lookup"><span data-stu-id="1be78-183">In Solution Explorer, right-click the solution and click **Publish**.</span></span>
+<span data-ttu-id="04b0b-182">現在，您已準備好要部署到伺服器的 從您的開發電腦的 Visual Studio 專案。</span><span class="sxs-lookup"><span data-stu-id="04b0b-182">Now you are ready to deploy the Visual Studio project from your development machine to the server.</span></span> <span data-ttu-id="04b0b-183">在 方案總管 中，以滑鼠右鍵按一下方案，然後按一下 **發佈**。</span><span class="sxs-lookup"><span data-stu-id="04b0b-183">In Solution Explorer, right-click the solution and click **Publish**.</span></span>
 
-<span data-ttu-id="1be78-184">如需詳細的 web 部署的相關文件，請參閱[Visual Studio 及 ASP.NET 的 Web 部署內容對應](../../../whitepapers/aspnet-web-deployment-content-map.md)。</span><span class="sxs-lookup"><span data-stu-id="1be78-184">For more detailed documentation about web deployment, see [Web Deployment Content Map for Visual Studio and ASP.NET](../../../whitepapers/aspnet-web-deployment-content-map.md).</span></span>
+<span data-ttu-id="04b0b-184">如需詳細的 web 部署的相關文件，請參閱[Visual Studio 及 ASP.NET 的 Web 部署內容對應](../../../whitepapers/aspnet-web-deployment-content-map.md)。</span><span class="sxs-lookup"><span data-stu-id="04b0b-184">For more detailed documentation about web deployment, see [Web Deployment Content Map for Visual Studio and ASP.NET](../../../whitepapers/aspnet-web-deployment-content-map.md).</span></span>
 
-<span data-ttu-id="1be78-185">如果您部署兩部伺服器應用程式時，您可以在另一個瀏覽器視窗開啟每個執行個體，並查看他們都收到來自其他使用 SignalR 訊息。</span><span class="sxs-lookup"><span data-stu-id="1be78-185">If you deploy the application to two servers, you can open each instance in a separate browser window and see that they each receive SignalR messages from the other.</span></span> <span data-ttu-id="1be78-186">（當然，在生產環境中，兩部伺服器會位於負載平衡器後方。）</span><span class="sxs-lookup"><span data-stu-id="1be78-186">(Of course, in a production environment, the two servers would sit behind a load balancer.)</span></span>
+<span data-ttu-id="04b0b-185">如果您部署兩部伺服器應用程式時，您可以在另一個瀏覽器視窗開啟每個執行個體，並查看他們都收到來自其他使用 SignalR 訊息。</span><span class="sxs-lookup"><span data-stu-id="04b0b-185">If you deploy the application to two servers, you can open each instance in a separate browser window and see that they each receive SignalR messages from the other.</span></span> <span data-ttu-id="04b0b-186">（當然，在生產環境中，兩部伺服器會位於負載平衡器後方。）</span><span class="sxs-lookup"><span data-stu-id="04b0b-186">(Of course, in a production environment, the two servers would sit behind a load balancer.)</span></span>
 
 ![](scaleout-with-redis/_static/image8.png)
 
-<span data-ttu-id="1be78-187">如果您是想要查看傳送訊息至 Redis，您可以使用**redis cli**用戶端，會使用 Redis 進行安裝。</span><span class="sxs-lookup"><span data-stu-id="1be78-187">If you're curious to see the messages that are sent to Redis, you can use the **redis-cli** client, which installs with Redis.</span></span>
+<span data-ttu-id="04b0b-187">如果您是想要查看傳送訊息至 Redis，您可以使用**redis cli**用戶端，會使用 Redis 進行安裝。</span><span class="sxs-lookup"><span data-stu-id="04b0b-187">If you're curious to see the messages that are sent to Redis, you can use the **redis-cli** client, which installs with Redis.</span></span>
 
 [!code-xml[Main](scaleout-with-redis/samples/sample8.xml)]
 
