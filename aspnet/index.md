@@ -399,7 +399,7 @@ description: 了解如何開發 ASP.NET 與 ASP.NET Web 應用程式。 取得�
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>即時</h3>
-                                                    <p>了解如何使用 ASP.NET SignalR 2 和 Visual Studio 建置聊天應用程式。</p>
+                                                    <p>了解如何使用 ASP.NET SignalR 2 及 Visual Studio 建置聊天應用程式。</p>
                                                 </div>
                                             </div>
                                         </div>
