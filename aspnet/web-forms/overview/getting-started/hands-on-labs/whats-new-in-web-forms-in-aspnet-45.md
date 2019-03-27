@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 0a1f88bd-97da-4ed1-86f1-605199dc75a4
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 54e0234d6f13ce62803dbe55a836414a93a207b2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 78cb6dec71e6b4974fdea4f205d1a36ebdfc3104
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026475"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424440"
 ---
 <a name="whats-new-in-web-forms-in-aspnet-45"></a>ASP.NET 4.5 的 Web Forms 新功能
 ====================
@@ -51,7 +51,7 @@ ms.locfileid: "57026475"
 - 在 Web Form 中使用模型繫結的新功能
 - 將頁面資料對應到程式碼後置方法時，用於值提供者
 - 使用資料註解來驗證使用者輸入
-- 在 Web Form 中採取 unobstrusive 用戶端驗證，與 jQuery 的 advange
+- 利用 Web Form 中不顯眼的用戶端驗證，與 jQuery
 - 實作詳細的要求驗證
 - 實作非同步頁面處理 Web Form 中
 
@@ -407,13 +407,13 @@ ASP.NET 4.5 介紹 Web Form 的資料註解驗證。 您不需要在每個輸入
     > [EmailAddress(ErrorMessage=&quot;Invalid Email&quot;), MaxLength(56)]: Two annotations in the same line.
     > 
     > 您也可以定義您自己的錯誤訊息中的每個屬性。
-3. 開啟**CustomerDetails.aspx**和 FormView 控制項的 EditItemTemplate 和 InsertItemTemplate 各節中移除所有 RequiredFieldvalidators 名字和姓氏欄位。
+3. 開啟**CustomerDetails.aspx**和 FormView 控制項的 EditItemTemplate 和 InsertItemTemplate 各節中移除所有 RequiredFieldValidators 名字和姓氏欄位。
 
     [!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample24.aspx)]
 
     > [!NOTE]
     > 使用資料註解的優點之一是您的應用程式頁面中沒有重複，驗證邏輯。 您可以定義一次在模型中，並使用操作資料的所有應用程式頁面。
-4. 開啟**CustomerDetails.aspx**程式碼後置，並找出 SaveCustomer 方法。 插入新客戶時，會呼叫這個方法，並接收客戶參數從 FormView 控制項的值。 頁面控制項與參數物件就會發生之間的對應，ASP.NET 會在執行時對資料註釋的模型驗證屬性，並填入此 ModelState 字典錯誤發生，如果有的話。
+4. 開啟**CustomerDetails.aspx**程式碼後置，並找出 SaveCustomer 方法。 插入新客戶時，會呼叫這個方法，並接收客戶參數從 FormView 控制項的值。 當頁面之間的對應控制項和參數物件發生時，ASP.NET 會執行所有資料註解屬性模型驗證及填入此 ModelState 字典錯誤發生，如果有的話。
 
     ModelState.IsValid 只會傳回 true，如果執行驗證之後，您的模型上的所有欄位都都有效。
 
@@ -623,7 +623,7 @@ Web 應用程式中的非同步方法可用來最佳化 ASP.NET 執行緒集區�
 - 在 Web Form 中使用模型繫結的新功能
 - 將頁面資料對應到程式碼後置方法時，用於值提供者
 - 使用資料註解來驗證使用者輸入
-- 在 Web Form 中採取 unobstrusive 用戶端驗證，與 jQuery 的 advange
+- 利用 Web Form 中不顯眼的用戶端驗證，與 jQuery
 - 實作詳細的要求驗證
 - 實作非同步頁面處理 Web Form 中
 
@@ -678,7 +678,7 @@ Web 應用程式中的非同步方法可用來最佳化 ASP.NET 執行緒集區�
 1. 移至[Azure 管理入口網站](https://manage.windowsazure.com/)並使用您的訂用帳戶相關聯的 Microsoft 認證登入。
 
     > [!NOTE]
-    > 使用 Azure，您可以免費託管 10 個 ASP.NET 網站，並再隨著流量成長而調整。 您可以註冊申請[此處](http://aka.ms/aspnet-hol-azure)。
+    > 使用 Azure，您可以免費託管 10 個 ASP.NET 網站，並再隨著流量成長而調整。 您可以註冊申請[此處](https://aka.ms/aspnet-hol-azure)。
 
     ![登入 Windows Azure 入口網站](whats-new-in-web-forms-in-aspnet-45/_static/image30.png "登入 Windows Azure 入口網站")
 

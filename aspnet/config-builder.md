@@ -7,12 +7,12 @@ ms.author: riande
 ms.date: 10/29/2018
 ms.technology: aspnet
 msc.type: content
-ms.openlocfilehash: 4dcc62573fad13ec8b37b2c59e884eec7ca80b92
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5e2f3781623af5a32149e1db1c17b67ce43b7da0
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030645"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58423960"
 ---
 # <a name="configuration-builders-for-aspnet"></a>適用於 ASP.NET 的組態產生器
 
@@ -191,7 +191,7 @@ ms.locfileid: "57030645"
 
 此組態產生器會提供類似的功能[ASP.NET Core Secret Manager](/aspnet/core/security/app-secrets)。
 
-[UserSecretsConfigBuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.UserSecrets/)可用在.NET Framework 專案中，但必須指定密碼檔案。 或者，您可以定義`UserSecretsId`專案中的屬性檔案並建立正確的位置進行讀取的未經處理的密碼檔案。 若要保留外部的相依性，從您的專案，祕密的檔案是 XML 格式。 XML 格式化是實作詳細資料，格式應該不依賴。 如果您要共用*secrets.json*檔案中使用.NET Core 專案，請考慮使用[SimpleJsonConfigBuilder](#simplejsonconfig)。 `SimpleJsonConfigBuilder`格式化的.NET Core 也應該考慮的實作詳細資料，有可能變更。
+[UserSecretsConfigBuilder](https://www.nuget.org/packages/Microsoft.Configuration.ConfigurationBuilders.UserSecrets/)可用在.NET Framework 專案中，但必須指定密碼檔案。 或者，您可以定義`UserSecretsId`專案中的屬性檔案並建立正確的位置進行讀取的未經處理的密碼檔案。 若要保留外部的相依性，從您的專案，祕密的檔案是 XML 格式。 XML 格式化是實作詳細資料，格式應該不依賴。 如果您要共用*secrets.json*檔案中使用.NET Core 專案，請考慮使用[SimpleJsonConfigBuilder](#simplejsonconfigbuilder)。 `SimpleJsonConfigBuilder`格式化的.NET Core 也應該考慮的實作詳細資料，有可能變更。
 
 組態屬性`UserSecretsConfigBuilder`:
 
@@ -278,7 +278,7 @@ ms.locfileid: "57030645"
 
 * `jsonFile` - 必要項。 指定要讀取從 JSON 檔案。 `~`字元會在開始時用來參考應用程式根目錄。
 * `optional` -布林值，預設值是`true`。 可避免擲回例外狀況，如果找不到 JSON 檔案。
-* `jsonMode` - `[Flat|Sectional]`. `Flat` 是預設值。 當`jsonMode`是`Flat`，JSON 檔案是單一的一般索引鍵/值來源。 `EnvironmentConfigBuilder`和`AzureKeyVaultConfigBuilder`也是單一的一般索引鍵/值來源。 當`SimpleJsonConfigBuilder`中設定`Sectional`模式︰
+* `jsonMode` - `[Flat|Sectional]`. `Flat` 預設值。 當`jsonMode`是`Flat`，JSON 檔案是單一的一般索引鍵/值來源。 `EnvironmentConfigBuilder`和`AzureKeyVaultConfigBuilder`也是單一的一般索引鍵/值來源。 當`SimpleJsonConfigBuilder`中設定`Sectional`模式︰
 
   * JSON 檔案會在概念上分成只在最高層級多個字典。
   * 每個字典只會套用至附加到它們的最上層的屬性名稱相符的組態區段。 例如: 

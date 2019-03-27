@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: 8be9a51b-ea6b-46c7-bfa2-476d9b14c24c
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 438ebfa474ab510d90738c4a3ee40e172d838dcb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1596e1c8c1b96fd41c842169b95914c7b02cf196
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030325"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58424621"
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a>使用受控碼建立預存程序和使用者定義函式 (VB)
 ====================
@@ -303,7 +303,7 @@ Clr 已啟用設定完成後，我們已準備好執行 managed`GetDiscontinuedP
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample7.vb)]
 
-這兩種方法只會呼叫對應的 DAL 方法，並傳回`ProductsDataTable`執行個體。 `DataObjectMethodAttribute`上述每個方法的標記會導致 ObjectDataSource 的設定資料來源精靈 的 選取 索引標籤中的下拉式清單中包含這些方法。
+這兩種方法只會呼叫對應的 DAL 方法，並傳回`ProductsDataTable`執行個體。 `DataObjectMethodAttribute`上述每個方法的標記會導致 ObjectDataSource s 設定資料來源精靈 的 選取 索引標籤中的下拉式清單中包含這些方法。
 
 ## <a name="step-8-invoking-the-managed-stored-procedures-from-the-presentation-layer"></a>步驟 8：叫用 Managed 預存程序，從展示層
 
