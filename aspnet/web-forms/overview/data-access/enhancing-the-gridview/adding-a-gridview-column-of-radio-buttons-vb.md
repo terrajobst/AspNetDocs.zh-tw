@@ -8,12 +8,12 @@ ms.date: 03/06/2007
 ms.assetid: 2e31b60b-8723-4f14-b7ee-37859454dc3b
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 76b3dbd502eff7c97f57fdacd120ac2312aaceae
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 262e4e303daeda56b6590c8f2f925850b216f300
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061015"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422333"
 ---
 <a name="adding-a-gridview-column-of-radio-buttons-vb"></a>新增 GridView 的選項按鈕欄 (VB)
 ====================
@@ -179,7 +179,7 @@ S 的 RadioButton [ `GroupName`屬性](https://msdn.microsoft.com/library/system
 
 [!code-aspx[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample5.aspx)]
 
-在這裡，`GetUniqueRadioButton`並`GetRadioButtonValue`會傳回適當的程式碼後置類別中定義的方法`id`和`value`屬性值的每個選項按鈕。 這種方法適用於指派`id`並`value`屬性，但在需要指定`checked`屬性值，因為當資料第一次繫結至 GridView，才會執行資料繫結語法。 因此，如果 GridView 檢視狀態已啟用，格式化的方法才會觸發時第一次載入頁面 （或當 GridView 會明確地重新繫結至資料來源），並因此函式，以設定`checked`贏得 t 屬性上呼叫回傳。 它 s 而微妙的問題和超出指令碼的本文中，我就把它在這個範圍。 不過，我不要鼓勵您嘗試使用上述方法並透過努力，您將會停滯的點。 雖然這類練習贏得 t 取得您工作版本，就能協助促進更深入的了解 GridView 和資料繫結的生命週期。
+在這裡，`GetUniqueRadioButton`並`GetRadioButtonValue`會傳回適當的程式碼後置類別中定義的方法`id`和`value`屬性值的每個選項按鈕。 這種方法適用於指派`id`並`value`屬性，但在需要指定`checked`屬性值，因為當資料第一次繫結至 GridView，才會執行資料繫結語法。 因此，如果 GridView 檢視狀態已啟用，格式化的方法才會觸發時第一次載入頁面 （或當 GridView 會明確地重新繫結至資料來源），並因此函式，以設定`checked`屬性將不會呼叫上回傳。 它 s 而微妙的問題和超出指令碼的本文中，我就把它在這個範圍。 不過，我不要鼓勵您嘗試使用上述方法並透過努力，您將會停滯的點。 雖然這類練習將不會取得您的工作版本，就能協助促進更深入的了解 GridView 和資料繫結的生命週期。
 
 另一個方法來插入自訂，低層級的標記中的範本和我們將在本教學課程中使用的方法是將[常值控制項](https://msdn.microsoft.com/library/sz4949ks(VS.80).aspx)範本。 然後，在 GridView s`RowCreated`或`RowDataBound`事件處理常式，以程式設計方式存取常值控制項並將其`Text`屬性設定為標記，以發出。
 

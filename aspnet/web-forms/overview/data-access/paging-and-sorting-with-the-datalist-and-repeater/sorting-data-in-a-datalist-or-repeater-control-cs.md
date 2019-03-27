@@ -8,12 +8,12 @@ ms.date: 11/13/2006
 ms.assetid: f52c302a-1b7c-46fe-8a13-8412c95cbf6d
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 05fbc51d5341a4d3d634cbbc05c0e66a827b0394
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ec5124cb0b449db703988bdadbaa244ff72cf363
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042505"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425596"
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-c"></a>DataList 或重複項控制項中的排序資料 (C#)
 ====================
@@ -135,7 +135,7 @@ GridView 控制項具有`SortExpression`屬性，它會儲存`SortExpression`[Gr
 
 
 > [!NOTE]
-> 按一下 [重新整理] 按鈕會導致資料自動重新排序因為 Repeater 的檢視狀態已停用，因而導致重新繫結至它在每次回傳的資料來源的重複項。 如果您已保留重複項的檢視狀態已啟用，變更排序下拉式清單贏得 t 的清單會有任何影響的排序次序。 若要解決此問題，建立 [重新整理] 按鈕 s 的事件處理常式`Click`事件，並重新繫結至其資料來源的重複項 (藉由呼叫 Repeater 的`DataBind()`方法)。
+> 按一下 [重新整理] 按鈕會導致資料自動重新排序因為 Repeater 的檢視狀態已停用，因而導致重新繫結至它在每次回傳的資料來源的重複項。 如果您已保留重複項的檢視狀態已啟用，變更排序下拉式清單將不會對任何會影響排序次序。 若要解決此問題，建立 [重新整理] 按鈕 s 的事件處理常式`Click`事件，並重新繫結至其資料來源的重複項 (藉由呼叫 Repeater 的`DataBind()`方法)。
 
 
 ## <a name="remembering-the-sort-expression-and-direction"></a>記住的排序運算式和方向

@@ -8,12 +8,12 @@ ms.date: 02/20/2005
 ms.assetid: 9c0cce4d-efd9-4c14-b0e8-a1a140abb3f4
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/master-pages
 msc.type: authoredcontent
-ms.openlocfilehash: f40eb338a1b6b8eebb6578dd7938e96a05b1617f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 644beb37bf893a590be03dd0929c5870af6fbe87
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055115"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58425765"
 ---
 <a name="master-pages"></a>主版頁面
 ====================
@@ -94,7 +94,7 @@ ASP.NET 2.0 引進主版頁面的方式來維護一致的外觀及操作，以�
 
 1. 將游標放在資料表的每個資料格，並設定*valign*屬性設*頂端*。
 2. 從 [工具箱] 中，插入 ContentPlaceHolder 控制項在上方表格的儲存格 （標頭資料格。）
-3. 當您將這個 ContentPlaceHolder 控制項時，您會發現 圖 4 所示，將資料列高度會花費幾乎整個頁面。 不需要考量，此時。
+3. 當您將這個 ContentPlaceHolder 控制項時，您會發現 圖 4 所示，將資料列高度會花費幾乎整個頁面。 別擔心，此時是。
 
 
 ![空白空間位於相同的儲存格為 ContentPlaceHolder](master-pages/_static/image1.gif)
@@ -127,7 +127,7 @@ ASP.NET 2.0 引進主版頁面的方式來維護一致的外觀及操作，以�
 2. 選取 exercise1.master 在 選取主版頁面對話方塊如 圖 7 所示。
 3. 按一下 [確定] 以加入新的內容頁面。
 
-新的內容頁面會出現在 Visual Studio 中，每個 ContentPlaceHolder 控制項在主版頁面的其中一個內容控制項。 根據預設，內容控制項是空的好讓您可以加入自己的內容。 如果過您要使用來自 ContentPlaceHolder 控制項在主版頁面的內容，只要按一下智慧標籤符號 （小型黑色箭號控制項右上角），然後選擇*預設為 主機內容*從智慧標籤所示**圖 8**。 當您這樣做時，功能表項目變更為*建立自訂內容*。 此時，按一下它，是在主版頁面可讓您定義該特定的內容控制項的自訂內容中移除內容。
+新的內容頁面會出現在 Visual Studio 中，每個 ContentPlaceHolder 控制項在主版頁面的其中一個內容控制項。 根據預設，內容控制項是空的好讓您可以加入自己的內容。 如果您想要使用來自 ContentPlaceHolder 控制項在主版頁面的內容，只要按一下智慧標籤符號 （小型黑色箭號控制項右上角），然後選擇*預設為 主機內容*從智慧標籤所示**圖 8**。 當您這樣做時，功能表項目變更為*建立自訂內容*。 此時，按一下它，是在主版頁面可讓您定義該特定的內容控制項的自訂內容中移除內容。
 
 
 ![設定預設主版頁面內容的內容控制項](master-pages/_static/image4.gif)

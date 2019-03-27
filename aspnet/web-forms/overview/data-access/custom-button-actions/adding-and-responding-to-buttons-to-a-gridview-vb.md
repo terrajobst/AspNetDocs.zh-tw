@@ -8,12 +8,12 @@ ms.date: 09/13/2006
 ms.assetid: 06c6bbd2-4bdc-435b-87a3-df2c868f4baa
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0834d43f95bd19fffb603dcde640714bd779fd80
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3ebbf60ada1f50bb704118d0e81fb3c97c7e4386
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031555"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422225"
 ---
 <a name="adding-and-responding-to-buttons-to-a-gridview-vb"></a>新增與回應 GridView 的按鈕 (VB)
 ====================
@@ -113,7 +113,7 @@ Visual Studio 會產生之後設定 ObjectDataSource `InsertItemTemplate`， `Ed
 **圖 8**:建立新的 ObjectDataSource 具名`SuppliersProductsDataSource`([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image20.png))
 
 
-設定要使用 ProductsBLL 類別的 ObjectDataSource`GetProductsBySupplierID(supplierID)`方法 （請參閱 圖 9）。 此 GridView 會讓產品 s 價格會調整，並同時贏了 t 會使用內建編輯或刪除從 GridView 的功能。 因此，我們可以設定為 （無） 下拉式清單，ObjectDataSource s 的更新、 插入和刪除的索引標籤。
+設定要使用 ProductsBLL 類別的 ObjectDataSource`GetProductsBySupplierID(supplierID)`方法 （請參閱 圖 9）。 雖然此 GridView 可調整的產品的價格，它將不會使用內建編輯或刪除從 GridView 的功能。 因此，我們可以設定為 （無） 下拉式清單，ObjectDataSource s 的更新、 插入和刪除的索引標籤。
 
 
 [![資料來源設定為使用 ProductsBLL 類別的 GetProductsBySupplierID(supplierID) 方法](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image22.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image21.png)

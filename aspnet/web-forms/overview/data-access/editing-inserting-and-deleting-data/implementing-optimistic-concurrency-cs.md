@@ -8,12 +8,12 @@ ms.date: 07/17/2006
 ms.assetid: 56e15b33-93b8-43ad-8e19-44c6647ea05c
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 700770946caa68fca2b3101dd91a683d10aae052
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 08a9e1db4f8c34b438d45c0fb74d852bbd249615
+ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059625"
+ms.lasthandoff: 03/25/2019
+ms.locfileid: "58422775"
 ---
 <a name="implementing-optimistic-concurrency-c"></a>實作開放式同步存取 (C#)
 ====================
@@ -60,7 +60,7 @@ ms.locfileid: "57059625"
 **圖 2**:更新或刪除到成功，原始的值必須是等於目前資料庫的值 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image6.png))
 
 
-有各種方法來實作開放式同步存取 (請參閱[Peter A.Bromberg](http://peterbromberg.net/)的[Optmistic 並行更新邏輯](http://www.eggheadcafe.com/articles/20050719.asp)的幾個選項的簡短探討)。 ADO.NET 型別資料集提供一個可設定的核取方塊刻度的實作。 針對具類型資料集 TableAdapter 擴大 TableAdapter 的啟用開放式並行存取`UPDATE`並`DELETE`陳述式，以包含所有中的原始值的比較`WHERE`子句。 下列`UPDATE`陳述式，例如，更新的名稱和產品的價格只有當目前資料庫的值會等於原本擷取更新 GridView 中的記錄時的值。 `@ProductName`並`@UnitPrice`參數會包含由使用者輸入的新值，而`@original_ProductName`和`@original_UnitPrice`包含最初載入 GridView 時按下 [編輯] 按鈕的值：
+有各種方法來實作開放式同步存取 (請參閱[Peter A.Bromberg](http://peterbromberg.net/)的[開放式並行存取更新邏輯](http://www.eggheadcafe.com/articles/20050719.asp)的幾個選項的簡短探討)。 ADO.NET 型別資料集提供一個可設定的核取方塊刻度的實作。 針對具類型資料集 TableAdapter 擴大 TableAdapter 的啟用開放式並行存取`UPDATE`並`DELETE`陳述式，以包含所有中的原始值的比較`WHERE`子句。 下列`UPDATE`陳述式，例如，更新的名稱和產品的價格只有當目前資料庫的值會等於原本擷取更新 GridView 中的記錄時的值。 `@ProductName`並`@UnitPrice`參數會包含由使用者輸入的新值，而`@original_ProductName`和`@original_UnitPrice`包含最初載入 GridView 時按下 [編輯] 按鈕的值：
 
 
 [!code-sql[Main](implementing-optimistic-concurrency-cs/samples/sample1.sql)]
