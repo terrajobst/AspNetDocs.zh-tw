@@ -8,6 +8,12 @@ ms.date: 09/28/2011
 ms.assetid: 9086d8a8-7952-4a7e-82a7-724d48178555
 msc.legacyurl: /mvc/overview/older-versions-1/models-data
 msc.type: chapter
+ms.openlocfilehash: aee92dffc059d984bc9e5d5a93fc03ed4a2f8136
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57019345"
 ---
 <a name="models-data"></a><span data-ttu-id="b15d3-104">模型 (資料)</span><span class="sxs-lookup"><span data-stu-id="b15d3-104">Models (Data)</span></span>
 ====================

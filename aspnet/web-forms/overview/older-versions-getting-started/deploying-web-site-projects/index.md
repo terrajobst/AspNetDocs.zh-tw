@@ -8,6 +8,12 @@ ms.date: 05/16/2012
 ms.assetid: 6f72bde8-f2f1-4e4a-94e5-494c3c153c14
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects
 msc.type: chapter
+ms.openlocfilehash: 4400195da0ca1167de8556f9339cd2a5f7414131
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57022465"
 ---
 <a name="deploying-web-site-projects-in-visual-studio-2008-and-earlier"></a><span data-ttu-id="da5e3-103">在 Visual Studio 2008 與更早版本中部署網站專案</span><span class="sxs-lookup"><span data-stu-id="da5e3-103">Deploying Web Site Projects in Visual Studio 2008 and earlier</span></span>
 ====================

@@ -8,6 +8,12 @@ ms.date: 02/16/2012
 ms.assetid: 1c7cc326-04f5-4578-bf62-a7d381f380f7
 msc.legacyurl: /web-api/videos/getting-started
 msc.type: chapter
+ms.openlocfilehash: cfcbe3732a3e3cbd6a210839a318a17ed636d636
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57020985"
 ---
 <a name="aspnet-web-api-overview-and-getting-started-videos"></a><span data-ttu-id="3c8e7-103">ASP.NET Web API 的概觀與入門入門影片</span><span class="sxs-lookup"><span data-stu-id="3c8e7-103">ASP.NET Web API Overview and Getting Started Videos</span></span>
 ====================

@@ -8,6 +8,12 @@ ms.date: 08/08/2011
 ms.assetid: f645d3b1-1092-43c6-a28a-074b413924b4
 msc.legacyurl: /web-forms/overview/getting-started
 msc.type: chapter
+ms.openlocfilehash: de5f8df4a6247ae41971867cafda15835b4944e4
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57020325"
 ---
 <a name="getting-started-with-aspnet-web-forms"></a><span data-ttu-id="f19d6-104">開始使用 ASP.NET Web Form</span><span class="sxs-lookup"><span data-stu-id="f19d6-104">Getting Started with ASP.NET Web Forms</span></span>
 ====================

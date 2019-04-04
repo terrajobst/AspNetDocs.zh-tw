@@ -8,6 +8,12 @@ ms.date: 10/05/2011
 ms.assetid: 95a1d7d3-7fc2-44ac-b27b-912e0e045ee5
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data
 msc.type: chapter
+ms.openlocfilehash: 6f62a21af3b85bc341c202b7b44d6703c2da655c
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57019255"
 ---
 <a name="working-with-batched-data"></a><span data-ttu-id="e1df0-103">使用批次資料</span><span class="sxs-lookup"><span data-stu-id="e1df0-103">Working with Batched Data</span></span>
 ====================

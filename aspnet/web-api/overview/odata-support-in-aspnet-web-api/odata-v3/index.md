@@ -8,6 +8,12 @@ ms.date: 06/26/2014
 ms.assetid: 26d43c14-98d8-46fe-ab2e-b7c5998d073d
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3
 msc.type: chapter
+ms.openlocfilehash: 7ced1a569681bd5fab6dbc17e4dcdc4023f98440
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57020865"
 ---
 <a name="supporting-odata-v3-in-aspnet-web-api"></a><span data-ttu-id="475b5-103">ASP.NET Web API 中支援 OData v3</span><span class="sxs-lookup"><span data-stu-id="475b5-103">Supporting OData v3 in ASP.NET Web API</span></span>
 ====================

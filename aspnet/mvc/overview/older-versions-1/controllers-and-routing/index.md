@@ -8,6 +8,12 @@ ms.date: 09/28/2011
 ms.assetid: 124df537-428c-4861-b6c2-4830c094fe0c
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing
 msc.type: chapter
+ms.openlocfilehash: 5da0db768aaf39dc67bb2344e645c491c78a03a1
+ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/01/2019
+ms.locfileid: "57021115"
 ---
 <a name="controllers-and-routing"></a><span data-ttu-id="f33ee-103">控制器和路由</span><span class="sxs-lookup"><span data-stu-id="f33ee-103">Controllers and Routing</span></span>
 ====================
