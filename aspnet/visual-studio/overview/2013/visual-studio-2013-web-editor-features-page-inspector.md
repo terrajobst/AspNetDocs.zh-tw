@@ -8,15 +8,15 @@ ms.date: 10/17/2013
 ms.assetid: 17b67048-c61c-4ac0-a73a-a8079b493253
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-editor-features-page-inspector
 msc.type: video
-ms.openlocfilehash: c32b4171202d2bb11a523b8882f70b7b2750ad6f
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: aa6a01a37b6f39f87e2b77d351b221aee415a3c5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421722"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418842"
 ---
-<a name="visual-studio-2013-web-editor-features---page-inspector"></a>Visual Studio 2013 Web 編輯器功能 - Page Inspector
-====================
+# <a name="visual-studio-2013-web-editor-features---page-inspector"></a>Visual Studio 2013 Web 編輯器功能 - Page Inspector
+
 藉由[Scott Hanselman](https://github.com/shanselman)
 
 Scott Hanselman 說明如何在 Visual Studio 2013 中的 Page Inspector 功能可讓您以互動方式使用轉譯的網頁標記中，與原始碼，它完全整合。

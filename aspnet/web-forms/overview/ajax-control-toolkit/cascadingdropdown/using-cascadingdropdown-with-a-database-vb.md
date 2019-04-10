@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 97a3d33c-c856-43f3-8acb-f1ccbc48221a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-cascadingdropdown-with-a-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 98e07764a3bd6afc8045221e9c016e57be44f5f7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d0b6f8651e327cf9ad2a3051edd323efba4f64fc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041875"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418725"
 ---
-<a name="using-cascadingdropdown-with-a-database-vb"></a>使用 CascadingDropDown 搭配資料庫 (VB)
-====================
+# <a name="using-cascadingdropdown-with-a-database-vb"></a>使用 CascadingDropDown 搭配資料庫 (VB)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown1.vb.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown1VB.pdf)
@@ -44,11 +44,11 @@ ms.locfileid: "57041875"
 
 然後，兩個 CascadingDropDown extender 必須新增至頁面。 其中一個填滿第一個 （廠商） 清單中，和另一個填滿第二個 （連絡人） 清單。 必須設定下列屬性：
 
-- `ServicePath`：提供的清單項目之 web 服務的 URL
-- `ServiceMethod`：Web 方法提供的清單項目
-- `TargetControlID`：下拉式清單中的識別碼
-- `Category`：提交給 web 方法的呼叫時的類別目錄資訊
-- `PromptText`：以非同步方式從伺服器載入清單資料時顯示的文字
+- `ServicePath`:提供的清單項目之 web 服務的 URL
+- `ServiceMethod`:Web 方法提供的清單項目
+- `TargetControlID`:下拉式清單中的識別碼
+- `Category`:提交給 web 方法的呼叫時的類別目錄資訊
+- `PromptText`:以非同步方式從伺服器載入清單資料時顯示的文字
 - `ParentControlID`: (選擇性) 父下拉式清單會列出該觸發程序的載入目前的清單
 
 根據使用的程式設計語言，有問題的 web 服務的名稱會變更，但所有其他屬性值都相同。 以下是第一個下拉式清單中的 CascadingDropDown 項目：
@@ -86,12 +86,12 @@ CascadingDropDown 呼叫的 web 方法的簽章如下所示：
 載入 ASP.NET 頁面中，並在一段時間後，供應商清單會填入 25 項目。 挑選一個項目，並注意第二個下拉式清單中填入資料的方式。
 
 
-[![第一份清單會自動填入](using-cascadingdropdown-with-a-database-vb/_static/image2.png)](using-cascadingdropdown-with-a-database-vb/_static/image1.png)
+[![T他的第一份清單會自動填滿](using-cascadingdropdown-with-a-database-vb/_static/image2.png)](using-cascadingdropdown-with-a-database-vb/_static/image1.png)
 
 第一份清單會自動填入 ([按一下以檢視完整大小的影像](using-cascadingdropdown-with-a-database-vb/_static/image3.png))
 
 
-[![第二個清單是根據第一個清單中的選取範圍填滿](using-cascadingdropdown-with-a-database-vb/_static/image5.png)](using-cascadingdropdown-with-a-database-vb/_static/image4.png)
+[![T他的第二個清單是根據第一個清單中的選取範圍填滿](using-cascadingdropdown-with-a-database-vb/_static/image5.png)](using-cascadingdropdown-with-a-database-vb/_static/image4.png)
 
 第二個清單根據第一個清單中的選取範圍填滿 ([按一下以檢視完整大小的影像](using-cascadingdropdown-with-a-database-vb/_static/image6.png))
 

@@ -1,22 +1,23 @@
 ---
 uid: web-api/overview/advanced/sending-html-form-data-part-2
-title: ASP.NET Web API 中傳送 HTML 表單資料：檔案上傳和多部分 MIME |Microsoft Docs
+title: ASP.NET Web API 中傳送 HTML 表單資料：檔案上傳和多部分 MIME-ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 本教學課程會示範如何將檔案上傳至 web API。 它也會說明如何處理多部分 MIME 資料。
 ms.author: riande
 ms.date: 06/21/2012
+ms.custom: seoapril2019
 ms.assetid: a7f3c1b5-69d9-4261-b082-19ffafa5f16a
 msc.legacyurl: /web-api/overview/advanced/sending-html-form-data-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 875f9ac62901dfbafc8224af2982c1daf3afc9c5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 70e150a32f208cf75086f959d484d86e8501c6bd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57028975"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419921"
 ---
-<a name="sending-html-form-data-in-aspnet-web-api-file-upload-and-multipart-mime"></a>ASP.NET Web API 中傳送 HTML 表單資料：檔案上傳與多部分 MIME
-====================
+# <a name="sending-html-form-data-in-aspnet-web-api-file-upload-and-multipart-mime"></a>ASP.NET Web API 中傳送 HTML 表單資料：檔案上傳與多部分 MIME
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 ## <a name="part-2-file-upload-and-multipart-mime"></a>第 2 部分：檔案上傳與多部分 MIME

@@ -8,15 +8,15 @@ ms.date: 06/01/2015
 ms.assetid: c0090595-ab3b-4b9b-9e16-7a1891e8cb2f
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: 65cd5cd9f7d1f9c5fdaea9b0d16bdfd84259efdd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b59cd34036c733579e678eab78097d3393f3e671
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042335"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421078"
 ---
-<a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>使用 Visual Studio 的 ASP.NET Web 部署：疑難排解
-====================
+# <a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>使用 Visual Studio 的 ASP.NET Web 部署：疑難排解
+
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 [下載入門專案](http://go.microsoft.com/fwlink/p/?LinkId=282627)
@@ -28,7 +28,7 @@ ms.locfileid: "57042335"
 
 顯示案例適用於 Azure 和協力廠商主機服務提供者。 如需有關如何疑難排解 Azure App Service 中的 web 應用程式的詳細資訊，請參閱下列資源：
 
-- [使用 Visual Studio 疑難排解 Azure App Service 中的 Web 應用程式](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+- [疑難排解使用 Visual Studio 的 Azure App Service 中的 web 應用程式](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 - [監視 Azure App Service 中的 Web 應用程式](https://azure.microsoft.com/documentation/articles/web-sites-monitor//)
 - [發表最新的 Windows Azure SDK 2.0 for.NET](http:// https://weblogs.asp.net/scottgu/announcing-the-release-of-windows-azure-sdk-2-0-for-net) （ScottGu 的部落格，會示範如何取得 Visual Studio 中的診斷記錄檔）
 
@@ -46,7 +46,7 @@ ms.locfileid: "57042335"
 
 若要啟用的應用程式，以顯示詳細的錯誤訊息，遠端主機上執行時，編輯 Web.config 檔，以便將 customErrors 模式設定、 重新部署應用程式，並再次執行應用程式：
 
-1. 如果應用程式 Web.config 檔案有 acustomErrors 元素 thesystem.web 項目中，變更為 「 關閉 」 themode 屬性。 否則 acustomErrors 項目中新增 thesystem.web 項目並 themode 屬性設定為 「 關閉 」，如下列範例所示： 
+1. 如果應用程式 Web.config 檔案有 customErrors 項目在 system.web 項目中，將模式屬性變更為 「 關閉 」。 否則 customErrors 項目中新增 system.web 項目並 mode 屬性設為 「 關閉 」，如下列範例所示： 
 
     [!code-xml[Main](troubleshooting/samples/sample2.xml)]
 2. 部署應用程式。
@@ -129,7 +129,7 @@ Proxy 伺服器會中斷與目的地伺服器的通訊。 從 Windows 控制台�
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解決方案
 
-開啟*Web.config*檔案中的已部署的站台和檢查連接字串值是否會以 $ 開頭 (ReplacableToken\_，如下列範例所示：
+開啟*Web.config*檔案中的已部署的站台和檢查連接字串值是否已開頭`$(ReplaceableToken_`，如下列範例所示：
 
 [!code-xml[Main](troubleshooting/samples/sample5.xml)]
 

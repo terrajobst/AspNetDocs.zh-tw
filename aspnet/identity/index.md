@@ -8,16 +8,16 @@ ms.date: 10/02/2013
 ms.assetid: 0c2df5d4-c2dd-486d-b0ed-fe831c6b596c
 msc.legacyurl: /identity
 msc.type: categoryindex
-ms.openlocfilehash: b81e92ff1675b7810f9b2ca8b038a99fb84b1f5e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 48e75d6a2a151befe7ea796b149d2d030712d799
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57019185"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418348"
 ---
-<a name="aspnet-identity"></a>ASP.NET Identity
-====================
-- [概觀](overview/index.md)
+# <a name="aspnet-identity"></a>ASP.NET Identity
+
+- [總覽](overview/index.md)
 
     - [開始使用 ASP.NET Identity](overview/getting-started/index.md)
 
@@ -25,12 +25,12 @@ ms.locfileid: "57019185"
         - [ASP.NET Identity 建議資源](overview/getting-started/aspnet-identity-recommended-resources.md)
         - [將 ASP.NET Identity 新增至空的或現有的 Web Form 專案](overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
         - [使用 Azure Active Dirctory 開發 ASP.NET 應用程式](overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)
-        - [ASP.NET 身分識別：使用 EntityFramework MySQL 提供者的 MySQL 儲存體 (C#)](overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider.md)
+        - [ASP.NET Identity：使用具 EntityFramework MySQL 提供者的 MySQL 儲存體 (C#)](overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider.md)
     - [功能與 API](overview/features-api/index.md)
 
         - [將密碼和其他敏感性資料部署到 ASP.NET 和 Azure App Service 的最佳做法](overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)
-        - [使用 ASP.NET Identity 的帳戶確認和密碼復原](overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
-        - [使用 SMS 的雙因素驗證和使用 ASP.NET Identity 的電子郵件](overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
+        - [使用 ASP.NET Identity 的帳戶確認和密碼復原 (C#)](overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
+        - [透過 ASP.NET Identity 使用簡訊和電子郵件進行的雙重要素驗證](overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
     - [擴充性](overview/extensibility/index.md)
 
         - [ASP.NET Identity 的自訂儲存體提供者概觀](overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity.md)

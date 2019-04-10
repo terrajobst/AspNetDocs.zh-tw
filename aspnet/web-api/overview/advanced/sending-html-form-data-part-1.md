@@ -1,22 +1,23 @@
 ---
 uid: web-api/overview/advanced/sending-html-form-data-part-1
-title: ASP.NET Web API 中傳送 HTML 表單資料：Form-urlencoded 資料 |Microsoft Docs
+title: ASP.NET Web API 中傳送 HTML 表單資料：Form-urlencoded Data - ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 本文說明如何發佈至使用 ASP.NET 的 Web API 控制器的 form-urlencoded 資料 4.x
 ms.author: riande
 ms.date: 06/15/2012
+ms.custom: seoapril2019
 ms.assetid: 585351c4-809a-4bf5-bcbe-35d624f565fe
 msc.legacyurl: /web-api/overview/advanced/sending-html-form-data-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 2d01212cc408f8bb66fa3103464c9a1f7a1e21c6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fb0309af11910125943737ebb721b356b7bd08bc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049355"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418296"
 ---
-<a name="sending-html-form-data-in-aspnet-web-api-form-urlencoded-data"></a>ASP.NET Web API 中傳送 HTML 表單資料：Form-urlencoded 資料
-====================
+# <a name="sending-html-form-data-in-aspnet-web-api-form-urlencoded-data"></a>ASP.NET Web API 中傳送 HTML 表單資料：Form-urlencoded 資料
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 ## <a name="part-1-form-urlencoded-data"></a>第 1 部份：Form-urlencoded 資料
@@ -133,4 +134,4 @@ JQuery**提交**函式會以新的函式取代為表單動作。 這會覆寫 [�
 
 ## <a name="additional-resources"></a>其他資源
 
-[第 2 部分：檔案上傳和多個 MIME](sending-html-form-data-part-2.md)
+[第 2 部分：檔案上傳與多部分 MIME](sending-html-form-data-part-2.md)

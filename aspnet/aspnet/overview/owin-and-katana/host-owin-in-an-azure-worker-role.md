@@ -8,15 +8,15 @@ ms.date: 04/11/2014
 ms.assetid: 07aa855a-92ee-4d43-ba66-5bfd7de20ee6
 msc.legacyurl: /aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: dbf0964695dd2592d063b05c0778923edffe8e2e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 129b6a8f411d482de75e7e5edc5cc919b4d2de52
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058035"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419518"
 ---
-<a name="host-owin-in-an-azure-worker-role"></a>將 OWIN 裝載在 Azure 背景工作角色中
-====================
+# <a name="host-owin-in-an-azure-worker-role"></a>將 OWIN 裝載在 Azure 背景工作角色中
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 > 本教學課程會示範如何在自我裝載於 Microsoft Azure 背景工作角色的 OWIN。
@@ -29,7 +29,7 @@ ms.locfileid: "57058035"
 >
 >
 > - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
-> - [Azure SDK for .NET 2.3](https://azure.microsoft.com/downloads/)
+> - [Azure SDK for.NET 2.3](https://azure.microsoft.com/downloads/)
 > - [Microsoft.Owin.Selfhost 2.1.0](http://www.nuget.org/packages/Microsoft.Owin.SelfHost/2.1.0)
 
 
@@ -116,7 +116,7 @@ ms.locfileid: "57058035"
 
 [![](host-owin-in-an-azure-worker-role/_static/image10.png)](host-owin-in-an-azure-worker-role/_static/image9.png)
 
-尋找 [服務部署，部署 [識別碼]，服務詳細資料] 下的 IP 位址。 開啟網頁瀏覽器並瀏覽至 http://<em>地址</em>，其中<em>地址</em>是由計算模擬器; 指派的 IP 位址，例如`http://127.0.0.1:80`。 您應該會看到 OWIN 歡迎使用 頁面：
+尋找 [服務部署，部署 [識別碼]，服務詳細資料] 下的 IP 位址。 開啟網頁瀏覽器並瀏覽至 http:\/\/*地址*，其中*位址*是由計算模擬器; 指派的 IP 位址，例如`http://127.0.0.1:80`。 您應該會看到 OWIN 歡迎使用 頁面：
 
 ![](host-owin-in-an-azure-worker-role/_static/image11.png)
 

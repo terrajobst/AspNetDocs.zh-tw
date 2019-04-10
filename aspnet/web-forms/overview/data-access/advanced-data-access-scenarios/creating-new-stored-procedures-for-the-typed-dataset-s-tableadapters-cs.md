@@ -8,15 +8,15 @@ ms.date: 07/18/2007
 ms.assetid: 751282ca-5870-4d66-84e4-6cefae23eb4a
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0932749d6cf1665eedd5f452ab5dd63ed8678962
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8ede51ea943fc7e2a3bb4e0c96a526648e4b8687
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026555"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422040"
 ---
-<a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>為具類型資料集的 Tableadapter 建立新的預存程序 (C#)
-====================
+# <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>為具類型資料集的 Tableadapter 建立新的預存程序 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_67_CS.zip)或[下載 PDF](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/datatutorial67cs1.pdf)
@@ -86,7 +86,7 @@ Tableadapter 所執行的 SQL 命令可以是任一特定 SQL 陳述式中，例
 在其他資料夾，例如`Default.aspx`在`AdvancedDAL`資料夾會列出其一節中的教學課程。 請記得，`SectionLevelTutorialListing.ascx`使用者控制項提供這項功能。 因此，新增此使用者控制項`Default.aspx`從拖曳到頁面的設計 檢視中的 方案總管 中拖曳。
 
 
-[![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image3.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image2.png)
+[![Add Default.aspx SectionLevelTutorialListing.ascx 使用者控制項](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image3.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image2.png)
 
 **圖 2**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image4.png))
 
@@ -111,7 +111,7 @@ Tableadapter 所執行的 SQL 命令可以是任一特定 SQL 陳述式中，例
 將新的資料集加入至專案中，以滑鼠右鍵按一下`DAL`資料夾中，選擇 加入新項目，然後選取 資料集 範本，如 圖 4 所示。
 
 
-[![將新的具類型資料集加入至名為 NorthwindWithSprocs.xsd 專案](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image7.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image6.png)
+[![Add 專案名為 NorthwindWithSprocs.xsd 新輸入資料集](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image7.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image6.png)
 
 **圖 4**:將新的具類型資料集加入至專案命名為`NorthwindWithSprocs.xsd`([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image8.png))
 
@@ -121,9 +121,9 @@ Tableadapter 所執行的 SQL 命令可以是任一特定 SQL 陳述式中，例
 這個下一步 畫面中，我們可以選擇 TableAdapter 應如何存取資料庫。 在上一個教學課程中，我們會選取第一個選項，使用 SQL 陳述式。 本教學課程中，選取第二個選項，建立新的預存程序，並按一下 [下一步]。
 
 
-[![指示來建立新的預存程序 TableAdpater](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image10.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image9.png)
+[![Instruct TableAdapter 建立新的預存程序](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image10.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image9.png)
 
-**圖 5**:指示來建立新的預存程序 TableAdpater ([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image11.png))
+**圖 5**:指示來建立新的預存程序 TableAdapter ([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image11.png))
 
 
 就像使用特定 SQL 陳述式，在下一個步驟中我們會要求您提供`SELECT`TableAdapter s 主查詢的陳述式。 但為了取代使用`SELECT`若要執行臨機操作查詢，直接在此處輸入的陳述式，TableAdapter 的精靈會建立包含此預存程序`SELECT`查詢。
@@ -134,7 +134,7 @@ Tableadapter 所執行的 SQL 命令可以是任一特定 SQL 陳述式中，例
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/samples/sample4.sql)]
 
 
-[![輸入 SELECT 查詢](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image13.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image12.png)
+[![Enter 為止選取 [查詢](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image13.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image12.png)
 
 **圖 6**:請輸入`SELECT`查詢 ([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image14.png))
 
@@ -160,7 +160,7 @@ TableAdapter 精靈會自動建立的預存程序時，它會顯示重新整理�
 輸入後`SELECT`查詢，並確認已核取 產生 Insert、 Update 和 Delete 陳述式選項中，按一下 下一步。 接下來的畫面，顯示在 圖 8 中，會提示選取、 插入、 更新和刪除資料的精靈將建立的預存程序名稱。 這些預存程序名稱，來變更`Products_Select`， `Products_Insert`， `Products_Update`，和`Products_Delete`。
 
 
-[![重新命名預存程序](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image17.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image16.png)
+[![Rename 預存程序](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image17.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image16.png)
 
 **圖 8**:重新命名預存程序 ([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image18.png))
 
@@ -176,7 +176,7 @@ TableAdapter 精靈會自動建立的預存程序時，它會顯示重新整理�
 命名預存程序之後, 按一下旁邊的 tableadapter 名稱對應的方法。 就像時使用特定 SQL 陳述式，我們可以建立會填入現有的資料表或傳回一個新的方法。 我們也可以指定 TableAdapter 是否應包含的 DB 直接模式，插入、 更新和刪除的記錄。 保留所有的三個核取方塊已核取，但重新命名傳回的 DataTable 方法`GetProducts`（如 [圖 10] 所示）。
 
 
-[![命名方法填滿 與 GetProducts](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image21.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image20.png)
+[![N名稱 （） 方法填滿和 GetProducts](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image21.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image20.png)
 
 **圖 10**:命名方法`Fill`並`GetProducts`([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image22.png))
 
@@ -184,7 +184,7 @@ TableAdapter 精靈會自動建立的預存程序時，它會顯示重新整理�
 按一下 [下一步] 以查看精靈即將執行之步驟的摘要。 按一下 [完成] 按鈕，以完成精靈。 精靈完成後，您將返回 dataset 設計工具，現在應該包含`ProductsDataTable`。
 
 
-[![資料集 s 設計工具會顯示新加入的 ProductsDataTable](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image24.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image23.png)
+[![T他的 dataset 設計工具會顯示新加入 ProductsDataTable](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image24.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image23.png)
 
 **圖 11**:Dataset 設計工具會顯示新加入`ProductsDataTable`([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image25.png))
 
@@ -206,7 +206,7 @@ TableAdapter 精靈會自動建立的預存程序時，它會顯示重新整理�
 檢視或修改預存程序，請按兩下其名稱，在 [伺服器總管] 或，或者，預存程序上按一下滑鼠右鍵並選擇 [開啟]。 [圖 13] 顯示`Products_Delete`開啟時，預存程序。
 
 
-[![您可以開啟並從 Visual Studio 中修改預存程序](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image28.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image27.png)
+[![Stored 程序可以開啟和修改從在 Visual Studio](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image28.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image27.png)
 
 **圖 13**:預存程序可以開啟和修改從在 Visual Studio ([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image29.png))
 
@@ -250,7 +250,7 @@ TableAdapter 精靈會自動建立的預存程序時，它會顯示重新整理�
 或者，您可以重新整理的所有方法在設計工具中的 TableAdapter 上按一下滑鼠右鍵，然後選擇 設定所使用的參數。 這會顯示 [TableAdapter 組態精靈]，列出用於選取、 插入、 更新預存程序，並刪除，以及參數預期接收的預存程序。 如果您按一下 更新 下拉式清單上您所見`Products_Update`預存程序會預期輸入的參數，現在不會再包含`@Original_ProductID`（請參閱 圖 15）。 只要按一下 完成，自動更新 TableAdapter 所使用的參數集合。
 
 
-[![您也可以使用 [TableAdapter 的組態精靈]，重新整理其方法的參數集合](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image32.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image31.png)
+[![Y您可以另外搭配使用 tableadapter 組態精靈] 重新整理其方法的參數集合](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image32.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image31.png)
 
 **圖 15**:您也可以使用 [tableadapter 組態精靈] 重新整理其方法的參數集合 ([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image33.png))
 
@@ -270,7 +270,7 @@ TableAdapter 精靈會自動建立的預存程序時，它會顯示重新整理�
 這會啟動 TableAdapter 查詢組態精靈，它首先會提示輸入 TableAdapter 應如何存取資料庫。 若要建立的新預存程序，請選擇 建立新的預存程序選項，按一下 下一步。
 
 
-[![選擇 建立新的預存程序選項](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image36.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image35.png)
+[![C選擇 [建立新的預存程序選項](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image36.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image35.png)
 
 **圖 17**:選擇 建立新的預存程序選項 ([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image37.png))
 
@@ -278,7 +278,7 @@ TableAdapter 精靈會自動建立的預存程序時，它會顯示重新整理�
 下一個畫面詢問我們找出要執行時，是否會傳回一組資料列或單一純量值，或執行查詢的型別`UPDATE`， `INSERT`，或`DELETE`陳述式。 因為`GetProductByProductID(productID)`方法會傳回一個資料列，請將保留選取會傳回資料列的選項選取，然後按 [下一步]。
 
 
-[![選擇 選取會傳回資料列選項](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image39.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image38.png)
+[![C選擇 [選取會傳回資料列選項](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image39.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image38.png)
 
 **圖 18**:選擇 選取會傳回資料列選項 ([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image40.png))
 
@@ -289,7 +289,7 @@ TableAdapter 精靈會自動建立的預存程序時，它會顯示重新整理�
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/samples/sample9.sql)]
 
 
-[![將預存程序名稱取代為 SELECT 查詢](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image42.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image41.png)
+[![R取代預存程序名稱，以選取 [查詢](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image42.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image41.png)
 
 **圖 19**:將預存程序名稱取代`SELECT`查詢 ([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image43.png))
 
@@ -297,7 +297,7 @@ TableAdapter 精靈會自動建立的預存程序時，它會顯示重新整理�
 後續的畫面會要求您命名將會建立預存程序。 輸入名稱`Products_SelectByProductID`，按一下 [下一步]。
 
 
-[![命名新的預存程序 Products_SelectByProductID](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image45.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image44.png)
+[![Name 新的預存程序 Products_SelectByProductID](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image45.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image44.png)
 
 **圖 20**:命名新的預存程序`Products_SelectByProductID`([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image46.png))
 
@@ -305,7 +305,7 @@ TableAdapter 精靈會自動建立的預存程序時，它會顯示重新整理�
 在精靈的最後一個步驟可讓我們變更的方法名稱產生，以及指出是否要使用的填滿 DataTable 模式，傳回 DataTable 模式中，或這兩者。 針對這個方法，將 核取，這兩個選項，但重新命名的方法`FillByProductID`和`GetProductByProductID`。 按一下 [下一步] 檢視的精靈會執行，然後按一下 [完成] 以完成精靈步驟摘要。
 
 
-[![重新命名為 FillByProductID 和 GetProductByProductID 的 TableAdapter 的方法](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image48.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image47.png)
+[![Rename FillByProductID 和 GetProductByProductID TableAdapter 的方法](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image48.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image47.png)
 
 **圖 21**:重新命名的 TableAdapter 的方法`FillByProductID`並`GetProductByProductID`([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image49.png))
 
@@ -335,7 +335,7 @@ TableAdapter 精靈會自動建立的預存程序時，它會顯示重新整理�
 開啟`NewSprocs.aspx`頁面中`AdvancedDAL`資料夾，然後從 [工具箱] 拖曳至設計工具，並將它命名為拖曳的 GridView `Products`。 從 GridView s 智慧標籤，選擇 繫結至名為新 ObjectDataSource `ProductsDataSource`。 設定要使用 ObjectDataSource`ProductsBLLWithSprocs`類別，如圖 22 所示。
 
 
-[![設定使用 ProductsBLLWithSprocs 類別 ObjectDataSource](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image51.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image50.png)
+[![C設定使用 ProductsBLLWithSprocs 類別 ObjectDataSource](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image51.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image50.png)
 
 **圖 22**:設定要使用 ObjectDataSource`ProductsBLLWithSprocs`類別 ([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image52.png))
 
@@ -345,7 +345,7 @@ TableAdapter 精靈會自動建立的預存程序時，它會顯示重新整理�
 ObjectDataSource 精靈完成之後，Visual Studio 會將 BoundFields 及其產品資料欄位的 GridView。 藉由檢查啟用編輯和中的智慧標籤的 啟用刪除選項開啟的 GridView s 內建編輯與刪除功能。
 
 
-[![此頁面包含與編輯和刪除已啟用支援 GridView](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image54.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image53.png)
+[![T他的頁面包含 GridView，以編輯和刪除支援已啟用](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image54.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image53.png)
 
 **圖 23**:此頁面包含 GridView，以編輯和刪除支援已啟用 ([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image55.png))
 
@@ -362,7 +362,7 @@ ObjectDataSource 精靈完成之後，Visual Studio 會將 BoundFields 及其產
 不論是否增強 GridView 與否，測試頁面的核心功能，在瀏覽器中。 如圖 24 所示，頁面會列出中的 GridView 會提供每個資料列編輯和刪除功能的產品。
 
 
-[![產品可以檢視、 編輯和刪除從 GridView](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image57.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image56.png)
+[![T他的產品可以是 Viewed、 編輯，以及從 GridView 的已刪除](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image57.png)](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image56.png)
 
 **圖 24**:您可以檢視產品、 編輯，並從 GridView 的已刪除 ([按一下以檢視完整大小的影像](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image58.png))
 

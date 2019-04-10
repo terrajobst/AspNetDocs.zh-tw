@@ -8,15 +8,15 @@ ms.date: 07/16/2007
 ms.assetid: 8fc77048-4d1f-42bf-a947-ecc9a02b25c9
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-profile-services
 msc.type: video
-ms.openlocfilehash: b3cb1bdbd6be4fcdc956b8dc475888b9ab0a440e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 54b82c52f0bd58a0184824a861b5f31754652ace
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050885"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420311"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-profile-services"></a>[How Do i:]使用 ASP.NET AJAX 設定檔服務嗎？
-====================
+# <a name="how-do-i-use-the-aspnet-ajax-profile-services"></a>[How Do i:]使用 ASP.NET AJAX 設定檔服務嗎？
+
 藉由[Chris Pels](https://twitter.com/chrispels)
 
 ASP.NET 2.0 導入了[設定檔內容](https://msdn.microsoft.com/library/at64shx3.aspx)與中，您可以儲存您的 ASP.NET Web 應用程式的每個使用者的詳細資料。 ASP.NET AJAX 設定檔服務可讓您從伺服器端 Web 應用程式中擷取使用者的設定檔屬性的用戶端 Web 介面。 這部影片示範範例啟用 AJAX 的旅遊網站可以移動要求將資訊儲存方式的使用者，讓他或她下次瀏覽網站時，就可以擷取詳細資料。

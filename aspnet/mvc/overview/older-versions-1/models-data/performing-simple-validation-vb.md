@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: df6cf4b7-0bb3-4c4e-b17a-bd78a759a6bc
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/performing-simple-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 31faf2e89e6acb25854455902c1a6fdffebd293c
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: c7a1b9e82defaae71f0a911e5e4321f6e15ad8bf
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423178"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422612"
 ---
-<a name="performing-simple-validation-vb"></a>執行簡單的驗證 (VB)
-====================
+# <a name="performing-simple-validation-vb"></a>執行簡單的驗證 (VB)
+
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > 了解如何在 ASP.NET MVC 應用程式中執行驗證。 在本教學課程中，Stephen Walther 會介紹您模型狀態，以及驗證 HTML 協助程式。
@@ -56,12 +56,12 @@ Html.ValidationMessage() 和 Html.ValidationSummary() 的協助程式由 ASP.NET
 請確定您建置應用程式，再加入的檢視。 否則，清單中的類別不會出現在**檢視資料類別**下拉式清單中。
 
 
-[![[新增專案] 對話方塊](performing-simple-validation-vb/_static/image1.jpg)](performing-simple-validation-vb/_static/image1.png)
+[![T他 [新增專案] 對話方塊中](performing-simple-validation-vb/_static/image1.jpg)](performing-simple-validation-vb/_static/image1.png)
 
 **圖 01**:新增檢視 ([按一下以檢視完整大小的影像](performing-simple-validation-vb/_static/image2.png))
 
 
-[![[新增專案] 對話方塊](performing-simple-validation-vb/_static/image2.jpg)](performing-simple-validation-vb/_static/image3.png)
+[![T他 [新增專案] 對話方塊中](performing-simple-validation-vb/_static/image2.jpg)](performing-simple-validation-vb/_static/image3.png)
 
 **圖 02**:建立強型別檢視 ([按一下以檢視完整大小的影像](performing-simple-validation-vb/_static/image4.png))
 
@@ -79,7 +79,7 @@ Html.ValidationMessage() 協助程式會呼叫每個 HTML 表單欄位旁邊。 
 [圖 3] 頁面會說明遺漏的欄位與無效的值送出表單時，驗證協助程式所呈現的錯誤訊息。
 
 
-[![[新增專案] 對話方塊](performing-simple-validation-vb/_static/image3.jpg)](performing-simple-validation-vb/_static/image5.png)
+[![T他 [新增專案] 對話方塊中](performing-simple-validation-vb/_static/image3.jpg)](performing-simple-validation-vb/_static/image5.png)
 
 **圖 03**:提交問題建立檢視 ([按一下以檢視完整大小的影像](performing-simple-validation-vb/_static/image6.png))
 
@@ -104,7 +104,7 @@ Html.ValidationMessage() 協助程式會呼叫每個 HTML 表單欄位旁邊。 
 如果您送出的 HTML 表單，建立一項產品，且 [價格] 欄位和 [UnitsInStock] 欄位沒有值輸入了無效的值時，您就會得到 [圖 4] 中顯示的驗證訊息。 這些驗證錯誤訊息來自何處？
 
 
-[![[新增專案] 對話方塊](performing-simple-validation-vb/_static/image4.jpg)](performing-simple-validation-vb/_static/image7.png)
+[![T他 [新增專案] 對話方塊中](performing-simple-validation-vb/_static/image4.jpg)](performing-simple-validation-vb/_static/image7.png)
 
 **圖 04**:Prebinding 驗證錯誤 ([按一下以檢視完整大小的影像](performing-simple-validation-vb/_static/image8.png))
 

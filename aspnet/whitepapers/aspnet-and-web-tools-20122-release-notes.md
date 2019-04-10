@@ -8,15 +8,15 @@ ms.date: 02/14/2013
 ms.assetid: bdb18d02-9f61-4676-836d-6fdea94f9282
 msc.legacyurl: /whitepapers/aspnet-and-web-tools-20122-release-notes
 msc.type: content
-ms.openlocfilehash: 50e96251f8add00f70193977e73f9af194571c49
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 45e2d1b10665a8ca1965f0761bfa6bfd13444c8e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038905"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419505"
 ---
-<a name="aspnet-and-web-tools-20122-release-notes"></a>ASP.NET 和 Web 工具 2012.2 版本資訊
-====================
+# <a name="aspnet-and-web-tools-20122-release-notes"></a>ASP.NET 和 Web 工具 2012.2 版本資訊
+
 > 本文件說明 ASP.NET 和 Web 工具 2012.2 版本。 它是 Visual Studio Web 工具和 ASP.NET 的更新。
 
 
@@ -26,7 +26,7 @@ ms.locfileid: "57038905"
 - [軟體需求](#_Software_Requirements)
 - [在 ASP.NET 和 Web 工具 2012.2 中的新功能](#_New_Features_in)
 
-    - [工具](#_Tooling)
+    - [Tooling](#_Tooling)
     - [Web 發行](#_Web_Publishing)
     - [ASP.NET MVC 範本](#_Templates)
     - [ASP.NET Web API](#_ASP.NET_Web_API)

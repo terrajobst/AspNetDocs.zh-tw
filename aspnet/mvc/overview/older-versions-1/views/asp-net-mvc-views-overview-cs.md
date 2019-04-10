@@ -8,15 +8,15 @@ ms.date: 02/16/2008
 ms.assetid: 152ab1e5-aec2-4ea7-b8cc-27a24dd9acb8
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a8e64a99549584f150d64d909ac97210257b1147
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b4c35761f9cd44c866242cfe6f4f2d924e81d754
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042965"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421325"
 ---
-<a name="aspnet-mvc-views-overview-c"></a>ASP.NET MVC 檢視概觀 (C#)
-====================
+# <a name="aspnet-mvc-views-overview-c"></a>ASP.NET MVC 檢視概觀 (C#)
+
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > 什麼是 ASP.NET MVC 檢視，它有何不同的 HTML 網頁？ 在本教學課程中，Stephen Walther 會介紹檢視，並示範如何使用檢視資料和檢視表中的 HTML Helper 的利用。
@@ -104,7 +104,7 @@ View();
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample4.aspx)]
 
 
-[![[新增專案] 對話方塊](asp-net-mvc-views-overview-cs/_static/image1.jpg)](asp-net-mvc-views-overview-cs/_static/image1.png)
+[![T他 [新增專案] 對話方塊中](asp-net-mvc-views-overview-cs/_static/image1.jpg)](asp-net-mvc-views-overview-cs/_static/image1.png)
 
 **圖 01**:標準的登入表單 ([按一下以檢視完整大小的影像](asp-net-mvc-views-overview-cs/_static/image2.png))
 

@@ -8,15 +8,15 @@ ms.date: 02/27/2014
 ms.assetid: 3cbab37b-fb0f-4751-9ec4-74e068c3f380
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/integrating-jquery-ui
 msc.type: authoredcontent
-ms.openlocfilehash: ff1b17295c58d40d55bdcd4346b83121b579bb4c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5e9cbb4ca4c45fabfa53f9e3d2537250f1231ba0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030955"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421962"
 ---
-<a name="integrating-jquery-ui-datepicker-with-model-binding-and-web-forms"></a>與模型繫結和 web form 整合 JQuery UI Datepicker
-====================
+# <a name="integrating-jquery-ui-datepicker-with-model-binding-and-web-forms"></a>與模型繫結和 web form 整合 JQuery UI Datepicker
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本系列教學課程示範使用 ASP.NET Web Form 專案中的模型繫結的基本層面。 模型繫結進行更簡單的比處理資料來源物件 （例如 ObjectDataSource 或 SqlDataSource） 的資料互動。 此系列簡介資料的開頭，並在稍後的教學課程中將移至更進階的概念。

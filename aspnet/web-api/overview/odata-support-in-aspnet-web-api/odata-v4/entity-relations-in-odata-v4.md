@@ -8,15 +8,15 @@ ms.date: 06/26/2014
 ms.assetid: 72657550-ec09-4779-9bfc-2fb15ecd51c7
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/entity-relations-in-odata-v4
 msc.type: authoredcontent
-ms.openlocfilehash: d07ddab83462ee1bc84ba8ab15fe906937f506e6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fbafb2b2346689271905db5790cdddeeb809b070
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054615"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418803"
 ---
-<a name="entity-relations-in-odata-v4-using-aspnet-web-api-22"></a>使用 ASP.NET Web API 2.2 OData v4 中的實體關聯
-====================
+# <a name="entity-relations-in-odata-v4-using-aspnet-web-api-22"></a>使用 ASP.NET Web API 2.2 OData v4 中的實體關聯
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 > 大部分的資料集定義實體之間的關聯：客戶具有訂單;活頁簿有作者;產品有供應商。 使用 OData 用戶端可以瀏覽透過實體關聯性。 指定的產品，您可以找到供應商。 您也可以建立或移除關聯性。 例如，您可以設定一項產品的供應商。

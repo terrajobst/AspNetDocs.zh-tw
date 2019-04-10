@@ -8,15 +8,15 @@ ms.date: 05/30/2007
 ms.assetid: d29a7c41-0628-4a23-9dfc-bfea9c6c1054
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3971140aa7a6c829287e74df804694c19e34adcf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7637e23678af80ae037292fd3f89ef74167c8242
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57028045"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419245"
 ---
-<a name="caching-data-in-the-architecture-c"></a>在架構中快取資料 (C#)
-====================
+# <a name="caching-data-in-the-architecture-c"></a>在架構中快取資料 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_59_CS.exe)或[下載 PDF](caching-data-in-the-architecture-cs/_static/datatutorial59cs1.pdf)
@@ -159,7 +159,7 @@ ObjectDataSource 快取內部前述教學課程中探索的功能會使用 ASP.N
 快取層的類別和方法可用來處理資料的技術我們 ve 檢查在這些教學課程。 為了說明使用快取的資料，您將變更儲存到`ProductsCL`類別，然後開啟`FromTheArchitecture.aspx`頁面中`Caching`資料夾，並新增 GridView。 從 GridView s 智慧標籤，建立新的 ObjectDataSource。 在精靈的 s 第一個步驟應該會看到`ProductsCL`類別做為其中一個選項，從下拉式清單。
 
 
-[![在 [商務物件] 下拉式清單中包含 ProductsCL 類別](caching-data-in-the-architecture-cs/_static/image5.png)](caching-data-in-the-architecture-cs/_static/image4.png)
+[![T他 ProductsCL 類別包含在商務物件下拉式清單](caching-data-in-the-architecture-cs/_static/image5.png)](caching-data-in-the-architecture-cs/_static/image4.png)
 
 **[圖 4**:`ProductsCL`類別包含商務物件] 下拉式清單中 ([按一下以檢視完整大小的影像](caching-data-in-the-architecture-cs/_static/image6.png))
 
@@ -167,7 +167,7 @@ ObjectDataSource 快取內部前述教學課程中探索的功能會使用 ASP.N
 選取之後`ProductsCL`，按一下 [下一步]。 下拉式清單中的選取索引標籤中有兩個項目-`GetProducts()`並`GetProductsByCategoryID(categoryID)`和 [更新] 索引標籤具有唯一`UpdateProduct`多載。 選擇`GetProducts()`從 [選取] 索引標籤的方法和`UpdateProducts`方法，從 [更新] 索引標籤，然後按一下 [完成]。
 
 
-[![ProductsCL 類別的方法詳列於下拉式清單](caching-data-in-the-architecture-cs/_static/image8.png)](caching-data-in-the-architecture-cs/_static/image7.png)
+[![T他 ProductsCL 類別的方法詳列於下拉式清單會列出](caching-data-in-the-architecture-cs/_static/image8.png)](caching-data-in-the-architecture-cs/_static/image7.png)
 
 **圖 5**:`ProductsCL`下拉式清單中列出類別的方法 ([按一下以檢視完整大小的影像](caching-data-in-the-architecture-cs/_static/image9.png))
 

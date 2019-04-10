@@ -8,15 +8,15 @@ ms.date: 10/17/2013
 ms.assetid: 5a6b4558-0555-4cac-99c7-06865169007f
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-editor-features-html-editor
 msc.type: video
-ms.openlocfilehash: 317bff81f3788a6d182db6ac0338898e65aaf6ab
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b3e62d86cf991567dc7e481046a496b28165cf39
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031705"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418777"
 ---
-<a name="visual-studio-2013-web-editor-features---html-editor"></a>Visual Studio 2013 Web 編輯器功能 - HTML 編輯器
-====================
+# <a name="visual-studio-2013-web-editor-features---html-editor"></a>Visual Studio 2013 Web 編輯器功能 - HTML 編輯器
+
 藉由[Mads Kristensen](https://github.com/madskristensen)
 
 Mads Kristensen 顯示關閉 HTML 編輯器功能，包括 HTML 項目，所有的 CSS 類別的完整 IntelliSense 的 Visual Studio 2013 中和在您的專案、 HTML 實體、 豐富的程式碼片段、 拖放的最新的程式庫，例如 AngularJS、 支援的媒體識別碼。KnockoutJS Handlebars 和各種不同的中繼標籤。

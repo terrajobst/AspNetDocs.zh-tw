@@ -8,15 +8,15 @@ ms.date: 05/28/2009
 ms.assetid: 160d6dde-1a19-4822-963b-cd936fb8afa0
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-24-finis
 msc.type: video
-ms.openlocfilehash: 37509c68d129162fd497032ade3d47edf982b12f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6478ad3c8ef599dcf17c998cb0ce3c71a0039223
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053795"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418790"
 ---
-<a name="aspnet-mvc-storefront-part-24-finis"></a>ASP.NET MVC 店面第 24 部分：Finis
-====================
+# <a name="aspnet-mvc-storefront-part-24-finis"></a>ASP.NET MVC 店面第 24 部分：Finis
+
 藉由[Rob Conery](https://github.com/robconery)
 
 這是 MVC 店面序列中的最後一集，這看起來似乎有點奇怪。 它絕對不是我對於 ASP.NET MVC 中，最後一個螢幕錄製影片，但我認為我已經只要移至與此系列。

@@ -8,15 +8,15 @@ ms.date: 06/12/2014
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: 18e988279b56e479b0bb27de2f01ab22a2e70301
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: d27c8c1910a79cea8ccdf4231d3bc2b80a20dc68
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422606"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418361"
 ---
-<a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>自動化 （建置使用 Azure 的真實世界的雲端應用程式） 的所有項目
-====================
+# <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>自動化 （建置使用 Azure 的真實世界的雲端應用程式） 的所有項目
+
 藉由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
 
 [下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
@@ -125,7 +125,7 @@ ms.locfileid: "58422606"
 
 ### <a name="create-the-storage-account"></a>建立儲存體帳戶
 
-然後會執行主要指令碼<em>新增 AzureStorage.ps1</em>指令碼，請指定"<em>&lt;websitename&gt;</em>儲存體 」 儲存體帳戶名稱，和相同的資料中心位置web 應用程式。
+然後會執行主要指令碼*新增 AzureStorage.ps1*指令碼，請指定"*&lt;websitename&gt;* 儲存體 」 儲存體帳戶名稱，和相同的資料中心位置web 應用程式。
 
 [!code-powershell[Main](automate-everything/samples/sample4.ps1?highlight=3)]
 

@@ -8,15 +8,15 @@ ms.date: 01/16/2019
 ms.assetid: 8bf2c4fb-4ee5-4841-bfc2-03462c1f7a7a
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
-ms.openlocfilehash: d49dfad368ca4b81bb865103a99ec223a1cc66df
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 39502e03196d2ba51e826d248ff0ff1e84258131
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059575"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420194"
 ---
-<a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署到測試環境
-====================
+# <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署到測試環境
+
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 > 本系列教學課程會示範如何部署 （發行） 的 ASP.NET web 應用程式至 Azure App Service Web Apps 或使用 Visual Studio 2017 的協力廠商裝載提供者。 這個系列的相關資訊，請參閱[系列的第一個教學課程](introduction.md)。

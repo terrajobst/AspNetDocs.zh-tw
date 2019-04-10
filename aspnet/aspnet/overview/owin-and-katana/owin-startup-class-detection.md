@@ -8,15 +8,15 @@ ms.date: 01/28/2019
 ms.assetid: 08257f55-36f4-4e39-9c88-2a5602838c79
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-startup-class-detection
 msc.type: authoredcontent
-ms.openlocfilehash: 0b34cca8b48383dbb028106651758dff889ed614
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e4d9424d691f92aacf078faed09689daa40a44fd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039775"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418335"
 ---
-<a name="owin-startup-class-detection"></a>OWIN 啟動類別偵測
-====================
+# <a name="owin-startup-class-detection"></a>OWIN 啟動類別偵測
+
 
 > 本教學課程會示範如何設定載入的 OWIN 啟動類別。 如需有關 OWIN 的詳細資訊，請參閱[概觀的 Katana 專案](an-overview-of-project-katana.md)。 本教學課程中所編寫的 Rick Anderson ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )，Praburaj Thiagarajan 和 Howard Dierking ( [ @howard \_dierking](https://twitter.com/howard_dierking) )。
 >
@@ -79,7 +79,8 @@ ms.locfileid: "57039775"
      > [!NOTE]
      > 在上述程式碼中，我們有註解`OwinStartup`屬性，我們依賴執行名為類別的慣例`Startup`。-按***F5***執行應用程式。 按 重新整理數次。
 
-    ![](owin-startup-class-detection/_static/image4.png) 注意：在本教學課程中的映像中顯示的數字不會符合您看到的數字。 毫秒數的字串用來顯示新的回應，當您重新整理頁面。
+    ![](owin-startup-class-detection/_static/image4.png)
+  注意:在本教學課程中的映像中顯示的數字不會符合您看到的數字。 毫秒數的字串用來顯示新的回應，當您重新整理頁面。
   您可以看到中的追蹤資訊**輸出**視窗。
 
     ![](owin-startup-class-detection/_static/image5.png)

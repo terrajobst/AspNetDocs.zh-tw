@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: a86c0276-6481-46ee-8b4f-8c2009399ee9
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-animation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 811e1d75f79885f3f4c561d9211fec625fcf1807
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3f8073b468a431d5c4b0d222bf385c8c6d32b2a8
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032775"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419089"
 ---
-<a name="disabling-actions-during-animation-vb"></a>動畫播放期間停用動作 (VB)
-====================
+# <a name="disabling-actions-during-animation-vb"></a>動畫播放期間停用動作 (VB)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation7.vb.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation7VB.pdf)
@@ -55,7 +55,7 @@ ms.locfileid: "57032775"
 不過在特定案例這會是毫無用處自按鈕淡出，並在動畫結束時看不到。
 
 
-[![動畫執行時，會停用按鈕](disabling-actions-during-animation-vb/_static/image2.png)](disabling-actions-during-animation-vb/_static/image1.png)
+[![T只要執行動畫，他按鈕已停用](disabling-actions-during-animation-vb/_static/image2.png)](disabling-actions-during-animation-vb/_static/image1.png)
 
 按鈕已停用，只要執行動畫 ([按一下以檢視完整大小的影像](disabling-actions-during-animation-vb/_static/image3.png))
 

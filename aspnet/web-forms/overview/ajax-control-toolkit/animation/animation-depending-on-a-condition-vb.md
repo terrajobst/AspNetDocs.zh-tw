@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 1b87d8d6-b3f7-4126-b51c-d41442fbf947
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-vb
 msc.type: authoredcontent
-ms.openlocfilehash: be43b68ce77819cdcd09d8e875604db90e8a8d96
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 78140f56184e88fb4dbe29f234aebd5732b69ad9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063195"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418868"
 ---
-<a name="animation-depending-on-a-condition-vb"></a>依據條件的動畫 (VB)
-====================
+# <a name="animation-depending-on-a-condition-vb"></a>依據條件的動畫 (VB)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation4.vb.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation4VB.pdf)
@@ -53,7 +53,7 @@ ms.locfileid: "57063195"
 請注意，為小於符號 (`<`) 中`ConditionScript`屬性必須逸出 （）。 當您執行此指令碼，可能是沒有動畫執行時，或兩者的其中一個存在，或兩個的作用。
 
 
-[![面板淡出但不調整大小，因此未在第二個動畫執行後的第一個](animation-depending-on-a-condition-vb/_static/image2.png)](animation-depending-on-a-condition-vb/_static/image1.png)
+[![T他面板漸淡但不調整大小，因此未在第二個動畫執行後的第一個](animation-depending-on-a-condition-vb/_static/image2.png)](animation-depending-on-a-condition-vb/_static/image1.png)
 
 面板淡出但不調整大小，因此未在第二個動畫執行後的第一個 ([按一下以檢視完整大小的影像](animation-depending-on-a-condition-vb/_static/image3.png))
 

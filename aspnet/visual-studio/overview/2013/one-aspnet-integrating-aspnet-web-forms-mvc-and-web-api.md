@@ -8,15 +8,15 @@ ms.date: 07/16/2014
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 85e4369ee458043eec59fb27e317d18466f61f32
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 1023d9bef311e58fb5fb0bb24cde80e8320e6bac
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422528"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419050"
 ---
-<a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>實際操作實驗室：一個 ASP.NET：整合 ASP.NET Web Form、MVC 與 Web API
-====================
+# <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>實際操作實驗室：一個 ASP.NET：整合 ASP.NET Web Form、MVC 與 Web API
+
 藉由[Web Camp 小組](https://twitter.com/webcamps)
 
 [下載 Web 研討會訓練套件](https://aka.ms/webcamps-training-kit)
@@ -72,7 +72,7 @@ ms.locfileid: "58422528"
 > 每個練習會伴隨起始方案，位於**開始**練習，可讓您依照每個練習，獨立於其他的資料夾。 請留意練習期間新增的程式碼片段缺少這些啟動解決方案，並可能無法運作，直到您已完成練習。 在練習的原始程式碼，您也可以找到**結束**資料夾包含 Visual Studio 方案，以程式碼所產生的相對應的練習中的步驟。 如果您需要其他說明，當您完成這個實際操作實驗室，您可以使用這些解決方案與指引。
 
 
-* * *
+---
 
 <a id="Exercises"></a>
 ## <a name="exercises"></a>練習
@@ -103,7 +103,7 @@ ms.locfileid: "58422528"
 
     ![建立新專案](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image1.png)
 
-    *建立新的專案*
+    *建立新專案*
 2. 在 **新的專案**對話方塊中，選取**ASP.NET Web 應用程式**下**Visual C# |Web**索引標籤，並確定 **.NET Framework 4.5**已選取。 將專案命名為*MyHybridSite*，選擇**位置**然後按一下**確定**。
 
     ![新的 ASP.NET Web 應用程式專案](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image2.png)
@@ -427,7 +427,7 @@ Web API 架構是 ASP.NET 堆疊的一部分，並可輕鬆實作 HTTP 服務，
 
     *詳細的資訊 頁面*
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>總結

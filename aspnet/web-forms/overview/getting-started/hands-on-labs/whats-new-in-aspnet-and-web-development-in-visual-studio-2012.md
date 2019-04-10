@@ -8,15 +8,15 @@ ms.date: 02/18/2013
 ms.assetid: 6d40d276-1642-4a77-b6c9-02ac914f6805
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 6d5af6563bdf3872110497f4b142dd7353c8d64c
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 3833e3f3c6c49ff2b317ad04aff33c9119cb1f41
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58426116"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420207"
 ---
-<a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>Visual Studio 2012 中的 ASP.NET 和網頁程式開發的新功能
-====================
+# <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>Visual Studio 2012 中的 ASP.NET 和網頁程式開發的新功能
+
 藉由[Web Camp 小組](https://twitter.com/webcamps)
 
 > 新版的 Visual Studio 導入了一些增強功能，著重於使用 Web 技術時，改善的體驗和效能。 CSS、 JavaScript 和 HTML 的 visual Studio 編輯器已徹底改頭換面包含許多最搶手的程式碼的協助，例如 IntelliSense 和自動縮排。 關於效能，統合和縮製現在已整合為內建的功能，以便輕鬆地減少頁面載入時間。
@@ -720,7 +720,7 @@ Visual Studio 有更新的承諾，讓程式碼模式，可供存取且妥善管
 
     *VS Express for Web 圖格*
 
-* * *
+---
 
 <a id="AppendixB"></a>
 
