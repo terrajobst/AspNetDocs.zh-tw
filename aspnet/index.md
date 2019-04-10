@@ -7,13 +7,14 @@ ms.author: riande
 title: ASP.NET 文件
 ms.date: 08/24/2018
 description: 了解如何開發 ASP.NET 與 ASP.NET Web 應用程式。 取得文件、程式碼範例、教學課程等。
-ms.openlocfilehash: d46c4b3f39a540244905be3e6cb9a48373613190
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: c907f2ba66ba6ff197ced0c67243a963ffab17e3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423740"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384717"
 ---
+<!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">
     <div class="container">
         <h1>ASP.NET 文件</h1>
@@ -22,7 +23,7 @@ ms.locfileid: "58423740"
                 <a href="#core">ASP.NET Core</a>
                 <ul id="core">
                     <li>
-                        <a href="#core_overview">概觀</a>
+                        <a href="#core_overview">總覽</a>
                         <ul id="core_overview" class="cardsC">
                             <li>
                                 <div class="container intro">
@@ -290,7 +291,7 @@ ms.locfileid: "58423740"
                 <a href="#aspnet">ASP.NET</a>
                 <ul id="aspnet">
                     <li>
-                        <a href="#aspnet_overview">概觀</a>
+                        <a href="#aspnet_overview">總覽</a>
                         <ul id="aspnet_overview" class="cardsC">
                             <li>
                                 <div class="container intro">
