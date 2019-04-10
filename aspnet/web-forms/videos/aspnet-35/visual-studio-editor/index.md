@@ -8,22 +8,22 @@ ms.date: 11/14/2011
 ms.assetid: 8d424d7b-5206-4790-a068-36d01c05ceb0
 msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-editor
 msc.type: chapter
-ms.openlocfilehash: f28695d13a8fee29816955813bbf34739ebc936b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fda6eaf86f3822bce0ca0dd834cd187897bce69d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023785"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392842"
 ---
-<a name="visual-studio-editor"></a><span data-ttu-id="81747-103">Visual Studio 編輯器</span><span class="sxs-lookup"><span data-stu-id="81747-103">Visual Studio Editor</span></span>
-====================
-> <span data-ttu-id="81747-104">這一系列影片會示範 Visual Studio 2008 編輯器，包括增強型的支援 JavaScript 和 CSS 的新功能。</span><span class="sxs-lookup"><span data-stu-id="81747-104">This video series shows you new features of the Visual Studio 2008 editor, including enhanced support for JavaScript and CSS.</span></span>
+# <a name="visual-studio-editor"></a><span data-ttu-id="52fbf-103">Visual Studio 編輯器</span><span class="sxs-lookup"><span data-stu-id="52fbf-103">Visual Studio Editor</span></span>
+
+> <span data-ttu-id="52fbf-104">這一系列影片會示範 Visual Studio 2008 編輯器，包括增強型的支援 JavaScript 和 CSS 的新功能。</span><span class="sxs-lookup"><span data-stu-id="52fbf-104">This video series shows you new features of the Visual Studio 2008 editor, including enhanced support for JavaScript and CSS.</span></span>
 
 
-- [<span data-ttu-id="81747-105">Visual Studio 2008 中的新設計工具支援</span><span class="sxs-lookup"><span data-stu-id="81747-105">New Designer Support in Visual Studio 2008</span></span>](new-designer-support-in-visual-studio-2008.md)
-- [<span data-ttu-id="81747-106">Visual Studio 2008 的 JavaScript IntelliSense 支援</span><span class="sxs-lookup"><span data-stu-id="81747-106">JavaScript Intellisense Support in Visual Studio 2008</span></span>](javascript-intellisense-support-in-visual-studio-2008.md)
-- [<span data-ttu-id="81747-107">Visual Studio 2008 的 JavaScript 偵錯</span><span class="sxs-lookup"><span data-stu-id="81747-107">JavaScript Debugging in Visual Studio 2008</span></span>](javascript-debugging-in-visual-studio-2008.md)
-- [<span data-ttu-id="81747-108">Visual Studio 2008 的多目標支援</span><span class="sxs-lookup"><span data-stu-id="81747-108">Multi Targeting Support in Visual Studio 2008</span></span>](multi-targeting-support-in-visual-studio-2008.md)
-- [<span data-ttu-id="81747-109">IntelliSense for Jscript 與 ASP.NET AJAX</span><span class="sxs-lookup"><span data-stu-id="81747-109">IntelliSense for Jscript and ASP.NET AJAX</span></span>](intellisense-for-jscript-and-aspnet-ajax.md)
-- [<span data-ttu-id="81747-110">Visual Studio 2008 整合式開發環境快速導覽</span><span class="sxs-lookup"><span data-stu-id="81747-110">Quick Tour of the Visual Studio 2008 Integrated Development Environment</span></span>](quick-tour-of-the-visual-studio-2008-integrated-development-environment.md)
-- [<span data-ttu-id="81747-111">建立和修改 CSS 檔</span><span class="sxs-lookup"><span data-stu-id="81747-111">Creating and Modifying a CSS File</span></span>](creating-and-modifying-a-css-file.md)
+- [<span data-ttu-id="52fbf-105">Visual Studio 2008 中的新設計工具支援</span><span class="sxs-lookup"><span data-stu-id="52fbf-105">New Designer Support in Visual Studio 2008</span></span>](new-designer-support-in-visual-studio-2008.md)
+- [<span data-ttu-id="52fbf-106">Visual Studio 2008 的 JavaScript IntelliSense 支援</span><span class="sxs-lookup"><span data-stu-id="52fbf-106">JavaScript Intellisense Support in Visual Studio 2008</span></span>](javascript-intellisense-support-in-visual-studio-2008.md)
+- [<span data-ttu-id="52fbf-107">Visual Studio 2008 的 JavaScript 偵錯</span><span class="sxs-lookup"><span data-stu-id="52fbf-107">JavaScript Debugging in Visual Studio 2008</span></span>](javascript-debugging-in-visual-studio-2008.md)
+- [<span data-ttu-id="52fbf-108">Visual Studio 2008 的多目標支援</span><span class="sxs-lookup"><span data-stu-id="52fbf-108">Multi Targeting Support in Visual Studio 2008</span></span>](multi-targeting-support-in-visual-studio-2008.md)
+- [<span data-ttu-id="52fbf-109">IntelliSense for Jscript 與 ASP.NET AJAX</span><span class="sxs-lookup"><span data-stu-id="52fbf-109">IntelliSense for Jscript and ASP.NET AJAX</span></span>](intellisense-for-jscript-and-aspnet-ajax.md)
+- [<span data-ttu-id="52fbf-110">Visual Studio 2008 整合式開發環境快速導覽</span><span class="sxs-lookup"><span data-stu-id="52fbf-110">Quick Tour of the Visual Studio 2008 Integrated Development Environment</span></span>](quick-tour-of-the-visual-studio-2008-integrated-development-environment.md)
+- [<span data-ttu-id="52fbf-111">建立及修改 CSS 檔案</span><span class="sxs-lookup"><span data-stu-id="52fbf-111">Creating and Modifying a CSS File</span></span>](creating-and-modifying-a-css-file.md)
