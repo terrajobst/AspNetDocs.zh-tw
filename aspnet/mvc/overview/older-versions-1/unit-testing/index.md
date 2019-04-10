@@ -8,17 +8,17 @@ ms.date: 09/28/2011
 ms.assetid: b21d9a30-6b5c-41ab-a8e4-2fa18acd8e9b
 msc.legacyurl: /mvc/overview/older-versions-1/unit-testing
 msc.type: chapter
-ms.openlocfilehash: d51c89c6b61c7092fcfcdbd11bd0cd7940afa70d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a0f530059ec98c238f4711020c9481eca604dba0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023865"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417607"
 ---
-<a name="unit-testing"></a><span data-ttu-id="44830-103">單元測試</span><span class="sxs-lookup"><span data-stu-id="44830-103">Unit Testing</span></span>
-====================
-> <span data-ttu-id="44830-104">本教學課程組會示範如何建立 ASP.NET mvc 控制器動作的單元測試。</span><span class="sxs-lookup"><span data-stu-id="44830-104">This tutorial set shows you how to create unit tests for ASP.NET MVC controller actions.</span></span>
+# <a name="unit-testing"></a><span data-ttu-id="6a636-103">單元測試</span><span class="sxs-lookup"><span data-stu-id="6a636-103">Unit Testing</span></span>
+
+> <span data-ttu-id="6a636-104">本教學課程組會示範如何建立 ASP.NET mvc 控制器動作的單元測試。</span><span class="sxs-lookup"><span data-stu-id="6a636-104">This tutorial set shows you how to create unit tests for ASP.NET MVC controller actions.</span></span>
 
 
-- [<span data-ttu-id="44830-105">建立 ASP.NET MVC 應用程式的單元測試 (C#)</span><span class="sxs-lookup"><span data-stu-id="44830-105">Creating Unit Tests for ASP.NET MVC Applications (C#)</span></span>](creating-unit-tests-for-asp-net-mvc-applications-cs.md)
-- [<span data-ttu-id="44830-106">建立 ASP.NET MVC 應用程式的單元測試 (VB)</span><span class="sxs-lookup"><span data-stu-id="44830-106">Creating Unit Tests for ASP.NET MVC Applications (VB)</span></span>](creating-unit-tests-for-asp-net-mvc-applications-vb.md)
+- [<span data-ttu-id="6a636-105">建立 ASP.NET MVC 應用程式的單元測試 (C#)</span><span class="sxs-lookup"><span data-stu-id="6a636-105">Creating Unit Tests for ASP.NET MVC Applications (C#)</span></span>](creating-unit-tests-for-asp-net-mvc-applications-cs.md)
+- [<span data-ttu-id="6a636-106">建立 ASP.NET MVC 應用程式的單元測試 (VB)</span><span class="sxs-lookup"><span data-stu-id="6a636-106">Creating Unit Tests for ASP.NET MVC Applications (VB)</span></span>](creating-unit-tests-for-asp-net-mvc-applications-vb.md)

@@ -8,19 +8,19 @@ ms.date: 12/05/2016
 ms.assetid: 01a5898c-21a4-474c-88b9-697857ca2e59
 msc.legacyurl: /ajax/cdn/jquery-validate/cdnjqueryvalidate1160
 msc.type: content
-ms.openlocfilehash: 0417d6cdd9a1987ad06f6883afe5f82da3204030
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 06d6213b19e0c6510874d81d58fa21c9acb9d4e5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025655"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410756"
 ---
-<a name="jquery-validation-1160"></a><span data-ttu-id="92721-102">jQuery 驗證 1.16.0</span><span class="sxs-lookup"><span data-stu-id="92721-102">jQuery Validation 1.16.0</span></span>
-====================
-<span data-ttu-id="92721-103">下列檔案裝載在 CDN 上：</span><span class="sxs-lookup"><span data-stu-id="92721-103">The following files are hosted on the CDN:</span></span>
+# <a name="jquery-validation-1160"></a><span data-ttu-id="02e5c-102">jQuery 驗證 1.16.0</span><span class="sxs-lookup"><span data-stu-id="02e5c-102">jQuery Validation 1.16.0</span></span>
+
+<span data-ttu-id="02e5c-103">下列檔案裝載在 CDN 上：</span><span class="sxs-lookup"><span data-stu-id="02e5c-103">The following files are hosted on the CDN:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/additional-methods.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/additional-methods.min.js
-- <span data-ttu-id="92721-104">在檔案的當地語系化 https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/localization/messages\_##.js 其中 # # 是當地語系化程式碼。</span><span class="sxs-lookup"><span data-stu-id="92721-104">Localization Files at https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/localization/messages\_##.js where ## is the loc code.</span></span>
+- <span data-ttu-id="02e5c-104">在檔案的當地語系化 https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/localization/messages\_##.js 其中 # # 是當地語系化程式碼。</span><span class="sxs-lookup"><span data-stu-id="02e5c-104">Localization Files at https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/localization/messages\_##.js where ## is the loc code.</span></span>
