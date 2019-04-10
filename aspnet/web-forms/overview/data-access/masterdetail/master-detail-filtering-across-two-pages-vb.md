@@ -8,15 +8,15 @@ ms.date: 03/31/2010
 ms.assetid: 361d6a44-3f1f-4daf-85df-d4c2b8bf065d
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 290c4eba6f77a6006d424c3f05b77c1c128026b3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6903c8c0649f9e4d56962bd36e03448852cfb81a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027975"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395351"
 ---
-<a name="masterdetail-filtering-across-two-pages-vb"></a>跨兩個頁面進行主要/詳細資料篩選 (VB)
-====================
+# <a name="masterdetail-filtering-across-two-pages-vb"></a>跨兩個頁面進行主要/詳細資料篩選 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/5/d/7/5d7571fc-d0b7-4798-ad4a-c976c02363ce/ASPNET_Data_Tutorial_9_VB.exe)或[下載 PDF](master-detail-filtering-across-two-pages-vb/_static/datatutorial09vb1.pdf)
@@ -56,12 +56,12 @@ ms.locfileid: "57027975"
 具有`SupplierListMaster.aspx`並`ProductsForSupplierDetails.aspx`建立的頁面下, 一步是建立的供應商附於 GridView `SupplierListMaster.aspx`。 加入至頁面的 GridView 和繫結至新的 ObjectDataSource。 應該使用這個 ObjectDataSource`SuppliersBLL`類別的`GetSuppliers()`方法，以傳回所有的供應商。
 
 
-[![選取 SuppliersBLL 類別](master-detail-filtering-across-two-pages-vb/_static/image3.png)](master-detail-filtering-across-two-pages-vb/_static/image2.png)
+[![S選擇 SuppliersBLL 類別](master-detail-filtering-across-two-pages-vb/_static/image3.png)](master-detail-filtering-across-two-pages-vb/_static/image2.png)
 
 **圖 2**:選取 `SuppliersBLL`類別 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image4.png))
 
 
-[![設定為使用 GetSuppliers() 方法的 ObjectDataSource](master-detail-filtering-across-two-pages-vb/_static/image6.png)](master-detail-filtering-across-two-pages-vb/_static/image5.png)
+[![C設定為使用 GetSuppliers() 方法的 ObjectDataSource](master-detail-filtering-across-two-pages-vb/_static/image6.png)](master-detail-filtering-across-two-pages-vb/_static/image5.png)
 
 **圖 3**:設定要使用 ObjectDataSource`GetSuppliers()`方法 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image7.png))
 
@@ -71,7 +71,7 @@ ms.locfileid: "57027975"
 若要達成此目的，新增[HyperLinkField](https://msdn.microsoft.com/library/system.web.ui.webcontrols.hyperlinkfield.aspx)至 GridView，加入超連結至每個 GridView 資料列。 按一下 GridView 的智慧標籤中的 編輯資料行 連結啟動。 接下來，從左上角的清單中選取 HyperLinkField，並按一下 [新增]，在 GridView 的欄位清單中包含 HyperLinkField。
 
 
-[![新增 HyperLinkField 至 GridView](master-detail-filtering-across-two-pages-vb/_static/image9.png)](master-detail-filtering-across-two-pages-vb/_static/image8.png)
+[![Add 至 GridView HyperLinkField](master-detail-filtering-across-two-pages-vb/_static/image9.png)](master-detail-filtering-across-two-pages-vb/_static/image8.png)
 
 **圖 4**:新增至 GridView 的 HyperLinkField ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image10.png))
 
@@ -79,7 +79,7 @@ ms.locfileid: "57027975"
 HyperLinkField 可以設定為使用相同的文字或 URL 值中每個 GridView 資料列的連結，或可以將這些值根據繫結至每個特定的資料列的資料值。 若要指定靜態值跨所有資料列使用 HyperLinkField`Text`或`NavigateUrl`屬性。 由於我們想要針對所有資料列相同的連結文字時，設定 HyperLinkField`Text`檢視產品的屬性。
 
 
-[![HyperLinkField 的 Text 屬性設定為檢視產品](master-detail-filtering-across-two-pages-vb/_static/image12.png)](master-detail-filtering-across-two-pages-vb/_static/image11.png)
+[![Set HyperLinkField 的 Text 屬性，以檢視產品](master-detail-filtering-across-two-pages-vb/_static/image12.png)](master-detail-filtering-across-two-pages-vb/_static/image11.png)
 
 **圖 5**:設定 HyperLinkField`Text`屬性，以檢視產品 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image13.png))
 
@@ -91,7 +91,7 @@ HyperLinkField 可以設定為使用相同的文字或 URL 值中每個 GridView
 將此套用到本教學課程中，我們需要設定`DataNavigateUrlFields`屬性設`SupplierID`，因為這是我們要自訂針對每個資料列，其值的 [資料] 欄位並`DataNavigateUrlFormatString`屬性設`ProductsForSupplierDetails.aspx?SupplierID={0}`。
 
 
-[![設定包含適當的連結 URL 根據 SupplierID HyperLinkField](master-detail-filtering-across-two-pages-vb/_static/image15.png)](master-detail-filtering-across-two-pages-vb/_static/image14.png)
+[![C設定要包含的適當連結 URL 架構時 SupplierID HyperLinkField](master-detail-filtering-across-two-pages-vb/_static/image15.png)](master-detail-filtering-across-two-pages-vb/_static/image14.png)
 
 **圖 6**:設定以包含適當連結 URL 架構時 HyperLinkField `SupplierID` ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image16.png))
 
@@ -104,7 +104,7 @@ HyperLinkField 可以設定為使用相同的文字或 URL 值中每個 GridView
 請花一點時間檢視`SupplierListMaster.aspx`透過瀏覽器的頁面。 如 [圖 7] 所示，頁面目前列出所有包含檢視產品連結的供應商。 按一下 View Products 連結會帶您前往`ProductsForSupplierDetails.aspx`，並傳遞沿著供應商的`SupplierID`於 querystring 中。
 
 
-[![每個供應商資料列包含檢視產品連結](master-detail-filtering-across-two-pages-vb/_static/image18.png)](master-detail-filtering-across-two-pages-vb/_static/image17.png)
+[![E除此之外，每個供應商資料列包含檢視產品連結](master-detail-filtering-across-two-pages-vb/_static/image18.png)](master-detail-filtering-across-two-pages-vb/_static/image17.png)
 
 **圖 7**:每個供應商資料列包含檢視產品連結 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image19.png))
 
@@ -114,17 +114,17 @@ HyperLinkField 可以設定為使用相同的文字或 URL 值中每個 GridView
 此時`SupplierListMaster.aspx`頁面會傳送使用者`ProductsForSupplierDetails.aspx`，將選取的供應商`SupplierID`於 querystring 中。 教學課程中的最後一個步驟是在 GridView 中顯示的產品`ProductsForSupplierDetails.aspx`其`SupplierID`等於`SupplierID`傳遞查詢字串。 新增 GridView，以完成本入門`ProductsForSupplierDetails.aspx`頁面上，使用名為的新 ObjectDataSource 控制項`ProductsBySupplierDataSource`叫用`GetProductsBySupplierID(supplierID)`方法從`ProductsBLL`類別。
 
 
-[![新增名為 ProductsBySupplierDataSource 新 ObjectDataSource](master-detail-filtering-across-two-pages-vb/_static/image21.png)](master-detail-filtering-across-two-pages-vb/_static/image20.png)
+[![Add 新 ObjectDataSource 名為 ProductsBySupplierDataSource](master-detail-filtering-across-two-pages-vb/_static/image21.png)](master-detail-filtering-across-two-pages-vb/_static/image20.png)
 
 **圖 8**:新增新的 ObjectDataSource 名為`ProductsBySupplierDataSource`([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image22.png))
 
 
-[![選取 ProductsBLL 類別](master-detail-filtering-across-two-pages-vb/_static/image24.png)](master-detail-filtering-across-two-pages-vb/_static/image23.png)
+[![S選擇 ProductsBLL 類別](master-detail-filtering-across-two-pages-vb/_static/image24.png)](master-detail-filtering-across-two-pages-vb/_static/image23.png)
 
 **圖 9**:選取 `ProductsBLL`類別 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image25.png))
 
 
-[![已叫用 GetProductsBySupplierID(supplierID) 方法的 ObjectDataSource](master-detail-filtering-across-two-pages-vb/_static/image27.png)](master-detail-filtering-across-two-pages-vb/_static/image26.png)
+[![HObjectDataSource Invoke GetProductsBySupplierID(supplierID) 方法 [ave](master-detail-filtering-across-two-pages-vb/_static/image27.png)](master-detail-filtering-across-two-pages-vb/_static/image26.png)
 
 **圖 10**:有 ObjectDataSource 叫用`GetProductsBySupplierID(supplierID)`方法 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image28.png))
 
@@ -132,7 +132,7 @@ HyperLinkField 可以設定為使用相同的文字或 URL 值中每個 GridView
 設定資料來源精靈的最後一個步驟會要求我們提供的來源`GetProductsBySupplierID(supplierID)`方法的 *`supplierID`* 參數。 若要使用的查詢字串值，設定參數來源至查詢字串，然後輸入在 QueryStringField 文字方塊中使用查詢字串值的名稱 (`SupplierID`)。
 
 
-[![填入 supplierID SupplierID Querystring 值的參數值](master-detail-filtering-across-two-pages-vb/_static/image30.png)](master-detail-filtering-across-two-pages-vb/_static/image29.png)
+[![P擴展 supplierID SupplierID Querystring 值的參數值](master-detail-filtering-across-two-pages-vb/_static/image30.png)](master-detail-filtering-across-two-pages-vb/_static/image29.png)
 
 **圖 11**:填入*`supplierID`* 參數值，從`SupplierID`查詢字串值 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image31.png))
 
@@ -140,7 +140,7 @@ HyperLinkField 可以設定為使用相同的文字或 URL 值中每個 GridView
 這樣就全部完成了！ [圖 12] 顯示`ProductsForSupplierDetails.aspx`頁面上，當從東京 Traders 連結，即可瀏覽`SupplierListMaster.aspx`。
 
 
-[![會顯示東京 Traders 所提供的產品](master-detail-filtering-across-two-pages-vb/_static/image33.png)](master-detail-filtering-across-two-pages-vb/_static/image32.png)
+[![T他東京 Traders 所提供的產品會顯示](master-detail-filtering-across-two-pages-vb/_static/image33.png)](master-detail-filtering-across-two-pages-vb/_static/image32.png)
 
 **圖 12**:會顯示東京 Traders 所提供的產品 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image34.png))
 
@@ -152,12 +152,12 @@ HyperLinkField 可以設定為使用相同的文字或 URL 值中每個 GridView
 新增 GridView 的產品上面 FormView 開始。 建立新的 ObjectDataSource 控制項，名為`SuppliersDataSource`叫用`SuppliersBLL`類別的`GetSupplierBySupplierID(supplierID)`方法。
 
 
-[![選取 SuppliersBLL 類別](master-detail-filtering-across-two-pages-vb/_static/image36.png)](master-detail-filtering-across-two-pages-vb/_static/image35.png)
+[![S選擇 SuppliersBLL 類別](master-detail-filtering-across-two-pages-vb/_static/image36.png)](master-detail-filtering-across-two-pages-vb/_static/image35.png)
 
 **圖 13**:選取 `SuppliersBLL`類別 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image37.png))
 
 
-[![已叫用 GetSupplierBySupplierID(supplierID) 方法的 ObjectDataSource](master-detail-filtering-across-two-pages-vb/_static/image39.png)](master-detail-filtering-across-two-pages-vb/_static/image38.png)
+[![HObjectDataSource Invoke GetSupplierBySupplierID(supplierID) 方法 [ave](master-detail-filtering-across-two-pages-vb/_static/image39.png)](master-detail-filtering-across-two-pages-vb/_static/image38.png)
 
 **圖 14**:有 ObjectDataSource 叫用`GetSupplierBySupplierID(supplierID)`方法 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image40.png))
 
@@ -165,7 +165,7 @@ HyperLinkField 可以設定為使用相同的文字或 URL 值中每個 GridView
 如同`ProductsBySupplierDataSource`，具有 *`supplierID`* 參數的值指派給`SupplierID`查詢字串值。
 
 
-[![填入 supplierID SupplierID Querystring 值的參數值](master-detail-filtering-across-two-pages-vb/_static/image42.png)](master-detail-filtering-across-two-pages-vb/_static/image41.png)
+[![P擴展 supplierID SupplierID Querystring 值的參數值](master-detail-filtering-across-two-pages-vb/_static/image42.png)](master-detail-filtering-across-two-pages-vb/_static/image41.png)
 
 **圖 15**:填入*`supplierID`* 參數值，從`SupplierID`查詢字串值 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image43.png))
 
@@ -180,7 +180,7 @@ HyperLinkField 可以設定為使用相同的文字或 URL 值中每個 GridView
 [圖 16] 顯示的螢幕擷取畫面`ProductsForSupplierDetails.aspx`頁面之後以上詳述的供應商資訊已包含在內。
 
 
-[![產品的清單包含有關供應商摘要](master-detail-filtering-across-two-pages-vb/_static/image45.png)](master-detail-filtering-across-two-pages-vb/_static/image44.png)
+[![T他的產品清單包含摘要的相關供應商](master-detail-filtering-across-two-pages-vb/_static/image45.png)](master-detail-filtering-across-two-pages-vb/_static/image44.png)
 
 **圖 16**:產品的清單包含摘要的相關供應商 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image46.png))
 
@@ -190,7 +190,7 @@ HyperLinkField 可以設定為使用相同的文字或 URL 值中每個 GridView
 若要改善使用者體驗有這份報告是幾個新增項目，我們應該要對`ProductsForSupplierDetails.aspx`頁面。 目前的使用者即可從的唯一方式`ProductsForSupplierDetails.aspx`頁面回傳至供應商的清單，是按一下其瀏覽器的 [上一頁] 按鈕。 讓我們將超連結控制項加入`ProductsForSupplierDetails.aspx`網頁連結回`SupplierListMaster.aspx`，提供另一種方式，讓使用者返回主要清單。
 
 
-[![加入超連結控制項以將使用者帶回 SupplierListMaster.aspx](master-detail-filtering-across-two-pages-vb/_static/image48.png)](master-detail-filtering-across-two-pages-vb/_static/image47.png)
+[![Add 超連結控制項以讓使用者返回 SupplierListMaster.aspx](master-detail-filtering-across-two-pages-vb/_static/image48.png)](master-detail-filtering-across-two-pages-vb/_static/image47.png)
 
 **圖 17**:加入超連結控制項來讓使用者返回至`SupplierListMaster.aspx`([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image49.png))
 
@@ -200,7 +200,7 @@ HyperLinkField 可以設定為使用相同的文字或 URL 值中每個 GridView
 根據預設，Northwinds 資料庫中的所有供應商提供至少一項產品。 不過，本教學課程中有以手動方式修改`Products`資料表，以便讓供應商 Escargots Nouveaux 不再與任何產品相關聯。 圖 18.在進行這項變更之後，會顯示 Escargots Nouveaux 的詳細資料頁面。
 
 
-[![使用者會收到通知供應商不提供任何產品](master-detail-filtering-across-two-pages-vb/_static/image51.png)](master-detail-filtering-across-two-pages-vb/_static/image50.png)
+[![U使用者會收到通知供應商不提供任何產品](master-detail-filtering-across-two-pages-vb/_static/image51.png)](master-detail-filtering-across-two-pages-vb/_static/image50.png)
 
 **圖 18**:使用者會收到通知供應商不提供任何產品 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-vb/_static/image52.png))
 

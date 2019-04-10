@@ -8,15 +8,15 @@ ms.date: 08/03/2007
 ms.assetid: cd330dd9-6254-4305-9351-dd727384c83b
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 91a1c967fbe74dbda8f8ac9635fdccbe05b0b6cc
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: d6a787206862b88f915859d4a8fc4dd3c3166293
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423893"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389592"
 ---
-<a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a>設定資料存取層的連線和命令層級設定 (C#)
-====================
+# <a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a>設定資料存取層的連線和命令層級設定 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_72_CS.zip)或[下載 PDF](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/datatutorial72cs1.pdf)
@@ -51,7 +51,7 @@ Microsoft.NET Framework 包含了多種專門設計來處理資料的類別。 �
 每個 TableAdapter 類別有`Connection`屬性，指定資料庫連接資訊。 這個屬性的資料型別和`ConnectionString`值取決於在 [TableAdapter 組態精靈] 所做的選擇。 您應該記得，我們先將 TableAdapter 加入具類型資料集時此精靈會要求我們資料庫來源 （請參閱 圖 1）。 在此步驟中第一個下拉式清單包含這些組態檔，以及任何其他資料庫在伺服器總管 中的資料連接中指定的資料庫。 如果我們想要使用的資料庫不存在於下拉式清單中，可以藉由按一下 [新增連接] 按鈕，並提供所需的連接資訊指定新的資料庫連接。
 
 
-[![[TableAdapter 組態精靈] 的第一個步驟](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image2.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image1.png)
+[![T他的 TableAdapter 組態精靈] 的第一步](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image2.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image1.png)
 
 **圖 1**:[TableAdapter 組態精靈] 的第一個步驟 ([按一下以檢視完整大小的影像](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image3.png))
 
@@ -109,7 +109,7 @@ TableAdapter 類別具現化時，成員變數`_connection`等於`null`。 當`C
 開啟`Northwind`資料集，按一下 `ProductsTableAdapter`在設計師中，並瀏覽至 屬性 視窗。 您會看到`ConnectionModifier`設為預設值， `Assembly`。 若要讓`Connection`外部輸入資料集 s 組件，變更才可以使用屬性`ConnectionModifier`屬性設`Public`。
 
 
-[![您可以透過 ConnectionModifier 屬性設定連接屬性 s 存取範圍層級](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image6.png)
+[![T他的連接屬性 s 存取範圍層級可透過 ConnectionModifier 屬性來設定](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image6.png)
 
 **圖 4**:`Connection`屬性存取範圍可以設定層級的 s 透過`ConnectionModifier`屬性 ([按一下以檢視完整大小的影像](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image8.png))
 

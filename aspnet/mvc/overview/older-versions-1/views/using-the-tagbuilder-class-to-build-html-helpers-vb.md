@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: ec26f264-d0ea-4031-9943-825505a3ac4b
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 783c5f73709de37f79c472e10c79e284cf25f8fd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4fe34858aadb705ffb59e06ba805493d89aa4028
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049395"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403203"
 ---
-<a name="using-the-tagbuilder-class-to-build-html-helpers-vb"></a>使用 TagBuilder 類別可建置 HTML 協助程式 (VB)
-====================
+# <a name="using-the-tagbuilder-class-to-build-html-helpers-vb"></a>使用 TagBuilder 類別可建置 HTML 協助程式 (VB)
+
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther 會向您介紹在 ASP.NET MVC framework 將 TagBuilder 類別命名為實用的公用程式類別。 您可以使用 TagBuilder 類別，輕鬆地建置 HTML 標記。
@@ -65,7 +65,7 @@ TagBuilder 類別有四個重要的屬性：
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-vb/samples/sample2.aspx)]
 
 
-[![[新增專案] 對話方塊](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.png)
+[![T他 [新增專案] 對話方塊中](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.png)
 
 **圖 01**:使用影像協助程式 ([按一下以檢視完整大小的影像](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image2.png))
 

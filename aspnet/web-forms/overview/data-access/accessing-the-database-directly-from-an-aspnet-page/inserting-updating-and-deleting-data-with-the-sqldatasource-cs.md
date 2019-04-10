@@ -8,15 +8,15 @@ ms.date: 02/20/2007
 ms.assetid: a526f0ec-779e-4a2b-a476-6604090d25ce
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/inserting-updating-and-deleting-data-with-the-sqldatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 06c5fea8a058f15e72d455cf0e15b462d8f91e38
-ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
+ms.openlocfilehash: 8a1f0f929e2e2ee01a4567cb502e5fd908d8c90b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58440387"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402787"
 ---
-<a name="inserting-updating-and-deleting-data-with-the-sqldatasource-c"></a>使用 SqlDataSource 插入、更新和刪除資料 (C#)
-====================
+# <a name="inserting-updating-and-deleting-data-with-the-sqldatasource-c"></a>使用 SqlDataSource 插入、更新和刪除資料 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_49_CS.exe)或[下載 PDF](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/datatutorial49cs1.pdf)
@@ -50,7 +50,7 @@ ms.locfileid: "58440387"
 首先開啟`InsertUpdateDelete.aspx`並`Querying.aspx`頁從`SqlDataSource`資料夾。 從設計工具上`Querying.aspx`頁面上，選取 從第一個範例中的 SqlDataSource 和 GridView (`ProductsDataSource`和`GridView1`控制項)。 選取兩個控制項之後, 請移至 [編輯] 功能表並選擇 [複製] （或只按 Ctrl + C）。 接下來，移至設計工具的`InsertUpdateDelete.aspx`並貼上的控制項中。 您已經移動兩個控制項，若要之後`InsertUpdateDelete.aspx`，測試的瀏覽器頁面。 您應該會看到的值`ProductID`， `ProductName`，並`UnitPrice`資料行中的記錄之所有`Products`資料庫資料表。
 
 
-[![所有的產品未列出，請依 ProductID](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image1.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image1.png)
+[![A產品的所有未列出，請依 [ProductID](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image1.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image1.png)
 
 **圖 1**:所有的產品未列出，請按照`ProductID`([按一下以檢視完整大小的影像](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image2.png))
 
@@ -87,7 +87,7 @@ ms.locfileid: "58440387"
 接下來，按一下 [重新整理參數] 按鈕以新增`@ProductID`參數，以下列參數的清單。
 
 
-[![從 [屬性] 視窗中選取 DeleteQuery 屬性](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image3.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image3.png)
+[![S從 [屬性] 視窗中選擇 DeleteQuery 屬性](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image3.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image3.png)
 
 **圖 3**:從 [屬性] 視窗中選取 DeleteQuery 屬性 ([按一下以檢視完整大小的影像](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image4.png))
 
@@ -111,7 +111,7 @@ ms.locfileid: "58440387"
 使用`DeleteCommand`新增屬性，現在包含 GridView s 智慧標籤的 [啟用刪除] 選項。 請繼續進行，並選取此核取方塊。 中所述[概觀的插入、 更新和刪除](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md)，這會導致將與 CommandField GridView 其`ShowDeleteButton`屬性設定為`true`。 如圖 4 所示，當透過瀏覽器瀏覽網頁時就會包含 刪除 按鈕。 測試出這個頁面刪除某些產品。
 
 
-[![每個 GridView 資料列現在包含 [刪除] 按鈕](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image4.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image5.png)
+[![Each GridView 資料列現在包含 [刪除] 按鈕](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image4.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image5.png)
 
 **圖 4**:每個 GridView 資料列現在包含 [刪除] 按鈕 ([按一下以檢視完整大小的影像](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image6.png))
 
@@ -137,7 +137,7 @@ ms.locfileid: "58440387"
 可讓瀏覽這個自動產生選項的 s。 中的設計工具中加入 DetailsView`InsertUpdateDelete.aspx`並將其`ID`屬性設`ManageProducts`。 接下來，從 DetailsView s 智慧標籤，選擇 建立新的資料來源並建立名為 SqlDataSource `ManageProductsDataSource`。
 
 
-[![建立名為 ManageProductsDataSource 新 SqlDataSource](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image6.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image7.png)
+[![Create 新 SqlDataSource 名為 ManageProductsDataSource](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image6.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image7.png)
 
 **圖 6**:建立新的 SqlDataSource 具名`ManageProductsDataSource`([按一下以檢視完整大小的影像](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image8.png))
 
@@ -145,7 +145,7 @@ ms.locfileid: "58440387"
 從 [設定資料來源精靈] 中，選擇使用`NORTHWINDConnectionString`連接字串，並按一下 [下一步]。 從 [設定 Select 陳述式] 畫面中，將指定的資料行從選取的資料表或檢視表選項按鈕，並挑選`Products`從下拉式清單中的資料表。 選取  `ProductID`， `ProductName`， `UnitPrice`，和`Discontinued`核取方塊清單中的資料行。
 
 
-[![使用 [產品] 資料表，傳回 ProductID、 ProductName、 UnitPrice 和已停止的資料行](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image7.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image9.png)
+[![U發揚光大 Products 資料表，傳回 ProductID、 ProductName、 UnitPrice 和停用的資料行](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image7.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image9.png)
 
 **圖 7**:使用`Products`資料表中，傳回`ProductID`， `ProductName`， `UnitPrice`，並`Discontinued`資料行 ([按一下以檢視完整大小的影像](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image10.png))
 
@@ -173,7 +173,7 @@ ms.locfileid: "58440387"
 瀏覽的頁面在瀏覽器，並注意編輯、 刪除和 DetailsView 中包含的新按鈕。 按一下 [編輯] 按鈕變成編輯模式，它會顯示每個 BoundField DetailsView 其`ReadOnly`屬性設定為`false`（預設值） 做為文字方塊中，及其為核取方塊。
 
 
-[![在 DetailsView s 預設編輯介面](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image9.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image11.png)
+[![T他 DetailsView s 預設編輯介面](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image9.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image11.png)
 
 **圖 9**:在 DetailsView s 預設編輯介面 ([按一下以檢視完整大小的影像](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image12.png))
 

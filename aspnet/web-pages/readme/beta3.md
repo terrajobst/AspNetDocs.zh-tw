@@ -8,22 +8,22 @@ ms.date: 01/10/2011
 ms.assetid: ffa3d5c9-91e5-4da3-b409-560b0c7fbbf0
 msc.legacyurl: /web-pages/readme/beta3
 msc.type: content
-ms.openlocfilehash: 3d729d1b0615533dddceff484acb3d42247f6cab
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7f0c5ff599235157bd11f5f86a26b8882e0f29dc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060495"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381805"
 ---
-<a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix 與 ASP.NET Web Pages (Razor) 搶鮮版 (Beta) 3 讀我檔案
-====================
+# <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix 與 ASP.NET Web Pages (Razor) 搶鮮版 (Beta) 3 讀我檔案
+
 > Web Matrix 與 ASP.NET Web Pages (Razor) 搶鮮版 (Beta) 3 讀我檔案
 
 9 年 11 月 2010
 
 ## <a name="contents"></a>內容
 
-- [概觀](#Overview)
+- [總覽](#Overview)
 - [安裝](#Installation_Notes)
 - [新的功能、 變更和 Beta 3 版本的已知問題](#Known_Issues)
 
@@ -381,17 +381,17 @@ ms.locfileid: "57060495"
 > [!code-vb[Main](beta3/samples/sample16.vb)]
 
 
-#### <a name="issue-microsoft-visual-c-2008-runtime-libraries-are-required"></a>問題：Microsoft Visual c + + 2008年執行階段程式庫所需
+#### <a name="issue-microsoft-visual-c-2008-runtime-libraries-are-required"></a>問題：Microsoft Visual C++ 2008年執行階段程式庫所需
 
-> 原生 Dll 的 SQL Server Compact 4.0 需要 Microsoft Visual c + + 2008年執行階段程式庫 （IA64，x86 和 x64）、 Service Pack 1。
+> 原生 Dll 的 SQL Server Compact 4.0 需要 Microsoft Visual C++ 2008年執行階段程式庫 （IA64，x86 和 x64）、 Service Pack 1。
 > 
 > **因應措施**  
-> 安裝.NET Framework 3.5 SP1。 這也會安裝 Visual c + + 2008年執行階段程式庫 SP1。 您可以從下列位置下載的程式庫：   
+> 安裝.NET Framework 3.5 SP1。 這也會安裝視覺效果C++2008 執行階段程式庫 SP1。 您可以從下列位置下載的程式庫：   
 >   
-> [Microsoft Visual c + + 2008 Service Pack 1 可轉散發套件的 ATL 安全性更新](https://go.microsoft.com/fwlink/?LinkId=194827)
+> [Microsoft Visual C++ 2008 Service Pack 1 可轉散發套件 ATL 安全性更新](https://go.microsoft.com/fwlink/?LinkId=194827)
 > 
 > [!NOTE]
-> 請注意，安裝.NET Framework 2.0、 3.0 或 4*不*安裝 SP1 的 windows Visual c + + 2008年執行階段程式庫。
+> 請注意，安裝.NET Framework 2.0、 3.0 或 4*未*安裝的視覺效果C++2008 執行階段程式庫 SP1。
 
 
 #### <a name="issue-if-sql-server-compact-is-installed-prior-to-installing-net-framework-on-the-computer-its-provider-invariant-name-is-not-registered-in-the-net-framework-machineconfig-file"></a>問題：如果 SQL Server Compact 安裝在電腦上安裝.NET Framework 之前，其提供者非變異名稱未註冊.NET Framework 的 machine.config 檔案中
@@ -454,7 +454,7 @@ ms.locfileid: "57060495"
 
 > 瀏覽至 WCF 應用程式會產生類似下列的其中一個錯誤：
 > 
-> *無法載入檔案或組件 ' Microsoft.Web.Administration，版本 = 7.0.0.0，Culture = neutral，PublicKeyToken = 31bf3856ad364e35' 或其中一個相依性。系統找不到指定的檔案。*
+> *無法載入檔案或組件 ' Microsoft.Web.Administration，版本 = 7.0.0.0，Culture = neutral，PublicKeyToken = 31bf3856ad364e35' 或其中一個相依性。 系統找不到指定的檔案。*
 > 
 > 這是因為 IIS Express 的 Beta 版本不支援預設的 WCF。
 > 
@@ -548,6 +548,6 @@ ms.locfileid: "57060495"
 - [ASP.NET](https://asp.net/webmatrix)
 - [Microsoft.com/web](https://www.microsoft.com/web)
 
-* * *
+---
 
 © 2010 Microsoft Corporation. All Rights Reserved. [使用規定](https://msdn.microsoft.cos/cc300389.aspx)。

@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: dd1be137-91c5-47a8-8137-fecf0789c7f5
 msc.legacyurl: /mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 16d62102713b0b86aa93284e39c82d3ae492f892
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 51cc38989fb204a3d14e04fb280fdd81bfd38a4d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57051875"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415163"
 ---
-<a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-c"></a>使用 ASP.NET MVC 在 15 分鐘內建立影片資料庫應用程式 (C#)
-====================
+# <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-c"></a>使用 ASP.NET MVC 在 15 分鐘內建立影片資料庫應用程式 (C#)
+
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 [下載程式碼](http://download.microsoft.com/download/7/2/8/728F8794-E59A-4D18-9A56-7AD2DB05BD9D/MovieApp_CS.zip)
@@ -78,7 +78,7 @@ ms.locfileid: "57051875"
 現在就開始在 Visual Studio 2008 中建立新的 ASP.NET MVC Web 應用程式專案。 選取功能表選項**檔案]、 [新增專案**，您會看到 [圖 1] 中的 [新增專案] 對話方塊。 選取 C# 程式設計語言，然後選取 ASP.NET MVC Web 應用程式專案範本。 為您的專案名稱 MovieApp，然後按一下 [確定] 按鈕。
 
 
-[![[新增專案] 對話方塊](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image1.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image1.png)
+[![T他 [新增專案] 對話方塊中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image1.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image1.png)
 
 **圖 01**:[新增專案] 對話方塊中 ([按一下以檢視完整大小的影像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image2.png))
 
@@ -93,7 +93,7 @@ ms.locfileid: "57051875"
 > Visual Web Developer 不支援測試專案。
 
 
-[![[新增專案] 對話方塊](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image2.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image3.png)
+[![T他 [新增專案] 對話方塊中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image2.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image3.png)
 
 **圖 02**:[建立單元測試專案] 對話方塊 ([按一下以檢視完整大小的影像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image4.png))
 
@@ -120,7 +120,7 @@ ASP.NET MVC 應用程式有一組標準的資料夾： 模型、 檢視和控制
 > 資料庫總管 視窗中，在 Visual Web Developer 的情況下名為 伺服器總管 視窗。
 
 
-[![[新增專案] 對話方塊](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image3.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image5.png)
+[![T他 [新增專案] 對話方塊中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image3.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image5.png)
 
 **圖 03**:建立 Microsoft SQL Server 資料庫 ([按一下以檢視完整大小的影像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image6.png))
 
@@ -130,7 +130,7 @@ ASP.NET MVC 應用程式有一組標準的資料夾： 模型、 檢視和控制
 <a id="0.1_table01"></a>
 
 
-| **資料行名稱** | **資料類型** | **允許 null 值** |
+| **資料行名稱** | **資料類型** | **允許 Null** |
 | --- | --- | --- |
 | ID | Int | False |
 | 標題 | Nvarchar(100) | False |
@@ -141,7 +141,7 @@ ASP.NET MVC 應用程式有一組標準的資料夾： 模型、 檢視和控制
 第一個資料行，[識別碼] 欄中，有兩個特殊的屬性。 首先，您需要識別碼資料行標示為主要索引鍵資料行。 選取 識別碼 資料行之後, 按一下 **設定主索引鍵**（它是看起來像索引鍵的圖示） 按鈕。 第二，您需要識別碼資料行標示為識別欄位。 在資料行屬性] 視窗中，捲動至 [識別規格 」 區段，並加以展開。 變更**是身分識別**屬性設為值**是**。 當您完成時，資料表看起來應該像 圖 4。
 
 
-[![[新增專案] 對話方塊](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image4.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image7.png)
+[![T他 [新增專案] 對話方塊中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image4.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image7.png)
 
 **圖 04**:電影資料庫資料表 ([按一下以檢視完整大小的影像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image8.png))
 
@@ -151,7 +151,7 @@ ASP.NET MVC 應用程式有一組標準的資料夾： 模型、 檢視和控制
 完成 建立資料表之後，某些電影將記錄新增至資料表。 在 [伺服器總管] 視窗中的電影資料表上按一下滑鼠右鍵，然後選取功能表選項**顯示資料表資料**。 輸入您最愛的電影，（請參閱 [圖 5]） 的清單。
 
 
-[![[新增專案] 對話方塊](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image5.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image9.png)
+[![T他 [新增專案] 對話方塊中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image5.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image9.png)
 
 **圖 05**:輸入影片資料錄 ([按一下以檢視完整大小的影像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image10.png))
 
@@ -178,7 +178,7 @@ ASP.NET MVC 應用程式有一組標準的資料夾： 模型、 檢視和控制
 3. 在 **選擇您的資料庫物件**步驟中，展開 資料表 節點中，選取 電影資料表。 輸入的命名空間*MovieApp.Models*然後按一下**完成** 按鈕。
 
 
-[![[新增專案] 對話方塊](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image6.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image11.png)
+[![T他 [新增專案] 對話方塊中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image6.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image11.png)
 
 **圖 06**:產生 Entity Data Model 精靈的資料庫模型 ([按一下以檢視完整大小的影像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image12.png))
 
@@ -186,7 +186,7 @@ ASP.NET MVC 應用程式有一組標準的資料夾： 模型、 檢視和控制
 Entity Data Model 精靈完成之後，就會開啟實體資料模型設計工具。 設計工具應該會顯示電影資料庫資料表 （請參閱 圖 7）。
 
 
-[![[新增專案] 對話方塊](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image7.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image13.png)
+[![T他 [新增專案] 對話方塊中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image7.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image13.png)
 
 **圖 07**:實體資料模型設計工具 ([按一下以檢視完整大小的影像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image14.png))
 
@@ -208,12 +208,12 @@ Entity Data Model 精靈完成之後，就會開啟實體資料模型設計工�
 完成這些步驟之後，會建立 列表 1 中的控制站。 請注意它所包含的方法，名為索引的詳細資訊，建立、 和編輯。 在下列章節中，我們將新增必要的程式碼，以取得這些方法才能運作。
 
 
-[![[新增專案] 對話方塊](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image8.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image15.png)
+[![T他 [新增專案] 對話方塊中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image8.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image15.png)
 
 **圖 08**:加入新的 ASP.NET MVC 控制站 ([按一下以檢視完整大小的影像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image16.png))
 
 
-**Listing 1 – Controllers\HomeController.cs**
+**列表 1 – Controllers\HomeController.cs**
 
 [!code-csharp[Main](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/samples/sample1.cs)]
 
@@ -248,12 +248,12 @@ Index （） 方法會傳回名稱為索引的檢視。 我們需要建立此檢
 完成這些步驟之後，新的檢視，名為 Index.aspx 會加入 Views\Home 資料夾中。 索引檢視的內容會包含在 列表 3。
 
 
-[![[新增專案] 對話方塊](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image9.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image17.png)
+[![T他 [新增專案] 對話方塊中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image9.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image17.png)
 
 **圖 09**:從控制器動作中加入的檢視 ([按一下以檢視完整大小的影像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image18.png))
 
 
-[![[新增專案] 對話方塊](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image10.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image19.png)
+[![T他 [新增專案] 對話方塊中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image10.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image19.png)
 
 **圖 10**:使用 [新增檢視] 對話方塊建立新的檢視 ([按一下以檢視完整大小的影像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image20.png))
 
@@ -265,7 +265,7 @@ Index （） 方法會傳回名稱為索引的檢視。 我們需要建立此檢
 [索引] 檢視會顯示所有電影資料錄從 HTML 資料表中的電影資料庫資料表。 此檢視包含的 foreach 迴圈，逐一查看 ViewData.Model 屬性所表示的每個影片。 如果您按下 F5 鍵執行應用程式，您會看到 [圖 11] 中的網頁。
 
 
-[![[新增專案] 對話方塊](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image11.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image21.png)
+[![T他 [新增專案] 對話方塊中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image11.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image21.png)
 
 **圖 11**:[索引] 檢視 ([按一下以檢視完整大小的影像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image22.png))
 
@@ -298,7 +298,7 @@ Visual Studio 可讓您輕鬆地建立的表單建立新的電影資料庫記錄
 5. 按一下 **新增**按鈕以建立新的檢視。
 
 
-[![[新增專案] 對話方塊](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image12.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image23.png)
+[![T他 [新增專案] 對話方塊中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image12.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image23.png)
 
 **圖 12**:加入建立檢視 ([按一下以檢視完整大小的影像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image24.png))
 
@@ -319,7 +319,7 @@ Visual Studio 的檢視表 5 中會自動產生。 這個檢視包含 HTML 表�
 請注意，您會自動取得表單驗證。 如果您沒有輸入影片，發行日期，或是您輸入無效的發行日期，然後會重新顯示表單，並反白顯示 [發行日期] 欄位。
 
 
-[![[新增專案] 對話方塊](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image13.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image25.png)
+[![T他 [新增專案] 對話方塊中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image13.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image25.png)
 
 **圖 13**:建立新的電影資料庫記錄 ([按一下以檢視完整大小的影像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image26.png))
 
@@ -339,7 +339,7 @@ Visual Studio 的檢視表 5 中會自動產生。 這個檢視包含 HTML 表�
 完成這些步驟，新增名為 Edit.aspx Views\Home 資料夾檢視。 這個檢視包含編輯電影錄製之 HTML 表單。
 
 
-[![[新增專案] 對話方塊](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image14.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image27.png)
+[![T他 [新增專案] 對話方塊中](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image14.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image27.png)
 
 **圖 14**:加入編輯檢視 ([按一下以檢視完整大小的影像](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image28.png))
 

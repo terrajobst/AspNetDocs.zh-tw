@@ -8,15 +8,15 @@ ms.date: 04/01/2009
 ms.assetid: ea918f62-c9d6-4a7f-9bc6-e054d3764b2c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 22461b681ea195225c6b7b0306b6f49956a2890b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fe19910d693a784b8dc207462591c9f4d51cec14
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065615"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382143"
 ---
-<a name="determining-what-files-need-to-be-deployed-vb"></a>判斷需要部署哪些檔案 (VB)
-====================
+# <a name="determining-what-files-need-to-be-deployed-vb"></a>判斷需要部署哪些檔案 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/4/5/F/45F815EC-8B0E-46D3-9FB8-2DC015CCA306/ASPNET_Hosting_Tutorial_02_VB.zip)或[下載 PDF](http://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial02_FilesToDeploy_vb.pdf)
@@ -93,7 +93,7 @@ Microsoft 發行的 Visual Studio 2005 時它們會卸除對 Web 應用程式專
 [圖 1] 顯示透過瀏覽器檢視時的書籍評論網站的螢幕擷取畫面。 這裡您會看到頁面 ~ / Tech/TYASP35.aspx，它會檢閱本書*教導您自己 ASP.NET 3.5 24 小時內*。 跨越頁面和左側的資料行中的功能表的頂端階層連結為基礎網站導覽結構中定義`Web.sitemap`。 在右上角的影像是其中一個映像位於書封面`Images`資料夾。 透過 CSS 檔案中拼出的階層式樣式表規則定義網站的外觀與風格`Styles`資料夾，而在主版頁面中，定義為名的頁面配置`Site.master`。
 
 
-[![活頁簿會檢閱網站提供各式各樣的產品評論](determining-what-files-need-to-be-deployed-vb/_static/image2.png)](determining-what-files-need-to-be-deployed-vb/_static/image1.png)
+[![T他的書籍評論網站提供各式各樣的產品評論](determining-what-files-need-to-be-deployed-vb/_static/image2.png)](determining-what-files-need-to-be-deployed-vb/_static/image1.png)
 
 **圖 1**:活頁簿會檢閱網站提供各式各樣的產品評論 ([按一下以檢視完整大小的影像](determining-what-files-need-to-be-deployed-vb/_static/image3.png))
 
@@ -116,7 +116,7 @@ Web 應用程式專案模型使用明確的編譯-專案的原始程式碼會編
 [圖 2] 顯示書籍評論 Web 應用程式專案所組成的檔案。
 
 
-[![[方案總管] 會列出組成 Web 應用程式專案的檔案。](determining-what-files-need-to-be-deployed-vb/_static/image5.png)](determining-what-files-need-to-be-deployed-vb/_static/image4.png)
+[![T他的方案總管] 中會列出組成 Web 應用程式專案的檔案。](determining-what-files-need-to-be-deployed-vb/_static/image5.png)](determining-what-files-need-to-be-deployed-vb/_static/image4.png)
 
 **圖 2**:方案總管 列出構成 Web 應用程式專案的檔案
 
@@ -147,7 +147,7 @@ Web 應用程式專案模型使用明確的編譯-專案的原始程式碼會編
 圖 3 顯示構成書籍評論網站專案的檔案。
 
 
-[![[方案總管] 會列出組成的網站專案的檔案。](determining-what-files-need-to-be-deployed-vb/_static/image7.png)](determining-what-files-need-to-be-deployed-vb/_static/image6.png)
+[![T他的方案總管] 中會列出組成的網站專案的檔案。](determining-what-files-need-to-be-deployed-vb/_static/image7.png)](determining-what-files-need-to-be-deployed-vb/_static/image6.png)
 
 **圖 3**:方案總管 會列出組成的網站專案的檔案
 

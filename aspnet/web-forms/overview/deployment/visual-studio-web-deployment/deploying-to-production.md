@@ -8,15 +8,15 @@ ms.date: 02/15/2013
 ms.assetid: 416438a1-3b2f-4d27-bf53-6b76223c33bf
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: f71d8311cbb1131d9c30c0bd9071a1c6c90f9976
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 19cda45ce1b425462ec491bcc86b7a0b76dec162
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045845"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409794"
 ---
-<a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署到生產環境
-====================
+# <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署到生產環境
+
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 [下載入門專案](http://go.microsoft.com/fwlink/p/?LinkId=282627)
@@ -276,7 +276,7 @@ A *.pubxml*檔案包含屬於特定發行設定檔的設定。 如果您想要�
 
     ![檔案發行至生產環境的預覽](deploying-to-production/_static/image14.png)
 
-    檢閱將複製之檔案的清單。 您會看到的所有 *.cs*檔案，包括 *。 aspx.cs*， *。 aspx.designer.cs*， *Master.cs*，和*Master.designer.cs*檔案會省略。 這段程式碼編譯成*ContosoUniversity.dll*並*ContosUniversity.pdb*中找到的檔案*bin*資料夾。 因為只有 *.dll*才能的執行應用程式，以及您稍早指定程式可部署到執行應用程式所需的檔案、 no *.cs*檔案複製到目的地環境。 *Obj*資料夾並*ContosoUniversity.csproj*並 *.csproj.user*檔案已省略基於相同原因。
+    檢閱將複製之檔案的清單。 您會看到的所有 *.cs*檔案，包括 *。 aspx.cs*， *。 aspx.designer.cs*， *Master.cs*，和*Master.designer.cs*檔案會省略。 這段程式碼編譯成*ContosoUniversity.dll*並*ContosoUniversity.pdb*中找到的檔案*bin*資料夾。 因為只有 *.dll*才能的執行應用程式，以及您稍早指定程式可部署到執行應用程式所需的檔案、 no *.cs*檔案複製到目的地環境。 *Obj*資料夾並*ContosoUniversity.csproj*並 *.csproj.user*檔案已省略基於相同原因。
 
     按一下 **發佈**来部署到生產環境。
 2. 在生產環境中，遵循相同的程序，您用於預備環境中測試。

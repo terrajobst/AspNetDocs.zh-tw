@@ -8,15 +8,15 @@ ms.date: 03/31/2010
 ms.assetid: 83efb21f-b231-446e-9356-f4c6cbcc6713
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 47c486737a3320bea631605621baac54dc6d257a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8a6239f716aa0f63caaae84e34807ee007005f16
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045705"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395393"
 ---
-<a name="using-templatefields-in-the-detailsview-control-c"></a>在 DetailsView 控制項中使用 TemplateFields (C#)
-====================
+# <a name="using-templatefields-in-the-detailsview-control-c"></a>在 DetailsView 控制項中使用 TemplateFields (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_13_CS.exe)或[下載 PDF](using-templatefields-in-the-detailsview-control-cs/_static/datatutorial13cs1.pdf)
@@ -35,7 +35,7 @@ TemplateField 提供較高的轉譯資料的彈性比 BoundField、 CheckBoxFiel
 使用 GridView，您可以使用相同的 TemplateFields 功能也可與 DetailsView 控制項。 在本教學課程中，我們會顯示一項產品使用包含兩個 TemplateFields DetailsView 一次。 將合併的第一個 TemplateField `UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`進一 DetailsView 資料列的資料欄位。 值會顯示第二個 TemplateField`Discontinued`欄位中，但會使用"YES"時，要顯示的格式化方法`Discontinued`是`true`，「 否 」 則。
 
 
-[![可用來自訂顯示兩個 TemplateFields](using-templatefields-in-the-detailsview-control-cs/_static/image2.png)](using-templatefields-in-the-detailsview-control-cs/_static/image1.png)
+[![Two TemplateFields 可用來自訂顯示](using-templatefields-in-the-detailsview-control-cs/_static/image2.png)](using-templatefields-in-the-detailsview-control-cs/_static/image1.png)
 
 **圖 1**:可用來自訂顯示兩個 TemplateFields ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-cs/_static/image3.png))
 
@@ -49,7 +49,7 @@ TemplateField 提供較高的轉譯資料的彈性比 BoundField、 CheckBoxFiel
 開啟`DetailsViewTemplateField.aspx`頁面上，然後從 [工具箱] 拖曳至設計工具拖曳 DetailsView。 從 DetailsView 的智慧標籤選擇 加入新的 ObjectDataSource 控制項叫用`ProductsBLL`類別的`GetProducts()`方法。
 
 
-[![加入新的 ObjectDataSource 控制項叫用 GetProducts() 方法](using-templatefields-in-the-detailsview-control-cs/_static/image5.png)](using-templatefields-in-the-detailsview-control-cs/_static/image4.png)
+[![Add GetProducts() 方法會叫用的新 ObjectDataSource 控制項](using-templatefields-in-the-detailsview-control-cs/_static/image5.png)](using-templatefields-in-the-detailsview-control-cs/_static/image4.png)
 
 **圖 2**:加入新的 ObjectDataSource 控制項該 Invokes`GetProducts()`方法 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-cs/_static/image6.png))
 
@@ -64,7 +64,7 @@ TemplateField 提供較高的轉譯資料的彈性比 BoundField、 CheckBoxFiel
 請花一點時間檢視透過瀏覽器頁面。 此時您應該看到列出單一的產品 (Chai) 與顯示的產品名稱、 類別、 供應商、 價格、 庫存單位數、 訂購，量和其已停止的狀態的資料列。
 
 
-[![使用一系列的 BoundFields 顯示產品的詳細資料](using-templatefields-in-the-detailsview-control-cs/_static/image8.png)](using-templatefields-in-the-detailsview-control-cs/_static/image7.png)
+[![T他的產品詳細資料會顯示使用 BoundFields 數列](using-templatefields-in-the-detailsview-control-cs/_static/image8.png)](using-templatefields-in-the-detailsview-control-cs/_static/image7.png)
 
 **圖 3**:產品的詳細資料會顯示使用 BoundFields 系列 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-cs/_static/image9.png))
 
@@ -76,7 +76,7 @@ DetailsView 有一個資料列`UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`�
 在 DetailsView 的智慧標籤，即可啟動 欄位 對話方塊中的 編輯欄位 連結上按一下 啟動。 接下來，新增新的 TemplateField，並設定其`HeaderText`屬性設為 「 價格和清查 」 並移動新的 TemplateField 讓它位於上方`UnitPrice`BoundField。
 
 
-[![在 DetailsView 控制項中加入新的 TemplateField](using-templatefields-in-the-detailsview-control-cs/_static/image11.png)](using-templatefields-in-the-detailsview-control-cs/_static/image10.png)
+[![Add DetailsView 控制項的新 TemplateField](using-templatefields-in-the-detailsview-control-cs/_static/image11.png)](using-templatefields-in-the-detailsview-control-cs/_static/image10.png)
 
 **圖 4**:在 DetailsView 控制項中加入新的 TemplateField ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-cs/_static/image12.png))
 
@@ -88,7 +88,7 @@ DetailsView 有一個資料列`UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`�
 本教學課程中，開始將標籤控制項新增至為價格與清查 TemplateField `ItemTemplate`。 接下來，按一下 [編輯資料繫結] 連結，從標籤 Web 控制項的智慧標籤，並繫結`Text`屬性設`UnitPrice`欄位。
 
 
-[![Label 的 Text 屬性繫結至 UnitPrice 資料欄位](using-templatefields-in-the-detailsview-control-cs/_static/image14.png)](using-templatefields-in-the-detailsview-control-cs/_static/image13.png)
+[![Bind UnitPrice 資料標籤的 [文字] 屬性欄位](using-templatefields-in-the-detailsview-control-cs/_static/image14.png)](using-templatefields-in-the-detailsview-control-cs/_static/image13.png)
 
 **圖 5**:繫結的標籤`Text`屬性，以`UnitPrice`資料欄位 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-cs/_static/image15.png))
 
@@ -98,7 +98,7 @@ DetailsView 有一個資料列`UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`�
 此步驟中，標籤 Web 控制項的價格和清查 TemplateField 現在會顯示剛才所選產品的價格。 圖 6 顯示進度的螢幕擷取畫面到目前為止透過瀏覽器檢視時。
 
 
-[![價格與清查 TemplateField 顯示的價格](using-templatefields-in-the-detailsview-control-cs/_static/image17.png)](using-templatefields-in-the-detailsview-control-cs/_static/image16.png)
+[![T他的價格和清查 TemplateField 顯示的價格](using-templatefields-in-the-detailsview-control-cs/_static/image17.png)](using-templatefields-in-the-detailsview-control-cs/_static/image16.png)
 
 **圖 6**:價格與清查 TemplateField 顯示的價格 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-cs/_static/image18.png))
 
@@ -110,7 +110,7 @@ DetailsView 有一個資料列`UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`�
 針對`UnitPrice`欄位的使用貨幣格式指定選取適當的下拉式清單值，或輸入`{0:C}`以手動方式。
 
 
-[![格式化為貨幣的價格](using-templatefields-in-the-detailsview-control-cs/_static/image20.png)](using-templatefields-in-the-detailsview-control-cs/_static/image19.png)
+[![Format 貨幣的價格](using-templatefields-in-the-detailsview-control-cs/_static/image20.png)](using-templatefields-in-the-detailsview-control-cs/_static/image19.png)
 
 **圖 7**:格式化為貨幣的價格 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-cs/_static/image21.png))
 
@@ -137,7 +137,7 @@ DetailsView 有一個資料列`UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`�
 經過這些變更中，我們已合併為單一的 DetailsView 資料列的價格和清查的資訊。
 
 
-[![價格和清查資訊會顯示在單一資料列](using-templatefields-in-the-detailsview-control-cs/_static/image23.png)](using-templatefields-in-the-detailsview-control-cs/_static/image22.png)
+[![T他的價格和清查資訊會顯示在單一資料列](using-templatefields-in-the-detailsview-control-cs/_static/image23.png)](using-templatefields-in-the-detailsview-control-cs/_static/image22.png)
 
 **圖 8**:價格和清查資訊會顯示在單一資料列 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-cs/_static/image24.png))
 
@@ -149,7 +149,7 @@ DetailsView 有一個資料列`UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`�
 而不是顯示 CheckBoxField 我們可能會想要改為顯示文字，指出產品已經停售。 若要這麼做，我們無法移除 DetailsView CheckBoxField，然後加入 BoundField 其`DataField`屬性設定為`Discontinued`。 請花一點時間來執行這項操作。 這項變更之後 DetailsView 顯示的文字"True"已停止的產品和"False"仍在作用中的產品。
 
 
-[![字串為 True 和 False 用來顯示已停止的狀態](using-templatefields-in-the-detailsview-control-cs/_static/image26.png)](using-templatefields-in-the-detailsview-control-cs/_static/image25.png)
+[![T使用他的字串，則為 True 和 False 顯示 Discontinued 狀態](using-templatefields-in-the-detailsview-control-cs/_static/image26.png)](using-templatefields-in-the-detailsview-control-cs/_static/image25.png)
 
 **圖 9**:字串，則為 True 和 False 是用來顯示 Discontinued 狀態 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-cs/_static/image27.png))
 
@@ -175,7 +175,7 @@ DetailsView 有一個資料列`UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`�
 這會導致`DisplayDiscontinuedAsYESorNO`轉譯 DetailsView 時要叫用方法並傳遞`ProductRow`執行個體的`Discontinued`值。 由於`Eval`方法會傳回類型的值`object`，但`DisplayDiscontinuedAsYESorNO`方法所預期的輸入的參數的型別`bool`，我們轉換`Eval`方法會傳回值，以`bool`。 `DisplayDiscontinuedAsYESorNO`方法接著會傳回"YES"或"NO"的值而定接收。 傳回的值是在此 DetailsView 中顯示的內容 （請參閱 圖 10） 的資料列。
 
 
-[![Yes 或 NO 的值為現在 Discontinued 資料列中顯示](using-templatefields-in-the-detailsview-control-cs/_static/image29.png)](using-templatefields-in-the-detailsview-control-cs/_static/image28.png)
+[![YES 或 NO 值會現在顯示 Discontinued 資料列](using-templatefields-in-the-detailsview-control-cs/_static/image29.png)](using-templatefields-in-the-detailsview-control-cs/_static/image28.png)
 
 **圖 10**:Yes 或 NO 的值為現在顯示 Discontinued 資料列 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-cs/_static/image30.png))
 

@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/getting-started/introduction-to-aspnet-identity
-title: ASP.NET Identity 簡介 |Microsoft Docs
+title: 簡介 ASP.NET 身分識別-ASP.NET 4.x
 author: jongalloway
 description: ASP.NET 成員資格系統被引進與 ASP.NET 2.0 後，在 2005 中，而由於然後中已有許多的變更方式的 web 應用程式通常...
 ms.author: riande
 ms.date: 01/22/2019
 ms.assetid: 38717fc1-5989-43cf-952d-4007cc1dd923
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 4a545e52d2d9ea04a10c37c116fd326c60de9f8f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 34a0d62d7afcaffa8fbac0bc774d9266efb6b165
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061375"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413044"
 ---
-<a name="introduction-to-aspnet-identity"></a>ASP.NET Identity 簡介
-====================
+# <a name="introduction-to-aspnet-identity"></a>ASP.NET Identity 簡介
+
 
 > ASP.NET 成員資格系統被引進 ASP.NET 2.0 後在 2005 中，而由於則已有許多變更 web 應用程式通常會處理驗證和授權方式。 ASP.NET 身分識別是成員資格系統應該是什麼當您在建立 web、 手機或平板電腦的現代化應用程式的全新觀點。
 

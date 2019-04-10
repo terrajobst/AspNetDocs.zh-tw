@@ -8,15 +8,15 @@ ms.date: 03/27/2007
 ms.assetid: 362ade25-3965-4fb2-88d2-835c4786244f
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8b7f839f16150b93645a9fe868642fa5f36248a9
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 9ec09bfcadaa56401a08a389028766ee04f1daad
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424972"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379874"
 ---
-<a name="including-a-file-upload-option-when-adding-a-new-record-c"></a>新增記錄時包含檔案上傳選項 (C#)
-====================
+# <a name="including-a-file-upload-option-when-adding-a-new-record-c"></a>新增記錄時包含檔案上傳選項 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_56_CS.exe)或[下載 PDF](including-a-file-upload-option-when-adding-a-new-record-cs/_static/datatutorial56cs1.pdf)
@@ -47,7 +47,7 @@ ms.locfileid: "58424972"
 開啟 輸入資料集，並從設計工具中，以滑鼠右鍵按一下`CategoriesTableAdapter`s 標頭，然後從內容功能表中選擇 加入查詢。 這會啟動 TableAdapter 查詢組態精靈，一開始會詢問 TableAdapter 查詢應該如何存取資料庫。 選擇 使用 SQL 陳述式，然後按一下 下一步。 下一個步驟會產生提示的查詢類型。 因為我們重新建立要新增新的記錄，以查詢`Categories`資料表中，選擇 [插入] 並按一下 [下一步]。
 
 
-[![選取 [插入] 選項](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image1.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image1.png)
+[![S選擇 [插入] 選項](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image1.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image1.png)
 
 **圖 1**:選取 [插入] 選項 ([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image2.png))
 
@@ -60,7 +60,7 @@ ms.locfileid: "58424972"
 在精靈的最後一個畫面會要求我們命名新的 TableAdapter 方法。 輸入`InsertWithPicture`按一下 [完成]。
 
 
-[![命名新的 TableAdapter 方法 InsertWithPicture](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image2.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image3.png)
+[![Name 新的 TableAdapter 方法 InsertWithPicture](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image2.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image3.png)
 
 **圖 2**:將新的 TableAdapter 方法`InsertWithPicture`([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image4.png))
 
@@ -83,7 +83,7 @@ ms.locfileid: "58424972"
 首先開啟`DisplayOrDownload.aspx`頁面上，從`BinaryData`資料夾。 移至來源檢視，並將複製的 GridView 和 ObjectDataSource s 宣告式語法，將其內貼`<asp:Content>`中的項目`UploadInDetailsView.aspx`。 同時，不要忘了透過複製`GenerateBrochureLink`方法的程式碼後置類別`DisplayOrDownload.aspx`至`UploadInDetailsView.aspx`。
 
 
-[![複製並貼上 UploadInDetailsView.aspx 從 DisplayOrDownload.aspx 的宣告式語法](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image3.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image5.png)
+[![C複製並貼上從 DisplayOrDownload.aspx 宣告式語法，UploadInDetailsView.aspx](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image3.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image5.png)
 
 **圖 3**:複製並貼上從宣告式語法`DisplayOrDownload.aspx`要`UploadInDetailsView.aspx`([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image6.png))
 
@@ -91,7 +91,7 @@ ms.locfileid: "58424972"
 複製的宣告式語法後及`GenerateBrochureLink`方法，透過以`UploadInDetailsView.aspx`頁面上，檢視透過瀏覽器來確認所有項目透過正確複製該頁面。 您應該會看到 GridView 列出的八個類別，其中包含下載手冊，以及類別的圖片的連結。
 
 
-[![您現在應該會看到每個類別目錄以及其二進位資料](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image4.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image7.png)
+[![You 現在應該會看到每個類別目錄以及其二進位資料](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image4.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image7.png)
 
 **圖 4**:您現在應該會看到每個類別目錄以及其二進位資料 ([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image8.png))
 
@@ -103,7 +103,7 @@ ms.locfileid: "58424972"
 按一下 [從 ObjectDataSource s 智慧標籤的設定資料來源] 連結啟動。 第一個畫面會顯示的物件的資料來源設定為使用`CategoriesBLL`。 保留此設定設為-定義資料方法畫面前往旁邊按一下。 移至 [插入] 索引標籤，並挑選`InsertWithPicture`方法，從下拉式清單。 按一下 完成 以完成精靈。
 
 
-[![設定為使用 InsertWithPicture 方法的 ObjectDataSource](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image5.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image9.png)
+[![C設定為使用 InsertWithPicture 方法的 ObjectDataSource](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image5.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image9.png)
 
 **圖 5**:設定要使用 ObjectDataSource`InsertWithPicture`方法 ([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image10.png))
 
@@ -124,7 +124,7 @@ First 涵蓋[概觀的插入、 更新和刪除資料](../editing-inserting-and-
 從 [工具箱] 拖曳至上方 GridView，設定設計工具拖曳 DetailsView 開始其`ID`屬性，以`NewCategory`並清除`Height`和`Width`屬性值。 從 DetailsView s 智慧標籤，將它繫結至現有`CategoriesDataSource`然後核取 啟用插入核取方塊。
 
 
-[![結合 CategoriesDataSource DetailsView 和啟用插入](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image6.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image11.png)
+[![Bind CategoriesDataSource 並啟用插入 DetailsView](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image6.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image11.png)
 
 **圖 6**:繫結至 DetailsView `CategoriesDataSource` ，並啟用插入 ([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image12.png))
 
@@ -153,7 +153,7 @@ First 涵蓋[概觀的插入、 更新和刪除資料](../editing-inserting-and-
 從 DetailsView s 智慧標籤，選擇 [編輯範本] 選項，然後按`BrochurePath`TemplateField 的`InsertItemTemplate`從下拉式清單。 移除文字方塊，然後將 FileUpload 控制項從 [工具箱] 拖曳至範本。 設定 FileUpload 控制項 s`ID`至`BrochureUpload`。 同樣地，新增 FileUpload 控制項`Picture`TemplateField 的`InsertItemTemplate`。 設定這個 FileUpload 控制項 s`ID`至`PictureUpload`。
 
 
-[![加入 InsertItemTemplate FileUpload 控制項](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image8.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image13.png)
+[![Add InsertItemTemplate FileUpload 控制項](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image8.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image13.png)
 
 **圖 8**:新增 FileUpload 控制項`InsertItemTemplate`([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image14.png))
 
@@ -226,7 +226,7 @@ ObjectDataSource s 前面`Insert()`叫用方法時，就必須先確認使用者
 可讓 s 花一點時間來測試插入介面和`ItemInserting`建立過去幾個步驟的事件處理常式。 請瀏覽`UploadInDetailsView.aspx`逐頁瀏覽器，並嘗試新增的類別，但省略該圖片，或指定非 JPG 圖片或非 PDF 摺頁冊。 在任一種情況下，將會顯示錯誤訊息，並插入工作流程已取消。
 
 
-[![一則警告訊息會顯示如果上傳的檔案類型無效](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image9.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image15.png)
+[![A 警告訊息會顯示，如果無效的檔案類型上傳](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image9.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image15.png)
 
 **圖 9**:一則警告訊息會顯示如果上傳無效的檔案類型 ([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image16.png))
 
@@ -234,7 +234,7 @@ ObjectDataSource s 前面`Insert()`叫用方法時，就必須先確認使用者
 一旦您已確認頁面需要上傳並不會接受非 PDF 或非 JPG 檔案，新增新的類別，以有效的 JPG 圖片，圖片將摺頁冊欄位保留空白。 頁面會回傳之後按一下 [插入] 按鈕，以及新的記錄將會新增至`Categories`資料表直接在資料庫中儲存的上傳的影像 s 二進位內容。 GridView 會更新，並顯示在新加入的類別中，一個資料列，但是，如 [圖 10] 所示，新的類別目錄的圖片就無法正確呈現。
 
 
-[![新的類別不會顯示圖片的 s](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image10.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image17.png)
+[![T他的新類別的圖片不會顯示](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image10.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image17.png)
 
 **圖 10**:不會顯示圖片的新類別 s ([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image18.png))
 
@@ -249,7 +249,7 @@ ObjectDataSource s 前面`Insert()`叫用方法時，就必須先確認使用者
 透過這項變更，JPG 影像現在才能正確轉譯在 gridview 裡。
 
 
-[![新的類別目錄的 JPG 影像會正確轉譯](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image11.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image19.png)
+[![T新的類別目錄的他 JPG 影像會正確轉譯](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image11.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image19.png)
 
 **圖 11**:新的類別目錄的 JPG 影像會正確轉譯 ([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image20.png))
 

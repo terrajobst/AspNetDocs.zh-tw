@@ -8,15 +8,15 @@ ms.date: 02/20/2009
 ms.assetid: 51a0d175-913b-43d8-95e3-840fb96ad1a9
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4115b3898415d63ffb122f3d0fea93022f2baa02
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 973878ef0afd62035b3fc840371e6c6223c8951c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030415"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413785"
 ---
-<a name="iteration-3--add-form-validation-c"></a>反覆項目 #3 – 新增表單驗證 (C#)
-====================
+# <a name="iteration-3--add-form-validation-c"></a>反覆項目 #3 – 新增表單驗證 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下載程式碼](iteration-3-add-form-validation-cs/_static/contactmanager_3_cs1.zip)
@@ -51,7 +51,7 @@ by [Microsoft](https://github.com/microsoft)
 在連絡人管理員應用程式的這個第二個反覆項目，我們會加入基本表單驗證。 我們可以防止人提交連絡人，而不需要的表單欄位中輸入值。 此外，我們也會驗證電話號碼和電子郵件地址 （請參閱 圖 1）。
 
 
-[![[新增專案] 對話方塊](iteration-3-add-form-validation-cs/_static/image1.jpg)](iteration-3-add-form-validation-cs/_static/image1.png)
+[![T他 [新增專案] 對話方塊中](iteration-3-add-form-validation-cs/_static/image1.jpg)](iteration-3-add-form-validation-cs/_static/image1.png)
 
 **圖 01**:表單驗證 ([按一下以檢視完整大小的影像](iteration-3-add-form-validation-cs/_static/image2.png))
 

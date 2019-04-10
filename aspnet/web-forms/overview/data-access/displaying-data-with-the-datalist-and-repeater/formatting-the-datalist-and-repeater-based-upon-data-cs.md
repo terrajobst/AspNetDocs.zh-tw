@@ -8,15 +8,15 @@ ms.date: 09/13/2006
 ms.assetid: 83e3d759-82b8-41e6-8d62-f0f4b3edec41
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4c3a6b085dbd9faec8dab45e64b10678aa9a73b3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7ea11f436d8f0455621d22c4d5a5b4d6b6ece68f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044155"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386420"
 ---
-<a name="formatting-the-datalist-and-repeater-based-upon-data-c"></a>根據資料格式化 DataList 和重複項 (C#)
-====================
+# <a name="formatting-the-datalist-and-repeater-based-upon-data-c"></a>根據資料格式化 DataList 和重複項 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_30_CS.exe)或[下載 PDF](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/datatutorial30cs1.pdf)
@@ -74,7 +74,7 @@ DataList 控制項，格式為整個項目可以使用實作的變更`DataListIt
 一旦您已複寫的 DataList 與 ObjectDataSource 的功能，從`Basics.aspx`成`Formatting.aspx`，請花一點時間變更 DataList s`ID`屬性從`DataList1`以更具描述性`ItemDataBoundFormattingExample`。 接下來，在瀏覽器中檢視 DataList。 如 [圖 1] 所示，唯一格式化每個產品之間的差別的背景色彩會交替出現。
 
 
-[![DataList 控制項中所列的產品](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image2.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image1.png)
+[![T他產品詳列於 DataList 控制項](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image2.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image1.png)
 
 **圖 1**:DataList 控制項中所列的產品 ([按一下以檢視完整大小的影像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image3.png))
 
@@ -117,7 +117,7 @@ DataList 控制項，格式為整個項目可以使用實作的變更`DataListIt
 具有`ItemDataBound`事件處理常式已完成、 重新瀏覽`Formatting.aspx`瀏覽器中的頁面。 圖 2 所示，在 $ 20.00 美元價格的產品有其名稱 」 和 「 反白顯示的價格。
 
 
-[![這些產品小於 $ 20.00 美元會反白顯示](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image5.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image4.png)
+[![T用以產品較不比 $ 20.00 美元會反白顯示](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image5.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image4.png)
 
 **圖 2**:這些產品小於 $ 20.00 美元會反白顯示 ([按一下以檢視完整大小的影像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image6.png))
 
@@ -129,7 +129,7 @@ DataList 控制項，格式為整個項目可以使用實作的變更`DataListIt
 `RepeaterItem`構成 Repeater 控制項，不過，don t s 提供這類樣式層級屬性。 因此，套用自訂格式 Repeater 需要應用程式樣式屬性的 Web 控制項 Repeater s 在範本內，就像我們在圖 2 中。
 
 
-[![整個產品項目會反白顯示的產品在 $ 20.00 美元](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image8.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image7.png)
+[![T他整個產品項目會反白顯示的產品在 $ 20.00 美元](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image8.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image7.png)
 
 **圖 3**:整個產品項目會反白顯示的產品在 $ 20.00 美元 ([按一下以檢視完整大小的影像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image9.png))
 
@@ -141,7 +141,7 @@ DataList 控制項，格式為整個項目可以使用實作的變更`DataListIt
 為了示範格式化功能，可讓 s 有產品資訊包含產品的名稱旁邊的 [DISCONTINUED] 的文字，如果它已停止的 s。 此外，可讓 s 有價格反白顯示黃色如果它小於 $ 20.00 美元 s (如同我們在`ItemDataBound`事件處理常式範例); 如果價格是 $ 20.00 美元或更高版本，可讓 s 不會顯示實際的價格，但價格報價的文字，請改為呼叫。 [圖 4] 顯示的螢幕擷取畫面列出套用這些格式化規則的產品。
 
 
-[![適用於昂貴的產品，價格會取代文字，請呼叫價格報價](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image11.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image10.png)
+[![F或昂貴的產品，價格會取代該文字，請呼叫價格報價](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image11.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image10.png)
 
 **圖 4**:適用於昂貴的產品，價格會取代文字，請呼叫價格報價 ([按一下以檢視完整大小的影像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image12.png))
 
@@ -179,10 +179,10 @@ DataList 控制項，格式為整個項目可以使用實作的變更`DataListIt
 
 [!code-aspx[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample7.aspx)]
 
-就地格式化函式呼叫，請花一點時間瀏覽器中檢視進度。 您的畫面看起來應該類似 圖 5 已停止的產品，包含文字 [DISCONTINUED] 而且成本超過 $ 20.00 美元具有其價格的產品以取代文字請價格報價的呼叫。
+就地格式化函式呼叫，請花一點時間瀏覽器中檢視進度。 您的畫面看起來應該類似 [圖 5 已停止的產品，包含文字 [DISCONTINUED] 而且成本超過 $ 20.00 美元具有其價格的產品以取代文字請價格報價的呼叫。
 
 
-[![適用於昂貴的產品，價格會取代文字，請呼叫價格報價](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image14.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image13.png)
+[![F或昂貴的產品，價格會取代該文字，請呼叫價格報價](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image14.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image13.png)
 
 **圖 5**:適用於昂貴的產品，價格會取代文字，請呼叫價格報價 ([按一下以檢視完整大小的影像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image15.png))
 

@@ -8,15 +8,15 @@ ms.date: 02/16/2009
 ms.assetid: 0bfd06b1-12d3-4fbb-9779-a82e5eb7fe7d
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 51d76248a59968e1d6befd5d5404f7bf6c2878e4
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 42c0ce5e158e2fe9387ac218ac0762b6362094f9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049615"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389567"
 ---
-<a name="creating-a-route-constraint-c"></a>建立路由條件約束 (C#)
-====================
+# <a name="creating-a-route-constraint-c"></a>建立路由條件約束 (C#)
+
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > 在本教學課程中，Stephen Walther 會示範如何控制瀏覽器使用規則運算式中建立路由條件約束所要求的相符項目路由。
@@ -51,7 +51,7 @@ ms.locfileid: "57049615"
 由於 Details() 動作預期整數參數，提出要求，其中包含整數值以外的項目會造成錯誤。 比方說，如果您的瀏覽器中輸入 URL /Product/apple 然後就會出現錯誤頁面 [圖 1] 中。
 
 
-[![[新增專案] 對話方塊](creating-a-route-constraint-cs/_static/image1.jpg)](creating-a-route-constraint-cs/_static/image1.png)
+[![T他 [新增專案] 對話方塊中](creating-a-route-constraint-cs/_static/image1.jpg)](creating-a-route-constraint-cs/_static/image1.png)
 
 **圖 01**:看到頁面，explode ([按一下以檢視完整大小的影像](creating-a-route-constraint-cs/_static/image2.png))
 

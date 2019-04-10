@@ -8,15 +8,15 @@ ms.date: 02/20/2007
 ms.assetid: a8fa72ee-8328-4854-a419-c1b271772303
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 879f0f491461ec49c4eef9dc8add747ac2b22f90
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: da0df163d7c3b68246a84ff490471e64c142a8f0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422099"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416515"
 ---
-<a name="implementing-optimistic-concurrency-with-the-sqldatasource-vb"></a>使用 SqlDataSource 實作開放式同步存取 (VB)
-====================
+# <a name="implementing-optimistic-concurrency-with-the-sqldatasource-vb"></a>使用 SqlDataSource 實作開放式同步存取 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_50_VB.exe)或[下載 PDF](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/datatutorial50vb1.pdf)
@@ -47,7 +47,7 @@ Web 應用程式的允許多個同時連接的使用者，若要編輯或刪除�
 [圖 2] 說明這種互動。
 
 
-[![當兩位使用者同時更新資料錄那里一位使用者 s 可能會變更為覆寫其他](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image2.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image1.png)
+[![W當兩個使用者同時更新那里記錄 s 可能性的一位使用者變更為 [覆寫其他](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image2.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image1.png)
 
 **圖 2**:當兩位使用者同時更新那里記錄的可能會變更為 覆寫其他的一個使用者 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image2.png))
 
@@ -61,7 +61,7 @@ Web 應用程式的允許多個同時連接的使用者，若要編輯或刪除�
 開放式並行存取控制的運作方式是確保更新或刪除的記錄有相同的值，更新或刪除處理程序啟動時一樣。 比方說，當按一下可編輯的 GridView 內的 [編輯] 按鈕，記錄的值是從資料庫讀取和文字方塊和其他 Web 控制項中顯示。 GridView 會儲存這些原始值。 更新的版本之後使用者她的變更，然後按一下 [更新] 按鈕，,`UPDATE`陳述式，必須納入考量，原始值加上新的值，並只更新基礎資料庫記錄，如果原始值的使用者開始編輯是仍在資料庫中的值相同。 圖 3 說明這一系列的事件。
 
 
-[![更新或刪除才會成功，原始的值必須等於目前的資料庫值](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.png)
+[![F或更新或刪除才會成功，原始的值必須是目前資料庫的值等於](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.png)
 
 **圖 3**:更新或刪除到成功，原始的值必須是等於目前資料庫的值 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image4.png))
 
@@ -78,7 +78,7 @@ Web 應用程式的允許多個同時連接的使用者，若要編輯或刪除�
 首先開啟`OptimisticConcurrency.aspx`頁面上，從`SqlDataSource`資料夾。 將 SqlDataSource 控制項從工具箱拖曳至設計工具中，設定其`ID`屬性設`ProductsDataSourceWithOptimisticConcurrency`。 接下來，按一下 從控制項 s 智慧標籤的 設定資料來源 連結。 在精靈中第一個畫面中，選擇要合作`NORTHWINDConnectionString`，按一下 [下一步]。
 
 
-[![選擇使用 NORTHWINDConnectionString](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image4.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image5.png)
+[![C選擇以處理 NORTHWINDConnectionString](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image4.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image5.png)
 
 **圖 4**:選擇以處理`NORTHWINDConnectionString`([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image6.png))
 
@@ -86,7 +86,7 @@ Web 應用程式的允許多個同時連接的使用者，若要編輯或刪除�
 此範例中我們會新增可讓使用者編輯的 GridView`Products`資料表。 因此，從 設定 Select 陳述式 畫面中，選擇`Products`資料表從下拉式清單，然後選取`ProductID`， `ProductName`， `UnitPrice`，和`Discontinued`資料行，如 圖 5 所示。
 
 
-[![從 [產品] 資料表中，傳回 ProductID、 ProductName、 UnitPrice 和已停止的資料行](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image5.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.png)
+[![From [產品] 資料表中，傳回 ProductID、 ProductName、 UnitPrice 和已停止的資料行](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image5.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.png)
 
 **圖 5**:從`Products`資料表中，傳回`ProductID`， `ProductName`， `UnitPrice`，並`Discontinued`資料行 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image8.png))
 
@@ -152,7 +152,7 @@ Web 應用程式的允許多個同時連接的使用者，若要編輯或刪除�
 使用 SqlDataSource 設定為支援開放式並行存取，全都是利用這個並行存取控制的頁面中加入資料 Web 控制項。 本教學課程中，可讓 s 新增的 GridView 會提供這兩個編輯和刪除功能。 若要達成此目的，將 GridView 拖曳從工具箱拖曳至設計工具和設定其`ID`至`Products`。 從 GridView s 智慧標籤，將它繫結`ProductsDataSourceWithOptimisticConcurrency`SqlDataSource 控制項加入在步驟 1 中。 最後，檢查從智慧標籤的 [啟用編輯和啟用刪除] 選項。
 
 
-[![將 GridView 與 sqldatasource 繫結並啟用編輯和刪除](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image6.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.png)
+[![Bind SqlDataSource 和啟用編輯和刪除 GridView](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image6.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.png)
 
 **圖 6**:繫結 GridView SqlDataSource 和啟用編輯和刪除 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image10.png))
 
@@ -173,7 +173,7 @@ Web 應用程式的允許多個同時連接的使用者，若要編輯或刪除�
 在第二個瀏覽器視窗中，變更 （但保留做為其原始值的產品名稱） 的價格，並按一下 [更新]。 在回傳時，方格傳回給其預先編輯模式，但不是會記錄的價格變更。 第二個瀏覽器會顯示新的產品名稱，與舊的價格與第一個相同的值。 第二個瀏覽器視窗中所做的變更都已中斷。 此外，所做的變更都已中斷而無訊息模式，因為沒有任何例外狀況或訊息，指出並行違規只是發生。
 
 
-[![第二個瀏覽器視窗中的變更會以無訊息方式遺失](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image11.png)
+[![T他會在第二個瀏覽器視窗以無訊息方式遺失變更](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image11.png)
 
 **圖 7**:第二個瀏覽器視窗以無訊息方式遺失的變更 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image12.png))
 
@@ -196,7 +196,7 @@ Web 應用程式的允許多個同時連接的使用者，若要編輯或刪除�
 因為並行存取違規會拒絕其中一個已做的變更，那就天下太平了並行存取違規發生時警示使用者。 若要提醒使用者，可讓 s 將標籤 Web 控制項新增至名為頁面頂端`ConcurrencyViolationMessage`其`Text`屬性會顯示下列訊息：您嘗試更新或刪除另一位使用者同時更新一筆記錄。 請檢閱其他使用者的變更再取消復原您的更新或刪除。 設定 Label 控制項 s`CssClass`為 [警告] 是 CSS 類別屬性中定義`Styles.css`會以紅色、 斜體、 粗體和大字型顯示的文字。 最後，設定標籤 s`Visible`並`EnableViewState`屬性，以`False`。 這樣會隱藏除了我們明確設定的回傳的標籤及其`Visible`屬性設`True`。
 
 
-[![將標籤控制項新增至頁面，顯示警告](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image8.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image13.png)
+[![Add 標籤控制項頁面以顯示 [警告](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image8.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image13.png)
 
 **圖 8**:將標籤控制項新增至頁面，顯示警告 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image14.png))
 
@@ -213,7 +213,7 @@ Web 應用程式的允許多個同時連接的使用者，若要編輯或刪除�
 如 圖 9 所示，這些兩個事件處理常式中，每次發生並行違規時，會顯示非常值得注意的訊息。
 
 
-[![並行存取違規時顯示一則訊息](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image15.png)
+[![A 並行存取違規時，就會顯示訊息](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image15.png)
 
 **圖 9**:並行存取違規時顯示一則訊息 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image16.png))
 

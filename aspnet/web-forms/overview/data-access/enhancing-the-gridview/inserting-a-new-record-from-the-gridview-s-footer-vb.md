@@ -8,15 +8,15 @@ ms.date: 03/06/2007
 ms.assetid: 528acc48-f20c-4b4e-aa16-4cc02f068ebb
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6e56c46d1f2574b9f228190e0e0c8205240015ed
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 251cd769672f1610ac7c51772882b0c166184372
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423945"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59397431"
 ---
-<a name="inserting-a-new-record-from-the-gridviews-footer-vb"></a>從 GridView 的頁尾插入新記錄 (VB)
-====================
+# <a name="inserting-a-new-record-from-the-gridviews-footer-vb"></a>從 GridView 的頁尾插入新記錄 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_53_VB.exe)或[下載 PDF](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/datatutorial53vb1.pdf)
@@ -31,7 +31,7 @@ ms.locfileid: "58423945"
 將插入的功能新增至 GridView，我們會負責決定將加入新的記錄、 建立插入的介面，以及撰寫程式碼來插入新的記錄項目。 在本教學課程，我們將探討將插入的介面新增至 GridView 的頁尾資料列 （請參閱 圖 1）。 每個資料行的頁尾資料格包含適當的資料集合使用者介面項目 （產品 s 名稱的文字方塊中，供應商，依此類推 dropdownlist 進行）。 我們也需要資料行的新增按鈕，按下時，會造成回傳，並插入新記錄到`Products`資料表使用的頁尾資料列中提供的值。
 
 
-[![頁尾資料列中加入新的產品提供的介面](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image1.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image1.png)
+[![T他的頁尾資料列加入新的產品提供的介面](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image1.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image1.png)
 
 **圖 1**:頁尾資料列加入新的產品提供的介面 ([按一下以檢視完整大小的影像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image2.png))
 
@@ -41,7 +41,7 @@ ms.locfileid: "58423945"
 我們考慮自行建立 GridView 的頁尾中的插入介面之前，讓 s 著重 GridView 加入列出資料庫中的產品頁面第一次。 首先開啟`InsertThroughFooter.aspx`頁面中`EnhancedGridView`資料夾，然後從 [工具箱] 拖曳至設計工具，設定 GridView 的拖曳的 GridView`ID`屬性設`Products`。 接下來，使用 GridView s 智慧標籤繫結至名為新 ObjectDataSource `ProductsDataSource`。
 
 
-[![建立名為 ProductsDataSource 新 ObjectDataSource](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image2.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image3.png)
+[![Create 新 ObjectDataSource 名為 ProductsDataSource](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image2.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image3.png)
 
 **圖 2**:建立新的 ObjectDataSource 具名`ProductsDataSource`([按一下以檢視完整大小的影像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image4.png))
 
@@ -49,12 +49,12 @@ ms.locfileid: "58423945"
 設定要使用 ObjectDataSource`ProductsBLL`類別的`GetProducts()`方法來擷取產品資訊。 本教學課程中，讓 s 焦點，嚴格上加入插入的功能，不需擔心編輯和刪除。 因此，請確定在 [插入] 索引標籤中的下拉式清單設為`AddProduct()`而更新和刪除索引標籤中的下拉式清單會設定為 （無）。
 
 
-[![將 AddProduct 方法對應至 ObjectDataSource s insert （） 方法](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image3.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image5.png)
+[![Map AddProduct 方法的 ObjectDataSource s insert （） 方法](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image3.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image5.png)
 
 **圖 3**:地圖`AddProduct`方法的 ObjectDataSource s`Insert()`方法 ([按一下以檢視完整大小的影像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image6.png))
 
 
-[![設定為 （無） 更新和刪除索引標籤的下拉式清單](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image4.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image7.png)
+[![S等 [更新和刪除索引標籤下拉式清單，以 （無）](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image4.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image7.png)
 
 **圖 4**:將更新和刪除索引標籤下拉式清單會列出為 （無） ([按一下以檢視完整大小的影像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image8.png))
 
@@ -69,7 +69,7 @@ ms.locfileid: "58423945"
 [!code-aspx[Main](inserting-a-new-record-from-the-gridview-s-footer-vb/samples/sample1.aspx)]
 
 
-[![產品的所有資料欄位會都顯示在分頁的 GridView](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image5.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image9.png)
+[![A產品資料欄位會顯示在分頁的 GridView ll](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image5.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image9.png)
 
 **圖 5**:在分頁的 GridView 會顯示所有的產品資料欄位 ([按一下以檢視完整大小的影像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image10.png))
 
@@ -79,7 +79,7 @@ ms.locfileid: "58423945"
 加上其標頭和資料列，GridView 會包含頁尾資料列。 頁首和頁尾資料列會顯示依據的 GridView 的值[ `ShowHeader` ](https://msdn.microsoft.com/en-gb/library/system.web.ui.webcontrols.gridview.showheader.aspx)並[ `ShowFooter` ](https://msdn.microsoft.com/en-gb/library/system.web.ui.webcontrols.gridview.showfooter.aspx)屬性。 若要顯示頁尾資料列，請設定`ShowFooter`屬性設`True`。 圖 6 所示，設定`ShowFooter`屬性設`True`頁尾資料列加入方格中。
 
 
-[![若要顯示頁尾資料列，請將 ShowFooter 設定為 True](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image6.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image11.png)
+[![To 顯示頁尾資料列，會設定為 True 的 ShowFooter](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image6.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image11.png)
 
 **圖 6**:若要顯示頁尾資料列，請設定`ShowFooter`要`True`([按一下以檢視完整大小的影像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image12.png))
 
@@ -96,7 +96,7 @@ ms.locfileid: "58423945"
 在設定後`ShowFooter`屬性設`True`，花一點時間瀏覽器中檢視輸出。 目前的頁尾資料列不 t 所包含的任何文字或 Web 控制項。 在步驟 3 中我們將修改的每個欄位 GridView 的頁尾，使其包含適當的插入介面。
 
 
-[![空白的頁尾資料列會顯示上面分頁介面控制項](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image7.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image13.png)
+[![T他空的頁尾資料列會顯示上面分頁介面控制項](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image7.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image13.png)
 
 **圖 7**:空白的頁尾資料列會顯示上面分頁介面控制項 ([按一下以檢視完整大小的影像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image14.png))
 
@@ -130,7 +130,7 @@ ms.locfileid: "58423945"
 若要建立的編輯介面，請從 GridView s 智慧標籤中選擇 [編輯範本] 連結。 然後，從下拉式清單中，選取適當的欄位的`FooterTemplate`拖曳適當的控制項從 [工具箱] 拖曳至設計工具。
 
 
-[![將適當的插入介面新增至每個欄位的 FooterTemplate](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image9.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image15.png)
+[![Add 為每個欄位的 FooterTemplate 適當的插入介面](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image9.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image15.png)
 
 **圖 9**:將適當的插入介面新增至每個欄位 s `FooterTemplate` ([按一下以檢視完整大小的影像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image16.png))
 
@@ -166,7 +166,7 @@ ms.locfileid: "58423945"
 當透過瀏覽器檢視，GridView 的頁尾資料列現在包含已完成插入介面 （請參閱 圖 10）。 此時，插入介面不包含使用者指示該她 s 新產品的輸入資料，並想要將新記錄插入資料庫的方法。 此外，我們還可解決頁尾中的輸入資料將如何轉譯中的新記錄的 ve`Products`資料庫。 我們將探討如何包含 [新增] 按鈕插入的介面，以及如何在執行程式碼的步驟 4 中的回傳時它 s 按下。 步驟 5 會示範如何插入新記錄使用頁尾中的資料。
 
 
-[![GridView 的頁尾提供的介面加入新記錄](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image10.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image17.png)
+[![T他 GridView 的頁尾提供的介面加入新記錄](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image10.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image17.png)
 
 **圖 10**:GridView 的頁尾提供的介面加入新記錄 ([按一下以檢視完整大小的影像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image18.png))
 
@@ -178,7 +178,7 @@ ms.locfileid: "58423945"
 從設計工具中，請按一下 GridView s 智慧標籤中的 [編輯範本] 連結，然後選擇`ProductID`欄位的`FooterTemplate`從下拉式清單。 將按鈕 Web 控制項 （或 LinkButton 或 ImageButton，如果您想） 新增到範本中，將其識別碼設定為`AddProduct`、 其`CommandName`至插入、 並將其`Text`新增，如 圖 11 所示的屬性。
 
 
-[![置於 ProductID TemplateField 的 FooterTemplate 中的 [新增] 按鈕](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image11.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image19.png)
+[![Place ProductID TemplateField 的 FooterTemplate 中的 [新增] 按鈕](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image11.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image19.png)
 
 **圖 11**:將放在 [新增] 按鈕`ProductID`TemplateField s `FooterTemplate` ([按一下以檢視完整大小的影像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image20.png))
 
@@ -186,7 +186,7 @@ ms.locfileid: "58423945"
 一旦您已包含 [新增] 按鈕，測試的瀏覽器頁面。 請注意，當按一下含無效的資料插入介面中的 新增 按鈕，回傳簡單地說 circuited ValidationSummary 控制項表示無效的資料 （請參閱 圖 12）。 輸入適當的資料，按一下 [新增] 按鈕，將會導致回傳。 沒有記錄會加入至資料庫，不過。 我們必須撰寫的實際執行插入的程式碼。
 
 
-[![加入按鈕的回傳是簡短 Circuited 中是否有無效的資料插入介面](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image12.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image21.png)
+[![T他將新增按鈕的回傳是簡短 Circuited 中是否有無效的資料插入介面](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image12.gif)](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image21.png)
 
 **圖 12**:加入按鈕的回傳是簡短 Circuited 中是否有無效的資料插入介面 ([按一下以檢視完整大小的影像](inserting-a-new-record-from-the-gridview-s-footer-vb/_static/image22.png))
 

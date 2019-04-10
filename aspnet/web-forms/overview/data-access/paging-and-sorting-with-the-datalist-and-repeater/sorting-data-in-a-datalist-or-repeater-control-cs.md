@@ -8,15 +8,15 @@ ms.date: 11/13/2006
 ms.assetid: f52c302a-1b7c-46fe-8a13-8412c95cbf6d
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ec5124cb0b449db703988bdadbaa244ff72cf363
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: d45e5cb1efd5f67acc94f4118d96c62ea08dc617
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425596"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387148"
 ---
-<a name="sorting-data-in-a-datalist-or-repeater-control-c"></a>DataList 或重複項控制項中的排序資料 (C#)
-====================
+# <a name="sorting-data-in-a-datalist-or-repeater-control-c"></a>DataList 或重複項控制項中的排序資料 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_45_CS.exe)或[下載 PDF](sorting-data-in-a-datalist-or-repeater-control-cs/_static/datatutorial45cs1.pdf)
@@ -51,12 +51,12 @@ GridView 控制項具有`SortExpression`屬性，它會儲存`SortExpression`[Gr
 我們會擔心實作任何排序相關的功能之前，讓開始要先列出的產品在中繼器控制項中的 s。 首先開啟`Sorting.aspx`頁面中`PagingSortingDataListRepeater`資料夾。 將重複項控制項新增至網頁上，設定其`ID`屬性設`SortableProducts`。 從 Repeater s 智慧標籤，建立名為新 ObjectDataSource`ProductsDataSource`並將它設定為從中擷取資料`ProductsBLL`類別的`GetProducts()`方法。 選取 （無） 選項從下拉式清單中，在 INSERT、 UPDATE 和 DELETE 的索引標籤中。
 
 
-[![建立 ObjectDataSource，並將它設定為使用 GetProductsAsPagedDataSource() 方法](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image2.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image1.png)
+[![C建立 ObjectDataSource，並將它設定為使用 GetProductsAsPagedDataSource() 方法](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image2.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image1.png)
 
 **圖 1**:建立 ObjectDataSource，並將它設定為使用`GetProductsAsPagedDataSource()`方法 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image3.png))
 
 
-[![設定下拉式清單中更新、 插入和刪除索引標籤為 （無）](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image5.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image4.png)
+[![Set 下拉式清單中更新、 插入和刪除索引標籤，為 [（無）](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image5.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image4.png)
 
 **圖 2**:設定下拉式清單中更新、 插入和刪除索引標籤為 （無） ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image6.png))
 
@@ -71,7 +71,7 @@ GridView 控制項具有`SortExpression`屬性，它會儲存`SortExpression`[Gr
 圖 3 顯示此頁面上，當透過瀏覽器檢視。
 
 
-[![會顯示每項產品 s 的名稱，供應商和類別目錄](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image8.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image7.png)
+[![E會顯示每項產品 s 的名稱，供應商和類別目錄](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image8.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image7.png)
 
 **圖 3**:顯示每個產品名稱、 供應商和類別目錄 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image9.png))
 
@@ -90,7 +90,7 @@ GridView 控制項具有`SortExpression`屬性，它會儲存`SortExpression`[Gr
 請繼續並嘗試一些不同硬式編碼的值為*sortExpression*和瀏覽器中測試的結果。 如 圖 4 所示，使用做為 ProductName DESC 時*sortExpression*，產品會依其名稱以反向字母順序排序。
 
 
-[![產品會依其名稱以反向字母順序排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image11.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image10.png)
+[![T他的產品會依照其名稱以反向字母順序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image11.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image10.png)
 
 **圖 4**:產品會依其名稱以反向字母順序排序 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image12.png))
 
@@ -124,12 +124,12 @@ GridView 控制項具有`SortExpression`屬性，它會儲存`SortExpression`[Gr
 在第一次造訪網頁時，此點產品會一開始依`ProductName`資料欄位，因為它 s `SortBy` `ListItem`預設選取 （請參閱 圖 6）。 選取不同的排序選項，例如類別和按一下 重新整理將會導致回傳，並重新排序資料分類名稱，如 圖 7 所示。
 
 
-[![產品現已依其名稱一開始排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image15.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image14.png)
+[![T他的產品是一開始會依其名稱](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image15.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image14.png)
 
 **圖 6**:產品是一開始會依其名稱 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image16.png))
 
 
-[![現在依類別排序的產品現已](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image18.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image17.png)
+[![T他產品會立即依類別排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image18.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image17.png)
 
 **圖 7**:產品現已現在依類別排序 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image19.png))
 
@@ -151,7 +151,7 @@ GridView 控制項具有`SortExpression`屬性，它會儲存`SortExpression`[Gr
 在 [前述教學課程](paging-report-data-in-a-datalist-or-repeater-control-cs.md)我們檢查如何實作具有 DataList 的預設分頁。 可讓 s 延伸此先前的範例，以包含要排序的分頁的資料的能力。 首先開啟`SortingWithDefaultPaging.aspx`並`Paging.aspx`中的分頁`PagingSortingDataListRepeater`資料夾。 從`Paging.aspx`頁面上，按一下 [來源] 按鈕，以檢視 [s] 頁面的宣告式標記。 複製選取的文字 （請參閱 圖 8） 並將它貼到的宣告式標記`SortingWithDefaultPaging.aspx`之間`<asp:Content>`標記。
 
 
-[![複寫中的宣告式標記&lt;asp: Content&gt; Paging.aspx SortingWithDefaultPaging.aspx 的標記](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image21.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image20.png)
+[![Replicate 宣告式標記中&lt;asp: Content&gt; Paging.aspx SortingWithDefaultPaging.aspx 的標記](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image21.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image20.png)
 
 **圖 8**:複寫中的宣告式標記`<asp:Content>`標籤`Paging.aspx`要`SortingWithDefaultPaging.aspx`([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image22.png))
 
@@ -185,7 +185,7 @@ GridView 控制項具有`SortExpression`屬性，它會儲存`SortExpression`[Gr
 此時，`SortingWithDefaultPaging.aspx`頁面會依字母順序排序其結果，依產品名稱 （請參閱 圖 9）。 這是因為根據預設，產品名稱的值會當做傳入`GetProductsSortedAsPagedDataSource`方法 s *sortExpression*參數。
 
 
-[![根據預設，結果會按照產品名稱](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image24.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image23.png)
+[![By 的預設值，結果會按照產品名稱](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image24.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image23.png)
 
 **圖 9**:根據預設，結果會依照`ProductName`([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image25.png))
 
@@ -214,12 +214,12 @@ GridView 控制項具有`SortExpression`屬性，它會儲存`SortExpression`[Gr
 當第一次瀏覽的頁面，資料會依產品名稱依字母順序排序 （請參閱上一步 圖 9）。 按一下 下一步 按鈕，前進到第二個資料頁，然後按一下 依類別目錄按鈕的 排序。 這會傳回我們的資料，依照類別目錄名稱的第一頁 （請參閱 圖 10）。 同樣地，由供應商 按鈕按一下排序會排序從資料的第一頁的供應商提供的資料。 因為資料透過分頁，會記住排序選擇。 圖 11 顯示後依分類排序，然後逐步引導到第十三個資料頁的頁面。
 
 
-[![產品會依類別排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image27.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image26.png)
+[![T他產品會依類別排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image27.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image26.png)
 
 **圖 10**:產品會依類別排序 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image28.png))
 
 
-[![排序運算式會記住分頁透過資料的時間](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image30.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image29.png)
+[![T他的排序運算式會記住當分頁透過 [資料](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image30.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image29.png)
 
 **圖 11**:排序運算式會記住分頁透過資料的時間 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image31.png))
 
@@ -237,7 +237,7 @@ DataList 範例會檢查在步驟 5 的頁面，透過使用效率不佳的預�
 開啟`SortingWithCustomPaging.aspx`頁面中`PagingSortingDataListRepeater`資料夾，並將重複項新增至頁面上，設定其`ID`屬性設`Products`。 從 Repeater s 智慧標籤，建立名為新 ObjectDataSource `ProductsDataSource`。 設定以選取資料的來源`ProductsBLL`類別的`GetProductsPaged`方法。
 
 
-[![設定為使用 ProductsBLL 類別的 GetProductsPaged 方法的 ObjectDataSource](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image33.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image32.png)
+[![C設定要使用 ProductsBLL 類別的 GetProductsPaged 方法的 ObjectDataSource](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image33.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image32.png)
 
 **圖 12**:設定要使用 ObjectDataSource`ProductsBLL`類別 s`GetProductsPaged`方法 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image34.png))
 
@@ -245,7 +245,7 @@ DataList 範例會檢查在步驟 5 的頁面，透過使用效率不佳的預�
 設定下拉式清單中更新、 插入和刪除為 [（無）] 索引標籤，然後按 [下一步] 按鈕。 設定資料來源精靈現在會提示輸入的來源`GetProductsPaged`方法 s *startRowIndex*並*maximumRows*輸入參數。 實際上，會忽略這些輸入的參數。 相反地， *startRowIndex*並*maximumRows*的值將會在傳遞給`Arguments`中之 ObjectDataSource 的屬性`Selecting`事件處理常式，就像我們所指定的方式*sortExpression*在此教學課程 s 第一個示範。 因此，保留參數來源下拉式清單，在精靈中設定為 None。
 
 
-[![保留參數的 [來源] 設定為 None](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image36.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image35.png)
+[![Leave 參數來源設定為 [無](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image36.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image35.png)
 
 **圖 13**:將參數的來源設定為 None ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image37.png))
 
@@ -267,7 +267,7 @@ DataList 範例會檢查在步驟 5 的頁面，透過使用效率不佳的預�
 透過這項變更，頁面上，當透過瀏覽器中，檢視會顯示前五個產品。
 
 
-[![會顯示前五筆記錄](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image39.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image38.png)
+[![T他的第一個五筆記錄會顯示](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image39.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image38.png)
 
 **圖 14**:會顯示前五筆記錄 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image40.png))
 
@@ -313,17 +313,17 @@ DataList 範例會檢查在步驟 5 的頁面，透過使用效率不佳的預�
 新增這些之後`Click`事件處理常式和程式碼，以啟用或停用介面分頁的項目已根據目前的起始資料列索引，測試網頁瀏覽器中。 如 [圖 15 所示，當第一次瀏覽頁面的第一個和上一步] 按鈕將會停用。 按一下 [下一步] 顯示的資料，第二個頁面，而按一下最後一個會顯示最後一頁 （請參閱圖 16，17）。 檢視資料的最後一頁時就會停用 下一步 和 最後一個按鈕。
 
 
-[![[上一步] 和 最後一個按鈕就會停用檢視第一個頁面的產品](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image42.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image41.png)
+[![T他的上一個和最後一個按鈕就會停用檢視第一個頁面的產品](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image42.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image41.png)
 
-**圖 15**:[上一步] 和 最後一個按鈕就會停用檢視第一個頁面的產品 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image43.png))
-
-
-[![第二個頁面的產品現已 Dispalyed](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image45.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image44.png)
-
-**圖 16**:第二個頁面的產品現已 Dispalyed ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image46.png))
+**圖 15**:[上一步] 和 [最後一個按鈕就會停用檢視第一個頁面的產品 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image43.png))
 
 
-[![按一下最後一個顯示資料的最後一頁](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image48.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image47.png)
+[![T他產品的第二個頁面會顯示](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image45.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image44.png)
+
+**圖 16**:第二個頁面的產品都會顯示 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image46.png))
+
+
+[![C按一下最後一個會顯示最後的頁面上的資料](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image48.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image47.png)
 
 **圖 17**:按一下最後一個會顯示最後的頁面上的資料 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image49.png))
 
@@ -366,7 +366,7 @@ ObjectDataSource 會叫用之前`GetProductsPagedAndSorted`方法，我們需要
 S 就是這麼簡單 ！ 儘管有幾個步驟，以取得自訂的分頁和排序實作，步驟都非常類似於所需的預設分頁。 圖 18.顯示產品，檢視依類別排序的資料的最後一頁時。
 
 
-[![顯示資料的最後一個頁面上，依類別排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image51.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image50.png)
+[![T他會顯示資料的最後一個頁面上，依類別排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image51.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image50.png)
 
 **圖 18**:顯示資料的最後一個頁面上，依類別排序 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image52.png))
 

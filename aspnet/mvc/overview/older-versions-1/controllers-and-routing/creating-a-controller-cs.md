@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: 719d50d4-2305-454c-98b4-bae64937c48f
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6fe880775a5d477aefcf0fe6cedb3e719760ed90
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c92d7cdeb7b2d31d5eca810628e9f563840f7494
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036485"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400598"
 ---
-<a name="creating-a-controller-c"></a>建立控制器 (C#)
-====================
+# <a name="creating-a-controller-c"></a>建立控制器 (C#)
+
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > 在本教學課程中，Stephen Walther 會示範如何將控制器新增至 ASP.NET MVC 應用程式。
@@ -29,12 +29,12 @@ ms.locfileid: "57036485"
 若要建立新的控制站的最簡單方式是在 Visual Studio 方案總管] 視窗中的 [控制器] 資料夾上按一下滑鼠右鍵，然後選取**新增]、 [控制站**功能表選項 （請參閱 [圖 1）。 選取此功能表選項會開啟**新增控制器**對話方塊 （請參閱 圖 2）。
 
 
-[![[新增專案] 對話方塊](creating-a-controller-cs/_static/image1.jpg)](creating-a-controller-cs/_static/image1.png)
+[![T他 [新增專案] 對話方塊中](creating-a-controller-cs/_static/image1.jpg)](creating-a-controller-cs/_static/image1.png)
 
 **圖 01**:加入新的控制站 ([按一下以檢視完整大小的影像](creating-a-controller-cs/_static/image2.png))
 
 
-[![[新增專案] 對話方塊](creating-a-controller-cs/_static/image2.jpg)](creating-a-controller-cs/_static/image3.png)
+[![T他 [新增專案] 對話方塊中](creating-a-controller-cs/_static/image2.jpg)](creating-a-controller-cs/_static/image3.png)
 
 **圖 02**:[新增控制器] 對話方塊 ([按一下以檢視完整大小的影像](creating-a-controller-cs/_static/image4.png))
 
@@ -56,7 +56,7 @@ ms.locfileid: "57036485"
 當您建立一個控制站時，您可以選擇自動產生 Create、 Update 和詳細資料的動作方法 （請參閱 [圖 3]）。 如果您選取此選項則會產生列表 2 中的控制器類別。
 
 
-[![自動建立動作方法](creating-a-controller-cs/_static/image3.jpg)](creating-a-controller-cs/_static/image5.png)
+[![Creating 動作方法自動](creating-a-controller-cs/_static/image3.jpg)](creating-a-controller-cs/_static/image5.png)
 
 **圖 03**:自動建立動作方法 ([按一下以檢視完整大小的影像](creating-a-controller-cs/_static/image6.png))
 
@@ -76,7 +76,7 @@ ASP.NET MVC 控制器是只是一個類別。 如果您想，您可以略過方�
 3. 修改產生的類別檔案，讓類別繼承自基底 system.web.mvc.controller 衍生類別 （請參閱列表 3）。
 
 
-[![建立新的類別](creating-a-controller-cs/_static/image4.jpg)](creating-a-controller-cs/_static/image7.png)
+[![Creating 的新類別](creating-a-controller-cs/_static/image4.jpg)](creating-a-controller-cs/_static/image7.png)
 
 **圖 04**:建立新的類別 ([按一下以檢視完整大小的影像](creating-a-controller-cs/_static/image8.png))
 

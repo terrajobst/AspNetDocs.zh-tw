@@ -8,15 +8,15 @@ ms.date: 02/29/2012
 ms.assetid: ba1fabb4-31a3-4ebf-8327-41a6bbba6eaf
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
-ms.openlocfilehash: 6bbfb4aa7f29e4c189da4dfdca6f2113c7550b68
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5f50721b6f263b9cb025f5fa57c923dadeddcd28
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045045"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410587"
 ---
-<a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>ASP.NET 4.5 與 Visual Studio 2012 的新功能
-====================
+# <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>ASP.NET 4.5 與 Visual Studio 2012 的新功能
+
 > 本文件說明新功能和 ASP.NET 4.5 中引進的增強功能。 它也會說明適用於 Visual Studio 2012 中的 web 開發所做的改進。 這份文件最初發行於 2012 年 2 月 29 日。
 
 
@@ -77,7 +77,7 @@ ms.locfileid: "57045045"
         - [括號對稱](#_Toc318097409)
         - [移至定義](#_Toc318097410)
         - [支援 ECMAScript5](#_Toc318097411)
-        - [DOM 的 IntelliSense](#_Toc318097412)
+        - [DOM IntelliSense](#_Toc318097412)
         - [VSDOC 簽章的多載](#_Toc318097413)
         - [隱含的參考](#_Toc318097414)
     - [CSS 編輯器](#_Toc318097415)

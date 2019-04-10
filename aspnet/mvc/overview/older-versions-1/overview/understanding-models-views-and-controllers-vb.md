@@ -8,15 +8,15 @@ ms.date: 08/19/2008
 ms.assetid: a106374a-5e74-4fd0-9ac0-1a32280e5d0d
 msc.legacyurl: /mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 15d4e7d7b6a2662296b8e3647cd60187de580789
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 879a771c3b85c85d35d470f056173f230a36e906
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029175"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388944"
 ---
-<a name="understanding-models-views-and-controllers-vb"></a>了解模型、檢視和控制器 (VB)
-====================
+# <a name="understanding-models-views-and-controllers-vb"></a>了解模型、檢視和控制器 (VB)
+
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > 不清楚模型、 檢視和控制器嗎？ 在本教學課程中，Stephen walther 將向您介紹 ASP.NET MVC 應用程式的不同部分。
@@ -33,7 +33,7 @@ ms.locfileid: "57029175"
 使用 MVC 範本建立新的 ASP.NET MVC 應用程式啟動 Visual Studio 2008 中，選取 檔案 功能表選項，新增專案 （請參閱 圖 1）。 在 [新增專案] 對話方塊中，選取您慣用的程式設計語言，在 [專案類型 (Visual Basic 或 C#），然後選取**ASP.NET MVC Web 應用程式**範本] 下。 按一下 [確定] 按鈕。
 
 
-[![新增專案 對話方塊](understanding-models-views-and-controllers-vb/_static/image1.jpg)](understanding-models-views-and-controllers-vb/_static/image1.png)
+[![N新功能 [專案] 對話方塊](understanding-models-views-and-controllers-vb/_static/image1.jpg)](understanding-models-views-and-controllers-vb/_static/image1.png)
 
 **[圖 01**:新增專案] 對話方塊 ([按一下以檢視完整大小的影像](understanding-models-views-and-controllers-vb/_static/image2.png))
 
@@ -41,7 +41,7 @@ ms.locfileid: "57029175"
 當您建立新的 ASP.NET MVC 應用程式中，**建立單元測試專案**對話方塊隨即出現 （請參閱 圖 2）。 此對話方塊可讓您在您的解決方案，以測試 ASP.NET MVC 應用程式建立個別的專案。 選取的選項**否，不要建立單元測試專案**然後按一下**確定** 按鈕。
 
 
-[![建立單元測試 對話方塊](understanding-models-views-and-controllers-vb/_static/image2.jpg)](understanding-models-views-and-controllers-vb/_static/image3.png)
+[![Create 單元測試對話方塊](understanding-models-views-and-controllers-vb/_static/image2.jpg)](understanding-models-views-and-controllers-vb/_static/image3.png)
 
 **[圖 02**:建立單元測試] 對話方塊 ([按一下以檢視完整大小的影像](understanding-models-views-and-controllers-vb/_static/image4.png))
 
@@ -51,7 +51,7 @@ ms.locfileid: "57029175"
 如果您展開 [控制器] 資料夾，您應該會看到名為 AccountController.vb 的檔案和名為 HomeController.vb。 如果您展開 [Views] 資料夾，您應該會看到名為常用帳戶 」 及 「 共用的三個子資料夾。 如果您展開 [主資料夾] 資料夾，您會看到兩個額外的檔案，名為 about.aspx 的網頁和 Index.aspx （請參閱 [圖 3]）。 這些檔案是由預設 ASP.NET MVC 範本所隨附的範例應用程式所組成。
 
 
-[![[方案總管] 視窗](understanding-models-views-and-controllers-vb/_static/image3.jpg)](understanding-models-views-and-controllers-vb/_static/image5.png)
+[![T他方案總管] 視窗](understanding-models-views-and-controllers-vb/_static/image3.jpg)](understanding-models-views-and-controllers-vb/_static/image5.png)
 
 **圖 03**:[方案總管] 視窗 ([按一下以檢視完整大小的影像](understanding-models-views-and-controllers-vb/_static/image6.png))
 
@@ -61,7 +61,7 @@ ms.locfileid: "57029175"
 當您第一次執行的 ASP.NET 應用程式時，在 [圖 4] 對話方塊隨即出現，建議您啟用偵錯模式。 按一下 [確定] 按鈕，並將執行應用程式。
 
 
-[![未啟用的偵錯對話方塊](understanding-models-views-and-controllers-vb/_static/image4.jpg)](understanding-models-views-and-controllers-vb/_static/image7.png)
+[![Debugging 未啟用對話方塊](understanding-models-views-and-controllers-vb/_static/image4.jpg)](understanding-models-views-and-controllers-vb/_static/image7.png)
 
 **圖 04**:偵錯未啟用對話方塊 ([按一下以檢視完整大小的影像](understanding-models-views-and-controllers-vb/_static/image8.png))
 
@@ -69,7 +69,7 @@ ms.locfileid: "57029175"
 當您執行的 ASP.NET MVC 應用程式時，Visual Studio 會啟動網頁瀏覽器中的應用程式。 範例應用程式包含只有兩個頁面: [索引] 頁面和 [關於] 頁面。 當應用程式第一次啟動時，[索引] 頁面隨即出現 （請參閱 [圖 5]）。 您可以按一下瀏覽至 [關於] 頁面頂端的功能表連結應用程式的權限。
 
 
-[![[索引] 頁面](understanding-models-views-and-controllers-vb/_static/image5.jpg)](understanding-models-views-and-controllers-vb/_static/image9.png)
+[![T他索引頁](understanding-models-views-and-controllers-vb/_static/image5.jpg)](understanding-models-views-and-controllers-vb/_static/image9.png)
 
 **圖 05**:[索引] 頁面 ([按一下以檢視完整大小的影像](understanding-models-views-and-controllers-vb/_static/image10.png))
 

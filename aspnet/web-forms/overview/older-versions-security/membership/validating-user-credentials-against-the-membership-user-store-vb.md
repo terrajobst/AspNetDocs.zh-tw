@@ -8,15 +8,15 @@ ms.date: 01/18/2008
 ms.assetid: 17772912-b47b-4557-9ce9-80f22df642f7
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f5f1121bacdf287e346419d70ac155f47bc826ac
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 98869574adb8ac85a2b6dad8db2a583e013150fe
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064735"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393168"
 ---
-<a name="validating-user-credentials-against-the-membership-user-store-vb"></a>針對成員資格使用者存放區驗證使用者認證 (VB)
-====================
+# <a name="validating-user-credentials-against-the-membership-user-store-vb"></a>針對成員資格使用者存放區驗證使用者認證 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/ASPNET_Security_Tutorial_06_VB.zip)或[下載 PDF](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/aspnet_tutorial06_LoggingIn_vb.pdf)
@@ -26,7 +26,7 @@ ms.locfileid: "57064735"
 
 ## <a name="introduction"></a>簡介
 
-在 <a id="Tutorial05"> </a>[前述教學課程](creating-user-accounts-vb.md)我們探討了如何在 成員資格架構中建立新的使用者帳戶。 我們先探討了以程式設計方式建立使用者帳戶，透過`Membership`類別的`CreateUser`方法，並檢查 使用 CreateUserWizard Web 控制項。 不過，目前登入頁面會驗證提供的認證，對使用者名稱和密碼組的硬式編碼清單。 我們需要更新登入頁面的邏輯，使它會針對成員資格架構的使用者存放區的認證來驗證。
+在  <a id="Tutorial05"> </a>[前述教學課程](creating-user-accounts-vb.md)我們探討了如何在 [成員資格架構中建立新的使用者帳戶。 我們先探討了以程式設計方式建立使用者帳戶，透過`Membership`類別的`CreateUser`方法，並檢查 使用 CreateUserWizard Web 控制項。 不過，目前登入頁面會驗證提供的認證，對使用者名稱和密碼組的硬式編碼清單。 我們需要更新登入頁面的邏輯，使它會針對成員資格架構的使用者存放區的認證來驗證。
 
 更像是建立使用者帳戶，可以驗證認證以程式設計方式或以宣告方式。 成員資格 API 包含用於以程式設計方式驗證使用者的認證，對使用者存放區的方法。 和 ASP.NET 隨附登入 Web 控制項，會呈現使用者介面使用的使用者名稱、 密碼及登入按鈕的文字方塊。
 
@@ -43,7 +43,7 @@ ms.locfileid: "57064735"
 讓我們更新我們的登入頁面 (~ /`Login.aspx`)，因此它會針對成員資格架構的使用者存放區提供的認證來驗證。 我們建立此登入頁面年代<a id="Tutorial02"></a>[*的表單驗證概觀*](../introduction/an-overview-of-forms-authentication-vb.md)教學課程中，兩個文字方塊，使用者名稱和密碼，以建立介面記住我] 核取方塊，並登入按鈕 （請參閱 [圖 1）。 程式碼會驗證輸入的認證，對硬式編碼 （Scott/密碼、 Jisun/密碼和 Sam/密碼） 的使用者名稱和密碼組的清單。 在  <a id="Tutorial03"></a>[*表單驗證組態和進階主題*](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)我們更新了表單中儲存其他資訊的登入網頁的程式碼的教學課程驗證票證`UserData`屬性。
 
 
-[![登入頁面的介面包含兩個文字方塊、 CheckBoxList 和按鈕](validating-user-credentials-against-the-membership-user-store-vb/_static/image2.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image1.png)
+[![T他登入頁面的介面包含兩個文字方塊、 CheckBoxList 和一個按鈕](validating-user-credentials-against-the-membership-user-store-vb/_static/image2.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image1.png)
 
 **圖 1**:登入頁面的介面包含兩個文字方塊、 CheckBoxList 和一個按鈕 ([按一下以檢視完整大小的影像](validating-user-credentials-against-the-membership-user-store-vb/_static/image3.png))
 
@@ -86,7 +86,7 @@ ms.locfileid: "57064735"
 讓我們更新`Login.aspx`、 取代手動建立的介面和程式碼的登入控制項。 啟動移除現有的標記，並在程式碼`Login.aspx`。 您可能會刪除徹底，或只需加以註解化。若要標記為註解宣告式標記，把它與`<%--`和`--%>`分隔符號。 您可以手動輸入這些分隔符號，或如 圖 2 所示，您可以選取要標記為註解，然後按一下 標記為註解選取的行圖示，在工具列中的文字。 同樣地，您可以使用標記為註解選取的行圖示標記為註解程式碼後置類別中選取的程式碼。
 
 
-[![標記為註解的現有宣告式標記和程式碼置於 Login.aspx](validating-user-credentials-against-the-membership-user-store-vb/_static/image5.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image4.png)
+[![Comment 出現有宣告式標記和程式碼置於 Login.aspx](validating-user-credentials-against-the-membership-user-store-vb/_static/image5.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image4.png)
 
 **圖 2**:註解出現有宣告式標記和程式碼置於 Login.aspx ([按一下以檢視完整大小的影像](validating-user-credentials-against-the-membership-user-store-vb/_static/image6.png))
 
@@ -98,7 +98,7 @@ ms.locfileid: "57064735"
 接下來，將登入控制項從工具箱拖曳到頁面上，並設定其`ID`屬性設`myLogin`。 此時您的畫面應該看起來類似 圖 3。 請注意，登入控制項的預設介面包含文字方塊控制項的使用者名稱和密碼，請記得我下一次核取方塊，並登入 按鈕。 另外還有`RequiredFieldValidator`的兩個文字方塊控制項。
 
 
-[![將登入控制項新增至頁面](validating-user-credentials-against-the-membership-user-store-vb/_static/image8.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image7.png)
+[![Add 登入控制項至頁面](validating-user-credentials-against-the-membership-user-store-vb/_static/image8.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image7.png)
 
 **圖 3**:將登入控制項新增至頁面 ([按一下以檢視完整大小的影像](validating-user-credentials-against-the-membership-user-store-vb/_static/image9.png))
 
@@ -115,7 +115,7 @@ Login 控制項使用四項因素，來判斷適當的頁面，將使用者重�
 圖 4 說明如何登入控制項以達成其適當的頁面決定使用這四個參數。
 
 
-[![將登入控制項新增至頁面](validating-user-credentials-against-the-membership-user-store-vb/_static/image11.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image10.png)
+[![Add 登入控制項至頁面](validating-user-credentials-against-the-membership-user-store-vb/_static/image11.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image10.png)
 
 **圖 4**:將登入控制項新增至頁面 ([按一下以檢視完整大小的影像](validating-user-credentials-against-the-membership-user-store-vb/_static/image12.png))
 
@@ -145,7 +145,7 @@ Login 控制項提供兩個屬性來調整其使用者介面控制項的版面�
 進行這些屬性變更之後，您的登入控制項宣告式標記和外觀看起來應該類似於 [圖 5] 所示。
 
 
-[![登入控制項的屬性值決定它的外觀](validating-user-credentials-against-the-membership-user-store-vb/_static/image14.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image13.png)
+[![T他登入控制項的屬性值決定其外觀](validating-user-credentials-against-the-membership-user-store-vb/_static/image14.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image13.png)
 
 **圖 5**:登入控制項的屬性值決定其外觀 ([按一下以檢視完整大小的影像](validating-user-credentials-against-the-membership-user-store-vb/_static/image15.png))
 
@@ -164,7 +164,7 @@ Login 控制項提供兩個屬性來調整其使用者介面控制項的版面�
 讓我們更新登入控制項，會提示使用者輸入其使用者名稱、 密碼和電子郵件地址，使其只會驗證使用者，如果提供的電子郵件地址符合檔案的電子郵件地址。 我們首先要將登入控制項的介面轉換成範本。 從登入控制項的智慧標籤上，選擇 [轉換成範本] 選項。
 
 
-[![將登入控制項轉換成範本](validating-user-credentials-against-the-membership-user-store-vb/_static/image17.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image16.png)
+[![C轉換至範本的 Login 控制項](validating-user-credentials-against-the-membership-user-store-vb/_static/image17.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image16.png)
 
 **圖 6**:將登入控制項轉換成範本 ([按一下以檢視完整大小的影像](validating-user-credentials-against-the-membership-user-store-vb/_static/image18.png))
 
@@ -176,7 +176,7 @@ Login 控制項提供兩個屬性來調整其使用者介面控制項的版面�
 將登入控制項轉換成範本加入`LayoutTemplate`與 HTML 項目和定義使用者介面的 Web 控制項的控制項的宣告式標記。 如 [圖 7] 所示，將控制項轉換為範本中移除數個屬性從 [屬性] 視窗中，這類`TitleText`， `CreateUserUrl`，依此類推，因為使用的範本時，會忽略這些屬性值。
 
 
-[![較少的屬性都可用時登入控制項轉換為範本](validating-user-credentials-against-the-membership-user-store-vb/_static/image20.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image19.png)
+[![Fewer 屬性都可用時登入控制項轉換為範本](validating-user-credentials-against-the-membership-user-store-vb/_static/image20.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image19.png)
 
 **圖 7**:較少的屬性都可用時登入控制項轉換成範本 ([按一下以檢視完整大小的影像](validating-user-credentials-against-the-membership-user-store-vb/_static/image21.png))
 
@@ -190,7 +190,7 @@ Login 控制項提供兩個屬性來調整其使用者介面控制項的版面�
 在新增之後`Email`文字方塊中，瀏覽透過瀏覽器頁面。 如 [圖 8] 所示，登入控制項的使用者介面現在會包含第三個文字方塊中。
 
 
-[![Login 控制項現在包含一個文字方塊，使用者的電子郵件地址](validating-user-credentials-against-the-membership-user-store-vb/_static/image23.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image22.png)
+[![T他的 Login 控制項現在會包含使用者的電子郵件地址的 Textbox](validating-user-credentials-against-the-membership-user-store-vb/_static/image23.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image22.png)
 
 **圖 8**:Login 控制項現在包含一個文字方塊，使用者的電子郵件地址 ([按一下以檢視完整大小的影像](validating-user-credentials-against-the-membership-user-store-vb/_static/image24.png))
 
@@ -208,7 +208,7 @@ Login 控制項提供兩個屬性來調整其使用者介面控制項的版面�
 圖 9 提供的驗證工作流程的流程圖。
 
 
-[![登入控制項的驗證工作流程](validating-user-credentials-against-the-membership-user-store-vb/_static/image26.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image25.png)
+[![T他登入控制項的驗證工作流程](validating-user-credentials-against-the-membership-user-store-vb/_static/image26.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image25.png)
 
 **圖 9**:登入控制項的驗證工作流程 ([按一下以檢視完整大小的影像](validating-user-credentials-against-the-membership-user-store-vb/_static/image27.png))
 
@@ -247,7 +247,7 @@ Login 控制項提供兩個屬性來調整其使用者介面控制項的版面�
 使用此程式碼就緒之後，嘗試為有效的使用者，並輸入正確的使用者名稱、 密碼和電子郵件地址登入。 再試一次，但這次特意不使用不正確的電子郵件地址 （請參閱 圖 10）。 最後，試試看使用虛構的使用者名稱的第三次。 在第一種情況下您應該已成功登入至站台，但在最後兩個情況下您應該會看到登入控制項的認證無效訊息。
 
 
-[![提供不正確的電子郵件地址時，將無法登入的 Tito](validating-user-credentials-against-the-membership-user-store-vb/_static/image29.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image28.png)
+[![T提供不正確的電子郵件地址時，ito 無法登入](validating-user-credentials-against-the-membership-user-store-vb/_static/image29.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image28.png)
 
 **圖 10**:Tito 無法記錄檔中時提供不正確的電子郵件地址 ([按一下以檢視完整大小的影像](validating-user-credentials-against-the-membership-user-store-vb/_static/image30.png))
 
@@ -280,7 +280,7 @@ Login 控制項提供兩個屬性來調整其使用者介面控制項的版面�
 若要測試此程式碼，特意不嘗試將現有的使用者身分登入，但使用不正確的密碼。 在 10 分鐘的時間範圍內的資料列中執行這五次，並會鎖定帳戶。如 圖 11 所示，後續的登入嘗試將一律失敗 （即使具有正確的密碼），但現在會顯示更具描述性已經鎖定您的帳戶時因為無效的登入嘗試次數過多。 請連絡系統管理員將您的帳戶解除鎖定的訊息。
 
 
-[![Tito 執行無效的登入嘗試次數過多，而且已被鎖定](validating-user-credentials-against-the-membership-user-store-vb/_static/image32.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image31.png)
+[![Tito 執行太多無效的登入嘗試和具有已鎖定](validating-user-credentials-against-the-membership-user-store-vb/_static/image32.png)](validating-user-credentials-against-the-membership-user-store-vb/_static/image31.png)
 
 **圖 11**:Tito 執行太多無效的登入嘗試，並有已鎖定 ([按一下以檢視完整大小的影像](validating-user-credentials-against-the-membership-user-store-vb/_static/image33.png))
 

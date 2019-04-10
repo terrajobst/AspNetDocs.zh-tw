@@ -8,15 +8,15 @@ ms.date: 07/17/2006
 ms.assetid: 22e99600-8d18-4a94-a20e-a3a62bb63798
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f7004192edd636f4660f3184c3e725a6bfda865c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 727ef89069d3f1ddf22e993e1e3dceb144a43389
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050595"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390612"
 ---
-<a name="customizing-the-data-modification-interface-c"></a>自訂資料修改介面 (C#)
-====================
+# <a name="customizing-the-data-modification-interface-c"></a>自訂資料修改介面 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_20_CS.exe)或[下載 PDF](customizing-the-data-modification-interface-cs/_static/datatutorial20cs1.pdf)
@@ -31,7 +31,7 @@ BoundFields 和 CheckBoxFields GridView 和 DetailsView 控制項所使用的簡
 在 [前述教學課程](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md)我們了解如何藉由將驗證 Web 控制項加入自訂資料修改介面。 在本教學課程中我們將探討如何自訂實際的資料集合 Web 控制項，取代 BoundField 和 CheckBoxField 的 TextBox 和 CheckBox 控制項有替代的輸入 Web 控制項。 特別是，我們將建置可編輯的 GridView，可讓產品名稱、 類別、 供應商和已停止的狀態更新。 當您編輯特定的資料列，category 與 supplier 欄位會轉譯為 dropdownlist 進行，其中包含一組可用的類別和供應商可從中選擇。 此外，我們會將 CheckBoxField 預設核取方塊取代 RadioButtonList 控制項，可提供兩個選項：「 作用中 」 和 「 已停止 」。
 
 
-[![GridView 的編輯介面包含 dropdownlist 進行和 Radiobutton](customizing-the-data-modification-interface-cs/_static/image2.png)](customizing-the-data-modification-interface-cs/_static/image1.png)
+[![T他的 GridView 編輯介面包含 dropdownlist 進行和 Radiobutton](customizing-the-data-modification-interface-cs/_static/image2.png)](customizing-the-data-modification-interface-cs/_static/image1.png)
 
 **圖 1**:GridView 的編輯介面包含 dropdownlist 進行和 Radiobutton ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-cs/_static/image3.png))
 
@@ -56,7 +56,7 @@ BoundFields 和 CheckBoxFields GridView 和 DetailsView 控制項所使用的簡
 使用`UpdateProduct`新增多載，我們已經準備好建立我們可編輯的 GridView。 開啟`CustomizedUI.aspx`頁面中`EditInsertDelete`資料夾並將 GridView 控制項新增至設計工具。 接下來，建立新的 ObjectDataSource 從 GridView 的智慧標籤。 設定要擷取產品資訊透過 ObjectDataSource`ProductBLL`類別的`GetProducts()`方法，並更新產品資料使用`UpdateProduct`我們剛剛建立的多載。 INSERT 和 DELETE] 索引標籤中，選取 [從下拉式清單 （無）。
 
 
-[![設定要使用剛才建立的 UpdateProduct 多載 ObjectDataSource](customizing-the-data-modification-interface-cs/_static/image5.png)](customizing-the-data-modification-interface-cs/_static/image4.png)
+[![C設定要使用 UpdateProduct 多載剛建立的 ObjectDataSource](customizing-the-data-modification-interface-cs/_static/image5.png)](customizing-the-data-modification-interface-cs/_static/image4.png)
 
 **圖 2**:設定要使用 ObjectDataSource`UpdateProduct`多載只會建立 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-cs/_static/image6.png))
 
@@ -80,7 +80,7 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 這些變更之後，請設計工具會看起來像圖 3 使用 GridView 的宣告式語法如下所示。
 
 
-[![從 GridView 中移除不必要的欄位](customizing-the-data-modification-interface-cs/_static/image8.png)](customizing-the-data-modification-interface-cs/_static/image7.png)
+[![R\ 移除不需要的欄位從 [GridView](customizing-the-data-modification-interface-cs/_static/image8.png)](customizing-the-data-modification-interface-cs/_static/image7.png)
 
 **圖 3**:從 GridView 中移除不必要的欄位 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-cs/_static/image9.png))
 
@@ -90,7 +90,7 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 此時 GridView 的唯讀行為已完成。 檢視資料時，每個產品會轉譯為 GridView，顯示產品名稱、 類別、 供應商中的資料列，並已停止的狀態。
 
 
-[![GridView 的唯讀介面已完成](customizing-the-data-modification-interface-cs/_static/image11.png)](customizing-the-data-modification-interface-cs/_static/image10.png)
+[![T他 GridView 的唯讀介面已完成](customizing-the-data-modification-interface-cs/_static/image11.png)](customizing-the-data-modification-interface-cs/_static/image10.png)
 
 **圖 4**:GridView 的唯讀介面是完成 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-cs/_static/image12.png))
 
@@ -124,7 +124,7 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 如我們在先前的教學課程中所見，透過設計工具，或直接從宣告式語法，可以進行編輯的範本。 若要透過設計工具中編輯它，按一下 [編輯範本] 連結，從 GridView 的智慧標籤，並選擇使用 [類別] 欄位`EditItemTemplate`。 移除標籤 Web 控制項，並取代 DropDownList 控制項，將 DropDownList 的 ID 屬性設定為`Categories`。
 
 
-[![移除 [] 文字方塊中，並加入 EditItemTemplate 的 DropDownList](customizing-the-data-modification-interface-cs/_static/image14.png)](customizing-the-data-modification-interface-cs/_static/image13.png)
+[![R\ [] 文字方塊中移除和新增至 EditItemTemplate DropDownList](customizing-the-data-modification-interface-cs/_static/image14.png)](customizing-the-data-modification-interface-cs/_static/image13.png)
 
 **圖 5**:移除 [] 文字方塊中，並新增至 DropDownList `EditItemTemplate` ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-cs/_static/image15.png))
 
@@ -132,7 +132,7 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 接下來，我們需要填入可用的類別使用 DropDownList。 按一下從 DropDownList 的智慧標籤的 [選擇資料來源] 連結，然後選擇建立新的 ObjectDataSource 名為`CategoriesDataSource`。
 
 
-[![建立新的 ObjectDataSource 控制項，名為 CategoriesDataSource](customizing-the-data-modification-interface-cs/_static/image17.png)](customizing-the-data-modification-interface-cs/_static/image16.png)
+[![Create 新 ObjectDataSource 控制項名為 CategoriesDataSource](customizing-the-data-modification-interface-cs/_static/image17.png)](customizing-the-data-modification-interface-cs/_static/image16.png)
 
 **圖 6**:建立新的 ObjectDataSource 控制項具名`CategoriesDataSource`([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-cs/_static/image18.png))
 
@@ -140,7 +140,7 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 若要讓這個 ObjectDataSource 傳回所有的類別，將它繫結`CategoriesBLL`類別的`GetCategories()`方法。
 
 
-[![繫結至 CategoriesBLL GetCategories() 方法的 ObjectDataSource](customizing-the-data-modification-interface-cs/_static/image20.png)](customizing-the-data-modification-interface-cs/_static/image19.png)
+[![Bind CategoriesBLL GetCategories() 方法的 ObjectDataSource](customizing-the-data-modification-interface-cs/_static/image20.png)](customizing-the-data-modification-interface-cs/_static/image19.png)
 
 **圖 7**:繫結到 ObjectDataSource`CategoriesBLL`的`GetCategories()`方法 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-cs/_static/image21.png))
 
@@ -148,7 +148,7 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 最後，設定 DropDownList 的設定使得`CategoryName`欄位會顯示在每個 DropDownList`ListItem`與`CategoryID`做為值的欄位。
 
 
-[![已顯示 [類別名稱] 欄位和 CategoryID 做為值](customizing-the-data-modification-interface-cs/_static/image23.png)](customizing-the-data-modification-interface-cs/_static/image22.png)
+[![H[ave CategoryName 顯示欄位和做為值 CategoryID](customizing-the-data-modification-interface-cs/_static/image23.png)](customizing-the-data-modification-interface-cs/_static/image22.png)
 
 **圖 8**:已`CategoryName`欄位顯示與`CategoryID`做為值 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-cs/_static/image24.png))
 
@@ -167,7 +167,7 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 加入兩個 dropdownlist 進行之後`EditItemTemplate`s，載入瀏覽器頁面，然後按一下 [編輯] 按鈕的 Chef Anton 印地安 Seasoning 產品。 如 [圖 9] 所示，會將產品類別目錄和供應商資料行轉譯為包含可用分類和供應商可從中選擇的下拉式清單中。 但請注意，*第一個*兩份下拉式清單中的項目預設會選取 （飲料類別目錄） 和山為供應商，即使 Chef Anton 印地安 Seasoning 提供紐奧良印地安 Condiment樂趣。
 
 
-[![預設會選取下拉式清單中第一個項目](customizing-the-data-modification-interface-cs/_static/image26.png)](customizing-the-data-modification-interface-cs/_static/image25.png)
+[![T預設會選取他下拉式清單中的第一個項目](customizing-the-data-modification-interface-cs/_static/image26.png)](customizing-the-data-modification-interface-cs/_static/image25.png)
 
 **圖 9**:預設會選取下拉式清單中第一個項目 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-cs/_static/image27.png))
 
@@ -181,7 +181,7 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 或者，您可以設定 DropDownList databindings 編輯透過設計工具的範本，然後按一下 編輯資料繫結連結，從 DropDownList 的智慧標籤。 接下來，表示`SelectedValue`屬性應該繫結至`CategoryID`欄位使用雙向資料繫結 （請參閱 圖 10）。 重複繫結宣告式或設計工具處理`SupplierID`資料欄位至`Suppliers`DropDownList。
 
 
-[![將 CategoryID 繫結使用雙向資料繫結 DropDownList SelectedValue 屬性](customizing-the-data-modification-interface-cs/_static/image29.png)](customizing-the-data-modification-interface-cs/_static/image28.png)
+[![Bind 使用雙向資料繫結 DropDownList SelectedValue 屬性 CategoryID](customizing-the-data-modification-interface-cs/_static/image29.png)](customizing-the-data-modification-interface-cs/_static/image28.png)
 
 **圖 10**:繫結`CategoryID`至 DropDownList`SelectedValue`屬性使用雙向資料繫結 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-cs/_static/image30.png))
 
@@ -189,7 +189,7 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 若要套用繫結之後`SelectedValue`的兩個 dropdownlist 進行內容中，已編輯的產品類別目錄] 和 [供應商欄將會預設為目前產品的值。 按一下 更新後,`CategoryID`並`SupplierID`下拉式清單中選取的項目的值會傳遞至`UpdateProduct`方法。 [圖 11] 顯示本教學課程之後已加入資料繫結陳述式;請注意如何 Chef Anton 印地安 Seasoning 的下拉式清單中選取項目都正確 Condiment 令紐奧良印地安。
 
 
-[![編輯產品的目前類別和供應商值預設會選取](customizing-the-data-modification-interface-cs/_static/image32.png)](customizing-the-data-modification-interface-cs/_static/image31.png)
+[![T預設會選取他編輯產品的目前類別和供應商值](customizing-the-data-modification-interface-cs/_static/image32.png)](customizing-the-data-modification-interface-cs/_static/image31.png)
 
 **圖 11**:預設選取編輯產品的目前類別和供應商值 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-cs/_static/image33.png))
 
@@ -219,7 +219,7 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 與這個額外`ListItem`，現在可以將指派的編輯介面`NULL`值的產品`CategoryID`和`SupplierID`欄位，如 圖 12 所示。
 
 
-[![若要將 NULL 值指派為產品的分類或供應商中選擇 （無）](customizing-the-data-modification-interface-cs/_static/image35.png)](customizing-the-data-modification-interface-cs/_static/image34.png)
+[![C（無） 若要將 NULL 值指派為產品的分類或供應商的選擇](customizing-the-data-modification-interface-cs/_static/image35.png)](customizing-the-data-modification-interface-cs/_static/image34.png)
 
 **圖 12**:（無） 選擇要指派`NULL`產品的分類或供應商的值 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-cs/_static/image36.png))
 
@@ -233,7 +233,7 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 取代的核取方塊，在這兩`ItemTemplate`並`EditItemTemplate`RadioButtonList 控制項中，設定這兩個 RadioButtonLists'`ID`屬性，以`DiscontinuedChoice`。 接下來，表示 RadioButtonLists 應該每個包含兩個選項按鈕，一個標示為 「 作用中 」 值為"False"並標示為 「 已停止 」 值為"True"。 若要完成此您可以輸入`<asp:ListItem>`中的項目，直接透過宣告式語法或使用`ListItem`從設計工具的集合編輯器。 [圖 13] 顯示`ListItem`已指定集合編輯器後兩個選項按鈕的選項。
 
 
-[![新增](customizing-the-data-modification-interface-cs/_static/image38.png)](customizing-the-data-modification-interface-cs/_static/image37.png)
+[![Add](customizing-the-data-modification-interface-cs/_static/image38.png)](customizing-the-data-modification-interface-cs/_static/image37.png)
 
 **圖 13**:將 「 作用中 」 和 「 Discontinued 」 選項新增至 RadioButtonList ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-cs/_static/image39.png))
 
@@ -250,7 +250,7 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 經過這些變更，`Discontinued`清單 （請參閱 圖 14） 的選項按鈕配對的資料行轉換從清單中的核取方塊。 當您編輯產品，選取適當的選項按鈕，可以更新的產品已停止的狀態，選取 其他 選項按鈕，然後按一下 更新。
 
 
-[![選項按鈕組已取代的已停用核取方塊](customizing-the-data-modification-interface-cs/_static/image41.png)](customizing-the-data-modification-interface-cs/_static/image40.png)
+[![T他 Discontinued 核取方塊已取代的選項按鈕配對](customizing-the-data-modification-interface-cs/_static/image41.png)](customizing-the-data-modification-interface-cs/_static/image40.png)
 
 **圖 14**:停用核取方塊已被取代選項按鈕組 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-cs/_static/image42.png))
 

@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: 521c9117-81cd-4d8d-9d96-0256dc7bf50f
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 516c370941b8f7e5f3528953491057973679586d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5dd5b96d0365c55cbbfa2dfe0856beda41f915e1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049345"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384757"
 ---
-<a name="improving-performance-with-output-caching-c"></a>使用輸出快取改善效能 (C#)
-====================
+# <a name="improving-performance-with-output-caching-c"></a>使用輸出快取改善效能 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教學課程中，您將了解如何大幅改善您的 ASP.NET MVC web 應用程式的效能利用輸出快取。 您了解如何快取，因此不需要相同的內容，這是要建立新的使用者叫用動作的每個階段，從控制器動作傳回的結果。
@@ -32,7 +32,7 @@ by [Microsoft](https://github.com/microsoft)
 
 您可以啟用輸出快取個別的控制器動作或整個控制器類別中加入 [OutputCache] 屬性。 例如，列表 1 中的控制站會公開名為 index （） 的動作。 Index （） 動作的輸出快取 10 秒的時間。
 
-**Listing 1 – Controllers\HomeController.cs**
+**列表 1 – Controllers\HomeController.cs**
 
 [!code-csharp[Main](improving-performance-with-output-caching-cs/samples/sample1.cs)]
 
@@ -97,7 +97,7 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-csharp[Main](improving-performance-with-output-caching-cs/samples/sample4.cs)]
 
-請注意 [OutputCache] 屬性，在 列表 4 中的包含 [位置] 屬性設定為值 OutputCacheLocation.Client。 [OutputCache] 屬性也包含 NoStore 屬性。 NoStore 屬性用來通知 proxy 伺服器和瀏覽器，它們不應該儲存在快取內容的永久複本。
+請注意 [OutputCache] 屬性，在 [列表 4 中的包含 [位置] 屬性設定為值 OutputCacheLocation.Client。 [OutputCache] 屬性也包含 NoStore 屬性。 NoStore 屬性用來通知 proxy 伺服器和瀏覽器，它們不應該儲存在快取內容的永久複本。
 
 ## <a name="varying-the-output-cache"></a>不同的輸出快取
 

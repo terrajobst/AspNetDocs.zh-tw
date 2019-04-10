@@ -8,15 +8,15 @@ ms.date: 06/26/2007
 ms.assetid: 48e2a4ae-77ca-4208-a204-c38c690ffb59
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1078087e9ff2564e94a5b1df1efb6c96928524c7
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 78192156bd9a3117d8cf75808f1de493a0d52a17
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424920"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387039"
 ---
-<a name="batch-inserting-vb"></a>批次插入 (VB)
-====================
+# <a name="batch-inserting-vb"></a>批次插入 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_66_VB.zip)或[下載 PDF](batch-inserting-vb/_static/datatutorial66vb1.pdf)
@@ -33,7 +33,7 @@ ms.locfileid: "58424920"
 我們可以很輕鬆地建立批次插入介面，可讓使用者選擇的供應商和類別目錄一次，輸入一系列的產品名稱和單價，，然後按一下 加入資料庫中的新產品的按鈕 （請參閱 圖 1）。 增加每個產品，其`ProductName`並`UnitPrice`資料欄位指派的文字方塊中輸入的值時其`CategoryID`和`SupplierID`值從在最上層的表單 fo dropdownlist 進行指派的值。 `Discontinued`並`UnitsOnOrder`值都會設為硬式編碼值`False`和 0，分別。
 
 
-[![批次插入介面](batch-inserting-vb/_static/image2.png)](batch-inserting-vb/_static/image1.png)
+[![T他批次插入介面](batch-inserting-vb/_static/image2.png)](batch-inserting-vb/_static/image1.png)
 
 **圖 1**:批次插入介面 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image3.png))
 
@@ -49,7 +49,7 @@ ms.locfileid: "58424920"
 首先開啟`BatchInsert.aspx`頁面中`BatchData`資料夾，然後從 工具箱 拖曳至設計工具拖曳面板 （請參閱 圖 2）。 設定面板 s`ID`屬性設`DisplayInterface`。 當將面板加入至設計工具中，其`Height`和`Width`屬性分別設定為 50px 和 125px。 清除這些屬性值，從 [屬性] 視窗。
 
 
-[![從 [工具箱] 拖曳至設計工具拖曳面板](batch-inserting-vb/_static/image5.png)](batch-inserting-vb/_static/image4.png)
+[![Drag 面板，以從 [工具箱] 拖曳至設計工具](batch-inserting-vb/_static/image5.png)](batch-inserting-vb/_static/image4.png)
 
 **圖 2**:從 [工具箱] 拖曳至設計工具拖曳面板 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image6.png))
 
@@ -57,12 +57,12 @@ ms.locfileid: "58424920"
 接下來，將按鈕和 GridView 控制項拖曳到 [面板] 中。 設定 [s] 按鈕`ID`屬性，以`ProcessShipment`及其`Text`程序產品出貨的屬性。 設定 GridView s`ID`屬性，以`ProductsGrid`和它的智慧標籤，從繫結至名為新 ObjectDataSource `ProductsDataSource`。 設定提取其資料從 ObjectDataSource`ProductsBLL`類別的`GetProducts`方法。 因為此 GridView 只用於顯示資料，設定下拉式清單中更新、 插入和刪除為 [（無）] 索引標籤。 按一下 完成 以完成設定資料來源精靈。
 
 
-[![顯示從 ProductsBLL 類別的 GetProducts 方法傳回的資料](batch-inserting-vb/_static/image8.png)](batch-inserting-vb/_static/image7.png)
+[![Display 從 ProductsBLL 類別的 GetProducts 方法傳回的資料](batch-inserting-vb/_static/image8.png)](batch-inserting-vb/_static/image7.png)
 
 **圖 3**:顯示從傳回的資料`ProductsBLL`類別 s`GetProducts`方法 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image9.png))
 
 
-[![設定下拉式清單中更新、 插入和刪除 （無） 索引標籤](batch-inserting-vb/_static/image11.png)](batch-inserting-vb/_static/image10.png)
+[![Set 下拉式清單中更新、 插入和刪除索引標籤，為 [（無）](batch-inserting-vb/_static/image11.png)](batch-inserting-vb/_static/image10.png)
 
 **圖 4**:設定下拉式清單中更新、 插入和刪除索引標籤為 （無） ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image12.png))
 
@@ -79,7 +79,7 @@ ms.locfileid: "58424920"
 請花一點時間檢閱我們透過瀏覽器的進度。 如 圖 5 所示，您應該會看到上述的 GridView 會列出產品 10 次的程序產品出貨 按鈕。
 
 
-[![GridView 列出產品，並提供排序和分頁功能](batch-inserting-vb/_static/image14.png)](batch-inserting-vb/_static/image13.png)
+[![T他的 GridView 會列出產品和提供排序和分頁功能](batch-inserting-vb/_static/image14.png)](batch-inserting-vb/_static/image13.png)
 
 **圖 5**:GridView 列出的產品和提供排序和分頁功能 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image15.png))
 
@@ -109,7 +109,7 @@ ms.locfileid: "58424920"
 此標記中，輸入，以返回 [設計] 檢視。 這`<table>`應該要顯示的四個資料行中，七個資料列的資料表，在設計師中，如 圖 6 所示。
 
 
-[![插入介面由所組成的四資料行，七個資料列的資料表](batch-inserting-vb/_static/image17.png)](batch-inserting-vb/_static/image16.png)
+[![T插入介面由所組成的他的四資料行，七個資料列的資料表](batch-inserting-vb/_static/image17.png)](batch-inserting-vb/_static/image16.png)
 
 **圖 6**:插入介面由所組成的四資料行，七個資料列的資料表 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image18.png))
 
@@ -119,7 +119,7 @@ ms.locfileid: "58424920"
 設定供應商 DropDownList s`ID`屬性，以`Suppliers`並將它繫結至名為新 ObjectDataSource `SuppliersDataSource`。 設定要擷取其資料的新 ObjectDataSource`SuppliersBLL`類別的`GetSuppliers`方法，並設定更新索引標籤為 （無） s 下拉式清單。 按一下 完成 以完成精靈。
 
 
-[![設定為使用 SuppliersBLL 類別的 GetSuppliers 方法的 ObjectDataSource](batch-inserting-vb/_static/image20.png)](batch-inserting-vb/_static/image19.png)
+[![C設定要使用 SuppliersBLL 類別的 GetSuppliers 方法的 ObjectDataSource](batch-inserting-vb/_static/image20.png)](batch-inserting-vb/_static/image19.png)
 
 **圖 7**:設定要使用 ObjectDataSource`SuppliersBLL`類別 s`GetSuppliers`方法 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image21.png))
 
@@ -127,7 +127,7 @@ ms.locfileid: "58424920"
 已`Suppliers`DropDownList 顯示器`CompanyName`資料欄位並使用`SupplierID`資料欄位做為其`ListItem`的值。
 
 
-[![顯示 供應商資料欄位和 SupplierID 做為值](batch-inserting-vb/_static/image23.png)](batch-inserting-vb/_static/image22.png)
+[![Display 供應商資料] 欄位和做為值使用 SupplierID](batch-inserting-vb/_static/image23.png)](batch-inserting-vb/_static/image22.png)
 
 **圖 8**:顯示`CompanyName`資料欄位並使用`SupplierID`的值 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image24.png))
 
@@ -137,7 +137,7 @@ ms.locfileid: "58424920"
 已新增並繫結至適當地設定 ObjectDataSources 這些兩個 dropdownlist 進行之後，您的畫面看起來應該類似於 圖 9。
 
 
-[![標頭資料列現在包含供應商和類別 dropdownlist 進行](batch-inserting-vb/_static/image26.png)](batch-inserting-vb/_static/image25.png)
+[![T此外，他標頭資料列現在會包含供應商和類別 dropdownlist 進行](batch-inserting-vb/_static/image26.png)](batch-inserting-vb/_static/image25.png)
 
 **圖 9**:標頭資料列現在包含`Suppliers`並`Categories`dropdownlist 進行 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image27.png))
 
@@ -157,7 +157,7 @@ ms.locfileid: "58424920"
 此時，您的畫面應該看起來類似 圖 10。
 
 
-[![插入介面現在包含文字方塊的產品名稱和價格](batch-inserting-vb/_static/image29.png)](batch-inserting-vb/_static/image28.png)
+[![T他插入介面現在包含文字方塊的產品名稱和價格](batch-inserting-vb/_static/image29.png)](batch-inserting-vb/_static/image28.png)
 
 **圖 10**:插入介面現在包含文字方塊的產品名稱和價格 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image30.png))
 
@@ -171,7 +171,7 @@ ms.locfileid: "58424920"
 圖 11 顯示 Visual Studio 設計工具，標籤已新增並設定之後。
 
 
-[![將 statuslabel 設控制項在兩個面板控制項上方放置](batch-inserting-vb/_static/image32.png)](batch-inserting-vb/_static/image31.png)
+[![P取代 statuslabel 設控制上述兩個面板控制項](batch-inserting-vb/_static/image32.png)](batch-inserting-vb/_static/image31.png)
 
 **圖 11**:地方`StatusLabel`控制上述兩個面板控制項 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image33.png))
 
@@ -208,7 +208,7 @@ ms.locfileid: "58424920"
 > 檢視時插入的介面，請花一點時間來測試 CompareValidators 單價的文字方塊上。 您應該會看到用戶端 messagebox 時按一下 新增產品出貨按鈕具有無效的貨幣值或值小於零的價格從出現的警告。
 
 
-[![按一下處理程序的產品出貨按鈕後顯示插入介面](batch-inserting-vb/_static/image35.png)](batch-inserting-vb/_static/image34.png)
+[![T按一下處理程序的產品出貨按鈕後顯示他插入介面](batch-inserting-vb/_static/image35.png)](batch-inserting-vb/_static/image34.png)
 
 **圖 12**:按一下處理程序的產品出貨按鈕後顯示插入介面 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image36.png))
 
@@ -237,17 +237,17 @@ ms.locfileid: "58424920"
 圖 13、 14 及 15 顯示插入和顯示作用中的介面。 [圖 13] 中的使用者輸入不含對應的產品名稱的單位價格值。 圖 14 顯示顯示介面之後三個新產品已經成功加入，而 圖 15 所顯示的是兩個新加入的產品在 gridview 裡 （在前一個頁面是第三個）。
 
 
-[![產品名稱是必要時輸入單位價格](batch-inserting-vb/_static/image38.png)](batch-inserting-vb/_static/image37.png)
+[![A 產品名稱是必要時輸入單位價格](batch-inserting-vb/_static/image38.png)](batch-inserting-vb/_static/image37.png)
 
 **圖 13**:產品名稱是必要時輸入單位價格 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image39.png))
 
 
-[![已新增三個新 Veggies 供應商 Mayumi s](batch-inserting-vb/_static/image41.png)](batch-inserting-vb/_static/image40.png)
+[![T三種新 Veggies 已新增供應商 Mayumi s](batch-inserting-vb/_static/image41.png)](batch-inserting-vb/_static/image40.png)
 
 **圖 14**:三個新 Veggies 已新增供應商 Mayumi s ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image42.png))
 
 
-[![新的產品可在 GridView 的最後一頁](batch-inserting-vb/_static/image44.png)](batch-inserting-vb/_static/image43.png)
+[![T他的新產品可在 GridView 的最後一頁](batch-inserting-vb/_static/image44.png)](batch-inserting-vb/_static/image43.png)
 
 **圖 15**:新產品可在 GridView 的最後一頁 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image45.png))
 

@@ -8,15 +8,15 @@ ms.date: 08/03/2007
 ms.assetid: 8be9a51b-ea6b-46c7-bfa2-476d9b14c24c
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1596e1c8c1b96fd41c842169b95914c7b02cf196
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: b9432fe9e65b62a90c822fcf3227e5e60fd5dc50
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424621"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399862"
 ---
-<a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a>使用受控碼建立預存程序和使用者定義函式 (VB)
-====================
+# <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a>使用受控碼建立預存程序和使用者定義函式 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_75_VB.zip)或[下載 PDF](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/datatutorial75vb1.pdf)
@@ -59,7 +59,7 @@ Microsoft SQL Server 2005 之前, 預存程序和 Udf 可以只定義為 T-SQL �
 我們要附加 Northwind 資料庫中的`DataFiles`資料夾 （或只要您可能會將其移動） 到 SQL Server 2005 Express Edition 資料庫執行個體。 以滑鼠右鍵按一下 [資料庫] 資料夾，並從內容功能表中選擇 [附加] 選項。 這會顯示 [附加資料庫] 對話方塊。 按一下 [新增] 按鈕，向下鑽研至適當`NORTHWND.MDF`檔案，然後按一下 [確定]。 此時您的畫面應該看起來類似 圖 2。
 
 
-[![連接到適當的資料庫執行個體](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image3.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image2.png)
+[![C來連線到適當的資料庫執行個體](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image3.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image2.png)
 
 **圖 2**:連接到適當的資料庫執行個體 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image4.png))
 
@@ -87,7 +87,7 @@ Microsoft SQL Server 2005 之前, 預存程序和 Udf 可以只定義為 T-SQL �
 首先開啟 Visual Studio。 從 檔案 功能表中，選擇 新增專案 以顯示 新增專案 對話方塊 （請參閱 圖 4）。 向下鑽研至資料庫專案類型，並從列於右側的範本，然後選擇 建立新的 SQL Server 專案。 我選擇此專案的名稱，`ManagedDatabaseConstructs`並放置在名為方案內`Tutorial75`。
 
 
-[![建立新的 SQL Server 專案](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image7.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image6.png)
+[![C建立新的 SQL Server 專案](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image7.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image6.png)
 
 **圖 4**:建立新的 SQL Server 專案 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image8.png))
 
@@ -136,7 +136,7 @@ SQL Server 專案繫結至特定的資料庫。 因此，建立新的 SQL Server
 可讓 s，將只會傳回所有已不再提供的產品的預存程序來開始。 將新的預存程序檔案`GetDiscontinuedProducts.vb`。
 
 
-[![加入新的預存程序，以名為 GetDiscontinuedProducts.vb](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image13.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image12.png)
+[![Add 新預存程序名為 GetDiscontinuedProducts.vb](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image13.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image12.png)
 
 **圖 8**:新增新預存程序名為`GetDiscontinuedProducts.vb`([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image14.png))
 
@@ -173,7 +173,7 @@ SQL Server 專案繫結至特定的資料庫。 因此，建立新的 SQL Server
 按一下 [執行] 圖示，以執行上述查詢中。
 
 
-[![更新 Northwind 資料庫 s 相容性層級](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image16.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image15.png)
+[![U更新 Northwind 資料庫 s 相容性層級](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image16.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image15.png)
 
 **圖 9**:更新 Northwind 資料庫 s 相容性層級 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image17.png))
 
@@ -201,7 +201,7 @@ SQL Server 專案繫結至特定的資料庫。 因此，建立新的 SQL Server
 若要檢查的 Northwind 資料庫的組態資訊、 輸入並執行命令`exec sp_configure`在查詢視窗中。 這會顯示設定 clr 已啟用目前設定為 0。
 
 
-[![Clr 已啟用 設定為 0 是 目前設定](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image21.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image20.png)
+[![T他 clr 已啟用] 設定為 0 是 [目前設定](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image21.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image20.png)
 
 **圖 12**:Clr 已啟用] 設定為 0 是 [目前設定 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image22.png))
 
@@ -216,7 +216,7 @@ SQL Server 專案繫結至特定的資料庫。 因此，建立新的 SQL Server
 Clr 已啟用設定完成後，我們已準備好執行 managed`GetDiscontinuedProducts`預存程序。 在查詢視窗中輸入，然後執行命令`exec` `GetDiscontinuedProducts`。 叫用預存程序會導致對應的 managed 程式碼中`GetDiscontinuedProducts`方法來執行。 此程式碼發出`SELECT`查詢以傳回已停用，並傳回呼叫的應用程式，也就是 SQL Server Management Studio 這個執行個體中的這項資料的所有產品。 Management Studio 接收這些結果，並在 [結果] 視窗中加以顯示。
 
 
-[![預存程序會傳回所有 GetDiscontinuedProducts 停產的產品](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image24.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image23.png)
+[![T他 GetDiscontinuedProducts 預存程序傳回所有已停止的產品](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image24.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image23.png)
 
 **圖 13**:`GetDiscontinuedProducts`預存程序傳回所有已停止的產品 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image25.png))
 
@@ -239,7 +239,7 @@ Clr 已啟用設定完成後，我們已準備好執行 managed`GetDiscontinuedP
 新增此程式碼之後, 重新部署 SQL Server 專案。 接下來，回到 SQL Server Management Studio，並重新整理的預存程序資料夾。 您應該會看到新的項目， `GetProductsWithPriceLessThan`。 從 [查詢] 視窗中，輸入，然後執行命令`exec GetProductsWithPriceLessThan 25`，也將列出所有產品小於 $25，如 [圖 14] 所示。
 
 
-[![顯示產品下 $25](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image27.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image26.png)
+[![P會顯示在 $25 roducts](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image27.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image26.png)
 
 **圖 14**:顯示產品下 $25 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image28.png))
 
@@ -257,7 +257,7 @@ Clr 已啟用設定完成後，我們已準備好執行 managed`GetDiscontinuedP
 加入新的方法，就會啟動我們在過去的教學課程中多次使用 [TableAdapter 查詢組態精靈]。 第一個步驟會要求我們指定 TableAdapter 存取資料庫的方式： 透過臨機操作 SQL 陳述式，或透過新的或現有的預存程序。 因為我們已建立並註冊`GetDiscontinuedProducts`managed 預存程序，與資料庫中，選擇 使用現有預存程序選項，然後按 下一步。
 
 
-[![選擇 使用現有的預存程序選項](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image30.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image29.png)
+[![C選擇使用現有預存程序選項](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image30.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image29.png)
 
 **圖 15**:選擇 使用現有預存程序選項 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image31.png))
 
@@ -265,7 +265,7 @@ Clr 已啟用設定完成後，我們已準備好執行 managed`GetDiscontinuedP
 下一個畫面會提示我們輸入方法會叫用預存程序。 選擇`GetDiscontinuedProducts`managed 預存程序，從下拉式清單，然後按 [下一步]。
 
 
-[![選取 GetDiscontinuedProducts Managed 預存程序](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image33.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image32.png)
+[![S選擇 GetDiscontinuedProducts Managed 預存程序](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image33.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image32.png)
 
 **圖 16**:選取  `GetDiscontinuedProducts` Managed 預存程序 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image34.png))
 
@@ -273,7 +273,7 @@ Clr 已啟用設定完成後，我們已準備好執行 managed`GetDiscontinuedP
 系統會要求我們指定預存程序傳回資料列、 單一值，或執行任何動作。 因為`GetDiscontinuedProducts`傳回集合的停產的產品資料列中，選擇第一個選項 （表格式資料），並按一下 [下一步]。
 
 
-[![選取 表格式資料選項](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image36.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image35.png)
+[![S選擇 [表格式資料選項](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image36.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image35.png)
 
 **圖 17**:選取 [表格式資料] 選項 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image37.png))
 
@@ -281,7 +281,7 @@ Clr 已啟用設定完成後，我們已準備好執行 managed`GetDiscontinuedP
 最後一個精靈畫面可讓我們指定使用的資料存取模式，以及產生方法的名稱。 保留核取方塊已核取和名稱的方法`FillByDiscontinued`和`GetDiscontinuedProducts`。 按一下 完成 以完成精靈。
 
 
-[![名稱方法 FillByDiscontinued 和 GetDiscontinuedProducts](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image39.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image38.png)
+[![N名稱 （） 方法 FillByDiscontinued 和 GetDiscontinuedProducts](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image39.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image38.png)
 
 **圖 18**:命名方法`FillByDiscontinued`並`GetDiscontinuedProducts`([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image40.png))
 
@@ -291,7 +291,7 @@ Clr 已啟用設定完成後，我們已準備好執行 managed`GetDiscontinuedP
 [圖 19] 顯示的 DataSet 設計工具的螢幕擷取畫面之後將方法加入至`ProductsTableAdapter`for`GetDiscontinuedProducts`和`GetProductsWithPriceLessThan`managed 預存程序。
 
 
-[![ProductsTableAdapter 包含在此步驟中新增新方法](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image42.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image41.png)
+[![T他 ProductsTableAdapter 納入新的方法加入此步驟](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image42.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image41.png)
 
 **圖 19**:`ProductsTableAdapter`包含在此步驟中的 新的方法加入 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image43.png))
 
@@ -312,12 +312,12 @@ Clr 已啟用設定完成後，我們已準備好執行 managed`GetDiscontinuedP
 開啟`ManagedFunctionsAndSprocs.aspx`頁面中`AdvancedDAL`資料夾，並從 [工具箱] 拖曳至設計工具拖曳至 GridView。 設定 GridView s`ID`屬性，以`DiscontinuedProducts`和它的智慧標籤，從繫結至名為新 ObjectDataSource `DiscontinuedProductsDataSource`。 設定提取其資料從 ObjectDataSource`ProductsBLLWithSprocs`類別的`GetDiscontinuedProducts`方法。
 
 
-[![設定使用 ProductsBLLWithSprocs 類別 ObjectDataSource](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image45.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image44.png)
+[![C設定使用 ProductsBLLWithSprocs 類別 ObjectDataSource](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image45.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image44.png)
 
 **圖 20**:設定要使用 ObjectDataSource`ProductsBLLWithSprocs`類別 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image46.png))
 
 
-[![從下拉式清單中選取的索引標籤中選擇 GetDiscontinuedProducts 方法](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image48.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image47.png)
+[![C選擇 GetDiscontinuedProducts 方法，從下拉式清單中選取索引標籤](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image48.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image47.png)
 
 **圖 21**:選擇`GetDiscontinuedProducts`方法，從下拉式清單中選取索引標籤中 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image49.png))
 
@@ -334,7 +334,7 @@ Clr 已啟用設定完成後，我們已準備好執行 managed`GetDiscontinuedP
 Managed 預存程序所傳回的結果封裝成`ProductsDataTable`dal 後又返回的 BLL，然後將它們傳回展示層，它們會繫結至 GridView 和顯示的位置。 如預期般，方格會列出已不再提供這些產品。
 
 
-[![列出已停止的產品](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image51.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image50.png)
+[![T此外，列出他已停止的產品](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image51.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image50.png)
 
 **圖 22**:列出已停止的產品 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image52.png))
 
@@ -358,7 +358,7 @@ Managed 預存程序所傳回的結果封裝成`ProductsDataTable`dal 後又返�
 我已新增`udf_ComputeInventoryValue`UDF Northwind 資料庫中;[圖 23] 顯示上述輸出`SELECT`時透過 Management Studio 檢視查詢。 也請注意，UDF 會列在 物件總管 中的純量值函式 資料夾底下。
 
 
-[![列出每項產品的庫存值](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image54.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image53.png)
+[![E列出每項產品庫存值 s](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image54.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image53.png)
 
 **圖 23**:列出每項產品的庫存值 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image55.png))
 
@@ -376,7 +376,7 @@ Udf 也可以傳回表格式資料。 比方說，我們可以建立 UDF，以�
 我已新增`udf_GetProductsByCategoryID`UDF Northwind 資料庫中;[圖 24] 顯示上述輸出`SELECT`時透過 Management Studio 檢視查詢。 傳回表格式資料的 Udf 可以在物件總管 中的 s 資料表值函式資料夾中找到。
 
 
-[![ProductID、 ProductName、 及 CategoryID 列出每個飲料](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image57.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image56.png)
+[![T每個飲料列出他 ProductID、 ProductName、 和 CategoryID](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image57.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image56.png)
 
 **圖 24**:`ProductID`， `ProductName`，並`CategoryID`會針對每個飲料列出 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image58.png))
 
@@ -392,7 +392,7 @@ Udf 也可以傳回表格式資料。 比方說，我們可以建立 UDF，以�
 若要將 managed 的 UDF 以便`ManagedDatabaseConstructs`專案、 方案總管 中的專案名稱上按一下滑鼠右鍵，然後選擇要加入新項目。 從 [加入新項目] 對話方塊中選取使用者定義的範本，並將新的 UDF 檔案命名`udf_ComputeInventoryValue_Managed.vb`。
 
 
-[![ManagedDatabaseConstructs 專案中加入新的 Managed 的 UDF](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image60.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image59.png)
+[![Add 新 Managed UDF，ManagedDatabaseConstructs 專案](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image60.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image59.png)
 
 **圖 25**:新增新 Managed UDF`ManagedDatabaseConstructs`專案 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image61.png))
 
@@ -444,7 +444,7 @@ Udf 也可以傳回表格式資料。 比方說，我們可以建立 UDF，以�
 假設我們想要偵錯`GetProductsWithPriceLessThan`managed 預存程序。 藉由設定中斷點的程式碼中，我們會開始`GetProductsWithPriceLessThan`方法。
 
 
-[![GetProductsWithPriceLessThan 方法中設定中斷點](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image64.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image63.png)
+[![Set GetProductsWithPriceLessThan 方法中的中斷點](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image64.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image63.png)
 
 **圖 27**:在 設定中斷點`GetProductsWithPriceLessThan`方法 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image65.png))
 
@@ -459,7 +459,7 @@ Udf 也可以傳回表格式資料。 比方說，我們可以建立 UDF，以�
 一旦您已輸入到上述指令碼`Test.sql`、 開始偵錯移至 偵錯 功能表並選擇 開始偵錯，或按 F5 或綠色工具列中 播放 圖示。 這會建置專案的方案中，Northwind 資料庫中，部署 managed 的資料庫物件，然後執行`Test.sql`指令碼。 此時，會叫用中斷點，而且我們可以逐步執行`GetProductsWithPriceLessThan`方法，檢查輸入參數的值等等。
 
 
-[![叫用中斷點，在 GetProductsWithPriceLessThan 方法](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image67.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image66.png)
+[![T他在 GetProductsWithPriceLessThan 方法已叫用中斷點](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image67.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image66.png)
 
 **圖 28**:中的中斷點`GetProductsWithPriceLessThan`點擊方法 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image68.png))
 
@@ -495,7 +495,7 @@ SQL Server 專案，讓您輕鬆建立、 編譯及部署 managed 的資料庫�
 [!code-console[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample19.cmd)]
 
 
-[![GetProductsWithPriceGreaterThan.vb 編譯為組件](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image70.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image69.png)
+[![Compile GetProductsWithPriceGreaterThan.vb 到組件](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image70.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image69.png)
 
 **圖 29**:編譯`GetProductsWithPriceGreaterThan.vb`成組件 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image71.png))
 
@@ -511,7 +511,7 @@ SQL Server 專案，讓您輕鬆建立、 編譯及部署 managed 的資料庫�
 從 Management Studio 中，展開 Northwind 資料庫中的 可程式性 資料夾。 及其子資料夾是組件。 手動將新的組件新增至資料庫中，以滑鼠右鍵按一下組件 資料夾，並從操作功能表中選擇新的組件。 新組件對話方塊 （請參閱圖 30） 此顯示。 按一下 瀏覽按鈕，選取`ManuallyCreatedDBObjects.dll`我們剛所編譯，，，然後按一下 確定 以加入資料庫中的組件的組件。 您不應該看見`ManuallyCreatedDBObjects.dll`物件總管 中的組件。
 
 
-[![將 ManuallyCreatedDBObjects.dll 組件加入至資料庫](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image73.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image72.png)
+[![Add ManuallyCreatedDBObjects.dll 組件，到資料庫](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image73.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image72.png)
 
 **圖 30**:新增`ManuallyCreatedDBObjects.dll`資料庫的組件 ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image74.png))
 
@@ -536,7 +536,7 @@ SQL Server 專案，讓您輕鬆建立、 編譯及部署 managed 的資料庫�
 如圖 32 所示，上述命令會顯示與這些產品的資訊`UnitPrice`大於美金 24.95。
 
 
-[![ManuallyCreatedDBObjects.dll 會列在 [物件總管]](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image77.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image76.png)
+[![T他 ManuallyCreatedDBObjects.dll 會列在 [物件總管](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image77.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image76.png)
 
 **圖 32**:`ManuallyCreatedDBObjects.dll`會列在 [物件總管] ([按一下以檢視完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image78.png))
 

@@ -8,15 +8,15 @@ ms.date: 07/17/2006
 ms.assetid: 56e15b33-93b8-43ad-8e19-44c6647ea05c
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 08a9e1db4f8c34b438d45c0fb74d852bbd249615
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 2fb954cca01b2201f574a86233af5aa6731568b0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422775"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401214"
 ---
-<a name="implementing-optimistic-concurrency-c"></a>實作開放式同步存取 (C#)
-====================
+# <a name="implementing-optimistic-concurrency-c"></a>實作開放式同步存取 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_21_CS.exe)或[下載 PDF](implementing-optimistic-concurrency-cs/_static/datatutorial21cs1.pdf)
@@ -31,7 +31,7 @@ ms.locfileid: "58422775"
 例如，想像一下，Jisun 和 Sam，兩位使用者已同時造訪我們允許更新和刪除透過 GridView 控制項產品的訪客的應用程式中的頁面。 同時按一下大約在同一時間 GridView 內的 [編輯] 按鈕。 Jisun 產品名稱變更為 「 Chai 茶"，然後按一下 [更新] 按鈕。 最後結果就是`UPDATE`傳送至資料庫，可設定的陳述式*所有*的產品的可更新的欄位 (即使 Jisun 只更新一個欄位， `ProductName`)。 在此時間點，資料庫的值"Chai 茶，「 飲料，供應商山，依此類推的此特定產品的類別。 不過，Sam 的畫面上的 GridView 仍會顯示產品名稱的可編輯的 GridView 資料列中為"Chai 」。 幾秒後 Jisun 的變更已認可，Sam 更新 「 調味品 」 類別目錄，然後按一下 更新。 這會導致`UPDATE`陳述式傳送到設定於 「 Chai，「 產品名稱的資料庫`CategoryID`對應飲料類別目錄識別碼，等等。 已覆寫 Jisun 的產品名稱變更。 [圖 1] 以圖形方式描述這一系列的事件。
 
 
-[![當兩位使用者同時更新資料錄那里一位使用者 s 可能會變更為覆寫其他](implementing-optimistic-concurrency-cs/_static/image2.png)](implementing-optimistic-concurrency-cs/_static/image1.png)
+[![W當兩個使用者同時更新那里記錄 s 可能性的一位使用者變更為 [覆寫其他](implementing-optimistic-concurrency-cs/_static/image2.png)](implementing-optimistic-concurrency-cs/_static/image1.png)
 
 **圖 1**:當兩位使用者同時更新那里記錄的可能會變更為 覆寫其他的一個使用者 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image3.png))
 
@@ -55,7 +55,7 @@ ms.locfileid: "58422775"
 開放式並行存取控制的運作方式是確保更新或刪除的記錄有相同的值，更新或刪除處理程序啟動時一樣。 比方說，當按一下可編輯的 GridView 內的 [編輯] 按鈕，記錄的值會從資料庫讀取和文字方塊和其他 Web 控制項中顯示。 GridView 會儲存這些原始值。 更新版本中，使用者會進行她的變更，然後按一下 [更新] 按鈕之後，原始值加上新的值會傳送到商務邏輯層，然後再到資料存取層。 資料存取層必須發出使用者開始編輯原始值是否仍在資料庫中的值相同，則只會更新資料錄的 SQL 陳述式。 圖 2 說明這一系列的事件。
 
 
-[![更新或刪除才會成功，原始的值必須等於目前的資料庫值](implementing-optimistic-concurrency-cs/_static/image5.png)](implementing-optimistic-concurrency-cs/_static/image4.png)
+[![F或更新或刪除才會成功，原始的值必須是目前資料庫的值等於](implementing-optimistic-concurrency-cs/_static/image5.png)](implementing-optimistic-concurrency-cs/_static/image4.png)
 
 **圖 2**:更新或刪除到成功，原始的值必須是等於目前資料庫的值 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image6.png))
 
@@ -75,10 +75,10 @@ ms.locfileid: "58422775"
 
 ## <a name="step-2-creating-a-data-access-layer-that-supports-optimistic-concurrency"></a>步驟 2：建立資料存取層，支援開放式並行存取
 
-若要建立新的具類型資料集，以滑鼠右鍵按一下`DAL``App_Code`資料夾，並新增新的資料集，名為`NorthwindOptimisticConcurrency`。 如我們所見第一個教學課程中，這樣會增加新的 TableAdapter 具類型資料集，會自動啟動 [TableAdapter 組態精靈]。 在第一個畫面中，我們系統會提示來指定要連接到-連線至相同的 Northwind 資料庫使用的資料庫`NORTHWNDConnectionString`上設定`Web.config`。
+若要建立新的具類型資料集，以滑鼠右鍵按一下`DAL``App_Code`資料夾，並新增新的資料集，名為`NorthwindOptimisticConcurrency`。 如我們所見第一個教學課程中，這樣會增加新的 TableAdapter 具類型資料集，會自動啟動 [TableAdapter 組態精靈]。 在第一個畫面中，我們系統會提示來指定要連接到-連線至相同的 Northwind 資料庫使用的資料庫`NORTHWNDConnectionString`上設定`Web.config`。
 
 
-[![連接到相同的 Northwind 資料庫](implementing-optimistic-concurrency-cs/_static/image8.png)](implementing-optimistic-concurrency-cs/_static/image7.png)
+[![C來連線至相同的 Northwind 資料庫](implementing-optimistic-concurrency-cs/_static/image8.png)](implementing-optimistic-concurrency-cs/_static/image7.png)
 
 **圖 3**:連接到相同的 Northwind 資料庫 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image9.png))
 
@@ -86,7 +86,7 @@ ms.locfileid: "58422775"
 接下來，我們會提示您，如何查詢資料： 臨機操作 SQL 陳述式，透過新的預存程序，或現有預存程序。 由於我們已在我們原始的 DAL 使用特定 SQL 查詢，使用此選項在此也。
 
 
-[![指定要使用特定 SQL 陳述式擷取的資料](implementing-optimistic-concurrency-cs/_static/image11.png)](implementing-optimistic-concurrency-cs/_static/image10.png)
+[![S指定要擷取使用之資料的特定 SQL 陳述式](implementing-optimistic-concurrency-cs/_static/image11.png)](implementing-optimistic-concurrency-cs/_static/image10.png)
 
 **圖 4**:指定要使用特定 SQL 陳述式擷取的資料 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image12.png))
 
@@ -97,7 +97,7 @@ ms.locfileid: "58422775"
 [!code-sql[Main](implementing-optimistic-concurrency-cs/samples/sample2.sql)]
 
 
-[![在原始的 DAL 使用相同的 SQL 查詢從產品的 TableAdapter](implementing-optimistic-concurrency-cs/_static/image14.png)](implementing-optimistic-concurrency-cs/_static/image13.png)
+[![Use 相同的 SQL 查詢，從原始的 DAL 產品 TableAdapter](implementing-optimistic-concurrency-cs/_static/image14.png)](implementing-optimistic-concurrency-cs/_static/image13.png)
 
 **圖 5**:使用相同的 SQL 查詢，從`Products`TableAdapter 中原始的 DAL ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image15.png))
 
@@ -105,7 +105,7 @@ ms.locfileid: "58422775"
 再移到下一個畫面上，按一下 [進階選項] 按鈕。 此外，要有這個 TableAdapter 採用開放式並行存取控制項，只要核取 [使用開放式並行存取] 核取方塊。
 
 
-[![啟用所檢查的開放式並行存取控制&quot;使用開放式並行存取&quot;核取方塊](implementing-optimistic-concurrency-cs/_static/image17.png)](implementing-optimistic-concurrency-cs/_static/image16.png)
+[![E啟用所檢查的開放式並行存取控制&quot;使用開放式並行存取&quot;核取方塊](implementing-optimistic-concurrency-cs/_static/image17.png)](implementing-optimistic-concurrency-cs/_static/image16.png)
 
 **圖 6**:選取 [使用開放式並行存取] 核取方塊以啟用開放式並行存取控制 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image18.png))
 
@@ -113,7 +113,7 @@ ms.locfileid: "58422775"
 最後，表示 TableAdapter 應該使用的資料存取模式，同時填入 DataTable，並傳回 DataTable;也表示應建立這些資料庫的直接方法。 將傳回的方法名稱的 DataTable 模式從 GetData GetProducts，以便反映我們在我們原始的 DAL 中使用的命名慣例。
 
 
-[![已利用所有的資料存取模式的 TableAdapter](implementing-optimistic-concurrency-cs/_static/image20.png)](implementing-optimistic-concurrency-cs/_static/image19.png)
+[![HTableAdapter 利用所有的資料存取模式 [ave](implementing-optimistic-concurrency-cs/_static/image20.png)](implementing-optimistic-concurrency-cs/_static/image19.png)
 
 **圖 7**:具有 TableAdapter 利用所有資料存取模式 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image21.png))
 
@@ -121,7 +121,7 @@ ms.locfileid: "58422775"
 完成精靈之後，DataSet 設計工具將包含強型別`Products`DataTable 和 TableAdapter。 請花一點時間來重新命名從 DataTable`Products`至`ProductsOptimisticConcurrency`，可以完成這件事您 DataTable 的標題列上按一下滑鼠右鍵，然後從操作功能表選擇重新命名。
 
 
-[![DataTable 和 TableAdapter 已新增至具類型資料集](implementing-optimistic-concurrency-cs/_static/image23.png)](implementing-optimistic-concurrency-cs/_static/image22.png)
+[![A DataTable 和 TableAdapter 已新增至具類型資料集](implementing-optimistic-concurrency-cs/_static/image23.png)](implementing-optimistic-concurrency-cs/_static/image22.png)
 
 **圖 8**:DataTable 和 TableAdapter 已加入至具類型資料集 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image24.png))
 
@@ -143,7 +143,7 @@ ms.locfileid: "58422775"
 若要這麼做，以滑鼠右鍵按一下 TableAdapter 的標題列上 (上方區域右邊`Fill`和`GetProducts`方法名稱)，然後從內容功能表中選擇 加入查詢。 這會啟動 [TableAdapter 查詢組態精靈]。 因為我們 TableAdapter 的初始組態中，選擇建立`GetProductByProductID(productID)`使用特定 SQL 陳述式的方法 （請參閱 圖 4）。 由於`GetProductByProductID(productID)`方法會傳回特定產品的相關資訊，代表這項查詢的`SELECT`查詢傳回的資料列的類型。
 
 
-[![將查詢類型做為標記&quot;選取會傳回資料列&quot;](implementing-optimistic-concurrency-cs/_static/image26.png)](implementing-optimistic-concurrency-cs/_static/image25.png)
+[![M查詢輸入做為 ark&quot;會傳回資料列選取&quot;](implementing-optimistic-concurrency-cs/_static/image26.png)](implementing-optimistic-concurrency-cs/_static/image25.png)
 
 **圖 9**:將查詢類型做為標記 」`SELECT`傳回資料列 」 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image27.png))
 
@@ -151,7 +151,7 @@ ms.locfileid: "58422775"
 在下一個畫面系統會提示我們提供的 SQL 查詢，以搭配預先載入的 TableAdapter 的預設查詢。 加強現有的查詢，以包含子句`WHERE ProductID = @ProductID`，如 [圖 10] 所示。
 
 
-[![加入 WHERE 子句加入預先載入的查詢，以傳回特定產品的記錄](implementing-optimistic-concurrency-cs/_static/image29.png)](implementing-optimistic-concurrency-cs/_static/image28.png)
+[![Add WHERE 子句加入 Pre-Loaded 查詢，以傳回特定的產品記錄](implementing-optimistic-concurrency-cs/_static/image29.png)](implementing-optimistic-concurrency-cs/_static/image28.png)
 
 **圖 10**:新增`WHERE`Pre-Loaded 查詢以傳回特定的產品記錄的子句 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image30.png))
 
@@ -159,7 +159,7 @@ ms.locfileid: "58422775"
 最後，變更產生的方法名稱以`FillByProductID`和`GetProductByProductID`。
 
 
-[![FillByProductID 和 GetProductByProductID 重新命名方法](implementing-optimistic-concurrency-cs/_static/image32.png)](implementing-optimistic-concurrency-cs/_static/image31.png)
+[![Rename FillByProductID 和 GetProductByProductID 方法](implementing-optimistic-concurrency-cs/_static/image32.png)](implementing-optimistic-concurrency-cs/_static/image31.png)
 
 **圖 11**:重新命名的方法`FillByProductID`並`GetProductByProductID`([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image33.png))
 
@@ -232,7 +232,7 @@ DAL 和完整的 BLL，全都是建立 ASP.NET 網頁，可以利用內建至系
 首先開啟`OptimisticConcurrency.aspx`頁面中`EditInsertDelete`資料夾，然後將 GridView 加入至設計工具中，設定其`ID`屬性設`ProductsGrid`。 從 GridView 的智慧標籤上，選擇建立新的 ObjectDataSource 名為`ProductsOptimisticConcurrencyDataSource`。 因為我們希望此 ObjectDataSource 使用 DAL 支援開放式並行存取，將它設定為使用`ProductsOptimisticConcurrencyBLL`物件。
 
 
-[![ObjectDataSource 使用了 ProductsOptimisticConcurrencyBLL 物件](implementing-optimistic-concurrency-cs/_static/image36.png)](implementing-optimistic-concurrency-cs/_static/image35.png)
+[![HObjectDataSource 使用 ProductsOptimisticConcurrencyBLL 物件 [ave](implementing-optimistic-concurrency-cs/_static/image36.png)](implementing-optimistic-concurrency-cs/_static/image35.png)
 
 **圖 13**:ObjectDataSource 使用了`ProductsOptimisticConcurrencyBLL`物件 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image37.png))
 
@@ -294,7 +294,7 @@ DAL 和完整的 BLL，全都是建立 ASP.NET 網頁，可以利用內建至系
 若要查看這為何重要，請花一點時間瀏覽我們的網頁瀏覽器中。 如預期般，GridView 會列出每項產品，包含最左邊的資料行中編輯和刪除按鈕。
 
 
-[![在 GridView 中所列出的產品](implementing-optimistic-concurrency-cs/_static/image39.png)](implementing-optimistic-concurrency-cs/_static/image38.png)
+[![T他產品會列在 [GridView](implementing-optimistic-concurrency-cs/_static/image39.png)](implementing-optimistic-concurrency-cs/_static/image38.png)
 
 **圖 14**:在 GridView 中所列出的產品 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image40.png))
 
@@ -302,7 +302,7 @@ DAL 和完整的 BLL，全都是建立 ASP.NET 網頁，可以利用內建至系
 如果您按一下 [刪除] 按鈕，針對任何產品，`FormatException`就會擲回。
 
 
-[![嘗試刪除 FormatException 中的任何產品結果](implementing-optimistic-concurrency-cs/_static/image42.png)](implementing-optimistic-concurrency-cs/_static/image41.png)
+[![A刪除任何產品導致 FormatException ttempting](implementing-optimistic-concurrency-cs/_static/image42.png)](implementing-optimistic-concurrency-cs/_static/image41.png)
 
 **圖 15**:嘗試刪除任何產品會導致`FormatException`([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image43.png))
 
@@ -323,7 +323,7 @@ DAL 和完整的 BLL，全都是建立 ASP.NET 網頁，可以利用內建至系
 之後解決這個問題，請嘗試再按一下 任何產品的 刪除 按鈕。 此時，您會收到`InvalidOperationException`ObjectDataSource 嘗試叫用的 BLL`UpdateProduct`方法。
 
 
-[![ObjectDataSource 找不到具有其想要傳送的輸入參數的方法](implementing-optimistic-concurrency-cs/_static/image45.png)](implementing-optimistic-concurrency-cs/_static/image44.png)
+[![T他 ObjectDataSource 找不到具有其想要傳送的輸入參數的方法](implementing-optimistic-concurrency-cs/_static/image45.png)](implementing-optimistic-concurrency-cs/_static/image44.png)
 
 **圖 16**:ObjectDataSource 找不到具有其想要傳送的輸入參數的方法 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image46.png))
 
@@ -342,7 +342,7 @@ DAL 和完整的 BLL，全都是建立 ASP.NET 網頁，可以利用內建至系
 在其他瀏覽器視窗中執行個體，不過，產品名稱文字方塊中仍會顯示 「 Chai"。 在這個第二個瀏覽器視窗中，更新`UnitPrice`至`25.00`。 沒有開放式並行存取支援，按一下第二個瀏覽器執行個體中的更新會將產品名稱改回"Chai 」，藉此覆寫第一個瀏覽器執行個體所做的變更。 使用採用開放式並行存取，不過，按一下第二個瀏覽器執行個體中的 [更新] 按鈕會導致[DBConcurrencyException](https://msdn.microsoft.com/library/system.data.dbconcurrencyexception.aspx)。
 
 
-[![DBConcurrencyException 偵測到並行違規時，會擲回](implementing-optimistic-concurrency-cs/_static/image48.png)](implementing-optimistic-concurrency-cs/_static/image47.png)
+[![W當偵測到並行違規時，DBConcurrencyException 就會擲回](implementing-optimistic-concurrency-cs/_static/image48.png)](implementing-optimistic-concurrency-cs/_static/image47.png)
 
 **圖 17**:偵測到並行違規時，`DBConcurrencyException`就會擲回 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image49.png))
 
@@ -369,7 +369,7 @@ DAL 和完整的 BLL，全都是建立 ASP.NET 網頁，可以利用內建至系
 之後新增這些標籤，在 Visual Studio 中的設計工具應該看起來會類似 圖 18。
 
 
-[![兩個 Label 控制項已新增至頁面](implementing-optimistic-concurrency-cs/_static/image51.png)](implementing-optimistic-concurrency-cs/_static/image50.png)
+[![Two 標籤控制項都已加入至頁面](implementing-optimistic-concurrency-cs/_static/image51.png)](implementing-optimistic-concurrency-cs/_static/image50.png)
 
 **圖 18**:兩個標籤控制項都已加入至頁面 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image52.png))
 
@@ -388,7 +388,7 @@ DAL 和完整的 BLL，全都是建立 ASP.NET 網頁，可以利用內建至系
 在面對的`DBConcurrencyException`例外狀況，此事件處理常式會顯示`UpdateConflictMessage`標籤控制項，並指出例外狀況已處理。 使用此程式碼就緒之後，更新資料錄，時發生並行違規時使用者的變更都會遺失，因為它們會已覆寫其他使用者修改相同的時間。 特別的是，GridView 會回到其預先編輯的狀態，並繫結至目前的資料庫資料。 這會使用先前不可見的其他使用者的變更來更新 GridView 資料列。 此外， `UpdateConflictMessage` Label 控制項將會向使用者解釋發生狀況。 圖 19 會詳細說明這一系列的事件。
 
 
-[![使用者 s 中的並行存取違規圖示不會遺失更新](implementing-optimistic-concurrency-cs/_static/image54.png)](implementing-optimistic-concurrency-cs/_static/image53.png)
+[![A 使用者 s 中的並行存取違規圖示不會遺失更新](implementing-optimistic-concurrency-cs/_static/image54.png)](implementing-optimistic-concurrency-cs/_static/image53.png)
 
 **圖 19**:使用者 s 中的並行存取違規圖示不會遺失更新 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image55.png))
 
@@ -409,7 +409,7 @@ BLL 方法的傳回值，請檢查透過 ObjectDataSource 的後置的層級的�
 發生並行存取違規，已取消使用者的 delete 要求。 GridView 會重新整理，顯示發生該記錄的時間之間的使用者的變更載入頁面時按下 [刪除] 按鈕。 當這類違規情形瓿時，`DeleteConflictMessage`標籤會顯示說明發生狀況 （請參閱圖 20）。
 
 
-[![S 刪除的使用者已取消面對並行存取違規](implementing-optimistic-concurrency-cs/_static/image57.png)](implementing-optimistic-concurrency-cs/_static/image56.png)
+[![A 並行存取違規時取消使用者的 Delete](implementing-optimistic-concurrency-cs/_static/image57.png)](implementing-optimistic-concurrency-cs/_static/image56.png)
 
 **圖 20**:S 刪除的使用者已取消面對並行存取違規 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-cs/_static/image58.png))
 

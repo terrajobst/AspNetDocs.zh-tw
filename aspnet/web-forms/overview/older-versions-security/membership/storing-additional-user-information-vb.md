@@ -8,15 +8,15 @@ ms.date: 01/18/2008
 ms.assetid: ee4b924e-8002-4dc3-819f-695fca1ff867
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 33e686cc3b977c6c740dfaf1057e1e399d5a298b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7dad99f2ae7e71cb697426bc97414fd4e4873aa5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052975"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400486"
 ---
-<a name="storing-additional-user-information-vb"></a>儲存其他的使用者資訊 (VB)
-====================
+# <a name="storing-additional-user-information-vb"></a>儲存其他的使用者資訊 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/ASPNET_Security_Tutorial_08_VB.zip)或[下載 PDF](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/aspnet_tutorial08_ExtraUserInfo_vb.pdf)
@@ -45,7 +45,7 @@ ASP。NET 的成員資格架構會提供彈性的介面來管理使用者。 成
 將此資料表加入我們的資料庫，請移至 Visual Studio 中的 [資料庫總管] 並向下切入至`SecurityTutorials`資料庫。 以滑鼠右鍵按一下 資料表 資料夾，然後選擇 加入新的資料表。 這會顯示介面，讓我們定義新的資料表的資料行。
 
 
-[![將新的資料表新增至 SecurityTutorials 資料庫](storing-additional-user-information-vb/_static/image2.png)](storing-additional-user-information-vb/_static/image1.png)
+[![Add SecurityTutorials 資料庫的新資料表](storing-additional-user-information-vb/_static/image2.png)](storing-additional-user-information-vb/_static/image1.png)
 
 **圖 1**:加入新的資料表，以便`SecurityTutorials`資料庫 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image3.png))
 
@@ -53,7 +53,7 @@ ASP。NET 的成員資格架構會提供彈性的介面來管理使用者。 成
 接下來，定義`GuestbookComments`的資料行。 新增名為的資料行開始`CommentId`型別的`uniqueidentifier`。 此資料行中會唯一識別訪客留言板中的每個註解，因此不允許`NULL`s，並將它標示為資料表的主索引鍵。 而不是提供的值`CommentId`每個欄位`INSERT`，我們可能表示新`uniqueidentifier`應該會自動產生值為這個欄位上`INSERT`資料行的預設值設定為`NEWID()`。 之後新增此第一個欄位，使它成為主索引鍵，並設定其預設值，您的畫面看起來應該類似螢幕擷取畫面的 圖 2 所示。
 
 
-[![新增名為 CommentId 主要資料行](storing-additional-user-information-vb/_static/image5.png)](storing-additional-user-information-vb/_static/image4.png)
+[![Add 主要的資料行名為 CommentId](storing-additional-user-information-vb/_static/image5.png)](storing-additional-user-information-vb/_static/image4.png)
 
 **圖 2**:新增主要的資料行名為`CommentId`([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image6.png))
 
@@ -73,7 +73,7 @@ ASP。NET 的成員資格架構會提供彈性的介面來管理使用者。 成
 按一下 [外部索引鍵關聯性] 對話方塊左下角的 [新增] 按鈕。 這會新增 新外部索引鍵條件約束，雖然我們仍需要在關係性中定義參與的資料表。
 
 
-[![使用外部索引鍵關聯性 對話方塊來管理資料表的 Foreign Key 條件約束](storing-additional-user-information-vb/_static/image8.png)](storing-additional-user-information-vb/_static/image7.png)
+[![Use 外部索引鍵關聯性] 對話方塊來管理資料表的 Foreign Key 條件約束](storing-additional-user-information-vb/_static/image8.png)](storing-additional-user-information-vb/_static/image7.png)
 
 **圖 3**:管理資料表的 Foreign Key 條件約束中使用外部索引鍵關聯性對話方塊 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image9.png))
 
@@ -81,7 +81,7 @@ ASP。NET 的成員資格架構會提供彈性的介面來管理使用者。 成
 接下來，按一下 「 資料表和資料行規格 資料列右側的省略符號圖示。 這會啟動 資料表和資料行對話方塊中，我們可以從中指定主索引鍵的資料表和資料行的外部索引鍵資料行從`GuestbookComments`資料表。 特別的是，選取`aspnet_Users`並`UserId`作為主索引鍵資料表和資料行，並`UserId`從`GuestbookComments`做外部索引鍵資料行的資料表 （請參閱 圖 4）。 定義之後的主要與外部索引鍵的資料表和資料行，按一下 [確定] 以返回 [外部索引鍵關聯性] 對話方塊中。
 
 
-[![建立外部索引鍵條件約束之間 aspnet_Users 和 GuesbookComments 資料表](storing-additional-user-information-vb/_static/image11.png)](storing-additional-user-information-vb/_static/image10.png)
+[![E外部索引鍵條件約束之間 aspnet_Users 和 GuesbookComments 資料表 stablish](storing-additional-user-information-vb/_static/image11.png)](storing-additional-user-information-vb/_static/image10.png)
 
 **圖 4**:建立外部索引鍵條件約束之間`aspnet_Users`並`GuesbookComments`資料表 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image12.png))
 
@@ -91,7 +91,7 @@ ASP。NET 的成員資格架構會提供彈性的介面來管理使用者。 成
 Foreign key 條件約束可以設定為父記錄已刪除時，自動刪除相關聯的子記錄中。 換句話說，我們可以設定這個外部索引鍵條件約束，以便當她的使用者帳戶被刪除時，系統會自動刪除使用者的訪客留言板項目。 若要這麼做，展開 「 INSERT 和 UPDATE 規格 」 一節，設定 刪除規則 屬性為 Cascade。
 
 
-[![設定串聯刪除外部索引鍵條件約束](storing-additional-user-information-vb/_static/image14.png)](storing-additional-user-information-vb/_static/image13.png)
+[![C設定串聯刪除外部索引鍵條件約束](storing-additional-user-information-vb/_static/image14.png)](storing-additional-user-information-vb/_static/image13.png)
 
 **圖 5**:設定串聯刪除外部索引鍵條件約束 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image15.png))
 
@@ -115,7 +115,7 @@ Foreign key 條件約束可以設定為父記錄已刪除時，自動刪除相�
 我們將建立新的資料表，稱為`UserProfiles`儲存主要城鎮、 首頁，並為每個使用者的簽章。 在 [資料庫總管] 視窗中的 [資料表] 資料夾上按一下滑鼠右鍵，然後選擇建立新的資料表。 第一個資料行命名`UserId`並將其類型設定為`uniqueidentifier`。 不允許`NULL`值，並標示為主索引鍵資料行。 接下來，新增名為的資料行：`HomeTown`型別的`nvarchar(50)`;`HomepageUrl`型別的`nvarchar(100)`; 和簽章的型別`nvarchar(500)`。 每個這些三個資料行可以接受`NULL`值。
 
 
-[![建立 UserProfiles 資料表](storing-additional-user-information-vb/_static/image17.png)](storing-additional-user-information-vb/_static/image16.png)
+[![Create UserProfiles 資料表](storing-additional-user-information-vb/_static/image17.png)](storing-additional-user-information-vb/_static/image16.png)
 
 **圖 6**:建立`UserProfiles`資料表 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image18.png))
 
@@ -133,7 +133,7 @@ Foreign key 條件約束可以設定為父記錄已刪除時，自動刪除相�
 開啟`AdditionalUserInfo.aspx`頁面中`Membership`資料夾和 DetailsView 控制項加入頁面上，將其 ID 屬性設定為`UserProfile`並清除其`Width`和`Height`屬性。 展開 DetailsView 的智慧標籤，然後選擇 繫結至新的資料來源控制項。 這會啟動 資料來源組態精靈 （請參閱 圖 7）。 第一個步驟會要求您指定的資料來源類型。 因為我們將直接連接到`SecurityTutorials`資料庫，請選擇 [資料庫] 圖示，指定`ID`做為`UserProfileDataSource`。
 
 
-[![新增名為 UserProfileDataSource SqlDataSource 控制項](storing-additional-user-information-vb/_static/image20.png)](storing-additional-user-information-vb/_static/image19.png)
+[![Add 新 SqlDataSource 控制項名為 UserProfileDataSource](storing-additional-user-information-vb/_static/image20.png)](storing-additional-user-information-vb/_static/image19.png)
 
 **圖 7**:新增新 SqlDataSource 控制項名為`UserProfileDataSource`([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image21.png))
 
@@ -141,7 +141,7 @@ Foreign key 條件約束可以設定為父記錄已刪除時，自動刪除相�
 下一個畫面會提示輸入要使用的資料庫。 我們已經定義中的連接字串`Web.config`針對`SecurityTutorials`資料庫。 這個的連接字串名稱 – `SecurityTutorialsConnectionString` – 應該是下拉式清單中。 選取此選項，然後按一下 [下一步]。
 
 
-[![從下拉式清單中選擇 SecurityTutorialsConnectionString](storing-additional-user-information-vb/_static/image23.png)](storing-additional-user-information-vb/_static/image22.png)
+[![C選擇下拉式清單中的 SecurityTutorialsConnectionString](storing-additional-user-information-vb/_static/image23.png)](storing-additional-user-information-vb/_static/image22.png)
 
 **圖 8**:選擇`SecurityTutorialsConnectionString`從下拉式清單中 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image24.png))
 
@@ -149,7 +149,7 @@ Foreign key 條件約束可以設定為父記錄已刪除時，自動刪除相�
 後續的畫面會要求我們指定的資料表和查詢的資料行。 選擇`UserProfiles`資料表下拉式清單中，並檢查所有的資料行。
 
 
-[![將從 UserProfiles 資料表傳回所有資料行](storing-additional-user-information-vb/_static/image26.png)](storing-additional-user-information-vb/_static/image25.png)
+[![B信號傳回所有 UserProfiles 資料表的資料行](storing-additional-user-information-vb/_static/image26.png)](storing-additional-user-information-vb/_static/image25.png)
 
 **圖 9**:將傳回所有的資料行`UserProfiles`資料表 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image27.png))
 
@@ -159,7 +159,7 @@ Foreign key 條件約束可以設定為父記錄已刪除時，自動刪除相�
 不幸的是沒有內建的參數來傳回目前登入使用者的來源`UserId`值。 我們必須以程式設計方式取得此值。 因此，設定為 無， 按一下 新增按鈕以新增參數，然後按一下 確定 的 來源 下拉式清單。
 
 
-[![UserId 資料行上加入 Filter 參數](storing-additional-user-information-vb/_static/image29.png)](storing-additional-user-information-vb/_static/image28.png)
+[![Add 的 Filter 參數上 UserId 資料行](storing-additional-user-information-vb/_static/image29.png)](storing-additional-user-information-vb/_static/image28.png)
 
 **圖 10**:上加入 Filter 參數`UserId`資料行 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image30.png))
 
@@ -187,7 +187,7 @@ Foreign key 條件約束可以設定為父記錄已刪除時，自動刪除相�
 瀏覽至 Visual Studio 中的 資料庫總管，然後展開 資料表 資料夾。 以滑鼠右鍵按一下`aspnet_Users`資料表並選擇 顯示資料表資料 」 以查看資料表中的記錄; 執行相同的動作，`UserProfiles`資料表。 [圖 11] 顯示當垂直並排這些結果。 在 我的資料庫中目前沒有`aspnet_Users`Bruce、 Fred 和 Tito，記錄，但在沒有記錄`UserProfiles`資料表。
 
 
-[![Aspnet_Users 的內容和 UserProfiles 資料表會顯示](storing-additional-user-information-vb/_static/image32.png)](storing-additional-user-information-vb/_static/image31.png)
+[![T他 aspnet_Users 內容和 UserProfiles 資料表會顯示](storing-additional-user-information-vb/_static/image32.png)](storing-additional-user-information-vb/_static/image31.png)
 
 **圖 11**:內容`aspnet_Users`並`UserProfiles`會顯示資料表 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image33.png))
 
@@ -195,7 +195,7 @@ Foreign key 條件約束可以設定為父記錄已刪除時，自動刪除相�
 新增新的記錄，以`UserProfiles`手動輸入值的表格`HomeTown`， `HomepageUrl`，和`Signature`欄位。 若要取得有效的最簡單方式`UserId`在新的值`UserProfiles`記錄是選取`UserId`欄位中的特定使用者帳戶從`aspnet_Users`資料表，複製並貼到`UserId`欄位`UserProfiles`。 [圖 12] 顯示`UserProfiles`資料表之後 Bruce 已新增新的記錄。
 
 
-[![記錄已加入 UserProfiles Bruce](storing-additional-user-information-vb/_static/image35.png)](storing-additional-user-information-vb/_static/image34.png)
+[![A 記錄已加入 Bruce UserProfiles](storing-additional-user-information-vb/_static/image35.png)](storing-additional-user-information-vb/_static/image34.png)
 
 **圖 12**:記錄已新增至`UserProfiles`Bruce 的 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image36.png))
 
@@ -203,7 +203,7 @@ Foreign key 條件約束可以設定為父記錄已刪除時，自動刪除相�
 返回`AdditionalUserInfo.aspx page`、 登入身分 Bruce。 如 [圖 13] 所示，Bruce 的設定會顯示。
 
 
-[![目前瀏覽使用者會顯示服務。 他的設定](storing-additional-user-information-vb/_static/image38.png)](storing-additional-user-information-vb/_static/image37.png)
+[![T他目前瀏覽的使用者會顯示服務。 他的設定](storing-additional-user-information-vb/_static/image38.png)](storing-additional-user-information-vb/_static/image37.png)
 
 **圖 13**:目前瀏覽使用者會顯示服務。 他的設定 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image39.png))
 
@@ -223,7 +223,7 @@ Foreign key 條件約束可以設定為父記錄已刪除時，自動刪除相�
 接下來，按一下 [重新整理參數] 按鈕，這將會在 SqlDataSource 控制項的建立參數`UpdateParameters`集合中的參數的每個`UPDATE`陳述式。 保留所有的參數集來源為 None，然後按一下 [確定] 按鈕完成對話方塊。
 
 
-[![指定 SqlDataSource UpdateCommand 和 UpdateParameters](storing-additional-user-information-vb/_static/image41.png)](storing-additional-user-information-vb/_static/image40.png)
+[![S指定 SqlDataSource UpdateCommand 和 UpdateParameters](storing-additional-user-information-vb/_static/image41.png)](storing-additional-user-information-vb/_static/image40.png)
 
 **圖 14**:指定 SqlDataSource`UpdateCommand`並`UpdateParameters`([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image42.png))
 
@@ -239,7 +239,7 @@ Foreign key 條件約束可以設定為父記錄已刪除時，自動刪除相�
 請繼續進行，並測試透過瀏覽器的此頁面。 使用具有對應的記錄中的使用者瀏覽時`UserProfiles`，使用者的設定會顯示在可編輯的介面。
 
 
-[![DetailsView 呈現可編輯的介面](storing-additional-user-information-vb/_static/image44.png)](storing-additional-user-information-vb/_static/image43.png)
+[![T他 DetailsView 呈現可編輯的介面](storing-additional-user-information-vb/_static/image44.png)](storing-additional-user-information-vb/_static/image43.png)
 
 **圖 15**:DetailsView 呈現可編輯介面 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image45.png))
 
@@ -257,7 +257,7 @@ Foreign key 條件約束可以設定為父記錄已刪除時，自動刪除相�
 返回`AdditionalUserInfo.aspx`頁面上透過瀏覽器，並更新的資料。 此時，很有幫助的狀態訊息會顯示。
 
 
-[![簡短訊息會顯示當更新設定](storing-additional-user-information-vb/_static/image47.png)](storing-additional-user-information-vb/_static/image46.png)
+[![A 短訊息會顯示當更新設定](storing-additional-user-information-vb/_static/image47.png)](storing-additional-user-information-vb/_static/image46.png)
 
 **圖 16**:已更新的設定時，會顯示簡短訊息 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image48.png))
 
@@ -309,7 +309,7 @@ Foreign key 條件約束可以設定為父記錄已刪除時，自動刪除相�
 [圖 17] 顯示的內容`GuestbookComments`資料表後兩個註解已保留。
 
 
-[![您可以看到訪客留言板中的註解 GuestbookComments 資料表](storing-additional-user-information-vb/_static/image50.png)](storing-additional-user-information-vb/_static/image49.png)
+[![You 可以看到訪客留言板中的註解 GuestbookComments 資料表](storing-additional-user-information-vb/_static/image50.png)](storing-additional-user-information-vb/_static/image49.png)
 
 **圖 17**:您可以看到在訪客留言`GuestbookComments`資料表 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image51.png))
 
@@ -335,7 +335,7 @@ Foreign key 條件約束可以設定為父記錄已刪除時，自動刪除相�
 剩下的就是指定要傳回的資料行。 從`GuestbookComments`資料表選取`Subject`， `Body`，和`CommentDate`資料行，傳回`HomeTown`， `HomepageUrl`，以及`Signature`中的資料行`UserProfiles`資料表;，並傳回`UserName`從`aspnet_Users`. 此外，新增 「`ORDER BY CommentDate DESC`」 的結尾`SELECT`查詢，以便先傳回最新的文章。 完成之後這些選取項目，您的查詢產生器介面看起來應該類似 圖 18 螢幕擷取畫面。
 
 
-[![建構查詢會聯結 GuestbookComments、 UserProfiles 和 aspnet_Users 資料表](storing-additional-user-information-vb/_static/image53.png)](storing-additional-user-information-vb/_static/image52.png)
+[![T他建構查詢聯結 GuestbookComments、 UserProfiles 和 aspnet_Users 資料表](storing-additional-user-information-vb/_static/image53.png)](storing-additional-user-information-vb/_static/image52.png)
 
 **圖 18**:建構查詢`JOIN`s `GuestbookComments`， `UserProfiles`，以及`aspnet_Users`資料表 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image54.png))
 
@@ -402,7 +402,7 @@ CreateUserWizard 控制項在其工作流程期間引發的事件數目。 Creat
 請瀏覽`EnhancedCreateUserWizard.aspx`頁面上透過瀏覽器，並建立新的使用者帳戶。 完成之後，請返回 Visual Studio，並檢查的內容`aspnet_Users`和`UserProfiles`資料表 （如同上一步 圖 12）。 您應該會看到新的使用者帳戶，在`aspnet_Users`與其相對應`UserProfiles`資料列 (與`NULL`的值`HomeTown`， `HomepageUrl`，和`Signature`)。
 
 
-[![已加入新的使用者帳戶和 UserProfiles 記錄](storing-additional-user-information-vb/_static/image59.png)](storing-additional-user-information-vb/_static/image58.png)
+[![A 已加入新的使用者帳戶和 UserProfiles 記錄](storing-additional-user-information-vb/_static/image59.png)](storing-additional-user-information-vb/_static/image58.png)
 
 **圖 20**:新的使用者帳戶及`UserProfiles`已新增記錄 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image60.png))
 
@@ -438,7 +438,7 @@ CreateUserWizard 控制項的預設標記會定義兩個`WizardSteps`:`CreateUse
 [圖 21] 顯示工作流程時，加入`WizardStep`前面`CreateUserWizardStep`。 因為已收集的其他使用者資訊的時間`CreatedUser`事件引發時，我們只需要是更新`CreatedUser`事件處理常式來擷取這些輸入，並將這些方案用於`INSERT`陳述式的參數值 （而非`DBNull.Value`).
 
 
-[![當其他 WizardStep 前面 CreateUserWizardStep 時 CreateUserWizard 工作流程](storing-additional-user-information-vb/_static/image62.png)](storing-additional-user-information-vb/_static/image61.png)
+[![T他 CreateUserWizard 工作流程時的額外 WizardStep 前面 CreateUserWizardStep](storing-additional-user-information-vb/_static/image62.png)](storing-additional-user-information-vb/_static/image61.png)
 
 **圖 21**:CreateUserWizard 工作流程時額外`WizardStep`Precedes `CreateUserWizardStep` ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image63.png))
 
@@ -446,7 +446,7 @@ CreateUserWizard 控制項的預設標記會定義兩個`WizardSteps`:`CreateUse
 如果自訂`WizardStep`放置*之後* `CreateUserWizardStep`，不過，建立使用者帳戶的程序，就會發生前使用者有機會輸入她的主要城鎮、 首頁或簽章。 在此情況下，這項額外資訊必須要插入至資料庫之後建立的使用者帳戶，如圖 22 所示。
 
 
-[![當其他 WizardStep 之後 CreateUserWizardStep CreateUserWizard 工作流程](storing-additional-user-information-vb/_static/image65.png)](storing-additional-user-information-vb/_static/image64.png)
+[![T他 CreateUserWizard 工作流程時其他 WizardStep 出現之後 CreateUserWizardStep](storing-additional-user-information-vb/_static/image65.png)](storing-additional-user-information-vb/_static/image64.png)
 
 **圖 22**:CreateUserWizard 工作流程時額外`WizardStep`出現之後`CreateUserWizardStep`([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image66.png))
 
@@ -458,7 +458,7 @@ CreateUserWizard 控制項的預設標記會定義兩個`WizardSteps`:`CreateUse
 從 CreateUserWizard 控制項的智慧標籤，選取 「 新增/移除`WizardStep`s"，它會啟動`WizardStep`集合編輯器對話方塊。 加入新`WizardStep`，將其`ID`要`UserSettings`、 其`Title`到 [您的設定] 並將其`StepType`至`Step`。 然後將它定位好得之後`CreateUserWizardStep`（「 註冊您的新帳戶的"），以及之前`CompleteWizardStep`（「 完成 」），如圖 23 所示。
 
 
-[![加入新的 WizardStep 至 CreateUserWizard 控制項](storing-additional-user-information-vb/_static/image68.png)](storing-additional-user-information-vb/_static/image67.png)
+[![Add CreateUserWizard 控制項的新 WizardStep](storing-additional-user-information-vb/_static/image68.png)](storing-additional-user-information-vb/_static/image67.png)
 
 **圖 23**:加入新`WizardStep`CreateUserWizard 控制項 ([按一下以檢視完整大小的影像](storing-additional-user-information-vb/_static/image69.png))
 

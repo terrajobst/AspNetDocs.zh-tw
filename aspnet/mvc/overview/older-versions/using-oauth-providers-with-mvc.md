@@ -8,15 +8,15 @@ ms.date: 06/19/2013
 ms.assetid: 7a87f16f-0e19-4f15-a88a-094ae866c4a2
 msc.legacyurl: /mvc/overview/older-versions/using-oauth-providers-with-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: d0203b62c911056fc56ed103c1c42f67816cbbf0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c2fe74c3d7b1aa0d230f1893f6ba7dcaa7a88419
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065725"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396976"
 ---
-<a name="using-oauth-providers-with-mvc-4"></a>使用 OAuth 提供者與 MVC 4
-====================
+# <a name="using-oauth-providers-with-mvc-4"></a>使用 OAuth 提供者與 MVC 4
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本教學課程會示範如何建置 ASP.NET MVC 4 web 應用程式，可讓使用者從外部提供者，例如 Facebook、 Twitter、 Microsoft 或 Google 的認證登入，並整合的一些功能，這些提供者將從您web 應用程式。 為了簡單起見，本教學課程著重於使用來自 Facebook 的認證。

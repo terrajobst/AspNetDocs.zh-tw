@@ -8,15 +8,15 @@ ms.date: 03/31/2010
 ms.assetid: af882aef-56f5-4e9a-8f95-3977fde20e74
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/displaying-data-with-the-objectdatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 45f72cfb06cdd4ee624f9930a360d5a85a98a9c1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a861fbbf2813a659f5301e43bd851345cac34e9f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045825"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380024"
 ---
-<a name="displaying-data-with-the-objectdatasource-c"></a>使用 ObjectDataSource 顯示資料 (C#)
-====================
+# <a name="displaying-data-with-the-objectdatasource-c"></a>使用 ObjectDataSource 顯示資料 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/4/6/3/463cf87c-4724-4cbc-b7b5-3f866f43ba50/ASPNET_Data_Tutorial_4_CS.exe)或[下載 PDF](displaying-data-with-the-objectdatasource-cs/_static/datatutorial04cs1.pdf)
@@ -39,7 +39,7 @@ ASP.NET 2.0 隨附於五個內建的資料來源控制項[SqlDataSource](https:/
 ObjectDataSource 會做為其他物件所使用的 proxy。 若要設定 ObjectDataSource 我們指定此基礎物件和其方法如何對應至的 ObjectDataSource `Select`， `Insert`， `Update`，和`Delete`方法。 一旦已指定此基礎物件，其方法對應到 ObjectDataSource 的我們可以為資料 Web 控制項的方式來然後繫結 ObjectDataSource。 ASP.NET 隨附了許多資料 Web 控制項，包括 GridView、 DetailsView、 RadioButtonList 和下拉式清單中，其他項目。 在頁面生命週期中，資料 Web 控制項可能需要存取的資料繫結，它將會完成藉由叫用其 ObjectDataSource`Select`方法; 如果資料 Web 控制項支援插入、 更新或刪除，可能會呼叫其ObjectDataSource 的`Insert`， `Update`，或`Delete`方法。 這些呼叫路由傳送至適當的基礎物件的方法的 ObjectDataSource 的下列圖所示。
 
 
-[![ObjectDataSource 做為 Proxy](displaying-data-with-the-objectdatasource-cs/_static/image3.png)](displaying-data-with-the-objectdatasource-cs/_static/image2.png)
+[![T他 ObjectDataSource 作為 Proxy](displaying-data-with-the-objectdatasource-cs/_static/image3.png)](displaying-data-with-the-objectdatasource-cs/_static/image2.png)
 
 **圖 2**:ObjectDataSource 可做為 Proxy ([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image4.png))
 
@@ -57,7 +57,7 @@ ObjectDataSource 可以用來叫用方法來插入、 更新或刪除資料，�
 若要指定 ObjectDataSource 的基礎物件和該物件的方法如何對應到 ObjectDataSource 的按一下 從 ObjectDataSource 的智慧標籤的 設定資料來源 連結。
 
 
-[![按一下 設定從智慧標籤的資料來源連結](displaying-data-with-the-objectdatasource-cs/_static/image6.png)](displaying-data-with-the-objectdatasource-cs/_static/image5.png)
+[![C按一下從智慧標籤設定資料來源連結](displaying-data-with-the-objectdatasource-cs/_static/image6.png)](displaying-data-with-the-objectdatasource-cs/_static/image5.png)
 
 **圖 3**:按一下智慧標籤中設定資料來源連結 ([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image7.png))
 
@@ -67,7 +67,7 @@ ObjectDataSource 可以用來叫用方法來插入、 更新或刪除資料，�
 在此第一個畫面中選擇`ProductsBLL`類別從下拉式清單中，按一下 [下一步]。
 
 
-[![使用 ObjectDataSource 控制項來指定要使用的物件](displaying-data-with-the-objectdatasource-cs/_static/image9.png)](displaying-data-with-the-objectdatasource-cs/_static/image8.png)
+[![S指定要與 ObjectDataSource 控制項搭配使用的物件](displaying-data-with-the-objectdatasource-cs/_static/image9.png)](displaying-data-with-the-objectdatasource-cs/_static/image8.png)
 
 **圖 4**:使用 ObjectDataSource 控制項來指定要使用的物件 ([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image10.png))
 
@@ -75,7 +75,7 @@ ObjectDataSource 可以用來叫用方法來插入、 更新或刪除資料，�
 在精靈中的下一個畫面會提示您選取 ObjectDataSource 應叫用哪一種方法。 下拉式清單會列出這些方法，從上一個畫面中選取之物件中傳回的資料。 我們在這裡看到`GetProductByProductID`， `GetProducts`， `GetProductsByCategoryID`，和`GetProductsBySupplierID`。 選取 `GetProducts`方法，從下拉式清單按一下 完成 (如果您已新增`DataObjectMethodAttribute`到`ProductBLL`的預設會選取 上一個教學課程中，此選項中所示的方法)。
 
 
-[![選擇方法來傳回資料，從 [選取] 索引標籤](displaying-data-with-the-objectdatasource-cs/_static/image12.png)](displaying-data-with-the-objectdatasource-cs/_static/image11.png)
+[![C選擇 [選取] 索引標籤的傳回資料的方法](displaying-data-with-the-objectdatasource-cs/_static/image12.png)](displaying-data-with-the-objectdatasource-cs/_static/image11.png)
 
 **圖 5**:傳回的資料選擇的方法，從 [選取] 索引標籤 ([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image13.png))
 
@@ -98,7 +98,7 @@ ObjectDataSource 的設定資料來源精靈 提供快速的方法來指定它�
 新增 GridView 控制項從工具箱拖曳至`SimpleDisplay.aspx`的設計介面。 從 GridView 的智慧標籤上，選擇我們在步驟 1 中新增的 ObjectDataSource 控制項。 這會自動在每個屬性傳回的資料從 ObjectDataSource 的 gridview 裡建立 BoundField`Select`方法 （也就是產品 DataTable 所定義的屬性）。
 
 
-[![已新增至頁面的 GridView 和繫結到 ObjectDataSource](displaying-data-with-the-objectdatasource-cs/_static/image15.png)](displaying-data-with-the-objectdatasource-cs/_static/image14.png)
+[![A 已新增至頁面的 GridView 和繫結至 ObjectDataSource](displaying-data-with-the-objectdatasource-cs/_static/image15.png)](displaying-data-with-the-objectdatasource-cs/_static/image14.png)
 
 **圖 6**:GridView 已新增至頁面，並繫結至的 ObjectDataSource ([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image16.png))
 
@@ -106,7 +106,7 @@ ObjectDataSource 的設定資料來源精靈 提供快速的方法來指定它�
 您可以再自訂、 重新排列，或移除 GridView 的 BoundFields，即可從智慧標籤的 編輯資料行 選項。
 
 
-[![管理透過 [編輯資料行] 對話方塊中的 GridView 的 BoundFields](displaying-data-with-the-objectdatasource-cs/_static/image18.png)](displaying-data-with-the-objectdatasource-cs/_static/image17.png)
+[![M管理 GridView 的 BoundFields 透過編輯資料行對話方塊](displaying-data-with-the-objectdatasource-cs/_static/image18.png)](displaying-data-with-the-objectdatasource-cs/_static/image17.png)
 
 **圖 7**:管理 GridView 的 BoundFields 透過編輯資料行對話方塊 ([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image19.png))
 
@@ -117,7 +117,7 @@ ObjectDataSource 的設定資料來源精靈 提供快速的方法來指定它�
 [!code-aspx[Main](displaying-data-with-the-objectdatasource-cs/samples/sample2.aspx)]
 
 
-[![GridView 的 BoundFields 已經自訂](displaying-data-with-the-objectdatasource-cs/_static/image21.png)](displaying-data-with-the-objectdatasource-cs/_static/image20.png)
+[![T已自訂他 GridView BoundFields](displaying-data-with-the-objectdatasource-cs/_static/image21.png)](displaying-data-with-the-objectdatasource-cs/_static/image20.png)
 
 **圖 8**:GridView 的已自訂 BoundFields ([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image22.png))
 
@@ -133,7 +133,7 @@ ObjectDataSource 的設定資料來源精靈 提供快速的方法來指定它�
 將新的面板檔案新增至名為您專案啟動`GridView.skin`方案總管 中的專案名稱上按一下滑鼠右鍵，然後選擇 加入新項目。
 
 
-[![新增名為 GridView.skin 面板檔案](displaying-data-with-the-objectdatasource-cs/_static/image24.png)](displaying-data-with-the-objectdatasource-cs/_static/image23.png)
+[![Add 面板檔案命名為 GridView.skin](displaying-data-with-the-objectdatasource-cs/_static/image24.png)](displaying-data-with-the-objectdatasource-cs/_static/image23.png)
 
 **圖 9**:新增面板檔案命名為`GridView.skin`([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image25.png))
 
@@ -141,7 +141,7 @@ ObjectDataSource 的設定資料來源精靈 提供快速的方法來指定它�
 面板檔案必須放在佈景主題，其位於`App_Themes`資料夾。 因為我們還沒有這類資料夾，Visual Studio 將請提供建立一個讓我們加入我們的第一個面板時。 按一下 [是] 以建立`App_Theme`資料夾，並將新`GridView.skin`那里檔案。
 
 
-[![讓 Visual Studio 建立 App_Theme 資料夾](displaying-data-with-the-objectdatasource-cs/_static/image27.png)](displaying-data-with-the-objectdatasource-cs/_static/image26.png)
+[![Let Visual Studio 建立 App_Theme 資料夾](displaying-data-with-the-objectdatasource-cs/_static/image27.png)](displaying-data-with-the-objectdatasource-cs/_static/image26.png)
 
 **圖 10**:讓 Visual Studio 建立`App_Theme`資料夾 ([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image28.png))
 
@@ -172,7 +172,7 @@ ObjectDataSource 的設定資料來源精靈 提供快速的方法來指定它�
 這樣就全部完成了！ `styleSheetTheme`值表示指定佈景主題中的屬性應該*不*覆寫控制層級上指定的屬性。 若要指定佈景主題設定應該也能造就控制設定，請使用`theme`屬性的位置`styleSheetTheme`; 不幸的是，透過指定的主題設定`theme`屬性不會出現在 Visual Studio 設計檢視中。 請參閱[ASP.NET 佈景主題和面板概觀](https://msdn.microsoft.com/library/ykzx33wh.aspx)並[伺服器端樣式使用佈景主題](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx)如需主題和面板; 詳細資訊，請參閱[How To:適用於 ASP.NET 佈景主題](https://msdn.microsoft.com/library/0yy5hxdk(VS.80).aspx)如需有關設定頁面，即可使用佈景主題。
 
 
-[![GridView 會顯示產品的名稱、 類別、 供應商、 價格及已停用的資訊](displaying-data-with-the-objectdatasource-cs/_static/image31.png)](displaying-data-with-the-objectdatasource-cs/_static/image30.png)
+[![T他的 GridView 會顯示產品的名稱、 類別、 供應商、 價格和停用資訊](displaying-data-with-the-objectdatasource-cs/_static/image31.png)](displaying-data-with-the-objectdatasource-cs/_static/image30.png)
 
 **圖 12**:GridView 會顯示產品的名稱、 類別、 供應商、 價格和已停止的資訊 ([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image32.png))
 
@@ -184,7 +184,7 @@ GridView 會顯示傳回的資料來源控制項所繫結每一筆記錄的一�
 開始加入的 DetailsView 控制項*上面*在 GridView `SimpleDisplay.aspx`。 接下來，繫結至 GridView 為相同的 ObjectDataSource 控制項。 使用 GridView，BoundField 會新增到 ObjectDataSource 的所傳回的物件中每一個屬性 DetailsView 像`Select`方法。 唯一的差別在於，DetailsView BoundFields 配置是水平方式而不是以垂直方式。
 
 
-[![加入至網頁的 DetailsView，並將它繫結到 ObjectDataSource](displaying-data-with-the-objectdatasource-cs/_static/image34.png)](displaying-data-with-the-objectdatasource-cs/_static/image33.png)
+[![Add 至網頁的 DetailsView 和繫結至 ObjectDataSource](displaying-data-with-the-objectdatasource-cs/_static/image34.png)](displaying-data-with-the-objectdatasource-cs/_static/image33.png)
 
 **圖 13**:加入至網頁的 DetailsView 和繫結至的 ObjectDataSource ([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image35.png))
 
@@ -192,7 +192,7 @@ GridView 會顯示傳回的資料來源控制項所繫結每一筆記錄的一�
 例如 GridView、 DetailsView BoundFields 可以調整才能挑提供更客製化的 ObjectDataSource 所傳回的資料顯示。 [圖 14] 顯示 DetailsView 之後其 BoundFields 和`CssClass`屬性已設定，使其外觀類似於 GridView 範例。
 
 
-[![DetailsView 顯示單一記錄](displaying-data-with-the-objectdatasource-cs/_static/image37.png)](displaying-data-with-the-objectdatasource-cs/_static/image36.png)
+[![T他 DetailsView 顯示單一記錄](displaying-data-with-the-objectdatasource-cs/_static/image37.png)](displaying-data-with-the-objectdatasource-cs/_static/image36.png)
 
 **圖 14**:DetailsView 顯示單一記錄 ([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image38.png))
 
@@ -200,12 +200,12 @@ GridView 會顯示傳回的資料來源控制項所繫結每一筆記錄的一�
 請注意，DetailsView 只會顯示其資料來源傳回的第一筆記錄。 若要讓使用者逐步執行的所有記錄，一次，我們必須啟用 DetailsView 的分頁。 若要這樣做，請返回 Visual Studio 並檢查 DetailsView 的智慧標籤的 啟用分頁核取方塊。
 
 
-[![啟用在 DetailsView 控制項中的分頁](displaying-data-with-the-objectdatasource-cs/_static/image40.png)](displaying-data-with-the-objectdatasource-cs/_static/image39.png)
+[![E啟用在 DetailsView 控制項中的分頁](displaying-data-with-the-objectdatasource-cs/_static/image40.png)](displaying-data-with-the-objectdatasource-cs/_static/image39.png)
 
 **圖 15**:啟用在 DetailsView 控制項中的分頁 ([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image41.png))
 
 
-[![啟用分頁，DetailsView 可讓使用者檢視的任何產品](displaying-data-with-the-objectdatasource-cs/_static/image43.png)](displaying-data-with-the-objectdatasource-cs/_static/image42.png)
+[![W第 i 個分頁啟用 DetailsView 可讓使用者檢視的任何產品](displaying-data-with-the-objectdatasource-cs/_static/image43.png)](displaying-data-with-the-objectdatasource-cs/_static/image42.png)
 
 **圖 16**:啟用分頁，DetailsView 允許使用者檢視的任何產品 ([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image44.png))
 
@@ -221,18 +221,18 @@ DetailsView 是很固定在傳回的 ObjectDataSource 每一筆記錄的顯示�
 加入 FormView 控制項來`SimpleDisplay.aspx`頁面的設計介面。 一開始 FormView 會顯示為灰色區塊，通知我們，我們需要最小值，提供控制項的`ItemTemplate`。
 
 
-[![FormView 必須包含一個 ItemTemplate](displaying-data-with-the-objectdatasource-cs/_static/image46.png)](displaying-data-with-the-objectdatasource-cs/_static/image45.png)
+[![T他 FormView 必須包含一個 ItemTemplate](displaying-data-with-the-objectdatasource-cs/_static/image46.png)](displaying-data-with-the-objectdatasource-cs/_static/image45.png)
 
 **圖 17**:FormView 必須包含`ItemTemplate`([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image47.png))
 
 
-您可以直接以透過 FormView 的智慧標籤，這將會建立預設值的資料來源控制項繫結 FormView`ItemTemplate`自動 (連同`EditItemTemplate`並`InsertItemTemplate`，如果 ObjectDatatSource 控制項`InsertMethod`和`UpdateMethod`屬性會設定)。 不過，此範例中我們將資料繫結至 FormView，並指定其`ItemTemplate`以手動方式。 先是設定 FormView`DataSourceID`屬性，以`ID`的 ObjectDataSource 控制項， `ObjectDataSource1`。 接下來，建立`ItemTemplate`，以顯示產品的名稱和價格`<h4>`項目和類別目錄] 和 [託運商名稱下方，以較小的字型大小。
+您可以直接以透過 FormView 的智慧標籤，這將會建立預設值的資料來源控制項繫結 FormView`ItemTemplate`自動 (連同`EditItemTemplate`並`InsertItemTemplate`，如果 ObjectDataSource 控制項`InsertMethod`和`UpdateMethod`屬性會設定)。 不過，此範例中我們將資料繫結至 FormView，並指定其`ItemTemplate`以手動方式。 先是設定 FormView`DataSourceID`屬性，以`ID`的 ObjectDataSource 控制項， `ObjectDataSource1`。 接下來，建立`ItemTemplate`，以顯示產品的名稱和價格`<h4>`項目和類別目錄] 和 [託運商名稱下方，以較小的字型大小。
 
 
 [!code-aspx[Main](displaying-data-with-the-objectdatasource-cs/samples/sample6.aspx)]
 
 
-[![第一項產品 (Chai) 會顯示在自訂格式](displaying-data-with-the-objectdatasource-cs/_static/image49.png)](displaying-data-with-the-objectdatasource-cs/_static/image48.png)
+[![T他的第一個產品 (Chai) 會顯示在自訂格式](displaying-data-with-the-objectdatasource-cs/_static/image49.png)](displaying-data-with-the-objectdatasource-cs/_static/image48.png)
 
 **圖 18**:第一項產品 (Chai) 會顯示在自訂格式 ([按一下以檢視完整大小的影像](displaying-data-with-the-objectdatasource-cs/_static/image50.png))
 

@@ -8,15 +8,15 @@ ms.date: 07/17/2006
 ms.assetid: 2b251c82-77cf-4e36-baa9-b648eddaa394
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8f54f8ef593363f9428b663051cc71b8ef4a2e67
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 786d7923d745bfb26ce0759bbe60bc472a63ea5c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032525"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390424"
 ---
-<a name="limiting-data-modification-functionality-based-on-the-user-c"></a>根據使用者限制資料修改功能 (C#)
-====================
+# <a name="limiting-data-modification-functionality-based-on-the-user-c"></a>根據使用者限制資料修改功能 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_23_CS.exe)或[下載 PDF](limiting-data-modification-functionality-based-on-the-user-cs/_static/datatutorial23cs1.pdf)
@@ -31,12 +31,12 @@ ms.locfileid: "57032525"
 在本教學課程中，我們將檢驗如何動態調整造訪的使用者為基礎的資料修改功能。 特別是，我們將建立的 GridView 會列出供應商所提供的產品以及編輯 DetailsView 中顯示的供應商資訊的頁面。 如果使用者瀏覽的頁面是從我們的公司，他們可以： 可以檢視任何供應商的資訊;編輯其位址;然後編輯任何供應商所提供的產品資訊。 如果，不過，使用者是從某家公司，他們可以只檢視和編輯自己的位址資訊和只能編輯他們未標示為已停用的產品。
 
 
-[![我們公司的使用者可以編輯任何供應商的資訊](limiting-data-modification-functionality-based-on-the-user-cs/_static/image2.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image1.png)
+[![A 我們公司的使用者可以編輯任何供應商的資訊](limiting-data-modification-functionality-based-on-the-user-cs/_static/image2.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image1.png)
 
 **圖 1**:我們公司可以編輯任何供應商的資訊的使用者 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image3.png))
 
 
-[![從特定的供應商只能檢視和編輯其資訊的使用者](limiting-data-modification-functionality-based-on-the-user-cs/_static/image5.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image4.png)
+[![A 從特定的供應商只能檢視和編輯其資訊的使用者](limiting-data-modification-functionality-based-on-the-user-cs/_static/image5.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image4.png)
 
 **圖 2**:從特定供應商可以只檢視和編輯其資訊的使用者 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image6.png))
 
@@ -56,7 +56,7 @@ ms.locfileid: "57032525"
 在本教學課程中，我們第一個步驟，則要建立此 DropDownList 並填入供應商中系統中。 開啟`UserLevelAccess.aspx`頁面中`EditInsertDelete`資料夾中，新增 dropdownlist 進行其`ID`屬性設定為`Suppliers`，並將此 DropDownList 繫結至名為新 ObjectDataSource `AllSuppliersDataSource`。
 
 
-[![建立名為 AllSuppliersDataSource 新 ObjectDataSource](limiting-data-modification-functionality-based-on-the-user-cs/_static/image8.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image7.png)
+[![Create 新 ObjectDataSource 名為 AllSuppliersDataSource](limiting-data-modification-functionality-based-on-the-user-cs/_static/image8.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image7.png)
 
 **圖 3**:建立新的 ObjectDataSource 具名`AllSuppliersDataSource`([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image9.png))
 
@@ -66,7 +66,7 @@ ms.locfileid: "57032525"
 完成 ObjectDataSource 精靈之後，完成設定步驟`Suppliers`DropDownList，它會顯示`CompanyName`資料欄位，以及使用`SupplierID`做為每個值的資料欄位`ListItem`。
 
 
-[![設定供應商 DropDownList 以使用 [CompanyName] 和 SupplierID 資料欄位](limiting-data-modification-functionality-based-on-the-user-cs/_static/image11.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image10.png)
+[![C設定供應商 DropDownList 以使用 [CompanyName] 和 [SupplierID 資料欄位](limiting-data-modification-functionality-based-on-the-user-cs/_static/image11.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image10.png)
 
 **圖 4**:設定`Suppliers`使用 DropDownList`CompanyName`並`SupplierID`資料欄位 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image12.png))
 
@@ -85,7 +85,7 @@ ms.locfileid: "57032525"
 透過瀏覽器檢視時，圖 5 顯示我們目前的進度的螢幕擷取畫面。
 
 
-[![供應商 DropDownList 所有清單項目，再加上另一個用於每個供應商，包含顯示](limiting-data-modification-functionality-based-on-the-user-cs/_static/image14.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image13.png)
+[![T他的供應商 DropDownList 包含顯示所有清單項目，再加上一個每個供應商](limiting-data-modification-functionality-based-on-the-user-cs/_static/image14.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image13.png)
 
 **圖 5**:`Suppliers` DropDownList 包含顯示所有`ListItem`，再加上一個每個供應商 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image15.png))
 
@@ -112,7 +112,7 @@ ms.locfileid: "57032525"
 DetailsView 此時可以透過分頁，而且選取的供應商的位址資訊可以更新，不論所做的選擇`Suppliers`DropDownList （請參閱 圖 6）。
 
 
-[![您可以檢視任何供應商資訊，並更新其位址](limiting-data-modification-functionality-based-on-the-user-cs/_static/image17.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image16.png)
+[![A您可以檢視 ny 供應商資訊，並更新其位址](limiting-data-modification-functionality-based-on-the-user-cs/_static/image17.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image16.png)
 
 **圖 6**:供應商可以檢視資訊，並更新其位址 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image18.png))
 
@@ -124,7 +124,7 @@ DetailsView 此時可以透過分頁，而且選取的供應商的位址資訊�
 加入新的 ObjectDataSource 頁面上，將它命名為`SingleSupplierDataSource`。 從它的智慧標籤，按一下 設定資料來源連結，讓它使用`SuppliersBLL`類別的`GetSupplierBySupplierID(supplierID)`方法。 如同`AllSuppliersDataSource`ObjectDataSource，具有`SingleSupplierDataSource`ObjectDataSource s`Update()`方法對應至`SuppliersBLL`類別的`UpdateSupplierAddress`方法。
 
 
-[![設定為使用 GetSupplierBySupplierID(supplierID) 方法 SingleSupplierDataSource ObjectDataSource](limiting-data-modification-functionality-based-on-the-user-cs/_static/image20.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image19.png)
+[![C設定為使用 GetSupplierBySupplierID(supplierID) 方法 SingleSupplierDataSource ObjectDataSource](limiting-data-modification-functionality-based-on-the-user-cs/_static/image20.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image19.png)
 
 **圖 7**:設定`SingleSupplierDataSource`使用 ObjectDataSource`GetSupplierBySupplierID(supplierID)`方法 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image21.png))
 
@@ -132,7 +132,7 @@ DetailsView 此時可以透過分頁，而且選取的供應商的位址資訊�
 接下來，我們重新提示您指定的參數來源`GetSupplierBySupplierID(supplierID)`方法的`supplierID`輸入的參數。 因為我們想要顯示的資訊，從下拉式清單中，使用選取的供應商`Suppliers`DropDownList 的`SelectedValue`做為參數來源屬性。
 
 
-[![供應商 DropDownList 做 supplierID 參數來源](limiting-data-modification-functionality-based-on-the-user-cs/_static/image23.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image22.png)
+[![Use supplierID 參數來源為供應商 DropDownList](limiting-data-modification-functionality-based-on-the-user-cs/_static/image23.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image22.png)
 
 **圖 8**:使用`Suppliers`做為 DropDownList`supplierID`參數的來源 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image24.png))
 
@@ -147,12 +147,12 @@ DetailsView 此時可以透過分頁，而且選取的供應商的位址資訊�
 使用就地這個事件處理常式，DetailsView 控制項現在會顯示所選的供應商，除非已選取"Show/編輯所有供應商 」 選項，在此情況下檢視所有的供應商透過分頁介面。 圖 9 顯示的頁面為"Show/編輯所有供應商 」 選項;請注意，分頁介面，讓使用者能夠瀏覽，並更新任何供應商。 圖 10 顯示頁面選取錦供應商。 錦的資訊會在此情況下是可檢視和編輯。
 
 
-[![所有的供應商資訊可以檢視和編輯](limiting-data-modification-functionality-based-on-the-user-cs/_static/image26.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image25.png)
+[![A可以檢視和編輯所有的供應商資訊](limiting-data-modification-functionality-based-on-the-user-cs/_static/image26.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image25.png)
 
 **圖 9**:所有的供應商資訊檢視和編輯 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image27.png))
 
 
-[![只有選取的供應商的資訊可以檢視和編輯](limiting-data-modification-functionality-based-on-the-user-cs/_static/image29.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image28.png)
+[![O只有選取的供應商 s 資訊可以是 Viewed 和編輯](limiting-data-modification-functionality-based-on-the-user-cs/_static/image29.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image28.png)
 
 **圖 10**:只有選取的供應商 s 資訊可以是 Viewed 並編輯 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image30.png))
 
@@ -171,7 +171,7 @@ DetailsView 此時可以透過分頁，而且選取的供應商的位址資訊�
 使用這個多載建立，我們準備好將 GridView 控制項和其相關聯的 ObjectDataSource。 新增至頁面的新 GridView、 設定其`ID`屬性，以`ProductsBySupplier`，並將它設定為使用名為新 ObjectDataSource `ProductsBySupplierDataSource`。 因為我們希望此 GridView，以列出所選的供應商提供的這些產品時，使用`ProductsBLL`類別的`GetProductsBySupplierID(supplierID)`方法。 也將對應`Update()`方法，以新`UpdateProduct`我們剛剛建立的多載。
 
 
-[![設定要使用剛才建立的 UpdateProduct 多載 ObjectDataSource](limiting-data-modification-functionality-based-on-the-user-cs/_static/image32.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image31.png)
+[![C設定要使用 UpdateProduct 多載剛建立的 ObjectDataSource](limiting-data-modification-functionality-based-on-the-user-cs/_static/image32.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image31.png)
 
 **圖 11**:設定要使用 ObjectDataSource`UpdateProduct`多載只會建立 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image33.png))
 
@@ -179,7 +179,7 @@ DetailsView 此時可以透過分頁，而且選取的供應商的位址資訊�
 我們重新提示您選取參數的來源`GetProductsBySupplierID(supplierID)`方法的`supplierID`輸入的參數。 因為我們想要顯示的產品中使用 DetailsView 選取供應商`SuppliersDetails`DetailsView 控制項的`SelectedValue`做為參數來源屬性。
 
 
-[![SuppliersDetails DetailsView 的 SelectedValue 屬性做為參數來源](limiting-data-modification-functionality-based-on-the-user-cs/_static/image35.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image34.png)
+[![Use SuppliersDetails DetailsView s SelectedValue 屬性做為參數的來源](limiting-data-modification-functionality-based-on-the-user-cs/_static/image35.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image34.png)
 
 **圖 12**:使用`SuppliersDetails`DetailsView s`SelectedValue`做為參數來源屬性 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image36.png))
 
@@ -194,7 +194,7 @@ DetailsView 此時可以透過分頁，而且選取的供應商的位址資訊�
 此設定完成後，我們的頁面現在會列出在 GridView 中選取的供應商所提供的產品 （請參閱 圖 13）。 目前*任何*可以更新產品的名稱或每個單位的數量。 不過，我們需要更新我們的網頁邏輯，使這類功能禁止使用的特定供應商相關聯的使用者不再生產的產品。 我們將會處理在步驟 5 中的這個最後一個片段。
 
 
-[![顯示所選取的供應商提供的產品](limiting-data-modification-functionality-based-on-the-user-cs/_static/image38.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image37.png)
+[![T他選取供應商所提供的產品會顯示](limiting-data-modification-functionality-based-on-the-user-cs/_static/image38.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image37.png)
 
 **圖 13**:顯示所選取的供應商提供的產品 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image39.png))
 
@@ -217,12 +217,12 @@ DetailsView 此時可以透過分頁，而且選取的供應商的位址資訊�
 與這個事件處理常式的位置，當瀏覽此頁面的使用者身分從特定的供應商已停用這些產品都不是可編輯的為 [編輯] 按鈕會隱藏這些產品。 比方說，Chef Anton 的 Gumbo 混合是紐奧良印地安 Delights 供應商停產的產品。 當這個特定的供應商，瀏覽的頁面，此產品的 編輯 按鈕隱藏看不到 （請參閱 圖 14）。 不過，瀏覽時使用 「 顯示或編輯所有供應商 」，編輯 按鈕會是 可用 （請參閱 圖 15）。
 
 
-[![Chef Anton s Gumbo 混用 [編輯] 按鈕會隱藏特定供應商的使用者](limiting-data-modification-functionality-based-on-the-user-cs/_static/image41.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image40.png)
+[![F或供應商專屬使用者 Chef Anton s Gumbo 混合的 [編輯] 按鈕會隱藏](limiting-data-modification-functionality-based-on-the-user-cs/_static/image41.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image40.png)
 
 **圖 14**:Chef Anton s Gumbo 混用 [編輯] 按鈕會隱藏特定供應商的使用者 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image42.png))
 
 
-[![Chef Anton s Gumbo 混用 [編輯] 按鈕會顯示所有供應商使用者顯示或編輯，](limiting-data-modification-functionality-based-on-the-user-cs/_static/image44.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image43.png)
+[![F或顯示或編輯所有供應商的使用者、 Chef Anton s Gumbo 混用 [編輯] 按鈕會顯示](limiting-data-modification-functionality-based-on-the-user-cs/_static/image44.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image43.png)
 
 **圖 15**:會顯示所有供應商使用者顯示或編輯，Chef Anton s Gumbo 混用 [編輯] 按鈕 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image45.png))
 

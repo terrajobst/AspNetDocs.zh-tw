@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 36ca81d7-906d-4db2-952b-add18a4ff421
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 79c7281032d8b36d0e4f4b62dcbbad2ab5ebbb77
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 55ee67150d1567a0334988a06ff0fcca8a89bbd4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063155"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404048"
 ---
-<a name="launching-a-modal-popup-window-from-server-code-vb"></a>從伺服器程式碼啟動強制回應快顯視窗 (VB)
-====================
+# <a name="launching-a-modal-popup-window-from-server-code-vb"></a>從伺服器程式碼啟動強制回應快顯視窗 (VB)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup1.vb.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup1VB.pdf)
@@ -65,7 +65,7 @@ AJAX Control Toolkit 之 ModalPopup 控制項提供簡單的方式來建立使�
 `$find()`函式會尋找具名項目頁面上，並預期伺服器端 ID，做為參數。 因此，`$find("mpe")`傳回 ModalPopup 控制項的用戶端表示法，其`show()`方法可讓快顯視窗會出現。
 
 
-[![強制回應快顯視窗出現時按一下的按鈕](launching-a-modal-popup-window-from-server-code-vb/_static/image2.png)](launching-a-modal-popup-window-from-server-code-vb/_static/image1.png)
+[![T他的強制回應快顯視窗出現時按一下任一按鈕時](launching-a-modal-popup-window-from-server-code-vb/_static/image2.png)](launching-a-modal-popup-window-from-server-code-vb/_static/image1.png)
 
 強制回應快顯視窗出現時按一下任一按鈕時 ([按一下以檢視完整大小的影像](launching-a-modal-popup-window-from-server-code-vb/_static/image3.png))
 

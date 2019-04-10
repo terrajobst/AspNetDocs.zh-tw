@@ -8,15 +8,15 @@ ms.date: 07/17/2006
 ms.assetid: b651dc58-93c7-4f83-a74e-3b99f6d60848
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6c8a07d7b0819df4deb566644fe36bc504d2a2ca
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 61b3d54b73e33040baf93a8b7705dfb231835b40
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424561"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410444"
 ---
-<a name="an-overview-of-inserting-updating-and-deleting-data-c"></a>插入、 更新和刪除資料 (C#) 的概觀
-====================
+# <a name="an-overview-of-inserting-updating-and-deleting-data-c"></a>插入、 更新和刪除資料 (C#) 的概觀
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_16_CS.exe)或[下載 PDF](an-overview-of-inserting-updating-and-deleting-data-cs/_static/datatutorial16cs1.pdf)
@@ -33,7 +33,7 @@ ms.locfileid: "58424561"
 除了其`Select()`方法，也有 ObjectDataSource `Insert()`， `Update()`，和`Delete()`方法。 例如`Select()`方法，這三種方法可以對應至基礎物件中的方法。 當設定為插入、 更新或刪除資料，GridView、 DetailsView 和 FormView 控制項提供使用者介面修改基礎資料。 此使用者介面會呼叫`Insert()`， `Update()`，和`Delete()`方法的 ObjectDataSource]，然後叫用基礎物件的相關聯 （請參閱 [圖 1） 的方法。
 
 
-[![ObjectDataSource 的 insert （）、 update （） 和 delete （） 方法做為 Proxy 到 BLL](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image2.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image1.png)
+[![T他 ObjectDataSource 的 insert （）、 update （） 和 delete （） 方法做為 Proxy 到 BLL](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image2.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image1.png)
 
 **圖 1**:ObjectDataSource `Insert()`， `Update()`，並`Delete()`方法做為 Proxy 到 BLL ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image3.png))
 
@@ -63,7 +63,7 @@ ms.locfileid: "58424561"
 在其他資料夾，例如`Default.aspx`在`EditInsertDelete`資料夾會列出其一節中的教學課程。 請記得，`SectionLevelTutorialListing.ascx`使用者控制項提供這項功能。 因此，新增此使用者控制項`Default.aspx`藉由將它拖曳到頁面的 [設計] 檢視上的 [方案總管] 中。
 
 
-[![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image6.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image5.png)
+[![Add Default.aspx SectionLevelTutorialListing.ascx 使用者控制項](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image6.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image5.png)
 
 **圖 3**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image7.png))
 
@@ -88,7 +88,7 @@ ms.locfileid: "58424561"
 開啟`Basics.aspx`頁面上，從 [工具箱] 拖曳至設計工具中，拖曳 ObjectDataSource，然後按一下 [設定資料來源] 連結，從它的智慧標籤。 因為`ProductsBLL`是唯一提供編輯、 插入和刪除方法，設定要使用這個類別的 ObjectDataSource 的 BLL 類別。
 
 
-[![設定使用 ProductsBLL 類別 ObjectDataSource](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image10.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image9.png)
+[![C設定使用 ProductsBLL 類別 ObjectDataSource](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image10.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image9.png)
 
 **圖 5**:設定要使用 ObjectDataSource`ProductsBLL`類別 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image11.png))
 
@@ -96,7 +96,7 @@ ms.locfileid: "58424561"
 在下一個畫面中，我們可以指定哪些方法的`ProductsBLL`類別會對應到 ObjectDataSource `Select()`， `Insert()`， `Update()`，和`Delete()`選取適當的索引標籤，然後從下拉式清單中選擇的方法。 圖 6，這應該看起來很熟悉到目前為止，對應的 ObjectDataSource`Select()`方法，以`ProductsBLL`類別的`GetProducts()`方法。 `Insert()`， `Update()`，和`Delete()`來設定方法，請從上方清單中選取適當的索引標籤。
 
 
-[![ObjectDataSource 已傳回的所有產品](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image13.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image12.png)
+[![HObjectDataSource 會傳回所有產品的 [ave](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image13.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image12.png)
 
 **圖 6**:有 ObjectDataSource 傳回所有的產品 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image14.png))
 
@@ -104,22 +104,22 @@ ms.locfileid: "58424561"
 圖 7、 8 和 9 顯示 ObjectDataSource 的更新、 插入和刪除索引標籤。 設定這些索引標籤，讓`Insert()`， `Update()`，並`Delete()`方法叫用`ProductsBLL`類別的`UpdateProduct`， `AddProduct`，和`DeleteProduct`方法，分別。
 
 
-[![將 ObjectDataSource 的 update （） 方法對應至 ProductBLL 類別的 UpdateProduct 方法](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image16.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image15.png)
+[![Map ProductBLL 類別的 UpdateProduct 方法的 ObjectDataSource 的 update （） 方法](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image16.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image15.png)
 
 **圖 7**:對應的 ObjectDataSource`Update()`方法，以`ProductBLL`類別的`UpdateProduct`方法 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image17.png))
 
 
-[![將 ObjectDataSource 的 insert （） 方法對應至 ProductBLL 類別的 AddProduct 方法](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image19.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image18.png)
+[![Map ProductBLL 類別的 AddProduct 方法的 ObjectDataSource 的 insert （） 方法](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image19.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image18.png)
 
 **圖 8**:對應的 ObjectDataSource`Insert()`方法，以`ProductBLL`類別的 Add`Product`方法 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image20.png))
 
 
-[![將 ObjectDataSource 的 delete （） 方法對應至 ProductBLL 類別的 DeleteProduct 方法](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image22.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image21.png)
+[![Map ProductBLL 類別的 DeleteProduct 方法的 ObjectDataSource 的 delete （） 方法](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image22.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image21.png)
 
 **圖 9**:對應的 ObjectDataSource`Delete()`方法，以`ProductBLL`類別的`DeleteProduct`方法 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image23.png))
 
 
-您可能已經注意到在更新、 插入和刪除索引標籤的下拉式清單中已經有這些選取的方法。 這是因為我們使用`DataObjectMethodAttribute`裝飾的方法`ProducstBLL`。 比方說，DeleteProduct 方法具有下列簽章：
+您可能已經注意到在更新、 插入和刪除索引標籤的下拉式清單中已經有這些選取的方法。 這是因為我們使用`DataObjectMethodAttribute`裝飾的方法`ProductsBLL`。 比方說，DeleteProduct 方法具有下列簽章：
 
 
 [!code-csharp[Main](an-overview-of-inserting-updating-and-deleting-data-cs/samples/sample2.cs)]
@@ -202,7 +202,7 @@ CommandField 包含數個`ShowXButton`指出哪些系列的按鈕會顯示在 Co
 此時，信不信由您，我們已完成刪除的支援新增至 GridView ！ 如 [圖 11] 所示，瀏覽此頁面，透過瀏覽器的刪除按鈕資料行時出現。
 
 
-[![CommandField 加入資料行的刪除按鈕](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image26.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image25.png)
+[![T他 CommandField 加入資料行的刪除按鈕](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image26.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image25.png)
 
 **圖 11**:CommandField 加入資料行的刪除按鈕 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image27.png))
 
@@ -216,7 +216,7 @@ CommandField 包含數個`ShowXButton`指出哪些系列的按鈕會顯示在 Co
 如果您嘗試將刪除產品時，您會收到例外狀況的訊息會類似於 「*ObjectDataSource 'ObjectDataSource1' 找不到 přepisuje neobecnou metodu 具有參數的 ' DeleteProduct': productID，原始\_ProductID*，「 您可能忘了移除`OldValuesParameterFormatString`從 ObjectDataSource 的屬性。 與`OldValuesParameterFormatString`屬性指定，ObjectDataSource 會嘗試傳入兩者`productID`並`original_ProductID`輸入參數`DeleteProduct`方法。 `DeleteProduct`不過，只接受單一輸入的參數，因此例外狀況。 移除`OldValuesParameterFormatString`屬性 (或將它設定為`{0}`) 會嘗試不在原始的輸入參數中傳遞的 ObjectDataSource 的指示。
 
 
-[![請確定已清除 [Where] 屬性](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image29.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image28.png)
+[![E[Where] 屬性清除的 nsure](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image29.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image28.png)
 
 **圖 12**:請確認`OldValuesParameterFormatString`屬性具有已清除 Out ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image30.png))
 
@@ -224,7 +224,7 @@ CommandField 包含數個`ShowXButton`指出哪些系列的按鈕會顯示在 Co
 即使您移除`OldValuesParameterFormatString`屬性，仍會得到例外狀況嘗試刪除具有訊息之產品的：「*DELETE 陳述式與參考條件約束 ' FK\_順序\_詳細資料\_產品的*。 」Northwind 資料庫包含之間的外部索引鍵條件約束`Order Details`並`Products`資料表，這表示從系統無法刪除的產品，如果有一或多個記錄中的`Order Details`資料表。 因為 Northwind 資料庫中的每個產品具有至少一個記錄`Order Details`，直到我們第一次刪除產品的相關聯的訂單詳細資料記錄，所以無法刪除任何產品。
 
 
-[![外部索引鍵條件約束會禁止刪除產品](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image32.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image31.png)
+[![A 外部索引鍵條件約束會禁止刪除產品](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image32.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image31.png)
 
 **圖 13**:外部索引鍵條件約束會禁止刪除的產品 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image33.png))
 
@@ -238,7 +238,7 @@ CommandField 包含數個`ShowXButton`指出哪些系列的按鈕會顯示在 Co
 讓我們只要刪除所有記錄的`Order Details`規避的外部索引鍵條件約束的資料表。 請移至 Visual Studio 中的 [伺服器總管] 中，以滑鼠右鍵按一下`NORTHWND.MDF`] 節點，然後選擇 [新增查詢。 然後，在 [查詢] 視窗中，執行下列 SQL 陳述式： `DELETE FROM [Order Details]`
 
 
-[![從訂單明細資料表刪除所有記錄](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image35.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image34.png)
+[![Delete 訂單詳細資料資料表中的所有記錄](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image35.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image34.png)
 
 **圖 14**:刪除所有資料錄`Order Details`資料表 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image36.png))
 
@@ -283,7 +283,7 @@ CommandField 包含數個`ShowXButton`指出哪些系列的按鈕會顯示在 Co
 這就是沒有新增基本編輯的支援。 Figure16 示編輯介面也很粗糙每 BoundField 其`ReadOnly`屬性設定為`false`（預設值） 會轉譯為文字方塊。 這包括像是欄位`CategoryID`和`SupplierID`，這是與其他資料表的索引鍵。
 
 
-[![按一下 [Chai 的編輯] 按鈕顯示的資料列處於編輯模式](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image39.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image38.png)
+[![C按一下 Chai s 編輯按鈕顯示在編輯模式中的資料列](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image39.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image38.png)
 
 **圖 16**:按一下 Chai s [編輯] 按鈕顯示在編輯模式中的資料列 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image40.png))
 
@@ -317,7 +317,7 @@ CommandField 包含數個`ShowXButton`指出哪些系列的按鈕會顯示在 Co
 請注意，DetailsView CommandField 依預設會出現在資料行集合的結尾。 因為 DetailsView 的欄位會轉譯為資料列，CommandField 顯示為資料列，使用 Insert、 編輯和刪除 DetailsView 底部的按鈕。
 
 
-[![設定支援編輯、 插入及刪除 DetailsView](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image43.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image42.png)
+[![C設定支援編輯、 插入及刪除 DetailsView](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image43.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image42.png)
 
 **圖 18**:設定支援編輯、 插入及刪除 DetailsView ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image44.png))
 
@@ -345,7 +345,7 @@ CommandField 包含數個`ShowXButton`指出哪些系列的按鈕會顯示在 Co
 之後如 Acme 茶輸入詳細資料，並按一下 [插入] 按鈕，回傳是兩邊彼此乾瞪眼和新的記錄新增至`Products`資料庫資料表。 因為此 DetailsView 列出的順序與它們存在於資料庫資料表中的產品，我們必須頁面上的最後一個產品才能看到新的產品。
 
 
-[![Acme 茶的詳細資料](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image52.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image51.png)
+[![DAcme 茶的 etails](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image52.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image51.png)
 
 **圖 21**:Acme 茶的詳細資料 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image53.png))
 
@@ -372,7 +372,7 @@ FormView 提供內建支援插入、 編輯和刪除資料，但因為它會使�
 [圖 22] 顯示 FormView 的`ItemTemplate`透過瀏覽器檢視時。 每個產品 欄位會列出底部新增、 編輯和刪除按鈕。
 
 
-[![預設 FormView ItemTemplate 列出每個產品 欄位，以及新增、 編輯和刪除按鈕](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image55.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image54.png)
+[![T他預設 FormView ItemTemplate 列出每個產品] 欄位，以及新增、 編輯和刪除按鈕時](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image55.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image54.png)
 
 **圖 22**:預設 FormView`ItemTemplate`列出每個產品欄位以及新增、 編輯及刪除按鈕 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image56.png))
 
@@ -396,7 +396,7 @@ TextBox 控制項中`EditItemTemplate`有其`Text`屬性繫結至其對應的資
 [圖 23] 顯示 FormView 瀏覽器中之後 Chai 的已按下 [編輯] 按鈕。 請注意，`SupplierName`並`CategoryName`欄位中所示`ItemTemplate`不再存在，因為我們只是移除從`EditItemTemplate`。 按一下 [更新] 按鈕時 FormView 會流經的 GridView 和 DetailsView 控制項相同的步驟順序。
 
 
-[![根據預設 EditItemTemplate 會顯示為文字方塊或核取方塊的每個可編輯的產品 欄位](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image58.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image57.png)
+[![By 預設 EditItemTemplate 顯示為文字方塊或核取方塊的每個可編輯的產品欄位](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image58.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image57.png)
 
 **圖 23**:依預設`EditItemTemplate`會顯示每個可編輯產品的欄位做為文字方塊或核取方塊 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image59.png))
 
@@ -413,12 +413,12 @@ TextBox 控制項中`EditItemTemplate`有其`Text`屬性繫結至其對應的資
 [圖 24] 顯示 FormView 瀏覽器中新增新的產品，Acme 咖啡時。 請注意，`SupplierName`並`CategoryName`欄位中所示`ItemTemplate`不再存在，因為我們只是移除。 按一下 插入 按鈕時透過 DetailsView 控制項相同的步驟順序 FormView 進行，新增至記錄`Products`資料表。 圖 25 在 FormView 中顯示 Acme 咖啡產品詳細資料之後已插入。
 
 
-[![InsertItemTemplate 規定 FormView 的插入介面](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image61.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image60.png)
+[![T他 InsertItemTemplate 規定 FormView 的插入介面](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image61.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image60.png)
 
 **圖 24**:`InsertItemTemplate`規定 FormView 的插入介面 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image62.png))
 
 
-[![在 FormView 中顯示新的產品，Acme 咖啡的詳細資料](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image64.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image63.png)
+[![T在 FormView 中會顯示新的產品，Acme 咖啡的他詳細資料](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image64.png)](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image63.png)
 
 **圖 25**:新的產品，Acme 咖啡的詳細資料會顯示在 FormView 中 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-cs/_static/image65.png))
 

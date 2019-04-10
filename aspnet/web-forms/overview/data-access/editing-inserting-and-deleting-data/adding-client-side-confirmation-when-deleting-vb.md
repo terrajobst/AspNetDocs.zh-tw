@@ -8,15 +8,15 @@ ms.date: 07/17/2006
 ms.assetid: 6331e02e-c465-4cdf-bd3f-f07680c289d6
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2b0d7aeab357a0009c44a29ff66f22ce8a744a90
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: fc5c99ce6c5da7d004b95462a3338aefbed31b36
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422141"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388707"
 ---
-<a name="adding-client-side-confirmation-when-deleting-vb"></a>於刪除時新增用戶端確認 (VB)
-====================
+# <a name="adding-client-side-confirmation-when-deleting-vb"></a>於刪除時新增用戶端確認 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_22_VB.exe)或[下載 PDF](adding-client-side-confirmation-when-deleting-vb/_static/datatutorial22vb1.pdf)
@@ -65,7 +65,7 @@ JavaScript`confirm(string)`函式會顯示其字串輸入的參數為強制回�
 經過這些變更，我們有功能完整的網頁，可讓使用者透過一個產品一次切換能夠刪除產品，只要按一下 [刪除] 按鈕。 圖 2 顯示進度的螢幕擷取畫面到目前為止透過瀏覽器檢視時。
 
 
-[![FormView 顯示單一產品的相關資訊](adding-client-side-confirmation-when-deleting-vb/_static/image3.png)](adding-client-side-confirmation-when-deleting-vb/_static/image2.png)
+[![T他 FormView 顯示資訊有關單一產品](adding-client-side-confirmation-when-deleting-vb/_static/image3.png)](adding-client-side-confirmation-when-deleting-vb/_static/image2.png)
 
 **圖 2**:FormView 顯示資訊有關單一產品 ([按一下以檢視完整大小的影像](adding-client-side-confirmation-when-deleting-vb/_static/image4.png))
 
@@ -85,7 +85,7 @@ S 就是這麼簡單 ！ 圖 3 顯示作用中的這項確認的螢幕擷取畫�
 > 將字串傳遞至`confirm(string)`JavaScript 函式以撇號 （而不是引號）。 在 JavaScript 中，字串可以使用任一字元分隔。 我們使用單引號這裡讓的分隔符號字串傳遞至`confirm(string)`不會產生模稜兩可用於分隔符號`OnClientClick`屬性值。
 
 
-[![確認訊息會立即顯示時按一下 [刪除] 按鈕](adding-client-side-confirmation-when-deleting-vb/_static/image6.png)](adding-client-side-confirmation-when-deleting-vb/_static/image5.png)
+[![A 現在顯示時按一下 [刪除] 按鈕時，所確認](adding-client-side-confirmation-when-deleting-vb/_static/image6.png)](adding-client-side-confirmation-when-deleting-vb/_static/image5.png)
 
 **圖 3**:確認訊息會立即顯示時按一下 [刪除] 按鈕 ([按一下以檢視完整大小的影像](adding-client-side-confirmation-when-deleting-vb/_static/image7.png))
 
@@ -127,7 +127,7 @@ CommandField 包含單一的刪除 LinkButton 執行個體可從 GridView s 以�
 > 這項技術也可用來以程式設計方式存取在 DetailsView 中 CommandField 中的 [刪除] 按鈕。 DetailsView，不過，d 您建立的事件處理常式`DataBound`事件，因為沒有 DetailsView`RowDataBound`事件。
 
 
-[![按一下 GridView s [刪除] 按鈕會顯示自訂的確認對話方塊](adding-client-side-confirmation-when-deleting-vb/_static/image9.png)](adding-client-side-confirmation-when-deleting-vb/_static/image8.png)
+[![C自訂的確認對話方塊中按一下 GridView s 刪除按鈕顯示](adding-client-side-confirmation-when-deleting-vb/_static/image9.png)](adding-client-side-confirmation-when-deleting-vb/_static/image8.png)
 
 **圖 4**:按一下 GridView s [刪除] 按鈕會顯示自訂的確認對話方塊中 ([按一下以檢視完整大小的影像](adding-client-side-confirmation-when-deleting-vb/_static/image10.png))
 

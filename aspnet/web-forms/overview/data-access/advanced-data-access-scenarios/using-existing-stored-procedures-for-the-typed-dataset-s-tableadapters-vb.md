@@ -8,15 +8,15 @@ ms.date: 07/18/2007
 ms.assetid: 2da25f6a-757e-4e7b-a812-1575288d8f7a
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8860f0ac9c3026fcf83a3eb7e6baecf2163964d1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 25e34512abc779bfef2d2bb99a8b62de073e8ed6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056265"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381480"
 ---
-<a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>使用具類型資料集 Tableadapter 現有的預存程序 (VB)
-====================
+# <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>使用具類型資料集 Tableadapter 現有的預存程序 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_68_VB.zip)或[下載 PDF](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/datatutorial68vb1.pdf)
@@ -39,7 +39,7 @@ ms.locfileid: "57056265"
 Visual Studio 可讓您輕鬆地將新的預存程序加入至資料庫。 可讓 s 傳回所有資料行，從 Northwind 資料庫中加入新的預存程序`Products`適用於具有特定資料表`CategoryID`值。 從 [伺服器總管] 視窗中，展開 Northwind 資料庫，使其-資料庫圖表、 資料表、 檢視和等位的資料夾會顯示。 如我們所見在先前的教學課程中，預存程序 資料夾會包含資料庫 s 現有預存程序。 若要加入新的預存程序，只要以滑鼠右鍵按一下 預存程序 資料夾，並從內容功能表中選擇 加入新的預存程序選項。
 
 
-[![以滑鼠右鍵按一下 [預存程序] 資料夾，並加入新的預存程序](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image2.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image1.png)
+[![R以滑鼠右鍵按一下預存程序] 資料夾和 [加入新的預存程序](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image2.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image1.png)
 
 **圖 1**:以滑鼠右鍵按一下 [預存程序] 資料夾，並加入新的預存程序 ([按一下以檢視完整大小的影像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image3.png))
 
@@ -58,19 +58,19 @@ Visual Studio 可讓您輕鬆地將新的預存程序加入至資料庫。 可�
 [圖 2] 顯示之後的 Visual Studio`Products_SelectByCategoryID`已儲存預存程序。
 
 
-[![預存程序 Products_SelectByCategoryID 加入資料庫](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image5.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image4.png)
+[![T他的預存程序 Products_SelectByCategoryID 已新增到資料庫](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image5.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image4.png)
 
 **圖 2**:預存程序`Products_SelectByCategoryID`已加入至資料庫 ([按一下以檢視完整大小的影像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image6.png))
 
 
 ## <a name="step-2-configuring-the-tableadapter-to-use-an-existing-stored-procedure"></a>步驟 2：設定要使用現有的預存程序的 TableAdapter
 
-既然`Products_SelectByCategoryID`預存程序已新增至資料庫，我們可以設定我們的資料存取層，其中一個方法叫用時，請使用此預存程序。 特別是，我們會新增`GetProducstByCategoryID(<_i22_>categoryID)<!--_i22_-->`方法，以`ProductsTableAdapter`中`NorthwindWithSprocs`呼叫的輸入資料集`Products_SelectByCategoryID`預存程序，我們剛剛建立。
+既然`Products_SelectByCategoryID`預存程序已新增至資料庫，我們可以設定我們的資料存取層，其中一個方法叫用時，請使用此預存程序。 特別是，我們會新增`GetProductsByCategoryID(<_i22_>categoryID)<!--_i22_-->`方法，以`ProductsTableAdapter`中`NorthwindWithSprocs`呼叫的輸入資料集`Products_SelectByCategoryID`預存程序，我們剛剛建立。
 
 首先開啟`NorthwindWithSprocs`資料集。 以滑鼠右鍵按一下`ProductsTableAdapter`，然後選擇 [加入查詢]，啟動 [TableAdapter 查詢組態精靈]。 在 [前述教學課程](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)我們選擇能夠為我們建立新的預存程序的 TableAdapter。 本教學課程中，不過，我們想要將新的 TableAdapter 方法傳送至現有`Products_SelectByCategoryID`預存程序。 因此，從精靈 s 第一個步驟中選擇 使用現有的預存程序選項，然後按一下 下一步。
 
 
-[![選擇 使用現有的預存程序選項](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image8.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image7.png)
+[![C選擇使用現有預存程序選項](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image8.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image7.png)
 
 **圖 3**:選擇 使用現有預存程序選項 ([按一下以檢視完整大小的影像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image9.png))
 
@@ -78,7 +78,7 @@ Visual Studio 可讓您輕鬆地將新的預存程序加入至資料庫。 可�
 下列畫面會提供下拉式清單中填入資料庫 s 預存程序。 選取預存程序會列出其左邊和右邊傳回 （如果有的話） 的資料欄位的輸入的參數。 選擇`Products_SelectByCategoryID`預存程序，從清單中，按一下 [下一步]。
 
 
-[![挑選 Products_SelectByCategoryID 預存程序](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image11.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image10.png)
+[![Pick Products_SelectByCategoryID 預存程序](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image11.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image10.png)
 
 **圖 4**:挑選`Products_SelectByCategoryID`預存程序 ([按一下以檢視完整大小的影像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image12.png))
 
@@ -88,7 +88,7 @@ Visual Studio 可讓您輕鬆地將新的預存程序加入至資料庫。 可�
 因為`Products_SelectByCategoryID`預存程序會傳回所有產品都屬於特定類別，選擇第一個回應-表格式資料集，按一下 [下一步]。
 
 
-[![指出預存程序會傳回表格式資料](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image14.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image13.png)
+[![Indicate 預存程序會傳回表格式資料](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image14.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image13.png)
 
 **圖 5**:指出預存程序會傳回表格式資料 ([按一下以檢視完整大小的影像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image15.png))
 
@@ -96,7 +96,7 @@ Visual Studio 可讓您輕鬆地將新的預存程序加入至資料庫。 可�
 所有剩下就是指出哪些方法的模式，以使用後面接著這些方法的名稱。 DataTable 和傳回 DataTable 選項已核取，但重新命名的方法，讓這兩種填滿`FillByCategoryID`和`GetProductsByCategoryID`。 然後按一下 [下一步] 檢閱精靈即將執行工作的摘要。 如果一切看起來正確，按一下 [完成]。
 
 
-[![名稱方法 FillByCategoryID 和 GetProductsByCategoryID](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image17.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image16.png)
+[![N名稱 （） 方法 FillByCategoryID 和 GetProductsByCategoryID](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image17.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image16.png)
 
 **圖 6**:命名方法`FillByCategoryID`並`GetProductsByCategoryID`([按一下以檢視完整大小的影像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image18.png))
 
@@ -125,12 +125,12 @@ Visual Studio 可讓您輕鬆地將新的預存程序加入至資料庫。 可�
 開啟`ExistingSprocs.aspx`頁面中`AdvancedDAL`資料夾，然後從 [工具箱] 拖曳至設計工具的 dropdownlist 進行拖曳。 設定 DropDownList s`ID`屬性，以`Categories`及其`AutoPostBack`屬性設`True`。 接下來，從它的智慧標籤，將繫結 DropDownList 至名為新 ObjectDataSource `CategoriesDataSource`。 因此，它會擷取資料的來源設定 ObjectDataSource`CategoriesBLL`類別的`GetCategories`方法。 設定下拉式清單中更新、 插入和刪除 （無） 索引標籤。
 
 
-[![從 CategoriesBLL 類別的 GetCategories 方法擷取資料](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image20.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image19.png)
+[![Retrieve CategoriesBLL 類別的 GetCategories 方法的資料](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image20.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image19.png)
 
 **圖 7**:從中擷取資料`CategoriesBLL`類別 s`GetCategories`方法 ([按一下以檢視完整大小的影像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image21.png))
 
 
-[![設定下拉式清單中更新、 插入和刪除 （無） 索引標籤](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image23.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image22.png)
+[![Set 下拉式清單中更新、 插入和刪除索引標籤，為 [（無）](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image23.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image22.png)
 
 **圖 8**:設定下拉式清單中更新、 插入和刪除索引標籤為 （無） ([按一下以檢視完整大小的影像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image24.png))
 
@@ -145,12 +145,12 @@ Visual Studio 可讓您輕鬆地將新的預存程序加入至資料庫。 可�
 接下來，拖曳至設計工具中，將它放在 DropDownList 下方的 GridView。 設定 GridView s`ID`要`ProductsByCategory`和它的智慧標籤，從繫結至名為新 ObjectDataSource `ProductsByCategoryDataSource`。 設定`ProductsByCategoryDataSource`若要使用的 ObjectDataSource`ProductsBLLWithSprocs`類別，讓它可讓您擷取其資料使用`GetProductsByCategoryID(categoryID)`方法。 因為此 GridView 只會用來顯示資料，設定下拉式清單中更新、 插入和刪除 （無） 索引標籤以及按一下 下一步。
 
 
-[![設定使用 ProductsBLLWithSprocs 類別 ObjectDataSource](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image26.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image25.png)
+[![C設定使用 ProductsBLLWithSprocs 類別 ObjectDataSource](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image26.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image25.png)
 
 **圖 9**:設定要使用 ObjectDataSource`ProductsBLLWithSprocs`類別 ([按一下以檢視完整大小的影像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image27.png))
 
 
-[![從 GetProductsByCategoryID(categoryID) 方法擷取資料](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image29.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image28.png)
+[![Retrieve GetProductsByCategoryID(categoryID) 方法中的資料](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image29.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image28.png)
 
 **圖 10**:從中擷取資料`GetProductsByCategoryID(categoryID)`方法 ([按一下以檢視完整大小的影像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image30.png))
 
@@ -158,7 +158,7 @@ Visual Studio 可讓您輕鬆地將新的預存程序加入至資料庫。 可�
 在 [選取] 索引標籤中選擇的方法會預期參數，讓精靈的最後一個步驟會提示我們輸入的參數 s 的來源。 設定參數來源下拉式清單控制項，然後選擇 `Categories`控制項從 ControlID 下拉式清單。 按一下 完成 以完成精靈。
 
 
-[![使用分類 DropDownList categoryID 參數的來源](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image32.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image31.png)
+[![Use 類別 DropDownList categoryID 參數的來源](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image32.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image31.png)
 
 **圖 11**:使用`Categories`做為來源的 DropDownList`categoryID`參數 ([按一下以檢視完整大小的影像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image33.png))
 
@@ -168,7 +168,7 @@ Visual Studio 可讓您輕鬆地將新的預存程序加入至資料庫。 可�
 瀏覽透過瀏覽器頁面。 當瀏覽所選取的飲料類別頁和對應方格中列出的產品。 將下拉式清單變更為替代的類別，以 圖 12 顯示、 造成回傳並重新載入新選取的類別目錄的產品與格線。
 
 
-[![顯示產生的類別目錄中的產品](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image35.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image34.png)
+[![T會顯示在 [產生] 類別的他產品](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image35.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image34.png)
 
 **圖 12**:顯示產生的類別目錄中的產品 ([按一下以檢視完整大小的影像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image36.png))
 
@@ -206,12 +206,12 @@ Visual Studio 可讓您輕鬆地將新的預存程序加入至資料庫。 可�
 可讓 s 看看一個具體的範例。 之間存在的外部索引鍵條件約束`Categories`並`Products`資料表，這表示，每個`CategoryID`欄位中`Products`資料表必須對應至`CategoryID`中的值`Categories`資料表。 違反這個條件約束，例如嘗試刪除類別目錄相關聯的產品，任何動作都會導致外部索引鍵條件約束違規。 若要確認這種情況，重新瀏覽正在更新及刪除現有的二進位資料的範例中使用二進位資料 區段 (`~/BinaryData/UpdatingAndDeleting.aspx`)。 此頁面會列出每個類別，以及編輯和刪除按鈕 （請參閱 圖 13），系統中，但刪除如果您嘗試刪除相關聯的產品-例如飲料-類別目錄會失敗，因為外部索引鍵條件約束違規情形 （請參閱 圖 14）。
 
 
-[![每個類別會顯示在 GridView 編輯和刪除按鈕](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image38.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image37.png)
+[![E類別會顯示在編輯和刪除按鈕與 GridView 的 ach](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image38.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image37.png)
 
 **圖 13**:每個類別會顯示在編輯和刪除按鈕與 GridView ([按一下以檢視完整大小的影像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image39.png))
 
 
-[![您無法刪除有現有的產品類別目錄](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image41.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image40.png)
+[![You 無法刪除具有現有的產品類別目錄](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image41.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image40.png)
 
 **圖 14**:您無法刪除有現有的產品類別目錄 ([按一下以檢視完整大小的影像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image42.png))
 
@@ -240,7 +240,7 @@ Visual Studio 可讓您輕鬆地將新的預存程序加入至資料庫。 可�
 > 稍早在本教學課程中，我們已使用與`NorthwindWithSprocs`資料集。 但該資料集只能有單一的實體， `ProductsDataTable`，因此需要使用分類。 因此，對於當我談到的資料存取層 I m 參考本教學課程的其餘部分`Northwind`資料集，我們先建立中的另一個[建立資料存取層](../introduction/creating-a-data-access-layer-vb.md)教學課程。
 
 
-開啟 Northwind 資料集選取`CategoriesTableAdapter`，並移至 [屬性] 視窗。 屬性視窗清單`InsertCommand`， `UpdateCommand`， `DeleteCommand`，和`SelectCommand`使用 TableAdapter，以及其名稱和連接資訊。 展開`DeleteCommand`屬性，以查看其詳細資料。 如 [圖 15] 所示， `DeleteCommand` s`ComamndType`屬性設定為會指示它傳送的文字的文字`CommandText`為特定 SQL 查詢的屬性。
+開啟 Northwind 資料集選取`CategoriesTableAdapter`，並移至 [屬性] 視窗。 屬性視窗清單`InsertCommand`， `UpdateCommand`， `DeleteCommand`，和`SelectCommand`使用 TableAdapter，以及其名稱和連接資訊。 展開`DeleteCommand`屬性，以查看其詳細資料。 如 [圖 15] 所示， `DeleteCommand` s`CommandType`屬性設定為會指示它傳送的文字的文字`CommandText`為特定 SQL 查詢的屬性。
 
 
 ![在 [屬性] 視窗中檢視其屬性設計工具中選取 CategoriesTableAdapter](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image43.png)

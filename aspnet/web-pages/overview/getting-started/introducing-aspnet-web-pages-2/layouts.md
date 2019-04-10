@@ -8,15 +8,15 @@ ms.date: 05/28/2015
 ms.assetid: c85ec591-f8d7-4882-b763-de6ab9f3df7a
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
 msc.type: authoredcontent
-ms.openlocfilehash: a6a007678d58547e9987ebda46bd08ae8aea66f7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 58f3ec28914a604aa911cc3cb73733f0d58fd49f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046175"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390411"
 ---
-<a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>ASP.NET Web Pages 簡介-建立一致的版面配置
-====================
+# <a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>ASP.NET Web Pages 簡介-建立一致的版面配置
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本教學課程會示範如何使用*版面配置*使用 ASP.NET Web Pages 的站台上建立一致的外觀的頁面。 它假設您已完成透過數列[刪除 ASP.NET Web Pages 中的資料庫資料](https://go.microsoft.com/fwlink/?LinkId=251584)。
@@ -146,7 +146,7 @@ ASP.NET 已合併到 Movies.cshtml 頁面的內容 *\_Layout.cshtml*頁面上正
 
 `Page`物件可供所有 *.cshtml*頁面，並且是基於此目的，也就是它的版面配置和網頁之間共用資訊。
 
-開啟<em>\_Layout.cshtml</em>頁面。 變更`<title>`元素，使它看起來像此標記：
+開啟 *\_Layout.cshtml*頁面。 變更`<title>`元素，使它看起來像此標記：
 
 [!code-html[Main](layouts/samples/sample9.html)]
 

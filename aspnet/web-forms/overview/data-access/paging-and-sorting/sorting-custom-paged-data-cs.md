@@ -8,15 +8,15 @@ ms.date: 08/15/2006
 ms.assetid: 778baa4e-4af8-4665-947e-7a01d1a4dff2
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ebc6be8c41251190a0124fe5f3d2c154f1ad4450
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: a65fe60dc44eb40591733ba9371e409f690fea52
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425642"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409235"
 ---
-<a name="sorting-custom-paged-data-c"></a>排序自訂的分頁資料 (C#)
-====================
+# <a name="sorting-custom-paged-data-c"></a>排序自訂的分頁資料 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_26_CS.exe)或[下載 PDF](sorting-custom-paged-data-cs/_static/datatutorial26cs1.pdf)
@@ -71,7 +71,7 @@ ms.locfileid: "58425642"
 **圖 1**:預存程序 s 三個輸入參數嘗試不同的值
 
 
-[![結果會顯示在 [輸出] 視窗中的預存程序 s](sorting-custom-paged-data-cs/_static/image3.png)](sorting-custom-paged-data-cs/_static/image2.png)
+[![T他預存程序的輸出] 視窗中顯示結果](sorting-custom-paged-data-cs/_static/image3.png)](sorting-custom-paged-data-cs/_static/image2.png)
 
 **圖 2**:結果會顯示在 [輸出] 視窗中的預存程序 s ([按一下以檢視完整大小的影像](sorting-custom-paged-data-cs/_static/image4.png))
 
@@ -145,7 +145,7 @@ DAL 和 BLL，包括使用的方法需要擴增`GetProductsPagedAndSorted`預存
 [圖 7] 顯示時依排序的結果的第一頁`UnitPrice`以遞增順序。
 
 
-[![結果會依照 UnitPrice](sorting-custom-paged-data-cs/_static/image10.png)](sorting-custom-paged-data-cs/_static/image9.png)
+[![T果會按照 UnitPrice](sorting-custom-paged-data-cs/_static/image10.png)](sorting-custom-paged-data-cs/_static/image9.png)
 
 **圖 7**:結果會依照 UnitPrice ([按一下以檢視完整大小的影像](sorting-custom-paged-data-cs/_static/image11.png))
 
@@ -166,7 +166,7 @@ DAL 和 BLL，包括使用的方法需要擴增`GetProductsPagedAndSorted`預存
 **圖 9**:將 供應商的供應商名稱 BoundField 的 SortExpression
 
 
-[![現在可以供應商提供的排序結果](sorting-custom-paged-data-cs/_static/image15.png)](sorting-custom-paged-data-cs/_static/image14.png)
+[![T他現在供應商提供的排序結果](sorting-custom-paged-data-cs/_static/image15.png)](sorting-custom-paged-data-cs/_static/image14.png)
 
 **圖 10**:結果可立即依供應商 ([按一下以檢視完整大小的影像](sorting-custom-paged-data-cs/_static/image16.png))
 

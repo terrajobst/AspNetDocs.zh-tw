@@ -8,15 +8,15 @@ ms.date: 10/30/2006
 ms.assetid: f8fd58e2-f932-4f08-ab3d-fbf8ff3295d2
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 43a43c95e049acab734fa7d9fdcf2b96f12e78d9
-ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
+ms.openlocfilehash: 5714b118a5894731820d8e9775c8f5c8a375856c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58440270"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390125"
 ---
-<a name="handling-bll--and-dal-level-exceptions-c"></a>處理 BLL 和 DAL 層級的例外狀況 (C#)
-====================
+# <a name="handling-bll--and-dal-level-exceptions-c"></a>處理 BLL 和 DAL 層級的例外狀況 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_38_CS.exe)或[下載 PDF](handling-bll-and-dal-level-exceptions-cs/_static/datatutorial38cs1.pdf)
@@ -41,7 +41,7 @@ ms.locfileid: "58440270"
 我們會擔心處理更新的工作流程期間發生的例外狀況之前，讓第一次建立可編輯的 DataList。 開啟`ErrorHandling.aspx`頁面中`EditDeleteDataList`資料夾中，DataList 加入設計工具中，設定其`ID`屬性設`Products`，並新增名為新 ObjectDataSource `ProductsDataSource`。 設定要使用 ObjectDataSource`ProductsBLL`類別的`GetProducts()`選取方法會記錄; 設定下拉式清單中的插入、 更新和刪除索引標籤為 （無）。
 
 
-[![傳回使用 GetProducts() 方法的產品資訊](handling-bll-and-dal-level-exceptions-cs/_static/image2.png)](handling-bll-and-dal-level-exceptions-cs/_static/image1.png)
+[![Return 使用 GetProducts() 方法的產品資訊](handling-bll-and-dal-level-exceptions-cs/_static/image2.png)](handling-bll-and-dal-level-exceptions-cs/_static/image1.png)
 
 **圖 1**:傳回產品資訊使用`GetProducts()`方法 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-cs/_static/image3.png))
 
@@ -60,7 +60,7 @@ ms.locfileid: "58440270"
 請花一點時間檢閱我們的進度，透過瀏覽器 （請參閱 圖 2）。
 
 
-[![每一個產品包含 [編輯] 按鈕](handling-bll-and-dal-level-exceptions-cs/_static/image5.png)](handling-bll-and-dal-level-exceptions-cs/_static/image4.png)
+[![E除此之外，每個產品都包含 [編輯] 按鈕](handling-bll-and-dal-level-exceptions-cs/_static/image5.png)](handling-bll-and-dal-level-exceptions-cs/_static/image4.png)
 
 **圖 2**:每一個產品包含 [編輯] 按鈕 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-cs/_static/image6.png))
 
@@ -115,12 +115,12 @@ ms.locfileid: "58440270"
 使用`Try ... Catch`就地區塊中，使用者會使用更具參考性的錯誤訊息，以數字 4 和 5 的顯示。 請注意，面對 DataList 例外狀況會保留在編輯模式。 這是因為在控制流程之後發生的例外狀況，立即重新導向至`Catch`區塊，並略過 DataList 回到預先編輯狀態的程式碼。
 
 
-[![如果使用者遺漏必要的欄位，就會顯示一則錯誤訊息](handling-bll-and-dal-level-exceptions-cs/_static/image9.png)](handling-bll-and-dal-level-exceptions-cs/_static/image8.png)
+[![A如果使用者遺漏必要的欄位，就會顯示 n 個錯誤訊息](handling-bll-and-dal-level-exceptions-cs/_static/image9.png)](handling-bll-and-dal-level-exceptions-cs/_static/image8.png)
 
 **圖 4**:如果使用者遺漏必要的欄位，就會顯示一則錯誤訊息 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-cs/_static/image10.png))
 
 
-[![錯誤訊息會顯示當輸入是負的價格](handling-bll-and-dal-level-exceptions-cs/_static/image12.png)](handling-bll-and-dal-level-exceptions-cs/_static/image11.png)
+[![An 錯誤訊息會顯示當輸入是負的價格](handling-bll-and-dal-level-exceptions-cs/_static/image12.png)](handling-bll-and-dal-level-exceptions-cs/_static/image11.png)
 
 **圖 5**:錯誤訊息會顯示當輸入是負的價格 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-cs/_static/image13.png))
 

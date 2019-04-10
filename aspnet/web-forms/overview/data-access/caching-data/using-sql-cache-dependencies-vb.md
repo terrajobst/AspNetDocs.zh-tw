@@ -8,15 +8,15 @@ ms.date: 05/30/2007
 ms.assetid: bd347d93-4251-4532-801c-a36f2dfa7f96
 msc.legacyurl: /web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f47cc7c1fd4fd0d1e41bef31a2e68dd34393d52e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b1660c0d20b76d97ee00acf1080c3eca1f596be2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032605"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412667"
 ---
-<a name="using-sql-cache-dependencies-vb"></a>使用 SQL 快取相依性 (VB)
-====================
+# <a name="using-sql-cache-dependencies-vb"></a>使用 SQL 快取相依性 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_61_VB.zip)或[下載 PDF](using-sql-cache-dependencies-vb/_static/datatutorial61vb1.pdf)
@@ -87,7 +87,7 @@ ASP.NET 執行階段會追蹤目前`changeId`資料表快取資料使用時`SqlC
 連接到伺服器之後，會顯示伺服器 Management Studio，並將其擁有的資料庫、 安全性和其他等等的子資料夾中。 以滑鼠右鍵按一下 [資料庫] 資料夾，然後選擇 [附加] 選項。 此時會出現 附加資料庫 對話方塊 （請參閱 圖 2）。 按一下 [新增] 按鈕，然後選取`NORTHWND.MDF`database 資料夾中您的 web 應用程式 s`App_Data`資料夾。
 
 
-[![附加 NORTHWND。從 [App_Data] 資料夾的 MDF 資料庫](using-sql-cache-dependencies-vb/_static/image2.gif)](using-sql-cache-dependencies-vb/_static/image1.png)
+[![Attach NORTHWND。從 [App_Data] 資料夾的 MDF Database](using-sql-cache-dependencies-vb/_static/image2.gif)](using-sql-cache-dependencies-vb/_static/image1.png)
 
 **圖 2**:附加`NORTHWND.MDF`從資料庫`App_Data`資料夾 ([按一下以檢視完整大小的影像](using-sql-cache-dependencies-vb/_static/image2.png))
 
@@ -143,7 +143,7 @@ ASP.NET 執行階段會追蹤目前`changeId`資料表快取資料使用時`SqlC
 若要示範如何以宣告方式使用 SQL 快取相依性，請開啟`SqlCacheDependencies.aspx`頁面中`Caching`資料夾，然後從 [工具箱] 拖曳至設計工具拖曳的 GridView。 設定 GridView s`ID`要`ProductsDeclarative`，並從它的智慧標籤，選擇 繫結至名為新 ObjectDataSource `ProductsDataSourceDeclarative`。
 
 
-[![建立名為 ProductsDataSourceDeclarative 新 ObjectDataSource](using-sql-cache-dependencies-vb/_static/image5.gif)](using-sql-cache-dependencies-vb/_static/image3.png)
+[![Create 新 ObjectDataSource 名為 ProductsDataSourceDeclarative](using-sql-cache-dependencies-vb/_static/image5.gif)](using-sql-cache-dependencies-vb/_static/image3.png)
 
 **圖 5**:建立新的 ObjectDataSource 具名`ProductsDataSourceDeclarative`([按一下以檢視完整大小的影像](using-sql-cache-dependencies-vb/_static/image4.png))
 
@@ -151,12 +151,12 @@ ASP.NET 執行階段會追蹤目前`changeId`資料表快取資料使用時`SqlC
 設定要使用 ObjectDataSource`ProductsBLL`類別，並設定下拉式清單中選取的索引標籤，以`GetProducts()`。 在 [更新] 索引標籤中，選擇`UpdateProduct`三個輸入參數的多載`productName`， `unitPrice`，和`productID`。 在 INSERT 和 DELETE 的索引標籤中設定為 （無） 的下拉式清單。
 
 
-[![UpdateProduct 多載使用三個輸入參數](using-sql-cache-dependencies-vb/_static/image6.gif)](using-sql-cache-dependencies-vb/_static/image5.png)
+[![Use UpdateProduct 多載具有三個輸入參數](using-sql-cache-dependencies-vb/_static/image6.gif)](using-sql-cache-dependencies-vb/_static/image5.png)
 
 **圖 6**:使用 UpdateProduct 多載具有三個輸入參數 ([按一下以檢視完整大小的影像](using-sql-cache-dependencies-vb/_static/image6.png))
 
 
-[![設定為 （無） 下拉式清單，以便進行插入和刪除索引標籤](using-sql-cache-dependencies-vb/_static/image7.gif)](using-sql-cache-dependencies-vb/_static/image7.png)
+[![Set 下拉式清單 （無） 插入和刪除索引標籤](using-sql-cache-dependencies-vb/_static/image7.gif)](using-sql-cache-dependencies-vb/_static/image7.png)
 
 **圖 7**:設定針對插入或刪除的索引標籤的下拉式清單中，為 （無） ([按一下以檢視完整大小的影像](using-sql-cache-dependencies-vb/_static/image8.png))
 
@@ -178,7 +178,7 @@ ASP.NET 執行階段會追蹤目前`changeId`資料表快取資料使用時`SqlC
 現在，請瀏覽此頁面，透過瀏覽器。 因為我們尚未以實作任何快取，每次頁面、 排序或編輯的格線頁的 ve 應該會顯示文字、 選取事件引發，如 [圖 8] 所示。
 
 
-[![每個分頁 GridView，編輯、 時間或排序，就會引發 ObjectDataSource 的選取事件](using-sql-cache-dependencies-vb/_static/image8.gif)](using-sql-cache-dependencies-vb/_static/image9.png)
+[![T他 ObjectDataSource 的選取事件引發的每個分頁 GridView，編輯、 時間或排序](using-sql-cache-dependencies-vb/_static/image8.gif)](using-sql-cache-dependencies-vb/_static/image9.png)
 
 **圖 8**:ObjectDataSource s`Selecting`事件引發每次呼叫 GridView，、 編輯或排序 ([按一下以檢視完整大小的影像](using-sql-cache-dependencies-vb/_static/image10.png))
 
@@ -197,7 +197,7 @@ ASP.NET 執行階段會追蹤目前`changeId`資料表快取資料使用時`SqlC
 在 GridView`SqlCacheDependencies.aspx`會顯示來自兩個資料表-資料`Products`並`Categories`(產品 s`CategoryName`透過擷取欄位`JOIN`上`Categories`)。 因此，我們想要指定兩個 SQL 快取相依性：NorthwindDB:Products;NorthwindDB:Categories。
 
 
-[![設定來支援快取 使用 SQL 快取相依性產品和分類的 ObjectDataSource](using-sql-cache-dependencies-vb/_static/image9.gif)](using-sql-cache-dependencies-vb/_static/image11.png)
+[![C設定支援快取使用 SQL 快取相依性產品和分類的 ObjectDataSource](using-sql-cache-dependencies-vb/_static/image9.gif)](using-sql-cache-dependencies-vb/_static/image11.png)
 
 **圖 9**:設定上的 支援快取使用 SQL 快取相依性的 ObjectDataSource`Products`並`Categories`([按一下以檢視完整大小的影像](using-sql-cache-dependencies-vb/_static/image12.png))
 
@@ -207,7 +207,7 @@ ASP.NET 執行階段會追蹤目前`changeId`資料表快取資料使用時`SqlC
 逐頁查看方格，您會看到沒有選取事件引發之後的文字，開啟新的瀏覽器視窗，並瀏覽至 編輯、 插入及刪除區段的基本概念教學課程 (`~/EditInsertDelete/Basics.aspx`)。 更新的名稱或產品的價格。 然後，從第一個瀏覽器視窗中，檢視不同的資料頁、 排序方格中，或按一下資料列 s [編輯] 按鈕。 此時，請選取事件引發應該再次出現，因為基礎資料庫資料已修改 （請參閱 圖 10）。 如果文字不會出現，請稍候片刻並再試一次。 請記住，輪詢服務在檢查變更`Products`資料表每個`pollTime`毫秒，因此沒有更新基礎資料時，與時收回快取的資料之間的延遲。
 
 
-[![修改 [產品] 資料表會收回快取的產品的資料](using-sql-cache-dependencies-vb/_static/image10.gif)](using-sql-cache-dependencies-vb/_static/image13.png)
+[![Modifying 產品資料表收回快取產品的資料](using-sql-cache-dependencies-vb/_static/image10.gif)](using-sql-cache-dependencies-vb/_static/image13.png)
 
 **圖 10**:修改 [產品] 資料表會收回快取產品的資料 ([按一下以檢視完整大小的影像](using-sql-cache-dependencies-vb/_static/image14.png))
 
@@ -241,17 +241,17 @@ ASP.NET 執行階段會追蹤目前`changeId`資料表快取資料使用時`SqlC
 若要測試這項功能，新增至下方的現有頁面的 GridView `ProductsDeclarative` GridView。 設定這個新的 GridView s`ID`要`ProductsProgrammatic`和它的智慧標籤，透過繫結至名為新 ObjectDataSource `ProductsDataSourceProgrammatic`。 設定要使用 ObjectDataSource`ProductsCL`類別，在 選取的下拉式清單和更新索引標籤，以設定`GetProducts`和`UpdateProduct`分別。
 
 
-[![設定使用 ProductsCL 類別 ObjectDataSource](using-sql-cache-dependencies-vb/_static/image11.gif)](using-sql-cache-dependencies-vb/_static/image15.png)
+[![C設定使用 ProductsCL 類別 ObjectDataSource](using-sql-cache-dependencies-vb/_static/image11.gif)](using-sql-cache-dependencies-vb/_static/image15.png)
 
 **圖 11**:設定要使用 ObjectDataSource`ProductsCL`類別 ([按一下以檢視完整大小的影像](using-sql-cache-dependencies-vb/_static/image16.png))
 
 
-[![從選取的索引標籤的下拉式清單中選取 GetProducts 方法](using-sql-cache-dependencies-vb/_static/image12.gif)](using-sql-cache-dependencies-vb/_static/image17.png)
+[![S從選取的索引標籤 s 下拉式清單中選擇 GetProducts 方法](using-sql-cache-dependencies-vb/_static/image12.gif)](using-sql-cache-dependencies-vb/_static/image17.png)
 
 **圖 12**:選取 `GetProducts`方法，從下拉式清單選取索引標籤 s ([按一下以檢視完整大小的影像](using-sql-cache-dependencies-vb/_static/image18.png))
 
 
-[![從 更新 索引標籤 s 下拉式清單選擇 UpdateProduct 方法](using-sql-cache-dependencies-vb/_static/image13.gif)](using-sql-cache-dependencies-vb/_static/image19.png)
+[![C選擇 UpdateProduct 方法，從下拉式清單使用的更新] 索引標籤秒](using-sql-cache-dependencies-vb/_static/image13.gif)](using-sql-cache-dependencies-vb/_static/image19.png)
 
 **圖 13**:從 [更新] 索引標籤的下拉式清單中選擇 UpdateProduct 方法 ([按一下以檢視完整大小的影像](using-sql-cache-dependencies-vb/_static/image20.png))
 
