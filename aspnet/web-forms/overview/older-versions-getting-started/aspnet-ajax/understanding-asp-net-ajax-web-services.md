@@ -8,15 +8,15 @@ ms.date: 03/28/2008
 ms.assetid: 3332d6e7-e2e1-4144-b805-e71d51e7e415
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
 msc.type: authoredcontent
-ms.openlocfilehash: 5e59077373b68b907391eff5349e1925222792a3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e576e11d63f940f1683ed26d217ff255a31b007c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57028105"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388409"
 ---
-<a name="understanding-aspnet-ajax-web-services"></a>了解 ASP.NET AJAX Web 服務
-====================
+# <a name="understanding-aspnet-ajax-web-services"></a>了解 ASP.NET AJAX Web 服務
+
 藉由[Scott Cate](https://github.com/scottcate)
 
 [下載 PDF](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial05_Web_Services_with_MS_Ajax_cs.pdf)
@@ -38,20 +38,21 @@ Web 服務是分散式系統之間交換資料中提供跨平台解決方案的.
 
 使用 Visual Studio 2008 建立新的網站專案時，web.config 檔案會有一些新增的項目可能不熟悉舊版 Visual Studio 的使用者。 因此他們可以使用頁面中其他項目會定義必要 HttpHandlers 和 HttpModules，這些修改部分可以對應到 ASP.NET AJAX 控制項的"asp"前置詞。 列表 1 顯示所做的修改`<httpHandlers>`會影響 Web 服務呼叫的 web.config 中的項目。 預設的 HttpHandler 用來處理.asmx 呼叫會移除，並取代為 ScriptHandlerFactory 類別，位於 System.Web.Extensions.dll 組件。 System.Web.Extensions.dll 內含所有使用 ASP.NET AJAX 的核心功能。
 
-**列表 1。ASP.NET AJAX Web 服務處理常式組態**
+**列表 1。 ASP.NET AJAX Web 服務處理常式組態**
 
 [!code-xml[Main](understanding-asp-net-ajax-web-services/samples/sample1.xml)]
 
 此 HttpHandler 取代對 ASP.NET AJAX 頁面從.NET Web 服務的 JavaScript Object Notation (JSON) 呼叫，以便使用 JavaScript 的 Web 服務 proxy。 ASP.NET AJAX Web 服務會傳送 JSON 訊息，而不是標準的簡易物件存取通訊協定 (SOAP) 呼叫，一般與 Web 服務相關聯。 這會導致較小的要求和整體的回應訊息。 它也允許更有效率的用戶端處理的資料因為 ASP.NET AJAX JavaScript 程式庫已最佳化來處理 JSON 物件。 列表 2 和 Web 服務要求和回應訊息序列化為 JSON 格式列表 3 顯示範例。 列表 3 中的回應訊息會將客戶物件的陣列，以及其相關聯的屬性時，則列表 2 所示的要求訊息會將傳送的國家/地區參數，且"比利時"的值。
 
-**列表 2。Web 服務要求訊息序列化為 JSON**
+**列表 2。 Web 服務要求訊息序列化為 JSON**
 
 [!code-json[Main](understanding-asp-net-ajax-web-services/samples/sample2.json)]
 
-> *> [!NOTE] 作業名稱被定義為 web 服務 URL; 的一部分此外，要求訊息不一定提交透過 JSON。Web 服務可以使用 ScriptMethod 屬性，並 UseHttpGet 參數設定為 true，這會導致透過傳遞參數的查詢字串參數。*
+> *> [!NOTE]
+> 作業名稱被定義為 web 服務 URL; 的一部分此外，要求訊息不一定提交透過 JSON。 Web 服務可以使用 ScriptMethod 屬性，並 UseHttpGet 參數設定為 true，這會導致透過傳遞參數的查詢字串參數。*
 
 
-**列表 3。Web 服務的回應訊息序列化為 JSON**
+**列表 3。 Web 服務的回應訊息序列化為 JSON**
 
 [!code-json[Main](understanding-asp-net-ajax-web-services/samples/sample3.json)]
 
@@ -65,7 +66,7 @@ ASP.NET AJAX 架構會提供數個不同的方式，來呼叫 Web 服務。 您�
 
 列表 4 顯示將 WebMethod 屬性套用至名為 GetCustomersByCountry() 方法的範例。
 
-**列表 4。在 Web 服務中使用 WebMethod 屬性**
+**列表 4。 在 Web 服務中使用 WebMethod 屬性**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample4.cs)]
 
@@ -77,7 +78,7 @@ GetCustomersByCountry() 方法接受的國家/地區參數，並傳回客戶物�
 
 列表 5 顯示 ScriptService 屬性套用至名為 CustomersService Web 服務類別的範例。
 
-**列表 5。使用 AJAX 啟用 Web 服務的 ScriptService 屬性**
+**列表 5。 使用 AJAX 啟用 Web 服務的 ScriptService 屬性**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample5.cs)]
 
@@ -89,7 +90,7 @@ ScriptService 屬性是唯一必須定義在.NET Web 服務，才能讓它以供
 
 Web 方法應該接受時，就可以使用屬性 UseHttpGet 取得而不是 POST 要求的要求。 要求會傳送 Web 方法的輸入參數中使用的 URL 轉換成查詢字串參數。 UseHttpGet 屬性預設為 false，應該只設定為`true`當作業都已知為安全且當機密資料不會傳遞給 Web 服務。 列表 6 顯示 UseHttpGet 屬性搭配使用 ScriptMethod 屬性的範例。
 
-**列表 6。您可以使用 ScriptMethod 屬性搭配 UseHttpGet 屬性。**
+**列表 6。 您可以使用 ScriptMethod 屬性搭配 UseHttpGet 屬性。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample6.cs)]
 
@@ -101,7 +102,7 @@ Web 方法應該接受時，就可以使用屬性 UseHttpGet 取得而不是 POS
 
 列表 7 顯示使用 ResponseFormat 屬性來指定應該從 Web 方法傳回的 XML 資料的範例。
 
-**列表 7。您可以使用 ScriptMethod 屬性與 ResponseFormat 屬性。**
+**列表 7。 您可以使用 ScriptMethod 屬性與 ResponseFormat 屬性。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample7.cs)]
 
@@ -109,7 +110,7 @@ ResponseFormat 屬性也可以搭配 XmlSerializeString 屬性。 XmlSerializeSt
 
 列表 8 顯示使用 XmlSerializeString 屬性，以強制序列化為 XML 字串的範例。
 
-**列表 8。搭配 XmlSerializeString 屬性使用 ScriptMethod 屬性**
+**列表 8。 搭配 XmlSerializeString 屬性使用 ScriptMethod 屬性**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample8.cs)]
 
@@ -125,19 +126,19 @@ ResponseFormat 屬性也可以搭配 XmlSerializeString 屬性。 XmlSerializeSt
 
 在其中的 Web 服務所使用的巢狀複雜型別也必須使用用戶端頁面中的情況下，ASP.NET AJAX GenerateScriptType 屬性可以加入 Web 服務的影響。 例如，列表 9 所示的 CustomerDetails 類別包含位址和 Gender 屬性其中***代表巢狀複雜類型。***
 
-**列表 9。如下所示的 CustomerDetails 類別包含兩個巢狀的複雜型別。**
+**列表 9。 如下所示的 CustomerDetails 類別包含兩個巢狀的複雜型別。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample10.cs)]
 
 列表 9 所示的 CustomerDetails 類別中定義的位址和性別物件將不會自動可供使用透過 JavaScript 用戶端因為它們是巢狀型別 （地址是一種類別和性別是列舉型別）。 在使用 Web Service 內的巢狀的類型必須是用於用戶端的情況下，先前所述 GenerateScriptType 屬性都可以使用 （請參閱 [列表 10]）。 這個屬性可以在其中從服務傳回不同的巢狀複雜類型的情況下多次加入。 直接到 Web 服務類別或更新特定的 Web 方法可以套用它。
 
-**列表 10。您可以使用 GenerateScriptService 屬性來定義應可供用戶端的巢狀型別。**
+**列表 10。 您可以使用 GenerateScriptService 屬性來定義應可供用戶端的巢狀型別。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample11.cs)]
 
 藉由套用`GenerateScriptType`Web 服務、 地址和性別類型的屬性會自動可供使用由用戶端 ASP.NET AJAX JavaScript 程式碼。 JavaScript，會自動產生並傳送至用戶端上 Web 服務新增 GenerateScriptType 屬性的範例是以列表 11 所示。 您會看到如何使用巢狀複雜類型，在本文稍後。
 
-**列表 11。提供給 ASP.NET AJAX 頁面的巢狀複雜類型。**
+**列表 11。 提供給 ASP.NET AJAX 頁面的巢狀複雜類型。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample12.cs)]
 
@@ -151,13 +152,14 @@ ResponseFormat 屬性也可以搭配 XmlSerializeString 屬性。 XmlSerializeSt
 
 [!code-aspx[Main](understanding-asp-net-ajax-web-services/samples/sample13.aspx)]
 
-**列表 12。定義 ASP.NET AJAX 頁面所使用之 Web 服務。**
+**列表 12。 定義 ASP.NET AJAX 頁面所使用之 Web 服務。**
 
 將參考加入 ScriptManager 控制項透過 CustomersService.asmx 會導致以動態方式產生並由頁面所參考的 JavaScript proxy。 Proxy 會使用內嵌&lt;指令碼&gt;標記，並以動態方式載入呼叫 CustomersService.asmx 檔案，並附加 /js 字結尾。 下列範例會示範如何 JavaScript proxy 內嵌於頁面偵錯 web.config 中停用時：
 
 [!code-html[Main](understanding-asp-net-ajax-web-services/samples/sample14.html)]
 
-> *> [!NOTE] 如果您想要查看實際 JavaScript proxy 程式碼，就會產生您可以在 Internet Explorer 的 [位址] 方塊中輸入所需的.NET Web 服務的 URL，並附加 /js 字結尾。*
+> *> [!NOTE]
+> 如果您想要查看實際 JavaScript proxy 程式碼，就會產生您可以在 Internet Explorer 的 [位址] 方塊中輸入所需的.NET Web 服務的 URL，並附加 /js 字結尾。*
 
 
 如果已啟用偵錯 JavaScript proxy 的偵錯版本會內嵌在網頁中做的 web.config 中如下所示：
@@ -174,14 +176,14 @@ ScriptManager 所建立的 JavaScript proxy 也可以直接在網頁內嵌，而
 
 使用 JavaScript proxy 來呼叫名為 GetCustomersByCountry() Web 方法的範例是以列表 13 所示。 當使用者按一下網頁上的按鈕時，會呼叫 GetCustomersByCountry() 函式。
 
-**列表 13。使用 JavaScript proxy 呼叫 Web 服務。**
+**列表 13。 使用 JavaScript proxy 呼叫 Web 服務。**
 
 [!code-javascript[Main](understanding-asp-net-ajax-web-services/samples/sample17.js)]
 
 這個呼叫會參照 InterfaceTraining 命名空間，在服務中定義的 CustomersService 類別和 GetCustomersByCountry Web 方法。 從 textbox 取得的國家/地區值，以及名為 OnWSRequestComplete 非同步 Web 服務呼叫傳回時應該叫用的回呼函式，會將它傳遞。 OnWSRequestComplete 會處理從服務傳回的客戶物件的陣列，並將它們轉換為顯示在頁面的資料表。 圖 1 顯示呼叫所產生的輸出。
 
 
-[![取得 Web 服務來執行非同步 AJAX 呼叫的資料繫結。](understanding-asp-net-ajax-web-services/_static/image2.png)](understanding-asp-net-ajax-web-services/_static/image1.png)
+[![B取得 Web 服務來執行非同步 AJAX 呼叫合資料。](understanding-asp-net-ajax-web-services/_static/image2.png)](understanding-asp-net-ajax-web-services/_static/image1.png)
 
 **圖 1**:取得 Web 服務來執行非同步 AJAX 呼叫的資料繫結。  ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-web-services/_static/image3.png))
 
@@ -192,14 +194,14 @@ JavaScript proxy 也可以在單向呼叫 Web 服務，應該呼叫 Web 方法�
 
 Web 服務的非同步回呼可能會遇到的不同類型的錯誤，例如網路故障，Web 服務無法使用或傳回例外狀況。 幸運的是，ScriptManager 所產生的 JavaScript proxy 物件可讓多個回呼，以便定義來處理錯誤和失敗除了稍早所示的成功回呼。 錯誤回呼函式可以定義 Web 方法的呼叫中的標準的回呼函式的後面，如 [列表 14] 所示。
 
-**列表 14。定義的錯誤回呼函式，並顯示錯誤。**
+**列表 14。 定義的錯誤回呼函式，並顯示錯誤。**
 
 [!code-javascript[Main](understanding-asp-net-ajax-web-services/samples/sample18.js)]
 
 呼叫 Web 服務時，發生任何錯誤會觸發 OnWSRequestFailed() 回呼函式呼叫可接受物件，代表做為參數的錯誤。 Error 物件會公開數個不同的函數，來判斷錯誤的原因，以及在呼叫已逾時。列表 14 顯示使用不同的錯誤函式的範例，以及 圖 2 顯示的函式所產生的輸出範例。
 
 
-[![藉由呼叫 ASP.NET AJAX 錯誤函數所產生的輸出。](understanding-asp-net-ajax-web-services/_static/image5.png)](understanding-asp-net-ajax-web-services/_static/image4.png)
+[![Output 呼叫 ASP.NET AJAX 錯誤函式所產生。](understanding-asp-net-ajax-web-services/_static/image5.png)](understanding-asp-net-ajax-web-services/_static/image4.png)
 
 **圖 2**:藉由呼叫 ASP.NET AJAX 錯誤函數所產生的輸出。  ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-web-services/_static/image6.png))
 
@@ -212,7 +214,7 @@ Web 服務的非同步回呼可能會遇到的不同類型的錯誤，例如網�
 
 列表 15 示範呼叫 Web 方法，名為 GetRssFeed() 會傳回 XmlElement 物件。 GetRssFeed() 接受單一參數表示之 rss 摘要擷取的 URL。
 
-**列表 15。使用 Web 服務所傳回的 XML 資料。**
+**列表 15。 使用 Web 服務所傳回的 XML 資料。**
 
 [!code-html[Main](understanding-asp-net-ajax-web-services/samples/sample19.html)]
 
@@ -225,14 +227,14 @@ Web 服務的非同步回呼可能會遇到的不同類型的錯誤，例如網�
 為了回答這個問題，假設 ASP.NET AJAX 頁面會顯示客戶資料，並可讓使用者更新客戶地址。 如果 Web 服務可讓您指定位址類型 （CustomerDetails 類別內定義的複雜型別） 都可以傳送至用戶端的更新程序可以分割成個別的函式重複使用更好的程式碼。
 
 
-[![從呼叫傳回 RSS 資料的 Web 服務建立的輸出。](understanding-asp-net-ajax-web-services/_static/image8.png)](understanding-asp-net-ajax-web-services/_static/image7.png)
+[![Output 從呼叫傳回 RSS 資料的 Web 服務建立。](understanding-asp-net-ajax-web-services/_static/image8.png)](understanding-asp-net-ajax-web-services/_static/image7.png)
 
 **圖 3**:從呼叫傳回 RSS 資料的 Web 服務建立的輸出。  ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-web-services/_static/image9.png))
 
 
 列表 16 顯示叫用位址物件模型命名空間中定義的用戶端程式碼範例填入已更新的資料，並將它指派給 CustomerDetails 物件的位址屬性。 然後 CustomerDetails 物件會傳遞到 Web 服務以進行處理。
 
-**列表 16。使用巢狀複雜類型**
+**列表 16。 使用巢狀複雜類型**
 
 [!code-javascript[Main](understanding-asp-net-ajax-web-services/samples/sample20.js)]
 
@@ -246,13 +248,13 @@ ASP.NET AJAX 提供另一個機制來進行 Web 服務式的呼叫，而不需�
 
 列表 17 顯示在 ASP.NET 之外的程式碼的類別中定義兩個頁面方法的範例。 這些方法會擷取位於應用程式中的商務層類別中的資料\_網站的程式碼資料夾。
 
-**列表 17。定義頁面方法。**
+**列表 17。 定義頁面方法。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample22.cs)]
 
 當 ScriptManager 偵測到頁面中的 Web 方法的存在就會產生先前所述的 PageMethods 物件的動態參考。 呼叫 Web 方法是藉由參考後面接著名稱的方法，並應傳遞任何必要的參數資料的 PageMethods 類別來完成。 列表 18 顯示呼叫兩個稍早所示的頁面方法的範例。
 
-**列出 18。呼叫頁面方法與 PageMethods JavaScript 物件。**
+**列出 18。 呼叫頁面方法與 PageMethods JavaScript 物件。**
 
 [!code-javascript[Main](understanding-asp-net-ajax-web-services/samples/sample23.js)]
 
@@ -273,14 +275,14 @@ AutoCompleteExtender 控制項可用來擴充現有功能的 textbox，並協助
 [!code-aspx[Main](understanding-asp-net-ajax-web-services/samples/sample25.aspx)]
 
 
-[![使用 AutoCompleteExtender 控制項。](understanding-asp-net-ajax-web-services/_static/image11.png)](understanding-asp-net-ajax-web-services/_static/image10.png)
+[![U發揚光大 AutoCompleteExtender 控制項]。(understanding-asp-net-ajax-web-services/_static/image11.png)](understanding-asp-net-ajax-web-services/_static/image10.png)
 
 **圖 4**:使用 AutoCompleteExtender 控制項。  ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-web-services/_static/image12.png))
 
 
 一旦網站已設定為使用 ASP.NET AJAX Toolkit，AutoCompleteExtender 控制項可以加入至頁面更像加入規則的 ASP.NET 伺服器控制項。 列表 19 顯示使用控制項來呼叫 Web 服務的範例。
 
-**列出 19。使用 ASP.NET AJAX Toolkit AutoCompleteExtender 控制項。**
+**列出 19。 使用 ASP.NET AJAX Toolkit AutoCompleteExtender 控制項。**
 
 [!code-aspx[Main](understanding-asp-net-ajax-web-services/samples/sample26.aspx)]
 
@@ -288,11 +290,11 @@ AutoCompleteExtender 有數個不同的屬性，包括伺服器控制項上找�
 
 被呼叫的 Web 服務必須要有套用稍早所述的 ScriptService 屬性和目標的 Web 方法必須接受兩個名為 prefixText 和計數的參數。 PrefixText 參數代表終端使用者所輸入的字元，而計數參數代表要傳回多少項目 （預設值為 10）。 列表 20 顯示 GetCustomerIDs Web 方法呼叫由 AutoCompleteExtender 控制項列出 19 稍早所示的範例。 Web 方法呼叫的商務層方法，接著呼叫資料層方法會處理篩選的資料，並傳回相符的結果。 資料層方法的程式碼是由列出 21 所示。
 
-**列出 20。從 AutoCompleteExtender 控制項傳送的資料進行篩選。**
+**列出 20。 從 AutoCompleteExtender 控制項傳送的資料進行篩選。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample27.cs)]
 
-**列出 21。篩選根據使用者輸入的結果。**
+**列出 21。 篩選根據使用者輸入的結果。**
 
 [!code-csharp[Main](understanding-asp-net-ajax-web-services/samples/sample28.cs)]
 

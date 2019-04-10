@@ -8,15 +8,15 @@ ms.date: 07/21/2010
 ms.assetid: 5aeadf8f-39f3-4f07-a78f-1c310c64fb23
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 3b49ee53e82933de9b50960779c28ca6ab7441e5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: db8db4e3bff8047b48a7528b5146873ab6d84714
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059835"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398679"
 ---
-<a name="part-8-final-pages-exception-handling-and-conclusion"></a>第 8 部分：最後的頁面、例外狀況處理和結論
-====================
+# <a name="part-8-final-pages-exception-handling-and-conclusion"></a>第 8 部分：最後的頁面、例外狀況處理和結論
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 > Tailspin Spyworks 示範建立功能強大、 可擴充的應用程式，適用於.NET 平台是如何富含簡單。 它會展示如何在 ASP.NET 4 中使用最棒的新功能，建置線上商店，包括購物、 簽出，以及系統管理。
@@ -28,7 +28,7 @@ ms.locfileid: "57059835"
 
 建立名為 ContactUs.aspx 的新頁面
 
-使用設計工具，建立下列特殊 core—1.1 加 ToolkitScriptManager AjaxdControlToolkit 編輯器控制項的表單。 。
+使用設計工具，建立下列特殊 core—1.1 加 ToolkitScriptManager AjaxControlToolkit 編輯器控制項的表單。 。
 
 ![](tailspin-spyworks-part-8/_static/image1.jpg)
 

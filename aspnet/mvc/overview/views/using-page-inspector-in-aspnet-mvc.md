@@ -8,15 +8,15 @@ ms.date: 08/15/2012
 ms.assetid: c7e4e1ab-4932-4614-9f53-aaf7c706d498
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: abb1ef355bd7614daaab8c205d9d53065856cd23
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: ef0ae42e1c6114849a311164eac242db6dab2b1d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424361"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385791"
 ---
-<a name="using-page-inspector-in-aspnet-mvc"></a>在 ASP.NET MVC 中使用 Page Inspector
-====================
+# <a name="using-page-inspector-in-aspnet-mvc"></a>在 ASP.NET MVC 中使用 Page Inspector
+
 由 Tim Ammann
 
 > Visual Studio 2012 中的 Page Inspector 是整合式瀏覽器的 web 開發工具。 在 整合式瀏覽器中，選取任何項目和 Page Inspector 立即會反白顯示項目的來源和 CSS。 您可以瀏覽任何的 MVC 檢視，快速尋找呈現的標記的來源並使用瀏覽器工具，直接在 Visual Studio 環境中。
@@ -59,7 +59,7 @@ Page Inspector 隨附於 Microsoft Web Developer Tools。 1.3 為最新版本。
 
 ![新的 ASP.NET MVC 應用程式](using-page-inspector-in-aspnet-mvc/_static/image2.png)
 
-按一下 [確定 **Deploying Office Solutions**]。
+按一下 [確定] 。
 
 在 **新的 ASP.NET MVC 4 專案**對話方塊中，選取**網際網路應用程式**。 離開**Razor**做為預設檢視引擎。
 
@@ -240,7 +240,7 @@ Page Inspector 立即偵測到的變更*Site.css*檔案，並在 更新列會顯
 > SPA 範本需要[ASP.NET 和 Web 工具 2012.2](https://go.microsoft.com/fwlink/?LinkId=282650)更新。
 
 
-在 Visual Studio 中，選擇**檔案** &gt; **新專案**。 在左側，展開**Visual C#**，選取**Web**，然後選取**ASP.NET MVC4 Web 應用程式**。 按一下 [確定 **Deploying Office Solutions**]。
+在 Visual Studio 中，選擇**檔案** &gt; **新專案**。 在左側，展開**Visual C#**，選取**Web**，然後選取**ASP.NET MVC4 Web 應用程式**。 按一下 [確定] 。
 
 在 **新的 ASP.NET MVC 4 專案**對話方塊中，選取**單一頁面應用程式**。
 

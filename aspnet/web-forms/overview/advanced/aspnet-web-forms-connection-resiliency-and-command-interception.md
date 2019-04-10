@@ -8,15 +8,15 @@ ms.date: 03/31/2014
 ms.assetid: 6d497001-fa80-4765-b4cc-181fe90b894e
 msc.legacyurl: /web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception
 msc.type: authoredcontent
-ms.openlocfilehash: 067542e8b8aa9909bbb2147f8e11e34604986d87
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 2b8cae61347f00712aba18fe6a2e91bc207cb9f3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424023"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380037"
 ---
-<a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a>ASP.NET Web Form 連線恢復功能與命令攔截
-====================
+# <a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a>ASP.NET Web Form 連線恢復功能與命令攔截
+
 藉由[Erik Reitan](https://github.com/Erikre)
 
 在本教學課程中，您將修改 「 Wingtip Toys 範例應用程式支援連接恢復功能和命令攔截。 藉由啟用連接恢復功能，Wingtip Toys 範例應用程式會自動重試的資料呼叫一般的雲端環境的暫時性錯誤發生時。 此外，藉由實作命令攔截，Wingtip Toys 範例應用程式會攔截所有傳送至資料庫，以記錄或進行變更的 SQL 查詢。

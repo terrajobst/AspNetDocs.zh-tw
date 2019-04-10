@@ -8,15 +8,15 @@ ms.date: 12/01/2014
 ms.assetid: 61941e64-0c0d-4996-9270-cb8ccfd0cabc
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 3d96d796d22c3511fedc45c024274300143b119b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a62c821159cd097507019d5efb29e01958ec9fba
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034775"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398094"
 ---
-<a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>在 Visual Studio 2013 中建立 ASP.NET Web 專案
-====================
+# <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>在 Visual Studio 2013 中建立 ASP.NET Web 專案
+
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 > 本主題說明在 Visual Studio 2013 Update 3 中建立 ASP.NET web 專案的選項
@@ -81,7 +81,7 @@ Visual Studio 包含可讓您輕鬆地使用 Azure 服務來裝載 web 應用程
 - 建立和管理 web 應用程式或將應用程式可以透過網際網路提供的虛擬機器。
 - 檢視執行中雲端應用程式建立的記錄檔。
 - 在 偵錯模式中從遠端執行時在雲端執行的應用程式。
-- Viiew 及管理其他 Azure 服務，例如 SQL 資料庫。
+- 檢視和管理其他 Azure 服務，例如 SQL 資料庫。
 
 您可以[建立 Azure 帳戶](https://www.windowsazure.com/pricing/free-trial/)免費，包含基本的服務，例如 web 應用程式，且如果您是 MSDN 訂閱者可以[啟用權益](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/)，可以讓您向其他 Azure 每月信用額度服務。 
 

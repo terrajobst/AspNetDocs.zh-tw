@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 4da43d77-f6c4-43a8-9124-f1e8e1c8f0a2
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 81b0dbd794d31bc3c55bff4ba8110c590b88b509
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ee66e166d24bb80008671c84f6512d5c54707fcf
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049935"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389810"
 ---
-<a name="using-multiple-popup-controls-vb"></a>使用多個快顯視窗控制項 (VB)
-====================
+# <a name="using-multiple-popup-controls-vb"></a>使用多個快顯視窗控制項 (VB)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl1.vb.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol1VB.pdf)
@@ -49,7 +49,7 @@ PopupControl 擴充項在 AJAX Control Toolkit 提供簡單的方式，來啟動
 現在每當您按一下文字欄位中，行事曆會顯示以下欄位，可讓您選取的日期。 （回到選取的日期文字方塊將會說明在不同的教學課程。）
 
 
-[![當使用者按一下文字方塊，即出現日曆](using-multiple-popup-controls-vb/_static/image2.png)](using-multiple-popup-controls-vb/_static/image1.png)
+[![T他的行事曆會顯示當使用者按一下 [文字方塊](using-multiple-popup-controls-vb/_static/image2.png)](using-multiple-popup-controls-vb/_static/image1.png)
 
 當使用者按一下文字方塊，即出現日曆 ([按一下以檢視完整大小的影像](using-multiple-popup-controls-vb/_static/image3.png))
 

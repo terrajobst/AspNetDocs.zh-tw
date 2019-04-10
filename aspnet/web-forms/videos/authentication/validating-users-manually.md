@@ -8,15 +8,15 @@ ms.date: 08/22/2008
 ms.assetid: c11eec26-25a2-41fb-9330-ddc123c0423a
 msc.legacyurl: /web-forms/videos/authentication/validating-users-manually
 msc.type: video
-ms.openlocfilehash: b530963dbaad8c03eef87004fb8536063ebc2534
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3fc0ad6b366650d20d2710574a0b443f8cd994ee
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030015"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396690"
 ---
-<a name="validating-users-manually"></a>手動驗證使用者
-====================
+# <a name="validating-users-manually"></a>手動驗證使用者
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 在此影片的 Joe Stagner 示範您如何以手動方式建立您自己的 web 表單和程序驗證要求。 其他關於本影片的詳細資訊，請參閱 「 驗證使用者認證對成員資格使用者存放區 」 安全性教學課程 ([C#](../../overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-cs.md)， [VB](../../overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-vb.md))。

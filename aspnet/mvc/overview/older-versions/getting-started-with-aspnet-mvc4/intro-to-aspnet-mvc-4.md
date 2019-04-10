@@ -8,15 +8,15 @@ ms.date: 08/15/2012
 ms.assetid: ed66530a-04d5-49eb-b76a-85be1f57c437
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: ea3d1517192ded0e5372c49897bb1fec33324b6f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ecc0733c2850bc157c7ee5b251787152393481fc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046775"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385244"
 ---
-<a name="intro-to-aspnet-mvc-4"></a>ASP.NET MVC 4 簡介
-====================
+# <a name="intro-to-aspnet-mvc-4"></a>ASP.NET MVC 4 簡介
+
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 如果本教學課程中可用的更新的版本[此處](../../getting-started/introduction/getting-started.md)使用[Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)。 新的教學課程會使用 ASP.NET MVC 5，透過本教學課程提供許多增強功能。

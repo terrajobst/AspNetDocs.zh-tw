@@ -8,15 +8,15 @@ ms.date: 10/26/2007
 ms.assetid: 1f2e5f5b-8be1-4acc-ae36-a2e0d140251a
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-validation-controls-in-aspnet
 msc.type: video
-ms.openlocfilehash: da8831e179360dda870d6ee3d667118094983894
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 17204583d986f7938c38dc373cb296df01f16424
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047815"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386849"
 ---
-<a name="how-do-i--use-validation-controls-in-aspnet"></a>[How Do i:] 在 ASP.NET 中使用驗證控制項嗎？
-====================
+# <a name="how-do-i--use-validation-controls-in-aspnet"></a>[How Do i:] 在 ASP.NET 中使用驗證控制項嗎？
+
 藉由[Chris Pels](https://twitter.com/chrispels)
 
 在這段影片中了解如何使用 ASP.NET 中所提供的驗證控制項在網頁上實作驗證。 所有主要的驗證控制，例如將討論 RequiredFieldValidator 和 RegularExpressionValidator。 此外，了解如何使用 CustomValidator，當其中一個標準的驗證程式不符合您的需求。 會顯示伺服器和用戶端端驗證選項。 了解如何執行單一 UI 控制項上的驗證，以及多個驗證。

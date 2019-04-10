@@ -1,19 +1,20 @@
 ---
 uid: identity/overview/getting-started/aspnet-identity-recommended-resources
-title: ASP.NET Identity 建議資源 |Microsoft Docs
+title: ASP.NET Identity 建議資源-ASP.NET 4.x
 author: Rick-Anderson
 description: 本主題提供有關如何使用 ASP.NET Identity 的文件資源的連結。 如果您知道很棒的部落格文章、 stackoverflow 執行緒或任何其他連結...
 ms.author: riande
 ms.date: 04/09/2015
 ms.assetid: 0f78aec2-f509-46fa-b20f-d5208425d8ec
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-recommended-resources
 msc.type: authoredcontent
-ms.openlocfilehash: 14a8ec16fe741d87a23bfa45046386a2c08d2f27
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 8e476f8a4172ebbe55819cda1ceb5458426243bd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424335"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381896"
 ---
 # <a name="aspnet-identity-recommended-resources"></a>ASP.NET Identity 建議資源
 
@@ -26,7 +27,7 @@ ms.locfileid: "58424335"
 - [開始使用 ASP.NET Identity](#gettingstarted)
 - [新精選必須閱讀的文章](#feat)
 - [中繼 ASP.NET 身分識別](#adv)
-- [影片](#video)
+- [視訊](#video)
 - [如何提出問題，提出功能要求，報告錯誤和每日組建](#samp)
 - [身分識別部落格文章](#blog)
 - [ASP.NET Identity 的自訂儲存體提供者](#cust)
@@ -58,7 +59,7 @@ ms.locfileid: "58424335"
 ## <a name="intermediate-aspnet-identity"></a>中繼 ASP.NET 身分識別
 
 - [帳戶確認和密碼復原，使用 ASP.NET Identity](../features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
-- [使用 SMS 的雙因素驗證和使用 ASP.NET Identity 的電子郵件](../features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
+- [透過 ASP.NET Identity 使用簡訊和電子郵件進行的雙重要素驗證](../features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
 - [將現有的網站從 SQL 成員資格移轉至 ASP.NET Identity](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
 - [將 ASP.NET Identity 新增至空的或現有的 Web Form 專案](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
 - MSDN Magazine[使用 ASP.NET Identity 的外部驗證](https://msdn.microsoft.com/magazine/dn745860.aspx)Dino Esposito 的
@@ -106,7 +107,7 @@ ms.locfileid: "58424335"
 
     - [使用 OWIN/Katana 驗證中介軟體的外部登入提供者 （社交登入） 入門](http://brockallen.com/2014/01/09/a-primer-on-external-login-providers-social-logins-with-owinkatana-authentication-middleware/)
     - [簡介 IdentityReboot](http://brockallen.com/2014/02/11/introducing-identityreboot/)： 一組實作主要的遺漏功能，我了解抱怨 ASP.NET 身分識別擴充功能。
-- [Pranav Rastogi](https://twitter.com/rustd)
+- [請參閱 Pranav Rastogi](https://twitter.com/rustd)
 
     - [取得從社交提供者的詳細資訊](https://blogs.msdn.com/b/webdev/archive/2013/10/16/get-more-information-from-social-providers-used-in-the-vs-2013-project-templates.aspx)
 - [@beabigrockstar](https://twitter.com/beabigrockstar) (Jerrie Pelser)

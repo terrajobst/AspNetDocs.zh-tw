@@ -8,15 +8,15 @@ ms.date: 05/27/2008
 ms.assetid: 94dd6eec-3685-4323-ac75-75a70a4f766a
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-2-the-repository-pattern
 msc.type: video
-ms.openlocfilehash: 210f26a86a387ae4f639a8e45d04116fa3c3e750
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ba9e15c63f007a15eaff1dc3f655bf787c71b34f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049175"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387829"
 ---
-<a name="aspnet-mvc-storefront-part-2-the-repository-pattern"></a>ASP.NET MVC 店面第 2 部分：儲存機制模式
-====================
+# <a name="aspnet-mvc-storefront-part-2-the-repository-pattern"></a>ASP.NET MVC 店面第 2 部分：儲存機制模式
+
 藉由[Rob Conery](https://github.com/robconery)
 
 Rob Conery 逐步解說 Repository 的實作，並寫出的單元測試的第一個主要組。 他也將結構的初始服務層方法和介面。

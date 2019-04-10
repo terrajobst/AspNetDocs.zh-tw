@@ -8,15 +8,15 @@ ms.date: 02/20/2014
 ms.assetid: 4eb060cc-cf14-41ae-bab1-14a2c15332d0
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites
 msc.type: authoredcontent
-ms.openlocfilehash: 8f049adce33e452896b5e2a444635ff30d18e480
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fd3ba36891aa66f78c28c538a4d3ba0da6736765
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026045"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392985"
 ---
-<a name="validating-user-input-in-aspnet-web-pages-razor-sites"></a>ASP.NET Web Pages (Razor) 網站中驗證使用者輸入
-====================
+# <a name="validating-user-input-in-aspnet-web-pages-razor-sites"></a>ASP.NET Web Pages (Razor) 網站中驗證使用者輸入
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 這篇文章討論如何驗證您從使用者取得的資訊&mdash;也就是若要確定使用者輸入有效 HTML 中的資訊表單中的 ASP.NET Web Pages (Razor) 網站。
@@ -141,12 +141,12 @@ ms.locfileid: "57026045"
 
 您可以控制如何驗證錯誤會顯示藉由定義 CSS 類別具有下列的保留的名稱：
 
-- `field-validation-error`. 定義的輸出`Html.ValidationMessage`方法時顯示的錯誤。
-- `field-validation-valid`. 定義的輸出`Html.ValidationMessage`方法時沒有發生錯誤。
-- `input-validation-error`. 定義如何`<input>`項目會轉譯為錯誤時。 (例如，您可以使用這個類別，若要設定的背景色彩&lt;輸入&gt;不同的色彩，其值為無效的項目。)只有在用戶端驗證 （在 ASP.NET Web Pages 2) 會使用這個 CSS 類別。
-- `input-validation-valid`. 定義的外觀`<input>`項目時沒有發生錯誤。
-- `validation-summary-errors`. 定義的輸出`Html.ValidationSummary`方法，它會顯示錯誤清單。
-- `validation-summary-valid`. 定義的輸出`Html.ValidationSummary`方法時沒有發生錯誤。
+- `field-validation-error`。 定義的輸出`Html.ValidationMessage`方法時顯示的錯誤。
+- `field-validation-valid`。 定義的輸出`Html.ValidationMessage`方法時沒有發生錯誤。
+- `input-validation-error`。 定義如何`<input>`項目會轉譯為錯誤時。 (例如，您可以使用這個類別，若要設定的背景色彩&lt;輸入&gt;不同的色彩，其值為無效的項目。)只有在用戶端驗證 （在 ASP.NET Web Pages 2) 會使用這個 CSS 類別。
+- `input-validation-valid`。 定義的外觀`<input>`項目時沒有發生錯誤。
+- `validation-summary-errors`。 定義的輸出`Html.ValidationSummary`方法，它會顯示錯誤清單。
+- `validation-summary-valid`。 定義的輸出`Html.ValidationSummary`方法時沒有發生錯誤。
 
 下列`<style>`區塊顯示的錯誤狀況的規則。
 

@@ -8,15 +8,15 @@ ms.date: 05/21/2012
 ms.assetid: 2b381a41-2cb3-40c0-8545-1d393e22877f
 msc.legacyurl: /web-pages/overview/security/using-a-catpcha-to-prevent-automated-programs-bots-from-using-your-aspnet-web-site
 msc.type: authoredcontent
-ms.openlocfilehash: dc014f42490327743764787d58c613b7caa89f1f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e7baafda8c5b6de4ab0de46948f969a6f0cc21ad
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058295"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390905"
 ---
-<a name="using-a-captcha-to-prevent-bots-from-using-your-aspnet-web-razor-site"></a>使用 CAPTCHA 避免 Bot 使用 ASP.NET Web Razor） 網站
-====================
+# <a name="using-a-captcha-to-prevent-bots-from-using-your-aspnet-web-razor-site"></a>使用 CAPTCHA 避免 Bot 使用 ASP.NET Web Razor） 網站
+
 by [Microsoft](https://github.com/microsoft)
 
 > 這篇文章說明如何在 ASP.NET Web Pages (Razor) 網站中執行工作時，防止自動的程式 (bot) 使用 ReCaptcha （安全性量值）。

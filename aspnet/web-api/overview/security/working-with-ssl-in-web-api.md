@@ -8,15 +8,15 @@ ms.date: 02/22/2019
 ms.assetid: 97f6164f-59cf-45c0-b820-e4aa29b45396
 msc.legacyurl: /web-api/overview/security/working-with-ssl-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 69c0d217f605096d968435c062ee9931f8dff75f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 31589b3713b1f1a9b98d12906bfef81f8bf5e3f9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048795"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386148"
 ---
-<a name="working-with-ssl-in-web-api"></a>使用 Web API 中的 SSL
-====================
+# <a name="working-with-ssl-in-web-api"></a>使用 Web API 中的 SSL
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 在一般的 HTTP 是不安全的數個常見的驗證配置。 特別是，基本驗證和表單驗證來傳送未加密的認證。 為安全，這些驗證結構描述*必須*使用 SSL。 此外，SSL 用戶端憑證可用來驗證用戶端。

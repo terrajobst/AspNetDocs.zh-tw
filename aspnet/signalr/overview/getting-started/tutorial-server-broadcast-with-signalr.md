@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: a243c78c7d552f1c82a88c6083871fcd16538618
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: aa8c0be6e4a758da34fc6eed902e31049d0a9a9c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065755"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379725"
 ---
 # <a name="tutorial-server-broadcast-with-signalr-2"></a>教學課程：伺服器廣播與 SignalR 2
 
@@ -43,7 +43,7 @@ ms.locfileid: "57065755"
 
 ## <a name="prerequisites"></a>必要條件
 
- * [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)具有**ASP.NET 和 web 開發**工作負載。
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)具有**ASP.NET 和 web 開發**工作負載。
 
 ## <a name="create-the-project"></a>建立專案
 
@@ -75,7 +75,7 @@ ms.locfileid: "57065755"
 
 ### <a name="create-the-stocktickerhub-and-stockticker-classes"></a>建立 StockTickerHub 和 Stockservices.asmx 類別
 
-您將使用 SignalR 中樞 API 來處理伺服器到用戶端互動。 A`StockTickerHub`類別衍生自`SignalRHub`類別會處理來自用戶端接收連線和方法呼叫。 您也需要維護的內建資料並執行`Timer`物件。 `Timer`物件將會定期觸發的用戶端連接獨立的價格更新。 您無法將這些函式放在`Hub`類別，因為中樞是暫時性。 應用程式建立`Hub`類別執行個體，每個工作中樞，連線等呼叫從用戶端到伺服器上。 所以，保持股票資料、 更新價格，並會廣播價格更新的機制都在個別的類別中執行。 您將類別命名為`StockTicker`。
+您將使用 SignalR 中樞 API 來處理伺服器到用戶端互動。 A`StockTickerHub`類別衍生自 SignalR`Hub`類別會處理來自用戶端接收連線和方法呼叫。 您也需要維護的內建資料並執行`Timer`物件。 `Timer`物件將會定期觸發的用戶端連接獨立的價格更新。 您無法將這些函式放在`Hub`類別，因為中樞是暫時性。 應用程式建立`Hub`類別執行個體，每個工作中樞，連線等呼叫從用戶端到伺服器上。 所以，保持股票資料、 更新價格，並會廣播價格更新的機制都在個別的類別中執行。 您將類別命名為`StockTicker`。
 
 ![從 Stockservices.asmx 的廣播](tutorial-server-broadcast-with-signalr/_static/image3.png)
 

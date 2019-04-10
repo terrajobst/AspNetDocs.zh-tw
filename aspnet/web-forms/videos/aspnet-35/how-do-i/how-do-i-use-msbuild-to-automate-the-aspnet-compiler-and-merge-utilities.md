@@ -8,15 +8,15 @@ ms.date: 08/07/2008
 ms.assetid: 14f2b333-59f5-4ae4-88db-2a78f809cef3
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities
 msc.type: video
-ms.openlocfilehash: bed850b06b69e101d34f6987c9e6c66ab928543c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4d0ee2f8f1a7538dbfb488a0599fdc0cd3ec999e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044165"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388006"
 ---
-<a name="how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities"></a>[How Do i:]使用 MSBuild 自動化 ASP.NET 編譯器並合併公用程式
-====================
+# <a name="how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities"></a>[How Do i:]使用 MSBuild 自動化 ASP.NET 編譯器並合併公用程式
+
 藉由[Chris Pels](https://twitter.com/chrispels)
 
 在這段影片 Chris Pels 會示範如何建立 MSBuild 專案，可協調執行 aspnet\_編譯器和 aspnet\_合併 ASP.NET 網站的公用程式。 首先，了解 ASP.NET 網站的編譯程序的基本概念，而且兩個命令列公用程式的角色。 接下來，請參閱如何建立 MSBuild 專案檔和主要的項目，例如 PropertyGroup 和 Target。 然後了解如何執行 aspnet 的詳細資訊\_編譯器和 aspnet\_合併公用程式從 MSBuild 專案。 最後，會討論幾個可能的擴充的核心概念。

@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 33af23f1-4016-4740-8fb2-37d1773452cd
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-vb
 msc.type: authoredcontent
-ms.openlocfilehash: aec5a3af98cf40e460f4164fb8950e8029002937
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 455d62d97808862f70692c46ae223f47270266f9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57028545"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387616"
 ---
-<a name="allowing-only-certain-characters-in-a-text-box-vb"></a>文字方塊中只允許特定字元 (VB)
-====================
+# <a name="allowing-only-certain-characters-in-a-text-box-vb"></a>文字方塊中只允許特定字元 (VB)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/4/c/2/4c2def7a-0d23-4055-91f9-1f18504167d7/FilteredTextBox0.vb.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/filteredtextbox0VB.pdf)
@@ -56,7 +56,7 @@ ASP.NET AJAX Control Toolkit 包含`FilteredTextBox`擴充文字方塊控制項�
 執行頁面並嘗試輸入字母，如果已啟用 JavaScript，它將無法運作;數字，不過會出現在頁面上。 不過請注意，保護`FilteredTextBox`提供不是項目符號的使用期限：如果已啟用 JavaScript，任何資料可能會在文字方塊中輸入，因此您必須使用額外的驗證方法，也就是 ASP。NET 的驗證控制項。
 
 
-[![可能會輸入只有數字](allowing-only-certain-characters-in-a-text-box-vb/_static/image2.png)](allowing-only-certain-characters-in-a-text-box-vb/_static/image1.png)
+[![O可能會輸入只有數字](allowing-only-certain-characters-in-a-text-box-vb/_static/image2.png)](allowing-only-certain-characters-in-a-text-box-vb/_static/image1.png)
 
 可能會輸入只有數字 ([按一下以檢視完整大小的影像](allowing-only-certain-characters-in-a-text-box-vb/_static/image3.png))
 

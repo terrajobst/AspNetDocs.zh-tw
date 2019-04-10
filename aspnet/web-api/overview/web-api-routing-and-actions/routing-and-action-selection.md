@@ -8,15 +8,15 @@ ms.date: 12/14/2018
 ms.assetid: bcf2d223-cb7f-411e-be05-f43e96a14015
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-and-action-selection
 msc.type: authoredcontent
-ms.openlocfilehash: ce54181996376cb5dde3b91c10c16f33b3c6a570
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 238efd312a73e2452ca5f679f2b8f5ed1336c4dc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058915"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385874"
 ---
-<a name="routing-and-action-selection-in-aspnet-web-api"></a>路由和 ASP.NET Web API 中的動作選取
-====================
+# <a name="routing-and-action-selection-in-aspnet-web-api"></a>路由和 ASP.NET Web API 中的動作選取
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 這篇文章說明 ASP.NET Web API 將 HTTP 要求路由至特定動作的控制站上的方式。
@@ -85,7 +85,7 @@ URI 路徑 「 api/產品 」 中，將會包含路由字典：
 - 類別: 「 玩具 」
 - 識別碼："123"
 
-預設值也可以在路由範本中包含值，不會不出現在任何地方。 如果路由符合，該值會儲存在字典中。 例如: 
+預設值也可以在路由範本中包含值，不會不出現在任何地方。 如果路由符合，該值會儲存在字典中。 例如：
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample6.cs)]
 

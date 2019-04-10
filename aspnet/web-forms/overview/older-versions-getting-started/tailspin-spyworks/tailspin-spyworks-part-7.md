@@ -8,15 +8,15 @@ ms.date: 07/21/2010
 ms.assetid: 50223ee9-11b9-4cf3-bca2-e2f10bf471f3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: cada8d9aee649e4f2a5afc1ca2b46863ea458207
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 646aeb4ad99ba9b0ee114c6be4aa528e62ef4775
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056515"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389943"
 ---
-<a name="part-7-adding-features"></a>第 7 部分：加入功能
-====================
+# <a name="part-7-adding-features"></a>第 7 部分：加入功能
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 > Tailspin Spyworks 示範建立功能強大、 可擴充的應用程式，適用於.NET 平台是如何富含簡單。 它會展示如何在 ASP.NET 4 中使用最棒的新功能，建置線上商店，包括購物、 簽出，以及系統管理。
@@ -41,11 +41,11 @@ ms.locfileid: "57056515"
 
 在 [帳戶] 資料夾中建立一個具名的 OrderList.aspx 和其他具名的 OrderDetails.aspx 的兩個.aspx 頁面
 
-OrderList.aspx 就像我們之前，將會利用的 GridView 和 EntityDataSoure 控制項。
+OrderList.aspx 就像我們之前，將會利用的 GridView 和 EntityDataSource 控制項。
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample1.aspx)]
 
-EntityDataSoure 從 Orders 資料表的使用者名稱篩選選取記錄 （請參閱 WhereParameter） 的使用者記錄的時，我們設定工作階段變數中。
+EntityDataSource 從 Orders 資料表的使用者名稱篩選選取記錄 （請參閱 WhereParameter） 的使用者記錄的時，我們設定工作階段變數中。
 
 也請注意，gridview HyperlinkField 中的這些參數：
 
@@ -143,7 +143,7 @@ Controls 資料夾上按一下滑鼠右鍵，然後選擇 新增項目 」:
 
 因為最受歡迎的項目不會變更以時間為基礎，所以我們可以新增發疼的指示詞，以改善我們的應用程式的效能。 這個指示詞會導致控制項程式碼才可執行控制項的快取的輸出過期時。 否則，會使用這個控制項的輸出快取的版本。
 
-現在我們只需要已在我們 Default.aspc 頁面中包含我們新的控制項。
+現在我們只需要已在我們的 Default.aspx 頁面中包含我們新的控制項。
 
 使用拖放開啟的資料行的預設表單控制項的執行個體。
 

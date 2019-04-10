@@ -8,21 +8,21 @@ ms.date: 02/20/2005
 ms.assetid: 92df4051-77c6-492c-bd34-23d24189cea4
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 msc.type: authoredcontent
-ms.openlocfilehash: 010adaba61b15ca4421c2d3a4a7590becb53897b
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 0f3b376cee8d391eb087664a51cc25e3b58d16b9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422841"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390034"
 ---
-<a name="profiles-themes-and-web-parts"></a>設定檔、佈景主題與 Web 組件
-====================
+# <a name="profiles-themes-and-web-parts"></a>設定檔、佈景主題與 Web 組件
+
 by [Microsoft](https://github.com/microsoft)
 
 > 有一些組態中的重大變更和 ASP.NET 2.0 中的檢測。 新的 ASP.NET 組態 API 來以程式設計方式進行組態變更。 此外，許多新的組態設定存在於允許新的組態和檢測。
 
 
-ASP.NET 2.0 表示個人化的網站區域中大幅提升。 除了成員資格功能將已涵蓋，ASP.NET 設定檔、 佈景主題和 Web 組件大幅會增強在網站中的個人化。
+ASP.NET 2.0 表示個人化的網站區域中大幅提升。 我們已經討論過的成員資格功能，除了 ASP.NET 設定檔、 佈景主題和 Web 組件大幅會增強在網站中的個人化。
 
 ## <a name="aspnet-profiles"></a>ASP.NET 設定檔
 

@@ -1,27 +1,28 @@
 ---
 uid: web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
-title: 啟用 ASP.NET Web API 1 中的 CRUD 作業 |Microsoft Docs
+title: 提供 CRUD 作業，在 ASP.NET Web API 1-ASP.NET 4.x
 author: MikeWasson
-description: 本教學課程會示範如何使用 ASP.NET Web API HTTP 服務中支援的 CRUD 作業。 教學課程 Visual Studio 2012 Web AP 中所使用的軟體版本...
+description: 教學課程會示範如何使用適用於 ASP.NET 的 ASP.NET Web API HTTP 服務中支援的 CRUD 作業 4.x。
 ms.author: riande
 ms.date: 01/28/2012
+ms.custom: seoapril2019
 ms.assetid: c125ca47-606a-4d6f-a1fc-1fc62928af93
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
-ms.openlocfilehash: f3cb0004075ef7687ca1096bd407c342b4d0b7be
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 855c3fa35d82173c87d13adb51e10fd13698ade5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423738"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381350"
 ---
-<a name="enabling-crud-operations-in-aspnet-web-api-1"></a>啟用 ASP.NET Web API 1 中的 CRUD 作業
-====================
+# <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>啟用 ASP.NET Web API 1 中的 CRUD 作業
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 [下載已完成的專案](http://code.msdn.microsoft.com/ASP-NET-Web-API-Tutorial-c4761894)
 
-> 本教學課程會示範如何使用 ASP.NET Web API HTTP 服務中支援的 CRUD 作業。
+> 本教學課程示範如何使用適用於 ASP.NET 的 ASP.NET Web API HTTP 服務中支援的 CRUD 作業 4.x。
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教學課程中使用的軟體版本
 > 
@@ -85,7 +86,7 @@ ms.locfileid: "58423738"
 
 針對 ProductStore API，我們的資料包含產品，因此我們將建立新的類別，名為`Product`。
 
-如果沒有顯示 [方案總管] 中，按一下**檢視**功能表，然後選取**方案總管 中**。 在 [方案總管] 中，以滑鼠右鍵按一下**模型**資料夾。 從內容功能表中，選取**新增**，然後選取**類別**。 將類別命名為&quot;產品&quot;。
+如果沒有顯示 [方案總管] 中，按一下**檢視**功能表，然後選取**方案總管 中**。 在 [方案總管] 中，以滑鼠右鍵按一下**模型**資料夾。 從操作功能表中，選取**新增**，然後選取**類別**。 將類別命名為&quot;產品&quot;。
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image3.png)
 

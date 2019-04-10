@@ -8,15 +8,15 @@ ms.date: 07/27/2010
 ms.assetid: a19ff2ce-3f7e-4358-9a51-a1403da9c63e
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/enable-automated-unit-testing
 msc.type: authoredcontent
-ms.openlocfilehash: 74abf391bb4aab3ff0d5079e0a24ba20287e18fb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b0c9cd7ab36a8414e0d7d50a68b05bb09a5f24f1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049455"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387902"
 ---
-<a name="enable-automated-unit-testing"></a>啟用自動化單元測試
-====================
+# <a name="enable-automated-unit-testing"></a>啟用自動化單元測試
+
 by [Microsoft](https://github.com/microsoft)
 
 [下載 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
@@ -96,9 +96,9 @@ Visual Studio 2008 Professional （及更新版本） 包含可用來執行 Visu
 
 ![](enable-automated-unit-testing/_static/image5.png)
 
-*注意：根據預設，與測試結果 視窗不會顯示類別名稱 資料行。您可以將它加入以滑鼠右鍵按一下 測試結果 視窗內使用 新增/移除欄位 功能表命令。*
+*注意:根據預設，與測試結果 視窗不會顯示類別名稱 資料行。 您可以將它加入以滑鼠右鍵按一下 [測試結果] 視窗內使用 [新增/移除欄位] 功能表命令。*
 
-我們的兩個測試時間只有一小部分的第二個執行 –，並為您可以兩者都傳遞，請參閱。 我們現在可以在 上移，並建立其他的測試，確認特定的規則驗證，以及涵蓋兩個 helper 方法-IsUserHost() 和 IsUserRegisterd() – 我們新增至 Dinner 類別，藉此強化它們。 備妥，Dinner 類別的所有這些測試可讓您更容易、 更安全地在未來將新的商務規則和驗證加入至它。 我們可以加入我們新的規則邏輯至 Dinner，，，然後在數秒內確認 它尚未中斷任何我們先前的邏輯功能。
+我們的兩個測試時間只有一小部分的第二個執行 –，並為您可以兩者都傳遞，請參閱。 我們現在可以在 上移，並建立其他的測試，確認特定的規則驗證，以及涵蓋兩個 helper 方法-IsUserHost() 和 IsUserRegistered() – 我們新增至 Dinner 類別，藉此強化它們。 備妥，Dinner 類別的所有這些測試可讓您更容易、 更安全地在未來將新的商務規則和驗證加入至它。 我們可以加入我們新的規則邏輯至 Dinner，，，然後在數秒內確認 它尚未中斷任何我們先前的邏輯功能。
 
 請注意如何使用描述性的測試名稱容易快速了解每項測試會驗證。 我建議使用**工具-&gt;選項**功能表命令，開啟 測試工具-&gt;測試執行組態 畫面中，並檢查 「 按兩下失敗或結果不明的單元測試結果顯示在測試中的失敗點 」 核取方塊。 這可讓您按兩下測試結果 視窗中的失敗，並立即跳到判斷提示失敗。
 
@@ -211,7 +211,7 @@ ASP.NET MVC 預設會建立使用預設建構函式的控制器類別，因為�
 
 | **端主題：相依性插入架構** |
 | --- |
-| 執行手動的相依性插入 （例如我們都以上） 可正常運作，但會成為難以維護的相依性，並增加應用程式中的元件。 適用於.NET 可協助提供更多的相依性管理彈性，存在數個相依性插入架構。 這些架構，有時也稱為 「 反向控制 」 (IoC) 容器，提供適當機制，讓其他組態的支援層級指定，並將相依性傳遞至物件在執行階段 （通常使用建構函式插入). 一些較受歡迎的 OSS 相依性插入在.NET 中的 IOC 架構包含：AutoFac、 Ninject、 Spring.NET、 StructureMap 和 Windsor。 ASP.NET MVC 會公開擴充性 Api 可讓開發人員參與的解析度和具現化的控制站，並讓相依性插入 / IoC 架構，此處理序內完全整合。 使用 DI/IOC 架構還能讓我們移除我們 DinnersController – 這會完全移除其與 DinnerRepositorys 結合的預設建構函式。 我們將不會使用新的相依性插入 / IOC NerdDinner 應用程式架構。 但如果 NerdDinner 的程式碼基底和功能的成長，我們可以認為未來的某些項目。 |
+| 執行手動的相依性插入 （例如我們都以上） 可正常運作，但會成為難以維護的相依性，並增加應用程式中的元件。 適用於.NET 可協助提供更多的相依性管理彈性，存在數個相依性插入架構。 這些架構，有時也稱為 「 反向控制 」 (IoC) 容器，提供適當機制，讓其他組態的支援層級指定，並將相依性傳遞至物件在執行階段 （通常使用建構函式插入). 一些較受歡迎的 OSS 相依性插入在.NET 中的 IOC 架構包含：AutoFac、 Ninject、 Spring.NET、 StructureMap 和 Windsor。 ASP.NET MVC 會公開擴充性 Api 可讓開發人員參與的解析度和具現化的控制站，並讓相依性插入 / IoC 架構，此處理序內完全整合。 使用 DI/IOC 架構還能讓我們移除我們 DinnersController – 這會完全移除其與 DinnerRepository 結合的預設建構函式。 我們將不會使用新的相依性插入 / IOC NerdDinner 應用程式架構。 但如果 NerdDinner 的程式碼基底和功能的成長，我們可以認為未來的某些項目。 |
 
 ### <a name="creating-edit-action-unit-tests"></a>建立編輯動作的單元測試
 

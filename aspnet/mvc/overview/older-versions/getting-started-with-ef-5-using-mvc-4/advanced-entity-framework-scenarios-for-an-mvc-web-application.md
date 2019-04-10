@@ -8,15 +8,15 @@ ms.date: 07/30/2013
 ms.assetid: 64906a1d-f734-41cf-9615-ee95f8740996
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 18a292ada33936ea03f2d51427c160541424c8d1
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: a1218b1fb5a8ee28ea6ee3d3c5af979e86821ed7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425609"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391191"
 ---
-<a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>進階的 Entity Framework 案例，MVC Web 應用程式 (10 小時，共 10)
-====================
+# <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>進階的 Entity Framework 案例，MVC Web 應用程式 (10 小時，共 10)
+
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 [下載已完成的專案](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
@@ -306,7 +306,7 @@ Entity Framework 藉由比較實體的目前值與原始值，判斷實體如何
 
 錯誤訊息：
 
-*一個或多個實體的驗證失敗。請參閱 'EntityValidationErrors' 屬性，如需詳細資訊。* (從*`Update-Database`* PMC 命令。)
+*一個或多個實體的驗證失敗。 請參閱 'EntityValidationErrors' 屬性，如需詳細資訊。* (從*`Update-Database`* PMC 命令。)
 
 解決方案:
 
@@ -316,7 +316,8 @@ Entity Framework 藉由比較實體的目前值與原始值，判斷實體如何
 
 錯誤訊息：
 
-*無法存取 HTTP 錯誤 500.19-內部伺服器錯誤 」 要求的頁面，因為頁面的相關的組態資料無效。*
+*HTTP 錯誤 500.19 - 內部伺服器錯誤  
+無法存取要求的網頁，因為頁面的相關的組態資料無效。*
 
 解決方案:
 
@@ -326,7 +327,7 @@ Entity Framework 藉由比較實體的目前值與原始值，判斷實體如何
 
 錯誤訊息：
 
-*建立 SQL Server 的連接時發生網路相關或執行個體特有的錯誤。找不到或無法存取伺服器。請確認執行個體名稱正確，且 SQL Server 設定為允許遠端連接。(提供者：SQL 網路介面，錯誤：26-尋找指定的伺服器/執行個體時發生錯誤)*
+*建立與 SQL Server　的連線時，發生與網路相關的錯誤或是執行個體特有的錯誤。 找不到或無法存取伺服器。 確認執行個名稱是否正確，以及 SQL Server 是否設定為允許遠端連線 (提供者：SQL 網路介面，錯誤：26 - 尋找指定的伺服器/執行個體時發生錯誤)*
 
 解決方案:
 

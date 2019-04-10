@@ -8,15 +8,15 @@ ms.date: 02/18/2014
 ms.assetid: 5e968ead-906a-45ea-ac2a-c70e57e1a9b1
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/installing-helpers
 msc.type: authoredcontent
-ms.openlocfilehash: 5ad717cd7c64e830ce66d5e1361d0eb6ef3cbbec
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3ffb2f88fd8d2ad32fb8ea7d476ca10fdd9ac430
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053935"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398328"
 ---
-<a name="installing-a-helper-in-an-aspnet-web-pages-razor-site"></a>安裝 ASP.NET Web Pages (Razor) 網站中的協助程式
-====================
+# <a name="installing-a-helper-in-an-aspnet-web-pages-razor-site"></a>安裝 ASP.NET Web Pages (Razor) 網站中的協助程式
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本文說明如何在 ASP.NET Web Pages (Razor) 網站安裝的協助程式。 A*協助程式*是一種可重複使用的元件，包括程式碼和標記，以執行可能冗長或複雜的工作。

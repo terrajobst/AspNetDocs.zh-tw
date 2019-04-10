@@ -1,19 +1,20 @@
 ---
 uid: identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
-title: 帳戶確認和密碼復原，使用 ASP.NET Identity (C#) |Microsoft Docs
+title: 帳戶確認和密碼復原-ASP.NET 身分識別 (C#)-ASP.NET 4.x
 author: HaoK
 description: 進行本教學課程之前，您應該先完成登入、 電子郵件確認和密碼重設建立安全的 ASP.NET MVC 5 web 應用程式。 本教學課程...
 ms.author: riande
 ms.date: 01/23/2019
 ms.assetid: 8d54180d-f826-4df7-b503-7debf5ed9fb3
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 04e4bbc8b6405dc60b8335191d88920028eef599
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 2e4cd21d66e69590fb1642d7974e4b7f82cba0cb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424842"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396417"
 ---
 # <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>帳戶確認和密碼復原，使用 ASP.NET Identity (C#)
 

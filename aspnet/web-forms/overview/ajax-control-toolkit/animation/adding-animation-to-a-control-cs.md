@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 0f1fc1f5-9dbd-44e7-931e-387d42f0342b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: aac6e97ae5d3d777c3644515628d2669076a88c4
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: e4c6bfe1884d3e066c7b27e07e3a069943793bdd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421917"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392283"
 ---
-<a name="adding-animation-to-a-control-c"></a>將動畫新增至控制項 (C#)
-====================
+# <a name="adding-animation-to-a-control-c"></a>將動畫新增至控制項 (C#)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation1.cs.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation1CS.pdf)
@@ -72,7 +72,7 @@ ms.locfileid: "58421917"
 當您執行此指令碼時，面板會顯示，而且在一個半秒內淡出。
 
 
-[![面板淡出](adding-animation-to-a-control-cs/_static/image2.png)](adding-animation-to-a-control-cs/_static/image1.png)
+[![T他面板漸淡](adding-animation-to-a-control-cs/_static/image2.png)](adding-animation-to-a-control-cs/_static/image1.png)
 
 面板淡出 ([按一下以檢視完整大小的影像](adding-animation-to-a-control-cs/_static/image3.png))
 

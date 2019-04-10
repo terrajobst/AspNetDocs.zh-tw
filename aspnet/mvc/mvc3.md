@@ -8,15 +8,15 @@ ms.date: 10/05/2010
 ms.assetid: dddc8812-a0bc-49f9-aafb-caf2064c2b8c
 msc.legacyurl: /mvc/mvc3
 msc.type: content
-ms.openlocfilehash: 82d18865815568c5df9768fd9dd403f11ebd1714
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 42c28bb7082781ffdf8f2f0fb46f14387e614043
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045425"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389527"
 ---
-<a name="aspnet-mvc-3"></a>ASP.NET MVC 3
-====================
+# <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
+
 > *(包含 2011 年 4 月工具更新)*
 > 
 > ASP.NET MVC 3 是用來建置可調整、 以標準為基礎的 web 應用程式使用完善的設計模式，以及 ASP.NET 和.NET Framework 的強大功能的架構。
@@ -133,11 +133,11 @@ ASP.NET MVC 3 隨附新的檢視引擎，名為 Razor 提供下列優點：
 
 Razor 也包含新的 HTML 協助程式，如下所示：
 
-- `Chart`. 呈現的圖表，提供與 ASP.NET 4 中的 chart 控制項相同的功能。
-- `WebGrid`. 呈現的資料格，完整的分頁和排序功能。
-- `Crypto`. 它使用雜湊演算法，以建立正確 salted 和雜湊密碼。
-- `WebImage`. 呈現影像。
-- `WebMail`. 傳送電子郵件訊息。
+- `Chart`。 呈現的圖表，提供與 ASP.NET 4 中的 chart 控制項相同的功能。
+- `WebGrid`。 呈現的資料格，完整的分頁和排序功能。
+- `Crypto`。 它使用雜湊演算法，以建立正確 salted 和雜湊密碼。
+- `WebImage`。 呈現影像。
+- `WebMail`。 傳送電子郵件訊息。
 
 如需 Razor 的詳細資訊，請參閱下列資源：
 

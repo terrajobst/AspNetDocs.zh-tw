@@ -8,15 +8,15 @@ ms.date: 01/12/2012
 ms.assetid: 8921d7f2-21f0-427a-8b27-2df7251174b0
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
-ms.openlocfilehash: ef83ef22e17ab7bda035d0f11ab936fe56d58800
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 20de66ab773a9172fd8ae8ea713c361c289b944c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423022"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398536"
 ---
-<a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>檢查 ASP.NET MVC 如何 Scaffold DropDownList 協助程式
-====================
+# <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>檢查 ASP.NET MVC 如何 Scaffold DropDownList 協助程式
+
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 在 **方案總管**，以滑鼠右鍵按一下*控制站*資料夾，然後選取**新增控制器**。 控制器**StoreManagerController**。 設定的選項**新增控制器**如下圖所示的對話方塊。
@@ -99,7 +99,7 @@ HTML`<select>`項目 (由 HTML [DropDownList](https://msdn.microsoft.com/library
 
 您可以使用[fiddler 工具](http://www.fiddler2.com/fiddler2/)來檢查已張貼的表單值 ASP.NET MVC 模型繫結會使用建立專輯物件。
 
-![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image7.png).
+![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image7.png)。
 
 ### <a name="refactoring-the-viewbag-selectlist-creation"></a>重構 ViewBag SelectList 建立
 

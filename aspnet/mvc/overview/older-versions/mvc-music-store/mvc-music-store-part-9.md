@@ -8,15 +8,15 @@ ms.date: 04/21/2011
 ms.assetid: d65c5c2b-a039-463f-ad29-25cf9fb7a1ba
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-9
 msc.type: authoredcontent
-ms.openlocfilehash: b3babf1d935774b0ef93d6ab02c8b295998f8afc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c7151351b087439f17457b254cd9e373af21cae3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060485"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380895"
 ---
-<a name="part-9-registration-and-checkout"></a>第 9 部分：註冊和簽出
-====================
+# <a name="part-9-registration-and-checkout"></a>第 9 部分：註冊和簽出
+
 藉由[Jon Galloway](https://github.com/jongalloway)
 
 > MVC Music 市集是介紹，並逐步說明如何使用 ASP.NET MVC 和 Visual Studio 進行 web 開發的教學課程應用程式。  
@@ -78,7 +78,7 @@ ms.locfileid: "57060485"
 
 [!code-csharp[Main](mvc-music-store-part-9/samples/sample4.cs)]
 
-*注意：這是類似於我們先前所做的 StoreManagerController 變更，但在此情況下 Authorize 屬性所需的使用者是系統管理員角色。在簽出控制器中，我們會要求使用者登入，但不需要他們系統管理員。*
+*注意:這是類似於我們先前所做的 StoreManagerController 變更，但在此情況下 Authorize 屬性所需的使用者是系統管理員角色。 在簽出控制器中，我們會要求使用者登入，但不需要他們系統管理員。*
 
 為了簡單起見，我們將不會處理在本教學課程的付款資訊。 相反地，我們允許使用者查看使用促銷代碼。 我們將儲存此促銷代碼，使用名為促銷代碼的常數。
 
@@ -108,7 +108,7 @@ CheckoutController 將會有下列控制器動作：
 
 [!code-csharp[Main](mvc-music-store-part-9/samples/sample8.cs)]
 
-*注意：[錯誤] 檢視時自動建立為我們 /Views/Shared 資料夾中我們已經開始專案。*
+*注意:[錯誤] 檢視時自動建立為我們 /Views/Shared 資料夾中我們已經開始專案。*
 
 完整的 CheckoutController 程式碼如下所示：
 

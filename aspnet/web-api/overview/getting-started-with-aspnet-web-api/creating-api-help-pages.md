@@ -1,27 +1,28 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
-title: 建立的 ASP.NET Web API 說明頁面 |Microsoft Docs
+title: '[說明] 頁面建立 ASP.NET Web API-ASP.NET 4.x'
 author: MikeWasson
-description: ''
+description: 本教學課程中的使用程式碼示範如何建立的 ASP.NET 中的 ASP.NET Web API 說明頁面 4.x。
 ms.author: riande
 ms.date: 04/01/2013
+ms.custom: seoapril2019
 ms.assetid: 0150e67b-c50d-4613-83ea-7b4ef8cacc5a
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
 msc.type: authoredcontent
-ms.openlocfilehash: fba368e4017fea65ff96e2540d486662cc6b45f8
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: e3f6a9b8a6835b034a075d580cd9a33136969990
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423724"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395009"
 ---
-<a name="creating-help-pages-for-aspnet-web-api"></a>建立的 ASP.NET Web API 說明頁面
-====================
+# <a name="creating-help-pages-for-aspnet-web-api"></a>建立的 ASP.NET Web API 說明頁面
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
-當您建立的 web API 時，它通常很有用來建立說明網頁，以便在其他開發人員知道如何呼叫您的 API。 您可以手動建立所有文件，但最好是盡量的自動產生。
+本教學課程中的使用程式碼示範如何建立的 ASP.NET 中的 ASP.NET Web API 說明頁面 4.x。
 
-若要簡化這項工作中，ASP.NET Web API 會在執行階段，程式庫提供自動產生說明頁面。
+當您建立的 web API 時，它通常很有用來建立說明網頁，以便在其他開發人員知道如何呼叫您的 API。 您可以手動建立所有文件，但最好是盡量的自動產生。 若要簡化這項工作中，ASP.NET Web API 會在執行階段，程式庫提供自動產生說明頁面。
 
 ![](creating-api-help-pages/_static/image1.png)
 
@@ -85,7 +86,7 @@ ms.locfileid: "58423724"
 
 ![](creating-api-help-pages/_static/image7.png)
 
-接下來，開啟的程式碼`ValuesController`API 控制器，其定義於 /Controllers/ValuesController.cs。 控制器方法中加入一些文件註解。 例如: 
+接下來，開啟的程式碼`ValuesController`API 控制器，其定義於 /Controllers/ValuesController.cs。 控制器方法中加入一些文件註解。 例如：
 
 [!code-csharp[Main](creating-api-help-pages/samples/sample4.cs)]
 

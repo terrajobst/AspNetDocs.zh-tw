@@ -8,15 +8,15 @@ ms.date: 09/08/2014
 ms.assetid: 664ec95e-b0c9-4f43-a39f-798d0f2a7e08
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal
 msc.type: authoredcontent
-ms.openlocfilehash: b59a395e255823a732aef1b899612063e09b2424
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a0895c2246bc08f50645a865ce2dfffecfbb56a6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034625"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391152"
 ---
-<a name="checkout-and-payment-with-paypal"></a>簽出與使用 PayPal 付款
-====================
+# <a name="checkout-and-payment-with-paypal"></a>簽出與使用 PayPal 付款
+
 藉由[Erik Reitan](https://github.com/Erikre)
 
 [下載 Wingtip Toys 範例專案 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下載電子書 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
@@ -250,7 +250,7 @@ ASP.NET Web Forms 提供成員資格和驗證的增強功能的選項。 這些�
 
 PayPal 是網頁型計費平台可接受的線上商家的付款。 本教學課程接下來會說明如何將 PayPal 的 Express 簽出功能整合到您的應用程式。 快速簽出可讓您的客戶使用 PayPal 支付它們新增至購物車的項目。
 
-### <a name="create-paylpal-test-accounts"></a>建立 PaylPal 測試帳戶
+### <a name="create-paypal-test-accounts"></a>建立 PayPal 測試帳戶
 
 若要使用 PayPal 測試環境，您必須建立並驗證開發人員測試帳戶。 若要建立買方測試帳戶和賣方測試帳戶，您將使用開發人員測試帳戶。 開發人員測試帳戶認證也可讓 Wingtip Toys 範例應用程式存取 PayPal 測試環境。
 
@@ -277,7 +277,7 @@ PayPal 是網頁型計費平台可接受的線上商家的付款。 本教學課
 7. 建立買方測試帳戶，方法是按一下**建立帳戶** 按鈕。  
  **沙箱測試帳戶**頁面隨即顯示。 
 
-    ![簽出與使用 PayPal-PaylPal 帳戶的付款](checkout-and-payment-with-paypal/_static/image17.png)
+    ![簽出與使用 PayPal-PayPal 帳戶的付款](checkout-and-payment-with-paypal/_static/image17.png)
 8. 在 **沙箱測試帳戶**頁面上，按一下**促進**電子郵件帳戶。  
     **設定檔**並**通知**選項會出現。
 9. 選取 **設定檔**選項，然後按一下**API 認證**若要檢視您的 API 認證商家的測試帳戶。
@@ -386,7 +386,7 @@ Wingtip Toys 範例應用程式會購買產品，瀏覽到 PayPal 測試站台�
 
 > [!NOTE] 
 > 
-> **祕訣**
+> **提示**
 > 
 > 在標記*CheckoutReview.aspx*頁面上，注意`<ItemStyle>`標記用來變更中項目的樣式**DetailsView**靠近頁面底部的控制項。 藉由檢視中的網頁**設計檢視**(藉由選取**設計**在 Visual Studio 左下角)，然後選取**DetailsView**控制項，然後選取**智慧標籤**(在頂端的箭號圖示右邊的控制項)，您將能夠看到**DetailsView 工作**。
 > 

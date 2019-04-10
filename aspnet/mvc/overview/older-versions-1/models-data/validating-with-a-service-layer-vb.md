@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: 344bb38e-4965-4c47-bda1-f6d29ae5b83a
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ecce8e4f0a901ce8c185d2b085f4d706bd57fa1f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fc819494ef58824d485144396e3a995d906c8b42
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029135"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398705"
 ---
-<a name="validating-with-a-service-layer-vb"></a>驗證與服務層 (VB)
-====================
+# <a name="validating-with-a-service-layer-vb"></a>驗證與服務層 (VB)
+
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > 了解如何移動您的驗證邏輯出您對控制器動作並進入個別的服務層。 在本教學課程中，Stephen Walther 會說明如何藉由隔離您的服務層，從您的控制器層級維護 sharp 關注點分離。
@@ -68,7 +68,7 @@ ms.locfileid: "57029135"
 
 表 5 中，使其不再使用的模型狀態已更新的服務層。 相反地，它會使用任何可實作 IValidationDictionary 介面的類別。
 
-**Listing 5 - Models\ProductService.vb (decoupled)**
+**列表 5-Models\ProductService.vb （低耦合）**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample5.vb)]
 

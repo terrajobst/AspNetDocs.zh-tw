@@ -8,15 +8,15 @@ ms.date: 02/21/2014
 ms.assetid: 5fa1daf9-1161-4cfa-bd4c-658f48b2c229
 msc.legacyurl: /web-forms/what-is-web-forms
 msc.type: content
-ms.openlocfilehash: e135cfa2945b9e7e5269eb436ff0c1dff20aacdf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: cb7a4ff9dbf746c0729129445042e53e506df5d2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039065"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385731"
 ---
-<a name="what-is-web-forms"></a>什麼是 Web Form
-====================
+# <a name="what-is-web-forms"></a>什麼是 Web Form
+
 ASP.NET Web Form 是 ASP.NET web 應用程式架構的一部分，並隨附[Visual Studio](https://www.asp.net/downloads)。 它是其中一個可用來建立 ASP.NET web 應用程式的四種程式設計模型，有些則是 ASP.NET MVC、 ASP.NET Web Pages 和 ASP.NET 單一頁面應用程式。
 
 Web Form 是您的使用者要求使用瀏覽器的頁面。 這些頁面可以使用 HTML 的組合來撰寫用戶端指令碼、 伺服器控制項和伺服器程式碼。 當使用者要求的頁面時，進行編譯和程式架構，在伺服器上執行，然後架構會產生瀏覽器可以轉譯的 HTML 標記。 ASP.NET Web Form 網頁將資訊呈現給使用者的任何瀏覽器或用戶端裝置。

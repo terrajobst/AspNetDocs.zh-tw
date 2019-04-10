@@ -8,15 +8,15 @@ ms.date: 06/21/2007
 ms.assetid: 9a382d8e-ea3a-4fa4-bd24-b56f9051f4db
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-ajax-after-processing-pattern
 msc.type: video
-ms.openlocfilehash: 6e10200299b78dcf2d5ae356b302ddddcffb999c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3d4b4e0d12d8baa6810a90ff9225fcbf88fad58f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055015"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398627"
 ---
-<a name="how-do-i-implement-the-ajax-after-processing-pattern"></a>[How Do i:]處理模式後實作 AJAX 嗎？
-====================
+# <a name="how-do-i-implement-the-ajax-after-processing-pattern"></a>[How Do i:]處理模式後實作 AJAX 嗎？
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 ASP.NET AJAX 架構可讓您的伺服器端程式碼中攔截並回應各種不同的用戶端事件。 在這段影片中，我們了解如何實作之後處理模式，可讓使用者與網頁完成後執行總結邏輯的伺服器端程式碼的內容。

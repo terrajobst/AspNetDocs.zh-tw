@@ -8,15 +8,15 @@ ms.date: 09/08/2014
 ms.assetid: 2ce36f78-8ecb-4ab1-b748-6d0ab633ea3f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: 754f085e3e43f7efa155f410d02a0d29d3349612
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9e2cd1beca03b81140b9d58c5e43dbf7c6b8808b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055975"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393050"
 ---
-<a name="create-the-project"></a>建立專案
-====================
+# <a name="create-the-project"></a>建立專案
+
 藉由[Erik Reitan](https://github.com/Erikre)
 
 [下載 Wingtip Toys 範例專案 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下載電子書 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
@@ -93,7 +93,7 @@ ms.locfileid: "57055975"
 
 Visual Studio 會建立一些初始的資料夾和檔案，為您的專案。 您會使用本教學課程稍後的第一個檔案如下所示：
 
-| **檔案** | **目的** |
+| **檔案** | **用途** |
 | --- | --- |
 | *Default.aspx* | 通常第一次顯示的網頁瀏覽器中執行應用程式時。 |
 | *Site.Master* | 頁面，可讓您建立應用程式中的頁面一致的版面配置和使用標準行為。 |
@@ -154,7 +154,7 @@ Web 伺服器收到頁面要求時，它發現頁面、 加以處理，將它傳
 > 
 > Visual Studio 2013 專案範本會使用[Bootstrap](http://getbootstrap.com/)，由 Twitter 的版面配置和佈景主題的架構。 啟動程序會使用 CSS3 來提供表示配置可以動態地適應不同的瀏覽器視窗大小的回應式設計。 您也可以使用 Bootstrap 的佈景主題功能，輕鬆地達成應用程式的外觀與風格變更。 根據預設，Visual Studio 2013 中的 ASP.NET Web 應用程式範本會以 NuGet 套件形式包含啟動程序。
 > 
-> **NuGet 套件**
+> **NuGet 封裝**
 > 
 > ASP.NET Web Forms 應用程式範本包含一組[NuGet](http://www.nuget.org/)封裝。 這些套件提供開放原始碼程式庫和工具的表單中的元件化的功能。 還有各種不同的套件，協助您建立和測試您的應用程式。 Visual Studio 可讓您更輕鬆地新增、 移除和更新 NuGet 套件。 開發人員可以建立和加入 NuGet 封裝也。
 > 
@@ -191,7 +191,7 @@ Web 伺服器收到頁面要求時，它發現頁面、 加以處理，將它傳
 ## <a name="additional-resources"></a>其他資源
 
 [選擇正確的程式設計模型](../../../videos/how-do-i/choosing-the-right-programming-model.md)   
-[與網站專案的 web 應用程式專案](https://msdn.microsoft.com/library/dd547590.aspx)   
+[Web 應用程式專案和網站專案的比較](https://msdn.microsoft.com/library/dd547590.aspx)   
 [ASP.NET Web Form 頁面概觀](https://msdn.microsoft.com/library/428509ah.aspx)
 
 > [!div class="step-by-step"]

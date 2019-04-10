@@ -8,15 +8,15 @@ ms.date: 06/10/2008
 ms.assetid: 43d1e83c-0092-4dcf-977c-e709c4dce7c3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 881debeeaa98a7f2be7ccadb501c019e698b22f2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 35fcf02c20e3d20f9cb75f6a25aeb1ddac016b4e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035555"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393765"
 ---
-<a name="urls-in-master-pages-vb"></a>主版頁面中的 URL (VB)
-====================
+# <a name="urls-in-master-pages-vb"></a>主版頁面中的 URL (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_04_VB.zip)或[下載 PDF](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_04_VB.pdf)
@@ -75,7 +75,7 @@ ms.locfileid: "57035555"
 因為`<img>`項目的`src`屬性為相對 URL，瀏覽器會嘗試尋找`Images`相對於網頁的資料夾位置的資料夾。 換句話說，在瀏覽器正在尋找映像檔`Admin/Images/PoweredByASPNET.gif`。
 
 
-[![找不到 PoweredByASPNET.gif 映像檔](urls-in-master-pages-vb/_static/image3.png)](urls-in-master-pages-vb/_static/image2.png)
+[![T他 PoweredByASPNET.gif 映像檔案找不到](urls-in-master-pages-vb/_static/image3.png)](urls-in-master-pages-vb/_static/image2.png)
 
 **圖 02**:`PoweredByASPNET.gif`映像找不到檔案 ([按一下以檢視完整大小的影像](urls-in-master-pages-vb/_static/image4.png))
 
@@ -92,7 +92,7 @@ ms.locfileid: "57035555"
 請花一點時間更新`<img>`項目的`src`屬性設定為使用其中一種形式，如上所示的絕對 URL，然後瀏覽`~/Admin/Default.aspx`透過瀏覽器的頁面。 目前瀏覽器會正確地尋找並顯示`PoweredByASPNET.gif`映像檔案 （請參閱 [圖 3]）。
 
 
-[![PoweredByASPNET.gif 映像會現在顯示](urls-in-master-pages-vb/_static/image6.png)](urls-in-master-pages-vb/_static/image5.png)
+[![T他 PoweredByASPNET.gif 映像會現在顯示](urls-in-master-pages-vb/_static/image6.png)](urls-in-master-pages-vb/_static/image5.png)
 
 **圖 03**:`PoweredByASPNET.gif`影像是顯示 ([按一下以檢視完整大小的影像](urls-in-master-pages-vb/_static/image7.png))
 

@@ -8,21 +8,21 @@ ms.date: 10/18/2014
 ms.assetid: 2f952638-6b1f-48b6-b019-1c5d1e9ab746
 msc.legacyurl: /web-forms/overview/older-versions-security
 msc.type: chapter
-ms.openlocfilehash: 5a2eeef18163d0d408e4aba33bad7464ebf600a8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: afd786a25c8dc23eba1bbf6ed3f6512c64f2e72d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023505"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59378571"
 ---
-<a name="older-versions---security"></a>舊版 - 安全性
-====================
+# <a name="older-versions---security"></a>舊版 - 安全性
+
 > ASP.NET 4 和舊版的 Web Form 應用程式的安全性、 驗證和授權主題。
 
 
 - [ASP.NET 3.5 - 安全性簡介](introduction/index.md)
 
-    - [安全性基本概念和 ASP.NET 支援 (C#)](introduction/security-basics-and-asp-net-support-cs.md)
+    - [安全性基本概念與 ASP.NET 支援 (C#)](introduction/security-basics-and-asp-net-support-cs.md)
     - [表單驗證概觀 (C#)](introduction/an-overview-of-forms-authentication-cs.md)
     - [表單驗證組態和進階主題 (C#)](introduction/forms-authentication-configuration-and-advanced-topics-cs.md)
     - [安全性基本概念和 ASP.NET 支援 (VB)](introduction/security-basics-and-asp-net-support-vb.md)
@@ -42,10 +42,10 @@ ms.locfileid: "57023505"
     - [儲存其他的使用者資訊 (VB)](membership/storing-additional-user-information-vb.md)
 - [ASP.NET 3.5 - 角色](roles/index.md)
 
-    - [建立與管理角色 (C#)](roles/creating-and-managing-roles-cs.md)
+    - [建立及管理角色 (C#)](roles/creating-and-managing-roles-cs.md)
     - [將角色指派給使用者 (C#)](roles/assigning-roles-to-users-cs.md)
     - [以角色為基礎的授權 (C#)](roles/role-based-authorization-cs.md)
-    - [建立與管理角色 (VB)](roles/creating-and-managing-roles-vb.md)
+    - [建立及管理角色 (VB)](roles/creating-and-managing-roles-vb.md)
     - [將角色指派給使用者 (VB)](roles/assigning-roles-to-users-vb.md)
     - [以角色為基礎的授權 (VB)](roles/role-based-authorization-vb.md)
 - [ASP.NET 3.5 - 安全性管理](admin/index.md)

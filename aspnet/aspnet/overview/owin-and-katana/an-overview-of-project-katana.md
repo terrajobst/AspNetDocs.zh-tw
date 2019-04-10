@@ -8,15 +8,15 @@ ms.date: 08/30/2013
 ms.assetid: 0ee21741-c1bf-4025-a9b0-24580cae24bc
 msc.legacyurl: /aspnet/overview/owin-and-katana/an-overview-of-project-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 52007eba109de28c6d178505b82b1d5ff2883b47
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 72f70faa151007558ecbb270143ecd5b37c2134d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57040735"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392569"
 ---
-<a name="an-overview-of-project-katana"></a>Katana 專案概觀
-====================
+# <a name="an-overview-of-project-katana"></a>Katana 專案概觀
+
 藉由[Howard Dierking](https://github.com/howarddierking)
 
 > ASP.NET Framework 已存在超過十年，且平台已啟用了無數的網站和服務。 進化的 Web 應用程式開發策略，因為架構已經能夠發展在 ASP.NET MVC 和 ASP.NET Web API 等技術的步驟。 開發 Web 應用程式會將其下一個進化步驟納入雲端運算的世界，因為專案[Katana](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET)提供一組基礎的 ASP.NET 應用程式，可靈活、 可攜性，讓他們的元件輕量級，並提供更佳的效能 – 將另一種方法，專案[Katana](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET)雲端最佳化您的 ASP.NET 應用程式。

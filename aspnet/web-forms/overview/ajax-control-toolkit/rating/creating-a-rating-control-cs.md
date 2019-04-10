@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 969fb28f-2bff-4fc4-b24a-27f5e2534a37
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5776101d9e40f999806aefa5a9529dbef21af161
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fa118b4d733d7848b838f80e9918d62ae60033af
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048385"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59378971"
 ---
-<a name="creating-a-rating-control-c"></a>建立評等控制項 (C#)
-====================
+# <a name="creating-a-rating-control-c"></a>建立評等控制項 (C#)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/rating0.cs.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/rating0CS.pdf)
@@ -66,7 +66,7 @@ ms.locfileid: "57048385"
 儲存頁面，並將其載入至您的瀏覽器。 當您暫留 （一開始是空的） 的評等項目時，則會發生 JavaScript 的效果：評等的變更。 當您按一下組星號時，會保留目前的評等。 最後，當您提交表單時，伺服器端程式碼會輸出選取的評等。
 
 
-[![使用最少的程式碼建立的分級系統](creating-a-rating-control-cs/_static/image2.png)](creating-a-rating-control-cs/_static/image1.png)
+[![Creating 最少程式碼的分級系統](creating-a-rating-control-cs/_static/image2.png)](creating-a-rating-control-cs/_static/image1.png)
 
 使用最少的程式碼建立的分級系統 ([按一下以檢視完整大小的影像](creating-a-rating-control-cs/_static/image3.png))
 

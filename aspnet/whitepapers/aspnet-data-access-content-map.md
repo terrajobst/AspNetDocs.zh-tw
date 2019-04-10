@@ -8,15 +8,15 @@ ms.date: 07/25/2013
 ms.assetid: f8157be1-4ab9-469e-ad3a-0ccc80b56c00
 msc.legacyurl: /whitepapers/aspnet-data-access-content-map
 msc.type: content
-ms.openlocfilehash: 6993c17c8de890cbaa40c619bcd20f494bfd2f90
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d120c184f6cf7dd0db075bbfac17214d7467664a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046685"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383716"
 ---
-<a name="aspnet-data-access---recommended-resources"></a>ASP.NET 資料存取 - 建議資源
-====================
+# <a name="aspnet-data-access---recommended-resources"></a>ASP.NET 資料存取 - 建議資源
+
 > 本主題提供有關如何存取資料，在 ASP.NET web 應用程式，主要是由使用 Entity Framework 和 SQL Server 文件資源的連結。
 > 
 > 如果您知道很棒的部落格文章[stackoverflow](http://stackoverflow.com)執行緒或任何其他會很有用的連結[傳送一封電子郵件給我們](mailto:aspnetue@microsoft.com?subject=Data Access Content Map)與連結。

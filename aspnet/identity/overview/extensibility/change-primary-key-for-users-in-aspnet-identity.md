@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
-title: 變更 ASP.NET Identity 中的使用者的主索引鍵 |Microsoft Docs
+title: 變更主索引鍵，使用者在 ASP.NET 身分識別-ASP.NET 4.x
 author: Rick-Anderson
 description: 在 Visual Studio 2013 中，預設的 web 應用程式會使用使用者帳戶的金鑰字串值。 ASP.NET 身分識別可讓您變更的類型...
 ms.author: riande
 ms.date: 09/30/2014
 ms.assetid: 44925849-5762-4504-a8cd-8f0cd06f6dc3
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: d2856ce1ca61a29e091bfbd16647b673e6fc659b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 212b07494381d13f6ded96a41b846dcdf7e8ff16
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033805"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393739"
 ---
-<a name="change-primary-key-for-users-in-aspnet-identity"></a>變更 ASP.NET Identity 中的使用者主索引鍵
-====================
+# <a name="change-primary-key-for-users-in-aspnet-identity"></a>變更 ASP.NET Identity 中的使用者主索引鍵
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 在 Visual Studio 2013 中，預設的 web 應用程式會使用使用者帳戶的金鑰字串值。 ASP.NET 身分識別可讓您變更以符合您資料需求的索引鍵的類型。 例如，您可以從字串變更索引鍵的類型為整數。

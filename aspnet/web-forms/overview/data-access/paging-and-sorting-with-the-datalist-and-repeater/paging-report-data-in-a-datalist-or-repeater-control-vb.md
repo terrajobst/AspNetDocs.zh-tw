@@ -8,15 +8,15 @@ ms.date: 11/13/2006
 ms.assetid: bbd6b7f7-b98a-48b4-93f3-341d6a4f53c0
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2d867c7ae073fafe1e9674deb7c03bf1cfd24dd7
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 69a6843783dad3d8fcd8a5b93c9d8a31f9bb8ec0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425830"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383235"
 ---
-<a name="paging-report-data-in-a-datalist-or-repeater-control-vb"></a>DataList 或重複項控制項中的分頁報表資料 (VB)
-====================
+# <a name="paging-report-data-in-a-datalist-or-repeater-control-vb"></a>DataList 或重複項控制項中的分頁報表資料 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_44_VB.exe)或[下載 PDF](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/datatutorial44vb1.pdf)
@@ -53,7 +53,7 @@ ms.locfileid: "58425830"
 接下來，開啟`Default.aspx`頁面上，並拖曳`SectionLevelTutorialListing.ascx`從使用者控制`UserControls`拖曳至設計介面上的資料夾。 此使用者控制項中，我們在中建立[主版頁面與網站導覽](../introduction/master-pages-and-site-navigation-vb.md)教學課程中，列舉站台對應，並顯示這些教學課程中的項目符號清單中目前的區段。
 
 
-[![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image3.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image2.png)
+[![Add Default.aspx SectionLevelTutorialListing.ascx 使用者控制項](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image3.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image2.png)
 
 **圖 2**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image4.png))
 
@@ -110,7 +110,7 @@ DataList 或 Repeater 控制項中實作預設的分頁功能，我們可以使�
 具有`GetProductsAsPagedDataSource`方法新增至`ProductsBLL`類別中，我們現在可以建立 DataList 或 Repeater 提供預設的分頁功能。 首先開啟`Paging.aspx`頁面中`PagingSortingDataListRepeater`資料夾，然後從 [工具箱] 拖曳至設計工具，設定 DataList 的拖曳 DataList`ID`屬性設`ProductsDefaultPaging`。 從 DataList s 智慧標籤，建立名為新 ObjectDataSource`ProductsDefaultPagingDataSource`並將其設定，因此，它會擷取使用資料`GetProductsAsPagedDataSource`方法。
 
 
-[![建立 ObjectDataSource，並將它設定為使用 GetProductsAsPagedDataSource （） 方法](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image8.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image7.png)
+[![C建立 ObjectDataSource，並將它設定為使用 GetProductsAsPagedDataSource （） 方法](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image8.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image7.png)
 
 **圖 5**:建立 ObjectDataSource，並將它設定為使用`GetProductsAsPagedDataSource``()`方法 ([按一下以檢視完整大小的影像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image9.png))
 
@@ -118,7 +118,7 @@ DataList 或 Repeater 控制項中實作預設的分頁功能，我們可以使�
 設定下拉式清單中更新、 插入和刪除 （無） 索引標籤。
 
 
-[![設定下拉式清單中更新、 插入和刪除索引標籤為 （無）](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image11.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image10.png)
+[![Set 下拉式清單中更新、 插入和刪除索引標籤，為 [（無）](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image11.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image10.png)
 
 **圖 6**:設定下拉式清單中更新、 插入和刪除索引標籤為 （無） ([按一下以檢視完整大小的影像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image12.png))
 
@@ -130,7 +130,7 @@ DataList 或 Repeater 控制項中實作預設的分頁功能，我們可以使�
 特別是，使用 查詢字串欄位 pageIndex 和的 pageSize`pageIndex`和`pageSize`參數，分別 （請參閱 圖 7）。 因為查詢字串值將不會出現在使用者第一次造訪此頁面時，請花一點時間設定這些參數的預設值。 針對`pageIndex`，設定的預設值為 0 （這會顯示資料的第一頁） 和`pageSize`的預設值為 4。
 
 
-[![PageIndex 和 pageSize 參數作為來源的查詢字串](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image14.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image13.png)
+[![Use pageIndex 和 pageSize 參數的來源為查詢字串](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image14.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image13.png)
 
 **圖 7**:使用查詢字串做為來源`pageIndex`並`pageSize`參數 ([按一下以檢視完整大小的影像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image15.png))
 
@@ -149,7 +149,7 @@ DataList 或 Repeater 控制項中實作預設的分頁功能，我們可以使�
 當一開始瀏覽此頁面在瀏覽器都`pageIndex`也不`pageSize`提供查詢字串參數。 因此，會使用 0 到 4 的預設值。 如 [圖 8] 所示，這會導致顯示前四個產品的 DataList。
 
 
-[![第四個產品詳列](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image17.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image16.png)
+[![T列出他的第四個產品](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image17.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image16.png)
 
 **圖 8**:第四個產品詳列 ([按一下以檢視完整大小的影像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image18.png))
 
@@ -157,7 +157,7 @@ DataList 或 Repeater 控制項中實作預設的分頁功能，我們可以使�
 沒有使用者瀏覽至第二個資料頁，表示分頁介面，該處 s 目前無法直接了當。 我們將在步驟 4 中建立的分頁介面。 現在，不過，分頁僅可藉由直接於 querystring 中指定的分頁準則。 例如，若要檢視的第二頁，變更瀏覽器的網址列中的 URL`Paging.aspx`至`Paging.aspx?pageIndex=2`按 enter 鍵。 這會導致要顯示資料的第二頁 （請參閱 圖 9）。
 
 
-[![第二個頁面的資料會顯示](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image20.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image19.png)
+[![T他的第二個資料頁面會顯示](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image20.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image19.png)
 
 **圖 9**:第二個頁面的資料會顯示 ([按一下以檢視完整大小的影像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image21.png))
 
@@ -238,12 +238,12 @@ DataList 和 Repeater，我們會負責決定分頁介面，並實作它。 這�
 [圖 10] 顯示`Paging.aspx`當第一次瀏覽。 查詢字串是空的因為 DataList 會預設為顯示前四個產品中;[第一個和上一步] 按鈕會停用。 按一下 下一步 會顯示接下來四個資料錄 （請參閱 圖 11）;現在已啟用 第一個和上一步 按鈕。
 
 
-[![第一個頁面的資料會顯示](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image23.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image22.png)
+[![T他的第一個資料頁面會顯示](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image23.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image22.png)
 
 **圖 10**:第一個頁面的資料會顯示 ([按一下以檢視完整大小的影像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image24.png))
 
 
-[![第二個頁面的資料會顯示](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image26.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image25.png)
+[![T他的第二個資料頁面會顯示](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image26.png)](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image25.png)
 
 **圖 11**:第二個頁面的資料會顯示 ([按一下以檢視完整大小的影像](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image27.png))
 

@@ -8,15 +8,15 @@ ms.date: 05/04/2012
 ms.assetid: b8283698-7b82-42a8-8d83-3aeb18ca7fcc
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
 msc.type: authoredcontent
-ms.openlocfilehash: 735cc5ac37e369e6149c526174c3f74a08db9758
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1f2dc0fea9eeca64b9389881470353c5cca473e0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026155"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396313"
 ---
-<a name="web-deployment-in-the-enterprise"></a>企業中的 Web 部署
-====================
+# <a name="web-deployment-in-the-enterprise"></a>企業中的 Web 部署
+
 藉由[Jason Lee](https://github.com/jrjlee)
 
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
@@ -71,13 +71,13 @@ ms.locfileid: "57026155"
 這些主題會介紹 MSBuild 專案檔，說明如何建立和使用自訂的專案檔，並逐步解說連絡管理員解決方案的部署程序：
 
 - [了解專案檔](understanding-the-project-file.md)
-- [了解建置流程](understanding-the-build-process.md)
+- [了解建置程序](understanding-the-build-process.md)
 
 這些主題會說明 web 應用程式部署，包括如何建置和封裝程序運作，建置程序說明如何與 Web 發行管線整合、 如何修改部署參數，以及如何將 web 套件部署到目的地環境：
 
-- [建置和封裝 Web 應用程式專案](building-and-packaging-web-application-projects.md)
-- [設定網頁套件部署的參數](configuring-parameters-for-web-package-deployment.md)
-- [部署網頁套件](deploying-web-packages.md)
+- [建置及封裝 Web 應用程式專案](building-and-packaging-web-application-projects.md)
+- [設定 Web 套件部署的參數](configuring-parameters-for-web-package-deployment.md)
+- [部署 Web 套件](deploying-web-packages.md)
 
 - [部署資料庫專案](deploying-database-projects.md)描述不同的技術，可用來部署 Visual Studio 資料庫專案，以及每一種方法的優缺點。 [建立和執行部署命令檔](creating-and-running-a-deployment-command-file.md)說明如何建立簡單的命令檔，以封裝您的部署邏輯，而且可讓您將複雜的解決方案部署為單一步驟的程序。
 - 最後，[手動安裝網頁套件](manually-installing-web-packages.md)最後本教學課程將示範您可以將 IIS web 封裝匯入。

@@ -8,15 +8,15 @@ ms.date: 01/12/2012
 ms.assetid: 53767e05-c8ab-42e1-a94b-22d906195200
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 11b874d2d07c84631c6c5c266c22c6de49d40cf2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2a4d991205351531129480bee221651021483967
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050575"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396248"
 ---
-<a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>使用 DropDownList 協助程式與 ASP.NET MVC
-====================
+# <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>使用 DropDownList 協助程式與 ASP.NET MVC
+
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 本教學課程將教導您使用的基本概念[DropDownList](https://msdn.microsoft.com/library/dd492948.aspx)協助程式和[ListBox](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.listbox.aspx) ASP.NET MVC Web 應用程式中的協助程式。 您可以使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，也就是要遵循本教學課程的 Microsoft Visual Studio 的免費版本。 在開始之前，請確定您已安裝符合下列先決條件。 您可以安裝所有人都按下列連結：[Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)。 或者，您可以個別安裝的必要條件，使用下列連結：
@@ -190,7 +190,7 @@ Harvest[所選](http://harvesthq.github.com/chosen/)jQuery 外掛程式可以加
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample12.cshtml)]
 
-在上述程式碼，我們新增的 HTML 屬性和屬性值`class = "chzn-select"`。 \@上述的類別具有與 Razor 檢視引擎無關的字元。 `class` 已[C# 關鍵字](https://msdn.microsoft.com/library/x53a06bb.aspx)。 不能當做識別項使用 C# 關鍵字，除非它們包含\@做為前置詞。 在上述範例`@class`有效的識別項，但**類別**不是因為**類別**是關鍵字。
+在上述程式碼，我們新增的 HTML 屬性和屬性值`class = "chzn-select"`。 \@上述的類別具有與 Razor 檢視引擎無關的字元。 `class` 已[C#關鍵字](https://msdn.microsoft.com/library/x53a06bb.aspx)。 不能當做識別項使用 C# 關鍵字，除非它們包含\@做為前置詞。 在上述範例`@class`有效的識別項，但**類別**不是因為**類別**是關鍵字。
 
 將參考加入至*Chosen/chosen.jquery.js*並*Chosen/chosen.css*檔案。 *Chosen/chosen.jquery.js*並實作所選外掛程式的功能。 *Chosen/chosen.css*檔案提供的樣式。 新增這些參考到底部*Views\Home\MultiSelectCountry.cshtml*檔案。 下列程式碼示範如何參考所選外掛程式。
 

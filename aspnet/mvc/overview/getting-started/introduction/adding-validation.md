@@ -8,15 +8,15 @@ ms.date: 01/06/2019
 ms.assetid: 9f35ca15-e216-4db6-9ebf-24380b0f31b4
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: f127f6a7d8a1f949432cc8f6f784dd7ee85ec207
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 2b5d2a355a27bfe9a3aa8b2fa4a2de79c7f74314
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422991"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387122"
 ---
-<a name="adding-validation"></a>新增驗證
-====================
+# <a name="adding-validation"></a>新增驗證
+
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 [!INCLUDE [Tutorial Note](sample/code-location.md)]
@@ -69,7 +69,7 @@ ASP.NET MVC 和 Entity Framework Code First 所提供的驗證支援就是執行
 
 上述程式碼會擲回下列例外狀況：
 
-*一個或多個實體的驗證失敗。請參閱 'EntityValidationErrors' 屬性，如需詳細資訊。*
+*一個或多個實體的驗證失敗。 請參閱 'EntityValidationErrors' 屬性，如需詳細資訊。*
 
 具有自動強制執行的.NET Framework 的驗證規則有助於讓您的應用程式更穩固。 它也確保您不會忘記要驗證某些項目，不小心讓不正確的資料進入資料庫。
 

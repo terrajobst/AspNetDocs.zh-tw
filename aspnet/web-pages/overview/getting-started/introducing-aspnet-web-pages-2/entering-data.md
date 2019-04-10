@@ -8,15 +8,15 @@ ms.date: 05/28/2015
 ms.assetid: d37c93fc-25fd-4e94-8671-0d437beef206
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
 msc.type: authoredcontent
-ms.openlocfilehash: e40d2962ccac56eaaf4812819aa42168e69295bc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d76f607f1d5e779d43ee15d8f2d697e7b0f147ae
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029795"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380115"
 ---
-<a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>簡介 ASP.NET Web Pages-使用表單輸入資料庫的資料
-====================
+# <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>簡介 ASP.NET Web Pages-使用表單輸入資料庫的資料
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本教學課程會示範如何建立項目表單，然後輸入您取得從表單到資料庫資料表時使用 ASP.NET Web Pages (Razor) 的資料。 它假設您已完成透過數列[基本概念的 HTML 表單 ASP.NET Web Pages 中](https://go.microsoft.com/fwlink/?LinkId=251581)。
@@ -98,7 +98,7 @@ ms.locfileid: "57029795"
 
 您要插入到資料行已在命令列- `(Title, Genre, Year)`。 重點在於如何從文字方塊中，到取得這些值`VALUES`命令的一部分。 而不是實際的值，您會看到`@0`， `@1`，和`@2`，這當然是預留位置。 當您執行命令 (在`db.Execute`列)，您傳遞的值，所得的文字方塊。
 
-**重要！** 請記住，您應該包含線上使用者輸入的 SQL 陳述式中的資料的唯一方式是使用預留位置，如下所示 (`VALUES(@0, @1, @2)`)。 如果您串連使用者輸入 SQL 陳述式時，您自行開啟 SQL 插入式攻擊中, 所述[表單的基本 ASP.NET Web Pages 中](https://go.microsoft.com/fwlink/?LinkId=251581)（上一個教學課程）。
+**重要 ！** 請記住，您應該包含線上使用者輸入的 SQL 陳述式中的資料的唯一方式是使用預留位置，如下所示 (`VALUES(@0, @1, @2)`)。 如果您串連使用者輸入 SQL 陳述式時，您自行開啟 SQL 插入式攻擊中, 所述[表單的基本 ASP.NET Web Pages 中](https://go.microsoft.com/fwlink/?LinkId=251581)（上一個教學課程）。
 
 內部仍`if`區塊中，新增下列行之後`db.Execute`列：
 
@@ -253,7 +253,7 @@ ASP.NET Web 網頁包含 helper &mdash; `Validation`協助程式&mdash;可用來
 
 ## <a name="additional-resources"></a>其他資源
 
-- [使用 Razor 語法的 ASP.NET Web 程式設計簡介](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [使用 Razor 語法進行 ASP.NET 網頁程式設計簡介](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [SQL INSERT INTO 陳述式](http://www.w3schools.com/sql/sql_insert.asp)W3Schools 站台上
 - [驗證使用者輸入，在 ASP.NET Web Pages 網站](https://go.microsoft.com/fwlink/?LinkId=253002)。 使用的詳細資訊`Validation`協助程式。
 

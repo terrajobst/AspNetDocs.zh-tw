@@ -8,15 +8,15 @@ ms.date: 04/04/2007
 ms.assetid: 806a8bfe-54be-4c96-8ffd-66303cc2b2f9
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-maskededit-controls
 msc.type: video
-ms.openlocfilehash: 9cfc614376354e740ab1e4da8cee1f6de4996aaf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4b97b05e16275867db5157e3eaf2ea8db28b4c30
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032245"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59397132"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-maskededit-controls"></a>[How Do i:]使用 ASP.NET AJAX MaskedEdit 控制項嗎？
-====================
+# <a name="how-do-i-use-the-aspnet-ajax-maskededit-controls"></a>[How Do i:]使用 ASP.NET AJAX MaskedEdit 控制項嗎？
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 ASP.NET AJAX Control Toolkit 提供 MaskedEdit 控制項和 MaskedEditValidator 控制項的提示，樣式，並驗證使用者在文字方塊中輸入的資料一起運作。 這可讓網頁，為使用者提供立即的視覺化回饋，於輸入的資料是否為有效的類型和格式。

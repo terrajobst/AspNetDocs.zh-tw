@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: f949aafa-fe57-43b0-b722-f0dd33a900be
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 15368ea543702eeda1b6a63f53acdc6c336b49e7
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: a9a3bf12b721c8f5eec21f3090142e40e74b0b9c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58420786"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395637"
 ---
-<a name="filling-a-list-using-cascadingdropdown-c"></a>使用 CascadingDropDown 填滿清單 (C#)
-====================
+# <a name="filling-a-list-using-cascadingdropdown-c"></a>使用 CascadingDropDown 填滿清單 (C#)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown0.cs.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown0CS.pdf)
@@ -40,11 +40,11 @@ DropDownList 控制項則需要：
 
 對於此清單中，就會加入 CascadingDropDown 擴充項。 非同步要求會傳送到一項 web 服務，接著會傳回一份要顯示在清單中的項目。 針對此目的，需要設定下列 CascadingDropDown 屬性：
 
-- `ServicePath`：提供的清單項目之 web 服務的 URL
-- `ServiceMethod`：Web 方法提供的清單項目
-- `TargetControlID`：下拉式清單中的識別碼
-- `Category`：提交給 web 方法的呼叫時的類別目錄資訊
-- `PromptText`：以非同步方式從伺服器載入清單資料時顯示的文字
+- `ServicePath`:提供的清單項目之 web 服務的 URL
+- `ServiceMethod`:Web 方法提供的清單項目
+- `TargetControlID`:下拉式清單中的識別碼
+- `Category`:提交給 web 方法的呼叫時的類別目錄資訊
+- `PromptText`:以非同步方式從伺服器載入清單資料時顯示的文字
 
 以下是標記`CascadingDropDown`項目。 C# 和 VB 之間唯一的差別是相關聯的 web 服務的名稱：
 
@@ -61,7 +61,7 @@ JavaScript 程式碼來自`CascadingDropDown`擴充項會呼叫 web 服務方法
 載入瀏覽器頁面，將會觸發要填入三個廠商的清單。
 
 
-[![清單會自動填入](filling-a-list-using-cascadingdropdown-cs/_static/image2.png)](filling-a-list-using-cascadingdropdown-cs/_static/image1.png)
+[![T他清單自動填入資料](filling-a-list-using-cascadingdropdown-cs/_static/image2.png)](filling-a-list-using-cascadingdropdown-cs/_static/image1.png)
 
 自動填滿清單 ([按一下以檢視完整大小的影像](filling-a-list-using-cascadingdropdown-cs/_static/image3.png))
 

@@ -8,15 +8,15 @@ ms.date: 10/24/2012
 ms.assetid: e57da75a-1d98-4e3c-8787-f1d7e1eb2d86
 msc.legacyurl: /signalr/overview
 msc.type: book
-ms.openlocfilehash: 2ab5094e863c5762c0c4c70a15f4da1088bc52e7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8bef8a53f6d47a9274a984e0650125fb538c23f0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022665"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380063"
 ---
-<a name="signalr-guidance"></a>SignalR 指引
-====================
+# <a name="signalr-guidance"></a>SignalR 指引
+
 - [快速入門](getting-started/index.md)
 
     - [SignalR 簡介](getting-started/introduction-to-signalr.md)
@@ -24,14 +24,14 @@ ms.locfileid: "57022665"
     - [教學課程：開始使用 SignalR 2](getting-started/tutorial-getting-started-with-signalr.md)
     - [教學課程：開始使用 SignalR 2 和 MVC 5](getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
     - [教學課程：高頻率即時與 SignalR 2](getting-started/tutorial-high-frequency-realtime-with-signalr.md)
-    - [教學課程：伺服器廣播與 SignalR 2](getting-started/tutorial-server-broadcast-with-signalr.md)
-    - [實習實驗室：使用 SignalR 即時 Web 應用程式](getting-started/real-time-web-applications-with-signalr.md)
+    - [教學課程：使用 SignalR 2 進行伺服器廣播](getting-started/tutorial-server-broadcast-with-signalr.md)
+    - [實際操作實驗室：使用 SignalR 的即時 Web 應用程式](getting-started/real-time-web-applications-with-signalr.md)
 - [API 指南](guide-to-the-api/index.md)
 
     - [中樞 API 指南 - 伺服器 (C#)](guide-to-the-api/hubs-api-guide-server.md)
     - [中樞 API 指南 - JavaScript 用戶端](guide-to-the-api/hubs-api-guide-javascript-client.md)
     - [中樞 API 指南 - .NET 用戶端 (C#)](guide-to-the-api/hubs-api-guide-net-client.md)
-    - [了解和處理 SignalR 的連線存留期事件](guide-to-the-api/handling-connection-lifetime-events.md)
+    - [了解及處理 SignalR 的連線存留期事件](guide-to-the-api/handling-connection-lifetime-events.md)
     - [使用 SignalR 的群組](guide-to-the-api/working-with-groups.md)
     - [將 SignalR 使用者對應至連線](guide-to-the-api/mapping-users-to-connections.md)
 - [測試和偵錯](testing-and-debugging/index.md)
@@ -48,15 +48,15 @@ ms.locfileid: "57022665"
 
     - [SignalR 效能](performance/signalr-performance.md)
     - [SignalR 的向外延展簡介](performance/scaleout-in-signalr.md)
-    - [SignalR 向外延展與 Azure 服務匯流排](performance/scaleout-with-windows-azure-service-bus.md)
-    - [SignalR 向外延展與 Redis](performance/scaleout-with-redis.md)
-    - [SignalR 向外延展與 SQL Server](performance/scaleout-with-sql-server.md)
-    - [SignalR 連線密度測試與區軸](performance/signalr-connection-density-testing-with-crank.md)
+    - [使用 Azure 服務匯流排的 SignalR 向外延展](performance/scaleout-with-windows-azure-service-bus.md)
+    - [使用 Redis 的 SignalR 向外延展](performance/scaleout-with-redis.md)
+    - [使用 SQL Server 的向外延展](performance/scaleout-with-sql-server.md)
+    - [使用曲軸的 SignalR 連線密度測試](performance/signalr-connection-density-testing-with-crank.md)
     - [使用 Azure Web 角色中的 SignalR 效能計數器](performance/using-signalr-performance-counters-in-an-azure-web-role.md)
 - [部署與裝載](deployment/index.md)
 
     - [教學課程：SignalR 自我裝載](deployment/tutorial-signalr-self-host.md)
-    - [在 Azure App Service 中使用 SignalR 和 Web 應用程式](deployment/using-signalr-with-azure-web-sites.md)
+    - [在 Azure App Service 中搭配 Web 應用程式使用 SignalR](deployment/using-signalr-with-azure-web-sites.md)
 - [進階](advanced/index.md)
 
     - [SignalR 中的相依性插入](advanced/dependency-injection.md)
@@ -66,22 +66,22 @@ ms.locfileid: "57022665"
 - [舊版](older-versions/index.md)
 
     - [教學課程：開始使用 SignalR 1.x](older-versions/tutorial-getting-started-with-signalr.md)
-    - [教學課程：開始使用 SignalR 1.x 及 MVC 4](older-versions/tutorial-getting-started-with-signalr-and-mvc-4.md)
-    - [高頻率即時與 SignalR 1.x](older-versions/tutorial-high-frequency-realtime-with-signalr.md)
-    - [教學課程：伺服器廣播與 ASP.NET SignalR 1.x](older-versions/tutorial-server-broadcast-with-aspnet-signalr.md)
+    - [教學課程：開始使用 SignalR 1.x 與 MVC 4](older-versions/tutorial-getting-started-with-signalr-and-mvc-4.md)
+    - [使用 SignalR 1.x 進行高頻率即時聊天](older-versions/tutorial-high-frequency-realtime-with-signalr.md)
+    - [教學課程：使用 SignalR 1.x 進行伺服器廣播](older-versions/tutorial-server-broadcast-with-aspnet-signalr.md)
     - [中樞 API 指南 - 伺服器](older-versions/signalr-1x-hubs-api-guide-server.md)
     - [SignalR 1.x 中樞 API 指南 - JavaScript 用戶端](older-versions/signalr-1x-hubs-api-guide-javascript-client.md)
     - [中樞 API 指南 - .NET 用戶端](older-versions/signalr-1x-hubs-api-guide-net-client.md)
-    - [了解和處理 SignalR 的連線存留期事件](older-versions/handling-connection-lifetime-events.md)
-    - [使用 SignalR 1.x 的群組](older-versions/working-with-groups.md)
+    - [了解及處理 SignalR 的連線存留期事件](older-versions/handling-connection-lifetime-events.md)
+    - [使用 SignalR 1.x 中的群組](older-versions/working-with-groups.md)
     - [將 SignalR 使用者對應至 SignalR 1.x 的連線](older-versions/mapping-users-to-connections.md)
     - [SignalR 安全性簡介 (SignalR 1.x)](older-versions/introduction-to-security.md)
-    - [SignalR 中樞的驗證和授權 (SignalR 1.x)](older-versions/hub-authorization.md)
-    - [SignalR 持續連線的驗證和授權 (SignalR 1.x)](older-versions/persistent-connection-authorization.md)
+    - [SignalR 中樞的驗證與授權 (SignalR 1.x)](older-versions/hub-authorization.md)
+    - [SignalR 持續連線的驗證與授權 (SignalR 1.x)](older-versions/persistent-connection-authorization.md)
     - [SignalR 效能 (SignalR 1.x)](older-versions/signalr-performance.md)
     - [SignalR 1.x 的向外延展簡介](older-versions/scaleout-in-signalr.md)
-    - [SignalR 向外延展與 Azure 服務匯流排 (SignalR 1.x)](older-versions/scaleout-with-windows-azure-service-bus.md)
-    - [SignalR 向外延展與 Redis (SignalR 1.x)](older-versions/scaleout-with-redis.md)
-    - [SignalR 向外延展與 SQL Server (SignalR 1.x)](older-versions/scaleout-with-sql-server.md)
+    - [使用 Azure 服務匯流排的 SignalR 向外延展 (SignalR 1.x)](older-versions/scaleout-with-windows-azure-service-bus.md)
+    - [使用 Redis 的 SignalR 向外延展 (SignalR 1.x)](older-versions/scaleout-with-redis.md)
+    - [使用 SQL Server 的向外延展 (SignalR 1.x)](older-versions/scaleout-with-sql-server.md)
     - [SignalR 疑難排解 (SignalR 1.x)](older-versions/troubleshooting.md)
     - [SignalR 1.x 中的相依性插入](older-versions/dependency-injection.md)

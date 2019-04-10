@@ -8,15 +8,15 @@ ms.date: 11/13/2006
 ms.assetid: 1afdb14d-6e49-4e1f-aead-2934730d472e
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c88c3c01dc641d5076ac99f4e1cf2b2fb1681ffd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1e1b6407dfff4513416869404a9565ed225b5e14
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027225"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392244"
 ---
-<a name="custom-buttons-in-the-datalist-and-repeater-vb"></a>在 DataList 與重複項中自訂按鈕 (VB)
-====================
+# <a name="custom-buttons-in-the-datalist-and-repeater-vb"></a>在 DataList 與重複項中自訂按鈕 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_46_VB.exe)或[下載 PDF](custom-buttons-in-the-datalist-and-repeater-vb/_static/datatutorial46vb1.pdf)
@@ -31,7 +31,7 @@ ms.locfileid: "57027225"
 此外若要編輯和刪除按鈕，DataList 與重複項控制項也可以包含按鈕、 Linkbutton 或 ImageButtons，按一下時，執行一些自訂的伺服器端邏輯。 在本教學課程中，我們將建置介面來列出系統中的類別使用的重複項。 針對每個類別，Repeater 將包含按鈕以顯示類別目錄相關聯的產品使用 BulletedList 控制項 （請參閱 圖 1）。
 
 
-[![按一下 顯示產品連結會顯示類別 s 中的產品項目符號清單](custom-buttons-in-the-datalist-and-repeater-vb/_static/image2.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image1.png)
+[![C按一下 [顯示產品連結會顯示在項目符號清單中的 s 產品類別目錄](custom-buttons-in-the-datalist-and-repeater-vb/_static/image2.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image1.png)
 
 **圖 1**:按一下 顯示產品連結會顯示在項目符號清單中的 s 產品類別目錄 ([按一下以檢視完整大小的影像](custom-buttons-in-the-datalist-and-repeater-vb/_static/image3.png))
 
@@ -52,7 +52,7 @@ ms.locfileid: "57027225"
 在其他資料夾，例如`Default.aspx`在`CustomButtonsDataListRepeater`資料夾會列出其一節中的教學課程。 請記得，`SectionLevelTutorialListing.ascx`使用者控制項提供這項功能。 將此使用者控制項加入`Default.aspx`從拖曳到頁面的設計 檢視中的 方案總管 中拖曳。
 
 
-[![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](custom-buttons-in-the-datalist-and-repeater-vb/_static/image6.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image5.png)
+[![Add Default.aspx SectionLevelTutorialListing.ascx 使用者控制項](custom-buttons-in-the-datalist-and-repeater-vb/_static/image6.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image5.png)
 
 **圖 3**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](custom-buttons-in-the-datalist-and-repeater-vb/_static/image7.png))
 
@@ -75,7 +75,7 @@ ms.locfileid: "57027225"
 我們要建立列出所有的類別，以及顯示產品 LinkButton Repeater 本教學課程中，按一下，便會顯示相關聯的分類的產品項目符號清單中。 可讓第一次建立簡單的 Repeater 列出系統中的類別。 首先開啟`CustomButtons.aspx`頁面中`CustomButtonsDataListRepeater`資料夾。 拖曳 Repeater 從工具箱拖曳至設計工具和設定其`ID`屬性設`Categories`。 接下來，建立新的資料來源控制項從 Repeater s 智慧標籤。 具體來說，建立名為的新 ObjectDataSource 控制項`CategoriesDataSource`，選取其資料來源`CategoriesBLL`類別的`GetCategories()`方法。
 
 
-[![設定為使用 CategoriesBLL 類別的 GetCategories() 方法的 ObjectDataSource](custom-buttons-in-the-datalist-and-repeater-vb/_static/image10.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image9.png)
+[![C設定要使用 CategoriesBLL 類別的 GetCategories() 方法的 ObjectDataSource](custom-buttons-in-the-datalist-and-repeater-vb/_static/image10.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image9.png)
 
 **圖 5**:設定要使用 ObjectDataSource`CategoriesBLL`類別 s`GetCategories()`方法 ([按一下以檢視完整大小的影像](custom-buttons-in-the-datalist-and-repeater-vb/_static/image11.png))
 
@@ -90,7 +90,7 @@ ms.locfileid: "57027225"
 [圖 6] 顯示頁面透過瀏覽器檢視時。 會列出每個類別目錄名稱和描述。 顯示產品按鈕，按一下時，會導致回傳，但還未執行任何動作。
 
 
-[![每個類別目錄名稱和描述會顯示，以及顯示產品 LinkButton](custom-buttons-in-the-datalist-and-repeater-vb/_static/image13.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image12.png)
+[![E除此之外，每個類別目錄名稱和描述會顯示，以及顯示產品 LinkButton](custom-buttons-in-the-datalist-and-repeater-vb/_static/image13.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image12.png)
 
 **圖 6**:每個類別目錄名稱和描述會顯示，以及顯示產品 LinkButton ([按一下以檢視完整大小的影像](custom-buttons-in-the-datalist-and-repeater-vb/_static/image14.png))
 
@@ -146,7 +146,7 @@ Repeater s 中，可以顯示選取的類別的產品`ItemTemplate`使用任何�
 > 如果您想要修改這份報表的行為，列出一次只有一個類別目錄的產品的方式，只要將設定 BulletedList 控制項 s`EnableViewState`屬性設`False`。
 
 
-[![BulletedList 用來顯示選取的類別目錄的產品](custom-buttons-in-the-datalist-and-repeater-vb/_static/image16.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image15.png)
+[![A BulletedList 用來顯示選取的類別目錄的產品](custom-buttons-in-the-datalist-and-repeater-vb/_static/image16.png)](custom-buttons-in-the-datalist-and-repeater-vb/_static/image15.png)
 
 **圖 7**:BulletedList 用來顯示選取的類別目錄的產品 ([按一下以檢視完整大小的影像](custom-buttons-in-the-datalist-and-repeater-vb/_static/image17.png))
 

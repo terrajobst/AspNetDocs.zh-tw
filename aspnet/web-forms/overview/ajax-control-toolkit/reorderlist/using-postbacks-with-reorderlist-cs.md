@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 70d5d106-b547-442c-a7fd-3492b3e3d646
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 426e31bc9804c97b551b9c36679d2b821700b915
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6f8f74b74080104980e1db866d695fe7c6d9d5fc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063625"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393349"
 ---
-<a name="using-postbacks-with-reorderlist-c"></a>使用具有 ReorderList 的回傳 (C#)
-====================
+# <a name="using-postbacks-with-reorderlist-c"></a>使用具有 ReorderList 的回傳 (C#)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/ReorderList4.cs.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/reorderlist4CS.pdf)
@@ -36,10 +36,10 @@ ms.locfileid: "57063625"
 
 若要繫結至這個 XML`ReorderList`必須設定控制項，並啟用回傳中，下列屬性：
 
-- `DataSourceID`：資料來源的識別碼
-- `SortOrderField`：要排序的屬性
-- `AllowReorder`：是否要允許使用者重新排列清單項目
-- `PostBackOnReorder`：是否要建立回傳，每當重新排列清單
+- `DataSourceID`:資料來源的識別碼
+- `SortOrderField`:要排序的屬性
+- `AllowReorder`:是否要允許使用者重新排列清單項目
+- `PostBackOnReorder`:是否要建立回傳，每當重新排列清單
 
 以下是控制項的適當標記：
 
@@ -62,7 +62,7 @@ ms.locfileid: "57063625"
 [!code-aspx[Main](using-postbacks-with-reorderlist-cs/samples/sample6.aspx)]
 
 
-[![每個重新排列觸發回傳](using-postbacks-with-reorderlist-cs/_static/image2.png)](using-postbacks-with-reorderlist-cs/_static/image1.png)
+[![E除此之外，每個重新排列觸發回傳](using-postbacks-with-reorderlist-cs/_static/image2.png)](using-postbacks-with-reorderlist-cs/_static/image1.png)
 
 每個重新排列觸發回傳 ([按一下以檢視完整大小的影像](using-postbacks-with-reorderlist-cs/_static/image3.png))
 

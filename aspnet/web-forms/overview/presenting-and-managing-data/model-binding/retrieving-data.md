@@ -8,26 +8,26 @@ ms.date: 02/27/2014
 ms.assetid: 9f24fb82-c7ac-48da-b8e2-51b3da17e365
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
 msc.type: authoredcontent
-ms.openlocfilehash: c53c27f4852eab9813bd917315111e7cd3b04953
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 29baaf2917e47ac46a78a252721be725b4e9b58f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056595"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398471"
 ---
-<a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>擷取和顯示資料與模型繫結和 web form
-====================
+# <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>擷取和顯示資料與模型繫結和 web form
+
 
 > 本系列教學課程示範使用 ASP.NET Web Form 專案中的模型繫結的基本層面。 模型繫結進行更簡單的比處理資料來源物件 （例如 ObjectDataSource 或 SqlDataSource） 的資料互動。 此系列簡介資料的開頭，並在稍後的教學課程中將移至更進階的概念。
 > 
->  模型繫結模式適用於任何資料存取技術。 在本教學課程中，您將使用 Entity Framework，但您可以使用最熟悉的資料存取技術。 從資料繫結的伺服器控制項，例如 GridView、 ListView、 DetailsView 或 FormView 控制項，您可以指定要用於選取、 更新、 刪除和建立資料方法的名稱。 在本教學課程中，您會指定 SelectMethod 值。 
+> 模型繫結模式適用於任何資料存取技術。 在本教學課程中，您將使用 Entity Framework，但您可以使用最熟悉的資料存取技術。 從資料繫結的伺服器控制項，例如 GridView、 ListView、 DetailsView 或 FormView 控制項，您可以指定要用於選取、 更新、 刪除和建立資料方法的名稱。 在本教學課程中，您會指定 SelectMethod 值。 
 > 
 > 在該方法中，您提供的邏輯擷取資料。 在下一個教學課程中，您將 UpdateMethod、 DeleteMethod 和 InsertMethod 設定值。
 >
 > 您可以[下載](https://go.microsoft.com/fwlink/?LinkId=286116)完整的專案，在C#或 Visual Basic。 可下載的程式碼適用於使用 Visual Studio 2012 和更新版本。 它會使用 Visual Studio 2012 範本，也就是本教學課程中的 Visual Studio 2017 範本稍有不同。
 > 
 > 在本教學課程中，您可以執行應用程式在 Visual Studio 中。 您也可以部署到裝載提供者應用程式，並使其可透過網際網路使用。 Microsoft 提供免費的 web 裝載中的最多 10 個 web sites  
->  [免費 Azure 試用帳戶](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)。 如需有關如何將 Visual Studio web 專案部署至 Azure App Service Web Apps 的資訊，請參閱[使用 Visual Studio 的 ASP.NET Web 部署](../../deployment/visual-studio-web-deployment/introduction.md)系列。 該教學課程也會示範如何使用 Entity Framework Code First Migrations，將 SQL Server 資料庫部署到 Azure SQL Database。
+> [免費 Azure 試用帳戶](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)。 如需有關如何將 Visual Studio web 專案部署至 Azure App Service Web Apps 的資訊，請參閱[使用 Visual Studio 的 ASP.NET Web 部署](../../deployment/visual-studio-web-deployment/introduction.md)系列。 該教學課程也會示範如何使用 Entity Framework Code First Migrations，將 SQL Server 資料庫部署到 Azure SQL Database。
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>在本教學課程中使用的軟體版本
 > 

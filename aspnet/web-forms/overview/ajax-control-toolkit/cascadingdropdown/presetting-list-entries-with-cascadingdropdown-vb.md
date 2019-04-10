@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: ec61ced7-bbca-4bdd-aa3b-80878f295181
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-entries-with-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3816ce9d5b148ec9c18eef64d963c4465c219674
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6e685d599e3dbc095631e3c28a603ac9c38f799c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024335"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385887"
 ---
-<a name="presetting-list-entries-with-cascadingdropdown-vb"></a>使用 CascadingDropDown 預設清單項目 (VB)
-====================
+# <a name="presetting-list-entries-with-cascadingdropdown-vb"></a>使用 CascadingDropDown 預設清單項目 (VB)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown2.vb.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/CascadingDropDown2VB.pdf)
@@ -53,7 +53,7 @@ CascadingDropDown extender 接著會以非同步方式呼叫 web 服務的下列
 載入瀏覽器頁面，將會填滿下拉式清單中的，使用三個廠商，第二個要預先選取。
 
 
-[![清單會填滿，且預設會自動選取](presetting-list-entries-with-cascadingdropdown-vb/_static/image2.png)](presetting-list-entries-with-cascadingdropdown-vb/_static/image1.png)
+[![T他清單是填滿，並預先選取 [自動](presetting-list-entries-with-cascadingdropdown-vb/_static/image2.png)](presetting-list-entries-with-cascadingdropdown-vb/_static/image1.png)
 
 清單會填入，且會自動預先選取 ([按一下以檢視完整大小的影像](presetting-list-entries-with-cascadingdropdown-vb/_static/image3.png))
 

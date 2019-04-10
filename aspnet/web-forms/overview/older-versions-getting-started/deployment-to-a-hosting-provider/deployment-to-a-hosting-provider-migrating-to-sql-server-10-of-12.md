@@ -8,15 +8,15 @@ ms.date: 11/17/2011
 ms.assetid: a89d6f32-b71b-4036-8ff7-5f8ac2a6eca8
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: e47f9cb7df6cc119c69f0332df904183cef86405
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 98e521f348cdf1c2bd563f96badbaea6b23f4bcf
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062035"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398952"
 ---
-<a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>部署 ASP.NET Web 應用程式與 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer:移轉至 SQL Server-10 小時，共 12
-====================
+# <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>部署 ASP.NET Web 應用程式與 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer:移轉至 SQL Server-10 小時，共 12
+
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 [下載入門專案](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)

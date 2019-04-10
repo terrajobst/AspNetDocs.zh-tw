@@ -8,15 +8,15 @@ ms.date: 08/19/2008
 ms.assetid: 4bc8d19a-80f1-44b4-adbf-95ed22d691ca
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c20626b24e43031fc4103365396fc26b6a6daf93
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c135bacd7f9f87fac87a3c8cf41bad359bb3c0a2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038055"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379179"
 ---
-<a name="aspnet-mvc-routing-overview-vb"></a>ASP.NET MVC 路由概觀 (VB)
-====================
+# <a name="aspnet-mvc-routing-overview-vb"></a>ASP.NET MVC 路由概觀 (VB)
+
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > 在本教學課程中，Stephen Walther 會示範如何 ASP.NET MVC 架構將瀏覽器要求對應至控制器動作。
@@ -95,7 +95,7 @@ URL /Home 也會比對 HomeController 類別，在 列表 4 中的 index （） 
 [!code-vb[Main](asp-net-mvc-routing-overview-vb/samples/sample5.vb)]
 
 
-[![叫用控制器動作，以參數值](asp-net-mvc-routing-overview-vb/_static/image1.jpg)](asp-net-mvc-routing-overview-vb/_static/image1.png)
+[![Invoking 控制器動作，以參數值](asp-net-mvc-routing-overview-vb/_static/image1.jpg)](asp-net-mvc-routing-overview-vb/_static/image1.png)
 
 **圖 01**:叫用控制器動作，以參數值 ([按一下以檢視完整大小的影像](asp-net-mvc-routing-overview-vb/_static/image2.png))
 

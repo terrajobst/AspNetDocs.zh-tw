@@ -8,15 +8,15 @@ ms.date: 02/20/2009
 ms.assetid: c6e5c036-2265-4fa7-a9eb-47f197bdc262
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8b34a9f7690777cfcc79d87a5e19586646d5b0d9
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 476e5529e4fd53c6166c53766409268939a83c72
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425700"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380661"
 ---
-<a name="iteration-5--create-unit-tests-vb"></a>反覆項目 #5 – 建立單元測試 (VB)
-====================
+# <a name="iteration-5--create-unit-tests-vb"></a>反覆項目 #5 – 建立單元測試 (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下載程式碼](iteration-5-create-unit-tests-vb/_static/contactmanager_5_vb1.zip)
@@ -116,12 +116,12 @@ Visual Studio 不會包含一個模擬物件架構。 不過，有數個商業�
 4. 選取功能表選項將 Moq 組件的參考加入您的測試專案**專案中，加入參考**來開啟**加入參考**對話方塊。 在 [瀏覽] 索引標籤中，瀏覽至您解壓縮 Moq 資料夾並選取 Moq.dll 組件。 按一下 **確定**按鈕 （請參閱 圖 2）。
 
 
-[![解除封鎖 Moq](iteration-5-create-unit-tests-vb/_static/image1.jpg)](iteration-5-create-unit-tests-vb/_static/image1.png)
+[![Unblocking Moq](iteration-5-create-unit-tests-vb/_static/image1.jpg)](iteration-5-create-unit-tests-vb/_static/image1.png)
 
 **圖 01**:解除封鎖 Moq ([按一下以檢視完整大小的影像](iteration-5-create-unit-tests-vb/_static/image2.png))
 
 
-[![新增 Moq 之後的參考](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
+[![R在之後加入 Moq eferences](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
 
 **圖 02**:新增 Moq 之後的參考 ([按一下以檢視完整大小的影像](iteration-5-create-unit-tests-vb/_static/image4.png))
 
@@ -184,7 +184,7 @@ Visual Studio 不會包含一個模擬物件架構。 不過，有數個商業�
 您也可以選取功能表選項列表 1 中執行單元測試**測試執行時，解決方案 （CTRL + R、 A） 中的所有測試**。 測試的結果會顯示在 測試結果 視窗 （請參閱 圖 4）。
 
 
-[![測試結果](iteration-5-create-unit-tests-vb/_static/image4.jpg)](iteration-5-create-unit-tests-vb/_static/image7.png)
+[![Test 結果](iteration-5-create-unit-tests-vb/_static/image4.jpg)](iteration-5-create-unit-tests-vb/_static/image7.png)
 
 **圖 04**:測試結果 ([按一下以檢視完整大小的影像](iteration-5-create-unit-tests-vb/_static/image8.png))
 

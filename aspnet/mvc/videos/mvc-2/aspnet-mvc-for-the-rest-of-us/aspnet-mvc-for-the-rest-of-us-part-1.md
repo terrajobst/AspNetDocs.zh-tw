@@ -8,15 +8,15 @@ ms.date: 04/22/2010
 ms.assetid: c56355c3-821f-43e2-9058-9499a1d63f80
 msc.legacyurl: /mvc/videos/mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1
 msc.type: video
-ms.openlocfilehash: 3e7d874c322e6461dcc030814de455318c9dd902
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ac872869f97aab679384c7cda9f6c8399cd966a3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042845"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384681"
 ---
-<a name="aspnet-mvc-for-the-rest-of-us-part-1"></a>適合其他人的 ASP.NET MVC第 1 部分
-====================
+# <a name="aspnet-mvc-for-the-rest-of-us-part-1"></a>適合其他人的 ASP.NET MVC第 1 部分
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 在此影片 Microsoft Joe Stagner 會藉由將預設的 ASP.NET 應用程式中檢視、 控制器邏輯和自訂模型建置的 「 與我們連絡 功能的 ASP.NET MVC 應用程式。 您會看到一些使用 ASP.NET MVC 與 ASP.NET Web Form 的基本差異。

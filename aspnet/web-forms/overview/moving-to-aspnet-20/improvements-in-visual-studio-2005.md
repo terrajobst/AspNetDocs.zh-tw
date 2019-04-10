@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: 72d90cd0-b3d9-454c-b2eb-ed0d9812f32c
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/improvements-in-visual-studio-2005
 msc.type: authoredcontent
-ms.openlocfilehash: 60259ceb99de536410aa5f53db64fb2dca68bf66
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a580b678a943695969b7f3acd2f7a033bd0b6ee3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037355"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379764"
 ---
-<a name="improvements-in-visual-studio-2005"></a>Visual Studio 2005 中的改善
-====================
+# <a name="improvements-in-visual-studio-2005"></a>Visual Studio 2005 中的改善
+
 by [Microsoft](https://github.com/microsoft)
 
 > Visual Studio 2005 提供一長串改進和增強功能，Web 專案的 Web 應用程式開發人員。
@@ -438,7 +438,7 @@ Visual Studio 2005 中移除的依賴的 mdm.exe 和 vs7jit.exe 程序。 相反
 
 ## <a name="aspnet-development-server"></a>ASP.NET 程式開發伺服器
 
-將已經討論過，為 Visual Studio 2005 隨附稱為 ASP.NET 程式開發伺服器的 Web 伺服器。 （ASP.NET Development Server 有時稱為 Cassini。）此網頁伺服器是一個方便的方法，來瀏覽和偵錯的檔案系統上執行的 Web 應用程式。
+因為我們已經討論過，Visual Studio 2005 隨附於呼叫 ASP.NET 程式開發伺服器的 Web 伺服器。 （ASP.NET Development Server 有時稱為 Cassini。）此網頁伺服器是一個方便的方法，來瀏覽和偵錯的檔案系統上執行的 Web 應用程式。
 
 ASP.NET 程式開發伺服器是受限制的 Web 伺服器。 它不會允許遠端連接，它不允許從啟動 Web 伺服器的使用者以外的任何使用者的任何要求。 它也沒有提供 ASP 頁面的功能。 只有 ASP.NET 資源和 HTML 資源 （包括影像、 CSS 檔案等） 會提供服務。
 

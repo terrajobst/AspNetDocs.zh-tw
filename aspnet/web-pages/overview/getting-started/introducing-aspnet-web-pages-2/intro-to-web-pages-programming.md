@@ -8,15 +8,15 @@ ms.date: 06/17/2015
 ms.assetid: 7526ed45-a97d-4e8a-8301-01324ef0eff9
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 msc.type: authoredcontent
-ms.openlocfilehash: ec1c055d1b3f6ca5c6374a18840c2595bb368e0e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 81c2c6f0070a409c289128ccf5d39f9fff788b48
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034555"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387343"
 ---
-<a name="introducing-aspnet-web-pages---programming-basics"></a>ASP.NET Web Pages 簡介-程式設計基本概念
-====================
+# <a name="introducing-aspnet-web-pages---programming-basics"></a>ASP.NET Web Pages 簡介-程式設計基本概念
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本教學課程可提供您的概觀含有 Razor 語法的 ASP.NET Web Pages 中程式。
@@ -162,7 +162,7 @@ ms.locfileid: "57034555"
 
 [!code-csharp[Main](intro-to-web-pages-programming/samples/sample7.cs)]
 
-您可以使用，以測試針對值或運算式的變數<em>邏輯運算子</em>或是<em>比較運算子</em>： 等於 （= =）、 大於 (&gt;)、 小於 (&lt;)，大於或等於 (&gt;=)，且小於或等於 (&lt;=)。 ！ = 運算子表示不等於 — 比方說，如果 (！ = 0) 表示<em>如果</em> <em>不等於 0</em>。
+您可以使用，以測試針對值或運算式的變數*邏輯運算子*或是*比較運算子*： 等於 （= =）、 大於 (&gt;)、 小於 (&lt;)，大於或等於 (&gt;=)，且小於或等於 (&lt;=)。 ！ = 運算子表示不等於 — 比方說，如果 (！ = 0) 表示*如果值不等於 0*。
 
 > [!NOTE]
 > 請確定您會注意到，等於 （= =） 比較運算子不相同 =。 = 運算子只能用來將值指派 (var = 2)。 如果您混這些運算子時，您可能會收到錯誤，否則您會得到一些奇怪的結果。
@@ -354,7 +354,7 @@ GetHtml 方法也可讓您自訂映像，藉由提供其他參數。 下列程�
 
 ## <a name="additional-resources"></a>其他資源
 
-- [使用 Razor 語法的 ASP.NET Web 程式設計簡介](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [使用 Razor 語法進行 ASP.NET 網頁程式設計簡介](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [Twitter 協助程式](../../ui-layouts-and-themes/twitter-helper.md)
 
 > [!div class="step-by-step"]

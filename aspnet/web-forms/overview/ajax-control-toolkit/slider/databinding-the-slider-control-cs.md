@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: b7f77869-aa1d-4025-924f-622c57112db6
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 951a7484f0dbb14ee7f1e1d62c9666e5cc49e7c1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3f966869c106416886dfa4e9e3c2cf67ee5fe337
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045215"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385809"
 ---
-<a name="databinding-the-slider-control-c"></a>資料繫結滑桿控制項 (C#)
-====================
+# <a name="databinding-the-slider-control-c"></a>資料繫結滑桿控制項 (C#)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider0.cs.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/slider0CS.pdf)
@@ -45,7 +45,7 @@ ms.locfileid: "57045215"
 您可以看到瀏覽器中，資料繫結可以雙向運作： 在文字方塊中輸入新值更新滑桿的位置。 如果您進行第二個唯讀的文字方塊中，您可能加入弱式保護的文字欄位，以便讓使用者以手動方式更新裡面的值更難。
 
 
-[![滑桿和文字方塊都保持同步](databinding-the-slider-control-cs/_static/image2.png)](databinding-the-slider-control-cs/_static/image1.png)
+[![Slider 和文字方塊會保持同步](databinding-the-slider-control-cs/_static/image2.png)](databinding-the-slider-control-cs/_static/image1.png)
 
 滑桿和文字方塊都是同步 ([按一下以檢視完整大小的影像](databinding-the-slider-control-cs/_static/image3.png))
 

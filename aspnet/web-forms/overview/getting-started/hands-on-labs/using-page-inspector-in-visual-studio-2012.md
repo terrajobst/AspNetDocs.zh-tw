@@ -8,15 +8,15 @@ ms.date: 02/18/2013
 ms.assetid: 73232292-a5fe-4720-82a1-8f6553effd1f
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: ce654eb5abd54613987f2375cc973febc9dc2ad5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d85fab0aeec86013761fc07ada1789b7719b24d9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041955"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396552"
 ---
-<a name="using-page-inspector-in-visual-studio-2012"></a>在 Visual Studio 2012 中使用 Page Inspector
-====================
+# <a name="using-page-inspector-in-visual-studio-2012"></a>在 Visual Studio 2012 中使用 Page Inspector
+
 藉由[Web Camp 小組](https://twitter.com/webcamps)
 
 > 在這個實際操作實驗室中，您會發現新的工具，找出並修正 Visual Studio-Page Inspector 中的網頁上的問題。
@@ -59,7 +59,7 @@ ms.locfileid: "57041955"
 - [Microsoft Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web)或更好 (讀取[附錄 A](#AppendixA)如需有關如何安裝它)。
 - Internet Explorer 9 或更高版本
 
-* * *
+---
 
 <a id="Exercises"></a>
 
@@ -106,7 +106,7 @@ ms.locfileid: "57041955"
     *選取要在 Page Inspector 中預覽檔案*
 3. Page Inspector 視窗會顯示 */Home/Index* URL 對應至您所選的檢視的來源。
 
-    ![ThefirstcontactwithPageInspector](using-page-inspector-in-visual-studio-2012/_static/image2.png)
+    ![第一個連絡人 PageInspector](using-page-inspector-in-visual-studio-2012/_static/image2.png)
 
     *第一個連絡人，Page inspector*
 
@@ -130,7 +130,7 @@ ms.locfileid: "57041955"
     *切換檢查模式按鈕*
 6. 在 Page Inspector 瀏覽器中，將滑鼠指標移到頁面項目上。 當您將滑鼠指標移到所呈現任何的頁面部分時，項目類型會顯示，而且對應的來源標記或程式碼會反白顯示 Visual Studio 編輯器中。
 
-    ![Inspectionmodeinaction](using-page-inspector-in-visual-studio-2012/_static/image5.png)
+    ![檢查模式作用中](using-page-inspector-in-visual-studio-2012/_static/image5.png)
 
     *檢查模式作用中*
 
@@ -139,7 +139,7 @@ ms.locfileid: "57041955"
 
     如果您注意**Index.cshtml**檔案中，您會注意到的部分的原始程式碼，產生所選的項目會反白顯示。 這項功能有助於長的原始程式檔，提供直接和快速的方式來存取這些程式碼的編輯。
 
-    ![Inspectingelements](using-page-inspector-in-visual-studio-2012/_static/image6.png)
+    ![檢查項目](using-page-inspector-in-visual-studio-2012/_static/image6.png)
 
     *檢查項目*
 7. 按一下 [**檢查模式中切換**] 按鈕 (![選取 [HTML] 索引標籤，以顯示在 Page Inspector 瀏覽器中呈現的 HTML 程式碼。](using-page-inspector-in-visual-studio-2012/_static/image7.png "選取要顯示在 Page Inspector 瀏覽器中呈現的 HTML 程式碼的 [HTML] 索引標籤。") ) 若要停用資料指標。
@@ -156,7 +156,7 @@ ms.locfileid: "57041955"
     > [!NOTE]
     > 由於標頭是站台版面配置的一部分，也會開啟 Page Inspector \_Layout.cshtml 檔案並反白顯示受影響的程式碼的區段。
 
-    ![Discoveringstyles](using-page-inspector-in-visual-studio-2012/_static/image9.png)
+    ![探索樣式](using-page-inspector-in-visual-studio-2012/_static/image9.png)
 
     *探索樣式和選取項目的原始程式檔*
 11. 啟用切換檢查指標，將滑鼠指標下方的藍色的精選列，然後按一下 一半的圓形。
@@ -180,7 +180,7 @@ ms.locfileid: "57041955"
     *Page Inspector 中變更的 CSS 值*
 15. 按一下 **追蹤樣式**索引標籤上，Page Inspector 的右窗格中。 這是替代的方式，以查看套用至選取範圍，按照屬性名稱的所有樣式。
 
-    ![CSSstylestracing](using-page-inspector-in-visual-studio-2012/_static/image13.png)
+    ![追蹤的 CSS 樣式](using-page-inspector-in-visual-studio-2012/_static/image13.png)
 
     *CSS 樣式追蹤 選取的項目*
 16. Page Inspector 的另一個功能是版面配置 窗格。 使用檢查模式中，選取導覽列，然後再按一下**版面配置**在右窗格中的索引標籤。 您會看到選取的項目，確切的大小，以及其位移、 邊界、 邊框距離及框線的大小。 請注意，您也可以修改此檢視中的值。
@@ -218,7 +218,7 @@ ms.locfileid: "57041955"
 2. 切換檢查模式中選取，按一下 [關閉] 以，但不是能在以開啟其程式碼的 [註冊] 連結。
 
     請注意，連結的原始程式碼位於 **\_LoginPartial.cshtml**檔案，不 Index.cshtml 和\_Layout.cshtml，也就是您可以看看第一個位置中的位置。 您已經放入正確的原始程式檔直接。
-3. 在 **樣式**索引標籤上，找出並按一下  **<section> #login</section>** 項目，也就是這些連結的 HTML 容器。
+3. 在 **樣式**索引標籤上，找出並按一下  **\<區段 > #login**項目，也就是這些連結的 HTML 容器。
 
     請注意， **#login**樣式會自動位於**Site.css**按一下之後。 此外，現在會醒目提示程式碼。
 
@@ -261,12 +261,12 @@ ms.locfileid: "57041955"
 
     *指派新的標題*
 
-    ![PhotoGallerypage](using-page-inspector-in-visual-studio-2012/_static/image23.png)
+    ![相片圖庫 頁面](using-page-inspector-in-visual-studio-2012/_static/image23.png)
 
     *更新的 [相片圖庫] 頁面*
 11. 最後，選取**PhotoGallery**專案，然後按**F5**執行應用程式。 查看所有變更運作如預期般運作。
 
-* * *
+---
 
 <a id="Exercise2"></a>
 
@@ -347,7 +347,7 @@ ms.locfileid: "57041955"
     > [!NOTE]
     > 由於標頭是站台版面配置的一部分，Page Inspector 也會開啟 Site.Master 檔案，並反白顯示受影響的程式碼區段。
 
-    ![DiscoveringstylesWebForms](using-page-inspector-in-visual-studio-2012/_static/image32.png "探索樣式和選取項目的原始程式檔")
+    ![探索樣式 WebForms](using-page-inspector-in-visual-studio-2012/_static/image32.png "探索樣式和選取項目的原始程式檔")
 
     *探索樣式和選取項目的原始程式檔*
 11. 啟用切換檢查指標，將滑鼠指標在功能表列下方，然後按一下 空白的二分之一圓。
@@ -421,7 +421,7 @@ ms.locfileid: "57041955"
     Page Inspector 知道撰寫目前的頁面上，所有不同檔案的存在，而且它可以偵測到任何這些檔案的變更時。 它會警告您只要在瀏覽器中目前的頁面不是與原始程式檔的同步處理。
 5. 在 Page Inspector 瀏覽器中，按一下位於 [網址] 列，以儲存變更並重新載入頁面下方的列。
 
-    ![Reloadingthepage](using-page-inspector-in-visual-studio-2012/_static/image40.png)
+    ![重新載入頁面](using-page-inspector-in-visual-studio-2012/_static/image40.png)
 
     *重新載入頁面*
 
@@ -457,7 +457,7 @@ ms.locfileid: "57041955"
     *更新的 [相片圖庫] 頁面*
 11. 最後按下**F5**執行應用程式的簽出所有變更運作如預期般運作。
 
-* * *
+---
 
 <a id="Summary"></a>
 

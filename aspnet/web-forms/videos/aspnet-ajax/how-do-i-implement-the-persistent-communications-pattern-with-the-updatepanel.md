@@ -8,15 +8,15 @@ ms.date: 08/01/2007
 ms.assetid: 49c7a74d-dce7-4d5c-8282-c7846f478e11
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel
 msc.type: video
-ms.openlocfilehash: e826aa7b6597a8272b5b6987b85755f62a4a59ac
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2a0a286ad731751460cb9d924a4de4dfe63f45b8
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031525"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59378984"
 ---
-<a name="how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel"></a>[How Do i:]實作與 UpdatePanel 的持續性通訊模式？
-====================
+# <a name="how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel"></a>[How Do i:]實作與 UpdatePanel 的持續性通訊模式？
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 在傳統的網站上瀏覽器和伺服器不會維護進行中的通訊，但只會在使用者執行動作的回應進行通訊。 在新式網站頁面，就會變成應用程式容器，很有幫助瀏覽器和伺服器維護進行中的通訊，以便進行頁面更新而不需要執行動作的使用者。 這就是持續性通訊模式的 AJAX。 ASP.NET AJAX 會提供兩種主要的方式來實作持續性通訊模式的 Web 開發人員。 這部影片示範簡單的方式，就是使用 ASP.NET AJAX UpdatePanel 作為實作的基礎。 在稍後影片中，我們將了解如何實作相同的模式，而不使用 ASP.NET AJAX UpdatePanel。

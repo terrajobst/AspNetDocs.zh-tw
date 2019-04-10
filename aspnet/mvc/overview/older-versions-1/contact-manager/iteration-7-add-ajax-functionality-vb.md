@@ -8,15 +8,15 @@ ms.date: 02/20/2009
 ms.assetid: f640e063-150e-453d-8cfc-7e54a6ce0f1e
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0b9c6ff228e73ce63f7a0b046110db656103d6d5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3df4258b2de309aed5a3a598caeb1e7332c321f6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064465"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383953"
 ---
-<a name="iteration-7--add-ajax-functionality-vb"></a>反覆項目 #7 – 新增 Ajax 功能 (VB)
-====================
+# <a name="iteration-7--add-ajax-functionality-vb"></a>反覆項目 #7 – 新增 Ajax 功能 (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下載程式碼](iteration-7-add-ajax-functionality-vb/_static/contactmanager_7_vb1.zip)
@@ -94,7 +94,7 @@ Ajax 應用程式中，您不會導致中止只為了更新頁面的使用者體
 可讓 s 開始先修改索引檢視，以便按一下連絡人群組只會更新此檢視會顯示連絡人的區域。 圖 1 中的紅色方塊包含我們想要更新的區域。
 
 
-[![更新連絡人](iteration-7-add-ajax-functionality-vb/_static/image1.jpg)](iteration-7-add-ajax-functionality-vb/_static/image1.png)
+[![Updating 唯一連絡人](iteration-7-add-ajax-functionality-vb/_static/image1.jpg)](iteration-7-add-ajax-functionality-vb/_static/image1.png)
 
 **圖 01**:更新的連絡人 ([按一下以檢視完整大小的影像](iteration-7-add-ajax-functionality-vb/_static/image2.png))
 
@@ -194,7 +194,7 @@ ASP.NET AJAX 瀏覽器歷程記錄，您需要做三件事：
 目前，若要刪除的連絡人，您必須按一下 刪除 連結，然後按一下 刪除 確認頁面中顯示的 刪除 按鈕 （請參閱 圖 2）。 這似乎是相當繁重的頁面要求執行一些簡單，例如刪除資料庫記錄。
 
 
-[![刪除確認頁面](iteration-7-add-ajax-functionality-vb/_static/image2.jpg)](iteration-7-add-ajax-functionality-vb/_static/image3.png)
+[![T他刪除確認頁面](iteration-7-add-ajax-functionality-vb/_static/image2.jpg)](iteration-7-add-ajax-functionality-vb/_static/image3.png)
 
 **圖 02**:刪除確認頁面 ([按一下以檢視完整大小的影像](iteration-7-add-ajax-functionality-vb/_static/image4.png))
 

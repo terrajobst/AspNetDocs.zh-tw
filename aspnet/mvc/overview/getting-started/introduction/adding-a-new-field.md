@@ -8,15 +8,15 @@ ms.date: 10/17/2013
 ms.assetid: 4085de68-d243-4378-8a64-86236ea8d2da
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: bcc1de15b49b51461f76c9ac8f1bee4555ea101d
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: a5de73d93d0af21a3b59d6c21014810184292adb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422424"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379348"
 ---
-<a name="adding-a-new-field"></a>新增欄位
-====================
+# <a name="adding-a-new-field"></a>新增欄位
+
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 [!INCLUDE [Tutorial Note](sample/code-location.md)]
@@ -75,7 +75,7 @@ Visual Studio 會開啟*Configuration.cs*檔案。 取代`Seed`方法中的*Conf
 > 
 > 此程式碼會假設這些項目是唯一。 如果您以手動方式新增重複的標題，您會收到下列例外狀況下一次您執行移轉。   
 > 
->  *序列包含一個以上的項目*  
+> *序列包含一個以上的項目*  
 > 
 > 如需詳細資訊[AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)方法，請參閱[負責使用 EF 4.3 AddOrUpdate 方法](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)...
 

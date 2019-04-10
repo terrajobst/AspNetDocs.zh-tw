@@ -8,15 +8,15 @@ ms.date: 02/17/2014
 ms.assetid: f15ab392-c05e-4269-83bf-7c6d2b8c8ec8
 msc.legacyurl: /web-pages/overview/mobile/rendering-aspnet-web-pages-sites-for-mobile-devices
 msc.type: authoredcontent
-ms.openlocfilehash: dd06a54d396bd85eeef7c004ee115828d541a2c1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: dbcd25331387f8606343e551302bc3ed1f9b2c25
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031105"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379504"
 ---
-<a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a>行動裝置轉譯 ASP.NET Web Pages (Razor) 網站
-====================
+# <a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a>行動裝置轉譯 ASP.NET Web Pages (Razor) 網站
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本文說明如何建立會適當地呈現在 行動裝置的 ASP.NET Web Pages (Razor) 網站中的頁面。
@@ -37,7 +37,7 @@ ms.locfileid: "57031105"
 
 ASP.NET Web Pages 可讓您在行動裝置或其他裝置上建立自訂的顯示，來呈現內容。
 
-在 ASP.NET Web Pages 網站中建立裝置的特定頁面的最簡單方式是使用檔案命名模式如下：<em>檔案名稱。</em> <em>Mobile</em><em>.cshtml</em>。 您可以建立兩個版本的頁面 (例如，一個名為<em>MyFile.cshtml</em>一個名為<em>MyFile.Mobile.cshtml</em>)。 在執行的階段，當行動裝置的要求<em>MyFile.cshtml</em>，ASP.NET 會呈現從內容<em>MyFile.Mobile.cshtml</em>。 否則，請<em>MyFile.cshtml</em>轉譯。
+在 ASP.NET Web Pages 網站中建立裝置的特定頁面的最簡單方式是使用檔案命名模式如下：*FileName.Mobile.cshtml*. 您可以建立兩個版本的頁面 (例如，一個名為*MyFile.cshtml*一個名為*MyFile.Mobile.cshtml*)。 在執行的階段，當行動裝置的要求*MyFile.cshtml*，ASP.NET 會呈現從內容*MyFile.Mobile.cshtml*。 否則，請*MyFile.cshtml*轉譯。
 
 下列範例示範如何藉由新增行動裝置的內容頁面中啟用行動裝置的轉譯。 *Page1.cshtml*包含內容，加上導覽提要欄位。 *Page1.Mobile.cshtml*包含相同的內容，但省略了資訊看板。
 

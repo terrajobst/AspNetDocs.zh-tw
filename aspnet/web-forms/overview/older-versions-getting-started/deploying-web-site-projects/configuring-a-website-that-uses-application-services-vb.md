@@ -8,15 +8,15 @@ ms.date: 04/23/2009
 ms.assetid: 9c31a42f-d8bb-4c0f-9ccc-597d4f70ac42
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 472770477e83fc0bbe24995e5558d0e8624082ae
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: b8ec246c2f35f3d7fa5bcf67aa6f157195028176
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425999"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379517"
 ---
-<a name="configuring-a-website-that-uses-application-services-vb"></a>設定使用應用程式服務的網站 (VB)
-====================
+# <a name="configuring-a-website-that-uses-application-services-vb"></a>設定使用應用程式服務的網站 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/E/6/F/E6FE3A1F-EE3A-4119-989A-33D1A9F6F6DD/ASPNET_Hosting_Tutorial_09_VB.zip)或[下載 PDF](http://download.microsoft.com/download/C/3/9/C391A649-B357-4A7B-BAA4-48C96871FEA6/aspnet_tutorial09_AppServicesConfig_vb.pdf)
@@ -106,7 +106,7 @@ ASP.NET 隨附有多好[*網站管理工具 (WSAT)* ](https://msdn.microsoft.com
 此工具一開始會顯示啟動顯示畫面，說明其用途。 按一下旁邊前進至 「 選取安裝選項 」 畫面中，圖 1 所示。 從這裡您可以選擇將應用程式服務資料庫物件，或從資料庫中移除。 因為我們想要將這些物件加入至實際執行資料庫，選取 「 設定 SQL Server 的應用程式服務 」 選項，然後按一下 [下一步]。
 
 
-[![選擇 設定 SQL Server 的應用程式服務](configuring-a-website-that-uses-application-services-vb/_static/image2.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image1.jpg)
+[![C選擇要設定應用程式服務的 SQL Server](configuring-a-website-that-uses-application-services-vb/_static/image2.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image1.jpg)
 
 **圖 1**:選擇 應用程式服務的 設定 SQL Server ([按一下以檢視完整大小的影像](configuring-a-website-that-uses-application-services-vb/_static/image3.jpg))
 
@@ -117,7 +117,7 @@ ASP.NET 隨附有多好[*網站管理工具 (WSAT)* ](https://msdn.microsoft.com
 > 輸入您的資料庫伺服器和認證之後，展開 [資料庫] 下拉式清單時，可能會收到錯誤。 `aspnet_regsql.exe`工具查詢`sysdatabases`系統資料表，以擷取一份在伺服器上，但某些 web 裝載其資料庫伺服器的公司鎖定，使這項資訊不是公開可用的資料庫。 如果您收到這個錯誤您可以直接在下拉式清單中輸入資料庫名稱。
 
 
-[![提供資料庫的連線資訊與工具](configuring-a-website-that-uses-application-services-vb/_static/image5.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image4.jpg)
+[![Supply s 的工具與您的資料庫連接資訊](configuring-a-website-that-uses-application-services-vb/_static/image5.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image4.jpg)
 
 **圖 2**:提供的工具與您的資料庫 s 連接資訊 ([按一下以檢視完整大小的影像](configuring-a-website-that-uses-application-services-vb/_static/image6.jpg))
 
@@ -125,7 +125,7 @@ ASP.NET 隨附有多好[*網站管理工具 (WSAT)* ](https://msdn.microsoft.com
 後續畫面摘要說明要進行，也就是動作，將應用程式服務資料庫物件加入至指定的資料庫。 按一下 [下一步] 完成此動作。 幾分鐘後，會顯示最後一個畫面，您會看到已加入 （請參閱 圖 3） 的資料庫物件。
 
 
-[![成功 ！應用程式服務的資料庫物件已加入至生產環境資料庫](configuring-a-website-that-uses-application-services-vb/_static/image8.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image7.jpg)
+[![Success ！ 應用程式服務資料庫物件已加入至生產環境資料庫](configuring-a-website-that-uses-application-services-vb/_static/image8.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image7.jpg)
 
 **圖 3**:成功！ 應用程式服務資料庫物件已加入至生產環境資料庫 ([按一下以檢視完整大小的影像](configuring-a-website-that-uses-application-services-vb/_static/image9.jpg))
 
@@ -133,7 +133,7 @@ ASP.NET 隨附有多好[*網站管理工具 (WSAT)* ](https://msdn.microsoft.com
 若要確認應用程式服務資料庫物件已成功新增至生產環境資料庫中，開啟 SQL Server Management Studio 並連接到您的生產資料庫。 如 [圖 4] 所示，您現在應該會看到應用程式服務資料庫資料表在資料庫中， `aspnet_Applications`， `aspnet_Membership`， `aspnet_Users`，依此類推。
 
 
-[![確認您的資料庫物件已加入至生產環境資料庫](configuring-a-website-that-uses-application-services-vb/_static/image11.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image10.jpg)
+[![C確認的資料庫物件已加入至生產環境資料庫](configuring-a-website-that-uses-application-services-vb/_static/image11.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image10.jpg)
 
 **圖 4**:確認您的資料庫物件已加入至生產環境資料庫 ([按一下以檢視完整大小的影像](configuring-a-website-that-uses-application-services-vb/_static/image12.jpg))
 
@@ -172,7 +172,7 @@ ASP.NET 網站管理工具 (WSAT) 可讓您輕鬆地建立和管理使用者帳�
 > 針對更多有關使用成員資格和角色 Api，以及登入相關的 ASP.NET Web 控制項中，務必先閱讀我[*網站安全性教學課程*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)。 如需自訂 CreateUserWizard 控制項的詳細資訊，請參閱[*建立使用者帳戶*](../../older-versions-security/membership/creating-user-accounts-vb.md)並[*儲存額外的使用者資訊*](../../older-versions-security/membership/storing-additional-user-information-vb.md)教學課程中或查看[ *Erich Peterson* ](http://www.erichpeterson.com/) s 文章[*自訂 CreateUserWizard 控制項*](http://aspnet.4guysfromrolla.com/articles/070506-1.aspx).
 
 
-[![系統管理員可以建立新的使用者帳戶](configuring-a-website-that-uses-application-services-vb/_static/image14.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image13.jpg)
+[![Administrators 可以建立新的使用者帳戶](configuring-a-website-that-uses-application-services-vb/_static/image14.jpg)](configuring-a-website-that-uses-application-services-vb/_static/image13.jpg)
 
 **圖 5**:系統管理員可以建立新的使用者帳戶 ([按一下以檢視完整大小的影像](configuring-a-website-that-uses-application-services-vb/_static/image15.jpg))
 

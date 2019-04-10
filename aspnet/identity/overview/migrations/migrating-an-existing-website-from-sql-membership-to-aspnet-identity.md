@@ -1,19 +1,20 @@
 ---
 uid: identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
-title: 從 SQL 成員資格的現有網站移轉至 ASP.NET Identity |Microsoft Docs
+title: 從 SQL 成員資格的現有網站移轉至 ASP.NET Identity-ASP.NET 4.x
 author: Rick-Anderson
 description: 本教學課程中說明的步驟來移轉現有的 web 應用程式與使用者建立使用新的 ASP.NET Identity 的 SQL 成員資格的角色資料...
 ms.author: riande
 ms.date: 12/19/2014
+ms.custom: seoapril2019
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: b80f2f5cc4702c3e406d8989905c56508711e788
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: f205dfd8692bc946ca2124655bf8bcefbdbd1779
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58426077"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59394521"
 ---
 # <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>將現有的網站從 SQL 成員資格移轉至 ASP.NET Identity
 
@@ -82,7 +83,7 @@ ms.locfileid: "58426077"
 
 ASP.NET 身分識別類別都是現成的現有使用者的資料，我們要將資料庫結構描述移轉至 ASP.NET 身分識別所需的一個。 藉由新增新的資料表，並將現有的資訊複製到這些資料表，我們可以執行這項操作。 根據預設 ASP.NET 身分識別會使用 EntityFramework 將身分識別模型類別對應至要儲存/擷取資訊的資料庫。 這些模型類別會實作核心身分識別介面，定義使用者和角色物件。 資料表和資料庫中的資料行根據這些模型類別。 EntityFramework 模型中的類別識別 v2.1.0 以及其屬性會定義如下
 
-| **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
+| **IdentityUser** | **類型** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
 | ID | 字串 | ID | RoleId | ProviderKey | ID |
 | 使用者名稱 | 字串 | 名稱 | UserId | UserId | ClaimType |

@@ -8,15 +8,15 @@ ms.date: 11/27/2012
 ms.assetid: 6dfb51ea-9f4d-4e70-916c-8ef8344a88d6
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: a78606a74b2149e68e3b01f4fe204f4a13edf4b5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5dc4471039938a429a85c891594c3a6651c6ef9d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039095"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388526"
 ---
-<a name="authentication-and-authorization-in-aspnet-web-api"></a>ASP.NET Web API 中驗證和授權
-====================
+# <a name="authentication-and-authorization-in-aspnet-web-api"></a>ASP.NET Web API 中驗證和授權
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 您已建立的 web API，但現在您想要控制其存取權。 在本系列的文章中，我們將探討一些選項來從未經授權的使用者保護的 web API。 此系列將會涵蓋驗證和授權。

@@ -8,15 +8,15 @@ ms.date: 02/17/2014
 ms.assetid: 360bc6e1-84c5-4b8e-a84c-ea48ab807aa4
 msc.legacyurl: /web-pages/overview/performance-and-traffic/14-analyzing-traffic
 msc.type: authoredcontent
-ms.openlocfilehash: 57e6a0d4681f147faa5e9ca3b6ed0ef287d6a381
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a99ed5cc8875ef9f39234e3f394b46b5782d0bc1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059595"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390216"
 ---
-<a name="tracking-visitor-information-analytics-for-an-aspnet-web-pages-razor-site"></a>追蹤 ASP.NET Web Pages (Razor) 網站的造訪者資訊 （分析）
-====================
+# <a name="tracking-visitor-information-analytics-for-an-aspnet-web-pages-razor-site"></a>追蹤 ASP.NET Web Pages (Razor) 網站的造訪者資訊 （分析）
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本文說明如何使用協助程式，在 ASP.NET Web Pages (Razor) 網站中的頁面加入網站分析。
@@ -86,5 +86,5 @@ ASP.NET Web 網頁包含數個分析協助程式 (`Analytics.GetGoogleHtml`， `
 ## <a name="additional-resources"></a>其他資源
 
 - [Google Analytics 網站](https://www.google.com/analytics/)
-- [Yahoo!Web Analytics 網站](http://help.yahoo.com/l/us/yahoo/ywa/)
+- [Yahoo! Web Analytics 網站](http://help.yahoo.com/l/us/yahoo/ywa/)
 - [StatCounter 站台](http://statcounter.com/)

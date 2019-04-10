@@ -8,15 +8,15 @@ ms.date: 10/17/2006
 ms.assetid: ee20742f-6fb7-49a0-a009-058fe363aacb
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 73a93c93932a004e76cf4ef7be1b3308ef6b991f
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: bdf1d69ea8020ce055d7765591cf2d488de71245
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422892"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388695"
 ---
-<a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb"></a>使用具有詳細資料 DataList 的主要記錄項目符號清單的主要/詳細 (VB)
-====================
+# <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb"></a>使用具有詳細資料 DataList 的主要記錄項目符號清單的主要/詳細 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_35_VB.exe)或[下載 PDF](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/datatutorial35vb1.pdf)
@@ -31,7 +31,7 @@ ms.locfileid: "58422892"
 在本教學課程會壓縮兩頁教學課程到單一頁面上，顯示在畫面左側的類別名稱的項目符號清單呈現 LinkButton 為每個類別目錄名稱。 按一下其中一個類別目錄名稱 Linkbutton 引發回傳，並將選取的類別目錄產品繫結至畫面的右側兩個資料行 DataList。 除了顯示每個類別 s 的名稱，在左側的重複項顯示有多少總產品指定類別 （請參閱 圖 1）。
 
 
-[![使用的類別名稱和產品的總計數字會顯示在左邊](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image2.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image1.png)
+[![T他類別的名稱和產品的總計數字會顯示在左邊](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image2.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image1.png)
 
 **圖 1**:使用的類別名稱和產品的總計數字會顯示在左側 ([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image3.png))
 
@@ -62,7 +62,7 @@ ms.locfileid: "58422892"
 加入 CSS 類別，並設定中的標記後`CategoriesAndProducts.aspx`頁面上，移至設計工具。 您應該會看到 Repeater （雖然權限現在都只會出現，因為我們尚未將其資料來源或範本的 ve 灰色方塊），浮點數到左邊的 DataList。
 
 
-[![中繼器浮動至 DataList 左邊](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image5.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image4.png)
+[![T他 Repeater 會浮動至 DataList 左邊](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image5.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image4.png)
 
 **圖 2**:中繼器浮動至 DataList 左邊 ([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image6.png))
 
@@ -81,7 +81,7 @@ ms.locfileid: "58422892"
 判斷中繼器 s 中的每個類別目錄的產品數目`ItemDataBound`事件處理常式不需要我們現有的資料存取層的任何修改。 可以直接在進行所有修改`CategoriesAndProducts.aspx`頁面。 新增名為新 ObjectDataSource 開始`CategoriesDataSource`透過 Repeater s 智慧標籤。 接下來，設定`CategoriesDataSource`ObjectDataSource，因此它會擷取資料的來源`CategoriesBLL`類別的`GetCategories()`方法。
 
 
-[![設定要使用 CategoriesBLL 類別的 GetCategories() 方法的 ObjectDataSource](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image8.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image7.png)
+[![C設定要使用 CategoriesBLL 類別的 GetCategories() 方法的 ObjectDataSource](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image8.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image7.png)
 
 **圖 3**:設定要使用 ObjectDataSource`CategoriesBLL`類別 s`GetCategories()`方法 ([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image9.png))
 
@@ -122,7 +122,7 @@ ms.locfileid: "58422892"
 加入這個事件處理常式之後, 請花一點時間測試透過瀏覽器頁面。 請注意每個類別目錄會列在項目符號清單中，顯示分類的名稱與類別相關聯的產品數目的方式 （請參閱 圖 4）。
 
 
-[![會顯示每個類別目錄名稱和數字的產品](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image11.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image10.png)
+[![E除此之外，每個類別目錄名稱和數字的產品都會顯示](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image11.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image10.png)
 
 **圖 4**:會顯示每個類別目錄名稱和數字的產品 ([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image12.png))
 
@@ -132,7 +132,7 @@ ms.locfileid: "58422892"
 而不是決定每個類別目錄做為它的產品數目 s 繫結至 Repeater，我們可以簡化這個程序，藉由調整`CategoriesDataTable`和`CategoriesTableAdapter`中將此資訊包含在原生資料存取層。 若要達到此目的，我們必須加入至新的資料行`CategoriesDataTable`保留相關聯的產品數目。 若要加入新的資料行至 DataTable，開啟 輸入資料集 (`App_Code\DAL\Northwind.xsd`)，以滑鼠右鍵按一下要修改，DataTable，然後選擇 新增 / 資料行。 加入新的資料行，以`CategoriesDataTable`（請參閱 [圖 5]）。
 
 
-[![將新的資料行新增至 CategoriesDataSource](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image14.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image13.png)
+[![Add CategoriesDataSource 新資料行](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image14.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image13.png)
 
 **圖 5**:加入新的資料行，來`CategoriesDataSource`([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image15.png))
 
@@ -150,12 +150,12 @@ ms.locfileid: "58422892"
 若要新增這`GetCategoriesAndNumberOfProducts()`方法，以滑鼠右鍵按一下`CategoriesTableAdapter`，然後選擇 新增查詢。 這會的啟動 TableAdapter 查詢組態精靈 中，這點我們發生許多次上一個教學課程中使用。 針對這個方法，請藉由指出此查詢使用特定 SQL 陳述式會傳回資料列來啟動精靈。
 
 
-[![建立使用特定 SQL 陳述式的方法](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image18.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image17.png)
+[![Create 方法使用特定 SQL 陳述式](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image18.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image17.png)
 
 **圖 7**:建立方法使用特定 SQL 陳述式 ([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image19.png))
 
 
-[![SQL 陳述式會傳回資料列](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image21.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image20.png)
+[![T他 SQL 陳述式傳回資料列](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image21.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image20.png)
 
 **圖 8**:SQL 陳述式傳回資料列 ([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image22.png))
 
@@ -166,7 +166,7 @@ ms.locfileid: "58422892"
 [!code-sql[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/samples/sample7.sql)]
 
 
-[![指定要使用的查詢](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image24.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image23.png)
+[![S指定要使用的查詢](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image24.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image23.png)
 
 **圖 9**:指定要使用的查詢 ([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image25.png))
 
@@ -176,7 +176,7 @@ ms.locfileid: "58422892"
 輸入此查詢之後, 的最後一個步驟是選擇新方法的名稱。 使用`FillWithNumberOfProducts`和`GetCategoriesAndNumberOfProducts`填滿的 DataTable 和傳回 DataTable 模式，分別。
 
 
-[![新的 TableAdapter 的方法 FillWithNumberOfProducts 名稱和 GetCategoriesAndNumberOfProducts](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image27.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image26.png)
+[![N新的 tableadapter 方法 FillWithNumberOfProducts ame 和 GetCategoriesAndNumberOfProducts](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image27.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image26.png)
 
 **圖 10**:命名新的 tableadapter 方法`FillWithNumberOfProducts`並`GetCategoriesAndNumberOfProducts`([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image28.png))
 
@@ -191,7 +191,7 @@ ms.locfileid: "58422892"
 傳回在其原始狀態中重複項，加上名為新 ObjectDataSource`CategoriesDataSource`透過 Repeater s 智慧標籤。 設定要使用 ObjectDataSource`CategoriesBLL`類別，而不需要使用它，但`GetCategories()`方法中，有它使用`GetCategoriesAndNumberOfProducts()`改為 （請參閱 圖 11）。
 
 
-[![設定為使用 GetCategoriesAndNumberOfProducts 方法的 ObjectDataSource](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image30.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image29.png)
+[![C設定為使用 GetCategoriesAndNumberOfProducts 方法的 ObjectDataSource](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image30.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image29.png)
 
 **圖 11**:設定要使用 ObjectDataSource`GetCategoriesAndNumberOfProducts`方法 ([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image31.png))
 
@@ -218,7 +218,7 @@ ms.locfileid: "58422892"
 從 DataList s 智慧標籤，選擇 新增名為新 ObjectDataSource`CategoryProductsDataSource`並將它設定為使用`ProductsBLL`類別的`GetProductsByCategoryID(categoryID)`方法。 因為在本教學課程 DataList 提供唯讀介面，放心地設定下拉式清單中的插入、 更新和刪除 （無） 索引標籤。
 
 
-[![設定為使用 ProductsBLL 類別的 GetProductsByCategoryID(categoryID) 方法的 ObjectDataSource](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image33.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image32.png)
+[![C設定為使用 ProductsBLL 類別的 GetProductsByCategoryID(categoryID) 方法的 ObjectDataSource](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image33.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image32.png)
 
 **圖 12**:設定要使用 ObjectDataSource`ProductsBLL`類別 s`GetProductsByCategoryID(categoryID)`方法 ([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image34.png))
 
@@ -228,7 +228,7 @@ ms.locfileid: "58422892"
 現在，設定參數來源下拉式清單為 None。 就會出現以程式設計方式將指派此參數值，當按一下 LinkButton 中繼器中的類別。
 
 
-[![請勿指定 categoryID 參數參數來源](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image36.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image35.png)
+[![Do 不指定參數的來源 categoryID 參數](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image36.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image35.png)
 
 **圖 13**:對未指定參數的來源*`categoryID`* 參數 ([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image37.png))
 
@@ -263,12 +263,12 @@ ms.locfileid: "58422892"
 使用這些新增項目，在本教學課程已完成 ！ 請花一點時間瀏覽器中測試它。 第一次造訪網頁時，圖 14 顯示的畫面。 因為類別目錄尚未選取，則會不顯示任何產品。 按一下類別，產生，例如產品類別目錄，在兩個資料行] 檢視中顯示這些產品 （請參閱 [圖 15）。
 
 
-[![沒有產品會顯示當第一次瀏覽頁面](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image39.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image38.png)
+[![No 產品會顯示當第一次瀏覽 [頁面](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image39.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image38.png)
 
 **圖 14**:沒有產品會顯示當第一次瀏覽頁面 ([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image40.png))
 
 
-[![按一下 產生類別目錄清單右邊的比對的產品](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image42.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image41.png)
+[![C請按一下產生的類別目錄列出比對產品右邊](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image42.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image41.png)
 
 **圖 15**:按一下 [產生] 類別列出比對產品向右 ([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image43.png))
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: d4dfc435-bda6-4621-9762-9ba270f8de4e
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: dd6bf5d8eb8a05dad1d230ef40c9b863e2af7094
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1f25a9afdf379d725496bd88f6ac192ab19930ca
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036985"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384509"
 ---
 # <a name="tutorial-use-ef-migrations-in-an-aspnet-mvc-app-and-deploy-to-azure"></a>教學課程：ASP.NET MVC 應用程式中使用 EF 移轉並部署至 Azure
 
@@ -168,8 +168,8 @@ Visual Studio 不會執行任何與資料庫在部署程序時，它會將您的
 10. 修改[定序](/sql/relational-databases/collations/collation-and-unicode-support)視。
 11. 輸入系統管理員**SQL 系統管理員使用者名稱**並**SQL 管理員密碼**。
 
-   - 如果您選取**新的 SQL Database 伺服器**，定義新的名稱和密碼，稍後會用到存取資料庫時。
-   - 如果您選取您先前建立的伺服器時，輸入該伺服器的認證。
+    - 如果您選取**新的 SQL Database 伺服器**，定義新的名稱和密碼，稍後會用到存取資料庫時。
+    - 如果您選取您先前建立的伺服器時，輸入該伺服器的認證。
 
 12. 使用 Application Insights 的 App Service 時，可以啟用遙測收集。 使用小設定時，Application Insights 會收集重要的事件、 例外狀況、 相依性、 要求，以及追蹤資訊。 若要深入了解 Application Insights，請參閱[Azure 監視器](https://azure.microsoft.com/services/monitor/)。
 13. 按一下 **建立**底部指出您已完成。

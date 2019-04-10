@@ -8,15 +8,15 @@ ms.date: 07/27/2010
 ms.assetid: 18700815-8e6c-4489-91af-7ea9dab6529e
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-deliver-dynamic-updates
 msc.type: authoredcontent
-ms.openlocfilehash: 71e566523d658eb8198453f354a12e63a4c38495
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 56ebc40aa500b62811bac0a5041fa9aa4f91f4ae
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421033"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391048"
 ---
-<a name="use-ajax-to-deliver-dynamic-updates"></a>使用 AJAX 傳送動態更新
-====================
+# <a name="use-ajax-to-deliver-dynamic-updates"></a>使用 AJAX 傳送動態更新
+
 by [Microsoft](https://github.com/microsoft)
 
 [下載 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
@@ -112,9 +112,9 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-html[Main](use-ajax-to-deliver-dynamic-updates/samples/sample9.html)]
 
-*秘訣︰ 請確定您已安裝 VS 2008 sp1 可讓 JavaScript 檔案 （包括 jQuery） 更豐富的 intellisense 支援的 JavaScript intellisense hotfix。您可以下載從： http://tinyurl.com/vs2008javascripthotfix*
+*秘訣︰ 請確定您已安裝 VS 2008 sp1 可讓 JavaScript 檔案 （包括 jQuery） 更豐富的 intellisense 支援的 JavaScript intellisense hotfix。 您可以下載從： http://tinyurl.com/vs2008javascripthotfix*
 
-通常使用 JQuery 撰寫的程式碼會使用全域"$ （）"JavaScript 方法，可擷取一或多個 HTML 項目，使用 CSS 選取器。 例如， <em>$("#rsvpmsg")</em>選取識別碼 rsvpmsg，為任何 HTML 項目時<em>$(".something")</em>會選取所有項目與 「 某事物 」 CSS 類別名稱。 您也可以撰寫更進階的查詢，像是 「 請傳回所有選取的選項按鈕的項目 」 使用選取器的查詢，例如： <em>$("輸入 [@type= technet 收音機] [@checked]")</em>。
+通常使用 JQuery 撰寫的程式碼會使用全域"$ （）"JavaScript 方法，可擷取一或多個 HTML 項目，使用 CSS 選取器。 例如， *$("#rsvpmsg")* 選取識別碼 rsvpmsg，為任何 HTML 項目時 *$(".something")* 會選取所有項目與 「 某事物 」 CSS 類別名稱。 您也可以撰寫更進階的查詢，像是 「 請傳回所有選取的選項按鈕的項目 」 使用選取器的查詢，例如： *$("輸入 [@type= technet 收音機] [@checked]")*。
 
 一旦您已選取項目，您可以呼叫方法對其採取動作，例如隱藏它們： *$(「 #rsvpmsg").hide();*
 

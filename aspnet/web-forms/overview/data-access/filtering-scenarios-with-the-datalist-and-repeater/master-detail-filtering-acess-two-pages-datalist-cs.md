@@ -8,15 +8,15 @@ ms.date: 10/30/2010
 ms.assetid: 68b8c023-92fa-4df6-9563-1764e16e4b04
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6d4f38201eaa25097dcba589f35506204d3f73a3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4fbb165f8ce80d560589a43c60920a6e68893d46
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031725"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390502"
 ---
-<a name="masterdetail-filtering-across-two-pages-c"></a>跨兩個頁面進行主要/詳細資料篩選 (C#)
-====================
+# <a name="masterdetail-filtering-across-two-pages-c"></a>跨兩個頁面進行主要/詳細資料篩選 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_34_CS.exe)或[下載 PDF](master-detail-filtering-acess-two-pages-datalist-cs/_static/datatutorial34cs1.pdf)
@@ -37,7 +37,7 @@ ms.locfileid: "57031725"
 建立任何主要/詳細資料報表的第一個步驟是先從顯示的 「 主要 」 的記錄開始。 因此，我們的第一個工作是在 「 主要 」 的網頁中顯示的類別。 開啟`CategoryListMaster.aspx`頁面中`DataListRepeaterFiltering`資料夾中，會新增重複項控制項，，和從智慧標籤中，選擇 加入新的 ObjectDataSource。 設定新的 ObjectDataSource，以便存取其資料從`CategoriesBLL`類別的`GetCategories`方法 （請參閱 圖 1）。
 
 
-[![設定要使用 CategoriesBLL 類別的 GetCategories 方法的 ObjectDataSource](master-detail-filtering-acess-two-pages-datalist-cs/_static/image2.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image1.png)
+[![C設定要使用 CategoriesBLL 類別的 GetCategories 方法的 ObjectDataSource](master-detail-filtering-acess-two-pages-datalist-cs/_static/image2.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image1.png)
 
 **圖 1**:設定要使用 ObjectDataSource`CategoriesBLL`類別的`GetCategories`方法 ([按一下以檢視完整大小的影像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image3.png))
 
@@ -49,7 +49,7 @@ ms.locfileid: "57031725"
 使用這個完整的標記，請花一點時間檢閱我們透過瀏覽器的進度。 如 [圖 2] 所示，Repeater 會呈現為項目符號清單顯示每個類別目錄的名稱和描述。
 
 
-[![每個類別目錄會顯示為項目符號清單項目](master-detail-filtering-acess-two-pages-datalist-cs/_static/image5.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image4.png)
+[![E類別會顯示為清單項目符號的 ach](master-detail-filtering-acess-two-pages-datalist-cs/_static/image5.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image4.png)
 
 **圖 2**:每個類別目錄會顯示為項目符號清單項目 ([按一下以檢視完整大小的影像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image6.png))
 
@@ -73,7 +73,7 @@ ms.locfileid: "57031725"
 如果您要遵照，歡迎使用頁面中的錨定項目或超連結控制項的方法。 無論種方法，檢視透過每個類別目錄名稱應該轉譯為連結的瀏覽器頁面時`ProductsForCategoryDetails.aspx`，並傳入適用`CategoryID`值 （請參閱 [圖 3]）。
 
 
-[![類別目錄名稱現在是連結到 ProductsForCategoryDetails.aspx](master-detail-filtering-acess-two-pages-datalist-cs/_static/image8.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image7.png)
+[![T他類別目錄名稱現在連結到 ProductsForCategoryDetails.aspx](master-detail-filtering-acess-two-pages-datalist-cs/_static/image8.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image7.png)
 
 **圖 3**:類別目錄名稱現在連結到`ProductsForCategoryDetails.aspx`([按一下以檢視完整大小的影像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image9.png))
 
@@ -83,7 +83,7 @@ ms.locfileid: "57031725"
 具有`CategoryListMaster.aspx`完整的頁面上，我們已經準備好把焦點轉到實作 [詳細資料] 頁面上， `ProductsForCategoryDetails.aspx`。 開啟此頁面，從 [工具箱] 拖曳至設計工具中，拖曳 DataList 和設定其`ID`屬性設`ProductsInCategory`。 接下來，從 DataList 的智慧標籤選擇 加入新的 ObjectDataSource 頁面上，將它命名為`ProductsInCategoryDataSource`。 設定它，它會呼叫`ProductsBLL`類別的`GetProductsByCategoryID(categoryID)`方法; 下拉式清單會列出為 （無） 與插入、 更新和刪除索引標籤中的設定。
 
 
-[![設定要使用 ProductsBLL 類別的 GetProductsByCategoryID(categoryID) 方法的 ObjectDataSource](master-detail-filtering-acess-two-pages-datalist-cs/_static/image11.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image10.png)
+[![C設定要使用 ProductsBLL 類別的 GetProductsByCategoryID(categoryID) 方法的 ObjectDataSource](master-detail-filtering-acess-two-pages-datalist-cs/_static/image11.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image10.png)
 
 **圖 4**:設定要使用 ObjectDataSource`ProductsBLL`類別的`GetProductsByCategoryID(categoryID)`方法 ([按一下以檢視完整大小的影像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image12.png))
 
@@ -91,7 +91,7 @@ ms.locfileid: "57031725"
 由於`GetProductsByCategoryID(categoryID)`方法會接受輸入的參數 (*`categoryID`*)，[選擇資料來源精靈] 可讓我們得以指定參數的來源。 設定參數來源至查詢字串使用 QueryStringField `CategoryID`。
 
 
-[![Querystring 欄位 CategoryID 做為參數的來源](master-detail-filtering-acess-two-pages-datalist-cs/_static/image14.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image13.png)
+[![Use Querystring 欄位 CategoryID，做為參數的來源](master-detail-filtering-acess-two-pages-datalist-cs/_static/image14.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image13.png)
 
 **圖 5**:使用查詢字串欄位`CategoryID`做為參數的來源 ([按一下以檢視完整大小的影像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image15.png))
 
@@ -103,7 +103,7 @@ Visual Studio 如我們所見先前的教學課程中，選擇資料來源精靈
 若要檢視這個頁面作用中，從啟動`CategoryListMaster.aspx`分頁; 接下來，按一下 類別目錄項目符號清單中的連結。 這樣會帶您前往`ProductsForCategoryDetails.aspx`，並傳遞沿著`CategoryID`透過查詢字串。 `ProductsInCategoryDataSource`內的 ObjectDataSource`ProductsForCategoryDetails.aspx`接著取得指定分類的產品並顯示它們 DataList，呈現每個資料列的兩個產品中。 [圖 6] 顯示的螢幕擷取畫面`ProductsForCategoryDetails.aspx`檢視飲料時。
 
 
-[![顯示的飲料，每個資料列的兩個](master-detail-filtering-acess-two-pages-datalist-cs/_static/image17.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image16.png)
+[![T他會顯示飲料，每個資料列的兩個](master-detail-filtering-acess-two-pages-datalist-cs/_static/image17.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image16.png)
 
 **圖 6**:顯示的飲料，每個資料列的兩個 ([按一下以檢視完整大小的影像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image18.png))
 
@@ -115,7 +115,7 @@ Visual Studio 如我們所見先前的教學課程中，選擇資料來源精靈
 若要達成此目的，將新增 Repeater 控制項上方 FormView `ProductsForCategoryDetails.aspx`。 從名為的 FormView 的智慧標籤接下來，新增至頁面的新 ObjectDataSource`CategoryDataSource`並將它設定為使用`CategoriesBLL`類別的`GetCategoryByCategoryID(categoryID)`方法。
 
 
-[![透過 CategoriesBLL 類別的 GetCategoryByCategoryID(categoryID) 方法的類別目錄的存取資訊](master-detail-filtering-acess-two-pages-datalist-cs/_static/image20.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image19.png)
+[![A存取 CategoriesBLL 類別的 GetCategoryByCategoryID(categoryID) 方法透過類別的相關資訊](master-detail-filtering-acess-two-pages-datalist-cs/_static/image20.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image19.png)
 
 **圖 7**:存取透過類別的相關資訊`CategoriesBLL`類別的`GetCategoryByCategoryID(categoryID)`方法 ([按一下以檢視完整大小的影像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image21.png))
 
@@ -132,7 +132,7 @@ Visual Studio 如我們所見先前的教學課程中，選擇資料來源精靈
 > 除了 FormView，我在裡面加入超連結控制項上面，會讓使用者回到的類別清單 FormView (`CategoryListMaster.aspx`)。 請隨意將此連結放在其他位置或完全省略它。
 
 
-[![類別資訊則是現在顯示在頁面頂端](master-detail-filtering-acess-two-pages-datalist-cs/_static/image23.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image22.png)
+[![Category 資訊是現在顯示在頁面頂端](master-detail-filtering-acess-two-pages-datalist-cs/_static/image23.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image22.png)
 
 **圖 8**:類別資訊則是現在顯示在頁面頂端 ([按一下以檢視完整大小的影像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image24.png))
 
@@ -158,7 +158,7 @@ Visual Studio 如我們所見先前的教學課程中，選擇資料來源精靈
 據以更新資料庫之後, 返回`CategoryListMaster.aspx`頁面，然後按一下 [產生] 連結。 由於不會再有任何屬於產生類別目錄的產品，因此您應該會看到"There are 沒有選取的類別目錄] 的產品 」 訊息，如 [圖 9 所示。
 
 
-[![如果沒有產品屬於選取的類別，顯示一則訊息](master-detail-filtering-acess-two-pages-datalist-cs/_static/image26.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image25.png)
+[![A 如果沒有產品屬於選取的類別，會顯示訊息](master-detail-filtering-acess-two-pages-datalist-cs/_static/image26.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image25.png)
 
 **圖 9**:如果沒有產品屬於選取的類別，顯示一則訊息 ([按一下以檢視完整大小的影像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image27.png))
 

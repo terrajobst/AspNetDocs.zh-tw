@@ -8,15 +8,15 @@ ms.date: 05/18/2012
 ms.assetid: 1a2ed0e8-63da-4110-9896-e2731d86f7c4
 msc.legacyurl: /web-pages/overview
 msc.type: book
-ms.openlocfilehash: f95d998b838e262dd1843c882dae466a88c23ad5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b4c9e9eb85f6ba9a1e2b2d0a1bbaf027ee25bc0d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023985"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381844"
 ---
-<a name="web-pages-guidance"></a>網頁的指引
-====================
+# <a name="web-pages-guidance"></a>網頁的指引
+
 - [快速入門](getting-started/index.md)
 
     - [在 Visual Studio 中撰寫 ASP.NET Web Pages 程式](getting-started/program-asp-net-web-pages-in-visual-studio.md)
@@ -36,10 +36,10 @@ ms.locfileid: "57023985"
         - [刪除資料庫資料](getting-started/introducing-aspnet-web-pages-2/deleting-data.md)
         - [建立一致的版面配置](getting-started/introducing-aspnet-web-pages-2/layouts.md)
         - [使用 WebMatrix 發佈網站](getting-started/introducing-aspnet-web-pages-2/publishing.md)
-- [路由傳送](routing/index.md)
+- [路由](routing/index.md)
 
     - [在 ASP.NET Web Pages 網站中建立可讀取的 URL](routing/creating-readable-urls-in-aspnet-web-pages-sites.md)
-- [UI、版面配置和佈景主題](ui-layouts-and-themes/index.md)
+- [UI、版面配置與佈景主題](ui-layouts-and-themes/index.md)
 
     - [使用表單](ui-layouts-and-themes/4-working-with-forms.md)
     - [在 ASP.NET Web Pages 網站中驗證使用者輸入](ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites.md)
@@ -51,14 +51,14 @@ ms.locfileid: "57023985"
     - [安裝協助程式](ui-layouts-and-themes/installing-helpers.md)
     - [Twitter 協助程式與 ASP.NET Web Pages](ui-layouts-and-themes/twitter-helper.md)
     - [在 ASP.NET Web Pages 網站中顯示地圖](ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site.md)
-- [行動裝置](mobile/index.md)
+- [行動訊息](mobile/index.md)
 
     - [為行動裝置轉譯 ASP.NET Web Pages 網站](mobile/rendering-aspnet-web-pages-sites-for-mobile-devices.md)
 - [使用資料](data/index.md)
 
     - [使用資料](data/5-working-with-data.md)
     - [以圖表顯示資料](data/7-displaying-data-in-a-chart.md)
-    - [使用檔案](data/working-with-files.md)
+    - [處理檔案](data/working-with-files.md)
 - [測試和偵錯](testing-and-debugging/index.md)
 
     - [偵錯簡介](testing-and-debugging/introduction-to-debugging.md)
@@ -73,7 +73,7 @@ ms.locfileid: "57023985"
     - [快取以改善網站效能](performance-and-traffic/15-caching-to-improve-the-performance-of-your-website.md)
     - [分析流量](performance-and-traffic/14-analyzing-traffic.md)
     - [在 ASP.NET Web Pages (Razor) 網站中統合及縮小資產](performance-and-traffic/bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site.md)
-- [API 參考](api-reference/index.md)
+- [應用程式開發介面參考](api-reference/index.md)
 
     - [ASP.NET API 快速參考](api-reference/asp-net-web-pages-api-reference.md)
 - [發行](releases/index.md)

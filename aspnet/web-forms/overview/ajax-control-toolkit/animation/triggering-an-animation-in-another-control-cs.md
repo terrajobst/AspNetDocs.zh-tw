@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: e5d99c2b-d8ee-413c-80d5-c120cffb0a4c
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6216f24e497936245280f337477b287ff2afb080
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: ca383b7a82b754c7556dcea3bcdb8e28e5c7a45d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421384"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384847"
 ---
-<a name="triggering-an-animation-in-another-control-c"></a>觸發另一個控制項中的動畫 (C#)
-====================
+# <a name="triggering-an-animation-in-another-control-c"></a>觸發另一個控制項中的動畫 (C#)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation8.cs.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation8CS.pdf)
@@ -57,7 +57,7 @@ ms.locfileid: "58421384"
 請注意特殊個別動畫顯示的順序。 首先，動畫執行後，便會停用按鈕。 因為沒有任何`AnimationTarget`屬性中`<EnableAction>`項目，這個動畫會套用至原始的控制項: [] 按鈕。 下面兩個動畫步驟都應該以平行方式執行 (`<Parallel>`項目)。 兩者都有其`AnimationTarget`屬性設定為`"Panel1"`，因此以動畫顯示的窗格中，不是按鈕。
 
 
-[![在按鈕上的按一下滑鼠開始面板動畫](triggering-an-animation-in-another-control-cs/_static/image2.png)](triggering-an-animation-in-another-control-cs/_static/image1.png)
+[![A 在按鈕上的按一下滑鼠開始面板動畫](triggering-an-animation-in-another-control-cs/_static/image2.png)](triggering-an-animation-in-another-control-cs/_static/image1.png)
 
 在按鈕上的按一下滑鼠開始面板動畫 ([按一下以檢視完整大小的影像](triggering-an-animation-in-another-control-cs/_static/image3.png))
 

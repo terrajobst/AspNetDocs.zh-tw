@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 9c8f0054-e319-46f8-80c0-35b606d2fbd4
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/databinding-to-an-accordion-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 930392bd33cfeb7dec52a6084a5d401a6134a7ef
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 28e001059cb1853d21175da2a2b1af2c75364485
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57024635"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380355"
 ---
-<a name="databinding-to-an-accordion-c"></a>資料繫結至 Accordion (C#)
-====================
+# <a name="databinding-to-an-accordion-c"></a>資料繫結至 Accordion (C#)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/5/6/d/56d50cef-2011-4c8f-9891-7edc6dc57df9/Accordion1.cs.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/accordion1CS.pdf)
@@ -59,7 +59,7 @@ Accordion 在控制項內，您可以提供範本的控制項，包括標頭的�
 [!code-css[Main](databinding-to-an-accordion-cs/samples/sample6.css)]
 
 
-[![Accordion 中的資料直接來自資料來源](databinding-to-an-accordion-cs/_static/image2.png)](databinding-to-an-accordion-cs/_static/image1.png)
+[![T他 accordion 中的資料是直接來自資料來源](databinding-to-an-accordion-cs/_static/image2.png)](databinding-to-an-accordion-cs/_static/image1.png)
 
 Accordion 中的資料直接來自資料來源 ([按一下以檢視完整大小的影像](databinding-to-an-accordion-cs/_static/image3.png))
 

@@ -8,15 +8,15 @@ ms.date: 02/10/2014
 ms.assetid: 2a2c1833-0bfe-4e2e-9cc0-341b52c7b121
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: ec8cdda5c5b298736a650f82cd6b52d73b6dfe3d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: adbaa5cbda4a60a8b222ba49bb148b28b2e214cc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061295"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389202"
 ---
-<a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET Web Pages (Razor) 疑難排解指南
-====================
+# <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET Web Pages (Razor) 疑難排解指南
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本文說明使用 ASP.NET Web Pages (Razor) 和一些建議的解決方案時，您可能遇到的問題。
@@ -141,7 +141,7 @@ ms.locfileid: "57061295"
     *連線嘗試失敗，因為連線對象並未正確回應之後一段時間，或是連線建立失敗，因為連線的主機無法回應*
 
     此錯誤通常表示應用程式無法連接到 SMTP 伺服器。 請檢查伺服器名稱和連接埠號碼。
-- <em>信箱無法使用。伺服器回應為：5.1.0 &lt; someuser@invaliddomain &gt;寄件者已拒絕： 無效的寄件者網域</em>
+- *信箱無法使用。 伺服器回應為：5.1.0 &lt; someuser@invaliddomain &gt;寄件者已拒絕： 無效的寄件者網域*
 
     此訊息可能表示`From`位址不正確或遺失。
 - *指定的字串不是所需的電子郵件地址的格式。*

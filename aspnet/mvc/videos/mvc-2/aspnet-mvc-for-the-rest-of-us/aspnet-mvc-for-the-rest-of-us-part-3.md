@@ -8,15 +8,15 @@ ms.date: 04/22/2010
 ms.assetid: 36e519b9-c786-4819-beda-2af72f088623
 msc.legacyurl: /mvc/videos/mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-3
 msc.type: video
-ms.openlocfilehash: 24764c24d939fca1141d8474691f1c8322c4a656
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c3bd47b13d32ee4ac977ff99cb1e0a038f81ebaa
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041205"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383053"
 ---
-<a name="aspnet-mvc-for-the-rest-of-us-part-3"></a>適合其他人的 ASP.NET MVC第 3 部分
-====================
+# <a name="aspnet-mvc-for-the-rest-of-us-part-3"></a>適合其他人的 ASP.NET MVC第 3 部分
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 在此影片 Microsoft Joe Stagner 會重建的 「 與我們連絡 功能使用 Microsoft Entity Framework 和強型別的檢視的 ASP.NET MVC 應用程式。 此，我們先概略了實際的使用 ASP.NET MVC 中的資料。

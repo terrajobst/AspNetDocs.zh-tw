@@ -8,15 +8,15 @@ ms.date: 02/27/2014
 ms.assetid: 266e7866-e327-4687-b29d-627a0925e87d
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/sorting-paging-and-filtering-data
 msc.type: authoredcontent
-ms.openlocfilehash: 624f98cea6030e0b7b022f86c4c1aa37f1db9726
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1159d75ec5b2f7e5ac94da0a15acf24b5400798b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065775"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387462"
 ---
-<a name="sorting-paging-and-filtering-data-with-model-binding-and-web-forms"></a>排序、 分頁和篩選資料與模型繫結和 web form
-====================
+# <a name="sorting-paging-and-filtering-data-with-model-binding-and-web-forms"></a>排序、 分頁和篩選資料與模型繫結和 web form
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本系列教學課程示範使用 ASP.NET Web Form 專案中的模型繫結的基本層面。 模型繫結進行更簡單的比處理資料來源物件 （例如 ObjectDataSource 或 SqlDataSource） 的資料互動。 此系列簡介資料的開頭，並在稍後的教學課程中將移至更進階的概念。

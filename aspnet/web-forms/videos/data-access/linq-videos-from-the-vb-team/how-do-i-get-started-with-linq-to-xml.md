@@ -8,15 +8,15 @@ ms.date: 11/15/2007
 ms.assetid: dc3dedcd-5daf-4f0e-9afa-9ccad94f2ce0
 msc.legacyurl: /web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq-to-xml
 msc.type: video
-ms.openlocfilehash: c7ca1a1361157afc6d1032dc4bcded3fdc2fbe38
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bbe5c24f88562d2e4eb0b70e8d83dbd92a90460f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060245"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384788"
 ---
-<a name="how-do-i-get-started-with-linq-to-xml"></a>[How Do i:]開始使用 LINQ to XML？
-====================
+# <a name="how-do-i-get-started-with-linq-to-xml"></a>[How Do i:]開始使用 LINQ to XML？
+
 藉由[Beth massi 探討](https://github.com/bethmassi)
 
 Visual Basic 開發人員將學習如何使用 Visual Basic 中建立、 查詢及轉換 XML 文件，輕鬆地使用 XML 常值、 內嵌的運算式和 XML 軸屬性中的 XML。

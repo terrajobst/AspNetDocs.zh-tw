@@ -8,15 +8,15 @@ ms.date: 07/21/2010
 ms.assetid: 4fab47d5-a6ec-4fdc-91f0-651a093a24b9
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: ca7eccd684473d9a1ec4a8adfd8690b291fe702f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 63afd25e2ccf22d3c7ae5c5048c80a8cf060d4cf
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043265"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382819"
 ---
-<a name="part-4-listing-products"></a>第 4 部分：列出產品
-====================
+# <a name="part-4-listing-products"></a>第 4 部分：列出產品
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 > Tailspin Spyworks 示範建立功能強大、 可擴充的應用程式，適用於.NET 平台是如何富含簡單。 它會展示如何在 ASP.NET 4 中使用最棒的新功能，建置線上商店，包括購物、 簽出，以及系統管理。
@@ -50,7 +50,7 @@ ms.locfileid: "57043265"
 
 若要完成這項作業我們會告訴來自動產生 EntityDataSource WHERE 子句，我們會指定 WhereParameter。
 
-您應該還記得，我們建立我們 [產品類別目錄功能表] 中的功能表項目時我們以動態方式建立連結 CatagoryID 加入每個連結的 QueryString。 我們會告訴實體資料來源，從該查詢字串參數中衍生的位置參數。
+您應該還記得，我們建立我們 [產品類別目錄功能表] 中的功能表項目時我們以動態方式建立連結的 CategoryID 加入每個連結的 QueryString。 我們會告訴實體資料來源，從該查詢字串參數中衍生的位置參數。
 
 [!code-aspx[Main](tailspin-spyworks-part-4/samples/sample1.aspx)]
 
@@ -79,7 +79,7 @@ ms.locfileid: "57043265"
 
 ![](tailspin-spyworks-part-4/_static/image6.jpg)
 
-現在我們要實作 ProductDetials.apsx 頁面和 AddToCart 功能。
+現在我們要實作 ProductDetails.aspx 頁面和 AddToCart 功能。
 
 使用檔案-&gt;新建立的頁面名稱 ProductDetails.aspx 先前一樣，使用網站主版頁面。
 
@@ -93,7 +93,7 @@ ms.locfileid: "57043265"
 
 請注意，我們不會選擇 ShoppingCart.aspx 的名稱。
 
-我們的資料庫包含名為"ShoppingCart"的資料表。 當我們產生 Entity Data Model 類別被建立在資料庫中的每個資料表。 因此，實體資料模型會產生名為"ShoppingCart"實體類別。 我們無法編輯模型，讓我們可以使用我們的購物車實作該名稱，或將其延伸為我們的需求，但我們會選擇改為直接請選取可避免衝突的名稱。
+我們的資料庫包含名為"ShoppingCart"的資料表。 當我們產生 Entity Data Model 類別被建立在資料庫中的每個資料表。 因此，實體資料模型會產生名為"ShoppingCart"實體類別。 我們無法編輯模型，讓我們可以使用我們的購物車實作該名稱，或將其延伸為我們的需求，但我們將改為選擇只需要選取 可避免衝突的名稱。
 
 另外值得注意的是，我們將建立簡單的購物車和購物車 」 顯示的內嵌功能的購物車 」 邏輯。 我們還可以選擇在完全不同的商務層中實作我們的購物車。
 

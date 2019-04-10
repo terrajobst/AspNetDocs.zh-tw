@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: fae968c9-1902-487d-b053-86a46dd52c3f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b0ac0919e64fb6494bd9c7c5f00a5f69274799ed
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 27823e6b65dda80391d494af6f8d8da539bc3334
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041395"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393206"
 ---
-<a name="dynamically-adding-an-accordion-pane-vb"></a>以動態方式新增 Accordion 窗格 (VB)
-====================
+# <a name="dynamically-adding-an-accordion-pane-vb"></a>以動態方式新增 Accordion 窗格 (VB)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/5/6/d/56d50cef-2011-4c8f-9891-7edc6dc57df9/Accordion2.vb.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/accordion2VB.pdf)
@@ -55,7 +55,7 @@ Accordion 控制項公開 （expose) 所有重要的屬性，以伺服器端程�
 [!code-css[Main](dynamically-adding-an-accordion-pane-vb/samples/sample6.css)]
 
 
-[![伺服器端程式碼已以動態方式新增 accordion 中的資料](dynamically-adding-an-accordion-pane-vb/_static/image2.png)](dynamically-adding-an-accordion-pane-vb/_static/image1.png)
+[![T由伺服器端程式碼以動態方式新增他 accordion 中的資料](dynamically-adding-an-accordion-pane-vb/_static/image2.png)](dynamically-adding-an-accordion-pane-vb/_static/image1.png)
 
 伺服器端程式碼已以動態方式新增 accordion 中的資料 ([按一下以檢視完整大小的影像](dynamically-adding-an-accordion-pane-vb/_static/image3.png))
 

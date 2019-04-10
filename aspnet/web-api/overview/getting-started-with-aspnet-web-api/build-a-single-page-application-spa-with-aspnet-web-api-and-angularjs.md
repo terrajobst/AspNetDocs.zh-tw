@@ -1,33 +1,37 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
-title: 實際操作實驗室：建置單一頁面應用程式 (SPA) 使用 ASP.NET Web API 和 Angular.js |Microsoft Docs
+title: 實際操作實驗室：建置單一頁面應用程式 (SPA) 與 ASP.NET Web API 和 Angular.js-ASP.NET 4.x
 author: rick-anderson
-description: 在傳統的 web 應用程式，用戶端 （瀏覽器） 會起始與伺服器通訊，藉由要求的頁面。 伺服器接著會處理要求...
+description: 逐步解說程式碼：單一頁面應用程式 (SPA) 使用 ASP.NET Web API 和 Angular.js 建置 ASP.NET 4.x。
 ms.author: riande
 ms.date: 09/30/2015
+ms.custom: seoapril2019
 ms.assetid: 719727b7-bef3-45ad-bfe9-ba5bcdb2305f
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
 msc.type: authoredcontent
-ms.openlocfilehash: 03409e2fda831a07bbc5321ad842633b23ec25e5
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 1f093e348216750cbadb6e52f524e5edd4d6c498
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422404"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390268"
 ---
-<a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>實際操作實驗室：使用 ASP.NET Web API 和 Angular.js 建置單一頁面應用程式 (SPA)
-====================
+# <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>實際操作實驗室：使用 ASP.NET Web API 和 Angular.js 建置單一頁面應用程式 (SPA)
+
 藉由[Web Camp 小組](https://twitter.com/webcamps)
 
 [下載 Web 研討會訓練套件](https://aka.ms/webcamps-training-kit)
 
-> 在傳統的 web 應用程式，用戶端 （瀏覽器） 會起始與伺服器通訊，藉由要求的頁面。 伺服器接著會處理要求，並傳送給用戶端網頁的 HTML。 在後續的互動與頁面 – 例如使用者瀏覽至連結或送出表單資料 – 新的要求會傳送到伺服器，並重新啟動流程： 伺服器處理要求，並將新的頁面傳送至新的動作要求回應中的瀏覽器ed 用戶端。
+這個實際操作實驗室會示範如何建置單一頁面應用程式 (SPA)，使用 ASP.NET Web API 和 Angular.js asp.net 4.x。
+
+在此手動在實驗室中，您會利用這些技術來實作 Geek 測驗，SPA 概念為基礎的邏輯網站。 您第一次會實作 ASP.NET Web API，可擷取測驗問題，並儲存回應所需的端點公開 （expose） 服務層。 然後，您將建置豐富且回應迅速的 UI，使用 AngularJS 和 CSS3 轉換效果。
+
+在傳統的 web 應用程式，用戶端 （瀏覽器） 會起始與伺服器通訊，藉由要求的頁面。 伺服器接著會處理要求，並傳送給用戶端網頁的 HTML。 在後續的互動與頁面 – 例如使用者瀏覽至連結或送出表單資料 – 新的要求會傳送到伺服器，並重新啟動流程： 伺服器處理要求，並將新的頁面傳送至新的動作要求回應中的瀏覽器ed 用戶端。
 > 
 > 在單一頁面應用程式 (Spa) 整頁瀏覽器中之後載入初始要求中，但後續的互動進行透過 Ajax 要求。 這表示瀏覽器具有更新的頁面已變更; 部份沒有需要重新載入整個頁面。 SPA 方法可減少應用程式以回應使用者動作，導致更流暢的經驗所花費的時間。
 > 
 > SPA 架構牽涉到某些不會出現在 傳統 web 應用程式的挑戰。 不過，新興技術，例如 ASP.NET Web API，例如 AngularJS JavaScript 架構，並提供 CSS3 的新樣式功能會使它很容易設計和建置 Spa。
 > 
-> 在此手動在實驗室中，您會利用這些技術來實作 Geek 測驗，SPA 概念為基礎的邏輯網站。 您第一次會實作 ASP.NET Web API，可擷取測驗問題，並儲存回應所需的端點公開 （expose） 服務層。 然後，您將建置豐富且回應迅速的 UI，使用 AngularJS 和 CSS3 轉換效果。
 > 
 > 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
 
@@ -72,7 +76,7 @@ ms.locfileid: "58422404"
 > 每個練習會伴隨起始方案，位於**開始**練習，可讓您依照每個練習，獨立於其他的資料夾。 請留意練習期間新增的程式碼片段缺少這些啟動解決方案，並可能無法運作，直到您已完成練習。 在練習的原始程式碼，您也可以找到**結束**資料夾包含 Visual Studio 方案，以程式碼所產生的相對應的練習中的步驟。 如果您需要其他說明，當您完成這個實際操作實驗室，您可以使用這些解決方案與指引。
 
 
-* * *
+---
 
 <a id="Exercises"></a>
 ## <a name="exercises"></a>練習
@@ -104,7 +108,7 @@ Web API 架構是 ASP.NET 堆疊的一部分，旨在讓您輕鬆地實作 HTTP 
 
     ![建立新的專案](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image1.png "建立新的專案")
 
-    *建立新的專案*
+    *建立新專案*
 2. 在 [**新的專案**對話方塊中，選取**ASP.NET Web 應用程式**下**Visual C# |Web** ] 索引標籤。請確定 **.NET Framework 4.5**是選取，其命名*GeekQuiz*，選擇**位置**然後按一下**確定**。
 
     ![建立新的 ASP.NET Web 應用程式專案](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image2.png "建立新的 ASP.NET Web 應用程式專案")
@@ -433,7 +437,7 @@ Web API 架構是 ASP.NET 堆疊的一部分，旨在讓您輕鬆地實作 HTTP 
 
     *正在擷取下列翻頁動畫效果的問題*
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>總結

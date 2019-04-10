@@ -8,15 +8,15 @@ ms.date: 01/26/2011
 ms.assetid: 393df4a8-b1db-44c4-9db7-2b533ca887d0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4
 msc.type: authoredcontent
-ms.openlocfilehash: 402e7ace1abad899d32ed179d6b68de4e5a129f5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0bc24a59e09728a5ecb6e18378c4cde0c8e046f2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57045715"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387447"
 ---
-<a name="whats-new-in-the-entity-framework-40"></a>Entity Framework 4.0 的新功能
-====================
+# <a name="whats-new-in-the-entity-framework-40"></a>Entity Framework 4.0 的新功能
+
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 > 本教學課程系列是根據所建立的 Contoso 大學 web 應用程式[Getting Started with Entity Framework](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)教學課程系列。 如果您未完成先前的教學課程，為本教學課程的起始點即可[下載應用程式](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)您會建立。 您也可以[下載應用程式](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa)，它由完整的教學課程系列。 如果您有疑問的教學課程，您可以張貼他們[ASP.NET Entity Framework 論壇](https://forums.asp.net/1227.aspx)。
@@ -135,7 +135,7 @@ Entity Framework 3.5 版包含導覽屬性，但其未包含資料模型中的�
 
 [![Image14](what-s-new-in-the-entity-framework-4/_static/image26.png)](what-s-new-in-the-entity-framework-4/_static/image25.png)
 
-在 **連接屬性**對話方塊中，選取 本機的 SQL Server Express 執行個體，為資料庫命名`AlumniAsssociation`。
+在 **連接屬性**對話方塊中，選取 本機的 SQL Server Express 執行個體，為資料庫命名`AlumniAssociation`。
 
 [![Image15](what-s-new-in-the-entity-framework-4/_static/image28.png)](what-s-new-in-the-entity-framework-4/_static/image27.png)
 

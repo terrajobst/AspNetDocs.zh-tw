@@ -8,15 +8,15 @@ ms.date: 04/01/2008
 ms.assetid: 041854a5-ea8c-4de0-82f1-121ba6cb2893
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 87f27dc1cc7271ddee8785c12d48913e3c9f2c98
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1f6ade517bda60ac0f44811853ee9b9d06070091
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044495"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384171"
 ---
-<a name="unlocking-and-approving-user-accounts-vb"></a>解除鎖定及核准使用者帳戶 (VB)
-====================
+# <a name="unlocking-and-approving-user-accounts-vb"></a>解除鎖定及核准使用者帳戶 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/VB.14.zip)或[下載 PDF](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/aspnet_tutorial14_UnlockAndApprove_vb.pdf)
@@ -49,7 +49,7 @@ ms.locfileid: "57044495"
 加入之後 HyperLinkField GridView，請花一點時間檢視`ManageUsers.aspx`透過瀏覽器的頁面。 如 [圖 1] 所示，每個 GridView 資料列現在會包含 [管理] 連結。 Bruce 的 「 管理 」 連結指向`UserInformation.aspx?user=Bruce`，而 Dave 的 「 管理 」 連結指向`UserInformation.aspx?user=Dave`。
 
 
-[![HyperLinkField 新增](unlocking-and-approving-user-accounts-vb/_static/image2.png)](unlocking-and-approving-user-accounts-vb/_static/image1.png)
+[![T他將新增 HyperLinkField](unlocking-and-approving-user-accounts-vb/_static/image2.png)](unlocking-and-approving-user-accounts-vb/_static/image1.png)
 
 **圖 1**:HyperLinkField 新增每個使用者帳戶的 [管理] 連結 ([按一下以檢視完整大小的影像](unlocking-and-approving-user-accounts-vb/_static/image3.png))
 
@@ -72,7 +72,7 @@ ms.locfileid: "57044495"
 之後加入這些控制項，在 Visual Studio 中的 [設計] 檢視看起來應該類似於圖 2 螢幕擷取畫面。
 
 
-[![建立 UserInformation.aspx 的使用者介面](unlocking-and-approving-user-accounts-vb/_static/image5.png)](unlocking-and-approving-user-accounts-vb/_static/image4.png)
+[![C針對 UserInformation.aspx reate 使用者介面](unlocking-and-approving-user-accounts-vb/_static/image5.png)](unlocking-and-approving-user-accounts-vb/_static/image4.png)
 
 **圖 2**:建立的使用者介面`UserInformation.aspx`([按一下以檢視完整大小的影像](unlocking-and-approving-user-accounts-vb/_static/image6.png))
 
@@ -98,7 +98,7 @@ ms.locfileid: "57044495"
 在發生這些事件處理常式，重新瀏覽的頁面和未經核准的使用者。 如 [圖 3] 所示，您應該會看到訊息指出此頁面上使用者的簡短`IsApproved`已成功修改屬性。
 
 
-[![Chris 已經未核准](unlocking-and-approving-user-accounts-vb/_static/image8.png)](unlocking-and-approving-user-accounts-vb/_static/image7.png)
+[![Chris 已未核准](unlocking-and-approving-user-accounts-vb/_static/image8.png)](unlocking-and-approving-user-accounts-vb/_static/image7.png)
 
 **圖 3**:Chris 已經未核准 ([按一下以檢視完整大小的影像](unlocking-and-approving-user-accounts-vb/_static/image9.png))
 
@@ -106,7 +106,7 @@ ms.locfileid: "57044495"
 接下來，登出，然後嘗試使用者身分，登入帳戶是只要未經核准。 使用者未獲得核准，因為它們無法登入。 根據預設，登入控制項可顯示相同的訊息，如果使用者無法登入，不論原因為何。 但在<a id="Tutorial6"> </a> [*驗證使用者認證對成員資格使用者存放區*](../membership/validating-user-credentials-against-the-membership-user-store-vb.md)教學課程中我們探討了增強的登入控制項來顯示更適當的訊息。 如 [圖 4] 所示，Chris 會顯示訊息，說明他無法登入因為他的帳戶尚未核准。
 
 
-[![Chris 無法登入因為 His 帳戶是未核准](unlocking-and-approving-user-accounts-vb/_static/image11.png)](unlocking-and-approving-user-accounts-vb/_static/image10.png)
+[![Chris 無法登入，因為他的帳戶是未核准](unlocking-and-approving-user-accounts-vb/_static/image11.png)](unlocking-and-approving-user-accounts-vb/_static/image10.png)
 
 **圖 4**:Chris 無法登入因為 His 帳戶是未核准 ([按一下以檢視完整大小的影像](unlocking-and-approving-user-accounts-vb/_static/image12.png))
 
@@ -116,7 +116,7 @@ ms.locfileid: "57044495"
 返回`ManageUsers.aspx`頁面上，按一下 鎖定使用者的 管理 連結。 如 [圖 5] 所示，您應該會看到中的值`LastLockedOutDateLabel`解除鎖定使用者按鈕應會啟用。 按一下 [解除鎖定使用者] 按鈕，以解除鎖定使用者帳戶。 一旦您已解鎖使用者，他們將能夠再次登入。
 
 
-[![Dave 已被鎖定系統](unlocking-and-approving-user-accounts-vb/_static/image14.png)](unlocking-and-approving-user-accounts-vb/_static/image13.png)
+[![D系統已封鎖 [ave](unlocking-and-approving-user-accounts-vb/_static/image14.png)](unlocking-and-approving-user-accounts-vb/_static/image13.png)
 
 **圖 5**:Dave 有已鎖定的系統 ([按一下以檢視完整大小的影像](unlocking-and-approving-user-accounts-vb/_static/image15.png))
 
@@ -166,7 +166,7 @@ ms.locfileid: "57044495"
 實質效果是新的使用者未經核准，這表示它們無法登入網站。 此外，它們會自動傳送電子郵件，內含連結至驗證 URL （請參閱 圖 6）。
 
 
-[![新的使用者會收到一封電子郵件驗證 URL 的連結](unlocking-and-approving-user-accounts-vb/_static/image17.png)](unlocking-and-approving-user-accounts-vb/_static/image16.png)
+[![T他新的使用者會收到一封電子郵件驗證 URL 的連結](unlocking-and-approving-user-accounts-vb/_static/image17.png)](unlocking-and-approving-user-accounts-vb/_static/image16.png)
 
 **圖 6**:新的使用者會收到一封電子郵件驗證 URL 的連結 ([按一下以檢視完整大小的影像](unlocking-and-approving-user-accounts-vb/_static/image18.png))
 
@@ -188,7 +188,7 @@ ms.locfileid: "57044495"
 [圖 7] 顯示`Verification.aspx`頁面上，當透過瀏覽器瀏覽。
 
 
-[![新的使用者帳戶是現在核准](unlocking-and-approving-user-accounts-vb/_static/image20.png)](unlocking-and-approving-user-accounts-vb/_static/image19.png)
+[![T他新使用者的帳戶是現在核准](unlocking-and-approving-user-accounts-vb/_static/image20.png)](unlocking-and-approving-user-accounts-vb/_static/image19.png)
 
 **圖 7**:新的使用者帳戶是現在核准 ([按一下以檢視完整大小的影像](unlocking-and-approving-user-accounts-vb/_static/image21.png))
 

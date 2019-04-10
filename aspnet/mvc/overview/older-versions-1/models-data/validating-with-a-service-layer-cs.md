@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: 4eabc535-b8a1-43f5-bb99-cfeb86db0fca
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 69ff78949589017d12a791231e38b400b49f2917
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9b2a7e00b3c50a946ad0f2518880892f103a5c1b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57051835"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387109"
 ---
-<a name="validating-with-a-service-layer-c"></a>驗證與服務層 (C#)
-====================
+# <a name="validating-with-a-service-layer-c"></a>驗證與服務層 (C#)
+
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > 了解如何移動您的驗證邏輯出您對控制器動作並進入個別的服務層。 在本教學課程中，Stephen Walther 會說明如何藉由隔離您的服務層，從您的控制器層級維護 sharp 關注點分離。
@@ -30,7 +30,7 @@ ms.locfileid: "57051835"
 
 例如，列表 1 包含名為 ProductRepository 簡單存放庫。 產品存放庫包含所有應用程式的資料存取程式碼。 清單也包含產品存放庫會實作 IProductRepository 介面。
 
-**列表 1-Models\ProductRepository.cs**
+**Listing 1 -- Models\ProductRepository.cs**
 
 [!code-csharp[Main](validating-with-a-service-layer-cs/samples/sample1.cs)]
 

@@ -8,15 +8,15 @@ ms.date: 04/01/2009
 ms.assetid: a3599cf7-8474-4006-954a-3bc693736b66
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cdecc85c056fc5153763d938c665b473117df9ba
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1ef796dc61cc65b6ca5205a5f8baf4dcc4ba05ae
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031645"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389163"
 ---
-<a name="deploying-your-site-using-an-ftp-client-c"></a>使用 FTP 用戶端部署您的網站 (C#)
-====================
+# <a name="deploying-your-site-using-an-ftp-client-c"></a>使用 FTP 用戶端部署您的網站 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/4/5/F/45F815EC-8B0E-46D3-9FB8-2DC015CCA306/ASPNET_Hosting_Tutorial_03_CS.zip)或[下載 PDF](http://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial03_DeployingViaFTP_cs.pdf)
@@ -69,7 +69,7 @@ ms.locfileid: "57031645"
 > 擁有來源的程式碼檔案，在實際執行伺服器上，沒有壞處，因為它們會被忽略。 ASP.NET 預設禁止原始程式碼檔的 HTTP 要求，且即使實際執行伺服器上的原始程式碼檔案有存取網站的訪客。 (亦即，如果使用者嘗試瀏覽`http://www.yoursite.com/Default.aspx.cs`它們會出現，表示錯誤頁面，這些類型的檔案-`.cs`檔案-禁止。)
 
 
-[![若要從您的桌面的必要檔案複製到 Web 伺服器，在 Web 主機服務提供者使用 FTP 用戶端](deploying-your-site-using-an-ftp-client-cs/_static/image2.png)](deploying-your-site-using-an-ftp-client-cs/_static/image1.png)
+[![Use FTP 用戶端所需的檔案複製到 Web 伺服器，在 Web 主機服務提供者的您的桌面](deploying-your-site-using-an-ftp-client-cs/_static/image2.png)](deploying-your-site-using-an-ftp-client-cs/_static/image1.png)
 
 **圖 1**:若要從您的桌面的必要的檔案複製到 Web 伺服器，在 Web 主機服務提供者使用 FTP 用戶端 ([按一下以檢視完整大小的影像](deploying-your-site-using-an-ftp-client-cs/_static/image3.png))
 
@@ -82,7 +82,7 @@ ms.locfileid: "57031645"
 > 如果您收到錯誤時檢視您的應用程式花點時間，請確認您已部署一組正確的檔案。 接下來，請檢查錯誤訊息，以查看它會顯示任何有關此問題的線索。 接下來，您可以向 web 主機公司的技術服務人員，或在適當的論壇上張貼您的問題[ASP.NET 論壇](https://forums.asp.net/)。
 
 
-[![書籍評論網站是現在可以存取任何有網際網路連線](deploying-your-site-using-an-ftp-client-cs/_static/image5.png)](deploying-your-site-using-an-ftp-client-cs/_static/image4.png)
+[![T他的書籍評論網站是現在可存取網際網路連線的任何人](deploying-your-site-using-an-ftp-client-cs/_static/image5.png)](deploying-your-site-using-an-ftp-client-cs/_static/image4.png)
 
 **圖 2**:書籍評論網站是現在可以存取網際網路連線的任何人 ([按一下以檢視完整大小的影像](deploying-your-site-using-an-ftp-client-cs/_static/image6.png))
 
@@ -124,7 +124,7 @@ ms.locfileid: "57031645"
 圖 3 顯示 FileZilla 之後複製所需的檔案。 如您所見，ASP.NET 來源的程式碼檔案，例如`About.aspx.cs`，會出現在本機電腦 （開發環境） 和 web 主機提供者 （生產環境），因為程式碼檔案需要時使用自動部署編譯。
 
 
-[![若要從您的桌面的必要檔案複製到 Web 伺服器，在 Web 主機服務提供者使用 FTP 用戶端](deploying-your-site-using-an-ftp-client-cs/_static/image8.png)](deploying-your-site-using-an-ftp-client-cs/_static/image7.png)
+[![Use FTP 用戶端所需的檔案複製到 Web 伺服器，在 Web 主機服務提供者的您的桌面](deploying-your-site-using-an-ftp-client-cs/_static/image8.png)](deploying-your-site-using-an-ftp-client-cs/_static/image7.png)
 
 **圖 3**:若要從您的桌面的必要的檔案複製到 Web 伺服器，在 Web 主機服務提供者使用 FTP 用戶端 ([按一下以檢視完整大小的影像](deploying-your-site-using-an-ftp-client-cs/_static/image9.png))
 

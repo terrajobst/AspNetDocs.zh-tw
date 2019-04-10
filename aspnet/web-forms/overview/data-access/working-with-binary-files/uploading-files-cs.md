@@ -8,15 +8,15 @@ ms.date: 03/27/2007
 ms.assetid: b381b1da-feb3-4776-bc1b-75db53eb90ab
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8849f8f279dde883a71fb3ba1678a589f2e321eb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 02fbd3ca162309aefbefdba9a453af6e55b3900b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038845"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382741"
 ---
-<a name="uploading-files-c"></a>上傳檔案 (C#)
-====================
+# <a name="uploading-files-c"></a>上傳檔案 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_54_CS.exe)或[下載 PDF](uploading-files-cs/_static/datatutorial54cs1.pdf)
@@ -53,7 +53,7 @@ ms.locfileid: "57038845"
 在其他資料夾，例如`Default.aspx`在`BinaryData`資料夾會列出其一節中的教學課程。 請記得，`SectionLevelTutorialListing.ascx`使用者控制項提供這項功能。 因此，新增此使用者控制項`Default.aspx`從拖曳到頁面的設計 檢視中的 方案總管 中拖曳。
 
 
-[![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](uploading-files-cs/_static/image2.gif)](uploading-files-cs/_static/image1.png)
+[![Add Default.aspx SectionLevelTutorialListing.ascx 使用者控制項](uploading-files-cs/_static/image2.gif)](uploading-files-cs/_static/image1.png)
 
 **圖 2**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](uploading-files-cs/_static/image2.png))
 
@@ -76,7 +76,7 @@ ms.locfileid: "57038845"
 應用程式的資料模型與相關聯的二進位資料可以儲存在兩個地方的其中一個： 在 web 伺服器檔案系統的參考儲存在資料庫中的檔案或直接在資料庫本身內 （請參閱 圖 4）。 每一種方法都有它自己組的優缺點，並需要更詳細的討論。
 
 
-[![二進位資料可以儲存在檔案系統上，或直接在資料庫中](uploading-files-cs/_static/image4.gif)](uploading-files-cs/_static/image3.png)
+[![B在檔案系統上，或直接在資料庫中，可以儲存二進位資料](uploading-files-cs/_static/image4.gif)](uploading-files-cs/_static/image3.png)
 
 **圖 4**:二進位資料可以儲存在檔案系統上，或直接在資料庫中 ([按一下以檢視完整大小的影像](uploading-files-cs/_static/image4.png))
 
@@ -110,7 +110,7 @@ Categories 資料表目前有只有四個資料行： `CategoryID`， `CategoryN
 加入新`varchar(200)`資料行`Categories`名為資料表`BrochurePath`，並允許`NULL`s，並按一下 [儲存] 圖示 （或按 Ctrl + S）。
 
 
-[![將 BrochurePath 資料行新增至 Categories 資料表](uploading-files-cs/_static/image5.gif)](uploading-files-cs/_static/image5.png)
+[![Add BrochurePath Categories 資料表資料行](uploading-files-cs/_static/image5.gif)](uploading-files-cs/_static/image5.png)
 
 **圖 5**:新增`BrochurePath`資料行`Categories`資料表 ([按一下以檢視完整大小的影像](uploading-files-cs/_static/image6.png))
 
@@ -132,7 +132,7 @@ Categories 資料表目前有只有四個資料行： `CategoryID`， `CategoryN
 藉由加入這些兩個資料行，來啟動`CategoriesDataTable`。 以滑鼠右鍵按一下`CategoriesDataTable`s 標頭中，從內容功能表中選取 新增，然後選擇 資料行選項。 這會建立新`DataColumn`名為 DataTable 中`Column1`。 重新命名此資料行`Picture`。 從 [屬性] 視窗中，設定`DataColumn`s`DataType`屬性設`System.Byte[]`（這不是下拉式清單中的選項; 您需要在輸入時）。
 
 
-[![建立 DataColumn 名為圖片的資料類型是 System.Byte](uploading-files-cs/_static/image6.gif)](uploading-files-cs/_static/image7.png)
+[![C建立 DataColumn 名為圖片的資料類型是 System.Byte []](uploading-files-cs/_static/image6.gif)](uploading-files-cs/_static/image7.png)
 
 **圖 6**:建立`DataColumn`具名`Picture`其`DataType`是`System.Byte[]`([按一下以檢視完整大小的影像](uploading-files-cs/_static/image8.png))
 
@@ -146,7 +146,7 @@ Categories 資料表目前有只有四個資料行： `CategoryID`， `CategoryN
 若要更新主要的 TableAdapter 查詢，以滑鼠右鍵按一下`CategoriesTableAdapter`s 標頭，然後選擇 從內容功能表的 設定選項。 這會帶出資料表配接器組態精靈 」，這點我們發生了許多過去的教學課程所示。 更新查詢，以帶回`BrochurePath`按一下 [完成]。
 
 
-[![更新資料行清單中 SELECT 陳述式也會傳回 BrochurePath](uploading-files-cs/_static/image7.gif)](uploading-files-cs/_static/image9.png)
+[![U更新資料行清單中選取陳述式，也傳回 BrochurePath](uploading-files-cs/_static/image7.gif)](uploading-files-cs/_static/image9.png)
 
 **圖 7**:更新中的資料行清單`SELECT`陳述式，也會傳回`BrochurePath`([按一下以檢視完整大小的影像](uploading-files-cs/_static/image10.png))
 
@@ -159,12 +159,12 @@ Categories 資料表目前有只有四個資料行： `CategoryID`， `CategoryN
 接下來，建立新的 TableAdapter 方法會傳回特定類別的`Picture`資料行的值。 以滑鼠右鍵按一下`CategoriesTableAdapter`s 標頭，然後選擇 加入查詢選項，以啟動 TableAdapter 查詢組態精靈。 此精靈的第一個步驟會要求我們是否我們想要使用特定 SQL 陳述式的查詢資料時，新的預存程序或現有的帳戶。 選取 使用 SQL 陳述式，然後按一下 下一步。 因為我們將會傳回一個資料列，選擇 SELECT 會傳回第二個步驟中的資料列的選項。
 
 
-[![選取 使用 SQL 陳述式選項](uploading-files-cs/_static/image8.gif)](uploading-files-cs/_static/image11.png)
+[![S選擇 [使用 SQL 陳述式選項](uploading-files-cs/_static/image8.gif)](uploading-files-cs/_static/image11.png)
 
 **圖 8**:選取 使用 SQL 陳述式選項 ([按一下以檢視完整大小的影像](uploading-files-cs/_static/image12.png))
 
 
-[![因為查詢會傳回一筆記錄，從 Categories 資料表，選擇選取 傳回資料列](uploading-files-cs/_static/image9.gif)](uploading-files-cs/_static/image13.png)
+[![Since 查詢會傳回一筆記錄，從 Categories 資料表中，選擇 [選取會傳回資料列](uploading-files-cs/_static/image9.gif)](uploading-files-cs/_static/image13.png)
 
 **圖 9**:因為查詢會傳回一筆記錄，從 Categories 資料表中，選擇 選取會傳回資料列 ([按一下以檢視完整大小的影像](uploading-files-cs/_static/image14.png))
 
@@ -177,7 +177,7 @@ Categories 資料表目前有只有四個資料行： `CategoryID`， `CategoryN
 最後一個步驟是選擇新方法的名稱。 使用`FillCategoryWithBinaryDataByCategoryID`和`GetCategoryWithBinaryDataByCategoryID`填滿的 DataTable 和傳回 DataTable 模式，分別。 按一下 完成 以完成精靈。
 
 
-[![選擇 TableAdapter 的方法的名稱](uploading-files-cs/_static/image10.gif)](uploading-files-cs/_static/image15.png)
+[![C選擇的方法的名稱](uploading-files-cs/_static/image10.gif)](uploading-files-cs/_static/image15.png)
 
 **圖 10**:選擇 tableadapter 方法的名稱 ([按一下以檢視完整大小的影像](uploading-files-cs/_static/image16.png))
 
@@ -212,7 +212,7 @@ ASP.NET 2.0 的新[FileUpload Web 控制項](https://msdn.microsoft.com/library/
 若要示範如何將檔案上傳，開啟`FileUpload.aspx`頁面中`BinaryData`資料夾中，將 FileUpload 控制項從工具箱拖曳至設計工具中，並將控制項 s`ID`屬性設`UploadTest`。 接下來，新增按鈕 Web 控制項設定其`ID`並`Text`屬性，以`UploadButton`並分別上傳選取的檔案。 最後，清除中放置標籤 Web 控制項下方的按鈕，其`Text`屬性並設定其`ID`屬性設`UploadDetails`。
 
 
-[![FileUpload 控制項加入 ASP.NET 網頁](uploading-files-cs/_static/image12.gif)](uploading-files-cs/_static/image17.png)
+[![Add FileUpload 控制項以 ASP.NET 網頁](uploading-files-cs/_static/image12.gif)](uploading-files-cs/_static/image17.png)
 
 **圖 12**:FileUpload 控制項加入 ASP.NET 網頁 ([按一下以檢視完整大小的影像](uploading-files-cs/_static/image18.png))
 
@@ -220,7 +220,7 @@ ASP.NET 2.0 的新[FileUpload Web 控制項](https://msdn.microsoft.com/library/
 [圖 13] 顯示此頁面上，當透過瀏覽器檢視。 請注意，按一下 [瀏覽] 按鈕會開啟檔案選取對話方塊中，可讓使用者能夠選取的檔案，從他們的電腦。 選取的檔案，按一下 [上傳選取的檔案] 按鈕後，將選取的檔案二進位內容傳送至 web 伺服器回傳。
 
 
-[![使用者可以選取要從他們的電腦上傳到伺服器的檔案](uploading-files-cs/_static/image13.gif)](uploading-files-cs/_static/image19.png)
+[![T他的使用者可以選取要上傳的檔案，從他們的電腦，到伺服器](uploading-files-cs/_static/image13.gif)](uploading-files-cs/_static/image19.png)
 
 **圖 13**:使用者可以選取要上傳檔案從伺服器電腦 ([按一下以檢視完整大小的影像](uploading-files-cs/_static/image20.png))
 
@@ -241,7 +241,7 @@ S FileUpload`SaveAs(filePath)`將上傳的檔案儲存至指定*filePath*。 *fi
 完成之後`Click`事件處理常式，請花一點時間瀏覽器中測試。 按一下 瀏覽按鈕並選取您的硬碟中的檔案，然後按一下 上傳選取的檔案 按鈕。 回傳會將所選檔案的內容傳送至 web 伺服器，然後將會顯示檔案的相關資訊，再將它儲存為`~/Brochures`資料夾。 上傳檔案之後, 返回 Visual Studio，然後按一下 方案總管 中的重新整理 按鈕。 您應該會看到您剛才上傳 ~/Brochures 資料夾中的檔案 ！
 
 
-[![檔案 EvolutionValley.jpg 已上傳至 Web 伺服器](uploading-files-cs/_static/image14.gif)](uploading-files-cs/_static/image21.png)
+[![T他檔案 EvolutionValley.jpg 已上傳至 Web 伺服器](uploading-files-cs/_static/image14.gif)](uploading-files-cs/_static/image21.png)
 
 **圖 14**:檔案`EvolutionValley.jpg`已上傳至 Web 伺服器 ([按一下以檢視完整大小的影像](uploading-files-cs/_static/image22.png))
 

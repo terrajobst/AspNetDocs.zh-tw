@@ -8,15 +8,15 @@ ms.date: 02/27/2014
 ms.assetid: 602baa94-5a4f-46eb-a717-7a9e539c1db4
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/updating-deleting-and-creating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 127543b0696b01f136b340d07f6f806b6a6fb1eb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0ac1982a9476ea324f2faea0bf06f9406f9af1cf
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056525"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389319"
 ---
-<a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a>更新、 刪除和建立資料模型繫結和 web form
-====================
+# <a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a>更新、 刪除和建立資料模型繫結和 web form
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本系列教學課程示範使用 ASP.NET Web Form 專案中的模型繫結的基本層面。 模型繫結進行更簡單的比處理資料來源物件 （例如 ObjectDataSource 或 SqlDataSource） 的資料互動。 此系列簡介資料的開頭，並在稍後的教學課程中將移至更進階的概念。

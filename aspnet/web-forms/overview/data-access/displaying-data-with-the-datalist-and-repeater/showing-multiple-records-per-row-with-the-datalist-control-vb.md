@@ -8,15 +8,15 @@ ms.date: 09/13/2006
 ms.assetid: f555c531-bf33-4699-9987-42dbfef23c1f
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e8b5493694b24e4187ecb69ca8d2eff6a8507985
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 632db5152c84eb463ddc7bd5f5734a9fb3ae135c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421215"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382976"
 ---
-<a name="showing-multiple-records-per-row-with-the-datalist-control-vb"></a>使用 DataList 控制項在每個資料列顯示多筆記錄 (VB)
-====================
+# <a name="showing-multiple-records-per-row-with-the-datalist-control-vb"></a>使用 DataList 控制項在每個資料列顯示多筆記錄 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_31_VB.exe)或[下載 PDF](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/datatutorial31vb1.pdf)
@@ -31,7 +31,7 @@ DataList 範例我們發生在過去兩個教學課程中看到的單欄式 HTML
 我們可以自訂透過 DataList 的配置其`RepeatColumns`和`RepeatDirection`屬性，可分別指出轉譯多少資料行，且不論這些項目配置是水平或垂直。 圖 1，比方說，會顯示具有三個資料行的資料表中顯示產品資訊 DataList。
 
 
-[![DataList 顯示每個資料列的三個產品](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image2.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image1.png)
+[![T他 DataList 顯示三個產品每個資料列](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image2.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image1.png)
 
 **圖 1**:DataList 顯示三個產品每個資料列 ([按一下以檢視完整大小的影像](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image3.png))
 
@@ -57,7 +57,7 @@ Visual Studio 會自動建立之後建立和繫結至 DataList 的新 ObjectData
 請花一點時間瀏覽您的網頁瀏覽器中。 如 [圖 2] 所示，DataList 會呈現為產品的單一資料行、 多列資料表。
 
 
-[![根據預設，DataList 會轉譯成單一資料行中，多重資料列的資料表](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image5.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image4.png)
+[![BDataList 會轉譯成單一資料行、 多列資料表 y Default](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image5.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image4.png)
 
 **圖 2**:根據預設，DataList 轉譯成單一資料行，多重資料列的資料表 ([按一下以檢視完整大小的影像](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image6.png))
 
@@ -69,7 +69,7 @@ Visual Studio 會自動建立之後建立和繫結至 DataList 的新 ObjectData
 藉由變更`RepeatDirection`屬性從`Vertical`到`Horizontal`，DataList 呈現其記錄在單一的資料列中，建立一個資料行，每個資料來源項目。 為了說明這種效果，DataList 設計工具中按一下，然後從 [屬性] 視窗中，變更`RepeatDirection`屬性從`Vertical`至`Horizontal`。 立即在這種方式，設計工具調整 DataList 的配置，建立單一資料列、 多重資料行的介面 （請參閱 [圖 3]）。
 
 
-[![Flow 屬性會指定如何方向 DataList s 項目會配置](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image8.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image7.png)
+[![T他 Flow 屬性會指定如何方向 DataList s 項目都是配置 Out](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image8.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image7.png)
 
 **圖 3**:`RepeatDirection`屬性會指定如何方向 DataList s 項目就無法配置 ([按一下以檢視完整大小的影像](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image9.png))
 
@@ -77,7 +77,7 @@ Visual Studio 會自動建立之後建立和繫結至 DataList 的新 ObjectData
 當顯示少量資料，單一資料列，多重資料行的資料表可能會最大化螢幕使用空間的理想方式。 不過，針對較大的小量的資料，單一資料列則需要多個資料行，那些項目右邊放在螢幕上關閉該無法的推播。 圖 4 顯示在單一資料列 DataList 中呈現時的產品。 由於有許多產品 (超過 80)，使用者必須捲動至右方以檢視每個產品的相關資訊到目前為止。
 
 
-[![夠大的資料來源的單一資料行 DataList 需要水平捲軸](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image11.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image10.png)
+[![F或夠大的資料來源，需要單一資料行 DataList 水平捲軸](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image11.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image10.png)
 
 **圖 4**:對於夠大型資料來源，單一資料行 DataList 會需要水平捲動 ([按一下以檢視完整大小的影像](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image12.png))
 
@@ -89,7 +89,7 @@ Visual Studio 會自動建立之後建立和繫結至 DataList 的新 ObjectData
 讓我們的範例，顯示每個資料表資料列的三種產品的 s。 因此，設定`RepeatColumns`屬性設定為 3。 完成此變更之後，請花一點時間瀏覽器中檢視結果。 如 [圖 5] 所示，是現在會在三個資料行中，多重資料列的資料表中列出的產品。
 
 
-[![三個產品都會顯示每個資料列](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image14.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image13.png)
+[![T每個資料列會顯示三種產品](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image14.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image13.png)
 
 **圖 5**:三個產品都會顯示每個資料列 ([按一下以檢視完整大小的影像](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image15.png))
 
@@ -97,7 +97,7 @@ Visual Studio 會自動建立之後建立和繫結至 DataList 的新 ObjectData
 `RepeatDirection`屬性會影響資料清單中的項目配置方式。[圖 5] 顯示其結果與`RepeatDirection`屬性設定為`Horizontal`。 請注意前, 三個產品 Chai、 變更，以及 Aniseed Syrup 配置是由左到右、 由上而下。 接下來三個產品 （起 Chef Anton 的印地安 Seasoning） 會出現在下方的第三個資料列。 變更`RepeatDirection`屬性回`Vertical`，不過，這些產品，從上到下配置，由左至右，如 圖 6 所示。
 
 
-[![這裡的產品現已垂直配置出](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image17.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image16.png)
+[![Here，產品會垂直配置 Out](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image17.png)](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image16.png)
 
 **圖 6**:這裡的產品現已垂直配置時 ([按一下以檢視完整大小的影像](showing-multiple-records-per-row-with-the-datalist-control-vb/_static/image18.png))
 

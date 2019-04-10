@@ -8,15 +8,15 @@ ms.date: 05/13/2009
 ms.assetid: 00c0a4c9-5c25-413f-938c-8b77814ad2bd
 msc.legacyurl: /web-forms/videos/aspnet-ajax/set-up-your-development-environment-for-aspnet-35
 msc.type: video
-ms.openlocfilehash: d1cff6c088b527b282e01e40987fe9ea9c9ac6b3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2b2bea92cd0f5ba08a9a5f71ed321864381c7587
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059645"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387421"
 ---
-<a name="set-up-your-development-environment-for-aspnet-35"></a>設定適合 ASP.NET 3.5 的開發環境
-====================
+# <a name="set-up-your-development-environment-for-aspnet-35"></a>設定適合 ASP.NET 3.5 的開發環境
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 在這段影片中，您將了解如何設定您的開發環境來開發 ASP.NET AJAX 應用程式，如果您以 ASP.NET 3.5 為目標。

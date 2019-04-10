@@ -8,15 +8,15 @@ ms.date: 08/20/2008
 ms.assetid: e67b3889-ac7d-4811-8bf5-54f6abc7f49f
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/creating-custom-html-helpers
 msc.type: video
-ms.openlocfilehash: 0a7cec0f67591801c97869314a6650c431866533
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f1761948f9bf5eb55e396b4334eca33cf34b899e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57051715"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59382585"
 ---
-<a name="creating-custom-html-helpers"></a>建立自訂的 HTML 協助程式
-====================
+# <a name="creating-custom-html-helpers"></a>建立自訂的 HTML 協助程式
+
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 建立新的 HTML Helper，讓您更輕鬆地產生檢視的內容。 Stephen Walther 會示範兩個簡單的方法，建立新的 HTML 協助程式。

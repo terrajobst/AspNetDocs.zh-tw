@@ -8,15 +8,15 @@ ms.date: 03/14/2013
 ms.assetid: aadc5fa4-8215-4fc7-afd5-bcd2ef879728
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 5db661cccc58d1101f95091b069ab5cbfe78a378
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: de0e9cc168b9f18fd2bd83329106df45d7551b1a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063945"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386551"
 ---
-<a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>ASP.NET MVC 和 ASP.NET Web Pages 中的 XSRF/CSRF 防護
-====================
+# <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>ASP.NET MVC 和 ASP.NET Web Pages 中的 XSRF/CSRF 防護
+
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 跨網站要求偽造 （也稱為 XSRF 或 CSRF） 攻擊會將對 web 裝載的應用程式讓惡意網站可能會影響用戶端瀏覽器和該瀏覽器信任的網站之間的互動。 這些攻擊會進行可能的因為網頁瀏覽器會將驗證權杖，會自動隨著每個要求傳送至網站。 標準範例是驗證 cookie，例如 ASP。NET 的表單驗證票證。 不過，這些攻擊可以被目標網站使用 （例如 Windows 驗證、 基本及其他等等） 的任何持續驗證機制。
@@ -74,9 +74,9 @@ XSRF 要求驗證*工作階段權杖*會儲存為 HTTP cookie 和目前包含其
 
 防 XSRF 權杖的內容會經過加密及簽署，所以使用工具來檢查權杖時，您無法檢視的使用者名稱。 當 web 應用程式以 ASP.NET 4.0 為目標時，會提供密碼編譯服務[MachineKey.Encode](https://msdn.microsoft.com/library/system.web.security.machinekey.encode.aspx)常式。 當 web 應用程式的目標 ASP.NET 4.5 或更高版本，密碼編譯服務提供所[MachineKey.Protect](https://msdn.microsoft.com/library/system.web.security.machinekey.protect(v=vs.110))常式，可提供更好的效能、 擴充性和安全性。 請參閱下列部落格文章以取得詳細資料：
 
-- [ASP.NET 4.5 中的密碼編譯增強功能、 pt。1](https://blogs.msdn.com/b/webdev/archive/2012/10/22/cryptographic-improvements-in-asp-net-4-5-pt-1.aspx)
-- [ASP.NET 4.5 中的密碼編譯增強功能、 pt。2](https://blogs.msdn.com/b/webdev/archive/2012/10/23/cryptographic-improvements-in-asp-net-4-5-pt-2.aspx)
-- [ASP.NET 4.5 中的密碼編譯增強功能、 pt。3](https://blogs.msdn.com/b/webdev/archive/2012/10/24/cryptographic-improvements-in-asp-net-4-5-pt-3.aspx)
+- [ASP.NET 4.5 中的密碼編譯增強功能、 pt。 1](https://blogs.msdn.com/b/webdev/archive/2012/10/22/cryptographic-improvements-in-asp-net-4-5-pt-1.aspx)
+- [ASP.NET 4.5 中的密碼編譯增強功能、 pt。 2](https://blogs.msdn.com/b/webdev/archive/2012/10/23/cryptographic-improvements-in-asp-net-4-5-pt-2.aspx)
+- [ASP.NET 4.5 中的密碼編譯增強功能、 pt。 3](https://blogs.msdn.com/b/webdev/archive/2012/10/24/cryptographic-improvements-in-asp-net-4-5-pt-3.aspx)
 
 ## <a name="generating-the-tokens"></a>產生權杖
 
@@ -160,7 +160,7 @@ XSRF 要求驗證*工作階段權杖*會儲存為 HTTP cookie 和目前包含其
 
 開發人員可以設定從應用程式的防 XSRF 系統\_開始。 以程式設計方式設定。 靜態屬性*AntiForgeryConfig*類型如下所述。 使用宣告的大部分使用者都想要設定 UniqueClaimTypeIdentifier 屬性。
 
-| **Property** | **描述** |
+| **屬性** | **描述** |
 | --- | --- |
 | **AdditionalDataProvider** | [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)權杖產生期間提供的其他資料，在 權杖驗證期間耗用額外的資料。 預設值是*null*。 如需詳細資訊，請參閱 < [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)一節。 |
 | **CookieName** | 提供用來儲存的防 XSRF 工作階段權杖的 HTTP cookie 名稱的字串。 如果未設定此值，產生的名稱會自動根據應用程式的已部署的虛擬路徑。 預設值是*null*。 |

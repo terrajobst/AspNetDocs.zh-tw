@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: 418bb07e-f369-4119-b4b0-08f890f7abb2
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0f46af21841a60fe4257cb30b78abdfd421c66bd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3c12f2a3d253df1ed9d8b25001edf13a04da26f5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039385"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59394883"
 ---
-<a name="authenticating-users-with-windows-authentication-c"></a>使用 Windows 驗證驗證使用者 (C#)
-====================
+# <a name="authenticating-users-with-windows-authentication-c"></a>使用 Windows 驗證驗證使用者 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 了解如何在 MVC 應用程式的內容中使用 Windows 驗證。 您將了解如何啟用您的應用程式 web 組態檔中的 Windows 驗證以及如何設定 IIS 驗證。 最後，您會了解如何使用 [Authorize] 屬性來限制存取權給特定的 Windows 使用者或群組的控制器動作。
@@ -69,7 +69,7 @@ ASP.NET 開發 Web 伺服器也支援 NTLM 驗證。 您可以滑鼠右鍵按一
 
 例如，列表 1 中的主控制器會公開名為 index （）、 CompanySecrets() 和 StephenSecrets() 的三個動作。 任何人都可以叫用的 index （） 動作。 不過，只有 Windows 本機管理員群組的成員可以叫用 CompanySecrets() 動作。 最後，只有 Windows 網域使用者名為 Stephen （位於 Redmond 網域中） 可以叫用 StephenSecrets() 動作。
 
-**Listing 1 – Controllers\HomeController.cs**
+**列表 1 – Controllers\HomeController.cs**
 
 [!code-csharp[Main](authenticating-users-with-windows-authentication-cs/samples/sample2.cs)]
 

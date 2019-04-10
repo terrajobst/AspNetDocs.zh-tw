@@ -8,15 +8,15 @@ ms.date: 11/15/2007
 ms.assetid: cdccd601-c0fe-4e56-9c38-7ef027de3481
 msc.legacyurl: /web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-enable-xml-intellisense-and-use-xml-namespaces
 msc.type: video
-ms.openlocfilehash: 5125262d5a6accde291b833a211792187e5044ca
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d58385ae1e88346fe6e408030eefcfb23cab7977
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050205"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59390580"
 ---
-<a name="how-do-i-enable-xml-intellisense-and-use-xml-namespaces"></a>[How Do i:]啟用 XML IntelliSense 及使用 XML 命名空間？
-====================
+# <a name="how-do-i-enable-xml-intellisense-and-use-xml-namespaces"></a>[How Do i:]啟用 XML IntelliSense 及使用 XML 命名空間？
+
 藉由[Beth massi 探討](https://github.com/bethmassi)
 
 Visual Basic 開發人員將學習如何啟用 XML IntelliSense 使用的結構描述，以及查詢和建立 XML 文件時，如何使用 XML 命名空間。

@@ -8,15 +8,15 @@ ms.date: 06/10/2014
 ms.assetid: 6ecd08c1-e364-4cd7-ad4c-806521911585
 msc.legacyurl: /signalr/overview/performance/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: c20341a7fa0f5c5382ce7f2f6d459c4a6bec509f
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 78efe409ab59df17ae71c26d4e280cc9971a64d2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424088"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393245"
 ---
-<a name="signalr-scaleout-with-redis"></a>使用 Redis 的 SignalR 向外延展
-====================
+# <a name="signalr-scaleout-with-redis"></a>使用 Redis 的 SignalR 向外延展
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -128,7 +128,7 @@ Redis 是記憶體中索引鍵-值存放區。 它也支援發行/訂閱模型�
 - 「 密碼 」 是指您在 redis.conf 檔案中定義的密碼。
 - :"AppName"是任何字串。 SignalR 使用此名稱建立 Redis pub/sub 通道。
 
-例如: 
+例如：
 
 [!code-csharp[Main](scaleout-with-redis/samples/sample7.cs)]
 

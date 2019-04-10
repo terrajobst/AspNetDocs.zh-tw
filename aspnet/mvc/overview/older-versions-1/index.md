@@ -8,19 +8,19 @@ ms.date: 10/10/2014
 ms.assetid: 1506f70f-6919-45bd-8c75-a17aff77510c
 msc.legacyurl: /mvc/overview/older-versions-1
 msc.type: chapter
-ms.openlocfilehash: 8f06d9d08c381e8c6d704149b29d46196baceae9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5827542a951a4b65d1c9b02b0ad15ed988bf1456
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021165"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399628"
 ---
-<a name="older-versions---mvc-1-and-2"></a>舊版 - MVC 1 和 2
-====================
+# <a name="older-versions---mvc-1-and-2"></a>舊版 - MVC 1 和 2
+
 > 學習如何以程式 MVC 1 和 2 的資源。
 
 
-- [概觀](overview/index.md)
+- [總覽](overview/index.md)
 
     - [ASP.NET MVC 概觀](overview/asp-net-mvc-overview.md)
     - [了解 ASP.NET MVC 執行程序](overview/understanding-the-asp-net-mvc-execution-process.md)
@@ -105,18 +105,18 @@ ms.locfileid: "57021165"
 - [連絡人管理員](contact-manager/index.md)
 
     - [反覆項目 #1 – 建立應用程式 (C#)](contact-manager/iteration-1-create-the-application-cs.md)
-    - [反覆項目 #2 – 美化應用程式外觀 (C#)](contact-manager/iteration-2-make-the-application-look-nice-cs.md)
+    - [反覆項目 #2 – 讓應用程式看起來不錯 (C#)](contact-manager/iteration-2-make-the-application-look-nice-cs.md)
     - [反覆項目 #3 – 新增表單驗證 (C#)](contact-manager/iteration-3-add-form-validation-cs.md)
     - [反覆項目 #4 – 讓應用程式鬆散耦合 (C#)](contact-manager/iteration-4-make-the-application-loosely-coupled-cs.md)
     - [反覆項目 #5 – 建立單元測試 (C#)](contact-manager/iteration-5-create-unit-tests-cs.md)
-    - [反覆項目 #6 – 使用測試導向的開發 (C#)](contact-manager/iteration-6-use-test-driven-development-cs.md)
+    - [反覆項目 #6 – 使用測試導向開發 (C#)](contact-manager/iteration-6-use-test-driven-development-cs.md)
     - [反覆項目 #7 – 新增 Ajax 功能 (C#)](contact-manager/iteration-7-add-ajax-functionality-cs.md)
     - [反覆項目 #1 – 建立應用程式 (VB)](contact-manager/iteration-1-create-the-application-vb.md)
-    - [反覆項目 #2 – 美化應用程式外觀 (VB)](contact-manager/iteration-2-make-the-application-look-nice-vb.md)
+    - [反覆項目 #2 – 讓應用程式看起來不錯 (VB)](contact-manager/iteration-2-make-the-application-look-nice-vb.md)
     - [反覆項目 #3 – 新增表單驗證 (VB)](contact-manager/iteration-3-add-form-validation-vb.md)
     - [反覆項目 #4 – 讓應用程式鬆散耦合 (VB)](contact-manager/iteration-4-make-the-application-loosely-coupled-vb.md)
     - [反覆項目 #5 – 建立單元測試 (VB)](contact-manager/iteration-5-create-unit-tests-vb.md)
-    - [反覆項目 #6 – 使用測試導向的開發 (VB)](contact-manager/iteration-6-use-test-driven-development-vb.md)
+    - [反覆項目 #6 – 使用測試導向開發 (VB)](contact-manager/iteration-6-use-test-driven-development-vb.md)
     - [反覆項目 #7 – 新增 Ajax 功能 (VB)](contact-manager/iteration-7-add-ajax-functionality-vb.md)
 - [NerdDinner](nerddinner/index.md)
 

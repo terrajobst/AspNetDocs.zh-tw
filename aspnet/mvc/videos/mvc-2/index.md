@@ -8,15 +8,15 @@ ms.date: 11/14/2011
 ms.assetid: 68968b8a-4f60-449e-8639-978fc40aed70
 msc.legacyurl: /mvc/videos/mvc-2
 msc.type: chapter
-ms.openlocfilehash: 438b87c3ebcd53e460741a53e00e6d227237fb58
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: aa713d30ad09152155e0834d40d5d757b1fecf78
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023575"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386017"
 ---
-<a name="aspnet-mvc-2"></a>ASP.NET MVC 2
-====================
+# <a name="aspnet-mvc-2"></a>ASP.NET MVC 2
+
 > ASP.NET MVC 2
 
 
@@ -24,19 +24,19 @@ ms.locfileid: "57023575"
 
     - [使用 ASP.NET MVC 建立 Tasklist 應用程式](how-do-i/creating-a-tasklist-application-with-aspnet-mvc.md)
     - [使用 ASP.NET MVC 在 15 分鐘內建立影片資料庫應用程式](how-do-i/creating-a-movie-database-application-in-15-minutes-with-aspnet-mvc.md)
-    - [了解模型、檢視和控制器](how-do-i/understanding-models-views-and-controllers.md)
+    - [了解模型、檢視與控制器](how-do-i/understanding-models-views-and-controllers.md)
     - [ASP.NET MVC 控制器概觀](how-do-i/aspnet-mvc-controller-overview.md)
-    - [了解控制器、控制器動作和動作結果](how-do-i/understanding-controllers-controller-actions-and-action-results.md)
-    - [了解檢視、檢視資料和 HTML 協助程式](how-do-i/understanding-views-view-data-and-html-helpers.md)
+    - [了解控制器、控制器動作與動作結果](how-do-i/understanding-controllers-controller-actions-and-action-results.md)
+    - [了解檢視、檢視資料與 HTML 協助程式](how-do-i/understanding-views-view-data-and-html-helpers.md)
     - [URL 路由簡介](how-do-i/an-introduction-to-url-routing.md)
-    - [防止 JavaScript 插入式攻擊 ](how-do-i/preventing-javascript-injection-attacks.md)
+    - [防止 JavaScript 插入式攻擊](how-do-i/preventing-javascript-injection-attacks.md)
     - [建立 ASP.NET MVC 應用程式的單元測試](how-do-i/creating-unit-tests-for-aspnet-mvc-applications.md)
     - [建立自訂的 HTML 協助程式](how-do-i/creating-custom-html-helpers.md)
     - [使用 LINQ to SQL 建立模型類別](how-do-i/creating-model-classes-with-linq-to-sql.md)
     - [顯示資料庫資料的資料表](how-do-i/displaying-a-table-of-database-data.md)
     - [適用於開發人員建置 NerdDinner 的 ASP.NET MVC 80 分鐘技術影片是什麼](how-do-i/what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner.md)
     - [ASP.NET MVC 3 分鐘概觀影片適合決策者的原因](how-do-i/why-aspnet-mvc-3-minute-overview-video-for-decision-makers.md)
-    - [ASP.NET MVC:適用於開發人員的方式 10 分鐘技術影片](how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
+    - [ASP.NET MVC：10 分鐘的技術影片如何幫助開發人員](how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
     - [在 ASP.NET MVC Web 應用程式中傳回 AJAX 呼叫的 JSON 格式化資料](how-do-i/how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application.md)
     - [使用 ASP.NET MVC 部分檢視中的資料](how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
     - [實作 ASP.NET MVC 檢視管理資料的檢視模型](how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
@@ -53,12 +53,12 @@ ms.locfileid: "57023575"
     - [深入了解 ASP.NET MVC](how-do-i/how-to-best-learn-asp-net-mvc.md)
 - [適合其他人的 ASP.NET MVC](aspnet-mvc-for-the-rest-of-us/index.md)
 
-    - [針對其他人的 ASP.NET MVC:第 1 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1.md)
-    - [針對其他人的 ASP.NET MVC:第 2 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-2.md)
-    - [針對其他人的 ASP.NET MVC:第 3 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-3.md)
-    - [針對其他人的 ASP.NET MVC:第 4 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-4.md)
+    - [適合其他人的 ASP.NET MVC第 1 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1.md)
+    - [適合其他人的 ASP.NET MVC第 2 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-2.md)
+    - [適合其他人的 ASP.NET MVC第 3 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-3.md)
+    - [適合其他人的 ASP.NET MVC第 4 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-4.md)
 - [Music 市集](music-store/index.md)
 
-    - [MVC Music 市集第 1 部分：簡介、 工具和專案結構](music-store/mvc-music-store-part-1-intro-tools-and-project-structure.md)
-    - [MVC Music 市集第 2 部分：控制站](music-store/mvc-music-store-part-2-controllers.md)
+    - [MVC Music 市集第 1 部分：簡介、工具與專案結構](music-store/mvc-music-store-part-1-intro-tools-and-project-structure.md)
+    - [MVC Music 市集第 2 部分：Controllers](music-store/mvc-music-store-part-2-controllers.md)
     - [MVC Music 市集第 3 部分：檢視和 ViewModels](music-store/mvc-music-store-part-3-views-and-viewmodels.md)

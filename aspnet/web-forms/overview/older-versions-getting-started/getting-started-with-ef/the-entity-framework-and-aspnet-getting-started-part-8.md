@@ -8,15 +8,15 @@ ms.date: 12/03/2010
 ms.assetid: aaadd9bb-5508-448c-ad57-5497dff90e13
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 249677c9e0eca248710bf730e57a7aeca5a9b5ce
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0fd943eba4c6d80bba5ca6c4d69cbd3a8927513d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027905"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391503"
 ---
-<a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>開始使用 Entity Framework 4.0 Database 中第一次和 ASP.NET 4 Web Form 第 8 節
-====================
+# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>開始使用 Entity Framework 4.0 Database 中第一次和 ASP.NET 4 Web Form 第 8 節
+
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 > Contoso 大學範例 web 應用程式會示範如何建立使用 Entity Framework 4.0 和 Visual Studio 2010 的 ASP.NET Web Forms 應用程式。 教學課程系列的相關資訊，請參閱[系列的第一個教學課程](the-entity-framework-and-aspnet-getting-started-part-1.md)
@@ -120,7 +120,7 @@ ms.locfileid: "57027905"
 
 以上總結這一系列的 Entity Framework 使用者入門教學課程。 取得可協助您了解如何使用 Entity Framework 的更多資源，繼續進行[下一步 的 Entity Framework 教學課程系列的第一個教學課程](../continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)或瀏覽下列網站：
 
-- [Entity Framework 常見問題集](http://www.ef-faq.org/introduction.html)
+- [Entity Framework 常見問題集 (英文)](http://www.ef-faq.org/introduction.html)
 - [Entity Framework 小組部落格](https://blogs.msdn.com/b/adonet/)
 - [MSDN Library 中的 entity Framework](https://msdn.microsoft.com/library/bb399572.aspx)
 - [在 MSDN 資料開發人員中心中的 entity Framework](https://msdn.microsoft.com/data/ef.aspx)

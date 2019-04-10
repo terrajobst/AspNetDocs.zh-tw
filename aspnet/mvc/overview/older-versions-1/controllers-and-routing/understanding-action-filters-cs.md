@@ -8,15 +8,15 @@ ms.date: 10/16/2008
 ms.assetid: a94e4e81-40c1-47b7-8613-126a1a6cc93d
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6c7706d8252d5a0271f1b9243fa8eb282f722654
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8264b48388ee4a6b51515aa2b897ece3b2f3972a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059085"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380869"
 ---
-<a name="understanding-action-filters-c"></a>了解動作篩選 (C#)
-====================
+# <a name="understanding-action-filters-c"></a>了解動作篩選 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下載 PDF](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_14_CS.pdf)
@@ -49,7 +49,7 @@ by [Microsoft](https://github.com/microsoft)
 如果您重複叫用`Index()`由您的瀏覽器的網址列中輸入 URL/資料/索引，然後按 重新整理動作按鈕多次，，然後您會看到相同的時間為 10 秒。 輸出`Index()`動作的快取 （請參閱 圖 1） 的 10 秒。
 
 
-[![快取的時間](understanding-action-filters-cs/_static/image2.png)](understanding-action-filters-cs/_static/image1.png)
+[![Cvary time](understanding-action-filters-cs/_static/image2.png)](understanding-action-filters-cs/_static/image1.png)
 
 **圖 01**:快取時間 ([按一下以檢視完整大小的影像](understanding-action-filters-cs/_static/image3.png))
 
@@ -107,7 +107,7 @@ ASP.NET MVC 架構支援四種不同類型的篩選：
 在列表 2 中， `OnActionExecuting()`， `OnActionExecuted()`， `OnResultExecuting()`，以及`OnResultExecuted()`方法的所有呼叫`Log()`方法。 方法的名稱和目前的路由資料傳遞至`Log()`方法。 `Log()`方法會將訊息寫入 Visual Studio 輸出 視窗 （請參閱 圖 2）。
 
 
-[![寫入至 Visual Studio [輸出] 視窗](understanding-action-filters-cs/_static/image5.png)](understanding-action-filters-cs/_static/image4.png)
+[![WVisual Studio 輸出視窗 riting](understanding-action-filters-cs/_static/image5.png)](understanding-action-filters-cs/_static/image4.png)
 
 **圖 02**:寫入至 Visual Studio [輸出] 視窗 ([按一下以檢視完整大小的影像](understanding-action-filters-cs/_static/image6.png))
 

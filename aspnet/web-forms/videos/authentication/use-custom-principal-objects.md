@@ -8,15 +8,15 @@ ms.date: 07/16/2008
 ms.assetid: 368733eb-0822-4b97-8e5a-127be6c88a61
 msc.legacyurl: /web-forms/videos/authentication/use-custom-principal-objects
 msc.type: video
-ms.openlocfilehash: 5cc5e0e492f5de324e094ecd58ee3cbded873dea
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3995ff1dd5a670b39c90c86cf68c85b19b6db0ce
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062265"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59397171"
 ---
-<a name="use-custom-principal-objects"></a>使用自訂的主體物件
-====================
+# <a name="use-custom-principal-objects"></a>使用自訂的主體物件
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 Joe Stagner 會示範如何實作在主體物件的自訂身分識別，以儲存使用者的驗證資料。 如需有關這段示範影片的詳細資訊，教學課程，說明所在[這裡。](../../overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb.md)

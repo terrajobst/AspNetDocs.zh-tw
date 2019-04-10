@@ -8,15 +8,15 @@ ms.date: 12/10/2012
 ms.assetid: b0a214c7-2f38-4dbc-b47f-bd7bd9df97bd
 msc.legacyurl: /mvc/overview/advanced/custom-mvc-templates
 msc.type: authoredcontent
-ms.openlocfilehash: 3c14bc6feb144a52773bf7bd4c23df24966a9ebb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0603bc24e070e223551813f66a75889a2e46fd35
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033865"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379543"
 ---
-<a name="custom-mvc-template"></a>自訂的 MVC 範本
-====================
+# <a name="custom-mvc-template"></a>自訂的 MVC 範本
+
 藉由[3。jacques Eloff](https://github.com/joeloff)
 
 MVC 3 Tools Update for Visual Studio 2010 導入了 MVC 專案的個別專案精靈。 變更是由兩個因素所驅動。 首先，引進的新 MVC 3 與支援中的其他檢視引擎，例如 Razor 的範本，會導致 overcrowding Visual Studio 中的 [新增專案] 對話方塊。 第二，客戶必須一直要求的擴充點，而且新的 MVC 專案精靈 會負擔我們有機會回應這些要求。

@@ -8,15 +8,15 @@ ms.date: 01/26/2011
 ms.assetid: 4e43455e-dfa1-42db-83cb-c987703f04b5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 7d7c66289f09179a98e09532172477d5b06c70bd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 116c557ad0d6c158f983da75668e634c9eb9747c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063895"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379583"
 ---
-<a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>將使用 Entity Framework 4.0 ASP.NET 4 Web 應用程式中的效能最大化
-====================
+# <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>將使用 Entity Framework 4.0 ASP.NET 4 Web 應用程式中的效能最大化
+
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 > 本教學課程系列是根據所建立的 Contoso 大學 web 應用程式[Getting Started with Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started)教學課程系列。 如果您未完成先前的教學課程，為本教學課程的起始點即可[下載應用程式](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)您會建立。 您也可以[下載應用程式](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa)，它由完整的教學課程系列。 如果您有疑問的教學課程，您可以張貼他們[ASP.NET Entity Framework 論壇](https://forums.asp.net/1227.aspx)。

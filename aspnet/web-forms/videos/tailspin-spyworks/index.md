@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: 8aa371f8-913c-4ed2-98b0-f76abf15669d
 msc.legacyurl: /web-forms/videos/tailspin-spyworks
 msc.type: chapter
-ms.openlocfilehash: 0fbbc6e0ca1d13effe5d7f157e3f0dc5502578c6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d30dc8906a72a35d87db40701070fe8c8f71c174
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023805"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59394116"
 ---
-<a name="tailspin-spyworks"></a>Tailspin Spyworks
-====================
+# <a name="tailspin-spyworks"></a>Tailspin Spyworks
+
 > 如何使用 ASP.NET 4 中的新功能，來建置線上商店，包括購物、 簽出，以及系統管理。
 
 
@@ -26,7 +26,7 @@ ms.locfileid: "57023805"
 - [Tailspin Spyworks - 目錄組織](tailspin-spyworks-directory-organization.md)
 - [Tailspin Spyworks - 分類功能表](tailspin-spyworks-category-menu.md)
 - [Tailspin Spyworks - 顯示產品清單](tailspin-spyworks-display-the-product-list.md)
-- [Tailspin Spyworks - 顯示每項產品的詳細資料](tailspin-spyworks-display-per-product-details.md)
+- [Tailspin Spyworks - 顯示每個產品的詳細資料](tailspin-spyworks-display-per-product-details.md)
 - [Tailspin Spyworks - 將項目新增至購物車](tailspin-spyworks-adding-items-to-the-shopping-cart.md)
 - [Tailspin Spyworks - 顯示購物車](tailspin-spyworks-display-shopping-cart.md)
 - [Tailspin Spyworks - 更新購物車](tailspin-spyworks-update-the-shopping-cart.md)

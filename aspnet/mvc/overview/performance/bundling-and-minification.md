@@ -8,15 +8,15 @@ ms.date: 08/23/2012
 ms.assetid: 5894dc13-5d45-4dad-8096-136499120f1d
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 9b627a66007aec09a404147698e2bef06c7e7794
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9e4a2a9fc56393ac816f25a1039b233aa8961608
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053185"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383833"
 ---
-<a name="bundling-and-minification"></a>統合和縮製
-====================
+# <a name="bundling-and-minification"></a>統合和縮製
+
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 統合和縮製有兩個技術您可以使用 ASP.NET 4.5 中，以改善要求載入時間。 統合和縮製可改善載入時間減少伺服器的要求數目，並減少大小的要求的資產 （例如 CSS 和 JavaScript。）
@@ -52,7 +52,7 @@ ms.locfileid: "57053185"
 
 除了移除不必要的空白字元的註解，下列參數和變數名稱已重新命名 （縮短），如下所示：
 
-| **Original** | **重新命名** |
+| **原始** | **已重新命名** |
 | --- | --- |
 | imageTagAndImageID | n |
 | imageContext | t |
@@ -62,7 +62,7 @@ ms.locfileid: "57053185"
 
 下表顯示個別列出的所有資產，與在範例程式中使用統合和縮製 (B/M) 之間的數個重要差異。
 
-|  | **使用 B/分鐘** | **沒有 B/分鐘** | **變更** |
+|  | **使用 B/分鐘** | **Without B/M** | **變更** |
 | --- | --- | --- | --- |
 | **提出要求** | 9 | 34 | 256% |
 | **傳送的 KB** | 3.26 | 11.92 | 266% |
@@ -165,7 +165,7 @@ ms.locfileid: "57053185"
 
 下表所示，使用萬用字元套件組合加入的檔案：
 
-| **Call** | **加入檔案或引發例外狀況** |
+| **呼叫** | **加入檔案或引發例外狀況** |
 | --- | --- |
 | Include("~/Scripts/Common/\*.js") | *AddAltToImg.js*， *ToggleDiv.js*， *ToggleImg.js* |
 | Include("~/Scripts/Common/T\*.js") | 無效的模式的例外狀況。 只允許前置詞或後置字元的萬用字元。 |

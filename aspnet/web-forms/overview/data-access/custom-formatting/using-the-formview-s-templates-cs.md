@@ -8,15 +8,15 @@ ms.date: 03/31/2010
 ms.assetid: d3f062af-88cf-426d-af44-e41f32c41672
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1a7cf17d8cbd0a5a17a387b9a70336a1b06efde7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d275e3b154ca3397294d6cd0924cb6a50bbcef9a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054995"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395533"
 ---
-<a name="using-the-formviews-templates-c"></a>使用 FormView 的範本 (C#)
-====================
+# <a name="using-the-formviews-templates-c"></a>使用 FormView 的範本 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_14_CS.exe)或[下載 PDF](using-the-formview-s-templates-cs/_static/datatutorial14cs1.pdf)
@@ -40,7 +40,7 @@ ms.locfileid: "57054995"
 在本教學課程中我們將檢驗使用 FormView 控制項來呈現以較不嚴格的顯示的產品。 而不是讓名稱、 類別、 供應商，並依此類推，FormView 的欄位`ItemTemplate`會顯示使用的標頭項目組合這些值和`<table>`（請參閱 圖 1）。
 
 
-[![在 DetailsView 中看到的類似方格的版面配置的 FormView 會中斷](using-the-formview-s-templates-cs/_static/image2.png)](using-the-formview-s-templates-cs/_static/image1.png)
+[![T他 FormView 細分的 Grid-Like 版面配置中所示 DetailsView](using-the-formview-s-templates-cs/_static/image2.png)](using-the-formview-s-templates-cs/_static/image1.png)
 
 **圖 1**:FormView 中斷 Grid-Like 配置出現在 DetailsView 中 ([按一下以檢視完整大小的影像](using-the-formview-s-templates-cs/_static/image3.png))
 
@@ -50,7 +50,7 @@ ms.locfileid: "57054995"
 開啟`FormView.aspx`頁面上，然後從 [工具箱] 拖曳至設計工具拖曳 FormView。 第一次新增 FormView 時它會顯示為灰色方塊，指示我們，`ItemTemplate`需要。
 
 
-[![FormView 無法轉譯設計工具中，提供一個 ItemTemplate 之前](using-the-formview-s-templates-cs/_static/image5.png)](using-the-formview-s-templates-cs/_static/image4.png)
+[![T他 FormView 無法轉譯設計工具中，直到提供 ItemTemplate](using-the-formview-s-templates-cs/_static/image5.png)](using-the-formview-s-templates-cs/_static/image4.png)
 
 **圖 2**:FormView 無法呈現在設計工具之前`ItemTemplate`提供 ([按一下以檢視完整大小的影像](using-the-formview-s-templates-cs/_static/image6.png))
 
@@ -88,12 +88,12 @@ ms.locfileid: "57054995"
 使用`ItemTemplate`完成時，會顯示產品資訊更流暢的方式。 在本教學課程 (圖 4) 產生 FormView 的輸出比較 DetailsView 輸出從最後一個教學課程 (圖 3)。
 
 
-[![固定的 DetailsView 輸出](using-the-formview-s-templates-cs/_static/image8.png)](using-the-formview-s-templates-cs/_static/image7.png)
+[![T他固定 DetailsView 輸出](using-the-formview-s-templates-cs/_static/image8.png)](using-the-formview-s-templates-cs/_static/image7.png)
 
 **圖 3**:固定的 DetailsView 輸出 ([按一下以檢視完整大小的影像](using-the-formview-s-templates-cs/_static/image9.png))
 
 
-[![流暢的 FormView 輸出](using-the-formview-s-templates-cs/_static/image11.png)](using-the-formview-s-templates-cs/_static/image10.png)
+[![T他流體 FormView 輸出](using-the-formview-s-templates-cs/_static/image11.png)](using-the-formview-s-templates-cs/_static/image10.png)
 
 **圖 4**:流體 FormView 輸出 ([按一下以檢視完整大小的影像](using-the-formview-s-templates-cs/_static/image12.png))
 

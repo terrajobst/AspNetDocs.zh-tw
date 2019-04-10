@@ -8,15 +8,15 @@ ms.date: 04/21/2011
 ms.assetid: 26b2f55e-ed42-4277-89b0-c941eb754145
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: cab338e56505c453532a26d794eb7bf4e94555a9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2ba210d8c541c6c330dda74706470fa73a81474a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064405"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379478"
 ---
-<a name="part-8-shopping-cart-with-ajax-updates"></a>第 8 部分：購物車與 Ajax 更新
-====================
+# <a name="part-8-shopping-cart-with-ajax-updates"></a>第 8 部分：購物車與 Ajax 更新
+
 藉由[Jon Galloway](https://github.com/jongalloway)
 
 > MVC Music 市集是介紹，並逐步說明如何使用 ASP.NET MVC 和 Visual Studio 進行 web 開發的教學課程應用程式。  
@@ -54,7 +54,7 @@ ms.locfileid: "57064405"
 
 因為我們不想要要求使用者登入帳戶，只是為了將項目加入購物車，我們會將使用者指派暫時的唯一識別碼 （使用 GUID 或全域唯一識別碼） 時存取購物車。 我們將會儲存這個使用 ASP.NET 工作階段類別的識別碼。
 
-*注意：在 ASP.NET 工作階段是方便的地方來儲存使用者專屬資訊到期後他們離開網站。雖然不當使用工作階段狀態可以有較大的網站上的效能影響，我們淺使用適用於示範用途。*
+*注意:在 ASP.NET 工作階段是方便的地方來儲存使用者專屬資訊到期後他們離開網站。 雖然不當使用工作階段狀態可以有較大的網站上的效能影響，我們淺使用適用於示範用途。*
 
 ShoppingCart 類別會公開下列方法：
 

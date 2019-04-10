@@ -8,15 +8,15 @@ ms.date: 10/23/2008
 ms.assetid: cfbfa166-2f92-4f21-889c-95c9bef436cc
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-to-enable-table-specific-routing-in-dynamic-data-applications
 msc.type: video
-ms.openlocfilehash: 972e7c2812fd300cfd501db1c1adebdedcda0833
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a1b099aedc6fa0824df3281cca55543bcfd4d159
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049715"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386772"
 ---
-<a name="how-to-enable-table-specific-routing-in-dynamic-data-applications"></a>如何啟用的資料表特定路由的動態資料應用程式
-====================
+# <a name="how-to-enable-table-specific-routing-in-dynamic-data-applications"></a>如何啟用的資料表特定路由的動態資料應用程式
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 在這段影片中了解如何將自訂工作流程邏輯新增至 ASP.NET 動態資料應用程式中，使用路由來啟用特定資料表的.aspx 檔案使用。

@@ -8,15 +8,15 @@ ms.date: 02/12/2009
 ms.assetid: b20b2b30-a557-4567-8e27-56f1e04235e2
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-cache-portions-of-an-aspnet-page
 msc.type: video
-ms.openlocfilehash: 9446109178ee4be61f19559b47f5cecff8cc9483
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f7ca1b9adc781bbca4bc9fb9637f61660cdbf0a5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057485"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396865"
 ---
-<a name="how-do-i-cache-portions-of-an-aspnet-page"></a>[How Do i:]快取部分 ASP.NET 網頁
-====================
+# <a name="how-do-i-cache-portions-of-an-aspnet-page"></a>[How Do i:]快取部分 ASP.NET 網頁
+
 藉由[Chris Pels](https://twitter.com/chrispels)
 
 在此影片的 Chris Pels 示範如何實作頁面上的使用者控制項的 OutputCache 快取的 ASP.NET 網頁的一或多個部分。 首先，ASP.NET 網頁會建立並快取使用 OutputCache 指示詞。 數個使用者控制項，然後建立並快取以供不同的持續時間。 頁面之間的關聯性快取持續時間，並檢閱控制快取持續時間。 檢閱快取控制項的不同準則包括的 VaryByControl 巢狀的使用者控制項可以控制其父控制項的快取的範例。

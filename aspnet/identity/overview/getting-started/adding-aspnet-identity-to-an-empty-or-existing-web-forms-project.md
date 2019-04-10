@@ -1,19 +1,20 @@
 ---
 uid: identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
-title: 新增 ASP.NET Identity 新增至空的或現有的 Web Form 專案 |Microsoft Docs
+title: 新增 ASP.NET Identity 新增至空的或現有的 Web Form 專案-ASP.NET 4.x
 author: raquelsa
-description: 本教學課程會示範如何將 ASP.NET Identity （新成員資格系統針對 ASP.NET） 新增至 ASP.NET 應用程式。 當您建立新的 Web Form 或 MVC...
+description: 本教學課程會示範如何將 ASP.NET 身分識別 （ASP.NET 成員資格系統） 新增至 ASP.NET 應用程式。 當您建立新的 Web Form 或 MVC...
 ms.author: riande
 ms.date: 01/22/2019
 ms.assetid: 1cbc0ed2-5bd6-4b62-8d34-4c193dcd8b25
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: cd28cc68db96b52eb205b8764aa2af014ffad9c3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8f66cdb46e4cd02509092ea3bdcb7af9c292eb8f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038275"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59394311"
 ---
 # <a name="adding-aspnet-identity-to-an-empty-or-existing-web-forms-project"></a>將 ASP.NET Identity 新增至空的或現有的 Web Form 專案
 
@@ -145,7 +146,7 @@ ms.locfileid: "57038275"
     > [!NOTE] 
     > 
     > - `Page_Load`現在會檢查目前使用者的狀態，並且會根據其`Context.User.Identity.IsAuthenticated`狀態。
-    >     **顯示登入的使用者名稱**:Microsoft ASP.NET 身分識別架構上加入擴充方法[System.Security.Principal.IIdentity](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx) ，可讓您能夠`UserName`和`UserId`的登入的使用者。 這些擴充方法定義中`Microsoft.AspNet.Identity.Core`組件。 這些擴充方法會取代[HttpContext.User.Identity.Name](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx) 。
+    >   **顯示登入的使用者名稱**:Microsoft ASP.NET 身分識別架構上加入擴充方法[System.Security.Principal.IIdentity](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx) ，可讓您能夠`UserName`和`UserId`的登入的使用者。 這些擴充方法定義中`Microsoft.AspNet.Identity.Core`組件。 這些擴充方法會取代[HttpContext.User.Identity.Name](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx) 。
     > - 登入方法：`This`方法會取代先前`CreateUser_Click`在此範例，並立即登入的使用者已成功建立使用者之後的方法。   
     >   Microsoft OWIN 架構上加入擴充方法`System.Web.HttpContext`，可讓您取得的參考`IOwinContext`。 這些擴充方法定義中`Microsoft.Owin.Host.SystemWeb`組件。 `OwinContext`類別會公開`IAuthenticationManager`屬性，表示目前要求上可用的驗證中介功能。 您可以使用登入的使用者`AuthenticationManager`OWIN 和呼叫`SignIn`並傳入`ClaimsIdentity`如上所示。 ASP.NET 身分識別和 OWIN 的 Cookie 驗證是宣告為基礎的系統，因為架構需要應用程式來產生`ClaimsIdentity`使用者。 `ClaimsIdentity`已針對使用者，例如使用者屬於何種角色的所有宣告的相關資訊。 您也可以在這個階段，此程式碼將會登入使用者，並產生 cookie 也加入更多的使用者宣告。 這個呼叫是類似[FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx)供[FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)模組。
     > - `SignOut` 方法：取得參考`AuthenticationManager`OWIN 和呼叫`SignOut`。 這相當於[FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx)所使用的方法[FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)模組。

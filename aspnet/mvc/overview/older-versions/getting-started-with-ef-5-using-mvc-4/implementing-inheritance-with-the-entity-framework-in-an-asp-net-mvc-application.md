@@ -8,15 +8,15 @@ ms.date: 07/30/2013
 ms.assetid: a5c3feff-5335-4cdd-a97d-f7a8785c2494
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 10ee0be62a1d601e323afc423e9022bed56f4f33
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: fe2bc91c1bb37282389a45f662a34f8865dee301
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065685"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381064"
 ---
-<a name="implementing-inheritance-with-the-entity-framework-in-an-aspnet-mvc-application-8-of-10"></a>ASP.NET MVC 應用程式 (10 的 8) 中實作 Entity Framework 的繼承
-====================
+# <a name="implementing-inheritance-with-the-entity-framework-in-an-aspnet-mvc-application-8-of-10"></a>ASP.NET MVC 應用程式 (10 的 8) 中實作 Entity Framework 的繼承
+
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 [下載已完成的專案](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
@@ -128,7 +128,7 @@ TPH 繼承模式通常會提供更佳的效能比起 TPT 繼承模式，Entity F
 
 執行`Update-Database`PMC 命令。 命令會在此時失敗，因為我們有現有的資料移轉並不知道如何處理。 您會收到下列錯誤：
 
-*ALTER TABLE 陳述式與 FOREIGN KEY 條件約束 」 FK\_dbo。部門\_dbo。人員\_PersonID"。衝突發生在資料庫"ContosoUniversity"，資料表"dbo。Person"資料行 'PersonID'。*
+*ALTER TABLE 陳述式與 FOREIGN KEY 條件約束 」 FK\_dbo。部門\_dbo。人員\_PersonID"。 衝突發生在資料庫"ContosoUniversity"，資料表"dbo。Person"資料行 'PersonID'。*
 
 開啟*移轉\&l t; 時間戳記&gt;\_Inheritance.cs* ，並取代`Up`為下列程式碼的方法：
 

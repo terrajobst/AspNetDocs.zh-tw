@@ -8,15 +8,15 @@ ms.date: 08/14/2010
 ms.assetid: 7ae696b9-348f-4993-8ebb-a838acbe0c28
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part8
 msc.type: authoredcontent
-ms.openlocfilehash: a014690078f113e5090f4867c2f384751f16b9f6
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 029234cf9a28a80c487504e4e0980c214e45f53a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425349"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381961"
 ---
-<a name="adding-a-column-to-the-model"></a>將資料行新增至模型
-====================
+# <a name="adding-a-column-to-the-model"></a>將資料行新增至模型
+
 藉由[Scott Hanselman](https://github.com/shanselman)
 
 > 這是初學者教學課程中，將會介紹 ASP.NET MVC 的基本概念。 您將建立簡單 web 應用程式，從資料庫讀取與寫入。 請瀏覽[ASP.NET MVC 學習中心](../../../index.md)來尋找其他 ASP.NET MVC 教學課程和範例。
@@ -28,11 +28,11 @@ ms.locfileid: "58425349"
 
 將 「 評等 」 資料行，如下所示。 我們現在還沒有任何評等，因為資料行可允許 null。 按一下 [儲存]。
 
-[![編輯電影資料表](getting-started-with-mvc-part8/_static/image2.png)](getting-started-with-mvc-part8/_static/image1.png)
+[![E編輯電影資料表](getting-started-with-mvc-part8/_static/image2.png)](getting-started-with-mvc-part8/_static/image1.png)
 
 接下來，返回 [方案總管]，然後開啟 Movies.edmx 檔案 （這是 \Models 資料夾中）。 以滑鼠右鍵按一下設計介面 （白色區域），並選取 從資料庫更新模型。
 
-[![影片-Microsoft Visual Web Developer 2010 Express (11)](getting-started-with-mvc-part8/_static/image4.png)](getting-started-with-mvc-part8/_static/image3.png)
+[![Movies-Microsoft Visual Web Developer 2010 Express (11)](getting-started-with-mvc-part8/_static/image4.png)](getting-started-with-mvc-part8/_static/image3.png)
 
 這會啟動 「 更新精靈 」。 按一下 [重新整理] 索引標籤中的，按一下 [完成]。 我們的電影模型類別就會更新與新的資料行。
 
@@ -40,7 +40,7 @@ ms.locfileid: "58425349"
 
 之後按一下 [完成]，您可以看到新的評等資料行已新增至電影實體，在我們的模型。
 
-[![電影實體](getting-started-with-mvc-part8/_static/image7.png)](getting-started-with-mvc-part8/_static/image6.png)
+[![Movie 實體](getting-started-with-mvc-part8/_static/image7.png)](getting-started-with-mvc-part8/_static/image6.png)
 
 我們已新增資料行在資料庫模型中，但檢視不知道。
 
@@ -66,11 +66,11 @@ ms.locfileid: "58425349"
 
 執行您的應用程式，現在您已經有新資料庫中的欄位已加入至 [建立] 頁面。 新增新的電影-評分-這次，然後按一下 建立。
 
-[![建立電影-Windows Internet Explorer](getting-started-with-mvc-part8/_static/image9.png)](getting-started-with-mvc-part8/_static/image8.png)
+[![Create 電影-Windows Internet Explorer](getting-started-with-mvc-part8/_static/image9.png)](getting-started-with-mvc-part8/_static/image8.png)
 
 按一下 [建立] 之後，您要傳送至 [索引] 頁面在您新增電影會列出新的評等資料行在資料庫中
 
-[![電影清單-Windows Internet Explorer (12)](getting-started-with-mvc-part8/_static/image11.png)](getting-started-with-mvc-part8/_static/image10.png)
+[![Movie List - Windows Internet Explorer (12)](getting-started-with-mvc-part8/_static/image11.png)](getting-started-with-mvc-part8/_static/image10.png)
 
 此基本教學課程中有您開始進行控制站，將它們關聯的檢視，並傳遞硬式編碼的資料。 然後我們建立及設計資料庫，並放入一些資料中。 我們會從資料庫擷取資料，並顯示 HTML 表格中。 然後，我們會新增可讓使用者將資料加入至資料庫本身從 Web 應用程式內建立表單。 我們新增驗證，然後進行用戶端使用 JavaScript 的驗證。 最後，我們變更了資料庫以包含新的資料行的資料，然後更新我們的兩個頁面，來建立並顯示這項新資料。
 

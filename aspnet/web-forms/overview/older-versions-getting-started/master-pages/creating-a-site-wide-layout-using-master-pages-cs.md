@@ -8,15 +8,15 @@ ms.date: 05/21/2008
 ms.assetid: 78f8d194-03b9-44a5-8255-90e7cd1c2ee1
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3bdb533c1cb724d57152e676a75af8067a6828d8
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 866aea01488cee26a7419fe12b7ffa7a0655e9ce
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57040325"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59385042"
 ---
-<a name="creating-a-site-wide-layout-using-master-pages-c"></a>使用主版頁面建立全網站的版面配置 (C#)
-====================
+# <a name="creating-a-site-wide-layout-using-master-pages-c"></a>使用主版頁面建立全網站的版面配置 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_01_CS.zip)或[下載 PDF](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_01_CS.pdf)
@@ -29,7 +29,7 @@ ms.locfileid: "57040325"
 設計良好的一個屬性是網站的一致的整個網站的頁面配置。 www.asp.net 網站後，為例。 在撰寫本文時，每一頁會有相同的內容，在頂端和底部的頁面。 如 [圖 1] 所示，每個頁面最上方會顯示一份 Microsoft 社群的灰色列。 下方也就是為網站標誌，所在的站台已轉譯，語言和核心區段的清單：首頁，取得已啟動、 學習、 下載等。 同樣地，頁面底部包含 www.asp.net 、 的著作權陳述式，以及隱私權聲明連結廣告的相關資訊。
 
 
-[![Www.asp.net 網站所有頁面採用一致的外觀與風格](creating-a-site-wide-layout-using-master-pages-cs/_static/image2.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image1.png)
+[![T他 www.asp.net 網站採用一致的查詢和跨所有頁面都覺得](creating-a-site-wide-layout-using-master-pages-cs/_static/image2.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image1.png)
 
 <strong>圖 01</strong>:Www.asp.net 網站採用一致的查詢和覺得跨所有的頁面 ([按一下以檢視完整大小的影像](creating-a-site-wide-layout-using-master-pages-cs/_static/image3.png))
 
@@ -76,7 +76,7 @@ ms.locfileid: "57040325"
 一旦已經定義了主版頁面可以繫結至新的 ASP.NET 頁面，透過核取方塊的刻度。 -呼叫內容頁面-這些 ASP.NET 頁面包含每個主版頁面的 ContentPlaceHolder 控制項內容的控制項。 當透過瀏覽器瀏覽 [內容] 頁面時 ASP.NET 引擎會建立主版頁面的控制項階層架構，並將 [內容] 頁面的控制階層架構插入到適當的位置。 轉譯此結合的控制階層架構，產生的 HTML 會傳回給使用者的瀏覽器。 因此，[內容] 頁面就會發出其 ContentPlaceHolder 控制項之外的主版頁面中定義的常見標記和其本身的內容控制項內定義的頁面特定標記。 圖 3 闡明此概念。
 
 
-[![要求之網頁的標記被融合到主版頁面](creating-a-site-wide-layout-using-master-pages-cs/_static/image6.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image5.png)
+[![T他要求網頁的標記被融合到主版頁面](creating-a-site-wide-layout-using-master-pages-cs/_static/image6.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image5.png)
 
 **圖 03**:要求之網頁的標記融合到主版頁面 ([按一下以檢視完整大小的影像](creating-a-site-wide-layout-using-master-pages-cs/_static/image7.png))
 
@@ -95,7 +95,7 @@ ms.locfileid: "57040325"
 > Visual Studio 支援兩種專案管理模式：網站專案和 Web 應用程式專案。 網站專案沒有專案檔，而 Web 應用程式專案模擬專案架構在 Visual Studio.NET 2002年/2003年-它們包含在專案檔和專案的原始程式碼編譯成單一組件，位於`/bin`資料夾。 Visual Studio 2005 一開始只支援的網站專案，雖然[Web 應用程式專案模型](https://msdn.microsoft.com/library/aa730880(vs.80).aspx)含 Service Pack 1; 已重新引入Visual Studio 2008 提供了這兩個專案模型。 Visual Web Developer 2005 和 2008年版本，不過，僅支援網站專案。 我在本教學課程系列中，我示範使用網站專案模型。 如果您正在使用非 Express edition，而且想要改為使用 Web 應用程式專案模型，可以自由執行這項操作，但您看到您的畫面和與 instructio 與螢幕擷取畫面所示，您必須採取的步驟之間可能會有些不一致這些教學課程中所提供的 ns。
 
 
-[![建立新檔案系統為基礎的網站](creating-a-site-wide-layout-using-master-pages-cs/_static/image9.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image8.png)
+[![Create New File System-Based 網站](creating-a-site-wide-layout-using-master-pages-cs/_static/image9.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image8.png)
 
 **圖 04**:建立 New File System-Based 網站 ([按一下以檢視完整大小的影像](creating-a-site-wide-layout-using-master-pages-cs/_static/image10.png))
 
@@ -103,7 +103,7 @@ ms.locfileid: "57040325"
 接下來，加入主版頁面的根目錄中的站台的專案名稱上按一下滑鼠右鍵，選擇 加入新項目並選取主版頁面範本。 請注意，主版頁面最後副檔名`.master`。 這個新的主版頁面命名為`Site.master`並按一下 [新增]。
 
 
-[![加入主版頁面名稱為 Site.master 網站](creating-a-site-wide-layout-using-master-pages-cs/_static/image12.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image11.png)
+[![Add 主版頁面名稱為 Site.master 網站](creating-a-site-wide-layout-using-master-pages-cs/_static/image12.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image11.png)
 
 **圖 05**:加入主版頁面具名`Site.master`網站 ([按一下以檢視完整大小的影像](creating-a-site-wide-layout-using-master-pages-cs/_static/image13.png))
 
@@ -132,7 +132,7 @@ ms.locfileid: "57040325"
 讓我們進一步探討`Site.master`的預設宣告式標記，以建立共用的所有頁面的其中一種網站配置： 常見的標頭; 左側的資料行，以瀏覽、 新聞與其他的全站台內容; 會顯示 「 提供的 Microsoft ASP.NET 」 圖示的頁尾。 圖 6 顯示主版頁面的最終結果，其內容頁面的其中一個透過瀏覽器檢視時。 圖 6 中的紅色圈選的區域是所造訪的頁面所特有 (`Default.aspx`); 其他內容是所有的內容頁面的主版頁面中已定義且因此一致。
 
 
-[![主版頁面的上方、 左側和底部部分定義標記](creating-a-site-wide-layout-using-master-pages-cs/_static/image15.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image14.png)
+[![T他的主版頁面最上方、 左側和底部部分定義標記](creating-a-site-wide-layout-using-master-pages-cs/_static/image15.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image14.png)
 
 **圖 06**:主版頁面定義上方、 左側和底部部分的標記 ([按一下以檢視完整大小的影像](creating-a-site-wide-layout-using-master-pages-cs/_static/image16.png))
 
@@ -173,12 +173,12 @@ ms.locfileid: "57040325"
 > 如果您使用 Web 應用程式專案模型，而不網站專案模型的 ASP.NET 網站建立您不會看到 [圖 7] 所示的 [加入新項目] 對話方塊中的 [選取主版頁面] 核取方塊。 若要建立為內容頁面，使用 Web 應用程式專案模型時必須選擇 Web 內容表單範本，而不是 Web 表單範本。 選取 Web 內容表單範本，然後按一下 [新增] 之後, 相同選取主版頁面 [圖 8] 所示的對話方塊隨即出現。
 
 
-[![加入新的內容頁面](creating-a-site-wide-layout-using-master-pages-cs/_static/image18.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image17.png)
+[![Add 新的內容頁面](creating-a-site-wide-layout-using-master-pages-cs/_static/image18.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image17.png)
 
 **圖 07**:加入新的內容頁面 ([按一下以檢視完整大小的影像](creating-a-site-wide-layout-using-master-pages-cs/_static/image19.png))
 
 
-[![選取 Site.master 主版頁面](creating-a-site-wide-layout-using-master-pages-cs/_static/image21.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image20.png)
+[![S選擇 Site.master 主版頁面](creating-a-site-wide-layout-using-master-pages-cs/_static/image21.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image20.png)
 
 **圖 08**:選取 `Site.master`主版頁面 ([按一下以檢視完整大小的影像](creating-a-site-wide-layout-using-master-pages-cs/_static/image22.png))
 
@@ -198,7 +198,7 @@ ms.locfileid: "57040325"
 透過先前的全網站範本技術佔有主版頁面的位置是設計階段支援。 圖 9 顯示`About.aspx`檢視透過 Visual Web Developer 的 設計 檢視時的內容頁面。 請注意，雖然主版頁面內容會顯示，它會呈現灰色且無法修改。 內容控制項對應至主版頁面的 ContentPlaceHolders 是，不過，可以讓您編輯。 就像使用其他任何 ASP.NET 頁面上，您可以建立內容頁面的介面新增到 [來源] 或 [設計] 檢視的 Web 控制項。
 
 
-[![[內容] 頁面的 [設計] 檢視會顯示這兩個指定頁面和主版頁面內容](creating-a-site-wide-layout-using-master-pages-cs/_static/image24.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image23.png)
+[![T他內容頁面的設計檢視會顯示兩個頁面特定和主版頁面內容](creating-a-site-wide-layout-using-master-pages-cs/_static/image24.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image23.png)
 
 **圖 09**:[內容] 頁面的設計檢視會顯示兩個頁面特定和主版頁面內容 ([按一下以檢視完整大小的影像](creating-a-site-wide-layout-using-master-pages-cs/_static/image25.png))
 
@@ -208,7 +208,7 @@ ms.locfileid: "57040325"
 請花一點時間建立的某些內容`About.aspx`頁面。 如您所見 圖 10 中，我可以輸入"有關 Author"標題和幾個段落的文字，但也新增 Web 控制項的組合。 建立此介面之後, 請瀏覽`About.aspx`透過瀏覽器的頁面。
 
 
-[![請瀏覽透過瀏覽器的 [about.aspx 的網頁] 頁面](creating-a-site-wide-layout-using-master-pages-cs/_static/image27.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image26.png)
+[![Visit about.aspx 的網頁頁面透過瀏覽器](creating-a-site-wide-layout-using-master-pages-cs/_static/image27.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image26.png)
 
 **圖 10**:請瀏覽`About.aspx`頁面上透過瀏覽器 ([按一下以檢視完整大小的影像](creating-a-site-wide-layout-using-master-pages-cs/_static/image28.png))
 
@@ -248,7 +248,7 @@ ms.locfileid: "57040325"
 上述程式碼中設定的標籤`Text`屬性目前的日期和時間格式化為一週的星期幾、 月和兩位數天數的名稱 （請參閱 圖 11）。 透過這項變更，重新審視您的內容頁面。 如 [圖 11] 所示，產生的標記會立即更新以包含主版頁面的變更。
 
 
-[![主版頁面中所做的變更會反映當檢視內容頁面](creating-a-site-wide-layout-using-master-pages-cs/_static/image30.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image29.png)
+[![T主版頁面的他變更會反映當檢視內容頁面](creating-a-site-wide-layout-using-master-pages-cs/_static/image30.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image29.png)
 
 **圖 11**:主版頁面中所做的變更會反映當檢視內容頁面 ([按一下以檢視完整大小的影像](creating-a-site-wide-layout-using-master-pages-cs/_static/image31.png))
 

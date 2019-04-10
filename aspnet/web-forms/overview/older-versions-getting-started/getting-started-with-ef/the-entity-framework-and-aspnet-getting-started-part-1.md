@@ -8,15 +8,15 @@ ms.date: 12/03/2010
 ms.assetid: 5cb00916-8f46-491f-be25-4739a615d619
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: f9f100ccaf5e9cfdaf0633f9bfebbad273212a0e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 51e3010f6e01434c495201af4af3bbdcde993da7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054235"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59398432"
 ---
-<a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>開始使用 Entity Framework 4.0 Database 中第一次與 ASP.NET 4 Web Form
-====================
+# <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>開始使用 Entity Framework 4.0 Database 中第一次與 ASP.NET 4 Web Form
+
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 > Contoso 大學範例 web 應用程式會示範如何建立使用 Entity Framework 4.0 和 Visual Studio 2010 的 ASP.NET Web Forms 應用程式。 範例應用程式是虛構的 Contoso 大學網站。 其中包括的功能有學生入學許可、課程建立、教師指派。

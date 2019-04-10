@@ -1,22 +1,23 @@
 ---
 uid: web-api/overview/advanced/http-message-handlers
-title: ASP.NET Web API 中的 HTTP 訊息處理常式 |Microsoft Docs
+title: HTTP 訊息處理常式，在 ASP.NET Web API-ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 適用於 ASP.NET 的 ASP.NET Web API 中的 HTTP 訊息處理常式概觀 4.x
 ms.author: riande
 ms.date: 02/13/2012
+ms.custom: seoapril2019
 ms.assetid: 9002018b-3aa3-4358-bb1c-fbb5bc751d01
 msc.legacyurl: /web-api/overview/advanced/http-message-handlers
 msc.type: authoredcontent
-ms.openlocfilehash: 0b0d7b4c543dc4e597c6c472083898f3a8095a83
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 308d2e3dd21917e7656f7ffe889dc965d9275d74
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043205"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392101"
 ---
-<a name="http-message-handlers-in-aspnet-web-api"></a>ASP.NET Web API 中的 HTTP 訊息處理常式
-====================
+# <a name="http-message-handlers-in-aspnet-web-api"></a>ASP.NET Web API 中的 HTTP 訊息處理常式
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 A*訊息處理常式*是接收 HTTP 要求，並傳回 HTTP 回應的類別。 訊息處理常式衍生自抽象**HttpMessageHandler**類別。

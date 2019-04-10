@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: e6ee90bf-32a5-4987-a384-15cc7dd30c8a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-in-a-formview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 272befe4182a459c0e1f3b6668d252d9ba4715d0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 10c877e072d5caf23e78f49ebc71387fde20393d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038315"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59393609"
 ---
-<a name="using-textboxwatermark-in-a-formview-c"></a>在 FormView 中使用 TextBoxWatermark (C#)
-====================
+# <a name="using-textboxwatermark-in-a-formview-c"></a>在 FormView 中使用 TextBoxWatermark (C#)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/TextBoxWatermark1.cs.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/textboxwatermark1CS.pdf)
@@ -49,7 +49,7 @@ ms.locfileid: "57038315"
 現在當使用者變更的插入模式`FormView`控制項，在文字欄位的新廠商已預先填入要感謝`TextBoxWatermarkExtender`控制項。 在文字方塊按一下可讓消失了填入文字。
 
 
-[![在欄位中的浮水印來自擴充項](using-textboxwatermark-in-a-formview-cs/_static/image2.png)](using-textboxwatermark-in-a-formview-cs/_static/image1.png)
+[![T他在欄位中的浮水印來自 extender](using-textboxwatermark-in-a-formview-cs/_static/image2.png)](using-textboxwatermark-in-a-formview-cs/_static/image1.png)
 
 在欄位中的浮水印來自擴充項 ([按一下以檢視完整大小的影像](using-textboxwatermark-in-a-formview-cs/_static/image3.png))
 

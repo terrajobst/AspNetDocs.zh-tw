@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
-title: 使用 SMS 和電子郵件使用 ASP.NET Identity 的雙因素驗證 |Microsoft Docs
+title: 雙因素驗證使用 SMS 和電子郵件使用 ASP.NET Identity-ASP.NET 4.x
 author: HaoK
 description: 本教學課程會示範如何設定雙因素驗證 (2FA) 使用 SMS 和電子郵件。 撰寫本文時已由 Rick Anderson ( @RickAndMSFT )、 Pr....
 ms.author: riande
 ms.date: 09/15/2015
 ms.assetid: 053e23c4-13c9-40fa-87cb-3e9b0823b31e
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 4b253923696e35e59c196578a232f53c11671d16
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c41fc06ad98665f7d48efde030c1341b06e49dd0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043165"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395286"
 ---
-<a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>使用 SMS 和電子郵件使用 ASP.NET Identity 的雙因素驗證
-====================
+# <a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>使用 SMS 和電子郵件使用 ASP.NET Identity 的雙因素驗證
+
 藉由[Hao 是一隻](https://github.com/HaoK)，[請參閱 Pranav Rastogi](https://github.com/rustd)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Suhas Joshi](https://github.com/suhasj)
 
 > 本教學課程會示範如何設定雙因素驗證 (2FA) 使用 SMS 和電子郵件。
@@ -52,8 +53,8 @@ ms.locfileid: "57043165"
    在本教學課程中，我們將使用[SendGrid](http://sendgrid.com/)傳送電子郵件並[Twilio](https://www.twilio.com/)或[ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/) sms 傳簡訊到的。 `Identity.Samples`套件會安裝我們將使用的程式碼。
 3. 設定[專案，以使用 SSL](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)。
 4. *選擇性*：請依照下列中的指示我[教學課程中確認電子郵件](account-confirmation-and-password-recovery-with-aspnet-identity.md)SendGrid 連結然後執行應用程式並註冊的電子郵件帳戶。
-5. * 選擇性: * 移除此範例示範電子郵件連結確認程式碼 (`ViewBag.Link`帳戶控制器中的程式碼。 請參閱`DisplayEmail`和`ForgotPasswordConfirmation`動作方法和 razor 檢視)。
-6. <em>選擇性: * 移除`ViewBag.Status`程式碼從管理和帳戶控制器和 *Views\Account\VerifyCode.cshtml</em>並<em>Views\Manage\VerifyPhoneNumber.cshtml</em> razor 檢視。 或者，您可以保留`ViewBag.Status`顯示畫面來測試此應用程式在本機而不需要將連結，並傳送電子郵件和 SMS 訊息的運作方式。
+5. *選擇性：* 移除此範例示範電子郵件連結確認程式碼 (`ViewBag.Link`帳戶控制器中的程式碼。 請參閱`DisplayEmail`和`ForgotPasswordConfirmation`動作方法和 razor 檢視)。
+6. *選擇性：* 移除`ViewBag.Status`來自管理和帳戶控制器和程式碼*Views\Account\VerifyCode.cshtml*並*Views\Manage\VerifyPhoneNumber.cshtml* razor 檢視。 或者，您可以保留`ViewBag.Status`顯示畫面來測試此應用程式在本機而不需要將連結，並傳送電子郵件和 SMS 訊息的運作方式。
 
 > [!NOTE]
 > 警告：如果您變更任何安全性設定，在此範例中，生產應用程式必須進行的變更會明確呼叫的安全性稽核。

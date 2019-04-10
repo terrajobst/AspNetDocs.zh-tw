@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 969ab824-1b98-4552-81fe-b60ef5fc6887
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 4c8628cc289610e287c0a3bc3c8a4c7a833c9fde
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 32587c7b0fd3075cd46678922b40bda2019f3a26
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423412"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381129"
 ---
 # <a name="aspnet-mvc-4-custom-action-filters"></a>ASP.NET MVC 4 自訂動作篩選
 
@@ -59,7 +59,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 
 如果您不熟悉 Visual Studio 程式碼片段，而且想要了解如何使用它們，您可以從這份文件參考附錄&quot;[附錄 c:使用程式碼片段](#AppendixC)&quot;。
 
-* * *
+---
 
 <a id="Exercises"></a>
 
@@ -234,7 +234,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 <a id="Ex2Task1"></a>
 
 <a id="Task_1_Creating_a_new_Custom_Action_Filter"></a>
-#### <a name="task-1-creating-a-new-custom-action-filter"></a>工作 1:建立新的自訂動作篩選條件
+#### <a name="task-1-creating-a-new-custom-action-filter"></a>工作 1：建立新的自訂動作篩選條件
 
 在這個工作中，您將建立新的自訂動作篩選條件，將插入 StoreController 類別中，了解如何管理篩選器的執行順序。
 
@@ -266,7 +266,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 <a id="Ex2Task2"></a>
 
 <a id="Task_2_Injecting_a_new_Code_Interceptor_into_the_StoreController_Class"></a>
-#### <a name="task-2-injecting-a-new-code-interceptor-into-the-storecontroller-class"></a>工作 2:新的程式碼攔截器插入 StoreController 類別
+#### <a name="task-2-injecting-a-new-code-interceptor-into-the-storecontroller-class"></a>工作 2：新的程式碼攔截器插入 StoreController 類別
 
 在這個工作中，您會將新的自訂篩選器新增至 StoreController 類別，並執行解決方案，以驗證這兩種篩選器一起運作。
 
@@ -290,7 +290,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 <a id="Ex2Task3"></a>
 
 <a id="Task_3_Managing_Filter_Ordering"></a>
-#### <a name="task-3-managing-filter-ordering"></a>工作 3:管理篩選器順序
+#### <a name="task-3-managing-filter-ordering"></a>工作 3：管理篩選器順序
 
 在這個工作中，您將學習如何使用 Order 屬性管理篩選器的執行順序。
 
@@ -354,7 +354,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 > 此外，您可以在其中部署此應用程式以 Windows Azure 網站的下列[附錄 b:發行 ASP.NET MVC 4 應用程式使用 Web Deploy](#AppendixB)。
 
 
-* * *
+---
 
 <a id="Summary"></a>
 

@@ -8,15 +8,15 @@ ms.date: 05/21/2008
 ms.assetid: 0aa1c84f-c9e2-4699-b009-0e28643ecbc6
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e3846ea696a1a5a29fd53d6753878fab9dd9a95d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 431d5a124017e2a23bfaa7579f63d61faf0b8ebd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036605"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59379790"
 ---
-<a name="specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-c"></a>指定主版頁面的標題、中繼標籤與其他 HTML 標頭 (C#)
-====================
+# <a name="specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-c"></a>指定主版頁面的標題、中繼標籤與其他 HTML 標頭 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_03_CS.zip)或[下載 PDF](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_03_CS.pdf)
@@ -169,7 +169,7 @@ ASP.NET 頁面可以指定其標題中的下列方法之一：
 [圖 5] 顯示`MultipleContentPlaceHolders.aspx`頁面上透過瀏覽器檢視時。 請注意，標題是精確 （較不擴充功能），頁面的檔案名稱"MultipleContentPlaceHolders 」。
 
 
-[![如果未明確指定標題，網頁的檔案名稱是自動使用](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image6.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image5.png)
+[![If 標題為未明確指定，在頁面的檔案名稱會自動使用](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image6.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image5.png)
 
 **圖 05**:如果未明確指定標題，網頁的檔案名稱是自動使用 ([按一下以檢視完整大小的影像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image7.png))
 
@@ -191,7 +191,7 @@ ASP.NET 提供穩固的站台對應架構，可讓網頁程式開發人員定義
 建立名為網站的根資料夾中的網站地圖檔案著手`Web.sitemap`。 若要這麼做，以滑鼠右鍵按一下方案總管] 中的網站名稱、 選擇 [加入新項目並選取站台對應範本。 請確定檔案會命名為`Web.sitemap`並按一下 [新增]。
 
 
-[![新增名為網站的根資料夾的 Web.sitemap 檔案](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image9.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image8.png)
+[![Add 到網站的根資料夾的檔案命名為 Web.sitemap](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image9.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image8.png)
 
 **圖 06**:新增名為檔案`Web.sitemap`網站的根資料夾 ([按一下以檢視完整大小的影像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image10.png))
 
@@ -224,7 +224,7 @@ ASP.NET 提供穩固的站台對應架構，可讓網頁程式開發人員定義
 從資料來源組態精靈 中，選擇要繫結至名為的新 SiteMapDataSource 控制項的 ListView `LessonsDataSource`。 SiteMapDataSource 控制項從站台對應系統傳回階層式結構。
 
 
-[![將 SiteMapDataSource 控制項繫結至 LessonsList ListView 控制項](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image13.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image12.png)
+[![Bind LessonsList ListView SiteMapDataSource 控制項](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image13.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image12.png)
 
 **圖 08**:繫結至 SiteMapDataSource 控制項`LessonsList`ListView 控制項 ([按一下以檢視完整大小的影像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image14.png))
 
@@ -239,7 +239,7 @@ ASP.NET 提供穩固的站台對應架構，可讓網頁程式開發人員定義
 之後設定 ListView 的範本，請瀏覽網站。 如 [圖 9] 所示，[課程] 區段會包含單一項目符號項目，首頁。 其中是關於 」 和 「 使用多個 ContentPlaceHolder 控制項課程？ SiteMapDataSource 設計為傳回一組階層式資料，但 ListView 控制項只能顯示單一階層的層級。 因此，會顯示網站導覽節點，SiteMapDataSource 所傳回的第一個層級。
 
 
-[![[課程] 區段包含單一的清單項目](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image16.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image15.png)
+[![T他課程章節包含單一清單項目](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image16.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image15.png)
 
 **圖 09**:[課程] 區段包含單一的清單項目 ([按一下以檢視完整大小的影像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image17.png))
 
@@ -254,7 +254,7 @@ ASP.NET 提供穩固的站台對應架構，可讓網頁程式開發人員定義
 藉由設定 略過開始節點 SiteMapDataSource 並明確地將首頁的項目符號項目，課程 區段現在會顯示預期的輸出。
 
 
-[![[課程] 區段包含的項目符號項目首頁和每個子節點](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image19.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image18.png)
+[![T他課程章節包含的首頁和每一個子節點的項目符號項目](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image19.png)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image18.png)
 
 **圖 10**:[課程] 區段的首頁和每一個子節點包含項目符號項目 ([按一下以檢視完整大小的影像](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image20.png))
 

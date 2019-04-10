@@ -8,15 +8,15 @@ ms.date: 09/13/2006
 ms.assetid: 58618954-a9ed-4ca0-8c2d-95a5ffd9c03e
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4ece899d4c9f3277fc27cdfc9c3f3e25ab7809fb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e275b552af1348da48937e26012f7625a2bb3b93
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027615"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59383893"
 ---
-<a name="displaying-data-with-the-datalist-and-repeater-controls-vb"></a>使用 DataList 與重複項控制項顯示資料 (VB)
-====================
+# <a name="displaying-data-with-the-datalist-and-repeater-controls-vb"></a>使用 DataList 與重複項控制項顯示資料 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_29_VB.exe)或[下載 PDF](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/datatutorial29vb1.pdf)
@@ -51,7 +51,7 @@ ms.locfileid: "57027615"
 開啟`Default.aspx`頁面上，並拖曳`SectionLevelTutorialListing.ascx`從使用者控制`UserControls`拖曳至設計介面上的資料夾。 此使用者控制項中，我們在中建立[主版頁面與網站導覽](../introduction/master-pages-and-site-navigation-vb.md)教學課程中，會列舉站台對應，並顯示從目前的區段項目符號清單中的教學課程。
 
 
-[![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image3.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image2.png)
+[![Add Default.aspx SectionLevelTutorialListing.ascx 使用者控制項](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image3.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image2.png)
 
 **圖 2**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image4.png))
 
@@ -72,7 +72,7 @@ ms.locfileid: "57027615"
 類似於 FormView，DataList 控制項 s 轉譯的輸出取決於範本而非 BoundFields、 CheckBoxFields，等等。 不同於 FormView，DataList 被設計來顯示一份記錄，而不是一個單獨的帳戶。 可讓 s 開始本教學課程，了解繫結至 DataList 的產品資訊。 首先開啟`Basics.aspx`頁面中`DataListRepeaterBasics`資料夾。 接下來，從 [工具箱] 拖曳至設計工具拖曳 DataList。 圖 4 所示，再指定 DataList 的範本設計工具它顯示為灰色方塊。
 
 
-[![從 [工具箱] 拖曳至設計工具拖曳 DataList](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image7.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image6.png)
+[![Drag DataList 從工具箱拖曳至設計工具](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image7.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image6.png)
 
 **圖 4**:拖曳 DataList 從工具箱拖曳至設計工具 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image8.png))
 
@@ -80,17 +80,17 @@ ms.locfileid: "57027615"
 DataList s 從智慧標籤、 新增新的 ObjectDataSource 和將它設定為使用`ProductsBLL`類別的`GetProducts`方法。 因為我們在本教學課程中，建立唯讀的 DataList re 中精靈的插入設定下拉式清單中的，為 （無）、 更新和刪除索引標籤。
 
 
-[![選擇建立新的 ObjectDataSource](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image10.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image9.png)
+[![O若要建立新的 ObjectDataSource pt](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image10.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image9.png)
 
 **圖 5**:選擇建立新的 ObjectDataSource ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image11.png))
 
 
-[![設定使用 ProductsBLL 類別 ObjectDataSource](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image13.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image12.png)
+[![C設定使用 ProductsBLL 類別 ObjectDataSource](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image13.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image12.png)
 
 **圖 6**:設定要使用 ObjectDataSource`ProductsBLL`類別 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image14.png))
 
 
-[![擷取所有的產品使用 GetProducts 方法的相關資訊](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image16.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image15.png)
+[![Retrieve 資訊有關所有使用 GetProducts 方法的產品](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image16.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image15.png)
 
 **圖 7**:擷取的資訊關於所有產品使用的`GetProducts`方法 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image17.png))
 
@@ -120,7 +120,7 @@ Visual Studio 會自動建立設定 ObjectDataSource，並將它與透過它的�
 因此，資料清單，可提供選擇編輯透過設計工具的範本，使用時我偏好使用 Label Web 控制項，使其內容可透過編輯樣板介面存取。 如我們所見，Repeater 會需要從原始碼檢視編輯的範本的內容。 因此，除非我知道我要格式化的製作 Repeater 的範本，我通常會省略 Label Web 控制項時資料的外觀會結合程式設計邏輯為基礎的文字。
 
 
-[![每個產品的輸出是轉譯使用 DataList 的 ItemTemplate](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image19.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image18.png)
+[![E除此之外，每個產品的輸出是轉譯使用 DataList 的 ItemTemplate](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image19.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image18.png)
 
 **圖 8**:每個產品 s 輸出是轉譯使用 DataList s `ItemTemplate` ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image20.png))
 
@@ -134,7 +134,7 @@ Visual Studio 會自動建立設定 ObjectDataSource，並將它與透過它的�
 若要新增面板檔案，以滑鼠右鍵按一下`App_Themes/DataWebControls`資料夾中，選擇 加入新項目，並從清單中選取面板檔案選項。 將檔案命名為 `DataList.skin`。
 
 
-[![建立名為 DataList.skin 新面板檔案](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image22.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image21.png)
+[![Create 新面板檔案命名為 DataList.skin](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image22.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image21.png)
 
 **圖 9**:建立新的面板檔案具名`DataList.skin`([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image23.png))
 
@@ -149,7 +149,7 @@ Visual Studio 會自動建立設定 ObjectDataSource，並將它與透過它的�
 此面板檔案加入，DataList 外觀會更新在設計工具中 （您可能需要重新整理設計工具檢視，若要查看效果，新的面板檔案; 從 檢視 功能表，選擇 重新整理）。 如 [圖 10] 所示，每個替代的產品都有亮粉紅色的背景色彩。
 
 
-[![建立名為 DataList.skin 新面板檔案](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image25.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image24.png)
+[![Create 新面板檔案命名為 DataList.skin](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image25.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image24.png)
 
 **圖 10**:建立新的面板檔案具名`DataList.skin`([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image26.png))
 
@@ -174,7 +174,7 @@ Visual Studio 會自動建立設定 ObjectDataSource，並將它與透過它的�
 我們的範例，可讓 s 有標題中的 DataList 的結果頂端顯示的產品資訊`<h3>`標題。 若要達成此目的，將新增`HeaderTemplate`與適當的標記。 從設計工具中，這可藉由按一下 DataList s 智慧標籤中的 編輯範本 連結、 選擇 標頭 範本，從下拉式清單中，並挑選樣式下拉式清單的標題 3 選項後的文字輸入清單 （請參閱 圖 11）。
 
 
-[![新增 HeaderTemplate 的文字產品資訊](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image28.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image27.png)
+[![Add HeaderTemplate 的文字產品資訊](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image28.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image27.png)
 
 **圖 11**:新增`HeaderTemplate`文字產品資訊 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image29.png))
 
@@ -196,7 +196,7 @@ Visual Studio 會自動建立設定 ObjectDataSource，並將它與透過它的�
 後此新增功能，檢視透過瀏覽器頁面時它看起來應該類似 圖 12。 請注意，標頭資料列和每個產品清單之間的線。
 
 
-[![DataList 包含標頭資料列和每個產品清單之間的水平尺規](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image31.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image30.png)
+[![T他 DataList 包含標頭資料列和水平規則之間每個產品清單](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image31.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image30.png)
 
 **圖 12**:DataList 包含標頭資料列和水平規則之間每個產品清單 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image32.png))
 
@@ -227,7 +227,7 @@ Visual Studio 會自動建立設定 ObjectDataSource，並將它與透過它的�
 若要達成此目的，先拖曳 Repeater 控制項從工具箱拖曳至設計工具中，上述產品資訊 DataList。 如同 DataList 和 Repeater 一開始會顯示為灰色方塊之前已定義其範本。
 
 
-[![新增至設計工具的重複項](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image34.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image33.png)
+[![Add Repeater 至設計工具](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image34.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image33.png)
 
 **圖 13**:將重複項新增至設計工具 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image35.png))
 
@@ -235,17 +235,17 @@ Visual Studio 會自動建立設定 ObjectDataSource，並將它與透過它的�
 那里重複項 s 中的 s 只有一個選項智慧標籤：選擇資料來源。 選擇建立新的 ObjectDataSource，並將它設定為使用`CategoriesBLL`類別的`GetCategories`方法。
 
 
-[![建立新的 ObjectDataSource](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image37.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image36.png)
+[![Create 新 ObjectDataSource](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image37.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image36.png)
 
 **圖 14**:建立新的 ObjectDataSource ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image38.png))
 
 
-[![設定使用 CategoriesBLL 類別 ObjectDataSource](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image40.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image39.png)
+[![C設定使用 CategoriesBLL 類別 ObjectDataSource](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image40.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image39.png)
 
 **圖 15**:設定要使用 ObjectDataSource`CategoriesBLL`類別 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image41.png))
 
 
-[![擷取所有使用 GetCategories 方法的類別的相關資訊](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image43.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image42.png)
+[![Retrieve 資訊有關所有使用 GetCategories 方法的類別](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image43.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image42.png)
 
 **圖 16**:擷取資訊有關所有類別使用`GetCategories`方法 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image44.png))
 
@@ -265,7 +265,7 @@ Visual Studio 會自動建立設定 ObjectDataSource，並將它與透過它的�
 Repeater 會發出其範本，沒有其他項目，執行任何動作所指定的精確標記。 [圖 17] 顯示透過瀏覽器檢視時，才會進行 Repeater 的輸出。
 
 
-[![單一資料列的 HTML&lt;資料表&gt;列出個別的資料行中的每個類別目錄](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image46.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image45.png)
+[![A 單一資料列的 HTML&lt;資料表&gt;列出個別的資料行中的每個類別目錄](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image46.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image45.png)
 
 **圖 17**:單一資料列的 HTML`<table>`列出個別的資料行中的每個類別目錄 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image47.png))
 
@@ -292,7 +292,7 @@ Repeater 會發出其範本，沒有其他項目，執行任何動作所指定�
 [圖 18] 顯示中繼器進行這些變更之後。
 
 
-[![背景色彩的替代類別資料行，並包含標頭資料列](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image49.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image48.png)
+[![T他類別資料行替代背景色彩和包括標頭資料列](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image49.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image48.png)
 
 **圖 18**:類別資料行替代背景色彩和包括標頭資料列 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image50.png))
 
