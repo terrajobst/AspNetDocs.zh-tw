@@ -7,12 +7,12 @@ ms.author: riande
 ms.date: 10/29/2018
 ms.technology: aspnet
 msc.type: content
-ms.openlocfilehash: 5e2f3781623af5a32149e1db1c17b67ce43b7da0
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 443b33b5c3b964f731999834db580a6abbf6617b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423960"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420415"
 ---
 # <a name="configuration-builders-for-aspnet"></a>適用於 ASP.NET 的組態產生器
 
@@ -145,11 +145,11 @@ ms.locfileid: "58423960"
 
 ### <a name="tokenpattern"></a>tokenPattern
 
-`tokenPattern`：字串，預設值為 `@"\$\{(\w+)\}"`
+`tokenPattern`:字串，預設值為 `@"\$\{(\w+)\}"`
 
 `Expand`行為的產生器搜尋的原始 XML 的權杖看起來像`${token}`。 搜尋是使用預設的規則運算式`@"\$\{(\w+)\}"`。 符合的字元組`\w`非 XML 與許多組態來源允許更為嚴格。 使用`tokenPattern`當多個字元比`@"\$\{(\w+)\}"`所需的語彙基元的名稱。
 
-`tokenPattern`：字串：
+`tokenPattern`:字串：
 
 * 可讓開發人員若要變更用於語彙基元的比對的 regex。
 * 若要確定它是語式正確，非危險的 regex 會不進行任何驗證。
@@ -252,7 +252,7 @@ ms.locfileid: "58423960"
 
 屬性詳細資料：
 
-* `directoryPath` - 必要項。 指定的路徑尋找的值。 密碼會儲存在 Windows 的 docker *C:\ProgramData\Docker\secrets*預設目錄。
+* `directoryPath` 必要。 指定的路徑尋找的值。 密碼會儲存在 Windows 的 docker *C:\ProgramData\Docker\secrets*預設目錄。
 * `ignorePrefix` 會排除在檔案開頭為此前置詞。 預設值為"ignore"。
 * `keyDelimiter` 預設值是`null`。 如果指定，組態產生器會周遊多個層級的目錄中，建立使用此分隔符號的索引鍵名稱。 如果此值為`null`，組態產生器只會尋找最上層的目錄。
 * `optional` 預設值是`false`。 指定是否來源目錄不存在，組態產生器是否應該導致錯誤。
@@ -276,7 +276,7 @@ ms.locfileid: "58423960"
 
 屬性詳細資料：
 
-* `jsonFile` - 必要項。 指定要讀取從 JSON 檔案。 `~`字元會在開始時用來參考應用程式根目錄。
+* `jsonFile` 必要。 指定要讀取從 JSON 檔案。 `~`字元會在開始時用來參考應用程式根目錄。
 * `optional` -布林值，預設值是`true`。 可避免擲回例外狀況，如果找不到 JSON 檔案。
 * `jsonMode` - `[Flat|Sectional]`. `Flat` 預設值。 當`jsonMode`是`Flat`，JSON 檔案是單一的一般索引鍵/值來源。 `EnvironmentConfigBuilder`和`AzureKeyVaultConfigBuilder`也是單一的一般索引鍵/值來源。 當`SimpleJsonConfigBuilder`中設定`Sectional`模式︰
 
