@@ -8,15 +8,15 @@ ms.date: 05/22/2012
 ms.assetid: f889fd46-4dac-4ecb-83d8-60e64c22036e
 msc.legacyurl: /web-pages/overview/data/7-displaying-data-in-a-chart
 msc.type: authoredcontent
-ms.openlocfilehash: 00529355476e88c47ab790121ae77202aa5e7b76
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f97f214abeaeb88634dd10aaebacc0d58e91ab84
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061095"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422456"
 ---
-<a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>在與 ASP.NET Web Pages (Razor) 圖表中顯示資料
-====================
+# <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>在與 ASP.NET Web Pages (Razor) 圖表中顯示資料
+
 by [Microsoft](https://github.com/microsoft)
 
 > 這篇文章說明如何使用圖表來顯示資料在 ASP.NET Web Pages (Razor) 網站中，使用`Chart`協助程式。
@@ -40,7 +40,7 @@ by [Microsoft](https://github.com/microsoft)
 
 當您想要的資料顯示在圖形表單中時，您可以使用`Chart`協助程式。 `Chart`協助程式可以呈現影像顯示各種不同的圖表類型的資料。 它支援許多選項，用於格式化及標示。 `Chart`協助程式可以轉譯超過 30 種圖表，包括所有類型的圖表，您可能熟悉的 Microsoft Excel 或其他工具&#8212;區域圖、 橫條圖、 直條圖、 折線圖和圓餅圖，以及更多特製化的圖表，例如股票圖。
 
-| **區域圖**![描述：區域圖類型的圖片](7-displaying-data-in-a-chart/_static/image1.jpg) | **橫條圖**![描述：橫條圖類型的圖片](7-displaying-data-in-a-chart/_static/image2.jpg) |
+| **區域圖**![描述：區域圖表類型的圖片](7-displaying-data-in-a-chart/_static/image1.jpg) | **橫條圖**![描述：橫條圖類型的圖片](7-displaying-data-in-a-chart/_static/image2.jpg) |
 | --- | --- |
 | **直條圖**![描述：直條圖類型的圖片](7-displaying-data-in-a-chart/_static/image3.jpg) | **折線圖**![描述：折線圖類型的圖片](7-displaying-data-in-a-chart/_static/image4.jpg) |
 | **圓形圖**![描述：圓形圖類型的圖片](7-displaying-data-in-a-chart/_static/image5.jpg) | **股票圖**![描述：股票圖類型的圖片](7-displaying-data-in-a-chart/_static/image6.jpg) |

@@ -5,15 +5,15 @@ description: 將檢視新增至 MVC 應用程式
 ms.author: riande
 ms.date: 01/23/2019
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: afa7584529566ebe82a0eb3849de89bd0df064bd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 42469611f94b374d6692a1c2017aced77a0a414c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57051005"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403853"
 ---
-<a name="adding-a-view"></a>新增檢視
-====================
+# <a name="adding-a-view"></a>新增檢視
+
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 [!INCLUDE [Tutorial Note](sample/code-location.md)]
@@ -68,7 +68,7 @@ ms.locfileid: "57051005"
 
 ![_LayoutCshtml](adding-a-view/_static/image7.png)
 
-版面配置範本可讓您在一個位置指定的 HTML 容器配置，您的網站，然後將它套用到您的網站中的多個頁面。 找到 `@RenderBody()` 這行。 `RenderBody` 是顯示您建立之所有檢視特定頁面的預留位置，「包裝」&quot;&quot;在版面配置頁中。 比方說，如果您選取**關於**連結*Views\Home\About.cshtml*內呈現檢視`RenderBody`方法。
+版面配置範本可讓您在一個位置指定的 HTML 容器配置，您的網站，然後將它套用到您的網站中的多個頁面。 找到 `@RenderBody()` 這行。 `RenderBody` 是的預留位置，其中所有檢視特定頁面您建立顯示，總&quot;包裝&quot;版面配置頁。 比方說，如果您選取**關於**連結*Views\Home\About.cshtml*內呈現檢視`RenderBody`方法。
 
 變更標題元素的內容。 變更[ActionLink](https://msdn.microsoft.com/library/dd504972(v=vs.108).aspx)從 [配置] 範本中&quot;應用程式名稱&quot;來&quot;MVC Movie&quot;並將控制器從`Home`至`Movies`。 完整的版面配置檔如下所示：
 

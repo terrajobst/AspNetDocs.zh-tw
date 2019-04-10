@@ -8,15 +8,15 @@ ms.date: 06/12/2007
 ms.assetid: ab0805a3-76ff-4557-8750-a24d0f79a4c9
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-create-my-own-bug-work-item
 msc.type: video
-ms.openlocfilehash: fafe6a0f4e1c525252921805e33b68638729d8bf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: eeb28e327b400dc1c35a70dfcb51ba6842ea4a48
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056815"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417997"
 ---
-<a name="how-do-i-create-my-own-bug-work-item"></a>[How Do i:]建立我自己的 Bug 工作項目嗎？
-====================
+# <a name="how-do-i-create-my-own-bug-work-item"></a>[How Do i:]建立我自己的 Bug 工作項目嗎？
+
 藉由[Chris Menegay](https://twitter.com/CMenegay)
 
 這段影片示範如何在 Visual Studio Team System 中建立您自己的 Bug 工作項目定義以供使用。 我們看到工作項目中的 XML 檔案，我們可以手動編輯以便新增、 移除或修改欄位、 工作流程，以及與特定類型的工作項目相關聯的表單定義的方式。

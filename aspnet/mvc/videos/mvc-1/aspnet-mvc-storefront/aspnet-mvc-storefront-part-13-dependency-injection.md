@@ -8,15 +8,15 @@ ms.date: 06/19/2008
 ms.assetid: 296fbe12-a28a-4fd8-bbc9-d1dc7468566a
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-13-dependency-injection
 msc.type: video
-ms.openlocfilehash: aba9f324c2230ee833bf02d69962392b5d69a519
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3560adc48154307c66c5641a64c8008aa76a8bd7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049155"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411536"
 ---
-<a name="aspnet-mvc-storefront-part-13-dependency-injection"></a>ASP.NET MVC 店面第 13 部分：相依性插入
-====================
+# <a name="aspnet-mvc-storefront-part-13-dependency-injection"></a>ASP.NET MVC 店面第 13 部分：相依性插入
+
 藉由[Rob Conery](https://github.com/robconery)
 
 這是與 Jeremy Miller，這是屬於 CodeBetter/StructureMap，其中他示範我的相依性插入的優缺點的合作進行開發工作階段。

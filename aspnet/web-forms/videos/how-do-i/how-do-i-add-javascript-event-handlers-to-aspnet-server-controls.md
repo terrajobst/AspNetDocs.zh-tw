@@ -8,15 +8,15 @@ ms.date: 03/20/2008
 ms.assetid: 4e8d3220-3299-41ad-897b-bbf62e2e667f
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-add-javascript-event-handlers-to-aspnet-server-controls
 msc.type: video
-ms.openlocfilehash: 6d7b0485f81fb7b796c9ca0561382f5f1b780075
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a4d6ef0f82312d32eb1b5aade5428af2a8bd5345
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043005"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421767"
 ---
-<a name="how-do-i-add-javascript-event-handlers-to-aspnet-server-controls"></a>[How Do i:]將 JavaScript 事件處理常式新增至 ASP.NET 伺服器控制項
-====================
+# <a name="how-do-i-add-javascript-event-handlers-to-aspnet-server-controls"></a>[How Do i:]將 JavaScript 事件處理常式新增至 ASP.NET 伺服器控制項
+
 藉由[Chris Pels](https://twitter.com/chrispels)
 
 在這段影片 Chris Pels 將示範如何使用 ASP.NET 伺服器控制項，以提供用戶端的 JavaScript 方法的介面伺服器控制項的功能。 首先，了解如何藉由擴充具有自訂屬性的 ASP.NET 伺服器控制項以宣告方式新增用戶端事件處理常式。 接下來，請參閱 < 如何新增屬性，以程式設計方式將用戶端方法對應至 ASP.NET 伺服器控制項提供的優點是在執行階段進行。 最後，了解如何參考都會動態呈現 asp.net，在 JavaScript 程式碼中的伺服器控制項的識別碼。

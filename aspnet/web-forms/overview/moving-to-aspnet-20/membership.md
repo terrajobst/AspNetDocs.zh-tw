@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: f2339485-5d78-4c5e-8c0a-dc9b8a315345
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/membership
 msc.type: authoredcontent
-ms.openlocfilehash: d4fab68555eeb27420e60a28aca2f2c0fb9a73e3
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: f3f8c649932682fd96e0640ddf4595c19c755909
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421514"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408182"
 ---
-<a name="membership"></a>成員資格
-====================
+# <a name="membership"></a>成員資格
+
 by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET 成員資格的表單驗證模型的成功組建從 ASP.NET 1.x。 ASP.NET 表單驗證會提供便利的方式來併入您的 ASP.NET 應用程式的登入表單，並驗證使用者針對資料庫或其他資料存放區。
@@ -74,7 +74,7 @@ ASP.NET SQL Server 安裝精靈會建立網站，您在精靈中指定的執行�
 
 這會啟動 ASP.NET 網站管理工具如下所示。 ASP.NET 網站管理是四個索引標籤介面，可讓您輕鬆地管理應用程式設定。 可使用下列索引標籤：
 
-- **Home**
+- **首頁**
 - **安全性**設定使用者、 角色和存取。
 - **應用程式**設定應用程式設定。
 - **提供者**設定及測試您的應用程式成員資格提供者。

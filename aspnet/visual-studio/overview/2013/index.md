@@ -8,15 +8,15 @@ ms.date: 06/25/2013
 ms.assetid: 646edfc7-dc62-4fa0-84c2-926996c92aeb
 msc.legacyurl: /visual-studio/overview/2013
 msc.type: chapter
-ms.openlocfilehash: 74793becba663d163a31cb1b02654b7b6cb021af
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c7c0de7ade31e43e3b43495cb6755608872d506d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022325"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412745"
 ---
-<a name="aspnet-and-visual-studio-2013"></a>ASP.NET 和 Visual Studio 2013
-====================
+# <a name="aspnet-and-visual-studio-2013"></a>ASP.NET 和 Visual Studio 2013
+
 > 開發使用 Visual Studio 2013 的 ASP.NET web 應用程式
 
 
@@ -32,5 +32,5 @@ ms.locfileid: "57022325"
 - [瀏覽器連結](using-browser-link.md)
 - [適用於 Visual Studio 2013 的 ASP.NET 和 Web 工具版本資訊](release-notes.md)
 - [ASP.NET 和 Web 工具 2013.2 for Visual Studio 2013 版本資訊](aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes.md)
-- [實習實驗室：Visual Studio 2013 Web 工具](visual-studio-2013-web-tools.md)
-- [實習實驗室：一個 ASP.NET：整合 ASP.NET Web Form、 MVC 和 Web API](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api.md)
+- [實際操作實驗室：Visual Studio 2013 Web 工具](visual-studio-2013-web-tools.md)
+- [實際操作實驗室：一個 ASP.NET：整合 ASP.NET Web Form、MVC 與 Web API](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api.md)

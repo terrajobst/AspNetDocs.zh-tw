@@ -1,22 +1,23 @@
 ---
 uid: web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
-title: 呼叫 Web API，從 Windows Phone 8 應用程式 (C#) |Microsoft Docs
+title: 呼叫 Web API，從 Windows Phone 8 應用程式 (C#)-ASP.NET 4.x
 author: rmcmurray
-description: 建立完整的端對端案例，其中包含提供給 Windows Phone 8 應用程式的書籍目錄的 ASP.NET Web API 應用程式。
+description: 使用程式碼的教學課程：在 ASP.NET 中建立 ASP.NET Web API 應用程式提供的各類書籍，Windows Phone 8 應用程式類別目錄的 4.x。
 ms.author: riande
 ms.date: 10/09/2013
+ms.custom: seoapril2019
 ms.assetid: b9775f41-352a-4f82-baa6-23e95b342e20
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
-ms.openlocfilehash: ca2b5f41f6c3bd38faacd1e15c4dee6f6210aff7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a5c7804c2336e91dc171b5da52819436472e81cf
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044615"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412446"
 ---
-<a name="calling-web-api-from-a-windows-phone-8-application-c"></a>從 Windows Phone 8 應用程式呼叫 Web API (C#)
-====================
+# <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>從 Windows Phone 8 應用程式呼叫 Web API (C#)
+
 藉由[Robert McMurray](https://github.com/rmcmurray)
 
 在本教學課程中，您將學習如何建立完整的端對端案例，其中包含提供給 Windows Phone 8 應用程式的書籍目錄的 ASP.NET Web API 應用程式。

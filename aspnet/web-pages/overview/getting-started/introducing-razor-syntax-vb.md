@@ -8,15 +8,15 @@ ms.date: 02/07/2014
 ms.assetid: 5da59646-e973-41cd-88a9-c6b2c0594027
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 17a3a4925766b74446955a8e3a6fddbf9d29a721
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e6b63afb9492e810e19999c7c7ffe074ad510bda
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061905"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406765"
 ---
-<a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>使用 Razor 語法 (Visual Basic) 的 ASP.NET Web 程式設計簡介
-====================
+# <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>使用 Razor 語法 (Visual Basic) 的 ASP.NET Web 程式設計簡介
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 這篇文章概述您程式設計的 ASP.NET 網頁使用 Razor 語法和 Visual Basic。 ASP.NET 是 Microsoft 的技術，用於在 web 伺服器上執行動態網頁。
@@ -179,7 +179,7 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
 
 先前您已看到如何建立 ASP.NET 網頁，以及如何將伺服器程式碼新增至 HTML 標記的基本範例。 這裡您將了解使用 Visual Basic 來撰寫 ASP.NET 伺服器程式碼使用 Razor 語法的基本概念&#8212;也就是程式設計語言規則。
 
-如果您是熟悉程式設計 （尤其是如果您已使用 C、 c + +、 C#、 Visual Basic 或 JavaScript），大多什麼您閱讀這裡應該不陌生。 您可能需要在自己熟悉只 WebMatrix 程式碼新增至標記中的如何 *.vbhtml*檔案。
+如果您是經驗豐富的程式設計 (特別是當您使用 C， C++， C#，Visual Basic 或 JavaScript)，大多什麼您閱讀這裡應該不陌生。 您可能需要在自己熟悉只 WebMatrix 程式碼新增至標記中的如何 *.vbhtml*檔案。
 
 ### <a id="BM_CombiningTextMarkupAndCode"></a>  結合文字、 標記和程式碼區塊中的程式碼
 
@@ -284,7 +284,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         <strong>Example</strong>
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsInt(), IsInt()`
@@ -296,7 +298,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsBool(), IsBool()`
@@ -308,7 +312,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsFloat(), IsFloat()`
@@ -320,7 +326,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsDecimal(), IsDecimal()`
@@ -332,7 +340,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsDateTime(), IsDateTime()`
@@ -344,7 +354,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `ToString()`
@@ -374,7 +386,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         <strong>Examples</strong>
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `+ - * /`
@@ -386,7 +400,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `=`
@@ -398,7 +414,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `<>`
@@ -410,7 +428,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `< > <= >=`
@@ -422,7 +442,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `&`
@@ -434,7 +456,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `+= -=`
@@ -446,7 +470,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `.`
@@ -458,7 +484,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `()`
@@ -470,7 +498,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `Not`
@@ -482,7 +512,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
         [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AndAlso OrElse`
@@ -624,8 +656,8 @@ ASP.NET server 程式碼可讓您根據條件和撰寫程式碼重複特定次�
 
 您可以使用屬性`Page`物件，以取得大量資訊，例如：
 
-- `Request`. 如您所見，這是目前的要求，包括進行要求的頁面、 使用者身分識別等 URL 的瀏覽器的何種類型的相關資訊的集合。
-- `Response`. 這是會在伺服器程式碼執行完成時傳送到瀏覽器的回應 （頁面） 的相關資訊的集合。 例如，您可以使用此屬性寫入至回應的資訊。
+- `Request`。 如您所見，這是目前的要求，包括進行要求的頁面、 使用者身分識別等 URL 的瀏覽器的何種類型的相關資訊的集合。
+- `Response`。 這是會在伺服器程式碼執行完成時傳送到瀏覽器的回應 （頁面） 的相關資訊的集合。 例如，您可以使用此屬性寫入至回應的資訊。
 
     [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample51.vbhtml)]
 
@@ -687,7 +719,7 @@ ASP.NET server 程式碼可讓您根據條件和撰寫程式碼重複特定次�
 
 ### <a name="try-catch-statements"></a>Try Catch 陳述式
 
-陳述式通常必須在程式碼中可能會失敗的原因，您無法控制。 例如: 
+陳述式通常必須在程式碼中可能會失敗的原因，您無法控制。 例如：
 
 - 如果您的程式碼會嘗試開啟、 建立、 讀取或寫入檔案，可能會發生各種錯誤。 您想要的檔案可能不存在，它可能會遭到鎖定，程式碼可能不具有權限，等等。
 - 同樣地，如果您的程式碼會嘗試更新資料庫中的記錄，可以有權限問題，可能會卸除資料庫的連接，要儲存的資料可能無效，依此類推。

@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: 2ddd4407-d143-4a94-877c-21771bfb97a6
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 26e40ff9659a4b8552b2a087c7c948c9f1f1554c
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: c126270304178d178f4b8f9739fa5c51e5dd0551
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424166"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415358"
 ---
-<a name="adding-dynamic-content-to-a-cached-page-c"></a>將動態內容新增至快取的頁面 (C#)
-====================
+# <a name="adding-dynamic-content-to-a-cached-page-c"></a>將動態內容新增至快取的頁面 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 了解如何混合使用動態和快取的內容，在相同的頁面。 快取後替代作業可讓您顯示動態內容，例如橫幅廣告或新聞項目，內有已輸出快取的頁面。
@@ -93,10 +93,6 @@ RenderBannerInternal() 方法是私用方法。 這個方法不會公開為 help
 本教學課程說明如何以動態方式更新快取的頁面中的內容。 您已了解如何使用 HttpResponse.WriteSubstitution() 方法來啟用快取的頁面中插入的動態內容。 您也學到如何封裝內的 HTML 協助程式方法 WriteSubstitution() 方法的呼叫。
 
 利用快取盡可能 – 它可以對 web 應用程式的效能有顯著的影響。 本教學課程中所述，您可以利用快取即使在您需要在頁面中顯示動態內容。
-
-## 
-
-## 
 
 > [!div class="step-by-step"]
 > [上一頁](improving-performance-with-output-caching-cs.md)

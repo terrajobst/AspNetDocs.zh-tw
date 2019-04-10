@@ -8,15 +8,15 @@ ms.date: 06/11/2014
 ms.assetid: 43a6cce7-a3ef-42aa-ad06-90d36d49f098
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: e1bb1aa120ced95db7674eae1831f2a2c7356fc0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9fa71bec14a2ba4d14f01661ad2bf41975f4f55e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061915"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413798"
 ---
-<a name="unit-testing-controllers-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的單元測試控制器
-====================
+# <a name="unit-testing-controllers-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的單元測試控制器
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 > 本主題描述一些單元測試控制器，Web API 2 中的特定技術。 閱讀本主題之前，您可能想要閱讀本教學課程[單元測試 ASP.NET Web API 2](unit-testing-with-aspnet-web-api.md)，其中顯示如何將單元測試專案新增至您的解決方案。

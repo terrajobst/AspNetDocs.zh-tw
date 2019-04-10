@@ -8,15 +8,15 @@ ms.date: 12/11/2009
 ms.assetid: 22f55d63-78f7-44fd-9107-f74cbe16022b
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views
 msc.type: video
-ms.openlocfilehash: 32e10e038e7effbe7cddba0f64db9b8bb8bd4c31
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5f883c4ab42e71fc76df221c2b282e124a3d97bd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053515"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59423015"
 ---
-<a name="how-do-i-implement-view--models-to-manage-data-for-aspnet-mvc-views"></a>How Do i:實作 ASP.NET MVC 檢視管理資料的檢視模型？
-====================
+# <a name="how-do-i-implement-view--models-to-manage-data-for-aspnet-mvc-views"></a>How Do i:實作 ASP.NET MVC 檢視管理資料的檢視模型？
+
 藉由[Chris Pels](https://twitter.com/chrispels)
 
 在此影片的 Chris Pels 示範如何使用 「 檢視模型 」 的概念，讓您管理 ASP.NET MVC 檢視的資料。 首先，範例 MVC 專案會建立使用 ViewDataDictionary 封裝，然後將資料從控制器傳遞至檢視。 接下來，建立類別代表範例 MVC 專案中的檢視的檢視模型。 此實作的一部分，會討論的檢視模型方法的優點。 最後，還有如何使用檢視模型實作時，資料分割的應用程式邏輯的討論。

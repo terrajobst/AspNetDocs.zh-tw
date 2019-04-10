@@ -8,15 +8,15 @@ ms.date: 05/04/2012
 ms.assetid: f97a1145-6470-4bca-8f15-ccfb25fb903c
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 998191a21388d76fb18b59fca9bcea7a40507c86
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 3b7f154936222c85bd7897ea10cbb5ae9d1aa670
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425570"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408936"
 ---
-<a name="application-lifecycle-management-from-development-to-production"></a>應用程式生命週期管理：從開發到生產
-====================
+# <a name="application-lifecycle-management-from-development-to-production"></a>應用程式生命週期管理：從開發到生產
+
 藉由[Jason Lee](https://github.com/jrjlee)
 
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)

@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 48f7feb3-872f-485d-b96f-e30011ff8c4a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 0c4b7b2641c91cbb63ec46fa707c004f7273a303
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: b9da2522cfaed324a23f43265d4e234ebb4950bd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422684"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411120"
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4 的新功能
 
@@ -173,14 +173,14 @@ ASP.NET MVC 4 是建置可調整、 以標準為基礎的 web 應用程式使用
 
    *ASP.NET MVC 4 的網際網路應用程式專案範本*
 
-   - **HTML 5 標記**
+    - **HTML 5 標記**
 
        瀏覽以找出新的佈景主題標記的範本檢視。
 
        ![新的範本，使用 Razor 和 HTML5 標記 About.cshtml。](whats-new-in-aspnet-mvc-4/_static/image10.png "使用 Razor 和 HTML5 標記 About.cshtml 的新範本。")
 
        *新的範本，使用 Razor 和 HTML5 的標記 (About.cshtml)。*
-   - **更新的 JavaScript 程式庫**
+    - **更新的 JavaScript 程式庫**
 
        ASP.NET MVC 4 預設範本現在包含 KnockoutJS，可讓您建立豐富的 JavaScript MVVM 架構和靈敏的 web 應用程式使用 JavaScript 和 HTML。 例如在 MVC3，jQuery 和 jQuery UI 程式庫也包含 ASP.NET MVC 4 中。
 
@@ -250,11 +250,11 @@ ASP.NET MVC 4 可加速開發行動裝置的網站和平板電腦瀏覽器。 �
 > 媒體查詢的基本格式如下：@media \[範圍： 所有 |掌上型 |列印 |投影 |畫面\]([屬性： 值] 和...[屬性： value])
 
 
-媒體查詢的範例： &gt;  <strong>@media所有和 (最大寬度：1000px) 和 (最小寬度：700px) {}:</strong>針對 700px 和 1000px 之間的所有解析度。
+媒體查詢的範例： &gt;  **@media所有和 (最大寬度：1000px) 和 (最小寬度：700px) {}:** 針對 700px 和 1000px 之間的所有解析度。
 
-> <strong>@media 螢幕和 (最小寬度：400px) 和 (最大寬度：700px) {...}:</strong>只針對螢幕。 解決方法必須是介於 400 到 700px。
+> **@media 螢幕和 (最小寬度：400px) 和 (最大寬度：700px) {...}:** 只針對螢幕。 解決方法必須是介於 400 到 700px。
 > 
-> <strong>@media 掌上型和 (最小寬度：20em) 畫面和 (最小寬度：20em) {...}:</strong>（行動裝置和裝置） 的掌上型和畫面。 最小寬度必須大於 20em。
+> **@media 掌上型和 (最小寬度：20em) 畫面和 (最小寬度：20em) {...}:**（行動裝置和裝置） 的掌上型和畫面。 最小寬度必須大於 20em。
 > 
 > 您可以找到相關的詳細資訊，在[W3C 網站](http://www.w3.org/TR/css3-mediaqueries/)。
 
@@ -263,7 +263,7 @@ ASP.NET MVC 4 可加速開發行動裝置的網站和平板電腦瀏覽器。 �
 
 1. 開啟**PhotoGallery.sln**方案，您已在工作 1 中建立，並選取**PhotoGallery**專案。 按下**F5**執行方案。
 2. 調整瀏覽器的寬度，設定 windows，一半或小於其原始大小的四分之一。 請注意，標頭中的項目會發生什麼事：某些項目不會出現在標頭的可見區域。
-3. 開啟<strong>Site.css</strong>檔案，從 Visual Studio 方案總管 中，位於<strong>內容</strong>專案資料夾。 按下<strong>CTRL + F</strong>以開啟 Visual Studio 整合式的搜尋，並撰寫<strong>@media</strong>找出<strong>CSS 媒體查詢</strong>。
+3. 開啟**Site.css**檔案，從 Visual Studio 方案總管 中，位於**內容**專案資料夾。 按下**CTRL + F**以開啟 Visual Studio 整合式的搜尋，並撰寫**@media**找出**CSS 媒體查詢**。
 
     此範本中定義的媒體查詢條件的運作方式以這種方式：當瀏覽器視窗大小低於**850 px**，套用的 CSS 規則是定義在這個媒體區塊中的項目。
 
@@ -274,13 +274,13 @@ ASP.NET MVC 4 可加速開發行動裝置的網站和平板電腦瀏覽器。 �
 
     ![套用頁面左側@media樣式，請在右邊的樣式省略](whats-new-in-aspnet-mvc-4/_static/image17.png "方，頁面會將套用@media樣式，請在右邊的樣式省略")
 
-    <em>在左邊，將套用頁面@media省略了樣式，請在右側，樣式</em>
+    *在左邊，將套用頁面@media省略了樣式，請在右側，樣式*
 
     現在，讓我們查看行動裝置上發生的狀況：
 
     ![套用頁面左側@media樣式，請在右邊的樣式省略](whats-new-in-aspnet-mvc-4/_static/image18.png "方，頁面會將套用@media樣式，請在右邊的樣式省略")
 
-    <em>在左邊，將套用頁面@media省略了樣式，請在右側，樣式</em>
+    *在左邊，將套用頁面@media省略了樣式，請在右側，樣式*
 
     雖然您會注意到，在網頁瀏覽器中呈現的頁面時，會變更時，不非常重要的是，使用行動裝置的差異變得更明顯。 左邊的映像，我們可以看到自訂樣式改善可讀性。
 
@@ -543,11 +543,11 @@ jQuery Mobile 的預設佈景主題包含 5 個樣本指定字母 (a、 b、 c�
     ![檢視切換器在桌面檢視中呈現](whats-new-in-aspnet-mvc-4/_static/image32.png "在桌面檢視中呈現的檢視切換器")
 
     *在桌面檢視中呈現的檢視切換器*
-7. 再次切換至 行動裝置檢視，然後瀏覽至<strong>關於</strong>網頁 (http://localhost[連接埠] / Home/有關)。 請注意，即使您沒有建立 About.Mobile.cshtml 檢視，[關於] 頁面會顯示使用行動配置 (\_Layout.Mobile.cshtml)。
+7. 再次切換至 行動裝置檢視，然後瀏覽至**關於**網頁 (http://localhost[連接埠] / Home/有關)。 請注意，即使您沒有建立 About.Mobile.cshtml 檢視，[關於] 頁面會顯示使用行動配置 (\_Layout.Mobile.cshtml)。
 
     ![有關頁面](whats-new-in-aspnet-mvc-4/_static/image33.png "關於頁面")
 
-    *關於頁面*
+    *About 頁面*
 8. 最後，在桌面的網頁瀏覽器中開啟網站。 請注意，沒有任何先前的更新已受到影響桌面檢視。
 
     ![PhotoGallery 桌面檢視](whats-new-in-aspnet-mvc-4/_static/image34.png "PhotoGallery 桌面檢視")
@@ -764,7 +764,7 @@ Microsoft.NET Framework 4.5 引進了新的語言功能，在 C# 和 Visual Basi
 
 您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
 
-1. 移至[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果您已安裝 Web Platform Installer，您可以開啟它，並搜尋產品&quot; <em>Visual Studio Express 2012 for Web 含 Windows Azure SDK</em>&quot;。
+1. 移至[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果您已安裝 Web Platform Installer，您可以開啟它，並搜尋產品&quot; *Visual Studio Express 2012 for Web 含 Windows Azure SDK*&quot;。
 2. 按一下 **立即安裝**。 如果您不需要**Web Platform Installer**您將會重新導向至下載並安裝第一次。
 3. 一次**Web Platform Installer**已開啟，按一下**安裝**，啟動安裝程式。
 
@@ -805,7 +805,7 @@ Microsoft.NET Framework 4.5 引進了新的語言功能，在 C# 和 Visual Basi
 <a id="Task_1_-_Installing_WebMatrix_2"></a>
 #### <a name="task-1---installing-webmatrix-2"></a>工作 1-安裝 WebMatrix 2
 
-1. 移至[ [ https://go.microsoft.com/?linkid=9809776 ](https://go.microsoft.com/?linkid=9809776) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果您已安裝 Web Platform Installer，您可以開啟它，並搜尋產品&quot; <em>WebMatrix 2</em>&quot;。
+1. 移至[ [ https://go.microsoft.com/?linkid=9809776 ](https://go.microsoft.com/?linkid=9809776) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果您已安裝 Web Platform Installer，您可以開啟它，並搜尋產品&quot; *WebMatrix 2*&quot;。
 2. 按一下 **立即安裝**。 如果您不需要**Web Platform Installer**您將會重新導向至下載並安裝第一次。
 3. 一次**Web Platform Installer**已開啟，按一下**安裝**，啟動安裝程式。
 
@@ -875,7 +875,7 @@ Microsoft.NET Framework 4.5 引進了新的語言功能，在 C# 和 Visual Basi
 3. 在 [&quot;瀏覽&quot;] 對話方塊中，按一下**新增**。
 4. 在 [&quot;新增程式&quot;] 對話方塊中，使用下列值：
 
-   - <strong>程式</strong>:C:\Users\*{CurrentUser}<em>\AppData\Local\Microsoft\WebMatrix\Extensions\20\iPhoneSimulator\ElectricMobileSim\ElectricMobileSim.exe * （據以更新的路徑）</em>
+   - **程式**:C:\Users\*{CurrentUser}*\AppData\Local\Microsoft\WebMatrix\Extensions\20\iPhoneSimulator\ElectricMobileSim\ElectricMobileSim.exe *（據以更新的路徑）*
    - **引數**:&quot;1&quot;
    - **易記名稱**: iPhone 模擬器
 

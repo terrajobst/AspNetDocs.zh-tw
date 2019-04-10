@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: 134a202f-4eef-41fc-8e91-70efba338389
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page
 msc.type: chapter
-ms.openlocfilehash: 6836b02937ebdf3110390260633317e2d3fef43a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9558d4131205b3d696f8ce70476ff575fbccf20e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57018605"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407688"
 ---
-<a name="accessing-the-database-directly-from-an-aspnet-page"></a>直接從 ASP.NET 頁面存取資料庫
-====================
+# <a name="accessing-the-database-directly-from-an-aspnet-page"></a>直接從 ASP.NET 頁面存取資料庫
+
 > 這些教學課程會示範如何使用直接查詢資料庫，當您不需要嚴格隔離的展示層和資料存取層的 SqlDataSource 控制項。
 
 

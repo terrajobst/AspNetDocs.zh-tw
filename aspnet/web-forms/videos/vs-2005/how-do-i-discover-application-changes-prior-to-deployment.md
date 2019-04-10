@@ -8,15 +8,15 @@ ms.date: 07/25/2007
 ms.assetid: 6945a637-cab3-4a13-a678-f6d2d83c2587
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-discover-application-changes-prior-to-deployment
 msc.type: video
-ms.openlocfilehash: c6870e33ba7707ca06633876c1f453576811ce7f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2cedf4dd161751802bf197ee6b96731259bc5c2f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027105"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402930"
 ---
-<a name="how-do-i-discover-application-changes-prior-to-deployment"></a>[How Do i:]探索應用程式變更再部署？
-====================
+# <a name="how-do-i-discover-application-changes-prior-to-deployment"></a>[How Do i:]探索應用程式變更再部署？
+
 藉由[Paul 駭客](https://github.com/pjhacker)
 
 了解如何使用原始檔控制總管，從 Visual Studio Team System，探索 Web 應用程式時，所做的變更，並確保必要的變更，部署到即時網站。 我們也會探討免費的公用程式，可讓您合併在一起，以簡化部署所做的變更。

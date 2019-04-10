@@ -8,15 +8,15 @@ ms.date: 1/04/2019
 ms.assetid: 64a491a8-0ed6-4c2f-9c1c-412962eb6006
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/display_data_items_and_details
 msc.type: authoredcontent
-ms.openlocfilehash: acc2f8e78375ef0455d467e2af750ecbee623224
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 54896da5565c9383f13fc352da26bbdc3cb63a76
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044635"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405361"
 ---
-<a name="display-data-items-and-details"></a>顯示資料的項目和詳細資料
-====================
+# <a name="display-data-items-and-details"></a>顯示資料的項目和詳細資料
+
 藉由[Erik Reitan](https://github.com/Erikre)
 
 > 本系列教學課程將教導您建置 ASP.NET 4.7 和 Microsoft Visual Studio 2017 的 ASP.NET Web Forms 應用程式的基本概念。
@@ -39,9 +39,9 @@ ms.locfileid: "57044635"
 
 您可以使用幾個不同的選項，將資料繫結至伺服器控制項。 最常見的包括：
 
- * 新增資料來源控制項
- * 以手動方式將程式碼
- * 使用模型繫結
+* 新增資料來源控制項
+* 以手動方式將程式碼
+* 使用模型繫結
 
 ### <a name="use-a-data-source-control-to-bind-data"></a>使用資料來源控制項繫結資料
 

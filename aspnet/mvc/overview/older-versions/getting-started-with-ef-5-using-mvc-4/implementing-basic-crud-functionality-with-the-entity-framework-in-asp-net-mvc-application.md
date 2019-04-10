@@ -8,15 +8,15 @@ ms.date: 07/30/2013
 ms.assetid: f7bace3f-b85a-47ff-b5fe-49e81441cdf9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 58406e4d15d28e9ce41959ecfa34246007838475
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: be1fcf2c7a0eec5473b2e3a10f51d7e22656b671
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425934"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402202"
 ---
-<a name="implementing-basic-crud-functionality-with-the-entity-framework-in-aspnet-mvc-application-2-of-10"></a>在 ASP.NET MVC 應用程式 (10 個 2) 中實作 Entity framework 的基本 CRUD 功能
-====================
+# <a name="implementing-basic-crud-functionality-with-the-entity-framework-in-aspnet-mvc-application-2-of-10"></a>在 ASP.NET MVC 應用程式 (10 個 2) 中實作 Entity framework 的基本 CRUD 功能
+
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 [下載已完成的專案](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
@@ -134,11 +134,11 @@ Scaffold 的程式碼，讓學生`Index`向左翻頁`Enrollments`屬性，因為
 
 實體可能是下列其中一種[遵循狀態](https://msdn.microsoft.com/library/system.data.entitystate.aspx):
 
-- `Added`. 在資料庫中尚未存在的實體。 `SaveChanges`方法必須發出`INSERT`陳述式。
-- `Unchanged`. `SaveChanges` 方法針對這個實體不需要進行任何動作。 當您從資料庫讀取一個實體時，實體便會以此狀態開始。
-- `Modified`. 實體中一部分或全部的屬性值已經過修改。 `SaveChanges`方法必須發出`UPDATE`陳述式。
-- `Deleted`. 實體已遭標示刪除。 `SaveChanges`方法必須發出`DELETE`陳述式。
-- `Detached`. 實體未獲得資料庫內容追蹤。
+- `Added`。 在資料庫中尚未存在的實體。 `SaveChanges`方法必須發出`INSERT`陳述式。
+- `Unchanged`。 `SaveChanges` 方法針對這個實體不需要進行任何動作。 當您從資料庫讀取一個實體時，實體便會以此狀態開始。
+- `Modified`。 實體中一部分或全部的屬性值已經過修改。 `SaveChanges`方法必須發出`UPDATE`陳述式。
+- `Deleted`。 實體已遭標示刪除。 `SaveChanges`方法必須發出`DELETE`陳述式。
+- `Detached`。 實體未獲得資料庫內容追蹤。
 
 在桌面應用程式中，狀態變更通常會自動進行設定。 中的桌面應用程式類型，您會讀取一個實體，並變更其部分屬性值。 這會使得其實體狀態自動變更為 `Modified`。 當您呼叫`SaveChanges`，Entity Framework 會產生 SQL`UPDATE`陳述式可更新只有您所變更的實際的屬性。
 

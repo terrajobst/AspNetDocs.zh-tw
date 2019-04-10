@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: ff8322c9-12f3-4e24-aba6-a38046b9bb0d
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c1f64f57d4c23fe225a8268042104254e17dc456
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b3c6726c2d08e2e6ac37501f2ab455e427df82bb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044245"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414046"
 ---
-<a name="creating-model-classes-with-the-entity-framework-vb"></a>使用 Entity Framework 建立模型類別 (VB)
-====================
+# <a name="creating-model-classes-with-the-entity-framework-vb"></a>使用 Entity Framework 建立模型類別 (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教學課程中，您將了解如何使用 Microsoft Entity Framework 的 ASP.NET MVC。 您了解如何使用實體精靈來建立 ADO.NET 實體資料模型。 在本教學課程的過程中，我們會建置說明如何選取、 插入、 更新和刪除資料庫的資料使用 Entity Framework 的 web 應用程式。
@@ -116,7 +116,7 @@ Microsoft Entity Framework 是物件關聯式對應 (O/RM) 的工具，可讓您
 
 讓我們開始建立影片資料庫應用程式建立頁面，其中顯示電影資料錄的清單。 在 列表 1 中的主控制器會公開名為 index （） 的動作。 Index （） 動作會傳回所有電影資料錄的電影資料庫資料表中，利用 Entity Framework。
 
-**Listing 1 – Controllers\HomeController.vb**
+**列表 1 – Controllers\HomeController.vb**
 
 [!code-vb[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample1.vb)]
 
@@ -202,7 +202,7 @@ Microsoft Entity Framework 是物件關聯式對應 (O/RM) 的工具，可讓您
 
 最後的資料庫作業，我們需要將在本教學課程中處理，正在刪除資料庫中的記錄。 您可以使用列表 6 中的控制器動作，若要刪除特定資料庫記錄。
 
-**Listing 6 -- \Controllers\HomeController.vb (Delete action)**
+**列表 6-\Controllers\HomeController.vb （[刪除] 動作）**
 
 [!code-vb[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample9.vb)]
 

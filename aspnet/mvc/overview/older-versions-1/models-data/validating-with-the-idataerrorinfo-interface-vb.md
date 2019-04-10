@@ -8,15 +8,15 @@ ms.date: 03/02/2009
 ms.assetid: 3a8a9d9f-82dd-4959-b7c6-960e9ce95df1
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e9b989d0110c3947583fd70bd38b29dcb2bb5c31
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c64e1ea1562c3a0cfe4fb33f1c3033bb9c31bd2c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033695"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402735"
 ---
-<a name="validating-with-the-idataerrorinfo-interface-vb"></a>驗證與 IDataErrorInfo 介面 (VB)
-====================
+# <a name="validating-with-the-idataerrorinfo-interface-vb"></a>驗證與 IDataErrorInfo 介面 (VB)
+
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther 會示範如何藉由在模型類別中實作的 IDataErrorInfo 介面中顯示自訂的驗證錯誤訊息。
@@ -31,7 +31,7 @@ ms.locfileid: "57033695"
 <a id="0.6_table01"></a>
 
 
-| **資料行名稱** | **資料類型** | **允許 null 值** |
+| **資料行名稱** | **資料類型** | **允許 Null** |
 | --- | --- | --- |
 | ID | Int | False |
 | 標題 | Nvarchar(100) | False |
@@ -42,7 +42,7 @@ ms.locfileid: "57033695"
 在本教學課程中，我可以使用 Microsoft Entity Framework 產生我的資料庫模型類別。 Entity Framework 所產生的電影類別會顯示在 圖 1。
 
 
-[![電影實體](validating-with-the-idataerrorinfo-interface-vb/_static/image1.jpg)](validating-with-the-idataerrorinfo-interface-vb/_static/image1.png)
+[![T他的電影實體](validating-with-the-idataerrorinfo-interface-vb/_static/image1.jpg)](validating-with-the-idataerrorinfo-interface-vb/_static/image1.png)
 
 **圖 01**:電影實體 ([按一下以檢視完整大小的影像](validating-with-the-idataerrorinfo-interface-vb/_static/image2.png))
 
@@ -73,7 +73,7 @@ ms.locfileid: "57033695"
 影片類別是由 Entity Framework 產生的。 如果您展開 MoviesDBModel.edmx 檔案，在 方案總管 視窗中的，並在程式碼編輯器中開啟 MoviesDBModel.Designer.vb 檔案，您可以看到電影類別的程式碼 （請參閱 圖 2）。
 
 
-[![電影實體的程式碼](validating-with-the-idataerrorinfo-interface-vb/_static/image2.jpg)](validating-with-the-idataerrorinfo-interface-vb/_static/image3.png)
+[![T他的電影實體的程式碼](validating-with-the-idataerrorinfo-interface-vb/_static/image2.jpg)](validating-with-the-idataerrorinfo-interface-vb/_static/image3.png)
 
 **圖 02**:電影實體的程式碼 ([按一下以檢視完整大小的影像](validating-with-the-idataerrorinfo-interface-vb/_static/image4.png))
 
@@ -112,7 +112,7 @@ OnChanging 方法稱為權限，才會變更對應的屬性。 變更屬性之�
 > 部分方法是在您不需要實作類別中定義的方法。 如果您未實作部分方法，編譯器會移除方法簽章，並因此方法的所有呼叫都都沒有與部分方法相關聯的執行階段成本。 在 Visual Studio 程式碼編輯器 」 中，您可以藉由輸入關鍵字加入部分方法*部分*後面空間，以檢視來實作的部分清單。
 
 
-**Listing 3 - Models\Movie.vb**
+**列表 3-Models\Movie.vb**
 
 [!code-vb[Main](validating-with-the-idataerrorinfo-interface-vb/samples/sample4.vb)]
 
@@ -147,7 +147,7 @@ DefaultModelBinder 也會檢查 IDataErrorInfo.Error 屬性。 這個屬性被�
 您不需要修改 Home 控制器中使用修改過的電影類別的任何方法。 圖 3 中所顯示的網頁說明的標題或主管的表單欄位不輸入任何值時，會發生什麼事。
 
 
-[![自動建立動作方法](validating-with-the-idataerrorinfo-interface-vb/_static/image3.jpg)](validating-with-the-idataerrorinfo-interface-vb/_static/image5.png)
+[![Creating 動作方法自動](validating-with-the-idataerrorinfo-interface-vb/_static/image3.jpg)](validating-with-the-idataerrorinfo-interface-vb/_static/image5.png)
 
 **圖 03**:具有遺漏值的表單 ([按一下以檢視完整大小的影像](validating-with-the-idataerrorinfo-interface-vb/_static/image6.png))
 

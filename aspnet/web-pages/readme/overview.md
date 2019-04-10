@@ -8,15 +8,15 @@ ms.date: 01/06/2011
 ms.assetid: 36c5beeb-45a7-48a0-9c30-f82cdf5c5f5f
 msc.legacyurl: /web-pages/readme
 msc.type: content
-ms.openlocfilehash: aa852e7bbd93622154d59e0d0a13ffa680812df2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7374b1afafa9ca63309f3c0369c5efd808f7f28a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050715"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401981"
 ---
-<a name="webmatrix-readme"></a>WebMatrix 讀我檔案
-====================
+# <a name="webmatrix-readme"></a>WebMatrix 讀我檔案
+
 13 年 1 月 2011
 
 ## <a name="contents"></a>內容
@@ -25,7 +25,7 @@ ms.locfileid: "57050715"
 > 此讀我檔案適用於 WebMatrix 1.0 版。
 
 
-- [概觀](#Overview)
+- [總覽](#Overview)
 - [安裝](#Installation_Notes)
 - [如何發佈應用程式](#InstructionsForPublishingApplications)
 - [變更與問題](#ChangesAndIssues)
@@ -254,10 +254,10 @@ ms.locfileid: "57050715"
 > 
 > 1. 資料庫引擎組件，以複製*Bin*目標電腦上的應用程式的資料夾 （和子資料夾）：  
 > 
->    - 複製*C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
->        **to** *\Bin*
->    - 複製<em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\</em><strong><em>來</em></strong>\Bin\x86*
->    - 複製<em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\</em>* <strong>來</strong><em>\Bin\amd64</em>
+>    - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
+>      **to** *\Bin*
+>    - 複製*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\*  **來** *\Bin\x86*
+>    - 複製*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **來** *\Bin\amd64*
 > 
 > 2. 在網站的根資料夾中，建立或開啟*web.config*檔案。 (在 WebMatrix 1.0，這種檔案類型是可用，如果您按一下**所有**中**選擇 [檔案類型**] 對話方塊。)
 > 3. 將下列項目新增為子系`<configuration>`項目 (不是在內`<system.web>`項目):

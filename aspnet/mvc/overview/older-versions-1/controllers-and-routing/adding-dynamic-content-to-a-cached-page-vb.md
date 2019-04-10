@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: 68acd884-fb57-4486-a1be-aaa93e380780
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b361470c769b61a7b407797158eb695fe5084eda
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 0dae280dfa3028df5fda95c4366132c99a0dc3b7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423490"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409196"
 ---
-<a name="adding-dynamic-content-to-a-cached-page-vb"></a>將動態內容新增至快取的頁面 (VB)
-====================
+# <a name="adding-dynamic-content-to-a-cached-page-vb"></a>將動態內容新增至快取的頁面 (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 了解如何混合使用動態和快取的內容，在相同的頁面。 快取後替代作業可讓您顯示動態內容，例如橫幅廣告或新聞項目，內有已輸出快取的頁面。
@@ -52,7 +52,7 @@ RenderNews 方法會傳遞至 WriteSubstitution() 方法。 請注意，不會�
 
 [索引] 檢視會快取。 列表 3 中的控制站會傳回檢視。 請注意，index （） 動作以裝飾&lt;OutputCache&gt;會導致快取為 60 秒的 [索引] 檢視的屬性。
 
-**Listing 3 – Controllers\HomeController.vb**
+**列表 3 – Controllers\HomeController.vb**
 
 [!code-vb[Main](adding-dynamic-content-to-a-cached-page-vb/samples/sample3.vb)]
 
@@ -66,7 +66,7 @@ RenderNews 方法會傳遞至 WriteSubstitution() 方法。 請注意，不會�
 
 利用快取後替代作業更簡單的方法是封裝 WriteSubstitution() 方法，在自訂的協助程式方法的呼叫。 Helper 方法，在 列表 4 說明這種方法。
 
-**Listing 4 – Helpers\AdHelper.vb**
+**列表 4 – Helpers\AdHelper.vb**
 
 [!code-vb[Main](adding-dynamic-content-to-a-cached-page-vb/samples/sample4.vb)]
 

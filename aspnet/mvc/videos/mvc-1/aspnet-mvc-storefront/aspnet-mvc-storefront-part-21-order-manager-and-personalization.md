@@ -8,15 +8,15 @@ ms.date: 10/16/2008
 ms.assetid: f1490fdc-ee7d-4fee-a4e5-25d141d88478
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization
 msc.type: video
-ms.openlocfilehash: eedb78dcb6ffafc23277921d57ade0a7c9c04a88
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 58de55e6d19c01a367aaa571800da008b0c8c54c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029345"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403244"
 ---
-<a name="aspnet-mvc-storefront-part-21-order-manager-and-personalization"></a>ASP.NET MVC 店面第 21 部分：訂單管理員與個人化
-====================
+# <a name="aspnet-mvc-storefront-part-21-order-manager-and-personalization"></a>ASP.NET MVC 店面第 21 部分：訂單管理員與個人化
+
 藉由[Rob Conery](https://github.com/robconery)
 
 在本節目中我會建立訂單管理員頁面，並討論與 「 訂單履行 」 相關的各種問題。 此外，我會介紹，讓使用者更易記的體驗個人化功能。

@@ -8,15 +8,15 @@ ms.date: 09/08/2014
 ms.assetid: 732a2316-e49f-4f72-becd-0cd72f14457e
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
 msc.type: authoredcontent
-ms.openlocfilehash: 23d08d5a05a8321fbc794e2c9b54cc39c9b5baf6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7263a7d7ee791be8a1369934aac4d091736a658b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031055"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417477"
 ---
-<a name="membership-and-administration"></a>成員資格及系統管理
-====================
+# <a name="membership-and-administration"></a>成員資格及系統管理
+
 藉由[Erik Reitan](https://github.com/Erikre)
 
 [下載 Wingtip Toys 範例專案 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下載電子書 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
@@ -66,12 +66,12 @@ ASP.NET Web Forms 提供成員資格功能。 藉由使用預設範本，您會�
    字母"A"（反白顯示方法的開頭會加上底線。
 7. 停留在字母"A"，然後按一下 UI，可讓您產生方法虛設常式`AddUserAndRole`方法。 
 
-    ![成員資格和 Advministration-產生方法虛設常式](membership-and-administration/_static/image1.png)
+    ![成員資格和系統管理-產生方法虛設常式](membership-and-administration/_static/image1.png)
 8. 按一下標題為的選項：  
     `Generate method stub for "AddUserAndRole" in "WingtipToys.Logic.RoleActions"`
 9. 開啟*RoleActions.cs*檔案*邏輯*資料夾。  
    `AddUserAndRole`方法已加入至類別檔案。
-10. 修改*RoleActions.cs*檔案，藉由移除`NotImplementedeException`和新增以黃色反白顯示的程式碼，使它看起來像這樣：  
+10. 修改*RoleActions.cs*檔案，藉由移除`NotImplementedException`和新增以黃色反白顯示的程式碼，使它看起來像這樣：  
 
     [!code-csharp[Main](membership-and-administration/samples/sample3.cs?highlight=5-7,15-51)]
 

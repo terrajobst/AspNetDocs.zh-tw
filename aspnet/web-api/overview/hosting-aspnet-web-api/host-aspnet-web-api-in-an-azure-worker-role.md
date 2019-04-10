@@ -1,22 +1,23 @@
 ---
 uid: web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
-title: 裝載 ASP.NET Web API 2 中的 Azure 背景工作角色 |Microsoft Docs
+title: 裝載 ASP.NET Web API 2 中的 Azure 背景工作角色-ASP.NET 4.x
 author: MikeWasson
-description: 本教學課程會示範如何裝載在 Azure 背景工作角色中的 ASP.NET Web API 使用 OWIN 自我裝載 Web API 架構。 Open Web Interface for.NET (OWIN) de...
+description: 教學課程：裝載 Azure 背景工作角色，使用 OWIN 自我裝載 Web API 架構中的 ASP.NET Web API。
 ms.author: riande
 ms.date: 04/02/2014
+ms.custom: seoapril2019
 ms.assetid: 6980ee2e-d6b0-4a08-8fb6-ab96362dd0e3
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 40cb1a4514beaf81e7ed75bbd3e478f2ba146fe5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bfb23aafb814010e8651965dad91ca20a37fd786
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063915"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404620"
 ---
-<a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>裝載 ASP.NET Web API 2 中的 Azure 背景工作角色
-====================
+# <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>裝載 ASP.NET Web API 2 中的 Azure 背景工作角色
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 > 本教學課程會示範如何裝載在 Azure 背景工作角色中的 ASP.NET Web API 使用 OWIN 自我裝載 Web API 架構。
@@ -30,7 +31,7 @@ ms.locfileid: "57063915"
 >
 > - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - Web API 2
-> - [Azure SDK for .NET 2.3](https://azure.microsoft.com/downloads/)
+> - [Azure SDK for.NET 2.3](https://azure.microsoft.com/downloads/)
 
 
 ## <a name="create-a-microsoft-azure-project"></a>建立 Microsoft Azure 專案

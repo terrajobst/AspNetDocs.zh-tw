@@ -8,15 +8,15 @@ ms.date: 01/31/2007
 ms.assetid: 6f93a786-93f3-4a48-8fd5-001016550619
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-draggable-panel-extender
 msc.type: video
-ms.openlocfilehash: eddca11a1edf7952e42eadd4e40023363eb78857
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c6e7a23c2b642f0aab12a88b5aae6a215ad1e74c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030585"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404633"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-draggable-panel-extender"></a>[How Do i:]使用 ASP.NET AJAX 可拖曳面板擴充項？
-====================
+# <a name="how-do-i-use-the-aspnet-ajax-draggable-panel-extender"></a>[How Do i:]使用 ASP.NET AJAX 可拖曳面板擴充項？
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 使用 ASP.NET AJAX 可拖曳面板擴充項中，您可以內容面板提供可讓使用者移動面板網頁周圍的標頭區域中。

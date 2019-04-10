@@ -1,22 +1,23 @@
 ---
 uid: web-api/overview/advanced/configuring-aspnet-web-api
-title: 設定 ASP.NET Web API 2 |Microsoft Docs
+title: 設定 ASP.NET Web API 2-ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 設定 ASP.NET Web API 2 適用於 ASP.NET 4.x:設定設定、 ASP.NET 4.x 裝載、 OWIN 自我裝載的全域服務和前的控制站設定。
 ms.author: riande
 ms.date: 03/31/2014
+ms.custom: seoapril2019
 ms.assetid: 9e10a700-8d91-4d2e-a31e-b8b569fe867c
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 270268b77f398084169843e20b0a2bf9f1c2a011
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 39629ba404e536b29318db00bce8c4443a782497
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423152"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411939"
 ---
-<a name="configuring-aspnet-web-api-2"></a>設定 ASP.NET Web API 2
-====================
+# <a name="configuring-aspnet-web-api-2"></a>設定 ASP.NET Web API 2
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 本主題描述如何設定 ASP.NET Web API。
@@ -35,7 +36,7 @@ Web API 組態設定會定義在[HttpConfiguration](https://msdn.microsoft.com/l
 | 成員 | 描述 |
 | --- | --- |
 | **DependencyResolver** | 可讓控制站的相依性插入。 請參閱[使用 Web API 的相依性解析程式](dependency-injection.md)。 |
-| **篩選** | 動作篩選條件。 |
+| **篩選條件** | 動作篩選條件。 |
 | **格式器** | [媒體類型格式器](../formats-and-model-binding/media-formatters.md)。 |
 | **IncludeErrorDetailPolicy** | 指定伺服器是否應該在 HTTP 回應訊息中包含錯誤詳細資料，例如例外狀況訊息和堆疊追蹤。 請參閱[IncludeErrorDetailPolicy](https://msdn.microsoft.com/library/system.web.http.includeerrordetailpolicy(v=vs.108))。 |
 | **初始設定式** | 執行最後的初始化函式**HttpConfiguration**。 |

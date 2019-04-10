@@ -8,16 +8,16 @@ ms.date: 10/06/2010
 ms.assetid: f44c166e-7e91-48a0-a6f8-d9285f3594e5
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: 7342b5f4a7e2327f3f3850941510a6e46ec30842
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 36bc314c6709c34863d86158419257be99f4084f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063865"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407103"
 ---
-<a name="aspnet-mvc-3"></a>ASP.NET MVC 3
-====================
-- [概觀](#overview)
+# <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
+
+- [總覽](#overview)
 - [安裝注意事項](#installation-notes)
 - [軟體需求](#software-requirements)
 - [文件](#documentation)
@@ -60,7 +60,7 @@ ms.locfileid: "57063865"
 - [ASP.NET MVC 3 的候選版 (2010 年 11 月 9 日)](#TOC_ASP_NET_3_RC)
 
     - [在 ASP.NET MVC 3 RC 的新功能](#_Toc276711785)
-    - [NuGet Package Manager](#_Toc276711786)
+    - [NuGet 封裝管理員](#_Toc276711786)
     - [改善 [新增專案] 對話方塊](#_Toc276711787)
     - [無工作階段的控制站](#_Toc276711788)
     - [新的驗證屬性](#_Toc276711789)
@@ -435,7 +435,7 @@ ASP.NET MVC 3 專案範本現在包含最新版的 jQuery、 jQuery 驗證和 jQ
 <a id="_Toc2_10"></a>
 ### <a name="fixed-model-declaration-to-not-add-whitespace-to-the-document"></a>固定@model宣告，以將空白新增至文件
 
-在舊版中， <em>@model</em>檢視頂端的宣告會加入呈現的 HTML 輸出中的空白行。 這個問題已修正，以便宣告不會產生空白字元。
+在舊版中， *@model*檢視頂端的宣告會加入呈現的 HTML 輸出中的空白行。 這個問題已修正，以便宣告不會產生空白字元。
 
 <a id="_Toc2_11"></a>
 ### <a name="added-fileextensions-property-to-view-engines-to-support-engine-specific-file-names"></a>已新增 「 FileExtensions"屬性，以支援特定引擎的檔案名稱的檢視引擎
@@ -462,7 +462,7 @@ ASP.NET MVC 3 專案範本現在包含最新版的 jQuery、 jQuery 驗證和 jQ
 - 在舊版的 ASP.NET MVC 中，每個要求除了在少數情況下建立動作篩選條件。 此行為是永遠不會保證的行為，但只是實作詳細資料，並篩選條件的合約，就是將它們視為無狀態。 在 ASP.NET MVC 3 中，篩選會更積極地快取。 因此，您可能會中斷任何自訂動作篩選條件未正確儲存執行個體的狀態。
 - 執行例外狀況篩選條件的順序已變更為具有相同的例外狀況篩選條件*順序*值。 在 ASP.NET MVC 2 和舊版中，例外狀況的篩選具有相同的控制器*順序*值，在動作方法上所執行的動作方法的例外狀況篩選條件之前。 這通常會發生這個狀況，例外狀況篩選條件已套用時沒有指定之*順序*值。 在 ASP.NET MVC 3 中，此順序已顛倒，因此最特定的例外狀況處理常式會先執行。 如同舊版本中，如果*順序*屬性明確指定，則篩選條件會執行指定的順序。
 - 名為的新屬性*FileExtensions*已加入至*VirtualPathProviderViewEngine*基底類別。 當 ASP.NET 尋找檢視的路徑 （不是依名稱） 時，會被視為唯一的檢視，以這個新屬性所指定的清單中所包含的副檔名。 若要讓 Web 表單檢視的自訂副檔名註冊自訂的組建提供者，而且提供者使用的完整路徑，而不是名稱參考這些檢視，這是在應用程式中的重大變更。 因應措施是要修改的值*FileExtensions*屬性，以加入自訂的副檔名。
-- 直接實作的自訂控制器 factory 實作<em>IControllerFactory</em>介面必須提供新的實作<em>GetControllerSessionBehavior</em> <em>已新增至這個版本中的介面方法</em>。 一般情況下，建議，不直接實作此介面，並改為衍生您的類別，從<em>DefaultControllerFactory</em>。
+- 直接實作的自訂控制器 factory 實作*IControllerFactory*介面必須提供新的實作*GetControllerSessionBehavior*方法加入此版本中的介面。 一般情況下，建議，不直接實作此介面，並改為衍生您的類別，從*DefaultControllerFactory*。
 
 <a id="_Toc2_KI"></a>
 ## <a name="known-issues"></a>已知問題
@@ -666,7 +666,7 @@ ASP.NET MVC 3 包含 NuGet 套件管理員，也就是新增程式庫的整合�
 
 新的 ASP.NET Web Pages 技術包含一組可用於加入檢視及控制器的常用的功能的協助程式方法。 ASP.NET MVC 3 支援使用這些 helper 方法，在控制器和檢視 （適當的話）。 這些方法都包含在 System.Web.Helpers 組件。 下表列出數個 ASP.NET Web Pages helper 方法。
 
-| **Helper** | **描述** |
+| **協助程式** | **描述** |
 | --- | --- |
 | 圖表 | 呈現的圖表檢視中。 包含 Chart.ToWebImage、 Chart.Save，等 Chart.Write 的方法。 |
 | 密碼編譯 | 它使用雜湊演算法，以建立正確 salted 和雜湊密碼。 |

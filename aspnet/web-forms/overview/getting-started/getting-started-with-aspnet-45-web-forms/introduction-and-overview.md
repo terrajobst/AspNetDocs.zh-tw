@@ -8,15 +8,15 @@ ms.date: 01/09/2019
 ms.assetid: 9b96eaa1-8ef0-4338-a2e8-e0f970bfaf68
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: b51ffda9aa10dd8b1fe98c4b56f70994eb016cec
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 3a39e8d1979a743101d728eb3430e9aa0efb1252
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425713"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415631"
 ---
-<a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2017"></a>Getting Started with ASP.NET 4.5 Web Form 和 Visual Studio 2017
-====================
+# <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2017"></a>Getting Started with ASP.NET 4.5 Web Form 和 Visual Studio 2017
+
 
 [下載 Wingtip Toys 範例專案 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下載電子書 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
@@ -39,7 +39,7 @@ ASP.NET Web Form 的新的開發人員是本教學課程系列的目標對象。
 
 若要檢閱這些區域，請考慮研究下列內容：
 
-- [Getting Started with Visual C#](https://msdn.microsoft.com/library/a72418yk.aspx)
+- [Visual C# 使用者入門](https://msdn.microsoft.com/library/a72418yk.aspx)
 - [Web 開發](https://msdn.microsoft.com/beginner/bb308760.aspx)， [HTML、 CSS、 JavaScript、 SQL、 PHP、 JQuery](http://w3schools.com/)
 - [關聯式資料庫](http://en.wikipedia.org/wiki/Relational_database)
 - [多層式架構](http://en.wikipedia.org/wiki/Multitier_architecture)
@@ -182,7 +182,7 @@ PayPal 確認您的帳戶、 訂單和付款資訊。
 
 完成之後的教學課程系列，測驗測試您的知識，並強化的重要概念。 每個問題提供的說明和其他指引的連結。
 
- * [ASP.NET Web Form 測驗](https://blogs.msdn.microsoft.com/erikreitan/2016/01/08/asp-net-web-forms-quiz/) 
+* [ASP.NET Web Form 測驗](https://blogs.msdn.microsoft.com/erikreitan/2016/01/08/asp-net-web-forms-quiz/) 
 
 ## <a name="tutorial-support-and-comments"></a>教學課程的支援和註解
 

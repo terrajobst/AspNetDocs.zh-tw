@@ -8,15 +8,15 @@ ms.date: 08/14/2010
 ms.assetid: e8f1515c-c277-47ff-a23e-224118f13f02
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 msc.type: authoredcontent
-ms.openlocfilehash: f55e558dd056e86bdd2310894959aef02a9d8de2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3eff3aceea302c51e6970bb13fbee3a8bf98a71d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046875"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411978"
 ---
-<a name="adding-a-view"></a>新增檢視
-====================
+# <a name="adding-a-view"></a>新增檢視
+
 藉由[Scott Hanselman](https://github.com/shanselman)
 
 > 這是初學者教學課程中，將會介紹 ASP.NET MVC 的基本概念。 您將建立簡單 web 應用程式，從資料庫讀取與寫入。 請瀏覽[ASP.NET MVC 學習中心](../../../index.md)來尋找其他 ASP.NET MVC 教學課程和範例。
@@ -38,7 +38,7 @@ ms.locfileid: "57046875"
 
 這會顯示 [新增檢視] 對話方塊提供我們一些我們要如何建立可供我們 Index 方法檢視範本的選項。 現在，請勿變更任何項目，並只要按一下 [新增] 按鈕。
 
-[![新增檢視對話方塊](getting-started-with-mvc-part3/_static/image3.png)](getting-started-with-mvc-part3/_static/image2.png)
+[![Add 檢視對話方塊](getting-started-with-mvc-part3/_static/image3.png)](getting-started-with-mvc-part3/_static/image2.png)
 
 按一下 [新增] 後，新的資料夾和新的檔案會出現在方案資料夾中，如下所示。 我現在會有 [HelloWorld] 資料夾之下的檢視和 Index.aspx 檔案在該資料夾內。
 
@@ -80,7 +80,7 @@ ms.locfileid: "57046875"
 
 執行您的應用程式，並瀏覽 /Movies。 請注意，瀏覽器標題、 主要標題和次要標題已變更。 它很容易就能只進行小變更的應用程式中的重大變更對您的檢視。
 
-[![電影清單-Windows Internet Explorer](getting-started-with-mvc-part3/_static/image9.png)](getting-started-with-mvc-part3/_static/image8.png)
+[![Movie List - Windows Internet Explorer](getting-started-with-mvc-part3/_static/image9.png)](getting-started-with-mvc-part3/_static/image8.png)
 
 我們的一些程式 （在此情況下 「 Hello World ！"的 「 資料 」 訊息） 很難透過自動程式化。 我們有 V （檢視），我們有 C （控制站），但沒有 M （模型） 尚未。 我們將稍後詳細說明如何建立資料庫，並從其擷取模型資料。
 
@@ -98,7 +98,7 @@ ms.locfileid: "57046875"
 
 現在我們需要 褖畫惎檢視範本 ！ 以滑鼠右鍵按一下該 褖畫惎方法中，然後選取 加入檢視。 此時，我們會核取 [建立強型別檢視]，並從下拉式清單中選取我們 WelcomeViewModel 類別。 這個新的檢視只會知道 WelcomeViewModels 和任何其他類型的物件。
 
-> *注意：您必須一次之後才會出現在下拉式清單中新增您 WelcomeViewModel 的編譯。*
+> *附註：您必須一次之後才會出現在下拉式清單中新增您 WelcomeViewModel 的編譯。*
 
 
 以下是您的 [新增檢視] 對話方塊的外觀。 按一下 [新增] 按鈕。 ![新增檢視圈選起來](getting-started-with-mvc-part3/_static/image10.png)
@@ -109,11 +109,11 @@ ms.locfileid: "57046875"
 
 另外請注意，因為您正在輸入，因為我們說過這 WelcomeViewModel 相關檢視 （已婚，記得嗎？），我們得到很有幫助的 Intellisense，每次我們參考我們的模型物件，在以下螢幕擷取畫面所示：
 
-[![NumTime 原始程式碼](getting-started-with-mvc-part3/_static/image12.png)](getting-started-with-mvc-part3/_static/image11.png)
+[![NumTime 原始碼](getting-started-with-mvc-part3/_static/image12.png)](getting-started-with-mvc-part3/_static/image11.png)
 
 執行應用程式，並瀏覽`http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4`一次。 現在我們從 URL 取得資料，則會自動傳遞到控制器，控制器會封裝將資料分成 ViewModel，並將拖曳至我們的檢視該物件傳遞。 檢視比對使用者顯示為 HTML 的資料。
 
-[![歡迎使用-Windows Internet Explorer](getting-started-with-mvc-part3/_static/image14.png)](getting-started-with-mvc-part3/_static/image13.png)
+[![Welcome - Windows Internet Explorer](getting-started-with-mvc-part3/_static/image14.png)](getting-started-with-mvc-part3/_static/image13.png)
 
 這是一種模型，"M"，但不是資料庫類型。 讓我們看什麼我們已了解並建立電影的資料庫。
 

@@ -8,15 +8,15 @@ ms.date: 04/30/2009
 ms.assetid: 50a55e3b-3f5c-429b-baf9-730221e9ef4c
 msc.legacyurl: /web-forms/videos/building-35-applications/css
 msc.type: video
-ms.openlocfilehash: f11d3a72db7adc376cf1213eba1f1a820471305f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 04cea82af810f08e1d425fcbf3d3c2639fbc3775
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57058415"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412043"
 ---
-<a name="css"></a>CSS
-====================
+# <a name="css"></a>CSS
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 階層式樣式表是不可或缺現代網頁程式開發，Visual Web Developer 2008 包含一組功能強大的 CSS 建置協助功能。 在這段影片中了解 VWD 的 CSS 編輯器、 產生器、 管理員和 IntelliSense。

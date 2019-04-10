@@ -8,15 +8,15 @@ ms.date: 02/10/2010
 ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 93ee29ae125e9442ee755998768a8105dfb485c0
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 0991ce5c866aa9e31ef23812e953d9ee10dda3d1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424296"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409716"
 ---
-<a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 與 Visual Studio 2010 網頁程式開發概觀
-====================
+# <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 與 Visual Studio 2010 網頁程式開發概觀
+
 > 本文件會包含在.net Framework 4 和 Visual Studio 2010 中的 asp.net 提供許多新功能的概觀。
 > 
 > [下載此白皮書](https://download.microsoft.com/download/7/1/A/71A105A9-89D6-4201-9CC5-AD6A3B7E2F22/ASP_NET_4_and_Visual_Studio_2010_Web_Development_Overview.pdf)
@@ -66,7 +66,7 @@ ms.locfileid: "58424296"
 [資料註解屬性驗證支援](#0.2__Toc253429276 "_Toc253429276")  
 [樣板化 Helper](#0.2__Toc253429277 "_Toc253429277")
 
-**[Dynamic Data](#0.2__Toc253429278 "_Toc253429278")**  
+**[動態資料](#0.2__Toc253429278 "_Toc253429278")**  
 [對於現有的專案中啟用動態資料](#0.2__Toc253429279 "_Toc253429279")  
 [宣告式 DynamicDataManager 控制項語法](#0.2__Toc253429280 "_Toc253429280")  
 [實體範本](#0.2__Toc253429281 "_Toc253429281")  
@@ -202,7 +202,7 @@ ASP.NET 4 也可讓您設定的 URL 字元檢查所使用的字元。 當 ASP.NE
 
 [!code-xml[Main](overview/samples/sample11.xml)]
 
-根據預設， <em>requestPathInvalidChars</em>屬性定義為無效的八個字元。 (在字串指派給<em>requestPathInvalidChars</em>預設<em>，</em>小於 (&lt;)、 大於 (&gt;)，和連字號 (&amp;) 字元編碼，因為`Web.config`檔案是 XML 檔案。)視需要您可以自訂的一組無效的字元。
+根據預設， *requestPathInvalidChars*屬性定義為無效的八個字元。 (已指派給字串中*requestPathInvalidChars*根據預設，小於 (&lt;)、 大於 (&gt;)，和連字號 (&amp;) 的字元都會編碼，因為`Web.config`檔案是 XML 檔案）。視需要您可以自訂的一組無效的字元。
 
 > [!NOTE]
 > 請注意，ASP.NET 4 一律會拒絕包含字元 0x00 到 0x1F ASCII 範圍中的 URL 路徑，因為這些是在 IETF 的 RFC 2396 定義的無效的 URL 字元 ([http://www.ietf.org/rfc/rfc2396.txt](http://www.ietf.org/rfc/rfc2396.txt))。 Windows Server 版本上執行 IIS 6 或更新版本中，http.sys 通訊協定的裝置驅動程式會自動拒絕 Url 具有這些字元。
@@ -628,7 +628,7 @@ ASP.NET 會自動運作出正確的路由 （也就是它會產生正確的 URL�
 
 [!code-aspx[Main](overview/samples/sample46.aspx)]
 
-在此情況下，路由參數 searchterm 的值將用於@companyname中的參數<em>選取</em>陳述式。
+在此情況下，路由參數 searchterm 的值將用於@companyname中的參數*選取*陳述式。
 
 <a id="0.2__Toc224729037"></a><a id="0.2__Toc253429261"></a><a id="0.2__Toc243304635"></a>
 
@@ -982,7 +982,7 @@ ASP.NET 2.0 和更新版本的呈現系統特定隱藏的欄位 (例如*隱藏*�
 根據預設，下列的 ASP.NET Web 伺服器控制項支援範本自動包裝在外部資料表，可用來套用內嵌樣式：
 
 - *FormView*
-- *Login*
+- *登入*
 - *PasswordRecovery*
 - *ChangePassword*
 - *精靈*

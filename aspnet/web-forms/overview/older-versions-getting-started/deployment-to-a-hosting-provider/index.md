@@ -8,15 +8,15 @@ ms.date: 11/29/2011
 ms.assetid: 6798c7e4-f08e-4802-9fa5-443f67d5df62
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider
 msc.type: chapter
-ms.openlocfilehash: 4fd9e95fbb5c73f7bae1b9d47228eb56a6976125
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 87de6c92375594ab6ee726f1b66a94a0db793fd2
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021425"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417048"
 ---
-<a name="aspnet-4---web-deployment-with-sql-server-compact-using-visual-studio"></a>ASP.NET 4 - 使用 Visual Studio 的 SQL Server Compact Web 部署
-====================
+# <a name="aspnet-4---web-deployment-with-sql-server-compact-using-visual-studio"></a>ASP.NET 4 - 使用 Visual Studio 的 SQL Server Compact Web 部署
+
 > 本教學課程系列會說明如何向使用 SQL Server Compact 可透過網際網路將它部署到協力廠商主機服務提供者的 ASP.NET web 應用程式。 需要 Visual Studio 2012 RC 或 Visual Studio 2010。 如需有關最新部署功能，或如需如何部署 SQL Server 版本以外的 SQL Server Compact 的詳細資訊，請參閱[使用 Visual Studio 的 ASP.NET Web 部署](../../deployment/visual-studio-web-deployment/introduction.md)。
 
 

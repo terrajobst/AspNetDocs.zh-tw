@@ -8,15 +8,15 @@ ms.date: 01/27/2009
 ms.assetid: 0e7b4d85-2c46-4eaf-b6a8-6cd566a67334
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9402d7e053ef11eeefa92d112b05ec255d5ec6f7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0f824bd5e080d42a9df3525ca47b87bcef407f7a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033665"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405621"
 ---
-<a name="improving-performance-with-output-caching-vb"></a>使用輸出快取改善效能 (VB)
-====================
+# <a name="improving-performance-with-output-caching-vb"></a>使用輸出快取改善效能 (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教學課程中，您將了解如何大幅改善您的 ASP.NET MVC web 應用程式的效能利用輸出快取。 您了解如何快取，因此不需要相同的內容，這是要建立新的使用者叫用動作的每個階段，從控制器動作傳回的結果。
@@ -32,7 +32,7 @@ by [Microsoft](https://github.com/microsoft)
 
 啟用輸出快取加&lt;OutputCache&gt;屬性設定為個別的控制器動作或整個控制器類別。 例如，列表 1 中的控制站會公開名為 index （） 的動作。 Index （） 動作的輸出快取 10 秒的時間。
 
-**Listing 1 – Controllers\HomeController.vb**
+**列表 1 – Controllers\HomeController.vb**
 
 [!code-vb[Main](improving-performance-with-output-caching-vb/samples/sample1.vb)]
 
@@ -85,7 +85,7 @@ by [Microsoft](https://github.com/microsoft)
 
 例如，列表 3 中的控制站會公開名為 GetName() 傳回目前的使用者名稱的動作。 如果 Jack 登入網站，且叫用 GetName() 動作然後動作傳回的字串"Hi Jack"。 如果接下來，Jill 登入網站，並叫用 GetName() 動作然後她也會取得字串"Hi Jack"。 Jack 一開始會叫用的控制器動作之後，所有使用者的 web 伺服器上會快取字串。
 
-**Listing 3 – Controllers\BadUserController.vb**
+**列表 3 – Controllers\BadUserController.vb**
 
 [!code-vb[Main](improving-performance-with-output-caching-vb/samples/sample3.vb)]
 

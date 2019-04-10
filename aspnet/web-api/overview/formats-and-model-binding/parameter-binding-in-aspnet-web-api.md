@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
-title: ASP.NET Web API 中繫結的參數 |Microsoft Docs
+title: 參數繫結在 ASP.NET Web API-ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 描述 Web API 如何繫結參數，以及如何自訂繫結程序，在 ASP.NET 4.x。
 ms.author: riande
 ms.date: 07/11/2013
+ms.custom: seoapril2019
 ms.assetid: e42c8388-04ed-4341-9fdb-41b1b4c06320
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: a022138c594154109ff0bfba85949099e6b2d2a2
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: f121f12ce689a079412bbd5392fde4fea863ff1f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422749"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401968"
 ---
-<a name="parameter-binding-in-aspnet-web-api"></a>ASP.NET Web API 中繫結的參數
-====================
+# <a name="parameter-binding-in-aspnet-web-api"></a>ASP.NET Web API 中繫結的參數
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
-當 Web API 控制器上呼叫方法時，它必須設定參數的值，這個程序稱為*繫結*。 這篇文章描述 Web API 如何繫結參數，以及如何自訂繫結程序。
+這篇文章描述 Web API 如何繫結參數，以及如何自訂繫結程序。 當 Web API 控制器上呼叫方法時，它必須設定參數的值，這個程序稱為*繫結*。 
 
 根據預設，Web API 會使用下列規則來將參數繫結：
 

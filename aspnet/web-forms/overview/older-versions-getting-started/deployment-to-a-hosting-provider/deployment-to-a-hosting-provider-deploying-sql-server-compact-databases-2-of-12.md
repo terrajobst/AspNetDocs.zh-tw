@@ -8,15 +8,15 @@ ms.date: 11/17/2011
 ms.assetid: c3c76516-4c48-4153-bd03-d70e3a3edbb0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 9b3d47c3c8fe5f0b37f1d45e19341df3f91a5bb0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: cc8568847e050e868a3e7563b5fc1fc6fbf25d86
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57059355"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405478"
 ---
-<a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>部署 ASP.NET Web 應用程式與 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer:部署 SQL Server Compact 資料庫-2 / 12
-====================
+# <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>部署 ASP.NET Web 應用程式與 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer:部署 SQL Server Compact 資料庫-2 / 12
+
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 [下載入門專案](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
@@ -138,7 +138,7 @@ NuGet 套件安裝通常會處理所需的一切若要部署此軟體與應用�
 > [!NOTE]
 > 將程式碼加入`Seed`方法是，您可以將固定的資料插入資料庫的眾多方法之一。 替代方式是將程式碼加入`Up`和`Down`移轉的每個類別的方法。 `Up`和`Down`方法包含實作資料庫變更的程式碼。 您會看到範例在[部署資料庫更新](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)教學課程。
 > 
-> 您也可以撰寫使用執行 SQL 陳述式的程式碼`Sql`方法。 比方說，如果您已將預算資料行加入將 Department 資料表，而且想要移轉過程中初始化所有部門預算 $ 1，000.00，您可以新增的程式碼的下一行`Up`的移轉方法：
+> 您也可以撰寫使用執行 SQL 陳述式的程式碼`Sql`方法。 比方說，如果您已將預算資料行加入將 Department 資料表，而且想要移轉過程中初始化所有部門預算 $ 1，000.00，您可以新增下列一行程式碼`Up`的移轉方法：
 > 
 > `Sql("UPDATE Department SET Budget = 1000");`
 > 

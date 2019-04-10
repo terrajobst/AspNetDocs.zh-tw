@@ -8,15 +8,15 @@ ms.date: 08/21/2009
 ms.assetid: a9f317b0-28c3-4838-bae0-cfa5ed5b3110
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner
 msc.type: video
-ms.openlocfilehash: 9a09b51ae86ee635a682ce5a2d90f2e7485a7edf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bcaf596af8c78cf0765eb407c5a06854d2031b2d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056285"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405634"
 ---
-<a name="what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner"></a>ASP.NET MVC 是什麼？ 開發人員建置 NerdDinner 的 80 分鐘技術影片
-====================
+# <a name="what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner"></a>ASP.NET MVC 是什麼？ 開發人員建置 NerdDinner 的 80 分鐘技術影片
+
 藉由[Rob Conery](https://github.com/robconery)
 
 在建置使用 ASP.NET MVC 應用程式的深入教學課程。 在這段影片中，我們建立 Nerddinner.com 和專輯封面問題，例如 Unit Testing、 Javascript （使用 jQuery），以及如何使用 Visual Studio 2008 的新工具功能安裝具有 ASP.NET MVC 專案範本的基本概念。

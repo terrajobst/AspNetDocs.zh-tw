@@ -8,15 +8,15 @@ ms.date: 04/29/2013
 ms.assetid: 3fd9f11c-799b-4001-bd60-1e70cfc61c19
 msc.legacyurl: /signalr/overview/older-versions/scaleout-in-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 78e53c38ec760334cecee0431d52d993a657b908
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9bad72d31a0ebc491910ebb128b3b3a7fb537958
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065535"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402683"
 ---
-<a name="introduction-to-scaleout-in-signalr-1x"></a>SignalR 1.x 的向外延展簡介
-====================
+# <a name="introduction-to-scaleout-in-signalr-1x"></a>SignalR 1.x 的向外延展簡介
+
 藉由[Mike Wasson](https://github.com/MikeWasson)， [Patrick Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -44,9 +44,9 @@ SignalR 目前提供三個的背板：
 
 下列主題包含每個後擋板逐步教學的課程：
 
-- [SignalR 向外延展與 Azure 服務匯流排](scaleout-with-windows-azure-service-bus.md)
-- [SignalR 向外延展與 Redis](scaleout-with-redis.md)
-- [SignalR 向外延展與 SQL Server](scaleout-with-sql-server.md)
+- [使用 Azure 服務匯流排的 SignalR 向外延展](scaleout-with-windows-azure-service-bus.md)
+- [使用 Redis 的 SignalR 向外延展](scaleout-with-redis.md)
+- [使用 SQL Server 的向外延展](scaleout-with-sql-server.md)
 
 ## <a name="implementation"></a>實作
 

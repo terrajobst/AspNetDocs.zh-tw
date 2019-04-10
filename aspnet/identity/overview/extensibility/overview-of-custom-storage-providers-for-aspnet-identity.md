@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
-title: ASP.NET Identity 的自訂儲存體提供者概觀 |Microsoft Docs
+title: 概觀的自訂儲存體提供者，ASP.NET 身分識別-ASP.NET 4.x
 author: Rick-Anderson
 description: ASP.NET 身分識別是一種可延伸的系統可讓您建立自己的儲存體提供者，並插入您的應用程式中而不需要重新使用的應用...
 ms.author: riande
 ms.date: 10/13/2014
 ms.assetid: 681a9204-462e-4260-9a0b-19f0644d6ad7
+ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: d819fabf4f367c8f6d0ce857bc248a2b812c2b21
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 71201e9d91080855350349b966fe7916ce21a909
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58422203"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411263"
 ---
-<a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>ASP.NET Identity 的自訂儲存體提供者概觀
-====================
+# <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>ASP.NET Identity 的自訂儲存體提供者概觀
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > ASP.NET 身分識別是可延伸系統，可讓您建立自己的儲存體提供者，並插入您的應用程式中而不需要重新使用應用程式。 本主題描述如何建立 ASP.NET Identity 的自訂儲存體提供者。 它涵蓋了重要的概念來建立您自己的儲存體提供者，但它不是實作自訂的儲存體提供者的逐步解說。

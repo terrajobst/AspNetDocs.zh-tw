@@ -119,6 +119,7 @@ DocFX 需要：
   ```console
   docfx --serve
   ```
+
 * 在瀏覽器中，巡覽至 `http://localhost:8080/group1-dest/`。
 
 ### <a name="mono-instructions"></a>Mono 指示
@@ -128,6 +129,7 @@ DocFX 需要：
   ```console
   brew install mono
   ```
+
 * 下載[最新版的 DocFX](https://github.com/dotnet/docfx/releases)。
 * 將壓縮檔解壓縮到 *$HOME/bin/docfx*。
 * 在 bash shell 中建立 **docfx** 的別名配對。 第一個別名是用來建置文件。 第二個別名是用來建置及提供文件。
@@ -136,11 +138,13 @@ DocFX 需要：
   alias docfx='mono $HOME/bin/docfx/docfx.exe'
   alias docfx-serve='mono $HOME/bin/docfx/docfx.exe --serve'
   ```
+
 * 在命令殼層中，瀏覽至*aspnet*所在的資料夾*docfx.json*檔，然後執行下列命令以建置及提供透過其別名的文件：
 
   ```console
   docfx-serve
   ```
+
 * 在瀏覽器中，巡覽至 `http://localhost:8080/group1-dest/`。
 
 ## <a name="voice-and-tone"></a>語態和語氣

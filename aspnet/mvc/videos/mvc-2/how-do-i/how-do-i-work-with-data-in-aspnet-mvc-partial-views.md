@@ -8,15 +8,15 @@ ms.date: 12/11/2009
 ms.assetid: 2f0d41d2-2860-4113-8f5e-0efdd29abf7b
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views
 msc.type: video
-ms.openlocfilehash: f9f12579e2e0d0eb9edcc9d310e8244675e03270
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b407f802dd4afd1de03a485709d87b886e8444e9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044005"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401318"
 ---
-<a name="how-do-i-work-with-data-in-aspnet-mvc-partial-views"></a>How Do i:使用 ASP.NET MVC 部分檢視中的資料嗎？
-====================
+# <a name="how-do-i-work-with-data-in-aspnet-mvc-partial-views"></a>How Do i:使用 ASP.NET MVC 部分檢視中的資料嗎？
+
 藉由[Chris Pels](https://twitter.com/chrispels)
 
 在此影片的 Chris Pels 示範如何組織，並將資料傳遞給部分檢視的 MVC 應用程式中。 建立 MVC 應用程式範例，其中包含數個商務實體的網域模型，以及檢視模型該封裝類別的執行個體。 全部都強型別，並進行，以及數個部分的檢視，然後建立示範檢視的檢視模型類別使用。 部分檢視加入到 [demo] 檢視，並輕鬆地將部分檢視下適當的資料使用檢視模型的執行個體。 最後，會討論使用更廣泛的 MVC 應用程式中的範例中所實作的概念。

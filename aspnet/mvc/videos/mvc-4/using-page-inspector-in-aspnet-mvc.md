@@ -8,15 +8,15 @@ ms.date: 06/04/2012
 ms.assetid: ea642733-8085-40c1-a33f-d216e3a25ffa
 msc.legacyurl: /mvc/videos/mvc-4/using-page-inspector-in-aspnet-mvc
 msc.type: video
-ms.openlocfilehash: 18012595447ca416fad4fb36ef5797a23be1c76d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 89e274e447a67bda0b1f499ea70041365c2157cf
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065595"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418114"
 ---
-<a name="using-page-inspector-in-aspnet-mvc"></a>在 ASP.NET MVC 中使用 Page Inspector
-====================
+# <a name="using-page-inspector-in-aspnet-mvc"></a>在 ASP.NET MVC 中使用 Page Inspector
+
 由 Tim Ammann
 
 影片將探討 Page Inspector 在 ASP.NET MVC web 應用程式的使用方式。 [閱讀教學課程](../../overview/views/using-page-inspector-in-aspnet-mvc.md)

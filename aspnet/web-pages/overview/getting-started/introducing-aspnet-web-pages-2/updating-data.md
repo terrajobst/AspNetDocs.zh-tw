@@ -8,15 +8,15 @@ ms.date: 01/02/2018
 ms.assetid: ac86ec9c-6b69-485b-b9e0-8b9127b13e6b
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 206d7e209857aceb3eb92c2405bb73f7ff7dbaeb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4542ad3ac3e321629bb4de3cd4df12c22ff6cb20
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048105"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414617"
 ---
-<a name="introducing-aspnet-web-pages---updating-database-data"></a>ASP.NET Web Pages 簡介-更新資料庫資料
-====================
+# <a name="introducing-aspnet-web-pages---updating-database-data"></a>ASP.NET Web Pages 簡介-更新資料庫資料
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本教學課程會示範如何更新 （變更） 現有的資料庫項目，當您使用 ASP.NET Web Pages (Razor)。 它假設您已完成透過數列[輸入資料所使用的表單使用 ASP.NET Web Pages](entering-data.md)。
@@ -117,7 +117,7 @@ ms.locfileid: "57048105"
 > 
 > 當您第一次看到此程式碼，但在每個案例中，要將參數傳遞給特定的順序中的方法時，我們沒有提到問題&mdash;也就是定義在該方法之參數的順序。 針對`db.Execute`和`Validation.RequireFields`，如果您混您傳遞值的順序時，您會得到錯誤訊息時執行網頁時或至少一些奇怪的結果。 很明顯地，您必須知道要傳遞的參數順序。 （在 WebMatrix 中，IntelliSense 可以幫助您了解釐清名稱、 類型和參數的順序）。
 > 
-> 為將值傳遞順序的替代方案，您可以使用*具名參數*。 (為了傳遞參數就是使用*位置參數*。)用於具名參數，您明確地包含參數的名稱傳遞它的值時。 您已使用具名的參數已經數次，在這些教學課程。 例如: 
+> 為將值傳遞順序的替代方案，您可以使用*具名參數*。 (為了傳遞參數就是使用*位置參數*。)用於具名參數，您明確地包含參數的名稱傳遞它的值時。 您已使用具名的參數已經數次，在這些教學課程。 例如：
 > 
 > [!code-csharp[Main](updating-data/samples/sample8.cs)]
 > 

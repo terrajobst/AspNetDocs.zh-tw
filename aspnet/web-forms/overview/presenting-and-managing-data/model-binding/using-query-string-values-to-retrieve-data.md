@@ -8,15 +8,15 @@ ms.date: 02/27/2014
 ms.assetid: b90978bd-795d-4871-9ade-1671caff5730
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
 msc.type: authoredcontent
-ms.openlocfilehash: 490279ec8457535031387e955e67550052764fff
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7ba95f24085c403c669bc5d6df4dee7c87fbd90a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57039105"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414240"
 ---
-<a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a>使用模型繫結和 web form 中的查詢字串值來篩選資料
-====================
+# <a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a>使用模型繫結和 web form 中的查詢字串值來篩選資料
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本系列教學課程示範使用 ASP.NET Web Form 專案中的模型繫結的基本層面。 模型繫結進行更簡單的比處理資料來源物件 （例如 ObjectDataSource 或 SqlDataSource） 的資料互動。 此系列簡介資料的開頭，並在稍後的教學課程中將移至更進階的概念。

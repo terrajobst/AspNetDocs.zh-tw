@@ -8,15 +8,15 @@ ms.date: 06/27/2014
 ms.assetid: 4064ab14-26ee-4d5c-ae58-1bdda525ad06
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/using-a-singleton-in-an-odata-endpoint-in-web-api-22
 msc.type: authoredcontent
-ms.openlocfilehash: 7562a90ae34b216dca2dd3cf541d086585735212
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 935448a1f9770e1f11460c95997aa778c4208c9f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052855"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403333"
 ---
-<a name="create-a-singleton-in-odata-v4-using-web-api-22"></a>建立單一 OData v4 中的使用 Web API 2.2
-====================
+# <a name="create-a-singleton-in-odata-v4-using-web-api-22"></a>建立單一 OData v4 中的使用 Web API 2.2
+
 由 Zoe Luo
 
 > 傳統上，如果它封裝在實體集，可能只能存取實體。 但 OData v4 提供兩個額外的選項，單一和內含項目，這兩種 WebAPI 2.2 的支援。

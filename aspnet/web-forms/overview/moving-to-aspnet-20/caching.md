@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: 2bb109d2-e299-46ea-9054-fa0263b59165
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
-ms.openlocfilehash: 5c97464ee50291338a80120a86b1b86b07bc672d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5e16415df5bd4203995bec943ffa682f7da82357
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032925"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400200"
 ---
-<a name="caching"></a>快取
-====================
+# <a name="caching"></a>快取
+
 by [Microsoft](https://github.com/microsoft)
 
 > 了解快取是很重要的一個良好的 ASP.NET 應用程式。 ASP.NET 1.x 提供三種不同的選項，進行快取輸出快取、 片段快取和快取 API。
@@ -56,7 +56,7 @@ ASP.NET 1.x 開發人員哭自訂快取相依性。 在 ASP.NET 1.x 中，CacheD
 
 請注意，做為快取索引鍵之項目的索引鍵必須是加入至快取金鑰的陣列中的值相同。
 
-## <a name="polling-based-sql-cache-dependenciesemalso-called-table-based-dependenciesem"></a>輪詢為基礎的 SQL 快取相依性<em>（也稱為資料表為基礎的相依性）</em>
+## <a name="polling-based-sql-cache-dependenciesalso-called-table-based-dependencies"></a>輪詢為基礎的 SQL 快取 Dependencies(Also called Table-Based Dependencies)
 
 SQL Server 7 和 2000年使用 SQL 快取相依性輪詢為基礎的模型。 輪詢為基礎的模型會使用觸發程序會在資料表中的資料變更時，會觸發資料庫資料表。 觸發更新**changeId** ASP.NET 會定期檢查通知資料表中的欄位。 如果**changeId**已更新欄位，ASP.NET 會知道的資料已變更，而且它失效的快取的資料。
 
@@ -72,7 +72,7 @@ SQL Server 7 和 2000年使用 SQL 快取相依性輪詢為基礎的模型。 �
 
 上述命令中使用命令列參數的說明如下：
 
-| **命令列參數** | **目的** |
+| **命令列參數** | **用途** |
 | --- | --- |
 | -S *server* | 指定伺服器名稱。 |
 | -ed | 指定資料庫，應該啟用 SQL 快取相依性。 |
@@ -211,9 +211,9 @@ Init 和 PreRender 控制項生命週期階段之間，才可成功操作 Contro
 
 有數個 ASP.NET 2.0 中的快取組態的變更。 &lt;快取&gt;元素是 ASP.NET 2.0 的新功能，可讓您在組態檔中進行快取的組態變更。 使用下列屬性。
 
-| **目** | **描述** |
+| **項目** | **描述** |
 | --- | --- |
-| **cache** | 選擇性項目。 定義通用的應用程式快取設定。 |
+| **快取** | 選擇性項目。 定義通用的應用程式快取設定。 |
 | **outputCache** | 選擇性項目。 指定整個應用程式的輸出快取設定。 |
 | **outputCacheSettings** | 選擇性項目。 指定可以套用到應用程式中的頁面輸出快取設定。 |
 | **sqlCacheDependency** | 選擇性項目。 設定 ASP.NET 應用程式的 SQL 快取相依性。 |

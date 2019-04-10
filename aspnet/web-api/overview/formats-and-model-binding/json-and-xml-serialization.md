@@ -1,22 +1,23 @@
 ---
 uid: web-api/overview/formats-and-model-binding/json-and-xml-serialization
-title: JSON 和 ASP.NET Web API 中的 XML 序列化 |Microsoft Docs
+title: JSON 和 XML 序列化，在 ASP.NET Web API-ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 說明 ASP.NET Web API 中的 JSON 和 XML 格式器適用於 ASP.NET 4.x。
 ms.author: riande
 ms.date: 05/30/2012
+ms.custom: seoapril2019
 ms.assetid: 1cd7525d-de5e-4ab6-94f0-51480d3255d1
 msc.legacyurl: /web-api/overview/formats-and-model-binding/json-and-xml-serialization
 msc.type: authoredcontent
-ms.openlocfilehash: 47967e6e1dd0e84b6059c07d7544c0e755fdf510
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a9e7ed63a55c146976e0221214e722f3a2292fee
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57028925"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408273"
 ---
-<a name="json-and-xml-serialization-in-aspnet-web-api"></a>JSON 和 ASP.NET Web API 中的 XML 序列化
-====================
+# <a name="json-and-xml-serialization-in-aspnet-web-api"></a>JSON 和 ASP.NET Web API 中的 XML 序列化
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 這篇文章說明 ASP.NET Web API 中的 JSON 和 XML 格式器。

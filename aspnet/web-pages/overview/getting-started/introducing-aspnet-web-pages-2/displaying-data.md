@@ -8,15 +8,15 @@ ms.date: 05/28/2015
 ms.assetid: b3a006a0-3ea2-4d45-b833-e20e3a3c0a1a
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/displaying-data
 msc.type: authoredcontent
-ms.openlocfilehash: 9158a1f53268daec6e6fbdf003dd73e1d62cc667
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5415913626eb063a4cb1013ba03857c130487f42
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57031245"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412173"
 ---
-<a name="introducing-aspnet-web-pages---displaying-data"></a>ASP.NET Web Pages 簡介-顯示資料
-====================
+# <a name="introducing-aspnet-web-pages---displaying-data"></a>ASP.NET Web Pages 簡介-顯示資料
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 本教學課程會示範如何在 WebMatrix 中建立資料庫，以及如何在網頁中顯示資料庫的資料，當您使用 ASP.NET Web Pages (Razor)。 它假設您已完成透過數列[ASP.NET Web Pages 程式設計簡介](../introducing-razor-syntax-c.md)。
@@ -214,7 +214,7 @@ Tab 跳過**預設值**方塊 （也就是保留為空白）。 Tab 鍵移至**�
 
 > [!TIP] 
 > 
-> **結構化的查詢語言 (SQL)**
+> **結構化查詢語言 (SQL)**
 > 
 > SQL 是一種語言，在大部分的關聯式資料庫中用於管理資料庫中的資料。 它包含的指令，可讓您擷取資料，並加以更新，以及它可讓您建立、 修改及管理資料庫資料表中的資料。 SQL 是不同的程式語言 （例如 C# 中)。 使用 SQL，您需要告訴資料庫想什麼方法，而且資料庫的作業，以了解如何取得資料，或執行工作。 以下是一些 SQL 命令的範例，以及他們如何：
 > 
@@ -333,7 +333,7 @@ Tab 跳過**預設值**方塊 （也就是保留為空白）。 Tab 鍵移至**�
 
 ## <a name="additional-resources"></a>其他資源
 
-- [使用 Razor 語法的 ASP.NET Web 程式設計簡介](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [使用 Razor 語法進行 ASP.NET 網頁程式設計簡介](https://go.microsoft.com/fwlink/?LinkID=202890)
 
 > [!div class="step-by-step"]
 > [上一頁](intro-to-web-pages-programming.md)

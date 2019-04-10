@@ -8,15 +8,15 @@ ms.date: 07/01/2007
 ms.assetid: ee916787-dbf2-45c5-a1e7-3b2b5862a94b
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-tune-web-application-performance-with-profiling
 msc.type: video
-ms.openlocfilehash: 020d823e07cb35888603f6061f55c11d753e09db
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c6b78e6ff68509c5e16a0c7934b1332810cf58b3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062935"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422625"
 ---
-<a name="how-do-i-tune-web-application-performance-with-profiling"></a>[How Do i:]調整 Web 應用程式效能，使用程式碼剖析？
-====================
+# <a name="how-do-i-tune-web-application-performance-with-profiling"></a>[How Do i:]調整 Web 應用程式效能，使用程式碼剖析？
+
 藉由[Chris Menegay](https://twitter.com/CMenegay)
 
 在這段影片中我們了解 Visual Studio Team System 提供的 Web 應用程式程式碼剖析的兩個方法：取樣和檢測。 檢測會插入基礎程式碼中的標記，好讓開發人員可以檢視應用程式的執行，包括呼叫樹狀結構和物件的配置，以協助調整應用程式效能的完整詳細資料。

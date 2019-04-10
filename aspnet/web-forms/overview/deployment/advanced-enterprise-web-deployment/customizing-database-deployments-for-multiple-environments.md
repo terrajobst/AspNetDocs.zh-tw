@@ -8,15 +8,15 @@ ms.date: 05/04/2012
 ms.assetid: a172979a-1318-4318-a9c6-4f9560d26267
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 52fb2539ef388d129f88aa8aa87088e2d4a41ccf
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 865e901618b48bc4bfdc6d7a3ca4e8868d4cb46b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055125"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412979"
 ---
-<a name="customizing-database-deployments-for-multiple-environments"></a>自訂多個環境的資料庫部署
-====================
+# <a name="customizing-database-deployments-for-multiple-environments"></a>自訂多個環境的資料庫部署
+
 藉由[Jason Lee](https://github.com/jrjlee)
 
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
@@ -68,7 +68,7 @@ ms.locfileid: "57055125"
 
 |  | 開發人員/測試 | 預備/整合 | 生產環境 |
 | --- | --- | --- | --- |
-| **部署比較定序** | 原始程式檔 | 目標 | 目標 |
+| **部署比較定序** | 原始程式檔 | Target | Target |
 | **部署資料庫屬性** | True | 只有第一次 | 只有第一次 |
 | **永遠重新建立資料庫** | True | False | False |
 | **如果發生資料遺失可能會，封鎖累加部署** | False | 或許 | True |
@@ -139,7 +139,7 @@ ms.locfileid: "57055125"
 MSDN 上的下列文章會提供資料庫部署更一般指導方針：
 
 - [資料庫專案設定的概觀](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx)
-- [如何：設定的部署詳細資料屬性](https://msdn.microsoft.com/library/dd172125.aspx)
+- [HOW TO：設定的部署詳細資料屬性](https://msdn.microsoft.com/library/dd172125.aspx)
 - [建置和部署資料庫到隔離的開發環境](https://msdn.microsoft.com/library/dd193409.aspx)
 - [建置和部署至預備或生產環境的資料庫](https://msdn.microsoft.com/library/dd193413.aspx)
 

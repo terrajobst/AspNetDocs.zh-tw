@@ -8,15 +8,15 @@ ms.date: 08/22/2007
 ms.assetid: 424c06cd-6d61-43cd-a1f2-d1a6b62e47b1
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-persistent-communications-pattern-using-web-services
 msc.type: video
-ms.openlocfilehash: e8508fa445d412be8358d6a9a40b6e1c249eacd0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: de2eb281cd4bab46635af480ac2e8f07f60f1591
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036965"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408104"
 ---
-<a name="how-do-i-implement-the-persistent-communications-pattern-using-web-services"></a>[How Do i:]實作使用 Web 服務的持續性通訊模式？
-====================
+# <a name="how-do-i-implement-the-persistent-communications-pattern-using-web-services"></a>[How Do i:]實作使用 Web 服務的持續性通訊模式？
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 在傳統的網站上瀏覽器和伺服器不會維護進行中的通訊，但只會在使用者執行動作的回應進行通訊。 在新式網站頁面，就會變成應用程式容器，很有幫助瀏覽器和伺服器維護進行中的通訊，以便進行頁面更新而不需要執行動作的使用者。 這就是持續性通訊模式的 AJAX。 ASP.NET AJAX 會提供兩種主要的方式來實作持續性通訊模式的 Web 開發人員。 在較早的影片中，我們看到如何使用 ASP.NET AJAX UpdatePanel 作為實作的基礎。 在這段影片中，我們了解如何實作使用 Web 服務，這樣就不需要針對 ASP.NET AJAX UpdatePanel JavaScrpt 呼叫的相同模式的內容。

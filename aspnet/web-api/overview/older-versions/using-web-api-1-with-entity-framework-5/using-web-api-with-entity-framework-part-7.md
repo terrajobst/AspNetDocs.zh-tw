@@ -8,15 +8,15 @@ ms.date: 07/04/2012
 ms.assetid: eb32a17b-626c-4373-9a7d-3387992f3c04
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 91a6496e2640668c58ec0493d47d909e2de67367
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 028631f8855e4d94bebb0e965de75c4025e22859
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58421346"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409261"
 ---
-<a name="part-7-creating-the-main-page"></a>第 7 部分：建立主要頁面
-====================
+# <a name="part-7-creating-the-main-page"></a>第 7 部分：建立主要頁面
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 [下載已完成的專案](http://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
@@ -83,7 +83,7 @@ ms.locfileid: "58421346"
 
 [新增順序] 按鈕呼叫`addItemToCart`上`ProductViewModel`產品的執行個體。 這示範了 Knockout.js 的不錯的功能：當檢視模型包含其他檢視模型時，您可以套用繫結至內部模型。 在此範例中，內的繫結`foreach`套用至每個`ProductViewModel`執行個體。 這個方法會比較簡潔，比將所有的功能放入單一檢視模型。
 
-**Cart**
+**購物車**
 
 以下是購物車的繫結：
 
@@ -91,7 +91,7 @@ ms.locfileid: "58421346"
 
 這會逐一查看車陣列，並顯示名稱、 價格和數量。 請注意，「 移除 」 連結的 「 建立訂單 」 按鈕會繫結至檢視模型函式。
 
-**訂單**
+**Orders**
 
 以下是訂單清單的繫結：
 

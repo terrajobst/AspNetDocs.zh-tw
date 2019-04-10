@@ -8,15 +8,15 @@ ms.date: 01/20/2014
 ms.assetid: 979d6c9f-0129-4e5b-ae56-4507b281b86d
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 22eb2fd748d52ec95e813ada8b1bf3b4826ad573
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 65e2268418501f89a77a0ba20f7960a618c2e9b7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034275"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405452"
 ---
-<a name="attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的屬性路由
-====================
+# <a name="attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的屬性路由
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 *路由*是 Web API 如何比對動作的 URI。 Web API 2 支援新類型的路由，稱為*屬性路由*。 如同名稱所暗示，屬性路由會使用屬性來定義的路由。 屬性路由可讓您更充分掌控 Uri 在 web API 中。 例如，您可以輕鬆地建立描述階層的資源的 Uri。
@@ -228,8 +228,8 @@ Web API，也會根據要求的 HTTP 方法 （GET、 POST 等） 的動作。 �
 
 這是上述範例中，幾乎相同，但有所些微差異的行為時所套用的預設值。
 
-- 在第一個範例 ("{lcid?}") 中，1033年的預設值是直接指派給方法參數，讓參數會將此的確切值。
-- 在第二個範例中 ("{lcid = 1033年}")，"1033"的預設值會透過模型繫結程序。 預設模型繫結器將轉換成數值 1033年"1033"。 不過，您可以插入可能會執行一些不同的自訂模型繫結器。
+- 在第一個範例 ("{lcid:int？}") 中，1033年的預設值是直接指派給方法參數，讓參數會將此的確切值。
+- 在第二個範例中 ("{lcid:int = 1033年}")，"1033"的預設值會透過模型繫結程序。 預設模型繫結器將轉換成數值 1033年"1033"。 不過，您可以插入可能會執行一些不同的自訂模型繫結器。
 
 （在大部分情況下，除非您有自訂模型繫結器在管線中，兩種形式會是對等）。
 

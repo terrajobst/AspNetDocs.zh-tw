@@ -8,15 +8,15 @@ ms.date: 01/29/2019
 ms.assetid: 9b265a5a-6a70-4a82-adce-2d7c56ae8bdd
 msc.legacyurl: /web-api/overview/security/enabling-cross-origin-requests-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: c9d3e4b05103d270ad95908177bb2981338a4ae1
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 9d3016d98fa6c3a55359c6dab0737407b29925f1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425284"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403827"
 ---
-<a name="enable-cross-origin-requests-in-aspnet-web-api-2"></a>啟用 ASP.NET Web API 2 中的跨原始來源要求
-====================
+# <a name="enable-cross-origin-requests-in-aspnet-web-api-2"></a>啟用 ASP.NET Web API 2 中的跨原始來源要求
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 > 瀏覽器安全性可防止網頁對另一個網域提出 AJAX 要求。 這項限制稱為*同源原則*，可防止惡意網站從另一個網站讀取敏感性資料。 不過，有時候您可能想要讓呼叫您的 web API 的其他站台。
@@ -38,7 +38,7 @@ ms.locfileid: "58425284"
 
 如果它們有相同的配置、 主機和連接埠，兩個 Url 會有相同的原點。 ([RFC 6454](http://tools.ietf.org/html/rfc6454))
 
-這些兩個 Url 有相同的來源：
+這兩個 Url 有相同的來源：
 
 - `http://example.com/foo.html`
 - `http://example.com/bar.html`

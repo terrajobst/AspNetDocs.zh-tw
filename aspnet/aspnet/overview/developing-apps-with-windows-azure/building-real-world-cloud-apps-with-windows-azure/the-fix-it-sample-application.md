@@ -8,15 +8,15 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: a73fac6107be45455465b506a019bcc9a41b1deb
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: d3a965ccf7ca001d3178819f88836b59f2893bb0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425518"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406414"
 ---
-<a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>附錄：修正範例應用程式 （建置使用 Azure 的真實世界的雲端應用程式）
-====================
+# <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>附錄：修正範例應用程式 （建置使用 Azure 的真實世界的雲端應用程式）
+
 藉由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
 
 [下載該專案的修正程式](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)
@@ -25,8 +25,8 @@ ms.locfileid: "58425518"
 
 建置真實世界的雲端應用程式與 Azure 的電子書本附錄包含下列各節提供它修正範例應用程式，您可以下載的其他資訊：
 
-- [已知的問題](#knownissues)
-- [最佳做法](#bestpractices)
+- [已知問題](#knownissues)
+- [最佳作法](#bestpractices)
 - [如何在您的本機電腦上，從 Visual Studio 執行應用程式](#run-in-vs)
 - [如何使用 Windows PowerShell 指令碼，將基底的應用程式部署至 Azure App Service Web Apps](#deploybase)
 - [疑難排解 Windows PowerShell 指令碼](#troubleshooting)
@@ -249,7 +249,7 @@ ASP.NET 會自動防止的多種資訊，請在其中惡意使用者可能會在
    3. 在 [方案總管] 中，以滑鼠右鍵按一下 FixIt 方案，然後選取**屬性**。
    4. 選取 **多個啟始專案**。
    5. 在 **動作**MyFixIt 和 MyFixItCloudService，底下的下拉式清單中，選取**開始**。
-   6. 按一下 [確定 **Deploying Office Solutions**]。
+   6. 按一下 [確定] 。
    7. 按下**F5**執行這兩個專案。
 
       當您執行 MyFixItCloudService 專案時，Visual Studio 會啟動 Azure 計算模擬器。 根據您的防火牆設定，您可能需要允許通過防火牆的模擬器。
@@ -322,7 +322,7 @@ ASP.NET 會自動防止的多種資訊，請在其中惡意使用者可能會在
     如果指令碼失敗，或產生錯誤，例如"New-azurewebsite:首先，呼叫 Set-azuresubscription 和 Select-azuresubscription 」 您可能尚未完成的 Azure PowerShell 設定。
 
     在指令碼完成之後，您可以使用 Azure 管理入口網站，查看所建立的資源，如中所示[自動執行的所有項目](automate-everything.md)一章。
-10. 若要將 FixIt 專案部署到新的 Azure 環境中，使用*AzureWebsite.ps1*指令碼。 例如: 
+10. 若要將 FixIt 專案部署到新的 Azure 環境中，使用*AzureWebsite.ps1*指令碼。 例如：
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample28.cmd)]
 

@@ -8,15 +8,15 @@ ms.date: 11/11/2009
 ms.assetid: 0f24b680-e3a6-46f6-a52a-91191e09ab78
 msc.legacyurl: /web-forms/videos/visual-studio-2010/visual-studio-2010-quick-hit-code-search-view-hierarchy
 msc.type: video
-ms.openlocfilehash: fb04081e2d40c514c8902653373b08953d8219f6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a6ae54ef28b9fbfe99c0efb1dde22084f1b1acfc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025045"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408806"
 ---
-<a name="visual-studio-2010-quick-hit---code-search-view-hierarchy"></a>Visual Studio 2010 」 快速叫用 「-程式碼搜尋檢視階層
-====================
+# <a name="visual-studio-2010-quick-hit---code-search-view-hierarchy"></a>Visual Studio 2010 」 快速叫用 「-程式碼搜尋檢視階層
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 在這段影片中，您將了解 Visual Studio 的程式碼搜尋檢視階層架構。

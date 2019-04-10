@@ -8,15 +8,15 @@ ms.date: 08/30/2011
 ms.assetid: 3aa5b073-1359-41ac-8f4f-b09c1c8cb4bd
 msc.legacyurl: /visual-studio/overview/2012/visual-studio-vnext-videos-html-editor-smart-tasks-and-event-handler-generation
 msc.type: video
-ms.openlocfilehash: 07f8e5187cd34f3e7eb0d03b6d5a70c2de1840eb
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: cb385a89efc90185635e285bc3317b554d456f6d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041155"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406373"
 ---
-<a name="visual-studio-vnext-videos-html-editor-smart-tasks-and-event-handler-generation"></a>Visual Studio vNext 影片：產生 HTML 編輯器智慧工作與事件處理常式
-====================
+# <a name="visual-studio-vnext-videos-html-editor-smart-tasks-and-event-handler-generation"></a>Visual Studio vNext 影片：產生 HTML 編輯器智慧工作與事件處理常式
+
 藉由[Mads Kristensen](https://github.com/madskristensen)
 
 在這段影片中，Mads Kristensen 會示範在 Visual Studio vNext HTML 編輯器可簡化執行一般工作的增強功能。

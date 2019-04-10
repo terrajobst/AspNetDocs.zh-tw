@@ -8,15 +8,15 @@ ms.date: 09/15/2014
 ms.assetid: f25f5ac5-4800-4950-abe5-c97750a27fc6
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
 msc.type: authoredcontent
-ms.openlocfilehash: f901e5efc38e5cda6eb606b6bc1ecfe7dea3599c
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 69e2cc716a50c64ae5edf38a499abf4d80d75d3d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423425"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414955"
 ---
-<a name="open-types-in-odata-v4-with-aspnet-web-api"></a>使用 ASP.NET Web API OData v4 中開啟類型
-====================
+# <a name="open-types-in-odata-v4-with-aspnet-web-api"></a>使用 ASP.NET Web API OData v4 中開啟類型
+
 by [Microsoft](https://github.com/microsoft)
 
 > 在 OData v4*開啟輸入*是結構化型別，其中包含動態屬性，除了任何型別定義中宣告的屬性。 開放式類型可讓您將新增至您的資料模型的彈性。 本教學課程會示範如何使用 ASP.NET Web API OData 中的開放型別。

@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/using-select-expand-and-value
-title: 使用 $select，$expand、 和 ASP.NET Web API 2 OData 中的 $value |Microsoft Docs
+title: 使用 $select，$expand、 和 $value 中 ASP.NET Web API 2 OData ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 展開為 $ 的概觀和程式碼範例，請 $select，和 $value 選項 OData Web API 2 中 ASP.NET 4.x。
 ms.author: riande
 ms.date: 10/11/2013
+ms.custom: seoapril2019
 ms.assetid: 43279a80-a96c-4564-b6ea-ad992a2d6828
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/using-select-expand-and-value
 msc.type: authoredcontent
-ms.openlocfilehash: d198ecf40155cba36204bc0810f4735aae6b100b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8b5d3e87c679a31f1908aa648219ae5c6b701a1f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033925"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400694"
 ---
-<a name="using-select-expand-and-value-in-aspnet-web-api-2-odata"></a>使用 $select，$expand、 和 ASP.NET Web API 2 OData 中的 $value
-====================
+# <a name="using-select-expand-and-value-in-aspnet-web-api-2-odata"></a>使用 $select，$expand、 和 ASP.NET Web API 2 OData 中的 $value
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
-$ Expand $select 和 $value 選項在 OData 中，web API 2 新增的支援。 這些選項可讓用戶端來控制它回從伺服器取得的表示法。
+展開為 $ 的概觀和程式碼範例，請 $select，和 $value 選項 OData Web API 2 中 ASP.NET 4.x。 這些選項可讓用戶端來控制它回從伺服器取得的表示法。
 
 - **$expand**會導致要在回應中的包含的內嵌的相關的實體。
 - **$select**選取要包含在回應中的屬性子集。

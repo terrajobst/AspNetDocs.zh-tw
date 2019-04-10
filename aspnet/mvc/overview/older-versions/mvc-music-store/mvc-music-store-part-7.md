@@ -8,15 +8,15 @@ ms.date: 10/13/2010
 ms.assetid: c8511ebe-68bc-4240-87c3-d5ced84a3f37
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 44205f0ef59e00ad9fb1c45fdc0ba8934b5804cc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f5431d60506f5b0a0f4bbcd8e86b316c728a1191
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060425"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415917"
 ---
-<a name="part-7-membership-and-authorization"></a>第 7 部分：成員資格和授權
-====================
+# <a name="part-7-membership-and-authorization"></a>第 7 部分：成員資格和授權
+
 藉由[Jon Galloway](https://github.com/jongalloway)
 
 > MVC Music 市集是介紹，並逐步說明如何使用 ASP.NET MVC 和 Visual Studio 進行 web 開發的教學課程應用程式。  
@@ -40,7 +40,7 @@ ms.locfileid: "57060425"
 
 變更控制器和模型類別的命名空間，因此它們以 MvcMusicStore 開頭。 AccountController 類別應該使用 MvcMusicStore.Controllers 命名空間中，而 AccountModels 類別應該使用 MvcMusicStore.Models 命名空間。
 
-*注意：這些檔案也可從中複製網站設計檔案在本教學課程開頭的 MvcMusicStore Assets.zip 下載中。成員資格檔案位於程式碼目錄中。*
+*注意:這些檔案也可從中複製網站設計檔案在本教學課程開頭的 MvcMusicStore Assets.zip 下載中。 成員資格檔案位於程式碼目錄中。*
 
 更新的方案看起來應該如下所示：
 
@@ -81,7 +81,7 @@ ms.locfileid: "57060425"
 | **安全性問題** | （任意） |
 | **安全性解答** | （任意） |
 
-*注意：當然，您可以使用任何您想要的密碼。預設密碼安全性設定需要的 7 個字元且包含一個非英數字元密碼。*
+*注意:當然，您可以使用任何您想要的密碼。 預設密碼安全性設定需要的 7 個字元且包含一個非英數字元密碼。*
 
 選取此使用者，系統管理員角色，然後按一下 [建立使用者] 按鈕。
 
@@ -99,7 +99,7 @@ ms.locfileid: "57060425"
 
 [!code-csharp[Main](mvc-music-store-part-7/samples/sample1.cs)]
 
-*注意：[Authorize] 屬性可以放在特定的動作方法，以及在控制器類別層級。*
+*注意:[Authorize] 屬性可以放在特定的動作方法，以及在控制器類別層級。*
 
 現在瀏覽至 /StoreManager 顯示的登入對話方塊：
 

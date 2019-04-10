@@ -8,22 +8,22 @@ ms.date: 01/14/2008
 ms.assetid: de2d65b9-aadc-42ba-abe1-4e87e66521a0
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 64c8ccbc82a5c80a6f1e3199bfceb62add6cde51
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5bb3cf45e50e480d81a441280842c1eec58f4877
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063885"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406869"
 ---
-<a name="an-overview-of-forms-authentication-c"></a>表單驗證概觀 (C#)
-====================
+# <a name="an-overview-of-forms-authentication-c"></a>表單驗證概觀 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/2/F/7/2F705A34-F9DE-4112-BBDE-60098089645E/ASPNET_Security_Tutorial_02_CS.zip)或[下載 PDF](http://download.microsoft.com/download/2/F/7/2F705A34-F9DE-4112-BBDE-60098089645E/aspnet_tutorial02_FormsAuth_cs.pdf)
 
 > 在本教學課程中我們將會開啟從只討論實作;特別是，我們將探討實作表單驗證。 我們一開始建構在此教學課程中的 web 應用程式會繼續在後續的教學課程，建置在當我們從簡單的表單驗證移至成員資格和角色。
 > 
-> 請在本主題，參閱這段影片，如需詳細資訊：[在 ASP.NET 中使用基本的表單驗證](# "using-basic-forms-authentication-in-aspnet")。
+> 請在本主題，參閱這段影片，如需詳細資訊：[使用基本 asp.net 表單驗證](../../../videos/authentication/using-basic-forms-authentication-in-aspnet.md)。
 
 
 ## <a name="introduction"></a>簡介
@@ -85,7 +85,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 > Visual Studio 支援兩種專案管理模式：網站專案和 Web 應用程式專案。 網站專案會缺少專案檔中，而 Web 應用程式專案模擬專案架構在 Visual Studio.NET 2002年/2003年 – 它們包含在專案檔和專案的原始程式碼編譯成單一組件，都會放在 /bin 資料夾。 Visual Studio 2005 一開始只支援的網站專案，雖然 Web 應用程式專案模型已重新引入含 Service Pack 1;Visual Studio 2008 提供了這兩個專案模型。 Visual Web Developer 2005 和 2008年版本，不過，僅支援網站專案。 我將使用的網站專案模型。 如果您正在使用非 Express edition，而且想要使用[Web 應用程式專案模型](https://msdn.microsoft.com/library/aa730880%28vs.80%29.aspx)相反地，請隨意這樣做，但您看到您的畫面和必須與所採取的步驟之間可能會有些不一致螢幕擷取畫面所示，在這些教學課程中提供的指示。
 
 
-[![建立新檔案系統為基礎的網站](an-overview-of-forms-authentication-cs/_static/image3.png)](an-overview-of-forms-authentication-cs/_static/image2.png)
+[![Create New File System-Based 網站](an-overview-of-forms-authentication-cs/_static/image3.png)](an-overview-of-forms-authentication-cs/_static/image2.png)
 
 **圖 2**:建立 New File System-Based 網站 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image4.png))
 
@@ -95,7 +95,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 接下來，加入名為 Site.master 的根目錄中的站台的新主版頁面。 [主版頁面](https://msdn.microsoft.com/library/wtxbf3hh.aspx)讓網頁開發人員定義可套用至 ASP.NET 網頁的全站台的範本。 主版頁面的主要優點是，站台的整體外觀可以定義在單一位置，藉此讓您輕鬆地更新，或調整網站的版面配置。
 
 
-[![加入主版頁面名稱為 Site.master 網站](an-overview-of-forms-authentication-cs/_static/image6.png)](an-overview-of-forms-authentication-cs/_static/image5.png)
+[![Add 主版頁面名稱為 Site.master 網站](an-overview-of-forms-authentication-cs/_static/image6.png)](an-overview-of-forms-authentication-cs/_static/image5.png)
 
 **圖 3**:將主版頁面名稱為 Site.master 新增至網站 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image7.png))
 
@@ -109,7 +109,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 使用上面輸入的標記，切換至 [設計] 檢視會顯示主版頁面的版面配置。 使用此主版頁面的任何 ASP.NET 頁面會有這個統一的版面配置，讓您指定的標記有`MainContent`區域。
 
 
-[![主版頁面，檢視透過 [設計] 檢視時](an-overview-of-forms-authentication-cs/_static/image9.png)](an-overview-of-forms-authentication-cs/_static/image8.png)
+[![T他主要頁面上，當檢視透過 [設計檢視](an-overview-of-forms-authentication-cs/_static/image9.png)](an-overview-of-forms-authentication-cs/_static/image8.png)
 
 **圖 4**:主版頁面時檢視透過 設計檢視 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image10.png))
 
@@ -121,7 +121,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 接下來，在 [方案總管] 中的專案名稱上按一下滑鼠右鍵，然後選擇加入新的 Web 表單名為 Default.aspx。 此時，選取 [選取主版頁面] 核取方塊，並從清單中選擇 Site.master 主版頁面。
 
 
-[![加入新的 Default.aspx 頁面，選擇 選取主版頁面](an-overview-of-forms-authentication-cs/_static/image12.png)](an-overview-of-forms-authentication-cs/_static/image11.png)
+[![A新增 Default.aspx 頁面選擇 [選取主版頁面的 dd](an-overview-of-forms-authentication-cs/_static/image12.png)](an-overview-of-forms-authentication-cs/_static/image11.png)
 
 **圖 5**:加入新 Default.aspx 頁面選擇 選取主版頁面 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image13.png))
 
@@ -158,7 +158,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 如果您的專案尚未包含 Web.config 檔案，新增一個現在藉由以滑鼠右鍵按一下 方案總管 中的專案名稱，選擇 加入新項目，然後加入 Web 組態檔。
 
 
-[![如果您的專案尚未包含 Web.config，立即加入它](an-overview-of-forms-authentication-cs/_static/image16.png)](an-overview-of-forms-authentication-cs/_static/image15.png)
+[![I您的專案尚未包含 Web.config，f 立即加入它](an-overview-of-forms-authentication-cs/_static/image16.png)](an-overview-of-forms-authentication-cs/_static/image15.png)
 
 **圖 7**:如果您的專案不會不尚未包含 Web.config，現在新增 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image17.png))
 
@@ -190,7 +190,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 讓我們開始進行第一項工作。 將新的 ASP.NET 網頁新增至名為 Login.aspx 的站台的根目錄，並將它與 Site.master 主版頁面產生關聯。
 
 
-[![加入新的 ASP.NET 頁面命名為 Login.aspx](an-overview-of-forms-authentication-cs/_static/image19.png)](an-overview-of-forms-authentication-cs/_static/image18.png)
+[![Add 新 ASP.NET 頁面上名為 Login.aspx](an-overview-of-forms-authentication-cs/_static/image19.png)](an-overview-of-forms-authentication-cs/_static/image18.png)
 
 **圖 8**:加入新 ASP.NET 頁面上名為 Login.aspx ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image20.png))
 
@@ -204,7 +204,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 [!code-aspx[Main](an-overview-of-forms-authentication-cs/samples/sample4.aspx)]
 
 
-[![登入頁面包含兩個文字方塊、 核取方塊、 按鈕和標籤](an-overview-of-forms-authentication-cs/_static/image22.png)](an-overview-of-forms-authentication-cs/_static/image21.png)
+[![T他登入頁面包含兩個文字方塊、 核取方塊、 按鈕和標籤](an-overview-of-forms-authentication-cs/_static/image22.png)](an-overview-of-forms-authentication-cs/_static/image21.png)
 
 **圖 9**:登入頁面包含兩個文字方塊、 核取方塊、 按鈕和標籤 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image23.png))
 
@@ -250,7 +250,7 @@ FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked);
 若要測試登入頁面，請在瀏覽器中造訪。 開始輸入無效的認證，例如"有一天"的使用者名稱和密碼是 「 錯誤 」。 按一下 [登入] 按鈕後會發生回傳和 InvalidCredentialsMessage 標籤將會顯示。
 
 
-[![InvalidCredentialsMessage 標籤會顯示當輸入不正確的認證](an-overview-of-forms-authentication-cs/_static/image25.png)](an-overview-of-forms-authentication-cs/_static/image24.png)
+[![T他 InvalidCredentialsMessage 標籤會顯示當輸入不正確的認證](an-overview-of-forms-authentication-cs/_static/image25.png)](an-overview-of-forms-authentication-cs/_static/image24.png)
 
 **圖 10**:InvalidCredentialsMessage 標籤會顯示當輸入不正確的認證 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image26.png))
 
@@ -379,7 +379,7 @@ LoginView 的範本可以定義從設計工具或宣告式標記。 從 Visual S
 因為我們新增 LoginView 主版頁面時，它可以出現在我們網站上的每個頁面。 不過，可能有網頁我們不想再顯示此訊息。 一個這類頁面是登入頁面上，，因為登入頁面的連結看起來有位置不對。 因為我們會將 LoginView 控制項置於 ContentPlaceHolder 主版頁面中，我們可以在我們的內容頁來覆寫此預設標記。 開啟 Login.aspx 並移至設計工具。 因為我們未明確定義的內容控制項中的主版頁面中 LoginContent ContentPlaceHolder Login.aspx，登入頁面會針對此 ContentPlaceHolder 顯示主版頁面的預設標記。 您可以看到這透過設計工具-LoginContent ContentPlaceHolder 顯示的預設標記 （LoginView 控制項）。
 
 
-[![登入頁面顯示的預設內容的主版頁面的 LoginContent ContentPlaceHolder](an-overview-of-forms-authentication-cs/_static/image33.png)](an-overview-of-forms-authentication-cs/_static/image32.png)
+[![T他登入頁面的主版頁面的 LoginContent ContentPlaceHolder 會顯示預設內容](an-overview-of-forms-authentication-cs/_static/image33.png)](an-overview-of-forms-authentication-cs/_static/image32.png)
 
 **圖 16**:登入頁面會顯示預設內容的主版頁面的 LoginContent ContentPlaceHolder ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image34.png))
 
@@ -393,7 +393,7 @@ LoginView 的範本可以定義從設計工具或宣告式標記。 從 Visual S
 [圖 17] 顯示當進行這項變更後，從瀏覽器瀏覽的 Login.aspx 頁面。 請注意，有沒有"Hello，陌生人"或"歡迎回來，*使用者名稱*"在左側導覽中的訊息&lt;div&gt;因為沒有瀏覽 Default.aspx 時。
 
 
-[![登入頁面會隱藏預設 LoginContent ContentPlaceHolder 標記](an-overview-of-forms-authentication-cs/_static/image36.png)](an-overview-of-forms-authentication-cs/_static/image35.png)
+[![T他登入頁面會隱藏預設 LoginContent ContentPlaceHolder 的標記](an-overview-of-forms-authentication-cs/_static/image36.png)](an-overview-of-forms-authentication-cs/_static/image35.png)
 
 **圖 17**:登入頁面會隱藏預設 LoginContent ContentPlaceHolder 的標記 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image37.png))
 
@@ -455,7 +455,7 @@ LoginStatus 超出 LoginView 控制項，因為它會顯示匿名和已驗證的
 - [IIS6 和 IIS7 安全性之間的變更](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/Changes-between-IIS6-and-IIS7-Security)
 - [登入 ASP.NET 控制項](https://msdn.microsoft.com/library/d51ttbhx.aspx)
 - [Professional ASP.NET 2.0 安全性、 成員資格和角色管理](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html)(ISBN:978-0-7645-9698-8)
-- [`<authentication>`項目](https://msdn.microsoft.com/library/532aee0e.aspx)
+- [`<authentication>` 項目](https://msdn.microsoft.com/library/532aee0e.aspx)
 - [`<forms>`項目 `<authentication>`](https://msdn.microsoft.com/library/1d3t3c61.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>在本教學課程中所包含的主題的影片訓練

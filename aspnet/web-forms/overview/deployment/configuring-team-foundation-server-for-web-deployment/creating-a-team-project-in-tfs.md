@@ -8,15 +8,15 @@ ms.date: 05/04/2012
 ms.assetid: b28d3e2d-0bb4-4e29-a780-af810b964722
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
-ms.openlocfilehash: 9218a22ff221dc7067662c58ccd3e758fca493b7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1e727e8124e1f045f8ef25ab7a3d4efbafd4290a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062515"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59411211"
 ---
-<a name="creating-a-team-project-in-tfs"></a>在 TFS 中建立 Team 專案
-====================
+# <a name="creating-a-team-project-in-tfs"></a>在 TFS 中建立 Team 專案
+
 藉由[Jason Lee](https://github.com/jrjlee)
 
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
@@ -106,7 +106,8 @@ ms.locfileid: "57062515"
 
    > [!NOTE]
    > 您可能會收到<strong>HTTP 404 找不到</strong>由於 double 的 HTTP 編碼錯誤的錯誤。 如果發生這種情況，取代 URL:   
-   > `[site_collection_URL]/_layouts/permsetup.aspx` 例如：  
+   > `[site_collection_URL]/_layouts/permsetup.aspx`
+   > 例如：  
    > `http://tfs/sites/Fabrikam%20Web%20Projects/_layouts/permsetup.aspx` 
 8. 上**設定註冊群組為此站台**頁面上，新增將建立 team 專案的使用者**擁有者**群組，並再按**確定**。
 

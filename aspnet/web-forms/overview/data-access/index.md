@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: cf54a6fb-a362-4481-b967-c158b98092f7
 msc.legacyurl: /web-forms/overview/data-access
 msc.type: chapter
-ms.openlocfilehash: 0060650de35a8693a9c1432876df1d4902bb1ade
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d2f9d48618a102df7ea24a6d2a80b5c3026c7752
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023075"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405400"
 ---
-<a name="older-versions---data-access"></a>舊版 - 資料存取
-====================
+# <a name="older-versions---data-access"></a>舊版 - 資料存取
+
 > 如何執行各種不同的資料相關的工作，使用 ASP.NET Web Form 資料控制項。
 
 
@@ -36,14 +36,14 @@ ms.locfileid: "57023075"
     - [使用 ObjectDataSource 顯示資料 (VB)](basic-reporting/displaying-data-with-the-objectdatasource-vb.md)
     - [宣告式參數 (VB)](basic-reporting/declarative-parameters-vb.md)
     - [以程式設計方式設定 ObjectDataSource 的參數值 (VB)](basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-vb.md)
-- [主要/詳細資料](masterdetail/index.md)
+- [主版/詳細](masterdetail/index.md)
 
     - [使用 DropDownList 進行主要/詳細資料篩選 (C#)](masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md)
     - [使用兩個 DropDownList 進行主要/詳細資料篩選 (C#)](masterdetail/master-detail-filtering-with-two-dropdownlists-cs.md)
     - [跨兩個頁面進行主要/詳細資料篩選 (C#)](masterdetail/master-detail-filtering-across-two-pages-cs.md)
     - [使用具有詳細資料 DetailView 之可選取主要 GridView 的主要/詳細資料 (C#)](masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md)
     - [使用 DropDownList 進行主要/詳細資料篩選 (VB)](masterdetail/master-detail-filtering-with-a-dropdownlist-vb.md)
-    - [使用兩個 DropDownList 進行主要/詳細資料篩選 (VB)](masterdetail/master-detail-filtering-with-two-dropdownlists-vb.md)
+    - [使用兩個 DropDownLis 進行主要/詳細資料篩選 (VB)](masterdetail/master-detail-filtering-with-two-dropdownlists-vb.md)
     - [跨兩個頁面進行主要/詳細資料篩選 (VB)](masterdetail/master-detail-filtering-across-two-pages-vb.md)
     - [使用具有詳細資料 DetailView 之可選取主要 GridView 的主要/詳細資料 (VB)](masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md)
 - [自訂格式設定](custom-formatting/index.md)
@@ -108,9 +108,9 @@ ms.locfileid: "57023075"
     - [使用 DropDownList 進行主要/詳細資料篩選 (VB)](filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-vb.md)
     - [跨兩個頁面進行主要/詳細資料篩選 (VB)](filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-vb.md)
     - [使用具有詳細資料 DataList 的主要記錄項目符號清單的主要/詳細 (VB)](filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb.md)
-- [透過 DataList 編輯和刪除資料](editing-and-deleting-data-through-the-datalist/index.md)
+- [透過 DataList 編輯及刪除資料](editing-and-deleting-data-through-the-datalist/index.md)
 
-    - [DataList 中編輯和刪除資料的概觀 (C#)](editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)
+    - [DataList 中編輯及刪除資料的概觀 (C#)](editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)
     - [執行批次更新 (C#)](editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs.md)
     - [處理 BLL 和 DAL 層級的例外狀況 (C#)](editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-cs.md)
     - [將驗證控制項新增至 DataList 的編輯介面 (C#)](editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-cs.md)
@@ -153,11 +153,11 @@ ms.locfileid: "57023075"
     - [上傳檔案 (C#)](working-with-binary-files/uploading-files-cs.md)
     - [以資料 Web 控制項顯示二進位資料 (C#)](working-with-binary-files/displaying-binary-data-in-the-data-web-controls-cs.md)
     - [新增記錄時包含檔案上傳選項 (C#)](working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-cs.md)
-    - [更新和刪除現有的二進位資料 (C#)](working-with-binary-files/updating-and-deleting-existing-binary-data-cs.md)
+    - [更新及刪除現有的二進位資料 (C#)](working-with-binary-files/updating-and-deleting-existing-binary-data-cs.md)
     - [上傳檔案 (VB)](working-with-binary-files/uploading-files-vb.md)
     - [以資料 Web 控制項顯示二進位資料 (VB)](working-with-binary-files/displaying-binary-data-in-the-data-web-controls-vb.md)
     - [新增記錄時包含檔案上傳選項 (VB)](working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb.md)
-    - [更新和刪除現有的二進位資料 (VB)](working-with-binary-files/updating-and-deleting-existing-binary-data-vb.md)
+    - [更新及刪除現有的二進位資料 (VB)](working-with-binary-files/updating-and-deleting-existing-binary-data-vb.md)
 - [快取資料](caching-data/index.md)
 
     - [使用 ObjectDataSource 快取資料 (C#)](caching-data/caching-data-with-the-objectdatasource-cs.md)
@@ -190,8 +190,8 @@ ms.locfileid: "57023075"
     - [新增其他 DataTable 資料行 (C#)](advanced-data-access-scenarios/adding-additional-datatable-columns-cs.md)
     - [使用計算資料行 (C#)](advanced-data-access-scenarios/working-with-computed-columns-cs.md)
     - [設定資料存取層的連線和命令層級設定 (C#)](advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-cs.md)
-    - [保護連接字串和其他組態資訊 (C#)](advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-cs.md)
-    - [偵錯預存程序 (C#)](advanced-data-access-scenarios/debugging-stored-procedures-cs.md)
+    - [保護連接字串與其他設定資訊 (C#)](advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-cs.md)
+    - [針對預存程序進行偵錯 (C#)](advanced-data-access-scenarios/debugging-stored-procedures-cs.md)
     - [使用受控碼建立預存程序和使用者定義函式 (C#)](advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-cs.md)
     - [為具類型資料集的 Tableadapter 建立新的預存程序 (VB)](advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)
     - [使用具類型資料集 Tableadapter 現有的預存程序 (VB)](advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)
@@ -199,6 +199,6 @@ ms.locfileid: "57023075"
     - [新增其他 DataTable 資料行 (VB)](advanced-data-access-scenarios/adding-additional-datatable-columns-vb.md)
     - [使用計算資料行 (VB)](advanced-data-access-scenarios/working-with-computed-columns-vb.md)
     - [設定資料存取層的連線和命令層級設定 (VB)](advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-vb.md)
-    - [保護連接字串和其他組態資訊 (VB)](advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-vb.md)
-    - [偵錯預存程序 (VB)](advanced-data-access-scenarios/debugging-stored-procedures-vb.md)
+    - [保護連接字串與其他設定資訊 (VB)](advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-vb.md)
+    - [針對預存程序進行偵錯 (VB)](advanced-data-access-scenarios/debugging-stored-procedures-vb.md)
     - [使用受控碼建立預存程序和使用者定義函式 (VB)](advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb.md)

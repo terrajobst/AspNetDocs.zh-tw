@@ -8,15 +8,15 @@ ms.date: 02/20/2007
 ms.assetid: e322f34c-83b7-41ea-ab65-ab1e0bdcc609
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1dffaf59c6519f288dc36519897e51efa22c6a26
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4814edc35c27ba3d17f9bd7de75f97a7e1ad071f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037065"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422079"
 ---
-<a name="using-parameterized-queries-with-the-sqldatasource-vb"></a>使用以 SqlDataSource 進行的參數化查詢 (VB)
-====================
+# <a name="using-parameterized-queries-with-the-sqldatasource-vb"></a>使用以 SqlDataSource 進行的參數化查詢 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_48_VB.exe)或[下載 PDF](using-parameterized-queries-with-the-sqldatasource-vb/_static/datatutorial48vb1.pdf)
@@ -61,7 +61,7 @@ SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要
 選取時要傳回從 SqlDataSource 控制項使用資料庫的資料，請設定資料來源精靈可讓我們只要挑選要傳回從現有的資料表或檢視 （請參閱 圖 1） 的資料行。 Sql 自動進行建置`SELECT`陳述式，也就是傳送至資料庫時 SqlDataSource 的`Select()`叫用方法。 如同我們在上一個教學課程，從下拉式清單中選取 [產品] 資料表，並檢查`ProductID`， `ProductName`，和`UnitPrice`資料行。
 
 
-[![挑選要從資料表或檢視傳回的資料行](using-parameterized-queries-with-the-sqldatasource-vb/_static/image1.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image1.png)
+[![Pick 要從資料表或檢視表傳回的資料行](using-parameterized-queries-with-the-sqldatasource-vb/_static/image1.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image1.png)
 
 **圖 1**:挑選資料行，從資料表或檢視表傳回 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image2.png))
 
@@ -71,7 +71,7 @@ SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要
 針對此範例，可讓 s 只傳回這些結果其中`UnitPrice`值是否小於或等於 $25.00。 因此，挑選`UnitPrice`的資料行的下拉式清單和&lt;= 從 [運算子] 下拉式清單。 使用硬式編碼的參數值 （例如 $25.00) 時，或以程式設計方式指定為參數值，選取 無從 來源 下拉式清單。 接下來，在 25.00 上的 [值] 文字方塊中輸入硬式編碼的參數值，並按一下 [新增] 按鈕以完成程序。
 
 
-[![限制傳回的結果加入 WHERE 子句對話方塊](using-parameterized-queries-with-the-sqldatasource-vb/_static/image2.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image3.png)
+[![L將加入其中子句對話方塊從傳回的結果](using-parameterized-queries-with-the-sqldatasource-vb/_static/image2.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image3.png)
 
 **圖 2**:限制從 新增傳回的結果`WHERE`子句對話方塊 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image4.png))
 
@@ -93,7 +93,7 @@ SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要
 當 SqlDataSource s`Select()`叫用方法時，`UnitPrice`參數值 (25.00) 套用至`@UnitPrice`中的參數`SelectCommand`再傳送至資料庫。 最後結果就是，只有在小於或等於 $25.00 從傳回的產品`Products`資料表。 若要確認這點，將 GridView 加入頁面中，將它繫結到此資料來源，然後檢視該頁面，透過瀏覽器。 您應該只會看到列出的小於或等於 $25.00，如 圖 3 會確認這些產品。
 
 
-[![這些產品的小於或等於 $25.00 才會顯示](using-parameterized-queries-with-the-sqldatasource-vb/_static/image3.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image5.png)
+[![O顯示只有那些產品的小於或等於 $25.00](using-parameterized-queries-with-the-sqldatasource-vb/_static/image3.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image5.png)
 
 **圖 3**:只有那些產品的小於或等於 $25.00 顯示 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image6.png))
 
@@ -110,7 +110,7 @@ SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要
 輸入之後的查詢 （手動或透過 查詢產生器），請按一下 下一步。
 
 
-[![只傳回的產品小於或等於參數值](using-parameterized-queries-with-the-sqldatasource-vb/_static/image4.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image7.png)
+[![Return 只有那些產品的小於或等於參數值](using-parameterized-queries-with-the-sqldatasource-vb/_static/image4.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image7.png)
 
 **圖 4**:傳回只有那些產品的小於或等於參數值 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image8.png))
 
@@ -118,7 +118,7 @@ SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要
 因為查詢包含參數，請在精靈中的下一個畫面會提示我們輸入參數值的來源。 從參數來源下拉式清單中選擇控制項和`MaxPrice`(TextBox 控制項的`ID`值) 從 [ControlID] 下拉式清單。 您也可以輸入要在其中使用者未輸入任何文字的情況下使用選擇性的預設值`MaxPrice`文字方塊中。 目前，請勿輸入預設值。
 
 
-[![MaxPrice 文字方塊的 Text 屬性做為參數來源](using-parameterized-queries-with-the-sqldatasource-vb/_static/image5.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image9.png)
+[![T他 MaxPrice 文字方塊的文字屬性做為參數的來源](using-parameterized-queries-with-the-sqldatasource-vb/_static/image5.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image9.png)
 
 **圖 5**:`MaxPrice` TextBox s`Text`屬性做為參數的來源 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image10.png))
 
@@ -133,7 +133,7 @@ SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要
 花點時間檢視此頁面，透過瀏覽器。 第一次造訪網頁時，或每當`MaxPrice`文字方塊缺少任何記錄會顯示在 GridView 的值。
 
 
-[![沒有記錄會顯示當 MaxPrice 文字方塊是空的](using-parameterized-queries-with-the-sqldatasource-vb/_static/image6.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image11.png)
+[![No 記錄會顯示當 MaxPrice 文字方塊是空的](using-parameterized-queries-with-the-sqldatasource-vb/_static/image6.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image11.png)
 
 **圖 6**:沒有記錄會顯示當`MaxPrice`文字方塊是空的 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image12.png))
 
@@ -143,7 +143,7 @@ SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要
 文字方塊中輸入值，例如 5.00，，然後按一下 [顯示比對的產品] 按鈕。 在回傳時，SqlDataSource 會通知 GridView 在於其中一個參數的來源已變更。 因此，GridView 重新繫結至 SqlDataSource，顯示這些產品小於或等於 5.00 美元。
 
 
-[![顯示產品的小於或等於 $5.00](using-parameterized-queries-with-the-sqldatasource-vb/_static/image7.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image13.png)
+[![P小於或等於 $5.00 顯示 roducts](using-parameterized-queries-with-the-sqldatasource-vb/_static/image7.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image13.png)
 
 **圖 7**:顯示產品的小於或等於 $5.00 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image14.png))
 
@@ -162,7 +162,7 @@ SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要
 這`WHERE`子句會傳回*所有*記錄如果`@MaximumPrice`參數等於`-1.0`。 如果參數值不是`-1.0`，只有那些產品其`UnitPrice`小於或等於`@MaximumPrice`傳回參數值。 藉由設定的預設值`@MaximumPrice`參數來`-1.0`，在第一個頁面載入 (或每當`MaxPrice`文字方塊是空的)，`@MaximumPrice`值為`-1.0`，並且會顯示所有產品。
 
 
-[![現在所有產品都會顯示當 MaxPrice 文字方塊是空的](using-parameterized-queries-with-the-sqldatasource-vb/_static/image8.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image15.png)
+[![Now 所有產品都會顯示當 MaxPrice 文字方塊是空的](using-parameterized-queries-with-the-sqldatasource-vb/_static/image8.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image15.png)
 
 **圖 8**:現在所有產品都時會顯示`MaxPrice`文字方塊是空的 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image16.png))
 
@@ -185,7 +185,7 @@ SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要
 按一下儲存圖示 （或 Ctrl + S） 以儲存預存程序。 您可以用滑鼠右鍵按一下從預存程序] 資料夾，然後選擇 [執行測試的預存程序。 這會提示您輸入的預存程序的參數 (`@CategoryID`，這個執行個體中) 之後的結果會顯示在 [輸出] 視窗。
 
 
-[![GetProductsByCategory 預存程序執行時未使用@CategoryID為 1](using-parameterized-queries-with-the-sqldatasource-vb/_static/image9.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image17.png)
+[![T他 GetProductsByCategory 預存程序執行時未使用@CategoryID的 1](using-parameterized-queries-with-the-sqldatasource-vb/_static/image9.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image17.png)
 
 **圖 9**:`GetProductsByCategory`預存程序執行時未使用`@CategoryID`為 1 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image18.png))
 
@@ -193,7 +193,7 @@ SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要
 可讓使用此預存程序顯示在 GridView 中的飲料類別目錄中的所有產品的 s。 加入至頁面的新 GridView 和繫結至名為新 SqlDataSource `BeverageProductsDataSource`。 繼續指定自訂 SQL 陳述式或預存程序 畫面，選取預存程序選項按鈕，然後挑選`GetProductsByCategory`預存程序，從下拉式清單。
 
 
-[![選取 GetProductsByCategory 預存程序，從下拉式清單](using-parameterized-queries-with-the-sqldatasource-vb/_static/image10.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image19.png)
+[![S從下拉式清單中選擇 GetProductsByCategory 預存程序](using-parameterized-queries-with-the-sqldatasource-vb/_static/image10.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image19.png)
 
 **圖 10**:選取 `GetProductsByCategory`預存程序，從下拉式清單中 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image20.png))
 
@@ -201,7 +201,7 @@ SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要
 由於預存程序會接受輸入的參數 (`@CategoryID`)，按一下 [下一步] 會提示我們輸入來指定此參數的值的來源。 飲料`CategoryID`為 1，因此保留無參數來源下拉式清單，然後在 [預設值] 文字方塊中輸入 1。
 
 
-[![使用硬式編碼的值為 1，以傳回 「 飲料 」 分類中的產品](using-parameterized-queries-with-the-sqldatasource-vb/_static/image11.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image21.png)
+[![Use Hard-Coded 值為 1 來傳回 「 飲料 」 分類中的 [產品](using-parameterized-queries-with-the-sqldatasource-vb/_static/image11.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image21.png)
 
 **圖 11**:使用 1 Hard-Coded 值來傳回 「 飲料 」 分類中的產品 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image22.png))
 
@@ -214,7 +214,7 @@ SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要
 測試瀏覽器頁面。 顯示只屬於 「 飲料 」 分類的產品，雖然*所有*產品的欄位會顯示自`GetProductsByCategory`預存程序會傳回所有的資料行`Products`資料表。 當然，我們可以限制或自訂從 GridView 編輯資料行對話方塊 GridView 中顯示的欄位。
 
 
-[![會顯示所有飲料的](using-parameterized-queries-with-the-sqldatasource-vb/_static/image12.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image23.png)
+[![A顯示所有飲料的](using-parameterized-queries-with-the-sqldatasource-vb/_static/image12.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image23.png)
 
 **圖 12**:會顯示所有飲料的 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image24.png))
 
@@ -246,7 +246,7 @@ SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要
 `randomCategoryView(0)` 傳回第一個`DataRowView`DataView 中。 `randomCategoryView(0)("CategoryName")` 傳回的值`CategoryName`此第一個資料列中的資料行。 請注意，DataView 鬆散型別。 若要參考特定資料行值，我們需要的資料行的名稱傳遞為字串 (在此情況下 CategoryName)。 [圖 13] 顯示中顯示的訊息`CategoryNameLabel`檢視頁面時。 當然，顯示的實際類別名稱會隨機選取`RandomCategoryDataSource`SqlDataSource 在每次造訪 [（包括回傳）] 頁面上的。
 
 
-[![名稱會顯示在隨機選取的類別 s](using-parameterized-queries-with-the-sqldatasource-vb/_static/image13.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image25.png)
+[![T他會隨機選取的類別 s 名稱會顯示](using-parameterized-queries-with-the-sqldatasource-vb/_static/image13.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image25.png)
 
 **圖 13**:名稱會顯示在隨機選取的類別 s ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image26.png))
 
@@ -270,7 +270,7 @@ SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要
 啟動新增至頁面的 GridView，並將它繫結至名為新 SqlDataSource `ProductsByCategoryDataSource`。 我們未在步驟 3 中的更像，請設定 SqlDataSource，讓它會叫用`GetProductsByCategory`預存程序。 保留參數來源下拉式清單設定為 [無]，但不是會輸入預設值，因為我們會以程式設計方式設定此預設值。
 
 
-[![未指定參數的來源或預設值](using-parameterized-queries-with-the-sqldatasource-vb/_static/image14.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image27.png)
+[![Do 指定參數的來源或預設值](using-parameterized-queries-with-the-sqldatasource-vb/_static/image14.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image27.png)
 
 **圖 14**:執行未指定參數的來源或預設值 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image28.png))
 
@@ -288,7 +288,7 @@ SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要
 此步驟中，此頁面包含的 GridView 會顯示與隨機選取的類別相關聯的產品。
 
 
-[![未指定參數的來源或預設值](using-parameterized-queries-with-the-sqldatasource-vb/_static/image15.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image29.png)
+[![Do 指定參數的來源或預設值](using-parameterized-queries-with-the-sqldatasource-vb/_static/image15.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image29.png)
 
 **圖 15**:執行未指定參數的來源或預設值 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image30.png))
 

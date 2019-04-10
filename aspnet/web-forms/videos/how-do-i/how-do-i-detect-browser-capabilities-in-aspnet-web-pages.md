@@ -8,15 +8,15 @@ ms.date: 06/19/2008
 ms.assetid: aabfeabb-459e-4cfd-b067-44da3bbb291b
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-detect-browser-capabilities-in-aspnet-web-pages
 msc.type: video
-ms.openlocfilehash: 72fbc9836138b7792a5447d9efa5fee6038b57b5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1232d4b08b8709adafa7c3ed524125fffc2982df
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054145"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406908"
 ---
-<a name="how-do-i-detect-browser-capabilities-in-aspnet-web-pages"></a>[How Do i:]ASP.NET Web pages 中偵測瀏覽器功能
-====================
+# <a name="how-do-i-detect-browser-capabilities-in-aspnet-web-pages"></a>[How Do i:]ASP.NET Web pages 中偵測瀏覽器功能
+
 藉由[Chris Pels](https://twitter.com/chrispels)
 
 在這段影片 Chris Pels 將示範如何判斷哪些使用者的瀏覽器具有 ASP.NET 網站中檢視網頁時的功能。 首先，了解如何從網頁要求相關聯的 ASP.NET 要求物件存取 HttpBrowserCapabilities 物件的執行個體。 接下來，請參閱 HttpBrowserCapabilities 物件，例如瀏覽器和使用者的瀏覽器是否支援 JavaScript 和 Cookie 的類型中可用的不同資訊。 然後使用者的瀏覽器的相關資訊，請參閱如何的範例使用者，並判斷讓它可以重新導向至特定 web 網頁編目程式是否編目程式正在存取的網站。

@@ -8,15 +8,15 @@ ms.date: 09/28/2011
 ms.assetid: 124df537-428c-4861-b6c2-4830c094fe0c
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing
 msc.type: chapter
-ms.openlocfilehash: 5da0db768aaf39dc67bb2344e645c491c78a03a1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1a994b37faefe0e20c99a6991768898185e51b43
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021115"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417217"
 ---
-<a name="controllers-and-routing"></a>控制器和路由
-====================
+# <a name="controllers-and-routing"></a>控制器和路由
+
 > 在此教學課程的集中，您了解 ASP.NET 路由，其中將瀏覽器要求對應至 ASP.NET MVC 控制器動作。
 
 

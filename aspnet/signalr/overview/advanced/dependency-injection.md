@@ -8,15 +8,15 @@ ms.date: 06/10/2014
 ms.assetid: a14121ae-02cf-4024-8af0-9dd0dc810690
 msc.legacyurl: /signalr/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 957facaf2988fedb6615e95701af5155cbcb23d2
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 1b5d36529b52dfcbebf34cbfa230b3b3b4e83b81
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423087"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405374"
 ---
-<a name="dependency-injection-in-signalr"></a>SignalR 中的相依性插入
-====================
+# <a name="dependency-injection-in-signalr"></a>SignalR 中的相依性插入
+
 藉由[Mike Wasson](https://github.com/MikeWasson)， [Patrick Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -101,8 +101,8 @@ ms.locfileid: "58423087"
 
 Stockservices.asmx 範例會定義兩個主要類別：
 
-- `StockTickerHub`：中樞的類別，用來管理用戶端連線。
-- `StockTicker`：單一保留股價，並定期更新它們。
+- `StockTickerHub`:中樞的類別，用來管理用戶端連線。
+- `StockTicker`:單一保留股價，並定期更新它們。
 
 `StockTickerHub` 保留的參考`StockTicker`單一值，雖然`StockTicker`保存參考**IHubConnectionContext**的`StockTickerHub`。 它會使用此介面來與通訊`StockTickerHub`執行個體。 (如需詳細資訊，請參閱 <<c0> [ 伺服器廣播與 ASP.NET SignalR](../getting-started/tutorial-server-broadcast-with-signalr.md)。)
 
@@ -122,7 +122,7 @@ Visual Studio 可讓這種重構很容易。 開啟檔案 StockTicker.cs，以�
 
 ![](dependency-injection/_static/image1.png)
 
-在 [**擷取介面**] 對話方塊中，按一下**全選**。 保留其他預設值。 按一下 [確定 **Deploying Office Solutions**]。
+在 [**擷取介面**] 對話方塊中，按一下**全選**。 保留其他預設值。 按一下 [確定] 。
 
 ![](dependency-injection/_static/image2.png)
 

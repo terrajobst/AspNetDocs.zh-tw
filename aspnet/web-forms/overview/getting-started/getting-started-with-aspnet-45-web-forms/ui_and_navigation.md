@@ -8,15 +8,15 @@ ms.date: 09/08/2014
 ms.assetid: 5c76891d-e515-4885-b576-76bd2c494efe
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
 msc.type: authoredcontent
-ms.openlocfilehash: 55c659cbaf48dbb02dc34e013242443d4fbd8845
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7834b5c418de9d05ee870641cfd7c7f9956ab210
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060925"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402995"
 ---
-<a name="ui-and-navigation"></a>UI 和瀏覽
-====================
+# <a name="ui-and-navigation"></a>UI 和瀏覽
+
 藉由[Erik Reitan](https://github.com/Erikre)
 
 [下載 Wingtip Toys 範例專案 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下載電子書 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
@@ -212,7 +212,7 @@ Visual Studio 2013 專案範本會使用[Bootstrap](http://getbootstrap.com/)，
 
 > [!NOTE] 
 > 
-> **祕訣**
+> **提示**
 > 
 > 當您將在開發期間所輸入的程式碼時，您就可以確定該物件的有效成員位於因為強型別資料控制項顯示可用的成員為基礎的 IntelliSense。 當您輸入程式碼，例如屬性、 方法和物件，IntelliSense 會提供適當的內容的程式碼選擇。
 

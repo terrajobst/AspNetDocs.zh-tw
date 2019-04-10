@@ -8,15 +8,15 @@ ms.date: 02/26/2009
 ms.assetid: 0f8df1bd-080a-4eeb-980c-c2fbb05d30c2
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-cache-an-aspnet-page-based-upon-information-in-the-http-header
 msc.type: video
-ms.openlocfilehash: c90a3db1357df062909ad0e3b73fdeeb3dc16329
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 79c27f39793a4a3a94ea412838fb3844579e874d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037235"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404139"
 ---
-<a name="how-do-i--cache-an-aspnet-page-based-upon-information-in-the-http-header"></a>[How Do i:] 快取 ASP.NET 網頁會根據 HTTP 標頭中的資訊
-====================
+# <a name="how-do-i--cache-an-aspnet-page-based-upon-information-in-the-http-header"></a>[How Do i:] 快取 ASP.NET 網頁會根據 HTTP 標頭中的資訊
+
 藉由[Chris Pels](https://twitter.com/chrispels)
 
 在此影片的 Chris Pels 示範如何根據頁面的 HTTP 標頭中的資訊在 ASP.NET 輸出快取中保留的頁面。 首先，檢閱可能的 HTTP 標頭值。 然後，建立範例頁面，然後 OutputCache 指示詞搭配 VaryByHeader 屬性包含值 「 接受語言 」，HTTP 標頭，來控制快取根據使用者的瀏覽器的語言。 在 IE 中是設定為英文，然後它會設定為使用法文的 FireFox 中檢視範例網頁。 最後，將會討論將快取的定義移至 CacheProfile web.config 檔案中的選項。

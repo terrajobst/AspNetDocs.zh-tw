@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 38ac8250-8854-444c-b9ab-8998faa41c5a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cf8b6de7274c3ae025464e1b01a365ec158ae5f8
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 0462d8357d83115e751a818d3c9feb4b4274e212
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424387"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59402540"
 ---
-<a name="using-dynamicpopulate-with-a-user-control-and-javascript-c"></a>使用具有使用者控制項的 DynamicPopulate 和 JavaScript (C#)
-====================
+# <a name="using-dynamicpopulate-with-a-user-control-and-javascript-c"></a>使用具有使用者控制項的 DynamicPopulate 和 JavaScript (C#)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/d/8/f/d8f2f6f9-1b7c-46ad-9252-e1fc81bdea3e/dynamicpopulate2.cs.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dynamicpopulate2CS.pdf)
@@ -67,7 +67,7 @@ A &lt; `label` &gt;項目會用來顯示來自伺服器的資料。
 就是這麼容易！ 頁面的行為如預期般運作：使用者按一下其中一個選項按鈕，此工具組中的控制項呼叫 web 服務，並以所需的格式顯示目前的日期。
 
 
-[![選項按鈕位於使用者控制項](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image2.png)](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image1.png)
+[![T他的選項按鈕位於使用者控制項](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image2.png)](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image1.png)
 
 選項按鈕位於使用者控制項 ([按一下以檢視完整大小的影像](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image3.png))
 

@@ -8,15 +8,15 @@ ms.date: 08/10/2007
 ms.assetid: 62188875-159b-4d9e-98b7-7fda3fdd5b76
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-localize-an-aspnet-ajax-application
 msc.type: video
-ms.openlocfilehash: 5ec6b51e2fd1c2bc2396408e7c6b82e1274b9e86
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 211350e1c6c4060d22327709478afc5a47f887cb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060985"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422781"
 ---
-<a name="how-do-i-localize-an-aspnet-ajax-application"></a>[How Do i:]當地語系化 ASP.NET AJAX 應用程式？
-====================
+# <a name="how-do-i-localize-an-aspnet-ajax-application"></a>[How Do i:]當地語系化 ASP.NET AJAX 應用程式？
+
 藉由[Chris Pels](https://twitter.com/chrispels)
 
 在這段影片，我們開始使用標準的 ASP.NET framework 中，當地語系化功能的概觀，然後看看 ASP.NET AJAX Extensions 的當地語系化功能。 我們了解如何當地語系化文字、 日期和數字在根據瀏覽器的語言設定的用戶端上的資訊。 我們也了解如何讓 AJAX 應用程式使用上一步是在伺服器上的靜態和內嵌資源。

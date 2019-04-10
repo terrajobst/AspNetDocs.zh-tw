@@ -8,16 +8,17 @@ ms.date: 03/03/2014
 ms.assetid: a2f1c635-0817-4a9a-8c13-d5b5d29727c0
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: eb1a4632caf00097012bd1757da44016a076630f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bf3336c2467553ba3714bbd4fbb41a35a0490768
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026225"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410600"
 ---
 # <a name="using-visual-studio-2013-to-create-a-basic-aspnet-45-web-forms-page"></a>使用 Visual Studio 2013 建立基本的 ASP.NET 4.5 Web Form 頁面
+# 
 
-=== 由[Erik Reitan](https://github.com/Erikre)
+藉由[Erik Reitan](https://github.com/Erikre)
 
 [!INCLUDE[](~/includes/rp.md)]
 
@@ -61,7 +62,7 @@ ms.locfileid: "57026225"
 3. 選取 **範本** - &gt; **Visual C#**  - &gt; **Web**左側的 範本 群組。
 4. 選擇**ASP.NET Web 應用程式**中間欄的範本。
 5. 命名您的專案***BasicWebApp***然後按一下**確定** 按鈕。   
-![[新增專案] 對話方塊](creating-a-basic-web-forms-page/_static/image2.png)
+![新增專案對話方塊](creating-a-basic-web-forms-page/_static/image2.png)
 6. 接下來，選取**Web Form**範本，然後按一下**確定**按鈕，以建立專案。  
 ![[新增 ASP.NET 專案] 對話方塊](creating-a-basic-web-forms-page/_static/image3.png)  
 
@@ -187,7 +188,7 @@ Visual Studio 提供各種設定頁面上控制項的屬性。 在這個部分�
 ### <a name="to-set-control-properties"></a>若要設定控制項屬性
 
 
-1. 第一次，顯示**屬性**視窗中的，選取從**檢視**功能表-&gt; **其他 Windows**  - &gt; **屬性視窗**。 您也可以選取**F4**顯示**屬性**視窗。
+1. 第一次，顯示**屬性**視窗中的，選取從**檢視**功能表-&gt; **其他 Windows**  - &gt; **屬性 視窗**。 您也可以選取**F4**顯示**屬性**視窗。
 2. 選取 [ [] 按鈕](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控制項，然後在**屬性**視窗中，設定的值**文字**至**顯示名稱**。 下圖所示，您所輸入的文字會出現在設計工具中的按鈕。
 
     ![設定按鈕文字](creating-a-basic-web-forms-page/_static/image10.png "設定按鈕文字")

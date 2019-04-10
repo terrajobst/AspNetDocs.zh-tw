@@ -8,15 +8,15 @@ ms.date: 06/26/2007
 ms.assetid: ac6916d0-a5ab-4218-9760-7ba9e72d258c
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-deleting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c5b4d3c21fad9000ae50ecb35a5d94d176a135ee
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: da913e08cd007a89b659f87ef30ea15160692c09
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036495"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416944"
 ---
-<a name="batch-deleting-c"></a>批次刪除 (C#)
-====================
+# <a name="batch-deleting-c"></a>批次刪除 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_65_CS.zip)或[下載 PDF](batch-deleting-cs/_static/datatutorial65cs1.pdf)
@@ -31,7 +31,7 @@ ms.locfileid: "57036495"
 已使用的線上電子郵件用戶端的任何人已熟悉其中一個最常見的批次刪除介面： 對應刪除所有選取的項目具有的方格中的每個資料列中的核取方塊按鈕 （請參閱 圖 1）。 本教學課程是簡短而不是因為我們已經完成所有困難的工作先前的教學課程中建立的 web 型介面與方法來刪除的一系列記錄做為單一不可部分完成的作業中發生。 在 [新增 GridView 的核取方塊欄](../enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-cs.md)教學課程中我們建立 GridView 資料行的核取方塊，並在[資料庫修改包裝在交易](wrapping-database-modifications-within-a-transaction-cs.md)教學課程中我們建立中的方法會使用交易，以刪除 BLL`List<T>`的`ProductID`值。 在本教學課程中，我們將為基礎，並合併我們先前的體驗，以建立工作批次刪除範例。
 
 
-[![每個資料列包含一個核取方塊](batch-deleting-cs/_static/image1.gif)](batch-deleting-cs/_static/image1.png)
+[![E除此之外，每個資料列包含一個核取方塊](batch-deleting-cs/_static/image1.gif)](batch-deleting-cs/_static/image1.png)
 
 **圖 1**:每個資料列包含一個核取方塊 ([按一下以檢視完整大小的影像](batch-deleting-cs/_static/image2.png))
 
@@ -41,7 +41,7 @@ ms.locfileid: "57036495"
 因為我們已經建立批次刪除介面[新增 GridView 的核取方塊欄](../enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-cs.md)教學課程中，我們可以直接將它複製到`BatchDelete.aspx`而不是從頭開始建立它。 首先開啟`BatchDelete.aspx`頁面中`BatchData`資料夾並`CheckBoxField.aspx`頁面中`EnhancedGridView`資料夾。 從`CheckBoxField.aspx`頁面上，移至來源檢視並複製之間的標記`<asp:Content>`標記如 圖 2 所示。
 
 
-[![將 CheckBoxField.aspx 的宣告式標記複製到剪貼簿](batch-deleting-cs/_static/image2.gif)](batch-deleting-cs/_static/image3.png)
+[![Copy 宣告式標記的 CheckBoxField.aspx 到剪貼簿](batch-deleting-cs/_static/image2.gif)](batch-deleting-cs/_static/image3.png)
 
 **圖 2**:複製的宣告式標記`CheckBoxField.aspx`到剪貼簿 ([按一下以檢視完整大小的影像](batch-deleting-cs/_static/image4.png))
 
@@ -54,7 +54,7 @@ ms.locfileid: "57036495"
 複製之後透過宣告式標記和原始程式碼，請花一點時間測試`BatchDelete.aspx`透過瀏覽器中檢視它。 您應該會看到 GridView，列出前十個產品 GridView 中的每一列列出產品的名稱、 類別和價格，以及一個核取方塊。 應該有三個按鈕：檢查所有、 取消核取 [全部]，並刪除選取的產品。 取消核取 全部清除所有核取方塊時，按一下 查看全部 按鈕便會選取所有的核取方塊。 按一下 刪除選取的產品，會顯示訊息，其中列出`ProductID`值所選的產品，但不會實際刪除產品。
 
 
-[![從 CheckBoxField.aspx 介面已移至 BatchDeleting.aspx](batch-deleting-cs/_static/image3.gif)](batch-deleting-cs/_static/image5.png)
+[![T他從 CheckBoxField.aspx 介面已移至 BatchDeleting.aspx](batch-deleting-cs/_static/image3.gif)](batch-deleting-cs/_static/image5.png)
 
 **圖 3**:從介面`CheckBoxField.aspx`已移至`BatchDeleting.aspx`([按一下以檢視完整大小的影像](batch-deleting-cs/_static/image6.png))
 
@@ -82,12 +82,12 @@ ms.locfileid: "57036495"
 圖 4 顯示 GridView 之後已刪除選取的資料列數目。 圖 5 顯示的畫面，只有在已按下 刪除選取的產品 按鈕之後，立即。 請注意，在 圖 5`ProductID`刪除資料錄的值會顯示在下 GridView 的標籤，而這些資料列不再 GridView。
 
 
-[![將刪除選取的產品](batch-deleting-cs/_static/image4.gif)](batch-deleting-cs/_static/image7.png)
+[![T他選取的產品將會刪除](batch-deleting-cs/_static/image4.gif)](batch-deleting-cs/_static/image7.png)
 
 **圖 4**:選取產品將會刪除 ([按一下以檢視完整大小的影像](batch-deleting-cs/_static/image8.png))
 
 
-[![刪除產品的 ProductID 值會列在下方的 GridView](batch-deleting-cs/_static/image5.gif)](batch-deleting-cs/_static/image9.png)
+[![T他刪除產品 ProductID 值會列下方的 GridView](batch-deleting-cs/_static/image5.gif)](batch-deleting-cs/_static/image9.png)
 
 **圖 5**:刪除產品`ProductID`的值為列下方的 GridView ([按一下以檢視完整大小的影像](batch-deleting-cs/_static/image10.png))
 

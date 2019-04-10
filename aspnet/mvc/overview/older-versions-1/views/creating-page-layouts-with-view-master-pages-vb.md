@@ -8,15 +8,15 @@ ms.date: 10/16/2008
 ms.assetid: d34f90a1-6de3-482a-a326-f87fdcbaaaff
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4ff74b1dc1d83b7ec1c8ecf6eca341a5cd14403f
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 175e78d7ccc669c29c63dcb53af7aad1608c7d15
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026825"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422352"
 ---
-<a name="creating-page-layouts-with-view-master-pages-vb"></a>使用檢視主版頁面建立頁面配置 (VB)
-====================
+# <a name="creating-page-layouts-with-view-master-pages-vb"></a>使用檢視主版頁面建立頁面配置 (VB)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下載 PDF](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_12_VB.pdf)
@@ -37,7 +37,7 @@ by [Microsoft](https://github.com/microsoft)
 現在就開始建立會定義兩欄版面配置檢視主版頁面。 加入新的檢視主版頁面 MVC 專案中以滑鼠右鍵按一下 Views\Shared 資料夾中，選取功能表選項**新增、 新項目**，然後選取 MVC 檢視主版頁面範本 （見 圖 1）。
 
 
-[![新增檢視主版頁面](creating-page-layouts-with-view-master-pages-vb/_static/image2.png)](creating-page-layouts-with-view-master-pages-vb/_static/image1.png)
+[![Adding 檢視主版頁面](creating-page-layouts-with-view-master-pages-vb/_static/image2.png)](creating-page-layouts-with-view-master-pages-vb/_static/image1.png)
 
 **圖 01**:新增檢視主版頁面 ([按一下以檢視完整大小的影像](creating-page-layouts-with-view-master-pages-vb/_static/image3.png))
 
@@ -55,7 +55,7 @@ by [Microsoft](https://github.com/microsoft)
 在 列表 1 中的主版頁面包含兩個檢視的主體`<div>`對應到兩個資料行的標記。 階層式樣式表的資料行類別會套用至兩者`<div>`標記。 這個類別被定義在主版頁面的最上層宣告的樣式表中。 您可以在預覽檢視主版頁面藉由切換至 [設計] 檢視中的呈現方式。 按一下左下角的原始碼程式碼編輯器的 設計 索引標籤 （請參閱 圖 2）。
 
 
-[![預覽設計工具中的主版頁面](creating-page-layouts-with-view-master-pages-vb/_static/image5.png)](creating-page-layouts-with-view-master-pages-vb/_static/image4.png)
+[![P檢閱主版頁面在設計工具](creating-page-layouts-with-view-master-pages-vb/_static/image5.png)](creating-page-layouts-with-view-master-pages-vb/_static/image4.png)
 
 **圖 02**:預覽設計工具中的主版頁面 ([按一下以檢視完整大小的影像](creating-page-layouts-with-view-master-pages-vb/_static/image6.png))
 
@@ -65,7 +65,7 @@ by [Microsoft](https://github.com/microsoft)
 建立檢視主版頁面之後，您可以建立一或多個檢視以檢視主版頁面的內容頁面。 比方說，您可以建立主控制器的索引檢視內容頁面，以滑鼠右鍵按一下 Views\Home 資料夾中，選取**新增]、 [新項目**，並選取**MVC 檢視內容頁面**範本中，輸入名稱 Index.aspx，，然後按一下 [新增] 按鈕 （請參閱 [圖 3]）。
 
 
-[![新增檢視內容頁面](creating-page-layouts-with-view-master-pages-vb/_static/image8.png)](creating-page-layouts-with-view-master-pages-vb/_static/image7.png)
+[![Adding 檢視內容頁面](creating-page-layouts-with-view-master-pages-vb/_static/image8.png)](creating-page-layouts-with-view-master-pages-vb/_static/image7.png)
 
 **圖 03**:新增檢視內容頁面 ([按一下以檢視完整大小的影像](creating-page-layouts-with-view-master-pages-vb/_static/image9.png))
 
@@ -73,7 +73,7 @@ by [Microsoft](https://github.com/microsoft)
 按一下 新增 按鈕之後，新的對話方塊隨即出現，可讓您選取 檢視 內容頁面相關聯的檢視主版頁面 （請參閱 圖 4）。 您可以瀏覽至 Site.master 檢視主版頁面，我們在上一節中建立。
 
 
-[![選取主版頁面](creating-page-layouts-with-view-master-pages-vb/_static/image11.png)](creating-page-layouts-with-view-master-pages-vb/_static/image10.png)
+[![S選取主版頁面](creating-page-layouts-with-view-master-pages-vb/_static/image11.png)](creating-page-layouts-with-view-master-pages-vb/_static/image10.png)
 
 **圖 04**:選取主版頁面 ([按一下以檢視完整大小的影像](creating-page-layouts-with-view-master-pages-vb/_static/image12.png))
 
@@ -101,7 +101,7 @@ by [Microsoft](https://github.com/microsoft)
 要求列表 3 中的檢視時，它會呈現 [圖 5] 頁面。 請注意，檢視會呈現兩個資料行的頁面。 此外，請注意，從 [檢視內容] 頁面的內容會合併檢視主版頁面的內容。
 
 
-[![索引檢視的 [內容] 頁面](creating-page-layouts-with-view-master-pages-vb/_static/image14.png)](creating-page-layouts-with-view-master-pages-vb/_static/image13.png)
+[![T他的索引檢視內容頁面](creating-page-layouts-with-view-master-pages-vb/_static/image14.png)](creating-page-layouts-with-view-master-pages-vb/_static/image13.png)
 
 **圖 05**:索引檢視的 [內容] 頁面 ([按一下以檢視完整大小的影像](creating-page-layouts-with-view-master-pages-vb/_static/image15.png))
 
@@ -117,7 +117,7 @@ by [Microsoft](https://github.com/microsoft)
 當 [索引] 檢視呈現至瀏覽器時，所需的標題會出現在瀏覽器標題列中：
 
 
-[![瀏覽器標題列](creating-page-layouts-with-view-master-pages-vb/_static/image17.png)](creating-page-layouts-with-view-master-pages-vb/_static/image16.png)
+[![Browser 標題列](creating-page-layouts-with-view-master-pages-vb/_static/image17.png)](creating-page-layouts-with-view-master-pages-vb/_static/image16.png)
 
 
 沒有主版檢視頁面必須滿足才能 title 屬性的順序的一項重要需求。 檢視主版頁面必須包含`<head runat="server">`標記，而不是一般`<head>`標頭標記。 如果`<head>`標記不包含 runat ="server"屬性，則不會出現標題。 主版頁面包含所需的預設檢視`<head runat="server">`標記。

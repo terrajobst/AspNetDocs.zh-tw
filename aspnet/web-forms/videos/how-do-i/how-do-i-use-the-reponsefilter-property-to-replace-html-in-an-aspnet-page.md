@@ -8,15 +8,15 @@ ms.date: 01/29/2009
 ms.assetid: 3e5ae74a-9798-47d8-a2b3-0d8ad42dd4bc
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-the-reponsefilter-property-to-replace-html-in-an-aspnet-page
 msc.type: video
-ms.openlocfilehash: 0e8ae8b62bbb4ac1fc7e942cf3dd0438383cb510
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2ebd9162f81f5270c92c6b8d55e2d2dad4660701
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065075"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403424"
 ---
-<a name="how-do-i-use-the-reponsefilter-property-to-replace-html-in-an-aspnet-page"></a>[How Do i:]使用 Reponse.Filter 屬性取代 ASP.NET 網頁中的 HTML
-====================
+# <a name="how-do-i-use-the-reponsefilter-property-to-replace-html-in-an-aspnet-page"></a>[How Do i:]使用 Reponse.Filter 屬性取代 ASP.NET 網頁中的 HTML
+
 藉由[Chris Pels](https://twitter.com/chrispels)
 
 在此影片的 Chris Pels 示範如何使用 Reponse.Filter 屬性來攔截及變更傳送至網頁的 HTML。 首先，範例頁面會建立一些簡單的文字。 然後，會建立自訂的 Stream 類別，做為傳送至使用者的瀏覽器的目前資料流的替代資料流。 在自訂資料流類別，該頁面的內容會擷取從資料流，改變，而再寫出至回應資料流。 在此自訂的 Stream 類別寫入方法被自訂取代基底的回應資料流，藉此改變 什麼傳送到使用者的瀏覽器的 HTML。 新的資料流類別指派給 Response.Filter 內容頁面中的最後，\_載入事件，進而提供變更網頁內容的機制。

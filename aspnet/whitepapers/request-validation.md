@@ -8,15 +8,15 @@ ms.date: 02/10/2010
 ms.assetid: fa429113-5f8f-4ef4-97c5-5c04900a19fa
 msc.legacyurl: /whitepapers/request-validation
 msc.type: content
-ms.openlocfilehash: 087f30428602137e01f574825f3ebcd4db9285ff
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d721bb14b9907ae594d1d5207b6f802e84326c9c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57063935"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414721"
 ---
-<a name="request-validation---preventing-script-attacks"></a>要求驗證 - 防止指令碼攻擊
-====================
+# <a name="request-validation---preventing-script-attacks"></a>要求驗證 - 防止指令碼攻擊
+
 > 本文件說明位置，根據預設，應用程式無法處理未編碼的 HTML 內容提交給伺服器的 ASP.NET 要求驗證的功能。 當應用程式的設計可安全地處理 HTML 資料時，可以停用此要求驗證功能。
 > 
 > 適用於 ASP.NET 1.1 和 ASP.NET 2.0。
@@ -48,7 +48,7 @@ ASP.NET 要求驗證功能主動防止這些攻擊，方法不是允許未編碼
 
 ![](request-validation/_static/image3.png)
 
-錯誤訊息指出 '有潛在危險 Request.Form 值偵測到'，並提供更多詳細資料，在完全所產生，以及如何變更行為的描述。 例如: 
+錯誤訊息指出 '有潛在危險 Request.Form 值偵測到'，並提供更多詳細資料，在完全所產生，以及如何變更行為的描述。 例如：
 
 要求驗證程式偵測到有潛在危險的用戶端輸入的值，並在要求處理已中止。 此值可能表示有人嘗試入侵您的應用程式，例如跨網站指令碼攻擊的安全性。 您可以藉由設定停用要求驗證`validateRequest=false`Page 指示詞中，或在 [設定] 區段中。 不過，強烈建議，您的應用程式明確檢查所有輸入在此情況下。
 

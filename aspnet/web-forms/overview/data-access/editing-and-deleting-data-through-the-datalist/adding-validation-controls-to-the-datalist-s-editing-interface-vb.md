@@ -8,15 +8,15 @@ ms.date: 10/30/2006
 ms.assetid: 6b073fc6-524d-453d-be7c-0c30986de391
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d4d7db91ebd495149bb322487b541e2965d4f5e5
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: e91ba6a0c4d2f9cad6d88119e7f33931b7ba5772
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424668"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412797"
 ---
-<a name="adding-validation-controls-to-the-datalists-editing-interface-vb"></a>將驗證控制項新增至 DataList 的編輯介面 (VB)
-====================
+# <a name="adding-validation-controls-to-the-datalists-editing-interface-vb"></a>將驗證控制項新增至 DataList 的編輯介面 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_39_VB.exe)或[下載 PDF](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/datatutorial39vb1.pdf)
@@ -45,7 +45,7 @@ ms.locfileid: "58424668"
 3. 複製內的文字`<asp:Content>`和`</asp:Content>`標籤 （程式行 3 到 32），為所示的 圖 1。
 
 
-[![複製文字內&lt;asp: Content&gt;控制項](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image2.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image1.png)
+[![C複製文字內&lt;asp: Content&gt;控制項](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image2.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image1.png)
 
 **圖 2**:複製文字內`<asp:Content>`控制項 ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image3.png))
 
@@ -59,7 +59,7 @@ ms.locfileid: "58424668"
 移動內容，以及從程式碼之後`ErrorHandling.aspx`至`UIValidation.aspx`，花點時間來測試瀏覽器中的頁面。 您應該會看到相同的輸出，並體驗相同的功能，在每個 （請參閱 圖 2） 這兩個頁面。
 
 
-[![UIValidation.aspx 頁面模擬 ErrorHandling.aspx 中的功能](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image5.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image4.png)
+[![T他 UIValidation.aspx 頁面模擬 ErrorHandling.aspx 中的功能](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image5.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image4.png)
 
 **圖 2**:`UIValidation.aspx`頁面會模擬中的功能`ErrorHandling.aspx`([按一下以檢視完整大小的影像](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image6.png))
 
@@ -85,7 +85,7 @@ ms.locfileid: "58424668"
 讓著手將必要的驗證控制項新增至 DataList s s `EditItemTemplate`。 透過設計工具中，依序按一下 [編輯範本] 連結，從 DataList s 智慧標籤，或透過宣告式語法，可以執行這項工作。 可讓 s 步驟，透過使用 [編輯範本] 選項，從 [設計] 檢視的程序。 選擇編輯 DataList s 之後`EditItemTemplate`，從 [工具箱] 拖曳至範本的編輯介面，加入 RequiredFieldValidator 放之後`ProductName`文字方塊中。
 
 
-[![[ProductName] 文字方塊之後新增的 EditItemTemplate RequiredFieldValidator](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image8.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image7.png)
+[![Add EditItemTemplate 之後 ProductName 文字方塊 RequiredFieldValidator](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image8.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image7.png)
 
 **圖 3**:新增至 RequiredFieldValidator `EditItemTemplate After` `ProductName`文字方塊中 ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image9.png))
 
@@ -95,7 +95,7 @@ ms.locfileid: "58424668"
 設定之後的 RequiredFieldValidator 這三個屬性，您的畫面看起來應該類似於 圖 4。
 
 
-[![設定 RequiredFieldValidator 的 ControlToValidate、 錯誤訊息，以及文字屬性](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image11.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image10.png)
+[![Set RequiredFieldValidator 的 ControlToValidate、 錯誤訊息和文字屬性](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image11.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image10.png)
 
 **圖 4**:設定 RequiredFieldValidator s `ControlToValidate`， `ErrorMessage`，並`Text`屬性 ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image12.png))
 
@@ -112,7 +112,7 @@ ms.locfileid: "58424668"
 進行這些變更之後，請在瀏覽器中開啟頁面。 如果您嘗試以省略名稱，或編輯產品時，請輸入不正確的價格值，則會在文字方塊旁邊出現星號。 如 [圖 5] 所示，包含貨幣符號，例如 $19.95 價格值會被視為無效。 CompareValidator s `Currency` `Type`可讓數字分隔符號 （例如逗號或句號，根據文化特性設定而定） 和前置加號或減號，但*不*允許貨幣符號。 此行為可能 perplex 使用者，因為編輯介面目前呈現`UnitPrice`使用貨幣格式。
 
 
-[![具有無效的輸入文字方塊旁邊出現星號](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image14.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image13.png)
+[![A具有無效的輸入文字方塊旁邊出現星號 n](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image14.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image13.png)
 
 **圖 5**:星號會出現下一個具有無效的輸入文字方塊 ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image15.png))
 
@@ -169,7 +169,7 @@ ASP.NET 包含五個驗證控制項，除了[ValidationSummary 控制項](https:
 若要這麼做，請從 [工具箱] 拖曳至設計工具拖曳 ValidationSummary 控制項。 ValidationSummary 控制項不 t 的位置很重要，因為我們要將它設定為只會顯示摘要為 messagebox 重新。 加入控制項之後, 設定其[`ShowSummary`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx)要`False`及其[`ShowMessageBox`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx)到`True`。 此步驟中，任何驗證錯誤會摘要在用戶端 messagebox （請參閱 圖 6）。
 
 
-[![驗證錯誤會摘要在用戶端 Messagebox](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image17.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image16.png)
+[![T用戶端 Messagebox 將摘要列出他驗證錯誤](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image17.png)](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image16.png)
 
 **圖 6**:驗證錯誤會摘要在用戶端 Messagebox ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-datalist-s-editing-interface-vb/_static/image18.png))
 

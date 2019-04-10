@@ -1,22 +1,23 @@
 ---
 uid: web-api/overview/advanced/httpclient-message-handlers
-title: ASP.NET Web API 中的 HttpClient 訊息處理常式 |Microsoft Docs
+title: HttpClient 訊息處理常式，在 ASP.NET Web API-ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 建立自訂訊息處理常式的 ASP.NET Web API，在 ASP.NET 4.x
 ms.author: riande
 ms.date: 10/01/2012
+ms.custom: seoapril2019
 ms.assetid: 5a4b6c80-b2e9-4710-8969-d5076f7f82b8
 msc.legacyurl: /web-api/overview/advanced/httpclient-message-handlers
 msc.type: authoredcontent
-ms.openlocfilehash: 764244d1299d8cfcb59c3f15d63b42ebff4f6ac0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bd52396064cd7007ee17705ba86b02aaf27cb4f0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029095"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401721"
 ---
-<a name="httpclient-message-handlers-in-aspnet-web-api"></a>ASP.NET Web API 中的 HttpClient 訊息處理常式
-====================
+# <a name="httpclient-message-handlers-in-aspnet-web-api"></a>ASP.NET Web API 中的 HttpClient 訊息處理常式
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 A*訊息處理常式*是接收 HTTP 要求，並傳回 HTTP 回應的類別。

@@ -1,28 +1,31 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
-title: 開始使用 ASP.NET Web API 2 (C#)
+title: 開始使用 ASP.NET Web API 2 (C#)-ASP.NET 4.x
 author: MikeWasson
-description: HTTP 不只是提供 web 頁面。 它也是強大的平台，建置公開 （expose) 服務和資料的 Api。 HTTP 是簡單、 彈性和 ubiq...
+description: 使用程式碼的教學課程。 您可以使用 ASP.NET Web API 來建立 web API 會傳回一份產品。
 ms.author: riande
 ms.date: 11/28/2017
+ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 7bec95af4532535f0d620bfe6862958907466874
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5e3c049ba4349301c3c2d173d4311b3d0883bf68
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060185"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59401740"
 ---
-<a name="get-started-with-aspnet-web-api-2-c"></a>開始使用 ASP.NET Web API 2 (C#)
-====================
+# <a name="get-started-with-aspnet-web-api-2-c"></a>開始使用 ASP.NET Web API 2 (C#)
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 [下載已完成的專案](https://code.msdn.microsoft.com/Sample-code-of-Getting-c56ccb28)
 
+在本教學課程中，您將使用 ASP.NET Web API 來建立 web API 會傳回一份產品。
+
 HTTP 不只是提供 web 頁面。 HTTP 也是強大的平台，建置公開 （expose) 服務和資料的 Api。 HTTP 是簡單、 彈性且無所不在。 您可以將幾乎任何平台會有 HTTP 程式庫，因此 HTTP 服務可以連線到各種用戶端，包括瀏覽器、 行動裝置，以及傳統桌面應用程式。
 
-ASP.NET Web API 是用於建置 web Api 在.NET framework 的架構。 在本教學課程中，您將使用 ASP.NET Web API 來建立 web API 會傳回一份產品。
+ASP.NET Web API 是用於建置 web Api 在.NET framework 的架構。 
 
 ## <a name="software-versions-used-in-the-tutorial"></a>在本教學課程中使用的軟體版本
 

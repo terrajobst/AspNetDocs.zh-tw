@@ -8,15 +8,15 @@ ms.date: 06/10/2014
 ms.assetid: 3751f5e7-59db-4be0-a290-50abc24e5c84
 msc.legacyurl: /signalr/overview/performance/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: 3326c2e600854fc7a4435d96c45b04a6188d3937
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b0da3032e22123f415bf9865e264832739c29f61
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046735"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409014"
 ---
-<a name="signalr-performance"></a>SignalR 效能
-====================
+# <a name="signalr-performance"></a>SignalR 效能
+
 藉由[Patrick Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -204,7 +204,7 @@ SignalR 效能和調整的近期簡報，請參閱 <<c0> [ 調整與 ASP.NET Sig
 - **錯誤：中樞解析總計**
 - **錯誤：每秒中樞解析**
 - **錯誤：中樞叫用總數**
-- **錯誤：Hub Invocation/Sec**
+- **錯誤：每秒中樞叫用**
 - **錯誤：傳輸的總數**
 - **錯誤：傳輸/秒**
 
@@ -268,7 +268,7 @@ A**緩衝處理**資料流是已進入錯誤的狀態; 當資料流處於錯誤�
 - Web Service\Current Connections
 - Web Service\Maximum Connections
 
-**執行緒處理**
+**執行緒**
 
 - .NET CLR 鎖定和執行緒\\# 個目前的邏輯執行緒
 - .NET CLR 鎖定和執行緒\\# 個目前的實體執行緒

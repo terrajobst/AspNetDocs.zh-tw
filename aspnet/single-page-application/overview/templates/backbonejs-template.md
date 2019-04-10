@@ -8,15 +8,15 @@ ms.date: 04/04/2013
 ms.assetid: 00aca413-f067-4108-9bd1-cf21e64a2646
 msc.legacyurl: /single-page-application/overview/templates/backbonejs-template
 msc.type: authoredcontent
-ms.openlocfilehash: 325c4f5370340b2e223521fada77cf0e78a67b5b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8148974eacd1db05947ba54fe40776df69f92290
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025235"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404113"
 ---
-<a name="backbone-template"></a>Backbone 範本
-====================
+# <a name="backbone-template"></a>Backbone 範本
+
 藉由[Mads Kristensen](https://github.com/madskristensen)
 
 > Kazi Manzur Rashid 寫入骨幹 SPA 範本
@@ -110,7 +110,7 @@ Backbone.js SPA 範本設計來協助您開始快速建置互動式用戶端 web
 
 現在讓我們看看伺服器端。
 
-**控制器**
+**Controllers**
 
 在單一頁面應用程式中，伺服器會扮演小型角色在使用者介面。 一般來說，伺服器會呈現初始網頁，然後傳送和接收 JSON 資料。
 

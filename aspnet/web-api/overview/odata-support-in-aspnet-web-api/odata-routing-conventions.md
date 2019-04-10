@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions
-title: ASP.NET Web API 2 中的路由慣例 Odata |Microsoft Docs
+title: ASP.NET Web API 2 中的路由慣例 Odata-ASP.NET 4.x
 author: MikeWasson
-description: 這篇文章描述 Web API OData 端點所使用的路由慣例。
+description: 在 ASP.NET 4.x OData 端點會使用該 Web API 2 說明路由慣例。
 ms.author: riande
 ms.date: 07/31/2013
+ms.custom: seoapril2019
 ms.assetid: adbc175a-14eb-4ab2-a441-d056ffa8266f
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions
 msc.type: authoredcontent
-ms.openlocfilehash: 0199ccde100c8c3ab70db912b8ab984e0617f9dd
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8916f8b7a024636be1be055457081487f46a7936
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027115"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421624"
 ---
-<a name="routing-conventions-in-aspnet-web-api-2-odata"></a>ASP.NET Web API 2 中的路由慣例 Odata
-====================
+# <a name="routing-conventions-in-aspnet-web-api-2-odata"></a>ASP.NET Web API 2 中的路由慣例 Odata
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
-> 這篇文章描述 Web API OData 端點所使用的路由慣例。
+> 本文章會說明在 ASP.NET 4.x OData 端點會使用該 Web API 2 的路由慣例。
 
 
 當 Web API 取得 OData 要求時，它會將要求對應至控制器和動作名稱中。 對應根據 HTTP 方法和 URI。 例如，`GET /odata/Products(1)`對應至`ProductsController.GetProduct`。

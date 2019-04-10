@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: 21ebbaee-7ed8-45ae-b6c1-c27c88342e48
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
 msc.type: authoredcontent
-ms.openlocfilehash: ba116140faa0667d504e0ff101c274db9f46079e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b06f105b16087f97788e0ab360af41f538d2c1ac
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57026345"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400798"
 ---
-<a name="configuration-and-instrumentation"></a>設定與檢測
-====================
+# <a name="configuration-and-instrumentation"></a>設定與檢測
+
 by [Microsoft](https://github.com/microsoft)
 
 > 有一些組態中的重大變更和 ASP.NET 2.0 中的檢測。 新的 ASP.NET 組態 API 來以程式設計方式進行組態變更。 此外，許多新的組態設定存在於允許新的組態和檢測。
@@ -145,11 +145,11 @@ ASP.NET 2.0 會使用事件記錄檔提供者--蜪鎏來記錄應用程式定義
 
 &lt;HealthMonitoring&gt;全域的 Web.config 檔案區段包含下列項目：
 
-| **providers** | 包含提供者的事件檢視器、 WMI 及 SQL Server 設定。 |
+| **提供者** | 包含提供者的事件檢視器、 WMI 及 SQL Server 設定。 |
 | --- | --- |
 | **eventMappings** | 包含各種 WebBase 類別的對應。 如果您產生您自己的事件類別，您可以擴充此清單。 產生您自己的事件類別提供給您更精細的提供者傳送的資訊。 例如，您可以設定電子郵件傳送您自己的自訂事件時傳送到 SQL Server 的未處理例外狀況。 |
-| **rules** | 提供者 eventMappings 的連結。 |
-| **buffering** | 搭配 SQL Server 和電子郵件提供者，以決定排清至提供者的事件的頻率。 |
+| **規則** | 提供者 eventMappings 的連結。 |
+| **緩衝** | 搭配 SQL Server 和電子郵件提供者，以決定排清至提供者的事件的頻率。 |
 
 以下是全域的 Web.config 檔案中的程式碼範例。
 
@@ -298,7 +298,7 @@ ASP.NET 輸出快取的進階的功能是 SQL 快取相依性。 SQL 快取相�
 
 ASP.NET 編譯工具可以使用兩個一般的方式： 就地編譯和部署，而目標的輸出目錄在指定的編譯。
 
-### <a name="compiling-an-application-in-placehttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[編譯應用程式就地](https://msdn.microsoft.com/library/ms229863.aspx)
+### [<a name="compiling-an-application-in-place"></a>編譯應用程式就地](https://msdn.microsoft.com/library/ms229863.aspx)
 
 ASP.NET 編譯工具可以編譯的位置中的應用程式，也就是它是模仿應用程式，因此會造成規則編譯提出多個要求的行為。 先行編譯網站的使用者不會發生延遲，進行編譯的頁面上第一個要求所造成。
 
@@ -314,7 +314,7 @@ ASP.NET 編譯工具可以編譯的位置中的應用程式，也就是它是模
 > 編譯包含巢狀的應用程式的應用程式不會編譯巢狀的應用程式。 巢狀的應用程式必須個別進行編譯。
 
 
-### <a name="compiling-an-application-for-deploymenthttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[編譯應用程式部署](https://msdn.microsoft.com/library/ms229863.aspx)
+### [<a name="compiling-an-application-for-deployment"></a>編譯應用程式部署](https://msdn.microsoft.com/library/ms229863.aspx)
 
 您可以指定 targetDir 參數編譯應用程式以部署 （編譯的目標位置）。 TargetDir 可以是 Web 應用程式的最後一個位置，或已編譯的應用程式可以進一步進行部署。 使用 **-u**選項編譯的方式，您可以變更已編譯的應用程式中的某些檔案而不需要重新編譯應用程式。 Aspnet\_compiler.exe 會區分靜態和動態的檔案類型，並建立產生的應用程式時以不同方式處理它們。
 
@@ -351,11 +351,11 @@ ASP.NET 編譯工具可以編譯的位置中的應用程式，也就是它是模
 | 應用程式中的.skin 檔案\_佈景主題子目錄 | 佈景主題會編譯成組件，並放置在 Bin 目錄。 虛設常式檔案建立.skin 檔案並放在對應的輸出目錄中。 （例如.css) 的靜態檔案會複製到輸出目錄。 |
 | .browser Web.config 靜態檔案類型的 Bin 目錄中已存在的組件 | 這些檔案會複製到輸出目錄。 |
 
-### <a name="fixed-assembly-nameshttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[固定組件名稱](https://msdn.microsoft.com/library/ms229863.aspx##)
+### [<a name="fixed-assembly-names"></a>固定組件名稱](https://msdn.microsoft.com/library/ms229863.aspx##)
 
 某些情況下，例如使用 MSI Windows Installer，Web 應用程式部署需要使用一致的檔案名稱和內容，以及一致的目錄結構，以找出組件或更新的組態設定。 在這些情況下，您可以使用**的-fixednames**選項來指定 ASP.NET 編譯工具應該編譯的組件的每個原始程式檔，而不是使用 where 多個頁面會編譯成組件。 這可能會導致大量的組件，因此如果您擔心延展性與您應該小心使用此選項。
 
-### <a name="strong-name-compilationhttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[強式名稱編譯](https://msdn.microsoft.com/library/ms229863.aspx##)
+### [<a name="strong-name-compilation"></a>強式名稱編譯](https://msdn.microsoft.com/library/ms229863.aspx##)
 
 **-Aptca**， **-delaysign**， **-keycontainer**並 **-keyfile**會提供選項，好讓您可以使用 Aspnet\_compiler.exe 建立強式名稱組件而不使用[強式名稱工具 (Sn.exe)](https://msdn.microsoft.com/library/k5b5tt23.aspx)分開。 這些選項，分別對應至**AllowPartiallyTrustedCallersAttribute**， **AssemblyDelaySignAttribute**， **AssemblyKeyNameAttribute**，和**AssemblyKeyFileAttribute**。
 

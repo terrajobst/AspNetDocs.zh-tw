@@ -8,21 +8,21 @@ ms.date: 07/16/2014
 ms.assetid: ba07958c-42e1-4da0-81db-ba6925ed6db0
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 3db54a134e8f842cab1d3471c69f5a8e2039d83d
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 9904582450d4386ef8b8656078f6d40dbd1e10be
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423607"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412004"
 ---
-<a name="hands-on-lab-real-time-web-applications-with-signalr"></a>實際操作實驗室：使用 SignalR 的即時 Web 應用程式
-====================
+# <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>實際操作實驗室：使用 SignalR 的即時 Web 應用程式
+
 
 藉由[Web Camp 小組](https://twitter.com/webcamps)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-[下載 Web 研討會訓練套件](https://aka.ms/webcamps-training-kit)
+[下載 Web 研討會訓練套件，2015 年 10 月版本](https://github.com/Microsoft-Web/WebCampTrainingKit/releases/tag/v2015.10.13b)
 
 > 即時 Web 應用程式功能的伺服器端將內容推至連線的用戶端時，即時的能力。 ASP.NET 開發人員，如**ASP.NET SignalR**是將即時 web 功能新增至他們的應用程式的程式庫。 它會利用數個傳輸，會自動選取最佳可用的傳輸用戶端和伺服器的最佳可用的傳輸。 它會善用**WebSocket**，HTML5 API，可讓瀏覽器與伺服器之間的雙向通訊。
 > 
@@ -34,8 +34,7 @@ ms.locfileid: "58423607"
 > 
 > ![SignalR 架構](real-time-web-applications-with-signalr/_static/image1.png)
 > 
-> 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
-
+> 所有的範例程式碼和程式碼片段都包含在 Web 研討會訓練套件中，2015 年 10 月版本，網址[ https://github.com/Microsoft-Web/WebCampTrainingKit/releases/tag/v2015.10.13b ](https://github.com/Microsoft-Web/WebCampTrainingKit/releases/tag/v2015.10.13b)。  請注意，在該頁面上的安裝程式 連結不再適用於;請改用其中一個連結 資產 區段底下。
 
 <a id="Overview"></a>
 ## <a name="overview"></a>總覽
@@ -77,7 +76,7 @@ ms.locfileid: "58423607"
 > 每個練習會伴隨起始方案，位於**開始**練習，可讓您依照每個練習，獨立於其他的資料夾。 請留意練習期間新增的程式碼片段缺少這些啟動解決方案，並可能無法運作，直到您已完成練習。 在練習的原始程式碼，您也可以找到**結束**資料夾包含 Visual Studio 方案，以程式碼所產生的相對應的練習中的步驟。 如果您需要其他說明，當您完成這個實際操作實驗室，您可以使用這些解決方案與指引。
 
 
-* * *
+---
 
 <a id="Exercises"></a>
 ## <a name="exercises"></a>練習
@@ -394,7 +393,7 @@ ms.locfileid: "58423607"
 
     *後擋板訊息資料表*
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>總結

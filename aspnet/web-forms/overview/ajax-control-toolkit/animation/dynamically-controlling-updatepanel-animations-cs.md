@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 5138b8fe-98ff-4e73-a00b-e263fc3ff11d
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/dynamically-controlling-updatepanel-animations-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4de43cca95a37270c752d57f39940339b5bb2e3c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 0767b66a035069629c15e658c1e75ea78a7bd07b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048175"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407649"
 ---
-<a name="dynamically-controlling-updatepanel-animations-c"></a>以動態方式控制 UpdatePanel 動畫 (C#)
-====================
+# <a name="dynamically-controlling-updatepanel-animations-c"></a>以動態方式控制 UpdatePanel 動畫 (C#)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/UpdatePanelAnimation2.cs.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/updatepanelanimation2CS.pdf)
@@ -58,7 +58,7 @@ ms.locfileid: "57048175"
 在瀏覽器中執行此檔案。 每當您按一下按鈕時，目前的時間會顯示在面板中，一律為一秒期間淡入。
 
 
-[![目前的時間淡入](dynamically-controlling-updatepanel-animations-cs/_static/image2.png)](dynamically-controlling-updatepanel-animations-cs/_static/image1.png)
+[![T他目前的時間會淡入](dynamically-controlling-updatepanel-animations-cs/_static/image2.png)](dynamically-controlling-updatepanel-animations-cs/_static/image1.png)
 
 目前的時間淡入 ([按一下以檢視完整大小的影像](dynamically-controlling-updatepanel-animations-cs/_static/image3.png))
 

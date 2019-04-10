@@ -8,15 +8,15 @@ ms.date: 04/21/2011
 ms.assetid: 0c6e4c2f-fcdb-4978-9656-1990c6f15727
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-10
 msc.type: authoredcontent
-ms.openlocfilehash: f32509701dd112053aa4f31d6552601f961c7413
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 48404f449ce2641bdff55b9ad75aa5eec1aee46b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57049435"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403294"
 ---
-<a name="part-10-final-updates-to-navigation-and-site-design-conclusion"></a>第 10 部分：瀏覽及網站 設計的最後更新，結論
-====================
+# <a name="part-10-final-updates-to-navigation-and-site-design-conclusion"></a>第 10 部分：瀏覽及網站 設計的最後更新，結論
+
 藉由[Jon Galloway](https://github.com/jongalloway)
 
 > MVC Music 市集是介紹，並逐步說明如何使用 ASP.NET MVC 和 Visual Studio 進行 web 開發的教學課程應用程式。  
@@ -66,7 +66,7 @@ CartSummary 部分檢視是很簡單-它是只連結至 ShoppingCart 索引 檢�
 
 此動作會傳回部分的檢視中，接下來，我們將建立會顯示的內容類型清單。
 
-*注意：我們在此控制器動作，這表示我們只想在部分檢視中使用此動作中加入 [ChildActionOnly] 屬性。這個屬性會防止執行瀏覽至 /Store/GenreMenu 控制器動作。這不是必要的部分檢視，但良好的做法，因為我們想要確定我們的控制器動作做為我們想。我們也要傳回 PartialView，而不是檢視，可讓檢視引擎知道它不應該針對此檢視中，使用配置為包含在其他檢視中。*
+*注意:我們在此控制器動作，這表示我們只想在部分檢視中使用此動作中加入 [ChildActionOnly] 屬性。 這個屬性會防止執行瀏覽至 /Store/GenreMenu 控制器動作。 這不是必要的部分檢視，但良好的做法，因為我們想要確定我們的控制器動作做為我們想。 我們也要傳回 PartialView，而不是檢視，可讓檢視引擎知道它不應該針對此檢視中，使用配置為包含在其他檢視中。*
 
 以滑鼠右鍵按一下 GenreMenu 控制器動作，並建立名為 GenreMenu 它強型別，如下所示，使用內容類型的檢視資料類別的部分檢視。
 
@@ -92,7 +92,7 @@ CartSummary 部分檢視是很簡單-它是只連結至 ShoppingCart 索引 檢�
 
 這裡我們正在進行，讓我們可以套用的連結，以包含專輯作品的特殊格式，其中使用了 Url.Action，而不是 Html.ActionLink 使用。
 
-*注意：我們要顯示這些相簿的泛型的專輯封面。這項資訊儲存在資料庫中，並編輯透過存放區管理員。您可以將您自己的作品。*
+*注意:我們要顯示這些相簿的泛型的專輯封面。 這項資訊儲存在資料庫中，並編輯透過存放區管理員。 您可以將您自己的作品。*
 
 現在當我們瀏覽至內容類型，我們會看到具有專輯作品的方格中顯示的 album。
 
@@ -106,7 +106,7 @@ CartSummary 部分檢視是很簡單-它是只連結至 ShoppingCart 索引 檢�
 
 [!code-csharp[Main](mvc-music-store-part-10/samples/sample8.cs)]
 
-*注意：這將需要新增 using 陳述式，以納入 System.Collections.Generic 命名空間。*
+*注意:這將需要新增 using 陳述式，以納入 System.Collections.Generic 命名空間。*
 
 首先，我們將新增 storeDB 欄位和 MvcMusicStore.Models using 陳述式，如同我們的其他控制站。 接下來，我們會將下列方法加入 HomeController 查詢來尋找最上層的銷售專輯 OrderDetails 根據資料庫。
 

@@ -8,15 +8,15 @@ ms.date: 08/03/2007
 ms.assetid: 9ed8ccb5-5f31-4eb4-976d-cabf4b45ca09
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 106f7498a70339556d0662a986d71a01a21074ab
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 6dda18eb27d45f8dfdb4803cf3aca3ffe96bf11e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424530"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406557"
 ---
-<a name="debugging-stored-procedures-vb"></a>針對預存程序進行偵錯 (VB)
-====================
+# <a name="debugging-stored-procedures-vb"></a>針對預存程序進行偵錯 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_74_VB.zip)或[下載 PDF](debugging-stored-procedures-vb/_static/datatutorial74vb1.pdf)
@@ -67,7 +67,7 @@ Visual Studio 可讓您更輕鬆地直接偵錯資料庫物件。 讓 s 看看�
 在提供的值之後`@CategoryID`參數，預存程序會執行。 而不是執行到完成為止，不過，偵錯工具暫止執行的第一個陳述式。 請注意界黃色箭頭，指出預存程序中的目前位置。 您可以檢視並編輯透過監看式視窗或藉由將滑鼠停留在預存程序的參數名稱的參數值。
 
 
-[![偵錯工具已停止執行預存程序的第一個陳述式](debugging-stored-procedures-vb/_static/image3.png)](debugging-stored-procedures-vb/_static/image2.png)
+[![T他的偵錯工具已停止執行預存程序的第一個陳述式](debugging-stored-procedures-vb/_static/image3.png)](debugging-stored-procedures-vb/_static/image2.png)
 
 **圖 2**:偵錯工具已停止執行預存程序的第一個陳述式 ([按一下以檢視完整大小的影像](debugging-stored-procedures-vb/_static/image4.png))
 
@@ -85,7 +85,7 @@ Visual Studio 可讓您更輕鬆地直接偵錯資料庫物件。 讓 s 看看�
 我們可以開始偵錯從應用程式呼叫的預存程序之前，我們必須指示 ASP.NET web 應用程式與 SQL Server 偵錯工具整合。 開始在 [方案總管] 中的網站名稱上按一下滑鼠右鍵 (`ASPNET_Data_Tutorial_74_VB`)。 從內容功能表中選擇 [屬性頁] 選項選取左側的 [啟動選項] 項目，請檢查 SQL Server 中的核取 [偵錯工具] 區段 （請參閱 [圖 3]）。
 
 
-[![檢查應用程式的屬性頁中的 SQL Server 核取方塊](debugging-stored-procedures-vb/_static/image6.png)](debugging-stored-procedures-vb/_static/image5.png)
+[![C檢查 SQL Server 核取方塊，在應用程式屬性頁](debugging-stored-procedures-vb/_static/image6.png)](debugging-stored-procedures-vb/_static/image5.png)
 
 **[圖 3**:檢查應用程式的屬性頁中的 SQL Server] 核取方塊 ([按一下以檢視完整大小的影像](debugging-stored-procedures-vb/_static/image7.png))
 
@@ -108,7 +108,7 @@ Visual Studio 可讓您更輕鬆地直接偵錯資料庫物件。 讓 s 看看�
 開啟`Products_SelectByCategoryID`預存程序，並在開頭設定中斷點`SELECT`陳述式的適當位置界中按一下，或將游標放在開頭`SELECT`陳述式，然後按 F9。 圖 4 所示，中斷點會顯示為邊界中的紅色圓圈。
 
 
-[![Products_SelectByCategoryID 中設定中斷點預存程序](debugging-stored-procedures-vb/_static/image9.png)](debugging-stored-procedures-vb/_static/image8.png)
+[![Set Products_SelectByCategoryID 中斷點預存程序](debugging-stored-procedures-vb/_static/image9.png)](debugging-stored-procedures-vb/_static/image8.png)
 
 **圖 4**:在 設定中斷點`Products_SelectByCategoryID`預存程序 ([按一下以檢視完整大小的影像](debugging-stored-procedures-vb/_static/image10.png))
 
@@ -126,12 +126,12 @@ Visual Studio 可讓您更輕鬆地直接偵錯資料庫物件。 讓 s 看看�
 `Products_SelectByCategoryID`中所建立的預存程序[使用現有預存程序的輸入資料集 Tableadapter](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)教學課程。 其對應的網頁 (`~/AdvancedDAL/ExistingSprocs.aspx`) 包含的 GridView 會顯示這個預存程序所傳回的結果。 請瀏覽此頁面，透過瀏覽器。 在達到 [] 頁面中的中斷點時`Products_SelectByCategoryID`就會叫用預存程序和控制傳回到 Visual Studio。 就像在步驟 1 中，您可以逐步執行預存程序 s 陳述式和檢視及修改參數值。
 
 
-[![ExistingSprocs.aspx 頁面一開始會顯示飲料](debugging-stored-procedures-vb/_static/image13.png)](debugging-stored-procedures-vb/_static/image12.png)
+[![T此外，他 ExistingSprocs.aspx 頁面一開始會顯示飲料](debugging-stored-procedures-vb/_static/image13.png)](debugging-stored-procedures-vb/_static/image12.png)
 
 **[圖 6**:`ExistingSprocs.aspx` ] 頁面一開始會顯示飲料 ([按一下以檢視完整大小的影像](debugging-stored-procedures-vb/_static/image14.png))
 
 
-[![預存程序 s 已到達中斷點](debugging-stored-procedures-vb/_static/image16.png)](debugging-stored-procedures-vb/_static/image15.png)
+[![T已達到他預存程序的中斷點](debugging-stored-procedures-vb/_static/image16.png)](debugging-stored-procedures-vb/_static/image15.png)
 
 **圖 7**:已到達中斷點的預存程序 s ([按一下以檢視完整大小的影像](debugging-stored-procedures-vb/_static/image17.png))
 
@@ -139,12 +139,12 @@ Visual Studio 可讓您更輕鬆地直接偵錯資料庫物件。 讓 s 看看�
 [圖 7] 所示，windows 7 中的 [監看式] 視窗為`@CategoryID`參數設為 1。 這是因為`ExistingSprocs.aspx`頁面中的飲料類別目錄，其具有一開始顯示產品`CategoryID`值為 1。 從下拉式清單中選擇不同的類別。 這樣會導致回傳，並重新執行`Products_SelectByCategoryID`預存程序。 同樣地，但這次叫用中斷點`@CategoryID`參數 s 的值會反映出選取的下拉式清單項目的`CategoryID`。
 
 
-[![從下拉式清單中選擇不同的類別](debugging-stored-procedures-vb/_static/image19.png)](debugging-stored-procedures-vb/_static/image18.png)
+[![C選擇不同的類別，從下拉式清單](debugging-stored-procedures-vb/_static/image19.png)](debugging-stored-procedures-vb/_static/image18.png)
 
 **圖 8**:從下拉式清單中選擇不同的類別 ([按一下以檢視完整大小的影像](debugging-stored-procedures-vb/_static/image20.png))
 
 
-[![@CategoryID參數會反映從網頁上所選取的類別](debugging-stored-procedures-vb/_static/image22.png)](debugging-stored-procedures-vb/_static/image21.png)
+[![T他@CategoryID參數會反映之 Web 網頁所選取的類別目錄](debugging-stored-procedures-vb/_static/image22.png)](debugging-stored-procedures-vb/_static/image21.png)
 
 **圖 9**:`@CategoryID`參數會反映之 Web 網頁所選取的類別目錄 ([按一下以檢視完整大小的影像](debugging-stored-procedures-vb/_static/image23.png))
 

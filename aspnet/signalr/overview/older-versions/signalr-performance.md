@@ -8,15 +8,15 @@ ms.date: 07/03/2013
 ms.assetid: 9594d644-66b6-4223-acdd-23e29a6e4c46
 msc.legacyurl: /signalr/overview/older-versions/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: 55e38762dbc7caf31989d65ebf70516a458cfb00
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 5f7415d0a4275a3864dc9eefb9588f17698147cd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425531"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412693"
 ---
-<a name="signalr-performance-signalr-1x"></a>SignalR 效能 (SignalR 1.x)
-====================
+# <a name="signalr-performance-signalr-1x"></a>SignalR 效能 (SignalR 1.x)
+
 藉由[Patrick Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -184,7 +184,7 @@ SignalR 效能和調整的近期簡報，請參閱 <<c0> [ 調整與 ASP.NET Sig
 - **錯誤：中樞解析總計**
 - **錯誤：每秒中樞解析**
 - **錯誤：中樞叫用總數**
-- **錯誤：Hub Invocation/Sec**
+- **錯誤：每秒中樞叫用**
 - **錯誤：傳輸的總數**
 - **錯誤：傳輸/秒**
 
@@ -232,7 +232,7 @@ SignalR 效能和調整的近期簡報，請參閱 <<c0> [ 調整與 ASP.NET Sig
 - Web Service\Current Connections
 - Web Service\Maximum Connections
 
-**執行緒處理**
+**執行緒**
 
 - .NET CLR LocksAndThreads\#個目前的邏輯執行緒
 - .NET CLR LocksAnd 執行緒\#的目前實體的執行緒

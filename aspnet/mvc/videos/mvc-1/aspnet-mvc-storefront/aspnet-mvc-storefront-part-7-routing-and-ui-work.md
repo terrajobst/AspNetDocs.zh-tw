@@ -8,15 +8,15 @@ ms.date: 05/27/2008
 ms.assetid: 07cb4434-cb24-4746-a4ba-bfeea889a7e2
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-7-routing-and-ui-work
 msc.type: video
-ms.openlocfilehash: 084958b16939fdf48cf778b2d7d4a5b37fc83af7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 6a5c9746443813849c65c796ea434730df03d009
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57036505"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405010"
 ---
-<a name="aspnet-mvc-storefront-part-7-routing-and-ui-work"></a>ASP.NET MVC 店面第 7 部分：路由與 UI 工作
-====================
+# <a name="aspnet-mvc-storefront-part-7-routing-and-ui-work"></a>ASP.NET MVC 店面第 7 部分：路由與 UI 工作
+
 藉由[Rob Conery](https://github.com/robconery)
 
 Rob 與 Scott Hanselman 談到有關如何設定路由，並接著他會實作使用者介面。

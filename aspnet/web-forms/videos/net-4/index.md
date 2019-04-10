@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: bac10aee-6731-4a0f-84d7-9eef5e560ae5
 msc.legacyurl: /web-forms/videos/net-4
 msc.type: chapter
-ms.openlocfilehash: e8565bc2914570eef982bbcc63a8497c2d38386a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ea11b464329a755d5625797327f5a0a3ccb0f426
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57019805"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400577"
 ---
-<a name="net-4"></a>.NET 4
-====================
+# <a name="net-4"></a>.NET 4
+
 > 新的 ASP.NET 功能與.NET Framework 4 中提供的功能。
 
 
@@ -36,7 +36,7 @@ ms.locfileid: "57019805"
     - [清除 Web.Config 檔案](core/aspnet-4-quick-hit-clean-webconfig-files.md)
     - [可預測的用戶端識別碼](core/aspnet-4-quick-hit-predictable-client-ids.md)
     - [HtmlEncoder 公用程式方法](core/aspnet-4-quick-hit-the-htmlencoder-utility-method.md)
-- [Data](data/index.md)
+- [資料](data/index.md)
 
     - [永續性 GridView 資料列選取範圍](data/aspnet-4-quick-hit-persistent-gridview-row-selection.md)
 - [標記控制項](markup-control/index.md)
@@ -44,20 +44,20 @@ ms.locfileid: "57019805"
     - [核取方塊清單和選項按鈕清單的新轉譯選項](markup-control/aspnet-4-quick-hit-new-rendering-option-for-check-box-lists-and-radio-button-lists.md)
     - [免用資料表的樣板化控制項](markup-control/aspnet-4-quick-hit-table-free-templated-controls.md)
     - [無資料表的功能表控制項](markup-control/aspnet-4-quick-hit-tableless-menu-control.md)
-    - [隱藏的欄位 DIV](markup-control/aspnet-4-quick-hit-hidden-field-divs.md)
+    - [隱藏的欄位 Div](markup-control/aspnet-4-quick-hit-hidden-field-divs.md)
     - [停用的控制項樣式](markup-control/aspnet-4-quick-hit-disabled-control-styling.md)
 - [效能](performance/index.md)
 
     - [可選擇的檢視狀態](performance/aspnet-4-quick-hit-selective-view-state.md)
     - [簡單狀態壓縮](performance/aspnet-4-quick-hit-easy-state-compression.md)
     - [使用 ViewStateMode 屬性管理 ViewState](performance/how-do-i-use-the-viewstatemode-property-for-managing-viewstate.md)
-- [路由傳送](routing/index.md)
+- [路由](routing/index.md)
 
     - [永久重新導向](routing/aspnet-4-quick-hit-permanent-redirect.md)
     - [命令式 WebForms 路由](routing/aspnet-4-quick-hit-imperative-webforms-routing.md)
     - [宣告式 WebForms 路由](routing/aspnet-4-quick-hit-declarative-webforms-routing.md)
     - [輸出 WebForms 路由](routing/aspnet-4-quick-hit-outbound-webforms-routing.md)
-    - [使用具有 ASP.NET Web Form 的路由](routing/how-do-i-use-routing-with-aspnet-web-forms.md)
+    - [使用具有 ASP.NET Web Forms 的路由](routing/how-do-i-use-routing-with-aspnet-web-forms.md)
     - [在 ASP.NET 路由中使用 URL](routing/how-do-i-work-with-urls-in-aspnet-routing.md)
 - [SEO](seo/index.md)
 

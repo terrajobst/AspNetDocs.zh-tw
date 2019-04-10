@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api
-title: ASP.NET Web API 中的模型驗證 |Microsoft Docs
+title: 模型驗證，在 ASP.NET Web API-ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 概觀的 ASP.NET Web API 中的模型驗證，asp.net 4.x。
 ms.author: riande
 ms.date: 07/20/2012
+ms.custom: seoapril2019
 ms.assetid: 7d061207-22b8-4883-bafa-e89b1e7749ca
 msc.legacyurl: /web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 611a6466e160387592df678b3b8556625ff8e234
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d4e792f8cc2f79c2ab82c5a74fd50f49475fac4f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033405"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404568"
 ---
-<a name="model-validation-in-aspnet-web-api"></a>ASP.NET Web API 中的模型驗證
-====================
+# <a name="model-validation-in-aspnet-web-api"></a>ASP.NET Web API 中的模型驗證
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
-當用戶端會將資料傳送至您的 web API 時，通常您想要驗證資料再進行任何處理。 本文說明如何將模型加上註解、 使用註解進行資料驗證和處理您的 web API 中的驗證錯誤。
+本文說明如何將模型加上註解、 使用註解進行資料驗證和處理您的 web API 中的驗證錯誤。 當用戶端會將資料傳送至您的 web API 時，通常您想要驗證資料再進行任何處理。 
 
 ## <a name="data-annotations"></a>資料註釋
 
@@ -55,7 +56,7 @@ ms.locfileid: "57033405"
 
 [!code-json[Main](model-validation-in-aspnet-web-api/samples/sample6.json)]
 
-JSON，包含屬性 （[色彩]），不存在於`Product`模型。 在此情況下，JSON 格式器只會忽略此值。 （XML 格式器執行相同作業。）如果您的模型有您想要處於唯讀模式的屬性，過度發佈就會造成問題。 例如: 
+JSON，包含屬性 （[色彩]），不存在於`Product`模型。 在此情況下，JSON 格式器只會忽略此值。 （XML 格式器執行相同作業。）如果您的模型有您想要處於唯讀模式的屬性，過度發佈就會造成問題。 例如：
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample7.cs)]
 

@@ -8,15 +8,15 @@ ms.date: 07/09/2007
 ms.assetid: ab2eedbc-79b5-4b63-a1df-935940c1545b
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-enforce-coding-standards-with-code-analysis
 msc.type: video
-ms.openlocfilehash: 609f91090520cc36f312a68d63ba6d7356bb008d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1a9cf8ac7e8618dd3733080ba6a065e14f1cb68c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025625"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59417139"
 ---
-<a name="how-do-i-enforce-coding-standards-with-code-analysis"></a>[How Do i:]強制使用程式碼分析的程式碼撰寫標準嗎？
-====================
+# <a name="how-do-i-enforce-coding-standards-with-code-analysis"></a>[How Do i:]強制使用程式碼分析的程式碼撰寫標準嗎？
+
 藉由[Chris Menegay](https://twitter.com/CMenegay)
 
 使用 Visual Studio Team System 中，您必須套用至類別庫專案中，網站專案和原始程式碼控制的程式碼分析規則的良好控制。 在這段影片中我們了解如何指定的錯誤和警告專案期間將套用組建和程式碼簽入，我們了解如何隱藏特定的規則將套用至特定類別成員。 與這個可設定性，您可以強制執行編碼標準，以改善您的程式碼的品質，同時確保不適用的規則永遠不會取得您的方式。

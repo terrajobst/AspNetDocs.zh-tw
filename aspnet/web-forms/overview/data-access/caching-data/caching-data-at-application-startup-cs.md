@@ -8,15 +8,15 @@ ms.date: 05/30/2007
 ms.assetid: 22ca8efa-7cd1-45a7-b9ce-ce6eb3b3ff95
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 692b2a13664a9a5153a85a230dd513b022518316
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 7e858fe4c1f8e93f6e6fa30b33f5682945d03c32
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423980"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403073"
 ---
-<a name="caching-data-at-application-startup-c"></a>在應用程式啟動時快取資料 (C#)
-====================
+# <a name="caching-data-at-application-startup-c"></a>在應用程式啟動時快取資料 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載 PDF](caching-data-at-application-startup-cs/_static/datatutorial60cs1.pdf)
@@ -119,7 +119,7 @@ Web 應用程式初次啟動時，請執行程式碼，我們需要建立一個�
 > 如果您已經有`Global.asax`檔案在專案中，全域項目類型將不會列在 [加入新項目] 對話方塊中的應用程式類別。
 
 
-[![加入 Web 應用程式的根目錄中的 Global.asax 檔案](caching-data-at-application-startup-cs/_static/image4.png)](caching-data-at-application-startup-cs/_static/image3.png)
+[![Add Global.asax 檔案至您 Web 應用程式的根目錄](caching-data-at-application-startup-cs/_static/image4.png)](caching-data-at-application-startup-cs/_static/image3.png)
 
 **圖 3**:新增`Global.asax`檔案，以您 Web 應用程式的根目錄 ([按一下以檢視完整大小的影像](caching-data-at-application-startup-cs/_static/image5.png))
 
@@ -142,7 +142,7 @@ Web 應用程式初次啟動時，請執行程式碼，我們需要建立一個�
 這樣就全部完成了！ 在應用程式啟動時，`LoadStaticCache()`方法會擷取從 BLL，供應商資訊，並將它儲存在靜態成員變數 (或任何快取儲存您結束使用中`StaticCache`類別)。 若要確認這種行為，請在設定的中斷點`Application_Start`方法並執行您的應用程式。 請注意應用程式啟動時叫用中斷點。 後續的要求，不過，不會造成`Application_Start`方法來執行。
 
 
-[![使用中斷點，以確認 Application_Start 事件處理常式正在執行](caching-data-at-application-startup-cs/_static/image7.png)](caching-data-at-application-startup-cs/_static/image6.png)
+[![Use 確認 Application_Start 事件處理常式正在執行到中斷點](caching-data-at-application-startup-cs/_static/image7.png)](caching-data-at-application-startup-cs/_static/image6.png)
 
 **圖 4**:使用中斷點，以確認所`Application_Start`事件處理常式是正在執行 ([按一下以檢視完整大小的影像](caching-data-at-application-startup-cs/_static/image8.png))
 
@@ -158,12 +158,12 @@ Web 應用程式初次啟動時，請執行程式碼，我們需要建立一個�
 首先開啟`AtApplicationStartup.aspx`頁面中`Caching`資料夾。 拖曳的 GridView，從 [工具箱] 拖曳至設計工具，設定其`ID`屬性設`Suppliers`。 接下來，從 GridView 的智慧標籤選擇 建立新的 ObjectDataSource 名為`SuppliersCachedDataSource`。 設定要使用 ObjectDataSource`StaticCache`類別的`GetSuppliers()`方法。
 
 
-[![設定使用 StaticCache 類別 ObjectDataSource](caching-data-at-application-startup-cs/_static/image10.png)](caching-data-at-application-startup-cs/_static/image9.png)
+[![C設定使用 StaticCache 類別 ObjectDataSource](caching-data-at-application-startup-cs/_static/image10.png)](caching-data-at-application-startup-cs/_static/image9.png)
 
 **圖 5**:設定要使用 ObjectDataSource`StaticCache`類別 ([按一下以檢視完整大小的影像](caching-data-at-application-startup-cs/_static/image11.png))
 
 
-[![使用 GetSuppliers() 方法來擷取快取供應商資料](caching-data-at-application-startup-cs/_static/image13.png)](caching-data-at-application-startup-cs/_static/image12.png)
+[![Use GetSuppliers() 方法來擷取快取供應商資料](caching-data-at-application-startup-cs/_static/image13.png)](caching-data-at-application-startup-cs/_static/image12.png)
 
 **圖 6**:使用`GetSuppliers()`方法來擷取快取供應商資料 ([按一下以檢視完整大小的影像](caching-data-at-application-startup-cs/_static/image14.png))
 
@@ -176,7 +176,7 @@ Web 應用程式初次啟動時，請執行程式碼，我們需要建立一個�
 [圖 7] 顯示頁面透過瀏覽器檢視時。 輸出會與相同有我們取自資料 BLL`SuppliersBLL`類別，但使用`StaticCache`類別會傳回做為快取在應用程式啟動的供應商資料。 您可以在 設定中斷點`StaticCache`類別的`GetSuppliers()`方法以驗證這種行為。
 
 
-[![快取供應商資料會顯示在 GridView](caching-data-at-application-startup-cs/_static/image16.png)](caching-data-at-application-startup-cs/_static/image15.png)
+[![T他的快取供應商資料會顯示在 [GridView](caching-data-at-application-startup-cs/_static/image16.png)](caching-data-at-application-startup-cs/_static/image15.png)
 
 **圖 7**:在 GridView 中顯示快取供應商資料 ([按一下以檢視完整大小的影像](caching-data-at-application-startup-cs/_static/image17.png))
 

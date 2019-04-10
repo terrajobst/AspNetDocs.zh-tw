@@ -8,15 +8,15 @@ ms.date: 09/28/2011
 ms.assetid: 67bdeec1-5301-4756-8615-cd9e8c5749e0
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3
 msc.type: chapter
-ms.openlocfilehash: 6540ddc8ac9938236461dbf09380495ab5324a20
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 20fdfd00826d1b033c2d5dd9500915cb784896e5
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021505"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59406453"
 ---
-<a name="getting-started-with-aspnet-mvc3"></a>ASP.NET MVC3 使用者入門
-====================
+# <a name="getting-started-with-aspnet-mvc3"></a>ASP.NET MVC3 使用者入門
+
 > 建置使用 Microsoft Visual Web Developer 2010 Express 的 ASP.NET MVC Web 應用程式的基本概念。
 
 

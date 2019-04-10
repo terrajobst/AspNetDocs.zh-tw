@@ -8,15 +8,15 @@ ms.date: 04/17/2013
 ms.assetid: dcd4593b-1118-418a-af71-d12ff33fb36d
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: eb40648ca06adcceaa613ba86abfcf7459369c7e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a28b6043ac183ceb66e3ef2ad322436901aa50bc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57035115"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412836"
 ---
-<a name="signalr-1x-hubs-api-guide---javascript-client"></a>SignalR 1.x 中樞 API 指南 - JavaScript 用戶端
-====================
+# <a name="signalr-1x-hubs-api-guide---javascript-client"></a>SignalR 1.x 中樞 API 指南 - JavaScript 用戶端
+
 藉由[Patrick Fletcher](https://github.com/pfletcher)， [Tom Dykstra](https://github.com/tdykstra)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
@@ -445,13 +445,13 @@ JavaScript 用戶端必須參考 jQuery 和 SignalR core JavaScript 檔案。 JQ
 
 SignalR 提供以下連線，您可以處理存留期事件：
 
-- `starting`：透過連線傳送任何資料之前引發。
-- `received`：在此連接上收到任何資料時，就會引發。 提供已接收的資料。
-- `connectionSlow`：當用戶端偵測到較慢或經常卸除連接時引發。
-- `reconnecting`：基礎傳輸可讓您開始重新連線時引發。
-- `reconnected`：當基礎傳輸已重新連接時引發。
-- `stateChanged`：連線狀態變更時引發。 提供的舊狀態和新的狀態 （連接、 已連線、 正在重新連線或已中斷連線）。
-- `disconnected`：當連接已中斷連線時，就會引發。
+- `starting`:透過連線傳送任何資料之前引發。
+- `received`:在此連接上收到任何資料時，就會引發。 提供已接收的資料。
+- `connectionSlow`:當用戶端偵測到較慢或經常卸除連接時引發。
+- `reconnecting`:基礎傳輸可讓您開始重新連線時引發。
+- `reconnected`:當基礎傳輸已重新連接時引發。
+- `stateChanged`:連線狀態變更時引發。 提供的舊狀態和新的狀態 （連接、 已連線、 正在重新連線或已中斷連線）。
+- `disconnected`:當連接已中斷連線時，就會引發。
 
 例如，如果您想要顯示警告訊息，可能會造成明顯延遲的連線問題時，處理`connectionSlow`事件。
 

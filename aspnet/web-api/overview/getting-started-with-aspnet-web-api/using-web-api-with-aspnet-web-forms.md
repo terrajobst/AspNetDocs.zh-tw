@@ -1,27 +1,30 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms
-title: 使用 Web API 和 ASP.NET Web Form |Microsoft Docs
+title: 使用 Web API 和 ASP.NET Web Form-ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 教學課程以程式碼逐步解說將 Web API 至 ASP.NET Form 應用程式，適用於 ASP.NET 4.x
 ms.author: riande
 ms.date: 04/03/2012
+ms.custom: seoapril2019
 ms.assetid: 25da8c3f-4e90-4946-9765-4f160985e1e4
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms
 msc.type: authoredcontent
-ms.openlocfilehash: a14bf0abd8c5d603cf3859891f855415cf3df9f3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: ae553b62998fefd128e12711cbde958ea42d8c63
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57055685"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422573"
 ---
-<a name="using-web-api-with-aspnet-web-forms"></a>使用具有 ASP.NET Web Forms 的 Web API
-====================
+# <a name="using-web-api-with-aspnet-web-forms"></a>使用具有 ASP.NET Web Forms 的 Web API
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
-雖然 ASP.NET Web API 隨附 ASP.NET MVC，很容易就能將 Web API 新增至傳統的 ASP.NET Web Forms 應用程式。 本教學課程將逐步引導您逐步完成。
+本教學課程將逐步引導您逐步完成將 Web API 新增至傳統的 ASP.NET Web Forms 應用程式中 ASP.NET 4.x。 
 
 ## <a name="overview"></a>總覽
+
+雖然 ASP.NET Web API 隨附 ASP.NET MVC，很容易就能將 Web API 新增至傳統的 ASP.NET Web Forms 應用程式。
 
 若要在 Web Form 應用程式中使用 Web API，有兩個主要步驟：
 

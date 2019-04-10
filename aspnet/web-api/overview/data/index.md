@@ -1,29 +1,30 @@
 ---
 uid: web-api/overview/data/index
-title: 使用 ASP.NET Web API 中的資料 |Microsoft Docs
+title: 處理資料，在 ASP.NET Web API-ASP.NET 4.x
 author: rick-anderson
-description: 如何程式設計 CRUD （建立、 讀取、 更新、 刪除） Web API 中的作業。
+description: 如何程式設計 CRUD （建立、 讀取、 更新、 刪除） Web API 中的作業適用於 ASP.NET 4.x。
 ms.author: riande
 ms.date: 10/23/2014
+ms.custom: seoapril2019
 ms.assetid: 995cbe38-7dbd-4c36-a5d0-a761944c7636
 msc.legacyurl: /web-api/overview/data
 msc.type: chapter
-ms.openlocfilehash: e926c82e84b7cac2ba69a8baa62d2719647523d2
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 9c5ef1e85f0b5ca7ead67dfe28a3a43f3e5c464a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57020425"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400031"
 ---
-<a name="working-with-data-in-aspnet-web-api"></a>使用 ASP.NET Web API 中的資料
-====================
+# <a name="working-with-data-in-aspnet-web-api"></a>使用 ASP.NET Web API 中的資料
+
 > 如何程式設計 CRUD （建立、 讀取、 更新、 刪除） Web API 中的作業。
 
 
 - [使用 Web API 2 和 Entity Framework 6](using-web-api-with-entity-framework/index.md)
 
     - [建立專案](using-web-api-with-entity-framework/part-1.md)
-    - [新增模型和控制器](using-web-api-with-entity-framework/part-2.md)
+    - [新增模型與控制器](using-web-api-with-entity-framework/part-2.md)
     - [植入資料庫](using-web-api-with-entity-framework/part-3.md)
     - [處理實體關聯性](using-web-api-with-entity-framework/part-4.md)
     - [建立資料傳輸物件 (DTO)](using-web-api-with-entity-framework/part-5.md)

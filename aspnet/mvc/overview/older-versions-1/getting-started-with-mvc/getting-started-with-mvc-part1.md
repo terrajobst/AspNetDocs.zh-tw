@@ -8,15 +8,15 @@ ms.date: 08/14/2010
 ms.assetid: bf4a1c19-0a94-4208-b268-a96ddcf26946
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part1
 msc.type: authoredcontent
-ms.openlocfilehash: 2d9c1dd0dd3c9f892b42b0f29ac3361a7f2b638c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: dcc2e703829cfa0b77575870feff451fd0738f56
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57037255"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416489"
 ---
-<a name="intro-to-aspnet-mvc"></a>ASP.NET MVC 簡介
-====================
+# <a name="intro-to-aspnet-mvc"></a>ASP.NET MVC 簡介
+
 藉由[Scott Hanselman](https://github.com/shanselman)
 
 > > [!NOTE]
@@ -32,11 +32,11 @@ ms.locfileid: "57037255"
 
 以下是兩個螢幕擷取畫面，您將建置的應用程式。 您必須具有各種不同的資料行的電影的簡單的資料表。
 
-[![電影清單-Windows Internet Explorer (12)](getting-started-with-mvc-part1/_static/image2.png)](getting-started-with-mvc-part1/_static/image1.png)
+[![Movie List - Windows Internet Explorer (12)](getting-started-with-mvc-part1/_static/image2.png)](getting-started-with-mvc-part1/_static/image1.png)
 
 而且您必須建立表單讓我們可以將影片新增至清單。
 
-[![建立電影-Windows Internet Explorer (2)](getting-started-with-mvc-part1/_static/image4.png)](getting-started-with-mvc-part1/_static/image3.png)
+[![Create 電影-Windows Internet Explorer (2)](getting-started-with-mvc-part1/_static/image4.png)](getting-started-with-mvc-part1/_static/image3.png)
 
 ## <a name="skills-youll-learn"></a>您將學習到的技能
 
@@ -61,7 +61,7 @@ Visual Web Developer 是 IDE 或整合式開發環境。 就像您使用 Microso
 
 您可以建立使用 Visual Basic 或 Visual C# 應用程式。 現在，選取 Visual C# 在左邊，然後選取 「 ASP.NET MVC 2 Web 應用程式 」。 您的專案命名為 「 Movies 」，然後按一下 [確定]。
 
-[![新的專案](getting-started-with-mvc-part1/_static/image8.png)](getting-started-with-mvc-part1/_static/image7.png)
+[![N專案的新功能](getting-started-with-mvc-part1/_static/image8.png)](getting-started-with-mvc-part1/_static/image7.png)
 
 右邊是顯示在您的應用程式中的所有檔案和資料夾的 [方案總管]。 中間的大型視窗是時間的在您編輯您的程式碼和大部分。 Visual Studio 使用您剛才建立的 ASP.NET MVC 專案預設範本，因此您有運作中應用程式現在無須執行任何動作 ！ 這是簡單"Hello World ！ 專案和它是適合我們的應用程式啟動。
 
@@ -73,11 +73,11 @@ Visual Web Developer 是 IDE 或整合式開發環境。 就像您使用 Microso
 
 它是指向右側將編譯您的程式，並在網頁瀏覽器中啟動您的應用程式的綠色箭號。
 
-*注意：您可以改為在鍵盤上按下 F5 或選取 偵錯-&gt;從 偵錯 功能表啟動偵錯。*
+*附註：您可以改為在鍵盤上按下 F5 或選取 偵錯-&gt;從 偵錯 功能表啟動偵錯。*
 
 這會導致 Visual Web Developer，以啟動開發 web 伺服器並執行我們的 web 應用程式 （沒有任何組態或啟用此功能所需的手動步驟）。 然後它就會啟動瀏覽器，並將它設定為瀏覽應用程式的首頁。 請注意下方，瀏覽器的網址列中顯示"localhost"，並不像 example.com。 這是因為 localhost 永遠會指向您自己的本機電腦-在此情況下執行我們剛建立的應用程式。
 
-[![首頁](getting-started-with-mvc-part1/_static/image13.png)](getting-started-with-mvc-part1/_static/image12.png)
+[![Home 頁面](getting-started-with-mvc-part1/_static/image13.png)](getting-started-with-mvc-part1/_static/image12.png)
 
 根據預設，這個預設範本會提供您兩個頁面來瀏覽和基本的登入頁面。 讓我們變更此應用程式的運作方式，並在程序有點了解 ASP.NET MVC。 關閉瀏覽器，並讓變更一些程式碼。
 

@@ -8,15 +8,15 @@ ms.date: 06/21/2007
 ms.assetid: 4618499e-1925-414e-a432-16952bb967f4
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-write-code-more-quickly-with-unit-tests
 msc.type: video
-ms.openlocfilehash: d0950ec711e85435c5a25028e357d9519817f7b9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f92fa38a42fe73d22085e5a88b66ea6df0d68191
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062945"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403762"
 ---
-<a name="how-do-i-write-code-more-quickly-with-unit-tests"></a>[How Do i:]撰寫程式碼更快速地使用單元測試？
-====================
+# <a name="how-do-i-write-code-more-quickly-with-unit-tests"></a>[How Do i:]撰寫程式碼更快速地使用單元測試？
+
 藉由[Chris Menegay](https://twitter.com/CMenegay)
 
 在這段影片中我們了解如何 Unit Testing 可以藉此提升生產力簡化偵錯程序。 我們會看到 Visual Studio Team System 如何產生自動程式碼進行偵錯，讓您就能啟動您的 Web 應用程式，並執行任何步驟，以手動方式執行相同的程式碼所需的時間執行的單元測試。 單元測試的結果是，您可以更快速撰寫更強固的程式碼。

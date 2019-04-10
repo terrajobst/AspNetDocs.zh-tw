@@ -8,15 +8,15 @@ ms.date: 07/09/2007
 ms.assetid: 7572654d-6fa2-4ea3-a43b-56a8578af0f6
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-update-multiple-regions-of-a-page-with-aspnet-ajax
 msc.type: video
-ms.openlocfilehash: 87bb74ed2f6301cafc6abe3bfa75fbf3884dd651
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: a936829217aa62a5caff5c9b0b51cca8a994c10e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044455"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400304"
 ---
-<a name="how-do-i-update-multiple-regions-of-a-page-with-aspnet-ajax"></a>[How Do i:]使用 ASP.NET AJAX 更新網頁的多個區域嗎？
-====================
+# <a name="how-do-i-update-multiple-regions-of-a-page-with-aspnet-ajax"></a>[How Do i:]使用 ASP.NET AJAX 更新網頁的多個區域嗎？
+
 藉由[，Scott golightly 會](https://github.com/scottgolightly)
 
 在這段影片中我們了解 ASP.NET AJAX UpdatePanel 控制項提供您可以使用更新的網頁來回應單一用戶端事件中的多個區域的兩個屬性。 UpdateMode 屬性可能會設定為 Always 時，在其中案例面板會一律更新上一步] 的 post 期間，或設為 [條件式、 在其中案例 [面板] 中只會更新以回應特定事件。 觸發程序集合屬性可讓您指定這些事件會導致要更新的面板。 一起使用這些屬性可讓多個回應相同的事件觸發程序中要更新的 UpdatePanel 控制項。

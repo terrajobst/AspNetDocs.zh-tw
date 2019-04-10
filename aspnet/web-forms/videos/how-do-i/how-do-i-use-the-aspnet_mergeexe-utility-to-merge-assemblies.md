@@ -2,21 +2,21 @@
 uid: web-forms/videos/how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies
 title: '[How Do i:]使用 aspnet_merge.exe 公用程式合併組件 |Microsoft Docs'
 author: rick-anderson
-description: 在這段影片 Chris Pels 將示範如何使用 aspnet_merge.exe 公用程式，結合使用 aspnet_compiler.exe 公用已編譯的組件...
+description: In this video Chris Pels will show how to use the aspnet_merge.exe utility to combine assemblies that have been compiled using the aspnet_compiler.exe utilit...
 ms.author: riande
 ms.date: 06/26/2008
 ms.assetid: 2bfd5353-2a35-449e-aeff-0fb94cf10030
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies
 msc.type: video
-ms.openlocfilehash: b68c8f582452c1293e8555ea1e18b407c520cbec
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7e768c508441bc08ff53c04e3d9982179fdfc88f
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034365"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410379"
 ---
-<a name="how-do-i-use-the-aspnetmergeexe-utility-to-merge-assemblies"></a>[How Do i:]使用 aspnet_merge.exe 公用程式合併組件
-====================
+# <a name="how-do-i-use-the-aspnetmergeexe-utility-to-merge-assemblies"></a>[How Do i:]Use the aspnet_merge.exe Utility to Merge Assemblies
+
 藉由[Chris Pels](https://twitter.com/chrispels)
 
 在這段影片中，Chris Pels 將示範如何使用 aspnet\_merge.exe 公用程式來使用 aspnet 已編譯的組件結合\_compiler.exe 公用程式。 首先，檢視 ASP.NET 編譯處理程序，以了解哪些組件建立的輸出。 接下來，了解使用 aspnet 的機制\_merge.exe 公用程式來合併組件編譯的網站，從第一個看到如何控制已編譯的組件名稱全都換成 – 前置詞的選項。 然後了解如何合併成單一組件的已編譯的網站上的所有組件。 最後，了解如何合併只是組件相關內容 （aspx、 ascs 等） 的單一組件，但最上層組件，例如應用程式\_code.dll 代表 /App\_程式碼資料夾。 在每個選項的優點和缺點，該選項的討論。

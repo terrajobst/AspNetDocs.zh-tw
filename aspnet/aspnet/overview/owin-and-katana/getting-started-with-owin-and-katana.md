@@ -8,15 +8,15 @@ ms.date: 09/27/2013
 ms.assetid: 6dae249f-5ac6-4f6e-bc49-13bcd5a54a70
 msc.legacyurl: /aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 9920861da0e67d9304a944cacfb8ff8685267cd6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5b5ecfcc7561e3e7bc13e1c8819a548e73ae1ab3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052005"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408091"
 ---
-<a name="getting-started-with-owin-and-katana"></a>開始使用 OWIN 與 Katana
-====================
+# <a name="getting-started-with-owin-and-katana"></a>開始使用 OWIN 與 Katana
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 [Open Web Interface for.NET (OWIN)](http://owin.org/)定義.NET web 伺服器和 web 應用程式之間的抽象概念。 藉由將分離應用程式的 web 伺服器，OWIN 可讓您更輕鬆地建立.NET web 程式開發的中介軟體。 此外，OWIN 輕鬆連接至其他主機的 web 應用程式&#8212;，例如自我裝載在 Windows 服務或其他處理序。

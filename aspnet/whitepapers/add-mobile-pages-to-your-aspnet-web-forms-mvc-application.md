@@ -8,21 +8,21 @@ ms.date: 01/20/2011
 ms.assetid: 3124f28e-cc32-418a-afe3-519fa56f4c36
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
-ms.openlocfilehash: 1693838a74f0564e38e11a2827cceb3d6474677b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: db8f336f3fd9a88dfb32f99510fc53cd7b4a5178
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57038855"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415982"
 ---
-<a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>如何：將行動網頁新增至 ASP.NET Web Forms / MVC 應用程式
-====================
+# <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>如何：將行動網頁新增至 ASP.NET Web Forms / MVC 應用程式
+
 > **適用於**
 > 
 > - ASP.NET Web Form 版本 4.0
 > - ASP.NET MVC 3.0 版
 > 
-> **摘要**
+> **總結**
 > 
 > 本 How To 說明會提供適用於行動裝置，從您的 ASP.NET Web Form 網頁的各種方法 / MVC 應用程式，並建議架構和設計以各種裝置為目標時應該考量的問題。 本文件也說明為何從 ASP.NET 2.0 ASP.NET 行動控制項，為 3.5 已經過時，並討論一些現代的替代方案。
 
@@ -240,7 +240,7 @@ ASP.NET Web Form 和 MVC 的開發人員立即可以藉由檢查屬性探索正�
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample9.cs)]
 
-現在錯誤將會淘汰過，和 URL http://<em>yoursite</em>/ 會到達桌面的首頁和 http://<em>您的站台</em>/mobile/ 會連線到行動裝置的首頁。
+現在錯誤將會淘汰過，和 URL http:\/\/*yoursite*/ 會到達桌面的首頁和 http:\/\/*yoursite*/mobile/ 將連線到行動裝置的首頁。
 
 ### <a name="redirecting-mobile-visitors-to-your-mobile-area"></a>重新導向至您的行動裝置區域的行動訪客
 

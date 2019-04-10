@@ -8,15 +8,15 @@ ms.date: 08/19/2008
 ms.assetid: d3a270b9-d7b1-47f2-8775-fc3beb518b5c
 msc.legacyurl: /mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 08de8a57860886a8f633cacbaae1d63fe08a5a02
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 1193d7dc6fc29dfdac5637c9391a82f9f3566073
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041225"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407727"
 ---
-<a name="creating-unit-tests-for-aspnet-mvc-applications-c"></a>建立 ASP.NET MVC 應用程式的單元測試 (C#)
-====================
+# <a name="creating-unit-tests-for-aspnet-mvc-applications-c"></a>建立 ASP.NET MVC 應用程式的單元測試 (C#)
+
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 [下載 PDF](http://download.microsoft.com/download/8/4/8/84843d8d-1575-426c-bcb5-9d0c42e51416/ASPNET_MVC_Tutorial_07_CS.pdf)
@@ -59,12 +59,12 @@ ms.locfileid: "57041225"
 您也可以輸入鍵盤組合在列表 2 中執行單元測試**CTRL-R、 A**或按一下**執行方案中的所有測試**按鈕 （請參閱 圖 1）。 如果測試成功，您會看到 [圖 2] 中的 [測試結果] 視窗。
 
 
-[![在方案中執行所有測試](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image2.png)](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image1.png)
+[![R取消解決方案中所有測試](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image2.png)](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image1.png)
 
 **圖 01**:在方案中執行所有測試 ([按一下以檢視完整大小的影像](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image3.png))
 
 
-[![成功 ！](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image5.png)](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image4.png)
+[![Success ！](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image5.png)](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image4.png)
 
 **圖 02**:成功！ ([按一下以檢視完整大小的影像](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image6.png))
 

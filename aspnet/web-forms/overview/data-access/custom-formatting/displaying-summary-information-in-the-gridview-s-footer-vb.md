@@ -8,15 +8,15 @@ ms.date: 03/31/2010
 ms.assetid: 41c818b7-603a-402b-8847-890a63547b6f
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: dfb78ee1e5da2774254cbe685b8dfd3dc7d46af9
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 69548e637a35c4fd5d0f3356e279f1f0370fad39
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062445"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409443"
 ---
-<a name="displaying-summary-information-in-the-gridviews-footer-vb"></a>在 GridView 的頁尾顯示摘要資訊 (VB)
-====================
+# <a name="displaying-summary-information-in-the-gridviews-footer-vb"></a>在 GridView 的頁尾顯示摘要資訊 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/5/7/0/57084608-dfb3-4781-991c-407d086e2adc/ASPNET_Data_Tutorial_15_VB.exe)或[下載 PDF](displaying-summary-information-in-the-gridview-s-footer-vb/_static/datatutorial15vb1.pdf)
@@ -37,7 +37,7 @@ ms.locfileid: "57062445"
 在本教學課程中，我們將了解如何克服這些挑戰。 具體來說，我們將建立頁面，其中列出與 GridView 中顯示所選的分類的產品的下拉式清單中的類別。 GridView 會包含在股票和該類別中的產品順序顯示的單位總數與平均價格的頁尾資料列。
 
 
-[![摘要資訊會顯示在 GridView 的頁尾資料列](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image2.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image1.png)
+[![Summary 資訊會顯示在 GridView 的頁尾資料列](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image2.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image1.png)
 
 **圖 1**:摘要資訊會顯示在 GridView 的頁尾資料列 ([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image3.png))
 
@@ -51,12 +51,12 @@ ms.locfileid: "57062445"
 首先開啟`SummaryDataInFooter.aspx`頁面中`CustomFormatting`資料夾。 新增 DropDownList 控制項並設定其`ID`至`Categories`。 接下來，按一下 從 DropDownList 的智慧標籤的 選擇資料來源 連結，並選擇新增名為新 ObjectDataSource`CategoriesDataSource`叫用`CategoriesBLL`類別的`GetCategories()`方法。
 
 
-[![新增名為 CategoriesDataSource 新 ObjectDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image5.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image4.png)
+[![Add 新 ObjectDataSource 名為 CategoriesDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image5.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image4.png)
 
 **圖 2**:新增新的 ObjectDataSource 名為`CategoriesDataSource`([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image6.png))
 
 
-[![已叫用 CategoriesBLL 類別的 GetCategories() 方法的 ObjectDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image8.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image7.png)
+[![Have ObjectDataSource 會叫用 CategoriesBLL 類別的 GetCategories() 方法](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image8.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image7.png)
 
 **圖 3**:有 ObjectDataSource 叫用`CategoriesBLL`類別的`GetCategories()`方法 ([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image9.png))
 
@@ -64,7 +64,7 @@ ms.locfileid: "57062445"
 之後設定 ObjectDataSource，精靈會傳回我們 DropDownList 的資料來源組態精靈 」，我們要指定哪些資料欄位值應該會顯示，而且其中一個應該對應至 DropDownList 值的`ListItem` s。 已`CategoryName`顯示的欄位，並使用`CategoryID`做為值。
 
 
-[![分別為文字和值 ListItems，使用類別名稱和 CategoryID 欄位](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image11.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image10.png)
+[![Use CategoryName 和 CategoryID 視欄位的文字和值 ListItems，分別](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image11.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image10.png)
 
 **圖 4**:使用`CategoryName`及`CategoryID`視欄位`Text`並`Value`如`ListItem`s，分別 ([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image12.png))
 
@@ -72,7 +72,7 @@ ms.locfileid: "57062445"
 現在我們有 DropDownList (`Categories`)，在系統中列出的類別。 我們現在需要新增的 GridView 會列出這些屬於所選分類的產品。 這樣做，不過，先花點時間檢查 DropDownList 的智慧標籤啟用 AutoPostBack 核取方塊。 中所述*主版/詳細篩選使用 DropDownList*教學課程中，藉由設定 DropDownList`AutoPostBack`屬性設`True`頁面將會公佈回的每當 DropDownList 值變更時。 這會導致重新整理，GridView 顯示這些產品的新選取的分類。 如果`AutoPostBack`屬性設定為`False`（預設值），變更類別目錄不會造成回傳並不會更新列出的產品。
 
 
-[![核取方塊啟用 AutoPostBack 在 DropDownList 的智慧標籤](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image14.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image13.png)
+[![Ch DropDownList 的智慧標籤中的啟用 AutoPostBack 核取](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image14.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image13.png)
 
 **圖 5**:核取方塊啟用 AutoPostBack DropDownList 的智慧標籤中 ([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image15.png))
 
@@ -80,7 +80,7 @@ ms.locfileid: "57062445"
 將 GridView 控制項加入頁面，以顯示所選分類的產品。 設定 GridView`ID`要`ProductsInCategory`並將它繫結至名為新 ObjectDataSource `ProductsInCategoryDataSource`。
 
 
-[![新增名為 ProductsInCategoryDataSource 新 ObjectDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image17.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image16.png)
+[![Add 新 ObjectDataSource 名為 ProductsInCategoryDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image17.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image16.png)
 
 **圖 6**:新增新的 ObjectDataSource 名為`ProductsInCategoryDataSource`([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image18.png))
 
@@ -88,7 +88,7 @@ ms.locfileid: "57062445"
 因此，它會叫用設定 ObjectDataSource`ProductsBLL`類別的`GetProductsByCategoryID(categoryID)`方法。
 
 
-[![已叫用 GetProductsByCategoryID(categoryID) 方法的 ObjectDataSource](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image20.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image19.png)
+[![HObjectDataSource Invoke GetProductsByCategoryID(categoryID) 方法 [ave](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image20.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image19.png)
 
 **圖 7**:有 ObjectDataSource 叫用`GetProductsByCategoryID(categoryID)`方法 ([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image21.png))
 
@@ -96,7 +96,7 @@ ms.locfileid: "57062445"
 因為`GetProductsByCategoryID(categoryID)`方法接受一個輸入參數，在精靈的最後一個步驟中，我們可以指定參數值的來源。 若要顯示這些產品，從選取的類別，具有 取自參數`Categories`DropDownList。
 
 
-[![從選取類別 DropDownList 取得 categoryID 參數值](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image22.png)
+[![Get categoryID 參數值，從選取類別 DropDownList](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image22.png)
 
 **圖 8**:取得*`categoryID`* 從 選取類別 DropDownList 的參數值 ([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image24.png))
 
@@ -109,7 +109,7 @@ ms.locfileid: "57062445"
 此時，我們會有完整的主要/詳細資料報表，顯示名稱、 單位價格、 庫存量和單位，屬於所選分類這些產品的訂購。
 
 
-[![從選取類別 DropDownList 取得 categoryID 參數值](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image25.png)
+[![Get categoryID 參數值，從選取類別 DropDownList](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image25.png)
 
 **圖 9**:取得*`categoryID`* 從 選取類別 DropDownList 的參數值 ([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image27.png))
 
@@ -119,7 +119,7 @@ ms.locfileid: "57062445"
 GridView 控制項可以顯示頁首和頁尾資料列。 這些資料列會顯示依據的值`ShowHeader`並`ShowFooter`屬性，分別使用`ShowHeader`預設為`True`並`ShowFooter`來`False`。 若要直接包含在 GridView 的頁尾設定其`ShowFooter`屬性設`True`。
 
 
-[![GridView 的 ShowFooter 屬性設定為 True](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image29.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image28.png)
+[![Set GridView 的 ShowFooter 屬性設為 True](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image29.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image28.png)
 
 **圖 10**:設定 GridView`ShowFooter`屬性，以`True`([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image30.png))
 
@@ -127,7 +127,7 @@ GridView 控制項可以顯示頁首和頁尾資料列。 這些資料列會顯�
 頁尾資料列具有每個子 GridView; 內所定義之欄位的資料格不過，這些資料格預設為空白。 請花一點時間瀏覽器中檢視進度。 具有`ShowFooter`內容現在設定為`True`，GridView 包含空的頁尾資料列。
 
 
-[![GridView 現在包含頁尾資料列](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image32.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image31.png)
+[![T現在，他的 GridView 會包含頁尾資料列](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image32.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image31.png)
 
 **圖 11**:現在包含 GridView 的頁尾資料列 ([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image33.png))
 
@@ -149,7 +149,7 @@ GridView 控制項可以顯示頁首和頁尾資料列。 這些資料列會顯�
 這項變更如螢幕擷取畫面如下所示，讓頁尾清楚地凸顯更多。
 
 
-[![GridView 的頁尾資料列現在有紅的背景色彩](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image35.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image34.png)
+[![T他 GridView 的頁尾資料列現在有紅的背景色彩](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image35.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image34.png)
 
 **圖 12**:GridView 的頁尾資料列現在有紅的背景色彩 ([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image36.png))
 
@@ -203,7 +203,7 @@ GridView 控制項可以顯示頁首和頁尾資料列。 這些資料列會顯�
 已加入此程式碼之後，圖 13 顯示的報表。 請注意如何`ToString("c")`平均價格的摘要資訊格式化貨幣等。
 
 
-[![GridView 的頁尾資料列現在有紅的背景色彩](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image38.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image37.png)
+[![T他 GridView 的頁尾資料列現在有紅的背景色彩](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image38.png)](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image37.png)
 
 **圖 13**:GridView 的頁尾資料列現在有紅的背景色彩 ([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-vb/_static/image39.png))
 

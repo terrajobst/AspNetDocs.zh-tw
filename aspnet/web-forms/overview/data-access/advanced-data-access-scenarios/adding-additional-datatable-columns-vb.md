@@ -8,15 +8,15 @@ ms.date: 07/18/2007
 ms.assetid: 1e8e65f9-fe3e-4250-810b-c90227786bed
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 75b5a1e1d6beb00079d754601860d0c25bc8a23e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 985e052abbe1065ba2d6816911f686cb61c85a6d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57062745"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416463"
 ---
-<a name="adding-additional-datatable-columns-vb"></a>新增其他 DataTable 資料行 (VB)
-====================
+# <a name="adding-additional-datatable-columns-vb"></a>新增其他 DataTable 資料行 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_70_VB.zip)或[下載 PDF](adding-additional-datatable-columns-vb/_static/datatutorial70vb1.pdf)
@@ -49,7 +49,7 @@ S DataTable 的結構描述已反映 TableAdapter s 主查詢的模型適用於�
 開啟`NorthwindWithSprocs`資料集，以滑鼠右鍵按一下`ProductsDataTable`。 從操作功能表選擇 新增，然後選擇 資料行。
 
 
-[![將新的資料行新增至 ProductsDataTable](adding-additional-datatable-columns-vb/_static/image2.png)](adding-additional-datatable-columns-vb/_static/image1.png)
+[![Add ProductsDataTable 新資料行](adding-additional-datatable-columns-vb/_static/image2.png)](adding-additional-datatable-columns-vb/_static/image1.png)
 
 **圖 1**:加入新的資料行，來`ProductsDataTable`([按一下以檢視完整大小的影像](adding-additional-datatable-columns-vb/_static/image3.png))
 
@@ -57,7 +57,7 @@ S DataTable 的結構描述已反映 TableAdapter s 主查詢的模型適用於�
 這會將新的資料行新增至名為 Column1 型別的 DataTable `System.String`。 我們需要更新此資料行的名稱 PriceQuartile 和其類型`System.Int32`因為它會用來保存 1 到 4 之間的數字。 選取新加入的資料行，在`ProductsDataTable`，然後從 屬性 視窗中，設定`Name`PriceQuartile 的屬性和`DataType`屬性設`System.Int32`。
 
 
-[![設定新的資料行的名稱和資料類型屬性](adding-additional-datatable-columns-vb/_static/image5.png)](adding-additional-datatable-columns-vb/_static/image4.png)
+[![S等新的資料行的名稱和資料型別屬性](adding-additional-datatable-columns-vb/_static/image5.png)](adding-additional-datatable-columns-vb/_static/image4.png)
 
 **圖 2**:設定新的資料行 s`Name`並`DataType`屬性 ([按一下以檢視完整大小的影像](adding-additional-datatable-columns-vb/_static/image6.png))
 
@@ -69,7 +69,7 @@ S DataTable 的結構描述已反映 TableAdapter s 主查詢的模型適用於�
 既然`ProductsDataTable`已更新為包含`PriceQuartile`資料行中，我們已準備好建立`GetProductsWithPriceQuartile`方法。 啟動 TableAdapter 上按一下滑鼠右鍵，然後從操作功能表選擇加入查詢。 這會顯示 TableAdapter 查詢組態精靈，它首先會提示我們輸入有關我們是否想要使用特定 SQL 陳述式或新的或現有的預存程序。 因為我們不您尚未建立傳回價格四分位數資料的預存程序，可讓 s 允許我們建立此預存程序的 TableAdapter。 選取 建立新的預存程序選項，然後按一下 下一步。
 
 
-[![指示 TableAdapter 精靈為我們建立預存程序](adding-additional-datatable-columns-vb/_static/image8.png)](adding-additional-datatable-columns-vb/_static/image7.png)
+[![Instruct TableAdapter 精靈以建立預存程序如我們](adding-additional-datatable-columns-vb/_static/image8.png)](adding-additional-datatable-columns-vb/_static/image7.png)
 
 **圖 3**:指示 TableAdapter 精靈以建立預存程序如我們 ([按一下以檢視完整大小的影像](adding-additional-datatable-columns-vb/_static/image9.png))
 
@@ -77,7 +77,7 @@ S DataTable 的結構描述已反映 TableAdapter s 主查詢的模型適用於�
 在後續畫面中，[圖 4] 所示精靈會詢問我們要加入查詢的類型。 由於`GetProductsWithPriceQuartile`方法會傳回所有資料行和資料錄從`Products`資料表中，選取 選取會傳回資料列的選項，然後按 下一步。
 
 
-[![我們的查詢將會在 SELECT 陳述式，傳回多個資料列](adding-additional-datatable-columns-vb/_static/image11.png)](adding-additional-datatable-columns-vb/_static/image10.png)
+[![O您的查詢將會是 SELECT 陳述式，傳回多個資料列](adding-additional-datatable-columns-vb/_static/image11.png)](adding-additional-datatable-columns-vb/_static/image10.png)
 
 **圖 4**:我們的查詢將會`SELECT`陳述式，傳回多個資料列 ([按一下以檢視完整大小的影像](adding-additional-datatable-columns-vb/_static/image12.png))
 
@@ -98,7 +98,7 @@ S DataTable 的結構描述已反映 TableAdapter s 主查詢的模型適用於�
 輸入後`SELECT`查詢，並按一下 [下一步]，精靈會要求我們提供的名稱，它會建立預存程序。 命名新的預存程序`Products_SelectWithPriceQuartile`，按一下 [下一步]。
 
 
-[![命名預存程序 Products_SelectWithPriceQuartile](adding-additional-datatable-columns-vb/_static/image14.png)](adding-additional-datatable-columns-vb/_static/image13.png)
+[![N名稱 （) 預存程序 Products_SelectWithPriceQuartile](adding-additional-datatable-columns-vb/_static/image14.png)](adding-additional-datatable-columns-vb/_static/image13.png)
 
 **圖 5**:命名預存程序`Products_SelectWithPriceQuartile`([按一下以檢視完整大小的影像](adding-additional-datatable-columns-vb/_static/image15.png))
 
@@ -106,7 +106,7 @@ S DataTable 的結構描述已反映 TableAdapter s 主查詢的模型適用於�
 最後，我們會提示您命名的 TableAdapter 方法。 保留的填滿 DataTable，然後傳回 DataTable 核取方塊已核取和名稱的方法`FillWithPriceQuartile`和`GetProductsWithPriceQuartile`。
 
 
-[![名稱的 tableadapter 方法，然後按一下 [完成]](adding-additional-datatable-columns-vb/_static/image17.png)](adding-additional-datatable-columns-vb/_static/image16.png)
+[![Name tableadapter 方法並按一下 [完成](adding-additional-datatable-columns-vb/_static/image17.png)](adding-additional-datatable-columns-vb/_static/image16.png)
 
 **圖 6**:命名的 TableAdapter 的方法並按一下 [完成] ([按一下以檢視完整大小的影像](adding-additional-datatable-columns-vb/_static/image18.png))
 
@@ -121,7 +121,7 @@ S DataTable 的結構描述已反映 TableAdapter s 主查詢的模型適用於�
 **圖 7**:確認新的方法，已加入至 TableAdapter
 
 
-[![請確定資料庫包含 Products_SelectWithPriceQuartile 預存程序](adding-additional-datatable-columns-vb/_static/image21.png)](adding-additional-datatable-columns-vb/_static/image20.png)
+[![E資料庫包含 Products_SelectWithPriceQuartile 預存程序的 nsure](adding-additional-datatable-columns-vb/_static/image21.png)](adding-additional-datatable-columns-vb/_static/image20.png)
 
 **圖 8**:請確認資料庫包含`Products_SelectWithPriceQuartile`預存程序 ([按一下以檢視完整大小的影像](adding-additional-datatable-columns-vb/_static/image22.png))
 
@@ -150,12 +150,12 @@ S DataTable 的結構描述已反映 TableAdapter s 主查詢的模型適用於�
 加上 BLL 完成我們準備好要建立的 ASP.NET 網頁，顯示每項產品的價格四分位數。 開啟`AddingColumns.aspx`頁面中`AdvancedDAL`資料夾，然後拖曳的 GridView，從 [工具箱] 拖曳至設計工具，設定其`ID`屬性設`Products`。 從 GridView s 智慧標籤，將它繫結至名為新 ObjectDataSource `ProductsDataSource`。 設定要使用 ObjectDataSource`ProductsBLLWithSprocs`類別的`GetProductsWithPriceQuartile`方法。 因為這會是唯讀的方格，設定下拉式清單中更新、 插入和刪除 （無） 索引標籤。
 
 
-[![設定使用 ProductsBLLWithSprocs 類別 ObjectDataSource](adding-additional-datatable-columns-vb/_static/image24.png)](adding-additional-datatable-columns-vb/_static/image23.png)
+[![C設定使用 ProductsBLLWithSprocs 類別 ObjectDataSource](adding-additional-datatable-columns-vb/_static/image24.png)](adding-additional-datatable-columns-vb/_static/image23.png)
 
 **圖 9**:設定要使用 ObjectDataSource`ProductsBLLWithSprocs`類別 ([按一下以檢視完整大小的影像](adding-additional-datatable-columns-vb/_static/image25.png))
 
 
-[![從 GetProductsWithPriceQuartile 方法擷取產品資訊](adding-additional-datatable-columns-vb/_static/image27.png)](adding-additional-datatable-columns-vb/_static/image26.png)
+[![Retrieve GetProductsWithPriceQuartile 方法中的產品資訊](adding-additional-datatable-columns-vb/_static/image27.png)](adding-additional-datatable-columns-vb/_static/image26.png)
 
 **圖 10**:擷取產品資訊`GetProductsWithPriceQuartile`方法 ([按一下以檢視完整大小的影像](adding-additional-datatable-columns-vb/_static/image28.png))
 
@@ -172,12 +172,12 @@ S DataTable 的結構描述已反映 TableAdapter s 主查詢的模型適用於�
 [圖 11] 顯示當透過瀏覽器瀏覽此頁面。 請注意，一開始，產品會按照其價格，以遞減順序，指派適當的各項產品的`PriceQuartile`值。 當然這項資料可依其他準則仍然反映價格方面的產品 s 順位的價格四分位數的資料行值 （請參閱 圖 12）。
 
 
-[![其價格依排序產品](adding-additional-datatable-columns-vb/_static/image30.png)](adding-additional-datatable-columns-vb/_static/image29.png)
+[![T他產品都會按照其價格](adding-additional-datatable-columns-vb/_static/image30.png)](adding-additional-datatable-columns-vb/_static/image29.png)
 
 **圖 11**:其價格依排序產品 ([按一下以檢視完整大小的影像](adding-additional-datatable-columns-vb/_static/image31.png))
 
 
-[![依名稱排序的產品](adding-additional-datatable-columns-vb/_static/image33.png)](adding-additional-datatable-columns-vb/_static/image32.png)
+[![T他產品會依名稱排序](adding-additional-datatable-columns-vb/_static/image33.png)](adding-additional-datatable-columns-vb/_static/image32.png)
 
 **圖 12**:依名稱排序的產品 ([按一下以檢視完整大小的影像](adding-additional-datatable-columns-vb/_static/image34.png))
 

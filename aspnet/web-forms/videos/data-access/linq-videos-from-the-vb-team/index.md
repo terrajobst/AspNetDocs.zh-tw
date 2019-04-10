@@ -8,15 +8,15 @@ ms.date: 02/24/2012
 ms.assetid: 257373bb-eab0-47bc-b5a2-37a9e91666d6
 msc.legacyurl: /web-forms/videos/data-access/linq-videos-from-the-vb-team
 msc.type: chapter
-ms.openlocfilehash: 67c6aaf358d4c7c2764493e8c17e1d5245096014
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3db35464b448727ef3477a90149459a46e0f76d7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57022805"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59412160"
 ---
-<a name="linq-videos-from-the-vb-team"></a>VB 小組提供的 LINQ 影片
-====================
+# <a name="linq-videos-from-the-vb-team"></a>VB 小組提供的 LINQ 影片
+
 > 這些影片提供超過一小時的時間和內容，專注於新的 LINQ 語言功能，包含在 Visual Studio 2008 中的 Visual Basic 9.0 的下半部。
 
 

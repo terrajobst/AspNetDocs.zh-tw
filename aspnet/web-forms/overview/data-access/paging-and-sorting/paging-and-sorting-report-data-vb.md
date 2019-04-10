@@ -8,15 +8,15 @@ ms.date: 08/15/2006
 ms.assetid: b895e37e-0e69-45cc-a7e4-17ddd2e1b38d
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 23f14251c280e1da3a51612ed538ecbc0f5b8d54
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 5f2cd9c752968f11efe74cce1c620d0b7cf6a467
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424348"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408585"
 ---
-<a name="paging-and-sorting-report-data-vb"></a>分頁和排序報告資料 (VB)
-====================
+# <a name="paging-and-sorting-report-data-vb"></a>分頁和排序報告資料 (VB)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_24_VB.exe)或[下載 PDF](paging-and-sorting-report-data-vb/_static/datatutorial24vb1.pdf)
@@ -67,7 +67,7 @@ ms.locfileid: "58424348"
 
 ## <a name="step-2-displaying-product-information-in-a-gridview"></a>步驟 2：在 GridView 中顯示產品資訊
 
-我們實際實作分頁和排序功能之前，讓第一次建立標準非-srotable，不可分頁的 GridView 會列出產品資訊。 這是工作我們完成之前多次在此教學課程系列讓這些步驟的 ve 應該很熟悉。 首先開啟`SimplePagingSorting.aspx`頁面上，並將 GridView 控制項從工具箱拖曳至設計工具中，設定其`ID`屬性設`Products`。 接下來，建立新的 ObjectDataSource 使用 ProductsBLL 類別的`GetProducts()`方法傳回的所有產品資訊。
+我們實際實作分頁和排序功能之前，讓第一次建立標準的非可排序、 不可分頁 GridView，列出產品資訊。 這是工作我們完成之前多次在此教學課程系列讓這些步驟的 ve 應該很熟悉。 首先開啟`SimplePagingSorting.aspx`頁面上，並將 GridView 控制項從工具箱拖曳至設計工具中，設定其`ID`屬性設`Products`。 接下來，建立新的 ObjectDataSource 使用 ProductsBLL 類別的`GetProducts()`方法傳回的所有產品資訊。
 
 
 ![擷取所有的產品使用 GetProducts() 方法的相關資訊](paging-and-sorting-report-data-vb/_static/image4.png)
@@ -91,7 +91,7 @@ ms.locfileid: "58424348"
 圖 6 顯示我們進行到目前為止透過瀏覽器檢視時。 請注意，頁面會列出所有在一個畫面中，顯示每個產品的名稱、 類別、 供應商、 價格、 產品已停止的狀態。
 
 
-[![每個產品詳列](paging-and-sorting-report-data-vb/_static/image7.png)](paging-and-sorting-report-data-vb/_static/image6.png)
+[![E列出產品的 ach](paging-and-sorting-report-data-vb/_static/image7.png)](paging-and-sorting-report-data-vb/_static/image6.png)
 
 **圖 6**:每個產品詳列 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-vb/_static/image8.png))
 
@@ -101,7 +101,7 @@ ms.locfileid: "58424348"
 列出*所有*在某個畫面上的產品可能會導致使用者瀏覽資料的資訊負荷過重。 為了讓結果更容易管理，我們可以分割成較小的頁面資料的資料，並允許使用者在一頁資料透過一次。 若要完成，這只是檢查啟用分頁 核取方塊的 GridView s 智慧標籤 (這會將 GridView s [ `AllowPaging`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.allowpaging.aspx)至`true`)。
 
 
-[![請檢查啟用分頁核取方塊，以新增分頁支援](paging-and-sorting-report-data-vb/_static/image10.png)](paging-and-sorting-report-data-vb/_static/image9.png)
+[![Ch 啟用分頁核取方塊以新增分頁支援](paging-and-sorting-report-data-vb/_static/image10.png)](paging-and-sorting-report-data-vb/_static/image9.png)
 
 **圖 7**:核取方塊啟用分頁的分頁支援 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-vb/_static/image11.png))
 
@@ -137,7 +137,7 @@ ms.locfileid: "58424348"
 圖 8 顯示當 GridView s 啟用分頁 核取方塊已核取之後，透過瀏覽器瀏覽的網頁和`PagerStyle`並`PagerSettings`設定已透過`GridView.skin`檔案。 請注意如何唯一的十個記錄會顯示，且分頁介面表示我們正在檢視資料的第一頁。
 
 
-[![使用已啟用分頁，一次顯示記錄的子集](paging-and-sorting-report-data-vb/_static/image13.png)](paging-and-sorting-report-data-vb/_static/image12.png)
+[![W第 i 個分頁啟用記錄的子集會顯示一次](paging-and-sorting-report-data-vb/_static/image13.png)](paging-and-sorting-report-data-vb/_static/image12.png)
 
 **圖 8**:使用已啟用分頁，一次顯示記錄的子集 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-vb/_static/image14.png))
 
@@ -145,7 +145,7 @@ ms.locfileid: "58424348"
 當使用者按一下其中一個頁面中的數字的分頁介面上時，回傳是兩邊彼此乾瞪眼，頁面會重新載入要求的頁面的記錄的顯示。 選擇要檢視資料的最後一頁之後，[圖 9] 顯示結果。 請注意，最後一頁只會有一筆記錄;這是因為有 81 記錄總數，導致 含有單一記錄在每個頁面，再加上一頁的 10 筆記錄的八個頁面。
 
 
-[![按一下頁碼造成回傳，並顯示適當的記錄的子集](paging-and-sorting-report-data-vb/_static/image16.png)](paging-and-sorting-report-data-vb/_static/image15.png)
+[![C按一下頁面號碼造成回傳，並顯示適當的子集合的記錄](paging-and-sorting-report-data-vb/_static/image16.png)](paging-and-sorting-report-data-vb/_static/image15.png)
 
 **圖 9**:按一下頁碼造成回傳，並顯示適當的資料錄子集 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-vb/_static/image17.png))
 
@@ -182,7 +182,7 @@ ms.locfileid: "58424348"
 此步驟中，使用者現在會顯示一則訊息指出他們造訪哪些頁面而的資料有多少的總頁數。
 
 
-[![會顯示目前的頁碼和總頁數](paging-and-sorting-report-data-vb/_static/image19.png)](paging-and-sorting-report-data-vb/_static/image18.png)
+[![T他目前的頁碼和總頁數數目會顯示](paging-and-sorting-report-data-vb/_static/image19.png)](paging-and-sorting-report-data-vb/_static/image18.png)
 
 **圖 10**:會顯示目前的頁碼和總頁數 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-vb/_static/image20.png))
 
@@ -206,7 +206,7 @@ ms.locfileid: "58424348"
 如 [圖 11] 所示，只要變更的 GridView s`PageIndex`屬性會導致資料重新繫結至 GridView。 在 GridView`DataBound`事件處理常式中，適當的 DropDownList`ListItem`已選取。
 
 
-[![使用者會自動前往第六個頁面時選取的頁面 6 下拉式清單項目](paging-and-sorting-report-data-vb/_static/image22.png)](paging-and-sorting-report-data-vb/_static/image21.png)
+[![T他的使用者會自動前往第六個頁面時選取的頁面 6 下拉式清單項目](paging-and-sorting-report-data-vb/_static/image22.png)](paging-and-sorting-report-data-vb/_static/image21.png)
 
 **圖 11**:使用者會自動前往第六個頁面時選取的頁面 6 下拉式清單項目 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-vb/_static/image23.png))
 
@@ -231,7 +231,7 @@ ms.locfileid: "58424348"
 在此 CSS 新增功能之後, 造訪透過瀏覽器頁面時您的畫面看起來應該類似 圖 12。 價格欄位標頭連結已按下之後，特別是，圖 12 顯示結果。
 
 
-[![以遞增順序 UnitPrice 已經排序結果](paging-and-sorting-report-data-vb/_static/image25.png)](paging-and-sorting-report-data-vb/_static/image24.png)
+[![T他以遞增順序 UnitPrice 已經排序結果](paging-and-sorting-report-data-vb/_static/image25.png)](paging-and-sorting-report-data-vb/_static/image24.png)
 
 **圖 12**:結果已經排序以遞增順序 UnitPrice ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-vb/_static/image26.png))
 
@@ -264,7 +264,7 @@ ms.locfileid: "58424348"
 一次`SortExpression`屬性已移除`UnitPrice`BoundField 頁首會轉譯為文字而不是連結，藉此防止使用者排序資料的價格。
 
 
-[![藉由移除 SortExpression 屬性，使用者可以不會再排序依價格的產品](paging-and-sorting-report-data-vb/_static/image29.png)](paging-and-sorting-report-data-vb/_static/image28.png)
+[![By 移除 SortExpression 屬性，使用者無法再排序依價格的產品](paging-and-sorting-report-data-vb/_static/image29.png)](paging-and-sorting-report-data-vb/_static/image28.png)
 
 **圖 14**:藉由移除 SortExpression 屬性，使用者可以不會再排序產品的價格 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-vb/_static/image30.png))
 
@@ -283,7 +283,7 @@ ms.locfileid: "58424348"
 按一下此按鈕會傳回使用者第一頁從耗費最多的資源成本最低 （請參閱 圖 15） 的價格，依排序的產品。
 
 
-[![按一下按鈕排序的產品成本最高到最低](paging-and-sorting-report-data-vb/_static/image32.png)](paging-and-sorting-report-data-vb/_static/image31.png)
+[![C按一下按鈕訂單產品從成本最高到最小](paging-and-sorting-report-data-vb/_static/image32.png)](paging-and-sorting-report-data-vb/_static/image31.png)
 
 **圖 15**:按一下按鈕排序產品從成本最高到最低 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-vb/_static/image33.png))
 
