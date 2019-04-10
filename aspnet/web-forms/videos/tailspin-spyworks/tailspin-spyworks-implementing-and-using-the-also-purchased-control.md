@@ -8,15 +8,15 @@ ms.date: 08/26/2010
 ms.assetid: a95daf2f-aae4-4ad5-a142-8c58cc7a056d
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-implementing-and-using-the-also-purchased-control
 msc.type: video
-ms.openlocfilehash: ff26ac8639e9fc77010dcc61a685fd28fb795ee0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f0695e491b9e8a29d1fcbdf9ae138083f8c0c531
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57054295"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59422755"
 ---
-<a name="tailspin-spyworks---implementing-and-using-the-also-purchased-control"></a>Tailspin Spyworks-實作及使用也已購買的控制項
-====================
+# <a name="tailspin-spyworks---implementing-and-using-the-also-purchased-control"></a>Tailspin Spyworks-實作及使用也已購買的控制項
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 Joe Stagner 實作，並使用也購買控制項 Tailspin Spyworks 範例 Web Form 應用程式中。

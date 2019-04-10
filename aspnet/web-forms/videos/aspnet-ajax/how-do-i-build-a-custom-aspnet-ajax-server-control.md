@@ -8,15 +8,15 @@ ms.date: 07/25/2007
 ms.assetid: 1165e0b4-2240-4dc2-aa94-ef6664c71a8c
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-build-a-custom-aspnet-ajax-server-control
 msc.type: video
-ms.openlocfilehash: ae685bc2b8a236729f86ead591874421e92a642a
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 4aec93a42f6766a043a5d672c9e084683b71076c
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57044425"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416242"
 ---
-<a name="how-do-i-build-a-custom-aspnet-ajax-server-control"></a>[How Do i:]建置自訂的 ASP.NET AJAX 伺服器控制項嗎？
-====================
+# <a name="how-do-i-build-a-custom-aspnet-ajax-server-control"></a>[How Do i:]建置自訂的 ASP.NET AJAX 伺服器控制項嗎？
+
 藉由[Chris Pels](https://twitter.com/chrispels)
 
 了解如何使用 Microsoft AJAX Library 中的 AJAX extensions 的 ASP.NET AJAX 功能以建立自訂的 Web 伺服器控制項。 這段影片將逐步引導您透過伺服器端.NET 程式碼和用戶端 JavaScript 程式碼，並提供 '原型' 概念的說明。 自訂的 ASP.NET AJAX 控制項可用在.aspx 頁面和任何其他伺服器控制項一樣。

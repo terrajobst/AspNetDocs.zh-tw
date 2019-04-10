@@ -8,15 +8,15 @@ ms.date: 05/13/2009
 ms.assetid: 73822cfa-2052-41fa-98e6-434928574afb
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/combo-box
 msc.type: video
-ms.openlocfilehash: 504d64576508bfc52e911f85b0dfdb19dfb4ca51
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7d99e52103d6657392d9110d1dac2cf541ea400b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030555"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59413239"
 ---
-<a name="combo-box"></a>下拉式方塊
-====================
+# <a name="combo-box"></a>下拉式方塊
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 這段影片將示範如何使用新的下拉式方塊控制項，從 Microsoft AJAX Control Toolkit。

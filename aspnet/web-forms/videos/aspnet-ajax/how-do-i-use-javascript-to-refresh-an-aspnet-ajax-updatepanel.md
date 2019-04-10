@@ -8,15 +8,15 @@ ms.date: 07/25/2007
 ms.assetid: b4d5b7ce-c322-4313-985d-455df98d619a
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel
 msc.type: video
-ms.openlocfilehash: 93a39765abac7affa36c55ff191a1e9a023d80e6
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b2a183bb14389b7558697ac684ef2a09e689596b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053485"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59414071"
 ---
-<a name="how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel"></a>[How Do i:]您可以使用 JavaScript 來重新整理 ASP.NET AJAX UpdatePanel？
-====================
+# <a name="how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel"></a>[How Do i:]您可以使用 JavaScript 來重新整理 ASP.NET AJAX UpdatePanel？
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 在這段影片中，我們了解兩個不同的方式，來重新整理 ASP.NET AJAX UpdatePanel 控制項的內容中使用 JavaScript 邏輯的內容。 第一種方式是加入 UpdatePanel 中的按鈕類型的伺服器控制項，並使用 JavaScript 來觸發非同步回傳和 '假裝' 回傳因伺服器控制項在 updatepanel 當中。 第二種方法不需要在 UpdatePanel 中，加入任何按鈕類型伺服器控制項，但仍可讓我們使用 JavaScript 邏輯，以重新整理 UpdatePanel 的內容。 （第二個技巧建議由 Dave Ward，而且您可以深入了他的網誌進入時，「 輕鬆地重新整理 UpdatePanel 中，使用 JavaScript 」）。

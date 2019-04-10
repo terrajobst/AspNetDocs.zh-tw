@@ -8,15 +8,15 @@ ms.date: 07/21/2010
 ms.assetid: 94ea1a70-a9bc-4241-8f36-08366d64bab9
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: f55b29a271dbdb72d3e2249ed74517b77d78cf5e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: badae58d5b43fb2674f4918f54f999ff48d0b5b0
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57034845"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59418010"
 ---
-<a name="part-3-layout-and-category-menu"></a>第 3 部分：[版面配置與分類] 功能表
-====================
+# <a name="part-3-layout-and-category-menu"></a>第 3 部分：[版面配置與分類] 功能表
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 > Tailspin Spyworks 示範建立功能強大、 可擴充的應用程式，適用於.NET 平台是如何富含簡單。 它會展示如何在 ASP.NET 4 中使用最棒的新功能，建置線上商店，包括購物、 簽出，以及系統管理。
@@ -66,7 +66,7 @@ ms.locfileid: "57034845"
 
 使用 ASP.NET 語法&lt;%# %&gt;是指示執行階段執行任何內含和輸出的結果"Line"的縮寫慣例。
 
-陳述式 Eval("CategoryName")，指示目前項目的繫結集合中的資料項目時，擷取實體模型項目名稱的值"CatagoryName 」。 這是簡潔的語法非常強大的功能。
+陳述式 Eval("CategoryName")，指示目前項目的繫結集合中的資料項目時，擷取實體模型項目名稱的值"CategoryName"。 這是簡潔的語法非常強大的功能。
 
 讓我們執行應用程式現在。
 

@@ -8,15 +8,15 @@ ms.date: 01/26/2007
 ms.assetid: 1126e173-733e-437f-abdd-81784f47b7f0
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-alwaysvisible-control-extender
 msc.type: video
-ms.openlocfilehash: 9bf324b9aac11809991d849fba9e796f6ed1db59
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 147fe5b0e749ce8f0c8096ea3f4583daac0255c3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027035"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59416658"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-alwaysvisible-control-extender"></a>[How Do i:]使用 ASP.NET AJAX AlwaysVisible 控制擴充項？
-====================
+# <a name="how-do-i-use-the-aspnet-ajax-alwaysvisible-control-extender"></a>[How Do i:]使用 ASP.NET AJAX AlwaysVisible 控制擴充項？
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 請參閱是多麼要錨定至的位置，在畫面上，其中仍會一律顯示為頁面元素無論伸展多遠的使用者可以捲動文件。 浮動的頁面元素可能會從靜態文字未 AJAX 為基礎、 內容感知的說明方塊的任何項目...

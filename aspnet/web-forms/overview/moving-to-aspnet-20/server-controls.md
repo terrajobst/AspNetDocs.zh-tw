@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: 43f6ac47-76fc-4cf7-8e9f-c18ce673dfd8
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/server-controls
 msc.type: authoredcontent
-ms.openlocfilehash: ecf99fa894c1f662542aa8a613195b828bf2c67b
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bfbc151af40bf7ccceb5ac298ba812730d4e4ed9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57061435"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420753"
 ---
-<a name="server-controls"></a>伺服器控制項
-====================
+# <a name="server-controls"></a>伺服器控制項
+
 by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET 2.0 增強伺服器控制項，在許多方面。 在這個模組中，我們將討論一些架構的變更，ASP.NET 2.0 的方式，而 Visual Studio 2005 處理的伺服器控制項。
@@ -99,7 +99,7 @@ LoadControlState 方法會載入控制項中的已儲存的狀態。 此方法�
 
 [!code-html[Main](server-controls/samples/sample7.html)]
 
-如果您選擇，您可以改變預設 XHML 合規性，透過組態檔中的 [xhtmlConformance] 節點。 比方說，在 web.config 檔案中的下列節點會將符合 XHTML 的規範變更為 XHTML 1.0 Strict:
+如果您選擇，您可以改變預設 XHTML 合規性，透過組態檔中的 [xhtmlConformance] 節點。 比方說，在 web.config 檔案中的下列節點會將符合 XHTML 的規範變更為 XHTML 1.0 Strict:
 
 [!code-xml[Main](server-controls/samples/sample8.xml)]
 

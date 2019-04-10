@@ -8,15 +8,15 @@ ms.date: 09/28/2011
 ms.assetid: 9086d8a8-7952-4a7e-82a7-724d48178555
 msc.legacyurl: /mvc/overview/older-versions-1/models-data
 msc.type: chapter
-ms.openlocfilehash: aee92dffc059d984bc9e5d5a93fc03ed4a2f8136
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: bdd63889eacea1ef03686a65fc1144d16cd41353
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57019345"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420623"
 ---
-<a name="models-data"></a>模型 (資料)
-====================
+# <a name="models-data"></a>模型 (資料)
+
 > 在本教學課程系列中，您已了解如何使用 Microsoft Entity Framework 的 ASP.NET MVC。 在本教學課程的過程中，您可以建置說明如何選取、 插入、 更新和刪除資料庫的資料使用 Entity Framework 的 web 應用程式。
 
 

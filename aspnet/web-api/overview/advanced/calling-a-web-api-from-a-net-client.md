@@ -1,21 +1,22 @@
 ---
 uid: web-api/overview/advanced/calling-a-web-api-from-a-net-client
-title: 呼叫 Web API 的.NET 用戶端 (C#) |Microsoft Docs
+title: 從.NET 用戶端呼叫 Web API (C#)-ASP.NET 4.x
 author: MikeWasson
-description: ''
+description: 本教學課程會示範如何從.NET 4.x 應用程式呼叫 web API。
 ms.author: riande
 ms.date: 11/24/2017
+ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 0c360f580285967c8fab8d33ccbb9557a7316ee1
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 113600ca1e77ae9667465464da505478fc948c9b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423132"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421104"
 ---
-<a name="call-a-web-api-from-a-net-client-c"></a>呼叫 Web API 的.NET 用戶端 (C#)
-====================
+# <a name="call-a-web-api-from-a-net-client-c"></a>呼叫 Web API 的.NET 用戶端 (C#)
+
 藉由[Mike Wasson](https://github.com/MikeWasson)和[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [下載已完成的專案](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample)。 [下載指示](/aspnet/core/tutorials/#how-to-download-a-sample)。 

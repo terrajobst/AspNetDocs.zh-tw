@@ -8,15 +8,15 @@ ms.date: 07/30/2013
 ms.assetid: 0d6fb83b-71f7-425d-8dec-981197d7ec42
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 4767b015db0bad09942802827ce54162687fcabc
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: f86212c1cb559c164342997fb0e4208339b5e3cc
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57033785"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421117"
 ---
-<a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-5-of-10"></a>讀取相關資料，使用 Entity Framework 中的 ASP.NET MVC 應用程式 (5 為 10)
-====================
+# <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-5-of-10"></a>讀取相關資料，使用 Entity Framework 中的 ASP.NET MVC 應用程式 (5 為 10)
+
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 [下載已完成的專案](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
@@ -152,11 +152,13 @@ Instructor 索引 頁面會顯示三個不同的資料表。 因此，您將建�
 > 
 > 路由資料是在路由表中指定的 URL 區段中找到的模型繫結的資料。 例如，指定預設路由`controller`， `action`，和`id`區段：
 > 
+> ```csharp
 > routes.MapRoute(  
->  名稱：「 預設 」，  
+>  name: "Default",  
 >  url: "{controller}/{action}/{id}",  
 >  defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }  
 > );
+> ```
 > 
 > 在下列 URL 中，對應的預設路由`Instructor`作為`controller`，`Index`作為`action`並 1 做為`id`; 這些是路由資料值。
 > 

@@ -8,15 +8,15 @@ ms.date: 07/16/2014
 ms.assetid: 09e82351-816b-402d-acd1-0f9ac6901d16
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-tools
 msc.type: authoredcontent
-ms.openlocfilehash: 54d86de49bf61305b17fc80964723c518abd467b
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 874542305bd3f47066cfae595919285ed079aa53
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423243"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421065"
 ---
-<a name="hands-on-lab-visual-studio-2013-web-tools"></a>實際操作實驗室：Visual Studio 2013 Web 工具
-====================
+# <a name="hands-on-lab-visual-studio-2013-web-tools"></a>實際操作實驗室：Visual Studio 2013 Web 工具
+
 藉由[Web Camp 小組](https://twitter.com/webcamps)
 
 [下載 Web 研討會訓練套件](https://aka.ms/webcamps-training-kit)
@@ -74,7 +74,7 @@ ms.locfileid: "58423243"
 > 每個練習會伴隨起始方案，位於**開始**練習，可讓您依照每個練習，獨立於其他的資料夾。 請留意練習期間新增的程式碼片段缺少這些啟動解決方案，並可能無法運作，直到您已完成練習。 在練習的原始程式碼，您也可以找到**結束**資料夾包含 Visual Studio 方案，以程式碼所產生的相對應的練習中的步驟。 如果您需要其他說明，當您完成這個實際操作實驗室，您可以使用這些解決方案與指引。
 
 
-* * *
+---
 
 <a id="Exercises"></a>
 ## <a name="exercises"></a>練習
@@ -229,7 +229,7 @@ ms.locfileid: "58423243"
 
     ![開啟色彩選擇器](visual-studio-2013-web-tools/_static/image17.png "開啟色彩選擇器")
 
-    *開啟色彩選擇器*
+    *開啟 色彩選擇器*
 7. 展開色彩選擇器依序按一下 > 形箭號按鈕，然後選取新的色彩。
 
     ![展開色彩選擇器](visual-studio-2013-web-tools/_static/image18.png "展開色彩選擇器")
@@ -252,7 +252,7 @@ ms.locfileid: "58423243"
 
     ![-webkit 框線半徑屬性 btn selector](visual-studio-2013-web-tools/_static/image21.png "btn 選擇器-webkit 框線半徑屬性")
 
-    *-webkit 框線半徑 btn 選取器屬性*
+    *btn 選取器-webkit 框線半徑屬性*
 14. 在號 **-webkit 框線半徑**屬性。 藍線應該會出現在屬性的第一個單字的第一個字母。 這是**智慧標籤**。
 15. 按下**CTRL** + **。** 若要開啟 [建議] 功能表，然後按一下**新增遺失的標準屬性 （框線半徑）**。
 
@@ -319,7 +319,7 @@ ms.locfileid: "58423243"
 
     ![錯誤清單檢視中功能表](visual-studio-2013-web-tools/_static/image31.png "檢視功能表中的錯誤清單")
 
-    *錯誤清單檢視功能表*
+    *錯誤清單檢視 功能表*
 2. 請注意，通知的 SEO 警告**&lt;meta&gt;** 標記的頁面描述遺漏。 按兩下 SEO 警告項目，若要修正此問題。
 
     ![錯誤清單 視窗](visual-studio-2013-web-tools/_static/image32.png "錯誤清單 視窗")
@@ -424,7 +424,7 @@ HTML5 引進了超過 25 個新的語意標記。 已經有 visual Studio 的 In
 
     ![另存新檔視窗](visual-studio-2013-web-tools/_static/image40.png "另存新檔視窗")
 
-    *另存新檔視窗*
+    *另存新檔 視窗*
 
     > [!NOTE]
     > **Init.js**建立檔案和指令碼的內容移到檔案。
@@ -511,7 +511,7 @@ HTML5 引進了超過 25 個新的語意標記。 已經有 visual Studio 的 In
 
     *在檢視中包含的音訊播放器*
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>總結

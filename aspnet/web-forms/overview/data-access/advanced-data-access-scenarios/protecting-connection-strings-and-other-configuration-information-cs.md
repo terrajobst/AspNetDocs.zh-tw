@@ -8,15 +8,15 @@ ms.date: 08/03/2007
 ms.assetid: ad8dd396-30f7-4abe-ac02-a0b84422e5be
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 61ac52ffe28762ce0cf8892621343f71e73a9ca7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: eab1ad6cd4636ab3d35988ec8dc762c8a8f51ef4
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027605"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59421130"
 ---
-<a name="protecting-connection-strings-and-other-configuration-information-c"></a>保護連接字串與其他設定資訊 (C#)
-====================
+# <a name="protecting-connection-strings-and-other-configuration-information-c"></a>保護連接字串與其他設定資訊 (C#)
+
 藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [下載程式碼](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_73_CS.zip)或[下載 PDF](protecting-connection-strings-and-other-configuration-information-cs/_static/datatutorial73cs1.pdf)
@@ -31,7 +31,7 @@ ASP.NET 應用程式的組態資訊通常儲存在名為 XML 檔案`Web.config`�
 由於`Web.config`可能包含機密資料，例如連接字串，很重要的內容`Web.config`保持安全且隱藏未經授權的檢視器。 根據預設，任何 HTTP 要求與檔案`.config`延伸模組由 ASP.NET 引擎，它會傳回*不提供這種類型的頁面*[圖 1] 所示的訊息。 這表示訪客不能檢視您`Web.config`只要輸入檔案 s 內容 http://www.YourServer.com/Web.config 其 s 的瀏覽器網址列。
 
 
-[![瀏覽 Web.config 透過瀏覽器傳回這類頁面是不會處理訊息](protecting-connection-strings-and-other-configuration-information-cs/_static/image2.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image1.png)
+[![Visiting Web.config 透過瀏覽器傳回這類頁面不會提供訊息](protecting-connection-strings-and-other-configuration-information-cs/_static/image2.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image1.png)
 
 **圖 1**:瀏覽`Web.config`透過瀏覽器傳回這類頁面不會處理訊息 ([按一下以檢視完整大小的影像](protecting-connection-strings-and-other-configuration-information-cs/_static/image3.png))
 
@@ -83,7 +83,7 @@ RSA 和 DPAPI 的提供者會將金鑰用於其加密和解密的常式，以及
 此時您的畫面應該看起來類似 圖 2。
 
 
-[![將文字方塊和兩個按鈕 Web 控制項加入頁面](protecting-connection-strings-and-other-configuration-information-cs/_static/image5.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image4.png)
+[![Add 文字方塊和兩個按鈕 Web 控制項至頁面](protecting-connection-strings-and-other-configuration-information-cs/_static/image5.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image4.png)
 
 **圖 2**:將文字方塊和兩個按鈕 Web 控制項加入頁面 ([按一下以檢視完整大小的影像](protecting-connection-strings-and-other-configuration-information-cs/_static/image6.png))
 
@@ -111,7 +111,7 @@ RSA 和 DPAPI 的提供者會將金鑰用於其加密和解密的常式，以及
 一旦您輸入上述的程式碼，測試它，請造訪`EncryptingConfigSections.aspx`透過瀏覽器的頁面。 您應該一開始會看到列出的內容頁面`Web.config`與`<connectionStrings>`以純文字顯示的區段 （請參閱 [圖 3]）。
 
 
-[![將文字方塊和兩個按鈕 Web 控制項加入頁面](protecting-connection-strings-and-other-configuration-information-cs/_static/image8.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image7.png)
+[![Add 文字方塊和兩個按鈕 Web 控制項至頁面](protecting-connection-strings-and-other-configuration-information-cs/_static/image8.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image7.png)
 
 **圖 3**:將文字方塊和兩個按鈕 Web 控制項加入頁面 ([按一下以檢視完整大小的影像](protecting-connection-strings-and-other-configuration-information-cs/_static/image9.png))
 
@@ -126,7 +126,7 @@ RSA 和 DPAPI 的提供者會將金鑰用於其加密和解密的常式，以及
 停用頁面的要求驗證之後, 再試一次按一下 [加密連接字串] 按鈕。 在回傳時，將存取設定檔並將其`<connectionStrings>`加密使用 DPAPI 的提供者的一節。 文字方塊則會更新以顯示新`Web.config`內容。 如 [圖 4] 所示，`<connectionStrings>`現在都已加密資訊。
 
 
-[![按一下 加密連接字串按鈕會加密&lt;connectionString&gt;區段](protecting-connection-strings-and-other-configuration-information-cs/_static/image11.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image10.png)
+[![C按一下 [加密連接字串按鈕會加密&lt;connectionString&gt;區段](protecting-connection-strings-and-other-configuration-information-cs/_static/image11.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image10.png)
 
 **圖 4**:按一下 加密連接字串按鈕會加密`<connectionString>`一節 ([按一下以檢視完整大小的影像](protecting-connection-strings-and-other-configuration-information-cs/_static/image12.png))
 
@@ -143,7 +143,7 @@ RSA 和 DPAPI 的提供者會將金鑰用於其加密和解密的常式，以及
 當連接字串資訊從存取`Web.config`-可能是由我們所撰寫程式碼，從 SqlDataSource 控制項或在我們的輸入資料集 Tableadapter 的自動產生程式碼-就會自動解密。 簡單地說，我們不需要新增任何額外的程式碼或邏輯來解密加密`<connectionString>`一節。 若要進行示範，請瀏覽先前的教學課程的其中一個在這個階段，例如簡單顯示教學課程中，從基本報告 區段 (`~/BasicReporting/SimpleDisplay.aspx`)。 如 [圖 5] 所示，本教學課程的運作方式完全如我們所預期，表示加密的連接字串資訊時所自動解密由 ASP.NET 網頁。
 
 
-[![資料存取層會自動解密連接字串資訊](protecting-connection-strings-and-other-configuration-information-cs/_static/image14.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image13.png)
+[![T他的資料存取層會自動解密連接字串資訊](protecting-connection-strings-and-other-configuration-information-cs/_static/image14.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image13.png)
 
 **圖 5**:資料存取層會自動解密連接字串資訊 ([按一下以檢視完整大小的影像](protecting-connection-strings-and-other-configuration-information-cs/_static/image15.png))
 

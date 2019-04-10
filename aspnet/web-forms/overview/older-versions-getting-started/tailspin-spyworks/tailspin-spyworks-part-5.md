@@ -8,15 +8,15 @@ ms.date: 07/21/2010
 ms.assetid: eaef475a-ca91-47ea-a4a7-d074005ed80c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: e18acb66dbdb3bd3e0dfa21193f617dad82afc74
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: cf2cee3888228069e59e9e44ffc2bc56fbba10e3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57047075"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59415657"
 ---
-<a name="part-5-business-logic"></a>第 5 部分：商務邏輯
-====================
+# <a name="part-5-business-logic"></a>第 5 部分：商務邏輯
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 > Tailspin Spyworks 示範建立功能強大、 可擴充的應用程式，適用於.NET 平台是如何富含簡單。 它會展示如何在 ASP.NET 4 中使用最棒的新功能，建置線上商店，包括購物、 簽出，以及系統管理。

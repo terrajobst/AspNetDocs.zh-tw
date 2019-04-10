@@ -8,15 +8,15 @@ ms.date: 08/28/2008
 ms.assetid: d4c08844-fe1c-4759-9ec7-66263ba678fb
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-write-web-events-to-a-sql-server-database-using-the-sqlwebeventprovider
 msc.type: video
-ms.openlocfilehash: f97a294f6222f1a55e0776412cd060ecfbe25405
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 601da044c0c9679526eecaa09256e0100e7ad571
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57046425"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59420779"
 ---
-<a name="how-do-i-write-web-events-to-a-sql-server-database-using-the-sqlwebeventprovider"></a>[How Do i:]Web 事件寫入 SQL Server 資料庫 SqlWebEventProvider
-====================
+# <a name="how-do-i-write-web-events-to-a-sql-server-database-using-the-sqlwebeventprovider"></a>[How Do i:]Web 事件寫入 SQL Server 資料庫 SqlWebEventProvider
+
 藉由[Chris Pels](https://twitter.com/chrispels)
 
 在此影片的 Chris Pels 示範如何使用 ASP.NET 狀況監控 SqlWebEventProvider 網站到 SQL Server 資料庫中記錄錯誤。 首先，了解的角色提供者及 ASP.NET 健康監視事件。 接下來，請參閱如何設定 SQL Server 資料庫與記錄狀況監控事件使用 aspnet 的必要物件\_regiis 公用程式，相同的公用程式用來設定 ASP.NET 成員資格。 然後，了解如何設定 ASP.NET 網站到新建立的 SQL Server 資料庫中記錄事件的 web.config 檔案中的監視的健全狀況。 此組態的一部分，請參閱如何在.NET Framework 2.0 中的根 web.config 檔案已定義的事件，設定您的健全狀況監視時可以運用和提供者。 這些基本概念是您自己的特定資訊記錄至 ASP.NET 網站中的 SQL Server 資料庫的基底可以在其中建立自訂事件。
