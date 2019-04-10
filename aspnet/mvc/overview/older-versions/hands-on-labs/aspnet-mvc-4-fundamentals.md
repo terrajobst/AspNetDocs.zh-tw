@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: b7dba543-73c3-4534-a9a0-ba70fa2c6a8a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: d3bc39a37cace003c3fda6691f0dd7f893128b07
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 38aea3b3480dde6ec6182a45c4f61f44eea8e05e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425245"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380219"
 ---
 # <a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 基本概念
 
@@ -127,12 +127,12 @@ MVC 模式可協助您建立不同的應用程式 （輸入的邏輯、 商務�
 2. 按一下 [檔案] 功能表上的 [新增專案]。
 3. 在 [**新的專案**] 對話方塊中選取**ASP.NET MVC 4 Web 應用程式**專案類型，位於**Visual C#** **Web**範本清單。
 4. 變更**名稱**要*MvcMusicStore*。
-5. 設定內的新方案的位置**開始**在這個練習中的來源資料夾中，如範例的資料夾 **[您-HOL-PATH] \Source\Ex01-CreatingMusicStoreProject\Begin**。 按一下 [確定 **Deploying Office Solutions**]。
+5. 設定內的新方案的位置**開始**在這個練習中的來源資料夾中，如範例的資料夾 **[您-HOL-PATH] \Source\Ex01-CreatingMusicStoreProject\Begin**。 按一下 [確定] 。
 
     ![建立新專案 對話方塊](aspnet-mvc-4-fundamentals/_static/image2.png "建立新專案 對話方塊")
 
     *建立新專案 對話方塊*
-6. 在 [**新的 ASP.NET MVC 4 專案**] 對話方塊中選取**基本**範本並確定**檢視引擎**選取**Razor**。 按一下 [確定 **Deploying Office Solutions**]。
+6. 在 [**新的 ASP.NET MVC 4 專案**] 對話方塊中選取**基本**範本並確定**檢視引擎**選取**Razor**。 按一下 [確定] 。
 
     ![新 ASP.NET MVC 4 專案 對話方塊](aspnet-mvc-4-fundamentals/_static/image3.png "新 ASP.NET MVC 4 專案 對話方塊")
 
@@ -869,7 +869,7 @@ A **StoreBrowseViewModel**將這項工作中用來顯示符合所選的內容類
 <a id="Ex7Task1"></a>
 
 <a id="Task_1_Exploring_the_ASPNET_MVC_4_Internet_Application_Template"></a>
-#### <a name="task-1-exploring-the-aspnet-mvc-4-internet-application-template"></a>工作 1:探索 ASP.NET MVC 4 的網際網路應用程式範本
+#### <a name="task-1-exploring-the-aspnet-mvc-4-internet-application-template"></a>工作 1：探索 ASP.NET MVC 4 的網際網路應用程式範本
 
 1. 如果尚未開啟，啟動**VS Express for Web**
 2. 選取**檔案 |新 |專案**功能表命令。 在 **新的專案**對話方塊中，選取**Visual C# |Web**範本，在左窗格中樹狀結構，然後選擇  **ASP.NET MVC 4 Web 應用程式**。 **名稱**專案*MusicStore* ，並更新**方案名稱**來*開始*，然後選取位置 （或保留預設值），按一下  **確定**.
@@ -947,7 +947,7 @@ A **StoreBrowseViewModel**將這項工作中用來顯示符合所選的內容類
 > 此外，您可以在其中部署此應用程式以 Windows Azure 網站的下列[附錄 b:發行 ASP.NET MVC 4 應用程式使用 Web Deploy](#AppendixB)。
 
 
-* * *
+---
 
 <a id="Summary"></a>
 

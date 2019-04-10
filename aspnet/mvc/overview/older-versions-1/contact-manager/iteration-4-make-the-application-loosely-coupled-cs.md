@@ -8,15 +8,15 @@ ms.date: 02/20/2009
 ms.assetid: 829f589f-e201-4f6e-9ae6-08ae84322065
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 389627e610eebcdabee9b4db524e5915186db099
-ms.sourcegitcommit: 62db31596a7da029263cf06335aff12236fb3186
+ms.openlocfilehash: 8caa88d928517e1c71210cbe55e3961d4baf461a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58440348"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381272"
 ---
-<a name="iteration-4--make-the-application-loosely-coupled-c"></a>反覆項目 #4 – 讓應用程式鬆散耦合 (C#)
-====================
+# <a name="iteration-4--make-the-application-loosely-coupled-c"></a>反覆項目 #4 – 讓應用程式鬆散耦合 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 [下載程式碼](iteration-4-make-the-application-loosely-coupled-cs/_static/contactmanager_4_cs1.zip)
@@ -79,7 +79,7 @@ by [Microsoft](https://github.com/microsoft)
 
 首先，我們需要建立可描述資料存取方法，我們需要執行的所有介面。 在 列表 1 中包含 IContactManagerRepository 介面。 此介面描述五種方法：CreateContact()、 DeleteContact()、 EditContact()、 GetContact 和 ListContacts()。
 
-**列表 1-Models\IContactManagerRepository.cs**
+**Listing 1 - Models\IContactManagerRepository.cs**
 
 [!code-csharp[Main](iteration-4-make-the-application-loosely-coupled-cs/samples/sample1.cs)]
 

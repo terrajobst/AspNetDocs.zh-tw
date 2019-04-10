@@ -8,15 +8,15 @@ ms.date: 07/09/2015
 ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: f4dae827627103e5cfb9981b6c3b9342cdc34c13
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 48a66eea839f7f48899040ad20bbfee95b9a1902
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043215"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403905"
 ---
-<a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>監視和遙測 （使用 Azure 建置真實世界的雲端應用程式）
-====================
+# <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>監視和遙測 （使用 Azure 建置真實世界的雲端應用程式）
+
 藉由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
 
 [下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
@@ -72,7 +72,7 @@ ms.locfileid: "57043215"
 
 然後返回**New Relic**頁面**附加元件** 索引標籤的入口網站，然後按一下**管理**。 在入口網站傳送給您 New Relic 管理入口網站中，因此您不需要再次輸入您的認證，使用單一登入進行驗證。 [概觀] 頁面會顯示各種不同的效能統計資料。 （按一下以查看 [概觀] 頁面的完整大小的影像）。
 
-[![新的 Relic 監視索引標籤](monitoring-and-telemetry/_static/image9.png)](monitoring-and-telemetry/_static/image8.png)
+[![NRelic 監視索引標籤的新功能](monitoring-and-telemetry/_static/image9.png)](monitoring-and-telemetry/_static/image8.png)
 
 以下是幾個您所見的統計資料：
 

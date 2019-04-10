@@ -8,15 +8,15 @@ ms.date: 08/19/2008
 ms.assetid: d0136da6-81a4-4815-b002-baa84744c09e
 msc.legacyurl: /mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 77d0f0346e9eff756cd74c64c310918f3c367ab1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2d954cbc001a62f021f942f1ff44522a2769f516
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57029825"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59389572"
 ---
-<a name="preventing-javascript-injection-attacks-c"></a>防止 JavaScript 插入式攻擊 (C#)
-====================
+# <a name="preventing-javascript-injection-attacks-c"></a>防止 JavaScript 插入式攻擊 (C#)
+
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 [下載 PDF](http://download.microsoft.com/download/8/4/8/84843d8d-1575-426c-bcb5-9d0c42e51416/ASPNET_MVC_Tutorial_06_CS.pdf)
@@ -33,7 +33,7 @@ ms.locfileid: "57029825"
 假設您已建立客戶的意見反應網站 （請參閱 圖 1）。 客戶可以瀏覽網站，並使用您的產品使用者體驗上輸入意見反應。 當客戶提交他們的意見反應時，意見反應會重新顯示在意見反應 頁面上。
 
 
-[![客戶意見反應網站](preventing-javascript-injection-attacks-cs/_static/image2.png)](preventing-javascript-injection-attacks-cs/_static/image1.png)
+[![C客戶意見反應網站](preventing-javascript-injection-attacks-cs/_static/image2.png)](preventing-javascript-injection-attacks-cs/_static/image1.png)
 
 **圖 01**:客戶意見反應網站 ([按一下以檢視完整大小的影像](preventing-javascript-injection-attacks-cs/_static/image3.png))
 
@@ -65,7 +65,7 @@ ms.locfileid: "57029825"
 這段文字表示的 JavaScript 指令碼，會顯示警示訊息方塊。 有人將此指令碼提交至意見反應之後形成，訊息<em>Boo ！</em>會出現時的任何人造訪客戶意見反應網站未來 （請參閱 圖 2）。
 
 
-[![JavaScript 插入式攻擊](preventing-javascript-injection-attacks-cs/_static/image5.png)](preventing-javascript-injection-attacks-cs/_static/image4.png)
+[![JavaScript Injection](preventing-javascript-injection-attacks-cs/_static/image5.png)](preventing-javascript-injection-attacks-cs/_static/image4.png)
 
 **圖 02**:JavaScript 插入式攻擊 ([按一下以檢視完整大小的影像](preventing-javascript-injection-attacks-cs/_static/image6.png))
 
@@ -93,7 +93,7 @@ ms.locfileid: "57029825"
 什麼平均值為 HTML 編碼字串？ 當您以 HTML 編碼字串時，危險字元，例如`<`並`>`這類的 HTML 實體參考會取代`&lt;`和`&gt;`。 因此當字串`<script>alert("Boo!")</script>`是 HTML 編碼，將它轉換成`&lt;script&gt;alert(&quot;Boo!&quot;)&lt;/script&gt;`。 做為解譯的瀏覽器時，JavaScript 指令碼不會再執行編碼的字串。 相反地，您可以取得無害的頁面 [圖 3] 中。
 
 
-[![失效的 JavaScript 攻擊](preventing-javascript-injection-attacks-cs/_static/image8.png)](preventing-javascript-injection-attacks-cs/_static/image7.png)
+[![Defeated JavaScript 攻擊](preventing-javascript-injection-attacks-cs/_static/image8.png)](preventing-javascript-injection-attacks-cs/_static/image7.png)
 
 **圖 03**:擊敗 JavaScript 攻擊 ([按一下以檢視完整大小的影像](preventing-javascript-injection-attacks-cs/_static/image9.png))
 

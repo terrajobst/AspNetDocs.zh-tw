@@ -8,15 +8,15 @@ ms.date: 03/14/2008
 ms.assetid: 6ab4efb6-aab6-45ac-ad2c-bdec5848ef9e
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
-ms.openlocfilehash: d722130e625a9f867923280fce0ef35f19bfeb9d
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 18056c917b32680678c536229e8e26d5cc7db161
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041255"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59395130"
 ---
-<a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>了解 ASP.NET AJAX 驗證與設定檔應用程式服務
-====================
+# <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>了解 ASP.NET AJAX 驗證與設定檔應用程式服務
+
 藉由[Scott Cate](https://github.com/scottcate)
 
 [下載 PDF](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial03_MSAjax_ASP.NET_Services_cs.pdf)
@@ -32,7 +32,7 @@ ms.locfileid: "57041255"
 
 本白皮書根據 Visual Studio 2008 Beta 2 版和.NET Framework 3.5。 本白皮書也會假設您將使用 Visual Studio 2008 Beta 2，不 Visual Web Developer Express，並將提供逐步解說根據 Visual Studio 的使用者介面。 某些程式碼範例可利用無法在 Visual Web Developer Express 的專案範本。
 
-## <a name="profiles-and-authentication"></a>*設定檔和驗證*
+## *<a name="profiles-and-authentication"></a>設定檔和驗證*
 
 Microsoft ASP.NET 設定檔和驗證服務所提供的 ASP.NET 表單驗證系統，ASP.NET 的標準元件。 ASP.NET AJAX Extensions 提供指令碼存取這些服務透過指令碼的 proxy，透過非常簡單的模型 Sys.Services 命名空間下的用戶端 AJAX 程式庫。
 
@@ -42,7 +42,7 @@ Microsoft ASP.NET 設定檔和驗證服務所提供的 ASP.NET 表單驗證系�
 
 應用程式中併入 ASP.NET 驗證和分析服務本身是在本白皮書的範圍之外。 如需有關本主題的詳細資訊，請參閱 MSDN Library 參考文章使用成員資格管理使用者在[ https://msdn.microsoft.com/library/tw292whz.aspx ](https://msdn.microsoft.com/library/tw292whz.aspx)。 ASP.NET 也會包含一個公用程式來自動設定與 SQL Server，也就是 ASP.NET 成員資格的預設驗證服務提供者的成員資格。 如需詳細資訊，請參閱文章 ASP.NET SQL Server 註冊工具 (Aspnet\_regsql.exe) 在[ https://msdn.microsoft.com/library/ms229862(vs.80).aspx ](https://msdn.microsoft.com/library/ms229862(vs.80).aspx)。
 
-## <a name="using-the-aspnet-ajax-authentication-service"></a>*使用 ASP.NET AJAX 驗證服務*
+## *<a name="using-the-aspnet-ajax-authentication-service"></a>使用 ASP.NET AJAX 驗證服務*
 
 必須啟用 ASP.NET AJAX 驗證服務的 web.config 檔案中：
 
@@ -112,7 +112,7 @@ Logout() 方法移除認證 cookie，並將目前的使用者從 web 應用程�
 
 | **參數名稱** | **意義** |
 | --- | --- |
-| 個錯誤 | 指定資訊時發生錯誤。 |
+| error | 指定資訊時發生錯誤。 |
 | userContext | 指定的登入或登出函式呼叫時所提供的使用者內容資訊。 |
 | methodName | 呼叫方法的名稱。 |
 
@@ -192,7 +192,7 @@ ASP.NET 程式碼剖析服務也會公開透過 ASP.NET AJAX Extensions 中。 �
 
 一旦設定了 AJAX 程式碼剖析服務，它就可以立即在頁面;不過，它必須載入一次使用之前。
 
-*Sys.Services.ProfileService 成員*
+*Sys.Services.ProfileService members*
 
 *屬性欄位：*
 
@@ -304,7 +304,7 @@ Save （） 方法會將使用者的 ASP.NET 設定檔指定的屬性清單 （�
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample12.js)]
 
-## <a name="using-a-custom-authentication-service-provider"></a>*使用自訂驗證提供者*
+## *<a name="using-a-custom-authentication-service-provider"></a>使用自訂驗證提供者*
 
 ASP.NET AJAX 擴充功能可讓您建立自訂指令碼驗證服務提供者公開您透過自訂的 web 服務的功能。 若要使用，您的 web 服務必須公開兩種方法，`Login`和`Logout`; 這些方法必須指定為預設的 ASP.NET AJAX 驗證 web 服務相同的方法簽章。
 
@@ -338,7 +338,7 @@ ASP.NET 服務-特別是程式碼剖析、 成員資格，以及驗證服務-輕
 
 此外，藉由使用對等的方法簽章建立簡化的 web 服務實作，開發人員可以建立這些內建的 ASP.NET 服務的自訂指令碼提供者。 如需這些技術的支援可簡化開發豐富型用戶端應用程式，同時開發人員提供各種不同的彈性，來滿足特定需求。
 
-## <a name="bio"></a>*Bio*
+## *<a name="bio"></a>簡歷*
 
 Scott Cate 從事 Microsoft Web 技術工作自 1997 年，而且 myKB.com 總裁 ([www.myKB.com](http://www.myKB.com))，專精於撰寫 ASP.NET 架構著重於知識庫軟體解決方案的應用程式。 可以透過電子郵件連絡 Scott [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com)或他的部落格[ScottCate.com](http://ScottCate.com)
 

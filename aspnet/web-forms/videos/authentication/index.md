@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: 4a365e58-9b18-4bd2-bfd5-6981e7f2e179
 msc.legacyurl: /web-forms/videos/authentication
 msc.type: chapter
-ms.openlocfilehash: 00a91f03e05a56a3ebbe75f113b1330cffc57a99
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 68c1acdaaf1e6674f4dc3bcca0557382407ca147
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021595"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59400109"
 ---
-<a name="authentication"></a>驗證
-====================
+# <a name="authentication"></a>驗證
+
 > 如何實作和管理 ASP.NET 應用程式中的安全性 （驗證）。
 
 
@@ -24,7 +24,7 @@ ms.locfileid: "57021595"
 - [變更表單驗證屬性](how-to-change-the-forms-authentication-properties.md)
 - [在 ASP.NET 應用程式中設定並使用無 Cookie 驗證](how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application.md)
 - [ASP 表單登入重新配置](asp-forms-login-relocation.md)
-- [表單登入自訂金鑰組態](forms-login-custom-key-configuration.md)
+- [表單登入自訂金鑰設定](forms-login-custom-key-configuration.md)
 - [將自訂資料新增至驗證方法](add-custom-data-to-the-authentication-method.md)
 - [使用自訂的主體物件](use-custom-principal-objects.md)
 - [了解 ASP.NET 成員資格](understanding-aspnet-memberships.md)

@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 27305347-7b5d-4519-97b7-197a357e7f6e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cda816cab99867aac8770c420cab7a78ba699e4e
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: c9fdbe5f0e24aa3f09f11a67c6d13a32897e8b85
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052025"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59388370"
 ---
-<a name="dynamically-populating-a-control-vb"></a>以動態方式填入控制項 (VB)
-====================
+# <a name="dynamically-populating-a-control-vb"></a>以動態方式填入控制項 (VB)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/d/8/f/d8f2f6f9-1b7c-46ad-9252-e1fc81bdea3e/dynamicpopulate0.vb.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dynamicpopulate0VB.pdf)
@@ -66,7 +66,7 @@ HTML 按鈕 （做為 HTML 控制項，因為我們不需要回傳至伺服器�
 瀏覽器中執行 ASP.NET 網頁，然後按一下按鈕，您會收到目前的日期，格式為月-日-年。
 
 
-[![按一下按鈕從伺服器擷取的日期](dynamically-populating-a-control-vb/_static/image2.png)](dynamically-populating-a-control-vb/_static/image1.png)
+[![A 按一下按鈕從伺服器擷取的日期](dynamically-populating-a-control-vb/_static/image2.png)](dynamically-populating-a-control-vb/_static/image1.png)
 
 按一下按鈕從伺服器擷取的日期 ([按一下以檢視完整大小的影像](dynamically-populating-a-control-vb/_static/image3.png))
 

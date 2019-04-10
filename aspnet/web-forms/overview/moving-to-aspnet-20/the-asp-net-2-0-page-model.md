@@ -8,15 +8,15 @@ ms.date: 02/20/2005
 ms.assetid: af4575a3-0ae3-4638-ba4d-218fad7a1642
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
 msc.type: authoredcontent
-ms.openlocfilehash: 4452169a01276cbc60f2a2057e6b560022ccd7c0
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 09f8389a04c5600ca9ee8365a9dc5a0d607c0a4d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57057255"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59403918"
 ---
-<a name="the-aspnet-20-page-model"></a>ASP.NET 2.0 頁面模型
-====================
+# <a name="the-aspnet-20-page-model"></a>ASP.NET 2.0 頁面模型
+
 by [Microsoft](https://github.com/microsoft)
 
 > 在 ASP.NET 1.x 中，開發人員必須內嵌程式碼模型和程式碼後置程式碼模型之間做選擇。 無法使用的 Src 屬性或程式碼後置屬性的實作程式碼後置@Page指示詞。 在 ASP.NET 2.0 中，開發人員仍然必須選擇內嵌程式碼和程式碼後置，但已有顯著的增強功能的程式碼後置模型。
@@ -34,7 +34,7 @@ by [Microsoft](https://github.com/microsoft)
 
 ## <a name="the-code-behind-model-in-aspnet-20"></a>ASP.NET 2.0 中的程式碼後置模型
 
-在此模型時可大幅提升 ASP.NET 2.0。 在 ASP.NET 2.0 中，程式碼後置會實作使用新*部分類別*ASP.NET 2.0 中提供。 在 ASP.NET 2.0 中的程式碼後置類別是定義為部分類別，表示它包含的類別定義的組件。 使用 ASPX 頁面，在執行階段，或當網站已先行編譯的 ASP.NET 2.0 來動態產生的類別定義的其餘部分。 仍然使用 @ Page 指示詞來建立程式碼後置檔案與 ASPX 頁面之間的連結。 不過，而不是程式碼後置或 Src 屬性，ASP.NET 2.0 現在會使用 CodeFile 屬性。 Inherits 屬性也用於指定頁面的類別名稱。
+在此模型時可大幅提升 ASP.NET 2.0。 在 ASP.NET 2.0 中，程式碼後置會實作使用新*部分類別*ASP.NET 2.0 中提供。 在 ASP.NET 2.0 中的程式碼後置類別定義為部分類別，表示它包含的類別定義的組件。 使用 ASPX 頁面，在執行階段，或當網站已先行編譯的 ASP.NET 2.0 來動態產生的類別定義的其餘部分。 仍然使用 @ Page 指示詞來建立程式碼後置檔案與 ASPX 頁面之間的連結。 不過，而不是程式碼後置或 Src 屬性，ASP.NET 2.0 現在會使用 CodeFile 屬性。 Inherits 屬性也用於指定頁面的類別名稱。
 
 典型的 @ Page 指示詞可能如下所示：
 
@@ -265,7 +265,7 @@ CodeFile 屬性會在 Visual Studio 2002/2003年 CodeBehind 屬性取代。
 
 ## <a name="uniquefilepathsuffix"></a>UniqueFilePathSuffix
 
-這個屬性會傳回唯一的 suffic 附加至瀏覽器的快取的檔案路徑。 預設值是\_ \_ufps = 和 6 位數的數字。
+這個屬性會傳回附加至瀏覽器的快取的檔案路徑的唯一尾碼。 預設值是\_ \_ufps = 和 6 位數的數字。
 
 ## <a name="new-public-methods-for-the-page-class"></a>Page 類別的新公用方法
 
@@ -508,7 +508,7 @@ WebForm 呼叫\_DoCallback 在用戶端會將這些引數傳遞。 因此，當�
 
 ## <a name="step-4--register-the-client-side-script"></a>步驟 4:註冊用戶端指令碼
 
-回想一下，GetCallbackEventReference 呼叫指定的用戶端指令碼，呼叫**ShowCompanyName**會在伺服器端回呼成功時執行。 該指令碼必須加入至頁面使用 ClientScriptManager 執行個體。 （ClientScriptManager 類別將會是這稍後在本單元中的）。因此，您執行該類似：
+回想一下，GetCallbackEventReference 呼叫指定的用戶端指令碼，呼叫**ShowCompanyName**會在伺服器端回呼成功時執行。 該指令碼必須加入至頁面使用 ClientScriptManager 執行個體。 （稍後在本單元將討論 ClientScriptManager 類別）。因此，您執行該類似：
 
 [!code-javascript[Main](the-asp-net-2-0-page-model/samples/sample16.js)]
 

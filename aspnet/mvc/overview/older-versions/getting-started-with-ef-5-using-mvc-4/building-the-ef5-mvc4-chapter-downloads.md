@@ -8,15 +8,15 @@ ms.date: 07/30/2013
 ms.assetid: d0a89089-eed8-4f61-a478-c5ffa30186f5
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/building-the-ef5-mvc4-chapter-downloads
 msc.type: authoredcontent
-ms.openlocfilehash: 6b5d10ba9e878908953e999bd1fd44970acf4ca5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e90eebaba3645802f318dbf449c3ec734265a092
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57065565"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381941"
 ---
-<a name="building-the-chapter-downloads-for-the-ef-5-mvc-4-tutorials"></a>建置章節下載 EF 5 MVC 4 的教學課程
-====================
+# <a name="building-the-chapter-downloads-for-the-ef-5-mvc-4-tutorials"></a>建置章節下載 EF 5 MVC 4 的教學課程
+
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 [下載已完成的專案](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
@@ -47,7 +47,7 @@ ms.locfileid: "57065565"
     > [!NOTE]
     > 如果您收到下列錯誤：  
     >   
-    >  *詞彙 更新資料庫 ' 無法辨識為 cmdlet、 函式、 指令碼檔案或可執行程式的名稱。請檢查名稱的拼字，或如果包含路徑的話，確認路徑正確，然後再試一次。*  
+    >  *詞彙 更新資料庫 ' 無法辨識為 cmdlet、 函式、 指令碼檔案或可執行程式的名稱。 請檢查名稱的拼字，或如果包含路徑的話，確認路徑正確，然後再試一次。*  
     > 結束並重新啟動 Visual Studio。
 
     每個移轉將會執行，則會執行 seed 方法。 您現在可以執行應用程式。

@@ -8,15 +8,15 @@ ms.date: 01/26/2007
 ms.assetid: 37c50e6c-e34d-4fd0-b272-01950ada7667
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-modalpopup-extender-control
 msc.type: video
-ms.openlocfilehash: 6d36938f94dd31f845229325900b0ae63c153bf1
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 2c5c54e9ba4ff2190080611f8aab8f0a607f9a71
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57060975"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59396573"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-modalpopup-extender-control"></a>[How Do i:]使用 ASP.NET AJAX ModalPopup 擴充項控制項嗎？
-====================
+# <a name="how-do-i-use-the-aspnet-ajax-modalpopup-extender-control"></a>[How Do i:]使用 ASP.NET AJAX ModalPopup 擴充項控制項嗎？
+
 藉由[Joe Stagner](https://github.com/JoeStagner)
 
 了解如何使用 ASP.NET AJAX Control Toolkit 隨附的 ASP.NET AJAX ModalPopup 擴充項控制項。 ModalPopup 擴充項用來顯示開啟這段影片中標準的 ASP.NET 面板控制項的強制回應對話方塊。

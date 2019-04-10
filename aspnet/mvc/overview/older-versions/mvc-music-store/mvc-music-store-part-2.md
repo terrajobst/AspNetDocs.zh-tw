@@ -8,15 +8,15 @@ ms.date: 04/21/2011
 ms.assetid: 998ce4e1-9d72-435b-8f1c-399a10ae4360
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: b88aa22ccef04ab03b3a16c42e0a30e45ad11901
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b452c59f16107be6d356f86e6c313ba3229dbce6
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025445"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392751"
 ---
-<a name="part-2-controllers"></a>第 2 部分：Controllers
-====================
+# <a name="part-2-controllers"></a>第 2 部分：Controllers
+
 藉由[Jon Galloway](https://github.com/jongalloway)
 
 > MVC Music 市集是介紹，並逐步說明如何使用 ASP.NET MVC 和 Visual Studio 進行 web 開發的教學課程應用程式。  
@@ -73,7 +73,7 @@ Visual Web Developer 會接著會自動開啟瀏覽器視窗中的 URL 會指向
 
 好，是相當快速的 – 我們建立新的網站，加入三價線函式，而且我們已在瀏覽器中的文字。 不我科學中，但它是一個起點。
 
-*注意：Visual Web Developer 包含 ASP.NET Development Server，將在幾個隨機免費 「 連接埠 」 執行您的網站。在上面的螢幕擷取畫面，在執行站台`http://localhost:26641/`，因此它使用連接埠 26641。您的連接埠號碼將會不同。當我們談到 URL 的 like /Store/Browse 在本教學課程時，可將會移之後的連接埠號碼。假設 26641 的連接埠號碼，瀏覽至存放區/瀏覽表示瀏覽至`http://localhost:26641/Store/Browse`。*
+*注意:Visual Web Developer 包含 ASP.NET Development Server，將在幾個隨機免費 「 連接埠 」 執行您的網站。 在上面的螢幕擷取畫面，在執行站台`http://localhost:26641/`，因此它使用連接埠 26641。 您的連接埠號碼將會不同。 當我們談到 URL 的 like /Store/Browse 在本教學課程時，可將會移之後的連接埠號碼。 假設 26641 的連接埠號碼，瀏覽至存放區/瀏覽表示瀏覽至`http://localhost:26641/Store/Browse`。*
 
 ## <a name="adding-a-storecontroller"></a>新增 StoreController
 
@@ -113,7 +113,7 @@ Visual Web Developer 會接著會自動開啟瀏覽器視窗中的 URL 會指向
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample4.cs)]
 
-*注意：我們使用 HttpUtility.HtmlEncode 公用程式方法來處理使用者輸入。這可防止使用者插入檢視中的 Javascript，例如 /Store/Browse 的連結嗎？內容類型 =&lt;指令碼&gt;window.location = 'http://hackersite.com'&lt;/script&gt;。*
+*注意:我們使用 HttpUtility.HtmlEncode 公用程式方法來處理使用者輸入。 這可防止使用者插入檢視中的 Javascript，例如 /Store/Browse 的連結嗎？內容類型 =&lt;指令碼&gt;window.location = 'http://hackersite.com'&lt;/script&gt;。*
 
 現在讓我們瀏覽至存放區/瀏覽？內容類型 = Disco
 

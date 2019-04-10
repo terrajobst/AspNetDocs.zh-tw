@@ -8,15 +8,15 @@ ms.date: 02/25/2014
 ms.assetid: 66a837e9-600b-4b72-97a9-19804231c64a
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 59bce8c511167e8ba8a8db6f1842e352c90f3039
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: a01acb649556d06ab9828ceab0fcbdf363bbc0d1
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58424894"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59405894"
 ---
-<a name="tracing-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的追蹤
-====================
+# <a name="tracing-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的追蹤
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 > 當您嘗試偵錯 web 應用程式時，會無法取代的一組適當的追蹤記錄檔。 本教學課程會示範如何在 ASP.NET Web API 中啟用追蹤。 您可以使用這項功能，來追蹤 Web API 架構的功能之前和之後叫用您的控制器。 您也可以使用它來追蹤自己的程式碼。

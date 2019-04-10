@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/creating-the-web-application
-title: 教學課程：建立 Web 應用程式和 ef 資料模型資料庫的第一個使用 ASP.NET MVC
+title: 教學課程：EF Database First 與 ASP.NET MVC 建立 Web 應用程式和資料模型
 description: 本教學課程著重於建立 web 應用程式，並產生您的資料庫資料表為基礎的資料模型。
 author: Rick-Anderson
 ms.author: riande
@@ -9,14 +9,14 @@ ms.topic: tutorial
 ms.assetid: bc8f2bd5-ff57-4dcd-8418-a5bd517d8953
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/creating-the-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 481a0ee9b19e5d35d736b2cc937a124900bce446
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 30fd42be5677df6fa6ee0630914098c30d21385b
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58426129"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404516"
 ---
-# <a name="tutorial-create-the-the-web-application-and-data-models-for-ef-database-first-with-aspnet-mvc"></a>教學課程：建立 Web 應用程式和 ef 資料模型資料庫的第一個使用 ASP.NET MVC
+# <a name="tutorial-create-the-web-application-and-data-models-for-ef-database-first-with-aspnet-mvc"></a>教學課程：EF Database First 與 ASP.NET MVC 建立 Web 應用程式和資料模型
 
  您可以使用 MVC、 Entity Framework 和 ASP.NET Scaffolding，來建立 web 應用程式，提供介面給現有的資料庫。 本系列教學課程會示範如何自動產生程式碼，可讓使用者顯示、 編輯、 建立及刪除位於資料庫資料表中的資料。 產生的程式碼會對應至資料庫資料表中的資料行。
 
@@ -38,7 +38,7 @@ ms.locfileid: "58426129"
 
 ![建立專案](creating-the-web-application/_static/image1.png)
 
-按一下 [確定 **Deploying Office Solutions**]。
+按一下 [確定] 。
 
 在 [新增 ASP.NET 專案] 視窗中，選取**MVC**範本。 您可以清除**雲端中的主機**選項現在，因為您將部署更新版本的雲端應用程式。 按一下 **確定**建立應用程式。
 
@@ -68,7 +68,7 @@ ms.locfileid: "58426129"
 
 ![設定連接屬性](creating-the-web-application/_static/image8.png)
 
-按一下 [確定 **Deploying Office Solutions**]。
+按一下 [確定] 。
 
 現在會顯示正確的連接屬性。 您可以在 Web.Config 檔案中使用連接的預設名稱。
 

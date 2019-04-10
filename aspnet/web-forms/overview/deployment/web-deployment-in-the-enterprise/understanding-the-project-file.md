@@ -8,15 +8,15 @@ ms.date: 05/04/2012
 ms.assetid: 07978d9d-341c-4524-bcba-62976f390f77
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file
 msc.type: authoredcontent
-ms.openlocfilehash: 114dd21002ef41627f3a101c0197a85fd5208887
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: d774a8e13e108d1be4c39e1e909d3d9683968a0d
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57053965"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404919"
 ---
-<a name="understanding-the-project-file"></a>了解專案檔
-====================
+# <a name="understanding-the-project-file"></a>了解專案檔
+
 藉由[Jason Lee](https://github.com/jrjlee)
 
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
@@ -90,7 +90,7 @@ MSBuild 專案檔根據[MSBuild XML 結構描述](https://msdn.microsoft.com/lib
 [!code-xml[Main](understanding-the-project-file/samples/sample2.xml)]
 
 
-若要擷取的屬性值，您可以使用格式<strong>$(</strong><em>PropertyName</em><strong>)</strong><em>。</em>例如，若要擷取的值<strong>ServerName</strong>屬性，您會輸入：
+若要擷取的屬性值，您可以使用格式 **$(***PropertyName***) * * *。* 例如，若要擷取的值**ServerName**屬性，您會輸入：
 
 
 [!code-powershell[Main](understanding-the-project-file/samples/sample3.ps1)]
@@ -192,8 +192,8 @@ MSBuild 專案檔根據[MSBuild XML 結構描述](https://msdn.microsoft.com/lib
 
 一般而言，當您建立有用的工作和目標，您必須參考的屬性和您已在專案檔中其他地方定義的項目：
 
-- 若要使用的屬性值，請輸入<strong>$(</strong><em>PropertyName</em><strong>)</strong>，其中<em>PropertyName</em>名稱<strong>屬性</strong>項目或參數的名稱。
-- 若要使用的項目，輸入<strong>@(</strong><em>ItemName</em><strong>)</strong>，其中<em>ItemName</em>名稱<strong>項目</strong>項目。
+- 若要使用的屬性值，請輸入 **$(***PropertyName***)**，其中*PropertyName*名稱**屬性**項目或名稱參數。
+- 若要使用的項目，輸入 **@(***ItemName***)**，其中*ItemName*名稱**項目**項目。
 
 > [!NOTE]
 > 請記住，是否您建立多個項目具有相同名稱時，您要建置清單。 相反地，如果您建立多個屬性具有相同名稱時，您所提供的最後一個屬性值會覆寫任何先前的屬性具有相同名稱&#x2014;屬性只能包含單一值。

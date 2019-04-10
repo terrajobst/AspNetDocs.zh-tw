@@ -8,15 +8,15 @@ ms.date: 06/02/2008
 ms.assetid: 0270e0df-6fde-4a8f-a2cb-2cacc55143f2
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a8812b3b9f9a34b34a579d6f5595b9ffc175caa4
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 45a3d42d9e58469c789acfdc8cdaaf88b7920892
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58420982"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59387085"
 ---
-<a name="executing-animations-using-client-side-code-c"></a>使用用戶端程式碼執行動畫 (C#)
-====================
+# <a name="executing-animations-using-client-side-code-c"></a>使用用戶端程式碼執行動畫 (C#)
+
 藉由[Christian Wenz](https://github.com/wenz)
 
 [下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation10.cs.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation10CS.pdf)
@@ -63,7 +63,7 @@ ms.locfileid: "58420982"
 [!code-html[Main](executing-animations-using-client-side-code-cs/samples/sample8.html)]
 
 
-[![動畫會立即執行，而不需要按下滑鼠](executing-animations-using-client-side-code-cs/_static/image2.png)](executing-animations-using-client-side-code-cs/_static/image1.png)
+[![T他動畫會立即執行，沒有滑鼠點選](executing-animations-using-client-side-code-cs/_static/image2.png)](executing-animations-using-client-side-code-cs/_static/image1.png)
 
 動畫會立即執行，沒有滑鼠點選 ([按一下以檢視完整大小的影像](executing-animations-using-client-side-code-cs/_static/image3.png))
 

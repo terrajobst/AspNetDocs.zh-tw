@@ -8,15 +8,15 @@ ms.date: 08/14/2010
 ms.assetid: aa7b3e8e-e23d-49f1-b160-f99a7f2982bd
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part7
 msc.type: authoredcontent
-ms.openlocfilehash: 4c7867587ba0610f0f1c23d9a0b9fbdc4040de7c
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3db6947f36eb51b41d929f8c7d8835a95db8ea75
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57027625"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59392348"
 ---
-<a name="adding-validation-to-the-model"></a>將驗證新增至模型
-====================
+# <a name="adding-validation-to-the-model"></a>將驗證新增至模型
+
 藉由[Scott Hanselman](https://github.com/shanselman)
 
 > 這是初學者教學課程中，將會介紹 ASP.NET MVC 的基本概念。 您將建立簡單 web 應用程式，從資料庫讀取與寫入。 請瀏覽[ASP.NET MVC 學習中心](../../../index.md)來尋找其他 ASP.NET MVC 教學課程和範例。
@@ -61,11 +61,11 @@ ms.locfileid: "57027625"
 
 以下是顯示在 IDE 中的程式碼。
 
-[![影片-Microsoft Visual Web Developer 2010 Express (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
+[![Movies-Microsoft Visual Web Developer 2010 Express (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
 
 執行您的應用程式和瀏覽 /Movies/Create 同樣地，然後按一下建立不需要輸入任何資料。 錯誤訊息會立即顯示沒有 [flash 我們相關聯傳送資料] 頁面上，一路回溯到伺服器。 這是因為 ASP.NET MVC 現在驗證的輸入上同時 （使用 JavaScript） 的用戶端和伺服器上。
 
-[![建立-Windows Internet Explorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
+[![Create - Windows Internet Explorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
 
 這狀況良好 ！ 讓我們現在新增一個額外的資料行的資料庫。
 

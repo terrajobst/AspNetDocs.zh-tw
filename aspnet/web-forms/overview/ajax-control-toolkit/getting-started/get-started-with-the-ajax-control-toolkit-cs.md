@@ -8,15 +8,15 @@ ms.date: 05/12/2009
 ms.assetid: 16dc5c11-65be-4eae-a818-9fad7f8259c6
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/get-started-with-the-ajax-control-toolkit-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6ecf716b78a789ca72e8b35e0be3e1fd0b957052
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 3bbbe0c8240a2a77edee8d39a76bf865c95f345e
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052455"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59381090"
 ---
-<a name="get-started-with-the-ajax-control-toolkit-c"></a>開始使用 AJAX Control Toolkit (C#)
-====================
+# <a name="get-started-with-the-ajax-control-toolkit-c"></a>開始使用 AJAX Control Toolkit (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 了解所有您需要知道若要開始使用 AJAX Control Toolkit。
@@ -29,7 +29,7 @@ AJAX Control Toolkit 包含 30 個以上可用的控制項，您可以使用 ASP
 [AJAX Control Toolkit](http://devexpress.com/act)由 ASP.NET 社群和 ASP.NET 團隊的成員所開發的開放原始碼專案。 
 
 
-[![下載 AJAX Control Toolkit](get-started-with-the-ajax-control-toolkit-cs/_static/image1.jpg)](get-started-with-the-ajax-control-toolkit-cs/_static/image1.png)
+[![Downloading AJAX Control Toolkit](get-started-with-the-ajax-control-toolkit-cs/_static/image1.jpg)](get-started-with-the-ajax-control-toolkit-cs/_static/image1.png)
 
 **圖 01**:下載 AJAX Control Toolkit ([按一下以檢視完整大小的影像](get-started-with-the-ajax-control-toolkit-cs/_static/image2.png))
 
@@ -37,7 +37,7 @@ AJAX Control Toolkit 包含 30 個以上可用的控制項，您可以使用 ASP
 您可以下載檔案之後，您需要解除封鎖檔案。 以滑鼠右鍵按一下檔案，選取 內容，按一下 **解除封鎖**按鈕 （請參閱 圖 2）。
 
 
-[![解除封鎖的 AJAX 控制項工具組 ZIP 檔案](get-started-with-the-ajax-control-toolkit-cs/_static/image2.jpg)](get-started-with-the-ajax-control-toolkit-cs/_static/image3.png)
+[![Unblocking AJAX 控制項工具組 ZIP 檔案](get-started-with-the-ajax-control-toolkit-cs/_static/image2.jpg)](get-started-with-the-ajax-control-toolkit-cs/_static/image3.png)
 
 **圖 02**:解除封鎖的 AJAX 控制項工具組 ZIP 檔案 ([按一下以檢視完整大小的影像](get-started-with-the-ajax-control-toolkit-cs/_static/image4.png))
 
@@ -49,7 +49,7 @@ AJAX Control Toolkit 包含 30 個以上可用的控制項，您可以使用 ASP
 使用 AJAX Control Toolkit 最簡單方式是將此工具組新增至您的 Visual Studio/Visual Web Developer 工具箱 （請參閱 [圖 3]）。 這樣一來，您可以只將 toolkit 控制項拖曳至頁面時您想要使用它。
 
 
-[![AJAX Control Toolkit 會出現在工具箱中](get-started-with-the-ajax-control-toolkit-cs/_static/image3.jpg)](get-started-with-the-ajax-control-toolkit-cs/_static/image5.png)
+[![AJAX Control Toolkit 會出現在 [工具箱](get-started-with-the-ajax-control-toolkit-cs/_static/image3.jpg)](get-started-with-the-ajax-control-toolkit-cs/_static/image5.png)
 
 **圖 03**:AJAX Control Toolkit 會出現在 [工具箱] ([按一下以檢視完整大小的影像](get-started-with-the-ajax-control-toolkit-cs/_static/image6.png))
 
@@ -61,7 +61,7 @@ AJAX Control Toolkit 包含 30 個以上可用的控制項，您可以使用 ASP
 3. 輸入名為 AJAX Control Toolkit 中的新索引標籤。
 
 
-[![將新的索引標籤](get-started-with-the-ajax-control-toolkit-cs/_static/image4.jpg)](get-started-with-the-ajax-control-toolkit-cs/_static/image7.png)
+[![Adding 新索引標籤](get-started-with-the-ajax-control-toolkit-cs/_static/image4.jpg)](get-started-with-the-ajax-control-toolkit-cs/_static/image7.png)
 
 **圖 04**:將新的索引標籤 ([按一下以檢視完整大小的影像](get-started-with-the-ajax-control-toolkit-cs/_static/image8.png))
 
@@ -72,7 +72,7 @@ AJAX Control Toolkit 包含 30 個以上可用的控制項，您可以使用 ASP
 - 瀏覽至您解壓縮 AJAX Control Toolkit 和選取 AjaxControlToolkit.dll 組件的位置。
 
 
-[![選擇要加入至工具箱項目](get-started-with-the-ajax-control-toolkit-cs/_static/image5.jpg)](get-started-with-the-ajax-control-toolkit-cs/_static/image9.png)
+[![C要加入至工具箱的選擇項目](get-started-with-the-ajax-control-toolkit-cs/_static/image5.jpg)](get-started-with-the-ajax-control-toolkit-cs/_static/image9.png)
 
 **圖 05**:選擇要加入至工具箱項目 ([按一下以檢視完整大小的影像](get-started-with-the-ajax-control-toolkit-cs/_static/image10.png))
 

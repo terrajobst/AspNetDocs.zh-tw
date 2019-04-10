@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/older-versions/self-host-a-web-api
-title: 自我裝載 ASP.NET Web API 1 (C#) |Microsoft Docs
+title: 自我裝載 ASP.NET Web API 1 (C#)-ASP.NET 4.x
 author: MikeWasson
-description: ASP.NET Web API 不需要 IIS。 您可以在您自己的主控件程序中，自我裝載的 web API。 本教學課程會示範如何裝載 web API 應用程式的主控台內...
+description: 使用程式碼的教學課程會示範如何裝載於主控台應用程式的 web API。
 ms.author: riande
 ms.date: 01/26/2012
+ms.custom: seoapril2019
 ms.assetid: be5ab1e2-4140-4275-ac59-ca82a1bac0c1
 msc.legacyurl: /web-api/overview/older-versions/self-host-a-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 63d192a6fa2aafef3770d5b0b97ec32e001b69db
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 7c73bf4734f8ed8a1bf93595c0847f611ad9cc15
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57040755"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59409599"
 ---
-<a name="self-host-aspnet-web-api-1-c"></a>自我裝載 ASP.NET Web API 1 (C#)
-====================
+# <a name="self-host-aspnet-web-api-1-c"></a>自我裝載 ASP.NET Web API 1 (C#)
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
-> ASP.NET Web API 不需要 IIS。 您可以在您自己的主控件程序中，自我裝載的 web API。 本教學課程會示範如何裝載於主控台應用程式的 web API。
+> 本教學課程會示範如何裝載於主控台應用程式的 web API。 ASP.NET Web API 不需要 IIS。 您可以在您自己的主控件程序中，自我裝載的 web API。 
 > 
 > **新的應用程式應該使用 OWIN 自我裝載 Web API。** 請參閱[使用 OWIN 自我裝載 ASP.NET Web API 2](../hosting-aspnet-web-api/use-owin-to-self-host-web-api.md)。
 > 

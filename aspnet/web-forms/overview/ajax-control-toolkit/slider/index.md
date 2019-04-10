@@ -8,15 +8,15 @@ ms.date: 11/14/2011
 ms.assetid: fd7812d1-55d7-4e4a-96c8-1614b375db56
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider
 msc.type: chapter
-ms.openlocfilehash: a73631fc1e5345e8705b6eb69e0241d44e298af7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 176fd901a927d85cc048b5af07afb120d15c70e9
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57018615"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59399241"
 ---
-<a name="slider"></a>滑桿
-====================
+# <a name="slider"></a>滑桿
+
 > 本教學課程會示範如何使用滑桿控制項來顯示的圖形化的滑桿，使用者可以使用滑鼠來控制。
 
 

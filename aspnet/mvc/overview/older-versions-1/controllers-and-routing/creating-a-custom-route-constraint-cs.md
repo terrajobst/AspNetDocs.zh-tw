@@ -8,15 +8,15 @@ ms.date: 02/16/2009
 ms.assetid: a4f4bf4e-abcc-4650-8f43-527e48b52fe6
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0a0b6b706fdb212a745346ffaefc118e85c2a245
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5d8a40b03a1997904a2736a339dbf6b4003ae7bd
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57043095"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410639"
 ---
-<a name="creating-a-custom-route-constraint-c"></a>建立自訂的路由條件約束 (C#)
-====================
+# <a name="creating-a-custom-route-constraint-c"></a>建立自訂的路由條件約束 (C#)
+
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther 會示範如何建立自訂路由條件約束。 我們會實作簡單的自訂條件約束，可防止瀏覽器要求從遠端電腦時要比對路由。
@@ -34,7 +34,7 @@ ms.locfileid: "57043095"
 
 列表 1 中包含的 Localhost 條件約束。
 
-**列表 1-LocalhostConstraint.cs**
+**Listing 1 - LocalhostConstraint.cs**
 
 [!code-csharp[Main](creating-a-custom-route-constraint-cs/samples/sample2.cs)]
 

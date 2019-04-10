@@ -8,15 +8,15 @@ ms.date: 02/07/2014
 ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: b5eb98dfdf3fc013920f45080d4a20e1fa507725
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 8237dc6b925ccefc5b411aebc8e7c399dcdc6746
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57032665"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59407350"
 ---
-<a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 語法 (C#) 的 ASP.NET Web 程式設計簡介
-====================
+# <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 語法 (C#) 的 ASP.NET Web 程式設計簡介
+
 藉由[Tom FitzMacken](https://github.com/tfitzmac)
 
 > 這篇文章概述您程式設計的 ASP.NET 網頁使用 Razor 語法。 ASP.NET 是 Microsoft 的技術，用於在 web 伺服器上執行動態網頁。 本文章著重於使用 C# 程式設計語言中。
@@ -223,7 +223,7 @@ Razor 語法可讓您的 ASP.NET 中，但使用簡化的語法，可以更輕�
 
 先前您已看到如何建立 ASP.NET Web Pages 頁面，以及如何將伺服器程式碼新增至 HTML 標記的基本範例。 這裡您將了解撰寫使用 Razor 語法的 ASP.NET 伺服器程式碼的基本概念&#8212;也就是程式設計語言規則。
 
-如果您是熟悉程式設計 （尤其是如果您已使用 C、 c + +、 C#、 Visual Basic 或 JavaScript），大多什麼您閱讀這裡應該不陌生。 您可能需要在自己熟悉只伺服端程式碼新增至標記中的如何 *.cshtml*檔案。
+如果您是經驗豐富的程式設計 (特別是當您使用 C， C++， C#，Visual Basic 或 JavaScript)，大多什麼您閱讀這裡應該不陌生。 您可能需要在自己熟悉只伺服端程式碼新增至標記中的如何 *.cshtml*檔案。
 
 <a id="BM_CombiningTextMarkupAndCode"></a>
 ### <a name="combining-text-markup-and-code-in-code-blocks"></a>結合文字、 標記和程式碼區塊中的程式碼
@@ -351,7 +351,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
     <strong>範例</strong>
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsInt(), IsInt()`
@@ -363,7 +365,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsBool(), IsBool()`
@@ -375,7 +379,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsFloat(), IsFloat()`
@@ -387,7 +393,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsDecimal(), IsDecimal()`
@@ -399,7 +407,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `AsDateTime(), IsDateTime()`
@@ -411,7 +421,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `ToString()`
@@ -431,7 +443,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
 
 :::row:::
     :::column:::
-    <strong>Operator</strong>
+    <strong>運算子</strong>
     :::column-end:::
     :::column:::
     <strong>描述</strong>
@@ -440,7 +452,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
     <strong>範例</strong>
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `+` `-` `*` `/`
@@ -452,7 +466,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `=`
@@ -464,7 +480,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `==`
@@ -476,7 +494,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `!=`
@@ -488,7 +508,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `< > <= >=`
@@ -500,7 +522,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `+`
@@ -512,7 +536,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `+=` `-=`
@@ -524,7 +550,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `.`
@@ -536,7 +564,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `()`
@@ -548,7 +578,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `[]`
@@ -560,7 +592,9 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
         `!`
@@ -572,10 +606,12 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]
     :::column-end:::
 :::row-end:::
-* * *
+
+---
+
 :::row:::
     :::column:::
-        `&&` <code>&#124;&#124;</code>
+        `&&` `||`
     :::column-end:::
     :::column:::
     邏輯 AND 和 OR，這用來連結條件一起。
@@ -715,8 +751,8 @@ A`while`迴圈開頭`while`關鍵字，後面接著括號，您可以指定迴�
 
 您可以使用屬性`Page`物件，以取得大量資訊，例如：
 
-- `Request`. 如您所見，這是目前的要求，包括進行要求的頁面、 使用者身分識別等 URL 的瀏覽器的何種類型的相關資訊的集合。
-- `Response`. 這是會在伺服器程式碼執行完成時傳送到瀏覽器的回應 （頁面） 的相關資訊的集合。 例如，您可以使用此屬性寫入至回應的資訊。 
+- `Request`。 如您所見，這是目前的要求，包括進行要求的頁面、 使用者身分識別等 URL 的瀏覽器的何種類型的相關資訊的集合。
+- `Response`。 這是會在伺服器程式碼執行完成時傳送到瀏覽器的回應 （頁面） 的相關資訊的集合。 例如，您可以使用此屬性寫入至回應的資訊。 
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample58.cshtml)]
 

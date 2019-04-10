@@ -1,25 +1,26 @@
 ---
 uid: web-api/overview/formats-and-model-binding/content-negotiation
-title: 內容交涉，ASP.NET Web API 中的 |Microsoft Docs
+title: 內容交涉，在 ASP.NET Web API-ASP.NET 4.x
 author: MikeWasson
-description: 說明 ASP.NET Web API 實作 HTTP 內容交涉的方式。
+description: 說明 ASP.NET Web API 如何實作 HTTP 內容交涉，asp.net 4.x。
 ms.author: riande
 ms.date: 05/20/2012
+ms.custom: seoapril2019
 ms.assetid: 0dd51b30-bf5a-419f-a1b7-2817ccca3c7d
 msc.legacyurl: /web-api/overview/formats-and-model-binding/content-negotiation
 msc.type: authoredcontent
-ms.openlocfilehash: 9cfbed49c1022fbf26160e89aed3ab474f5e0fdc
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: cb6668ff6de276d3778ce11f27ce597d8bf1f9c7
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425687"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59380155"
 ---
-<a name="content-negotiation-in-aspnet-web-api"></a>ASP.NET Web API 中的內容交涉
-====================
+# <a name="content-negotiation-in-aspnet-web-api"></a>ASP.NET Web API 中的內容交涉
+
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
-這篇文章說明 ASP.NET Web API 實作內容交涉的方式。
+這篇文章說明 ASP.NET Web API 如何實作內容交涉 asp.net 4.x。
 
 HTTP 規格 (RFC 2616) 定義為 「 程序時有多種表示選取最佳的表示法，針對給定的回應。 」 的內容交涉 在 HTTP 內容交涉的主要機制都是這些要求標頭：
 
@@ -92,7 +93,7 @@ HTTP 規格 (RFC 2616) 定義為 「 程序時有多種表示選取最佳的表�
 - **SupportedMediaTypes**集合，其中包含一份支援的媒體類型。 器會嘗試比對這份清單，針對要求 Accept 標頭。 請注意 Accept 標頭可以包含範圍。 例如，"text/plain"是文字的相符項目 /\*或是\* / \*。
 - **MediaTypeMappings**集合，其中包含一份**MediaTypeMapping**物件。 **MediaTypeMapping**類別提供的泛型的方法，以符合 HTTP 要求的媒體類型。 比方說，它可以將自訂的 HTTP 標頭對應至特定的媒體類型。
 
-如果有多個比對，最高的品質因素 wins 的相符結果。 例如: 
+如果有多個比對，最高的品質因素 wins 的相符結果。 例如：
 
 [!code-console[Main](content-negotiation/samples/sample6.cmd)]
 

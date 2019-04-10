@@ -8,15 +8,15 @@ ms.date: 01/27/2011
 ms.assetid: 0cbd88da-0da6-4605-b222-2835c6478304
 msc.legacyurl: /mvc/overview/views/dynamic-v-strongly-typed-views
 msc.type: authoredcontent
-ms.openlocfilehash: bde40f609db25f590108bfc2396071c0033a1326
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 3235fc58fbf93cb87946f8ebd4a478eff7ce80e3
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423334"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59386134"
 ---
-<a name="dynamic-v-strongly-typed-views"></a>動態與 強型別檢視
-====================
+# <a name="dynamic-v-strongly-typed-views"></a>動態與 強型別檢視
+
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 有三種方式可將資訊從控制器傳遞至 ASP.NET MVC 3 中的檢視：

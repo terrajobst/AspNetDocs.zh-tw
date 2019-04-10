@@ -1,25 +1,30 @@
 ---
 uid: web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
-title: 建置使用 ASP.NET Web API 的 RESTful Api |Microsoft Docs
+title: 建置 RESTful Api，使用 ASP.NET Web API-ASP.NET 4.x
 author: rick-anderson
-description: 近年來，它具有一目了然，HTTP 不只是提供 HTML 頁面。 它也是強大的平台，建置 Web Api，使用少數幾個 o...
+description: 實習實驗室：使用 Web API 中 ASP.NET 4.x 建置簡單的 REST API 連絡人管理員應用程式。
 ms.author: riande
 ms.date: 02/18/2013
+ms.custom: seoapril2019
 ms.assetid: 87daa99f-3810-407e-b969-dd28a192959d
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f1f5ebbf5170f205be331b6402951fb429196046
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 3ba7f2d186e6f0837a32f69f964cec19fe625953
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423711"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59391477"
 ---
-<a name="build-restful-apis-with-aspnet-web-api"></a>建置使用 ASP.NET Web API 的 RESTful Api
-====================
+# <a name="build-restful-apis-with-aspnet-web-api"></a>建置使用 ASP.NET Web API 的 RESTful Api
+
 藉由[Web Camp 小組](https://twitter.com/webcamps)
 
-> 近年來，它具有一目了然，HTTP 不只是提供 HTML 頁面。 它也是強大的平台，建置 Web Api，使用少數幾個動詞 （GET、 POST 等） 再加上幾個簡單的概念，例如*Uri*並*標頭*。 ASP.NET Web API 是一組簡化 HTTP 程式設計的元件。 由於它建置在 ASP.NET MVC 執行階段上，Web API 會自動處理 HTTP 傳輸低階詳細資料。 在此同時，Web API，自然地公開 HTTP 程式設計模型。 事實上，Web API 的其中一個目標是要*不*摘除 HTTP 的事實。 如此一來，Web API 是彈性且容易擴充。 在這個實際操作實驗室中，您將使用 Web API 來建置簡單的 REST API 連絡人管理員應用程式。 您也將建置的用戶端取用 API。 事實證明的 REST 架構樣式會運用 HTTP-的有效方法，但是它當然不是 HTTP 的唯一有效方法。 連絡人的管理員會公開清單、 加入和移除連絡人，以及其他符合 rest 限制。 這個實驗室需要基本 HTTP，其餘部分，了解，並假設您有基本的 HTML、 JavaScript 和 jQuery 的實用知識。
+> 實習實驗室：使用 Web API 中 ASP.NET 4.x 建置簡單的 REST API 連絡人管理員應用程式。 您也將建置的用戶端取用 API。
+
+近年來，它具有一目了然，HTTP 不只是提供 HTML 頁面。 它也是強大的平台，建置 Web Api，使用少數幾個動詞 （GET、 POST 等） 再加上幾個簡單的概念，例如*Uri*並*標頭*。 ASP.NET Web API 是一組簡化 HTTP 程式設計的元件。 由於它建置在 ASP.NET MVC 執行階段上，Web API 會自動處理 HTTP 傳輸低階詳細資料。 在此同時，Web API，自然地公開 HTTP 程式設計模型。 事實上，Web API 的其中一個目標是要*不*摘除 HTTP 的事實。 如此一來，Web API 是彈性且容易擴充。  事實證明的 REST 架構樣式會運用 HTTP-的有效方法，但是它當然不是 HTTP 的唯一有效方法。 連絡人的管理員會公開清單、 加入和移除連絡人，以及其他符合 rest 限制。 
+
+這個實驗室需要基本 HTTP，其餘部分，了解，並假設您有基本的 HTML、 JavaScript 和 jQuery 的實用知識。
 > 
 > > [!NOTE]
 > > ASP.NET 網站有一個專門用來在 ASP.NET Web API 架構的區域[ https://asp.net/web-api ](https://asp.net/web-api)。 此站台將持續提供最新的資訊、 範例和新聞與 Web API，因此請經常如果您想要更深入地鑽研建立給幾乎任何裝置或開發架構，可用的自訂 Web Api 的圖案。
@@ -89,7 +94,7 @@ ms.locfileid: "58423711"
     ![建立新的 ASP.NET MVC 4.0 Web 應用程式專案](build-restful-apis-with-aspnet-web-api/_static/image1.png "建立新的 ASP.NET MVC 4.0 Web 應用程式專案")
 
     *建立新的 ASP.NET MVC 4.0 Web 應用程式專案*
-3. 在 ASP.NET MVC 4 專案的 [類型] 對話方塊中，選取**Web API**專案類型。 按一下 [確定 **Deploying Office Solutions**]。
+3. 在 ASP.NET MVC 4 專案的 [類型] 對話方塊中，選取**Web API**專案類型。 按一下 [確定] 。
 
     ![指定的 Web API 專案型別](build-restful-apis-with-aspnet-web-api/_static/image2.png "指定 Web API 專案類型")
 
@@ -417,7 +422,7 @@ ms.locfileid: "58423711"
 > 此外，您可以在其中部署此應用程式至 Azure 的下列[附錄 c:發行 ASP.NET MVC 4 應用程式使用 Web Deploy](#AppendixC)。
 
 
-* * *
+---
 
 <a id="Summary"></a>
 ## <a name="summary"></a>總結

@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 634ea84b-f904-4afe-b71b-49cccef4d9cc
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 10c2f6379f6d3139dd3bcf1027ff456e074298c3
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 53ca3bc4e550f488f3ae4c41f02a636e747107cb
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425089"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59384886"
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 模型和資料存取
 
@@ -74,7 +74,7 @@ Code First 方法可讓我們不會產生類別，通常會結合 framework 定�
 
 如果您不熟悉 Visual Studio 程式碼片段，而且想要了解如何使用它們，您可以從這份文件參考附錄&quot;[附錄 c:使用程式碼片段](#AppendixC)&quot;。
 
-* * *
+---
 
 <a id="Exercises"></a>
 
@@ -514,7 +514,7 @@ Code First 方法可讓我們不會產生類別，通常會結合 framework 定�
 > [!NOTE]
 > 此外，您可以在其中部署此應用程式以 Windows Azure 網站的下列[附錄 b:發行 ASP.NET MVC 4 應用程式使用 Web Deploy](#AppendixB)。
 
-* * *
+---
 
 <a id="Summary"></a>
 

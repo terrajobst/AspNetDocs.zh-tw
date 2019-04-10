@@ -8,15 +8,15 @@ ms.date: 08/22/2007
 ms.assetid: a0437314-e310-425a-b67b-0dc06878dbe2
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-enable-code-coverage-and-profiling-in-production-applications
 msc.type: video
-ms.openlocfilehash: d7937ecd85054621665077186a5c67287f260311
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: eb886aac6c0a5d9e65719a0dc359acbad3b85659
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57052265"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59408780"
 ---
-<a name="how-do-i-enable-code-coverage-and-profiling-in-production-applications"></a>[How Do i:]啟用程式碼涵蓋範圍與在生產應用程式中進行分析？
-====================
+# <a name="how-do-i-enable-code-coverage-and-profiling-in-production-applications"></a>[How Do i:]啟用程式碼涵蓋範圍與在生產應用程式中進行分析？
+
 藉由[Chris Menegay](https://twitter.com/CMenegay)
 
 了解如何設定程式碼涵蓋範圍和已部署的 ASP.NET 應用程式，而不是 Visual Studio 內執行的應用程式程式碼剖析檢測。 這段影片中遵循的步驟中設定[檢測模式從命令列中的程式碼剖析 ASP.NET](https://msdn.microsoft.com/teamsystem/aa718860.aspx) Microsoft MSDN 網站上的 TechNote。

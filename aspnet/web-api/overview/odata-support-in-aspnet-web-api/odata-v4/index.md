@@ -8,15 +8,15 @@ ms.date: 06/26/2014
 ms.assetid: bb807fdd-0bd8-43d0-b068-e88de7e5fd87
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4
 msc.type: chapter
-ms.openlocfilehash: ea6bb911ccda4f78192463c3029d073ed64b4568
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 29536c222045e298e067a6fecfbb6d75597e5429
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57021485"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59404009"
 ---
-<a name="supporting-odata-v4-in-aspnet-web-api"></a>ASP.NET Web API 中支援 OData v4
-====================
+# <a name="supporting-odata-v4-in-aspnet-web-api"></a>ASP.NET Web API 中支援 OData v4
+
 > 您可以使用 ASP.NET Web API 來建立支援 OData 第 4 版的端點。
 
 

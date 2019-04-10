@@ -8,15 +8,15 @@ ms.date: 10/05/2011
 ms.assetid: 76242ce9-e611-41d2-95e8-dc5f406d4bfc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit
 msc.type: chapter
-ms.openlocfilehash: ad68d8f074bc3c453e991abf7f8d393fbe9740ba
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 795283c33d63272b29b91fd7037c3463bc71abad
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57020305"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59410743"
 ---
-<a name="older-versions---ajax-control-toolkit"></a>舊版 - Ajax Control Toolkit
-====================
+# <a name="older-versions---ajax-control-toolkit"></a>舊版 - Ajax Control Toolkit
+
 > 如何開始使用 Ajax Control Toolkit 中，以及如何使用一些最常用的控制項。 DevExpress 維護免費的開放原始碼 Ajax Control Toolkit。
 > 
 > 
@@ -151,7 +151,7 @@ ms.locfileid: "57020305"
     - [使用多個快顯視窗控制項 (VB)](popup/using-multiple-popup-controls-vb.md)
     - [處理有 UpdatePanel 的快顯視窗控制項回傳 (VB)](popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-vb.md)
     - [處理沒有 UpdatePanel 的快顯視窗控制項回傳 (VB)](popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-vb.md)
-- [評等](rating/index.md)
+- [分級](rating/index.md)
 
     - [建立評等控制項 (C#)](rating/creating-a-rating-control-cs.md)
     - [建立評等控制項 (VB)](rating/creating-a-rating-control-vb.md)
@@ -161,7 +161,7 @@ ms.locfileid: "57020305"
     - [透過 ReorderList 拖放 (C#)](reorderlist/drag-and-drop-via-reorderlist-cs.md)
     - [使用具有 ReorderList 的回傳 (VB)](reorderlist/using-postbacks-with-reorderlist-vb.md)
     - [透過 ReorderList 拖放 (VB)](reorderlist/drag-and-drop-via-reorderlist-vb.md)
-- [Slider](slider/index.md)
+- [滑桿](slider/index.md)
 
     - [具有自動回傳的滑桿控制項 (C#)](slider/using-the-slider-control-with-auto-postback-cs.md)
     - [資料繫結滑桿控制項 (C#)](slider/databinding-the-slider-control-cs.md)
