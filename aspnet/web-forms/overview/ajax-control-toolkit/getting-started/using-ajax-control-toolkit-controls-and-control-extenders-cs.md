@@ -8,15 +8,15 @@ ms.date: 05/12/2009
 ms.assetid: c1e6b51c-3bc3-4bf7-9916-9991197af3dd
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/using-ajax-control-toolkit-controls-and-control-extenders-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 18ee6dd71fe0e84ec7628eba63aabeee0690d0b3
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 82fae91e40ec2f1508fe5c82992eeef4abc4e19a
+ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57056505"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59419219"
 ---
-<a name="using-ajax-control-toolkit-controls-and-control-extenders-c"></a>使用 AJAX Control Toolkit 控制項及控制項擴充項 (C#)
-====================
+# <a name="using-ajax-control-toolkit-controls-and-control-extenders-c"></a>使用 AJAX Control Toolkit 控制項及控制項擴充項 (C#)
+
 by [Microsoft](https://github.com/microsoft)
 
 > 了解如何將 AJAX Control Toolkit 控制項及擴充項新增至您的 ASP.NET 網頁。
@@ -44,17 +44,17 @@ AJAX Control Toolkit 包含一組控制項及控制項擴充項。 在這個簡�
 5. 您應該會看到 圖 3 中的頁面。
 
 
-[![選取 HTML 編輯器控制項](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image1.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image1.png)
+[![S選取 [HTML 編輯器控制項](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image1.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image1.png)
 
 **圖 01**:選取 HTML 編輯器控制項 ([按一下以檢視完整大小的影像](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image2.png))
 
 
-[![使用 ScriptManager 和 編輯控制項的 visual Studio 設計工具](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image2.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image3.png)
+[![V使用 ScriptManager] 和 [編輯控制項的 isual Studio 設計工具](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image2.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image3.png)
 
 **圖 02**:使用 ScriptManager] 和 [編輯控制項的 visual Studio 設計工具 ([按一下以檢視完整大小的影像](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image4.png))
 
 
-[![DisplayEditor.aspx 頁面](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image3.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image5.png)
+[![T他 DisplayEditor.aspx page](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image3.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image5.png)
 
 **圖 03**:DisplayEditor.aspx 頁面 ([按一下以檢視完整大小的影像](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image6.png))
 
@@ -76,17 +76,17 @@ AJAX Control Toolkit 也會包含控制項擴充項。 正如其名，控制擴�
 7. 選取功能表選項來執行網頁**偵錯，請啟動偵錯**或按下 F5 鍵。
 
 
-[![[新增 Extender] 工作選項](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image4.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image7.png)
+[![T他將新增 Extender] 工作選項](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image4.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image7.png)
 
 **圖 04**:[新增 Extender] 工作選項 ([按一下以檢視完整大小的影像](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image8.png))
 
 
-[![選取 ConfirmButton 控制項擴充項](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image5.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image9.png)
+[![S選擇 ConfirmButton 控制項擴充項](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image5.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image9.png)
 
 **圖 05**:選取 ConfirmButton 控制項擴充項 ([按一下以檢視完整大小的影像](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image10.png))
 
 
-[![設定 ConfirmButton 屬性](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image6.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image11.png)
+[![Setting ConfirmButton 屬性](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image6.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image11.png)
 
 **圖 06**:設定 ConfirmButton 屬性 ([按一下以檢視完整大小的影像](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image12.png))
 
@@ -94,7 +94,7 @@ AJAX Control Toolkit 也會包含控制項擴充項。 正如其名，控制擴�
 當頁面開啟時，您應該會看到一個按鈕。 當您按一下按鈕時，您會取得確認對話方塊中，[圖 7] 中。
 
 
-[![顯示 [確認] 對話方塊](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image7.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image13.png)
+[![Displaying 確認對話方塊](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image7.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image13.png)
 
 **圖 07**:顯示確認對話方塊中 ([按一下以檢視完整大小的影像](using-ajax-control-toolkit-controls-and-control-extenders-cs/_static/image14.png))
 
