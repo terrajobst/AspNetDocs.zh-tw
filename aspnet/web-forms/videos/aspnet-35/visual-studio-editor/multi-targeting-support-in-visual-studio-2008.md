@@ -12,18 +12,18 @@ ms.openlocfilehash: a5cbe366b9733f1083223abc37afaa1142a3ff8c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388929"
 ---
-# <a name="multi-targeting-support-in-visual-studio-2008"></a><span data-ttu-id="2f878-104">Visual Studio 2008 的多目標支援</span><span class="sxs-lookup"><span data-stu-id="2f878-104">Multi Targeting Support in Visual Studio 2008</span></span>
+# <a name="multi-targeting-support-in-visual-studio-2008"></a><span data-ttu-id="bd65d-104">Visual Studio 2008 的多目標支援</span><span class="sxs-lookup"><span data-stu-id="bd65d-104">Multi Targeting Support in Visual Studio 2008</span></span>
 
-<span data-ttu-id="2f878-105">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="2f878-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="bd65d-105">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="bd65d-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="2f878-106">我將說明使用多目標功能，Visual Studio 2008。</span><span class="sxs-lookup"><span data-stu-id="2f878-106">I will illustrate the MultiTarget feature of Visual Studio 2008.</span></span> <span data-ttu-id="2f878-107">在過去，您必須選擇符合目標的.NET 版本的 Visual Studio 版本。</span><span class="sxs-lookup"><span data-stu-id="2f878-107">In the past, you had to choose the version of Visual Studio to match the targeted .NET version.</span></span> <span data-ttu-id="2f878-108">例如，Visual Studio 2005 與.NET 2.5 合作。</span><span class="sxs-lookup"><span data-stu-id="2f878-108">For example, Visual Studio 2005 worked with .NET 2.5.</span></span> <span data-ttu-id="2f878-109">現在，使用 Visual Studio 2008，您可以選擇適合您的應用程式的.NET 版本。</span><span class="sxs-lookup"><span data-stu-id="2f878-109">Now, with Visual Studio 2008 you can choose the version of .NET appropriate for your application.</span></span>
+<span data-ttu-id="bd65d-106">我將說明使用多目標功能，Visual Studio 2008。</span><span class="sxs-lookup"><span data-stu-id="bd65d-106">I will illustrate the MultiTarget feature of Visual Studio 2008.</span></span> <span data-ttu-id="bd65d-107">在過去，您必須選擇符合目標的.NET 版本的 Visual Studio 版本。</span><span class="sxs-lookup"><span data-stu-id="bd65d-107">In the past, you had to choose the version of Visual Studio to match the targeted .NET version.</span></span> <span data-ttu-id="bd65d-108">例如，Visual Studio 2005 與.NET 2.5 合作。</span><span class="sxs-lookup"><span data-stu-id="bd65d-108">For example, Visual Studio 2005 worked with .NET 2.5.</span></span> <span data-ttu-id="bd65d-109">現在，使用 Visual Studio 2008，您可以選擇適合您的應用程式的.NET 版本。</span><span class="sxs-lookup"><span data-stu-id="bd65d-109">Now, with Visual Studio 2008 you can choose the version of .NET appropriate for your application.</span></span>
 
-[<span data-ttu-id="2f878-110">&#9654;觀看影片 （5 分鐘）</span><span class="sxs-lookup"><span data-stu-id="2f878-110">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/multi-targeting-support-in-visual-studio-2008)
+[<span data-ttu-id="bd65d-110">&#9654;觀看影片 （5 分鐘）</span><span class="sxs-lookup"><span data-stu-id="bd65d-110">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/multi-targeting-support-in-visual-studio-2008)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="2f878-111">[上一頁](javascript-debugging-in-visual-studio-2008.md)
-> [下一頁](intellisense-for-jscript-and-aspnet-ajax.md)</span><span class="sxs-lookup"><span data-stu-id="2f878-111">[Previous](javascript-debugging-in-visual-studio-2008.md)
+> <span data-ttu-id="bd65d-111">[上一頁](javascript-debugging-in-visual-studio-2008.md)
+> [下一頁](intellisense-for-jscript-and-aspnet-ajax.md)</span><span class="sxs-lookup"><span data-stu-id="bd65d-111">[Previous](javascript-debugging-in-visual-studio-2008.md)
 [Next](intellisense-for-jscript-and-aspnet-ajax.md)</span></span>

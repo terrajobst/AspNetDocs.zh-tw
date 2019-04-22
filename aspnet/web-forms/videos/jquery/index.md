@@ -12,12 +12,12 @@ ms.openlocfilehash: 575efe383deb8c75ba2714ff543fdcb13043fe66
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384821"
 ---
-# <a name="jquery"></a><span data-ttu-id="cb46e-103">jQuery</span><span class="sxs-lookup"><span data-stu-id="cb46e-103">jQuery</span></span>
+# <a name="jquery"></a><span data-ttu-id="6b90f-103">jQuery</span><span class="sxs-lookup"><span data-stu-id="6b90f-103">jQuery</span></span>
 
-> <span data-ttu-id="cb46e-104">如何在 ASP.NET 網頁中使用 jQuery 功能。</span><span class="sxs-lookup"><span data-stu-id="cb46e-104">How to use jQuery features in ASP.NET pages.</span></span>
+> <span data-ttu-id="6b90f-104">如何在 ASP.NET 網頁中使用 jQuery 功能。</span><span class="sxs-lookup"><span data-stu-id="6b90f-104">How to use jQuery features in ASP.NET pages.</span></span>
 
 
-- [<span data-ttu-id="cb46e-105">使用 jQuery 進行 Ajax 呼叫</span><span class="sxs-lookup"><span data-stu-id="cb46e-105">Make Ajax Calls Using jQuery</span></span>](how-do-i-make-ajax-calls-using-jquery.md)
+- [<span data-ttu-id="6b90f-105">使用 jQuery 進行 Ajax 呼叫</span><span class="sxs-lookup"><span data-stu-id="6b90f-105">Make Ajax Calls Using jQuery</span></span>](how-do-i-make-ajax-calls-using-jquery.md)

@@ -12,18 +12,18 @@ ms.openlocfilehash: c3437e7f5200ece9766ec89d22a5c051cb17f13f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379231"
 ---
-# <a name="begin-modifying-dynamic-data-applications-with-url-routing"></a><span data-ttu-id="f4ceb-103">使用 URL 路由開始修改動態資料應用程式</span><span class="sxs-lookup"><span data-stu-id="f4ceb-103">Begin Modifying Dynamic Data Applications with URL Routing</span></span>
+# <a name="begin-modifying-dynamic-data-applications-with-url-routing"></a><span data-ttu-id="b1e58-103">使用 URL 路由開始修改動態資料應用程式</span><span class="sxs-lookup"><span data-stu-id="b1e58-103">Begin Modifying Dynamic Data Applications with URL Routing</span></span>
 
-<span data-ttu-id="f4ceb-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="f4ceb-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="b1e58-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="b1e58-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="f4ceb-105">這段影片中介紹 ASP.NET 動態資料的 URL 路由，並示範如何設定應用程式的 URL 路由的選項。</span><span class="sxs-lookup"><span data-stu-id="f4ceb-105">This video introduces ASP.NET Dynamic Data URL routing and shows how to configure an application's URL with routing options.</span></span>
+<span data-ttu-id="b1e58-105">這段影片中介紹 ASP.NET 動態資料的 URL 路由，並示範如何設定應用程式的 URL 路由的選項。</span><span class="sxs-lookup"><span data-stu-id="b1e58-105">This video introduces ASP.NET Dynamic Data URL routing and shows how to configure an application's URL with routing options.</span></span>
 
-[<span data-ttu-id="f4ceb-106">&#9654;觀看影片 （5 分鐘）</span><span class="sxs-lookup"><span data-stu-id="f4ceb-106">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/begin-modifying-dynamic-data-applications-with-url-routing)
+[<span data-ttu-id="b1e58-106">&#9654;觀看影片 （5 分鐘）</span><span class="sxs-lookup"><span data-stu-id="b1e58-106">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/begin-modifying-dynamic-data-applications-with-url-routing)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="f4ceb-107">[上一頁](begin-editing-the-templates-in-aspnet-dynamic-data-applications.md)
-> [下一頁](enable-in-line-editing-in-aspnet-dynamic-data-applications.md)</span><span class="sxs-lookup"><span data-stu-id="f4ceb-107">[Previous](begin-editing-the-templates-in-aspnet-dynamic-data-applications.md)
+> <span data-ttu-id="b1e58-107">[上一頁](begin-editing-the-templates-in-aspnet-dynamic-data-applications.md)
+> [下一頁](enable-in-line-editing-in-aspnet-dynamic-data-applications.md)</span><span class="sxs-lookup"><span data-stu-id="b1e58-107">[Previous](begin-editing-the-templates-in-aspnet-dynamic-data-applications.md)
 [Next](enable-in-line-editing-in-aspnet-dynamic-data-applications.md)</span></span>

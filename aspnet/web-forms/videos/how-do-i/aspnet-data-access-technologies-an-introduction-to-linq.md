@@ -12,13 +12,13 @@ ms.openlocfilehash: 4fd6ce813a87caf1b3ecd67c5fa59bc536db0f2e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401292"
 ---
-# <a name="aspnet-data-access-technologies-an-introduction-to-linq"></a><span data-ttu-id="84f0a-104">ASP.NET 資料存取技術，LINQ 簡介</span><span class="sxs-lookup"><span data-stu-id="84f0a-104">ASP.NET Data Access Technologies, an Introduction to LINQ</span></span>
+# <a name="aspnet-data-access-technologies-an-introduction-to-linq"></a><span data-ttu-id="7f0a5-104">ASP.NET 資料存取技術，LINQ 簡介</span><span class="sxs-lookup"><span data-stu-id="7f0a5-104">ASP.NET Data Access Technologies, an Introduction to LINQ</span></span>
 
-<span data-ttu-id="84f0a-105">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="84f0a-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="7f0a5-105">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="7f0a5-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="84f0a-106">LINQ 是 ASP.NET 開發人員慣用的資料存取機制。</span><span class="sxs-lookup"><span data-stu-id="84f0a-106">LINQ is the ASP.NET developers preferred Data Access Mechanism.</span></span> <span data-ttu-id="84f0a-107">這段影片是使用 LINQ 進行程式設計的簡介，並比較之間 ADO.NET 和 LINQ 開發人員體驗觀點的簡單資料存取權。</span><span class="sxs-lookup"><span data-stu-id="84f0a-107">This video is an introduction to programming with LINQ and compares simple data access between ADO.NET and LINQ from a developer experience perspective.</span></span>
+<span data-ttu-id="7f0a5-106">LINQ 是 ASP.NET 開發人員慣用的資料存取機制。</span><span class="sxs-lookup"><span data-stu-id="7f0a5-106">LINQ is the ASP.NET developers preferred Data Access Mechanism.</span></span> <span data-ttu-id="7f0a5-107">這段影片是使用 LINQ 進行程式設計的簡介，並比較之間 ADO.NET 和 LINQ 開發人員體驗觀點的簡單資料存取權。</span><span class="sxs-lookup"><span data-stu-id="7f0a5-107">This video is an introduction to programming with LINQ and compares simple data access between ADO.NET and LINQ from a developer experience perspective.</span></span>
 
-[<span data-ttu-id="84f0a-108">&#9654;觀看影片 （37 分鐘）</span><span class="sxs-lookup"><span data-stu-id="84f0a-108">&#9654; Watch video (37 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-data-access-technologies-an-introduction-to-linq)
+[<span data-ttu-id="7f0a5-108">&#9654;觀看影片 （37 分鐘）</span><span class="sxs-lookup"><span data-stu-id="7f0a5-108">&#9654; Watch video (37 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-data-access-technologies-an-introduction-to-linq)

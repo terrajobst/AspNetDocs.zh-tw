@@ -12,16 +12,16 @@ ms.openlocfilehash: 44219c97cfcb1a17acbe22a7413a33eb8b8c52b7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388513"
 ---
-# <a name="aspnet-4-quick-hit---ajax-data-templates"></a><span data-ttu-id="ba4aa-103">ASP.NET 4 」 快速 Hit"-AJAX 資料範本</span><span class="sxs-lookup"><span data-stu-id="ba4aa-103">ASP.NET 4 "Quick Hit" - AJAX Data Templates</span></span>
+# <a name="aspnet-4-quick-hit---ajax-data-templates"></a><span data-ttu-id="61079-103">ASP.NET 4 」 快速 Hit"-AJAX 資料範本</span><span class="sxs-lookup"><span data-stu-id="61079-103">ASP.NET 4 "Quick Hit" - AJAX Data Templates</span></span>
 
-<span data-ttu-id="ba4aa-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="ba4aa-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="61079-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="61079-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="ba4aa-105">在這段影片中，您將了解如何使用用戶端範本來顯示資料庫記錄，以 DataView 控制項。</span><span class="sxs-lookup"><span data-stu-id="ba4aa-105">In this video you will learn how to use client templates to display database records with the DataView control.</span></span> 
+<span data-ttu-id="61079-105">在這段影片中，您將了解如何使用用戶端範本來顯示資料庫記錄，以 DataView 控制項。</span><span class="sxs-lookup"><span data-stu-id="61079-105">In this video you will learn how to use client templates to display database records with the DataView control.</span></span> 
 
-[<span data-ttu-id="ba4aa-106">&#9654;觀看影片 （12 分鐘）</span><span class="sxs-lookup"><span data-stu-id="ba4aa-106">&#9654; Watch video (12 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-ajax-data-templates)
+[<span data-ttu-id="61079-106">&#9654;觀看影片 （12 分鐘）</span><span class="sxs-lookup"><span data-stu-id="61079-106">&#9654; Watch video (12 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-ajax-data-templates)
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="ba4aa-107">上一步</span><span class="sxs-lookup"><span data-stu-id="ba4aa-107">Previous</span></span>](aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)
+> [<span data-ttu-id="61079-107">上一步</span><span class="sxs-lookup"><span data-stu-id="61079-107">Previous</span></span>](aspnet-4-quick-hit-jquery-syntax-for-microsoft-ajax.md)

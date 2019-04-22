@@ -12,18 +12,18 @@ ms.openlocfilehash: cead55311660a630ca5fe906e1afe8767c75aa7f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394522"
 ---
-# <a name="creating-a-site-with-iis7-manager"></a><span data-ttu-id="af021-103">使用 IIS7 管理員建立網站</span><span class="sxs-lookup"><span data-stu-id="af021-103">Creating a Site with IIS7 Manager</span></span>
+# <a name="creating-a-site-with-iis7-manager"></a><span data-ttu-id="71c4d-103">使用 IIS7 管理員建立網站</span><span class="sxs-lookup"><span data-stu-id="71c4d-103">Creating a Site with IIS7 Manager</span></span>
 
-<span data-ttu-id="af021-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="af021-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="71c4d-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="71c4d-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="af021-105">這部影片示範使用 IIS7 的新網站佈建程序。</span><span class="sxs-lookup"><span data-stu-id="af021-105">This video demonstrates the provisioning process for new web sites with IIS7.</span></span>
+<span data-ttu-id="71c4d-105">這部影片示範使用 IIS7 的新網站佈建程序。</span><span class="sxs-lookup"><span data-stu-id="71c4d-105">This video demonstrates the provisioning process for new web sites with IIS7.</span></span>
 
-[<span data-ttu-id="af021-106">&#9654;觀看影片 （8 分鐘）</span><span class="sxs-lookup"><span data-stu-id="af021-106">&#9654; Watch video (8 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-a-site-with-iis7-manager)
+[<span data-ttu-id="71c4d-106">&#9654;觀看影片 （8 分鐘）</span><span class="sxs-lookup"><span data-stu-id="71c4d-106">&#9654; Watch video (8 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-a-site-with-iis7-manager)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="af021-107">[上一頁](troubleshooting-production-aspnet-apps.md)
-> [下一頁](installing-ftp7.md)</span><span class="sxs-lookup"><span data-stu-id="af021-107">[Previous](troubleshooting-production-aspnet-apps.md)
+> <span data-ttu-id="71c4d-107">[上一頁](troubleshooting-production-aspnet-apps.md)
+> [下一頁](installing-ftp7.md)</span><span class="sxs-lookup"><span data-stu-id="71c4d-107">[Previous](troubleshooting-production-aspnet-apps.md)
 [Next](installing-ftp7.md)</span></span>

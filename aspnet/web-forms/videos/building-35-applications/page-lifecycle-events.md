@@ -12,13 +12,13 @@ ms.openlocfilehash: 28fc01819aeb1a0bc74ff80fadb44a9f69de3a88
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390242"
 ---
-# <a name="page-lifecycle-events"></a><span data-ttu-id="461dc-104">頁面週期事件</span><span class="sxs-lookup"><span data-stu-id="461dc-104">Page Lifecycle Events</span></span>
+# <a name="page-lifecycle-events"></a><span data-ttu-id="d3e9b-104">頁面週期事件</span><span class="sxs-lookup"><span data-stu-id="d3e9b-104">Page Lifecycle Events</span></span>
 
-<span data-ttu-id="461dc-105">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="461dc-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="d3e9b-105">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="d3e9b-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="461dc-106">ASP.NET 提供一個非常豐富的事件處理機制使用攔截程序至 ASP.NET 網頁生命週期中的所有重要時間執行個體。</span><span class="sxs-lookup"><span data-stu-id="461dc-106">ASP.NET provides a very rich eventing mechanism with hooks into all the important chronological instances in the ASP.NET page lifecycle.</span></span> <span data-ttu-id="461dc-107">這段影片中，將列舉許多常見的生命週期事件、 其引發順序和類型的項目，您可能會使用每個事件。</span><span class="sxs-lookup"><span data-stu-id="461dc-107">This video will enumerate many of the common lifecycle events, their firing sequence and the kinds of things that you might use each event for.</span></span>
+<span data-ttu-id="d3e9b-106">ASP.NET 提供一個非常豐富的事件處理機制使用攔截程序至 ASP.NET 網頁生命週期中的所有重要時間執行個體。</span><span class="sxs-lookup"><span data-stu-id="d3e9b-106">ASP.NET provides a very rich eventing mechanism with hooks into all the important chronological instances in the ASP.NET page lifecycle.</span></span> <span data-ttu-id="d3e9b-107">這段影片中，將列舉許多常見的生命週期事件、 其引發順序和類型的項目，您可能會使用每個事件。</span><span class="sxs-lookup"><span data-stu-id="d3e9b-107">This video will enumerate many of the common lifecycle events, their firing sequence and the kinds of things that you might use each event for.</span></span>
 
-[<span data-ttu-id="461dc-108">&#9654;觀看影片 （12 分鐘）</span><span class="sxs-lookup"><span data-stu-id="461dc-108">&#9654; Watch video (12 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/page-lifecycle-events)
+[<span data-ttu-id="d3e9b-108">&#9654;觀看影片 （12 分鐘）</span><span class="sxs-lookup"><span data-stu-id="d3e9b-108">&#9654; Watch video (12 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/page-lifecycle-events)

@@ -12,23 +12,23 @@ ms.openlocfilehash: 3d8a6a102788cb6b5612e9bc537e1c13e7798c54
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378932"
 ---
-# <a name="aspnet-web-deployment-using-visual-studio"></a><span data-ttu-id="6da95-103">使用 Visual Studio 的 ASP.NET Web 部署</span><span class="sxs-lookup"><span data-stu-id="6da95-103">ASP.NET Web Deployment using Visual Studio</span></span>
+# <a name="aspnet-web-deployment-using-visual-studio"></a><span data-ttu-id="5e51c-103">使用 Visual Studio 的 ASP.NET Web 部署</span><span class="sxs-lookup"><span data-stu-id="5e51c-103">ASP.NET Web Deployment using Visual Studio</span></span>
 
-> <span data-ttu-id="6da95-104">本教學課程系列會說明如何向使用 SQL Server (沒有 SQL Server Compact) 可透過網際網路將它部署至 Windows Azure 網站或協力廠商主機服務提供者的 ASP.NET web 應用程式。</span><span class="sxs-lookup"><span data-stu-id="6da95-104">This tutorial series shows how to make an ASP.NET web application that uses SQL Server (not SQL Server Compact) available over the internet by deploying it to a Windows Azure Web Site or a third-party hosting provider.</span></span> <span data-ttu-id="6da95-105">需要 Visual Studio 2012 的 ASP.NET 和 Web 工具 2012.2 更新或 Visual Studio 2010。</span><span class="sxs-lookup"><span data-stu-id="6da95-105">Requires Visual Studio 2012 and the ASP.NET and Web Tools 2012.2 Update, or Visual Studio 2010.</span></span> <span data-ttu-id="6da95-106">專用 SQL Server Compact 的資訊，請參閱[使用 SQL Server Compact 使用 Visual Studio 的 ASP.NET Web 部署](../../older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12.md)。</span><span class="sxs-lookup"><span data-stu-id="6da95-106">For information specific to SQL Server Compact, see [ASP.NET Web Deployment with SQL Server Compact using Visual Studio](../../older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12.md).</span></span>
+> <span data-ttu-id="5e51c-104">本教學課程系列會說明如何向使用 SQL Server (沒有 SQL Server Compact) 可透過網際網路將它部署至 Windows Azure 網站或協力廠商主機服務提供者的 ASP.NET web 應用程式。</span><span class="sxs-lookup"><span data-stu-id="5e51c-104">This tutorial series shows how to make an ASP.NET web application that uses SQL Server (not SQL Server Compact) available over the internet by deploying it to a Windows Azure Web Site or a third-party hosting provider.</span></span> <span data-ttu-id="5e51c-105">需要 Visual Studio 2012 的 ASP.NET 和 Web 工具 2012.2 更新或 Visual Studio 2010。</span><span class="sxs-lookup"><span data-stu-id="5e51c-105">Requires Visual Studio 2012 and the ASP.NET and Web Tools 2012.2 Update, or Visual Studio 2010.</span></span> <span data-ttu-id="5e51c-106">專用 SQL Server Compact 的資訊，請參閱[使用 SQL Server Compact 使用 Visual Studio 的 ASP.NET Web 部署](../../older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12.md)。</span><span class="sxs-lookup"><span data-stu-id="5e51c-106">For information specific to SQL Server Compact, see [ASP.NET Web Deployment with SQL Server Compact using Visual Studio](../../older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12.md).</span></span>
 
 
-- [<span data-ttu-id="6da95-107">簡介</span><span class="sxs-lookup"><span data-stu-id="6da95-107">Introduction</span></span>](introduction.md)
-- [<span data-ttu-id="6da95-108">準備資料庫部署</span><span class="sxs-lookup"><span data-stu-id="6da95-108">Preparing for Database Deployment</span></span>](preparing-databases.md)
-- [<span data-ttu-id="6da95-109">Web.config 檔案轉換</span><span class="sxs-lookup"><span data-stu-id="6da95-109">Web.config File Transformations</span></span>](web-config-transformations.md)
-- [<span data-ttu-id="6da95-110">專案屬性</span><span class="sxs-lookup"><span data-stu-id="6da95-110">Project Properties</span></span>](project-properties.md)
-- [<span data-ttu-id="6da95-111">部署到測試環境</span><span class="sxs-lookup"><span data-stu-id="6da95-111">Deploying to Test</span></span>](deploying-to-iis.md)
-- [<span data-ttu-id="6da95-112">設定資料夾權限</span><span class="sxs-lookup"><span data-stu-id="6da95-112">Setting Folder Permissions</span></span>](setting-folder-permissions.md)
-- [<span data-ttu-id="6da95-113">部署到生產環境</span><span class="sxs-lookup"><span data-stu-id="6da95-113">Deploying to Production</span></span>](deploying-to-production.md)
-- [<span data-ttu-id="6da95-114">部署程式碼更新</span><span class="sxs-lookup"><span data-stu-id="6da95-114">Deploying a Code Update</span></span>](deploying-a-code-update.md)
-- [<span data-ttu-id="6da95-115">部署資料庫更新</span><span class="sxs-lookup"><span data-stu-id="6da95-115">Deploying a Database Update</span></span>](deploying-a-database-update.md)
-- [<span data-ttu-id="6da95-116">命令列部署</span><span class="sxs-lookup"><span data-stu-id="6da95-116">Command Line Deployment</span></span>](command-line-deployment.md)
-- [<span data-ttu-id="6da95-117">部署其他檔案</span><span class="sxs-lookup"><span data-stu-id="6da95-117">Deploying Extra Files</span></span>](deploying-extra-files.md)
-- [<span data-ttu-id="6da95-118">疑難排解</span><span class="sxs-lookup"><span data-stu-id="6da95-118">Troubleshooting</span></span>](troubleshooting.md)
+- [<span data-ttu-id="5e51c-107">簡介</span><span class="sxs-lookup"><span data-stu-id="5e51c-107">Introduction</span></span>](introduction.md)
+- [<span data-ttu-id="5e51c-108">準備資料庫部署</span><span class="sxs-lookup"><span data-stu-id="5e51c-108">Preparing for Database Deployment</span></span>](preparing-databases.md)
+- [<span data-ttu-id="5e51c-109">Web.config 檔案轉換</span><span class="sxs-lookup"><span data-stu-id="5e51c-109">Web.config File Transformations</span></span>](web-config-transformations.md)
+- [<span data-ttu-id="5e51c-110">專案屬性</span><span class="sxs-lookup"><span data-stu-id="5e51c-110">Project Properties</span></span>](project-properties.md)
+- [<span data-ttu-id="5e51c-111">部署到測試</span><span class="sxs-lookup"><span data-stu-id="5e51c-111">Deploying to Test</span></span>](deploying-to-iis.md)
+- [<span data-ttu-id="5e51c-112">設定資料夾權限</span><span class="sxs-lookup"><span data-stu-id="5e51c-112">Setting Folder Permissions</span></span>](setting-folder-permissions.md)
+- [<span data-ttu-id="5e51c-113">部署至生產環境</span><span class="sxs-lookup"><span data-stu-id="5e51c-113">Deploying to Production</span></span>](deploying-to-production.md)
+- [<span data-ttu-id="5e51c-114">部署程式碼更新</span><span class="sxs-lookup"><span data-stu-id="5e51c-114">Deploying a Code Update</span></span>](deploying-a-code-update.md)
+- [<span data-ttu-id="5e51c-115">部署資料庫更新</span><span class="sxs-lookup"><span data-stu-id="5e51c-115">Deploying a Database Update</span></span>](deploying-a-database-update.md)
+- [<span data-ttu-id="5e51c-116">命令列部署</span><span class="sxs-lookup"><span data-stu-id="5e51c-116">Command Line Deployment</span></span>](command-line-deployment.md)
+- [<span data-ttu-id="5e51c-117">部署其他檔案</span><span class="sxs-lookup"><span data-stu-id="5e51c-117">Deploying Extra Files</span></span>](deploying-extra-files.md)
+- [<span data-ttu-id="5e51c-118">疑難排解</span><span class="sxs-lookup"><span data-stu-id="5e51c-118">Troubleshooting</span></span>](troubleshooting.md)

@@ -12,18 +12,18 @@ ms.openlocfilehash: e4dfbdedad2211d94610966e3f390b23681b658f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419284"
 ---
-# <a name="how-do-i-linq-to-sql-querying-the-database"></a><span data-ttu-id="72900-103">[How Do i:]LINQ to SQL:查詢資料庫</span><span class="sxs-lookup"><span data-stu-id="72900-103">[How Do I:] LINQ to SQL: Querying the Database</span></span>
+# <a name="how-do-i-linq-to-sql-querying-the-database"></a><span data-ttu-id="e1311-103">[How Do i:]LINQ to SQL:查詢資料庫</span><span class="sxs-lookup"><span data-stu-id="e1311-103">[How Do I:] LINQ to SQL: Querying the Database</span></span>
 
-<span data-ttu-id="72900-104">藉由[Scott Stanfield](https://github.com/scottstanfield)</span><span class="sxs-lookup"><span data-stu-id="72900-104">by [Scott Stanfield](https://github.com/scottstanfield)</span></span>
+<span data-ttu-id="e1311-104">藉由[Scott Stanfield](https://github.com/scottstanfield)</span><span class="sxs-lookup"><span data-stu-id="e1311-104">by [Scott Stanfield](https://github.com/scottstanfield)</span></span>
 
-<span data-ttu-id="72900-105">這段影片示範如何使用查詢的視覺化檢視、 資料繫結至 ASP.NET 控制項和記錄的分頁查詢使用 LINQ、 基礎 SQL 資料庫。</span><span class="sxs-lookup"><span data-stu-id="72900-105">This video shows how to query a database with LINQ, the underlying SQL with a query visualizer, databinding to ASP.NET controls and record paging.</span></span>
+<span data-ttu-id="e1311-105">這段影片示範如何使用查詢的視覺化檢視、 資料繫結至 ASP.NET 控制項和記錄的分頁查詢使用 LINQ、 基礎 SQL 資料庫。</span><span class="sxs-lookup"><span data-stu-id="e1311-105">This video shows how to query a database with LINQ, the underlying SQL with a query visualizer, databinding to ASP.NET controls and record paging.</span></span>
 
-[<span data-ttu-id="72900-106">&#9654;觀看影片 （6 分）</span><span class="sxs-lookup"><span data-stu-id="72900-106">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-linq-to-sql-querying-the-database)
+[<span data-ttu-id="e1311-106">&#9654;觀看影片 （6 分）</span><span class="sxs-lookup"><span data-stu-id="e1311-106">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-linq-to-sql-querying-the-database)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="72900-107">[上一頁](how-do-i-linq-to-sql-data-model.md)
-> [下一頁](how-do-i-linq-to-sql-updating-the-database.md)</span><span class="sxs-lookup"><span data-stu-id="72900-107">[Previous](how-do-i-linq-to-sql-data-model.md)
+> <span data-ttu-id="e1311-107">[上一頁](how-do-i-linq-to-sql-data-model.md)
+> [下一頁](how-do-i-linq-to-sql-updating-the-database.md)</span><span class="sxs-lookup"><span data-stu-id="e1311-107">[Previous](how-do-i-linq-to-sql-data-model.md)
 [Next](how-do-i-linq-to-sql-updating-the-database.md)</span></span>

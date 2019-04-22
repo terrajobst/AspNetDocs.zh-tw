@@ -12,13 +12,13 @@ ms.openlocfilehash: 238061172fafeb59a46349b6f82c2ea11afb0919
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404490"
 ---
-# <a name="creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc"></a><span data-ttu-id="80ee4-105">使用 Microsoft ASP.NET 模型檢視控制器 (MVC) 建立 NerdDinner.com</span><span class="sxs-lookup"><span data-stu-id="80ee4-105">Creating NerdDinner.com with Microsoft ASP.NET Model View Controller (MVC)</span></span>
+# <a name="creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc"></a><span data-ttu-id="e174b-105">使用 Microsoft ASP.NET 模型檢視控制器 (MVC) 建立 NerdDinner.com</span><span class="sxs-lookup"><span data-stu-id="e174b-105">Creating NerdDinner.com with Microsoft ASP.NET Model View Controller (MVC)</span></span>
 
-<span data-ttu-id="80ee4-106">藉由[Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="80ee4-106">by [Scott Hanselman](https://github.com/shanselman)</span></span>
+<span data-ttu-id="e174b-106">藉由[Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="e174b-106">by [Scott Hanselman](https://github.com/shanselman)</span></span>
 
-<span data-ttu-id="80ee4-107">完全無投影片。</span><span class="sxs-lookup"><span data-stu-id="80ee4-107">No slides.</span></span> <span data-ttu-id="80ee4-108">只是程式碼。</span><span class="sxs-lookup"><span data-stu-id="80ee4-108">Just code.</span></span> <span data-ttu-id="80ee4-109">開始使用新的檔案，並在六十五分鐘內建置具有 ASP.NET、 ASP.NET AJAX、 驗證、 授權、 MVC、 Microsoft SQL Server 和 jQuery 的實際網站。</span><span class="sxs-lookup"><span data-stu-id="80ee4-109">Start with File-New and build a real Web site with ASP.NET, ASP.NET AJAX, Authentication, Authorization, MVC, Microsoft SQL Server and jQuery in sixty-five minutes or less.</span></span>
+<span data-ttu-id="e174b-107">完全無投影片。</span><span class="sxs-lookup"><span data-stu-id="e174b-107">No slides.</span></span> <span data-ttu-id="e174b-108">只是程式碼。</span><span class="sxs-lookup"><span data-stu-id="e174b-108">Just code.</span></span> <span data-ttu-id="e174b-109">開始使用新的檔案，並在六十五分鐘內建置具有 ASP.NET、 ASP.NET AJAX、 驗證、 授權、 MVC、 Microsoft SQL Server 和 jQuery 的實際網站。</span><span class="sxs-lookup"><span data-stu-id="e174b-109">Start with File-New and build a real Web site with ASP.NET, ASP.NET AJAX, Authentication, Authorization, MVC, Microsoft SQL Server and jQuery in sixty-five minutes or less.</span></span>
 
-[<span data-ttu-id="80ee4-110">&#9654;觀看影片 （71 分鐘）</span><span class="sxs-lookup"><span data-stu-id="80ee4-110">&#9654; Watch video (71 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc)
+[<span data-ttu-id="e174b-110">&#9654;觀看影片 （71 分鐘）</span><span class="sxs-lookup"><span data-stu-id="e174b-110">&#9654; Watch video (71 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc)

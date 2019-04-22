@@ -12,18 +12,18 @@ ms.openlocfilehash: 45b6941cb2680619c555c875077cc1dbf78b4a80
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392790"
 ---
-# <a name="how-do-i-use-the-aspnet-ajax-tabs-control"></a><span data-ttu-id="f49d8-104">[How Do i:]使用 ASP.NET AJAX 索引標籤控制項嗎？</span><span class="sxs-lookup"><span data-stu-id="f49d8-104">[How Do I:] Use the ASP.NET AJAX Tabs Control?</span></span>
+# <a name="how-do-i-use-the-aspnet-ajax-tabs-control"></a><span data-ttu-id="9f37e-104">[How Do i:]使用 ASP.NET AJAX 索引標籤控制項嗎？</span><span class="sxs-lookup"><span data-stu-id="9f37e-104">[How Do I:] Use the ASP.NET AJAX Tabs Control?</span></span>
 
-<span data-ttu-id="f49d8-105">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="f49d8-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="9f37e-105">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="9f37e-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="f49d8-106">這部影片示範索引標籤控制項的基本 ASP.NET AJAX Control Toolkit 中，從與中，您可以建立一組索引標籤來組織在網頁上的內容。</span><span class="sxs-lookup"><span data-stu-id="f49d8-106">This video demonstrates the basics of the Tabs control from the ASP.NET AJAX Control Toolkit, with which you can create a set of tabs to organize content on a Web page.</span></span> <span data-ttu-id="f49d8-107">選取的索引標籤會維護其進行適用於以 form 為基礎的管理頁面的索引標籤控制項的回傳。</span><span class="sxs-lookup"><span data-stu-id="f49d8-107">The selected tab is maintained across post backs, making the Tabs control ideal for form-based administration pages.</span></span>
+<span data-ttu-id="9f37e-106">這部影片示範索引標籤控制項的基本 ASP.NET AJAX Control Toolkit 中，從與中，您可以建立一組索引標籤來組織在網頁上的內容。</span><span class="sxs-lookup"><span data-stu-id="9f37e-106">This video demonstrates the basics of the Tabs control from the ASP.NET AJAX Control Toolkit, with which you can create a set of tabs to organize content on a Web page.</span></span> <span data-ttu-id="9f37e-107">選取的索引標籤會維護其進行適用於以 form 為基礎的管理頁面的索引標籤控制項的回傳。</span><span class="sxs-lookup"><span data-stu-id="9f37e-107">The selected tab is maintained across post backs, making the Tabs control ideal for form-based administration pages.</span></span>
 
-[<span data-ttu-id="f49d8-108">&#9654;觀看影片 （8 分鐘）</span><span class="sxs-lookup"><span data-stu-id="f49d8-108">&#9654; Watch video (8 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-tabs-control)
+[<span data-ttu-id="9f37e-108">&#9654;觀看影片 （8 分鐘）</span><span class="sxs-lookup"><span data-stu-id="9f37e-108">&#9654; Watch video (8 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-tabs-control)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="f49d8-109">[上一頁](how-do-i-use-the-aspnet-ajax-resizablecontrol-extender.md)
-> [下一頁](how-do-i-use-the-aspnet-ajax-slideshow-extender.md)</span><span class="sxs-lookup"><span data-stu-id="f49d8-109">[Previous](how-do-i-use-the-aspnet-ajax-resizablecontrol-extender.md)
+> <span data-ttu-id="9f37e-109">[上一頁](how-do-i-use-the-aspnet-ajax-resizablecontrol-extender.md)
+> [下一頁](how-do-i-use-the-aspnet-ajax-slideshow-extender.md)</span><span class="sxs-lookup"><span data-stu-id="9f37e-109">[Previous](how-do-i-use-the-aspnet-ajax-resizablecontrol-extender.md)
 [Next](how-do-i-use-the-aspnet-ajax-slideshow-extender.md)</span></span>

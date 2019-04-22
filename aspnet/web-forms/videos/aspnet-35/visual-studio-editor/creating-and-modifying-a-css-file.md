@@ -12,16 +12,16 @@ ms.openlocfilehash: 050c328a9a73226124f7545d804fe9729aab4176
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398406"
 ---
-# <a name="creating-and-modifying-a-css-file"></a><span data-ttu-id="bd083-104">建立及修改 CSS 檔案</span><span class="sxs-lookup"><span data-stu-id="bd083-104">Creating and Modifying a CSS File</span></span>
+# <a name="creating-and-modifying-a-css-file"></a><span data-ttu-id="d3393-104">建立及修改 CSS 檔案</span><span class="sxs-lookup"><span data-stu-id="d3393-104">Creating and Modifying a CSS File</span></span>
 
-<span data-ttu-id="bd083-105">藉由[Todd Miranda](https://github.com/tmiranda)</span><span class="sxs-lookup"><span data-stu-id="bd083-105">by [Todd Miranda](https://github.com/tmiranda)</span></span>
+<span data-ttu-id="d3393-105">藉由[Todd Miranda](https://github.com/tmiranda)</span><span class="sxs-lookup"><span data-stu-id="d3393-105">by [Todd Miranda](https://github.com/tmiranda)</span></span>
 
-<span data-ttu-id="bd083-106">這段影片將介紹 Visual Studio 2008 的階層式樣式表 (CSS) 功能。</span><span class="sxs-lookup"><span data-stu-id="bd083-106">This video introduces the cascading style sheet (CSS) features of Visual Studio 2008.</span></span> <span data-ttu-id="bd083-107">Visual Studio 2008 的 CSS 功能讓您輕鬆地建立樣式表和透過屬性樣式介面的樣式。</span><span class="sxs-lookup"><span data-stu-id="bd083-107">Visual Studio 2008's CSS features make it easy to create style sheets and styles through a property style interface.</span></span> <span data-ttu-id="bd083-108">這會移除開發人員不必處理 CSS 的實作詳細資料。</span><span class="sxs-lookup"><span data-stu-id="bd083-108">This removes the developer from having to deal with the implementation details of CSS.</span></span>
+<span data-ttu-id="d3393-106">這段影片將介紹 Visual Studio 2008 的階層式樣式表 (CSS) 功能。</span><span class="sxs-lookup"><span data-stu-id="d3393-106">This video introduces the cascading style sheet (CSS) features of Visual Studio 2008.</span></span> <span data-ttu-id="d3393-107">Visual Studio 2008 的 CSS 功能讓您輕鬆地建立樣式表和透過屬性樣式介面的樣式。</span><span class="sxs-lookup"><span data-stu-id="d3393-107">Visual Studio 2008's CSS features make it easy to create style sheets and styles through a property style interface.</span></span> <span data-ttu-id="d3393-108">這會移除開發人員不必處理 CSS 的實作詳細資料。</span><span class="sxs-lookup"><span data-stu-id="d3393-108">This removes the developer from having to deal with the implementation details of CSS.</span></span>
 
-[<span data-ttu-id="bd083-109">&#9654;觀看影片 （15 分鐘）</span><span class="sxs-lookup"><span data-stu-id="bd083-109">&#9654; Watch video (15 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-and-modifying-a-css-file)
+[<span data-ttu-id="d3393-109">&#9654;觀看影片 （15 分鐘）</span><span class="sxs-lookup"><span data-stu-id="d3393-109">&#9654; Watch video (15 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-and-modifying-a-css-file)
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="bd083-110">上一步</span><span class="sxs-lookup"><span data-stu-id="bd083-110">Previous</span></span>](quick-tour-of-the-visual-studio-2008-integrated-development-environment.md)
+> [<span data-ttu-id="d3393-110">上一步</span><span class="sxs-lookup"><span data-stu-id="d3393-110">Previous</span></span>](quick-tour-of-the-visual-studio-2008-integrated-development-environment.md)

@@ -12,14 +12,14 @@ ms.openlocfilehash: c2dc613713747cef5ada2e44e2077fc36e7a2086
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399777"
 ---
-# <a name="performance"></a><span data-ttu-id="7e17a-103">效能</span><span class="sxs-lookup"><span data-stu-id="7e17a-103">Performance</span></span>
+# <a name="performance"></a><span data-ttu-id="4aa73-103">效能</span><span class="sxs-lookup"><span data-stu-id="4aa73-103">Performance</span></span>
 
-> <span data-ttu-id="7e17a-104">此影片系列涵蓋最佳化 ASP.NET 4 中的 Web Form 網頁的新方法。</span><span class="sxs-lookup"><span data-stu-id="7e17a-104">This video series covers new ways to optimize Web Forms pages in ASP.NET 4.</span></span>
+> <span data-ttu-id="4aa73-104">此影片系列涵蓋最佳化 ASP.NET 4 中的 Web Form 網頁的新方法。</span><span class="sxs-lookup"><span data-stu-id="4aa73-104">This video series covers new ways to optimize Web Forms pages in ASP.NET 4.</span></span>
 
 
-- [<span data-ttu-id="7e17a-105">可選擇的檢視狀態</span><span class="sxs-lookup"><span data-stu-id="7e17a-105">Selective View State</span></span>](aspnet-4-quick-hit-selective-view-state.md)
-- [<span data-ttu-id="7e17a-106">簡單狀態壓縮</span><span class="sxs-lookup"><span data-stu-id="7e17a-106">Easy State Compression</span></span>](aspnet-4-quick-hit-easy-state-compression.md)
-- [<span data-ttu-id="7e17a-107">使用 ViewStateMode 屬性管理 ViewState</span><span class="sxs-lookup"><span data-stu-id="7e17a-107">Use the ViewStateMode Property for Managing ViewState</span></span>](how-do-i-use-the-viewstatemode-property-for-managing-viewstate.md)
+- [<span data-ttu-id="4aa73-105">可選擇的檢視狀態</span><span class="sxs-lookup"><span data-stu-id="4aa73-105">Selective View State</span></span>](aspnet-4-quick-hit-selective-view-state.md)
+- [<span data-ttu-id="4aa73-106">簡單狀態壓縮</span><span class="sxs-lookup"><span data-stu-id="4aa73-106">Easy State Compression</span></span>](aspnet-4-quick-hit-easy-state-compression.md)
+- [<span data-ttu-id="4aa73-107">使用 ViewStateMode 屬性管理 ViewState</span><span class="sxs-lookup"><span data-stu-id="4aa73-107">Use the ViewStateMode Property for Managing ViewState</span></span>](how-do-i-use-the-viewstatemode-property-for-managing-viewstate.md)

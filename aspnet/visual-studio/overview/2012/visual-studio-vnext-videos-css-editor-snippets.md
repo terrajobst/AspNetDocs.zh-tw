@@ -12,13 +12,13 @@ ms.openlocfilehash: 8af991fad10957ee5a0c712b0298647a02eaed46
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395832"
 ---
-# <a name="visual-studio-vnext-videos-css-snippets"></a><span data-ttu-id="c9e25-103">Visual Studio vNext 影片：CSS 程式碼片段</span><span class="sxs-lookup"><span data-stu-id="c9e25-103">Visual Studio vNext Videos: CSS Snippets</span></span>
+# <a name="visual-studio-vnext-videos-css-snippets"></a><span data-ttu-id="a6ccc-103">Visual Studio vNext 影片：CSS 程式碼片段</span><span class="sxs-lookup"><span data-stu-id="a6ccc-103">Visual Studio vNext Videos: CSS Snippets</span></span>
 
-<span data-ttu-id="c9e25-104">藉由[Mads Kristensen](https://github.com/madskristensen)</span><span class="sxs-lookup"><span data-stu-id="c9e25-104">by [Mads Kristensen](https://github.com/madskristensen)</span></span>
+<span data-ttu-id="a6ccc-104">藉由[Mads Kristensen](https://github.com/madskristensen)</span><span class="sxs-lookup"><span data-stu-id="a6ccc-104">by [Mads Kristensen](https://github.com/madskristensen)</span></span>
 
-<span data-ttu-id="c9e25-105">在這段影片中，Mads Kristensen 示範，這會新增一些有用的程式碼片段的 CSS3 轉換、 媒體查詢、 內嵌字型，以及更多 Visual Studio vNext CSS 編輯器中的一大改進。</span><span class="sxs-lookup"><span data-stu-id="c9e25-105">In this video, Mads Kristensen demonstrates an improvement in the Visual Studio vNext CSS editor which adds some useful snippets for CSS3 transforms, media queries, font embedding, and more.</span></span>
+<span data-ttu-id="a6ccc-105">在這段影片中，Mads Kristensen 示範，這會新增一些有用的程式碼片段的 CSS3 轉換、 媒體查詢、 內嵌字型，以及更多 Visual Studio vNext CSS 編輯器中的一大改進。</span><span class="sxs-lookup"><span data-stu-id="a6ccc-105">In this video, Mads Kristensen demonstrates an improvement in the Visual Studio vNext CSS editor which adds some useful snippets for CSS3 transforms, media queries, font embedding, and more.</span></span>
 
-[<span data-ttu-id="c9e25-106">&#9654;觀看影片 （1 分鐘）</span><span class="sxs-lookup"><span data-stu-id="c9e25-106">&#9654; Watch video (1 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-vnext-videos-css-editor-snippets)
+[<span data-ttu-id="a6ccc-106">&#9654;觀看影片 （1 分鐘）</span><span class="sxs-lookup"><span data-stu-id="a6ccc-106">&#9654; Watch video (1 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-vnext-videos-css-editor-snippets)

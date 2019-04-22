@@ -12,12 +12,12 @@ ms.openlocfilehash: 8a2af69592d3839ace1ec1975a67eccb055c1652
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378800"
 ---
-# <a name="aspnet-signalr-videos"></a><span data-ttu-id="3c315-103">ASP.NET SignalR 影片</span><span class="sxs-lookup"><span data-stu-id="3c315-103">ASP.NET SignalR Videos</span></span>
+# <a name="aspnet-signalr-videos"></a><span data-ttu-id="bef7e-103">ASP.NET SignalR 影片</span><span class="sxs-lookup"><span data-stu-id="bef7e-103">ASP.NET SignalR Videos</span></span>
 
-> <span data-ttu-id="3c315-104">這些影片提供您背景以及應用程式的範例使用 SignalR 即時功能加入 web 應用程式。</span><span class="sxs-lookup"><span data-stu-id="3c315-104">These videos give you background and application examples for using SignalR to add real-time functionality to web applications.</span></span>
+> <span data-ttu-id="bef7e-104">這些影片提供您背景以及應用程式的範例使用 SignalR 即時功能加入 web 應用程式。</span><span class="sxs-lookup"><span data-stu-id="bef7e-104">These videos give you background and application examples for using SignalR to add real-time functionality to web applications.</span></span>
 
 
-- [<span data-ttu-id="3c315-105">SignalR 與 Web 通訊端</span><span class="sxs-lookup"><span data-stu-id="3c315-105">SignalR and Web Sockets</span></span>](signalr-and-web-sockets.md)
+- [<span data-ttu-id="bef7e-105">SignalR 和 Web 通訊端</span><span class="sxs-lookup"><span data-stu-id="bef7e-105">SignalR and Web Sockets</span></span>](signalr-and-web-sockets.md)
