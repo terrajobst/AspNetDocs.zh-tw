@@ -12,7 +12,7 @@ ms.openlocfilehash: 3e1399d17840a2f5301349cb91deb07b0cc34363
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421975"
 ---
 # <a name="validating-with-the-idataerrorinfo-interface-c"></a>驗證與 IDataErrorInfo 介面 (C#)
@@ -31,7 +31,7 @@ ms.locfileid: "59421975"
 <a id="0.5_table01"></a>
 
 
-| **資料行名稱** | **資料類型** | **允許 Null** |
+| **資料行名稱** | **資料類型** | **允許 null 值** |
 | --- | --- | --- |
 | ID | Int | False |
 | 標題 | Nvarchar(100) | False |
@@ -42,7 +42,7 @@ ms.locfileid: "59421975"
 在本教學課程中，我可以使用 Microsoft Entity Framework 產生我的資料庫模型類別。 Entity Framework 所產生的電影類別會顯示在 圖 1。
 
 
-[![T他的電影實體](validating-with-the-idataerrorinfo-interface-cs/_static/image1.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image1.png)
+[![電影實體](validating-with-the-idataerrorinfo-interface-cs/_static/image1.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image1.png)
 
 **圖 01**:電影實體 ([按一下以檢視完整大小的影像](validating-with-the-idataerrorinfo-interface-cs/_static/image2.png))
 
@@ -73,7 +73,7 @@ ms.locfileid: "59421975"
 影片類別是由 Entity Framework 產生的。 如果您展開 MoviesDBModel.edmx 檔案，在 方案總管 視窗中的，並在程式碼編輯器中開啟 MoviesDBModel.Designer.cs 檔案，您可以看到電影類別的程式碼 （請參閱 圖 2）。
 
 
-[![T他的電影實體的程式碼](validating-with-the-idataerrorinfo-interface-cs/_static/image2.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image3.png)
+[![電影實體的程式碼](validating-with-the-idataerrorinfo-interface-cs/_static/image2.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image3.png)
 
 **圖 02**:電影實體的程式碼 ([按一下以檢視完整大小的影像](validating-with-the-idataerrorinfo-interface-cs/_static/image4.png))
 
@@ -147,7 +147,7 @@ DefaultModelBinder 也會檢查 IDataErrorInfo.Error 屬性。 這個屬性被�
 您不需要修改 Home 控制器中使用修改過的電影類別的任何方法。 圖 3 中所顯示的網頁說明的標題或主管的表單欄位不輸入任何值時，會發生什麼事。
 
 
-[![Creating 動作方法自動](validating-with-the-idataerrorinfo-interface-cs/_static/image3.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image5.png)
+[![自動建立動作方法](validating-with-the-idataerrorinfo-interface-cs/_static/image3.jpg)](validating-with-the-idataerrorinfo-interface-cs/_static/image5.png)
 
 **圖 03**:具有遺漏值的表單 ([按一下以檢視完整大小的影像](validating-with-the-idataerrorinfo-interface-cs/_static/image6.png))
 

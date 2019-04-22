@@ -12,7 +12,7 @@ ms.openlocfilehash: 952dbbc7759e5a8a654ab561bc54011dfb7f8d90
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380076"
 ---
 # <a name="batch-updating-c"></a>批次更新 (C#)
@@ -31,7 +31,7 @@ ms.locfileid: "59380076"
 在本教學課程中，我們將建置的 GridView，其中每個資料列是可編輯 （請參閱 圖 1）。 由於不需要編輯的資料行時，會在其編輯介面上，該處 s 呈現每個資料列，更新和 [取消] 按鈕。 相反地，有兩個更新的產品按鈕在頁面上，按一下時，列舉的 GridView 資料列，並更新資料庫。
 
 
-[![Each GridView 中資料列是可編輯](batch-updating-cs/_static/image1.gif)](batch-updating-cs/_static/image1.png)
+[![在 gridview 裡的每個資料列是可編輯](batch-updating-cs/_static/image1.gif)](batch-updating-cs/_static/image1.png)
 
 **圖 1**:在 gridview 裡的每個資料列是可編輯 ([按一下以檢視完整大小的影像](batch-updating-cs/_static/image2.png))
 
@@ -57,12 +57,12 @@ ms.locfileid: "59380076"
 我們會擔心建立 GridView 之前所在的資料列都可以編輯，讓 s 首先會只顯示產品資訊。 開啟`BatchUpdate.aspx`頁面中`BatchData`資料夾，然後從 [工具箱] 拖曳至設計工具拖曳的 GridView。 設定 GridView s`ID`要`ProductsGrid`，並從它的智慧標籤，選擇 繫結至名為新 ObjectDataSource `ProductsDataSource`。 設定要擷取其資料從 ObjectDataSource`ProductsBLL`類別的`GetProducts`方法。
 
 
-[![C設定使用 ProductsBLL 類別 ObjectDataSource](batch-updating-cs/_static/image2.gif)](batch-updating-cs/_static/image3.png)
+[![設定使用 ProductsBLL 類別 ObjectDataSource](batch-updating-cs/_static/image2.gif)](batch-updating-cs/_static/image3.png)
 
 **圖 2**:設定要使用 ObjectDataSource`ProductsBLL`類別 ([按一下以檢視完整大小的影像](batch-updating-cs/_static/image4.png))
 
 
-[![Retrieve 產品的資料使用 GetProducts 方法](batch-updating-cs/_static/image3.gif)](batch-updating-cs/_static/image5.png)
+[![擷取產品的資料使用 GetProducts 方法](batch-updating-cs/_static/image3.gif)](batch-updating-cs/_static/image5.png)
 
 **圖 3**:擷取產品使用資料`GetProducts`方法 ([按一下以檢視完整大小的影像](batch-updating-cs/_static/image6.png))
 
@@ -70,7 +70,7 @@ ms.locfileid: "59380076"
 GridView，之類的 ObjectDataSource 的修改功能專為是每個資料列的基礎。 若要更新的一組記錄，我們必須撰寫的程式碼的批次資料，並將它傳遞給 BLL，ASP.NET 頁面 s 程式碼後置類別中。 因此，設定下拉式清單中之 ObjectDataSource 更新、 插入和刪除的索引標籤，為 （無）。 按一下 完成 以完成精靈。
 
 
-[![Set 下拉式清單中更新、 插入和刪除索引標籤，為 [（無）](batch-updating-cs/_static/image4.gif)](batch-updating-cs/_static/image7.png)
+[![設定下拉式清單中更新、 插入和刪除 （無） 索引標籤](batch-updating-cs/_static/image4.gif)](batch-updating-cs/_static/image7.png)
 
 **圖 4**:設定下拉式清單中更新、 插入和刪除索引標籤為 （無） ([按一下以檢視完整大小的影像](batch-updating-cs/_static/image8.png))
 
@@ -107,7 +107,7 @@ GridView，之類的 ObjectDataSource 的修改功能專為是每個資料列的
 接下來，新增至 RequiredFieldValidator`ItemTemplate`以確保使用者提供的值，針對每個產品 s 的名稱。 設定`ControlToValidate`ProductName，屬性`ErrorMessage`屬性，您必須提供產品的名稱。 而`Text`屬性設\*。 進行這些新增項目後`ItemTemplate`，您的畫面應該看起來會類似 圖 6。
 
 
-[![T此外，他 ProductName TemplateField 現在會包含文字方塊和 RequiredFieldValidator](batch-updating-cs/_static/image6.gif)](batch-updating-cs/_static/image9.png)
+[![ProductName TemplateField 現在包含文字方塊和 RequiredFieldValidator](batch-updating-cs/_static/image6.gif)](batch-updating-cs/_static/image9.png)
 
 **圖 6**:`ProductName` TemplateField 現在包含一個文字方塊和 RequiredFieldValidator ([按一下以檢視完整大小的影像](batch-updating-cs/_static/image10.png))
 
@@ -117,7 +117,7 @@ GridView，之類的 ObjectDataSource 的修改功能專為是每個資料列的
 也將新增至 CompareValidator `UnitPrice` s`ItemTemplate`以確保使用者輸入的值是有效的貨幣值大於或等於到美金 $0.00 元。 設定驗證程式 s `ControlToValidate` UnitPrice 屬性其`ErrorMessage`屬性，您必須輸入有效的貨幣值。 請省略任何貨幣符號。，其`Text`屬性，以\*、 其`Type`屬性設`Currency`、 其`Operator`屬性設`GreaterThanEqual`，並將其`ValueToCompare`屬性設為 0。
 
 
-[![Add CompareValidator，以確保價格輸入為非負數貨幣值](batch-updating-cs/_static/image7.gif)](batch-updating-cs/_static/image11.png)
+[![新增 CompareValidator，以確保價格輸入為非負數貨幣值](batch-updating-cs/_static/image7.gif)](batch-updating-cs/_static/image11.png)
 
 **圖 7**:新增 CompareValidator，以確保價格輸入為非負數貨幣值 ([按一下以檢視完整大小的影像](batch-updating-cs/_static/image12.png))
 
@@ -135,12 +135,12 @@ GridView，之類的 ObjectDataSource 的修改功能專為是每個資料列的
 從工具箱拖曳 DropDownList `CategoryName` TemplateField s `ItemTemplate`，將其`ID`至`Categories`。 此時我們會通常定義 dropdownlist 進行的資料來源，透過它的智慧標籤，建立新的 ObjectDataSource。 不過，這會將新增內的 ObjectDataSource `ItemTemplate`，從而導致每個 GridView 資料列所建立的 ObjectDataSource 執行個體。 相反地，讓建立 ObjectDataSource GridView 的 TemplateFields 之外。 結束範本編輯，並從 [工具箱] 拖曳至設計工具下方拖曳 ObjectDataSource `ProductsDataSource` ObjectDataSource。 名稱的新 ObjectDataSource`CategoriesDataSource`並將它設定為使用`CategoriesBLL`類別的`GetCategories`方法。
 
 
-[![C設定使用 CategoriesBLL 類別 ObjectDataSource](batch-updating-cs/_static/image8.gif)](batch-updating-cs/_static/image13.png)
+[![設定使用 CategoriesBLL 類別 ObjectDataSource](batch-updating-cs/_static/image8.gif)](batch-updating-cs/_static/image13.png)
 
 **圖 8**:設定要使用 ObjectDataSource`CategoriesBLL`類別 ([按一下以檢視完整大小的影像](batch-updating-cs/_static/image14.png))
 
 
-[![Retrieve 使用 GetCategories 方法的類別目錄資料](batch-updating-cs/_static/image9.gif)](batch-updating-cs/_static/image15.png)
+[![擷取使用 GetCategories 方法的類別目錄資料](batch-updating-cs/_static/image9.gif)](batch-updating-cs/_static/image15.png)
 
 **圖 9**:擷取類別目錄資料使用`GetCategories`方法 ([按一下以檢視完整大小的影像](batch-updating-cs/_static/image16.png))
 
@@ -148,7 +148,7 @@ GridView，之類的 ObjectDataSource 的修改功能專為是每個資料列的
 由於這個 ObjectDataSource 只是用以擷取資料，設定下拉式清單中的 UPDATE 和 DELETE 的索引標籤為 （無）。 按一下 完成 以完成精靈。
 
 
-[![Set 下拉式清單中的更新和刪除索引標籤，為 [（無）](batch-updating-cs/_static/image10.gif)](batch-updating-cs/_static/image17.png)
+[![設定下拉式清單中的更新和刪除索引標籤，為 （無）](batch-updating-cs/_static/image10.gif)](batch-updating-cs/_static/image17.png)
 
 **圖 10**:設定下拉式清單中的更新和刪除索引標籤為 （無） ([按一下以檢視完整大小的影像](batch-updating-cs/_static/image18.png))
 
@@ -161,7 +161,7 @@ GridView，之類的 ObjectDataSource 的修改功能專為是每個資料列的
 具有`CategoriesDataSource`建立並設定，回到`CategoryName`TemplateField 的`ItemTemplate`並從 DropDownList s 智慧標籤，按一下 選擇資料來源連結。 在 [資料來源組態精靈] 中，選取`CategoriesDataSource`從第一個下拉式清單選項，然後選擇`CategoryName`用於顯示和`CategoryID`做為值。
 
 
-[![Bind DropDownList 以 CategoriesDataSource](batch-updating-cs/_static/image11.gif)](batch-updating-cs/_static/image19.png)
+[![繫結至 CategoriesDataSource 的 DropDownList](batch-updating-cs/_static/image11.gif)](batch-updating-cs/_static/image19.png)
 
 **圖 11**:繫結至 DropDownList `CategoriesDataSource` ([按一下以檢視完整大小的影像](batch-updating-cs/_static/image20.png))
 
@@ -190,7 +190,7 @@ GridView，之類的 ObjectDataSource 的修改功能專為是每個資料列的
 我們 ve 範本所做的變更數目 GridView s 停頓檢視我們的進度。 請花一點時間檢閱我們透過瀏覽器的進度。 如 [圖 13] 所示，每個資料列使用呈現其`ItemTemplate`，其中包含儲存格 s 中的編輯介面。
 
 
-[![Each GridView 資料列是可編輯](batch-updating-cs/_static/image13.gif)](batch-updating-cs/_static/image21.png)
+[![每個 GridView 資料列是可編輯](batch-updating-cs/_static/image13.gif)](batch-updating-cs/_static/image21.png)
 
 **圖 13**:每個 GridView 資料列是可編輯 ([按一下以檢視完整大小的影像](batch-updating-cs/_static/image22.png))
 
@@ -223,7 +223,7 @@ GridView s 自編輯介面定義於其 TemplateFields `ItemTemplate` s， `EditI
 圖 16 顯示此頁面已加入 Button Web 控制項之後，透過瀏覽器檢視時，並格式化所做的變更。
 
 
-[![T他頁面現在包含兩個更新的產品按鈕](batch-updating-cs/_static/image16.gif)](batch-updating-cs/_static/image23.png)
+[![頁面現在包含兩個更新的產品按鈕](batch-updating-cs/_static/image16.gif)](batch-updating-cs/_static/image23.png)
 
 **圖 16**:頁面現在包含兩個更新的產品按鈕 ([按一下以檢視完整大小的影像](batch-updating-cs/_static/image24.png))
 

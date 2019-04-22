@@ -12,7 +12,7 @@ ms.openlocfilehash: 2808f8811e06875a5b38585772763f45794d1fc2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388318"
 ---
 # <a name="building-35-applications"></a>建置 3.5 應用程式
@@ -22,7 +22,7 @@ ms.locfileid: "59388318"
 
 - [Visual Web Developer 簡介](intro-to-visual-web-developer.md)
 - [IntelliSense](intellisense.md)
-- [Web Forms 簡介](intro-to-web-forms.md)
+- [Web Form 簡介](intro-to-web-forms.md)
 - [頁面配置](page-layout.md)
 - [頁面週期事件](page-lifecycle-events.md)
 - [ASP.NET 控制項簡介](intro-to-aspnet-controls.md)
@@ -31,7 +31,7 @@ ms.locfileid: "59388318"
 - [工作階段層級物件](session-level-objects.md)
 - [偵錯](debugging.md)
 - [CSS](css.md)
-- [MasterPages](masterpages.md)
+- [主版頁面](masterpages.md)
 - [SOAP 型 Web 服務與 Visual Web Developer 2008 簡介](an-introduction-to-soap-based-web-services-with-visual-web-developer-2008.md)
 - [AJAX 樣式服務與 Microsoft Visual Web Developer 2008](ajax-style-services-with-microsoft-visual-web-developer-2008.md)
 - [驗證](validation.md)

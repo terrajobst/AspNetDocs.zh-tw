@@ -12,7 +12,7 @@ ms.openlocfilehash: 601da044c0c9679526eecaa09256e0100e7ad571
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420779"
 ---
 # <a name="how-do-i-write-web-events-to-a-sql-server-database-using-the-sqlwebeventprovider"></a>[How Do i:]Web 事件寫入 SQL Server 資料庫 SqlWebEventProvider

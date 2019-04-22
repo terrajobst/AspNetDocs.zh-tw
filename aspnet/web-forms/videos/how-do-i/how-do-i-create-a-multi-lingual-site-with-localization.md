@@ -12,7 +12,7 @@ ms.openlocfilehash: 15c4a0341afcbd273508a420518b637b07b3476f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381467"
 ---
 # <a name="how-do-i-create-a-multi-lingual-site-with-localization"></a>[How Do i:]使用當地語系化功能建立多語言網站？

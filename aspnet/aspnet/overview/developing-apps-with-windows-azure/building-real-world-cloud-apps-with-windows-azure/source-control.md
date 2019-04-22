@@ -12,7 +12,7 @@ ms.openlocfilehash: 7effc0194541afe766a6202f527d36d96f3007f2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381363"
 ---
 # <a name="source-control-building-real-world-cloud-apps-with-azure"></a>原始檔控制 （使用 Azure 建置真實世界的雲端應用程式）

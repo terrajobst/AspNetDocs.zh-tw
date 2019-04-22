@@ -12,7 +12,7 @@ ms.openlocfilehash: 571e34a8c87bf54b8dd71c912f16ebcdab3c87a7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383443"
 ---
 # <a name="creating-a-customized-sorting-user-interface-vb"></a>建立自訂的排序使用者介面 (VB)
@@ -31,7 +31,7 @@ ms.locfileid: "59383443"
 為了協助反白顯示已排序的群組之間的界限，許多網站會採用使用者介面，將這類群組之間的分隔符號。 像 [圖 1] 所示的分隔頁可讓使用者更快速地找到特定的群組和識別它的界限，以及確定有哪些不同的群組會存在於資料。
 
 
-[![E除此之外，每個類別目錄群組是清楚識別](creating-a-customized-sorting-user-interface-vb/_static/image2.png)](creating-a-customized-sorting-user-interface-vb/_static/image1.png)
+[![每個類別目錄群組是清楚識別](creating-a-customized-sorting-user-interface-vb/_static/image2.png)](creating-a-customized-sorting-user-interface-vb/_static/image1.png)
 
 **圖 1**:每個類別目錄群組是清楚識別 ([按一下以檢視完整大小的影像](creating-a-customized-sorting-user-interface-vb/_static/image3.png))
 
@@ -50,7 +50,7 @@ ms.locfileid: "59383443"
 請花一點時間到目前為止在瀏覽器中檢視進度。 圖 2 顯示其資料依分類依字母順序排序時排序 GridView。
 
 
-[![T他可排序的 GridView s 資料被依類別目錄](creating-a-customized-sorting-user-interface-vb/_static/image5.png)](creating-a-customized-sorting-user-interface-vb/_static/image4.png)
+[![可排序的 GridView s 類別目錄排序資料](creating-a-customized-sorting-user-interface-vb/_static/image5.png)](creating-a-customized-sorting-user-interface-vb/_static/image4.png)
 
 **圖 2**:依類別排序資料的可排序的 GridView s ([按一下以檢視完整大小的影像](creating-a-customized-sorting-user-interface-vb/_static/image6.png))
 
@@ -100,7 +100,7 @@ GridView 繫結至資料來源，它會建立`GridViewRow`資料來源傳回每�
 若要新增每個排序的群組之間的分隔符號資料列，我們可以直接操作此控制項階層架構一旦建立之後。 我們可以確信 GridView 的控制項階層架構已經建立的最後一次呈現網頁時的時間。 因此，這個方法會覆寫`Page`類別的`Render`方法，此時 GridView s 最終的控制項階層架構會更新以包含所需的分隔符號資料列。 [圖 4] 說明此程序。
 
 
-[![An 的替代技術操作 GridView 的控制項階層架構](creating-a-customized-sorting-user-interface-vb/_static/image9.png)](creating-a-customized-sorting-user-interface-vb/_static/image8.png)
+[![這項替代技術操作 GridView 的控制項階層架構](creating-a-customized-sorting-user-interface-vb/_static/image9.png)](creating-a-customized-sorting-user-interface-vb/_static/image8.png)
 
 **圖 4**:這項替代技術操作 s 的 GridView 控制項階層架構 ([按一下以檢視完整大小的影像](creating-a-customized-sorting-user-interface-vb/_static/image10.png))
 
@@ -156,12 +156,12 @@ GridView 繫結至資料來源，它會建立`GridViewRow`資料來源傳回每�
 使用目前的程式碼中，排序的介面新增排序群組標頭排序任何 BoundField 時 （請參閱 圖 5，供應商所排序時，顯示螢幕擷取畫面）。 不過，排序時 （例如 CheckBoxField 或 TemplateField） 任何其他欄位型別，排序群組標頭是沒地方可以找到 （請參閱 圖 6）。
 
 
-[![T他排序介面包含排序群組標頭時排序 BoundFields](creating-a-customized-sorting-user-interface-vb/_static/image12.png)](creating-a-customized-sorting-user-interface-vb/_static/image11.png)
+[![排序介面 BoundFields 排序時，請包含排序群組標頭](creating-a-customized-sorting-user-interface-vb/_static/image12.png)](creating-a-customized-sorting-user-interface-vb/_static/image11.png)
 
 **圖 5**:排序介面包含排序群組標頭時排序 BoundFields ([按一下以檢視完整大小的影像](creating-a-customized-sorting-user-interface-vb/_static/image13.png))
 
 
-[![T他排序群組標頭是遺失時排序 CheckBoxField](creating-a-customized-sorting-user-interface-vb/_static/image15.png)](creating-a-customized-sorting-user-interface-vb/_static/image14.png)
+[![排序群組標頭會遺漏當排序 CheckBoxField](creating-a-customized-sorting-user-interface-vb/_static/image15.png)](creating-a-customized-sorting-user-interface-vb/_static/image14.png)
 
 **圖 6**:排序群組標頭會遺漏當排序 CheckBoxField ([按一下以檢視完整大小的影像](creating-a-customized-sorting-user-interface-vb/_static/image16.png))
 
@@ -178,7 +178,7 @@ CheckBoxField 排序時，會遺失排序群組標頭的原因是因為此程式
 上述程式碼加入之後，排序群組標頭現在都已停止的 CheckBoxField 排序時 （請參閱 圖 7）。
 
 
-[![T他排序群組標頭會立即出現時排序 CheckBoxField](creating-a-customized-sorting-user-interface-vb/_static/image18.png)](creating-a-customized-sorting-user-interface-vb/_static/image17.png)
+[![排序群組標頭會立即出現時排序 CheckBoxField](creating-a-customized-sorting-user-interface-vb/_static/image18.png)](creating-a-customized-sorting-user-interface-vb/_static/image17.png)
 
 **圖 7**:排序群組標頭會立即出現時排序 CheckBoxField ([按一下以檢視完整大小的影像](creating-a-customized-sorting-user-interface-vb/_static/image19.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: d6b48d676c2dd90fc052b338f31a389e0fb809be
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402306"
 ---
 # <a name="authenticating-users-with-windows-authentication-vb"></a>使用Windows 驗證驗證使用者 (VB)
@@ -69,7 +69,7 @@ ASP.NET 開發 Web 伺服器也支援 NTLM 驗證。 您可以滑鼠右鍵按一
 
 例如，列表 1 中的主控制器會公開名為 index （）、 CompanySecrets() 和 StephenSecrets() 的三個動作。 任何人都可以叫用的 index （） 動作。 不過，只有 Windows 本機管理員群組的成員可以叫用 CompanySecrets() 動作。 最後，只有 Windows 網域使用者名為 Stephen （位於 Redmond 網域中） 可以叫用 StephenSecrets() 動作。
 
-**列表 1 – Controllers\HomeController.vb**
+**Listing 1 – Controllers\HomeController.vb**
 
 [!code-vb[Main](authenticating-users-with-windows-authentication-vb/samples/sample2.vb)]
 

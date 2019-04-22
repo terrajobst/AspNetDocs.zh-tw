@@ -12,7 +12,7 @@ ms.openlocfilehash: 7de5a1545ee59e671058f09789ce69d5062d3655
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380973"
 ---
 # <a name="passing-data-to-view-master-pages-vb"></a>將資料傳遞至檢視主版頁面 (VB)
@@ -33,7 +33,7 @@ by [Microsoft](https://github.com/microsoft)
 假設您要建置影片資料庫應用程式，而您想要在您的應用程式中的每個頁面上顯示電影類別目錄的清單 （請參閱 圖 1）。 此外，想像一下，電影類別目錄的清單會儲存在資料庫資料表。 在此情況下，它將就從資料庫擷取類別，並呈現檢視主版頁面內的影片分類清單。
 
 
-[![D在檢視主版頁面的 isplaying 電影類別](passing-data-to-view-master-pages-vb/_static/image2.png)](passing-data-to-view-master-pages-vb/_static/image1.png)
+[![在 檢視主版頁面中顯示影片類別](passing-data-to-view-master-pages-vb/_static/image2.png)](passing-data-to-view-master-pages-vb/_static/image1.png)
 
 **圖 01**:在檢視主版頁面顯示電影類別 ([按一下以檢視完整大小的影像](passing-data-to-view-master-pages-vb/_static/image3.png))
 
@@ -59,7 +59,7 @@ MVC 應用程式中，傳遞至 – 包括檢視主版頁面 – 檢視的所有
 `Details()`動作也會將名為分類和電影的兩個索引鍵。 類別索引鍵，同樣地，表示檢視主版頁面所顯示的電影類別目錄的清單。 影片索引鍵所代表的特定類別，顯示 詳細資料檢視 頁面中的電影清單 （請參閱 圖 2）。
 
 
-[![T他的詳細資料檢視](passing-data-to-view-master-pages-vb/_static/image5.png)](passing-data-to-view-master-pages-vb/_static/image4.png)
+[![詳細資料檢視](passing-data-to-view-master-pages-vb/_static/image5.png)](passing-data-to-view-master-pages-vb/_static/image4.png)
 
 **圖 02**:詳細資料檢視 ([按一下以檢視完整大小的影像](passing-data-to-view-master-pages-vb/_static/image6.png))
 

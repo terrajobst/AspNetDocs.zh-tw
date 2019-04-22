@@ -12,7 +12,7 @@ ms.openlocfilehash: 109a0dc1e1ebe0b644e9414561c798a7bb3d0531
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414825"
 ---
 # <a name="aspnet-4---enterprise-deployment-series-1"></a>ASP.NET 4 - 企業部署系列 1
@@ -24,10 +24,10 @@ ms.locfileid: "59414825"
 - [連絡管理員解決方案](the-contact-manager-solution.md)
 - [設定連絡管理員解決方案](setting-up-the-contact-manager-solution.md)
 - [了解專案檔](understanding-the-project-file.md)
-- [了解建置程序](understanding-the-build-process.md)
-- [建置及封裝 Web 應用程式專案](building-and-packaging-web-application-projects.md)
-- [設定 Web 套件部署的參數](configuring-parameters-for-web-package-deployment.md)
-- [部署 Web 套件](deploying-web-packages.md)
+- [了解建置流程](understanding-the-build-process.md)
+- [建置和封裝 Web 應用程式專案](building-and-packaging-web-application-projects.md)
+- [設定網頁套件部署的參數](configuring-parameters-for-web-package-deployment.md)
+- [部署網頁套件](deploying-web-packages.md)
 - [部署資料庫專案](deploying-database-projects.md)
-- [建立及執行部署命令檔](creating-and-running-a-deployment-command-file.md)
-- [手動安裝 Web 套件](manually-installing-web-packages.md)
+- [建立和執行部署命令檔](creating-and-running-a-deployment-command-file.md)
+- [手動安裝網頁套件](manually-installing-web-packages.md)

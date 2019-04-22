@@ -12,7 +12,7 @@ ms.openlocfilehash: e3e097663568b21ee3f84c7006a0bd89718ac6c2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380271"
 ---
 # <a name="recovering-and-changing-passwords-c"></a>復原及變更密碼 (C#)
@@ -63,7 +63,7 @@ Provider 控制項是由三個檢視所組成：
 [圖 1] 說明 Provider 的介面和行為方式會影響成員資格設定。
 
 
-[![T他 RequiresQuestionAndAnswer、 EnablePasswordRetrieval 和 EnablePasswordReset 影響 Provider 控制項的外觀和行為](recovering-and-changing-passwords-cs/_static/image2.png)](recovering-and-changing-passwords-cs/_static/image1.png)
+[![RequiresQuestionAndAnswer、 EnablePasswordRetrieval，以及 EnablePasswordReset 影響 Provider 控制項的外觀和行為](recovering-and-changing-passwords-cs/_static/image2.png)](recovering-and-changing-passwords-cs/_static/image1.png)
 
 **圖 1**:`RequiresQuestionAndAnswer`， `EnablePasswordRetrieval`，並`EnablePasswordReset`影響 Provider 控制項的外觀和行為 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-cs/_static/image3.png))
 
@@ -93,7 +93,7 @@ Provider 控制項是由三個檢視所組成：
 一旦您已設定的 SMTP 設定，請瀏覽`RecoverPassword.aspx`透過瀏覽器的頁面。 第一次嘗試輸入在使用者存放區不存在的使用者名稱。 如 圖 2 所示，Provider 控制項就會顯示訊息，指出 無法存取使用者資訊。 您可以透過控制項的自訂訊息的文字[`UserNameFailureText`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.usernamefailuretext.aspx)。
 
 
-[![A如果您輸入使用者名稱無效，會顯示 n 個錯誤訊息](recovering-and-changing-passwords-cs/_static/image5.png)](recovering-and-changing-passwords-cs/_static/image4.png)
+[![如果輸入無效的使用者名稱，就會顯示一則錯誤訊息](recovering-and-changing-passwords-cs/_static/image5.png)](recovering-and-changing-passwords-cs/_static/image4.png)
 
 **圖 2**:如果輸入無效的使用者名稱，就會顯示一則錯誤訊息 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-cs/_static/image6.png))
 
@@ -101,7 +101,7 @@ Provider 控制項是由三個檢視所組成：
 現在，請輸入使用者名稱。 知道使用者的電子郵件地址，您可以存取，以及其安全性回答您的系統中的帳戶名稱使用。 輸入使用者名稱，然後按一下 [送出之後, Provider 控制項會顯示其問題] 檢視。 為使用使用者名稱 檢視中，如果您輸入不正確回答 Provider 控制項會顯示的錯誤訊息 （請參閱 圖 3）。 使用[`QuestionFailureText`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.questionfailuretext.aspx)來自訂此錯誤訊息。
 
 
-[![A如果使用者輸入無效的安全性解答，就會顯示 n 個錯誤訊息](recovering-and-changing-passwords-cs/_static/image8.png)](recovering-and-changing-passwords-cs/_static/image7.png)
+[![如果使用者輸入無效的安全性解答，就會顯示一則錯誤訊息](recovering-and-changing-passwords-cs/_static/image8.png)](recovering-and-changing-passwords-cs/_static/image7.png)
 
 **圖 3**:如果使用者輸入無效的安全性解答，就會顯示一則錯誤訊息 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-cs/_static/image9.png))
 
@@ -109,7 +109,7 @@ Provider 控制項是由三個檢視所組成：
 最後，輸入正確的安全性解答，然後按一下 提交。 在幕後，Provider 控制產生的隨機密碼，將它指派給使用者帳戶，傳送電子郵件通知使用者的新密碼 （請參閱 圖 4），然後顯示 成功 檢視。
 
 
-[![T他的使用者會傳送一封電子郵件與他的新密碼](recovering-and-changing-passwords-cs/_static/image11.png)](recovering-and-changing-passwords-cs/_static/image10.png)
+[![使用者會傳送一封電子郵件與他的新密碼](recovering-and-changing-passwords-cs/_static/image11.png)](recovering-and-changing-passwords-cs/_static/image10.png)
 
 **圖 4**:使用者會傳送一封電子郵件與他的新密碼 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-cs/_static/image12.png))
 
@@ -145,7 +145,7 @@ Provider 控制項所傳送的預設電子郵件是而晦暗，而且 （請參�
 進行這些變更重新審視之後`RecoverPassword.aspx`頁面，然後輸入您使用者名稱和安全性的答案。 您會收到應該看起來像圖 5 中的電子郵件。 請注意， `webmaster@example.com` CC 會和，已更新的主旨和本文。
 
 
-[![T他的主旨、 主體和 [副本] 已更新清單](recovering-and-changing-passwords-cs/_static/image14.png)](recovering-and-changing-passwords-cs/_static/image13.png)
+[![更新主旨、 主體和 [副本] 清單](recovering-and-changing-passwords-cs/_static/image14.png)](recovering-and-changing-passwords-cs/_static/image13.png)
 
 **圖 5**:主旨、 主體和 [副本] 已更新清單 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-cs/_static/image15.png))
 
@@ -197,7 +197,7 @@ Provider 控制項所傳送的預設電子郵件是而晦暗，而且 （請參�
 開啟`ChangePassword.aspx`頁面上，並將 ChangePassword 控制項新增至頁面上，將它命名為`ChangePwd`。 此時，設計 檢視應該會顯示 變更密碼 （請參閱 圖 6） 的檢視。 例如與 Provider 控制項，您可以切換透過控制項的智慧標籤的檢視。 此外，這些檢視的外觀會透過各種的樣式屬性，或將它們轉換成範本，將可自訂的。
 
 
-[![Add ChangePassword 控制項至頁面](recovering-and-changing-passwords-cs/_static/image17.png)](recovering-and-changing-passwords-cs/_static/image16.png)
+[![ChangePassword 控制項加入頁面](recovering-and-changing-passwords-cs/_static/image17.png)](recovering-and-changing-passwords-cs/_static/image16.png)
 
 **圖 6**:ChangePassword 控制項加入頁面 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-cs/_static/image18.png))
 
@@ -215,7 +215,7 @@ ChangePassword 控制項可以更新目前登入使用者的密碼*或*另一個
 請瀏覽`ChangePassword.aspx`透過瀏覽器頁面，並變更您的密碼。 請注意，是否您輸入新的密碼無法滿足密碼長度和成員資格設定中指定的非英數的字元需求，會顯示一則錯誤訊息 （請參閱 圖 7）。
 
 
-[![Add ChangePassword 控制項至頁面](recovering-and-changing-passwords-cs/_static/image20.png)](recovering-and-changing-passwords-cs/_static/image19.png)
+[![ChangePassword 控制項加入頁面](recovering-and-changing-passwords-cs/_static/image20.png)](recovering-and-changing-passwords-cs/_static/image19.png)
 
 **圖 7**:ChangePassword 控制項加入頁面 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-cs/_static/image21.png))
 
@@ -235,7 +235,7 @@ ChangePassword 控制項可以更新目前登入使用者的密碼*或*另一個
 進行這些變更之後，重新瀏覽的頁面，並再次變更您的密碼。 此時，ChangePassword 控制項就會將自訂的 HTML 格式的電子郵件傳送檔案的使用者的電子郵件地址 （請參閱 圖 8）。
 
 
-[![An 的電子郵件訊息會通知使用者，其密碼已變更](recovering-and-changing-passwords-cs/_static/image23.png)](recovering-and-changing-passwords-cs/_static/image22.png)
+[![電子郵件訊息，通知使用者，其密碼已經變更](recovering-and-changing-passwords-cs/_static/image23.png)](recovering-and-changing-passwords-cs/_static/image22.png)
 
 **圖 8**:電子郵件訊息會通知使用者，其密碼已經變更 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-cs/_static/image24.png))
 
@@ -273,7 +273,7 @@ ChangePassword 控制項可以更新目前登入使用者的密碼*或*另一個
 之後，輸入新的密碼、 確認在第二個文字方塊中，然後按一下更新的 [使用者] 按鈕，回傳是兩邊彼此乾瞪眼和`aspnet_Membership_SetPassword`預存程序會叫用，更新使用者的密碼。 我非常鼓勵以更加熟悉程式碼，然後再試擴充功能，以包括傳送電子郵件給使用者的密碼已變更這項功能有興趣的讀者。
 
 
-[![An 個系統管理員可以變更使用者的密碼](recovering-and-changing-passwords-cs/_static/image26.png)](recovering-and-changing-passwords-cs/_static/image25.png)
+[![系統管理員可以變更使用者的密碼](recovering-and-changing-passwords-cs/_static/image26.png)](recovering-and-changing-passwords-cs/_static/image25.png)
 
 **圖 9**:系統管理員可以變更使用者的密碼 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-cs/_static/image27.png))
 

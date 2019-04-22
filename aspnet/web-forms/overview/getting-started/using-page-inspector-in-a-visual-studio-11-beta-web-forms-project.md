@@ -12,7 +12,7 @@ ms.openlocfilehash: c39e1cf42fde382a9e74d7f865f0dac1aa62ddc8
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384229"
 ---
 # <a name="using-page-inspector-for-visual-studio-2012-in-aspnet-web-forms"></a>在 ASP.NET Web Forms 中使用 Page Inspector for Visual Studio 2012

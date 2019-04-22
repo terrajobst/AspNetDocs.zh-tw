@@ -12,7 +12,7 @@ ms.openlocfilehash: 86ea4a2e17ec44a3716e1570e51a224144f1369c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386966"
 ---
 # <a name="configuring-server-environments-for-web-deployment"></a>設定 Web 部署的伺服器環境

@@ -12,7 +12,7 @@ ms.openlocfilehash: 17ec29cb24d0cd6943a821190d5cbabee69a58d2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397379"
 ---
 # <a name="data-controls"></a>資料控制項

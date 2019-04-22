@@ -12,7 +12,7 @@ ms.openlocfilehash: 0fc828e39cfcce22d4cc226954cf7d1731b04e42
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379777"
 ---
 # <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>簡介使用的資料庫，在 ASP.NET Web Pages (Razor) 網站
@@ -51,7 +51,7 @@ ms.locfileid: "59379777"
 
 就像這樣的圖片資料的典型方式是為包含資料列和資料行的資料表。 在資料庫詞彙中，每個資料列通常稱為一筆記錄。 （有時稱為 「 欄位 」） 的每個資料行包含每種類型的資料值： 名字、 最後一個名稱和等等。
 
-| **識別碼** | **FirstName** | **LastName** | **地址** | **Email** | **Phone** |
+| **ID** | **FirstName** | **LastName** | **位址** | **電子郵件** | **Phone** |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Jim | Abrus | 210 100th St SE Orcas WA 98031 | jim@contoso.com | 555 0100 |
 | 2 | Terry | Adams | 1234 Main St. Seattle WA 99011 | terry@cohowinery.com | 555 0101 |
@@ -151,7 +151,7 @@ ms.locfileid: "59379777"
 
 > [!TIP] 
 > 
-> **結構化查詢語言 (SQL)**
+> **結構化的查詢語言 (SQL)**
 > 
 > SQL 是一種語言，在大部分的關聯式資料庫中用於管理資料庫中的資料。 它包含的指令，可讓您擷取資料，並加以更新，以及，可讓您建立、 修改和管理資料庫的資料表。 SQL 是不同的程式語言 （例如您在 WebMatrix 中使用的那一個） 因為 sql 的概念是，您需要告訴資料庫想什麼方法，它是資料庫的作業，以了解如何取得資料，或執行工作。 以下是一些 SQL 命令的範例，以及他們如何：
 > 

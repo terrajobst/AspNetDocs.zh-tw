@@ -12,7 +12,7 @@ ms.openlocfilehash: a7c40ebe359e21602d9f1de8205e1a7c808acc85
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384249"
 ---
 # <a name="animating-an-updatepanel-control-vb"></a>繪製 UpdatePanel 控制項的動畫 (VB)
@@ -50,7 +50,7 @@ ms.locfileid: "59384249"
 現在每次回傳發生時在 UpdatePanel 中，新的內容面板的淡入順暢。
 
 
-[![T他的下一個精靈步驟會淡入](animating-an-updatepanel-control-vb/_static/image2.png)](animating-an-updatepanel-control-vb/_static/image1.png)
+[![下一個步驟中，精靈會淡入](animating-an-updatepanel-control-vb/_static/image2.png)](animating-an-updatepanel-control-vb/_static/image1.png)
 
 下一個步驟中，精靈會淡入 ([按一下以檢視完整大小的影像](animating-an-updatepanel-control-vb/_static/image3.png))
 

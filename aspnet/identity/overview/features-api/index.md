@@ -13,7 +13,7 @@ ms.openlocfilehash: 5634a5d766cdceffc509962d80b0aaa8880d2f8b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397093"
 ---
 # <a name="aspnet-4x-identity-features--api"></a>ASP.NET 4.x 的身分識別功能和 API
@@ -22,5 +22,5 @@ ms.locfileid: "59397093"
 
 
 - [將密碼和其他敏感性資料部署到 ASP.NET 和 Azure App Service 的最佳做法](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)
-- [使用 ASP.NET Identity 的帳戶確認和密碼復原 (C#)](account-confirmation-and-password-recovery-with-aspnet-identity.md)
-- [透過 ASP.NET Identity 使用簡訊和電子郵件進行的雙重要素驗證](two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
+- [使用 ASP.NET Identity 的帳戶確認和密碼復原](account-confirmation-and-password-recovery-with-aspnet-identity.md)
+- [使用 SMS 的雙因素驗證和使用 ASP.NET Identity 的電子郵件](two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)

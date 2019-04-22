@@ -12,7 +12,7 @@ ms.openlocfilehash: 7f0c5ff599235157bd11f5f86a26b8882e0f29dc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381805"
 ---
 # <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix 與 ASP.NET Web Pages (Razor) 搶鮮版 (Beta) 3 讀我檔案
@@ -23,7 +23,7 @@ ms.locfileid: "59381805"
 
 ## <a name="contents"></a>內容
 
-- [總覽](#Overview)
+- [概觀](#Overview)
 - [安裝](#Installation_Notes)
 - [新的功能、 變更和 Beta 3 版本的已知問題](#Known_Issues)
 
@@ -454,7 +454,7 @@ ms.locfileid: "59381805"
 
 > 瀏覽至 WCF 應用程式會產生類似下列的其中一個錯誤：
 > 
-> *無法載入檔案或組件 ' Microsoft.Web.Administration，版本 = 7.0.0.0，Culture = neutral，PublicKeyToken = 31bf3856ad364e35' 或其中一個相依性。 系統找不到指定的檔案。*
+> *無法載入檔案或組件 ' Microsoft.Web.Administration，版本 = 7.0.0.0，Culture = neutral，PublicKeyToken = 31bf3856ad364e35' 或其中一個相依性。系統找不到指定的檔案。*
 > 
 > 這是因為 IIS Express 的 Beta 版本不支援預設的 WCF。
 > 

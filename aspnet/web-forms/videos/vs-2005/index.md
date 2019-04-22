@@ -12,7 +12,7 @@ ms.openlocfilehash: 25d9cc02ef9b0e8f068c9e84469d9661b06f0b28
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381103"
 ---
 # <a name="visual-studio-2005"></a>Visual Studio 2005
@@ -32,7 +32,7 @@ ms.locfileid: "59381103"
 - [負載測試代理程式](using-the-load-test-agent.md)
 - [ViewState 的效果](the-effects-of-viewstate.md)
 - [整合缺失的追蹤與測試](how-do-i-integrate-defect-tracking-with-testing.md)
-- [建立我自己的錯誤 (Bug) 工作項目](how-do-i-create-my-own-bug-work-item.md)
+- [建立我自己的 Bug 工作項目](how-do-i-create-my-own-bug-work-item.md)
 - [使用單元測試更快速地撰寫程式碼](how-do-i-write-code-more-quickly-with-unit-tests.md)
 - [測試導向的開發實務](how-do-i-practice-test-driven-development.md)
 - [負載測試 Web 應用程式](how-do-i-load-test-a-web-application.md)
@@ -40,7 +40,7 @@ ms.locfileid: "59381103"
 - [設定大量測試的分散式負載測試](how-do-i-set-up-distributed-load-testing-for-high-volume-tests.md)
 - [使用程式碼分析強制執行編碼標準](how-do-i-enforce-coding-standards-with-code-analysis.md)
 - [使用一般測試](how-do-i-use-generic-tests.md)
-- [發佈及分析測試結果](how-do-i-publish-and-analyze-test-results.md)
+- [發佈和分析測試結果](how-do-i-publish-and-analyze-test-results.md)
 - [先探索應用程式變更再部署](how-do-i-discover-application-changes-prior-to-deployment.md)
 - [使用 Team Foundation 實作連續整合](how-do-i-implement-continuous-integration-with-team-foundation.md)
 - [使用 Team Build 自動化測試](how-do-i-automate-testing-using-team-build.md)

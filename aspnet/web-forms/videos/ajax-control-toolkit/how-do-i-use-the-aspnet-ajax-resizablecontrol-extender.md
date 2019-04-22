@@ -12,7 +12,7 @@ ms.openlocfilehash: 4ce14e555b8ef2e2746832322a488733a7c5c377
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398835"
 ---
 # <a name="how-do-i-use-the-aspnet-ajax-resizablecontrol-extender"></a>[How Do i:]使用 ASP.NET AJAX ResizableControl 擴充項？

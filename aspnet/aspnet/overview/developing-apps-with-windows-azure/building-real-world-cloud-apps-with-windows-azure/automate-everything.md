@@ -12,7 +12,7 @@ ms.openlocfilehash: d27c8c1910a79cea8ccdf4231d3bc2b80a20dc68
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418361"
 ---
 # <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>自動化 （建置使用 Azure 的真實世界的雲端應用程式） 的所有項目
@@ -87,7 +87,7 @@ ms.locfileid: "59418361"
 
 ![appSettings 和 connectionStrings](automate-everything/_static/image6.png)
 
-*自動化*資料夾現在也包含 *&lt;websitename&gt;.pubxml*檔案。 這個檔案會儲存 MSBuild 用來部署應用程式以剛建立的 Azure 環境的設定。 例如: 
+*自動化*資料夾現在也包含 *&lt;websitename&gt;.pubxml*檔案。 這個檔案會儲存 MSBuild 用來部署應用程式以剛建立的 Azure 環境的設定。 例如：
 
 [!code-xml[Main](automate-everything/samples/sample1.xml)]
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: bae7aa149ad507e5a5ca3b01ff140440e3309548
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419609"
 ---
 # <a name="aspnet-mvc-storefront-part-14-rich-client-interaction"></a>ASP.NET MVC 店面第 14 部分：豐富型用戶端互動

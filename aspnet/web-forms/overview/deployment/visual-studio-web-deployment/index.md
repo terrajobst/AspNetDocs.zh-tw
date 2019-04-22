@@ -12,7 +12,7 @@ ms.openlocfilehash: 3d8a6a102788cb6b5612e9bc537e1c13e7798c54
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378932"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio"></a>使用 Visual Studio 的 ASP.NET Web 部署
@@ -24,9 +24,9 @@ ms.locfileid: "59378932"
 - [準備資料庫部署](preparing-databases.md)
 - [Web.config 檔案轉換](web-config-transformations.md)
 - [專案屬性](project-properties.md)
-- [部署到測試環境](deploying-to-iis.md)
+- [部署到測試](deploying-to-iis.md)
 - [設定資料夾權限](setting-folder-permissions.md)
-- [部署到生產環境](deploying-to-production.md)
+- [部署至生產環境](deploying-to-production.md)
 - [部署程式碼更新](deploying-a-code-update.md)
 - [部署資料庫更新](deploying-a-database-update.md)
 - [命令列部署](command-line-deployment.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: f1875ae95d79ec2a6762a547aabfbd03e0930b2c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386498"
 ---
 # <a name="using-modalpopup-with-a-repeater-control-vb"></a>使用 ModalPopup 與重複項控制項 (VB)
@@ -49,7 +49,7 @@ AJAX Control Toolkit 之 ModalPopup 控制項提供簡單的方式來建立使�
 然後，它旁邊的按鈕觸發強制回應快顯視窗會顯示資料來源中的每個項目。
 
 
-[![T他的強制回應快顯視窗可針對每個資料來源項目觸發](using-modalpopup-with-a-repeater-control-vb/_static/image2.png)](using-modalpopup-with-a-repeater-control-vb/_static/image1.png)
+[![可針對每個資料來源項目觸發強制回應快顯視窗](using-modalpopup-with-a-repeater-control-vb/_static/image2.png)](using-modalpopup-with-a-repeater-control-vb/_static/image1.png)
 
 可針對每個資料來源項目觸發強制回應快顯 ([按一下以檢視完整大小的影像](using-modalpopup-with-a-repeater-control-vb/_static/image3.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 29bda1892fd223beadd3010f46d8f961c02d71ab
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418153"
 ---
 # <a name="routing"></a>路由
@@ -24,5 +24,5 @@ ms.locfileid: "59418153"
 - [命令式 WebForms 路由](aspnet-4-quick-hit-imperative-webforms-routing.md)
 - [宣告式 WebForms 路由](aspnet-4-quick-hit-declarative-webforms-routing.md)
 - [輸出 WebForms 路由](aspnet-4-quick-hit-outbound-webforms-routing.md)
-- [使用具有 ASP.NET Web Forms 的路由](how-do-i-use-routing-with-aspnet-web-forms.md)
+- [使用具有 ASP.NET Web Form 的路由](how-do-i-use-routing-with-aspnet-web-forms.md)
 - [在 ASP.NET 路由中使用 URL](how-do-i-work-with-urls-in-aspnet-routing.md)

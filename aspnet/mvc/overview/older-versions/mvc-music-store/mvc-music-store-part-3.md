@@ -12,7 +12,7 @@ ms.openlocfilehash: ce866a169e69c0d85fe18ddeccf271f1f235d440
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381116"
 ---
 # <a name="part-3-views-and-viewmodels"></a>第 3 部分：檢視和 ViewModels
@@ -122,7 +122,7 @@ MvcMusicStore Assets.zip 可在內容目錄中包含更新過的 CSS 檔案和�
 
 [!code-csharp[Main](mvc-music-store-part-3/samples/sample7.cs)]
 
-*注意:您可能會感到奇怪，{get; 設定;} 標記法正在使用的C#的自動實作屬性 」 功能。 可以讓我們屬性的優點，而不需要我們宣告支援欄位。*
+*注意：您可能會感到奇怪，{get; 設定;} 標記法正在使用的C#的自動實作屬性 」 功能。可以讓我們屬性的優點，而不需要我們宣告支援欄位。*
 
 接下來，請遵循相同步驟來建立具有標題和內容類型屬性的專輯類別 （名為 Album.cs）：
 
@@ -144,7 +144,7 @@ MvcMusicStore Assets.zip 可在內容目錄中包含更新過的 CSS 檔案和�
 
 [!code-csharp[Main](mvc-music-store-part-3/samples/sample11.cs)]
 
-*注意:如果您不熟悉C#，您可能會假設，使用 var 表示我們專輯的變數是晚期繫結。 不正確 – C# 編譯器會使用根據什麼我們是指派給變數，以判斷該專輯的型別專輯和專輯型別為編譯本機專輯變數，因此我們編譯時期檢查和 Visual Studio 程式碼編輯器的型別推斷支援。*
+*注意：如果您不熟悉C#，您可能會假設，使用 var 表示我們專輯的變數是晚期繫結。不正確 – C# 編譯器會使用根據什麼我們是指派給變數，以判斷該專輯的型別專輯和專輯型別為編譯本機專輯變數，因此我們編譯時期檢查和 Visual Studio 程式碼編輯器的型別推斷支援。*
 
 我們現在來建立檢視範本來產生 HTML 回應中使用我們的專輯。 這樣做之前我們要建置專案，以便知道我們新建立的專輯類別的 [新增檢視] 對話方塊。 您可以建置專案選取 Debug⇨Build MvcMusicStore 功能表項目 （針對額外信用額度，您可以使用 Ctrl-Shift-B 捷徑來建置專案）。
 
@@ -238,7 +238,7 @@ Html.ActionLink() 有數個不同的多載，可讓您指定您的連結所需�
 
 [!code-cshtml[Main](mvc-music-store-part-3/samples/sample20.cshtml)]
 
-*注意:在此情況下，我們不需要指定控制器名稱，因為我們只連結至目前的檢視形式呈現到相同控制器內的另一個動作。*
+*注意：在此情況下，我們不需要指定控制器名稱，因為我們只連結至目前的檢視形式呈現到相同控制器內的另一個動作。*
 
 因此我們將使用另一個多載會採用三個參數的 Html.ActionLink 方法傳遞參數，不過，需要我們瀏覽 頁面的連結：
 

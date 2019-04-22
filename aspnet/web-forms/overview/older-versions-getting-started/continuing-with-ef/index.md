@@ -12,7 +12,7 @@ ms.openlocfilehash: 03eb0f69428c4f4f48487f8eefe91c33f9f1ebbd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378797"
 ---
 # <a name="aspnet-4---continuing-with-entity-framework-4-and-web-forms"></a>ASP.NET 4 - 繼續使用 Entity Framework 4 與 Web Forms
@@ -20,9 +20,9 @@ ms.locfileid: "59378797"
 > 如何建置使用 ObjectDataSource 控制項的多層式架構應用程式 Contoso U 應用程式以及如何處理並行存取，並將效能最大化。
 
 
-- [Entity Framework 4.0 與 ObjectDataSource 控制項，第 1 部分：快速入門](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
-- [Entity Framework 4.0 與 ObjectDataSource 控制項，第 2 部分：新增商務邏輯層與單元測試](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
-- [Entity Framework 4.0 與 ObjectDataSource 控制項，第 3 部分：排序和篩選](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+- [Entity Framework 4.0 和 ObjectDataSource 控制項，第 1 部分：開始使用](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
+- [Entity Framework 4.0 和 ObjectDataSource 控制項，第 2 部分：新增商務邏輯層和單元測試](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+- [Entity Framework 4.0 和 ObjectDataSource 控制項，第 3 部分：排序和篩選](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
 - [在 ASP.NET 4 中使用 Entity Framework 4.0 處理並行](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
 - [在 ASP.NET 4 中使用 Entity Framework 4.0 將效能最大化](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
 - [Entity Framework 4.0 的新功能](what-s-new-in-the-entity-framework-4.md)

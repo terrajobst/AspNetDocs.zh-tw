@@ -12,7 +12,7 @@ ms.openlocfilehash: d4be58f618ed990b1932b4388f84cd743c21f009
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389605"
 ---
 # <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>簡介偵錯 ASP.NET Web Pages (Razor) 網站

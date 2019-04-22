@@ -12,7 +12,7 @@ ms.openlocfilehash: 6e685d599e3dbc095631e3c28a603ac9c38f799c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385887"
 ---
 # <a name="presetting-list-entries-with-cascadingdropdown-vb"></a>使用 CascadingDropDown 預設清單項目 (VB)
@@ -53,7 +53,7 @@ CascadingDropDown extender 接著會以非同步方式呼叫 web 服務的下列
 載入瀏覽器頁面，將會填滿下拉式清單中的，使用三個廠商，第二個要預先選取。
 
 
-[![T他清單是填滿，並預先選取 [自動](presetting-list-entries-with-cascadingdropdown-vb/_static/image2.png)](presetting-list-entries-with-cascadingdropdown-vb/_static/image1.png)
+[![清單會填滿，且預設會自動選取](presetting-list-entries-with-cascadingdropdown-vb/_static/image2.png)](presetting-list-entries-with-cascadingdropdown-vb/_static/image1.png)
 
 清單會填入，且會自動預先選取 ([按一下以檢視完整大小的影像](presetting-list-entries-with-cascadingdropdown-vb/_static/image3.png))
 

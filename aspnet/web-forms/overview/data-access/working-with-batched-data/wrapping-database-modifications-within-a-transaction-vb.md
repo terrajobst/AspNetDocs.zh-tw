@@ -12,7 +12,7 @@ ms.openlocfilehash: 2fc7ba3d62d41685c234756709707ff14f81b316
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380310"
 ---
 # <a name="wrapping-database-modifications-within-a-transaction-vb"></a>將資料庫修改包裝在交易中 (VB)
@@ -83,7 +83,7 @@ SQL 陳述式，用來建立、 認可及回復時撰寫 SQL 指令碼或建立�
 如同其他的資料夾中，`Default.aspx`會使用`SectionLevelTutorialListing.ascx`列出的教學課程 > 一節中的使用者控制項。 因此，新增此使用者控制項`Default.aspx`從拖曳到頁面的設計 檢視中的 方案總管 中拖曳。
 
 
-[![Add Default.aspx SectionLevelTutorialListing.ascx 使用者控制項](wrapping-database-modifications-within-a-transaction-vb/_static/image2.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image1.png)
+[![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](wrapping-database-modifications-within-a-transaction-vb/_static/image2.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image1.png)
 
 **圖 2**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](wrapping-database-modifications-within-a-transaction-vb/_static/image2.png))
 
@@ -168,12 +168,12 @@ SQL 陳述式，用來建立、 認可及回復時撰寫 SQL 指令碼或建立�
 首先開啟`Transactions.aspx`頁面中`BatchData`資料夾，然後從 [工具箱] 拖曳至設計工具拖曳的 GridView。 設定其`ID`要`Products`和它的智慧標籤，從繫結至名為新 ObjectDataSource `ProductsDataSource`。 設定提取其資料從 ObjectDataSource`ProductsBLL`類別的`GetProducts`方法。 會是唯讀的 GridView，因此設定下拉式清單中更新、 插入和刪除索引標籤為 （無），並按一下 完成。
 
 
-[![C設定要使用 ProductsBLL 類別的 GetProducts 方法的 ObjectDataSource](wrapping-database-modifications-within-a-transaction-vb/_static/image5.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image3.png)
+[![設定為使用 ProductsBLL 類別的 GetProducts 方法的 ObjectDataSource](wrapping-database-modifications-within-a-transaction-vb/_static/image5.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image3.png)
 
 **圖 5**:設定要使用 ObjectDataSource`ProductsBLL`類別 s`GetProducts`方法 ([按一下以檢視完整大小的影像](wrapping-database-modifications-within-a-transaction-vb/_static/image4.png))
 
 
-[![Set 下拉式清單中更新、 插入和刪除索引標籤，為 [（無）](wrapping-database-modifications-within-a-transaction-vb/_static/image6.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image5.png)
+[![設定下拉式清單中更新、 插入和刪除 （無） 索引標籤](wrapping-database-modifications-within-a-transaction-vb/_static/image6.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image5.png)
 
 **圖 6**:設定下拉式清單中更新、 插入和刪除索引標籤為 （無） ([按一下以檢視完整大小的影像](wrapping-database-modifications-within-a-transaction-vb/_static/image6.png))
 
@@ -191,7 +191,7 @@ SQL 陳述式，用來建立、 認可及回復時撰寫 SQL 指令碼或建立�
 此時在 Visual Studio 中的 設計 檢視看起來應該類似螢幕擷取畫面的 圖 7 所示。
 
 
-[![T他的頁面包含的 GridView 和三個按鈕 Web 控制項](wrapping-database-modifications-within-a-transaction-vb/_static/image7.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image7.png)
+[![此頁面包含的 GridView 和三個按鈕 Web 控制項](wrapping-database-modifications-within-a-transaction-vb/_static/image7.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image7.png)
 
 **圖 7**:頁面包含的 GridView 和三個按鈕 Web 控制項 ([按一下以檢視完整大小的影像](wrapping-database-modifications-within-a-transaction-vb/_static/image8.png))
 
@@ -210,12 +210,12 @@ SQL 陳述式，用來建立、 認可及回復時撰寫 SQL 指令碼或建立�
 為了示範此行為，請瀏覽此頁面，透過瀏覽器。 一開始您應該看到的第一頁的資料，如 圖 8 所示。 接下來，按一下 [修改類別 （與交易）] 按鈕。 這會導致回傳，並嘗試更新的所有產品`CategoryID`值，但是會造成外部索引鍵條件約束違規 （請參閱 圖 9）。
 
 
-[![T他產品都會顯示在可分頁的 GridView](wrapping-database-modifications-within-a-transaction-vb/_static/image8.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image9.png)
+[![產品都會顯示在可分頁的 GridView](wrapping-database-modifications-within-a-transaction-vb/_static/image8.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image9.png)
 
 **圖 8**:產品都會顯示在可分頁的 GridView ([按一下以檢視完整大小的影像](wrapping-database-modifications-within-a-transaction-vb/_static/image10.png))
 
 
-[![Reassigning 類別目錄會導致外部索引鍵條件約束違規](wrapping-database-modifications-within-a-transaction-vb/_static/image9.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image11.png)
+[![重新指派分類結果中的外部索引鍵條件約束違規](wrapping-database-modifications-within-a-transaction-vb/_static/image9.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image11.png)
 
 **圖 9**:重新指派分類會導致外部索引鍵條件約束違規 ([按一下以檢視完整大小的影像](wrapping-database-modifications-within-a-transaction-vb/_static/image12.png))
 
@@ -225,7 +225,7 @@ SQL 陳述式，用來建立、 認可及回復時撰寫 SQL 指令碼或建立�
 現在，請嘗試按一下 [修改類別 （而不需要交易）] 按鈕。 這會導致相同的外部索引鍵條件約束違規錯誤 （請參閱 圖 9），但這次這些產品的`CategoryID`值已變更為合法值將不會回復。 叫用您的瀏覽器 s 上一步 按鈕，然後重新整理方格 按鈕。 如 [圖 10] 所示，`CategoryID`已重新指派的前八個產品。 比方說，在 圖 8 中，變更必須`CategoryID`為 1，但在圖 10 it s 已重新指派為 2。
 
 
-[![Some 產品 CategoryID 值未更新而其他人已](wrapping-database-modifications-within-a-transaction-vb/_static/image10.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image13.png)
+[![某些產品 CategoryID 值未更新而其他人已](wrapping-database-modifications-within-a-transaction-vb/_static/image10.gif)](wrapping-database-modifications-within-a-transaction-vb/_static/image13.png)
 
 **圖 10**:某些產品`CategoryID`的值未更新而其他人已 ([按一下以檢視完整大小的影像](wrapping-database-modifications-within-a-transaction-vb/_static/image14.png))
 

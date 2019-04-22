@@ -12,7 +12,7 @@ ms.openlocfilehash: fd0914ed62a280fea290b9f1b150fc25c8ed6d40
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385328"
 ---
 # <a name="deploying-database-role-memberships-to-test-environments"></a>將資料庫角色成員資格部署到測試環境

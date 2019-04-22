@@ -12,7 +12,7 @@ ms.openlocfilehash: a93835e685716b3be59023b9f84a006e38f48e89
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380443"
 ---
 # <a name="logging-in-using-external-sites-in-an-aspnet-web-pages-razor-site"></a>使用 ASP.NET Web Pages (Razor) 網站中的外部網站登入

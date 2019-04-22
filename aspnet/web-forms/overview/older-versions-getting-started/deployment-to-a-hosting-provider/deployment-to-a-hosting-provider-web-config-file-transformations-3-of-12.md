@@ -12,7 +12,7 @@ ms.openlocfilehash: 2b289099f7f9a928b2d63a09ac5ccd685d9d4386
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406521"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-webconfig-file-transformations---3-of-12"></a>部署 ASP.NET Web 應用程式與 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer:Web.Config 檔案轉換為 3 / 12

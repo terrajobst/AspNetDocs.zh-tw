@@ -12,7 +12,7 @@ ms.openlocfilehash: d6e638a9a0028961045b3230927e6e3e95378317
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385861"
 ---
 # <a name="how-do-i-use-the-ftpwebrequest-class-to-create-an-ftp-connection-to-a-ftp-server"></a>[How Do i:]使用 FtpWebRequest 類別建立到 FTP 伺服器的 FTP 連線

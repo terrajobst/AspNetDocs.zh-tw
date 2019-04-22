@@ -12,7 +12,7 @@ ms.openlocfilehash: 2ba210d8c541c6c330dda74706470fa73a81474a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379478"
 ---
 # <a name="part-8-shopping-cart-with-ajax-updates"></a>第 8 部分：購物車與 Ajax 更新
@@ -54,7 +54,7 @@ ms.locfileid: "59379478"
 
 因為我們不想要要求使用者登入帳戶，只是為了將項目加入購物車，我們會將使用者指派暫時的唯一識別碼 （使用 GUID 或全域唯一識別碼） 時存取購物車。 我們將會儲存這個使用 ASP.NET 工作階段類別的識別碼。
 
-*注意:在 ASP.NET 工作階段是方便的地方來儲存使用者專屬資訊到期後他們離開網站。 雖然不當使用工作階段狀態可以有較大的網站上的效能影響，我們淺使用適用於示範用途。*
+*注意：在 ASP.NET 工作階段是方便的地方來儲存使用者專屬資訊到期後他們離開網站。雖然不當使用工作階段狀態可以有較大的網站上的效能影響，我們淺使用適用於示範用途。*
 
 ShoppingCart 類別會公開下列方法：
 

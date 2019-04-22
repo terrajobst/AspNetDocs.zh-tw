@@ -12,7 +12,7 @@ ms.openlocfilehash: f5b7cecdd1a8dbd9be1bd781cec31c53c9096546
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383215"
 ---
 # <a name="deploying-database-projects"></a>部署資料庫專案
@@ -144,7 +144,7 @@ MSDN 上的這些主題會提供更廣泛的指導方針和 Visual Studio 資料
 
 - [Visual Studio 2010 SQL Server 資料庫專案](https://msdn.microsoft.com/library/ff678491.aspx)
 - [管理資料庫變更](https://msdn.microsoft.com/library/aa833404.aspx)
-- [HOW TO：準備資料庫以進行部署從命令提示字元使用 VSDBCMD。EXE](https://msdn.microsoft.com/library/dd193258.aspx)
+- [如何：準備資料庫以進行部署從命令提示字元使用 VSDBCMD。EXE](https://msdn.microsoft.com/library/dd193258.aspx)
 - [資料庫建置和部署的概觀](https://msdn.microsoft.com/library/aa833165.aspx)
 
 > [!div class="step-by-step"]

@@ -12,7 +12,7 @@ ms.openlocfilehash: 84b1c4c562603eddc5b82500700957bc78f236f4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386446"
 ---
 # <a name="an-overview-of-forms-authentication-vb"></a>表單驗證 (VB) 的概觀
@@ -48,7 +48,7 @@ FormsAuthenticationModule 嘗試驗證前執行 UrlAuthorizationModule （和 Fi
 登入頁面的責任是判斷使用者的認證是否有效以及，若是如此，若要建立表單驗證票證，並將使用者重新導向回到頁面他們嘗試瀏覽。 驗證票證會包含在後續的要求，該網站，FormsAuthenticationModule 用來識別使用者的頁面。
 
 
-[![T他的表單驗證工作流程](an-overview-of-forms-authentication-vb/_static/image2.png)](an-overview-of-forms-authentication-vb/_static/image1.png)
+[![表單驗證工作流程](an-overview-of-forms-authentication-vb/_static/image2.png)](an-overview-of-forms-authentication-vb/_static/image1.png)
 
 **圖 01**:表單驗證工作流程 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image3.png))
 
@@ -85,7 +85,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 > Visual Studio 支援兩種專案管理模式：網站專案和 Web 應用程式專案。 網站專案會缺少專案檔中，而 Web 應用程式專案模擬專案架構在 Visual Studio.NET 2002年/2003年-它們包含在專案檔和專案的原始程式碼編譯成單一組件，都會放在 /bin 資料夾。 Visual Studio 2005 一開始只支援的網站專案，雖然 Web 應用程式專案模型已重新引入含 Service Pack 1;Visual Studio 2008 提供了這兩個專案模型。 Visual Web Developer 2005 和 2008年版本，不過，僅支援網站專案。 我將使用的網站專案模型。 如果您正在使用非 Express edition，而且想要使用[Web 應用程式專案模型](https://msdn.microsoft.com/library/aa730880(vs.80).aspx)相反地，請隨意這樣做，但您看到您的畫面和必須與所採取的步驟之間可能會有些不一致螢幕擷取畫面所示，在這些教學課程中提供的指示。
 
 
-[![Create New File System-Based 網站](an-overview-of-forms-authentication-vb/_static/image5.png)](an-overview-of-forms-authentication-vb/_static/image4.png)
+[![建立新檔案系統為基礎的網站](an-overview-of-forms-authentication-vb/_static/image5.png)](an-overview-of-forms-authentication-vb/_static/image4.png)
 
 **圖 02**:建立 New File System-Based 網站 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image6.png))
 
@@ -95,7 +95,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 接下來，加入名為 Site.master 的根目錄中的站台的新主版頁面。 [主版頁面](https://msdn.microsoft.com/library/wtxbf3hh.aspx)讓網頁開發人員定義可套用至 ASP.NET 網頁的全站台的範本。 主版頁面的主要優點是，站台的整體外觀可以定義在單一位置，藉此讓您輕鬆地更新，或調整網站的版面配置。
 
 
-[![Add 主版頁面名稱為 Site.master 網站](an-overview-of-forms-authentication-vb/_static/image8.png)](an-overview-of-forms-authentication-vb/_static/image7.png)
+[![加入主版頁面名稱為 Site.master 網站](an-overview-of-forms-authentication-vb/_static/image8.png)](an-overview-of-forms-authentication-vb/_static/image7.png)
 
 **圖 03**:將主版頁面名稱為 Site.master 新增至網站 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image9.png))
 
@@ -109,7 +109,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 使用上面輸入的標記，切換至 [設計] 檢視會顯示主版頁面的版面配置。 使用此主版頁面的任何 ASP.NET 頁面會有這個統一的版面配置，能夠指定 MainContent 區域標記。
 
 
-[![T他主要頁面上，當檢視透過 [設計檢視](an-overview-of-forms-authentication-vb/_static/image11.png)](an-overview-of-forms-authentication-vb/_static/image10.png)
+[![主版頁面，檢視透過 [設計] 檢視時](an-overview-of-forms-authentication-vb/_static/image11.png)](an-overview-of-forms-authentication-vb/_static/image10.png)
 
 **圖 04**: 主版頁面中，當檢視透過 設計檢視 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image12.png))
 
@@ -121,12 +121,12 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 接下來，在 [方案總管] 中的專案名稱上按一下滑鼠右鍵，然後選擇加入新的 Web 表單名為 Default.aspx。 此時，檢查選取的主版頁面的核取方塊，並從清單中選擇 Site.master 主版頁面。
 
 
-[![A新增 Default.aspx 頁面選擇 [選取主版頁面的 dd](an-overview-of-forms-authentication-vb/_static/image14.png)](an-overview-of-forms-authentication-vb/_static/image13.png)
+[![加入新的 Default.aspx 頁面，選擇 選取主版頁面](an-overview-of-forms-authentication-vb/_static/image14.png)](an-overview-of-forms-authentication-vb/_static/image13.png)
 
 **圖 05**:加入新 Default.aspx 頁面選擇 選取主版頁面 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image15.png))
 
 
-[![Use Site.master 主版頁面](an-overview-of-forms-authentication-vb/_static/image17.png)](an-overview-of-forms-authentication-vb/_static/image16.png)
+[![使用 Site.master 主版頁面](an-overview-of-forms-authentication-vb/_static/image17.png)](an-overview-of-forms-authentication-vb/_static/image16.png)
 
 **圖 06**:使用 Site.master 主版頁面 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image18.png))
 
@@ -159,7 +159,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 如果您的專案尚未包含 Web.config 檔案，新增一個現在藉由以滑鼠右鍵按一下 方案總管 中的專案名稱，選擇 加入新項目，然後加入 Web 組態檔。
 
 
-[![I您的專案尚未包含 Web.config，f 立即加入它](an-overview-of-forms-authentication-vb/_static/image20.png)](an-overview-of-forms-authentication-vb/_static/image19.png)
+[![如果您的專案尚未包含 Web.config，立即加入它](an-overview-of-forms-authentication-vb/_static/image20.png)](an-overview-of-forms-authentication-vb/_static/image19.png)
 
 **圖 07**:如果您的專案不會不尚未包含 Web.config，現在新增 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image21.png))
 
@@ -191,7 +191,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 讓我們開始進行第一項工作。 將新的 ASP.NET 網頁新增至名為 Login.aspx 的站台的根目錄，並將它與 Site.master 主版頁面產生關聯。
 
 
-[![Add 新 ASP.NET 頁面上名為 Login.aspx](an-overview-of-forms-authentication-vb/_static/image23.png)](an-overview-of-forms-authentication-vb/_static/image22.png)
+[![加入新的 ASP.NET 頁面命名為 Login.aspx](an-overview-of-forms-authentication-vb/_static/image23.png)](an-overview-of-forms-authentication-vb/_static/image22.png)
 
 **圖 08**:加入新 ASP.NET 頁面上名為 Login.aspx ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image24.png))
 
@@ -205,7 +205,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 [!code-aspx[Main](an-overview-of-forms-authentication-vb/samples/sample4.aspx)]
 
 
-[![T他登入頁面包含兩個文字方塊、 核取方塊、 按鈕和標籤](an-overview-of-forms-authentication-vb/_static/image26.png)](an-overview-of-forms-authentication-vb/_static/image25.png)
+[![登入頁面包含兩個文字方塊、 核取方塊、 按鈕和標籤](an-overview-of-forms-authentication-vb/_static/image26.png)](an-overview-of-forms-authentication-vb/_static/image25.png)
 
 **圖 09**:登入頁面包含兩個文字方塊、 核取方塊、 按鈕和標籤 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image27.png))
 
@@ -251,7 +251,7 @@ FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked)
 若要測試登入頁面，請在瀏覽器中造訪。 開始輸入無效的認證，例如有一天的使用者名稱和密碼的錯誤。 按一下 [登入] 按鈕後會發生回傳和 InvalidCredentialsMessage 標籤將會顯示。
 
 
-[![T他 InvalidCredentialsMessage 標籤會顯示當輸入不正確的認證](an-overview-of-forms-authentication-vb/_static/image29.png)](an-overview-of-forms-authentication-vb/_static/image28.png)
+[![InvalidCredentialsMessage 標籤會顯示當輸入不正確的認證](an-overview-of-forms-authentication-vb/_static/image29.png)](an-overview-of-forms-authentication-vb/_static/image28.png)
 
 **圖 10**:InvalidCredentialsMessage 標籤會顯示當輸入不正確的認證 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image30.png))
 
@@ -287,12 +287,12 @@ FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked)
 使用此程式碼就緒之後，請透過瀏覽器瀏覽 Default.aspx。 假設您沒有登入，您會看到登入頁面的連結 （請參閱 圖 11）。 按一下此連結，登入網站。 如我們所見在步驟 3 中，輸入您的認證之後會傳回 default.aspx，但這次頁面會顯示歡迎回來 ！ 訊息 （請參閱 圖 12）。
 
 
-[![W當瀏覽以匿名方式，登入] 連結會顯示](an-overview-of-forms-authentication-vb/_static/image32.png)](an-overview-of-forms-authentication-vb/_static/image31.png)
+[![當瀏覽以匿名方式，登入 連結顯示](an-overview-of-forms-authentication-vb/_static/image32.png)](an-overview-of-forms-authentication-vb/_static/image31.png)
 
 **圖 11**:瀏覽時以匿名方式，會顯示記錄檔中連結 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image33.png))
 
 
-[![A驗證使用者會顯示歡迎回來 ！ 訊息](an-overview-of-forms-authentication-vb/_static/image35.png)](an-overview-of-forms-authentication-vb/_static/image34.png)
+[![已驗證的使用者會顯示歡迎回來 ！訊息](an-overview-of-forms-authentication-vb/_static/image35.png)](an-overview-of-forms-authentication-vb/_static/image34.png)
 
 **圖 12**:已驗證的使用者會顯示歡迎回來 ！ 訊息 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image36.png))
 
@@ -325,7 +325,7 @@ WelcomeBackMessage.Text = "Welcome back, " &amp; User.Identity.Name &amp; "!"
 [圖 13] 顯示這項修改的效果 （當使用者 Scott 身分登入）。
 
 
-[![T他的歡迎訊息會包含目前登入使用者的名稱](an-overview-of-forms-authentication-vb/_static/image38.png)](an-overview-of-forms-authentication-vb/_static/image37.png)
+[![歡迎訊息包含目前記錄中使用者的名稱](an-overview-of-forms-authentication-vb/_static/image38.png)](an-overview-of-forms-authentication-vb/_static/image37.png)
 
 **圖 13**:歡迎訊息會包含目前登入使用者的名稱 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image39.png))
 
@@ -354,7 +354,7 @@ WelcomeBackMessage.Text = "Welcome back, " &amp; User.Identity.Name &amp; "!"
 LoginView 與其他登入相關的控制項位於 工具箱 中的登入 索引標籤中。
 
 
-[![T他 LoginView 控制項，在 [工具箱](an-overview-of-forms-authentication-vb/_static/image41.png)](an-overview-of-forms-authentication-vb/_static/image40.png)
+[![LoginView 控制項，在 [工具箱]](an-overview-of-forms-authentication-vb/_static/image41.png)](an-overview-of-forms-authentication-vb/_static/image40.png)
 
 **圖 14**:LoginView 控制項，在 [工具箱] ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image42.png))
 
@@ -374,7 +374,7 @@ LoginView 的範本可以定義從設計工具或宣告式標記。 從 Visual S
 添加這 Site.master 主版頁面，在我們的網站中的每個頁面會顯示不同的訊息取決於是否已驗證使用者。 圖 15 顯示當使用者 Jisun 透過瀏覽器瀏覽的 Default.aspx 頁面。 歡迎回來，也就是 Jisun 訊息會重複兩次： 一次是在 （透過我們剛才加入的 LoginView 控制項） 在左側的主版頁面的 [導覽] 區段，一次在 Default.aspx 的內容 （透過面板控制項和程式設計邏輯） 的區域。
 
 
-[![T他 LoginView 控制項顯示歡迎畫面後，Jisun。](an-overview-of-forms-authentication-vb/_static/image44.png)](an-overview-of-forms-authentication-vb/_static/image43.png)
+[![LoginView 控制項顯示歡迎回來 Jisun。](an-overview-of-forms-authentication-vb/_static/image44.png)](an-overview-of-forms-authentication-vb/_static/image43.png)
 
 **圖 15**:LoginView 控制項顯示歡迎回來 Jisun。 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image45.png))
 
@@ -382,7 +382,7 @@ LoginView 的範本可以定義從設計工具或宣告式標記。 從 Visual S
 因為我們新增 LoginView 主版頁面時，它可以出現在我們網站上的每個頁面。 不過，可能有網頁我們不想再顯示此訊息。 一個這類頁面是登入頁面上，，因為登入頁面的連結看起來有位置不對。 因為我們會將 LoginView 控制項置於 ContentPlaceHolder 主版頁面中，我們可以在我們的內容頁來覆寫此預設標記。 開啟 Login.aspx 並移至設計工具。 因為我們未明確定義的內容控制項中的主版頁面中 LoginContent ContentPlaceHolder Login.aspx，登入頁面會針對此 ContentPlaceHolder 顯示主版頁面的預設標記。 您可以看到這透過設計工具-LoginContent ContentPlaceHolder 顯示的預設標記 （LoginView 控制項）。
 
 
-[![T他登入頁面的主版頁面的 LoginContent ContentPlaceHolder 會顯示預設內容](an-overview-of-forms-authentication-vb/_static/image47.png)](an-overview-of-forms-authentication-vb/_static/image46.png)
+[![登入頁面顯示的預設內容的主版頁面的 LoginContent ContentPlaceHolder](an-overview-of-forms-authentication-vb/_static/image47.png)](an-overview-of-forms-authentication-vb/_static/image46.png)
 
 **圖 16**:登入頁面會顯示預設內容的主版頁面的 LoginContent ContentPlaceHolder ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image48.png))
 
@@ -396,7 +396,7 @@ LoginView 的範本可以定義從設計工具或宣告式標記。 從 Visual S
 [圖 17] 顯示當進行這項變更後，從瀏覽器瀏覽的 Login.aspx 頁面。 請注意，沒有陌生人或歡迎您再次啟用，沒有 Hello*使用者名稱*左側導覽中的訊息&lt;div&gt;因為沒有瀏覽 Default.aspx 時。
 
 
-[![T他登入頁面會隱藏預設 LoginContent ContentPlaceHolder 的標記](an-overview-of-forms-authentication-vb/_static/image50.png)](an-overview-of-forms-authentication-vb/_static/image49.png)
+[![登入頁面會隱藏預設 LoginContent ContentPlaceHolder 標記](an-overview-of-forms-authentication-vb/_static/image50.png)](an-overview-of-forms-authentication-vb/_static/image49.png)
 
 **圖 17**:登入頁面會隱藏預設 LoginContent ContentPlaceHolder 的標記 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image51.png))
 
@@ -432,7 +432,7 @@ LoginStatus 超出 LoginView 控制項，因為它會顯示匿名和已驗證的
 **圖 18**:Default.aspx 顯示歡迎畫面上一步，Jisun 沿著與登出 LinkButton ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image54.png))
 
 
-[![L顯示 [歡迎使用，以及登入 LinkButton 陌生人 ogout.aspx](an-overview-of-forms-authentication-vb/_static/image56.png)](an-overview-of-forms-authentication-vb/_static/image55.png)
+[![Logout.aspx 顯示歡迎畫面，以及登入 LinkButton 陌生人](an-overview-of-forms-authentication-vb/_static/image56.png)](an-overview-of-forms-authentication-vb/_static/image55.png)
 
 **圖 19**:Logout.aspx 顯示歡迎畫面，以及登入 LinkButton 陌生人 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image57.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: c55bbeb383b15f4dc9cb95d25905cade1e8c5c29
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418894"
 ---
 # <a name="adding-animation-to-a-control-vb"></a>將動畫新增至控制項 (VB)
@@ -72,7 +72,7 @@ ms.locfileid: "59418894"
 當您執行此指令碼時，面板會顯示，而且在一個半秒內淡出。
 
 
-[![T他面板漸淡](adding-animation-to-a-control-vb/_static/image2.png)](adding-animation-to-a-control-vb/_static/image1.png)
+[![面板淡出](adding-animation-to-a-control-vb/_static/image2.png)](adding-animation-to-a-control-vb/_static/image1.png)
 
 面板淡出 ([按一下以檢視完整大小的影像](adding-animation-to-a-control-vb/_static/image3.png))
 

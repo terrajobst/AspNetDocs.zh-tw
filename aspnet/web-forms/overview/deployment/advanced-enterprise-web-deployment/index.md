@@ -12,7 +12,7 @@ ms.openlocfilehash: 0d3a356aafcce499f50d3a5d3b98f44ca5643ede
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417971"
 ---
 # <a name="aspnet-4---enterprise-deployment-series-4-advanced-topics"></a>ASP.NET 4 - 企業部署系列 4 進階主題
@@ -24,8 +24,8 @@ ms.locfileid: "59417971"
 - [執行 "What If" 部署](performing-a-what-if-deployment.md)
 - [自訂多個環境的資料庫部署](customizing-database-deployments-for-multiple-environments.md)
 - [將資料庫角色成員資格部署到測試環境](deploying-database-role-memberships-to-test-environments.md)
-- [將成員資格資料庫部署到企業環境](deploying-membership-databases-to-enterprise-environments.md)
-- [從部署中排除檔案與資料夾](excluding-files-and-folders-from-deployment.md)
-- [使用 Web Deploy 讓 Web 應用程式離線](taking-web-applications-offline-with-web-deploy.md)
+- [將成員資格資料庫部署至企業環境](deploying-membership-databases-to-enterprise-environments.md)
+- [從部署中排除檔案和資料夾](excluding-files-and-folders-from-deployment.md)
+- [使用 Web 部署讓 Web 應用程式離線](taking-web-applications-offline-with-web-deploy.md)
 - [從 MSBuild 專案檔執行 Windows PowerShell 指令碼](running-windows-powershell-scripts-from-msbuild-project-files.md)
-- [針對封裝程序進行疑難排解](troubleshooting-the-packaging-process.md)
+- [疑難排解封裝程序](troubleshooting-the-packaging-process.md)

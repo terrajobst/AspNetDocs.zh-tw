@@ -12,7 +12,7 @@ ms.openlocfilehash: 078382191595d1f65b5ebe9d0de8d41cd70e376d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419882"
 ---
 # <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>使用 Glimpse 分析 ASP.NET MVC 應用程式以對其進行偵錯

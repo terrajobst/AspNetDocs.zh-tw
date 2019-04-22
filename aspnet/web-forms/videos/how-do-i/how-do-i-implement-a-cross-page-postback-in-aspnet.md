@@ -12,7 +12,7 @@ ms.openlocfilehash: a98274a154691e3e0b6c5ff57b57bca1ef57ba6b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381433"
 ---
 # <a name="how-do-i-implement-a-cross-page-postback-in-aspnet"></a>[How Do i:]在 ASP.NET 中實作跨網頁回傳

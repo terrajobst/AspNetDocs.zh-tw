@@ -12,7 +12,7 @@ ms.openlocfilehash: 116c557ad0d6c158f983da75668e634c9eb9747c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379583"
 ---
 # <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>將使用 Entity Framework 4.0 ASP.NET 4 Web 應用程式中的效能最大化

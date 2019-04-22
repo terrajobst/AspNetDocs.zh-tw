@@ -12,7 +12,7 @@ ms.openlocfilehash: 9512685672e42091e7be11c5710a2434ca8b0488
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392413"
 ---
 # <a name="deploying-your-site-using-visual-studio-c"></a>使用 Visual Studio 部署您的網站 (C#)
@@ -45,7 +45,7 @@ Visual Studio 複製網站工具是獨立的 FTP 用戶端類似的功能。 簡
 啟動複製網站工具專案，依序按一下 [方案總管] （[圖 1] 中，圓框此圖示）; 中的複製網站圖示或者，您也可以從 [網站] 功能表中選取複製網站選項。 兩種方法會啟動 圖 1 所示複製網站使用者介面只有 圖 1 中的左的窗格會填入，因為我們尚未連線到遠端伺服器。
 
 
-[![T他複製網站工具的使用者介面是分割成兩個窗格](deploying-your-site-using-visual-studio-cs/_static/image2.png)](deploying-your-site-using-visual-studio-cs/_static/image1.png)
+[![複製網站工具使用者介面是分割成兩個窗格](deploying-your-site-using-visual-studio-cs/_static/image2.png)](deploying-your-site-using-visual-studio-cs/_static/image1.png)
 
 **圖 1**:複製網站工具使用者介面是分割成兩個窗格 ([按一下以檢視完整大小的影像](deploying-your-site-using-visual-studio-cs/_static/image3.png))
 
@@ -62,7 +62,7 @@ Visual Studio 複製網站工具是獨立的 FTP 用戶端類似的功能。 簡
 大部分的 web 主機提供者支援 FTP，但更少提供 FrontPage Server 擴充功能的支援。 基於這個理由，我選擇 FTP 站台 選項，然後輸入連接資訊，如 圖 2 所示。
 
 
-[![S指定目的地網站](deploying-your-site-using-visual-studio-cs/_static/image5.png)](deploying-your-site-using-visual-studio-cs/_static/image4.png)
+[![指定目的地網站](deploying-your-site-using-visual-studio-cs/_static/image5.png)](deploying-your-site-using-visual-studio-cs/_static/image4.png)
 
 **圖 2**:指定目的地網站 ([按一下以檢視完整大小的影像](deploying-your-site-using-visual-studio-cs/_static/image6.png))
 
@@ -72,7 +72,7 @@ Visual Studio 複製網站工具是獨立的 FTP 用戶端類似的功能。 簡
 讓我們新增 新頁面，即可 BookReviewsWSP 專案然後再加以部署，讓我們能夠查看動作中的複製網站工具。 Visual Studio 中建立新的 ASP.NET 網頁，名為的根目錄中`Privacy.aspx`。 已使用主版頁面的頁面`Site.master`並將您網站的隱私權原則新增至這個頁面。 圖 3 顯示 Visual Studio，建立此頁面之後。
 
 
-[![A新的頁面上名為 dd&lt;程式碼&gt;Privacy.aspx&lt;/c o d&gt;到網站的根資料夾](deploying-your-site-using-visual-studio-cs/_static/image8.png)](deploying-your-site-using-visual-studio-cs/_static/image7.png)
+[![新增新的頁面上名為&lt;程式碼&gt;Privacy.aspx&lt;/c o d&gt;到網站的根資料夾](deploying-your-site-using-visual-studio-cs/_static/image8.png)](deploying-your-site-using-visual-studio-cs/_static/image7.png)
 
 **圖 3**:新增新的頁面上名為`Privacy.aspx`網站的根資料夾 ([按一下以檢視完整大小的影像](deploying-your-site-using-visual-studio-cs/_static/image9.png))
 
@@ -80,7 +80,7 @@ Visual Studio 複製網站工具是獨立的 FTP 用戶端類似的功能。 簡
 接下來，回到複製網站使用者介面。 如 [圖 4] 所示，左的窗格現在會包含新的檔案-`Policy.aspx`和`Policy.aspx.cs`。 不僅如此，這些檔案會以箭號圖示和狀態的新密碼，指出它們存在本機站台上，但不是能在遠端站台的方式標示。
 
 
-[![T他複製網站工具包含 [新增&lt;程式碼&gt;Privacy.aspx&lt;/c o d&gt;於它的左窗格中的頁面](deploying-your-site-using-visual-studio-cs/_static/image11.png)](deploying-your-site-using-visual-studio-cs/_static/image10.png)
+[![複製網站工具包含 新增&lt;程式碼&gt;Privacy.aspx&lt;/c o d&gt;於它的左窗格中的頁面](deploying-your-site-using-visual-studio-cs/_static/image11.png)](deploying-your-site-using-visual-studio-cs/_static/image10.png)
 
 **圖 4**:複製網站工具包含 新增`Privacy.aspx`於它的左窗格中的頁面 ([按一下以檢視完整大小的影像](deploying-your-site-using-visual-studio-cs/_static/image12.png))
 
@@ -90,7 +90,7 @@ Visual Studio 複製網站工具是獨立的 FTP 用戶端類似的功能。 簡
 列出新的檔案，以及複製網站工具會反白顯示不同的本機和遠端站台之間的任何檔案。 若要查看此動作，請返回`Privacy.aspx`頁面上，並新增更多的幾個字隱私權原則。 儲存頁面，然後返回複製網站工具。 如 [圖 5] 所示，`Privacy.aspx`的左窗格中的頁面具有的狀態為已變更，指出它與遠端站台不同步。
 
 
-[![T他複製網站工具指出&lt;程式碼&gt;Privacy.aspx&lt;/c o d&gt;頁面已變更](deploying-your-site-using-visual-studio-cs/_static/image14.png)](deploying-your-site-using-visual-studio-cs/_static/image13.png)
+[![複製網站工具指出&lt;程式碼&gt;Privacy.aspx&lt;/c o d&gt;頁面已變更](deploying-your-site-using-visual-studio-cs/_static/image14.png)](deploying-your-site-using-visual-studio-cs/_static/image13.png)
 
 **圖 5**:複製網站工具指出`Privacy.aspx`已變更頁面 ([按一下以檢視完整大小的影像](deploying-your-site-using-visual-studio-cs/_static/image15.png))
 
@@ -117,7 +117,7 @@ Visual Studio 複製網站工具是獨立的 FTP 用戶端類似的功能。 簡
 另外還有一個選項來上傳的內容`App_Data`資料夾。
 
 
-[![S指定目的地網站](deploying-your-site-using-visual-studio-cs/_static/image17.png)](deploying-your-site-using-visual-studio-cs/_static/image16.png)
+[![指定目的地網站](deploying-your-site-using-visual-studio-cs/_static/image17.png)](deploying-your-site-using-visual-studio-cs/_static/image16.png)
 
 **圖 6**:指定目的地網站 ([按一下以檢視完整大小的影像](deploying-your-site-using-visual-studio-cs/_static/image18.png))
 
@@ -127,7 +127,7 @@ Visual Studio 複製網站工具是獨立的 FTP 用戶端類似的功能。 簡
 發行作業完成後，圖 7 顯示 FTP 站台上的檔案。 請注意，只有標記頁面和必要伺服器端和用戶端的支援檔案已上傳。
 
 
-[![O只限 （) 所需的檔案發行到生產環境](deploying-your-site-using-visual-studio-cs/_static/image20.png)](deploying-your-site-using-visual-studio-cs/_static/image19.png)
+[![只有所需的檔案發行到生產環境](deploying-your-site-using-visual-studio-cs/_static/image20.png)](deploying-your-site-using-visual-studio-cs/_static/image19.png)
 
 **圖 7**:只需要檔案已發行至實際執行環境 ([按一下以檢視完整大小的影像](deploying-your-site-using-visual-studio-cs/_static/image21.png))
 

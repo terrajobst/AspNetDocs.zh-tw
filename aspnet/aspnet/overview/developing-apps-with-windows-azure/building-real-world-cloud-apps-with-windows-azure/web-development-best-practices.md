@@ -12,7 +12,7 @@ ms.openlocfilehash: 1b9c7bacb37cc4487fb3af392a6048021679718d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396729"
 ---
 # <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>Web 開發最佳作法 （使用 Azure 建置真實世界的雲端應用程式）

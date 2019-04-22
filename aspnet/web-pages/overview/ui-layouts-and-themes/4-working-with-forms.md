@@ -12,7 +12,7 @@ ms.openlocfilehash: 680739cbcf54bc9ca7a3bd8167d043ff537eaad5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417529"
 ---
 # <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>使用 ASP.NET Web Pages (Razor) 網站中的 HTML 表單

@@ -12,7 +12,7 @@ ms.openlocfilehash: 8292fd43ffa2bc66b4daa8f0fc09569226d90bff
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379556"
 ---
 # <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>使用 ASP.NET MVC 4 中的非同步方法
@@ -166,7 +166,7 @@ ASP.NET MVC 4[控制器](https://msdn.microsoft.com/library/system.web.mvc.contr
 
     - 開啟 IIS 管理員，並瀏覽至 [應用程式集區] 窗格。
     - 目標應用程式集區上按一下滑鼠右鍵，然後選取**進階設定**。  
-        ![進階](using-asynchronous-methods-in-aspnet-mvc-4/_static/image4.png)
+        ![advanced](using-asynchronous-methods-in-aspnet-mvc-4/_static/image4.png)
     - 在 **進階設定**  對話方塊中，變更*佇列長度*從 1000 到 5000。  
         ![佇列長度](using-asynchronous-methods-in-aspnet-mvc-4/_static/image5.png)  
   

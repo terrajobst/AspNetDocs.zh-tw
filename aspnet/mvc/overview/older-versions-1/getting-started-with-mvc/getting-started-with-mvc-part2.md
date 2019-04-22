@@ -12,7 +12,7 @@ ms.openlocfilehash: 84f9c822f041808184b2c586ce933ba3b24615dc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419830"
 ---
 # <a name="adding-a-controller"></a>新增控制器
@@ -40,7 +40,7 @@ MVC 代表模型、 檢視、 控制器。 MVC 是開發應用程式，使每個
 
 命名您新的控制站 」 HelloWorldController"，並按一下 [新增]。
 
-[![Add [控制器] 對話方塊中](getting-started-with-mvc-part2/_static/image4.png)](getting-started-with-mvc-part2/_static/image3.png)
+[![新增控制器 對話方塊](getting-started-with-mvc-part2/_static/image4.png)](getting-started-with-mvc-part2/_static/image3.png)
 
 請注意，在右邊稱為 HelloWorldController.cs 您已建立新的檔案，該檔案現在會在中開啟 [方案總管] **IDE**。
 
@@ -58,13 +58,13 @@ MVC 代表模型、 檢視、 控制器。 MVC 是開發應用程式，使每個
 
 URL 的第一個部分會判斷要執行的控制器類別。 因此 /HelloWorld 會對應至 HelloWorldController 類別。 URL 的第二部分會判斷要執行的類別上的動作方法。 /HelloWorld/Index 會導致要執行的 HelloWorldController 類別的 index （） 方法。 請注意，我們只有造訪上述 /HelloWorld 和索引隱含的方法。 這是因為名為"Index"的方法是將在控制器呼叫，如果沒有明確指定的預設方法。
 
-[![T他是我的預設動作](getting-started-with-mvc-part2/_static/image8.png)](getting-started-with-mvc-part2/_static/image7.png)
+[![這是我的預設動作](getting-started-with-mvc-part2/_static/image8.png)](getting-started-with-mvc-part2/_static/image7.png)
 
 現在，讓我們來瞧`http://localhost:xx/HelloWorld/Welcome.`現在在執行我們歡迎畫面的方法，並將其傳回它的 HTML 字串。
 
 同樣地，/ [Controller] / [ActionName] / [Parameters] 讓控制器是 HelloWorld 和歡迎畫面在此情況下是方法。 我們還參數。
 
-[![T他是在 [歡迎使用動作方法](getting-started-with-mvc-part2/_static/image10.png)](getting-started-with-mvc-part2/_static/image9.png)
+[![這是 歡迎使用動作方法](getting-started-with-mvc-part2/_static/image10.png)](getting-started-with-mvc-part2/_static/image9.png)
 
 讓我們的範例中稍微修改，讓我們也可以將部分資訊從 URL 中，傳遞至我們的控制器，例如像這樣: / HelloWorld/歡迎？ 名稱 = Scott&amp;numtimes = 4。 變更您的 歡迎使用方法，以包含兩個參數並更新其如下所示。 請注意，我們使用 C# 選擇性參數功能，表示參數 numTimes 應該預設為 1，是否它不傳入。
 

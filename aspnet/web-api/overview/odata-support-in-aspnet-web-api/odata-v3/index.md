@@ -12,7 +12,7 @@ ms.openlocfilehash: fe82cbd43cf374439675ad811586282a1a79f488
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409482"
 ---
 # <a name="supporting-odata-v3-in-aspnet-web-api"></a>ASP.NET Web API 中支援 OData v3

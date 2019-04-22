@@ -12,7 +12,7 @@ ms.openlocfilehash: 4faccca531b330cc52c338bae98fab484de753f9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378997"
 ---
 # <a name="contact-manager"></a>連絡人管理員
@@ -21,16 +21,16 @@ ms.locfileid: "59378997"
 
 
 - [反覆項目 #1 – 建立應用程式 (C#)](iteration-1-create-the-application-cs.md)
-- [反覆項目 #2 – 讓應用程式看起來不錯 (C#)](iteration-2-make-the-application-look-nice-cs.md)
+- [反覆項目 #2 – 美化應用程式外觀 (C#)](iteration-2-make-the-application-look-nice-cs.md)
 - [反覆項目 #3 – 新增表單驗證 (C#)](iteration-3-add-form-validation-cs.md)
 - [反覆項目 #4 – 讓應用程式鬆散耦合 (C#)](iteration-4-make-the-application-loosely-coupled-cs.md)
 - [反覆項目 #5 – 建立單元測試 (C#)](iteration-5-create-unit-tests-cs.md)
-- [反覆項目 #6 – 使用測試導向開發 (C#)](iteration-6-use-test-driven-development-cs.md)
+- [反覆項目 #6 – 使用測試導向的開發 (C#)](iteration-6-use-test-driven-development-cs.md)
 - [反覆項目 #7 – 新增 Ajax 功能 (C#)](iteration-7-add-ajax-functionality-cs.md)
 - [反覆項目 #1 – 建立應用程式 (VB)](iteration-1-create-the-application-vb.md)
-- [反覆項目 #2 – 讓應用程式看起來不錯 (VB)](iteration-2-make-the-application-look-nice-vb.md)
+- [反覆項目 #2 – 美化應用程式外觀 (VB)](iteration-2-make-the-application-look-nice-vb.md)
 - [反覆項目 #3 – 新增表單驗證 (VB)](iteration-3-add-form-validation-vb.md)
 - [反覆項目 #4 – 讓應用程式鬆散耦合 (VB)](iteration-4-make-the-application-loosely-coupled-vb.md)
 - [反覆項目 #5 – 建立單元測試 (VB)](iteration-5-create-unit-tests-vb.md)
-- [反覆項目 #6 – 使用測試導向開發 (VB)](iteration-6-use-test-driven-development-vb.md)
+- [反覆項目 #6 – 使用測試導向的開發 (VB)](iteration-6-use-test-driven-development-vb.md)
 - [反覆項目 #7 – 新增 Ajax 功能 (VB)](iteration-7-add-ajax-functionality-vb.md)

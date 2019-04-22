@@ -12,7 +12,7 @@ ms.openlocfilehash: b7722d5c282f07b35dd18d08911fa562dae6afc2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387928"
 ---
 # <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
@@ -182,7 +182,7 @@ ASP.NET MVC 4 現在包含建置單一頁面應用程式的重要使用 JavaScri
 
 新的顯示模式功能可讓應用程式選取根據提出要求的瀏覽器的檢視。 例如，如果桌面瀏覽器要求首頁上，應用程式可能使用 Views\Home\Index.cshtml 範本。 如果在行動瀏覽器要求首頁上，應用程式可能會傳回 Views\Home\Index.mobile.cshtml 範本。
 
-版面配置和部分可以也覆寫特定瀏覽器類型。 例如: 
+版面配置和部分可以也覆寫特定瀏覽器類型。 例如：
 
 - 如果您的 Views\Shared 資料夾同時包含\_Layout.cshtml 和\_Layout.mobile.cshtml 範本，根據預設，應用程式會使用\_Layout.mobile.cshtml與行動瀏覽器要求期間\_Layout.cshtml 期間其他要求。
 - 如果資料夾同時包含\_MyPartial.cshtml 和\_MyPartial.mobile.cshtml，指示@Html.Partial(「\_MyPartial") 會轉譯\_MyPartial.mobile.cshtml 期間從行動裝置的要求瀏覽器和\_MyPartial.cshtml 期間其他要求。

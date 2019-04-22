@@ -12,7 +12,7 @@ ms.openlocfilehash: a57464c575e5ababdcf52593fae0cc6d2dc055e3
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394129"
 ---
 # <a name="how-do-i-display-unknown-datatypes"></a>如何顯示未知的資料類型

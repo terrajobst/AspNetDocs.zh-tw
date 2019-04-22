@@ -13,7 +13,7 @@ ms.openlocfilehash: 6f8b926c78097b68e6a159f2fdd30e7b8a6477a0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395169"
 ---
 # <a name="developing-aspnet-apps-with-azure-active-directory"></a>使用 Azure Active Dirctory 開發 ASP.NET 應用程式
@@ -142,7 +142,7 @@ Microsoft ASP.NET 工具的 Azure Active Directory 簡化上裝載的 web 應用
 
 ## <a name="more-information"></a>更多資訊
 
-- [深入探討：Azure 網站和組織使用 Azure AD 的驗證](http://rickrainey.com/2014/08/19/deep-dive-azure-websites-and-organizational-authentication-using-azure-ad/)
+- [深入了解：Azure 網站和組織使用 Azure AD 的驗證](http://rickrainey.com/2014/08/19/deep-dive-azure-websites-and-organizational-authentication-using-azure-ad/)
 - [Azure AD Graph API 概觀](https://msdn.microsoft.com/library/azure/hh974476.aspx)
 - [在 Azure AD 中的驗證案例](https://msdn.microsoft.com/library/azure/dn499820.aspx)
 - [GitHub 上的 azure AD 程式碼範例](https://github.com/AzureADSamples)

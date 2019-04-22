@@ -12,7 +12,7 @@ ms.openlocfilehash: 883b5c3ad39922ddd51ea1d07b8d52d1c74d2153
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384288"
 ---
 # <a name="general-iis-tips"></a>IIS 的一般提示
@@ -23,7 +23,7 @@ ms.locfileid: "59384288"
 - [在共用主機中開發和部署](developing-and-deploying-in-a-shared-hosting.md)
 - [使用 IIS7 委派管理員](working-with-iis7-deligated-admin.md)
 - [委派管理的專屬功能](feature-specific-delegated-management.md)
-- [針對生產環境 ASP.NEz 應用程式進行疑難排解](troubleshooting-production-aspnet-apps.md)
+- [針對生產環境 ASP.NET 應用程式進行疑難排解](troubleshooting-production-aspnet-apps.md)
 - [使用 IIS7 管理員建立網站](creating-a-site-with-iis7-manager.md)
 - [安裝 FTP7](installing-ftp7.md)
 - [位元速率節流設定](bit-rate-throttling.md)

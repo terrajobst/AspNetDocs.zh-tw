@@ -12,7 +12,7 @@ ms.openlocfilehash: 63efa46410e821947c6b0ee4ecd0c790fbf793e3
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380089"
 ---
 # <a name="creating-a-business-logic-layer-vb"></a>建立商業邏輯層 (VB)
@@ -129,7 +129,7 @@ ProductsBLL.vb
 也可以使用 ObjectDataSource，以宣告方式 （與可以使用具類型資料集） 存取的 BLL 類別。 我們將在下列教學課程中討論更詳細地 ObjectDataSource。
 
 
-[![T他的產品清單會顯示在 [GridView](creating-a-business-logic-layer-vb/_static/image4.png)](creating-a-business-logic-layer-vb/_static/image3.png)
+[![在 GridView 中顯示產品清單](creating-a-business-logic-layer-vb/_static/image4.png)](creating-a-business-logic-layer-vb/_static/image3.png)
 
 **圖 3**:在 GridView 中顯示產品清單 ([按一下以檢視完整大小的影像](creating-a-business-logic-layer-vb/_static/image5.png))
 
@@ -148,7 +148,7 @@ ProductsBLL.vb
 除了強制執行這些規則，在資料庫上的其應該也會強制執行資料集層級。 事實上，已會擷取欄位長度和值是必要或選擇性針對每個 DataTable DataColumns 組。 若要查看自動提供的現有欄位層級驗證，請移至 DataSet 設計工具，從 Datatable 的其中一個選取欄位，然後移至 屬性 視窗。 如 圖 4 所示`QuantityPerUnit`中的 DataColumn`ProductsDataTable`最大長度為 20 個字元，但允許`NULL`值。 如果我們嘗試設定`ProductsDataRow`的`QuantityPerUnit`屬性設為超過 20 個字元的字串值`ArgumentException`就會擲回。
 
 
-[![T他 DataColumn 提供基本欄位層級驗證](creating-a-business-logic-layer-vb/_static/image7.png)](creating-a-business-logic-layer-vb/_static/image6.png)
+[![DataColumn 提供基本欄位層級驗證](creating-a-business-logic-layer-vb/_static/image7.png)](creating-a-business-logic-layer-vb/_static/image6.png)
 
 **圖 4**:DataColumn 提供基本欄位層級驗證 ([按一下以檢視完整大小的影像](creating-a-business-logic-layer-vb/_static/image8.png))
 
@@ -156,7 +156,7 @@ ProductsBLL.vb
 不幸的是，我們不能指定界限檢查，例如`UnitPrice`值必須大於或等於零，透過 [屬性] 視窗。 若要提供這種類型的欄位層級驗證我們要建立的 DataTable 的事件處理常式[ColumnChanging](https://msdn.microsoft.com/library/system.data.datatable.columnchanging%28VS.80%29.aspx)事件。 中所述[前述教學課程](creating-a-data-access-layer-vb.md)，具類型資料集所建立的資料集、 Datatable 和 DataRow 物件可以透過使用部分類別擴充。 使用我們可以建立這項技術`ColumnChanging`事件處理常式`ProductsDataTable`類別。 建立中的類別著手`App_Code`名為資料夾`ProductsDataTable.ColumnChanging.vb`。
 
 
-[![Add 至 App_Code 資料夾的新類別](creating-a-business-logic-layer-vb/_static/image10.png)](creating-a-business-logic-layer-vb/_static/image9.png)
+[![將新類別加入至 App_Code 資料夾](creating-a-business-logic-layer-vb/_static/image10.png)](creating-a-business-logic-layer-vb/_static/image9.png)
 
 **圖 5**:將新類別加入`App_Code`資料夾 ([按一下以檢視完整大小的影像](creating-a-business-logic-layer-vb/_static/image11.png))
 

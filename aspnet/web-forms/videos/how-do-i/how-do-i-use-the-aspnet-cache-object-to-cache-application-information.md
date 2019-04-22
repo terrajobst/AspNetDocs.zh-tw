@@ -12,7 +12,7 @@ ms.openlocfilehash: 56b14586b37bb8fc6cf544dc342ac8aa3b8a2c47
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380505"
 ---
 # <a name="how-do-i-use-the-aspnet-cache-object-to-cache-application-information"></a>[如何]:使用 ASP.NET 快取物件快取應用程式資訊

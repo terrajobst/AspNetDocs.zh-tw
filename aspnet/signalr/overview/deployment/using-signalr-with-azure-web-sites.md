@@ -12,7 +12,7 @@ ms.openlocfilehash: 531aba3753bf97b8bf1763a22615fb811b375286
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379140"
 ---
 # <a name="using-signalr-with-web-apps-in-azure-app-service"></a>在 Azure App Service 中搭配 Web 應用程式使用 SignalR

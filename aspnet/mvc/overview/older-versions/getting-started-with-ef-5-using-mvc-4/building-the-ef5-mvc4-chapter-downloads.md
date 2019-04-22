@@ -12,7 +12,7 @@ ms.openlocfilehash: e90eebaba3645802f318dbf449c3ec734265a092
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381941"
 ---
 # <a name="building-the-chapter-downloads-for-the-ef-5-mvc-4-tutorials"></a>建置章節下載 EF 5 MVC 4 的教學課程
@@ -47,7 +47,7 @@ ms.locfileid: "59381941"
     > [!NOTE]
     > 如果您收到下列錯誤：  
     >   
-    >  *詞彙 更新資料庫 ' 無法辨識為 cmdlet、 函式、 指令碼檔案或可執行程式的名稱。 請檢查名稱的拼字，或如果包含路徑的話，確認路徑正確，然後再試一次。*  
+    >  *詞彙 更新資料庫 ' 無法辨識為 cmdlet、 函式、 指令碼檔案或可執行程式的名稱。請檢查名稱的拼字，或如果包含路徑的話，確認路徑正確，然後再試一次。*  
     > 結束並重新啟動 Visual Studio。
 
     每個移轉將會執行，則會執行 seed 方法。 您現在可以執行應用程式。

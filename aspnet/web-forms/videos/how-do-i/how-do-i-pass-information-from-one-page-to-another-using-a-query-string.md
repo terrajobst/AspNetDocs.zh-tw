@@ -12,7 +12,7 @@ ms.openlocfilehash: cc52592bbb377e9f04e56f6cc1f02d16a271d158
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416996"
 ---
 # <a name="how-do-i-pass-information-from-one-page-to-another-using-a-query-string"></a>[How Do i:]從一頁的資訊傳遞到另一個使用查詢字串
