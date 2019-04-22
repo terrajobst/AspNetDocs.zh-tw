@@ -12,7 +12,7 @@ ms.openlocfilehash: b75057f3128662a9bbdd641dc0a7c1ba09fbbe87
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388188"
 ---
 # <a name="creating-a-database"></a>建立資料庫
@@ -32,11 +32,11 @@ ms.locfileid: "59388188"
 
 在 [新增連接] 對話方塊中，輸入 「。 \SQLEXPRESS 」 為您的伺服器名稱，並輸入 「 Movies 」 做為您的新資料庫的名稱。
 
-[![Add 連接對話方塊](getting-started-with-mvc-part4/_static/image4.png)](getting-started-with-mvc-part4/_static/image3.png)
+[![[新增連接] 對話方塊](getting-started-with-mvc-part4/_static/image4.png)](getting-started-with-mvc-part4/_static/image3.png)
 
 按一下 [確定]，並將系統要求您想要建立該資料庫。 選取 [是]。
 
-[![Create 電影嗎？](getting-started-with-mvc-part4/_static/image6.png)](getting-started-with-mvc-part4/_static/image5.png)
+[![建立電影嗎？](getting-started-with-mvc-part4/_static/image6.png)](getting-started-with-mvc-part4/_static/image5.png)
 
 現在您已經在伺服器總管 中有空白的資料庫。
 
@@ -44,7 +44,7 @@ ms.locfileid: "59388188"
 
 以滑鼠右鍵按一下資料表，然後按一下 加入資料表。 資料表設計工具將會出現。 加入資料行的識別碼、 標題、 ReleaseDate、 內容類型和價格。 以滑鼠右鍵按一下 識別碼 欄，並按一下 設定主索引鍵。 以下是看起來像什麼我設計區域。
 
-[![D資料庫資料表編輯器](getting-started-with-mvc-part4/_static/image9.png)](getting-started-with-mvc-part4/_static/image8.png)
+[![資料庫資料表編輯器](getting-started-with-mvc-part4/_static/image9.png)](getting-started-with-mvc-part4/_static/image8.png)
 
 此外，選取 [識別碼] 資料行和下列資料行屬性底下將 「 身分識別規格 」 變更為 「 是 」。
 
@@ -52,11 +52,11 @@ ms.locfileid: "59388188"
 
 當您有完成工作時，按一下工具列中的 [儲存] 圖示，或選取檔案 |從功能表中，儲存並命名您的資料表 」**電影**」 （個別）。 我們有資料庫和資料表 ！
 
-[![C選擇名稱](getting-started-with-mvc-part4/_static/image13.png)](getting-started-with-mvc-part4/_static/image12.png)
+[![選擇名稱](getting-started-with-mvc-part4/_static/image13.png)](getting-started-with-mvc-part4/_static/image12.png)
 
 返回 伺服器總管 中以滑鼠右鍵按一下 影片 資料表中，然後選取 顯示資料表資料 」。 因此我們的資料庫有一些資料，請輸入幾個電影。
 
-[![D編輯資料表的資料庫](getting-started-with-mvc-part4/_static/image15.png)](getting-started-with-mvc-part4/_static/image14.png)
+[![資料庫表格編輯](getting-started-with-mvc-part4/_static/image15.png)](getting-started-with-mvc-part4/_static/image14.png)
 
 ## <a name="creating-a-model"></a>建立模型
 
@@ -72,11 +72,11 @@ ms.locfileid: "59388188"
 
 在新快顯對話方塊中，選取 從資料庫產生。 我們剛了資料庫，因為我們只需要告訴我們新的資料庫和其資料表中的 Entity Framework。 按一下 下一步儲存我們在我們的 web 應用程式組態中的資料庫連接。 現在，請檢查資料表與電影核取方塊，然後按一下 [完成]。
 
-[![E實體所耗用的資料模型精靈](getting-started-with-mvc-part4/_static/image21.png)](getting-started-with-mvc-part4/_static/image20.png)
+[![實體資料模型精靈](getting-started-with-mvc-part4/_static/image21.png)](getting-started-with-mvc-part4/_static/image20.png)
 
 現在我們可以看到我們在 Entity Framework Designer 中的新電影資料表，並從程式碼中存取。
 
-[![Movies-Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part4/_static/image23.png)](getting-started-with-mvc-part4/_static/image22.png)
+[![影片-Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part4/_static/image23.png)](getting-started-with-mvc-part4/_static/image22.png)
 
 在設計介面上，您可以看到 「 電影 」 類別。 此類別會對應到在資料庫中之 「 電影 」 資料表，並在其中每個屬性會對應至資料表的資料行。 「 電影 」 類別的每個執行個體將會對應到在 「 電影 」 資料表中的資料列。
 

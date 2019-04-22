@@ -12,7 +12,7 @@ ms.openlocfilehash: 6b911b1f32dcfba810312a19e1764ec51c3c2255
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389059"
 ---
 # <a name="security-authentication-and-authorization-in-aspnet-web-forms"></a>安全性、 驗證和授權，在 ASP.NET Web Form 中
@@ -20,5 +20,5 @@ ms.locfileid: "59389059"
 > 若要讓使用者登入您的網站 （並選擇性地指派給角色） 如何使用登入表單] 或 [Windows 驗證。
 
 
-- [以使用者註冊、電子郵件確認和密碼重設建立安全的 ASP.NET Web Forms 應用程式 (C#)](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset.md)
-- [使用 SMS 雙因素驗證建立 ASP.NET Web Forms 應用程式 (C#)](create-an-aspnet-web-forms-app-with-sms-two-factor-authentication.md)
+- [以使用者註冊、電子郵件確認和密碼重設建立安全的 ASP.NET Web Form 應用程式 (C#)](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset.md)
+- [使用 SMS 雙因素驗證建立 ASP.NET Web Form 應用程式 (C#)](create-an-aspnet-web-forms-app-with-sms-two-factor-authentication.md)

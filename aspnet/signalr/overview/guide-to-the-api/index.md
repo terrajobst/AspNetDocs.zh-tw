@@ -12,7 +12,7 @@ ms.openlocfilehash: 442d8349e0b4d8f57923625533cebecac53c586a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394844"
 ---
 # <a name="signalr-guide-to-the-api"></a>SignalR API 指南
@@ -23,6 +23,6 @@ ms.locfileid: "59394844"
 - [中樞 API 指南 - 伺服器 (C#)](hubs-api-guide-server.md)
 - [中樞 API 指南 - JavaScript 用戶端](hubs-api-guide-javascript-client.md)
 - [中樞 API 指南 - .NET 用戶端 (C#)](hubs-api-guide-net-client.md)
-- [了解及處理 SignalR 的連線存留期事件](handling-connection-lifetime-events.md)
+- [了解和處理 SignalR 的連線存留期事件](handling-connection-lifetime-events.md)
 - [使用 SignalR 的群組](working-with-groups.md)
 - [將 SignalR 使用者對應至連線](mapping-users-to-connections.md)

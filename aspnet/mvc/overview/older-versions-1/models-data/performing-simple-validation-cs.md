@@ -12,7 +12,7 @@ ms.openlocfilehash: 12fe89ec83a33ece2971c8186783326d165cbf79
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388500"
 ---
 # <a name="performing-simple-validation-c"></a>執行簡單的驗證 (C#)
@@ -56,12 +56,12 @@ Html.ValidationMessage() 和 Html.ValidationSummary() 的協助程式由 ASP.NET
 請確定您建置應用程式，再加入的檢視。 否則，清單中的類別不會出現在**檢視資料類別**下拉式清單中。
 
 
-[![T他 [新增專案] 對話方塊中](performing-simple-validation-cs/_static/image1.jpg)](performing-simple-validation-cs/_static/image1.png)
+[![[新增專案] 對話方塊](performing-simple-validation-cs/_static/image1.jpg)](performing-simple-validation-cs/_static/image1.png)
 
 **圖 01**:新增檢視 ([按一下以檢視完整大小的影像](performing-simple-validation-cs/_static/image2.png))
 
 
-[![T他 [新增專案] 對話方塊中](performing-simple-validation-cs/_static/image2.jpg)](performing-simple-validation-cs/_static/image3.png)
+[![[新增專案] 對話方塊](performing-simple-validation-cs/_static/image2.jpg)](performing-simple-validation-cs/_static/image3.png)
 
 **圖 02**:建立強型別檢視 ([按一下以檢視完整大小的影像](performing-simple-validation-cs/_static/image4.png))
 
@@ -79,7 +79,7 @@ Html.ValidationMessage() 協助程式會呼叫每個 HTML 表單欄位旁邊。 
 [圖 3] 頁面會說明遺漏的欄位與無效的值送出表單時，驗證協助程式所呈現的錯誤訊息。
 
 
-[![T他 [新增專案] 對話方塊中](performing-simple-validation-cs/_static/image3.jpg)](performing-simple-validation-cs/_static/image5.png)
+[![[新增專案] 對話方塊](performing-simple-validation-cs/_static/image3.jpg)](performing-simple-validation-cs/_static/image5.png)
 
 **圖 03**:提交問題建立檢視 ([按一下以檢視完整大小的影像](performing-simple-validation-cs/_static/image6.png))
 
@@ -104,7 +104,7 @@ Html.ValidationMessage() 協助程式會呼叫每個 HTML 表單欄位旁邊。 
 如果您送出的 HTML 表單，建立一項產品，且 [價格] 欄位和 [UnitsInStock] 欄位沒有值輸入了無效的值時，您就會得到 [圖 4] 中顯示的驗證訊息。 這些驗證錯誤訊息來自何處？
 
 
-[![T他 [新增專案] 對話方塊中](performing-simple-validation-cs/_static/image4.jpg)](performing-simple-validation-cs/_static/image7.png)
+[![[新增專案] 對話方塊](performing-simple-validation-cs/_static/image4.jpg)](performing-simple-validation-cs/_static/image7.png)
 
 **圖 04**:Prebinding 驗證錯誤 ([按一下以檢視完整大小的影像](performing-simple-validation-cs/_static/image8.png))
 

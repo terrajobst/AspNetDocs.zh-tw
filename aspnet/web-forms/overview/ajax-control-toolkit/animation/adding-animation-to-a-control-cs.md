@@ -12,7 +12,7 @@ ms.openlocfilehash: e4c6bfe1884d3e066c7b27e07e3a069943793bdd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392283"
 ---
 # <a name="adding-animation-to-a-control-c"></a>將動畫新增至控制項 (C#)
@@ -72,7 +72,7 @@ ms.locfileid: "59392283"
 當您執行此指令碼時，面板會顯示，而且在一個半秒內淡出。
 
 
-[![T他面板漸淡](adding-animation-to-a-control-cs/_static/image2.png)](adding-animation-to-a-control-cs/_static/image1.png)
+[![面板淡出](adding-animation-to-a-control-cs/_static/image2.png)](adding-animation-to-a-control-cs/_static/image1.png)
 
 面板淡出 ([按一下以檢視完整大小的影像](adding-animation-to-a-control-cs/_static/image3.png))
 

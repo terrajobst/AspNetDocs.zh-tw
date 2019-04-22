@@ -12,7 +12,7 @@ ms.openlocfilehash: a9a3bf12b721c8f5eec21f3090142e40e74b0b9c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395637"
 ---
 # <a name="filling-a-list-using-cascadingdropdown-c"></a>使用 CascadingDropDown 填滿清單 (C#)
@@ -40,11 +40,11 @@ DropDownList 控制項則需要：
 
 對於此清單中，就會加入 CascadingDropDown 擴充項。 非同步要求會傳送到一項 web 服務，接著會傳回一份要顯示在清單中的項目。 針對此目的，需要設定下列 CascadingDropDown 屬性：
 
-- `ServicePath`:提供的清單項目之 web 服務的 URL
-- `ServiceMethod`:Web 方法提供的清單項目
-- `TargetControlID`:下拉式清單中的識別碼
-- `Category`:提交給 web 方法的呼叫時的類別目錄資訊
-- `PromptText`:以非同步方式從伺服器載入清單資料時顯示的文字
+- `ServicePath`：提供的清單項目之 web 服務的 URL
+- `ServiceMethod`：Web 方法提供的清單項目
+- `TargetControlID`：下拉式清單中的識別碼
+- `Category`：提交給 web 方法的呼叫時的類別目錄資訊
+- `PromptText`：以非同步方式從伺服器載入清單資料時顯示的文字
 
 以下是標記`CascadingDropDown`項目。 C# 和 VB 之間唯一的差別是相關聯的 web 服務的名稱：
 
@@ -61,7 +61,7 @@ JavaScript 程式碼來自`CascadingDropDown`擴充項會呼叫 web 服務方法
 載入瀏覽器頁面，將會觸發要填入三個廠商的清單。
 
 
-[![T他清單自動填入資料](filling-a-list-using-cascadingdropdown-cs/_static/image2.png)](filling-a-list-using-cascadingdropdown-cs/_static/image1.png)
+[![清單會自動填入](filling-a-list-using-cascadingdropdown-cs/_static/image2.png)](filling-a-list-using-cascadingdropdown-cs/_static/image1.png)
 
 自動填滿清單 ([按一下以檢視完整大小的影像](filling-a-list-using-cascadingdropdown-cs/_static/image3.png))
 

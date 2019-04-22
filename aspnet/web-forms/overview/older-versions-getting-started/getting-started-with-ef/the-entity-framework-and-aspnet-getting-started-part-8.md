@@ -12,7 +12,7 @@ ms.openlocfilehash: 0fd943eba4c6d80bba5ca6c4d69cbd3a8927513d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391503"
 ---
 # <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>開始使用 Entity Framework 4.0 Database 中第一次和 ASP.NET 4 Web Form 第 8 節
@@ -120,7 +120,7 @@ ms.locfileid: "59391503"
 
 以上總結這一系列的 Entity Framework 使用者入門教學課程。 取得可協助您了解如何使用 Entity Framework 的更多資源，繼續進行[下一步 的 Entity Framework 教學課程系列的第一個教學課程](../continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)或瀏覽下列網站：
 
-- [Entity Framework 常見問題集 (英文)](http://www.ef-faq.org/introduction.html)
+- [Entity Framework 常見問題集](http://www.ef-faq.org/introduction.html)
 - [Entity Framework 小組部落格](https://blogs.msdn.com/b/adonet/)
 - [MSDN Library 中的 entity Framework](https://msdn.microsoft.com/library/bb399572.aspx)
 - [在 MSDN 資料開發人員中心中的 entity Framework](https://msdn.microsoft.com/data/ef.aspx)

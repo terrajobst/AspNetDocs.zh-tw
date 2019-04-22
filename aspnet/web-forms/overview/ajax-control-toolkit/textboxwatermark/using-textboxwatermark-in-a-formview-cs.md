@@ -12,7 +12,7 @@ ms.openlocfilehash: 10c877e072d5caf23e78f49ebc71387fde20393d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393609"
 ---
 # <a name="using-textboxwatermark-in-a-formview-c"></a>在 FormView 中使用 TextBoxWatermark (C#)
@@ -49,7 +49,7 @@ ms.locfileid: "59393609"
 現在當使用者變更的插入模式`FormView`控制項，在文字欄位的新廠商已預先填入要感謝`TextBoxWatermarkExtender`控制項。 在文字方塊按一下可讓消失了填入文字。
 
 
-[![T他在欄位中的浮水印來自 extender](using-textboxwatermark-in-a-formview-cs/_static/image2.png)](using-textboxwatermark-in-a-formview-cs/_static/image1.png)
+[![在欄位中的浮水印來自擴充項](using-textboxwatermark-in-a-formview-cs/_static/image2.png)](using-textboxwatermark-in-a-formview-cs/_static/image1.png)
 
 在欄位中的浮水印來自擴充項 ([按一下以檢視完整大小的影像](using-textboxwatermark-in-a-formview-cs/_static/image3.png))
 

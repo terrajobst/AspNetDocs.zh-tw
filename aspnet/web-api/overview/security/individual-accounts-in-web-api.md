@@ -12,7 +12,7 @@ ms.openlocfilehash: 29c3670ad7ab93acb0be878e5bd961d0ea446eee
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396223"
 ---
 # <a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>保護 Web API 使用個別帳戶和 ASP.NET Web API 2.2 中的本機登入
@@ -199,10 +199,10 @@ HTTP 回應：
 
 以下是實作這些功能的主要應用程式類別：
 
-- `AccountController`。 提供 Web API 端點以管理使用者帳戶。 `Register`動作是唯一的我們在本教學課程中使用。 在類別上的其他方法可支援密碼重設、 社交登入及其他功能。
+- `AccountController`. 提供 Web API 端點以管理使用者帳戶。 `Register`動作是唯一的我們在本教學課程中使用。 在類別上的其他方法可支援密碼重設、 社交登入及其他功能。
 - `ApplicationUser`定義於 /Models/IdentityModels.cs。 這個類別是成員資格資料庫中的使用者帳戶的 EF 模型。
 - `ApplicationUserManager`定義於 /App\_Start/IdentityConfig.cs 這個類別衍生自[UserManager](https://msdn.microsoft.com/library/dn613290.aspx)和執行在使用者帳戶，例如建立新的使用者，並確認密碼，以及其他等等的作業，並會自動保存資料庫的變更。
-- `ApplicationOAuthProvider`。 此物件插入的 OWIN 中介軟體，並處理中介軟體所引發的事件。 它衍生自[OAuthAuthorizationServerProvider](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx)。
+- `ApplicationOAuthProvider`. 此物件插入的 OWIN 中介軟體，並處理中介軟體所引發的事件。 它衍生自[OAuthAuthorizationServerProvider](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx)。
 
 ![](individual-accounts-in-web-api/_static/image14.png)
 

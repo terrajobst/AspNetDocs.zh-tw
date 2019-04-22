@@ -12,7 +12,7 @@ ms.openlocfilehash: 078614c6e7ba18ac09bbd5e23b90b08c97aee658
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387291"
 ---
 # <a name="build-a-model-with-business-rule-validations"></a>使用商務規則驗證建置模型
@@ -116,7 +116,7 @@ NerdDinner 應用程式中，我們會定義 DinnerRepository 類別具有下列
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample2.cs)]
 
-*注意:在本章稍後我們將從這個類別來擷取 IDinnerRepository 介面，並啟用我們控制站上使用它的相依性插入。 一開始，不過，我們要輕鬆入門，並只使用直接 DinnerRepository 類別。*
+*注意：在本章稍後我們將從這個類別來擷取 IDinnerRepository 介面，並啟用我們控制站上使用它的相依性插入。一開始，不過，我們要輕鬆入門，並只使用直接 DinnerRepository 類別。*
 
 若要實作此類別，我們將我們的 「 模型 」 資料夾上按一下滑鼠右鍵，然後選擇**Add-&gt;新的項目**功能表命令。 在 「 新增新的項目 對話方塊中，我們會選取 「 類別 」 範本，並將檔案命名為"DinnerRepository.cs 」:
 

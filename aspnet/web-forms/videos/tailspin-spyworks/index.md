@@ -12,7 +12,7 @@ ms.openlocfilehash: d30dc8906a72a35d87db40701070fe8c8f71c174
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394116"
 ---
 # <a name="tailspin-spyworks"></a>Tailspin Spyworks
@@ -26,7 +26,7 @@ ms.locfileid: "59394116"
 - [Tailspin Spyworks - 目錄組織](tailspin-spyworks-directory-organization.md)
 - [Tailspin Spyworks - 分類功能表](tailspin-spyworks-category-menu.md)
 - [Tailspin Spyworks - 顯示產品清單](tailspin-spyworks-display-the-product-list.md)
-- [Tailspin Spyworks - 顯示每個產品的詳細資料](tailspin-spyworks-display-per-product-details.md)
+- [Tailspin Spyworks - 顯示每項產品的詳細資料](tailspin-spyworks-display-per-product-details.md)
 - [Tailspin Spyworks - 將項目新增至購物車](tailspin-spyworks-adding-items-to-the-shopping-cart.md)
 - [Tailspin Spyworks - 顯示購物車](tailspin-spyworks-display-shopping-cart.md)
 - [Tailspin Spyworks - 更新購物車](tailspin-spyworks-update-the-shopping-cart.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 58c4654691084b9574283c03c77398cb43f6751a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393466"
 ---
 # <a name="caching-data-at-application-startup-vb"></a>在應用程式啟動時快取資料 (VB)
@@ -119,7 +119,7 @@ Web 應用程式初次啟動時，請執行程式碼，我們需要建立一個�
 > 如果您已經有`Global.asax`檔案在專案中，全域項目類型將不會列在 [加入新項目] 對話方塊中的應用程式類別。
 
 
-[![Add Global.asax 檔案到您的 Web 應用程式 s 根目錄](caching-data-at-application-startup-vb/_static/image4.png)](caching-data-at-application-startup-vb/_static/image3.png)
+[![加入 Web 應用程式的根目錄中的 Global.asax 檔案](caching-data-at-application-startup-vb/_static/image4.png)](caching-data-at-application-startup-vb/_static/image3.png)
 
 **圖 3**:新增`Global.asax`到您的 Web 應用程式 s 根目錄的檔案 ([按一下以檢視完整大小的影像](caching-data-at-application-startup-vb/_static/image5.png))
 
@@ -142,7 +142,7 @@ Web 應用程式初次啟動時，請執行程式碼，我們需要建立一個�
 S 就是這麼簡單 ！ 在應用程式啟動時，`LoadStaticCache()`方法會擷取從 BLL，供應商資訊，並將它儲存在靜態成員變數 (或任何快取儲存您結束使用中`StaticCache`類別)。 若要確認這種行為，請在設定的中斷點`Application_Start`方法並執行您的應用程式。 請注意應用程式啟動時叫用中斷點。 後續的要求，不過，不會造成`Application_Start`方法來執行。
 
 
-[![Use 確認 Application_Start 事件處理常式正在執行到中斷點](caching-data-at-application-startup-vb/_static/image7.png)](caching-data-at-application-startup-vb/_static/image6.png)
+[![使用中斷點，以確認 Application_Start 事件處理常式正在執行](caching-data-at-application-startup-vb/_static/image7.png)](caching-data-at-application-startup-vb/_static/image6.png)
 
 **圖 4**:使用中斷點，以確認所`Application_Start`事件處理常式是正在執行 ([按一下以檢視完整大小的影像](caching-data-at-application-startup-vb/_static/image8.png))
 
@@ -158,12 +158,12 @@ S 就是這麼簡單 ！ 在應用程式啟動時，`LoadStaticCache()`方法會
 首先開啟`AtApplicationStartup.aspx`頁面中`Caching`資料夾。 拖曳的 GridView，從 [工具箱] 拖曳至設計工具，設定其`ID`屬性設`Suppliers`。 接下來，從 GridView s 智慧標籤選擇要建立名為新 ObjectDataSource `SuppliersCachedDataSource`。 設定要使用 ObjectDataSource`StaticCache`類別的`GetSuppliers()`方法。
 
 
-[![C設定使用 StaticCache 類別 ObjectDataSource](caching-data-at-application-startup-vb/_static/image10.png)](caching-data-at-application-startup-vb/_static/image9.png)
+[![設定使用 StaticCache 類別 ObjectDataSource](caching-data-at-application-startup-vb/_static/image10.png)](caching-data-at-application-startup-vb/_static/image9.png)
 
 **圖 5**:設定要使用 ObjectDataSource`StaticCache`類別 ([按一下以檢視完整大小的影像](caching-data-at-application-startup-vb/_static/image11.png))
 
 
-[![Use GetSuppliers() 方法來擷取快取供應商資料](caching-data-at-application-startup-vb/_static/image13.png)](caching-data-at-application-startup-vb/_static/image12.png)
+[![使用 GetSuppliers() 方法來擷取快取供應商資料](caching-data-at-application-startup-vb/_static/image13.png)](caching-data-at-application-startup-vb/_static/image12.png)
 
 **圖 6**:使用`GetSuppliers()`方法來擷取快取供應商資料 ([按一下以檢視完整大小的影像](caching-data-at-application-startup-vb/_static/image14.png))
 
@@ -176,7 +176,7 @@ S 就是這麼簡單 ！ 在應用程式啟動時，`LoadStaticCache()`方法會
 [圖 7] 顯示頁面透過瀏覽器檢視時。 輸出會與相同有我們提取的資料從 BLL s`SuppliersBLL`類別，但使用`StaticCache`類別會傳回做為快取在應用程式啟動的供應商資料。 您可以在 設定中斷點`StaticCache`類別的`GetSuppliers()`方法以驗證這種行為。
 
 
-[![T他的快取供應商資料會顯示在 [GridView](caching-data-at-application-startup-vb/_static/image16.png)](caching-data-at-application-startup-vb/_static/image15.png)
+[![快取供應商資料會顯示在 GridView](caching-data-at-application-startup-vb/_static/image16.png)](caching-data-at-application-startup-vb/_static/image15.png)
 
 **圖 7**:在 GridView 中顯示快取供應商資料 ([按一下以檢視完整大小的影像](caching-data-at-application-startup-vb/_static/image17.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: b41423cb1e587df121828b1e57045cabfede7cb5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390827"
 ---
 # <a name="collapsing-and-expanding-a-panel-from-javascript-vb"></a>從 JavaScript 摺疊與展開面板 (VB)
@@ -65,7 +65,7 @@ CollapsiblePanel 控制項在 ASP.NET AJAX Control Toolkit 擴充面板，並提
 [!code-javascript[Main](collapsing-and-expanding-a-panel-from-javascript-vb/samples/sample8.js)]
 
 
-[![T他的第三個按鈕會變更面板的狀態： 從摺疊以展開和後端](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image2.png)](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image1.png)
+[![第三個按鈕變更面板的狀態： 從摺疊以展開和後端](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image2.png)](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image1.png)
 
 第三個按鈕變更面板的狀態： 從摺疊以展開和後端 ([按一下以檢視完整大小的影像](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image3.png))
 

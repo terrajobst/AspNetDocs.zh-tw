@@ -12,7 +12,7 @@ ms.openlocfilehash: c38160ffa9965384cf4eae2ebda52bd62b766bba
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396228"
 ---
 # <a name="animating-in-response-to-user-interaction-vb"></a>根據使用者互動繪製動畫 (VB)
@@ -59,7 +59,7 @@ ms.locfileid: "59396228"
 [!code-aspx[Main](animating-in-response-to-user-interaction-vb/samples/sample5.aspx)]
 
 
-[![A 按下滑鼠開始動畫](animating-in-response-to-user-interaction-vb/_static/image2.png)](animating-in-response-to-user-interaction-vb/_static/image1.png)
+[![按下滑鼠開始動畫](animating-in-response-to-user-interaction-vb/_static/image2.png)](animating-in-response-to-user-interaction-vb/_static/image1.png)
 
 按下滑鼠開始動畫 ([按一下以檢視完整大小的影像](animating-in-response-to-user-interaction-vb/_static/image3.png))
 

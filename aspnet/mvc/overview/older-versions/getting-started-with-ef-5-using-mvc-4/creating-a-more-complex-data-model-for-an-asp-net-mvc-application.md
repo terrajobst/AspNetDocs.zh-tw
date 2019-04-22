@@ -12,7 +12,7 @@ ms.openlocfilehash: 15bdaa588792c3cf4a8e6eee651e0675f959f942
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382226"
 ---
 # <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>ASP.NET MVC 應用程式 (4 之 10) 建立更複雜的資料模型
@@ -84,7 +84,7 @@ ms.locfileid: "59382226"
 
 執行應用程式，然後按一下**學生** 索引標籤。您會收到下列錯誤：
 
-*備份 'SchoolContext' 內容的模型已變更，因為所建立的資料庫。 請考慮使用 Code First 移轉更新資料庫 ([https://go.microsoft.com/fwlink/?LinkId=238269](https://go.microsoft.com/fwlink/?LinkId=238269))。*
+*備份 'SchoolContext' 內容的模型已變更，因為所建立的資料庫。請考慮使用 Code First 移轉更新資料庫 ([https://go.microsoft.com/fwlink/?LinkId=238269](https://go.microsoft.com/fwlink/?LinkId=238269))。*
 
 資料庫模型已變更，需要變更資料庫結構描述中，Entity Framework 偵測到。 您將使用移轉，而不會遺失任何您使用 UI 新增到資料庫的資料更新結構描述。 如果您變更所建立的資料`Seed`方法，將會變更回其原始狀態，因為[AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx)您在中使用的方法`Seed`方法。 ([AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx)相當於"upsert"作業從資料庫詞彙中。)
 
@@ -152,7 +152,7 @@ ms.locfileid: "59382226"
 
 ### <a name="the-fullname-calculated-property"></a>FullName 計算屬性
 
-`FullName` 為傳回值，這個值由串連兩個其他屬性的導出的屬性。 因此只有`get`存取子，且沒有`FullName`會產生資料庫中的資料行。
+`FullName` 為一個計算屬性，會傳回藉由串連兩個其他屬性而建立的值。 因此只有`get`存取子，且沒有`FullName`會產生資料庫中的資料行。
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample11.cs)]
 
@@ -358,7 +358,7 @@ Entity Framework 會自動建立`CourseInstructor`資料表，以及您讀取和
 
 如果您嘗試在此時更新資料庫時，您會得到下列錯誤：
 
-*ALTER TABLE 陳述式與 FOREIGN KEY 條件約束 」 FK\_dbo。課程\_dbo。部門\_DepartmentID"。 衝突發生在 "ContoseUniversity" 資料庫、"dbo.Department" 資料表、"DepartmentID" 資料行中。*
+*ALTER TABLE 陳述式與 FOREIGN KEY 條件約束 」 FK\_dbo。課程\_dbo。部門\_DepartmentID"。衝突發生在資料庫"ContosoUniversity"，資料表"dbo。部門 」，資料行 'DepartmentID'。*
 
 編輯&lt;*時間戳記&gt;\_Chap4.cs*檔案，然後進行下列程式碼變更 (您會將 SQL 陳述式加入和修改`AddColumn`陳述式):
 

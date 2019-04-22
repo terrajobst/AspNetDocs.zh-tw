@@ -13,7 +13,7 @@ ms.openlocfilehash: f4fb7ccaf9e6fbecf414d1bdfe7b4cae3218de4b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389917"
 ---
 # <a name="aspnet-mvc-deployment"></a>ASP.NET MVC 部署
@@ -21,7 +21,7 @@ ms.locfileid: "59389917"
 > 如何將 ASP.NET MVC 5.0 專案部署到伺服器。
 
 - [Visual Studio 及 ASP.NET 的 web 部署概觀](https://msdn.microsoft.com/library/dd394698)
-- [將 ASP.NET MVC 應用程式遷移到 Windows 容器](docker-aspnetmvc.md)
+- [將 ASP.NET MVC 應用程式移轉到 Windows 容器](docker-aspnetmvc.md)
 - [持續整合與持續傳遞 （使用 Azure 建置真實世界的雲端應用程式）](../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md)
 - [使用 Visual Studio 的 ASP.NET Web 部署](../../../web-forms/overview/deployment/visual-studio-web-deployment/index.md)
 - [ASP.NET 4 - 企業部署簡介](../../../web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/index.md)

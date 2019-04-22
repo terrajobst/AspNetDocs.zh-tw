@@ -12,7 +12,7 @@ ms.openlocfilehash: 56ebc40aa500b62811bac0a5041fa9aa4f91f4ae
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391048"
 ---
 # <a name="use-ajax-to-deliver-dynamic-updates"></a>使用 AJAX 傳送動態更新
@@ -112,7 +112,7 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-html[Main](use-ajax-to-deliver-dynamic-updates/samples/sample9.html)]
 
-*秘訣︰ 請確定您已安裝 VS 2008 sp1 可讓 JavaScript 檔案 （包括 jQuery） 更豐富的 intellisense 支援的 JavaScript intellisense hotfix。 您可以下載從： http://tinyurl.com/vs2008javascripthotfix*
+*秘訣︰ 請確定您已安裝 VS 2008 sp1 可讓 JavaScript 檔案 （包括 jQuery） 更豐富的 intellisense 支援的 JavaScript intellisense hotfix。您可以下載從： http://tinyurl.com/vs2008javascripthotfix*
 
 通常使用 JQuery 撰寫的程式碼會使用全域"$ （）"JavaScript 方法，可擷取一或多個 HTML 項目，使用 CSS 選取器。 例如， *$("#rsvpmsg")* 選取識別碼 rsvpmsg，為任何 HTML 項目時 *$(".something")* 會選取所有項目與 「 某事物 」 CSS 類別名稱。 您也可以撰寫更進階的查詢，像是 「 請傳回所有選取的選項按鈕的項目 」 使用選取器的查詢，例如： *$("輸入 [@type= technet 收音機] [@checked]")*。
 

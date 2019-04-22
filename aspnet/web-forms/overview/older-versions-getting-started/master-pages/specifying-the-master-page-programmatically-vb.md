@@ -12,7 +12,7 @@ ms.openlocfilehash: 96f6ebb47af38c77cba11a92c883700730324226
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389228"
 ---
 # <a name="specifying-the-master-page-programmatically-vb"></a>以程式設計方式指定主版頁面 (VB)
@@ -42,7 +42,7 @@ ms.locfileid: "59389228"
 [圖 1] 說明此融合。 步驟 1 中圖 1 顯示的初始內容和主版頁面控制項階層架構。 結尾結尾的 PreInit 階段內容頁面中會新增至主版頁面 (步驟 2) 中對應的 ContentPlaceHolders。 之後此 fusion，主版頁面可做為合成的控制項階層的根。 這融合控制項階層架構接著會新增至頁面以產生最終的控制項階層架構 (步驟 3)。 最後結果就是網頁的控制項階層架構包含積的控制項階層架構。
 
 
-[![T他的主版頁面和內容頁面的控制項階層會融合在一起的 PreInit 階段](specifying-the-master-page-programmatically-vb/_static/image2.png)](specifying-the-master-page-programmatically-vb/_static/image1.png)
+[![主版頁面和內容頁面的控制項階層是融合在一起的 PreInit 階段](specifying-the-master-page-programmatically-vb/_static/image2.png)](specifying-the-master-page-programmatically-vb/_static/image1.png)
 
 **圖 01**:主版頁面和內容頁面的控制項階層是融合在一起的 PreInit 階段 ([按一下以檢視完整大小的影像](specifying-the-master-page-programmatically-vb/_static/image3.png))
 
@@ -97,7 +97,7 @@ PreInit 階段開頭`Page`物件引發其[`PreInit`事件](https://msdn.microsof
 名為根資料夾中建立新的主版頁面`Alternate.master`。 也加入至名為網站的 新的樣式表`AlternateStyles.css`。
 
 
-[![Add 另一個主版頁面和 CSS 檔案的網站](specifying-the-master-page-programmatically-vb/_static/image8.png)](specifying-the-master-page-programmatically-vb/_static/image7.png)
+[![新增另一個網站的主版頁面和 CSS 檔案](specifying-the-master-page-programmatically-vb/_static/image8.png)](specifying-the-master-page-programmatically-vb/_static/image7.png)
 
 **圖 03**:將另一個主版頁面和 CSS 檔案新增至網站 ([按一下以檢視完整大小的影像](specifying-the-master-page-programmatically-vb/_static/image9.png))
 
@@ -108,7 +108,7 @@ PreInit 階段開頭`Page`物件引發其[`PreInit`事件](https://msdn.microsof
 > ASP.NET 包含定義的能力*佈景主題*。 主題是影像、 CSS 檔案和與樣式相關 Web 控制項屬性設定可套用至頁面，以在執行階段的集合。 佈景主題是最好的選擇，如果您的網站配置不同，只顯示之影像和其 CSS 規則。 如果配置不同更本質上，例如使用不同的 Web 控制項，或有完全不同的版面配置，則您必須使用個別的主版頁面。 佈景主題的更多有關本教學課程結尾處，請參閱進一步閱讀 > 一節。
 
 
-[![O您的內容頁面現在可以使用新的外觀與風格](specifying-the-master-page-programmatically-vb/_static/image11.png)](specifying-the-master-page-programmatically-vb/_static/image10.png)
+[![內容頁面現在可以使用新的外觀與風格](specifying-the-master-page-programmatically-vb/_static/image11.png)](specifying-the-master-page-programmatically-vb/_static/image10.png)
 
 **圖 04**:內容頁面現在可以使用新的外觀與風格 ([按一下以檢視完整大小的影像](specifying-the-master-page-programmatically-vb/_static/image12.png))
 
@@ -206,7 +206,7 @@ PreInit 階段開頭`Page`物件引發其[`PreInit`事件](https://msdn.microsof
 > 因為`Site.master`和`Alternate.master`有相同一組 ContentPlaceHolder 控制項並不重要時建立新的內容頁面，您選擇何種主版頁面。 為求一致，我會建議使用`Site.master`。
 
 
-[![Add 新網站的內容頁面](specifying-the-master-page-programmatically-vb/_static/image14.png)](specifying-the-master-page-programmatically-vb/_static/image13.png)
+[![將新的內容頁面新增至網站](specifying-the-master-page-programmatically-vb/_static/image14.png)](specifying-the-master-page-programmatically-vb/_static/image13.png)
 
 **圖 05**:將新的 [內容] 頁面新增至網站 ([按一下以檢視完整大小的影像](specifying-the-master-page-programmatically-vb/_static/image15.png))
 
@@ -251,12 +251,12 @@ PreInit 階段開頭`Page`物件引發其[`PreInit`事件](https://msdn.microsof
 使用此程式碼就緒之後，請瀏覽`ChooseMasterPage.aspx`頁面。 一開始，`Site.master`主版頁面已選取 （請參閱 圖 6），但使用者可以選擇不同的主版頁面，從下拉式清單。
 
 
-[![Content 頁面會顯示使用 Site.master 主版頁面](specifying-the-master-page-programmatically-vb/_static/image17.png)](specifying-the-master-page-programmatically-vb/_static/image16.png)
+[![內容頁面會顯示使用 Site.master 主版頁面](specifying-the-master-page-programmatically-vb/_static/image17.png)](specifying-the-master-page-programmatically-vb/_static/image16.png)
 
 **圖 06**:內容頁面會顯示使用`Site.master`主版頁面 ([按一下以檢視完整大小的影像](specifying-the-master-page-programmatically-vb/_static/image18.png))
 
 
-[![Content 頁面現在會顯示使用 Alternate.master 主版頁面](specifying-the-master-page-programmatically-vb/_static/image20.png)](specifying-the-master-page-programmatically-vb/_static/image19.png)
+[![內容頁面現在會顯示使用 Alternate.master 主版頁面](specifying-the-master-page-programmatically-vb/_static/image20.png)](specifying-the-master-page-programmatically-vb/_static/image19.png)
 
 **圖 07**:內容頁面會顯示使用現在`Alternate.master`主版頁面 ([按一下以檢視完整大小的影像](specifying-the-master-page-programmatically-vb/_static/image21.png))
 

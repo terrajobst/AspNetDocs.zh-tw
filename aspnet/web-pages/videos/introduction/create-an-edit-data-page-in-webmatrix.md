@@ -12,7 +12,7 @@ ms.openlocfilehash: 9a37221db30d7d126cf652a734b5c3d8864e91a0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395468"
 ---
 # <a name="create-an-edit-data-page-in-webmatrix"></a>在 WebMatrix 中建立編輯資料頁面

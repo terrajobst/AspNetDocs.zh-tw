@@ -12,7 +12,7 @@ ms.openlocfilehash: 2a4d991205351531129480bee221651021483967
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396248"
 ---
 # <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>使用 DropDownList 協助程式與 ASP.NET MVC
@@ -190,7 +190,7 @@ Harvest[所選](http://harvesthq.github.com/chosen/)jQuery 外掛程式可以加
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample12.cshtml)]
 
-在上述程式碼，我們新增的 HTML 屬性和屬性值`class = "chzn-select"`。 \@上述的類別具有與 Razor 檢視引擎無關的字元。 `class` 已[C#關鍵字](https://msdn.microsoft.com/library/x53a06bb.aspx)。 不能當做識別項使用 C# 關鍵字，除非它們包含\@做為前置詞。 在上述範例`@class`有效的識別項，但**類別**不是因為**類別**是關鍵字。
+在上述程式碼，我們新增的 HTML 屬性和屬性值`class = "chzn-select"`。 \@上述的類別具有與 Razor 檢視引擎無關的字元。 `class` 已[C# 關鍵字](https://msdn.microsoft.com/library/x53a06bb.aspx)。 不能當做識別項使用 C# 關鍵字，除非它們包含\@做為前置詞。 在上述範例`@class`有效的識別項，但**類別**不是因為**類別**是關鍵字。
 
 將參考加入至*Chosen/chosen.jquery.js*並*Chosen/chosen.css*檔案。 *Chosen/chosen.jquery.js*並實作所選外掛程式的功能。 *Chosen/chosen.css*檔案提供的樣式。 新增這些參考到底部*Views\Home\MultiSelectCountry.cshtml*檔案。 下列程式碼示範如何參考所選外掛程式。
 

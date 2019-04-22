@@ -12,7 +12,7 @@ ms.openlocfilehash: b452c59f16107be6d356f86e6c313ba3229dbce6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392751"
 ---
 # <a name="part-2-controllers"></a>第 2 部分：Controllers
@@ -73,7 +73,7 @@ Visual Web Developer 會接著會自動開啟瀏覽器視窗中的 URL 會指向
 
 好，是相當快速的 – 我們建立新的網站，加入三價線函式，而且我們已在瀏覽器中的文字。 不我科學中，但它是一個起點。
 
-*注意:Visual Web Developer 包含 ASP.NET Development Server，將在幾個隨機免費 「 連接埠 」 執行您的網站。 在上面的螢幕擷取畫面，在執行站台`http://localhost:26641/`，因此它使用連接埠 26641。 您的連接埠號碼將會不同。 當我們談到 URL 的 like /Store/Browse 在本教學課程時，可將會移之後的連接埠號碼。 假設 26641 的連接埠號碼，瀏覽至存放區/瀏覽表示瀏覽至`http://localhost:26641/Store/Browse`。*
+*注意：Visual Web Developer 包含 ASP.NET Development Server，將在幾個隨機免費 「 連接埠 」 執行您的網站。在上面的螢幕擷取畫面，在執行站台`http://localhost:26641/`，因此它使用連接埠 26641。您的連接埠號碼將會不同。當我們談到 URL 的 like /Store/Browse 在本教學課程時，可將會移之後的連接埠號碼。假設 26641 的連接埠號碼，瀏覽至存放區/瀏覽表示瀏覽至`http://localhost:26641/Store/Browse`。*
 
 ## <a name="adding-a-storecontroller"></a>新增 StoreController
 
@@ -113,7 +113,7 @@ Visual Web Developer 會接著會自動開啟瀏覽器視窗中的 URL 會指向
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample4.cs)]
 
-*注意:我們使用 HttpUtility.HtmlEncode 公用程式方法來處理使用者輸入。 這可防止使用者插入檢視中的 Javascript，例如 /Store/Browse 的連結嗎？內容類型 =&lt;指令碼&gt;window.location = 'http://hackersite.com'&lt;/script&gt;。*
+*注意：我們使用 HttpUtility.HtmlEncode 公用程式方法來處理使用者輸入。這可防止使用者插入檢視中的 Javascript，例如 /Store/Browse 的連結嗎？內容類型 =&lt;指令碼&gt;window.location = 'http://hackersite.com'&lt;/script&gt;。*
 
 現在讓我們瀏覽至存放區/瀏覽？內容類型 = Disco
 

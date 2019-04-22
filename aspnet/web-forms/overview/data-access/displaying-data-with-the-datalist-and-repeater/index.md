@@ -12,7 +12,7 @@ ms.openlocfilehash: 46c56eb012f08900ba8f3d10ce92868d0d4d02e4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390255"
 ---
 # <a name="displaying-data-with-the-datalist-and-repeater"></a>使用 DataList 與重複項顯示資料

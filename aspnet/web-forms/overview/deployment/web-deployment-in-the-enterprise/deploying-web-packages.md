@@ -12,7 +12,7 @@ ms.openlocfilehash: c42fa327c324ac2b721268c56782a24755ec7225
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391061"
 ---
 # <a name="deploying-web-packages"></a>部署 Web 套件
@@ -102,7 +102,7 @@ ms.locfileid: "59391061"
 
 ## <a name="using-msdeployexe"></a>使用 MSDeploy.exe
 
-雖然使用 *。 deploy.cmd*檔案通常可簡化部署程序，並在某些情況下，建議您最好直接使用 MSDeploy.exe 時。 例如：
+雖然使用 *。 deploy.cmd*檔案通常可簡化部署程序，並在某些情況下，建議您最好直接使用 MSDeploy.exe 時。 例如: 
 
 - 如果您想要部署至 Web 部署處理常式以非系統管理員使用者身分，就無法使用 *。 deploy.cmd*檔案。 下所述，這是因為 Web Deploy 2.0 中的 bug**端點考量**。
 - 如果您想要以手動方式切換不同*之 SetParameters.xml*中不同位置的檔案，您可能會想要直接使用 MSDeploy.exe。

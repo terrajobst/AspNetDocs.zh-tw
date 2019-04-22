@@ -12,7 +12,7 @@ ms.openlocfilehash: 41d5d85a002ac1fe674bd747ed4802f98d32ab69
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394471"
 ---
 # <a name="mobile-apps--sites-with-aspnet"></a>Mobile Apps 和 ASP.NET 網站
@@ -30,22 +30,22 @@ ms.locfileid: "59394471"
 在第二個在其文章系列文章中，作者會討論如何使用 Xamarin 為目標的多個行動用戶端平台，並示範如何實作驗證和維護已同步處理的用戶端快取的資料。
 
 
-### [<a name="calling-web-api-from-a-windows-phone-8-application"></a>從 Windows Phone 8 應用程式呼叫 Web API](../web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application.md)
+### <a name="calling-web-api-from-a-windows-phone-8-applicationweb-apioverviewmobile-clientscalling-web-api-from-a-windows-phone-8-applicationmd"></a>[從 Windows Phone 8 應用程式呼叫 Web API](../web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application.md)
 
 此端對端教學課程會示範如何建立 ASP.NET Web API 應用程式提供資料給 Windows Phone 8 應用程式。
 
 
-### [<a name="get-started-with-azure-mobile-services"></a>開始使用 Azure 行動服務](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started?WT.mc_id=zumo_aspnet)
+### <a name="get-started-with-azure-mobile-serviceshttpsazuremicrosoftcomdocumentationarticlesmobile-services-dotnet-backend-windows-store-dotnet-get-startedwtmcidzumoaspnet"></a>[開始使用 Azure 行動服務](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started?WT.mc_id=zumo_aspnet)
 
 開始使用 Azure 行動服務與 ASP.NET Web API。 本教學課程會示範如何從 Azure 管理入口網站中建立行動服務應用程式。
 
 
-### [<a name="authentication-in-azure-mobile-services"></a>Azure 行動服務中的驗證](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/?WT.mc_id=zumo_aspnet)
+### <a name="authentication-in-azure-mobile-serviceshttpsazuremicrosoftcomdocumentationarticlesmobile-services-dotnet-backend-windows-store-dotnet-get-started-userswtmcidzumoaspnet"></a>[Azure 行動服務中的驗證](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-users/?WT.mc_id=zumo_aspnet)
 
 本教學課程會示範如何驗證 Azure 行動服務中從您的應用程式的使用者。
 
 
-### [<a name="using-push-notifications-in-azure-mobile-services"></a>使用 Azure 行動服務中的推播通知](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/?WT.mc_id=zumo_aspnet)
+### <a name="using-push-notifications-in-azure-mobile-serviceshttpsazuremicrosoftcomdocumentationarticlesmobile-services-dotnet-backend-windows-store-dotnet-get-started-pushwtmcidzumoaspnet"></a>[使用 Azure 行動服務中的推播通知](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/?WT.mc_id=zumo_aspnet)
 
 使用 Azure 行動服務傳送推播通知到行動裝置。
 
@@ -53,31 +53,31 @@ ms.locfileid: "59394471"
 ## <a name="develop-mobile-sites"></a>開發行動網站
 
 
-### [<a name="deploy-an-mobile-friendly-aspnet-mvc-5-web-application-on-windows-azure-web-sites"></a>部署 Windows Azure 網站上的行動設備友善 ASP.NET MVC 5 Web 應用程式](https://docs.microsoft.com/azure/app-service-web/web-sites-dotnet-deploy-aspnet-mvc-mobile-app)
+### <a name="deploy-an-mobile-friendly-aspnet-mvc-5-web-application-on-windows-azure-web-siteshttpsdocsmicrosoftcomazureapp-service-webweb-sites-dotnet-deploy-aspnet-mvc-mobile-app"></a>[部署 Windows Azure 網站上的行動設備友善 ASP.NET MVC 5 Web 應用程式](https://docs.microsoft.com/azure/app-service-web/web-sites-dotnet-deploy-aspnet-mvc-mobile-app)
 
 本教學課程將教導您如何部署至 Windows Azure 網站的 MVC 5 應用程式，並建立使用啟動程序的回應式設計的行動設備友善檢視表的基本概念。
 
 
-### [<a name="add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>將行動網頁新增至您的 ASP.NET Web Form / MVC 應用程式](../whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application.md)
+### <a name="add-mobile-pages-to-your-aspnet-web-forms--mvc-applicationwhitepapersadd-mobile-pages-to-your-aspnet-web-forms-mvc-applicationmd"></a>[將行動網頁新增至您的 ASP.NET Web Form / MVC 應用程式](../whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application.md)
 
 本 How To 說明會提供適用於行動裝置，從您的 ASP.NET Web Form 網頁的各種方法 / MVC 應用程式，並建議架構和設計以各種裝置為目標時應該考量的問題。
 
 
-### [<a name="detect-the-latest-mobile-devices-using-51degreesmobi-foundation"></a>偵測到的最新的行動裝置，使用 51degrees.mobi Foundation](https://github.com/51Degrees/dotNET-Device-Detection)
+### <a name="detect-the-latest-mobile-devices-using-51degreesmobi-foundationhttpsgithubcom51degreesdotnet-device-detection"></a>[偵測到的最新的行動裝置，使用 51degrees.mobi Foundation](https://github.com/51Degrees/dotNET-Device-Detection)
 
 51degrees.mobi Foundation 已增強了 ASP 的第三方開放原始碼專案。NET 的 Request.Browser API 讓您可以輕鬆地偵測最近發行了行動裝置，包括 Windows Phone 7、 Android 和 Apple iPad。
 
 
-### [<a name="simulate-popular-mobile-devices-for-testing"></a>模擬熱門的行動裝置進行測試](device-simulators.md)
+### <a name="simulate-popular-mobile-devices-for-testingdevice-simulatorsmd"></a>[模擬熱門的行動裝置進行測試](device-simulators.md)
 
 連結裝置模擬器以及可用來測試您的行動 web 應用程式的模擬器
 
 
-### [<a name="mobile-web-sites-with-aspnet-mvc-and-the-mobile-browser-definition-file"></a>使用 ASP.NET MVC 和行動瀏覽器定義檔的行動 Web Sites](http://www.hanselman.com/blog/MixMobileWebSitesWithASPNETMVCAndTheMobileBrowserDefinitionFile.aspx)
+### <a name="mobile-web-sites-with-aspnet-mvc-and-the-mobile-browser-definition-filehttpwwwhanselmancomblogmixmobilewebsiteswithaspnetmvcandthemobilebrowserdefinitionfileaspx"></a>[使用 ASP.NET MVC 和行動瀏覽器定義檔的行動 Web Sites](http://www.hanselman.com/blog/MixMobileWebSitesWithASPNETMVCAndTheMobileBrowserDefinitionFile.aspx)
 
 在呈現在 Microsoft MIX 研討會的這段演講，Scott Hanselman 將討論如何建立行動裝置的易記網站使用 ASP.NET MVC。
 
 
-### [<a name="develop-iphone-applications-with-aspnet"></a>開發使用 ASP.NET 的 iPhone 應用程式](http://labs.componentone.com/iPhone/)
+### <a name="develop-iphone-applications-with-aspnethttplabscomponentonecomiphone"></a>[開發使用 ASP.NET 的 iPhone 應用程式](http://labs.componentone.com/iPhone/)
 
 適用於 iPhone 的 ComponentOne Studio 是一套模仿 iPhone 和 iPod touch 的使用者介面 Mobile 在 Safari 中呈現時的外觀與風格的 ASP.NET 控制項。

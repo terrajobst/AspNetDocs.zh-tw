@@ -12,7 +12,7 @@ ms.openlocfilehash: 10ee617ff5653bcc478364b7bea75bac4f4770f6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388851"
 ---
 # <a name="microsoft-ajax-content-delivery-network"></a>Microsoft Ajax 內容傳遞網路
@@ -55,25 +55,25 @@ ms.locfileid: "59388851"
     - [Microsoft Ajax CDN 上的 jQuery UI 1.11.4](jquery-ui/cdnjqueryui1114.md)
     - [Microsoft Ajax CDN 上的 jQuery UI 1.12.0](jquery-ui/cdnjqueryui1120.md)
     - [Microsoft Ajax CDN 上的 jQuery UI 1.12.1](jquery-ui/cdnjqueryui1121.md)
-- [jQuery 驗證](jquery-validate/index.md)
+- [jQuery Validate](jquery-validate/index.md)
 
     - [jQuery 驗證 1.17.0 或以上](jquery-validate/cdnjqueryvalidate1170.md)
-    - [jQuery 驗證 1.16.0](jquery-validate/cdnjqueryvalidate1160.md)
-    - [jQuery 驗證 1.15.1](jquery-validate/cdnjqueryvalidate1151.md)
-    - [jQuery 驗證 1.15.0](jquery-validate/cdnjqueryvalidate1150.md)
-    - [jQuery 驗證 1.14.0](jquery-validate/cdnjqueryvalidate1140.md)
-    - [jQuery 驗證 1.13.1](jquery-validate/cdnjqueryvalidate1131.md)
-    - [jQuery 驗證 1.13.0](jquery-validate/cdnjqueryvalidate1130.md)
-    - [jQuery 驗證 1.12.0](jquery-validate/cdnjqueryvalidate1120.md)
-    - [jQuery 驗證 1.11.1](jquery-validate/cdnjqueryvalidate1111.md)
-    - [jQuery 驗證 1.11.0](jquery-validate/cdnjqueryvalidate111.md)
-    - [jQuery 驗證 1.10.0](jquery-validate/cdnjqueryvalidate110.md)
+    - [jQuery Validation 1.16.0](jquery-validate/cdnjqueryvalidate1160.md)
+    - [jQuery Validation 1.15.1](jquery-validate/cdnjqueryvalidate1151.md)
+    - [jQuery Validation 1.15.0](jquery-validate/cdnjqueryvalidate1150.md)
+    - [jQuery Validation 1.14.0](jquery-validate/cdnjqueryvalidate1140.md)
+    - [jQuery Validation 1.13.1](jquery-validate/cdnjqueryvalidate1131.md)
+    - [jQuery Validation 1.13.0](jquery-validate/cdnjqueryvalidate1130.md)
+    - [jQuery Validation 1.12.0](jquery-validate/cdnjqueryvalidate1120.md)
+    - [jQuery Validation 1.11.1](jquery-validate/cdnjqueryvalidate1111.md)
+    - [jQuery Validation 1.11.0](jquery-validate/cdnjqueryvalidate111.md)
+    - [jQuery Validation 1.10.0](jquery-validate/cdnjqueryvalidate110.md)
     - [jquery.validate 1.9 版](jquery-validate/cdnjqueryvalidate19.md)
     - [jquery.validate 1.8.1 版](jquery-validate/cdnjqueryvalidate181.md)
     - [jquery.validate 1.8 版](jquery-validate/cdnjqueryvalidate18.md)
     - [jquery.validate 1.7 版](jquery-validate/cdnjqueryvalidate17.md)
-    - [jQuery 驗證 1.6](jquery-validate/cdnjqueryvalidate16.md)
-    - [jQuery 驗證 1.5.5](jquery-validate/cdnjqueryvalidate155.md)
+    - [jQuery Validate 1.6](jquery-validate/cdnjqueryvalidate16.md)
+    - [jQuery Validate 1.5.5](jquery-validate/cdnjqueryvalidate155.md)
 - [jQuery Mobile](jquery-mobile/index.md)
 
     - [Microsoft Ajax CDN 上的 jQuery Mobile 1.4.2](jquery-mobile/cdnjquerymobile142.md)
@@ -96,11 +96,11 @@ ms.locfileid: "59388851"
 - [jQuery 範本](jquery-templates/index.md)
 
     - [jQuery 範本搶鮮版 (Beta) 1](jquery-templates/cdnjquerytemplatesbeta1.md)
-- [jQuery 循環](jquery-cycle/index.md)
+- [jQuery Cycle](jquery-cycle/index.md)
 
-    - [jQuery 循環 2.99](jquery-cycle/cdnjquerycycle299.md)
-    - [jQuery 循環 2.94](jquery-cycle/cdnjquerycycle294.md)
-    - [jQuery 循環 2.88](jquery-cycle/cdnjquerycycle288.md)
+    - [jQuery Cycle 2.99](jquery-cycle/cdnjquerycycle299.md)
+    - [jQuery Cycle 2.94](jquery-cycle/cdnjquerycycle294.md)
+    - [jQuery Cycle 2.88](jquery-cycle/cdnjquerycycle288.md)
 - [jQuery DataTables](jquery-datatables/index.md)
 
     - [jQuery DataTables 1.9.4](jquery-datatables/cdnjquerydatatables194.md)
@@ -111,7 +111,7 @@ ms.locfileid: "59388851"
     - [jQuery DataTables 1.8.2](jquery-datatables/cdnjquerydatatables182.md)
     - [jQuery DataTables 1.10.4](jquery-datatables/cdnjquerydatatables104.md)
     - [jQuery DataTables 1.10.5](jquery-datatables/cdnjquerydatatables105.md)
-- [ASP.NET Web Forms 與 Ajax 4](cdnajax4.md)
+- [ASP.NET Web Form 和 Ajax 4](cdnajax4.md)
 - [ASP.NET Ajax 3.5](cdnajax35.md)
-- [ASP.NET Web Forms 與 Ajax 4.5.2](cdnajax452.md)
-- [ASP.NET Web Forms 與 Ajax 4.5.1](cdnajax451.md)
+- [ASP.NET Web Form 和 Ajax 4.5.2](cdnajax452.md)
+- [ASP.NET Web Form 和 Ajax 4.5.1](cdnajax451.md)

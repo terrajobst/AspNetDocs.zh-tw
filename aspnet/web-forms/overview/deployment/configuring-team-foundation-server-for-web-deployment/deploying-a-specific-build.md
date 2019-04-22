@@ -12,7 +12,7 @@ ms.openlocfilehash: 0ab58aee6f1203beaf3990536b059f8209e66547
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393479"
 ---
 # <a name="deploying-a-specific-build"></a>部署特定的組建
@@ -110,7 +110,7 @@ ms.locfileid: "59393479"
 
     ![](deploying-a-specific-build/_static/image7.png)
 2. 在 **組建排入佇列**對話方塊的 **參數**索引標籤上，展開**進階**一節。
-3. 在  **MSBuild 引數**列中的值取代**OutputRoot**屬性與您的組建資料夾的位置。 例如: 
+3. 在  **MSBuild 引數**列中的值取代**OutputRoot**屬性與您的組建資料夾的位置。 例如：
 
     [!code-console[Main](deploying-a-specific-build/samples/sample5.cmd)]
 

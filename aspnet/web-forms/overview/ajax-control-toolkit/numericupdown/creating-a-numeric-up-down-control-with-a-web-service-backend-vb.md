@@ -12,7 +12,7 @@ ms.openlocfilehash: 0442b5e22e44e0767825026b26ad3da55777b962
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384262"
 ---
 # <a name="creating-a-numeric-updown-control-with-a-web-service-backend-vb"></a>使用 Web 服務後端建立數值向上/向下控制項 (VB)
@@ -54,7 +54,7 @@ ASP.NET AJAX Control Toolkit 包含`NumericUpDown`擴充項會自動將兩個按
 如果您執行頁面時，請注意如何在文字方塊中的值一律會加倍當您按一下上方的按鈕，並當您按一下下方的按鈕減半。
 
 
-[![O只限 （） 的 2 乘冪的數字](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image2.png)](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image1.png)
+[![只是 2 的乘冪的數字才會出現](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image2.png)](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image1.png)
 
 只是 2 的乘冪的數字才會出現 ([按一下以檢視完整大小的影像](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image3.png))
 

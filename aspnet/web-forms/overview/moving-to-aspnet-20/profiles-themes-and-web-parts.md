@@ -12,7 +12,7 @@ ms.openlocfilehash: 0f3b376cee8d391eb087664a51cc25e3b58d16b9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59390034"
 ---
 # <a name="profiles-themes-and-web-parts"></a>設定檔、佈景主題與 Web 組件

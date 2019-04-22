@@ -12,7 +12,7 @@ ms.openlocfilehash: 651ac82196b29d0f90c5dff41c9ce42b4bdcf627
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395494"
 ---
 # <a name="older-versions---aspnet-20"></a>舊版 - ASP.NET 2.0
@@ -28,5 +28,5 @@ ms.locfileid: "59395494"
 - [資料繫結控制項](data-bound-controls.md)
 - [快取](caching.md)
 - [成員資格](membership.md)
-- [設定與檢測](configuration-and-instrumentation.md)
-- [設定檔、佈景主題與 Web 組件](profiles-themes-and-web-parts.md)
+- [組態和檢測](configuration-and-instrumentation.md)
+- [設定檔、佈景主題和 Web 組件](profiles-themes-and-web-parts.md)

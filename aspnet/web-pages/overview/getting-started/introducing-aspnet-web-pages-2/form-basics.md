@@ -12,7 +12,7 @@ ms.openlocfilehash: f88f7a31551abda029bee0ec16aa35ce2ef5d2f0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385952"
 ---
 # <a name="introducing-aspnet-web-pages---html-form-basics"></a>ASP.NET Web Pages 簡介-HTML 表單基本概念
@@ -69,8 +69,8 @@ ms.locfileid: "59385952"
 > 
 > HTTP 通訊協定的瀏覽器和伺服器用來交換資訊，是其基本的作業非常簡單。 瀏覽器會使用只有少數的動詞命令，對伺服器提出要求。 當您撰寫適用於 web 的程式碼時，最好先了解這些動詞，以及它們如何使用瀏覽器和伺服器。 毫無疑問，最常使用的動詞命令為：
 > 
-> - `GET`。 瀏覽器會使用此動詞命令，從伺服器擷取的項目。 例如，當您在瀏覽器輸入 URL，瀏覽器執行`GET`作業要求您想要的頁面。 當頁面包括圖形、 瀏覽器會執行其他`GET`作業，以取得映像。 如果`GET`作業已將資訊傳遞至伺服器，將資訊傳遞做為查詢字串中的 URL 的一部分。
-> - `POST`。 瀏覽器傳送`POST`要求，以便將資料提交至要加入或變更伺服器上。 比方說，`POST`動詞命令用來在資料庫中建立記錄，或變更現有的。 大部分的情況下，當您填寫表單，並按一下 [提交] 按鈕，瀏覽器執行`POST`作業。 在 `POST`作業，傳遞至伺服器的資料是在頁面的主體。
+> - `GET`. 瀏覽器會使用此動詞命令，從伺服器擷取的項目。 例如，當您在瀏覽器輸入 URL，瀏覽器執行`GET`作業要求您想要的頁面。 當頁面包括圖形、 瀏覽器會執行其他`GET`作業，以取得映像。 如果`GET`作業已將資訊傳遞至伺服器，將資訊傳遞做為查詢字串中的 URL 的一部分。
+> - `POST`. 瀏覽器傳送`POST`要求，以便將資料提交至要加入或變更伺服器上。 比方說，`POST`動詞命令用來在資料庫中建立記錄，或變更現有的。 大部分的情況下，當您填寫表單，並按一下 [提交] 按鈕，瀏覽器執行`POST`作業。 在 `POST`作業，傳遞至伺服器的資料是在頁面的主體。
 > 
 > 這些動詞重大的差別在於`GET`作業不應變更伺服器上的任何項目，或將它放在稍微更抽象的方式，`GET`作業不會導致在伺服器上的狀態變更。 您可以執行`GET`上相同的資源的次數，而不會變更這些資源的作業。 (A`GET`作業通常稱為 「 安全 」，或使用的技術的詞彙，是*具有等冪性*。)相較之下，當然，`POST`要求會變更伺服器上的項目，每次執行作業。
 > 
@@ -88,7 +88,7 @@ ms.locfileid: "59385952"
 - 文字方塊中： `<input type="text">`
 - 核取方塊： `<input type="check">`
 - 選項按鈕： `<input type="radio">`
-- 按鈕: `<input type="button">`
+- 按鈕： `<input type="button">`
 - 提交按鈕： `<input type="submit">`
 
 您也可以使用`<textarea>`元素，來建立多行文字方塊和`<select>`来建立之下拉式清單或可捲動的清單項目。 (如更多有關 HTML 表單項目，請參閱 < [HTML 表單和輸入](http://www.w3schools.com/html/html_forms.asp)W3Schools 站台上。)
@@ -215,7 +215,7 @@ ms.locfileid: "59385952"
 
 > [!NOTE] 
 > 
-> **重要 ！** 使用預留位置 (例如`@0`) 若要將值傳遞給 SQL 命令*極為重要*安全性。 您在此見報，具有預留位置變數的資料，方法是您應該建構 SQL 命令的唯一方法。
+> **重要！** 使用預留位置 (例如`@0`) 若要將值傳遞給 SQL 命令*極為重要*安全性。 您在此見報，具有預留位置變數的資料，方法是您應該建構 SQL 命令的唯一方法。
 > 
 > 永遠不會建構 SQL 陳述式放在一起，（串連） 的常值文字和您從使用者取得的值。 串連使用者輸入 SQL 陳述式會開啟您的站台*SQL 資料隱碼攻擊*當惡意使用者送出至您的頁面 hack 您資料庫的值。 (您可以閱讀更多文件中[SQL 資料隱碼](https://msdn.microsoft.com/library/ms161953.aspx)MSDN 網站。)
 
@@ -356,7 +356,7 @@ ms.locfileid: "59385952"
 
 ## <a name="additional-resources"></a>其他資源
 
-- [使用 Razor 語法進行 ASP.NET 網頁程式設計簡介](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [使用 Razor 語法的 ASP.NET Web 程式設計簡介](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [SQL WHERE 子句](http://www.w3schools.com/sql/sql_where.asp)W3Schools 站台上
 - [方法定義](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)W3C 網站上的文章
 

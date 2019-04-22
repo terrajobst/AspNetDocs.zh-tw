@@ -12,7 +12,7 @@ ms.openlocfilehash: 24fa671ae633cb0816d689ce4189598f62f13525
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394623"
 ---
 # <a name="masterdetail"></a>主版/詳細
@@ -25,6 +25,6 @@ ms.locfileid: "59394623"
 - [跨兩個頁面進行主要/詳細資料篩選 (C#)](master-detail-filtering-across-two-pages-cs.md)
 - [使用具有詳細資料 DetailView 之可選取主要 GridView 的主要/詳細資料 (C#)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md)
 - [使用 DropDownList 進行主要/詳細資料篩選 (VB)](master-detail-filtering-with-a-dropdownlist-vb.md)
-- [使用兩個 DropDownLis 進行主要/詳細資料篩選 (VB)](master-detail-filtering-with-two-dropdownlists-vb.md)
+- [使用兩個 DropDownList 進行主要/詳細資料篩選 (VB)](master-detail-filtering-with-two-dropdownlists-vb.md)
 - [跨兩個頁面進行主要/詳細資料篩選 (VB)](master-detail-filtering-across-two-pages-vb.md)
 - [使用具有詳細資料 DetailView 之可選取主要 GridView 的主要/詳細資料 (VB)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md)

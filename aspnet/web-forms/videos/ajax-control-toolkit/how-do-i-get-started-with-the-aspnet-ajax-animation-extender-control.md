@@ -12,7 +12,7 @@ ms.openlocfilehash: 4f01a5ccdfbcee738cf608c9b9608655452aa528
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378009"
 ---
 # <a name="how-do-i-get-started-with-the-aspnet-ajax-animation-extender-control"></a>[How Do i:]開始使用 ASP.NET AJAX 動畫擴充項控制項？

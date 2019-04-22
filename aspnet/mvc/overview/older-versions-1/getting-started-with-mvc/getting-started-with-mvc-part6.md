@@ -12,7 +12,7 @@ ms.openlocfilehash: f648e0cb53dd410105adc22401f19a5a15f9e8c1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380804"
 ---
 # <a name="adding-a-create-method-and-create-view"></a>新增 Create 方法和 Create 檢視
@@ -38,7 +38,7 @@ ms.locfileid: "59380804"
 
 我們將選取，我們會將檢視範本 「 電影 」 作為檢視的資料類別，表示我們想要 「 建立 」 的 「 建立 」 範本。
 
-[![Add 檢視](getting-started-with-mvc-part6/_static/image2.png)](getting-started-with-mvc-part6/_static/image1.png)
+[![新增檢視](getting-started-with-mvc-part6/_static/image2.png)](getting-started-with-mvc-part6/_static/image1.png)
 
 按一下 [新增] 按鈕之後，就會為您建立 \Movies\Create.aspx 檢視範本。 因為我們從 [檢視內容] 下拉式清單中選取 [建立]，[新增檢視] 對話方塊自動 「 建構 」 某些預設內容為我們。 Scaffolding 建立 HTML&lt;表單&gt;、 位置，以讓驗證錯誤訊息前往的而且每個屬性的類別 scaffolding 知道電影相關，因為建立標籤和欄位。
 
@@ -48,7 +48,7 @@ ms.locfileid: "59380804"
 
 讓我們現在建立新的電影，並將它新增至資料庫。 我們會執行一次的應用程式來執行這項操作，請瀏覽 「 / 電影 」 URL，然後按一下 [建立] 連結來新增新電影。
 
-[![Create - Windows Internet Explorer](getting-started-with-mvc-part6/_static/image4.png)](getting-started-with-mvc-part6/_static/image3.png)
+[![建立-Windows Internet Explorer](getting-started-with-mvc-part6/_static/image4.png)](getting-started-with-mvc-part6/_static/image3.png)
 
 當我們按一下 [建立] 按鈕時，我們會公佈回 （透過 HTTP POST) /Movies/Create 方法我們剛建立這個表單上的資料。 如同時系統會自動採取 「 numTimes"和"name"參數，在 url，和它們對應到稍早在方法上的參數，系統會自動從某篇文章中取得表單欄位，並將它們對應至物件。 在此情況下，例如"ReleaseDate"和"Title"的 HTML 中的欄位值會自動放入電影的新執行個體的正確的屬性。
 
@@ -58,7 +58,7 @@ ms.locfileid: "59380804"
 
 此影片物件接著傳遞至我們建立的動作方法的 [HttpPost] 版本，我們並儲存在資料庫中再被使用者重新導向回到 index （） 動作方法，這個方法會將電影清單中顯示已儲存的結果：
 
-[![Movie List - Windows Internet Explorer](getting-started-with-mvc-part6/_static/image6.png)](getting-started-with-mvc-part6/_static/image5.png)
+[![電影清單-Windows Internet Explorer](getting-started-with-mvc-part6/_static/image6.png)](getting-started-with-mvc-part6/_static/image5.png)
 
 如果我們的影片都正確無誤，不過，而且資料庫不允許我們沒有標題儲存影片，我們不檢查。 如果我們還可以告訴使用者的資料庫之前擲回錯誤，那就天下太平了。 我們藉由將我們的應用程式的驗證支援就此下一步。
 

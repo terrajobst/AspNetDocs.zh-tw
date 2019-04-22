@@ -12,7 +12,7 @@ ms.openlocfilehash: c9fdbe5f0e24aa3f09f11a67c6d13a32897e8b85
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388370"
 ---
 # <a name="dynamically-populating-a-control-vb"></a>以動態方式填入控制項 (VB)
@@ -66,7 +66,7 @@ HTML 按鈕 （做為 HTML 控制項，因為我們不需要回傳至伺服器�
 瀏覽器中執行 ASP.NET 網頁，然後按一下按鈕，您會收到目前的日期，格式為月-日-年。
 
 
-[![A 按一下按鈕從伺服器擷取的日期](dynamically-populating-a-control-vb/_static/image2.png)](dynamically-populating-a-control-vb/_static/image1.png)
+[![按一下按鈕從伺服器擷取的日期](dynamically-populating-a-control-vb/_static/image2.png)](dynamically-populating-a-control-vb/_static/image1.png)
 
 按一下按鈕從伺服器擷取的日期 ([按一下以檢視完整大小的影像](dynamically-populating-a-control-vb/_static/image3.png))
 

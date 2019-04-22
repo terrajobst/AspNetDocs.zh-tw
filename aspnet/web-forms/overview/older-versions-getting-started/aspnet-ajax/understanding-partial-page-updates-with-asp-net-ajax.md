@@ -12,7 +12,7 @@ ms.openlocfilehash: d2d7982a4e0175824ffede965dc8206219485df2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396469"
 ---
 # <a name="understanding-partial-page-updates-with-aspnet-ajax"></a>了解部分頁面更新與 ASP.NET AJAX
@@ -111,7 +111,7 @@ Visual Studio 2008 似乎不隨附預先定義的範本，ASP.NET Ajax 的網站
 
 啟用標記的屬性：
 
-| **屬性名稱** | **類型** | **描述** |
+| **屬性名稱** | **Type** | **描述** |
 | --- | --- | --- |
 | AllowCustomErrors-Redirect | Bool | 指定是否要使用自訂錯誤區段的 web.config 檔案來處理錯誤。 |
 | AsyncPostBackError-Message | String | 取得或設定傳送至用戶端，如果引發了錯誤的錯誤訊息。 |
@@ -124,7 +124,7 @@ Visual Studio 2008 似乎不隨附預先定義的範本，ASP.NET Ajax 的網站
 
 僅限程式碼的屬性：
 
-| **屬性名稱** | **類型** | **描述** |
+| **屬性名稱** | **Type** | **描述** |
 | --- | --- | --- |
 | AuthenticationService | AuthenticationService-Manager | 取得有關 ASP.NET 驗證服務 proxy，將會傳送至用戶端的詳細資料。 |
 | IsDebuggingEnabled | Bool | 取得是否編寫指令碼，並啟用程式碼偵錯。 |
@@ -136,13 +136,13 @@ Visual Studio 2008 似乎不隨附預先定義的範本，ASP.NET Ajax 的網站
 
 公用程式碼的方法：
 
-| **方法名稱** | **類型** | **描述** |
+| **方法名稱** | **Type** | **描述** |
 | --- | --- | --- |
 | SetFocus(string) | Void | 當要求完成時，請用戶端將焦點設定至特定控制項。 |
 
 標記下階：
 
-| **標記** | **描述** |
+| **Tag** | **描述** |
 | --- | --- |
 | &lt;AuthenticationService&gt; | 提供 ASP.NET 驗證服務的 proxy 詳細資料。 |
 | &lt;ProfileService&gt; | Asp.net 程式碼剖析服務提供 proxy 詳細資料。 |
@@ -185,7 +185,7 @@ ScriptManager 控制項可廣泛支援當地語系化的指令碼字串和使用
 
 啟用標記的屬性：
 
-| **屬性名稱** | **類型** | **描述** |
+| **屬性名稱** | **Type** | **描述** |
 | --- | --- | --- |
 | ChildrenAsTriggers | bool | 指定子控制項是否會自動啟動重新整理在回傳。 |
 | RenderMode | 列舉 （「 區塊 」、 「 內嵌 」） | 指定將會以視覺化方式呈現內容的方式。 |
@@ -193,7 +193,7 @@ ScriptManager 控制項可廣泛支援當地語系化的指令碼字串和使用
 
 僅限程式碼的屬性：
 
-| **屬性名稱** | **類型** | **描述** |
+| **屬性名稱** | **Type** | **描述** |
 | --- | --- | --- |
 | IsInPartialRendering | bool | 取得是否 UpdatePanel 支援部分呈現目前要求。 |
 | ContentTemplate | ITemplate | 取得標記的範本更新要求。 |
@@ -202,13 +202,13 @@ ScriptManager 控制項可廣泛支援當地語系化的指令碼字串和使用
 
 公用程式碼的方法：
 
-| **方法名稱** | **類型** | **描述** |
+| **方法名稱** | **Type** | **描述** |
 | --- | --- | --- |
 | Update （) | Void | 以程式設計方式更新指定的 UpdatePanel。 允許部分轉譯，否則為未觸發 UpdatePanel 的觸發程序的伺服器要求。 |
 
 標記下階：
 
-| **標記** | **描述** |
+| **Tag** | **描述** |
 | --- | --- |
 | &lt;ContentTemplate&gt; | 指定要用來呈現部分轉譯結果的標記。 子系&lt;asp: UpdatePanel&gt;。 |
 | &lt;觸發程序&gt; | 指定的集合*n*與更新此 UpdatePanel 相關聯的控制項。 子系&lt;asp: UpdatePanel&gt;。 |
@@ -280,7 +280,7 @@ Updatepanel 並非是全面的解決方案。 相反地，某些情況下，包�
 
 啟用標記的屬性：
 
-| **屬性名稱** | **類型** | **描述** |
+| **屬性名稱** | **Type** | **描述** |
 | --- | --- | --- |
 | AssociatedUpdate-PanelID | String | 指定應該報告此 UpdateProgress UpdatePanel 的識別碼。 |
 | DisplayAfter | Int | 開始非同步要求之後，會顯示此控制項之前，請以毫秒為單位指定的逾時。 |
@@ -288,7 +288,7 @@ Updatepanel 並非是全面的解決方案。 相反地，某些情況下，包�
 
 標記下階：
 
-| **標記** | **描述** |
+| **Tag** | **描述** |
 | --- | --- |
 | &lt;ProgressTemplate&gt; | 包含設定將會顯示與這個控制項之內容的 [控制項] 範本。 |
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 81c2c6f0070a409c289128ccf5d39f9fff788b48
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387343"
 ---
 # <a name="introducing-aspnet-web-pages---programming-basics"></a>ASP.NET Web Pages 簡介-程式設計基本概念
@@ -354,7 +354,7 @@ GetHtml 方法也可讓您自訂映像，藉由提供其他參數。 下列程�
 
 ## <a name="additional-resources"></a>其他資源
 
-- [使用 Razor 語法進行 ASP.NET 網頁程式設計簡介](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [使用 Razor 語法的 ASP.NET Web 程式設計簡介](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [Twitter 協助程式](../../ui-layouts-and-themes/twitter-helper.md)
 
 > [!div class="step-by-step"]

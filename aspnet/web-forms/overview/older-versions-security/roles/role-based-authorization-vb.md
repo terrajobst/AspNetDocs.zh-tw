@@ -12,7 +12,7 @@ ms.openlocfilehash: 05b014538891e6c058c4d4bd4125de434f59d9fe
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389683"
 ---
 # <a name="role-based-authorization-vb"></a>以角色為基礎的授權 (VB)
@@ -47,7 +47,7 @@ ms.locfileid: "59389683"
 如果匿名使用者瀏覽網站，都`FormsAuthenticationModule`和`RoleManagerModule`建立主體物件。
 
 
-[![T他已驗證使用者時使用表單驗證和角色架構的 ASP.NET 管線事件](role-based-authorization-vb/_static/image2.png)](role-based-authorization-vb/_static/image1.png)
+[![已驗證使用者時使用表單驗證和角色架構的 ASP.NET 管線事件](role-based-authorization-vb/_static/image2.png)](role-based-authorization-vb/_static/image1.png)
 
 **圖 1**:驗證使用者時使用表單驗證和角色架構的 ASP.NET 管線事件 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image3.png))
 
@@ -59,7 +59,7 @@ ms.locfileid: "59389683"
 如果快取使用者的角色在 cookie 中，設定角色架構`RoleManagerModule`ASP.NET 管線期間建立的 cookie [ `EndRequest`事件](https://msdn.microsoft.com/library/system.web.httpapplication.endrequest.aspx)。 在中的後續要求中會使用此 cookie `PostAuthenticateRequest`，這是當`RolePrincipal`建立物件。 如果 cookie 有效，且尚未過期，cookie 中的資料剖析和用來填入使用者的角色，藉此節省`RolePrincipal`不必呼叫`Roles`類別，以判斷使用者的角色。 圖 2 說明此工作流程。
 
 
-[![T他的使用者角色資訊可以儲存在 Cookie 中改善效能](role-based-authorization-vb/_static/image5.png)](role-based-authorization-vb/_static/image4.png)
+[![使用者的角色資訊可以儲存在 Cookie 中，以改善效能](role-based-authorization-vb/_static/image5.png)](role-based-authorization-vb/_static/image4.png)
 
 **圖 2**:使用者的角色資訊可以儲存在 Cookie 中改善效能 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image6.png))
 
@@ -70,7 +70,7 @@ ms.locfileid: "59389683"
 > 表 1 中列出的組態設定會指定產生的角色快取 cookie 的屬性。 如需有關 cookie、 其運作方式，以及它們的各種屬性的詳細資訊，請參閱[本教學課程中的 Cookie](http://www.quirksmode.org/js/cookies.html)。
 
 
-| <strong>屬性</strong> |                                                                                                                                                                                                                                                                                                                                                         <strong>描述</strong>                                                                                                                                                                                                                                                                                                                                                          |
+| <strong>Property</strong> |                                                                                                                                                                                                                                                                                                                                                         <strong>描述</strong>                                                                                                                                                                                                                                                                                                                                                          |
 |---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   `cacheRolesInCookie`    |                                                                                                                                                                                                                                                                                                                              布林值，指出是否使用 cookie 快取。 預設值為 `false`。                                                                                                                                                                                                                                                                                                                              |
 |       `cookieName`        |                                                                                                                                                                                                                                                                                                                                     角色快取 cookie 的名稱。 預設值是"。ASPXROLES"。                                                                                                                                                                                                                                                                                                                                     |
@@ -115,7 +115,7 @@ ms.locfileid: "59389683"
 若要達成此目的，先新增`Web.config`檔案`Roles`資料夾。
 
 
-[![Add 角色目錄的 Web.config 檔案](role-based-authorization-vb/_static/image8.png)](role-based-authorization-vb/_static/image7.png)
+[![加入至角色目錄的 Web.config 檔案](role-based-authorization-vb/_static/image8.png)](role-based-authorization-vb/_static/image7.png)
 
 **圖 3**:新增`Web.config`的檔案`Roles`目錄 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image9.png))
 
@@ -129,7 +129,7 @@ ms.locfileid: "59389683"
 儲存您的變更之後`Web.config`不在系統管理員角色的使用者身分登入，然後再次嘗試瀏覽其中一個受保護的頁面。 `UrlAuthorizationModule`會偵測到您沒有權限來瀏覽要求的資源; 因此，`FormsAuthenticationModule`會將您重新導向至登入頁面。 登入頁面會再將您重新導向至`UnauthorizedAccess.aspx`頁面 （請參閱 圖 4）。 登入頁面，以便從這個最後一個重新導向`UnauthorizedAccess.aspx`因為我們在步驟 2 中的 [登入] 頁面新增的程式碼，就會發生<a id="_msoanchor_7"> </a> [*使用者為基礎的授權*](../membership/user-based-authorization-vb.md)教學課程。 特別是，登入頁面將自動重新導向至任何已驗證的使用者`UnauthorizedAccess.aspx`如果查詢字串包含`ReturnUrl`參數，作為此參數會指出，使用者在登入頁面之後進入嘗試檢視的網頁時，他不是檢視權限。
 
 
-[![O只有系統管理員角色中的使用者可以檢視受保護的頁面](role-based-authorization-vb/_static/image11.png)](role-based-authorization-vb/_static/image10.png)
+[![只有系統管理員角色的使用者，才可以檢視受保護的頁面](role-based-authorization-vb/_static/image11.png)](role-based-authorization-vb/_static/image10.png)
 
 **圖 4**:僅限系統管理員角色中的使用者可以檢視受保護的頁面 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image12.png))
 
@@ -137,7 +137,7 @@ ms.locfileid: "59389683"
 先登出，然後在系統管理員角色的使用者身分登入。 現在您應該能夠檢視三個受保護的頁面。
 
 
-[![T可以瀏覽 ito UsersAndRoles.aspx 頁面因為他是在系統管理員角色](role-based-authorization-vb/_static/image14.png)](role-based-authorization-vb/_static/image13.png)
+[![可以瀏覽 Tito UsersAndRoles.aspx 頁面因為他是在系統管理員角色](role-based-authorization-vb/_static/image14.png)](role-based-authorization-vb/_static/image13.png)
 
 **圖 5**:可以瀏覽 Tito`UsersAndRoles.aspx`頁面上因為他是系統管理員角色中 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image15.png))
 
@@ -167,7 +167,7 @@ ms.locfileid: "59389683"
 設定`HeaderText`的兩個的 TemplateFields"Email"和"Comme"屬性。
 
 
-[![T他 GridView 的欄位可以是設定透過欄位對話方塊](role-based-authorization-vb/_static/image17.png)](role-based-authorization-vb/_static/image16.png)
+[![可以透過 [欄位] 對話方塊中設定 GridView 的欄位](role-based-authorization-vb/_static/image17.png)](role-based-authorization-vb/_static/image16.png)
 
 **圖 6**:GridView 的欄位可以是設定透過欄位對話方塊 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image18.png))
 
@@ -193,7 +193,7 @@ ms.locfileid: "59389683"
 使用此程式碼就緒之後，請瀏覽透過瀏覽器頁面。 如 [圖 7] 所示，您應該會看到 GridView，列出系統中的每個使用者帳戶的相關資訊。
 
 
-[![T他 UserGrid GridView 列出資訊有關每個使用者在 [系統](role-based-authorization-vb/_static/image20.png)](role-based-authorization-vb/_static/image19.png)
+[![UserGrid GridView 列出系統中的每個使用者的相關資訊](role-based-authorization-vb/_static/image20.png)](role-based-authorization-vb/_static/image19.png)
 
 **圖 7**:`UserGrid` GridView 列出資訊有關每個使用者在系統中 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image21.png))
 
@@ -239,7 +239,7 @@ GridView 控制項提供內建的編輯和刪除時的控制項繫結至已正�
 若要管理 kolekci RoleGroups，按一下要顯示 RoleGroup 集合編輯器控制項的智慧標籤的 「 編輯 kolekci RoleGroups 」 連結。 新增兩個新 kolekci RoleGroups。 設定第一個的 RoleGroup`Roles`屬性設為 「 系統管理員 」 並將第二個的 「 監督員 」。
 
 
-[![M管理 LoginView 的特定角色的範本透過 RoleGroup 集合編輯器](role-based-authorization-vb/_static/image23.png)](role-based-authorization-vb/_static/image22.png)
+[![管理 LoginView 的特定角色的範本透過 RoleGroup 集合編輯器](role-based-authorization-vb/_static/image23.png)](role-based-authorization-vb/_static/image22.png)
 
 **圖 8**:管理 LoginView 的特定角色的範本透過 RoleGroup 集合編輯器 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image24.png))
 
@@ -260,7 +260,7 @@ GridView 控制項提供內建的編輯和刪除時的控制項繫結至已正�
 **圖 9**:Bruce 顯示各有特定角色的訊息 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image27.png))
 
 
-[![Tito 是顯示系統管理員角色專屬訊息](role-based-authorization-vb/_static/image29.png)](role-based-authorization-vb/_static/image28.png)
+[![Tito 會顯示系統管理員角色特定訊息](role-based-authorization-vb/_static/image29.png)](role-based-authorization-vb/_static/image28.png)
 
 **圖 10**:Tito 會顯示系統管理員角色特定訊息 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image30.png))
 
@@ -270,7 +270,7 @@ GridView 控制項提供內建的編輯和刪除時的控制項繫結至已正�
 [圖 11] 說明 LoginView 控制項用來判斷哪些範本用來呈現工作流程。 請注意，是否有多個指定的其中一個 RoleGroup，LoginView 範本就會呈現*第一個*RoleGroup 符合。 換句話說，如果我們有放置為第一個 RoleGroup 監督員 RoleGroup 和第二個為系統管理員，然後當 Tito 瀏覽此頁面他會看到監督員內訊息。
 
 
-[![T判斷項目範本要轉譯的他 LoginView 控制項的工作流程](role-based-authorization-vb/_static/image32.png)](role-based-authorization-vb/_static/image31.png)
+[![LoginView 控制項的工作流程，來判斷要呈現的範本](role-based-authorization-vb/_static/image32.png)](role-based-authorization-vb/_static/image31.png)
 
 **圖 11**:判斷項目範本要轉譯的 LoginView 控制項的工作流程 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image33.png))
 
@@ -282,7 +282,7 @@ LoginView 控制項則會顯示不同的瀏覽頁面的使用者角色為基礎�
 若要以程式設計方式參考 CommandField 中的控制項的最簡單方式是先將它轉換成範本。 若要這麼做，按一下 編輯欄位 連結，從 GridView 的智慧標籤，從目前的欄位清單中選取 CommandField 然後按一下 「 將這個欄位轉換為 TemplateField 」 連結。 這會變成使用 TemplateField CommandField`ItemTemplate`和`EditItemTemplate`。 `ItemTemplate`包含編輯和刪除時的 Linkbutton`EditItemTemplate`裝載的更新和取消的 Linkbutton。
 
 
-[![C轉換 CommandField 到 TemplateField](role-based-authorization-vb/_static/image35.png)](role-based-authorization-vb/_static/image34.png)
+[![CommandField 轉換為 TemplateField](role-based-authorization-vb/_static/image35.png)](role-based-authorization-vb/_static/image34.png)
 
 **圖 12**:轉換 CommandField 到 TemplateField ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image36.png))
 
@@ -313,7 +313,7 @@ GridView 資料繫結至 GridView，每當列舉中的記錄及其`DataSource`�
 > 您可隱藏 CommandField 完全當非監督員和非系統管理員就瀏覽的頁面。 我不要更動此練習的讀取器。
 
 
-[![T他的編輯和刪除按鈕會隱藏非監督員和非系統管理員](role-based-authorization-vb/_static/image38.png)](role-based-authorization-vb/_static/image37.png)
+[![編輯和刪除按鈕會隱藏非監督員和非系統管理員](role-based-authorization-vb/_static/image38.png)](role-based-authorization-vb/_static/image37.png)
 
 **圖 13**:編輯和刪除按鈕會隱藏非監督員和非系統管理員 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image39.png))
 
@@ -321,7 +321,7 @@ GridView 資料繫結至 GridView，每當列舉中的記錄及其`DataSource`�
 如果使用者屬於 「 主管 」 角色 （但不是屬於系統管理員角色） 瀏覽，他會看到只有 [編輯] 按鈕。
 
 
-[![W很榮幸參與了 [編輯] 按鈕是可供監督員內，[刪除] 按鈕會隱藏](role-based-authorization-vb/_static/image41.png)](role-based-authorization-vb/_static/image40.png)
+[![適用於各有 [編輯] 按鈕時，會隱藏 [刪除] 按鈕](role-based-authorization-vb/_static/image41.png)](role-based-authorization-vb/_static/image40.png)
 
 **圖 14**:適用於各有 [編輯] 按鈕時，會隱藏 [刪除] 按鈕 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image42.png))
 
@@ -329,7 +329,7 @@ GridView 資料繫結至 GridView，每當列舉中的記錄及其`DataSource`�
 如果系統管理員身分造訪時，她就能存取來編輯和刪除按鈕。
 
 
-[![T他編輯和刪除按鈕才可以使用系統管理員](role-based-authorization-vb/_static/image44.png)](role-based-authorization-vb/_static/image43.png)
+[![編輯和刪除按鈕才可以使用系統管理員](role-based-authorization-vb/_static/image44.png)](role-based-authorization-vb/_static/image43.png)
 
 **圖 15**:編輯和刪除按鈕才可以使用系統管理員 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image45.png))
 
@@ -356,7 +356,7 @@ GridView 資料繫結至 GridView，每當列舉中的記錄及其`DataSource`�
 如果以某種方式，非系統管理員嘗試執行`RowDeleting`事件處理常式或如果非監督員 」 或 「 非系統管理員執行的嘗試`RowUpdating`.NET 執行階段將會引發的事件處理常式， `SecurityException`。
 
 
-[![I安全性內容無權執行此方法的 f，就會擲回 SecurityException](role-based-authorization-vb/_static/image47.png)](role-based-authorization-vb/_static/image46.png)
+[![如果安全性內容未獲授權執行方法，會擲回安全性例外狀況](role-based-authorization-vb/_static/image47.png)](role-based-authorization-vb/_static/image46.png)
 
 **圖 16**:安全性內容無權執行此方法中，如果`SecurityException`就會擲回 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image48.png))
 

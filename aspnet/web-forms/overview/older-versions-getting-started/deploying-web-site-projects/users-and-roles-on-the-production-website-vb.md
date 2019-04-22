@@ -12,7 +12,7 @@ ms.openlocfilehash: e97b66aed789cf6f2b2b503ae86e773ac03d74e0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392933"
 ---
 # <a name="users-and-roles-on-the-production-website-vb"></a>使用者和角色，生產環境網站 (VB)

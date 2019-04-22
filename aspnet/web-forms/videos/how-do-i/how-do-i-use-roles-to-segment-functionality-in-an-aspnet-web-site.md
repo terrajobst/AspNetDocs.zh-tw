@@ -12,7 +12,7 @@ ms.openlocfilehash: 9ecb64a52fd93498df1972846e4d7dfc21503cab
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395767"
 ---
 # <a name="how-do-i-use-roles-to-segment-functionality-in-an-aspnet-web-site"></a>[How Do i:]使用角色區隔 ASP.NET 網站中的功能

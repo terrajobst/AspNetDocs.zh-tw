@@ -12,7 +12,7 @@ ms.openlocfilehash: d35c0057f5c29e399e45d0a58467de7f106d9994
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389969"
 ---
 # <a name="calling-an-odata-service-from-a-net-client-c"></a>從 .NET 用戶端呼叫 OData 服務 (C#)
@@ -27,7 +27,7 @@ ms.locfileid: "59389969"
 >
 >
 > - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013) （適用於 Visual Studio 2012）
-> - [WCF 資料服務用戶端程式庫](https://msdn.microsoft.com/library/cc668772.aspx)
+> - [WCF Data Services 用戶端程式庫](https://msdn.microsoft.com/library/cc668772.aspx)
 > - Web API 2。 （使用 Web API 2 中，所建置 OData 服務的範例，但用戶端應用程式不相依於 Web API）。
 
 

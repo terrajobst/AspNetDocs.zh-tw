@@ -12,7 +12,7 @@ ms.openlocfilehash: adbaa5cbda4a60a8b222ba49bb148b28b2e214cc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389202"
 ---
 # <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET Web Pages (Razor) 疑難排解指南
@@ -141,7 +141,7 @@ ms.locfileid: "59389202"
     *連線嘗試失敗，因為連線對象並未正確回應之後一段時間，或是連線建立失敗，因為連線的主機無法回應*
 
     此錯誤通常表示應用程式無法連接到 SMTP 伺服器。 請檢查伺服器名稱和連接埠號碼。
-- *信箱無法使用。 伺服器回應為：5.1.0 &lt; someuser@invaliddomain &gt;寄件者已拒絕： 無效的寄件者網域*
+- *信箱無法使用。伺服器回應為：5.1.0 &lt; someuser@invaliddomain &gt;寄件者已拒絕： 無效的寄件者網域*
 
     此訊息可能表示`From`位址不正確或遺失。
 - *指定的字串不是所需的電子郵件地址的格式。*

@@ -12,7 +12,7 @@ ms.openlocfilehash: 30c8b4dac7374dc07fe93cb9ab6e320216a2b778
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389176"
 ---
 # <a name="how-do-i-create-xml-documents-from-sql-data"></a>[How Do i:]從 SQL 資料建立 XML 文件嗎？

@@ -12,7 +12,7 @@ ms.openlocfilehash: 29f7dded2f6fc2e8ce588dab2949b59ddb6f1fc4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388903"
 ---
 # <a name="creating-model-classes-with-the-entity-framework-c"></a>使用 Entity Framework 建立模型類別 (C#)
@@ -116,7 +116,7 @@ Microsoft Entity Framework 是物件關聯式對應 (O/RM) 的工具，可讓您
 
 讓我們開始建立影片資料庫應用程式建立頁面，其中顯示電影資料錄的清單。 在 列表 1 中的主控制器會公開名為 index （） 的動作。 Index （） 動作會傳回所有電影資料錄的電影資料庫資料表中，利用 Entity Framework。
 
-**列表 1 – Controllers\HomeController.cs**
+**Listing 1 – Controllers\HomeController.cs**
 
 [!code-csharp[Main](creating-model-classes-with-the-entity-framework-cs/samples/sample1.cs)]
 

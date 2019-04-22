@@ -12,7 +12,7 @@ ms.openlocfilehash: 1218cf3463c78e4b3bd3c7ca1c65d21590358f8a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395546"
 ---
 # <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>使用 DropDownList 進行主要/詳細資料篩選 (VB)
@@ -49,7 +49,7 @@ ms.locfileid: "59395546"
 接下來，開啟`Default.aspx`頁面上，並拖曳`SectionLevelTutorialListing.ascx`從使用者控制`UserControls`拖曳至設計介面上的資料夾。 此使用者控制項中，我們在中建立[主版頁面與網站導覽](../introduction/master-pages-and-site-navigation-vb.md)教學課程中，會列舉站台對應，並顯示從目前的區段項目符號清單中的教學課程。
 
 
-[![Add Default.aspx SectionLevelTutorialListing.ascx 使用者控制項](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image3.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image2.png)
+[![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image3.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image2.png)
 
 **圖 2**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image4.png))
 
@@ -69,7 +69,7 @@ ms.locfileid: "59395546"
 我們的主要/詳細資料報表會顯示選取的清單項目的產品清單的類別中的下拉式清單中，進一步在 DataList 的頁面。 超越我們，第一項工作，則將顯示在 DropDownList 中的類別。 首先開啟`FilterByDropDownList.aspx`頁面中`DataListRepeaterFiltering`資料夾，然後從 [工具箱] 拖曳至頁面的設計工具的 dropdownlist 進行拖曳。 接下來，設定 DropDownList`ID`屬性設`Categories`。 按一下 從 DropDownList 的智慧標籤的 選擇資料來源 連結，建立名為新 ObjectDataSource `CategoriesDataSource`。
 
 
-[![Add 新 ObjectDataSource 名為 CategoriesDataSource](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image7.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image6.png)
+[![新增名為 CategoriesDataSource 新 ObjectDataSource](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image7.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image6.png)
 
 **圖 4**:新增新的 ObjectDataSource 名為`CategoriesDataSource`([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image8.png))
 
@@ -77,7 +77,7 @@ ms.locfileid: "59395546"
 設定，它會叫用的新 ObjectDataSource`CategoriesBLL`類別的`GetCategories()`方法。 設定我們仍然需要指定哪些資料來源欄位應該會顯示在 DropDownList 和 ObjectDataSource 後其中一個應該為每個清單項目的值相關聯。 已`CategoryName`欄位做為顯示和`CategoryID`做為每個清單項目的值。
 
 
-[![Have DropDownList 顯示類別名稱] 欄位和做為值使用 CategoryID](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image10.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image9.png)
+[![做為值的類別名稱 欄位和使用 CategoryID 有 DropDownList 顯示](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image10.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image9.png)
 
 **圖 5**:DropDownList 顯示`CategoryName`欄位，並使用`CategoryID`的值 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image11.png))
 
@@ -85,7 +85,7 @@ ms.locfileid: "59395546"
 現在我們有 DropDownList 控制項，其中會填入來自記錄`Categories`資料表 （全部在大約六秒內完成）。 圖 6 顯示我們進行到目前為止透過瀏覽器檢視時。
 
 
-[![A 下拉式清單會列出目前的類別目錄](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image13.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image12.png)
+[![下拉式清單會列出目前的類別](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image13.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image12.png)
 
 **圖 6**:下拉式清單會列出目前的類別 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image14.png))
 
@@ -95,7 +95,7 @@ ms.locfileid: "59395546"
 我們的主要/詳細資料報表的最後一個步驟是列出與選取的類別相關聯的產品。 若要這麼做，DataList 新增至頁面，並建立名為新 ObjectDataSource `ProductsByCategoryDataSource`。 已`ProductsByCategoryDataSource`控制項擷取資料的來源`ProductsBLL`類別的`GetProductsByCategoryID(categoryID)`方法。 由於此主版/詳細報告是唯讀的選擇 （無） 選項在 INSERT、 UPDATE 和 DELETE 的索引標籤中。
 
 
-[![S選擇 GetProductsByCategoryID(categoryID) 方法](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image16.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image15.png)
+[![選取 GetProductsByCategoryID(categoryID) 方法](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image16.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image15.png)
 
 **圖 7**:選取 `GetProductsByCategoryID(categoryID)`方法 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image17.png))
 
@@ -103,7 +103,7 @@ ms.locfileid: "59395546"
 按一下 [下一步] 之後, ObjectDataSource 精靈會提示我們輸入之值的來源`GetProductsByCategoryID(categoryID)`方法的*`categoryID`* 參數。 若要使用選取的值`categories`DropDownList 項目設定參數來源控制與以 ControlID `Categories`。
 
 
-[![Set categoryID 參數設為值的分類 DropDownList](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image19.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image18.png)
+[![設定為值的分類 DropDownList categoryID 參數](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image19.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image18.png)
 
 **圖 8**:設定*`categoryID`* 參數的值`Categories`DropDownList ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image20.png))
 
@@ -119,12 +119,12 @@ ms.locfileid: "59395546"
 圖 9 和 10 說明主要/詳細資料報表動作中。
 
 
-[![W當頁面上，飲料產品會顯示第一次瀏覽](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image22.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image21.png)
+[![當第一次瀏覽的頁面，會顯示飲料產品](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image22.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image21.png)
 
 **圖 9**:當第一次瀏覽的頁面，會顯示飲料產品 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image23.png))
 
 
-[![S選取新的產品 （產生） 會自動導致回傳時，更新 DataList](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image25.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image24.png)
+[![選取新的產品 （產生） 會自動造成回傳，更新 DataList](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image25.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image24.png)
 
 **圖 10**:選取新的產品 （產生） 會自動造成回傳，更新 DataList ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image26.png))
 
@@ -156,7 +156,7 @@ ms.locfileid: "59395546"
 我們所選擇的值的原因`0`的 「-選擇類別目錄-」 的清單項目是因為值是系統中有無類別`0`，因此沒有產品記錄時，會傳回"--選擇類別目錄-」 清單項目已選取。 若要確認這一點，請花一點時間瀏覽透過瀏覽器頁面。 如 圖 13 所示，一開始檢視頁面的 「-選擇類別目錄-」 清單項目已選取，並不顯示任何產品時。
 
 
-[![Wh](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image30.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image29.png)
+[![時](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image30.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image29.png)
 
 **圖 13**:選取 「-選擇類別目錄-」 清單項目時，會顯示沒有產品 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image31.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 644af2485c1a51f2de209e968ba1b3475350fa47
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59394064"
 ---
 # <a name="executing-several-animations-after-each-other-c"></a>接續執行數個動畫 (C#)
@@ -51,12 +51,12 @@ ms.locfileid: "59394064"
 當您執行此指令碼，面板寬度，然後較小的第一次取得。
 
 
-[![F增加日曆寬度](executing-several-animations-after-each-other-cs/_static/image2.png)](executing-several-animations-after-each-other-cs/_static/image1.png)
+[![寬度增加的第一次](executing-several-animations-after-each-other-cs/_static/image2.png)](executing-several-animations-after-each-other-cs/_static/image1.png)
 
 寬度增加的第一次 ([按一下以檢視完整大小的影像](executing-several-animations-after-each-other-cs/_static/image3.png))
 
 
-[![T高度會縮小時](executing-several-animations-after-each-other-cs/_static/image5.png)](executing-several-animations-after-each-other-cs/_static/image4.png)
+[![然後就會減少高度](executing-several-animations-after-each-other-cs/_static/image5.png)](executing-several-animations-after-each-other-cs/_static/image4.png)
 
 然後就會減少高度 ([按一下以檢視完整大小的影像](executing-several-animations-after-each-other-cs/_static/image6.png))
 

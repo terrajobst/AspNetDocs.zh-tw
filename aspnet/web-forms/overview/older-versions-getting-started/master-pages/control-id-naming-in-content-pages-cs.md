@@ -12,7 +12,7 @@ ms.openlocfilehash: a398494df0ed2bf749620b717350b21669a1ae5c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395644"
 ---
 # <a name="control-id-naming-in-content-pages-c"></a>內容頁中的控制項識別碼命名 (C#)
@@ -83,7 +83,7 @@ Visual Studio 會針對每個主版頁面的四個 ContentPlaceHolders，自動�
 圖 3 顯示頁面上，當透過 Visual Studio 設計工具檢視。
 
 
-[![T他頁面包含三個 Web 控制項： 文字方塊、 按鈕和標籤](control-id-naming-in-content-pages-cs/_static/image4.png)](control-id-naming-in-content-pages-cs/_static/image3.png)
+[![此頁面包含三個 Web 控制項： 文字方塊、 按鈕和標籤](control-id-naming-in-content-pages-cs/_static/image4.png)](control-id-naming-in-content-pages-cs/_static/image3.png)
 
 **圖 03**:此頁面包含三個 Web 控制項： 文字方塊、 按鈕和標籤 ([按一下以檢視完整大小的影像](control-id-naming-in-content-pages-cs/_static/image5.png))
 
@@ -133,7 +133,7 @@ Visual Studio 會針對每個主版頁面的四個 ContentPlaceHolders，自動�
 輸入此程式碼之後, 請瀏覽`IDIssues.aspx`透過瀏覽器頁面上，輸入您的年齡，然後按一下 [提交] 按鈕。 按一下 [提交] 按鈕後`NullReferenceException`，就會引發 （請參閱 [圖 5]）。
 
 
-[![A 則引發 NullReferenceException](control-id-naming-in-content-pages-cs/_static/image8.png)](control-id-naming-in-content-pages-cs/_static/image7.png)
+[![則引發 NullReferenceException](control-id-naming-in-content-pages-cs/_static/image8.png)](control-id-naming-in-content-pages-cs/_static/image7.png)
 
 **圖 05**:A`NullReferenceException`就會引發 ([按一下以檢視完整大小的影像](control-id-naming-in-content-pages-cs/_static/image9.png))
 
@@ -173,7 +173,7 @@ Visual Studio 會針對每個主版頁面的四個 ContentPlaceHolders，自動�
 此時，瀏覽的頁面，透過瀏覽器中，輸入您的年齡，然後按一下 [提交] 按鈕顯示訊息`Results`加上標籤，如預期般運作。
 
 
-[![T他的使用者存留期會顯示在 [標籤](control-id-naming-in-content-pages-cs/_static/image11.png)](control-id-naming-in-content-pages-cs/_static/image10.png)
+[![在標籤中顯示使用者的年齡](control-id-naming-in-content-pages-cs/_static/image11.png)](control-id-naming-in-content-pages-cs/_static/image10.png)
 
 **圖 06**:使用者的年齡會顯示在 [標籤] ([按一下以檢視完整大小的影像](control-id-naming-in-content-pages-cs/_static/image12.png))
 
@@ -200,7 +200,7 @@ Visual Studio 會針對每個主版頁面的四個 ContentPlaceHolders，自動�
 使用此程式碼就緒之後，返回`IDIssues.aspx`頁面的程式碼後置類別和標記為註解目前`FindControl`方法呼叫。 它們取代成呼叫`Page.FindControlRecursive("controlID")`。 最棒的擴充方法是，它們會出現 IntelliSense 下拉式清單中，直接。 如 [圖 7] 所示，當您輸入頁面並再叫用期間，`FindControlRecursive`方法會在 IntelliSense 下拉式清單，以及其他包含`Control`類別方法。
 
 
-[![E擴充方法都包含在 IntelliSense 下拉式清單](control-id-naming-in-content-pages-cs/_static/image14.png)](control-id-naming-in-content-pages-cs/_static/image13.png)
+[![擴充方法都包含在 IntelliSense 下拉式清單](control-id-naming-in-content-pages-cs/_static/image14.png)](control-id-naming-in-content-pages-cs/_static/image13.png)
 
 **圖 07**:擴充方法都包含在 IntelliSense 下拉式清單 ([按一下以檢視完整大小的影像](control-id-naming-in-content-pages-cs/_static/image15.png))
 

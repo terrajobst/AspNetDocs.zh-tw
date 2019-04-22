@@ -12,7 +12,7 @@ ms.openlocfilehash: e8ba4bc5dc7ae2478413049ebb2943cbbe52e11e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396781"
 ---
 # <a name="nested-master-pages-vb"></a>巢狀主版頁面 (VB)
@@ -84,7 +84,7 @@ ms.locfileid: "59396781"
 此標記會海軍藍的背景上的大型白色字型中的頁面頂端顯示標題為 「 巢狀主版頁面 （簡單） 」 的連結。 下方的`MainContent`ContentPlaceHolder。 [圖 1] 顯示`Simple.master`主版頁面，在 Visual Studio 設計工具中載入時。
 
 
-[![T他巢狀主版頁面定義內容的特定 [管理] 區段中的頁面](nested-master-pages-vb/_static/image2.png)](nested-master-pages-vb/_static/image1.png)
+[![巢狀主版頁面的頁面，在 [管理] 區段中定義內容的特定](nested-master-pages-vb/_static/image2.png)](nested-master-pages-vb/_static/image1.png)
 
 **圖 01**:巢狀主版頁面定義內容的特定 [管理] 區段中的頁面 ([按一下以檢視完整大小的影像](nested-master-pages-vb/_static/image3.png))
 
@@ -101,12 +101,12 @@ ms.locfileid: "59396781"
 > 如果您使用 Web 應用程式專案模型，而不網站專案模型的 ASP.NET 網站建立您不會看到 [圖 2] 所示的 [加入新項目] 對話方塊中的 [選取主版頁面] 核取方塊。 若要使用 Web 應用程式專案模型時，建立巢狀主版頁面中，您必須選擇巢狀主版頁面範本 （而不是主版頁面範本中）。 在 選取巢狀主版頁面範本，然後按一下 新增 之後, 相同選取主版頁面 圖 3 所示的對話方塊隨即出現。
 
 
-[![C天曉得怎樣才算&quot;選取的主版頁面&quot;核取方塊以新增巢狀主版頁面](nested-master-pages-vb/_static/image5.png)](nested-master-pages-vb/_static/image4.png)
+[![請檢查&quot;選取的主版頁面&quot;核取方塊以新增巢狀主版頁面](nested-master-pages-vb/_static/image5.png)](nested-master-pages-vb/_static/image4.png)
 
 **圖 02**:選取 選取主版頁面 」 的核取方塊新增巢狀主版頁面 ([按一下以檢視完整大小的影像](nested-master-pages-vb/_static/image6.png))
 
 
-[![Bind 巢狀主版頁面到 Simple.master 主版頁面](nested-master-pages-vb/_static/image8.png)](nested-master-pages-vb/_static/image7.png)
+[![繫結至 Simple.master 主版頁面的巢狀主版頁面](nested-master-pages-vb/_static/image8.png)](nested-master-pages-vb/_static/image7.png)
 
 **圖 03**:繫結巢狀主版頁面，來`Simple.master`主版頁面 ([按一下以檢視完整大小的影像](nested-master-pages-vb/_static/image9.png))
 
@@ -126,7 +126,7 @@ ms.locfileid: "59396781"
 後此新增，請在儲存巢狀主版頁面，然後再新增 新的內容頁面，以`NestedMasterPages`名為資料夾`Default.aspx`，並將它繫結`SimpleNested.master`主版頁面。 在此頁面可能會大吃一驚以查看它包含任何內容的控制項 （請參閱 圖 4） ！ 內容頁面只能存取其*父*主要頁面的 ContentPlaceHolders。 `SimpleNested.master` 不包含任何 ContentPlaceHolder 控制項;因此，任何繫結到此主版頁面的內容頁面不能包含任何內容的控制項。
 
 
-[![T他新內容頁包含沒有內容的控制項](nested-master-pages-vb/_static/image11.png)](nested-master-pages-vb/_static/image10.png)
+[![新的內容頁面不包含內容控制項](nested-master-pages-vb/_static/image11.png)](nested-master-pages-vb/_static/image10.png)
 
 **圖 04**:新內容頁包含沒有內容的控制項 ([按一下以檢視完整大小的影像](nested-master-pages-vb/_static/image12.png))
 
@@ -149,7 +149,7 @@ ms.locfileid: "59396781"
 [圖 5] 顯示了這裡-牽涉到三個實體`Simple.master`， `SimpleNested.master`，和`Default.aspx`-以及如何關聯到另一個。 如圖所示，巢狀主版頁面實作其父代 ContentPlaceHolder 內容控制項。 如果這些區域需要能夠存取 [內容] 頁面中，巢狀主版頁面必須將自己 ContentPlaceHolders 新增至內容控制項。
 
 
-[![T他最上層和巢狀主版頁面指定 [內容] 頁面的版面配置](nested-master-pages-vb/_static/image14.png)](nested-master-pages-vb/_static/image13.png)
+[![最上層和巢狀主版頁面指定 [內容] 頁面的版面配置](nested-master-pages-vb/_static/image14.png)](nested-master-pages-vb/_static/image13.png)
 
 **圖 05**:最上層和巢狀主版頁面要求內容的頁面配置 ([按一下以檢視完整大小的影像](nested-master-pages-vb/_static/image15.png))
 
@@ -157,7 +157,7 @@ ms.locfileid: "59396781"
 此行為說明何只 cognizant 其父主版頁面的內容頁面或主版頁面。 這項行為也會顯示由 Visual Studio 設計工具中。 [圖 6] 顯示的設計工具`Default.aspx`。 有哪些區域可從 [內容] 頁面可編輯，而且部分的不會清楚地顯示設計工具，它不會區分非可編輯的區域是從巢狀主版頁面和區域是從最上層的主版頁面。
 
 
-[![T他內容頁面現在包含內容控制項的巢狀主版頁面的 ContentPlaceHolders](nested-master-pages-vb/_static/image17.png)](nested-master-pages-vb/_static/image16.png)
+[![內容頁面現在包含巢狀主版頁面的 ContentPlaceHolders 內容控制項](nested-master-pages-vb/_static/image17.png)](nested-master-pages-vb/_static/image16.png)
 
 **圖 06**:內容頁面現在包含內容控制項的巢狀主版頁面的 ContentPlaceHolders ([按一下以檢視完整大小的影像](nested-master-pages-vb/_static/image18.png))
 
@@ -189,7 +189,7 @@ ms.locfileid: "59396781"
 這會將兩個連結，加入繫結至每個頁面頂端`Simple.master`， `SimpleNested.master`，或`SimpleNestedAlternate.master`; 這些變更立即套用至所有巢狀主版頁面和其內容的頁面。 [圖 8] 顯示`Alternate.aspx`透過瀏覽器檢視時。 請注意頁面頂端的 （相較於 圖 7） 上的連結新增。
 
 
-[![Changed 到最高層級主版頁面時，會立即反映在其巢狀主版頁面和其內容頁面](nested-master-pages-vb/_static/image23.png)](nested-master-pages-vb/_static/image22.png)
+[![變更為頂層主版頁面會立即反映在其巢狀主版頁面和其內容頁面](nested-master-pages-vb/_static/image23.png)](nested-master-pages-vb/_static/image22.png)
 
 **圖 08**:變更為頂層主版頁面會立即反映在其巢狀主版頁面和其內容頁面 ([按一下以檢視完整大小的影像](nested-master-pages-vb/_static/image24.png))
 
@@ -219,7 +219,7 @@ ms.locfileid: "59396781"
 讓我們使用第二個選項。 建立單一巢狀主版頁面中的檔案`~/Admin`名為資料夾`AdminNested.master`。 因為這兩`Site.master`並`Alternate.master`有相同一組 ContentPlaceHolder 控制項，無論何種主版頁面您將它繫結，雖然我建議您將它繫結`Site.master`為了一致性的起見。
 
 
-[![A加入巢狀主版頁面至 ~/Admin 資料夾。](nested-master-pages-vb/_static/image26.png)](nested-master-pages-vb/_static/image25.png)
+[![加入 ~/Admin 資料夾中的巢狀主版頁面。](nested-master-pages-vb/_static/image26.png)](nested-master-pages-vb/_static/image25.png)
 
 **圖 09**:加入巢狀主版頁面，以便`~/Admin`資料夾。 ([按一下以檢視完整大小的影像](nested-master-pages-vb/_static/image27.png))
 
@@ -246,7 +246,7 @@ ms.locfileid: "59396781"
 [圖 10] 顯示`AdminNested.master`時透過 Visual Studio 設計工具檢視的巢狀主版頁面。 在頂端的黃色方塊中的指示，請參閱 <<c0> `MainContent` 內容控制項。
 
 
-[![T他的巢狀主版頁面擴充最高層級的主版頁面包含指示的系統管理員。](nested-master-pages-vb/_static/image29.png)](nested-master-pages-vb/_static/image28.png)
+[![巢狀主版頁面擴充最上層的主版頁面，為包含系統管理員的指示。](nested-master-pages-vb/_static/image29.png)](nested-master-pages-vb/_static/image28.png)
 
 **圖 10**:巢狀主版頁面擴充最上層的主版頁面，為包含系統管理員的指示。 ([按一下以檢視完整大小的影像](nested-master-pages-vb/_static/image30.png))
 
@@ -275,7 +275,7 @@ ms.locfileid: "59396781"
 圖 11 說明如何最上層的主版頁面 (`Site.master`或`Alternate.master`)，巢狀主版頁面 (`AdminNested.master`)，並管理一節的內容頁面之間的關聯性。
 
 
-[![T他巢狀主版頁面定義內容的特定 [管理] 區段中的頁面](nested-master-pages-vb/_static/image32.png)](nested-master-pages-vb/_static/image31.png)
+[![巢狀主版頁面的頁面，在 [管理] 區段中定義內容的特定](nested-master-pages-vb/_static/image32.png)](nested-master-pages-vb/_static/image31.png)
 
 **圖 11**:巢狀主版頁面定義內容的特定 [管理] 區段中的頁面 ([按一下以檢視完整大小的影像](nested-master-pages-vb/_static/image33.png))
 
@@ -313,7 +313,7 @@ ms.locfileid: "59396781"
 使用此程式碼就緒之後，您應該能夠瀏覽，並使用 [管理] 區段中的內容的頁面。 [圖 12] 顯示`~/Admin/Products.aspx`頁面上透過瀏覽器檢視時。 如您所見，此頁面會包含管理指示 方塊中，因為它定義於巢狀主版頁面。
 
 
-[![T他管理 > 一節包含指示中最上方的每個網頁上的內容頁面](nested-master-pages-vb/_static/image35.png)](nested-master-pages-vb/_static/image34.png)
+[![在 [管理] 區段中的內容頁面包含每個頁面頂端的指示](nested-master-pages-vb/_static/image35.png)](nested-master-pages-vb/_static/image34.png)
 
 **圖 12**:中管理一節包含指示每個頁首的內容頁面 ([按一下以檢視完整大小的影像](nested-master-pages-vb/_static/image36.png))
 
@@ -334,7 +334,7 @@ ms.locfileid: "59396781"
 使用此項變更之後，使用者的主版頁面選取項目也延續至 [管理] 區段。 [圖 13] 顯示於 [圖 12]，但之後，使用者已變更其主版頁面選取項目，若要在相同頁面`Alternate.master`。
 
 
-[![T他的巢狀 [管理] 頁面會使用最高層級主版頁面中選取的使用者](nested-master-pages-vb/_static/image38.png)](nested-master-pages-vb/_static/image37.png)
+[![巢狀的管理頁面會使用最上層使用者所選取的主版頁面](nested-master-pages-vb/_static/image38.png)](nested-master-pages-vb/_static/image37.png)
 
 **圖 13**:巢狀的 [管理] 頁面可讓您使用最高層級主版頁面中選取的使用者 ([按一下以檢視完整大小的影像](nested-master-pages-vb/_static/image39.png))
 

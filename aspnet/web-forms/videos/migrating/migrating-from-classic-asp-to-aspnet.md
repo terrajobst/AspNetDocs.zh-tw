@@ -12,7 +12,7 @@ ms.openlocfilehash: 52d3c4814a4896c3aa0134ea87c8fac2f5995017
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396300"
 ---
 # <a name="migrating-from-classic-asp-to-aspnet"></a>從 Classic ASP [移轉] 至 ASP.NET

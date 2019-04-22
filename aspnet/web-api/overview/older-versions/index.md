@@ -13,7 +13,7 @@ ms.openlocfilehash: 1e5fecca826a74fd8ff60ecd415f39c4f51917a2
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391353"
 ---
 # <a name="documentation-on-older-versions-of-web-api"></a>在舊版的 Web API 的文件
@@ -22,12 +22,12 @@ ms.locfileid: "59391353"
 
 
 - [啟用 Web API 1 中的 CRUD 作業](creating-a-web-api-that-supports-crud-operations.md)
-- [搭配 Entity Framework 5 使用 ASP.NET Web API 1](using-web-api-1-with-entity-framework-5/index.md)
+- [使用 ASP.NET Web API 1 和 Entity Framework 5](using-web-api-1-with-entity-framework-5/index.md)
 
     - [概觀與建立專案](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-1.md)
-    - [建立領域模型](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2.md)
-    - [建立系統管理員控制器](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3.md)
-    - [新增系統管理員檢視](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-4.md)
+    - [建立網域模型](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2.md)
+    - [建立管理員控制器](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3.md)
+    - [新增管理員檢視](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-4.md)
     - [使用 Knockout.js 建立動態 UI](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-5.md)
     - [建立產品和訂單控制器](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-6.md)
     - [建立主要頁面](using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7.md)

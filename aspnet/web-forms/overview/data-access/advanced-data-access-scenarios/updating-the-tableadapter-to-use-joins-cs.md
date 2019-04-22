@@ -12,7 +12,7 @@ ms.openlocfilehash: 297496e590caf9c8ded83cb16b5fef1dfc542dc7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381382"
 ---
 # <a name="updating-the-tableadapter-to-use-joins-c"></a>更新 TableAdapter 以使用 JOIN (C#)
@@ -64,7 +64,7 @@ A`JOIN`合併從一個資料表記錄與根據一些準則的另一個資料表�
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-cs/samples/sample3.sql)]
 
 
-[![Enter 為止主要查詢該包含聯結](updating-the-tableadapter-to-use-joins-cs/_static/image2.png)](updating-the-tableadapter-to-use-joins-cs/_static/image1.png)
+[![輸入主要的查詢包含聯結](updating-the-tableadapter-to-use-joins-cs/_static/image2.png)](updating-the-tableadapter-to-use-joins-cs/_static/image1.png)
 
 **圖 1**:輸入主要查詢的 Contains `JOIN` s ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image3.png))
 
@@ -88,7 +88,7 @@ A`JOIN`合併從一個資料表記錄與根據一些準則的另一個資料表�
 TableAdapter 的 DataTable 有適當的資料行，缺少值及其`InsertCommand`， `UpdateCommand`，和`DeleteCommand`屬性。 若要確認這一點，按一下設計工具的 TableAdapter 上，然後移至 [屬性] 視窗。 那里，您會看到`InsertCommand`， `UpdateCommand`，和`DeleteCommand`屬性會設為 （無）。
 
 
-[![T他 InsertCommand、 UpdateCommand 和 DeleteCommand 屬性設定為 [（無）](updating-the-tableadapter-to-use-joins-cs/_static/image7.png)](updating-the-tableadapter-to-use-joins-cs/_static/image6.png)
+[![InsertCommand、 UpdateCommand 和 DeleteCommand 屬性設定為 （無）](updating-the-tableadapter-to-use-joins-cs/_static/image7.png)](updating-the-tableadapter-to-use-joins-cs/_static/image6.png)
 
 **圖 4**:`InsertCommand`， `UpdateCommand`，並`DeleteCommand`屬性設定為 [（無）] ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image8.png))
 
@@ -108,7 +108,7 @@ TableAdapter 的 DataTable 有適當的資料行，缺少值及其`InsertCommand
 首先開啟`NorthwindWithSprocs`中的資料集`~/App_Code/DAL`資料夾。 以滑鼠右鍵按一下設計工具上，從操作功能表中，選取 [新增] 選項，挑選 TableAdapter 的功能表項目。 這會啟動 [TableAdapter 組態精靈]。 如 圖 5 說明，讓精靈建立新的預存程序，並按一下 下一步。 建立新的重新整理程式中，預存程序，從 [TableAdapter] s 精靈，請參閱[建立新預存程序的輸入資料集 Tableadapter](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)教學課程。
 
 
-[![S選擇建立新預存程序選項](updating-the-tableadapter-to-use-joins-cs/_static/image10.png)](updating-the-tableadapter-to-use-joins-cs/_static/image9.png)
+[![選取 建立新預存程序選項](updating-the-tableadapter-to-use-joins-cs/_static/image10.png)](updating-the-tableadapter-to-use-joins-cs/_static/image9.png)
 
 **圖 5**:選取 建立新的預存程序選項 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image11.png))
 
@@ -123,7 +123,7 @@ TableAdapter 的 DataTable 有適當的資料行，缺少值及其`InsertCommand
 下列步驟可讓我們來命名的 TableAdapter s 預存程序。 使用名稱`Employees_Select`， `Employees_Insert`， `Employees_Update`，和`Employees_Delete`，如 [圖 6] 所示。
 
 
-[![Name tableadapter 預存程序](updating-the-tableadapter-to-use-joins-cs/_static/image13.png)](updating-the-tableadapter-to-use-joins-cs/_static/image12.png)
+[![名稱的 TableAdapter s 預存程序](updating-the-tableadapter-to-use-joins-cs/_static/image13.png)](updating-the-tableadapter-to-use-joins-cs/_static/image12.png)
 
 **圖 6**:命名 TableAdapter s 預存程序 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image14.png))
 
@@ -131,7 +131,7 @@ TableAdapter 的 DataTable 有適當的資料行，缺少值及其`InsertCommand
 最後一個步驟會提示我們輸入來命名的 TableAdapter 的方法。 使用`Fill`和`GetEmployees`做為方法名稱。 也請務必將更新直接傳送至資料庫 (GenerateDBDirectMethods) 核取方塊已核取的建立方法。
 
 
-[![N名稱 （） 方法填滿的 tableadapter 和 GetEmployees](updating-the-tableadapter-to-use-joins-cs/_static/image16.png)](updating-the-tableadapter-to-use-joins-cs/_static/image15.png)
+[![名稱的 TableAdapter 的方法填滿和 GetEmployees](updating-the-tableadapter-to-use-joins-cs/_static/image16.png)](updating-the-tableadapter-to-use-joins-cs/_static/image15.png)
 
 **圖 7**:命名的 tableadapter 方法`Fill`並`GetEmployees`([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image17.png))
 
@@ -139,7 +139,7 @@ TableAdapter 的 DataTable 有適當的資料行，缺少值及其`InsertCommand
 完成精靈之後，花點時間檢查資料庫中的預存程序。 您應該會看到四個新的： `Employees_Select`， `Employees_Insert`， `Employees_Update`，和`Employees_Delete`。 接下來，檢查`EmployeesDataTable`和`EmployeesTableAdapter`剛建立。 DataTable 包含主查詢所傳回的每個欄位的資料行。 TableAdapter 上按一下，然後移至 [屬性] 視窗。 那里，您會看到`InsertCommand`， `UpdateCommand`，和`DeleteCommand`屬性已正確設定來呼叫對應的預存程序。
 
 
-[![T他 TableAdapter 包含插入、 更新和刪除功能](updating-the-tableadapter-to-use-joins-cs/_static/image19.png)](updating-the-tableadapter-to-use-joins-cs/_static/image18.png)
+[![TableAdapter 包含插入、 更新和刪除功能](updating-the-tableadapter-to-use-joins-cs/_static/image19.png)](updating-the-tableadapter-to-use-joins-cs/_static/image18.png)
 
 **圖 8**:TableAdapter 包含插入、 更新和刪除功能 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image20.png))
 
@@ -156,7 +156,7 @@ TableAdapter 的 DataTable 有適當的資料行，缺少值及其`InsertCommand
 在更新之後`SELECT`陳述式中，移至 檔案 功能表，然後選擇 儲存的變更儲存`Employees_Select`。 或者，您可以按一下工具列中的 [儲存] 圖示，或按 Ctrl + S。 儲存您的變更之後，以滑鼠右鍵按一下`Employees_Select`預存程序，在 伺服器總管，然後選擇 執行。 這會執行預存程序，並在 輸出 視窗中顯示其結果 （請參閱 圖 9）。
 
 
-[![T他預存程序結果會顯示在輸出視窗](updating-the-tableadapter-to-use-joins-cs/_static/image22.png)](updating-the-tableadapter-to-use-joins-cs/_static/image21.png)
+[![預存程序結果會顯示在 [輸出] 視窗](updating-the-tableadapter-to-use-joins-cs/_static/image22.png)](updating-the-tableadapter-to-use-joins-cs/_static/image21.png)
 
 **圖 9**:預存程序結果會顯示在 [輸出] 視窗中 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image23.png))
 
@@ -173,7 +173,7 @@ TableAdapter 的 DataTable 有適當的資料行，缺少值及其`InsertCommand
 以滑鼠右鍵按一下啟動`EmployeesTableAdapter`並從內容功能表中選取設定。 這會顯示 TableAdapter 組態精靈，它會列出用於選取、 插入、 更新和刪除，以及它們的傳回值和參數 （如果有的話） 的預存程序。 [圖 10] 顯示此精靈。 這裡我們可以看到`Employees_Select`預存程序現在會傳回`ManagerFirstName`和`ManagerLastName`欄位。
 
 
-[![T他精靈顯示 Employees_Select 預存程序更新資料行清單](updating-the-tableadapter-to-use-joins-cs/_static/image25.png)](updating-the-tableadapter-to-use-joins-cs/_static/image24.png)
+[![精靈顯示更新的資料行清單中，針對 Employees_Select 預存程序](updating-the-tableadapter-to-use-joins-cs/_static/image25.png)](updating-the-tableadapter-to-use-joins-cs/_static/image24.png)
 
 **圖 10**:精靈會顯示更新資料行清單，如`Employees_Select`預存程序 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image26.png))
 
@@ -181,7 +181,7 @@ TableAdapter 的 DataTable 有適當的資料行，缺少值及其`InsertCommand
 按一下 [完成] 來完成精靈。 DataSet 設計工具中，返回`EmployeesDataTable`包含兩個額外的資料行：`ManagerFirstName`和`ManagerLastName`。
 
 
-[![T他 EmployeesDataTable 包含兩個新資料行](updating-the-tableadapter-to-use-joins-cs/_static/image28.png)](updating-the-tableadapter-to-use-joins-cs/_static/image27.png)
+[![EmployeesDataTable 包含兩個新的資料行](updating-the-tableadapter-to-use-joins-cs/_static/image28.png)](updating-the-tableadapter-to-use-joins-cs/_static/image27.png)
 
 **圖 11**:`EmployeesDataTable`包含兩個新資料行 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image29.png))
 
@@ -204,12 +204,12 @@ TableAdapter 的 DataTable 有適當的資料行，缺少值及其`InsertCommand
 設定要使用 ObjectDataSource`EmployeesBLLWithSprocs`類別，並從 選取和刪除索引標籤，確定`GetEmployees`和`DeleteEmployee`方法會從下拉式清單中選取。 按一下 [完成] 以完成 ObjectDataSource 的組態。
 
 
-[![C設定使用 EmployeesBLLWithSprocs 類別 ObjectDataSource](updating-the-tableadapter-to-use-joins-cs/_static/image31.png)](updating-the-tableadapter-to-use-joins-cs/_static/image30.png)
+[![設定使用 EmployeesBLLWithSprocs 類別 ObjectDataSource](updating-the-tableadapter-to-use-joins-cs/_static/image31.png)](updating-the-tableadapter-to-use-joins-cs/_static/image30.png)
 
 **圖 12**:設定要使用 ObjectDataSource`EmployeesBLLWithSprocs`類別 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image32.png))
 
 
-[![Have ObjectDataSource 使用 GetEmployees 和 DeleteEmployee 方法](updating-the-tableadapter-to-use-joins-cs/_static/image34.png)](updating-the-tableadapter-to-use-joins-cs/_static/image33.png)
+[![具有 ObjectDataSource 使用 GetEmployees 和 DeleteEmployee 方法](updating-the-tableadapter-to-use-joins-cs/_static/image34.png)](updating-the-tableadapter-to-use-joins-cs/_static/image33.png)
 
 **圖 13**:ObjectDataSource 使用了`GetEmployees`並`DeleteEmployee`方法 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image35.png))
 
@@ -224,7 +224,7 @@ Visual Studio 會加入至 GridView BoundField 的每個`EmployeesDataTable`s �
 造訪透過瀏覽器來測試頁面。 如 [圖 14] 所示，此頁面會列出每一位員工和 （假設有的話） 的他或她 manager s 名稱。
 
 
-[![T他 Employees_Select 預存程序中的聯結會傳回管理員的 [名稱](updating-the-tableadapter-to-use-joins-cs/_static/image37.png)](updating-the-tableadapter-to-use-joins-cs/_static/image36.png)
+[![Employees_Select 參與預存程序會傳回經理的名稱](updating-the-tableadapter-to-use-joins-cs/_static/image37.png)](updating-the-tableadapter-to-use-joins-cs/_static/image36.png)
 
 **圖 14**:`JOIN`中`Employees_Select`預存程序傳回的管理員名稱 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image38.png))
 
@@ -232,7 +232,7 @@ Visual Studio 會加入至 GridView BoundField 的每個`EmployeesDataTable`s �
 按一下 [刪除] 按鈕會啟動刪除最後的執行中的工作流程，`Employees_Delete`預存程序。 不過，嘗試`DELETE`預存程序的陳述式會失敗，因為外部索引鍵條件約束違規情形 （請參閱 圖 15）。 具體來說，每一位員工會有一或多個記錄`Orders`資料表中，導致無法刪除。
 
 
-[![Deleting 員工具有對應的訂單結果中外部索引鍵條件約束違規](updating-the-tableadapter-to-use-joins-cs/_static/image40.png)](updating-the-tableadapter-to-use-joins-cs/_static/image39.png)
+[![刪除某位員工具有對應的訂單結果中外部索引鍵條件約束違規](updating-the-tableadapter-to-use-joins-cs/_static/image40.png)](updating-the-tableadapter-to-use-joins-cs/_static/image39.png)
 
 **圖 15**:刪除某位員工具有對應的訂單結果中外部索引鍵條件約束違規 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image41.png))
 

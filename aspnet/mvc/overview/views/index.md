@@ -12,7 +12,7 @@ ms.openlocfilehash: 737c15b4657ce8a67224c116bcad196020c45710
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388240"
 ---
 # <a name="aspnet-mvc-ui-layouts-and-themes"></a>ASP.NET MVC UI、 版面配置和佈景主題
@@ -21,4 +21,4 @@ ms.locfileid: "59388240"
 
 
 - [在 ASP.NET MVC 中使用 Page Inspector](using-page-inspector-in-aspnet-mvc.md)
-- [動態與 強型別檢視](dynamic-v-strongly-typed-views.md)
+- [動態與強型別檢視](dynamic-v-strongly-typed-views.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: a1218b1fb5a8ee28ea6ee3d3c5af979e86821ed7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391191"
 ---
 # <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>進階的 Entity Framework 案例，MVC Web 應用程式 (10 小時，共 10)
@@ -306,7 +306,7 @@ Entity Framework 藉由比較實體的目前值與原始值，判斷實體如何
 
 錯誤訊息：
 
-*一個或多個實體的驗證失敗。 請參閱 'EntityValidationErrors' 屬性，如需詳細資訊。* (從*`Update-Database`* PMC 命令。)
+*一個或多個實體的驗證失敗。請參閱 'EntityValidationErrors' 屬性，如需詳細資訊。* (從*`Update-Database`* PMC 命令。)
 
 解決方案:
 
@@ -316,8 +316,7 @@ Entity Framework 藉由比較實體的目前值與原始值，判斷實體如何
 
 錯誤訊息：
 
-*HTTP 錯誤 500.19 - 內部伺服器錯誤  
-無法存取要求的網頁，因為頁面的相關的組態資料無效。*
+*無法存取 HTTP 錯誤 500.19-內部伺服器錯誤 」 要求的頁面，因為頁面的相關的組態資料無效。*
 
 解決方案:
 
@@ -327,7 +326,7 @@ Entity Framework 藉由比較實體的目前值與原始值，判斷實體如何
 
 錯誤訊息：
 
-*建立與 SQL Server　的連線時，發生與網路相關的錯誤或是執行個體特有的錯誤。 找不到或無法存取伺服器。 確認執行個名稱是否正確，以及 SQL Server 是否設定為允許遠端連線 (提供者：SQL 網路介面，錯誤：26 - 尋找指定的伺服器/執行個體時發生錯誤)*
+*建立 SQL Server 的連接時發生網路相關或執行個體特有的錯誤。找不到或無法存取伺服器。請確認執行個體名稱正確，且 SQL Server 設定為允許遠端連接。(提供者：SQL 網路介面，錯誤：26-尋找指定的伺服器/執行個體時發生錯誤)*
 
 解決方案:
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 6f8f74b74080104980e1db866d695fe7c6d9d5fc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59393349"
 ---
 # <a name="using-postbacks-with-reorderlist-c"></a>使用具有 ReorderList 的回傳 (C#)
@@ -36,10 +36,10 @@ ms.locfileid: "59393349"
 
 若要繫結至這個 XML`ReorderList`必須設定控制項，並啟用回傳中，下列屬性：
 
-- `DataSourceID`:資料來源的識別碼
-- `SortOrderField`:要排序的屬性
-- `AllowReorder`:是否要允許使用者重新排列清單項目
-- `PostBackOnReorder`:是否要建立回傳，每當重新排列清單
+- `DataSourceID`：資料來源的識別碼
+- `SortOrderField`：要排序的屬性
+- `AllowReorder`：是否要允許使用者重新排列清單項目
+- `PostBackOnReorder`：是否要建立回傳，每當重新排列清單
 
 以下是控制項的適當標記：
 
@@ -62,7 +62,7 @@ ms.locfileid: "59393349"
 [!code-aspx[Main](using-postbacks-with-reorderlist-cs/samples/sample6.aspx)]
 
 
-[![E除此之外，每個重新排列觸發回傳](using-postbacks-with-reorderlist-cs/_static/image2.png)](using-postbacks-with-reorderlist-cs/_static/image1.png)
+[![每個重新排列觸發回傳](using-postbacks-with-reorderlist-cs/_static/image2.png)](using-postbacks-with-reorderlist-cs/_static/image1.png)
 
 每個重新排列觸發回傳 ([按一下以檢視完整大小的影像](using-postbacks-with-reorderlist-cs/_static/image3.png))
 

@@ -13,7 +13,7 @@ ms.openlocfilehash: c41fc06ad98665f7d48efde030c1341b06e49dd0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395286"
 ---
 # <a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>使用 SMS 和電子郵件使用 ASP.NET Identity 的雙因素驗證

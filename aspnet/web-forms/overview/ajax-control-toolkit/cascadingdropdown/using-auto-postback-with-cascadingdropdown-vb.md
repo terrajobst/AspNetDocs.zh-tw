@@ -12,7 +12,7 @@ ms.openlocfilehash: 433756839532393b36935df8f237e93706b4f18c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383149"
 ---
 # <a name="using-auto-postback-with-cascadingdropdown-vb"></a>使用自動回傳與 CascadingDropDown (VB)
@@ -57,7 +57,7 @@ CascadingDropDown extender 接著會以非同步方式呼叫 web 服務的下列
 如此一來，當清單中有實際的項目，而且使用者選取一個項目只執行回傳。
 
 
-[![S選取的清單項目造成回傳](using-auto-postback-with-cascadingdropdown-vb/_static/image2.png)](using-auto-postback-with-cascadingdropdown-vb/_static/image1.png)
+[![選取清單項目造成回傳](using-auto-postback-with-cascadingdropdown-vb/_static/image2.png)](using-auto-postback-with-cascadingdropdown-vb/_static/image1.png)
 
 選取清單項目造成回傳 ([按一下以檢視完整大小的影像](using-auto-postback-with-cascadingdropdown-vb/_static/image3.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 5eb84731714bd181d69a94bbce27993439288d42
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381870"
 ---
 # <a name="how-do-i-handle-business-logic-exceptions"></a>How do I 處理商務邏輯例外狀況

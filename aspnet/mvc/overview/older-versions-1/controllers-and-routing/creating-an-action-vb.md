@@ -12,7 +12,7 @@ ms.openlocfilehash: 5f8eeeaa9bd77c0259f680198e57ade8d49cd06b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382612"
 ---
 # <a name="creating-an-action-vb"></a>建立動作 (VB)
@@ -57,7 +57,7 @@ by [Microsoft](https://github.com/microsoft)
 如果您嘗試叫用 CompanySecrets() 控制器動作，在您的瀏覽器的網址列中輸入 /Work/CompanySecrets 您會在 圖 1 中收到錯誤訊息。
 
 
-[![Invoking NonAction 方法](creating-an-action-vb/_static/image1.jpg)](creating-an-action-vb/_static/image1.png)
+[![叫用 NonAction 方法](creating-an-action-vb/_static/image1.jpg)](creating-an-action-vb/_static/image1.png)
 
 **圖 01**:叫用 NonAction 方法 ([按一下以檢視完整大小的影像](creating-an-action-vb/_static/image2.png))
 

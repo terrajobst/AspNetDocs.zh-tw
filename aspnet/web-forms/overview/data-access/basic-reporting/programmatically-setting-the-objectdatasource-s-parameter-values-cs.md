@@ -12,7 +12,7 @@ ms.openlocfilehash: 032b6665d3e99998dba870c8f7f2cdfec17737bf
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383066"
 ---
 # <a name="programmatically-setting-the-objectdatasources-parameter-values-c"></a>以程式設計方式設定 ObjectDataSource 的參數值 (C#)
@@ -33,7 +33,7 @@ ms.locfileid: "59383066"
 每當 ObjectDataSource`Select`方法會叫用 ObjectDataSource 第一次引發其[選取事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting%28VS.80%29.aspx)。 ObjectDataSource 的基礎物件的方法則會叫用。 一旦您已完成的 ObjectDataSource[選取事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selected%28VS.80%29.aspx)引發 （[圖 1] 說明這一系列的事件）。 傳入 ObjectDataSource 的基礎物件的方法的參數值可以設定或自訂事件處理常式中`Selecting`事件。
 
 
-[![T他的 ObjectDataSource 選取和選取的事件引發之前和之後其基礎物件的方法會叫用](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image2.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image1.png)
+[![ObjectDataSource 的選取和選取的事件引發之前和之後其基礎物件的方法會叫用](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image2.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image1.png)
 
 **圖 1**:ObjectDataSource`Selected`並`Selecting`叫用事件引發之前和之後其基礎物件的方法 ([按一下以檢視完整大小的影像](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image3.png))
 
@@ -47,7 +47,7 @@ ms.locfileid: "59383066"
 第一個範例中我們需要加入一個方法來擷取這些員工的`HireDate`發生在指定的月份。 若要提供此功能，根據我們必須先建立方法，以在我們架構`EmployeesTableAdapter`子可對應到適當的 SQL 陳述式。 若要這麼做，首先開啟 Northwind 具類型資料集。 以滑鼠右鍵按一下`EmployeesTableAdapter`加上標籤，然後選擇 加入查詢。
 
 
-[![Add EmployeesTableAdapter 至新增查詢](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image5.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image4.png)
+[![將新的查詢加入至 EmployeesTableAdapter](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image5.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image4.png)
 
 **圖 2**:加入新的查詢，來`EmployeesTableAdapter`([按一下以檢視完整大小的影像](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image6.png))
 
@@ -55,7 +55,7 @@ ms.locfileid: "59383066"
 選擇此選項，將會傳回資料列的 SQL 陳述式。 當您來到 指定`SELECT`陳述式畫面的預設值`SELECT`陳述式`EmployeesTableAdapter`會載入。 只需在中新增`WHERE`子句： `WHERE DATEPART(m, HireDate) = @Month`。 [DATEPART](https://msdn.microsoft.com/library/ms174420.aspx)會傳回特定的日期部分的 T-SQL 函式`datetime`類型; 在此案例中，我們會使用`DATEPART`傳回當月`HireDate`資料行。
 
 
-[![Return 只有那些資料列位置的 HireDate 資料行小於或等於@HiredBeforeDate參數](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image8.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image7.png)
+[![傳回只有那些資料列位置的 HireDate Sloupec je 小於或等於@HiredBeforeDate參數](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image8.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image7.png)
 
 **圖 3**:只有那些資料列，傳回`HireDate`資料行小於或等於`@HiredBeforeDate`參數 ([按一下以檢視完整大小的影像](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image9.png))
 
@@ -63,7 +63,7 @@ ms.locfileid: "59383066"
 最後，變更`FillBy`並`GetDataBy`方法名稱來`FillByHiredDateMonth`和`GetEmployeesByHiredDateMonth`分別。
 
 
-[![C選擇更適當方法名稱比 FillBy 和 GetDataBy](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image11.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image10.png)
+[![選擇比 FillBy 和 GetDataBy 更適當的方法名稱](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image11.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image10.png)
 
 **圖 4**:選擇 更多適當方法名稱比`FillBy`並`GetDataBy`([按一下以檢視完整大小的影像](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image12.png))
 
@@ -71,7 +71,7 @@ ms.locfileid: "59383066"
 按一下 完成 以完成精靈並返回 資料集的設計介面。 `EmployeesTableAdapter`現在應該包含一組新的方法，以存取指定的月份中雇用的員工。
 
 
-[![T他的新方法會出現在資料集的設計介面](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image14.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image13.png)
+[![新的方法會出現在資料集的設計介面](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image14.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image13.png)
 
 **圖 5**:新方法會出現在資料集的設計介面 ([按一下以檢視完整大小的影像](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image15.png))
 
@@ -90,12 +90,12 @@ ms.locfileid: "59383066"
 此範例中最後一個步驟是顯示的員工的招聘年度是本月。 新增 GridView，以開始`ProgrammaticParams.aspx`頁面中`BasicReporting`資料夾並加入新的 ObjectDataSource 做為其資料來源。 設定要使用 ObjectDataSource`EmployeesBLL`類別搭配`SelectMethod`設定為`GetEmployeesByHiredDateMonth(month)`。
 
 
-[![Use EmployeesBLL 類別](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image17.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image16.png)
+[![使用 EmployeesBLL 類別](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image17.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image16.png)
 
 **圖 6**:使用`EmployeesBLL`類別 ([按一下以檢視完整大小的影像](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image18.png))
 
 
-[![S選擇從 GetEmployeesByHiredDateMonth(month) 方法](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image20.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image19.png)
+[![選取從 GetEmployeesByHiredDateMonth(month) 方法](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image20.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image19.png)
 
 **圖 7**:Select From`GetEmployeesByHiredDateMonth(month)`方法 ([按一下以檢視完整大小的影像](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image21.png))
 
@@ -103,7 +103,7 @@ ms.locfileid: "59383066"
 最後一個畫面會要求我們提供`month`參數值的來源。 因為我們會以程式設計方式設定此值，將參數的來源 設定為預設值沒有任何選項，然後按一下 完成。
 
 
-[![Leave 參數來源設定為 [無](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image23.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image22.png)
+[![保留參數的 [來源] 設定為 None](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image23.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image22.png)
 
 **圖 8**:將參數的來源設定為 None ([按一下以檢視完整大小的影像](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image24.png))
 
@@ -129,7 +129,7 @@ ms.locfileid: "59383066"
 當瀏覽此頁面，透過瀏覽器可以看到該只有一位員工的雇用本月 （年 3 月） Laura Callahan，自 1994 年以來已被使用的公司。
 
 
-[![T員工的週年紀念日這個月會顯示用以](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image27.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image26.png)
+[![顯示這個月的週年紀念日員工](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image27.png)](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image26.png)
 
 **圖 10**:這些員工的週年紀念日這個月是顯示 ([按一下以檢視完整大小的影像](programmatically-setting-the-objectdatasource-s-parameter-values-cs/_static/image28.png))
 

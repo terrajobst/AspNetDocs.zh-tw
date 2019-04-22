@@ -12,7 +12,7 @@ ms.openlocfilehash: ee66e166d24bb80008671c84f6512d5c54707fcf
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389810"
 ---
 # <a name="using-multiple-popup-controls-vb"></a>使用多個快顯視窗控制項 (VB)
@@ -49,7 +49,7 @@ PopupControl 擴充項在 AJAX Control Toolkit 提供簡單的方式，來啟動
 現在每當您按一下文字欄位中，行事曆會顯示以下欄位，可讓您選取的日期。 （回到選取的日期文字方塊將會說明在不同的教學課程。）
 
 
-[![T他的行事曆會顯示當使用者按一下 [文字方塊](using-multiple-popup-controls-vb/_static/image2.png)](using-multiple-popup-controls-vb/_static/image1.png)
+[![當使用者按一下文字方塊，即出現日曆](using-multiple-popup-controls-vb/_static/image2.png)](using-multiple-popup-controls-vb/_static/image1.png)
 
 當使用者按一下文字方塊，即出現日曆 ([按一下以檢視完整大小的影像](using-multiple-popup-controls-vb/_static/image3.png))
 

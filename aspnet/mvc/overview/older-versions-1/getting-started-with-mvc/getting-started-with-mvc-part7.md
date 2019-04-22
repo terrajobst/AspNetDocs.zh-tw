@@ -12,7 +12,7 @@ ms.openlocfilehash: 3db6947f36eb51b41d929f8c7d8835a95db8ea75
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392348"
 ---
 # <a name="adding-validation-to-the-model"></a>將驗證新增至模型
@@ -61,11 +61,11 @@ ms.locfileid: "59392348"
 
 以下是顯示在 IDE 中的程式碼。
 
-[![Movies-Microsoft Visual Web Developer 2010 Express (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
+[![影片-Microsoft Visual Web Developer 2010 Express (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
 
 執行您的應用程式和瀏覽 /Movies/Create 同樣地，然後按一下建立不需要輸入任何資料。 錯誤訊息會立即顯示沒有 [flash 我們相關聯傳送資料] 頁面上，一路回溯到伺服器。 這是因為 ASP.NET MVC 現在驗證的輸入上同時 （使用 JavaScript） 的用戶端和伺服器上。
 
-[![Create - Windows Internet Explorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
+[![建立-Windows Internet Explorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
 
 這狀況良好 ！ 讓我們現在新增一個額外的資料行的資料庫。
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: f1761948f9bf5eb55e396b4334eca33cf34b899e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59382585"
 ---
 # <a name="creating-custom-html-helpers"></a>建立自訂的 HTML 協助程式

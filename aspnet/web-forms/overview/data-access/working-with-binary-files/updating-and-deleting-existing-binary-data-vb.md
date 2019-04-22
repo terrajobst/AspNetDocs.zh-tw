@@ -12,7 +12,7 @@ ms.openlocfilehash: b12af635c7913d4ca343d3e0e6af9f43aef493e9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59391555"
 ---
 # <a name="updating-and-deleting-existing-binary-data-vb"></a>更新及刪除現有的二進位資料 (VB)
@@ -37,7 +37,7 @@ DAL 已自動產生`Insert`， `Update`，並`Delete`方法，但這些方法所
 開啟 輸入資料集，並從設計工具中，以滑鼠右鍵按一下`CategoriesTableAdapter`s 標頭，然後從操作功能表來啟動 TableAdapter 查詢組態精靈 中選擇 加入查詢。 此精靈一開始會詢問 TableAdapter 查詢應該如何存取資料庫。 選擇 使用 SQL 陳述式，然後按一下 下一步。 下一個步驟會產生提示的查詢類型。 因為我們重新建立要新增新的記錄，以查詢`Categories`資料表中，選擇 更新並按一下 下一步。
 
 
-[![S選擇 [更新] 選項](updating-and-deleting-existing-binary-data-vb/_static/image2.png)](updating-and-deleting-existing-binary-data-vb/_static/image1.png)
+[![選取 [更新] 選項](updating-and-deleting-existing-binary-data-vb/_static/image2.png)](updating-and-deleting-existing-binary-data-vb/_static/image1.png)
 
 **圖 1**:選取 [更新] 選項 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-vb/_static/image3.png))
 
@@ -50,7 +50,7 @@ DAL 已自動產生`Insert`， `Update`，並`Delete`方法，但這些方法所
 在精靈的最後一個畫面會要求我們命名新的 TableAdapter 方法。 輸入`UpdateWithPicture`按一下 [完成]。
 
 
-[![Name 新的 TableAdapter 方法 UpdateWithPicture](updating-and-deleting-existing-binary-data-vb/_static/image5.png)](updating-and-deleting-existing-binary-data-vb/_static/image4.png)
+[![命名新的 TableAdapter 方法 UpdateWithPicture](updating-and-deleting-existing-binary-data-vb/_static/image5.png)](updating-and-deleting-existing-binary-data-vb/_static/image4.png)
 
 **圖 2**:將新的 TableAdapter 方法`UpdateWithPicture`([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-vb/_static/image6.png))
 
@@ -78,7 +78,7 @@ DAL 已自動產生`Insert`， `Update`，並`Delete`方法，但這些方法所
 首先開啟`UploadInDetailsView.aspx`頁面。 複製所有的宣告式語法內`<asp:Content>`項目，如 [圖 3] 所示。 接下來，開啟`UpdatingAndDeleting.aspx`並貼上此標記內其`<asp:Content>`項目。 同樣地，程式碼複製`UploadInDetailsView.aspx`頁面上將程式碼後置類別的`UpdatingAndDeleting.aspx`。
 
 
-[![Copy UploadInDetailsView.aspx 從宣告式標記](updating-and-deleting-existing-binary-data-vb/_static/image8.png)](updating-and-deleting-existing-binary-data-vb/_static/image7.png)
+[![宣告式標記複製 UploadInDetailsView.aspx](updating-and-deleting-existing-binary-data-vb/_static/image8.png)](updating-and-deleting-existing-binary-data-vb/_static/image7.png)
 
 **圖 3**:複製從宣告式標記`UploadInDetailsView.aspx`([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-vb/_static/image9.png))
 
@@ -94,7 +94,7 @@ DAL 已自動產生`Insert`， `Update`，並`Delete`方法，但這些方法所
 現在，更新 s 索引標籤下拉式清單 （無），但保留刪除 s 索引標籤下拉式清單設為`DeleteCategory`。 我們會返回這個精靈，在步驟 6 來新增更新的支援。
 
 
-[![C設定為使用 DeleteCategory 方法的 ObjectDataSource](updating-and-deleting-existing-binary-data-vb/_static/image11.png)](updating-and-deleting-existing-binary-data-vb/_static/image10.png)
+[![設定為使用 DeleteCategory 方法的 ObjectDataSource](updating-and-deleting-existing-binary-data-vb/_static/image11.png)](updating-and-deleting-existing-binary-data-vb/_static/image10.png)
 
 **圖 4**:設定要使用 ObjectDataSource`DeleteCategory`方法 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-vb/_static/image12.png))
 
@@ -113,7 +113,7 @@ ObjectDataSource 現在將包含的值及其`DeleteMethod`屬性，以及`Delete
 設定 ObjectDataSource 之後, 將刪除的功能新增至 GridView，藉由檢查啟用刪除 核取方塊的 GridView s 智慧標籤。 這會新增至 GridView 的 CommandField 其`ShowDeleteButton`屬性設定為`True`。
 
 
-[![E啟用支援 GridView 裡的 [刪除](updating-and-deleting-existing-binary-data-vb/_static/image14.png)](updating-and-deleting-existing-binary-data-vb/_static/image13.png)
+[![啟用適用於在 GridView 中刪除支援](updating-and-deleting-existing-binary-data-vb/_static/image14.png)](updating-and-deleting-existing-binary-data-vb/_static/image13.png)
 
 **圖 5**:啟用支援在 gridview 裡的刪除 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-vb/_static/image15.png))
 
@@ -121,12 +121,12 @@ ObjectDataSource 現在將包含的值及其`DeleteMethod`屬性，以及`Delete
 請花一點時間來測試刪除功能。 沒有外部索引鍵之間`Products`表格 s`CategoryID`並`Categories`表格的`CategoryID`，因此如果您嘗試刪除任何前八個類別，您會收到外部索引鍵條件約束違規的例外狀況。 若要測試這項功能時，新增新的類別，提供手冊和圖片。 [圖 6] 所示我測試類別包含名為測試摺頁冊檔案`Test.pdf`和測試圖片。 圖 7 顯示 GridView 之後已加入測試分類。
 
 
-[![Add 手冊和映像的測試分類](updating-and-deleting-existing-binary-data-vb/_static/image17.png)](updating-and-deleting-existing-binary-data-vb/_static/image16.png)
+[![新增使用手冊和影像的測試類別](updating-and-deleting-existing-binary-data-vb/_static/image17.png)](updating-and-deleting-existing-binary-data-vb/_static/image16.png)
 
 **圖 6**:新增使用手冊和影像的測試類別 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-vb/_static/image18.png))
 
 
-[![After 插入測試類別，它會顯示在 [GridView](updating-and-deleting-existing-binary-data-vb/_static/image20.png)](updating-and-deleting-existing-binary-data-vb/_static/image19.png)
+[![在插入之後測試類別，它會顯示在 GridView](updating-and-deleting-existing-binary-data-vb/_static/image20.png)](updating-and-deleting-existing-binary-data-vb/_static/image19.png)
 
 **圖 7**:在插入之後測試類別，它會顯示在 GridView ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-vb/_static/image21.png))
 
@@ -171,7 +171,7 @@ GridView s [ `RowDeleting`事件](https://msdn.microsoft.com/library/system.web.
 按一下 設定資料來源連結，從 ObjectDataSource 的精靈，請繼續進行第二個步驟。 由於`DataObjectMethodAttribute`用於`CategoriesBLL`，[更新] 下拉式清單應該會自動填入`UpdateCategory`接受四個輸入參數的多載 (所有資料行，但`Picture`)。 使其使用以五個參數的多載，可以變更此選項。
 
 
-[![C設定為使用包含圖片參數 UpdateCategory 方法的 ObjectDataSource](updating-and-deleting-existing-binary-data-vb/_static/image23.png)](updating-and-deleting-existing-binary-data-vb/_static/image22.png)
+[![設定要使用包含參數圖片 UpdateCategory 方法的 ObjectDataSource](updating-and-deleting-existing-binary-data-vb/_static/image23.png)](updating-and-deleting-existing-binary-data-vb/_static/image22.png)
 
 **圖 9**:設定要使用 ObjectDataSource`UpdateCategory`方法，其中包含的參數`Picture`([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-vb/_static/image24.png))
 
@@ -186,7 +186,7 @@ ObjectDataSource 現在將包含的值及其`UpdateMethod`屬性，以及對應`
 若要開啟的 GridView s 內建編輯功能，請檢查 GridView s 智慧標籤的 啟用編輯選項。 這將會設定 CommandField s`ShowEditButton`屬性設`True`，產生的新加入的 編輯 按鈕 （正在編輯之資料列的更新 和 取消 按鈕）。
 
 
-[![C設定 GridView，以支援 [編輯](updating-and-deleting-existing-binary-data-vb/_static/image26.png)](updating-and-deleting-existing-binary-data-vb/_static/image25.png)
+[![設定 GridView，以支援編輯](updating-and-deleting-existing-binary-data-vb/_static/image26.png)](updating-and-deleting-existing-binary-data-vb/_static/image25.png)
 
 **圖 10**:設定 GridView，以支援編輯 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-vb/_static/image27.png))
 
@@ -194,7 +194,7 @@ ObjectDataSource 現在將包含的值及其`UpdateMethod`屬性，以及對應`
 請瀏覽透過瀏覽器頁面，然後按一下其中一個資料列的編輯按鈕。 `CategoryName`和`Description`BoundFields 會轉譯為文字方塊。 `BrochurePath` TemplateField 缺少`EditItemTemplate`，因此它會繼續顯示其`ItemTemplate`手冊的連結。 `Picture` ImageField 呈現為文字方塊其`Text`ImageField s 的值指派給屬性`DataImageUrlField`值，在此情況下`CategoryID`。
 
 
-[![T他的 GridView 會缺少 BrochurePath 的編輯介面](updating-and-deleting-existing-binary-data-vb/_static/image29.png)](updating-and-deleting-existing-binary-data-vb/_static/image28.png)
+[![GridView 缺少 BrochurePath 編輯介面](updating-and-deleting-existing-binary-data-vb/_static/image29.png)](updating-and-deleting-existing-binary-data-vb/_static/image28.png)
 
 **圖 11**:GridView 缺少的編輯介面`BrochurePath`([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-vb/_static/image30.png))
 
@@ -226,7 +226,7 @@ ObjectDataSource 現在將包含的值及其`UpdateMethod`屬性，以及對應`
 RadioButtonList，下方新增 FileUpload 控制項，名為`BrochureUpload`。 設定其`Visible`屬性設`False`。
 
 
-[![Add RadioButtonList 和 FileUpload 控制項的 EditItemTemplate](updating-and-deleting-existing-binary-data-vb/_static/image32.png)](updating-and-deleting-existing-binary-data-vb/_static/image31.png)
+[![新增 EditItemTemplate RadioButtonList 和 FileUpload 控制項](updating-and-deleting-existing-binary-data-vb/_static/image32.png)](updating-and-deleting-existing-binary-data-vb/_static/image31.png)
 
 **圖 13**:新增 FileUpload 控制項和 RadioButtonList `EditItemTemplate` ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-vb/_static/image33.png))
 
@@ -241,12 +241,12 @@ RadioButtonList，下方新增 FileUpload 控制項，名為`BrochureUpload`。 
 使用此程式碼就緒之後，花點時間來測試編輯介面。 按一下 [編輯] 按鈕的資料列。 一開始，您應該選取目前使用的手冊選項。 變更選取的索引，就會引發回傳。 如果選取第三個選項，則顯示 FileUpload 控制項，否則它會隱藏。 圖 14 顯示的編輯介面，當第一次按一下 編輯 按鈕;選取上傳新的手冊選項後，圖 15 顯示介面。
 
 
-[![Initially，使用目前摺頁冊選項](updating-and-deleting-existing-binary-data-vb/_static/image35.png)](updating-and-deleting-existing-binary-data-vb/_static/image34.png)
+[![一開始，使用目前摺頁冊選項](updating-and-deleting-existing-binary-data-vb/_static/image35.png)](updating-and-deleting-existing-binary-data-vb/_static/image34.png)
 
 **圖 14**:一開始，使用目前摺頁冊選項 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-vb/_static/image36.png))
 
 
-[![Choosing 上傳新摺頁冊選項會顯示 FileUpload 控制項](updating-and-deleting-existing-binary-data-vb/_static/image38.png)](updating-and-deleting-existing-binary-data-vb/_static/image37.png)
+[![選擇上傳新摺頁冊選項會顯示 FileUpload 控制項](updating-and-deleting-existing-binary-data-vb/_static/image38.png)](updating-and-deleting-existing-binary-data-vb/_static/image37.png)
 
 **圖 15**:選擇上傳新摺頁冊選項會顯示 FileUpload 控制項 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-vb/_static/image39.png))
 
@@ -302,7 +302,7 @@ ImageField 轉換為 TemplateField 以這種方式，就會產生為 TemplateFie
 我們需要更新`EditItemTemplate`使用 FileUpload 控制項。 從 GridView s 智慧標籤，按一下 編輯範本連結，然後選取`Picture`TemplateField 的`EditItemTemplate`從下拉式清單。 您應該會看到 TextBox，移除此範本中。 接下來，從 [工具箱] 拖曳 FileUpload 控制項，在範本中，設定其`ID`至`PictureUpload`。 也加入的文字變更的類別目錄的圖片，請指定新的圖片。 若要保留相同類別目錄的圖片，將欄位保留空白範本，以及。
 
 
-[![Add EditItemTemplate FileUpload 控制項](updating-and-deleting-existing-binary-data-vb/_static/image41.png)](updating-and-deleting-existing-binary-data-vb/_static/image40.png)
+[![新增 FileUpload 控制項的 EditItemTemplate](updating-and-deleting-existing-binary-data-vb/_static/image41.png)](updating-and-deleting-existing-binary-data-vb/_static/image40.png)
 
 **圖 17**:新增 FileUpload 控制項`EditItemTemplate`([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-vb/_static/image42.png))
 
@@ -310,7 +310,7 @@ ImageField 轉換為 TemplateField 以這種方式，就會產生為 TemplateFie
 自訂編輯介面之後, 請在瀏覽器中檢視您的進度。 檢視時的資料列在唯讀模式下，類別 s 映像會顯示之前，但按一下 [編輯] 按鈕呈現為使用 FileUpload 控制項文字的圖片資料行。
 
 
-[![T他的編輯介面包含 FileUpload 控制項](updating-and-deleting-existing-binary-data-vb/_static/image44.png)](updating-and-deleting-existing-binary-data-vb/_static/image43.png)
+[![編輯介面包含 FileUpload 控制項](updating-and-deleting-existing-binary-data-vb/_static/image44.png)](updating-and-deleting-existing-binary-data-vb/_static/image43.png)
 
 **圖 18**:編輯介面包含 FileUpload 控制項 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-vb/_static/image45.png))
 

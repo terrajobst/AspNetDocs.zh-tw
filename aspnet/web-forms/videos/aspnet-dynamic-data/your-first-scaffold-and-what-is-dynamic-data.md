@@ -12,7 +12,7 @@ ms.openlocfilehash: e677707018375debd0f1542037a43e525498b247
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59389306"
 ---
 # <a name="your-first-scaffold-and-what-is-dynamic-data"></a>您的第一個 Scaffold 以及動態資料是什麼？

@@ -12,7 +12,7 @@ ms.openlocfilehash: 387c0ab407df2badfd8ff848b6a13c68769fbba7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379855"
 ---
 # <a name="adding-a-new-field-to-the-movie-model-and-database-table-vb"></a>將新欄位新增至影片模型和資料庫資料表 (VB)
