@@ -12,13 +12,13 @@ ms.openlocfilehash: bd2b5370b5da4bc89a4f7db6b86e27a3bab15db1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380999"
 ---
-# <a name="aspnet-4-quick-hit--persistent-gridview-row-selection"></a><span data-ttu-id="e4e5c-103">ASP.NET 4 」 快速 Hit"– 永續性 GridView 資料列選取範圍</span><span class="sxs-lookup"><span data-stu-id="e4e5c-103">ASP.NET 4 "Quick Hit" – Persistent GridView Row Selection</span></span>
+# <a name="aspnet-4-quick-hit--persistent-gridview-row-selection"></a><span data-ttu-id="e923c-103">ASP.NET 4 」 快速 Hit"– 永續性 GridView 資料列選取範圍</span><span class="sxs-lookup"><span data-stu-id="e923c-103">ASP.NET 4 "Quick Hit" – Persistent GridView Row Selection</span></span>
 
-<span data-ttu-id="e4e5c-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="e4e5c-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="e923c-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="e923c-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="e4e5c-105">在這段影片中，您將了解 GridView 控制項的永續性的資料列選取範圍。</span><span class="sxs-lookup"><span data-stu-id="e4e5c-105">In this video you will learn about persisted row selection for the GridView control.</span></span> 
+<span data-ttu-id="e923c-105">在這段影片中，您將了解 GridView 控制項的永續性的資料列選取範圍。</span><span class="sxs-lookup"><span data-stu-id="e923c-105">In this video you will learn about persisted row selection for the GridView control.</span></span> 
 
-[<span data-ttu-id="e4e5c-106">&#9654;觀看影片 （3 分鐘）</span><span class="sxs-lookup"><span data-stu-id="e4e5c-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-persistent-gridview-row-selection)
+[<span data-ttu-id="e923c-106">&#9654;觀看影片 （3 分鐘）</span><span class="sxs-lookup"><span data-stu-id="e923c-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-persistent-gridview-row-selection)
