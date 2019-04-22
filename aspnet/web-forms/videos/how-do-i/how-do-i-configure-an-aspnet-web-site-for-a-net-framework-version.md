@@ -12,7 +12,7 @@ ms.openlocfilehash: 37f7f75dbe1d88190032538b0b1b3dec74cab4c0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386251"
 ---
 # <a name="how-do-i-configure-an-aspnet-web-site-for-a-net-framework-version"></a>[How Do i:]針對.NET Framework 版本設定 ASP.NET 網站

@@ -12,7 +12,7 @@ ms.openlocfilehash: b0c9cd7ab36a8414e0d7d50a68b05bb09a5f24f1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387902"
 ---
 # <a name="enable-automated-unit-testing"></a>啟用自動化單元測試
@@ -96,7 +96,7 @@ Visual Studio 2008 Professional （及更新版本） 包含可用來執行 Visu
 
 ![](enable-automated-unit-testing/_static/image5.png)
 
-*注意:根據預設，與測試結果 視窗不會顯示類別名稱 資料行。 您可以將它加入以滑鼠右鍵按一下 [測試結果] 視窗內使用 [新增/移除欄位] 功能表命令。*
+*注意：根據預設，與測試結果 視窗不會顯示類別名稱 資料行。您可以將它加入以滑鼠右鍵按一下 測試結果 視窗內使用 新增/移除欄位 功能表命令。*
 
 我們的兩個測試時間只有一小部分的第二個執行 –，並為您可以兩者都傳遞，請參閱。 我們現在可以在 上移，並建立其他的測試，確認特定的規則驗證，以及涵蓋兩個 helper 方法-IsUserHost() 和 IsUserRegistered() – 我們新增至 Dinner 類別，藉此強化它們。 備妥，Dinner 類別的所有這些測試可讓您更容易、 更安全地在未來將新的商務規則和驗證加入至它。 我們可以加入我們新的規則邏輯至 Dinner，，，然後在數秒內確認 它尚未中斷任何我們先前的邏輯功能。
 

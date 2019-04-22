@@ -12,7 +12,7 @@ ms.openlocfilehash: 6bde070dae3b295c8d7a04098b874d41fab54830
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380206"
 ---
 # <a name="caching-data-with-the-objectdatasource-vb"></a>使用 ObjectDataSource 快取資料 (VB)
@@ -66,7 +66,7 @@ ASP.NET 2.0 提供了各種不同的快取選項。 透過整個網頁或使用�
 在其他資料夾，例如`Default.aspx`在`Caching`資料夾會列出其一節中的教學課程。 請記得，`SectionLevelTutorialListing.ascx`使用者控制項提供這項功能。 因此，新增此使用者控制項`Default.aspx`從拖曳到頁面的設計 檢視中的 方案總管 中拖曳。
 
 
-[![Figure 2:您可以將 SectionLevelTutorialListing.ascx 使用者控制項加入 [Default.aspx](caching-data-with-the-objectdatasource-vb/_static/image3.png)](caching-data-with-the-objectdatasource-vb/_static/image2.png)
+[![圖 2:將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](caching-data-with-the-objectdatasource-vb/_static/image3.png)](caching-data-with-the-objectdatasource-vb/_static/image2.png)
 
 **圖 2**:圖 2：新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-vb/_static/image4.png))
 
@@ -91,7 +91,7 @@ ASP.NET 2.0 提供了各種不同的快取選項。 透過整個網頁或使用�
 首先開啟`ObjectDataSource.aspx`頁面中`Caching`資料夾。 從 工具箱 拖曳至設計工具拖曳的 GridView，設定其`ID`屬性，以`Products`，並從它的智慧標籤，選擇 繫結至新的 ObjectDataSource 控制項，名為`ProductsDataSource`。 設定使用 ObjectDataSource`ProductsBLL`類別。
 
 
-[![C設定使用 ProductsBLL 類別 ObjectDataSource](caching-data-with-the-objectdatasource-vb/_static/image7.png)](caching-data-with-the-objectdatasource-vb/_static/image6.png)
+[![設定使用 ProductsBLL 類別 ObjectDataSource](caching-data-with-the-objectdatasource-vb/_static/image7.png)](caching-data-with-the-objectdatasource-vb/_static/image6.png)
 
 **圖 4**:設定要使用 ObjectDataSource`ProductsBLL`類別 ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-vb/_static/image8.png))
 
@@ -99,7 +99,7 @@ ASP.NET 2.0 提供了各種不同的快取選項。 透過整個網頁或使用�
 此頁面上，讓建立可編輯的 GridView，以便我們可以檢查 ObjectDataSource 中快取資料修改透過 GridView 的介面時，會發生什麼事。 將下拉式清單中選取索引標籤上，並為其預設值，設定`GetProducts()`，變更至 [更新] 索引標籤中選取的項目，但`UpdateProduct`多載，接受`productName`， `unitPrice`，和`productID`做為輸入參數。
 
 
-[![Set 適當 UpdateProduct 多載來更新 s] 索引標籤下拉式清單](caching-data-with-the-objectdatasource-vb/_static/image10.png)](caching-data-with-the-objectdatasource-vb/_static/image9.png)
+[![更新索引標籤的下拉式清單設適當 UpdateProduct 多載](caching-data-with-the-objectdatasource-vb/_static/image10.png)](caching-data-with-the-objectdatasource-vb/_static/image9.png)
 
 **[圖 5**:S 的更新] 索引標籤下拉式清單設合適`UpdateProduct`多載 ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-vb/_static/image11.png))
 
@@ -114,7 +114,7 @@ GridView s 智慧標籤的 啟用編輯核取方塊，讓 GridView 可進行編�
 > 需要檢閱爧簏濻 GridView s 編輯介面嗎？ 如果是的話，請參閱上一步[自訂資料修改介面](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb.md)教學課程。
 
 
-[![E啟用編輯，排序和分頁的 GridView 支援](caching-data-with-the-objectdatasource-vb/_static/image13.png)](caching-data-with-the-objectdatasource-vb/_static/image12.png)
+[![啟用適用於編輯、 排序和分頁 GridView 支援](caching-data-with-the-objectdatasource-vb/_static/image13.png)](caching-data-with-the-objectdatasource-vb/_static/image12.png)
 
 **圖 6**:啟用編輯，排序和分頁的 GridView 支援 ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-vb/_static/image14.png))
 
@@ -127,7 +127,7 @@ GridView s 智慧標籤的 啟用編輯核取方塊，讓 GridView 可進行編�
 如 [圖 7] 所示，可編輯的 GridView 會列出名稱、 類別和每個資料庫中的產品的價格。 請花一點時間來測試頁面的功能排序結果逐頁查看它們，並編輯記錄。
 
 
-[![E可排序、 Pageable、 可編輯的 GridView 中列為 ach 產品名稱、 類別和價格](caching-data-with-the-objectdatasource-vb/_static/image16.png)](caching-data-with-the-objectdatasource-vb/_static/image15.png)
+[![每個產品名稱、 類別和價格會列在 可排序、 Pageable、 可編輯的 GridView](caching-data-with-the-objectdatasource-vb/_static/image16.png)](caching-data-with-the-objectdatasource-vb/_static/image15.png)
 
 **圖 7**:每個產品名稱、 類別和價格會列在 可排序、 Pageable、 可編輯的 GridView ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-vb/_static/image17.png))
 
@@ -141,7 +141,7 @@ GridView s 智慧標籤的 啟用編輯核取方塊，讓 GridView 可進行編�
 要充份鑒賞與從資料庫擷取資料的頻率，可讓 s 顯示訊息，指出當資料經過重新擷取。 新增名為 GridView 上方標籤 Web 控制項`ODSEvents`。 清除其`Text`屬性並設定其`EnableViewState`屬性設`False`。 下方的標籤，將 Button Web 控制項，並設定其`Text`回傳的屬性。
 
 
-[![Add 標籤和頁面上方的 GridView 的按鈕](caching-data-with-the-objectdatasource-vb/_static/image19.png)](caching-data-with-the-objectdatasource-vb/_static/image18.png)
+[![GridView 上方頁面中新增標籤和按鈕](caching-data-with-the-objectdatasource-vb/_static/image19.png)](caching-data-with-the-objectdatasource-vb/_static/image18.png)
 
 **圖 8**:頁面上方的 GridView 中新增標籤和按鈕 ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-vb/_static/image20.png))
 
@@ -156,12 +156,12 @@ ObjectDataSource 的資料，架構會要求每次標籤會顯示文字選取事
 請瀏覽此網頁瀏覽器中。 當第一次瀏覽頁面時，會顯示文字選取事件引發。 按一下回傳的按鈕，並請注意，文字就會消失 (假設 GridView s`EnableViewState`屬性設定為`True`，預設值)。 這是因為在回傳時，GridView 會重新建構從其檢視狀態，並因此不 t 向其資料的 ObjectDataSource。 排序、 分頁或編輯資料，不過，會導致重新繫結至其資料來源，GridView，因此選取事件引發的文字隨即再度出現。
 
 
-[![W顯示的 henever GridView 會重新繫結至其資料來源，選取觸發的事件](caching-data-with-the-objectdatasource-vb/_static/image22.png)](caching-data-with-the-objectdatasource-vb/_static/image21.png)
+[![只要 GridView 會重新繫結至其資料來源時，就會顯示選取事件引發](caching-data-with-the-objectdatasource-vb/_static/image22.png)](caching-data-with-the-objectdatasource-vb/_static/image21.png)
 
 **圖 9**:只要 GridView 會重新繫結至其資料來源時，就會顯示選取事件引發 ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-vb/_static/image23.png))
 
 
-[![C請按一下回傳按鈕將會從其檢視狀態重新建構 GridView](caching-data-with-the-objectdatasource-vb/_static/image25.png)](caching-data-with-the-objectdatasource-vb/_static/image24.png)
+[![按一下回傳按鈕將會從其檢視狀態重新建構 GridView](caching-data-with-the-objectdatasource-vb/_static/image25.png)](caching-data-with-the-objectdatasource-vb/_static/image24.png)
 
 **圖 10**:按一下 回傳的按鈕會導致從其檢視狀態重新建構 GridView ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-vb/_static/image26.png))
 
@@ -180,7 +180,7 @@ ObjectDataSource 的資料，架構會要求每次標籤會顯示文字選取事
 可讓設定 s `ProductsDataSource` ObjectDataSource 快取其資料，絕對比例上 30 秒。 設定 ObjectDataSource s`EnableCaching`屬性，以`True`及其`CacheDuration`到 30 之間的屬性。 離開`CacheExpirationPolicy`屬性設定為其預設`Absolute`。
 
 
-[![C設定快取其資料，30 秒內的 ObjectDataSource](caching-data-with-the-objectdatasource-vb/_static/image28.png)](caching-data-with-the-objectdatasource-vb/_static/image27.png)
+[![設定快取其資料，30 秒內的 ObjectDataSource](caching-data-with-the-objectdatasource-vb/_static/image28.png)](caching-data-with-the-objectdatasource-vb/_static/image27.png)
 
 **圖 11**:設定快取其資料，30 秒內的 ObjectDataSource ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-vb/_static/image29.png))
 

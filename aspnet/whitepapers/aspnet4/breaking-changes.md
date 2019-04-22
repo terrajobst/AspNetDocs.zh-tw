@@ -12,7 +12,7 @@ ms.openlocfilehash: a6ae18529afc4df799d95d8b7a98f9bc5add9485
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385536"
 ---
 # <a name="aspnet-4-breaking-changes"></a>ASP.NET 4 重大變更
@@ -283,7 +283,7 @@ ASP.NET 使用加密和雜湊演算法來協助保護資料，例如表單驗證
 
 ## <a name="aspnet-20-applications-might-generate-httpexception-errors-that-reference-eurlaxd"></a>ASP.NET 2.0 應用程式可能會產生參考 reference eurl.axd 的 HttpException 錯誤
 
-ASP.NET 4 啟用 IIS 6 上之後，（在 Windows Server 2003 或 Windows Server 2003 R2） 的 IIS 6 執行的 ASP.NET 2.0 應用程式可能會產生錯誤，如下所示：
+在 IIS 6 上啟用 ASP.NET 4 之後，IIS 6 上執行的 ASP.NET 2.0 應用程式 (在 Windows Server 2003 或 Windows Server 2003 R2 中) 可能會產生下列這類錯誤：
 
 `System.Web.HttpException: Path '/[yourApplicationRoot]/eurl.axd/[Value]' was not found.`
 

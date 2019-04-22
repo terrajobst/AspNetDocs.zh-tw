@@ -12,7 +12,7 @@ ms.openlocfilehash: 029234cf9a28a80c487504e4e0980c214e45f53a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381961"
 ---
 # <a name="adding-a-column-to-the-model"></a>將資料行新增至模型
@@ -28,11 +28,11 @@ ms.locfileid: "59381961"
 
 將 「 評等 」 資料行，如下所示。 我們現在還沒有任何評等，因為資料行可允許 null。 按一下 [儲存]。
 
-[![E編輯電影資料表](getting-started-with-mvc-part8/_static/image2.png)](getting-started-with-mvc-part8/_static/image1.png)
+[![編輯電影資料表](getting-started-with-mvc-part8/_static/image2.png)](getting-started-with-mvc-part8/_static/image1.png)
 
 接下來，返回 [方案總管]，然後開啟 Movies.edmx 檔案 （這是 \Models 資料夾中）。 以滑鼠右鍵按一下設計介面 （白色區域），並選取 從資料庫更新模型。
 
-[![Movies-Microsoft Visual Web Developer 2010 Express (11)](getting-started-with-mvc-part8/_static/image4.png)](getting-started-with-mvc-part8/_static/image3.png)
+[![影片-Microsoft Visual Web Developer 2010 Express (11)](getting-started-with-mvc-part8/_static/image4.png)](getting-started-with-mvc-part8/_static/image3.png)
 
 這會啟動 「 更新精靈 」。 按一下 [重新整理] 索引標籤中的，按一下 [完成]。 我們的電影模型類別就會更新與新的資料行。
 
@@ -40,7 +40,7 @@ ms.locfileid: "59381961"
 
 之後按一下 [完成]，您可以看到新的評等資料行已新增至電影實體，在我們的模型。
 
-[![Movie 實體](getting-started-with-mvc-part8/_static/image7.png)](getting-started-with-mvc-part8/_static/image6.png)
+[![電影實體](getting-started-with-mvc-part8/_static/image7.png)](getting-started-with-mvc-part8/_static/image6.png)
 
 我們已新增資料行在資料庫模型中，但檢視不知道。
 
@@ -66,11 +66,11 @@ ms.locfileid: "59381961"
 
 執行您的應用程式，現在您已經有新資料庫中的欄位已加入至 [建立] 頁面。 新增新的電影-評分-這次，然後按一下 建立。
 
-[![Create 電影-Windows Internet Explorer](getting-started-with-mvc-part8/_static/image9.png)](getting-started-with-mvc-part8/_static/image8.png)
+[![建立電影-Windows Internet Explorer](getting-started-with-mvc-part8/_static/image9.png)](getting-started-with-mvc-part8/_static/image8.png)
 
 按一下 [建立] 之後，您要傳送至 [索引] 頁面在您新增電影會列出新的評等資料行在資料庫中
 
-[![Movie List - Windows Internet Explorer (12)](getting-started-with-mvc-part8/_static/image11.png)](getting-started-with-mvc-part8/_static/image10.png)
+[![電影清單-Windows Internet Explorer (12)](getting-started-with-mvc-part8/_static/image11.png)](getting-started-with-mvc-part8/_static/image10.png)
 
 此基本教學課程中有您開始進行控制站，將它們關聯的檢視，並傳遞硬式編碼的資料。 然後我們建立及設計資料庫，並放入一些資料中。 我們會從資料庫擷取資料，並顯示 HTML 表格中。 然後，我們會新增可讓使用者將資料加入至資料庫本身從 Web 應用程式內建立表單。 我們新增驗證，然後進行用戶端使用 JavaScript 的驗證。 最後，我們變更了資料庫以包含新的資料行的資料，然後更新我們的兩個頁面，來建立並顯示這項新資料。
 

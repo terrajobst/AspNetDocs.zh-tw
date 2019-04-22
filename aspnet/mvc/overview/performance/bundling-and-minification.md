@@ -12,7 +12,7 @@ ms.openlocfilehash: 9e4a2a9fc56393ac816f25a1039b233aa8961608
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383833"
 ---
 # <a name="bundling-and-minification"></a>統合和縮製
@@ -52,7 +52,7 @@ ms.locfileid: "59383833"
 
 除了移除不必要的空白字元的註解，下列參數和變數名稱已重新命名 （縮短），如下所示：
 
-| **原始** | **已重新命名** |
+| **Original** | **重新命名** |
 | --- | --- |
 | imageTagAndImageID | n |
 | imageContext | t |
@@ -62,7 +62,7 @@ ms.locfileid: "59383833"
 
 下表顯示個別列出的所有資產，與在範例程式中使用統合和縮製 (B/M) 之間的數個重要差異。
 
-|  | **使用 B/分鐘** | **Without B/M** | **變更** |
+|  | **使用 B/分鐘** | **沒有 B/分鐘** | **變更** |
 | --- | --- | --- | --- |
 | **提出要求** | 9 | 34 | 256% |
 | **傳送的 KB** | 3.26 | 11.92 | 266% |
@@ -165,7 +165,7 @@ ms.locfileid: "59383833"
 
 下表所示，使用萬用字元套件組合加入的檔案：
 
-| **呼叫** | **加入檔案或引發例外狀況** |
+| **Call** | **加入檔案或引發例外狀況** |
 | --- | --- |
 | Include("~/Scripts/Common/\*.js") | *AddAltToImg.js*， *ToggleDiv.js*， *ToggleImg.js* |
 | Include("~/Scripts/Common/T\*.js") | 無效的模式的例外狀況。 只允許前置詞或後置字元的萬用字元。 |

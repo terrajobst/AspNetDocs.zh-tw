@@ -12,7 +12,7 @@ ms.openlocfilehash: 9b2a7e00b3c50a946ad0f2518880892f103a5c1b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59387109"
 ---
 # <a name="validating-with-a-service-layer-c"></a>驗證與服務層 (C#)
@@ -30,7 +30,7 @@ ms.locfileid: "59387109"
 
 例如，列表 1 包含名為 ProductRepository 簡單存放庫。 產品存放庫包含所有應用程式的資料存取程式碼。 清單也包含產品存放庫會實作 IProductRepository 介面。
 
-**Listing 1 -- Models\ProductRepository.cs**
+**列表 1-Models\ProductRepository.cs**
 
 [!code-csharp[Main](validating-with-a-service-layer-cs/samples/sample1.cs)]
 

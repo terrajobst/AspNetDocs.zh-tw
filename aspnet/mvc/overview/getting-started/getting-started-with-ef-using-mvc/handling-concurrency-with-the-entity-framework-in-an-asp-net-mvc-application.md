@@ -13,7 +13,7 @@ ms.openlocfilehash: 11b1bc316f730e31b4a01924765db3c982783652
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383014"
 ---
 # <a name="tutorial-handle-concurrency-with-ef-in-an-aspnet-mvc-5-app"></a>教學課程：ASP.NET MVC 5 應用程式中處理 ef 的並行存取

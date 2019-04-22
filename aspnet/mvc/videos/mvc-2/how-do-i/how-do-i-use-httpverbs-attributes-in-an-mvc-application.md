@@ -12,7 +12,7 @@ ms.openlocfilehash: bda3b122aaf2970b9238d7120ad15fb06672c85b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378074"
 ---
 # <a name="how-do-i-use-httpverbs-attributes-in-an-mvc-application"></a>How Do i:在 MVC 應用程式中使用 HttpVerbs 屬性嗎？

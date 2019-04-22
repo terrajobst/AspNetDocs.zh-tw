@@ -12,7 +12,7 @@ ms.openlocfilehash: 93a0af00d9e32e044f408a1ca8a2cea73e906d66
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59380277"
 ---
 # <a name="assigning-roles-to-users-c"></a>將角色指派給使用者 (C#)
@@ -57,7 +57,7 @@ ms.locfileid: "59380277"
 這個 CSS 定義會指示瀏覽器顯示使用大型、 紅色字型的標籤。 [圖 1] 顯示此效果，透過 Visual Studio 設計工具。
 
 
-[![T他標籤 CssClass 屬性會導致大型組織、 紅色字型](assigning-roles-to-users-cs/_static/image2.png)](assigning-roles-to-users-cs/_static/image1.png)
+[![標籤的 CssClass 屬性會導致大型的紅色字型](assigning-roles-to-users-cs/_static/image2.png)](assigning-roles-to-users-cs/_static/image1.png)
 
 **圖 1**:標籤`CssClass`導致大 」，紅色字型的屬性 ([按一下以檢視完整大小的影像](assigning-roles-to-users-cs/_static/image3.png))
 
@@ -93,7 +93,7 @@ ms.locfileid: "59380277"
 使用此程式碼就緒之後，請花一點時間瀏覽的頁面，透過瀏覽器;您的畫面看起來應該類似於圖 2。 所有使用者帳戶會填入下拉式清單中，和下方，每個角色會顯示為核取方塊。 因為我們設定`AutoPostBack`DropDownList 和屬性的核取方塊設為 True，變更選取的使用者，或是檢查或取消勾選角色造成回傳。 不執行任何動作，不過，因為我們尚未撰寫程式碼來處理這些動作時。 我們將會處理這些工作，接下來兩節中。
 
 
-[![T他的頁面會顯示使用者和角色](assigning-roles-to-users-cs/_static/image5.png)](assigning-roles-to-users-cs/_static/image4.png)
+[![此頁面會顯示使用者和角色](assigning-roles-to-users-cs/_static/image5.png)](assigning-roles-to-users-cs/_static/image4.png)
 
 **圖 2**:此頁面會顯示使用者和角色 ([按一下以檢視完整大小的影像](assigning-roles-to-users-cs/_static/image6.png))
 
@@ -135,7 +135,7 @@ ms.locfileid: "59380277"
 請花一點時間來測試此頁面，透過瀏覽器。 選取使用者 Tito，然後將 Tito 加入系統管理員 」 和 「 監督員 」 角色。
 
 
-[![Tito 已新增至系統管理員和監督員角色](assigning-roles-to-users-cs/_static/image8.png)](assigning-roles-to-users-cs/_static/image7.png)
+[![Tito 已新增至系統管理員和監督員的角色](assigning-roles-to-users-cs/_static/image8.png)](assigning-roles-to-users-cs/_static/image7.png)
 
 **圖 3**:系統管理員和監督員角色已新增 Tito ([按一下以檢視完整大小的影像](assigning-roles-to-users-cs/_static/image9.png))
 
@@ -143,7 +143,7 @@ ms.locfileid: "59380277"
 接下來，從下拉式清單中選取使用者 Bruce。 沒有回傳和 Repeater 的核取方塊會透過更新`CheckRolesForSelectedUser`。 Bruce 不尚未屬於任何角色，因為兩個核取方塊未勾選。 接下來，Bruce 加入 「 主管 」 角色。
 
 
-[![B監督員角色已加入 ruce](assigning-roles-to-users-cs/_static/image11.png)](assigning-roles-to-users-cs/_static/image10.png)
+[![Bruce 已新增至 「 主管 」 角色](assigning-roles-to-users-cs/_static/image11.png)](assigning-roles-to-users-cs/_static/image10.png)
 
 **圖 4**:Bruce 已新增至 「 主管 」 角色 ([按一下以檢視完整大小的影像](assigning-roles-to-users-cs/_static/image12.png))
 
@@ -167,7 +167,7 @@ ms.locfileid: "59380277"
 中的最後兩行`BindRolesToList`方法已加入至繫結之一組角色`RoleList`DropDownList 控制項。 圖 5 顯示檢視透過瀏覽器 – 下拉式清單，填入 系統角色時的最終結果。
 
 
-[![T他角色會顯示在 RoleList DropDownList](assigning-roles-to-users-cs/_static/image14.png)](assigning-roles-to-users-cs/_static/image13.png)
+[![角色會顯示在 RoleList DropDownList](assigning-roles-to-users-cs/_static/image14.png)](assigning-roles-to-users-cs/_static/image13.png)
 
 **圖 5**:角色會顯示在`RoleList`DropDownList ([按一下以檢視完整大小的影像](assigning-roles-to-users-cs/_static/image15.png))
 
@@ -187,7 +187,7 @@ ms.locfileid: "59380277"
 此程式碼的位置， `RolesUserList` GridView 應該會顯示屬於所選角色的使用者。 如 [圖 6] 所示，監督員角色包含兩個成員：Bruce 和 Tito。
 
 
-[![T他的 GridView 會列出這些屬於選取的角色的使用者](assigning-roles-to-users-cs/_static/image17.png)](assigning-roles-to-users-cs/_static/image16.png)
+[![GridView 會列出這些屬於所選角色的使用者](assigning-roles-to-users-cs/_static/image17.png)](assigning-roles-to-users-cs/_static/image16.png)
 
 **圖 6**:GridView 會列出這些使用者屬於選取的角色 ([按一下以檢視完整大小的影像](assigning-roles-to-users-cs/_static/image18.png))
 
@@ -199,7 +199,7 @@ ms.locfileid: "59380277"
 開始刪除按鈕欄位加入至 GridView。 讓這個欄位會顯示為已歸檔最左邊，並變更其`DeleteText`屬性從 [刪除] （預設值） 為 「 移除 」。
 
 
-[![Add](assigning-roles-to-users-cs/_static/image20.png)](assigning-roles-to-users-cs/_static/image19.png)
+[![新增](assigning-roles-to-users-cs/_static/image20.png)](assigning-roles-to-users-cs/_static/image19.png)
 
 **圖 7**:[移除] 按鈕新增至 GridView ([按一下以檢視完整大小的影像](assigning-roles-to-users-cs/_static/image21.png))
 
@@ -217,7 +217,7 @@ ms.locfileid: "59380277"
 從 主管 群組中移除使用者 Tito 後，圖 8 顯示頁面。
 
 
-[![A內華達州，Tito 不再監督員](assigning-roles-to-users-cs/_static/image23.png)](assigning-roles-to-users-cs/_static/image22.png)
+[![可惜的是，Tito 不再監督員](assigning-roles-to-users-cs/_static/image23.png)](assigning-roles-to-users-cs/_static/image22.png)
 
 **圖 8**:可惜的是，Tito 不再監督員 ([按一下以檢視完整大小的影像](assigning-roles-to-users-cs/_static/image24.png))
 
@@ -245,7 +245,7 @@ ms.locfileid: "59380277"
 瀏覽透過瀏覽器頁面，然後選取從 「 監督員角色`RoleList`DropDownList。 請嘗試輸入無效的使用者名稱，您應該會看到訊息，說明使用者不存在於系統。
 
 
-[![You 無法將非存在的使用者加入角色](assigning-roles-to-users-cs/_static/image26.png)](assigning-roles-to-users-cs/_static/image25.png)
+[![您無法將不存在的使用者加入角色](assigning-roles-to-users-cs/_static/image26.png)](assigning-roles-to-users-cs/_static/image25.png)
 
 **圖 9**:您無法加入角色中的非存在的使用者 ([按一下以檢視完整大小的影像](assigning-roles-to-users-cs/_static/image27.png))
 
@@ -253,7 +253,7 @@ ms.locfileid: "59380277"
 現在，嘗試新增有效的使用者。 請繼續並重新加入 Tito 監督員的角色。
 
 
-[![Tito 是再次監督員 ！](assigning-roles-to-users-cs/_static/image29.png)](assigning-roles-to-users-cs/_static/image28.png)
+[![Tito 同樣是監督員 ！](assigning-roles-to-users-cs/_static/image29.png)](assigning-roles-to-users-cs/_static/image28.png)
 
 **圖 10**:Tito 同樣是監督員 ！  ([按一下以檢視完整大小的影像](assigning-roles-to-users-cs/_static/image30.png))
 
@@ -290,7 +290,7 @@ ms.locfileid: "59380277"
 接下來，選取 「 新增/移除`WizardSteps`...」 選項從 CreateUserWizard 的智慧標籤，然後新增新`WizardStep`，將其`ID`至`SpecifyRolesStep`。 移動`SpecifyRolesStep WizardStep`以便說 「 登註冊您新帳戶 」 的步驟之後，但 「 完成 」 步驟之前。 設定`WizardStep`的`Title`屬性，以 「 指定角色 」，其`StepType`屬性設`Step`，並將其`AllowReturn`屬性設定為 False。
 
 
-[![Add](assigning-roles-to-users-cs/_static/image32.png)](assigning-roles-to-users-cs/_static/image31.png)
+[![新增](assigning-roles-to-users-cs/_static/image32.png)](assigning-roles-to-users-cs/_static/image31.png)
 
 **圖 11**:新增 「 指定角色 」 `WizardStep` CreateUserWizard 到 ([按一下以檢視完整大小的影像](assigning-roles-to-users-cs/_static/image33.png))
 
@@ -318,7 +318,7 @@ ms.locfileid: "59380277"
 請瀏覽此頁面，透過瀏覽器。 CreateUserWizard 的第一個步驟是標準的 [登註冊您新增帳戶] 步驟，也會提示您輸入新使用者的使用者名稱、 密碼、 電子郵件和其他重要資訊。 輸入要建立名為 Wanda 的新使用者的資訊。
 
 
-[![C建立新的使用者名稱為 Wanda](assigning-roles-to-users-cs/_static/image35.png)](assigning-roles-to-users-cs/_static/image34.png)
+[![建立名為 Wanda 新使用者](assigning-roles-to-users-cs/_static/image35.png)](assigning-roles-to-users-cs/_static/image34.png)
 
 **圖 12**:建立新的使用者名稱為 Wanda ([按一下以檢視完整大小的影像](assigning-roles-to-users-cs/_static/image36.png))
 
@@ -326,7 +326,7 @@ ms.locfileid: "59380277"
 按一下 [建立使用者] 按鈕。 在內部呼叫 CreateUserWizard`Membership.CreateUser`方法，建立新的使用者帳戶，並接著會前進到下一個步驟中，「 指定的角色。 」 這裡會列出系統角色。 檢查各有核取方塊，然後按一下 [下一步]。
 
 
-[![M特意 Wanda 監督員角色的成員](assigning-roles-to-users-cs/_static/image38.png)](assigning-roles-to-users-cs/_static/image37.png)
+[![請 Wanda 監督員角色的成員](assigning-roles-to-users-cs/_static/image38.png)](assigning-roles-to-users-cs/_static/image37.png)
 
 **圖 13**:請 Wanda 監督員角色的成員 ([按一下以檢視完整大小的影像](assigning-roles-to-users-cs/_static/image39.png))
 

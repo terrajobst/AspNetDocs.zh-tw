@@ -12,7 +12,7 @@ ms.openlocfilehash: 676bc8f234a6e517104d07fd58a0ff14aec73e69
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381402"
 ---
 # <a name="how-do-i-control-the-caching-of-an-aspnet-page-based-upon-custom-information"></a>[How Do i:]ASP.NET 網頁的快取根據自訂資訊的控制項

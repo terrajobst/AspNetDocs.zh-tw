@@ -12,7 +12,7 @@ ms.openlocfilehash: afd786a25c8dc23eba1bbf6ed3f6512c64f2e72d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378571"
 ---
 # <a name="older-versions---security"></a>舊版 - 安全性
@@ -22,7 +22,7 @@ ms.locfileid: "59378571"
 
 - [ASP.NET 3.5 - 安全性簡介](introduction/index.md)
 
-    - [安全性基本概念與 ASP.NET 支援 (C#)](introduction/security-basics-and-asp-net-support-cs.md)
+    - [安全性基本概念和 ASP.NET 支援 (C#)](introduction/security-basics-and-asp-net-support-cs.md)
     - [表單驗證概觀 (C#)](introduction/an-overview-of-forms-authentication-cs.md)
     - [表單驗證組態和進階主題 (C#)](introduction/forms-authentication-configuration-and-advanced-topics-cs.md)
     - [安全性基本概念和 ASP.NET 支援 (VB)](introduction/security-basics-and-asp-net-support-vb.md)
@@ -42,10 +42,10 @@ ms.locfileid: "59378571"
     - [儲存其他的使用者資訊 (VB)](membership/storing-additional-user-information-vb.md)
 - [ASP.NET 3.5 - 角色](roles/index.md)
 
-    - [建立及管理角色 (C#)](roles/creating-and-managing-roles-cs.md)
+    - [建立與管理角色 (C#)](roles/creating-and-managing-roles-cs.md)
     - [將角色指派給使用者 (C#)](roles/assigning-roles-to-users-cs.md)
     - [以角色為基礎的授權 (C#)](roles/role-based-authorization-cs.md)
-    - [建立及管理角色 (VB)](roles/creating-and-managing-roles-vb.md)
+    - [建立與管理角色 (VB)](roles/creating-and-managing-roles-vb.md)
     - [將角色指派給使用者 (VB)](roles/assigning-roles-to-users-vb.md)
     - [以角色為基礎的授權 (VB)](roles/role-based-authorization-vb.md)
 - [ASP.NET 3.5 - 安全性管理](admin/index.md)

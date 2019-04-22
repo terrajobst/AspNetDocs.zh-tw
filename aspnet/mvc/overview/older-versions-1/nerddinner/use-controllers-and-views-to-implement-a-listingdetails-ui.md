@@ -12,7 +12,7 @@ ms.openlocfilehash: abff97e5cc2663465fdf61f41ff69d17104fe8b6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379465"
 ---
 # <a name="use-controllers-and-views-to-implement-a-listingdetails-ui"></a>使用控制器和檢視來實作清單/詳細資料 UI
@@ -56,10 +56,10 @@ Web 型 MVC 架構會稍有不同的方式，將 Url 對應至伺服器程式碼
 
 我們想要讓訪客使用我們的應用程式來瀏覽即將推出的 dinners 的清單，並讓他們按一下清單中任何 Dinner，看到有關的特定詳細資料。 我們會發佈下列的 Url，從我們的應用程式來執行這項操作：
 
-| **URL** | **用途** |
+| **URL** | **目的** |
 | --- | --- |
 | */Dinners/* | 顯示即將推出的 dinners HTML 清單 |
-| */Dinners/詳細資料 / [id]* | 顯示有關特定 dinner，內嵌於 URL-這會比對的資料庫中 dinner DinnerID 「 識別碼 」 參數所指示的詳細資料。 例如： /Dinners/Details/2 會顯示具有 Dinner DinnerID 值為 2 的詳細資料的 HTML 網頁。 |
+| */Dinners/Details/[id]* | 顯示有關特定 dinner，內嵌於 URL-這會比對的資料庫中 dinner DinnerID 「 識別碼 」 參數所指示的詳細資料。 例如： /Dinners/Details/2 會顯示具有 Dinner DinnerID 值為 2 的詳細資料的 HTML 網頁。 |
 
 我們將發佈這些 Url 的初始的實作加到 DinnersController 類別類似下面兩個公用 「 動作方法 」:
 
@@ -94,8 +94,8 @@ ASP.NET MVC 包含功能強大的 URL 路由引擎，提供很大的彈性，控
 | **URL** | **控制器類別** | **動作方法** | **傳遞參數** |
 | --- | --- | --- | --- |
 | */Dinners/Details/2* | DinnersController | Details(id) | id=2 |
-| */ Dinners/編輯/5* | DinnersController | Edit(id) | id=5 |
-| */ Dinners/建立* | DinnersController | Create （) | N/A |
+| */Dinners/Edit/5* | DinnersController | Edit(id) | id=5 |
+| */Dinners/Create* | DinnersController | Create （) | N/A |
 | */ Dinners* | DinnersController | Index() | N/A |
 | */ 首頁* | HomeController | Index() | N/A |
 | */* | HomeController | Index() | N/A |

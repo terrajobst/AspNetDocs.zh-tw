@@ -12,7 +12,7 @@ ms.openlocfilehash: d120c184f6cf7dd0db075bbfac17214d7467664a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383716"
 ---
 # <a name="aspnet-data-access---recommended-resources"></a>ASP.NET 資料存取 - 建議資源

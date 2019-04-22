@@ -12,7 +12,7 @@ ms.openlocfilehash: fa118b4d733d7848b838f80e9918d62ae60033af
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59378971"
 ---
 # <a name="creating-a-rating-control-c"></a>建立評等控制項 (C#)
@@ -66,7 +66,7 @@ ms.locfileid: "59378971"
 儲存頁面，並將其載入至您的瀏覽器。 當您暫留 （一開始是空的） 的評等項目時，則會發生 JavaScript 的效果：評等的變更。 當您按一下組星號時，會保留目前的評等。 最後，當您提交表單時，伺服器端程式碼會輸出選取的評等。
 
 
-[![Creating 最少程式碼的分級系統](creating-a-rating-control-cs/_static/image2.png)](creating-a-rating-control-cs/_static/image1.png)
+[![使用最少的程式碼建立的分級系統](creating-a-rating-control-cs/_static/image2.png)](creating-a-rating-control-cs/_static/image1.png)
 
 使用最少的程式碼建立的分級系統 ([按一下以檢視完整大小的影像](creating-a-rating-control-cs/_static/image3.png))
 

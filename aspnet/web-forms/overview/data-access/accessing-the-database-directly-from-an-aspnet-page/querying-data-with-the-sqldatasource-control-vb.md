@@ -12,7 +12,7 @@ ms.openlocfilehash: d1e01c7693cc5d59b32019dfef1663863e7978c4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59379842"
 ---
 # <a name="querying-data-with-the-sqldatasource-control-vb"></a>使用 SqlDataSource 控制項查詢資料 (VB)
@@ -79,7 +79,7 @@ AccessDataSource 和 SqlDataSource 控制項之間的唯一差異是指定的資
 在其他資料夾，例如`Default.aspx`在`SqlDataSource`資料夾會列出其一節中的教學課程。 請記得，`SectionLevelTutorialListing.ascx`使用者控制項提供這項功能。 因此，新增此使用者控制項`Default.aspx`從拖曳到頁面的設計 檢視中的 方案總管 中拖曳。
 
 
-[![Add Default.aspx SectionLevelTutorialListing.ascx 使用者控制項](querying-data-with-the-sqldatasource-control-vb/_static/image5.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image4.gif)
+[![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](querying-data-with-the-sqldatasource-control-vb/_static/image5.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image4.gif)
 
 **圖 4**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](querying-data-with-the-sqldatasource-control-vb/_static/image6.gif))
 
@@ -155,7 +155,7 @@ AccessDataSource 和 SqlDataSource 控制項之間的唯一差異是指定的資
 設定 SqlDataSource 之後, 可以繫結至資料 Web 控制項，例如 GridView 或 DetailsView。 本教學課程中，可讓 s GridView 中顯示的資料。 從 工具箱 拖曳到頁面的 GridView，並繫結至`ProductsDataSource`SqlDataSource 資料來源清單中選擇下拉式清單中的 GridView s 智慧標籤。
 
 
-[![Add GridView 和繫結至 SqlDataSource 控制項](querying-data-with-the-sqldatasource-control-vb/_static/image13.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image12.gif)
+[![新增 GridView，並將它繫結至 SqlDataSource 控制項](querying-data-with-the-sqldatasource-control-vb/_static/image13.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image12.gif)
 
 **圖 10**:新增 GridView，並將它繫結至 SqlDataSource 控制項 ([按一下以檢視完整大小的影像](querying-data-with-the-sqldatasource-control-vb/_static/image14.gif))
 
@@ -170,7 +170,7 @@ AccessDataSource 和 SqlDataSource 控制項之間的唯一差異是指定的資
 請瀏覽此頁面，透過瀏覽器。 GridView 如 [圖 11] 所示，列出每項產品 s `ProductID`， `ProductName`，和`UnitPrice`值。
 
 
-[![T他的 GridView 會顯示每項產品的 ProductID、 ProductName、 和 UnitPrice 值](querying-data-with-the-sqldatasource-control-vb/_static/image16.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image15.gif)
+[![GridView 會顯示每個產品的 ProductID、 ProductName、 以及 UnitPrice 值](querying-data-with-the-sqldatasource-control-vb/_static/image16.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image15.gif)
 
 **圖 11**:GridView 會顯示每個產品 s `ProductID`， `ProductName`，並`UnitPrice`值 ([按一下以檢視完整大小的影像](querying-data-with-the-sqldatasource-control-vb/_static/image17.gif))
 
@@ -228,7 +228,7 @@ AccessDataSource 和 SqlDataSource 控制項之間的唯一差異是指定的資
 [!code-aspx[Main](querying-data-with-the-sqldatasource-control-vb/samples/sample5.aspx)]
 
 
-[![T他的 GridView 會顯示每個產品的識別碼、 名稱和相關聯的類別名稱](querying-data-with-the-sqldatasource-control-vb/_static/image22.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image21.gif)
+[![GridView 會顯示每個產品的識別碼、 名稱和相關聯的類別名稱](querying-data-with-the-sqldatasource-control-vb/_static/image22.gif)](querying-data-with-the-sqldatasource-control-vb/_static/image21.gif)
 
 **圖 15**:GridView 會顯示每個產品識別碼、 名稱和相關聯的類別名稱 ([按一下以檢視完整大小的影像](querying-data-with-the-sqldatasource-control-vb/_static/image23.gif))
 

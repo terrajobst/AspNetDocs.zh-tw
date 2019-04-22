@@ -12,7 +12,7 @@ ms.openlocfilehash: 238efd312a73e2452ca5f679f2b8f5ed1336c4dc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385874"
 ---
 # <a name="routing-and-action-selection-in-aspnet-web-api"></a>路由和 ASP.NET Web API 中的動作選取
@@ -85,7 +85,7 @@ URI 路徑 「 api/產品 」 中，將會包含路由字典：
 - 類別: 「 玩具 」
 - 識別碼："123"
 
-預設值也可以在路由範本中包含值，不會不出現在任何地方。 如果路由符合，該值會儲存在字典中。 例如：
+預設值也可以在路由範本中包含值，不會不出現在任何地方。 如果路由符合，該值會儲存在字典中。 例如: 
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample6.cs)]
 
