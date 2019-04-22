@@ -12,13 +12,13 @@ ms.openlocfilehash: 1f40e5fb5dcd141b19099d54276194ad97548adc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59381936"
 ---
-# <a name="signalr-deployment-and-hosting"></a><span data-ttu-id="a6ec0-103">SignalR 部署和裝載</span><span class="sxs-lookup"><span data-stu-id="a6ec0-103">SignalR Deployment and Hosting</span></span>
+# <a name="signalr-deployment-and-hosting"></a><span data-ttu-id="d931c-103">SignalR 部署和裝載</span><span class="sxs-lookup"><span data-stu-id="d931c-103">SignalR Deployment and Hosting</span></span>
 
-> <span data-ttu-id="a6ec0-104">如何部署和裝載 SignalR 應用程式。</span><span class="sxs-lookup"><span data-stu-id="a6ec0-104">How to deploy and host SignalR applications.</span></span>
+> <span data-ttu-id="d931c-104">如何部署和裝載 SignalR 應用程式。</span><span class="sxs-lookup"><span data-stu-id="d931c-104">How to deploy and host SignalR applications.</span></span>
 
 
-- [<span data-ttu-id="a6ec0-105">教學課程：SignalR 自我裝載</span><span class="sxs-lookup"><span data-stu-id="a6ec0-105">Tutorial: SignalR Self-Host</span></span>](tutorial-signalr-self-host.md)
-- [<span data-ttu-id="a6ec0-106">在 Azure App Service 中搭配 Web 應用程式使用 SignalR</span><span class="sxs-lookup"><span data-stu-id="a6ec0-106">Using SignalR with Web Apps in Azure App Service</span></span>](using-signalr-with-azure-web-sites.md)
+- [<span data-ttu-id="d931c-105">教學課程：SignalR 自我裝載</span><span class="sxs-lookup"><span data-stu-id="d931c-105">Tutorial: SignalR Self-Host</span></span>](tutorial-signalr-self-host.md)
+- [<span data-ttu-id="d931c-106">在 Azure App Service 中使用 SignalR 和 Web 應用程式</span><span class="sxs-lookup"><span data-stu-id="d931c-106">Using SignalR with Web Apps in Azure App Service</span></span>](using-signalr-with-azure-web-sites.md)

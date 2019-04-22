@@ -12,18 +12,18 @@ ms.openlocfilehash: bc4a4aeb6311c67e465068f507492bffd22c2b37
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59386776"
 ---
-# <a name="lesson-2-creating-a-web-forms-user-interface"></a><span data-ttu-id="63432-104">[第 2 課：] 建立 Web Forms 使用者介面</span><span class="sxs-lookup"><span data-stu-id="63432-104">[Lesson 2:] Creating a Web Forms User Interface</span></span>
+# <a name="lesson-2-creating-a-web-forms-user-interface"></a><span data-ttu-id="7670a-104">[第 2 課：] 建立 Web Forms 使用者介面</span><span class="sxs-lookup"><span data-stu-id="7670a-104">[Lesson 2:] Creating a Web Forms User Interface</span></span>
 
-<span data-ttu-id="63432-105">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="63432-105">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="7670a-105">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="7670a-105">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="63432-106">在這一課，您將探索 Visual Web Developer Express 版中可用的各種 ASP.NET2.0 伺服器控制項。</span><span class="sxs-lookup"><span data-stu-id="63432-106">In this lesson, you will explore the various ASP.NET2.0 server controls available in Visual Web Developer Express Edition.</span></span> <span data-ttu-id="63432-107">此外，您將開始熟悉 Visual Web Developer 中的視窗。</span><span class="sxs-lookup"><span data-stu-id="63432-107">In addition, you will begin to get familiar with the windows in Visual Web Developer.</span></span>
+<span data-ttu-id="7670a-106">在這一課，您將探索 Visual Web Developer Express 版中可用的各種 ASP.NET2.0 伺服器控制項。</span><span class="sxs-lookup"><span data-stu-id="7670a-106">In this lesson, you will explore the various ASP.NET2.0 server controls available in Visual Web Developer Express Edition.</span></span> <span data-ttu-id="7670a-107">此外，您將開始熟悉 Visual Web Developer 中的視窗。</span><span class="sxs-lookup"><span data-stu-id="7670a-107">In addition, you will begin to get familiar with the windows in Visual Web Developer.</span></span>
 
-[<span data-ttu-id="63432-108">&#9654;觀看影片 （49 分鐘）</span><span class="sxs-lookup"><span data-stu-id="63432-108">&#9654; Watch video (49 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/lesson-2-creating-a-web-forms-user-interface)
+[<span data-ttu-id="7670a-108">&#9654;觀看影片 （49 分鐘）</span><span class="sxs-lookup"><span data-stu-id="7670a-108">&#9654; Watch video (49 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/lesson-2-creating-a-web-forms-user-interface)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="63432-109">[上一頁](lesson-1-getting-started-with-visual-web-developer-express.md)
-> [下一頁](lesson-3-understanding-more-about-events-and-postback.md)</span><span class="sxs-lookup"><span data-stu-id="63432-109">[Previous](lesson-1-getting-started-with-visual-web-developer-express.md)
+> <span data-ttu-id="7670a-109">[上一頁](lesson-1-getting-started-with-visual-web-developer-express.md)
+> [下一頁](lesson-3-understanding-more-about-events-and-postback.md)</span><span class="sxs-lookup"><span data-stu-id="7670a-109">[Previous](lesson-1-getting-started-with-visual-web-developer-express.md)
 [Next](lesson-3-understanding-more-about-events-and-postback.md)</span></span>

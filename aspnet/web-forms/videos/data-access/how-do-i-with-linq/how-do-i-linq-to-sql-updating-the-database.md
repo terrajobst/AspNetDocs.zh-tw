@@ -12,18 +12,18 @@ ms.openlocfilehash: 0ce5a0c74f81e23601d9b5fe3ec82b591c867158
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392803"
 ---
-# <a name="how-do-i-linq-to-sql-updating-the-database"></a><span data-ttu-id="bd8a8-103">[How Do i:]LINQ to SQL:更新資料庫</span><span class="sxs-lookup"><span data-stu-id="bd8a8-103">[How Do I:] LINQ to SQL: Updating the Database</span></span>
+# <a name="how-do-i-linq-to-sql-updating-the-database"></a><span data-ttu-id="de69f-103">[How Do i:]LINQ to SQL:更新資料庫</span><span class="sxs-lookup"><span data-stu-id="de69f-103">[How Do I:] LINQ to SQL: Updating the Database</span></span>
 
-<span data-ttu-id="bd8a8-104">藉由[Scott Stanfield](https://github.com/scottstanfield)</span><span class="sxs-lookup"><span data-stu-id="bd8a8-104">by [Scott Stanfield](https://github.com/scottstanfield)</span></span>
+<span data-ttu-id="de69f-104">藉由[Scott Stanfield](https://github.com/scottstanfield)</span><span class="sxs-lookup"><span data-stu-id="de69f-104">by [Scott Stanfield](https://github.com/scottstanfield)</span></span>
 
-<span data-ttu-id="bd8a8-105">在這段影片中，我會示範如何建立、 更新和刪除透過 LINQ，簡單的交易的記錄之間關聯性和自訂的資料行和資料驗證的更新。</span><span class="sxs-lookup"><span data-stu-id="bd8a8-105">In this video I demonstrated how to create, update and delete records through LINQ, simple transactions, updates across relationships, and custom column and row validation.</span></span>
+<span data-ttu-id="de69f-105">在這段影片中，我會示範如何建立、 更新和刪除透過 LINQ，簡單的交易的記錄之間關聯性和自訂的資料行和資料驗證的更新。</span><span class="sxs-lookup"><span data-stu-id="de69f-105">In this video I demonstrated how to create, update and delete records through LINQ, simple transactions, updates across relationships, and custom column and row validation.</span></span>
 
-[<span data-ttu-id="bd8a8-106">&#9654;觀看影片 （17 分）</span><span class="sxs-lookup"><span data-stu-id="bd8a8-106">&#9654; Watch video (17 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-linq-to-sql-updating-the-database)
+[<span data-ttu-id="de69f-106">&#9654;觀看影片 （17 分）</span><span class="sxs-lookup"><span data-stu-id="de69f-106">&#9654; Watch video (17 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-linq-to-sql-updating-the-database)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="bd8a8-107">[上一頁](how-do-i-linq-to-sql-querying-the-database.md)
-> [下一頁](how-do-i-linq-to-sql-linqdatasource.md)</span><span class="sxs-lookup"><span data-stu-id="bd8a8-107">[Previous](how-do-i-linq-to-sql-querying-the-database.md)
+> <span data-ttu-id="de69f-107">[上一頁](how-do-i-linq-to-sql-querying-the-database.md)
+> [下一頁](how-do-i-linq-to-sql-linqdatasource.md)</span><span class="sxs-lookup"><span data-stu-id="de69f-107">[Previous](how-do-i-linq-to-sql-querying-the-database.md)
 [Next](how-do-i-linq-to-sql-linqdatasource.md)</span></span>

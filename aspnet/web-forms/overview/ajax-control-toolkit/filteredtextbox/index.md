@@ -12,13 +12,13 @@ ms.openlocfilehash: f5e5893f9d3780e957f101e78e983f7baa114d27
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388474"
 ---
-# <a name="filteredtextbox"></a><span data-ttu-id="02e33-103">FilteredTextBox</span><span class="sxs-lookup"><span data-stu-id="02e33-103">FilteredTextBox</span></span>
+# <a name="filteredtextbox"></a><span data-ttu-id="3b093-103">FilteredTextBox</span><span class="sxs-lookup"><span data-stu-id="3b093-103">FilteredTextBox</span></span>
 
-> <span data-ttu-id="02e33-104">本教學課程會示範如何使用 FilteredTextBox 控制項，讓您指定在使用者輸入中允許的字元。</span><span class="sxs-lookup"><span data-stu-id="02e33-104">This tutorial shows how to use the FilteredTextBox control, which lets you specify which characters are allowed in user input.</span></span>
+> <span data-ttu-id="3b093-104">本教學課程會示範如何使用 FilteredTextBox 控制項，讓您指定在使用者輸入中允許的字元。</span><span class="sxs-lookup"><span data-stu-id="3b093-104">This tutorial shows how to use the FilteredTextBox control, which lets you specify which characters are allowed in user input.</span></span>
 
 
-- [<span data-ttu-id="02e33-105">文字方塊中只允許特定字元 (C#)</span><span class="sxs-lookup"><span data-stu-id="02e33-105">Allowing Only Certain Characters in a Text Box (C#)</span></span>](allowing-only-certain-characters-in-a-text-box-cs.md)
-- [<span data-ttu-id="02e33-106">文字方塊中只允許特定字元 (VB)</span><span class="sxs-lookup"><span data-stu-id="02e33-106">Allowing Only Certain Characters in a Text Box (VB)</span></span>](allowing-only-certain-characters-in-a-text-box-vb.md)
+- [<span data-ttu-id="3b093-105">文字方塊中只允許特定字元 (C#)</span><span class="sxs-lookup"><span data-stu-id="3b093-105">Allowing Only Certain Characters in a Text Box (C#)</span></span>](allowing-only-certain-characters-in-a-text-box-cs.md)
+- [<span data-ttu-id="3b093-106">文字方塊中只允許特定字元 (VB)</span><span class="sxs-lookup"><span data-stu-id="3b093-106">Allowing Only Certain Characters in a Text Box (VB)</span></span>](allowing-only-certain-characters-in-a-text-box-vb.md)

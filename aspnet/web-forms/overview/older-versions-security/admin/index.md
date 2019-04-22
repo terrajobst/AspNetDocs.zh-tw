@@ -12,17 +12,17 @@ ms.openlocfilehash: c89da16bf4783198d2b4c173eba1b7a7191257a0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59383107"
 ---
-# <a name="aspnet-35---security-administration"></a><span data-ttu-id="09056-103">ASP.NET 3.5 - 安全性管理</span><span class="sxs-lookup"><span data-stu-id="09056-103">ASP.NET 3.5 - Security Administration</span></span>
+# <a name="aspnet-35---security-administration"></a><span data-ttu-id="7ce76-103">ASP.NET 3.5 - 安全性管理</span><span class="sxs-lookup"><span data-stu-id="7ce76-103">ASP.NET 3.5 - Security Administration</span></span>
 
-> <span data-ttu-id="09056-104">本系列教學課程會示範如何建立可讓您管理使用者和角色管理頁面。</span><span class="sxs-lookup"><span data-stu-id="09056-104">This tutorial series shows you one way to create an administration page that lets you manage users and roles.</span></span>
+> <span data-ttu-id="7ce76-104">本系列教學課程會示範如何建立可讓您管理使用者和角色管理頁面。</span><span class="sxs-lookup"><span data-stu-id="7ce76-104">This tutorial series shows you one way to create an administration page that lets you manage users and roles.</span></span>
 
 
-- [<span data-ttu-id="09056-105">建置介面從許多個使用者帳戶中選取一個 (C#)</span><span class="sxs-lookup"><span data-stu-id="09056-105">Building an Interface to Select One User Account from Many (C#)</span></span>](building-an-interface-to-select-one-user-account-from-many-cs.md)
-- [<span data-ttu-id="09056-106">復原及變更密碼 (C#)</span><span class="sxs-lookup"><span data-stu-id="09056-106">Recovering and Changing Passwords (C#)</span></span>](recovering-and-changing-passwords-cs.md)
-- [<span data-ttu-id="09056-107">解除鎖定及核准使用者帳戶 (C#)</span><span class="sxs-lookup"><span data-stu-id="09056-107">Unlocking and Approving User Accounts (C#)</span></span>](unlocking-and-approving-user-accounts-cs.md)
-- [<span data-ttu-id="09056-108">建置介面從許多個使用者帳戶中選取一個 (VB)</span><span class="sxs-lookup"><span data-stu-id="09056-108">Building an Interface to Select One User Account from Many (VB)</span></span>](building-an-interface-to-select-one-user-account-from-many-vb.md)
-- [<span data-ttu-id="09056-109">復原及變更密碼 (VB)</span><span class="sxs-lookup"><span data-stu-id="09056-109">Recovering and Changing Passwords (VB)</span></span>](recovering-and-changing-passwords-vb.md)
-- [<span data-ttu-id="09056-110">解除鎖定及核准使用者帳戶 (VB)</span><span class="sxs-lookup"><span data-stu-id="09056-110">Unlocking and Approving User Accounts (VB)</span></span>](unlocking-and-approving-user-accounts-vb.md)
+- [<span data-ttu-id="7ce76-105">建置介面從許多個使用者帳戶中選取一個 (C#)</span><span class="sxs-lookup"><span data-stu-id="7ce76-105">Building an Interface to Select One User Account from Many (C#)</span></span>](building-an-interface-to-select-one-user-account-from-many-cs.md)
+- [<span data-ttu-id="7ce76-106">復原及變更密碼 (C#)</span><span class="sxs-lookup"><span data-stu-id="7ce76-106">Recovering and Changing Passwords (C#)</span></span>](recovering-and-changing-passwords-cs.md)
+- [<span data-ttu-id="7ce76-107">解除鎖定及核准使用者帳戶 (C#)</span><span class="sxs-lookup"><span data-stu-id="7ce76-107">Unlocking and Approving User Accounts (C#)</span></span>](unlocking-and-approving-user-accounts-cs.md)
+- [<span data-ttu-id="7ce76-108">建置介面從許多個使用者帳戶中選取一個 (VB)</span><span class="sxs-lookup"><span data-stu-id="7ce76-108">Building an Interface to Select One User Account from Many (VB)</span></span>](building-an-interface-to-select-one-user-account-from-many-vb.md)
+- [<span data-ttu-id="7ce76-109">復原及變更密碼 (VB)</span><span class="sxs-lookup"><span data-stu-id="7ce76-109">Recovering and Changing Passwords (VB)</span></span>](recovering-and-changing-passwords-vb.md)
+- [<span data-ttu-id="7ce76-110">解除鎖定及核准使用者帳戶 (VB)</span><span class="sxs-lookup"><span data-stu-id="7ce76-110">Unlocking and Approving User Accounts (VB)</span></span>](unlocking-and-approving-user-accounts-vb.md)

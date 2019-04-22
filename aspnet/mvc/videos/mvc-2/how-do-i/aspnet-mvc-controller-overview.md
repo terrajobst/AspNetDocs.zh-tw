@@ -12,18 +12,18 @@ ms.openlocfilehash: 07b9a7326db70dbed0ba2cce896b4c27020c67d7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59388539"
 ---
-# <a name="aspnet-mvc-controller-overview"></a><span data-ttu-id="65e76-104">ASP.NET MVC 控制器概觀</span><span class="sxs-lookup"><span data-stu-id="65e76-104">ASP.NET MVC Controller Overview</span></span>
+# <a name="aspnet-mvc-controller-overview"></a><span data-ttu-id="8f009-104">ASP.NET MVC 控制器概觀</span><span class="sxs-lookup"><span data-stu-id="8f009-104">ASP.NET MVC Controller Overview</span></span>
 
-<span data-ttu-id="65e76-105">藉由[Stephen Walther](https://github.com/StephenWalther)</span><span class="sxs-lookup"><span data-stu-id="65e76-105">by [Stephen Walther](https://github.com/StephenWalther)</span></span>
+<span data-ttu-id="8f009-105">藉由[Stephen Walther](https://github.com/StephenWalther)</span><span class="sxs-lookup"><span data-stu-id="8f009-105">by [Stephen Walther](https://github.com/StephenWalther)</span></span>
 
-<span data-ttu-id="65e76-106">在這段影片中，Stephen walther 將向您介紹 ASP.NET MVC 控制器和控制器的動作。</span><span class="sxs-lookup"><span data-stu-id="65e76-106">In this video, Stephen Walther introduces you to ASP.NET MVC controllers and controller actions.</span></span> <span data-ttu-id="65e76-107">您了解如何傳回不同類型的動作結果。</span><span class="sxs-lookup"><span data-stu-id="65e76-107">You learn how to return different types of action results.</span></span>
+<span data-ttu-id="8f009-106">在這段影片中，Stephen walther 將向您介紹 ASP.NET MVC 控制器和控制器的動作。</span><span class="sxs-lookup"><span data-stu-id="8f009-106">In this video, Stephen Walther introduces you to ASP.NET MVC controllers and controller actions.</span></span> <span data-ttu-id="8f009-107">您了解如何傳回不同類型的動作結果。</span><span class="sxs-lookup"><span data-stu-id="8f009-107">You learn how to return different types of action results.</span></span>
 
-[<span data-ttu-id="65e76-108">&#9654;觀看影片 （5 分鐘）</span><span class="sxs-lookup"><span data-stu-id="65e76-108">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-controller-overview)
+[<span data-ttu-id="8f009-108">&#9654;觀看影片 （5 分鐘）</span><span class="sxs-lookup"><span data-stu-id="8f009-108">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-controller-overview)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="65e76-109">[上一頁](understanding-models-views-and-controllers.md)
-> [下一頁](understanding-controllers-controller-actions-and-action-results.md)</span><span class="sxs-lookup"><span data-stu-id="65e76-109">[Previous](understanding-models-views-and-controllers.md)
+> <span data-ttu-id="8f009-109">[上一頁](understanding-models-views-and-controllers.md)
+> [下一頁](understanding-controllers-controller-actions-and-action-results.md)</span><span class="sxs-lookup"><span data-stu-id="8f009-109">[Previous](understanding-models-views-and-controllers.md)
 [Next](understanding-controllers-controller-actions-and-action-results.md)</span></span>

@@ -12,19 +12,19 @@ ms.openlocfilehash: 5bf69b1caacf32fe6a5bce3bcd2da037b3defc26
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59395702"
 ---
-# <a name="caching-data"></a><span data-ttu-id="a55ba-103">快取資料</span><span class="sxs-lookup"><span data-stu-id="a55ba-103">Caching Data</span></span>
+# <a name="caching-data"></a><span data-ttu-id="b3e5a-103">快取資料</span><span class="sxs-lookup"><span data-stu-id="b3e5a-103">Caching Data</span></span>
 
-> <span data-ttu-id="a55ba-104">本教學課程組說明快取，如此可改善網站效能，以及如何套用快取使用 ObjectDataSource 控制項的展示層。</span><span class="sxs-lookup"><span data-stu-id="a55ba-104">This tutorial set explains caching, which can improve site performance, and how to apply caching to the Presentation Layer using the ObjectDataSource control.</span></span>
+> <span data-ttu-id="b3e5a-104">本教學課程組說明快取，如此可改善網站效能，以及如何套用快取使用 ObjectDataSource 控制項的展示層。</span><span class="sxs-lookup"><span data-stu-id="b3e5a-104">This tutorial set explains caching, which can improve site performance, and how to apply caching to the Presentation Layer using the ObjectDataSource control.</span></span>
 
 
-- [<span data-ttu-id="a55ba-105">使用 ObjectDataSource 快取資料 (C#)</span><span class="sxs-lookup"><span data-stu-id="a55ba-105">Caching Data with the ObjectDataSource (C#)</span></span>](caching-data-with-the-objectdatasource-cs.md)
-- [<span data-ttu-id="a55ba-106">在架構中快取資料 (C#)</span><span class="sxs-lookup"><span data-stu-id="a55ba-106">Caching Data in the Architecture (C#)</span></span>](caching-data-in-the-architecture-cs.md)
-- [<span data-ttu-id="a55ba-107">在應用程式啟動時快取資料 (C#)</span><span class="sxs-lookup"><span data-stu-id="a55ba-107">Caching Data at Application Startup (C#)</span></span>](caching-data-at-application-startup-cs.md)
-- [<span data-ttu-id="a55ba-108">使用 SQL 快取相依性 (C#)</span><span class="sxs-lookup"><span data-stu-id="a55ba-108">Using SQL Cache Dependencies (C#)</span></span>](using-sql-cache-dependencies-cs.md)
-- [<span data-ttu-id="a55ba-109">使用 ObjectDataSource 快取資料 (VB)</span><span class="sxs-lookup"><span data-stu-id="a55ba-109">Caching Data with the ObjectDataSource (VB)</span></span>](caching-data-with-the-objectdatasource-vb.md)
-- [<span data-ttu-id="a55ba-110">在架構中快取資料 (VB)</span><span class="sxs-lookup"><span data-stu-id="a55ba-110">Caching Data in the Architecture (VB)</span></span>](caching-data-in-the-architecture-vb.md)
-- [<span data-ttu-id="a55ba-111">在應用程式啟動時快取資料 (VB)</span><span class="sxs-lookup"><span data-stu-id="a55ba-111">Caching Data at Application Startup (VB)</span></span>](caching-data-at-application-startup-vb.md)
-- [<span data-ttu-id="a55ba-112">使用 SQL 快取相依性 (VB)</span><span class="sxs-lookup"><span data-stu-id="a55ba-112">Using SQL Cache Dependencies (VB)</span></span>](using-sql-cache-dependencies-vb.md)
+- [<span data-ttu-id="b3e5a-105">使用 ObjectDataSource 快取資料 (C#)</span><span class="sxs-lookup"><span data-stu-id="b3e5a-105">Caching Data with the ObjectDataSource (C#)</span></span>](caching-data-with-the-objectdatasource-cs.md)
+- [<span data-ttu-id="b3e5a-106">在架構中快取資料 (C#)</span><span class="sxs-lookup"><span data-stu-id="b3e5a-106">Caching Data in the Architecture (C#)</span></span>](caching-data-in-the-architecture-cs.md)
+- [<span data-ttu-id="b3e5a-107">在應用程式啟動時快取資料 (C#)</span><span class="sxs-lookup"><span data-stu-id="b3e5a-107">Caching Data at Application Startup (C#)</span></span>](caching-data-at-application-startup-cs.md)
+- [<span data-ttu-id="b3e5a-108">使用 SQL 快取相依性 (C#)</span><span class="sxs-lookup"><span data-stu-id="b3e5a-108">Using SQL Cache Dependencies (C#)</span></span>](using-sql-cache-dependencies-cs.md)
+- [<span data-ttu-id="b3e5a-109">使用 ObjectDataSource 快取資料 (VB)</span><span class="sxs-lookup"><span data-stu-id="b3e5a-109">Caching Data with the ObjectDataSource (VB)</span></span>](caching-data-with-the-objectdatasource-vb.md)
+- [<span data-ttu-id="b3e5a-110">在架構中快取資料 (VB)</span><span class="sxs-lookup"><span data-stu-id="b3e5a-110">Caching Data in the Architecture (VB)</span></span>](caching-data-in-the-architecture-vb.md)
+- [<span data-ttu-id="b3e5a-111">在應用程式啟動時快取資料 (VB)</span><span class="sxs-lookup"><span data-stu-id="b3e5a-111">Caching Data at Application Startup (VB)</span></span>](caching-data-at-application-startup-vb.md)
+- [<span data-ttu-id="b3e5a-112">使用 SQL 快取相依性 (VB)</span><span class="sxs-lookup"><span data-stu-id="b3e5a-112">Using SQL Cache Dependencies (VB)</span></span>](using-sql-cache-dependencies-vb.md)
