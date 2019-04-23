@@ -12,12 +12,12 @@ ms.openlocfilehash: 87eee84da3d696d7294632a490b1a13c65794b26
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410002"
 ---
-# <a name="api-reference"></a><span data-ttu-id="fe8ec-103">應用程式開發介面參考</span><span class="sxs-lookup"><span data-stu-id="fe8ec-103">API Reference</span></span>
+# <a name="api-reference"></a><span data-ttu-id="e8f30-103">應用程式開發介面參考</span><span class="sxs-lookup"><span data-stu-id="e8f30-103">API Reference</span></span>
 
-> <span data-ttu-id="fe8ec-104">API 參考文件適用於 ASP.NET 網頁。</span><span class="sxs-lookup"><span data-stu-id="fe8ec-104">API Reference documentation for ASP.NET Web Pages.</span></span>
+> <span data-ttu-id="e8f30-104">API 參考文件適用於 ASP.NET 網頁。</span><span class="sxs-lookup"><span data-stu-id="e8f30-104">API Reference documentation for ASP.NET Web Pages.</span></span>
 
 
-- [<span data-ttu-id="fe8ec-105">ASP.NET API 快速參考</span><span class="sxs-lookup"><span data-stu-id="fe8ec-105">ASP.NET API Quick Reference</span></span>](asp-net-web-pages-api-reference.md)
+- [<span data-ttu-id="e8f30-105">ASP.NET API 快速參考</span><span class="sxs-lookup"><span data-stu-id="e8f30-105">ASP.NET API Quick Reference</span></span>](asp-net-web-pages-api-reference.md)

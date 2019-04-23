@@ -12,12 +12,12 @@ ms.openlocfilehash: b217af062f53bf0e88c67a366ffc0111e4a1b4da
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410496"
 ---
-# <a name="performance"></a><span data-ttu-id="41eb5-103">效能</span><span class="sxs-lookup"><span data-stu-id="41eb5-103">Performance</span></span>
+# <a name="performance"></a><span data-ttu-id="0e1d7-103">效能</span><span class="sxs-lookup"><span data-stu-id="0e1d7-103">Performance</span></span>
 
-> <span data-ttu-id="41eb5-104">如何從快取增進效能的網站內容。</span><span class="sxs-lookup"><span data-stu-id="41eb5-104">How to cache site content for faster performance.</span></span>
+> <span data-ttu-id="0e1d7-104">如何從快取增進效能的網站內容。</span><span class="sxs-lookup"><span data-stu-id="0e1d7-104">How to cache site content for faster performance.</span></span>
 
 
-- [<span data-ttu-id="41eb5-105">使用 ASP.NET 4.5 中的非同步方法</span><span class="sxs-lookup"><span data-stu-id="41eb5-105">Using Asynchronous Methods in ASP.NET 4.5</span></span>](using-asynchronous-methods-in-aspnet-45.md)
+- [<span data-ttu-id="0e1d7-105">使用 ASP.NET 4.5 中的非同步方法</span><span class="sxs-lookup"><span data-stu-id="0e1d7-105">Using Asynchronous Methods in ASP.NET 4.5</span></span>](using-asynchronous-methods-in-aspnet-45.md)

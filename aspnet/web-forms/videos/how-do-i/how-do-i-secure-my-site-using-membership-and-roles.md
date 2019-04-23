@@ -12,13 +12,13 @@ ms.openlocfilehash: c8582e47ca9f4025b56acc0ae8dfed7cdf40532a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416021"
 ---
-# <a name="how-do-i-secure-my-site-using-membership-and-roles"></a><span data-ttu-id="0b905-105">[How Do i:]保護我的網站使用成員資格和角色？</span><span class="sxs-lookup"><span data-stu-id="0b905-105">[How Do I:] Secure my Site using Membership and Roles?</span></span>
+# <a name="how-do-i-secure-my-site-using-membership-and-roles"></a><span data-ttu-id="061d5-105">[How Do i:]保護我的網站使用成員資格和角色？</span><span class="sxs-lookup"><span data-stu-id="061d5-105">[How Do I:] Secure my Site using Membership and Roles?</span></span>
 
-<span data-ttu-id="0b905-106">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="0b905-106">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="061d5-106">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="061d5-106">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="0b905-107">了解如何保護使用 ASP.NET 2.0 的新成員資格和角色功能的網站。</span><span class="sxs-lookup"><span data-stu-id="0b905-107">Learn how to secure a web site using the new Membership and Roles features of ASP.NET 2.0.</span></span> <span data-ttu-id="0b905-108">主題包括使用者註冊、 密碼復原，以及限制存取與角色的內容。</span><span class="sxs-lookup"><span data-stu-id="0b905-108">Topics include user registration, password recovery, and restricting access to content with roles.</span></span>
+<span data-ttu-id="061d5-107">了解如何保護使用 ASP.NET 2.0 的新成員資格和角色功能的網站。</span><span class="sxs-lookup"><span data-stu-id="061d5-107">Learn how to secure a web site using the new Membership and Roles features of ASP.NET 2.0.</span></span> <span data-ttu-id="061d5-108">主題包括使用者註冊、 密碼復原，以及限制存取與角色的內容。</span><span class="sxs-lookup"><span data-stu-id="061d5-108">Topics include user registration, password recovery, and restricting access to content with roles.</span></span>
 
-[<span data-ttu-id="0b905-109">&#9654;觀看影片 （17 分）</span><span class="sxs-lookup"><span data-stu-id="0b905-109">&#9654; Watch video (17 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-secure-my-site-using-membership-and-roles)
+[<span data-ttu-id="061d5-109">&#9654;觀看影片 （17 分）</span><span class="sxs-lookup"><span data-stu-id="061d5-109">&#9654; Watch video (17 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-secure-my-site-using-membership-and-roles)

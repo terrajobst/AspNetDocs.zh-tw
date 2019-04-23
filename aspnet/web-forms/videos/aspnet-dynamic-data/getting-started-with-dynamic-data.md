@@ -12,18 +12,18 @@ ms.openlocfilehash: 9f40088b40705976983096446e88225d5b434a2a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411315"
 ---
-# <a name="getting-started-with-dynamic-data"></a><span data-ttu-id="fab7a-103">開始使用動態資料</span><span class="sxs-lookup"><span data-stu-id="fab7a-103">Getting Started with Dynamic Data</span></span>
+# <a name="getting-started-with-dynamic-data"></a><span data-ttu-id="f7307-103">開始使用動態資料</span><span class="sxs-lookup"><span data-stu-id="f7307-103">Getting Started with Dynamic Data</span></span>
 
-<span data-ttu-id="fab7a-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="fab7a-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="f7307-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="f7307-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="fab7a-105">在這段影片中我們會建置整個 ASP.NET 應用程式使用 ASP.NET 動態資料，使用 Northwind 資料來動態資料的程式碼產生、 scaffolding 及範本。</span><span class="sxs-lookup"><span data-stu-id="fab7a-105">In this video we'll build an entire ASP.NET application with ASP.NET Dynamic Data using the Northwind Data by using Dynamic Data's code generating, scaffolding and templates.</span></span> <span data-ttu-id="fab7a-106">完成的應用程式是具備 AJAX 行為和完整的 CRUD 功能的資料庫層。</span><span class="sxs-lookup"><span data-stu-id="fab7a-106">The finished application is complete with AJAX Behaviors and a database layer with full CRUD functionality.</span></span>
+<span data-ttu-id="f7307-105">在這段影片中我們會建置整個 ASP.NET 應用程式使用 ASP.NET 動態資料，使用 Northwind 資料來動態資料的程式碼產生、 scaffolding 及範本。</span><span class="sxs-lookup"><span data-stu-id="f7307-105">In this video we'll build an entire ASP.NET application with ASP.NET Dynamic Data using the Northwind Data by using Dynamic Data's code generating, scaffolding and templates.</span></span> <span data-ttu-id="f7307-106">完成的應用程式是具備 AJAX 行為和完整的 CRUD 功能的資料庫層。</span><span class="sxs-lookup"><span data-stu-id="f7307-106">The finished application is complete with AJAX Behaviors and a database layer with full CRUD functionality.</span></span>
 
-[<span data-ttu-id="fab7a-107">&#9654;觀看影片 （23 分鐘）</span><span class="sxs-lookup"><span data-stu-id="fab7a-107">&#9654; Watch video (23 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/getting-started-with-dynamic-data)
+[<span data-ttu-id="f7307-107">&#9654;觀看影片 （23 分鐘）</span><span class="sxs-lookup"><span data-stu-id="f7307-107">&#9654; Watch video (23 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/getting-started-with-dynamic-data)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="fab7a-108">[上一頁](how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls.md)
-> [下一頁](begin-editing-the-templates-in-aspnet-dynamic-data-applications.md)</span><span class="sxs-lookup"><span data-stu-id="fab7a-108">[Previous](how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls.md)
+> <span data-ttu-id="f7307-108">[上一頁](how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls.md)
+> [下一頁](begin-editing-the-templates-in-aspnet-dynamic-data-applications.md)</span><span class="sxs-lookup"><span data-stu-id="f7307-108">[Previous](how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls.md)
 [Next](begin-editing-the-templates-in-aspnet-dynamic-data-applications.md)</span></span>

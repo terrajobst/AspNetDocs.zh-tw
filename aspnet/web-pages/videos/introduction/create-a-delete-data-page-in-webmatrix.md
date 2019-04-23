@@ -12,13 +12,13 @@ ms.openlocfilehash: 2a39346bb09801a0cd3d18de34c9e033d2e5ac8b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410613"
 ---
-# <a name="create-a-delete-data-page-in-webmatrix"></a><span data-ttu-id="51160-103">在 WebMatrix 中建立刪除資料頁面</span><span class="sxs-lookup"><span data-stu-id="51160-103">Create a Delete Data Page in WebMatrix</span></span>
+# <a name="create-a-delete-data-page-in-webmatrix"></a><span data-ttu-id="42aa1-103">在 WebMatrix 中建立刪除資料頁面</span><span class="sxs-lookup"><span data-stu-id="42aa1-103">Create a Delete Data Page in WebMatrix</span></span>
 
-<span data-ttu-id="51160-104">藉由[Advaiya](https://twitter.com/Advaiyasolns)</span><span class="sxs-lookup"><span data-stu-id="51160-104">by [Advaiya](https://twitter.com/Advaiyasolns)</span></span>
+<span data-ttu-id="42aa1-104">藉由[Advaiya](https://twitter.com/Advaiyasolns)</span><span class="sxs-lookup"><span data-stu-id="42aa1-104">by [Advaiya](https://twitter.com/Advaiyasolns)</span></span>
 
-<span data-ttu-id="51160-105">第 8 節最後會關閉應用程式示範如何建立您的資料 [刪除] 頁面。</span><span class="sxs-lookup"><span data-stu-id="51160-105">Part 8 finishes off the application by showing you how to create a delete page for your data.</span></span>
+<span data-ttu-id="42aa1-105">第 8 節最後會關閉應用程式示範如何建立您的資料 [刪除] 頁面。</span><span class="sxs-lookup"><span data-stu-id="42aa1-105">Part 8 finishes off the application by showing you how to create a delete page for your data.</span></span>
 
-[<span data-ttu-id="51160-106">&#9654;觀看影片 （3 分鐘）</span><span class="sxs-lookup"><span data-stu-id="51160-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/create-a-delete-data-page-in-webmatrix)
+[<span data-ttu-id="42aa1-106">&#9654;觀看影片 （3 分鐘）</span><span class="sxs-lookup"><span data-stu-id="42aa1-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/create-a-delete-data-page-in-webmatrix)

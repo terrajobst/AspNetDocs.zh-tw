@@ -12,60 +12,60 @@ ms.openlocfilehash: 663dfc76dc3d07dbe9ddca002dc07cb3f9acdb1c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419336"
 ---
-# <a name="filling-a-list-using-cascadingdropdown-vb"></a><span data-ttu-id="47b41-103">使用 CascadingDropDown 填滿清單 (VB)</span><span class="sxs-lookup"><span data-stu-id="47b41-103">Filling a List Using CascadingDropDown (VB)</span></span>
+# <a name="filling-a-list-using-cascadingdropdown-vb"></a><span data-ttu-id="80dda-103">使用 CascadingDropDown 填滿清單 (VB)</span><span class="sxs-lookup"><span data-stu-id="80dda-103">Filling a List Using CascadingDropDown (VB)</span></span>
 
-<span data-ttu-id="47b41-104">藉由[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="47b41-104">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="80dda-104">藉由[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="80dda-104">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="47b41-105">[下載程式碼](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown0.vb.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown0VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="47b41-105">[Download Code](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown0.vb.zip) or [Download PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown0VB.pdf)</span></span>
+<span data-ttu-id="80dda-105">[下載程式碼](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown0.vb.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown0VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="80dda-105">[Download Code](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown0.vb.zip) or [Download PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown0VB.pdf)</span></span>
 
-> <span data-ttu-id="47b41-106">在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。</span><span class="sxs-lookup"><span data-stu-id="47b41-106">The CascadingDropDown control in the AJAX Control Toolkit extends a DropDownList control so that changes in one DropDownList loads associated values in another DropDownList.</span></span> <span data-ttu-id="47b41-107">（比方說，一份清單會提供一份我們狀態，而且下一個清單則填入該狀態中主要城市）。若要解決的第一個挑戰是實際填入下拉式清單中使用這個控制項。</span><span class="sxs-lookup"><span data-stu-id="47b41-107">(For instance, one list provides a list of US states, and the next list is then filled with major cities in that state.) The first challenge to solve is to actually fill a dropdown list using this control.</span></span>
+> <span data-ttu-id="80dda-106">在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。</span><span class="sxs-lookup"><span data-stu-id="80dda-106">The CascadingDropDown control in the AJAX Control Toolkit extends a DropDownList control so that changes in one DropDownList loads associated values in another DropDownList.</span></span> <span data-ttu-id="80dda-107">（比方說，一份清單會提供一份我們狀態，而且下一個清單則填入該狀態中主要城市）。若要解決的第一個挑戰是實際填入下拉式清單中使用這個控制項。</span><span class="sxs-lookup"><span data-stu-id="80dda-107">(For instance, one list provides a list of US states, and the next list is then filled with major cities in that state.) The first challenge to solve is to actually fill a dropdown list using this control.</span></span>
 
 
-## <a name="overview"></a><span data-ttu-id="47b41-108">總覽</span><span class="sxs-lookup"><span data-stu-id="47b41-108">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="80dda-108">總覽</span><span class="sxs-lookup"><span data-stu-id="80dda-108">Overview</span></span>
 
-<span data-ttu-id="47b41-109">在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。</span><span class="sxs-lookup"><span data-stu-id="47b41-109">The CascadingDropDown control in the AJAX Control Toolkit extends a DropDownList control so that changes in one DropDownList loads associated values in another DropDownList.</span></span> <span data-ttu-id="47b41-110">（比方說，一份清單會提供一份我們狀態，而且下一個清單則填入該狀態中主要城市）。若要解決的第一個挑戰是實際填入下拉式清單中使用這個控制項。</span><span class="sxs-lookup"><span data-stu-id="47b41-110">(For instance, one list provides a list of US states, and the next list is then filled with major cities in that state.) The first challenge to solve is to actually fill a dropdown list using this control.</span></span>
+<span data-ttu-id="80dda-109">在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。</span><span class="sxs-lookup"><span data-stu-id="80dda-109">The CascadingDropDown control in the AJAX Control Toolkit extends a DropDownList control so that changes in one DropDownList loads associated values in another DropDownList.</span></span> <span data-ttu-id="80dda-110">（比方說，一份清單會提供一份我們狀態，而且下一個清單則填入該狀態中主要城市）。若要解決的第一個挑戰是實際填入下拉式清單中使用這個控制項。</span><span class="sxs-lookup"><span data-stu-id="80dda-110">(For instance, one list provides a list of US states, and the next list is then filled with major cities in that state.) The first challenge to solve is to actually fill a dropdown list using this control.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="47b41-111">步驟</span><span class="sxs-lookup"><span data-stu-id="47b41-111">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="80dda-111">步驟</span><span class="sxs-lookup"><span data-stu-id="80dda-111">Steps</span></span>
 
-<span data-ttu-id="47b41-112">若要啟動的 ASP.NET AJAX Control Toolkit 中，功能`ScriptManager`控制項必須放置在任何位置上 (但在`<form>`項目):</span><span class="sxs-lookup"><span data-stu-id="47b41-112">In order to activate the functionality of ASP.NET AJAX and the Control Toolkit, the `ScriptManager` control must be put anywhere on the page (but within the `<form>` element):</span></span>
+<span data-ttu-id="80dda-112">若要啟動的 ASP.NET AJAX Control Toolkit 中，功能`ScriptManager`控制項必須放置在任何位置上 (但在`<form>`項目):</span><span class="sxs-lookup"><span data-stu-id="80dda-112">In order to activate the functionality of ASP.NET AJAX and the Control Toolkit, the `ScriptManager` control must be put anywhere on the page (but within the `<form>` element):</span></span>
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-vb/samples/sample1.aspx)]
 
-<span data-ttu-id="47b41-113">DropDownList 控制項則需要：</span><span class="sxs-lookup"><span data-stu-id="47b41-113">Then, a DropDownList control is required:</span></span>
+<span data-ttu-id="80dda-113">DropDownList 控制項則需要：</span><span class="sxs-lookup"><span data-stu-id="80dda-113">Then, a DropDownList control is required:</span></span>
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-vb/samples/sample2.aspx)]
 
-<span data-ttu-id="47b41-114">對於此清單中，就會加入 CascadingDropDown 擴充項。</span><span class="sxs-lookup"><span data-stu-id="47b41-114">For this list, a CascadingDropDown extender is added.</span></span> <span data-ttu-id="47b41-115">非同步要求會傳送到一項 web 服務，接著會傳回一份要顯示在清單中的項目。</span><span class="sxs-lookup"><span data-stu-id="47b41-115">It will send an asynchronous request to a web service which will then return a list of entries to be displayed in the list.</span></span> <span data-ttu-id="47b41-116">針對此目的，需要設定下列 CascadingDropDown 屬性：</span><span class="sxs-lookup"><span data-stu-id="47b41-116">For this to work, the following CascadingDropDown attributes need to be set:</span></span>
+<span data-ttu-id="80dda-114">對於此清單中，就會加入 CascadingDropDown 擴充項。</span><span class="sxs-lookup"><span data-stu-id="80dda-114">For this list, a CascadingDropDown extender is added.</span></span> <span data-ttu-id="80dda-115">非同步要求會傳送到一項 web 服務，接著會傳回一份要顯示在清單中的項目。</span><span class="sxs-lookup"><span data-stu-id="80dda-115">It will send an asynchronous request to a web service which will then return a list of entries to be displayed in the list.</span></span> <span data-ttu-id="80dda-116">針對此目的，需要設定下列 CascadingDropDown 屬性：</span><span class="sxs-lookup"><span data-stu-id="80dda-116">For this to work, the following CascadingDropDown attributes need to be set:</span></span>
 
-- `ServicePath`<span data-ttu-id="47b41-117">:提供的清單項目之 web 服務的 URL</span><span class="sxs-lookup"><span data-stu-id="47b41-117">: URL of a web service delivering the list entries</span></span>
-- `ServiceMethod`<span data-ttu-id="47b41-118">:Web 方法提供的清單項目</span><span class="sxs-lookup"><span data-stu-id="47b41-118">: Web method delivering the list entries</span></span>
-- `TargetControlID`<span data-ttu-id="47b41-119">:下拉式清單中的識別碼</span><span class="sxs-lookup"><span data-stu-id="47b41-119">: ID of the dropdown list</span></span>
-- `Category`<span data-ttu-id="47b41-120">:提交給 web 方法的呼叫時的類別目錄資訊</span><span class="sxs-lookup"><span data-stu-id="47b41-120">: Category information that is submitted to the web method when called</span></span>
-- `PromptText`<span data-ttu-id="47b41-121">:以非同步方式從伺服器載入清單資料時顯示的文字</span><span class="sxs-lookup"><span data-stu-id="47b41-121">: Text displayed when asynchronously loading list data from the server</span></span>
+- <span data-ttu-id="80dda-117">`ServicePath`：提供的清單項目之 web 服務的 URL</span><span class="sxs-lookup"><span data-stu-id="80dda-117">`ServicePath`: URL of a web service delivering the list entries</span></span>
+- <span data-ttu-id="80dda-118">`ServiceMethod`：Web 方法提供的清單項目</span><span class="sxs-lookup"><span data-stu-id="80dda-118">`ServiceMethod`: Web method delivering the list entries</span></span>
+- <span data-ttu-id="80dda-119">`TargetControlID`：下拉式清單中的識別碼</span><span class="sxs-lookup"><span data-stu-id="80dda-119">`TargetControlID`: ID of the dropdown list</span></span>
+- <span data-ttu-id="80dda-120">`Category`：提交給 web 方法的呼叫時的類別目錄資訊</span><span class="sxs-lookup"><span data-stu-id="80dda-120">`Category`: Category information that is submitted to the web method when called</span></span>
+- <span data-ttu-id="80dda-121">`PromptText`：以非同步方式從伺服器載入清單資料時顯示的文字</span><span class="sxs-lookup"><span data-stu-id="80dda-121">`PromptText`: Text displayed when asynchronously loading list data from the server</span></span>
 
-<span data-ttu-id="47b41-122">以下是標記`CascadingDropDown`項目。</span><span class="sxs-lookup"><span data-stu-id="47b41-122">Here is the markup for the `CascadingDropDown` element.</span></span> <span data-ttu-id="47b41-123">C# 和 VB 之間唯一的差別是相關聯的 web 服務的名稱：</span><span class="sxs-lookup"><span data-stu-id="47b41-123">The only difference between C# and VB is the name of the associated web service:</span></span>
+<span data-ttu-id="80dda-122">以下是標記`CascadingDropDown`項目。</span><span class="sxs-lookup"><span data-stu-id="80dda-122">Here is the markup for the `CascadingDropDown` element.</span></span> <span data-ttu-id="80dda-123">C# 和 VB 之間唯一的差別是相關聯的 web 服務的名稱：</span><span class="sxs-lookup"><span data-stu-id="80dda-123">The only difference between C# and VB is the name of the associated web service:</span></span>
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-vb/samples/sample3.aspx)]
 
-<span data-ttu-id="47b41-124">JavaScript 程式碼來自`CascadingDropDown`擴充項會呼叫 web 服務方法具有下列簽章：</span><span class="sxs-lookup"><span data-stu-id="47b41-124">The JavaScript code coming from the `CascadingDropDown` extender calls a web service method with the following signature:</span></span>
+<span data-ttu-id="80dda-124">JavaScript 程式碼來自`CascadingDropDown`擴充項會呼叫 web 服務方法具有下列簽章：</span><span class="sxs-lookup"><span data-stu-id="80dda-124">The JavaScript code coming from the `CascadingDropDown` extender calls a web service method with the following signature:</span></span>
 
 [!code-vb[Main](filling-a-list-using-cascadingdropdown-vb/samples/sample4.vb)]
 
-<span data-ttu-id="47b41-125">因此重要的是，此方法需要傳回類型的陣列`CascadingDropDownNameValue`（由 ASP.NET AJAX Control Toolkit 中定義）。</span><span class="sxs-lookup"><span data-stu-id="47b41-125">So the important aspect is that the method needs to return an array of type `CascadingDropDownNameValue` (defined by the ASP.NET AJAX Control Toolkit).</span></span> <span data-ttu-id="47b41-126">在 `CascadingDropDownNameValue`建構函式，第一個清單項目的文字，然後其值必須提供，就如同`<option value="VALUE">NAME</option>`在 HTML 中一樣。</span><span class="sxs-lookup"><span data-stu-id="47b41-126">In the `CascadingDropDownNameValue` constructor, first the list entry's text and then its value must be provided, just as `<option value="VALUE">NAME</option>` would do in HTML.</span></span> <span data-ttu-id="47b41-127">以下是一些範例資料：</span><span class="sxs-lookup"><span data-stu-id="47b41-127">Here is some sample data:</span></span>
+<span data-ttu-id="80dda-125">因此重要的是，此方法需要傳回類型的陣列`CascadingDropDownNameValue`（由 ASP.NET AJAX Control Toolkit 中定義）。</span><span class="sxs-lookup"><span data-stu-id="80dda-125">So the important aspect is that the method needs to return an array of type `CascadingDropDownNameValue` (defined by the ASP.NET AJAX Control Toolkit).</span></span> <span data-ttu-id="80dda-126">在 `CascadingDropDownNameValue`建構函式，第一個清單項目的文字，然後其值必須提供，就如同`<option value="VALUE">NAME</option>`在 HTML 中一樣。</span><span class="sxs-lookup"><span data-stu-id="80dda-126">In the `CascadingDropDownNameValue` constructor, first the list entry's text and then its value must be provided, just as `<option value="VALUE">NAME</option>` would do in HTML.</span></span> <span data-ttu-id="80dda-127">以下是一些範例資料：</span><span class="sxs-lookup"><span data-stu-id="80dda-127">Here is some sample data:</span></span>
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-vb/samples/sample5.aspx)]
 
-<span data-ttu-id="47b41-128">載入瀏覽器頁面，將會觸發要填入三個廠商的清單。</span><span class="sxs-lookup"><span data-stu-id="47b41-128">Loading the page in the browser will trigger the list to be filled with three vendors.</span></span>
+<span data-ttu-id="80dda-128">載入瀏覽器頁面，將會觸發要填入三個廠商的清單。</span><span class="sxs-lookup"><span data-stu-id="80dda-128">Loading the page in the browser will trigger the list to be filled with three vendors.</span></span>
 
 
-[![T<span data-ttu-id="47b41-129">他清單自動填入資料]</span><span class="sxs-lookup"><span data-stu-id="47b41-129">he list is filled automatically]</span></span>(filling-a-list-using-cascadingdropdown-vb/_static/image2.png)](filling-a-list-using-cascadingdropdown-vb/_static/image1.png)
+<span data-ttu-id="80dda-129">[![清單會自動填入](filling-a-list-using-cascadingdropdown-vb/_static/image2.png)](filling-a-list-using-cascadingdropdown-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="80dda-129">[![The list is filled automatically](filling-a-list-using-cascadingdropdown-vb/_static/image2.png)](filling-a-list-using-cascadingdropdown-vb/_static/image1.png)</span></span>
 
-<span data-ttu-id="47b41-130">自動填滿清單 ([按一下以檢視完整大小的影像](filling-a-list-using-cascadingdropdown-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="47b41-130">The list is filled automatically ([Click to view full-size image](filling-a-list-using-cascadingdropdown-vb/_static/image3.png))</span></span>
+<span data-ttu-id="80dda-130">自動填滿清單 ([按一下以檢視完整大小的影像](filling-a-list-using-cascadingdropdown-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="80dda-130">The list is filled automatically ([Click to view full-size image](filling-a-list-using-cascadingdropdown-vb/_static/image3.png))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="47b41-131">[上一頁](using-auto-postback-with-cascadingdropdown-cs.md)
-> [下一頁](using-cascadingdropdown-with-a-database-vb.md)</span><span class="sxs-lookup"><span data-stu-id="47b41-131">[Previous](using-auto-postback-with-cascadingdropdown-cs.md)
+> <span data-ttu-id="80dda-131">[上一頁](using-auto-postback-with-cascadingdropdown-cs.md)
+> [下一頁](using-cascadingdropdown-with-a-database-vb.md)</span><span class="sxs-lookup"><span data-stu-id="80dda-131">[Previous](using-auto-postback-with-cascadingdropdown-cs.md)
 [Next](using-cascadingdropdown-with-a-database-vb.md)</span></span>

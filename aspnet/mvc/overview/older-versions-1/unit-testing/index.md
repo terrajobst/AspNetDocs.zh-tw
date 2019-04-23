@@ -12,13 +12,13 @@ ms.openlocfilehash: a0f530059ec98c238f4711020c9481eca604dba0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417607"
 ---
-# <a name="unit-testing"></a><span data-ttu-id="6a636-103">單元測試</span><span class="sxs-lookup"><span data-stu-id="6a636-103">Unit Testing</span></span>
+# <a name="unit-testing"></a><span data-ttu-id="2e7a4-103">單元測試</span><span class="sxs-lookup"><span data-stu-id="2e7a4-103">Unit Testing</span></span>
 
-> <span data-ttu-id="6a636-104">本教學課程組會示範如何建立 ASP.NET mvc 控制器動作的單元測試。</span><span class="sxs-lookup"><span data-stu-id="6a636-104">This tutorial set shows you how to create unit tests for ASP.NET MVC controller actions.</span></span>
+> <span data-ttu-id="2e7a4-104">本教學課程組會示範如何建立 ASP.NET mvc 控制器動作的單元測試。</span><span class="sxs-lookup"><span data-stu-id="2e7a4-104">This tutorial set shows you how to create unit tests for ASP.NET MVC controller actions.</span></span>
 
 
-- [<span data-ttu-id="6a636-105">建立 ASP.NET MVC 應用程式的單元測試 (C#)</span><span class="sxs-lookup"><span data-stu-id="6a636-105">Creating Unit Tests for ASP.NET MVC Applications (C#)</span></span>](creating-unit-tests-for-asp-net-mvc-applications-cs.md)
-- [<span data-ttu-id="6a636-106">建立 ASP.NET MVC 應用程式的單元測試 (VB)</span><span class="sxs-lookup"><span data-stu-id="6a636-106">Creating Unit Tests for ASP.NET MVC Applications (VB)</span></span>](creating-unit-tests-for-asp-net-mvc-applications-vb.md)
+- [<span data-ttu-id="2e7a4-105">建立 ASP.NET MVC 應用程式的單元測試 (C#)</span><span class="sxs-lookup"><span data-stu-id="2e7a4-105">Creating Unit Tests for ASP.NET MVC Applications (C#)</span></span>](creating-unit-tests-for-asp-net-mvc-applications-cs.md)
+- [<span data-ttu-id="2e7a4-106">建立 ASP.NET MVC 應用程式的單元測試 (VB)</span><span class="sxs-lookup"><span data-stu-id="2e7a4-106">Creating Unit Tests for ASP.NET MVC Applications (VB)</span></span>](creating-unit-tests-for-asp-net-mvc-applications-vb.md)
