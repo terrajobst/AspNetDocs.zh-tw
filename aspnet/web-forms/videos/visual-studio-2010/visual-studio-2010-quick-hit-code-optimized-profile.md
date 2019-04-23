@@ -12,16 +12,16 @@ ms.openlocfilehash: fb468493127326947166d68eff6d3ee11e673e61
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404745"
 ---
-# <a name="visual-studio-2010-quick-hit---code-optimized-profile"></a><span data-ttu-id="a9644-103">Visual Studio 2010 」 快速 Hit"-程式碼最佳化設定檔</span><span class="sxs-lookup"><span data-stu-id="a9644-103">Visual Studio 2010 "Quick Hit" - Code Optimized Profile</span></span>
+# <a name="visual-studio-2010-quick-hit---code-optimized-profile"></a><span data-ttu-id="a0871-103">Visual Studio 2010 」 快速 Hit"-程式碼最佳化設定檔</span><span class="sxs-lookup"><span data-stu-id="a0871-103">Visual Studio 2010 "Quick Hit" - Code Optimized Profile</span></span>
 
-<span data-ttu-id="a9644-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="a9644-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="a0871-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="a0871-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="a9644-105">在這段影片中，您將學習如何使用&quot;（最佳化程式碼） 的 Web 開發&quot;設定檔，會隱藏 [設計工具] 索引標籤，並著重於僅限來源的編輯體驗 Visual Studio 2010 中的選項。</span><span class="sxs-lookup"><span data-stu-id="a9644-105">In this video you will learn how to use the &quot;Web Development (Code Optimized)&quot; profile option in Visual Studio 2010 that hides the designer tab and focuses on a source-only editing experience.</span></span> 
+<span data-ttu-id="a0871-105">在這段影片中，您將學習如何使用&quot;（最佳化程式碼） 的 Web 開發&quot;設定檔，會隱藏 [設計工具] 索引標籤，並著重於僅限來源的編輯體驗 Visual Studio 2010 中的選項。</span><span class="sxs-lookup"><span data-stu-id="a0871-105">In this video you will learn how to use the &quot;Web Development (Code Optimized)&quot; profile option in Visual Studio 2010 that hides the designer tab and focuses on a source-only editing experience.</span></span> 
 
-[<span data-ttu-id="a9644-106">&#9654;觀看影片 （3 分鐘）</span><span class="sxs-lookup"><span data-stu-id="a9644-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-2010-quick-hit-code-optimized-profile)
+[<span data-ttu-id="a0871-106">&#9654;觀看影片 （3 分鐘）</span><span class="sxs-lookup"><span data-stu-id="a0871-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-2010-quick-hit-code-optimized-profile)
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="a9644-107">下一步</span><span class="sxs-lookup"><span data-stu-id="a9644-107">Next</span></span>](visual-studio-2010-quick-hit-code-search-view-hierarchy.md)
+> [<span data-ttu-id="a0871-107">下一步</span><span class="sxs-lookup"><span data-stu-id="a0871-107">Next</span></span>](visual-studio-2010-quick-hit-code-search-view-hierarchy.md)

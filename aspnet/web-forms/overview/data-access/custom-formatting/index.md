@@ -12,21 +12,21 @@ ms.openlocfilehash: 180059218bdbff4cb25249b0848fb2752fbbb75c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402917"
 ---
-# <a name="custom-formatting"></a><span data-ttu-id="39b44-103">自訂格式設定</span><span class="sxs-lookup"><span data-stu-id="39b44-103">Custom Formatting</span></span>
+# <a name="custom-formatting"></a><span data-ttu-id="7499d-103">自訂格式設定</span><span class="sxs-lookup"><span data-stu-id="7499d-103">Custom Formatting</span></span>
 
-> <span data-ttu-id="39b44-104">這些教學課程會探討如何將資料顯示在資料繫結期間使用自訂事件處理常式的 GridView、 DetailsView 和 FormView 控制項中。</span><span class="sxs-lookup"><span data-stu-id="39b44-104">These tutorials look at how to customize data display during data binding by using event handlers in the GridView, DetailsView, and FormView controls.</span></span>
+> <span data-ttu-id="7499d-104">這些教學課程會探討如何將資料顯示在資料繫結期間使用自訂事件處理常式的 GridView、 DetailsView 和 FormView 控制項中。</span><span class="sxs-lookup"><span data-stu-id="7499d-104">These tutorials look at how to customize data display during data binding by using event handlers in the GridView, DetailsView, and FormView controls.</span></span>
 
 
-- [<span data-ttu-id="39b44-105">根據資料自訂格式設定 (C#)</span><span class="sxs-lookup"><span data-stu-id="39b44-105">Custom Formatting Based Upon Data (C#)</span></span>](custom-formatting-based-upon-data-cs.md)
-- [<span data-ttu-id="39b44-106">在 GridView 控制項中使用 TemplateFields (C#)</span><span class="sxs-lookup"><span data-stu-id="39b44-106">Using TemplateFields in the GridView Control (C#)</span></span>](using-templatefields-in-the-gridview-control-cs.md)
-- [<span data-ttu-id="39b44-107">在 DetailsView 控制項中使用 TemplateFields (C#)</span><span class="sxs-lookup"><span data-stu-id="39b44-107">Using TemplateFields in the DetailsView Control (C#)</span></span>](using-templatefields-in-the-detailsview-control-cs.md)
-- [<span data-ttu-id="39b44-108">FormView 的範本 (C#)</span><span class="sxs-lookup"><span data-stu-id="39b44-108">FormView's Templates (C#)</span></span>](using-the-formview-s-templates-cs.md)
-- [<span data-ttu-id="39b44-109">在 GridView 的頁尾顯示摘要資訊 (C#)</span><span class="sxs-lookup"><span data-stu-id="39b44-109">Displaying Summary Information in the GridView's Footer (C#)</span></span>](displaying-summary-information-in-the-gridview-s-footer-cs.md)
-- [<span data-ttu-id="39b44-110">根據資料自訂格式設定 (VB)</span><span class="sxs-lookup"><span data-stu-id="39b44-110">Custom Formatting Based Upon Data (VB)</span></span>](custom-formatting-based-upon-data-vb.md)
-- [<span data-ttu-id="39b44-111">在 GridView 控制項中使用 TemplateFields (VB)</span><span class="sxs-lookup"><span data-stu-id="39b44-111">Using TemplateFields in the GridView Control (VB)</span></span>](using-templatefields-in-the-gridview-control-vb.md)
-- [<span data-ttu-id="39b44-112">在 DetailsView 控制項中使用 TemplateFields (VB)</span><span class="sxs-lookup"><span data-stu-id="39b44-112">Using TemplateFields in the DetailsView Control (VB)</span></span>](using-templatefields-in-the-detailsview-control-vb.md)
-- [<span data-ttu-id="39b44-113">FormView 的範本 (VB)</span><span class="sxs-lookup"><span data-stu-id="39b44-113">FormView's Templates (VB)</span></span>](using-the-formview-s-templates-vb.md)
-- [<span data-ttu-id="39b44-114">在 GridView 的頁尾顯示摘要資訊 (VB)</span><span class="sxs-lookup"><span data-stu-id="39b44-114">Displaying Summary Information in the GridView's Footer (VB)</span></span>](displaying-summary-information-in-the-gridview-s-footer-vb.md)
+- [<span data-ttu-id="7499d-105">根據資料自訂格式設定 (C#)</span><span class="sxs-lookup"><span data-stu-id="7499d-105">Custom Formatting Based Upon Data (C#)</span></span>](custom-formatting-based-upon-data-cs.md)
+- [<span data-ttu-id="7499d-106">在 GridView 控制項中使用 TemplateFields (C#)</span><span class="sxs-lookup"><span data-stu-id="7499d-106">Using TemplateFields in the GridView Control (C#)</span></span>](using-templatefields-in-the-gridview-control-cs.md)
+- [<span data-ttu-id="7499d-107">在 DetailsView 控制項中使用 TemplateFields (C#)</span><span class="sxs-lookup"><span data-stu-id="7499d-107">Using TemplateFields in the DetailsView Control (C#)</span></span>](using-templatefields-in-the-detailsview-control-cs.md)
+- [<span data-ttu-id="7499d-108">FormView 的範本 (C#)</span><span class="sxs-lookup"><span data-stu-id="7499d-108">FormView's Templates (C#)</span></span>](using-the-formview-s-templates-cs.md)
+- [<span data-ttu-id="7499d-109">在 GridView 的頁尾顯示摘要資訊 (C#)</span><span class="sxs-lookup"><span data-stu-id="7499d-109">Displaying Summary Information in the GridView's Footer (C#)</span></span>](displaying-summary-information-in-the-gridview-s-footer-cs.md)
+- [<span data-ttu-id="7499d-110">根據資料自訂格式設定 (VB)</span><span class="sxs-lookup"><span data-stu-id="7499d-110">Custom Formatting Based Upon Data (VB)</span></span>](custom-formatting-based-upon-data-vb.md)
+- [<span data-ttu-id="7499d-111">在 GridView 控制項中使用 TemplateFields (VB)</span><span class="sxs-lookup"><span data-stu-id="7499d-111">Using TemplateFields in the GridView Control (VB)</span></span>](using-templatefields-in-the-gridview-control-vb.md)
+- [<span data-ttu-id="7499d-112">在 DetailsView 控制項中使用 TemplateFields (VB)</span><span class="sxs-lookup"><span data-stu-id="7499d-112">Using TemplateFields in the DetailsView Control (VB)</span></span>](using-templatefields-in-the-detailsview-control-vb.md)
+- [<span data-ttu-id="7499d-113">FormView 的範本 (VB)</span><span class="sxs-lookup"><span data-stu-id="7499d-113">FormView's Templates (VB)</span></span>](using-the-formview-s-templates-vb.md)
+- [<span data-ttu-id="7499d-114">在 GridView 的頁尾顯示摘要資訊 (VB)</span><span class="sxs-lookup"><span data-stu-id="7499d-114">Displaying Summary Information in the GridView's Footer (VB)</span></span>](displaying-summary-information-in-the-gridview-s-footer-vb.md)

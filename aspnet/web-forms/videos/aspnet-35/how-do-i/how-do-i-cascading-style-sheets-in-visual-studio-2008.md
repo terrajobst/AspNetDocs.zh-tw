@@ -12,18 +12,18 @@ ms.openlocfilehash: 06e447cedd46c9476de6ed765292b477d7198225
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407779"
 ---
-# <a name="how-do-i-cascading-style-sheets-in-visual-studio-2008"></a><span data-ttu-id="d6fc5-104">[How Do i:]Visual Studio 2008 中的階層式樣式表</span><span class="sxs-lookup"><span data-stu-id="d6fc5-104">[How Do I:] Cascading Style Sheets in Visual Studio 2008</span></span>
+# <a name="how-do-i-cascading-style-sheets-in-visual-studio-2008"></a><span data-ttu-id="57df2-104">[How Do i:]Visual Studio 2008 中的階層式樣式表</span><span class="sxs-lookup"><span data-stu-id="57df2-104">[How Do I:] Cascading Style Sheets in Visual Studio 2008</span></span>
 
-<span data-ttu-id="d6fc5-105">由 Asli Bilgin</span><span class="sxs-lookup"><span data-stu-id="d6fc5-105">by Asli Bilgin</span></span>
+<span data-ttu-id="57df2-105">由 Asli Bilgin</span><span class="sxs-lookup"><span data-stu-id="57df2-105">by Asli Bilgin</span></span>
 
-<span data-ttu-id="d6fc5-106">在這段影片中，我們將檢閱改良的工具來建立外部階層式樣式表。</span><span class="sxs-lookup"><span data-stu-id="d6fc5-106">In this video we will review the improved tools for creating external Cascading Style Sheets.</span></span> <span data-ttu-id="d6fc5-107">CSS 都是很重要任何設計良好的網站和 Visual Studio 2008 提供了建立和管理 CSS 的工具之一。</span><span class="sxs-lookup"><span data-stu-id="d6fc5-107">CSS are vital to any well designed web site and Visual Studio 2008 has provided an arsenal of tools for creating and managing CSS.</span></span>
+<span data-ttu-id="57df2-106">在這段影片中，我們將檢閱改良的工具來建立外部階層式樣式表。</span><span class="sxs-lookup"><span data-stu-id="57df2-106">In this video we will review the improved tools for creating external Cascading Style Sheets.</span></span> <span data-ttu-id="57df2-107">CSS 都是很重要任何設計良好的網站和 Visual Studio 2008 提供了建立和管理 CSS 的工具之一。</span><span class="sxs-lookup"><span data-stu-id="57df2-107">CSS are vital to any well designed web site and Visual Studio 2008 has provided an arsenal of tools for creating and managing CSS.</span></span>
 
-[<span data-ttu-id="d6fc5-108">&#9654;觀看影片 （12 分鐘）</span><span class="sxs-lookup"><span data-stu-id="d6fc5-108">&#9654; Watch video (12 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-cascading-style-sheets-in-visual-studio-2008)
+[<span data-ttu-id="57df2-108">&#9654;觀看影片 （12 分鐘）</span><span class="sxs-lookup"><span data-stu-id="57df2-108">&#9654; Watch video (12 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-cascading-style-sheets-in-visual-studio-2008)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="d6fc5-109">[上一頁](how-do-i-create-nested-master-page-in-visual-studio-2008.md)
-> [下一頁](how-do-i-working-with-visual-studio-2008-net-framework.md)</span><span class="sxs-lookup"><span data-stu-id="d6fc5-109">[Previous](how-do-i-create-nested-master-page-in-visual-studio-2008.md)
+> <span data-ttu-id="57df2-109">[上一頁](how-do-i-create-nested-master-page-in-visual-studio-2008.md)
+> [下一頁](how-do-i-working-with-visual-studio-2008-net-framework.md)</span><span class="sxs-lookup"><span data-stu-id="57df2-109">[Previous](how-do-i-create-nested-master-page-in-visual-studio-2008.md)
 [Next](how-do-i-working-with-visual-studio-2008-net-framework.md)</span></span>

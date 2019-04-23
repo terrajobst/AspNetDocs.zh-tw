@@ -12,16 +12,16 @@ ms.openlocfilehash: c1e0a596cf9928ebf8447dc1aaa1dbeac85c8605
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404646"
 ---
-# <a name="aspnet-4-quick-hit---auto-start"></a><span data-ttu-id="ec081-103">ASP.NET 4"快速 Hit"-自動啟動</span><span class="sxs-lookup"><span data-stu-id="ec081-103">ASP.NET 4 "Quick Hit" - Auto Start</span></span>
+# <a name="aspnet-4-quick-hit---auto-start"></a><span data-ttu-id="e080a-103">ASP.NET 4"快速 Hit"-自動啟動</span><span class="sxs-lookup"><span data-stu-id="e080a-103">ASP.NET 4 "Quick Hit" - Auto Start</span></span>
 
-<span data-ttu-id="ec081-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="ec081-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="e080a-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="e080a-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="ec081-105">在這段影片中，您將了解新的自動啟動延展性功能可提供受控制的方法啟動應用程式集區，初始化 ASP.NET 應用程式，然後接受 HTTP 要求。</span><span class="sxs-lookup"><span data-stu-id="ec081-105">In this video you will learn about the new auto-start scalability feature which provides a controlled approach for starting up an application pool, initializing an ASP.NET application, and then accepting HTTP requests.</span></span> 
+<span data-ttu-id="e080a-105">在這段影片中，您將了解新的自動啟動延展性功能可提供受控制的方法啟動應用程式集區，初始化 ASP.NET 應用程式，然後接受 HTTP 要求。</span><span class="sxs-lookup"><span data-stu-id="e080a-105">In this video you will learn about the new auto-start scalability feature which provides a controlled approach for starting up an application pool, initializing an ASP.NET application, and then accepting HTTP requests.</span></span> 
 
-[<span data-ttu-id="ec081-106">&#9654;觀看影片 （11 分鐘）</span><span class="sxs-lookup"><span data-stu-id="ec081-106">&#9654; Watch video (11 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-auto-start)
+[<span data-ttu-id="e080a-106">&#9654;觀看影片 （11 分鐘）</span><span class="sxs-lookup"><span data-stu-id="e080a-106">&#9654; Watch video (11 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-auto-start)
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="ec081-107">下一步</span><span class="sxs-lookup"><span data-stu-id="ec081-107">Next</span></span>](aspnet-4-quick-hit-clean-webconfig-files.md)
+> [<span data-ttu-id="e080a-107">下一步</span><span class="sxs-lookup"><span data-stu-id="e080a-107">Next</span></span>](aspnet-4-quick-hit-clean-webconfig-files.md)

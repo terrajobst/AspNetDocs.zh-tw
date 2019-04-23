@@ -12,27 +12,27 @@ ms.openlocfilehash: bb9ae940ba90620a6a4c2d373117635f80e14588
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397444"
 ---
-# <a name="building-real-world-cloud-apps-with-azure"></a><span data-ttu-id="a30ec-103">使用 Azure 建置真實世界的雲端應用程式</span><span class="sxs-lookup"><span data-stu-id="a30ec-103">Building Real World Cloud Apps with Azure</span></span>
+# <a name="building-real-world-cloud-apps-with-azure"></a><span data-ttu-id="d6b9f-103">使用 Azure 建置真實世界的雲端應用程式</span><span class="sxs-lookup"><span data-stu-id="d6b9f-103">Building Real World Cloud Apps with Azure</span></span>
 
-> <span data-ttu-id="a30ec-104">使用 Azure 建置真實世界的雲端應用程式</span><span class="sxs-lookup"><span data-stu-id="a30ec-104">Building Real World Cloud Apps with Azure</span></span>
+> <span data-ttu-id="d6b9f-104">使用 Azure 建置真實世界的雲端應用程式</span><span class="sxs-lookup"><span data-stu-id="d6b9f-104">Building Real World Cloud Apps with Azure</span></span>
 
 
-- [<span data-ttu-id="a30ec-105">簡介</span><span class="sxs-lookup"><span data-stu-id="a30ec-105">Introduction</span></span>](introduction.md)
-- [<span data-ttu-id="a30ec-106">一切自動化</span><span class="sxs-lookup"><span data-stu-id="a30ec-106">Automate Everything</span></span>](automate-everything.md)
-- [<span data-ttu-id="a30ec-107">原始檔控制</span><span class="sxs-lookup"><span data-stu-id="a30ec-107">Source Control</span></span>](source-control.md)
-- [<span data-ttu-id="a30ec-108">持續整合與傳遞</span><span class="sxs-lookup"><span data-stu-id="a30ec-108">Continuous Integration and Delivery</span></span>](continuous-integration-and-continuous-delivery.md)
-- [<span data-ttu-id="a30ec-109">網頁程式開發最佳做法</span><span class="sxs-lookup"><span data-stu-id="a30ec-109">Web Development Best Practices</span></span>](web-development-best-practices.md)
-- [<span data-ttu-id="a30ec-110">單一登入</span><span class="sxs-lookup"><span data-stu-id="a30ec-110">Single Sign-On</span></span>](single-sign-on.md)
-- [<span data-ttu-id="a30ec-111">資料儲存體選項</span><span class="sxs-lookup"><span data-stu-id="a30ec-111">Data Storage Options</span></span>](data-storage-options.md)
-- [<span data-ttu-id="a30ec-112">資料分割策略</span><span class="sxs-lookup"><span data-stu-id="a30ec-112">Data Partitioning Strategies</span></span>](data-partitioning-strategies.md)
-- [<span data-ttu-id="a30ec-113">非結構化的 Blob 儲存體</span><span class="sxs-lookup"><span data-stu-id="a30ec-113">Unstructured Blob Storage</span></span>](unstructured-blob-storage.md)
-- [<span data-ttu-id="a30ec-114">設計存留失敗</span><span class="sxs-lookup"><span data-stu-id="a30ec-114">Design to Survive Failures</span></span>](design-to-survive-failures.md)
-- [<span data-ttu-id="a30ec-115">監視和遙測</span><span class="sxs-lookup"><span data-stu-id="a30ec-115">Monitoring and Telemetry</span></span>](monitoring-and-telemetry.md)
-- [<span data-ttu-id="a30ec-116">暫時性錯誤處理</span><span class="sxs-lookup"><span data-stu-id="a30ec-116">Transient Fault Handling</span></span>](transient-fault-handling.md)
-- [<span data-ttu-id="a30ec-117">分散式快取</span><span class="sxs-lookup"><span data-stu-id="a30ec-117">Distributed Caching</span></span>](distributed-caching.md)
-- [<span data-ttu-id="a30ec-118">以佇列為主的工作模式</span><span class="sxs-lookup"><span data-stu-id="a30ec-118">Queue-Centric Work Pattern</span></span>](queue-centric-work-pattern.md)
-- [<span data-ttu-id="a30ec-119">更多模式和指導方針</span><span class="sxs-lookup"><span data-stu-id="a30ec-119">More Patterns and Guidance</span></span>](more-patterns-and-guidance.md)
-- [<span data-ttu-id="a30ec-120">附錄：Fix It 範例應用程式</span><span class="sxs-lookup"><span data-stu-id="a30ec-120">Appendix: The Fix It Sample Application</span></span>](the-fix-it-sample-application.md)
+- [<span data-ttu-id="d6b9f-105">簡介</span><span class="sxs-lookup"><span data-stu-id="d6b9f-105">Introduction</span></span>](introduction.md)
+- [<span data-ttu-id="d6b9f-106">一切自動化</span><span class="sxs-lookup"><span data-stu-id="d6b9f-106">Automate Everything</span></span>](automate-everything.md)
+- [<span data-ttu-id="d6b9f-107">原始檔控制</span><span class="sxs-lookup"><span data-stu-id="d6b9f-107">Source Control</span></span>](source-control.md)
+- [<span data-ttu-id="d6b9f-108">持續整合與傳遞</span><span class="sxs-lookup"><span data-stu-id="d6b9f-108">Continuous Integration and Delivery</span></span>](continuous-integration-and-continuous-delivery.md)
+- [<span data-ttu-id="d6b9f-109">網頁程式開發最佳做法</span><span class="sxs-lookup"><span data-stu-id="d6b9f-109">Web Development Best Practices</span></span>](web-development-best-practices.md)
+- [<span data-ttu-id="d6b9f-110">單一登入</span><span class="sxs-lookup"><span data-stu-id="d6b9f-110">Single Sign-On</span></span>](single-sign-on.md)
+- [<span data-ttu-id="d6b9f-111">資料儲存體選項</span><span class="sxs-lookup"><span data-stu-id="d6b9f-111">Data Storage Options</span></span>](data-storage-options.md)
+- [<span data-ttu-id="d6b9f-112">資料分割策略</span><span class="sxs-lookup"><span data-stu-id="d6b9f-112">Data Partitioning Strategies</span></span>](data-partitioning-strategies.md)
+- [<span data-ttu-id="d6b9f-113">非結構化的 Blob 儲存體</span><span class="sxs-lookup"><span data-stu-id="d6b9f-113">Unstructured Blob Storage</span></span>](unstructured-blob-storage.md)
+- [<span data-ttu-id="d6b9f-114">設計存留失敗</span><span class="sxs-lookup"><span data-stu-id="d6b9f-114">Design to Survive Failures</span></span>](design-to-survive-failures.md)
+- [<span data-ttu-id="d6b9f-115">監視和遙測</span><span class="sxs-lookup"><span data-stu-id="d6b9f-115">Monitoring and Telemetry</span></span>](monitoring-and-telemetry.md)
+- [<span data-ttu-id="d6b9f-116">暫時性錯誤處理</span><span class="sxs-lookup"><span data-stu-id="d6b9f-116">Transient Fault Handling</span></span>](transient-fault-handling.md)
+- [<span data-ttu-id="d6b9f-117">分散式快取</span><span class="sxs-lookup"><span data-stu-id="d6b9f-117">Distributed Caching</span></span>](distributed-caching.md)
+- [<span data-ttu-id="d6b9f-118">以佇列為主的工作模式</span><span class="sxs-lookup"><span data-stu-id="d6b9f-118">Queue-Centric Work Pattern</span></span>](queue-centric-work-pattern.md)
+- [<span data-ttu-id="d6b9f-119">更多模式和指導方針</span><span class="sxs-lookup"><span data-stu-id="d6b9f-119">More Patterns and Guidance</span></span>](more-patterns-and-guidance.md)
+- [<span data-ttu-id="d6b9f-120">附錄：修正範例應用程式</span><span class="sxs-lookup"><span data-stu-id="d6b9f-120">Appendix: The Fix It Sample Application</span></span>](the-fix-it-sample-application.md)
