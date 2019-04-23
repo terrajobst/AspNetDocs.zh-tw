@@ -5,14 +5,13 @@ author: rick-anderson
 description: 了解如何從外部來源中的 web.config 值以外的來源取得設定資料。
 ms.author: riande
 ms.date: 10/29/2018
-ms.technology: aspnet
 msc.type: content
-ms.openlocfilehash: 443b33b5c3b964f731999834db580a6abbf6617b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
-ms.translationtype: HT
+ms.openlocfilehash: 2bec828aa01d2c17f5374c3b1804b7444ec03dda
+ms.sourcegitcommit: 2d53ed9e4c8b19d3526cbc689bfa8394c9449cec
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420415"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59905692"
 ---
 # <a name="configuration-builders-for-aspnet"></a>適用於 ASP.NET 的組態產生器
 
@@ -83,7 +82,7 @@ ms.locfileid: "59420415"
 
 * 具有`EnvironmentConfigBuilder`在預設`Strict`模式和適當的索引鍵名稱在組態檔中。 上述程式碼和標記會使用此方法。 使用這種方法，您可以**未**有相同的已命名兩者中的索引鍵`<appSettings/>`和`<connectionStrings/>`。
 * 使用兩個`EnvironmentConfigBuilder`中的 s`Greedy`具有不同的前置詞模式和`stripPrefix`。 使用此方法時，應用程式可以讀取`<appSettings/>`和`<connectionStrings/>`而不需要更新組態檔。 下一步 區段中， [stripPrefix](#stripprefix)，示範如何執行這項操作。
-* 使用兩個`EnvironmentConfigBuilder`中的 s`Greedy`具有不同的前置詞的模式。 使用這種方法，因為索引鍵的名稱必須不同前置詞，不能有重複的索引鍵名稱。  例如：
+* 使用兩個`EnvironmentConfigBuilder`中的 s`Greedy`具有不同的前置詞的模式。 使用這種方法，因為索引鍵的名稱必須不同前置詞，不能有重複的索引鍵名稱。  例如: 
 
 [!code-xml[Main](config-builder/MyConfigBuilders/WebPrefix.config?name=snippet&highlight=11-99)]
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 5b26ef9ddb1461d01f7e6862f1cd5605fee532a8
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421715"
 ---
 # <a name="displaying-a-table-of-database-data"></a>顯示資料庫資料的資料表

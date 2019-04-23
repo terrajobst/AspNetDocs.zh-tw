@@ -12,7 +12,7 @@ ms.openlocfilehash: a4d6ef0f82312d32eb1b5aade5428af2a8bd5345
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421767"
 ---
 # <a name="how-do-i-add-javascript-event-handlers-to-aspnet-server-controls"></a>[How Do i:]將 JavaScript 事件處理常式新增至 ASP.NET 伺服器控制項

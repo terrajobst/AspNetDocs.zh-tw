@@ -8,12 +8,12 @@ ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: 6cea53021ce92e3936b06481008a86dd0590a117
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d98fc8ff72f7d32502d88329ef9d056393b92c92
+ms.sourcegitcommit: 2d53ed9e4c8b19d3526cbc689bfa8394c9449cec
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387434"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59905679"
 ---
 # <a name="microsoft-ajax-content-delivery-network"></a>Microsoft Ajax 內容傳遞網路
 
@@ -163,6 +163,14 @@ CDN 裝載一些最受歡迎的協力廠商 JavaScript 程式庫。 Microsoft �
 ### <a name="jquery-releases-on-the-cdn"></a>在 CDN 上的 jQuery 版本
 
 下列的 jQuery 版本皆裝載在 CDN 上：
+
+#### <a name="jquery-version-340"></a>jQuery 3.4.0 版
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.js
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.map
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.slim.js
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.slim.min.js
+- https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.slim.min.map
 
 #### <a name="jquery-version-331"></a>jQuery 3.3.1 版
 - https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.js

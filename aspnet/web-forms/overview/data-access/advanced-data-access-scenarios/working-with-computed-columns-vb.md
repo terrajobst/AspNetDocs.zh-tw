@@ -12,7 +12,7 @@ ms.openlocfilehash: 9ded6526a2c4f1063843f3448ba3a2023686f529
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421169"
 ---
 # <a name="working-with-computed-columns-vb"></a>使用計算資料行 (VB)
@@ -54,7 +54,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要新增一個�
 新增此計算資料行之後您的畫面看起來應該類似 圖 1 螢幕擷取畫面。
 
 
-[![A計算資料行名為 FullContactName 供應商資料表的 dd](working-with-computed-columns-vb/_static/image2.png)](working-with-computed-columns-vb/_static/image1.png)
+[![加入名為 [Suppliers] 資料表的 FullContactName 計算資料行](working-with-computed-columns-vb/_static/image2.png)](working-with-computed-columns-vb/_static/image1.png)
 
 **圖 1**:新增計算資料行名為`FullContactName`要`Suppliers`資料表 ([按一下以檢視完整大小的影像](working-with-computed-columns-vb/_static/image3.png))
 
@@ -79,7 +79,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要新增一個�
 結果如 [圖 2] 所示，包括`FullContactName`，列出`CompanyName`， `ContactName`，以及`ContactTitle`使用格式的資料行`ContactName`(`ContactTitle`， `CompanyName`)。
 
 
-[![T他 FullContactName 會使用格式 ContactName （連絡人職稱、 公司名稱）](working-with-computed-columns-vb/_static/image5.png)](working-with-computed-columns-vb/_static/image4.png)
+[![FullContactName 使用格式 ContactName （連絡人職稱、 公司名稱）](working-with-computed-columns-vb/_static/image5.png)](working-with-computed-columns-vb/_static/image4.png)
 
 **圖 2**:`FullContactName`使用格式`ContactName`(`ContactTitle`， `CompanyName`) ([按一下以檢視完整大小的影像](working-with-computed-columns-vb/_static/image6.png))
 
@@ -97,7 +97,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要新增一個�
 首先開啟`NorthwindWithSprocs`中的資料集`~/App_Code/DAL`資料夾。 以滑鼠右鍵按一下設計工具中，並從操作功能表中，選擇 加入新的 TableAdapter。 這會啟動 [TableAdapter 組態精靈]。 查詢資料，從指定的資料庫 (`NORTHWNDConnectionString`從`Web.config`)，按一下 [下一步]。 因為我們尚未建立任何預存程序的查詢，或修改`Suppliers`資料表中，選取 建立新的預存程序選項，讓精靈將會為我們建立它們，並按一下 下一步。
 
 
-[![C選擇 [建立新的預存程序選項](working-with-computed-columns-vb/_static/image8.png)](working-with-computed-columns-vb/_static/image7.png)
+[![選擇 建立新預存程序選項](working-with-computed-columns-vb/_static/image8.png)](working-with-computed-columns-vb/_static/image7.png)
 
 **圖 3**:選擇 建立新預存程序選項 ([按一下以檢視完整大小的影像](working-with-computed-columns-vb/_static/image9.png))
 
@@ -110,7 +110,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要新增一個�
 輸入主要的查詢，並按一下 下一步之後, 此精靈可讓我們命名將會產生四個預存程序。 命名這些預存程序`Suppliers_Select`， `Suppliers_Insert`， `Suppliers_Update`，和`Suppliers_Delete`，如 圖 4 所示。
 
 
-[![C自訂的自動產生預存程序名稱](working-with-computed-columns-vb/_static/image11.png)](working-with-computed-columns-vb/_static/image10.png)
+[![自訂的自動產生的預存程序的名稱](working-with-computed-columns-vb/_static/image11.png)](working-with-computed-columns-vb/_static/image10.png)
 
 **圖 4**:自訂自動產生預存程序的名稱 ([按一下以檢視完整大小的影像](working-with-computed-columns-vb/_static/image12.png))
 
@@ -118,7 +118,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要新增一個�
 下一個步驟中，精靈可讓我們命名的 TableAdapter 的方法並指定用來存取及更新資料的模式。 將所有的三個核取方塊已核取，但重新命名`GetData`方法，以`GetSuppliers`。 按一下 完成 以完成精靈。
 
 
-[![Rename GetSuppliers GetData 方法](working-with-computed-columns-vb/_static/image14.png)](working-with-computed-columns-vb/_static/image13.png)
+[![重新命名 GetSuppliers GetData 方法](working-with-computed-columns-vb/_static/image14.png)](working-with-computed-columns-vb/_static/image13.png)
 
 **圖 5**:重新命名`GetData`方法，以`GetSuppliers`([按一下以檢視完整大小的影像](working-with-computed-columns-vb/_static/image15.png))
 
@@ -142,7 +142,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要新增一個�
 接下來，返回 DataSet 設計工具，請以滑鼠右鍵按一下`SuppliersTableAdapter`，並從操作功能表中選擇設定。 請注意，`Suppliers_Select`資料行現在包含`FullContactName`其資料行集合中的資料行。
 
 
-[![R取消 TableAdapter 的組態精靈] 來更新資料表 s 資料行](working-with-computed-columns-vb/_static/image17.png)](working-with-computed-columns-vb/_static/image16.png)
+[![執行 TableAdapter 的組態精靈 來更新資料表 s 資料行](working-with-computed-columns-vb/_static/image17.png)](working-with-computed-columns-vb/_static/image16.png)
 
 **圖 6**:執行 tableadapter 組態精靈以更新 DataTable s 資料行 ([按一下以檢視完整大小的影像](working-with-computed-columns-vb/_static/image18.png))
 
@@ -150,7 +150,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要新增一個�
 按一下 完成 以完成精靈。 這會自動新增至對應的資料行`SuppliersDataTable`。 [Tabaleadapter 精靈] 是夠聰明，無法偵測到`FullContactName`資料行是計算資料行，因此是唯讀。 因此，它會設定資料行 s`ReadOnly`屬性設`true`。 若要確認這點，選取 從資料行`SuppliersDataTable`，然後移至 屬性 視窗 （請參閱 圖 7）。 請注意，`FullContactName`資料行 s`DataType`和`MaxLength`屬性也會據以設定。
 
 
-[![T他 FullContactName 資料行標示為唯讀](working-with-computed-columns-vb/_static/image20.png)](working-with-computed-columns-vb/_static/image19.png)
+[![FullContactName 資料行標示為唯讀](working-with-computed-columns-vb/_static/image20.png)](working-with-computed-columns-vb/_static/image19.png)
 
 **圖 7**:`FullContactName`資料行標示為唯讀 ([按一下以檢視完整大小的影像](working-with-computed-columns-vb/_static/image21.png))
 
@@ -162,7 +162,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要新增一個�
 以滑鼠右鍵按一下`SuppliersTableAdapter`資料集設計中，然後從操作功能表中選擇 加入查詢選項。 如同我們在步驟 3 中，讓精靈為我們產生新的預存程序，藉由選取 建立新的預存程序選項 （請參閱上一步 圖 3 提供此精靈步驟的螢幕擷取畫面）。 由於這個方法會傳回具有多個資料行的記錄，指出我們想要使用 SQL 查詢是 SELECT 會傳回資料列，然後按一下 [下一步]。
 
 
-[![C選擇傳回資料列選項的 [選取](working-with-computed-columns-vb/_static/image23.png)](working-with-computed-columns-vb/_static/image22.png)
+[![選擇 選取會傳回資料列選項](working-with-computed-columns-vb/_static/image23.png)](working-with-computed-columns-vb/_static/image22.png)
 
 **圖 8**:選擇 選取會傳回資料列選項 ([按一下以檢視完整大小的影像](working-with-computed-columns-vb/_static/image24.png))
 
@@ -175,7 +175,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要新增一個�
 下一個畫面會要求我們命名將會自動產生預存程序。 命名此預存程序`Suppliers_SelectBySupplierID`，按一下 [下一步]。
 
 
-[![N名稱 （) 預存程序 Suppliers_SelectBySupplierID](working-with-computed-columns-vb/_static/image26.png)](working-with-computed-columns-vb/_static/image25.png)
+[![命名預存程序 Suppliers_SelectBySupplierID](working-with-computed-columns-vb/_static/image26.png)](working-with-computed-columns-vb/_static/image25.png)
 
 **圖 9**:命名預存程序`Suppliers_SelectBySupplierID`([按一下以檢視完整大小的影像](working-with-computed-columns-vb/_static/image27.png))
 
@@ -183,7 +183,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要新增一個�
 最後，精靈的提示我們，好讓資料存取模式和要使用的 TableAdapter 方法名稱。 保留已核取，這兩個核取方塊，但重新命名`FillBy`並`GetDataBy`方法來`FillBySupplierID`和`GetSupplierBySupplierID`分別。
 
 
-[![Name TableAdapter 方法 FillBySupplierID 和 GetSupplierBySupplierID](working-with-computed-columns-vb/_static/image29.png)](working-with-computed-columns-vb/_static/image28.png)
+[![名稱的 TableAdapter 方法 FillBySupplierID 和 GetSupplierBySupplierID](working-with-computed-columns-vb/_static/image29.png)](working-with-computed-columns-vb/_static/image28.png)
 
 **圖 10**:命名的 TableAdapter 方法`FillBySupplierID`並`GetSupplierBySupplierID`([按一下以檢視完整大小的影像](working-with-computed-columns-vb/_static/image30.png))
 
@@ -210,7 +210,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要新增一個�
 若要新增的計算資料行`Suppliers`資料表的 DAL 和 BLL 隨之更新中，我們已準備好建置適用於 ASP.NET 網頁`FullContactName`計算資料行。 首先開啟`ComputedColumns.aspx`頁面中`AdvancedDAL`資料夾，然後從 [工具箱] 拖曳至設計工具拖曳的 GridView。 設定 GridView s`ID`屬性，以`Suppliers`和它的智慧標籤，從繫結至名為新 ObjectDataSource `SuppliersDataSource`。 設定要使用 ObjectDataSource`SuppliersBLLWithSprocs`類別，我們加入備份在步驟 6 中，按一下 [下一步]。
 
 
-[![C設定使用 SuppliersBLLWithSprocs 類別 ObjectDataSource](working-with-computed-columns-vb/_static/image32.png)](working-with-computed-columns-vb/_static/image31.png)
+[![設定使用 SuppliersBLLWithSprocs 類別 ObjectDataSource](working-with-computed-columns-vb/_static/image32.png)](working-with-computed-columns-vb/_static/image31.png)
 
 **圖 11**:設定要使用 ObjectDataSource`SuppliersBLLWithSprocs`類別 ([按一下以檢視完整大小的影像](working-with-computed-columns-vb/_static/image33.png))
 
@@ -229,7 +229,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要新增一個�
 接下來，請瀏覽此頁面，透過瀏覽器。 如 [圖 12] 所示，每個供應商會列在一個方格，其中包含`FullContactName`格式化為的資料行，其值為其他三個資料行的串連`ContactName`(`ContactTitle`， `CompanyName`)。
 
 
-[![E供應商方格中列出的 ach](working-with-computed-columns-vb/_static/image35.png)](working-with-computed-columns-vb/_static/image34.png)
+[![方格中會列出每個供應商](working-with-computed-columns-vb/_static/image35.png)](working-with-computed-columns-vb/_static/image34.png)
 
 **圖 12**:方格中會列出每個供應商 ([按一下以檢視完整大小的影像](working-with-computed-columns-vb/_static/image36.png))
 
@@ -237,7 +237,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要新增一個�
 按一下 編輯 按鈕，特定供應商造成回傳，並具有該資料列呈現在其編輯介面 （請參閱 圖 13）。 前三個資料行轉譯中其編輯介面的預設值-TextBox 控制項`Text`屬性設定為資料欄位的值。 `FullContactName`資料行，不過，仍會為文字。 當 BoundFields 已新增至 [資料來源組態精靈] 中，完成 GridView `FullContactName` BoundField s`ReadOnly`屬性設定為`True`因為對應`FullContactName`中的資料行`SuppliersDataTable`具有其`ReadOnly`屬性設定為`True`。 步驟 4 中所述`FullContactName`s`ReadOnly`屬性設定為`True`因為 TableAdapter 偵測到的資料行是計算資料行。
 
 
-[![T他 FullContactName 資料行是無法編輯](working-with-computed-columns-vb/_static/image38.png)](working-with-computed-columns-vb/_static/image37.png)
+[![FullContactName 資料行是無法編輯](working-with-computed-columns-vb/_static/image38.png)](working-with-computed-columns-vb/_static/image37.png)
 
 **圖 13**:`FullContactName`資料行是無法編輯 ([按一下以檢視完整大小的影像](working-with-computed-columns-vb/_static/image39.png))
 

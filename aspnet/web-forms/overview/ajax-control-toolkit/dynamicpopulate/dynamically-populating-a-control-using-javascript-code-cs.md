@@ -12,7 +12,7 @@ ms.openlocfilehash: a6b433f187495b8dcd874bcab8ddc607e6de61c9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422521"
 ---
 # <a name="dynamically-populating-a-control-using-javascript-code-c"></a>使用 JavaScript 程式碼以動態方式填入控制項 (C#)
@@ -55,7 +55,7 @@ ms.locfileid: "59422521"
 請注意，內容中的選項按鈕，JavaScript 運算式`this.value`剛好是完全相同的資訊 [目前] 按鈕的值是指`getDate()`方法可以使用。
 
 
-[![A 按一下按鈕從伺服器中所指定的格式，擷取日期](dynamically-populating-a-control-using-javascript-code-cs/_static/image2.png)](dynamically-populating-a-control-using-javascript-code-cs/_static/image1.png)
+[![按一下按鈕從伺服器中所指定的格式擷取的日期](dynamically-populating-a-control-using-javascript-code-cs/_static/image2.png)](dynamically-populating-a-control-using-javascript-code-cs/_static/image1.png)
 
 按一下按鈕從伺服器中所指定的格式擷取的日期 ([按一下以檢視完整大小的影像](dynamically-populating-a-control-using-javascript-code-cs/_static/image3.png))
 

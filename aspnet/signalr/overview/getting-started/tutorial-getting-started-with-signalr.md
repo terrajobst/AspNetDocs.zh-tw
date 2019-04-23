@@ -9,12 +9,12 @@ ms.assetid: a8b3b778-f009-4369-85c7-e90f9878d8b4
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
 ms.topic: tutorial
-ms.openlocfilehash: b1e8b6b1b300665f6cd2466766e9adcff52733da
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ecc235454d4b95ce660a4373387f44720826b076
+ms.sourcegitcommit: 2d53ed9e4c8b19d3526cbc689bfa8394c9449cec
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59422911"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59905640"
 ---
 # <a name="tutorial-real-time-chat-with-signalr-2"></a>教學課程：使用 SignalR 2 進行即時聊天
 
@@ -60,6 +60,10 @@ ms.locfileid: "59422911"
 1. 在 **加入新項目-SignalRChat**選取**已安裝** > **Visual C#**   >  **Web** ，然後選取  **OWIN 啟動類別**。
 
 1. 將類別命名為*啟動*並將它新增至專案。
+
+1. 取代預設的程式碼中*啟動*以下列程式碼的類別：
+
+    [!code-csharp[Main](tutorial-getting-started-with-signalr/samples/sample2.cs)]
 
 1. 在 **方案總管**，以滑鼠右鍵按一下專案，然後選取**新增** > **HTML 網頁**。
 

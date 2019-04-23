@@ -12,7 +12,7 @@ ms.openlocfilehash: 8ecfe3a282fd1cf2adfe07cbf899464e5ffa9c42
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422469"
 ---
 # <a name="how-do-i-utilize-web-parts-and-personalization"></a>[How Do i:]利用 Web 組件和個人化？

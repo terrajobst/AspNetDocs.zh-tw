@@ -12,7 +12,7 @@ ms.openlocfilehash: 14b9070a462741aab7230963e3e1298368b8e6aa
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420987"
 ---
 # <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-c"></a>處理 ASP.NET 頁面中 BLL 和 DAL 層級的例外狀況 (C#)
@@ -50,7 +50,7 @@ ms.locfileid: "59420987"
 使用此完整的方法，我們已準備好建立 ASP.NET 網頁，以便編輯這四個特定產品的欄位。 開啟`ErrorHandling.aspx`頁面中`EditInsertDelete`資料夾，並將透過設計工具頁面上的 GridView。 繫結至新的 ObjectDataSource 的 GridView 對應`Select()`方法，以`ProductsBLL`類別的`GetProducts()`方法和`Update()`方法，以`UpdateProduct`剛才建立的多載。
 
 
-[![Use UpdateProduct 方法多載，接受四個輸入參數](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image2.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image1.png)
+[![使用 UpdateProduct 方法多載可接受四個輸入的參數](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image2.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image1.png)
 
 **圖 1**:使用`UpdateProduct`方法多載，接受四個輸入參數 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image3.png))
 
@@ -62,7 +62,7 @@ ms.locfileid: "59420987"
 在上一個教學課程中我們探討了如何格式化`UnitPrice`BoundField 在唯讀模式和編輯模式中的貨幣。 讓我們這裡的相同。 還記得，這需要設定 BoundField`DataFormatString`屬性，以`{0:c}`、 其`HtmlEncode`屬性設`false`，並將其`ApplyFormatInEditMode`至`true`，如 [圖 2] 所示。
 
 
-[![C設定要顯示為貨幣 UnitPrice BoundField](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image5.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image4.png)
+[![設定 UnitPrice BoundField，顯示為貨幣](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image5.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image4.png)
 
 **圖 2**:設定`UnitPrice`BoundField 來顯示為貨幣符號 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image6.png))
 
@@ -75,7 +75,7 @@ ms.locfileid: "59420987"
 我們的 GridView 包含`QuantityPerUnit`BoundField，但此 BoundField 應僅供顯示之用，且不應由使用者可編輯。 若要排列這種情況，只要設定 BoundFields'`ReadOnly`屬性設`true`。
 
 
-[![M特意 QuantityPerUnit BoundField 唯讀](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image8.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image7.png)
+[![將 QuantityPerUnit BoundField 唯讀](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image8.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image7.png)
 
 **圖 3**:製作`QuantityPerUnit`BoundField 唯讀狀態 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image9.png))
 
@@ -83,7 +83,7 @@ ms.locfileid: "59420987"
 最後，核取方塊啟用編輯從 GridView 的智慧標籤。 完成這些步驟之後`ErrorHandling.aspx`網頁的設計工具應該看起來會類似 圖 4。
 
 
-[![R\ 移除以外的所有所需 BoundFields 和核取 [啟用編輯核取方塊](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image11.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image10.png)
+[![全部移除需要 BoundFields 和核取 [啟用編輯] 核取方塊](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image11.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image10.png)
 
 **圖 4**:移除以外的所有所需 BoundFields 並檢查 [啟用編輯] 核取方塊 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image12.png))
 
@@ -91,7 +91,7 @@ ms.locfileid: "59420987"
 現在我們有一份所有產品的`ProductName`， `QuantityPerUnit`， `UnitPrice`，和`UnitsInStock`欄位; 不過，只有`ProductName`， `UnitPrice`，和`UnitsInStock`可編輯欄位。
 
 
-[![U使用者可以立即輕鬆編輯產品的名稱、 價格和單位中內建欄位](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image14.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image13.png)
+[![使用者現在可以輕鬆地編輯產品的名稱、 價格和內建欄位中的單位](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image14.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image13.png)
 
 **圖 5**:使用者可以立即輕鬆編輯產品的名稱、 價格和單位中內建欄位 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image15.png))
 
@@ -105,7 +105,7 @@ ms.locfileid: "59420987"
 圖 6 顯示嘗試更新產品，但未指定時所遇到的畫面`ProductName`值。 這是的預設的通過時顯示詳細的錯誤報告`localhost`。
 
 
-[![Omitting 產品的名稱會顯示例外狀況詳細資料](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image17.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image16.png)
+[![省略產品的名稱會顯示例外狀況詳細資料](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image17.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image16.png)
 
 **圖 6**:省略產品的名稱會顯示例外狀況詳細資料 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image18.png))
 
@@ -117,7 +117,7 @@ ms.locfileid: "59420987"
 開始將標籤新增至 ASP.NET 頁面上，設定其`ID`屬性，以`ExceptionDetails`並清除其`Text`屬性。 若要繪製使用者的眼睛，此訊息，請設定其`CssClass`屬性，以`Warning`，這是我們所新增的 CSS 類別`Styles.css`先前的教學課程中的檔案。 您應該記得，這個 CSS 類別會造成標籤的文字，以顯示紅色、 斜體、 粗體、 超大的字型。
 
 
-[![Add 標籤 Web 控制項至頁面](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image20.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image19.png)
+[![將標籤的 Web 控制項加入頁面](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image20.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image19.png)
 
 **圖 7**:將標籤的 Web 控制項加入頁面 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image21.png))
 
@@ -172,12 +172,12 @@ ms.locfileid: "59420987"
 圖 9] 顯示此頁面的螢幕擷取畫面時省略產品; 名稱[圖 10 顯示時輸入不正確的結果`UnitPrice`值 (-50)。
 
 
-[![T他 ProductName BoundField 必須包含值。](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image24.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image23.png)
+[![ProductName BoundField 必須包含值。](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image24.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image23.png)
 
 **圖 9**:`ProductName` BoundField 必須包含值 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image25.png))
 
 
-[![Negative UnitPrice 值為不允許](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image27.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image26.png)
+[![負值 UnitPrice 是不允許](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image27.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image26.png)
 
 **圖 10**:負`UnitPrice`的值為不允許 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image28.png))
 
@@ -200,7 +200,7 @@ ms.locfileid: "59420987"
 這項變更，是兩倍以上的現有價格的任何價格更新會導致`ApplicationException`擲回。 就像從 DAL，此 BLL 引發所引發的例外狀況`ApplicationException`可以偵測並處理在 GridView 的`RowUpdated`事件處理常式。 事實上，`RowUpdated`事件處理常式的程式碼，如所撰寫，會正確偵測此例外狀況並顯示`ApplicationException`的`Message`屬性值。 [圖 11] 顯示螢幕擷取畫面，當使用者嘗試更新 $50.00，這是多個 double 其股票的現價 $19.95 Chai 的價格。
 
 
-[![T他的商務規則不允許價格會增加該超過兩倍的產品價格](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image30.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image29.png)
+[![商務規則不允許超過兩倍的產品價格的價格會增加](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image30.png)](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image29.png)
 
 **圖 11**:商務規則不允許超過兩倍的產品價格漲價 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/_static/image31.png))
 

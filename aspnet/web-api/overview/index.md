@@ -13,7 +13,7 @@ ms.openlocfilehash: 304c0d71e5e18f9d3f0768464fe39d6e6946600d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422898"
 ---
 # <a name="web-api-guidance"></a>Web API 指引
@@ -22,10 +22,10 @@ ms.locfileid: "59422898"
 
     - [開始使用 Web API 2 (C#)](getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)
     - [Web API 2 中的動作結果](getting-started-with-aspnet-web-api/action-results.md)
-    - [使用具有 ASP.NET Web Forms 的 Web API](getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms.md)
+    - [使用具有 ASP.NET Web Form 的 Web API](getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms.md)
     - [建立 Web API 說明頁面](getting-started-with-aspnet-web-api/creating-api-help-pages.md)
-    - [實際操作實驗室：使用 ASP.NET Web API 和 Angular.js 建置單一頁面應用程式 (SPA)](getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
-- [路由](web-api-routing-and-actions/index.md)
+    - [實習實驗室：建置使用 ASP.NET Web API 和 Angular.js 的單一頁面應用程式 (SPA)](getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
+- [路由傳送](web-api-routing-and-actions/index.md)
 
     - [Web API 中的路由](web-api-routing-and-actions/routing-in-aspnet-web-api.md)
     - [Web API 中的路由和動作選項](web-api-routing-and-actions/routing-and-action-selection.md)
@@ -36,7 +36,7 @@ ms.locfileid: "59422898"
     - [使用 Web API 2 和 Entity Framework 6](data/using-web-api-with-entity-framework/index.md)
 
         - [建立專案](data/using-web-api-with-entity-framework/part-1.md)
-        - [新增模型與控制器](data/using-web-api-with-entity-framework/part-2.md)
+        - [新增模型和控制器](data/using-web-api-with-entity-framework/part-2.md)
         - [植入資料庫](data/using-web-api-with-entity-framework/part-3.md)
         - [處理實體關聯性](data/using-web-api-with-entity-framework/part-4.md)
         - [建立資料傳輸物件 (DTO)](data/using-web-api-with-entity-framework/part-5.md)
@@ -112,8 +112,8 @@ ms.locfileid: "59422898"
     - [從 .NET 用戶端呼叫 Web API (C#)](advanced/calling-a-web-api-from-a-net-client.md)
     - [Web API 中的 HTTP 訊息處理常式](advanced/http-message-handlers.md)
     - [Web API 中的 HttpClient 訊息處理常式](advanced/httpclient-message-handlers.md)
-    - [傳送 Web API 的 HTML 表單資料：Form-urlencoded 資料](advanced/sending-html-form-data-part-1.md)
-    - [傳送 Web API 的 HTML 表單資料：檔案上傳與多部分 MIME](advanced/sending-html-form-data-part-2.md)
+    - [傳送 Web API 中的 HTML 表單資料：Form-urlencoded 資料](advanced/sending-html-form-data-part-1.md)
+    - [傳送 Web API 中的 HTML 表單資料：檔案上傳和多個 MIME](advanced/sending-html-form-data-part-2.md)
     - [ASP.NET Web API 中的 HTTP Cookie](advanced/http-cookies.md)
 - [發行](releases/index.md)
 
@@ -123,12 +123,12 @@ ms.locfileid: "59422898"
 - [舊版](older-versions/index.md)
 
     - [啟用 Web API 1 中的 CRUD 作業](older-versions/creating-a-web-api-that-supports-crud-operations.md)
-    - [搭配 Entity Framework 5 使用 ASP.NET Web API 1](older-versions/using-web-api-1-with-entity-framework-5/index.md)
+    - [使用 ASP.NET Web API 1 和 Entity Framework 5](older-versions/using-web-api-1-with-entity-framework-5/index.md)
 
         - [概觀與建立專案](older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-1.md)
-        - [建立領域模型](older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2.md)
-        - [建立系統管理員控制器](older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3.md)
-        - [新增系統管理員檢視](older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-4.md)
+        - [建立網域模型](older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2.md)
+        - [建立管理員控制器](older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3.md)
+        - [新增管理員檢視](older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-4.md)
         - [使用 Knockout.js 建立動態 UI](older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-5.md)
         - [建立產品和訂單控制器](older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-6.md)
         - [建立主要頁面](older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7.md)

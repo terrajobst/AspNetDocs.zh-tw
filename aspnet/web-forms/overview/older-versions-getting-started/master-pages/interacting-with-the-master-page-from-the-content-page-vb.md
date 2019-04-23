@@ -12,7 +12,7 @@ ms.openlocfilehash: 1326d5453f205201af850a30c17f509645e15cb9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59422196"
 ---
 # <a name="interacting-with-the-master-page-from-the-content-page-vb"></a>從內容頁面與主版頁互動 (VB)
@@ -61,7 +61,7 @@ ms.locfileid: "59422196"
 開啟 Site.master 主版頁面，然後新增一個 Label 和 GridView 控制項`leftContent` `<div>`。 清除標籤`Text`屬性，設定其`EnableViewState`屬性設`False`，並將其`ID`屬性設`GridMessage`; 設定 GridView 的`ID`屬性設`RecentProducts`。 接下來，從設計工具中，展開 GridView 的智慧標籤，然後選擇繫結至新的資料來源。 這會啟動 資料來源組態精靈。 因為 Northwind 資料庫中`App_Data`資料夾是 Microsoft SQL Server 資料庫中，選擇 選取 （請參閱 圖 1） 建立 SqlDataSource; 名稱 SqlDataSource `RecentProductsDataSource`。
 
 
-[![Bind SqlDataSource 控制項 GridView 名為 RecentProductsDataSource](interacting-with-the-master-page-from-the-content-page-vb/_static/image2.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image1.png)
+[![繫結至名為 RecentProductsDataSource SqlDataSource 控制項的 GridView](interacting-with-the-master-page-from-the-content-page-vb/_static/image2.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image1.png)
 
 **圖 01**:SqlDataSource 控制項名為繫結 GridView `RecentProductsDataSource` ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-vb/_static/image3.png))
 
@@ -69,7 +69,7 @@ ms.locfileid: "59422196"
 下一個步驟會要求我們指定項目連接到資料庫。 選擇`NORTHWIND.MDF`資料庫檔案，從下拉式清單中，按一下 [下一步]。 因為這是我們使用此資料庫的第一次時，精靈會將提供給連接字串儲存在`Web.config`。 它使用的名稱將連接字串儲存`NorthwindConnectionString`。
 
 
-[![C來連線至 Northwind 資料庫](interacting-with-the-master-page-from-the-content-page-vb/_static/image5.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image4.png)
+[![連接到 Northwind 資料庫](interacting-with-the-master-page-from-the-content-page-vb/_static/image5.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image4.png)
 
 **圖 02**:連接到 Northwind 資料庫 ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-vb/_static/image6.png))
 
@@ -87,7 +87,7 @@ ms.locfileid: "59422196"
 `TOP 5`關鍵字的查詢傳回前五筆記錄。 `Products`資料表的主索引鍵`ProductID`，是`IDENTITY`資料行，以確保我們每個新的產品加入至資料表會有較大的值，比先前的項目。 因此，排序結果`ProductID`以遞減順序傳回開頭為最新建立的產品。
 
 
-[![Return 五個最最近新增產品](interacting-with-the-master-page-from-the-content-page-vb/_static/image8.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image7.png)
+[![傳回 5 個最近新增的產品](interacting-with-the-master-page-from-the-content-page-vb/_static/image8.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image7.png)
 
 **圖 03**:傳回五個最最近新增的產品 ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-vb/_static/image9.png))
 
@@ -102,7 +102,7 @@ ms.locfileid: "59422196"
 以此方式建立的 GridView 和設定，其 SqlDataSource 控制項瀏覽的網站，透過瀏覽器。 如 [圖 4] 所示，您會看到在左下角會列出五個最新的方格加入產品。
 
 
-[![T他的 GridView 會顯示五個最最近新增產品](interacting-with-the-master-page-from-the-content-page-vb/_static/image11.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image10.png)
+[![GridView 會顯示五個最近新增的產品](interacting-with-the-master-page-from-the-content-page-vb/_static/image11.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image10.png)
 
 **圖 04**:GridView 會顯示五個最最近新增的產品 ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-vb/_static/image12.png))
 
@@ -116,7 +116,7 @@ ms.locfileid: "59422196"
 下一步是建立內容頁面，使用者可以從此處新增的新產品`Products`資料表。 加入新的內容頁面，以便`Admin`名為資料夾`AddProduct.aspx`，並確定將它繫結`Site.master`主版頁面。 此頁面已加入至網站之後，圖 5 顯示 方案總管。
 
 
-[![Add [Admin] 資料夾以新的 ASP.NET 網頁](interacting-with-the-master-page-from-the-content-page-vb/_static/image14.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image13.png)
+[![將新的 ASP.NET 網頁新增至 [Admin] 資料夾](interacting-with-the-master-page-from-the-content-page-vb/_static/image14.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image13.png)
 
 **圖 05**:加入新的 ASP.NET 頁面，以便`Admin`資料夾 ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-vb/_static/image15.png))
 
@@ -145,7 +145,7 @@ ms.locfileid: "59422196"
 這樣就全部完成了！ 我們來測試此頁面。 請瀏覽`AddProduct.aspx`透過瀏覽器中，輸入 （請參閱 圖 6） 的名稱和價格。
 
 
-[![Add 新產品到資料庫](interacting-with-the-master-page-from-the-content-page-vb/_static/image17.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image16.png)
+[![將新的產品加入至資料庫](interacting-with-the-master-page-from-the-content-page-vb/_static/image17.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image16.png)
 
 **圖 06**:將新的產品加入至資料庫 ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-vb/_static/image18.png))
 
@@ -199,7 +199,7 @@ ms.locfileid: "59422196"
 既然我們已經轉換鬆散型別`Page.Master`屬性至站台類型，我們可以參考的屬性和方法的特定站台。 如 [圖 7] 所示，公用屬性`GridMessageText`出現在 IntelliSense 下拉式清單中。
 
 
-[![I我們的主版頁面的公用屬性和方法，就會顯示 Intellisense](interacting-with-the-master-page-from-the-content-page-vb/_static/image20.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image19.png)
+[![IntelliSense 會顯示我們主頁公用屬性和方法](interacting-with-the-master-page-from-the-content-page-vb/_static/image20.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image19.png)
 
 **圖 07**:IntelliSense 會顯示我們主頁公用屬性和方法 ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-vb/_static/image21.png))
 
@@ -237,7 +237,7 @@ ms.locfileid: "59422196"
 [圖 8] 顯示`AddProduct.aspx`之後將新的產品-Scott Soda-立即的頁面已加入至資料庫。 請注意，主版頁面的標籤中註明剛加入的產品名稱和 GridView 已經過改版，包括產品，而且其價格。
 
 
-[![T他主版頁面的標籤和 GridView 顯示 Just-Added 產品](interacting-with-the-master-page-from-the-content-page-vb/_static/image23.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image22.png)
+[![主版頁面的標籤和 GridView 會顯示剛加入的產品](interacting-with-the-master-page-from-the-content-page-vb/_static/image23.png)](interacting-with-the-master-page-from-the-content-page-vb/_static/image22.png)
 
 **圖 08**:主版頁面的標籤和 GridView 顯示 Just-Added 產品 ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-vb/_static/image24.png))
 
@@ -258,7 +258,7 @@ ms.locfileid: "59422196"
 
 - [存取及更新在 ASP.NET 中的資料](http://aspnet.4guysfromrolla.com/articles/011106-1.aspx)
 - [ASP.NET 主版頁面：秘訣、 技巧和陷阱](http://www.odetocode.com/articles/450.aspx)
-- [`@MasterType` in ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx)
+- [`@MasterType` 在 ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx)
 - [內容與主版頁面之間傳遞資訊](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
 - [在 ASP.NET 教學課程中使用的資料](../../data-access/index.md)
 

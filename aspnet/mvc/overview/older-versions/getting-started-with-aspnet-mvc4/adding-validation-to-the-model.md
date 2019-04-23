@@ -12,7 +12,7 @@ ms.openlocfilehash: 266d2e3fda54a9e584622ccd595e41229c96e6b0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420740"
 ---
 # <a name="adding-validation-to-the-model"></a>將驗證新增至模型
@@ -49,7 +49,7 @@ ASP.NET MVC 和 Entity Framework Code First 所提供的驗證支援就是執行
 
 執行應用程式，您仍會收到下列執行的階段錯誤：
 
-***備份 'MovieDBContext' 內容的模型已變更，因為所建立的資料庫。 請考慮使用 Code First 移轉更新資料庫 ([https://go.microsoft.com/fwlink/?LinkId=238269](https://go.microsoft.com/fwlink/?LinkId=238269))。)).***
+***備份 'MovieDBContext' 內容的模型已變更，因為所建立的資料庫。請考慮使用 Code First 移轉更新資料庫 ([https://go.microsoft.com/fwlink/?LinkId=238269](https://go.microsoft.com/fwlink/?LinkId=238269))。***
 
 我們將使用移轉來更新結構描述。 建置方案，然後再開啟**Package Manager Console**視窗並輸入下列命令：
 

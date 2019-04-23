@@ -12,7 +12,7 @@ ms.openlocfilehash: 874542305bd3f47066cfae595919285ed079aa53
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59421065"
 ---
 # <a name="hands-on-lab-visual-studio-2013-web-tools"></a>實際操作實驗室：Visual Studio 2013 Web 工具
@@ -229,7 +229,7 @@ ms.locfileid: "59421065"
 
     ![開啟色彩選擇器](visual-studio-2013-web-tools/_static/image17.png "開啟色彩選擇器")
 
-    *開啟 色彩選擇器*
+    *開啟色彩選擇器*
 7. 展開色彩選擇器依序按一下 > 形箭號按鈕，然後選取新的色彩。
 
     ![展開色彩選擇器](visual-studio-2013-web-tools/_static/image18.png "展開色彩選擇器")
@@ -252,7 +252,7 @@ ms.locfileid: "59421065"
 
     ![-webkit 框線半徑屬性 btn selector](visual-studio-2013-web-tools/_static/image21.png "btn 選擇器-webkit 框線半徑屬性")
 
-    *btn 選取器-webkit 框線半徑屬性*
+    *-webkit 框線半徑 btn 選取器屬性*
 14. 在號 **-webkit 框線半徑**屬性。 藍線應該會出現在屬性的第一個單字的第一個字母。 這是**智慧標籤**。
 15. 按下**CTRL** + **。** 若要開啟 [建議] 功能表，然後按一下**新增遺失的標準屬性 （框線半徑）**。
 
@@ -319,7 +319,7 @@ ms.locfileid: "59421065"
 
     ![錯誤清單檢視中功能表](visual-studio-2013-web-tools/_static/image31.png "檢視功能表中的錯誤清單")
 
-    *錯誤清單檢視 功能表*
+    *錯誤清單檢視功能表*
 2. 請注意，通知的 SEO 警告**&lt;meta&gt;** 標記的頁面描述遺漏。 按兩下 SEO 警告項目，若要修正此問題。
 
     ![錯誤清單 視窗](visual-studio-2013-web-tools/_static/image32.png "錯誤清單 視窗")
@@ -424,7 +424,7 @@ HTML5 引進了超過 25 個新的語意標記。 已經有 visual Studio 的 In
 
     ![另存新檔視窗](visual-studio-2013-web-tools/_static/image40.png "另存新檔視窗")
 
-    *另存新檔 視窗*
+    *另存新檔視窗*
 
     > [!NOTE]
     > **Init.js**建立檔案和指令碼的內容移到檔案。
