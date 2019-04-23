@@ -12,7 +12,7 @@ ms.openlocfilehash: 0664ec189a03c15e74d81e6476174870d0a9b125
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413551"
 ---
 # <a name="build-your-first-aspnet-application-with-aspnet-mvc"></a>使用 ASP.NET MVC 建置您的第一個 ASP.NET 應用程式

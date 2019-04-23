@@ -12,7 +12,7 @@ ms.openlocfilehash: 7d8807962e5cf668358e03821d5fd3bf755a0e7d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418881"
 ---
 # <a name="picking-one-animation-out-of-a-list-vb"></a>從清單中挑選一張動畫 (VB)
@@ -53,7 +53,7 @@ ms.locfileid: "59418881"
 [!code-aspx[Main](picking-one-animation-out-of-a-list-vb/samples/sample5.aspx)]
 
 
-[![O可能的三個動畫的 ne:[面板] 中取得更多](picking-one-animation-out-of-a-list-vb/_static/image2.png)](picking-one-animation-out-of-a-list-vb/_static/image1.png)
+[![其中一種可能的三個動畫：[面板] 中取得更多](picking-one-animation-out-of-a-list-vb/_static/image2.png)](picking-one-animation-out-of-a-list-vb/_static/image1.png)
 
 其中一種可能的三個動畫：[面板] 中取得更多 ([按一下以檢視完整大小的影像](picking-one-animation-out-of-a-list-vb/_static/image3.png))
 

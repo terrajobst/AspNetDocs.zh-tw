@@ -12,7 +12,7 @@ ms.openlocfilehash: 2001378588db72103292be963af6c26277147c44
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409638"
 ---
 # <a name="master-pages-and-site-navigation-c"></a>主版頁面與網站導覽 (C#)
@@ -33,7 +33,7 @@ ms.locfileid: "59409638"
 若要說明這些概念，並讓我們的教學課程的網站更便於，讓我們花這一課定義整個網站的頁面配置、 實作站台對應，並將新增的巡覽 UI。 本教學課程結束時，我們必須建置我們的教學課程網頁的外觀精美的網站設計。
 
 
-[![T他最後結果的本教學課程](master-pages-and-site-navigation-cs/_static/image2.png)](master-pages-and-site-navigation-cs/_static/image1.png)
+[![本教學課程的最終結果](master-pages-and-site-navigation-cs/_static/image2.png)](master-pages-and-site-navigation-cs/_static/image1.png)
 
 **圖 1**:最後結果的本教學課程 ([按一下以檢視完整大小的影像](master-pages-and-site-navigation-cs/_static/image3.png))
 
@@ -51,7 +51,7 @@ ms.locfileid: "59409638"
 若要建立主版頁面，以滑鼠右鍵按一下 方案總管 中的專案名稱，並選擇 加入新項目。 然後從範本清單中選取主版頁面類型並將它命名`Site.master`。
 
 
-[![Add 新主版頁面的網站](master-pages-and-site-navigation-cs/_static/image6.png)](master-pages-and-site-navigation-cs/_static/image5.png)
+[![將新的主版頁面新增至網站](master-pages-and-site-navigation-cs/_static/image6.png)](master-pages-and-site-navigation-cs/_static/image5.png)
 
 **圖 3**:將新的主版頁面新增至網站 ([按一下以檢視完整大小的影像](master-pages-and-site-navigation-cs/_static/image7.png))
 
@@ -68,7 +68,7 @@ Site.master
 使用上面輸入的標記，切換至 [設計] 檢視會顯示主版頁面的版面配置。 使用此主版頁面的任何 ASP.NET 頁面會有這個統一的版面配置，讓您指定的標記有`MainContent`區域。
 
 
-[![T他主要頁面上，當檢視透過 [設計檢視](master-pages-and-site-navigation-cs/_static/image9.png)](master-pages-and-site-navigation-cs/_static/image8.png)
+[![主版頁面，檢視透過 [設計] 檢視時](master-pages-and-site-navigation-cs/_static/image9.png)](master-pages-and-site-navigation-cs/_static/image8.png)
 
 **圖 4**:主版頁面時檢視透過 設計檢視 ([按一下以檢視完整大小的影像](master-pages-and-site-navigation-cs/_static/image10.png))
 
@@ -78,7 +78,7 @@ Site.master
 定義主版頁面的情況下，我們準備好加入網站的 ASP.NET 頁面。 讓我們開始新增`Default.aspx`，我們的網站首頁。 在 方案總管 中的專案名稱上按一下滑鼠右鍵，然後選擇 加入新項目。 挑選檔案的名稱與範本 清單中的 Web Form 選項`Default.aspx`。 此外，選取 [選取主版頁面] 核取方塊。
 
 
-[![Add 新的 Web Form，檢查選取的主版頁面的核取方塊](master-pages-and-site-navigation-cs/_static/image12.png)](master-pages-and-site-navigation-cs/_static/image11.png)
+[![加入新的 Web 表單，檢查選取的主版頁面的核取方塊](master-pages-and-site-navigation-cs/_static/image12.png)](master-pages-and-site-navigation-cs/_static/image11.png)
 
 **圖 5**:加入新的 Web 表單，檢查選取的主版頁面的核取方塊 ([按一下以檢視完整大小的影像](master-pages-and-site-navigation-cs/_static/image13.png))
 
@@ -86,7 +86,7 @@ Site.master
 按一下 [確定] 按鈕後，我們就必須選擇這個新的 ASP.NET 網頁應該使用何種主版頁面。 雖然您可以擁有多個主版頁面在您的專案中，我們有一個。
 
 
-[![C選擇主要頁面上，此 ASP.NET 頁面應該使用](master-pages-and-site-navigation-cs/_static/image15.png)](master-pages-and-site-navigation-cs/_static/image14.png)
+[![選擇應該使用這個 ASP.NET 網頁的主版頁面](master-pages-and-site-navigation-cs/_static/image15.png)](master-pages-and-site-navigation-cs/_static/image14.png)
 
 **圖 6**:選擇此 ASP.NET 頁面應該使用的主版頁面 ([按一下以檢視完整大小的影像](master-pages-and-site-navigation-cs/_static/image16.png))
 
@@ -110,7 +110,7 @@ Default.aspx
 切換至 [設計] 檢視，我們可以看到我們的網頁瀏覽器中所呈現的樣子。 請注意，在設計檢視的 ASP.NET 頁面中，只有內容的可編輯區域都可以讓您編輯主版頁面中定義的非 ContentPlaceHolder 標記會呈現灰色。
 
 
-[![T他的 ASP.NET 頁面會顯示兩個可編輯和非可編輯區域的 [設計] 檢視](master-pages-and-site-navigation-cs/_static/image18.png)](master-pages-and-site-navigation-cs/_static/image17.png)
+[![ASP.NET 頁面的 [設計] 檢視會顯示可編輯和不可編輯的區域](master-pages-and-site-navigation-cs/_static/image18.png)](master-pages-and-site-navigation-cs/_static/image17.png)
 
 **圖 7**:針對 ASP.NET 頁面會顯示兩個可編輯的 [設計] 檢視和非可編輯區域 ([按一下以檢視完整大小的影像](master-pages-and-site-navigation-cs/_static/image19.png))
 
@@ -142,7 +142,7 @@ ASP.NET 2.0 的網站導覽系統會提供方法，讓開發人員定義站台�
 本教學課程中，不過，我們會使用預設網站導覽提供者隨附具有 ASP.NET 2.0。 若要建立站台對應，只要以滑鼠右鍵按一下 方案總管 中的專案名稱、 選擇 加入新項目，並選擇站台對應選項。 保留的名稱為`Web.sitemap`，按一下 [新增] 按鈕。
 
 
-[![Add 網站對應至您的專案](master-pages-and-site-navigation-cs/_static/image22.png)](master-pages-and-site-navigation-cs/_static/image21.png)
+[![新增站台對應到您的專案](master-pages-and-site-navigation-cs/_static/image22.png)](master-pages-and-site-navigation-cs/_static/image21.png)
 
 **圖 9**:新增站台對應到您的專案 ([按一下以檢視完整大小的影像](master-pages-and-site-navigation-cs/_static/image23.png))
 
@@ -159,7 +159,7 @@ Web.sitemap
 站台對應定義網站的導覽結構，也就是描述站台的不同區段的階層。 每個`<siteMapNode>`中的項目`Web.sitemap`表示網站巡覽結構中的區段。
 
 
-[![T他網站導覽代表階層式導覽結構](master-pages-and-site-navigation-cs/_static/image25.png)](master-pages-and-site-navigation-cs/_static/image24.png)
+[![站台對應都代表階層式導覽結構](master-pages-and-site-navigation-cs/_static/image25.png)](master-pages-and-site-navigation-cs/_static/image24.png)
 
 **圖 10**:站台對應都代表階層式導覽結構 ([按一下以檢視完整大小的影像](master-pages-and-site-navigation-cs/_static/image26.png))
 
@@ -252,7 +252,7 @@ Repeater 上述範例中會轉譯下列標記：
 讓我們來顯示一次，但這次我們會顯示標題和描述的教學課程使用 Repeater 的未排序的清單。 因為標記和程式碼來完成這將會需要針對每個重複`Default.aspx` 頁面上，我們可以封裝在此 UI 邏輯[使用者控制項](https://msdn.microsoft.com/library/y6wb1a0e.aspx)。 在呼叫網站上建立資料夾`UserControls`並將類型名為 Web 使用者控制項的新項目加入至該`SectionLevelTutorialListing.ascx`，並新增下列標記：
 
 
-[![Add Usercontrol 資料夾的新 Web 使用者控制項](master-pages-and-site-navigation-cs/_static/image30.png)](master-pages-and-site-navigation-cs/_static/image29.png)
+[![將新的 Web 使用者控制項新增至 Usercontrol 資料夾](master-pages-and-site-navigation-cs/_static/image30.png)](master-pages-and-site-navigation-cs/_static/image29.png)
 
 **圖 13**:加入新的 Web 使用者控制項來`UserControls`資料夾 ([按一下以檢視完整大小的影像](master-pages-and-site-navigation-cs/_static/image31.png))
 
@@ -272,12 +272,12 @@ SectionLevelTutorialListing.ascx.cs
 一旦建立這個 Repeater，開啟`Default.aspx`頁面中的每個資料夾，請移至 [設計] 檢視中，並只將使用者控制項拖曳到設計介面上的 [方案總管] 從想要顯示的教學課程清單。
 
 
-[![T他的使用者控制項必須已加入至 Default.aspx](master-pages-and-site-navigation-cs/_static/image33.png)](master-pages-and-site-navigation-cs/_static/image32.png)
+[![使用者控制項可讓您有已加入至 Default.aspx](master-pages-and-site-navigation-cs/_static/image33.png)](master-pages-and-site-navigation-cs/_static/image32.png)
 
 **圖 14**:使用者控制項可讓您有已加入至`Default.aspx`([按一下以檢視完整大小的影像](master-pages-and-site-navigation-cs/_static/image34.png))
 
 
-[![T他基本報表教學課程將列](master-pages-and-site-navigation-cs/_static/image36.png)](master-pages-and-site-navigation-cs/_static/image35.png)
+[![基本報表教學課程將列](master-pages-and-site-navigation-cs/_static/image36.png)](master-pages-and-site-navigation-cs/_static/image35.png)
 
 **圖 15**:基本報表教學課程將列 ([按一下以檢視完整大小的影像](master-pages-and-site-navigation-cs/_static/image37.png))
 
@@ -301,7 +301,7 @@ SectionLevelTutorialListing.ascx.cs
 - [檢查 ASP.NET 2.0 的網站導覽](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)
 - [ASP.NET 2.0 網站瀏覽功能](https://weblogs.asp.net/scottgu/archive/2005/11/20/431019.aspx)
 - [了解 ASP.NET 檢視狀態](https://msdn.microsoft.com/library/default.asp?url=/library/dnaspp/html/viewstate.asp)
-- [HOW TO：啟用 ASP.NET 網頁的追蹤](https://msdn.microsoft.com/library/94c55d08%28VS.80%29.aspx)
+- [如何：啟用 ASP.NET 網頁的追蹤](https://msdn.microsoft.com/library/94c55d08%28VS.80%29.aspx)
 - [ASP.NET 使用者控制項](https://msdn.microsoft.com/library/y6wb1a0e.aspx)
 
 ## <a name="about-the-author"></a>關於作者

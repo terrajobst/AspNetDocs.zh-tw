@@ -12,7 +12,7 @@ ms.openlocfilehash: 63d85ec5f1f2fbadd92fd0210e67332df30aab5a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419596"
 ---
 # <a name="part-1-overview-and-file-new-project"></a>第 1 部份：概觀和 [檔案] -> [新增專案]
@@ -112,13 +112,13 @@ MVC Music 市集是介紹，並逐步說明如何使用 ASP.NET MVC 和 Visual W
 
 ASP.NET MVC 會使用資料夾名稱的一些基本的命名慣例：
 
-| **資料夾** | **用途** |
+| **資料夾** | **目的** |
 | --- | --- |
 | **/ 控制站** | 控制站回應輸入從瀏覽器中，決定要用來執行工作，並回應傳回給使用者的項目。 |
 | **/Views** | 檢視保留我們的 UI 範本 |
-| **/Models** | 模型保存和管理資料 |
-| **/ 內容** | 此資料夾保留我們的映像、 CSS 和任何其他靜態內容 |
-| **/ 指令碼** | 此資料夾保留我們的 JavaScript 檔案 |
+| **/ 模型** | 模型保存和管理資料 |
+| **/Content** | 此資料夾保留我們的映像、 CSS 和任何其他靜態內容 |
+| **/Scripts** | 此資料夾保留我們的 JavaScript 檔案 |
 
 即使空的 ASP.NET MVC 應用程式中包含這些資料夾，因為預設 ASP.NET MVC 架構會使用 「 convention over configuration"的方法和某些資料夾的命名慣例為基礎的預設假設。 比方說，控制站預設會尋找 [Views] 資料夾中的檢視的而不需明確指定這個程式碼中。 繼續使用預設慣例可以減少程式碼，您需要撰寫，也可讓它更容易供其他開發人員了解您的專案。 我們將說明當我們建立我們的應用程式的多個這些慣例。
 

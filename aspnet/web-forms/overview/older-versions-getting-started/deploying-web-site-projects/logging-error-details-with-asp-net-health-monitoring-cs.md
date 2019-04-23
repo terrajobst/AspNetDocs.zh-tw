@@ -12,7 +12,7 @@ ms.openlocfilehash: 52b1aec577634dfb9fec7753e4f9b8bf46d159f0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416255"
 ---
 # <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>使用 ASP.NET 狀況監控記錄錯誤的詳細資料 (C#)

@@ -12,7 +12,7 @@ ms.openlocfilehash: 212287ea384cf54f9eda477e6f706637d10dd54a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419895"
 ---
 # <a name="creating-model-classes-with-linq-to-sql-vb"></a>使用 LINQ to SQL 建立模型類別 (VB)
@@ -43,7 +43,7 @@ MVC 模型包含的所有未包含在 MVC 檢視或 MVC 控制器中的應用程
 在本教學課程中，以說明如何建立模型類別，我們建置一個簡單的電影資料庫應用程式。 第一個步驟是建立新的資料庫。 以滑鼠右鍵按一下 [應用程式\_Data 資料夾中的方案總管] 視窗，然後選取功能表選項**新增]、 [新項目**。 選取 SQL Server 資料庫範本，讓它名稱 MoviesDB.mdf，再按一下**新增**按鈕 （請參閱 圖 1）。
 
 
-[![Adding 新的 SQL Server 資料庫](creating-model-classes-with-linq-to-sql-vb/_static/image2.png)](creating-model-classes-with-linq-to-sql-vb/_static/image1.png)
+[![加入新的 SQL Server 資料庫](creating-model-classes-with-linq-to-sql-vb/_static/image2.png)](creating-model-classes-with-linq-to-sql-vb/_static/image1.png)
 
 **圖 01**:加入新的 SQL Server 資料庫 ([按一下以檢視完整大小的影像](creating-model-classes-with-linq-to-sql-vb/_static/image3.png))
 
@@ -55,7 +55,7 @@ MVC 模型包含的所有未包含在 MVC 檢視或 MVC 控制器中的應用程
 |---|----------------------------------------------------------------------------------------------------|
 |   |                                                                                                    |
 
-[![U發揚光大伺服器總管] 視窗](creating-model-classes-with-linq-to-sql-vb/_static/image5.png)](creating-model-classes-with-linq-to-sql-vb/_static/image4.png)
+[![使用 [伺服器總管] 視窗](creating-model-classes-with-linq-to-sql-vb/_static/image5.png)](creating-model-classes-with-linq-to-sql-vb/_static/image4.png)
 
 **圖 02**:使用 [伺服器總管] 視窗 ([按一下以檢視完整大小的影像](creating-model-classes-with-linq-to-sql-vb/_static/image6.png))
 
@@ -63,14 +63,14 @@ MVC 模型包含的所有未包含在 MVC 檢視或 MVC 控制器中的應用程
 我們需要將一個資料表加入至資料庫，表示我們的影片。 以滑鼠右鍵按一下 [資料表] 資料夾，然後選取功能表選項**加入新的資料表**。 選取此功能表選項會開啟 資料表設計工具 （請參閱 圖 3）。
 
 
-[![U發揚光大伺服器總管] 視窗](creating-model-classes-with-linq-to-sql-vb/_static/image8.png)](creating-model-classes-with-linq-to-sql-vb/_static/image7.png)
+[![使用 [伺服器總管] 視窗](creating-model-classes-with-linq-to-sql-vb/_static/image8.png)](creating-model-classes-with-linq-to-sql-vb/_static/image7.png)
 
 **圖 03**:資料表設計工具 ([按一下以檢視完整大小的影像](creating-model-classes-with-linq-to-sql-vb/_static/image9.png))
 
 
 我們需要將下列資料行加入至資料庫資料表：
 
-| **資料行名稱** | **資料類型** | **允許 Null** |
+| **資料行名稱** | **資料類型** | **允許 null 值** |
 | --- | --- | --- |
 | ID | Int | False |
 | 標題 | Nvarchar(200) | False |
@@ -87,7 +87,7 @@ MVC 模型包含的所有未包含在 MVC 檢視或 MVC 控制器中的應用程
 我們 MVC 的模型會包含 LINQ to SQL 類別代表 tblMovie 資料庫資料表。 若要建立這些 LINQ to SQL 類別最簡單方式是以滑鼠右鍵按一下 模型 資料夾中，選取**新增、 新項目**、 選取 LINQ to SQL 類別範本，將類別命名 Movie.dbml，然後按一下**新增**按鈕 （請參閱 圖 4）。
 
 
-[![Creating LINQ to SQL 類別](creating-model-classes-with-linq-to-sql-vb/_static/image11.png)](creating-model-classes-with-linq-to-sql-vb/_static/image10.png)
+[![建立 LINQ to SQL 類別](creating-model-classes-with-linq-to-sql-vb/_static/image11.png)](creating-model-classes-with-linq-to-sql-vb/_static/image10.png)
 
 **圖 04**:建立 LINQ to SQL 類別 ([按一下以檢視完整大小的影像](creating-model-classes-with-linq-to-sql-vb/_static/image12.png))
 
@@ -95,7 +95,7 @@ MVC 模型包含的所有未包含在 MVC 檢視或 MVC 控制器中的應用程
 立即建立影片的 LINQ to SQL 類別之後，會顯示物件關聯式設計工具。 您可以將資料庫資料表從 [伺服器總管] 視窗拖曳至物件關聯式設計工具建立 LINQ to SQL 類別代表特定的資料庫資料表。 我們需要加入 tblMovie 資料庫資料表拖曳至物件關聯式設計工具 （請參閱 圖 4）。
 
 
-[![U發揚光大物件關聯式設計工具](creating-model-classes-with-linq-to-sql-vb/_static/image14.png)](creating-model-classes-with-linq-to-sql-vb/_static/image13.png)
+[![使用物件關聯式設計工具](creating-model-classes-with-linq-to-sql-vb/_static/image14.png)](creating-model-classes-with-linq-to-sql-vb/_static/image13.png)
 
 **圖 05**:使用物件關聯式設計工具 ([按一下以檢視完整大小的影像](creating-model-classes-with-linq-to-sql-vb/_static/image15.png))
 
@@ -135,7 +135,7 @@ LINQ 查詢會針對從 tblMovies 資料庫資料表擷取所有電影 DataConte
 若要將記錄新增至 tblMovies 資料庫資料表，tblMovies 資料庫資料表，在 [伺服器總管] 視窗 （在 Visual Web Developer 的 [資料庫總管] 視窗） 上按一下滑鼠右鍵，然後選取功能表選項**顯示資料表資料**。 您可以插入電影記錄所使用的方格，會出現 （請參閱 [圖 5]）。
 
 
-[![Inserting 影片](creating-model-classes-with-linq-to-sql-vb/_static/image17.png)](creating-model-classes-with-linq-to-sql-vb/_static/image16.png)
+[![插入電影](creating-model-classes-with-linq-to-sql-vb/_static/image17.png)](creating-model-classes-with-linq-to-sql-vb/_static/image16.png)
 
 **圖 06**:插入電影 ([按一下以檢視完整大小的影像](creating-model-classes-with-linq-to-sql-vb/_static/image18.png))
 
@@ -143,7 +143,7 @@ LINQ 查詢會針對從 tblMovies 資料庫資料表擷取所有電影 DataConte
 您將某些資料庫記錄加入 tblMovies 資料表，並執行應用程式之後，您會看到 [圖 7] 中的頁面。 所有的電影資料庫記錄會顯示在項目符號清單。
 
 
-[![D具備索引檢視的 isplaying 影片](creating-model-classes-with-linq-to-sql-vb/_static/image20.png)](creating-model-classes-with-linq-to-sql-vb/_static/image19.png)
+[![顯示與索引檢視的電影](creating-model-classes-with-linq-to-sql-vb/_static/image20.png)](creating-model-classes-with-linq-to-sql-vb/_static/image19.png)
 
 **圖 07**:顯示與索引檢視的影片 ([按一下以檢視完整大小的影像](creating-model-classes-with-linq-to-sql-vb/_static/image21.png))
 

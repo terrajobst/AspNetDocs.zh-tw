@@ -12,7 +12,7 @@ ms.openlocfilehash: 973878ef0afd62035b3fc840371e6c6223c8951c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413785"
 ---
 # <a name="iteration-3--add-form-validation-c"></a>反覆項目 #3 – 新增表單驗證 (C#)
@@ -51,7 +51,7 @@ by [Microsoft](https://github.com/microsoft)
 在連絡人管理員應用程式的這個第二個反覆項目，我們會加入基本表單驗證。 我們可以防止人提交連絡人，而不需要的表單欄位中輸入值。 此外，我們也會驗證電話號碼和電子郵件地址 （請參閱 圖 1）。
 
 
-[![T他 [新增專案] 對話方塊中](iteration-3-add-form-validation-cs/_static/image1.jpg)](iteration-3-add-form-validation-cs/_static/image1.png)
+[![[新增專案] 對話方塊](iteration-3-add-form-validation-cs/_static/image1.jpg)](iteration-3-add-form-validation-cs/_static/image1.png)
 
 **圖 01**:表單驗證 ([按一下以檢視完整大小的影像](iteration-3-add-form-validation-cs/_static/image2.png))
 

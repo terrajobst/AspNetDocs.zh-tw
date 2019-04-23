@@ -12,7 +12,7 @@ ms.openlocfilehash: 0991ce5c866aa9e31ef23812e953d9ee10dda3d1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409716"
 ---
 # <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 與 Visual Studio 2010 網頁程式開發概觀
@@ -66,7 +66,7 @@ ms.locfileid: "59409716"
 [資料註解屬性驗證支援](#0.2__Toc253429276 "_Toc253429276")  
 [樣板化 Helper](#0.2__Toc253429277 "_Toc253429277")
 
-**[動態資料](#0.2__Toc253429278 "_Toc253429278")**  
+**[Dynamic Data](#0.2__Toc253429278 "_Toc253429278")**  
 [對於現有的專案中啟用動態資料](#0.2__Toc253429279 "_Toc253429279")  
 [宣告式 DynamicDataManager 控制項語法](#0.2__Toc253429280 "_Toc253429280")  
 [實體範本](#0.2__Toc253429281 "_Toc253429281")  
@@ -982,7 +982,7 @@ ASP.NET 2.0 和更新版本的呈現系統特定隱藏的欄位 (例如*隱藏*�
 根據預設，下列的 ASP.NET Web 伺服器控制項支援範本自動包裝在外部資料表，可用來套用內嵌樣式：
 
 - *FormView*
-- *登入*
+- *Login*
 - *PasswordRecovery*
 - *ChangePassword*
 - *精靈*

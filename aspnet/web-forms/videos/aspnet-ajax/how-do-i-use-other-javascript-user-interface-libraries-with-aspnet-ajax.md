@@ -12,7 +12,7 @@ ms.openlocfilehash: 21c0a717c299cb72ca7379c9cb128ce5bb80edec
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409872"
 ---
 # <a name="how-do-i-use-other-javascript-user-interface-libraries-with-aspnet-ajax"></a>[How Do i:]使用 ASP.NET AJAX 中的其他 JavaScript 使用者介面程式庫嗎？

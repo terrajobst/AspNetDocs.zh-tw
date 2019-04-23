@@ -12,7 +12,7 @@ ms.openlocfilehash: 865e901618b48bc4bfdc6d7a3ca4e8868d4cb46b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412979"
 ---
 # <a name="customizing-database-deployments-for-multiple-environments"></a>自訂多個環境的資料庫部署
@@ -68,7 +68,7 @@ ms.locfileid: "59412979"
 
 |  | 開發人員/測試 | 預備/整合 | 生產環境 |
 | --- | --- | --- | --- |
-| **部署比較定序** | 原始程式檔 | Target | Target |
+| **部署比較定序** | Source | Target | Target |
 | **部署資料庫屬性** | True | 只有第一次 | 只有第一次 |
 | **永遠重新建立資料庫** | True | False | False |
 | **如果發生資料遺失可能會，封鎖累加部署** | False | 或許 | True |
@@ -139,7 +139,7 @@ ms.locfileid: "59412979"
 MSDN 上的下列文章會提供資料庫部署更一般指導方針：
 
 - [資料庫專案設定的概觀](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx)
-- [HOW TO：設定的部署詳細資料屬性](https://msdn.microsoft.com/library/dd172125.aspx)
+- [如何：設定的部署詳細資料屬性](https://msdn.microsoft.com/library/dd172125.aspx)
 - [建置和部署資料庫到隔離的開發環境](https://msdn.microsoft.com/library/dd193409.aspx)
 - [建置和部署至預備或生產環境的資料庫](https://msdn.microsoft.com/library/dd193413.aspx)
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: e4e96810cd1dabb0cf2ab1d49ca1f6a3b019a45f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417451"
 ---
 # <a name="enabling-full-text-search-in-your-text-data"></a>在文字資料中啟用全文檢索搜尋

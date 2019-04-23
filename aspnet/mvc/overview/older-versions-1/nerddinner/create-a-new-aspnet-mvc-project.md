@@ -12,7 +12,7 @@ ms.openlocfilehash: c85db4289698988ead44afd452da17054bab9f07
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417204"
 ---
 # <a name="create-a-new-aspnet-mvc-project"></a>建立新的 ASP.NET MVC 專案
@@ -36,7 +36,7 @@ by [Microsoft](https://github.com/microsoft)
 
 ![](create-a-new-aspnet-mvc-project/_static/image1.png)
 
-*重要事項：請確定您已下載並安裝 ASP.NET MVC-否則它不會顯示在 [新增專案] 對話方塊。 您可以使用的 V2 [Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)如果您尚未安裝它 (ASP.NET MVC 是可以在"Web 平台-&gt;架構和執行階段 」 一節)。*
+*重要事項：請確定您已下載並安裝 ASP.NET MVC-否則它不會顯示在 [新增專案] 對話方塊。您可以使用的 V2 [Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)如果您尚未安裝它 (ASP.NET MVC 是可以在"Web 平台-&gt;架構和執行階段 」 一節)。*
 
 我們會將新的專案，我們將建立 「 NerdDinner"，然後按一下 [確定] 按鈕來建立它。
 
@@ -46,7 +46,7 @@ by [Microsoft](https://github.com/microsoft)
 
 在上述的對話方塊中的 「 測試架構 」 下拉式清單中會填入所有使用 ASP.NET MVC 單元測試專案範本安裝在電腦上。 適用於 NUnit、 2.0、mbunit 和 XUnit，就可以下載的版本。 也支援內建的 Visual Studio 單元測試架構。
 
-*注意:只有 Visual Studio 2008 Professional 和更新版本中提供的 Visual Studio 單元測試架構。 如果您使用 VS 2008 Standard Edition 或 Visual Web Developer 2008 Express，您必須下載並安裝 ASP.NET mvc 的 NUnit、 MBUnit 或 XUnit 的延伸模組，以便顯示此對話方塊。 如果沒有安裝任何測試架構，將不會顯示對話方塊。*
+*注意：只有 Visual Studio 2008 Professional 和更新版本中提供的 Visual Studio 單元測試架構。如果您使用 VS 2008 Standard Edition 或 Visual Web Developer 2008 Express，您必須下載並安裝 ASP.NET mvc 的 NUnit、 MBUnit 或 XUnit 的延伸模組，以便顯示此對話方塊。如果沒有安裝任何測試架構，將不會顯示對話方塊。*
 
 我們將使用我們建立時，測試專案的預設 「 NerdDinner.Tests 」 名稱，並使用 Visual Studio 單元測試架構選項。 當我們按一下 Visual Studio 的 確定 按鈕會包含兩個專案，一個用於 web 應用程式，一個針對我們的單元測試就讓我們建立一個方案：
 
@@ -60,13 +60,13 @@ by [Microsoft](https://github.com/microsoft)
 
 預設的 ASP.NET MVC 專案會有六個最上層目錄：
 
-| **Directory** | **用途** |
+| **目錄** | **目的** |
 | --- | --- |
 | **/ 控制站** | 您在其中放置處理 URL 要求的控制器類別 |
-| **/Models** | 您在其中放置代表和操作資料的類別 |
+| **/ 模型** | 您在其中放置代表和操作資料的類別 |
 | **/Views** | 您在其中放置負責轉譯輸出的 UI 範本檔案 |
-| **/ 指令碼** | 您可在此將 JavaScript 程式庫檔案和指令碼 (.js) |
-| **/ 內容** | 您放置 CSS 和映像檔，以及其他非-動態/非-JavaScript 內容 |
+| **/Scripts** | 您可在此將 JavaScript 程式庫檔案和指令碼 (.js) |
+| **/Content** | 您放置 CSS 和映像檔，以及其他非-動態/非-JavaScript 內容 |
 | **/App\_Data** | 儲存資料檔案，您會想要讀取/寫入。 |
 
 ASP.NET MVC 不需要此結構。 事實上，處理大型應用程式的開發人員將通常分散到應用程式設定以讓它更容易管理的多個專案 (例如： 資料模型類別通常進入個別的類別庫專案的 web 應用程式)。 不過，預設的專案結構，並提供我們可以使用為了讓我們的應用程式考量全新的好用的預設目錄慣例。

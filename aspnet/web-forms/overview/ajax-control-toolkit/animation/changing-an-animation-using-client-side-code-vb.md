@@ -12,7 +12,7 @@ ms.openlocfilehash: 4254b7e1f2086a9cc5fbc1e8c2a4f7e2e3d2925e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416567"
 ---
 # <a name="changing-an-animation-using-client-side-code-vb"></a>使用用戶端程式碼變更動畫 (VB)
@@ -71,7 +71,7 @@ ms.locfileid: "59416567"
 [!code-html[Main](changing-an-animation-using-client-side-code-vb/samples/sample7.html)]
 
 
-[![T他動畫會立即執行，沒有滑鼠點選 （和以非常少的標記）](changing-an-animation-using-client-side-code-vb/_static/image2.png)](changing-an-animation-using-client-side-code-vb/_static/image1.png)
+[![動畫會立即執行，而不需要按下滑鼠 （和以非常少的標記）](changing-an-animation-using-client-side-code-vb/_static/image2.png)](changing-an-animation-using-client-side-code-vb/_static/image1.png)
 
 動畫會立即執行，沒有滑鼠點選 （和以非常少的標記） ([按一下以檢視完整大小的影像](changing-an-animation-using-client-side-code-vb/_static/image3.png))
 

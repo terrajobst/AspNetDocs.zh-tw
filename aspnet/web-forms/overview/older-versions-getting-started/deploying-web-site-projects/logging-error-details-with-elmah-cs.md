@@ -12,7 +12,7 @@ ms.openlocfilehash: 02c4371cccb56f0ef7c0a6244c3dcd8a30d241b0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415644"
 ---
 # <a name="logging-error-details-with-elmah-c"></a>使用 ELMAH 記錄錯誤的詳細資料 (C#)

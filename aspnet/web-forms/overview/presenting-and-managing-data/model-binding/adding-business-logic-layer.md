@@ -12,7 +12,7 @@ ms.openlocfilehash: a229ebd71c913f3fe086892786988d0b3e42ec88
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411575"
 ---
 # <a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a>新增商業邏輯層級使用模型繫結和 web forms 的專案

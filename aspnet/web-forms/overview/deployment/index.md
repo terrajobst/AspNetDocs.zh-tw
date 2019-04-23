@@ -12,7 +12,7 @@ ms.openlocfilehash: 8536c771e5e343bd545b6824bec6f8b85489a7d4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416528"
 ---
 # <a name="deployment"></a>部署
@@ -26,9 +26,9 @@ ms.locfileid: "59416528"
     - [準備資料庫部署](visual-studio-web-deployment/preparing-databases.md)
     - [Web.config 檔案轉換](visual-studio-web-deployment/web-config-transformations.md)
     - [專案屬性](visual-studio-web-deployment/project-properties.md)
-    - [部署到測試環境](visual-studio-web-deployment/deploying-to-iis.md)
+    - [部署到測試](visual-studio-web-deployment/deploying-to-iis.md)
     - [設定資料夾權限](visual-studio-web-deployment/setting-folder-permissions.md)
-    - [部署到生產環境](visual-studio-web-deployment/deploying-to-production.md)
+    - [部署至生產環境](visual-studio-web-deployment/deploying-to-production.md)
     - [部署程式碼更新](visual-studio-web-deployment/deploying-a-code-update.md)
     - [部署資料庫更新](visual-studio-web-deployment/deploying-a-database-update.md)
     - [命令列部署](visual-studio-web-deployment/command-line-deployment.md)
@@ -37,21 +37,21 @@ ms.locfileid: "59416528"
 - [ASP.NET 4 - 企業部署簡介](deploying-web-applications-in-enterprise-scenarios/index.md)
 
     - [使用 Visual Studio 2010 在企業案例中部署 Web 應用程式](deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)
-    - [企業 Web 部署：情節概觀](deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
-    - [應用程式生命週期管理：從開發到生產](deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
+    - [企業 Web 部署：案例概觀](deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)
+    - [應用程式生命週期管理：從開發到生產環境](deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production.md)
 - [ASP.NET 4 - 企業部署系列 1](web-deployment-in-the-enterprise/index.md)
 
     - [企業中的 Web 部署](web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md)
     - [連絡管理員解決方案](web-deployment-in-the-enterprise/the-contact-manager-solution.md)
     - [設定連絡管理員解決方案](web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution.md)
     - [了解專案檔](web-deployment-in-the-enterprise/understanding-the-project-file.md)
-    - [了解建置程序](web-deployment-in-the-enterprise/understanding-the-build-process.md)
-    - [建置及封裝 Web 應用程式專案](web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md)
-    - [設定 Web 套件部署的參數](web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment.md)
-    - [部署 Web 套件](web-deployment-in-the-enterprise/deploying-web-packages.md)
+    - [了解建置流程](web-deployment-in-the-enterprise/understanding-the-build-process.md)
+    - [建置和封裝 Web 應用程式專案](web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md)
+    - [設定網頁套件部署的參數](web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment.md)
+    - [部署網頁套件](web-deployment-in-the-enterprise/deploying-web-packages.md)
     - [部署資料庫專案](web-deployment-in-the-enterprise/deploying-database-projects.md)
-    - [建立及執行部署命令檔](web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file.md)
-    - [手動安裝 Web 套件](web-deployment-in-the-enterprise/manually-installing-web-packages.md)
+    - [建立和執行部署命令檔](web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file.md)
+    - [手動安裝網頁套件](web-deployment-in-the-enterprise/manually-installing-web-packages.md)
 - [ASP.NET 4 - 企業部署系列 2 設定伺服器](configuring-server-environments-for-web-deployment/index.md)
 
     - [設定 Web 部署的伺服器環境](configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md)
@@ -80,8 +80,8 @@ ms.locfileid: "59416528"
     - [執行 "What If" 部署](advanced-enterprise-web-deployment/performing-a-what-if-deployment.md)
     - [自訂多個環境的資料庫部署](advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments.md)
     - [將資料庫角色成員資格部署到測試環境](advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md)
-    - [將成員資格資料庫部署到企業環境](advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments.md)
-    - [從部署中排除檔案與資料夾](advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment.md)
-    - [使用 Web Deploy 讓 Web 應用程式離線](advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy.md)
+    - [將成員資格資料庫部署至企業環境](advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments.md)
+    - [從部署中排除檔案和資料夾](advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment.md)
+    - [使用 Web 部署讓 Web 應用程式離線](advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy.md)
     - [從 MSBuild 專案檔執行 Windows PowerShell 指令碼](advanced-enterprise-web-deployment/running-windows-powershell-scripts-from-msbuild-project-files.md)
-    - [針對封裝程序進行疑難排解](advanced-enterprise-web-deployment/troubleshooting-the-packaging-process.md)
+    - [疑難排解封裝程序](advanced-enterprise-web-deployment/troubleshooting-the-packaging-process.md)

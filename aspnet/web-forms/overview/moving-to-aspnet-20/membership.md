@@ -12,7 +12,7 @@ ms.openlocfilehash: f3f8c649932682fd96e0640ddf4595c19c755909
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408182"
 ---
 # <a name="membership"></a>成員資格
@@ -74,7 +74,7 @@ ASP.NET SQL Server 安裝精靈會建立網站，您在精靈中指定的執行�
 
 這會啟動 ASP.NET 網站管理工具如下所示。 ASP.NET 網站管理是四個索引標籤介面，可讓您輕鬆地管理應用程式設定。 可使用下列索引標籤：
 
-- **首頁**
+- **Home**
 - **安全性**設定使用者、 角色和存取。
 - **應用程式**設定應用程式設定。
 - **提供者**設定及測試您的應用程式成員資格提供者。

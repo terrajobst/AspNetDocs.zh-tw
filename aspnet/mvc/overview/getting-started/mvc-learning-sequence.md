@@ -12,7 +12,7 @@ ms.openlocfilehash: e78ad67187b2da96ca3766e6914e396508aa180e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417542"
 ---
 # <a name="mvc-recommended-tutorials-and-articles"></a>MVC 建議教學課程與文章
@@ -52,4 +52,4 @@ ms.locfileid: "59417542"
 <a id="perf"></a>
 ## <a name="performance-and-debugging"></a>效能和偵錯
 
-- [使用 Glimpse 分析 ASP.NET MVC 應用程式以對其進行偵錯](../performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse.md)
+- [使用 Glimpse 分析與偵錯 ASP.NET MVC 應用程式](../performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse.md)

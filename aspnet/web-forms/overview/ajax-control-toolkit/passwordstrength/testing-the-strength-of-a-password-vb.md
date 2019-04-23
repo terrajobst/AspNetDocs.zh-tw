@@ -12,7 +12,7 @@ ms.openlocfilehash: fb185c4147d516ab28d632b3e874b6f1d46f6576
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408416"
 ---
 # <a name="testing-the-strength-of-a-password-vb"></a>測試密碼強度 (VB)
@@ -44,7 +44,7 @@ ms.locfileid: "59408416"
 執行此頁面，並立即輸入：只輸入小寫字母、 大寫字母、 數字和符號之後，密碼已被視為為永不中斷。
 
 
-[![Now 密碼很 （很）](testing-the-strength-of-a-password-vb/_static/image2.png)](testing-the-strength-of-a-password-vb/_static/image1.png)
+[![現在是 （挺） 好用的密碼](testing-the-strength-of-a-password-vb/_static/image2.png)](testing-the-strength-of-a-password-vb/_static/image1.png)
 
 現在，密碼是 （挺） 好用的 ([按一下以檢視完整大小的影像](testing-the-strength-of-a-password-vb/_static/image3.png))
 

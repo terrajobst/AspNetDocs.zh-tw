@@ -12,7 +12,7 @@ ms.openlocfilehash: 20d2d4412345399acdde1535447cc18b6611b572
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412849"
 ---
 # <a name="single-page-application-knockoutjs-template"></a>單一頁面應用程式：KnockoutJS 範本
@@ -128,8 +128,8 @@ SPA 範本會使用 EF Code First。 在 Code First 開發中，您定義模型�
 
 ![](knockoutjs-template/_static/image10.png)
 
-- `TodoController`:處理 HTTP 要求的待辦事項項目
-- `TodoListController`:處理 HTTP 要求的待辦事項清單。
+- `TodoController`：處理 HTTP 要求的待辦事項項目
+- `TodoListController`：處理 HTTP 要求的待辦事項清單。
 
 因為 Web API 符合控制器名稱的 URI 路徑，是有意義的這些名稱。 (若要深入了解 Web API 將 HTTP 要求路由至控制器的方式，請參閱[ASP.NET Web API 中的路由](../../../web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api.md)。)
 

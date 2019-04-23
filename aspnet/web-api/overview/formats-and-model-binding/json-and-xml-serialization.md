@@ -13,7 +13,7 @@ ms.openlocfilehash: a9e7ed63a55c146976e0221214e722f3a2292fee
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408273"
 ---
 # <a name="json-and-xml-serialization-in-aspnet-web-api"></a>JSON 和 ASP.NET Web API 中的 XML 序列化
@@ -79,7 +79,7 @@ JSON 格式提供**JsonMediaTypeFormatter**類別。 根據預設， **JsonMedia
 <a id="json_dates"></a>
 ### <a name="dates"></a>日期
 
-根據預設，Json.NET 將寫入日期[ISO 8601](http://www.w3.org/TR/NOTE-datetime)格式。 以 UTC （國際標準時間） 的日期是以"Z"後置詞。 當地時間日期包含時區時差。 例如: 
+根據預設，Json.NET 將寫入日期[ISO 8601](http://www.w3.org/TR/NOTE-datetime)格式。 以 UTC （國際標準時間） 的日期是以"Z"後置詞。 當地時間日期包含時區時差。 例如：
 
 [!code-console[Main](json-and-xml-serialization/samples/sample4.cmd)]
 

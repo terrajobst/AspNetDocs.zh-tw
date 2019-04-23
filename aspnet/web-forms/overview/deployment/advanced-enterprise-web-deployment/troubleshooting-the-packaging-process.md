@@ -12,7 +12,7 @@ ms.openlocfilehash: 79774c6a1a1d05d5a7bcd82a5d7aa888933cf089
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420103"
 ---
 # <a name="troubleshooting-the-packaging-process"></a>針對封裝程序進行疑難排解

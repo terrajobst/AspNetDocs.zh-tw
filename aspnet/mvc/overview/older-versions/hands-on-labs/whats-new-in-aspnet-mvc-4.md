@@ -12,7 +12,7 @@ ms.openlocfilehash: b9da2522cfaed324a23f43265d4e234ebb4950bd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411120"
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4 的新功能
@@ -547,7 +547,7 @@ jQuery Mobile 的預設佈景主題包含 5 個樣本指定字母 (a、 b、 c�
 
     ![有關頁面](whats-new-in-aspnet-mvc-4/_static/image33.png "關於頁面")
 
-    *About 頁面*
+    *關於頁面*
 8. 最後，在桌面的網頁瀏覽器中開啟網站。 請注意，沒有任何先前的更新已受到影響桌面檢視。
 
     ![PhotoGallery 桌面檢視](whats-new-in-aspnet-mvc-4/_static/image34.png "PhotoGallery 桌面檢視")
@@ -876,7 +876,7 @@ Microsoft.NET Framework 4.5 引進了新的語言功能，在 C# 和 Visual Basi
 4. 在 [&quot;新增程式&quot;] 對話方塊中，使用下列值：
 
    - **程式**:C:\Users\*{CurrentUser}*\AppData\Local\Microsoft\WebMatrix\Extensions\20\iPhoneSimulator\ElectricMobileSim\ElectricMobileSim.exe *（據以更新的路徑）*
-   - **引數**:&quot;1&quot;
+   - **引數**：&quot;1&quot;
    - **易記名稱**: iPhone 模擬器
 
      ![新增程式](whats-new-in-aspnet-mvc-4/_static/image59.png "新增程式")

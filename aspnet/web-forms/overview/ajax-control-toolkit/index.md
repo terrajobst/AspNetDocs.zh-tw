@@ -12,7 +12,7 @@ ms.openlocfilehash: 795283c33d63272b29b91fd7037c3463bc71abad
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410743"
 ---
 # <a name="older-versions---ajax-control-toolkit"></a>舊版 - Ajax Control Toolkit
@@ -151,7 +151,7 @@ ms.locfileid: "59410743"
     - [使用多個快顯視窗控制項 (VB)](popup/using-multiple-popup-controls-vb.md)
     - [處理有 UpdatePanel 的快顯視窗控制項回傳 (VB)](popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-vb.md)
     - [處理沒有 UpdatePanel 的快顯視窗控制項回傳 (VB)](popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-vb.md)
-- [分級](rating/index.md)
+- [評等](rating/index.md)
 
     - [建立評等控制項 (C#)](rating/creating-a-rating-control-cs.md)
     - [建立評等控制項 (VB)](rating/creating-a-rating-control-vb.md)
@@ -161,7 +161,7 @@ ms.locfileid: "59410743"
     - [透過 ReorderList 拖放 (C#)](reorderlist/drag-and-drop-via-reorderlist-cs.md)
     - [使用具有 ReorderList 的回傳 (VB)](reorderlist/using-postbacks-with-reorderlist-vb.md)
     - [透過 ReorderList 拖放 (VB)](reorderlist/drag-and-drop-via-reorderlist-vb.md)
-- [滑桿](slider/index.md)
+- [Slider](slider/index.md)
 
     - [具有自動回傳的滑桿控制項 (C#)](slider/using-the-slider-control-with-auto-postback-cs.md)
     - [資料繫結滑桿控制項 (C#)](slider/databinding-the-slider-control-cs.md)

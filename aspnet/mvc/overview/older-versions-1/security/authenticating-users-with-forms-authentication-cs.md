@@ -12,7 +12,7 @@ ms.openlocfilehash: b52abab12503918603419c9ccfabefcffdfd7e06
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418270"
 ---
 # <a name="authenticating-users-with-forms-authentication-c"></a>使用表單驗證驗證使用者 (C#)
@@ -58,7 +58,7 @@ by [Microsoft](https://github.com/microsoft)
 
 例如，列表 1 中的控制站會公開名為 CompanySecrets() 的動作。 因為此動作使用 [Authorize] 屬性裝飾，這個動作無法呼叫，除非使用者已驗證。
 
-**列表 1 – Controllers\HomeController.cs**
+**Listing 1 – Controllers\HomeController.cs**
 
 [!code-csharp[Main](authenticating-users-with-forms-authentication-cs/samples/sample1.cs)]
 

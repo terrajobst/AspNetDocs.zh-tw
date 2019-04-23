@@ -12,7 +12,7 @@ ms.openlocfilehash: e7b929c6e186e59b43180e8f26cf0f8b4608328f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417984"
 ---
 # <a name="how-do-i-send-templated-emails-for-health-monitoring-events-in-aspnet"></a>[How Do i:]將樣板化的電子郵件傳送健康情況監視在 ASP.NET 中的事件

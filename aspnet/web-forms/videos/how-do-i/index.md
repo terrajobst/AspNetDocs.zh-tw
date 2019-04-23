@@ -12,7 +12,7 @@ ms.openlocfilehash: 7d300a1f29c7712408d17c6629da6cefb67b3cdb
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410314"
 ---
 # <a name="how-do-i"></a>如何？
@@ -20,7 +20,7 @@ ms.locfileid: "59410314"
 > 如何執行各種常見工作。
 
 
-- [學習專家的祕訣與技巧](how-do-i-learn-the-tips-and-tricks-of-experts.md)
+- [學習專家的祕訣和技巧](how-do-i-learn-the-tips-and-tricks-of-experts.md)
 - [使用當地語系化功能建立多語言網站](how-do-i-create-a-multi-lingual-site-with-localization.md)
 - [利用快取](how-do-i-make-use-of-caching.md)
 - [讓快取發揮更大用處](how-do-i-make-greater-use-of-caching.md)
@@ -42,28 +42,28 @@ ms.locfileid: "59410314"
 - [在 ASP.NET 中實作網站導覽](how-do-i-implement-site-navigation-in-aspnet.md)
 - [使用 ASP.NET 的驗證控制項](how-do-i-use-validation-controls-in-aspnet.md)
 - [在 ASP.NET 中建立自訂的使用者控制項](how-do-i-create-a-custom-user-control-in-aspnet.md)
-- [實作 ASP.NET 應用程式的狀況監視](how-do-i-implement-health-monitoring-for-an-aspnet-application.md)
+- [實作 ASP.NET 應用程式的狀況監控](how-do-i-implement-health-monitoring-for-an-aspnet-application.md)
 - [在 ASP.NET 網站中實作追蹤](how-do-i-implement-tracing-in-an-aspnet-web-site.md)
 - [ASP.NET Web Pages 和控制項中的事件處理常式](how-do-i-event-handlers-in-aspnet-web-pages-and-controls.md)
 - [實作自訂的狀況監控事件](how-do-i-implement-a-custom-health-monitoring-event.md)
 - [使用控制項狀態保存自訂網頁伺服器控制項的相關資訊](how-do-i-use-control-state-to-persist-information-for-a-custom-web-server-control.md)
-- [讀取、寫入及刪除 ASP.NET 中的 Cookie](read-write-and-delete-cookies-in-aspnet.md)
+- [讀取、寫入和刪除 ASP.NET 中的 Cookie](read-write-and-delete-cookies-in-aspnet.md)
 - [儲存及載入自訂網頁伺服器控制項的檢視狀態資訊](how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control.md)
-- [在 ASP.NET 中建立及使用應用程式層級事件](how-do-i-create-and-use-application-level-events-in-aspnet.md)
+- [在 ASP.NET 中建立和使用應用程式層級事件](how-do-i-create-and-use-application-level-events-in-aspnet.md)
 - [ASP.NET 的簡易檔案上傳](how-do-i-simple-file-uploads-in-aspnet.md)
 - [ASP.NET 2 的多重檔案上傳](how-do-i-multiple-file-uploads-in-aspnet-2.md)
 - [ASP.NET 1 的多重檔案上傳](how-do-i-multiple-file-uploads-in-aspnet-1.md)
 - [使用 AJAX 樣式介面的檔案上傳](how-do-i-file-uploads-with-an-ajax-style-interface.md)
 - [以宣告方式和程式設計方式使用主版頁面](how-do-i-work-with-master-pages-declaratively-and-programmatically.md)
-- [處理主版頁面與內容頁中的事件](how-do-i-handle-events-in-master-and-content-pages.md)
-- [使用有資料存取類別與商務物件的 ObjectDataSource](how-do-i-use-the-objectdatasource-with-a-data-access-class-and-business-object.md)
+- [處理主版頁面和內容頁中的事件](how-do-i-handle-events-in-master-and-content-pages.md)
+- [使用有資料存取類別和商務物件的 ObjectDataSource](how-do-i-use-the-objectdatasource-with-a-data-access-class-and-business-object.md)
 - [為網站建立使用者可選取的佈景主題](how-do-i-create-user-selectable-themes-for-a-web-site.md)
 - [在用戶端 JavaScript 和使用隱藏欄位的伺服器程式碼之間共用資料](how-do-i-share-data-between-client-javascript-and-server-code-using-a-hidden-field.md)
 - [將 JavaScript 新增至 ASP.NET 頁面](how-do-i-add-javascript-to-an-aspnet-page.md)
 - [將 JavaScript 事件處理常式新增至 ASP.NET 伺服器控制項](how-do-i-add-javascript-event-handlers-to-aspnet-server-controls.md)
 - [在 ASP.NET 中建立並呼叫簡單的 Web 服務](how-do-i-create-and-call-a-simple-web-service-in-aspnet.md)
 - [部署網站複製網站工具](how-do-i-deploy-a-web-site-using-the-copy-web-site-tool.md)
-- [在 ASP.NET 設定檔中建立及使用自訂的設定區段](how-do-i-create-and-use-a-custom-configuration-section-in-an-aspnet-configuration-file.md)
+- [在 ASP.NET 組態檔中建立及使用自訂的組態區段](how-do-i-create-and-use-a-custom-configuration-section-in-an-aspnet-configuration-file.md)
 - [設定 .NET Framework 版本的 ASP.NET 網站](how-do-i-configure-an-aspnet-web-site-for-a-net-framework-version.md)
 - [使用 ASP.NET IIS 註冊工具設定 ASP.NET](how-do-i-use-the-aspnet-iis-registration-tool-to-configure-aspnet.md)
 - [擴充和自訂特定用途的 ASP.NET 伺服器控制項](how-do-i-extend-and-customize-an-aspnet-server-control-for-a-specific-purpose.md)
@@ -90,9 +90,9 @@ ms.locfileid: "59410314"
 - [使用 ASP.NET 以非同步方式傳送電子郵件](how-do-i-send-email-asynchronously-with-aspnet.md)
 - [使用 ASP.NET 在電子郵件中內嵌影像](how-do-i-embed-an-image-in-an-email-with-aspnet.md)
 - [使用 ASP.NET 於傳送電子郵件時實作錯誤處理](how-do-i-implement-error-handling-when-sending-email-with-aspnet.md)
-- [建立自訂提供者以記錄狀況監視事件](how-do-i-create-a-custom-provider-for-logging-health-monitoring-events.md)
+- [建立自訂提供者以記錄狀況監控事件](how-do-i-create-a-custom-provider-for-logging-health-monitoring-events.md)
 - [建立可重複使用的元件將電子郵件傳送至通訊群組清單](how-do-i-create-a-reusable-component-for-sending-email-to-a-distribution-list.md)
-- [預先編譯 ASP.NET 網站](how-do-i-precompile-an-aspnet-website.md)
+- [先行編譯 ASP.NET 網站](how-do-i-precompile-an-aspnet-website.md)
 - [使用 FtpWebRequest 類別建立到 FTP 伺服器的 FTP 連線](how-do-i-use-the-ftpwebrequest-class-to-create-an-ftp-connection-to-a-ftp-server.md)
 - [將資料匯出為 Excel 等應用程式的逗點分隔 (CSV) 檔案](how-do-i-export-data-to-a-comma-delimited-csv-file-for-an-application-like-excel.md)
 - [使用 Reponse.Filter 屬性取代 ASP.NET 網頁中的 HTML](how-do-i-use-the-reponsefilter-property-to-replace-html-in-an-aspnet-page.md)
@@ -110,8 +110,8 @@ ms.locfileid: "59410314"
 - [建立有效率的標準化方法以實作 CSS 樣式](how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles.md)
 - [什麼是 ASP.NET](what-is-asp-net.md)
 - [選擇正確的程式設計模型](choosing-the-right-programming-model.md)
-- [使用 ASP.NET Web Forms 建置您的第一個 ASP.NET 應用程式](build-your-first-asp-net-application-with-asp-net-web-forms.md)
+- [使用 ASP.NET Web Form 建置您的第一個 ASP.NET 應用程式](build-your-first-asp-net-application-with-asp-net-web-forms.md)
 - [使用 ASP.NET MVC 建置您的第一個 ASP.NET 應用程式](build-your-first-asp-net-application-with-asp-net-mvc.md)
-- [深入了解 ASP.NET Web Forms](how-to-best-learn-aspnet-web-forms.md)
-- [ASP.NET Web Forms 的 5 分鐘簡介](5-minute-introduction-to-aspnet-web-forms.md)
-- [安裝 ASP.NET 與工具](how-to-install-asp-net-and-tools.md)
+- [深入了解 ASP.NET Web Form](how-to-best-learn-aspnet-web-forms.md)
+- [ASP.NET Web Form 的 5 分鐘簡介](5-minute-introduction-to-aspnet-web-forms.md)
+- [安裝 ASP.NET 及工具](how-to-install-asp-net-and-tools.md)

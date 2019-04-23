@@ -12,7 +12,7 @@ ms.openlocfilehash: 3f8073b468a431d5c4b0d222bf385c8c6d32b2a8
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419089"
 ---
 # <a name="disabling-actions-during-animation-vb"></a>動畫播放期間停用動作 (VB)
@@ -55,7 +55,7 @@ ms.locfileid: "59419089"
 不過在特定案例這會是毫無用處自按鈕淡出，並在動畫結束時看不到。
 
 
-[![T只要執行動畫，他按鈕已停用](disabling-actions-during-animation-vb/_static/image2.png)](disabling-actions-during-animation-vb/_static/image1.png)
+[![動畫執行時，會停用按鈕](disabling-actions-during-animation-vb/_static/image2.png)](disabling-actions-during-animation-vb/_static/image1.png)
 
 按鈕已停用，只要執行動畫 ([按一下以檢視完整大小的影像](disabling-actions-during-animation-vb/_static/image3.png))
 

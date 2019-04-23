@@ -12,7 +12,7 @@ ms.openlocfilehash: ae53e23dda3ac63e26590edab692188bb44e9f65
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413200"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>部署與 SQL Server Compact 使用 Visual Studio 的 ASP.NET Web 應用程式：簡介-1，12 個

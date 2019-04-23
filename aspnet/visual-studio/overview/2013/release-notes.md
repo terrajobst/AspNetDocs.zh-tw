@@ -12,7 +12,7 @@ ms.openlocfilehash: 8234bd1b7eb74d9b03e507f00d9ad937314288be
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411276"
 ---
 # <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>適用於 Visual Studio 2013 的 ASP.NET 和 Web 工具版本資訊
@@ -135,7 +135,7 @@ Visual Studio 2013 也是這兩個 CoffeeScript 與小於內建的編輯器。 L
 如需詳細資訊，請參閱下列資源：
 
 - [在 Azure App Service 中建立 ASP.NET web 應用程式](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)
-- [疑難排解使用 Visual Studio 的 Azure App Service 中的 web 應用程式](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+- [使用 Visual Studio 疑難排解 Azure App Service 中的 Web 應用程式](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 
 <a id="publish"></a>
 ## <a name="web-publish-enhancements"></a>Web 發行增強功能
@@ -408,7 +408,7 @@ Signalr 1.x 中的，跨網域要求是由單一 EnableCrossDomain 旗標控制�
 
 ### <a name="backward-compatible-server-support"></a>回溯相容性伺服器支援
 
-在舊版的 SignalR、 SignalR 封裝用於用戶端和伺服器必須是相同的版本。 若要支援會很難更新的大型用戶端應用程式，SignalR 2.0 現在支援使用較新的伺服器版本與舊版本的用戶端。 **注意:SignalR 2.0 不支援使用新的用戶端建置與較舊版本的伺服器。**
+在舊版的 SignalR、 SignalR 封裝用於用戶端和伺服器必須是相同的版本。 若要支援會很難更新的大型用戶端應用程式，SignalR 2.0 現在支援使用較新的伺服器版本與舊版本的用戶端。 **注意：SignalR 2.0 不支援使用新的用戶端建置與較舊版本的伺服器。**
 
 <a id="remove40"></a>
 
@@ -520,9 +520,9 @@ Microsoft OWIN 元件 （也稱為 Katana 專案） 中導入的變更包括新�
 
 如需有關 OWIN 和 Katana 的詳細資訊，請參閱[OWIN 和 Katana 中最新消息](../../../aspnet/overview/owin-and-katana/index.md)。
 
-**注意:[OWIN](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md)應用程式無法執行 IIS 的傳統模式中，它們必須以整合模式執行。**
+**注意：[OWIN](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md)應用程式無法執行 IIS 的傳統模式中，它們必須以整合模式執行。**
 
-**注意:[OWIN](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md)必須以完全信任執行的應用程式。**
+**注意：[OWIN](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md)必須以完全信任執行的應用程式。**
 
 ### <a name="new-servers-and-hosts"></a>新的伺服器和主機
 
@@ -629,7 +629,7 @@ ASP.NET 應用程式暫止是.NET Framework 4.5.1，徹底改變使用者體驗�
 
     *'/' 應用程式中的伺服器錯誤。*
 
-    <em>宣告類型 '<http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier>'或'<http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider>' 已不存在於上提供的 ClaimsIdentity。 若要啟用防偽權杖支援使用宣告式驗證，請確認已設定的宣告提供者提供這兩個 ClaimsIdentity 執行個體，它會產生這些宣告。 如果已設定的宣告提供者改為使用不同的宣告類型唯一識別碼，它可以藉由設定靜態屬性 AntiForgeryConfig.UniqueClaimTypeIdentifier 設定。</em>
+    <em>宣告類型 '<http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier>'或'<http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider>' 已不存在於上提供的 ClaimsIdentity。若要啟用防偽權杖支援使用宣告式驗證，請確認已設定的宣告提供者提供這兩個 ClaimsIdentity 執行個體，它會產生這些宣告。如果已設定的宣告提供者改為使用不同的宣告類型唯一識別碼，它可以藉由設定靜態屬性 AntiForgeryConfig.UniqueClaimTypeIdentifier 設定。</em>
 
     **因應措施**：
 

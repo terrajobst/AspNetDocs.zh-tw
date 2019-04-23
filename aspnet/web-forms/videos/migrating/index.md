@@ -12,7 +12,7 @@ ms.openlocfilehash: c2a5b3ae768012156b0f46eda8caeb43451af258
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413746"
 ---
 # <a name="migrating"></a>移轉
@@ -25,6 +25,6 @@ ms.locfileid: "59413746"
 - [從 Classic ASP [移轉] 至 ASP.NET](migrating-from-classic-asp-to-aspnet.md)
 - [ASP.NET for JSP 開發人員簡介：歡迎使用 ASP.NET 2.0](intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
 - [ASP.NET for JSP 開發人員簡介：建置應用程式](intro-to-aspnet-for-jsp-developers-building-applications.md)
-- [適用於 ColdFusion 開發人員的 ASP.NET：將 ASP.NET 新增到您的所有產品](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
-- [適用於 ColdFusion 開發人員的 ASP.NET：建置 ASP.NET 應用程式](introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
+- [ASP.NET for ColdFusion 開發人員簡介：將 ASP.NET 新增至您的所有產品](intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
+- [ASP.NET for ColdFusion 開發人員簡介：建置 ASP.NET 應用程式](introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
 - [PHP 與 Windows 平台之間的互通性](interop-between-php-and-the-windows-platform.md)

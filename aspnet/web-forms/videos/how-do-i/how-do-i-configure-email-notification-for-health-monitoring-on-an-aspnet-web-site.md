@@ -12,7 +12,7 @@ ms.openlocfilehash: 8c6512cebfb141dbf2f4c19e614aac99ccd41dac
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413694"
 ---
 # <a name="how-do-i-configure-email-notification-for-health-monitoring-on-an-aspnet-web-site"></a>[How Do i:]設定健全狀況監視的 ASP.NET 網站上的電子郵件通知

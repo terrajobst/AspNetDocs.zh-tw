@@ -12,7 +12,7 @@ ms.openlocfilehash: 60953243d3038667e4f729b1394e68f0c9d7c178
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415046"
 ---
 # <a name="how-do-i-create-a-custom-html-helper-for-an-mvc-application"></a>How Do i:建立 MVC 應用程式的自訂 HTML 協助嗎？

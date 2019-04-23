@@ -12,7 +12,7 @@ ms.openlocfilehash: 242665b3ba2e2ad2157abbe2c44ae207f15e72ce
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410860"
 ---
 # <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>提供 CRUD (建立、讀取、更新、刪除) 資料表單項目支援
@@ -36,22 +36,22 @@ by [Microsoft](https://github.com/microsoft)
 
 實作支援兩個 Url 的 DinnersController 先前加入動作方法： */Dinners*並 */Dinners/詳細資料 / [id]*。
 
-| **URL** | **VERB** | **用途** |
+| **URL** | **VERB** | **目的** |
 | --- | --- | --- |
 | */Dinners/* | GET | 顯示即將推出的 dinners HTML 清單。 |
-| */Dinners/詳細資料 / [id]* | GET | 顯示有關特定 dinner 詳細資料。 |
+| */Dinners/Details/[id]* | GET | 顯示有關特定 dinner 詳細資料。 |
 
 我們現在會將動作方法，實作三個額外的 Url: */Dinners/編輯 / [id]*， *Dinners/建立*，並 */Dinners/Delete / [id]*。 這些 Url 可讓您編輯現有的 Dinners，建立新的 Dinners 和刪除 Dinners。
 
 我們即將支援使用這些新的 Url 的 HTTP GET 與 HTTP POST 動詞命令互動。 這些 url 的 HTTP GET 要求會顯示初始的 HTML 檢視的資料 （表單填入 Dinner 資料，在 編輯 的情況下，在 「 建立 」 的情況下的空白表單和刪除確認 畫面，在 「 刪除 」 的情況下）。 這些 url 的 HTTP POST 要求將會儲存/更新/刪除 Dinner 資料中我們 DinnerRepository （和至資料庫）。
 
-| **URL** | **VERB** | **用途** |
+| **URL** | **VERB** | **目的** |
 | --- | --- | --- |
-| */Dinners/編輯 / [id]* | GET | 顯示可編輯的 HTML 表單 Dinner 資料來擴展。 |
+| */Dinners/Edit/[id]* | GET | 顯示可編輯的 HTML 表單 Dinner 資料來擴展。 |
 | POST | 將表單變更儲存到資料庫的特定晚餐。 |
-| */ Dinners/建立* | GET | 顯示空的 HTML 表單，好讓使用者定義新 Dinners。 |
+| */Dinners/Create* | GET | 顯示空的 HTML 表單，好讓使用者定義新 Dinners。 |
 | POST | 建立新的 Dinner，並將它儲存在資料庫中。 |
-| */Dinners/delete / [id]* | GET | 顯示刪除確認 畫面。 |
+| */Dinners/Delete/[id]* | GET | 顯示刪除確認 畫面。 |
 | POST | 從資料庫刪除指定的 dinner。 |
 
 ### <a name="edit-support"></a>編輯支援

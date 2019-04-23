@@ -12,7 +12,7 @@ ms.openlocfilehash: 3a39e8d1979a743101d728eb3430e9aa0efb1252
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415631"
 ---
 # <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2017"></a>Getting Started with ASP.NET 4.5 Web Form 和 Visual Studio 2017
@@ -39,7 +39,7 @@ ASP.NET Web Form 的新的開發人員是本教學課程系列的目標對象。
 
 若要檢閱這些區域，請考慮研究下列內容：
 
-- [Visual C# 使用者入門](https://msdn.microsoft.com/library/a72418yk.aspx)
+- [Getting Started with Visual C#](https://msdn.microsoft.com/library/a72418yk.aspx)
 - [Web 開發](https://msdn.microsoft.com/beginner/bb308760.aspx)， [HTML、 CSS、 JavaScript、 SQL、 PHP、 JQuery](http://w3schools.com/)
 - [關聯式資料庫](http://en.wikipedia.org/wiki/Relational_database)
 - [多層式架構](http://en.wikipedia.org/wiki/Multitier_architecture)

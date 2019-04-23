@@ -12,7 +12,7 @@ ms.openlocfilehash: 3951ab4562e2c172f418c74136d511f0f9f50454
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415839"
 ---
 # <a name="strategies-for-database-development-and-deployment-c"></a>資料庫開發及部署策略 (C#)
@@ -99,7 +99,7 @@ SQL 語法包含一些建立和修改各種資料庫物件的陳述式。 例如
 SQL 比較啟動時比較專案 對話方塊隨即開啟，顯示已儲存的 「 SQL 比較 」 專案。 建立新的專案。 這會啟動 專案組態精靈，它會提示您資料庫的相關資訊的比較 （見 圖 1）。 輸入開發和生產環境資料庫的資訊。
 
 
-[![Compare 開發和生產資料庫](strategies-for-database-development-and-deployment-cs/_static/image2.jpg)](strategies-for-database-development-and-deployment-cs/_static/image1.jpg)
+[![比較開發和生產資料庫](strategies-for-database-development-and-deployment-cs/_static/image2.jpg)](strategies-for-database-development-and-deployment-cs/_static/image1.jpg)
 
 **圖 1**:比較開發和生產資料庫 ([按一下以檢視完整大小的影像](strategies-for-database-development-and-deployment-cs/_static/image3.jpg))
 
@@ -116,7 +116,7 @@ SQL 比較啟動時比較專案 對話方塊隨即開啟，顯示已儲存的 �
 > 在本教學課程中所做的資料模型變更是為了說明如何使用資料庫比較工具。 您不會在資料庫中找到這些變更，在未來的教學課程。
 
 
-[![SSQL 比較列出開發和生產資料庫之間的差異](strategies-for-database-development-and-deployment-cs/_static/image5.jpg)](strategies-for-database-development-and-deployment-cs/_static/image4.jpg)
+[![SQL 比較列出開發和生產資料庫之間的差異](strategies-for-database-development-and-deployment-cs/_static/image5.jpg)](strategies-for-database-development-and-deployment-cs/_static/image4.jpg)
 
 **圖 2**:SQL 比較列出開發之間的差異和生產資料庫 ([按一下以檢視完整大小的影像](strategies-for-database-development-and-deployment-cs/_static/image6.jpg))
 
@@ -128,7 +128,7 @@ SQL 比較細分成群組的資料庫物件，快速顯示哪些物件存在於�
 檢閱差異，並選取您想要同步處理哪些的物件之後, 的下一個步驟是產生的 SQL 命令來更新實際執行資料庫 s 結構描述所需符合開發資料庫。 這是透過同步處理精靈 」 來完成。 同步處理精靈 」 確認哪些物件同步處理，並摘要說明動作計劃 （請參閱 [圖 3]）。 您可以立即同步處理資料庫，或產生含有可以暇地執行的 SQL 命令的指令碼。
 
 
-[![Use 同步處理精靈 」，以同步處理您的資料庫結構描述](strategies-for-database-development-and-deployment-cs/_static/image8.jpg)](strategies-for-database-development-and-deployment-cs/_static/image7.jpg)
+[![使用同步處理精靈 」 來同步處理您的資料庫結構描述](strategies-for-database-development-and-deployment-cs/_static/image8.jpg)](strategies-for-database-development-and-deployment-cs/_static/image7.jpg)
 
 **[圖 3**:使用同步處理精靈] 來同步處理您的資料庫結構描述 ([按一下以檢視完整大小的影像](strategies-for-database-development-and-deployment-cs/_static/image9.jpg))
 

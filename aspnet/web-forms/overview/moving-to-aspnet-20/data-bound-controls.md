@@ -12,7 +12,7 @@ ms.openlocfilehash: 016dfa2a5a5fb9aaed0e1c60194e53ac9ccb8b36
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419583"
 ---
 # <a name="data-bound-controls"></a>資料繫結控制項
@@ -195,7 +195,7 @@ GridView 控制項提供許多內建功能，可讓使用者排序、 更新、 
 
 您也可以顯示或隱藏控制項的不同部分。 下表列出可控制哪些部分會顯示或隱藏屬性。
 
-| **屬性** | **描述** |
+| **Property** | **描述** |
 | --- | --- |
 | ShowFooter | 顯示或隱藏的 GridView 控制項頁尾區段。 |
 | ShowHeader | 顯示或隱藏 GridView 控制項的標頭區段。 |
@@ -204,7 +204,7 @@ GridView 控制項提供許多內建功能，可讓使用者排序、 更新、 
 
 GridView 控制項提供數個事件，您可以進行程式設計。 這可讓您執行自訂的常式，每當事件發生時。 下表列出支援 GridView 控制項的事件。
 
-| **Event - 事件** | **描述** |
+| **Event** | **描述** |
 | --- | --- |
 | PageIndexChanged | 發生於按一下其中一個頁面巡覽區按鈕時，但之後 GridView 控制項處理分頁作業。 當您需要執行的工作之後使用者瀏覽到控制項中的不同頁面, 時，通常使用這個事件。 |
 | PageIndexChanging | 發生於按一下其中一個頁面巡覽區按鈕時，但之前 GridView 控制項處理分頁作業。 此事件通常用來取消分頁作業。 |
@@ -262,7 +262,7 @@ FormView 控制項提供許多內建功能，可讓使用者更新、 刪除、 
 
 範本會使用 FormView 控制項，因為它不會提供自動產生命令按鈕，來執行更新、 刪除或插入作業。 您必須手動將這些命令按鈕，在適當的範本。 FormView 控制項可辨識某些按鈕具有他們**CommandName**設為特定值的屬性。 下表列出可在 FormView 控制項辨識的命令按鈕。
 
-| **按鈕** | **Commandname 值** | **描述** |
+| **Button** | **Commandname 值** | **描述** |
 | --- | --- | --- |
 | 取消 | 「 取消 」 | 用於更新或插入作業以取消作業，並捨棄使用者所輸入的值。 FormView 控制項然後回到 DefaultMode 屬性所指定的模式。 |
 | 刪除 | "Delete" | 用於刪除作業，以刪除資料來源中顯示的資料錄。 引發的 ItemDeleting 和 ItemDeleted 事件。 |
@@ -296,7 +296,7 @@ FormView 控制項提供分頁功能，可讓使用者瀏覽至其他資料來�
 
 FormView 控制項提供數個事件，您可以進行程式設計。 這可讓您執行自訂的常式，每當事件發生時。 下表列出支援 FormView 控制項的事件。
 
-| **Event - 事件** | **描述** |
+| **Event** | **描述** |
 | --- | --- |
 | ItemCommand | 發生於按一下 FormView 控制項內的按鈕。 若要在控制項中按一下按鈕時執行的工作通常使用這個事件。 |
 | ItemCreated | FormView 控制項中建立所有 FormViewRow 物件之後，就會發生。 這個事件通常用於顯示之前修改記錄的值。 |
@@ -388,7 +388,7 @@ FormView 控制項提供數個事件，您可以進行程式設計。 這可讓�
 
 在 DetailsView 控制項提供數個事件，您可以進行程式設計。 這可讓您執行自訂的常式，每當事件發生時。 下表列出支援 DetailsView 控制項的事件。 在 DetailsView 控制項也會繼承自其基底類別的這些事件：資料繫結、 資料繫結，處置，Init、 負載、 PreRender，以及轉譯。
 
-| **Event - 事件** | **描述** |
+| **Event** | **描述** |
 | --- | --- |
 | ItemCommand | 在 DetailsView 控制項中按一下按鈕時，就會發生。 |
 | ItemCreated | 在 DetailsView 控制項中建立所有 DetailsViewRow 物件之後，就會發生。 這個事件通常用於顯示之前修改記錄的值。 |
@@ -508,7 +508,7 @@ TreeView 控制項有數個屬性會影響控制項的作業。 最明顯的屬�
 
 **ShowCheckBoxes**屬性會影響是否節點會顯示一個核取方塊，當呈現。 有效的值，這個屬性為**無**，**根**，**父**，**分葉**，以及**所有**。 這些變更會影響 [TreeView] 控制項，如下所示：
 
-| **屬性值** | **作用** |
+| **屬性值** | **Effect** |
 | --- | --- |
 | None | 核取方塊不會顯示在任何節點上。 這是預設設定。 |
 | 根目錄 | 核取方塊只會顯示在根節點上。 |
@@ -587,7 +587,7 @@ SiteMapPath 控制項組成 SiteMapNodeItem 物件。 有三種類型的節點;�
 
 控制作業 SiteMapPath 控制項的屬性如下所示：
 
-| **屬性** | **屬性的描述** |
+| **Property** | **屬性的描述** |
 | --- | --- |
 | ParentLevelsDisplayed | 控制要顯示多少個父節點。 預設值為-1，不會限制顯示的父節點的數目。 |
 | PathDirection | 控制 SiteMapPath 的方向。 有效的值為 RootToCurrent （預設值） 和 CurrentToRoot。 |

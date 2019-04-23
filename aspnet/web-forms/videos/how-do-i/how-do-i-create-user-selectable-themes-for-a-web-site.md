@@ -12,7 +12,7 @@ ms.openlocfilehash: c9c97bb2627054380d92eee5468ca03a81d2f61e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413356"
 ---
 # <a name="how-do-i-create-user-selectable-themes-for-a-web-site"></a>[How Do i:]建立網站的使用者可選取的佈景主題

@@ -12,7 +12,7 @@ ms.openlocfilehash: de2eb281cd4bab46635af480ac2e8f07f60f1591
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408104"
 ---
 # <a name="how-do-i-implement-the-persistent-communications-pattern-using-web-services"></a>[How Do i:]實作使用 Web 服務的持續性通訊模式？

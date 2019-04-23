@@ -12,7 +12,7 @@ ms.openlocfilehash: 4a8e9020f2e171e4549670915290df5aab78a3e0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414435"
 ---
 # <a name="how-do-i--file-uploads-with-an-ajax-style-interface"></a>[How Do i:] 檔案上傳使用 AJAX 樣式介面

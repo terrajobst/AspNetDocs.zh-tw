@@ -13,7 +13,7 @@ ms.openlocfilehash: c04719e06c6c0900c8f8268b73f833b525ea3dd6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410834"
 ---
 # <a name="aspnet-web-api"></a>ASP.NET Web API
@@ -24,10 +24,10 @@ ms.locfileid: "59410834"
 
         - [開始使用 Web API 2 (C#)](overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)
         - [Web API 2 中的動作結果](overview/getting-started-with-aspnet-web-api/action-results.md)
-        - [使用具有 ASP.NET Web Forms 的 Web API](overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms.md)
+        - [使用具有 ASP.NET Web Form 的 Web API](overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms.md)
         - [建立 Web API 說明頁面](overview/getting-started-with-aspnet-web-api/creating-api-help-pages.md)
-        - [實際操作實驗室：使用 ASP.NET Web API 和 Angular.js 建置單一頁面應用程式 (SPA)](overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
-    - [路由](overview/web-api-routing-and-actions/index.md)
+        - [實習實驗室：建置使用 ASP.NET Web API 和 Angular.js 的單一頁面應用程式 (SPA)](overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
+    - [路由傳送](overview/web-api-routing-and-actions/index.md)
 
         - [Web API 中的路由](overview/web-api-routing-and-actions/routing-in-aspnet-web-api.md)
         - [Web API 中的路由和動作選項](overview/web-api-routing-and-actions/routing-and-action-selection.md)
@@ -38,7 +38,7 @@ ms.locfileid: "59410834"
         - [使用 Web API 2 和 Entity Framework 6](overview/data/using-web-api-with-entity-framework/index.md)
 
             - [建立專案](overview/data/using-web-api-with-entity-framework/part-1.md)
-            - [新增模型與控制器](overview/data/using-web-api-with-entity-framework/part-2.md)
+            - [新增模型和控制器](overview/data/using-web-api-with-entity-framework/part-2.md)
             - [植入資料庫](overview/data/using-web-api-with-entity-framework/part-3.md)
             - [處理實體關聯性](overview/data/using-web-api-with-entity-framework/part-4.md)
             - [建立資料傳輸物件 (DTO)](overview/data/using-web-api-with-entity-framework/part-5.md)
@@ -114,8 +114,8 @@ ms.locfileid: "59410834"
         - [從 .NET 用戶端呼叫 Web API (C#)](overview/advanced/calling-a-web-api-from-a-net-client.md)
         - [Web API 中的 HTTP 訊息處理常式](overview/advanced/http-message-handlers.md)
         - [Web API 中的 HttpClient 訊息處理常式](overview/advanced/httpclient-message-handlers.md)
-        - [傳送 Web API 的 HTML 表單資料：Form-urlencoded 資料](overview/advanced/sending-html-form-data-part-1.md)
-        - [傳送 Web API 的 HTML 表單資料：檔案上傳與多部分 MIME](overview/advanced/sending-html-form-data-part-2.md)
+        - [傳送 Web API 中的 HTML 表單資料：Form-urlencoded 資料](overview/advanced/sending-html-form-data-part-1.md)
+        - [傳送 Web API 中的 HTML 表單資料：檔案上傳和多個 MIME](overview/advanced/sending-html-form-data-part-2.md)
         - [ASP.NET Web API 中的 HTTP Cookie](overview/advanced/http-cookies.md)
     - [發行](overview/releases/index.md)
 
@@ -125,26 +125,26 @@ ms.locfileid: "59410834"
     - [舊版](overview/older-versions/index.md)
 
         - [啟用 Web API 1 中的 CRUD 作業](overview/older-versions/creating-a-web-api-that-supports-crud-operations.md)
-        - [搭配 Entity Framework 5 使用 ASP.NET Web API 1](overview/older-versions/using-web-api-1-with-entity-framework-5/index.md)
+        - [使用 ASP.NET Web API 1 和 Entity Framework 5](overview/older-versions/using-web-api-1-with-entity-framework-5/index.md)
 
             - [概觀與建立專案](overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-1.md)
-            - [建立領域模型](overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2.md)
-            - [建立系統管理員控制器](overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3.md)
-            - [新增系統管理員檢視](overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-4.md)
+            - [建立網域模型](overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2.md)
+            - [建立管理員控制器](overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3.md)
+            - [新增管理員檢視](overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-4.md)
             - [使用 Knockout.js 建立動態 UI](overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-5.md)
             - [建立產品和訂單控制器](overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-6.md)
             - [建立主要頁面](overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7.md)
         - [自我裝載 Web API 1 (C#)](overview/older-versions/self-host-a-web-api.md)
         - [使用 ASP.NET Web API 建置 RESTful API](overview/older-versions/build-restful-apis-with-aspnet-web-api.md)
-- [視訊](videos/index.md)
+- [影片](videos/index.md)
 
     - [概觀與使用者入門](videos/getting-started/index.md)
 
         - [ASP.NET Web API](videos/getting-started/aspnet-web-api.md)
-        - [ASP.NET Web API，第 1 部分：您的第一個 Web API](videos/getting-started/your-first-web-api.md)
-        - [ASP.NET Web API，第 2 部分：取得資料](videos/getting-started/getting-data.md)
-        - [ASP.NET Web API，第 3 部分：刪除與更新](videos/getting-started/delete-and-update.md)
-        - [ASP.NET Web API，第 4 部分：分頁與查詢](videos/getting-started/paging-and-querying.md)
-        - [ASP.NET Web API，第 5 部分：自訂驗證](videos/getting-started/custom-validation.md)
-        - [ASP.NET Web API，第 6 部分：Authorization](videos/getting-started/authorization.md)
+        - [ASP.NET Web API 第 1 部分：您的第一個 Web API](videos/getting-started/your-first-web-api.md)
+        - [ASP.NET Web API 第 2 部分：取得資料](videos/getting-started/getting-data.md)
+        - [ASP.NET Web API 第 3 部分：Delete 和 Update](videos/getting-started/delete-and-update.md)
+        - [ASP.NET Web API 第 4 部分：分頁和查詢](videos/getting-started/paging-and-querying.md)
+        - [ASP.NET Web API 第 5 部分：自訂驗證](videos/getting-started/custom-validation.md)
+        - [ASP.NET Web API 第 6 部分：Authorization](videos/getting-started/authorization.md)
 - [Web API 範例清單](samples-list.md)

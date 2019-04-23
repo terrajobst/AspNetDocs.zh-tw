@@ -12,7 +12,7 @@ ms.openlocfilehash: a8121a2d7c4ed14e296dc72c72ca7c25939a2b50
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414006"
 ---
 # <a name="understanding-and-handling-connection-lifetime-events-in-signalr-1x"></a>了解和處理連線存留期事件 SignalR 1.x

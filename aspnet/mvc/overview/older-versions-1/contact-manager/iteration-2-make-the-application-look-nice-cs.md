@@ -12,7 +12,7 @@ ms.openlocfilehash: 6d3286a0ec2b03f6efdc56fd9816029482a879a6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415423"
 ---
 # <a name="iteration-2--make-the-application-look-nice-c"></a>反覆項目 #2 – 讓應用程式看起來不錯 (C#)
@@ -50,7 +50,7 @@ by [Microsoft](https://github.com/microsoft)
 這個反覆項目的目的是要提升的連絡人管理員應用程式的外觀。 目前，連絡管理員會使用預設 ASP.NET MVC 檢視主版頁面和階層式樣式表的項目，（請參閱 圖 1）。 這些不要看起來不正確，但我不想要連絡管理員，要看起來就像每個其他的 ASP.NET MVC 網站。 我想要自訂的檔案中取代這些檔案。
 
 
-[![T他 [新增專案] 對話方塊中](iteration-2-make-the-application-look-nice-cs/_static/image1.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image1.png)
+[![[新增專案] 對話方塊](iteration-2-make-the-application-look-nice-cs/_static/image1.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image1.png)
 
 **圖 01**:ASP.NET MVC 應用程式的預設外觀 ([按一下以檢視完整大小的影像](iteration-2-make-the-application-look-nice-cs/_static/image2.png))
 
@@ -68,7 +68,7 @@ ASP.NET MVC 設計資源庫是 Microsoft 所提供的免費資源。 ASP.NET MVC
 ASP.NET MVC 的設計庫裝載建立專為在 ASP.NET MVC 專案中使用的免費網站設計的集合。 設計是由社群成員的上傳。 資源庫的訪客可以投票給他們最愛的設計 （請參閱 圖 2）。
 
 
-[![T他 [新增專案] 對話方塊中](iteration-2-make-the-application-look-nice-cs/_static/image2.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image3.png)
+[![[新增專案] 對話方塊](iteration-2-make-the-application-look-nice-cs/_static/image2.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image3.png)
 
 **圖 02**:ASP.NET MVC 設計資源庫 ([按一下以檢視完整大小的影像](iteration-2-make-the-application-look-nice-cs/_static/image4.png))
 
@@ -83,17 +83,17 @@ ASP.NET MVC 的設計庫裝載建立專為在 ASP.NET MVC 專案中使用的免�
 6. 選取 [Visual Studio] 功能表選項**編輯、 尋找和取代 快速取代**，並取代 *[MyProjectName]* 具有*ContactManager* （請參閱 [圖 5]）。
 
 
-[![T他 [新增專案] 對話方塊中](iteration-2-make-the-application-look-nice-cs/_static/image3.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image5.png)
+[![[新增專案] 對話方塊](iteration-2-make-the-application-look-nice-cs/_static/image3.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image5.png)
 
 **圖 03**:解除封鎖檔案從網路下載 ([按一下以檢視完整大小的影像](iteration-2-make-the-application-look-nice-cs/_static/image6.png))
 
 
-[![T他 [新增專案] 對話方塊中](iteration-2-make-the-application-look-nice-cs/_static/image4.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image7.png)
+[![[新增專案] 對話方塊](iteration-2-make-the-application-look-nice-cs/_static/image4.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image7.png)
 
 **圖 04**:覆寫在 [方案總管] 中的檔案 ([按一下以檢視完整大小的影像](iteration-2-make-the-application-look-nice-cs/_static/image8.png))
 
 
-[![T他 [新增專案] 對話方塊中](iteration-2-make-the-application-look-nice-cs/_static/image5.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image9.png)
+[![[新增專案] 對話方塊](iteration-2-make-the-application-look-nice-cs/_static/image5.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image9.png)
 
 **圖 05**:ContactManager 以取代 [ProjectName] ([按一下以檢視完整大小的影像](iteration-2-make-the-application-look-nice-cs/_static/image10.png))
 
@@ -101,7 +101,7 @@ ASP.NET MVC 的設計庫裝載建立專為在 ASP.NET MVC 專案中使用的免�
 完成這些步驟之後，您的 web 應用程式將使用新的設計。 [圖 6] 頁面會說明與年 10 月設計的連絡人管理員應用程式的外觀。
 
 
-[![T他 [新增專案] 對話方塊中](iteration-2-make-the-application-look-nice-cs/_static/image6.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image11.png)
+[![[新增專案] 對話方塊](iteration-2-make-the-application-look-nice-cs/_static/image6.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image11.png)
 
 **圖 06**:ContactManager 年 10 月範本 ([按一下以檢視完整大小的影像](iteration-2-make-the-application-look-nice-cs/_static/image12.png))
 
@@ -115,7 +115,7 @@ ASP.NET MVC 設計資源庫上有不同的設計樣式的好選項。 資源庫�
 我會壓縮設定連絡管理員反覆項目 # 1，並傳送設計公司的專案。 沒有 Visual Studio （可惜在其上 ！），但並未呈現問題。 他們能夠從免費下載 Microsoft Visual Web Developer [ https://www.asp.net ](https://www.asp.net)網站並開啟在 Visual Web Developer 中的連絡人管理員應用程式。 在幾天，它們必須產生圖 7 中的設計。
 
 
-[![T他 [新增專案] 對話方塊中](iteration-2-make-the-application-look-nice-cs/_static/image7.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image13.png)
+[![[新增專案] 對話方塊](iteration-2-make-the-application-look-nice-cs/_static/image7.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image13.png)
 
 **圖 07**:ASP.NET MVC 的連絡人管理員設計 ([按一下以檢視完整大小的影像](iteration-2-make-the-application-look-nice-cs/_static/image14.png))
 
@@ -139,7 +139,7 @@ Html.ActionLink() 方法會呈現整個的 HTML 超連結。 Url.Action() 方法
 此外，請注意，新的設計，包含選取或未選取索引標籤。 例如，在 圖 8**建立新的連絡人**已選取索引標籤和**我的連絡人**未選取索引標籤。
 
 
-[![T他 [新增專案] 對話方塊中](iteration-2-make-the-application-look-nice-cs/_static/image8.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image15.png)
+[![[新增專案] 對話方塊](iteration-2-make-the-application-look-nice-cs/_static/image8.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image15.png)
 
 **圖 08**:選取和取消選取索引標籤 ([按一下以檢視完整大小的影像](iteration-2-make-the-application-look-nice-cs/_static/image16.png))
 

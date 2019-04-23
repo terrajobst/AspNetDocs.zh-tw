@@ -12,7 +12,7 @@ ms.openlocfilehash: 1483030faf631099b8c044d1fbbdd000128f4fce
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414188"
 ---
 # <a name="how-do-i-create-excel-spreadsheets-using-linq-to-xml"></a>[How Do i:]建立使用 LINQ to XML 的 Excel 試算表？

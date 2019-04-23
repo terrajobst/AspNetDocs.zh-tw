@@ -12,7 +12,7 @@ ms.openlocfilehash: 79e09dddb39bd00019584da2ab199c03a42c67f8
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412537"
 ---
 # <a name="deploying-web-site-projects-in-visual-studio-2008-and-earlier"></a>在 Visual Studio 2008 與更早版本中部署網站專案
@@ -24,7 +24,7 @@ ms.locfileid: "59412537"
 - [判斷需要部署哪些檔案 (C#)](determining-what-files-need-to-be-deployed-cs.md)
 - [使用 FTP 用戶端部署您的網站 (C#)](deploying-your-site-using-an-ftp-client-cs.md)
 - [使用 Visual Studio 部署您的網站 (C#)](deploying-your-site-using-visual-studio-cs.md)
-- [開發與生產環境間的常見設定差異 (C#)](common-configuration-differences-between-development-and-production-cs.md)
+- [開發與生產環境間的常見組態差異 (C#)](common-configuration-differences-between-development-and-production-cs.md)
 - [IIS 與 ASP.NET 程式開發伺服器間的核心差異 (C#)](core-differences-between-iis-and-the-asp-net-development-server-cs.md)
 - [部署資料庫 (C#)](deploying-a-database-cs.md)
 - [設定生產環境 Web 應用程式使用生產資料庫 (C#)](configuring-the-production-web-application-to-use-the-production-database-cs.md)
@@ -40,7 +40,7 @@ ms.locfileid: "59412537"
 - [判斷需要部署哪些檔案 (VB)](determining-what-files-need-to-be-deployed-vb.md)
 - [使用 FTP 用戶端部署您的網站 (VB)](deploying-your-site-using-an-ftp-client-vb.md)
 - [使用 Visual Studio 部署您的網站 (VB)](deploying-your-site-using-visual-studio-vb.md)
-- [開發與生產環境間的常見設定差異 (VB)](common-configuration-differences-between-development-and-production-vb.md)
+- [開發與生產環境間的常見組態差異 (VB)](common-configuration-differences-between-development-and-production-vb.md)
 - [IIS 與 ASP.NET 程式開發伺服器間的核心差異 (VB)](core-differences-between-iis-and-the-asp-net-development-server-vb.md)
 - [部署資料庫 (VB)](deploying-a-database-vb.md)
 - [設定生產環境 Web 應用程式使用生產資料庫 (VB)](configuring-the-production-web-application-to-use-the-production-database-vb.md)
@@ -50,5 +50,5 @@ ms.locfileid: "59412537"
 - [處理未處理的例外狀況 (VB)](processing-unhandled-exceptions-vb.md)
 - [使用 ASP.NET 狀況監控記錄錯誤的詳細資料 (VB)](logging-error-details-with-asp-net-health-monitoring-vb.md)
 - [使用 ELMAH 記錄錯誤的詳細資料 (VB)](logging-error-details-with-elmah-vb.md)
-- [預先編譯您的網站 (VB)](precompiling-your-website-vb.md)
+- [先行編譯您的網站 (VB)](precompiling-your-website-vb.md)
 - [生產環境網站的使用者和角色 (VB)](users-and-roles-on-the-production-website-vb.md)

@@ -12,7 +12,7 @@ ms.openlocfilehash: c05f0976a135615f7a272b8057eb4c56677e5117
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412420"
 ---
 # <a name="animation-depending-on-a-condition-c"></a>依據條件的動畫 (C#)
@@ -53,7 +53,7 @@ ms.locfileid: "59412420"
 請注意，為小於符號 (`<`) 中`ConditionScript`屬性必須逸出 （）。 當您執行此指令碼，可能是沒有動畫執行時，或兩者的其中一個存在，或兩個的作用。
 
 
-[![T他面板漸淡但不調整大小，因此未在第二個動畫執行後的第一個](animation-depending-on-a-condition-cs/_static/image2.png)](animation-depending-on-a-condition-cs/_static/image1.png)
+[![面板淡出但不調整大小，因此未在第二個動畫執行後的第一個](animation-depending-on-a-condition-cs/_static/image2.png)](animation-depending-on-a-condition-cs/_static/image1.png)
 
 面板淡出但不調整大小，因此未在第二個動畫執行後的第一個 ([按一下以檢視完整大小的影像](animation-depending-on-a-condition-cs/_static/image3.png))
 

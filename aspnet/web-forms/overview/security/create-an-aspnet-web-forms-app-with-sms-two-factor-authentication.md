@@ -12,7 +12,7 @@ ms.openlocfilehash: 2010de510cf44bba1b95d29dbdb573ab78f452f7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411354"
 ---
 # <a name="create-an-aspnet-web-forms-app-with-sms-two-factor-authentication-c"></a>使用 SMS 雙因素驗證建立 ASP.NET Web Forms 應用程式 (C#)
@@ -108,7 +108,7 @@ ms.locfileid: "59411354"
 <a id="addRes"></a>
 ## <a name="additional-resources"></a>其他資源
 
-- [透過 ASP.NET Identity 使用簡訊和電子郵件進行的雙重要素驗證](../../../identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
+- [使用 SMS 的雙因素驗證和使用 ASP.NET Identity 的電子郵件](../../../identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
 - [連結至 ASP.NET Identity 建議資源](../../../identity/overview/getting-started/aspnet-identity-recommended-resources.md)
 - [使用成員資格、 OAuth 和 SQL Database 的安全 ASP.NET Web Forms 應用程式部署至 Azure 網站](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)
 - [ASP.NET Web Form 教學課程系列-新增 OAuth 2.0 提供者](../getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal.md#OAuthWebForms)

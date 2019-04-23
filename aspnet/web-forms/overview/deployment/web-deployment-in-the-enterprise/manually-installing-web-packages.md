@@ -12,7 +12,7 @@ ms.openlocfilehash: 9d0e57eb85242a0d6fa8ca9eef7f6c741862069d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408793"
 ---
 # <a name="manually-installing-web-packages"></a>手動安裝 Web 套件

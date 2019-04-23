@@ -12,7 +12,7 @@ ms.openlocfilehash: 028631f8855e4d94bebb0e965de75c4025e22859
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409261"
 ---
 # <a name="part-7-creating-the-main-page"></a>第 7 部分：建立主要頁面
@@ -83,7 +83,7 @@ ms.locfileid: "59409261"
 
 [新增順序] 按鈕呼叫`addItemToCart`上`ProductViewModel`產品的執行個體。 這示範了 Knockout.js 的不錯的功能：當檢視模型包含其他檢視模型時，您可以套用繫結至內部模型。 在此範例中，內的繫結`foreach`套用至每個`ProductViewModel`執行個體。 這個方法會比較簡潔，比將所有的功能放入單一檢視模型。
 
-**購物車**
+**Cart**
 
 以下是購物車的繫結：
 
@@ -91,7 +91,7 @@ ms.locfileid: "59409261"
 
 這會逐一查看車陣列，並顯示名稱、 價格和數量。 請注意，「 移除 」 連結的 「 建立訂單 」 按鈕會繫結至檢視模型函式。
 
-**Orders**
+**訂單**
 
 以下是訂單清單的繫結：
 

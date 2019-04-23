@@ -12,7 +12,7 @@ ms.openlocfilehash: 8d41668b9302f6e775bba0d2cc661dc54e38a5dc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416060"
 ---
 # <a name="visual-studio-2012-hands-on-labs"></a>Visual Studio 2012 實習實驗室
@@ -21,5 +21,5 @@ ms.locfileid: "59416060"
 
 
 - [Visual Studio 2012 中的 ASP.NET 和網頁程式開發的新功能](whats-new-in-aspnet-and-web-development-in-visual-studio-2012.md)
-- [ASP.NET 4.5 的 Web Forms 新功能](whats-new-in-web-forms-in-aspnet-45.md)
+- [ASP.NET 4.5 的 Web Form 新功能](whats-new-in-web-forms-in-aspnet-45.md)
 - [在 Visual Studio 2012 中使用 Page Inspector](using-page-inspector-in-visual-studio-2012.md)

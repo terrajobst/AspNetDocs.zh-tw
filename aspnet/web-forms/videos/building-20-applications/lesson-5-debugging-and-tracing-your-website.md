@@ -12,7 +12,7 @@ ms.openlocfilehash: ed84727a5ee0fa625af433fa07d1dd17eab6ba36
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411445"
 ---
 # <a name="lesson-5-debugging-and-tracing-your-website"></a>[第 5 課：] 偵錯和追蹤網站

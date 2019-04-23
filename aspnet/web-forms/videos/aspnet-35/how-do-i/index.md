@@ -12,7 +12,7 @@ ms.openlocfilehash: 8a7251971410ef2539e3957039de33af6e74371c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415449"
 ---
 # <a name="how-do-i"></a>如何
@@ -26,7 +26,7 @@ ms.locfileid: "59415449"
 - [使用 Visual Studio 2008 .NET Framework](how-do-i-working-with-visual-studio-2008-net-framework.md)
 - [將項目新增至 CSS 檔案並立即建立新的 CSS](how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly.md)
 - [進階的階層式樣式表功能和管理](how-do-i-advance-cascading-style-sheet-features-and-management.md)
-- [將 .NET 2.0 Windows Forms 應用程式轉換成 .NET 3.5](how-do-i-converting-a-net-20-windows-forms-application-to-net-35.md)
+- [將 .NET 2.0 Windows Form 應用程式轉換成 .NET 3.5](how-do-i-converting-a-net-20-windows-forms-application-to-net-35.md)
 - [Entity Framework 使用者入門](how-do-i-get-started-with-the-entity-framework.md)
 - [使用新的實體資料來源](how-do-i-use-the-new-entity-data-source.md)
 - [使用 Entity Framework 序列化圖形](how-do-i-serialize-a-graph-with-the-entity-framework.md)

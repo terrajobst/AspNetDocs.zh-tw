@@ -12,7 +12,7 @@ ms.openlocfilehash: ec59b63050a9d561c4f3da5a8eaaffbefef48454
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410522"
 ---
 # <a name="core-differences-between-iis-and-the-aspnet-development-server-c"></a>IIS 與 ASP.NET 程式開發伺服器間的核心差異 (C#)
@@ -50,7 +50,7 @@ ASP.NET Development Server 會將連入要求關聯的目前登入使用者的�
 接下來，請瀏覽*教導您自己 ASP.NET 3.5 24 小時內*在開發環境中使用 ASP.NET 程式開發伺服器的活頁簿檢閱頁面。 假設您已登入您的電腦帳戶具有足夠的權限，即可建立和修改的文字檔中的 web 應用程式的根目錄書籍評論會顯示與之前相同，但每次頁面瀏覽的日期和時間以及使用者的 IP 位址儲存在`LastTYASP35Access.txt`檔案。 將瀏覽器指向這個檔案中;您應該會看到類似 圖 1 中所示的訊息。
 
 
-[![T他的文字檔案包含的最後一個日期和時間瀏覽書籍評論](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image2.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image1.png)
+[![文字檔案包含的最後一個日期和時間瀏覽書籍評論](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image2.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image1.png)
 
 **圖 1**:文字檔案包含的最後一個日期和時間瀏覽書籍評論 ([按一下以檢視完整大小的影像](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image3.png))
 
@@ -58,7 +58,7 @@ ASP.NET Development Server 會將連入要求關聯的目前登入使用者的�
 部署至生產環境 web 應用程式，，然後瀏覽託管*教導您自己 ASP.NET 3.5 24 小時內*活頁簿 [檢閱] 頁面。 此時您應該看到活頁簿的 檢閱 頁面為標準模式 或 圖 2 所示的錯誤訊息。 某些 web 主機提供者授與匿名 ASP.NET 電腦帳戶，可以在其中案例頁面將會運作不會發生錯誤的 「 寫入 」 權限。 如果，不過，您的 web 主機提供者會禁止匿名帳戶的寫入權限就[`UnauthorizedAccessException`例外狀況](https://msdn.microsoft.com/library/system.unauthorizedaccessexception.aspx)時引發`TYASP35.aspx`網頁嘗試寫入目前的日期和時間`LastTYASP35Access.txt`檔案。
 
 
-[![T預設電腦帳戶供 IIS 他沒有在檔案系統的寫入權限](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image5.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image4.png)
+[![IIS 所使用的預設電腦帳戶並沒有寫入檔案系統權限](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image5.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image4.png)
 
 **圖 2**:預設電腦帳戶供 IIS 不會不具有權限來寫入至檔案系統 ([按一下以檢視完整大小的影像](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image6.png))
 
@@ -96,7 +96,7 @@ ASP.NET 執行階段會執行一些步驟來產生要求的內容，包括 （�
 在網址列輸入此 URL 會導致將要求傳送至 ASP.NET Development Server，檔案瀏覽器。 ASP.NET 程式開發伺服器會送出 ASP.NET 執行階段進行處理的要求。 因為我們尚未登入，而且`Web.config`中`PrivateDocs`資料夾已設定為拒絕匿名存取，ASP.NET 執行階段將自動重新導向我們登入 頁面中， `Login.aspx` （請參閱 圖 3）。 當將使用者重新導向至登入頁面中，ASP.NET 包含`ReturnUrl`查詢字串參數，指出頁面的使用者嘗試檢視。 已成功登入使用者之後可以傳回至此頁面。
 
 
-[![Unauthorized 使用者會自動重新導向至登入頁面](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image8.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image7.png)
+[![未經授權的使用者會自動重新導向至登入頁面](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image8.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image7.png)
 
 **圖 3**:未經授權的使用者會自動重新導向至登入頁面 ([按一下以檢視完整大小的影像](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image9.png))
 
@@ -104,7 +104,7 @@ ASP.NET 執行階段會執行一些步驟來產生要求的內容，包括 （�
 現在讓我們來看看這在生產環境上的運作方式。 部署您的應用程式，並在 Pdf 的其中一個輸入的直接 URL`PrivateDocs`在生產環境中的資料夾。 這會提示您的瀏覽器傳送要求 IIS 的檔案。 因為靜態檔案要求時，IIS 會擷取，並將檔案傳回而不叫用 ASP.NET 執行階段。 如此一來，已執行浮點數。 任何 URL 授權檢查應該私用 PDF 的內容都知道檔案的直接 URL 的任何人可以存取的。
 
 
-[![A匿名使用者可以下載私用 PDF 檔案的輸入直接 URL 到檔案](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image11.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image10.png)
+[![匿名使用者可以輸入檔案的直接 URL 下載私用的 PDF 檔案](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image11.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image10.png)
 
 **圖 4**:匿名使用者可以下載私用 PDF 檔案的輸入直接 URL 到檔案 ([按一下以檢視完整大小的影像](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image12.png))
 

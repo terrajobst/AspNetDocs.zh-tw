@@ -12,7 +12,7 @@ ms.openlocfilehash: 200e6b8cf8c32fbf70b383fc02e2fd74cbc313e5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419869"
 ---
 # <a name="mvc-video-training-from-pluralsight"></a>Pluralsight 提供的 MVC 訓練影片

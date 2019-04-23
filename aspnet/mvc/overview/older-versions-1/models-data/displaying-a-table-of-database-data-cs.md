@@ -12,7 +12,7 @@ ms.openlocfilehash: 99b18de33e266adb626f4ab53ff20b1f52102900
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417581"
 ---
 # <a name="displaying-a-table-of-database-data-c"></a>顯示資料庫資料的資料表 (C#)
@@ -33,7 +33,7 @@ by [Microsoft](https://github.com/microsoft)
 <a id="0.3_table01"></a>
 
 
-| **資料行名稱** | **資料類型** | **允許 Null** |
+| **資料行名稱** | **資料類型** | **允許 null 值** |
 | --- | --- | --- |
 | ID | Int | False |
 | 標題 | Nvarchar(200) | False |
@@ -61,7 +61,7 @@ by [Microsoft](https://github.com/microsoft)
 3. 在 **選擇您的資料庫物件**步驟中，展開 資料表 節點中，選取 電影資料表。 輸入的命名空間*模型*然後按一下**完成** 按鈕。
 
 
-[![Creating LINQ to SQL 類別](displaying-a-table-of-database-data-cs/_static/image1.jpg)](displaying-a-table-of-database-data-cs/_static/image1.png)
+[![建立 LINQ to SQL 類別](displaying-a-table-of-database-data-cs/_static/image1.jpg)](displaying-a-table-of-database-data-cs/_static/image1.png)
 
 **圖 01**:建立 LINQ to SQL 類別 ([按一下以檢視完整大小的影像](displaying-a-table-of-database-data-cs/_static/image2.png))
 
@@ -69,7 +69,7 @@ by [Microsoft](https://github.com/microsoft)
 Entity Data Model 精靈完成之後，就會開啟實體資料模型設計工具。 設計工具應該會顯示電影實體 （請參閱 圖 2）。
 
 
-[![T他 Entity Data Model Designer](displaying-a-table-of-database-data-cs/_static/image2.jpg)](displaying-a-table-of-database-data-cs/_static/image3.png)
+[![實體資料模型設計工具](displaying-a-table-of-database-data-cs/_static/image2.jpg)](displaying-a-table-of-database-data-cs/_static/image3.png)
 
 **圖 02**:實體資料模型設計工具 ([按一下以檢視完整大小的影像](displaying-a-table-of-database-data-cs/_static/image4.png))
 
@@ -83,7 +83,7 @@ Entity Data Model 精靈完成之後，就會開啟實體資料模型設計工�
 既然我們已代表我們的資料庫記錄的方式，我們可以建立傳回的電影集合的控制站。 Visual Studio 方案總管 視窗中，以滑鼠右鍵按一下 控制器 資料夾，然後選取功能表選項**新增、 控制站**（請參閱 圖 3）。
 
 
-[![T他加入控制器] 功能表](displaying-a-table-of-database-data-cs/_static/image3.jpg)](displaying-a-table-of-database-data-cs/_static/image5.png)
+[![[加入控制器] 功能表](displaying-a-table-of-database-data-cs/_static/image3.jpg)](displaying-a-table-of-database-data-cs/_static/image5.png)
 
 **圖 03**:[新增控制器] 功能表 ([按一下以檢視完整大小的影像](displaying-a-table-of-database-data-cs/_static/image6.png))
 
@@ -91,7 +91,7 @@ Entity Data Model 精靈完成之後，就會開啟實體資料模型設計工�
 當**新增控制器**對話方塊隨即出現，請輸入控制器名稱 MovieController （請參閱 圖 4）。 按一下 **新增**按鈕以新增新的控制器。
 
 
-[![T他將新增控制器] 對話方塊](displaying-a-table-of-database-data-cs/_static/image4.jpg)](displaying-a-table-of-database-data-cs/_static/image7.png)
+[![[新增控制器] 對話方塊](displaying-a-table-of-database-data-cs/_static/image4.jpg)](displaying-a-table-of-database-data-cs/_static/image7.png)
 
 **圖 04**:[新增控制器] 對話方塊 ([按一下以檢視完整大小的影像](displaying-a-table-of-database-data-cs/_static/image8.png))
 
@@ -117,7 +117,7 @@ using MvcApplication1.Models;
 以滑鼠右鍵按一下 index （） 動作，然後選取功能表選項**加入檢視**（請參閱 圖 5）。
 
 
-[![Adding 檢視](displaying-a-table-of-database-data-cs/_static/image5.jpg)](displaying-a-table-of-database-data-cs/_static/image9.png)
+[![新增檢視](displaying-a-table-of-database-data-cs/_static/image5.jpg)](displaying-a-table-of-database-data-cs/_static/image9.png)
 
 **圖 05**:新增檢視 ([按一下以檢視完整大小的影像](displaying-a-table-of-database-data-cs/_static/image10.png))
 
@@ -125,7 +125,7 @@ using MvcApplication1.Models;
 在 [**加入檢視**] 對話方塊中，檢查標示的核取方塊**建立強型別檢視**。 選取的電影類別**檢視資料類別**。 選取 *清單*作為**檢視內容**（請參閱 圖 6）。 選取這些選項會產生強型別 檢視顯示的電影清單。
 
 
-[![T他將新增檢視對話方塊](displaying-a-table-of-database-data-cs/_static/image6.jpg)](displaying-a-table-of-database-data-cs/_static/image11.png)
+[![[新增檢視] 對話方塊](displaying-a-table-of-database-data-cs/_static/image6.jpg)](displaying-a-table-of-database-data-cs/_static/image11.png)
 
 **圖 06**:新增檢視對話方塊 ([按一下以檢視完整大小的影像](displaying-a-table-of-database-data-cs/_static/image12.png))
 
@@ -139,7 +139,7 @@ using MvcApplication1.Models;
 您可以選取功能表選項來執行應用程式**偵錯，請啟動偵錯**（或按下 F5 鍵）。 執行應用程式會啟動 Internet Explorer。 如果您導覽至 /Movie URL，您會看到 [圖 7] 中的頁面。
 
 
-[![A table 的影片](displaying-a-table-of-database-data-cs/_static/image7.jpg)](displaying-a-table-of-database-data-cs/_static/image13.png)
+[![之電影資料表](displaying-a-table-of-database-data-cs/_static/image7.jpg)](displaying-a-table-of-database-data-cs/_static/image13.png)
 
 **圖 07**:電影的資料表 ([按一下以檢視完整大小的影像](displaying-a-table-of-database-data-cs/_static/image14.png))
 

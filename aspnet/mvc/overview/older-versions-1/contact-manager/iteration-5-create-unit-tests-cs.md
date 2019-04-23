@@ -12,7 +12,7 @@ ms.openlocfilehash: 68080859e205283f56d8f543bfa06b76bb22a39d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408858"
 ---
 # <a name="iteration-5--create-unit-tests-c"></a>反覆項目 #5 – 建立單元測試 (C#)
@@ -117,12 +117,12 @@ Visual Studio 不會包含一個模擬物件架構。 不過，有數個商業�
 5. 完成這些步驟之後，您的 [參考] 資料夾看起來應該像圖 2。
 
 
-[![Unblocking Moq](iteration-5-create-unit-tests-cs/_static/image1.jpg)](iteration-5-create-unit-tests-cs/_static/image1.png)
+[![解除封鎖 Moq](iteration-5-create-unit-tests-cs/_static/image1.jpg)](iteration-5-create-unit-tests-cs/_static/image1.png)
 
 **圖 01**:解除封鎖 Moq ([按一下以檢視完整大小的影像](iteration-5-create-unit-tests-cs/_static/image2.png))
 
 
-[![R在之後加入 Moq eferences](iteration-5-create-unit-tests-cs/_static/image2.jpg)](iteration-5-create-unit-tests-cs/_static/image3.png)
+[![新增 Moq 之後的參考](iteration-5-create-unit-tests-cs/_static/image2.jpg)](iteration-5-create-unit-tests-cs/_static/image3.png)
 
 **圖 02**:新增 Moq 之後的參考 ([按一下以檢視完整大小的影像](iteration-5-create-unit-tests-cs/_static/image4.png))
 
@@ -185,7 +185,7 @@ Visual Studio 不會包含一個模擬物件架構。 不過，有數個商業�
 您也可以選取功能表選項列表 1 中執行單元測試**測試執行時，解決方案 （CTRL + R、 A） 中的所有測試**。 測試的結果會顯示在 測試結果 視窗 （請參閱 圖 4）。
 
 
-[![Test 結果](iteration-5-create-unit-tests-cs/_static/image4.jpg)](iteration-5-create-unit-tests-cs/_static/image7.png)
+[![測試結果](iteration-5-create-unit-tests-cs/_static/image4.jpg)](iteration-5-create-unit-tests-cs/_static/image7.png)
 
 **圖 04**:測試結果 ([按一下以檢視完整大小的影像](iteration-5-create-unit-tests-cs/_static/image8.png))
 

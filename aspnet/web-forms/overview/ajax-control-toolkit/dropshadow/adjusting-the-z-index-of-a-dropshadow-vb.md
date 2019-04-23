@@ -12,7 +12,7 @@ ms.openlocfilehash: b01913b3ad3291d90bdf9455c3d35bb7b36b3f28
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415241"
 ---
 # <a name="adjusting-the-z-index-of-a-dropshadow-vb"></a>調整 DropShadow 的 Z 軸索引 (VB)
@@ -56,12 +56,12 @@ DropShadow 控制項在 AJAX Control Toolkit 擴充具有延伸陰影的面板�
 然後，`DropShadowExtender`控制項沒有與此功能表控制項沒事取這麼長衝突。
 
 
-[![B之前：看不到功能表項目](adjusting-the-z-index-of-a-dropshadow-vb/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image1.png)
+[![之前：看不到功能表項目](adjusting-the-z-index-of-a-dropshadow-vb/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image1.png)
 
 之前：看不到功能表項目 ([按一下以檢視完整大小的影像](adjusting-the-z-index-of-a-dropshadow-vb/_static/image3.png))
 
 
-[![After:此時會出現的功能表項目](adjusting-the-z-index-of-a-dropshadow-vb/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image4.png)
+[![之後：在出現的功能表項目](adjusting-the-z-index-of-a-dropshadow-vb/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-vb/_static/image4.png)
 
 之後：功能表項目會出現 ([按一下以檢視完整大小的影像](adjusting-the-z-index-of-a-dropshadow-vb/_static/image6.png))
 

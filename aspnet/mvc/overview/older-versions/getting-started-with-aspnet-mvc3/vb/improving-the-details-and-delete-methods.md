@@ -12,7 +12,7 @@ ms.openlocfilehash: 63930ebe35e4c37e0cc7c0882582c48348cf201a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417659"
 ---
 # <a name="improving-the-details-and-delete-methods-vb"></a>改善 Details 和 Delete 方法 (VB)

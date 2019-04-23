@@ -12,7 +12,7 @@ ms.openlocfilehash: 9904582450d4386ef8b8656078f6d40dbd1e10be
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412004"
 ---
 # <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>實際操作實驗室：使用 SignalR 的即時 Web 應用程式

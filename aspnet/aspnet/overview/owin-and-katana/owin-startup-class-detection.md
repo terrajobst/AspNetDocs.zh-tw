@@ -12,7 +12,7 @@ ms.openlocfilehash: e4d9424d691f92aacf078faed09689daa40a44fd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418335"
 ---
 # <a name="owin-startup-class-detection"></a>OWIN 啟動類別偵測
@@ -79,8 +79,7 @@ ms.locfileid: "59418335"
      > [!NOTE]
      > 在上述程式碼中，我們有註解`OwinStartup`屬性，我們依賴執行名為類別的慣例`Startup`。-按***F5***執行應用程式。 按 重新整理數次。
 
-    ![](owin-startup-class-detection/_static/image4.png)
-  注意:在本教學課程中的映像中顯示的數字不會符合您看到的數字。 毫秒數的字串用來顯示新的回應，當您重新整理頁面。
+    ![](owin-startup-class-detection/_static/image4.png) 注意：在本教學課程中的映像中顯示的數字不會符合您看到的數字。 毫秒數的字串用來顯示新的回應，當您重新整理頁面。
   您可以看到中的追蹤資訊**輸出**視窗。
 
     ![](owin-startup-class-detection/_static/image5.png)

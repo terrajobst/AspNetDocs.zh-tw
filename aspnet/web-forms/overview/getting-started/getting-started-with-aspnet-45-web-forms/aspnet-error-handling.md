@@ -12,7 +12,7 @@ ms.openlocfilehash: e4b8f059974dec33d6305e7b84919550713bf4e4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409878"
 ---
 # <a name="aspnet-error-handling"></a>ASP.NET 錯誤處理
@@ -344,10 +344,10 @@ ELMAH 現在就來儲存任何未處理發生的錯誤。
 - [Michael 升記號，美國](http://www.930solutions.com/)(twitter: [ @mrsharps ](http://twitter.com/mrsharps))
 - Mike 主教
 - [Mitchel 賣方，美國](http://www.mitchelsellers.com/)(twitter: [ @MitchelSellers ](http://twitter.com/MitchelSellers))
-- [Paul Cociuba, Microsoft](http://linqto.me/Links/pcociuba)
+- [Paul Cociuba Microsoft](http://linqto.me/Links/pcociuba)
 - [聖保羅 Morgado 葡萄牙](http://paulomorgado.net/)
 - [請參閱 Pranav Rastogi Microsoft](https://blogs.msdn.com/b/pranav_rastogi)
-- [Tim Ammann, Microsoft](https://blogs.iis.net/timamm/default.aspx)
+- [Tim Ammann Microsoft](https://blogs.iis.net/timamm/default.aspx)
 - [Tom Dykstra Microsoft](https://blogs.msdn.com/aspnetue)
 
 ## <a name="community-contributions"></a>社群投稿

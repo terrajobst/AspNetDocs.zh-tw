@@ -12,7 +12,7 @@ ms.openlocfilehash: 00390fe4b618f09a0b3f8bfbff513827a504626c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411770"
 ---
 # <a name="aspnet-mvc-storefront-part-18-creating-an-experience"></a>ASP.NET MVC 店面第 18 部分：建立體驗

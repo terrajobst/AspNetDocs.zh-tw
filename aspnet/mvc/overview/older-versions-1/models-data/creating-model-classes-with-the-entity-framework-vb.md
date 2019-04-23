@@ -12,7 +12,7 @@ ms.openlocfilehash: b3c6726c2d08e2e6ac37501f2ab455e427df82bb
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59414046"
 ---
 # <a name="creating-model-classes-with-the-entity-framework-vb"></a>使用 Entity Framework 建立模型類別 (VB)
@@ -116,7 +116,7 @@ Microsoft Entity Framework 是物件關聯式對應 (O/RM) 的工具，可讓您
 
 讓我們開始建立影片資料庫應用程式建立頁面，其中顯示電影資料錄的清單。 在 列表 1 中的主控制器會公開名為 index （） 的動作。 Index （） 動作會傳回所有電影資料錄的電影資料庫資料表中，利用 Entity Framework。
 
-**列表 1 – Controllers\HomeController.vb**
+**Listing 1 – Controllers\HomeController.vb**
 
 [!code-vb[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample1.vb)]
 
@@ -202,7 +202,7 @@ Microsoft Entity Framework 是物件關聯式對應 (O/RM) 的工具，可讓您
 
 最後的資料庫作業，我們需要將在本教學課程中處理，正在刪除資料庫中的記錄。 您可以使用列表 6 中的控制器動作，若要刪除特定資料庫記錄。
 
-**列表 6-\Controllers\HomeController.vb （[刪除] 動作）**
+**Listing 6 -- \Controllers\HomeController.vb (Delete action)**
 
 [!code-vb[Main](creating-model-classes-with-the-entity-framework-vb/samples/sample9.vb)]
 

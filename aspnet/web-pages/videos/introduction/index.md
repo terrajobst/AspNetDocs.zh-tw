@@ -12,7 +12,7 @@ ms.openlocfilehash: d4e5ef19044a265f48d51586062fb7d2dc024b4c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413668"
 ---
 # <a name="introduction-to-web-pages-videos"></a>網頁的影片簡介

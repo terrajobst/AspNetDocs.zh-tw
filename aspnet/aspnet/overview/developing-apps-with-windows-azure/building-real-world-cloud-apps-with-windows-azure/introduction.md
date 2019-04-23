@@ -12,7 +12,7 @@ ms.openlocfilehash: bf9cf1f5be22a5b97ec964277c11ae21066676f0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412407"
 ---
 # <a name="building-real-world-cloud-apps-with-azure"></a>使用 Azure 建置真實世界的雲端應用程式
@@ -100,7 +100,7 @@ Building real-world 定域機組，考慮移轉至雲端，或不熟悉雲端開
     - 啟用高可用性和鬆散結合 web 和背景工作層，藉以改善延展性。
     - 示範：修正其應用程式中的 azure 儲存體佇列。
 - [更多雲端應用程式模式和指導方針](more-patterns-and-guidance.md)。
-- [附錄：Fix It 範例應用程式](the-fix-it-sample-application.md)
+- [附錄：修正範例應用程式](the-fix-it-sample-application.md)
 
     - 已知問題
     - 最佳作法

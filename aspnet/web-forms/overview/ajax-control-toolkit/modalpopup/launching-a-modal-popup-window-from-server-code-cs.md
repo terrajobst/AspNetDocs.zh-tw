@@ -12,7 +12,7 @@ ms.openlocfilehash: 1fd12181e26012c59bde3e6fe153c196d8bf0d31
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59413187"
 ---
 # <a name="launching-a-modal-popup-window-from-server-code-c"></a>從伺服器程式碼啟動強制回應快顯視窗 (C#)
@@ -65,7 +65,7 @@ AJAX Control Toolkit 之 ModalPopup 控制項提供簡單的方式來建立使�
 `$find()`函式會尋找具名項目頁面上，並預期伺服器端 ID，做為參數。 因此，`$find("mpe")`傳回 ModalPopup 控制項的用戶端表示法，其`show()`方法可讓快顯視窗會出現。
 
 
-[![T他的強制回應快顯視窗出現時按一下任一按鈕時](launching-a-modal-popup-window-from-server-code-cs/_static/image2.png)](launching-a-modal-popup-window-from-server-code-cs/_static/image1.png)
+[![強制回應快顯視窗出現時按一下的按鈕](launching-a-modal-popup-window-from-server-code-cs/_static/image2.png)](launching-a-modal-popup-window-from-server-code-cs/_static/image1.png)
 
 強制回應快顯視窗出現時按一下任一按鈕時 ([按一下以檢視完整大小的影像](launching-a-modal-popup-window-from-server-code-cs/_static/image3.png))
 

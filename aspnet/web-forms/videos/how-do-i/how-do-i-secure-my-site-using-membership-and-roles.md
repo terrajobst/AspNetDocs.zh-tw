@@ -12,7 +12,7 @@ ms.openlocfilehash: c8582e47ca9f4025b56acc0ae8dfed7cdf40532a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59416021"
 ---
 # <a name="how-do-i-secure-my-site-using-membership-and-roles"></a>[How Do i:]保護我的網站使用成員資格和角色？

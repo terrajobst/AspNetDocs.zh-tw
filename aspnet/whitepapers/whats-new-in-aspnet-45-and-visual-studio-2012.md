@@ -12,7 +12,7 @@ ms.openlocfilehash: 5f50721b6f263b9cb025f5fa57c923dadeddcd28
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410587"
 ---
 # <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>ASP.NET 4.5 與 Visual Studio 2012 的新功能
@@ -77,7 +77,7 @@ ms.locfileid: "59410587"
         - [括號對稱](#_Toc318097409)
         - [移至定義](#_Toc318097410)
         - [支援 ECMAScript5](#_Toc318097411)
-        - [DOM IntelliSense](#_Toc318097412)
+        - [DOM 的 IntelliSense](#_Toc318097412)
         - [VSDOC 簽章的多載](#_Toc318097413)
         - [隱含的參考](#_Toc318097414)
     - [CSS 編輯器](#_Toc318097415)

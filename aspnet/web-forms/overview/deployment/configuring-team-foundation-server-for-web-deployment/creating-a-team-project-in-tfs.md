@@ -12,7 +12,7 @@ ms.openlocfilehash: 1e727e8124e1f045f8ef25ab7a3d4efbafd4290a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411211"
 ---
 # <a name="creating-a-team-project-in-tfs"></a>在 TFS 中建立 Team 專案
@@ -106,8 +106,7 @@ ms.locfileid: "59411211"
 
    > [!NOTE]
    > 您可能會收到<strong>HTTP 404 找不到</strong>由於 double 的 HTTP 編碼錯誤的錯誤。 如果發生這種情況，取代 URL:   
-   > `[site_collection_URL]/_layouts/permsetup.aspx`
-   > 例如：  
+   > `[site_collection_URL]/_layouts/permsetup.aspx` 例如：  
    > `http://tfs/sites/Fabrikam%20Web%20Projects/_layouts/permsetup.aspx` 
 8. 上**設定註冊群組為此站台**頁面上，新增將建立 team 專案的使用者**擁有者**群組，並再按**確定**。
 

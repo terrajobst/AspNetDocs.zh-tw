@@ -12,7 +12,7 @@ ms.openlocfilehash: 1023d9bef311e58fb5fb0bb24cde80e8320e6bac
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419050"
 ---
 # <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>實際操作實驗室：一個 ASP.NET：整合 ASP.NET Web Form、MVC 與 Web API
@@ -103,7 +103,7 @@ ms.locfileid: "59419050"
 
     ![建立新專案](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image1.png)
 
-    *建立新專案*
+    *建立新的專案*
 2. 在 **新的專案**對話方塊中，選取**ASP.NET Web 應用程式**下**Visual C# |Web**索引標籤，並確定 **.NET Framework 4.5**已選取。 將專案命名為*MyHybridSite*，選擇**位置**然後按一下**確定**。
 
     ![新的 ASP.NET Web 應用程式專案](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image2.png)

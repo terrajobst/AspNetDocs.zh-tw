@@ -12,7 +12,7 @@ ms.openlocfilehash: b0da3032e22123f415bf9865e264832739c29f61
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409014"
 ---
 # <a name="signalr-performance"></a>SignalR 效能
@@ -204,7 +204,7 @@ SignalR 效能和調整的近期簡報，請參閱 <<c0> [ 調整與 ASP.NET Sig
 - **錯誤：中樞解析總計**
 - **錯誤：每秒中樞解析**
 - **錯誤：中樞叫用總數**
-- **錯誤：每秒中樞叫用**
+- **錯誤：Hub Invocation/Sec**
 - **錯誤：傳輸的總數**
 - **錯誤：傳輸/秒**
 
@@ -268,7 +268,7 @@ A**緩衝處理**資料流是已進入錯誤的狀態; 當資料流處於錯誤�
 - Web Service\Current Connections
 - Web Service\Maximum Connections
 
-**執行緒**
+**執行緒處理**
 
 - .NET CLR 鎖定和執行緒\\# 個目前的邏輯執行緒
 - .NET CLR 鎖定和執行緒\\# 個目前的實體執行緒

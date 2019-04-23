@@ -12,7 +12,7 @@ ms.openlocfilehash: c17e3afaf4406489a14d0537a33fef384d6c5a19
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408962"
 ---
 # <a name="determining-what-files-need-to-be-deployed-c"></a>判斷需要部署哪些檔案 (C#)
@@ -93,7 +93,7 @@ Microsoft 發行的 Visual Studio 2005 時它們會卸除對 Web 應用程式專
 [圖 1] 顯示透過瀏覽器檢視時的書籍評論網站的螢幕擷取畫面。 這裡您會看到頁面 ~ /`Tech/TYASP35.aspx`，這會檢閱本書*教導您自己 ASP.NET 3.5 24 小時內*。 跨越頁面和左側的資料行中的功能表的頂端階層連結為基礎網站導覽結構中定義`Web.sitemap`。 在右上角的影像是其中一個映像位於書封面`Images`資料夾。 網站的外觀及操作定義透過階層式樣式表的規則而為名的頁面配置定義在主版頁面中，[Styles] 資料夾中的 CSS 檔案所拼出`Site.master`。
 
 
-[![T他的書籍評論網站提供各式各樣的產品評論](determining-what-files-need-to-be-deployed-cs/_static/image2.png)](determining-what-files-need-to-be-deployed-cs/_static/image1.png)
+[![活頁簿會檢閱網站提供各式各樣的產品評論](determining-what-files-need-to-be-deployed-cs/_static/image2.png)](determining-what-files-need-to-be-deployed-cs/_static/image1.png)
 
 **圖 1:** 活頁簿會檢閱網站提供各式各樣的產品評論 ([按一下以檢視完整大小的影像](determining-what-files-need-to-be-deployed-cs/_static/image3.png))
 
@@ -116,7 +116,7 @@ Web 應用程式專案模型使用明確的編譯-專案的原始程式碼會編
 [圖 2] 顯示書籍評論 Web 應用程式專案所組成的檔案。
 
 
-[![T他的方案總管] 中會列出組成 Web 應用程式專案的檔案](determining-what-files-need-to-be-deployed-cs/_static/image5.png)](determining-what-files-need-to-be-deployed-cs/_static/image4.png)
+[![[方案總管] 列出構成 Web 應用程式專案的檔案](determining-what-files-need-to-be-deployed-cs/_static/image5.png)](determining-what-files-need-to-be-deployed-cs/_static/image4.png)
 
 **圖 2**:方案總管 列出構成 Web 應用程式專案的檔案
 
@@ -143,7 +143,7 @@ Web 應用程式專案模型使用明確的編譯-專案的原始程式碼會編
 圖 3 顯示構成書籍評論網站專案的檔案。
 
 
- [![T他的方案總管] 中會列出組成的網站專案的檔案](determining-what-files-need-to-be-deployed-cs/_static/image7.png)](determining-what-files-need-to-be-deployed-cs/_static/image6.png) 
+ [![[方案總管] 會列出組成的網站專案的檔案](determining-what-files-need-to-be-deployed-cs/_static/image7.png)](determining-what-files-need-to-be-deployed-cs/_static/image6.png) 
 
 **圖 3**:方案總管 會列出組成的網站專案的檔案
 

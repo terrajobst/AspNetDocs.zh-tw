@@ -12,7 +12,7 @@ ms.openlocfilehash: 85862c094cc54365267b1f21e68d235a15519cda
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419232"
 ---
 # <a name="routing-in-aspnet-web-api"></a>ASP.NET Web API 中的路由
@@ -69,7 +69,7 @@ ms.locfileid: "59419232"
 
 | HTTP Verb | URI 的路徑 | 動作 | 參數 |
 | --- | --- | --- | --- |
-| GET | api/products | GetAllProducts | *(無)* |
+| GET | api/products | GetAllProducts | *(none)* |
 | GET | api/products/4 | GetProductById | 4 |
 | DELETE | api/products/4 | DeleteProduct | 4 |
 | POST | api/products | *（沒有相符項目）* |  |

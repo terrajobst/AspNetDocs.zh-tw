@@ -12,7 +12,7 @@ ms.openlocfilehash: f2af665465995e64701a32970b4fb5f3d5eb7eb7
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59419271"
 ---
 # <a name="how-do-i-understand-and-defend-against-script-injection-attacks-in-aspnet"></a>在 ASP.NET 中的方式了解並防範指令碼資料隱碼攻擊

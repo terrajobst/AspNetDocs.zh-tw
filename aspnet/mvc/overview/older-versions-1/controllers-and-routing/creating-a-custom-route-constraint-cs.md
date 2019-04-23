@@ -12,7 +12,7 @@ ms.openlocfilehash: 5d8a40b03a1997904a2736a339dbf6b4003ae7bd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410639"
 ---
 # <a name="creating-a-custom-route-constraint-c"></a>建立自訂的路由條件約束 (C#)
@@ -34,7 +34,7 @@ ms.locfileid: "59410639"
 
 列表 1 中包含的 Localhost 條件約束。
 
-**Listing 1 - LocalhostConstraint.cs**
+**列表 1-LocalhostConstraint.cs**
 
 [!code-csharp[Main](creating-a-custom-route-constraint-cs/samples/sample2.cs)]
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: bf3336c2467553ba3714bbd4fbb41a35a0490768
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410600"
 ---
 # <a name="using-visual-studio-2013-to-create-a-basic-aspnet-45-web-forms-page"></a>使用 Visual Studio 2013 建立基本的 ASP.NET 4.5 Web Form 頁面
@@ -62,7 +62,7 @@ ms.locfileid: "59410600"
 3. 選取 **範本** - &gt; **Visual C#**  - &gt; **Web**左側的 範本 群組。
 4. 選擇**ASP.NET Web 應用程式**中間欄的範本。
 5. 命名您的專案***BasicWebApp***然後按一下**確定** 按鈕。   
-![新增專案對話方塊](creating-a-basic-web-forms-page/_static/image2.png)
+![[新增專案] 對話方塊](creating-a-basic-web-forms-page/_static/image2.png)
 6. 接下來，選取**Web Form**範本，然後按一下**確定**按鈕，以建立專案。  
 ![[新增 ASP.NET 專案] 對話方塊](creating-a-basic-web-forms-page/_static/image3.png)  
 

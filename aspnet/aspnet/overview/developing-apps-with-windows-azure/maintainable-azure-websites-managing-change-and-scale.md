@@ -12,7 +12,7 @@ ms.openlocfilehash: ec0058472f8bc1d8d58e7c78deeb8b6097532510
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409729"
 ---
 # <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>實際操作實驗室：容易維護的 Azure 網站：管理變更與規模
@@ -58,7 +58,7 @@ ms.locfileid: "59409729"
 需要下列項目才能完成這個實際操作實驗室：
 
 - [Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/)或更新版本
-- [Azure SDK for.NET 2.2](https://www.microsoft.com/windowsazure/sdk/)
+- [Azure SDK for .NET 2.2](https://www.microsoft.com/windowsazure/sdk/)
 - [GIT 版本控制系統](http://git-scm.com/download)
 - Microsoft Azure 訂用帳戶
 
@@ -198,7 +198,7 @@ ms.locfileid: "59409729"
 
     ![Add-migration](maintainable-azure-websites-managing-change-and-scale/_static/image8.png "新增移轉")
 
-    *新增移轉*
+    *Add-Migration*
 
     > [!NOTE]
     > 移轉檔案由兩個方法，組成**向上**並**向下**。
@@ -549,7 +549,7 @@ ms.locfileid: "59409729"
     *記錄的錯誤*
 8. 找出錯誤的詳細資料部分。 很明顯地，此錯誤是重構前一個步驟中認可您的程式碼所造成。
 
-    `Details: LINQ to Entities does not recognize the method 'Boolean MatchesOption ...`。
+    `Details: LINQ to Entities does not recognize the method 'Boolean MatchesOption ...`.
 9. 請勿關閉瀏覽器。
 10. 在新的瀏覽器執行個體中，瀏覽至[Azure 管理入口網站](https://manage.windowsazure.com)並使用您的訂用帳戶相關聯的 Microsoft 帳戶登入。
 11. 選取 **網站**按一下您在練習 2 中建立 web 應用程式。

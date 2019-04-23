@@ -12,7 +12,7 @@ ms.openlocfilehash: 9665dafb23b885fdf9e4ea5f1a515a0c6dcc9a9a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410626"
 ---
 # <a name="forms-authentication-configuration-and-advanced-topics-c"></a>表單驗證組態和進階主題 (C#)
@@ -84,7 +84,7 @@ ms.locfileid: "59410626"
 圖 1 說明的工作流程，當 slidingExpiration 設為 false，而且逾時設定為 30。 請注意，在登入時所產生的驗證票證包含到期日，在後續要求將不會更新這個值。 如果 FormsAuthenticationModule 找到票證已過期，它會捨棄它，並要求視為匿名。
 
 
-[![A 表單驗證票證到期時 slidingExpiration 圖形表示法為偽](forms-authentication-configuration-and-advanced-topics-cs/_static/image2.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image1.png)
+[![以圖形表示的表單驗證票證到期時 slidingExpiration 為 false](forms-authentication-configuration-and-advanced-topics-cs/_static/image2.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image1.png)
 
 **圖 01**:以圖形表示的表單驗證票證到期時 slidingExpiration 為 false ([按一下以檢視完整大小的影像](forms-authentication-configuration-and-advanced-topics-cs/_static/image3.png))
 
@@ -92,7 +92,7 @@ ms.locfileid: "59410626"
 圖 2 顯示工作流程，當 slidingExpiration 設為 true，且逾時設定為 30。 已驗證的要求收到 （具有未過期的票證） 時屆到期會更新為在未來分鐘的逾時數中。
 
 
-[![A 表單驗證票證的圖形表示法 slidingExpiration 為 true 時](forms-authentication-configuration-and-advanced-topics-cs/_static/image5.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image4.png)
+[![以圖形表示的表單驗證票證的 slidingExpiration 時，則為 true](forms-authentication-configuration-and-advanced-topics-cs/_static/image5.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image4.png)
 
 **圖 02**:以圖形表示的表單驗證票證的 slidingExpiration 時，則為 true ([按一下以檢視完整大小的影像](forms-authentication-configuration-and-advanced-topics-cs/_static/image6.png))
 
@@ -181,7 +181,7 @@ Cookie 是自然的中型至特定網站，這就是為什麼預設表單驗證�
 時建立 （或修改） 的票證，表單驗證系統會建立 MAC，並將它附加至的票證資料。 後續要求抵達時，表單驗證系統會比較驗證票券資料的真實性的 MAC 和票證資料。 [圖 3] 以圖形方式說明此工作流程。
 
 
-[![T他的票證的確有透過 MAC](forms-authentication-configuration-and-advanced-topics-cs/_static/image8.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image7.png)
+[![票證的確有透過 MAC](forms-authentication-configuration-and-advanced-topics-cs/_static/image8.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image7.png)
 
 **圖 03**:票證的確有透過 MAC ([按一下以檢視完整大小的影像](forms-authentication-configuration-and-advanced-topics-cs/_static/image9.png))
 
@@ -238,7 +238,7 @@ Web 伺服陣列設定，或共用相同的伺服器上的應用程式的驗證�
 每當我們需要存取儲存在票證中的資料，我們可以這麼做抓取目前的要求 FormsAuthenticationTicket，然後還原序列化 [UserData] 屬性。 生日及雇主名稱範例日期，如果我們會將 UserData 字串分割成兩個分隔字元 (|) 為基礎的子字串。
 
 
-[![A其他使用者資訊可以儲存在驗證票證](forms-authentication-configuration-and-advanced-topics-cs/_static/image11.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image10.png)
+[![其他使用者資訊可以儲存在驗證票證](forms-authentication-configuration-and-advanced-topics-cs/_static/image11.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image10.png)
 
 **圖 04**:其他使用者資訊可以儲存在驗證票證 ([按一下以檢視完整大小的影像](forms-authentication-configuration-and-advanced-topics-cs/_static/image12.png))
 
@@ -302,7 +302,7 @@ authCookie.Value = FormsAuthentication.Encrypt(newTicket);
 圖 5 顯示作用中的此顯示畫面的螢幕擷取畫面。 以Scott的身份登錄，並顯示包含Scott的公司和頭銜的歡迎信息。
 
 
-[![T他目前登入使用者的公司和標題會顯示](forms-authentication-configuration-and-advanced-topics-cs/_static/image14.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image13.png)
+[![會顯示目前登入使用者的公司和標題](forms-authentication-configuration-and-advanced-topics-cs/_static/image14.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image13.png)
 
 **圖 05**:會顯示目前登入使用者的公司和標題 ([按一下以檢視完整大小的影像](forms-authentication-configuration-and-advanced-topics-cs/_static/image15.png))
 
@@ -338,7 +338,7 @@ GenericPrincipal 類別符合大部分的表單型的驗證情況下，不使用
 接下來，在應用程式中新增兩個新的類別檔案\_程式碼資料夾，一個具名的 CustomIdentity.cs，另一個名為 CustomPrincipal.cs。
 
 
-[![Add CustomIdentity 和 CustomPrincipal 類別，以您的專案](forms-authentication-configuration-and-advanced-topics-cs/_static/image17.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image16.png)
+[![專案中加入的 CustomIdentity 和 CustomPrincipal 類別](forms-authentication-configuration-and-advanced-topics-cs/_static/image17.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image16.png)
 
 **圖 06**:將 CustomIdentity 和 CustomPrincipal 類別新增至您的專案 ([按一下以檢視完整大小的影像](forms-authentication-configuration-and-advanced-topics-cs/_static/image18.png))
 
@@ -362,7 +362,7 @@ ASP.NET 管線會採用傳入的要求，並處理它透過幾個步驟。 在�
 ASP.NET 管線引發 AuthenticateRequest 事件之後[PostAuthenticateRequest 事件](https://msdn.microsoft.com/library/system.web.httpapplication.postauthenticaterequest.aspx)，這是我們可以在其中取代所使用的執行個體 FormsAuthenticationModule 建立 GenericPrincipal 物件我們CustomPrincipal 物件。 [圖 7] 描述此工作流程。
 
 
-[![T他 GenericPrincipal 由 CustomPrincipal PostAuthenticationRequest 事件中取代](forms-authentication-configuration-and-advanced-topics-cs/_static/image20.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image19.png)
+[![GenericPrincipal 取代 CustomPrincipal PostAuthenticationRequest 事件中](forms-authentication-configuration-and-advanced-topics-cs/_static/image20.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image19.png)
 
 **圖 07**:GenericPrincipal 取代 CustomPrincipal PostAuthenticationRequest 事件中 ([按一下以檢視完整大小的影像](forms-authentication-configuration-and-advanced-topics-cs/_static/image21.png))
 
@@ -370,7 +370,7 @@ ASP.NET 管線引發 AuthenticateRequest 事件之後[PostAuthenticateRequest �
 為了回應 ASP.NET 管線事件中執行程式碼，我們可以在 Global.asax 中建立適當的事件處理常式，或建立自己的 HTTP 模組。 本教學課程中讓我們在 Global.asax 中建立的事件處理常式。 開始將 Global.asax 新增至您的網站。 以滑鼠右鍵按一下方案總管 中的專案名稱，並新增名為 Global.asax 的全域應用程式類別類型的項目。
 
 
-[![Add Global.asax 檔案到您的網站](forms-authentication-configuration-and-advanced-topics-cs/_static/image23.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image22.png)
+[![Global.asax 檔案加入您的網站](forms-authentication-configuration-and-advanced-topics-cs/_static/image23.png)](forms-authentication-configuration-and-advanced-topics-cs/_static/image22.png)
 
 **圖 08**:Global.asax 檔案加入您的網站 ([按一下以檢視完整大小的影像](forms-authentication-configuration-and-advanced-topics-cs/_static/image24.png))
 
@@ -424,7 +424,7 @@ ASP.NET 執行階段會自動同步為我們的這些屬性值。 不過，這�
 - [如何變更表單驗證屬性](../../../videos/authentication/how-to-change-the-forms-authentication-properties.md)
 - [如何在 ASP.NET 應用程式的安裝和使用無 Cookie 驗證](../../../videos/authentication/how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application.md)
 - [ASP 表單登入重新配置](../../../videos/authentication/asp-forms-login-relocation.md)
-- [表單登入自訂金鑰設定](../../../videos/authentication/forms-login-custom-key-configuration.md)
+- [表單登入自訂金鑰組態](../../../videos/authentication/forms-login-custom-key-configuration.md)
 - [將自訂資料新增至驗證方法](../../../videos/authentication/add-custom-data-to-the-authentication-method.md)
 - [使用自訂的主體物件](../../../videos/authentication/use-custom-principal-objects.md)
 

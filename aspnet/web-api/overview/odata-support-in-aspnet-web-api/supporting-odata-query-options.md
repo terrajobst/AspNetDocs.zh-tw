@@ -13,7 +13,7 @@ ms.openlocfilehash: 428e4942e42436585049c1e84cd7b07a4a79c0d1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411562"
 ---
 # <a name="supporting-odata-query-options-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中支援 OData 查詢選項
@@ -32,7 +32,7 @@ OData 規格會呼叫這些參數*查詢選項*。 您可以啟用您專案中�
 
 - [啟用 OData 查詢選項](#enable)
 - [範例查詢](#examples)
-- [伺服器驅動型分頁](#server-paging)
+- [Server-Driven Paging](#server-paging)
 - [限制的查詢選項](#limiting_query_options)
 - [直接叫用查詢選項](#ODataQueryOptions)
 - [查詢驗證](#query-validation)
@@ -69,7 +69,7 @@ Web API 支援下列 OData 查詢選項：
 
 如需 $展開和 $select，請參閱[使用 $select，$expand、 和 ASP.NET Web API OData 中的 $value](using-select-expand-and-value.md)。
 
-**用戶端驅動型分頁**
+**Client-Driven Paging**
 
 為大型實體集，用戶端可能會想要限制結果數目。 例如，用戶端可能會顯示 10 個項目一次 下一步 」 的連結，來取得下一頁的結果。 若要這樣做，用戶端會使用 $top] 和 [$skip 選項。
 
@@ -86,7 +86,7 @@ $Filter 選項可讓用戶端所套用的布林運算式篩選結果。 篩選�
 | 會傳回標價小於 10 的所有產品。 | `http://localhost/Products?$filter=Price` l 10 |
 | 邏輯運算子：傳回所有產品，價格 > = 5 且價格 < = 15。 | `http://localhost/Products?$filter=Price` ge 5 和價格 le 15 |
 | 字串函數：傳回與"zz"的所有產品名稱中。 | `http://localhost/Products?$filter=substringof('zz',Name)` |
-| 日期函數：傳回所有產品 ReleaseDate 2005 之後。 | `http://localhost/Products?$filter=year(ReleaseDate)` gt 2005 |
+| 日期函數：傳回所有產品 ReleaseDate 2005 之後。 | `http://localhost/Products?$filter=year(ReleaseDate)` t 2005 |
 
 **排序**
 

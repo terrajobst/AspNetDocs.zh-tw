@@ -12,7 +12,7 @@ ms.openlocfilehash: 0d17308d1e97279c0870ea02933a42400ef338c9
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59411549"
 ---
 # <a name="introduction-to-scaleout-in-signalr"></a>SignalR 的向外延展簡介
@@ -62,9 +62,9 @@ SignalR 目前提供三個的背板：
 
 下列主題包含每個後擋板逐步教學的課程：
 
-- [使用 Azure 服務匯流排的 SignalR 向外延展](scaleout-with-windows-azure-service-bus.md)
-- [使用 Redis 的 SignalR 向外延展](scaleout-with-redis.md)
-- [使用 SQL Server 的向外延展](scaleout-with-sql-server.md)
+- [SignalR 向外延展與 Azure 服務匯流排](scaleout-with-windows-azure-service-bus.md)
+- [SignalR 向外延展與 Redis](scaleout-with-redis.md)
+- [SignalR 向外延展與 SQL Server](scaleout-with-sql-server.md)
 
 ## <a name="implementation"></a>實作
 

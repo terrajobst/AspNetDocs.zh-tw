@@ -12,7 +12,7 @@ ms.openlocfilehash: 3833e3f3c6c49ff2b317ad04aff33c9119cb1f41
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59420207"
 ---
 # <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>Visual Studio 2012 中的 ASP.NET 和網頁程式開發的新功能

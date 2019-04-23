@@ -13,7 +13,7 @@ ms.openlocfilehash: 7c73bf4734f8ed8a1bf93595c0847f611ad9cc15
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59409599"
 ---
 # <a name="self-host-aspnet-web-api-1-c"></a>自我裝載 ASP.NET Web API 1 (C#)

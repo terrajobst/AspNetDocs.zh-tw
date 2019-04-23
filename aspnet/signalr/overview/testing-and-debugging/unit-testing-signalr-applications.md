@@ -12,7 +12,7 @@ ms.openlocfilehash: 1556e8275da446e285c88d1f850d072725de057b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415670"
 ---
 # <a name="unit-testing-signalr-applications"></a>對 SignalR 應用程式進行單元測試

@@ -12,7 +12,7 @@ ms.openlocfilehash: 8651ab58cb79a2c7b2ac67b0095542ab3a575534
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59418400"
 ---
 # <a name="aspnet-hosting-options-vb"></a>ASP.NET 裝載選項 (VB)

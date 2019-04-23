@@ -12,7 +12,7 @@ ms.openlocfilehash: 10b853966ba80b673e1a6786987893f919369e7a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412901"
 ---
 # <a name="caching-data-in-an-aspnet-web-pages-razor-site-for-better-performance"></a>快取 ASP.NET Web Pages (Razor) 網站中的資料，以提升效能

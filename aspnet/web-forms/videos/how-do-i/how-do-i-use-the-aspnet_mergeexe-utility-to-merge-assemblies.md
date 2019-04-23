@@ -2,7 +2,7 @@
 uid: web-forms/videos/how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies
 title: '[How Do i:]使用 aspnet_merge.exe 公用程式合併組件 |Microsoft Docs'
 author: rick-anderson
-description: In this video Chris Pels will show how to use the aspnet_merge.exe utility to combine assemblies that have been compiled using the aspnet_compiler.exe utilit...
+description: 在這段影片 Chris Pels 將示範如何使用 aspnet_merge.exe 公用程式，結合使用 aspnet_compiler.exe 公用已編譯的組件...
 ms.author: riande
 ms.date: 06/26/2008
 ms.assetid: 2bfd5353-2a35-449e-aeff-0fb94cf10030
@@ -12,10 +12,10 @@ ms.openlocfilehash: 7e768c508441bc08ff53c04e3d9982179fdfc88f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59410379"
 ---
-# <a name="how-do-i-use-the-aspnetmergeexe-utility-to-merge-assemblies"></a>[How Do i:]Use the aspnet_merge.exe Utility to Merge Assemblies
+# <a name="how-do-i-use-the-aspnetmergeexe-utility-to-merge-assemblies"></a>[How Do i:]使用 aspnet_merge.exe 公用程式合併組件
 
 藉由[Chris Pels](https://twitter.com/chrispels)
 
