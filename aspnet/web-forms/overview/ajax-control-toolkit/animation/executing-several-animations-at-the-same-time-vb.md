@@ -12,7 +12,7 @@ ms.openlocfilehash: f8bb91de9642814a79d0fddd642928c25c58ebfd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402839"
 ---
 # <a name="executing-several-animations-at-the-same-time-vb"></a>執行數個動畫在相同的時間 (VB)
@@ -55,7 +55,7 @@ ms.locfileid: "59402839"
 和確實： 當您執行此指令碼，面板會顯示，然後調整大小 （多個增加三倍其寬度和減半來計算其高度） 和淡出，在相同的時間。
 
 
-[![T他面板淡出，調整大小 （包括其內容，因為瀏覽器的轉譯引擎）](executing-several-animations-at-the-same-time-vb/_static/image2.png)](executing-several-animations-at-the-same-time-vb/_static/image1.png)
+[![面板淡出，調整大小 （包括其內容，因為瀏覽器的轉譯引擎）](executing-several-animations-at-the-same-time-vb/_static/image2.png)](executing-several-animations-at-the-same-time-vb/_static/image1.png)
 
 面板淡出，調整大小 （包括其內容，因為瀏覽器的轉譯引擎） ([按一下以檢視完整大小的影像](executing-several-animations-at-the-same-time-vb/_static/image3.png))
 

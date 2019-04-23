@@ -12,7 +12,7 @@ ms.openlocfilehash: af97ff2488841b2d65e50122691736603be2a686
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401409"
 ---
 # <a name="authentication-and-authorization-for-signalr-hubs-signalr-1x"></a>SignalR 中樞的驗證與授權 (SignalR 1.x)
@@ -37,7 +37,7 @@ ms.locfileid: "59401409"
     - [使用表單驗證 cookie](#cookie)
     - [Windows 驗證](#windows)
     - [連接標頭](#header)
-    - [憑證](#certificate)
+    - [[MSSQLSERVER 的通訊協定內容]](#certificate)
 
 <a id="authorizeattribute"></a>
 

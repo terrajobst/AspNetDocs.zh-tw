@@ -12,7 +12,7 @@ ms.openlocfilehash: 1193d7dc6fc29dfdac5637c9391a82f9f3566073
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407727"
 ---
 # <a name="creating-unit-tests-for-aspnet-mvc-applications-c"></a>建立 ASP.NET MVC 應用程式的單元測試 (C#)
@@ -59,12 +59,12 @@ ms.locfileid: "59407727"
 您也可以輸入鍵盤組合在列表 2 中執行單元測試**CTRL-R、 A**或按一下**執行方案中的所有測試**按鈕 （請參閱 圖 1）。 如果測試成功，您會看到 [圖 2] 中的 [測試結果] 視窗。
 
 
-[![R取消解決方案中所有測試](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image2.png)](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image1.png)
+[![在方案中執行所有測試](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image2.png)](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image1.png)
 
 **圖 01**:在方案中執行所有測試 ([按一下以檢視完整大小的影像](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image3.png))
 
 
-[![Success ！](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image5.png)](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image4.png)
+[![成功 ！](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image5.png)](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image4.png)
 
 **圖 02**:成功！ ([按一下以檢視完整大小的影像](creating-unit-tests-for-asp-net-mvc-applications-cs/_static/image6.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 77d34da5881f52593a76572561c3144cd2864a3a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406523"
 ---
 # <a name="using-web-api-2-with-entity-framework-6"></a>使用 Web API 2 和 Entity Framework 6
@@ -21,7 +21,7 @@ ms.locfileid: "59406523"
 
 
 - [建立專案](part-1.md)
-- [新增模型與控制器](part-2.md)
+- [新增模型和控制器](part-2.md)
 - [植入資料庫](part-3.md)
 - [處理實體關聯性](part-4.md)
 - [建立資料傳輸物件 (DTO)](part-5.md)

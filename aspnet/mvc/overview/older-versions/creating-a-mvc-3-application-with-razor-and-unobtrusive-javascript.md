@@ -12,7 +12,7 @@ ms.openlocfilehash: 91c96cc413e63ad2fc160ffbb473c4f3e1ada3e4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401058"
 ---
 # <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>使用 Razor 和低調的 JavaScript 建立 MVC 3 應用程式
@@ -36,7 +36,7 @@ by [Microsoft](https://github.com/microsoft)
 
 若要開始本教學課程，請開啟 Visual Studio 2010 並建立新的專案使用*ASP.NET MVC 3 Web 應用程式*範本。 應用程式命名&quot;Mvc3Razor&quot;。
 
-[![N新功能 MVC 3 專案](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image3.png)](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image2.png)
+[![新的 MVC 3 專案](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image3.png)](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image2.png)
 
 在 **新的 ASP.NET MVC 3 專案**對話方塊中，選取**網際網路應用程式**選取 Razor 檢視引擎，，然後按一下 **確定**。
 

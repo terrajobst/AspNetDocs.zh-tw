@@ -12,7 +12,7 @@ ms.openlocfilehash: bbedc11b9b1225b1047350c1c84a116ecef0c380
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407402"
 ---
 # <a name="understanding-action-filters-vb"></a>了解動作篩選 (VB)
@@ -49,7 +49,7 @@ by [Microsoft](https://github.com/microsoft)
 如果您重複叫用`Index()`由您的瀏覽器的網址列中輸入 URL/資料/索引，然後按 重新整理動作按鈕多次，，然後您會看到相同的時間為 10 秒。 輸出`Index()`動作的快取 （請參閱 圖 1） 的 10 秒。
 
 
-[![Cvary time](understanding-action-filters-vb/_static/image2.png)](understanding-action-filters-vb/_static/image1.png)
+[![快取的時間](understanding-action-filters-vb/_static/image2.png)](understanding-action-filters-vb/_static/image1.png)
 
 **圖 01**:快取時間 ([按一下以檢視完整大小的影像](understanding-action-filters-vb/_static/image3.png))
 
@@ -107,7 +107,7 @@ ASP.NET MVC 架構支援四種不同類型的篩選：
 在列表 2 中， `OnActionExecuting()`， `OnActionExecuted()`， `OnResultExecuting()`，以及`OnResultExecuted()`方法的所有呼叫`Log()`方法。 方法的名稱和目前的路由資料傳遞至`Log()`方法。 `Log()`方法會將訊息寫入 Visual Studio 輸出 視窗 （請參閱 圖 2）。
 
 
-[![WVisual Studio 輸出視窗 riting](understanding-action-filters-vb/_static/image5.png)](understanding-action-filters-vb/_static/image4.png)
+[![寫入至 Visual Studio [輸出] 視窗](understanding-action-filters-vb/_static/image5.png)](understanding-action-filters-vb/_static/image4.png)
 
 **圖 02**:寫入至 Visual Studio [輸出] 視窗 ([按一下以檢視完整大小的影像](understanding-action-filters-vb/_static/image6.png))
 

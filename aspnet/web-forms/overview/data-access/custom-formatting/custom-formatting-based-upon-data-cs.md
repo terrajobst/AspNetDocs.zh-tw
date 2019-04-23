@@ -12,7 +12,7 @@ ms.openlocfilehash: bd5433b724dcafe8e816254523cb4b38c3be1104
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59403164"
 ---
 # <a name="custom-formatting-based-upon-data-c"></a>根據資料自訂格式設定 (C#)
@@ -49,7 +49,7 @@ ms.locfileid: "59403164"
 一旦您已受限於 DetailsView ObjectDataSource，花點時間修改的欄位清單。 我選擇移除`ProductID`， `SupplierID`， `CategoryID`， `UnitsInStock`， `UnitsOnOrder`， `ReorderLevel`，和`Discontinued`BoundFields 和重新命名，並重新格式化剩餘 BoundFields。 我也清除`Width`和`Height`設定。 DetailsView 顯示單一記錄，因為我們需要啟用分頁功能，以允許使用者檢視的所有產品。 達到此目的的 DetailsView 的智慧標籤的 啟用分頁核取方塊。
 
 
-[![Ch 啟用分頁中的核取 DetailsView 的智慧標籤](custom-formatting-based-upon-data-cs/_static/image2.png)](custom-formatting-based-upon-data-cs/_static/image1.png)
+[![檢查 DetailsView 的智慧標籤啟用分頁核取方塊](custom-formatting-based-upon-data-cs/_static/image2.png)](custom-formatting-based-upon-data-cs/_static/image1.png)
 
 **圖 1**:核取方塊啟用分頁 DetailsView 的智慧標籤中 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image3.png))
 
@@ -62,7 +62,7 @@ ms.locfileid: "59403164"
 請花一點時間來測試您的瀏覽器中的此頁面。
 
 
-[![T他一次的 DetailsView 控制項顯示一個產品](custom-formatting-based-upon-data-cs/_static/image5.png)](custom-formatting-based-upon-data-cs/_static/image4.png)
+[![在 DetailsView 控制項一次顯示一項產品](custom-formatting-based-upon-data-cs/_static/image5.png)](custom-formatting-based-upon-data-cs/_static/image4.png)
 
 **圖 2**:DetailsView 控制項顯示一個產品一次 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image6.png))
 
@@ -120,12 +120,12 @@ DetailsView 繫結的資料可透過存取`DataItem`屬性。 回想一下，我
 時檢視 Chai，成本小於 $75.00，價格會以一般字型顯示 （請參閱 圖 4）。 不過，當檢視 Mishi Kobe Niku，其具有價格為美金 97.00，價格會顯示在粗體、 斜體字型 （請參閱 [圖 5]）。
 
 
-[![P以一般字型顯示 $75.00 小於 rices](custom-formatting-based-upon-data-cs/_static/image9.png)](custom-formatting-based-upon-data-cs/_static/image8.png)
+[![價格低於美金 75.00 會以一般字型顯示](custom-formatting-based-upon-data-cs/_static/image9.png)](custom-formatting-based-upon-data-cs/_static/image8.png)
 
 **圖 4**:價格低於美金 75.00 會以一般字型顯示 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image10.png))
 
 
-[![Expensive 產品的價格會顯示在粗體、 斜體字型](custom-formatting-based-upon-data-cs/_static/image12.png)](custom-formatting-based-upon-data-cs/_static/image11.png)
+[![昂貴的產品價格會顯示在粗體、 斜體字型](custom-formatting-based-upon-data-cs/_static/image12.png)](custom-formatting-based-upon-data-cs/_static/image11.png)
 
 **圖 5**:昂貴的產品價格會顯示在粗體、 斜體字型 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image13.png))
 
@@ -192,12 +192,12 @@ FormView 不包含任何 BoundFields，因此缺少`Rows`集合。 相反地，F
 圖 7] 顯示 FormView 檢視產品時其`UnitsInStock`值大於 10，而 [圖 8 中的產品有其值小於 10。
 
 
-[![F套用的產品使用夠大庫存單位中，沒有自訂格式或者](custom-formatting-based-upon-data-cs/_static/image16.png)](custom-formatting-based-upon-data-cs/_static/image15.png)
+[![針對產品使用夠大庫存單位，套用無自訂格式](custom-formatting-based-upon-data-cs/_static/image16.png)](custom-formatting-based-upon-data-cs/_static/image15.png)
 
 **圖 7**:針對產品使用夠大庫存單位，套用無自訂格式 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image17.png))
 
 
-[![T他在庫存數字的單位是以紅色顯示的產品與值的 10 或更少](custom-formatting-based-upon-data-cs/_static/image19.png)](custom-formatting-based-upon-data-cs/_static/image18.png)
+[![內建數字的單位是以紅色顯示這些產品與值的 10 或更少](custom-formatting-based-upon-data-cs/_static/image19.png)](custom-formatting-based-upon-data-cs/_static/image18.png)
 
 **圖 8**:內建數字的單位以紅色顯示這些產品與值的 10 或更少 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image20.png))
 
@@ -243,7 +243,7 @@ Gridview，接著，資料繫結是更精確地將描述下列一連串步驟：
 [圖 9] 顯示我們到目前為止透過瀏覽器檢視時的進度。
 
 
-[![T他的 GridView 會列出名稱、 類別和每個產品的價格](custom-formatting-based-upon-data-cs/_static/image22.png)](custom-formatting-based-upon-data-cs/_static/image21.png)
+[![GridView 會列出名稱、 類別和每項產品的價格](custom-formatting-based-upon-data-cs/_static/image22.png)](custom-formatting-based-upon-data-cs/_static/image21.png)
 
 **圖 9**:GridView 會列出名稱、 類別和每個產品的價格 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image23.png))
 
@@ -299,7 +299,7 @@ Gridview，接著，資料繫結是更精確地將描述下列一連串步驟：
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample18.cs)]
 
 
-[![T他最經濟實惠的產品是黃色反白顯示](custom-formatting-based-upon-data-cs/_static/image26.png)](custom-formatting-based-upon-data-cs/_static/image25.png)
+[![最實惠的產品為黃色反白顯示](custom-formatting-based-upon-data-cs/_static/image26.png)](custom-formatting-based-upon-data-cs/_static/image25.png)
 
 **圖 11**:最實惠的產品為黃色反白顯示 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image27.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 52f6ec17fb21019e93ebf2795e95d5b27e4edbe6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401734"
 ---
 # <a name="whats-new-in-web-forms-in-aspnet-45"></a>ASP.NET 4.5 的 Web Forms 新功能
@@ -204,7 +204,7 @@ ASP.NET Web Form 的新版本導入了一些增強功能，著重於使用資料
 <a id="Task_3_-_Value_Providers_in_Model_Binding"></a>
 #### <a name="task-3---value-providers-in-model-binding"></a>工作 3-在模型繫結中的值提供者
 
-模型繫結不僅可讓您指定自訂的方法，以使用您直接在資料繫結控制項中的資料，也可讓您將從頁面的資料對應至從這些方法的參數。 在方法參數，您可以使用值提供者屬性指定值的資料來源。 例如：
+模型繫結不僅可讓您指定自訂的方法，以使用您直接在資料繫結控制項中的資料，也可讓您將從頁面的資料對應至從這些方法的參數。 在方法參數，您可以使用值提供者屬性指定值的資料來源。 例如: 
 
 - 在頁面上的控制項
 - 查詢字串值
@@ -396,7 +396,7 @@ ASP.NET 4.5 介紹 Web Form 的資料註解驗證。 您不需要在每個輸入
     [!code-csharp[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample23.cs)]
 
     > [!NOTE]
-    > .NET framework 4.5 已擴充現有的資料註釋集合。 以下是一些您可以使用資料註解: [信用卡]，[Phone]，[EmailAddress]，[範圍]，[比較]，[Url]，[FileExtensions]、 [Required]、[金鑰]，[RegularExpression]。
+    > .NET framework 4.5 已擴充現有的資料註釋集合。 以下是一些您可以使用資料註解: [信用卡]，[Phone]，[EmailAddress]，[範圍]，[比較]，[Url]，[FileExtensions]、 [Required]、[Key]，[RegularExpression]。
     > 
     > 某些使用方式範例：
     > 

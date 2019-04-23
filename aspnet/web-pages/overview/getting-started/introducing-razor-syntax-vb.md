@@ -12,7 +12,7 @@ ms.openlocfilehash: e6b63afb9492e810e19999c7c7ffe074ad510bda
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406765"
 ---
 # <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>使用 Razor 語法 (Visual Basic) 的 ASP.NET Web 程式設計簡介
@@ -656,8 +656,8 @@ ASP.NET server 程式碼可讓您根據條件和撰寫程式碼重複特定次�
 
 您可以使用屬性`Page`物件，以取得大量資訊，例如：
 
-- `Request`。 如您所見，這是目前的要求，包括進行要求的頁面、 使用者身分識別等 URL 的瀏覽器的何種類型的相關資訊的集合。
-- `Response`。 這是會在伺服器程式碼執行完成時傳送到瀏覽器的回應 （頁面） 的相關資訊的集合。 例如，您可以使用此屬性寫入至回應的資訊。
+- `Request`. 如您所見，這是目前的要求，包括進行要求的頁面、 使用者身分識別等 URL 的瀏覽器的何種類型的相關資訊的集合。
+- `Response`. 這是會在伺服器程式碼執行完成時傳送到瀏覽器的回應 （頁面） 的相關資訊的集合。 例如，您可以使用此屬性寫入至回應的資訊。
 
     [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample51.vbhtml)]
 
@@ -719,7 +719,7 @@ ASP.NET server 程式碼可讓您根據條件和撰寫程式碼重複特定次�
 
 ### <a name="try-catch-statements"></a>Try Catch 陳述式
 
-陳述式通常必須在程式碼中可能會失敗的原因，您無法控制。 例如：
+陳述式通常必須在程式碼中可能會失敗的原因，您無法控制。 例如: 
 
 - 如果您的程式碼會嘗試開啟、 建立、 讀取或寫入檔案，可能會發生各種錯誤。 您想要的檔案可能不存在，它可能會遭到鎖定，程式碼可能不具有權限，等等。
 - 同樣地，如果您的程式碼會嘗試更新資料庫中的記錄，可以有權限問題，可能會卸除資料庫的連接，要儲存的資料可能無效，依此類推。

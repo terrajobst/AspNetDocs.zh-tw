@@ -13,7 +13,7 @@ ms.openlocfilehash: 36933f42806b82437f0ba8e59ad1c90024ed6b9e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401227"
 ---
 # <a name="getting-started-with-aspnet-identity"></a>開始使用 ASP.NET Identity
@@ -25,4 +25,4 @@ ms.locfileid: "59401227"
 - [ASP.NET Identity 建議資源](aspnet-identity-recommended-resources.md)
 - [將 ASP.NET Identity 新增至空的或現有的 Web Form 專案](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
 - [使用 Azure Active Dirctory 開發 ASP.NET 應用程式](developing-aspnet-apps-with-windows-azure-active-directory.md)
-- [ASP.NET Identity：使用具 EntityFramework MySQL 提供者的 MySQL 儲存體 (C#)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider.md)
+- [ASP.NET 身分識別：使用 EntityFramework MySQL 提供者的 MySQL 儲存體 (C#)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider.md)

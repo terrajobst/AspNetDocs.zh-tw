@@ -12,7 +12,7 @@ ms.openlocfilehash: db69c0cf4fc3e5d39d88d8a6478a529309020d3d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398029"
 ---
 # <a name="positioning-a-modalpopup-c"></a>定位 ModalPopup (C#)
@@ -55,7 +55,7 @@ AJAX Control Toolkit 之 ModalPopup 控制項提供簡單的方式來建立使�
 [!code-aspx[Main](positioning-a-modalpopup-cs/samples/sample6.aspx)]
 
 
-[![T他的強制回應快顯視窗會出現在指定的位置](positioning-a-modalpopup-cs/_static/image2.png)](positioning-a-modalpopup-cs/_static/image1.png)
+[![強制回應快顯視窗會出現在指定的位置](positioning-a-modalpopup-cs/_static/image2.png)](positioning-a-modalpopup-cs/_static/image1.png)
 
 強制回應快顯視窗會出現在指定的位置 ([按一下以檢視完整大小的影像](positioning-a-modalpopup-cs/_static/image3.png))
 

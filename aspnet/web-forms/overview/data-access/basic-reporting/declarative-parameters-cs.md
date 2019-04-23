@@ -12,7 +12,7 @@ ms.openlocfilehash: b3bdb44a0e3dc274c056bcadae3dcf90ab3c5507
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401435"
 ---
 # <a name="declarative-parameters-c"></a>宣告式參數 (C#)
@@ -37,7 +37,7 @@ ObjectDataSource 可用來叫用方法預期的輸入的參數，但若要這樣
 第一個範例中，開始將 DetailsView 控制項加入`DeclarativeParams.aspx`頁面中`BasicReporting`資料夾。 從 DetailsView 的智慧標籤，選取&lt;新的資料來源&gt;從下拉式清單並選擇新增 ObjectDataSource。
 
 
-[![Add 頁面 ObjectDataSource](declarative-parameters-cs/_static/image2.png)](declarative-parameters-cs/_static/image1.png)
+[![加入至頁面的 ObjectDataSource](declarative-parameters-cs/_static/image2.png)](declarative-parameters-cs/_static/image1.png)
 
 **圖 1**:加入至頁面的 ObjectDataSource ([按一下以檢視完整大小的影像](declarative-parameters-cs/_static/image3.png))
 
@@ -45,7 +45,7 @@ ObjectDataSource 可用來叫用方法預期的輸入的參數，但若要這樣
 這會自動啟動 ObjectDataSource 控制項的 [選擇資料來源] 精靈。 選取`ProductsBLL`類別精靈的第一個畫面。
 
 
-[![S選擇 ProductsBLL 類別](declarative-parameters-cs/_static/image5.png)](declarative-parameters-cs/_static/image4.png)
+[![選取 ProductsBLL 類別](declarative-parameters-cs/_static/image5.png)](declarative-parameters-cs/_static/image4.png)
 
 **圖 2**:選取 `ProductsBLL`類別 ([按一下以檢視完整大小的影像](declarative-parameters-cs/_static/image6.png))
 
@@ -53,7 +53,7 @@ ObjectDataSource 可用來叫用方法預期的輸入的參數，但若要這樣
 因為我們想要顯示特定產品的相關資訊，所以我們想要使用`GetProductByProductID(productID)`方法。
 
 
-[![C選擇 GetProductByProductID(productID) 方法](declarative-parameters-cs/_static/image8.png)](declarative-parameters-cs/_static/image7.png)
+[![選擇 GetProductByProductID(productID) 方法](declarative-parameters-cs/_static/image8.png)](declarative-parameters-cs/_static/image7.png)
 
 **圖 3**:選擇`GetProductByProductID(productID)`方法 ([按一下以檢視完整大小的影像](declarative-parameters-cs/_static/image9.png))
 
@@ -61,7 +61,7 @@ ObjectDataSource 可用來叫用方法預期的輸入的參數，但若要這樣
 因為我們所選取的方法包含參數，還有一個更多的畫面精靈 」，我們就必須定義要用於參數的值。 在左側的清單會顯示所有選取方法的參數。 針對`GetProductByProductID(productID)`只有一個`productID`。 在右側中，我們可以指定所選取參數的值。 參數來源下拉式清單會列舉可能的各種來源，參數值。 因為我們想要指定硬式編碼的值為 5`productID`參數保留為 「 無參數來源和 [預設值] 文字方塊中輸入 5。
 
 
-[![A 硬式編碼參數值的 5 用於 productID 參數](declarative-parameters-cs/_static/image11.png)](declarative-parameters-cs/_static/image10.png)
+[![Hard-Coded 參數值的 5 用於 productID 參數](declarative-parameters-cs/_static/image11.png)](declarative-parameters-cs/_static/image10.png)
 
 **圖 4**:Hard-Coded 參數值的 5 將會用於`productID`參數 ([按一下以檢視完整大小的影像](declarative-parameters-cs/_static/image12.png))
 
@@ -77,7 +77,7 @@ ObjectDataSource 可用來叫用方法預期的輸入的參數，但若要這樣
 資料 Web 控制項時瀏覽此頁面，將會叫用的 ObjectDataSource`Select`方法，它會呼叫`ProductsBLL`類別的`GetProductByProductID(productID)`方法使用硬式編碼的值為 5`productID`輸入的參數。 此方法會傳回強型別`ProductDataTable`物件，其中包含 Chef Anton Gumbo 混合的相關資訊的單一資料列 (與產品`ProductID`5)。
 
 
-[![I若需 Chef Anton 的 Gumbo 混合會顯示](declarative-parameters-cs/_static/image14.png)](declarative-parameters-cs/_static/image13.png)
+[![顯示的資訊關於 Chef Anton 的 Gumbo 混合](declarative-parameters-cs/_static/image14.png)](declarative-parameters-cs/_static/image13.png)
 
 **圖 5**:顯示的資訊關於 Chef Anton 的 Gumbo 混合 ([按一下以檢視完整大小的影像](declarative-parameters-cs/_static/image15.png))
 
@@ -87,7 +87,7 @@ ObjectDataSource 可用來叫用方法預期的輸入的參數，但若要這樣
 ObjectDataSource 的參數值也可以設定根據頁面上的 Web 控制項的值。 為了說明這點，讓我們的 GridView 會列出所有使用者所指定的國家/地區中的供應商。 若要完成本入門將文字方塊新增至 [使用者可以在其中輸入國家/地區名稱] 頁面。 設定這個 TextBox 控制項的`ID`屬性設`CountryName`。 也加入 Button Web 控制項。
 
 
-[![Add 文字方塊中，頁面識別碼 CountryName](declarative-parameters-cs/_static/image17.png)](declarative-parameters-cs/_static/image16.png)
+[![將文字方塊加入至識別碼 CountryName 的頁面](declarative-parameters-cs/_static/image17.png)](declarative-parameters-cs/_static/image16.png)
 
 **圖 6**:[使用] 頁面中新增 TextBox `ID` `CountryName` ([按一下以檢視完整大小的影像](declarative-parameters-cs/_static/image18.png))
 
@@ -95,7 +95,7 @@ ObjectDataSource 的參數值也可以設定根據頁面上的 Web 控制項的�
 接下來，將 GridView，加入頁面，以及從智慧標籤，選擇加入新的 ObjectDataSource。 因為我們想要顯示供應商資訊選取`SuppliersBLL`從精靈的第一個畫面的類別。 在第二個畫面中，挑選`GetSuppliersByCountry(country)`方法。
 
 
-[![C選擇 GetSuppliersByCountry(country) 方法](declarative-parameters-cs/_static/image20.png)](declarative-parameters-cs/_static/image19.png)
+[![選擇 GetSuppliersByCountry(country) 方法](declarative-parameters-cs/_static/image20.png)](declarative-parameters-cs/_static/image19.png)
 
 **圖 7**:選擇`GetSuppliersByCountry(country)`方法 ([按一下以檢視完整大小的影像](declarative-parameters-cs/_static/image21.png))
 
@@ -103,7 +103,7 @@ ObjectDataSource 的參數值也可以設定根據頁面上的 Web 控制項的�
 因為`GetSuppliersByCountry(country)`方法有輸入的參數，此精靈會再次包含選擇的參數值的最後一個畫面。 此時，設定參數來源控制項。 這將會填入頁面; 上的控制項名稱 ControlID 下拉式清單選取`CountryName`從清單中的控制項。 當第一次瀏覽的頁面`CountryName`文字方塊會是空白的因此會傳回任何結果，並不會顯示。 如果您想要依預設會顯示一些結果，請據以設定 [預設值] 文字方塊中。
 
 
-[![Set CountryName 控制項值的參數值](declarative-parameters-cs/_static/image23.png)](declarative-parameters-cs/_static/image22.png)
+[![設定 CountryName 控制項值的參數值](declarative-parameters-cs/_static/image23.png)](declarative-parameters-cs/_static/image22.png)
 
 **圖 8**:將參數值設定為`CountryName`控制項的值 ([按一下以檢視完整大小的影像](declarative-parameters-cs/_static/image24.png))
 
@@ -117,7 +117,7 @@ ObjectDataSource 的宣告式標記會稍有不同第一個範例中，使用[Co
 訪客進入國家/地區，不過，並按一下 [顯示供應商] 按鈕，以產生回傳，ObjectDataSource 的之後`Select`查詢方法，在 TextBox 控制項中傳遞`Text`的值`country`參數。
 
 
-[![T顯示用以來自加拿大的供應商](declarative-parameters-cs/_static/image26.png)](declarative-parameters-cs/_static/image25.png)
+[![會顯示來自加拿大的這些供應商](declarative-parameters-cs/_static/image26.png)](declarative-parameters-cs/_static/image25.png)
 
 **圖 9**:會顯示來自加拿大的這些供應商 ([按一下以檢視完整大小的影像](declarative-parameters-cs/_static/image27.png))
 
@@ -139,7 +139,7 @@ ObjectDataSource 的宣告式標記會稍有不同第一個範例中，使用[Co
 透過這項變更`DeclarativeParams.aspx`頁面會顯示所有的供應商，當第一次瀏覽 (或每當`CountryName`文字方塊是空的)。
 
 
-[![All 供應商會現在顯示 [預設](declarative-parameters-cs/_static/image29.png)](declarative-parameters-cs/_static/image28.png)
+[![所有的供應商會根據預設，現在顯示](declarative-parameters-cs/_static/image29.png)](declarative-parameters-cs/_static/image28.png)
 
 **圖 10**:所有的供應商會現在顯示的預設值 ([按一下以檢視完整大小的影像](declarative-parameters-cs/_static/image30.png))
 

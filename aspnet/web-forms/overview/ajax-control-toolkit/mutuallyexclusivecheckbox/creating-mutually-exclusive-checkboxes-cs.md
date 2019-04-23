@@ -12,7 +12,7 @@ ms.openlocfilehash: 01d6d2988278d3d371d93b23bbdf089d83900405
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397847"
 ---
 # <a name="creating-mutually-exclusive-checkboxes-c"></a>建立互斥的核取方塊 (C#)
@@ -47,7 +47,7 @@ ASP.NET AJAX Control Toolkit 包含 MutuallyExclusiveCheckBox 擴充項。 這�
 儲存並執行的頁面：您可以檢查，並取消核取這兩個核取方塊，但是沒有這兩個核取方塊可檢查。
 
 
-[![O只有一個核取方塊可以檢查一次](creating-mutually-exclusive-checkboxes-cs/_static/image2.png)](creating-mutually-exclusive-checkboxes-cs/_static/image1.png)
+[![只有一個核取方塊可以檢查一次](creating-mutually-exclusive-checkboxes-cs/_static/image2.png)](creating-mutually-exclusive-checkboxes-cs/_static/image1.png)
 
 只有一個核取方塊可以檢查一次 ([按一下以檢視完整大小的影像](creating-mutually-exclusive-checkboxes-cs/_static/image3.png))
 

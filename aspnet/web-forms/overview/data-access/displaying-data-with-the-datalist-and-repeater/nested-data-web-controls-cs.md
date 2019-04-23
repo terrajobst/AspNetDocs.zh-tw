@@ -12,7 +12,7 @@ ms.openlocfilehash: 5dcb0b302a814f25ab8f0e89fb8859fbc0ca665d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399498"
 ---
 # <a name="nested-data-web-controls-c"></a>巢狀資料 Web 控制項 (C#)
@@ -35,7 +35,7 @@ ms.locfileid: "59399498"
 在本教學課程，我們將探討如何使用 Repeater 會放在另一個重複項中。 外部 Repeater 會包含在資料庫中，每個類別的項目顯示的類別目錄的名稱和描述。 每個類別目錄項目 s 內部 Repeater 會顯示屬於該類別的每個產品的資訊 （請參閱 圖 1） 中的項目符號清單。 我們的範例將說明如何以宣告方式和以程式設計方式填入內部的重複項。
 
 
-[![E除此之外，每個類別，以及其產品中，會列出](nested-data-web-controls-cs/_static/image2.png)](nested-data-web-controls-cs/_static/image1.png)
+[![列出每個類別，以及其產品，](nested-data-web-controls-cs/_static/image2.png)](nested-data-web-controls-cs/_static/image1.png)
 
 **圖 1**:每個類別，以及其產品中，會列出 ([按一下以檢視完整大小的影像](nested-data-web-controls-cs/_static/image3.png))
 
@@ -47,7 +47,7 @@ ms.locfileid: "59399498"
 首先開啟`NestedControls.aspx`頁面中`DataListRepeaterBasics`資料夾並將重複項控制項新增至頁面上，設定其`ID`屬性設`CategoryList`。 從 Repeater s 智慧標籤，選擇 建立新的 ObjectDataSource 名為`CategoriesDataSource`。
 
 
-[![Name 新 ObjectDataSource CategoriesDataSource](nested-data-web-controls-cs/_static/image5.png)](nested-data-web-controls-cs/_static/image4.png)
+[![命名新的 ObjectDataSource CategoriesDataSource](nested-data-web-controls-cs/_static/image5.png)](nested-data-web-controls-cs/_static/image4.png)
 
 **圖 2**:命名新 ObjectDataSource `CategoriesDataSource` ([按一下以檢視完整大小的影像](nested-data-web-controls-cs/_static/image6.png))
 
@@ -55,7 +55,7 @@ ms.locfileid: "59399498"
 因此，它會提取資料的來源設定 ObjectDataSource`CategoriesBLL`類別的`GetCategories`方法。
 
 
-[![C設定要使用 CategoriesBLL 類別的 GetCategories 方法的 ObjectDataSource](nested-data-web-controls-cs/_static/image8.png)](nested-data-web-controls-cs/_static/image7.png)
+[![設定為使用 CategoriesBLL 類別的 GetCategories 方法的 ObjectDataSource](nested-data-web-controls-cs/_static/image8.png)](nested-data-web-controls-cs/_static/image7.png)
 
 **圖 3**:設定要使用 ObjectDataSource`CategoriesBLL`類別 s`GetCategories`方法 ([按一下以檢視完整大小的影像](nested-data-web-controls-cs/_static/image9.png))
 
@@ -68,7 +68,7 @@ ms.locfileid: "59399498"
 [圖 4] 顯示我們透過瀏覽器檢視時的進度。
 
 
-[![E除此之外，每個類別目錄名稱和描述列出，請以分隔的水平尺規](nested-data-web-controls-cs/_static/image11.png)](nested-data-web-controls-cs/_static/image10.png)
+[![每個類別名稱和描述列出，以分隔的水平尺規](nested-data-web-controls-cs/_static/image11.png)](nested-data-web-controls-cs/_static/image10.png)
 
 **圖 4**:每個類別名稱和描述列出，以水平尺規分隔 ([按一下以檢視完整大小的影像](nested-data-web-controls-cs/_static/image12.png))
 
@@ -116,7 +116,7 @@ ms.locfileid: "59399498"
 與這個事件處理常式中，`ProductsByCategoryList`在每個重複項`RepeaterItem`繫結至在這些產品`RepeaterItem`的類別。 [圖 5] 顯示產生的輸出的螢幕擷取畫面。
 
 
-[![T他 Outer Repeater 列出每個類別目錄中;內部的其中一個列出的產品類別目錄](nested-data-web-controls-cs/_static/image14.png)](nested-data-web-controls-cs/_static/image13.png)
+[![外部 Repeater 列出每個類別目錄中;內部的其中一個列出的產品類別目錄](nested-data-web-controls-cs/_static/image14.png)](nested-data-web-controls-cs/_static/image13.png)
 
 **圖 5**:外部 Repeater 列出每個類別目錄中;內部一個列出的產品類別目錄 ([按一下以檢視完整大小的影像](nested-data-web-controls-cs/_static/image15.png))
 

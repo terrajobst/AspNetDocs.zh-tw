@@ -12,7 +12,7 @@ ms.openlocfilehash: c6c41ba5b5414da689e63ef521f1cf22e0b55701
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404282"
 ---
 # <a name="displaying-binary-data-in-the-data-web-controls-c"></a>以資料 Web 控制項顯示二進位資料 (C#)
@@ -41,7 +41,7 @@ ms.locfileid: "59404282"
 在此教學課程的下載中，您會發現在七個 PDF 摺頁冊檔案`~/Brochures`資料夾中，各個 Seafood 以外的類別。 我故意省略新增 Seafood 摺頁冊，說明如何處理不是所有記錄具有相關都聯的二進位資料的案例。 若要更新`Categories`資料表包含下列的值，以滑鼠右鍵按一下`Categories`從伺服器總管] 節點，然後選擇 [顯示資料表資料。 然後，輸入每個類別目錄具有摺頁冊，如 圖 1 所示摺頁冊檔案虛擬路徑。 因為沒有任何手冊 Seafood 分類，保留其`BrochurePath`做為資料行的值`NULL`。
 
 
-[![Manually Categories 資料表 s BrochurePath 資料行中輸入值](displaying-binary-data-in-the-data-web-controls-cs/_static/image1.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image1.png)
+[![以手動方式輸入類別目錄資料表的 BrochurePath 資料行的值](displaying-binary-data-in-the-data-web-controls-cs/_static/image1.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image1.png)
 
 **圖 1**:手動輸入的值`Categories`表格 s`BrochurePath`資料行 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-cs/_static/image2.png))
 
@@ -53,17 +53,17 @@ ms.locfileid: "59404282"
 開始從工具箱拖曳至設計工具的拖曳的 GridView`DisplayOrDownloadData.aspx`頁面中`BinaryData`資料夾。 設定 GridView s`ID`至`Categories`透過 GridView s 智慧標籤，選擇 繫結至新的資料來源。 具體而言，將它繫結至名為 ObjectDataSource `CategoriesDataSource` ，它會擷取使用資料`CategoriesBLL`物件的`GetCategories()`方法。
 
 
-[![Create 新 ObjectDataSource 名為 CategoriesDataSource](displaying-binary-data-in-the-data-web-controls-cs/_static/image2.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.png)
+[![建立名為 CategoriesDataSource 新 ObjectDataSource](displaying-binary-data-in-the-data-web-controls-cs/_static/image2.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.png)
 
 **圖 2**:建立新的 ObjectDataSource 具名`CategoriesDataSource`([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-cs/_static/image4.png))
 
 
-[![C設定使用 CategoriesBLL 類別 ObjectDataSource](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image5.png)
+[![設定使用 CategoriesBLL 類別 ObjectDataSource](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image5.png)
 
 **圖 3**:設定要使用 ObjectDataSource`CategoriesBLL`類別 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-cs/_static/image6.png))
 
 
-[![R清單的類別使用 GetCategories() 方法 etrieve](displaying-binary-data-in-the-data-web-controls-cs/_static/image4.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image7.png)
+[![擷取使用 GetCategories() 方法的類別目錄的清單](displaying-binary-data-in-the-data-web-controls-cs/_static/image4.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image7.png)
 
 **圖 4**:擷取清單的類別使用`GetCategories()`方法 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-cs/_static/image8.png))
 
@@ -76,7 +76,7 @@ ms.locfileid: "59404282"
 檢視此頁面，透過瀏覽器 （請參閱 [圖 5]）。 每個八個類別目錄會列出。 有七個類別`BrochurePath`值有`BrochurePath`個別 BoundField 中顯示的值。 Seafood，其具有`NULL`值及其`BrochurePath`，會顯示空白儲存格。
 
 
-[![E列出 ach 類別的名稱、 描述和 BrochurePath 值](displaying-binary-data-in-the-data-web-controls-cs/_static/image5.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image9.png)
+[![列出每個類別的名稱、 描述和 BrochurePath 值](displaying-binary-data-in-the-data-web-controls-cs/_static/image5.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image9.png)
 
 **圖 5**:每個類別 s 的名稱，描述，並`BrochurePath`值都會列 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-cs/_static/image10.png))
 
@@ -92,12 +92,12 @@ ms.locfileid: "59404282"
 如 [圖 7] 所示，這會新增至 GridView，連結的資料行。 按一下檢視摺頁冊連結將直接在瀏覽器中顯示的 PDF 或提示使用者下載檔案，取決於是否已安裝 PDF 閱讀程式和瀏覽器的設定。
 
 
-[![A 按一下 [檢視摺頁冊] 連結，可以檢視類別 s 摺頁冊](displaying-binary-data-in-the-data-web-controls-cs/_static/image7.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image11.png)
+[![按一下 [檢視] 摺頁冊連結也可以檢視類別的手冊](displaying-binary-data-in-the-data-web-controls-cs/_static/image7.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image11.png)
 
 **圖 7**:依序按一下 [檢視摺頁冊] 連結可檢視摺頁冊的類別 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-cs/_static/image12.png))
 
 
-[![T顯示他類別 s 摺頁冊 PDF](displaying-binary-data-in-the-data-web-controls-cs/_static/image8.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image13.png)
+[![隨即出現類別目錄 s 摺頁冊 PDF](displaying-binary-data-in-the-data-web-controls-cs/_static/image8.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image13.png)
 
 **圖 8**:隨即出現類別目錄 s 摺頁冊 PDF ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-cs/_static/image14.png))
 
@@ -131,7 +131,7 @@ ms.locfileid: "59404282"
 套用這些變更之後，圖 10 顯示頁面。 請注意，Seafood 類別的`BrochurePath`欄位現在會顯示沒有手冊提供的文字。
 
 
-[![T他文字否手冊提供顯示這些類別不摺頁冊](displaying-binary-data-in-the-data-web-controls-cs/_static/image10.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image15.png)
+[![文字不摺頁冊提供顯示這些類別不摺頁冊](displaying-binary-data-in-the-data-web-controls-cs/_static/image10.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image15.png)
 
 **圖 10**:文字不摺頁冊提供顯示這些類別不摺頁冊 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-cs/_static/image16.png))
 
@@ -168,7 +168,7 @@ ms.locfileid: "59404282"
 建立此頁面上，使用特定類別的圖片可以檢視瀏覽`DisplayCategoryPicture.aspx?CategoryID=categoryID`。 [圖 11] 顯示飲料類別的圖片，您可以從檢視`DisplayCategoryPicture.aspx?CategoryID=1`。
 
 
-[![T他飲料 」 分類的圖片會顯示](displaying-binary-data-in-the-data-web-controls-cs/_static/image11.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image17.png)
+[![圖片顯示 s 的飲料類別目錄](displaying-binary-data-in-the-data-web-controls-cs/_static/image11.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image17.png)
 
 **圖 11**:圖片顯示的 s 的飲料類別目錄 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-cs/_static/image18.png))
 
@@ -208,7 +208,7 @@ ms.locfileid: "59404282"
 請花一點時間才能檢視此頁面，透過瀏覽器。 請注意如何每一筆記錄現在包含類別目錄的圖片。
 
 
-[![T他類別的圖片會顯示每個資料列](displaying-binary-data-in-the-data-web-controls-cs/_static/image13.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image19.png)
+[![類別的圖片會顯示每個資料列](displaying-binary-data-in-the-data-web-controls-cs/_static/image13.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image19.png)
 
 **圖 13**:類別的圖片會顯示每個資料列 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-cs/_static/image20.png))
 

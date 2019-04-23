@@ -12,7 +12,7 @@ ms.openlocfilehash: 9e6b0b3b86839efa393659531d8b74770226f383
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401461"
 ---
 # <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>了解及處理 SignalR 的連線存留期事件
@@ -254,7 +254,7 @@ SignalR 第 2 版並沒有內建的伺服器 API 的用戶端連接中斷。 有
 
 SignalR 2.1 新增到伺服器的多載`OnDisconnect`事件，表示用戶端是否刻意中斷連線，而不是逾時。`StopCalled`參數為 true，如果用戶端明確地關閉連接。 在 JavaScript 中，如果伺服器錯誤導致用戶端中斷連線，錯誤資訊會傳遞至用戶端`$.connection.hub.lastError`。
 
-**C#伺服端程式碼：`stopCalled`參數**
+**C# 伺服器程式碼：`stopCalled`參數**
 
 [!code-csharp[Main](handling-connection-lifetime-events/samples/sample7.cs?highlight=1,3)]
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 0767b66a035069629c15e658c1e75ea78a7bd07b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407649"
 ---
 # <a name="dynamically-controlling-updatepanel-animations-c"></a>以動態方式控制 UpdatePanel 動畫 (C#)
@@ -58,7 +58,7 @@ ms.locfileid: "59407649"
 在瀏覽器中執行此檔案。 每當您按一下按鈕時，目前的時間會顯示在面板中，一律為一秒期間淡入。
 
 
-[![T他目前的時間會淡入](dynamically-controlling-updatepanel-animations-cs/_static/image2.png)](dynamically-controlling-updatepanel-animations-cs/_static/image1.png)
+[![目前的時間淡入](dynamically-controlling-updatepanel-animations-cs/_static/image2.png)](dynamically-controlling-updatepanel-animations-cs/_static/image1.png)
 
 目前的時間淡入 ([按一下以檢視完整大小的影像](dynamically-controlling-updatepanel-animations-cs/_static/image3.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 27b99df882305d35704419777064dd1149c94e16
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398692"
 ---
 # <a name="creating-and-using-an-ajax-enabled-web-service-in-a-web-site"></a>在網站中建立與使用採用 AJAX 的 Web 服務

@@ -12,7 +12,7 @@ ms.openlocfilehash: 8f6fb4348e6ff703d329331b908e41763f24bb1f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402943"
 ---
 # <a name="security-basics-and-aspnet-support-c"></a>安全性基本概念與 ASP.NET 支援 (C#)
@@ -140,7 +140,7 @@ Microsoft.NET Framework 中提供兩個成員資格提供者類別：
 本教學課程系列專門著重於 SqlMembershipProvider。
 
 
-[![T他提供者模型可讓不同的實作是順暢地插入到 「 架構&lt;/ strong>&gt;](security-basics-and-asp-net-support-cs/_static/image4.png)](security-basics-and-asp-net-support-cs/_static/image3.png)
+[![提供者模型可讓不同的實作是順暢地插入到 Framework&lt;/ strong>&gt;](security-basics-and-asp-net-support-cs/_static/image4.png)](security-basics-and-asp-net-support-cs/_static/image3.png)
 
 **圖 03**:提供者模型可讓不同的實作是順暢地插入到的架構 ([按一下以檢視完整大小的影像](security-basics-and-asp-net-support-cs/_static/image5.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 963850e1048d4fde573f28244fd32d0c4232fda4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399186"
 ---
 # <a name="using-hovermenu-with-a-repeater-control-vb"></a>使用 HoverMenu 與重複項控制項 (VB)
@@ -53,7 +53,7 @@ ms.locfileid: "59399186"
 現在的右邊資料來源中的每個項目顯示快顯視窗 (`PopupPosition`屬性) 的 50 毫秒的延遲之後 (`PopDelay`屬性)。
 
 
-[![T他暫留功能表顯示中繼器中每個項目旁邊](using-hovermenu-with-a-repeater-control-vb/_static/image2.png)](using-hovermenu-with-a-repeater-control-vb/_static/image1.png)
+[![中繼器中每個項目旁邊會出現的停留功能表](using-hovermenu-with-a-repeater-control-vb/_static/image2.png)](using-hovermenu-with-a-repeater-control-vb/_static/image1.png)
 
 中繼器中每個項目旁邊會出現的停留功能表 ([按一下以檢視完整大小的影像](using-hovermenu-with-a-repeater-control-vb/_static/image3.png))
 

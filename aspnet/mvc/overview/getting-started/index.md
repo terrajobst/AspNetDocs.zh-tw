@@ -12,7 +12,7 @@ ms.openlocfilehash: f588af70f3928285274ef6bf14f58697190943ff
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59405816"
 ---
 # <a name="aspnet-mvc-getting-started"></a>ASP.NET MVC 使用者入門
@@ -46,7 +46,7 @@ ms.locfileid: "59405816"
     - [非同步的預存程序](getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application.md)
     - [處理並行](getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
     - [實作繼承](getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-    - [進階的 Entity Framework 案例](getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
+    - [進階 Entity Framework 案例](getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
 - [EF Database First 與 ASP.NET MVC](database-first-development/index.md)
 
     - [開始使用使用 MVC 5 的 Entity Framework 6 Database First](database-first-development/setting-up-database.md)
@@ -57,4 +57,4 @@ ms.locfileid: "59405816"
     - [增強資料驗證](database-first-development/enhancing-data-validation.md)
 - [ASP.NET MVC 5 應用程式生命週期](lifecycle-of-an-aspnet-mvc-5-application.md)
 - [MVC 建議資源](recommended-resources-for-mvc.md)
-- [MVC 建議教學課程與文章](mvc-learning-sequence.md)
+- [MVC 建議教學課程和文章](mvc-learning-sequence.md)

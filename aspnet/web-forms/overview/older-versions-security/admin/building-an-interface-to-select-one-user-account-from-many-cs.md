@@ -12,7 +12,7 @@ ms.openlocfilehash: ed255b4d5938457e82c1fca4d759b6a5691c3f6c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401760"
 ---
 # <a name="building-an-interface-to-select-one-user-account-from-many-c"></a>建置介面從許多個使用者帳戶中選取一個 (C#)
@@ -56,7 +56,7 @@ ASP.NET 頁面`Administration`資料夾主要僅供系統管理使用者。 我�
 此時您專案的方案總管] 看起來應該類似螢幕擷取畫面的 [圖 1 所示。
 
 
-[![F我們新的網頁和 Web.config 檔案已新增網站](building-an-interface-to-select-one-user-account-from-many-cs/_static/image2.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image1.png)
+[![四個新的網頁和 Web.config 檔案新增至網站](building-an-interface-to-select-one-user-account-from-many-cs/_static/image2.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image1.png)
 
 **圖 1**:四個新的頁面並`Web.config`檔案已加入至網站 ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image3.png))
 
@@ -68,7 +68,7 @@ ASP.NET 頁面`Administration`資料夾主要僅供系統管理使用者。 我�
 更新站台對應，請瀏覽的網站，透過瀏覽器。 如 [圖 2] 所示，在左側的導覽現在會包含項目管理教學課程。
 
 
-[![T他的站台對應包含節點標題為 [使用者管理](building-an-interface-to-select-one-user-account-from-many-cs/_static/image5.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image4.png)
+[![站台地圖包含標題為 [使用者管理] 節點](building-an-interface-to-select-one-user-account-from-many-cs/_static/image5.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image4.png)
 
 **圖 2**:站台對應包含節點標題為 [使用者管理] ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image6.png))
 
@@ -82,7 +82,7 @@ ASP.NET 頁面`Administration`資料夾主要僅供系統管理使用者。 我�
 若要在 GridView 中顯示的所需的使用者帳戶資訊，請設定 GridView 的`AutoGenerateColumns`屬性設定為 False，並新增為 BoundFields `UserName`， `Email`，和`Comment`屬性和 CheckBoxFields 的`IsApproved`，`IsLockedOut`，和`IsOnline`屬性。 透過控制項的宣告式標記，或透過 [欄位] 對話方塊中，可以套用此設定。 圖 3 顯示的螢幕擷取畫面的欄位 對話方塊中自動產生欄位核取方塊已取消選取，並 BoundFields 和 CheckBoxFields 加入並設定之後。
 
 
-[![Add 三個 BoundFields 和三個 CheckBoxFields 至 GridView](building-an-interface-to-select-one-user-account-from-many-cs/_static/image8.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image7.png)
+[![將三個 BoundFields 及三個 CheckBoxFields 新增到 GridView](building-an-interface-to-select-one-user-account-from-many-cs/_static/image8.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image7.png)
 
 **圖 3**:將三個 BoundFields 和三個 CheckBoxFields 新增至 GridView ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image9.png))
 
@@ -98,7 +98,7 @@ ASP.NET 頁面`Administration`資料夾主要僅供系統管理使用者。 我�
 請花一點時間測試透過瀏覽器頁面。 如 [圖 4] 所示， `UserAccounts` GridView 列出系統中的使用者名稱、 電子郵件地址及其他相關的帳戶資訊的所有使用者。
 
 
-[![T他的使用者帳戶列在 [GridView](building-an-interface-to-select-one-user-account-from-many-cs/_static/image11.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image10.png)
+[![在 gridview 裡所列出的使用者帳戶](building-an-interface-to-select-one-user-account-from-many-cs/_static/image11.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image10.png)
 
 **圖 4**:在 gridview 裡所列出的使用者帳戶 ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image12.png))
 
@@ -122,7 +122,7 @@ ASP.NET 頁面`Administration`資料夾主要僅供系統管理使用者。 我�
 [圖 5] 顯示`ManageUsers.aspx`頁面上透過瀏覽器檢視時。
 
 
-[![T他 Repeater 列出 27 篩選 Linkbutton](building-an-interface-to-select-one-user-account-from-many-cs/_static/image14.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image13.png)
+[![中繼器列出 27 篩選 Linkbutton](building-an-interface-to-select-one-user-account-from-many-cs/_static/image14.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image13.png)
 
 **圖 5**:Repeater 列出 27 篩選 Linkbutton ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image15.png))
 
@@ -152,7 +152,7 @@ ASP.NET 頁面`Administration`資料夾主要僅供系統管理使用者。 我�
 使用此程式碼就緒之後，測試篩選的功能。 當第一次瀏覽頁面時，會顯示所有使用者帳戶 （請參閱上一步 圖 5）。 按一下 LinkButton 造成回傳，並篩選結果，顯示開頭為 A 的使用者帳戶。
 
 
-[![Use 要顯示這些使用者的使用者名稱以字母為開頭特定的篩選 Linkbutton](building-an-interface-to-select-one-user-account-from-many-cs/_static/image17.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image16.png)
+[![若要顯示這些使用者以特定的字母為開頭的使用者名稱使用的篩選 Linkbutton](building-an-interface-to-select-one-user-account-from-many-cs/_static/image17.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image16.png)
 
 **圖 6**:使用篩選的 Linkbutton 顯示這些使用者的使用者名稱開頭為特定字元 ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image18.png))
 
@@ -197,7 +197,7 @@ GridView 控制項提供兩種類型的分頁：
 [圖 7] 顯示的四個 Linkbutton 檢視透過 [Visual Web Developer 設計] 檢視時。
 
 
-[![Add 第一個、 上一步下, 一步] 和最後一個 Linkbutton 下方的 GridView](building-an-interface-to-select-one-user-account-from-many-cs/_static/image20.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image19.png)
+[![接下來，新增第一個、 上一個和最後一個 GridView 下方的 Linkbutton](building-an-interface-to-select-one-user-account-from-many-cs/_static/image20.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image19.png)
 
 **[圖 7**:首先，新增上一步下, 一步] 和最後一個 Linkbutton 下方 GridView ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image21.png))
 
@@ -229,12 +229,12 @@ GridView 控制項提供兩種類型的分頁：
 圖 8 和 9 顯示作用中的自訂分頁介面。 [圖 8] 顯示`ManageUsers.aspx`頁面檢視所有使用者帳戶資料的第一頁時。 請注意，只有 10 小時，共 13 的帳戶會顯示出來。 按一下下一個或最後一個連結會導致回傳時，更新`PageIndex`成 1，而第二個頁面的使用者帳戶方格繫結 （請參閱 圖 9）。
 
 
-[![T顯示他第一次 10 使用者帳戶](building-an-interface-to-select-one-user-account-from-many-cs/_static/image23.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image22.png)
+[![會顯示第一個 10 使用者帳戶](building-an-interface-to-select-one-user-account-from-many-cs/_static/image23.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image22.png)
 
 **圖 8**:會顯示第一個 10 使用者帳戶 ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image24.png))
 
 
-[![C按一下 [下一步] 連結會顯示第二個頁面的使用者帳戶](building-an-interface-to-select-one-user-account-from-many-cs/_static/image26.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image25.png)
+[![按一下 [下一步] 連結會顯示使用者帳戶的第二頁](building-an-interface-to-select-one-user-account-from-many-cs/_static/image26.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image25.png)
 
 **圖 9**:按一下 [下一步] 連結會顯示第二個頁面的使用者帳戶 ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image27.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: d3a965ccf7ca001d3178819f88836b59f2893bb0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406414"
 ---
 # <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>附錄：修正範例應用程式 （建置使用 Azure 的真實世界的雲端應用程式）
@@ -25,8 +25,8 @@ ms.locfileid: "59406414"
 
 建置真實世界的雲端應用程式與 Azure 的電子書本附錄包含下列各節提供它修正範例應用程式，您可以下載的其他資訊：
 
-- [已知問題](#knownissues)
-- [最佳作法](#bestpractices)
+- [已知的問題](#knownissues)
+- [最佳做法](#bestpractices)
 - [如何在您的本機電腦上，從 Visual Studio 執行應用程式](#run-in-vs)
 - [如何使用 Windows PowerShell 指令碼，將基底的應用程式部署至 Azure App Service Web Apps](#deploybase)
 - [疑難排解 Windows PowerShell 指令碼](#troubleshooting)
@@ -322,7 +322,7 @@ ASP.NET 會自動防止的多種資訊，請在其中惡意使用者可能會在
     如果指令碼失敗，或產生錯誤，例如"New-azurewebsite:首先，呼叫 Set-azuresubscription 和 Select-azuresubscription 」 您可能尚未完成的 Azure PowerShell 設定。
 
     在指令碼完成之後，您可以使用 Azure 管理入口網站，查看所建立的資源，如中所示[自動執行的所有項目](automate-everything.md)一章。
-10. 若要將 FixIt 專案部署到新的 Azure 環境中，使用*AzureWebsite.ps1*指令碼。 例如：
+10. 若要將 FixIt 專案部署到新的 Azure 環境中，使用*AzureWebsite.ps1*指令碼。 例如: 
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample28.cmd)]
 

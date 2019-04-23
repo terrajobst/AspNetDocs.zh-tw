@@ -12,7 +12,7 @@ ms.openlocfilehash: dd652bf604e5b0ca838b5e50714b8923a4fb25c5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398354"
 ---
 # <a name="how-do-i-use-the-aspnet-ajax-collapsable-panel-extender"></a>[How Do i:]使用 ASP.NET AJAX 可摺疊面板擴充項？

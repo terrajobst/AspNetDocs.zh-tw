@@ -12,7 +12,7 @@ ms.openlocfilehash: ca1bf281130bf2c726b6147f90733c8a83754563
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399577"
 ---
 # <a name="sorting-custom-paged-data-vb"></a>排序自訂的分頁資料 (VB)
@@ -71,7 +71,7 @@ ms.locfileid: "59399577"
 **圖 1**:預存程序 s 三個輸入參數嘗試不同的值
 
 
-[![T他預存程序的輸出] 視窗中顯示結果](sorting-custom-paged-data-vb/_static/image3.png)](sorting-custom-paged-data-vb/_static/image2.png)
+[![結果會顯示在 [輸出] 視窗中的預存程序 s](sorting-custom-paged-data-vb/_static/image3.png)](sorting-custom-paged-data-vb/_static/image2.png)
 
 **圖 2**:結果會顯示在 [輸出] 視窗中的預存程序 s ([按一下以檢視完整大小的影像](sorting-custom-paged-data-vb/_static/image4.png))
 
@@ -145,7 +145,7 @@ DAL 和 BLL，包括使用的方法需要擴增`GetProductsPagedAndSorted`預存
 [圖 7] 顯示時依排序的結果的第一頁`UnitPrice`以遞增順序。
 
 
-[![T果會按照 UnitPrice](sorting-custom-paged-data-vb/_static/image10.png)](sorting-custom-paged-data-vb/_static/image9.png)
+[![結果會依照 UnitPrice](sorting-custom-paged-data-vb/_static/image10.png)](sorting-custom-paged-data-vb/_static/image9.png)
 
 **圖 7**:結果會依照 UnitPrice ([按一下以檢視完整大小的影像](sorting-custom-paged-data-vb/_static/image11.png))
 
@@ -166,7 +166,7 @@ DAL 和 BLL，包括使用的方法需要擴增`GetProductsPagedAndSorted`預存
 **圖 9**:將 供應商的供應商名稱 BoundField 的 SortExpression
 
 
-[![T他現在供應商提供的排序結果](sorting-custom-paged-data-vb/_static/image15.png)](sorting-custom-paged-data-vb/_static/image14.png)
+[![現在可以供應商提供的排序結果](sorting-custom-paged-data-vb/_static/image15.png)](sorting-custom-paged-data-vb/_static/image14.png)
 
 **圖 10**:結果可立即依供應商 ([按一下以檢視完整大小的影像](sorting-custom-paged-data-vb/_static/image16.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 4fe34858aadb705ffb59e06ba805493d89aa4028
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59403203"
 ---
 # <a name="using-the-tagbuilder-class-to-build-html-helpers-vb"></a>使用 TagBuilder 類別可建置 HTML 協助程式 (VB)
@@ -65,7 +65,7 @@ TagBuilder 類別有四個重要的屬性：
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-vb/samples/sample2.aspx)]
 
 
-[![T他 [新增專案] 對話方塊中](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.png)
+[![[新增專案] 對話方塊](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.png)
 
 **圖 01**:使用影像協助程式 ([按一下以檢視完整大小的影像](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image2.png))
 

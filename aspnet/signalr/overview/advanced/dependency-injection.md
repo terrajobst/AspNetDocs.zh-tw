@@ -12,7 +12,7 @@ ms.openlocfilehash: 1b5d36529b52dfcbebf34cbfa230b3b3b4e83b81
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59405374"
 ---
 # <a name="dependency-injection-in-signalr"></a>SignalR 中的相依性插入
@@ -101,8 +101,8 @@ ms.locfileid: "59405374"
 
 Stockservices.asmx 範例會定義兩個主要類別：
 
-- `StockTickerHub`:中樞的類別，用來管理用戶端連線。
-- `StockTicker`:單一保留股價，並定期更新它們。
+- `StockTickerHub`：中樞的類別，用來管理用戶端連線。
+- `StockTicker`：單一保留股價，並定期更新它們。
 
 `StockTickerHub` 保留的參考`StockTicker`單一值，雖然`StockTicker`保存參考**IHubConnectionContext**的`StockTickerHub`。 它會使用此介面來與通訊`StockTickerHub`執行個體。 (如需詳細資訊，請參閱 <<c0> [ 伺服器廣播與 ASP.NET SignalR](../getting-started/tutorial-server-broadcast-with-signalr.md)。)
 

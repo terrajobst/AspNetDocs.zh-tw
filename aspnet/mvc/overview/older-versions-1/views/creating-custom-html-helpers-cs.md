@@ -12,7 +12,7 @@ ms.openlocfilehash: 23741d7974713102e6ccb46ced5d62ec202505e8
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400850"
 ---
 # <a name="creating-custom-html-helpers-c"></a>建立自訂的 HTML 協助程式 (C#)
@@ -49,7 +49,7 @@ ASP.NET MVC 架構包括下列設定中 （這不是完整的清單） 的標準
 例如，請考慮在列表 1 中的表單。 此表單會轉譯兩個標準的 HTML 協助程式 （請參閱 圖 1） 的協助。 這個表單用`Html.BeginForm()`和`Html.TextBox()`轉譯簡單的 HTML 表單的 Helper 方法。
 
 
-[![Page 呈現與 HTML 協助程式](creating-custom-html-helpers-cs/_static/image2.png)](creating-custom-html-helpers-cs/_static/image1.png)
+[![頁面呈現與 HTML 協助程式](creating-custom-html-helpers-cs/_static/image2.png)](creating-custom-html-helpers-cs/_static/image1.png)
 
 **圖 01**:使用 HTML Helper 呈現網頁 ([按一下以檢視完整大小的影像](creating-custom-html-helpers-cs/_static/image3.png))
 
@@ -104,7 +104,7 @@ ASP.NET MVC 架構會包含較少的協助程式。 最有可能，您必須擴�
 擴充方法建立擴充方法，並成功建置您的應用程式之後，會出現在 Visual Studio Intellisense，如同所有其他方法的類別 （請參閱 圖 2）。 唯一的差別是該方法會出現特殊符號旁邊 （向下箭號圖示） 的延伸模組。
 
 
-[![U發揚光大 Html.Label() 擴充方法](creating-custom-html-helpers-cs/_static/image5.png)](creating-custom-html-helpers-cs/_static/image4.png)
+[![使用 Html.Label() 擴充方法](creating-custom-html-helpers-cs/_static/image5.png)](creating-custom-html-helpers-cs/_static/image4.png)
 
 **圖 02**:使用 Html.Label() 擴充方法 ([按一下以檢視完整大小的影像](creating-custom-html-helpers-cs/_static/image6.png))
 

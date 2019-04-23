@@ -12,12 +12,12 @@ ms.openlocfilehash: 74ebdc39a81d31fb3c1ef3e5bab1857915cdc247
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400930"
 ---
 # <a name="aspnet-single-page-application"></a>ASP.NET 單一頁面應用程式
 
-- [總覽](overview/index.md)
+- [概觀](overview/index.md)
 
     - [簡介](overview/introduction/index.md)
 

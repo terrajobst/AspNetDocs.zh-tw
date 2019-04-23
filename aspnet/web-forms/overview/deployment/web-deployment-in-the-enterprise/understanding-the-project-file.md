@@ -12,7 +12,7 @@ ms.openlocfilehash: d774a8e13e108d1be4c39e1e909d3d9683968a0d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404919"
 ---
 # <a name="understanding-the-project-file"></a>了解專案檔
@@ -152,7 +152,7 @@ MSBuild 專案檔根據[MSBuild XML 結構描述](https://msdn.microsoft.com/lib
 
 ### <a name="targets-and-tasks"></a>目標和工作
 
-在 MSBuild 結構描述[任務](https://msdn.microsoft.com/library/77f2hx1s.aspx)項目代表的個別組建指令 （或工作）。 MSBuild 包含許多預先定義的工作。 例如: 
+在 MSBuild 結構描述[任務](https://msdn.microsoft.com/library/77f2hx1s.aspx)項目代表的個別組建指令 （或工作）。 MSBuild 包含許多預先定義的工作。 例如：
 
 - **複製**工作將檔案複製到新位置。
 - **Csc**工作叫用 Visual C# 編譯器。

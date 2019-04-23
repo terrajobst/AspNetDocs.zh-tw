@@ -12,7 +12,7 @@ ms.openlocfilehash: 2cedf4dd161751802bf197ee6b96731259bc5c2f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402930"
 ---
 # <a name="how-do-i-discover-application-changes-prior-to-deployment"></a>[How Do i:]探索應用程式變更再部署？

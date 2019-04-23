@@ -12,7 +12,7 @@ ms.openlocfilehash: 1a3515af80de0c9d71678a9edaea13a04e0ed80b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407246"
 ---
 # <a name="how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts"></a>[How Do i:]使用巢狀主版頁面建立標準的內容版面配置

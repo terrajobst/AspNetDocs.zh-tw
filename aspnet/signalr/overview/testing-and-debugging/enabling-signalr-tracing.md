@@ -12,7 +12,7 @@ ms.openlocfilehash: 1dadbdb6fa1dc58b855402f1d6f18e8af861f756
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399355"
 ---
 # <a name="enabling-signalr-tracing"></a>啟用 SignalR 追蹤
@@ -64,7 +64,7 @@ ms.locfileid: "59399355"
 
 伺服器事件類別目錄包含下列類型的訊息：
 
-| 原始程式檔 | 訊息 |
+| Source | 訊息 |
 | --- | --- |
 | SignalR.SqlMessageBus | SQL 訊息匯流排範圍外的提供者安裝程式、 資料庫作業、 錯誤和逾時事件 |
 | SignalR.ServiceBusMessageBus | 服務匯流排範圍外提供者建立主題和訂用帳戶、 錯誤和訊息事件 |

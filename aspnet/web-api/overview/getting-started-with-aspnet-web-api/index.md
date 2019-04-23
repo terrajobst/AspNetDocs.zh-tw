@@ -13,7 +13,7 @@ ms.openlocfilehash: f5b7c080cdd6331e41751e8a4741f724153ec360
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59403008"
 ---
 # <a name="getting-started-with-aspnet-web-api"></a>開始使用 ASP.NET Web API
@@ -23,6 +23,6 @@ ms.locfileid: "59403008"
 
 - [開始使用 Web API 2 (C#)](tutorial-your-first-web-api.md)
 - [Web API 2 中的動作結果](action-results.md)
-- [使用具有 ASP.NET Web Forms 的 Web API](using-web-api-with-aspnet-web-forms.md)
+- [使用具有 ASP.NET Web Form 的 Web API](using-web-api-with-aspnet-web-forms.md)
 - [建立 Web API 說明頁面](creating-api-help-pages.md)
-- [實際操作實驗室：使用 ASP.NET Web API 和 Angular.js 建置單一頁面應用程式 (SPA)](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
+- [實習實驗室：建置使用 ASP.NET Web API 和 Angular.js 的單一頁面應用程式 (SPA)](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)

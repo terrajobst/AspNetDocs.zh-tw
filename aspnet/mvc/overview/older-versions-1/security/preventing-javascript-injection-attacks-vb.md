@@ -12,7 +12,7 @@ ms.openlocfilehash: d988b2ed6b7d1760557cbfbb543afa85b320c984
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402436"
 ---
 # <a name="preventing-javascript-injection-attacks-vb"></a>防止 JavaScript 插入式攻擊 (VB)
@@ -33,7 +33,7 @@ ms.locfileid: "59402436"
 假設您已建立客戶的意見反應網站 （請參閱 圖 1）。 客戶可以瀏覽網站，並使用您的產品使用者體驗上輸入意見反應。 當客戶提交他們的意見反應時，意見反應會重新顯示在意見反應 頁面上。
 
 
-[![C客戶意見反應網站](preventing-javascript-injection-attacks-vb/_static/image2.png)](preventing-javascript-injection-attacks-vb/_static/image1.png)
+[![客戶意見反應網站](preventing-javascript-injection-attacks-vb/_static/image2.png)](preventing-javascript-injection-attacks-vb/_static/image1.png)
 
 **圖 01**:客戶意見反應網站 ([按一下以檢視完整大小的影像](preventing-javascript-injection-attacks-vb/_static/image3.png))
 
@@ -65,7 +65,7 @@ ms.locfileid: "59402436"
 這段文字表示的 JavaScript 指令碼，會顯示警示訊息方塊。 有人將此指令碼提交至意見反應之後形成，訊息<em>Boo ！</em>會出現時的任何人造訪客戶意見反應網站未來 （請參閱 圖 2）。
 
 
-[![JavaScript Injection](preventing-javascript-injection-attacks-vb/_static/image5.png)](preventing-javascript-injection-attacks-vb/_static/image4.png)
+[![JavaScript 插入式攻擊](preventing-javascript-injection-attacks-vb/_static/image5.png)](preventing-javascript-injection-attacks-vb/_static/image4.png)
 
 **圖 02**:JavaScript 插入式攻擊 ([按一下以檢視完整大小的影像](preventing-javascript-injection-attacks-vb/_static/image6.png))
 
@@ -93,7 +93,7 @@ ms.locfileid: "59402436"
 什麼平均值為 HTML 編碼字串？ 當您以 HTML 編碼字串時，危險字元，例如`<`並`>`這類的 HTML 實體參考會取代`&lt;`和`&gt;`。 因此當字串`<script>alert("Boo!")</script>`是 HTML 編碼，將它轉換成`&lt;script&gt;alert(&quot;Boo!&quot;)&lt;/script&gt;`。 做為解譯的瀏覽器時，JavaScript 指令碼不會再執行編碼的字串。 相反地，您可以取得無害的頁面 [圖 3] 中。
 
 
-[![Defeated JavaScript 攻擊](preventing-javascript-injection-attacks-vb/_static/image8.png)](preventing-javascript-injection-attacks-vb/_static/image7.png)
+[![失效的 JavaScript 攻擊](preventing-javascript-injection-attacks-vb/_static/image8.png)](preventing-javascript-injection-attacks-vb/_static/image7.png)
 
 **圖 03**:擊敗 JavaScript 攻擊 ([按一下以檢視完整大小的影像](preventing-javascript-injection-attacks-vb/_static/image9.png))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 54b3afac9b19962b02336a35909b208c4e3f7504
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400551"
 ---
 # <a name="part-4-adding-an-admin-view"></a>第 4 部分：新增系統管理員檢視

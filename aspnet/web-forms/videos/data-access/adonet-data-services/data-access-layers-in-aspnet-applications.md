@@ -12,7 +12,7 @@ ms.openlocfilehash: 7a16533fd7265253d10a22dc5cc7c855250f8fe4
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399563"
 ---
 # <a name="data-access-layers-in-aspnet-applications"></a>ASP.NET 應用程式中的資料存取層

@@ -12,7 +12,7 @@ ms.openlocfilehash: 66b6df78a8ffed3ea7c586a995b8df8563d908bb
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407207"
 ---
 # <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>設定生產環境 Web 應用程式使用生產資料庫 (VB)
@@ -53,7 +53,7 @@ Web 應用程式使用中的資訊*連接字串*建立與資料庫的連線。 �
 開啟 Visual Studio，然後瀏覽至 [伺服器總管] 視窗 （在 Visual Web Developer 中，此視窗稱為資料庫總管）。 以滑鼠右鍵按一下 [資料連線] 選項，並從內容功能表中選擇 [加入連接] 選項。 這會顯示在 圖 1 所示的精靈。 選擇適當的資料來源，然後按一下 [繼續]。
 
 
-[![C若要將新的資料庫新增至 [伺服器總管] 中選擇](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image2.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image1.jpg) 
+[![若要將新的資料庫新增至 [伺服器總管] 中選擇](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image2.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image1.jpg) 
 
 **圖 1**:選擇將新的資料庫新增至 [伺服器總管] ([按一下以檢視完整大小的影像](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image3.jpg))
 
@@ -61,14 +61,14 @@ Web 應用程式使用中的資訊*連接字串*建立與資料庫的連線。 �
 接下來，指定 各種資料庫連接資訊 （請參閱 圖 2）。 當您註冊您的 web 主機服務的公司，他們應該如何提供資訊連線至資料庫伺服器名稱、 資料庫名稱、 使用者名稱和密碼，用來連接到資料庫，資料庫等等。 輸入這項資訊之後按一下 [確定] 完成這個精靈，並將資料庫加入至 [伺服器總管] 中。
 
 
-[![S指定資料庫連接資訊](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image5.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image4.jpg) 
+[![指定的資料庫連線資訊](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image5.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image4.jpg) 
 
 **圖 2**:指定資料庫連接資訊 ([按一下以檢視完整大小的影像](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image6.jpg))
 
 
 生產環境資料庫現在應該會列出在 [伺服器總管] 中。 從 [伺服器總管] 中選取資料庫，請移至 [屬性] 視窗。 您在這裡可以找到名為資料庫的連接字串與連接字串的屬性。 假設您在生產和 SqlClient 提供者上使用 Microsoft SQL Server 資料庫連接字串看起來應該如下所示：
 
-<strong>資料來源 =<em>serverName</em>;初始目錄 =<em>databaseName</em>;Persist Security Info = True;使用者識別碼 =<em>username</em>;密碼 =*密碼</strong>*
+<strong>Data Source=<em>serverName</em>; Initial Catalog=<em>databaseName</em>; Persist Security Info=True; User ID=<em>username</em>; Password=*password</strong>*
 
 其中*serverName*， *databaseName*， *username*，以及*密碼*與資料庫伺服器名稱，資料庫的值名稱和使用者名稱和密碼提供給您的 web 主機公司。
 
@@ -91,7 +91,7 @@ Web 應用程式使用中的資訊*連接字串*建立與資料庫的連線。 �
 一旦網站部署至生產環境，請瀏覽生產網站，透過瀏覽器。 您應該查看，並在本機執行資料驅動應用程式時享有與相同的使用者體驗。 當然您造訪的網站上實際執行時的站台是由提供生產環境資料庫伺服器上，而瀏覽的網站，在開發環境中使用的資料庫，在開發過程中。 [圖 3] 所示*教導您自己 ASP.NET 3.5 24 小時內*檢閱從在實際執行環境 （請注意在瀏覽器的網址列中的 URL） 網站的頁面。
 
 
-[![T他資料驅動應用程式是現在可在生產環境 ！](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image8.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image7.jpg) 
+[![資料驅動應用程式是現在可在生產環境 ！](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image8.jpg)](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image7.jpg) 
 
 **圖 3**:資料驅動應用程式是現在可在生產環境 ！ ([按一下以檢視完整大小的影像](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image9.jpg))
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: 86b90a21f59ee0ad52a3e6f7db19d4714282105c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401136"
 ---
 # <a name="videos"></a>視訊
@@ -35,20 +35,20 @@ ms.locfileid: "59401136"
     - [使用 WebMatrix 將網站發佈至網際網路](introduction/publish-a-website-to-the-internet-using-webmatrix.md)
 - [ASP.NET Razor Pages](aspnet-razor-pages/index.md)
 
-    - [開始使用 WebMatrix 與 ASP.NET 網頁](aspnet-razor-pages/getting-started-with-webmatrix-and-aspnet-web-pages.md)
+    - [開始使用 WebMatrix 及 ASP.NET 網頁](aspnet-razor-pages/getting-started-with-webmatrix-and-aspnet-web-pages.md)
     - [ASP.NET Web 程式設計 Razor 語法簡介](aspnet-razor-pages/introduction-to-aspnet-web-programming-using-the-razor-syntax.md)
-    - [建立一致的外觀 (第 1 部分)](aspnet-razor-pages/creating-a-consistent-look-part-1.md)
-    - [建立一致的外觀 (第 2 部分)](aspnet-razor-pages/creating-a-consistent-look-part-2.md)
-    - [使用表單 (第 1 部分)](aspnet-razor-pages/working-with-forms-part-1.md)
-    - [使用表單 (第 2 部分)](aspnet-razor-pages/working-with-forms-part-2.md)
-    - [使用資料 (第 1 部分)](aspnet-razor-pages/working-with-data-part-1.md)
-    - [使用資料 (第 2 部分)](aspnet-razor-pages/working-with-data-part-2.md)
+    - [建立一致的外觀 (第 1 節)](aspnet-razor-pages/creating-a-consistent-look-part-1.md)
+    - [建立一致的外觀 (第 2 節)](aspnet-razor-pages/creating-a-consistent-look-part-2.md)
+    - [使用表單 (第 1 節)](aspnet-razor-pages/working-with-forms-part-1.md)
+    - [使用表單 (第 2 節)](aspnet-razor-pages/working-with-forms-part-2.md)
+    - [使用資料 (第 1 節)](aspnet-razor-pages/working-with-data-part-1.md)
+    - [使用資料 (第 2 節)](aspnet-razor-pages/working-with-data-part-2.md)
     - [以網格顯示資料](aspnet-razor-pages/displaying-data-in-a-grid.md)
-    - [以圖表顯示資料 (第 1 部分)](aspnet-razor-pages/displaying-data-in-a-chart-part-1.md)
-    - [以圖表顯示資料 (第 2 部分)](aspnet-razor-pages/displaying-data-in-a-chart-part-2.md)
-    - [處理檔案](aspnet-razor-pages/working-with-files.md)
+    - [以圖表顯示資料 (第 1 節)](aspnet-razor-pages/displaying-data-in-a-chart-part-1.md)
+    - [以圖表顯示資料 (第 2 節)](aspnet-razor-pages/displaying-data-in-a-chart-part-2.md)
+    - [使用檔案](aspnet-razor-pages/working-with-files.md)
     - [使用影像](aspnet-razor-pages/working-with-images.md)
     - [使用影片](aspnet-razor-pages/working-with-video.md)
     - [將電子郵件新增到您的網站](aspnet-razor-pages/adding-email-to-your-web-site.md)
     - [將搜尋新增到您的網站](aspnet-razor-pages/adding-search-to-your-web-site.md)
-    - [將社交網路新增到您的網站](aspnet-razor-pages/adding-social-networking-to-your-website.md)
+    - [將社交網路新增至您的網站](aspnet-razor-pages/adding-social-networking-to-your-website.md)

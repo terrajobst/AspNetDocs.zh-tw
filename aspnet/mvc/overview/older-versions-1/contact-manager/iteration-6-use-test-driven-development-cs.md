@@ -12,7 +12,7 @@ ms.openlocfilehash: 94885984ebad90523369dcf5771d0f77a753008f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59405660"
 ---
 # <a name="iteration-6--use-test-driven-development-c"></a>反覆項目 #6 – 使用測試導向開發 (C#)
@@ -113,7 +113,7 @@ by [Microsoft](https://github.com/microsoft)
 建立新的單元測試，以滑鼠右鍵按一下 [控制器] 資料夾，在 ContactManager.Tests 專案中，選取**新增]、 [新增測試**，然後選取**單元測試**範本 （見 [圖 1]）。 名稱，新的單元測試 GroupControllerTest.cs，然後按一下**確定** 按鈕。
 
 
-[![Adding GroupControllerTest 單元測試](iteration-6-use-test-driven-development-cs/_static/image1.jpg)](iteration-6-use-test-driven-development-cs/_static/image1.png)
+[![新增 GroupControllerTest 單元測試](iteration-6-use-test-driven-development-cs/_static/image1.jpg)](iteration-6-use-test-driven-development-cs/_static/image1.png)
 
 **圖 01**:新增 GroupControllerTest 單元測試 ([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-cs/_static/image2.png))
 
@@ -141,7 +141,7 @@ by [Microsoft](https://github.com/microsoft)
 我們將 GroupController 和群組類別新增至我們的專案之後，第一個單元測試成功完成 （請參閱 圖 2）。 我們已經通過測試所需的最小工作。 它是要慶祝的時間。
 
 
-[![Success ！](iteration-6-use-test-driven-development-cs/_static/image2.jpg)](iteration-6-use-test-driven-development-cs/_static/image3.png)
+[![成功 ！](iteration-6-use-test-driven-development-cs/_static/image2.jpg)](iteration-6-use-test-driven-development-cs/_static/image3.png)
 
 **圖 02**:成功 ！([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-cs/_static/image4.png))
 
@@ -243,7 +243,7 @@ by [Microsoft](https://github.com/microsoft)
 <a id="0.11_table01"></a>
 
 
-| **資料行名稱** | **資料類型** | **允許 Null** |
+| **資料行名稱** | **資料類型** | **允許 null 值** |
 | --- | --- | --- |
 | ID | int | False |
 | 名稱 | nvarchar(50) | False |
@@ -267,12 +267,12 @@ by [Microsoft](https://github.com/microsoft)
 9. 按一下 [儲存] 按鈕，以將變更儲存至 Contacts 資料表。
 
 
-[![Creating 資料庫資料表關聯性](iteration-6-use-test-driven-development-cs/_static/image3.jpg)](iteration-6-use-test-driven-development-cs/_static/image5.png)
+[![建立資料庫資料表關聯性](iteration-6-use-test-driven-development-cs/_static/image3.jpg)](iteration-6-use-test-driven-development-cs/_static/image5.png)
 
 **圖 03**:建立資料庫資料表關聯性 ([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-cs/_static/image6.png))
 
 
-[![Specifying 資料表關聯性](iteration-6-use-test-driven-development-cs/_static/image4.jpg)](iteration-6-use-test-driven-development-cs/_static/image7.png)
+[![指定資料表關聯性](iteration-6-use-test-driven-development-cs/_static/image4.jpg)](iteration-6-use-test-driven-development-cs/_static/image7.png)
 
 **圖 04**:指定資料表關聯性 ([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-cs/_static/image8.png))
 
@@ -288,7 +288,7 @@ by [Microsoft](https://github.com/microsoft)
 5. 以滑鼠右鍵按一下連絡人實體下方會顯示群組導覽屬性。 變更的名稱*群組*導覽屬性來*群組*（個別）。
 
 
-[![Updating Entity Framework 模型從資料庫](iteration-6-use-test-driven-development-cs/_static/image5.jpg)](iteration-6-use-test-driven-development-cs/_static/image9.png)
+[![更新 Entity Framework 模型從資料庫](iteration-6-use-test-driven-development-cs/_static/image5.jpg)](iteration-6-use-test-driven-development-cs/_static/image9.png)
 
 **圖 05**:更新 Entity Framework 模型從資料庫 ([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-cs/_static/image10.png))
 
@@ -296,7 +296,7 @@ by [Microsoft](https://github.com/microsoft)
 完成這些步驟之後，您的資料模型會代表連絡人和群組的資料表。 實體設計工具應該會顯示這兩個實體 （請參閱 圖 6）。
 
 
-[![E實體所耗用的設計工具顯示群組，並連絡](iteration-6-use-test-driven-development-cs/_static/image6.jpg)](iteration-6-use-test-driven-development-cs/_static/image11.png)
+[![顯示群組和連絡人的實體設計工具](iteration-6-use-test-driven-development-cs/_static/image6.jpg)](iteration-6-use-test-driven-development-cs/_static/image11.png)
 
 **圖 06**:顯示群組和連絡人的實體設計工具 ([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-cs/_static/image12.png))
 
@@ -329,7 +329,7 @@ by [Microsoft](https://github.com/microsoft)
 - Views\Group\Delete.aspx-刪除連絡人群組會顯示確認表單
 
 
-[![T他群組索引檢視](iteration-6-use-test-driven-development-cs/_static/image7.jpg)](iteration-6-use-test-driven-development-cs/_static/image13.png)
+[![群組索引檢視](iteration-6-use-test-driven-development-cs/_static/image7.jpg)](iteration-6-use-test-driven-development-cs/_static/image13.png)
 
 **圖 07**:群組 [索引] 檢視 ([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-cs/_static/image14.png))
 
@@ -343,7 +343,7 @@ by [Microsoft](https://github.com/microsoft)
 您可以看到修改過的檢視，查看隨附此教學課程的 Visual Studio 應用程式。 例如，圖 8 說明連絡人索引檢視。
 
 
-[![T他連絡人索引檢視](iteration-6-use-test-driven-development-cs/_static/image8.jpg)](iteration-6-use-test-driven-development-cs/_static/image15.png)
+[![請連絡 [索引] 檢視](iteration-6-use-test-driven-development-cs/_static/image8.jpg)](iteration-6-use-test-driven-development-cs/_static/image15.png)
 
 **圖 08**:請連絡 [索引] 檢視 ([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-cs/_static/image16.png))
 

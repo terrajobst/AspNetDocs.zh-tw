@@ -12,7 +12,7 @@ ms.openlocfilehash: 17315dbbbdc08412e4e928256783c221a8a2cb20
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406804"
 ---
 # <a name="release-notes-for-aspnet-and-web-tools-20131-for-visual-studio-2012"></a>適用於 Visual Studio 2012 的 ASP.NET 和 Web 工具 2013.1 版本資訊

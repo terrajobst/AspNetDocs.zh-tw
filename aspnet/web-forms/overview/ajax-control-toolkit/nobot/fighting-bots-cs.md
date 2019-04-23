@@ -12,7 +12,7 @@ ms.openlocfilehash: 178d839f67d70670b3b5acf470acb7ae8cf1c33f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59405803"
 ---
 # <a name="fighting-bots-c"></a>對抗 Bot (C#)
@@ -65,7 +65,7 @@ ms.locfileid: "59405803"
 當您執行此指令碼和停用 JavaScript 或送出表單時前, 兩秒內或 30 秒內七次送出表單時，會出現錯誤訊息。 不過更聰明地使用這個控制項，因為只有約 90-95%的使用者必須啟用 JavaScript，因此 5-10%的使用者將會失敗`NoBot`的測試。
 
 
-[![Tbot 可能被因為他的錯誤訊息](fighting-bots-cs/_static/image2.png)](fighting-bots-cs/_static/image1.png)
+[![此錯誤訊息可能被因為由 bot](fighting-bots-cs/_static/image2.png)](fighting-bots-cs/_static/image1.png)
 
 此錯誤訊息可能因為由電腦控制機甲 ([按一下以檢視完整大小的影像](fighting-bots-cs/_static/image3.png))
 

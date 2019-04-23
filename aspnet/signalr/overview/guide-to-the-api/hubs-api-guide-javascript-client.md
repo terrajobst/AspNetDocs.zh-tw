@@ -12,7 +12,7 @@ ms.openlocfilehash: b4c6d850062e1b65eacd97ffc4f34c80fedea503
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404308"
 ---
 # <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>ASP.NET SignalR 中樞 API 指南-JavaScript 用戶端
@@ -462,13 +462,13 @@ Signalr 1.x 中的，跨網域要求是由單一 EnableCrossDomain 旗標控制�
 
 SignalR 提供以下連線，您可以處理存留期事件：
 
-- `starting`:透過連線傳送任何資料之前引發。
-- `received`:在此連接上收到任何資料時，就會引發。 提供已接收的資料。
-- `connectionSlow`:當用戶端偵測到較慢或經常卸除連接時引發。
-- `reconnecting`:基礎傳輸可讓您開始重新連線時引發。
-- `reconnected`:當基礎傳輸已重新連接時引發。
-- `stateChanged`:連線狀態變更時引發。 提供的舊狀態和新的狀態 （連接、 已連線、 正在重新連線或已中斷連線）。
-- `disconnected`:當連接已中斷連線時，就會引發。
+- `starting`：透過連線傳送任何資料之前引發。
+- `received`：在此連接上收到任何資料時，就會引發。 提供已接收的資料。
+- `connectionSlow`：當用戶端偵測到較慢或經常卸除連接時引發。
+- `reconnecting`：基礎傳輸可讓您開始重新連線時引發。
+- `reconnected`：當基礎傳輸已重新連接時引發。
+- `stateChanged`：連線狀態變更時引發。 提供的舊狀態和新的狀態 （連接、 已連線、 正在重新連線或已中斷連線）。
+- `disconnected`：當連接已中斷連線時，就會引發。
 
 例如，如果您想要顯示警告訊息，可能會造成明顯延遲的連線問題時，處理`connectionSlow`事件。
 

@@ -12,7 +12,7 @@ ms.openlocfilehash: b638565cdaf4b16d5f7a4649b7b1cccd880200d1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407376"
 ---
 # <a name="understanding-controllers-controller-actions-and-action-results"></a>了解控制器、控制器動作與動作結果

@@ -12,7 +12,7 @@ ms.openlocfilehash: c5dd64cd3b60f7c231be8ce1c464af1582f23f5d
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402697"
 ---
 # <a name="adding-validation-controls-to-the-editing-and-inserting-interfaces-vb"></a>將驗證控制項新增至編輯和插入介面 (VB)
@@ -39,7 +39,7 @@ GridView 和 DetailsView 控制項範例中的我們探討了過去三個教學�
 在 [檢查與插入、 更新和刪除事件相關聯](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)教學課程中我們建立所列出的名稱和價格的產品，可編輯的 GridView 內的頁面。 此外，頁面包含 DetailsView 其`DefaultMode`屬性設定為`Insert`，藉此一律呈現在插入模式。 從這個 DetailsView 中，使用者無法輸入新的產品名稱和價格、 按一下 插入，以及將它新增至系統 （請參閱 圖 1）。
 
 
-[![T他先前範例可讓使用者加入新的產品，並編輯現有的](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image2.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image1.png)
+[![上述範例可讓使用者加入新的產品，並編輯現有的](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image2.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image1.png)
 
 **圖 1**:前一個範例可讓使用者加入新的產品，並編輯現有的 ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image3.png))
 
@@ -57,7 +57,7 @@ GridView 和 DetailsView 控制項範例中的我們探討了過去三個教學�
 3. 複製內的文字`<asp:Content>`和`</asp:Content>`標籤 （程式行 3 到 44），為所示的 圖 2。
 
 
-[![C複製文字內&lt;asp: Content&gt;控制項](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image5.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image4.png)
+[![複製文字內&lt;asp: Content&gt;控制項](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image5.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image4.png)
 
 **圖 2**:複製文字內`<asp:Content>`控制項 ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image6.png))
 
@@ -75,7 +75,7 @@ GridView 和 DetailsView 控制項範例中的我們探討了過去三個教學�
 若要將驗證控制項加入編輯和插入介面，需要轉換成 TemplateFields BoundFields DetailsView 和 GridView 控制項所使用的。 若要這麼做，請分別按一下 編輯資料行和編輯欄位的連結，在 GridView 和 DetailsView 的智慧標籤。 選取每個 BoundFields，然後按一下 「 將這個欄位轉換為 TemplateField 」 連結。
 
 
-[![C轉換每個的 GridView 與 DetailsView 的 BoundFields 到 TemplateFields](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image8.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image7.png)
+[![每個的 GridView 與 DetailsView 的 BoundFields 轉換 TemplateFields](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image8.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image7.png)
 
 **圖 3**:轉換每個的 GridView 與 DetailsView 的 BoundFields 到 TemplateFields ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image9.png))
 
@@ -117,7 +117,7 @@ BoundField 轉換為 TemplateField 透過 [欄位] 對話方塊中，會產生�
 讓我們開始新增必要的驗證控制項，以`EditItemTemplate`GridView 的 TemplateFields。 若要這麼做，按一下 GridView 的智慧標籤，即可啟動 [編輯範本] 介面中的 [編輯範本] 連結。 從這裡開始，您可以選取要從下拉式清單中編輯的範本。 因為我們想要擴充的編輯介面，我們需要將驗證控制項加入`ProductName`並`UnitPrice`的`EditItemTemplate`s。
 
 
-[![We 需要擴充產品名稱和單價的 EditItemTemplates](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image11.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image10.png)
+[![我們需要擴充產品名稱和單價的 EditItemTemplates](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image11.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image10.png)
 
 **圖 4**:我們需要延長`ProductName`並`UnitPrice`的`EditItemTemplate`s ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image12.png))
 
@@ -125,7 +125,7 @@ BoundField 轉換為 TemplateField 透過 [欄位] 對話方塊中，會產生�
 在  `ProductName` `EditItemTemplate`，藉由將它從 工具箱 拖曳至範本的編輯介面，加入 RequiredFieldValidator 放後的文字方塊中。
 
 
-[![Add 到 ProductName EditItemTemplate RequiredFieldValidator](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image14.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image13.png)
+[![RequiredFieldValidator 加入 ProductName EditItemTemplate](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image14.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image13.png)
 
 **圖 5**:新增至 RequiredFieldValidator `ProductName` `EditItemTemplate` ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image15.png))
 
@@ -133,7 +133,7 @@ BoundField 轉換為 TemplateField 透過 [欄位] 對話方塊中，會產生�
 所有驗證控制項來都處理驗證單一 ASP.NET Web 控制項的輸入。 因此，我們要指出我們剛才加入 RequiredFieldValidator 應該驗證在文字方塊`EditItemTemplate`; 這可以藉由設定驗證控制項[ControlToValidate 屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx)至`ID`適當的 Web 控制項。 [] 文字方塊中目前有相當的描述性`ID`的`TextBox1`，但讓我們將它變更為更適當。 在文字方塊中，在範本上按一下，然後，從 [屬性] 視窗中，變更`ID`從`TextBox1`至`EditProductName`。
 
 
-[![C變更文字方塊的 EditProductName ID](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image17.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image16.png)
+[![將文字方塊的識別碼變更為 EditProductName](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image17.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image16.png)
 
 **圖 6**:變更文字方塊的`ID`要`EditProductName`([按一下以檢視完整大小的影像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image18.png))
 
@@ -143,7 +143,7 @@ BoundField 轉換為 TemplateField 透過 [欄位] 對話方塊中，會產生�
 設定之後的 RequiredFieldValidator 這三個屬性，您的畫面看起來應該類似於 圖 7。
 
 
-[![Set RequiredFieldValidator ControlToValidate、 錯誤訊息和文字屬性](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image20.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image19.png)
+[![設定 RequiredFieldValidator ControlToValidate、 錯誤訊息，以及文字屬性](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image20.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image19.png)
 
 **圖 7**:設定 RequiredFieldValidator `ControlToValidate`， `ErrorMessage`，並`Text`屬性 ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image21.png))
 
@@ -162,7 +162,7 @@ BoundField 轉換為 TemplateField 透過 [欄位] 對話方塊中，會產生�
 > 請注意，在*與插入、 更新和刪除相關聯的事件*教學課程中，我們設定 BoundField`DataFormatString`屬性設`{0:c}`才能將它格式化為貨幣。 此外，我們會設定`ApplyFormatInEditMode`屬性設為 true，造成 GridView 的編輯介面，以格式化`UnitPrice`為貨幣。 Visual Studio 時轉換為 TemplateField BoundField，記下這些設定，並格式化文字方塊的`Text`屬性為貨幣，使用資料繫結語法`<%# Bind("UnitPrice", "{0:c}") %>`。
 
 
-[![A具有無效的輸入文字方塊旁邊出現星號 n](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image23.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image22.png)
+[![具有無效的輸入文字方塊旁邊出現星號](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image23.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image22.png)
 
 **圖 8**:星號會出現下一個具有無效的輸入文字方塊 ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image24.png))
 
@@ -176,12 +176,12 @@ BoundField 轉換為 TemplateField 透過 [欄位] 對話方塊中，會產生�
 讓我們針對此練習的選項 #1。 目前`UnitPrice`格式化為貨幣，因為文字方塊中的資料繫結運算式`EditItemTemplate`: `<%# Bind("UnitPrice", "{0:c}") %>`。 變更繫結陳述式來`Bind("UnitPrice", "{0:n2}")`，它將結果格式化為兩位數的有效位數的數字。 這可以直接透過宣告式語法，或從 編輯資料繫結 連結，即可完成`EditUnitPrice`中的文字方塊`UnitPrice`TemplateField 的`EditItemTemplate`（請參閱 圖 9 和 10）。
 
 
-[![C按一下文字方塊的編輯資料繫結連結](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image26.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image25.png)
+[![按一下文字方塊的 [編輯資料繫結] 連結](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image26.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image25.png)
 
 **圖 9**:按一下文字方塊的編輯資料繫結連結 ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image27.png))
 
 
-[![S指定繫結陳述式中的格式規範](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image29.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image28.png)
+[![在 繫結陳述式中指定的格式規範](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image29.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image28.png)
 
 **圖 10**:指定中的格式規範`Bind`陳述式 ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image30.png))
 
@@ -199,7 +199,7 @@ ASP.NET 包含五個驗證控制項，除了[ValidationSummary 控制項](https:
 若要這麼做，請從 [工具箱] 拖曳至設計工具拖曳 ValidationSummary 控制項。 驗證控制項的位置並不很重要，因為我們要將它設定為只會顯示摘要為 messagebox。 加入控制項之後, 設定其[ShowSummary 屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx)要`False`及其[ShowMessageBox 屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx)到`True`。 此步驟中，任何驗證錯誤摘要說明在用戶端 messagebox 中。
 
 
-[![T用戶端 Messagebox 將摘要列出他驗證錯誤](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image32.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image31.png)
+[![驗證錯誤會摘要在用戶端 Messagebox](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image32.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image31.png)
 
 **圖 11**:驗證錯誤會摘要在用戶端 Messagebox ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image33.png))
 
@@ -215,7 +215,7 @@ ASP.NET 包含五個驗證控制項，除了[ValidationSummary 控制項](https:
 之後新增這些驗證控制項，無法新增至系統，如果未提供其名稱，或其價格是負數或非法格式化一個新的產品。
 
 
-[![V已新增邏輯，DetailsView 插入介面 alidation](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image35.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image34.png)
+[![驗證邏輯已新增至 DetailsView 插入介面](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image35.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image34.png)
 
 **圖 12**:驗證邏輯已新增至 DetailsView 插入介面 ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image36.png))
 
@@ -225,7 +225,7 @@ ASP.NET 包含五個驗證控制項，除了[ValidationSummary 控制項](https:
 我們的頁面包含兩個以邏輯方式不同集合的驗證控制項： 與 GridView 的編輯介面，並與 DetailsView 的插入介面。 根據預設，當會回傳*所有*簽入驗證頁面上的控制項。 不過，編輯一筆記錄時我們不想要驗證的 DetailsView 插入介面的驗證控制項。 圖 13 說明我們目前的難題，當使用者編輯的產品，完全合法的值時，按一下 更新會造成驗證錯誤，因為插入的介面中的名稱和價格的值為空白。
 
 
-[![Updating 產品會造成引發插入之介面的驗證控制項](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image38.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image37.png)
+[![更新產品會造成引發插入介面的驗證控制項](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image38.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image37.png)
 
 **圖 13**:更新產品會造成引發插入之介面的驗證控制項 ([按一下以檢視完整大小的影像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image39.png))
 
@@ -235,7 +235,7 @@ ASP.NET 2.0 中的驗證控制項可以分割成透過驗證群組其`Validation
 除了驗證控制項、 按鈕和按鈕的相關的控制項，在 ASP.NET 2.0 也包含`ValidationGroup`屬性。 驗證群組的驗證程式會檢查其有效性只有當您引發具有同一個按鈕所回傳是，才`ValidationGroup`屬性設定。 例如，為了讓 DetailsView 插入按鈕來觸發`InsertValidationControls`驗證群組，我們需要設定 CommandField`ValidationGroup`屬性設`InsertValidationControls`（請參閱 圖 14）。 此外，設定 GridView 的 CommandField`ValidationGroup`屬性設`EditValidationControls`。
 
 
-[![S現實 DetailsView InsertValidationControls CommandField 的 ValidationGroup 屬性](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image41.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image40.png)
+[![設定 DetailsView 的 InsertValidationControls CommandField 的 ValidationGroup 屬性](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image41.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image40.png)
 
 **圖 14**:設定 DetailsView CommandField 的`ValidationGroup`屬性，以`InsertValidationControls`([按一下以檢視完整大小的影像](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb/_static/image42.png))
 

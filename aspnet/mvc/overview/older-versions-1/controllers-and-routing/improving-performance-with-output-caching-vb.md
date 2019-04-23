@@ -12,7 +12,7 @@ ms.openlocfilehash: 0f824bd5e080d42a9df3525ca47b87bcef407f7a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59405621"
 ---
 # <a name="improving-performance-with-output-caching-vb"></a>使用輸出快取改善效能 (VB)
@@ -32,7 +32,7 @@ by [Microsoft](https://github.com/microsoft)
 
 啟用輸出快取加&lt;OutputCache&gt;屬性設定為個別的控制器動作或整個控制器類別。 例如，列表 1 中的控制站會公開名為 index （） 的動作。 Index （） 動作的輸出快取 10 秒的時間。
 
-**列表 1 – Controllers\HomeController.vb**
+**Listing 1 – Controllers\HomeController.vb**
 
 [!code-vb[Main](improving-performance-with-output-caching-vb/samples/sample1.vb)]
 
@@ -85,7 +85,7 @@ by [Microsoft](https://github.com/microsoft)
 
 例如，列表 3 中的控制站會公開名為 GetName() 傳回目前的使用者名稱的動作。 如果 Jack 登入網站，且叫用 GetName() 動作然後動作傳回的字串"Hi Jack"。 如果接下來，Jill 登入網站，並叫用 GetName() 動作然後她也會取得字串"Hi Jack"。 Jack 一開始會叫用的控制器動作之後，所有使用者的 web 伺服器上會快取字串。
 
-**列表 3 – Controllers\BadUserController.vb**
+**Listing 3 – Controllers\BadUserController.vb**
 
 [!code-vb[Main](improving-performance-with-output-caching-vb/samples/sample3.vb)]
 

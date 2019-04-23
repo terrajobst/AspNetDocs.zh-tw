@@ -12,7 +12,7 @@ ms.openlocfilehash: 5916531603ed66c8e0a9448c168cb81f673e129c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397498"
 ---
 # <a name="how-do-i-set-up-distributed-load-testing-for-high-volume-tests"></a>[How Do i:]設定分散式的負載測試的大量測試？

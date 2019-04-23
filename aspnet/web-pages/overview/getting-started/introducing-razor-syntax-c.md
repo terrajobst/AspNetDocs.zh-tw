@@ -12,7 +12,7 @@ ms.openlocfilehash: 8237dc6b925ccefc5b411aebc8e7c399dcdc6746
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407350"
 ---
 # <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 語法 (C#) 的 ASP.NET Web 程式設計簡介
@@ -443,7 +443,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
 
 :::row:::
     :::column:::
-    <strong>運算子</strong>
+    <strong>Operator</strong>
     :::column-end:::
     :::column:::
     <strong>描述</strong>
@@ -751,8 +751,8 @@ A`while`迴圈開頭`while`關鍵字，後面接著括號，您可以指定迴�
 
 您可以使用屬性`Page`物件，以取得大量資訊，例如：
 
-- `Request`。 如您所見，這是目前的要求，包括進行要求的頁面、 使用者身分識別等 URL 的瀏覽器的何種類型的相關資訊的集合。
-- `Response`。 這是會在伺服器程式碼執行完成時傳送到瀏覽器的回應 （頁面） 的相關資訊的集合。 例如，您可以使用此屬性寫入至回應的資訊。 
+- `Request`. 如您所見，這是目前的要求，包括進行要求的頁面、 使用者身分識別等 URL 的瀏覽器的何種類型的相關資訊的集合。
+- `Response`. 這是會在伺服器程式碼執行完成時傳送到瀏覽器的回應 （頁面） 的相關資訊的集合。 例如，您可以使用此屬性寫入至回應的資訊。 
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample58.cshtml)]
 
@@ -818,7 +818,7 @@ Razor 語法可讓您將參數傳遞至方法的兩個選項：*位置參數*並
 
 ### <a name="try-catch-statements"></a>Try Catch 陳述式
 
-陳述式通常必須在程式碼中可能會失敗的原因，您無法控制。 例如: 
+陳述式通常必須在程式碼中可能會失敗的原因，您無法控制。 例如：
 
 - 如果您的程式碼會嘗試建立或存取的檔案，可能會發生各種錯誤。 您想要的檔案可能不存在，它可能會遭到鎖定，程式碼可能不具有權限，等等。
 - 同樣地，如果您的程式碼會嘗試更新資料庫中的記錄，可以有權限問題，可能會卸除資料庫的連接，要儲存的資料可能無效，依此類推。

@@ -12,7 +12,7 @@ ms.openlocfilehash: ee1b17ac4802ecbd92e571a62c491bc9a49a3560
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401591"
 ---
 # <a name="aspnet-mvc-performance"></a>ASP.NET MVC 效能
@@ -21,5 +21,5 @@ ms.locfileid: "59401591"
 
 
 - [使用 ASP.NET MVC 4 中的非同步方法](using-asynchronous-methods-in-aspnet-mvc-4.md)
-- [使用 Glimpse 分析 ASP.NET MVC 應用程式以對其進行偵錯](profile-and-debug-your-aspnet-mvc-app-with-glimpse.md)
+- [使用 Glimpse 分析與偵錯 ASP.NET MVC 應用程式](profile-and-debug-your-aspnet-mvc-app-with-glimpse.md)
 - [統合和縮製](bundling-and-minification.md)

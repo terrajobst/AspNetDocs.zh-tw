@@ -12,7 +12,7 @@ ms.openlocfilehash: 328dc6fb61ac562131b11b36b40f574ca5a53866
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59397366"
 ---
 # <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a>在 Visual Studio 2013 中以程式碼編輯 ASP.NET Web Forms
@@ -59,7 +59,7 @@ ms.locfileid: "59397366"
 3. 選取 **範本** - &gt; **Visual C#**  - &gt; **Web**左側的 範本 群組。
 4. 選擇**ASP.NET Web 應用程式**中間欄的範本。
 5. 命名您的專案***BasicWebApp***然後按一下**確定** 按鈕。   
-![新增專案對話方塊](code-editing-in-web-forms-pages/_static/image2.png)
+![[新增專案] 對話方塊](code-editing-in-web-forms-pages/_static/image2.png)
 6. 接下來，選取**Web Form**範本，然後按一下**確定**按鈕，以建立專案。  
 ![[新增 ASP.NET 專案] 對話方塊](code-editing-in-web-forms-pages/_static/image3.png)  
 

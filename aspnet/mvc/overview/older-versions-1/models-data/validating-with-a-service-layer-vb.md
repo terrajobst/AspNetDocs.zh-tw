@@ -12,7 +12,7 @@ ms.openlocfilehash: fc819494ef58824d485144396e3a995d906c8b42
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398705"
 ---
 # <a name="validating-with-a-service-layer-vb"></a>驗證與服務層 (VB)
@@ -68,7 +68,7 @@ ms.locfileid: "59398705"
 
 表 5 中，使其不再使用的模型狀態已更新的服務層。 相反地，它會使用任何可實作 IValidationDictionary 介面的類別。
 
-**列表 5-Models\ProductService.vb （低耦合）**
+**Listing 5 - Models\ProductService.vb (decoupled)**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample5.vb)]
 

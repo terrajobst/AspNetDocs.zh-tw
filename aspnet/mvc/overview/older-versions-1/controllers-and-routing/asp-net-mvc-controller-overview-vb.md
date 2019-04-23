@@ -12,7 +12,7 @@ ms.openlocfilehash: 33544825403db67fc3b8f0e9eae5d7671b8d2e67
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402181"
 ---
 # <a name="aspnet-mvc-controller-overview-vb"></a>ASP.NET MVC 控制器概觀 (VB)
@@ -111,7 +111,7 @@ ContentResult 動作結果是特殊的。 您可以使用 ContentResult 動作�
 
 如果控制器動作傳回的結果是沒有的動作結果-例如，日期或整數-然後結果會包裝在 ContentResult 自動。 例如，叫用 WorkController 表 5 中的 index （） 動作時，日期會傳回 ContentResult 為自動。
 
-**列表 5-WorkController.vb**
+**Listing 5 - WorkController.vb**
 
 [!code-vb[Main](asp-net-mvc-controller-overview-vb/samples/sample5.vb)]
 

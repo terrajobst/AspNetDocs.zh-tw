@@ -12,7 +12,7 @@ ms.openlocfilehash: 39aec7811eb9b93d5d7d6635d03581e45e2be455
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404763"
 ---
 # <a name="logging-users-into-your-membership-system"></a>將使用者登入成員資格系統

@@ -12,7 +12,7 @@ ms.openlocfilehash: c121a8c8dacdade3b0240a84b6202bcfca35a481
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402111"
 ---
 # <a name="custom-button-actions-with-the-datalist-and-repeater"></a>使用 DataList 與重複項自訂按鈕動作

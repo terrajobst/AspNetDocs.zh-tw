@@ -12,7 +12,7 @@ ms.openlocfilehash: 0462d8357d83115e751a818d3c9feb4b4274e212
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402540"
 ---
 # <a name="using-dynamicpopulate-with-a-user-control-and-javascript-c"></a>使用具有使用者控制項的 DynamicPopulate 和 JavaScript (C#)
@@ -67,7 +67,7 @@ A &lt; `label` &gt;項目會用來顯示來自伺服器的資料。
 就是這麼容易！ 頁面的行為如預期般運作：使用者按一下其中一個選項按鈕，此工具組中的控制項呼叫 web 服務，並以所需的格式顯示目前的日期。
 
 
-[![T他的選項按鈕位於使用者控制項](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image2.png)](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image1.png)
+[![選項按鈕位於使用者控制項](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image2.png)](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image1.png)
 
 選項按鈕位於使用者控制項 ([按一下以檢視完整大小的影像](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image3.png))
 

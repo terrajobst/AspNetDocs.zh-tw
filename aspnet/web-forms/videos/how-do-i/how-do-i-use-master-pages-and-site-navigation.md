@@ -12,7 +12,7 @@ ms.openlocfilehash: f12f2d79577f2cdf18ad668d3e2600cd75d9d10a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59405218"
 ---
 # <a name="how-do-i-use-master-pages-and-site-navigation"></a>[How Do i:]使用主版頁面與網站巡覽？

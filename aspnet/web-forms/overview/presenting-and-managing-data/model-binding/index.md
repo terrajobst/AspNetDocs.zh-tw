@@ -12,7 +12,7 @@ ms.openlocfilehash: e7915b2cf8378c8c4d797ecfd89454ce3f3a570b
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399836"
 ---
 # <a name="model-binding-and-web-forms-in-visual-studio-2013"></a>Visual Studio 2013 中的模型繫結和 Web Forms
@@ -21,7 +21,7 @@ ms.locfileid: "59399836"
 
 
 - [擷取和顯示資料](retrieving-data.md)
-- [更新、刪除及建立資料](updating-deleting-and-creating-data.md)
+- [更新、刪除和建立資料](updating-deleting-and-creating-data.md)
 - [排序、分頁及篩選資料](sorting-paging-and-filtering-data.md)
 - [整合 JQuery UI Datepicker](integrating-jquery-ui.md)
 - [使用查詢字串值篩選資料](using-query-string-values-to-retrieve-data.md)

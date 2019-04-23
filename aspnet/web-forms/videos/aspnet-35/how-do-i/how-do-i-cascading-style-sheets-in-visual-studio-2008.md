@@ -12,7 +12,7 @@ ms.openlocfilehash: 06e447cedd46c9476de6ed765292b477d7198225
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407779"
 ---
 # <a name="how-do-i-cascading-style-sheets-in-visual-studio-2008"></a>[How Do i:]Visual Studio 2008 中的階層式樣式表

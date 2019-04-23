@@ -12,7 +12,7 @@ ms.openlocfilehash: 1b955c43a0fc95bda87843fc4a5c9e56aef3dfc6
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400993"
 ---
 # <a name="drag-and-drop-via-reorderlist-vb"></a>透過 ReorderList 拖放 (VB)
@@ -44,7 +44,7 @@ ms.locfileid: "59400993"
 - `position` (int，NULL)
 
 
-[![T他 AJAX 資料表配置](drag-and-drop-via-reorderlist-vb/_static/image2.png)](drag-and-drop-via-reorderlist-vb/_static/image1.png)
+[![AJAX 資料表配置](drag-and-drop-via-reorderlist-vb/_static/image2.png)](drag-and-drop-via-reorderlist-vb/_static/image1.png)
 
 AJAX 資料表配置 ([按一下以檢視完整大小的影像](drag-and-drop-via-reorderlist-vb/_static/image3.png))
 
@@ -52,7 +52,7 @@ AJAX 資料表配置 ([按一下以檢視完整大小的影像](drag-and-drop-vi
 接下來，填寫幾個值的資料表。 請注意，`position`資料行包含元素的排序次序。
 
 
-[![T他 AJAX 資料表中的初始資料](drag-and-drop-via-reorderlist-vb/_static/image5.png)](drag-and-drop-via-reorderlist-vb/_static/image4.png)
+[![中的 AJAX 資料表的初始資料](drag-and-drop-via-reorderlist-vb/_static/image5.png)](drag-and-drop-via-reorderlist-vb/_static/image4.png)
 
 AJAX 資料表中的初始資料 ([按一下以檢視完整大小的影像](drag-and-drop-via-reorderlist-vb/_static/image6.png))
 
@@ -63,10 +63,10 @@ AJAX 資料表中的初始資料 ([按一下以檢視完整大小的影像](drag
 
 `ReorderList`控制項，必須先設定下列屬性：
 
-- `AllowReorder`:是否可能重新排列的清單項目
-- `DataSourceID`:資料來源的識別碼
-- `DataKeyField`:資料來源中主索引鍵資料行名稱
-- `SortOrderField`:提供清單項目的排序次序的資料來源資料行
+- `AllowReorder`：是否可能重新排列的清單項目
+- `DataSourceID`：資料來源的識別碼
+- `DataKeyField`：資料來源中主索引鍵資料行名稱
+- `SortOrderField`：提供清單項目的排序次序的資料來源資料行
 
 在 `<DragHandleTemplate>`和`<ItemTemplate>`章節中，清單的配置可以調整。 此外，資料繫結是可能使用`Eval()`方法，如下所示：
 
@@ -83,7 +83,7 @@ AJAX 資料表中的初始資料 ([按一下以檢視完整大小的影像](drag
 瀏覽器中執行此範例中，並稍微重新排列的清單項目。 然後，重新載入頁面及/或看看資料庫。 改變的位置以為受到維護的也會反映在值`position`資料行的資料庫中所有不需要任何程式碼中，只使用標記。
 
 
-[![T他在資料庫變更，根據新的清單項目順序中的資料](drag-and-drop-via-reorderlist-vb/_static/image8.png)](drag-and-drop-via-reorderlist-vb/_static/image7.png)
+[![資料庫變更，根據新的清單項目順序中的資料](drag-and-drop-via-reorderlist-vb/_static/image8.png)](drag-and-drop-via-reorderlist-vb/_static/image7.png)
 
 資料庫變更，根據新的清單中的資料，項目順序 ([按一下以檢視完整大小的影像](drag-and-drop-via-reorderlist-vb/_static/image9.png))
 

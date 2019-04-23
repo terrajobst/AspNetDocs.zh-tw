@@ -12,7 +12,7 @@ ms.openlocfilehash: d8a260152213a8374a9b7b7a31623bca13eccce5
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399284"
 ---
 # <a name="troubleshooting-production-aspnet-apps"></a>針對生產環境 ASP.NEz 應用程式進行疑難排解

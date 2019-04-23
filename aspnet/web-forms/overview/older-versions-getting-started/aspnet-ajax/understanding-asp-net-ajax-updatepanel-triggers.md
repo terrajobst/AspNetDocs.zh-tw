@@ -12,7 +12,7 @@ ms.openlocfilehash: e3821eee8c7bf2c2f9b45ea75ade2bd5b3b8ef19
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406258"
 ---
 # <a name="understanding-aspnet-ajax-updatepanel-triggers"></a>了解 ASP.NET AJAX UpdatePanel 觸發程序
@@ -32,7 +32,7 @@ Microsoft ASP.NET 技術會以物件導向和事件導向的程式設計模型�
 
 本白皮書根據 Visual Studio 2008 與.NET Framework 3.5 Beta 2 版本而定。 ASP.NET AJAX Extensions，先前的附加元件組件作為目標的 ASP.NET 2.0 中，現在已整合至.NET Framework 基底類別庫。 本白皮書也會假設您將使用 Visual Studio 2008，不 Visual Web Developer Express，並將提供逐步解說根據 Visual Studio 的使用者介面 （雖然程式碼清單將會完全相容，不論開發環境）。
 
-## *<a name="triggers"></a>觸發程序*
+## <a name="triggers"></a>*觸發程序*
 
 指定的 UpdatePanel 中，根據預設，觸發程序會自動包含任何子控制項，叫用 （舉例來說） 包括有的文字方塊控制項的回傳他們`AutoPostBack`屬性設定為 **，則為 true**。 不過，觸發程序也可以包含以宣告方式使用標記，這是內`<triggers>`UpdatePanel 控制項宣告一節。 雖然可以透過存取觸發程序`Triggers`集合屬性，建議您註冊在執行階段的任何部分轉譯觸發程序，（比方說，如果控制項不是可在設計階段中） 使用`RegisterAsyncPostBackControl(Control)`方法ScriptManager 物件為您的頁面內`Page_Load`事件。 請記住，頁面都是無狀態，因此您應該重新註冊這些控制項每次建立。
 
@@ -40,7 +40,7 @@ Microsoft ASP.NET 技術會以物件導向和事件導向的程式設計模型�
 
 請注意，當 UpdatePanel 控制項巢狀的當 vlastnost UpdateMode nastavena na**條件式**，如果觸發 UpdatePanel 的子系時，但父代不是，則只會重新整理 UpdatePanel 的子系。 不過，如果父 UpdatePanel 重新整理，然後子 UpdatePanel 也會重新整理。
 
-## *<a name="the-lttriggersgt-element"></a>&lt;觸發程序&gt;項目*
+## <a name="the-lttriggersgt-element"></a>*&lt;觸發程序&gt;項目*
 
 在 Visual Studio 中標記編輯器中工作時，您可能會注意到 （舉凡 IntelliSense)，有兩個的子元素的`UpdatePanel`控制項。 最常看到的項目是`<ContentTemplate>`元素，基本上會封裝將會更新面板所持有的內容 （我們啟用部分呈現內容）。 其他項目是`<Triggers>`元素，其指定的頁面 （或使用者控制項，如果您有使用的話） 上的控制項就會觸發 UpdatePanel 控制項中的部分轉譯&lt;觸發程序&gt;位於項目。
 
@@ -50,16 +50,16 @@ Microsoft ASP.NET 技術會以物件導向和事件導向的程式設計模型�
 
 同樣地，`<asp:PostBackTrigger>`項目可以用來觸發程序部分頁面轉譯，但需要伺服器的完整往返。 這個觸發程序項目也可用來強制整頁轉譯控制項通常會否則觸發部分頁面轉譯時 (例如，當`Button`控制項存在於`<ContentTemplate>`UpdatePanel 控制項的項目)。 同樣地，PostBackTrigger 項目可以指定會封裝目前單位中任何 UpdatePanel 控制項的子系的任何控制項。
 
-## *<a name="lttriggersgt-element-reference"></a>&lt;觸發程序&gt;項目參考*
+## <a name="lttriggersgt-element-reference"></a>*&lt;觸發程序&gt;項目參考*
 
 *標記下階：*
 
-| **標記** | **描述** |
+| **Tag** | **描述** |
 | --- | --- |
 | &lt;asp:AsyncPostBackTrigger&gt; | 指定的控制項和事件，可能會造成部分頁面更新 UpdatePanel 中包含此觸發程序參考。 |
 | &lt;asp:PostBackTrigger&gt; | 指定的控制項和事件會導致完整頁面更新 （整頁重新整理）。 此標記可用來控制否則會觸發部分呈現時，強制執行完整的重新整理。 |
 
-## *<a name="walkthrough-cross-updatepanel-triggers"></a>逐步解說：跨 UpdatePanel 觸發程序*
+## <a name="walkthrough-cross-updatepanel-triggers"></a>*逐步解說：跨 UpdatePanel 觸發程序*
 
 1. 使用 ScriptManager 物件設定為啟用部分呈現模型中建立新的 ASP.NET 網頁。 本頁-第一次新增兩個 Updatepanel，請加入一個 Label 控制項 (Label1) 和兩個按鈕控制項 （Button1 和 Button2）。 Button1 應該會顯示按一下即可更新和 Button2 應該會顯示 按一下以更新，或諸如此類。 在第二個 UpdatePanel 中，包含只有一個 Label 控制項 (Label2)，但 ForeColor 屬性設定為區分文章與預設值以外的項目。
 2. 這兩個 UpdatePanel 標記的 UpdateMode 屬性設定**條件式**。
@@ -82,7 +82,7 @@ Microsoft ASP.NET 技術會以物件導向和事件導向的程式設計模型�
 ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-updatepanel-triggers/_static/image3.png))
 
 
-## *<a name="under-the-hood"></a>背後原理*
+## <a name="under-the-hood"></a>*深入探討*
 
 使用我們剛才建構的範例，我們可以看看 ASP.NET AJAX 正在做什麼，以及我們 UpdatePanel 跨面板觸發程序的運作方式。 若要這樣做，我們會使用產生的頁面原始碼的 HTML，以及 Mozilla Firefox 擴充功能呼叫 FireBug-有了它，我們可以輕鬆地檢查 AJAX 回傳。 我們也會使用 Lutz Roeder 的.NET Reflector 工具。 這兩種工具可免費使用線上，並在網際網路上搜尋可找到。
 

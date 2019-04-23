@@ -12,7 +12,7 @@ ms.openlocfilehash: 8148974eacd1db05947ba54fe40776df69f92290
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404113"
 ---
 # <a name="backbone-template"></a>Backbone 範本
@@ -110,7 +110,7 @@ Backbone.js SPA 範本設計來協助您開始快速建置互動式用戶端 web
 
 現在讓我們看看伺服器端。
 
-**Controllers**
+**控制器**
 
 在單一頁面應用程式中，伺服器會扮演小型角色在使用者介面。 一般來說，伺服器會呈現初始網頁，然後傳送和接收 JSON 資料。
 

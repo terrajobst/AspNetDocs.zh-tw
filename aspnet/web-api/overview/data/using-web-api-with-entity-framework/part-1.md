@@ -12,7 +12,7 @@ ms.openlocfilehash: c681415920bb0bfb4bc1c012e42fb5a528db93ca
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406830"
 ---
 # <a name="using-web-api-2-with-entity-framework-6"></a>使用 Web API 2 和 Entity Framework 6

@@ -13,7 +13,7 @@ ms.openlocfilehash: bfb23aafb814010e8651965dad91ca20a37fd786
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404620"
 ---
 # <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>裝載 ASP.NET Web API 2 中的 Azure 背景工作角色
@@ -31,7 +31,7 @@ ms.locfileid: "59404620"
 >
 > - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - Web API 2
-> - [Azure SDK for.NET 2.3](https://azure.microsoft.com/downloads/)
+> - [Azure SDK for .NET 2.3](https://azure.microsoft.com/downloads/)
 
 
 ## <a name="create-a-microsoft-azure-project"></a>建立 Microsoft Azure 專案

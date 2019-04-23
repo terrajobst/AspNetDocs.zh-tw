@@ -12,7 +12,7 @@ ms.openlocfilehash: 1551b4533e05a6cd7dcc29e4c6bc17e854889ee8
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402241"
 ---
 # <a name="aspnet-signalr-hubs-api-guide---net-client-signalr-1x"></a>ASP.NET SignalR 中樞 API 指南-.NET 用戶端 (SignalR 1.x)
@@ -316,12 +316,12 @@ Proxy 物件是安全執行緒。 事實上，如果您呼叫`HubConnection.Crea
 
 SignalR 提供以下連線，您可以處理存留期事件：
 
-- `Received`:在此連接上收到任何資料時，就會引發。 提供已接收的資料。
-- `ConnectionSlow`:當用戶端偵測到較慢或經常卸除連接時引發。
-- `Reconnecting`:基礎傳輸可讓您開始重新連線時引發。
-- `Reconnected`:當基礎傳輸已重新連接時引發。
-- `StateChanged`:連線狀態變更時引發。 提供的舊狀態和新的狀態。 如需連線狀態的值請參閱[ConnectionState 列舉](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.connectionstate(v=vs.111).aspx)。
-- `Closed`:當連接已中斷連線時，就會引發。
+- `Received`：在此連接上收到任何資料時，就會引發。 提供已接收的資料。
+- `ConnectionSlow`：當用戶端偵測到較慢或經常卸除連接時引發。
+- `Reconnecting`：基礎傳輸可讓您開始重新連線時引發。
+- `Reconnected`：當基礎傳輸已重新連接時引發。
+- `StateChanged`：連線狀態變更時引發。 提供的舊狀態和新的狀態。 如需連線狀態的值請參閱[ConnectionState 列舉](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.connectionstate(v=vs.111).aspx)。
+- `Closed`：當連接已中斷連線時，就會引發。
 
 例如，如果您想要顯示的錯誤，不嚴重，但會造成間歇性連線問題的警告訊息，例如速度很慢或頻繁的連接，卸除處理`ConnectionSlow`事件。
 

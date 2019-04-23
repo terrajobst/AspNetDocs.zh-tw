@@ -12,7 +12,7 @@ ms.openlocfilehash: 7374b1afafa9ca63309f3c0369c5efd808f7f28a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59401981"
 ---
 # <a name="webmatrix-readme"></a>WebMatrix 讀我檔案
@@ -25,7 +25,7 @@ ms.locfileid: "59401981"
 > 此讀我檔案適用於 WebMatrix 1.0 版。
 
 
-- [總覽](#Overview)
+- [概觀](#Overview)
 - [安裝](#Installation_Notes)
 - [如何發佈應用程式](#InstructionsForPublishingApplications)
 - [變更與問題](#ChangesAndIssues)
@@ -254,7 +254,7 @@ ms.locfileid: "59401981"
 > 
 > 1. 資料庫引擎組件，以複製*Bin*目標電腦上的應用程式的資料夾 （和子資料夾）：  
 > 
->    - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
+>    - 複製*C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
 >      **to** *\Bin*
 >    - 複製*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\*  **來** *\Bin\x86*
 >    - 複製*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **來** *\Bin\amd64*

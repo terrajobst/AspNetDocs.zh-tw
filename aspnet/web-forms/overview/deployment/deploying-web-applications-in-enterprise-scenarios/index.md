@@ -12,7 +12,7 @@ ms.openlocfilehash: f1f1e78a3b8d631d9a78c5aad8dc8c3b00c883fe
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59404373"
 ---
 # <a name="aspnet-4---enterprise-deployment-introduction"></a>ASP.NET 4 - 企業部署簡介
@@ -21,5 +21,5 @@ ms.locfileid: "59404373"
 
 
 - [使用 Visual Studio 2010 在企業案例中部署 Web 應用程式](deploying-web-applications-in-enterprise-scenarios.md)
-- [企業 Web 部署：情節概觀](enterprise-web-deployment-scenario-overview.md)
-- [應用程式生命週期管理：從開發到生產](application-lifecycle-management-from-development-to-production.md)
+- [企業 Web 部署：案例概觀](enterprise-web-deployment-scenario-overview.md)
+- [應用程式生命週期管理：從開發到生產環境](application-lifecycle-management-from-development-to-production.md)

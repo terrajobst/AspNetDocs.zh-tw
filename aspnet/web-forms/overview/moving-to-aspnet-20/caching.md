@@ -12,7 +12,7 @@ ms.openlocfilehash: 5e16415df5bd4203995bec943ffa682f7da82357
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400200"
 ---
 # <a name="caching"></a>快取
@@ -72,7 +72,7 @@ SQL Server 7 和 2000年使用 SQL 快取相依性輪詢為基礎的模型。 �
 
 上述命令中使用命令列參數的說明如下：
 
-| **命令列參數** | **用途** |
+| **命令列參數** | **目的** |
 | --- | --- |
 | -S *server* | 指定伺服器名稱。 |
 | -ed | 指定資料庫，應該啟用 SQL 快取相依性。 |
@@ -211,9 +211,9 @@ Init 和 PreRender 控制項生命週期階段之間，才可成功操作 Contro
 
 有數個 ASP.NET 2.0 中的快取組態的變更。 &lt;快取&gt;元素是 ASP.NET 2.0 的新功能，可讓您在組態檔中進行快取的組態變更。 使用下列屬性。
 
-| **項目** | **描述** |
+| **目** | **描述** |
 | --- | --- |
-| **快取** | 選擇性項目。 定義通用的應用程式快取設定。 |
+| **cache** | 選擇性項目。 定義通用的應用程式快取設定。 |
 | **outputCache** | 選擇性項目。 指定整個應用程式的輸出快取設定。 |
 | **outputCacheSettings** | 選擇性項目。 指定可以套用到應用程式中的頁面輸出快取設定。 |
 | **sqlCacheDependency** | 選擇性項目。 設定 ASP.NET 應用程式的 SQL 快取相依性。 |

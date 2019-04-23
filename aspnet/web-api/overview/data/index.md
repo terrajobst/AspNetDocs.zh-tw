@@ -13,7 +13,7 @@ ms.openlocfilehash: 9c5ef1e85f0b5ca7ead67dfe28a3a43f3e5c464a
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400031"
 ---
 # <a name="working-with-data-in-aspnet-web-api"></a>使用 ASP.NET Web API 中的資料
@@ -24,7 +24,7 @@ ms.locfileid: "59400031"
 - [使用 Web API 2 和 Entity Framework 6](using-web-api-with-entity-framework/index.md)
 
     - [建立專案](using-web-api-with-entity-framework/part-1.md)
-    - [新增模型與控制器](using-web-api-with-entity-framework/part-2.md)
+    - [新增模型和控制器](using-web-api-with-entity-framework/part-2.md)
     - [植入資料庫](using-web-api-with-entity-framework/part-3.md)
     - [處理實體關聯性](using-web-api-with-entity-framework/part-4.md)
     - [建立資料傳輸物件 (DTO)](using-web-api-with-entity-framework/part-5.md)

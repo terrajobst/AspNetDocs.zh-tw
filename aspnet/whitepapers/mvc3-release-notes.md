@@ -12,12 +12,12 @@ ms.openlocfilehash: 36bc314c6709c34863d86158419257be99f4084f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59407103"
 ---
 # <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 
-- [總覽](#overview)
+- [概觀](#overview)
 - [安裝注意事項](#installation-notes)
 - [軟體需求](#software-requirements)
 - [文件](#documentation)
@@ -60,7 +60,7 @@ ms.locfileid: "59407103"
 - [ASP.NET MVC 3 的候選版 (2010 年 11 月 9 日)](#TOC_ASP_NET_3_RC)
 
     - [在 ASP.NET MVC 3 RC 的新功能](#_Toc276711785)
-    - [NuGet 封裝管理員](#_Toc276711786)
+    - [NuGet Package Manager](#_Toc276711786)
     - [改善 [新增專案] 對話方塊](#_Toc276711787)
     - [無工作階段的控制站](#_Toc276711788)
     - [新的驗證屬性](#_Toc276711789)
@@ -507,7 +507,7 @@ ASP.NET MVC 3 包含 NuGet 套件管理員 （前身為 NuPack），也就是 Vi
 
 預設範本，如下所示：
 
-空的。 包含最基本的 ASP.NET MVC 專案中，包括預設的目錄結構針對 ASP.NET MVC 專案，包含 ASP.NET MVC 樣式的預設值，而且包含預設 JavaScript 檔案的指令碼目錄 Site.css 檔案的檔案。
+空白。 包含最基本的 ASP.NET MVC 專案中，包括預設的目錄結構針對 ASP.NET MVC 專案，包含 ASP.NET MVC 樣式的預設值，而且包含預設 JavaScript 檔案的指令碼目錄 Site.css 檔案的檔案。
 
 網際網路應用程式。 包含範例示範如何使用 ASP.NET MVC 中的成員資格提供者的功能。
 
@@ -648,7 +648,7 @@ ASP.NET MVC 3 包含 NuGet 套件管理員，也就是新增程式庫的整合�
 
 預設範本，如下所示：
 
-空的。 包含最基本的 ASP.NET MVC 專案中，包括預設的目錄結構針對 ASP.NET MVC 專案中，小型的 Site.css 檔案，其中包含 ASP.NET MVC 樣式的預設值和指令碼目錄的預設 JavaScript 檔案所在的檔案。
+空白。 包含最基本的 ASP.NET MVC 專案中，包括預設的目錄結構針對 ASP.NET MVC 專案中，小型的 Site.css 檔案，其中包含 ASP.NET MVC 樣式的預設值和指令碼目錄的預設 JavaScript 檔案所在的檔案。
 
 網際網路應用程式。 包含範例示範如何使用 ASP.NET MVC 中的成員資格提供者的功能。
 
@@ -666,7 +666,7 @@ ASP.NET MVC 3 包含 NuGet 套件管理員，也就是新增程式庫的整合�
 
 新的 ASP.NET Web Pages 技術包含一組可用於加入檢視及控制器的常用的功能的協助程式方法。 ASP.NET MVC 3 支援使用這些 helper 方法，在控制器和檢視 （適當的話）。 這些方法都包含在 System.Web.Helpers 組件。 下表列出數個 ASP.NET Web Pages helper 方法。
 
-| **協助程式** | **描述** |
+| **Helper** | **描述** |
 | --- | --- |
 | 圖表 | 呈現的圖表檢視中。 包含 Chart.ToWebImage、 Chart.Save，等 Chart.Write 的方法。 |
 | 密碼編譯 | 它使用雜湊演算法，以建立正確 salted 和雜湊密碼。 |

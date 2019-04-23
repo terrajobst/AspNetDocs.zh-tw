@@ -12,7 +12,7 @@ ms.openlocfilehash: 13edb10900a6278f5bff923be8f4ed9fe5eda9b0
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59398978"
 ---
 # <a name="how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site"></a>[How Do i:]使用 CSS 面板以彈性且可維護 ASP.NET 網站
