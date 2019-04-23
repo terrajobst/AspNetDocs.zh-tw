@@ -12,7 +12,7 @@ ms.openlocfilehash: c2fe74c3d7b1aa0d230f1893f6ba7dcaa7a88419
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59396976"
 ---
 # <a name="using-oauth-providers-with-mvc-4"></a>使用 OAuth 提供者與 MVC 4
@@ -83,7 +83,7 @@ AuthConfig 檔案包含程式碼以註冊的外部驗證提供者的用戶端。
 - [Microsoft](http://manage.dev.live.com/)
 - [Twitter](https://dev.twitter.com/)
 
-當您向 Facebook 註冊您的網站，您可以提供&quot;localhost&quot;站台網域和`&quot; http://localhost/&quot;`url，如下圖所示。 使用 localhost 適用於大部分的提供者，但目前不適用於 Microsoft 提供者。 Microsoft 提供者，您必須包含有效的網站 URL。
+當您向 Facebook 註冊您的網站，您可以提供&quot;localhost&quot;站台網域和`&quot;http://localhost/&quot;`url，如下圖所示。 使用 localhost 適用於大部分的提供者，但目前不適用於 Microsoft 提供者。 Microsoft 提供者，您必須包含有效的網站 URL。
 
 ![註冊網站](using-oauth-providers-with-mvc/_static/image4.png)
 
