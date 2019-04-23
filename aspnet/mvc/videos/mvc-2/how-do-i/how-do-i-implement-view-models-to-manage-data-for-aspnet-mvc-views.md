@@ -12,18 +12,18 @@ ms.openlocfilehash: 5f883c4ab42e71fc76df221c2b282e124a3d97bd
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59423015"
 ---
-# <a name="how-do-i-implement-view--models-to-manage-data-for-aspnet-mvc-views"></a><span data-ttu-id="7b35a-105">How Do i:實作 ASP.NET MVC 檢視管理資料的檢視模型？</span><span class="sxs-lookup"><span data-stu-id="7b35a-105">How Do I: Implement View  Models to Manage Data for ASP.NET MVC Views?</span></span>
+# <a name="how-do-i-implement-view--models-to-manage-data-for-aspnet-mvc-views"></a><span data-ttu-id="2173f-105">How Do i:實作 ASP.NET MVC 檢視管理資料的檢視模型？</span><span class="sxs-lookup"><span data-stu-id="2173f-105">How Do I: Implement View  Models to Manage Data for ASP.NET MVC Views?</span></span>
 
-<span data-ttu-id="7b35a-106">藉由[Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="7b35a-106">by [Chris Pels](https://twitter.com/chrispels)</span></span>
+<span data-ttu-id="2173f-106">藉由[Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="2173f-106">by [Chris Pels](https://twitter.com/chrispels)</span></span>
 
-<span data-ttu-id="7b35a-107">在此影片的 Chris Pels 示範如何使用 「 檢視模型 」 的概念，讓您管理 ASP.NET MVC 檢視的資料。</span><span class="sxs-lookup"><span data-stu-id="7b35a-107">In this video Chris Pels shows how to use the concept of a "View Model" for managing data for ASP.NET MVC views.</span></span> <span data-ttu-id="7b35a-108">首先，範例 MVC 專案會建立使用 ViewDataDictionary 封裝，然後將資料從控制器傳遞至檢視。</span><span class="sxs-lookup"><span data-stu-id="7b35a-108">First, a sample MVC project is created that uses a ViewDataDictionary to package and pass data from a controller to a view.</span></span> <span data-ttu-id="7b35a-109">接下來，建立類別代表範例 MVC 專案中的檢視的檢視模型。</span><span class="sxs-lookup"><span data-stu-id="7b35a-109">Next, a class is created which represents a view model for a view in the sample MVC project.</span></span> <span data-ttu-id="7b35a-110">此實作的一部分，會討論的檢視模型方法的優點。</span><span class="sxs-lookup"><span data-stu-id="7b35a-110">As part of this implementation, the advantages of the view model approach are discussed.</span></span> <span data-ttu-id="7b35a-111">最後，還有如何使用檢視模型實作時，資料分割的應用程式邏輯的討論。</span><span class="sxs-lookup"><span data-stu-id="7b35a-111">Finally, there is a discussion of how to partition the application logic when using a view model implementation.</span></span>
+<span data-ttu-id="2173f-107">在此影片的 Chris Pels 示範如何使用 「 檢視模型 」 的概念，讓您管理 ASP.NET MVC 檢視的資料。</span><span class="sxs-lookup"><span data-stu-id="2173f-107">In this video Chris Pels shows how to use the concept of a "View Model" for managing data for ASP.NET MVC views.</span></span> <span data-ttu-id="2173f-108">首先，範例 MVC 專案會建立使用 ViewDataDictionary 封裝，然後將資料從控制器傳遞至檢視。</span><span class="sxs-lookup"><span data-stu-id="2173f-108">First, a sample MVC project is created that uses a ViewDataDictionary to package and pass data from a controller to a view.</span></span> <span data-ttu-id="2173f-109">接下來，建立類別代表範例 MVC 專案中的檢視的檢視模型。</span><span class="sxs-lookup"><span data-stu-id="2173f-109">Next, a class is created which represents a view model for a view in the sample MVC project.</span></span> <span data-ttu-id="2173f-110">此實作的一部分，會討論的檢視模型方法的優點。</span><span class="sxs-lookup"><span data-stu-id="2173f-110">As part of this implementation, the advantages of the view model approach are discussed.</span></span> <span data-ttu-id="2173f-111">最後，還有如何使用檢視模型實作時，資料分割的應用程式邏輯的討論。</span><span class="sxs-lookup"><span data-stu-id="2173f-111">Finally, there is a discussion of how to partition the application logic when using a view model implementation.</span></span>
 
-[<span data-ttu-id="7b35a-112">&#9654;觀看影片 （21 分鐘）</span><span class="sxs-lookup"><span data-stu-id="7b35a-112">&#9654; Watch video (21 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views)
+[<span data-ttu-id="2173f-112">&#9654;觀看影片 （21 分鐘）</span><span class="sxs-lookup"><span data-stu-id="2173f-112">&#9654; Watch video (21 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="7b35a-113">[上一頁](how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
-> [下一頁](how-do-i-create-a-custom-html-helper-for-an-mvc-application.md)</span><span class="sxs-lookup"><span data-stu-id="7b35a-113">[Previous](how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
+> <span data-ttu-id="2173f-113">[上一頁](how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
+> [下一頁](how-do-i-create-a-custom-html-helper-for-an-mvc-application.md)</span><span class="sxs-lookup"><span data-stu-id="2173f-113">[Previous](how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
 [Next](how-do-i-create-a-custom-html-helper-for-an-mvc-application.md)</span></span>

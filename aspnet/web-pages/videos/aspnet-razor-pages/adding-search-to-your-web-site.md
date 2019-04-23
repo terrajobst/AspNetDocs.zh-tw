@@ -12,18 +12,18 @@ ms.openlocfilehash: d58f5c74e0b838cb1fbcbeeae77f62892fe9c290
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59423041"
 ---
-# <a name="adding-search-to-your-web-site"></a><span data-ttu-id="79e77-103">將搜尋新增到您的網站</span><span class="sxs-lookup"><span data-stu-id="79e77-103">Adding Search to Your Web Site</span></span>
+# <a name="adding-search-to-your-web-site"></a><span data-ttu-id="cacd3-103">將搜尋新增到您的網站</span><span class="sxs-lookup"><span data-stu-id="cacd3-103">Adding Search to Your Web Site</span></span>
 
-<span data-ttu-id="79e77-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="79e77-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="cacd3-104">藉由[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="cacd3-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="79e77-105">新增搜尋服務教學課程，您的 Web 站台的視訊伴侶</span><span class="sxs-lookup"><span data-stu-id="79e77-105">Video accompaniment to the Adding Search to Your Web Site tutorial</span></span>
+<span data-ttu-id="cacd3-105">新增搜尋服務教學課程，您的 Web 站台的視訊伴侶</span><span class="sxs-lookup"><span data-stu-id="cacd3-105">Video accompaniment to the Adding Search to Your Web Site tutorial</span></span>
 
-[<span data-ttu-id="79e77-106">&#9654;觀看影片 （6 分）</span><span class="sxs-lookup"><span data-stu-id="79e77-106">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/adding-search-to-your-web-site)
+[<span data-ttu-id="cacd3-106">&#9654;觀看影片 （6 分）</span><span class="sxs-lookup"><span data-stu-id="cacd3-106">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/adding-search-to-your-web-site)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="79e77-107">[上一頁](adding-email-to-your-web-site.md)
-> [下一頁](adding-social-networking-to-your-website.md)</span><span class="sxs-lookup"><span data-stu-id="79e77-107">[Previous](adding-email-to-your-web-site.md)
+> <span data-ttu-id="cacd3-107">[上一頁](adding-email-to-your-web-site.md)
+> [下一頁](adding-social-networking-to-your-website.md)</span><span class="sxs-lookup"><span data-stu-id="cacd3-107">[Previous](adding-email-to-your-web-site.md)
 [Next](adding-social-networking-to-your-website.md)</span></span>
