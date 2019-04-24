@@ -12,7 +12,7 @@ ms.openlocfilehash: 84af745d338e38ece438fa58d51d0929c7b92967
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59408455"
 ---
 # <a name="aspnet-mvc-views-overview-vb"></a>ASP.NET MVC 檢視概觀 (VB)
@@ -104,7 +104,7 @@ View()
 [!code-aspx[Main](asp-net-mvc-views-overview-vb/samples/sample4.aspx)]
 
 
-[![T他 [新增專案] 對話方塊中](asp-net-mvc-views-overview-vb/_static/image1.jpg)](asp-net-mvc-views-overview-vb/_static/image1.png)
+[![[新增專案] 對話方塊](asp-net-mvc-views-overview-vb/_static/image1.jpg)](asp-net-mvc-views-overview-vb/_static/image1.png)
 
 **圖 01**:標準的登入表單 ([按一下以檢視完整大小的影像](asp-net-mvc-views-overview-vb/_static/image2.png))
 

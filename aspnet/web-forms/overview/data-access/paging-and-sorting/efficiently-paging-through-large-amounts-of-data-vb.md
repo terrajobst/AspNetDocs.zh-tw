@@ -12,7 +12,7 @@ ms.openlocfilehash: 20ea33efbd1db657a03b20a665a041ecf3a6d248
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59399550"
 ---
 # <a name="efficiently-paging-through-large-amounts-of-data-vb"></a>有效率地分頁大量資料 (VB)
@@ -191,7 +191,7 @@ DAL s`TotalNumberOfProducts`方法會傳回可為 null 的整數; 不過，我�
 在之後選擇這些輸入參數值，[輸出] 視窗會顯示結果。 圖 8 顯示兩個 10 中傳遞時的結果`@startRowIndex`和`@maximumRows`參數。
 
 
-[![T傳回他的記錄，就會出現在第二個頁面的資料](efficiently-paging-through-large-amounts-of-data-vb/_static/image9.png)](efficiently-paging-through-large-amounts-of-data-vb/_static/image8.png)
+[![會傳回記錄，就會出現在第二個頁面的資料](efficiently-paging-through-large-amounts-of-data-vb/_static/image9.png)](efficiently-paging-through-large-amounts-of-data-vb/_static/image8.png)
 
 **圖 8**:記錄，就會出現在第二個頁面的資料會傳回 ([按一下以檢視完整大小的影像](efficiently-paging-through-large-amounts-of-data-vb/_static/image10.png))
 
@@ -293,7 +293,7 @@ GridView 遺漏，因為 ObjectDataSource 是目前正在使用 0 做為值的�
 進行這些變更之後，請瀏覽此頁面，透過瀏覽器。 您應該會看到列出，10 項產品按字母順序排序。 請花一點時間逐步一頁資料一次。 自訂分頁更有效率地進行大量資料頁面從使用者觀點的 s 預設分頁與自訂分頁之間的視覺化差異時，，因為它只會擷取所需為指定的頁面會顯示這些記錄使用。
 
 
-[![T他的資料，請按照產品名稱，是分頁使用自訂分頁](efficiently-paging-through-large-amounts-of-data-vb/_static/image20.png)](efficiently-paging-through-large-amounts-of-data-vb/_static/image19.png)
+[![資料、 依產品名稱、 Ordered 是分頁使用自訂分頁](efficiently-paging-through-large-amounts-of-data-vb/_static/image20.png)](efficiently-paging-through-large-amounts-of-data-vb/_static/image19.png)
 
 **圖 17**:資料、 依產品名稱、 Ordered 是分頁使用自訂分頁 ([按一下以檢視完整大小的影像](efficiently-paging-through-large-amounts-of-data-vb/_static/image21.png))
 
@@ -309,7 +309,7 @@ GridView 遺漏，因為 ObjectDataSource 是目前正在使用 0 做為值的�
 我們目前的自訂分頁實作需要的資料分頁透過的順序指定以靜態方式建立時`GetProductsPaged`預存程序。 不過，您可能已記下 GridView s 智慧標籤會包含除了啟用分頁 選項之外，啟用排序核取方塊。 不幸的是，加入我們目前的自訂分頁實作 GridView 的排序支援時，只會排序資料的目前檢視的網頁上的記錄。 比方說，如果您設定也支援分頁，並檢視資料的第一頁時再，依產品名稱，依遞減順序排序 GridView 它就會在第 1 頁上反轉產品的順序。 如 [圖 18] 所示，例如顯示初探為第一項產品以反向字母順序，會忽略 71 其他產品隨附之後初探，依字母順序，排序時第一頁上的這些記錄會被視為在排序。
 
 
-[![O排序目前的頁面上顯示的資料只限 （）](efficiently-paging-through-large-amounts-of-data-vb/_static/image23.png)](efficiently-paging-through-large-amounts-of-data-vb/_static/image22.png)
+[![只顯示資料目前頁面上排序](efficiently-paging-through-large-amounts-of-data-vb/_static/image23.png)](efficiently-paging-through-large-amounts-of-data-vb/_static/image22.png)
 
 **圖 18**:只顯示資料目前頁面上的排序 ([按一下以檢視完整大小的影像](efficiently-paging-through-large-amounts-of-data-vb/_static/image24.png))
 

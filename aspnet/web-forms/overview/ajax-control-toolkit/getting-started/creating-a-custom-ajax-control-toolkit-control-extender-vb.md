@@ -12,7 +12,7 @@ ms.openlocfilehash: 8336fecf60296c44ebcf6cbd6010f9d5daed2923
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59415956"
 ---
 # <a name="creating-a-custom-ajax-control-toolkit-control-extender-vb"></a>建立自訂的 AJAX Control Toolkit 控制項擴充項 (VB)
@@ -79,7 +79,7 @@ by [Microsoft](https://github.com/microsoft)
 完成這些步驟之後，您的方案總管 視窗看起來應該像圖 1。
 
 
-[![S網站和類別庫專案與方案](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image8.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image7.png)
+[![與網站和類別庫專案的方案](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image8.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image7.png)
 
 **圖 01**:與網站和類別庫專案的方案 ([按一下以檢視完整大小的影像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image9.png))
 
@@ -100,7 +100,7 @@ by [Microsoft](https://github.com/microsoft)
 您可以確認您有以滑鼠右鍵按一下您的專案、 選取屬性，然後按一下 參考 索引標籤加入所有適當的參考 （請參閱 圖 2）。
 
 
-[![References 資料夾中，使用所需的參考](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image11.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image10.png)
+[![必要的參考，[參考] 資料夾](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image11.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image10.png)
 
 **圖 02**:必要的參考，[參考] 資料夾 ([按一下以檢視完整大小的影像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image12.png))
 
@@ -109,7 +109,7 @@ by [Microsoft](https://github.com/microsoft)
 
 既然我們已經有類別庫，我們可以開始建置我們的擴充項控制項。 可讓開始使用最基本的自訂擴充項控制項類別 （請參閱列表 1） s。
 
-**列表 1-MyCustomExtender.vb**
+**Listing 1 - MyCustomExtender.vb**
 
 [!code-vb[Main](creating-a-custom-ajax-control-toolkit-control-extender-vb/samples/sample1.vb)]
 
@@ -155,7 +155,7 @@ Initialize （） 方法會將 keyup 事件處理常式關聯的目標項目行�
 請記住，您必須編譯 JavaScript 檔案做為內嵌資源的列表 3。 在 [方案總管] 視窗中選取的檔案、 開啟屬性工作表及值指派*內嵌資源*要**建置動作**屬性 （請參閱 [圖 3]）。 Visual Studio 和 Visual Web Developer 中使用此選項。
 
 
-[![Adding JavaScript 檔案做為內嵌資源](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image14.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image13.png)
+[![新增 JavaScript 檔案做為內嵌資源](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image14.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image13.png)
 
 **圖 03**:新增 JavaScript 檔案做為內嵌資源 ([按一下以檢視完整大小的影像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image15.png))
 
@@ -184,7 +184,7 @@ Initialize （） 方法會將 keyup 事件處理常式關聯的目標項目行�
 完成這些步驟之後，DisabledButton 控制項擴充項應該會出現在工具箱] 中 （請參閱 [圖 4）。
 
 
-[![D在 [工具箱] 的 isabledButton](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image17.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image16.png)
+[![在 [工具箱] 的 DisabledButton](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image17.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image16.png)
 
 **圖 04**:在 [工具箱] 的 DisabledButton ([按一下以檢視完整大小的影像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image18.png))
 
@@ -206,7 +206,7 @@ Initialize （） 方法會將 keyup 事件處理常式關聯的目標項目行�
 2. 選取 DisabledButton 擴充項，然後按一下**確定** 按鈕。
 
 
-[![T他 Extender 精靈對話方塊](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image20.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image19.png)
+[![擴充項精靈對話方塊](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image20.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image19.png)
 
 **圖 05**:[擴充性精靈] 對話方塊 ([按一下以檢視完整大小的影像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image21.png))
 
@@ -218,7 +218,7 @@ Initialize （） 方法會將 keyup 事件處理常式關聯的目標項目行�
 3. 將值指派*儲存*DisabledText 屬性和值*btnSave* TargetButtonID 屬性。
 
 
-[![Setting 擴充項屬性](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image23.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image22.png)
+[![設定擴充項屬性](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image23.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image22.png)
 
 **圖 06**:設定擴充項屬性 ([按一下以檢視完整大小的影像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image24.png))
 
@@ -226,7 +226,7 @@ Initialize （） 方法會將 keyup 事件處理常式關聯的目標項目行�
 當您執行的頁面 （藉由按下 F5） 時，一開始會停用的按鈕控制項。 一旦您開始在文字方塊中輸入文字，控制項的按鈕會啟用 （請參閱 圖 7）。
 
 
-[![T他 DisabledButton 擴充項，在 [動作](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image26.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image25.png)
+[![在 動作 DisabledButton 擴充項](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image26.png)](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image25.png)
 
 **圖 07**:DisabledButton 擴充項作用中的 ([按一下以檢視完整大小的影像](creating-a-custom-ajax-control-toolkit-control-extender-vb/_static/image27.png))
 
