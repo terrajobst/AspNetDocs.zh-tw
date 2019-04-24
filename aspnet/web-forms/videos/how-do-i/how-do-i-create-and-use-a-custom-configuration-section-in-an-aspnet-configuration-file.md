@@ -1,6 +1,6 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-and-use-a-custom-configuration-section-in-an-aspnet-configuration-file
-title: '[How Do i:]建立並使用 [ASP.NET 組態檔中的 [自訂組態區段 |Microsoft Docs'
+title: '[How Do i:]建立並使用 ASP.NET 組態檔中的自訂組態區段 |Microsoft Docs'
 author: rick-anderson
 description: 在這段影片 Chris Pels 將示範如何擴充一組標準的 ASP.NET 組態設定，與您自己的 XML 組態項目。 首先，請參閱如何...
 ms.author: riande
@@ -12,10 +12,10 @@ ms.openlocfilehash: f1a1c73947bda381bf559e3cbe1e308d0079c2dc
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59392686"
 ---
-# <a name="how-do-i-create-and-use-a-custom-configuration-section-in-an-aspnet-configuration-file"></a>[How Do i:]建立並使用 [ASP.NET 組態檔中的 [自訂組態區段
+# <a name="how-do-i-create-and-use-a-custom-configuration-section-in-an-aspnet-configuration-file"></a>[How Do i:]建立並使用 ASP.NET 組態檔中的自訂組態區段
 
 藉由[Chris Pels](https://twitter.com/chrispels)
 

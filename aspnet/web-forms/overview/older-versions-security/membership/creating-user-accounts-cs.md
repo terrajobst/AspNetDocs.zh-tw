@@ -12,7 +12,7 @@ ms.openlocfilehash: cce8770eb0f60c4306d4560e9a4e72fa1a59f618
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59406505"
 ---
 # <a name="creating-user-accounts-c"></a>建立使用者帳戶 (C#)
@@ -36,8 +36,8 @@ ms.locfileid: "59406505"
 
 我們開始使用成員資格架構之前，讓我們花一點時間檢閱重要的步驟，我們已到達此點。 使用成員資格架構時`SqlMembershipProvider`在表單型驗證案例中，必須在 web 應用程式中實作成員資格功能之前要執行下列步驟：
 
-1. **啟用表單型驗證。** 如我們所述 *<a id="_msoanchor_4"> </a>[的表單驗證概觀](../introduction/an-overview-of-forms-authentication-cs.md)*，藉由編輯啟用表單驗證`Web.config`和 [設定`<authentication>`項目的`mode`屬性設定為`Forms`。 使用啟用表單驗證，每個傳入要求會檢查*表單驗證票證*，其中，如果有的話，識別要求者。
-2. **將應用程式服務結構描述新增至適當的資料庫。** 當使用`SqlMembershipProvider`我們需要安裝應用程式服務結構描述的資料庫。 通常這個結構描述加入至相同保存應用程式的資料模型的資料庫。  *<a id="_msoanchor_5"> </a> [SQL Server 中建立成員資格結構描述](creating-the-membership-schema-in-sql-server-cs.md)* 教學課程會探討使用`aspnet_regsql.exe`工具來完成這項作業。
+1. **啟用表單型驗證。** 如我們所述 *<a id="_msoanchor_4"> </a>[的表單驗證概觀](../introduction/an-overview-of-forms-authentication-cs.md)*，藉由編輯啟用表單驗證`Web.config`和設定`<authentication>`項目的`mode`屬性設定為`Forms`。 使用啟用表單驗證，每個傳入要求會檢查*表單驗證票證*，其中，如果有的話，識別要求者。
+2. **將應用程式服務結構描述新增至適當的資料庫。** 當使用`SqlMembershipProvider`我們需要安裝應用程式服務結構描述的資料庫。 通常這個結構描述加入至相同保存應用程式的資料模型的資料庫。 *<a id="_msoanchor_5"></a>[SQL Server 中建立成員資格結構描述](creating-the-membership-schema-in-sql-server-cs.md)* 教學課程會探討使用`aspnet_regsql.exe`工具來完成這項作業。
 3. **自訂 Web 應用程式的設定，以從步驟 2 中參考的資料庫。** *在 SQL Server 中建立成員資格結構描述*教學課程示範了兩種方式可以設定 web 應用程式，以便`SqlMembershipProvider`會使用在步驟 2 中所選取的資料庫： 藉由修改`LocalSqlServer`連接字串名稱;或將新註冊的提供者新增至成員資格架構提供者的清單，並自訂該新的提供者，以使用資料庫。 請從步驟 2。
 
 當建置 web 應用程式，使用`SqlMembershipProvider`表單型驗證，您必須使用之前執行這三個步驟`Membership`類別或 ASP.NET 登入 Web 控制項。 因為我們已經執行下列步驟，在先前的教學課程中，我們已準備好開始使用成員資格架構 ！
@@ -57,7 +57,7 @@ ms.locfileid: "59406505"
 此時您專案的方案總管] 看起來應該類似螢幕擷取畫面的 [圖 1 所示。
 
 
-[![F比爾蓋茲新頁面已新增至 [成員資格] 資料夾](creating-user-accounts-cs/_static/image2.png)](creating-user-accounts-cs/_static/image1.png)
+[![五個新的頁面已新增至 [成員資格] 資料夾](creating-user-accounts-cs/_static/image2.png)](creating-user-accounts-cs/_static/image1.png)
 
 **圖 1**:五個新頁面已加入至`Membership`資料夾 ([按一下以檢視完整大小的影像](creating-user-accounts-cs/_static/image3.png))
 
@@ -81,7 +81,7 @@ ms.locfileid: "59406505"
 預設的網站導覽提供者必須要有格式正確之 XML 檔案，名為`Web.sitemap`存在的根目錄。 因為我們要使用此預設提供者，我們需要加入這類檔案，並在適當的 XML 格式來定義站台對應的結構。 若要新增的檔案，以滑鼠右鍵按一下方案總管] 中的專案名稱，並選擇 [加入新項目。 從對話方塊中，選擇 新增類型名為的網站地圖檔案`Web.sitemap`。
 
 
-[![Add 專案的根目錄的檔名為 Web.sitemap](creating-user-accounts-cs/_static/image5.png)](creating-user-accounts-cs/_static/image4.png)
+[![新增名為專案的根目錄的 Web.sitemap 檔案](creating-user-accounts-cs/_static/image5.png)](creating-user-accounts-cs/_static/image4.png)
 
 **圖 2**:新增名為檔案`Web.sitemap`專案的根目錄 ([按一下以檢視完整大小的影像](creating-user-accounts-cs/_static/image6.png))
 
@@ -95,7 +95,7 @@ XML 網站地圖檔案會定義網站的結構為階層。 此階層式關聯性
 上述的站台地圖標記會定義 [圖 3] 所示的階層。
 
 
-[![T他網站導覽代表階層式導覽結構](creating-user-accounts-cs/_static/image8.png)](creating-user-accounts-cs/_static/image7.png)
+[![站台對應都代表階層式導覽結構](creating-user-accounts-cs/_static/image8.png)](creating-user-accounts-cs/_static/image7.png)
 
 **圖 3**:站台對應都代表階層式導覽結構 ([按一下以檢視完整大小的影像](creating-user-accounts-cs/_static/image9.png))
 
@@ -117,7 +117,7 @@ ASP.NET 包含多個瀏覽相關 Web 控制項來設計使用者介面。 這些
 圖 4 顯示上述的標記與我們在步驟 2 中建立的網站導覽結構轉譯的輸出。 中繼器呈現 vanilla 的未排序的清單的標記;中所定義的階層式樣式表規則`Styles.css`負責悅耳且具專業水準舒適的版面配置。 上述標記的運作方式的更詳細的描述，請參閱[主版頁面與網站導覽](https://asp.net/learn/data-access/tutorial-03-cs.aspx)教學課程。
 
 
-[![T他巡覽使用者介面會轉譯使用巢狀未排序清單](creating-user-accounts-cs/_static/image11.png)](creating-user-accounts-cs/_static/image10.png)
+[![瀏覽的使用者介面會轉譯使用巢狀未排序清單](creating-user-accounts-cs/_static/image11.png)](creating-user-accounts-cs/_static/image10.png)
 
 **圖 4**:瀏覽的使用者介面會轉譯使用巢狀未排序清單 ([按一下以檢視完整大小的影像](creating-user-accounts-cs/_static/image12.png))
 
@@ -133,7 +133,7 @@ ASP.NET 包含多個瀏覽相關 Web 控制項來設計使用者介面。 這些
 圖 5 瀏覽時顯示輸出的 SiteMapPath `~/Membership/CreatingUserAccounts.aspx`。
 
 
-[![T他的階層連結會顯示目前頁面和其祖系網站導覽中](creating-user-accounts-cs/_static/image14.png)](creating-user-accounts-cs/_static/image13.png)
+[![階層連結會顯示目前的頁面，並在站台及其上的階對應](creating-user-accounts-cs/_static/image14.png)](creating-user-accounts-cs/_static/image13.png)
 
 **圖 5**:階層連結可顯示目前頁面和其祖系網站導覽中 ([按一下以檢視完整大小的影像](creating-user-accounts-cs/_static/image15.png))
 
@@ -174,7 +174,7 @@ ASP.NET 包含多個瀏覽相關 Web 控制項來設計使用者介面。 這些
 此時您的畫面應該看起來像螢幕擷取畫面的 圖 6 所示。
 
 
-[![Add CreatingUserAccounts.aspx 頁面各種 Web 控制項](creating-user-accounts-cs/_static/image17.png)](creating-user-accounts-cs/_static/image16.png)
+[![將各種不同的 Web 控制項新增至 CreatingUserAccounts.aspx 頁面](creating-user-accounts-cs/_static/image17.png)](creating-user-accounts-cs/_static/image16.png)
 
 **[圖 6**:將各種 Web 控制項加入`CreatingUserAccounts.aspx`] 頁面 ([按一下以檢視完整大小的影像](creating-user-accounts-cs/_static/image18.png))
 
@@ -194,17 +194,17 @@ ASP.NET 包含多個瀏覽相關 Web 控制項來設計使用者介面。 這些
 之後呼叫`CreateUser`，並傳入`createStatus`，則`switch`陳述式用來輸出指派給的值根據適當的訊息`createStatus`。 圖 7 顯示輸出時已成功建立新的使用者。 圖 8 和 9 顯示輸出時不會建立使用者帳戶。 在 圖 8 中，造訪者輸入五個字母的密碼，不符合成員資格提供者的組態設定中的密碼強度需求。 在 圖 9 中，造訪者嘗試使用現有的使用者名稱 （圖 7 中建立的那一個） 中建立的使用者帳戶。
 
 
-[![A 新的使用者帳戶已成功建立](creating-user-accounts-cs/_static/image20.png)](creating-user-accounts-cs/_static/image19.png)
+[![新的使用者帳戶已成功建立](creating-user-accounts-cs/_static/image20.png)](creating-user-accounts-cs/_static/image19.png)
 
 **圖 7**:新的使用者帳戶已成功建立 ([按一下以檢視完整大小的影像](creating-user-accounts-cs/_static/image21.png))
 
 
-[![T因為提供的密碼太弱時，他的使用者帳戶不會建立](creating-user-accounts-cs/_static/image23.png)](creating-user-accounts-cs/_static/image22.png)
+[![因為提供的密碼太弱，不會建立使用者帳戶](creating-user-accounts-cs/_static/image23.png)](creating-user-accounts-cs/_static/image22.png)
 
 **圖 8**:因為提供的密碼太弱，不會建立使用者帳戶 ([按一下以檢視完整大小的影像](creating-user-accounts-cs/_static/image24.png))
 
 
-[![T他的使用者帳戶是未建立的因為使用者名稱是使用中](creating-user-accounts-cs/_static/image26.png)](creating-user-accounts-cs/_static/image25.png)
+[![使用者帳戶是未建立因為使用者名稱已在使用](creating-user-accounts-cs/_static/image26.png)](creating-user-accounts-cs/_static/image25.png)
 
 **圖 9**:使用者帳戶是未建立因為使用者名稱已在使用 ([按一下以檢視完整大小的影像](creating-user-accounts-cs/_static/image27.png))
 
@@ -216,7 +216,7 @@ ASP.NET 包含多個瀏覽相關 Web 控制項來設計使用者介面。 這些
 建立幾個使用者帳戶之後，請確認已列出的內容建立的帳戶`aspnet_Users`並`aspnet_Membership`中的資料表`SecurityTutorials.mdf`資料庫。 如 [圖 10] 所示，我已新增兩個使用者透過`CreatingUserAccounts.aspx`頁面：Tito，Bruce。
 
 
-[![T以下是兩個使用者成員資格使用者存放區中：Tito 和 Bruce](creating-user-accounts-cs/_static/image29.png)](creating-user-accounts-cs/_static/image28.png)
+[![在 成員資格使用者存放區中有兩位使用者：Tito 和 Bruce](creating-user-accounts-cs/_static/image29.png)](creating-user-accounts-cs/_static/image28.png)
 
 **圖 10**:在 成員資格使用者存放區中有兩位使用者：Tito 和 Bruce ([按一下以檢視完整大小的影像](creating-user-accounts-cs/_static/image30.png))
 
@@ -246,7 +246,7 @@ ASP.NET 隨附於多個登入 Web 控制項。 這些控制項可協助許多的
 返回`CreatingUserAccounts.aspx`頁面中`Membership`資料夾，切換至 設計 或 分割模式中，然後再將 CreateUserWizard 控制項加入頁面頂端。 CreateUserWizard 控制項歸檔 [工具箱] 中的登入控制項區段。 加入控制項之後, 設定其`ID`屬性設`RegisterUser`。 如 圖 11 所示的螢幕擷取畫面，CreateUserWizard 會轉譯文字方塊的新使用者的使用者名稱、 密碼、 電子郵件地址和安全性問題與解答的介面。
 
 
-[![T他 CreateUserWizard 控制項呈現一般的建立使用者介面](creating-user-accounts-cs/_static/image32.png)](creating-user-accounts-cs/_static/image31.png)
+[![CreateUserWizard 控制項轉譯為泛型建立使用者介面](creating-user-accounts-cs/_static/image32.png)](creating-user-accounts-cs/_static/image31.png)
 
 **圖 11**:CreateUserWizard 控制項呈現一般的建立使用者介面 ([按一下以檢視完整大小的影像](creating-user-accounts-cs/_static/image33.png))
 
@@ -267,7 +267,7 @@ CreateUserWizard 控制項，正如其名，衍生自[Wizard 控制項](https://
 我們來看看 CreateUserWizard 控制項作用中。 請瀏覽`CreatingUserAccounts.aspx`透過瀏覽器的頁面。 開始在 CreateUserWizard 介面中輸入一些無效的值。 請嘗試輸入密碼不符合密碼強度需求，或空的 離開 「 使用者名稱 」 文字方塊。 CreateUserWizard 會顯示適當的錯誤訊息。 當您嘗試使用不足的強式密碼建立使用者時，圖 12 顯示的輸出。
 
 
-[![T他 CreateUserWizard 自動會將驗證控制項](creating-user-accounts-cs/_static/image35.png)](creating-user-accounts-cs/_static/image34.png)
+[![CreateUserWizard 自動插入驗證控制項](creating-user-accounts-cs/_static/image35.png)](creating-user-accounts-cs/_static/image34.png)
 
 **圖 12**:CreateUserWizard 自動會將驗證控制項 ([按一下以檢視完整大小的影像](creating-user-accounts-cs/_static/image36.png))
 
@@ -275,7 +275,7 @@ CreateUserWizard 控制項，正如其名，衍生自[Wizard 控制項](https://
 接下來，CreateUserWizard 中輸入適當的值，然後按一下 [建立使用者] 按鈕。 假設輸入必要的欄位和密碼的強度就已足夠，CreateUserWizard 會建立新的使用者帳戶，透過成員資格架構，並且顯示`CompleteWizardStep`（請參閱 圖 13） 的介面。 在幕後呼叫 CreateUserWizard`Membership.CreateUser`方法，就像我們在步驟 5。
 
 
-[![A 新的使用者帳戶已成功建立](creating-user-accounts-cs/_static/image38.png)](creating-user-accounts-cs/_static/image37.png)
+[![新的使用者帳戶已成功建立](creating-user-accounts-cs/_static/image38.png)](creating-user-accounts-cs/_static/image37.png)
 
 **圖 13**:新的使用者帳戶已成功建立 ([按一下以檢視完整大小的影像](creating-user-accounts-cs/_static/image39.png))
 
@@ -299,7 +299,7 @@ CreateUserWizard 控制項，正如其名，衍生自[Wizard 控制項](https://
 讓我們更新`RegisterUser`CreateUserWizard 控制項以顯示 [取消] 按鈕，並傳送訪客`Default.aspx`時按一下 [取消] 或 [繼續] 按鈕。 若要達成此目的，將`DisplayCancelButton`屬性設為 True，同時兩者皆`CancelDestinationPageUrl`和`ContinueDestinationPageUrl`屬性，以"~ / Default.aspx"。 [圖 14] 顯示更新的 CreateUserWizard 透過瀏覽器檢視時。
 
 
-[![T他 CreateUserWizardStep 含有 [取消] 按鈕](creating-user-accounts-cs/_static/image41.png)](creating-user-accounts-cs/_static/image40.png)
+[![CreateUserWizardStep 含有 [取消] 按鈕](creating-user-accounts-cs/_static/image41.png)](creating-user-accounts-cs/_static/image40.png)
 
 **圖 14**:`CreateUserWizardStep`含有 [取消] 按鈕 ([按一下以檢視完整大小的影像](creating-user-accounts-cs/_static/image42.png))
 
@@ -337,7 +337,7 @@ CreateUserWizard 控制項在其工作流程期間引發的事件數目。 比�
 [圖 15] 顯示的螢幕擷取畫面`CreatingUserAccounts.aspx`當使用者輸入使用者名稱加上前置空格。
 
 
-[![U不允許使用之前端邊緣或尾端空格的 sernames](creating-user-accounts-cs/_static/image44.png)](creating-user-accounts-cs/_static/image43.png)
+[![不允許有前置或尾端空格的使用者名稱](creating-user-accounts-cs/_static/image44.png)](creating-user-accounts-cs/_static/image43.png)
 
 **圖 15**:不允許使用使用者名稱與之前端邊緣或尾端空格 ([按一下以檢視完整大小的影像](creating-user-accounts-cs/_static/image45.png))
 

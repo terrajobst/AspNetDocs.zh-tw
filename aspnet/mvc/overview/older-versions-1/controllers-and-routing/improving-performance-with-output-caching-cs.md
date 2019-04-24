@@ -12,7 +12,7 @@ ms.openlocfilehash: 5dd5b96d0365c55cbbfa2dfe0856beda41f915e1
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59384757"
 ---
 # <a name="improving-performance-with-output-caching-c"></a>使用輸出快取改善效能 (C#)
@@ -32,7 +32,7 @@ by [Microsoft](https://github.com/microsoft)
 
 您可以啟用輸出快取個別的控制器動作或整個控制器類別中加入 [OutputCache] 屬性。 例如，列表 1 中的控制站會公開名為 index （） 的動作。 Index （） 動作的輸出快取 10 秒的時間。
 
-**列表 1 – Controllers\HomeController.cs**
+**Listing 1 – Controllers\HomeController.cs**
 
 [!code-csharp[Main](improving-performance-with-output-caching-cs/samples/sample1.cs)]
 
@@ -97,7 +97,7 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-csharp[Main](improving-performance-with-output-caching-cs/samples/sample4.cs)]
 
-請注意 [OutputCache] 屬性，在 [列表 4 中的包含 [位置] 屬性設定為值 OutputCacheLocation.Client。 [OutputCache] 屬性也包含 NoStore 屬性。 NoStore 屬性用來通知 proxy 伺服器和瀏覽器，它們不應該儲存在快取內容的永久複本。
+請注意 [OutputCache] 屬性，在列表 4 中的包含 [位置] 屬性設定為值 OutputCacheLocation.Client。 [OutputCache] 屬性也包含 NoStore 屬性。 NoStore 屬性用來通知 proxy 伺服器和瀏覽器，它們不應該儲存在快取內容的永久複本。
 
 ## <a name="varying-the-output-cache"></a>不同的輸出快取
 
