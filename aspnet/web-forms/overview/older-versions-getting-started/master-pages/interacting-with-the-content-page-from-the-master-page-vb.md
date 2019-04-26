@@ -12,7 +12,7 @@ ms.openlocfilehash: f0575474bc750cad15ac74c522e3138b326d880c
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59400005"
 ---
 # <a name="interacting-with-the-content-page-from-the-master-page-vb"></a>從主版頁面與內容頁互動 (VB)
@@ -51,7 +51,7 @@ ms.locfileid: "59400005"
 我們第一要務是建立內容的頁面，其中列出 Northwind 資料庫中的產品。 (我們在先前的教學課程中，加入至專案的 Northwind 資料庫[*與主版頁面，從內容頁互動*](interacting-with-the-master-page-from-the-content-page-vb.md)。)藉由新增新的 ASP.NET 頁面，以啟動`~/Admin`名為資料夾`Products.aspx`，並確定將它繫結`Site.master`主版頁面。 此頁面已加入至網站之後，圖 1 顯示 方案總管。
 
 
-[![Add [Admin] 資料夾以新的 ASP.NET 網頁](interacting-with-the-content-page-from-the-master-page-vb/_static/image2.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image1.png)
+[![將新的 ASP.NET 網頁新增至 [Admin] 資料夾](interacting-with-the-content-page-from-the-master-page-vb/_static/image2.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image1.png)
 
 **圖 01**:加入新的 ASP.NET 頁面，以便`Admin`資料夾 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image3.png))
 
@@ -68,7 +68,7 @@ ms.locfileid: "59400005"
 返回`Products.aspx`。 在適用於內容的控制項`MainContent`，將 GridView 控制項並命名它`ProductsGrid`。 繫結至新的 SqlDataSource 控制項，名為的 GridView `ProductsDataSource`。
 
 
-[![Bind GridView，以新的 SqlDataSource 控制項](interacting-with-the-content-page-from-the-master-page-vb/_static/image5.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image4.png)
+[![繫結至新的 SqlDataSource 控制項的 GridView](interacting-with-the-content-page-from-the-master-page-vb/_static/image5.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image4.png)
 
 **圖 02**:將 GridView 繫結至新的 SqlDataSource 控制項 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image6.png))
 
@@ -76,7 +76,7 @@ ms.locfileid: "59400005"
 因此，它會使用 Northwind 資料庫，請設定精靈。 如果您已完成上一個教學課程，則您應該已經有名稱為的連接字串`NorthwindConnectionString`在`Web.config`。 圖 3 所示，請從下拉式清單中，選擇此連接字串。
 
 
-[![C設定為使用 Northwind 資料庫 SqlDataSource](interacting-with-the-content-page-from-the-master-page-vb/_static/image8.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image7.png)
+[![設定為使用 Northwind 資料庫 SqlDataSource](interacting-with-the-content-page-from-the-master-page-vb/_static/image8.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image7.png)
 
 **圖 03**:設定為使用 Northwind 資料庫 SqlDataSource ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image9.png))
 
@@ -84,7 +84,7 @@ ms.locfileid: "59400005"
 接下來，指定資料來源控制項的`SELECT`陳述式，從下拉式清單中選擇 產品 資料表，並傳回`ProductName`和`UnitPrice`（請參閱 圖 4） 的資料行。 按一下 下一步，然後完成 以完成設定資料來源精靈
 
 
-[![Return ProductName 和 Products 資料表中的 UnitPrice 欄位](interacting-with-the-content-page-from-the-master-page-vb/_static/image11.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image10.png)
+[![傳回從 Products 資料表的 [ProductName] 和 [UnitPrice 欄位](interacting-with-the-content-page-from-the-master-page-vb/_static/image11.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image10.png)
 
 **圖 04**:傳回`ProductName`並`UnitPrice`欄位從`Products`資料表 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image12.png))
 
@@ -95,7 +95,7 @@ ms.locfileid: "59400005"
 [!code-aspx[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample2.aspx)]
 
 
-[![EGridView 中列為 ach 產品與價格](interacting-with-the-content-page-from-the-master-page-vb/_static/image14.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image13.png)
+[![每個產品而其價格則列於 GridView](interacting-with-the-content-page-from-the-master-page-vb/_static/image14.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image13.png)
 
 **圖 05**:每個產品而其價格則列於 GridView ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image15.png))
 
@@ -111,7 +111,7 @@ ms.locfileid: "59400005"
 接下來，將 SqlDataSource 控制項新增至主版頁面，並將它命名為`DoublePricesDataSource`。 將用來執行此 SqlDataSource`UPDATE`所有價格的兩倍的陳述式。 具體來說，我們要設定其`ConnectionString`並`UpdateCommand`屬性，以適當的連接字串和`UPDATE`陳述式。 然後我們要呼叫此 SqlDataSource 控制項的`Update`方法時`DoublePrice`按一下按鈕時。 若要設定`ConnectionString`和`UpdateCommand`屬性，選取 SqlDataSource 控制項，然後移至 [屬性] 視窗。 `ConnectionString`屬性會列出已儲存在這些連接字串`Web.config`在下拉式清單中，選擇`NorthwindConnectionString`選項，如 [圖 6] 所示。
 
 
-[![C設定要使用 NorthwindConnectionString SqlDataSource](interacting-with-the-content-page-from-the-master-page-vb/_static/image17.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image16.png)
+[![設定要使用 NorthwindConnectionString SqlDataSource](interacting-with-the-content-page-from-the-master-page-vb/_static/image17.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image16.png)
 
 **圖 06**:設定要使用 SqlDataSource `NorthwindConnectionString` ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image18.png))
 
@@ -124,7 +124,7 @@ ms.locfileid: "59400005"
 此陳述式，在執行時，將會加倍`UnitPrice`值中的每一筆記錄`Products`資料表。
 
 
-[![Set SqlDataSource 的 UpdateCommand 屬性](interacting-with-the-content-page-from-the-master-page-vb/_static/image20.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image19.png)
+[![設定 SqlDataSource 的 UpdateCommand 屬性](interacting-with-the-content-page-from-the-master-page-vb/_static/image20.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image19.png)
 
 **圖 07**:設定的 SqlDataSource`UpdateCommand`屬性 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image21.png))
 
@@ -225,12 +225,12 @@ GridView 內容頁面中的重新整理與此程式碼就緒之後，每當`Doub
 圖 8 和 9 說明這項行為。 圖 8 顯示當第一次瀏覽的頁面。 請注意，在價格值`RecentProducts`（在主版頁面的左側資料行） 的 GridView 和`ProductsGrid`GridView （在 [內容] 頁面中）。 圖 9 顯示相同畫面之後立即`DoublePrice`按下按鈕。 如您所見，這兩個 Gridview 會立即會反映新的價格。
 
 
-[![T他初始的價格值](interacting-with-the-content-page-from-the-master-page-vb/_static/image23.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image22.png)
+[![初始的價格值](interacting-with-the-content-page-from-the-master-page-vb/_static/image23.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image22.png)
 
 **圖 08**:初始的價格值 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image24.png))
 
 
-[![T他 Just-Doubled 價格會顯示在 [Gridview](interacting-with-the-content-page-from-the-master-page-vb/_static/image26.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image25.png)
+[![Just-Doubled 價格會顯示在 Gridview](interacting-with-the-content-page-from-the-master-page-vb/_static/image26.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image25.png)
 
 **圖 09**:在 Gridview 中顯示 Just-Doubled 價格 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image27.png))
 

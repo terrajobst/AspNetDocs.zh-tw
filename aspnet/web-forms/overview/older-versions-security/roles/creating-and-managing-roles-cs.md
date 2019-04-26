@@ -12,7 +12,7 @@ ms.openlocfilehash: 3ee858cba449b0a8c8e693970a10ce0182e8c3da
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59412394"
 ---
 # <a name="creating-and-managing-roles-c"></a>建立及管理角色 (C#)
@@ -48,7 +48,7 @@ ASP.NET 提供了定義角色，並將它們與使用者帳戶建立關聯的角
 此時您專案的方案總管] 看起來應該類似螢幕擷取畫面的 [圖 1 所示。
 
 
-[![F我們新的頁面已新增至 [角色] 資料夾](creating-and-managing-roles-cs/_static/image2.png)](creating-and-managing-roles-cs/_static/image1.png)
+[![[角色] 資料夾已新增四個新的頁面](creating-and-managing-roles-cs/_static/image2.png)](creating-and-managing-roles-cs/_static/image1.png)
 
 **圖 1**:四個新頁面已加入至`Roles`資料夾 ([按一下以檢視完整大小的影像](creating-and-managing-roles-cs/_static/image3.png))
 
@@ -68,7 +68,7 @@ ASP.NET 提供了定義角色，並將它們與使用者帳戶建立關聯的角
 更新站台對應，請瀏覽的網站，透過瀏覽器。 如 [圖 2] 所示，在左側的導覽現在會包含項目角色教學課程。
 
 
-[![F我們新的頁面已新增至 [角色] 資料夾](creating-and-managing-roles-cs/_static/image5.png)](creating-and-managing-roles-cs/_static/image4.png)
+[![[角色] 資料夾已新增四個新的頁面](creating-and-managing-roles-cs/_static/image5.png)](creating-and-managing-roles-cs/_static/image4.png)
 
 **圖 2**:四個新頁面已加入至`Roles`資料夾 ([按一下以檢視完整大小的影像](creating-and-managing-roles-cs/_static/image6.png))
 
@@ -149,7 +149,7 @@ ASP.NET 提供了定義角色，並將它們與使用者帳戶建立關聯的角
 讓我們建立名為 Administrators 的角色。 請瀏覽`ManageRoles.aspx`透過瀏覽器頁面上，在文字方塊中輸入 以系統管理員 （請參閱 圖 3），然後按一下 建立角色 按鈕。
 
 
-[![Create 系統管理員角色](creating-and-managing-roles-cs/_static/image8.png)](creating-and-managing-roles-cs/_static/image7.png)
+[![建立系統管理員角色](creating-and-managing-roles-cs/_static/image8.png)](creating-and-managing-roles-cs/_static/image7.png)
 
 **圖 3**:建立系統管理員角色 ([按一下以檢視完整大小的影像](creating-and-managing-roles-cs/_static/image9.png))
 
@@ -157,7 +157,7 @@ ASP.NET 提供了定義角色，並將它們與使用者帳戶建立關聯的角
 會發生什麼事？ 回傳，但沒有任何角色存在已有的視覺提示新增至系統。 我們將會更新以包含視覺化回饋的步驟 5 中的此頁面。 現在，不過，您可以確認角色已建立前往`SecurityTutorials.mdf`資料庫，並顯示從資料`aspnet_Roles`資料表。 如 [圖 4] 所示，`aspnet_Roles`資料表包含剛加入系統管理員角色的記錄。
 
 
-[![T他 aspnet_Roles 資料表有一個資料列，系統管理員](creating-and-managing-roles-cs/_static/image11.png)](creating-and-managing-roles-cs/_static/image10.png)
+[![Aspnet_Roles 資料表有一個資料列，系統管理員](creating-and-managing-roles-cs/_static/image11.png)](creating-and-managing-roles-cs/_static/image10.png)
 
 **圖 4**:`aspnet_Roles`資料表有一個資料列，系統管理員 ([按一下以檢視完整大小的影像](creating-and-managing-roles-cs/_static/image12.png))
 
@@ -175,7 +175,7 @@ ASP.NET 提供了定義角色，並將它們與使用者帳戶建立關聯的角
 使用此程式碼就緒之後，請瀏覽透過瀏覽器頁面。 如 [圖 5] 所示，您應該會看到一個方格，具有單一資料行標示為項目。 方格包含我們在步驟 4 中新增為系統管理員角色的資料列。
 
 
-[![T他 GridView 顯示單一資料行中的角色](creating-and-managing-roles-cs/_static/image14.png)](creating-and-managing-roles-cs/_static/image13.png)
+[![GridView 會顯示單一資料行中的角色](creating-and-managing-roles-cs/_static/image14.png)](creating-and-managing-roles-cs/_static/image13.png)
 
 **圖 5**:GridView 會顯示單一資料行中的角色 ([按一下以檢視完整大小的影像](creating-and-managing-roles-cs/_static/image15.png))
 
@@ -203,7 +203,7 @@ GridView 會顯示單一資料行標示為項目，因為 GridView`AutoGenerateC
 現在當使用者將新角色時，才`RoleList`GridView 會顯示剛加入的角色在回傳時，提供角色已成功建立的視覺化回饋。 為了說明這點，請瀏覽`ManageRoles.aspx`透過瀏覽器頁面，然後新增名為監督員的角色。 時按一下 [建立角色] 按鈕，將發生回傳與方格會更新以包含系統管理員，以及新的角色，監督員。
 
 
-[![T他的主管角色具有已加入](creating-and-managing-roles-cs/_static/image17.png)](creating-and-managing-roles-cs/_static/image16.png)
+[![監督員角色可讓您擁有已加入](creating-and-managing-roles-cs/_static/image17.png)](creating-and-managing-roles-cs/_static/image16.png)
 
 **圖 6**:監督員角色可讓您擁有已加入 ([按一下以檢視完整大小的影像](creating-and-managing-roles-cs/_static/image18.png))
 
@@ -220,7 +220,7 @@ GridView 會顯示單一資料行標示為項目，因為 GridView`AutoGenerateC
 讓我們擴大在 GridView`ManageRoles.aspx`包含刪除按鈕，按一下時，會刪除選取的角色。 藉由將 GridView 中的 [刪除] 按鈕，移至 [欄位] 對話方塊中，並新增 [刪除] 按鈕，位於 [CommandField] 選項啟動。 請刪除按鈕最左側資料行，然後將其`DeleteText`屬性，以刪除角色。
 
 
-[![Add [刪除] 按鈕至 RoleList GridView](creating-and-managing-roles-cs/_static/image20.png)](creating-and-managing-roles-cs/_static/image19.png)
+[![將 [刪除] 按鈕新增至 RoleList GridView](creating-and-managing-roles-cs/_static/image20.png)](creating-and-managing-roles-cs/_static/image19.png)
 
 **圖 7**:新增至 [刪除] 按鈕`RoleList`GridView ([按一下以檢視完整大小的影像](creating-and-managing-roles-cs/_static/image21.png))
 

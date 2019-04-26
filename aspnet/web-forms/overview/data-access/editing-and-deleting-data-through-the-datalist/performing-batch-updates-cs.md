@@ -12,7 +12,7 @@ ms.openlocfilehash: 388637d67594d6431a134673cf85b3b18098136e
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59402748"
 ---
 # <a name="performing-batch-updates-c"></a>執行批次更新 (C#)
@@ -29,7 +29,7 @@ ms.locfileid: "59402748"
 在 [前述教學課程](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)我們檢查如何建立項目層級 DataList。 例如包含標準的可編輯 GridView，DataList 中每個項目編輯 按鈕，按下時，會讓項目可供編輯。 雖然這項目層級編輯適用於只會偶爾會更新的資料，則特定使用案例會需要使用者編輯多筆記錄。 如果使用者需要編輯數十個記錄，並且會強制按一下 編輯，進行其的變更，並按一下 每個更新，按一下  的數量可能會拖累她產能。 在這種情況下，更好的選項是提供完全可編輯的 DataList，那個*所有*其項目處於編輯模式，而且其值可以編輯的頁面上的全部更新] 按鈕，即可 （請參閱 [圖 1）。
 
 
-[![E您可以修改 ach 中完整的可編輯 DataList 項目](performing-batch-updates-cs/_static/image2.png)](performing-batch-updates-cs/_static/image1.png)
+[![在完整的可編輯 DataList 中每個項目可以進行修改。](performing-batch-updates-cs/_static/image2.png)](performing-batch-updates-cs/_static/image1.png)
 
 **圖 1**:可以修改在完整的可編輯 DataList 中每個項目 ([按一下以檢視完整大小的影像](performing-batch-updates-cs/_static/image3.png))
 
@@ -50,7 +50,7 @@ DataList s`EditItemIndex`屬性會指定什麼`DataListItem`（如果有的話�
 首先開啟`BatchUpdate.aspx`頁面上，新增 DataList 控制項，然後設定其`ID`屬性設`Suppliers`。 從 DataList s 智慧標籤，選擇 加入新的 ObjectDataSource 控制項，名為`SuppliersDataSource`。
 
 
-[![Create 新 ObjectDataSource 名為 SuppliersDataSource](performing-batch-updates-cs/_static/image5.png)](performing-batch-updates-cs/_static/image4.png)
+[![建立名為 SuppliersDataSource 新 ObjectDataSource](performing-batch-updates-cs/_static/image5.png)](performing-batch-updates-cs/_static/image4.png)
 
 **圖 2**:建立新的 ObjectDataSource 具名`SuppliersDataSource`([按一下以檢視完整大小的影像](performing-batch-updates-cs/_static/image6.png))
 
@@ -58,12 +58,12 @@ DataList s`EditItemIndex`屬性會指定什麼`DataListItem`（如果有的話�
 設定要使用擷取資料的 ObjectDataSource`SuppliersBLL`類別的`GetSuppliers()`方法 （請參閱 [圖 3]）。 與先前的教學課程中，而不是更新透過 ObjectDataSource 的供應商資訊，我們會直接處理商務邏輯層。 因此，在 更新 索引標籤中設定為 （無） 下拉式清單 （請參閱 圖 4）。
 
 
-[![Retrieve 使用 GetSuppliers() 方法的供應商資訊](performing-batch-updates-cs/_static/image8.png)](performing-batch-updates-cs/_static/image7.png)
+[![擷取使用 GetSuppliers() 方法的供應商資訊](performing-batch-updates-cs/_static/image8.png)](performing-batch-updates-cs/_static/image7.png)
 
 **圖 3**:擷取資訊所使用的供應商`GetSuppliers()`方法 ([按一下以檢視完整大小的影像](performing-batch-updates-cs/_static/image9.png))
 
 
-[![Set 為 (None) 下拉式清單中 [更新] 索引標籤](performing-batch-updates-cs/_static/image11.png)](performing-batch-updates-cs/_static/image10.png)
+[![在 [更新] 索引標籤中設定為 （無） 下拉式清單](performing-batch-updates-cs/_static/image11.png)](performing-batch-updates-cs/_static/image10.png)
 
 **圖 4**:在 [更新] 索引標籤中設定為 [（無） 下拉式清單 ([按一下以檢視完整大小的影像](performing-batch-updates-cs/_static/image12.png))
 
@@ -87,7 +87,7 @@ DataList s`EditItemIndex`屬性會指定什麼`DataListItem`（如果有的話�
 進行這些變更之後，請瀏覽此頁面，透過瀏覽器。 如 [圖 5] 所示，每個 DataList 項目會顯示為文字的供應商名稱，並使用文字方塊顯示地址、 城市和國家/地區。
 
 
-[![E除此之外，每個供應商 DataList 中是可編輯](performing-batch-updates-cs/_static/image14.png)](performing-batch-updates-cs/_static/image13.png)
+[![DataList 中的每個供應商是可編輯](performing-batch-updates-cs/_static/image14.png)](performing-batch-updates-cs/_static/image13.png)
 
 **圖 5**:DataList 中的每個供應商是可編輯 ([按一下以檢視完整大小的影像](performing-batch-updates-cs/_static/image15.png))
 
@@ -104,7 +104,7 @@ DataList s`EditItemIndex`屬性會指定什麼`DataListItem`（如果有的話�
 全部更新] 按鈕後，[圖 6 顯示的頁面。
 
 
-[![Two 更新所有按鈕已都加入至頁面](performing-batch-updates-cs/_static/image17.png)](performing-batch-updates-cs/_static/image16.png)
+[![兩個更新的所有按鈕已都加入至頁面](performing-batch-updates-cs/_static/image17.png)](performing-batch-updates-cs/_static/image16.png)
 
 **圖 6**:兩個更新的所有按鈕已都加入至頁面 ([按一下以檢視完整大小的影像](performing-batch-updates-cs/_static/image18.png))
 

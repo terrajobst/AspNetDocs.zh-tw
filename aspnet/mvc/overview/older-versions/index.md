@@ -12,7 +12,7 @@ ms.openlocfilehash: a0aa547ee9c8fa29e9863c540046d2f8dbfdd45f
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59417815"
 ---
 # <a name="older-versions---mvc-3-and-4"></a>舊版 - MVC 3 與 4
@@ -82,22 +82,22 @@ ms.locfileid: "59417815"
 - [使用 Razor 和低調的 JavaScript 建立 MVC 3 應用程式](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript.md)
 - [MVC 3 Music 市集](mvc-music-store/index.md)
 
-    - [第 1 部份：概觀和 [檔案] -> [新增專案]](mvc-music-store/mvc-music-store-part-1.md)
-    - [第 2 部分：Controllers](mvc-music-store/mvc-music-store-part-2.md)
+    - [第 1 部分：概觀和 [檔案]-> [新增專案](mvc-music-store/mvc-music-store-part-1.md)
+    - [第 2 部分：控制站](mvc-music-store/mvc-music-store-part-2.md)
     - [第 3 部分：檢視和 ViewModels](mvc-music-store/mvc-music-store-part-3.md)
     - [第 4 部分：模型和資料存取](mvc-music-store/mvc-music-store-part-4.md)
     - [第 5 部分：編輯表單和範本](mvc-music-store/mvc-music-store-part-5.md)
-    - [第 6 部分：使用資料註解進行模型驗證](mvc-music-store/mvc-music-store-part-6.md)
-    - [第 7 部分：成員資格和授權](mvc-music-store/mvc-music-store-part-7.md)
-    - [第 8 部分：購物車與 Ajax 更新](mvc-music-store/mvc-music-store-part-8.md)
-    - [第 9 部分：註冊和簽出](mvc-music-store/mvc-music-store-part-9.md)
-    - [第 10 部分：瀏覽及網站 設計的最後更新，結論](mvc-music-store/mvc-music-store-part-10.md)
+    - [第 6 節：使用資料註解的模型驗證](mvc-music-store/mvc-music-store-part-6.md)
+    - [第 7 節：成員資格和授權](mvc-music-store/mvc-music-store-part-7.md)
+    - [第 8 節：「 購物車與 Ajax 更新](mvc-music-store/mvc-music-store-part-8.md)
+    - [第 9 節：註冊和簽出](mvc-music-store/mvc-music-store-part-9.md)
+    - [第 10 節：最後更新導覽及網站設計，結論](mvc-music-store/mvc-music-store-part-10.md)
 - [MVC 3 - HTML5 和 jQuery UI Datepicker 快顯月曆](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/index.md)
 
-    - [使用 ASP.NET MVC 的 HTML5 和 jQuery UI Datepicker 快顯月曆 - 第 1 部分](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1.md)
-    - [使用 ASP.NET MVC 的 HTML5 和 jQuery UI Datepicker 快顯月曆 - 第 2 部分](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)
+    - [使用 ASP.NET MVC 的 HTML5 和 jQuery UI Datepicker 快顯月曆 - 第 1 節](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1.md)
+    - [使用 ASP.NET MVC 的 HTML5 和 jQuery UI Datepicker 快顯月曆 - 第 2 節](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)
     - [HTML5 和 jQuery UI Datepicker 快顯行事曆搭配 ASP.NET MVC-第 3 部分](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)
-    - [使用 ASP.NET MVC 的 HTML5 和 jQuery UI Datepicker 快顯月曆 - 第 4 部分](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4.md)
+    - [使用 ASP.NET MVC 的 HTML5 和 jQuery UI Datepicker 快顯月曆 - 第 4 節](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4.md)
 - [MVC 3 - 使用 DropDownList 方塊和 jQuery](working-with-the-dropdownlist-box-and-jquery/index.md)
 
     - [使用 DropDownList 協助程式與 ASP.NET MVC](working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc.md)

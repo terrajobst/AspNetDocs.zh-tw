@@ -12,7 +12,7 @@ ms.openlocfilehash: f38f217b0a7c7e656cf46d442c98949be5d43b62
 ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59385560"
 ---
 # <a name="examining-the-events-associated-with-inserting-updating-and-deleting-vb"></a>檢查與插入、更新和刪除建立關聯的事件 (VB)
@@ -37,7 +37,7 @@ ms.locfileid: "59385560"
 圖 1 說明這一系列的事件和步驟，更新 GridView 時。 [圖 1] 中的事件模式不是更新與 GridView 唯一的。 插入、 更新或刪除資料的 GridView、 DetailsView 或 FormView precipitates 相同資料 Web 控制項和 ObjectDataSource 的前置和後置的層級事件的順序。
 
 
-[![A 一系列的預先和後續的事件引發時更新 GridView 中的資料](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image2.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image1.png)
+[![一系列的預先和後續的事件引發時更新 GridView 中的資料](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image2.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image1.png)
 
 **圖 1**:系列執行的前置和後置的事件引發更新資料時 GridView 中 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image3.png))
 
@@ -60,7 +60,7 @@ ms.locfileid: "59385560"
 這與我們`ProductsBLL`類別中，我們已經準備好建立簡化的 GridView 介面。 開啟`DataModificationEvents.aspx`在`EditInsertDelete`資料夾，並新增至頁面的 GridView。 建立新的 ObjectDataSource，並將它設定為使用`ProductsBLL`類別及其`Select()`方法對應至`GetProducts`及其`Update()`方法對應至`UpdateProduct`只接受中的多載`productName`， `unitPrice`，和`productID`輸入參數。 圖 2 顯示建立資料來源精靈，當對應的 ObjectDataSource`Update()`方法，以`ProductsBLL`類別的新`UpdateProduct`方法多載。
 
 
-[![Map 新 UpdateProduct ObjectDataSource 的 update （） 方法多載](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image5.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image4.png)
+[![對應至新的 UpdateProduct 多載的 ObjectDataSource 的 update （） 方法](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image5.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image4.png)
 
 **圖 2**:對應的 ObjectDataSource`Update()`方法來新增`UpdateProduct`多載 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image6.png))
 
@@ -68,7 +68,7 @@ ms.locfileid: "59385560"
 因為我們的範例一開始只需要編輯資料，但是不能插入或刪除記錄的能力，花點時間明確表明 ObjectDataSource`Insert()`並`Delete()`方法不應對應至任何`ProductsBLL`移至 插入和刪除索引標籤，然後從下拉式清單中選擇 （無） 類別的方法。
 
 
-[![C（無） 從下拉式清單以便進行插入和刪除索引標籤選擇](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image8.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image7.png)
+[![從下拉式清單中，以便進行插入和刪除索引標籤中選擇 （無）](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image8.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image7.png)
 
 **圖 3**:選擇 （無） 從下拉式清單以便進行插入和刪除索引標籤 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image9.png))
 
@@ -91,7 +91,7 @@ ms.locfileid: "59385560"
 雖然 ObjectDataSource 只有`UpdateParameters`產品的名稱、 價格和識別碼，Visual Studio 新增 BoundField 或 CheckBoxField GridView 裡每個產品的欄位。
 
 
-[![T他 GridView 每個產品的欄位包含 BoundField 或 CheckBoxField](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image11.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image10.png)
+[![GridView 會在每個產品的欄位包含 「 BoundField 或 CheckBoxField](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image11.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image10.png)
 
 **圖 4**:GridView 會在每個產品的欄位包含 「 BoundField 或 CheckBoxField ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image12.png))
 
@@ -99,7 +99,7 @@ ms.locfileid: "59385560"
 當使用者編輯產品，然後按一下其 [更新] 按鈕時，GridView 會列舉不是唯讀的欄位。 它接著設定 ObjectDataSource 的對應參數的值`UpdateParameters`使用者所輸入的值的集合。 如果沒有對應的參數，GridView 會新增至該集合。 因此，如果我們 GridView 包含 BoundFields 和 CheckBoxFields 所有產品的欄位，則 ObjectDataSource 會叫用結束`UpdateProduct`所有這些參數，但其實會採用的多載的 ObjectDataSource 的宣告式標記會指定只有三個輸入的參數 （請參閱 [圖 5]）。 同樣地，如果沒有非唯讀的某種組合產品中的欄位未對應到輸入參數的 GridView`UpdateProduct`多載，當您嘗試更新時，就會引發例外狀況。
 
 
-[![T他的 GridView 會將參數新增至 ObjectDataSource 的 UpdateParameters 集合](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image14.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image13.png)
+[![GridView 會將參數加入至 ObjectDataSource 的 UpdateParameters 集合](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image14.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image13.png)
 
 **圖 5**:GridView 會將參數加入至的 ObjectDataSource`UpdateParameters`集合 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image15.png))
 
@@ -114,7 +114,7 @@ ms.locfileid: "59385560"
 我們的 GridView，連同`UpdateProduct`多載，可讓使用者編輯而不會遺失的任何其他產品欄位的名稱和產品的價格。
 
 
-[![T他介面允許編輯只是產品的名稱和價格](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image17.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image16.png)
+[![此介面可讓編輯只是產品的名稱和價格](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image17.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image16.png)
 
 **圖 6**:編輯只是產品的名稱和價格的介面允許 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image18.png))
 
@@ -128,7 +128,7 @@ ms.locfileid: "59385560"
 雖然 圖 6 的運作方式，在顯示的 GridView 範例`UnitPrice`欄位的格式不完全，導致缺少任何貨幣的價格顯示符號和有四個小數位數。 若要套用貨幣格式不可編輯的資料列，請設定`UnitPrice`BoundField 的`DataFormatString`屬性設`{0:c}`及其`HtmlEncode`屬性設`False`。
 
 
-[![Set UnitPrice DataFormatString 和 HtmlEncode 屬性據以](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image20.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image19.png)
+[![據以設定單價 DataFormatString 和 HtmlEncode 屬性](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image20.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image19.png)
 
 **圖 7**:設定`UnitPrice`的`DataFormatString`並`HtmlEncode`據以屬性 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image21.png))
 
@@ -136,7 +136,7 @@ ms.locfileid: "59385560"
 透過這項變更，非可編輯的資料列，請格式化成貨幣; 的價格編輯資料列，不過，仍會顯示不含貨幣符號，利用四位數的值。
 
 
-[![T他的非可編輯的資料列是現在，格式化為貨幣值](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image23.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image22.png)
+[![非可編輯的資料列做為貨幣值的 現在的格式](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image23.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image22.png)
 
 **圖 8**:非可編輯的資料列會立即將其格式化為貨幣值 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image24.png))
 
@@ -144,7 +144,7 @@ ms.locfileid: "59385560"
 中指定的格式設定指示`DataFormatString`屬性可以套用至編輯介面，藉由設定 BoundField`ApplyFormatInEditMode`屬性設`True`(預設值是`False`)。 花點時間，將此屬性設定為`True`。
 
 
-[![S現實 UnitPrice BoundField ApplyFormatInEditMode 屬性設為 True](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image26.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image25.png)
+[![UnitPrice BoundField 的 ApplyFormatInEditMode 屬性設定為 True](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image26.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image25.png)
 
 **圖 9**:設定`UnitPrice`BoundField 的`ApplyFormatInEditMode`屬性設`True`([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image27.png))
 
@@ -152,7 +152,7 @@ ms.locfileid: "59385560"
 這項變更的值與`UnitPrice`顯示在 編輯資料列也會格式化為貨幣。
 
 
-[![T他編輯資料列的 UnitPrice 值是現在，格式化為貨幣](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image29.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image28.png)
+[![編輯資料列的 UnitPrice 值為現在格式化貨幣](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image29.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image28.png)
 
 **圖 10**:編輯資料列`UnitPrice`值是現在格式化為貨幣符號 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image30.png))
 
@@ -169,7 +169,7 @@ GridView`RowUpdating`接受做為其第二個參數的型別物件的事件[Grid
 [圖 11] 顯示這兩個中的使用者提供的貨幣符號所造成的問題`UnitPrice`，以及如何 GridView 的`RowUpdating`事件處理常式可以用來正確地剖析這類的輸入。
 
 
-[![T他編輯資料列的 UnitPrice 值是現在，格式化為貨幣](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image32.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image31.png)
+[![編輯資料列的 UnitPrice 值為現在格式化貨幣](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image32.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image31.png)
 
 **圖 11**:編輯資料列`UnitPrice`值是現在格式化為貨幣符號 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image33.png))
 
@@ -188,7 +188,7 @@ GridView`RowUpdating`接受做為其第二個參數的型別物件的事件[Grid
 最後，設定標籤`CssClass`屬性設`Warning`。 在此時設計工具應該會顯示警告訊息中紅色、 粗體、 斜體、 超大的字型大小，上述 GridView，如 圖 12 所示。
 
 
-[![A 已新增標籤上方 [GridView](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image35.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image34.png)
+[![已新增標籤上方的 GridView](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image35.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image34.png)
 
 **圖 12**:標籤具有已加入上述的 GridView ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image36.png))
 
@@ -206,7 +206,7 @@ GridView`RowUpdating`接受做為其第二個參數的型別物件的事件[Grid
 如果使用者嘗試儲存未指定價格的產品時，更新已取消，而且很有幫助的訊息會顯示。 雖然資料庫 （和商務邏輯） 是用來`NULL` `UnitPrice` s，這個特定的 ASP.NET 網頁則否。
 
 
-[![A 使用者不能離開 UnitPrice 空白](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image38.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image37.png)
+[![使用者不能離開 UnitPrice 空白](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image38.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image37.png)
 
 **圖 13**:使用者不能離開`UnitPrice`空白 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image39.png))
 
@@ -229,12 +229,12 @@ GridView`RowUpdating`接受做為其第二個參數的型別物件的事件[Grid
 離開`Insert()`指向的方法`AddProduct`方法，但一次設定為 （無） 的 刪除 索引標籤的下拉式清單。
 
 
-[![S等 [插入] 索引標籤的下拉式清單 AddProduct 方法](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image41.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image40.png)
+[![將 [插入] 索引標籤的下拉式清單設定為 AddProduct 方法](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image41.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image40.png)
 
 **圖 14**:將 [插入] 索引標籤下拉式清單設定為`AddProduct`方法 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image42.png))
 
 
-[![Set，[刪除] 索引標籤的下拉式清單會列出為 [（無）](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image44.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image43.png)
+[![[刪除] 索引標籤的下拉式清單 （無）](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image44.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image43.png)
 
 **圖 15**:設定為 [（無） 的 [刪除] 索引標籤下拉式清單 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image45.png))
 
@@ -254,7 +254,7 @@ GridView`RowUpdating`接受做為其第二個參數的型別物件的事件[Grid
 [圖 16] 顯示此時檢視透過瀏覽器時，此頁面。 如您所見，DetailsView 會列出第一個產品 (Chai) 的價格與名稱。 不過，我們要是提供方法，讓使用者快速加入資料庫中的新產品插入介面。
 
 
-[![T他 DetailsView 是目前在唯讀模式中呈現](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image47.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image46.png)
+[![DetailsView 是目前在唯讀模式中呈現](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image47.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image46.png)
 
 **圖 16**:DetailsView 是目前呈現在唯讀模式中 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image48.png))
 
@@ -262,7 +262,7 @@ GridView`RowUpdating`接受做為其第二個參數的型別物件的事件[Grid
 若要在我們需要將其插入模式中顯示 DetailsView`DefaultMode`屬性設`Inserting`。 這會呈現在插入模式下，當第一次瀏覽 DetailsView，並讓它那里之後插入新記錄。 如 [圖 17] 所示，這類 DetailsView 提供快速的介面加入新記錄。
 
 
-[![T他 DetailsView 迅速新增新的產品提供的介面](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image50.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image49.png)
+[![DetailsView 快速加入一個新的產品提供的介面](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image50.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image49.png)
 
 **圖 17**:DetailsView 提供的介面來快速地加入新的產品 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image51.png))
 
@@ -285,7 +285,7 @@ GridView`RowUpdating`接受做為其第二個參數的型別物件的事件[Grid
 這會列出所有在記錄`Products`資料表。 如圖 19 所示，所有新產品的資料行以外`ProductID`， `ProductName`，並`UnitPrice`有`NULL`值。
 
 
-[![T他產品欄位中未提供 DetailsView 會指派 NULL 值](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image54.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image53.png)
+[![在 DetailsView 中產品欄位未提供會指派 NULL 值](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image54.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image53.png)
 
 **圖 19**:在 DetailsView 中產品欄位未提供指派`NULL`值 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image55.png))
 
@@ -313,7 +313,7 @@ GridView`RowUpdating`接受做為其第二個參數的型別物件的事件[Grid
 此時間加入新的產品 （例如 Acme Soda) 時`CategoryID`和`SupplierID`新產品的資料行都設為 1 （請參閱圖 20）。
 
 
-[![N新功能的產品現在有其 CategoryID 和供應商編號為 1 的值設定](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image57.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image56.png)
+[![新的產品現在有其 CategoryID 和 SupplierID 值設定為 1](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image57.png)](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image56.png)
 
 **圖 20**:新產品現在有其`CategoryID`並`SupplierID`的值設為 1 ([按一下以檢視完整大小的影像](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image58.png))
 
