@@ -8,22 +8,21 @@ ms.date: 02/24/2012
 ms.assetid: 257373bb-eab0-47bc-b5a2-37a9e91666d6
 msc.legacyurl: /web-forms/videos/data-access/linq-videos-from-the-vb-team
 msc.type: chapter
-ms.openlocfilehash: 3db35464b448727ef3477a90149459a46e0f76d7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fae7bc473ecbc655400220aa158dbd5285ae1ea8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412160"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106829"
 ---
-# <a name="linq-videos-from-the-vb-team"></a><span data-ttu-id="de7e7-103">VB 小組提供的 LINQ 影片</span><span class="sxs-lookup"><span data-stu-id="de7e7-103">LINQ Videos from the VB Team</span></span>
+# <a name="linq-videos-from-the-vb-team"></a><span data-ttu-id="ac948-103">VB 小組提供的 LINQ 影片</span><span class="sxs-lookup"><span data-stu-id="ac948-103">LINQ Videos from the VB Team</span></span>
 
-> <span data-ttu-id="de7e7-104">這些影片提供超過一小時的時間和內容，專注於新的 LINQ 語言功能，包含在 Visual Studio 2008 中的 Visual Basic 9.0 的下半部。</span><span class="sxs-lookup"><span data-stu-id="de7e7-104">These videos provide over an hour and half of content focused on the new LINQ language features of Visual Basic 9.0 included in Visual Studio 2008.</span></span>
+> <span data-ttu-id="ac948-104">這些影片提供超過一小時的時間和內容，專注於新的 LINQ 語言功能，包含在 Visual Studio 2008 中的 Visual Basic 9.0 的下半部。</span><span class="sxs-lookup"><span data-stu-id="ac948-104">These videos provide over an hour and half of content focused on the new LINQ language features of Visual Basic 9.0 included in Visual Studio 2008.</span></span>
 
-
-- [<span data-ttu-id="de7e7-105">開始使用 LINQ</span><span class="sxs-lookup"><span data-stu-id="de7e7-105">Get Started with LINQ</span></span>](how-do-i-get-started-with-linq.md)
-- [<span data-ttu-id="de7e7-106">執行群組和彙總查詢</span><span class="sxs-lookup"><span data-stu-id="de7e7-106">Perform Group and Aggregate Queries</span></span>](how-do-i-perform-group-and-aggregate-queries.md)
-- [<span data-ttu-id="de7e7-107">升級 Visual Basic 專案以啟用 LINQ</span><span class="sxs-lookup"><span data-stu-id="de7e7-107">Upgrade Visual Basic Projects to Enable LINQ</span></span>](how-do-i-upgrade-visual-basic-projects-to-enable-linq.md)
-- [<span data-ttu-id="de7e7-108">開始使用 LINQ to XML</span><span class="sxs-lookup"><span data-stu-id="de7e7-108">Get Started with LINQ to XML</span></span>](how-do-i-get-started-with-linq-to-xml.md)
-- [<span data-ttu-id="de7e7-109">啟用 XML IntelliSense 及使用 XML 命名空間</span><span class="sxs-lookup"><span data-stu-id="de7e7-109">Enable XML IntelliSense and Use XML Namespaces</span></span>](how-do-i-enable-xml-intellisense-and-use-xml-namespaces.md)
-- [<span data-ttu-id="de7e7-110">從 SQL 資料建立 XML 文件</span><span class="sxs-lookup"><span data-stu-id="de7e7-110">Create XML Documents from SQL Data</span></span>](how-do-i-create-xml-documents-from-sql-data.md)
-- [<span data-ttu-id="de7e7-111">使用 LINQ to XML 建立 Excel 試算表</span><span class="sxs-lookup"><span data-stu-id="de7e7-111">Create Excel Spreadsheets using LINQ to XML</span></span>](how-do-i-create-excel-spreadsheets-using-linq-to-xml.md)
+- [<span data-ttu-id="ac948-105">開始使用 LINQ</span><span class="sxs-lookup"><span data-stu-id="ac948-105">Get Started with LINQ</span></span>](how-do-i-get-started-with-linq.md)
+- [<span data-ttu-id="ac948-106">執行群組和彙總查詢</span><span class="sxs-lookup"><span data-stu-id="ac948-106">Perform Group and Aggregate Queries</span></span>](how-do-i-perform-group-and-aggregate-queries.md)
+- [<span data-ttu-id="ac948-107">升級 Visual Basic 專案以啟用 LINQ</span><span class="sxs-lookup"><span data-stu-id="ac948-107">Upgrade Visual Basic Projects to Enable LINQ</span></span>](how-do-i-upgrade-visual-basic-projects-to-enable-linq.md)
+- [<span data-ttu-id="ac948-108">開始使用 LINQ to XML</span><span class="sxs-lookup"><span data-stu-id="ac948-108">Get Started with LINQ to XML</span></span>](how-do-i-get-started-with-linq-to-xml.md)
+- [<span data-ttu-id="ac948-109">啟用 XML IntelliSense 及使用 XML 命名空間</span><span class="sxs-lookup"><span data-stu-id="ac948-109">Enable XML IntelliSense and Use XML Namespaces</span></span>](how-do-i-enable-xml-intellisense-and-use-xml-namespaces.md)
+- [<span data-ttu-id="ac948-110">從 SQL 資料建立 XML 文件</span><span class="sxs-lookup"><span data-stu-id="ac948-110">Create XML Documents from SQL Data</span></span>](how-do-i-create-xml-documents-from-sql-data.md)
+- [<span data-ttu-id="ac948-111">使用 LINQ to XML 建立 Excel 試算表</span><span class="sxs-lookup"><span data-stu-id="ac948-111">Create Excel Spreadsheets using LINQ to XML</span></span>](how-do-i-create-excel-spreadsheets-using-linq-to-xml.md)
