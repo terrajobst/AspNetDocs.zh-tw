@@ -8,12 +8,12 @@ ms.date: 02/07/2014
 ms.assetid: 5da59646-e973-41cd-88a9-c6b2c0594027
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e6b63afb9492e810e19999c7c7ffe074ad510bda
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2be57655b8c9b76b94e1d9a7ae5fbee27545a0a9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406765"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113094"
 ---
 # <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>使用 Razor 語法 (Visual Basic) 的 ASP.NET Web 程式設計簡介
 
@@ -36,12 +36,10 @@ ms.locfileid: "59406765"
 > 
 > 本教學課程也適用於 ASP.NET Web Pages 2。
 
-
 使用 Razor 語法的 ASP.NET Web Pages 的大多數範例使用 C#。 但 Razor 語法也支援 Visual Basic。 若要程式 ASP.NET web 網頁在 Visual Basic 中，您會建立與網頁 *.vbhtml*副檔名，然後新增 Visual Basic 程式碼。 這篇文章會提供使用 Visual Basic 語言和語法，來建立 ASP.NET 網頁的概觀。
 
 > [!NOTE]
 > Microsoft WebMatrix 的網站預設範本 (**這家麵包店**，**相片圖庫**，並**入門網站**等) 可用於 C# 和 Visual Basic 版本。 您可以安裝的 Visual Basic 範本，藉由以 NuGet 套件。 網站範本會安裝在您的網站，在名為的資料夾中的根資料夾*Microsoft 範本*。
-
 
 ## <a name="the-top-8-programming-tips"></a>最佳的 8 程式設計秘訣
 
@@ -66,7 +64,6 @@ ms.locfileid: "59406765"
 > 如果您的目標是要輸出轉譯為標記的標記的 HTML 標記 (例如`<p></p>`段落或`<em></em>`來強調文字)，請參閱節[結合文字、 標記和程式碼區塊中的程式碼](#BM_CombiningTextMarkupAndCode)本文稍後的。
 > 
 > 您可以深入了解中的 HTML 編碼[使用 ASP.NET Web Pages 網站中的 HTML 表單](https://go.microsoft.com/fwlink/?LinkId=202892)。
-
 
 ### <a name="2-you-enclose-code-blocks-with-codeend-code"></a>2.您將程式碼區塊，使用程式碼...結束程式碼
 
@@ -151,7 +148,6 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
 > 用於 web 網頁 (HTTP) 的通訊協定支援非常有限的數目的方法 (&quot;動詞&quot;)，用來對伺服器提出要求。 最常見的兩個為 GET，會用來讀取的頁面和文章，用來提交頁面。 一般情況下，使用者要求的頁面上，第一次要求頁面時使用 GET。 如果使用者填寫表單，並按一下**送出**，瀏覽器對伺服器提出 POST 要求。
 > 
 > 在 web 程式設計中，通常很有用知道是否要求網頁時正在為 GET 或 POST，讓您知道如何處理頁面。 ASP.NET Web Pages 中，您可以使用`IsPost`屬性，以查看要求是 GET 或 POST。 如果要求是某篇文章，`IsPost`屬性會傳回 true，而且您可以執行像是讀取表單上的文字方塊的值。 您會看到的許多範例會示範如何處理值的方式而定頁面`IsPost`。
-
 
 ## <a name="a-simple-code-example"></a>簡單的程式碼範例
 
@@ -272,7 +268,6 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
 
 下表列出一些常見的轉換和測試方法的變數。
 
-
 :::row:::
     :::column:::
         <strong>Method</strong>
@@ -369,11 +364,9 @@ Visual Basic 語言不區分大小寫。 程式設計關鍵字 (例如`Dim`， `
     :::column-end:::
 :::row-end:::
 
-
 ## <a name="operators"></a>運算子
 
 運算子是關鍵字或字元，會告訴 ASP.NET 在運算式中執行命令的類型。 Visual Basic 支援許多運算子，但您只需要識別一些開始使用開發 ASP.NET 網頁。 下表摘要說明最常見的運算子。
-
 
 :::row:::
     :::column:::
@@ -732,7 +725,6 @@ ASP.NET server 程式碼可讓您根據條件和撰寫程式碼重複特定次�
 
 > [!NOTE]
 > 我們建議您避免使用`Response.Redirect`方法中的`Try/Catch`陳述式，因為它會在網頁中造成例外狀況。
-
 
 下列範例顯示建立第一個要求上的文字檔案，然後顯示按鈕，讓使用者可以開啟檔案的頁面。 此範例刻意使用不正確的檔案名稱，如此會導致例外狀況。 程式碼包含`Catch`陳述式中的兩個可能的例外狀況： `FileNotFoundException`，就會出現錯誤，檔案名稱是否與`DirectoryNotFoundException`，發生於 ASP.NET 即使找不到資料夾。 （您可以取消此範例中的陳述式以查看一切正常運作時，它的執行方式註解）。
 

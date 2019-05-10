@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 513837a7-cfea-4568-a4e9-1f5901245d24
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 msc.type: authoredcontent
-ms.openlocfilehash: 1050018794526e12aad43cd473665de5ff575d7d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3aecd64bc59ffa961aa97dd30b037f9aeb2acdd8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59403554"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118901"
 ---
 # <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>資料分割策略 （使用 Azure 建置真實世界的雲端應用程式）
 
@@ -22,7 +22,6 @@ ms.locfileid: "59403554"
 [下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **建置真實世界雲端應用程式與 Azure**電子書以 Scott Guthrie 所開發的簡報為依據。 它說明 13 的模式，並可協助您的作法是成功開發適用於雲端的 web 應用程式。 這個系列的相關資訊，請參閱[第 1 章](introduction.md)。
-
 
 稍早我們看到調整的 web 層的雲端應用程式中，新增和移除網頁伺服器是多麼容易。 但如果它們全部遇到相同的資料存放區，您的應用程式瓶頸將移到前端到後端，然後資料層是最難調整。 在這一章中我們會探討如何讓您的資料層可調整的資料分割成多個關聯式資料庫，或藉由結合關聯式資料庫儲存體與其他資料儲存體選項。
 

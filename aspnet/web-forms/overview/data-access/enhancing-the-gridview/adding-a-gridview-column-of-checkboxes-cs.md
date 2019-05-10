@@ -8,12 +8,12 @@ ms.date: 03/06/2007
 ms.assetid: f63a9443-2db0-4f80-8246-840d3e86c2a3
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7f19965894b899aa429be0ef89ccde121191aeb8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0b381623487ce1f10ce2ae8d640b87589d06d412
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394025"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114682"
 ---
 # <a name="adding-a-gridview-column-of-checkboxes-c"></a>新增 GridView 的核取方塊欄 (C#)
 
@@ -23,38 +23,31 @@ ms.locfileid: "59394025"
 
 > 本教學課程會探討如何將為使用者提供以直覺的方式，來選取多個資料列的 GridView 的 GridView 控制項中的核取方塊的資料行。
 
-
 ## <a name="introduction"></a>簡介
 
 在先前的教學課程中，我們會檢查如何將選項按鈕的資料行加入至 GridView，以選取特定的記錄。 當使用者選擇最多一個項目，從方格中有限時，選項按鈕的資料行是合適的使用者介面。 有些時候，不過，我們可能會想要讓使用者能夠選取任意數目的方格中的項目。 比方說，web 型電子郵件用戶端，通常顯示核取方塊的資料行的訊息的清單。 使用者可以選取任意數目的訊息，並接著執行某些動作，例如將電子郵件移到另一個資料夾，或刪除它們。
 
 在本教學課程中，我們會看到如何將資料行的核取方塊以及如何判斷在回傳時簽入哪些核取方塊。 特別是，我們將建置的範例，精確地模擬 web 型電子郵件用戶端使用者介面。 我們的範例中會包含清單中的產品分頁的 GridView`Products`資料庫資料表的核取方塊，在每個資料列 （請參閱 圖 1）。 刪除選取的產品按鈕，按一下時，將會刪除選取的產品。
 
-
 [![每個產品的資料列包含一個核取方塊](adding-a-gridview-column-of-checkboxes-cs/_static/image1.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image1.png)
 
 **圖 1**:每個產品的資料列包含一個核取方塊 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-checkboxes-cs/_static/image2.png))
-
 
 ## <a name="step-1-adding-a-paged-gridview-that-lists-product-information"></a>步驟 1：新增的分頁的 GridView 會列出產品資訊
 
 我們會擔心加入資料行的核取方塊之前，讓 s 第一個著重於清單中的 GridView 會支援分頁的產品。 首先開啟`CheckBoxField.aspx`頁面中`EnhancedGridView`資料夾，然後拖曳的 GridView，從 [工具箱] 拖曳至設計工具，設定其`ID`至`Products`。 接下來，選擇要繫結至名為新 ObjectDataSource 的 GridView `ProductsDataSource`。 設定要使用 ObjectDataSource`ProductsBLL`類別，呼叫`GetProducts()`方法傳回的資料。 此 GridView 會處於唯讀模式，因為設定下拉式清單中更新、 插入和刪除索引標籤為 （無）。
 
-
 [![建立名為 ProductsDataSource 新 ObjectDataSource](adding-a-gridview-column-of-checkboxes-cs/_static/image2.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image3.png)
 
 **圖 2**:建立新的 ObjectDataSource 具名`ProductsDataSource`([按一下以檢視完整大小的影像](adding-a-gridview-column-of-checkboxes-cs/_static/image4.png))
-
 
 [![設定要使用 GetProducts() 方法擷取資料的 ObjectDataSource](adding-a-gridview-column-of-checkboxes-cs/_static/image3.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image5.png)
 
 **圖 3**:設定要擷取的資料使用 ObjectDataSource`GetProducts()`方法 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-checkboxes-cs/_static/image6.png))
 
-
 [![設定下拉式清單中更新、 插入和刪除 （無） 索引標籤](adding-a-gridview-column-of-checkboxes-cs/_static/image4.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image7.png)
 
 **圖 4**:設定下拉式清單中更新、 插入和刪除索引標籤為 （無） ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-checkboxes-cs/_static/image8.png))
-
 
 完成設定資料來源精靈之後，Visual Studio 會自動建立 BoundColumns 和 CheckBoxColumn 產品相關的資料欄位。 像我們在上一個教學課程中，移除以外的所有`ProductName`， `CategoryName`，並`UnitPrice`BoundFields，並將變更`HeaderText`產品、 類別和價格的屬性。 設定`UnitPrice`BoundField，讓其值會格式化為貨幣。 也設定 GridView，以支援分頁，藉由檢查智慧標籤啟用分頁 核取方塊。
 
@@ -62,16 +55,13 @@ ms.locfileid: "59394025"
 
 進行這些變更之後，GridView、 ObjectDataSource、 按鈕和標籤 s 宣告式標記應該如下所示：
 
-
 [!code-aspx[Main](adding-a-gridview-column-of-checkboxes-cs/samples/sample1.aspx)]
 
 請花一點時間瀏覽器中檢視頁面 （請參閱 [圖 5]）。 此時您應該會看到名稱、 類別和的前十個產品的價格。
 
-
 [![列出名稱、 類別和第十個產品的價格](adding-a-gridview-column-of-checkboxes-cs/_static/image5.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image9.png)
 
 **圖 5**:列出名稱、 類別和第十個產品的價格 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-checkboxes-cs/_static/image10.png))
-
 
 ## <a name="step-2-adding-a-column-of-checkboxes"></a>步驟 2：加入資料行的核取方塊
 
@@ -79,19 +69,15 @@ ms.locfileid: "59394025"
 
 相反地，我們必須在 新增為 TemplateField，然後將核取方塊 Web 控制項，加入其`ItemTemplate`。 繼續並加入至為 TemplateField `Products` GridView，並使它的第一個 （最左邊） 欄位。 從 GridView s 智慧標籤，按一下 [編輯範本] 連結，然後拖曳核取方塊 Web 控制項從工具箱拖曳到`ItemTemplate`。 設定此核取方塊 s`ID`屬性設`ProductSelector`。
 
-
 [![新增名為 TemplateField 的 ItemTemplate 的 ProductSelector 的核取方塊 Web 控制項](adding-a-gridview-column-of-checkboxes-cs/_static/image6.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image11.png)
 
 **圖 6**:新增核取方塊 Web 控制項名為`ProductSelector`TemplateField s `ItemTemplate` ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-checkboxes-cs/_static/image12.png))
 
-
 與新增 TemplateField 和核取方塊 Web 控制項，每個資料列現在包含一個核取方塊。 圖 7 顯示此頁面上，新增 TemplateField 和核取方塊之後，在瀏覽器檢視時。
-
 
 [![每個產品的資料列現在包含一個核取方塊](adding-a-gridview-column-of-checkboxes-cs/_static/image7.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image13.png)
 
 **圖 7**:每個產品的資料列現在包含一個核取方塊 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-checkboxes-cs/_static/image14.png))
-
 
 ## <a name="step-3-determining-what-checkboxes-were-checked-on-postback"></a>步驟 3：判斷哪些核取方塊在回傳時簽入
 
@@ -101,18 +87,15 @@ GridView s [ `Rows`屬性](https://msdn.microsoft.com/library/system.web.ui.webc
 
 建立事件處理常式`DeleteSelectedProducts`Button Web 控制項的`Click`事件，並新增下列程式碼：
 
-
 [!code-csharp[Main](adding-a-gridview-column-of-checkboxes-cs/samples/sample2.cs)]
 
 `Rows`屬性傳回的集合`GridViewRow`GridView 的資料列執行個體的結構。 `foreach`這裡迴圈會列舉此集合。 每個`GridViewRow`物件，使用以程式設計方式存取資料列的 [s] 核取方塊`row.FindControl("controlID")`。 如果勾選此核取方塊，則對應的資料列 s`ProductID`值從擷取`DataKeys`集合。 在此練習中，我們只是顯示在資訊訊息`DeleteResults`加上標籤，雖然在運作中應用程式 d 我們改為呼叫`ProductsBLL`類別的`DeleteProduct(productID)`方法。
 
 加入此事件處理常式之後，按一下 [刪除選取的產品] 按鈕現在會顯示`ProductID`s 所選的產品。
 
-
 [![按一下 刪除選取的產品按鈕時即會顯示選取的產品 Productid](adding-a-gridview-column-of-checkboxes-cs/_static/image8.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image15.png)
 
 **圖 8**:當按一下 刪除選取的產品按鈕選取的產品`ProductID`橋接器列示 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-checkboxes-cs/_static/image16.png))
-
 
 ## <a name="step-4-adding-check-all-and-uncheck-all-buttons"></a>步驟 4：新增全選和取消選取所有按鈕
 
@@ -120,30 +103,24 @@ GridView s [ `Rows`屬性](https://msdn.microsoft.com/library/system.web.ui.webc
 
 兩個按鈕 Web 將控制項加入至頁面上，將它們放入上述 GridView。 設定第一個 s`ID`來`CheckAll`並將其`Text`屬性來檢查所有; 集合的第二項 s`ID`來`UncheckAll`並將其`Text`來取消選取所有的屬性。
 
-
 [!code-aspx[Main](adding-a-gridview-column-of-checkboxes-cs/samples/sample3.aspx)]
 
 接下來，建立名為的程式碼後置類別中的 方法`ToggleCheckState(checkState)`，叫用時，會列舉`Products`GridView s`Rows`集合，並設定每個核取方塊 s`Checked`屬性設為傳遞的值在*已核取 checkState*參數。
-
 
 [!code-csharp[Main](adding-a-gridview-column-of-checkboxes-cs/samples/sample4.cs)]
 
 接下來，建立`Click`事件處理常式`CheckAll`和`UncheckAll`按鈕。 在  `CheckAll` s 事件處理常式，只需呼叫`ToggleCheckState(true)`; 在`UncheckAll`，呼叫`ToggleCheckState(false)`。
 
-
 [!code-csharp[Main](adding-a-gridview-column-of-checkboxes-cs/samples/sample5.cs)]
 
 使用此程式碼中，按一下 [查看全部] 按鈕造成回傳，並檢查所有在 GridView 的核取方塊。 同樣地，按一下 取消選取全部取消選取所有核取方塊。 圖 9 顯示的畫面之後已核取 查看全部 按鈕。
-
 
 [![按一下核取所有按鈕會選取所有核取方塊](adding-a-gridview-column-of-checkboxes-cs/_static/image9.gif)](adding-a-gridview-column-of-checkboxes-cs/_static/image17.png)
 
 **圖 9**:按一下核取所有按鈕會選取所有核取方塊 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-checkboxes-cs/_static/image18.png))
 
-
 > [!NOTE]
 > 當顯示的資料行的核取方塊，選取或取消選取所有核取方塊的其中一種方法是透過標頭資料列中的核取方塊。 此外，目前全選/取消核取所有的實作所需的回傳。 核取方塊已核取或取消核取，但是，可能會完全是透過用戶端指令碼，進而提供更快速得到的使用者體驗。 若要瀏覽詳細資料，以及使用用戶端技術的討論中，使用的所有核取及取消核取所有的標頭資料列核取方塊中，請參閱[檢查所有核取方塊在 GridView 使用用戶端指令碼，並選取所有核取方塊](http://aspnet.4guysfromrolla.com/articles/053106-1.aspx)。
-
 
 ## <a name="summary"></a>總結
 

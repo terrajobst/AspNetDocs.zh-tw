@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 94e92f80-a7e3-4d18-9375-ff8be5d666ac
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/building-and-packaging-web-application-projects
 msc.type: authoredcontent
-ms.openlocfilehash: 82134b8da7ab5ca49fef8e769128db9010fd231f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1d0ee0264ce6461d7b0159f1a44de4de31e2d079
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396326"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114655"
 ---
 # <a name="building-and-packaging-web-application-projects"></a>建置及封裝 Web 應用程式專案
 
@@ -27,7 +27,6 @@ ms.locfileid: "59396326"
 > - 如何 Internet Information Services (IIS) Web Deployment Tool (Web Deploy)，就會開啟您的 web 應用程式封裝成部署套件。
 > - 如何建置和封裝程序的運作方式，以及哪些檔案會建立。
 
-
 在 Visual Studio 2010 中，WPP 支援 web 應用程式專案的組建和部署程序。 WPP 提供擴充功能的 MSBuild，並讓它利用 Web Deploy 整合的 Microsoft Build Engine (MSBuild) 目標的集。 在 Visual Studio 中，您可以看到這項擴充的功能屬性頁上的 web 應用程式專案。 **封裝/發行 Web**頁面上，搭配**封裝/發行 SQL**頁面上，可讓您設定組建程序完成時您的 web 應用程式專案會封裝部署的方式。
 
 ![](building-and-packaging-web-application-projects/_static/image1.png)
@@ -36,17 +35,13 @@ ms.locfileid: "59396326"
 
 如果您看看專案檔的 C# 為基礎的 web 應用程式專案，您可以看到它匯入兩個.targets 檔案。
 
-
 [!code-xml[Main](building-and-packaging-web-application-projects/samples/sample1.xml)]
-
 
 第一個**匯入**陳述式是通用於所有 Visual C# 專案。 此檔案中， *Microsoft.CSharp.targets*，包含目標和專為 Visual C# 的工作。 例如，C# 編譯器 (**Csc**) 這裡叫用工作。 *Microsoft.CSharp.targets*依次檔案匯入*Microsoft.Common.targets*檔案。 這會定義目標通用於所有專案，例如**建置**，**重建**，**執行**，**編譯**，和**清除**. 第二個**匯入**陳述式是特定 web 應用程式專案。 *Microsoft.WebApplication.targets*依次檔案匯入*Microsoft.Web.Publishing.targets*檔案。 *Microsoft.Web.Publishing.targets*檔案基本上*是*WPP。 它會定義目標，例如**封裝**並**MSDeployPublish**，叫用 Web Deploy 完成各種部署工作。
 
 若要了解這些其他的目標中使用的方式，請連絡管理員範例解決方案中，開啟*Publish.proj*檔案，並看看**BuildProjects**目標。
 
-
 [!code-xml[Main](building-and-packaging-web-application-projects/samples/sample2.xml)]
-
 
 這個目標會使用**MSBuild**工作來建置各種專案。 請注意**DeployOnBuild**並**DeployTarget**屬性：
 
@@ -58,7 +53,6 @@ ms.locfileid: "59396326"
 > [!NOTE]
 > 若要檢視的專案檔 (例如<em>ContactManager.Mvc.csproj</em>) 在 Visual Studio 2010 中，您需要將專案卸載，從您的方案。 在 [<strong>方案總管</strong>] 視窗中，以滑鼠右鍵按一下專案節點，然後<strong>卸載專案</strong>。 同樣地，以滑鼠右鍵按一下專案節點，然後按一下<strong>編輯</strong><em>[專案檔]</em>)。 專案檔會開啟以其原始的 XML 格式。 請記住，當您完成時，請重新載入專案。  
 > 如需有關 MSBuild 目標、 工作，並<strong>匯入</strong>陳述式，請參閱[了解專案檔](understanding-the-project-file.md)。 專案檔和 WPP 更深入的簡介，請參閱[內 Microsoft Build Engine:使用 MSBuild 和 Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi 和 William bartholomew< /，ISBN:978-0-7356-4524-0.
-
 
 ## <a name="what-is-a-web-deployment-package"></a>什麼是 Web 部署套件？
 
@@ -87,7 +81,6 @@ ms.locfileid: "59396326"
 
 > [!NOTE]
 > 在 Visual Studio 2010 中，WPP 不支援先行編譯 web 應用程式封裝之前的頁面。 Visual Studio 和 WPP 的下一個版本會包含先行編譯 web 應用程式做為封裝選項的功能。
-
 
 ## <a name="conclusion"></a>結論
 

@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
-ms.openlocfilehash: 9969a68a3e1aa043845fb5affd6d3b73dec4136d
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 8656f4a4211c2e97d71d76dd2f799412539896ca
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58425388"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118852"
 ---
 # <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>資料儲存體選項 （使用 Azure 建置真實世界的雲端應用程式）
 
@@ -22,7 +22,6 @@ ms.locfileid: "58425388"
 [下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **建置真實世界雲端應用程式與 Azure**電子書以 Scott Guthrie 所開發的簡報為依據。 它說明 13 的模式，並可協助您的作法是成功開發適用於雲端的 web 應用程式。 電子書的相關資訊，請參閱[第 1 章](introduction.md)。
-
 
 大部分的人會使用關聯式資料庫，而且他們會嘗試尋找其他資料儲存體選項，它們在設計雲端應用程式時。 結果可以是次佳的效能、 高的費用或更糟的是，，因為[NoSQL](http://en.wikipedia.org/wiki/NoSQL) （非關聯式） 的資料庫可以比關聯式資料庫更有效率地處理某些工作。 當客戶尋求協助解決重要的資料儲存體問題時，通常是因為它們有關聯式資料庫所在的 NoSQL 選項的其中一個會成效。 在這些情況下客戶已經好到哪裡去如果它們之前先部署至生產環境的應用程式實作了 NoSQL 解決方案。
 

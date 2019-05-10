@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: ec0058472f8bc1d8d58e7c78deeb8b6097532510
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c88bae40a8aa092037c0b359ee391acaf161cf10
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409729"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118303"
 ---
 # <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>實際操作實驗室：容易維護的 Azure 網站：管理變更與規模
 
@@ -34,7 +34,6 @@ ms.locfileid: "59409729"
 > 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
 >
 > 如需本主題的深入報導，請參閱 <<c0> [ 建置真實世界雲端應用程式與 Azure 的電子書](building-real-world-cloud-apps-with-windows-azure/introduction.md)。
-
 
 <a id="Overview"></a>
 ## <a name="overview"></a>總覽
@@ -79,7 +78,6 @@ ms.locfileid: "59409729"
 > [!NOTE]
 > 請確定您執行安裝程式之前檢查這個實驗室的所有相依性。
 
-
 <a id="CodeSnippets"></a>
 ### <a name="using-the-code-snippets"></a>使用程式碼片段
 
@@ -87,7 +85,6 @@ ms.locfileid: "59409729"
 
 > [!NOTE]
 > 每個練習會伴隨起始方案，位於**開始**練習，可讓您依照每個練習，獨立於其他的資料夾。 請留意練習期間新增的程式碼片段缺少這些啟動解決方案，並可能無法運作，直到您已完成練習。 在練習的原始程式碼，您也可以找到**結束**資料夾包含 Visual Studio 方案，以程式碼所產生的相對應的練習中的步驟。 如果您需要其他說明，當您完成這個實際操作實驗室，您可以使用這些解決方案與指引。
-
 
 ---
 
@@ -107,9 +104,8 @@ ms.locfileid: "59409729"
 > [!NOTE]
 > 當您第一次啟動 Visual Studio 時，您必須選取其中一個預先定義的設定集合。 每個預先定義的集合以符合特定的開發樣式設計，並決定視窗版面配置、 編輯器的行為、 IntelliSense 程式碼片段和對話方塊選項。 在這個實驗室中的程序說明完成指定的工作，在 Visual Studio 中使用時所需的動作**一般開發設定**集合。 如果您選擇不同的設定集合，您的開發環境，可能會有在步驟中，您應該考慮到的差異。
 
-
 <a id="Exercise1"></a>
-### <a name="exercise-1-using-entity-framework-migrations"></a>練習 1:使用 Entity Framework 移轉
+### <a name="exercise-1-using-entity-framework-migrations"></a>練習 1：使用 Entity Framework 移轉
 
 當您開發應用程式時，您的資料模型可能會隨著時間改變。 這些變更可能會影響您的資料庫中現有的模型，（如果您要建立新的版本），並務必要讓資料庫保持在最新狀態，以避免發生錯誤。
 
@@ -241,7 +237,7 @@ ms.locfileid: "59409729"
     *顯示新的條件約束*
 
 <a id="Exercise2"></a>
-### <a name="exercise-2-deploying-a-web-app-to-staging"></a>練習 2:Web 應用程式部署至預備環境
+### <a name="exercise-2-deploying-a-web-app-to-staging"></a>練習 2：Web 應用程式部署至預備環境
 
 **Web 應用程式在 Azure App Service 中的**可讓您執行的預備的發行。 預備的發行會建立一個預備網站位置，為每個預設生產網站，並可讓您交換這些位置不需要停機。 這是實際用於公開釋放之前，先驗證變更，以累加方式整合網站內容，並回復變更無法如預期運作。
 
@@ -249,7 +245,6 @@ ms.locfileid: "59409729"
 
 > [!NOTE]
 > 若要啟用預備的發行，web 應用程式必須處於**標準模式**。 請注意，是否您變更為標準模式的 web 應用程式，將會產生額外費用。 如需有關定價的詳細資訊，請參閱 < [App Service 定價](https://azure.microsoft.com/pricing/details/app-service/)。
-
 
 <a id="Ex2Task1"></a>
 #### <a name="task-1--creating-a-web-app-in-azure-app-service"></a>工作 1-在 Azure App Service 中建立 Web 應用程式
@@ -576,7 +571,7 @@ ms.locfileid: "59409729"
     [!code-console[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample16.cmd)]
 
 <a id="Exercise4"></a>
-### <a name="exercise-4-scaling-using-azure-storage"></a>練習 4:使用 Azure 儲存體進行調整
+### <a name="exercise-4-scaling-using-azure-storage"></a>練習 4：使用 Azure 儲存體進行調整
 
 **Blob**是最簡單的方式來儲存大量非結構化的文字或二進位資料如視訊、 音訊和影像。 移至儲存體的應用程式的靜態內容，可協助調整應用程式所提供的映像或直接到瀏覽器的文件。
 
@@ -726,11 +721,10 @@ ms.locfileid: "59409729"
     *正在驗證重新導向 URL*
 
 <a id="Exercise5"></a>
-### <a name="exercise-5-using-autoscale-for-web-apps"></a>練習 5:使用自動調整規模的 Web 應用程式
+### <a name="exercise-5-using-autoscale-for-web-apps"></a>練習 5：使用自動調整規模的 Web 應用程式
 
 > [!NOTE]
 > 此練習是選擇性的因為它需要支援的 Web 負載&amp;效能測試，僅適用於**Visual Studio 2013 Ultimate Edition**。 如需有關 Visual Studio 2013 的特定功能的詳細資訊，請比較版本[此處](https://www.microsoft.com/visualstudio/eng/products/compare)。
-
 
 **Azure App Service Web Apps**中執行的 web 應用程式提供的自動調整功能**標準模式**。 自動調整可讓 Azure 自動調整您的 web 應用程式，根據負載的執行個體計數。 啟用自動調整時，Azure 會每 5 分鐘會檢查您的 web 應用程式的 CPU，並將執行個體，視需要在該時間點的。 如果 CPU 使用率偏低，Azure 將移除執行個體一次每隔 2 小時以確保您的 web 應用程式的效能不會降低。
 

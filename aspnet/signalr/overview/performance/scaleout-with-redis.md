@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 6ecd08c1-e364-4cd7-ad4c-806521911585
 msc.legacyurl: /signalr/overview/performance/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: 78efe409ab59df17ae71c26d4e280cc9971a64d2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 58a7affa1769523955adc76455a1c33be6f49751
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393245"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114305"
 ---
 # <a name="signalr-scaleout-with-redis"></a>使用 Redis 的 SignalR 向外延展
 
@@ -38,7 +38,6 @@ ms.locfileid: "59393245"
 >
 > 您喜歡本教學課程中的方式，和我們可以改善在頁面底部的註解中，歡迎留下意見反應。 如果您有不直接相關的教學課程中的問題，您可以張貼他們[ASP.NET SignalR 論壇](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或是[StackOverflow.com](http://stackoverflow.com/)。
 
-
 在本教學課程中，您將使用[Redis](http://redis.io/)將訊息散發到部署兩個個別的 IIS 執行個體的 SignalR 應用程式。
 
 Redis 是記憶體中索引鍵-值存放區。 它也支援發行/訂閱模型的傳訊系統。 Redis 的 SignalR 後擋板會使用發佈/訂閱功能，將訊息轉送到其他伺服器。
@@ -57,7 +56,6 @@ Redis 是記憶體中索引鍵-值存放區。 它也支援發行/訂閱模型�
 > [!NOTE]
 >
 > SignalR 向外的延展與 Redis 不支援 Redis 叢集。
-
 
 ## <a name="overview"></a>總覽
 
@@ -128,7 +126,7 @@ Redis 是記憶體中索引鍵-值存放區。 它也支援發行/訂閱模型�
 - 「 密碼 」 是指您在 redis.conf 檔案中定義的密碼。
 - :"AppName"是任何字串。 SignalR 使用此名稱建立 Redis pub/sub 通道。
 
-例如：
+例如: 
 
 [!code-csharp[Main](scaleout-with-redis/samples/sample7.cs)]
 

@@ -8,12 +8,12 @@ ms.date: 02/17/2014
 ms.assetid: 46bff772-01e0-40f0-9ae6-9e18c5442ee6
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/creating-and-using-a-helper-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 28cb3af081f68c20dd9cd9e0b2578f5656d2d652
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1f5109324ff3ce919e88fe976587a179eeaa5a5d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389436"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116041"
 ---
 # <a name="creating-and-using-a-helper-in-an-aspnet-web-pages-razor-site"></a>建立和使用 ASP.NET Web Pages (Razor) 網站中的協助程式
 
@@ -37,7 +37,6 @@ ms.locfileid: "59389436"
 >   
 > 
 > 本教學課程也適用於 ASP.NET Web Pages 2。
-
 
 ## <a name="overview-of-helpers"></a>協助程式的概觀
 
@@ -75,7 +74,6 @@ ms.locfileid: "59389436"
     ![在瀏覽器，並協助程式產生的標記，將指定的文字周圍方塊的方式顯示頁面的螢幕擷取畫面。](creating-and-using-a-helper-in-an-aspnet-web-pages-site/_static/image1.jpg)
 
 ## <a name="additional-resources"></a>其他資源
-
 
 [做為 Razor 協助程式的水平功能表](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2341)。 由 Mike 主教此部落格文章會示範如何建立水平功能表做為使用標記、 CSS 和程式碼的協助程式。
 

@@ -8,12 +8,12 @@ ms.date: 11/03/2015
 ms.assetid: 7ead83bc-c08c-4b26-8617-00e07292e35c
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 9076ce7d933d9bbaaf4d34ccb6df7b6823cd38bf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e15cba87b6ff4093aeac428542ce421b82e1bba1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59417009"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118514"
 ---
 # <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>暫時性錯誤處理 （建置使用 Azure 的真實世界的雲端應用程式）
 
@@ -22,7 +22,6 @@ ms.locfileid: "59417009"
 [下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **建置真實世界雲端應用程式與 Azure**電子書以 Scott Guthrie 所開發的簡報為依據。 它說明 13 的模式，並可協助您的作法是成功開發適用於雲端的 web 應用程式。 電子書的相關資訊，請參閱[第 1 章](introduction.md)。
-
 
 當您設計的真實世界的雲端應用程式時，您必須考慮的事情之一是如何處理暫時性服務中斷。 此問題是在雲端應用程式中唯一重要的因為您依賴網路連線和外部服務。 您可以經常取得通常自我修復的小問題，如果您尚未準備好以智慧方式處理它們，它們將會產生不愉快的體驗中為您的客戶。
 

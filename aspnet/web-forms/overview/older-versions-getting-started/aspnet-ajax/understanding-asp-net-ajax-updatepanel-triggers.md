@@ -8,12 +8,12 @@ ms.date: 03/12/2008
 ms.assetid: faab8503-2984-48a9-8a40-7728461abc50
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
 msc.type: authoredcontent
-ms.openlocfilehash: e3821eee8c7bf2c2f9b45ea75ade2bd5b3b8ef19
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c61d10c28ba3975cb6fbadc6eda1f7a3c9406dfc
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406258"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114604"
 ---
 # <a name="understanding-aspnet-ajax-updatepanel-triggers"></a>了解 ASP.NET AJAX UpdatePanel 觸發程序
 
@@ -22,7 +22,6 @@ ms.locfileid: "59406258"
 [下載 PDF](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial02_Triggers_cs.pdf)
 
 > 在 Visual Studio 中標記編輯器中工作時，您可能會注意到 （舉凡 IntelliSense) 有兩個的 UpdatePanel 控制項的子項目。 其中之一就是觸發程序項目，其指定的頁面 （或使用者控制項，如果您有使用的話） 上的控制項就會觸發 UpdatePanel 控制項的項目所在的部分轉譯。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -76,11 +75,9 @@ Microsoft ASP.NET 技術會以物件導向和事件導向的程式設計模型�
 
 1. 按 F5 以建置並執行專案。 請注意，當您按一下更新同時面板，這兩個標籤會變更文字;不過，當您按一下 更新這個面板，只 Label1 更新。
 
-
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image2.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image1.png)
 
 ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-updatepanel-triggers/_static/image3.png))
-
 
 ## <a name="under-the-hood"></a>*深入探討*
 
@@ -90,11 +87,9 @@ Microsoft ASP.NET 技術會以物件導向和事件導向的程式設計模型�
 
 按一下 [更新這個面板] 按鈕，並注意頂端 UpdatePanel 會更新為目前的伺服器時間。 在 FireBug，請選擇 [主控台] 索引標籤，以便您可以檢查要求。 第一次檢查 POST 要求參數：
 
-
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image5.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image4.png)
 
 ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-updatepanel-triggers/_static/image6.png))
-
 
 請注意，UpdatePanel 已指出伺服器端的 AJAX 程式碼來精確地透過 ScriptManager1 參數引發哪些控制項樹狀結構：`Button1`的`UpdatePanel1`控制項。 現在，按一下 [更新兩個面板] 按鈕。 接著，檢查回應，我們看到直立線符號分隔的一連串字串; 字串中設定變數具體來說，我們會看到最上層的 UpdatePanel 中， `UpdatePanel1`，具有其傳送到瀏覽器的 HTML 的全部內容。 AJAX 用戶端指令碼程式庫會取代 UpdatePanel 的原始 HTML 內容以新的內容，透過`.innerHTML`屬性，因此伺服器從伺服器以 html 格式傳送變更的內容。
 
@@ -104,11 +99,9 @@ Microsoft ASP.NET 技術會以物件導向和事件導向的程式設計模型�
 
 例如，假設 [CheckBox] 控制項;檢查.NET 反射程式中的類別反組譯碼。 若要這樣做，請確定您 System.Web 組件已開啟，並瀏覽至`System.Web.UI.WebControls.CheckBox`類別中，開啟`RenderInputTag`方法。 尋找檢查的條件式`AutoPostBack`屬性：
 
-
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image8.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image7.png)
 
 ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-updatepanel-triggers/_static/image9.png))
-
 
 當已啟用自動回傳`CheckBox`控制 （透過將 AutoPostBack 屬性要則為 true），結果`<input>`與 ASP.NET 事件處理中的指令碼，因此呈現標記其`onclick`屬性。 攔截表單送出，然後，可讓 ASP.NET AJAX nonintrusively，插入頁面協助以避免任何潛在的重大變更，可能是藉由使用可能不精確的字串取代。 此外，這可讓*任何*利用強大的 ASP.NET AJAX 不需要任何額外的程式碼支援使用 UpdatePanel 容器內的自訂 ASP.NET 控制項。
 
@@ -128,11 +121,9 @@ Microsoft ASP.NET 技術會以物件導向和事件導向的程式設計模型�
 
 此頁面背後的概念是下拉式清單選取以顯示第二個標籤的三種色彩之一，因此，核取方塊決定同時是否為粗體，以及標籤是否顯示日期與時間。 核取方塊不會造成 AJAX 更新，但應該下拉式清單，即使是在 UpdatePanel 位於不屬性。
 
-
 [![](understanding-asp-net-ajax-updatepanel-triggers/_static/image11.png)](understanding-asp-net-ajax-updatepanel-triggers/_static/image10.png)
 
 ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-updatepanel-triggers/_static/image12.png))
-
 
 由於是顯示在上述螢幕擷取畫面，最新的按鈕，按一下已向右按鈕更新此面板，更新下時間前的時間無關。 日期也關閉之間需按幾下，日期會顯示在下方的標籤。 最後感興趣的是下方的標籤色彩： 標籤的文字，示範如何控制狀態是重要的比最近已更新，並且使用者預期它會保留透過 AJAX 回傳。 *不過*，未更新的時間。 時間會自動重新擴展，透過持續性\_\_解譯由 ASP.NET 執行階段當控制項已在伺服器上重新轉譯頁面的檢視狀態欄位。 ASP.NET AJAX 伺服器程式碼無法辨識所在方法之控制項的狀態會變更;它只是重新填入從檢視狀態，並接著執行適當的事件。
 

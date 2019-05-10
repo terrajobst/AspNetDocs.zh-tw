@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 219149e1-3ee9-4b79-8fe4-7433f6b7d15b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-at-the-same-time-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0d9c566a301c8b64e33e67b0e9415a5955b5436e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f6ca48ff8bc4be982e0eff55d8d9c3385176897b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388214"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108237"
 ---
 # <a name="executing-several-animations-at-the-same-time-c"></a>執行數個動畫在相同的時間 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59388214"
 [下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation2.cs.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation2CS.pdf)
 
 > 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 它可讓以平行方式執行數個動畫。
-
 
 ## <a name="overview"></a>總覽
 
@@ -53,7 +52,6 @@ ms.locfileid: "59388214"
 [!code-aspx[Main](executing-several-animations-at-the-same-time-cs/samples/sample5.aspx)]
 
 和確實： 當您執行此指令碼，面板會顯示，然後調整大小 （多個增加三倍其寬度和減半來計算其高度） 和淡出，在相同的時間。
-
 
 [![面板淡出，調整大小 （包括其內容，因為瀏覽器的轉譯引擎）](executing-several-animations-at-the-same-time-cs/_static/image2.png)](executing-several-animations-at-the-same-time-cs/_static/image1.png)
 

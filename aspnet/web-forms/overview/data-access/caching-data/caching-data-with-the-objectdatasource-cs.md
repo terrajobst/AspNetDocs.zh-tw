@@ -8,12 +8,12 @@ ms.date: 05/30/2007
 ms.assetid: bd87413c-8160-4520-a8a2-43b555c4183a
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-with-the-objectdatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3e8fa3fe62ee2f58cd5cfbd32d17a3613cf80c12
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 596414748365c440ca50453c3e905ba6edb43de8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382490"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115005"
 ---
 # <a name="caching-data-with-the-objectdatasource-c"></a>使用 ObjectDataSource 快取資料 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59382490"
 [下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_58_CS.exe)或[下載 PDF](caching-data-with-the-objectdatasource-cs/_static/datatutorial58cs1.pdf)
 
 > 快取，可能表示緩慢和快速的 Web 應用程式之間的差異。 本教學課程會詳細看看在 ASP.NET 中快取的四個中的第一個。 了解快取的重要概念以及如何將 ObjectDataSource 控制項透過展示層快取。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -57,32 +56,25 @@ ASP.NET 2.0 提供了各種不同的快取選項。 透過整個網頁或使用�
 - `AtApplicationStartup.aspx`
 - `SqlCacheDependencies.aspx`
 
-
 ![加入 ASP.NET 網頁的快取相關的教學課程](caching-data-with-the-objectdatasource-cs/_static/image1.png)
 
 **圖 1**:加入 ASP.NET 網頁的快取相關的教學課程
 
-
 在其他資料夾，例如`Default.aspx`在`Caching`資料夾會列出其一節中的教學課程。 請記得，`SectionLevelTutorialListing.ascx`使用者控制項提供這項功能。 因此，新增此使用者控制項`Default.aspx`從拖曳到頁面的設計 檢視中的 方案總管 中拖曳。
-
 
 [![圖 2:將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](caching-data-with-the-objectdatasource-cs/_static/image3.png)](caching-data-with-the-objectdatasource-cs/_static/image2.png)
 
 **圖 2**:圖 2：新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-cs/_static/image4.png))
 
-
 最後，將這些頁面新增項目為`Web.sitemap`檔案。 具體來說，使用二進位資料之後新增下列標記`<siteMapNode>`:
-
 
 [!code-xml[Main](caching-data-with-the-objectdatasource-cs/samples/sample1.xml)]
 
 在更新之後`Web.sitemap`，花點時間檢視教學課程網站，透過瀏覽器。 在左側功能表現在包含快取的教學課程中的項目。
 
-
 ![網站導覽現在包含快取的教學課程的項目](caching-data-with-the-objectdatasource-cs/_static/image5.png)
 
 **圖 3**:網站導覽現在包含快取的教學課程的項目
-
 
 ## <a name="step-2-displaying-a-list-of-products-in-a-web-page"></a>步驟 2：在網頁上顯示產品的清單
 
@@ -90,19 +82,15 @@ ASP.NET 2.0 提供了各種不同的快取選項。 透過整個網頁或使用�
 
 首先開啟`ObjectDataSource.aspx`頁面中`Caching`資料夾。 從 工具箱 拖曳至設計工具拖曳的 GridView，設定其`ID`屬性，以`Products`，並從它的智慧標籤，選擇 繫結至新的 ObjectDataSource 控制項，名為`ProductsDataSource`。 設定使用 ObjectDataSource`ProductsBLL`類別。
 
-
 [![設定使用 ProductsBLL 類別 ObjectDataSource](caching-data-with-the-objectdatasource-cs/_static/image7.png)](caching-data-with-the-objectdatasource-cs/_static/image6.png)
 
 **圖 4**:設定要使用 ObjectDataSource`ProductsBLL`類別 ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-cs/_static/image8.png))
 
-
 此頁面上，讓建立可編輯的 GridView，以便我們可以檢查 ObjectDataSource 中快取資料修改透過 GridView 的介面時，會發生什麼事。 將下拉式清單中選取索引標籤上，並為其預設值，設定`GetProducts()`，變更至 [更新] 索引標籤中選取的項目，但`UpdateProduct`多載，接受`productName`， `unitPrice`，和`productID`做為輸入參數。
-
 
 [![更新索引標籤的下拉式清單設適當 UpdateProduct 多載](caching-data-with-the-objectdatasource-cs/_static/image10.png)](caching-data-with-the-objectdatasource-cs/_static/image9.png)
 
 **[圖 5**:S 的更新] 索引標籤下拉式清單設合適`UpdateProduct`多載 ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-cs/_static/image11.png))
-
 
 最後，設定為 （無） 插入和刪除索引標籤中的下拉式清單，然後按一下 完成。 完成後設定資料來源精靈，Visual Studio 設定 ObjectDataSource s`OldValuesParameterFormatString`屬性設`original_{0}`。 中所述[概觀的插入、 更新和刪除的資料](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md)教學課程中，此屬性必須從宣告式語法中移除，或設回其預設值`{0}`，為了讓我們更新工作流程繼續進行，不會發生錯誤。
 
@@ -113,24 +101,19 @@ GridView s 智慧標籤的 啟用編輯核取方塊，讓 GridView 可進行編�
 > [!NOTE]
 > 需要檢閱爧簏濻 GridView s 編輯介面嗎？ 如果是的話，請參閱上一步[自訂資料修改介面](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs.md)教學課程。
 
-
 [![啟用適用於編輯、 排序和分頁 GridView 支援](caching-data-with-the-objectdatasource-cs/_static/image13.png)](caching-data-with-the-objectdatasource-cs/_static/image12.png)
 
 **圖 6**:啟用編輯，排序和分頁的 GridView 支援 ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-cs/_static/image14.png))
 
-
 在這些 GridView 修改之後，GridView 和 ObjectDataSource s 宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](caching-data-with-the-objectdatasource-cs/samples/sample2.aspx)]
 
 如 [圖 7] 所示，可編輯的 GridView 會列出名稱、 類別和每個資料庫中的產品的價格。 請花一點時間來測試頁面的功能排序結果逐頁查看它們，並編輯記錄。
 
-
 [![每個產品名稱、 類別和價格會列在 可排序、 Pageable、 可編輯的 GridView](caching-data-with-the-objectdatasource-cs/_static/image16.png)](caching-data-with-the-objectdatasource-cs/_static/image15.png)
 
 **圖 7**:每個產品名稱、 類別和價格會列在 可排序、 Pageable、 可編輯的 GridView ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-cs/_static/image17.png))
-
 
 ## <a name="step-3-examining-when-the-objectdatasource-is-requesting-data"></a>步驟 3：檢查時的 ObjectDataSource 會要求資料
 
@@ -140,14 +123,11 @@ GridView s 智慧標籤的 啟用編輯核取方塊，讓 GridView 可進行編�
 
 要充份鑒賞與從資料庫擷取資料的頻率，可讓 s 顯示訊息，指出當資料經過重新擷取。 新增名為 GridView 上方標籤 Web 控制項`ODSEvents`。 清除其`Text`屬性並設定其`EnableViewState`屬性設`false`。 下方的標籤，將 Button Web 控制項，並設定其`Text`回傳的屬性。
 
-
 [![GridView 上方頁面中新增標籤和按鈕](caching-data-with-the-objectdatasource-cs/_static/image19.png)](caching-data-with-the-objectdatasource-cs/_static/image18.png)
 
 **圖 8**:頁面上方的 GridView 中新增標籤和按鈕 ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-cs/_static/image20.png))
 
-
 在資料存取工作流程期間，ObjectDataSource 的`Selecting`事件引發之前建立的基礎物件和其設定的方法叫用。 建立此事件的事件處理常式，並新增下列程式碼：
-
 
 [!code-csharp[Main](caching-data-with-the-objectdatasource-cs/samples/sample3.cs)]
 
@@ -155,16 +135,13 @@ ObjectDataSource 的資料，架構會要求每次標籤會顯示文字選取事
 
 請瀏覽此網頁瀏覽器中。 當第一次瀏覽頁面時，會顯示文字選取事件引發。 按一下回傳的按鈕，並請注意，文字就會消失 (假設 GridView s`EnableViewState`屬性設定為`true`，預設值)。 這是因為在回傳時，GridView 會重新建構從其檢視狀態，並因此不 t 向其資料的 ObjectDataSource。 排序、 分頁或編輯資料，不過，會導致重新繫結至其資料來源，GridView，因此選取事件引發的文字隨即再度出現。
 
-
 [![只要 GridView 會重新繫結至其資料來源時，就會顯示選取事件引發](caching-data-with-the-objectdatasource-cs/_static/image22.png)](caching-data-with-the-objectdatasource-cs/_static/image21.png)
 
 **圖 9**:只要 GridView 會重新繫結至其資料來源時，就會顯示選取事件引發 ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-cs/_static/image23.png))
 
-
 [![按一下回傳按鈕將會從其檢視狀態重新建構 GridView](caching-data-with-the-objectdatasource-cs/_static/image25.png)](caching-data-with-the-objectdatasource-cs/_static/image24.png)
 
 **圖 10**:按一下 回傳的按鈕會導致從其檢視狀態重新建構 GridView ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-cs/_static/image26.png))
-
 
 似乎浪費每次透過分頁或排序資料時擷取的資料庫資料。 畢竟，因為我們重新使用的預設分頁，ObjectDataSource 已擷取的所有記錄時顯示的第一頁。 即使 GridView 不提供排序和分頁支援，資料必須可從資料庫擷取任何使用者 （和在每個回傳時，如果已停用檢視狀態），頁面會先造訪每次。 但如果 GridView 會顯示相同的資料，所有使用者，這些額外的資料庫要求多餘。 為什麼不會快取傳回的結果`GetProducts()`方法，並繫結的 GridView 快取的結果？
 
@@ -179,11 +156,9 @@ ObjectDataSource 的資料，架構會要求每次標籤會顯示文字選取事
 
 可讓設定 s `ProductsDataSource` ObjectDataSource 快取其資料，絕對比例上 30 秒。 設定 ObjectDataSource s`EnableCaching`屬性，以`true`及其`CacheDuration`到 30 之間的屬性。 離開`CacheExpirationPolicy`屬性設定為其預設`Absolute`。
 
-
 [![設定快取其資料，30 秒內的 ObjectDataSource](caching-data-with-the-objectdatasource-cs/_static/image28.png)](caching-data-with-the-objectdatasource-cs/_static/image27.png)
 
 **圖 11**:設定快取其資料，30 秒內的 ObjectDataSource ([按一下以檢視完整大小的影像](caching-data-with-the-objectdatasource-cs/_static/image29.png))
-
 
 儲存變更並重新瀏覽此網頁瀏覽器中。 因為一開始的資料不是快取中，當您第一次造訪的頁面上，會出現選取引發的事件文字。 但後續的回傳中回傳的按鈕，排序，即可觸發的分頁，或按一下 [編輯] 或 [取消] 按鈕*不*重新顯示選取事件引發的文字。 這是因為`Selecting`ObjectDataSource 會從其基礎的物件，取得其資料時，只會引發事件`Selecting`如果會在將資料提取自資料快取將不會引發事件。
 
@@ -192,14 +167,11 @@ ObjectDataSource 的資料，架構會要求每次標籤會顯示文字選取事
 > [!NOTE]
 > 如果您經常看到選取觸發事件的文字，即使您預期的 ObjectDataSource 會使用快取的資料，它可能是因為記憶體條件約束。 如果沒有足夠的可用記憶體，可能已清除的 ObjectDataSource 快取中加入的資料。 如果 ObjectDataSource 不 t 出現唯一的快取的資料正確快取資料偶關閉部分應用程式以釋放記憶體，並再試一次。
 
-
 [圖 12] 說明快取的工作流程的 ObjectDataSource s。 選取事件引發時文字會出現在螢幕上，這是因為資料不是在快取中，且必須從基礎物件中擷取。 這段文字時遺失，不過，它 s 因為從快取可用的資料。 從快取，當傳回的資料那里 s 對基礎物件的任何呼叫，因此，任何資料庫的查詢執行。
-
 
 ![的 ObjectDataSource 會儲存及擷取資料的資料快取來源](caching-data-with-the-objectdatasource-cs/_static/image30.png)
 
 **圖 12**:的 ObjectDataSource 會儲存及擷取資料的資料快取來源
-
 
 每個 ASP.NET 應用程式有自己的資料快取執行個體上所有頁面和訪客共用該 s。 這表示，資料儲存在資料快取中的 ObjectDataSource 會同樣地之間共用瀏覽網頁的所有使用者。 若要確認這點，開啟`ObjectDataSource.aspx`瀏覽器中的頁面。 當第一次瀏覽 頁面上，選取觸發事件文字會出現 （假設先前測試新增至快取的資料，到目前為止，已收回）。 開啟第二個瀏覽器執行個體，然後複製並貼上第二個從第一個瀏覽器執行個體的 URL。 在第二個瀏覽器執行個體中，選取觸發事件的文字不會顯示因為它使用相同快取的資料與第一個。
 

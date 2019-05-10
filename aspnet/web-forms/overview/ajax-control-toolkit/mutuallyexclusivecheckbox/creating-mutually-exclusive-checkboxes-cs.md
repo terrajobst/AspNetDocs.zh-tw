@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 8e11b813-ba0d-4c29-b0f8-f65db6dbef1e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 01d6d2988278d3d371d93b23bbdf089d83900405
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c8fd0f6af612f99e14679b04554a8d1585af44b0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397847"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115358"
 ---
 # <a name="creating-mutually-exclusive-checkboxes-c"></a>建立互斥的核取方塊 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59397847"
 [下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/MutuallyExclusiveCheckBox0.cs.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/mutuallyexclusivecheckbox0CS.pdf)
 
 > 只有其中一組選項可能會被選取時，通常用選項按鈕。 不過，還有一項缺點:一旦選取一個選項按鈕群組中的，不可能取消選取所有選項按鈕。 核取方塊可以隨時取消勾選，不過不會互斥。 本教學課程提供最佳的這兩種方法： 互斥的核取方塊。
-
 
 ## <a name="overview"></a>總覽
 
@@ -45,7 +44,6 @@ ASP.NET AJAX Control Toolkit 包含 MutuallyExclusiveCheckBox 擴充項。 這�
 [!code-aspx[Main](creating-mutually-exclusive-checkboxes-cs/samples/sample3.aspx)]
 
 儲存並執行的頁面：您可以檢查，並取消核取這兩個核取方塊，但是沒有這兩個核取方塊可檢查。
-
 
 [![只有一個核取方塊可以檢查一次](creating-mutually-exclusive-checkboxes-cs/_static/image2.png)](creating-mutually-exclusive-checkboxes-cs/_static/image1.png)
 

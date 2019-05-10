@@ -8,12 +8,12 @@ ms.date: 01/28/2019
 ms.assetid: 20acee16-c70c-41e9-b38f-92bfcf9a4c1c
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
-ms.openlocfilehash: d5c8262d48c79616ca3069c37077ba99ffafb650
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 6523d09e41fe10475d1bcb7fca06b2e0e2d3182c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58426040"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118191"
 ---
 # <a name="owin-oauth-20-authorization-server"></a>OWIN OAuth 2.0 授權伺服器
 
@@ -34,7 +34,6 @@ ms.locfileid: "58426040"
 > ## <a name="questions-and-comments"></a>提出問題或意見
 >
 > 如果您有不直接相關的教學課程中的問題，您可以將它們在公佈[Katana 專案，GitHub 上](https://github.com/aspnet/AspNetKatana/)。 如需問題和針對本教學課程有關的註解，請參閱在頁面底部的註解區段。
-
 
 [OAuth 2.0 framework](http://tools.ietf.org/html/rfc6749)可讓協力廠商應用程式取得的有限的存取權的 HTTP 服務。 而不是您可以使用資源擁有者的認證來存取受保護的資源，用戶端取得存取權杖 (這是字串，表示特定的範圍、 存留期和其他存取屬性)。 存取權杖是協力廠商用戶端中，由授權伺服器發行的資源擁有者核准。
 
@@ -175,7 +174,6 @@ OAuth 不在意您何處或如何管理您的使用者帳戶資訊。 它有[ASP
 > [!NOTE]
 > 上述程式碼用來說明本教學課程的這一節，不應在安全或生產環境應用程式。 它不會檢查資源擁有者認證。 它會假設每個認證有效，並為其建立新的身分識別。 新的身分識別將用來產生存取權杖和重新整理權杖中。 程式碼取代您自己的安全帳戶管理程式碼。
 
-
 ### <a name="client-credentials-grant"></a>用戶端認證授與
 
 請參閱 IETF OAuth 2[用戶端認證授與](http://tools.ietf.org/html/rfc6749#section-4.4)現在區段。
@@ -195,7 +193,6 @@ OAuth 不在意您何處或如何管理您的使用者帳戶資訊。 它有[ASP
 
 > [!NOTE]
 > 上述程式碼用來說明本教學課程的這一節，不應在安全或生產環境應用程式。 程式碼取代您自己的安全用戶端管理程式碼。
-
 
 ### <a name="refresh-token"></a>重新整理權杖
 
@@ -274,7 +271,6 @@ OAuth 不在意您何處或如何管理您的使用者帳戶資訊。 它有[ASP
 > [!WARNING]
 > 安全性-永遠不會停用 SSL 生產應用程式中。 現在在純文字透過網路傳送登入認證。 上述程式碼只適用於本機範例偵錯和探索。
 
-
 ### <a name="implicit-grant-client"></a>隱含授與用戶端
 
 此用戶端使用 JavaScript 來：
@@ -296,7 +292,6 @@ OAuth 不在意您何處或如何管理您的使用者帳戶資訊。 它有[ASP
 
 > [!NOTE]
 > 最佳的作法是將 JavaScript 移至外部檔案，並不將它內嵌加上 Razor 標記。 為了簡化此範例中，在經過組合。
-
 
 ### <a name="resource-owner-password-credentials-grant-client"></a>資源擁有者密碼認證授與用戶端
 

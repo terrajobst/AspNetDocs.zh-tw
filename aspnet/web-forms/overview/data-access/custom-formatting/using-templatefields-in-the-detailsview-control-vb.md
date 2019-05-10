@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: 0b91d5f8-127d-4f6a-b204-f2e2b35ef703
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9a2f500206bbdc09d8007e10c0c7464f1ba384a3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8f432c25ae43132136323c20dc0bba326cefd7b3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395065"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115066"
 ---
 # <a name="using-templatefields-in-the-detailsview-control-vb"></a>在 DetailsView 控制項中使用 TemplateFields (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59395065"
 [下載範例應用程式](http://download.microsoft.com/download/5/7/0/57084608-dfb3-4781-991c-407d086e2adc/ASPNET_Data_Tutorial_13_VB.exe)或[下載 PDF](using-templatefields-in-the-detailsview-control-vb/_static/datatutorial13vb1.pdf)
 
 > 使用 GridView，您可以使用相同的 TemplateFields 功能也可與 DetailsView 控制項。 在本教學課程中，我們會顯示一項產品使用包含 TemplateFields DetailsView 一次。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -34,11 +33,9 @@ TemplateField 提供較高的轉譯資料的彈性比 BoundField、 CheckBoxFiel
 
 使用 GridView，您可以使用相同的 TemplateFields 功能也可與 DetailsView 控制項。 在本教學課程中，我們會顯示一項產品使用包含兩個 TemplateFields DetailsView 一次。 將合併的第一個 TemplateField `UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`進一 DetailsView 資料列的資料欄位。 值會顯示第二個 TemplateField`Discontinued`欄位中，但會使用"YES"時，要顯示的格式化方法`Discontinued`是`True`，「 否 」 則。
 
-
 [![可用來自訂顯示兩個 TemplateFields](using-templatefields-in-the-detailsview-control-vb/_static/image2.png)](using-templatefields-in-the-detailsview-control-vb/_static/image1.png)
 
 **圖 1**:可用來自訂顯示兩個 TemplateFields ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-vb/_static/image3.png))
-
 
 讓我們開始吧 ！
 
@@ -48,26 +45,21 @@ TemplateField 提供較高的轉譯資料的彈性比 BoundField、 CheckBoxFiel
 
 開啟`DetailsViewTemplateField.aspx`頁面上，然後從 [工具箱] 拖曳至設計工具拖曳 DetailsView。 從 DetailsView 的智慧標籤選擇 加入新的 ObjectDataSource 控制項叫用`ProductsBLL`類別的`GetProducts()`方法。
 
-
 [![加入新的 ObjectDataSource 控制項叫用 GetProducts() 方法](using-templatefields-in-the-detailsview-control-vb/_static/image5.png)](using-templatefields-in-the-detailsview-control-vb/_static/image4.png)
 
 **圖 2**:加入新的 ObjectDataSource 控制項該 Invokes`GetProducts()`方法 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-vb/_static/image6.png))
-
 
 此報表中移除`ProductID`， `SupplierID`， `CategoryID`，和`ReorderLevel`BoundFields。 接下來，重新排列 BoundFields 以便`CategoryName`並`SupplierName`BoundFields 緊接`ProductName`BoundField。 您可以自由調整`HeaderText`適當屬性和您 BoundFields 的格式化屬性。 像是 GridView，透過 [欄位] 對話方塊 （可編輯欄位中的連結 DetailsView 的智慧標籤，即可存取） 或透過宣告式語法，可以執行這些 BoundField 層級編輯。 最後，清除 DetailsView`Height`和`Width`屬性值，以便在 DetailsView 控制項加入展開根據顯示的資料，並檢查的智慧標籤的 啟用分頁核取方塊。
 
 進行這些變更之後，您的 DetailsView 控制項宣告式標記看起來應該如下所示：
 
-
 [!code-aspx[Main](using-templatefields-in-the-detailsview-control-vb/samples/sample1.aspx)]
 
 請花一點時間檢視透過瀏覽器頁面。 此時您應該看到列出單一的產品 (Chai) 與顯示的產品名稱、 類別、 供應商、 價格、 庫存單位數、 訂購，量和其已停止的狀態的資料列。
 
-
 [![使用一系列的 BoundFields 顯示產品的詳細資料](using-templatefields-in-the-detailsview-control-vb/_static/image8.png)](using-templatefields-in-the-detailsview-control-vb/_static/image7.png)
 
 **圖 3**:產品的詳細資料會顯示使用 BoundFields 系列 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-vb/_static/image9.png))
-
 
 ## <a name="step-2-combining-the-price-units-in-stock-and-units-on-order-into-one-row"></a>步驟 2：將價格、 庫存量和訂購量結合成一個資料列
 
@@ -75,11 +67,9 @@ DetailsView 有一個資料列`UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`�
 
 在 DetailsView 的智慧標籤，即可啟動 欄位 對話方塊中的 編輯欄位 連結上按一下 啟動。 接下來，新增新的 TemplateField，並設定其`HeaderText`屬性設為 「 價格和清查 」 並移動新的 TemplateField 讓它位於上方`UnitPrice`BoundField。
 
-
 [![在 DetailsView 控制項中加入新的 TemplateField](using-templatefields-in-the-detailsview-control-vb/_static/image11.png)](using-templatefields-in-the-detailsview-control-vb/_static/image10.png)
 
 **圖 4**:在 DetailsView 控制項中加入新的 TemplateField ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-vb/_static/image12.png))
-
 
 因為這個新的 TemplateField 會包含在目前顯示的值`UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`BoundFields，讓我們將它們移除。
 
@@ -87,21 +77,17 @@ DetailsView 有一個資料列`UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`�
 
 本教學課程中，開始將標籤控制項新增至為價格與清查 TemplateField `ItemTemplate`。 接下來，按一下 [編輯資料繫結] 連結，從標籤 Web 控制項的智慧標籤，並繫結`Text`屬性設`UnitPrice`欄位。
 
-
 [![Label 的 Text 屬性繫結至 UnitPrice 資料欄位](using-templatefields-in-the-detailsview-control-vb/_static/image14.png)](using-templatefields-in-the-detailsview-control-vb/_static/image13.png)
 
 **圖 5**:繫結的標籤`Text`屬性，以`UnitPrice`資料欄位 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-vb/_static/image15.png))
-
 
 ## <a name="formatting-the-price-as-a-currency"></a>格式化為貨幣的價格
 
 此步驟中，標籤 Web 控制項的價格和清查 TemplateField 現在會顯示剛才所選產品的價格。 圖 6 顯示進度的螢幕擷取畫面到目前為止透過瀏覽器檢視時。
 
-
 [![價格與清查 TemplateField 顯示的價格](using-templatefields-in-the-detailsview-control-vb/_static/image17.png)](using-templatefields-in-the-detailsview-control-vb/_static/image16.png)
 
 **圖 6**:價格與清查 TemplateField 顯示的價格 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-vb/_static/image18.png))
-
 
 請注意，產品的價格不會格式化為貨幣。 BoundField 格式化是可以藉由設定`HtmlEncode`屬性，以`False`並`DataFormatString`屬性設`{0:formatSpecifier}`。 為 TemplateField，不過，任何格式化指示必須指定資料繫結語法中，或透過定義應用程式的程式碼 （例如 ASP.NET 頁面的程式碼後置類別中） 內的某處的格式化方法使用。
 
@@ -109,14 +95,11 @@ DetailsView 有一個資料列`UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`�
 
 針對`UnitPrice`欄位的使用貨幣格式指定選取適當的下拉式清單值，或輸入`{0:C}`以手動方式。
 
-
 [![格式化為貨幣的價格](using-templatefields-in-the-detailsview-control-vb/_static/image20.png)](using-templatefields-in-the-detailsview-control-vb/_static/image19.png)
 
 **圖 7**:格式化為貨幣的價格 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-vb/_static/image21.png))
 
-
 以宣告方式，在格式規格會表示為第二個參數插入`Bind`或`Eval`方法。 只要透過設計工具結果，在下列資料繫結運算式中的宣告式標記中設定：
-
 
 [!code-aspx[Main](using-templatefields-in-the-detailsview-control-vb/samples/sample2.aspx)]
 
@@ -131,16 +114,13 @@ DetailsView 有一個資料列`UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`�
 
 在執行這項工作之後 DetailsView 的宣告式標記看起來應該如下所示：
 
-
 [!code-aspx[Main](using-templatefields-in-the-detailsview-control-vb/samples/sample3.aspx)]
 
 經過這些變更中，我們已合併為單一的 DetailsView 資料列的價格和清查的資訊。
 
-
 [![價格和清查資訊會顯示在單一資料列](using-templatefields-in-the-detailsview-control-vb/_static/image23.png)](using-templatefields-in-the-detailsview-control-vb/_static/image22.png)
 
 **圖 8**:價格和清查資訊會顯示在單一資料列 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-vb/_static/image24.png))
-
 
 ## <a name="step-3-customizing-the-discontinued-field-information"></a>步驟 3：自訂已停止的欄位資訊
 
@@ -148,16 +128,13 @@ DetailsView 有一個資料列`UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`�
 
 而不是顯示 CheckBoxField 我們可能會想要改為顯示文字，指出產品已經停售。 若要這麼做，我們無法移除 DetailsView CheckBoxField，然後加入 BoundField 其`DataField`屬性設定為`Discontinued`。 請花一點時間來執行這項操作。 這項變更之後 DetailsView 顯示的文字"True"已停止的產品和"False"仍在作用中的產品。
 
-
 [![字串為 True 和 False 用來顯示已停止的狀態](using-templatefields-in-the-detailsview-control-vb/_static/image26.png)](using-templatefields-in-the-detailsview-control-vb/_static/image25.png)
 
 **圖 9**:字串，則為 True 和 False 是用來顯示 Discontinued 狀態 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-vb/_static/image27.png))
 
-
 假設我們不想要使用"YES"和"NO"，但改為"True"或"False"字串。 利用 TemplateField 以及格式化的方法可以執行這類自訂。 可以接受任意數目的輸入參數，以格式化方法，但是 （做為字串） 必須傳回的 HTML 插入範本。
 
 將格式化的方法，加入`DetailsViewTemplateField.aspx`頁面的程式碼後置類別名為`DisplayDiscontinuedAsYESorNO`它會接受`Northwind.ProductsRow`做為輸入參數的物件，並傳回字串。 在上一個教學課程中，這個方法中所述*必須*標示為`Protected`或`Public`才能存取從該範本。
-
 
 [!code-vb[Main](using-templatefields-in-the-detailsview-control-vb/samples/sample4.vb)]
 
@@ -166,19 +143,15 @@ DetailsView 有一個資料列`UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`�
 > [!NOTE]
 > 檢查先前的教學課程回想一下，我們可能會包含資料欄位中所傳遞之格式化方法中`NULL`s，因此需要檢查是否員工`HiredDate`屬性值已有資料庫`NULL`值低於存取`EmployeesRow`的`HiredDate`屬性。 因為不需要這類的核取以下`Discontinued`資料行永遠不會有資料庫`NULL`指派的值。 此外，這就是為什麼方法接受布林值輸入參數，而不需要接受`ProductsRow`執行個體或類型參數的`Object`。
 
-
 使用此完整的格式化方法，剩下的就是呼叫從 TemplateField `ItemTemplate`。 若要建立 TemplateField 移除`Discontinued`BoundField 和新增新的 TemplateField，或轉換`Discontinued`BoundField TemplateField 到。 然後，從 [宣告式標記] 檢視中，編輯 TemplateField，使其包含只會叫用 ItemTemplate`DisplayDiscontinuedAsYESorNO`方法並傳入目前的值`ProductRow`執行個體的`Discontinued`屬性。 這可以透過存取`Eval`方法。 具體來說，TemplateField 標記應該看起來像：
-
 
 [!code-aspx[Main](using-templatefields-in-the-detailsview-control-vb/samples/sample5.aspx)]
 
 這會導致`DisplayDiscontinuedAsYESorNO`轉譯 DetailsView 時要叫用方法並傳遞`ProductRow`執行個體的`Discontinued`值。 由於`Eval`方法會傳回類型的值`Object`，但`DisplayDiscontinuedAsYESorNO`方法所預期的輸入的參數的型別`Boolean`，我們轉換`Eval`方法會傳回值，以`Boolean`。 `DisplayDiscontinuedAsYESorNO`方法接著會傳回"YES"或"NO"的值而定接收。 傳回的值是在此 DetailsView 中顯示的內容 （請參閱 圖 10） 的資料列。
 
-
 [![Yes 或 NO 的值為現在 Discontinued 資料列中顯示](using-templatefields-in-the-detailsview-control-vb/_static/image29.png)](using-templatefields-in-the-detailsview-control-vb/_static/image28.png)
 
 **圖 10**:Yes 或 NO 的值為現在顯示 Discontinued 資料列 ([按一下以檢視完整大小的影像](using-templatefields-in-the-detailsview-control-vb/_static/image30.png))
-
 
 ## <a name="summary"></a>總結
 

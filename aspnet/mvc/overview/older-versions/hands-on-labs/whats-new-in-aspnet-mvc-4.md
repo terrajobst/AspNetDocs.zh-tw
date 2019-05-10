@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 48f7feb3-872f-485d-b96f-e30011ff8c4a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: b9da2522cfaed324a23f43265d4e234ebb4950bd
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: adb6e990d0ca98df38c47adf8c37fdffeb6d3d73
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411120"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112978"
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4 的新功能
 
@@ -83,13 +83,12 @@ ASP.NET MVC 4 是建置可調整、 以標準為基礎的 web 應用程式使用
 > [!NOTE]
 > 每個練習會伴隨**結束**包含完成練習之後，您應該取得所產生的方案資料夾。 如果您需要的所有練習所使用的其他說明，您可以使用此解決方案作為指南。
 
-
 估計的時間才能完成這個實驗室：**60 分鐘**。
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_New_ASPNET_MVC_4_Project_Templates"></a>
-### <a name="exercise-1-new-aspnet-mvc-4-project-templates"></a>練習 1:新的 ASP.NET MVC 4 專案範本
+### <a name="exercise-1-new-aspnet-mvc-4-project-templates"></a>練習 1：新的 ASP.NET MVC 4 專案範本
 
 在此練習中，您將探索 ASP.NET MVC 4 專案範本中的增強功能。 除了網際網路應用程式範本中，MVC 3 中已有此版本現在包含行動裝置應用程式的另一個範本。 首先，您將查看每個範本的一些相關功能。 然後，您將使用在使用正確的方式呈現您在不同的平台上正確的頁面。
 
@@ -223,7 +222,6 @@ ASP.NET MVC 4 可加速開發行動裝置的網站和平板電腦瀏覽器。 �
 8. 也會使用新的範本**檢視區的中繼標籤**。 大部分的行動瀏覽器定義虛擬瀏覽器視窗的寬度或&quot;viewport&quot;，即大於行動裝置的實際寬度。 這可讓行動瀏覽器顯示整個 web 網頁內虛擬顯示。 **檢視區的中繼標籤**可讓 web 開發人員在行動裝置上設定的寬度、 高度和小數位數的瀏覽器區域 **。** 行動應用程式的 ASP.NET MVC 4 範本會將檢視區設定為裝置寬度 (&quot;寬度 = 裝置寬度&quot;) 中的版面配置範本 (*Views\Shared\_Layout.cshtml*)，因此所有頁面會有其設定為裝置螢幕寬度的檢視區。 請注意，將檢視區的中繼標籤不會變更預設瀏覽器檢視。
 9. 開啟 **\_Layout.cshtml**位於**檢視 |共用**資料夾，然後將檢視區的中繼標籤的註解。 執行應用程式中，如果不是已開啟，並查看差異。
 
-
 [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample2.cshtml)]
 
 ![註解將檢視區的中繼標籤之後的站台](whats-new-in-aspnet-mvc-4/_static/image15.png "註化檢視區中繼標籤之後的站台")
@@ -231,7 +229,6 @@ ASP.NET MVC 4 可加速開發行動裝置的網站和平板電腦瀏覽器。 �
 *站台之後註解的檢視區的中繼標記*
 10. 在 Visual Studio 中按**SHIFT** + **F5**停止偵錯應用程式。
 11. 取消註解將檢視區的中繼標籤。
-
 
 [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample3.cshtml)]
 
@@ -249,7 +246,6 @@ ASP.NET MVC 4 可加速開發行動裝置的網站和平板電腦瀏覽器。 �
 > [!NOTE]
 > 媒體查詢的基本格式如下：@media \[範圍： 所有 |掌上型 |列印 |投影 |畫面\]([屬性： 值] 和...[屬性： value])
 
-
 媒體查詢的範例： &gt;  **@media所有和 (最大寬度：1000px) 和 (最小寬度：700px) {}:** 針對 700px 和 1000px 之間的所有解析度。
 
 > **@media 螢幕和 (最小寬度：400px) 和 (最大寬度：700px) {...}:** 只針對螢幕。 解決方法必須是介於 400 到 700px。
@@ -257,7 +253,6 @@ ASP.NET MVC 4 可加速開發行動裝置的網站和平板電腦瀏覽器。 �
 > **@media 掌上型和 (最小寬度：20em) 畫面和 (最小寬度：20em) {...}:**（行動裝置和裝置） 的掌上型和畫面。 最小寬度必須大於 20em。
 > 
 > 您可以找到相關的詳細資訊，在[W3C 網站](http://www.w3.org/TR/css3-mediaqueries/)。
-
 
 您現在將探索適應性呈現的運作方式，改善可讀性的 ASP.NET MVC 4 預設的網站範本。
 
@@ -292,7 +287,7 @@ ASP.NET MVC 4 可加速開發行動裝置的網站和平板電腦瀏覽器。 �
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Creating_the_Photo_Gallery_Web_Application"></a>
-### <a name="exercise-2-creating-the-photo-gallery-web-application"></a>練習 2:建立相片圖庫 Web 應用程式
+### <a name="exercise-2-creating-the-photo-gallery-web-application"></a>練習 2：建立相片圖庫 Web 應用程式
 
 在此練習中，您將使用的相片圖庫應用程式，以顯示相片。 ASP.NET MVC 4 專案範本中，將會開始，然後您會在其中加入從服務擷取相片，並在 [首頁] 頁面中顯示的功能。
 
@@ -584,7 +579,6 @@ jQuery Mobile 的預設佈景主題包含 5 個樣本指定字母 (a、 b、 c�
 5. 開啟 **\_Layout.iPhone.cshtml**您在上一個步驟中建立。
 6. 資料角色屬性設定為尋找 div 項目**網頁**並變更**資料佈景主題**屬性設定為&quot; &quot;。
 
-
 [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample17.cshtml)]
 
 現在您會在 ASP.NET MVC 4 應用程式中有 3 個版面配置：
@@ -602,7 +596,7 @@ jQuery Mobile 的預設佈景主題包含 5 個樣本指定字母 (a、 b、 c�
 <a id="Exercise4"></a>
 
 <a id="Exercise_4_Using_Asynchronous_Controllers"></a>
-### <a name="exercise-4-using-asynchronous-controllers"></a>練習 4:使用非同步控制器
+### <a name="exercise-4-using-asynchronous-controllers"></a>練習 4：使用非同步控制器
 
 Microsoft.NET Framework 4.5 引進了新的語言功能，在 C# 和 Visual Basic.NET 程式設計中非同步提供新的基礎。 這個新的基礎架構可讓非同步程式設計，類似於-且大約一樣直接-同步程式設計。 現在您就可以使用 ASP.NET MVC 4 中撰寫非同步動作方法**AsyncController**類別。 您可以使用非同步動作方法的長時間執行，不受限於 CPU 的要求。 如此可避免在處理要求時執行工作的 Web 伺服器。 AsyncController 類別通常用於長時間執行的 Web 服務呼叫。
 
@@ -696,7 +690,6 @@ Microsoft.NET Framework 4.5 引進了新的語言功能，在 C# 和 Visual Basi
 
 > [!NOTE]
 > 此外，您可以在其中部署此應用程式以 Windows Azure 網站的下列[附錄 d:發行 ASP.NET MVC 4 應用程式使用 Web Deploy](#AppendixD)。
-
 
 <a id="Summary"></a>
 

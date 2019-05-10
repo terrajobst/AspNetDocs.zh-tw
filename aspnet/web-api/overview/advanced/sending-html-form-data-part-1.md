@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 585351c4-809a-4bf5-bcbe-35d624f565fe
 msc.legacyurl: /web-api/overview/advanced/sending-html-form-data-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: fb0309af11910125943737ebb721b356b7bd08bc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7243069dbd8051b1374ed6e0112c273b8fe26f61
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418296"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115461"
 ---
 # <a name="sending-html-form-data-in-aspnet-web-api-form-urlencoded-data"></a>ASP.NET Web API 中傳送 HTML 表單資料：Form-urlencoded 資料
 
@@ -31,7 +31,6 @@ ms.locfileid: "59418296"
 
 > [!NOTE]
 > [下載已完成的專案](https://code.msdn.microsoft.com/ASPNET-Web-API-Sending-a6f9d007)。
-
 
 <a id="overview_of_html_forms"></a>
 ## <a name="overview-of-html-forms"></a>HTML 表單的概觀
@@ -62,7 +61,6 @@ HTML 表單使用取得，或是張貼到將資料傳送到伺服器。 **方法
 
 > [!NOTE]
 > 此控制器會使用[動作為基礎的路由](../web-api-routing-and-actions/routing-in-aspnet-web-api.md#routing_by_action_name)，因此，路由範本&quot;api / {controller} / {action} / {id}&quot;。 用戶端會將資料公佈至&quot;/api/updates/complex&quot;。
-
 
 現在讓我們編寫 HTML 表單提交狀態更新的使用者。
 
@@ -101,7 +99,6 @@ JQuery**提交**函式會以新的函式取代為表單動作。 這會覆寫 [�
 > [!NOTE]
 > 在傳送之前的簡單類型，請考慮改為包裝複雜型別中的值。 這可讓您在伺服器端上的模型驗證的優點，並可讓您更輕鬆地擴充您的模型，如有需要。
 
-
 基本的步驟，以傳送簡單的型別相同，但有兩個微妙的差異。 首先，在控制器中，您必須裝飾的參數名稱前面加**FromBody**屬性。
 
 [!code-csharp[Main](sending-html-form-data-part-1/samples/sample7.cs?highlight=3)]
@@ -110,7 +107,6 @@ JQuery**提交**函式會以新的函式取代為表單動作。 這會覆寫 [�
 
 > [!NOTE]
 > Web API 回應主體讀取最多一次，因此只有一個動作的參數可能來自要求主體。 如果您需要從要求主體中取得多個值，定義複雜型別。
-
 
 第二，用戶端必須傳送的值，其格式如下：
 

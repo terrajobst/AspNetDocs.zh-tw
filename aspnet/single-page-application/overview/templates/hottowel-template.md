@@ -8,12 +8,12 @@ ms.date: 02/09/2013
 ms.assetid: 75af2e17-6ed3-4d24-8ea1-bc340027c318
 msc.legacyurl: /single-page-application/overview/templates/hottowel-template
 msc.type: authoredcontent
-ms.openlocfilehash: 017f550e2caffe1b20823e9b1880cbb4e968005a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f3457840d1597d06c1a1b1ec2a865dd70726446c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379933"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113336"
 ---
 # <a name="hot-towel-template"></a>Hot Towel 範本
 
@@ -30,13 +30,11 @@ ms.locfileid: "59379933"
 > 
 > 熱毛巾：因為您不想要移至其中一個情況下 SPA ！
 
-
 要建置 SPA，但無法決定要從何處開始？ 使用熱門的毛巾，並以秒為單位，您將有 SPA 並在其上建置所需的所有工具 ！
 
 最忙碌的毛巾建立好的切入點，來建置使用 ASP.NET 單一頁面應用程式 (SPA)。 根據預設，您它提供模組化結構程式碼、 檢視瀏覽、 資料繫結、 豐富的資料管理和簡單但簡潔樣式。 最忙碌的毛巾提供您要建置 SPA，讓您可以專注於您的應用程式未連結的所有項目。
 
 > 了解如何建置從 SPA [John Papa 的影片、 教學課程和 Pluralsight 課程](http://johnpapa.net/spa?vsix)。
-
 
 ## <a name="application-structure"></a>應用程式結構
 

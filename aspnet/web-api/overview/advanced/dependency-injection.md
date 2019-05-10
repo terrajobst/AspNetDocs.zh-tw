@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: e3d3e7ba-87f0-4032-bdd3-31f3c1aa9d9c
 msc.legacyurl: /web-api/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 0ad0b3c63741803e05274df4da3fcbe5481d32a4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 138ccb5800e801d382c11e3989ec3e3c074a79fe
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391922"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115695"
 ---
 # <a name="dependency-injection-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的相依性插入
 
@@ -30,7 +30,6 @@ ms.locfileid: "59391922"
 > - Web API 2
 > - [Unity Application Block](https://www.nuget.org/packages/Unity/)
 > - Entity Framework 6 （也可使用這個第 5 版）
-
 
 ## <a name="what-is-dependency-injection"></a>相依性插入是什麼？
 
@@ -88,7 +87,6 @@ IoC 容器是負責管理相依性的軟體元件。 您向容器註冊類型，
 > [!NOTE]
 > 「 IoC 」 代表 「 的控制項反轉 」，這是一種架構會呼叫應用程式程式碼的一般模式。 IoC 容器建構您的物件，其中 「 反轉 」 一般控制流程。
 
-
 本教學課程中，我們將使用[Unity](https://msdn.microsoft.com/library/ff647202.aspx)從 Microsoft Patterns&amp;作法。 (其他熱門的程式庫包含[Castle Windsor](http://www.castleproject.org/)， [Spring.Net](http://www.springframework.net/)， [Autofac](https://code.google.com/p/autofac/)， [Ninject](http://www.ninject.org/)，和[StructureMap](http://structuremap.github.io/documentation/).)您可以使用 NuGet 套件管理員安裝 Unity。 從**工具**功能表，在 Visual Studio 中，選取**NuGet 套件管理員**，然後選取**Package Manager Console**。 在 [套件管理員主控台] 視窗中，輸入下列命令：
 
 [!code-console[Main](dependency-injection/samples/sample7.cmd)]
@@ -99,7 +97,6 @@ IoC 容器是負責管理相依性的軟體元件。 您向容器註冊類型，
 
 > [!NOTE]
 > 如果**GetService**的型別時，無法解析方法，它應該會傳回**null**。 如果**GetServices**方法無法解析型別，它應該會傳回空集合物件。 不會擲回未知類型的例外狀況。
-
 
 ## <a name="configuring-the-dependency-resolver"></a>設定相依性解析程式
 

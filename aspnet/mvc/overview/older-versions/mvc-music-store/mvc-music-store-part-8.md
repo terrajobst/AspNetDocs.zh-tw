@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: 26b2f55e-ed42-4277-89b0-c941eb754145
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 2ba210d8c541c6c330dda74706470fa73a81474a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 89897ad41b217764cbd17317d4bf5d6a5c5d488f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379478"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112900"
 ---
 # <a name="part-8-shopping-cart-with-ajax-updates"></a>第 8 部分：購物車與 Ajax 更新
 
@@ -24,7 +24,6 @@ ms.locfileid: "59379478"
 > MVC Music 市集是銷售線上音樂 album 和實作基本的網站管理、 使用者登入時，和 「 購物車 」 功能的輕量級的範例存放區實作。  
 >   
 > 本教學課程系列會詳細說明所有建置 ASP.NET MVC Music 市集範例應用程式所採取的步驟。 第 8 節涵蓋了購物車與 Ajax 更新。
-
 
 我們要允許使用者將專輯購物車中，而不註冊，但他們必須註冊為完成簽出的來賓。 將購物和簽出程序會分成兩個控制站： 允許以匿名方式將項目加入購物車，ShoppingCart 控制器和簽出控制器用來處理結帳程序。 我們將開始在此區段中，「 購物車 」，並建置下一節中的簽出程序。
 
@@ -156,7 +155,6 @@ ShoppingCart 類別會公開下列方法：
 ![](mvc-music-store-part-8/_static/image8.png)
 
 我們建置出運作中的 「 購物車 」 可讓未註冊的使用者將項目新增至購物車。 在下列區段中，我們將允許其註冊，並完成結帳程序。
-
 
 > [!div class="step-by-step"]
 > [上一頁](mvc-music-store-part-7.md)

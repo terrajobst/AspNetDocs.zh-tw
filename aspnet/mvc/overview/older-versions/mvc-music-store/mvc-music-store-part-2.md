@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: 998ce4e1-9d72-435b-8f1c-399a10ae4360
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: b452c59f16107be6d356f86e6c313ba3229dbce6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9dc2226f4951d4bed122df37d35bbb94730a00ad
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392751"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112417"
 ---
 # <a name="part-2-controllers"></a>第 2 部分：Controllers
 
@@ -24,7 +24,6 @@ ms.locfileid: "59392751"
 > MVC Music 市集是銷售線上音樂 album 和實作基本的網站管理、 使用者登入時，和 「 購物車 」 功能的輕量級的範例存放區實作。  
 >   
 > 本教學課程系列會詳細說明所有建置 ASP.NET MVC Music 市集範例應用程式所採取的步驟。 第 2 部分涵蓋控制站。
-
 
 有了傳統的 web 架構，傳入的 Url 通常會對應至磁碟上的檔案。 例如： URL 的要求想"/ Products.aspx"或"/ Products.php 」 可能會由 「 Products.aspx"或"Products.php 」 檔案的方式來處理。
 
@@ -136,7 +135,6 @@ ASP.NET MVC 可讓我們輕鬆地執行這項操作不需要設定任何項目�
 - 我們已了解如何執行我們的網站使用 ASP.NET 程式開發伺服器
 - 我們建立了兩個控制器類別： HomeController 和 StoreController
 - 我們已加入我們控制站會回應 URL 的要求，並傳回至瀏覽器的文字中的動作方法
-
 
 > [!div class="step-by-step"]
 > [上一頁](mvc-music-store-part-1.md)

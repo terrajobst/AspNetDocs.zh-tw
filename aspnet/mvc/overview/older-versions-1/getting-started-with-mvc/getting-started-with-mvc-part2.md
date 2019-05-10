@@ -8,12 +8,12 @@ ms.date: 08/14/2010
 ms.assetid: ff03dcc0-da97-458d-838f-0823e7482642
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
 msc.type: authoredcontent
-ms.openlocfilehash: 84f9c822f041808184b2c586ce933ba3b24615dc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e2a298584473f57c2b14edf507f0f6886d906ea3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419830"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123056"
 ---
 # <a name="adding-a-controller"></a>新增控制器
 
@@ -24,7 +24,6 @@ ms.locfileid: "59419830"
 >
 >
 > 這是初學者教學課程中，將會介紹 ASP.NET MVC 的基本概念。 您將建立簡單 web 應用程式，從資料庫讀取與寫入。 請瀏覽[ASP.NET MVC 學習中心](../../../index.md)來尋找其他 ASP.NET MVC 教學課程和範例。
-
 
 MVC 代表模型、 檢視、 控制器。 MVC 是開發應用程式，使每個部分都有責任從另一個不同的模式。
 

@@ -8,12 +8,12 @@ ms.date: 07/03/2013
 ms.assetid: 9594d644-66b6-4223-acdd-23e29a6e4c46
 msc.legacyurl: /signalr/overview/older-versions/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: 5f7415d0a4275a3864dc9eefb9588f17698147cd
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 915fd822caae9bbcb0a688c6dd7a5b2bda12c9df
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412693"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113892"
 ---
 # <a name="signalr-performance-signalr-1x"></a>SignalR 效能 (SignalR 1.x)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59412693"
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 本主題描述如何設計、 測量和改善的 SignalR 應用程式中的效能。
-
 
 SignalR 效能和調整的近期簡報，請參閱 <<c0> [ 調整與 ASP.NET SignalR 即時 Web](https://channel9.msdn.com/Events/Build/2013/3-502)。
 

@@ -8,12 +8,12 @@ ms.date: 04/17/2013
 ms.assetid: 03e4b9f5-0fea-4d94-959f-014b2762a301
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-server
 msc.type: authoredcontent
-ms.openlocfilehash: 7d75c832f704ea88d365f6a8b83c1c3a024b30ca
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d9cd3fad36c0300d96c6dbdc61291ef119da2327
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382247"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113038"
 ---
 # <a name="aspnet-signalr-hubs-api-guide---server-signalr-1x"></a>ASP.NET SignalR 中樞 API 指南-Server (SignalR 1.x)
 
@@ -26,7 +26,6 @@ ms.locfileid: "59382247"
 > SignalR 中樞 API 可讓您從伺服器連線的用戶端和伺服器的用戶端進行遠端程序呼叫 (Rpc)。 在伺服器程式碼中，您定義可由用戶端，呼叫的方法，呼叫用戶端執行的方法。 在用戶端程式碼中，您定義可以在伺服器上，從呼叫的方法，您呼叫在伺服器執行的方法。 SignalR 會處理所有為您的用戶端-伺服器配管。
 > 
 > SignalR 也提供一個名為持續連線的較低層級 API。 如需 SignalR、 中樞和持續連線，或該教學課程說明如何建置完整的 SignalR 應用程式，請參閱[SignalR-開始使用](index.md)。
-
 
 ## <a name="overview"></a>總覽
 
@@ -516,7 +515,6 @@ SignalR 追蹤連線，而不是使用者，因此如果您希望使用者是相
 
 > [!NOTE]
 > 這項機制保存的狀態並不適用於大量的資料，因為您放入的所有項目`state`或`Clients.Caller`屬性是每個方法引動過程來回時間。 它可用於較小的項目，例如使用者名稱或計數器。
-
 
 <a id="handleErrors"></a>
 

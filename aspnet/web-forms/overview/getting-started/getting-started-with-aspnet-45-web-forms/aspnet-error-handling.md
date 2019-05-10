@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 423498f7-1a4b-44a1-b342-5f39d0bcf94f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: e4b8f059974dec33d6305e7b84919550713bf4e4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3aff277a6e09504d9f7b610478c27af00c1d2d94
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409878"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108518"
 ---
 # <a name="aspnet-error-handling"></a>ASP.NET 錯誤處理
 
@@ -22,7 +22,6 @@ ms.locfileid: "59409878"
 [下載 Wingtip Toys 範例專案 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下載電子書 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > 本系列教學課程將教導您建置使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 的 ASP.NET Web Forms 應用程式的基本概念。 Visual Studio 2013[含有 C# 原始程式碼專案](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)隨附了本教學課程系列。
-
 
 在本教學課程中，您將修改 Wingtip Toys 範例應用程式，以包含錯誤處理和錯誤記錄。 錯誤處理可讓應用程式依正常程序處理錯誤，並據以顯示錯誤訊息。 錯誤記錄可讓您找出並修正所發生的錯誤。 此教學課程先前的教學課程 」 URL 路由 」，並且是 Wingtip Toys 教學課程系列的一部分。
 

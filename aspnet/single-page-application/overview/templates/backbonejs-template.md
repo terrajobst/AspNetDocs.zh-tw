@@ -8,12 +8,12 @@ ms.date: 04/04/2013
 ms.assetid: 00aca413-f067-4108-9bd1-cf21e64a2646
 msc.legacyurl: /single-page-application/overview/templates/backbonejs-template
 msc.type: authoredcontent
-ms.openlocfilehash: 8148974eacd1db05947ba54fe40776df69f92290
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e5c98b7a9678f8251eccce05344c2014a769fc3b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404113"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113353"
 ---
 # <a name="backbone-template"></a>Backbone 範本
 
@@ -22,7 +22,6 @@ ms.locfileid: "59404113"
 > Kazi Manzur Rashid 寫入骨幹 SPA 範本
 > 
 > [下載 Backbone.js SPA 範本](https://go.microsoft.com/fwlink/?LinkId=293631)
-
 
 Backbone.js SPA 範本設計來協助您開始快速建置互動式用戶端 web 應用程式使用[Backbone.js。](http://backbonejs.org/)
 

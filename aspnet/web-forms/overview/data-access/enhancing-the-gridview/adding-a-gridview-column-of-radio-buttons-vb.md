@@ -8,12 +8,12 @@ ms.date: 03/06/2007
 ms.assetid: 2e31b60b-8723-4f14-b7ee-37859454dc3b
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8d531a6ac9afc3ece4a60774124855ab0c16cd77
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 34292df7ab49505e6312c98a4005a8230f7bf27f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396898"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114644"
 ---
 # <a name="adding-a-gridview-column-of-radio-buttons-vb"></a>新增 GridView 的選項按鈕欄 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59396898"
 [下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_51_VB.exe)或[下載 PDF](adding-a-gridview-column-of-radio-buttons-vb/_static/datatutorial51vb1.pdf)
 
 > 本教學課程會探討如何將為使用者提供更直覺的方式，選取單一資料列的 GridView 的 GridView 控制項中的選項按鈕的資料行。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -43,32 +42,25 @@ GridView 控制項提供許多內建的功能。 它包含數個不同的欄位�
 - `CheckBoxField.aspx`
 - `InsertThroughFooter.aspx`
 
-
 ![加入 ASP.NET 網頁，如 SqlDataSource 與相關的教學課程](adding-a-gridview-column-of-radio-buttons-vb/_static/image1.gif)
 
 **圖 1**:加入 ASP.NET 網頁，如 SqlDataSource 與相關的教學課程
 
-
 在其他資料夾，例如`Default.aspx`在`EnhancedGridView`資料夾會列出其一節中的教學課程。 請記得，`SectionLevelTutorialListing.ascx`使用者控制項提供這項功能。 因此，新增此使用者控制項`Default.aspx`從拖曳到頁面的設計 檢視中的 方案總管 中拖曳。
-
 
 [![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](adding-a-gridview-column-of-radio-buttons-vb/_static/image2.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image1.png)
 
 **圖 2**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image2.png))
 
-
 最後，將這些四個頁面新增項目為`Web.sitemap`檔案。 具體來說，在使用之後新增下列標記 SqlDataSource 控制項`<siteMapNode>`:
-
 
 [!code-xml[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample1.xml)]
 
 在更新之後`Web.sitemap`，花點時間檢視教學課程網站，透過瀏覽器。 在左側功能表現在包含編輯、 插入及刪除教學課程的項目。
 
-
 ![網站導覽現在包含項目，來增強 GridView 教學課程](adding-a-gridview-column-of-radio-buttons-vb/_static/image3.gif)
 
 **圖 3**:網站導覽現在包含項目，來增強 GridView 教學課程
-
 
 ## <a name="step-2-displaying-the-suppliers-in-a-gridview"></a>步驟 2：在 GridView 中顯示供應商
 
@@ -76,43 +68,33 @@ GridView 控制項提供許多內建的功能。 它包含數個不同的欄位�
 
 首先開啟`RadioButtonField.aspx`頁面中`EnhancedGridView`拖曳的 GridView，從 [工具箱] 拖曳至設計工具的資料夾。 設定 GridView s`ID`至`Suppliers`和從它的智慧標籤，選擇 建立新的資料來源。 具體來說，建立名為 ObjectDataSource `SuppliersDataSource` ，其會從提取資料`SuppliersBLL`物件。
 
-
 [![建立名為 SuppliersDataSource 新 ObjectDataSource](adding-a-gridview-column-of-radio-buttons-vb/_static/image4.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image3.png)
 
 **圖 4**:建立新的 ObjectDataSource 具名`SuppliersDataSource`([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image4.png))
-
 
 [![設定使用 SuppliersBLL 類別 ObjectDataSource](adding-a-gridview-column-of-radio-buttons-vb/_static/image5.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image5.png)
 
 **圖 5**:設定要使用 ObjectDataSource`SuppliersBLL`類別 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image6.png))
 
-
 因為我們只想要列出這些供應商在美國，選擇`GetSuppliersByCountry(country)`方法，從下拉式清單中選取的索引標籤。
-
 
 [![設定使用 SuppliersBLL 類別 ObjectDataSource](adding-a-gridview-column-of-radio-buttons-vb/_static/image6.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image7.png)
 
 **圖 6**:設定要使用 ObjectDataSource`SuppliersBLL`類別 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image8.png))
 
-
 從 更新 索引標籤，選取 （無） 選項，然後按一下 下一步。
-
 
 [![設定使用 SuppliersBLL 類別 ObjectDataSource](adding-a-gridview-column-of-radio-buttons-vb/_static/image7.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image9.png)
 
 **圖 7**:設定要使用 ObjectDataSource`SuppliersBLL`類別 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image10.png))
 
-
 因為`GetSuppliersByCountry(country)`方法接受參數、 設定資料來源精靈會提示我們輸入該參數的來源。 若要指定硬式編碼的值 (USA，在此範例中)，會保留來源下拉式清單設定為 None，在文字方塊中輸入的預設值的參數。 按一下 完成 以完成精靈。
-
 
 [![使用做為預設值的美國國家/地區參數](adding-a-gridview-column-of-radio-buttons-vb/_static/image8.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image11.png)
 
 **圖 8**:做為預設值為使用美國`country`參數 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image12.png))
 
-
 完成精靈之後，GridView 會針對每個供應商資料欄位包含 BoundField。 移除以外的所有`CompanyName`， `City`，並`Country`BoundFields，並重新命名`CompanyName`BoundFields`HeaderText`供應商的屬性。 完成之後，請的 GridView 和 ObjectDataSource 的宣告式語法看起來應該如下所示。
-
 
 [!code-aspx[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample2.aspx)]
 
@@ -120,11 +102,9 @@ GridView 控制項提供許多內建的功能。 它包含數個不同的欄位�
 
 [圖 9] 顯示`Suppliers`GridView 和兩個按鈕 Web 控制項透過瀏覽器檢視時。
 
-
 [![從美國這些供應商擁有其名稱、 城市和國家/地區資訊列](adding-a-gridview-column-of-radio-buttons-vb/_static/image9.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image13.png)
 
 **圖 9**:從美國有其名稱、 城市和國家/地區資訊列出這些供應商 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image14.png))
-
 
 ## <a name="step-3-adding-a-column-of-radio-buttons"></a>步驟 3：加入資料行的選項按鈕
 
@@ -134,14 +114,11 @@ GridView 控制項提供許多內建的功能。 它包含數個不同的欄位�
 
 即使使用 TemplateField RadioButton Web 控制項不會提供我們需要的功能，可讓 s 實作這種方法，因為它 s 值得檢查產生的選項按鈕未分組的原因。 開始為 TemplateField 新增至供應商 GridView，使得最左邊的欄位。 接下來，從 GridView s 智慧標籤，按一下 編輯範本 連結，並將 RadioButton Web 控制項從 工具箱 拖曳至 TemplateField 的`ItemTemplate`（請參閱 圖 10）。 設定 RadioButton s`ID`屬性，以`RowSelector`並`GroupName`屬性設`SuppliersGroup`。
 
-
 [![將 RadioButton Web 控制項加入 ItemTemplate](adding-a-gridview-column-of-radio-buttons-vb/_static/image10.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image15.png)
 
 **圖 10**:加入選項按鈕 Web 控制項來`ItemTemplate`([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image16.png))
 
-
 之後透過設計工具的這些新增項目，您的 GridView 的標記看起來應該如下所示：
-
 
 [!code-aspx[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample3.aspx)]
 
@@ -149,14 +126,11 @@ S 的 RadioButton [ `GroupName`屬性](https://msdn.microsoft.com/library/system
 
 使用 RadioButton Web 控制項新增至`ItemTemplate`，瀏覽此頁面，透過瀏覽器，然後按一下方格 s 資料列中的選項按鈕。 請注意，選項按鈕未分組的方式，讓您可以選取所有資料列，以 圖 11 顯示。
 
-
 [![GridView 的選項按鈕是 未分組](adding-a-gridview-column-of-radio-buttons-vb/_static/image11.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image17.png)
 
 **圖 11**:GridView 的選項按鈕是沒有組成群組 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image18.png))
 
-
 選項按鈕未分組的原因是因為其呈現`name`屬性會不同，而不論是否具有相同`GroupName`屬性設定。 若要查看這些差異，請從瀏覽器進行檢視/原始檔並檢查選項 按鈕的標記：
-
 
 [!code-html[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample4.html)]
 
@@ -169,13 +143,11 @@ S 的 RadioButton [ `GroupName`屬性](https://msdn.microsoft.com/library/system
 > [!NOTE]
 > 例如 RadioButton Web 控制項，選項按鈕 HTML 控制項，當加入至範本，將包含唯一`name`屬性，讓未分組的方格中的選項按鈕。 如果您不熟悉 HTML 控制項，放心忽略這個附註，很少使用 HTML 控制項，尤其是在 ASP.NET 2.0。 但如果您有興趣進一步了解更多資訊，請參閱[K.Scott Allen](http://odetocode.com/blogs/scott/default.aspx) s 部落格文章[Web 控制項和 HTML 控制項](http://www.odetocode.com/Articles/348.aspx)。
 
-
 ## <a name="using-a-literal-control-to-inject-radio-button-markup"></a>使用常值控制項以插入選項按鈕標記
 
 若要正確群組所有 GridView 中選項按鈕，我們要以手動方式插入選項按鈕標記`ItemTemplate`。 每個選項按鈕必須相同`name`屬性，但應該有唯一`id`屬性 （如果我們想要存取透過用戶端指令碼的選項按鈕）。 使用者選取的選項按鈕，並張貼頁面之後，瀏覽器會送回所選的選項按鈕的值`value`屬性。 因此，每個選項按鈕必須唯一`value`屬性。 最後，在回傳我們需要確定新增`checked`屬性來選取，否則使用者進行選取和文章上一步之後的一個選項按鈕，選項按鈕將回復為其預設狀態 （所有未選取）。
 
 有兩種方法可以用才能插入範本中的低層級的標記。 其中一個是不要混合使用標記和格式化程式碼後置類別中定義的方法呼叫。 在第一次討論這項技術[使用 GridView 控制項中的 TemplateFields](../custom-formatting/using-templatefields-in-the-gridview-control-vb.md)教學課程。 在本例中它可能會看起來像：
-
 
 [!code-aspx[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample5.aspx)]
 
@@ -185,16 +157,13 @@ S 的 RadioButton [ `GroupName`屬性](https://msdn.microsoft.com/library/system
 
 藉由移除 TemplateField s 中的選項按鈕來啟動`ItemTemplate`，取代常值的控制項。 將常值控制項 s`ID`至`RadioButtonMarkup`。
 
-
 [![將常值的控制項新增至 ItemTemplate](adding-a-gridview-column-of-radio-buttons-vb/_static/image12.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image19.png)
 
 **圖 12**:將常值的控制項加入`ItemTemplate`([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image20.png))
 
-
 接下來，建立事件處理常式 GridView s`RowCreated`事件。 `RowCreated`事件引發之後加入每個資料列，zda bude 資料要重新繫結至 GridView。 這表示即使在回傳資料會從檢視狀態，重新載入時`RowCreated`還是會引發事件，這是的因為我們會使用它，而不要`RowDataBound`（這會引發只有當資料明確繫結至資料 Web 控制項）。
 
 在這個事件處理常式中，我們只想要繼續進行，如果我們重新處理資料列。 我們想要以程式設計方式參考每個資料列`RadioButtonMarkup`常值控制項並設定其`Text`發出標記的屬性。 送出的標記如下列程式碼所示，建立選項按鈕時`name`屬性設定為`SuppliersGroup`，其`id`屬性設為`RowSelectorX`，其中*X*是 GridView 資料列的索引而`value`屬性設為 GridView 資料列索引。
-
 
 [!code-vb[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample6.vb)]
 
@@ -206,11 +175,9 @@ GridView 資料列已選取，並回傳時，我們有興趣`SupplierID`選取�
 
 因為我們將需要判斷選取的選項按鈕索引不只能在`RowCreated`事件處理常式，而是位於`Click`Button Web 控制項的事件處理常式，可讓 s 新增`SuppliersSelectedIndex`屬性至程式碼後置類別，會傳回`-1`如果已選取 [無] 選項按鈕和選取的索引，如果已選取其中一個選項按鈕。
 
-
 [!code-vb[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample7.vb)]
 
 新增此屬性，我們知道要新增`checked="checked"`中的標記`RowCreated`事件處理常式時`SuppliersSelectedIndex`等於`e.Row.RowIndex`。 更新以包含此邏輯的事件處理常式：
-
 
 [!code-vb[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample8.vb)]
 
@@ -220,7 +187,6 @@ GridView 資料列已選取，並回傳時，我們有興趣`SupplierID`選取�
 
 > [!NOTE]
 > 而不是使用 TemplateField （這個冗長的步驟 3 的焦點），我們可以建立自訂`DataControlField`呈現適當的使用者介面和功能的類別。 [ `DataControlField`類別](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datacontrolfield.aspx)BoundField、 CheckBoxField、 TemplateField 和其他內建的 GridView 和 DetailsView 欄位衍生自的基底類別。 建立自訂`DataControlField`類別表示的選項按鈕欄無法只使用宣告式語法中，新增，和也會讓複寫其他網頁和其他大幅簡化的 web 應用程式的功能。
-
 
 如果您 ve 曾經建立過自訂，編譯的 ASP.NET 中的控制項，不過，您知道，這樣做需要相當多的跑腿並帶來許多微妙之處和邊緣案例，必須謹慎處理。 因此，我們將會放棄實作做為自訂的選項按鈕的資料行`DataControlField`類別現在並貫徹 TemplateField 選項。 或許我們將有機會探索建立、 使用和部署自訂的`DataControlField`未來的教學課程中的類別 ！
 
@@ -232,36 +198,29 @@ GridView 資料列已選取，並回傳時，我們有興趣`SupplierID`選取�
 
 若要提供這項功能，建立事件處理常式`SendToProducts` 按鈕的`Click`事件。 我們在步驟 3 中新增`SuppliersSelectedIndex`選取屬性，傳回的資料列索引的選項按鈕。 對應`SupplierID`可以擷取從 GridView s`DataKeys`收集和使用者可以再傳送至`~/Filtering/ProductsForSupplierDetails.aspx?SupplierID=SupplierID`使用`Response.Redirect("url")`。
 
-
 [!code-vb[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample9.vb)]
 
 此程式碼適用於人員，只要 GridView 從選取的其中一個選項按鈕。 如果一開始，GridView 並沒有選取任何選項按鈕，而且使用者按下`SendToProducts` 按鈕，`SuppliersSelectedIndex`會`-1`，這樣將會造成例外狀況會擲回自`-1`超出索引`DataKeys`集合。 這是不需要顧慮，不過，如果您決定要更新`RowCreated`以便在一開始選取 GridView 中的第一個選項按鈕的步驟 3 中所述的事件處理常式。
 
 若要容納`SuppliersSelectedIndex`的值`-1`，將標籤 Web 控制項新增至 GridView 上方頁面。 設定其`ID`屬性，以`ChooseSupplierMsg`、 其`CssClass`屬性設`Warning`、 其`EnableViewState`並`Visible`屬性，以`False`，並將其`Text`屬性，請選擇供應商的方格中。 CSS 類別`Warning`紅色、 斜體、 粗體、 大字型顯示文字，並定義於`Styles.css`。 藉由設定`EnableViewState`並`Visible`屬性，以`False`，針對只回傳的位置不在標籤呈現除了控制 s`Visible`屬性以程式設計方式設定為`True`。
 
-
 [![新增 GridView 上方的標籤 Web 控制項](adding-a-gridview-column-of-radio-buttons-vb/_static/image13.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image21.png)
 
 **圖 13**:新增標籤 Web 控制項上方的 GridView ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image22.png))
 
-
 接下來，加強`Click`事件處理常式，以顯示`ChooseSupplierMsg`標籤，如果`SuppliersSelectedIndex`小於零，且若要將使用者重新導向`~/Filtering/ProductsForSupplierDetails.aspx?SupplierID=SupplierID`否則。
-
 
 [!code-vb[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample10.vb)]
 
 瀏覽的頁面在瀏覽器，並按一下`SendToProducts`按鈕，然後再從 GridView 中選取 供應商。 如 [圖 14] 所示，這會顯示`ChooseSupplierMsg`標籤。 接下來，選取 供應商，然後按一下  `SendToProducts`  按鈕。 這將 whisk 您列出所選取的供應商提供的產品頁面。 [圖 15] 顯示`ProductsForSupplierDetails.aspx`頁面選取 Bigfoot Breweries 供應商。
 
-
 [![如果已選取 [否] 供應商，就會顯示 ChooseSupplierMsg 標籤](adding-a-gridview-column-of-radio-buttons-vb/_static/image14.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image23.png)
 
 **圖 14**:`ChooseSupplierMsg`如果已選取 [否] 供應商，就會顯示標籤 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image24.png))
 
-
 [![選取的供應商產品會顯示在 ProductsForSupplierDetails.aspx](adding-a-gridview-column-of-radio-buttons-vb/_static/image15.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image25.png)
 
 **圖 15**:選取的供應商的產品都會顯示在`ProductsForSupplierDetails.aspx`([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image26.png))
-
 
 ## <a name="step-5-displaying-the-selected-supplier-s-products-on-the-same-page"></a>步驟 5：在相同頁面上顯示選取的供應商產品
 
@@ -269,24 +228,19 @@ GridView 資料列已選取，並回傳時，我們有興趣`SupplierID`選取�
 
 因為我們只想要的產品此 GridView，以顯示選取的供應商之後，新增面板 Web 控制項下方`Suppliers`GridView，設定其`ID`要`ProductsBySupplierPanel`及其`Visible`屬性設`False`。 在面板中，新增文字產品選取供應商，後面接著 GridView，名為`ProductsBySupplier`。 從 GridView s 智慧標籤，選擇繫結至名為新 ObjectDataSource `ProductsBySupplierDataSource`。
 
-
 [![繫結至新的 ObjectDataSource 的 ProductsBySupplier GridView](adding-a-gridview-column-of-radio-buttons-vb/_static/image16.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image27.png)
 
 **圖 16**:繫結`ProductsBySupplier`GridView，以新的 ObjectDataSource ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image28.png))
 
-
 接下來，設定要使用 ObjectDataSource`ProductsBLL`類別。 因為我們只想要擷取這些選取的供應商所提供的產品，指定應叫用 ObjectDataSource`GetProductsBySupplierID(supplierID)`方法來擷取其資料。 （無） 從清單中選取下拉式清單中更新、 插入和刪除索引標籤。
-
 
 [![設定為使用 GetProductsBySupplierID(supplierID) 方法的 ObjectDataSource](adding-a-gridview-column-of-radio-buttons-vb/_static/image17.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image29.png)
 
 **圖 17**:設定要使用 ObjectDataSource`GetProductsBySupplierID(supplierID)`方法 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image30.png))
 
-
 [![設定為 (None) 的下拉式清單中更新、 插入和刪除索引標籤](adding-a-gridview-column-of-radio-buttons-vb/_static/image18.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image31.png)
 
 **圖 18**:在更新、 插入和刪除索引標籤中設定 下拉式清單會列出為 （無） ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image32.png))
-
 
 設定 選取之後, 更新、 插入，並刪除索引標籤、 按一下 下一步。 因為`GetProductsBySupplierID(supplierID)`方法預期的輸入的參數，建立資料來源精靈會提示我們指定的來源參數 s 的值。
 
@@ -294,19 +248,15 @@ GridView 資料列已選取，並回傳時，我們有興趣`SupplierID`選取�
 
 或者，我們可以使用 ControlParameter 和是指`Suppliers`GridView s [ `SelectedValue`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedvalue.aspx)（請參閱 [圖 19）。 GridView s`SelectedValue`屬性會傳回`DataKey`值，對應[`SelectedIndex`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedindex.aspx)。 為了讓這個選項才會運作，我們需要以程式設計方式設定 GridView s`SelectedIndex`屬性，以所選資料列時`ListProducts`按一下按鈕時。 作為額外的權益，藉由設定`SelectedIndex`，選取的記錄將會擔任`SelectedRowStyle`中所定義`DataWebControls`佈景主題 （黃色背景）。
 
-
 [![若要指定為參數來源的 GridView 的 SelectedValue 使用 ControlParameter](adding-a-gridview-column-of-radio-buttons-vb/_static/image19.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image33.png)
 
 **圖 19**:使用 ControlParameter GridView 的 SelectedValue 指定做為參數的來源 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image34.png))
 
-
 在完成精靈，Visual Studio 會自動加入產品的資料欄位的欄位。 移除以外的所有`ProductName`， `CategoryName`，並`UnitPrice`BoundFields，並將變更`HeaderText`產品、 類別和價格的屬性。 設定`UnitPrice`BoundField，讓其值會格式化為貨幣。 進行這些變更之後，面板、 GridView，與 ObjectDataSource s 宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample11.aspx)]
 
 若要完成此練習中，我們需要設定 GridView s`SelectedIndex`屬性，以`SelectedSuppliersIndex`並`ProductsBySupplierPanel`面板 s`Visible`屬性設`True`時`ListProducts`按一下按鈕時。 若要達成此目的，建立 事件處理常式`ListProducts`Button Web 控制項的`Click`事件，並新增下列程式碼：
-
 
 [!code-vb[Main](adding-a-gridview-column-of-radio-buttons-vb/samples/sample12.vb)]
 
@@ -314,11 +264,9 @@ GridView 資料列已選取，並回傳時，我們有興趣`SupplierID`選取�
 
 [圖 20] 顯示結果之後選取 Bigfoot Breweries 供應商，並且已按下頁按鈕顯示產品。
 
-
 [![Bigfoot Breweries 產品提供相同的頁面上列出](adding-a-gridview-column-of-radio-buttons-vb/_static/image20.gif)](adding-a-gridview-column-of-radio-buttons-vb/_static/image35.png)
 
 **圖 20**:Bigfoot Breweries 所提供的產品會列在相同的頁面 ([按一下以檢視完整大小的影像](adding-a-gridview-column-of-radio-buttons-vb/_static/image36.png))
-
 
 ## <a name="summary"></a>總結
 

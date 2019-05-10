@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 9215a37f-3133-4887-8ed2-3689f3a53551
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fb185c4147d516ab28d632b3e874b6f1d46f6576
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e64b79b1ce477fca439dd0db519371ed11446c52
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408416"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115257"
 ---
 # <a name="testing-the-strength-of-a-password-vb"></a>測試密碼強度 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59408416"
 [下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PasswordStrength0.vb.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/passwordstrength0VB.pdf)
 
 > 因此，延遲使用者通常會選擇簡單的密碼，也就是輕而易舉地突破，則幾乎任何地方，需要密碼。 PasswordStrength 控制項在 ASP.NET AJAX Control Toolkit 可以檢查是好的密碼。
-
 
 ## <a name="overview"></a>總覽
 
@@ -42,7 +41,6 @@ ms.locfileid: "59408416"
 [!code-aspx[Main](testing-the-strength-of-a-password-vb/samples/sample1.aspx)]
 
 執行此頁面，並立即輸入：只輸入小寫字母、 大寫字母、 數字和符號之後，密碼已被視為為永不中斷。
-
 
 [![現在是 （挺） 好用的密碼](testing-the-strength-of-a-password-vb/_static/image2.png)](testing-the-strength-of-a-password-vb/_static/image1.png)
 

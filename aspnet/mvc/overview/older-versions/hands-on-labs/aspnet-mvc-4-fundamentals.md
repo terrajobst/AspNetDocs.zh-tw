@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: b7dba543-73c3-4534-a9a0-ba70fa2c6a8a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: 38aea3b3480dde6ec6182a45c4f61f44eea8e05e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 95e9b9f55b2080c0ed01dc34e3a32f9f1c905644
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380219"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117255"
 ---
 # <a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 基本概念
 
@@ -108,13 +108,12 @@ MVC 模式可協助您建立不同的應用程式 （輸入的邏輯、 商務�
 > [!NOTE]
 > 每個練習會伴隨**結束**包含完成練習之後，您應該取得所產生的方案資料夾。 如果您需要的所有練習所使用的其他說明，您可以使用此解決方案作為指南。
 
-
 估計的時間才能完成這個實驗室：**60 分鐘**。
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Creating_MusicStore_ASPNET_MVC_Web_Application_Project"></a>
-### <a name="exercise-1-creating-musicstore-aspnet-mvc-web-application-project"></a>練習 1:建立 MusicStore ASP.NET MVC Web 應用程式專案
+### <a name="exercise-1-creating-musicstore-aspnet-mvc-web-application-project"></a>練習 1：建立 MusicStore ASP.NET MVC Web 應用程式專案
 
 在此練習中，您將學習如何在 Visual Studio 2012 Express for Web，以及其主要資料夾組織建立 ASP.NET MVC 應用程式。 此外，您將學習如何加入新的控制器，並讓它在應用程式的首頁上顯示一個簡單的字串。
 
@@ -210,7 +209,7 @@ ASP.NET MVC 架構包括 Visual Studio 專案範本，可協助您建立支援 M
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Creating_a_Controller"></a>
-### <a name="exercise-2-creating-a-controller"></a>練習 2:建立控制器
+### <a name="exercise-2-creating-a-controller"></a>練習 2：建立控制器
 
 在此練習中，您將學習如何控制站來實作簡單的音樂市集應用程式的功能更新。 該控制器會定義處理每個下列的特定要求的動作方法：
 
@@ -359,7 +358,7 @@ ASP.NET MVC 架構包括 Visual Studio 專案範本，可協助您建立支援 M
 <a id="Exercise4"></a>
 
 <a id="Exercise_4_Creating_a_View"></a>
-### <a name="exercise-4-creating-a-view"></a>練習 4:建立檢視
+### <a name="exercise-4-creating-a-view"></a>練習 4：建立檢視
 
 到目前為止您有已傳回字串從控制器動作。 雖然這十分有用的方式了解控制器的運作方式，是不實際的 Web 應用程式如何建立。 檢視是提供更好的方法來產生 HTML，回到瀏覽器中使用的範本檔案使用的元件。
 
@@ -471,7 +470,7 @@ ASP.NET MVC 架構包括 Visual Studio 專案範本，可協助您建立支援 M
 <a id="Exercise5"></a>
 
 <a id="Exercise_5_Creating_a_View_Model"></a>
-### <a name="exercise-5-creating-a-view-model"></a>練習 5:建立檢視模型
+### <a name="exercise-5-creating-a-view-model"></a>練習 5：建立檢視模型
 
 到目前為止，進行您的檢視顯示硬式編碼的 HTML，但若要建立動態 web 應用程式，檢視範本應該從控制器接收資訊。 要用於此用途的一個常用的技巧是**ViewModel**模式，可讓控制器能夠封裝來產生適當的 HTML 回應所需的所有資訊。
 
@@ -945,7 +944,6 @@ A **StoreBrowseViewModel**將這項工作中用來顯示符合所選的內容類
 
 > [!NOTE]
 > 此外，您可以在其中部署此應用程式以 Windows Azure 網站的下列[附錄 b:發行 ASP.NET MVC 4 應用程式使用 Web Deploy](#AppendixB)。
-
 
 ---
 

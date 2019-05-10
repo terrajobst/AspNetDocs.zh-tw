@@ -6,12 +6,12 @@ description: 開發 ASP.NET 應用程式的逐步指南清單。
 ms.assetid: fddf8e5e-c055-4f81-b691-78deef871112
 ms.author: riande
 ms.date: 09/20/2017
-ms.openlocfilehash: 240260a496ee797556ca5dbd2c8faec79d23ac64
-ms.sourcegitcommit: 2d53ed9e4c8b19d3526cbc689bfa8394c9449cec
+ms.openlocfilehash: 106b4b88d2e7de90900b7a73570ecd6140e2db66
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905666"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113198"
 ---
 # <a name="aspnet-tutorials"></a>ASP.NET 教學課程
 
@@ -81,7 +81,6 @@ ms.locfileid: "59905666"
 * [傳送 Web API 中的 HTML 表單資料：Form-urlencoded 資料](web-api/overview/advanced/sending-html-form-data-part-1.md)
 * [傳送 Web API 中的 HTML 表單資料：檔案上傳和多個 MIME](web-api/overview/advanced/sending-html-form-data-part-2.md)
 
-
 ## <a name="web-pages"></a>Web Pages
 
 * [在 Visual Studio 中撰寫 ASP.NET Web Pages 程式](web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio.md)
@@ -111,7 +110,6 @@ ms.locfileid: "59905666"
 * [分析流量](web-pages/overview/performance-and-traffic/14-analyzing-traffic.md)
 * [在 ASP.NET Web Pages (Razor) 網站中統合及縮小資產](web-pages/overview/performance-and-traffic/bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site.md)
 
-
 ## <a name="aspnet-signalr"></a>ASP.NET SignalR
 
 * [教學課程：開始使用 SignalR 2](signalr/overview/getting-started/tutorial-getting-started-with-signalr.md)
@@ -129,7 +127,6 @@ ms.locfileid: "59905666"
 * [教學課程：SignalR 自我裝載](signalr/overview/deployment/tutorial-signalr-self-host.md)
 * [在 Azure App Service 中使用 SignalR 和 Web 應用程式](signalr/overview/deployment/using-signalr-with-azure-web-sites.md)
 
-
 ## <a name="aspnet-identity"></a>ASP.NET Identity
 
 * [將 ASP.NET Identity 新增至空的或現有的 Web Form 專案](identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
@@ -141,7 +138,6 @@ ms.locfileid: "59905666"
 * [變更 ASP.NET Identity 中的使用者主索引鍵](identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity.md)
 * [將現有的網站從 SQL 成員資格移轉至 ASP.NET Identity](identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
 * [將成員資格和使用者設定檔的通用提供者資料移轉至 ASP.NET Identity (C#)](identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity.md)
-
 
 ## <a name="owin-and-katana"></a>OWIN 和 Katana
 

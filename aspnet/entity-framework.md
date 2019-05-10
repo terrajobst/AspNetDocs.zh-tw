@@ -8,23 +8,21 @@ ms.author: riande
 ms.date: 03/12/2010
 msc.legacyurl: /entity-framework
 msc.type: content
-ms.openlocfilehash: 26862565b23f60baf3698c0c6d63c7daa147abe0
-ms.sourcegitcommit: 2d53ed9e4c8b19d3526cbc689bfa8394c9449cec
+ms.openlocfilehash: c6fe7605a7386621bd4a962b3c3b011fb80b11c8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905653"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118243"
 ---
 # <a name="entity-framework"></a>Entity Framework
 
 Entity Framework (EF) 是一種物件關聯式對應程式，可讓.NET 開發人員使用網域特有物件的關聯式資料搭配使用。 它不需要開發人員通常需要撰寫的大部分資料存取程式碼。
 
-
 - [取得它：](https://msdn.com/data/ee712906)將此新增至您的專案，並開始利用功能強大的 O/RM
 - [開始使用：](https://msdn.com/data/ee712907)請瀏覽影片和教學課程可協助您充分利用您的資料的指南。
 - [取得協助：](https://msdn.com/data/hh913619)了解如何獲取專家提供的協助，以及在 Stack Overflow 上的資料社群貢獻。
 - [參與：](https://github.com/aspnet/EntityFramework6)了解如何協助讓 Entity Framework，一開放式開發模型，更棒的是瀏覽 GitHub 上的網站。
-
 
 使用 Entity Framework 搭配 ASP.NET
 

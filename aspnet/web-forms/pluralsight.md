@@ -8,12 +8,12 @@ ms.date: 12/16/2011
 ms.assetid: c71bb9b2-7136-4ce6-a40a-cc4d9978cfb7
 msc.legacyurl: /web-forms/pluralsight
 msc.type: content
-ms.openlocfilehash: ae41660d96260991defc23c75d2dda5b9183585e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 57885b3b05b3107bbd678791d38e7166a727e5de
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400278"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113101"
 ---
 # <a name="web-forms-video-training-from-pluralsight"></a>Pluralsight 提供的 Web Forms 訓練影片
 
@@ -29,11 +29,9 @@ ms.locfileid: "59400278"
 - [使用 ASP.NET 動態資料](https://pluralsight.com/training/Player?author=dan-wahlin&name=webforms-08&mode=live&clip=0&course=aspdotnet-webforms4-intro)
 - [Web 部署](https://pluralsight.com/training/Player?author=fritz-onion&name=webforms-09&mode=live&clip=0&course=aspdotnet-webforms4-intro)
 
-
 「 本課程中，Dan Wahlin pluralsight，記錄是 ASP.NET Web Form 的絕佳簡介。 他徹底的涵蓋範圍開頭的.NET Framework 簡介、 如何安裝和使用 Visual Studio 會繼續執行、 逐步解說如何建置應用程式 （包括伺服器控制項、 資料存取和 Ajax） 及完成的部署技術。 Dan 的則為 true 的 ASP.NET 專家和絕佳主講人，因此千萬別錯過這堂免費課程 ！ 」
 
 Scott Hanselman、 首席專案經理、 Web 平台和 Azure 的工具，Microsoft
-
 
 ![pluralsight-標誌-playbutton](pluralsight/_static/image1.png)
 

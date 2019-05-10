@@ -8,19 +8,18 @@ ms.date: 08/14/2010
 ms.assetid: 004703cd-e0e9-4ba7-9974-1b0475c71222
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
 msc.type: authoredcontent
-ms.openlocfilehash: e0b540c030bf600def9b9efad4c73f055a343851
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 207ed880977d794d81efdc1ea458d17a68d501d8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402826"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122884"
 ---
 # <a name="accessing-your-models-data-from-a-controller"></a>從控制器存取模型資料
 
 藉由[Scott Hanselman](https://github.com/shanselman)
 
 > 這是初學者教學課程中，將會介紹 ASP.NET MVC 的基本概念。 您將建立簡單 web 應用程式，從資料庫讀取與寫入。 請瀏覽[ASP.NET MVC 學習中心](../../../index.md)來尋找其他 ASP.NET MVC 教學課程和範例。
-
 
 這一節我們要建立新的 MoviesController 類別，並撰寫一些程式碼會擷取電影資料，並顯示回瀏覽器使用檢視範本。
 

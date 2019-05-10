@@ -8,12 +8,12 @@ ms.date: 03/14/2008
 ms.assetid: c1a35f18-bab9-41f7-8497-15530c37a09d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
 msc.type: authoredcontent
-ms.openlocfilehash: 11e70493478d6810d63ba6b3ac813e32f03052eb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ef4ee57496337fb13b4d1c09c058e89e04eb3138
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381324"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114596"
 ---
 # <a name="understanding-aspnet-ajax-localization"></a>了解 ASP.NET AJAX 當地語系化
 
@@ -22,7 +22,6 @@ ms.locfileid: "59381324"
 [下載 PDF](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial04_Localization_cs.pdf)
 
 > 當地語系化是設計及整合應用程式或應用程式元件的支援特定語言和文化特性的程序。 Microsoft ASP.NET 平台進行標準的 ASP.NET 應用程式的當地語系化可廣泛支援，藉由整合標準的.NET 當地語系化模型;Microsoft AJAX 架構利用整合式的模型，以支援各種可以在其中執行當地語系化的情況。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -105,16 +104,13 @@ Microsoft AJAX 架構指令碼管理支援各種不同的選項，以用於部�
 1. 按 F5。 出現提示時，啟用 偵錯。 載入頁面時，請按 [刪除] 按鈕。 請注意，系統會提示您以英文 （除非您的電腦設定為慣用西班牙文語言資源上，依預設） 進行確認。
 2. 關閉瀏覽器視窗並返回 default.aspx。 在 @Page標頭指示詞，取代附有的 Culture 與 UICulture ES-ES。 再次按 F5 以啟動 web 應用程式在瀏覽器中的一次。 這次請注意，系統會提示您刪除西班牙文中的檔案：
 
-
 [![](understanding-asp-net-ajax-localization/_static/image2.png)](understanding-asp-net-ajax-localization/_static/image1.png)
 
 ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-localization/_static/image3.png))
 
-
 [![](understanding-asp-net-ajax-localization/_static/image5.png)](understanding-asp-net-ajax-localization/_static/image4.png)
 
 ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-localization/_static/image6.png))
-
 
 請注意，在此逐步解說的數個變化。 比方說，指令碼無法向 ScriptManager 控制項以程式設計方式在載入頁面時。
 

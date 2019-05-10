@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: e264677b-9c01-47ec-94f9-3cd8f08f94af
 msc.legacyurl: /signalr/overview/security/persistent-connection-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: 9399addc76b7ba0844efe5b935d16edfdd9ec9f0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7e69d3c1a18f1239142891734ba58cd2b0078f84
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384978"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113532"
 ---
 # <a name="authentication-and-authorization-for-signalr-persistent-connections"></a>SignalR 持續連線的驗證和授權
 
@@ -39,7 +39,6 @@ ms.locfileid: "59384978"
 > ## <a name="questions-and-comments"></a>提出問題或意見
 >
 > 您喜歡本教學課程中的方式，和我們可以改善在頁面底部的註解中，歡迎留下意見反應。 如果您有不直接相關的教學課程中的問題，您可以張貼他們[ASP.NET SignalR 論壇](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或是[StackOverflow.com](http://stackoverflow.com/)。
-
 
 ## <a name="enforce-authorization"></a>強制執行授權
 

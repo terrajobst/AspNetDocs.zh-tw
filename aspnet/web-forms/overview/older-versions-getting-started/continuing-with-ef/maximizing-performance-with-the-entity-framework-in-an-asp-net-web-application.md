@@ -8,19 +8,18 @@ ms.date: 01/26/2011
 ms.assetid: 4e43455e-dfa1-42db-83cb-c987703f04b5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 116c557ad0d6c158f983da75668e634c9eb9747c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5630200a1ad1d30f6d89b38e15179f15b699fa9f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379583"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108576"
 ---
 # <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>將使用 Entity Framework 4.0 ASP.NET 4 Web 應用程式中的效能最大化
 
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 > 本教學課程系列是根據所建立的 Contoso 大學 web 應用程式[Getting Started with Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started)教學課程系列。 如果您未完成先前的教學課程，為本教學課程的起始點即可[下載應用程式](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)您會建立。 您也可以[下載應用程式](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa)，它由完整的教學課程系列。 如果您有疑問的教學課程，您可以張貼他們[ASP.NET Entity Framework 論壇](https://forums.asp.net/1227.aspx)。
-
 
 在上一個教學課程中，您會看到如何處理並行衝突。 本教學課程會示範提升使用 Entity Framework 的 ASP.NET web 應用程式效能的選項。 您將了解幾種方法，將效能最大化或診斷效能問題。
 
@@ -43,7 +42,6 @@ ms.locfileid: "59379583"
 > Web 應用程式效能會受到許多因素，包括像是要求和回應資料的大小、 資料庫查詢，伺服器可以排入佇列的要求數目和速度它提供的服務，以及甚至任何效率的速度您也可以使用用戶端指令碼程式庫。 如果效能嚴重不足，在您的應用程式，或測試或經驗會顯示應用程式的效能不滿意，您應該遵循標準的通訊協定進行效能微調。 量值來判斷發生效能瓶頸，並找出對整體應用程式效能會有最大的影響的區域。
 > 
 > 本主題主要著重在其中您可以改善效能特別的 ASP.NET 中的 Entity Framework 的方式。 此處的建議是很有用，如果您判斷資料存取是其中一個應用程式中的效能瓶頸。 除了這裡所說明的方法如所述，不應該被視為&quot;最佳做法&quot;一般情況下，有許多都是適當只有在例外狀況的情況下，或到地址非常特定的效能瓶頸的種類。
-
 
 若要開始本教學課程，請啟動 Visual Studio，並開啟您已在上一個教學課程中使用的 Contoso 大學 web 應用程式。
 
@@ -179,7 +177,6 @@ Entity Framework 執行 Entity SQL 查詢的生命週期內的第一次指定`Ob
 > [!NOTE]
 > 只有當您擁有 Visual Studio Ultimate，您可以執行下列程序。
 
-
 還原原始的程式碼中`GetDepartmentsByName`方法，然後執行*Departments.aspx*偵錯工具中的頁面。
 
 在 Visual Studio 中，選取**偵錯**功能表，然後**IntelliTrace**，然後**IntelliTrace 事件**。
@@ -219,14 +216,12 @@ Entity Framework 執行 Entity SQL 查詢的生命週期內的第一次指定`Ob
 > [!NOTE]
 > 如果您將保留消極式載入已啟用，您在這裡看到具有重複許多次，相同的查詢模式可能是因為消極式載入。 您通常想要避免的模式是主資料表的每個資料列的消極式載入相關的資料。 除非您已驗證的單一聯結查詢太過複雜，能夠有效率，您通常可以改善效能，在此情況下，藉由變更主要查詢來使用積極式載入。
 
-
 ## <a name="pre-generating-views"></a>預先產生檢視
 
 當`ObjectContext`物件第一次建立新的應用程式定義域中時，Entity Framework 會產生一組類別，用來存取資料庫。 這些類別統稱*檢視*，且如果您有非常大的資料模型，產生這些檢視會延遲網站的回應頁面的第一個要求之後初始化新的應用程式定義域。 您可以建立檢視，在編譯時期，而不在執行階段，以減少此第一個要求延遲。
 
 > [!NOTE]
 > 如果您的應用程式沒有的極大的資料模型，或如果它確實有大型的資料模型，但您不必擔心會影響第一個網頁要求，IIS 會回收之後的效能問題，您可以略過本節。 每次您具現化，並不會建立檢視`ObjectContext`物件，因為檢視會快取應用程式定義域中。 因此，除非您經常會回收您的應用程式在 IIS 中，很少的頁面要求受益於預先產生檢視。
-
 
 您可以預先產生檢視使用*EdmGen.exe*命令列工具或使用*文字範本轉換工具組*(T4) 範本。 在本教學課程中，您將使用 T4 範本。
 

@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 9002018b-3aa3-4358-bb1c-fbb5bc751d01
 msc.legacyurl: /web-api/overview/advanced/http-message-handlers
 msc.type: authoredcontent
-ms.openlocfilehash: 308d2e3dd21917e7656f7ffe889dc965d9275d74
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a8e6f1da8df4802e1acf7779a2fc75bfe8ab876f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59392101"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115539"
 ---
 # <a name="http-message-handlers-in-aspnet-web-api"></a>ASP.NET Web API 中的 HTTP 訊息處理常式
 
@@ -47,7 +47,6 @@ A*訊息處理常式*是接收 HTTP 要求，並傳回 HTTP 回應的類別。 �
 > [!NOTE]
 > 在用戶端，HttpClient 也會使用訊息處理常式。 如需詳細資訊，請參閱 < [HttpClient 訊息處理常式](httpclient-message-handlers.md)。
 
-
 ## <a name="custom-message-handlers"></a>自訂訊息處理常式
 
 若要撰寫的自訂訊息處理常式，衍生自**System.Net.Http.DelegatingHandler** ，並覆寫**SendAsync**方法。 此方法具有下列簽章：
@@ -67,7 +66,6 @@ A*訊息處理常式*是接收 HTTP 要求，並傳回 HTTP 回應的類別。 �
 
 > [!NOTE]
 > 若要呼叫`base.SendAsync`是非同步的。 如果處理常式會執行任何工作，此呼叫之後，使用**await**關鍵字，如所示。
-
 
 委派的處理常式可以也略過內部處理常式，並直接建立回應：
 
@@ -95,7 +93,7 @@ A*訊息處理常式*是接收 HTTP 要求，並傳回 HTTP 回應的類別。 �
 
 ## <a name="example-x-http-method-override"></a>範例：X-HTTP-Method-Override
 
-X-HTTP-方法-覆寫為非標準的 HTTP 標頭。 它是無法傳送特定 HTTP 要求類型，例如 PUT 或 DELETE 的用戶端。 相反地，用戶端傳送 POST 要求，並設定 X-HTTP-方法-覆寫標頭的所需的方法。 例如: 
+X-HTTP-方法-覆寫為非標準的 HTTP 標頭。 它是無法傳送特定 HTTP 要求類型，例如 PUT 或 DELETE 的用戶端。 相反地，用戶端傳送 POST 要求，並設定 X-HTTP-方法-覆寫標頭的所需的方法。 例如：
 
 [!code-console[Main](http-message-handlers/samples/sample6.cmd)]
 
@@ -131,7 +129,6 @@ X-HTTP-方法-覆寫為非標準的 HTTP 標頭。 它是無法傳送特定 HTTP
 
 > [!NOTE]
 > 如果 API 金鑰只套用至特定控制器的動作，請考慮使用動作篩選條件，而不訊息處理常式。 URI 的路由會執行之後，就會執行動作篩選條件。
-
 
 ## <a name="per-route-message-handlers"></a>每個路由的訊息處理常式
 

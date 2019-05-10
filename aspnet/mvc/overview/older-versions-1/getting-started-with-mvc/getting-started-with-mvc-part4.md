@@ -8,19 +8,18 @@ ms.date: 08/14/2010
 ms.assetid: 742df67f-484d-4ef3-af6b-8c791e556b43
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part4
 msc.type: authoredcontent
-ms.openlocfilehash: b75057f3128662a9bbdd641dc0a7c1ba09fbbe87
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 995db714ce6365415d06dc458aee84a31c7c8fd6
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388188"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117683"
 ---
 # <a name="creating-a-database"></a>建立資料庫
 
 藉由[Scott Hanselman](https://github.com/shanselman)
 
 > 這是初學者教學課程中，將會介紹 ASP.NET MVC 的基本概念。 您將建立簡單 web 應用程式，從資料庫讀取與寫入。 請瀏覽[ASP.NET MVC 學習中心](../../../index.md)來尋找其他 ASP.NET MVC 教學課程和範例。
-
 
 我們要建立新的 SQL Express 資料庫，我們將使用它來儲存和擷取電影資料這一節。 從的 在 Visual Web Developer IDE 中，選取 檢視 |伺服器總管。 在資料連線上按一下滑鼠右鍵，然後按一下 [新增連接...]
 

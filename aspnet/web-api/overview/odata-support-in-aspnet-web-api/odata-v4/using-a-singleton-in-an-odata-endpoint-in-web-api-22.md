@@ -8,19 +8,18 @@ ms.date: 06/27/2014
 ms.assetid: 4064ab14-26ee-4d5c-ae58-1bdda525ad06
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/using-a-singleton-in-an-odata-endpoint-in-web-api-22
 msc.type: authoredcontent
-ms.openlocfilehash: 935448a1f9770e1f11460c95997aa778c4208c9f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 218449c18759b306e425c55f8e7b573d837b4658
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403333"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113132"
 ---
 # <a name="create-a-singleton-in-odata-v4-using-web-api-22"></a>建立單一 OData v4 中的使用 Web API 2.2
 
 由 Zoe Luo
 
 > 傳統上，如果它封裝在實體集，可能只能存取實體。 但 OData v4 提供兩個額外的選項，單一和內含項目，這兩種 WebAPI 2.2 的支援。
-
 
 本文說明如何在 Web API 2.2 中的 OData 端點定義單一值。 如需哪些 singleton 則和您如何受惠於使用該資訊，請參閱[來定義特殊的實體使用單一](https://blogs.msdn.com/b/odatateam/archive/2014/03/05/use-singleton-to-define-your-special-entity.aspx)。 若要建立 Web API OData V4 端點，請參閱[建立 OData v4 端點使用 ASP.NET Web API 2.2](create-an-odata-v4-endpoint.md)。 
 

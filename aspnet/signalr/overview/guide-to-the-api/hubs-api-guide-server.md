@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: b19913e5-cd8a-4e4b-a872-5ac7a858a934
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-server
 msc.type: authoredcontent
-ms.openlocfilehash: adfd540562ec54938860740ab280c770e24f492e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c681b104b15bfc4a04587c7abf685dcf20def2ca
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411406"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112795"
 ---
 # <a name="aspnet-signalr-hubs-api-guide---server-c"></a>ASP.NET SignalR 中樞 API 指南-伺服器 (C#)
 
@@ -562,7 +562,6 @@ SignalR 追蹤連線，而不是使用者，因此如果您希望使用者是相
 
 > [!NOTE]
 > 這項機制保存的狀態並不適用於大量的資料，因為您放入的所有項目`state`或`Clients.Caller`屬性是每個方法引動過程來回時間。 它可用於較小的項目，例如使用者名稱或計數器。
-
 
 在 VB.NET 或強型別中樞中，無法透過存取呼叫端的狀態物件`Clients.Caller`; 相反地，使用`Clients.CallerState`（SignalR 2.1 中引進）：
 

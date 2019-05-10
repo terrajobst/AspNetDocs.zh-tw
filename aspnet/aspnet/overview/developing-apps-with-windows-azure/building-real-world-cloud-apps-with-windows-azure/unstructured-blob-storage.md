@@ -8,12 +8,12 @@ ms.date: 03/30/2015
 ms.assetid: 9f05ccb1-2004-4661-ad8b-c370e6c09c8e
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
 msc.type: authoredcontent
-ms.openlocfilehash: efe432f86b1d65b563efa056c2cb3bc5f2c6d83b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8148891f68ac8417400859540516e44be007dab7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59401305"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118316"
 ---
 # <a name="unstructured-blob-storage-building-real-world-cloud-apps-with-azure"></a>非結構化的 Blob 儲存體 （使用 Azure 建置真實世界的雲端應用程式）
 
@@ -22,7 +22,6 @@ ms.locfileid: "59401305"
 [下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **建置真實世界雲端應用程式與 Azure**電子書以 Scott Guthrie 所開發的簡報為依據。 它說明 13 的模式，並可協助您的作法是成功開發適用於雲端的 web 應用程式。 電子書的相關資訊，請參閱[第 1 章](introduction.md)。
-
 
 在上一章中我們探討了資料分割配置，並說明它修正應用程式在 Azure 儲存體 Blob 服務和 Azure SQL Database 中的其他工作資料中所儲存的映像。 在這一章中我們會深入 Blob 服務，並顯示如何修正它的專案程式碼中實作。
 

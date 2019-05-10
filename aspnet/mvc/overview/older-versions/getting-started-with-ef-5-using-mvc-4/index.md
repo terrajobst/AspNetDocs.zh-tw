@@ -8,17 +8,16 @@ ms.date: 10/26/2013
 ms.assetid: 5bd2e5db-8053-459e-9246-08731a4c8036
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4
 msc.type: chapter
-ms.openlocfilehash: fcab9f2ff0be9c43d2aae1825ef2666ad011c9e4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3d13ece23ab84be36cf8ddf7db63c60fdc0b1bda
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399459"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112875"
 ---
 # <a name="getting-started-with-ef-5-using-mvc-4"></a>開始使用使用 MVC 4 的 EF 5
 
 > 顯示和編輯資料的 ASP.NET MVC 4 應用程式中使用 Entity Framework 5 之基本概念。
-
 
 - [建立 Entity Framework 資料模型](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)
 - [實作基本的 CRUD 功能](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)

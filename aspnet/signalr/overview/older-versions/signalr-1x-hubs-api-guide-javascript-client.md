@@ -8,12 +8,12 @@ ms.date: 04/17/2013
 ms.assetid: dcd4593b-1118-418a-af71-d12ff33fb36d
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: a28b6043ac183ceb66e3ef2ad322436901aa50bc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 24850fe5229490bf600e09ad4718abb575a845fa
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412836"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116980"
 ---
 # <a name="signalr-1x-hubs-api-guide---javascript-client"></a>SignalR 1.x 中樞 API 指南 - JavaScript 用戶端
 
@@ -26,7 +26,6 @@ ms.locfileid: "59412836"
 > SignalR 中樞 API 可讓您從伺服器連線的用戶端和伺服器的用戶端進行遠端程序呼叫 (Rpc)。 在伺服器程式碼中，您定義可由用戶端，呼叫的方法，呼叫用戶端執行的方法。 在用戶端程式碼中，您定義可以在伺服器上，從呼叫的方法，您呼叫在伺服器執行的方法。 SignalR 會處理所有為您的用戶端-伺服器配管。
 > 
 > SignalR 也提供一個名為持續連線的較低層級 API。 如需 SignalR、 中樞和持續連線，或該教學課程說明如何建置完整的 SignalR 應用程式，請參閱[SignalR-開始使用](../getting-started/index.md)。
-
 
 ## <a name="overview"></a>總覽
 
@@ -109,7 +108,6 @@ JavaScript 用戶端必須參考 jQuery 和 SignalR core JavaScript 檔案。 JQ
 > [!NOTE]
 > Windows 8 （Windows 市集） JavaScript 用戶端，請使用實體的 proxy 檔案，而不是動態產生。 如需詳細資訊，請參閱 <<c0> [ 如何建立 signalr 的實體檔案產生 proxy](#manualproxy)本主題稍後的。
 
-
 在 ASP.NET MVC 4 Razor 檢視中，請參考您 proxy 檔案參考中的應用程式根目錄使用波狀符號：
 
 [!code-html[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample5.html)]
@@ -176,7 +174,6 @@ JavaScript 用戶端必須參考 jQuery 和 SignalR core JavaScript 檔案。 JQ
 > [!NOTE]
 > 通常您會註冊事件處理常式，然後再呼叫`start`方法來建立連線。 如果您想要註冊一些事件處理常式建立連接後，您可以這麼做，但您必須註冊您的事件處理常式，然後再呼叫其中`start`方法。 這個的其中一個原因是應用程式，可以有許多的中樞，但您不想要觸發`OnConnected`上每個中樞，如果您打算只使用其中一個事件。 中樞 proxy 上的用戶端方法的存在時建立連線時，是什麼告訴 SignalR 來觸發`OnConnected`事件。 如果您未註冊任何事件處理常式，然後再呼叫`start`方法中，您將能夠叫用方法，在中樞中，但是中樞的`OnConnected`方法不會被呼叫，而且沒有用戶端會叫用方法從伺服器。
 
-
 <a id="connequivalence"></a>
 
 ### <a name="connectionhub-is-the-same-object-that-hubconnection-creates"></a>$。 connection.hub 是相同物件會建立該 $.hubConnection()
@@ -234,7 +231,6 @@ JavaScript 用戶端必須參考 jQuery 和 SignalR core JavaScript 檔案。 JQ
 > - 如需使用 Internet Explorer 9 中的跨網域的連線資訊，請參閱[這個 StackOverflow 執行緒](http://stackoverflow.com/questions/13573397/siganlr-ie9-cross-domain-request-dont-work)。
 > - 如需使用 Chrome 中的跨網域的連線資訊，請參閱[這個 StackOverflow 執行緒](http://stackoverflow.com/questions/15467373/signalr-1-0-1-cross-domain-request-cors-with-chrome)。
 > - 範例程式碼會使用預設值"/ signalr 」 來連線到您的 SignalR 服務的 URL。 如需有關如何指定不同的基底 URL 的資訊，請參閱 < [ASP.NET SignalR 中樞 API 指南-Server-/signalr URL](../guide-to-the-api/hubs-api-guide-server.md#signalrurl)。
-
 
 <a id="configureconnection"></a>
 

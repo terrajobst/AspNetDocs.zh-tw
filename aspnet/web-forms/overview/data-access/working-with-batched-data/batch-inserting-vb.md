@@ -8,12 +8,12 @@ ms.date: 06/26/2007
 ms.assetid: 48e2a4ae-77ca-4208-a204-c38c690ffb59
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 78192156bd9a3117d8cf75808f1de493a0d52a17
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: bf31859d9a7184e7db84a67a8deaffa84b1b42a7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387039"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109004"
 ---
 # <a name="batch-inserting-vb"></a>批次插入 (VB)
 
@@ -23,7 +23,6 @@ ms.locfileid: "59387039"
 
 > 了解如何在單一作業中插入多個資料庫的記錄。 在使用者介面層，我們會擴充 GridView，以允許使用者輸入多個新的記錄。 資料存取層中，我們換行以確保所有插入作業成功，或所有插入作業會回復在交易內的多個 Insert 作業的內容。
 
-
 ## <a name="introduction"></a>簡介
 
 在 [批次更新](batch-updating-vb.md)教學課程中我們探討了自訂 GridView 控制項來呈現可編輯多筆記錄所在的介面。 瀏覽頁面的使用者無法進行一系列的變更，然後，使用單一按鈕點選，執行批次更新。 針對使用者經常更新一次的多筆記錄的情況下，這類介面可以節省無數的按下滑鼠和鍵盤-滑鼠內容切換，相較於預設每個資料列編輯功能，已先瀏覽回到[插入、 更新和刪除資料的概觀](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md)教學課程。
@@ -32,11 +31,9 @@ ms.locfileid: "59387039"
 
 我們可以很輕鬆地建立批次插入介面，可讓使用者選擇的供應商和類別目錄一次，輸入一系列的產品名稱和單價，，然後按一下 加入資料庫中的新產品的按鈕 （請參閱 圖 1）。 增加每個產品，其`ProductName`並`UnitPrice`資料欄位指派的文字方塊中輸入的值時其`CategoryID`和`SupplierID`值從在最上層的表單 fo dropdownlist 進行指派的值。 `Discontinued`並`UnitsOnOrder`值都會設為硬式編碼值`False`和 0，分別。
 
-
 [![批次插入介面](batch-inserting-vb/_static/image2.png)](batch-inserting-vb/_static/image1.png)
 
 **圖 1**:批次插入介面 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image3.png))
-
 
 在本教學課程中，我們將建立會實作批次插入介面 [圖 1] 所示的頁面。 為先前的兩個教學課程中，我們會確保不可部分完成交易範圍內包裝插入。 讓 s 開始 ！
 
@@ -48,29 +45,23 @@ ms.locfileid: "59387039"
 
 首先開啟`BatchInsert.aspx`頁面中`BatchData`資料夾，然後從 工具箱 拖曳至設計工具拖曳面板 （請參閱 圖 2）。 設定面板 s`ID`屬性設`DisplayInterface`。 當將面板加入至設計工具中，其`Height`和`Width`屬性分別設定為 50px 和 125px。 清除這些屬性值，從 [屬性] 視窗。
 
-
 [![從 [工具箱] 拖曳至設計工具拖曳面板](batch-inserting-vb/_static/image5.png)](batch-inserting-vb/_static/image4.png)
 
 **圖 2**:從 [工具箱] 拖曳至設計工具拖曳面板 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image6.png))
 
-
 接下來，將按鈕和 GridView 控制項拖曳到 [面板] 中。 設定 [s] 按鈕`ID`屬性，以`ProcessShipment`及其`Text`程序產品出貨的屬性。 設定 GridView s`ID`屬性，以`ProductsGrid`和它的智慧標籤，從繫結至名為新 ObjectDataSource `ProductsDataSource`。 設定提取其資料從 ObjectDataSource`ProductsBLL`類別的`GetProducts`方法。 因為此 GridView 只用於顯示資料，設定下拉式清單中更新、 插入和刪除為 [（無）] 索引標籤。 按一下 完成 以完成設定資料來源精靈。
-
 
 [![顯示從 ProductsBLL 類別的 GetProducts 方法傳回的資料](batch-inserting-vb/_static/image8.png)](batch-inserting-vb/_static/image7.png)
 
 **圖 3**:顯示從傳回的資料`ProductsBLL`類別 s`GetProducts`方法 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image9.png))
 
-
 [![設定下拉式清單中更新、 插入和刪除 （無） 索引標籤](batch-inserting-vb/_static/image11.png)](batch-inserting-vb/_static/image10.png)
 
 **圖 4**:設定下拉式清單中更新、 插入和刪除索引標籤為 （無） ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image12.png))
 
-
 完成 ObjectDataSource 精靈之後，Visual Studio 會將 BoundFields 及其產品資料欄位。 移除以外的所有`ProductName`， `CategoryName`， `SupplierName`， `UnitPrice`，和`Discontinued`欄位。 隨意美觀的任何自訂。 我決定來格式化`UnitPrice`欄位為貨幣值時，重新排列欄位，並重新命名數個欄位`HeaderText`值。 也設定 GridView，以包含分頁和排序支援，藉由檢查 GridView s 智慧標籤啟用分頁，並按一下 啟用排序核取方塊。
 
 加入面板、 按鈕、 GridView 和 ObjectDataSource 控制項，並自訂 GridView 的欄位之後, 您頁面 s 宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](batch-inserting-vb/samples/sample1.aspx)]
 
@@ -78,11 +69,9 @@ ms.locfileid: "59387039"
 
 請花一點時間檢閱我們透過瀏覽器的進度。 如 圖 5 所示，您應該會看到上述的 GridView 會列出產品 10 次的程序產品出貨 按鈕。
 
-
 [![GridView 列出產品，並提供排序和分頁功能](batch-inserting-vb/_static/image14.png)](batch-inserting-vb/_static/image13.png)
 
 **圖 5**:GridView 列出的產品和提供排序和分頁功能 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image15.png))
-
 
 ## <a name="step-2-creating-the-inserting-interface"></a>步驟 2：建立插入介面
 
@@ -95,52 +84,41 @@ ms.locfileid: "59387039"
 > [!NOTE]
 > 輸入標記的 HTML 時`<table>`項目，我想要使用的來源檢視。 雖然 Visual Studio 沒有新增的工具`<table>`透過設計工具的項目，設計工具似乎所有太願意將如蠢`style`到標記的設定。 當我建立`<table>`標記中，我通常返回設計工具來新增 Web 控制項，並設定其屬性。 建立具有預先決定的資料行和資料列的資料表時我比較喜歡用靜態 HTML 而非[資料表 Web 控制項](https://msdn.microsoft.com/library/system.web.ui.webcontrols.table.aspx)因為任何放置在資料表 Web 控制項內的 Web 控制項只能存取使用`FindControl("controlID")`模式。 我，不過，使用資料表 Web 控制項的動態調整大小的資料表 （而是其資料列或資料行根據部分資料庫或使用者指定的準則），因為資料表 Web 控制項可以用來以程式設計方式建構。
 
-
 輸入下列標記內`<asp:Panel>`標記`InsertingInterface`面板：
-
 
 [!code-html[Main](batch-inserting-vb/samples/sample2.html)]
 
 這`<table>`標記不包含任何 Web 控制項，但我們會將這些新增立刻顯示。 請注意，每個`<tr>`項目包含特定的 CSS 類別設定：`BatchInsertHeaderRow`標頭資料列的供應商和類別目錄 dropdownlist 進行位置;`BatchInsertFooterRow`新增的產品出貨和取消按鈕位置; 頁尾資料列和替代`BatchInsertRow`和`BatchInsertAlternatingRow`值的資料列將包含產品和單位價格文字方塊控制項。 我已建立對應的 CSS 類別，在`Styles.css`檔案，以提供插入介面外觀類似的 GridView 和 DetailsView 控制項我們已在整個這些教學課程中使用。 這些的 CSS 類別如下所示。
 
-
 [!code-css[Main](batch-inserting-vb/samples/sample3.css)]
 
 此標記中，輸入，以返回 [設計] 檢視。 這`<table>`應該要顯示的四個資料行中，七個資料列的資料表，在設計師中，如 圖 6 所示。
-
 
 [![插入介面由所組成的四資料行，七個資料列的資料表](batch-inserting-vb/_static/image17.png)](batch-inserting-vb/_static/image16.png)
 
 **圖 6**:插入介面由所組成的四資料行，七個資料列的資料表 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image18.png))
 
-
 我們重新現在已準備好將 Web 控制項新增至插入的介面。 從 [工具箱] 將兩個 dropdownlist 進行拖曳表其中一個用於供應商，一個用於類別目錄中適當的資料格。
 
 設定供應商 DropDownList s`ID`屬性，以`Suppliers`並將它繫結至名為新 ObjectDataSource `SuppliersDataSource`。 設定要擷取其資料的新 ObjectDataSource`SuppliersBLL`類別的`GetSuppliers`方法，並設定更新索引標籤為 （無） s 下拉式清單。 按一下 完成 以完成精靈。
-
 
 [![設定為使用 SuppliersBLL 類別的 GetSuppliers 方法的 ObjectDataSource](batch-inserting-vb/_static/image20.png)](batch-inserting-vb/_static/image19.png)
 
 **圖 7**:設定要使用 ObjectDataSource`SuppliersBLL`類別 s`GetSuppliers`方法 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image21.png))
 
-
 已`Suppliers`DropDownList 顯示器`CompanyName`資料欄位並使用`SupplierID`資料欄位做為其`ListItem`的值。
-
 
 [![顯示 供應商資料欄位和 SupplierID 做為值](batch-inserting-vb/_static/image23.png)](batch-inserting-vb/_static/image22.png)
 
 **圖 8**:顯示`CompanyName`資料欄位並使用`SupplierID`的值 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image24.png))
 
-
 命名第二個 DropDownList`Categories`並將它繫結至名為新 ObjectDataSource `CategoriesDataSource`。 設定`CategoriesDataSource`若要使用的 ObjectDataSource`CategoriesBLL`類別的`GetCategories`方法; 設定下拉式清單會列出在 更新和刪除的索引標籤，為 （無），然後按一下 完成 以完成精靈。 最後，有 DropDownList 顯示器`CategoryName`資料欄位並使用`CategoryID`做為值。
 
 已新增並繫結至適當地設定 ObjectDataSources 這些兩個 dropdownlist 進行之後，您的畫面看起來應該類似於 圖 9。
 
-
 [![標頭資料列現在包含供應商和類別 dropdownlist 進行](batch-inserting-vb/_static/image26.png)](batch-inserting-vb/_static/image25.png)
 
 **圖 9**:標頭資料列現在包含`Suppliers`並`Categories`dropdownlist 進行 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image27.png))
-
 
 我們現在需要建立文字方塊來收集每個新的產品價格與名稱。 將 TextBox 控制項從 [工具箱] 拖曳至設計工具拖曳每五個產品名稱和價格資料列。 設定`ID`屬性的文字方塊來`ProductName1`， `UnitPrice1`， `ProductName2`， `UnitPrice2`， `ProductName3`， `UnitPrice3`，依此類推。
 
@@ -149,18 +127,15 @@ ms.locfileid: "59387039"
 > [!NOTE]
 > 插入介面並未包含任何 RequiredFieldValidator 控制項，即使`ProductName`欄位中`Products`資料庫資料表不允許`NULL`值。 這是因為我們想要讓使用者輸入最多五個產品。 比方說，如果使用者提供的產品名稱和單位價格的前三個資料列，將最後兩個資料列留為空白，我們的 d 加入三個新的產品系統。 因為`ProductName`是必要，不過，我們必須以程式設計方式檢查，確保當單價輸入，提供對應的產品名稱值。 我們將會處理在步驟 4 中的這項檢查。
 
-
 當驗證的使用者的輸入，CompareValidator 會報告無效的資料，如果值包含貨幣符號。 新增 $ 前面每單位價格做為視覺提示，指示使用者輸入價格時省略的貨幣符號的文字方塊。
 
 最後，將 ValidationSummary 控制項內新增`InsertingInterface`面板中，設定其`ShowMessageBox`屬性設`True`及其`ShowSummary`屬性設`False`。 使用這些設定，如果使用者輸入無效的單位價格值，星號就會顯示違規的 TextBox 控制項旁邊，ValidationSummary 會顯示用戶端訊息方塊會顯示我們稍早指定的錯誤訊息。
 
 此時，您的畫面應該看起來類似 圖 10。
 
-
 [![插入介面現在包含文字方塊的產品名稱和價格](batch-inserting-vb/_static/image29.png)](batch-inserting-vb/_static/image28.png)
 
 **圖 10**:插入介面現在包含文字方塊的產品名稱和價格 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image30.png))
-
 
 接下來我們要新增的產品出貨和取消按鈕加入頁尾資料列。 將按鈕拖曳兩個控制項從 [工具箱] 的頁尾插入介面中，設定按鈕`ID`屬性，以`AddProducts`並`CancelButton`和`Text`產品出貨與 [取消]，將它分別加入的屬性。 此外，設定`CancelButton`控制 s`CausesValidation`屬性設`false`。
 
@@ -170,11 +145,9 @@ ms.locfileid: "59387039"
 
 圖 11 顯示 Visual Studio 設計工具，標籤已新增並設定之後。
 
-
 [![將 statuslabel 設控制項在兩個面板控制項上方放置](batch-inserting-vb/_static/image32.png)](batch-inserting-vb/_static/image31.png)
 
 **圖 11**:地方`StatusLabel`控制上述兩個面板控制項 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image33.png))
-
 
 ## <a name="step-3-switching-between-the-display-and-inserting-interfaces"></a>步驟 3：切換顯示和插入介面
 
@@ -187,7 +160,6 @@ ms.locfileid: "59387039"
 
 我們想要按一下處理程序產品出貨按鈕時，從顯示的介面移至插入的介面。 因此，建立事件處理常式，此按鈕 s`Click`事件，其中包含下列程式碼：
 
-
 [!code-vb[Main](batch-inserting-vb/samples/sample4.vb)]
 
 此程式碼只會隱藏`DisplayInterface`面板，並顯示`InsertingInterface`面板。
@@ -196,7 +168,6 @@ ms.locfileid: "59387039"
 
 > [!NOTE]
 > 請考慮可能會發生什麼事如果我們未設為預先編輯的狀態傳回控制項，然後再回到 顯示介面。 使用者可能按一下處理程序產品出貨] 按鈕，輸入的產品出貨，，然後按一下 [新增出貨的產品。 這會將產品加入，並返回顯示介面中的使用者。 此時使用者可能會想要新增另一個出貨。 按一下 [處理程序產品出貨] 按鈕就會傳回插入的介面，但 DropDownList 選取項目和文字方塊值會仍填入其先前的值。
-
 
 [!code-vb[Main](batch-inserting-vb/samples/sample5.vb)]
 
@@ -207,18 +178,15 @@ ms.locfileid: "59387039"
 > [!NOTE]
 > 檢視時插入的介面，請花一點時間來測試 CompareValidators 單價的文字方塊上。 您應該會看到用戶端 messagebox 時按一下 新增產品出貨按鈕具有無效的貨幣值或值小於零的價格從出現的警告。
 
-
 [![按一下處理程序的產品出貨按鈕後顯示插入介面](batch-inserting-vb/_static/image35.png)](batch-inserting-vb/_static/image34.png)
 
 **圖 12**:按一下處理程序的產品出貨按鈕後顯示插入介面 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image36.png))
-
 
 ## <a name="step-4-adding-the-products"></a>步驟 4：加入產品
 
 全部保留本教學課程是要新增的產品中的資料庫中儲存的產品出貨按鈕 s`Click`事件處理常式。 這可藉由建立`ProductsDataTable`並新增`ProductsRow`提供的產品名稱的每個執行個體。 一次這些`ProductsRow`已加入，我們將呼叫`ProductsBLL`類別 s`UpdateWithTransaction`方法並傳入`ProductsDataTable`。 請記得，`UpdateWithTransaction`方法，以建立回到[資料庫修改包裝在交易](wrapping-database-modifications-within-a-transaction-vb.md)教學課程中，傳遞`ProductsDataTable`來`ProductsTableAdapter`的`UpdateWithTransaction`方法。 從該處啟動 ADO.NET 交易和 TableAdapter 問題`INSERT`陳述式之資料庫的每個已加入`ProductsRow`DataTable 中。 假設所有產品會都加入不會發生錯誤，就會認可交易，否則它會回復。
 
 出貨按鈕 s 中的新增產品的程式碼`Click`事件處理常式也需要執行一些錯誤檢查。 因為沒有用於插入介面沒有 RequiredFieldValidators，使用者無法輸入價格的產品時省略其名稱。 因為產品的名稱是必要的如果事件發生這種情況我們需要提醒使用者並不會進行插入。 完整`Click`事件處理常式程式碼如下：
-
 
 [!code-vb[Main](batch-inserting-vb/samples/sample6.vb)]
 
@@ -236,25 +204,20 @@ ms.locfileid: "59387039"
 
 圖 13、 14 及 15 顯示插入和顯示作用中的介面。 [圖 13] 中的使用者輸入不含對應的產品名稱的單位價格值。 圖 14 顯示顯示介面之後三個新產品已經成功加入，而 圖 15 所顯示的是兩個新加入的產品在 gridview 裡 （在前一個頁面是第三個）。
 
-
 [![產品名稱是必要時輸入單位價格](batch-inserting-vb/_static/image38.png)](batch-inserting-vb/_static/image37.png)
 
 **圖 13**:產品名稱是必要時輸入單位價格 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image39.png))
-
 
 [![已新增三個新 Veggies 供應商 Mayumi s](batch-inserting-vb/_static/image41.png)](batch-inserting-vb/_static/image40.png)
 
 **圖 14**:三個新 Veggies 已新增供應商 Mayumi s ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image42.png))
 
-
 [![新的產品可在 GridView 的最後一頁](batch-inserting-vb/_static/image44.png)](batch-inserting-vb/_static/image43.png)
 
 **圖 15**:新產品可在 GridView 的最後一頁 ([按一下以檢視完整大小的影像](batch-inserting-vb/_static/image45.png))
 
-
 > [!NOTE]
 > 批次插入此教學課程中使用的邏輯包裝插入的交易範圍內。 若要確認，故意放入資料庫層級錯誤。 比方說，而不是指派的新`ProductsRow`執行個體 s`CategoryID`屬性設為所選的值，在`Categories`下拉式清單中，指派其值，例如`i * 5`。 這裡`i`迴圈索引子，且具有範圍從 1 到 5 的值。 因此，當加入批次中的兩個或多個產品放入第一次的產品必須是有效`CategoryID`值 (5)，但後續的產品會有`CategoryID`最多不相符的值`CategoryID`中的值`Categories`資料表。 結果是，在第一個`INSERT`會成功，後續的項目將會失敗與外部索引鍵條件約束違規。 由於是不可部分完成的批次插入第一個`INSERT`將會回復，傳回其之前的批次插入程序的狀態資料庫開始。
-
 
 ## <a name="summary"></a>總結
 

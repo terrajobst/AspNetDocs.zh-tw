@@ -8,19 +8,18 @@ ms.date: 02/10/2010
 ms.assetid: 1365eebb-bdf7-4a05-8d18-7f200531be55
 msc.legacyurl: /whitepapers/ms03-32-issue
 msc.type: content
-ms.openlocfilehash: faad1530a499fd3f46a6a6c6e7c194ba6c55fa6c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e0b6776cbfe22e341ac7105f03daac5074b480fc
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386290"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121536"
 ---
 # <a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a>套用 IE 的安全性更新之後，修正「無法使用伺服器應用程式」錯誤
 
 > 本文件說明 MS03 32 安全性更新與修正的問題會影響執行 Windows XP Professional 上的 ASP.NET 1.0 應用程式的 Internet explorer 的修補程式。
 > 
 > 適用於 ASP.NET 1.0 和 Windows XP Professional。
-
 
 Microsoft Internet Explorer 的安全性修補程式 MS03-32 的安全性更新與在 Windows XP 上執行的 ASP.NET 1.0 識別發生問題。 可以安裝此修補程式，以手動方式或從 Windows Update 網站取得最新的重大更新。
 

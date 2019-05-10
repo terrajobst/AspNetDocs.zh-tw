@@ -8,12 +8,12 @@ ms.date: 04/03/2015
 ms.assetid: 81ee500f-fc37-40d6-8722-f1b64720fbb6
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: f78100178d5cdc25a10603907e77fe81386877a6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8432a7610ac7be79ad03651a5fac21a62b0ca1f0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59386457"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112960"
 ---
 # <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>使用 Facebook、Twitter、LinkedIn 與 Google OAuth2 登入建立 ASP.NET MVC 5 應用程式 (C#)
 
@@ -27,7 +27,6 @@ ms.locfileid: "59386457"
 > 
 > 本教學課程也會示範如何新增使用者設定檔資料，以及如何使用成員資格 API 來新增角色。 本教學課程以寫入[Rick Anderson](https://blogs.msdn.com/rickAndy) (請在 Twitter 上關注我： [ @RickAndMSFT ](https://twitter.com/RickAndMSFT) )。
 
-
 <a id="start"></a>
 ## <a name="getting-started"></a>快速入門
 
@@ -36,11 +35,9 @@ ms.locfileid: "59386457"
 > [!NOTE]
 > 您必須安裝 Visual Studio [2013 Update 3](https://go.microsoft.com/fwlink/?LinkId=390521)或更高版本，若要使用 Google OAuth 2 並在本機偵錯，而不需要 SSL 警告。
 
-
 按一下 **新的專案**從**開始**頁面上，或者您可以使用功能表，然後選取**檔案**，然後**新專案**。
 
 ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image1.png)  
- 
 
 <a id="1st"></a>
 ## <a name="creating-your-first-application"></a>建立第一個應用程式
@@ -56,7 +53,6 @@ ms.locfileid: "59386457"
 如果您選取**雲端中的主機**，完成 [設定] 對話方塊。
 
 ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image4.png)
-
 
 ### <a name="use-nuget-to-update-to-the-latest-owin-middleware"></a>使用 NuGet 來更新至最新的 OWIN 中介軟體
 
@@ -161,7 +157,6 @@ ms.locfileid: "59386457"
 
 > [!WARNING]
 > 目前 Facebook OAuth2 驗證的指示，請參閱[設定 Facebook 驗證](/aspnet/core/security/authentication/social/facebook-logins)
-
 
 <a id="mdb"></a>
 ## <a name="examine-the-membership-data"></a>檢查成員資格資料

@@ -8,12 +8,12 @@ ms.date: 01/20/2011
 ms.assetid: 3124f28e-cc32-418a-afe3-519fa56f4c36
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
-ms.openlocfilehash: db8f336f3fd9a88dfb32f99510fc53cd7b4a5178
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 63c555358d06a9506bb5c8c993800c3307108192
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415982"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114437"
 ---
 # <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>如何：將行動網頁新增至 ASP.NET Web Forms / MVC 應用程式
 
@@ -25,7 +25,6 @@ ms.locfileid: "59415982"
 > **摘要**
 > 
 > 本 How To 說明會提供適用於行動裝置，從您的 ASP.NET Web Form 網頁的各種方法 / MVC 應用程式，並建議架構和設計以各種裝置為目標時應該考量的問題。 本文件也說明為何從 ASP.NET 2.0 ASP.NET 行動控制項，為 3.5 已經過時，並討論一些現代的替代方案。
-
 
 ## <a name="contents"></a>內容
 
@@ -158,7 +157,6 @@ ASP.NET Web Form 和 MVC 的開發人員立即可以藉由檢查屬性探索正�
 
 > [!NOTE]
 > 由於這種方法通常會涉及到的程式碼的一些重複項目 （行動網頁可能會將桌面的網頁中分享一些相似之處），請務必將任何一般商務邏輯或資料存取程式碼到共用的基礎層或服務。 否則，您將會兩倍的建立和維護您的應用程式的工作。
-
 
 #### <a name="redirecting-mobile-visitors-to-your-mobile-pages"></a>重新導向至您的行動頁面的行動訪客
 
@@ -310,7 +308,6 @@ ASP.NET Web Form 和 MVC 的開發人員立即可以藉由檢查屬性探索正�
 
 > [!NOTE]
 > 您*可以*使用 51Degrees.mobi Foundation 的重新導向功能，在 ASP.NET MVC 應用程式，但您必須定義您的重新導向設定，以純文字的 Url，不是由路由參數，或將 MVC 篩選條件上的動作。 這是因為 （在本文撰寫之際） 51Degrees.mobi Foundation 無法辨識或路由篩選器。
-
 
 ### <a name="disabling-transcoders-and-proxy-servers"></a>停用的轉碼器和 Proxy 伺服器
 

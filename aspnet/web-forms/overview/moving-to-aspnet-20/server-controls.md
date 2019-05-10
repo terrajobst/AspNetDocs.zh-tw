@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 43f6ac47-76fc-4cf7-8e9f-c18ce673dfd8
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/server-controls
 msc.type: authoredcontent
-ms.openlocfilehash: bfbc151af40bf7ccceb5ac298ba812730d4e4ed9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c02a633013f061c09141d4f98871848c011a799e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420753"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116717"
 ---
 # <a name="server-controls"></a>伺服器控制項
 
 by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET 2.0 增強伺服器控制項，在許多方面。 在這個模組中，我們將討論一些架構的變更，ASP.NET 2.0 的方式，而 Visual Studio 2005 處理的伺服器控制項。
-
 
 ASP.NET 2.0 增強伺服器控制項，在許多方面。 在這個模組中，我們將討論一些架構的變更，ASP.NET 2.0 的方式，而 Visual Studio 2005 處理的伺服器控制項。
 
@@ -59,15 +58,11 @@ ASP.NET 2.0 增強伺服器控制項，在許多方面。 在這個模組中，�
 > [!NOTE]
 > 中的檢視狀態以及保存控制項狀態\_ \_VIEWSTATE 的隱藏的表單欄位。
 
-
 這段影片會逐步解說中的檢視狀態和控制項狀態。
-
 
 ![](server-controls/_static/image1.png)
 
-
 [開啟全螢幕影片](server-controls/_static/state1.wmv)
-
 
 為了讓伺服器控制項，以讀取和寫入至控制狀態，您必須採取三個步驟。
 
@@ -114,7 +109,6 @@ LoadControlState 方法會載入控制項中的已儲存的狀態。 此方法�
 > [!NOTE]
 > ControlAdapter 類別是抽象類別。
 
-
 就像是&lt;browserCaps&gt; 1.x 中，瀏覽器定義檔中的一節會使用規則運算式剖析使用者代理字串來識別要求的瀏覽器。 它它們定義該使用者代理程式的特定功能。 ControlAdapter 呈現 Render 方法透過控制項。 因此，如果您覆寫 Render 方法，您不應該呼叫轉譯的基底類別。 如此一來，可能會造成轉譯發生兩次，一次的配接器，一次是控制項本身。
 
 ## <a name="developing-a-custom-adapter"></a>開發自訂配接器
@@ -157,21 +151,17 @@ ASP.NET 2.0 使用 Webresource.axd 處理常式 （先前所述），來呈現�
 
 ImageMap 控制項可讓您將加入的映像，可初始化回傳，或瀏覽至 URL 中的熱點。 有三種類型的作用點;CircleHotSpot、 RectangleHotSpot 和 PolygonHotSpot。 透過 Visual Studio 中，或以程式設計方式在程式碼中的集合編輯器新增作用點。 不沒有可用於繪製的映像上的作用點的任何使用者介面。 必須以宣告方式指定的座標和大小或作用點的半徑。 另外還有一個作用區設計工具中沒有視覺表示法。 如果作用點設定為巡覽至 URL，透過 NavigateUrl 屬性的作用被指定的 URL。 如果是 post 回熱點，PostBackValue 屬性可讓您在伺服器端程式碼中傳遞回文章中可擷取的字串。
 
-
 ![在 Visual Studio 中的作用點集合編輯器](server-controls/_static/image1.jpg)
 
 **圖 1**:在 Visual Studio 中的作用點集合編輯器
-
 
 ## <a name="bulletedlist-control"></a>BulletedList 控制項
 
 BulletedList 控制項是可以輕鬆地進行資料繫結項目符號清單。 （編號的） 排序清單或未按順序透過 BulletStyle 屬性。 在清單中的每個項目被以清單項目物件。
 
-
 ![Visual Studio 中的 BulletedList 控制項](server-controls/_static/image1.gif)
 
 **圖 2**:Visual Studio 中的 BulletedList 控制項
-
 
 ## <a name="hiddenfield-control"></a>Hiddenfield
 
@@ -204,15 +194,11 @@ PostedFile 屬性仍可供存取 HttpPostedFile 物件，但某些 HttpPostedFil
 > [!NOTE]
 > 它使用 ASP.NET 控制項狀態的狀態記錄的精靈控制項。 因此，EnableViewState 屬性可以設定為 false，而不需要任何有利有弊。
 
-
 這段影片會 Wizard 控制項逐步解說。
-
 
 ![](server-controls/_static/image2.png)
 
-
 [開啟全螢幕影片](server-controls/_static/wizard1.wmv)
-
 
 ## <a name="localize-control"></a>當地語系化控制項
 

@@ -8,12 +8,12 @@ ms.date: 01/18/2008
 ms.assetid: bc937e9d-5c14-4fc4-aec7-440da924dd18
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/user-based-authorization-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1aba8e068e80d2c2533c8aa68e75518f92b71a93
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 965e1ff59866ce2946f6965cb31a751f20c1bcfc
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420649"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114630"
 ---
 # <a name="user-based-authorization-vb"></a>以使用者為基礎的授權 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59420649"
 [下載程式碼](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/ASPNET_Security_Tutorial_07_VB.zip)或[下載 PDF](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/aspnet_tutorial07_UserAuth_vb.pdf)
 
 > 在本教學課程中我們將探討限制存取頁面，並限制透過各種技術的頁面層級功能。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -44,11 +43,9 @@ ASP.NET 可讓您輕鬆地定義使用者為基礎的授權規則。 中的標�
 
 [圖 1] 說明的 ASP.NET 管線中的工作流程`FormsAuthenticationModule`，而`UrlAuthorizationModule`送達的未經授權的要求時。 特別是，[圖 1] 顯示匿名訪客要求`ProtectedPage.aspx`，這是給匿名使用者，拒絕存取的頁面。 造訪者是匿名的因為`UrlAuthorizationModule`中止要求，並傳回 HTTP 401 未經授權的狀態。 `FormsAuthenticationModule`然後 401 狀態轉換為 302 重新導向至登入頁面。 透過登入頁面會驗證使用者之後，他會重新導向至`ProtectedPage.aspx`。 這次`FormsAuthenticationModule`識別讓使用者根據其驗證票證。 既然已經過驗證的訪客，`UrlAuthorizationModule`允許存取該網頁。
 
-
 [![URL 授權工作流程與表單驗證](user-based-authorization-vb/_static/image2.png)](user-based-authorization-vb/_static/image1.png)
 
 **圖 1**:URL 授權工作流程與表單驗證 ([按一下以檢視完整大小的影像](user-based-authorization-vb/_static/image3.png))
-
 
 圖 1 說明匿名的造訪者嘗試存取不適用於匿名使用者的資源時，就會發生的互動。 在此情況下，會重新導向她嘗試瀏覽於 querystring 中指定頁面的 [登入] 頁面的匿名訪客。 使用者已成功登入之後，她將會自動重新導向回到她一開始嘗試檢視的資源。
 
@@ -58,17 +55,14 @@ ASP.NET 可讓您輕鬆地定義使用者為基礎的授權規則。 中的標�
 
 圖 2 說明此令人困惑的工作流程。
 
-
 [![預設的工作流程可能會導致令人困惑的循環](user-based-authorization-vb/_static/image5.png)](user-based-authorization-vb/_static/image4.png)
 
 **圖 2**:預設工作流程可能會導致令人困惑的循環 ([按一下以檢視完整大小的影像](user-based-authorization-vb/_static/image6.png))
-
 
 [圖 2] 所示的工作流程可以快速 befuddle 即使大部分電腦精通訪客。 我們將探討如何防止這種混淆在步驟 2 中的循環。
 
 > [!NOTE]
 > ASP.NET 會使用兩種機制，判斷目前使用者是否可以存取特定網頁：URL 授權和檔案授權。 檔案授權由實作[ `FileAuthorizationModule` ](https://msdn.microsoft.com/library/system.web.security.fileauthorizationmodule.aspx)，以決定授權單位 consulting 要求的檔案的 Acl。 檔案授權通常會用於使用 Windows 驗證，因為設定的 Acl 會套用到 Windows 帳戶的權限。 使用表單驗證時，所有的作業系統和檔案系統層級要求會執行相同的 Windows 帳戶，無論使用者瀏覽的網站。 因為本教學課程系列，著重於表單驗證，我們將不討論檔案授權。
-
 
 ### <a name="the-scope-of-url-authorization"></a>URL 授權範圍
 
@@ -80,7 +74,6 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 
 > [!NOTE]
 > 有一些細微但很重要的差異方式 ASP。NET 的`UrlAuthorizationModule`和 IIS 7 處理授權規則的 URL 授權功能。 本教學課程不會檢查 IIS 7 的 URL 授權功能或它如何剖析相較於授權規則的差異`UrlAuthorizationModule`。 如需有關這些主題的詳細資訊，請參閱 MSDN 上或在 IIS 7 文件[www.iis.net](https://www.iis.net/)。
-
 
 ## <a name="step-1-defining-url-authorization-rules-inwebconfig"></a>步驟 1：定義中的 URL 授權規則`Web.config`
 
@@ -100,7 +93,6 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 > [!NOTE]
 > `<allow>`和`<deny>`項目也可以指定角色的授權規則。 我們將檢視在未來的教學課程中的角色為基礎的授權。
 
-
 下列設定會授與 Sam （包括匿名訪客） 以外的任何人的存取權：
 
 [!code-xml[Main](user-based-authorization-vb/samples/sample2.xml)]
@@ -115,19 +107,15 @@ ASP.NET 可讓您輕鬆地在網站定義不同的檔案和資料夾的不同的
 
 讓我們更新我們的網站，讓只有經過驗證的使用者可以瀏覽中的 ASP.NET 網頁`Membership`資料夾。 若要這麼做我們需要加入`Web.config`檔案`Membership`資料夾並設定它拒絕匿名使用者的授權設定。 以滑鼠右鍵按一下`Membership`資料夾中的在 [方案總管] 中，從操作功能表中，選擇 [加入新項目] 功能表，然後加入新的 Web 組態檔，名為`Web.config`。
 
-
 [![將 Web.config 檔案新增至 [成員資格] 資料夾](user-based-authorization-vb/_static/image8.png)](user-based-authorization-vb/_static/image7.png)
 
 **圖 3**:新增`Web.config`的檔案`Membership`資料夾 ([按一下以檢視完整大小的影像](user-based-authorization-vb/_static/image9.png))
 
-
 此時您的專案應該包含兩個`Web.config`檔案： 一個在目錄的根目錄，一個在`Membership`資料夾。
-
 
 [![您的應用程式現在應該包含兩個 Web.config 檔案](user-based-authorization-vb/_static/image11.png)](user-based-authorization-vb/_static/image10.png)
 
 **圖 4**:您的應用程式應該現在包含兩個`Web.config`檔案 ([按一下以檢視完整大小的影像](user-based-authorization-vb/_static/image12.png))
-
 
 更新組態檔中的`Membership`資料夾，讓它禁止匿名使用者的存取權。
 
@@ -139,11 +127,9 @@ ASP.NET 可讓您輕鬆地在網站定義不同的檔案和資料夾的不同的
 
 按一下左邊的資料行中找到的 [建立使用者帳戶] 連結。 這會帶您前往`~/Membership/CreatingUserAccounts.aspx`。 由於`Web.config`檔案中`Membership`資料夾定義的授權規則，以禁止匿名存取，`UrlAuthorizationModule`中止要求，並傳回 HTTP 401 未經授權的狀態。 `FormsAuthenticationModule`會加以修改以傳送給我們登入頁面 302 重新導向狀態。 請注意，頁面我們已嘗試存取 (`CreatingUserAccounts.aspx`) 傳遞至透過登入頁面`ReturnUrl`querystring 參數。
 
-
 [![URL 授權規則禁止匿名存取，因為我們會被重新導向至登入頁面](user-based-authorization-vb/_static/image14.png)](user-based-authorization-vb/_static/image13.png)
 
 **圖 5**:URL 授權規則禁止匿名存取，因為我們會被重新導向至登入頁面 ([按一下以檢視完整大小的影像](user-based-authorization-vb/_static/image15.png))
-
 
 在成功登入時，我們會重新導向至`CreatingUserAccounts.aspx`頁面。 這次`UrlAuthorizationModule`允許存取該網頁，因為我們不會再為匿名。
 
@@ -161,7 +147,6 @@ ASP.NET 可讓您輕鬆地在網站定義不同的檔案和資料夾的不同的
 
 > [!NOTE]
 > `<location>`項目必須出現在組態之外`<system.web>`項目。 您必須使用個別`<location>`針對您想要覆寫其授權設定每個資源的項目。
-
 
 ### <a name="a-look-at-how-theurlauthorizationmoduleuses-the-authorization-rules-to-grant-or-deny-access"></a>了解如何`UrlAuthorizationModule`使用授權規則授與或拒絕存取
 
@@ -195,11 +180,9 @@ ASP.NET 可讓您輕鬆地在網站定義不同的檔案和資料夾的不同的
 
 此時我們是匿名的因此`Request.IsAuthenticated`會傳回`False`與我們未重新導向至`UnauthorizedAccess.aspx`。 相反地，登入頁面隨即出現。 Tito，例如 Bruce 以外的使用者身分登入。 輸入適當的認證之後, 的登入網頁我們回到的重新導向`~/Membership/CreatingUserAccounts.aspx`。 不過，此頁面才可存取 Tito，因為我們未經授權檢視它，並會立即傳回登入頁面。 這次，不過，`Request.IsAuthenticated`會傳回`True`(並`ReturnUrl`querystring 參數存在)，因此我們會重新導向至`UnauthorizedAccess.aspx`頁面。
 
-
 [![通過驗證，未經授權的使用者重新導向至 UnauthorizedAccess.aspx](user-based-authorization-vb/_static/image17.png)](user-based-authorization-vb/_static/image16.png)
 
 **圖 6**:通過驗證，未經授權的使用者重新導向至`UnauthorizedAccess.aspx`([按一下以檢視完整大小的影像](user-based-authorization-vb/_static/image18.png))
-
 
 這個自訂的工作流程會縮短 圖 2 所述的循環，以呈現更合理且簡單的使用者體驗。
 
@@ -216,7 +199,6 @@ URL 授權可讓您輕鬆地指定粗略的授權規則。 如我們所見在步
 > [!NOTE]
 > 我們即將建置的 ASP.NET 網頁會使用 GridView 控制項來顯示檔案清單。 本教學課程中 > 系列聚焦於表單驗證、 授權、 使用者帳戶和角色，因為我不想花太多時間討論 GridView 控制項的內部運作方式。 雖然本教學課程提供特定的逐步指示，設定此頁面，它不會不探討為什麼做特定選擇，或轉譯的輸出上有的效果的特定屬性的詳細資料。 如 GridView 控制項徹底的檢查，請參閱我*[使用 ASP.NET 2.0 中的資料](../../data-access/index.md)* 教學課程系列。
 
-
 首先開啟`UserBasedAuthorization.aspx`檔案中`Membership`資料夾，然後將 GridView 控制項新增至名為頁面`FilesGrid`。 從 GridView 的智慧標籤上，按一下 編輯資料行連結以啟動 欄位 對話方塊。 從這裡開始，取消核取自動產生欄位核取方塊左下角。 接下來，新增 選取 按鈕、 刪除 按鈕和兩個 BoundFields 從左上角 （CommandField 類型之下可以找到 選取和刪除按鈕）。 設定 [選取] 按鈕`SelectText`屬性，以檢視與第一個的 BoundField`HeaderText`和`DataField`屬性名稱。 設定第二個的 BoundField`HeaderText`屬性，以位元組為單位的大小及其`DataField`屬性的長度，以其`DataFormatString`屬性設{0:N0}及其`HtmlEncode`屬性設定為 False。
 
 設定 GridView 的資料行之後, 按一下 [確定] 關閉 [欄位] 對話方塊。 從 [屬性] 視窗中，設定 GridView`DataKeyNames`屬性設`FullName`。 此時 GridView 的宣告式標記看起來應該如下所示：
@@ -232,14 +214,11 @@ URL 授權可讓您輕鬆地指定粗略的授權規則。 如我們所見在步
 > [!NOTE]
 > `DirectoryInfo`並`FileInfo`類別位於[`System.IO`命名空間](https://msdn.microsoft.com/library/system.io.aspx)。 因此，您將其命名空間名稱使用這些類別名稱前加上或匯入的類別檔案的命名空間需要 (透過`Imports System.IO`)。
 
-
 請花一點時間瀏覽此頁面，透過瀏覽器。 它會顯示位於應用程式的根目錄中檔案的清單。 按一下 檢視 或 刪除的 Linkbutton 的任何會導致回傳，但會發生任何動作，因為我們至今還建立必要的事件處理常式。
-
 
 [![GridView 列出 Web 應用程式的根目錄中的檔案](user-based-authorization-vb/_static/image20.png)](user-based-authorization-vb/_static/image19.png)
 
 **圖 7**:GridView 列出 Web 應用程式的根目錄中的檔案 ([按一下以檢視完整大小的影像](user-based-authorization-vb/_static/image21.png))
-
 
 我們需要一個方法來顯示所選檔案的內容。 返回 Visual Studio，並新增名為 TextBox `FileContents` GridView 上方。 設定其`TextMode`屬性，以`MultiLine`及其`Columns`和`Rows`屬性到 95%和 10，分別。
 
@@ -251,15 +230,12 @@ URL 授權可讓您輕鬆地指定粗略的授權規則。 如我們所見在步
 
 此程式碼使用 GridView 的`SelectedValue`屬性來判斷所選檔案的完整檔案名稱。 就內部而言，`DataKeys`以取得參考集合`SelectedValue`，因此請務必設定 GridView 的`DataKeyNames`屬性名稱，如稍早在此步驟中所述。 [ `File`類別](https://msdn.microsoft.com/library/system.io.file.aspx)用來選取的檔案內容讀取到字串，然後指派給`FileContents`TextBox 的`Text`屬性，藉此顯示的頁面上選取的檔案內容。
 
-
 [![會出現在文字方塊中選取之檔案的內容](user-based-authorization-vb/_static/image23.png)](user-based-authorization-vb/_static/image22.png)
 
 **圖 8**:選取之檔案的內容會顯示在文字方塊中 ([按一下以檢視完整大小的影像](user-based-authorization-vb/_static/image24.png))
 
-
 > [!NOTE]
 > 如果您檢視檔案，其中包含 HTML 標記的內容，並再嘗試檢視或刪除檔案，您會收到`HttpRequestValidationException`時發生錯誤。 會發生這種情況是因為在回傳文字方塊的內容會傳送至 web 伺服器。 根據預設，ASP.NET 會引發`HttpRequestValidationException`每當有潛在危險的回傳內容，例如 HTML 標記，偵測到的錯誤。 若要停用這項錯誤發生，請關閉要求驗證頁面加上`ValidateRequest="false"`至`@Page`指示詞。 如需詳細資訊，以及以何種預防措施，您應該採取時的要求驗證的 「 優點先停用，讀取[要求驗證-防止指令碼攻擊](https://asp.net/learn/whitepapers/request-validation/)。
-
 
 最後，新增 GridView 的事件處理常式的下列程式碼[`RowDeleting`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx):
 
@@ -267,11 +243,9 @@ URL 授權可讓您輕鬆地指定粗略的授權規則。 如我們所見在步
 
 程式碼只會顯示要刪除之檔案的完整名稱`FileContents`TextBox*而不需要*實際刪除該檔案。
 
-
 [![按一下 [刪除] 按鈕並不會實際刪除檔案](user-based-authorization-vb/_static/image26.png)](user-based-authorization-vb/_static/image25.png)
 
 **圖 9**:按一下刪除按鈕不會實際刪除的檔案 ([按一下以檢視完整大小的影像](user-based-authorization-vb/_static/image27.png))
-
 
 在步驟 1 中，我們設定 URL 授權規則，來禁止從檢視中的頁面的匿名使用者`Membership`資料夾。 若要進一步展現微調驗證，讓我們來允許匿名使用者造訪`UserBasedAuthorization.aspx` 頁面上，但功能受限。 若要開啟此頁面的所有使用者存取，新增下列`<location>`項目`Web.config`檔案中`Membership`資料夾：
 
@@ -297,11 +271,9 @@ LoginView 的範本中的 Web 控制項不再直接從程式碼後置類別存�
 
 之後將文字方塊移至 LoginView`LoggedInTemplate`和更新網頁的程式碼參考文字方塊使用`FindControl("controlId")`模式中，瀏覽的頁面為匿名使用者。 如 [圖 10] 所示，`FileContents`則不會顯示文字方塊。 不過，仍會顯示檢視 LinkButton。
 
-
 [![LoginView 控制項只會呈現 FileContents 文字方塊中，已驗證的使用者](user-based-authorization-vb/_static/image29.png)](user-based-authorization-vb/_static/image28.png)
 
 **圖 10**:LoginView 控制項只會呈現`FileContents`文字方塊中已驗證的使用者 ([按一下以檢視完整大小的影像](user-based-authorization-vb/_static/image30.png))
-
 
 一種隱藏匿名使用者的 [檢視] 按鈕的方式是將 GridView 欄位轉換為 TemplateField。 這會產生包含檢視 LinkButton 的宣告式標記的範本。 我們可以加入 TemplateField LoginView 控制項並放置在 LoginView LinkButton `LoggedInTemplate`，藉此隱藏之匿名訪客的 [檢視] 按鈕。 若要這麼做，按一下 GridView 的智慧標籤，以啟動 [欄位] 對話方塊中的 [編輯資料行] 連結。 接下來，從左下角中的清單中選取 選取 按鈕，然後按一下 轉換為 TemplateField 連結此欄位。 如此一來，將會修改欄位的宣告式標記的來源：
 
@@ -317,11 +289,9 @@ LoginView 的範本中的 Web 控制項不再直接從程式碼後置類別存�
 
 如 [圖 11] 所示，最終結果不是，很與檢視資料行仍會顯示即使隱藏的資料行中檢視 Linkbutton。 我們將探討如何隱藏整個的 GridView 資料行 （和不只是 LinkButton） 下, 一節。
 
-
 [![LoginView 控制項隱藏檢視 Linkbutton 匿名訪客](user-based-authorization-vb/_static/image32.png)](user-based-authorization-vb/_static/image31.png)
 
 **圖 11**:LoginView 控制項隱藏檢視 Linkbutton 匿名訪客 ([按一下以檢視完整大小的影像](user-based-authorization-vb/_static/image33.png))
-
 
 ### <a name="programmatically-limiting-functionality"></a>以程式設計的方式限制功能
 
@@ -340,16 +310,13 @@ LoginView 的範本中的 Web 控制項不再直接從程式碼後置類別存�
 
 如我們所述[*的表單驗證概觀*](../introduction/an-overview-of-forms-authentication-vb.md)教學課程中，`User.Identity.Name`傳回身分識別的名稱。 這會對應至登入控制項中輸入的使用者名稱。 如果它是 Tito 瀏覽網頁，GridView 的第二個資料行的`Visible`屬性設定為`True`; 否則設定為`False`。 最後結果就是，當 Tito 以外的其他人造訪的頁面上，另一個已驗證的使用者或匿名使用者，刪除資料行則不會呈現 （請參閱 圖 12）;不過，當 Tito 造訪網頁時，刪除資料行已存在 （請參閱 圖 13）。
 
-
 [![刪除資料行是不呈現時瀏覽過的人以外 Tito （例如 Bruce)](user-based-authorization-vb/_static/image35.png)](user-based-authorization-vb/_static/image34.png)
 
 **圖 12**:刪除資料行是不呈現時瀏覽過的人以外 Tito （例如 Bruce) ([按一下以檢視完整大小的影像](user-based-authorization-vb/_static/image36.png))
 
-
 [![刪除資料行呈現 Tito](user-based-authorization-vb/_static/image38.png)](user-based-authorization-vb/_static/image37.png)
 
 **圖 13**:刪除資料行呈現 Tito ([按一下以檢視完整大小的影像](user-based-authorization-vb/_static/image39.png))
-
 
 ## <a name="step-4-applying-authorization-rules-to-classes-and-methods"></a>步驟 4：將授權規則套用至類別和方法
 
@@ -366,18 +333,14 @@ LoginView 的範本中的 Web 控制項不再直接從程式碼後置類別存�
 > [!NOTE]
 > 屬性可以套用至類別、 方法、 屬性或事件。 時新增的屬性，它必須是類別、 方法、 屬性或事件宣告陳述式的一部分。 Visual Basic 使用換行，做為陳述式分隔符號，因為屬性必須出現在同一行宣告或正上方使用行接續字元 （底線）。 在上述程式碼片段中，行接續字元用來將屬性放置於同一行及另一個方法宣告。
 
-
 如果以某種方式，Tito 以外的使用者嘗試執行`RowDeleting`事件處理常式或未驗證的使用者嘗試執行`SelectedIndexChanged`.NET 執行階段將會引發的事件處理常式， `SecurityException`。
-
 
 [![如果安全性內容未獲授權執行方法，會擲回安全性例外狀況](user-based-authorization-vb/_static/image41.png)](user-based-authorization-vb/_static/image40.png)
 
 **圖 14**:安全性內容無權執行此方法中，如果`SecurityException`就會擲回 ([按一下以檢視完整大小的影像](user-based-authorization-vb/_static/image42.png))
 
-
 > [!NOTE]
 > 若要允許存取類別或方法的多個安全性內容，裝飾的類別或方法具有`PrincipalPermission`針對每個安全性內容的屬性。 也就是說，若要讓 Tito 以及 Bruce 執行`RowDeleting`事件處理常式，加入*兩個*`PrincipalPermission`屬性：
-
 
 [!code-vb[Main](user-based-authorization-vb/samples/sample23.vb)]
 

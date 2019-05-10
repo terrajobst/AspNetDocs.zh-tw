@@ -8,12 +8,12 @@ ms.date: 03/29/2013
 ms.assetid: eeef9f73-6de3-49f9-b50b-9af22108f2ce
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: abedf2dbf6fbc632b1857bf447f70aeb8f826d81
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9186915df6d5de6bc20dfc0adabc54056d2f3a8c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410821"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113860"
 ---
 # <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>教學課程：開始使用 SignalR 1.x 與 MVC 4
 
@@ -22,7 +22,6 @@ ms.locfileid: "59410821"
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 本教學課程會示範如何使用 ASP.NET SignalR 建立即時聊天應用程式。 您會將 SignalR 加入至 MVC 4 應用程式，並建立交談檢視，以傳送和顯示訊息。
-
 
 ## <a name="overview"></a>總覽
 
@@ -76,7 +75,6 @@ ms.locfileid: "59410821"
 
 > [!NOTE]
 > 如果您使用 Visual Studio 2012，並且已安裝[ASP.NET 和 Web 工具 2012.2 更新](../../../visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw.md#_Installation)，您可以使用新的 SignalR 項目範本建立中樞類別。 若要這樣做，請以滑鼠右鍵按一下**集線器**資料夾中，按一下 **新增 |新的項目**，選取**SignalR Hub 類別 (v1)**，並加以命名**ChatHub.cs**。
-
 
 1. 中的程式碼取代**ChatHub**為下列程式碼的類別。
 
@@ -151,7 +149,6 @@ SignalR 交談應用程式將示範兩個基本的 SignalR 開發工作： 建�
 > [!NOTE]
 > 在 jQuery 中的伺服器類別和其成員的參考會處於駝峰式大小寫。 程式碼範例會參考 C# **ChatHub**在 jQuery 中做為類別**chatHub**。 如果您想要參考`ChatHub`類別在 jQuery 中使用傳統的 pascal 命名法大小寫，如同在 C# 中，編輯 ChatHub.cs 類別檔案。 新增`using`陳述式來參考`Microsoft.AspNet.SignalR.Hubs`命名空間。 然後新增`HubName`屬性設定為`ChatHub`類別，例如`[HubName("ChatHub")]`。 最後，更新您的 jQuery 參考`ChatHub`類別。
 
-
 下列程式碼示範如何建立指令碼中的回呼函式。 在伺服器上的中樞類別會呼叫此函式可將內容更新推送至每個用戶端。 選擇性呼叫`htmlEncode`函式會顯示為 HTML 的辦法之前先顯示在頁面中，做為防止指令碼資料隱碼攻擊的方式編碼的訊息內容。
 
 [!code-html[Main](tutorial-getting-started-with-signalr-and-mvc-4/samples/sample7.html)]
@@ -160,7 +157,6 @@ SignalR 交談應用程式將示範兩個基本的 SignalR 開發工作： 建�
 
 > [!NOTE]
 > 這個方法可確保事件處理常式執行之前，會建立連接。
-
 
 [!code-javascript[Main](tutorial-getting-started-with-signalr-and-mvc-4/samples/sample8.js)]
 

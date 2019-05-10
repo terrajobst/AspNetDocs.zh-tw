@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: 6b09413a-6d6a-425a-87c9-629f91b91b28
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: e02e15a8955fa42692fac486dadfa426540295f7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 20b99cbe57b5dfa623205838a5929733a6c2d70d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59387467"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112991"
 ---
 # <a name="part-5-edit-forms-and-templating"></a>第 5 部分：編輯表單和範本
 
@@ -24,7 +24,6 @@ ms.locfileid: "59387467"
 > MVC Music 市集是銷售線上音樂 album 和實作基本的網站管理、 使用者登入時，和 「 購物車 」 功能的輕量級的範例存放區實作。
 > 
 > 本教學課程系列會詳細說明所有建置 ASP.NET MVC Music 市集範例應用程式所採取的步驟。 第 5 部分涵蓋編輯表單和範本。
-
 
 在過去的章節中，我們已從資料庫載入資料，並顯示它。 在本章中，我們也會啟用編輯的資料。
 
@@ -260,7 +259,6 @@ Razor 的@helper語法使得它很容易就能建立您自己的 helper 函式�
 ![](mvc-music-store-part-5/_static/image18.png)
 
 注意:這會顯示簡單的情況下，建立和使用協助程式在一個檢視中。 若要深入了解建立可供您在整個網站的協助程式，請參閱我部落格文章： [http://bit.ly/mvc3-helper-options](http://bit.ly/mvc3-helper-options)
-
 
 > [!div class="step-by-step"]
 > [上一頁](mvc-music-store-part-4.md)

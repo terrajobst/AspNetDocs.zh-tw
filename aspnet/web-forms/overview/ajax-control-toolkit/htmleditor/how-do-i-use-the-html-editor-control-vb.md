@@ -8,12 +8,12 @@ ms.date: 05/12/2009
 ms.assetid: 32ec9321-7c8c-4b0f-8234-99acb56df6b5
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5fa19ef52c4538f0db427eaa9a79b074c85001ac
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 20f8a2f8148bc658370ba1a939ebf1b62d376bc0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415865"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115482"
 ---
 # <a name="how-do-i-use-the-html-editor-control-vb"></a>如何使用 HTML 編輯器控制項？ (VB)
 
@@ -21,22 +21,17 @@ by [Microsoft](https://github.com/microsoft)
 
 > HTMLEditor 是 ASP.NET AJAX 控制項，可讓您輕鬆地建立和編輯工具列上按鈕的 HTML 內容。
 
-
 本教學課程的目標是為您提供包含使用 AJAX Control Toolkit 的 HTML 編輯器控制項的概觀。 HTML 編輯器包括變更字型大小、 選取字型、 變更背景色彩、 修改前景色彩，選項新增連結，加入影像，變更文字對齊方式，並執行剪下、 複製和貼上 （請參閱 圖 1） 的作業。
-
 
 [![HTML 編輯器](how-do-i-use-the-html-editor-control-vb/_static/image1.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image1.png)
 
 **圖 01**:HTML 編輯器 ([按一下以檢視完整大小的影像](how-do-i-use-the-html-editor-control-vb/_static/image2.png))
 
-
 HTML 編輯器可讓您輸入使用的設計模式的內容，或者您可以直接輸入 HTML。 系統也會提供選項，即可預覽您的 HTML 內容 （請參閱 圖 2）。
-
 
 [![設計、 HTML 和預覽按鈕](how-do-i-use-the-html-editor-control-vb/_static/image2.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image3.png)
 
 **圖 02**:設計、 HTML 和預覽按鈕 ([按一下以檢視完整大小的影像](how-do-i-use-the-html-editor-control-vb/_static/image4.png))
-
 
 在本教學課程中，您將學習如何顯示 HTML 編輯器、 如何自訂工具列按鈕出現在 HTML 編輯器中，以及如何避免跨網站指令碼攻擊。
 
@@ -48,11 +43,9 @@ HTML 編輯器可讓您輸入使用的設計模式的內容，或者您可以直
 
 HTML 編輯器控制項位於工具箱 中的 AJAX Control Toolkit 控制項的其餘部分。 它會命名為編輯器控制項 （請參閱 [圖 3]）。
 
-
 [![HTML 編輯器控制項](how-do-i-use-the-html-editor-control-vb/_static/image3.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image5.png)
 
 **圖 03**:HTML 編輯器控制項 ([按一下以檢視完整大小的影像](how-do-i-use-the-html-editor-control-vb/_static/image6.png))
-
 
 您拖曳到頁面的 HTML 編輯器之後，您可以設定其屬性，屬性工作表中。 例如，您通常想要設定寬度和高度屬性。 列表 1 包含 ASP.NET 網頁，其中包含 HTML 編輯器的來源。
 
@@ -62,11 +55,9 @@ HTML 編輯器控制項位於工具箱 中的 AJAX Control Toolkit 控制項的�
 
 [列表 1] 頁面包含 HTML 編輯器控制項、 按鈕控制項和常值的控制項。 當您按一下按鈕時，內容的 HTML 編輯器中會出現在常值控制項 （請參閱 圖 4）。
 
-
 [![提交表單使用 HTML 編輯器](how-do-i-use-the-html-editor-control-vb/_static/image4.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image7.png)
 
 **圖 04**:提交表單使用 HTML 編輯器 ([按一下以檢視完整大小的影像](how-do-i-use-the-html-editor-control-vb/_static/image8.png))
-
 
 HTML 編輯器內容屬性用來擷取輸入到 [HTML 編輯器] 中的 HTML 內容。 請注意，此 HTML 內容可以包含 JavaScript。 在下一步 區段中，我們會討論如何防止 JavaScript 插入式攻擊。
 
@@ -74,11 +65,9 @@ HTML 編輯器內容屬性用來擷取輸入到 [HTML 編輯器] 中的 HTML 內
 
 您可以自訂完全的按鈕會出現在編輯器中。 例如，您可能想要移除以防止使用者切換至 HTML 模式的 HTML 編輯器的 [HTML] 索引標籤。 或者，您可能想要移除字型的大小下拉式清單，以防止使用者在論壇中建立極大的文字張貼訊息 （請參閱 [圖 5]）。
 
-
 [![自訂的 HTML 編輯器](how-do-i-use-the-html-editor-control-vb/_static/image5.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image9.png)
 
 **圖 05**:自訂 HTML 編輯器 ([按一下以檢視完整大小的影像](how-do-i-use-the-html-editor-control-vb/_static/image10.png))
-
 
 您可以衍生自基底的編輯器類別的新的 HTML 編輯器自訂工具列按鈕。 例如，列表 2 中的自訂編輯器只會包含粗體和斜體的工具列按鈕。 已移除其他所有的工具列按鈕。 此外，[HTML] 索引標籤已經移除了編輯器的底部 （但仍然會有的設計和預覽索引標籤）。
 

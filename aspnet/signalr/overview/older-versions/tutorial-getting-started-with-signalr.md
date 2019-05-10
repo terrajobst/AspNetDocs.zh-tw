@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: fdc3599a-5217-44c1-951f-0eec9812dce7
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 288f5017acde5a103460ace688933609fba0b02c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 87a90b47ae30bee43e0b0c1e078597db54b8e67d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391022"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113863"
 ---
 # <a name="tutorial-getting-started-with-signalr-1x"></a>教學課程：開始使用 SignalR 1.x
 
@@ -22,7 +22,6 @@ ms.locfileid: "59391022"
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 此教學課程會示範如何使用 SignalR 建立即時聊天應用程式。 將 SignalR 加入空白的 ASP.NET web 應用程式，並建立 HTML 網頁來傳送，並顯示訊息。
-
 
 ## <a name="overview"></a>總覽
 
@@ -148,7 +147,6 @@ HTML 網頁中的程式碼範例示範如何使用 SignalR jQuery 程式庫與 S
 > [!NOTE]
 > 在 jQuery 中的伺服器類別和其成員的參考會處於駝峰式大小寫。 程式碼範例會參考 C# **ChatHub**在 jQuery 中做為類別**chatHub**。
 
-
 下列程式碼是您在指令碼中建立回呼函式的方法。 在伺服器上的中樞類別會呼叫此函式可將內容更新推送至每個用戶端。 HTML 編碼內容，顯示它之前的兩行是選擇性的而且顯示簡單的方式，以避免指令碼資料隱碼攻擊。
 
 [!code-html[Main](tutorial-getting-started-with-signalr/samples/sample7.html)]
@@ -157,7 +155,6 @@ HTML 網頁中的程式碼範例示範如何使用 SignalR jQuery 程式庫與 S
 
 > [!NOTE]
 > 這種方法可確保事件處理常式執行之前，會建立連接。
-
 
 [!code-javascript[Main](tutorial-getting-started-with-signalr/samples/sample8.js)]
 

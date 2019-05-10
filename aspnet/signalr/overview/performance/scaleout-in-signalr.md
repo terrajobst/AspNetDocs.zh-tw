@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 7e781fc1-1c1f-45a8-bc1d-338e96dbe9c9
 msc.legacyurl: /signalr/overview/performance/scaleout-in-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 0d17308d1e97279c0870ea02933a42400ef338c9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 14dc22f99a43b566903c59fb23b7d419350f4a25
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411549"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113844"
 ---
 # <a name="introduction-to-scaleout-in-signalr"></a>SignalR 的向外延展簡介
 
@@ -37,7 +37,6 @@ ms.locfileid: "59411549"
 > ## <a name="questions-and-comments"></a>提出問題或意見
 >
 > 您喜歡本教學課程中的方式，和我們可以改善在頁面底部的註解中，歡迎留下意見反應。 如果您有不直接相關的教學課程中的問題，您可以張貼他們[ASP.NET SignalR 論壇](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或是[StackOverflow.com](http://stackoverflow.com/)。
-
 
 一般情況下，有兩種方式可調整的 web 應用程式：*相應放大*並*相應放大*。
 

@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: b8283698-7b82-42a8-8d83-3aeb18ca7fcc
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
 msc.type: authoredcontent
-ms.openlocfilehash: 1f2dc0fea9eeca64b9389881470353c5cca473e0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: bc7bb676a71af4ec3451aa3adf3c03ce3b5200d5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396313"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114759"
 ---
 # <a name="web-deployment-in-the-enterprise"></a>企業中的 Web 部署
 
@@ -24,7 +24,6 @@ ms.locfileid: "59396313"
 > 本教學課程說明如何符合許多您管理的企業級 web 應用程式開發、 測試、 預備及生產環境部署時會遇到的挑戰。 本教學課程包含參考解決方案以及概念和工作導向的內容，引導您完成各種常見的工作和程序的混合。
 > 
 > 這些教學課程義大利文翻譯，請瀏覽[ http://www.lucamorelli.it ](http://www.lucamorelli.it)。
-
 
 ## <a name="enterprise-deployment-challenges"></a>企業部署方面的挑戰
 

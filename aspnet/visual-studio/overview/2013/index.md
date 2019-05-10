@@ -8,17 +8,16 @@ ms.date: 06/25/2013
 ms.assetid: 646edfc7-dc62-4fa0-84c2-926996c92aeb
 msc.legacyurl: /visual-studio/overview/2013
 msc.type: chapter
-ms.openlocfilehash: c7c0de7ade31e43e3b43495cb6755608872d506d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0b1dab287735de3c4804a6e6a520a2ae87113e9e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412745"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113108"
 ---
 # <a name="aspnet-and-visual-studio-2013"></a>ASP.NET 和 Visual Studio 2013
 
 > 開發使用 Visual Studio 2013 的 ASP.NET web 應用程式
-
 
 - [在 Visual Studio 2013 中建立 ASP.NET Web 專案](creating-web-projects-in-visual-studio.md)
 - [Visual Studio 2013 Web 編輯器功能 - 瀏覽器連結](visual-studio-2013-web-editor-features-browser-link.md)

@@ -8,17 +8,16 @@ ms.date: 10/05/2011
 ms.assetid: 98c78dad-22bf-45cd-807e-c2f3f59011b9
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext
 msc.type: chapter
-ms.openlocfilehash: 3b3efb3d5356d6009b86b93405de2cd8d8cddd43
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e791cba586f71ffae251b007b14588e4c1e818f1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404230"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116132"
 ---
 # <a name="aspnet-45"></a>ASP.NET 4.5
 
 > 關於 ASP.NET 4.5 中引進了新的 Web Form 功能。
-
 
 - [強型別資料控制項](aspnet-vnext-videos-strongly-typed-data-controls.md)
 - [模型繫結第 1 節：選取資料](aspnet-vnext-videos-model-binding-part-1-selecting-data.md)

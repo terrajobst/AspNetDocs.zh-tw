@@ -8,12 +8,12 @@ ms.date: 04/10/2013
 ms.assetid: ab7b2554-956a-4f6d-b2a0-4ae0c62e8580
 msc.legacyurl: /signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: a63bca69f137a4d4765db6a4925ff027c9d8bf7d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 68908be34f6b010e512677fe5f5e31bfdefab592
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403580"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116059"
 ---
 # <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>教學課程：使用 SignalR 1.x 進行伺服器廣播
 
@@ -26,7 +26,6 @@ ms.locfileid: "59403580"
 > 您會在本教學課程中建立的應用程式會模擬股票行情即時看板，伺服器廣播功能的一般案例。
 > 
 > 在本教學課程的註解是歡迎畫面。 如果您有不直接相關的教學課程中的問題，您可以張貼他們[ASP.NET SignalR 論壇](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或是[StackOverflow.com](http://stackoverflow.com)。
-
 
 ## <a name="overview"></a>總覽
 
@@ -54,7 +53,6 @@ ms.locfileid: "59403580"
 
 > [!NOTE]
 > 如果您不想要逐步建置應用程式的步驟，您可以在新安裝 SignalR.Sample 封裝**空的 ASP.NET Web 應用程式**專案，然後執行下列步驟以取得說明程式碼的讀取。 本教學課程的第一個部分涵蓋 SignalR.Sample 程式碼的子集，並第二個部分說明 SignalR.Sample 封裝中的其他功能的主要功能。
-
 
 <a id="prerequisites"></a>
 

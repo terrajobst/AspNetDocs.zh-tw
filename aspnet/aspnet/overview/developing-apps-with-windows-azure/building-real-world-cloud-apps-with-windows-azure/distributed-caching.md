@@ -8,12 +8,12 @@ ms.date: 07/20/2015
 ms.assetid: 406518e9-3817-49ce-8b90-e82bc461e2c0
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 msc.type: authoredcontent
-ms.openlocfilehash: 61837d0087a297b6a677eb3503ce3e6c13d5e0ac
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: de4be20ed81ae356e0aa4e90e2ab61a6e25212a0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59397470"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118826"
 ---
 # <a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>分散式快取 （建置真實世界的雲端應用程式與 Azure）
 
@@ -22,7 +22,6 @@ ms.locfileid: "59397470"
 [下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **建置真實世界雲端應用程式與 Azure**電子書以 Scott Guthrie 所開發的簡報為依據。 它說明 13 的模式，並可協助您的作法是成功開發適用於雲端的 web 應用程式。 電子書的相關資訊，請參閱[第 1 章](introduction.md)。
-
 
 上一章探討了暫時性錯誤處理和快取的斷路器策略所述。 這一章提供更多的背景，有關快取，包括使用它時，使用它，常見模式的時機，以及如何在 Azure 中加以實作。
 

@@ -8,12 +8,12 @@ ms.date: 03/26/2015
 ms.assetid: d4911cb3-1afb-4805-b860-10818c4b1280
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 165343fd20b92becee1956c7a19870219323e073
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ebdae3f4d1261407feecd50ec81b3f329b2a3c0c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409391"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117136"
 ---
 # <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>使用登入、電子郵件確認和密碼重設建立安全的 ASP.NET MVC 5 Web 應用程式 (C#)
 
@@ -23,7 +23,6 @@ ms.locfileid: "59409391"
 > 
 > 本教學課程以寫入[Rick Anderson](https://blogs.msdn.com/rickAndy) (Twitter: [ @RickAndMSFT ](https://twitter.com/RickAndMSFT) )。
 
-
 <a id="createMvc"></a>
 ## <a name="create-an-aspnet-mvc-app"></a>建立 ASP.NET MVC 應用程式
 
@@ -31,7 +30,6 @@ ms.locfileid: "59409391"
 
 > [!NOTE]
 > 警告：您必須安裝[Visual Studio 2013 Update 3](https://go.microsoft.com/fwlink/?LinkId=390465)或更新版本，才能完成本教學課程。
-
 
 1. 建立新的 ASP.NET Web 專案，然後選取 [MVC] 範本。 Web Form 也支援 ASP.NET 身分識別，因此您可以依照類似的步驟，在 web form 應用程式。  
     ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image1.png)
@@ -78,7 +76,6 @@ ms.locfileid: "59409391"
 
 > [!WARNING]
 > 安全性-機密資料絕不儲存在原始程式碼中。 帳戶和認證會儲存在 appSetting 中。 在 Azure 上，您可以安全地儲存這些值在 **[設定](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** 在 Azure 入口網站中的索引標籤。 請參閱[最佳做法將密碼和其他機密資料部署到 ASP.NET 和 Azure](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)。
-
 
 ### <a name="enable-email-confirmation-in-the-account-controller"></a>啟用帳戶控制器中的電子郵件確認
 

@@ -8,12 +8,12 @@ ms.date: 07/18/2007
 ms.assetid: 675531a7-cb54-4dd6-89ac-2636e4c285a5
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 297496e590caf9c8ded83cb16b5fef1dfc542dc7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8ba750e8a07a7a88822116d2779633bf253f48d2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381382"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108845"
 ---
 # <a name="updating-the-tableadapter-to-use-joins-c"></a>更新 TableAdapter 以使用 JOIN (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59381382"
 [下載程式碼](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_69_CS.zip)或[下載 PDF](updating-the-tableadapter-to-use-joins-cs/_static/datatutorial69cs1.pdf)
 
 > 使用資料庫時通常會要求資料，則會分散到多個資料表。 若要從兩個不同資料表中擷取資料中，我們可以使用相互關聯子查詢或聯結作業。 在本教學課程我們再看看如何建立包含聯結，在其主查詢的 TableAdapter 比較相互關聯子查詢和聯結語法。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -38,13 +37,11 @@ ms.locfileid: "59381382"
 
 請記得，`ProductsTableAdapter`中的第一個教學課程中建立`Northwind`資料集使用相互關聯子查詢來重新顯示每個產品 s 對應類別目錄和供應商的名稱。 `ProductsTableAdapter` s 主查詢如下所示。
 
-
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-cs/samples/sample1.sql)]
 
 這兩個相互關聯子查詢-`(SELECT CategoryName FROM Categories WHERE Categories.CategoryID = Products.CategoryID)`並`(SELECT CompanyName FROM Suppliers WHERE Suppliers.SupplierID = Products.SupplierID)`-會`SELECT`查詢傳回的每項產品的單一值做為額外的資料行中的外部`SELECT`陳述式 s 資料行清單。
 
 或者，`JOIN`可用來傳回每個產品 s 供應商和類別名稱。 下列查詢會傳回與上述的其中一個，相同的輸出，但使用`JOIN`s 取代子查詢：
-
 
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-cs/samples/sample2.sql)]
 
@@ -53,45 +50,35 @@ A`JOIN`合併從一個資料表記錄與根據一些準則的另一個資料表�
 > [!NOTE]
 > `JOIN` 查詢關聯式資料庫中的資料時，通常會使用 s。 如果您是新手`JOIN`語法或需要稍微重溫一下其使用方式，d 建議[SQL Join 的教學課程](http://www.w3schools.com/sql/sql_join.asp)在[W3 學校](http://www.w3schools.com/)。 也值得一讀都[`JOIN`基本概念](https://msdn.microsoft.com/library/ms191517.aspx)並[子查詢基本概念](https://msdn.microsoft.com/library/ms189575.aspx)區段[SQL 線上叢書 》](https://msdn.microsoft.com/library/ms130214.aspx)。
 
-
 因為`JOIN`s 和相互關聯子查詢都可用來擷取其他資料表中的相關的資料，許多開發人員仍正準備碰上其標頭，並想要使用哪個方法。 所有的 SQL 專家我 ve 談過要說大致上相同的作業，它不 t 是很重要效能方面，SQL Server 將會產生大致上相同的執行計畫。 然後，其建議中，是使用您和您的小組是最熟悉的技巧。 它需要注意的是之後 imparting 這項建議, 這些專家立即 express 其喜好設定`JOIN`s 透過相互關聯子查詢。
 
 建置時使用具類型資料集的資料存取層，這些工具適合使用子查詢時。 特別的是，TableAdapter 的精靈將無法自動產生對應`INSERT`， `UPDATE`，和`DELETE`陳述式，如果主要的查詢包含任何`JOIN`s，但將會自動產生這些陳述式時相互關聯子查詢會使用。
 
 若要探索這個缺點，建立暫存類型中的資料集`~/App_Code/DAL`資料夾。 在 TableAdapter 組態精靈 期間選擇使用特定 SQL 陳述式，並輸入下列`SELECT`查詢 （請參閱 圖 1）：
 
-
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-cs/samples/sample3.sql)]
-
 
 [![輸入主要的查詢包含聯結](updating-the-tableadapter-to-use-joins-cs/_static/image2.png)](updating-the-tableadapter-to-use-joins-cs/_static/image1.png)
 
 **圖 1**:輸入主要查詢的 Contains `JOIN` s ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image3.png))
 
-
 根據預設，TableAdapter 將會自動建立`INSERT`， `UPDATE`，和`DELETE`主要查詢為基礎的陳述式。 如果您按一下 [進階] 按鈕，您可以看到這項功能已啟用。 儘管這項設定，TableAdapter 將無法建立`INSERT`， `UPDATE`，並`DELETE`陳述式因為主要的查詢中包含`JOIN`。
-
 
 ![輸入主要的查詢包含聯結](updating-the-tableadapter-to-use-joins-cs/_static/image4.png)
 
 **圖 2**:輸入包含的主查詢`JOIN`s
 
-
 按一下 完成 以完成精靈。 此時您資料集設計工具會包含單一 TableAdapter 與資料行的 datatable 中傳回的欄位的每個`SELECT`查詢 s 資料行清單。 這包括`CategoryName`和`SupplierName`，如 圖 3 所示。
-
 
 ![DataTable 資料行清單中傳回每個欄位包含資料行](updating-the-tableadapter-to-use-joins-cs/_static/image5.png)
 
 **圖 3**:DataTable 資料行清單中傳回每個欄位包含資料行
 
-
 TableAdapter 的 DataTable 有適當的資料行，缺少值及其`InsertCommand`， `UpdateCommand`，和`DeleteCommand`屬性。 若要確認這一點，按一下設計工具的 TableAdapter 上，然後移至 [屬性] 視窗。 那里，您會看到`InsertCommand`， `UpdateCommand`，和`DeleteCommand`屬性會設為 （無）。
-
 
 [![InsertCommand、 UpdateCommand 和 DeleteCommand 屬性設定為 （無）](updating-the-tableadapter-to-use-joins-cs/_static/image7.png)](updating-the-tableadapter-to-use-joins-cs/_static/image6.png)
 
 **圖 4**:`InsertCommand`， `UpdateCommand`，並`DeleteCommand`屬性設定為 [（無）] ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image8.png))
-
 
 若要解決這個缺點，我們可以手動提供的 SQL 陳述式和參數`InsertCommand`， `UpdateCommand`，和`DeleteCommand`透過 [屬性] 視窗的屬性。 或者，我們可以藉由設定 TableAdapter s 主要查詢，以啟動*未*包含任何`JOIN`s。 這可讓`INSERT`， `UPDATE`，和`DELETE`會為我們自動產生的陳述式。 完成精靈之後，我們無法以手動方式更新 tableadapter`SelectCommand`從 [屬性] 視窗，使其包含`JOIN`語法。
 
@@ -107,14 +94,11 @@ TableAdapter 的 DataTable 有適當的資料行，缺少值及其`InsertCommand
 
 首先開啟`NorthwindWithSprocs`中的資料集`~/App_Code/DAL`資料夾。 以滑鼠右鍵按一下設計工具上，從操作功能表中，選取 [新增] 選項，挑選 TableAdapter 的功能表項目。 這會啟動 [TableAdapter 組態精靈]。 如 圖 5 說明，讓精靈建立新的預存程序，並按一下 下一步。 建立新的重新整理程式中，預存程序，從 [TableAdapter] s 精靈，請參閱[建立新預存程序的輸入資料集 Tableadapter](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)教學課程。
 
-
 [![選取 建立新預存程序選項](updating-the-tableadapter-to-use-joins-cs/_static/image10.png)](updating-the-tableadapter-to-use-joins-cs/_static/image9.png)
 
 **圖 5**:選取 建立新的預存程序選項 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image11.png))
 
-
 使用下列項目`SELECT`TableAdapter s 主查詢的陳述式：
-
 
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-cs/samples/sample4.sql)]
 
@@ -122,27 +106,21 @@ TableAdapter 的 DataTable 有適當的資料行，缺少值及其`InsertCommand
 
 下列步驟可讓我們來命名的 TableAdapter s 預存程序。 使用名稱`Employees_Select`， `Employees_Insert`， `Employees_Update`，和`Employees_Delete`，如 [圖 6] 所示。
 
-
 [![名稱的 TableAdapter s 預存程序](updating-the-tableadapter-to-use-joins-cs/_static/image13.png)](updating-the-tableadapter-to-use-joins-cs/_static/image12.png)
 
 **圖 6**:命名 TableAdapter s 預存程序 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image14.png))
 
-
 最後一個步驟會提示我們輸入來命名的 TableAdapter 的方法。 使用`Fill`和`GetEmployees`做為方法名稱。 也請務必將更新直接傳送至資料庫 (GenerateDBDirectMethods) 核取方塊已核取的建立方法。
-
 
 [![名稱的 TableAdapter 的方法填滿和 GetEmployees](updating-the-tableadapter-to-use-joins-cs/_static/image16.png)](updating-the-tableadapter-to-use-joins-cs/_static/image15.png)
 
 **圖 7**:命名的 tableadapter 方法`Fill`並`GetEmployees`([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image17.png))
 
-
 完成精靈之後，花點時間檢查資料庫中的預存程序。 您應該會看到四個新的： `Employees_Select`， `Employees_Insert`， `Employees_Update`，和`Employees_Delete`。 接下來，檢查`EmployeesDataTable`和`EmployeesTableAdapter`剛建立。 DataTable 包含主查詢所傳回的每個欄位的資料行。 TableAdapter 上按一下，然後移至 [屬性] 視窗。 那里，您會看到`InsertCommand`， `UpdateCommand`，和`DeleteCommand`屬性已正確設定來呼叫對應的預存程序。
-
 
 [![TableAdapter 包含插入、 更新和刪除功能](updating-the-tableadapter-to-use-joins-cs/_static/image19.png)](updating-the-tableadapter-to-use-joins-cs/_static/image18.png)
 
 **圖 8**:TableAdapter 包含插入、 更新和刪除功能 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image20.png))
-
 
 插入、 更新和刪除自動建立的預存程序和`InsertCommand`， `UpdateCommand`，並`DeleteCommand`正確設定的屬性，我們已準備好自訂`SelectCommand`s 預存程序傳回其他每個員工 s manager 的相關資訊。 具體來說，我們需要更新`Employees_Select`預存程序，使用`JOIN`，並傳回 manager s`FirstName`和`LastName`值。 更新預存程序之後，我們必須更新 DataTable，使其包含這些額外的資料行。 我們將會處理這兩項工作在步驟 2 和 3。
 
@@ -150,16 +128,13 @@ TableAdapter 的 DataTable 有適當的資料行，缺少值及其`InsertCommand
 
 開始請先移至 [伺服器總管] 中，向下切入至 [Northwind 資料庫 s 預存程序] 資料夾中，並開啟`Employees_Select`預存程序。 如果看不到此預存程序，以滑鼠右鍵按一下 預存程序 資料夾，並選擇 重新整理。 更新預存程序，使其使用`LEFT JOIN`先傳回 manager s 和姓氏：
 
-
 [!code-sql[Main](updating-the-tableadapter-to-use-joins-cs/samples/sample5.sql)]
 
 在更新之後`SELECT`陳述式中，移至 檔案 功能表，然後選擇 儲存的變更儲存`Employees_Select`。 或者，您可以按一下工具列中的 [儲存] 圖示，或按 Ctrl + S。 儲存您的變更之後，以滑鼠右鍵按一下`Employees_Select`預存程序，在 伺服器總管，然後選擇 執行。 這會執行預存程序，並在 輸出 視窗中顯示其結果 （請參閱 圖 9）。
 
-
 [![預存程序結果會顯示在 [輸出] 視窗](updating-the-tableadapter-to-use-joins-cs/_static/image22.png)](updating-the-tableadapter-to-use-joins-cs/_static/image21.png)
 
 **圖 9**:預存程序結果會顯示在 [輸出] 視窗中 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image23.png))
-
 
 ## <a name="step-3-updating-the-datatable-s-columns"></a>步驟 3：更新資料表 s 資料行
 
@@ -172,26 +147,21 @@ TableAdapter 的 DataTable 有適當的資料行，缺少值及其`InsertCommand
 
 以滑鼠右鍵按一下啟動`EmployeesTableAdapter`並從內容功能表中選取設定。 這會顯示 TableAdapter 組態精靈，它會列出用於選取、 插入、 更新和刪除，以及它們的傳回值和參數 （如果有的話） 的預存程序。 [圖 10] 顯示此精靈。 這裡我們可以看到`Employees_Select`預存程序現在會傳回`ManagerFirstName`和`ManagerLastName`欄位。
 
-
 [![精靈顯示更新的資料行清單中，針對 Employees_Select 預存程序](updating-the-tableadapter-to-use-joins-cs/_static/image25.png)](updating-the-tableadapter-to-use-joins-cs/_static/image24.png)
 
 **圖 10**:精靈會顯示更新資料行清單，如`Employees_Select`預存程序 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image26.png))
 
-
 按一下 [完成] 來完成精靈。 DataSet 設計工具中，返回`EmployeesDataTable`包含兩個額外的資料行：`ManagerFirstName`和`ManagerLastName`。
-
 
 [![EmployeesDataTable 包含兩個新的資料行](updating-the-tableadapter-to-use-joins-cs/_static/image28.png)](updating-the-tableadapter-to-use-joins-cs/_static/image27.png)
 
 **圖 11**:`EmployeesDataTable`包含兩個新資料行 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image29.png))
-
 
 為了說明，更新`Employees_Select`預存程序作用中，插入、 更新和刪除的 TableAdapter 的功能都仍運作正常，讓建立網頁，可讓使用者檢視和刪除員工。 建立這類頁面之前，不過，我們必須先建立新的類別中的員工所使用的商務邏輯層`NorthwindWithSprocs`資料集。 在步驟 4 中，我們將建立`EmployeesBLLWithSprocs`類別。 在步驟 5 中，我們將使用此類別從 ASP.NET 頁面。
 
 ## <a name="step-4-implementing-the-business-logic-layer"></a>步驟 4：實作商務邏輯層
 
 建立新的類別檔案中`~/App_Code/BLL`名為資料夾`EmployeesBLLWithSprocs.cs`。 這個類別會模仿現有的語意`EmployeesBLL`類別，這個新其中一個提供較少的方法，並使用`NorthwindWithSprocs`資料集 (而不是`Northwind`資料集)。 將下列程式碼加入 `EmployeesBLLWithSprocs` 類別。
-
 
 [!code-csharp[Main](updating-the-tableadapter-to-use-joins-cs/samples/sample6.cs)]
 
@@ -203,39 +173,31 @@ TableAdapter 的 DataTable 有適當的資料行，缺少值及其`InsertCommand
 
 設定要使用 ObjectDataSource`EmployeesBLLWithSprocs`類別，並從 選取和刪除索引標籤，確定`GetEmployees`和`DeleteEmployee`方法會從下拉式清單中選取。 按一下 [完成] 以完成 ObjectDataSource 的組態。
 
-
 [![設定使用 EmployeesBLLWithSprocs 類別 ObjectDataSource](updating-the-tableadapter-to-use-joins-cs/_static/image31.png)](updating-the-tableadapter-to-use-joins-cs/_static/image30.png)
 
 **圖 12**:設定要使用 ObjectDataSource`EmployeesBLLWithSprocs`類別 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image32.png))
-
 
 [![具有 ObjectDataSource 使用 GetEmployees 和 DeleteEmployee 方法](updating-the-tableadapter-to-use-joins-cs/_static/image34.png)](updating-the-tableadapter-to-use-joins-cs/_static/image33.png)
 
 **圖 13**:ObjectDataSource 使用了`GetEmployees`並`DeleteEmployee`方法 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image35.png))
 
-
 Visual Studio 會加入至 GridView BoundField 的每個`EmployeesDataTable`s 資料行。 移除所有除了這些 BoundFields `Title`， `LastName`， `FirstName`， `ManagerFirstName`，並`ManagerLastName`並重新命名`HeaderText`姓氏、 名字、 Manager s 第一個名稱，最後四個 BoundFields 屬性和管理員 s 姓氏，分別。
 
 若要允許從這個頁面刪除員工的使用者，我們需要做兩件事。 首先，指示 GridView，以檢查它的智慧標籤的 啟用刪除選項提供刪除的功能。 第二，變更 ObjectDataSource s `OldValuesParameterFormatString` ObjectDataSource 精靈設定屬性的值 (`original_{0}`) 為其預設值 (`{0}`)。 進行這些變更之後，您的 GridView 和 ObjectDataSource s 宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](updating-the-tableadapter-to-use-joins-cs/samples/sample7.aspx)]
 
 造訪透過瀏覽器來測試頁面。 如 [圖 14] 所示，此頁面會列出每一位員工和 （假設有的話） 的他或她 manager s 名稱。
 
-
 [![Employees_Select 參與預存程序會傳回經理的名稱](updating-the-tableadapter-to-use-joins-cs/_static/image37.png)](updating-the-tableadapter-to-use-joins-cs/_static/image36.png)
 
 **圖 14**:`JOIN`中`Employees_Select`預存程序傳回的管理員名稱 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image38.png))
 
-
 按一下 [刪除] 按鈕會啟動刪除最後的執行中的工作流程，`Employees_Delete`預存程序。 不過，嘗試`DELETE`預存程序的陳述式會失敗，因為外部索引鍵條件約束違規情形 （請參閱 圖 15）。 具體來說，每一位員工會有一或多個記錄`Orders`資料表中，導致無法刪除。
-
 
 [![刪除某位員工具有對應的訂單結果中外部索引鍵條件約束違規](updating-the-tableadapter-to-use-joins-cs/_static/image40.png)](updating-the-tableadapter-to-use-joins-cs/_static/image39.png)
 
 **圖 15**:刪除某位員工具有對應的訂單結果中外部索引鍵條件約束違規 ([按一下以檢視完整大小的影像](updating-the-tableadapter-to-use-joins-cs/_static/image41.png))
-
 
 若要讓員工可刪除您可以：
 

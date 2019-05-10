@@ -8,12 +8,12 @@ ms.date: 10/21/2013
 ms.assetid: 22929efd-68c9-4609-b76d-f8ba42fda01e
 msc.legacyurl: /signalr/overview/older-versions/working-with-groups
 msc.type: authoredcontent
-ms.openlocfilehash: a606f74ee97c92b89e0137e2c9600a3424115d5e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5f50dc162d6cdcfbf2261e6a751f5f99078d5c54
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418816"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113682"
 ---
 # <a name="working-with-groups-in-signalr-1x"></a>使用 SignalR 1.x 中的群組
 
@@ -22,7 +22,6 @@ ms.locfileid: "59418816"
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 本主題描述如何將使用者新增至群組，並將保存群組成員資格資訊。
-
 
 ## <a name="overview"></a>總覽
 

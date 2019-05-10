@@ -8,12 +8,12 @@ ms.date: 02/22/2015
 ms.assetid: 148d9ca7-1af1-44b6-a9fb-91e261b9b463
 msc.legacyurl: /signalr/overview/performance/signalr-connection-density-testing-with-crank
 msc.type: authoredcontent
-ms.openlocfilehash: bb8a7da1080dc325c0479b337d114b8dcdf6e102
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 901e039fbb81651ed18d560c99745b7e7f716e01
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59390060"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116093"
 ---
 # <a name="signalr-connection-density-testing-with-crank"></a>使用曲軸的 SignalR 連線密度測試
 
@@ -22,7 +22,6 @@ ms.locfileid: "59390060"
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
 > 本文說明如何使用曲柄工具來測試多個模擬用戶端應用程式。
-
 
 一旦您的應用程式執行 （可能是 Azure web 角色，IIS，或自我裝載使用 Owin） 及其裝載環境中，您可以測試使用曲柄工具連線密度高程度的應用程式的回應。 Internet Information Services (IIS) 伺服器、 Owin 主機或 Azure web 角色，可以是裝載環境。 (注意：效能計數器並不適用於 Azure App Service Web Apps，因此您無法從連線密度測試取得效能資料。）
 

@@ -8,12 +8,12 @@ ms.date: 12/01/2014
 ms.assetid: 61941e64-0c0d-4996-9270-cb8ccfd0cabc
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: a62c821159cd097507019d5efb29e01958ec9fba
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3a446be8e2dff2ac66e2432c51b2d9f43bcb817d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398094"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113175"
 ---
 # <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>在 Visual Studio 2013 中建立 ASP.NET Web 專案
 
@@ -29,7 +29,6 @@ ms.locfileid: "59398094"
 > - 新功能，例如提供只針對 MVC、 Web Form[自動測試專案的建立](#testproj)並[內部網路網站範本](#winauth)。
 > 
 > 如需有關如何為 Azure 雲端服務或 Azure 行動服務中建立 web 專案的資訊，請參閱[開始使用 Azure 雲端服務和 ASP.NET](https://azure.microsoft.com/documentation/articles/cloud-services-dotnet-get-started/)和[使用 Azure 行動服務.NET 建立排行榜應用程式後端](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)。
-
 
 <a id="prerequisites"></a>
 ## <a name="prerequisites"></a>必要條件
@@ -350,7 +349,6 @@ Visual Studio 2013 中這些功能是 Visual Studio 2012 中，相同，但已�
 > 如果您選擇其中一個 Azure AD 的選項，您的專案所需的資料庫，而且您有全域系統管理員帳戶登入您的 Azure AD 租用戶。 輸入組織帳戶的名稱和密碼 (例如admin@contoso.onmicrosoft.com) 可讓您的 Azure AD 租用戶的系統管理權限。
 > 
 > **請勿輸入 Microsoft 帳戶認證 (例如contoso@hotmail.com) 在登入對話方塊中。**
-
 
 <a id="orgauthsingle"></a>
 ### <a name="cloud---single-organization-authentication"></a>雲端-單一組織驗證

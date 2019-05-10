@@ -8,19 +8,18 @@ ms.date: 02/16/2008
 ms.assetid: 94c3e5d9-a904-445e-a34e-d92fd1ca108a
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-controller-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 33544825403db67fc3b8f0e9eae5d7671b8d2e67
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f19e7dd7fc025de2e0c387db898d36623e790e6a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402181"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123678"
 ---
 # <a name="aspnet-mvc-controller-overview-vb"></a>ASP.NET MVC 控制器概觀 (VB)
 
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > 在本教學課程中，Stephen walther 將向您介紹 ASP.NET MVC 控制站。 您了解如何建立新的控制站，並傳回不同類型的動作結果。
-
 
 本教學課程將探討 ASP.NET MVC 控制器、 控制器動作和動作結果的主題。 完成本教學課程之後，您將了解如何使用控制器來控制與 ASP.NET MVC 網站的訪客互動的方式。
 
@@ -103,7 +102,6 @@ ContentResult 動作結果是特殊的。 您可以使用 ContentResult 動作�
 > 
 > 
 > System.Web.Mvc.Controller
-
 
 [!code-vb[Main](asp-net-mvc-controller-overview-vb/samples/sample4.vb)]
 

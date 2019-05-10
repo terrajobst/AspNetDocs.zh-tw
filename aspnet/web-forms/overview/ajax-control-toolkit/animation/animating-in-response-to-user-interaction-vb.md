@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: c8204c05-ec27-40fe-933d-88e4e727a482
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c38160ffa9965384cf4eae2ebda52bd62b766bba
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fa774eecd872e79e3b05f6a6ebe177be895b8191
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396228"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112918"
 ---
 # <a name="animating-in-response-to-user-interaction-vb"></a>根據使用者互動繪製動畫 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59396228"
 [下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation6.vb.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation6VB.pdf)
 
 > 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 動畫可以自動啟動，或可能會觸發使用者互動，例如按一下滑鼠。
-
 
 ## <a name="overview"></a>總覽
 
@@ -57,7 +56,6 @@ ms.locfileid: "59396228"
 在此案例中，`<OnClick>`用。 當使用者按一下 [面板] 中時，它會重新調整大小，並在同一時間淡出。
 
 [!code-aspx[Main](animating-in-response-to-user-interaction-vb/samples/sample5.aspx)]
-
 
 [![按下滑鼠開始動畫](animating-in-response-to-user-interaction-vb/_static/image2.png)](animating-in-response-to-user-interaction-vb/_static/image1.png)
 

@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 52d6c941-2cd9-442f-9872-2c798d6d90cd
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 msc.type: authoredcontent
-ms.openlocfilehash: 1b9c7bacb37cc4487fb3af392a6048021679718d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e64e41bfc600811cecb8d20a67fb397ff9dc9a45
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396729"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118371"
 ---
 # <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>Web 開發最佳作法 （使用 Azure 建置真實世界的雲端應用程式）
 
@@ -22,7 +22,6 @@ ms.locfileid: "59396729"
 [下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **建置真實世界雲端應用程式與 Azure**電子書以 Scott Guthrie 所開發的簡報為依據。 它說明 13 的模式，並可協助您的作法是成功開發適用於雲端的 web 應用程式。 電子書的相關資訊，請參閱[第 1 章](introduction.md)。
-
 
 前三個模式所需設定敏捷式開發程序;其餘部分是關於架構和程式碼。 這是 web 開發最佳作法的集合：
 

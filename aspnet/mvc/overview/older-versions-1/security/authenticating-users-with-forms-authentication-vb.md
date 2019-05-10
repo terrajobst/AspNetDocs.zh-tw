@@ -8,19 +8,18 @@ ms.date: 01/27/2009
 ms.assetid: 4341f5b1-6fe5-44c5-8b8a-18fa84f80177
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0a4e8dc3ce5764c6b2ec59c7e3f507064f8a8cb5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a2c2140631d59a7f8b21aa73613a92ea5c7a91d0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422157"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122059"
 ---
 # <a name="authenticating-users-with-forms-authentication-vb"></a>使用表單驗證驗證使用者 (VB)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 了解如何使用 [Authorize] 屬性以密碼保護您的 MVC 應用程式中的特定頁面。 您了解如何使用 Web Site Administration Tool 來建立和管理使用者和角色。 您也了解如何設定使用者帳戶和角色的資訊儲存在何處。
-
 
 本教學課程的目標是要說明如何使用表單驗證以密碼保護的 ASP.NET MVC 應用程式中的檢視。 您了解如何使用 Web Site Administration Tool 建立的使用者和角色。 您也了解如何叫用控制器動作時，防止未經授權的使用者。 最後，您會了解如何設定儲存使用者名稱和密碼。
 
@@ -117,7 +116,6 @@ ASP.NET SQL Server 安裝精靈可讓您選取網路上的 SQL Server 資料庫�
 > 
 > 
 > C:\Windows\Microsoft.NET\Framework\v2.0.50727
-
 
 建立必要的資料庫物件之後，您需要修改您的 MVC 應用程式所使用的資料庫連接。 修改 ApplicationServices 連接字串，在您的 web 組態 (web.config) 檔，讓它指向生產環境資料庫。 比方說，在 列表 3 中修改過的連接會指向名為的 MyProductionDB （原始 ApplicationServices 連接字串具有已標記為註解） 的資料庫。
 

@@ -8,12 +8,12 @@ ms.date: 08/08/2014
 ms.assetid: 30060acb-be3e-4347-996f-3870f0c37829
 msc.legacyurl: /signalr/overview/testing-and-debugging/enabling-signalr-tracing
 msc.type: authoredcontent
-ms.openlocfilehash: 1dadbdb6fa1dc58b855402f1d6f18e8af861f756
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 34fe2cdb10c4b41a6e8cac7fb1741d53c02dfc80
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399355"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65114395"
 ---
 # <a name="enabling-signalr-tracing"></a>啟用 SignalR 追蹤
 
@@ -37,7 +37,6 @@ ms.locfileid: "59399355"
 > ## <a name="questions-and-comments"></a>提出問題或意見
 >
 > 您喜歡本教學課程中的方式，和我們可以改善在頁面底部的註解中，歡迎留下意見反應。 如果您有不直接相關的教學課程中的問題，您可以張貼他們[ASP.NET SignalR 論壇](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或是[StackOverflow.com](http://stackoverflow.com/)。
-
 
 當啟用追蹤時，SignalR 應用程式會建立事件的記錄項目。 您可以從用戶端和伺服器記錄事件。 追蹤伺服器記錄檔的連接、 向外延展提供者，以及訊息匯流排事件。 追蹤用戶端記錄檔的連接事件。 SignalR 2.1 和更新版本用戶端上的追蹤記錄中樞叫用訊息的完整內容。
 

@@ -8,19 +8,18 @@ ms.date: 05/12/2009
 ms.assetid: e887e7b2-a6e7-4a28-a134-ba334494badb
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2e33c7cfae7eed3c0b38b66dad779ce7dcd77b54
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 468063a72253cce55a02bfaef1219bff03d06418
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399680"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119765"
 ---
 # <a name="how-do-i-use-the-combobox-control-vb"></a>如何使用下拉式方塊控制項？ (VB)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 下拉式方塊會是結合使用者可以從中選擇的選項清單中的文字方塊中的彈性以 ASP.NET AJAX 控制項。
-
 
 本教學課程的目標在於說明 AJAX 控制項工具組下拉式方塊控制項。 下拉式方塊的運作方式類似標準的 ASP.NET DropDownList 控制項和文字方塊控制項的結合。 您可以從預先存在的項目清單中選取，或輸入新的項目。
 
@@ -36,27 +35,21 @@ by [Microsoft](https://github.com/microsoft)
 
 接下來，拖曳到頁面的下拉式方塊控制項。 您可以在 [工具箱] 中與其他 AJAX Control Toolkit 控制項及控制項擴充項 （請參閱 [圖 1]） 中找到下拉式方塊控制項。
 
-
 [![簡單的表單建立名片](how-do-i-use-the-combobox-control-vb/_static/image1.jpg)](how-do-i-use-the-combobox-control-vb/_static/image1.png)
 
 **圖 01**:從 [工具箱] 中選取下拉式方塊控制項 ([按一下以檢視完整大小的影像](how-do-i-use-the-combobox-control-vb/_static/image2.png))
 
-
 我們將使用下拉式方塊控制項來顯示靜態選項清單。 使用者可以從三個選項的清單中選取其食品 spiciness 的特定層級：輕微中, 度和經常性存取 （請參閱 圖 2）。
-
 
 [![從靜態項目清單中選取](how-do-i-use-the-combobox-control-vb/_static/image2.jpg)](how-do-i-use-the-combobox-control-vb/_static/image3.png)
 
 **圖 02**:從靜態項目清單中選取 ([按一下以檢視完整大小的影像](how-do-i-use-the-combobox-control-vb/_static/image4.png))
 
-
 有兩種方式，您可以加入這些選項的下拉式方塊控制項。 首先，您將滑鼠停留在設計檢視中的控制項時，請選取 [編輯選項] 工作選項，並開啟項目編輯器 （請參閱 [圖 3]）。
-
 
 [![編輯下拉式方塊項目](how-do-i-use-the-combobox-control-vb/_static/image3.jpg)](how-do-i-use-the-combobox-control-vb/_static/image5.png)
 
 **圖 03**:編輯下拉式方塊項目 ([按一下以檢視完整大小的影像](how-do-i-use-the-combobox-control-vb/_static/image6.png))
-
 
 第二個選項是新增的開頭和結尾之間的項目清單&lt;asp: ComboBox&gt;來源檢視中的標籤。 [列表 1] 頁面包含 [更新] 下拉式方塊具有項目清單。
 
@@ -70,11 +63,9 @@ by [Microsoft](https://github.com/microsoft)
 
 不論您是否選取既存的項目，或輸入自訂的項目中，當您提交表單時，您的選擇會顯示在標籤控制項。 當您提交表單，btnSubmit\_Click 處理常式會執行，並更新標籤 （請參閱 圖 4）。
 
-
 [![顯示選取的項目](how-do-i-use-the-combobox-control-vb/_static/image4.jpg)](how-do-i-use-the-combobox-control-vb/_static/image7.png)
 
 **圖 04**:顯示選取的項目 ([按一下以檢視完整大小的影像](how-do-i-use-the-combobox-control-vb/_static/image8.png))
-
 
 下拉式方塊來擷取選取的項目表單送出之後，支援 DropDownList 控制項相同的屬性：
 
@@ -103,16 +94,13 @@ by [Microsoft](https://github.com/microsoft)
 11. 回到**選擇資料來源**步驟中，選取要顯示之欄位的標題資料行和資料的識別碼資料行欄位 （請參閱圖）。
 12. 按一下 [確定] 按鈕，即可關閉精靈。
 
-
 [![選擇資料來源](how-do-i-use-the-combobox-control-vb/_static/image5.jpg)](how-do-i-use-the-combobox-control-vb/_static/image9.png)
 
 **圖 05**:選擇資料來源 ([按一下以檢視完整大小的影像](how-do-i-use-the-combobox-control-vb/_static/image10.png))
 
-
 [![選擇資料的文字和值欄位](how-do-i-use-the-combobox-control-vb/_static/image6.jpg)](how-do-i-use-the-combobox-control-vb/_static/image11.png)
 
 **圖 06**:選擇資料的文字和值欄位 ([按一下以檢視完整大小的影像](how-do-i-use-the-combobox-control-vb/_static/image12.png))
-
 
 完成上述步驟之後，下拉式方塊繫結代表影片的電影資料庫資料表從 SqlDataSource 控制項。 頁面的來源是由 （我已清除的格式有點） 的列表 2 所示。
 
@@ -122,11 +110,9 @@ by [Microsoft](https://github.com/microsoft)
 
 請注意下拉式方塊控制項都有指向 SqlDataSource 控制項 DataSourceID 屬性。 當您開啟網頁瀏覽器中時，會顯示的資料庫中的電影清單 （請參閱 圖 7）。 您可以挑選其中一個影片，以從清單或下拉式方塊中輸入電影中輸入新的電影。
 
-
 [![顯示電影的清單](how-do-i-use-the-combobox-control-vb/_static/image7.jpg)](how-do-i-use-the-combobox-control-vb/_static/image13.png)
 
 **圖 07**:顯示的電影清單 ([按一下以檢視完整大小的影像](how-do-i-use-the-combobox-control-vb/_static/image14.png))
-
 
 ## <a name="setting-the-dropdownstyle"></a>設定 DropDownStyle
 
@@ -149,21 +135,17 @@ DropDownList 值會造成下拉式方塊控制項，就像標準的 DropDownList
 - 附加-下拉式方塊不會顯示清單和附加相符的項目，從清單中拖曳至您輸入的內容 （請參閱 圖 9）。
 - 同時 SuggestAppend-下拉式方塊會顯示的清單，並將附加相符的項目，從清單中拖曳至您輸入的內容 （請參閱 圖 10）。
 
-
 [![下拉式方塊可讓建議](how-do-i-use-the-combobox-control-vb/_static/image8.jpg)](how-do-i-use-the-combobox-control-vb/_static/image15.png)
 
 **圖 08**:下拉式方塊會建議 ([按一下以檢視完整大小的影像](how-do-i-use-the-combobox-control-vb/_static/image16.png))
-
 
 [![下拉式方塊將相符的文字附加](how-do-i-use-the-combobox-control-vb/_static/image9.jpg)](how-do-i-use-the-combobox-control-vb/_static/image17.png)
 
 **圖 09**:下拉式方塊將相符的文字附加 ([按一下以檢視完整大小的影像](how-do-i-use-the-combobox-control-vb/_static/image18.png))
 
-
 [![下拉式方塊的建議，並將附加](how-do-i-use-the-combobox-control-vb/_static/image10.jpg)](how-do-i-use-the-combobox-control-vb/_static/image19.png)
 
 **圖 10**:下拉式方塊的建議，並將附加 ([按一下以檢視完整大小的影像](how-do-i-use-the-combobox-control-vb/_static/image20.png))
-
 
 ## <a name="summary"></a>總結
 

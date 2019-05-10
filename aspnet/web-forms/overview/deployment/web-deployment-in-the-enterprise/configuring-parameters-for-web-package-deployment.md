@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 37947d79-ab1e-4ba9-9017-52e7a2757414
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: f738d1c0b3cd99bb6df5f8b24dca907fa0b31f4d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f04ace98d81a33053b10cab7e40dbd75a6c0992c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413096"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108731"
 ---
 # <a name="configuring-parameters-for-web-package-deployment"></a>設定 Web 套件部署的參數
 
@@ -23,7 +23,6 @@ ms.locfileid: "59413096"
 
 > 本主題描述如何設定參數值，Internet Information Services (IIS) web 應用程式名稱、 連接字串和服務端點，例如，當您將 web 套件部署到遠端 IIS web 伺服器。
 
-
 當您建置的 web 應用程式專案、 建置和封裝程序會產生三個索引鍵的檔案：
 
 - A *[專案名稱].zip*檔案。 這是 web 應用程式專案的 web 部署套件。 此套件包含所有組件、 檔案、 資料庫指令碼和重新建立您的 web 應用程式，遠端的 IIS 網頁伺服器上所需的資源。
@@ -32,7 +31,6 @@ ms.locfileid: "59413096"
 
 > [!NOTE]
 > 如需有關建置和封裝程序的詳細資訊，請參閱 <<c0> [ 建置和封裝 Web Application Projects](building-and-packaging-web-application-projects.md)。
-
 
 *之 SetParameters.xml*從您的 web 應用程式專案檔和您的專案內的任何設定檔，以動態方式產生檔案。 當您建置並封裝您的專案中，Web 發行管線 (WPP) 會自動偵測許多可能會變更部署的環境，例如目的地 IIS web 應用程式之間的任何資料庫連接字串的變數。 這些值會自動參數化的 web 部署套件中，並加入*之 SetParameters.xml*檔案。 例如，如果您加入的連接字串*web.config*檔案中您的 web 應用程式專案，建置流程會偵測到這項變更並將項目新增至*之 SetParameters.xml*檔案據此。
 
@@ -48,9 +46,7 @@ ms.locfileid: "59413096"
 
 例如，如果您要建置和封裝[Contactmanager](the-contact-manager-solution.md)不必以任何方式，WPP 參數化程序的範例解決方案會產生這個*ContactManager.Mvc.SetParameters.xml*檔案：
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample1.xml)]
-
 
 在此情況下：
 
@@ -73,15 +69,11 @@ WPP 也會參數化這些屬性，它會產生的部署套件中。 當您安裝
 
 如果您開啟此檔案時，您會看到它包含單一**參數**項目。 項目會使用 XML 路徑語言 (XPath) 查詢來找出並參數化中的 ContactService Windows Communication Foundation (WCF) 服務的端點 URL *web.config*檔案。
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample2.xml)]
-
 
 除了參數化部署套件中的端點 URL，WPP 也新增至對應的項目*之 SetParameters.xml*隨部署套件產生的檔案。
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample3.xml)]
-
 
 如果您手動安裝的部署套件時，IIS 管理員 會提示您的服務端點位址，以及已自動參數化的屬性。 如果您執行安裝的部署套件 *。 deploy.cmd*檔案中，您可以編輯*之 SetParameters.xml*檔案，以提供的服務端點位址，以及值的值已自動參數化的屬性。
 
@@ -96,22 +88,16 @@ WPP 也會參數化這些屬性，它會產生的部署套件中。 當您安裝
 > [!NOTE]
 > 專案檔案模型中的範例解決方案，以及自訂的專案檔的一般簡介的廣泛概觀，請參閱 <<c0> [ 了解專案檔](understanding-the-project-file.md)並[了解建置程序](understanding-the-build-process.md)。
 
-
 首先，感興趣的參數值會定義為環境特有的專案檔中的屬性 (例如*Env Dev.proj*)。
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample4.xml)]
-
 
 > [!NOTE]
 > 如需如何自訂您自己的伺服器環境的特定環境的專案檔的指引，請參閱 <<c0> [ 設定的目標環境的部署屬性](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md)。
 
-
 下一步 *Publish.proj*檔匯入這些屬性。 因為每個*之 SetParameters.xml*檔案相關聯 *。 deploy.cmd*檔案，以及我們最終想要叫用每個專案檔 *。 deploy.cmd*檔案，專案檔案會建立 MSBuild*項目*每個 *。 deploy.cmd*檔案，並為想要的屬性會定義*項目中繼資料*。
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample5.xml)]
-
 
 在此情況下：
 
@@ -122,9 +108,7 @@ WPP 也會參數化這些屬性，它會產生的部署套件中。 當您安裝
 
 最後，在*Publish.proj*檔案， **PublishWebPackages**目標會使用**XmlPoke**工作來修改這些值在*之 SetParameters.xml*檔案。
 
-
 [!code-xml[Main](configuring-parameters-for-web-package-deployment/samples/sample6.xml)]
-
 
 您會在每個發現**XmlPoke**工作可讓您指定四個屬性值：
 

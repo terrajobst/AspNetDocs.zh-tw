@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 1023d9bef311e58fb5fb0bb24cde80e8320e6bac
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 165d104b5d3ef3281af449cc8673ad96f531d628
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419050"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65113073"
 ---
 # <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>實際操作實驗室：一個 ASP.NET：整合 ASP.NET Web Form、MVC 與 Web API
 
@@ -26,7 +26,6 @@ ms.locfileid: "59419050"
 > Visual Studio 2013 導入了新的統一的專案系統可讓您建置應用程式和一個專案中使用所有的 ASP.NET 技術。 這項功能就不需要在開始專案，並隨身碟，挑選一種技術，並改為鼓勵使用一個專案中的多個 ASP.NET 架構。
 > 
 > 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
-
 
 <a id="Overview"></a>
 ## <a name="overview"></a>總覽
@@ -62,7 +61,6 @@ ms.locfileid: "59419050"
 > [!NOTE]
 > 請確定您執行安裝程式之前檢查這個實驗室的所有相依性。
 
-
 <a id="CodeSnippets"></a>
 ### <a name="using-the-code-snippets"></a>使用程式碼片段
 
@@ -70,7 +68,6 @@ ms.locfileid: "59419050"
 
 > [!NOTE]
 > 每個練習會伴隨起始方案，位於**開始**練習，可讓您依照每個練習，獨立於其他的資料夾。 請留意練習期間新增的程式碼片段缺少這些啟動解決方案，並可能無法運作，直到您已完成練習。 在練習的原始程式碼，您也可以找到**結束**資料夾包含 Visual Studio 方案，以程式碼所產生的相對應的練習中的步驟。 如果您需要其他說明，當您完成這個實際操作實驗室，您可以使用這些解決方案與指引。
-
 
 ---
 
@@ -88,9 +85,8 @@ ms.locfileid: "59419050"
 > [!NOTE]
 > 當您第一次啟動 Visual Studio 時，您必須選取其中一個預先定義的設定集合。 每個預先定義的集合以符合特定的開發樣式設計，並決定視窗版面配置、 編輯器的行為、 IntelliSense 程式碼片段和對話方塊選項。 在這個實驗室中的程序說明完成指定的工作，在 Visual Studio 中使用時所需的動作**一般開發設定**集合。 如果您選擇不同的設定集合，您的開發環境，可能會有在步驟中，您應該考慮到的差異。
 
-
 <a id="Exercise1"></a>
-### <a name="exercise-1-creating-a-new-web-forms-project"></a>練習 1:建立新的 Web Form 專案
+### <a name="exercise-1-creating-a-new-web-forms-project"></a>練習 1：建立新的 Web Form 專案
 
 在此練習中，您將建立新的 Web Form 網站，在 Visual Studio 2013 中使用**One ASP.NET**統一專案體驗，可讓您輕鬆地將相同的應用程式的 Web Form、 MVC 和 Web API 元件整合。 您接著會探索產生的方案，並找出其組件，和最後您會看到動作中的網站。
 
@@ -177,7 +173,7 @@ ms.locfileid: "59419050"
 6. 請返回 Visual Studio，然後按**SHIFT + F5**停止偵錯。
 
 <a id="Exercise2"></a>
-### <a name="exercise-2-creating-an-mvc-controller-using-scaffolding"></a>練習 2:建立使用 Scaffolding MVC 控制器
+### <a name="exercise-2-creating-an-mvc-controller-using-scaffolding"></a>練習 2：建立使用 Scaffolding MVC 控制器
 
 在這個練習中您會利用 Visual Studio 建立 ASP.NET MVC 5 控制器與動作和 Razor 檢視，以執行 CRUD 作業，而不需要撰寫一行程式碼提供的 ASP.NET Scaffold 架構。 Scaffolding 程序將使用 Entity Framework Code First 來產生 SQL database 中的 資料內容和資料庫結構描述。
 
@@ -189,7 +185,6 @@ Entity Framework Code First 模型化工作流程可讓您使用您自己的網�
 
 > [!NOTE]
 > 您可以深入了解 Entity Framework[此處](../../../entity-framework.md)。
-
 
 <a id="Ex2Task1"></a>
 #### <a name="task-1--creating-a-new-model"></a>工作 1-建立新模型
@@ -342,7 +337,6 @@ Web API 架構是 ASP.NET 堆疊的一部分，並可輕鬆實作 HTTP 服務，
 > ![Internet Explorer 選項](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image27.png)
 > 
 > **F12 開發人員工具**有一組廣泛的並未涵蓋此實際操作實驗室的功能。 如果您想要深入了解，請參閱[使用 F12 開發人員工具](https://msdn.microsoft.com/library/ie/bg182326(v=vs.85))。
-
 
 1. 按下**F5**執行方案。
 

@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: bd356ca3-5bdb-4067-9dac-c9e9923a86e8
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 63d85ec5f1f2fbadd92fd0210e67332df30aab5a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 48428ff4ab5888253ed93ac41e79006eec823ad2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419596"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112934"
 ---
 # <a name="part-1-overview-and-file-new-project"></a>第 1 部份：概觀和 [檔案] -> [新增專案]
 
@@ -24,7 +24,6 @@ ms.locfileid: "59419596"
 > MVC Music 市集是銷售線上音樂 album 和實作基本的網站管理、 使用者登入時，和 「 購物車 」 功能的輕量級的範例存放區實作。  
 >   
 > 本教學課程系列會詳細說明所有建置 ASP.NET MVC Music 市集範例應用程式所採取的步驟。 第 1 部分涵蓋的概觀和檔案-&gt;新專案。
-
 
 ## <a name="overview"></a>總覽
 
@@ -74,11 +73,9 @@ MVC Music 市集是介紹，並逐步說明如何使用 ASP.NET MVC 和 Visual W
 
 您可以使用 Visual Studio 2010 SP1 或 Visual Web Developer 2010 Express SP1 （Visual Studio 2010 的免費版本） 建置應用程式。 我們將使用 SQL Server Compact （同樣免費） 來裝載資料庫。 在開始之前，請確定您已安裝符合下列先決條件。
 
-
 - [Visual Studio Web Developer Express SP1 必要條件]
 - [ASP.NET MVC 3 Tools Update]
 - [SQL Server Compact 4.0]-包括執行階段和工具支援
-
 
 ### <a name="creating-a-new-aspnet-mvc-3-project"></a>建立新的 ASP.NET MVC 3 專案
 

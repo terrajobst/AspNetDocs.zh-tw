@@ -8,12 +8,12 @@ ms.author: riande
 ms.date: 03/12/2010
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: 1ab51453913b387ffecf898536eb55b7418b0285
-ms.sourcegitcommit: 2d53ed9e4c8b19d3526cbc689bfa8394c9449cec
+ms.openlocfilehash: d4b96bd2ff99bb30ff59b9697a27e33acb0f719d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59905627"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120083"
 ---
 # <a name="aspnet-overview"></a>ASP.NET 概觀
 
@@ -100,10 +100,6 @@ Webhook 是一起接線 Web Api 和 SaaS 服務提供簡單 pub/sub 模型的輕
 Webhook 會公開大量包括 Dropbox、 GitHub、 Instagram、 MailChimp、 PayPal、 Slack、 Trello 和更多的服務。 比方說，WebHook 可以表示檔案已在 Dropbox 中，變更或已在 GitHub 中，認可程式碼變更或付款已起始 PayPal、 中或卡片在 Trello 中建立。
 
 [深入了解 Webhook](webhooks/index.md)
-
-
-
-
 
 <!--
 Create Deployment TOC based on https://www.asp.net/aspnet/overview/deployment
