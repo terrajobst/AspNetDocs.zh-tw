@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: 5bc1afd5-2484-4528-b158-ab218ba150e8
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2940c17e8466eae1e72d3f7cbc6ff7127c8588b7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0a048527aeaa44a452324530625583c00239d6f2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415852"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109294"
 ---
 # <a name="processing-unhandled-exceptions-c"></a>處理未處理的例外狀況 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59415852"
 [檢視或下載範例程式碼](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs/samples) \(英文\) ([如何下載](/aspnet/core/tutorials/index#how-to-download-a-sample))
 
 > 在生產環境中的 web 應用程式的執行階段錯誤發生時很重要通知開發人員，並記錄錯誤，如此可能會在稍後的時間點中診斷的時間。 本教學課程提供如何 ASP.NET 處理執行階段錯誤，以及查看有自訂程式碼執行時的未處理的例外狀況反昇至 ASP.NET 執行階段的一種方法的概觀。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -34,7 +33,6 @@ ms.locfileid: "59415852"
 
 > [!NOTE]
 > 在本教學課程中檢查的資訊是最有用，如果您需要以某種唯一或自訂的方式處理未處理例外狀況。 在其中您只需要記錄例外狀況，並告知開發人員的情況下，使用錯誤記錄程式庫是最好的選擇。 下面兩個教學課程提供兩個這類程式庫的概觀。
-
 
 ## <a name="executing-code-when-theerrorevent-is-raised"></a>執行程式碼時`Error`就會引發事件
 
@@ -56,7 +54,6 @@ ms.locfileid: "59415852"
 > [!NOTE]
 > 部署 ASP.NET 應用程式時，您必須複製`Global.asax`到生產環境的檔案。 `Global.asax.cs`檔案，WAP 中建立時，不需要將複製到生產環境中，因為此程式碼會編譯專案的組件。
 
-
 Visual Studio 的通用應用程式類別範本所建立的事件處理常式並不詳盡。 您可以為任何新增事件處理常式`HttpApplication`所命名的事件處理常式的事件`Application_EventName`。 例如，您可以在其中新增下列程式碼`Global.asax`檔案以建立事件處理常式[`AuthorizeRequest`事件](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx):
 
 [!code-cs[Main](processing-unhandled-exceptions-cs/samples/sample1.cs)]
@@ -65,7 +62,6 @@ Visual Studio 的通用應用程式類別範本所建立的事件處理常式並
 
 > [!NOTE]
 > *HTTP 模組*提供另一種方式來定義事件處理常式`HttpApplication`事件。 HTTP 模組會建立類別檔案，可直接置於 web 應用程式專案，或者分離到不同的類別庫。 HTTP 模組因為它們可以分割成的類別庫，提供更有彈性且可重複使用的模型來建立`HttpApplication`事件處理常式。 而`Global.asax`檔案是特定 web 應用程式所在的位置，HTTP 模組可以編譯成組件，此時若要將 HTTP 模組新增至網站很簡單，只要卸除組件中`Bin`資料夾並註冊中的模組`Web.config`。 本教學課程不會尋找在建立及使用 HTTP 模組，但在下列兩個教學課程中使用的兩個錯誤記錄程式庫會實作為 HTTP 模組。 如 HTTP 模組的優點的詳細背景，請參閱[使用 HTTP 模組和處理常式，以建立可外掛的 ASP.NET 元件](https://msdn.microsoft.com/library/aa479332.aspx)。
-
 
 ## <a name="retrieving-information-about-the-unhandled-exception"></a>擷取未處理的例外狀況的相關資訊
 
@@ -92,7 +88,6 @@ Visual Studio 的通用應用程式類別範本所建立的事件處理常式並
 > [!NOTE]
 > `<system.net>`項目包含所使用的 SMTP 伺服器設定`SmtpClient`類別傳送電子郵件時。 您的 web 主機服務公司可能有可用來從您的應用程式傳送電子郵件的 SMTP 伺服器。 您應該使用您的 web 應用程式中的 SMTP 伺服器設定的詳細資訊，請參閱您的 web 主機的 [支援] 區段。
 
-
 將下列程式碼加入`Application_Error`傳送為開發人員的電子郵件，發生錯誤時的事件處理常式：
 
 [!code-csharp[Main](processing-unhandled-exceptions-cs/samples/sample4.cs)]
@@ -105,7 +100,6 @@ Visual Studio 的通用應用程式類別範本所建立的事件處理常式並
 
 > [!NOTE]
 > Web 應用程式中使用此程式碼之前，您會想變更中的值`ToAddress`並`FromAddress`常數support@example.com任何電子郵件地址錯誤通知電子郵件會寄給和源自。 您也需要指定 SMTP 伺服器設定，在`<system.net>`一節中`Web.config`。 請參閱您的 web 主機提供者，以判斷要使用的 SMTP 伺服器設定。
-
 
 與此程式碼都就緒每當發生錯誤開發人員會傳送電子郵件訊息，摘要說明此錯誤，並包含 YSOD。 在先前的教學課程中示範的執行階段錯誤所瀏覽 Genre.aspx 並傳入無效`ID`值，是透過查詢字串，例如`Genre.aspx?ID=foo`。 瀏覽的頁面`Global.asax`檔案會產生相同的使用者體驗，如在先前的教學課程-在開發環境中您將會繼續以查看例外狀況詳細資料黃色死亡畫面，而在您將在生產環境中請參閱自訂錯誤頁面。 除了這個現有的行為，開發人員會收到一封電子郵件。
 

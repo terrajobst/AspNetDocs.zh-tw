@@ -8,12 +8,12 @@ ms.date: 10/09/2014
 ms.assetid: 716264ae-ab72-45de-bfc5-53a6237089cf
 msc.legacyurl: /web-forms/overview/security/create-an-aspnet-web-forms-app-with-sms-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 2010de510cf44bba1b95d29dbdb573ab78f452f7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 02c511f0e99e306daaf595da5bc618fe738e806c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411354"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106793"
 ---
 # <a name="create-an-aspnet-web-forms-app-with-sms-two-factor-authentication-c"></a>使用 SMS 雙因素驗證建立 ASP.NET Web Forms 應用程式 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59411354"
 [下載電子郵件和 SMS 的雙因素驗證的 ASP.NET Web Forms 應用程式](https://code.msdn.microsoft.com/ASPNET-Web-Forms-App-with-5a0ff94e)
 
 > 本教學課程會示範如何建置使用雙因素驗證的 ASP.NET Web Forms 應用程式。 本教學課程旨在補足標題為本教學課程[建立安全的 ASP.NET Web Forms 應用程式以使用者註冊、 電子郵件確認和密碼重設](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset.md)。 此外，本教學課程已根據 Rick Anderson [MVC 教學課程](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -42,7 +41,6 @@ ms.locfileid: "59411354"
 
 > [!NOTE]
 > 重要事項：您必須安裝[Visual Studio 2013 Update 3](https://go.microsoft.com/fwlink/?LinkId=390465)或更新版本，才能完成本教學課程。
-
 
 1. 建立新的專案 (**檔案** - &gt; **新專案**)，然後選取**ASP.NET Web 應用程式**以及.NET Framework 的範本從版本 4.5.2**新的專案** 對話方塊。
 2. 從**新的 ASP.NET 專案**對話方塊中，選取**Web Form**範本。 保留為預設的驗證**個別使用者帳戶**。 然後，按一下**確定**建立新的專案。  

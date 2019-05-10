@@ -8,12 +8,12 @@ ms.date: 05/03/2012
 ms.assetid: aa862153-4cd8-4e33-beeb-abf502c6664f
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 326abfe4fe86d0741b0bf807d5454d6cf87a7c12
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9786879844da13c21e6a953b1ab24b29ca8121e2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411965"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109135"
 ---
 # <a name="enterprise-web-deployment-scenario-overview"></a>企業 Web 部署：情節概觀
 
@@ -22,7 +22,6 @@ ms.locfileid: "59411965"
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 提供的參考實作，並為提供的工作和逐步解說的一般內容，這套教學課程會使用實際的層級的複雜性，以及虛構的企業部署案例中，範例方案。 本主題說明教學課程的案例，並導入了範例解決方案。
-
 
 ## <a name="scenario-description"></a>案例描述
 
@@ -102,7 +101,7 @@ Fabrikam，Inc.，這家虛構公司的就建立一個解決方案，可讓遠�
 
 ### <a name="key-deployment-issues"></a>重要的部署問題
 
-連絡管理員解決方案和 Fabrikam，Inc.案例反白顯示各種常見的問題和當您部署複雜的企業級規模解決方案時，可能會遇到的挑戰。 例如: 
+連絡管理員解決方案和 Fabrikam，Inc.案例反白顯示各種常見的問題和當您部署複雜的企業級規模解決方案時，可能會遇到的挑戰。 例如：
 
 - 您可以將專案部署到多個環境，例如開發人員或測試環境，需要預備平台，以及實際執行伺服器。 解決方案需要針對每個環境的不同的組態設定一起部署。
 - 您要部署多個相依的專案同時做為單一步驟或自動化建置和部署程序的一部分。

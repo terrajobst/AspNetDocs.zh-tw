@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: 416438a1-3b2f-4d27-bf53-6b76223c33bf
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 19cda45ce1b425462ec491bcc86b7a0b76dec162
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b9c4a4d035c78b4f4c53942219ccfa3048c7a82b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409794"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133811"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署到生產環境
 
@@ -22,7 +22,6 @@ ms.locfileid: "59409794"
 [下載入門專案](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > 本系列教學課程會示範如何部署 （發行） 的 ASP.NET web 應用程式至 Azure App Service Web Apps 或協力廠商裝載提供者，使用 Visual Studio 2012 或 Visual Studio 2010。 這個系列的相關資訊，請參閱[系列的第一個教學課程](introduction.md)。
-
 
 ## <a name="overview"></a>總覽
 
@@ -41,7 +40,6 @@ ms.locfileid: "59409794"
 > [!NOTE]
 > 因為撰寫本教學課程中，Azure App Service 就會加入新的功能，可自動化許多建立預備與生產環境的程序。 請參閱[設定預備環境中 Azure App Service 的 web apps](https://azure.microsoft.com/documentation/articles/web-sites-staged-publishing/)。
 
-
 中所述[部署至測試環境教學課程](deploying-to-iis.md)、 最可靠的測試環境是在有就像實際執行的網站主機服務提供者的網站。 在許多主機服務提供者，您就必須權衡針對重大的額外成本，此優點，但在 Azure 中您可以建立其他的免費 web 應用程式和預備應用程式。 您也需要資料庫，而且，透過您的實際執行資料庫的費用的額外費用會是 none 或最小。 在 Azure 中您需支付您所使用的資料庫儲存體數量，而不是針對每個資料庫，並在預備環境中，您將使用的額外儲存空間量也能降低。
 
 中所述[部署至測試環境教學課程](deploying-to-iis.md)、 預備和生產環境，您要將您的兩個資料庫部署至一個資料庫中。 如果您想要將它們分開，程序會相同，但是您會建立適用於每個環境的其他資料庫，而當您建立發行設定檔時，會選取每個資料庫的正確的目的地字串。
@@ -50,7 +48,6 @@ ms.locfileid: "59409794"
 
 > [!NOTE]
 > 下列步驟示範如何使用 Azure 管理入口網站，在 Azure App Service 中建立 web 應用程式。 在 Azure SDK 最新版本中，您也可以執行這不需要離開 Visual Studio 中，使用 [伺服器總管]。 在 Visual Studio 2013 中，您也可以直接從 [發佈] 對話方塊，以建立 web 應用程式。 如需詳細資訊，請參閱[Azure App Service 中建立 ASP.NET web 應用程式。](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet)
-
 
 1. 在  [Azure 管理入口網站](https://manage.windowsazure.com/)，按一下**網站**，然後按一下**新增**。
 2. 按一下 **網站**，然後按一下**自訂建立**。
@@ -97,7 +94,6 @@ ms.locfileid: "59409794"
 
 > [!NOTE]
 > 這些指示說明如何建立發行設定檔下載 *.publishsettings*檔案，這不只適用於 Azure，也適用於協力廠商主機服務提供者。 最新版的 Azure SDK 也可讓您直接連接至 Azure，從 Visual Studio，從您在您的 Azure 帳戶的 web 應用程式清單中選擇。 在 Visual Studio 2013 中，您可以登入 Azure **Web Publish**對話方塊或從**伺服器總管**視窗。 如需詳細資訊，請參閱 < [Azure App Service 中建立 ASP.NET web 應用程式](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet)。
-
 
 ### <a name="download-the-publishsettings-file"></a>下載.publishsettings 檔案
 
@@ -165,7 +161,6 @@ ms.locfileid: "59409794"
 
 > [!NOTE]
 > 本節說明如何設定環境指標 Web.config 轉換。 因為指標位於`<appSettings>`項目，您有指定的轉換，當您部署至 Azure App Service 的另一個替代方式。 如需詳細資訊，請參閱 <<c0> [ 在 Azure 中的指定 Web.config 設定](web-config-transformations.md#watransforms)。
-
 
 1. 在 [**方案總管] 中**，展開**屬性**，然後展開**PublishProfiles**。
 2. 以滑鼠右鍵按一下*Staging.pubxml*，然後按一下**新增組態轉換**。

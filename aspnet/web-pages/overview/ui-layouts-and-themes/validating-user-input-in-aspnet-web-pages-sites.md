@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: 4eb060cc-cf14-41ae-bab1-14a2c15332d0
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites
 msc.type: authoredcontent
-ms.openlocfilehash: fd3ba36891aa66f78c28c538a4d3ba0da6736765
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e6f8e1051d09d11f1756bfada44a73ba7c2a1db2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392985"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108590"
 ---
 # <a name="validating-user-input-in-aspnet-web-pages-razor-sites"></a>ASP.NET Web Pages (Razor) 網站中驗證使用者輸入
 
@@ -42,7 +42,6 @@ ms.locfileid: "59392985"
 > 
 > 本教學課程也適用於 ASP.NET Web Pages 2。
 
-
 本文包含下列章節：
 
 - [使用者輸入驗證的概觀](#Overview_of_User_Input_Validation)
@@ -65,7 +64,6 @@ ms.locfileid: "59392985"
 > [!NOTE] 
 > 
 > **重要**驗證使用者輸入也是很重要的安全性。 當您限制使用者可以在表單中輸入的值時，您就會減少某人可以輸入值，可能會危害您的站台安全性的機會。
-
 
 <a id="Validating_User_Input"></a>
 ## <a name="validating-user-input"></a>驗證使用者輸入
@@ -114,7 +112,6 @@ ms.locfileid: "59392985"
 > [!NOTE]
 > 即使您使用用戶端驗證時，在伺服器程式碼時，會永遠也執行驗證。 執行伺服器程式碼中的驗證是安全性措施，以防使用者略過用戶端為基礎的驗證。
 
-
 1. 註冊頁面中的下列 JavaScript 程式庫：  
 
     [!code-html[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample3.html)]
@@ -159,7 +156,6 @@ ms.locfileid: "59392985"
 > [!NOTE]
 > 如果您不使用 ASP.NET Web Pages 2 的用戶端驗證，CSS 類別`<input>`項目 (`input-validation-error`和`input-validation-valid`不具有任何作用。
 
-
 ### <a name="static-and-dynamic-error-display"></a>靜態和動態錯誤顯示
 
 CSS 規則會成對出現，例如`validation-summary-errors`和`validation-summary-valid`。 這些配對可讓您定義這兩個條件的規則： 錯誤狀況和 「 標準 」 （非錯誤） 條件。 請務必了解，一律會呈現錯誤顯示的標記，即使沒有任何錯誤。 例如，如果頁面有`Html.ValidationSummary`在標記中的方法，第一次要求頁面時，即使網頁原始檔會包含下列標記：
@@ -182,7 +178,6 @@ CSS 規則會成對出現，例如`validation-summary-errors`和`validation-summ
 > [!NOTE] 
 > 
 > **重要**一律驗證值取自*任何*來源，包括表單欄位值、 查詢字串值，以及 cookie 值。 很容易讓人 （可能用於惡意用途） 變更這些值。 因此您必須檢查這些值，以保護您的應用程式。
-
 
 下列範例會示範如何傳遞查詢字串中的值可能會通過驗證。 程式碼會測試值不是空的它是一個整數。
 

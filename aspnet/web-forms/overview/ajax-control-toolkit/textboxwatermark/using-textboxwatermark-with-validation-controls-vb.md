@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: e6c2cb98-f745-4bc8-973a-813879c8a891
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d83fb53ddb40a31013bc724909fa149ce2e4c713
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 63363a8e25a351c23f89186ef3d9c44355ba3c44
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387363"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132483"
 ---
 # <a name="using-textboxwatermark-with-validation-controls-vb"></a>使用 TextBoxWatermark 與驗證控制項 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59387363"
 [下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/TextBoxWatermark2.vb.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/textboxwatermark2VB.pdf)
 
 > 在 AJAX Control Toolkit TextBoxWatermark 控制延伸的文字方塊，讓文字會顯示在方塊內。 當使用者按一下方塊時，它會清空。 如果使用者離開不需要輸入文字的方塊中，預先填入的文字隨即再度出現。 這可能會與在相同頁面上，ASP.NET 驗證控制項發生衝突，但可能會解決這些問題。
-
 
 ## <a name="overview"></a>總覽
 
@@ -47,7 +46,6 @@ ms.locfileid: "59387363"
 最後，新增一些的伺服器端程式碼，以輸出欄位中的文字，如果未驗證發出一則錯誤訊息：
 
 [!code-aspx[Main](using-textboxwatermark-with-validation-controls-vb/samples/sample4.aspx)]
-
 
 [![驗證程式產生負面反應，在欄位中沒有任何文字](using-textboxwatermark-with-validation-controls-vb/_static/image2.png)](using-textboxwatermark-with-validation-controls-vb/_static/image1.png)
 

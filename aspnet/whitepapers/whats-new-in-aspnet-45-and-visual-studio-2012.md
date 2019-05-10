@@ -8,17 +8,16 @@ ms.date: 02/29/2012
 ms.assetid: ba1fabb4-31a3-4ebf-8327-41a6bbba6eaf
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
-ms.openlocfilehash: 5f50721b6f263b9cb025f5fa57c923dadeddcd28
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 32fbf7c25b00f3f0796c4c3fdd38ca2a86c89199
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410587"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133681"
 ---
 # <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>ASP.NET 4.5 與 Visual Studio 2012 的新功能
 
 > 本文件說明新功能和 ASP.NET 4.5 中引進的增強功能。 它也會說明適用於 Visual Studio 2012 中的 web 開發所做的改進。 這份文件最初發行於 2012 年 2 月 29 日。
-
 
 - [ASP.NET Core 執行階段和架構](#_Toc318097372)
 
@@ -190,10 +189,8 @@ ASP.NET 4.5 引進了兩項功能可簡化您選擇性地使用未經驗證的�
 
 [!code-csharp[Main](whats-new-in-aspnet-45-and-visual-studio-2012/samples/sample6.cs)]
 
-
 > [!WARNING]
 > 安全性-*請小心使用未經驗證的要求資料 ！* ASP.NET 4.5 中已加入的未經驗證的要求屬性和集合，以讓您更輕鬆地存取非常特定的未驗證的要求資料。 不過，您仍必須執行未經處理的要求資料，以確保危險的文字不會呈現使用者自訂的驗證。
-
 
 <a id="_Toc318097382"></a>
 ### <a name="antixss-library"></a>AntiXSS 程式庫
@@ -383,11 +380,9 @@ Windows 具有數個版本，包含技術，稱為[預先擷取程式](http://en
 
 若要解決此問題，ASP.NET 4.5 會新增的控制項繫結至資料的資料型別宣告的功能。 做法是使用新*ItemType*屬性。 當您設定此屬性時，兩個新的具型別的變數會提供資料繫結運算式的範圍：*項目*並*BindItem*。 因為變數強型別，您會取得之完整優勢的 Visual Studio 開發經驗。
 
-
 如需雙向資料繫結運算式，使用*BindItem*變數：
 
 [!code-aspx[Main](whats-new-in-aspnet-45-and-visual-studio-2012/samples/sample21.aspx)]
-
 
 ASP.NET Web Forms framework 中大部分支援資料繫結的控制項已更新為支援*ItemType*屬性。
 

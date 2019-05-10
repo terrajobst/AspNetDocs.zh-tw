@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: 9cad0833-486a-4474-a7f3-7715542ec4ce
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-database-update
 msc.type: authoredcontent
-ms.openlocfilehash: 86dcac0b95f07a310bdaaa4e69db0a83f8734744
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 942cc3cbf472f76d2521247df97c856deb19b06b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416632"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131931"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-a-database-update"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署資料庫更新
 
@@ -22,7 +22,6 @@ ms.locfileid: "59416632"
 [下載入門專案](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > 本系列教學課程會示範如何部署 （發行） 的 ASP.NET web 應用程式至 Azure App Service Web Apps 或協力廠商裝載提供者，使用 Visual Studio 2012 或 Visual Studio 2010。 這個系列的相關資訊，請參閱[系列的第一個教學課程](introduction.md)。
-
 
 ## <a name="overview"></a>總覽
 

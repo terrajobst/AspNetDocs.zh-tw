@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 2488a91e-b0a8-465a-b874-3233f724b56b
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 62e5c5622743447e1119141469c894dc905e6b43
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5699f72af6b8d7f18d1a2c631dfdedd63c66e1e6
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381051"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133859"
 ---
 # <a name="configuring-permissions-for-team-build-deployment"></a>設定小組組建部署的權限
 
@@ -22,7 +22,6 @@ ms.locfileid: "59381051"
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主題描述如何設定以啟用您的自動化的建置程序的一部分時，將內容部署至 web 伺服器和資料庫伺服器的組建伺服器的權限。
-
 
 本主題是構成一系列以名為 Fabrikam，Inc.的虛構公司的企業部署需求為基礎的教學課程的一部分本教學課程系列會使用範例解決方案&#x2014;[連絡管理員解決方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;來代表實際的層級的複雜性，包括 ASP.NET MVC 3 應用程式時，Windows Communication 的 web 應用程式Foundation (WCF) 服務與資料庫專案。
 
@@ -36,7 +35,6 @@ ms.locfileid: "59381051"
 
 > [!NOTE]
 > 網路服務帳戶使用電腦帳戶來向其他電腦。 電腦帳戶的形式 * [網域名稱]\[電腦名稱] ***$**&#x2014;，例如**FABRIKAM\TFSBUILD$**。 同樣地，如果您的組建服務執行使用 Network Service 身分識別，您應該授與的電腦帳戶識別任何必要權限為您的組建伺服器。
-
 
 ## <a name="configuring-web-server-permissions"></a>設定網頁伺服器權限
 

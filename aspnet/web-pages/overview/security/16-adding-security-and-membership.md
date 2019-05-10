@@ -8,12 +8,12 @@ ms.date: 02/24/2014
 ms.assetid: 7a77c2c0-deea-4290-a9c3-97958891758e
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: 1291417755e3fa4fb030bc6ba3089c38c4719c71
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0be3e767a42939a3c343f6d4a730eb1d9a6b367c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389657"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112369"
 ---
 # <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>加入 ASP.NET Web Pages (Razor) 網站上的安全性及成員資格
 
@@ -42,7 +42,6 @@ ms.locfileid: "59389657"
 > - ASP.NET Web Pages (Razor) 2
 > - WebMatrix 3
 > - ASP.NET Web Helpers Library
-
 
 您可以將您的網站設定，以使用者即可登入&#8212;也就是，讓站台支援*成員資格*。 這適合用於有許多原因。 例如，您的網站可能有應該只能供成員的頁面。 在某些情況下，您可能需要使用者能夠登入以傳送意見反應或留言。
 

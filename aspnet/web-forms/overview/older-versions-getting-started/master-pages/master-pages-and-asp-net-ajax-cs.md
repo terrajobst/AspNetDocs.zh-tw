@@ -8,12 +8,12 @@ ms.date: 07/11/2008
 ms.assetid: 0c55eb66-ba44-4d49-98e8-5c87fd9b1111
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b8bc435e4b2b1eeedaab424695715e5ec51e116d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0880b2d6666ec3ae618573aa3a884ca4865c317c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381857"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132815"
 ---
 # <a name="master-pages-and-aspnet-ajax-c"></a>主版頁面與ASP.NET AJAX (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59381857"
 [下載程式碼](http://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_08_CS.zip)或[下載 PDF](http://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_08_CS.pdf)
 
 > 討論使用 ASP.NET AJAX 和主版頁面的選項。 探討使用 ScriptManagerProxy 類別;討論各種 JS 檔案會載入方式取決於是否使用 ScriptManager 在主頁面或內容頁面。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -35,11 +34,9 @@ ms.locfileid: "59381857"
 > [!NOTE]
 > 設計或建置具有 ASP.NET AJAX 架構的啟用 AJAX 的 web 應用程式，就無法瀏覽本教學課程。 如需使用 AJAX 的詳細資訊，請參閱[ASP.NET AJAX 影片](../../../videos/aspnet-ajax/index.md)並[教學課程](../aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax.md)，以及為本教學課程結尾處進一步閱讀 > 一節中列出這些資源。
 
-
 ## <a name="examining-the-markup-emitted-by-the-scriptmanager-control"></a>檢查送出 ScriptManager 控制項的標記
 
 ScriptManager 控制項就會發出該結構為 ASP.NET AJAX 用戶端程式庫會指示瀏覽器來下載 JavaScript 檔案的標記。 也會增加一堆內嵌 JavaScript 初始化此程式庫的頁面。 下列標記會顯示新增至包含 ScriptManager 控制項的頁面呈現的輸出內容：
-
 
 [!code-html[Main](master-pages-and-asp-net-ajax-cs/samples/sample1.html)]
 
@@ -49,7 +46,6 @@ ScriptManager 控制項就會發出該結構為 ASP.NET AJAX 用戶端程式庫�
 
 > [!NOTE]
 > 如果您計劃，包括您的主版頁面的使用者介面中的 AJAX 功能，然後在問題中沒有任何選擇-您必須包含 ScriptManager 主版頁面中。
-
 
 ScriptManager 加入主版頁面中的一項缺點是，上述指令碼中發出*每個*頁面上，無論其所需。 這顯然會造成浪費頻寬有 ScriptManager 包含 （透過主版頁面中），但不使用任何功能的 ASP.NET AJAX 架構的頁面。 但浪費頻寬的多少？
 
@@ -61,7 +57,6 @@ ScriptManager 加入主版頁面中的一項缺點是，上述指令碼中發出
 > [!NOTE]
 > 如果您仍然認為只要不將 ScriptManager 控制項放在主版頁面項目，請考慮 Web Form (`<form runat="server">`主版頁面中的標記)。 每個 ASP.NET 網頁會回傳模型必須包含一個 Web 表單。 加入 Web Form 加入其他內容： 一個隱藏的表單欄位的數字`<form>`標記本身，以及必要時，JavaScript 函式的初始化指令碼從回傳。 此標記是不必要的未回傳的網頁。 移除主版頁面的 Web 表單，然後手動將它加入至其中一個需要每個內容頁面可以刪除此多餘的標記。 不過，Web Form 主版頁面中的效益會多於缺點的不必要地加入特定內容的頁面。
 
-
 ## <a name="step-1-adding-a-scriptmanager-control-to-the-master-page"></a>步驟 1：將 ScriptManager 控制項加入至主版頁面
 
 使用 ASP.NET AJAX 架構的每個網頁必須包含一個 ScriptManager 控制項。 由於此需求，它通常可以合理地放置單一的 ScriptManager 控制項，在主版頁面，如此所有的內容頁面已自動包含 ScriptManager 控制項。 此外，ScriptManager 必須出現在任何 ASP.NET AJAX 伺服器控制項，例如 UpdatePanel 和 UpdateProgress 控制項之前。 因此，最好是將 ScriptManager 在 Web 表單內任何 ContentPlaceHolder 控制項之前。
@@ -70,11 +65,9 @@ ScriptManager 加入主版頁面中的一項缺點是，上述指令碼中發出
 
 ScriptManager 加入網頁中之後, 變更其`ID`從`ScriptManager1`至`MyManager`。
 
-
 [![ScriptManager 加入主版頁面](master-pages-and-asp-net-ajax-cs/_static/image2.png)](master-pages-and-asp-net-ajax-cs/_static/image1.png)
 
 **圖 01**:ScriptManager 加入主版頁面 ([按一下以檢視完整大小的影像](master-pages-and-asp-net-ajax-cs/_static/image3.png))
-
 
 ## <a name="step-2-using-the-aspnet-ajax-framework-from-a-content-page"></a>步驟 2：使用 ASP.NET AJAX 架構，從內容頁面
 
@@ -82,16 +75,13 @@ ScriptManager 加入網頁中之後, 變更其`ID`從`ScriptManager1`至`MyManag
 
 藉由名為的根目錄中建立新的頁面開始`ShowRandomProduct.aspx`。 別忘了要繫結至這個新頁面`Site.master`主版頁面。
 
-
 [![將新的 ASP.NET 網頁新增至網站](master-pages-and-asp-net-ajax-cs/_static/image5.png)](master-pages-and-asp-net-ajax-cs/_static/image4.png)
 
 **圖 02**:將新的 ASP.NET 網頁新增至網站 ([按一下以檢視完整大小的影像](master-pages-and-asp-net-ajax-cs/_static/image6.png))
 
-
 請注意，在[*指定主版頁面的標題、 中繼標籤及其他 HTML 標頭*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)教學課程中我們建立名為自訂的基底頁面類別`BasePage`如果它已產生頁面的標題未明確設定。 移至`ShowRandomProduct.aspx`頁面的程式碼後置類別，並讓它衍生自`BasePage`(而不是從`System.Web.UI.Page`)。
 
 最後，更新`Web.sitemap`檔案，以包含這一課中的項目。 加入下列標記下方`<siteMapNode>`主要服務內容的頁面互動課程：
-
 
 [!code-xml[Main](master-pages-and-asp-net-ajax-cs/samples/sample2.xml)]
 
@@ -103,37 +93,29 @@ ScriptManager 加入網頁中之後, 變更其`ID`從`ScriptManager1`至`MyManag
 
 第一個工作是要顯示在 UpdatePanel 內的隨機選取產品的相關資訊。 開始將 DetailsView 控制項拖曳至 UpdatePanel。 將 DetailsView 控制項的`ID`屬性，以`ProductInfo`並清除其`Height`和`Width`屬性。 展開 DetailsView 的智慧標籤，然後從 選擇資料來源 下拉式清單中，選擇 繫結至新的 SqlDataSource 控制項，名為的 DetailsView `RandomProductDataSource`。
 
-
 [![將 DetailsView 繫結至新的 SqlDataSource 控制項](master-pages-and-asp-net-ajax-cs/_static/image8.png)](master-pages-and-asp-net-ajax-cs/_static/image7.png)
 
 **圖 03**:繫結至新的 SqlDataSource 控制項的 DetailsView ([按一下以檢視完整大小的影像](master-pages-and-asp-net-ajax-cs/_static/image9.png))
 
-
 設定 SqlDataSource 控制項連接至 Northwind 資料庫，透過`NorthwindConnectionString`(我們在中建立[*與主版頁面，從內容頁互動*](interacting-with-the-content-page-from-the-master-page-cs.md)教學課程)。 當設定 select 陳述式選擇指定自訂的 SQL 陳述式，然後再輸入下列查詢：
-
 
 [!code-sql[Main](master-pages-and-asp-net-ajax-cs/samples/sample3.sql)]
 
 `TOP 1`中的關鍵字`SELECT`子句會傳回只查詢所傳回的第一筆記錄。 [ `NEWID()`函式](https://msdn.microsoft.com/library/ms190348.aspx)產生新[全域唯一識別碼 (GUID) 的值](http://en.wikipedia.org/wiki/Globally_Unique_Identifier)而且可以用於`ORDER BY`子句，以隨機順序傳回資料表的記錄。
 
-
 [![設定 SqlDataSource 傳回單一的隨機選取的記錄](master-pages-and-asp-net-ajax-cs/_static/image11.png)](master-pages-and-asp-net-ajax-cs/_static/image10.png)
 
 **圖 04**:設定要傳回一個隨機選取的記錄 SqlDataSource ([按一下以檢視完整大小的影像](master-pages-and-asp-net-ajax-cs/_static/image12.png))
 
-
 完成精靈之後，Visual Studio 會建立兩個以上的查詢所傳回的資料行的 BoundField。 此時您頁面的宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](master-pages-and-asp-net-ajax-cs/samples/sample4.aspx)]
 
 [圖 5] 顯示`ShowRandomProduct.aspx`頁面上透過瀏覽器檢視時。 按一下 瀏覽器的 重新整理 按鈕重新載入頁面;您應該會看到`ProductName`和`UnitPrice`新的隨機選取資料錄的值。
 
-
 [![顯示隨機產品的名稱和價格](master-pages-and-asp-net-ajax-cs/_static/image14.png)](master-pages-and-asp-net-ajax-cs/_static/image13.png)
 
 **圖 05**:隨機的產品名稱和價格顯示 ([按一下以檢視完整大小的影像](master-pages-and-asp-net-ajax-cs/_static/image15.png))
-
 
 ### <a name="automatically-displaying-a-new-product-every-15-seconds"></a>會自動顯示新的產品每隔 15 秒
 
@@ -141,11 +123,9 @@ ASP.NET AJAX 架構包含在指定的時間; 會執行回傳的計時器控制�
 
 若要這麼做，計時器從 [工具箱] 拖放到 UpdatePanel。 變更的計時器`ID`從`Timer1`要`ProductTimer`並將其`Interval`60000 15000 的屬性。 `Interval`屬性會指出回傳之間的毫秒數; 將它設定為 15000，會導致計時器觸發程序的部分頁面回傳每隔 15 秒。 此時計時器的宣告式標記看起來應該如下所示：
 
-
 [!code-aspx[Main](master-pages-and-asp-net-ajax-cs/samples/sample5.aspx)]
 
 建立事件處理常式，讓計時器的`Tick`事件。 這個事件處理常式中，我們需要重新繫結至 DetailsView 藉由呼叫 DetailsView`DataBind`方法。 這樣會指示重新擷取的資料，從其資料來源控制項 DetailsView 以選取並顯示新的隨機選取 （正如時重新載入頁面，按一下 瀏覽器的 重新整理 按鈕） 的記錄。
-
 
 [!code-csharp[Main](master-pages-and-asp-net-ajax-cs/samples/sample6.cs)]
 
@@ -153,21 +133,17 @@ ASP.NET AJAX 架構包含在指定的時間; 會執行回傳的計時器控制�
 
 若要進一步了解了解，讓我們加入一個 Label 控制項顯示的時間，顯示上次更新的 UpdatePanel。 新增在 UpdatePanel Label Web 控制項、 設定其`ID`要`LastUpdateTime`，並清除其`Text`屬性。 接下來，建立事件處理常式的 UpdatePanel`Load`事件與顯示在標籤中的目前時間。 (在 UpdatePanel`Load`在每個完整或部分頁面回傳時引發事件。)
 
-
 [!code-csharp[Main](master-pages-and-asp-net-ajax-cs/samples/sample7.cs)]
 
 有了這個完成的變更，此頁面包含目前所顯示的產品已載入的時間。 [圖 6] 顯示頁面上，當第一次瀏覽。 圖 7 顯示頁面 15 秒之後 Timer 控制項的動作有 「 勾選 」 後 UpdatePanel 重新整理以顯示新的產品相關資訊。
-
 
 [![隨機選取產品會顯示在頁面載入](master-pages-and-asp-net-ajax-cs/_static/image17.png)](master-pages-and-asp-net-ajax-cs/_static/image16.png)
 
 **圖 06**:隨機選取產品會顯示在頁面載入 ([按一下以檢視完整大小的影像](master-pages-and-asp-net-ajax-cs/_static/image18.png))
 
-
 [![會顯示新隨機選取的產品，每隔 15 秒](master-pages-and-asp-net-ajax-cs/_static/image20.png)](master-pages-and-asp-net-ajax-cs/_static/image19.png)
 
 **圖 07**:會顯示新隨機選取的產品，每隔 15 秒 ([按一下以檢視完整大小的影像](master-pages-and-asp-net-ajax-cs/_static/image21.png))
-
 
 ## <a name="step-3-using-the-scriptmanagerproxy-control"></a>步驟 3：使用 ScriptManagerProxy 控制項
 
@@ -177,7 +153,6 @@ ASP.NET AJAX 架構包含在指定的時間; 會執行回傳的計時器控制�
 
 > [!NOTE]
 > ASP.NET 網頁中只能存在一個以上的 ScriptManager 控制項。 因此，您無法將 ScriptManager 控制項新增至內容頁面，如果 ScriptManager 控制項已定義主版頁面中。 ScriptManagerProxy 的唯一目的是提供開發人員可以在主版頁面中，定義 ScriptManager，但仍舊能夠加入 ScriptManager 的自訂內容頁的頁面為基礎的方式。
-
 
 若要查看作用中的 ScriptManagerProxy 控制項，讓我們擴大在 UpdatePanel`ShowRandomProduct.aspx`包含暫停或繼續 Timer 控制項使用用戶端指令碼的按鈕。 Timer 控制項有三種可用來達成這項功能所需的用戶端方法：
 
@@ -189,32 +164,25 @@ ASP.NET AJAX 架構包含在指定的時間; 會執行回傳的計時器控制�
 
 開始建立新的資料夾中名為網站`Scripts`。 接下來，將新檔案新增至名為 [指令碼] 資料夾`TimerScript.js`是 JScript File 類型。
 
-
 [![將新的 JavaScript 檔案加入至指令碼 資料夾](master-pages-and-asp-net-ajax-cs/_static/image23.png)](master-pages-and-asp-net-ajax-cs/_static/image22.png)
 
 **圖 08**:加入新的 JavaScript 檔案，以便`Scripts`資料夾 ([按一下以檢視完整大小的影像](master-pages-and-asp-net-ajax-cs/_static/image24.png))
-
 
 [![新的 JavaScript 檔案新增網站](master-pages-and-asp-net-ajax-cs/_static/image26.png)](master-pages-and-asp-net-ajax-cs/_static/image25.png)
 
 **圖 09**:新的 JavaScript 檔案已新增至網站 ([按一下以檢視完整大小的影像](master-pages-and-asp-net-ajax-cs/_static/image27.png))
 
-
 接下來，新增下列指令碼至 TimerScript.js 檔案：
-
 
 [!code-csharp[Main](master-pages-and-asp-net-ajax-cs/samples/sample8.cs)]
 
 我們現在要註冊此自訂的 JavaScript 檔案中`ShowRandomProduct.aspx`。 返回`ShowRandomProduct.aspx`和 ScriptManagerProxy 控制項加入頁面，設定其`ID`至`MyManagerProxy`。 若要註冊自訂的 JavaScript 檔案會選取 ScriptManagerProxy 控制項設計工具中，然後移至 [屬性] 視窗。 其中一個屬性的標題為指令碼。 選取此屬性會顯示 [圖 10] 所示的指令碼參考集合編輯器。 按一下 [新增] 按鈕，以包含新的指令碼參考，然後再輸入 [路徑] 屬性中的指令碼檔案的路徑： `~/Scripts/TimerScript.js`。
 
-
 [![新增 ScriptManagerProxy 控制項的指令碼參考](master-pages-and-asp-net-ajax-cs/_static/image29.png)](master-pages-and-asp-net-ajax-cs/_static/image28.png)
 
 **圖 10**:新增 ScriptManagerProxy 控制項的指令碼參考 ([按一下以檢視完整大小的影像](master-pages-and-asp-net-ajax-cs/_static/image30.png))
 
-
 新增指令碼參考 ScriptManagerProxy 控制項的宣告式後的標記會更新以包含`<Scripts>`具有單一集合`ScriptReference`項目，做為標記中的下列程式碼片段說明：
-
 
 [!code-aspx[Main](master-pages-and-asp-net-ajax-cs/samples/sample9.aspx)]
 
@@ -222,23 +190,19 @@ ASP.NET AJAX 架構包含在指定的時間; 會執行回傳的計時器控制�
 
 我們現在可以呼叫`ToggleTimer`中所定義的函式`TimerScript.js`中的用戶端指令碼從`ShowRandomProduct.aspx`頁面。 新增在 UpdatePanel 下列 HTML:
 
-
 [!code-aspx[Main](master-pages-and-asp-net-ajax-cs/samples/sample10.aspx)]
 
 這會顯示具有 「 暫停 」 的文字的按鈕。 只要按一下，JavaScript 函式`ToggleTimer`呼叫時，傳入的按鈕和 Timer 控制項的識別碼值的參考 (`ProductTimer`)。 請注意語法以取得`id`計時器控制項的值。 `<%=ProductTimer.ClientID%>` 值就會發出`ProductTimer`Timer 控制項`ClientID`屬性。 在  [*內容頁中的控制項識別碼命名*](control-id-naming-in-content-pages-cs.md)教學課程中我們所討論的伺服器端之間的差異`ID`值和產生的用戶端`id`值，以及如何`ClientID`會傳回用戶端`id`。
 
 [圖 11] 顯示當第一次透過瀏覽器中瀏覽此頁面。 計時器目前正在執行，並更新顯示的產品資訊每隔 15 秒。 已按下 暫停 按鈕之後，圖 12 顯示的畫面。 按一下 [暫停] 按鈕時，會停止計時器，並更新 「 繼續 」 按鈕的文字。 產品資訊將會重新整理 （並繼續重新整理每隔 15 秒） 後使用者按下繼續。
 
-
 [![按一下 [暫停] 按鈕來停止計時器控制項](master-pages-and-asp-net-ajax-cs/_static/image32.png)](master-pages-and-asp-net-ajax-cs/_static/image31.png)
 
 **圖 11**:按一下 [暫停] 按鈕來停止計時器控制項 ([按一下以檢視完整大小的影像](master-pages-and-asp-net-ajax-cs/_static/image33.png))
 
-
 [![按一下 [繼續] 按鈕，以重新啟動計時器](master-pages-and-asp-net-ajax-cs/_static/image35.png)](master-pages-and-asp-net-ajax-cs/_static/image34.png)
 
 **圖 12**:按一下 [繼續] 按鈕，以重新啟動計時器 ([按一下以檢視完整大小的影像](master-pages-and-asp-net-ajax-cs/_static/image36.png))
-
 
 ## <a name="summary"></a>總結
 

@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 4f4bf092-c400-471f-a876-78fda0417890
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 992cea256302231ee7031a21c798117b73eaa01c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f8a374be79a41b34dc8f17fa8d44c6e0680984d7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384314"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108608"
 ---
 # <a name="url-routing"></a>URL 路由
 
@@ -22,7 +22,6 @@ ms.locfileid: "59384314"
 [下載 Wingtip Toys 範例專案 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下載電子書 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > 本系列教學課程將教導您建置使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 的 ASP.NET Web Forms 應用程式的基本概念。 Visual Studio 2013[含有 C# 原始程式碼專案](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)隨附了本教學課程系列。
-
 
 在本教學課程中，您將修改 「 Wingtip Toys 範例應用程式支援 URL 路由。 路由可讓您的 web 應用程式，以使用好記，請記住，變得更容易而且更支援的搜尋引擎的 Url。 此教學課程的上一個教學課程 [成員資格和系統管理]，並且是 Wingtip Toys 教學課程系列的一部分。
 
@@ -82,7 +81,6 @@ Wingtip Toys 範例應用程式會啟動，它會呼叫`Application_Start`事件
 > **Optional**
 > 
 > 您可能會發現它更輕鬆地管理您的程式碼，藉由移動`RegisterCustomRoutes`的不同類別的方法。 在 *邏輯*資料夾中，建立個別`RouteActions`類別。 移動上述`RegisterCustomRoutes`方法，從*Global.asax.cs*到新的檔案`RoutesActions`類別。 使用`RoleActions`類別和`createAdmin`為了舉例說明如何呼叫的方法`RegisterCustomRoutes`方法，從*Global.asax.cs*檔案。
-
 
 您也可能會發現`RegisterRoutes`方法呼叫使用`RouteConfig`開頭的物件`Application_Start`事件處理常式。 進行此呼叫，以實作預設路由。 當您建立使用 Visual Studio 的 Web Form 範本的應用程式時，它是隨附預設的程式碼。
 

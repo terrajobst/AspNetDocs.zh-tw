@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: 53e659cc-eefb-40c1-a1dc-559481c99443
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8edc18968625036964c0120b83f8ebb149dbf87a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 37ef5a31d1715885d06129fc2ef8f7aef7923741
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393427"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131995"
 ---
 # <a name="masterdetail-filtering-with-a-dropdownlist-c"></a>使用 DropDownList 進行主要/詳細資料篩選 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59393427"
 [下載範例應用程式](http://download.microsoft.com/download/4/6/3/463cf87c-4724-4cbc-b7b5-3f866f43ba50/ASPNET_Data_Tutorial_7_CS.exe)或[下載 PDF](master-detail-filtering-with-a-dropdownlist-cs/_static/datatutorial07cs1.pdf)
 
 > 在本教學課程中，我們會看到如何顯示在 DropDownList 控制項和 GridView 中選取的清單項目的詳細資料的主要記錄。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -34,63 +33,49 @@ ms.locfileid: "59393427"
 
 我們的主要/詳細資料報表會列出的類別中的下拉式清單中，與顯示的選取的清單項目的產品 [GridView] 頁面中進一步向下。 超越我們，第一項工作，則將顯示在 DropDownList 中的類別。 開啟`FilterByDropDownList.aspx`頁面中`Filtering`資料夾中，從 [工具箱] 拖曳至頁面的設計工具，將在 dropdownlist 進行，然後設定其`ID`屬性設`Categories`。 接下來，按一下 從 DropDownList 的智慧標籤的 選擇資料來源 連結。 這會顯示 資料來源組態精靈。
 
-
 [![指定 DropDownList 的資料來源](master-detail-filtering-with-a-dropdownlist-cs/_static/image2.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image1.png)
 
 **圖 1**:指定 DropDownList 的資料來源 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-cs/_static/image3.png))
 
-
 選擇新增名為新 ObjectDataSource`CategoriesDataSource`叫用`CategoriesBLL`類別的`GetCategories()`方法。
-
 
 [![新增名為 CategoriesDataSource 新 ObjectDataSource](master-detail-filtering-with-a-dropdownlist-cs/_static/image5.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image4.png)
 
 **圖 2**:新增新的 ObjectDataSource 名為`CategoriesDataSource`([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-cs/_static/image6.png))
 
-
 [![選擇使用 CategoriesBLL 類別](master-detail-filtering-with-a-dropdownlist-cs/_static/image8.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image7.png)
 
 **圖 3**:選擇要使用`CategoriesBLL`類別 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-cs/_static/image9.png))
-
 
 [![設定為使用 GetCategories() 方法的 ObjectDataSource](master-detail-filtering-with-a-dropdownlist-cs/_static/image11.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image10.png)
 
 **圖 4**:設定要使用 ObjectDataSource`GetCategories()`方法 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-cs/_static/image12.png))
 
-
 在設定我們仍然需要指定哪些資料來源欄位應該會顯示在 DropDownList 和 ObjectDataSource 後其中一個應該做為清單項目的值相關聯。 已`CategoryName`欄位做為顯示和`CategoryID`做為每個清單項目的值。
-
 
 [![做為值的類別名稱 欄位和使用 CategoryID 有 DropDownList 顯示](master-detail-filtering-with-a-dropdownlist-cs/_static/image14.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image13.png)
 
 **圖 5**:DropDownList 顯示`CategoryName`欄位，並使用`CategoryID`的值 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-cs/_static/image15.png))
 
-
 現在我們有 DropDownList 控制項，其中會填入來自記錄`Categories`資料表 （全部在大約六秒內完成）。 圖 6 顯示我們進行到目前為止透過瀏覽器檢視時。
-
 
 [![下拉式清單會列出目前的類別](master-detail-filtering-with-a-dropdownlist-cs/_static/image17.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image16.png)
 
 **圖 6**:下拉式清單會列出目前的類別 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-cs/_static/image18.png))
 
-
 ## <a name="step-2-adding-the-products-gridview"></a>步驟 2：新增產品 GridView
 
 在我們的主要/詳細資料報表中的最後一個步驟是列出與選取的類別相關聯的產品。 若要這麼做，加入至頁面的 GridView，並建立名為新 ObjectDataSource `productsDataSource`。 已`productsDataSource`控制挑選其資料，從`ProductsBLL`類別的`GetProductsByCategoryID(categoryID)`方法。
-
 
 [![選取 GetProductsByCategoryID(categoryID) 方法](master-detail-filtering-with-a-dropdownlist-cs/_static/image20.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image19.png)
 
 **圖 7**:選取 `GetProductsByCategoryID(categoryID)`方法 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-cs/_static/image21.png))
 
-
 選擇這個方法之後, ObjectDataSource 精靈會提示我們輸入方法的值*`categoryID`* 參數。 若要使用選取的值`categories`DropDownList 項目設定參數來源控制與以 ControlID `Categories`。
-
 
 [![設定為值的分類 DropDownList categoryID 參數](master-detail-filtering-with-a-dropdownlist-cs/_static/image23.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image22.png)
 
 **圖 8**:設定*`categoryID`* 參數的值`Categories`DropDownList ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-cs/_static/image24.png))
-
 
 花點時間查看我們的瀏覽器中的進度。 當第一次瀏覽的頁面，這些產品屬於所選取的類別 （如 圖 9 所示），顯示 （飲料），但變更 DropDownList 不會更新資料。 這是因為更新 GridView 會因發生回傳。 若要這麼做，我們會有兩個選項 （兩者都不需要撰寫任何程式碼）：
 
@@ -99,16 +84,13 @@ ms.locfileid: "59393427"
 
 圖 9 和 10 說明主要/詳細資料報表動作中。
 
-
 [![當第一次瀏覽的頁面，會顯示飲料產品](master-detail-filtering-with-a-dropdownlist-cs/_static/image26.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image25.png)
 
 **圖 9**:當第一次瀏覽的頁面，會顯示飲料產品 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-cs/_static/image27.png))
 
-
 [![選取新的產品 （產生） 會自動造成回傳，更新 GridView](master-detail-filtering-with-a-dropdownlist-cs/_static/image29.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image28.png)
 
 **圖 10**:選取新的產品 （產生） 會自動造成回傳，更新 GridView ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-cs/_static/image30.png))
-
 
 ## <a name="adding-a----choose-a-category----list-item"></a>新增"--選擇類別目錄-」 清單項目
 
@@ -116,11 +98,9 @@ ms.locfileid: "59393427"
 
 若要將新的清單項目新增至 DropDownList 中，移至 [屬性] 視窗，然後按一下省略符號，`Items`屬性。 加入新的清單項目具有`Text`"--選擇類別目錄-"和`Value` `-1`。
 
-
 [![新增將--選擇類別目錄--清單項目](master-detail-filtering-with-a-dropdownlist-cs/_static/image32.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image31.png)
 
 **圖 11**:新增將--選擇類別目錄--清單項目 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-cs/_static/image33.png))
-
 
 或者，您也可以藉由將下列標記新增至 DropDownList 新增清單項目：
 
@@ -128,19 +108,15 @@ ms.locfileid: "59393427"
 
 此外，我們需要設定 DropDownList 控制項`AppendDataBoundItems`設為 True，因為當類別繫結至 DropDownList 從 ObjectDataSource 它們將會覆寫任何手動加入的清單項目如果`AppendDataBoundItems`不是 True。
 
-
 ![AppendDataBoundItems 屬性設定為 True](master-detail-filtering-with-a-dropdownlist-cs/_static/image34.png)
 
 **圖 12**:設定`AppendDataBoundItems`屬性設為 True
 
-
 這些變更之後，請先瀏覽的頁面已選取 [-選擇類別目錄-] 選項，並不顯示任何產品時。
-
 
 [![沒有產品都會顯示在初始頁面載入](master-detail-filtering-with-a-dropdownlist-cs/_static/image36.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image35.png)
 
 **圖 13**:顯示的初始頁面載入無產品上 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-cs/_static/image37.png))
-
 
 因為"--選擇類別目錄-」 清單項目被選取時顯示任何產品的原因是因為它的值是`-1`並在資料庫中，沒有產品`CategoryID`的`-1`。 如果這是您想在此時完成時的行為 ！ 不過，如果您想要顯示*所有*一個類別目錄選取的 「-選擇類別目錄-」 清單項目時，返回`ProductsBLL`類別，並自訂`GetProductsByCategoryID(categoryID)`方法，讓它叫用`GetProducts()`方法如果傳遞中*`categoryID`* 參數小於零：
 
@@ -150,11 +126,9 @@ ms.locfileid: "59393427"
 
 [圖 14] 顯示的螢幕擷取畫面`FilterByDropDownList.aspx`時 「-選擇類別目錄-」 選項。 這裡的所有產品依預設，會顯示，而使用者可以選擇特定類別目錄來縮小顯示。
 
-
 [![所有產品都是現在列出預設](master-detail-filtering-with-a-dropdownlist-cs/_static/image39.png)](master-detail-filtering-with-a-dropdownlist-cs/_static/image38.png)
 
 **圖 14**:所有產品是現在列 By Default ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-cs/_static/image40.png))
-
 
 ## <a name="summary"></a>總結
 

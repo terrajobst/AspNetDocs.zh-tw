@@ -8,17 +8,16 @@ ms.date: 10/05/2011
 ms.assetid: 80b17464-8395-4b82-8f11-5d8ee1351d53
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater
 msc.type: chapter
-ms.openlocfilehash: 94c467aabb53298299584b80626f9b2234dbebfe
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f45fb29c03db21a34419c14150c88b6b58ea05d0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404061"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109069"
 ---
 # <a name="filtering-scenarios-with-the-datalist-and-repeater"></a>使用 DataList 與重複項篩選案例
 
 > 在這些教學課程中，您會看到如何顯示主要的記錄和詳細資料 DataList 控制項使用下拉式清單的主版/詳細報告。
-
 
 - [使用 DropDownList 進行主要/詳細資料篩選 (C#)](master-detail-filtering-with-a-dropdownlist-datalist-cs.md)
 - [跨兩個頁面進行主要/詳細資料篩選 (C#)](master-detail-filtering-acess-two-pages-datalist-cs.md)

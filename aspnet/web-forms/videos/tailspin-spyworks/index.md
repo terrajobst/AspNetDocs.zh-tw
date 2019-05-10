@@ -8,17 +8,16 @@ ms.date: 10/05/2011
 ms.assetid: 8aa371f8-913c-4ed2-98b0-f76abf15669d
 msc.legacyurl: /web-forms/videos/tailspin-spyworks
 msc.type: chapter
-ms.openlocfilehash: d30dc8906a72a35d87db40701070fe8c8f71c174
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 715ba4530604805faf9023e3606608b9d73b323e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394116"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133728"
 ---
 # <a name="tailspin-spyworks"></a>Tailspin Spyworks
 
 > 如何使用 ASP.NET 4 中的新功能，來建置線上商店，包括購物、 簽出，以及系統管理。
-
 
 - [Tailspin Spyworks - 建立熱門產品控制項](tailspin-spyworks-creating-and-using-the-popular-products-control.md)
 - [Tailspin Spyworks - 實作以及購買控制項](tailspin-spyworks-implementing-and-using-the-also-purchased-control.md)

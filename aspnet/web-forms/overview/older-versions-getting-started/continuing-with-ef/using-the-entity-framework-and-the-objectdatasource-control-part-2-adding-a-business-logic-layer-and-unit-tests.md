@@ -8,19 +8,18 @@ ms.date: 01/26/2011
 ms.assetid: efb0e677-10b8-48dc-93d3-9ba3902dd807
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
 msc.type: authoredcontent
-ms.openlocfilehash: 4d436b0e5d605027cfcf5243f615f9ac167c5888
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 24344cc33d7c26d7c408db26c0530ef2c708a7d3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388045"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133445"
 ---
 # <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests"></a>使用 Entity Framework 4.0 和 ObjectDataSource 控制項，第 2 部分：新增商務邏輯層與單元測試
 
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 > 本教學課程系列是根據所建立的 Contoso 大學 web 應用程式[Getting Started with Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started)教學課程系列。 如果您未完成先前的教學課程，為本教學課程的起始點即可[下載應用程式](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)您會建立。 您也可以[下載應用程式](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa)，它由完整的教學課程系列。 如果您有疑問的教學課程，您可以張貼他們[ASP.NET Entity Framework 論壇](https://forums.asp.net/1227.aspx)。
-
 
 在上一個教學課程中，您建立使用 Entity Framework 的多層式架構 web 應用程式和`ObjectDataSource`控制項。 本教學課程示範如何將商務邏輯加入時將商務邏輯層 (BLL) 和資料存取層 (DAL) 分開的並示範如何建立 BLL 自動化的單元測試。
 
@@ -72,7 +71,6 @@ ms.locfileid: "59388045"
 
 > [!NOTE]
 > 實體物件技術上來說，是仍不非持續，因為它們從具現化類別繼承自 Entity Framework 的`EntityObject`類別。 您可以使用完整的持續性無知*純舊 CLR 物件*，或*Poco*，來取代繼承的物件`EntityObject`類別。 使用 Poco 已超出本教學課程的範圍。 如需詳細資訊，請參閱 <<c0> [ 可測試性和 Entity Framework 4.0](https://msdn.microsoft.com/library/ff714955.aspx) MSDN 網站上。)
-
 
 現在您可以連接`ObjectDataSource`商務邏輯的控制項類別，而不是存放庫，並確認一切運作與以前一樣。
 

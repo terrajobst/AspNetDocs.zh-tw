@@ -8,16 +8,15 @@ ms.date: 11/14/2011
 ms.assetid: 15730cc3-f122-45e4-8afd-bd8b2c8c83ab
 msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-designer
 msc.type: chapter
-ms.openlocfilehash: d1c99b0362d2ff8f00f28af20e4324698b66681c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d6a5b01980a930e7d1684516233bc9bca99aec62
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381077"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108748"
 ---
 # <a name="visual-studio-designer"></a>Visual Studio Designer
 
 > 這段影片會說明 Visual Studio 2008 中的增強的功能，使用主版頁面。
-
 
 - [Visual Studio 2008 與巢狀主版頁面](visual-studio-2008-and-nested-masterpages.md)

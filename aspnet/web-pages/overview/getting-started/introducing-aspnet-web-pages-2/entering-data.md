@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: d37c93fc-25fd-4e94-8671-0d437beef206
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
 msc.type: authoredcontent
-ms.openlocfilehash: d76f607f1d5e779d43ee15d8f2d697e7b0f147ae
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b9354a7b97a7df9020a681f709e16a92650cfcf0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380115"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132975"
 ---
 # <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>簡介 ASP.NET Web Pages-使用表單輸入資料庫的資料
 
@@ -36,7 +36,6 @@ ms.locfileid: "59380115"
 > - SQL`Insert Into`陳述式
 > - `Validation`協助程式。
 > - `Response.Redirect` 方法
-
 
 ## <a name="what-youll-build"></a>您將建置
 
@@ -155,7 +154,6 @@ ms.locfileid: "59380115"
 > 現在，然後務必了解完全 null 值時，以及只是空字串時。 在程式碼*AddMovie*頁面上，您取得的值的文字方塊使用`Request.Form["title"]`，依此類推。 當頁面第一次執行 （在您按一下按鈕時） 之前，值`Request.Form["title"]`為 null。 當您提交表單，但是`Request.Form["title"]`取得的值`title`文字方塊。 它並不明顯，但空白的文字方塊不是 null;它只會在它包含空字串。 因此當程式碼執行以回應 [] 按鈕按一下，`Request.Form["title"]`中有一個空字串。
 > 
 > 這項區別為何如此重要？ 您在建立時*電影*資料表中，您明確地說，沒有的欄位可能是 null。 這裡會有的項目表單，對於新的影片，但您要離開讓欄位空白。 您都應該有抱怨當您嘗試儲存沒有內容類型或年份值的新上映電影的資料庫。 但這就是重點&mdash;即使這些文字方塊保留空白，值不為 null，而空字串。 如此一來，您就可以將這些專欄是空的資料庫來儲存新上映電影&mdash;但不是為 null ！ &mdash; 值。 因此，您必須先確定使用者不會提交空的字串，您可以藉由驗證使用者的輸入。
-
 
 ### <a name="the-validation-helper"></a>驗證協助程式
 

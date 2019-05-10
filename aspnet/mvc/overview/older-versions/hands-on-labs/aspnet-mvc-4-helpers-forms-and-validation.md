@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 187ee9cd-bc70-479b-bfed-f568b8da96eb
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 639a8e0e5fd9557221c95aee1bef0294df047ae8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0e2605a4188eaf814f6ab0ebfeaabed4457bcfa3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406310"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112498"
 ---
 # <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>ASP.NET MVC 4 協助程式、表單和驗證
 
@@ -90,13 +90,12 @@ ms.locfileid: "59406310"
 > [!NOTE]
 > 每個練習會伴隨**結束**包含完成練習之後，您應該取得所產生的方案資料夾。 如果您需要的所有練習所使用的其他說明，您可以使用此解決方案作為指南。
 
-
 估計的時間才能完成這個實驗室：**60 分鐘**
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Creating_the_Store_Manager_controller_and_its_Index_view"></a>
-### <a name="exercise-1-creating-the-store-manager-controller-and-its-index-view"></a>練習 1:建立存放區管理員控制站和其索引檢視
+### <a name="exercise-1-creating-the-store-manager-controller-and-its-index-view"></a>練習 1：建立存放區管理員控制站和其索引檢視
 
 在此練習中，您將了解如何建立新的控制站，以支援 CRUD 作業，來自訂要從資料庫最後產生的索引檢視範本，利用 ASP.NET MVC scaffolding 傳回一份專輯其索引動作方法顯示 HTML 表格中的專輯屬性的功能。
 
@@ -177,7 +176,6 @@ ms.locfileid: "59406310"
 > [!NOTE]
 > **Scaffolding**支援 ASP.NET MVC 內產生簡單的檢視範本會列出專輯模型中的所有欄位。 **Scaffolding**提供快速的方式，若要開始使用強型別檢視:，而不必手動撰寫檢視範本快速 scaffolding 會產生一個預設範本，然後您可以修改產生的程式碼。
 
-
 1. 檢閱建立的程式碼。 產生的欄位清單將會屬於下列 HTML 資料表，其中**Scaffolding**用來顯示表格式資料。
 
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample4.cshtml)]
@@ -205,7 +203,7 @@ ms.locfileid: "59406310"
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Adding_an_HTML_Helper"></a>
-### <a name="exercise-2-adding-an-html-helper"></a>練習 2:新增 HTML 協助程式
+### <a name="exercise-2-adding-an-html-helper"></a>練習 2：新增 HTML 協助程式
 
 StoreManager 索引頁面有一項潛在的問題：標題和演出者名稱的屬性都可以是夠長，會擲回關閉資料表格式。 在這個練習中，您將學習如何新增自訂的 HTML helper 來截斷文字。
 
@@ -224,7 +222,6 @@ StoreManager 索引頁面有一項潛在的問題：標題和演出者名稱的�
 
 > [!NOTE]
 > 若要深入了解**擴充方法**，請瀏覽這篇 msdn 文章。 [https://msdn.microsoft.com/library/bb383977.aspx](https://msdn.microsoft.com/library/bb383977.aspx).
-
 
 1. 開啟**開始**解決方案位於**來源/Ex2-AddingAnHTMLHelper/開始/** 資料夾。 否則，您可能會繼續使用**結束**方案取得完成前一個練習。
 
@@ -404,7 +401,7 @@ StoreManager 索引頁面有一項潛在的問題：標題和演出者名稱的�
 <a id="Exercise4"></a>
 
 <a id="Exercise_4_Adding_a_Create_View"></a>
-### <a name="exercise-4-adding-a-create-view"></a>練習 4:加入建立檢視
+### <a name="exercise-4-adding-a-create-view"></a>練習 4：加入建立檢視
 
 既然**StoreManagerController**支援**編輯**能力，在這個練習中您會了解如何加入建立檢視範本，讓儲存管理員應用程式中加入新的相簿。
 
@@ -505,7 +502,7 @@ StoreManager 索引頁面有一項潛在的問題：標題和演出者名稱的�
 <a id="Exercise5"></a>
 
 <a id="Exercise_5_Handling_Deletion"></a>
-### <a name="exercise-5-handling-deletion"></a>練習 5:處理刪除
+### <a name="exercise-5-handling-deletion"></a>練習 5：處理刪除
 
 尚未實作刪除 album 的能力。 這是此練習中會有何相關。 像之前，您將在此實作使用兩個不同的方法中的刪除案例**StoreManagerController**類別：
 
@@ -665,7 +662,6 @@ StoreManager 索引頁面有一項潛在的問題：標題和演出者名稱的�
 
 > [!NOTE]
 > 不顯眼的 jQuery 會使用資料 ajax 前置詞 JavaScript 來叫用伺服器，而非干擾的方式發出內嵌用戶端指令碼的動作方法。
-
 
 <a id="Ex7Task1"></a>
 

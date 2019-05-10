@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: f97a1145-6470-4bca-8f15-ccfb25fb903c
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 3b7f154936222c85bd7897ea10cbb5ae9d1aa670
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 230cf4393db0ee19cfc42ed54359d61e7926a49d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408936"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109278"
 ---
 # <a name="application-lifecycle-management-from-development-to-production"></a>應用程式生命週期管理：從開發到生產
 
@@ -27,7 +27,6 @@ ms.locfileid: "59408936"
 > 
 > > [!NOTE]
 > > 為了簡單起見，本主題不討論資料庫更新部署程序的一部分。 不過，對資料庫功能，進行累加式更新是許多的企業部署案例的需求，而且您可以找到有關如何完成這項作業，稍後在本教學課程系列中的指示。 如需詳細資訊，請參閱 <<c0> [ 部署資料庫專案](../web-deployment-in-the-enterprise/deploying-database-projects.md)。
-
 
 ## <a name="overview"></a>總覽
 
@@ -94,7 +93,6 @@ Matt 世昕建立各種自訂 MSBuild 專案檔，使用分割的專案檔案方
 > 這些自訂的專案檔案的方式與您用來叫用 MSBuild 的機制無關。 例如，您可以使用 MSBuild 命令列直接中所述[了解專案檔](../web-deployment-in-the-enterprise/understanding-the-project-file.md)。 中所述，您可以從 命令檔，執行專案檔[建立和執行部署命令檔](../web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file.md)。 或者，您可以執行專案檔從 TFS 中的組建定義中所述[建立組建定義該支援部署](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md)。  
 > 在每個案例的最終結果是相同&#x2014;MSBuild 執行合併的專案檔，並將您的解決方案部署到目標環境。 這會提供您足夠的彈性，您如何觸發您的發行程序。
 
-
 一旦他已建立自訂的專案檔，Matt 會將它們加入至方案資料夾，並簽入至原始檔控制。
 
 ### <a name="create-build-definitions"></a>建立組建定義
@@ -125,15 +123,12 @@ Matt 世昕建立各種自訂 MSBuild 專案檔，使用分割的專案檔案方
 
 **DeployToTest**組建定義提供 msbuild 的這些引數：
 
-
 [!code-console[Main](application-lifecycle-management-from-development-to-production/samples/sample1.cmd)]
-
 
 **DeployOnBuild = true**並**DeployTarget = 封裝**Team Build 建置方案中的專案時，會使用屬性。 專案的 web 應用程式專案時，這些屬性會指示 MSBuild 來建立專案的 web 部署封裝。 **TargetEnvPropsFile**屬性會告知*Publish.proj*檔案尋找要匯入的特定環境的專案檔的位置。
 
 > [!NOTE]
 > 如需如何建立這類的組建定義的詳細逐步解說，請參閱 <<c0> [ 建立組建定義該支援部署](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md)。
-
 
 *Publish.proj*檔案包含建置方案中的每個專案的目標。 不過，它也包含條件式邏輯，會略過這些建置目標如果您在 Team Build 中執行該檔案。 這可讓您利用 Team Build 提供的例如能夠執行單元測試的其他組建功能。 如果方案組建或單元測試失敗， *Publish.proj*檔案將不會執行，並將不會部署應用程式。
 
@@ -164,9 +159,7 @@ Matt 世昕建立各種自訂 MSBuild 專案檔，使用分割的專案檔案方
 
 **DeployToStaging**組建定義提供 msbuild 的這些引數：
 
-
 [!code-console[Main](application-lifecycle-management-from-development-to-production/samples/sample2.cmd)]
-
 
 **TargetEnvPropsFile**屬性會告知*Publish.proj*檔案尋找要匯入的特定環境的專案檔的位置。 **OutputRoot**屬性會覆寫內建的值，表示組建資料夾包含您想要部署之資源的位置。 當 Rob 組建排入佇列時，他會使用**參數**索引標籤，以提供更新的值，如**OutputRoot**屬性。
 
@@ -175,24 +168,19 @@ Matt 世昕建立各種自訂 MSBuild 專案檔，使用分割的專案檔案方
 > [!NOTE]
 > 如需有關如何建立這類的組建定義的詳細資訊，請參閱[部署特定建置](../configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build.md)。
 
-
 **DeployToStaging-WhatIf**組建定義包含與相同的部署邏輯**DeployToStaging**組建定義。 不過，它包含額外的引數**WhatIf = true**:
 
-
 [!code-console[Main](application-lifecycle-management-from-development-to-production/samples/sample3.cmd)]
-
 
 內*Publish.proj*檔案， **WhatIf**屬性會指出部署的所有資源，應該會在 「 假設 」 模式中都發佈。 換句話說，如同部署掉了，但不實際變更目的地環境中，會產生記錄檔。 這可讓您評估建議的部署的影響&#x2014;特定、 項目就會被新增、 項目將會更新，和項目將會刪除&#x2014;在實際進行任何變更之前。
 
 > [!NOTE]
 > 如需有關如何設定 「 假設 」 部署的詳細資訊，請參閱 <<c0> [ 執行 「 假設 」 部署](../advanced-enterprise-web-deployment/performing-a-what-if-deployment.md)。
 
-
 一旦您部署到預備環境中的主要 web 伺服器應用程式，WFF 會自動同步應用程式在伺服器陣列中的所有伺服器。
 
 > [!NOTE]
 > 如需有關如何設定同步處理 web 伺服器 WFF 的詳細資訊，請參閱[使用 Web 伺服陣列架構建立伺服器陣列](../configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework.md)。
-
 
 ## <a name="deployment-to-production"></a>部署至生產環境
 

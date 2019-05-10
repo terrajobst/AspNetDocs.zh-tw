@@ -8,12 +8,12 @@ ms.date: 11/27/2012
 ms.assetid: 6dfb51ea-9f4d-4e70-916c-8ef8344a88d6
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 5dc4471039938a429a85c891594c3a6651c6ef9d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 368d2b9456d12b2bb4063a23333e5c8837faa3b8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59388526"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134727"
 ---
 # <a name="authentication-and-authorization-in-aspnet-web-api"></a>ASP.NET Web API 中驗證和授權
 
@@ -28,7 +28,6 @@ ms.locfileid: "59388526"
 
 > [!NOTE]
 > 感謝您檢閱這一系列的人員，並提供寶貴的意見：Rick Anderson、 於 Levi Broderick、 Barry Dorrans、 Tom Dykstra、 Hongmei Ge、 David Matson、 Daniel Roth、 Tim Teebken。
-
 
 ## <a name="authentication"></a>驗證
 
@@ -101,7 +100,6 @@ Web API 提供的內建的授權篩選條件， [AuthorizeAttribute](https://msd
 
 > [!NOTE]
 > **AuthorizeAttribute** Web API 控制器的篩選器位於**System.Web.Http**命名空間。 沒有類似的篩選條件中的 MVC 控制器**System.Web.Mvc**命名空間，與 Web API 控制器不相容。
-
 
 ### <a name="custom-authorization-filters"></a>自訂授權篩選條件
 

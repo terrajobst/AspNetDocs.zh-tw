@@ -8,12 +8,12 @@ ms.date: 03/27/2007
 ms.assetid: 362ade25-3965-4fb2-88d2-835c4786244f
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9ec09bfcadaa56401a08a389028766ee04f1daad
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 648703bdd5ed985332291b16e973c417cef36cde
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379874"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131971"
 ---
 # <a name="including-a-file-upload-option-when-adding-a-new-record-c"></a>新增記錄時包含檔案上傳選項 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59379874"
 [下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_56_CS.exe)或[下載 PDF](including-a-file-upload-option-when-adding-a-new-record-cs/_static/datatutorial56cs1.pdf)
 
 > 本教學課程會示範如何建立的 Web 介面，可讓使用者輸入的文字資料，並將二進位檔案上傳。 為了說明可用來儲存二進位資料的選項，一個檔案會儲存在資料庫中而其他則會儲存在檔案系統中。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -41,40 +40,32 @@ ms.locfileid: "59379874"
 > [!NOTE]
 > 使用預存程序，而不特定 SQL 陳述式時的不便會是問題。 未來的教學課程將探討在資料存取層中使用替代特定 SQL 陳述式的預存程序。
 
-
 若要避免此潛在傷腦筋，而不是自訂的自動產生 SQL 陳述式，可讓 s 改為建立 TableAdapter 的新的方法。 這種方法，名為`InsertWithPicture`，將接受的值`CategoryName`， `Description`， `BrochurePath`，並`Picture`資料行，然後執行`INSERT`陳述式來儲存所有的四個值的新記錄。
 
 開啟 輸入資料集，並從設計工具中，以滑鼠右鍵按一下`CategoriesTableAdapter`s 標頭，然後從內容功能表中選擇 加入查詢。 這會啟動 TableAdapter 查詢組態精靈，一開始會詢問 TableAdapter 查詢應該如何存取資料庫。 選擇 使用 SQL 陳述式，然後按一下 下一步。 下一個步驟會產生提示的查詢類型。 因為我們重新建立要新增新的記錄，以查詢`Categories`資料表中，選擇 [插入] 並按一下 [下一步]。
-
 
 [![選取 [插入] 選項](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image1.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image1.png)
 
 **圖 1**:選取 [插入] 選項 ([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image2.png))
 
-
 我們現在需要指定`INSERT`SQL 陳述式。 精靈會自動建議`INSERT`對應至 TableAdapter s 主查詢的陳述式。 在此情況下，它 s`INSERT`陳述式來插入`CategoryName`， `Description`，和`BrochurePath`值。 Update 陳述式以便`Picture`資料行是否包含連同`@Picture`參數，就像這樣：
-
 
 [!code-sql[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample1.sql)]
 
 在精靈的最後一個畫面會要求我們命名新的 TableAdapter 方法。 輸入`InsertWithPicture`按一下 [完成]。
 
-
 [![命名新的 TableAdapter 方法 InsertWithPicture](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image2.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image3.png)
 
 **圖 2**:將新的 TableAdapter 方法`InsertWithPicture`([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image4.png))
-
 
 ## <a name="step-2-updating-the-business-logic-layer"></a>步驟 2：正在更新商務邏輯層
 
 展示層應該只有介面與商務邏輯層，而不是我們要建立 BLL 方法叫用我們剛剛建立的 DAL 方法略過它，直接移至資料存取層，因為 (`InsertWithPicture`)。 本教學課程中建立方法`CategoriesBLL`名為類別`InsertWithPicture`它會接受作為輸入的三`string`s 和`byte`陣列。 `string`輸入的參數都是為類別 s 的名稱、 描述和冊檔案路徑，而`byte`陣列為類別的圖片的二進位內容。 如下列程式碼所示，這個 BLL 方法會叫用對應的 DAL 方法：
 
-
 [!code-csharp[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample2.cs)]
 
 > [!NOTE]
 > 請確定您已儲存輸入資料集之前加入`InsertWithPicture`BLL 的方法。 由於`CategoriesTableAdapter`類別的程式碼會自動產生型別資料集時，如果您不要先將您的變更儲存至具類型資料集`Adapter`屬性將不會知道`InsertWithPicture`方法。
-
 
 ## <a name="step-3-listing-the-existing-categories-and-their-binary-data"></a>步驟 3：列出現有的類別和其二進位資料
 
@@ -82,19 +73,15 @@ ms.locfileid: "59379874"
 
 首先開啟`DisplayOrDownload.aspx`頁面上，從`BinaryData`資料夾。 移至來源檢視，並將複製的 GridView 和 ObjectDataSource s 宣告式語法，將其內貼`<asp:Content>`中的項目`UploadInDetailsView.aspx`。 同時，不要忘了透過複製`GenerateBrochureLink`方法的程式碼後置類別`DisplayOrDownload.aspx`至`UploadInDetailsView.aspx`。
 
-
 [![複製並貼上 UploadInDetailsView.aspx 從 DisplayOrDownload.aspx 的宣告式語法](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image3.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image5.png)
 
 **圖 3**:複製並貼上從宣告式語法`DisplayOrDownload.aspx`要`UploadInDetailsView.aspx`([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image6.png))
 
-
 複製的宣告式語法後及`GenerateBrochureLink`方法，透過以`UploadInDetailsView.aspx`頁面上，檢視透過瀏覽器來確認所有項目透過正確複製該頁面。 您應該會看到 GridView 列出的八個類別，其中包含下載手冊，以及類別的圖片的連結。
-
 
 [![您現在應該會看到每個類別目錄以及其二進位資料](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image4.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image7.png)
 
 **圖 4**:您現在應該會看到每個類別目錄以及其二進位資料 ([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image8.png))
-
 
 ## <a name="step-4-configuring-thecategoriesdatasourceto-support-inserting"></a>步驟 4：設定`CategoriesDataSource`來支援插入
 
@@ -102,18 +89,14 @@ ms.locfileid: "59379874"
 
 按一下 [從 ObjectDataSource s 智慧標籤的設定資料來源] 連結啟動。 第一個畫面會顯示的物件的資料來源設定為使用`CategoriesBLL`。 保留此設定設為-定義資料方法畫面前往旁邊按一下。 移至 [插入] 索引標籤，並挑選`InsertWithPicture`方法，從下拉式清單。 按一下 完成 以完成精靈。
 
-
 [![設定為使用 InsertWithPicture 方法的 ObjectDataSource](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image5.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image9.png)
 
 **圖 5**:設定要使用 ObjectDataSource`InsertWithPicture`方法 ([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image10.png))
 
-
 > [!NOTE]
 > 在完成精靈，Visual Studio 可能會要求是否您想要重新整理欄位和索引鍵，這會重新產生資料 Web 控制項欄位。 選擇 否，因為選擇 是 會覆寫您所做的任何欄位自訂項目。
 
-
 完成精靈之後，ObjectDataSource 現在將包含的值及其`InsertMethod`屬性，以及`InsertParameters`四個類別資料行中，下列宣告式標記為說明：
-
 
 [!code-aspx[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample3.aspx)]
 
@@ -123,11 +106,9 @@ First 涵蓋[概觀的插入、 更新和刪除資料](../editing-inserting-and-
 
 從 [工具箱] 拖曳至上方 GridView，設定設計工具拖曳 DetailsView 開始其`ID`屬性，以`NewCategory`並清除`Height`和`Width`屬性值。 從 DetailsView s 智慧標籤，將它繫結至現有`CategoriesDataSource`然後核取 啟用插入核取方塊。
 
-
 [![結合 CategoriesDataSource DetailsView 和啟用插入](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image6.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image11.png)
 
 **圖 6**:繫結至 DetailsView `CategoriesDataSource` ，並啟用插入 ([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image12.png))
-
 
 若要永久轉譯 DetailsView 在其插入的介面中，設定其`DefaultMode`屬性設`Insert`。
 
@@ -135,14 +116,11 @@ First 涵蓋[概觀的插入、 更新和刪除資料](../editing-inserting-and-
 
 移除`NumberOfProducts`DetailsView 完全與然後更新 BoundField`HeaderText`的屬性`CategoryName`和`BrochurePath`BoundFields 到類別目錄] 和 [摺頁冊，分別。 接下來，將轉換`BrochurePath`BoundField 到 TemplateField 並加入新的 TemplateField 的圖片中，提供這個新的 TemplateField`HeaderText`圖片的值。 移動`Picture`使其之間的 TemplateField `BrochurePath` TemplateField 和 CommandField。
 
-
 ![結合 CategoriesDataSource DetailsView 和啟用插入](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image7.gif)
 
 **圖 7**:繫結至 DetailsView`CategoriesDataSource`並啟用插入
 
-
 如果您轉換`BrochurePath`成透過 [編輯欄位] 對話方塊中的 TemplateField BoundField TemplateField 包含`ItemTemplate`， `EditItemTemplate`，和`InsertItemTemplate`。 只有`InsertItemTemplate`是有需要不過，可以隨意移除其他兩個範本。 此時 DetailsView s 的宣告式語法看起來應該如下所示：
-
 
 [!code-aspx[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample4.aspx)]
 
@@ -152,14 +130,11 @@ First 涵蓋[概觀的插入、 更新和刪除資料](../editing-inserting-and-
 
 從 DetailsView s 智慧標籤，選擇 [編輯範本] 選項，然後按`BrochurePath`TemplateField 的`InsertItemTemplate`從下拉式清單。 移除文字方塊，然後將 FileUpload 控制項從 [工具箱] 拖曳至範本。 設定 FileUpload 控制項 s`ID`至`BrochureUpload`。 同樣地，新增 FileUpload 控制項`Picture`TemplateField 的`InsertItemTemplate`。 設定這個 FileUpload 控制項 s`ID`至`PictureUpload`。
 
-
 [![加入 InsertItemTemplate FileUpload 控制項](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image8.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image13.png)
 
 **圖 8**:新增 FileUpload 控制項`InsertItemTemplate`([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image14.png))
 
-
 完成之後這些新增項目，會使用兩個的 TemplateField s 宣告式語法：
-
 
 [!code-aspx[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample5.aspx)]
 
@@ -170,13 +145,11 @@ First 涵蓋[概觀的插入、 更新和刪除資料](../editing-inserting-and-
 > [!NOTE]
 > 在理想情況下，`CategoryName`和`Description`BoundFields 會轉換成 TemplateFields 和自訂其插入介面。 `Description`插入介面，例如，會有可能更適合透過多行文字方塊。 而由於`CategoryName`資料行不接受`NULL`值 RequiredFieldValidator 應新增以確保使用者提供新的類別的名稱的值。 這些步驟會留給您作為練習的讀取器。 回頭[自訂資料修改介面](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs.md)的擴充資料修改介面將深入探討。
 
-
 ## <a name="step-6-saving-the-uploaded-brochure-to-the-web-server-s-file-system"></a>步驟 6：將已上傳摺頁冊儲存至 Web 伺服器檔案系統
 
 使用者輸入新的類別目錄的值，然後按一下 [插入] 按鈕，就會發生回傳，而且可以掀起插入工作流程。 首先，在 DetailsView s [ `ItemInserting`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.iteminserting.aspx)引發。 接下來，ObjectDataSource s`Insert()`方法會叫用，這會導致新的記錄新增至`Categories`資料表。 在那之後，在 DetailsView s [ `ItemInserted`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.iteminserted.aspx)引發。
 
 ObjectDataSource s 前面`Insert()`叫用方法時，就必須先確認使用者已上傳適當的檔案類型，並再儲存到 web 伺服器檔案系統的 手冊為 PDF。 建立事件處理常式 DetailsView s`ItemInserting`事件，並新增下列程式碼：
-
 
 [!code-csharp[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample6.cs)]
 
@@ -185,16 +158,13 @@ ObjectDataSource s 前面`Insert()`叫用方法時，就必須先確認使用者
 > [!NOTE]
 > 信賴憑證者上傳的 s 副檔名不是萬無一失的技巧，以確保上傳的檔案的 PDF 文件。 使用者可能會有有效的 PDF 文件副檔名`.Brochure`，或無法取得非 PDF 文件也提供`.pdf`延伸模組。 檔案二進位內容必須以更明確地驗證 檔案類型，就要以程式設計的方式。 這類全面的方法，不過，往往是多餘的;正在檢查擴充功能已足以應付大部分的情況。
 
-
 中所述[上傳檔案](uploading-files-cs.md)教學課程中，儲存檔案至檔案系統，讓一位使用者的傳不能覆寫另一個 s 時，就必須特別注意。 本教學課程中，我們會嘗試上傳的檔案使用相同的名稱。 如果已存在的檔案中`~/Brochures`目錄中具有該相同的檔案名稱，不過，我們將會附加一個數字結尾，直到找到唯一的名稱。 比方說，如果使用者將名為摺頁冊檔案上傳`Meats.pdf`，但已經有名稱為的檔案`Meats.pdf`中`~/Brochures`資料夾中，我們將會變更已儲存的檔案名稱以`Meats-1.pdf`。 如果已存在時，我們會試著`Meats-2.pdf`，依此類推，直到找到唯一的檔案名稱。
 
 下列程式碼會使用[`File.Exists(path)`方法](https://msdn.microsoft.com/library/system.io.file.exists.aspx)來判斷檔案是否已存在具有指定的檔案名稱。 如果是的話，它會繼續嘗試新的檔案名稱，如摺頁冊，直到找到沒有衝突。
 
-
 [!code-csharp[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample7.cs)]
 
 一旦已找到有效的檔案名稱，必須將檔案儲存至檔案系統和 ObjectDataSource 的`brochurePath``InsertParameter`值需要更新，讓這個檔案名稱寫入資料庫。 如我們所見年代*上傳的檔案*教學課程中，儲存檔案，可以使用 FileUpload 控制項的`SaveAs(path)`方法。 若要更新的 ObjectDataSource 秒`brochurePath`參數，請使用`e.Values`集合。
-
 
 [!code-csharp[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample8.cs)]
 
@@ -204,13 +174,11 @@ ObjectDataSource s 前面`Insert()`叫用方法時，就必須先確認使用者
 
 雖然`Categories`資料表允許`NULL`值`Picture`資料行，目前所有類別都有一張圖片。 可讓 s 強制使用者進行時加入新的類別，透過本頁面提供一張圖片。 下列程式碼會檢查以確保已上傳圖片，且具有適當的擴充功能。
 
-
 [!code-csharp[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample9.cs)]
 
 此程式碼應該放*之前*步驟 6 中的程式碼，讓圖片上傳發生問題時，事件處理常式將會終止之前摺頁冊檔案儲存至檔案系統。
 
 假設已上傳適當的檔案，請將上傳的二進位內容指派給圖片參數 s 的值與下列程式碼行：
-
 
 [!code-csharp[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample10.cs)]
 
@@ -218,41 +186,33 @@ ObjectDataSource s 前面`Insert()`叫用方法時，就必須先確認使用者
 
 為求完整起見，以下是`ItemInserting`完整的事件處理常式：
 
-
 [!code-csharp[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample11.cs)]
 
 ## <a name="step-8-fixing-thedisplaycategorypictureaspxpage"></a>步驟 8：修正`DisplayCategoryPicture.aspx`頁面
 
 可讓 s 花一點時間來測試插入介面和`ItemInserting`建立過去幾個步驟的事件處理常式。 請瀏覽`UploadInDetailsView.aspx`逐頁瀏覽器，並嘗試新增的類別，但省略該圖片，或指定非 JPG 圖片或非 PDF 摺頁冊。 在任一種情況下，將會顯示錯誤訊息，並插入工作流程已取消。
 
-
 [![一則警告訊息會顯示如果上傳的檔案類型無效](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image9.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image15.png)
 
 **圖 9**:一則警告訊息會顯示如果上傳無效的檔案類型 ([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image16.png))
 
-
 一旦您已確認頁面需要上傳並不會接受非 PDF 或非 JPG 檔案，新增新的類別，以有效的 JPG 圖片，圖片將摺頁冊欄位保留空白。 頁面會回傳之後按一下 [插入] 按鈕，以及新的記錄將會新增至`Categories`資料表直接在資料庫中儲存的上傳的影像 s 二進位內容。 GridView 會更新，並顯示在新加入的類別中，一個資料列，但是，如 [圖 10] 所示，新的類別目錄的圖片就無法正確呈現。
-
 
 [![新的類別不會顯示圖片的 s](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image10.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image17.png)
 
 **圖 10**:不會顯示圖片的新類別 s ([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image18.png))
 
-
 不會顯示新的圖片的原因是因為`DisplayCategoryPicture.aspx`傳回指定的分類的圖片的網頁設定成可以處理具有 OLE 標頭的點陣圖。 從中移除此 78 位元組標頭`Picture`再進行傳送，則資料行 s 二進位內容傳回至用戶端。 但沒有此 OLE 標頭; JPG 檔案我們剛才上傳新的類別目錄。因此，有效的必要位元組正在移除從影像 s 的二進位資料。
 
 因為現在有兩個點陣圖與 OLE 標頭中的 Jpg`Categories`資料表中，我們需要更新`DisplayCategoryPicture.aspx`，使其沒有原始的八個類別目錄移除 OLE 標頭，並會略過較新的類別目錄記錄此移除。 在我們的下一個教學課程中，我們將檢驗如何更新現有的記錄 s 映像，並使其 Jpg 我們將更新的所有舊的分類圖片。 現在，不過，使用中的下列程式碼`DisplayCategoryPicture.aspx`移除 OLE 標頭，只針對這些原始的八個類別：
-
 
 [!code-csharp[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample12.cs)]
 
 透過這項變更，JPG 影像現在才能正確轉譯在 gridview 裡。
 
-
 [![新的類別目錄的 JPG 影像會正確轉譯](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image11.gif)](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image19.png)
 
 **圖 11**:新的類別目錄的 JPG 影像會正確轉譯 ([按一下以檢視完整大小的影像](including-a-file-upload-option-when-adding-a-new-record-cs/_static/image20.png))
-
 
 ## <a name="step-9-deleting-the-brochure-in-the-face-of-an-exception"></a>步驟 9：刪除例外狀況時手冊
 
@@ -261,7 +221,6 @@ ObjectDataSource s 前面`Insert()`叫用方法時，就必須先確認使用者
 現在，如果資料庫處於離線狀態，會發生什麼事或是否有錯誤`INSERT`SQL 陳述式？ 清楚地插入將會失敗，因此沒有新的類別目錄資料列會加入至資料庫。 但我們還是必須在 web 伺服器檔案系統上已上傳摺頁冊檔案 ！ 這個檔案必須先刪除時插入工作流程期間發生例外狀況。
 
 如先前所討論[處理 BLL 和 DAL 層級例外狀況，在 ASP.NET 網頁](../editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs.md)教學課程中，於擲回例外狀況從中透過各種不同的層級昇的架構的深度。 在展示層中，我們可以決定從 DetailsView s 是否發生例外狀況`ItemInserted`事件。 這個事件處理常式也會提供值的 ObjectDataSource 的`InsertParameters`。 因此，我們可以在其中建立事件處理常式`ItemInserted`事件，以檢查發生例外狀況時，如果是的話，會刪除 ObjectDataSource s 所指定的檔案`brochurePath`參數：
-
 
 [!code-csharp[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample13.cs)]
 

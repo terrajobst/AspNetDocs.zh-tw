@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 656dd06d-806c-467c-863d-9fc45e5ba3ab
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework
 msc.type: authoredcontent
-ms.openlocfilehash: 19c061e83257e118aee74c9373a627b8c56defe3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 204996514bed336e60ab77f184a923f04e7e2bba
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421234"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106899"
 ---
 # <a name="creating-a-server-farm-with-the-web-farm-framework"></a>使用 Web 伺服陣列架構建立伺服器陣列
 
@@ -22,7 +22,6 @@ ms.locfileid: "59421234"
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主題描述如何使用 Web 伺服陣列架構 (WFF) 2.0 來建立及設定 web 伺服器陣列，集合中的伺服器。
-
 
 WFF 可讓您跨多個負載平衡的 web 伺服器同步處理 web 平台產品和元件、 web 應用程式、 網站和組態設定。 在情況下，您需要一個以上的 web 伺服器，例如預備和生產環境中，這可大幅簡化您的部署和設定程序。 您可以部署單一伺服器的 web 應用程式&#x2014;*主要伺服器*&#x2014;和 WFF 會自動複寫所有其他 web 伺服器上伺服器陣列中該 web 應用程式。
 
@@ -63,7 +62,6 @@ WFF 可讓您跨多個負載平衡的 web 伺服器同步處理 web 平台產品
 
 > [!NOTE]
 > 如需有關如何將電腦加入網域的詳細資訊，請參閱 <<c0> [ 將電腦加入網域並登入](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)。 如需有關如何設定靜態 IP 位址的詳細資訊，請參閱 <<c0> [ 設定靜態 IP 位址](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)。
-
 
 ## <a name="create-the-wff-controller-server"></a>建立 WFF 控制器伺服器
 
@@ -185,7 +183,6 @@ WFF 被設計來與 IIS ARR 密切整合 若要利用這項整合，您需要安
 
 > [!NOTE]
 > 您不必使用 WFF; 中的 ARR您可以設定 WFF 使用協力廠商負載平衡解決方案。 如需詳細資訊，請參閱 <<c0> [ 適用於 IIS 7 Web Farm Framework 2.0 概觀](https://go.microsoft.com/?linkid=9805126)。
-
 
 使用 ARR 負載平衡是複雜的主題中，最其中已超出本教學課程的範圍。 不過，您可以使用下一個程序來安裝 ARR 模組並開始使用負載平衡。
 

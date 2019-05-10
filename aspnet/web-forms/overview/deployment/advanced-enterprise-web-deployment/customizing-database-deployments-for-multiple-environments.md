@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: a172979a-1318-4318-a9c6-4f9560d26267
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 865e901618b48bc4bfdc6d7a3ca4e8868d4cb46b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8ae8cb1a322afb95c5d2e8d5e73c7825c7b2fe5a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412979"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108318"
 ---
 # <a name="customizing-database-deployments-for-multiple-environments"></a>自訂多個環境的資料庫部署
 
@@ -30,7 +30,6 @@ ms.locfileid: "59412979"
 > 當您將資料庫專案部署到多個目的地時，您通常需要自訂每個目標環境的資料庫部署屬性。 例如，在測試環境中您會通常重新建立資料庫在每個部署，而在預備或生產環境中會更容易進行累加式更新，才能保留您的資料。
 > 
 > 在 Visual Studio 2010 資料庫專案中，部署設定都包含在部署組態 (.sqldeployment) 檔案。 本主題將說明如何建立環境特定部署組態檔案，並指定您的想来用來當作 VSDBCMD 參數。
-
 
 本主題是構成一系列以名為 Fabrikam，Inc.的虛構公司的企業部署需求為基礎的教學課程的一部分本教學課程系列會使用範例解決方案&#x2014;[連絡管理員解決方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;來代表實際的層級的複雜性，包括 ASP.NET MVC 3 應用程式時，Windows Communication 的 web 應用程式Foundation (WCF) 服務與資料庫專案。
 
@@ -76,11 +75,9 @@ ms.locfileid: "59412979"
 | **部署前備份資料庫** | False | 或許 | True |
 | **產生 DROP 陳述式的目標資料庫中的物件，但不在資料庫專案** | False | True | True |
 | **請勿使用 ALTER ASSEMBLY 陳述式來更新 CLR 型別** | False | False | False |
-  
 
 > [!NOTE]
 > 如需有關資料庫部署屬性和環境的考量因素的詳細資訊，請參閱 <<c0> [ 概觀的資料庫專案設定](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx)， [How to:設定的部署詳細資料屬性](https://msdn.microsoft.com/library/dd172125.aspx)，[建置及部署資料庫到隔離式的開發環境](https://msdn.microsoft.com/library/dd193409.aspx)，和[建置，並將資料庫部署到預備環境或生產環境](https://msdn.microsoft.com/library/dd193413.aspx).
-
 
 若要支援多個目的地的資料庫專案的部署，您應該建立每個目標環境的部署組態檔。
 
@@ -104,13 +101,10 @@ ms.locfileid: "59412979"
 
 若要在您 VSDBCMD 指定部署設定檔，請使用**p/DeploymentConfigurationFile**參數並提供您的檔案的完整路徑。 這會覆寫的部署資訊清單識別的部署組態檔。 例如，您可以使用此 VSDBCMD 命令來部署**ContactManager**至測試環境的資料庫：
 
-
 [!code-console[Main](customizing-database-deployments-for-multiple-environments/samples/sample1.cmd)]
-
 
 > [!NOTE]
 > 請注意，在建置程序可能會將檔案重新命名.sqldeployment 時它會將檔案複製到輸出目錄。
-
 
 如果您使用預先部署或部署後 SQL 指令碼中的 SQL 命令變數，您可以使用類似的方法，您的部署相關聯的環境特定.sqlcmdvars 檔案。 在此案例中，您會使用**p/SqlCommandVariablesFile**參數來識別您.sqlcmdvars 檔案。
 
@@ -118,9 +112,7 @@ ms.locfileid: "59412979"
 
 您可以使用連線，叫用 MSBuild 專案檔從 VSDBCMD 命令**Exec** MSBuild 目標內的工作。 簡單來說，看起來應該像這樣：
 
-
 [!code-xml[Main](customizing-database-deployments-for-multiple-environments/samples/sample2.xml)]
-
 
 - 在實務上，來讀取和重複使用，方便您的專案檔您會想要建立來儲存各種命令列參數的屬性。 這可讓使用者提供特定環境的專案檔中的屬性值，或是覆寫從 MSBuild 命令列的預設值更容易。 如果您使用分割的專案檔案方法中所述[了解專案檔](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，您應該據以分割您的組建指示和兩個檔案之間的屬性：
 - 環境特定設定，例如部署組態檔案名稱、 資料庫連接字串和目標資料庫名稱，應該要以環境特有的專案檔。

@@ -8,12 +8,12 @@ ms.date: 06/26/2007
 ms.assetid: b45fede3-c53a-4ea1-824b-20200808dbae
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bbc54a39ba6ca3771acd7c4da37795a23e8ee2df
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1c174b824595f2d85eef97f467ff99082cfeb6d3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383378"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108301"
 ---
 # <a name="wrapping-database-modifications-within-a-transaction-c"></a>將資料庫修改包裝在交易中 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59383378"
 [下載程式碼](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_63_CS.zip)或[下載 PDF](wrapping-database-modifications-within-a-transaction-cs/_static/datatutorial63cs1.pdf)
 
 > 本教學課程會探討更新、 刪除和插入的資料批次的四個中的第一個。 在本教學課程中我們了解資料庫交易如何允許做為不可部分完成的作業，可確保，所有步驟都成功或失敗的所有步驟執行的批次修改。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -38,7 +37,6 @@ ms.locfileid: "59383378"
 
 > [!NOTE]
 > 修改批次交易中的資料時，不一定需要不可部分完成性。 在某些情況下，可能會接受有一些成功的資料修改，而且相同的批次中的其他項目失敗，例如當刪除從 web 型電子郵件用戶端的一組電子郵件。 如果沒有 s 刪除資料庫錯誤中途處理，它可能可以接受這些處理不會發生錯誤的記錄保留已刪除的 s。 在此情況下，DAL 不必修改以支援資料庫的交易。 有其他批次作業的情況下，不過，不可部分完成性很重要。 當客戶會將她的資金從一個銀行帳戶移至另一個時，必須執行兩項作業： 資金必須扣除的第一個帳戶，然後新增第二個。 雖然銀行可能不介意成功的第一個步驟，但第二個步驟失敗，也因此會不滿其客戶。 建議您完成本教學課程和實作以支援資料庫的交易，即使您不打算運用在批次的插入、 更新和刪除我們將在下列三個教學課程中建置的介面 DAL 的增強功能。
-
 
 ## <a name="an-overview-of-transactions"></a>交易的概觀
 
@@ -56,9 +54,7 @@ SQL 陳述式，用來建立、 認可及回復時撰寫 SQL 指令碼或建立�
 > [!NOTE]
 > [ `TransactionScope`類別](https://msdn.microsoft.com/library/system.transactions.transactionscope.aspx)在`System.Transactions`命名空間可讓開發人員以程式設計方式將一系列的陳述式包裝在交易範圍內，且包含牽涉到多個複雜交易的支援例如，兩個不同的資料庫或甚至異質性類型的資料存放區，例如 Microsoft SQL Server 資料庫、 Oracle 資料庫和 Web 服務的來源。 我決定要使用 ADO.NET 交易，而不是本教學課程的 ve`TransactionScope`類別因為 ADO.NET 是更特定的資料庫交易和在許多情況下，是最少需要大量的資源。 此外，在特定狀況下`TransactionScope`類別會使用 Microsoft Distributed Transaction Coordinator (MSDTC)。 組態、 實作與效能問題周圍的 MSDTC 使得而不是特製化和進階的主題和這些教學課程的範圍之外。
 
-
 當使用 SqlClient 提供者，在 ADO.NET 中，會透過呼叫初始化交易[`SqlConnection`類別](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection.aspx)s [ `BeginTransaction`方法](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection.begintransaction.aspx)，以傳回[ `SqlTransaction`物件](https://msdn.microsoft.com/library/system.data.sqlclient.sqltransaction.aspx)。 結構的交易都會放在資料修改陳述式`try...catch`區塊。 如果中的陳述式中發生錯誤`try`封鎖，請執行傳輸至`catch`區塊，交易可以回復透過`SqlTransaction`物件 s [ `Rollback`方法](https://msdn.microsoft.com/library/system.data.sqlclient.sqltransaction.rollback.aspx)。 如果所有的陳述式順利完成，呼叫`SqlTransaction`物件 s [ `Commit`方法](https://msdn.microsoft.com/library/system.data.sqlclient.sqltransaction.commit.aspx)結尾`try`區塊認可交易。 下列程式碼片段會示範這個模式。 請參閱[交易與維護資料庫一致性](http://aspnet.4guysfromrolla.com/articles/072705-1.aspx)如其他的語法和範例使用 ADO.NET 中的交易。
-
 
 [!code-csharp[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample1.cs)]
 
@@ -74,32 +70,25 @@ SQL 陳述式，用來建立、 認可及回復時撰寫 SQL 指令碼或建立�
 - `BatchDelete.aspx`
 - `BatchInsert.aspx`
 
-
 ![加入 ASP.NET 網頁，如 SqlDataSource 與相關的教學課程](wrapping-database-modifications-within-a-transaction-cs/_static/image1.gif)
 
 **圖 1**:加入 ASP.NET 網頁，如 SqlDataSource 與相關的教學課程
 
-
 如同其他的資料夾中，`Default.aspx`會使用`SectionLevelTutorialListing.ascx`列出的教學課程 > 一節中的使用者控制項。 因此，新增此使用者控制項`Default.aspx`從拖曳到頁面的設計 檢視中的 方案總管 中拖曳。
-
 
 [![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](wrapping-database-modifications-within-a-transaction-cs/_static/image2.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image1.png)
 
 **圖 2**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](wrapping-database-modifications-within-a-transaction-cs/_static/image2.png))
 
-
 最後，將這些四個頁面新增項目為`Web.sitemap`檔案。 具體來說，自訂之後新增下列標記網站地圖`<siteMapNode>`:
-
 
 [!code-xml[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample2.xml)]
 
 在更新之後`Web.sitemap`，花點時間檢視教學課程網站，透過瀏覽器。 在左側功能表現在包含批次的資料教學課程使用的項目。
 
-
 ![網站導覽現在包含批次的資料教學課程使用的項目](wrapping-database-modifications-within-a-transaction-cs/_static/image3.gif)
 
 **圖 3**:網站導覽現在包含批次的資料教學課程使用的項目
-
 
 ## <a name="step-2-updating-the-data-access-layer-to-support-database-transactions"></a>步驟 2：更新資料的存取層，來支援資料庫的交易
 
@@ -111,14 +100,11 @@ SQL 陳述式，用來建立、 認可及回復時撰寫 SQL 指令碼或建立�
 
 輸入資料集`Northwind.xsd`位於`App_Code`資料夾的`DAL`子資料夾。 建立的子資料夾中`DAL`名為資料夾`TransactionSupport`並新增新的類別檔案，名為`ProductsTableAdapter.TransactionSupport.cs`（請參閱 圖 4）。 這個檔案會保留部分實作`ProductsTableAdapter`包含執行使用交易的資料修改的方法。
 
-
 ![新增名為適用的 TransactionSupport 的資料夾和名為 ProductsTableAdapter.TransactionSupport.cs 類別檔案](wrapping-database-modifications-within-a-transaction-cs/_static/image4.gif)
 
 **圖 4**:新增名為資料夾`TransactionSupport`和名為的類別檔案 `ProductsTableAdapter.TransactionSupport.cs`
 
-
 輸入下列程式碼插入`ProductsTableAdapter.TransactionSupport.cs`檔案：
-
 
 [!code-csharp[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample3.cs)]
 
@@ -130,13 +116,11 @@ SQL 陳述式，用來建立、 認可及回復時撰寫 SQL 指令碼或建立�
 
 利用這些完整的方法，我們重新準備好將方法加入至`ProductsDataTable`或執行一系列的命令在交易的傘狀 BLL。 下列方法會使用批次更新模式，來更新`ProductsDataTable`執行個體使用的交易。 交易開始時先呼叫`BeginTransaction`方法，然後再使用`try...catch`發出資料修改陳述式區塊。 如果在呼叫`Adapter`物件 s`Update`方法會產生例外狀況，執行就會傳送到`catch`交易將回復的區塊並重新擲回的例外狀況。 請記得，`Update`方法會實作列舉所提供的資料列的批次更新模式`ProductsDataTable`並執行必要`InsertCommand`， `UpdateCommand`，和`DeleteCommand`s。 如果任一這些命令會導致錯誤，會回復交易，並復原先前交易 s 存留期期間所做的變更。 應該`Update`陳述式完成而沒有錯誤，整個認可交易。
 
-
 [!code-csharp[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample4.cs)]
 
 新增`UpdateWithTransaction`方法，以`ProductsTableAdapter`類別中的部分類別透過`ProductsTableAdapter.TransactionSupport.cs`。 或者，您可以將此方法加入到商業邏輯層的`ProductsBLL`做一些次要的語法變更的類別。 亦即 keyword 這`this.BeginTransaction()`， `this.CommitTransaction()`，和`this.RollbackTransaction()`想要取代`Adapter`(請記得，`Adapter`中的屬性名稱`ProductsBLL`型別的`ProductsTableAdapter`)。
 
 `UpdateWithTransaction`方法會使用批次更新模式中，但一系列的 DB 直接呼叫也可用在交易中，如下所示的方法範圍內。 `DeleteProductsWithTransaction`方法接受做為輸入`List<T>`型別的`int`，這是`ProductID`要刪除。 方法會起始交易，透過呼叫`BeginTransaction`，然後在`try`區塊中，逐一查看提供的清單呼叫 DB 直接模式`Delete`方法，每個`ProductID`值。 如果呼叫的任何`Delete`失敗，控制權會轉移到`catch`區塊，其中會回復交易並重新擲回的例外狀況。 如果所有呼叫`Delete`成功，則會認可交易。 將下列方法來新增`ProductsBLL`類別。
-
 
 [!code-csharp[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample5.cs)]
 
@@ -154,12 +138,10 @@ SQL 陳述式，用來建立、 認可及回復時撰寫 SQL 指令碼或建立�
 
 開啟`ProductsBLL`類別檔案，並新增名為`UpdateWithTransaction`直接呼叫到對應的 DAL 方法。 現在應該在兩個新方法`ProductsBLL`: `UpdateWithTransaction`，這只是加入和`DeleteProductsWithTransaction`，即其中加入在步驟 3 中。
 
-
 [!code-csharp[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample6.cs)]
 
 > [!NOTE]
 > 這些方法不包含`DataObjectMethodAttribute`屬性中的大部分其他方法指派`ProductsBLL`類別，因為我們將會叫用這些方法直接從 ASP.NET 頁面的程式碼後置類別。 請記得，`DataObjectMethodAttribute`用哪些方法應該會出現在 s 中的 ObjectDataSource 精靈和哪些 （SELECT、 UPDATE、 INSERT 或 DELETE） 索引標籤下設定資料來源加上旗標。 因為 GridView 不足，無法編輯或刪除批次的任何內建支援，我們必須以程式設計方式叫用這些方法，而不是使用無程式碼宣告式方法。
-
 
 ## <a name="step-5-atomically-updating-database-data-from-the-presentation-layer"></a>步驟 5：以不可分割方式更新從展示層的資料庫資料
 
@@ -167,37 +149,29 @@ SQL 陳述式，用來建立、 認可及回復時撰寫 SQL 指令碼或建立�
 
 首先開啟`Transactions.aspx`頁面中`BatchData`資料夾，然後從 [工具箱] 拖曳至設計工具拖曳的 GridView。 設定其`ID`要`Products`和它的智慧標籤，從繫結至名為新 ObjectDataSource `ProductsDataSource`。 設定提取其資料從 ObjectDataSource`ProductsBLL`類別的`GetProducts`方法。 會是唯讀的 GridView，因此設定下拉式清單中更新、 插入和刪除索引標籤為 （無），並按一下 完成。
 
-
 [![圖 5:設定為使用 ProductsBLL 類別的 GetProducts 方法的 ObjectDataSource](wrapping-database-modifications-within-a-transaction-cs/_static/image5.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image3.png)
 
 **圖 5**:圖 5：設定要使用 ObjectDataSource`ProductsBLL`類別 s`GetProducts`方法 ([按一下以檢視完整大小的影像](wrapping-database-modifications-within-a-transaction-cs/_static/image4.png))
-
 
 [![設定下拉式清單中更新、 插入和刪除 （無） 索引標籤](wrapping-database-modifications-within-a-transaction-cs/_static/image6.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image5.png)
 
 **圖 6**:設定下拉式清單中更新、 插入和刪除索引標籤為 （無） ([按一下以檢視完整大小的影像](wrapping-database-modifications-within-a-transaction-cs/_static/image6.png))
 
-
 完成設定資料來源精靈之後，Visual Studio 會建立 BoundFields 及其產品資料欄位。 移除所有的這些欄位除外`ProductID`， `ProductName`， `CategoryID`，和`CategoryName`，並重新命名`ProductName`並`CategoryName`BoundFields`HeaderText`屬性，以 Product 和 Category，分別。 從智慧標籤，勾選 啟用分頁選項。 進行這些修改後, GridView 和 ObjectDataSource s 宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample7.aspx)]
 
 接下來，新增上述 GridView 的三個按鈕 Web 控制項。 設定 s Text 屬性的第一個按鈕來重新整理方格、 s 修改類別 （與交易） 的第二個和第三個 s 修改類別 （而不需要交易）。
 
-
 [!code-aspx[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample8.aspx)]
 
 此時在 Visual Studio 中的 設計 檢視看起來應該類似螢幕擷取畫面的 圖 7 所示。
-
 
 [![此頁面包含的 GridView 和三個按鈕 Web 控制項](wrapping-database-modifications-within-a-transaction-cs/_static/image7.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image7.png)
 
 **圖 7**:頁面包含的 GridView 和三個按鈕 Web 控制項 ([按一下以檢視完整大小的影像](wrapping-database-modifications-within-a-transaction-cs/_static/image8.png))
 
-
 建立事件處理常式每三個按鈕的`Click`事件，並使用下列程式碼：
-
 
 [!code-csharp[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample9.cs)]
 
@@ -209,26 +183,21 @@ SQL 陳述式，用來建立、 認可及回復時撰寫 SQL 指令碼或建立�
 
 為了示範此行為，請瀏覽此頁面，透過瀏覽器。 一開始您應該看到的第一頁的資料，如 圖 8 所示。 接下來，按一下 [修改類別 （與交易）] 按鈕。 這會導致回傳，並嘗試更新的所有產品`CategoryID`值，但是會造成外部索引鍵條件約束違規 （請參閱 圖 9）。
 
-
 [![產品都會顯示在可分頁的 GridView](wrapping-database-modifications-within-a-transaction-cs/_static/image8.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image9.png)
 
 **圖 8**:產品都會顯示在可分頁的 GridView ([按一下以檢視完整大小的影像](wrapping-database-modifications-within-a-transaction-cs/_static/image10.png))
-
 
 [![重新指派分類結果中的外部索引鍵條件約束違規](wrapping-database-modifications-within-a-transaction-cs/_static/image9.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image11.png)
 
 **圖 9**:重新指派分類會導致外部索引鍵條件約束違規 ([按一下以檢視完整大小的影像](wrapping-database-modifications-within-a-transaction-cs/_static/image12.png))
 
-
 現在按下 s 的瀏覽器的 [上一頁] 按鈕，然後按一下 [重新整理方格] 按鈕。 重新整理資料時您應該看到完全相同的輸出，如 圖 8 所示。 也就是說，即使雖然部分產品`CategoryID`s 已變更合法的值，並更新資料庫中，已將交易回復時，發生外部索引鍵條件約束違規。
 
 現在，請嘗試按一下 [修改類別 （而不需要交易）] 按鈕。 這會導致相同的外部索引鍵條件約束違規錯誤 （請參閱 圖 9），但這次這些產品的`CategoryID`值已變更為合法值將不會回復。 叫用您的瀏覽器 s 上一步 按鈕，然後重新整理方格 按鈕。 如 [圖 10] 所示，`CategoryID`已重新指派的前八個產品。 比方說，在 圖 8 中，變更必須`CategoryID`為 1，但在圖 10 it s 已重新指派為 2。
 
-
 [![某些產品 CategoryID 值未更新而其他人已](wrapping-database-modifications-within-a-transaction-cs/_static/image10.gif)](wrapping-database-modifications-within-a-transaction-cs/_static/image13.png)
 
 **圖 10**:某些產品`CategoryID`的值未更新而其他人已 ([按一下以檢視完整大小的影像](wrapping-database-modifications-within-a-transaction-cs/_static/image14.png))
-
 
 ## <a name="summary"></a>總結
 

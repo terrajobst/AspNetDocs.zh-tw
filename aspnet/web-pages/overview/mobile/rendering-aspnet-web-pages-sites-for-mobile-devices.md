@@ -8,12 +8,12 @@ ms.date: 02/17/2014
 ms.assetid: f15ab392-c05e-4269-83bf-7c6d2b8c8ec8
 msc.legacyurl: /web-pages/overview/mobile/rendering-aspnet-web-pages-sites-for-mobile-devices
 msc.type: authoredcontent
-ms.openlocfilehash: dbcd25331387f8606343e551302bc3ed1f9b2c25
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c012348d65e48a275cb0e4808fef2a7f31e5fb33
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379504"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133525"
 ---
 # <a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a>行動裝置轉譯 ASP.NET Web Pages (Razor) 網站
 
@@ -33,7 +33,6 @@ ms.locfileid: "59379504"
 >   
 > 
 > 本教學課程也適用於 ASP.NET Web Pages 2。
-
 
 ASP.NET Web Pages 可讓您在行動裝置或其他裝置上建立自訂的顯示，來呈現內容。
 
@@ -55,9 +54,7 @@ ASP.NET Web Pages 可讓您在行動裝置或其他裝置上建立自訂的顯�
 > [!NOTE]
 > 若要測試行動網頁，您可以使用行動裝置模擬器，在桌面的電腦上執行。 此工具可讓您測試網頁，因為它們看起來在行動裝置上 （也就是通常具有較小顯示區域）。 模擬器的其中一個範例是[使用者代理程式切換器附加元件](http://addons.mozilla.org/firefox/addon/user-agent-switcher/)適用於 Mozilla Firefox，可讓您模擬各種不同的行動瀏覽器，從 Firefox 的桌面版本。
 
-
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他資源
-
 
 [Windows Phone 模擬器](https://msdn.microsoft.com/library/ff402563(v=VS.92).aspx)

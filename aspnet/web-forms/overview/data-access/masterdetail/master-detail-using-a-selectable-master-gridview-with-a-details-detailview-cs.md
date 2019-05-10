@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: 0f982827-f8f9-420d-b36b-57b23f5aa519
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 13538e5e2f60745d338b87ba4ea08c21ae997424
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6c6c4d6176dc87007346791dcf665e5288e4d6cc
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409118"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108256"
 ---
 # <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-c"></a>使用具有詳細資料 DetailView 之可選取主要 GridView 的主要/詳細資料 (C#)
 
@@ -23,16 +23,13 @@ ms.locfileid: "59409118"
 
 > 本教學課程中會有的 GridView，其資料列包含名稱和每個產品價格以及 [選取] 按鈕。 按一下特定產品的 [選取] 按鈕將會導致在相同網頁的 DetailsView 控制項中顯示其完整詳細資料。
 
-
 ## <a name="introduction"></a>簡介
 
 在 [先前的教學課程](master-detail-filtering-across-two-pages-cs.md)我們了解如何建立使用兩個網頁的主版/詳細報告: 「 主要 」 的網頁上，我們用來顯示供應商; 清單，列出所選提供這些產品的 [詳細資料] 網頁供應商。 這兩個頁面的報表格式可以壓縮成一頁中。 本教學課程中會有的 GridView，其資料列包含名稱和每個產品價格以及 [選取] 按鈕。 按一下特定產品的 [選取] 按鈕將會導致在相同網頁的 DetailsView 控制項中顯示其完整詳細資料。
 
-
 [![按一下 [選取] 按鈕會顯示產品的詳細資料](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image2.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image1.png)
 
 **圖 1**:按一下 [選取] 按鈕會顯示產品的詳細資料 ([按一下以檢視完整大小的影像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image3.png))
-
 
 ## <a name="step-1-creating-a-selectable-gridview"></a>步驟 1：建立可選取的 GridView
 
@@ -40,45 +37,35 @@ ms.locfileid: "59409118"
 
 著手將 GridView 控制項加入`DetailsBySelecting.aspx`頁面中`Filtering`資料夾中，設定其`ID`屬性設`ProductsGrid`。 接下來，新增名為新 ObjectDataSource`AllProductsDataSource`叫用`ProductsBLL`類別的`GetProducts()`方法。
 
-
 [![建立名為 AllProductsDataSource ObjectDataSource](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image5.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image4.png)
 
 **圖 2**:建立名為 ObjectDataSource `AllProductsDataSource` ([按一下以檢視完整大小的影像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image6.png))
-
 
 [![使用 ProductsBLL 類別](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image8.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image7.png)
 
 **圖 3**:使用`ProductsBLL`類別 ([按一下以檢視完整大小的影像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image9.png))
 
-
 [![設定要叫用 GetProducts() 方法的 ObjectDataSource](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image11.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image10.png)
 
 **圖 4**:設定要叫用 ObjectDataSource`GetProducts()`方法 ([按一下以檢視完整大小的影像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image12.png))
 
-
 編輯移除的 GridView 的欄位以外的所有`ProductName`和`UnitPrice`BoundFields。 此外，您可以自訂這些 BoundFields 如有需要格式化等`UnitPrice`成貨幣 BoundField 和變更`HeaderText`BoundFields 的屬性。 按一下 [編輯資料行] 連結，從 GridView 的智慧標籤，或透過手動設定的宣告式語法，可以以圖形方式，完成這些步驟。
-
 
 [![移除的產品名稱和單價 BoundFields 以外的所有](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image14.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image13.png)
 
 **圖 5**:全部移除，但`ProductName`並`UnitPrice`BoundFields ([按一下以檢視完整大小的影像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image15.png))
 
-
 GridView 的最後一個標記是：
-
 
 [!code-aspx[Main](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/samples/sample1.aspx)]
 
 接下來，我們需要將標示為選取，將會新增至每個資料列的 [選取] 按鈕的 GridView。 若要達成此目的，只是檢查 GridView 的智慧標籤中啟用選取核取方塊。
 
-
 [![使 GridView 的資料列選取](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image17.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image16.png)
 
 **圖 6**:讓選取的 GridView 資料列 ([按一下以檢視完整大小的影像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image18.png))
 
-
 檢查 [啟用選取範圍] 選項新增至 CommandField `ProductsGrid` GridView 與其`ShowSelectButton`屬性設為 True。 這會導致 選取 按鈕的每個資料列的 GridView，如 圖 6 所示。 根據預設，[選取] 按鈕會呈現為 Linkbutton，但是您可以使用按鈕或 ImageButtons 改為透過 CommandField`ButtonType`屬性。
-
 
 [!code-aspx[Main](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/samples/sample2.aspx)]
 
@@ -90,11 +77,9 @@ GridView 的最後一個標記是：
 
 讓我們來檢視透過瀏覽器到目前為止我們進度。 請注意，GridView 會列出所有選取的 LinkButton 以及產品的價格與名稱。 按一下 [選取] 按鈕時，會導致回傳。 在步驟 2 中，我們會看到如何讓此回傳 DetailsView 回應會顯示所選產品的詳細資料。
 
-
 [![每個產品的資料列包含選取的 LinkButton](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image20.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image19.png)
 
 **圖 7**:每個產品的資料列包含選取的 LinkButton ([按一下以檢視完整大小的影像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image21.png))
-
 
 ### <a name="highlighting-the-selected-row"></a>反白顯示選取的資料列
 
@@ -102,52 +87,41 @@ GridView 的最後一個標記是：
 
 如同我們先前的教學課程，讓我們致力於將定義為 CSS 類別的美觀相關設定。 因此，建立新的 CSS 類別中`Styles.css`名為`SelectedRowStyle`。
 
-
 [!code-css[Main](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/samples/sample3.css)]
 
 要套用這個 CSS 類別，以便`SelectedRowStyle`屬性*所有*Gridview，在我們的教學課程系列中，編輯`GridView.skin`面板中`DataWebControls`佈景主題，以包含`SelectedRowStyle`設定，如下所示：
-
 
 [!code-aspx[Main](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/samples/sample4.aspx)]
 
 此步驟中，選取的 GridView 資料列現在反白黃色背景色彩。
 
-
 [![自訂使用 GridView 的 SelectedRowStyle 屬性選取的資料列的外觀](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image23.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image22.png)
 
 **圖 8**:選取資料列的外觀使用自訂的 GridView`SelectedRowStyle`屬性 ([按一下以檢視完整大小的影像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image24.png))
-
 
 ## <a name="step-2-displaying-the-selected-products-details-in-a-detailsview"></a>步驟 2：在 DetailsView 中顯示選取之的產品的詳細資料
 
 使用`ProductsGrid`完成 GridView，所有剩下就是新增顯示所選擇的特定產品的相關資訊的 DetailsView。 將上述 GridView DetailsView 控制項，並建立名為新 ObjectDataSource `ProductDetailsDataSource`。 因為我們希望此 DetailsView 來顯示有關所選產品的特定資訊，請設定`ProductDetailsDataSource`若要使用`ProductsBLL`類別的`GetProductByProductID(productID)`方法。
 
-
 [![叫用 ProductsBLL 類別的 GetProductByProductID(productID) 方法](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image26.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image25.png)
 
 **圖 9**:叫用`ProductsBLL`類別的`GetProductByProductID(productID)`方法 ([按一下以檢視完整大小的影像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image27.png))
 
-
 已*`productID`* 參數的值取自 GridView 控制項`SelectedValue`屬性。 我們稍早所述，GridView 的`SelectedValue`屬性會傳回第一個資料機碼的所選資料列的值。 因此，務必，GridView`DataKeyNames`屬性設定為`ProductID`，以便選取的資料列`ProductID`所傳回值`SelectedValue`。
-
 
 [![將 [productID 參數] 設定 GridView 的 SelectedValue 屬性](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image29.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image28.png)
 
 **圖 10**:設定*`productID`* GridView 的參數`SelectedValue`屬性 ([按一下以檢視完整大小的影像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image30.png))
 
-
 一次`productDetailsDataSource`ObjectDataSource 已正確設定和繫結至 DetailsView，本教學課程已完成 ！ 當第一次瀏覽的頁面已選取任何資料列，因此 GridView 的`SelectedValue`屬性會傳回`null`。 因為沒有與產品`NULL``ProductID`的值，由，會傳回任何記錄`GetProductByProductID(productID)`方法，這表示未顯示 DetailsView （請參閱 圖 11）。 按下 GridView 資料列的 [選取] 按鈕時回傳是兩邊彼此乾瞪眼並 DetailsView 重新整理為止。 這次的 GridView`SelectedValue`屬性會傳回`ProductID`所選取的資料列，`GetProductByProductID(productID)`方法會傳回`ProductsDataTable`該特定的產品和 DetailsView 的相關資訊會顯示這些詳細資料 （請參閱 圖 12）。
-
 
 [![當第一次瀏覽的只有 GridView 顯示](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image32.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image31.png)
 
 **圖 11**:當第一次瀏覽，只 GridView 會顯示 ([按一下以檢視完整大小的影像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image33.png))
 
-
 [![在選取的資料列，會顯示產品的詳細資料](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image35.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image34.png)
 
 **圖 12**:在選取的資料列，會顯示產品的詳細資料 ([按一下以檢視完整大小的影像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image36.png))
-
 
 ## <a name="summary"></a>總結
 

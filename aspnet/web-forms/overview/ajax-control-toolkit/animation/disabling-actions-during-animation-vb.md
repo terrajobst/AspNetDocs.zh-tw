@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: a86c0276-6481-46ee-8b4f-8c2009399ee9
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-animation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3f8073b468a431d5c4b0d222bf385c8c6d32b2a8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fcfa03998778888f2e64a8079d3119ce86de7fc3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419089"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108831"
 ---
 # <a name="disabling-actions-during-animation-vb"></a>動畫播放期間停用動作 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59419089"
 [下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation7.vb.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation7VB.pdf)
 
 > 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 它也支援動作，例如滑鼠點按。 不過當按下滑鼠，開始播放動畫，最好在動畫期間停用滑鼠點按。
-
 
 ## <a name="overview"></a>總覽
 
@@ -53,7 +52,6 @@ ms.locfileid: "59419089"
 [!code-xml[Main](disabling-actions-during-animation-vb/samples/sample5.xml)]
 
 不過在特定案例這會是毫無用處自按鈕淡出，並在動畫結束時看不到。
-
 
 [![動畫執行時，會停用按鈕](disabling-actions-during-animation-vb/_static/image2.png)](disabling-actions-during-animation-vb/_static/image1.png)
 

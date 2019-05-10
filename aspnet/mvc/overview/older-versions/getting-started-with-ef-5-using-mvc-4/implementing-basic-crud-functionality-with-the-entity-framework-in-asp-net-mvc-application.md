@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: f7bace3f-b85a-47ff-b5fe-49e81441cdf9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: be1fcf2c7a0eec5473b2e3a10f51d7e22656b671
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d42c13b01d798b6c35327826812e853d327eeae9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402202"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112485"
 ---
 # <a name="implementing-basic-crud-functionality-with-the-entity-framework-in-aspnet-mvc-application-2-of-10"></a>在 ASP.NET MVC 應用程式 (10 個 2) 中實作 Entity framework 的基本 CRUD 功能
 
@@ -27,12 +27,10 @@ ms.locfileid: "59402202"
 > > 
 > > 如果您遇到的問題，您無法解決，請[下載已完成的一章](building-the-ef5-mvc4-chapter-downloads.md)並嘗試重現您的問題。 您通常可以找到問題的解決方案，藉由比較您的程式碼的完整程式碼。 一些常見錯誤及如何解決這些問題，請參閱[錯誤和因應措施。](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
 
-
 在上一個教學課程中，您建立 MVC 應用程式儲存及顯示資料使用 Entity Framework 和 SQL Server LocalDB。 在本教學課程中，您將檢閱並自訂 CRUD （建立、 讀取、 更新、 刪除） 的 MVC scaffolding 自動為您建立控制器和檢視表中的程式碼。
 
 > [!NOTE]
 > 實作儲存機制模式，以在您的控制器及資料存取層之間建立抽象層是一種非常常見的做法。 為了簡化這些教學課程中，您將不會實作儲存機制之前在本系列稍後的教學課程。
-
 
 在本教學課程中，您將建立下列網頁：
 

@@ -8,12 +8,12 @@ ms.date: 07/28/2008
 ms.assetid: 0edcd653-f24a-41aa-aef4-75f868fe5ac2
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 96f6ebb47af38c77cba11a92c883700730324226
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d075d0b66da8a0f4e2f0155c08b09a02a4ca71fb
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389228"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65106949"
 ---
 # <a name="specifying-the-master-page-programmatically-vb"></a>以程式設計方式指定主版頁面 (VB)
 
@@ -23,11 +23,9 @@ ms.locfileid: "59389228"
 
 > 查看設定內容頁面的主版頁面，以程式設計方式透過 PreInit 事件處理常式。
 
-
 ## <a name="introduction"></a>簡介
 
 因為在我的範例[*建立全網站的版面配置使用主版頁面*](creating-a-site-wide-layout-using-master-pages-vb.md)所有內容頁面已參考以宣告方式透過其主版頁面、 `MasterPageFile` 中的屬性`@Page`指示詞。 例如，下列`@Page`指示詞連結至主版頁面的 [內容] 頁面`Site.master`:
-
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample1.aspx)]
 
@@ -41,11 +39,9 @@ ms.locfileid: "59389228"
 
 [圖 1] 說明此融合。 步驟 1 中圖 1 顯示的初始內容和主版頁面控制項階層架構。 結尾結尾的 PreInit 階段內容頁面中會新增至主版頁面 (步驟 2) 中對應的 ContentPlaceHolders。 之後此 fusion，主版頁面可做為合成的控制項階層的根。 這融合控制項階層架構接著會新增至頁面以產生最終的控制項階層架構 (步驟 3)。 最後結果就是網頁的控制項階層架構包含積的控制項階層架構。
 
-
 [![主版頁面和內容頁面的控制項階層是融合在一起的 PreInit 階段](specifying-the-master-page-programmatically-vb/_static/image2.png)](specifying-the-master-page-programmatically-vb/_static/image1.png)
 
 **圖 01**:主版頁面和內容頁面的控制項階層是融合在一起的 PreInit 階段 ([按一下以檢視完整大小的影像](specifying-the-master-page-programmatically-vb/_static/image3.png))
-
 
 ## <a name="step-2-setting-themasterpagefileproperty-from-code"></a>步驟 2：設定`MasterPageFile`從程式碼的屬性
 
@@ -55,18 +51,15 @@ PreInit 階段開頭`Page`物件引發其[`PreInit`事件](https://msdn.microsof
 
 首先開啟`Default.aspx.vb`，我們的網站首頁的程式碼後置類別檔案。 新增頁面的事件處理常式`PreInit`輸入下列程式碼中的事件：
 
-
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample2.vb)]
 
 我們可以從這裡設定`MasterPageFile`屬性。 更新程式碼，以便將值指派"~ / Site.master 」 到`MasterPageFile`屬性。
-
 
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample3.vb)]
 
 如果您設定中斷點並開始偵錯您會看到每當`Default.aspx`瀏覽的頁面，或每當至此頁面，請回傳`Page_PreInit`事件處理常式執行和`MasterPageFile`屬性指派給"~ / Site.master"。
 
 或者，您可以覆寫`Page`類別的`OnPreInit`方法，並設定`MasterPageFile`那里屬性。 針對此範例中，讓我們未設定主版頁面在特定的頁面中，而從`BasePage`。 您應該記得，我們會建立自訂的基底頁面類別 (`BasePage`) 回到[*主版頁面中指定的標題、 中繼標籤及其他 HTML 標頭*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)教學課程。 目前`BasePage`會覆寫`Page`類別的`OnLoadComplete`方法，它用來設定頁面的`Title`基礎網站導覽資料的屬性。 讓我們更新`BasePage`也會覆寫`OnPreInit`方法，以程式設計方式指定主版頁面。
-
 
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample4.vb)]
 
@@ -82,11 +75,9 @@ PreInit 階段開頭`Page`物件引發其[`PreInit`事件](https://msdn.microsof
 
 簡單地說，您必須保持`MasterPageFile`屬性中`@Page`享受豐富的設計階段經驗，在 Visual Studio 中的指示詞。
 
-
 [![Visual Studio 會使用@Page呈現 [設計] 檢視的指示詞的 MasterPageFile 屬性](specifying-the-master-page-programmatically-vb/_static/image5.png)](specifying-the-master-page-programmatically-vb/_static/image4.png)
 
 **圖 02**:Visual Studio 會使用`@Page`指示詞的`MasterPageFile`屬性呈現為 [設計] 檢視 ([按一下以檢視完整大小的影像](specifying-the-master-page-programmatically-vb/_static/image6.png))
-
 
 ## <a name="step-3-creating-an-alternative-master-page"></a>步驟 3：建立替代主版頁面
 
@@ -96,22 +87,18 @@ PreInit 階段開頭`Page`物件引發其[`PreInit`事件](https://msdn.microsof
 
 名為根資料夾中建立新的主版頁面`Alternate.master`。 也加入至名為網站的 新的樣式表`AlternateStyles.css`。
 
-
 [![新增另一個網站的主版頁面和 CSS 檔案](specifying-the-master-page-programmatically-vb/_static/image8.png)](specifying-the-master-page-programmatically-vb/_static/image7.png)
 
 **圖 03**:將另一個主版頁面和 CSS 檔案新增至網站 ([按一下以檢視完整大小的影像](specifying-the-master-page-programmatically-vb/_static/image9.png))
-
 
 我已設計`Alternate.master`主版頁面上方的頁面上，置中對齊和海軍藍的背景上顯示的標題。 我鈔票的左側資料行，移動該內容下方`MainContent`ContentPlaceHolder 控制項，現在會橫跨整個頁面的寬度。 此外，我 nixed 未排序的課程清單，並取代上述的水平清單`MainContent`。 此外，我也會更新的字型和色彩和所使用的主版頁面 （，延伸模組，其內容頁）。 [圖 4] 所示`Default.aspx`時使用`Alternate.master`主版頁面。
 
 > [!NOTE]
 > ASP.NET 包含定義的能力*佈景主題*。 主題是影像、 CSS 檔案和與樣式相關 Web 控制項屬性設定可套用至頁面，以在執行階段的集合。 佈景主題是最好的選擇，如果您的網站配置不同，只顯示之影像和其 CSS 規則。 如果配置不同更本質上，例如使用不同的 Web 控制項，或有完全不同的版面配置，則您必須使用個別的主版頁面。 佈景主題的更多有關本教學課程結尾處，請參閱進一步閱讀 > 一節。
 
-
 [![內容頁面現在可以使用新的外觀與風格](specifying-the-master-page-programmatically-vb/_static/image11.png)](specifying-the-master-page-programmatically-vb/_static/image10.png)
 
 **圖 04**:內容頁面現在可以使用新的外觀與風格 ([按一下以檢視完整大小的影像](specifying-the-master-page-programmatically-vb/_static/image12.png))
-
 
 當主要和內容頁面的標記會融合時，`MasterPage`類別會確認每個內容控制項，在 [內容] 頁面中的參考 ContentPlaceHolder 主版頁面中的。 如果找不到參考不存在 ContentPlaceHolder 內容控制項，則會擲回例外狀況。 換句話說，務必要指派給 [內容] 頁面的主版頁面，有每個 ContentPlaceHolder 內容在 [內容] 頁面中的控制項。
 
@@ -126,11 +113,9 @@ PreInit 階段開頭`Page`物件引發其[`PreInit`事件](https://msdn.microsof
 
 若要取得您`Alternate.master`看起來會類似我的 （請參閱 圖 4），開始藉由定義中的主版頁面的樣式的主版頁面`AlternateStyles.css`樣式表。 新增下列規則到`AlternateStyles.css`:
 
-
 [!code-css[Main](specifying-the-master-page-programmatically-vb/samples/sample5.css)]
 
 接下來，新增下列宣告式標記`Alternate.master`。 如您所見，`Alternate.master`包含具有相同的四個 ContentPlaceHolder 控制項`ID`ContentPlaceHolder 控制項中的值`Site.master`。 此外，它包含 ScriptManager 控制項，也就是我們的網站使用 ASP.NET AJAX 架構的這些頁面所需。
-
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample6.aspx)]
 
@@ -139,7 +124,6 @@ PreInit 階段開頭`Page`物件引發其[`PreInit`事件](https://msdn.microsof
 若要測試這個新的主版頁面更新`BasePage`類別的`OnPreInit`方法，讓`MasterPageFile`將值指派給屬性`"~/Alternate.maser"`，然後瀏覽網站。 每一頁應該不會發生錯誤，除了兩個函式：`~/Admin/AddProduct.aspx`和`~/Admin/Products.aspx`。 將產品加入至在 DetailsView`~/Admin/AddProduct.aspx`會導致`NullReferenceException`嘗試設定主版頁面的程式碼行從`GridMessageText`屬性。 瀏覽時`~/Admin/Products.aspx``InvalidCastException`就會擲回在頁面載入，並出現訊息："無法將型別的物件轉換 'ASP.alternate\_主要' 為類型 ' ASP.site\_master'。 」
 
 這些錯誤發生的原因`Site.master`程式碼後置類別包含公用事件、 屬性和方法中未定義`Alternate.master`。 這兩個頁面的標記部分有`@MasterType`指示詞參考`Site.master`主版頁面。
-
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample7.aspx)]
 
@@ -157,18 +141,15 @@ PreInit 階段開頭`Page`物件引發其[`PreInit`事件](https://msdn.microsof
 
 更新您`BaseMasterPage`類別，使其包含下列程式碼：
 
-
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample8.vb)]
 
 接下來，移至`Site.master`程式碼後置類別，並讓它衍生自`BaseMasterPage`。 因為`BaseMasterPage`包含標示的成員`MustOverride`我們需要覆寫中的成員才能這裡`Site.master`。 新增`Overrides`方法與屬性定義的關鍵字。 更新程式碼引發，也`PricesDoubled`中的事件`DoublePrice` 按鈕的`Click`事件處理常式的基底類別呼叫`OnPricesDoubled`方法。
 
 這些修改之後`Site.master`程式碼後置類別應該包含下列程式碼：
 
-
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample9.vb)]
 
 我們也需要更新`Alternate.master`的程式碼後置類別變成衍生自`BaseMasterPage`，並覆寫這兩個`MustOverride`成員。 但是因為`Alternate.master`不包含 GridView，最新的產品或新的產品之後，會顯示一則訊息的標籤加入至資料庫的清單，這些方法不需要採取任何動作。
-
 
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample10.vb)]
 
@@ -176,11 +157,9 @@ PreInit 階段開頭`Page`物件引發其[`PreInit`事件](https://msdn.microsof
 
 現在，我們已完成`BaseMasterPage`類別，並且已經將它擴充我們兩個主版頁面，最後一個步驟是，更新`~/Admin/AddProduct.aspx`和`~/Admin/Products.aspx`頁面，以參考這個常見的類型。 開始先變更`@MasterType`從這兩個頁面指示詞：
 
-
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample11.aspx)]
 
 收件者:
-
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample12.aspx)]
 
@@ -188,11 +167,9 @@ PreInit 階段開頭`Page`物件引發其[`PreInit`事件](https://msdn.microsof
 
 沒有需要進行中的一項小變更`~/Admin/AddProduct.aspx`。 在 DetailsView 控制項`ItemInserted`事件處理常式會使用這兩個強型別`Master`屬性，與鬆散型別`Page.Master`屬性。 我們已修正的強型別參考，當我們更新了`@MasterType`指示詞，但我們仍需要更新的鬆散型別參考。 取代下列程式碼行：
 
-
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample13.vb)]
 
 使用下列程式碼，它會轉換`Page.Master`基底類型：
-
 
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample14.vb)]
 
@@ -205,14 +182,11 @@ PreInit 階段開頭`Page`物件引發其[`PreInit`事件](https://msdn.microsof
 > [!NOTE]
 > 因為`Site.master`和`Alternate.master`有相同一組 ContentPlaceHolder 控制項並不重要時建立新的內容頁面，您選擇何種主版頁面。 為求一致，我會建議使用`Site.master`。
 
-
 [![將新的內容頁面新增至網站](specifying-the-master-page-programmatically-vb/_static/image14.png)](specifying-the-master-page-programmatically-vb/_static/image13.png)
 
 **圖 05**:將新的 [內容] 頁面新增至網站 ([按一下以檢視完整大小的影像](specifying-the-master-page-programmatically-vb/_static/image15.png))
 
-
 更新`Web.sitemap`檔案，以包含這一課中的項目。 加入下列標記下方`<siteMapNode>`主版頁面和 ASP.NET AJAX 一課中：
-
 
 [!code-xml[Main](specifying-the-master-page-programmatically-vb/samples/sample15.xml)]
 
@@ -220,11 +194,9 @@ PreInit 階段開頭`Page`物件引發其[`PreInit`事件](https://msdn.microsof
 
 將 Button Web 控制項新增至頁面並設定其`ID`並`Text`屬性，以`SaveLayout`和 「 儲存的版面配置選項 」，分別。 此時您頁面的宣告式標記看起來應該如下所示：
 
-
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample16.aspx)]
 
 當第一次造訪網頁時我們要顯示使用者的目前選取的主版頁面選擇。 建立`Page_Load`事件處理常式，並新增下列程式碼：
-
 
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample17.vb)]
 
@@ -232,34 +204,27 @@ PreInit 階段開頭`Page`物件引發其[`PreInit`事件](https://msdn.microsof
 
 我們也需要將儲存到使用者選擇的程式碼`MyMasterPage`工作階段變數。 建立事件處理常式`SaveLayout`按鈕的`Click`事件，並新增下列程式碼：
 
-
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample18.vb)]
 
 > [!NOTE]
 > 依時間`Click`事件處理常式執行回傳時，已選取的主版頁面。 因此，使用者的下拉式清單選取項目不是作用中直到下一個頁面瀏覽。 `Response.Redirect`強制瀏覽器，以重新要求`ChooseMasterPage.aspx`。
 
-
 具有`ChooseMasterPage.aspx`完整的頁面上，最後一項工作是將`BasePage`指派`MasterPageFile`屬性的值，根據`MyMasterPage`工作階段變數。 如果未設定工作階段變數`BasePage`預設為`Site.master`。
-
 
 [!code-vb[Main](specifying-the-master-page-programmatically-vb/samples/sample19.vb)]
 
 > [!NOTE]
 > 我可以移動指派的程式碼`Page`物件的`MasterPageFile`共屬性`OnPreInit`事件處理常式和分成兩個不同的方法。 此第一個方法中， `SetMasterPageFile`，指派`MasterPageFile`屬性設為第二個方法中，所傳回的值`GetMasterPageFileFromSession`。 我標示`SetMasterPageFile`方法`Overridable`，使未來的類別延伸`BasePage`可以選擇性地覆寫以實作自訂邏輯，如有需要。 稍後將會覆寫`BasePage`的`SetMasterPageFile`下一個教學課程中的屬性。
 
-
 使用此程式碼就緒之後，請瀏覽`ChooseMasterPage.aspx`頁面。 一開始，`Site.master`主版頁面已選取 （請參閱 圖 6），但使用者可以選擇不同的主版頁面，從下拉式清單。
-
 
 [![內容頁面會顯示使用 Site.master 主版頁面](specifying-the-master-page-programmatically-vb/_static/image17.png)](specifying-the-master-page-programmatically-vb/_static/image16.png)
 
 **圖 06**:內容頁面會顯示使用`Site.master`主版頁面 ([按一下以檢視完整大小的影像](specifying-the-master-page-programmatically-vb/_static/image18.png))
 
-
 [![內容頁面現在會顯示使用 Alternate.master 主版頁面](specifying-the-master-page-programmatically-vb/_static/image20.png)](specifying-the-master-page-programmatically-vb/_static/image19.png)
 
 **圖 07**:內容頁面會顯示使用現在`Alternate.master`主版頁面 ([按一下以檢視完整大小的影像](specifying-the-master-page-programmatically-vb/_static/image21.png))
-
 
 ## <a name="summary"></a>總結
 

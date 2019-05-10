@@ -8,12 +8,12 @@ ms.date: 03/23/2015
 ms.assetid: 1cd91055-84bc-42c6-9d80-646f41429d4d
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
 msc.type: authoredcontent
-ms.openlocfilehash: 7ec80056a845429d5971bb174f6348b4b7a9587d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 03afcf91b79bc7d7d294eae3dc43a8f780d94e20
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379588"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131910"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署其他檔案
 
@@ -22,7 +22,6 @@ ms.locfileid: "59379588"
 [下載入門專案](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > 本系列教學課程會示範如何部署 （發行） 的 ASP.NET web 應用程式至 Azure App Service Web Apps 或協力廠商裝載提供者，使用 Visual Studio 2012 或 Visual Studio 2010。 這個系列的相關資訊，請參閱[系列的第一個教學課程](introduction.md)。
-
 
 ## <a name="overview"></a>總覽
 

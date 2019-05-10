@@ -8,12 +8,12 @@ ms.date: 01/02/2019
 ms.assetid: a585c9a2-7c8e-478b-9706-90f3739c50d1
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: a47d428830fa6c43bcb9ce797d65b73891b44618
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ef5402da1e97d2c5e5d98ff2d04dadca1180453b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381883"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112304"
 ---
 # <a name="using-asynchronous-methods-in-aspnet-45"></a>使用 ASP.NET 4.5 中的非同步方法
 
@@ -32,7 +32,6 @@ ms.locfileid: "59381883"
 > 
 > 在本教學課程提供完整的範例  
 > [https://github.com/RickAndMSFT/Async-ASP.NET/](https://github.com/RickAndMSFT/Async-ASP.NET/) 在  [GitHub](https://github.com/)站台。
-
 
 在組合中的 ASP.NET 4.5 Web Pages [.NET 4.5](https://msdn.microsoft.com/library/w0x726c2(VS.110).aspx)可讓您註冊非同步方法的傳回型別的物件[工作](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)。 .NET Framework 4 引進稱為 「 非同步程式設計概念[任務](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)，並支援 ASP.NET 4.5[工作](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)。 工作由**任務**型別和中的相關型別[System.Threading.Tasks](https://msdn.microsoft.com/library/system.threading.tasks.aspx)命名空間。 與這個非同步支援是根據.NET Framework 4.5 [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)並[非同步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)便於使用的關鍵字[工作](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)比以前更不複雜的物件非同步方法。 [Await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)關鍵字是速記語法來表示，某段程式碼應該以非同步方式等候一段程式碼。 [非同步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)關鍵字各表示可用來將方法標記為以工作為基礎的非同步方法的提示。 組合**await**，**非同步**，而**工作**物件可讓您在.NET 4.5 中撰寫非同步程式碼更容易。 新的模型之非同步方法會呼叫*工作式非同步模式*(**點選**)。 本教學課程會假設您熟悉使用非同步程式設計[await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)並[非同步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)關鍵字和[工作](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)命名空間。
 

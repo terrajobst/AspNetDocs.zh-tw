@@ -8,12 +8,12 @@ ms.date: 01/02/2018
 ms.assetid: 75b5c1cf-84bd-434f-8a86-85c568eb5b09
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
 msc.type: authoredcontent
-ms.openlocfilehash: e9ffe0ea3e2bf817675a4a771d3471ec6eb91133
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c8620fc1abc61d514bdc039c66f7a84e67e89abe
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406739"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133508"
 ---
 # <a name="introducing-aspnet-web-pages---deleting-database-data"></a>ASP.NET Web Pages 簡介-刪除資料庫資料
 
@@ -33,7 +33,6 @@ ms.locfileid: "59406739"
 > - `WebGrid`協助程式。
 > - SQL`Delete`命令。
 > - `Database.Execute`方法來執行 SQL`Delete`命令。
-
 
 ## <a name="what-youll-build"></a>您將建置
 
@@ -86,7 +85,6 @@ ms.locfileid: "59406739"
 > 當您的應用程式可讓您變更記錄的人員時，您必須向使用者顯示的記錄，仍要編輯的。 不過，您可能想要跳過此步驟，刪除記錄。 請勿略過該步驟，不過。 （它也是讓使用者看到的記錄，並確認它們要刪除的記錄，它們能幫助。）
 > 
 > 在後續的教學課程組中，您會看到如何將登入功能，因此使用者必須登入，再刪除記錄。
-
 
 建立名為的頁面*DeleteMovie.cshtml*和取代功能的檔案，以下列標記：
 

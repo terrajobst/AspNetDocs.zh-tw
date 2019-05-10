@@ -8,17 +8,16 @@ ms.date: 10/05/2011
 ms.assetid: 9fc60498-ced4-47c6-b2cf-8d464e6aeef8
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data
 msc.type: chapter
-ms.openlocfilehash: 206b0537b0c4355f919694bc05b3f7d6922f8272
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4657a52b05c1cf8a991158f212d6b6ce849ef276
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59378384"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109048"
 ---
 # <a name="editing-inserting-and-deleting-data"></a>編輯、插入及刪除資料
 
 > 在這些教學課程中您會看到如何將 ObjectDataSource 控制項的方法對應到 BLL 方法，以及如何設定 GridView、 DetailsView 和 FormView 控制項，讓使用者修改資料。
-
 
 - [插入、更新及刪除資料的概觀 (C#)](an-overview-of-inserting-updating-and-deleting-data-cs.md)
 - [檢查與插入、更新和刪除建立關聯的事件 (C#)](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)

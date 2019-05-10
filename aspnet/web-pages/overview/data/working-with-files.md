@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: eee916e4-ba4c-439a-a24e-68df7d45a569
 msc.legacyurl: /web-pages/overview/data/working-with-files
 msc.type: authoredcontent
-ms.openlocfilehash: 4a62cce3af57b507882744f948ce208becdb03ac
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3ff852232212ddda4930597731911be60c092667
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382299"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108952"
 ---
 # <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a>使用 ASP.NET Web Pages (Razor) 網站中的檔案
 
@@ -48,7 +48,6 @@ ms.locfileid: "59382299"
 >   
 > 
 > 本教學課程也適用於 WebMatrix 3。
-
 
 <a id="Creating_a_Text_File"></a>
 ## <a name="creating-a-text-file-and-writing-data-to-it"></a>建立文字檔案，並對其寫入資料
@@ -145,7 +144,6 @@ ms.locfileid: "59382299"
 > 
 > 您可以使用 Microsoft Excel 來儲存為逗號分隔檔案的試算表中所包含的資料 (*.csv*檔案)。 這麼做之後，檔案會以純文字，不是以 Excel 格式儲存。 在試算表中的每個資料列分隔文字檔中的分行符號，每個資料項目以逗號分隔。 您可以使用上述範例所示的程式碼讀取 Excel 以逗號分隔的檔案，只要變更您的程式碼中的資料檔案的名稱。
 
-
 <a id="Deleting_Files"></a>
 ## <a name="deleting-files"></a>刪除檔案
 
@@ -154,7 +152,6 @@ ms.locfileid: "59382299"
 > [!NOTE] 
 > 
 > **重要**在生產網站中，您通常會限制誰可以對資料進行變更。 有關如何設定成員資格，以及有關如何授權使用者在站台上執行工作的相關資訊，請參閱[新增的安全性和 ASP.NET Web Pages 網站的成員資格](https://go.microsoft.com/fwlink/?LinkId=202904)。
-
 
 1. 在網站中，建立名稱為的子*映像*。
 2. 複製一或多個 *.jpg*將檔案*映像*資料夾。
@@ -255,7 +252,6 @@ ms.locfileid: "59382299"
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他資源
-
 
 [使用 ASP.NET Web Pages 網站中的映像](https://go.microsoft.com/fwlink/?LinkId=202897)
 

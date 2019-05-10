@@ -8,12 +8,12 @@ ms.date: 07/17/2006
 ms.assetid: 4830d984-bd2c-4a08-bfe5-2385599f1f7d
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2d337aa2e0658692e1af213085b262daaed05a18
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: dbfafff1ed8f0467b0e4812add91d211b8a9b0ce
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421910"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108674"
 ---
 # <a name="customizing-the-data-modification-interface-vb"></a>自訂資料修改介面 (VB)
 
@@ -23,18 +23,15 @@ ms.locfileid: "59421910"
 
 > 在本教學課程中我們將探討如何以自訂的可編輯的 GridView 介面取代 TextBox 和 CheckBox 控制項有替代的輸入 Web 控制項。
 
-
 ## <a name="introduction"></a>簡介
 
 BoundFields 和 CheckBoxFields GridView 和 DetailsView 控制項所使用的簡化程序修改資料，因為其呈現唯讀、 可供編輯，以及可插入介面的能力。 可以轉譯這些介面，而不需要新增任何額外的宣告式標記或程式碼。 不過，BoundField 及其的介面會缺少通常需要在真實世界案例中的自訂功能。 若要自訂的可編輯或可插入的介面，在 GridView 或 DetailsView 中我們要改為使用 TemplateField。
 
 在 [前述教學課程](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md)我們了解如何藉由將驗證 Web 控制項加入自訂資料修改介面。 在本教學課程中我們將探討如何自訂實際的資料集合 Web 控制項，取代 BoundField 和 CheckBoxField 的 TextBox 和 CheckBox 控制項有替代的輸入 Web 控制項。 特別是，我們將建置可編輯的 GridView，可讓產品名稱、 類別、 供應商和已停止的狀態更新。 當您編輯特定的資料列，category 與 supplier 欄位會轉譯為 dropdownlist 進行，其中包含一組可用的類別和供應商可從中選擇。 此外，我們會將 CheckBoxField 預設核取方塊取代 RadioButtonList 控制項，可提供兩個選項：「 作用中 」 和 「 已停止 」。
 
-
 [![GridView 的編輯介面包含 dropdownlist 進行和 Radiobutton](customizing-the-data-modification-interface-vb/_static/image2.png)](customizing-the-data-modification-interface-vb/_static/image1.png)
 
 **圖 1**:GridView 的編輯介面包含 dropdownlist 進行和 Radiobutton ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-vb/_static/image3.png))
-
 
 ## <a name="step-1-creating-the-appropriateupdateproductoverload"></a>步驟 1：建立適當`UpdateProduct`多載
 
@@ -48,23 +45,19 @@ BoundFields 和 CheckBoxFields GridView 和 DetailsView 控制項所使用的簡
 
 下列程式碼顯示新`UpdateProduct`多載中`ProductsBLL`類別：
 
-
 [!code-vb[Main](customizing-the-data-modification-interface-vb/samples/sample1.vb)]
 
 ## <a name="step-2-crafting-the-editable-gridview"></a>步驟 2：製作可編輯的 GridView
 
 使用`UpdateProduct`新增多載，我們已經準備好建立我們可編輯的 GridView。 開啟`CustomizedUI.aspx`頁面中`EditInsertDelete`資料夾並將 GridView 控制項新增至設計工具。 接下來，建立新的 ObjectDataSource 從 GridView 的智慧標籤。 設定要擷取產品資訊透過 ObjectDataSource`ProductBLL`類別的`GetProducts()`方法，並更新產品資料使用`UpdateProduct`我們剛剛建立的多載。 INSERT 和 DELETE] 索引標籤中，選取 [從下拉式清單 （無）。
 
-
 [![設定要使用剛才建立的 UpdateProduct 多載 ObjectDataSource](customizing-the-data-modification-interface-vb/_static/image5.png)](customizing-the-data-modification-interface-vb/_static/image4.png)
 
 **圖 2**:設定要使用 ObjectDataSource`UpdateProduct`多載只會建立 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-vb/_static/image6.png))
 
-
 如我們所見整個資料修改教學課程中，會將指派 Visual Studio 所建立的 ObjectDataSource 的宣告式語法`OldValuesParameterFormatString`屬性設`original_{0}`。 這當然不會使用我們的商務邏輯層因為我們的方法不會預期原始`ProductID`必須傳入的值。 因此，在先前的教學課程中，我們已完成之後，請花一點時間若要移除的宣告式語法中的此屬性指派或，相反地，將這個屬性的值設定為`{0}`。
 
 這項變更後 ObjectDataSource 的宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](customizing-the-data-modification-interface-vb/samples/sample2.aspx)]
 
@@ -79,25 +72,20 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 
 這些變更之後，請設計工具會看起來像圖 3 使用 GridView 的宣告式語法如下所示。
 
-
 [![從 GridView 中移除不必要的欄位](customizing-the-data-modification-interface-vb/_static/image8.png)](customizing-the-data-modification-interface-vb/_static/image7.png)
 
 **圖 3**:從 GridView 中移除不必要的欄位 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-vb/_static/image9.png))
-
 
 [!code-aspx[Main](customizing-the-data-modification-interface-vb/samples/sample3.aspx)]
 
 此時 GridView 的唯讀行為已完成。 檢視資料時，每個產品會轉譯為 GridView，顯示產品名稱、 類別、 供應商中的資料列，並已停止的狀態。
 
-
 [![GridView 的唯讀介面已完成](customizing-the-data-modification-interface-vb/_static/image11.png)](customizing-the-data-modification-interface-vb/_static/image10.png)
 
 **圖 4**:GridView 的唯讀介面是完成 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-vb/_static/image12.png))
 
-
 > [!NOTE]
 > 中所述[概觀的插入、 更新和刪除資料的教學課程](an-overview-of-inserting-updating-and-deleting-data-cs.md)，是非常重要的 GridView 的檢視狀態是啟用 （預設行為）。 如果您將設定 GridView s`EnableViewState`屬性設`false`，執行並行的使用者不小心刪除或編輯記錄的風險。 請參閱[警告：並行處理問題與 ASP.NET 2.0 Gridview/DetailsView/FormViews 該支援編輯和/或刪除和的檢視狀態已停用](http://scottonwriting.net/sowblog/posts/10054.aspx)如需詳細資訊。
-
 
 ## <a name="step-3-using-a-dropdownlist-for-the-category-and-supplier-editing-interfaces"></a>步驟 3：使用 DropDownList，針對類別目錄和供應商的編輯介面
 
@@ -116,61 +104,48 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 
 啟動轉換`SupplierName`和`CategoryName`到由 TemplateFields BoundFields： 按一下從 GridView 的智慧標籤的 [編輯資料行] 連結; 從左下方; 清單中選取 BoundField 和按一下"轉換成此欄位TemplateField 」 連結。 轉換程序會同時建立為 TemplateField`ItemTemplate`和`EditItemTemplate`，如下列宣告式語法中所示：
 
-
 [!code-aspx[Main](customizing-the-data-modification-interface-vb/samples/sample4.aspx)]
 
 因為 BoundField 已標示為唯讀，同時`ItemTemplate`並`EditItemTemplate`包含 Label Web 控制項`Text`屬性繫結至適用的資料欄位 (`CategoryName`，上述語法中)。 我們需要修改`EditItemTemplate`，DropDownList 控制項以取代 Label Web 控制項。
 
 如我們在先前的教學課程中所見，透過設計工具，或直接從宣告式語法，可以進行編輯的範本。 若要透過設計工具中編輯它，按一下 [編輯範本] 連結，從 GridView 的智慧標籤，並選擇使用 [類別] 欄位`EditItemTemplate`。 移除標籤 Web 控制項，並取代 DropDownList 控制項，將 DropDownList 的 ID 屬性設定為`Categories`。
 
-
 [![移除 [] 文字方塊中，並加入 EditItemTemplate 的 DropDownList](customizing-the-data-modification-interface-vb/_static/image14.png)](customizing-the-data-modification-interface-vb/_static/image13.png)
 
 **圖 5**:移除 [] 文字方塊中，並新增至 DropDownList `EditItemTemplate` ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-vb/_static/image15.png))
 
-
 接下來，我們需要填入可用的類別使用 DropDownList。 按一下從 DropDownList 的智慧標籤的 [選擇資料來源] 連結，然後選擇建立新的 ObjectDataSource 名為`CategoriesDataSource`。
-
 
 [![建立新的 ObjectDataSource 控制項，名為 CategoriesDataSource](customizing-the-data-modification-interface-vb/_static/image17.png)](customizing-the-data-modification-interface-vb/_static/image16.png)
 
 **圖 6**:建立新的 ObjectDataSource 控制項具名`CategoriesDataSource`([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-vb/_static/image18.png))
 
-
 若要讓這個 ObjectDataSource 傳回所有的類別，將它繫結`CategoriesBLL`類別的`GetCategories()`方法。
-
 
 [![繫結至 CategoriesBLL GetCategories() 方法的 ObjectDataSource](customizing-the-data-modification-interface-vb/_static/image20.png)](customizing-the-data-modification-interface-vb/_static/image19.png)
 
 **圖 7**:繫結到 ObjectDataSource`CategoriesBLL`的`GetCategories()`方法 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-vb/_static/image21.png))
 
-
 最後，設定 DropDownList 的設定使得`CategoryName`欄位會顯示在每個 DropDownList`ListItem`與`CategoryID`做為值的欄位。
-
 
 [![已顯示 [類別名稱] 欄位和 CategoryID 做為值](customizing-the-data-modification-interface-vb/_static/image23.png)](customizing-the-data-modification-interface-vb/_static/image22.png)
 
 **圖 8**:已`CategoryName`欄位顯示與`CategoryID`做為值 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-vb/_static/image24.png))
 
-
 進行這些變更的宣告式標記之後`EditItemTemplate`在`CategoryName`TemplateField DropDownList 和 ObjectDataSource，會包含：
-
 
 [!code-aspx[Main](customizing-the-data-modification-interface-vb/samples/sample5.aspx)]
 
 > [!NOTE]
 > 在 DropDownList`EditItemTemplate`必須啟用其檢視狀態。 我們很快就會將資料繫結語法加入 DropDownList 的宣告式語法和資料繫結命令喜歡`Eval()`和`Bind()`只能出現在已啟用其檢視狀態的控制項。
 
-
 重複這些步驟來新增名為 DropDownList`Suppliers`要`SupplierName`TemplateField 的`EditItemTemplate`。 這將涉及新增至 DropDownList`EditItemTemplate`並建立另一個的 ObjectDataSource。 `Suppliers` DropDownList 的 ObjectDataSource，不過，應該設定為叫用`SuppliersBLL`類別的`GetSuppliers()`方法。 此外，設定`Suppliers`DropDownList 以顯示`CompanyName`欄位，並使用`SupplierID`欄位的值作為其`ListItem`s。
 
 加入兩個 dropdownlist 進行之後`EditItemTemplate`s，載入瀏覽器頁面，然後按一下 [編輯] 按鈕的 Chef Anton 印地安 Seasoning 產品。 如 [圖 9] 所示，會將產品類別目錄和供應商資料行轉譯為包含可用分類和供應商可從中選擇的下拉式清單中。 但請注意，*第一個*兩份下拉式清單中的項目預設會選取 （飲料類別目錄） 和山為供應商，即使 Chef Anton 印地安 Seasoning 提供紐奧良印地安 Condiment樂趣。
 
-
 [![預設會選取下拉式清單中第一個項目](customizing-the-data-modification-interface-vb/_static/image26.png)](customizing-the-data-modification-interface-vb/_static/image25.png)
 
 **圖 9**:預設會選取下拉式清單中第一個項目 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-vb/_static/image27.png))
-
 
 此外，如果您按一下 [更新] 時，您可找到的產品`CategoryID`並`SupplierID`值都會設為`NULL`。 這兩種意外的行為會導致因為在 dropdownlist 進行`EditItemTemplate`s 未繫結至任何資料欄位從基礎的產品資料。
 
@@ -180,19 +155,15 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 
 或者，您可以設定 DropDownList databindings 編輯透過設計工具的範本，然後按一下 編輯資料繫結連結，從 DropDownList 的智慧標籤。 接下來，表示`SelectedValue`屬性應該繫結至`CategoryID`欄位使用雙向資料繫結 （請參閱 圖 10）。 重複繫結宣告式或設計工具處理`SupplierID`資料欄位至`Suppliers`DropDownList。
 
-
 [![將 CategoryID 繫結使用雙向資料繫結 DropDownList SelectedValue 屬性](customizing-the-data-modification-interface-vb/_static/image29.png)](customizing-the-data-modification-interface-vb/_static/image28.png)
 
 **圖 10**:繫結`CategoryID`至 DropDownList`SelectedValue`屬性使用雙向資料繫結 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-vb/_static/image30.png))
 
-
 若要套用繫結之後`SelectedValue`的兩個 dropdownlist 進行內容中，已編輯的產品類別目錄] 和 [供應商欄將會預設為目前產品的值。 按一下 更新後,`CategoryID`並`SupplierID`下拉式清單中選取的項目的值會傳遞至`UpdateProduct`方法。 [圖 11] 顯示本教學課程之後已加入資料繫結陳述式;請注意如何 Chef Anton 印地安 Seasoning 的下拉式清單中選取項目都正確 Condiment 令紐奧良印地安。
-
 
 [![編輯產品的目前類別和供應商值預設會選取](customizing-the-data-modification-interface-vb/_static/image32.png)](customizing-the-data-modification-interface-vb/_static/image31.png)
 
 **圖 11**:預設選取編輯產品的目前類別和供應商值 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-vb/_static/image33.png))
-
 
 ## <a name="handlingnullvalues"></a>處理`NULL`值
 
@@ -205,7 +176,6 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 
 開始設定這兩個 dropdownlist 進行`AppendDataBoundItems`屬性設`True`。 接下來，新增`NULL``ListItem`加上下列`<asp:ListItem>`DropDownList 每個項目，讓宣告式標記看起來像：
 
-
 [!code-aspx[Main](customizing-the-data-modification-interface-vb/samples/sample6.aspx)]
 
 我選擇使用"(None)"做為文字值這個`ListItem`，但您可以將它也可以是空白字串，如果您想要變更。
@@ -213,16 +183,13 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 > [!NOTE]
 > 如我們在中所見*主版/詳細篩選使用 DropDownList*教學課程中， `ListItem` s 可以新增至 DropDownList 透過設計工具，按一下 DropDownList`Items`屬性 視窗中的屬性 （這將會顯示`ListItem`集合編輯器)。 不過，請務必新增`NULL``ListItem`本教學課程中透過宣告式語法。 如果您使用`ListItem`集合編輯器 中，將會省略產生的宣告式語法`Value`一併設定時指派為空白的字串，建立類似的宣告式標記： `<asp:ListItem>(None)</asp:ListItem>`。 雖然這看起來無害，遺漏的值就會使用 DropDownList`Text`在其位置中的屬性值。 這表示，如果這`NULL``ListItem`已選取，"(None)"的值將會嘗試指派給`CategoryID`，從而導致例外狀況。 藉由明確將`Value=""`，則`NULL`值會指派給`CategoryID`時`NULL``ListItem`已選取。
 
-
 針對供應商 DropDownList 中重複這些步驟。
 
 與這個額外`ListItem`，現在可以將指派的編輯介面`NULL`值的產品`CategoryID`和`SupplierID`欄位，如 圖 12 所示。
 
-
 [![若要將 NULL 值指派為產品的分類或供應商中選擇 （無）](customizing-the-data-modification-interface-vb/_static/image35.png)](customizing-the-data-modification-interface-vb/_static/image34.png)
 
 **圖 12**:（無） 選擇要指派`NULL`產品的分類或供應商的值 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-vb/_static/image36.png))
-
 
 ## <a name="step-4-using-radiobuttons-for-the-discontinued-status"></a>步驟 4：使用選項按鈕已停用狀態
 
@@ -232,11 +199,9 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 
 取代的核取方塊，在這兩`ItemTemplate`並`EditItemTemplate`RadioButtonList 控制項中，設定這兩個 RadioButtonLists'`ID`屬性，以`DiscontinuedChoice`。 接下來，表示 RadioButtonLists 應該每個包含兩個選項按鈕，一個標示為 「 作用中 」 值為"False"並標示為 「 已停止 」 值為"True"。 若要完成此您可以輸入`<asp:ListItem>`中的項目，直接透過宣告式語法或使用`ListItem`從設計工具的集合編輯器。 [圖 13] 顯示`ListItem`已指定集合編輯器後兩個選項按鈕的選項。
 
-
 [![將作用中和已停止 選項新增至 RadioButtonList](customizing-the-data-modification-interface-vb/_static/image38.png)](customizing-the-data-modification-interface-vb/_static/image37.png)
 
 **圖 13**:將作用中和已停止的選項新增至 RadioButtonList ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-vb/_static/image39.png))
-
 
 因為在 RadioButtonList`ItemTemplate`不應該是可編輯，設定其`Enabled`屬性設`False`、 離開`Enabled`屬性設`True`（預設值） 中 RadioButtonList 的`EditItemTemplate`。 這會讓非編輯資料列，以唯讀模式，選項按鈕，但可讓使用者變更編輯資料列的 RadioButton 值。
 
@@ -244,20 +209,16 @@ GridView ObjectDataSource 會設定為更新的產品值子集，而目前顯示
 
 在新增兩個 RadioButtonLists 和設定它們之後, `Discontinued` TemplateField 的宣告式標記應該看起來像：
 
-
 [!code-aspx[Main](customizing-the-data-modification-interface-vb/samples/sample7.aspx)]
 
 經過這些變更，`Discontinued`清單 （請參閱 圖 14） 的選項按鈕配對的資料行轉換從清單中的核取方塊。 當您編輯產品，選取適當的選項按鈕，可以更新的產品已停止的狀態，選取 其他 選項按鈕，然後按一下 更新。
-
 
 [![選項按鈕組已取代的已停用核取方塊](customizing-the-data-modification-interface-vb/_static/image41.png)](customizing-the-data-modification-interface-vb/_static/image40.png)
 
 **圖 14**:停用核取方塊已被取代選項按鈕組 ([按一下以檢視完整大小的影像](customizing-the-data-modification-interface-vb/_static/image42.png))
 
-
 > [!NOTE]
 > 由於`Discontinued`中的資料行`Products`資料庫不能有`NULL`的值，我們不需要擔心如何擷取`NULL`介面中的資訊。 如果，不過，`Discontinued`資料行可能包含`NULL`值，我們會想要新增第三個選項按鈕，以填入清單及其`Value`設為空字串 (`Value=""`)，就像使用類別和供應商 dropdownlist 進行。
-
 
 ## <a name="summary"></a>總結
 

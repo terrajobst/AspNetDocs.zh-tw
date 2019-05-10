@@ -8,12 +8,12 @@ ms.date: 09/13/2006
 ms.assetid: 83e3d759-82b8-41e6-8d62-f0f4b3edec41
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7ea11f436d8f0455621d22c4d5a5b4d6b6ece68f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 00ae512a23b9097d1077ae572b4e4377e322882f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386420"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108414"
 ---
 # <a name="formatting-the-datalist-and-repeater-based-upon-data-c"></a>根據資料格式化 DataList 和重複項 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59386420"
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_30_CS.exe)或[下載 PDF](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/datatutorial30cs1.pdf)
 
 > 在本教學課程，我們將逐步執行的我們如何格式化 DataList 和 Repeater 控制項，使用在範本內的格式化功能，或處理資料繫結事件的外觀範例。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -60,7 +59,6 @@ ms.locfileid: "59386420"
 > [!NOTE]
 > 精明的讀者可能已經發現的 DataList 與重複項繫結至資料與 GridView 繫結至資料時會的步驟順序之間的些微異常。 在資料繫結程序的結尾結束時，引發 GridView`DataBound`事件; 不過，收錄 DataList 或 Repeater 控制項有這類事件。 這是因為之前的前置和後置的層級的事件處理常式模式已成為一般在 ASP.NET 1.x 時間範圍內，建立 DataList 與重複項控制項。
 
-
 像是 GridView、 格式化以資料為依據的其中一個選項是建立的事件處理常式`ItemDataBound`事件。 這個事件處理常式會檢查有只繫結到的資料`DataListItem`或`RepeaterItem`並且影響視控制項格式。
 
 DataList 控制項，格式為整個項目可以使用實作的變更`DataListItem`s 與樣式相關屬性，其中包含標準`Font`， `ForeColor`， `BackColor`， `CssClass`，依此類推。 若要影響的 DataList 的範本內的特定 Web 控制項格式，我們需要以程式設計方式存取和修改這些 Web 控制項的樣式。 我們了解如何完成此回溯*自訂格式化時資料*教學課程。 例如中繼器控制項中，`RepeaterItem`類別有任何與樣式相關屬性; 因此，所有與樣式相關的變更會對`RepeaterItem`在`ItemDataBound`事件處理常式必須以程式設計方式存取及更新中的 Web 控制項範本中。
@@ -73,11 +71,9 @@ DataList 控制項，格式為整個項目可以使用實作的變更`DataListIt
 
 一旦您已複寫的 DataList 與 ObjectDataSource 的功能，從`Basics.aspx`成`Formatting.aspx`，請花一點時間變更 DataList s`ID`屬性從`DataList1`以更具描述性`ItemDataBoundFormattingExample`。 接下來，在瀏覽器中檢視 DataList。 如 [圖 1] 所示，唯一格式化每個產品之間的差別的背景色彩會交替出現。
 
-
 [![DataList 控制項中所列的產品](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image2.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image1.png)
 
 **圖 1**:DataList 控制項中所列的產品 ([按一下以檢視完整大小的影像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image3.png))
-
 
 本教學課程中，讓格式化 DataList，使得標價小於 $ 20.00 美元的任何產品會有它的名稱，而單位價格反白顯示的黃色的 s。
 
@@ -86,7 +82,6 @@ DataList 控制項，格式為整個項目可以使用實作的變更`DataListIt
 由於這些產品價格下 $ 20.00 美元會有套用的自訂格式，我們必須能夠判斷每個產品的價格。 當資料繫結至 DataList，DataList 列舉其資料來源中的記錄，然後針對每一筆記錄，會建立`DataListItem`執行個體，繫結至資料來源記錄`DataListItem`。 在特定的資料錄 s 後資料繫結至目前`DataListItem`物件，DataList 的`ItemDataBound`引發事件。 我們可以建立這個事件，以查看目前的資料值的事件處理常式`DataListItem`並根據這些值，進行所需的任何格式的變更。
 
 建立`ItemDataBound`DataList 的事件，並新增下列程式碼：
-
 
 [!code-csharp[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample1.cs)]
 
@@ -111,28 +106,22 @@ DataList 控制項，格式為整個項目可以使用實作的變更`DataListIt
 
 若要套用格式設定，請設定兩個 Label Web 控制項`CssClass`屬性，以`AffordablePriceEmphasis`，如下列程式碼所示：
 
-
 [!code-csharp[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample2.cs)]
 
 具有`ItemDataBound`事件處理常式已完成、 重新瀏覽`Formatting.aspx`瀏覽器中的頁面。 圖 2 所示，在 $ 20.00 美元價格的產品有其名稱 」 和 「 反白顯示的價格。
-
 
 [![這些產品小於 $ 20.00 美元會反白顯示](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image5.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image4.png)
 
 **圖 2**:這些產品小於 $ 20.00 美元會反白顯示 ([按一下以檢視完整大小的影像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image6.png))
 
-
 > [!NOTE]
 > 因為 DataList 會轉譯為 HTML `<table>`、 其`DataListItem`執行個體都可以將特定的樣式套用至整個項目設定的樣式相關屬性。 比方說，如果我們想要反白顯示*整個*其價格的時間小於為 $ 20.00 美元，則項目黃色，我們可能已取代的程式碼參考的標籤，並將其`CssClass`具有下列程式碼行的屬性： `e.Item.CssClass = "AffordablePriceEmphasis"`（請參閱 圖 3）。
 
-
 `RepeaterItem`構成 Repeater 控制項，不過，don t s 提供這類樣式層級屬性。 因此，套用自訂格式 Repeater 需要應用程式樣式屬性的 Web 控制項 Repeater s 在範本內，就像我們在圖 2 中。
-
 
 [![整個產品項目會反白顯示的產品在 $ 20.00 美元](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image8.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image7.png)
 
 **圖 3**:整個產品項目會反白顯示的產品在 $ 20.00 美元 ([按一下以檢視完整大小的影像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image9.png))
-
 
 ## <a name="using-formatting-functions-from-within-the-template"></a>使用 從範本內的格式化功能
 
@@ -140,23 +129,19 @@ DataList 控制項，格式為整個項目可以使用實作的變更`DataListIt
 
 為了示範格式化功能，可讓 s 有產品資訊包含產品的名稱旁邊的 [DISCONTINUED] 的文字，如果它已停止的 s。 此外，可讓 s 有價格反白顯示黃色如果它小於 $ 20.00 美元 s (如同我們在`ItemDataBound`事件處理常式範例); 如果價格是 $ 20.00 美元或更高版本，可讓 s 不會顯示實際的價格，但價格報價的文字，請改為呼叫。 [圖 4] 顯示的螢幕擷取畫面列出套用這些格式化規則的產品。
 
-
 [![適用於昂貴的產品，價格會取代文字，請呼叫價格報價](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image11.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image10.png)
 
 **圖 4**:適用於昂貴的產品，價格會取代文字，請呼叫價格報價 ([按一下以檢視完整大小的影像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image12.png))
 
-
 ## <a name="step-1-create-the-formatting-functions"></a>步驟 1：建立格式化的函式
 
 此範例中我們需要兩種格式化函式，其中會顯示產品名稱與文字 [DISCONTINUED]，如有需要和另一個顯示其中一個反白顯示的價格，如果它小於 $ 20.00 美元或該文字，請呼叫價格報價，否則為 s。 可讓 ASP.NET 頁面 s 程式碼後置類別中建立這些函數及它們的名稱`DisplayProductNameAndDiscontinuedStatus`和`DisplayPrice`。 這兩種方法需要傳回的 HTML 字串形式呈現，而且兩者都必須標示`Protected`(或`Public`) 才能叫用從 ASP.NET 頁面 s 宣告式語法部分。 這兩種方法的程式碼如下：
-
 
 [!code-csharp[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample3.cs)]
 
 請注意，`DisplayProductNameAndDiscontinuedStatus`方法可接受的值`productName`並`discontinued`資料欄位做為純量值，而`DisplayPrice`方法會接受`ProductsRow`執行個體 (而非`unitPrice`純量值)。 兩種方法將運作;不過，如果格式化的函式使用可以包含資料庫的純量值`NULL`值 (這類`UnitPrice`; 不`ProductName`也不`Discontinued`允許`NULL`值)，特別小心處理這些純量輸入。
 
 特別是，輸入的參數必須屬於型別`Object`連入的值可能是因為`DBNull`而不是預期的資料類型的執行個體。 此外，必須進行檢查以判斷輸入的值是否為資料庫`NULL`值。 也就是說，如果我們想`DisplayPrice`一定要使用下列程式碼的方法，以接受價格為純量值時，我們的 d:
-
 
 [!code-csharp[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample4.cs)]
 
@@ -166,26 +151,21 @@ DataList 控制項，格式為整個項目可以使用實作的變更`DataListIt
 
 格式函式新增到 ASP.NET 頁面 s 程式碼後置類別中，剩下的就是叫用這些格式化 DataList s 函式`ItemTemplate`。 若要從範本呼叫格式化函式，放入該函式呼叫內的資料繫結語法：
 
-
 [!code-aspx[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample5.aspx)]
 
 在 DataList s `ItemTemplate` `ProductNameLabel` Label Web 控制項目前有顯示產品的名稱指派其`Text`屬性結果的`<%# Eval("ProductName") %>`。 為了讓它顯示名稱加上文字 [DISCONTINUED]，如有需要更新的宣告式語法，使它改為將指派`Text`屬性值的`DisplayProductNameAndDiscontinuedStatus`方法。 當這麼做，我們必須傳遞 s 產品名稱和已停止使用的值`Eval("columnName")`語法。 `Eval` 傳回值的型別`Object`，但`DisplayProductNameAndDiscontinuedStatus`方法預期的輸入的參數的型別`String`並`Boolean`; 因此，我們必須轉換所傳回的值`Eval`方法預期的輸入的參數類型，就像這樣：
-
 
 [!code-aspx[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample6.aspx)]
 
 若要顯示的價格，我們可以直接設定`UnitPriceLabel`標籤 s`Text`屬性所傳回的值為`DisplayPrice`方法，就像我們未顯示產品的名稱和 [停用] 文字。 不過，而不是傳入`UnitPrice`做為純量的輸入參數，我們改為傳入整個`ProductsRow`執行個體：
 
-
 [!code-aspx[Main](formatting-the-datalist-and-repeater-based-upon-data-cs/samples/sample7.aspx)]
 
 就地格式化函式呼叫，請花一點時間瀏覽器中檢視進度。 您的畫面看起來應該類似圖 5 已停止的產品，包含文字 [DISCONTINUED] 而且成本超過 $ 20.00 美元具有其價格的產品以取代文字請價格報價的呼叫。
 
-
 [![適用於昂貴的產品，價格會取代文字，請呼叫價格報價](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image14.png)](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image13.png)
 
 **圖 5**:適用於昂貴的產品，價格會取代文字，請呼叫價格報價 ([按一下以檢視完整大小的影像](formatting-the-datalist-and-repeater-based-upon-data-cs/_static/image15.png))
-
 
 ## <a name="summary"></a>總結
 

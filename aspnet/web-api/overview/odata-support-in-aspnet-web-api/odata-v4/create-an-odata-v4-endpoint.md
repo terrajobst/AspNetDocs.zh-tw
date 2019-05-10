@@ -8,12 +8,12 @@ ms.date: 01/23/2019
 ms.assetid: 1e1927c0-ded1-4752-80fd-a146628d2f09
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: c6a4aa4eb563fd77d5afd9248175d5f5b7984d19
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 81d134cbd3231b9a0d5537ccbd1bbfe6419254af
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57042595"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108706"
 ---
 # <a name="create-an-odata-v4-endpoint-using-aspnet-web-api"></a>建立使用 ASP.NET Web API OData v4 端點 
 
@@ -45,8 +45,6 @@ ms.locfileid: "57042595"
 
 選取 [確定]。
 
-
-
 [![](create-an-odata-v4-endpoint/_static/image8.png)](create-an-odata-v4-endpoint/_static/image8.png)
 
 選取 **空**範本。 底下**新增的資料夾和核心參考：**，選取**Web API**。 選取 [確定]。
@@ -70,7 +68,6 @@ A*模型*是物件，表示您的應用程式中的資料實體。
 > [!NOTE]
 > 依照慣例，模型類別會放在 Models 資料夾中，但您不需要遵循此慣例，在您自己的專案中。
 
-
 將類別命名為 `Product` 。 在 Product.cs 檔案中，請以下列取代未定案程式碼：
 
 [!code-csharp[Main](create-an-odata-v4-endpoint/samples/sample2.cs)]
@@ -83,7 +80,6 @@ A*模型*是物件，表示您的應用程式中的資料實體。
 
 > [!NOTE]
 > Web API OData 中不需要 EF。 使用任何可以將資料庫實體轉譯為模型的資料存取層。
-
 
 首先，安裝 ef 的 NuGet 套件。 從 [工具] 功能表中，選取 [NuGet 套件管理員] &gt; [套件管理員主控台]。 在 [套件管理員主控台] 視窗中，輸入：
 
@@ -130,7 +126,6 @@ A*控制器*是處理 HTTP 要求的類別。 您建立個別的控制器，在�
 
 > [!NOTE]
 > 本教學課程中的 OData v3 使用新版**新增控制器**scaffolding。 目前沒有任何樣板 OData v4。
-
 
 以下列取代 ProductsController.cs 的未定案程式碼。
 

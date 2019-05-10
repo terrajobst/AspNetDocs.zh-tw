@@ -8,12 +8,12 @@ ms.date: 08/03/2007
 ms.assetid: cd330dd9-6254-4305-9351-dd727384c83b
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d6a787206862b88f915859d4a8fc4dd3c3166293
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 21b98ef4126c16054829d7183f59207de3e945f3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389592"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133362"
 ---
 # <a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a>設定資料存取層的連線和命令層級設定 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59389592"
 [下載程式碼](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_72_CS.zip)或[下載 PDF](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/datatutorial72cs1.pdf)
 
 > 在輸入資料集內 TableAdapters 自動處理連接到資料庫，發出命令，並填入具有結果的 DataTable。 不過，當我們想要處理這些詳細資料，並在本教學課程中我們了解如何存取在 TableAdapter 中的資料庫連接和命令層級設定，有些情況。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -50,24 +49,19 @@ Microsoft.NET Framework 包含了多種專門設計來處理資料的類別。 �
 
 每個 TableAdapter 類別有`Connection`屬性，指定資料庫連接資訊。 這個屬性的資料型別和`ConnectionString`值取決於在 [TableAdapter 組態精靈] 所做的選擇。 您應該記得，我們先將 TableAdapter 加入具類型資料集時此精靈會要求我們資料庫來源 （請參閱 圖 1）。 在此步驟中第一個下拉式清單包含這些組態檔，以及任何其他資料庫在伺服器總管 中的資料連接中指定的資料庫。 如果我們想要使用的資料庫不存在於下拉式清單中，可以藉由按一下 [新增連接] 按鈕，並提供所需的連接資訊指定新的資料庫連接。
 
-
 [![[TableAdapter 組態精靈] 的第一個步驟](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image2.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image1.png)
 
 **圖 1**:[TableAdapter 組態精靈] 的第一個步驟 ([按一下以檢視完整大小的影像](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image3.png))
-
 
 可讓 s 花點時間檢查 tableadapter 的程式碼`Connection`屬性。 如中所述[建立資料存取層](../introduction/creating-a-data-access-layer-cs.md)教學課程中，我們可以檢視自動產生的 TableAdapter 程式碼移至 [類別檢視] 視窗中，向下適當的類別，鑽研，然後按兩下成員名稱。
 
 當手寫筆移至 檢視 功能表並選擇 類別檢視 （或按 Ctrl + Shift + C），瀏覽至 類別檢視 視窗。 從 [類別檢視] 視窗的上半部，向下切入至`NorthwindTableAdapters`命名空間，然後選取`ProductsTableAdapter`類別。 這會顯示`ProductsTableAdapter`的成員在底部 類別檢視中，如 圖 2 所示的下半部。 按兩下`Connection`屬性，以查看其程式碼。
 
-
 ![按兩下以檢視其自動產生的程式碼的 [類別] 檢視中的連接屬性](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image4.png)
 
 **圖 2**:按兩下以檢視其自動產生的程式碼的 類別 檢視中的連接屬性
 
-
 Tableadapter`Connection`屬性和其他連接相關的程式碼如下所示：
-
 
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample1.cs)]
 
@@ -84,17 +78,13 @@ TableAdapter 類別具現化時，成員變數`_connection`等於`null`。 當`C
 > [!NOTE]
 > A*連接字串*是字串，指定資料庫連接資訊，例如要使用時，資料庫、 驗證認證和其他資料庫相關的設定位置的提供者。 如需各種不同的資料存放區和提供者所使用的連接字串模式的清單，請參閱 < [ConnectionStrings.com](http://www.connectionstrings.com/)。
 
-
 中所述[建立資料存取層](../introduction/creating-a-data-access-layer-cs.md)教學課程中，輸入資料集的自動產生類別可加以擴充透過部分類別使用。 首先，建立名為專案中的 新的子資料夾`ConnectionAndCommandSettings`下方`~/App_Code/DAL`資料夾。
-
 
 ![新增名為 ConnectionAndCommandSettings 子資料夾](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image5.png)
 
 **圖 3**:新增名為的子資料夾 `ConnectionAndCommandSettings`
 
-
 加入新的類別檔案，名為`ProductsTableAdapter.ConnectionAndCommandSettings.cs`並輸入下列程式碼：
-
 
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample2.cs)]
 
@@ -108,11 +98,9 @@ TableAdapter 類別具現化時，成員變數`_connection`等於`null`。 當`C
 
 開啟`Northwind`資料集，按一下 `ProductsTableAdapter`在設計師中，並瀏覽至 屬性 視窗。 您會看到`ConnectionModifier`設為預設值， `Assembly`。 若要讓`Connection`外部輸入資料集 s 組件，變更才可以使用屬性`ConnectionModifier`屬性設`Public`。
 
-
 [![您可以透過 ConnectionModifier 屬性設定連接屬性 s 存取範圍層級](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image7.png)](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image6.png)
 
 **圖 4**:`Connection`屬性存取範圍可以設定層級的 s 透過`ConnectionModifier`屬性 ([按一下以檢視完整大小的影像](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/_static/image8.png))
-
 
 儲存的資料集，然後再傳回給`ProductsBLL`類別。 之前，請移至其中一個現有的方法，並輸入`Adapter`然後按下句號鍵，以顯示 IntelliSense。 此清單應包含`Connection`屬性，這表示，您可以現在以程式設計方式讀取或從 BLL 指派任何連接層級設定。
 
@@ -132,7 +120,6 @@ A`SqlCommand`物件會負責傳送至資料庫的特定查詢，其屬性，例�
 
 可讓 s 花點時間查看所產生的程式碼`ProductsTableAdapter`在`Northwind`這兩個屬性及其支援的成員變數和 helper 方法的資料集：
 
-
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample3.cs)]
 
 程式碼`Adapter`並`CommandCollection`屬性精確地模擬的`Connection`屬性。 沒有保存的屬性所使用之物件的成員變數。 屬性`get`存取子會開始檢查是否有相對應的成員變數`null`。 如果是這樣，初始設定方法被呼叫建立成員變數的執行個體，並會將指派的核心命令相關的屬性。
@@ -147,14 +134,12 @@ A`SqlCommand`物件會負責傳送至資料庫的特定查詢，其屬性，例�
 
 若要允許`CommandTimeout`屬性，以調整 BLL，新增下列`public`方法來`ProductsDataTable`步驟 2 中使用的部分類別檔建立 (`ProductsTableAdapter.ConnectionAndCommandSettings.cs`):
 
-
 [!code-csharp[Main](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs/samples/sample4.cs)]
 
 該 TableAdapter 的執行個體無法從 BLL 或展示層設定命令的所有問題的命令逾時叫用這個方法。
 
 > [!NOTE]
 > `Adapter`並`CommandCollection`屬性會標示為`private`，這表示他們只能存取從 TableAdapter 中的程式碼。 不同於`Connection`屬性，這些存取修飾詞無法進行任何設定。 因此，如果您要公開到其他層架構中的命令層級屬性，您必須使用以上面所討論的部分類別方法`public`方法或屬性，可讀取或寫入`private`命令物件。
-
 
 ## <a name="summary"></a>總結
 

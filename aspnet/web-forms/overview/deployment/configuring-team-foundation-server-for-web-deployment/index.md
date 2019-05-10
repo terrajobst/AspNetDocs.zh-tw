@@ -8,17 +8,16 @@ ms.date: 05/16/2012
 ms.assetid: b71d1611-5f26-40dd-8315-b65b9d69b198
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: chapter
-ms.openlocfilehash: 3226039ad399fb43c82c98331be41450f6f679bd
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7f0f1498ad8fa51983eef335c08754a17956058d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405198"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109247"
 ---
 # <a name="aspnet-4---enterprise-deployment-series-3-configuring-tfs"></a>ASP.NET 4 - 企業部署系列 3 設定 TFS
 
 > 本教學課程會示範如何設定 Team Foundation Server (TFS) 2010年建置解決方案，並將 web 內容部署至各種目標環境。
-
 
 - [設定 Web 部署的 Team Foundation Server](configuring-team-foundation-server-for-web-deployment.md)
 - [在 TFS 中建立 Team 專案](creating-a-team-project-in-tfs.md)

@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 732a2316-e49f-4f72-becd-0cd72f14457e
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
 msc.type: authoredcontent
-ms.openlocfilehash: 7263a7d7ee791be8a1369934aac4d091736a658b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 59f859ea30572fbe66184f29555ac2c5c2f22f82
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59417477"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132128"
 ---
 # <a name="membership-and-administration"></a>成員資格及系統管理
 
@@ -22,7 +22,6 @@ ms.locfileid: "59417477"
 [下載 Wingtip Toys 範例專案 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下載電子書 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > 本系列教學課程將教導您建置使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 的 ASP.NET Web Forms 應用程式的基本概念。 Visual Studio 2013[含有 C# 原始程式碼專案](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)隨附了本教學課程系列。
-
 
 本教學課程會示範如何更新 Wingtip Toys 範例應用程式，來新增自訂角色，並使用 ASP.NET 身分識別。 它也示範如何實作的自訂角色的使用者可以新增和移除網站中的產品管理頁面。
 
@@ -81,7 +80,6 @@ ASP.NET Web Forms 提供成員資格功能。 藉由使用預設範本，您會�
 > 
 > 如果您想要儲存成員資格資料，以及產品資料，您可以考慮使用相同**DbContext**您用來將產品的資料儲存在上述程式碼。
 
-
  *內部*關鍵字是類型 （例如類別） 和類型成員 （例如方法或屬性） 的存取修飾詞。 內部類型或成員都只能包含在相同的組件的檔案內存取 *(.dll*檔案)。 當您建置您的應用程式組件檔案 *(.dll*) 會建立包含您執行應用程式時所執行的程式碼。 
 
 A`RoleStore`物件，可提供角色管理，會根據資料庫的內容建立。
@@ -89,7 +87,6 @@ A`RoleStore`物件，可提供角色管理，會根據資料庫的內容建立�
 > [!NOTE] 
 > 
 > 請注意，當`RoleStore`會建立物件，它會使用泛型`IdentityRole`型別。 這表示`RoleStore`只可包含`IdentityRole`物件。 也藉由使用泛型時，在記憶體中的資源會處理更好。
-
 
 下一步`RoleManager`物件，會根據建立`RoleStore`您剛才建立的物件。 `RoleManager`物件會公開角色相關的 API，可用來自動將變更儲存到`RoleStore`。 `RoleManager`只可包含`IdentityRole`物件，因為程式碼會使用`<IdentityRole>`泛型型別。
 
@@ -102,7 +99,6 @@ A`RoleStore`物件，可提供角色管理，會根據資料庫的內容建立�
 > [!NOTE] 
 > 
 > 稍後在本教學課程系列中的 「 ASP.NET 錯誤處理 」 教學課程期間，將會更新錯誤處理。
-
 
 下一次應用程式啟動時，名為"canEditUser 」 的使用者會新增為名為"canEdit"的應用程式的角色。 稍後在本教學課程中，您將使用者身分登入 」 canEditUser 」 以顯示您將在本教學課程期間新增的其他功能。 如需 ASP.NET 身分識別的 API 詳細資訊，請參閱 < [Microsoft.AspNet.Identity 命名空間](https://msdn.microsoft.com/library/microsoft.aspnet.identity(v=vs.111).aspx)。 如需初始化 ASP.NET 身分識別系統的詳細資訊，請參閱 < [AspnetIdentitySample](https://github.com/rustd/AspnetIdentitySample/blob/master/AspnetIdentitySample/App_Start/IdentityConfig.cs)。
 

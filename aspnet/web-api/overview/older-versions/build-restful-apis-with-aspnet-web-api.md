@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 87daa99f-3810-407e-b969-dd28a192959d
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 3ba7f2d186e6f0837a32f69f964cec19fe625953
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 35b115d6b4f84084e78e429bbb4842670e57bba4
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391477"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132268"
 ---
 # <a name="build-restful-apis-with-aspnet-web-api"></a>建置使用 ASP.NET Web API 的 RESTful Api
 
@@ -33,7 +33,6 @@ ms.locfileid: "59391477"
 > 
 > 
 > 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)。
-
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>目標
@@ -71,13 +70,12 @@ ms.locfileid: "59391477"
 > [!NOTE]
 > 每個練習會伴隨**結束**包含完成練習之後，您應該取得所產生的方案資料夾。 如果您需要的所有練習所使用的其他說明，您可以使用此解決方案作為指南。
 
-
 估計的時間才能完成這個實驗室：**60 分鐘**。
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Create_a_Read-Only_Web_API"></a>
-### <a name="exercise-1-create-a-read-only-web-api"></a>練習 1:建立唯讀的 Web API
+### <a name="exercise-1-create-a-read-only-web-api"></a>練習 1：建立唯讀的 Web API
 
 在此練習中，您將連絡人的 manager 實作的唯寫的 GET 方法。
 
@@ -272,7 +270,7 @@ ms.locfileid: "59391477"
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Create_a_ReadWrite_Web_API"></a>
-### <a name="exercise-2-create-a-readwrite-web-api"></a>練習 2:建立讀取/寫入 Web API
+### <a name="exercise-2-create-a-readwrite-web-api"></a>練習 2：建立讀取/寫入 Web API
 
 在此練習中，您會將實作 POST 和 PUT 方法的連絡人管理員 」 來啟用資料編輯功能。
 
@@ -420,7 +418,6 @@ ms.locfileid: "59391477"
 
 > [!NOTE]
 > 此外，您可以在其中部署此應用程式至 Azure 的下列[附錄 c:發行 ASP.NET MVC 4 應用程式使用 Web Deploy](#AppendixC)。
-
 
 ---
 

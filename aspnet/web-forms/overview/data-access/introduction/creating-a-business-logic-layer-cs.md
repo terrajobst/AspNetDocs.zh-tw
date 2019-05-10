@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: 85554606-47cb-4e4f-9848-eed9da579056
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fd3bf46394f562462c561bf06370d2f372e47d0a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c0278841b7b0701f09b2de5115e06da87aed49cf
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415259"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109044"
 ---
 # <a name="creating-a-business-logic-layer-c"></a>建立商業邏輯層 (C#)
 
@@ -23,18 +23,15 @@ ms.locfileid: "59415259"
 
 > 在本教學課程中，我們會看到如何集中管理您的商務規則到商務邏輯層 (BLL) 做為交換資料的展示層和 DAL 之間的媒介。
 
-
 ## <a name="introduction"></a>簡介
 
 資料存取層 (DAL) 中建立[第一個教學課程](creating-a-data-access-layer-cs.md)完全分隔的資料存取邏輯和展示邏輯。 不過，雖然 DAL 清楚分隔的資料存取詳細資料，從展示層，它不會強制執行可能適用於任何商務規則。 比方說，我們的應用程式我們可能會想要禁止`CategoryID`或是`SupplierID`的欄位`Products`資料表，以修改`Discontinued`欄位設定為 1，或者我們可能想要強制執行 seniority 規則禁止情況下會員工是由他們雇用的人員管理。 另一個常見案例是授權可能只有特定角色中的使用者可以刪除產品，或是可以變更`UnitPrice`值。
 
 在本教學課程中，我們會看到如何集中化這些商務規則到商務邏輯層 (BLL)，做為媒介的展示層和 DAL 之間交換資料。 在真實世界應用程式中，BLL 應該實作為個別的類別庫專案;不過，這些教學課程中我們將實作 BLL 一系列中的類別為我們`App_Code`資料夾，以簡化專案結構。 [圖 1] 說明之間的展示層，接著，BLL 和 DAL 架構的關聯性。
 
-
 ![BLL 會展示層分隔從資料存取層，並強制施行商務規則](creating-a-business-logic-layer-cs/_static/image1.png)
 
 **圖 1**:BLL 會展示層分隔從資料存取層，並強制施行商務規則
-
 
 ## <a name="step-1-creating-the-bll-classes"></a>步驟 1：建立 BLL 類別
 
@@ -44,17 +41,14 @@ ms.locfileid: "59415259"
 
 接下來，建立四個 BLL 類別檔案，在`BLL`子資料夾。 若要這麼做，以滑鼠右鍵按一下`BLL`子資料夾中，新的項目中，選擇 [新增]，然後選擇 [類別] 範本。 名稱的四個類別`ProductsBLL`， `CategoriesBLL`， `SuppliersBLL`，和`EmployeesBLL`。
 
-
 ![將四個新類別加入至 App_Code 資料夾](creating-a-business-logic-layer-cs/_static/image2.png)
 
 **圖 2**:新增四個新的類別，來`App_Code`資料夾
-
 
 接下來，我們將方法加入至每個類別只是換行定義為第一個教學課程從 Tableadapter 的方法。 現在，這些方法會只是直接呼叫 DAL;我們會傳回更新版本，才能將任何所需的商務邏輯加入項目。
 
 > [!NOTE]
 > 如果您使用 Visual Studio Standard Edition 或更新版本 (也就是你*未*使用 Visual Web Developer)，您可以選擇性地設計您以視覺化方式使用的類別[類別設計工具](https://msdn.microsoft.com/library/default.asp?url=/library/dv_vstechart/html/clssdsgnr.asp)。 請參閱[類別設計工具部落格](https://blogs.msdn.com/classdesigner/default.aspx)如需有關在 Visual Studio 中這項新功能。
-
 
 針對`ProductsBLL`我們需要加入總共七種方法的類別：
 
@@ -67,7 +61,6 @@ ms.locfileid: "59415259"
 - `DeleteProduct(productID)` 從資料庫刪除指定的產品
 
 ProductsBLL.cs
-
 
 [!code-csharp[Main](creating-a-business-logic-layer-cs/samples/sample1.cs)]
 
@@ -107,7 +100,6 @@ ProductsBLL.cs
 
 值得注意的是一種方法是`SuppliersBLL`類別的`UpdateSupplierAddress`方法。 這個方法會提供更新就只是供應商的位址資訊的介面。 就內部而言，這個方法會在讀取`SupplierDataRow`所指定的物件`supplierID`(使用`GetSupplierBySupplierID`)、 設定其地址相關屬性，並接著呼叫向下`SupplierDataTable`的`Update`方法。 `UpdateSupplierAddress`方法如下所示：
 
-
 [!code-csharp[Main](creating-a-business-logic-layer-cs/samples/sample2.cs)]
 
 請參閱這篇文章的下載，我的 BLL 類別的完整實作。
@@ -116,21 +108,17 @@ ProductsBLL.cs
 
 在第一個教學課程中，我們看到範例的直接輸入資料集以程式設計方式使用，但我們 BLL 類別加入，展示層應適用於 BLL 改為。 在 `AllProducts.aspx`從第一個教學課程中，範例`ProductsTableAdapter`來的產品清單繫結至 GridView，如下列程式碼所示：
 
-
 [!code-csharp[Main](creating-a-business-logic-layer-cs/samples/sample3.cs)]
 
 若要使用新的 BLL 類別，所有需要的變更是第一行程式碼取代`ProductsTableAdapter`物件`ProductBLL`物件：
-
 
 [!code-csharp[Main](creating-a-business-logic-layer-cs/samples/sample4.cs)]
 
 也可以使用 ObjectDataSource，以宣告方式 （與可以使用具類型資料集） 存取的 BLL 類別。 我們將在下列教學課程中討論更詳細地 ObjectDataSource。
 
-
 [![在 GridView 中顯示產品清單](creating-a-business-logic-layer-cs/_static/image4.png)](creating-a-business-logic-layer-cs/_static/image3.png)
 
 **圖 3**:在 GridView 中顯示產品清單 ([按一下以檢視完整大小的影像](creating-a-business-logic-layer-cs/_static/image5.png))
-
 
 ## <a name="step-3-adding-field-level-validation-to-the-datarow-classes"></a>步驟 3：DataRow 類別中加入欄位層級驗證
 
@@ -145,24 +133,19 @@ ProductsBLL.cs
 
 除了強制執行這些規則，在資料庫上的其應該也會強制執行資料集層級。 事實上，已會擷取欄位長度和值是必要或選擇性針對每個 DataTable DataColumns 組。 若要查看自動提供的現有欄位層級驗證，請移至 DataSet 設計工具，從 Datatable 的其中一個選取欄位，然後移至 屬性 視窗。 如 圖 4 所示`QuantityPerUnit`中的 DataColumn`ProductsDataTable`最大長度為 20 個字元，但允許`NULL`值。 如果我們嘗試設定`ProductsDataRow`的`QuantityPerUnit`屬性設為超過 20 個字元的字串值`ArgumentException`就會擲回。
 
-
 [![DataColumn 提供基本欄位層級驗證](creating-a-business-logic-layer-cs/_static/image7.png)](creating-a-business-logic-layer-cs/_static/image6.png)
 
 **圖 4**:DataColumn 提供基本欄位層級驗證 ([按一下以檢視完整大小的影像](creating-a-business-logic-layer-cs/_static/image8.png))
 
-
 不幸的是，我們不能指定界限檢查，例如`UnitPrice`值必須大於或等於零，透過 [屬性] 視窗。 若要提供這種類型的欄位層級驗證我們要建立的 DataTable 的事件處理常式[ColumnChanging](https://msdn.microsoft.com/library/system.data.datatable.columnchanging%28VS.80%29.aspx)事件。 中所述[前述教學課程](creating-a-data-access-layer-cs.md)，具類型資料集所建立的資料集、 Datatable 和 DataRow 物件可以透過使用部分類別擴充。 使用我們可以建立這項技術`ColumnChanging`事件處理常式`ProductsDataTable`類別。 建立中的類別著手`App_Code`名為資料夾`ProductsDataTable.ColumnChanging.cs`。
-
 
 [![將新類別加入至 App_Code 資料夾](creating-a-business-logic-layer-cs/_static/image10.png)](creating-a-business-logic-layer-cs/_static/image9.png)
 
 **圖 5**:將新類別加入`App_Code`資料夾 ([按一下以檢視完整大小的影像](creating-a-business-logic-layer-cs/_static/image11.png))
 
-
 接下來，建立的事件處理常式`ColumnChanging`事件，可確保`UnitPrice`， `UnitsInStock`， `UnitsOnOrder`，並`ReorderLevel`資料行值 (如果不是`NULL`) 大於或等於零。 如果任何這類資料行超出範圍時，會擲回`ArgumentException`。
 
 ProductsDataTable.ColumnChanging.cs
-
 
 [!code-csharp[Main](creating-a-business-logic-layer-cs/samples/sample5.cs)]
 
@@ -180,13 +163,11 @@ BLL 類別應該包含檢查，以確保遵循應用程式的商務規則。 這
 
 若要強制執行此商務規則`UpdateProducts`方法，我們會開始檢查是否`Discontinued`已設為`true`，因此，我們會呼叫`GetProductsBySupplierID`我們購買此產品的供應商來判斷多少的產品。 如果只有一項產品從這個供應商購買，我們會擲回`ApplicationException`。
 
-
 [!code-csharp[Main](creating-a-business-logic-layer-cs/samples/sample6.cs)]
 
 ## <a name="responding-to-validation-errors-in-the-presentation-tier"></a>展示層中的驗證錯誤回應
 
 從展示層呼叫 BLL 時我們可以決定是否要嘗試處理任何可能會引發，或將這些反昇至 ASP.NET 的例外狀況 (這將會引發`HttpApplication`的`Error`事件)。 若要處理的例外狀況，當以程式設計方式處理 BLL，我們可以使用[try...catch](https://msdn.microsoft.com/library/0yd65esw.aspx)區塊，如下列範例所示：
-
 
 [!code-csharp[Main](creating-a-business-logic-layer-cs/samples/sample7.cs)]
 

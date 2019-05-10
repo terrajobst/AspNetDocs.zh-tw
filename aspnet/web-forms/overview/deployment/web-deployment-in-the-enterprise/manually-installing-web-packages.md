@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: f11d22a7-5d32-4ad0-8a9b-276460a61c06
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/manually-installing-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: 9d0e57eb85242a0d6fa8ca9eef7f6c741862069d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f778549d3e26989a2e71ef21171adec521842729
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408793"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132114"
 ---
 # <a name="manually-installing-web-packages"></a>手動安裝 Web 套件
 
@@ -29,7 +29,6 @@ ms.locfileid: "59408793"
 > 
 > 在這些情況下，唯一的選擇可能是移植到目的地伺服器上的 web 套件，並以手動方式將它匯入到 IIS。 雖然這個方法會防止自動的部署，它仍然是非常有效的技術發行 web 應用程式的&#x2014;您只要將單一 zip 檔案複製到您的 web 伺服器，並使用精靈來引導您完成匯入程序。
 
-
 本主題是構成一系列以名為 Fabrikam，Inc.的虛構公司的企業部署需求為基礎的教學課程的一部分本教學課程系列會使用範例解決方案&#x2014;[連絡管理員解決方案](the-contact-manager-solution.md)&#x2014;來代表實際的層級的複雜性，包括 ASP.NET MVC 3 應用程式時，Windows Communication 的 web 應用程式Foundation (WCF) 服務與資料庫專案。
 
 ## <a name="task-overview"></a>工作概觀
@@ -44,7 +43,6 @@ ms.locfileid: "59408793"
 
 > [!NOTE]
 > 本主題最適合用於搭配[設定 Web 伺服器進行 Web 部署發行 （離線部署）](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)，其中說明如何安裝必要的元件，並準備封裝匯入 IIS 網站。
-
 
 ## <a name="create-a-web-deployment-package"></a>建立 Web 部署套件
 
@@ -68,9 +66,7 @@ ms.locfileid: "59408793"
 
 您可以從命令列叫用來建立 web 部署封裝**封裝**上 web 應用程式專案使用 MSBuild 目標。 此命令應該與以下相似：
 
-
 [!code-console[Main](manually-installing-web-packages/samples/sample1.cmd)]
-
 
 較接近您使用，最終結果相同。 WPP 為 zip 檔案，以及各種支援資源的詳細資訊，在您的 web 應用程式專案的輸出資料夾中建立 web 部署套件。
 

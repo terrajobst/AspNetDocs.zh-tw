@@ -8,15 +8,14 @@ ms.date: 05/18/2012
 ms.assetid: 79eca52c-e7ad-44ab-a3e4-d8093e9da5a7
 msc.legacyurl: /web-pages/pluralsight
 msc.type: content
-ms.openlocfilehash: 78e4d3aedd183e8ec91a8c833e4b60894ae214ec
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5485b68f8ed87952a6d09e1880e6d8ce39eea73a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401188"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108575"
 ---
 # <a name="webmatrix-and-web-pages-video-training-from-pluralsight"></a>Pluralsight 提供的 WebMatrix 與網頁訓練影片
-
 
 > [!NOTE] 
 > WebMatrix 不再建議使用整合式的開發環境適用於 ASP.NET 網頁。 使用[Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio)或是[Visual Studio Code](https://code.visualstudio.com/)。
@@ -32,11 +31,9 @@ ms.locfileid: "59401188"
 - [原始檔控制](https://pluralsight.com/training/Player?author=matt-milner&name=webmatrix-introduction-m9&mode=live&clip=0&course=webmatrix-introduction)
 - [行動網站](https://pluralsight.com/training/Player?author=matt-milner&name=webmatrix-introduction-m10&mode=live&clip=0&course=webmatrix-introduction)
 
-
 「 這堂課程 pluralsight Matt Milner 記錄是適合用來取得您需要建立動態資料驅動應用程式由 ASP.NET 網頁，但功能強大的全新 Razor 語法的詳細資料。 大感謝您對 Pluralsight 的這個免費的原始碼 ！ 視訊播放程式、 內容和流程是真的很順利完成。 建議您立即查看 ！ 」
 
 Scott Hanselman、 首席專案經理、 Web 平台和 Azure 的工具，Microsoft
-
 
 ![pluralsight-標誌-playbutton](pluralsight/_static/image1.png)
 

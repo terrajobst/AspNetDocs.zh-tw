@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 44a22ac7-1fc7-4174-b946-c6129fb6a19b
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 7ea8c74a6621200e3a0d52a7c37fed6b5eeff4e5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d580e550f2461837f0e8a4e477273348b49cb53e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391620"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132389"
 ---
 # <a name="scenario-configuring-a-test-environment-for-web-deployment"></a>案例：設定 Web 部署的測試環境
 
@@ -22,7 +22,6 @@ ms.locfileid: "59391620"
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主題說明開發人員在典型的 web 部署案例或測試環境，並說明您需要完成，才能設定類似的環境的工作。
-
 
 當開發人員開發 web 應用程式時，它們是通常給存取伺服器環境，可用來在實際的設定中測試其應用程式的變更。 這種開發或測試環境通常具有下列特性：
 
@@ -47,7 +46,6 @@ ms.locfileid: "59391620"
 
 > [!NOTE]
 > 您也可以使用[On Demand Web 部署](https://technet.microsoft.com/library/ee517345(WS.10).aspx)（「 暫存代理程式 」）。 這是類似於遠端代理程式方法，根據需求和限制。
-
 
 在此情況下，開發人員，目的地伺服器上具有系統管理員權限，並在測試環境不受限制嚴格的安全性限制，因此合理的選擇是要設定測試的 web 伺服器，以支援使用遠端代理程式的部署。 這是較不複雜，而且需要比 Web 部署的處理常式方法的較低的初始設定。 您也需要設定您的資料庫伺服器，以支援遠端存取和部署。
 

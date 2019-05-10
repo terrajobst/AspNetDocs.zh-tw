@@ -8,19 +8,18 @@ ms.date: 02/10/2010
 ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 0991ce5c866aa9e31ef23812e953d9ee10dda3d1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fbbb9e2ef6ce540f0ab422d2b80e4a5409076c83
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409716"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132932"
 ---
 # <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 與 Visual Studio 2010 網頁程式開發概觀
 
 > 本文件會包含在.net Framework 4 和 Visual Studio 2010 中的 asp.net 提供許多新功能的概觀。
 > 
 > [下載此白皮書](https://download.microsoft.com/download/7/1/A/71A105A9-89D6-4201-9CC5-AD6A3B7E2F22/ASP_NET_4_and_Visual_Studio_2010_Web_Development_Overview.pdf)
-
 
 **內容**
 
@@ -145,7 +144,6 @@ ASP.NET 4 中加入的擴充點的輸出快取，可讓您設定一或多個自�
 > 
 > 如需詳細資訊，請參閱 < [Application Warm-Up](https://www.iis.net/extensions/applicationwarmup%20on%20the%20IIS.net) IIS.net 網站上。 如需說明如何使用 「 準備 」 功能的逐步解說，請參閱 < [Getting Started with IIS 7.5 的應用程式準備模組](https://www.iis.net/learn/manage)IIS.net 網站上。
 
-
 若要使用自動啟動功能，IIS 管理員，請設定為自動啟動使用中的下列設定的 IIS 7.5 中的應用程式集區`applicationHost.config`檔案：
 
 [!code-xml[Main](overview/samples/sample5.xml)]
@@ -206,7 +204,6 @@ ASP.NET 4 也可讓您設定的 URL 字元檢查所使用的字元。 當 ASP.NE
 
 > [!NOTE]
 > 請注意，ASP.NET 4 一律會拒絕包含字元 0x00 到 0x1F ASCII 範圍中的 URL 路徑，因為這些是在 IETF 的 RFC 2396 定義的無效的 URL 字元 ([http://www.ietf.org/rfc/rfc2396.txt](http://www.ietf.org/rfc/rfc2396.txt))。 Windows Server 版本上執行 IIS 6 或更新版本中，http.sys 通訊協定的裝置驅動程式會自動拒絕 Url 具有這些字元。
-
 
 <a id="0.2__Toc253429245"></a><a id="0.2__Toc243304619"></a>
 
@@ -270,7 +267,6 @@ ASP.NET 4 會運用 CLR 所導入新資源監視功能。 若要啟用這項功�
 
 > [!NOTE]
 > 請注意`aspnet.config`檔案位於.NET Framework 安裝所在的目錄。 它不是`Web.config`檔案。
-
 
 當*Appdomainresourcemonitoring>* 已啟用功能、 兩個新的效能計數器位於 [ASP.NET 應用程式] 的效能分類：*受控處理器時間百分比*和*Managed 記憶體使用*。 這兩個這些效能計數器來追蹤估計的 CPU 時間和受管理的記憶體使用率的個別的 ASP.NET 應用程式使用新的 CLR 應用程式定義域資源管理功能。 如此一來，ASP.NET 4 中，以系統管理員現在可以在單一背景工作處理序中執行的個別應用程式的資源耗用量的更細微檢視。
 
@@ -678,7 +674,6 @@ ASP.NET 會自動運作出正確的路由 （也就是它會產生正確的 URL�
 > [!NOTE]
 > 請注意，則您必須確定呈現的控制項識別碼都是唯一的。 如果他們不這樣做，可能會中斷任何需要對個別的 HTML 項目，例如用戶端的唯一識別碼的功能*document.getElementById*函式。
 
-
 #### <a name="creating-predictable-client-ids-in-data-bound-controls"></a>建立資料繫結控制項中的可預測的用戶端識別碼
 
 *ClientID*所產生舊的演算法所資料繫結清單控制項中的控制項可以是值，且不是真的可預測。 *ClientIDMode*功能可協助您將更多控制透過這些方式 Id 的產生。
@@ -792,7 +787,7 @@ ASP.NET*圖表*控制項擴充.NET Framework 中的資料視覺效果供應項�
 
 [!code-aspx[Main](overview/samples/sample61.aspx)]
 
-#### <a name="range"></a>範圍
+#### <a name="range"></a>Range
 
 範圍選項類似於 [搜尋] 選項，但指定一組值來定義範圍。 在下列範例中， *QueryExtender*控制搜尋`UnitPrice`傳回的資料中的資料行*LinqDataSource*控制項。 範圍是讀取自 TextBoxFrom 和 TextBoxTo 控制項在頁面上。
 
@@ -1004,12 +999,10 @@ ASP.NET 2.0 和更新版本的呈現系統特定隱藏的欄位 (例如*隱藏*�
 
 > 內容
 
-
 這項增強功能可讓您更輕鬆地利用 CSS，控制項內容的樣式因為沒有非預期的標記控制項所呈現。
 
 > [!NOTE]
 > 請注意這項變更會停用支援自動格式化函式，在 Visual Studio 2010 設計工具中，因為目前已不再*資料表*可以主控樣式屬性的自動格式化選項所產生的項目。
-
 
 <a id="0.2__Toc253429270"></a><a id="0.2__Toc243304644"></a>
 
@@ -1057,7 +1050,6 @@ ASP.NET 2.0 和更新版本的呈現系統特定隱藏的欄位 (例如*隱藏*�
 
 > [!NOTE]
 > 請注意是否您設定*RepeatLayout*要*OrderedList*或*UnorderedList*，則*Flow*屬性無法再使用，並將如果屬性已設定您的標記或程式碼中，會擲回執行階段例外狀況。 屬性會有任何值，因為這些控制項的視覺化版面配置改為使用 CSS 定義。
-
 
 <a id="0.2__Toc253429272"></a><a id="0.2__Toc243304646"></a>
 
@@ -1146,7 +1138,6 @@ ASP.NET MVC 是在 2009 年 3 月，做為附加元件架構引進到 ASP.NET 3.
 
 > [!NOTE]
 > 請注意，如需詳細資訊，請參閱 <<c0> [ 動態資料文件](https://msdn.microsoft.com/library/cc488545.aspx)MSDN Library 中。
-
 
 針對 ASP.NET 4 中，動態資料已經過增強，讓開發人員快速建置資料導向網站的更強大。
 

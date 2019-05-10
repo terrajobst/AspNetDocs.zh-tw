@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: 14873c5d-81a9-455b-bd71-30fb555583e7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: dc3ff989b6861fe62cce0199a62adef6107206d5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 961959300f5481a297ed8a9a17131c076d1dfd69
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384184"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65116697"
 ---
 # <a name="displaying-a-custom-error-page-vb"></a>顯示自訂的錯誤頁面 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59384184"
 [下載程式碼](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_11_VB.zip)或[下載 PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial11_CustomErrors_vb.pdf)
 
 > 沒有使用者看到的內容中的 ASP.NET web 應用程式的執行階段錯誤發生時？ 答案取決於如何在網站&lt;customErrors&gt;組態。 根據預設，使用者會顯示難懂的黃色螢幕讚揚發生執行階段錯誤。 本教學課程會示範如何自訂這些設定，以符合您網站的外觀與風格的悅耳且具專業水準舒適的顯示自訂錯誤頁面。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -47,7 +46,6 @@ ms.locfileid: "59384184"
 > [!NOTE]
 > 若要重現此錯誤在示範 web 應用程式可供下載您可以造訪`Genre.aspx?ID=foo`直接按一下中的 「 產生執行階段錯誤 」 連結或`Default.aspx`。
 
-
 請注意例外狀況資訊**圖 1**。 例外狀況訊息，「 轉換失敗時從字元字串轉換到 uniqueidentifier 」 會呈現在頁面頂端。 例外狀況類型、 `System.Data.SqlClient.SqlException`，時，也列出。 另外還有堆疊追蹤。
 
 [![](displaying-a-custom-error-page-vb/_static/image2.png)](displaying-a-custom-error-page-vb/_static/image1.png)
@@ -61,7 +59,6 @@ ms.locfileid: "59384184"
 
 > [!NOTE]
 > 如果您有並獲得使用與您的 web 主機時，您可能會發現瀏覽即時的網站時，不會不會顯示執行階段錯誤 YSOD。 這是因為獲得的預設設定來顯示例外狀況詳細資料 YSOD 其伺服器。 好消息是，您可以覆寫此預設行為加入`<customErrors>`陳述式，以您`Web.config`檔案。 「 設定的錯誤頁面顯示 」 一節將探討`<customErrors>`詳細資料中的一節。
-
 
 [![](displaying-a-custom-error-page-vb/_static/image5.png)](displaying-a-custom-error-page-vb/_static/image4.png)
 
@@ -139,7 +136,6 @@ ms.locfileid: "59384184"
 > [!NOTE]
 > 請參閱[404 錯誤網頁，一個更多時間](http://www.smashingmagazine.com/2009/01/29/404-error-pages-one-more-time/)如需建立有效的 404 錯誤頁面的指引。
 
-
 [![](displaying-a-custom-error-page-vb/_static/image19.png)](displaying-a-custom-error-page-vb/_static/image18.png)**圖 7**:自訂 404 錯誤頁面會顯示更具針對性的訊息比 `Oops.aspx`  
  ([按一下以檢視完整大小的影像](displaying-a-custom-error-page-vb/_static/image20.png)) 
 
@@ -147,7 +143,6 @@ ms.locfileid: "59384184"
 
 > [!NOTE]
 > 由 ASP.NET 引擎處理資源提出要求時，才會顯示自訂錯誤頁面。 如我們所述[差異的核心之間 IIS 和 ASP.NET Development Server](core-differences-between-iis-and-the-asp-net-development-server-vb.md)教學課程中，web 伺服器可能會自行處理特定要求。 根據預設，IIS 會 web 伺服器處理序要求針對靜態內容，例如映像和 HTML 檔案，而不叫用 ASP.NET 引擎。 因此，如果使用者要求的不存在的映像檔會將得到 IIS 的預設 404 錯誤訊息，而不是 ASP。NET 的設定錯誤頁面。
-
 
 ## <a name="summary"></a>總結
 

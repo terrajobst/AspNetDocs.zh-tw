@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 6898c601-6c31-432f-8388-e6843f8a17cb
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
 msc.type: authoredcontent
-ms.openlocfilehash: e079318b37563b1b7afe0f842f5b463541de0a81
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1c54449e778eac96133cccdc90d86cbbaf05a70f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405426"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132102"
 ---
 # <a name="shopping-cart"></a>購物車
 
@@ -22,7 +22,6 @@ ms.locfileid: "59405426"
 [下載 Wingtip Toys 範例專案 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下載電子書 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > 本系列教學課程將教導您建置使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 的 ASP.NET Web Forms 應用程式的基本概念。 Visual Studio 2013[含有 C# 原始程式碼專案](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)隨附了本教學課程系列。
-
 
 本教學課程說明將購物車新增 「 Wingtip Toys 範例 ASP.NET Web Forms 應用程式所需的商務邏輯。 此教學課程的上一個教學課程 [顯示資料的項目和詳細資料]，並且是 Wingtip 玩具店教學課程系列的一部分。 當您完成本教學課程中時，您的範例應用程式的使用者可以新增、 移除及修改客戶購物車中的產品。
 
@@ -49,7 +48,6 @@ ms.locfileid: "59405426"
 > [!NOTE] 
 > 
 > ASP.NET 工作階段狀態是方便的地方來儲存使用者專屬資訊的使用者離開網站就會到期。 雖然不當使用工作階段狀態可以有較大的網站上的效能影響，受到使用的工作階段狀態的運作也供示範之用。 Wingtip Toys 範例專案會示範如何使用工作階段狀態而不需要外部提供者，其中的工作階段狀態是儲存在同處理序裝載站台的 web 伺服器上。 提供的應用程式的多個執行個體的大型網站或在不同的伺服器執行的應用程式的多個執行個體的站台，請考慮使用**Windows Azure 快取服務**。 此快取服務提供分散式快取服務是在外部網站，可解決使用同處理序工作階段狀態的問題。 如需詳細資訊，請參閱[如何使用 ASP.NET 工作階段狀態與 Windows Azure 網站](https://docs.microsoft.com/azure/redis-cache/cache-aspnet-session-state-provider)。
-
 
 ### <a name="add-cartitem-as-a-model-class"></a>新增 CartItem 做為模型類別
 
@@ -128,7 +126,6 @@ ms.locfileid: "59405426"
 > [!NOTE] 
 > 
 > 您將修改程式碼後置 (*AddToCart.aspx.cs*) 的這個頁面上，而不是頁面的 UI (*AddToCart.aspx*)。
-
 
 #### <a name="to-create-the-add-to-cart-functionality"></a>若要建立購物車新增功能：
 
@@ -215,7 +212,6 @@ ms.locfileid: "59405426"
 > [!NOTE] 
 > 
 > 上述程式碼會使用可為 null 的型別 」`int?`"。 可為 null 的型別可以代表基礎類型，同時也為 null 值的所有值。 如需詳細資訊，請參閱[使用可為 Null 的型別](https://msdn.microsoft.com/library/2cf62fcy(v=vs.110).aspx)。
-
 
 ### <a name="modify-the-shopping-cart-display"></a>修改購物車顯示
 

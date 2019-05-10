@@ -8,12 +8,12 @@ ms.date: 06/06/2012
 ms.assetid: a56572ba-81c3-47af-826d-941e9c4775ec
 msc.legacyurl: /mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 8292fd43ffa2bc66b4daa8f0fc09569226d90bff
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8d42ebf770e1b75e2867cca36e71423ba9467ee2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379556"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65112441"
 ---
 # <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>使用 ASP.NET MVC 4 中的非同步方法
 
@@ -22,7 +22,6 @@ ms.locfileid: "59379556"
 > 本教學課程將教導您建置非同步的 ASP.NET MVC Web 應用程式使用的基本概念[Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/11)，這是免費的 Microsoft Visual Studio 版本。 您也可以使用[Visual Studio 2012](https://www.microsoft.com/visualstudio/11)。
 > 
 > 在本教學課程，在 github 上提供完整的範例 [https://github.com/RickAndMSFT/Async-ASP.NET/](https://github.com/RickAndMSFT/Async-ASP.NET/)
-
 
 ASP.NET MVC 4[控制器](https://msdn.microsoft.com/library/system.web.mvc.controller(VS.108).aspx)類別中組合[.NET 4.5](https://msdn.microsoft.com/library/w0x726c2(VS.110).aspx)可讓您撰寫非同步動作方法會傳回型別的物件[工作&lt;ActionResult&gt;](https://msdn.microsoft.com/library/dd321424(VS.110).aspx). .NET Framework 4 引進稱為 「 非同步程式設計概念[任務](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)，並支援 ASP.NET MVC 4[工作](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)。 工作由**任務**型別和中的相關型別[System.Threading.Tasks](https://msdn.microsoft.com/library/system.threading.tasks.aspx)命名空間。 與這個非同步支援是根據.NET Framework 4.5 [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)並[非同步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)便於使用的關鍵字[工作](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)比以前更不複雜的物件非同步方法。 [Await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)關鍵字是速記語法來表示，某段程式碼應該以非同步方式等候一段程式碼。 [非同步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)關鍵字各表示可用來將方法標記為以工作為基礎的非同步方法的提示。 組合**await**，**非同步**，而**工作**物件可讓您在.NET 4.5 中撰寫非同步程式碼更容易。 新的模型之非同步方法會呼叫*工作式非同步模式*(**點選**)。 本教學課程會假設您熟悉使用非同步程式設計[await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx)並[非同步](https://msdn.microsoft.com/library/hh156513(VS.110).aspx)關鍵字和[工作](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)命名空間。
 

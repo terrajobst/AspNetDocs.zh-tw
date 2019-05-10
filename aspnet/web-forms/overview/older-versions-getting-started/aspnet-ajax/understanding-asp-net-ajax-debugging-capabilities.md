@@ -8,12 +8,12 @@ ms.date: 03/28/2008
 ms.assetid: 7f9380c6-19f7-4c82-a019-916ec6dffc9c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
-ms.openlocfilehash: 1203825a1fb6b2034d9180fcf416aba7d0012fb7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d33c45c50d4f8edc899f3fe63ede11ad98d45823
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383210"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131894"
 ---
 # <a name="understanding-aspnet-ajax-debugging-capabilities"></a>了解 ASP.NET AJAX 偵錯功能
 
@@ -22,7 +22,6 @@ ms.locfileid: "59383210"
 [下載 PDF](http://download.microsoft.com/download/C/1/9/C19A3451-1D14-477C-B703-54EF22E197EE/AJAX_tutorial06_Debugging_MS_Ajax_Applications_cs.pdf)
 
 > 偵錯程式碼的能力是每位開發人員應該在其利器，不論他們使用的技術技能。 雖然許多開發人員都習慣使用 VB.NET 或 C# 程式碼的 ASP.NET 應用程式偵錯使用 Visual Studio.NET 或 Web Developer Express，有些不曉得還有非常適合用來偵錯 JavaScript 等用戶端程式碼。 相同類型的偵錯.NET 應用程式所使用的技術也可以套用更具體來說是 ASP.NET AJAX 應用程式與啟用 AJAX 的應用程式。
-
 
 ## <a name="debugging-aspnet-ajax-applications"></a>偵錯 ASP.NET AJAX 應用程式
 
@@ -47,11 +46,9 @@ Dan Wahlin
 
 圖 1 顯示何種 Internet Explorer 進階對話方塊應該看起來之後它已正確設定偵錯。
 
-
 [![設定 Internet Explorer 偵錯。](understanding-asp-net-ajax-debugging-capabilities/_static/image2.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image1.png)
 
 **圖 1**:設定 Internet Explorer 偵錯。  ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image3.png))
-
 
 偵錯已開啟，您會看到新的功能表項目，會出現在名為指令碼偵錯工具的 [檢視] 功能表。 它在下一個陳述式有兩個選項可用，包括開啟和符號。 選取開啟時將會提示您進行偵錯 [Visual Studio 2008 （請注意，Visual Web Developer Express 也可用來偵錯）] 頁面。 如果目前正在執行 Visual Studio.NET，您可以選擇使用該執行個體，或建立新的執行個體。 選取下一個陳述式在中斷時將會提示您執行的 JavaScript 程式碼時，偵錯 頁面。 如果 JavaScript 程式碼會執行頁面的 onLoad 事件中，您可以重新整理頁面以觸發程序的偵錯工作階段。 如果按下按鈕後執行的 JavaScript 程式碼則會執行偵錯工具，在按下按鈕之後，立即。
 
@@ -72,7 +69,6 @@ Visual Studio 2008 偵錯工具會內嵌在外部 JavaScript 檔案的不同頁�
 
 您可以藉由將程式碼移到外部.js 檔案，並參考使用的 src 屬性取得解決此問題&lt;指令碼&gt;標記：
 
-
 [!code-html[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample1.html)]
 
 如果將程式碼移到外部檔案辦不到或是需要更多的工作，比起值得嗎？ 雖然您無法設定中斷點，使用編輯器，您可以新增直接在您想要開始偵錯的程式碼的偵錯工具陳述式。 您也可以使用 ASP.NET AJAX 程式庫中的 Sys.Debug 類別可用來強制啟動偵錯。 您將進一步了解本文稍後的 Sys.Debug 類別。
@@ -80,7 +76,6 @@ Visual Studio 2008 偵錯工具會內嵌在外部 JavaScript 檔案的不同頁�
 使用的範例`debugger`關鍵字如 [列表 1] 所示。 此範例會強制偵錯工具正確更新函式呼叫之前。
 
 **列表 1。您可以使用 偵錯工具關鍵字來強制 Visual Studio.NET 偵錯工具中斷。**
-
 
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample2.js)]
 
@@ -90,11 +85,9 @@ Visual Studio 2008 偵錯工具會內嵌在外部 JavaScript 檔案的不同頁�
 
 一旦啟動偵錯工作階段並開始逐步解說的程式碼使用預設 F11 鍵，您可能會遇到錯誤所示的對話方塊中看到 圖 2，除非在網頁中使用的所有指令碼檔案是開放且可供偵錯。
 
-
 [![沒有原始程式碼不供偵錯時顯示錯誤對話方塊。](understanding-asp-net-ajax-debugging-capabilities/_static/image5.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image4.png)
 
 **圖 2**:沒有原始程式碼不供偵錯時顯示錯誤對話方塊。  ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image6.png))
-
 
 因為 Visual Studio.NET 不確定如何取得原始碼的頁面，參考的指令碼的一部分，會顯示此對話方塊。 雖然這可以是相當令人一開始，沒有簡單的修正程式。 一旦您啟動偵錯工作階段並叫用中斷點，請移至 [偵錯 Windows 指令碼總管] 視窗，在 Visual Studio 2008 功能表上，或使用 Ctrl + Alt + N 快速鍵。
 
@@ -103,11 +96,9 @@ Visual Studio 2008 偵錯工具會內嵌在外部 JavaScript 檔案的不同頁�
 
 指令碼總管 可以用於檢視頁面中使用的所有指令碼，並在程式碼編輯器中開啟它們。 [指令碼總管] 中開啟後，按兩下目前所偵錯在程式碼編輯器視窗中開啟它的.aspx 頁面。 所有其他指令碼總管 中顯示的指令碼執行相同的動作。 一旦所有指令碼會在程式碼視窗中，您可以開啟來逐步執行程式碼，按下 F11 （和使用其他偵錯快速鍵）。 [圖 3] 顯示指令碼總管的範例。 它會列出正在偵錯目前的檔案 (Demo.aspx) 以及兩個自訂的指令碼和由 ASP.NET AJAX ScriptManager 中以動態方式插入頁面的兩個指令碼。
 
-
 [![指令碼總管 可輕鬆存取 頁面中所使用的指令碼。](understanding-asp-net-ajax-debugging-capabilities/_static/image8.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image7.png)
 
 **圖 3**。 指令碼總管 可輕鬆存取 頁面中所使用的指令碼。  ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image9.png))
-
 
 數個其他 windows 也可用來提供有用的資訊，當您逐步執行程式碼，在網頁中。 例如，您可以使用 [區域變數] 視窗，以查看在頁面中，評估特定變數或條件，並檢視輸出的即時運算視窗所使用的不同變數的值。 您也可以使用 [輸出] 視窗來檢視追蹤陳述式寫出使用 Sys.Debug.trace 函式 （這將涵蓋在本文稍後） 或 Internet Explorer 的 Debug.writeln 函式。
 
@@ -121,11 +112,9 @@ Visual Studio 2008 偵錯工具會內嵌在外部 JavaScript 檔案的不同頁�
 
 直接在 Internet Explorer 可以方便地使用可用 web Development helper。 它會從 Internet Explorer 的功能表中選取工具 Web Development Helper 來啟動。 這是不錯的因為您不必離開瀏覽器，以執行數個工作，例如 HTTP 要求和回應訊息的記錄之瀏覽器的下半部中，這會開啟此工具。 圖 4 顯示 Web Development Helper 作用中的外觀。
 
-
 [![Web Development Helper](understanding-asp-net-ajax-debugging-capabilities/_static/image11.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image10.png)
 
 **圖 4**:Web Development Helper ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image12.png))
-
 
 Web Development helper 不是您將使用的工具來逐步執行逐行程式碼做為 Visual Studio 2008。 不過，它可用來檢視追蹤輸出，輕鬆地評估指令碼中的變數，或瀏覽資料是 JSON 物件內。 它也是非常適合檢視 ASP.NET AJAX 頁面和伺服器來回傳遞資料。
 
@@ -137,13 +126,11 @@ Web Development helper 不是您將使用的工具來逐步執行逐行程式碼
 
 **列表 2。寫出使用 Debug 類別將用戶端追蹤訊息。**
 
-
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample3.js)]
 
 如果 [LastName] 屬性包含值為 Doe，Web Development Helper 會顯示訊息 「 人名稱：Doe"（假設，偵錯已啟用） 的指令碼主控台的命令視窗中。 Web Development Helper 也會將最上層 debugService 物件加入到可用來寫出追蹤資訊，或檢視其內容的 JSON 物件的頁面。 列表 3 顯示使用 debugService 類別的追蹤函式的範例。
 
 **列表 3。您可以使用 Web Development Helper 的 debugService 類別來寫入追蹤訊息。**
-
 
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample4.js)]
 
@@ -153,7 +140,6 @@ DebugService 類別也可讓 JSON 物件資料，以使用 Web Development Helpe
 
 **列表 4。若要檢視物件的 JSON 資料使用 debugService.inspect 函式。**
 
-
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample5.js)]
 
 在網頁中或透過即時運算視窗呼叫 GetPerson() 函式會在物件偵測器對話方塊視窗中出現 圖 5 所示。 在物件內的屬性可以動態變更反白，變更顯示在 [值] 文字方塊中的值，然後按一下 [更新] 連結。 使用物件偵測器讓您更容易檢視 JSON 物件的資料，以及試驗不同的值套用至屬性。
@@ -162,19 +148,15 @@ DebugService 類別也可讓 JSON 物件資料，以使用 Web Development Helpe
 
 除了允許追蹤資料和要顯示的 JSON 物件，Web Development helper 可以也有助於偵錯頁面中的錯誤。 如果發生錯誤，您會提示來繼續至下一行程式碼或指令碼偵錯 （請參閱 圖 6）。 指令碼錯誤對話方塊視窗會顯示完整的呼叫堆疊以及行號，因此您可以輕鬆地識別問題所在位置，在指令碼內。
 
-
 [![您可以使用物件偵測器視窗來檢視 JSON 物件。](understanding-asp-net-ajax-debugging-capabilities/_static/image14.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image13.png)
 
 **圖 5**:您可以使用物件偵測器視窗來檢視 JSON 物件。  ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image15.png))
 
-
 選取 偵錯選項，可讓您直接在檢視變數的值，寫出 JSON 物件，還有更多的 Web Development Helper 的即時運算視窗中執行指令碼陳述式。 如果再次執行相同動作觸發錯誤，而且在電腦上使用 Visual Studio 2008，系統會提示您啟動偵錯工作階段，讓您可以逐步執行程式碼行上一節中所述。
-
 
 [![Web Development Helper 指令碼錯誤對話方塊](understanding-asp-net-ajax-debugging-capabilities/_static/image17.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image16.png)
 
 **圖 6**:Web Development Helper 指令碼錯誤對話方塊 ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image18.png))
-
 
 *檢查要求和回應訊息*
 
@@ -184,19 +166,15 @@ DebugService 類別也可讓 JSON 物件資料，以使用 Web Development Helpe
 
 雖然檢視每個要求/回應訊息中傳送的原始文字是的確很實用 （和一個選項，在 Web Development Helper） 通常很容易以圖形顯示更豐富的格式檢視訊息資料。 一旦已啟用 HTTP 記錄，而且已將訊息記錄，可以檢視訊息資料，方法是按兩下 HTTP 記錄檔檢視器中的訊息。 如此一來，可讓您檢視所有訊息，以及實際的訊息相關聯的標頭內容。 [圖 7] 顯示要求訊息和回應訊息，在 [HTTP 記錄檔檢視器] 視窗中檢視的範例。
 
-
 [![您可以使用 HTTP 記錄檔檢視器來檢視要求和回應訊息資料。](understanding-asp-net-ajax-debugging-capabilities/_static/image20.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image19.png)
 
 **圖 7**:您可以使用 HTTP 記錄檔檢視器來檢視要求和回應訊息資料。  ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image21.png))
 
-
 HTTP 記錄檔檢視器會自動剖析 JSON 物件，並顯示它們使用樹狀檢視，就能快速又容易檢視物件的屬性資料。 當 UpdatePanel 用於 ASP.NET AJAX 頁面中時，檢視器細分成個別的組件訊息的每一個部分如 圖 8 所示。 這是很棒的功能，可讓您更容易查看並了解什麼是相較於檢視未經處理的訊息資料訊息中。
-
 
 [![使用 HTTP 記錄檔檢視器檢視 UpdatePanel 回應訊息。](understanding-asp-net-ajax-debugging-capabilities/_static/image23.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image22.png)
 
 **圖 8**:使用 HTTP 記錄檔檢視器檢視 UpdatePanel 回應訊息。  ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image24.png))
-
 
 有數個其他工具，可用來檢視 Web Development Helper 除了要求和回應訊息。 另一個不錯的選項是可免費在 Fiddler [ http://www.fiddlertool.com ](http://www.fiddlertool.com)。 雖然此處不會討論 Fiddler，它也是不錯的選項時您需要徹底地檢查訊息標頭和資料。
 
@@ -210,11 +188,9 @@ Firebug 提供功能完整的偵錯環境，可用來逐步執行逐行程式碼
 
 在 Firebug 中設定中斷點後，您可以執行執行指令碼需要例如按一下按鈕，或重新整理瀏覽器的 onLoad 事件觸發程序進行偵錯所需的動作。 包含中斷點的那一行上，將會自動停止執行。 圖 9 顯示已觸發中斷點的範例，在 Firebug 中。
 
-
 [![處理在 Firebug 中的中斷點。](understanding-asp-net-ajax-debugging-capabilities/_static/image26.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image25.png)
 
 **圖 9**:處理在 Firebug 中的中斷點。  ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image27.png))
-
 
 一旦叫用中斷點時，可以逐步執行、 不進入或跳離程式碼使用箭號按鈕。 當您逐步執行程式碼，指令碼變數會顯示在 偵錯工具可讓您看到的值，並向下鑽研到物件的右側部分。 Firebug 也包括呼叫堆疊下拉式清單中，若要檢視導致目前正在進行偵錯這一行的指令碼的執行步驟。
 
@@ -222,11 +198,9 @@ Firebug 也包含可用來測試不同的指令碼陳述式、 評估變數和�
 
 [圖 10] 顯示使用 DOM 偵測器來尋找名為 txtCountry 頁面中的 textbox 的範例。 Firebug 偵測器也可用來檢視頁面，以及發生例如追蹤滑鼠移動、 按鈕點選，還有更多的事件中所使用的 CSS 樣式。
 
-
 [![使用 Firebug 的 DOM 偵測器。](understanding-asp-net-ajax-debugging-capabilities/_static/image29.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image28.png)
 
 **圖 10**:使用 Firebug 的 DOM 偵測器。  ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image30.png))
-
 
 Firebug 提供輕量的方式，快速地偵錯直接在 Firefox，以及一個優異的工具來檢查網頁內的不同項目中的頁面。
 
@@ -254,11 +228,9 @@ Sys.Debug 類別會公開數個不同的函式可用來處理追蹤、 程式碼
 
 **列表 5。使用 Sys.Debug.trace 函式。**
 
-
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample6.js)]
 
 如果您執行 [列表 5] 所示的程式碼不會看到任何追蹤輸出，在頁面中。 若要查看它的唯一方法是使用適用於 Visual Studio.NET、 Web Development Helper 或 Firebug 主控台視窗。 如果您想查看追蹤輸出的頁面中，將需要新增 TextArea 標記，並為它提供 TraceConsole 識別碼，如下所示：
-
 
 [!code-html[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample7.html)]
 
@@ -268,7 +240,6 @@ Sys.Debug 類別會公開數個不同的函式可用來處理追蹤、 程式碼
 
 **列表 6。使用 Sys.Debug.traceDump 函式。**
 
-
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample8.js)]
 
 [圖 11] 顯示呼叫 Sys.Debug.traceDump 函式的輸出。 請注意，除了撰寫出 Person 物件的資料，它也會寫入位址子物件的資料。
@@ -277,14 +248,11 @@ Sys.Debug 類別會公開數個不同的函式可用來處理追蹤、 程式碼
 
 列表 7 顯示使用 Sys.Debug.assert 函式來測試條件的範例。 程式碼會測試更新 Person 物件之前，位址物件為 null。
 
-
 [![Sys.Debug.traceDump 函式的輸出。](understanding-asp-net-ajax-debugging-capabilities/_static/image32.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image31.png)
 
 **圖 11**:Sys.Debug.traceDump 函式的輸出。  ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image33.png))
 
-
 **列表 7。使用 debug.assert 函式。**
-
 
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample9.js)]
 
@@ -292,14 +260,11 @@ Sys.Debug 類別會公開數個不同的函式可用來處理追蹤、 程式碼
 
 最後的函式，以涵蓋是 Sys.Debug.fail。 當您想要強制在指令碼中的特定資料行上失敗的程式碼可以加入 Sys.Debug.fail 呼叫，而不是 JavaScript 應用程式中一般使用的偵錯工具陳述式。 Sys.Debug.fail 函式會接受單一字串參數，表示失敗的原因，如下所示：
 
-
 [!code-css[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample10.css)]
-
 
 [![Sys.Debug.assert 失敗訊息。](understanding-asp-net-ajax-debugging-capabilities/_static/image35.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image34.png)
 
 **圖 12**:Sys.Debug.assert 失敗訊息。  ([按一下以檢視完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image36.png))
-
 
 當遇到 Sys.Debug.fail 陳述式時執行指令碼時，訊息參數的值會顯示在主控台中的偵錯應用程式，例如 Visual Studio 2008，並將提示您進行偵錯應用程式。 其中，這可以是非常有用的一個案例是當您無法在內嵌指令碼上設定中斷點，以使用 Visual Studio 2008，但想要的程式碼，以停止在特定的行，因此您可以檢查變數的值。
 
@@ -313,19 +278,16 @@ ScriptMode 預設為 [自動] 代表 ScriptManager 會檢查 web.config 中的�
 
 **列表 8。正在載入偵錯指令碼使用 ScriptManager**。
 
-
 [!code-aspx[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample11.aspx)]
 
 您也可以使用 ScriptManager 的指令碼屬性以及 ScriptReference 元件列表 9 所示，以載入您自己自訂的指令碼的不同版本 （debug 或 release）。
 
 **列表 9。使用 ScriptManager 載入自訂指令碼。**
 
-
 [!code-aspx[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample12.aspx)]
 
 > [!NOTE]
 > 如果您正在載入使用 ScriptReference 元件的自訂指令碼必須在指令碼底部的 指令碼中加入下列程式碼完成載入時通知 ScriptManager:
-
 
 [!code-csharp[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample13.cs)]
 
@@ -334,7 +296,6 @@ ScriptMode 預設為 [自動] 代表 ScriptManager 會檢查 web.config 中的�
 在您想要偵錯或發行版本要載入的自訂指令碼會根據在 ScriptManager 控制項上設定的 ScriptMode 屬性值的情況下，您可以設定成 Inherit 的 ScriptReference 控制項的 ScriptMode 屬性。 這會導致要載入的自訂指令碼的適當版本根據 ScriptManager 的 ScriptMode 屬性，如 [列表 10] 所示。 因為 ScriptManager 控制項的 ScriptMode 屬性設定為 偵錯時，就會載入並使用於頁面 Person.debug.js 指令碼。
 
 **列表 10。繼承的自訂指令碼 ScriptManager 的 ScriptMode。**
-
 
 [!code-aspx[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample14.aspx)]
 

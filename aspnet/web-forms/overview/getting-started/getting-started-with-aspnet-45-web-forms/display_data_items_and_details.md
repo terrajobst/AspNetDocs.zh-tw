@@ -8,12 +8,12 @@ ms.date: 1/04/2019
 ms.assetid: 64a491a8-0ed6-4c2f-9c1c-412962eb6006
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/display_data_items_and_details
 msc.type: authoredcontent
-ms.openlocfilehash: 54896da5565c9383f13fc352da26bbdc3cb63a76
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 130c9ffd29df612dac5bb954830a2eb9b738aaf0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405361"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109617"
 ---
 # <a name="display-data-items-and-details"></a>顯示資料的項目和詳細資料
 
@@ -97,7 +97,6 @@ ms.locfileid: "59405361"
 
 有效的類別目錄作為查詢字串傳遞至頁面時，查詢的結果僅限於這些資料庫中的產品符合`categoryId`值。 比方說，如果*ProductsList.aspx*網頁的 URL 如下：
 
-
 [!code-console[Main](display_data_items_and_details/samples/sample4.cmd)]
 
 此頁面會顯示只有產品所在`categoryId`等於`1`。
@@ -164,7 +163,6 @@ ms.locfileid: "59405361"
     ![顯示資料的項目和詳細資料-產品](display_data_items_and_details/_static/image4.png)
     
 4. 關閉瀏覽器。
-
 
 ## <a name="additional-resources"></a>其他資源
 

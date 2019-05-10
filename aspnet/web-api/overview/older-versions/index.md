@@ -9,17 +9,16 @@ ms.custom: seoapril2019
 ms.assetid: f5bc7426-27c6-492c-914f-b9d2eb49753d
 msc.legacyurl: /web-api/overview/older-versions
 msc.type: chapter
-ms.openlocfilehash: 1e5fecca826a74fd8ff60ecd415f39c4f51917a2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9ef642b52d61d7737b37d4499564d71a3bedcd8a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391353"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109109"
 ---
 # <a name="documentation-on-older-versions-of-web-api"></a>在舊版的 Web API 的文件
 
 > 舊版的 Web API 的文件，適用於 ASP.NET 4.x。
-
 
 - [啟用 Web API 1 中的 CRUD 作業](creating-a-web-api-that-supports-crud-operations.md)
 - [使用 ASP.NET Web API 1 和 Entity Framework 5](using-web-api-1-with-entity-framework-5/index.md)

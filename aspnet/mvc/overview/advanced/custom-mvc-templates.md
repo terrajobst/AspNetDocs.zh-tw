@@ -76,9 +76,9 @@ MVC 3 Tools Update for Visual Studio 2010 導入了 MVC 專案的個別專案精
 
 ![開啟對話方塊](custom-mvc-templates/_static/image7.jpg)
 
-建立**&lt;資產&gt;** 項目，並新增**&lt;資產&gt;** 每個檔案必須包含在 VSIX 中的項目。 **型別**每個屬性**&lt;資產&gt;** 項目必須設定為**Microsoft.VisualStudio.Mvc.Template**。 這是僅限 MVC 專案精靈 了解自訂命名空間。 VSIX 2.0 結構描述文件以取得其他有關的結構與配置資訊清單檔案的參考。
+建立 **&lt;資產&gt;** 項目，並新增 **&lt;資產&gt;** 每個檔案必須包含在 VSIX 中的項目。 **型別**每個屬性 **&lt;資產&gt;** 項目必須設定為**Microsoft.VisualStudio.Mvc.Template**。 這是僅限 MVC 專案精靈 了解自訂命名空間。 VSIX 2.0 結構描述文件以取得其他有關的結構與配置資訊清單檔案的參考。
 
-只將檔案加入至 VSIX 不足，無法使用 MVC 精靈註冊的範本。 您需要提供 MVC 精靈 的資訊，例如範本名稱、 描述、 支援的檢視引擎和程式設計語言。 這項資訊會在相關聯的自訂屬性轉**&lt;Asset&gt;** 每個項目**vstemplate**檔案。
+只將檔案加入至 VSIX 不足，無法使用 MVC 精靈註冊的範本。 您需要提供 MVC 精靈 的資訊，例如範本名稱、 描述、 支援的檢視引擎和程式設計語言。 這項資訊會在相關聯的自訂屬性轉 **&lt;Asset&gt;** 每個項目**vstemplate**檔案。
 
 &lt;Asset d:VsixSubPath=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx&quot;
 
@@ -111,7 +111,7 @@ Version=&quot;4.0&quot;/&gt;
 - **標題**指定下方每個專案範本的 [MVC] 精靈中顯示的簡短描述。
 - **描述**指定範本的更詳細描述。
 
-您已加入資訊清單中的所有檔案，儲存它，您會注意到之後**資產**設計工具中的索引標籤會顯示所有檔案，但不是需將自訂屬性都新增至您**&lt;資產&gt;** 項目**vstemplate**檔案。
+您已加入資訊清單中的所有檔案，儲存它，您會注意到之後**資產**設計工具中的索引標籤會顯示所有檔案，但不是需將自訂屬性都新增至您 **&lt;資產&gt;** 項目**vstemplate**檔案。
 
 ![專案設計工具的資產](custom-mvc-templates/_static/image8.jpg)
 

@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 78fd0e92-f9c6-4e96-a5e9-0375b307a828
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/data-source-controls
 msc.type: authoredcontent
-ms.openlocfilehash: 3ba9fdaaf655f6510d3ebf6ce0930fbf4000add3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a2e2cfbec3e5aebf42a2de30bab7d45b4b610298
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59388864"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65109566"
 ---
 # <a name="data-source-controls"></a>資料來源控制項
 
 by [Microsoft](https://github.com/microsoft)
 
 > DataGrid 控制項在 ASP.NET 1.x 標示為 Web 應用程式中的資料存取的一大進步。 不過，它不是因為可能是使用者的易記。 此外，它仍會需要相當多的程式碼，以從它取得太多有用的功能。 滿足下列條件是所有資料存取工作領域能夠一路順風 1.x 中的模型。
-
 
 DataGrid 控制項在 ASP.NET 1.x 標示為 Web 應用程式中的資料存取的一大進步。 不過，它不是因為可能是使用者的易記。 此外，它仍會需要相當多的程式碼，以從它取得太多有用的功能。 滿足下列條件是所有資料存取工作領域能夠一路順風 1.x 中的模型。
 
@@ -30,7 +29,6 @@ ASP.NET 2.0 可應付此部分資料來源控制項。 在 ASP.NET 2.0 中的資
 
 > [!NOTE]
 > 因為您稍後所見，那里要也快取使用資料來源控制項所取得的優點。
-
 
 ## <a name="storing-connection-strings"></a>將連接字串儲存
 
@@ -42,7 +40,6 @@ ASP.NET 2.0 可應付此部分資料來源控制項。 在 ASP.NET 2.0 中的資
 
 > [!NOTE]
 > 如同&lt;appSettings&gt;區段中， &lt;connectionStrings&gt;之外的區段會出現&lt;system.web&gt;組態檔中的區段。
-
 
 若要使用此連接字串，您可以使用下列語法，設定伺服器控制項的 ConnectionString 屬性時。
 
@@ -81,7 +78,6 @@ SqlDataSource 控制項可讓開發人員存取支援 ADO.NET 的任何關聯式
 > [!NOTE]
 > 因為 DataSourceControl 類別會自動關閉您的連線，它應該減少產生的資料庫連線流失的客戶來電數目。
 
-
 下列程式碼片段中，將繫結 DropDownList 控制項至 SqlDataSource 控制項使用的連接字串儲存在如上所示的組態檔中。
 
 [!code-aspx[Main](data-source-controls/samples/sample3.aspx)]
@@ -90,7 +86,6 @@ SqlDataSource 控制項可讓開發人員存取支援 ADO.NET 的任何關聯式
 
 > [!NOTE]
 > 當快取 SqlDataSource 或 AccessDataSource DataSourceMode 屬性必須設定資料集。 如果您啟用使用 DataReader DataSourceMode 的快取，則會發生例外狀況。
-
 
 ## <a name="sqldatasource-properties"></a>SqlDataSource 屬性
 
@@ -162,7 +157,6 @@ AccessDataSource 將的基底 SqlDataSource ProviderName 永遠設 System.Data.O
 
 > [!NOTE]
 > 儲存在網站內的 access 資料庫應該放在應用程式\_資料目錄。 ASP.NET 不允許所要瀏覽此目錄中的檔案。 您將需要應用程式的讀取和寫入權限授與處理序帳戶\_使用 Access 資料庫時，資料目錄。
-
 
 ## <a name="the-xmldatasource-control"></a>XmlDataSource 控制項
 

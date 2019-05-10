@@ -8,12 +8,12 @@ ms.date: 04/23/2009
 ms.assetid: ff537a10-9f1f-43fe-9bcb-3dda161ba8f5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-a-database-cs
 msc.type: authoredcontent
-ms.openlocfilehash: da63b39fcad58580dd1f9c86b811b1a2dcc1cf7e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7c0c563308df56594c518e15a9ef3088017b6d71
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416645"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65108974"
 ---
 # <a name="deploying-a-database-c"></a>部署資料庫 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59416645"
 [下載程式碼](http://download.microsoft.com/download/E/6/F/E6FE3A1F-EE3A-4119-989A-33D1A9F6F6DD/ASPNET_Hosting_Tutorial_07_CS.zip)或[下載 PDF](http://download.microsoft.com/download/C/3/9/C391A649-B357-4A7B-BAA4-48C96871FEA6/aspnet_tutorial07_DeployDB_cs.pdf)
 
 > 部署 ASP.NET web 應用程式需要取得必要的檔案和資源從開發環境到生產環境。 資料驅動 web 應用程式，這包括資料庫結構描述和資料。 本教學課程是探索成功部署到生產環境的開發環境的資料庫所需的步驟一系列的第一個。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -42,30 +41,24 @@ ms.locfileid: "59416645"
 - `Books` -包含具有類似的資料行的每個檢閱的記錄`Title`， `GenreId`， `ReviewDate`，和`Review`，其他項目。
 - `Authors` -包含每個已參與檢閱的書籍的作者的相關資訊。
 - `BooksAuthors` -指定哪些作者撰寫哪些書籍的多對多聯結資料表。
-  
 
 圖 1 顯示 ER 圖表的這些四個資料表。
-
 
 [![S 的書籍評論 Web 應用程式資料庫是包含的四個資料表](deploying-a-database-cs/_static/image2.jpg)](deploying-a-database-cs/_static/image1.jpg) 
 
 **圖 1**:S 的書籍評論 Web 應用程式資料庫是包含的四個資料表 ([按一下以檢視完整大小的影像](deploying-a-database-cs/_static/image3.jpg))
 
-
 舊版的書籍評論網站有不同的 ASP.NET 網頁的每本書籍。 例如，沒有名為的頁面`~/Tech/TYASP35.aspx`所包含的檢閱*教導您自己 ASP.NET 3.5 24 小時內*。 網站的這個新資料導向版本有儲存在資料庫和單一 ASP.NET 網頁，Review.aspx?ID= 評論*Bookid>*，這會顯示指定的活頁簿的檢閱。 同樣地，沒有 Genre.aspx?ID=*genreId*頁面，其中列出所指定的內容類型中檢閱的書籍。
 
 圖 2 和 3 的放映`Genre.aspx`和`Review.aspx`作用中的頁面。 請注意每個頁面的 [網址] 列中的 URL。 在 圖 2 it s Genre.aspx？ ID = 85d164ba 1123年 4 c 47-82a0-c8ec75de7e0e。 因為 85d164ba-1123-4c47-82a0-c8ec75de7e0e`GenreId`技術內容類型、 「 檢閱技術 」 頁面的標題讀取與項目符號清單值列舉落在此內容類型的站台上評論。
-
 
 [![技術內容類型頁面](deploying-a-database-cs/_static/image5.jpg)](deploying-a-database-cs/_static/image4.jpg) 
 
 **圖 2**:技術內容類型頁面 ([按一下以檢視完整大小的影像](deploying-a-database-cs/_static/image6.jpg))
 
-
 [![自學 ASP.NET 3.5 中 24 小時的檢閱](deploying-a-database-cs/_static/image8.jpg)](deploying-a-database-cs/_static/image7.jpg) 
 
 **圖 3**:檢閱*教導您自己 ASP.NET 3.5 24 小時內*([按一下以檢視完整大小的影像](deploying-a-database-cs/_static/image9.jpg))
-
 
 活頁簿會檢閱 web 應用程式也包含管理 區段中，系統管理員可以新增、 編輯和刪除內容類型，檢閱和作者資訊。 目前，任何訪客可以存取 [管理] 區段。 在未來的教學課程中，我們將新增的使用者帳戶的支援，並只允許系統管理] 頁面的 [授權的使用者。
 
@@ -95,48 +88,38 @@ ms.locfileid: "59416645"
 
 開啟 Visual Studio，並瀏覽至`Reviews.mdf`資料庫。 如果您使用 Visual Web Developer 中，請移至 [資料庫總管] 中;如果您使用 Visual Studio，請使用 [伺服器總管] 中。 [圖 4] 顯示`Reviews.mdf`Visual Web Developer 中的 [資料庫總管] 中的資料庫。 如 [圖 4] 所示，`Reviews.mdf`資料庫由四個資料表、 三個預存程序，和使用者定義函式所組成。
 
-
 [![在 [資料庫總管] 或 [伺服器總管中找出資料庫](deploying-a-database-cs/_static/image11.jpg)](deploying-a-database-cs/_static/image10.jpg) 
 
 **圖 4**:在 [資料庫總管] 或 [伺服器總管中找出資料庫 ([按一下以檢視完整大小的影像](deploying-a-database-cs/_static/image12.jpg))
 
-
 以滑鼠右鍵按一下資料庫名稱，並從內容功能表中選擇 [發佈到提供者] 選項。 這會啟動 「 資料庫發行精靈 」 （請參閱 [圖 5]）。 按一下旁邊進階過去的啟動顯示畫面。
-
 
 [![資料庫發行精靈啟動顯示畫面](deploying-a-database-cs/_static/image14.jpg)](deploying-a-database-cs/_static/image13.jpg) 
 
 **圖 5**:資料庫發行精靈啟動顯示畫面 ([按一下以檢視完整大小的影像](deploying-a-database-cs/_static/image15.jpg))
-
 
 在精靈的第二個畫面會列出資料庫發行精靈可存取的資料庫，並讓您選擇是否在選取的資料庫中的所有物件編寫指令碼，或挑選要指令碼的物件。 選取適當的資料庫，並將選取 「 所有的指令碼物件中選取的資料庫 」 的選項。
 
 > [!NOTE]
 > 如果您收到錯誤 「 資料庫中沒有任何物件*databaseName*此精靈可編寫指令碼的類型 」 時在 [圖 6] 所示的畫面中，按一下 [下一步]，請確定您的資料庫檔案的路徑不是太長。 它已探索到，是否資料庫檔案的路徑太長，可能會發生此錯誤。
 
-
 [![資料庫發行精靈啟動顯示畫面](deploying-a-database-cs/_static/image17.jpg)](deploying-a-database-cs/_static/image16.jpg) 
 
 **圖 6**:資料庫發行精靈啟動顯示畫面 ([按一下以檢視完整大小的影像](deploying-a-database-cs/_static/image18.jpg))
 
-
 從下一個畫面中，可以產生指令碼檔案或者，如果您的 web 主機可支援此功能，在資料庫直接發佈到 web 主機提供者的資料庫伺服器。 如 [圖 7] 所示，我遇到指令碼寫入檔案`C:\REVIEWS.MDF.sql`。
-
 
 [![編寫資料庫備份至檔案，或直接發行至您的 Web 主機提供者](deploying-a-database-cs/_static/image20.jpg)](deploying-a-database-cs/_static/image19.jpg) 
 
 **圖 7**:編寫資料庫備份至檔案，或直接發行至您的 Web 主機提供者 ([按一下以檢視完整大小的影像](deploying-a-database-cs/_static/image21.jpg))
 
-
 後續的畫面會提示您提供各種不同的指令碼選項。 您可以指定指令碼是否應包含 drop 陳述式來移除這些現有的物件。 預設為 True，當第一次部署資料庫時，這沒有問題。 您也可以指定目標資料庫是 SQL Server 2000、 SQL Server 2005 或 SQL Server 2008。 最後，您可以指定是否以指令碼的結構描述和資料，只是資料或只有結構描述。 結構描述是資料庫物件、 資料表、 預存程序、 檢視和等等的集合。 資料是位於資料表中的資訊。
 
 圖 8 所示，我發生了精靈設定為卸除現有的資料庫物件，來產生指令碼針對 SQL Server 2008 資料庫，並將發行的結構描述和資料。
 
-
 [![指定發佈選項](deploying-a-database-cs/_static/image23.jpg)](deploying-a-database-cs/_static/image22.jpg) 
 
 **圖 8**:指定發行的選項 ([按一下以檢視完整大小的影像](deploying-a-database-cs/_static/image24.jpg))
-
 
 在最後兩個畫面摘述即將進行，並接著顯示的指令碼狀態的動作。 執行精靈的最後結果是我們有包含生產環境上建立資料庫，然後以相同的資料擴展上開發所需的 SQL 命令的指令碼檔案。
 
@@ -148,32 +131,25 @@ ms.locfileid: "59416645"
 
 啟動 SSMS 並連接到 web 主機的資料庫伺服器使用您的 web 主機提供者所提供的資訊。
 
-
 [![連接到 Web 主機提供者的資料庫伺服器](deploying-a-database-cs/_static/image26.jpg)](deploying-a-database-cs/_static/image25.jpg) 
 
 **圖 9**:連接到您的 Web 主機提供者 s 資料庫伺服器 ([按一下以檢視完整大小的影像](deploying-a-database-cs/_static/image27.jpg))
 
-
 展開 [資料庫] 索引標籤，然後找出您的資料庫。 按一下工具列的左上角的 新增查詢 按鈕，SQL 命令，從資料庫發行精靈 中，所建立的指令碼檔案中貼上，按一下 執行 按鈕，在生產環境資料庫伺服器上執行這些命令。 如果您的指令碼檔案是特別大可能需要幾分鐘的時間來執行命令。
-
 
 [![連接到 Web 主機提供者的資料庫伺服器](deploying-a-database-cs/_static/image29.jpg)](deploying-a-database-cs/_static/image28.jpg) 
 
 **圖 10**:連接到您的 Web 主機提供者 s 資料庫伺服器 ([按一下以檢視完整大小的影像](deploying-a-database-cs/_static/image30.jpg))
 
-
 S 就是這麼簡單 ！ 此時開發資料庫已有重複至生產環境。 如果您重新整理 SSMS 中的資料庫應該會看到新的資料庫物件。 [圖 11] 顯示生產資料庫的資料表、 預存程序和使用者定義函式，在開發資料庫的鏡像。 而且因為我們指示資料庫發行精靈來發行資料時，生產資料庫的資料表就會有開發資料庫的資料表相同的資料執行精靈的次。 [圖 12] 顯示中的資料`Books`生產資料庫上的資料表。
-
 
 [![有已在生產資料庫上有重複的資料庫物件](deploying-a-database-cs/_static/image32.jpg)](deploying-a-database-cs/_static/image31.jpg) 
 
 **圖 11**:資料庫物件具有已複製生產資料庫上 ([按一下以檢視完整大小的影像](deploying-a-database-cs/_static/image33.jpg))
 
-
 [![生產資料庫包含相同的資料上開發資料庫](deploying-a-database-cs/_static/image35.jpg)](deploying-a-database-cs/_static/image34.jpg) 
 
 **圖 12**:生產資料庫上開發資料庫包含相同的資料 ([按一下以檢視完整大小的影像](deploying-a-database-cs/_static/image36.jpg))
-
 
 目前我們只擁有開發資料庫部署到生產環境。 我們尚未討論過部署 web 應用程式本身或檢查將使用生產資料庫上實際執行的應用程式所需的組態變更。 在下一個教學課程中，我們將討論這些問題 ！
 
