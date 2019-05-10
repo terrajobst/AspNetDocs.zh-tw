@@ -8,12 +8,12 @@ ms.date: 10/30/2006
 ms.assetid: ca665073-b379-4239-9404-f597663ca65e
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 358d8605ed602720c7dd1687c8bdbb4275753529
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5108c1f04d73da4ce236fd0a872e0f64b82cbafa
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386095"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119575"
 ---
 # <a name="handling-bll--and-dal-level-exceptions-vb"></a>處理 BLL 和 DAL 層級的例外狀況 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59386095"
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_38_VB.exe)或[下載 PDF](handling-bll-and-dal-level-exceptions-vb/_static/datatutorial38vb1.pdf)
 
 > 在本教學課程中，我們會看到如何巧妙地向處理可編輯的 DataList 更新工作流程期間引發的例外狀況。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -35,38 +34,30 @@ ms.locfileid: "59386095"
 > [!NOTE]
 > 在 *概觀的編輯和刪除資料 DataList*更新使用 ObjectDataSource 教學課程中我們討論過編輯和刪除資料 DataList 的不同技術，一些技巧，涉及和正在刪除。 如果您採用這些技術，您可以處理從 DAL 的 BLL 透過 ObjectDataSource s 的例外狀況`Updated`或`Deleted`事件處理常式。
 
-
 ## <a name="step-1-creating-an-editable-datalist"></a>步驟 1：建立可編輯的資料清單
 
 我們會擔心處理更新的工作流程期間發生的例外狀況之前，讓第一次建立可編輯的 DataList。 開啟`ErrorHandling.aspx`頁面中`EditDeleteDataList`資料夾中，DataList 加入設計工具中，設定其`ID`屬性設`Products`，並新增名為新 ObjectDataSource `ProductsDataSource`。 設定要使用 ObjectDataSource`ProductsBLL`類別的`GetProducts()`選取方法會記錄; 設定下拉式清單中的插入、 更新和刪除索引標籤為 （無）。
-
 
 [![傳回使用 GetProducts() 方法的產品資訊](handling-bll-and-dal-level-exceptions-vb/_static/image2.png)](handling-bll-and-dal-level-exceptions-vb/_static/image1.png)
 
 **圖 1**:傳回產品資訊使用`GetProducts()`方法 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-vb/_static/image3.png))
 
-
 完成 ObjectDataSource 精靈之後，Visual Studio 會自動建立`ItemTemplate`的 DataList。 將此取代為`ItemTemplate`，顯示每個產品的名稱和價格，並包含 [編輯] 按鈕。 接下來，建立`EditItemTemplate`與 TextBox Web 控制項的名稱和價格和更新 和 取消 按鈕。 最後，設定 DataList 的`RepeatColumns`屬性設為 2。
 
 這些變更之後，請頁面 s 的宣告式標記看起來應該如下所示。 若要進行特定的編輯，也就是 [取消]，請仔細檢查和更新的按鈕有其`CommandName`編輯、 取消，並更新，請分別設定的屬性。
-
 
 [!code-aspx[Main](handling-bll-and-dal-level-exceptions-vb/samples/sample1.aspx)]
 
 > [!NOTE]
 > 在本教學課程 DataList 必須啟用 s 檢視狀態。
 
-
 請花一點時間檢閱我們的進度，透過瀏覽器 （請參閱 圖 2）。
-
 
 [![每一個產品包含 [編輯] 按鈕](handling-bll-and-dal-level-exceptions-vb/_static/image5.png)](handling-bll-and-dal-level-exceptions-vb/_static/image4.png)
 
 **圖 2**:每一個產品包含 [編輯] 按鈕 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-vb/_static/image6.png))
 
-
 目前，[編輯] 按鈕只會造成回傳它不 t 尚未讓產品可供編輯。 若要啟用編輯，我們需要建立事件處理常式 DataList s `EditCommand`， `CancelCommand`，和`UpdateCommand`事件。 `EditCommand`並`CancelCommand`事件只會更新 DataList 的`EditItemIndex`屬性和重新繫結至 DataList 的資料：
-
 
 [!code-vb[Main](handling-bll-and-dal-level-exceptions-vb/samples/sample2.vb)]
 
@@ -74,16 +65,13 @@ ms.locfileid: "59386095"
 
 現在，讓 s 只使用完全相同的程式碼，從`UpdateCommand`中的事件處理常式*概觀的編輯和刪除資料 DataList 中*教學課程。 我們將新增程式碼來依正常程序處理步驟 2 中的例外狀況。
 
-
 [!code-vb[Main](handling-bll-and-dal-level-exceptions-vb/samples/sample3.vb)]
 
 發生無效的輸入可以是格式不正確的單價、 不合法的單位價格值會類似-$5.00 或省略的產品名稱，將會引發例外狀況的表單中。 因為`UpdateCommand`事件處理常式不包含任何例外狀況處理程式碼，此時，例外狀況會反昇至 ASP.NET 執行階段，它顯示給使用者 （請參閱 [圖 3]）。
 
-
 ![發生未處理的例外狀況時，使用者會看到錯誤頁面](handling-bll-and-dal-level-exceptions-vb/_static/image7.png)
 
 **圖 3**:發生未處理的例外狀況時，使用者會看到錯誤頁面
-
 
 ## <a name="step-2-gracefully-handling-exceptions-in-the-updatecommand-event-handler"></a>步驟 2：依正常程序中處理例外狀況的 UpdateCommand 事件處理常式
 
@@ -93,13 +81,11 @@ ms.locfileid: "59386095"
 
 發生錯誤時，我們只想要一次顯示的標籤。 也就是說，在後續回傳時，標籤的警告訊息應該會消失。 這可藉由任一個清除標籤 s`Text`屬性或設定其`Visible`屬性設`False`中`Page_Load`事件處理常式 (如同我們在上一步[處理 BLL 和 DAL 層級在 ASP 中的例外狀況.NET 頁面](../editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb.md)教學課程)，或者停用標籤的檢視狀態的支援。 可讓 s 使用後面這個選項。
 
-
 [!code-aspx[Main](handling-bll-and-dal-level-exceptions-vb/samples/sample4.aspx)]
 
 當引發例外狀況時，我們將指派的例外狀況的詳細資料`ExceptionDetails`標籤控制項的`Text`屬性。 因為其檢視狀態已停用，在後續回傳時`Text`屬性 s 以程式設計方式變更將會遺失，再還原至預設文字 （空字串），藉此隱藏的警告訊息。
 
 若要判斷為了幫助的訊息顯示在頁面上引發錯誤，我們需要加入`Try ... Catch`封鎖`UpdateCommand`事件處理常式。 `Try`部分包含程式碼，可能會導致例外狀況，而`Catch`區塊包含在例外狀況下執行的程式碼。 請參閱[例外狀況處理基本概念](https://msdn.microsoft.com/library/2w8f0bss.aspx)一節中的.NET Framework 文件，如需詳細資訊，在`Try ... Catch`區塊。
-
 
 [!code-vb[Main](handling-bll-and-dal-level-exceptions-vb/samples/sample5.vb)]
 
@@ -107,23 +93,19 @@ ms.locfileid: "59386095"
 
 我們可以攔截到例外狀況的類型為基礎的訊息文字，使用者提供更有用的說明。 下列程式碼幾乎完全相同的表單中用年代[處理 BLL 和 DAL 層級例外狀況，在 ASP.NET 網頁](../editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb.md)教學課程提供此詳細層級：
 
-
 [!code-vb[Main](handling-bll-and-dal-level-exceptions-vb/samples/sample6.vb)]
 
 若要完成本教學課程中，只要呼叫`DisplayExceptionDetails`方法，從`Catch`區塊中攔截到傳遞`Exception`執行個體 (`ex`)。
 
 使用`Try ... Catch`就地區塊中，使用者會使用更具參考性的錯誤訊息，以數字 4 和 5 的顯示。 請注意，面對 DataList 例外狀況會保留在編輯模式。 這是因為在控制流程之後發生的例外狀況，立即重新導向至`Catch`區塊，並略過 DataList 回到預先編輯狀態的程式碼。
 
-
 [![如果使用者遺漏必要的欄位，就會顯示一則錯誤訊息](handling-bll-and-dal-level-exceptions-vb/_static/image9.png)](handling-bll-and-dal-level-exceptions-vb/_static/image8.png)
 
 **圖 4**:如果使用者遺漏必要的欄位，就會顯示一則錯誤訊息 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-vb/_static/image10.png))
 
-
 [![錯誤訊息會顯示當輸入是負的價格](handling-bll-and-dal-level-exceptions-vb/_static/image12.png)](handling-bll-and-dal-level-exceptions-vb/_static/image11.png)
 
 **圖 5**:錯誤訊息會顯示當輸入是負的價格 ([按一下以檢視完整大小的影像](handling-bll-and-dal-level-exceptions-vb/_static/image13.png))
-
 
 ## <a name="summary"></a>總結
 

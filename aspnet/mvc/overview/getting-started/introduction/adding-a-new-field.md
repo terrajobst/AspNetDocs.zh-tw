@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: 4085de68-d243-4378-8a64-86236ea8d2da
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: a5de73d93d0af21a3b59d6c21014810184292adb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 55e635c967e07e193dda0358b020638af46c688e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379348"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120842"
 ---
 # <a name="adding-a-new-field"></a>新增欄位
 
@@ -79,7 +79,6 @@ Visual Studio 會開啟*Configuration.cs*檔案。 取代`Seed`方法中的*Conf
 > 
 > 如需詳細資訊[AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)方法，請參閱[負責使用 EF 4.3 AddOrUpdate 方法](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)...
 
-
 **按 CTRL-SHIFT-B 來建置專案。**（如果您不要在此時建置會失敗的下列步驟）。
 
 下一個步驟是建立`DbMigration`類別初始移轉。 此移轉建立的新資料庫，就是為什麼您刪除*movie.mdf*上一個步驟中的檔案。
@@ -138,13 +137,11 @@ Code First 移轉會建立另一個類別檔案中的*移轉*資料夾 (同名 *
 
 您之所以看到此錯誤，因為已更新`Movie`應用程式中的模型類別現在是不同的結構描述`Movie`現有資料庫的資料表。 (資料庫資料表中沒有任何 `Rating` 資料行)。
 
-
 有幾個方法可以解決這個錯誤：
 
 1. 讓 Entity Framework 自動卸除資料庫，並重新依據新的模型類別結構描述來建立資料庫。 在開發週期早期，當您在測試資料庫上進行開發時，這個方法會很方便；其可讓您一併調整模型和資料庫結構描述，更加快速。 它的缺點是您在資料庫中現有的資料遺失，因此您 *不* 想要在生產資料庫上使用這種方法 ！ 使用初始設定式將測試資料自動植入資料庫，通常是開發應用程式的有效方式。 如需有關 Entity Framework 資料庫初始設定式的詳細資訊，請參閱 < [ASP.NET MVC/Entity Framework 教學課程](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 2. 您可明確修改現有資料庫的結構描述，使其符合模型類別。 這種方法的優點是可以保留您的資料。 您可以手動方式或藉由建立資料庫變更指令碼來進行這項變更。
 3. 使用 Code First 移轉來更新資料庫結構描述。
-
 
 在本教學課程中，我們將使用 Code First 移轉。
 

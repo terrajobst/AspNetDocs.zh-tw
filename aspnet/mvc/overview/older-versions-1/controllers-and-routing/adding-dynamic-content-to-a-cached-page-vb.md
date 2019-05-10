@@ -8,12 +8,12 @@ ms.date: 01/27/2009
 ms.assetid: 68acd884-fb57-4486-a1be-aaa93e380780
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0dae280dfa3028df5fda95c4366132c99a0dc3b7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f2f4372498e5a38bbfcb96d6e9f6338b0ef4df1f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409196"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123675"
 ---
 # <a name="adding-dynamic-content-to-a-cached-page-vb"></a>將動態內容新增至快取的頁面 (VB)
 
@@ -21,16 +21,13 @@ by [Microsoft](https://github.com/microsoft)
 
 > 了解如何混合使用動態和快取的內容，在相同的頁面。 快取後替代作業可讓您顯示動態內容，例如橫幅廣告或新聞項目，內有已輸出快取的頁面。
 
-
 利用輸出快取，您可以大幅改善 ASP.NET MVC 應用程式的效能。 而不是重新產生頁面每一次要求頁面時，網頁可以產生一次並快取在記憶體中的多個使用者。
 
 但還有一個問題。 如果您需要在網頁中顯示動態內容嗎？ 例如，假設您想要在網頁中顯示橫幅廣告。 您不想要快取，讓每個使用者會看到相同的廣告橫幅廣告。 您不會如此一來開始任何賺錢 ！
 
 幸運的是，沒有簡單的解決方案。 您可以利用呼叫 ASP.NET framework 的功能*快取後替代*。 快取後替代作業可讓您取代已經在記憶體中快取的頁面中的動態內容。
 
-
 一般來說，您在輸出時使用快取頁面&lt;OutputCache&gt;屬性，頁面會快取伺服器和用戶端 （網頁瀏覽器） 上。 當您使用快取後替代時，則是只能在伺服器上快取頁面。
-
 
 #### <a name="using-post-cache-substitution"></a>使用快取後替代
 

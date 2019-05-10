@@ -8,12 +8,12 @@ ms.date: 07/09/2015
 ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: 48a66eea839f7f48899040ad20bbfee95b9a1902
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2fc8f6cdefe1e940f3e3eafc2b9acc9144690284
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403905"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118724"
 ---
 # <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>監視和遙測 （使用 Azure 建置真實世界的雲端應用程式）
 
@@ -23,14 +23,12 @@ ms.locfileid: "59403905"
 
 > **建置真實世界雲端應用程式與 Azure**電子書以 Scott Guthrie 所開發的簡報為依據。 它說明 13 的模式，並可協助您的作法是成功開發適用於雲端的 web 應用程式。 電子書的相關資訊，請參閱[第 1 章](introduction.md)。
 
-
 很多人依賴客戶，讓他們知道他們的應用程式關閉時。 這並非最佳做法是任何位置，以及特別是在雲端中找不到。 快速通知，不保證，當您執行取得通知，但通常您會發生了什麼事的最小或使人產生誤解的資料。 良好的遙測與記錄系統，您可以很清楚發生什麼情況的應用程式，並有差錯您立即找出並且擁有很有幫助的疑難排解資訊，才能使用。
 
 ## <a name="buy-or-rent-a-telemetry-solution"></a>購買或租用的遙測解決方案
 
 > [!NOTE]
 > 之前所撰寫的這篇文章[Application Insights](/azure/application-insights/app-insights-overview)發行。 Application Insights 是針對遙測解決方案在 Azure 上慣用的方法。 請參閱[設定為您的 ASP.NET 網站的 Application Insights](/azure/application-insights/app-insights-asp-net)如需詳細資訊。
-
 
 絕佳雲端環境的相關的事情之一是，它真的很容易購買，或永久出租踏上的勝利。 遙測是範例。 而不需要大費周章中，您可以取得絕佳的遙測系統啟動和執行、 非常符合成本效益。 有一大堆很棒的合作夥伴整合有了 Azure，而其中部分有免費層 – 因此您可以取得基本的遙測資料的 「 百無。 以下是幾個項目目前可用在 Azure 上：
 

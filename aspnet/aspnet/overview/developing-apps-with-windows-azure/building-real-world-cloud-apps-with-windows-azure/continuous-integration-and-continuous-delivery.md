@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 0fb0a331a2a6e2af5c5097db8b57942525d24ffc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 25767303e3a8a3bfd9fc6c7c10cda32d73e9994d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384301"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118855"
 ---
 # <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>持續整合與持續傳遞 （使用 Azure 建置真實世界的雲端應用程式）
 
@@ -22,7 +22,6 @@ ms.locfileid: "59384301"
 [下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **建置真實世界雲端應用程式與 Azure**電子書以 Scott Guthrie 所開發的簡報為依據。 它說明 13 的模式，並可協助您的作法是成功開發適用於雲端的 web 應用程式。 電子書的相關資訊，請參閱[第 1 章](introduction.md)。
-
 
 前兩個建議的開發程序模式所[自動執行的所有項目](automate-everything.md)並[原始檔控制](source-control.md)，第三個程序模式中將它們合併。 持續整合 (CI) 表示，每當開發人員簽入至來源存放庫的程式碼，會自動觸發建置。 持續傳遞 (CD) 則更進一步： 組建及自動的單元測試都成功之後，您會自動部署應用程式，您可以執行更深入的測試環境。
 
@@ -50,7 +49,6 @@ Azure 的 DevOps 服務提供多種功能，以協助您進行從規劃到部署
 - 它支援自動化的負載測試。 負載測試很重要的雲端應用程式，但之前已經太遲常會遭到忽視。 負載測試會模擬數千名使用者，讓您找出瓶頸並提高輸送量的應用程式大量使用 — 您發行至生產環境應用程式之前。
 - 它支援小組室共同作業，有助於即時通訊和小型的敏捷式軟體開發團隊的共同作業。
 - 它支援敏捷式專案管理。
-
 
 如需有關的持續整合與傳遞功能的 Azure DevOps 服務的詳細資訊，請參閱[Azure DevOps 文件](/azure/devops/index)。
 

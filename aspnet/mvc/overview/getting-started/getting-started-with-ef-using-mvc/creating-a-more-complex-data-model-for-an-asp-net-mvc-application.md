@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 46f7f3c9-274f-4649-811d-92222a9b27e2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5deab7da776c3c43e3e2cdf42b04922678f956c7
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 5c27f6fe07856db2b2961abc8fa797343d361d97
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57041855"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120941"
 ---
 # <a name="tutorial-create-a-more-complex-data-model-for-an-aspnet-mvc-app"></a>教學課程：建立更複雜的資料模型的 ASP.NET MVC 應用程式
 
@@ -61,9 +61,7 @@ ms.locfileid: "57041855"
 
 `DisplayFormat` 屬性用來明確指定日期格式：
 
-
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample2.cs)]
-
 
 `ApplyFormatInEditMode`設定可讓您指定，而指定的格式應該也會套用時的值會顯示在文字方塊中進行編輯。 (您可能不想要的某些欄位 — 比方說，例如貨幣值，您可能不想在文字方塊中的貨幣符號進行編輯。)
 
@@ -105,7 +103,7 @@ ms.locfileid: "57041855"
 
 [!code-console[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample4.cmd)]
 
-`add-migration`命令會建立名為的檔案*&lt;時間戳記&gt;\_MaxLengthOnNames.cs*。 此檔案包含了 `Up` 方法中的程式碼，可更新資料庫，使其符合目前的資料模型。 `update-database` 命令執行了該程式碼。
+`add-migration`命令會建立名為的檔案 *&lt;時間戳記&gt;\_MaxLengthOnNames.cs* 。 此檔案包含了 `Up` 方法中的程式碼，可更新資料庫，使其符合目前的資料模型。 `update-database` 命令執行了該程式碼。
 
 Entity Framework 會使用移轉檔案名稱的前面加上時間戳記來排序移轉。 您可以建立多個移轉前執行`update-database`命令，然後所有的移轉會套用已建立的順序。
 

@@ -9,12 +9,12 @@ ms.assetid: 248f5fe7-39ba-40ea-ab1e-71a69b0bd649
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 224fa56a455affcbbdf76eceee5422850415037e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 227a48d76f099f948d89f38219e25ced026d7dcd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420766"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118107"
 ---
 # <a name="implementing-a-custom-mysql-aspnet-identity-storage-provider"></a>實作自訂的 MySQL ASP.NET Identity 儲存體提供者
 
@@ -31,7 +31,6 @@ ms.locfileid: "59420766"
 > - 示範如何使用我們在 MVC 應用程式專案的自訂實作取代預設的 ASP.NET Identity 儲存區實作。
 > 
 > 本教學課程中原先編寫 Raquel Soares De Almeida 和 Rick Anderson ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )。 範例專案已更新 Suhas Joshi 2.0 身分識別。 本主題已更新 Tom FitzMacken 2.0 身分識別。
-
 
 ## <a name="download-completed-project"></a>下載已完成專案
 

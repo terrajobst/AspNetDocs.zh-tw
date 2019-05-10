@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: e1fd226f-3f8e-4575-a179-5c75b240333d
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3fd252b94e55f02215a2733f218e68b26486691f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b166a1c6af29206d43558fa7de447c3f4da2ddfe
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397106"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123861"
 ---
 # <a name="iteration-6--use-test-driven-development-vb"></a>反覆項目 #6 – 使用測試導向開發 (VB)
 
@@ -23,9 +23,7 @@ by [Microsoft](https://github.com/microsoft)
 
 > 在這個第六個反覆項目中，我們新功能加入我們的應用程式方法是先撰寫單元測試，並撰寫單元測試的程式碼。 在這個反覆項目，我們會新增連絡人群組。
 
-
 ## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>建立連絡人管理 ASP.NET MVC 應用程式 (VB)
-  
 
 在本系列教學課程中，我們會建置整個連絡人管理應用程式從開始到完成。 請連絡系統管理員應用程式可讓您商店連絡資訊的名稱、 電話號碼和電子郵件地址-的人員清單。
 
@@ -73,7 +71,6 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > 若要深入了解測試導向開發，建議您閱讀 Michael Feathers 書籍**Working Effectively with Legacy 程式碼**。
 
-
 在此反覆項目，我們新增連絡人管理員應用程式的新功能。 我們新增連絡人群組的支援。 您可以使用連絡人群組，以將您的連絡人組織成類別目錄，例如業務和 Friend 群組。
 
 我們將新增至應用程式的這項新功能，依照測試導向開發的程序。 我們將先撰寫我們的單元測試，我們將撰寫所有我們針對這些測試的程式碼。
@@ -112,11 +109,9 @@ by [Microsoft](https://github.com/microsoft)
 
 建立新的單元測試，以滑鼠右鍵按一下 [控制器] 資料夾，在 ContactManager.Tests 專案中，選取**新增]、 [新增測試**，然後選取**單元測試**範本 （見 [圖 1]）。 名稱，新的單元測試 GroupControllerTest.vb，然後按一下**確定** 按鈕。
 
-
 [![新增 GroupControllerTest 單元測試](iteration-6-use-test-driven-development-vb/_static/image1.jpg)](iteration-6-use-test-driven-development-vb/_static/image1.png)
 
 **圖 01**:新增 GroupControllerTest 單元測試 ([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-vb/_static/image2.png))
-
 
 第一個單元測試會包含在程式碼範例 1。 此測試會驗證群組控制器的 index （） 方法會傳回一組群組。 測試會驗證，群組就會傳回集合檢視中的資料。
 
@@ -140,11 +135,9 @@ by [Microsoft](https://github.com/microsoft)
 
 我們將 GroupController 和群組類別新增至我們的專案之後，第一個單元測試成功完成 （請參閱 圖 2）。 我們已經通過測試所需的最小工作。 它是要慶祝的時間。
 
-
 [![成功 ！](iteration-6-use-test-driven-development-vb/_static/image2.jpg)](iteration-6-use-test-driven-development-vb/_static/image3.png)
 
 **圖 02**:成功 ！([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-vb/_static/image4.png))
-
 
 ## <a name="creating-contact-groups"></a>建立連絡人群組
 
@@ -216,11 +209,9 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample11.vb)]
 
-
 修改介面需要 IContactManagerRepository EntityContactManagerRepository 類別中實作的 CreateGroup() 和 ListGroups() 方法使用。 若要這樣做的 laziest 且最快速的方式是加入看起來像這樣的虛設常式方法：
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample12.vb)]
-
 
 最後，這些變更，我們的應用程式的設計會要求我們對我們的單元測試進行一些修改。 我們現在需要執行單元測試時，使用 FakeContactManagerRepository。 列表 12 中，會包含更新的 GroupControllerTest 類別。
 
@@ -243,12 +234,10 @@ by [Microsoft](https://github.com/microsoft)
 
 <a id="0.12_table01"></a>
 
-
 | **資料行名稱** | **資料類型** | **允許 null 值** |
 | --- | --- | --- |
 | ID | int | False |
 | 名稱 | nvarchar(50) | False |
-
 
 接下來，我們必須從 [連絡人] 資料表中刪除所有資料 （否則我們無法再建立的連絡人和群組的資料表之間的關聯性）。 請依照下列步驟：
 
@@ -267,16 +256,13 @@ by [Microsoft](https://github.com/microsoft)
 8. 按一下 [關閉] 按鈕以關閉 [外部索引鍵關聯性] 對話方塊。
 9. 按一下 [儲存] 按鈕，以將變更儲存至 Contacts 資料表。
 
-
 [![建立資料庫資料表關聯性](iteration-6-use-test-driven-development-vb/_static/image3.jpg)](iteration-6-use-test-driven-development-vb/_static/image5.png)
 
 **圖 03**:建立資料庫資料表關聯性 ([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-vb/_static/image6.png))
 
-
 [![指定資料表關聯性](iteration-6-use-test-driven-development-vb/_static/image4.jpg)](iteration-6-use-test-driven-development-vb/_static/image7.png)
 
 **圖 04**:指定資料表關聯性 ([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-vb/_static/image8.png))
-
 
 ### <a name="updating-our-data-model"></a>更新的資料模型
 
@@ -288,19 +274,15 @@ by [Microsoft](https://github.com/microsoft)
 4. 以滑鼠右鍵按一下群組實體，然後選取功能表選項**重新命名**。 變更的名稱*群組*實體*群組*（個別）。
 5. 以滑鼠右鍵按一下連絡人實體下方會顯示群組導覽屬性。 變更的名稱*群組*導覽屬性來*群組*（個別）。
 
-
 [![更新 Entity Framework 模型從資料庫](iteration-6-use-test-driven-development-vb/_static/image5.jpg)](iteration-6-use-test-driven-development-vb/_static/image9.png)
 
 **圖 05**:更新 Entity Framework 模型從資料庫 ([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-vb/_static/image10.png))
 
-
 完成這些步驟之後，您的資料模型會代表連絡人和群組的資料表。 實體設計工具應該會顯示這兩個實體 （請參閱 圖 6）。
-
 
 [![顯示群組和連絡人的實體設計工具](iteration-6-use-test-driven-development-vb/_static/image6.jpg)](iteration-6-use-test-driven-development-vb/_static/image11.png)
 
 **圖 06**:顯示群組和連絡人的實體設計工具 ([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-vb/_static/image12.png))
-
 
 ### <a name="creating-our-repository-classes"></a>建立儲存機制類別
 
@@ -329,11 +311,9 @@ by [Microsoft](https://github.com/microsoft)
 - Views\Group\Index.aspx-連絡人群組的顯示清單
 - Views\Group\Delete.aspx-刪除連絡人群組會顯示確認表單
 
-
 [![群組索引檢視](iteration-6-use-test-driven-development-vb/_static/image7.jpg)](iteration-6-use-test-driven-development-vb/_static/image13.png)
 
 **圖 07**:群組 [索引] 檢視 ([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-vb/_static/image14.png))
-
 
 我們需要修改下列現有的檢視，讓它們包含連絡人群組：
 
@@ -343,11 +323,9 @@ by [Microsoft](https://github.com/microsoft)
 
 您可以看到修改過的檢視，查看隨附此教學課程的 Visual Studio 應用程式。 例如，圖 8 說明連絡人索引檢視。
 
-
 [![請連絡 [索引] 檢視](iteration-6-use-test-driven-development-vb/_static/image8.jpg)](iteration-6-use-test-driven-development-vb/_static/image15.png)
 
 **圖 08**:請連絡 [索引] 檢視 ([按一下以檢視完整大小的影像](iteration-6-use-test-driven-development-vb/_static/image16.png))
-
 
 ## <a name="summary"></a>總結
 

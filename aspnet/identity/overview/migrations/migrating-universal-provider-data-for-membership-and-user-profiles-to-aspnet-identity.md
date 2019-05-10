@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 2e260430-d13c-4658-bd05-e256fc0d63b8
 msc.legacyurl: /identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 1043dce4cdd62f94ae9d2344a9301c1b03426f3d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: de154dde122886976054159ad745982669ca9315
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422261"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121378"
 ---
 # <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a>將成員資格和使用者設定檔的通用提供者資料移轉至 ASP.NET Identity (C#)
 
@@ -22,14 +22,12 @@ ms.locfileid: "59422261"
 
 > 本教學課程會說明需要移轉使用者和角色的資料，以及使用 ASP.NET 身分識別模型的現有應用程式的通用提供者所建立的使用者設定檔資料的步驟。 方法此處提及來移轉使用者設定檔資料可以使用 SQL 成員資格的應用程式中。
 
-
 版本的 Visual Studio 2013 中，ASP.NET 團隊推出了新的 ASP.NET 身分識別系統，以及您可以深入了解該版本[此處](../../index.md)。 要從 web 應用程式移轉的發行項上[到新的身分識別系統的 SQL 成員資格](migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)，這篇文章說明如何移轉現有的應用程式，請依照下列使用者和角色管理的提供者模型的步驟新的身分識別模型。 本教學課程的焦點會在移轉使用者設定檔資料，來順暢地將它連結到新的系統。 移轉使用者和角色的資訊是類似 SQL 的成員資格。 移轉設定檔資料需遵循的方法可以使用 SQL 成員資格的應用程式中。
 
 例如，我們會開始使用 Visual Studio 2012 使用的提供者模型所建立的 web 應用程式。 我們將則加入設定檔管理的程式碼、 註冊的使用者、 新增使用者設定檔資料、 移轉資料庫結構描述，然後變更應用程式使用的身分識別系統的使用者和角色管理。 為移轉的測試，使用通用的提供者所建立的使用者應該能夠登入，而且新的使用者應該無法註冊。
 
 > [!NOTE]
 > 您可以找到完整的範例，在[ https://github.com/suhasj/UniversalProviders-Identity-Migrations ](https://github.com/suhasj/UniversalProviders-Identity-Migrations)。
-
 
 ## <a name="profile-data-migration-summary"></a>設定檔資料移轉摘要
 

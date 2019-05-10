@@ -8,12 +8,12 @@ ms.date: 05/29/2009
 ms.assetid: 0d23ff2b-f2ec-434a-be3b-1180beeccba3
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6893d1f2445452b1d802b89027b09d8294bdc5b7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 00150575baabc659f7dd0c07349cde52105f6c8b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422833"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117567"
 ---
 # <a name="validation-with-the-data-annotation-validators-vb"></a>驗證與資料註解驗證器 (VB)
 
@@ -21,14 +21,11 @@ by [Microsoft](https://github.com/microsoft)
 
 > 善用資料註釋模型繫結，若要執行的 ASP.NET MVC 應用程式內的驗證。 了解如何使用不同類型的驗證程式屬性，並在 Microsoft Entity Framework 中使用它們。
 
-
 在本教學課程中，您將了解如何執行驗證的 ASP.NET MVC 應用程式中使用資料註解驗證程式。 使用資料註解驗證程式的優點是，它們可讓您執行驗證，只要新增一或多個屬性 – 例如 Required 或 StringLength 屬性 – 至類別內容。
 
 您可以使用資料註解驗證程式之前，您必須下載資料註釋的模型繫結。 您可以從 CodePlex 網站下載的資料註釋的模型繫結器範例，依序按一下[此處](http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=24471)。
 
-
 請務必了解資料註釋的模型繫結不是官方 Microsoft ASP.NET MVC 架構一部分。 雖然資料註釋的模型繫結 Microsoft ASP.NET MVC 團隊所建立的但是 Microsoft 不提供官方的產品支援的資料註釋的模型繫結所述，並在本教學課程中使用。
-
 
 ## <a name="using-the-data-annotation-model-binder"></a>使用資料註釋的模型繫結
 
@@ -40,9 +37,7 @@ by [Microsoft](https://github.com/microsoft)
 
 選取 Microsoft.Web.Mvc.DataAnnotations.dll 組件和 System.ComponentModel.DataAnnotations.dll 組件，然後按一下**確定** 按鈕。
 
-
 您無法使用 System.ComponentModel.DataAnnotations.dll 組件隨附於.NET Framework Service Pack 1 與資料註釋的模型繫結。 您必須使用隨附於下載資料註釋模型繫結器範例 System.ComponentModel.DataAnnotations.dll 組件的版本。
-
 
 最後，您需要在 Global.asax 檔案中註冊 DataAnnotations 模型繫結器。 將下列程式碼行新增至應用程式\_start （） 事件處理常式，讓應用程式\_start （） 方法看起來像這樣：
 
@@ -64,7 +59,6 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > 如果您的驗證需求不符合任何的標準驗證然後您一律可以選擇建立自訂驗證程式屬性，藉由繼承自基底的驗證屬性的 新的驗證程式屬性。
 
-
 中的產品類別**列表 1**說明如何使用這些驗證程式屬性。 名稱、 描述和 UnitPrice 屬性會標示為必要。 Name 屬性必須是少於 10 個字元的字串長度。 最後，[UnitPrice] 屬性必須比對規則運算式模式，表示貨幣金額。
 
 [!code-vb[Main](validation-with-the-data-annotation-validators-vb/samples/sample2.vb)]
@@ -76,7 +70,6 @@ Product 類別說明如何使用一個額外的屬性： DisplayName 屬性。 D
 > [!NOTE] 
 > 
 > 如果您想要完全自訂驗證程式所顯示的錯誤訊息然後您就可以指派自訂錯誤訊息給驗證程式的錯誤訊息屬性，像這樣： `<Required(ErrorMessage:="This field needs a value!")>`
-
 
 您可以使用中的產品類別**列表 1** create （） 的控制器動作中使用**列表 2**。 模型狀態中包含的任何錯誤時，此控制器動作會重新顯示建立檢視。
 
@@ -97,7 +90,6 @@ Product 類別說明如何使用一個額外的屬性： DisplayName 屬性。 D
 > [!NOTE] 
 > 
 > 移除所產生的建立表單中的 [識別碼] 欄位**加入檢視**功能表選項。 由於 [識別碼] 欄位會對應到識別欄位，您不想要允許使用者輸入此欄位的值。
-
 
 如果您送出的表單建立產品，而且您未輸入值為必要的欄位，則驗證錯誤訊息**圖 3**會顯示。
 
@@ -138,7 +130,6 @@ Product 類別說明如何使用一個額外的屬性： DisplayName 屬性。 D
 > [!NOTE] 
 > 
 > 請注意，proxy 類別中的屬性 MovieMetaData 不需要代表影片類別中的對應屬性相同的類型。 比方說，經理屬性是電影類別中的字串屬性和 MovieMetaData 類別中的物件屬性。
-
 
 中的網頁**圖 6**說明當您輸入的影片內容無效的值時，傳回的錯誤訊息。
 

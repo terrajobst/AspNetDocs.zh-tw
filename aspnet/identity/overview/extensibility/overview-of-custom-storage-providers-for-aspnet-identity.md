@@ -9,12 +9,12 @@ ms.assetid: 681a9204-462e-4260-9a0b-19f0644d6ad7
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 71201e9d91080855350349b966fe7916ce21a909
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4158939da036ee126eb649f31e5d8eaf504920be
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411263"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118076"
 ---
 # <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>ASP.NET Identity 的自訂儲存體提供者概觀
 
@@ -31,7 +31,6 @@ ms.locfileid: "59411263"
 > 
 > - Visual Studio 2013 Update 2
 > - ASP.NET 身分識別 2
-
 
 ## <a name="introduction"></a>簡介
 

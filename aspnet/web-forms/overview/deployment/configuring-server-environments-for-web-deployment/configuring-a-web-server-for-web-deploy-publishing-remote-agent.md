@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 239c7aa8-d09a-4d02-9c0e-6bd52be5f0d5
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
 msc.type: authoredcontent
-ms.openlocfilehash: d915cb5d7d40bb2cc355a5e45befe124a7b60dc4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b3293a9b6a35a162d4e27f061dfd3bfd28e0eda5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398484"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125994"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-remote-agent"></a>設定 Web Deploy 發行的網頁伺服器 (遠端代理程式)
 
@@ -30,7 +30,6 @@ ms.locfileid: "59398484"
 > - 使用*離線部署*。 這種方法需要最低的網頁伺服器的設定，但伺服器系統管理員必須手動複製到伺服器上的 web 套件並匯入它透過 IIS 管理員。
 > 
 > 如需有關的主要功能、 優點和這些方法的缺點的詳細資訊，請參閱[選擇 Web 部署的權限方法](choosing-the-right-approach-to-web-deployment.md)。
-
 
 ## <a name="is-the-web-deploy-remote-agent-the-right-approach-for-you"></a>是 Web 部署為您的遠端代理程式正確的方法？
 
@@ -64,7 +63,6 @@ ms.locfileid: "59398484"
 > [!NOTE]
 > 如需有關如何將電腦加入網域的詳細資訊，請參閱 <<c0> [ 將電腦加入網域並登入](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)。 如需有關如何設定靜態 IP 位址的詳細資訊，請參閱 <<c0> [ 設定靜態 IP 位址](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)。 遠端代理程式服務及更新版本支援的 IIS 6，並不需要加入網域。 不過，在本教學課程的步驟已開發及測試在 IIS 7.5 上，針對其他版本的程序可能會不同。
 
-
 ## <a name="install-products-and-components"></a>安裝的產品和元件
 
 本節將引導您完成 web 伺服器上安裝必要的產品和元件。 在開始之前，理想的作法就是執行 Windows Update，以確保您的伺服器已完全更新。
@@ -78,7 +76,6 @@ ms.locfileid: "59398484"
 
 > [!NOTE]
 > 本逐步解說說明如何使用 Web Platform Installer 來安裝和設定必要的元件。 雖然您不需要使用 Web Platform Installer，它可以簡化安裝程序自動偵測相依性，並確保您一律取得最新的產品版本。 如需詳細資訊，請參閱 < [Microsoft Web Platform Installer 3.0](https://go.microsoft.com/?linkid=9805118)。
-
 
 **若要安裝必要的產品和元件**
 
@@ -184,7 +181,6 @@ ms.locfileid: "59398484"
 
 > [!NOTE]
 > 如需有關在 IIS 7.5 中的應用程式集區身分識別的詳細資訊，請參閱[應用程式集區識別](https://go.microsoft.com/?linkid=9805123)。
-
 
 **若要設定 IIS 網站的資料夾權限**
 

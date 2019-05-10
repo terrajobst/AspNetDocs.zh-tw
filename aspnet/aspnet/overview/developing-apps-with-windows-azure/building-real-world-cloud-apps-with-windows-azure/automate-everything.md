@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: d27c8c1910a79cea8ccdf4231d3bc2b80a20dc68
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fd78385e563b7204b29beb4180b7bc932266bdec
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418361"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119010"
 ---
 # <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>自動化 （建置使用 Azure 的真實世界的雲端應用程式） 的所有項目
 
@@ -22,7 +22,6 @@ ms.locfileid: "59418361"
 [下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **建置真實世界雲端應用程式與 Azure**電子書以 Scott Guthrie 所開發的簡報為依據。 它說明 13 的模式，並可協助您的作法是成功開發適用於雲端的 web 應用程式。 如需簡介電子書，請參閱[第 1 章](introduction.md)。
-
 
 我們將探討的前三個模式實際上會套用至任何軟體開發專案中，但特別是雲端專案。 此模式是關於開發工作自動化。 它是很重要的主題，因為手動程序是既緩慢又容易發生錯誤;多少個為可能有助於設定快速、 可靠且敏捷式軟體開發工作流程自動化。 它是唯一重要的雲端開發的因為您可以輕鬆自動化許多難以或無法在內部部署環境中自動化的工作。 例如，您可以設定整個測試的環境，包括新的 web 伺服器和後端 Vm、 資料庫、 blob 儲存體 （檔案）、 佇列等。
 
@@ -58,10 +57,8 @@ ms.locfileid: "59418361"
 
 ### <a name="run-the-script"></a>執行指令碼
 
-
 > [!NOTE]
 > 本章的這個部分中顯示的指令碼和您輸入才能執行這些命令的範例。 此示範並不會提供您需要知道，才能執行指令碼的所有項目。 逐步作法-要-執行-it 指示，請參閱[附錄：修正範例應用程式](the-fix-it-sample-application.md#deploybase)。
-
 
 若要執行 PowerShell 指令碼管理 Azure 服務，您必須安裝 Azure PowerShell 主控台，然後將它設定為使用您 Azure 訂用帳戶。 一旦設定好，您可以使用與下列類似的命令來執行修正它的環境建立指令碼：
 
@@ -87,7 +84,7 @@ ms.locfileid: "59418361"
 
 ![appSettings 和 connectionStrings](automate-everything/_static/image6.png)
 
-*自動化*資料夾現在也包含 *&lt;websitename&gt;.pubxml*檔案。 這個檔案會儲存 MSBuild 用來部署應用程式以剛建立的 Azure 環境的設定。 例如：
+*自動化*資料夾現在也包含 *&lt;websitename&gt;.pubxml*檔案。 這個檔案會儲存 MSBuild 用來部署應用程式以剛建立的 Azure 環境的設定。 例如: 
 
 [!code-xml[Main](automate-everything/samples/sample1.xml)]
 

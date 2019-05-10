@@ -8,12 +8,12 @@ ms.date: 03/14/2013
 ms.assetid: aadc5fa4-8215-4fc7-afd5-bcd2ef879728
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: de0e9cc168b9f18fd2bd83329106df45d7551b1a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a6e10c52d83dc3c29ab2f9f6bb0c05cfbbf6aad1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386551"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126356"
 ---
 # <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>ASP.NET MVC 和 ASP.NET Web Pages 中的 XSRF/CSRF 防護
 
@@ -24,7 +24,6 @@ ms.locfileid: "59386551"
 > XSRF 攻擊是網路釣魚攻擊不同。 網路釣魚攻擊需要與受害者互動。 在網路釣魚攻擊，惡意網站會模擬目標網站，然後受害者因受騙而到機密資訊提供給攻擊者。 XSRF 攻擊時，則通常不需要互動需要與受害者。 相反地，攻擊者就信賴憑證者會自動將所有相關的 cookie 傳送至目的地網站的瀏覽器上。
 > 
 > 如需詳細資訊，請參閱 < [Open Web Application Security Project](https://www.owasp.org/index.php/Main_Page)(OWASP) [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF))。
-
 
 ## <a name="anatomy-of-an-attack"></a>攻擊的剖析
 

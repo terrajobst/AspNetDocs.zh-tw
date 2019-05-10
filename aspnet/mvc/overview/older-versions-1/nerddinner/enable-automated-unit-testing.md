@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: a19ff2ce-3f7e-4358-9a51-a1403da9c63e
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/enable-automated-unit-testing
 msc.type: authoredcontent
-ms.openlocfilehash: b0c9cd7ab36a8414e0d7d50a68b05bb09a5f24f1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 09a7aa186605a6cce48ee94028425ded957c00d3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387902"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117347"
 ---
 # <a name="enable-automated-unit-testing"></a>啟用自動化單元測試
 
@@ -26,7 +26,6 @@ by [Microsoft](https://github.com/microsoft)
 > 步驟 12 示範如何開發自動化的單元測試，以便驗證我們 NerdDinner 的功能，並可將讓我們能夠放心進行變更和改進未來的應用程式套件。
 > 
 > 如果您使用 ASP.NET MVC 3，我們建議您遵循[取得開始使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或是[MVC Music 市集](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教學課程。
-
 
 ## <a name="nerddinner-step-12-unit-testing"></a>NerdDinner 步驟 12:單元測試
 
@@ -264,7 +263,6 @@ ASP.NET MVC 預設會建立使用預設建構函式的控制器類別，因為�
 以下是兩項測試會示範如何，我們可以提供表單發佈 UpdateModel() 協助程式方法，若要使用的值。 我們將建立並擴展 FormCollection 物件，執行這項操作，並再將它指派給 「 ValueProvider"屬性，控制站上。
 
 第一項測試會驗證，於成功儲存瀏覽器重新導向至詳細資料的動作。 第二項測試會驗證，張貼無效的輸入時的動作會重新顯示一次編輯檢視並出現錯誤訊息。
-
 
 [!code-csharp[Main](enable-automated-unit-testing/samples/sample17.cs)]
 

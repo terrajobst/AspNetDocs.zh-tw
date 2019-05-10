@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: f1b0809e-8909-444e-b6bb-a5cd1dea3f72
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 34fce0bef5163ba0423ea00cf4b7507947c45c68
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7c8eb3d3688674dd2c220b4bd1b5982f2610d0eb
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398068"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123833"
 ---
 # <a name="iteration-7--add-ajax-functionality-c"></a>反覆項目 #7 – 新增 Ajax 功能 (C#)
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 [下載程式碼](iteration-7-add-ajax-functionality-cs/_static/contactmanager_7_cs1.zip)
 
 > 在第七個反覆項目，改善回應性和我們的應用程式的效能透過新增對 Ajax 支援。
-
 
 ## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>建立連絡人管理 ASP.NET MVC 應用程式 (C#)
 
@@ -92,11 +91,9 @@ Ajax 應用程式中，您不會導致中止只為了更新頁面的使用者體
 
 可讓 s 開始先修改索引檢視，以便按一下連絡人群組只會更新此檢視會顯示連絡人的區域。 圖 1 中的紅色方塊包含我們想要更新的區域。
 
-
 [![更新連絡人](iteration-7-add-ajax-functionality-cs/_static/image1.jpg)](iteration-7-add-ajax-functionality-cs/_static/image1.png)
 
 **圖 01**:更新的連絡人 ([按一下以檢視完整大小的影像](iteration-7-add-ajax-functionality-cs/_static/image2.png))
-
 
 第一個步驟是檢視的個別，我們想要以非同步方式更新至不同的部分 （檢視使用者控制項） 的一部分。 顯示連絡人的 索引 檢視的區段已移至 清單 1 部分。
 
@@ -132,9 +129,7 @@ Ajax 應用程式中，您不會導致中止只為了更新頁面的使用者體
 
 我們已修改的索引檢視的運作方式在新版和舊版的瀏覽器的情況下。 如果您按一下連絡人群組，而且您的瀏覽器支援 JavaScript，只有包含連絡人清單的檢視區域會更新。 如果相反地，您的瀏覽器不支援 JavaScript，則會更新整個檢視。
 
-
 我們已更新的 [索引] 檢視有一個問題。 當您按一下連絡人群組時，是不反白顯示選取的群組。 因為群組的清單會顯示為 Ajax 要求期間，會更新區域之外，不會不反白顯示正確的群組。 我們將修正此問題下, 一節。
-
 
 ## <a name="adding-jquery-animation-effects"></a>加入 jQuery 動畫效果
 
@@ -192,11 +187,9 @@ ASP.NET AJAX 瀏覽器歷程記錄，您需要做三件事：
 
 目前，若要刪除的連絡人，您必須按一下 刪除 連結，然後按一下 刪除 確認頁面中顯示的 刪除 按鈕 （請參閱 圖 2）。 這似乎是相當繁重的頁面要求執行一些簡單，例如刪除資料庫記錄。
 
-
 [![刪除確認頁面](iteration-7-add-ajax-functionality-cs/_static/image2.jpg)](iteration-7-add-ajax-functionality-cs/_static/image3.png)
 
 **圖 02**:刪除確認頁面 ([按一下以檢視完整大小的影像](iteration-7-add-ajax-functionality-cs/_static/image4.png))
-
 
 相當吸引人，請略過刪除確認頁面，並直接從 [索引] 檢視中刪除連絡人。 您應該避免起舞，因為這種方式開啟您的應用程式的安全性漏洞。 一般情況下，您不要想要叫用動作來修改您的 web 應用程式的狀態時，執行 HTTP GET 作業。 在執行刪除時，您會想要執行 HTTP POST，或最好使用 HTTP DELETE 作業。
 
@@ -213,7 +206,6 @@ ASP.NET AJAX 瀏覽器歷程記錄，您需要做三件事：
 > [!NOTE] 
 > 
 > Ajax.ImageActionLink() 不是 ASP.NET MVC framework 的標準部分。 Ajax.ImageActionLink() 是 Contactmanager 專案中包含自訂的 helper 方法。
-
 
 AjaxOptions 參數有兩個屬性。 首先，確認屬性用來顯示快顯 JavaScript 確認對話方塊。 第二，HttpMethod 屬性用來執行 HTTP DELETE 作業。
 

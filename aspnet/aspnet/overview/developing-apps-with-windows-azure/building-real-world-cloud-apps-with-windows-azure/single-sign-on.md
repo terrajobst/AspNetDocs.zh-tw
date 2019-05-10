@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 7d82d5e9-0619-4f22-9e03-32a6d52940a5
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: da1136e085776c63886b6ac25533521fa1479d4f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8f6c23eb71ea323b6ab06943097f927f717a8099
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59406284"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118737"
 ---
 # <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>單一登入 （使用 Azure 建置真實世界的雲端應用程式）
 
@@ -22,7 +22,6 @@ ms.locfileid: "59406284"
 [下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **建置真實世界雲端應用程式與 Azure**電子書以 Scott Guthrie 所開發的簡報為依據。 它說明 13 的模式，並可協助您的作法是成功開發適用於雲端的 web 應用程式。 電子書的相關資訊，請參閱[第 1 章](introduction.md)。
-
 
 有許多的安全性問題，思考當您正在開發雲端應用程式，但這一系列中，我們將著重於其中一個： 單一登入。 人們常問的問題是：「 我主要建置應用程式的 我的公司; 員工如何裝載在雲端中的這些應用程式並讓它們使用相同的安全性模型員工知道，並使用內部部署環境中，當他們執行的應用程式，依然會裝載在防火牆內嗎？ 」 其中一種我們實現此案例會呼叫 Azure Active Directory (Azure AD)。 Azure AD 可讓您提供企業特定業務 (LOB) 應用程式，透過網際網路，並可讓您可讓商務夥伴以及使用這些應用程式。
 

@@ -8,12 +8,12 @@ ms.date: 08/14/2010
 ms.assetid: bf4a1c19-0a94-4208-b268-a96ddcf26946
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part1
 msc.type: authoredcontent
-ms.openlocfilehash: dcc2e703829cfa0b77575870feff451fd0738f56
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f8f0014776ba1313119e8c39c63a216b0fc864e7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416489"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123129"
 ---
 # <a name="intro-to-aspnet-mvc"></a>ASP.NET MVC 簡介
 
@@ -24,7 +24,6 @@ ms.locfileid: "59416489"
 >
 >
 > 這是初學者教學課程中，將會介紹 ASP.NET MVC 的基本概念。 您將建立簡單 web 應用程式，從資料庫讀取與寫入。 請瀏覽[ASP.NET MVC 學習中心](../../../index.md)來尋找其他 ASP.NET MVC 教學課程和範例。
-
 
 讓我們第一個 ASP.NET MVC Web 應用程式會使用[Visual Web Developer 2010 Express](https://www.microsoft.com/express/Web/)。 我們要讓一些電影清單應用程式，讓我們將建立並列出電影。
 

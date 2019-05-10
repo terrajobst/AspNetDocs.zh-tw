@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: c61560e9-9f6c-4985-834a-08a3eabf9c3c
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file
 msc.type: authoredcontent
-ms.openlocfilehash: cbad35c9ef83b41e9d3f9a48ff37672d22338e7e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f1477ff423e4898385066a35b42503f3c70dcc68
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395221"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119452"
 ---
 # <a name="creating-and-running-a-deployment-command-file"></a>建立及執行部署命令檔
 
@@ -22,7 +22,6 @@ ms.locfileid: "59395221"
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主題描述如何建立命令檔，可讓您執行以單一步驟、 高再現性的處理程序中使用 Microsoft Build Engine (MSBuild) 專案檔的部署。
-
 
 本主題是構成一系列以名為 Fabrikam，Inc.的虛構公司的企業部署需求為基礎的教學課程的一部分本系列教學課程使用範例解決方案&#x2014; [Contactmanager](the-contact-manager-solution.md)方案&#x2014;來代表實際的層級的複雜性，包括 ASP.NET MVC 3 應用程式時，Windows Communication 的 web 應用程式Foundation (WCF) 服務與資料庫專案。
 
@@ -41,9 +40,7 @@ ms.locfileid: "59395221"
 
 *Publish.proj*檔案使用**匯入**環境特定的專案檔案匯入的項目。
 
-
 [!code-xml[Main](creating-and-running-a-deployment-command-file/samples/sample1.xml)]
-
 
 因此，當您使用 MSBuild.exe 來建置和部署連絡管理員解決方案時，您需要：
 
@@ -52,19 +49,14 @@ ms.locfileid: "59395221"
 
 若要這樣做，您的 MSBuild 命令看起來應該像這樣：
 
-
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample2.cmd)]
-
 
 從這裡開始，它是簡單的步驟，以移至可重複、 單一步驟的部署。 您只需要為.cmd 檔案中加入您的 MSBuild 命令。 在 連絡管理員解決方案，以發行資料夾包含名為的檔案*發佈 Dev.cmd* ，就是這麼。
 
-
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample3.cmd)]
-
 
 > [!NOTE]
 > **/Fl**參數會指示 MSBuild 來建立名為記錄檔*msbuild.log* MSBuild.exe 已叫用的工作目錄中。
-
 
 若要部署或重新部署連絡管理員解決方案，您只需要執行*發佈 Dev.cmd*檔案。 當您執行該檔案時，MSBuild 將會：
 
@@ -99,19 +91,14 @@ ms.locfileid: "59395221"
 
 建立命令檔，其中包含 MSBuild 指示提供您建置和部署到特定目的地環境的多專案方案的快速簡便方式。 如果您要重複多個目的地環境中部署您的解決方案，您可以建立多個的命令檔。 在每個命令檔，MSBuild 命令會建立相同的通用專案檔中，但它會指定不同的環境特定專案的檔案。 例如，發佈給開發人員或測試環境的命令檔可能包含此 MSBuild 命令：
 
-
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample4.cmd)]
-
 
 若要發佈至預備環境的命令檔可能包含此 MSBuild 命令：
 
-
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample5.cmd)]
-
 
 > [!NOTE]
 > 如需如何自訂您自己的伺服器環境的特定環境的專案檔的指引，請參閱 <<c0> [ 設定的目標環境的部署屬性](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md)。
-
 
 您也可以自訂每個環境的建置程序，藉由覆寫屬性，或設定在 MSBuild 命令的各種其他參數。 如需詳細資訊，請參閱 < [MSBuild 命令列參考](https://msdn.microsoft.com/library/ms164311.aspx)。
 

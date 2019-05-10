@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 9e10a700-8d91-4d2e-a31e-b8b569fe867c
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 39629ba404e536b29318db00bce8c4443a782497
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4f76728fa5e4602e35e1b7cb2d41b2245093cad8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411939"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115967"
 ---
 # <a name="configuring-aspnet-web-api-2"></a>設定 ASP.NET Web API 2
 
@@ -45,7 +45,6 @@ Web API 組態設定會定義在[HttpConfiguration](https://msdn.microsoft.com/l
 | **屬性** | 泛型屬性包。 |
 | **路由** | 路由的集合。 請參閱[ASP.NET Web API 中的路由](../web-api-routing-and-actions/routing-in-aspnet-web-api.md)。 |
 | **服務** | 服務集合。 請參閱[Services](#services)。 |
-
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -91,11 +90,9 @@ Web API 組態設定會定義在[HttpConfiguration](https://msdn.microsoft.com/l
 > [!NOTE]
 > **Services**集合不是服務探索或相依性插入的一般用途機制。 它只會儲存 Web API 架構已知的服務類型。
 
-
 **Services**集合已初始化與一組預設的服務，而且您可以提供您自己的自訂實作。 某些服務會支援多個執行個體，而有些則可以有只有一個執行個體。 (不過，您也可以提供在控制器層級的服務，請參閱[每個控制站設定](#percontrollerconfig)。
 
 單一執行個體的服務
-
 
 | 服務 | 描述 |
 | --- | --- |
@@ -116,7 +113,6 @@ Web API 組態設定會定義在[HttpConfiguration](https://msdn.microsoft.com/l
 | **IModelValidatorCache** | 提供模型驗證程式的快取。 |
 
 多個執行個體的服務
-
 
 |                 服務                 |                                                                                                              描述                                                                                                               |
 |-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

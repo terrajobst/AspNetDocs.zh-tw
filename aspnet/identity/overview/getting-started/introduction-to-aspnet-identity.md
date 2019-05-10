@@ -9,18 +9,16 @@ ms.assetid: 38717fc1-5989-43cf-952d-4007cc1dd923
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 34a0d62d7afcaffa8fbac0bc774d9266efb6b165
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0268dfc16cd2cfb1e79ee14997a4c5eb247af950
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413044"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121556"
 ---
 # <a name="introduction-to-aspnet-identity"></a>ASP.NET Identity 簡介
 
-
 > ASP.NET 成員資格系統被引進 ASP.NET 2.0 後在 2005 中，而由於則已有許多變更 web 應用程式通常會處理驗證和授權方式。 ASP.NET 身分識別是成員資格系統應該是什麼當您在建立 web、 手機或平板電腦的現代化應用程式的全新觀點。
-
 
 ## <a name="background-membership-in-aspnet"></a>背景：在 ASP.NET 中的成員資格
 
@@ -122,7 +120,6 @@ ASP.NET 身分識別可在 Visual Studio 2017 專案範本的 ASP.NET MVC、 Web
    如果已成功建立使用者，她會登入`SignInAsync`方法。  
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample6.cs?highlight=12)]
-
 
    `SignInManager.SignInAsync`方法會產生[ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx)。 由於 ASP.NET 身分識別和 OWIN Cookie 驗證以宣告為基礎的系統，framework 就會需要應用程式來產生使用者的 ClaimsIdentity。 ClaimsIdentity 有使用者，例如使用者屬於何種角色的所有宣告的相關資訊。   
  

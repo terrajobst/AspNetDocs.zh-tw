@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 684f0c28-a490-4e5b-b5e5-5dfb77464b49
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-cascadingdropdown-with-a-database-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ef40d71828237a3d086c7c1bb05de56e0770f588
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 706a099042a298f8870f36cb653f1e5d5d156f2a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391269"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125170"
 ---
 # <a name="using-cascadingdropdown-with-a-database-c"></a>使用 CascadingDropDown 搭配資料庫 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59391269"
 [下載程式碼](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown1.cs.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown1CS.pdf)
 
 > 在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。 為了讓此做法能夠運作，必須先建立特殊的 web 服務。
-
 
 ## <a name="overview"></a>總覽
 
@@ -85,11 +84,9 @@ CascadingDropDown 呼叫的 web 方法的簽章如下所示：
 
 載入 ASP.NET 頁面中，並在一段時間後，供應商清單會填入 25 項目。 挑選一個項目，並注意第二個下拉式清單中填入資料的方式。
 
-
 [![第一份清單會自動填入](using-cascadingdropdown-with-a-database-cs/_static/image2.png)](using-cascadingdropdown-with-a-database-cs/_static/image1.png)
 
 第一份清單會自動填入 ([按一下以檢視完整大小的影像](using-cascadingdropdown-with-a-database-cs/_static/image3.png))
-
 
 [![第二個清單是根據第一個清單中的選取範圍填滿](using-cascadingdropdown-with-a-database-cs/_static/image5.png)](using-cascadingdropdown-with-a-database-cs/_static/image4.png)
 

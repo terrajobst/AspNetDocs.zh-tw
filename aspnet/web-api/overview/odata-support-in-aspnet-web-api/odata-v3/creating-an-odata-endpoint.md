@@ -8,12 +8,12 @@ ms.date: 02/25/2014
 ms.assetid: 262843d6-43a2-4f1c-82d9-0b90ae6df0cf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: fa0573738fee8f1decc13c9797f644002931e09d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e31bf3215155b4b45bcf2eb90dd6947caf99b7f8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381490"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125271"
 ---
 # <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>建立 Web API 2 OData v3 端點
 
@@ -35,7 +35,6 @@ ms.locfileid: "59381490"
 > - [Fiddler Web 偵錯 Proxy （選擇性）](http://www.fiddler2.com)
 >
 > 已加入 web API OData 支援[ASP.NET 和 Web 工具 2012.2 Update](https://go.microsoft.com/fwlink/?LinkId=282650)。 不過，本教學課程會使用 Visual Studio 2013 中已加入的 scaffolding。
-
 
 在本教學課程中，您將建立簡單的 OData 端點的用戶端可以查詢。 您也會建立 C# 用戶端端點。 完成本教學課程之後下, 一組教學課程示範如何新增更多的功能，包括實體關聯性，動作，並選取 展開 / $ $。
 
@@ -77,7 +76,6 @@ ms.locfileid: "59381490"
 
 > [!NOTE]
 > 依照慣例，模型類別位於 Models 資料夾中。 您不需要遵循此慣例，在您自己的專案中，但我們將在本教學課程中使用它。
-
 
 在 Product.cs 檔案中，新增下列類別定義：
 

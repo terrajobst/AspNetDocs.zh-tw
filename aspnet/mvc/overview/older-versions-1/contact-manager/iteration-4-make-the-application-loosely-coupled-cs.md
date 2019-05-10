@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 829f589f-e201-4f6e-9ae6-08ae84322065
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8caa88d928517e1c71210cbe55e3961d4baf461a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ce8e3c4ff8a59be9f2f572813db599604216119d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381272"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117794"
 ---
 # <a name="iteration-4--make-the-application-loosely-coupled-c"></a>反覆項目 #4 – 讓應用程式鬆散耦合 (C#)
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 [下載程式碼](iteration-4-make-the-application-loosely-coupled-cs/_static/contactmanager_4_cs1.zip)
 
 > 在這個第四個反覆項目中，我們利用數種軟體設計模式，以讓它更容易維護及修改連絡人管理員應用程式。 比方說，我們可以重構應用程式使用儲存機制模式和相依性插入模式。
-
 
 ## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>建立連絡人管理 ASP.NET MVC 應用程式 (C#)
 
@@ -54,7 +53,6 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > (SRP)，類別應該永遠不會有一個以上的理由来變更。 混合控制站、 驗證和資料庫的邏輯是大規模 Single Responsibility Principle 的違規情形。
 
-
 有幾個原因，您可能需要修改您的應用程式。 您可能需要將您的應用程式的新功能，您可能需要修正您的應用程式中的錯誤或您可能需要修改您的應用程式的一項功能的實作方式。 應用程式很少是靜態。 它們通常會成長，並隨著時間變動。
 
 例如，假設您決定要變更您的資料存取層的實作方式。 權限現在，連絡人管理員應用程式會使用 Microsoft Entity Framework 來存取資料庫。 不過，您可能會決定要移轉至新的或替代的資料存取技術，例如 ADO.NET Data Services 或 NHibernate。 不過，因為資料存取程式碼不是分開的驗證和控制站的程式碼，就無法修改資料存取程式碼，在您的應用程式，而不需要修改與資料存取不直接相關的其他程式碼。
@@ -66,7 +64,6 @@ by [Microsoft](https://github.com/microsoft)
 > [!NOTE] 
 > 
 > 重構是重寫的方式，它不會遺失任何現有的功能中的應用程式的程序。
-
 
 ## <a name="using-the-repository-software-design-pattern"></a>使用存放庫的軟體設計模式
 
@@ -105,7 +102,6 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > 您可以選取功能表選項重構，擷取介面，即可從 Visual Studio 內的具象類別中快速建立介面。 比方說，您可以先建立 EntityContactManagerRepository 類別，，然後使用自動產生 IContactManagerRepository 介面的 擷取介面。
 
-
 ## <a name="using-the-dependency-injection-software-design-pattern"></a>使用相依性插入軟體設計模式
 
 既然我們已移轉資料存取程式碼的不同的儲存機制類別，我們需要修改連絡人控制器使用這個類別。 我們會利用呼叫控制器中使用的儲存機制類別的相依性插入軟體設計模式。
@@ -127,7 +123,6 @@ by [Microsoft](https://github.com/microsoft)
 > [!NOTE] 
 > 
 > 如果您想要完全解除 IContactManagerRepository 介面的特定實作的連絡人控制器類別然後您可以利用架構，可支援例如 StructureMap 或 Microsoft 的相依性插入Entity Framework (MEF)。 利用相依性插入架構，您永遠不需要參考程式碼中的具象類別。
-
 
 ## <a name="creating-a-service-layer"></a>建立服務層
 

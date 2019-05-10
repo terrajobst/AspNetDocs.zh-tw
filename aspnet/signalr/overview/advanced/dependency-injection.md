@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: a14121ae-02cf-4024-8af0-9dd0dc810690
 msc.legacyurl: /signalr/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 1b5d36529b52dfcbebf34cbfa230b3b3b4e83b81
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 52978b10b6c131ac8eff4535216cc60b43fdf3de
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405374"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120110"
 ---
 # <a name="dependency-injection-in-signalr"></a>SignalR 中的相依性插入
 
@@ -37,7 +37,6 @@ ms.locfileid: "59405374"
 > ## <a name="questions-and-comments"></a>提出問題或意見
 >
 > 您喜歡本教學課程中的方式，和我們可以改善在頁面底部的註解中，歡迎留下意見反應。 如果您有不直接相關的教學課程中的問題，您可以張貼他們[ASP.NET SignalR 論壇](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或是[StackOverflow.com](http://stackoverflow.com/)。
-
 
 相依性插入是移除硬式編碼物件，方便您將物件的相依性，針對測試 （使用模擬 （mock） 物件），或變更執行階段行為之間的相依性的方法。 本教學課程會示範如何對 SignalR 中樞的相依性插入。 它也會示範如何使用 SignalR 使用 IoC 容器。 IoC 容器是一般架構的相依性插入。
 
@@ -93,7 +92,6 @@ ms.locfileid: "59405374"
 
 > [!NOTE]
 > 「 IoC 」 代表 「 的控制項反轉 」，這是一種架構會呼叫應用程式程式碼的一般模式。 IoC 容器建構您的物件，其中 「 反轉 」 一般控制流程。
-
 
 ## <a name="using-ioc-containers-in-signalr"></a>使用 signalr 的 IoC 容器
 

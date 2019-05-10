@@ -8,12 +8,12 @@ ms.date: 08/19/2008
 ms.assetid: eb35710d-1d99-44ac-b61f-e50af8cb328a
 msc.legacyurl: /mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 47d42b8017837f15e0d56dfb3565257164c97bbe
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c97d202c702253f2ff79a70c1d6e43b11999ea14
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421026"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117268"
 ---
 # <a name="creating-unit-tests-for-aspnet-mvc-applications-vb"></a>建立 ASP.NET MVC 應用程式的單元測試 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59421026"
 [下載 PDF](http://download.microsoft.com/download/8/4/8/84843d8d-1575-426c-bcb5-9d0c42e51416/ASPNET_MVC_Tutorial_07_VB.pdf)
 
 > 了解如何建立適用於控制器動作的單元測試。 在本教學課程中，Stephen Walther 會示範如何將測試控制器動作傳回的特定檢視，傳回一組特定的資料，或傳回不同類型的動作結果。
-
 
 本教學課程的目的在於示範如何撰寫單元測試的控制站在您的 ASP.NET MVC 應用程式。 我們會討論如何建置三種不同的單元測試。 您將了解如何在測試控制器動作所傳回之檢視、 如何在測試控制器動作，所傳回的檢視資料以及如何測試或有一個控制器動作會將您導向第二個控制器動作。
 
@@ -58,16 +57,13 @@ ms.locfileid: "59421026"
 
 您也可以輸入鍵盤組合在列表 2 中執行單元測試**CTRL-R、 A**或按一下**執行方案中的所有測試**按鈕 （請參閱 圖 1）。 如果測試成功，您會看到 [圖 2] 中的 [測試結果] 視窗。
 
-
 [![在方案中執行所有測試](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image2.png)](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image1.png)
 
 **圖 01**:在方案中執行所有測試 ([按一下以檢視完整大小的影像](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image3.png))
 
-
 [![成功 ！](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image5.png)](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image4.png)
 
 **圖 02**:成功！ ([按一下以檢視完整大小的影像](creating-unit-tests-for-asp-net-mvc-applications-vb/_static/image6.png))
-
 
 ## <a name="testing-the-view-data-returned-by-a-controller"></a>測試檢視資料傳回的控制站
 

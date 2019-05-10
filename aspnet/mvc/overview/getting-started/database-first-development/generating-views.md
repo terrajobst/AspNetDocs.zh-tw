@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 669367cf-8e30-4eb6-821d-10a7d9bb906c
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/generating-views
 msc.type: authoredcontent
-ms.openlocfilehash: 7a56c0f9197a99427bcde6103ebc69d245e8ce63
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: e71e13e22d8a72e1699cfc70d4d93af603edba5b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57025755"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121232"
 ---
 # <a name="tutorial-generate-views-for-ef-database-first-with-aspnet-mvc-app"></a>教學課程：產生檢視 EF Database First 與 ASP.NET MVC 應用程式
 
@@ -51,7 +51,6 @@ ms.locfileid: "57025755"
 如果您收到錯誤，可能是因為您並未建置在上一節中的專案。 如果是的話，請嘗試建置專案，，然後再次新增 scaffold 項目。
 
 程式碼產生程序完成之後，您會在您的專案中看到新的控制器和檢視**控制器**並**檢視** > **學生**資料夾.
-
 
 同樣地，執行相同的步驟，但將的 scaffold**註冊**類別。 完成後，您會有**EnrollmentsController.cs**檔案和資料夾之下**檢視**名為**註冊**與 Create、 Delete、 詳細資料、 編輯和索引檢視。
 

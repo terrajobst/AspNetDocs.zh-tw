@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 28ad8f80-b8a5-444e-b478-8b15a846060c
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 68080859e205283f56d8f543bfa06b76bb22a39d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 32e81cce34a0e0b1f6b01934334e1b66dce89651
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408858"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123923"
 ---
 # <a name="iteration-5--create-unit-tests-c"></a>反覆項目 #5 – 建立單元測試 (C#)
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 [下載程式碼](iteration-5-create-unit-tests-cs/_static/contactmanager_5_cs1.zip)
 
 > 在第五個反覆項目中，我們讓我們的應用程式容易維護及修改藉由新增單元測試。 我們模擬我們的資料模型類別，並建置我們的控制器和驗證邏輯單元測試。
-
 
 ## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>建立連絡人管理 ASP.NET MVC 應用程式 (C#)
 
@@ -43,7 +42,6 @@ by [Microsoft](https://github.com/microsoft)
 - 反覆項目 #6-使用測試導向開發。 在這個第六個反覆項目中，我們新功能加入我們的應用程式方法是先撰寫單元測試，並撰寫單元測試的程式碼。 在這個反覆項目，我們會新增連絡人群組。
 
 - 反覆項目 #7-新增 Ajax 功能。 在第七個反覆項目，改善回應性和我們的應用程式的效能透過新增對 Ajax 支援。
-
 
 ## <a name="this-iteration"></a>這個反覆項目
 
@@ -69,7 +67,6 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > 有各種不同的單元測試架構，包括 NUnit、 xUnit.net 和 MbUnit。 在本教學課程中，我們使用的單元測試架構隨附於 Visual Studio。 不過，您可以輕鬆地使用其中一種替代的架構。
 
-
 ## <a name="what-gets-tested"></a>接受測試的基準
 
 在完美的世界中，會受到您的程式碼的所有單元測試。 在完美的世界中，您會有完美的安全網。 您可以修改任何一行程式碼，在您的應用程式，並立即知道，藉由執行您的單元測試變更是否中斷現有的功能。
@@ -88,11 +85,9 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > 雖然撰寫測試的資料存取邏輯，或檢視邏輯不是個不錯的主意撰寫單元測試時，這些測試可以是非常重要，建置功能或整合測試時。
 
-
 > [!NOTE] 
 > 
 > ASP.NET MVC 是 Web Form 檢視引擎。 Web Form 檢視引擎相依於 web 伺服器時，可能不是其他檢視引擎。
-
 
 ## <a name="using-a-mock-object-framework"></a>使用模擬 （mock） 物件架構
 
@@ -116,16 +111,13 @@ Visual Studio 不會包含一個模擬物件架構。 不過，有數個商業�
 4. Moq 組件參考加入 ContactManager.Tests 專案中的 [參考] 資料夾上按一下滑鼠右鍵，然後選取**加入參考**。 在 [瀏覽] 索引標籤中，瀏覽至您解壓縮 Moq 資料夾並選取 Moq.dll 組件。 按一下 [**確定**] 按鈕。
 5. 完成這些步驟之後，您的 [參考] 資料夾看起來應該像圖 2。
 
-
 [![解除封鎖 Moq](iteration-5-create-unit-tests-cs/_static/image1.jpg)](iteration-5-create-unit-tests-cs/_static/image1.png)
 
 **圖 01**:解除封鎖 Moq ([按一下以檢視完整大小的影像](iteration-5-create-unit-tests-cs/_static/image2.png))
 
-
 [![新增 Moq 之後的參考](iteration-5-create-unit-tests-cs/_static/image2.jpg)](iteration-5-create-unit-tests-cs/_static/image3.png)
 
 **圖 02**:新增 Moq 之後的參考 ([按一下以檢視完整大小的影像](iteration-5-create-unit-tests-cs/_static/image4.png))
-
 
 ## <a name="creating-unit-tests-for-the-service-layer"></a>建立服務層的單元測試
 
@@ -137,11 +129,9 @@ Visual Studio 不會包含一個模擬物件架構。 不過，有數個商業�
 > 
 > 一般情況下，您會想測試專案，以符合您的 ASP.NET MVC 專案的資料夾結構的資料夾結構。 例如，您將測試控制器放在 Controllers 資料夾中，在 [模型] 資料夾中，模型測試等等。
 
-
 [![Models\ContactManagerServiceTest.cs](iteration-5-create-unit-tests-cs/_static/image3.jpg)](iteration-5-create-unit-tests-cs/_static/image5.png)
 
 **圖 03**:Models\ContactManagerServiceTest.cs([Click to view full-size image](iteration-5-create-unit-tests-cs/_static/image6.png))
-
 
 一開始，我們想要測試 ContactManagerService 類別所公開的 CreateContact() 方法。 我們將建立下列五個測試：
 
@@ -159,9 +149,7 @@ Visual Studio 不會包含一個模擬物件架構。 不過，有數個商業�
 
 [!code-csharp[Main](iteration-5-create-unit-tests-cs/samples/sample1.cs)]
 
-
 因為我們使用列表 1 中的 Contact 類別，我們需要將 Microsoft Entity Framework 的參考新增至我們的測試專案。 加入 System.Data.Entity 組件的參考。
-
 
 列表 1 包含一個名為 [TestInitialize] 屬性裝飾的 initialize （） 方法。 每個單元測試執行之前自動呼叫這個方法 （它每個單元測試之前稱為 5 次）。 Initialize （） 方法會使用下列程式碼行建立模擬的儲存機制：
 
@@ -173,7 +161,6 @@ Visual Studio 不會包含一個模擬物件架構。 不過，有數個商業�
 > 
 > 當使用 Moq 架構，是區分\_mockRepository 和\_mockRepository.Object。 前者是指 Mock&lt;IContactManagerRepository&gt;類別，其中包含方法來指定模擬的儲存機制的行為模式為何。 後者是指實際模擬儲存機制實作 IContactManagerRepository 介面。
 
-
 模擬儲存機制會在 initialize （） 方法中，建立 ContactManagerService 類別的執行個體時。 所有個別的單元測試使用 ContactManagerService 類別執行個體。
 
 列表 1 包含五個對應至每個單元測試的方法。 每一種方法是以 [TestMethod] 屬性裝飾。 當您執行單元測試時，任何包含這個屬性會呼叫方法。 換句話說，以 [TestMethod] 屬性裝飾的任何方法都是單元測試。
@@ -184,11 +171,9 @@ Visual Studio 不會包含一個模擬物件架構。 不過，有數個商業�
 
 您也可以選取功能表選項列表 1 中執行單元測試**測試執行時，解決方案 （CTRL + R、 A） 中的所有測試**。 測試的結果會顯示在 測試結果 視窗 （請參閱 圖 4）。
 
-
 [![測試結果](iteration-5-create-unit-tests-cs/_static/image4.jpg)](iteration-5-create-unit-tests-cs/_static/image7.png)
 
 **圖 04**:測試結果 ([按一下以檢視完整大小的影像](iteration-5-create-unit-tests-cs/_static/image8.png))
-
 
 ## <a name="creating-unit-tests-for-controllers"></a>建立控制器的單元測試
 
@@ -212,7 +197,6 @@ ASP.NETMVC 應用程式會控制流程的使用者互動。 在測試控制器�
 
 如果 create （） 方法的行為如我們所預期它應該傳回建立檢視時的服務層會傳回 false 值。 如此一來，控制器可以顯示驗證錯誤訊息中建立檢視和使用者有機會先行修正該無效的連絡人屬性。
 
-
 如果您打算建置您的控制站的單元測試您需要從控制器動作傳回明確的檢視表名稱。 比方說，不會傳回如下的檢視：
 
 傳回 View();
@@ -222,7 +206,6 @@ ASP.NETMVC 應用程式會控制流程的使用者互動。 在測試控制器�
 傳回 View("Create");
 
 如果您不是明確傳回檢視時 ViewResult.ViewName 屬性就會傳回空字串。
-
 
 **Listing 2 - Controllers\ContactControllerTest.cs**
 

@@ -8,12 +8,12 @@ ms.date: 12/18/2012
 ms.assetid: 71ee4c78-c500-4d1c-b761-b4e161a291b5
 msc.legacyurl: /web-api/overview/security/integrated-windows-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: ce845eb6c914321736d77e989f10344eb7596eba
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e4f31f191f3c0fabff308ea5dadb0f1d9ce7d448
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59416827"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125206"
 ---
 # <a name="integrated-windows-authentication"></a>整合式 Windows 驗證
 
@@ -27,7 +27,6 @@ ms.locfileid: "59416827"
 
 > [!NOTE]
 > 如果您的應用程式裝載在 Azure 上，而您有內部部署 Active Directory 網域，請考慮建立您的內部部署 AD 與 Azure Active Directory 同盟。 如此一來，使用者可以登入他們的內部部署認證，但由 Azure AD 執行驗證。 如需詳細資訊，請參閱 < [Azure Authentication](../../../visual-studio/overview/2012/windows-azure-authentication.md)。
-
 
 若要建立使用整合式 Windows 驗證的應用程式，選取 [MVC 4 專案精靈] 中的 「 內部網路應用程式 」 範本。 這個專案範本會置於 Web.config 檔案中的下列設定：
 

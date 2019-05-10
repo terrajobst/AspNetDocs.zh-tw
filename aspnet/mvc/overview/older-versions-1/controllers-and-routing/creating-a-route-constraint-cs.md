@@ -8,19 +8,18 @@ ms.date: 02/16/2009
 ms.assetid: 0bfd06b1-12d3-4fbb-9779-a82e5eb7fe7d
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 42c0ce5e158e2fe9387ac218ac0762b6362094f9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 51ef859287b3424faf85f4a3606a220ab48a9466
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389567"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123438"
 ---
 # <a name="creating-a-route-constraint-c"></a>建立路由條件約束 (C#)
 
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > 在本教學課程中，Stephen Walther 會示範如何控制瀏覽器使用規則運算式中建立路由條件約束所要求的相符項目路由。
-
 
 您可以使用路由條件約束來限制瀏覽器會要求符合特定的路由。 您可以使用規則運算式來指定路由條件約束。
 
@@ -50,11 +49,9 @@ ms.locfileid: "59389567"
 
 由於 Details() 動作預期整數參數，提出要求，其中包含整數值以外的項目會造成錯誤。 比方說，如果您的瀏覽器中輸入 URL /Product/apple 然後就會出現錯誤頁面 [圖 1] 中。
 
-
 [![[新增專案] 對話方塊](creating-a-route-constraint-cs/_static/image1.jpg)](creating-a-route-constraint-cs/_static/image1.png)
 
 **圖 01**:看到頁面，explode ([按一下以檢視完整大小的影像](creating-a-route-constraint-cs/_static/image2.png))
-
 
 您真的要做什麼是只比對包含適當的整數 productId 的 Url。 可以使用條件約束定義的路由時，來限制路由相符的 Url。 修改的產品路由列表 3 中包含的規則運算式條件約束，只會比對整數。
 

@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: 11de31e8-a78a-4f96-bd75-66e994175902
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2e74327b6bcc84df1f341523c305dae9e5205dfd
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 753983b51a6b35718bfd3afb771382304583737b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408741"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119608"
 ---
 # <a name="using-templatefields-in-the-gridview-control-c"></a>在 GridView 控制項中使用 TemplateFields (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59408741"
 [下載範例應用程式](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_12_CS.exe)或[下載 PDF](using-templatefields-in-the-gridview-control-cs/_static/datatutorial12cs1.pdf)
 
 > 為了提供彈性，GridView 會提供 TemplateField，會呈現使用範本。 範本可以包含混合的靜態 HTML Web 控制項及資料繫結語法。 在本教學課程中，我們將檢驗如何使用 TemplateField 達到更高的自訂與 GridView 控制項。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -36,11 +35,9 @@ GridView 提供 TemplateField，會呈現使用以容納此程度的彈性*範�
 
 在本教學課程中，我們將使用 TemplateFields 自訂的員工清單的外觀。 具體來說，我們會列出所有員工，但會顯示員工的名字和姓氏的名稱，在一個資料行、 在日曆控制項，以及 [狀態] 欄，指出多少天後他們已被採用公司雇用日期。
 
-
 [![可用來自訂顯示三個 TemplateFields](using-templatefields-in-the-gridview-control-cs/_static/image2.png)](using-templatefields-in-the-gridview-control-cs/_static/image1.png)
 
 **圖 1**:可用來自訂顯示三個 TemplateFields ([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image3.png))
-
 
 ## <a name="step-1-binding-the-data-to-the-gridview"></a>步驟 1：資料繫結至 GridView
 
@@ -48,11 +45,9 @@ GridView 提供 TemplateField，會呈現使用以容納此程度的彈性*範�
 
 開啟`GridViewTemplateField.aspx`頁面上，然後從 [工具箱] 拖曳至設計工具拖曳的 GridView。 從 GridView 的智慧標籤選擇 加入新的 ObjectDataSource 控制項叫用`EmployeesBLL`類別的`GetEmployees()`方法。
 
-
 [![加入新的 ObjectDataSource 控制項叫用 GetEmployees() 方法](using-templatefields-in-the-gridview-control-cs/_static/image5.png)](using-templatefields-in-the-gridview-control-cs/_static/image4.png)
 
 **圖 2**:加入新的 ObjectDataSource 控制項該 Invokes`GetEmployees()`方法 ([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image6.png))
-
 
 這種方式中的繫結 GridView 會自動將新增 BoundField 的每個員工的屬性： `EmployeeID`， `LastName`， `FirstName`， `Title`， `HireDate`， `ReportsTo`，和`Country`。 這份報告讓我們不需要考慮顯示`EmployeeID`， `ReportsTo`，或`Country`屬性。 若要移除這些 BoundFields 中，您可以：
 
@@ -61,16 +56,13 @@ GridView 提供 TemplateField，會呈現使用以容納此程度的彈性*範�
 
 已移除之後`EmployeeID`， `ReportsTo`，和`Country`BoundFields，GridView 的標記看起來應該像：
 
-
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample1.aspx)]
 
 請花一點時間瀏覽器中檢視進度。 此時應該會看到含有記錄資料表每一位員工和四個資料行： 一個用於員工的姓氏，一個用於他們的名字、 標題，其中，一個用於其雇用日期。
 
-
 [![LastName、 FirstName、 標題和 HireDate 欄位會顯示每個員工](using-templatefields-in-the-gridview-control-cs/_static/image8.png)](using-templatefields-in-the-gridview-control-cs/_static/image7.png)
 
 **圖 3**:`LastName`， `FirstName`， `Title`，以及`HireDate`欄位會顯示每個員工 ([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image9.png))
-
 
 ## <a name="step-2-displaying-the-first-and-last-names-in-a-single-column"></a>步驟 2：在 單一資料行中顯示的第一個和最後一個名稱
 
@@ -80,14 +72,11 @@ GridView 提供 TemplateField，會呈現使用以容納此程度的彈性*範�
 
 若要轉換為 TemplateField 現有 BoundField，請按一下 GridView 的智慧標籤，啟動 [欄位] 對話方塊中的 [編輯資料行] 連結。 選取來源檔的清單中較低的左上角，然後按一下 在右下角的"轉換為 TemplateField 到這個欄位 」 連結 BoundField。
 
-
 [![BoundField 轉換從 [欄位] 對話方塊中的 TemplateField](using-templatefields-in-the-gridview-control-cs/_static/image11.png)](using-templatefields-in-the-gridview-control-cs/_static/image10.png)
 
 **圖 4**:從 [欄位] 對話方塊中轉換為 BoundField 到 TemplateField ([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image12.png))
 
-
 請繼續進行，並將轉換`FirstName`BoundField TemplateField 到。 這項變更之後並無差別 perceptive 設計工具中。 這是因為轉換為 TemplateField BoundField 建立維護的外觀與風格 BoundField TemplateField。 儘管那里沒有視覺化差異在此時設計工具中的，此轉換程序已取代 BoundField 的宣告式語法- `<asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />` -使用下列的 TemplateField 語法：
-
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample2.aspx)]
 
@@ -95,63 +84,48 @@ TemplateField 如您所見，包含兩個範本`ItemTemplate`具有標籤的`Tex
 
 若要新增`LastName`資料欄位值為此我們需要加入另一個 Label Web 控制項中的 TemplateField`ItemTemplate`並繫結其`Text`屬性設`LastName`。 這可以是以手動方式或透過設計工具完成。 若要以手動方式執行，只要新增適當的宣告式語法， `ItemTemplate`:
 
-
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample3.aspx)]
 
 若要將它加入透過設計工具中，按一下從 GridView 的智慧標籤的 [編輯範本] 連結。 這會顯示 GridView 的範本編輯介面。 在此介面的智慧標籤是一份 GridView 中的範本。 因為我們只需要一個 TemplateField 此時，只有列在下拉式清單中的範本會針對這些範本`FirstName`連同 TemplateField`EmptyDataTemplate`和`PagerTemplate`。 `EmptyDataTemplate`範本，如果指定，會用來呈現 GridView 的輸出，如果資料繫結至 GridView; 中沒有任何結果`PagerTemplate`，如果指定，用來呈現的 GridView 會支援分頁的分頁介面。
-
 
 [![GridView 的範本可以透過設計工具進行編輯](using-templatefields-in-the-gridview-control-cs/_static/image14.png)](using-templatefields-in-the-gridview-control-cs/_static/image13.png)
 
 **圖 5**:GridView 的範本可以是編輯透過設計工具 ([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image15.png))
 
-
 若也要顯示`LastName`中`FirstName`TemplateField 拖曳 Label 控制項從工具箱拖曳到`FirstName`TemplateField 的`ItemTemplate`GridView 裡的範本編輯介面。
-
 
 [![將標籤 Web 控制項加入 FirstName TemplateField 的 ItemTemplate](using-templatefields-in-the-gridview-control-cs/_static/image17.png)](using-templatefields-in-the-gridview-control-cs/_static/image16.png)
 
 **圖 6**:加入標籤 Web 控制項來`FirstName`TemplateField 的 ItemTemplate ([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image18.png))
 
-
 此時加入 TemplateField 標籤 Web 控制項有其`Text`屬性設定為 「 標籤 」。 我們要使這個屬性繫結至的值，請變更此`LastName`資料改為欄位。 若要完成此標籤控制項的智慧標籤上按一下，然後選擇 [編輯資料繫結] 選項。
-
 
 [![從標籤的智慧標籤中選擇 編輯資料繫結選項](using-templatefields-in-the-gridview-control-cs/_static/image20.png)](using-templatefields-in-the-gridview-control-cs/_static/image19.png)
 
 **圖 7**:從標籤的智慧標籤中選擇 編輯資料繫結選項 ([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image21.png))
 
-
 這會顯示資料繫結 對話方塊。 從這裡您可以選取要參與資料繫結，從左側清單，然後選擇 繫結至資料，從下拉式清單，右側欄位的屬性。 選擇`Text`左邊的屬性和`LastName`欄位的右邊，然後按一下 [確定]。
-
 
 [![文字屬性繫結到 LastName 資料欄位](using-templatefields-in-the-gridview-control-cs/_static/image23.png)](using-templatefields-in-the-gridview-control-cs/_static/image22.png)
 
 **圖 8**:繫結`Text`屬性，以`LastName`資料欄位 ([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image24.png))
 
-
 > [!NOTE]
 > DataBindings 對話方塊可讓您指出是否要執行雙向資料繫結。 如果將此選項保留未核取的資料繫結語法`<%# Eval("LastName")%>`而不是用於將`<%# Bind("LastName")%>`。 本教學課程中，兩種方法是正常的。 雙向資料繫結就變得重要插入及編輯資料時。 只顯示資料，不過，兩種方法將同樣適用。 在未來的教學課程中，我們將討論在詳細資料中的雙向資料繫結。
 
-
 請花一點時間才能檢視此頁面，透過瀏覽器。 如您所見，GridView 仍然會包含四個資料行;不過，`FirstName`資料行現在會列出*兩者*`FirstName`和`LastName`資料欄位值。
-
 
 [![FirstName 和 LastName 值會顯示單一資料行中](using-templatefields-in-the-gridview-control-cs/_static/image26.png)](using-templatefields-in-the-gridview-control-cs/_static/image25.png)
 
 **圖 9**:同時`FirstName`並`LastName`值會顯示單一資料行中 ([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image27.png))
 
-
 若要完成此第一個步驟，移除`LastName`BoundField 和重新命名`FirstName`TemplateField 的`HeaderText`"Name"屬性。 在這些變更之後 GridView 的宣告式標記看起來應該如下所示：
 
-
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample4.aspx)]
-
 
 [![每位員工的第一個和最後一個的名稱會顯示在一個資料行](using-templatefields-in-the-gridview-control-cs/_static/image29.png)](using-templatefields-in-the-gridview-control-cs/_static/image28.png)
 
 **圖 10**:每位員工的第一個和最後一個的名稱會顯示在一個資料行 ([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image30.png))
-
 
 ## <a name="step-3-using-the-calendar-control-to-display-thehireddatefield"></a>步驟 3：使用行事曆控制項顯示`HiredDate`欄位
 
@@ -159,47 +133,37 @@ TemplateField 如您所見，包含兩個範本`ItemTemplate`具有標籤的`Tex
 
 若要達成此目的，先轉換`HiredDate`BoundField TemplateField 到。 只要移至 GridView 的智慧標籤，然後按一下 [編輯資料行] 連結，啟動 [欄位] 對話方塊。 選取`HiredDate`BoundField，然後按一下 」 這個欄位轉換為 TemplateField。 」
 
-
 [![HiredDate BoundField 轉換為 TemplateField](using-templatefields-in-the-gridview-control-cs/_static/image32.png)](using-templatefields-in-the-gridview-control-cs/_static/image31.png)
 
 **圖 11**:轉換`HiredDate`TemplateField 到 BoundField ([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image33.png))
-
 
 如我們在步驟 2 中所見的這樣會取代 BoundField 包含 TemplateField`ItemTemplate`並`EditItemTemplate`其標籤與文字方塊使用其`Text`屬性繫結至`HiredDate`值使用的資料繫結語法`<%# Bind("HiredDate")%>`.
 
 若要使用日曆控制項中取代的文字，請移除標籤，並新增日曆控制項中編輯範本。 從設計工具中，選取 從 GridView 的智慧標籤的 編輯範本，然後選擇`HireDate`TemplateField 的`ItemTemplate`從下拉式清單。 接下來，刪除標籤控制項，並將日曆控制項從 工具箱 拖曳至 範本的編輯介面。
 
-
 [![加入行事曆控制項來 HireDate TemplateField 的 ItemTemplate](using-templatefields-in-the-gridview-control-cs/_static/image35.png)](using-templatefields-in-the-gridview-control-cs/_static/image34.png)
 
 **圖 12**:加入行事曆控制項來`HireDate`TemplateField 的`ItemTemplate`([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image36.png))
-
 
 此時在 gridview 裡的每個資料列會包含中的 Calendar 控制項其`HiredDate`TemplateField。 不過，員工的實際`HiredDate`日曆控制項，造成每個預設為顯示目前的月份和日期的日曆控制項中未設定值任何位置。 若要解決此問題，我們需要指派每一位員工`HiredDate`行事曆控制項[SelectedDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selecteddate(VS.80).aspx)並[VisibleDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.visibledate(VS.80).aspx)屬性。
 
 從行事曆控制項的智慧標籤上，選擇 [編輯資料繫結]。 接下來，繫結兩者`SelectedDate`並`VisibleDate`屬性，以`HiredDate`資料欄位。
 
-
 [![SelectedDate 和 VisibleDate 屬性繫結至 HiredDate 資料欄位](using-templatefields-in-the-gridview-control-cs/_static/image38.png)](using-templatefields-in-the-gridview-control-cs/_static/image37.png)
 
 **圖 13**:繫結`SelectedDate`並`VisibleDate`屬性，以`HiredDate`資料欄位 ([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image39.png))
 
-
 > [!NOTE]
 > 日曆控制項選取的日期不一定需要顯示。 例如，行事曆可能有 1 年 8 月<sup>st</sup>，1999 做為選取的日期，但會顯示在目前的月份和年份。 月曆控制項的指定選取的日期和可見日期`SelectedDate`和`VisibleDate`屬性。 因為我們想要同時選取員工`HiredDate`，並確定它會顯示我們需要將這兩個屬性要繫結`HireDate`資料欄位。
 
-
 檢視時的網頁瀏覽器中，行事曆現在會顯示員工的雇用日期的月份，並選取該特定的日期。
-
 
 [![日曆控制項中顯示員工的 HiredDate](using-templatefields-in-the-gridview-control-cs/_static/image41.png)](using-templatefields-in-the-gridview-control-cs/_static/image40.png)
 
 **圖 14**:員工`HiredDate`顯示日曆控制項中 ([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image42.png))
 
-
 > [!NOTE]
 > 相對於所有範例中我們見到目前為止，本教學課程中我們*未*設定`EnableViewState`屬性設`false`針對此 GridView。 此決策的原因是因為按一下日期的日曆控制項造成回傳，行事曆選取的日期設定為僅需要按一下日期。 GridView 的檢視狀態已停用，不過，在每次回傳 GridView 的資料會重新繫結至其基礎的資料來源，這會導致的行事曆選取的日期設定*回復*員工`HireDate`、 覆寫由使用者選擇日期。
-
 
 本教學課程中這是無意義的討論區因為使用者不能更新員工的`HireDate`。 它可能會設定月曆控制項，使其日期不能選取最理想的做法。 不論如何，本教學課程會示範在某些情況下檢視狀態必須啟用才能提供特定功能。
 
@@ -218,21 +182,17 @@ TemplateFields 第三個使用中顯示的 GridView 有關的中繼資料基礎�
 
 為了說明這個概念，讓我們來加強我們的教學課程，以顯示列出員工已在工作總天數的資料行。 此格式的方法將會在採取`Northwind.EmployeesRow`物件，並傳回的員工已採用字串形式的天數。 這個方法可以加入至 ASP.NET 網頁的程式碼後置類別，但*必須*標示為`protected`或`public`才能存取從該範本。
 
-
 [!code-csharp[Main](using-templatefields-in-the-gridview-control-cs/samples/sample5.cs)]
 
 由於`HiredDate`欄位可以包含`NULL`資料庫的值，我們必須先確定值不是`NULL`再繼續進行計算。 如果`HiredDate`值是`NULL`，我們只會傳回字串 「 未知 」; 如果不是`NULL`，我們會計算目前時間之間的差異和`HiredDate`值，並傳回的天數。
 
 若要利用這個方法，我們需要從使用資料繫結語法 GridView 中的 TemplateField 叫用它。 啟動新的 TemplateField 加入按一下 GridView 的智慧標籤中的 [編輯資料行] 連結，並加入新的 TemplateField GridView。
 
-
 [![加入新的 TemplateField 至 GridView](using-templatefields-in-the-gridview-control-cs/_static/image44.png)](using-templatefields-in-the-gridview-control-cs/_static/image43.png)
 
 **圖 15**:加入新的 TemplateField 至 GridView ([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image45.png))
 
-
 設定這個新的 TemplateField `HeaderText` 「 天上作業 」 的屬性並將其`ItemStyle`的`HorizontalAlign`屬性設`Center`。 若要呼叫`DisplayDaysOnJob`方法，從範本中，新增`ItemTemplate`，並使用下列資料繫結語法：
-
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample6.aspx)]
 
@@ -241,21 +201,17 @@ TemplateFields 第三個使用中顯示的 GridView 有關的中繼資料基礎�
 > [!NOTE]
 > 或者，而不是傳入`EmployeesRow`執行個體，我們可以只使用傳入`HireDate`值使用`<%# DisplayDaysOnJob(Eval("HireDate")) %>`。 不過，`Eval`方法會傳回`object`，因此我們必須變更我們`DisplayDaysOnJob`接受類型的輸入的參數的方法簽章`object`，改為。 我們不能盲目地轉型`Eval("HireDate")`呼叫`DateTime`因為`HireDate`中的資料行`Employees`資料表可以包含`NULL`值。 因此，我們需要接受`object`做為輸入的參數`DisplayDaysOnJob`方法，檢查是否有資料庫`NULL`值 (這可以使用來完成`Convert.IsDBNull(objectToCheck)`)，視情況繼續執行。
 
-
 由於這些微妙之處，我選擇將整個`EmployeesRow`執行個體。 在下一個教學課程中，我們將看到使用的多個調整範例`Eval("columnName")`傳入的格式化方法的輸入的參數的語法。
 
 下圖顯示的宣告式語法的我們 GridView TemplateField 新增之後，`DisplayDaysOnJob`方法呼叫從`ItemTemplate`:
-
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample7.aspx)]
 
 [圖 16] 顯示已完成的教學課程中，透過瀏覽器檢視時。
 
-
 [![員工已在工作的日期數字顯示](using-templatefields-in-the-gridview-control-cs/_static/image47.png)](using-templatefields-in-the-gridview-control-cs/_static/image46.png)
 
 **圖 16**:員工已在工作上顯示的天數數目 ([按一下以檢視完整大小的影像](using-templatefields-in-the-gridview-control-cs/_static/image48.png))
-
 
 ## <a name="summary"></a>總結
 

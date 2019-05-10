@@ -8,15 +8,14 @@ ms.date: 01/15/2019
 ms.assetid: 03960de2-8d95-4444-9169-4426dcc64913
 msc.legacyurl: /signalr/overview/guide-to-the-api/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: 9e6b0b3b86839efa393659531d8b74770226f383
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5bdf20549fccab5d644e35fdf4ce351540c8620d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401461"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119889"
 ---
 # <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>了解及處理 SignalR 的連線存留期事件
-
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
@@ -148,7 +147,6 @@ API 參考主題的連結是 API 的.NET 4.5 版本。 如果您使用.NET 4，�
 >
 > **重要**：此處所述的事件的順序並不保證。 SignalR 會不斷嘗試以便引發連線存留期事件，此配置中，根據可預測的方式，但有許多變化的網路事件和多種資訊，請在其中基礎的通訊架構，例如傳輸 Api 處理它們。 例如，`Reconnected`可能不會引發事件，當用戶端重新連接，或`OnConnected`建立的連線嘗試不成功時，可能會執行伺服器上的處理常式。 本主題說明某些常見的情況下將通常會產生的效果。
 
-
 <a id="clientdisconnect"></a>
 
 ### <a name="client-disconnection-scenarios"></a>用戶端中斷連線的案例
@@ -247,7 +245,6 @@ SignalR 第 2 版並沒有內建的伺服器 API 的用戶端連接中斷。 有
 
 > [!WARNING]
 > 安全性-既不中斷用戶端連接此方法也不建議的內建 API 會處理案例的遭駭客入侵的用戶端執行惡意程式碼，因為用戶端無法重新連線或遭駭客入侵的程式碼可能會移除`stopClient`方法或變更其用途。 實作可設定狀態的阻斷服務 (DOS) 保護的適當位置是不在 framework 或伺服器層中，但前端的基礎結構中，而不是。
-
 
 <a id="detectingreasonfordisconnection"></a>
 ## <a name="detecting-the-reason-for-a-disconnection"></a>偵測中斷連線的原因

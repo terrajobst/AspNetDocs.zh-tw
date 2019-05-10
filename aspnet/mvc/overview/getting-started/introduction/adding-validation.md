@@ -8,12 +8,12 @@ ms.date: 01/06/2019
 ms.assetid: 9f35ca15-e216-4db6-9ebf-24380b0f31b4
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 2b5d2a355a27bfe9a3aa8b2fa4a2de79c7f74314
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6894d01af7cd142a5579f73ae5209ca13756ca52
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387122"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120743"
 ---
 # <a name="adding-validation"></a>新增驗證
 
@@ -84,7 +84,6 @@ ASP.NET MVC 和 Entity Framework Code First 所提供的驗證支援就是執行
 > [!NOTE]
 > 以 jQuery 驗證支援非英文的地區設定，請使用逗號 （"，"） 的小數點中,，您必須加入 NuGet 全球化，如先前所述，在本教學課程。
 
-
 請注意如何表單已自動使用紅色外框色彩來反白顯示的文字方塊，其中包含無效的資料，並發出每一個旁適當的驗證錯誤訊息。 用戶端 (使用 JavaScript 和 jQuery) 與伺服器端 (若使用者已停用 JavaScript 時) 都會強制執行這些錯誤。
 
 實質的好處是，您不需要變更任何程式中的程式碼`MoviesController`類別或*Create.cshtml*才能啟用這項驗證 UI 的檢視。 您稍早在本教學課程中建立的控制器和檢視會自動拾取您指定的驗證規則 (在 `Movie` 模型類別的屬性 (property) 上使用驗證屬性 (attribute))。 使用 `Edit` 動作方法測試驗證，即會套用相同的驗證。
@@ -135,9 +134,7 @@ ASP.NET MVC 和 Entity Framework Code First 所提供的驗證支援就是執行
 
 `DisplayFormat` 屬性用來明確指定日期格式：
 
-
 [!code-csharp[Main](adding-validation/samples/sample8.cs)]
-
 
 `ApplyFormatInEditMode`設定可讓您指定，而指定的格式應該也會套用時的值會顯示在文字方塊中進行編輯。 (您可能不想要的某些欄位 — 比方說，例如貨幣值，您可能不想在文字方塊中的貨幣符號進行編輯。)
 
@@ -155,7 +152,6 @@ ASP.NET MVC 和 Entity Framework Code First 所提供的驗證支援就是執行
 > [!code-csharp[Main](adding-validation/samples/sample9.cs)]
 > 
 > 您必須停用 jQuery 日期驗證以使用[範圍](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx)屬性搭配[DateTime](https://msdn.microsoft.com/library/system.datetime.aspx)。 它通常不是最好的作法是編譯您的模型，因此使用中的硬性日期[範圍](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx)屬性並[DateTime](https://msdn.microsoft.com/library/system.datetime.aspx)建議您不要使用。
-
 
 下列程式碼會顯示一行上的結合屬性：
 

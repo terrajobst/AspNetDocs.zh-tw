@@ -8,19 +8,18 @@ ms.date: 01/27/2009
 ms.assetid: 61644169-e8b1-45dd-bf96-9c2301b69879
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 29f7dded2f6fc2e8ce588dab2949b59ddb6f1fc4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2e0e365c287fc455015d237ea466301335805d14
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388903"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122454"
 ---
 # <a name="creating-model-classes-with-the-entity-framework-c"></a>使用 Entity Framework 建立模型類別 (C#)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教學課程中，您將了解如何使用 Microsoft Entity Framework 的 ASP.NET MVC。 您了解如何使用實體精靈來建立 ADO.NET 實體資料模型。 在本教學課程的過程中，我們會建置說明如何選取、 插入、 更新和刪除資料庫的資料使用 Entity Framework 的 web 應用程式。
-
 
 本教學課程的目標是要說明如何建立建置 ASP.NET MVC 應用程式時，使用 Microsoft Entity Framework 資料存取類別。 本教學課程會假設沒有事先了解 Microsoft Entity Framework。 本教學課程結束時，您將了解如何使用 Entity Framework 來選取、 插入、 更新和刪除資料庫中的記錄。
 
@@ -32,11 +31,9 @@ Microsoft Entity Framework 是物件關聯式對應 (O/RM) 的工具，可讓您
 
 > [https://www.asp.net/downloads/](https://www.asp.net/downloads)
 
-
 > [!NOTE] 
 > 
 > 沒有必要連線 Microsoft Entity Framework 與 ASP.NET MVC。 有多個替代方案，您可以使用 ASP.NET MVC 與 Entity framework。 例如，您可以建置您使用其他的 O/RM 工具，例如 Microsoft LINQ to SQL、 NHibernate 或 SubSonic 的 MVC 模型類別。
-
 
 ## <a name="creating-the-movie-sample-database"></a>建立電影範例資料庫
 
@@ -108,9 +105,7 @@ Microsoft Entity Framework 是物件關聯式對應 (O/RM) 的工具，可讓您
 
 請記得儲存您的實體資料模型後所做的修改，依序按一下 [儲存] 按鈕 （磁片圖示）。 在幕後，Entity Designer 會產生一組 C# 類別。 您可以從 [方案總管] 視窗中開啟 MoviesDBModel.Designer.cs 檔案，以檢視這些類別。
 
-
 請勿修改 Designer.cs 檔案中的程式碼，因為您的變更將覆寫您使用 Entity Designer 中的下一次。 如果您想要擴充 Designer.cs 檔案中定義的實體類別的功能，則您可以建立*部分類別*個別檔案中。
-
 
 #### <a name="selecting-database-records-with-the-entity-framework"></a>選取 使用 Entity Framework 資料庫記錄
 
@@ -122,9 +117,7 @@ Microsoft Entity Framework 是物件關聯式對應 (O/RM) 的工具，可讓您
 
 請注意程式碼範例 1 中的控制器包含建構函式。 建構函式會初始化名為的類別層級欄位\_db。 \_Db 欄位代表 Microsoft Entity Framework 所產生的資料庫實體。 \_Db 欄位是實體設計工具所產生的 MoviesDBEntities 類別的執行個體。
 
-
 若要使用 theMoviesDBEntities 類別 Home 控制器中，您必須匯入 MovieEntityApp.Models 命名空間 (*MVCProjectName*。模型）。
-
 
 \_Db 欄位來 index （） 動作中的電影資料庫資料表中擷取的記錄。 運算式\_db。MovieSet 會代表所有記錄的電影資料庫資料表中。 Tolist 方法用來將電影的集合轉換成電影物件的泛型集合 (清單&lt;電影&gt;)。
 
@@ -162,9 +155,7 @@ Microsoft Entity Framework 是物件關聯式對應 (O/RM) 的工具，可讓您
 
 第二個 add （） 動作會建立 Entity Framework 電影類別的新執行個體的 ASP.NET MVC TryUpdateModel() 方法的協助。 TryUpdateModel() 方法會傳遞至 neobsahuje metodu FormCollection 中的欄位，並將這些 HTML 表單欄位的值指派至電影類別。
 
-
 使用 Entity Framework 時，您必須在 TryUpdateModel 或 UpdateModel 方法來更新實體類別的屬性時，提供 「 技術清單 」 的屬性。
-
 
 接下來，add （） 動作會執行一些簡單的表單驗證。 動作可確認將 標題 與 導演屬性有值。 如果有驗證錯誤，驗證錯誤訊息會加入 ModelState。
 

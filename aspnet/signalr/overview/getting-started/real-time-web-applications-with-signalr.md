@@ -8,15 +8,14 @@ ms.date: 07/16/2014
 ms.assetid: ba07958c-42e1-4da0-81db-ba6925ed6db0
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 9904582450d4386ef8b8656078f6d40dbd1e10be
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9e39fd3f2fc9d4e791002450085215096c222fcd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412004"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120010"
 ---
 # <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>實際操作實驗室：使用 SignalR 的即時 Web 應用程式
-
 
 藉由[Web Camp 小組](https://twitter.com/webcamps)
 
@@ -66,7 +65,6 @@ ms.locfileid: "59412004"
 > [!NOTE]
 > 請確定您執行安裝程式之前檢查這個實驗室的所有相依性。
 
-
 <a id="CodeSnippets"></a>
 ### <a name="using-the-code-snippets"></a>使用程式碼片段
 
@@ -74,7 +72,6 @@ ms.locfileid: "59412004"
 
 > [!NOTE]
 > 每個練習會伴隨起始方案，位於**開始**練習，可讓您依照每個練習，獨立於其他的資料夾。 請留意練習期間新增的程式碼片段缺少這些啟動解決方案，並可能無法運作，直到您已完成練習。 在練習的原始程式碼，您也可以找到**結束**資料夾包含 Visual Studio 方案，以程式碼所產生的相對應的練習中的步驟。 如果您需要其他說明，當您完成這個實際操作實驗室，您可以使用這些解決方案與指引。
-
 
 ---
 
@@ -91,9 +88,8 @@ ms.locfileid: "59412004"
 > [!NOTE]
 > 當您第一次啟動 Visual Studio 時，您必須選取其中一個預先定義的設定集合。 每個預先定義的集合以符合特定的開發樣式設計，並決定視窗版面配置、 編輯器的行為、 IntelliSense 程式碼片段和對話方塊選項。 在這個實驗室中的程序說明完成指定的工作，在 Visual Studio 中使用時所需的動作**一般開發設定**集合。 如果您選擇不同的設定集合，您的開發環境，可能會有在步驟中，您應該考慮到的差異。
 
-
 <a id="Exercise1"></a>
-### <a name="exercise-1-working-with-real-time-data-using-signalr"></a>練習 1:有關使用 SignalR 即時資料
+### <a name="exercise-1-working-with-real-time-data-using-signalr"></a>練習 1：有關使用 SignalR 即時資料
 
 交談通常是用做為範例，您可以執行整個即時 Web 功能更大。 每當使用者重新整理網頁，以查看新的資料或此頁面會實作 Ajax 長時間輪詢來擷取新的資料，您可以使用 SignalR。
 
@@ -250,7 +246,7 @@ ms.locfileid: "59412004"
     *統計資料重新整理之後回應 頁面*
 
 <a id="Exercise2"></a>
-### <a name="exercise-2-scaling-out-using-sql-server"></a>練習 2:向外延展使用 SQL Server
+### <a name="exercise-2-scaling-out-using-sql-server"></a>練習 2：向外延展使用 SQL Server
 
 當調整 web 應用程式，您通常可以選擇之間*向上*並*相應放大*選項。 *相應增加*表示使用更大的伺服器，使用更多資源 （CPU、 RAM 等），同時*相應放大*表示新增更多伺服器來處理負載。 後者的問題在於用戶端可以取得路由傳送至不同的伺服器。 連線到一部伺服器的用戶端不會接收從另一部伺服器傳送的訊息。
 
@@ -274,7 +270,6 @@ ms.locfileid: "59412004"
 > - [伺服器廣播](tutorial-server-broadcast-with-signalr.md)（例如，股票行情指示器）：背板適用於此案例中，因為伺服器控制傳送訊息的速率。
 > - [用戶端到用戶端](tutorial-getting-started-with-signalr.md)（例如聊天）：在此案例中後, 擋板如果可能會發生瓶頸的訊息數目隨著; 的用戶端數目也就是說，如果訊息的速率成長按比例越多的用戶端加入。
 > - [高頻率即時](tutorial-high-frequency-realtime-with-signalr.md)（例如，即時遊戲）：後擋板不建議此案例中。
-
 
 在這個練習中，您將使用**SQL Server**散發郵件，跨越**Geek 測驗**應用程式。 您將這些工作的電腦上執行單一測試以了解如何設定組態，但是為了取得完整的效果，您必須部署兩個或多部伺服器的 SignalR 應用程式。 其中一部伺服器，或個別的專用伺服器上，您也必須安裝 SQL Server。
 

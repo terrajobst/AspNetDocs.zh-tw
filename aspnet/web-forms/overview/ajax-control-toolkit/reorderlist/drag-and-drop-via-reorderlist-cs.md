@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 6350ee8e-11d6-4aff-b51c-942878014835
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 988aa9252cfd93067888734006e6003347f1fb5e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8adeceba0d43d6baf1af944a910750ca0682b097
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414747"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124937"
 ---
 # <a name="drag-and-drop-via-reorderlist-c"></a>透過 ReorderList 拖放 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59414747"
 [下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/ReorderList5.cs.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/reorderlist5CS.pdf)
 
 > 在 AJAX Control Toolkit reorderlist 的回傳控制項提供使用者透過拖放來重新排列的清單。 目前的清單順序應該保存在伺服器上。
-
 
 ## <a name="overview"></a>總覽
 
@@ -43,19 +42,15 @@ ms.locfileid: "59414747"
 - `description` (varchar(50), NULL)
 - `position` (int，NULL)
 
-
 [![AJAX 資料表配置](drag-and-drop-via-reorderlist-cs/_static/image2.png)](drag-and-drop-via-reorderlist-cs/_static/image1.png)
 
 AJAX 資料表配置 ([按一下以檢視完整大小的影像](drag-and-drop-via-reorderlist-cs/_static/image3.png))
 
-
 接下來，填寫幾個值的資料表。 請注意，`position`資料行包含元素的排序次序。
-
 
 [![中的 AJAX 資料表的初始資料](drag-and-drop-via-reorderlist-cs/_static/image5.png)](drag-and-drop-via-reorderlist-cs/_static/image4.png)
 
 AJAX 資料表中的初始資料 ([按一下以檢視完整大小的影像](drag-and-drop-via-reorderlist-cs/_static/image6.png))
-
 
 下一個步驟需要產生`SqlDataSource`控制項與新的資料庫和其資料表進行通訊。 資料來源必須支援`SELECT`和`UPDATE`SQL 命令。 稍後變更清單項目的順序，當`ReorderList`控制項會自動送出至資料來源的兩個值`Update`命令： 新的位置和項目的識別碼。 因此，在資料來源需求`<UpdateParameters>`這兩個值的區段：
 
@@ -81,7 +76,6 @@ AJAX 資料表中的初始資料 ([按一下以檢視完整大小的影像](drag
 [!code-aspx[Main](drag-and-drop-via-reorderlist-cs/samples/sample4.aspx)]
 
 瀏覽器中執行此範例中，並稍微重新排列的清單項目。 然後，重新載入頁面及/或看看資料庫。 改變的位置以為受到維護的也會反映在值`position`資料行的資料庫中所有不需要任何程式碼中，只使用標記。
-
 
 [![資料庫變更，根據新的清單項目順序中的資料](drag-and-drop-via-reorderlist-cs/_static/image8.png)](drag-and-drop-via-reorderlist-cs/_static/image7.png)
 

@@ -8,19 +8,18 @@ ms.date: 02/16/2008
 ms.assetid: c28ba88d-3a93-47f5-a306-049bd766714d
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 84af745d338e38ece438fa58d51d0929c7b92967
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f02728ed248f29b09d654e509977ed43889cbb83
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408455"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117427"
 ---
 # <a name="aspnet-mvc-views-overview-vb"></a>ASP.NET MVC 檢視概觀 (VB)
 
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > 什麼是 ASP.NET MVC 檢視，它有何不同的 HTML 網頁？ 在本教學課程中，Stephen Walther 會介紹檢視，並示範如何使用檢視資料和檢視表中的 HTML Helper 的利用。
-
 
 本教學課程的目的是為您提供 ASP.NET MVC 檢視、 檢視資料和 HTML 協助程式簡介。 本教學課程結束時，您應該了解如何建立新的檢視，將資料從控制器傳遞至檢視，並使用 HTML 協助程式產生內容檢視中。
 
@@ -68,7 +67,6 @@ View()
 > 
 > 如果您打算建立 ASP.NET MVC 應用程式的單元測試它是個不錯的主意，明確了檢視表名稱。 如此一來，您可以建立單元測試以確認控制器動作未傳回預期的檢視。
 
-
 ## <a name="adding-content-to-a-view"></a>將內容新增至檢視
 
 檢視是一種標準 (X) 可以包含指令碼的 HTML 文件。 您可以使用指令碼新增至檢視動態內容。
@@ -103,11 +101,9 @@ View()
 
 [!code-aspx[Main](asp-net-mvc-views-overview-vb/samples/sample4.aspx)]
 
-
 [![[新增專案] 對話方塊](asp-net-mvc-views-overview-vb/_static/image1.jpg)](asp-net-mvc-views-overview-vb/_static/image1.png)
 
 **圖 01**:標準的登入表單 ([按一下以檢視完整大小的影像](asp-net-mvc-views-overview-vb/_static/image2.png))
-
 
 所有 HTML 協助程式方法會呼叫檢視的 Html 屬性。 比方說，您會藉由呼叫 Html.TextBox() 方法呈現文字方塊。
 

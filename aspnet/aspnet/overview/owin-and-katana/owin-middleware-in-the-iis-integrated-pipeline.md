@@ -8,19 +8,18 @@ ms.date: 11/07/2013
 ms.assetid: d031c021-33c2-45a5-bf9f-98f8fa78c2ab
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: 484c01f19014639cc30244ed4f4d014794594aa2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: bb1211de0a3fe876f5640538034ab5a58b3a070c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59391698"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118217"
 ---
 # <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>IIS 整合式管線中的 OWIN 中介軟體
 
 藉由[Praburaj Thiagarajan](https://github.com/Praburaj)， [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 這篇文章會示範如何執行 OWIN 中介軟體元件 (OMCs) 在 IIS 整合式管線中，以及如何設定管線事件 OMC 上執行。 您應該先檢閱[的專案 Katana 概觀](an-overview-of-project-katana.md)並[OWIN 啟動類別偵測](owin-startup-class-detection.md)之前先閱讀本教學課程。 本教學課程中所編寫的 Rick Anderson ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )，Chris Ross、 Praburaj Thiagarajan 和 Howard Dierking ( [ @howard \_dierking](https://twitter.com/howard_dierking) )。
-
 
 雖然[OWIN](an-overview-of-project-katana.md)中介軟體元件 (OMCs) 主要用於在伺服器無從驗證管線中執行，就可以在 IIS 整合式管線以及執行 OMC (**傳統模式是*不*支援**)。 OMC 可以成為以搭配 IIS 整合式管線從套件管理員主控台 (PMC) 中安裝下列套件：
 

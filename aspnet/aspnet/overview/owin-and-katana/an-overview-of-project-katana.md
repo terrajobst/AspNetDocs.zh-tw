@@ -8,19 +8,18 @@ ms.date: 08/30/2013
 ms.assetid: 0ee21741-c1bf-4025-a9b0-24580cae24bc
 msc.legacyurl: /aspnet/overview/owin-and-katana/an-overview-of-project-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 72f70faa151007558ecbb270143ecd5b37c2134d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1f28db822930cdfd2ebf4cf9bb27d173f4aa4201
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392569"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118286"
 ---
 # <a name="an-overview-of-project-katana"></a>Katana 專案概觀
 
 藉由[Howard Dierking](https://github.com/howarddierking)
 
 > ASP.NET Framework 已存在超過十年，且平台已啟用了無數的網站和服務。 進化的 Web 應用程式開發策略，因為架構已經能夠發展在 ASP.NET MVC 和 ASP.NET Web API 等技術的步驟。 開發 Web 應用程式會將其下一個進化步驟納入雲端運算的世界，因為專案[Katana](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET)提供一組基礎的 ASP.NET 應用程式，可靈活、 可攜性，讓他們的元件輕量級，並提供更佳的效能 – 將另一種方法，專案[Katana](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET)雲端最佳化您的 ASP.NET 應用程式。
-
 
 ## <a name="why-katana--why-now"></a>為什麼是 Katana – 為什麼是現在？
 
@@ -214,7 +213,6 @@ Katana 2.0 中, 介軟體元件主要著重在提供不同的驗證方法。 會
 ## <a name="conclusion"></a>結論
 
  從開始，Katana 專案的目標已建立，並藉此強制開發人員若要了解另一個 Web 架構。 相反地，其目標是要建立更多的選擇，比先前一直無法讓.NET Web 應用程式開發人員的抽象概念。 藉由一般的 Web 應用程式堆疊插入其中的一組可取代元件的邏輯層，Katana 專案可讓元件在整個堆疊在任何頻率最適合這些元件改善中。 藉由建置簡單的 OWIN 抽象周圍的所有元件，Katana 可讓架構和建置的應用程式在其上跨各種不同的伺服器和主機具有可攜性。 藉由將開發人員放在堆疊的控制項，Katana 可確保開發人員，會使最終決定如何輕量的相關或她 Web 堆疊應該是功能豐富。  
-  
 
 ## <a name="for-more-information-about-katana"></a>如需有關 Katana
 

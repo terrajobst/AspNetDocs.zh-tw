@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 0bc191b2-4311-479a-a83a-7f1b1c32e6fe
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/build-a-model-with-business-rule-validations
 msc.type: authoredcontent
-ms.openlocfilehash: 078614c6e7ba18ac09bbd5e23b90b08c97aee658
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6ebf1b71c089229ba9139ff7dc788b8978724046
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387291"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65117611"
 ---
 # <a name="build-a-model-with-business-rule-validations"></a>使用商務規則驗證建置模型
 
@@ -26,7 +26,6 @@ by [Microsoft](https://github.com/microsoft)
 > 步驟 3 說明如何建立模型，我們可以使用這兩個查詢，並更新資料庫中我們 NerdDinner 的應用程式。
 > 
 > 如果您使用 ASP.NET MVC 3，我們建議您遵循[取得開始使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或是[MVC Music 市集](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教學課程。
-
 
 ## <a name="nerddinner-step-3-building-the-model"></a>NerdDinner 步驟 3:建立模型
 
@@ -133,7 +132,6 @@ NerdDinner 應用程式中，我們會定義 DinnerRepository 類別具有下列
 #### <a name="querying-examples"></a>查詢範例
 
 下列程式碼會擷取單一的 Dinner 使用 DinnerID 值：
-
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample4.cs)]
 
