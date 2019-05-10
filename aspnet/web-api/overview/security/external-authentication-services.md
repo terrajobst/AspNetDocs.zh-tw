@@ -8,12 +8,12 @@ ms.date: 01/28/2019
 ms.assetid: 3bb8eb15-b518-44f5-a67d-a27e051aedc6
 msc.legacyurl: /web-api/overview/security/external-authentication-services
 msc.type: authoredcontent
-ms.openlocfilehash: de9b64e6c582059ec66ab352f60773f50af7b1ff
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: b2571552a3f8040ff42bfa0a9fa48981f71a1e4b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57064915"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133577"
 ---
 # <a name="external-authentication-services-with-aspnet-web-api-c"></a>外部驗證服務與 ASP.NET Web API (C#)
 
@@ -72,7 +72,6 @@ Visual Studio 2017 和 ASP.NET 4.7.2 與外部驗證服務的整合更輕鬆地�
 
 > [!NOTE]
 > 如有必要，您可能需要將您的 FQDN 新增到您的外部驗證服務的設定。 這項需求根據安全性限制，某些外部驗證服務，而這需要您的應用程式設定中的 FQDN，以符合您的用戶端會使用的 FQDN。 （這個步驟很大的每個外部驗證服務，您必須參考文件，每個外部驗證服務，以查看這是否必要，以及如何設定這些設定）。如果您要設定 IIS Express 來測試此環境中使用 FQDN，請參閱[若要使用完整網域名稱設定 IIS Express](#FQDN)稍後在本逐步解說的區段。
-
 
 <a id="SAMPLE"></a>
 ## <a name="create-a-sample-web-application"></a>建立範例 Web 應用程式
@@ -139,7 +138,6 @@ Visual Studio 2017 和 ASP.NET 4.7.2 與外部驗證服務的整合更輕鬆地�
 ## <a name="enabling-google-authentication"></a>啟用 Google 驗證
 
 使用 Google 驗證會要求您建立 Google 開發人員帳戶，而您的專案需要的應用程式識別碼和祕密金鑰，將來自 Google 才能運作。 建立 Google 開發人員帳戶，並取得您的應用程式識別碼和祕密金鑰的相關資訊，請參閱[ https://developers.google.com ](https://developers.google.com)。
-
 
 若要啟用 Google 驗證 web 應用程式，請使用下列步驟：
 

@@ -8,12 +8,12 @@ ms.date: 07/04/2012
 ms.assetid: 6b9ae3c4-0274-4170-a1bb-9df9c546b2a9
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: de4bb063d2a6c1bdb4aeffdadb161ef19efd2b78
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: bb9c234f541308c2165c32de29c97663e4d76f50
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390944"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134742"
 ---
 # <a name="part-3-creating-an-admin-controller"></a>第 3 部分：建立系統管理員控制器
 
@@ -35,7 +35,6 @@ ms.locfileid: "59390944"
 
 > [!NOTE]
 > 如果**模型類別**下拉式清單不會顯示任何模型類別，請確定您編譯專案。 Entity Framework 會使用反映，因此它需要編譯的組件。
-
 
 選取 「&lt;新的資料內容&gt;」 就會開啟**新的資料內容**對話方塊。 命名的資料內容`ProductStore.Models.OrdersContext`。
 

@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: b9775f41-352a-4f82-baa6-23e95b342e20
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
-ms.openlocfilehash: a5c7804c2336e91dc171b5da52819436472e81cf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c5da14a6856f551343b6fb14f0aedc659e792f6b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59412446"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122055"
 ---
 # <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>從 Windows Phone 8 應用程式呼叫 Web API (C#)
 
@@ -38,8 +38,7 @@ RESTful 服務，例如 ASP.NET Web API 伺服器端和用戶端應用程式的�
 - 如需其他需求，請參閱*系統需求*區段[Windows Phone SDK 8.0](https://www.microsoft.com/download/details.aspx?id=35471)下載頁面。
 
 > [!NOTE]
-> 如果您要測試 Web API 與您的本機系統上的 Windows Phone 8 專案之間的連線，您必須依照*[連接 Windows Phone 8 模擬器在本機的 Web API 應用程式電腦](https://go.microsoft.com/fwlink/?LinkId=324014)* 文章，以設定測試環境。
-
+> 如果您要測試 Web API 與您的本機系統上的 Windows Phone 8 專案之間的連線，您必須依照 *[連接 Windows Phone 8 模擬器在本機的 Web API 應用程式電腦](https://go.microsoft.com/fwlink/?LinkId=324014)* 文章，以設定測試環境。
 
 <a id="STEP1"></a>
 ### <a name="step-1-creating-the-web-api-bookstore-project"></a>步驟 1：建立 Web API 書店專案
@@ -50,20 +49,16 @@ RESTful 服務，例如 ASP.NET Web API 伺服器端和用戶端應用程式的�
 2. 按一下 **檔案**，然後**新**，然後**專案**。
 3. 當**新的專案**會顯示對話方塊，展開**已安裝**，然後**範本**，然後**Visual C#**，，然後**Web**。
 
-
    | [![](calling-web-api-from-a-windows-phone-8-application/_static/image2.png)](calling-web-api-from-a-windows-phone-8-application/_static/image1.png) |
    |-----------------------------------------------------------------------------------------------------------------------------------------------------|
    |                                                                按一下以展開的影像                                                                |
 
-
 4. 反白顯示**ASP.NET Web 應用程式**，輸入**書店**做為專案名稱，然後按一下**確定**。
 5. 當**新增 ASP.NET 專案**對話方塊隨即出現，請選取**Web API**範本，然後再按**確定**。
-
 
    | [![](calling-web-api-from-a-windows-phone-8-application/_static/image4.png)](calling-web-api-from-a-windows-phone-8-application/_static/image3.png) |
    |-----------------------------------------------------------------------------------------------------------------------------------------------------|
    |                                                                按一下以展開的影像                                                                |
-
 
 6. 當 Web API 專案開啟時，請從專案中移除的範例控制器：
 
@@ -195,8 +190,6 @@ RESTful 服務，例如 ASP.NET Web API 伺服器端和用戶端應用程式的�
 
 如果您點選的錯誤訊息，將會顯示有關錯誤的任何其他詳細資料：
 
-
 | [![](calling-web-api-from-a-windows-phone-8-application/_static/image16.png)](calling-web-api-from-a-windows-phone-8-application/_static/image15.png) |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                                                 按一下以展開的影像                                                                 |
-

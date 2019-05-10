@@ -8,12 +8,12 @@ ms.date: 01/06/2019
 ms.assetid: 52a4d5fe-aa31-4471-b3cb-a064f82cb791
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 4a4627bdce8b8f2085150aa08cdc4c1271e09e09
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c42ec77b5d5107f3ef70e13b779fc1bebef70a14
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422001"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120708"
 ---
 # <a name="examining-the-edit-methods-and-edit-view"></a>檢查編輯方法與編輯檢視
 
@@ -98,7 +98,6 @@ Scaffold 程式碼使用一些*helper 方法*來簡化 HTML 標記。 [ `Html.La
 ## <a name="jquery-validation-for-non-english-locales"></a>jQuery 驗證的非英文地區設定
 
 如果您使用的英文 （美國） 的電腦，您可以略過本節並移至下一個教學課程。 您可以下載本教學課程的 Globalize 新版[此處](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=16475)。 如需國際化的絕佳兩部分教學課程，請參閱 < [Nadeem 的 ASP.NET MVC 5 國際化](http://afana.me/post/aspnet-mvc-internationalization.aspx)。
-
 
 > [!NOTE]
 > 以 jQuery 驗證支援非英文的地區設定，請使用逗號 (&quot;，&quot;) 的小數點和非英文日期格式，您必須加入*globalize.js*和您的特定*cultures/globalize.cultures.js*檔案 (從[ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 和使用的 JavaScript `Globalize.parseFloat`。 您可以從 NuGet 取得 jQuery non-alpha Non-english 驗證。 （不安裝 Globalize 如果您使用英文的地區設定）。

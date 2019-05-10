@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 73232292-a5fe-4720-82a1-8f6553effd1f
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: d85fab0aeec86013761fc07ada1789b7719b24d9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f42b1be2697ba7d1145b3e334fe8f4ebf019cd12
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396552"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133560"
 ---
 # <a name="using-page-inspector-in-visual-studio-2012"></a>在 Visual Studio 2012 中使用 Page Inspector
 
@@ -36,7 +36,6 @@ ms.locfileid: "59396552"
 > 這個實驗室會引導您完成先前所述將微幅的變更套用到來源資料夾中提供的範例 Web 應用程式的新功能與增強功能。
 > 
 > 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)。
-
 
 <a id="Objectives"></a>
 
@@ -74,13 +73,12 @@ ms.locfileid: "59396552"
 > [!NOTE]
 > 每個練習會伴隨開始的解決方案，可讓您遵循獨立於其他每個練習的練習，開始資料夾中。 在練習的原始程式碼，您也可以找到包含 Visual Studio 方案，以產生對應的練習中的步驟的程式碼端資料夾。 如果您需要其他說明，當您完成這個實際操作實驗室，您可以使用這些解決方案與指引。
 
-
 估計的時間才能完成這個實驗室：**30 分鐘**。
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Using_Page_Inspector_in_ASPNET_MVC_Projects"></a>
-### <a name="exercise-1-using-page-inspector-in-aspnet-mvc-projects"></a>練習 1:在 ASP.NET MVC 專案中使用 Page Inspector
+### <a name="exercise-1-using-page-inspector-in-aspnet-mvc-projects"></a>練習 1：在 ASP.NET MVC 專案中使用 Page Inspector
 
 在此練習中，您將了解如何預覽和偵錯**ASP.NET MVC 4**解決方案使用**Page Inspector**。 首先，您將執行工具以了解功能，以協助 Web 偵錯程序簡短巡覽。 然後，您可在網頁上包含樣式問題。 您將了解如何使用頁面偵測器來尋找會產生問題的原始程式碼，並加以修正。
 
@@ -271,7 +269,7 @@ ms.locfileid: "59396552"
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Using_Page_Inspector_in_WebForms_Projects"></a>
-### <a name="exercise-2-using-page-inspector-in-webforms-projects"></a>練習 2:WebForms 專案中使用 Page Inspector
+### <a name="exercise-2-using-page-inspector-in-webforms-projects"></a>練習 2：WebForms 專案中使用 Page Inspector
 
 在此練習中，您將了解如何預覽，並使用 Page Inspector WebForms 方案進行偵錯。 您會先執行簡短瀏覽工具若要了解 Page Inspector 功能，以協助 Web 偵錯程序。 然後，您可在網頁上包含樣式問題。 您將了解如何使用頁面偵測器來尋找會產生問題的原始程式碼，並加以修正。
 

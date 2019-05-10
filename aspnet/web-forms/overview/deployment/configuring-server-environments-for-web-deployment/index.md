@@ -8,17 +8,16 @@ ms.date: 05/16/2012
 ms.assetid: 489b414b-2322-4385-8638-04e08c0b6c90
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment
 msc.type: chapter
-ms.openlocfilehash: 63ffb6fa3c32c91508a12ed4545de08767c6200c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 382ed4a919418dc862caeb7d7e476690a155a4ea
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397964"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125882"
 ---
 # <a name="aspnet-4---enterprise-deployment-series-2-configuring-servers"></a>ASP.NET 4 - 企業部署系列 2 設定伺服器
 
 > 本教學課程會示範如何設定伺服器環境，以支援一種單鍵或自動化、 網站部署和發佈各種不同的案例中。
-
 
 - [設定 Web 部署的伺服器環境](configuring-server-environments-for-web-deployment.md)
 - [選擇 Web 部署的正確方法](choosing-the-right-approach-to-web-deployment.md)

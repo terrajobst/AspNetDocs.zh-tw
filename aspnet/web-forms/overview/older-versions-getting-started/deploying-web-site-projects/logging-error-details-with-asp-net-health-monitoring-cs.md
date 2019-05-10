@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: b1abb452-642a-4ff3-8504-37b85590ff79
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 52b1aec577634dfb9fec7753e4f9b8bf46d159f0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6b444de67f3bce3d09dd8c3c172895cf07f58df8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416255"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134405"
 ---
 # <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>使用 ASP.NET 狀況監控記錄錯誤的詳細資料 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59416255"
 [下載程式碼](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_13_CS.zip)或[下載 PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial13_HealthMonitoring_cs.pdf)
 
 > Microsoft 的健全狀況監視系統會提供簡單且可自訂的方式來記錄各種 web 事件，包括未處理的例外狀況。 本教學課程會逐步設定狀況監控系統，以記錄至資料庫的未處理例外狀況，並通知開發人員透過電子郵件訊息。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -67,7 +66,6 @@ ms.locfileid: "59416255"
 > [!NOTE]
 > `aspnet_regsql.exe`討論工具回到[*設定網站，會使用應用程式服務*教學課程](configuring-a-website-that-uses-application-services-cs.md)當我們新增了 asp 的支援。NET 的應用程式服務。 因此，書籍評論網站的資料庫已經包含`aspnet_WebEvent_LogEvent`預存程序，將名為事件資訊儲存在`aspnet_WebEvent_Events`。
 
-
 一旦您擁有所需的預存程序和資料表加入至您的資料庫，全都是指示記錄到資料庫的所有未處理的例外狀況監視的健全狀況。 將下列標記新增至您的網站完成這項作業`Web.config`檔案：
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-cs/samples/sample2.xml)]
@@ -82,7 +80,6 @@ ms.locfileid: "59416255"
 
 > [!NOTE]
 > `WebBaseErrorEvent`才會引發事件的伺服器錯誤，它就不會引發 HTTP 錯誤，例如找不到 ASP.NET 資源的要求。 這與不同的行為`HttpApplication`類別的`Error`伺服器和 HTTP 錯誤，就會引發的事件。
-
 
 若要查看狀況監控系統作用中的，瀏覽網站和產生執行階段錯誤，請造訪`Genre.aspx?ID=foo`。 您應該會看到適當的錯誤頁面-例外狀況詳細資料黃色死亡畫面 （當在本機瀏覽） 或自訂錯誤頁面 （瀏覽網站時在生產環境中）。 在幕後，狀況監控系統會記錄到資料庫資訊時發生錯誤。 應該有一筆記錄`aspnet_WebEvent_Events`資料表 (請參閱 < **圖 1**); 這個記錄包含剛剛才發生執行階段錯誤的相關資訊。
 
@@ -99,7 +96,6 @@ ms.locfileid: "59416255"
 
 > [!NOTE]
 > 後續的教學課程會探索名為 ELMAH 替代錯誤記錄和通知系統。 ELMAH 包含內建的機制，以檢視錯誤記錄檔從這兩個網頁，並透過 rss 摘要。
-
 
 ## <a name="logging-events-to-email"></a>事件記錄到電子郵件
 

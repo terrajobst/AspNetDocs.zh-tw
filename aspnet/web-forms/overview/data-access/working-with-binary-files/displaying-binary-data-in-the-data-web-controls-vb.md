@@ -8,12 +8,12 @@ ms.date: 03/27/2007
 ms.assetid: 9201656a-e1c2-4020-824b-18fb632d2925
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0f8207d1b25882b2cef269b64b43500d14c32976
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 05c4f0dd8517e348d72c28ea915960a4a725e46e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394285"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133609"
 ---
 # <a name="displaying-binary-data-in-the-data-web-controls-vb"></a>以資料 Web 控制項顯示二進位資料 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59394285"
 [下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_55_VB.exe)或[下載 PDF](displaying-binary-data-in-the-data-web-controls-vb/_static/datatutorial55vb1.pdf)
 
 > 在本教學課程，我們看看要呈現在網頁上，包括影像檔的顯示和佈建的 [下載] 連結，PDF 檔案的二進位資料的選項。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -40,11 +39,9 @@ ms.locfileid: "59394285"
 
 在此教學課程的下載中，您會發現在七個 PDF 摺頁冊檔案`~/Brochures`資料夾中，各個 Seafood 以外的類別。 我故意省略新增 Seafood 摺頁冊，說明如何處理不是所有記錄具有相關都聯的二進位資料的案例。 若要更新`Categories`資料表包含下列的值，以滑鼠右鍵按一下`Categories`從伺服器總管] 節點，然後選擇 [顯示資料表資料。 然後，輸入每個類別目錄具有摺頁冊，如 圖 1 所示摺頁冊檔案虛擬路徑。 因為沒有任何手冊 Seafood 分類，保留其`BrochurePath`做為資料行的值`NULL`。
 
-
 [![以手動方式輸入類別目錄資料表的 BrochurePath 資料行的值](displaying-binary-data-in-the-data-web-controls-vb/_static/image1.gif)](displaying-binary-data-in-the-data-web-controls-vb/_static/image1.png)
 
 **圖 1**:手動輸入的值`Categories`表格 s`BrochurePath`資料行 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-vb/_static/image2.png))
-
 
 ## <a name="step-2-providing-a-download-link-for-the-brochures-in-a-gridview"></a>步驟 2：將下載連結提供如 GridView 中本小手冊
 
@@ -52,55 +49,43 @@ ms.locfileid: "59394285"
 
 開始從工具箱拖曳至設計工具的拖曳的 GridView`DisplayOrDownloadData.aspx`頁面中`BinaryData`資料夾。 設定 GridView s`ID`至`Categories`透過 GridView s 智慧標籤，選擇 繫結至新的資料來源。 具體而言，將它繫結至名為 ObjectDataSource `CategoriesDataSource` ，它會擷取使用資料`CategoriesBLL`物件的`GetCategories()`方法。
 
-
 [![建立名為 CategoriesDataSource 新 ObjectDataSource](displaying-binary-data-in-the-data-web-controls-vb/_static/image2.gif)](displaying-binary-data-in-the-data-web-controls-vb/_static/image3.png)
 
 **圖 2**:建立新的 ObjectDataSource 具名`CategoriesDataSource`([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-vb/_static/image4.png))
-
 
 [![設定使用 CategoriesBLL 類別 ObjectDataSource](displaying-binary-data-in-the-data-web-controls-vb/_static/image3.gif)](displaying-binary-data-in-the-data-web-controls-vb/_static/image5.png)
 
 **圖 3**:設定要使用 ObjectDataSource`CategoriesBLL`類別 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-vb/_static/image6.png))
 
-
 [![擷取使用 GetCategories() 方法的類別目錄的清單](displaying-binary-data-in-the-data-web-controls-vb/_static/image4.gif)](displaying-binary-data-in-the-data-web-controls-vb/_static/image7.png)
 
 **圖 4**:擷取清單的類別使用`GetCategories()`方法 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-vb/_static/image8.png))
 
-
 完成設定資料來源精靈之後，Visual Studio 會自動加入至 BoundField`Categories`如 GridView `CategoryID`， `CategoryName`， `Description`， `NumberOfProducts`，和`BrochurePath` `DataColumn` s。 請繼續並移除`NumberOfProducts`自 BoundField`GetCategories()`方法的查詢不會擷取這項資訊。 也會移除`CategoryID`BoundField 和重新命名`CategoryName`並`BrochurePath`BoundFields`HeaderText`屬性類別目錄] 和 [摺頁冊，分別。 進行這些變更之後，您的 GridView 和 ObjectDataSource s 宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](displaying-binary-data-in-the-data-web-controls-vb/samples/sample1.aspx)]
 
 檢視此頁面，透過瀏覽器 （請參閱 [圖 5]）。 每個八個類別目錄會列出。 有七個類別`BrochurePath`值有`BrochurePath`個別 BoundField 中顯示的值。 Seafood，其具有`NULL`值及其`BrochurePath`，會顯示空白儲存格。
 
-
 [![列出每個類別的名稱、 描述和 BrochurePath 值](displaying-binary-data-in-the-data-web-controls-vb/_static/image5.gif)](displaying-binary-data-in-the-data-web-controls-vb/_static/image9.png)
 
 **圖 5**:每個類別 s 的名稱，描述，並`BrochurePath`值都會列 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-vb/_static/image10.png))
 
-
 而不是顯示的文字`BrochurePath` 欄中，我們想要建立手冊的連結。 若要這麼做，請移除`BrochurePath`BoundField 和 HyperLinkField 取代它。 設定新的 HyperLinkField s`HeaderText`屬性來摺頁冊，其`Text`屬性，以檢視摺頁冊，並將其`DataNavigateUrlFields`屬性設`BrochurePath`。
-
 
 ![新增 BrochurePath HyperLinkField](displaying-binary-data-in-the-data-web-controls-vb/_static/image6.gif)
 
 **圖 6**:新增針對 HyperLinkField `BrochurePath`
 
-
 如 [圖 7] 所示，這會新增至 GridView，連結的資料行。 按一下檢視摺頁冊連結將直接在瀏覽器中顯示的 PDF 或提示使用者下載檔案，取決於是否已安裝 PDF 閱讀程式和瀏覽器的設定。
-
 
 [![按一下 [檢視] 摺頁冊連結也可以檢視類別的手冊](displaying-binary-data-in-the-data-web-controls-vb/_static/image7.gif)](displaying-binary-data-in-the-data-web-controls-vb/_static/image11.png)
 
 **圖 7**:依序按一下 [檢視摺頁冊] 連結可檢視摺頁冊的類別 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-vb/_static/image12.png))
 
-
 [![隨即出現類別目錄 s 摺頁冊 PDF](displaying-binary-data-in-the-data-web-controls-vb/_static/image8.gif)](displaying-binary-data-in-the-data-web-controls-vb/_static/image13.png)
 
 **圖 8**:隨即出現類別目錄 s 摺頁冊 PDF ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-vb/_static/image14.png))
-
 
 ## <a name="hiding-the-view-brochure-text-for-categories-without-a-brochure"></a>隱藏檢視摺頁冊文字不摺頁冊類別
 
@@ -110,19 +95,15 @@ ms.locfileid: "59394285"
 
 選取將 HyperLinkField 變成 TemplateField `BrochurePath` HyperLinkField，然後按一下 轉換此欄位為 TemplateField 到 編輯資料行 對話方塊中的連結。
 
-
 ![HyperLinkField 轉換為 TemplateField](displaying-binary-data-in-the-data-web-controls-vb/_static/image9.gif)
 
 **圖 9**:HyperLinkField 轉換為 TemplateField
 
-
 這會建立使用 TemplateField`ItemTemplate`包含超連結 Web 控制項`NavigateUrl`屬性的繫結至`BrochurePath`值。 將此標記方法的呼叫取代`GenerateBrochureLink`，並傳入的值`BrochurePath`:
-
 
 [!code-aspx[Main](displaying-binary-data-in-the-data-web-controls-vb/samples/sample2.aspx)]
 
 接下來，建立`Protected`方法在 asp.net 頁面上名為 s 程式碼後置類別`GenerateBrochureLink`會傳回`String`並接受`Object`做為輸入參數。
-
 
 [!code-vb[Main](displaying-binary-data-in-the-data-web-controls-vb/samples/sample3.vb)]
 
@@ -130,18 +111,15 @@ ms.locfileid: "59394285"
 
 套用這些變更之後，圖 10 顯示頁面。 請注意，Seafood 類別的`BrochurePath`欄位現在會顯示沒有手冊提供的文字。
 
-
 [![文字不摺頁冊提供顯示這些類別不摺頁冊](displaying-binary-data-in-the-data-web-controls-vb/_static/image10.gif)](displaying-binary-data-in-the-data-web-controls-vb/_static/image15.png)
 
 **圖 10**:文字不摺頁冊提供顯示這些類別不摺頁冊 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-vb/_static/image16.png))
-
 
 ## <a name="step-3-adding-a-web-page-to-display-a-category-s-picture"></a>步驟 3：新增網頁來顯示類別的圖片
 
 當使用者造訪 ASP.NET 網頁時，他們會收到 ASP.NET 頁面的 HTML。 收到的 HTML 也只是文字，而且不包含任何二進位資料。 任何其他的二進位資料，例如影像、 音效檔、 Macromedia Flash 應用程式、 內嵌 Windows Media Player 的視訊，等等，web 伺服器上的個別資源的形式存在。 HTML 會包含這些檔案中，參考，但不包含檔案的實際內容。
 
 例如，在 HTML`<img>`元素用來參考一張圖片，`src`指向影像檔的屬性就像這樣：
-
 
 [!code-html[Main](displaying-binary-data-in-the-data-web-controls-vb/samples/sample4.html)]
 
@@ -151,13 +129,11 @@ ms.locfileid: "59394285"
 
 加入新的 ASP.NET 頁面，以便`BinaryData`名為資料夾`DisplayCategoryPicture.aspx`。 當這種方式，將選取的主版頁面核取方塊未核取。 此頁面所預期`CategoryID`中的查詢字串並傳回該類別 s 的二進位資料值`Picture`資料行。 此頁面會傳回二進位資料，並且沒有其他項目，所以不需要任何 HTML 一節中的標記。 因此，按一下左下角的 [來源] 索引標籤上，並移除所有的頁面的標記以外的`<%@ Page %>`指示詞。 也就是`DisplayCategoryPicture.aspx`s 宣告式標記應該包含單一行：
 
-
 [!code-aspx[Main](displaying-binary-data-in-the-data-web-controls-vb/samples/sample5.aspx)]
 
 如果您看到`MasterPageFile`屬性中`<%@ Page %>`指示詞，將它移除。
 
 在頁面 s 程式碼後置類別中加入下列程式碼`Page_Load`事件處理常式：
-
 
 [!code-vb[Main](displaying-binary-data-in-the-data-web-controls-vb/samples/sample6.vb)]
 
@@ -167,14 +143,11 @@ ms.locfileid: "59394285"
 
 建立此頁面上，使用特定類別的圖片可以檢視瀏覽`DisplayCategoryPicture.aspx?CategoryID=categoryID`。 [圖 11] 顯示飲料類別的圖片，您可以從檢視`DisplayCategoryPicture.aspx?CategoryID=1`。
 
-
 [![圖片顯示 s 的飲料類別目錄](displaying-binary-data-in-the-data-web-controls-vb/_static/image11.gif)](displaying-binary-data-in-the-data-web-controls-vb/_static/image17.png)
 
 **圖 11**:圖片顯示的 s 的飲料類別目錄 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-vb/_static/image18.png))
 
-
 如果瀏覽時`DisplayCategoryPicture.aspx?CategoryID=categoryID`，您會將型別的物件轉換為類型 'System.Byte []' 的 ' System.DBNull' 讀取無法發生例外狀況，有可能會造成這兩件事。 首先，`Categories`表格 s`Picture`資料行允許`NULL`值。 `DisplayCategoryPicture.aspx`  頁面上，不過，假設沒有非`NULL`目前的值。 `Picture`的屬性`CategoriesDataTable`無法直接存取其`NULL`值。 如果您想要允許`NULL`值`Picture`d 您想要包含下列條件的資料行：
-
 
 [!code-vb[Main](displaying-binary-data-in-the-data-web-controls-vb/samples/sample7.vb)]
 
@@ -185,7 +158,6 @@ ms.locfileid: "59394285"
 > [!NOTE]
 > 每次`DisplayCategoryPicture.aspx`是瀏覽、 存取資料庫，並傳回指定的分類的圖片資料。 如果類別的圖片沒有變更，因為使用者上次檢視過它，不過，這會是浪費的精力。 幸運的是，HTTP 是用來*條件式取得*。 使用條件式 GET，提出 HTTP 要求的用戶端會傳送沿著[ `If-Modified-Since` HTTP 標頭](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)所提供的日期和上次從 web 伺服器擷取這項資源的用戶端的時間。 如果內容尚未變更，因為這會指定日期，web 伺服器可能回應[不會修改 (304) 的狀態碼](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)並放棄傳送回要求的資源的內容。 簡單地說，這項技術會減輕不必傳送資源的內容，如果它尚未修改用戶端上次存取後的 web 伺服器。
 
-
 若要實作此行為，不過，會要求您新增`PictureLastModified`資料行`Categories`資料表擷取時`Picture`用以檢查程式碼以及上次更新資料行`If-Modified-Since`標頭。 如需詳細資訊`If-Modified-Since`標頭 」 和 「 條件式 GET 工作流程，請參閱[HTTP 條件式 GET RSS 駭客](http://fishbowl.pastiche.org/2002/10/21/http_conditional_get_for_rss_hackers)並[更深入了解 ASP.NET 網頁中執行 HTTP 要求](http://aspnet.4guysfromrolla.com/articles/122204-1.aspx)。
 
 ## <a name="step-4-displaying-the-category-pictures-in-a-gridview"></a>步驟 4：在 GridView 中顯示類別目錄的圖片
@@ -194,24 +166,19 @@ ms.locfileid: "59394285"
 
 讓 s 擴大`Categories`GridView 中的`DisplayOrDownloadData.aspx`加 ImageField 來顯示每個類別目錄的圖片。 只需新增 ImageField，設定其`DataImageUrlField`並`DataImageUrlFormatString`屬性，以`CategoryID`和`DisplayCategoryPicture.aspx?CategoryID={0}`分別。 這會建立 GridView 資料行，會呈現`<img>`項目其`src`屬性參考`DisplayCategoryPicture.aspx?CategoryID={0}`，其中{0}GridView 資料列 s 取代`CategoryID`值。
 
-
 ![新增 ImageField 至 GridView](displaying-binary-data-in-the-data-web-controls-vb/_static/image12.gif)
 
 **圖 12**:新增 ImageField 至 GridView
 
-
 在新增之後 ImageField，GridView s 的宣告式語法看起來應該像 soothe 下列：
-
 
 [!code-aspx[Main](displaying-binary-data-in-the-data-web-controls-vb/samples/sample8.aspx)]
 
 請花一點時間才能檢視此頁面，透過瀏覽器。 請注意如何每一筆記錄現在包含類別目錄的圖片。
 
-
 [![類別的圖片會顯示每個資料列](displaying-binary-data-in-the-data-web-controls-vb/_static/image13.gif)](displaying-binary-data-in-the-data-web-controls-vb/_static/image19.png)
 
 **圖 13**:類別的圖片會顯示每個資料列 ([按一下以檢視完整大小的影像](displaying-binary-data-in-the-data-web-controls-vb/_static/image20.png))
-
 
 ## <a name="summary"></a>總結
 

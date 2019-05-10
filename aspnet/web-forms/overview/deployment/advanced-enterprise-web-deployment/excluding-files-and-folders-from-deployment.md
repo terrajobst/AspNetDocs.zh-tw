@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: f4cc2d40-6a78-429b-b06f-07d000d4caad
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 4da291af4042e6e09c6917703b160ca717eecd15
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a262ce43d7199fb1015d54d0b7c213857c360946
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407987"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133886"
 ---
 # <a name="excluding-files-and-folders-from-deployment"></a>從部署中排除檔案與資料夾
 
@@ -22,7 +22,6 @@ ms.locfileid: "59407987"
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主題描述如何您可以排除檔案和資料夾的 web 部署封裝時您建置和封裝 web 應用程式專案。
-
 
 本主題是構成一系列以名為 Fabrikam，Inc.的虛構公司的企業部署需求為基礎的教學課程的一部分本教學課程系列會使用範例解決方案&#x2014;[連絡管理員解決方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;來代表實際的層級的複雜性，包括 ASP.NET MVC 3 應用程式時，Windows Communication 的 web 應用程式Foundation (WCF) 服務與資料庫專案。
 
@@ -48,7 +47,6 @@ ms.locfileid: "59407987"
 > [!NOTE]
 > 此檔案被包含來判斷哪些檔案来包含的邏輯：   
 > *%PROGRAMFILES%\MSBuild\Microsoft\VisualStudio\v10.0\Web\ Microsoft.Web.Publishing.OnlyFilesToRunTheApp.targets*
-
 
 ## <a name="excluding-specific-files-and-folders"></a>排除特定的檔案和資料夾
 
@@ -77,9 +75,7 @@ ms.locfileid: "59407987"
 
 這是基本的結構 *.wpp.targets*檔案：
 
-
 [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample1.xml)]
-
 
 請注意，每個項目會包含名為的項目中繼資料元素**FromTarget**。 這是選擇性的值，並不會影響在建置程序;它只是表示特定的檔案或資料夾已省略為什麼如果有人檢閱組建記錄檔。
 

@@ -8,12 +8,12 @@ ms.date: 04/23/2009
 ms.assetid: 0177dabd-d888-449f-91b2-24190cf5e842
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fa05645db9d43a836cc75b399153dd2e2c288f7c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1e93a5314129b2a05ede603ae9c01cd57b574f88
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388753"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127025"
 ---
 # <a name="configuring-the-production-web-application-to-use-the-production-database-c"></a>設定生產環境 Web 應用程式使用生產資料庫 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59388753"
 [下載程式碼](http://download.microsoft.com/download/E/6/F/E6FE3A1F-EE3A-4119-989A-33D1A9F6F6DD/ASPNET_Hosting_Tutorial_08_CS.zip)或[下載 PDF](http://download.microsoft.com/download/C/3/9/C391A649-B357-4A7B-BAA4-48C96871FEA6/aspnet_tutorial08_DBConfig_cs.pdf)
 
 > 先前的教學課程所述，並不常見的開發和生產環境之間不同的設定資訊。 這是資料驅動 web 應用程式，特別有用，因為開發和生產環境之間不同的資料庫連接字串。 本教學課程將探討設定生產環境，以納入更多詳細資料中的適當的連接字串的方式。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -44,7 +43,6 @@ Web 應用程式使用中的資訊*連接字串*建立與資料庫的連線。 �
 - `AttachDbFilename` -指定資料庫檔案的位置。 值包含預留位置`|DataDirectory|`，這是解析為 s 的應用程式的完整路徑`App_Data`在執行階段資料夾。
 - `Integrated Security` -布林值，指出是否要連接到資料庫 (false) 或目前的 Windows 帳戶認證 (true) 時，使用指定的使用者名稱/密碼。
 - `User Instance` -指出是否允許本機電腦上的非系統管理使用者連接和連接到 SQL Server Express Edition 資料庫的 SQL Server Express Edition 的特定組態選項。 請參閱[SQL Server Express 使用者執行個體](https://msdn.microsoft.com/library/ms254504.aspx)如需有關這項設定。
-  
 
 允許的連接字串選項取決於您所連接的資料庫和所使用的 ADO.NET 資料庫提供者。 例如，連接字串連接到 Microsoft SQL Server 資料庫與建立用來連接到 Oracle 資料庫。 同樣地，連接到 Microsoft SQL Server 資料庫，使用 SqlClient 提供者會使用不同的連接字串比時使用的 OLE DB 提供者。
 
@@ -52,19 +50,15 @@ Web 應用程式使用中的資訊*連接字串*建立與資料庫的連線。 �
 
 開啟 Visual Studio，然後瀏覽至 [伺服器總管] 視窗 （在 Visual Web Developer 中，此視窗稱為資料庫總管）。 以滑鼠右鍵按一下 [資料連線] 選項，並從內容功能表中選擇 [加入連接] 選項。 這會顯示在 圖 1 所示的精靈。 選擇適當的資料來源，然後按一下 [繼續]。
 
-
 [![若要將新的資料庫新增至 [伺服器總管] 中選擇](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image2.jpg)](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image1.jpg) 
 
 **圖 1**:選擇將新的資料庫新增至 [伺服器總管] ([按一下以檢視完整大小的影像](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image3.jpg))
 
-
 接下來，指定 各種資料庫連接資訊 （請參閱 圖 2）。 當您註冊您的 web 主機服務的公司，他們應該如何提供資訊連線至資料庫伺服器名稱、 資料庫名稱、 使用者名稱和密碼，用來連接到資料庫，資料庫等等。 輸入這項資訊之後按一下 [確定] 完成這個精靈，並將資料庫加入至 [伺服器總管] 中。
-
 
 [![指定的資料庫連線資訊](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image5.jpg)](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image4.jpg) 
 
 **圖 2**:指定資料庫連接資訊 ([按一下以檢視完整大小的影像](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image6.jpg))
-
 
 生產環境資料庫現在應該會列出在 [伺服器總管] 中。 從 [伺服器總管] 中選取資料庫，請移至 [屬性] 視窗。 您在這裡可以找到名為資料庫的連接字串與連接字串的屬性。 假設您在生產和 SqlClient 提供者上使用 Microsoft SQL Server 資料庫連接字串看起來應該如下所示：
 
@@ -87,14 +81,11 @@ Web 應用程式使用中的資訊*連接字串*建立與資料庫的連線。 �
 > [!NOTE]
 > 如果您不小心將部署`Web.config`檔案，其中包含開發資料庫連接字串，則會有錯誤時在生產環境應用程式會嘗試連接到資料庫。 此錯誤記錄成資訊清單`SqlException`reporting 伺服器找不到或無法存取的訊息。
 
-
 一旦網站部署至生產環境，請瀏覽生產網站，透過瀏覽器。 您應該查看，並在本機執行資料驅動應用程式時享有與相同的使用者體驗。 當然您造訪的網站上實際執行時的站台是由提供生產環境資料庫伺服器上，而瀏覽的網站，在開發環境中使用的資料庫，在開發過程中。 [圖 3] 所示*教導您自己 ASP.NET 3.5 24 小時內*檢閱從在實際執行環境 （請注意在瀏覽器的網址列中的 URL） 網站的頁面。
-
 
 [![資料驅動應用程式是現在可在生產環境 ！](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image8.jpg)](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image7.jpg) 
 
 **圖 3**:資料驅動應用程式是現在可在生產環境 ！ ([按一下以檢視完整大小的影像](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image9.jpg))
-
 
 ### <a name="storing-connection-strings-in-a-separate-configuration-file"></a>將連接字串儲存在個別的組態檔
 
@@ -113,14 +104,11 @@ Web 應用程式使用中的資訊*連接字串*建立與資料庫的連線。 �
 > [!NOTE]
 > 您可以命名組態檔以外的 databaseConnectionStrings.config，視 d，例如`connectionStrings.config`或`dbInfo.config`。 不過，請務必將檔案命名為與`.config`延伸模組做為`.config`檔案，根據預設，不提供 ASP.NET 引擎。 如果您其他項目名稱的檔案，例如`connectionStrings.txt`，使用者無法以其瀏覽器指向[www.yoursite.com/ConfigSettings/connectionStrings.txt](http://www.yoursite.com/ConfigSettings/connectionStrings.txt)並檢視檔案的內容 ！
 
-
 此時`ConfigSections`資料夾應包含三個檔案 （請參閱 圖 4）。 DatabaseConnectionStrings.dev.config 和 databaseConnectionStrings.production.config 檔案分別包含開發和生產環境中，連接字串。 DatabaseConnectionStrings.config 檔案包含將 web 應用程式在執行階段所使用的連接字串資訊。 因此，databaseConnectionStrings.config 檔案應該相同 databaseConnectionStrings.dev.config 檔案，在開發環境中，而在實際執行上 databaseConnectionStrings.config 檔案應該相同databaseConnectionStrings.production.config。
-
 
 [![ConfigSections](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image11.jpg)](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image10.jpg) 
 
 **圖 4**:ConfigSections ([按一下以檢視完整大小的影像](configuring-the-production-web-application-to-use-the-production-database-cs/_static/image12.jpg))
-
 
 我們現在需要指示`Web.config`databaseConnectionStrings.config 檔案用於其連接字串存放區。 開啟 `Web.config` 並使用下列內容取代現有的 `<connectionStrings>` 元素：
 
@@ -132,7 +120,6 @@ Web 應用程式使用中的資訊*連接字串*建立與資料庫的連線。 �
 
 > [!NOTE]
 > 您可以指定任何的資訊`Web.config`項目，在個別的檔案，然後使用`configSource`屬性，來參照該檔案從`Web.config`。
-
 
 ## <a name="summary"></a>總結
 

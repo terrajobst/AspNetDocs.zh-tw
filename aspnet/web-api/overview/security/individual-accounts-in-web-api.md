@@ -8,12 +8,12 @@ ms.date: 10/15/2014
 ms.assetid: 92c84846-f0ea-4b5e-94b6-5004874eb060
 msc.legacyurl: /web-api/overview/security/individual-accounts-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 29c3670ad7ab93acb0be878e5bd961d0ea446eee
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7492c4aa4c2a0a8aeed64c3462bda8fc51f35a6b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396223"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134304"
 ---
 # <a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>保護 Web API 使用個別帳戶和 ASP.NET Web API 2.2 中的本機登入
 
@@ -29,7 +29,6 @@ ms.locfileid: "59396223"
 > - [Visual Studio 2013 Update 3](https://www.microsoft.com/visualstudio/eng/2013-downloads)
 > - [Web API 2.2](../releases/whats-new-in-aspnet-web-api-22.md)
 > - [ASP.NET Identity 2.1](../../../identity/index.md)
-
 
 在 Visual Studio 2013 中，Web API 專案範本可讓您進行驗證的三個選項：
 
@@ -239,7 +238,6 @@ OAuth 的中介軟體不了解使用者帳戶。 提供者會在的中介軟體�
 
 > [!NOTE]
 > 特別是，您的應用程式的 MVC 部分可能會使用表單驗證，將認證儲存在 cookie 中。 以 cookie 為基礎的驗證需要使用防偽權杖，以防止 CSRF 攻擊。 這是 web Api 的問題，因為 web API 傳送給用戶端的防偽語彙基元的便利方法。 (如需此問題有關的詳細背景，請參閱[Web API 中防止 CSRF 攻擊](preventing-cross-site-request-forgery-csrf-attacks.md)。)呼叫**SuppressDefaultHostAuthentication**可確保 Web API 不容易遭受 CSRF 攻擊從儲存在 cookie 中的認證。
-
 
 當用戶端要求受保護的資源時，以下是 Web API 管線中發生的動作：
 

@@ -8,12 +8,12 @@ ms.date: 10/16/2008
 ms.assetid: e83812f2-c53e-4a43-a7c1-d64c59ecf694
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: bbedc11b9b1225b1047350c1c84a116ecef0c380
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fb3ed252a9232a2f5a1ad4257156a142bbe5b174
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407402"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123170"
 ---
 # <a name="understanding-action-filters-vb"></a>了解動作篩選 (VB)
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 [下載 PDF](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_14_VB.pdf)
 
 > 本教學課程的目標在於說明動作篩選條件。 動作篩選條件是屬性，您可以套用至控制器動作或整個 controller--修改 執行動作的方式。
-
 
 ## <a name="understanding-action-filters"></a>了解動作篩選條件
 
@@ -48,11 +47,9 @@ by [Microsoft](https://github.com/microsoft)
 
 如果您重複叫用`Index()`由您的瀏覽器的網址列中輸入 URL/資料/索引，然後按 重新整理動作按鈕多次，，然後您會看到相同的時間為 10 秒。 輸出`Index()`動作的快取 （請參閱 圖 1） 的 10 秒。
 
-
 [![快取的時間](understanding-action-filters-vb/_static/image2.png)](understanding-action-filters-vb/_static/image1.png)
 
 **圖 01**:快取時間 ([按一下以檢視完整大小的影像](understanding-action-filters-vb/_static/image3.png))
-
 
 在列表 1 中，單一動作篩選條件 –`OutputCache`套用至動作篩選條件 –`Index()`方法。 如果您需要您可以套用多個動作篩選條件至相同的動作。 例如，您可能想要套用這兩`OutputCache`和`HandleError`動作篩選條件至相同的動作。
 
@@ -106,11 +103,9 @@ ASP.NET MVC 架構支援四種不同類型的篩選：
 
 在列表 2 中， `OnActionExecuting()`， `OnActionExecuted()`， `OnResultExecuting()`，以及`OnResultExecuted()`方法的所有呼叫`Log()`方法。 方法的名稱和目前的路由資料傳遞至`Log()`方法。 `Log()`方法會將訊息寫入 Visual Studio 輸出 視窗 （請參閱 圖 2）。
 
-
 [![寫入至 Visual Studio [輸出] 視窗](understanding-action-filters-vb/_static/image5.png)](understanding-action-filters-vb/_static/image4.png)
 
 **圖 02**:寫入至 Visual Studio [輸出] 視窗 ([按一下以檢視完整大小的影像](understanding-action-filters-vb/_static/image6.png))
-
 
 在 列表 3 中的主控制器會說明如何將記錄的動作篩選條件套用至整個控制器類別。 每當任何由主控制器的動作會叫用 – 請`Index()`方法或`About()`方法 – 動作都會記錄到 Visual Studio [輸出] 視窗的處理階段。
 

@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: f8400241-4f4b-4bbd-9994-54fb64909e6e
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 1500415c7ee017776c59acb05a2eaefc6956a41b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b3aaf7234706d149a3c784347528923f662c3511
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404691"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133885"
 ---
 # <a name="configuring-a-tfs-build-server-for-web-deployment"></a>設定 Web 部署的 TFS 組建伺服器
 
@@ -22,7 +22,6 @@ ms.locfileid: "59404691"
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主題說明如何準備要建置及部署您的解決方案使用 Team Build 和 Internet Information Services (IIS) Web Deployment Tool (Web Deploy) 的 Team Foundation Server (TFS) 組建伺服器。
-
 
 本主題是構成一系列以名為 Fabrikam，Inc.的虛構公司的企業部署需求為基礎的教學課程的一部分本教學課程系列會使用範例解決方案&#x2014;[連絡管理員解決方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;來代表實際的層級的複雜性，包括 ASP.NET MVC 3 應用程式時，Windows Communication 的 web 應用程式Foundation (WCF) 服務與資料庫專案。
 
@@ -103,7 +102,6 @@ ms.locfileid: "59404691"
 
 > [!NOTE]
 > 如果您的部署程序包含使用 VSDBCMD.exe 或 SQLCMD.exe 等工具，您必須確保這些都會安裝在您的組建伺服器上。 VSDBCMD.exe 是 Visual Studio 工具，而且通常會加入至伺服器時安裝 Team Foundation Build。 SQLCMD.exe 是 SQL Server 工具。 您可以下載獨立版本從 SQLCMD.exe [Microsoft SQL Server 2008 R2 功能套件](https://go.microsoft.com/?linkid=9805134)頁面。
-
 
 ## <a name="conclusion"></a>結論
 

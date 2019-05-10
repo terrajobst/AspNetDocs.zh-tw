@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: 09e82351-816b-402d-acd1-0f9ac6901d16
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-tools
 msc.type: authoredcontent
-ms.openlocfilehash: 874542305bd3f47066cfae595919285ed079aa53
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2fb987dd9b26ad9f0e8a88fd881bde4505ec4148
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421065"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65115902"
 ---
 # <a name="hands-on-lab-visual-studio-2013-web-tools"></a>實際操作實驗室：Visual Studio 2013 Web 工具
 
@@ -28,7 +28,6 @@ ms.locfileid: "59421065"
 > 所有此能力也可供擴充功能，輕鬆擴充以符合您需求的編輯器使用強大的新功能。 Web Essentials 是 （大多數） web 相關的增強功能至 Visual Studio 的集合。 它包含許多新的 IntelliSense 完成 （特別是針對 CSS)、 新的瀏覽器連結功能、 自動 JSHint 適用於 JavaScript 檔案、 HTML 和 CSS 和其他許多功能，才能使用新式網頁程式開發的新警告。
 > 
 > 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ https://aka.ms/webcamps-training-kit ](https://aka.ms/webcamps-training-kit)。
-
 
 <a id="Overview"></a>
 ## <a name="overview"></a>總覽
@@ -64,7 +63,6 @@ ms.locfileid: "59421065"
 > [!NOTE]
 > 請確定您執行安裝程式之前檢查這個實驗室的所有相依性。
 
-
 <a id="CodeSnippets"></a>
 ### <a name="using-the-code-snippets"></a>使用程式碼片段
 
@@ -72,7 +70,6 @@ ms.locfileid: "59421065"
 
 > [!NOTE]
 > 每個練習會伴隨起始方案，位於**開始**練習，可讓您依照每個練習，獨立於其他的資料夾。 請留意練習期間新增的程式碼片段缺少這些啟動解決方案，並可能無法運作，直到您已完成練習。 在練習的原始程式碼，您也可以找到**結束**資料夾包含 Visual Studio 方案，以程式碼所產生的相對應的練習中的步驟。 如果您需要其他說明，當您完成這個實際操作實驗室，您可以使用這些解決方案與指引。
-
 
 ---
 
@@ -87,9 +84,8 @@ ms.locfileid: "59421065"
 > [!NOTE]
 > 當您第一次啟動 Visual Studio 時，您必須選取其中一個預先定義的設定集合。 每個預先定義的集合以符合特定的開發樣式設計，並決定視窗版面配置、 編輯器的行為、 IntelliSense 程式碼片段和對話方塊選項。 在這個實驗室中的程序說明完成指定的工作，在 Visual Studio 中使用時所需的動作**一般開發設定**集合。 如果您選擇不同的設定集合，您的開發環境，可能會有在步驟中，您應該考慮到的差異。
 
-
 <a id="Exercise1"></a>
-### <a name="exercise-1-working-with-browser-link-and-web-essentials"></a>練習 1:使用瀏覽器連結和 Web Essentials
+### <a name="exercise-1-working-with-browser-link-and-web-essentials"></a>練習 1：使用瀏覽器連結和 Web Essentials
 
 **Web Essentials**是 Visual Studio 擴充功能，新增各種現代網頁程式開發，大部分是專注於讓 web 開發經驗更快速且更美觀的實用功能。 您可以從 Visual Studio 中的延伸模組資源庫安裝 Web Essentials。
 
@@ -338,7 +334,7 @@ ms.locfileid: "59421065"
 5. 值變更**內容**屬性設定為*GeekQuiz*並儲存檔案。
 
 <a id="Exercise2"></a>
-### <a name="exercise-2-taking-advantage-of-code-snippets-and-intellisense"></a>練習 2:利用程式碼片段和 IntelliSense
+### <a name="exercise-2-taking-advantage-of-code-snippets-and-intellisense"></a>練習 2：利用程式碼片段和 IntelliSense
 
 透過 Web Essentials，HTML 編輯器已擴充加上額外的功能。 在此練習中，您會看到一些新功能，開發 web 應用程式時很有幫助。
 

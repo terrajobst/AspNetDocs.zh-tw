@@ -8,12 +8,12 @@ ms.date: 12/14/2018
 ms.assetid: bcf2d223-cb7f-411e-be05-f43e96a14015
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-and-action-selection
 msc.type: authoredcontent
-ms.openlocfilehash: 238efd312a73e2452ca5f679f2b8f5ed1336c4dc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 62114e56fb29e80c93b82dcb78ce2bc2a123a83b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385874"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133660"
 ---
 # <a name="routing-and-action-selection-in-aspnet-web-api"></a>路由和 ASP.NET Web API 中的動作選取
 
@@ -23,7 +23,6 @@ ms.locfileid: "59385874"
 
 > [!NOTE]
 > 路由的高階概觀，請參閱 < [ASP.NET Web API 中的路由](routing-in-aspnet-web-api.md)。
-
 
 這篇文章探討路由的處理程序的詳細資料。 如果您建立 Web API 專案時，發現其中某些要求不會路由傳送您預期的方式，希望這篇文章會幫助。
 
@@ -58,7 +57,7 @@ ms.locfileid: "59385874"
 
 ### <a name="defaults"></a>預設值
 
-如果您提供預設值時，路由會符合缺少這些區段的 URI。 例如: 
+如果您提供預設值時，路由會符合缺少這些區段的 URI。 例如：
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample4.cs)]
 
@@ -85,7 +84,7 @@ URI 路徑 「 api/產品 」 中，將會包含路由字典：
 - 類別: 「 玩具 」
 - 識別碼："123"
 
-預設值也可以在路由範本中包含值，不會不出現在任何地方。 如果路由符合，該值會儲存在字典中。 例如: 
+預設值也可以在路由範本中包含值，不會不出現在任何地方。 如果路由符合，該值會儲存在字典中。 例如：
 
 [!code-csharp[Main](routing-and-action-selection/samples/sample6.cs)]
 
@@ -135,7 +134,6 @@ URI 路徑 「 api/產品 」 中，將會包含路由字典：
 
 > [!NOTE]
 > 可以覆寫預設繫結規則。 請參閱[WebAPI 參數繫結，在幕後](https://blogs.msdn.com/b/jmstall/archive/2012/05/11/webapi-parameter-binding-under-the-hood.aspx)。
-
 
 有了此背景，以下是動作選取演算法。
 

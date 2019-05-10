@@ -8,12 +8,12 @@ ms.date: 03/24/2008
 ms.assetid: 83b4f5a4-4f5a-4380-ba33-f0b5c5ac6a75
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/role-based-authorization-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 05b014538891e6c058c4d4bd4125de434f59d9fe
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2cccb05d3bd18562ccc03ce0047ccea9b514abc7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389683"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134629"
 ---
 # <a name="role-based-authorization-vb"></a>以角色為基礎的授權 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59389683"
 [下載程式碼](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/VB.11.zip)或[下載 PDF](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/aspnet_tutorial11_RoleAuth_vb.pdf)
 
 > 本教學課程開始了解如何角色 framework 建立的關聯使用者的角色與他的安全性內容。 然後，它會檢驗如何套用以角色為基礎的 URL 授權規則。 之後，我們將探討使用宣告式和程式設計的方式改變顯示的資料和 ASP.NET 網頁所提供的功能。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -46,11 +45,9 @@ ms.locfileid: "59389683"
 
 如果匿名使用者瀏覽網站，都`FormsAuthenticationModule`和`RoleManagerModule`建立主體物件。
 
-
 [![已驗證使用者時使用表單驗證和角色架構的 ASP.NET 管線事件](role-based-authorization-vb/_static/image2.png)](role-based-authorization-vb/_static/image1.png)
 
 **圖 1**:驗證使用者時使用表單驗證和角色架構的 ASP.NET 管線事件 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image3.png))
-
 
 ### <a name="caching-role-information-in-a-cookie"></a>在 Cookie 中快取的角色資訊
 
@@ -58,17 +55,14 @@ ms.locfileid: "59389683"
 
 如果快取使用者的角色在 cookie 中，設定角色架構`RoleManagerModule`ASP.NET 管線期間建立的 cookie [ `EndRequest`事件](https://msdn.microsoft.com/library/system.web.httpapplication.endrequest.aspx)。 在中的後續要求中會使用此 cookie `PostAuthenticateRequest`，這是當`RolePrincipal`建立物件。 如果 cookie 有效，且尚未過期，cookie 中的資料剖析和用來填入使用者的角色，藉此節省`RolePrincipal`不必呼叫`Roles`類別，以判斷使用者的角色。 圖 2 說明此工作流程。
 
-
 [![使用者的角色資訊可以儲存在 Cookie 中，以改善效能](role-based-authorization-vb/_static/image5.png)](role-based-authorization-vb/_static/image4.png)
 
 **圖 2**:使用者的角色資訊可以儲存在 Cookie 中改善效能 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image6.png))
-
 
 根據預設，會停用角色快取 cookie 機制。 可以透過啟用`<roleManager>`; 中的組態標記`Web.config`。 我們討論了使用[`<roleManager>`項目](https://msdn.microsoft.com/library/ms164660.aspx)來指定角色中的提供者<a id="_msoanchor_4"> </a> [*建立和管理角色*](creating-and-managing-roles-vb.md)教學課程中，因此您應該在您的應用程式中已經有這個項目`Web.config`檔案。 指定角色快取的 cookie 設定的屬性為`<roleManager>`; 項目，並摘要說明 表 1。
 
 > [!NOTE]
 > 表 1 中列出的組態設定會指定產生的角色快取 cookie 的屬性。 如需有關 cookie、 其運作方式，以及它們的各種屬性的詳細資訊，請參閱[本教學課程中的 Cookie](http://www.quirksmode.org/js/cookies.html)。
-
 
 | <strong>Property</strong> |                                                                                                                                                                                                                                                                                                                                                         <strong>描述</strong>                                                                                                                                                                                                                                                                                                                                                          |
 |---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -96,7 +90,6 @@ ms.locfileid: "59389683"
 > [!NOTE]
 > Microsoft 的 Patterns&amp;實務群組，而且使用持續性的角色快取 cookie。 如果駭客可以以某種方式取得存取權的有效使用者的 cookie，角色快取 cookie 的擁有權就足以證明角色成員資格，因為他可以模擬該使用者。 如果 cookie 保存在使用者的瀏覽器上，將會增加發生的可能性。 如需有關此安全性建議，以及其他安全性考量的詳細資訊，請參閱[ASP.NET 2.0 的安全性問題清單](https://msdn.microsoft.com/library/ms998375.aspx)。
 
-
 ## <a name="step-1-defining-role-based-url-authorization-rules"></a>步驟 1：定義以角色為基礎的 URL 授權規則
 
 中所述<a id="_msoanchor_6"> </a> [*使用者為基礎的授權*](../membership/user-based-authorization-vb.md)教學課程中，URL 授權提供一個方法來限制存取一組使用者的使用者或角色的角色頁面基準。 URL 授權規則會在拼`Web.config`使用[`<authorization>`項目](https://msdn.microsoft.com/library/8d82143t.aspx)具有`<allow>`和`<deny>`子項目。 除了先前的教學課程所討論的使用者相關的授權規則每`<allow>`和`<deny>`也可以包含子項目：
@@ -114,11 +107,9 @@ ms.locfileid: "59389683"
 
 若要達成此目的，先新增`Web.config`檔案`Roles`資料夾。
 
-
 [![加入至角色目錄的 Web.config 檔案](role-based-authorization-vb/_static/image8.png)](role-based-authorization-vb/_static/image7.png)
 
 **圖 3**:新增`Web.config`的檔案`Roles`目錄 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image9.png))
-
 
 接下來，新增下列組態標記至`Web.config`:
 
@@ -128,23 +119,18 @@ ms.locfileid: "59389683"
 
 儲存您的變更之後`Web.config`不在系統管理員角色的使用者身分登入，然後再次嘗試瀏覽其中一個受保護的頁面。 `UrlAuthorizationModule`會偵測到您沒有權限來瀏覽要求的資源; 因此，`FormsAuthenticationModule`會將您重新導向至登入頁面。 登入頁面會再將您重新導向至`UnauthorizedAccess.aspx`頁面 （請參閱 圖 4）。 登入頁面，以便從這個最後一個重新導向`UnauthorizedAccess.aspx`因為我們在步驟 2 中的 [登入] 頁面新增的程式碼，就會發生<a id="_msoanchor_7"> </a> [*使用者為基礎的授權*](../membership/user-based-authorization-vb.md)教學課程。 特別是，登入頁面將自動重新導向至任何已驗證的使用者`UnauthorizedAccess.aspx`如果查詢字串包含`ReturnUrl`參數，作為此參數會指出，使用者在登入頁面之後進入嘗試檢視的網頁時，他不是檢視權限。
 
-
 [![只有系統管理員角色的使用者，才可以檢視受保護的頁面](role-based-authorization-vb/_static/image11.png)](role-based-authorization-vb/_static/image10.png)
 
 **圖 4**:僅限系統管理員角色中的使用者可以檢視受保護的頁面 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image12.png))
 
-
 先登出，然後在系統管理員角色的使用者身分登入。 現在您應該能夠檢視三個受保護的頁面。
-
 
 [![可以瀏覽 Tito UsersAndRoles.aspx 頁面因為他是在系統管理員角色](role-based-authorization-vb/_static/image14.png)](role-based-authorization-vb/_static/image13.png)
 
 **圖 5**:可以瀏覽 Tito`UsersAndRoles.aspx`頁面上因為他是系統管理員角色中 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image15.png))
 
-
 > [!NOTE]
 > 指定的 URL 授權規則 – 角色或使用者時務必記住，規則會分析一次一個，從頂端向下。 只要找到相符項目，使用者會授與或拒絕存取，視在找到相符項`<allow>`或`<deny>`項目。 **如果找到相符項目，則使用者會獲得存取。** 因此，如果您想要限制存取一或多個使用者帳戶，務必您使用`<deny>`URL 授權組態中的最後一個元素的項目。 **如果未包含您的 URL 授權規則**`<deny>`**項目中，所有使用者會都獲授與存取權。** URL 授權規則會分析方式的更完整討論，請參閱上一步 」 看`UrlAuthorizationModule`會使用授權規則授與或拒絕存取 」 一節<a id="_msoanchor_8"> </a> [ *使用者為基礎的授權*](../membership/user-based-authorization-vb.md)教學課程。
-
 
 ## <a name="step-2-limiting-functionality-based-on-the-currently-logged-in-users-roles"></a>步驟 2：限制目前登入使用者的角色為基礎的功能
 
@@ -157,7 +143,6 @@ ms.locfileid: "59389683"
 > [!NOTE]
 > 我們即將建置的 ASP.NET 網頁會使用 GridView 控制項來顯示使用者帳戶。 本教學課程中 > 系列聚焦於表單驗證、 授權、 使用者帳戶和角色，因為我不想花太多時間討論 GridView 控制項的內部運作方式。 雖然本教學課程提供特定的逐步指示，設定此頁面，它不會不探討為什麼做特定選擇，或轉譯的輸出上有的效果的特定屬性的詳細資料。 如 GridView 控制項徹底的檢查，請參閱我*[使用 ASP.NET 2.0 中的資料](../../data-access/index.md)* 教學課程系列。
 
-
 首先開啟`RoleBasedAuthorization.aspx`頁面中`Roles`資料夾。 拖曳的 GridView 從拖曳至設計工具和設定頁面及其`ID`至`UserGrid`。 稍後我們會撰寫程式碼呼叫`Membership`。`GetAllUsers` 方法，並繫結所產生的`MembershipUserCollection`物件至 GridView。 `MembershipUserCollection`包含`MembershipUser`系統; 中的每個使用者帳戶的物件`MembershipUser`物件具有屬性，例如`UserName`，`Email`，`LastLoginDate`等等。
 
 我們撰寫的程式碼，將使用者帳戶方格繫結之前，讓我們先定義 GridView 的欄位。 從 GridView 的智慧標籤上，按一下 編輯欄位 連結以啟動 欄位 對話方塊 （請參閱 圖 6）。 從這裡開始，請取消核取 在左下角的 自動產生的欄位 核取方塊。 因為我們希望此 GridView，以編輯和刪除功能，包括新增 CommandField 並設定其`ShowEditButton`和`ShowDeleteButton`屬性設為 True。 接下來，新增四個欄位來顯示`UserName`， `Email`， `LastLoginDate`，和`Comment`屬性。 BoundField 用於兩個唯讀屬性 (`UserName`並`LastLoginDate`) 和兩個可編輯欄位的 TemplateFields (`Email`和`Comment`)。
@@ -166,11 +151,9 @@ ms.locfileid: "59389683"
 
 設定`HeaderText`的兩個的 TemplateFields"Email"和"Comme"屬性。
 
-
 [![可以透過 [欄位] 對話方塊中設定 GridView 的欄位](role-based-authorization-vb/_static/image17.png)](role-based-authorization-vb/_static/image16.png)
 
 **圖 6**:GridView 的欄位可以是設定透過欄位對話方塊 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image18.png))
-
 
 我們現在需要定義`ItemTemplate`和`EditItemTemplate`"Email"和"Comme"TemplateFields。 將標籤 Web 控制項新增至每個`ItemTemplates`，並繫結其`Text`屬性，以`Email`和`Comment`屬性，分別。
 
@@ -192,15 +175,12 @@ ms.locfileid: "59389683"
 
 使用此程式碼就緒之後，請瀏覽透過瀏覽器頁面。 如 [圖 7] 所示，您應該會看到 GridView，列出系統中的每個使用者帳戶的相關資訊。
 
-
 [![UserGrid GridView 列出系統中的每個使用者的相關資訊](role-based-authorization-vb/_static/image20.png)](role-based-authorization-vb/_static/image19.png)
 
 **圖 7**:`UserGrid` GridView 列出資訊有關每個使用者在系統中 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image21.png))
 
-
 > [!NOTE]
 > `UserGrid` GridView 會列出所有的非分頁的介面中的使用者。 這個簡單的方格介面不是適用於案例有數個數十個或多個使用者。 其中一個選項是設定 GridView，以啟用分頁功能。 `Membership.GetAllUsers`方法有兩個多載︰ 一個可接受任何輸入的參數且傳回的所有使用者，另一個則會採用頁面索引和頁面大小的整數值，並都傳回使用者的指定的子集。 第二個多載可以用來更有效率地透過使用者的頁面，因為它會傳回只是使用者帳戶的精確子集而非*所有*其中。 如果您有數千個使用者帳戶，您可能要考慮的篩選為基礎的介面，其中只會顯示其使用者名稱以選取字元開頭，例如那些使用者。 [ `Membership.FindUsersByName`方法](https://msdn.microsoft.com/library/system.web.security.membership.findusersbyname.aspx)適合用來建立篩選器為基礎的使用者介面。 我們將探討在未來的教學課程中建置這類介面。
-
 
 GridView 控制項提供內建的編輯和刪除時的控制項繫結至已正確設定的資料來源控制項，例如 SqlDataSource 或 ObjectDataSource 的支援。 `UserGrid` GridView，不過，具有以程式設計方式繫結其資料; 因此，我們必須撰寫程式碼來執行這兩項工作。 特別是，我們必須建立事件處理常式，如 GridView `RowEditing`， `RowCancelingEdit`， `RowUpdating`，和`RowDeleting`訪客按一下 GridView 的時所引發的事件編輯 [取消]，更新或刪除按鈕。
 
@@ -221,7 +201,6 @@ GridView 控制項提供內建的編輯和刪除時的控制項繫結至已正�
 > [!NOTE]
 > [刪除] 按鈕不需要使用者確認，然後再刪除使用者帳戶的任何排序。 建議您將加入某種形式的使用者確認，為了降低不小心刪除的帳戶。 其中一個最簡單的方式，可確認動作是透過用戶端確認對話方塊。 如需有關這項技術的詳細資訊，請參閱 <<c0> [ 正在刪除時新增用戶端確認](https://asp.net/learn/data-access/tutorial-42-vb.aspx)。
 
-
 請確認此頁面函式，如預期般運作。 您應該能夠編輯任何使用者的電子郵件地址和註解，以及刪除任何使用者帳戶。 因為`RoleBasedAuthorization.aspx`頁面可供所有使用者存取，任何使用者 – 甚至是匿名的使用者 – 瀏覽此頁面，編輯和刪除使用者帳戶 ！ 因此，只有 「 監督員 」 和 「 系統管理員角色中的使用者可以編輯使用者的電子郵件地址和註解，只有系統管理員可以刪除使用者帳戶，讓我們更新此頁面。
 
 「 使用 LoginView 控制項 」 一節探討使用 LoginView 控制項以顯示指示特定的使用者角色。 如果系統管理員角色中的人員造訪此頁面，我們將說明如何編輯和刪除使用者的指示。 如果監督員角色中的使用者達到此頁面，我們將說明在編輯使用者的指示。 而如果造訪者為匿名，或不是監督員 」 或 「 系統管理員角色中，我們會顯示訊息，說明他們無法編輯或刪除使用者帳戶資訊。 「 以程式設計的方式限制的功能 > 一節中，我們會撰寫程式碼，以程式設計的方式顯示或隱藏使用者的角色為基礎的編輯和刪除按鈕。
@@ -238,11 +217,9 @@ GridView 控制項提供內建的編輯和刪除時的控制項繫結至已正�
 
 若要管理 kolekci RoleGroups，按一下要顯示 RoleGroup 集合編輯器控制項的智慧標籤的 「 編輯 kolekci RoleGroups 」 連結。 新增兩個新 kolekci RoleGroups。 設定第一個的 RoleGroup`Roles`屬性設為 「 系統管理員 」 並將第二個的 「 監督員 」。
 
-
 [![管理 LoginView 的特定角色的範本透過 RoleGroup 集合編輯器](role-based-authorization-vb/_static/image23.png)](role-based-authorization-vb/_static/image22.png)
 
 **圖 8**:管理 LoginView 的特定角色的範本透過 RoleGroup 集合編輯器 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image24.png))
-
 
 按一下 確定 關閉 RoleGroup 集合編輯器 中;這會更新 LoginView 的宣告式標記，以包含`<RoleGroups>`具有`<asp:RoleGroup>`每 RoleGroup 的子項目定義在 RoleGroup 集合編輯器 中。 此外，「 檢視 」 下拉式清單中 LoginView 的智慧標籤-先列出剛才`AnonymousTemplate`和`LoggedInTemplate`– 現在包含已新增 kolekci RoleGroups。
 
@@ -254,26 +231,21 @@ GridView 控制項提供內建的編輯和刪除時的控制項繫結至已正�
 
 接下來，使用者是 「 主管 」 角色的成員身分登入。 此時，您應該會看到各有特定角色的訊息 （請參閱 圖 9）。 如果您的使用者角色，您應該會看到系統管理員角色特定訊息 （請參閱 圖 10） 的系統管理員身分登入。
 
-
 [![Bruce 顯示各有特定角色的訊息](role-based-authorization-vb/_static/image26.png)](role-based-authorization-vb/_static/image25.png)
 
 **圖 9**:Bruce 顯示各有特定角色的訊息 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image27.png))
-
 
 [![Tito 會顯示系統管理員角色特定訊息](role-based-authorization-vb/_static/image29.png)](role-based-authorization-vb/_static/image28.png)
 
 **圖 10**:Tito 會顯示系統管理員角色特定訊息 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image30.png))
 
-
 身為螢幕擷取畫面，在 圖 9 和 10 的節目，LoginView 只會呈現一個範本，即使套用多個範本。 Bruce 和 Tito 都會記錄在 [使用者]，但 LoginView 呈現只比對的 RoleGroup 而非`LoggedInTemplate`。 此外，Tito 屬於系統管理員 」 和 「 監督員的角色，但 LoginView 控制項呈現系統管理員角色特定範本，而不是監督員內其中一個。
 
 [圖 11] 說明 LoginView 控制項用來判斷哪些範本用來呈現工作流程。 請注意，是否有多個指定的其中一個 RoleGroup，LoginView 範本就會呈現*第一個*RoleGroup 符合。 換句話說，如果我們有放置為第一個 RoleGroup 監督員 RoleGroup 和第二個為系統管理員，然後當 Tito 瀏覽此頁面他會看到監督員內訊息。
 
-
 [![LoginView 控制項的工作流程，來判斷要呈現的範本](role-based-authorization-vb/_static/image32.png)](role-based-authorization-vb/_static/image31.png)
 
 **圖 11**:判斷項目範本要轉譯的 LoginView 控制項的工作流程 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image33.png))
-
 
 ### <a name="programmatically-limiting-functionality"></a>以程式設計的方式限制功能
 
@@ -281,11 +253,9 @@ LoginView 控制項則會顯示不同的瀏覽頁面的使用者角色為基礎�
 
 若要以程式設計方式參考 CommandField 中的控制項的最簡單方式是先將它轉換成範本。 若要這麼做，按一下 編輯欄位 連結，從 GridView 的智慧標籤，從目前的欄位清單中選取 CommandField 然後按一下 「 將這個欄位轉換為 TemplateField 」 連結。 這會變成使用 TemplateField CommandField`ItemTemplate`和`EditItemTemplate`。 `ItemTemplate`包含編輯和刪除時的 Linkbutton`EditItemTemplate`裝載的更新和取消的 Linkbutton。
 
-
 [![CommandField 轉換為 TemplateField](role-based-authorization-vb/_static/image35.png)](role-based-authorization-vb/_static/image34.png)
 
 **圖 12**:轉換 CommandField 到 TemplateField ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image36.png))
-
 
 更新的編輯和刪除中的 Linkbutton `ItemTemplate`，將其`ID`屬性的值來`EditButton`和`DeleteButton`分別。
 
@@ -304,7 +274,6 @@ GridView 資料繫結至 GridView，每當列舉中的記錄及其`DataSource`�
 > [!NOTE]
 > 我們也可以使用角色類別的直接取代呼叫`User.IsInRole(roleName)`藉由呼叫[`Roles.IsUserInRole(roleName)`方法](https://msdn.microsoft.com/library/system.web.security.roles.isuserinrole.aspx)。 我決定使用主體的物件`IsInRole(roleName)`方法在此範例中因為它是比直接使用角色 API 更有效率。 稍早在本教學課程中，我們會設定快取使用者的角色在 cookie 中的角色管理員。 此快取的 cookie 資料只會利用當主體的`IsInRole(roleName)`呼叫方法時，對角色 API 的直接呼叫一定會涉及到角色存放區的某趟車程支付。 即使角色不會在 cookie 中快取，呼叫的主體物件`IsInRole(roleName)`方法是通常更有效率，因為它呼叫時針對要求的第一次快取結果。 角色 API，相反地，不會執行任何快取。 因為`RowCreated`事件引發一次，在 gridview 裡，每個資料列使用`User.IsInRole(roleName)`牽涉到一個來回存取角色存放區，而`Roles.IsUserInRole(roleName)`需要*N*車程，其中*N*是使用者帳戶方格中顯示的數字。
 
-
 [編輯] 按鈕`Visible`屬性設定為`True`如果使用者瀏覽此頁面是在系統管理員或監督員的角色中，否則它會設定為`False`。 [刪除] 按鈕`Visible`屬性設定為`True`只有使用者是系統管理員角色。
 
 測試此頁面，透過瀏覽器。 如果您瀏覽頁面匿名訪客或不是監督員或系統管理員使用者身分，CommandField 是空的。它仍存在，但為精簡型的銀級，而不需要編輯或刪除按鈕。
@@ -312,27 +281,21 @@ GridView 資料繫結至 GridView，每當列舉中的記錄及其`DataSource`�
 > [!NOTE]
 > 您可隱藏 CommandField 完全當非監督員和非系統管理員就瀏覽的頁面。 我不要更動此練習的讀取器。
 
-
 [![編輯和刪除按鈕會隱藏非監督員和非系統管理員](role-based-authorization-vb/_static/image38.png)](role-based-authorization-vb/_static/image37.png)
 
 **圖 13**:編輯和刪除按鈕會隱藏非監督員和非系統管理員 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image39.png))
 
-
 如果使用者屬於 「 主管 」 角色 （但不是屬於系統管理員角色） 瀏覽，他會看到只有 [編輯] 按鈕。
-
 
 [![適用於各有 [編輯] 按鈕時，會隱藏 [刪除] 按鈕](role-based-authorization-vb/_static/image41.png)](role-based-authorization-vb/_static/image40.png)
 
 **圖 14**:適用於各有 [編輯] 按鈕時，會隱藏 [刪除] 按鈕 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image42.png))
 
-
 如果系統管理員身分造訪時，她就能存取來編輯和刪除按鈕。
-
 
 [![編輯和刪除按鈕才可以使用系統管理員](role-based-authorization-vb/_static/image44.png)](role-based-authorization-vb/_static/image43.png)
 
 **圖 15**:編輯和刪除按鈕才可以使用系統管理員 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image45.png))
-
 
 ## <a name="step-3-applying-role-based-authorization-rules-to-classes-and-methods"></a>步驟 3：將以角色為基礎的授權規則套用至類別和方法
 
@@ -348,18 +311,14 @@ GridView 資料繫結至 GridView，每當列舉中的記錄及其`DataSource`�
 
 屬性`RowUpdating`事件處理常式會指定只有系統管理員或監督員的角色中的使用者，可以執行的事件處理常式中，在做為屬性`RowDeleting`事件處理常式會限制執行中的系統管理員的使用者角色。
 
-
 > [!NOTE]
 > `PrincipalPermission`屬性會表示為中的類別`System.Security.Permissions`命名空間。 請務必新增`Imports System.Security.Permissions`頂端的程式碼後置類別檔匯入此命名空間的陳述式。
 
-
 如果以某種方式，非系統管理員嘗試執行`RowDeleting`事件處理常式或如果非監督員 」 或 「 非系統管理員執行的嘗試`RowUpdating`.NET 執行階段將會引發的事件處理常式， `SecurityException`。
-
 
 [![如果安全性內容未獲授權執行方法，會擲回安全性例外狀況](role-based-authorization-vb/_static/image47.png)](role-based-authorization-vb/_static/image46.png)
 
 **圖 16**:安全性內容無權執行此方法中，如果`SecurityException`就會擲回 ([按一下以檢視完整大小的影像](role-based-authorization-vb/_static/image48.png))
-
 
 除了 ASP.NET 頁面中，許多應用程式還包含各種層級，例如商務邏輯和資料存取層的架構。 這些層級通常會實作為類別庫，並提供類別和方法來執行商務邏輯與資料相關的功能。 `PrincipalPermission`屬性可用於將授權規則套用至這些層級。
 

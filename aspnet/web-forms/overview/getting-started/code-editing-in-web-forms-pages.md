@@ -8,12 +8,12 @@ ms.date: 03/03/2014
 ms.assetid: 5344b74e-b888-479a-92bc-601a33bd61a2
 msc.legacyurl: /web-forms/overview/getting-started/code-editing-in-web-forms-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 328dc6fb61ac562131b11b36b40f574ca5a53866
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3473ad476fbbebc58e12586334b4600f57cf17ed
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397366"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134244"
 ---
 # <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a>在 Visual Studio 2013 中以程式碼編輯 ASP.NET Web Forms
 
@@ -31,7 +31,6 @@ ms.locfileid: "59397366"
 - 插入程式碼片段。
 
 ## <a name="prerequisites"></a>必要條件
-
 
 若要完成這個逐步解說，您將需要：
 
@@ -65,14 +64,11 @@ ms.locfileid: "59397366"
 
     Visual Studio 會建立新的專案，其中包含預先建置的 Web Form 範本為基礎的功能。
 
-
 ## <a name="creating-a-new-aspnet-web-forms-page"></a>建立新的 ASP.NET Web Form 頁面
-
 
 當您建立新的 Web Form 應用程式使用**ASP.NET Web 應用程式**專案範本，Visual Studio 會加入名為 ASP.NET 網頁 （Web Form 頁面） *Default.aspx*，以及數個其他檔案和資料夾。 您可以使用*Default.aspx*與 Web 應用程式的 [首頁] 頁面的頁面。 不過，對於此逐步解說中，您會建立並使用新的頁面。
 
 ### <a name="to-add-a-page-to-the-web-application"></a>將頁面新增至 Web 應用程式
-
 
 1. 在**方案總管**，以滑鼠右鍵按一下 Web 應用程式名稱 (在應用程式名稱是本教學課程**BasicWebSite**)，然後按一下 **新增** - &gt;**新的項目**。   
 隨即顯示 [ 新增項目] 對話方塊。
@@ -82,14 +78,11 @@ ms.locfileid: "59397366"
  Visual Studio 會建立新的頁面，並開啟它。
 4. 接下來，將這個新頁面設定為預設起始頁中。 在 [**方案總管] 中**，以滑鼠右鍵按一下名為新的頁面*FirstWebPage.aspx* ，然後選取**設定為起始頁**。 下次您執行此應用程式來測試我們的進度，您會自動看到這個新的瀏覽器頁面。
 
-
 ## <a name="correcting-inline-coding-errors"></a>修正內嵌程式碼錯誤
-
 
 在 Visual Studio 中的程式碼編輯器，可協助您避免發生錯誤，因為您撰寫程式碼，而且如果您已發生錯誤，程式碼編輯器可協助您更正錯誤。 在這部分的逐步解說中，您將撰寫一行程式碼說明在編輯器中的錯誤修正功能。
 
 ### <a name="to-correct-simple-coding-errors-in-visual-studio"></a>若要修正 Visual Studio 中的簡單程式碼撰寫錯誤
-
 
 1. 在 **設計**檢視中，按兩下 空白的頁面，即可建立的處理常式**負載**事件頁面。   
    您只將事件處理常式當做位置，以撰寫一些程式碼。
@@ -109,7 +102,6 @@ ms.locfileid: "59397366"
     > [!NOTE] 
     > 
     > 檢視您目前的程式碼格式化選取的 Visual Studio 中的設定**工具** - &gt; **選項** - &gt; **字型和色彩**。
-
 
 ## <a name="refactoring-and-renaming"></a>重構和重新命名
 
@@ -156,7 +148,6 @@ ms.locfileid: "59397366"
 
 ### <a name="to-use-refactoring-to-rename-a-variable"></a>若要使用的變數重新命名的重構
 
-
 1. 在 **按一下**事件處理常式中，找到下列這行：
 
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample6.cs)]
@@ -173,7 +164,6 @@ ms.locfileid: "59397366"
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample7.cs)]
 
     變數`alist`此行中不會重新命名，因為它不代表相同的值作為變數`alist`已重新命名。 變數`alist`在`DisplayArray`宣告是針對該方法的區域變數。 這說明使用重構重新命名變數不同於直接執行編輯器; 中的 尋找和取代動作了解其所使用的變數語意的重構重新命名變數。
-
 
 ## <a name="inserting-snippets"></a>插入程式碼片段
 

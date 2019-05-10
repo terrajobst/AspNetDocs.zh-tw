@@ -8,12 +8,12 @@ ms.date: 03/03/2014
 ms.assetid: a2f1c635-0817-4a9a-8c13-d5b5d29727c0
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: bf3336c2467553ba3714bbd4fbb41a35a0490768
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 80254135d2d363ea151e2ea70aeca988b33b0d4d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410600"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134667"
 ---
 # <a name="using-visual-studio-2013-to-create-a-basic-aspnet-45-web-forms-page"></a>使用 Visual Studio 2013 建立基本的 ASP.NET 4.5 Web Form 頁面
 # 
@@ -45,7 +45,6 @@ ms.locfileid: "59410600"
     >   
     > 如果您使用 Visual Studio，本逐步解說假設您已經選擇**Web 開發**設定集合，第一次您啟動 Visual Studio。 如需詳細資訊，請參閱[如何：選取 Web 開發環境設定](https://msdn.microsoft.com/library/ff521558.aspx)。
 
-
 ## <a name="creating-a-web-application-project-and-a-page"></a>建立 Web 應用程式專案和頁面
 
 <a id="sectionToggle0"></a>
@@ -69,16 +68,13 @@ ms.locfileid: "59410600"
     Visual Studio 會建立新的專案，其中包含預先建置的 Web Form 範本為基礎的功能。 它不僅提供您*Home.aspx*頁面上， *about.aspx 的網頁*頁面上， *Contact.aspx*頁面上，但也包含 註冊使用者，並將儲存的成員資格功能他們的認證，讓他們可以登入您的網站。 建立新的頁面時，預設 Visual Studio 會顯示在頁面**來源**檢視中，您可以在其中看到網頁的 HTML 項目。 下圖顯示您在想看到的內容**來源**如果您建立名為新的 Web 網頁檢視*BasicWebApp.aspx*。  
     ![原始碼檢視](creating-a-basic-web-forms-page/_static/image4.png)
 
-
 ### <a name="a-tour-of-the-visual-studio-web-development-environment"></a>教學課程的 Visual Studio Web 開發環境
-
 
 藉由修改網頁在繼續之前，最好熟悉 Visual Studio 開發環境。 下圖顯示您在 windows 和 Visual Studio 和 Visual Studio Express for Web 中可用的工具。
 
 > [!NOTE] 
 > 
 > 下圖顯示預設視窗及視窗位置。 **檢視**功能表可讓您顯示其他視窗，以及重新排列和調整大小以符合您的喜好設定的 windows。 如果變更已經進行了視窗排列，您看到的內容將不會符合圖。
-
 
  Visual Studio 環境
 
@@ -96,14 +92,11 @@ ms.locfileid: "59410600"
 - **工具箱**。 提供控制項和您可以將它拖曳到頁面的 HTML 項目。 **工具箱**項目會依常見的函式。
 - S **erver 總管**。 顯示資料庫連接。 如果看不到 [伺服器總管] 中，請在 [檢視] 功能表中，按一下 [伺服器總管]。
 
-
 ### <a name="creating-a-new-aspnet-web-forms-page"></a>建立新的 ASP.NET Web Form 頁面
-
 
 當您建立新的 Web Form 應用程式使用**ASP.NET Web 應用程式**專案範本，Visual Studio 會加入名為 ASP.NET 網頁 （Web Form 頁面） *Default.aspx*，以及數個其他檔案和資料夾。 您可以使用*Default.aspx*與 Web 應用程式的 [首頁] 頁面的頁面。 不過，對於此逐步解說中，您會建立並使用新的頁面。
 
 ### <a name="to-add-a-page-to-the-web-application"></a>將頁面新增至 Web 應用程式
-
 
 1. 關閉*Default.aspx*頁面。 若要這樣做，請按一下顯示的檔案名稱的索引標籤，然後按一下 [關閉] 選項。
 2. 在**方案總管**，以滑鼠右鍵按一下 Web 應用程式名稱 (在應用程式名稱是本教學課程**BasicWebSite**)，然後按一下 **新增** - &gt;**新的項目**。   
@@ -113,14 +106,11 @@ ms.locfileid: "59410600"
 4. 按一下 **新增**將網頁新增至您的專案。  
 Visual Studio 會建立新的頁面，並開啟它。
 
-
 ### <a name="adding-html-to-the-page"></a>將 HTML 加入至頁面
-
 
 在這個部分的逐步解說中，您將一些靜態文字頁面。
 
 ### <a name="to-add-text-to-the-page"></a>若要將文字加入至頁面
-
 
 1. 在文件視窗的底部，按一下**設計**索引標籤切換至**設計**檢視。
 
@@ -136,14 +126,11 @@ Visual Studio 會建立新的頁面，並開啟它。
     您可以看到在 HTML**來源**您在輸入時所建立的檢視**設計**檢視。  
     ![包含靜態文字的網頁](creating-a-basic-web-forms-page/_static/image8.png)
 
-
 ### <a name="running-the-page"></a>執行網頁
-
 
 您將控制項加入至頁面繼續進行之前，您可以先執行。
 
 ### <a name="to-run-the-page"></a>若要執行的頁面
-
 
 1. 在 [**方案總管] 中**，以滑鼠右鍵按一下*FirstWebPage.aspx* ，然後選取**設定為起始頁**。
 2. 按下**CTRL + F5**執行頁面。
@@ -153,9 +140,7 @@ Visual Studio 會建立新的頁面，並開啟它。
     在瀏覽器中顯示的頁面您可以也以滑鼠右鍵按一下在頁面**方案總管**，然後選取**瀏覽器中的檢視**。
 3. 關閉瀏覽器停止 Web 應用程式。
 
-
 ## <a name="adding-and-programming-controls"></a>新增和程式設計控制項
-
 
 <a id="sectionToggle1"></a>
 
@@ -164,7 +149,6 @@ Visual Studio 會建立新的頁面，並開啟它。
 您將會加入[ 按鈕](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控制項[文字方塊中](https://msdn.microsoft.com/library/system.web.ui.webcontrols.textbox.aspx)控制項，和[標籤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控制項加入頁面，並撰寫程式碼來處理[按一下](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx)事件[ 按鈕](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控制項。
 
 ### <a name="to-add-controls-to-the-page"></a>若要將控制項加入頁面
-
 
 1. 按一下 **設計**索引標籤切換至**設計**檢視。
 2. 將插入點放在結尾**歡迎使用 Visual Web Developer**文字，然後按**ENTER**五個以上的時間，以清出一些空間，在**div**項目方塊。
@@ -179,14 +163,11 @@ Visual Studio 會建立新的頁面，並開啟它。
 
     ![在 [設計] 檢視中的三個控制項](creating-a-basic-web-forms-page/_static/image9.png "設計 檢視中的三個控制項")
 
-
 ### <a name="setting-control-properties"></a>設定控制項屬性
-
 
 Visual Studio 提供各種設定頁面上控制項的屬性。 在這個部分的逐步解說中，您將設定屬性，在這兩**設計**檢視和**來源**檢視。
 
 ### <a name="to-set-control-properties"></a>若要設定控制項屬性
-
 
 1. 第一次，顯示**屬性**視窗中的，選取從**檢視**功能表-&gt; **其他 Windows**  - &gt; **屬性 視窗**。 您也可以選取**F4**顯示**屬性**視窗。
 2. 選取 [ [] 按鈕](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控制項，然後在**屬性**視窗中，設定的值**文字**至**顯示名稱**。 下圖所示，您所輸入的文字會出現在設計工具中的按鈕。
@@ -217,14 +198,11 @@ Visual Studio 提供各種設定頁面上控制項的屬性。 在這個部分�
 
     **ForeColor**屬性已完成，但您已選取，包括右括號的色彩。
 
-
 ### <a name="programming-the-button-control"></a>程式設計 [按鈕] 控制項
-
 
 此逐步解說中，您將撰寫程式碼，可讀取的名稱，在使用者輸入到文字方塊中，並接著會顯示在 名稱[標籤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控制項。
 
 ### <a name="add-a-default-button-event-handler"></a>新增的預設按鈕事件處理常式
-
 
 1. 若要切換**設計**檢視。
 2. 按兩下[ 按鈕](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控制項。
@@ -252,14 +230,11 @@ Visual Studio 提供各種設定頁面上控制項的屬性。 在這個部分�
 
     事件處理常式方法可以有任何名稱;您看到的名稱是由 Visual Studio 建立的預設名稱。 重要的一點是，使用名稱**OnClick** HTML 中的屬性必須符合的程式碼後置中定義的方法名稱。
 
-
 ### <a name="running-the-page"></a>執行網頁
-
 
 您現在可以測試頁面上的伺服器控制項。
 
 ### <a name="to-run-the-page"></a>若要執行的頁面
-
 
 1. 按下**CTRL + F5**執行網頁瀏覽器中。 如果發生錯誤，重新檢查上述的步驟。
 2. 在文字方塊中輸入名稱，然後按一下**顯示名稱** 按鈕。
@@ -270,7 +245,6 @@ Visual Studio 提供各種設定頁面上控制項的屬性。 在這個部分�
     頁面在原始程式碼中，您會看到 HTML 而不需要任何伺服器程式碼。 具體來說，您看不見**&lt;asp:&gt;** 中所使用的項目**來源**檢視。 頁面執行時，ASP.NET 會處理伺服器控制項，並轉譯頁面執行的函式，表示控制項的 HTML 元素。 例如， **&lt;p: Button&gt;** 控制項呈現為 HTML **&lt;輸入類型 =&quot;提交&quot;&gt;** 項目。
 4. 關閉瀏覽器。
 
-
 ## <a name="working-with-additional-controls"></a>使用其他控制項
 
 <a id="sectionToggle2"></a>
@@ -280,7 +254,6 @@ Visual Studio 提供各種設定頁面上控制項的屬性。 在這個部分�
 在本節中，您將新增[System.Web.UI.WebControls.Calendar](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx)控制項加入頁面，並設定其格式。
 
 ### <a name="to-add-a-calendar-control"></a>若要加入行事曆控制項
-
 
 1. 在 Visual Studio 中，切換至**設計**檢視。
 2. 從**標準**一節**工具箱**，拖曳[行事曆](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx)控制項拖曳至頁面上，把它放在下面的**div**項目，包含其他控制項。
@@ -300,14 +273,11 @@ Visual Studio 提供各種設定頁面上控制項的屬性。 在這個部分�
 
     ![月曆控制項在原始碼檢視](creating-a-basic-web-forms-page/_static/image15.png "月曆控制項在原始碼檢視")
 
-
 ### <a name="programming-the-calendar-control"></a>程式設計 行事曆控制項
-
 
 在本節中，您將編寫[行事曆](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx)控制項來顯示目前選取的日期。
 
 ### <a name="to-program-the-calendar-control"></a>以程式設計的行事曆控制項
-
 
 1. 在 **設計**檢視中，按兩下[行事曆](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx)控制項。
 
@@ -316,19 +286,15 @@ Visual Studio 提供各種設定頁面上控制項的屬性。 在這個部分�
 
     [!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample3.cs?highlight=3)]
 
-
     [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample4.vb?highlight=2)]
 
     上述程式碼中的日曆控制項選取的日期設定 label 控制項的文字。
 
-
 ### <a name="running-the-page"></a>執行網頁
-
 
 您現在可以測試行事曆。
 
 ### <a name="to-run-the-page"></a>若要執行的頁面
-
 
 1. 按下**CTRL + F5**執行網頁瀏覽器中。
 2. 按一下行事曆中的日期。
@@ -339,9 +305,7 @@ Visual Studio 提供各種設定頁面上控制項的屬性。 在這個部分�
     請注意，[行事曆](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx)控制項的呈現至與頁面**表格**，以做為每一天**td**項目。
 4. 關閉瀏覽器。
 
-
 ## <a name="next-steps"></a>後續步驟
-
 
 <a id="nextStepsToggle"></a>
 

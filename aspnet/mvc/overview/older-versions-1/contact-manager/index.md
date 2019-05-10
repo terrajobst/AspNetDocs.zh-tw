@@ -8,17 +8,16 @@ ms.date: 09/28/2011
 ms.assetid: 6b0f1fd7-6768-4549-ae9c-be9131103c4d
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager
 msc.type: chapter
-ms.openlocfilehash: 4faccca531b330cc52c338bae98fab484de753f9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3ec9811be5afc00a126936529480082bf2d620e9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59378997"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124133"
 ---
 # <a name="contact-manager"></a>連絡人管理員
 
 > 如何建置整個連絡人管理應用程式從開始到完成。
-
 
 - [反覆項目 #1 – 建立應用程式 (C#)](iteration-1-create-the-application-cs.md)
 - [反覆項目 #2 – 美化應用程式外觀 (C#)](iteration-2-make-the-application-look-nice-cs.md)

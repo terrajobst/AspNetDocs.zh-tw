@@ -8,12 +8,12 @@ ms.date: 07/04/2012
 ms.assetid: 792f4513-a508-4d14-a0dd-1a2fe282c7bb
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 54b3afac9b19962b02336a35909b208c4e3f7504
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9e045b17434d46fa1b6e7942db95ecad67c34a46
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400551"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134750"
 ---
 # <a name="part-4-adding-an-admin-view"></a>第 4 部分：新增系統管理員檢視
 
@@ -52,7 +52,6 @@ ms.locfileid: "59400551"
 > [!NOTE]
 > 在範例專案中，我可以做幾個其他外觀變更，例如取代 「 您標誌的位置 」 的字串。 這些不會影響應用程式的功能。 您可以下載專案，並比較檔案。
 
-
 執行應用程式，然後按一下出現在 [首頁] 頁面頂端的 「 管理員 」 連結。 系統管理員 頁面看起來應該如下所示：
 
 ![](using-web-api-with-entity-framework-part-4/_static/image3.png)
@@ -79,7 +78,6 @@ ms.locfileid: "59400551"
 
 > [!NOTE]
 > MVC 和 Web API，同時定義**授權**不同命名空間中的屬性。 MVC 會使用**System.Web.Mvc.AuthorizeAttribute**，而 Web API 會使用**System.Web.Http.AuthorizeAttribute**。
-
 
 現在只有系統管理員可以檢視 [系統管理] 頁面。 此外，如果您將 HTTP 要求傳送至系統管理控制站時，要求必須包含驗證 cookie。 如果沒有，則伺服器會傳送 HTTP 401 （未經授權） 回應。 您可以先將這在 Fiddler 中看到，傳送 GET 要求來`http://localhost:*port*/api/admin`。
 

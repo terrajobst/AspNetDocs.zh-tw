@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: b0abec39-a1c9-422d-ba9a-ef16f6185af8
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/modifying-animations-from-the-server-side-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2d4c786ca10e77353ac8b4746138cb1e314585ae
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f5f9832cb54e7791408fa1a7ece20077c2dfbc25
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383781"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133500"
 ---
 # <a name="modifying-animations-from-the-server-side-c"></a>修改動畫從伺服器端 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59383781"
 [下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation9.cs.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation9CS.pdf)
 
 > 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 可能也會在伺服器端變更的動畫
-
 
 ## <a name="overview"></a>總覽
 
@@ -53,7 +52,6 @@ ms.locfileid: "59383781"
 最後，新增`AnimationExtender`內目前的頁面，來控制`<form runat="server">`項目，並確定包含動畫，並執行：
 
 [!code-html[Main](modifying-animations-from-the-server-side-cs/samples/sample6.html)]
-
 
 [![使用伺服器端 C# /VB 程式碼來建立動畫](modifying-animations-from-the-server-side-cs/_static/image2.png)](modifying-animations-from-the-server-side-cs/_static/image1.png)
 

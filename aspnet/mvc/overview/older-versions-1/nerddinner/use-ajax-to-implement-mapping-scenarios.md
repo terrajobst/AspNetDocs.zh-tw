@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: f731990a-0a81-4d62-81df-87d676cdedd6
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: 90705b897f5cb3787bae35b48057eaf66abde579
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7fc90f978b9f9eca511feca70a3c0d02ec69b940
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402163"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125518"
 ---
 # <a name="use-ajax-to-implement-mapping-scenarios"></a>使用 AJAX 實作對應實例
 
@@ -26,7 +26,6 @@ by [Microsoft](https://github.com/microsoft)
 > 步驟 11 會示範如何整合 NerdDinner 應用程式，讓使用者建立、 編輯或檢視以圖形方式查看的 dinner 位置 dinners AJAX 對應支援。
 > 
 > 如果您使用 ASP.NET MVC 3，我們建議您遵循[取得開始使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或是[MVC Music 市集](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教學課程。
-
 
 ## <a name="nerddinner-step-11-integrating-an-ajax-map"></a>NerdDinner 步驟 11:整合的 AJAX 地圖
 

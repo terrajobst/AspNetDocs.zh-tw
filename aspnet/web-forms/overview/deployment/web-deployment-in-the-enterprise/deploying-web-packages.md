@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: a5c5eed2-8683-40a5-a2e1-35c9f8d17c29
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: c42fa327c324ac2b721268c56782a24755ec7225
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 91b99e6e250342851aea6860164b6f6af54818d1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391061"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65119333"
 ---
 # <a name="deploying-web-packages"></a>部署 Web 套件
 
@@ -37,7 +37,6 @@ ms.locfileid: "59391061"
 > - 您已建置並封裝您的 web 應用程式中所述[建置和封裝 Web Application Projects](building-and-packaging-web-application-projects.md)。
 > - 您已修改*之 SetParameters.xml*檔案，以目標環境，提供正確的參數值，如中所述[網頁套件部署的設定參數](configuring-parameters-for-web-package-deployment.md)。
 
-
 執行 [*專案名稱*]*。 deploy.cmd*檔案是最簡單的方式，將 web 套件部署。 特別是，使用 *。 deploy.cmd*檔案提供透過直接使用 MSDeploy.exe 下列優點：
 
 - 您不需要指定的 web 部署封裝的位置&#x2014; *。 deploy.cmd*檔案已經知道其所在。
@@ -52,9 +51,7 @@ ms.locfileid: "59391061"
 
 *。 Deploy.cmd*檔案支援各種不同的命令列選項。 當您從命令提示字元執行該檔案時，這是基本語法：
 
-
 [!code-console[Main](deploying-web-packages/samples/sample1.cmd)]
-
 
 您必須指定 **/T**旗標或 **/Y**旗標，指出您是否想要分別執行嘗試執行或即時部署 （請勿在同一個命令使用這兩個旗標）。 下表說明每個這些旗標的用途。
 
@@ -71,7 +68,6 @@ ms.locfileid: "59391061"
 
 > [!NOTE]
 > 每次建置程序會建立 web 封裝，它也會建立名為的檔案 *[專案名稱].deploy readme.txt*說明這些部署選項。
-
 
 除了這些旗標，您可以指定 Web Deploy 作業設定為其他 *。 deploy.cmd*參數。 您指定任何其他設定會直接傳到基礎 MSDeploy.exe 命令。 如需有關這些設定的詳細資訊，請參閱 < [Web Deploy 作業設定](https://technet.microsoft.com/library/dd569089(WS.10).aspx)。
 
@@ -94,9 +90,7 @@ ms.locfileid: "59391061"
 
 為了說明如何使用 *。 deploy.cmd*檔案可簡化部署程序，看看取得產生及執行您執行 MSDeploy.exe 命令*ContactManager.Mvc.deploy.cmd*使用如上所示的選項。
 
-
 [!code-console[Main](deploying-web-packages/samples/sample3.cmd)]
-
 
 如需有關使用 *。 deploy.cmd*檔案來部署 web 封裝，請參閱[How to:安裝部署套件使用 deploy.cmd 檔案](https://msdn.microsoft.com/library/ff356104.aspx)。
 
@@ -152,13 +146,10 @@ MSDeploy.exe 依賴[Web Deploy 提供者](https://technet.microsoft.com/library/
 
 在連絡人管理員範例方案中，看看**PublishWebPackages**中的目標*Publish.proj*檔案。 此目標，針對每個執行一次 *。 deploy.cmd*名為的項目清單所識別的檔案**PublishPackages**。 目標會使用屬性和項目中繼資料來建置針對每個一組完整的引數值 *。 deploy.cmd*檔案，然後使用**Exec**工作來執行命令。
 
-
 [!code-xml[Main](deploying-web-packages/samples/sample8.xml)]
-
 
 > [!NOTE]
 > 專案檔案模型中的範例解決方案，以及自訂的專案檔的一般簡介的廣泛概觀，請參閱 <<c0> [ 了解專案檔](understanding-the-project-file.md)並[了解建置程序](understanding-the-build-process.md)。
-
 
 ## <a name="endpoint-considerations"></a>端點的考量
 
@@ -166,33 +157,24 @@ MSDeploy.exe 依賴[Web Deploy 提供者](https://technet.microsoft.com/library/
 
 如果目的地 web 伺服器設定為使用 Web 部署遠端代理程式服務的部署，您可以指定目標服務的 URL 做為目的地。
 
-
 [!code-console[Main](deploying-web-packages/samples/sample9.cmd)]
-
 
 或者，您可以指定單獨的伺服器名稱作為目的地，以及 Web Deploy，將會推斷遠端代理程式服務的 URL。
 
-
 [!code-console[Main](deploying-web-packages/samples/sample10.cmd)]
-
 
 如果目的地 web 伺服器設定為使用 Web 部署處理常式的部署，您需要指定端點位址的 IIS Web 管理服務 (WMSvc) 作為目的地。 根據預設，其格式為：
 
-
 [!code-console[Main](deploying-web-packages/samples/sample11.cmd)]
-
 
 您可以為任何使用這些端點的目標 *。 deploy.cmd*檔案或直接 MSDeploy.exe。 不過，如果您想要以非系統管理員使用者，部署至 Web 部署處理常式中所述[設定 Web 伺服器進行 Web 部署發行 （Web 部署的處理常式）](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)，您需要將查詢字串新增到服務端點位址。
 
-
 [!code-console[Main](deploying-web-packages/samples/sample12.cmd)]
-
 
 這是因為非系統管理員使用者不需要伺服器層級存取 IIS;他或她只有特定的 IIS 網站的存取權。 在撰寫時，因為在 Web 發行管線 (WPP)，一個錯誤時，您無法執行 *。 deploy.cmd*檔案中，使用包含查詢字串的端點位址。 在此案例中，您需要將 web 套件部署直接使用 MSDeploy.exe。
 
 > [!NOTE]
 > 如需有關 Web 部署遠端代理程式服務和 Web 部署處理常式的詳細資訊，請參閱 <<c0> [ 選擇 Web 部署的權限方法](../configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment.md)。 如需有關如何設定您的環境特定的專案檔案，以部署至這些端點的指引，請參閱 <<c0> [ 設定的目標環境的部署屬性](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md)。
-
 
 ## <a name="authentication-considerations"></a>驗證考量
 

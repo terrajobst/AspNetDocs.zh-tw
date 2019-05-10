@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.assetid: 08834147-77ec-454a-bb7a-d931d2a40dab
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 3ebabd626e0b862e09f19552648406aab959f882
-ms.sourcegitcommit: 289e051cc8a90e8f7127e239fda73047bde4de12
+ms.openlocfilehash: 6a410c2e818ed87bbcac588063eb4eeaf3d2b9ee
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58423308"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120894"
 ---
 # <a name="template-implement-inheritance-with-ef-in-an-aspnet-mvc-5-app"></a>範本：在 ASP.NET MVC 5 應用程式中實作使用 EF 的繼承
 
@@ -100,7 +100,6 @@ TPC 和 TPH 繼承模式通常會提供更佳的效能在 Entity Framework 中�
 執行`Update-Database`PMC 命令。 命令會在此時失敗，因為我們有現有的資料移轉並不知道如何處理。 您收到錯誤訊息如下所示：
 
 > *無法卸除物件 ' dbo。講師 ' 因為它由 FOREIGN KEY 條件約束參考。*
-
 
 開啟*移轉\&l t; 時間戳記&gt;\_Inheritance.cs* ，並取代`Up`為下列程式碼的方法：
 

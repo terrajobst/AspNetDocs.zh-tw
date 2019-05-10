@@ -8,19 +8,18 @@ ms.date: 10/02/2014
 ms.assetid: 0a8d6044-5fab-4213-82d6-5618d5601358
 msc.legacyurl: /web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 3df728891103de9c8e461ab9507237c9b14e8251
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: af3653bc164810126bc3bf8f1b1794d75642d807
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390684"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133795"
 ---
 # <a name="create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset-c"></a>以使用者註冊、電子郵件確認和密碼重設建立安全的 ASP.NET Web Forms 應用程式 (C#)
 
 藉由[Erik Reitan](https://github.com/Erikre)
 
 > 本教學課程會示範如何建置 ASP.NET Web Forms 應用程式與使用者註冊、 電子郵件確認和密碼重設使用 ASP.NET 身分識別的成員資格系統。 本教學課程已根據 Rick Anderson [MVC 教學課程](../../../mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -43,7 +42,6 @@ ms.locfileid: "59390684"
 
 > [!NOTE]
 > 警告：您必須安裝[Visual Studio 2013 Update 3](https://go.microsoft.com/fwlink/?LinkId=390465)或更新版本，才能完成本教學課程。
-
 
 1. 建立新的專案 (**檔案** - &gt; **新專案**)，然後選取**ASP.NET Web 應用程式**範本和最新的.NET Framework從版本**新的專案** 對話方塊。
 2. 從**新的 ASP.NET 專案**對話方塊中，選取**Web Form**範本。 保留為預設的驗證**個別使用者帳戶**。 如果您想要裝載在 Azure 中的應用程式，將保留**雲端中的主機**勾選核取方塊。   
@@ -95,7 +93,6 @@ SendGrid 已變更的 API，因為撰寫本教學課程。 目前的 SendGrid �
 ### <a name="enable-email-confirmation"></a>啟用電子郵件確認
 
  若要啟用電子郵件確認，您將修改的登錄程式碼使用下列步驟。  
- 
 
 1. 在 *帳戶*資料夾中，開啟*Register.aspx.cs*程式碼後置，並更新`CreateUser_Click`方法，以啟用下列醒目提示的變更： 
 

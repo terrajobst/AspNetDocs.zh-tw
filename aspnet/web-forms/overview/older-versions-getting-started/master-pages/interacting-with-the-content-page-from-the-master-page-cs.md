@@ -8,12 +8,12 @@ ms.date: 07/11/2008
 ms.assetid: 3282df5e-516c-4972-8666-313828b90fb5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a2b6d3a5ceb66c14a78b02182f49d76c72becbd4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 341724253e9149724ff988232b0e312897756f58
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413642"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134366"
 ---
 # <a name="interacting-with-the-content-page-from-the-master-page-c"></a>從主版頁面與內容頁互動 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59413642"
 [下載程式碼](http://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_07_CS.zip)或[下載 PDF](http://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_07_CS.pdf)
 
 > 檢驗如何呼叫方法時，由主版頁面的程式碼中設定屬性的 [內容] 頁面等等。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -50,16 +49,13 @@ ms.locfileid: "59413642"
 
 我們第一要務是建立內容的頁面，其中列出 Northwind 資料庫中的產品。 (我們在先前的教學課程中，加入至專案的 Northwind 資料庫[*與主版頁面，從內容頁互動*](interacting-with-the-master-page-from-the-content-page-cs.md)。)藉由新增新的 ASP.NET 頁面，以啟動`~/Admin`名為資料夾`Products.aspx`，並確定將它繫結`Site.master`主版頁面。 此頁面已加入至網站之後，圖 1 顯示 方案總管。
 
-
 [![將新的 ASP.NET 網頁新增至 [Admin] 資料夾](interacting-with-the-content-page-from-the-master-page-cs/_static/image2.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image1.png)
 
 **圖 01**:加入新的 ASP.NET 頁面，以便`Admin`資料夾 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-cs/_static/image3.png))
 
-
 請注意，在[*指定主版頁面的標題、 中繼標籤及其他 HTML 標頭*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)教學課程中我們建立名為自訂的基底頁面類別`BasePage`如果不是產生頁面的標題明確地設定。 移至`Products.aspx`頁面的程式碼後置類別，並讓它衍生自`BasePage`(而不是從`System.Web.UI.Page`)。
 
 最後，更新`Web.sitemap`檔案，以包含這一課中的項目。 加入下列標記下方`<siteMapNode>`針對至主版頁面互動課程內容：
-
 
 [!code-xml[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample1.xml)]
 
@@ -67,42 +63,32 @@ ms.locfileid: "59413642"
 
 返回`Products.aspx`。 在適用於內容的控制項`MainContent`，將 GridView 控制項並命名它`ProductsGrid`。 繫結至新的 SqlDataSource 控制項，名為的 GridView `ProductsDataSource`。
 
-
 [![繫結至新的 SqlDataSource 控制項的 GridView](interacting-with-the-content-page-from-the-master-page-cs/_static/image5.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image4.png)
 
 **圖 02**:將 GridView 繫結至新的 SqlDataSource 控制項 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-cs/_static/image6.png))
 
-
 因此，它會使用 Northwind 資料庫，請設定精靈。 如果您已完成上一個教學課程，則您應該已經有名稱為的連接字串`NorthwindConnectionString`在`Web.config`。 圖 3 所示，請從下拉式清單中，選擇此連接字串。
-
 
 [![設定為使用 Northwind 資料庫 SqlDataSource](interacting-with-the-content-page-from-the-master-page-cs/_static/image8.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image7.png)
 
 **圖 03**:設定為使用 Northwind 資料庫 SqlDataSource ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-cs/_static/image9.png))
 
-
 接下來，指定資料來源控制項的`SELECT`陳述式，從下拉式清單中選擇 產品 資料表，並傳回`ProductName`和`UnitPrice`（請參閱 圖 4） 的資料行。 按一下 下一步，然後完成 以完成設定資料來源精靈
-
 
 [![傳回從 Products 資料表的 [ProductName] 和 [UnitPrice 欄位](interacting-with-the-content-page-from-the-master-page-cs/_static/image11.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image10.png)
 
 **圖 04**:傳回`ProductName`並`UnitPrice`欄位從`Products`資料表 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-cs/_static/image12.png))
 
-
 這樣就全部完成了！ 完成精靈之後 Visual Studio 會將兩個 BoundFields 加入至 GridView，以鏡像 SqlDataSource 控制項所傳回的兩個欄位。 GridView 和 SqlDataSource 控制項的標記會遵循。 [圖 5] 顯示透過瀏覽器檢視時的結果。
 
-
 [!code-aspx[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample2.aspx)]
-
 
 [![每個產品而其價格則列於 GridView](interacting-with-the-content-page-from-the-master-page-cs/_static/image14.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image13.png)
 
 **圖 05**:每個產品而其價格則列於 GridView ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-cs/_static/image15.png))
 
-
 > [!NOTE]
 > 請放心清除 GridView 的外觀。 一些建議包括格式化為貨幣顯示的 UnitPrice 值和使用背景色彩和字型來改善格線的外觀。 如需有關顯示和設定在 ASP.NET 中的資料格式的詳細資訊，請參閱我[使用資料的教學課程系列](../../data-access/index.md)。
-
 
 ## <a name="step-2-adding-a-double-prices-button-to-the-master-page"></a>步驟 2：將 Double 的價格按鈕新增至主版頁面
 
@@ -110,32 +96,25 @@ ms.locfileid: "59413642"
 
 接下來，將 SqlDataSource 控制項新增至主版頁面，並將它命名為`DoublePricesDataSource`。 將用來執行此 SqlDataSource`UPDATE`所有價格的兩倍的陳述式。 具體來說，我們要設定其`ConnectionString`並`UpdateCommand`屬性，以適當的連接字串和`UPDATE`陳述式。 然後我們要呼叫此 SqlDataSource 控制項的`Update`方法時`DoublePrice`按一下按鈕時。 若要設定`ConnectionString`和`UpdateCommand`屬性，選取 SqlDataSource 控制項，然後移至 [屬性] 視窗。 `ConnectionString`屬性會列出已儲存在這些連接字串`Web.config`在下拉式清單中，選擇`NorthwindConnectionString`選項，如 [圖 6] 所示。
 
-
 [![設定要使用 NorthwindConnectionString SqlDataSource](interacting-with-the-content-page-from-the-master-page-cs/_static/image17.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image16.png)
 
 **圖 06**:設定要使用 SqlDataSource `NorthwindConnectionString` ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-cs/_static/image18.png))
 
-
 若要設定`UpdateCommand`屬性，在 [屬性] 視窗中找出 UpdateQuery 選項。 選取時，這個屬性會顯示具有省略符號; 的按鈕按一下此按鈕即可顯示 [圖 7] 所示的命令及參數編輯器對話方塊。 輸入下列命令`UPDATE`陳述式，在對話方塊的文字方塊：
-
 
 [!code-sql[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample3.sql)]
 
 此陳述式，在執行時，將會加倍`UnitPrice`值中的每一筆記錄`Products`資料表。
 
-
 [![設定 SqlDataSource 的 UpdateCommand 屬性](interacting-with-the-content-page-from-the-master-page-cs/_static/image20.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image19.png)
 
 **圖 07**:設定的 SqlDataSource`UpdateCommand`屬性 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-cs/_static/image21.png))
 
-
 設定這些屬性之後, 您按鈕和 SqlDataSource 控制項的宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample4.aspx)]
 
 是呼叫其`Update`方法時`DoublePrice`按一下按鈕時。 建立`Click`事件處理常式`DoublePrice` 按鈕，並新增下列程式碼：
-
 
 [!code-csharp[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample5.cs)]
 
@@ -157,26 +136,21 @@ ms.locfileid: "59413642"
 > [!NOTE]
 > 如需有關如何建立的詳細資訊，提高，以及處理事件，請參閱[事件與委派](https://msdn.microsoft.com/library/17sde2xt.aspx)並[簡單 english 的事件委派](http://www.codeproject.com/KB/cs/eventdelegates.aspx)。
 
-
 若要定義事件，請使用下列語法：
-
 
 [!code-csharp[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample6.cs)]
 
 因為我們只需要時使用者按下 [警示內容] 頁面`DoublePrice`按鈕並不需要傳遞任何額外的資訊，我們可以使用事件委派`EventHandler`，其為第二個定義可接受的事件處理常式參數型別的物件`System.EventArgs`。 若要建立主版頁面中的事件，請將下列程式碼行加入主版頁面的程式碼後置類別：
 
-
 [!code-csharp[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample7.cs)]
 
 上述程式碼會將名為的主版頁面中的公用事件`PricesDoubled`。 我們現在需要之後會引發這個事件價格超過一倍。 若要引發事件會使用下列語法：
-
 
 [!code-csharp[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample8.cs)]
 
 何處*寄件者*並*eventArgs*是您想要傳遞給訂閱者的事件處理常式的值。
 
 更新`DoublePrice``Click`為下列程式碼的事件處理常式：
-
 
 [!code-csharp[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample9.cs)]
 
@@ -188,11 +162,9 @@ ms.locfileid: "59413642"
 
 建立名為事件處理常式著手`Master_PricesDoubled`。 因為我們所定義的方式`PricesDoubled`主版頁面中的事件的事件處理常式的兩個輸入的參數必須是類型`Object`和`EventArgs`分別。 在 事件處理常式呼叫`ProductsGrid`GridView 的`DataBind`重新繫結至方格的資料的方法。
 
-
 [!code-csharp[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample10.cs)]
 
 事件處理常式的程式碼已完成，但我們至今還連線的主版頁面`PricesDoubled`這個事件處理常式的事件。 訂閱者將事件的事件處理常式，透過下列語法：
-
 
 [!code-csharp[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample11.cs)]
 
@@ -201,7 +173,6 @@ ms.locfileid: "59413642"
 此事件的連接程式碼必須執行的第一個頁面瀏覽和後續回傳時，以及應該在前面可能會引發事件時的頁面週期中的某一點。 加入事件連接程式碼的好時機是在 PreInit 階段中，在網頁生命週期非常早期，就會發生。
 
 開啟`~/Admin/Products.aspx`並建立`Page_PreInit`事件處理常式：
-
 
 [!code-csharp[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample12.cs)]
 
@@ -212,11 +183,9 @@ ms.locfileid: "59413642"
 
 讓我們使用第二種方法。 新增下列`@MasterType`指示詞加入頁面的宣告式標記的頂端：
 
-
 [!code-aspx[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample13.aspx)]
 
 然後加入下列事件連接程式碼，在`Page_PreInit`事件處理常式：
-
 
 [!code-csharp[Main](interacting-with-the-content-page-from-the-master-page-cs/samples/sample14.cs)]
 
@@ -224,16 +193,13 @@ GridView 內容頁面中的重新整理與此程式碼就緒之後，每當`Doub
 
 圖 8 和 9 說明這項行為。 圖 8 顯示當第一次瀏覽的頁面。 請注意，在價格值`RecentProducts`（在主版頁面的左側資料行） 的 GridView 和`ProductsGrid`GridView （在 [內容] 頁面中）。 圖 9 顯示相同畫面之後立即`DoublePrice`按下按鈕。 如您所見，這兩個 Gridview 會立即會反映新的價格。
 
-
 [![初始的價格值](interacting-with-the-content-page-from-the-master-page-cs/_static/image23.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image22.png)
 
 **圖 08**:初始的價格值 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-cs/_static/image24.png))
 
-
 [![Just-Doubled 價格會顯示在 Gridview](interacting-with-the-content-page-from-the-master-page-cs/_static/image26.png)](interacting-with-the-content-page-from-the-master-page-cs/_static/image25.png)
 
 **圖 09**:在 Gridview 中顯示 Just-Doubled 價格 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-cs/_static/image27.png))
-
 
 ## <a name="summary"></a>總結
 

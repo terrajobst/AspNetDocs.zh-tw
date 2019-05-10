@@ -8,19 +8,18 @@ ms.date: 07/30/2013
 ms.assetid: 82324ef0-3b75-4f63-a217-76ef4036ec93
 msc.legacyurl: /aspnet/overview/owin-and-katana/enabling-windows-authentication-in-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 6d90538ace07402b655b8cd1d9c6e4d5c6dff424
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3d81e7e1bf13ab63417378fba0c5ab80213f404b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411198"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65118330"
 ---
 # <a name="enabling-windows-authentication-in-katana"></a>在 Katana 中啟用 Windows 驗證
 
 藉由[Mike Wasson](https://github.com/MikeWasson)
 
 > 本文說明如何啟用 Windows 驗證，在 Katana 中。 它涵蓋了兩種案例：使用 IIS 來裝載 Katana，以及使用 HttpListener 自我裝載於自訂處理序中的 Katana。 感謝您 Barry Dorrans、 David Matson 和 Chris Ross 閱本篇文章。
-
 
 Katana 是 Microsoft 的實作[OWIN](http://owin.org/)，Open Web Interface for.NET。 您可以閱讀簡介 OWIN 和 Katana[此處](an-overview-of-project-katana.md)。 OWIN 架構有數個層級：
 

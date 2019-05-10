@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 51a0d175-913b-43d8-95e3-840fb96ad1a9
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 973878ef0afd62035b3fc840371e6c6223c8951c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: af2e86e820f60f0a3d8e3db8f78eba67ef63579a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413785"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123954"
 ---
 # <a name="iteration-3--add-form-validation-c"></a>反覆項目 #3 – 新增表單驗證 (C#)
 
@@ -23,9 +23,7 @@ by [Microsoft](https://github.com/microsoft)
 
 > 在第三個反覆項目，我們會加入基本表單驗證。 我們可以防止使用者提交表單，而不會完成必要的表單欄位。 此外，我們也會驗證電子郵件地址和電話號碼。
 
-
 ## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>建立連絡人管理 ASP.NET MVC 應用程式 (C#)
-  
 
 在本系列教學課程中，我們會建置整個連絡人管理應用程式從開始到完成。 請連絡系統管理員應用程式可讓您商店連絡資訊的名稱、 電話號碼和電子郵件地址-的人員清單。
 
@@ -45,16 +43,13 @@ by [Microsoft](https://github.com/microsoft)
 
 - 反覆項目 #7-新增 Ajax 功能。 在第七個反覆項目，改善回應性和我們的應用程式的效能透過新增對 Ajax 支援。
 
-
 ## <a name="this-iteration"></a>這個反覆項目
 
 在連絡人管理員應用程式的這個第二個反覆項目，我們會加入基本表單驗證。 我們可以防止人提交連絡人，而不需要的表單欄位中輸入值。 此外，我們也會驗證電話號碼和電子郵件地址 （請參閱 圖 1）。
 
-
 [![[新增專案] 對話方塊](iteration-3-add-form-validation-cs/_static/image1.jpg)](iteration-3-add-form-validation-cs/_static/image1.png)
 
 **圖 01**:表單驗證 ([按一下以檢視完整大小的影像](iteration-3-add-form-validation-cs/_static/image2.png))
-
 
 這個反覆項目，在中，我們會將驗證邏輯直接加入控制器動作。 一般情況下，這不是建議用來將驗證新增至 ASP.NET MVC 應用程式。 更好的方法是將應用程式的驗證邏輯放在個別[服務層](http://martinfowler.com/eaaCatalog/serviceLayer.html)。 在下一個反覆項目中，我們可以重構連絡人管理員應用程式，讓應用程式更容易維護。
 
@@ -86,7 +81,6 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > 您可以修改此區段可自訂的驗證錯誤訊息外觀所描述的樣式表類別。
 
-
 ## <a name="adding-validation-logic-to-the-create-action"></a>加入驗證邏輯，以建立動作
 
 現在，建立檢視永遠不會顯示驗證錯誤訊息，因為我們已不編寫的邏輯會產生任何訊息。 若要顯示驗證錯誤訊息，您需要加入 ModelState 錯誤訊息。
@@ -94,7 +88,6 @@ by [Microsoft](https://github.com/microsoft)
 > [!NOTE] 
 > 
 > UpdateModel() 方法會將錯誤訊息加入 ModelState 自動錯誤的表單欄位的值指派給屬性時。 例如，如果您嘗試將字串"apple"指派給 BirthDate 屬性可接受的日期時間值，然後 UpdateModel() 方法會將錯誤加入 ModelState。
-
 
 修改的 create （） 方法，在 列表 2 中包含新的區段，新的連絡人插入資料庫之前會驗證連絡人類別的屬性。
 
@@ -116,7 +109,6 @@ by [Microsoft](https://github.com/microsoft)
 > [!NOTE] 
 > 
 > 我收到驗證電話號碼和電子郵件地址的規則運算式存放庫中的規則運算式 [*http://regexlib.com*](http://regexlib.com)
-
 
 ## <a name="adding-validation-logic-to-the-edit-action"></a>將驗證邏輯加入至 編輯動作
 

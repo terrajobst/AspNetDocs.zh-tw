@@ -8,12 +8,12 @@ ms.date: 01/27/2009
 ms.assetid: 2dcb44a4-5cbf-4d62-b363-718104082d86
 msc.legacyurl: /mvc/overview/older-versions-1/overview/asp-net-mvc-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 149312e2ddf0a5023a4a12f5b05852f7da6b18f8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 73965c71f37de13e3813df089a253fde528ea7ee
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418166"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128217"
 ---
 # <a name="aspnet-mvc-overview"></a>ASP.NET MVC 概觀
 
@@ -21,18 +21,15 @@ by [Microsoft](https://github.com/microsoft)
 
 > 深入了解 ASP.NET MVC 應用程式和 ASP.NET Web Form 應用程式之間的差異。 了解如何決定何時要建置 ASP.NET MVC 應用程式。
 
-
 模型檢視控制器 (MVC) 架構模式會將應用程式分成三個主要元件： 模型、 檢視和控制器。 ASP.NET MVC 架構提供的 ASP.NET Web Form 模式的替代方法建立 MVC Web 應用程式。 ASP.NET MVC 架構是一種輕量型、 可高度測試的展示架構，（就像 Web Form 為基礎的應用程式） 整合了現有的 ASP.NET 功能，例如主版頁面和成員資格為基礎的驗證。 MVC 架構中定義**System.Web.Mvc**命名空間和是基本、 支援的一部分**System.Web**命名空間。   
   
 MVC 是許多開發人員都熟悉的標準設計模式。 某些類型的 Web 應用程式會受益於 MVC 架構。 其他人會繼續使用傳統的 ASP.NET 應用程式模式為基礎 Web Form 和回傳。 其他類型的 Web 應用程式會結合兩種方式;這兩種方法並不互斥。   
   
 MVC 架構包括下列元件：
 
-
 [![叫用控制器動作，以參數值](asp-net-mvc-overview/_static/image1.jpg)](asp-net-mvc-overview/_static/image1.png)
 
 **圖 01**:叫用控制器動作，以參數值 ([按一下以檢視完整大小的影像](asp-net-mvc-overview/_static/image2.png))
-
 
 - **模型**。 模型物件屬於實作應用程式的資料網域的邏輯應用程式的組件。 通常，模型物件會擷取並儲存在資料庫中的模型狀態。 例如，Product 物件可能會從資料庫擷取資訊、 操作它，然後將更新的資訊寫回 SQL Server 中的 [產品] 資料表。
 

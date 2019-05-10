@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: b5c268dd-ca6a-4562-b94c-a220fcf01f58
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 6e5c01c3602bd313ebca467b65563b7abfd7ffe2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 36f3b753cf312504892872ff54bef49854588990
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400096"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124171"
 ---
 # <a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET Web Pages (Razor) 網站中顯示地圖
 
@@ -40,7 +40,6 @@ ms.locfileid: "59400096"
 >   
 > 
 > 本教學課程也適用於 WebMatrix 3。
-
 
 在網頁中，您可以顯示對應頁面上使用`Maps`協助程式。 您可以產生根據位址或一組經度和緯度座標的對應。 `Maps`類別可讓您呼叫包括 Bing、 Google、 MapQuest 和 Yahoo 的熱門地圖引擎。
 
@@ -109,6 +108,5 @@ ms.locfileid: "59400096"
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他資源
-
 
 [Microsoft.Maps API 參考](https://msdn.microsoft.com/library/gg427611.aspx)
