@@ -9,20 +9,19 @@ ms.custom: seoapril2019
 ms.assetid: a36e178f-de46-46d9-b150-61fb3ba1b4d3
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api
 msc.type: chapter
-ms.openlocfilehash: f5b7c080cdd6331e41751e8a4741f724153ec360
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 97a4fc6010a7b0e4febc2e2bb53b9cb69d6e8af0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403008"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125283"
 ---
-# <a name="getting-started-with-aspnet-web-api"></a><span data-ttu-id="dd4d9-103">開始使用 ASP.NET Web API</span><span class="sxs-lookup"><span data-stu-id="dd4d9-103">Getting Started with ASP.NET Web API</span></span>
+# <a name="getting-started-with-aspnet-web-api"></a><span data-ttu-id="a3c7d-103">開始使用 ASP.NET Web API</span><span class="sxs-lookup"><span data-stu-id="a3c7d-103">Getting Started with ASP.NET Web API</span></span>
 
-> <span data-ttu-id="dd4d9-104">建置使用 ASP.NET Web API HTTP 服務的基本概念</span><span class="sxs-lookup"><span data-stu-id="dd4d9-104">The basics of building an HTTP service using ASP.NET Web API</span></span>
+> <span data-ttu-id="a3c7d-104">建置使用 ASP.NET Web API HTTP 服務的基本概念</span><span class="sxs-lookup"><span data-stu-id="a3c7d-104">The basics of building an HTTP service using ASP.NET Web API</span></span>
 
-
-- [<span data-ttu-id="dd4d9-105">開始使用 Web API 2 (C#)</span><span class="sxs-lookup"><span data-stu-id="dd4d9-105">Getting Started with Web API 2 (C#)</span></span>](tutorial-your-first-web-api.md)
-- [<span data-ttu-id="dd4d9-106">Web API 2 中的動作結果</span><span class="sxs-lookup"><span data-stu-id="dd4d9-106">Action Results in Web API 2</span></span>](action-results.md)
-- [<span data-ttu-id="dd4d9-107">使用具有 ASP.NET Web Form 的 Web API</span><span class="sxs-lookup"><span data-stu-id="dd4d9-107">Using Web API with ASP.NET Web Forms</span></span>](using-web-api-with-aspnet-web-forms.md)
-- [<span data-ttu-id="dd4d9-108">建立 Web API 說明頁面</span><span class="sxs-lookup"><span data-stu-id="dd4d9-108">Creating Web API Help Pages</span></span>](creating-api-help-pages.md)
-- [<span data-ttu-id="dd4d9-109">實習實驗室：建置使用 ASP.NET Web API 和 Angular.js 的單一頁面應用程式 (SPA)</span><span class="sxs-lookup"><span data-stu-id="dd4d9-109">Hands On Lab: Build a Single Page Application (SPA) with ASP.NET Web API and Angular.js</span></span>](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
+- [<span data-ttu-id="a3c7d-105">開始使用 Web API 2 (C#)</span><span class="sxs-lookup"><span data-stu-id="a3c7d-105">Getting Started with Web API 2 (C#)</span></span>](tutorial-your-first-web-api.md)
+- [<span data-ttu-id="a3c7d-106">Web API 2 中的動作結果</span><span class="sxs-lookup"><span data-stu-id="a3c7d-106">Action Results in Web API 2</span></span>](action-results.md)
+- [<span data-ttu-id="a3c7d-107">使用具有 ASP.NET Web Form 的 Web API</span><span class="sxs-lookup"><span data-stu-id="a3c7d-107">Using Web API with ASP.NET Web Forms</span></span>](using-web-api-with-aspnet-web-forms.md)
+- [<span data-ttu-id="a3c7d-108">建立 Web API 說明頁面</span><span class="sxs-lookup"><span data-stu-id="a3c7d-108">Creating Web API Help Pages</span></span>](creating-api-help-pages.md)
+- [<span data-ttu-id="a3c7d-109">實習實驗室：建置使用 ASP.NET Web API 和 Angular.js 的單一頁面應用程式 (SPA)</span><span class="sxs-lookup"><span data-stu-id="a3c7d-109">Hands On Lab: Build a Single Page Application (SPA) with ASP.NET Web API and Angular.js</span></span>](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
