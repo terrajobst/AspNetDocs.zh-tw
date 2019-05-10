@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 7871dc05-2750-470f-8b4c-3a52511949bc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5dc49d7467db01e62db147c7083ed62379d23940
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 68f8bdeeb85bc66cf790c2005cf0f0ff24b3b653
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394155"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129761"
 ---
 # <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>使用 Entity Framework 的 ASP.NET MVC 應用程式 (10 個 6) 中更新相關的資料
 
@@ -26,7 +26,6 @@ ms.locfileid: "59394155"
 > > [!NOTE] 
 > > 
 > > 如果您遇到的問題，您無法解決，請[下載已完成的一章](building-the-ef5-mvc4-chapter-downloads.md)並嘗試重現您的問題。 您通常可以找到問題的解決方案，藉由比較您的程式碼的完整程式碼。 一些常見錯誤及如何解決這些問題，請參閱[錯誤和因應措施。](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 您在先前的教學課程中顯示相關的資料;在本教學課程中，您將更新相關的資料。 大部分的關聯性，做法是藉由更新適當的外部索引鍵欄位。 多對多關聯性，Entity Framework 不會聯結資料表直接公開，因此您必須明確地新增，然後移除適當的導覽屬性的實體。
 
@@ -194,14 +193,12 @@ Scaffold 的程式碼不是您所要的。 設定資料的下拉式清單中，�
 變更一些課程指派，然後按一下**儲存**。 您所做的變更會反映在 [索引] 頁面上。
 
  注意:來編輯講師課程資料的方法時運作相當良好有限的數目的課程。 針對更大的集合，將需要不同的 UI 和不同的更新方法。  
- 
 
 ## <a name="update-the-delete-method"></a>更新的 Delete 方法
 
 因此辦公室指派記錄 （如果有的話） 刪除時刪除講師時，請變更則 HttpPost Delete 方法中的程式碼：
 
 [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample22.cs?highlight=6,10)]
-
 
 如果您嘗試刪除講師角色，獲指派給某個部門系統管理員身分，您會收到參考完整性錯誤。 請參閱[目前的版本，本教學課程的](../../getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)的額外程式碼會自動移除講師指派為系統管理員的其中任何部門的講師。
 

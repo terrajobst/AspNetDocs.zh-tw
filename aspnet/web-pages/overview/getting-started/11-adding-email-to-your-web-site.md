@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: fc49bcb9-f1a9-4048-8c3f-b60951853200
 msc.legacyurl: /web-pages/overview/getting-started/11-adding-email-to-your-web-site
 msc.type: authoredcontent
-ms.openlocfilehash: 0263f736b96f8e8572536f3783d86c261d7c0512
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 23e9717329525fb5a0ed505c9dc94505d4f9dbbe
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411224"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130552"
 ---
 # <a name="sending-email-from-an-aspnet-web-pages-razor-site"></a>從 ASP.NET Web Pages (Razor) 網站傳送電子郵件
 
@@ -39,7 +39,6 @@ ms.locfileid: "59411224"
 > 
 > 本教學課程也適用於 ASP.NET Web Pages 2。
 
-
 <a id="Sending_Email_Messages"></a>
 ## <a name="sending-email-messages-from-your-website"></a>從您的網站傳送電子郵件訊息
 
@@ -57,7 +56,6 @@ ms.locfileid: "59411224"
 
 > [!NOTE]
 > 為了簡化此範例中，程式碼會初始化`WebMail`在頁面中，您使用的協助程式權限。 不過，實際的網站，就像這樣的初始化程式碼置於通用的檔案，是更好的辦法，讓您初始化`WebMail`協助程式，您的網站中的所有檔案。 如需詳細資訊，請參閱 <<c0> [ 自訂全網站行為適用於 ASP.NET 網頁](https://go.microsoft.com/fwlink/?LinkId=202906#Setting_Values_For_Helpers)。
-
 
 1. 建立新的網站。
 2. 新增名為頁面*EmailRequest.cshtml*並新增下列標記： 
@@ -133,7 +131,6 @@ ms.locfileid: "59411224"
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他資源
-
 
 - [ASP.NET Web Pages (Razor) 疑難排解指南](https://go.microsoft.com/fwlink/?LinkId=253001)
 - [簡易郵件傳輸通訊協定](https://msdn.microsoft.com/library/aa480435.aspx)

@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: 0c6e4c2f-fcdb-4978-9656-1990c6f15727
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-10
 msc.type: authoredcontent
-ms.openlocfilehash: 48404f449ce2641bdff55b9ad75aa5eec1aee46b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f701d1fbabc3e1a97c3750d00e96bf8dba1105cd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403294"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129709"
 ---
 # <a name="part-10-final-updates-to-navigation-and-site-design-conclusion"></a>第 10 部分：瀏覽及網站 設計的最後更新，結論
 
@@ -24,7 +24,6 @@ ms.locfileid: "59403294"
 > MVC Music 市集是銷售線上音樂 album 和實作基本的網站管理、 使用者登入時，和 「 購物車 」 功能的輕量級的範例存放區實作。  
 >   
 > 本教學課程系列會詳細說明所有建置 ASP.NET MVC Music 市集範例應用程式所採取的步驟。 部分 10 涵蓋導覽及網站設計，結論的最後更新。
-
 
 我們已經完成我們的網站中，所有主要的功能，但我們仍有一些功能新增到網站巡覽、 首頁上，以及存放區瀏覽 頁面。
 
@@ -133,7 +132,6 @@ CartSummary 部分檢視是很簡單-它是只連結至 ShoppingCart 索引 檢�
 ## <a name="conclusion"></a>結論
 
 我們已了解，ASP.NET MVC 可讓您輕鬆建立複雜的網站與資料庫存取權，成員資格，AJAX，等等。 很快。 希望本教學課程提供具有您要開始建置您自己的 ASP.NET MVC 應用程式的工具 ！
-
 
 > [!div class="step-by-step"]
 > [上一步](mvc-music-store-part-9.md)

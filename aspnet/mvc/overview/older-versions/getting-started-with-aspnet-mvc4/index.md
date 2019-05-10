@@ -8,17 +8,16 @@ ms.date: 02/15/2012
 ms.assetid: a35183ac-cbcb-4070-9233-6331cde921ad
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4
 msc.type: chapter
-ms.openlocfilehash: 0cce120be702ffa4c21e56cbbbe472aebf7f1889
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a73935f74d696bad9070c56b506d3aa2dbcceb25
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402254"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129863"
 ---
 # <a name="getting-started-with-aspnet-mvc-4"></a>ASP.NET MVC 4 使用者入門
 
 > 本系列教學課程將教導您建置使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，也就是 Microsoft Visual Studio 的免費版本的 ASP.NET MVC Web 應用程式的基本概念。
-
 
 - [ASP.NET MVC 4 簡介](intro-to-aspnet-mvc-4.md)
 - [新增控制器](adding-a-controller.md)

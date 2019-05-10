@@ -8,12 +8,12 @@ ms.date: 02/07/2014
 ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: 8237dc6b925ccefc5b411aebc8e7c399dcdc6746
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d9edcd61e52941c0fd69e645da7e2cf467a632ac
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407350"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131788"
 ---
 # <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 語法 (C#) 的 ASP.NET Web 程式設計簡介
 
@@ -36,14 +36,12 @@ ms.locfileid: "59407350"
 > 
 > 本教學課程也適用於 ASP.NET Web Pages 2。
 
-
 ## <a name="the-top-8-programming-tips"></a>最佳的 8 程式設計秘訣
 
 此區段會列出您一定要知道當您開始撰寫使用 Razor 語法的 ASP.NET 伺服器程式碼的一些秘訣。
 
 > [!NOTE]
 > 根據 Razor 語法的 C# 程式設計語言，以及這最常使用以 ASP.NET Web Pages 的語言。 不過，Razor 語法也支援 Visual Basic 語言，以及您會看到您也可以執行在 Visual Basic 中的所有項目。 如需詳細資訊，請參閱附錄[Visual Basic 語言與語法](https://go.microsoft.com/fwlink/?LinkId=202908)。
-
 
 在本文稍後，您可以找到大部分的這些程式設計技術的更多詳細。
 
@@ -66,7 +64,6 @@ ms.locfileid: "59407350"
 > 如果您的目標是要輸出轉譯為標記的標記的 HTML 標記 (例如`<p></p>`段落或`<em></em>`來強調文字)，請參閱節[結合文字、 標記和程式碼區塊中的程式碼](#BM_CombiningTextMarkupAndCode)本文稍後的。
 > 
 > 您可以深入了解中的 HTML 編碼[使用表單](https://go.microsoft.com/fwlink/?LinkId=202892)。
-
 
 ### <a name="2-you-enclose-code-blocks-in-braces"></a>2.大括號括住程式碼區塊
 
@@ -116,7 +113,6 @@ A*字串*是會被視為文字的字元序列。 若要指定為字串，您將�
 > [!NOTE]
 > 請注意，`@`字元用來將標記在 C# 中逐字字串常值，以及將 ASP.NET 頁面的程式碼。
 
-
 ### <a name="6-code-is-case-sensitive"></a>6.程式碼會區分大小寫
 
 以 C# 關鍵字 (例如`var`， `true`，和`if`) 和變數名稱會區分大小寫。 下列程式碼會建立兩個不同的變數，`lastName`和 `LastName.`
@@ -127,7 +123,6 @@ A*字串*是會被視為文字的字元序列。 若要指定為字串，您將�
 
 > [!NOTE]
 > 在 Visual Basic 中的關鍵字而變數則屬於*不*區分大小寫。
-
 
 ### <a name="7-much-of-your-coding-involves-objects"></a>7.大部分您撰寫程式碼牽涉到物件
 
@@ -161,7 +156,6 @@ A*字串*是會被視為文字的字元序列。 若要指定為字串，您將�
 > 用於 web 網頁 (HTTP) 的通訊協定支援非常有限的用來對伺服器提出要求的方法 （動詞命令）。 最常見的兩個為 GET，會用來讀取的頁面和文章，用來提交頁面。 一般情況下，使用者要求的頁面上，第一次要求頁面時使用 GET。 如果使用者在表單中填入，然後再按一下 [提交] 按鈕，瀏覽器會對伺服器提出 POST 要求。
 > 
 > 在 web 程式設計中，通常很有用知道是否要求網頁時正在為 GET 或 POST，讓您知道如何處理頁面。 ASP.NET Web Pages 中，您可以使用`IsPost`屬性，以查看要求是 GET 或 POST。 如果要求是某篇文章，`IsPost`屬性會傳回 true，而且您可以執行像是讀取表單上的文字方塊的值。 您會看到的許多範例會示範如何處理值的方式而定頁面`IsPost`。
-
 
 ## <a name="a-simple-code-example"></a>簡單的程式碼範例
 
@@ -217,7 +211,6 @@ Razor 語法可讓您的 ASP.NET 中，但使用簡化的語法，可以更輕�
 > 當應用程式必須使用實際的客戶資訊時，它會建立的執行個體 (或*具現化*) customer 物件。 每個個別的客戶是獨立執行個體`Customer`類別。 每個執行個體支援相同的屬性和方法，但每個執行個體的屬性值是通常不同，因為每個客戶物件都是唯一。 一位客戶物件中`LastName`屬性可能是"Smith"，另一個客戶物件，在`LastName`屬性可能是"Jones"。
 > 
 > 同樣地，是在您的網站中任何個別網頁`Page`的執行個體的物件`Page`類別。 在頁面上的按鈕`Button`的執行個體的物件`Button`類別，並依此類推。 每個執行個體具有其本身的特性，但它們全都以基礎物件的類別定義中指定的內容。
-
 
 ## <a name="basic-syntax"></a>基本語法
 
@@ -439,7 +432,6 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
 ## <a name="operators"></a>運算子
 
 運算子是關鍵字或字元，會告訴 ASP.NET 在運算式中執行命令的類型。 C# 語言 （和 Razor 語法為基礎） 支援許多運算子，但您只需要識別一些開始使用。 下表摘要說明最常見的運算子。
-
 
 :::row:::
     :::column:::
@@ -832,7 +824,6 @@ Razor 語法可讓您將參數傳遞至方法的兩個選項：*位置參數*並
 > [!NOTE]
 > 我們建議您避免使用`Response.Redirect`方法中的`try/catch`陳述式，因為它會在網頁中造成例外狀況。
 
-
 下列範例顯示建立第一個要求上的文字檔案，然後顯示按鈕，讓使用者可以開啟檔案的頁面。 此範例刻意使用不正確的檔案名稱，如此會導致例外狀況。 程式碼包含`catch`陳述式中的兩個可能的例外狀況： `FileNotFoundException`，就會出現錯誤，檔案名稱是否與`DirectoryNotFoundException`，發生於 ASP.NET 即使找不到資料夾。 （您可以取消此範例中的陳述式以查看一切正常運作時，它的執行方式註解）。
 
 如果您的程式碼未處理例外狀況，您會看到先前的螢幕擷取畫面類似的錯誤頁面。 不過，`try/catch`一節可協助避免使用者看到這些錯誤類型。
@@ -843,12 +834,9 @@ Razor 語法可讓您將參數傳遞至方法的兩個選項：*位置參數*並
 
 **使用 Visual Basic 進行程式設計**
 
-
 [附錄：Visual Basic 語言和語法](https://go.microsoft.com/fwlink/?LinkId=202908)
 
-
 **參考文件**
-
 
 [ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
 

@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: 332fb3da-e2a5-460d-bb90-dd911e1e2c95
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/10-working-with-video
 msc.type: authoredcontent
-ms.openlocfilehash: 204611513860e268001596b9c7ac9e9c023caa12
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 516d46f38ce8910209f4207c474b0404bf012950
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399849"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130956"
 ---
 # <a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>在 ASP.NET Web Pages (Razor) 網站中顯示影片
 
@@ -40,7 +40,6 @@ ms.locfileid: "59399849"
 >   
 > 
 > 本教學課程也適用於 WebMatrix 3。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -88,7 +87,6 @@ ms.locfileid: "59399849"
 > [!NOTE]
 > 如果您還不知道 Silverlight: *.xap*檔案會壓縮的檔案，包含配置中的指示 *.xaml*的組件和選擇性資源的 managed 程式碼檔。 您可以建立 *.xap*為 Silverlight 應用程式專案的 Visual Studio 中的檔案。
 
-
 `Silverlight`視訊播放程式會使用您提供的播放程式的設定和中提供的設定都 *.xap*檔案。
 
 > [!TIP] 
@@ -101,7 +99,6 @@ ms.locfileid: "59399849"
 > - `application/x-shockwave-flash`
 > - `application/x-mplayer2`
 > - `application/x-silverlight-2`
-
 
 <a id="Playing_Flash"></a>
 ## <a name="playing-flash-swf-videos"></a>播放視訊 Flash (.swf)
@@ -179,7 +176,6 @@ Flash player 支援的視訊模式設定，稱為`windowMode`。 您可以設定
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他資源
-
 
 [Silverlight 的概觀](https://msdn.microsoft.com/library/bb404700(VS.95).aspx)
 

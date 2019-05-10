@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: e1fec43e-1daf-49d2-b0c7-7f1b930455cc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 42c1cd684196c026f1435cba289fc2535187087c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1b3e944e45e8d2b746b2e42360693c245d93901f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59417295"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132863"
 ---
 # <a name="dynamically-populating-a-control-c"></a>以動態方式填入控制項 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59417295"
 [下載程式碼](http://download.microsoft.com/download/d/8/f/d8f2f6f9-1b7c-46ad-9252-e1fc81bdea3e/dynamicpopulate0.cs.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dynamicpopulate0CS.pdf)
 
 > DynamicPopulate 控制項在 ASP.NET AJAX Control Toolkit 中呼叫 web 服務 （或頁面方法），並會產生的值填滿到目標控制項在頁面上，而不需要重新整理頁面。
-
 
 ## <a name="overview"></a>總覽
 
@@ -64,7 +63,6 @@ HTML 按鈕 （做為 HTML 控制項，因為我們不需要回傳至伺服器�
 [!code-aspx[Main](dynamically-populating-a-control-cs/samples/sample5.aspx)]
 
 瀏覽器中執行 ASP.NET 網頁，然後按一下按鈕，您會收到目前的日期，格式為月-日-年。
-
 
 [![按一下按鈕從伺服器擷取的日期](dynamically-populating-a-control-cs/_static/image2.png)](dynamically-populating-a-control-cs/_static/image1.png)
 

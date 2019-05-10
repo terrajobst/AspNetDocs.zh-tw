@@ -8,12 +8,12 @@ ms.date: 01/12/2011
 ms.assetid: cad00de1-3c68-4ff4-a436-54236d449459
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 289dd429081fde12699db678e619a9fd5ed98942
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: beaad3440a9f333ab22f29d0c6683d71e8962fc2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403281"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130047"
 ---
 # <a name="accessing-your-models-data-from-a-controller-vb"></a>從控制器存取模型資料 (VB)
 
@@ -28,7 +28,6 @@ ms.locfileid: "59403281"
 > 如果您使用 Visual Studio 2010，而不 Visual Web Developer 2010，請按一下下列連結安裝必要條件：[Visual Studio 2010 的必要元件](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)。
 > 
 > 使用本主題隨附了 VB.NET 原始程式碼的 Visual Web Developer 專案。 [下載 VB.NET 版本](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)。 如果您偏好 C#，切換至[C# 版本](../cs/accessing-your-models-data-from-a-controller.md)本教學課程。
-
 
 在本節中，您將建立新`MoviesController`類別，並撰寫程式碼會擷取電影資料，並顯示在瀏覽器中使用檢視範本。 請務必建置您的應用程式，再繼續進行。
 
@@ -112,7 +111,6 @@ Entity Framework Code First 偵測到所提供的資料庫連接字串指向`Mov
 
 > [!NOTE]
 > 如果您收到錯誤，當您按兩下*Movies.sdf*，請確定您已安裝**Visual Studio 2010 SP1 Tools for SQL Server Compact 4.0**。 （如需軟體的連結，請參閱在本教學課程系列的第 1 部分中的必要條件清單）。如果您現在安裝版本，您必須關閉再重新開啟 Visual Web Developer。
-
 
 [![DB_explorer](accessing-your-models-data-from-a-controller/_static/image14.png)](accessing-your-models-data-from-a-controller/_static/image13.png)
 

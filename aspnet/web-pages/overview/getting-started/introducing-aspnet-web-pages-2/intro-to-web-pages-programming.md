@@ -8,12 +8,12 @@ ms.date: 06/17/2015
 ms.assetid: 7526ed45-a97d-4e8a-8301-01324ef0eff9
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 msc.type: authoredcontent
-ms.openlocfilehash: 81c2c6f0070a409c289128ccf5d39f9fff788b48
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 474de7671ac2931e5ba9ff635d77385403644521
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387343"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130513"
 ---
 # <a name="introducing-aspnet-web-pages---programming-basics"></a>ASP.NET Web Pages 簡介-程式設計基本概念
 
@@ -34,7 +34,6 @@ ms.locfileid: "59387343"
 > 
 > - NuGet 和套件管理員。
 > - `Gravatar`協助程式。
-
 
 本教學課程是向您介紹程式設計的語法，您將使用 ASP.NET Web Pages 中的主要活動。 您將了解*Razor 語法*和 C# 中撰寫的程式碼程式設計語言。 您在上一個教學課程中，有一窺這種語法在本教學課程中，我們將說明詳細的語法。
 
@@ -60,7 +59,6 @@ ms.locfileid: "59387343"
 
 > [!NOTE]
 > 當您到頁面上，複製程式碼或標記的範例時，縮排和對齊方式可能無法與本教學課程相同。 縮排和對齊方式不會影響程式碼的執行方式，不過。
-
 
 [!code-cshtml[Main](intro-to-web-pages-programming/samples/sample1.cshtml)]
 
@@ -126,7 +124,6 @@ ms.locfileid: "59387343"
 > 
 > 我們之所以提到這，因為如果您尋找程式 ASP.NET Web Pages 」 的相關資訊，您會發現許多 Razor 的參考。 不過，這些參考大量不適用於什麼是這麼做，因此可能會造成混淆。 而且事實上，許多程式設計問題的真正想要使用 C#，或使用 ASP.NET 的相關。 因此如果您特別尋找 Razor 的相關資訊，您可能無法找到所需的解答。
 
-
 ## <a name="adding-some-conditional-logic"></a>新增一些條件式邏輯
 
 在網頁中使用程式碼的相關最棒的功能之一是，您可以變更會發生什麼事根據各種條件。 在本教學課程的這個部分，您會試用一些方法，若要變更頁面中顯示的內容。
@@ -166,7 +163,6 @@ ms.locfileid: "59387343"
 
 > [!NOTE]
 > 請確定您會注意到，等於 （= =） 比較運算子不相同 =。 = 運算子只能用來將值指派 (var = 2)。 如果您混這些運算子時，您可能會收到錯誤，否則您會得到一些奇怪的結果。
-
 
 若要測試的項目是否為 true，完整的語法是 if(IsDone == true)。 但是，您也可以使用捷徑 if(IsDone)。 如果沒有任何比較運算子，ASP.NET 會假設您要測試為 true。
 
@@ -231,7 +227,6 @@ ms.locfileid: "59387343"
 > **資料類型和 as （） 方法**
 > 
 > 我們只能說了到目前為止，當您建立變數時，您使用關鍵字 var。 這不是整個本文中，不過。 若要操作的值 — 新增數字，或串連字串，或比較日期，或測試的 true/false-C# 必須使用適當的內部表示法的值。 C# 可以*通常*找出該表示應該為何 (也就是什麼*型別*資料) 根據您所做的值。 不過它無法這麼做。 如果沒有，您必須藉由明確指出 C# 應該代表資料的方式來助一臂之力。 AsBool 方法這麼 — 它會告訴 C#"true"或"false"的字串值，應該視為布林值。 類似的方法可用來做為其他型別，表示字串，例如 AsInt （視為整數）、 AsDateTime （視為日期/時間）、 AsFloat （視為浮點數），依此類推。 當您使用這些作為 （） 方法，如果要求 C# 無法表示的字串值時，您會看到錯誤。
-
 
 在頁面標記中，移除或註解此項目 （在此它會顯示標成註解）：
 

@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: 11f6fe44-64ef-4a38-a3b4-35c7bb992352
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 02c4371cccb56f0ef7c0a6244c3dcd8a30d241b0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fedf3261fd1c73107575ea94186c6c895a7fd529
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415644"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127909"
 ---
 # <a name="logging-error-details-with-elmah-c"></a>使用 ELMAH 記錄錯誤的詳細資料 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59415644"
 [下載程式碼](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_14_CS.zip)或[下載 PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial14_ELMAH_cs.pdf)
 
 > 錯誤記錄模組和處理常式 (ELMAH) 提供了另一種方法來記錄在生產環境中的執行階段錯誤。 ELMAH 是免費、 開放原始碼錯誤記錄程式庫，其中包含的功能，例如錯誤篩選及 RSS 摘要，以檢視錯誤記錄檔，從網頁，或將其下載為逗號分隔的檔案的能力。 本教學課程將逐步引導下載及設定 ELMAH。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -36,7 +35,6 @@ ms.locfileid: "59415644"
 
 > [!NOTE]
 > 健全狀況監視系統和 ELMAH 兩者都有自己的集合的優缺點。 我建議您試用這兩個系統，並決定哪一個最能符合您的需求。
-
 
 ## <a name="adding-elmah-to-an-aspnet-web-application"></a>ASP.NET Web 應用程式中加入 ELMAH
 
@@ -56,12 +54,10 @@ ELMAH 1.0 BETA 3 (建置 10617)，在撰寫時，時間的最新版本會包含�
 > [!NOTE]
 > `Elmah.dll`檔案會位於下載`Bin`具有不同的.NET Framework 版本和發行和偵錯組建的子資料夾的資料夾。 使用適當的 framework 版本的發行組建。 比方說，如果您要建置的 ASP.NET 3.5 web 應用程式，請將複製`Elmah.dll`檔案從`Bin\net-3.5\Release`資料夾。
 
-
 接下來，開啟 Visual Studio，並加入專案中的組件，以滑鼠右鍵按一下方案總管] 和 [選擇加入的參考，從內容功能表中的網站名稱。 這會顯示 [加入參考] 對話方塊。 瀏覽至 瀏覽 索引標籤，然後選擇 `Elmah.dll`檔案。 這個動作會將`Elmah.dll`檔案，以 web 應用程式的`Bin`資料夾。
 
 > [!NOTE]
 > Web 應用程式專案 (WAP) 型別不會顯示`Bin`方案總管 中的資料夾。 相反地，它會列出這些項目參考 資料夾下。
-
 
 `Elmah.dll`組件包括 ELMAH 系統所使用的類別。 這些類別可分為三種類別：
 
@@ -100,7 +96,6 @@ ELMAH 1.0 BETA 3 (建置 10617)，在撰寫時，時間的最新版本會包含�
 > [!NOTE]
 > 如果您要設定 ELMAH ASP.NET 1.x 應用程式然後移除`requirePermission="false"`屬性從`<section>`上述項目。
 
-
 上述語法會註冊自訂`<elmah>`區段，其各小節： `<security>`， `<errorLog>`， `<errorMail>`，和`<errorFilter>`。
 
 接下來，新增`<elmah>`一節`Web.config`。 此區段應該會出現在相同的層級`<system.web>`項目。 內部`<elmah>`一節新增`<security>`和`<errorLog>`章節就像這樣：
@@ -113,7 +108,6 @@ ELMAH 1.0 BETA 3 (建置 10617)，在撰寫時，時間的最新版本會包含�
 
 > [!NOTE]
 > ELMAH 隨附其他錯誤記錄檔提供者可將錯誤記錄到 XML 檔案、 Microsoft Access 資料庫、 Oracle 資料庫和其他資料存放區。 請參閱範例`Web.config`會包含有關如何使用這些替代錯誤記錄檔提供者的 ELMAH 下載的檔案。
-
 
 ### <a name="step-4-creating-the-error-log-source-infrastructure"></a>步驟 4：建立錯誤記錄檔來源基礎結構
 
@@ -137,7 +131,6 @@ ELMAH 並不會影響內容顯示給使用者時就會發生未處理的例外�
 
 > [!NOTE]
 > 您也可以使用`elmah.axd`頁面，即可指示 ELMAH，以產生測試時發生錯誤。 瀏覽`elmah.axd/test`(像是`http://localhost/BookReviews/elmah.axd/test`) 會導致擲回例外狀況類型的 ELMAH `Elmah.TestException`，其中包含錯誤訊息："這是您可以放心忽略測試例外狀況。 」
-
 
 **圖 3**瀏覽時顯示錯誤記錄檔`elmah.axd`從開發環境。
 
@@ -184,7 +177,6 @@ ELMAH 並不會影響內容顯示給使用者時就會發生未處理的例外�
 > [!NOTE]
 > 在已加入系統管理員角色和三個使用者，在系統中，Scott、 Jisun 和 Alice- [*設定網站，會使用應用程式服務*教學課程](configuring-a-website-that-uses-application-services-cs.md)。 使用者 Scott 和 Jisun 是系統管理員角色的成員。 如需有關驗證和授權的詳細資訊，請參閱我[網站安全性教學課程](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)。
 
-
 遠端使用者現在可以檢視錯誤記錄檔，在實際執行環境回頭**數字 3**， **4**，並**5**的錯誤記錄 web 頁面的螢幕擷取畫面。 不過，如果匿名或非系統管理員的使用者嘗試檢視錯誤記錄檔頁面它們會自動重新導向至登入頁面 (`Login.aspx`)，作為**圖 7**顯示。
 
 [![](logging-error-details-with-elmah-cs/_static/image18.png)](logging-error-details-with-elmah-cs/_static/image17.png)
@@ -229,7 +221,6 @@ ELMAH 的`ErrorLogModule`HTTP 模組會自動記錄未處理例外狀況至指�
 
 > [!NOTE]
 > 忘了，若要使用錯誤篩選，您必須註冊`ErrorFilterModule`HTTP 模組。
-
 
 `<equal>`內的項目`<test>`區段稱為判斷提示。 判斷提示會評估為 true 時的錯誤會篩選從 ELMAH 的記錄檔。 其他判斷提示已推出，包括： `<greater>`， `<greater-or-equal>`， `<not-equal>`， `<lesser>`， `<lesser-or-equal>`，依此類推。 您也可以結合使用的判斷提示`<and>`和`<or>`布林運算子。 不僅如此，您甚至可以包含簡單的 JavaScript 運算式，做為判斷提示，或以 C# 或 Visual Basic 中撰寫您自己的判斷提示。
 

@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 6d40d276-1642-4a77-b6c9-02ac914f6805
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 3833e3f3c6c49ff2b317ad04aff33c9119cb1f41
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 80c77ec65ed86b06e417d3f6ba608e404c46768b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420207"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132093"
 ---
 # <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>Visual Studio 2012 中的 ASP.NET 和網頁程式開發的新功能
 
@@ -30,7 +30,6 @@ ms.locfileid: "59420207"
 > 這個實驗室會引導您完成先前所述將微幅的變更套用到來源資料夾中提供的範例 Web 應用程式的新功能與增強功能。
 > 
 > 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)。
-
 
 <a id="Objectives"></a>
 
@@ -70,7 +69,7 @@ ms.locfileid: "59420207"
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Whats_New_in_the_CSS_Editor"></a>
-### <a name="exercise-1-whats-new-in-the-css-editor"></a>練習 1:CSS 編輯器中最新消息
+### <a name="exercise-1-whats-new-in-the-css-editor"></a>練習 1：CSS 編輯器中最新消息
 
 Web 開發人員應熟悉許多與 CSS 編輯相關的問題。 CSS 樣式的最大的問題之一是跨瀏覽器相容性。 它通常會發生之後將樣式套用至您的網站中，, 您注意到，它看起來不同如果您在另一個瀏覽器或裝置中，開啟它。 因此，您可能會於修正這些 visual 的問題，了解，當您最後讓它在瀏覽器中運作，它已經壞其他花費相當長的時間。
 
@@ -204,7 +203,7 @@ Visual Studio 現在包含可協助開發人員存取、 工作及有效地組�
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Whats_New_in_the_HTML_Editor"></a>
-### <a name="exercise-2-whats-new-in-the-html-editor"></a>練習 2:在 [HTML 編輯器] 中最新消息
+### <a name="exercise-2-whats-new-in-the-html-editor"></a>練習 2：在 [HTML 編輯器] 中最新消息
 
 Visual Studio 已改進的 HTML 編輯器。 包含在這個版本的增強功能，有些在 HTML 文件、 HTML5 的程式碼片段、 HTML 開始和結束標記相符，以及 HTML 驗證的智慧縮排。 在這個練習中，您會看到這些變更如何改善您的能力，在網站標記中工作時。
 
@@ -331,7 +330,6 @@ Visual Studio 現在包含數個 HTML5 的程式碼片段。 在這個工作中�
 > [!NOTE]
 > 在舊版的 Visual Studio 中，智慧縮排，無法在 XML 編輯器中，但不是在 HTML 編輯器中。
 
-
 1. 請確定縮排設定在 [HTML 編輯器] 中，會設定為智慧縮排。 若要這樣做，請選取**工具 |選項** 功能表選項，然後選取**文字編輯器 |HTML |索引標籤**螢幕的左窗格中的頁面。 選取 [智慧縮排] 選項。
 
     ![HTML 編輯器設定](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image33.png "HTML 編輯器設定")
@@ -433,7 +431,6 @@ Visual Studio 有更新的承諾，讓程式碼模式，可供存取且妥善管
 > [!NOTE]
 > Visual Studio 2010 實作 ECMAStript3 合規性，而 Visual Studio 2012 提供 ECMAScript5 合規性。
 
-
 1. 開啟**ECMA5script5.js**位於**Scripts\custom**專案資料夾。 現在，您將測試 ecmascript5 標準的驗證。
 
     [!code-html[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample8.html)]
@@ -494,11 +491,10 @@ Visual Studio 有更新的承諾，讓程式碼模式，可供存取且妥善管
 > [!NOTE]
 > 請確定 GotoDefinition.js 有沒有語法錯誤，再儲存檔案。
 
-
 <a id="Exercise4"></a>
 
 <a id="Exercise_4_Bundling_and_Minification"></a>
-### <a name="exercise-4-bundling-and-minification"></a>練習 4:統合和縮製
+### <a name="exercise-4-bundling-and-minification"></a>練習 4：統合和縮製
 
 多少次您的網站，並包含一個以上的 JavaScript 或 CSS 檔案？ 這是很常見的案例，其中統合和縮製可協助減少檔案大小，並進行更快速執行的站台。 ASP.NET 4.5 中新的統合功能組 JS 或 CSS 檔案的一組件到單一項目，並減少其大小縮小內容 （也就是移除不必要的空白空間，移除註解，減少的識別項）。
 
@@ -675,7 +671,6 @@ Visual Studio 有更新的承諾，讓程式碼模式，可供存取且妥善管
 
 > [!NOTE]
 > 此外，您可以在其中部署此應用程式以 Windows Azure 網站的下列[附錄 b:發行 ASP.NET MVC 4 應用程式使用 Web Deploy](#AppendixB)。
-
 
 <a id="Summary"></a>
 ## <a name="summary"></a>總結

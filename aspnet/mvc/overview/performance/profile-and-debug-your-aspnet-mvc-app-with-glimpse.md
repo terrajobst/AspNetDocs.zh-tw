@@ -8,19 +8,18 @@ ms.date: 03/26/2015
 ms.assetid: c205805f-efdd-4fa7-9616-f26eab180611
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: 078382191595d1f65b5ebe9d0de8d41cd70e376d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 051253d1e7a09f6285ebe0a83f87155de8467536
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419882"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129418"
 ---
 # <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>使用 Glimpse 分析 ASP.NET MVC 應用程式以對其進行偵錯
 
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Glimpse 是蓬勃發展及成長系列的開放原始碼 NuGet 套件，提供詳細的效能、 偵錯和診斷資訊的 ASP.NET 應用程式。 它是一般安裝、 輕量級、 超快，並在每一頁底部顯示關鍵效能度量。 它可讓您向下切入至您的應用程式時您需要了解發生什麼情況在伺服器上。 Glimpse 提供更有價值的資訊我們建議您在您的開發週期，包括您的 Azure 測試環境中使用它。 雖然[Fiddler](http://www.telerik.com/fiddler)並[F-12 開發工具](https://msdn.microsoft.com/library/ie/gg589512(v=vs.85).aspx)提供用戶端檢視 Glimpse 並提供從伺服器的詳細的檢視。 本教學課程著重於使用初探 ASP.NET MVC 和 EF 的套件，但許多其他套件可供使用。 可能的話，我會連結至適當[Glimpse docs](http://getglimpse.com/Docs/)我協助維護。 Glimpse 是開放原始碼專案，您也可以參與的原始程式碼和文件。
-
 
 - [安裝初探](#ig)
 - [啟用 localhost 的初探](#eg)
@@ -116,7 +115,6 @@ Glimpse 預設安全性原則只允許從本機主機顯示 Glimpse 資料。 �
 
 > [!WARNING]
 > 安全性-Glimpse 所提供的豐富資料可能會公開您的應用程式的安全性。 Microsoft 不用於生產應用程式上執行安全性稽核的初探。
-
 
 在 新增角色的資訊，請參閱我[將使用成員資格、 OAuth 和 SQL Database 的安全 ASP.NET MVC 5 web 應用程式部署至 Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)教學課程。
 

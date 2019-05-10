@@ -8,19 +8,18 @@ ms.date: 02/10/2010
 ms.assetid: fa429113-5f8f-4ef4-97c5-5c04900a19fa
 msc.legacyurl: /whitepapers/request-validation
 msc.type: content
-ms.openlocfilehash: d721bb14b9907ae594d1d5207b6f802e84326c9c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 807cccd6fe1acdd6359b014387abd3878840d4cd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59414721"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130509"
 ---
 # <a name="request-validation---preventing-script-attacks"></a>要求驗證 - 防止指令碼攻擊
 
 > 本文件說明位置，根據預設，應用程式無法處理未編碼的 HTML 內容提交給伺服器的 ASP.NET 要求驗證的功能。 當應用程式的設計可安全地處理 HTML 資料時，可以停用此要求驗證功能。
 > 
 > 適用於 ASP.NET 1.1 和 ASP.NET 2.0。
-
 
 要求驗證，因為 1.1 版的 ASP.NET 功能可防止伺服器接受內容包含未編碼的 HTML。 這項功能被設計來協助防止某些指令碼資料隱碼攻擊，藉此讓用戶端指令碼或 HTML 可以不知情的情況下提交至伺服器、 儲存，以及之後要提供給其他使用者。 我們仍強烈建議驗證所有輸入的資料，並加以適當時 HTML 編碼。
 

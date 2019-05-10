@@ -8,19 +8,18 @@ ms.date: 01/26/2011
 ms.assetid: 2990bd10-590d-43d5-9529-6b503ce5455d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering
 msc.type: authoredcontent
-ms.openlocfilehash: 19726a728fc6d94552c315b38315a29c269d97db
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 603120864528b9a5ff81214270eb9a7f1b68b347
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380414"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130683"
 ---
 # <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-3-sorting-and-filtering"></a>使用 Entity Framework 4.0 和 ObjectDataSource 控制項，第 3 部分：排序和篩選
 
 藉由[Tom Dykstra](https://github.com/tdykstra)
 
 > 本教學課程系列是根據所建立的 Contoso 大學 web 應用程式[Getting Started with Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started)教學課程系列。 如果您未完成先前的教學課程，為本教學課程的起始點即可[下載應用程式](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a)您會建立。 您也可以[下載應用程式](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa)，它由完整的教學課程系列。 如果您有疑問的教學課程，您可以張貼他們[ASP.NET Entity Framework 論壇](https://forums.asp.net/1227.aspx)。
-
 
 在上一個教學課程中，您實作儲存機制模式中使用 Entity Framework 的多層式架構 web 應用程式和`ObjectDataSource`控制項。 本教學課程會示範如何進行排序和篩選，以及處理主從式案例。 您將新增的下列增強功能*Departments.aspx*頁面：
 

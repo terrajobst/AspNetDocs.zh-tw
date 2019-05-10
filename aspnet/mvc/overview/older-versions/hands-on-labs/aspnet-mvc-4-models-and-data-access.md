@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 634ea84b-f904-4afe-b71b-49cccef4d9cc
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 53ca3bc4e550f488f3ae4c41f02a636e747107cb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 90635b617930d0a9c126795f4c8790d542e33dc9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384886"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129695"
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 模型和資料存取
 
@@ -53,7 +53,6 @@ Code First 方法可讓我們不會產生類別，通常會結合 framework 定�
 > 
 > 如果您想要瀏覽整個**音樂市集**您可以找到它的應用程式教學課程[MVC Music 市集](https://github.com/evilDave/MVC-Music-Store)。
 
-
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
@@ -90,13 +89,12 @@ Code First 方法可讓我們不會產生類別，通常會結合 framework 定�
 > [!NOTE]
 > 每個練習會伴隨**結束**包含完成練習之後，您應該取得所產生的方案資料夾。 如果您需要的所有練習所使用的其他說明，您可以使用此解決方案作為指南。
 
-
 估計的時間才能完成這個實驗室：**35 分鐘內**。
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Adding_a_Database"></a>
-### <a name="exercise-1-adding-a-database"></a>練習 1:加入資料庫
+### <a name="exercise-1-adding-a-database"></a>練習 1：加入資料庫
 
 在此練習中，您將學習如何新增含有 MusicStore 應用程式方案，以便取用其資料的資料表的資料庫。 一旦資料庫產生模型，然後加入至方案，您將修改 StoreController 類別，以提供從資料庫中，而不是使用硬式編碼值的資料檢視範本。
 
@@ -186,7 +184,6 @@ Code First 方法可讓我們不會產生類別，通常會結合 framework 定�
     > [!NOTE]
     > T4 範本 (.tt) 執行程式碼來產生實體類別，並具有相同名稱將會覆寫現有的類別。 在此範例中，類別&quot;專輯&quot;， &quot;Genre&quot;並&quot;演出者&quot;已覆寫產生的程式碼。
 
-
 <a id="Ex1Task3"></a>
 
 <a id="Task_3_-_Building_the_Application"></a>
@@ -265,7 +262,7 @@ Code First 方法可讓我們不會產生類別，通常會結合 framework 定�
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Creating_a_Database_Using_Code_First"></a>
-### <a name="exercise-2-creating-a-database-using-code-first"></a>練習 2:第一次使用的程式碼建立資料庫
+### <a name="exercise-2-creating-a-database-using-code-first"></a>練習 2：第一次使用的程式碼建立資料庫
 
 在此練習中，您將了解如何使用 Code First 方法來建立資料庫資料表 MusicStore 應用程式，以及如何存取其資料。
 
@@ -273,7 +270,6 @@ Code First 方法可讓我們不會產生類別，通常會結合 framework 定�
 
 > [!NOTE]
 > 如果您已完成練習 1，而且已經使用資料庫第一種方法，您現在將會了解如何取得相同的結果，以不同方式處理。 為了方便您讀取已標示和練習 1 相同的工作。 如果您有未完成練習 1，但想要了解 Code First 方法，您可以從這個練習中啟動，並取得主題的完整的涵蓋範圍。
-
 
 <a id="Ex2Task1"></a>
 
@@ -383,7 +379,6 @@ Code First 方法可讓我們不會產生類別，通常會結合 framework 定�
 > 這項工作是與啟動器相同之練習 1。
 > 
 > 如果您已完成練習 1 您會發現這些步驟也在這兩種方法 (第一次資料庫或 Code first)。 它們是不同的模型中，會連結的資料，但存取資料的實體是透明的控制站。
-
 
 1. 開啟**Controllers\StoreController.cs**並將下列欄位新增至類別，以保存的執行個體**MusicStoreEntities**類別，名為**storeDB**:
 

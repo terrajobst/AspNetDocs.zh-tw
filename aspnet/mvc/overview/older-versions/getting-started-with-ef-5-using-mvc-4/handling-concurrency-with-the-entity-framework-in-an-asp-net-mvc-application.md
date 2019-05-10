@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: b83f47c4-8521-4d0a-8644-e8f77e39733e
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: a79cca143df9a10b4255796a6d034688713e4e52
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d55f01bd2204a2fdb26664827b92c72d68e00a89
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379751"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129809"
 ---
 # <a name="handling-concurrency-with-the-entity-framework-in-an-aspnet-mvc-application-7-of-10"></a>處理並行使用 Entity Framework 中的 ASP.NET MVC 應用程式 (7 的 10)
 
@@ -26,7 +26,6 @@ ms.locfileid: "59379751"
 > > [!NOTE] 
 > > 
 > > 如果您遇到的問題，您無法解決，請[下載已完成的一章](building-the-ef5-mvc4-chapter-downloads.md)並嘗試重現您的問題。 您通常可以找到問題的解決方案，藉由比較您的程式碼的完整程式碼。 一些常見錯誤及如何解決這些問題，請參閱[錯誤和因應措施。](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 先前的兩個教學課程中您用過的相關資料。 本教學課程會示範如何處理並行存取。 您將建立使用的網頁`Department`實體，以及編輯和刪除的頁面`Department`實體會處理並行錯誤。 下列圖例顯示索引 [刪除] 頁面，其中包括一些發生並行衝突會顯示的訊息。
 

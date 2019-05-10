@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 093c1362-f10b-407c-a708-be370f4b62b0
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
-ms.openlocfilehash: ca47f6fe6d55153354d38fcf1ba5e844215279b2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2b26224390af70e19ca0593abe93a6867140f8ab
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389033"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129730"
 ---
 # <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 Entity Framework Scaffold 和移轉
 
@@ -72,13 +72,12 @@ ms.locfileid: "59389033"
 > [!NOTE]
 > 此練習會伴隨**結束**包含完成練習之後，您應該取得所產生的方案資料夾。 如果您需要其他說明逐步練習，您可以使用此解決方案作為指南。
 
-
 估計的時間才能完成這個實驗室：**30 分鐘**
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Using_ASPNET_MVC_4_Scaffolding_with_Entity_Framework_Migrations"></a>
-### <a name="exercise-1-using-aspnet-mvc-4-scaffolding-with-entity-framework-migrations"></a>練習 1:使用 ASP.NET MVC 4 Scaffolding，Entity Framework 移轉與
+### <a name="exercise-1-using-aspnet-mvc-4-scaffolding-with-entity-framework-migrations"></a>練習 1：使用 ASP.NET MVC 4 Scaffolding，Entity Framework 移轉與
 
 ASP.NET MVC scaffolding 提供快速的方式，以產生標準化的方式，建立所需的邏輯，可讓您的應用程式與資料庫層級互動的 CRUD 作業。
 

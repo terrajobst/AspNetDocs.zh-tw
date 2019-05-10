@@ -8,17 +8,16 @@ ms.date: 11/11/2011
 ms.assetid: 74f3a86b-81fa-4d64-820a-304613f72caa
 msc.legacyurl: /web-forms/overview/data-access/introduction
 msc.type: chapter
-ms.openlocfilehash: 7ab0f76e0892e5c4fbabc71b6fa1ec71e00fcaf9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a62b473993804312021725642a102c1eeff20f74
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387603"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132193"
 ---
 # <a name="introduction"></a>簡介
 
 > 這套簡介教學課程說明如何建立在站台之間的資料存取層 (DAL)、 商務邏輯層 (BLL) 和一致的外觀。
-
 
 - [建立資料存取層 (C#)](creating-a-data-access-layer-cs.md)
 - [建立商業邏輯層 (C#)](creating-a-business-logic-layer-cs.md)

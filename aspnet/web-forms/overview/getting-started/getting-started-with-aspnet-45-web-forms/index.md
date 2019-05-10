@@ -8,17 +8,16 @@ ms.date: 04/09/2012
 ms.assetid: dc6aa59a-9cb0-4a81-b5f3-ec545a0e958d
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms
 msc.type: chapter
-ms.openlocfilehash: 4bbda0aa56dd23a1e05e7681f88eefc4d9aa35a3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 75ac7d454462a7f7f1e071ce5ee9d892eb329c6f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403541"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131381"
 ---
 # <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>ASP.NET 4.5 Web Forms 與 Visual Studio 2013 使用者入門
 
 > 本系列教學課程將教導您建置使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 的 ASP.NET Web Forms 應用程式的基本概念。 C# 原始程式碼的 Visual Studio 2013 專案會隨附了本教學課程系列。
-
 
 - [Web Form 與 Visual Studio 使用者入門](introduction-and-overview.md)
 - [建立專案](create-the-project.md)

@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 9b2af539-7ad9-47aa-b66e-873bd9906e79
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
 msc.type: authoredcontent
-ms.openlocfilehash: fd0914ed62a280fea290b9f1b150fc25c8ed6d40
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: a15f5bf5f659d151e91ef9e53c5ad55bcd8e2b01
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385328"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130400"
 ---
 # <a name="deploying-database-role-memberships-to-test-environments"></a>將資料庫角色成員資格部署到測試環境
 
@@ -32,7 +32,6 @@ ms.locfileid: "59385328"
 > 在此案例中，通常很有幫助，自動建立資料庫使用者，並將資料庫角色成員資格指派部署程序的一部分。
 > 
 > 關鍵因素是，這項作業必須是條件式根據目標環境。 如果您要部署至預備或生產環境中，您會想要跳過這個作業。 如果您要部署的開發人員或測試環境，您會想要部署不需要其他介入的角色成員資格。 本主題說明您可以使用為了解決這個問題的其中一個方法。
-
 
 本主題是構成一系列以名為 Fabrikam，Inc.的虛構公司的企業部署需求為基礎的教學課程的一部分本教學課程系列會使用範例解決方案&#x2014;[連絡管理員解決方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;來代表實際的層級的複雜性，包括 ASP.NET MVC 3 應用程式時，Windows Communication 的 web 應用程式Foundation (WCF) 服務與資料庫專案。
 
@@ -79,13 +78,10 @@ ms.locfileid: "59385328"
 
 在理想情況下，您會執行任何必要的 TRANSACT-SQL 指令碼部署後指令碼的一部分，當您部署資料庫專案。 不過，部署後指令碼不允許您將執行有條件地根據方案組態或組建屬性的邏輯。 替代方法是直接從 MSBuild 專案檔中，執行您的 SQL 指令碼，藉由建立**目標**執行 sqlcmd.exe 命令的項目。 您可以使用此命令在目標資料庫上執行指令碼：
 
-
 [!code-console[Main](deploying-database-role-memberships-to-test-environments/samples/sample2.cmd)]
-
 
 > [!NOTE]
 > 如需有關 sqlcmd 命令列選項的詳細資訊，請參閱 < [sqlcmd 公用程式](https://msdn.microsoft.com/library/ms162773.aspx)。
-
 
 此命令嵌入 MSBuild 目標之前，您需要在哪些情況下，您想要執行的指令碼，請考慮：
 
@@ -100,15 +96,11 @@ ms.locfileid: "59385328"
 
 在特定環境的專案檔中，您需要定義的資料庫伺服器名稱、 目標資料庫名稱，以及布林值屬性，讓使用者可以指定是否要部署角色成員資格。
 
-
 [!code-xml[Main](deploying-database-role-memberships-to-test-environments/samples/sample3.xml)]
-
 
 在通用專案檔中，您需要提供 sqlcmd 可執行檔的位置和您想要執行的 SQL 指令碼的位置。 這些屬性會保持不變，目的地環境。 您也需要建立 MSBuild 目標來執行 sqlcmd 命令。
 
-
 [!code-xml[Main](deploying-database-role-memberships-to-test-environments/samples/sample4.xml)]
-
 
 請注意 sqlcmd 可執行檔的位置加入為靜態屬性，這可能是其他目標很有用。 相反地，您定義您的 SQL 指令碼的位置和 sqlcmd 命令的語法為動態屬性內的目標，因為它們不會需要在執行目標之前。 在此情況下， **DeployTestDBPermissions**如果符合這些條件，則只會執行目標：
 
@@ -117,9 +109,7 @@ ms.locfileid: "59385328"
 
 最後，別忘了叫用的目標。 在  *Publish.proj*檔案中，您可以藉由將目標加入至預設的相依性清單**FullPublish**目標。 您必須確定**DeployTestDBPermissions**之前不會執行目標**PublishDbPackages**已執行目標。
 
-
 [!code-xml[Main](deploying-database-role-memberships-to-test-environments/samples/sample5.xml)]
-
 
 ## <a name="conclusion"></a>結論
 

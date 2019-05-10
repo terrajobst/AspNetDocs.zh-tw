@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 92df4051-77c6-492c-bd34-23d24189cea4
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 msc.type: authoredcontent
-ms.openlocfilehash: 0f3b376cee8d391eb087664a51cc25e3b58d16b9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cf5c45781be6d003d28c6aa27efa08032579a6dd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390034"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132778"
 ---
 # <a name="profiles-themes-and-web-parts"></a>設定檔、佈景主題與 Web 組件
 
 by [Microsoft](https://github.com/microsoft)
 
 > 有一些組態中的重大變更和 ASP.NET 2.0 中的檢測。 新的 ASP.NET 組態 API 來以程式設計方式進行組態變更。 此外，許多新的組態設定存在於允許新的組態和檢測。
-
 
 ASP.NET 2.0 表示個人化的網站區域中大幅提升。 我們已經討論過的成員資格功能，除了 ASP.NET 設定檔、 佈景主題和 Web 組件大幅會增強在網站中的個人化。
 
@@ -155,16 +154,13 @@ ASP.NET 設定檔使用的提供者模型。 預設的提供者會將資訊儲�
 
 **圖 1**以下顯示一個小的 ASP.NET 網頁瀏覽沒有套用佈景主題。 **圖 2**套用佈景主題會顯示相同的檔案。 透過 CSS 檔案已背景色彩和文字色彩。 使用上面所列的面板檔案設定按鈕和文字方塊的外觀。
 
-
 ![無佈景主題](profiles-themes-and-web-parts/_static/image1.gif)
 
 **圖 1**:無佈景主題
 
-
 ![套用佈景主題](profiles-themes-and-web-parts/_static/image2.gif)
 
 **圖 2**:套用佈景主題
-
 
 以上所列的面板檔案定義所有文字方塊控制項和按鈕控制項的預設的外觀。 這表示每個 TextBox 控制項和插入到網頁上的按鈕控制項將會對此外觀。 您也可以定義可套用至特定的執行個體使用這些控制項的外觀**SkinID**控制項的屬性。
 
@@ -329,7 +325,6 @@ Web 組件控制集很大，但某些控制項更為重要，因為它們所需�
 > [!NOTE]
 > 您不需要採取任何動作來啟用 Web 組件個人化;它會啟用 Web 組件控制項集合的預設值。 當您第一次會執行站台上的 Web 組件頁面時，ASP.NET 會設定預設個人化提供者來儲存使用者個人化設定。 如需個人化的詳細資訊，請參閱 Web 組件個人化的概觀。
 
-
 ### <a name="to-create-a-page-for-containing-web-parts-controls"></a>若要建立包含 Web 組件的頁面控制項
 
 1. 關閉 [預設] 頁面，並將新的頁面新增至名為 WebPartsDemo.aspx 的網站。
@@ -402,11 +397,9 @@ Web 組件控制集很大，但某些控制項更為重要，因為它們所需�
 
 **使用兩個區域的 web 組件示範頁面**
 
-
 ![Web 組件 VS 逐步解說 1 螢幕擷取畫面](profiles-themes-and-web-parts/_static/image3.gif)
 
 **圖 3**:Web 組件 VS 逐步解說 1 螢幕擷取畫面
-
 
 標題中的每個控制項的列是提供您可以在控制項執行的可用動作的動詞命令功能表存取的向下箭號。 按一下其中一個控制項，動詞命令功能表，然後按一下 **最小化**動詞命令，並請注意，控制項最小化。 從 [動作] 功能表中，按一下**還原**，控制權會回到其正常大小。
 
@@ -449,11 +442,9 @@ Web 組件提供的功能，讓使用者從一個區域拖曳到另一個來變�
 
 ### <a name="web-parts-demo-page-with-my-links-control-moved"></a>使用我的連結控制移動網頁組件示範
 
-
 ![Web 組件 VS 逐步解說 2 螢幕擷取畫面](profiles-themes-and-web-parts/_static/image4.gif)
 
 **圖 4**:Web 組件 VS 逐步解說 2 螢幕擷取畫面
-
 
 1. 按一下 **顯示模式**下拉式選單，然後選取**瀏覽**。 重新整理頁面時，區域名稱會消失，而**我的連結**控制會維持您放置的位置。
 2. 若要示範個人化正常運作，關閉瀏覽器中，然後再重新載入頁面。 您所做的變更會儲存供將來瀏覽工作階段。
@@ -467,22 +458,18 @@ Web 組件提供的功能，讓使用者從一個區域拖曳到另一個來變�
 
 ### <a name="web-parts-demo-page-in-edit-mode"></a>Web 組件示範頁面處於編輯模式
 
-
 ![Web 組件 VS 逐步解說 3 螢幕擷取畫面](profiles-themes-and-web-parts/_static/image5.gif)
 
 **圖 5**:Web 組件 VS 逐步解說 3 螢幕擷取畫面
-
 
 1. 按一下 **顯示模式**功能表，然後選取**瀏覽**返回瀏覽模式。
 2. 控制項現在有了更新的標題，並沒有框線，如下列螢幕擷取畫面所示。
 
 ### <a name="edited-web-parts-demo-page"></a>已編輯的 Web 組件示範頁面
 
-
 ![Web 組件 VS 逐步解說 4 螢幕擷取畫面](profiles-themes-and-web-parts/_static/image6.gif)
 
 **圖 4**:Web 組件 VS 逐步解說 4 螢幕擷取畫面
-
 
 ### <a name="adding-web-parts-at-run-time"></a>在執行階段加入 Web 組件
 

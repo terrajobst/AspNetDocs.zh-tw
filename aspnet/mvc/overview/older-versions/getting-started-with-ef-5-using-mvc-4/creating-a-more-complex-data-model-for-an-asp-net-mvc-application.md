@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: f81f3d80-3674-4d8e-a9b1-87feed1a93c9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 15bdaa588792c3cf4a8e6eee651e0675f959f942
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2ba7ca22074fe3c131209482180f8f7706714dd5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382226"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129828"
 ---
 # <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>ASP.NET MVC 應用程式 (4 之 10) 建立更複雜的資料模型
 
@@ -26,7 +26,6 @@ ms.locfileid: "59382226"
 > > [!NOTE] 
 > > 
 > > 如果您遇到的問題，您無法解決，請[下載已完成的一章](building-the-ef5-mvc4-chapter-downloads.md)並嘗試重現您的問題。 您通常可以找到問題的解決方案，藉由比較您的程式碼的完整程式碼。 一些常見錯誤及如何解決這些問題，請參閱[錯誤和因應措施。](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 在上一個教學課程中您用過三個實體所組成的簡單資料模型。 在本教學課程中，您將新增更多的實體和關聯性，並將指定格式、 驗證和資料庫對應規則來自訂資料模型。 您會看到來自訂資料模型的兩種方式： 藉由將屬性加入至實體類別和程式碼加入至資料庫內容類別。
 
@@ -52,9 +51,7 @@ ms.locfileid: "59382226"
 
 `DisplayFormat` 屬性用來明確指定日期格式：
 
-
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample2.cs)]
-
 
 `ApplyFormatInEditMode`設定可讓您指定，而指定的格式應該也會套用時的值會顯示在文字方塊中進行編輯。 (您可能不想要的某些欄位 — 比方說，例如貨幣值，您可能不想在文字方塊中的貨幣符號進行編輯。)
 
@@ -124,7 +121,6 @@ ms.locfileid: "59382226"
 
 > [!NOTE]
 > 如果您嘗試將編譯您完成建立所有這些實體類別之前，您可能會收到編譯器錯誤。
-
 
 ## <a name="create-the-instructor-entity"></a>建立 Instructor 實體
 
@@ -260,7 +256,6 @@ Course 實體具有外部索引鍵屬性`DepartmentID`指向相關`Department`�
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample24.cs)]
 
-
 ## <a name="modifying-the-student-entity"></a>修改 Student 實體
 
 ![Student_entity](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image10.png)
@@ -378,7 +373,6 @@ Entity Framework 會自動建立`CourseInstructor`資料表，以及您讀取和
 > [!code-xml[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample35.xml?highlight=1-2)]
 > 
 > 使用新資料庫時，沒有資料移轉，而`update-database`命令是很有可能能順利完成。 如需有關如何刪除資料庫的指示，請參閱 <<c0> [ 如何從 Visual Studio 2012 中卸除資料庫](http://romiller.com/2013/05/17/how-to-drop-a-database-from-visual-studio-2012/)。
-
 
 開啟中的資料庫**伺服器總管**當您稍早，並展開**資料表**節點以查看所有的資料表已建立的。 (如果您仍有**伺服器總管**開啟從稍早的時間，再按**重新整理** 按鈕。)
 

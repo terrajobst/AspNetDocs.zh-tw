@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: c979535f-48a3-4ec4-a633-a77889b86ddb
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build
 msc.type: authoredcontent
-ms.openlocfilehash: 0ab58aee6f1203beaf3990536b059f8209e66547
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6bede6b36c24ade928ab052e14daec1e017bd0b2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393479"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131933"
 ---
 # <a name="deploying-a-specific-build"></a>部署特定的組建
 
@@ -22,7 +22,6 @@ ms.locfileid: "59393479"
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主題描述如何部署 web 封裝和資料庫指令碼至新的目的地，像是預備或生產環境特定的前一個組建。
-
 
 本主題是構成一系列以名為 Fabrikam，Inc.的虛構公司的企業部署需求為基礎的教學課程的一部分本教學課程系列會使用範例解決方案&#x2014;[連絡管理員解決方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;來代表實際的層級的複雜性，包括 ASP.NET MVC 3 應用程式時，Windows Communication 的 web 應用程式Foundation (WCF) 服務與資料庫專案。
 
@@ -47,21 +46,15 @@ ms.locfileid: "59393479"
 > [!NOTE]
 > **OutputRoot**是常用的屬性名稱。 Visual C# 和 Visual Basic 專案檔也會宣告此屬性，將所有組建輸出的根位置。
 
-
 [!code-xml[Main](deploying-a-specific-build/samples/sample1.xml)]
-
 
 如果您想要部署網頁套件和資料庫從不同位置的指令碼專案檔&#x2014;像先前的 TFS 組建的輸出&#x2014;您只需要覆寫**OutputRoot**屬性。 您應該設定的相關組建資料夾的屬性值，在 Team Build 的伺服器。 如果您已從命令列執行 MSBuild，您可以指定的值**OutputRoot**做為命令列引數：
 
-
 [!code-console[Main](deploying-a-specific-build/samples/sample2.cmd)]
-
 
 在實務上，不過，您也想要跳過**建置**目標&#x2014;沒有任何點中建置您的解決方案，如果您不打算使用組建輸出。 您可以指定您想要從命令列執行的目標來執行這項操作：
 
-
 [!code-console[Main](deploying-a-specific-build/samples/sample3.cmd)]
-
 
 不過，在大部分情況下，您會想要在 TFS 組建定義中建立您的部署邏輯。 這可讓使用者使用**組建排入佇列**任何 Visual Studio 安裝，以連線至 TFS 伺服器的部署觸發程序的權限。
 
@@ -110,7 +103,7 @@ ms.locfileid: "59393479"
 
     ![](deploying-a-specific-build/_static/image7.png)
 2. 在 **組建排入佇列**對話方塊的 **參數**索引標籤上，展開**進階**一節。
-3. 在  **MSBuild 引數**列中的值取代**OutputRoot**屬性與您的組建資料夾的位置。 例如：
+3. 在  **MSBuild 引數**列中的值取代**OutputRoot**屬性與您的組建資料夾的位置。 例如: 
 
     [!code-console[Main](deploying-a-specific-build/samples/sample5.cmd)]
 

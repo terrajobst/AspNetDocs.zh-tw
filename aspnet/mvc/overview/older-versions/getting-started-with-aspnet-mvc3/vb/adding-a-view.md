@@ -8,12 +8,12 @@ ms.date: 01/12/2011
 ms.assetid: d3633f64-5d3c-45c9-ae4b-cb1563e3739f
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: eebf36af01b27f2931fa8720b399b85edfd8c2a0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cf2e73b4245de6fe702b8c74550e6c7fc701a47f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390957"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129981"
 ---
 # <a name="adding-a-view-vb"></a>新增檢視 (VB)
 
@@ -28,7 +28,6 @@ ms.locfileid: "59390957"
 > 如果您使用 Visual Studio 2010，而不 Visual Web Developer 2010，請按一下下列連結安裝必要條件：[Visual Studio 2010 的必要元件](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)。
 > 
 > 使用本主題隨附了 VB.NET 原始程式碼的 Visual Web Developer 專案。 [下載 VB.NET 版本](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)。 如果您偏好 C#，切換至[C# 版本](../cs/adding-a-view.md)本教學課程。
-
 
 這一節我們將修改`HelloWorldController`類別，以使用檢視範本檔案，完全封裝產生 HTML 回應給用戶端的程序。
 

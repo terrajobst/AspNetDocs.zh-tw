@@ -8,12 +8,12 @@ ms.date: 01/12/2011
 ms.assetid: 0b8c56b5-fdf3-42dd-a866-98fbe0ab78a0
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 18c8f2a95222a28d95950b34c816539f723542f2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 635fae26ade5c99fb3a010b25e1d74d214e3c32e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396482"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130266"
 ---
 # <a name="adding-a-controller-c"></a>新增控制器 (C#)
 
@@ -32,7 +32,6 @@ ms.locfileid: "59396482"
 > 如果您使用 Visual Studio 2010，而不 Visual Web Developer 2010，請按一下下列連結安裝必要條件：[Visual Studio 2010 的必要元件](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)。
 > 
 > 使用本主題隨附了 C# 原始程式碼的 Visual Web Developer 專案。 [下載 C# 版本](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)。 如果您偏好 Visual Basic，切換到[Visual Basic 版本](../vb/intro-to-aspnet-mvc-3.md)本教學課程。
-
 
 代表 MVC*模型-檢視-控制器*。 MVC 是開發應用程式的架構以及易於維護的模式。 MVC 架構的應用程式包含：
 

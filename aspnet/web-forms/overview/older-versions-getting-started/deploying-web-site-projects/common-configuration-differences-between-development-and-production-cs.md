@@ -8,12 +8,12 @@ ms.date: 04/01/2009
 ms.assetid: 721a5c37-7e21-48e0-832e-535c6351dcae
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b9d4ed08ea1e8429c1895d0631e1acac9c7eaba9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 265243a54eb5ab28a7f76d2df32a9442d61862a5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391451"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130657"
 ---
 # <a name="common-configuration-differences-between-development-and-production-c"></a>開發與生產環境間的常見設定差異 (C#)
 
@@ -23,9 +23,7 @@ ms.locfileid: "59391451"
 
 > 在先前的教學課程中，我們會部署我們的網站所複製的所有相關的檔案從開發環境到生產環境。 不過，不可能有組態差異會使得每個環境都有唯一的 Web.config 檔案的環境發生的狀況。 本教學課程會檢查常見組態差異，並探討維護個別的組態資訊的策略。
 
-
 ## <a name="introduction"></a>簡介
-
 
 最後兩個教學課程會逐步部署簡單的 web 應用程式。 [*部署您的網站使用 FTP 用戶端*](deploying-your-site-using-an-ftp-client-cs.md)教學課程示範了如何使用獨立 FTP 用戶端從開發環境，一直到生產階段複製必要的檔案。 先前的教學課程中， [*部署您的網站使用的 Visual Studio*](deploying-your-site-using-visual-studio-cs.md)、 探討使用 Visual Studio 複製網站工具和發佈選項的部署。 在這兩個教學課程中的生產環境中的每個檔案是一份檔案，以在開發環境。 不過，就經常以不同於在開發環境與生產環境中的組態檔。 Web 應用程式的組態儲存在`Web.config`檔案，並通常包括外部資源，例如資料庫、 web 和電子郵件伺服器的相關資訊。 它也詳細說明，請在某些情況下，例如採取的未處理的例外狀況發生時要採取的動作中的應用程式的行為。
 
@@ -40,7 +38,6 @@ ms.locfileid: "59391451"
 > [!NOTE]
 > 未來的教學課程會探索部署資料導向應用程式，此時我們將探討如何將資料庫連接字串儲存在組態檔中的細節。
 
-
 開發和生產環境的預期的行為與本質上不同。 在開發環境中的 web 應用程式正在建立、 測試及偵錯的一小群開發人員。 在生產環境中由許多不同的同步使用者所造訪該相同的應用程式。 ASP.NET 包含數項功能，可協助開發人員測試和偵錯應用程式，但這些功能應停用效能和安全性理由，在生產環境中。 讓我們看看一些這類組態設定。
 
 ### <a name="configuration-settings-that-impact-performance"></a>會影響效能的組態設定
@@ -51,7 +48,6 @@ ms.locfileid: "59391451"
 
 > [!NOTE]
 > `WebResource.axd` 是內建的 HTTP 處理常式在 ASP.NET 2.0 引進伺服器控制項用來擷取內嵌的資源，例如指令碼檔案、 影像、 CSS 檔案和其他內容。 如需有關如何`WebResource.axd`運作，以及如何使用它來存取內嵌的資源，從您的自訂伺服器控制項，請參閱[存取內嵌的資源透過 URL 使用`WebResource.axd` ](http://aspnet.4guysfromrolla.com/articles/080906-1.aspx)。
-
 
 `<compilation>`項目的`debug`屬性通常設定為"true"在開發環境中。 事實上，此屬性必須設為"true"，才能在 web 應用程式進行偵錯如果您嘗試偵錯 ASP.NET 應用程式從 Visual Studio 和`debug`屬性設定為"false"時，Visual Studio 會顯示訊息，說明無法進行應用程式偵錯，直到`debug`屬性設為"true"，並將若要進行這項變更為您的供應項目。
 
@@ -71,7 +67,6 @@ ms.locfileid: "59391451"
 
 > [!NOTE]
 > 預設值`<customErrors>`例外狀況詳細資料訊息的頁面所造訪透過 localhost，且否則顯示一般的執行階段錯誤頁面時，才會顯示區段設定。 這並不理想，但它會確保知道的預設行為並不會顯示非本機訪客的例外狀況詳細資料。 未來的教學課程會檢查`<customErrors>`一節中更多詳細資料，並說明如何將自訂錯誤網頁顯示在生產環境中發生的錯誤。
-
 
 在開發期間很有用的另一個 ASP.NET 功能追蹤。 追蹤，如果啟用，記錄每個傳入要求的相關資訊，並提供特殊的網頁， `Trace.axd`，來檢視最近的要求詳細資料。 您可以開啟和設定追蹤透過[`<trace>`項目](https://msdn.microsoft.com/library/6915t83k.aspx)在`Web.config`。
 
@@ -111,7 +106,6 @@ ms.locfileid: "59391451"
 
 > [!NOTE]
 > 您無法使用 Web 部署專案使用 Visual Web Developer，因為 Web 部署專案做為 Visual Studio 增益集實作，而且 Visual Studio Express 各版本 （包括 Visual Web Developer） 不支援增益集。
-
 
 ## <a name="summary"></a>總結
 

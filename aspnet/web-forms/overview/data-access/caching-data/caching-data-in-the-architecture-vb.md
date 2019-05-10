@@ -8,12 +8,12 @@ ms.date: 05/30/2007
 ms.assetid: 5e189dd7-f4f9-4f28-9b3a-6cb7d392e9c7
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9c5ac1aeff427c78030f789fcb67736020ce3367
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4dd2cf64fcb813d540cadc54424e05a2e53c5ed7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391793"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130462"
 ---
 # <a name="caching-data-in-the-architecture-vb"></a>在架構中快取資料 (VB)
 
@@ -23,7 +23,6 @@ ms.locfileid: "59391793"
 
 > 在上一個教學課程中，我們學到如何適用於展示層的快取的內容。 在本教學課程中，我們了解如何利用我們的多層式架構商務邏輯層的快取資料的內容。 我們這樣做，藉由擴充的架構，若要加入的快取層。
 
-
 ## <a name="introduction"></a>簡介
 
 如我們所見在先前的教學課程中，快取的 ObjectDataSource 的資料是簡單，只要設定幾個屬性。 不幸的是，ObjectDataSource 適用於展示層緊密結合與 ASP.NET 頁面的 快取原則快取。 建立多層式的架構的原因之一是允許這類中斷的聯繫。 商業邏輯層，比方說，減少商務邏輯，從 ASP.NET 頁面，而資料存取層，以減少資料存取的詳細資料。 這種商務邏輯和資料存取的詳細資料，最好，部分，因為它可讓系統更容易閱讀，更容易維護，且更有彈性變更。 它也可讓網域知識和人力資源展示層不 t 上工作的開發人員必須熟悉資料庫 s 的詳細資訊，才能執行其工作所需要的。 減少從展示層的快取原則，可提供類似的優點。
@@ -32,11 +31,9 @@ ms.locfileid: "59391793"
 
 如 [圖 1] 所示，CL 會位於展示層和商務邏輯層之間。
 
-
 ![快取層 (CL) 是我們的架構中的另一個圖層](caching-data-in-the-architecture-vb/_static/image1.png)
 
 **圖 1**:快取層 (CL) 是我們的架構中的另一個圖層
-
 
 ## <a name="step-1-creating-the-caching-layer-classes"></a>步驟 1：建立快取層類別
 
@@ -44,11 +41,9 @@ ms.locfileid: "59391793"
 
 從 DAL 和 BLL 類別的多個完全不同 CL 類別，可讓 s 會建立新的子資料夾中`App_Code`資料夾。 以滑鼠右鍵按一下`App_Code`資料夾，在 [方案總管] 中，選擇新的資料夾和新資料夾命名為`CL`。 建立此資料夾之後, 加入新的類別，名為`ProductsCL.vb`。
 
-
 ![加入新的資料夾，名為 CL 和名為 ProductsCL.vb 類別](caching-data-in-the-architecture-vb/_static/image2.png)
 
 **圖 2**:加入新的資料夾，名為`CL`和類別，名為 `ProductsCL.vb`
-
 
 `ProductsCL`類別應該包含相同一組在其對應的商務邏輯層類別中找到的資料存取和修改方法之 (`ProductsBLL`)。 而非建立所有這些方法，讓的 s 建構 CL 幾個這裡的模式使用。 特別的是，我們會新增`GetProducts()`並`GetProductsByCategoryID(categoryID)`在步驟 3 中的方法和`UpdateProduct`在步驟 4 中的多載。 您可以將其餘`ProductsCL`方法和`CategoriesCL`， `EmployeesCL`，和`SuppliersCL`暇地的類別。
 
@@ -56,28 +51,23 @@ ms.locfileid: "59391793"
 
 ObjectDataSource 快取內部前述教學課程中探索的功能會使用 ASP.NET 資料快取來儲存從 BLL 擷取的資料。 資料快取也可以存取以程式設計方式從 ASP.NET 頁面程式碼後置類別或 web 應用程式的架構中的類別。 若要讀取及寫入資料的快取，從 ASP.NET 頁面 s 程式碼後置類別，請使用下列模式：
 
-
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample1.vb)]
 
 [ `Cache`類別](https://msdn.microsoft.com/library/system.web.caching.cache.aspx)s [ `Insert`方法](https://msdn.microsoft.com/library/system.web.caching.cache.insert.aspx)有多種多載。 `Cache("key") = value` 和`Cache.Insert(key, value)`同義，兩者都新增至使用指定的索引鍵，而不需要定義到期的快取的項目。 一般而言，我們要做為相依性、 以時間為基礎的到期，或同時快取中，加入一個項目時，請指定有效期限。 使用其中一個其他`Insert`的方法多載，來提供相依性或時間為基礎的到期資訊。
 
 需要先檢查 如果要求的資料位於快取，若是如此，s 方法快取層會從該處將它傳回。 如果要求的資料不在快取中，適當的 BLL 方法需要叫用。 它的傳回值應該快取，並將傳回，如下列順序圖表所示。
 
-
 ![快取層的方法傳回的資料從快取它 s 可用](caching-data-in-the-architecture-vb/_static/image3.png)
 
 **圖 3**:快取層的方法傳回的資料從快取它 s 可用
 
-
 圖 3 所述的順序是在 CL 類別中，使用下列模式來完成：
-
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample2.vb)]
 
 在這裡，*型別*是儲存在快取中的資料類型`Northwind.ProductsDataTable`，例如時*金鑰*是可唯一識別快取項目索引鍵。 如果具有指定的項目*金鑰*不是快取中，則*執行個體*會`Nothing`會從適當的 BLL 方法擷取資料，並且新增至快取。 依時間`Return instance`達到*執行個體*包含資料，從快取的參考，或取自 BLL。
 
 請務必從快取存取資料時，請使用上述的模式。 下列模式，其中第一眼，看起來相同，包含些微的差異，將會介紹競爭條件。 競爭情形很難進行偵錯，因為它們偶而會顯示本身並不容易重現。
-
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample3.vb)]
 
@@ -86,9 +76,7 @@ ObjectDataSource 快取內部前述教學課程中探索的功能會使用 ASP.N
 > [!NOTE]
 > 資料快取是安全執行緒，因此您不需要同步處理的簡單的讀取或寫入的執行緒存取。 不過，如果您需要多個對資料執行作業的需要是不可部分完成的快取中，您必須負責實作鎖定或其他一些機制以確保執行緒安全性。 請參閱[ASP.NET 快取的同步處理存取](http://www.ddj.com/184406369)如需詳細資訊。
 
-
 項目可以以程式設計方式從資料快取使用收回[`Remove`方法](https://msdn.microsoft.com/library/system.web.caching.cache.remove.aspx)就像這樣：
-
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample4.vb)]
 
@@ -98,7 +86,6 @@ ObjectDataSource 快取內部前述教學課程中探索的功能會使用 ASP.N
 
 下列程式碼顯示中的方法的部分`ProductsCL`類別：
 
-
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample5.vb)]
 
 首先，請記下`DataObject`和`DataObjectMethodAttribute`屬性套用至類別和方法。 這些屬性會提供資訊給 ObjectDataSource 的精靈中，指出哪些類別和方法應該會出現在精靈中的 s 步驟。 因為從展示層內的 ObjectDataSource 會存取的 CL 類別和方法，我加入了這些屬性，以增強的設計階段經驗。 回頭[建立商業邏輯層](../introduction/creating-a-business-logic-layer-vb.md)教學課程，如需更完整的描述，這些屬性和其效果。
@@ -106,7 +93,6 @@ ObjectDataSource 快取內部前述教學課程中探索的功能會使用 ASP.N
 在 `GetProducts()`並`GetProductsByCategoryID(categoryID)`方法、 從傳回的資料`GetCacheItem(key)`方法指派給區域變數。 `GetCacheItem(key)`方法，我們將檢驗，根據指定的快取從傳回的特定項目*金鑰*。 如果沒有這類資料會快取中找到，它會從對應`ProductsBLL`類別方法，然後再新增至快取使用`AddCacheItem(key, value)`方法。
 
 `GetCacheItem(key)`和`AddCacheItem(key, value)`方法分別介面使用的資料快取、 讀取和寫入值。 `GetCacheItem(key)`方法較簡單的兩個。 它只會從快取類別使用傳入的傳回值*金鑰*:
-
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample6.vb)]
 
@@ -117,9 +103,7 @@ ObjectDataSource 快取內部前述教學課程中探索的功能會使用 ASP.N
 > [!NOTE]
 > 如果您的架構使用實作的類別庫專案，則您必須將參考加入`System.Web`若要使用的組件[ `HttpRuntime` ](https://msdn.microsoft.com/library/system.web.httpruntime.aspx)並[ `HttpContext` ](https://msdn.microsoft.com/library/system.web.httpcontext.aspx)類別。
 
-
 如果快取中，找不到項目`ProductsCL`s 類別方法從 BLL 中取得資料，並將它新增至快取使用`AddCacheItem(key, value)`方法。 若要新增*值*至快取中，我們可以使用下列程式碼，使用 60 秒的時間到期：
-
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample7.vb)]
 
@@ -128,13 +112,11 @@ ObjectDataSource 快取內部前述教學課程中探索的功能會使用 ASP.N
 > [!NOTE]
 > 這個實作`AddCacheItem(key, value)`方法目前有一些缺點。 我們將位址，並解決這些問題，在步驟 4。
 
-
 ## <a name="step-4-invalidating-the-cache-when-the-data-is-modified-through-the-architecture"></a>步驟 4：讓快取資料時是架構中修改
 
 資料擷取方法，以及快取的圖層必須提供相同的方法，BLL 的插入、 更新和刪除資料。 CL 的資料修改方法不會修改快取的資料，但而不是呼叫 BLL s 對應的資料修改的方法，然後確認 快取。 如我們在先前的教學課程中所見的這會是相同的 ObjectDataSource 適用於其快取的功能啟用時的行為及其`Insert`， `Update`，或`Delete`叫用方法。
 
 下列`UpdateProduct`多載會說明如何實作 CL 中的資料修改方法：
-
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample8.vb)]
 
@@ -144,13 +126,11 @@ ObjectDataSource 快取內部前述教學課程中探索的功能會使用 ASP.N
 
 讓的 s update`AddCacheItem(key, value)`方法以便將每個項目新增至快取，透過這個方法是與單一快取相依性相關聯：
 
-
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample9.vb)]
 
 `MasterCacheKeyArray` 是字串陣列，保留的 ProductsCache 的值。 首先，快取項目新增至快取，且指派的目前日期和時間。 如果快取項目已經存在，就會更新。 接下來，會建立快取相依性。 [ `CacheDependency`類別](https://msdn.microsoft.com/library/system.web.caching.cachedependency(VS.80).aspx)s 建構函式有幾個多載，但在這裡使用的一個必須要有兩個`String`陣列的輸入。 第一個指定檔案，可做為相依性的集合。 因為我們不想要使用任何檔案為基礎的相依性，值為`Nothing`適用於第一個輸入參數。 第二個輸入的參數會指定將作為相依性的快取索引鍵的集合。 我們在這裡指定單一的相依性， `MasterCacheKeyArray`。 `CacheDependency`接著會傳遞至`Insert`方法。
 
 若要進行此項修改`AddCacheItem(key, value)`invaliding、 快取很簡單，只要移除的相依性。
-
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample10.vb)]
 
@@ -158,24 +138,19 @@ ObjectDataSource 快取內部前述教學課程中探索的功能會使用 ASP.N
 
 快取層的類別和方法可用來處理資料的技術我們 ve 檢查在這些教學課程。 為了說明使用快取的資料，您將變更儲存到`ProductsCL`類別，然後開啟`FromTheArchitecture.aspx`頁面中`Caching`資料夾，並新增 GridView。 從 GridView s 智慧標籤，建立新的 ObjectDataSource。 在精靈的 s 第一個步驟應該會看到`ProductsCL`類別做為其中一個選項，從下拉式清單。
 
-
 [![在 [商務物件] 下拉式清單中包含 ProductsCL 類別](caching-data-in-the-architecture-vb/_static/image5.png)](caching-data-in-the-architecture-vb/_static/image4.png)
 
 **[圖 4**:`ProductsCL`類別包含商務物件] 下拉式清單中 ([按一下以檢視完整大小的影像](caching-data-in-the-architecture-vb/_static/image6.png))
 
-
 選取之後`ProductsCL`，按一下 [下一步]。 下拉式清單中的選取索引標籤中有兩個項目-`GetProducts()`並`GetProductsByCategoryID(categoryID)`和 [更新] 索引標籤具有唯一`UpdateProduct`多載。 選擇`GetProducts()`從 [選取] 索引標籤的方法和`UpdateProducts`方法，從 [更新] 索引標籤，然後按一下 [完成]。
-
 
 [![ProductsCL 類別的方法詳列於下拉式清單](caching-data-in-the-architecture-vb/_static/image8.png)](caching-data-in-the-architecture-vb/_static/image7.png)
 
 **圖 5**:`ProductsCL`下拉式清單中列出類別的方法 ([按一下以檢視完整大小的影像](caching-data-in-the-architecture-vb/_static/image9.png))
 
-
 完成精靈之後，Visual Studio 將會設定 ObjectDataSource s`OldValuesParameterFormatString`屬性設`original_{0}`並將適當的欄位新增至 GridView。 變更`OldValuesParameterFormatString`回其預設值的屬性`{0}`，及設定 GridView，以支援分頁、 排序和編輯。 因為`UploadProducts`CL 所使用的多載接受只編輯的產品的名稱和價格，限制 GridView，因此只有這些欄位是可編輯。
 
 在先前的教學課程中，我們定義 GridView，以包含如欄位`ProductName`， `CategoryName`，和`UnitPrice`欄位。 歡迎複寫此格式和結構，在此情況下您 GridView 和 ObjectDataSource 的 s 宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](caching-data-in-the-architecture-vb/samples/sample11.aspx)]
 
@@ -183,7 +158,6 @@ ObjectDataSource 快取內部前述教學課程中探索的功能會使用 ASP.N
 
 > [!NOTE]
 > 本文所附的下載中提供的快取層會完成。 它包含一個類別， `ProductsCL`，這僅支援少數幾個方法。 此外，在單一 ASP.NET 頁面使用 CL (`~/Caching/FromTheArchitecture.aspx`) 所有其他人仍 BLL 直接參考。 如果您計劃使用 CL 應用程式中，從展示層的所有呼叫應該都前往 CL，這會要求 CL 的類別，方法會涵蓋這些類別和方法在目前由展示層 BLL。
-
 
 ## <a name="summary"></a>總結
 

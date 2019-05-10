@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 25444121-5a72-4dac-8e50-ad2b7ac667af
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 06713aaf84ecfa5a793c32e3762cb4790235bf8c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 05a365e26a1d66c7d4034dbbec2d7f158e0b4164
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385991"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132491"
 ---
 # <a name="handling-postbacks-from-a-popup-control-without-an-updatepanel-c"></a>處理沒有 UpdatePanel 的快顯視窗控制項回傳 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59385991"
 [下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl3.cs.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol3CS.pdf)
 
 > PopupControl 擴充項在 AJAX Control Toolkit 提供簡單的方式，來啟動任何其他控制項時，觸發快顯視窗。 回傳，就會發生這類面板中，並在頁面上有數個面板時很難判斷按下的面板。
-
 
 ## <a name="overview"></a>總覽
 
@@ -48,11 +47,9 @@ PopupControl 擴充項在 AJAX Control Toolkit 提供簡單的方式，來啟動
 
 [!code-aspx[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs/samples/sample4.aspx)]
 
-
 [![當使用者按一下文字方塊，即出現日曆](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs/_static/image2.png)](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs/_static/image1.png)
 
 當使用者按一下文字方塊，即出現日曆 ([按一下以檢視完整大小的影像](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs/_static/image3.png))
-
 
 [![按一下某個日期將它放在文字方塊中](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs/_static/image5.png)](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs/_static/image4.png)
 

@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 794bd819-00fc-47e2-876d-fc5d15e0de1c
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/troubleshooting-the-packaging-process
 msc.type: authoredcontent
-ms.openlocfilehash: 79774c6a1a1d05d5a7bcd82a5d7aa888933cf089
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8ad649dfff085a8774cc13c11d8a3e3d48277d66
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420103"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128695"
 ---
 # <a name="troubleshooting-the-packaging-process"></a>針對封裝程序進行疑難排解
 
@@ -34,7 +34,6 @@ ms.locfileid: "59420103"
 > > [!NOTE]
 > > **EnablePackageProcessLoggingAndAssert**如果您要建置您的專案使用，僅適用於屬性**偵錯**組態。 在 其他設定，會忽略此屬性。
 
-
 本主題是構成一系列以名為 Fabrikam，Inc.的虛構公司的企業部署需求為基礎的教學課程的一部分本教學課程系列會使用範例解決方案&#x2014;[連絡管理員解決方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;來代表實際的層級的複雜性，包括 ASP.NET MVC 3 應用程式時，Windows Communication 的 web 應用程式Foundation (WCF) 服務與資料庫專案。
 
 這些教學課程的核心的部署方法根據分割專案檔案方法中所述[了解專案檔](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，在建置流程控制的兩個專案檔&#x2014;包含建置適用於每個目的地環境中和包含環境特定建置和部署設定的指示。 在建置階段的特定環境的專案檔會合併到無從驗證環境的專案檔中，以構成一組完整的組建指示。
@@ -45,13 +44,10 @@ ms.locfileid: "59420103"
 
 許多這些 WPP 目標包含記錄的其他資訊的條件式邏輯時**EnablePackageProcessLoggingAndAssert**屬性設定為 **，則為 true**。 例如，如果您檢閱**封裝**目標，您可以看到它會建立額外的記錄檔目錄，並將一份檔案寫入至文字檔案，如果**EnablePackageProcessLoggingAndAssert**等於 **，則為 true**。
 
-
 [!code-xml[Main](troubleshooting-the-packaging-process/samples/sample1.xml)]
-
 
 > [!NOTE]
 > 中所定義的 WPP 目標*Microsoft.Web.Publishing.targets* %programfiles (x86) %\MSBuild\Microsoft\VisualStudio\v10.0\Web 資料夾中的檔案。 您可以開啟這個檔案，並檢閱 Visual Studio 2010 或任何 XML 編輯器中的目標。 請小心不要修改檔案的內容。
-
 
 ## <a name="enabling-the-additional-logging"></a>啟用額外的記錄功能
 
@@ -59,27 +55,20 @@ ms.locfileid: "59420103"
 
 如果您要建置您的專案，從命令列，您可以提供的值**EnablePackageProcessLoggingAndAssert**做為命令列引數的屬性：
 
-
 [!code-console[Main](troubleshooting-the-packaging-process/samples/sample2.cmd)]
-
 
 如果您使用自訂的專案檔來建置專案，您可以包含**EnablePackageProcessLoggingAndAssert**中的值**屬性**屬性**MSBuild**工作：
 
-
 [!code-xml[Main](troubleshooting-the-packaging-process/samples/sample3.xml)]
-
 
 如果您使用 Team Foundation Server (TFS) 組建定義來建置您的專案，您可以提供的值**EnablePackageProcessLoggingAndAssert**中的屬性**MSBuild 引數**資料列：![](troubleshooting-the-packaging-process/_static/image1.png)
 
 > [!NOTE]
 > 如需有關建立和設定組建定義的詳細資訊，請參閱 <<c0> [ 建立組建定義，支援部署](../configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment.md)。
 
-
 或者，如果您想要在每次建置中包含的套件，您可以修改專案檔來設定 web 應用程式專案**EnablePackageProcessLoggingAndAssert**屬性設 **，則為 true**。 您應該將屬性加入至第一個**PropertyGroup**您的.csproj 或.vbproj 檔案內的項目。
 
-
 [!code-xml[Main](troubleshooting-the-packaging-process/samples/sample4.xml)]
-
 
 ## <a name="reviewing-the-log-files"></a>檢閱記錄檔
 
@@ -100,7 +89,6 @@ ms.locfileid: "59420103"
 
 > [!NOTE]
 > 其他記錄檔的名稱通常會對應至 WPP 目標。 您可以檢閱這些目標，藉由檢查*Microsoft.Web.Publishing.targets* %programfiles (x86) %\MSBuild\Microsoft\VisualStudio\v10.0\Web 資料夾中的檔案。
-
 
 如果您的 web 封裝的內容不是您所預期，檢閱這些檔案可以是實用的方式，來識別在何種點中的程序項目時發生錯誤。
 

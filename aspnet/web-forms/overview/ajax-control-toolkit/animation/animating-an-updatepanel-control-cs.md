@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: e57f8c7c-3940-4bc0-9468-3a0ca69158ea
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 36d1166e1bd2b4c97b3cf3dd0bc3a7e8010a9443
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c403cddd1e3eb5b66f795a2e4032fae63fdb26ca
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393687"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130737"
 ---
 # <a name="animating-an-updatepanel-control-c"></a>繪製 UpdatePanel 控制項的動畫 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59393687"
 [下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/UpdatePanelAnimation1.cs.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/updatepanelanimation1CS.pdf)
 
 > 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 UpdatePanel 的內容，特殊的擴充項會存在，依賴動畫架構：UpdatePanelAnimation。 本教學課程會示範如何設定這類動畫的 UpdatePanel。
-
 
 ## <a name="overview"></a>總覽
 
@@ -48,7 +47,6 @@ ms.locfileid: "59393687"
 [!code-aspx[Main](animating-an-updatepanel-control-cs/samples/sample3.aspx)]
 
 現在每次回傳發生時在 UpdatePanel 中，新的內容面板的淡入順暢。
-
 
 [![下一個步驟中，精靈會淡入](animating-an-updatepanel-control-cs/_static/image2.png)](animating-an-updatepanel-control-cs/_static/image1.png)
 

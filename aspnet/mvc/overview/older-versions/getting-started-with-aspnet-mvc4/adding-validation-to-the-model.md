@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 5d9a2999-fcc4-4c45-a018-271fddf74a3b
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 266d2e3fda54a9e584622ccd595e41229c96e6b0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 25037d2994354c92f9fe831c948393df32e120a1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420740"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129925"
 ---
 # <a name="adding-validation-to-the-model"></a>將驗證新增至模型
 
@@ -21,7 +21,6 @@ ms.locfileid: "59420740"
 
 > > [!NOTE]
 > > 本教學課程中的更新的版本可[此處](../../getting-started/introduction/getting-started.md)使用 ASP.NET MVC 5 和 Visual Studio 2013。 它更安全、 更容易遵循，並示範更多的功能。
-
 
 在本節中，您會將驗證邏輯加入`Movie`模型，而您將確保的每當使用者嘗試建立或編輯電影，使用應用程式執行驗證規則。
 
@@ -79,7 +78,6 @@ ASP.NET MVC 和 Entity Framework Code First 所提供的驗證支援就是執行
 
 > [!NOTE]
 > 以 jQuery 驗證支援非英文的地區設定，請使用逗號 (&quot;，&quot;) 的小數點，您必須加入*globalize.js*和您的特定*cultures/globalize.cultures.js*檔案 (從[ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 和使用的 JavaScript `Globalize.parseFloat`。 下列程式碼會顯示在 Views\Movies\Edit.cshtml 檔案，才能使用已修改&quot;FR-FR&quot;文化特性：
-
 
 [!code-cshtml[Main](adding-validation-to-the-model/samples/sample6.cshtml)]
 

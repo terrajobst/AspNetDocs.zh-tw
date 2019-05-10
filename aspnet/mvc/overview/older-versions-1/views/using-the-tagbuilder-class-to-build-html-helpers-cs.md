@@ -8,19 +8,18 @@ ms.date: 03/02/2009
 ms.assetid: 3975a52f-bd15-4edd-8f3d-1df93672515b
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3227560c1d0c48f7738e26c87a0dbb140c410eee
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c8eaea9932a30c744b9a69861619ce9458b5a23a
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410093"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130298"
 ---
 # <a name="using-the-tagbuilder-class-to-build-html-helpers-c"></a>使用 TagBuilder 類別可建置 HTML 協助程式 (C#)
 
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther 會向您介紹在 ASP.NET MVC framework 將 TagBuilder 類別命名為實用的公用程式類別。 您可以使用 TagBuilder 類別，輕鬆地建置 HTML 標記。
-
 
 ASP.NET MVC 架構包括名為 TagBuilder 類別可建置 HTML 協助程式時，您可以使用的實用的公用程式類別。 TagBuilder 類別名所示的類別，可讓您輕鬆地建置 HTML 標記。 在這個簡短的教學課程中，為您提供 TagBuilder 類別的概觀和您將了解如何使用這個類別，當建置簡單的 HTML helper 來呈現 HTML &lt;img&gt;標記。
 
@@ -33,7 +32,6 @@ TagBuilder 類別包含在 System.Web.Mvc 命名空間中。 它有五個方法�
 - MergeAttribute()-可讓您將屬性加入至標記。 有多個多載，這個方法。
 - SetInnerText()-可讓您設定標記的內部文字。 內部文字會自動對 HTML 編碼。
 - Tostring （）-可讓您呈現標記。 您可以指定是否要建立的標準標記、 開始標記、 結束標記或自我結尾標記。
-  
 
 TagBuilder 類別有四個重要的屬性：
 
@@ -64,11 +62,9 @@ TagBuilder 類別有四個重要的屬性：
 
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-cs/samples/sample2.aspx)]
 
-
 [![[新增專案] 對話方塊](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image1.png)
 
 **圖 01**:使用影像協助程式 ([按一下以檢視完整大小的影像](using-the-tagbuilder-class-to-build-html-helpers-cs/_static/image2.png))
-
 
 請注意，您必須匯入影像協助程式頂端的 Index.aspx 檢視相關聯的命名空間。 使用下列指示詞，匯入協助程式：
 
