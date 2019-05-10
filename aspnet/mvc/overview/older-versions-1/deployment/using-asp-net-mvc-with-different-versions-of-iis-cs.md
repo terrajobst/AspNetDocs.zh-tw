@@ -8,19 +8,18 @@ ms.date: 08/19/2008
 ms.assetid: b0cf4a34-2c1d-4717-bb54-ff029e722990
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0ca34f670202a35c627a514d3394fa430f5d8f26
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3b0a9509c0600f3598fd1218a7b383430548d4c0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396339"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123224"
 ---
 # <a name="using-aspnet-mvc-with-different-versions-of-iis-c"></a>使用 ASP.NET MVC 與不同版本的 IIS (C#)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教學課程中，您將了解如何使用不同版本的 Internet Information Services 中的 ASP.NET MVC 和 URL 路由。 您將了解不同的策略來使用 IIS 7.0 （傳統模式）、 IIS 6.0 和舊版 IIS 的 ASP.NET MVC。
-
 
 ASP.NET MVC 架構而定 ASP.NET 路由將瀏覽器要求路由傳送至控制器動作。 若要充分利用 ASP.NET 路由，您可能在您的 web 伺服器上執行其他設定步驟。 它完全取決於 Internet Information Services (IIS) 和要求處理模式，您的應用程式的版本。
 

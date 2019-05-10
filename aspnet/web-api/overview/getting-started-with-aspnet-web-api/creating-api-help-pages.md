@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 0150e67b-c50d-4613-83ea-7b4ef8cacc5a
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
 msc.type: authoredcontent
-ms.openlocfilehash: e3f6a9b8a6835b034a075d580cd9a33136969990
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8308dab8bd66aa8f5a3c5fb4133fc7a3df78f671
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395009"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125249"
 ---
 # <a name="creating-help-pages-for-aspnet-web-api"></a>建立的 ASP.NET Web API 說明頁面
 
@@ -92,7 +92,6 @@ ms.locfileid: "59395009"
 
 > [!NOTE]
 > 提示：如果您的方法上方列上放置插入號，並輸入三個正斜線，Visual Studio 會自動插入的 XML 項目。 然後您可以填上空白。
-
 
 現在建置並再次執行應用程式，並瀏覽至 [說明] 頁面。 文件字串，應該會出現在 API 資料表。
 

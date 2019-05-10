@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 9c8f0054-e319-46f8-80c0-35b606d2fbd4
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/databinding-to-an-accordion-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 28e001059cb1853d21175da2a2b1af2c75364485
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d908f89ea1a2b91b9dd7a26d72160e9f38e69c29
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380355"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133691"
 ---
 # <a name="databinding-to-an-accordion-c"></a>資料繫結至 Accordion (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59380355"
 [下載程式碼](http://download.microsoft.com/download/5/6/d/56d50cef-2011-4c8f-9891-7edc6dc57df9/Accordion1.cs.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/accordion1CS.pdf)
 
 > 在 AJAX Control Toolkit Accordion 控制項提供多個窗格，並可讓使用者一次顯示其中一個。 面板通常會宣告本身，在頁面中，但繫結至資料來源提供更大的彈性。
-
 
 ## <a name="overview"></a>總覽
 
@@ -57,7 +56,6 @@ Accordion 在控制項內，您可以提供範本的控制項，包括標頭的�
 若要結束此範例中，您需要 Accordion 控制項中定義兩個參考的 CSS 類別 (在其屬性`HeaderCssClass`和`ContentCssClass`)。 將下列標記放在`<head>`頁面的區段：
 
 [!code-css[Main](databinding-to-an-accordion-cs/samples/sample6.css)]
-
 
 [![Accordion 中的資料直接來自資料來源](databinding-to-an-accordion-cs/_static/image2.png)](databinding-to-an-accordion-cs/_static/image1.png)
 

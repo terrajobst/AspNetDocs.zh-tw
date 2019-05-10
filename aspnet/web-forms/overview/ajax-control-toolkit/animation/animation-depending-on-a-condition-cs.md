@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: b7a28c0d-efb9-443a-80a4-1a5ee54671cd
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c05f0976a135615f7a272b8057eb4c56677e5117
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c5de6541b49495ce4cb1bb7c50e7089a35d50ace
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59412420"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133925"
 ---
 # <a name="animation-depending-on-a-condition-c"></a>依據條件的動畫 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59412420"
 [下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation4.cs.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation4CS.pdf)
 
 > 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 動畫執行時是否也取決於一些 JavaScript 程式碼的表單中的條件。
-
 
 ## <a name="overview"></a>總覽
 
@@ -51,7 +50,6 @@ ms.locfileid: "59412420"
 [!code-aspx[Main](animation-depending-on-a-condition-cs/samples/sample5.aspx)]
 
 請注意，為小於符號 (`<`) 中`ConditionScript`屬性必須逸出 （）。 當您執行此指令碼，可能是沒有動畫執行時，或兩者的其中一個存在，或兩個的作用。
-
 
 [![面板淡出但不調整大小，因此未在第二個動畫執行後的第一個](animation-depending-on-a-condition-cs/_static/image2.png)](animation-depending-on-a-condition-cs/_static/image1.png)
 

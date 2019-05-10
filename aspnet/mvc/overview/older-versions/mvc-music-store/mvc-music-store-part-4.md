@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: ab55ca81-ab9b-44a0-8700-dc6da2599335
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 40fec3a2ef4ee8d5e4abe4be4dfa144720a88a41
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 402be340f1ea3344675e7b859cea8c5130cfc8ee
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59391178"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129654"
 ---
 # <a name="part-4-models-and-data-access"></a>第 4 部分：模型和資料存取
 
@@ -24,7 +24,6 @@ ms.locfileid: "59391178"
 > MVC Music 市集是銷售線上音樂 album 和實作基本的網站管理、 使用者登入時，和 「 購物車 」 功能的輕量級的範例存放區實作。
 > 
 > 本教學課程系列會詳細說明所有建置 ASP.NET MVC Music 市集範例應用程式所採取的步驟。 第 4 部分涵蓋模型和資料存取。
-
 
 到目前為止，我們已只已傳遞 「 虛擬資料 」 從我們的控制站到我們的檢視範本。 現在我們已經準備好要連結實際的資料庫。 在本教學課程中我們要探討如何使用 SQL Server Compact Edition （通常稱為 SQL CE） 做為我們的資料庫引擎。 SQL CE 是免費的內嵌，檔案型的資料庫，並不需要任何安裝或組態，可以很方便的本機開發。
 

@@ -8,12 +8,12 @@ ms.date: 02/17/2014
 ms.assetid: a8aac1ac-89de-4415-afe0-97a41c6423d2
 msc.legacyurl: /web-pages/overview/routing/creating-readable-urls-in-aspnet-web-pages-sites
 msc.type: authoredcontent
-ms.openlocfilehash: bfce6120b76d68a3f212639eafa6aa091d7e345d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 832db8e144cab730f16c78f67c12feb9b7c92c7c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59381779"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131774"
 ---
 # <a name="creating-readable-urls-in-aspnet-web-pages-razor-sites"></a>在 ASP.NET Web Pages (Razor) 網站中建立可讀取的 Url
 
@@ -33,7 +33,6 @@ ms.locfileid: "59381779"
 >   
 > 
 > 本教學課程也適用於 ASP.NET Web Pages 2。
-
 
 ## <a name="about-routing"></a>關於路由
 
@@ -77,7 +76,6 @@ ASP.NET Web Pages 中，您可以建立更容易使用的 Url，類似上述範�
 > [!NOTE]
 > 若要明確地針對特定頁面的要求 (也就是所提出的要求 *.cshtml*副檔名) 運作就跟您預期的方式一樣。 要求喜歡`http://www.contoso.com/a/b.cshtml`會執行頁面*b.cshtml*沒有問題。
 
-
 在頁面上，您可以取得透過頁面的路徑資訊`UrlData`屬性，這是一個字典。 假設您有一個名為檔案*ViewCustomers.cshtml*和您的網站取得這項要求：
 
 `http://mysite.com/myWebSite/ViewCustomers/1000`
@@ -88,7 +86,6 @@ ASP.NET Web Pages 中，您可以建立更容易使用的 Url，類似上述範�
 
 > [!NOTE]
 > 由於路由不需要用到完整的檔案名稱，因此可能會模稜兩可有具有相同的頁面副檔名但不同的檔案名稱 (例如*MyPage.cshtml*並*MyPage.html*). 若要避免發生路由問題，最好是確定您不需要在您的網站名稱的差別只在於其延伸模組頁面。
-
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他資源

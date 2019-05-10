@@ -8,17 +8,16 @@ ms.date: 09/09/2011
 ms.assetid: f014524f-25c0-4094-b8e1-886d99536f00
 msc.legacyurl: /whitepapers/mvc4-release-notes
 msc.type: content
-ms.openlocfilehash: 0f9b4e2ba0514df4c017a192f3c2136a7eec60c7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b57480bd0274fbb76c600dfb0dd09037bdcbf1e7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413252"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130515"
 ---
 # <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 
 > 本文件說明 ASP.NET MVC 4 的版本。
-
 
 - [安裝注意事項](#_Toc303253802)
 - [文件](#_Toc303253803)

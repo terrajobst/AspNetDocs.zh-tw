@@ -8,19 +8,18 @@ ms.date: 08/19/2008
 ms.assetid: 1c1283b2-6956-4937-b568-d30de432ce23
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0446a125845134d2fad869094a540c960f6b0a25
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b754175c853c20eec6be3521376b62d62f33106d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406466"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123217"
 ---
 # <a name="using-aspnet-mvc-with-different-versions-of-iis-vb"></a>使用 ASP.NET MVC 與不同版本的 IIS (VB)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教學課程中，您將了解如何使用不同版本的 Internet Information Services 中的 ASP.NET MVC 和 URL 路由。 您將了解不同的策略來使用 IIS 7.0 （傳統模式）、 IIS 6.0 和舊版 IIS 的 ASP.NET MVC。
-
 
 ASP.NET MVC 架構而定 ASP.NET 路由將瀏覽器要求路由傳送至控制器動作。 若要充分利用 ASP.NET 路由，您可能在您的 web 伺服器上執行其他設定步驟。 它完全取決於 Internet Information Services (IIS) 和要求處理模式，您的應用程式的版本。
 
@@ -53,18 +52,15 @@ IIS 7.0 可處理要求使用兩種不同的要求處理模式： 整合和傳�
 
 根據預設，IIS 會設定為支援兩個應用程式集區：**DefaultAppPool**並**傳統.NET AppPool**。 如果選取 [DefaultAppPool]，在整合式的要求處理模式中執行您的應用程式。 如果已選取傳統.NET 應用程式集區，您的應用程式以傳統的要求處理模式中執行。
 
-
 [![[新增專案] 對話方塊](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image1.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image1.png)
 
 **圖 1**:偵測要求處理模式 ([按一下以檢視完整大小的影像](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image2.png))
-
 
 請注意，您可以修改要求處理模式中編輯應用程式 對話方塊中。 按一下 [選取] 按鈕，並變更應用程式相關聯的應用程式集區。 請注意，相容性問題時沒有從傳統變更 ASP.NET 應用程式，以整合模式。 如需詳細資訊，請參閱下列文章：
 
 - 升級至 Windows Vista 和 Windows Server 2008 上，IIS 7.0 的 ASP.NET 1.1 [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/upgrading-aspnet-11-to-iis-on-windows-vista-and-windows-server-2008)
 
 - 與 IIS 7.0-ASP.NET 整合 [https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
-
 
 如果 ASP.NET 應用程式使用 「 DefaultAppPool 」，您不需要執行任何額外的步驟，以取得 ASP.NET 路由，因此 ASP.NET MVC） 運作。 不過，如果 ASP.NET 應用程式設定成使用傳統.NET 應用程式時，會將集區，然後繼續閱讀，您會有更多工作來執行。
 
@@ -96,11 +92,9 @@ IIS 7.0 可處理要求使用兩種不同的要求處理模式： 整合和傳�
 
 不幸的是，舊版 IIS 將不會將這些要求傳遞給 ASP.NET 架構。 因此，這些要求將不會路由至控制器。 例如，如果您的瀏覽器要求對 URL /Home/索引然後得到錯誤頁面 [圖 2] 中。
 
-
 [![[新增專案] 對話方塊](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image2.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image3.png)
 
 **圖 2**:收到 404 找不到的錯誤 ([按一下以檢視完整大小的影像](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image4.png))
-
 
 舊版 IIS 只會對應至 ASP.NET framework 的特定要求。 要求必須是正確的檔案副檔名的 URL。 比方說，/SomePage.aspx 要求取得對應至 ASP.NET 架構。 不過，/SomePage.htm 的要求則否。
 
@@ -116,9 +110,7 @@ IIS 7.0 可處理要求使用兩種不同的要求處理模式： 整合和傳�
 
 [!code-vb[Main](using-asp-net-mvc-with-different-versions-of-iis-vb/samples/sample2.vb)]
 
-
 重要事項： 請記得在變更 Global.asax 檔案之後，再次建置您的 ASP.NET MVC 應用程式。
-
 
 有兩個重要的變更，以列表 2 中的 Global.asax 檔。 現在有兩個 Global.asax 中所定義的路由。 預設路由，而第一個路由的 URL 模式現在看起來像：
 
@@ -138,9 +130,7 @@ IIS 7.0 可處理要求使用兩種不同的要求處理模式： 整合和傳�
 
 之後進行這些修改以您的路由表，您必須確定所有應用程式中的連結會使用這些新的 URL 模式相容。 換句話說，請確定所有的連結包含.mvc 副檔名。 如果您使用 Html.ActionLink() helper 方法來產生您的連結，然後您應該不需要進行任何變更。
 
-
 而不是使用 registermvc.wcf 指令碼，您可以將新的延伸模組加入以手動方式對應至 ASP.NET framework 的 IIS。 當自行新增新的延伸模組，請確定核取方塊標示**確認該檔案已經存在**就不會檢查。
-
 
 ## <a name="hosted-server"></a>託管的伺服器
 
@@ -172,11 +162,9 @@ IIS 7.0 可處理要求使用兩種不同的要求處理模式： 整合和傳�
 6. 輸入名稱 MVC
 7. 按一下 **確定**按鈕
 
-
 [![[新增專案] 對話方塊](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image3.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image5.png)
 
 **圖 3**:使用 IIS 7.0 建立萬用字元指令碼對應 ([按一下以檢視完整大小的影像](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image6.png))
-
 
 請遵循下列步驟來建立與 IIS 6.0 的萬用字元指令碼對應：
 
@@ -189,19 +177,15 @@ IIS 7.0 可處理要求使用兩種不同的要求處理模式： 整合和傳�
 7. 標示的核取方塊取消核取 **確認該檔案已經存在**
 8. 按一下 **確定**按鈕
 
-
 [![[新增專案] 對話方塊](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image4.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image7.png)
 
 **圖 4**:使用 IIS 6.0 建立萬用字元指令碼對應 ([按一下以檢視完整大小的影像](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image8.png))
 
-
 啟用萬用字元指令碼對應之後，您需要修改 Global.asax 檔案中的路由表，使其包含根路由。 否則，您會得到錯誤頁面圖 5 中，提出您的應用程式的根頁面的要求時。 您可以使用修改過的 Global.asax 檔案中列出的 4。
-
 
 [![[新增專案] 對話方塊](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image5.jpg)](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image9.png)
 
 **圖 5**:遺漏根路由錯誤 ([按一下以檢視完整大小的影像](using-asp-net-mvc-with-different-versions-of-iis-vb/_static/image10.png))
-
 
 **列表 4-Global.asax （根路由與修改）**
 

@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 0a1f88bd-97da-4ed1-86f1-605199dc75a4
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 52f6ec17fb21019e93ebf2795e95d5b27e4edbe6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 301af8ed877b58624e419c04f605c41f27dbdd0c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401734"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132078"
 ---
 # <a name="whats-new-in-web-forms-in-aspnet-45"></a>ASP.NET 4.5 的 Web Forms 新功能
 
@@ -40,7 +40,6 @@ ms.locfileid: "59401734"
 > 在官方 ASP.NET 入口網站中，您可以找到更多的新功能的範例 ASP.NET WebForms 4.5 中：[ASP.NET 4.5 和 Visual Studio 2012 的新功能](../../../../whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012.md#_Toc318097385)
 > 
 > 所有的範例程式碼和程式碼片段會包含在 Web 研討會訓練套件，可在[ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)。
-
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>目標
@@ -83,13 +82,12 @@ ms.locfileid: "59401734"
 > [!NOTE]
 > 每個練習會伴隨**結束**包含完成練習之後，您應該取得所產生的方案資料夾。 如果您需要的所有練習所使用的其他說明，您可以使用此解決方案作為指南。
 
-
 估計的時間才能完成這個實驗室：**60 分鐘**。
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Model_Binding_in_ASPNET_Web_Forms"></a>
-### <a name="exercise-1-model-binding-in-aspnet-web-forms"></a>練習 1:在 ASP.NET Web Form 模型繫結
+### <a name="exercise-1-model-binding-in-aspnet-web-forms"></a>練習 1：在 ASP.NET Web Form 模型繫結
 
 ASP.NET Web Form 的新版本導入了一些增強功能，著重於使用資料時，改善經驗。 在這個練習中，您將了解強型別資料控制項，並模型繫結。
 
@@ -204,7 +202,7 @@ ASP.NET Web Form 的新版本導入了一些增強功能，著重於使用資料
 <a id="Task_3_-_Value_Providers_in_Model_Binding"></a>
 #### <a name="task-3---value-providers-in-model-binding"></a>工作 3-在模型繫結中的值提供者
 
-模型繫結不僅可讓您指定自訂的方法，以使用您直接在資料繫結控制項中的資料，也可讓您將從頁面的資料對應至從這些方法的參數。 在方法參數，您可以使用值提供者屬性指定值的資料來源。 例如: 
+模型繫結不僅可讓您指定自訂的方法，以使用您直接在資料繫結控制項中的資料，也可讓您將從頁面的資料對應至從這些方法的參數。 在方法參數，您可以使用值提供者屬性指定值的資料來源。 例如：
 
 - 在頁面上的控制項
 - 查詢字串值
@@ -325,7 +323,7 @@ ASP.NET Web Form 的新版本導入了一些增強功能，著重於使用資料
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Data_Validation"></a>
-### <a name="exercise-2-data-validation"></a>練習 2:資料驗證
+### <a name="exercise-2-data-validation"></a>練習 2：資料驗證
 
 在此練習中，您將了解 ASP.NET 4.5 中的新資料驗證功能。 您將會檢查在 Web Form 中的新低調驗證功能。 您可以使用資料註解應用程式模型類別中的使用者輸入驗證，以及最後，您將了解如何開啟或關閉在網頁中的個別控制項的要求驗證。
 
@@ -610,7 +608,6 @@ Web 應用程式中的非同步方法可用來最佳化 ASP.NET 執行緒集區�
 
 > [!NOTE]
 > 此外，您可以在其中部署此應用程式至 Azure 的下列[附錄 b:發行 ASP.NET MVC 4 應用程式使用 Web Deploy](#AppendixB)。
-
 
 ---
 

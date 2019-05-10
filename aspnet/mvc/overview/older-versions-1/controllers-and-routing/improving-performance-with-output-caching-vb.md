@@ -8,19 +8,18 @@ ms.date: 01/27/2009
 ms.assetid: 0e7b4d85-2c46-4eaf-b6a8-6cd566a67334
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0f824bd5e080d42a9df3525ca47b87bcef407f7a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b713b56e149f196794b3223ba88e3b41bf3e34c4
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405621"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123365"
 ---
 # <a name="improving-performance-with-output-caching-vb"></a>使用輸出快取改善效能 (VB)
 
 by [Microsoft](https://github.com/microsoft)
 
 > 在本教學課程中，您將了解如何大幅改善您的 ASP.NET MVC web 應用程式的效能利用輸出快取。 您了解如何快取，因此不需要相同的內容，這是要建立新的使用者叫用動作的每個階段，從控制器動作傳回的結果。
-
 
 本教學課程的目標是要說明如何大幅改善效能的 ASP.NET MVC 應用程式利用輸出快取。 輸出快取可讓您快取控制器動作傳回的內容。 如此一來，相同的內容不會不需要在每次叫用相同的控制器動作產生。
 
@@ -36,9 +35,7 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-vb[Main](improving-performance-with-output-caching-vb/samples/sample1.vb)]
 
-
 在 Beta 版的 ASP.NET MVC 中，輸出快取不適用於之類的 URL [ http://www.MySite.com/ ](http://www.mysite.com/)。 相反地，您必須輸入 URL，例如[ http://www.MySite.com/Home/Index ](http://www.mysite.com/Home/Index)。
-
 
 在列表 1 中，index （） 動作的輸出快取 10 秒的時間。 如果您想，您可以指定更長的快取持續時間。 比方說，如果您想要快取一天的控制器動作的輸出，然後您可以指定快取持續時間為 86400 秒 (60 秒\*60 分鐘\*24 小時)。
 
@@ -79,7 +76,6 @@ by [Microsoft](https://github.com/microsoft)
 > ·None
 > 
 > · ServerAndClient
-
 
 根據預設，[位置] 屬性有值 Any。 不過，有情況下您可能想要只在瀏覽器上，或只能在伺服器上的快取。 比方說，如果您要快取的每個使用者個人化資訊然後您應該快取伺服器上的資訊。 如果您要顯示不同的資訊給不同的使用者接著您應該快取的資訊只在用戶端。
 
@@ -136,7 +132,6 @@ Details() 動作包含值為"Id"VaryByParam 屬性。 當不同的 Id 參數的�
 > none = 永不建立不同的快取的版本
 > 
 > 以分號的參數清單 = 建立不同的快取的版本，每當任何表單或查詢字串中的參數清單不同
-
 
 #### <a name="creating-a-cache-profile"></a>建立快取設定檔
 

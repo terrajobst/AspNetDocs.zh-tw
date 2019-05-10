@@ -8,19 +8,18 @@ ms.date: 08/15/2012
 ms.assetid: 27dc4fc8-1b51-43b0-933f-fc1b52476523
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: de65e01b888d9ed15da3903f086b40c49b32b9fb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 62050f561440a2c0fbbe91ec49fb1f9e30885e9f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402410"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130352"
 ---
 # <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 Mobile 功能
 
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 目前沒有程式碼範例，在本教學課程的 MVC 5 版本[部署 ASP.NET MVC 5 行動 Web 應用程式在 Azure Web Sites](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/)。
-
 
 本教學課程將教導您如何使用 ASP.NET MVC 4 Web 應用程式中的行動功能的基本概念。 本教學課程中，您可以使用[Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express)或 Visual Web Developer 2010 Express Service Pack 1 (&quot;Visual Web Developer 或 VWD&quot;)。 如果您已具備，您可以使用 Visual Studio professional 版。
 
@@ -214,7 +213,6 @@ JQuery.Mobile.MVC NuGet 套件會安裝下列項目：
 > [!NOTE]
 > 如果您使用 Internet Explorer 9，而且您沒有看到`BundleMobileConfig`黃色反白顯示在上方列中，按一下 [相容性檢視 按鈕](https://windows.microsoft.com/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![（關閉） 的相容性檢視 按鈕的圖片](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "（關閉） 的相容性檢視 按鈕的圖片")在 IE 中進行變更的外框的圖示![（關閉） 的相容性檢視 按鈕的圖片](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "（關閉） 的相容性檢視 按鈕的圖片")為純色![(on) 相容性檢視 按鈕的圖片](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "(on) 相容性檢視 按鈕的圖片")。 或者，您可以在 FireFox 或 Chrome 中檢視本教學課程。
 
-
 開啟*MvcMobile\Views\Shared\\_Layout.Mobile.cshtml*檔案，並新增下列標記直接之後`Html.Partial`呼叫：
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample12.cshtml)]
@@ -229,7 +227,6 @@ JQuery.Mobile.MVC NuGet 套件會安裝下列項目：
 
 > [!NOTE]
 > 您可以偵錯的行動裝置的特定程式碼[設定的使用者代理字串](http://www.howtogeek.com/113439/how-to-change-your-browsers-user-agent-without-installing-any-extensions/)IE 或 Chrome 中的，才能 iPhone，然後使用 F-12 開發人員工具。 如果未顯示您的行動瀏覽器**首頁**，**演講者備忘**，**標記**，以及**日期**為按鈕的連結，jQuery Mobile 的參考指令碼和 CSS 檔案可能不是正確的。
-
 
 除了樣式變更，您會看到**顯示行動檢視**並可讓您從行動裝置檢視切換至 [桌面] 檢視的連結。 選擇**桌面檢視**連結和 [桌面] 檢視會顯示。
 
@@ -251,7 +248,6 @@ JQuery.Mobile.MVC NuGet 套件會安裝下列項目：
 > 並新增下列標題，即可*Views\Shared\\_Layout.cshtml*檔案。
 >
 > [!code-html[Main](aspnet-mvc-4-mobile-features/samples/sample16.html)]
-
 
 瀏覽至*AllTags*桌面瀏覽器中的頁面。 檢視切換器小工具不會顯示在桌面瀏覽器，因為它只加入至行動裝置的版面配置頁。 稍後在本教學課程中，您會看到如何將檢視切換器小工具新增到桌面檢視。
 

@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: cbebeb37-2594-41f2-b71a-f4f26520d512
 msc.legacyurl: /web-api/overview/error-handling/exception-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 08b3663c1f9a08b8b3600113c32aeffb36c0d990
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: dbdbab6aefec840e2fec9e9cd33f3d124093750e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399316"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125308"
 ---
 # <a name="exception-handling-in-aspnet-web-api"></a>ASP.NET Web API 中處理的例外狀況
 
@@ -49,7 +49,6 @@ ms.locfileid: "59399316"
 
 > [!NOTE]
 > ASP.NET Web API 中的例外狀況篩選條件會類似於 ASP.NET MVC 中的項目。 不過，它們是不同的命名空間和函式中個別宣告。 特別是， **HandleErrorAttribute**在 MVC 中使用的類別不會處理 Web API 控制器所擲回的例外狀況。
-
 
 以下是將篩選條件**NotImplementedException**例外狀況變成 HTTP 狀態碼 501，未實作：
 

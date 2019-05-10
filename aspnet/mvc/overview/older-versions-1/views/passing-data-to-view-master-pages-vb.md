@@ -8,12 +8,12 @@ ms.date: 10/16/2008
 ms.assetid: 37a1ebae-8773-408f-8645-d21da7ff9ae1
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7de5a1545ee59e671058f09789ce69d5062d3655
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ebf670fc0d8cf2cfd7df01d07d4119122b61a6a1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380973"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130411"
 ---
 # <a name="passing-data-to-view-master-pages-vb"></a>將資料傳遞至檢視主版頁面 (VB)
 
@@ -23,7 +23,6 @@ by [Microsoft](https://github.com/microsoft)
 
 > 本教學課程的目標是要說明如何，您可以從控制器傳遞資料至檢視主版頁面。 我們將探討兩種策略，將資料傳遞至檢視主版頁面。 首先，我們會討論簡單的解決方案所產生的應用程式，很難維護。 接下來，我們會檢查較理想的方案需要稍微更多的初始工作，但更容易維護的應用程式中的結果。
 
-
 ## <a name="passing-data-to-view-master-pages"></a>將資料傳遞至檢視主版頁面
 
 本教學課程的目標是要說明如何，您可以從控制器傳遞資料至檢視主版頁面。 我們將探討兩種策略，將資料傳遞至檢視主版頁面。 首先，我們會討論簡單的解決方案所產生的應用程式，很難維護。 接下來，我們會檢查較理想的方案需要稍微更多的初始工作，但更容易維護的應用程式中的結果。
@@ -32,11 +31,9 @@ by [Microsoft](https://github.com/microsoft)
 
 假設您要建置影片資料庫應用程式，而您想要在您的應用程式中的每個頁面上顯示電影類別目錄的清單 （請參閱 圖 1）。 此外，想像一下，電影類別目錄的清單會儲存在資料庫資料表。 在此情況下，它將就從資料庫擷取類別，並呈現檢視主版頁面內的影片分類清單。
 
-
 [![在 檢視主版頁面中顯示影片類別](passing-data-to-view-master-pages-vb/_static/image2.png)](passing-data-to-view-master-pages-vb/_static/image1.png)
 
 **圖 01**:在檢視主版頁面顯示電影類別 ([按一下以檢視完整大小的影像](passing-data-to-view-master-pages-vb/_static/image3.png))
-
 
 以下是問題。 您要如何擷取主版頁面中的電影類別目錄的清單呢？ 它會嘗試直接呼叫主版頁面中的模型類別的方法。 換句話說，相當吸引人，包括從資料庫權限，您的主版頁面中擷取資料的程式碼。 不過，略過您的 MVC 控制站，來存取資料庫，會違反清楚分離關注點，是建置在 MVC 應用程式的主要優點之一。
 
@@ -58,11 +55,9 @@ MVC 應用程式中，傳遞至 – 包括檢視主版頁面 – 檢視的所有
 
 `Details()`動作也會將名為分類和電影的兩個索引鍵。 類別索引鍵，同樣地，表示檢視主版頁面所顯示的電影類別目錄的清單。 影片索引鍵所代表的特定類別，顯示 詳細資料檢視 頁面中的電影清單 （請參閱 圖 2）。
 
-
 [![詳細資料檢視](passing-data-to-view-master-pages-vb/_static/image5.png)](passing-data-to-view-master-pages-vb/_static/image4.png)
 
 **圖 02**:詳細資料檢視 ([按一下以檢視完整大小的影像](passing-data-to-view-master-pages-vb/_static/image6.png))
-
 
 索引 檢視會包含在 列表 2。 它只會重複執行的電影中的項目檢視資料所代表的電影清單。
 

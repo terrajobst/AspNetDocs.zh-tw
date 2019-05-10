@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: 72d90cd0-b3d9-454c-b2eb-ed0d9812f32c
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/improvements-in-visual-studio-2005
 msc.type: authoredcontent
-ms.openlocfilehash: a580b678a943695969b7f3acd2f7a033bd0b6ee3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 64215d556ded0850537a13856fe69b094116ebca
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379764"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130321"
 ---
 # <a name="improvements-in-visual-studio-2005"></a>Visual Studio 2005 中的改善
 
 by [Microsoft](https://github.com/microsoft)
 
 > Visual Studio 2005 提供一長串改進和增強功能，Web 專案的 Web 應用程式開發人員。
-
 
 Visual Studio 2005 提供一長串改進和增強功能，Web 專案的 Web 應用程式開發人員。 強大的 Visual Studio.NET 2002年和 2003年是，沒有多抱怨 Web 專案已處理的方式。 Visual Studio 2005 加入大量的新功能，若要解決這些抱怨。 對於喜歡 Visual Studio.NET 2003年處理的 Web 應用程式編譯的方式，請參閱[Web 應用程式專案](https://go.microsoft.com/fwlink/?LinkId=57870)。
 
@@ -36,7 +35,6 @@ Visual Studio 2005 會依賴 FrontPage Server Extensions 的本機專案中移�
 
 > [!NOTE]
 > 仍然需要遠端專案建立、 開啟等 FrontPage Server Extensions。
-
 
 ## <a name="aspnet-development-server"></a>ASP.NET 程式開發伺服器
 
@@ -64,12 +62,9 @@ Web 開發人員在 Visual Studio 2005 中，有許多的新選項可用於建�
 
 按一下這裡可觀看視訊逐步解說在 Visual Studio 2005 中建立 Web 專案。
 
-
 ![](improvements-in-visual-studio-2005/_static/image1.png)
 
-
 [開啟全螢幕影片](improvements-in-visual-studio-2005/_static/creating_projects1.wmv)
-
 
 ### <a name="file-system-projects"></a>檔案系統的專案
 
@@ -77,7 +72,6 @@ Web 開發人員在 Visual Studio 2005 中，有許多的新選項可用於建�
 
 > [!NOTE]
 > ASP.NET 程式開發伺服器可能會造成一些混淆的客戶。 如果 IISs 目錄結構 (亦即 c: / inetpub/wwwroot) 中的檔案系統上建立 Web 專案，則將仍瀏覽的網站透過從 Visual Studio 2005 內啟動時，才會進行 ASP.NET 程式開發伺服器。 因此，任何 IIS 設定 （也就是驗證方法） 不適用。
-
 
 預設的 web 專案也會移除許多的額外負荷，藉由只包含 Default.aspx 頁面、 default.cs 檔案和應用程式/資料 （_d） 資料夾。 如有需要會加入 web.config 和特殊資料夾 （也就是應用程式/（_c））。 您的 web 專案只包含的檔案和您所需要的資料夾。
 
@@ -90,22 +84,17 @@ HTTP 專案可以是本機 IIS 網站上或遠端網站上所建立的專案。 
 > [!NOTE]
 > Vs###/_tmp.htm 檔案，並在 get/_aspx/_ver.aspx 不再會用來判斷版本資訊中。
 
-
 預設 HTTP 選項是 本機 IIS。 此選項會讀取 IIS Metabase 來判斷哪一個站台可用並在其中建立內容的位置。 您可以選取樹狀檢視中選取不同的資料夾或虛擬目錄。 您可以也建立新的虛擬目錄、 標示為應用程式的資料夾，以及從這個對話方塊中刪除現有的虛擬目錄。
-
 
 ![選擇位置對話方塊](improvements-in-visual-studio-2005/_static/image1.gif)
 
 **圖 1**:選擇位置對話方塊
 
-
 不同於在舊版的 Visual Studio 中，如果您勾選**使用安全通訊端層**核取方塊和 SSL 憑證不符合您瀏覽的 URL，您會看到安全性警示對話方塊，詢問您，是否您想要繼續進行。 如果憑證不相符的一個，請使用 Visual Studio.NET 2003年，建立專案會失敗。
-
 
 ![安全性警示的相關 SSL 憑證](improvements-in-visual-studio-2005/_static/image2.gif)
 
 **圖 2**:安全性警示的相關 SSL 憑證
-
 
 ### <a name="note-on-host-headers"></a>請注意，在 主機標頭
 
@@ -113,19 +102,15 @@ HTTP 專案可以是本機 IIS 網站上或遠端網站上所建立的專案。 
 
 如果您選取 [遠端站台] 選項時，對話方塊就會變成可讓您輸入新的網站的目的地 URL。 此 URL 必須是已啟用 FrontPage Server Extensions 的伺服器上。 如果您想要搭配您使用 FrontPage Server Extensions 的本機 Web 伺服器，您可以使用 [遠端站台] 選項，並指定本機 URL。
 
-
 ![在遠端伺服器上建立網站](improvements-in-visual-studio-2005/_static/image1.jpg)
 
 **圖 3**:在遠端伺服器上建立網站
 
-
 如果不符合 SSL 憑證，請在透過 SSL，遠端站台上建立應用程式，確認對話方塊時稍有不同於使用本機 IIS 選項時，顯示對話方塊。
-
 
 ![遠端站台的安全性警示](improvements-in-visual-studio-2005/_static/image3.gif)
 
 **圖 4**:遠端站台的安全性警示
-
 
 <a id="_Toc116100243"></a>
 
@@ -136,14 +121,11 @@ Visual Studio 2005 將介紹建立透過 FTP 網站的選項。 當您使用此�
 > [!NOTE]
 > 暫存資料夾位置是 c: / Documents and Settings /&lt;使用者&gt;本機/設定/Temp/VWDWebCache/&lt;伺服器&gt;/_&lt;應用程式名稱&gt;
 
-
 使用 FTP 選項時，系統會向您選擇位置對話方塊。 您輸入所需的 FTP 連線資訊，此對話方塊，如下所示。
-
 
 ![選擇 ftp 位置對話方塊](improvements-in-visual-studio-2005/_static/image2.jpg)
 
 **圖 5**:選擇 ftp 位置對話方塊
-
 
 ## <a name="lab-setup-ftp-site-and-create-a-project"></a>實驗室：設定 FTP 站台，並建立專案
 
@@ -199,7 +181,6 @@ Visual Studio 2005 將介紹建立透過 FTP 網站的選項。 當您使用此�
 > [!NOTE]
 > 如果您收到錯誤，指出無法載入類型 /_Default，請確定您的網站並不是較早的版本上執行 ASP.NET 2.0。 您可以從 Internet Information Services 中的 [ASP.NET] 索引標籤來這麼做。
 
-
 ## <a name="opening-web-projects"></a>開啟 Web 專案
 
 開啟 Web 專案也是類似於建立專案。 下列各節說明留意出針對在 IDE 中工作時的區域。 它也涵蓋了有關使用 HTTP 和 FTP Web 專案。
@@ -212,11 +193,9 @@ Visual Studio 2005 將介紹建立透過 FTP 網站的選項。 當您使用此�
 
 如同先前在此模組，Visual Studio 不會再使用專案檔。 因此，如果您選擇從檔案系統開啟網站，您實際上需要選擇想要的話，任何資料夾，即使您選擇的資料夾不是作為一開始在 Visual Studio 中的 Web 專案。 比方說，您可以選擇開啟為網站的 [我的文件] 資料夾，Visual Studio 會很高興地操作加以開啟並顯示您的檔案，如下所示。
 
-
 ![我的網站以開啟的文件](improvements-in-visual-studio-2005/_static/image3.jpg)
 
 **圖 6**:*我的文件*網站形式開啟
-
 
 因為 Visual Studio 只會建立其他檔案和資料夾在必要時，沒有其他檔案或資料夾會新增至您所開啟的位置中。 此架構的副作用是，它會防止您在檔案系統上的巢狀的網站。 例如，請考慮下列目錄結構。
 
@@ -234,11 +213,9 @@ Visual Studio 2005 將介紹建立透過 FTP 網站的選項。 當您使用此�
 
 即使 Visual Studio 會顯示在 IDE 中目前開啟的應用程式底下巢狀的應用程式的圖示，它將不允許您展開以查看其內容。 您可以不過，按兩下加以開啟。 當您這樣做時，您會看到對話方塊，提示您開啟的 web 應用程式 （並取代目前開啟的方案），或加入至目前方案的 Web 應用程式。
 
-
 ![按兩下巢狀的應用程式圖示會出現此對話方塊](improvements-in-visual-studio-2005/_static/image4.jpg)
 
 **圖 7**:按兩下巢狀的應用程式圖示會出現此對話方塊
-
 
 <a id="_Toc116100247"></a>
 
@@ -250,11 +227,9 @@ C: / Documents and Settings /&lt;使用者&gt;本機/設定/Temp/VWDWebCache/&lt
 
 在使用 FTP 時，Visual Studio 必須指定專案的基底 URL，以便您可以瀏覽它，如下所示。 如果您未指定基底 URL，Visual Studio 會要求您提供此第一次您嘗試瀏覽的網站中的頁面。
 
-
 ![指定 FTP 站台的基底 URL](improvements-in-visual-studio-2005/_static/image5.jpg)
 
 **圖 8**:指定 FTP 站台的基底 URL
-
 
 ## <a name="improvements-in-compilation"></a>在編譯中的增強功能
 
@@ -265,27 +240,21 @@ C: / Documents and Settings /&lt;使用者&gt;本機/設定/Temp/VWDWebCache/&lt
 > [!NOTE]
 > MSBuild 命令列公用程式也可用來建置 ASP.NET Web 應用程式。 模組 9 中，將會說明該工具。
 
-
 另一個編譯增強功能是新的組建 頁面選項，在 建置 功能表上。 這項功能可讓開發人員重建只有目前頁面 （連同，課程中，和相依性），因此可以更快速地編譯變更。 C# 未提供的更新 IntelliSense 等進行背景編譯，因為它們將受益於非常這項功能因為這樣可讓 intellisense 快速更新的只重建單一頁面。
 
 專案組建屬性可讓您設定組建的執行啟動頁面之前，就會發生型別。 開發人員可以選擇只建立目前的頁面，讓 Visual Studio 可以更快速地偵錯應用程式，程式碼變更後啟動。
-
 
 ![組建頁面啟動動作](improvements-in-visual-studio-2005/_static/image6.jpg)
 
 **圖 9**:組建頁面啟動動作
 
-
 Visual Studio 和 ASP.NET 架構另一個絕佳的增強功能是編輯的區域中，並繼續。 在 Visual Studio 2005 中，開發人員可以開始偵錯的專案，並在專案上進行程式碼變更，而不中斷連結偵錯工具。 事實上，您實際上可以啟動偵錯專案時，加入新的類別、 將程式碼新增至該類別、 將程式碼新增至您建立該類別的新執行個體的頁面和執行的類別，而不中斷連結偵錯工具的所有方法。 執行新的程式碼會解譯為常值，只要重新整理瀏覽器就行了 ！
 
 按一下這裡以查看編輯的影片逐步解說，並繼續在 Visual Studio 2005 的功能。
 
-
 ![](improvements-in-visual-studio-2005/_static/image2.png)
 
-
 [開啟全螢幕影片](improvements-in-visual-studio-2005/_static/editcontinue1.wmv)
-
 
 強大的編輯後繼續 [功能]，請在 ASP.NET 2.0 和 Visual Studio 2005 是因為 ASP.NET 應用程式的架構變更。 在 ASP.NET 1.x 中，建立在 Visual Studio 2002/2003 中的應用程式編譯成主要組件儲存在 /bin 資料夾中。 所有類別，頁面等的應用程式編譯成該 DLL。 然後在執行階段，ASP.NET 會編譯所有的控制項、 標記和頁面內的 ASP.NET 程式碼，並將這些 Dll 複製到 ASP.NET 暫存資料夾。
 
@@ -293,28 +262,21 @@ Visual Studio 和 ASP.NET 架構另一個絕佳的增強功能是編輯的區域
 
 若要查看使用者控制項的設計工具支援的影片逐步解說，請按一下這裡。
 
-
 ![](improvements-in-visual-studio-2005/_static/image3.png)
 
-
 [開啟全螢幕影片](improvements-in-visual-studio-2005/_static/usercontrols1.wmv)
-
 
 > [!NOTE]
 > 從頁面上，移除使用者控制項時@Register指示詞會保留在標記，而且應該手動移除，以避免發生剖析器錯誤，如果從網站中刪除使用者控制項。
 
-
 在 Visual Studio 編譯模型中的另一項改進是發行網站的功能。 [發佈] 功能會先行編譯網站，因為開發人員可以享有不必編譯任何項目依需求新增的效能。 它也會預先編譯應用程式/（_c） 資料夾中的所有原始程式碼的 dll，讓沒有原始程式碼，就必須部署。
-
 
 ![[發行網站] 對話方塊](improvements-in-visual-studio-2005/_static/image7.jpg)
 
 **圖 10**:發行網站 對話方塊
 
-
 > [!NOTE]
 > Aspnet/_compile.exe 公用程式也可用來預先編譯的 ASP.NET Web 應用程式。 模組 9 中，將會說明該工具。
-
 
 當您發佈網站時，先行編譯的檔案會儲存在 Temporary ASP.NET Files 資料夾，如下所示。 檔案與 *.compiled*副檔名是定義特定 dll 的相依性的 XML 檔案。 編譯任何 Webform 或使用者控制項為開頭的隨機 Dll*應用程式 /_Web /_*。
 
@@ -327,15 +289,12 @@ Visual Studio 和 ASP.NET 架構另一個絕佳的增強功能是編輯的區域
 > [!NOTE]
 > 在 ASP.NET 1.x 中，強式名稱組件必須安裝到全域組件快取 (GAC) 中。 在 ASP.NET 2.0 中，您不需要強式名稱組件安裝到 GAC。
 
-
 ![ASP.NET 應用程式預先編譯的檔案](improvements-in-visual-studio-2005/_static/image8.jpg)
 
 **圖 11**:ASP.NET 應用程式預先編譯的檔案
 
-
 > [!NOTE]
 > 在上述的應用程式，發生任何 web.config 檔。 如果有，它會呼叫*PrecompiledApp.config*之後發行的 Web 網站處理程序。
-
 
 ## <a name="improvements-in-deployment"></a>部署的改進功能
 
@@ -348,15 +307,11 @@ Visual Studio 和 ASP.NET 架構另一個絕佳的增強功能是編輯的區域
 > [!NOTE]
 > 如果您嘗試在本機 IIS 執行個體上建立新的網站和 FrontPage 2002 Server Extensions 安裝，您會取得錯誤訊息，告知您的網站不支援建立 SharePoint 伺服器上。 在此情況下，您可以選擇 FrontPage 2000 Server Extensions 安裝或移除 FrontPage Server Extensions。
 
-
 如 「 複製網站 」 功能的影片逐步解說，請按一下這裡。
-
 
 ![](improvements-in-visual-studio-2005/_static/image4.png)
 
-
 [開啟全螢幕影片](improvements-in-visual-studio-2005/_static/copysite1.wmv)
-
 
 ## <a name="improvements-in-debugging"></a>在偵錯改善
 
@@ -389,19 +344,15 @@ Visual Studio 2005 中移除的依賴的 mdm.exe 和 vs7jit.exe 程序。 相反
 
 當您執行 msvsmon.exe 時，很可能會抱怨連接埠遭到封鎖遠端偵錯。 幸運的是，您可以輕鬆地解除封鎖的連接埠從右側 [警告] 對話方塊中，如下所示。
 
-
 ![Windows 防火牆會封鎖遠端偵錯的通知](improvements-in-visual-studio-2005/_static/image9.jpg)
 
 **圖 12**:Windows 防火牆會封鎖遠端偵錯的通知
 
-
 一旦您已解除封鎖的偵錯所需的連接埠，您會看到 遠端偵錯監視，如下所示。 從這個介面中，您可以監視連線，並變更輕鬆地偵錯權限。
-
 
 ![遠端偵錯監視](improvements-in-visual-studio-2005/_static/image10.jpg)
 
 **圖 13**:遠端偵錯監視
-
 
 它也可進行遠端偵錯 Web 應用程式開啟透過 FTP。 步驟都與先前涵蓋相同。 不過，您必須指定基底 URL 來瀏覽 FTP 專案稍早在本單元中所述。
 
@@ -413,12 +364,9 @@ Visual Studio 2005 中移除的依賴的 mdm.exe 和 vs7jit.exe 程序。 相反
 
 如本實驗室中的影片逐步解說，請按一下這裡。
 
-
 ![](improvements-in-visual-studio-2005/_static/image5.png)
 
-
 [開啟全螢幕影片](improvements-in-visual-studio-2005/_static/remdebug1.wmv)
-
 
 這個實驗室中必須要有一個執行的 Visual Studio 2005 與其他執行 IIS 5 或更高的兩部機器。
 
@@ -426,7 +374,6 @@ Visual Studio 2005 中移除的依賴的 mdm.exe 和 vs7jit.exe 程序。 相反
 
 > [!NOTE]
 > 在遠端的 IIS 執行個體，或透過 FTP，您可以建立網站。
-
 
 1. 從遠端的 Web 伺服器中，找出 msvsmon.exe 使用 UNC 路徑的開發電腦上並執行它。  
  Msvsmon.exe 的預設位置是 //server/c$/Program Files/Microsoft Visual Studio 8/Common7/IDE/遠端偵錯工具/x86。
@@ -444,11 +391,9 @@ ASP.NET 程式開發伺服器是受限制的 Web 伺服器。 它不會允許遠
 
 ASP.NET Development Server 可以透過命令列啟動執行 WebDev.WebServer.exe 檔案位於 c:/Windows/Microsoft.NET/Framework/v2.0./*/* /  */*/*. 下列對話方塊會顯示可用的參數。
 
-
 ![](improvements-in-visual-studio-2005/_static/image11.jpg)
 
 **圖 14**
-
 
 > [!NOTE]
 > 透過命令列明確啟動時，不支援 ASP.NET 程式開發伺服器。

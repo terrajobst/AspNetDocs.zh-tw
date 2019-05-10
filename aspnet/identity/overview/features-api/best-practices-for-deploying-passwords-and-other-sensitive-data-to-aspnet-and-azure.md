@@ -9,12 +9,12 @@ ms.assetid: 97902c66-cb61-4d11-be52-73f962f2db0a
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
 msc.type: authoredcontent
-ms.openlocfilehash: 2620d9e2eaf3c7719d9a289e42bb91270708ae79
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0e02df967df8acf346b9fcd1c75dbe304cc5407b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419440"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121553"
 ---
 # <a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>將密碼和其他敏感性資料部署到 ASP.NET 和 Azure App Service 的最佳做法
 
@@ -25,7 +25,6 @@ ms.locfileid: "59419440"
 > 範例程式碼是簡單的 WebJob 主控台應用程式和 ASP.NET MVC 應用程式需要資料庫連接字串的密碼，Twilio，Google 和 SendGrid 安全金鑰的存取。
 > 
 > 在內部部署上設定和 PHP 也會提及。
-
 
 - [使用開發環境中的密碼](#pwd)
 - [使用開發環境中的連接字串](#con)
@@ -54,7 +53,6 @@ ms.locfileid: "59419440"
 > [!WARNING]
 > 安全性-請勿將新增您*祕密.config*檔案至您的專案，或將它簽入原始檔控制。 根據預設，Visual Studio 會將`Build Action`至`Content`，這表示檔案部署。 如需詳細資訊，請參閱[為什麼不在我的專案資料夾中檔案的所有部署？](https://msdn.microsoft.com/library/ee942158(v=vs.110).aspx#can_i_exclude_specific_files_or_folders_from_deployment) 雖然您可以使用適用於任何擴充功能*祕密.config*檔案，所以最好先將它保持 *.config*，如設定檔不會由 IIS。 也請注意*AppSettingsSecrets.config*檔案是兩個目錄從層級向上*web.config*檔案，因此，它完全超出方案目錄。 將檔案從方案目錄中，移&quot;新增 git \* &quot;不會將它新增至您的儲存機制。
 
-
 <a id="con"></a>
 ## <a name="working-with-connection-strings-in-the-development-environment"></a>使用開發環境中的連接字串
 
@@ -67,14 +65,11 @@ Visual Studio 會建立使用的新 ASP.NET 專案[LocalDB](https://blogs.msdn.c
 > [!NOTE]
 > 如果您使用`configSource`屬性如上所示，將您的連接字串移至外部檔案，並讓 Visual Studio 建立新的網站，它將無法偵測到您要使用資料庫，而且您無法取得資料庫的設定選項時您 pu從 Visual Studio azure blish。 如果您使用`configSource`屬性，您可以使用 PowerShell 來建立及部署您的網站和資料庫，或您可以建立網站和資料庫入口網站中發行之前。 [新增 AzureWebsitewithDB.ps1](https://gallery.technet.microsoft.com/scriptcenter/Ultimate-Create-Web-SQL-DB-9e0fdfd3)指令碼會建立新的網站和資料庫。
 
-
 > [!WARNING]
 > 安全性-不同於*AppSettingsSecrets.config*檔案中，外部連接字串檔案必須是相同的目錄，做為根*web.config*檔案，因此您必須採取預防措施以確保您不將它簽入您的來源存放庫。
 
-
 > [!NOTE]
 > **在 祕密檔案上的安全性警告：** 最佳做法是不要使用生產環境中開發和測試的祕密。 使用生產環境中測試或開發的密碼流失這些祕密。
-
 
 <a id="wj"></a>
 ## <a name="webjobs-console-apps"></a>Webjob 的主控台應用程式
@@ -105,7 +100,6 @@ Visual Studio 會建立使用的新 ASP.NET 專案[LocalDB](https://blogs.msdn.c
 > [!WARNING]
 > 安全性-不在執行因此失效的目的，將敏感性資料使用的 PowerShell 指令碼的 PowerShell 指令碼中包含密碼或其他機密資料。 [Get-credential](https://technet.microsoft.com/library/hh849815.aspx) cmdlet 會提供一個安全機制，來取得的密碼。 使用 UI 提示，可以防止洩漏密碼。
 
-
 ### <a name="deploying-db-connection-strings"></a>部署資料庫連接字串
 
 同樣地處理 DB 連接字串的應用程式設定。 如果您部署您的 web 應用程式，從 Visual Studio，將會為您設定的連接字串。 您可以在入口網站中確認。 若要設定的連接字串的建議的方式是使用 PowerShell。 如需 PowerShell 指令碼的範例會建立網站和資料庫，並設定連接字串，在網站中，下載[新增 AzureWebsitewithDB.ps1](https://gallery.technet.microsoft.com/scriptcenter/Ultimate-Create-Web-SQL-DB-9e0fdfd3)從[Azure 指令碼程式庫](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=RootCategory&amp;f%5B0%5D.Value=WindowsAzure)。
@@ -125,6 +119,5 @@ Visual Studio 會建立使用的新 ASP.NET 專案[LocalDB](https://blogs.msdn.c
 如需 PowerShell 的範例指令碼來建立 web 應用程式 + 資料庫，可設定的連接字串 + 應用程式設定、 下載[新增 AzureWebsitewithDB.ps1](https://gallery.technet.microsoft.com/scriptcenter/Ultimate-Create-Web-SQL-DB-9e0fdfd3)從[Azure 指令碼程式庫](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=RootCategory&amp;f%5B0%5D.Value=WindowsAzure)。 
 
 請參閱 Stefan Schackow [Windows Azure 網站：應用程式字串與連接字串的運作方式](https://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)
-
 
 特別感謝 Barry Dorrans ( [ @blowdart ](https://twitter.com/blowdart) ) 和 Carlos Farre 檢閱。

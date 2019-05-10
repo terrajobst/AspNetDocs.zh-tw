@@ -8,12 +8,12 @@ ms.date: 10/07/2008
 ms.assetid: e454c67d-a86e-4119-a858-eb04bbec2dff
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 23741d7974713102e6ccb46ced5d62ec202505e8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 41306a7f09b830e0ee88135326a48beaadcfb28c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400850"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126641"
 ---
 # <a name="creating-custom-html-helpers-c"></a>建立自訂的 HTML 協助程式 (C#)
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 [下載 PDF](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_9_CS.pdf)
 
 > 本教學課程的目標在於示範如何建立自訂的 HTML 協助程式，您可以使用 MVC 檢視中。 利用 HTML 協助程式，您可以減少您必須執行才能建立標準的 HTML 網頁的 HTML 標記的 tedious 打字的量。
-
 
 本教學課程的目標在於示範如何建立自訂的 HTML 協助程式，您可以使用 MVC 檢視中。 利用 HTML 協助程式，您可以減少您必須執行才能建立標準的 HTML 網頁的 HTML 標記的 tedious 打字的量。
 
@@ -48,11 +47,9 @@ ASP.NET MVC 架構包括下列設定中 （這不是完整的清單） 的標準
 
 例如，請考慮在列表 1 中的表單。 此表單會轉譯兩個標準的 HTML 協助程式 （請參閱 圖 1） 的協助。 這個表單用`Html.BeginForm()`和`Html.TextBox()`轉譯簡單的 HTML 表單的 Helper 方法。
 
-
 [![頁面呈現與 HTML 協助程式](creating-custom-html-helpers-cs/_static/image2.png)](creating-custom-html-helpers-cs/_static/image1.png)
 
 **圖 01**:使用 HTML Helper 呈現網頁 ([按一下以檢視完整大小的影像](creating-custom-html-helpers-cs/_static/image3.png))
-
 
 **列表 1 – `Views\Home\Index.aspx`**
 
@@ -103,11 +100,9 @@ ASP.NET MVC 架構會包含較少的協助程式。 最有可能，您必須擴�
 
 擴充方法建立擴充方法，並成功建置您的應用程式之後，會出現在 Visual Studio Intellisense，如同所有其他方法的類別 （請參閱 圖 2）。 唯一的差別是該方法會出現特殊符號旁邊 （向下箭號圖示） 的延伸模組。
 
-
 [![使用 Html.Label() 擴充方法](creating-custom-html-helpers-cs/_static/image5.png)](creating-custom-html-helpers-cs/_static/image4.png)
 
 **圖 02**:使用 Html.Label() 擴充方法 ([按一下以檢視完整大小的影像](creating-custom-html-helpers-cs/_static/image6.png))
-
 
 在 列表 4 中已修改的 索引 檢視使用 Html.Label(); 擴充方法來呈現所有其`<label>`標記。
 

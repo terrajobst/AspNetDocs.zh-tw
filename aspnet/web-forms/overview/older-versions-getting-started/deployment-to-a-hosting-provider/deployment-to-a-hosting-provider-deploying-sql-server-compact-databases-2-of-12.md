@@ -8,12 +8,12 @@ ms.date: 11/17/2011
 ms.assetid: c3c76516-4c48-4153-bd03-d70e3a3edbb0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: cc8568847e050e868a3e7563b5fc1fc6fbf25d86
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b265d210ff3b1eeb8697a973cc245f6c97b3eb07
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405478"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134172"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>部署 ASP.NET Web 應用程式與 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer:部署 SQL Server Compact 資料庫-2 / 12
 
@@ -24,7 +24,6 @@ ms.locfileid: "59405478"
 > 這一系列的教學課程會示範如何部署 （發行） 的 ASP.NET web 應用程式專案使用 Visual Studio 2012 RC 或 Visual Studio Express 2012 RC for Web 包含 SQL Server Compact 資料庫。 如果您安裝 Web Publish Update，您也可以使用 Visual Studio 2010。 在數列的簡介，請參閱[系列的第一個教學課程](deployment-to-a-hosting-provider-introduction-1-of-12.md)。
 > 
 > 顯示 Visual Studio 2012 RC 版本之後引入的部署功能，示範如何部署 SQL Server Compact，以外的 SQL Server 版本，並示範如何部署至 Azure App Service Web Apps 的教學課程，請參閱[ASP.NET Web 部署使用 Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md)。
-
 
 ## <a name="overview"></a>總覽
 
@@ -144,7 +143,6 @@ NuGet 套件安裝通常會處理所需的一切若要部署此軟體與應用�
 > 
 > 顯示本教學課程會使用此範例`AddOrUpdate`方法中的`Seed`方法的 Code First 移轉`Configuration`類別。 程式碼會呼叫第一個移轉`Seed`方法之後每個移轉，並且此方法會更新具有已插入，或將其插入，如果它們尚不存在的資料列。 `AddOrUpdate`方法可能不到您的案例的最佳選擇。 如需詳細資訊，請參閱 <<c0> [ 請小心使用 EF 4.3 AddOrUpdate 方法](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)Julie Lerman 的部落格上。
 
-
 按 CTRL-SHIFT-B 來建置專案。
 
 下一個步驟是建立`DbMigration`類別初始移轉。 您想要建立新的資料庫，因此您必須刪除的資料庫已經存在，此移轉。 SQL Server Compact 資料庫中包含 *.sdf*中的檔案*應用程式\_資料*資料夾。 在 **方案總管**，展開*應用程式\_資料*在 ContosoUniversity 專案若要查看兩個 SQL Server Compact 資料庫中，這由 *.sdf*檔案。
@@ -187,7 +185,6 @@ Contoso 大學應用程式會使用 ASP.NET 成員資格系統和表單驗證來
 
 > [!NOTE]
 > 成員資格資料庫會儲存帳戶密碼的雜湊。 若要部署到另一個從一部電腦帳戶，您必須確定雜湊的常式不產生在目的地伺服器上的不同雜湊，比在來源電腦上。 它們會產生相同的雜湊當您使用 ASP.NET Universal Providers，只要您不要變更預設的演算法。 預設的演算法為 HMACSHA256，而且在指定**驗證**屬性 **[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)** Web.config 檔案中的項目。
-
 
 成員資格資料庫不由 Code First 移轉，維護，而且沒有任何自動的初始設定式 （因為沒有 School 資料庫） 植入測試帳戶的資料庫。 因此，若要提供的測試資料之前建立一個新會建立一份測試資料庫。
 

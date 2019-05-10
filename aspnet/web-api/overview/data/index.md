@@ -9,17 +9,16 @@ ms.custom: seoapril2019
 ms.assetid: 995cbe38-7dbd-4c36-a5d0-a761944c7636
 msc.legacyurl: /web-api/overview/data
 msc.type: chapter
-ms.openlocfilehash: 9c5ef1e85f0b5ca7ead67dfe28a3a43f3e5c464a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 210d6c1b207bbba0e9b809c9bba3a3d567015013
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400031"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126224"
 ---
 # <a name="working-with-data-in-aspnet-web-api"></a>使用 ASP.NET Web API 中的資料
 
 > 如何程式設計 CRUD （建立、 讀取、 更新、 刪除） Web API 中的作業。
-
 
 - [使用 Web API 2 和 Entity Framework 6](using-web-api-with-entity-framework/index.md)
 

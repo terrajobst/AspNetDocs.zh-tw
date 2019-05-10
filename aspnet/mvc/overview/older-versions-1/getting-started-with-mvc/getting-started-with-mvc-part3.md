@@ -8,19 +8,18 @@ ms.date: 08/14/2010
 ms.assetid: e8f1515c-c277-47ff-a23e-224118f13f02
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 msc.type: authoredcontent
-ms.openlocfilehash: 3eff3aceea302c51e6970bb13fbee3a8bf98a71d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 462b1210c45da67058899193afcea973f3daf122
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411978"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123047"
 ---
 # <a name="adding-a-view"></a>新增檢視
 
 藉由[Scott Hanselman](https://github.com/shanselman)
 
 > 這是初學者教學課程中，將會介紹 ASP.NET MVC 的基本概念。 您將建立簡單 web 應用程式，從資料庫讀取與寫入。 請瀏覽[ASP.NET MVC 學習中心](../../../index.md)來尋找其他 ASP.NET MVC 教學課程和範例。
-
 
 這一節我們要看看我們如何有 HelloWorldController 類別完全封裝給用戶端產生 HTML 回應中使用檢視範本檔案。
 
@@ -99,7 +98,6 @@ ms.locfileid: "59411978"
 現在我們需要 褖畫惎檢視範本 ！ 以滑鼠右鍵按一下該 褖畫惎方法中，然後選取 加入檢視。 此時，我們會核取 [建立強型別檢視]，並從下拉式清單中選取我們 WelcomeViewModel 類別。 這個新的檢視只會知道 WelcomeViewModels 和任何其他類型的物件。
 
 > *注意：您必須一次之後才會出現在下拉式清單中新增您 WelcomeViewModel 的編譯。*
-
 
 以下是您的 [新增檢視] 對話方塊的外觀。 按一下 [新增] 按鈕。 ![新增檢視圈選起來](getting-started-with-mvc-part3/_static/image10.png)
 

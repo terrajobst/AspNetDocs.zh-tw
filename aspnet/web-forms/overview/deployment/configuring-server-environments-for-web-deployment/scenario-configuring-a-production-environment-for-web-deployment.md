@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 2e861511-450e-4752-a61e-4a01933f9b6e
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 586508039b9a3d78492aa02a77a1f29c64668b5e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2d76e715cdbf6ec484fa0ff98b3b3d1d8dfd3961
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409690"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125842"
 ---
 # <a name="scenario-configuring-a-production-environment-for-web-deployment"></a>案例：設定 Web 部署的生產環境
 
@@ -22,7 +22,6 @@ ms.locfileid: "59409690"
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主題描述在生產環境的典型的 web 部署案例，並說明您需要完成，才能設定類似的環境的工作。
-
 
 生產環境是 web 應用程式或網站的最終目的地。 此時，您的應用程式是透過測試、 已部署至預備環境，和已準備好 「 線上授權。 」 生產環境的特性可以根據本質和 web 內容的目的，您的組織，目標對象，以及許多其他因素的大小範圍相當廣泛。 在企業規模案例中，生產環境可能具有下列特性：
 
@@ -33,7 +32,6 @@ ms.locfileid: "59409690"
 
 > [!NOTE]
 > 擴充資料庫部署到多部伺服器，已超出本教學課程的範圍。 如需有關此區域的詳細資訊，請參閱[SQL Server 線上叢書 》](https://technet.microsoft.com/library/ms130214.aspx)。
-
 
 例如，在我們[教學課程案例](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)，Team Build server 包含可讓使用者建立連絡管理員解決方案，並將它部署至預備環境中單一步驟的組建定義。 在應用程式隨時可供部署到生產環境，因為安全性需求和網路基礎結構中，所加諸的條件約束時，生產環境系統管理員必須手動複製到實際執行 web 伺服器上的 web 套件並匯入它透過 Internet Information Services (IIS) 管理員。
 

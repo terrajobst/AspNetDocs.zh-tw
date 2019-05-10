@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 55f1ae45-fcb5-43a9-8415-fa5b935fc9c9
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/running-windows-powershell-scripts-from-msbuild-project-files
 msc.type: authoredcontent
-ms.openlocfilehash: 198f8c907cf866bd0fd1ae67cf7169a63dda4bc9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7b09c07b8b7c2a61ca534f7a66a929593f3d04ca
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384683"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131562"
 ---
 # <a name="running-windows-powershell-scripts-from-msbuild-project-files"></a>從 MSBuild 專案檔執行 Windows PowerShell 指令碼
 
@@ -35,7 +35,6 @@ ms.locfileid: "59384683"
 > 
 > 本主題將說明如何從 Microsoft Build Engine (MSBuild) 專案檔中的自訂目標本機和遠端執行 Windows PowerShell 指令碼。
 
-
 本主題是構成一系列以名為 Fabrikam，Inc.的虛構公司的企業部署需求為基礎的教學課程的一部分本教學課程系列會使用範例解決方案&#x2014;[連絡管理員解決方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;來代表實際的層級的複雜性，包括 ASP.NET MVC 3 應用程式時，Windows Communication 的 web 應用程式Foundation (WCF) 服務與資料庫專案。
 
 這些教學課程的核心的部署方法根據分割專案檔案方法中所述[了解專案檔](../web-deployment-in-the-enterprise/understanding-the-project-file.md)，在建置流程控制的兩個專案檔&#x2014;包含建置適用於每個目的地環境中和包含環境特定建置和部署設定的指示。 在建置階段的特定環境的專案檔會合併到無從驗證環境的專案檔中，以構成一組完整的組建指示。
@@ -55,15 +54,11 @@ ms.locfileid: "59384683"
 
 本主題中的工作會使用名為的 Windows PowerShell 指令碼範例**LogDeploy.ps1** ，說明如何從 MSBuild 執行指令碼。 **LogDeploy.ps1**指令碼包含單一列項目寫入記錄檔的簡單函式：
 
-
 [!code-powershell[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample1.ps1)]
-
 
 **LogDeploy.ps1**指令碼接受兩個參數。 第一個參數表示您要新增項目時，記錄檔的完整路徑和第二個參數表示您想要記錄的記錄檔中的部署目的地。 當您執行指令碼時，它便會加入一條線，記錄檔，格式如下：
 
-
 [!code-html[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample2.html)]
-
 
 若要讓**LogDeploy.ps1**指令碼可使用 MSBuild，您需要：
 
@@ -82,21 +77,15 @@ ms.locfileid: "59384683"
 
 語法，以從 MSBuild 專案檔中執行的 Windows PowerShell 指令碼是從一般的命令提示字元中執行的 Windows PowerShell 指令碼相同。 您需要可執行 powershell.exe，並使用 **– 命令**交換器以提供您想要執行的 Windows PowerShell 命令。 (在 Windows PowerShell v2 中，您也可以使用 **– 檔案**切換)。 此命令應該採取這種格式：
 
-
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample3.cmd)]
-
 
 例如: 
 
-
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample4.cmd)]
-
 
 如果您的指令碼的路徑包含空格，您需要加上連字號的單一引號括住的檔案路徑。 您無法使用雙引號括住，，因為您已經使用它們來括住的命令：
 
-
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample5.cmd)]
-
 
 當您叫用此命令從 MSBuild 時，有一些其他考量。 首先，您應該在其中包含 **– NonInteractive**旗標，以確保以無訊息模式執行指令碼。 接下來，您應該在其中包含 **-ExecutionPolicy**與適當的引數值的旗標。 這會指定 Windows PowerShell 會套用到您的指令碼，並可讓您覆寫預設的執行原則，可能會導致您的指令碼執行的執行原則。 您可以選擇從這些引數的值：
 
@@ -114,15 +103,11 @@ ms.locfileid: "59384683"
 
 - 當您進行這些變更時，您的命令大致如下：
 
-
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample6.cmd)]
-
 
 在您自訂的 MSBuild 專案檔，您可以建立新的目標，並使用**Exec**工作來執行此命令：
 
-
 [!code-xml[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample7.xml)]
-
 
 在此範例中，請注意：
 
@@ -139,34 +124,24 @@ Windows PowerShell 是透過遠端電腦上執行指令碼[Windows 遠端管理]
 > [!NOTE]
 > 在您使用之前**Invoke-command** cmdlet 來執行 Windows PowerShell 指令碼在遠端電腦上，您需要設定 WinRM 接聽程式，以接受遠端的訊息。 您可以執行命令**winrm quickconfig**遠端電腦上。 如需詳細資訊，請參閱 <<c0> [ 安裝的 Windows 遠端管理與設定](https://msdn.microsoft.com/library/windows/desktop/aa384372(v=vs.85).aspx)。
 
-
 從 Windows PowerShell 視窗中，您會使用此語法來執行**LogDeploy.ps1**遠端電腦上的指令碼：
 
-
 [!code-powershell[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample8.ps1)]
-
 
 > [!NOTE]
 > 使用的其他可以使用各種方式**Invoke-command**執行指令碼檔案，但這種方法是最直接當您需要提供參數值，並管理有空格的路徑。
 
-
 當您執行命令提示字元中時，您需要 Windows PowerShell 可執行檔，並使用 **– 命令**參數，以提供您指示：
-
 
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample9.cmd)]
 
-
 為之前，您需要提供一些額外的參數和逸出任何保留的 XML 字元，當您執行命令時從 MSBuild:
-
 
 [!code-console[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample10.cmd)]
 
-
 最後，同樣地，您可以使用**Exec**自訂 MSBuild 目標來執行您的命令中的工作：
 
-
 [!code-xml[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample11.xml)]
-
 
 當您執行此目標，您的建置程序的一部分時，Windows PowerShell 就會執行您的指令碼中所指定的電腦上 **– computername**引數。
 

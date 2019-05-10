@@ -8,12 +8,12 @@ ms.date: 06/05/2013
 ms.assetid: e608e263-264d-448b-b0eb-6eeb77713b22
 msc.legacyurl: /signalr/overview/older-versions/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: a8121a2d7c4ed14e296dc72c72ca7c25939a2b50
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2fb671e730a1d41c07b350bf1d64ac1d0b1be55c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414006"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128787"
 ---
 # <a name="understanding-and-handling-connection-lifetime-events-in-signalr-1x"></a>了解和處理連線存留期事件 SignalR 1.x
 
@@ -28,7 +28,6 @@ ms.locfileid: "59414006"
 > - [如何處理中樞類別中的連線存留期事件](index.md)
 > - [如何處理 JavaScript 用戶端連線存留期事件](index.md)
 > - [如何處理.NET 用戶端連線存留期事件](index.md)
-
 
 ## <a name="overview"></a>總覽
 
@@ -132,7 +131,6 @@ API 參考主題的連結是 API 的.NET 4.5 版本。 如果您使用.NET 4，�
 > 
 > [!IMPORTANT]
 > 此處所述的事件的順序並不保證。 SignalR 會不斷嘗試以便引發連線存留期事件，此配置中，根據可預測的方式，但有許多變化的網路事件和多種資訊，請在其中基礎的通訊架構，例如傳輸 Api 處理它們。 例如，`Reconnected`可能不會引發事件，當用戶端重新連接，或`OnConnected`建立的連線嘗試不成功時，可能會執行伺服器上的處理常式。 本主題說明某些常見的情況下將通常會產生的效果。
-
 
 <a id="clientdisconnect"></a>
 

@@ -8,12 +8,12 @@ ms.date: 03/02/2009
 ms.assetid: 21383c9d-6aea-4bad-a99b-b5f2c9d6503f
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/performing-simple-validation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 12fe89ec83a33ece2971c8186783326d165cbf79
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e33f522af74efe97b5a245e956bc0b918ea769af
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388500"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122360"
 ---
 # <a name="performing-simple-validation-c"></a>執行簡單的驗證 (C#)
 
@@ -21,16 +21,13 @@ ms.locfileid: "59388500"
 
 > 了解如何在 ASP.NET MVC 應用程式中執行驗證。 在本教學課程中，Stephen Walther 會介紹您模型狀態，以及驗證 HTML 協助程式。
 
-
 本教學課程的目標是要說明如何執行驗證的 ASP.NET MVC 應用程式內。 比方說，您會了解如何防止有人提交表單不包含必要的欄位的值。 您了解如何使用模型的狀態和驗證 HTML 協助程式。
 
 ## <a name="understanding-model-state"></a>了解模型狀態
 
 您可以使用模型狀態-或更精確地說，位於模型狀態字典中-來表示驗證錯誤。 比方說，列表 1 中的 create （） 動作會加入資料庫中的 Product 類別之前驗證產品類別的屬性。
 
-
 我不建議將您的資料庫或驗證邏輯加入至控制器。 控制器應該包含應用程式流程控制相關的邏輯。 我們正在採取捷徑，為了簡單起見。
-
 
 **Listing 1 - Controllers\ProductController.cs**
 
@@ -52,19 +49,15 @@ Html.ValidationMessage() 和 Html.ValidationSummary() 的協助程式由 ASP.NET
 4. 從**檢視內容**下拉式清單中，選取建立。
 5. 按一下 [新增] 按鈕。
 
-
 請確定您建置應用程式，再加入的檢視。 否則，清單中的類別不會出現在**檢視資料類別**下拉式清單中。
-
 
 [![[新增專案] 對話方塊](performing-simple-validation-cs/_static/image1.jpg)](performing-simple-validation-cs/_static/image1.png)
 
 **圖 01**:新增檢視 ([按一下以檢視完整大小的影像](performing-simple-validation-cs/_static/image2.png))
 
-
 [![[新增專案] 對話方塊](performing-simple-validation-cs/_static/image2.jpg)](performing-simple-validation-cs/_static/image3.png)
 
 **圖 02**:建立強型別檢視 ([按一下以檢視完整大小的影像](performing-simple-validation-cs/_static/image4.png))
-
 
 完成這些步驟之後，您會取得列表 2 中建立檢視。
 
@@ -78,11 +71,9 @@ Html.ValidationMessage() 協助程式會呼叫每個 HTML 表單欄位旁邊。 
 
 [圖 3] 頁面會說明遺漏的欄位與無效的值送出表單時，驗證協助程式所呈現的錯誤訊息。
 
-
 [![[新增專案] 對話方塊](performing-simple-validation-cs/_static/image3.jpg)](performing-simple-validation-cs/_static/image5.png)
 
 **圖 03**:提交問題建立檢視 ([按一下以檢視完整大小的影像](performing-simple-validation-cs/_static/image6.png))
-
 
 請注意外觀的 HTML 輸入驗證錯誤時，也會修改欄位。 Html.TextBox() helper 轉譯*類別 ="輸入的驗證錯誤的 「* Html.TextBox() 協助程式所呈現屬性相關聯的驗證錯誤時的屬性。
 
@@ -98,16 +89,13 @@ Html.ValidationMessage() 協助程式會呼叫每個 HTML 表單欄位旁邊。 
 > 
 > HtmlHelper 類別包含唯讀的靜態屬性，如需擷取驗證的名稱相關的 CSS 類別。 這些靜態屬性會命名為 ValidationInputCssClassName、 ValidationFieldCssClassName 和 ValidationSummaryCssClassName。
 
-
 ## <a name="prebinding-validation-and-postbinding-validation"></a>Prebinding 驗證和 Postbinding 驗證
 
 如果您送出的 HTML 表單，建立一項產品，且 [價格] 欄位和 [UnitsInStock] 欄位沒有值輸入了無效的值時，您就會得到 [圖 4] 中顯示的驗證訊息。 這些驗證錯誤訊息來自何處？
 
-
 [![[新增專案] 對話方塊](performing-simple-validation-cs/_static/image4.jpg)](performing-simple-validation-cs/_static/image7.png)
 
 **圖 04**:Prebinding 驗證錯誤 ([按一下以檢視完整大小的影像](performing-simple-validation-cs/_static/image8.png))
-
 
 有實際上有兩種類型的驗證錯誤訊息-產生之前的 HTML 表單欄位，繫結至類別和表單欄位繫結至類別之後，所產生。 換句話說，有 prebinding 驗證錯誤和 postbinding 驗證錯誤。
 

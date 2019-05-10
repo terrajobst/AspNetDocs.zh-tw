@@ -8,12 +8,12 @@ ms.date: 09/13/2006
 ms.assetid: 58618954-a9ed-4ca0-8c2d-95a5ffd9c03e
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e275b552af1348da48937e26012f7625a2bb3b93
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2d14d80f0fa0df0dd929c106ee86c9757e6ab033
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383893"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126060"
 ---
 # <a name="displaying-data-with-the-datalist-and-repeater-controls-vb"></a>使用 DataList 與重複項控制項顯示資料 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59383893"
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_29_VB.exe)或[下載 PDF](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/datatutorial29vb1.pdf)
 
 > 在先前的教學課程中，我們有使用 GridView 控制項來顯示資料。 開始本教學課程中，我們探討建置常見的報告模式使用 DataList 與重複項控制項中，開始使用這些控制項顯示資料的基本概念。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -42,88 +41,69 @@ ms.locfileid: "59383893"
 - `RepeatColumnAndDirection.aspx`
 - `NestedControls.aspx`
 
-
 ![建立 DataListRepeaterBasics 資料夾，並新增這些教學課程的 ASP.NET 網頁](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image1.png)
 
 **圖 1**:建立`DataListRepeaterBasics`資料夾並新增教學課程的 ASP.NET 頁面
 
-
 開啟`Default.aspx`頁面上，並拖曳`SectionLevelTutorialListing.ascx`從使用者控制`UserControls`拖曳至設計介面上的資料夾。 此使用者控制項中，我們在中建立[主版頁面與網站導覽](../introduction/master-pages-and-site-navigation-vb.md)教學課程中，會列舉站台對應，並顯示從目前的區段項目符號清單中的教學課程。
-
 
 [![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image3.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image2.png)
 
 **圖 2**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image4.png))
 
-
 若要有項目符號清單顯示 DataList 與重複項教學課程會建立我們，我們要將它們新增至站台對應。 開啟`Web.sitemap`檔案，並新增自訂按鈕的站台對應節點標記之後新增下列標記：
 
-
 [!code-xml[Main](displaying-data-with-the-datalist-and-repeater-controls-vb/samples/sample1.xml)]
-
 
 ![更新站台對應，以包含新的 ASP.NET 網頁](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image5.png)
 
 **圖 3**:更新站台對應，以包含新的 ASP.NET 網頁
 
-
 ## <a name="step-2-displaying-product-information-with-the-datalist"></a>步驟 2：顯示與產品資訊
 
 類似於 FormView，DataList 控制項 s 轉譯的輸出取決於範本而非 BoundFields、 CheckBoxFields，等等。 不同於 FormView，DataList 被設計來顯示一份記錄，而不是一個單獨的帳戶。 可讓 s 開始本教學課程，了解繫結至 DataList 的產品資訊。 首先開啟`Basics.aspx`頁面中`DataListRepeaterBasics`資料夾。 接下來，從 [工具箱] 拖曳至設計工具拖曳 DataList。 圖 4 所示，再指定 DataList 的範本設計工具它顯示為灰色方塊。
-
 
 [![從 [工具箱] 拖曳至設計工具拖曳 DataList](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image7.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image6.png)
 
 **圖 4**:拖曳 DataList 從工具箱拖曳至設計工具 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image8.png))
 
-
 DataList s 從智慧標籤、 新增新的 ObjectDataSource 和將它設定為使用`ProductsBLL`類別的`GetProducts`方法。 因為我們在本教學課程中，建立唯讀的 DataList re 中精靈的插入設定下拉式清單中的，為 （無）、 更新和刪除索引標籤。
-
 
 [![選擇建立新的 ObjectDataSource](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image10.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image9.png)
 
 **圖 5**:選擇建立新的 ObjectDataSource ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image11.png))
 
-
 [![設定使用 ProductsBLL 類別 ObjectDataSource](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image13.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image12.png)
 
 **圖 6**:設定要使用 ObjectDataSource`ProductsBLL`類別 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image14.png))
-
 
 [![擷取所有的產品使用 GetProducts 方法的相關資訊](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image16.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image15.png)
 
 **圖 7**:擷取的資訊關於所有產品使用的`GetProducts`方法 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image17.png))
 
-
 Visual Studio 會自動建立設定 ObjectDataSource，並將它與透過它的智慧標籤產生關聯之後, `ItemTemplate` DataList 顯示的名稱和值的資料來源傳回每個資料欄位中 (請參閱下列標記）。 此預設`ItemTemplate`外觀完全相同的資料來源繫結至設計工具透過 FormView 時自動建立的範本。
-
 
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-vb/samples/sample2.aspx)]
 
 > [!NOTE]
 > 您應該記得，在透過 FormView s 智慧標籤的 FormView 控制項，繫結資料來源，Visual Studio 就會建立`ItemTemplate`， `InsertItemTemplate`，和`EditItemTemplate`。 使用 DataList，不過，只有`ItemTemplate`建立。 這是因為 DataList 並沒有相同的內建編輯和插入 FormView 所提供的支援。 DataList 並包含編輯和刪除相關的事件，並編輯和刪除支援可加入的程式碼，但沒有 s 稍微沒有簡單的立即可用的支援為使用 FormView。 我們會看到如何包含編輯和刪除具有 DataList 的支援，在未來的教學課程。
 
-
 可讓 s 花一點時間改善此範本的外觀。 而不是顯示的所有資料欄位，可讓 s 只顯示產品名稱、 供應商、 類別、 每個單位和單價的數量。 此外，可讓 s 顯示中的名稱`<h4>`標題，並使用其餘欄位的版面配置設定`<table>`標題之下。
 
 若要進行這些變更，您可以使用範本編輯功能，在設計工具中，從 DataList s 智慧標籤按一下 [編輯範本] 連結，或者您可以修改範本，以手動方式透過頁面 s 宣告式語法。 如果您在設計工具中使用 編輯範本 選項，產生的標記可能不會完全，下列標記符合，但當透過檢視瀏覽器應該看起來非常類似的螢幕擷取畫面的 圖 8 所示。
-
 
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-vb/samples/sample3.aspx)]
 
 > [!NOTE]
 > 上述範例使用 Label Web 控制項`Text`資料繫結語法的值指派給屬性。 或者，我們可以省略標籤，請輸入只是資料繫結語法中。 也就是說，而不是使用`<asp:Label ID="CategoryNameLabel" runat="server" Text='<%# Eval("CategoryName") %>' />`我們也可以改為使用宣告式語法`<%# Eval("CategoryName") %>`。
 
-
 離開 Label Web 控制項中，不過，提供兩個優點。 首先，它會提供您更輕鬆的方式格式化資料，所依據的資料，如在下一個教學課程中稍後所示。 第二，在設計工具不 t 顯示宣告式資料繫結語法中的 [編輯範本] 選項，會出現在某些 Web 控制項外。 相反地，編輯樣板介面設計來協助使用靜態的標記，以及 Web 控制項，並假設任何資料繫結會透過 [編輯資料繫結] 對話方塊中，因此可從 Web 控制項的智慧標籤。
 
 因此，資料清單，可提供選擇編輯透過設計工具的範本，使用時我偏好使用 Label Web 控制項，使其內容可透過編輯樣板介面存取。 如我們所見，Repeater 會需要從原始碼檢視編輯的範本的內容。 因此，除非我知道我要格式化的製作 Repeater 的範本，我通常會省略 Label Web 控制項時資料的外觀會結合程式設計邏輯為基礎的文字。
 
-
 [![每個產品的輸出是轉譯使用 DataList 的 ItemTemplate](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image19.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image18.png)
 
 **圖 8**:每個產品 s 輸出是轉譯使用 DataList s `ItemTemplate` ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image20.png))
-
 
 ## <a name="step-3-improving-the-appearance-of-the-datalist"></a>步驟 3：改善 DataList 的外觀
 
@@ -133,14 +113,11 @@ Visual Studio 會自動建立設定 ObjectDataSource，並將它與透過它的�
 
 若要新增面板檔案，以滑鼠右鍵按一下`App_Themes/DataWebControls`資料夾中，選擇 加入新項目，並從清單中選取面板檔案選項。 將檔案命名為 `DataList.skin`。
 
-
 [![建立名為 DataList.skin 新面板檔案](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image22.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image21.png)
 
 **圖 9**:建立新的面板檔案具名`DataList.skin`([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image23.png))
 
-
 使用下列標記`DataList.skin`檔案：
-
 
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-vb/samples/sample4.aspx)]
 
@@ -148,11 +125,9 @@ Visual Studio 會自動建立設定 ObjectDataSource，並將它與透過它的�
 
 此面板檔案加入，DataList 外觀會更新在設計工具中 （您可能需要重新整理設計工具檢視，若要查看效果，新的面板檔案; 從 檢視 功能表，選擇 重新整理）。 如 [圖 10] 所示，每個替代的產品都有亮粉紅色的背景色彩。
 
-
 [![建立名為 DataList.skin 新面板檔案](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image25.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image24.png)
 
 **圖 10**:建立新的面板檔案具名`DataList.skin`([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image26.png))
-
 
 ## <a name="step-4-exploring-the-datalist-s-other-templates"></a>步驟 4：瀏覽的 DataList s 其他範本
 
@@ -170,36 +145,28 @@ Visual Studio 會自動建立設定 ObjectDataSource，並將它與透過它的�
 > [!NOTE]
 > 如我們在中所見[GridView s 頁尾顯示摘要資訊](../custom-formatting/displaying-summary-information-in-the-gridview-s-footer-vb.md)教學課程中，雖然頁首及頁尾資料列不 t 支援資料繫結語法，特定資料的資訊可以直接插入這些資料列GridView 的`RowDataBound`事件處理常式。 這項技術可以用來同時計算執行總計或其他資訊與資料繫結至控制項，以及將該資訊指派給頁尾。 這個相同的概念可以套用至 DataList 與重複項控制項;唯一的差別是，對於 DataList 與重複項建立的事件處理常式`ItemDataBound`事件 (而不是如`RowDataBound`事件)。
 
-
 我們的範例，可讓 s 有標題中的 DataList 的結果頂端顯示的產品資訊`<h3>`標題。 若要達成此目的，將新增`HeaderTemplate`與適當的標記。 從設計工具中，這可藉由按一下 DataList s 智慧標籤中的 編輯範本 連結、 選擇 標頭 範本，從下拉式清單中，並挑選樣式下拉式清單的標題 3 選項後的文字輸入清單 （請參閱 圖 11）。
-
 
 [![新增 HeaderTemplate 的文字產品資訊](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image28.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image27.png)
 
 **圖 11**:新增`HeaderTemplate`文字產品資訊 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image29.png))
 
-
 或者，這可以是以宣告方式新增輸入中的下列標記`<asp:DataList>`標記：
-
 
 [!code-html[Main](displaying-data-with-the-datalist-and-repeater-controls-vb/samples/sample5.html)]
 
 若要新增的每個產品清單之間的空間，可讓新增的 s `SeparatorTemplate` ，其中包含每個區段之間的線條。 水平尺規標記 (`<hr>`)，將這類分割線。 建立`SeparatorTemplate`，使其具有下列標記：
-
 
 [!code-html[Main](displaying-data-with-the-datalist-and-repeater-controls-vb/samples/sample6.html)]
 
 > [!NOTE]
 > 像是`HeaderTemplate`並`FooterTemplates`，則`SeparatorTemplate`未繫結至任何記錄從資料來源，因此不能直接存取的資料來源繫結至 DataList 的記錄。
 
-
 後此新增功能，檢視透過瀏覽器頁面時它看起來應該類似 圖 12。 請注意，標頭資料列和每個產品清單之間的線。
-
 
 [![DataList 包含標頭資料列和每個產品清單之間的水平尺規](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image31.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image30.png)
 
 **圖 12**:DataList 包含標頭資料列和水平規則之間每個產品清單 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image32.png))
-
 
 ## <a name="step-5-rendering-specific-markup-with-the-repeater-control"></a>步驟 5：轉譯特定的標記與重複項控制項
 
@@ -221,54 +188,43 @@ Visual Studio 會自動建立設定 ObjectDataSource，並將它與透過它的�
 > [!NOTE]
 > ASP.NET 2.0 引進的新[BulletedList 控制項](https://msdn.microsoft.com/library/ms228101.aspx)，它可以繫結至資料來源控制項以顯示簡單的項目符號清單。 與 BulletedList 控制項我們不需要指定任何清單相關 HTML 中;相反地，我們只是表示資料欄位顯示為每個清單項目的文字。
 
-
 中繼器當做 catch Web 控制項的所有資料。 如果沒有現有的控制項，就會產生所需的標記，就可以使用 Repeater 控制項。 若要說明如何使用重複項，可讓 s 已在步驟 2 中建立產品資訊 DataList 上方顯示的類別目錄的清單。 特別的是，可讓 s 已顯示在單一資料列的 HTML 中的類別`<table>`而顯示為資料表的資料行的每個類別。
 
 若要達成此目的，先拖曳 Repeater 控制項從工具箱拖曳至設計工具中，上述產品資訊 DataList。 如同 DataList 和 Repeater 一開始會顯示為灰色方塊之前已定義其範本。
-
 
 [![新增至設計工具的重複項](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image34.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image33.png)
 
 **圖 13**:將重複項新增至設計工具 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image35.png))
 
-
 那里重複項 s 中的 s 只有一個選項智慧標籤：選擇資料來源。 選擇建立新的 ObjectDataSource，並將它設定為使用`CategoriesBLL`類別的`GetCategories`方法。
-
 
 [![建立新的 ObjectDataSource](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image37.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image36.png)
 
 **圖 14**:建立新的 ObjectDataSource ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image38.png))
 
-
 [![設定使用 CategoriesBLL 類別 ObjectDataSource](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image40.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image39.png)
 
 **圖 15**:設定要使用 ObjectDataSource`CategoriesBLL`類別 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image41.png))
-
 
 [![擷取所有使用 GetCategories 方法的類別的相關資訊](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image43.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image42.png)
 
 **圖 16**:擷取資訊有關所有類別使用`GetCategories`方法 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image44.png))
 
-
 不像 DataList 和 Visual Studio 不會自動建立 ItemTemplate Repeater 的繫結至資料來源之後。 此外，重複項的範本無法透過設計工具來設定，而且必須以宣告方式指定。
 
 若要以單一資料列中顯示類別`<table>`具有每個類別資料行，我們需要發出標記類似下面的 Repeater:
-
 
 [!code-html[Main](displaying-data-with-the-datalist-and-repeater-controls-vb/samples/sample7.html)]
 
 因為`<td>Category X</td>`文字方塊會重複出現，這會顯示中繼器的 ItemTemplate 中的部分。 出現在它前面的標記`<table><tr>`-將會置於`HeaderTemplate`時的結束標記- `</tr></table>` -會放在`FooterTemplate`。 若要輸入這些範本設定，請移至 ASP.NET 網頁的宣告式部分按一下左下角的 [來源] 按鈕並輸入下列語法：
 
-
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-vb/samples/sample8.aspx)]
 
 Repeater 會發出其範本，沒有其他項目，執行任何動作所指定的精確標記。 [圖 17] 顯示透過瀏覽器檢視時，才會進行 Repeater 的輸出。
 
-
 [![單一資料列的 HTML&lt;資料表&gt;列出個別的資料行中的每個類別目錄](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image46.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image45.png)
 
 **圖 17**:單一資料列的 HTML`<table>`列出個別的資料行中的每個類別目錄 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image47.png))
-
 
 ## <a name="step-6-improving-the-appearance-of-the-repeater"></a>步驟 6：改善中繼器的外觀
 
@@ -276,26 +232,21 @@ Repeater 會發出其範本，沒有其他項目，執行任何動作所指定�
 
 我們的範例，可讓 s 有替代的背景色彩，例如，DataList 中交替資料列的類別資料行。 若要達成此目的，我們需要指派`RowStyle`至每一個重複項目的 CSS 類別和`AlternatingRowStyle`CSS 類別，透過每個替代中繼器項目的`ItemTemplate`和`AlternatingItemTemplate`範本，就像這樣：
 
-
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-vb/samples/sample9.aspx)]
 
 可讓 s 也加入具有產品類別目錄的文字輸出中的標頭資料列。 因為我們不知道多少資料行我們產生`<table>`將會包含，產生保證跨越所有資料行的標頭資料列的最簡單方式是使用*兩個* `<table>` s。 第一個`<table>`標頭資料列和資料列會包含第二個，單一資料列會包含兩個資料列`<table>`，有系統中的每個類別目錄的資料行。 也就是我們想要發出下列標記：
-
 
 [!code-html[Main](displaying-data-with-the-datalist-and-repeater-controls-vb/samples/sample10.html)]
 
 下列`HeaderTemplate`和`FooterTemplate`產生所需的標記：
 
-
 [!code-aspx[Main](displaying-data-with-the-datalist-and-repeater-controls-vb/samples/sample11.aspx)]
 
 [圖 18] 顯示中繼器進行這些變更之後。
 
-
 [![背景色彩的替代類別資料行，並包含標頭資料列](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image49.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image48.png)
 
 **圖 18**:類別資料行替代背景色彩和包括標頭資料列 ([按一下以檢視完整大小的影像](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image50.png))
-
 
 ## <a name="summary"></a>總結
 

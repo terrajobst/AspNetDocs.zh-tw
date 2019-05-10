@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: cc764f3b-6921-486a-8f44-c6ccd1249acd
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: ad5f32a08270ce318c03e1b29acd74d12bbb3d3b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: da914986ff020879dfe634967b39b32250cbf43b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394051"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65120855"
 ---
 # <a name="adding-a-controller"></a>新增控制器
 
@@ -34,13 +34,11 @@ ms.locfileid: "59394051"
 
 讓我們開始建立控制器類別。 在 [**方案總管] 中**，以滑鼠右鍵按一下*控制站*資料夾，然後按一下**新增**，然後**控制器**。
 
-
 ![](adding-a-controller/_static/image1.png)
 
 在 [**新增 Scaffold** ] 對話方塊中，按一下**MVC 5 控制器-空白**，然後按一下**新增**。
 
 ![](adding-a-controller/_static/image2.png)  
- 
 
 將新的控制器命名為"HelloWorldController 」，按一下**新增**。
 
@@ -80,7 +78,6 @@ URL 的第一個部分會判斷要執行的控制器類別。 因此 */HelloWorl
 
 > [!NOTE]
 > 安全性注意事項：使用上述程式碼[HttpUtility.HtmlEncode](https://msdn.microsoft.com/library/ee360286(v=vs.110).aspx)來保護應用程式免於遭受惡意輸入 (也就是 JavaScript)。 如需詳細資訊，請參閱[如何：防止 Web 應用程式中的指令碼攻擊，藉由套用 HTML 編碼字串](https://msdn.microsoft.com/library/a2a4yykt(v=vs.100).aspx)。
-
 
  執行應用程式，並瀏覽至範例 URL (`http://localhost:xxxx/HelloWorld/Welcome?name=Scott&numtimes=4`)。 您可以在 URL 中針對 `name` 和 `numtimes` 嘗試不同的值。 [ASP.NET MVC 模型繫結系統](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx)會自動將對應方法中的參數從查詢字串，在網址列中的具名的參數。
 

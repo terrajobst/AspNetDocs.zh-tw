@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 5c6371c0-a944-4adf-a28e-5afbdd011ca8
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/nerddinner-wrap-up
 msc.type: authoredcontent
-ms.openlocfilehash: 49c5f762fdd6d99f1af8a10d057852299a266e50
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4e25a4a3a953e97c9a292506a9511f28874925ab
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421039"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128358"
 ---
 # <a name="nerddinner-wrap-up"></a>NerdDinner 總結
 
@@ -24,7 +24,6 @@ by [Microsoft](https://github.com/microsoft)
 > 這是 NerdDinner 教學課程結束時，並提供您若要深入了解的資訊。
 > 
 > 如果您使用 ASP.NET MVC 3，我們建議您遵循[取得開始使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或是[MVC Music 市集](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教學課程。
-
 
 NerdDinner 應用程式現在已完成且準備好要部署在網站上。
 

@@ -8,19 +8,18 @@ ms.date: 03/02/2009
 ms.assetid: 344bb38e-4965-4c47-bda1-f6d29ae5b83a
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fc819494ef58824d485144396e3a995d906c8b42
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 704657ffe6f50eaf3eb0d91d0d334567003ab7f4
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398705"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122338"
 ---
 # <a name="validating-with-a-service-layer-vb"></a>驗證與服務層 (VB)
 
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > 了解如何移動您的驗證邏輯出您對控制器動作並進入個別的服務層。 在本教學課程中，Stephen Walther 會說明如何藉由隔離您的服務層，從您的控制器層級維護 sharp 關注點分離。
-
 
 本教學課程的目標是說明 ASP.NET MVC 應用程式中執行驗證的一種方法。 在本教學課程中，您將了解如何移動您的驗證邏輯出您的控制器並進入個別的服務層。
 

@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 8af630e0-fffa-4110-9eca-c96e201b2724
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 4220327388703b773011921bb206976b04b07e34
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9510eb8094a55346bec2e0dab2a15ee79d211c88
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397899"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126522"
 ---
 # <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>排序、 篩選和分頁與 Entity Framework 中的 ASP.NET MVC 應用程式 (第 3 部 10)
 
@@ -26,7 +26,6 @@ ms.locfileid: "59397899"
 > > [!NOTE] 
 > > 
 > > 如果您遇到的問題，您無法解決，請[下載已完成的一章](building-the-ef5-mvc4-chapter-downloads.md)並嘗試重現您的問題。 您通常可以找到問題的解決方案，藉由比較您的程式碼的完整程式碼。 一些常見錯誤及如何解決這些問題，請參閱[錯誤和因應措施。](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 在上一個教學課程中，您實作的基本 CRUD 作業的 web 網頁的一組`Student`實體。 在本教學課程中，您將新增排序、 篩選和分頁功能**學生**索引頁面。 此外，還要建立將執行簡易群組的頁面。
 
@@ -93,7 +92,6 @@ ms.locfileid: "59397899"
 
 > [!NOTE]
 > 在許多情況下，Entity Framework 實體集上，或是當做擴充方法在記憶體中的集合，可以呼叫相同的方法。 結果通常都相同，但在某些情況下可能會不同。 例如，.NET Framework 實作的`Contains`方法會傳回所有資料列，當您將空字串傳遞給它，但 SQL Server Compact 4.0 的 Entity Framework 提供者會傳回空字串的零個資料列。 因此在範例程式碼 (將放`Where`內的陳述式`if`陳述式) 可確保您取得所有的 SQL Server 版本相同的結果。 此外，.NET Framework 實作的`Contains`方法依預設，執行區分大小寫比較，但 Entity Framework 的 SQL Server 提供者預設情況下執行不區分大小寫的比較。 因此，呼叫`ToUpper`若要使測試明確不區分大小寫的方法可確保當您變更程式碼稍後使用的儲存機制，這會傳回結果不會變更`IEnumerable`而不是集合`IQueryable`物件。 (當您在 `IEnumerable` 集合上呼叫 `Contains` 方法時，將取得 .NET Framework 實作；當您在 `IQueryable` 物件上呼叫它時，則會取得資料庫提供者實作。)
-
 
 ### <a name="add-a-search-box-to-the-student-index-view"></a>將搜尋方塊新增至學生的 [索引] 檢視
 
@@ -378,7 +376,6 @@ Windows Azure SQL Database 是建置在 SQL Server 技術的雲端型關聯式�
 
 > [!NOTE]
 > Web 應用程式不會實作安全性，以便找到 URL 的任何人可以變更的資料。 如需有關如何保護網站上的指示，請參閱[將使用成員資格、 OAuth 和 SQL Database 的安全 ASP.NET MVC 應用程式部署至 Windows Azure 網站](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)。 您可以防止其他人使用 Windows Azure 管理入口網站中使用網站或**伺服器總管**停止站台的 Visual Studio 中。
-
 
 ![](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image35.png)
 

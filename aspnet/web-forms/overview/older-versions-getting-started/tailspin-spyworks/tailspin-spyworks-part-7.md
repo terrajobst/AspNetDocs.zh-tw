@@ -8,12 +8,12 @@ ms.date: 07/21/2010
 ms.assetid: 50223ee9-11b9-4cf3-bca2-e2f10bf471f3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 646aeb4ad99ba9b0ee114c6be4aa528e62ef4775
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ffd2b862c727db9572c272b7b21bcc33c822fffa
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59389943"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126862"
 ---
 # <a name="part-7-adding-features"></a>第 7 部分：加入功能
 
@@ -22,7 +22,6 @@ ms.locfileid: "59389943"
 > Tailspin Spyworks 示範建立功能強大、 可擴充的應用程式，適用於.NET 平台是如何富含簡單。 它會展示如何在 ASP.NET 4 中使用最棒的新功能，建置線上商店，包括購物、 簽出，以及系統管理。
 > 
 > 本教學課程系列會詳細說明所有建置 Tailspin Spyworks 範例應用程式所採取的步驟。 第 7 節新增其他功能，例如帳戶檢閱、 產品評論和 「 熱門項目 」 和 「 也已購買 「 使用者控制項。
-
 
 ## <a id="_Toc260221673"></a>  新增功能
 

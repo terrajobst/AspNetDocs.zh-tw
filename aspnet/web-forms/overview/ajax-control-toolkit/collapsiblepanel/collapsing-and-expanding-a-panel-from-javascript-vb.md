@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 298789b4-2964-49f5-a0a8-d4dbeb9ff2c2
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b41423cb1e587df121828b1e57045cabfede7cb5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f9e279e8700024f28cf589581f09a4bbd95118de
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390827"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133533"
 ---
 # <a name="collapsing-and-expanding-a-panel-from-javascript-vb"></a>從 JavaScript 摺疊與展開面板 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59390827"
 [下載程式碼](http://download.microsoft.com/download/8/a/a/8aab3c3e-de6f-463f-805c-5fda567eef6e/CollapsiblePanel1.vb.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/collapsiblepanel1VB.pdf)
 
 > CollapsiblePanel 控制項在 ASP.NET AJAX Control Toolkit 擴充面板，並提供它的功能，可將摺疊其內容，並再次將其展開。 從自訂的 JavaScript 程式碼，也會觸發這兩個動作。
-
 
 ## <a name="overview"></a>總覽
 
@@ -63,7 +62,6 @@ CollapsiblePanel 控制項在 ASP.NET AJAX Control Toolkit 擴充面板，並提
 第三個按鈕切換面板的狀態： 從摺疊成展開，反之亦然。 `CollapsiblePanelExtender`公開`toggle()`方法，這個方法： 反轉面板的狀態。 不過另外還有另一種方法 (這會在內部使用`toggle()`方法):`get_Collapsed()`方法的`CollapsiblePanelExtender()`告訴我們是否或不摺疊面板。 根據此函式的傳回值，[面板] 中則是展開 (`_doOpen()`方法) 或摺疊 (`_doClose()`) 方法：
 
 [!code-javascript[Main](collapsing-and-expanding-a-panel-from-javascript-vb/samples/sample8.js)]
-
 
 [![第三個按鈕變更面板的狀態： 從摺疊以展開和後端](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image2.png)](collapsing-and-expanding-a-panel-from-javascript-vb/_static/image1.png)
 

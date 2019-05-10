@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 969fb28f-2bff-4fc4-b24a-27f5e2534a37
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fa118b4d733d7848b838f80e9918d62ae60033af
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1fde131086d4fb29c499f7f7c6281153c2766166
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59378971"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125055"
 ---
 # <a name="creating-a-rating-control-c"></a>建立評等控制項 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59378971"
 [下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/rating0.cs.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/rating0CS.pdf)
 
 > 許多網站中，從電子商務社群網站，以提供使用者速率文件或項目。 這通常需要一些編碼工作，但我們確實有 Control Toolkit，以供我們運用。
-
 
 ## <a name="overview"></a>總覽
 
@@ -64,7 +63,6 @@ ms.locfileid: "59378971"
 [!code-aspx[Main](creating-a-rating-control-cs/samples/sample5.aspx)]
 
 儲存頁面，並將其載入至您的瀏覽器。 當您暫留 （一開始是空的） 的評等項目時，則會發生 JavaScript 的效果：評等的變更。 當您按一下組星號時，會保留目前的評等。 最後，當您提交表單時，伺服器端程式碼會輸出選取的評等。
-
 
 [![使用最少的程式碼建立的分級系統](creating-a-rating-control-cs/_static/image2.png)](creating-a-rating-control-cs/_static/image1.png)
 

@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 0b34f7f6-a0cc-4b9f-9761-643fb0bb3ece
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 433756839532393b36935df8f237e93706b4f18c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e2374f05fb471c2b35a851eadb8c9f4a98f61e11
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383149"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126081"
 ---
 # <a name="using-auto-postback-with-cascadingdropdown-vb"></a>使用自動回傳與 CascadingDropDown (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59383149"
 [下載程式碼](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown3.vb.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown3VB.pdf)
 
 > 在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。 不過使用 CascadingDropDown 控制，ASP 時。NET 的 DropDownList 控制項的 AutoPostBack 功能無法運作，因為會以非同步方式將資料載入清單產生本身 （非必要） 回傳。 使用一些 JavaScript 程式碼中，您可以避免這種效果。
-
 
 ## <a name="overview"></a>總覽
 
@@ -55,7 +54,6 @@ CascadingDropDown extender 接著會以非同步方式呼叫 web 服務的下列
 [!code-html[Main](using-auto-postback-with-cascadingdropdown-vb/samples/sample6.html)]
 
 如此一來，當清單中有實際的項目，而且使用者選取一個項目只執行回傳。
-
 
 [![選取清單項目造成回傳](using-auto-postback-with-cascadingdropdown-vb/_static/image2.png)](using-auto-postback-with-cascadingdropdown-vb/_static/image1.png)
 

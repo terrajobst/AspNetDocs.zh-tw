@@ -8,12 +8,12 @@ ms.date: 01/29/2017
 ms.assetid: 90ebf911-1c46-4470-b876-1335bd0f590f
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler
 msc.type: authoredcontent
-ms.openlocfilehash: cf18a8860d34daa23f61e3dde13c2c79c6c0d4a5
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.openlocfilehash: 51a8fdf44199b5a4735e0e00657639b191f51255
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57048115"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125986"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a>設定 Web Deploy 發行的網頁伺服器 (Web Deploy 處理常式)
 
@@ -28,7 +28,6 @@ ms.locfileid: "57048115"
 > - 使用*離線部署*。 這種方法需要最低的網頁伺服器的設定，但伺服器系統管理員必須手動複製到伺服器上的 web 套件並匯入它透過 IIS 管理員。
 > 
 > 如需有關的主要功能、 優點和這些方法的缺點的詳細資訊，請參閱[選擇 Web 部署的權限方法](choosing-the-right-approach-to-web-deployment.md)。
-
 
 是，如果您想要允許非系統管理員的使用者，將內容部署至特定的 IIS 網站。 這種方法通常會希望出現在這種情況下：
 
@@ -64,7 +63,6 @@ ms.locfileid: "57048115"
 > [!NOTE]
 > 如需有關如何將電腦加入網域的詳細資訊，請參閱 <<c0> [ 將電腦加入網域並登入](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)。 如需有關如何設定靜態 IP 位址的詳細資訊，請參閱 <<c0> [ 設定靜態 IP 位址](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)。
 
-
 ## <a name="install-products-and-components"></a>安裝的產品和元件
 
 本節將引導您完成 web 伺服器上安裝必要的產品和元件。 在開始之前，理想的作法就是執行 Windows Update，以確保您的伺服器已完全更新。
@@ -80,7 +78,6 @@ ms.locfileid: "57048115"
 
 > [!NOTE]
 > 本逐步解說說明如何使用 Web Platform Installer 來安裝和設定各種元件。 雖然您不需要使用 Web Platform Installer，它可以簡化安裝程序自動偵測相依性，並確保您一律取得最新的產品版本。 如需詳細資訊，請參閱 < [Microsoft Web Platform Installer](https://go.microsoft.com/?linkid=9805118)。
-
 
 **若要安裝必要的產品和元件**
 
@@ -239,7 +236,6 @@ ms.locfileid: "57048115"
 > [!NOTE]
 > 如需有關在 IIS 7.5 中的應用程式集區身分識別的詳細資訊，請參閱[應用程式集區識別](https://go.microsoft.com/?linkid=9805123)。
 
-
 **若要設定 IIS 網站的資料夾權限**
 
 1. 在 Windows 檔案總管中，瀏覽至您本機資料夾的位置。
@@ -279,9 +275,8 @@ ms.locfileid: "57048115"
 
 | 方向 | 從連接埠 | 連接埠 | 連接埠類型 |
 | --- | --- | --- | --- |
-| 輸入 | 任何 | 8172 | TCP |
-| 輸出 | 8172 | 任何 | TCP |
-  
+| 輸入 | Any | 8172 | TCP |
+| 輸出 | 8172 | Any | TCP |
 
 如需有關如何在 Windows 防火牆中設定規則的詳細資訊，請參閱 <<c0> [ 設定防火牆規則](https://technet.microsoft.com/library/dd448559(WS.10).aspx)。 對於協力廠商防火牆，請參閱產品文件。
 

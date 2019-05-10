@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: fe47a018-f6d0-4979-80e7-5b1fa75a5865
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 97a60274d9306ea0ee332fcc1ab9e487355dbedb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e11c91a824446572aaf0b3bc6954b9b8ffb4eaff
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59384932"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133962"
 ---
 # <a name="creating-a-build-definition-that-supports-deployment"></a>建立支援部署的組建定義
 
@@ -22,7 +22,6 @@ ms.locfileid: "59384932"
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 如果您想要執行任何一種建置 Team Foundation Server (TFS) 2010年中，您需要建立 team 專案內的組建定義。 本主題描述如何在 TFS 中建立新的組建定義，以及如何控制建置程序，在 Team Build 中的 web 部署。
-
 
 本主題是構成一系列以名為 Fabrikam，Inc.的虛構公司的企業部署需求為基礎的教學課程的一部分本教學課程系列會使用範例解決方案&#x2014;[連絡管理員解決方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;來代表實際的層級的複雜性，包括 ASP.NET MVC 3 應用程式時，Windows Communication 的 web 應用程式Foundation (WCF) 服務與資料庫專案。
 
@@ -40,7 +39,6 @@ ms.locfileid: "59384932"
 
 > [!NOTE]
 > 如需有關組建定義的詳細資訊，請參閱[定義建置流程](https://msdn.microsoft.com/library/ms181715.aspx)。
-
 
 本主題將說明如何建立使用 CI 組建定義，以便開發人員簽入新的內容時，會觸發組建。 如果建置成功時，組建服務就會執行自訂的專案檔將方案部署到測試環境。
 
@@ -60,7 +58,6 @@ ms.locfileid: "59384932"
 
 > [!NOTE]
 > 此程序&#x2014;中的單一的自動程序會建置、 測試，以及部署方案&#x2014;可能是最適合部署至測試環境。 針對預備和生產環境很更多可能會想要從先前的組建時，您已驗證，並驗證測試環境中部署內容。 這種方法在下一個主題中，所述[部署特定建置](deploying-a-specific-build.md)。
-
 
 ### <a name="who-performs-this-procedure"></a>對於執行此程序？
 
@@ -142,7 +139,6 @@ ms.locfileid: "59384932"
 
 > [!NOTE]
 > 可能失敗，直到您已在目的地環境中所需的任何權限授與組建伺服器時，會執行部署邏輯的組建。 如需詳細資訊，請參閱 <<c0> [ 設定小組組建部署的權限](configuring-permissions-for-team-build-deployment.md)。
-
 
 ## <a name="monitor-the-build-process"></a>監視組建程序
 

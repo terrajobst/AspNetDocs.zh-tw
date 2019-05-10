@@ -8,12 +8,12 @@ ms.date: 11/13/2006
 ms.assetid: 1f42e332-78dc-438b-9e35-0c97aa0ad929
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5819dc3d62161fc4f31cf30c6c739654a64d86b3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ad3af89c34df4a71b6e658ba205aa4f645b4dedd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400408"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134017"
 ---
 # <a name="custom-buttons-in-the-datalist-and-repeater-c"></a>在 DataList 與重複項中自訂按鈕 (C#)
 
@@ -23,18 +23,15 @@ ms.locfileid: "59400408"
 
 > 在本教學課程中，我們將建置在系統中，列出類別，而提供的按鈕，以顯示其相關聯的產品使用 BulletedList 控制每個類別會使用重複項的介面。
 
-
 ## <a name="introduction"></a>簡介
 
 在過去十七 DataList 與重複項教學課程中，我們已建立唯讀的範例和編輯和刪除範例。 若要利於進行編輯和刪除的資料清單中的功能，我們新增至 DataList 的按鈕`ItemTemplate`，按一下時，造成回傳並引發對應的按鈕 s DataList 事件`CommandName`屬性。 比方說，加入至按鈕`ItemTemplate`與`CommandName`編輯屬性值會導致 DataList s`EditCommand`引發回傳; 一個包含`CommandName`刪除引發`DeleteCommand`。
 
 此外若要編輯和刪除按鈕，DataList 與重複項控制項也可以包含按鈕、 Linkbutton 或 ImageButtons，按一下時，執行一些自訂的伺服器端邏輯。 在本教學課程中，我們將建置介面來列出系統中的類別使用的重複項。 針對每個類別，Repeater 將包含按鈕以顯示類別目錄相關聯的產品使用 BulletedList 控制項 （請參閱 圖 1）。
 
-
 [![按一下 顯示產品連結會顯示類別 s 中的產品項目符號清單](custom-buttons-in-the-datalist-and-repeater-cs/_static/image2.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image1.png)
 
 **圖 1**:按一下 顯示產品連結會顯示在項目符號清單中的 s 產品類別目錄 ([按一下以檢視完整大小的影像](custom-buttons-in-the-datalist-and-repeater-cs/_static/image3.png))
-
 
 ## <a name="step-1-adding-the-custom-button-tutorial-web-pages"></a>步驟 1：新增自訂按鈕的教學課程 Web 網頁
 
@@ -43,57 +40,45 @@ ms.locfileid: "59400408"
 - `Default.aspx`
 - `CustomButtons.aspx`
 
-
 ![加入 ASP.NET 網頁的自訂按鈕相關教學課程](custom-buttons-in-the-datalist-and-repeater-cs/_static/image4.png)
 
 **圖 2**:加入 ASP.NET 網頁的自訂按鈕相關教學課程
 
-
 在其他資料夾，例如`Default.aspx`在`CustomButtonsDataListRepeater`資料夾會列出其一節中的教學課程。 請記得，`SectionLevelTutorialListing.ascx`使用者控制項提供這項功能。 將此使用者控制項加入`Default.aspx`從拖曳到頁面的設計 檢視中的 方案總管 中拖曳。
-
 
 [![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](custom-buttons-in-the-datalist-and-repeater-cs/_static/image6.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image5.png)
 
 **圖 3**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](custom-buttons-in-the-datalist-and-repeater-cs/_static/image7.png))
 
-
 最後，將頁面新增項目，以作為`Web.sitemap`檔案。 具體來說，使用 DataList 與重複項分頁和排序之後新增下列標記`<siteMapNode>`:
-
 
 [!code-xml[Main](custom-buttons-in-the-datalist-and-repeater-cs/samples/sample1.xml)]
 
 在更新之後`Web.sitemap`，花點時間檢視教學課程網站，透過瀏覽器。 在左側功能表現在包含編輯、 插入及刪除教學課程的項目。
 
-
 ![網站導覽現在包含項目自訂按鈕教學課程](custom-buttons-in-the-datalist-and-repeater-cs/_static/image8.png)
 
 **圖 4**:網站導覽現在包含項目自訂按鈕教學課程
-
 
 ## <a name="step-2-adding-the-list-of-categories"></a>步驟 2：新增類別目錄的清單
 
 我們要建立列出所有的類別，以及顯示產品 LinkButton Repeater 本教學課程中，按一下，便會顯示相關聯的分類的產品項目符號清單中。 可讓第一次建立簡單的 Repeater 列出系統中的類別。 首先開啟`CustomButtons.aspx`頁面中`CustomButtonsDataListRepeater`資料夾。 拖曳 Repeater 從工具箱拖曳至設計工具和設定其`ID`屬性設`Categories`。 接下來，建立新的資料來源控制項從 Repeater s 智慧標籤。 具體來說，建立名為的新 ObjectDataSource 控制項`CategoriesDataSource`，選取其資料來源`CategoriesBLL`類別的`GetCategories()`方法。
 
-
 [![設定為使用 CategoriesBLL 類別的 GetCategories() 方法的 ObjectDataSource](custom-buttons-in-the-datalist-and-repeater-cs/_static/image10.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image9.png)
 
 **圖 5**:設定要使用 ObjectDataSource`CategoriesBLL`類別 s`GetCategories()`方法 ([按一下以檢視完整大小的影像](custom-buttons-in-the-datalist-and-repeater-cs/_static/image11.png))
-
 
 不像 DataList 控制項，Visual Studio 會建立預設`ItemTemplate`根據資料來源，Repeater 的範本必須以手動方式定義。 此外，Repeater 的範本必須建立和編輯以宣告方式 （也就是沒有 s 沒有編輯的範本選項中 Repeater s 智慧標籤）。
 
 按一下左下角的 [來源] 索引標籤，然後加入`ItemTemplate`顯示中的類別目錄的名稱`<h3>`項目和其描述在段落標記，包括`SeparatorTemplate`顯示水平尺規 (`<hr />`) 之間類別目錄。 也將新增 LinkButton 其`Text`屬性設定為顯示的產品。 完成這些步驟之後，頁面 s 的宣告式標記看起來應該如下所示：
 
-
 [!code-aspx[Main](custom-buttons-in-the-datalist-and-repeater-cs/samples/sample2.aspx)]
 
 [圖 6] 顯示頁面透過瀏覽器檢視時。 會列出每個類別目錄名稱和描述。 顯示產品按鈕，按一下時，會導致回傳，但還未執行任何動作。
 
-
 [![每個類別目錄名稱和描述會顯示，以及顯示產品 LinkButton](custom-buttons-in-the-datalist-and-repeater-cs/_static/image13.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image12.png)
 
 **圖 6**:每個類別目錄名稱和描述會顯示，以及顯示產品 LinkButton ([按一下以檢視完整大小的影像](custom-buttons-in-the-datalist-and-repeater-cs/_static/image14.png))
-
 
 ## <a name="step-3-executing-server-side-logic-when-the-show-products-linkbutton-is-clicked"></a>步驟 3：執行伺服器端邏輯時顯示產品 LinkButton 已按下
 
@@ -105,7 +90,6 @@ DataList 或 Repeater 內按一下按鈕時，通常我們需要傳遞所按的�
 - `CommandArgument` 常用來保存部分的資料欄位，例如主索引鍵值的值
 
 對於此範例中，設定 LinkButton s`CommandName`屬性設為 ShowProducts 並繫結的目前記錄 s 主索引鍵值`CategoryID`來`CommandArgument`屬性使用的資料繫結語法`CategoryArgument='<%# Eval("CategoryID") %>'`。 指定這兩個屬性之後, 的 LinkButton s 宣告式語法看起來應該如下所示：
-
 
 [!code-aspx[Main](custom-buttons-in-the-datalist-and-repeater-cs/samples/sample3.aspx)]
 
@@ -123,16 +107,13 @@ DataList 或 Repeater 內按一下按鈕時，通常我們需要傳遞所按的�
 > [!NOTE]
 > DataList s`ItemCommand`事件處理常式傳遞類型的物件[ `DataListCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistcommandeventargs.aspx)，提供相同的四個屬性`RepeaterCommandEventArgs`類別。
 
-
 ## <a name="step-4-displaying-the-selected-category-s-products-in-a-bulleted-list"></a>步驟 4：項目符號清單中顯示所選類別目錄產品
 
 Repeater s 中，可以顯示選取的類別的產品`ItemTemplate`使用任何數目的控制項。 我們可以新增另一個巢狀 Repeater、 DataList、 DropDownList、 GridView，等等。 因為我們想要為項目符號清單顯示的產品，不過，我們將使用 BulletedList 控制項。 返回`CustomButtons.aspx`頁面上 s 宣告式標記，加入 BulletedList 控制項`ItemTemplate`顯示產品 LinkButton 之後。 設定 BulletedLists s`ID`至`ProductsInCategory`。 BulletedList 顯示透過指定資料欄位的值`DataTextField`屬性，因為這個控制項都具有與它繫結，請將設定的產品資訊`DataTextField`屬性設`ProductName`。
 
-
 [!code-aspx[Main](custom-buttons-in-the-datalist-and-repeater-cs/samples/sample4.aspx)]
 
 在 `ItemCommand`事件處理常式中，參考此控制項使用`e.Item.FindControl("ProductsInCategory")`並將它繫結至選取的類別相關聯的產品集。
-
 
 [!code-csharp[Main](custom-buttons-in-the-datalist-and-repeater-cs/samples/sample5.cs)]
 
@@ -145,11 +126,9 @@ Repeater s 中，可以顯示選取的類別的產品`ItemTemplate`使用任何�
 > [!NOTE]
 > 如果您想要修改這份報表的行為，列出一次只有一個類別目錄的產品的方式，只要將設定 BulletedList 控制項 s`EnableViewState`屬性設`False`。
 
-
 [![BulletedList 用來顯示選取的類別目錄的產品](custom-buttons-in-the-datalist-and-repeater-cs/_static/image16.png)](custom-buttons-in-the-datalist-and-repeater-cs/_static/image15.png)
 
 **圖 7**:BulletedList 用來顯示選取的類別目錄的產品 ([按一下以檢視完整大小的影像](custom-buttons-in-the-datalist-and-repeater-cs/_static/image17.png))
-
 
 ## <a name="summary"></a>總結
 

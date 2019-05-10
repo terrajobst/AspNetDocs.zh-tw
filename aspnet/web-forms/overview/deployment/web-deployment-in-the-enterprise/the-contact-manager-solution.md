@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 4d8c8d19-055b-4b70-9ee1-f748f0db3a01
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: 7998b5bb2983410479123514661a4ddb67afc8c6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 12ed7827f7392e559e04121386f7cd045de8462b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398367"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130921"
 ---
 # <a name="the-contact-manager-solution"></a>連絡管理員解決方案
 
@@ -24,7 +24,6 @@ ms.locfileid: "59398367"
 > 這[系列的教學課程](web-deployment-in-the-enterprise.md)範例解決方案會使用&#x2014;連絡管理員解決方案&#x2014;來代表實際的複雜程度的企業級應用程式。 本主題介紹連絡管理員解決方案、 將告訴您方案的重要元件，並識別部署這類企業環境中的各種目標平台的應用程式的挑戰。
 > 
 > 當您完成主題在這些教學課程中，您可以使用連絡管理員解決方案做為示範如何滿足特定的挑戰，在企業部署案例中的參考實作。 下一個主題中，[設定註冊連絡管理員解決方案](setting-up-the-contact-manager-solution.md)，說明如何下載並在您的開發人員工作站上執行解決方案。
-
 
 ## <a name="solution-overview"></a>解決方案概觀
 
@@ -45,7 +44,6 @@ ms.locfileid: "59398367"
 
 > [!NOTE]
 > 雖然 ASP.NET MVC 3 web 應用程式使用 ASP.NET 成員資格提供者，但在 web 應用程式中的所有頁面都允許匿名存取。 這顯然是不實際的組態。 不過，解決方案是設定在這種方式，讓您更輕鬆地部署和測試解決方案，但未設定使用者帳戶和角色。
-
 
 ## <a name="deployment-challenges"></a>部署挑戰
 

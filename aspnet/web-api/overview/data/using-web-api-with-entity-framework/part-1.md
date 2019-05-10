@@ -8,15 +8,14 @@ ms.date: 01/17/2019
 ms.assetid: e879487e-dbcd-4b33-b092-d67c37ae768c
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-1
 msc.type: authoredcontent
-ms.openlocfilehash: c681415920bb0bfb4bc1c012e42fb5a528db93ca
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0f5dc960f494af5bd4ce87863a510d1892319908
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406830"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126277"
 ---
 # <a name="using-web-api-2-with-entity-framework-6"></a>使用 Web API 2 和 Entity Framework 6
-
 
 [下載已完成的專案](https://github.com/MikeWasson/BookService)
 
@@ -68,7 +67,6 @@ AJAX 不是新的但是今天很輕鬆地建置及維護的大型複雜的 SPA �
 
 [![](part-1/_static/image12.png)](part-1/_static/image12.png)
 
-
 選取 [確定] 建立專案。
 
 ## <a name="configure-azure-settings-optional"></a>設定 Azure 設定 （選擇性）
@@ -98,7 +96,6 @@ AJAX 不是新的但是今天很輕鬆地建置及維護的大型複雜的 SPA �
     [![](part-1/_static/image17.png)](part-1/_static/image17.png)
    
     現在可使用您建立用來部署應用程式的設定檔。 
-
 
 > [!div class="step-by-step"]
 > [下一步](part-2.md)

@@ -9,19 +9,18 @@ ms.assetid: 15253312-a92c-43ba-908e-b5dacd3d08b8
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 6a73efb7d577cc70ca5ebaa69e8fdd03f3735ae4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e89ed139657c5ce9ddcc56879946c62038919483
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59379660"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65121453"
 ---
 # <a name="aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider-c"></a>ASP.NET Identity：使用具 EntityFramework MySQL 提供者的 MySQL 儲存體 (C#)
 
 藉由[Maurycy Markowski](https://github.com/maumar)， [Raquel Soares De Almeida](https://github.com/raquelsa)， [Robert McMurray](https://github.com/rmcmurray)
 
 > 本教學課程會示範如何取代的預設資料儲存機制[ **ASP.NET Identity** ](introduction-to-aspnet-identity.md) EntityFramework （SQL 用戶端提供者） 與 MySQL 提供者使用。
-
 
 將在本教學課程涵蓋下列主題：
 
@@ -90,7 +89,6 @@ ms.locfileid: "59379660"
 > [!NOTE]
 > 這是發行前版本的組件，因此它可能包含錯誤。 您不應該在生產環境中使用的提供者的發行前版本。
 
-
 [按一下以下影像，以展開它。]
 
 [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image22.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image21.png)
@@ -101,7 +99,6 @@ ms.locfileid: "59379660"
 
 > [!NOTE]
 > 下列範例包含 MySql.Data.dll 特定組件版本。 如果組件版本變更，您必須修改適當的組態設定，以正確的版本。
-
 
 1. Visual Studio 2013 中開啟您專案的 Web.config 檔案。
 2. 找出 Entity framework 定義的預設資料庫提供者和 factory 的下列組態設定：
@@ -131,7 +128,6 @@ ms.locfileid: "59379660"
 
 > [!NOTE]
 > 如果您要連接到 Azure，或如果您使用裝載於內部部署的資料庫上的 SQL Server 執行個體，不需要此步驟。
-
 
 若要建立適用於 MySQL 的自訂 Entity Framework 初始設定式，請使用下列步驟：
 

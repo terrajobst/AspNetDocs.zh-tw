@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 397522d5-0402-4b94-b810-a2fb564f869d
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/introducing-the-nerddinner-tutorial
 msc.type: authoredcontent
-ms.openlocfilehash: ebd49295ea165ba4ef1a25398cff7dddcfa54f11
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 154cfe6694cf723c0a1f8e33bfdb42c97594518f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59392192"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122312"
 ---
 # <a name="introducing-the-nerddinner-tutorial"></a>NerdDinner 教學課程簡介
 
@@ -24,7 +24,6 @@ ms.locfileid: "59392192"
 > 若要了解新架構的最佳方式是建置與它的一些項目。 本教學課程會逐步解說如何建置一個小型的但在完成時，使用 ASP.NET MVC 1，應用程式，並介紹一些其背後的核心概念。
 > 
 > 如果您使用 ASP.NET MVC 3，我們建議您遵循[取得開始使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或是[MVC Music 市集](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教學課程。
-
 
 ## <a name="nerddinner-tutorial"></a>NerdDinner 教學課程
 

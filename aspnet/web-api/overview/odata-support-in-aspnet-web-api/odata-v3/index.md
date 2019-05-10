@@ -8,17 +8,16 @@ ms.date: 06/26/2014
 ms.assetid: 26d43c14-98d8-46fe-ab2e-b7c5998d073d
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3
 msc.type: chapter
-ms.openlocfilehash: fe82cbd43cf374439675ad811586282a1a79f488
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: eb270fd7cd1e6507df47d9b1296c296eb63bedb2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59409482"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131662"
 ---
 # <a name="supporting-odata-v3-in-aspnet-web-api"></a>ASP.NET Web API 中支援 OData v3
 
 > 您可以使用 ASP.NET Web API 來建立支援 OData 第 3 版的端點。
-
 
 - [建立 OData v3 端點](creating-an-odata-endpoint.md)
 - [支援 OData v3 中的實體關聯性](working-with-entity-relations.md)

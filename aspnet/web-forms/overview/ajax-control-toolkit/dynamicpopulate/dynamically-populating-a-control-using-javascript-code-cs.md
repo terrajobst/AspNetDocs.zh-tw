@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: cc4c2def-e88c-4456-ae8b-a6ae0ff8cc2d
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-using-javascript-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a6b433f187495b8dcd874bcab8ddc607e6de61c9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 58084a65a2e34534b89daabdd74d8d7b19f6b4ae
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422521"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127016"
 ---
 # <a name="dynamically-populating-a-control-using-javascript-code-c"></a>使用 JavaScript 程式碼以動態方式填入控制項 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59422521"
 [下載程式碼](http://download.microsoft.com/download/d/8/f/d8f2f6f9-1b7c-46ad-9252-e1fc81bdea3e/dynamicpopulate1.cs.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/dynamicpopulate1CS.pdf)
 
 > DynamicPopulate 控制項在 ASP.NET AJAX Control Toolkit 中呼叫 web 服務 （或頁面方法），並會產生的值填滿到目標控制項在頁面上，而不需要重新整理頁面。 它也可觸發程序使用自訂用戶端 JavaScript 程式碼的母體擴展。
-
 
 ## <a name="overview"></a>總覽
 
@@ -53,7 +52,6 @@ ms.locfileid: "59422521"
 [!code-aspx[Main](dynamically-populating-a-control-using-javascript-code-cs/samples/sample5.aspx)]
 
 請注意，內容中的選項按鈕，JavaScript 運算式`this.value`剛好是完全相同的資訊 [目前] 按鈕的值是指`getDate()`方法可以使用。
-
 
 [![按一下按鈕從伺服器中所指定的格式擷取的日期](dynamically-populating-a-control-using-javascript-code-cs/_static/image2.png)](dynamically-populating-a-control-using-javascript-code-cs/_static/image1.png)
 
