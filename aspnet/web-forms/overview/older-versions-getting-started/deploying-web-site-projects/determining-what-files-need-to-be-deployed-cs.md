@@ -8,12 +8,12 @@ ms.date: 04/01/2009
 ms.assetid: f8d78a88-cc91-40d8-bce3-3d7954f6033b
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c17e3afaf4406489a14d0537a33fef384d6c5a19
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c4848f230ee0af5ee9d381e7df9cb1456870eb25
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408962"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132369"
 ---
 # <a name="determining-what-files-need-to-be-deployed-c"></a>判斷需要部署哪些檔案 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59408962"
 [下載程式碼](http://download.microsoft.com/download/4/5/F/45F815EC-8B0E-46D3-9FB8-2DC015CCA306/ASPNET_Hosting_Tutorial_02_CS.zip)或[下載 PDF](http://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial02_FilesToDeploy_cs.pdf)
 
 > 從開發環境部署至生產環境需要的檔案部分取決於是否使用網站模型還是 Web 應用程式模型建置 ASP.NET 應用程式。 深入了解這兩個專案模型和專案模型如何影響部署。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -92,20 +91,16 @@ Microsoft 發行的 Visual Studio 2005 時它們會卸除對 Web 應用程式專
 
 [圖 1] 顯示透過瀏覽器檢視時的書籍評論網站的螢幕擷取畫面。 這裡您會看到頁面 ~ /`Tech/TYASP35.aspx`，這會檢閱本書*教導您自己 ASP.NET 3.5 24 小時內*。 跨越頁面和左側的資料行中的功能表的頂端階層連結為基礎網站導覽結構中定義`Web.sitemap`。 在右上角的影像是其中一個映像位於書封面`Images`資料夾。 網站的外觀及操作定義透過階層式樣式表的規則而為名的頁面配置定義在主版頁面中，[Styles] 資料夾中的 CSS 檔案所拼出`Site.master`。
 
-
 [![活頁簿會檢閱網站提供各式各樣的產品評論](determining-what-files-need-to-be-deployed-cs/_static/image2.png)](determining-what-files-need-to-be-deployed-cs/_static/image1.png)
 
 **圖 1:** 活頁簿會檢閱網站提供各式各樣的產品評論 ([按一下以檢視完整大小的影像](determining-what-files-need-to-be-deployed-cs/_static/image3.png))
-
 
 此應用程式不會使用資料庫;每個檢閱會實作為個別的網頁應用程式中。 本教學課程 （及下一步 的數個教學課程） 逐步部署不需要資料庫的 web 應用程式。 不過，在未來的教學課程中我們將增強儲存評論、 讀者提供任何意見，以及其他資訊在資料庫內，此應用程式，並將探索需要執行，將正確的資料驅動 web 應用程式的步驟。
 
 > [!NOTE]
 > 這些教學課程著重於裝載 ASP.NET 應用程式與 web 主機提供者，而不會探索附屬的主題，例如 ASP。NET 的站台對應系統或使用基底`Page`類別。 如需有關這些技術，以及在整個教學課程所涵蓋的其他主題的詳細背景，請在每個教學課程結尾處指進一步閱讀 > 一節。
 
-
 本教學課程下載具有 web 應用程式的兩個複本，每一個實作為不同的 Visual Studio 專案類型：BookReviewsWAP、 Web 應用程式專案和 BookReviewsWSP，網站專案。 這兩個專案使用 Visual Web Developer 2008 SP1 所建立，並使用 ASP.NET 3.5 SP1。 若要使用這些專案開始解壓縮到您的桌面內容。 若要開啟 Web 應用程式專案 (BookReviewsWAP)，瀏覽至 BookReviewsWAP 資料夾，按兩下方案檔、 `BookReviewsWAP.sln`。 若要開啟的網站專案 (BookReviewsWSP)，啟動 Visual Studio 然後，從 [檔案] 功能表中，選擇 [開啟網站] 選項，瀏覽至`BookReviewsWSP`資料夾在桌面上，按一下 [確定]。
-
 
 在本教學課程的看看哪些檔案中剩餘的兩個區段必須部署應用程式時，將複製到實際執行環境。 下面兩個教學課程- *[部署您的網站使用 FTP](deploying-your-site-using-an-ftp-client-cs.md)* 並*[部署您的網站使用的 Visual Studio](deploying-your-site-using-visual-studio-cs.md)*  -顯示不同的方式將這些檔案複製到 web 主機提供者。
 
@@ -115,11 +110,9 @@ Web 應用程式專案模型使用明確的編譯-專案的原始程式碼會編
 
 [圖 2] 顯示書籍評論 Web 應用程式專案所組成的檔案。
 
-
 [![[方案總管] 列出構成 Web 應用程式專案的檔案](determining-what-files-need-to-be-deployed-cs/_static/image5.png)](determining-what-files-need-to-be-deployed-cs/_static/image4.png)
 
 **圖 2**:方案總管 列出構成 Web 應用程式專案的檔案
-
 
 若要部署使用的 Web 應用程式專案模型開始建置的應用程式以明確編譯為組件的最新的原始碼開發 ASP.NET 應用程式。 接下來，將下列檔案複製到生產環境：
 
@@ -131,7 +124,6 @@ Web 應用程式專案模型使用明確的編譯-專案的原始程式碼會編
 > [!NOTE]
 > 如 圖 2 所示`BasePage`類別會實作為在專案中，放在名為的資料夾中的類別檔案`HelperClasses`。 當編譯專案中的程式碼`BasePage.cs`檔案以及 ASP.NET 頁面的程式碼後置類別編譯成單一組件中， `BookReviewsWAP.dll.` ASP.NET 具有名為的特殊資料夾`App_Code`，設計用來保存適用於 Web 的類別檔案站台的專案。 中的程式碼`App_Code`資料夾就會自動編譯，因此不應搭配 Web 應用程式專案。 相反地，您應該將您的應用程式類別檔案，名為的正常資料夾置於`HelperClasses`，或`Classes`，或其他類似。 或者，您可以將類別檔案放在個別的類別庫專案。
 
-
 除了將 ASP.NET 相關的標記檔案和中的組件複製`Bin`資料夾中，您也需要將用戶端支援檔案複製-映像和 CSS 檔案-其他伺服器端支援檔案，以及`Web.config`和`Web.sitemap`。 這些用戶端和伺服器端必須支援檔案複製到實際執行環境，不論您是使用明確或自動編譯。
 
 ## <a name="determining-the-files-to-deploy-for-the-web-site-project-files"></a>決定要部署之網站專案檔案的檔案
@@ -142,11 +134,9 @@ Web 應用程式專案模型使用明確的編譯-專案的原始程式碼會編
 
 圖 3 顯示構成書籍評論網站專案的檔案。
 
-
  [![[方案總管] 會列出組成的網站專案的檔案](determining-what-files-need-to-be-deployed-cs/_static/image7.png)](determining-what-files-need-to-be-deployed-cs/_static/image6.png) 
 
-**圖 3**:方案總管 會列出組成的網站專案的檔案
-
+**圖 3**:[方案總管] 會列出組成的網站專案的檔案
 
 部署網站專案時，需要將所有的 ASP.NET 相關的檔案複製到實際執行的環境，其中包含 ASP.NET 網頁、 主版頁面和使用者控制項的標記頁面，以及其程式碼檔案。 您也需要將任何類別檔案，例如 BasePage.cs 複製。 請注意，`BasePage.cs`檔案會位於`App_Code`是特殊的 ASP.NET 資料夾中的網站專案使用的類別檔案的資料夾。 特殊資料夾必須與中的類別檔案建立在生產環境，也`App_Code`開發環境上的資料夾必須複製到`App_Code`在實際執行上的資料夾。
 
@@ -154,7 +144,6 @@ Web 應用程式專案模型使用明確的編譯-專案的原始程式碼會編
 
 > [!NOTE]
 > 網站專案也可以使用明確的編譯。 未來的教學課程將探討如何明確地編譯的網站專案。
-
 
 ## <a name="summary"></a>總結
 

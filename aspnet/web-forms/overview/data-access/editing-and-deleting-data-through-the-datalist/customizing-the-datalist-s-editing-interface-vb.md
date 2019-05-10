@@ -8,12 +8,12 @@ ms.date: 10/30/2006
 ms.assetid: 718628e2-224c-455f-b33a-a41efd48d5a0
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/customizing-the-datalist-s-editing-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1c99ce1528b1a28a4ec470a05d62abef6d4bb888
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ead74bd23301e2e6a42b26c065664ffe158ead8f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59391854"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126017"
 ---
 # <a name="customizing-the-datalists-editing-interface-vb"></a>自訂 DataList 的編輯介面 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59391854"
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_40_VB.exe)或[下載 PDF](customizing-the-datalist-s-editing-interface-vb/_static/datatutorial40vb1.pdf)
 
 > 在本教學課程中，我們將建立更豐富的編輯介面的 DataList，當中包含 dropdownlist 進行並核取方塊。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -36,34 +35,27 @@ ms.locfileid: "59391854"
 
 在本教學課程中，我們將建立更豐富的編輯介面的 DataList，當中包含 dropdownlist 進行並核取方塊。 特別是，我們將在其中建立資料清單，列出產品資訊，並允許更新 s 產品名稱、 供應商、 類別和已停止的狀態 （請參閱 圖 1）。
 
-
 [![編輯介面包括文字方塊、 兩個 dropdownlist 進行，並核取方塊](customizing-the-datalist-s-editing-interface-vb/_static/image2.png)](customizing-the-datalist-s-editing-interface-vb/_static/image1.png)
 
 **圖 1**:編輯介面包含文字方塊中，兩個 dropdownlist 進行，並核取方塊 ([按一下以檢視完整大小的影像](customizing-the-datalist-s-editing-interface-vb/_static/image3.png))
-
 
 ## <a name="step-1-displaying-product-information"></a>步驟 1：顯示產品資訊
 
 我們可以建立 DataList s 可編輯介面之前，我們首先要建置的唯寫介面。 首先開啟`CustomizedUI.aspx`頁面上，從`EditDeleteDataList`資料夾並從設計工具中，DataList 加入頁面上，設定其`ID`屬性設`Products`。 從 DataList s 智慧標籤，建立新的 ObjectDataSource。 命名新 ObjectDataSource`ProductsDataSource`並將它設定為從中擷取資料`ProductsBLL`類別的`GetProducts`方法。 為先前可編輯的 DataList 教學課程我們將直接前往商業邏輯層更新已編輯的產品的資訊。 因此，設定下拉式清單中的 UPDATE、 INSERT、，然後刪除為 [（無）] 索引標籤。
 
-
 [![設定為 （無） 更新、 插入和刪除索引標籤的下拉式清單](customizing-the-datalist-s-editing-interface-vb/_static/image5.png)](customizing-the-datalist-s-editing-interface-vb/_static/image4.png)
 
 **圖 2**:設定更新、 插入和刪除索引標籤下拉式清單會列出為 （無） ([按一下以檢視完整大小的影像](customizing-the-datalist-s-editing-interface-vb/_static/image6.png))
 
-
 設定 ObjectDataSource 之後，Visual Studio 會建立預設`ItemTemplate`DataList 列出每個資料欄位的名稱和值傳回。 修改`ItemTemplate`使範本清單中的產品名稱`<h4>`項目和類別名稱、 供應商名稱、 價格和已停止的狀態。 此外，將 [編輯] 按鈕，以確保其`CommandName`屬性設為編輯。 宣告式標記為我`ItemTemplate`遵循：
-
 
 [!code-aspx[Main](customizing-the-datalist-s-editing-interface-vb/samples/sample1.aspx)]
 
 產品資訊使用配置上述標記&lt;h4&gt;產品的名稱和四個資料行的標題`<table>`其餘欄位。 `ProductPropertyLabel`並`ProductPropertyValue`中定義的 CSS 類別`Styles.css`，在先前的教學課程中討論過。 圖 3 顯示我們透過瀏覽器檢視時的進度。
 
-
 [![顯示名稱、 供應商、 類別、 已停止的狀態，以及每個產品的價格](customizing-the-datalist-s-editing-interface-vb/_static/image8.png)](customizing-the-datalist-s-editing-interface-vb/_static/image7.png)
 
 **圖 3**:顯示名稱、 供應商、 類別、 已停止的狀態，以及每個產品的價格 ([按一下以檢視完整大小的影像](customizing-the-datalist-s-editing-interface-vb/_static/image9.png))
-
 
 ## <a name="step-2-adding-the-web-controls-to-the-editing-interface"></a>步驟 2：將 Web 控制項新增至編輯介面
 
@@ -71,24 +63,19 @@ ms.locfileid: "59391854"
 
 若要自訂編輯介面，按一下 [編輯範本] 連結，從 DataList s 智慧標籤，然後選擇`EditItemTemplate`從下拉式清單中的選項。 新增至 DropDownList`EditItemTemplate`並將其`ID`至`Categories`。
 
-
 [![新增 DropDownList 類別](customizing-the-datalist-s-editing-interface-vb/_static/image11.png)](customizing-the-datalist-s-editing-interface-vb/_static/image10.png)
 
 **圖 4**:新增 DropDownList 類別 ([按一下以檢視完整大小的影像](customizing-the-datalist-s-editing-interface-vb/_static/image12.png))
 
-
 接下來，從 DropDownList s 智慧標籤，選取 [選擇資料來源] 選項，並建立名為新 ObjectDataSource `CategoriesDataSource`。 設定要使用這個 ObjectDataSource`CategoriesBLL`類別的`GetCategories()`方法 （請參閱 [圖 5]）。 接下來，DropDownList s 中的資料來源組態精靈會提示輸入要用於每個資料欄位`ListItem`s`Text`和`Value`屬性。 DropDownList 顯示`CategoryName`資料欄位並使用`CategoryID`做為值，如 圖 6 所示。
-
 
 [![建立名為 CategoriesDataSource 新 ObjectDataSource](customizing-the-datalist-s-editing-interface-vb/_static/image14.png)](customizing-the-datalist-s-editing-interface-vb/_static/image13.png)
 
 **圖 5**:建立新的 ObjectDataSource 具名`CategoriesDataSource`([按一下以檢視完整大小的影像](customizing-the-datalist-s-editing-interface-vb/_static/image15.png))
 
-
 [![設定 DropDownList 的顯示，且值欄位](customizing-the-datalist-s-editing-interface-vb/_static/image17.png)](customizing-the-datalist-s-editing-interface-vb/_static/image16.png)
 
 **圖 6**:設定 DropDownList 的顯示和值欄位 ([按一下以檢視完整大小的影像](customizing-the-datalist-s-editing-interface-vb/_static/image18.png))
-
 
 重複這一系列的步驟來建立 DropDownList 供應商。 設定`ID`針對至這個 DropDownList`Suppliers`並命名為其 ObjectDataSource `SuppliersDataSource`。
 
@@ -98,14 +85,11 @@ ms.locfileid: "59391854"
 
 放心地配置您隨心所欲的編輯介面。 我已選擇要使用的相同資料行的四個`<table>`版面配置從唯讀介面，為下列宣告式語法和螢幕擷取畫面說明：
 
-
 [!code-aspx[Main](customizing-the-datalist-s-editing-interface-vb/samples/sample2.aspx)]
-
 
 [![編輯介面是配置 Out Read-Only 介面](customizing-the-datalist-s-editing-interface-vb/_static/image20.png)](customizing-the-datalist-s-editing-interface-vb/_static/image19.png)
 
 **圖 7**:編輯介面是配置 Out Read-Only 介面 ([按一下以檢視完整大小的影像](customizing-the-datalist-s-editing-interface-vb/_static/image21.png))
-
 
 ## <a name="step-3-creating-the-editcommand-and-cancelcommand-event-handlers"></a>步驟 3：建立 EditCommand 和 CancelCommand 事件處理常式
 
@@ -113,16 +97,13 @@ ms.locfileid: "59391854"
 
 建立這些兩個事件處理常式，並讓它們使用下列程式碼：
 
-
 [!code-vb[Main](customizing-the-datalist-s-editing-interface-vb/samples/sample3.vb)]
 
 使用這些兩個事件處理常式的位置，按一下 [編輯] 按鈕顯示的編輯介面，並按一下 [取消] 按鈕為唯讀模式中傳回的已編輯的項目。 [圖 8] 顯示 DataList Chef Anton 的 Gumbo 混合的已按下 [編輯] 按鈕之後。 因為我們尚未加入任何資料繫結語法編輯介面，ve`ProductName`文字方塊為空白，`Discontinued`從選取的核取方塊未核取和第一個項目`Categories`和`Suppliers`dropdownlist 進行。
 
-
 [![按一下 [編輯] 按鈕會顯示編輯介面](customizing-the-datalist-s-editing-interface-vb/_static/image23.png)](customizing-the-datalist-s-editing-interface-vb/_static/image22.png)
 
 **圖 8**:按一下 [編輯] 按鈕顯示的編輯介面 ([按一下以檢視完整大小的影像](customizing-the-datalist-s-editing-interface-vb/_static/image24.png))
-
 
 ## <a name="step-4-adding-the-databinding-syntax-to-the-editing-interface"></a>步驟 4：將資料繫結語法新增至編輯介面
 
@@ -130,16 +111,13 @@ ms.locfileid: "59391854"
 
 指派`ProductName`資料欄位值為`ProductName`TextBox s`Text`屬性，`CategoryID`並`SupplierID`資料欄位值`Categories`和`Suppliers`dropdownlist 進行`SelectedValue`屬性，和`Discontinued`資料欄位值為`Discontinued`核取方塊的`Checked`屬性。 進行這些變更，透過設計工具，或是直接透過宣告式標記中之後, 重新瀏覽透過瀏覽器頁面，然後按一下 [編輯] 按鈕，Chef Anton s Gumbo 混合。 如 [圖 9] 所示，資料繫結語法已經新增目前的值到 TextBox、 dropdownlist 進行，並核取方塊。
 
-
 [![按一下 [編輯] 按鈕會顯示編輯介面](customizing-the-datalist-s-editing-interface-vb/_static/image26.png)](customizing-the-datalist-s-editing-interface-vb/_static/image25.png)
 
 **圖 9**:按一下 [編輯] 按鈕顯示的編輯介面 ([按一下以檢視完整大小的影像](customizing-the-datalist-s-editing-interface-vb/_static/image27.png))
 
-
 ## <a name="step-5-saving-the-user-s-changes-in-the-updatecommand-event-handler"></a>步驟 5：儲存使用者的變更 UpdateCommand 的事件處理常式
 
 當使用者編輯產品，並按一下 [更新] 按鈕，就會發生回傳和 DataList 的`UpdateCommand`引發事件。 在事件處理常式中，我們要讀取的值中的 Web 控制項從`EditItemTemplate`和與 BLL，若要在資料庫中的產品更新的介面。 因為我們在先前的教學課程中看到的 ve`ProductID`更新的產品是可透過存取`DataKeys`集合。 以程式設計方式參考使用的 Web 控制項，即可存取的使用者輸入欄位`FindControl("controlID")`，如下列程式碼所示：
-
 
 [!code-vb[Main](customizing-the-datalist-s-editing-interface-vb/samples/sample4.vb)]
 
@@ -147,7 +125,6 @@ ms.locfileid: "59391854"
 
 > [!NOTE]
 > 我已省略的例外狀況處理邏輯中加入[處理 BLL 和 DAL 層級例外狀況](handling-bll-and-dal-level-exceptions-vb.md)信守的程式碼，此範例中的教學課程已取得焦點。 作為練習，請完成本教學課程之後新增這項功能。
-
 
 ## <a name="step-6-handling-null-categoryid-and-supplierid-values"></a>步驟 6：處理 NULL CategoryID 和供應商編號值
 
@@ -157,23 +134,18 @@ Northwind 資料庫允許用於`NULL`的值`Products`表格 s`CategoryID`和`Sup
 
 進行這些變更，DataList s 中的 dropdownlist 進行標記之後`EditItemTemplate`看起來應該如下所示：
 
-
 [!code-aspx[Main](customizing-the-datalist-s-editing-interface-vb/samples/sample5.aspx)]
 
 > [!NOTE]
 > 靜態`ListItem`s 可以新增至 DropDownList 透過設計工具，或直接透過宣告式語法。 加入以代表資料庫的 DropDownList 項目時`NULL`值，請務必新增`ListItem`透過宣告式語法。 如果您使用`ListItem`設計工具中的集合編輯器，將會省略產生的宣告式語法`Value`一併設定時指派為空白的字串，建立類似的宣告式標記： `<asp:ListItem>(None)</asp:ListItem>`。 雖然這看起來無害，遺漏`Value`會導致使用 DropDownList`Text`在其位置中的屬性值。 這表示，如果這`NULL``ListItem`已選取，（無） 的值將會嘗試指派給 [product] 資料欄位 (`CategoryID`或`SupplierID`，在本教學課程)，從而導致例外狀況。 藉由明確將`Value=""`，則`NULL`值會指派給產品資料欄位`NULL``ListItem`已選取。
 
-
 請花一點時間檢閱我們透過瀏覽器的進度。 當您編輯產品，請注意，`Categories`和`Suppliers`dropdownlist 進行這兩個具有 （無） 開頭的 DropDownList 的選項。
-
 
 [![類別和供應商 dropdownlist 進行包含 （無） 選項](customizing-the-datalist-s-editing-interface-vb/_static/image29.png)](customizing-the-datalist-s-editing-interface-vb/_static/image28.png)
 
 **[圖 10**:`Categories`並`Suppliers`dropdownlist 進行包含 （無）] 選項 ([按一下以檢視完整大小的影像](customizing-the-datalist-s-editing-interface-vb/_static/image30.png))
 
-
 儲存 （無） 選項為資料庫`NULL`值，我們需要回到`UpdateCommand`事件處理常式。 變更`categoryIDValue`並`supplierIDValue`是可為 null 的整數，並將其指派的值以外的其他變數`Nothing`才 DropDownList 的`SelectedValue`不是空字串：
-
 
 [!code-vb[Main](customizing-the-datalist-s-editing-interface-vb/samples/sample6.vb)]
 

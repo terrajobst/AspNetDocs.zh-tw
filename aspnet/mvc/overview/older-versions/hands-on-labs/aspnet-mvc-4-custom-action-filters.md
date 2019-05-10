@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 969ab824-1b98-4552-81fe-b60ef5fc6887
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 32587c7b0fd3075cd46678922b40bda2019f3a26
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: eaeb32180f79fabf557cbc38ff067eb26b47fea7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381129"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129756"
 ---
 # <a name="aspnet-mvc-4-custom-action-filters"></a>ASP.NET MVC 4 自訂動作篩選
 
@@ -76,11 +76,10 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 > [!NOTE]
 > 每個練習會伴隨**結束**包含完成練習之後，您應該取得所產生的方案資料夾。 如果您需要的所有練習所使用的其他說明，您可以使用此解決方案作為指南。
 
-
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Logging_Actions"></a>
-### <a name="exercise-1-logging-actions"></a>練習 1:記錄動作
+### <a name="exercise-1-logging-actions"></a>練習 1：記錄動作
 
 在此練習中，您將學習如何使用 ASP.NET MVC 4 篩選條件提供者建立自訂動作記錄篩選條件。 針對該目的您將會套用至 MusicStore 網站將選取的控制器中記錄所有活動的記錄篩選條件。
 
@@ -95,7 +94,6 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 > - **例外狀況**篩選器，它會執行處理的動作方法，開始於授權篩選條件，終止與結果的執行中的某處擲回的例外狀況時。 例外狀況篩選條件可以用於工作，例如記錄或顯示錯誤頁面。
 > 
 > 如需篩選器提供者的詳細資訊請造訪此 MSDN 連結: ([https://msdn.microsoft.com/library/dd410209.aspx](https://msdn.microsoft.com/library/dd410209.aspx))。
-
 
 <a id="AboutLoggingFeature"></a>
 
@@ -132,7 +130,6 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 > - **OnResultExecuted**(ResultExecutedContext filterContext):之後 （之後會呈現檢視），則會執行結果。
 > 
 > 由衍生類別覆寫任何一種方法時，您可以執行自己的篩選程式碼。
-
 
 1. 開啟**開始**解決方案位於**\Source\Ex01-LoggingActions\Begin**資料夾。
 
@@ -219,7 +216,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Managing_Multiple_Action_Filters"></a>
-### <a name="exercise-2-managing-multiple-action-filters"></a>練習 2:管理多個動作篩選條件
+### <a name="exercise-2-managing-multiple-action-filters"></a>練習 2：管理多個動作篩選條件
 
 在這個練習中您會將第二個的自訂動作篩選條件新增至 StoreController 類別，並定義這兩個篩選會執行所在的特定順序。 然後，您將會更新全域註冊篩選條件的程式碼。
 
@@ -352,7 +349,6 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 
 > [!NOTE]
 > 此外，您可以在其中部署此應用程式以 Windows Azure 網站的下列[附錄 b:發行 ASP.NET MVC 4 應用程式使用 Web Deploy](#AppendixB)。
-
 
 ---
 

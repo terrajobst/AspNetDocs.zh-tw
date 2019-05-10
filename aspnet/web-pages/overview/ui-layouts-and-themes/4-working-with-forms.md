@@ -8,12 +8,12 @@ ms.date: 02/10/2014
 ms.assetid: f3f4b8c8-e8f6-4474-ad94-69228a6c01ee
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
-ms.openlocfilehash: 680739cbcf54bc9ca7a3bd8167d043ff537eaad5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ec5ad784978b2d5191d59398fc4b5ed25ae516fb
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59417529"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128396"
 ---
 # <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>使用 ASP.NET Web Pages (Razor) 網站中的 HTML 表單
 
@@ -42,7 +42,6 @@ ms.locfileid: "59417529"
 >   
 > 
 > 本教學課程也適用於 ASP.NET Web Pages 2。
-
 
 ## <a name="creating-a-simple-html-form"></a>建立簡單的 HTML 表單
 
@@ -89,7 +88,6 @@ ms.locfileid: "59417529"
 > 它是個不錯的主意，若要使用 HTML 編碼的隨時顯示字串 （輸入） 您從使用者取得。 如果沒有，使用者可以嘗試取得您的網頁來執行惡意指令碼，或執行其他動作，對您的站台安全性的危害，或這不只是您所預期。 (這是特別重要，如果您接受使用者輸入、 將它儲存至，並稍後再顯示&#8212;例如部落格註解、 使用者檢閱，或像這樣。)
 > 
 > 若要避免這些問題，ASP.NET Web Pages 會自動進行 HTML 編碼的任何文字內容，您的程式碼輸出。 例如，當您顯示的變數或使用下列程式碼的運算式內容`@MyVar`，ASP.NET Web Pages 會自動將編碼的輸出。
-
 
 ## <a name="validating-user-input"></a>驗證使用者輸入
 

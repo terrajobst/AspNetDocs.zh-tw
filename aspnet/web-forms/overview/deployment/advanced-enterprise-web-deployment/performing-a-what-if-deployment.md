@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: c711b453-01ac-4e65-a48c-93d99bf22e58
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: a222aa6bf52ee72e6a0f4ac5503b4b4f78d294fb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 73a0e038cc0d4ebae0ffc8ed3fd2de4c9dad673c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414318"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127070"
 ---
 # <a name="performing-a-what-if-deployment"></a>執行 "What If" 部署
 
@@ -22,7 +22,6 @@ ms.locfileid: "59414318"
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主題描述如何執行 「 假設 」 （或模擬） 使用網際網路資訊服務 (IIS) Web Deployment Tool (Web Deploy) 與 VSDBCMD 部署。 這可讓您實際部署您的應用程式之前，判斷特定的目標環境上部署邏輯的影響。
-
 
 本主題是構成一系列以名為 Fabrikam，Inc.的虛構公司的企業部署需求為基礎的教學課程的一部分本教學課程系列會使用範例解決方案&#x2014;[連絡管理員解決方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;來代表實際的層級的複雜性，包括 ASP.NET MVC 3 應用程式時，Windows Communication 的 web 應用程式Foundation (WCF) 服務與資料庫專案。
 
@@ -42,31 +41,23 @@ Web Deploy 包含可讓您執行中的部署 「 假設 」 的功能 （或試�
 
 如果您直接使用 MSDeploy.exe，您可以執行"what if"部署加上 **– whatif**旗標，以您的命令。 比方說，若要評估您將 ContactManager.Mvc.zip 套件部署至預備環境會發生什麼事，MSDeploy 命令看起來應該像這樣：
 
-
 [!code-console[Main](performing-a-what-if-deployment/samples/sample1.cmd)]
-
 
 當您滿意您 「 假設 」 部署的結果時，您可以移除 **– whatif**旗標，以執行即時的部署。
 
 > [!NOTE]
 > 如需有關 MSDeploy.exe 命令列選項的詳細資訊，請參閱[Web Deploy 作業設定](https://technet.microsoft.com/library/dd569089(WS.10).aspx)。
 
-
 如果您使用 *。 deploy.cmd*檔案中，您可以執行"what if"部署包括 **/t**旗標 （試用模式） 旗標，而非 **/y**旗標 （"yes"或更新模式）您的命令。 例如，若要評估您部署 ContactManager.Mvc.zip 封裝執行會發生什麼事 *。 deploy.cmd*檔案中，您的命令應該看起來像這樣：
-
 
 [!code-console[Main](performing-a-what-if-deployment/samples/sample2.cmd)]
 
-
 當您滿意您的 「 試用模式 」 部署的結果時，您可以取代 **/t**旗標進行 **/y**旗標，以執行即時的部署：
-
 
 [!code-console[Main](performing-a-what-if-deployment/samples/sample3.cmd)]
 
-
 > [!NOTE]
 > 如需有關命令列選項 *。 deploy.cmd*檔，請參閱[How to:安裝部署套件使用 deploy.cmd 檔案](https://msdn.microsoft.com/library/ff356104.aspx)。 如果您執行 *。 deploy.cmd*檔案而不指定任何旗標，命令提示字元會顯示可用的旗標的清單。
-
 
 ## <a name="performing-a-what-if-deployment-for-databases"></a>執行"What If"部署資料庫
 
@@ -80,12 +71,9 @@ Web Deploy 包含可讓您執行中的部署 「 假設 」 的功能 （或試�
 > [!NOTE]
 > 如果您要部署.deploymanifest 檔案，而不是.dbschema 檔案的行為 **/dd**參數是複雜多了。 基本上，VSDBCMD 會略過的值 **/dd**如果.deploymanifest 檔案包含切換**DeployToDatabase**值的項目**True**。 [部署資料庫專案](../web-deployment-in-the-enterprise/deploying-database-projects.md)描述完整的這個行為。
 
-
 例如，若要產生的部署指令碼**ContactManager**資料庫而不實際部署的資料庫，VSDBCMD 命令應該看起來像這樣：
 
-
 [!code-console[Main](performing-a-what-if-deployment/samples/sample4.cmd)]
-
 
 VSDBCMD 是差異資料庫部署工具，並因此產生部署指令碼是以動態方式以包含所有的 SQL 命令需要更新目前資料庫中，如果存在的話，指定的結構描述。 檢閱部署指令碼是一個實用的方式，來判斷項目會影響您的部署會對目前的資料庫和它所包含的資料。 例如，您可以判斷：
 
@@ -107,29 +95,21 @@ VSDBCMD 是差異資料庫部署工具，並因此產生部署指令碼是以動
 
 *Publish.proj*檔會示範如何可以這麼做。 首先，您必須建立要儲存 「 假設 」 值的屬性：
 
-
 [!code-xml[Main](performing-a-what-if-deployment/samples/sample5.xml)]
-
 
 在此情況下，您已建立名為的屬性**WhatIf**預設值是**false**。 使用者可以覆寫此值的屬性設定為 **，則為 true**在命令列參數中，您很快會看到。
 
 下一個階段是參數化 Web Deploy 和 VSDBCMD 命令，讓旗標會反映**WhatIf**屬性值。 例如下, 一個目標 (取自*Publish.proj*檔案，並簡化) 執行 *。 deploy.cmd*將 web 套件部署的檔案。 根據預設，此命令包含 **/Y**參數 （"yes"或更新模式）。 如果**WhatIf**設為 **，則為 true**，將會取代運算式 **/T** （試用版或 「 假設 」 模式） 的參數。
 
-
 [!code-xml[Main](performing-a-what-if-deployment/samples/sample6.xml)]
-
 
 同樣地下, 一個目標會將資料庫部署中，使用 VSDBCMD 公用程式。 根據預設， **/dd**未包含參數。 這表示 VSDBCMD 會產生部署指令碼，但並不會部署資料庫&#x2014;也就是說，「 假設 」 案例。 如果**WhatIf**屬性未設定為 **，則為 true**，則 **/dd**會加入參數，而且 VSDBCMD 會將資料庫部署。
 
-
 [!code-xml[Main](performing-a-what-if-deployment/samples/sample7.xml)]
-
 
 您可以使用相同的方法，專案檔中的所有相關的命令參數化。 當您想要執行 「 假設 」 部署時，您可以接著只需要提供**WhatIf**屬性值，從命令列：
 
-
 [!code-console[Main](performing-a-what-if-deployment/samples/sample8.cmd)]
-
 
 如此一來，您可以執行"what if"部署在單一步驟中所有專案元件。
 

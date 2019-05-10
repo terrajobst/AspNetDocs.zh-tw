@@ -8,17 +8,16 @@ ms.date: 10/05/2011
 ms.assetid: 1bcf9a1c-ed34-4ed0-ab91-253df08fc6ff
 msc.legacyurl: /web-forms/videos/vs-2005
 msc.type: chapter
-ms.openlocfilehash: 25d9cc02ef9b0e8f068c9e84469d9661b06f0b28
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7bfa41c62ece2c5ac34fc290560ee16a82248de0
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381103"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131502"
 ---
 # <a name="visual-studio-2005"></a>Visual Studio 2005
 
 > 如何使用 Visual Studio 2005 Team System，增益集來執行測試、 部署和其他工作。
-
 
 - [使用 Team System 的單元測試簡介](introduction-to-unit-testing-with-team-system.md)
 - [使用 Team System 測試 Web 應用程式的簡介](introduction-to-testing-web-applications-with-team-system.md)

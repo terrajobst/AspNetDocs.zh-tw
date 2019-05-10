@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 25ebaf1f-5a9f-423d-98c7-1d694e93664f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c74e829c85ae3b57d54a62aeb79388f1131e7184
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cc27e44ae42865eebbf67da69dbe1aa43a57a4d7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398198"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128173"
 ---
 # <a name="triggering-an-animation-in-another-control-vb"></a>觸發另一個控制項中的動畫 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59398198"
 [下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation8.vb.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation8VB.pdf)
 
 > 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 一般而言，啟動動畫時觸發相同的控制項與使用者互動。 不過也可以使用一個控制項，然後動畫互動另一個控制項。
-
 
 ## <a name="overview"></a>總覽
 
@@ -55,7 +54,6 @@ ms.locfileid: "59398198"
 [!code-aspx[Main](triggering-an-animation-in-another-control-vb/samples/sample6.aspx)]
 
 請注意特殊個別動畫顯示的順序。 首先，動畫執行後，便會停用按鈕。 因為沒有任何`AnimationTarget`屬性中`<EnableAction>`項目，這個動畫會套用至原始的控制項: [] 按鈕。 下面兩個動畫步驟都應該以平行方式執行 (`<Parallel>`項目)。 兩者都有其`AnimationTarget`屬性設定為`"Panel1"`，因此以動畫顯示的窗格中，不是按鈕。
-
 
 [![在按鈕上的按一下滑鼠開始面板動畫](triggering-an-animation-in-another-control-vb/_static/image2.png)](triggering-an-animation-in-another-control-vb/_static/image1.png)
 

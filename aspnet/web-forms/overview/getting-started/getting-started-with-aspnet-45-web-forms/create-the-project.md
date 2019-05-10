@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 2ce36f78-8ecb-4ab1-b748-6d0ab633ea3f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: 9e2cd1beca03b81140b9d58c5e43dbf7c6b8808b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1819704a4cfd3e6b82de1d8db916e729459d244f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393050"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130917"
 ---
 # <a name="create-the-project"></a>建立專案
 
@@ -22,7 +22,6 @@ ms.locfileid: "59393050"
 [下載 Wingtip Toys 範例專案 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下載電子書 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > 本系列教學課程將教導您建置使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 的 ASP.NET Web Forms 應用程式的基本概念。 Visual Studio 2013[含有 C# 原始程式碼專案](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)隨附了本教學課程系列。
-
 
 在本教學課程中，您將建立、 檢閱，和執行預設的專案在 Visual Studio 中，可讓您熟悉的 ASP.NET 功能。 此外，您將檢閱 Visual Studio 環境。
 
@@ -83,7 +82,6 @@ ms.locfileid: "59393050"
 > 
 > - [ASP.NET Web API](../../../../web-api/index.md) -用於建置 HTTP 服務並擴及各種用戶端，包括瀏覽器和行動裝置的架構。
 > - [ASP.NET SignalR](../../../../signalr/index.md) -簡化開發即時 web 功能的程式庫。
-
 
 ### <a name="reviewing-the-project"></a>檢閱專案
 

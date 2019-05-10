@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 84c7baca-1c54-4c44-8f52-4282122d6acb
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 86781a1f46ce0c01a5d70b1f0cf8a81f3f96a032
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 15c9d4dcb9e2c6b9f6adf54d65d15737b32cca3b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405920"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129746"
 ---
 # <a name="aspnet-mvc-4-dependency-injection"></a>ASP.NET MVC 4 相依性插入
 
@@ -57,7 +57,6 @@ ms.locfileid: "59405920"
 > [!NOTE]
 > 使用抽象 Factory 設計模式時，有時比較相依性插入，但這兩種方法之間的些微差異。 DI 有背後努力解決相依性呼叫之處理站和已註冊的服務的架構。
 
-
 既然您了解相依性插入模式時，您將學習在這個實驗室中如何套用 ASP.NET MVC 4 中。 您會開始使用中的相依性插入**控制器**来包含的資料庫存取服務。 接下來，您會將套用至相依性插入**檢視**來取用服務，並顯示資訊。 最後，您就可以擴充 DI ASP.NET MVC 4 的篩選條件，將方案中的自訂動作篩選條件。
 
 在這個實際操作實驗室中，您將了解如何：
@@ -69,7 +68,6 @@ ms.locfileid: "59405920"
 
 > [!NOTE]
 > 這個實驗室用於 Unity.Mvc3 NuGet 套件相依性解析，但是可以採用任何相依性插入架構，才能使用 ASP.NET MVC 4。
-
 
 <a id="Prerequisites"></a>
 
@@ -107,13 +105,12 @@ ms.locfileid: "59405920"
 > [!NOTE]
 > 每個練習會伴隨**結束**包含完成練習之後，您應該取得所產生的方案資料夾。 如果您需要的所有練習所使用的其他說明，您可以使用此解決方案作為指南。
 
-
 估計的時間才能完成這個實驗室：**30 分鐘**。
 
 <a id="Exercise1"></a>
 
 <a id="Exercise_1_Injecting_a_Controller"></a>
-### <a name="exercise-1-injecting-a-controller"></a>練習 1:插入控制器
+### <a name="exercise-1-injecting-a-controller"></a>練習 1：插入控制器
 
 在此練習中，您將學習如何在 ASP.NET MVC 控制器中使用相依性插入，藉由整合 Unity 使用 NuGet 套件。 基於這個理由，您將會包含您 MvcMusicStore 控制站，以區隔邏輯與資料存取服務。 服務會建立新的相依性，在控制器建構函式，會搭配使用相依性插入來解決**Unity**。
 
@@ -137,12 +134,10 @@ MVC Music 市集現在提供開始方案中包含管理名為的存放控制器�
 > 
 > 若要解決相依性，控制器必須抽象的處理站 （會傳回指定之型別的任何物件的類別） 所建立。
 
-
 [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample2.cs)]
 
 > [!NOTE]
 > 因為沒有宣告沒有無參數建構函式，而不需要傳送的服務物件，建立 StoreController 嘗試類別時，您會收到錯誤。
-
 
 <a id="Ex1Task1"></a>
 
@@ -181,7 +176,6 @@ MVC Music 市集現在提供開始方案中包含管理名為的存放控制器�
 > Unity.Mvc3 套件專為 ASP.NET MVC 3，但它是與 ASP.NET MVC 4 完全相容。
 > 
 > Unity 執行個體是使用選擇性支援輕量型、 可擴充的相依性插入容器，然後輸入攔截。 它是任何類型的.NET 應用程式中使用的一般用途容器。 它提供包括相依性插入的機制中找到的所有一般功能： 建立物件，藉由指定相依性，在執行階段和彈性，延後至容器的元件組態需求的抽象概念。
-
 
 1. 安裝**Unity.Mvc3**中的 NuGet 套件**MvcMusicStore**專案。 若要這樣做，請開啟**Package Manager Console**從**檢視** | **其他 Windows**。
 2. 執行下列命令。
@@ -247,7 +241,7 @@ MVC Music 市集現在提供開始方案中包含管理名為的存放控制器�
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Injecting_a_View"></a>
-### <a name="exercise-2-injecting-a-view"></a>練習 2:插入檢視
+### <a name="exercise-2-injecting-a-view"></a>練習 2：插入檢視
 
 在此練習中，您將學習如何在 ASP.NET MVC 4 的新功能與檢視中的相依性插入用於 Unity 的整合。 若要這樣做，您會呼叫自訂服務存放區瀏覽 檢視中，會顯示一則訊息和下列映像內。
 
@@ -310,7 +304,6 @@ MVC Music 市集現在提供開始方案中包含管理名為的存放控制器�
 > 
 > 
 > [!code-csharp[Main](aspnet-mvc-4-dependency-injection/samples/sample11.cs)]
-
 
 1. 建立 /**Factory**專案的根資料夾中的資料夾。
 2. 包含**CustomViewPageActivator.cs**至您的方案，從 **/來源/資產/** 來**Factory**資料夾。 若要這樣做，請以滑鼠右鍵按一下 **/Factories**資料夾中，選取**新增 |現有的項目**，然後選取**CustomViewPageActivator.cs**。 這個類別會實作**IViewPageActivator**來保存 Unity 容器的介面。

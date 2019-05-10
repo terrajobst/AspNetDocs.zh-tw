@@ -8,19 +8,18 @@ ms.date: 06/27/2014
 ms.assetid: 5fbfefad-a17a-4c46-8646-f1ccd154cd56
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-containment-in-web-api-22
 msc.type: authoredcontent
-ms.openlocfilehash: fed55a4bf01e82af5167018f03e28a6274fcda78
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 50050e40c4c42bf6d769d077c27864ee6417d4db
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382194"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131633"
 ---
 # <a name="containment-in-odata-v4-using-web-api-22"></a>內含項目在 OData v4 中使用 Web API 2.2
 
 由 Jinfu Tan
 
 > 傳統上，如果它封裝在實體集，可能只能存取實體。 但 OData v4 提供兩個額外的選項，單一和內含項目，這兩種 WebAPI 2.2 的支援。
-
 
 本主題說明如何在 WebApi 2.2 中的 OData 端點中定義將內含項目。 如需有關內含項目的詳細資訊，請參閱[內含項目即將與 OData v4](https://blogs.msdn.com/b/odatateam/archive/2014/03/13/containment-is-coming-with-odata-v4.aspx)。 若要建立 Web API OData V4 端點，請參閱[建立 OData v4 端點使用 ASP.NET Web API 2.2](create-an-odata-v4-endpoint.md)。
 

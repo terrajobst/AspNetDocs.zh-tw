@@ -8,12 +8,12 @@ ms.date: 06/26/2007
 ms.assetid: d191a204-d7ea-458d-b81c-0b9049ecb55f
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d1809c869253ecb454e427a5092015a69009da5c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 94e432815d5c597f7e98a0059e2b1cf9add2953b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386940"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134646"
 ---
 # <a name="batch-updating-vb"></a>批次更新 (VB)
 
@@ -23,24 +23,20 @@ ms.locfileid: "59386940"
 
 > 了解如何更新單一作業中的多個資料庫記錄。 在使用者介面層，我們會建置的 GridView，其中每個資料列都可以讓您編輯。 資料存取層中，我們換行以確保所有的更新成功，或所有更新會都回復在交易內的多個更新作業的內容。
 
-
 ## <a name="introduction"></a>簡介
 
 在 [前述教學課程](wrapping-database-modifications-within-a-transaction-vb.md)我們了解如何擴充資料的存取層，來新增的資料庫交易支援。 資料庫交易保證一系列的資料修改陳述式會被視為一個不可部分完成的作業，可確保所有修改將會都失敗，或所有將會成功。 有了這個低階 DAL 功能的方式，我們重新已準備好把焦點轉到建立批次資料修改介面。
 
 在本教學課程中，我們將建置的 GridView，其中每個資料列是可編輯 （請參閱 圖 1）。 由於不需要編輯的資料行時，會在其編輯介面上，該處 s 呈現每個資料列，更新和 [取消] 按鈕。 相反地，有兩個更新的產品按鈕在頁面上，按一下時，列舉的 GridView 資料列，並更新資料庫。
 
-
 [![在 gridview 裡的每個資料列是可編輯](batch-updating-vb/_static/image1.gif)](batch-updating-vb/_static/image1.png)
 
 **圖 1**:在 gridview 裡的每個資料列是可編輯 ([按一下以檢視完整大小的影像](batch-updating-vb/_static/image2.png))
-
 
 讓 s 開始 ！
 
 > [!NOTE]
 > 在 [執行批次更新](../editing-and-deleting-data-through-the-datalist/performing-batch-updates-vb.md)教學課程中我們建立批次的編輯介面使用 DataList 控制項。 不同於先前的其中一個，會使用 GridView 的本教學課程中，批次執行更新時的交易範圍內。 完成本教學課程之後我鼓勵您返回先前的教學課程，並加以更新才能使用資料庫交易相關功能加入在先前的教學課程。
-
 
 ## <a name="examining-the-steps-for-making-all-gridview-rows-editable"></a>檢查進行所有的 GridView 資料列的可編輯的步驟
 
@@ -56,27 +52,21 @@ ms.locfileid: "59386940"
 
 我們會擔心建立 GridView 之前所在的資料列都可以編輯，讓 s 首先會只顯示產品資訊。 開啟`BatchUpdate.aspx`頁面中`BatchData`資料夾，然後從 [工具箱] 拖曳至設計工具拖曳的 GridView。 設定 GridView s`ID`要`ProductsGrid`，並從它的智慧標籤，選擇 繫結至名為新 ObjectDataSource `ProductsDataSource`。 設定要擷取其資料從 ObjectDataSource`ProductsBLL`類別的`GetProducts`方法。
 
-
 [![設定使用 ProductsBLL 類別 ObjectDataSource](batch-updating-vb/_static/image2.gif)](batch-updating-vb/_static/image3.png)
 
 **圖 2**:設定要使用 ObjectDataSource`ProductsBLL`類別 ([按一下以檢視完整大小的影像](batch-updating-vb/_static/image4.png))
-
 
 [![擷取產品的資料使用 GetProducts 方法](batch-updating-vb/_static/image3.gif)](batch-updating-vb/_static/image5.png)
 
 **圖 3**:擷取產品使用資料`GetProducts`方法 ([按一下以檢視完整大小的影像](batch-updating-vb/_static/image6.png))
 
-
 GridView，之類的 ObjectDataSource 的修改功能專為是每個資料列的基礎。 若要更新的一組記錄，我們必須撰寫的程式碼的批次資料，並將它傳遞給 BLL，ASP.NET 頁面 s 程式碼後置類別中。 因此，設定下拉式清單中之 ObjectDataSource 更新、 插入和刪除的索引標籤，為 （無）。 按一下 完成 以完成精靈。
-
 
 [![設定下拉式清單中更新、 插入和刪除 （無） 索引標籤](batch-updating-vb/_static/image4.gif)](batch-updating-vb/_static/image7.png)
 
 **圖 4**:設定下拉式清單中更新、 插入和刪除索引標籤為 （無） ([按一下以檢視完整大小的影像](batch-updating-vb/_static/image8.png))
 
-
 完成設定資料來源精靈之後，ObjectDataSource s 宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](batch-updating-vb/samples/sample1.aspx)]
 
@@ -87,14 +77,11 @@ GridView，之類的 ObjectDataSource 的修改功能專為是每個資料列的
 > [!NOTE]
 > 我們已探索的建立和自訂中的 TemplateFields[自訂資料修改介面](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb.md)教學課程。 我們將逐步解說的步驟，將 BoundFields 及其轉換成 TemplateFields 和定義其編輯介面中其`ItemTemplate`s，但如果卡住或需要重新整理程式，不要遲疑，立即以回頭參考此先前的教學課程。
 
-
 從 GridView s 智慧標籤，按一下 編輯資料行連結以開啟 欄位 對話方塊。 接下來，選取每個欄位，並按一下 TemplateField 連結轉換此欄位。
-
 
 ![將現有的 BoundFields 及其轉換成 TemplateFields](batch-updating-vb/_static/image5.gif)
 
 **圖 5**:將現有的 BoundFields 及其轉換成 TemplateFields
-
 
 現在，每個欄位都為 TemplateField，我們準備好要移動的編輯介面從`EditItemTemplate`s `ItemTemplate` s。
 
@@ -106,21 +93,17 @@ GridView，之類的 ObjectDataSource 的修改功能專為是每個資料列的
 
 接下來，新增至 RequiredFieldValidator`ItemTemplate`以確保使用者提供的值，針對每個產品 s 的名稱。 設定`ControlToValidate`ProductName，屬性`ErrorMessage`屬性，您必須提供產品的名稱。 而`Text`屬性設\*。 進行這些新增項目後`ItemTemplate`，您的畫面應該看起來會類似 圖 6。
 
-
 [![ProductName TemplateField 現在包含文字方塊和 RequiredFieldValidator](batch-updating-vb/_static/image6.gif)](batch-updating-vb/_static/image9.png)
 
 **圖 6**:`ProductName` TemplateField 現在包含一個文字方塊和 RequiredFieldValidator ([按一下以檢視完整大小的影像](batch-updating-vb/_static/image10.png))
-
 
 針對`UnitPrice`編輯介面，開始藉由複製文字方塊中的，從`EditItemTemplate`至`ItemTemplate`。 接下來，將 $ 前面的文字方塊和設定其`ID`UnitPrice 屬性並將其`Columns`8 的屬性。
 
 也將新增至 CompareValidator `UnitPrice` s`ItemTemplate`以確保使用者輸入的值是有效的貨幣值大於或等於到美金 $0.00 元。 設定驗證程式 s `ControlToValidate` UnitPrice 屬性其`ErrorMessage`屬性，您必須輸入有效的貨幣值。 請省略任何貨幣符號。，其`Text`屬性，以\*、 其`Type`屬性設`Currency`、 其`Operator`屬性設`GreaterThanEqual`，並將其`ValueToCompare`屬性設為 0。
 
-
 [![新增 CompareValidator，以確保價格輸入為非負數貨幣值](batch-updating-vb/_static/image7.gif)](batch-updating-vb/_static/image11.png)
 
 **圖 7**:新增 CompareValidator，以確保價格輸入為非負數貨幣值 ([按一下以檢視完整大小的影像](batch-updating-vb/_static/image12.png))
-
 
 針對`Discontinued`TemplateField，您可以使用已經定義中的核取方塊`ItemTemplate`。 只要將設定其`ID`Discontinued 至及其`Enabled`屬性設`True`。
 
@@ -131,51 +114,39 @@ GridView，之類的 ObjectDataSource 的修改功能專為是每個資料列的
 > [!NOTE]
 > [自訂資料修改介面](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb.md)教學課程包含自訂範本以包含相對於文字方塊 dropdownlist 進行更徹底且更完整討論。 這裡的步驟完成時，他們會看到 tersely。 如建立和設定的分類 DropDownList 需深入了解，請參閱上一步[自訂資料修改介面](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb.md)教學課程。
 
-
 從工具箱拖曳 DropDownList `CategoryName` TemplateField s `ItemTemplate`，將其`ID`至`Categories`。 此時我們會通常定義 dropdownlist 進行的資料來源，透過它的智慧標籤，建立新的 ObjectDataSource。 不過，這會將新增內的 ObjectDataSource `ItemTemplate`，從而導致每個 GridView 資料列所建立的 ObjectDataSource 執行個體。 相反地，讓建立 ObjectDataSource GridView 的 TemplateFields 之外。 結束範本編輯，並從 [工具箱] 拖曳至設計工具下方拖曳 ObjectDataSource `ProductsDataSource` ObjectDataSource。 名稱的新 ObjectDataSource`CategoriesDataSource`並將它設定為使用`CategoriesBLL`類別的`GetCategories`方法。
-
 
 [![設定使用 CategoriesBLL 類別 ObjectDataSource](batch-updating-vb/_static/image8.gif)](batch-updating-vb/_static/image13.png)
 
 **圖 8**:設定要使用 ObjectDataSource`CategoriesBLL`類別 ([按一下以檢視完整大小的影像](batch-updating-vb/_static/image14.png))
 
-
 [![擷取使用 GetCategories 方法的類別目錄資料](batch-updating-vb/_static/image9.gif)](batch-updating-vb/_static/image15.png)
 
 **圖 9**:擷取類別目錄資料使用`GetCategories`方法 ([按一下以檢視完整大小的影像](batch-updating-vb/_static/image16.png))
 
-
 由於這個 ObjectDataSource 只是用以擷取資料，設定下拉式清單中的 UPDATE 和 DELETE 的索引標籤為 （無）。 按一下 完成 以完成精靈。
-
 
 [![設定下拉式清單中的更新和刪除索引標籤，為 （無）](batch-updating-vb/_static/image10.gif)](batch-updating-vb/_static/image17.png)
 
 **圖 10**:設定下拉式清單中的更新和刪除索引標籤為 （無） ([按一下以檢視完整大小的影像](batch-updating-vb/_static/image18.png))
 
-
 在精靈中，完成後`CategoriesDataSource`s 宣告式標記應該如下所示：
-
 
 [!code-aspx[Main](batch-updating-vb/samples/sample2.aspx)]
 
 具有`CategoriesDataSource`建立並設定，回到`CategoryName`TemplateField 的`ItemTemplate`並從 DropDownList s 智慧標籤，按一下 選擇資料來源連結。 在 [資料來源組態精靈] 中，選取`CategoriesDataSource`從第一個下拉式清單選項，然後選擇`CategoryName`用於顯示和`CategoryID`做為值。
 
-
 [![繫結至 CategoriesDataSource 的 DropDownList](batch-updating-vb/_static/image11.gif)](batch-updating-vb/_static/image19.png)
 
 **圖 11**:繫結至 DropDownList `CategoriesDataSource` ([按一下以檢視完整大小的影像](batch-updating-vb/_static/image20.png))
 
-
 此時`Categories`DropDownList 列出所有類別，但它不會還會自動選取適當的類別，繫結至 GridView 資料列的產品。 若要這麼做我們需要設定`Categories`DropDownList s`SelectedValue`產品 s`CategoryID`值。 按一下 從 DropDownList s 智慧標籤的 編輯資料繫結 連結，並將產生關聯`SelectedValue`屬性與`CategoryID`資料欄位，如 圖 12 所示。
-
 
 ![將產品的 CategoryID 值繫結 DropDownList 的 SelectedValue 屬性](batch-updating-vb/_static/image12.gif)
 
 **圖 12**:繫結產品 s `CategoryID` DropDownList s 值`SelectedValue`屬性
 
-
 一個過去的問題會維持： 有的產品不 t`CategoryID`值，然後在資料繫結陳述式上指定`SelectedValue`會導致例外狀況。 這是因為 DropDownList 包含類別的項目，而且不提供這些產品的選項`NULL`資料庫值`CategoryID`。 若要解決此問題，將設定 DropDownList s`AppendDataBoundItems`屬性，以`True`並將新的項目新增至下拉式清單中，省略`Value`從宣告式語法的屬性。 也就是確定`Categories`DropDownList s 宣告式語法看起來如下：
-
 
 [!code-aspx[Main](batch-updating-vb/samples/sample3.aspx)]
 
@@ -184,32 +155,25 @@ GridView，之類的 ObjectDataSource 的修改功能專為是每個資料列的
 > [!NOTE]
 > 還有潛在的效能和延展性問題這裡值得一提的。 因為每個資料列有使用 DropDownList`CategoriesDataSource`當做其資料來源，`CategoriesBLL`類別 s`GetCategories`方法將會呼叫*n*瀏覽每個頁面的時間，其中*n*是數目在 gridview 裡的資料列。 這些*n*呼叫`GetCategories`導致*n*向資料庫查詢。 無法減少這種影響的資料庫，藉由快取傳回的類別目錄的每個要求快取中或透過使用 SQL 快取相依性或極短時間為基礎的過期快取層級。 如需有關每個要求快取選項，請參閱[`HttpContext.Items`每個要求的快取存放區](http://aspnet.4guysfromrolla.com/articles/060904-1.aspx)。
 
-
 ## <a name="step-4-completing-the-editing-interface"></a>步驟 4：完成編輯介面
 
 我們 ve 範本所做的變更數目 GridView s 停頓檢視我們的進度。 請花一點時間檢閱我們透過瀏覽器的進度。 如 [圖 13] 所示，每個資料列使用呈現其`ItemTemplate`，其中包含儲存格 s 中的編輯介面。
-
 
 [![每個 GridView 資料列是可編輯](batch-updating-vb/_static/image13.gif)](batch-updating-vb/_static/image21.png)
 
 **圖 13**:每個 GridView 資料列是可編輯 ([按一下以檢視完整大小的影像](batch-updating-vb/_static/image22.png))
 
-
 有一些次要的格式設定問題，我們會負責在此時。 首先，請注意，`UnitPrice`值包含四個小數位數。 若要修正此問題，傳回到`UnitPrice`TemplateField 的`ItemTemplate`和從文字方塊 s 智慧標籤，按一下 [編輯資料繫結] 連結。 接下來，指定`Text`屬性的格式應該是數字。
-
 
 ![表示為數字格式的文字屬性](batch-updating-vb/_static/image14.gif)
 
 **圖 14**:格式`Text`屬性，表示為數字
 
-
 第二，可讓 s center 中的核取`Discontinued`資料行 （而非它靠左對齊）。 從 GridView s 智慧標籤中按一下 編輯資料行，然後選取`Discontinued`TemplateField 從左下角中的欄位清單。 向下鑽研`ItemStyle`並設定`HorizontalAlign`Center，如 圖 15 所示的屬性。
-
 
 ![置中已停止的核取方塊](batch-updating-vb/_static/image15.gif)
 
 **圖 15**:Center`Discontinued`核取方塊
-
 
 接下來，ValidationSummary 控制項加入頁面，並設定其`ShowMessageBox`屬性，以`True`及其`ShowSummary`屬性設`False`。 也將新增按鈕 Web 控制項，按下時，將會更新使用者的變更。 具體來說，新增兩個按鈕 Web 控制項，一個以上的 GridView，另一個下方，設定兩個控制項`Text`更新產品的屬性。
 
@@ -217,23 +181,19 @@ GridView s 自編輯介面定義於其 TemplateFields `ItemTemplate` s， `EditI
 
 進行上述提到的格式設定變更之後，新增按鈕控制項，並移除不必要`EditItemTemplate`s，您的頁面 s 宣告式語法看起來應該如下所示：
 
-
 [!code-aspx[Main](batch-updating-vb/samples/sample4.aspx)]
 
 圖 16 顯示此頁面已加入 Button Web 控制項之後，透過瀏覽器檢視時，並格式化所做的變更。
 
-
 [![頁面現在包含兩個更新的產品按鈕](batch-updating-vb/_static/image16.gif)](batch-updating-vb/_static/image23.png)
 
 **圖 16**:頁面現在包含兩個更新的產品按鈕 ([按一下以檢視完整大小的影像](batch-updating-vb/_static/image24.png))
-
 
 ## <a name="step-5-updating-the-products"></a>步驟 5：更新產品
 
 當使用者造訪此頁面他們進行修改，然後按一下其中一個的兩個更新產品按鈕。 此時，我們需要以某種方式儲存至每個資料列的使用者輸入值`ProductsDataTable`執行個體，並再將它傳遞至再經歷，BLL 方法`ProductsDataTable`DAL s 執行個體`UpdateWithTransaction`方法。 `UpdateWithTransaction`方法，我們在建立[前述教學課程](wrapping-database-modifications-within-a-transaction-vb.md)，可確保批次的變更將會更新以不可部分完成的作業。
 
 建立名為的方法`BatchUpdate`在`BatchUpdate.aspx.vb`並加入下列程式碼：
-
 
 [!code-vb[Main](batch-updating-vb/samples/sample5.vb)]
 
@@ -246,11 +206,9 @@ GridView s 自編輯介面定義於其 TemplateFields `ItemTemplate` s， `EditI
 > [!NOTE]
 > Visual Studio 時繫結到它的智慧標籤 GridView 資料來源，會自動指派到 GridView 資料來源 s 主要值`DataKeyNames`屬性。 如果您未繫結 ObjectDataSource GridView 透過 GridView s 智慧標籤在步驟 1 中所述，則您必須手動設定 GridView s`DataKeyNames`若要存取的 ProductID 屬性`ProductID`透過每個資料列的值`DataKeys`集合。
 
-
 中所使用的程式碼`BatchUpdate`類似於用於 BLL s`UpdateProduct`方法，最主要的差異，在於中`UpdateProduct`方法只會有一個`ProductRow`擷取執行個體的架構。 指派的屬性的程式碼`ProductRow`之間相同`UpdateProducts`方法和中的程式碼`For Each`迴圈`BatchUpdate`，因為是整體模式。
 
 若要完成本教學課程中，我們必須能夠`BatchUpdate`時叫用方法的更新產品按鈕按下。 建立事件處理常式`Click`事件，這兩個按鈕控制項，然後在 事件處理常式中新增下列程式碼：
-
 
 [!code-vb[Main](batch-updating-vb/samples/sample6.vb)]
 
@@ -264,7 +222,6 @@ GridView s 自編輯介面定義於其 TemplateFields `ItemTemplate` s， `EditI
 
 對於這些類型的情況中，請考慮使用下列`BatchUpdateAlternate`方法改為：
 
-
 [!code-vb[Main](batch-updating-vb/samples/sample7.vb)]
 
 `BatchMethodAlternate` 開始建立新的空`ProductsDataTable`名為`products`。 然後 GridView 的逐步`Rows`集合，在每個資料列取得特定產品資訊使用 BLL 的`GetProductByProductID(productID)`方法。 擷取`ProductsRow`執行個體有相同的方式，做為更新的屬性`BatchUpdate`，但在更新匯入的資料列之後`products``ProductsDataTable`經由 DataTable s [ `ImportRow(DataRow)`方法](https://msdn.microsoft.com/library/system.data.datatable.importrow(VS.80).aspx).
@@ -272,7 +229,6 @@ GridView s 自編輯介面定義於其 TemplateFields `ItemTemplate` s， `EditI
 在後`For Each`迴圈完成時，`products`包含一個`ProductsRow`GridView 裡的每個資料列的執行個體。 因為每個`ProductsRow`執行個體已新增至`products`（而不是更新），如果我們盲目地將它傳遞給`UpdateWithTransaction`方法`ProductsTableAdapter`會嘗試將每筆記錄插入資料庫。 相反地，我們需要指定，這些資料列的每個已修改 （未加入）。
 
 這可藉由將新方法新增至名為 BLL `UpdateProductsWithTransaction`。 `UpdateProductsWithTransaction`如下所示，設定`RowState`的每個`ProductsRow`中的執行個體`ProductsDataTable`來`Modified`，並接著傳遞`ProductsDataTable`DAL s`UpdateWithTransaction`方法。
-
 
 [!code-vb[Main](batch-updating-vb/samples/sample8.vb)]
 

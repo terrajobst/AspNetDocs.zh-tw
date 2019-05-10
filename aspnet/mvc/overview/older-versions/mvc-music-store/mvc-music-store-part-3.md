@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: 94297aa0-1f2d-4d72-bbcb-63f64653e0c0
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: ce866a169e69c0d85fe18ddeccf271f1f235d440
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3fcfc816cde22c697a78bab2c9ea7ace1bf68501
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381116"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129670"
 ---
 # <a name="part-3-views-and-viewmodels"></a>第 3 部分：檢視和 ViewModels
 
@@ -24,7 +24,6 @@ ms.locfileid: "59381116"
 > MVC Music 市集是銷售線上音樂 album 和實作基本的網站管理、 使用者登入時，和 「 購物車 」 功能的輕量級的範例存放區實作。  
 >   
 > 本教學課程系列會詳細說明所有建置 ASP.NET MVC Music 市集範例應用程式所採取的步驟。 第 3 部分涵蓋檢視和 ViewModels。
-
 
 到目前為止我們所只已傳回字串從控制器動作。 這是不錯的方式取得控制器的運作方式，了解但不是想要如何建置真實 web 應用程式。 我們想要更好的方法，以回到瀏覽我們的網站的瀏覽器產生 HTML，我們可以使用範本檔案更輕鬆地自訂 HTML 內容的其中一個寄回。 這正是檢視的。
 
@@ -257,7 +256,6 @@ Html.ActionLink() 有數個不同的多載，可讓您指定您的連結所需�
 如需內容類型清單的 HTML 如下所示：
 
 [!code-html[Main](mvc-music-store-part-3/samples/sample22.html)]
-
 
 > [!div class="step-by-step"]
 > [上一頁](mvc-music-store-part-2.md)

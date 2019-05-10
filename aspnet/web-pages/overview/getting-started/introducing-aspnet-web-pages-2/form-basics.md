@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: 81ed82bf-b940-44f1-b94a-555d0cb7cc98
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
-ms.openlocfilehash: f88f7a31551abda029bee0ec16aa35ce2ef5d2f0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f57661077ec3bb13f3d4ec41b130bda4d2fb9070
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385952"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132952"
 ---
 # <a name="introducing-aspnet-web-pages---html-form-basics"></a>ASP.NET Web Pages 簡介-HTML 表單基本概念
 
@@ -33,7 +33,6 @@ ms.locfileid: "59385952"
 > 
 > - `Request` 物件。
 > - SQL`Where`子句。
-
 
 ## <a name="what-youll-build"></a>您將建置
 
@@ -82,7 +81,6 @@ ms.locfileid: "59385952"
 > 
 > (若要深入了解 HTTP 動詞命令，請參閱[方法定義](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)W3C 網站上的文章。)
 
-
 大部分的使用者輸入項目會以 HTML`<input>`項目。 它們看起來像是`<input type="type" name="name">,`何處*型別*表示您想要的使用者輸入控制項的類型。 這些項目是常見的：
 
 - 文字方塊中： `<input type="text">`
@@ -104,7 +102,6 @@ ms.locfileid: "59385952"
 > 您可能已經知道，HTML 是轉換中，最新版本 (HTML5) 支援更直覺的方式，讓使用者輸入資訊。 比方說，在 HTML5，您 （網頁開發人員） 所見頁面您希望使用者輸入日期。 行事曆，而不需要使用者手動輸入日期，然後可以自動顯示瀏覽器。 不過，HTML5 新功能，而且尚不支援在所有瀏覽器中。
 > 
 > ASP.NET Web Pages 支援 HTML5 輸入使用者的瀏覽器所沒有的。 以了解的新屬性`<input>`項目以 HTML5，請參閱[HTML&lt;輸入&gt;type 屬性](http://www.w3schools.com/html/html_form_input_types.asp)W3Schools 站台上。
-
 
 ## <a name="creating-the-form"></a>建立表單
 
@@ -164,7 +161,7 @@ ms.locfileid: "59385952"
 > 
 > `var someValue = Request["name"];`
 > 
-> `Request`物件實際上會公開數個子集。 例如：
+> `Request`物件實際上會公開數個子集。 例如: 
 > 
 > - `Request.Form` 可讓您從項目內已提交的值`<form>`項目，如果要求是`POST`要求。
 > - `Request.QueryString` 提供值的 URL 查詢字串。 (在之類的 URL `http://mysite/myapp/page?searchGenre=action&page=2`，則`?searchGenre=action&page=2`URL 區段是查詢字串。)
@@ -175,7 +172,6 @@ ms.locfileid: "59385952"
 > 您想要取得的項目的名稱必須是唯一您使用在集合中。 這就是為什麼`Request`物件所提供的子集喜歡`Request.Form`和`Request.QueryString`。 假設您的頁面包含名為表單項目`userName`並*也*包含名為 cookie `userName`。 如果您收到`Request["userName"]`，模稜兩可您要的表單值或 cookie。 不過，如果您收到`Request.Form["userName"]`或`Request.Cookie["userName"]`，您要瞭如指掌要取得的值。
 > 
 > 它是個不錯的做法是特定且使用的子集`Request`感興趣，例如`Request.Form`或`Request.QueryString`。 如您在本教學課程中建立簡單的頁面，它可能不會真的會造成任何差異。 不過，當您建立更複雜的頁面時，使用明確的版本`Request.Form`或`Request.QueryString`可協助您避免發生問題時的頁面包含表單 （或多個表單），可能發生的 cookie、 查詢字串值等等。
-
 
 ## <a name="creating-a-query-by-using-a-search-term"></a>建立查詢利用搜尋詞彙
 
@@ -218,7 +214,6 @@ ms.locfileid: "59385952"
 > **重要！** 使用預留位置 (例如`@0`) 若要將值傳遞給 SQL 命令*極為重要*安全性。 您在此見報，具有預留位置變數的資料，方法是您應該建構 SQL 命令的唯一方法。
 > 
 > 永遠不會建構 SQL 陳述式放在一起，（串連） 的常值文字和您從使用者取得的值。 串連使用者輸入 SQL 陳述式會開啟您的站台*SQL 資料隱碼攻擊*當惡意使用者送出至您的頁面 hack 您資料庫的值。 (您可以閱讀更多文件中[SQL 資料隱碼](https://msdn.microsoft.com/library/ms161953.aspx)MSDN 網站。)
-
 
 ## <a name="updating-the-movies-page-with-search-code"></a>使用 搜尋程式碼更新影片頁面
 
@@ -280,7 +275,6 @@ ms.locfileid: "59385952"
 
 > [!NOTE]
 > 您無法 「 記住 」 所使用的密碼 文字方塊中的值。 它會讓人可以使用程式碼填入在密碼欄位中的安全性漏洞。
-
 
 再次執行頁面，輸入內容類型，然後按一下**搜尋內容類型**。 這次不只您看的搜尋結果，但文字方塊會記住您上次輸入：
 

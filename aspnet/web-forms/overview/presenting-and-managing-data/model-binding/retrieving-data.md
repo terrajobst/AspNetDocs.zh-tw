@@ -8,15 +8,14 @@ ms.date: 02/27/2014
 ms.assetid: 9f24fb82-c7ac-48da-b8e2-51b3da17e365
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
 msc.type: authoredcontent
-ms.openlocfilehash: 29baaf2917e47ac46a78a252721be725b4e9b58f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 08cb65f9ef8f5c36070454e011f41554d81f333f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398471"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131532"
 ---
 # <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>擷取和顯示資料與模型繫結和 web form
-
 
 > 本系列教學課程示範使用 ASP.NET Web Form 專案中的模型繫結的基本層面。 模型繫結進行更簡單的比處理資料來源物件 （例如 ObjectDataSource 或 SqlDataSource） 的資料互動。 此系列簡介資料的開頭，並在稍後的教學課程中將移至更進階的概念。
 > 
@@ -34,7 +33,6 @@ ms.locfileid: "59398471"
 > - Microsoft Visual Studio 2017 或 Microsoft Visual Studio Community 2017
 >   
 > 本教學課程也適用於 Visual Studio 2012 和 Visual Studio 2013，但有一些差異，在使用者介面和專案範本。
-
 
 ## <a name="what-youll-build"></a>您將建置
 
@@ -96,7 +94,6 @@ ms.locfileid: "59398471"
    4. Web form 主版頁面，選取**Site.Master**。
    
    5. 選取 [確定]。
-   
 
 ## <a name="add-the-data-model"></a>加入資料模型
 

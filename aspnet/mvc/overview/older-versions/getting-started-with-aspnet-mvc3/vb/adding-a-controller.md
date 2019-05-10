@@ -8,12 +8,12 @@ ms.date: 01/12/2011
 ms.assetid: 741259e1-54ac-4f71-b4e8-2bd5560bb950
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 144b00d9ec263231c29365caa2f3fb7b96a7ea16
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0c637f5758f8196c19ef8d5c71009e85f9dd706e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415527"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130042"
 ---
 # <a name="adding-a-controller-vb"></a>新增控制器 (VB)
 
@@ -28,7 +28,6 @@ ms.locfileid: "59415527"
 > 如果您使用 Visual Studio 2010，而不 Visual Web Developer 2010，請按一下下列連結安裝必要條件：[Visual Studio 2010 的必要元件](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)。
 > 
 > 使用本主題隨附了 VB.NET 原始程式碼的 Visual Web Developer 專案。 [下載 VB.NET 版本](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)。 如果您偏好 C#，切換至[C# 版本](../cs/adding-a-controller.md)本教學課程。
-
 
 代表 MVC*模型-檢視-控制器*。 MVC 是開發應用程式，使每個部分都有不同的責任的模式：
 

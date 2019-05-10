@@ -8,12 +8,12 @@ ms.date: 07/25/2013
 ms.assetid: f8157be1-4ab9-469e-ad3a-0ccc80b56c00
 msc.legacyurl: /whitepapers/aspnet-data-access-content-map
 msc.type: content
-ms.openlocfilehash: d120c184f6cf7dd0db075bbfac17214d7467664a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1bb5c15f8b34c516dcc2d3c5723eb74b133a9188
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383716"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125697"
 ---
 # <a name="aspnet-data-access---recommended-resources"></a>ASP.NET 資料存取 - 建議資源
 
@@ -22,7 +22,6 @@ ms.locfileid: "59383716"
 > 如果您知道很棒的部落格文章[stackoverflow](http://stackoverflow.com)執行緒或任何其他會很有用的連結[傳送一封電子郵件給我們](mailto:aspnetue@microsoft.com?subject=Data Access Content Map)與連結。
 > 
 > 上次更新的 4/3/2014
-
 
 此主題包括下列各節：
 
@@ -74,7 +73,6 @@ ms.locfileid: "59383716"
 <a id="cf"></a>
 
 ### <a name="using-entity-framework-code-first"></a>第一次使用 Entity Framework 程式碼
-  
 
 下列教學課程提供可下載的範例應用程式：
 
@@ -94,7 +92,6 @@ ms.locfileid: "59383716"
 <a id="efcfmigrations"></a>
 
 ### <a name="using-entity-framework-code-first-migrations"></a>使用 Entity Framework Code First 移轉
-  
 
 大部分上述涵蓋移轉程式碼第一個教學課程。 另請參閱下列資源。
 

@@ -8,19 +8,18 @@ ms.date: 08/23/2012
 ms.assetid: 5894dc13-5d45-4dad-8096-136499120f1d
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 9e4a2a9fc56393ac816f25a1039b233aa8961608
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 79d6b38c6464a749db9cd6d35e1f277b0adf2a02
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59383833"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129427"
 ---
 # <a name="bundling-and-minification"></a>統合和縮製
 
 藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 統合和縮製有兩個技術您可以使用 ASP.NET 4.5 中，以改善要求載入時間。 統合和縮製可改善載入時間減少伺服器的要求數目，並減少大小的要求的資產 （例如 CSS 和 JavaScript。）
-
 
 大部分的目前主要的瀏覽器恒薴菾[同時連線](http://www.browserscope.org/?category=network)每六個每個主機名稱。 這表示，而處理六個要求，以便在主機上的資產的其他要求都會排入瀏覽器。 下圖中的 IE F12 開發人員工具-網路索引標籤會顯示 [關於] 檢視的範例應用程式所需的資產的時間。
 
@@ -96,7 +95,6 @@ ms.locfileid: "59383833"
 
 > [!NOTE]
 > 除非`EnableOptimizations`是`true`或 偵錯屬性中的[compilation 項目](https://msdn.microsoft.com/library/s10awwz0.aspx)中*Web.config*檔案設定為`false`，檔案將不會搭配或縮減。 此外，將不會使用檔案的.min 版本，將會選取完整的偵錯版本。 `EnableOptimizations` 中的偵錯屬性會覆寫[compilation 項目](https://msdn.microsoft.com/library/s10awwz0.aspx)中*Web.config*檔案
-
 
 ## <a name="using-bundling-and-minification-with-aspnet-web-forms-and-web-pages"></a>使用統合和縮製與 ASP.NET Web Form 和 Web Pages
 

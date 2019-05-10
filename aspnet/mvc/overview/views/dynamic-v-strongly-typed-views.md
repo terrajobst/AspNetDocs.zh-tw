@@ -8,12 +8,12 @@ ms.date: 01/27/2011
 ms.assetid: 0cbd88da-0da6-4605-b222-2835c6478304
 msc.legacyurl: /mvc/overview/views/dynamic-v-strongly-typed-views
 msc.type: authoredcontent
-ms.openlocfilehash: 3235fc58fbf93cb87946f8ebd4a478eff7ce80e3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b3941ce3c8d3aa3439337c7a4bf786395321d2ca
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386134"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126324"
 ---
 # <a name="dynamic-v-strongly-typed-views"></a>動態與 強型別檢視
 
@@ -48,7 +48,6 @@ ms.locfileid: "59386134"
 現在我們將新增的強型別的檢視。 將下列程式碼加入至控制器：
 
 [!code-csharp[Main](dynamic-v-strongly-typed-views/samples/sample5.cs)]
-
 
 請注意它是完全相同傳回 View(topBlogs);呼叫非強型別檢視。 以滑鼠右鍵按一下內*StonglyTypedIndex()* ，然後選取**加入檢視**。 這次請選取**部落格**模型類別，然後選取**清單**為 Scaffold 範本。
 

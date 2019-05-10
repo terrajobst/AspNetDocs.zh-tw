@@ -8,12 +8,12 @@ ms.date: 07/28/2008
 ms.assetid: 32b7fb6e-d74b-4048-91f8-70631b2523ee
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c25945fab554114478c6b2e080335a664251639b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6d39e898ea838b57b1cb33c91894e9ad11d58bc1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405348"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126779"
 ---
 # <a name="nested-master-pages-c"></a>巢狀主版頁面 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59405348"
 [下載程式碼](http://download.microsoft.com/download/d/6/6/d66ad554-afdd-409e-a5c3-201b774fbb31/ASPNET_MasterPages_Tutorial_10_CS.zip)或[下載 PDF](http://download.microsoft.com/download/d/6/6/d66ad554-afdd-409e-a5c3-201b774fbb31/ASPNET_MasterPages_Tutorial_10_CS.pdf)
 
 > 示範如何建立巢狀在另一個主版頁面。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -43,14 +42,12 @@ ms.locfileid: "59405348"
 > [!NOTE]
 > 自.NET Framework 2.0 版已經可以巢狀主版頁面。 不過，Visual Studio 2005 未包含巢狀主版頁面的設計階段支援。 好消息是，Visual Studio 2008 提供豐富的設計階段經驗，用於巢狀主版頁面。 如果您想要使用巢狀主版頁面，但仍在使用 Visual Studio 2005，請參閱[Scott Guthrie](https://weblogs.asp.net/scottgu/)的部落格項目[VS 2005 設計階段中的巢狀主版頁面的提示](https://weblogs.asp.net/scottgu/archive/2005/11/11/430382.aspx)。
 
-
 ## <a name="the-benefits-of-nested-master-pages"></a>巢狀主版頁面的優點
 
 許多網站有為名的網站設計，以及更多自訂的設計的特定頁面的特定類型。 比方說，在我們的示範 web 應用程式中我們建立了基本的 [管理] 區段 (在頁面`~/Admin`資料夾)。 目前在網頁`~/Admin`資料夾不在 [管理] 區段中的這些頁面與使用相同的主版頁面 (亦即`Site.master`或`Alternate.master`，取決於使用者的選取範圍)。
 
 > [!NOTE]
 > 現在，假設我們的網站有一個主版頁面， `Site.master`。 我們要討論本教學課程稍後使用巢狀主版頁面，開頭為 「 使用巢狀主版頁面的系統管理區段 」 的兩個 （或多個） 主要的頁面。
-
 
 想像一下，我們必須自訂以包含其他資訊或連結，否則將不會出現在網站中的其他頁面的 [管理] 頁面的配置。 有四個方法，來實作這項需求：
 
@@ -73,21 +70,17 @@ ms.locfileid: "59405348"
 
 建立新的資料夾，名為`NestedMasterPages`然後將新的主版頁面檔案新增至名為該資料夾`Simple.master`。 （請參閱 [圖 1 的 [方案總管] 的螢幕擷取畫面之後加入這個資料夾及檔案。）拖曳`AlternateStyles.css`從方案總管] 中，拖曳至設計工具的樣式表檔案。 這會新增`<link>`項目中的樣式表檔案`<head>`其後的項目，主版頁面的`<head>`項目的標記應該看起來像：
 
-
 [!code-aspx[Main](nested-master-pages-cs/samples/sample1.aspx)]
 
 接下來，新增下列標記中的 Web Form `Simple.master`:
-
 
 [!code-aspx[Main](nested-master-pages-cs/samples/sample2.aspx)]
 
 此標記會海軍藍的背景上的大型白色字型中的頁面頂端顯示標題為 「 巢狀主版頁面 （簡單） 」 的連結。 下方的`MainContent`ContentPlaceHolder。 [圖 1] 顯示`Simple.master`主版頁面，在 Visual Studio 設計工具中載入時。
 
-
 [![巢狀主版頁面的頁面，在 [管理] 區段中定義內容的特定](nested-master-pages-cs/_static/image2.png)](nested-master-pages-cs/_static/image1.png)
 
 **圖 01**:巢狀主版頁面定義內容的特定 [管理] 區段中的頁面 ([按一下以檢視完整大小的影像](nested-master-pages-cs/_static/image3.png))
-
 
 ## <a name="step-2-creating-a-simple-nested-master-page"></a>步驟 2：建立簡單的巢狀主版頁面
 
@@ -100,19 +93,15 @@ ms.locfileid: "59405348"
 > [!NOTE]
 > 如果您使用 Web 應用程式專案模型，而不網站專案模型的 ASP.NET 網站建立您不會看到 [圖 2] 所示的 [加入新項目] 對話方塊中的 [選取主版頁面] 核取方塊。 若要使用 Web 應用程式專案模型時，建立巢狀主版頁面中，您必須選擇巢狀主版頁面範本 （而不是主版頁面範本中）。 在 選取巢狀主版頁面範本，然後按一下 新增 之後, 相同選取主版頁面 圖 3 所示的對話方塊隨即出現。
 
-
 [![請檢查&quot;選取的主版頁面&quot;核取方塊以新增巢狀主版頁面](nested-master-pages-cs/_static/image5.png)](nested-master-pages-cs/_static/image4.png)
 
 **圖 02**:選取 選取主版頁面 」 的核取方塊新增巢狀主版頁面 ([按一下以檢視完整大小的影像](nested-master-pages-cs/_static/image6.png))
-
 
 [![繫結至 Simple.master 主版頁面的巢狀主版頁面](nested-master-pages-cs/_static/image8.png)](nested-master-pages-cs/_static/image7.png)
 
 **圖 03**:繫結巢狀主版頁面，來`Simple.master`主版頁面 ([按一下以檢視完整大小的影像](nested-master-pages-cs/_static/image9.png))
 
-
 巢狀主版頁面的宣告式標記，如下所示，包含參考最上層的主版頁面的兩個 ContentPlaceHolder 控制項的兩個內容控制項。
-
 
 [!code-aspx[Main](nested-master-pages-cs/samples/sample3.aspx)]
 
@@ -120,16 +109,13 @@ ms.locfileid: "59405348"
 
 更新此巢狀主版頁面，使其顯示文字"Hello，from SimpleNested ！ 」 對應至內容控制項中`MainContent`ContentPlaceHolder 控制項。
 
-
 [!code-aspx[Main](nested-master-pages-cs/samples/sample4.aspx)]
 
 後此新增，請在儲存巢狀主版頁面，然後再新增 新的內容頁面，以`NestedMasterPages`名為資料夾`Default.aspx`，並將它繫結`SimpleNested.master`主版頁面。 在此頁面可能會大吃一驚以查看它包含任何內容的控制項 （請參閱 圖 4） ！ 內容頁面只能存取其*父*主要頁面的 ContentPlaceHolders。 `SimpleNested.master` 不包含任何 ContentPlaceHolder 控制項;因此，任何繫結到此主版頁面的內容頁面不能包含任何內容的控制項。
 
-
 [![新的內容頁面不包含內容控制項](nested-master-pages-cs/_static/image11.png)](nested-master-pages-cs/_static/image10.png)
 
 **圖 04**:新內容頁包含沒有內容的控制項 ([按一下以檢視完整大小的影像](nested-master-pages-cs/_static/image12.png))
-
 
 我們要做為更新的巢狀主版頁面 (`SimpleNested.master`) 包括 ContentPlaceHolder 控制項。 通常您會想要針對每個 ContentPlaceHolder 定義它的父主版網頁，藉此讓其下層主版頁面或內容頁面，即可使用任何最上層的主版頁面的 ContentPlaceHolder 包含 ContentPlaceHolder 您巢狀主版頁面控制項。
 
@@ -138,9 +124,7 @@ ms.locfileid: "59405348"
 > [!NOTE]
 > 雖然我建議在最上層的主版頁面 ContentPlaceHolders 相同命名 ContentPlaceHolder 控制項巢狀主版頁面中的，則不需要此命名對稱性。 您可以在巢狀主版頁面提供 ContentPlaceHolder 控制項，任何您喜歡的名稱。 不過，我認為它容易記住 ContentPlaceHolders 與對應的頁面中，如果我的最上層的主版頁面和巢狀主版頁面使用相同的名稱有哪些區域。
 
-
 進行這些新增項目後您`SimpleNested.master`主版頁面的宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](nested-master-pages-cs/samples/sample5.aspx)]
 
@@ -148,34 +132,27 @@ ms.locfileid: "59405348"
 
 [圖 5] 顯示了這裡-牽涉到三個實體`Simple.master`， `SimpleNested.master`，和`Default.aspx`-以及如何關聯到另一個。 如圖所示，巢狀主版頁面實作其父代 ContentPlaceHolder 內容控制項。 如果這些區域需要能夠存取 [內容] 頁面中，巢狀主版頁面必須將自己 ContentPlaceHolders 新增至內容控制項。
 
-
 [![最上層和巢狀主版頁面指定 [內容] 頁面的版面配置](nested-master-pages-cs/_static/image14.png)](nested-master-pages-cs/_static/image13.png)
 
 **圖 05**:最上層和巢狀主版頁面要求內容的頁面配置 ([按一下以檢視完整大小的影像](nested-master-pages-cs/_static/image15.png))
 
-
 此行為說明何只 cognizant 其父主版頁面的內容頁面或主版頁面。 這項行為也會顯示由 Visual Studio 設計工具中。 [圖 6] 顯示的設計工具`Default.aspx`。 有哪些區域可從 [內容] 頁面可編輯，而且部分的不會清楚地顯示設計工具，它不會區分非可編輯的區域是從巢狀主版頁面和區域是從最上層的主版頁面。
-
 
 [![內容頁面現在包含巢狀主版頁面的 ContentPlaceHolders 內容控制項](nested-master-pages-cs/_static/image17.png)](nested-master-pages-cs/_static/image16.png)
 
 **圖 06**:內容頁面現在包含內容控制項的巢狀主版頁面的 ContentPlaceHolders ([按一下以檢視完整大小的影像](nested-master-pages-cs/_static/image18.png))
 
-
 ## <a name="step-3-adding-a-second-simple-nested-master-page"></a>步驟 3：新增第二個簡單巢狀主版頁面
 
 當有多個巢狀主版頁面時，巢狀主版頁面的優點是更加明顯。 為了說明這項權益，建立另一個巢狀主版頁面中的`NestedMasterPages`資料夾，將這個新的巢狀主版頁面`SimpleNestedAlternate.master`並將它繫結`Simple.master`主版頁面。 像我們在步驟 2 中，請在巢狀主版頁面的兩個內容控制項加入 ContentPlaceHolder 控制項。 也加入文字"Hello，from SimpleNestedAlternate ！ 」 對應至最上層的主版頁面的內容控制項中`MainContent`ContentPlaceHolder。 進行這些變更之後新巢狀主版頁面的宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](nested-master-pages-cs/samples/sample6.aspx)]
 
 建立名為的內容頁面`Alternate.aspx`中`NestedMasterPages`資料夾，並繫結至`SimpleNestedAlternate.master`巢狀主版頁面。 加入文字"Hello，from 替代 ！ 」 對應至內容控制項中`MainContent`。 [圖 7] 顯示`Alternate.aspx`時透過 Visual Studio 設計工具檢視。
 
-
 [![Alternate.aspx 繫結至 SimpleNestedAlternate.master 主版頁面](nested-master-pages-cs/_static/image20.png)](nested-master-pages-cs/_static/image19.png)
 
 **圖 07**:`Alternate.aspx`繫結至`SimpleNestedAlternate.master`主版頁面 ([按一下以檢視完整大小的影像](nested-master-pages-cs/_static/image21.png))
-
 
 比較圖 7，以 圖 6 中的設計工具中的設計工具。 這兩個內容頁都共用相同的最上層的主版頁面中定義的配置 (`Simple.master`)，也就是 「 巢狀主版頁面教學課程 （簡單） 」 標題。 尚未兩者都有不同的內容定義於其父主版頁面-文字"Hello，from SimpleNested ！ 」 在 圖 6 和"Hello，from SimpleNestedAlternate ！ 」 圖 7。 授與，這些差異極為瑣碎，但您可以擴充此範例包含更有意義的差異。 比方說，`SimpleNested.master`的網頁可能包含具有其內容頁，特定選項的功能表，而`SimpleNestedAlternate.master`可能會有繫結至它的內容頁面的相關資訊。
 
@@ -183,16 +160,13 @@ ms.locfileid: "59405348"
 
 為了示範方便，我們可以變更為名的網站配置，開啟`Simple.master`主版頁面，並新增下列標記之間`topContent`並`mainContent``<div>`項目：
 
-
 [!code-aspx[Main](nested-master-pages-cs/samples/sample7.aspx)]
 
 這會將兩個連結，加入繫結至每個頁面頂端`Simple.master`， `SimpleNested.master`，或`SimpleNestedAlternate.master`; 這些變更立即套用至所有巢狀主版頁面和其內容的頁面。 [圖 8] 顯示`Alternate.aspx`透過瀏覽器檢視時。 請注意頁面頂端的 （相較於 圖 7） 上的連結新增。
 
-
 [![變更為頂層主版頁面會立即反映在其巢狀主版頁面和其內容頁面](nested-master-pages-cs/_static/image23.png)](nested-master-pages-cs/_static/image22.png)
 
 **圖 08**:變更為頂層主版頁面會立即反映在其巢狀主版頁面和其內容頁面 ([按一下以檢視完整大小的影像](nested-master-pages-cs/_static/image24.png))
-
 
 ## <a name="using-a-nested-master-page-for-the-administration-section"></a>使用巢狀主版頁面的 [管理] 區段
 
@@ -218,19 +192,15 @@ ms.locfileid: "59405348"
 
 讓我們使用第二個選項。 建立單一巢狀主版頁面中的檔案`~/Admin`名為資料夾`AdminNested.master`。 因為這兩`Site.master`並`Alternate.master`有相同一組 ContentPlaceHolder 控制項，無論何種主版頁面您將它繫結，雖然我建議您將它繫結`Site.master`為了一致性的起見。
 
-
 [![加入 ~/Admin 資料夾中的巢狀主版頁面。](nested-master-pages-cs/_static/image26.png)](nested-master-pages-cs/_static/image25.png)
 
 **圖 09**:加入巢狀主版頁面，以便`~/Admin`資料夾。 ([按一下以檢視完整大小的影像](nested-master-pages-cs/_static/image27.png))
 
-
 巢狀主版頁面繫結至四個 ContentPlaceHolder 控制項與主版頁面，因為 Visual Studio 會將四個內容控制項加入新的巢狀主版頁面檔案的初始標記。 像我們在步驟 2 和 3，在每個內容控制項中，新增 ContentPlaceHolder 控制項提供最上層的主版頁面的 ContentPlaceHolder 控制項相同的名稱。 也將下列標記新增至內容控制項對應至`MainContent`ContentPlaceHolder:
-
 
 [!code-html[Main](nested-master-pages-cs/samples/sample8.html)]
 
 接下來，定義`instructions`CSS 類別`Styles.css`和`AlternateStyles.css`CSS 檔案。 下列的 CSS 規則導致 HTML 項目樣式`instructions`使用淡黃色背景色彩和黑色的實線框線要顯示的類別：
-
 
 [!code-css[Main](nested-master-pages-cs/samples/sample9.css)]
 
@@ -238,18 +208,15 @@ ms.locfileid: "59405348"
 
 之後您巢狀主版頁面這些新增項目，其宣告式標記看起來應該如下所示：
 
-
 [!code-aspx[Main](nested-master-pages-cs/samples/sample10.aspx)]
 
 請注意，每個內容控制項的 ContentPlaceHolder 控制以及 ContentPlaceHolder 控制項的`ID`屬性會指派最上層的主版頁面中對應的 ContentPlaceHolder 控制項相同的值。 此外，管理特定區段的標記會出現在`MainContent`ContentPlaceHolder。
 
 [圖 10] 顯示`AdminNested.master`時透過 Visual Studio 設計工具檢視的巢狀主版頁面。 在頂端的黃色方塊中的指示，請參閱 <<c0> `MainContent` 內容控制項。
 
-
 [![巢狀主版頁面擴充最上層的主版頁面，為包含系統管理員的指示。](nested-master-pages-cs/_static/image29.png)](nested-master-pages-cs/_static/image28.png)
 
 **圖 10**:巢狀主版頁面擴充最上層的主版頁面，為包含系統管理員的指示。 ([按一下以檢視完整大小的影像](nested-master-pages-cs/_static/image30.png))
-
 
 ## <a name="step-5-updating-the-existing-content-pages-to-use-the-new-nested-master-page"></a>步驟 5：更新現有的內容頁面，以使用新的巢狀主版頁面
 
@@ -259,26 +226,21 @@ ms.locfileid: "59405348"
 
 藉由新增新的類別檔案，以啟動`App_Code`名為資料夾`AdminBasePage.cs`。 已`AdminBasePage`擴充`BasePage`然後覆寫`SetMasterPageFile`方法。 該方法中指派`MasterPageFile`值"~ / Admin/AdminNested.master"。 您的類別進行這些變更後檔案看起來應該如下所示：
 
-
 [!code-csharp[Main](nested-master-pages-cs/samples/sample11.cs)]
 
 我們現在需要將現有的內容頁面在系統管理 區段是衍生自`AdminBasePage`而不是`BasePage`。 移至每個內容頁面中的程式碼後置類別檔案`~/Admin`資料夾並進行這項變更。 例如，在`~/Admin/Default.aspx`變更程式碼後置類別宣告：
-
 
 [!code-csharp[Main](nested-master-pages-cs/samples/sample12.cs)]
 
 收件者:
 
-
 [!code-csharp[Main](nested-master-pages-cs/samples/sample13.cs)]
 
 圖 11 說明如何最上層的主版頁面 (`Site.master`或`Alternate.master`)，巢狀主版頁面 (`AdminNested.master`)，並管理一節的內容頁面之間的關聯性。
 
-
 [![巢狀主版頁面的頁面，在 [管理] 區段中定義內容的特定](nested-master-pages-cs/_static/image32.png)](nested-master-pages-cs/_static/image31.png)
 
 **圖 11**:巢狀主版頁面定義內容的特定 [管理] 區段中的頁面 ([按一下以檢視完整大小的影像](nested-master-pages-cs/_static/image33.png))
-
 
 ## <a name="step-6-mirroring-the-master-pages-public-methods-and-properties"></a>步驟 6：鏡像主版頁面的公用方法和屬性
 
@@ -288,11 +250,9 @@ ms.locfileid: "59405348"
 
 若要修正這我們必須先`AdminNested.master`程式碼後置類別延伸`BaseMasterPage`。 更新從巢狀主版頁面的程式碼後置類別宣告：
 
-
 [!code-csharp[Main](nested-master-pages-cs/samples/sample14.cs)]
 
 收件者:
-
 
 [!code-csharp[Main](nested-master-pages-cs/samples/sample15.cs)]
 
@@ -302,21 +262,17 @@ ms.locfileid: "59405348"
 
 若要達到此目的，先新增下列`@MasterType`指示詞加入頂端`AdminNested.master`:
 
-
 [!code-aspx[Main](nested-master-pages-cs/samples/sample16.aspx)]
 
 請記得，`@MasterType`指示詞強型別將屬性加入至名為的程式碼後置類別`Master`。 然後覆寫`RefreshRecentProductsGrid`並`GridMessageText`成員和只委派呼叫`Master`的對應方法：
-
 
 [!code-csharp[Main](nested-master-pages-cs/samples/sample17.cs)]
 
 使用此程式碼就緒之後，您應該能夠瀏覽，並使用 [管理] 區段中的內容的頁面。 [圖 12] 顯示`~/Admin/Products.aspx`頁面上透過瀏覽器檢視時。 如您所見，此頁面會包含管理指示 方塊中，因為它定義於巢狀主版頁面。
 
-
 [![在 [管理] 區段中的內容頁面包含每個頁面頂端的指示](nested-master-pages-cs/_static/image35.png)](nested-master-pages-cs/_static/image34.png)
 
 **圖 12**:中管理一節包含指示每個頁首的內容頁面 ([按一下以檢視完整大小的影像](nested-master-pages-cs/_static/image36.png))
-
 
 ## <a name="step-7-using-the-appropriate-top-level-master-page-at-runtime"></a>步驟 7：在執行階段使用適當的最上層主版頁面
 
@@ -326,18 +282,15 @@ ms.locfileid: "59405348"
 
 因此，我們需要設定巢狀主版頁面`MasterPageFile`頁面之內容的屬性。 唯一的內容頁面，使用`AdminNested.master`主版頁面衍生自`AdminBasePage`。 因此，我們也可以那里放置此邏輯。 步驟 5 中我們已覆寫`SetMasterPageFile`方法的方法，將`Page`物件的`MasterPageFile`屬性，以"~ / Admin/AdminNested.master"。 更新`SetMasterPageFile`也設定主版頁面的`MasterPageFile`結果儲存在工作階段的屬性：
 
-
 [!code-csharp[Main](nested-master-pages-cs/samples/sample18.cs)]
 
 `GetMasterPageFileFromSession`方法，我們將新增至`BasePage`上述教學課程中，傳回適當的主版頁面檔案路徑會根據工作階段變數值中的類別。
 
 使用此項變更之後，使用者的主版頁面選取項目也延續至 [管理] 區段。 [圖 13] 顯示於 [圖 12]，但之後，使用者已變更其主版頁面選取項目，若要在相同頁面`Alternate.master`。
 
-
 [![巢狀的管理頁面會使用最上層使用者所選取的主版頁面](nested-master-pages-cs/_static/image38.png)](nested-master-pages-cs/_static/image37.png)
 
 **圖 13**:巢狀的 [管理] 頁面可讓您使用最高層級主版頁面中選取的使用者 ([按一下以檢視完整大小的影像](nested-master-pages-cs/_static/image39.png))
-
 
 ## <a name="summary"></a>總結
 

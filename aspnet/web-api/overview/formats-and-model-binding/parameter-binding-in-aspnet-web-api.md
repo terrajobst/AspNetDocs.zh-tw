@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: e42c8388-04ed-4341-9fdb-41b1b4c06320
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f121f12ce689a079412bbd5392fde4fea863ff1f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: da0b9e12fcbe5cd2bfb5478162b7453d34931edf
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401968"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127514"
 ---
 # <a name="parameter-binding-in-aspnet-web-api"></a>ASP.NET Web API 中繫結的參數
 
@@ -173,7 +173,6 @@ Web API 撰寫所有值提供者，因此當模型繫結呼叫**ValueProvider.Ge
 
 > [!NOTE]
 > 如果您**ExecuteBindingAsync**方法會讀取要求訊息的本文中，覆寫**WillReadBody**屬性傳回 true。 要求主體可能只能讀取一次，讓 Web API 會強制執行規則，最多一個繫結的緩衝資料流可讀取訊息主體。
-
 
 若要套用自訂**HttpParameterBinding**，您可以定義屬性衍生自**ParameterBindingAttribute**。 針對`ETagParameterBinding`，我們會定義兩個屬性，一個用於`if-match`標頭，另一個用於`if-none-match`標頭。 都是衍生自抽象基底類別。
 

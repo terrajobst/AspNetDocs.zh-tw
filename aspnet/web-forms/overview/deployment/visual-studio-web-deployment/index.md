@@ -8,17 +8,16 @@ ms.date: 02/15/2013
 ms.assetid: e733027a-525f-47ae-b1c0-2e5ecf6677aa
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment
 msc.type: chapter
-ms.openlocfilehash: 3d8a6a102788cb6b5612e9bc537e1c13e7798c54
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 486042c428787ff03b964d04de4af59e540c62d6
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59378932"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128580"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio"></a>使用 Visual Studio 的 ASP.NET Web 部署
 
 > 本教學課程系列會說明如何向使用 SQL Server (沒有 SQL Server Compact) 可透過網際網路將它部署至 Windows Azure 網站或協力廠商主機服務提供者的 ASP.NET web 應用程式。 需要 Visual Studio 2012 的 ASP.NET 和 Web 工具 2012.2 更新或 Visual Studio 2010。 專用 SQL Server Compact 的資訊，請參閱[使用 SQL Server Compact 使用 Visual Studio 的 ASP.NET Web 部署](../../older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12.md)。
-
 
 - [簡介](introduction.md)
 - [準備資料庫部署](preparing-databases.md)

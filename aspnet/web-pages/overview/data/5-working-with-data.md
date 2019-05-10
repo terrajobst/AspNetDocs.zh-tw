@@ -8,12 +8,12 @@ ms.date: 02/18/2014
 ms.assetid: 673d502f-2c16-4a6f-bb63-dbfd9a77ef47
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
-ms.openlocfilehash: 0fc828e39cfcce22d4cc226954cf7d1731b04e42
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4ed2a2a1ee3cff7a50e67b6571b85f74d01efab7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379777"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133221"
 ---
 # <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>簡介使用的資料庫，在 ASP.NET Web Pages (Razor) 網站
 
@@ -44,7 +44,6 @@ ms.locfileid: "59379777"
 > 
 > 本教學課程也適用於 WebMatrix 3。 您可以使用 ASP.NET Web Pages 3 和 Visual Studio 2013 （或 Visual Studio Express 2013 for Web）;不過，使用者介面將會不同。
 
-
 ## <a name="introduction-to-databases"></a>資料庫的簡介
 
 想像一下一個典型的通訊錄。 通訊錄中的每個項目 (也就是為每個人) 有幾個部分的資訊，例如名字、 姓氏、 地址、 電子郵件地址和電話號碼。
@@ -67,7 +66,6 @@ ms.locfileid: "59379777"
 > 您可以將資料儲存在許多種，包括文字檔案和試算表。 不過，為大部分的商業用途，資料會儲存在關聯式資料庫中。
 > 
 > 這篇文章不很多心力進入資料庫。 不過，您可能會發現有點瞭解它們很有用。 在關聯式資料庫中，資訊會邏輯區分為不同的資料表。 比方說，學校裡的資料庫可能包含不同的資料表，適用於學生和類別供應項目。 資料庫軟體 （例如 SQL Server) 支援強大命令，可讓您以動態方式建立資料表之間的關聯性。 例如，您可以使用關聯式資料庫，以建立學生與類別之間的邏輯關聯性以建立排程。 將資料儲存在個別的資料表的資料表結構的複雜度，並可減少多餘的資料保留在資料表中的需求。
-
 
 ## <a name="creating-a-database"></a>建立資料庫
 
@@ -173,7 +171,6 @@ ms.locfileid: "59379777"
 > 
 > 有數十個 SQL 命令，不過都會遵循類似的模式。 您可以使用 SQL 命令來建立資料庫資料表、 計算資料表中的記錄數目、 計算價格，以及執行許多更多的作業。
 
-
 ## <a name="inserting-data-in-a-database"></a>在資料庫中插入資料
 
 本節說明如何建立可讓使用者新增至新的產品網頁*產品*資料庫資料表。 插入新的產品記錄後，此頁面會顯示更新過的資料表使用*ListProducts.cshtml*您在上一節中建立的頁面。
@@ -238,7 +235,6 @@ ms.locfileid: "59379777"
 > [!NOTE] 
 > 
 > **重要**在生產網站中，您通常會限制誰可以對資料進行變更。 有關如何設定成員資格，以及有關如何授權使用者在站台上執行工作的相關資訊，請參閱[新增的安全性和 ASP.NET Web Pages 網站的成員資格](https://go.microsoft.com/fwlink/?LinkId=202904)。
-
 
 1. 在網站中，建立新的 CSHTML 檔案，名為*EditProducts.cshtml*。
 2. 將檔案中的現有標記取代為下列：
@@ -321,7 +317,6 @@ ms.locfileid: "59379777"
 > 
 > **重要**在生產網站中，您通常會限制誰可以對資料進行變更。 有關如何設定成員資格，以及有關如何在站台上執行工作的使用者授與的相關資訊，請參閱[新增的安全性和 ASP.NET Web Pages 網站的成員資格](https://go.microsoft.com/fwlink/?LinkId=202904)。
 
-
 1. 在網站中，建立新的 CSHTML 檔案，名為*ListProductsForDelete.cshtml*。
 2. 以下列內容取代現有的標記：
 
@@ -384,7 +379,6 @@ ms.locfileid: "59379777"
 > 如所述，`Database.Open`方法可讓您將資料庫名稱或連接字串，傳遞，它會找出要使用。 這會非常有用，當您部署 （發行） 網站。 您可以使用 *.sdf*中的檔案*應用程式\_資料*資料夾，當您開發並測試您的網站。 當您將您的站台移至實際伺服器時，您可以使用中的連接字串*Web.config*具有相同名稱的檔案您 *.sdf*檔案，但指向裝載提供者的資料庫&#8212;而完全不必變更程式碼。
 > 
 > 最後，如果您想要直接使用連接字串，您可以呼叫`Database.OpenConnectionString`方法並傳遞它實際的連接字串而不只在中的名稱*Web.config*檔案。 這可能會很有用，因為某些原因您沒有存取權的連接字串的情況下 (或值，例如 *.sdf*檔案名稱) 之前的頁面會執行。 不過，大部分的情況下，您可以使用`Database.Open`這篇文章中所述。
-
 
 ## <a name="additional-resources"></a>其他資源
 

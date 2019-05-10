@@ -8,12 +8,12 @@ ms.date: 04/01/2008
 ms.assetid: f9adcb5d-6d70-4885-a3bf-ed95efb4da1a
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ba70db591c373fd9514fdb7079af83a511067162
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 180d2d7a7544b976f923bf8a4055281e36a3e526
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380830"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130893"
 ---
 # <a name="recovering-and-changing-passwords-vb"></a>復原及變更密碼 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59380830"
 [下載程式碼](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/VB.13.zip)或[下載 PDF](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/aspnet_tutorial13_ChangingPasswords_vb.pdf)
 
 > ASP.NET 包含兩個 Web 控制項，可協助復原及變更密碼。 Provider 控制項可讓造訪者得以復原遺失的密碼。 ChangePassword 控制項可讓使用者更新其密碼。 在此教學課程系列，Provider 所見如同其他的登入相關的 Web 控制項和 ChangePassword 控制項與成員資格架構，來重設或修改使用者的密碼在幕後的工作。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -38,7 +37,6 @@ ASP.NET 包含兩個 Web 控制項，可協助復原及變更密碼。 Provider 
 
 > [!NOTE]
 > 因為透過網路以純文字傳送電子郵件訊息有安全性風險相關傳送使用者的密碼，透過電子郵件。
-
 
 Provider 控制項是由三個檢視所組成：
 
@@ -59,18 +57,14 @@ Provider 控制項是由三個檢視所組成：
 > [!NOTE]
 > 請記得，`SqlMembershipProvider`將使用者的密碼儲存在三種格式之一：清除，雜湊 （預設值） 或加密。 使用的儲存體機制取決於成員資格的設定;示範應用程式使用 Hashed 密碼格式。 使用 Hashed 密碼格式時`EnablePasswordRetrieval`選項必須設定為 False，因為系統無法判斷使用者的實際密碼雜湊儲存在資料庫中的版本。
 
-
 [圖 1] 說明 Provider 的介面和行為方式會影響成員資格設定。
-
 
 [![RequiresQuestionAndAnswer、 EnablePasswordRetrieval，以及 EnablePasswordReset 影響 Provider 控制項的外觀和行為](recovering-and-changing-passwords-vb/_static/image2.png)](recovering-and-changing-passwords-vb/_static/image1.png)
 
 **圖 1**:`RequiresQuestionAndAnswer`， `EnablePasswordRetrieval`，並`EnablePasswordReset`影響 Provider 控制項的外觀和行為 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-vb/_static/image3.png))
 
-
 > [!NOTE]
 > 在  <a id="_msoanchor_2"> </a> [*在 SQL Server 中建立成員資格結構描述*](../membership/creating-the-membership-schema-in-sql-server-vb.md)我們透過設定來設定成員資格提供者的教學課程`RequiresQuestionAndAnswer`設為 True，`EnablePasswordRetrieval`來為 false，和`EnablePasswordReset`設為 True。
-
 
 ### <a name="using-the-passwordrecovery-control"></a>使用 Provider 控制項
 
@@ -85,34 +79,27 @@ Provider 控制項是由三個檢視所組成：
 > [!NOTE]
 > `<system.net>` 是根的子元素`<configuration>`項目和的同層級`<system.web>`。 因此，請勿`<system.net>`內的項目`<system.web>`項目; 相反地，將它放在相同的層級。
 
-
 [!code-xml[Main](recovering-and-changing-passwords-vb/samples/sample1.xml)]
 
 除了在網路上使用 SMTP 伺服器，您也可以指定應該均存放要傳送的電子郵件訊息的收取目錄。
 
 一旦您已設定的 SMTP 設定，請瀏覽`RecoverPassword.aspx`透過瀏覽器的頁面。 第一次嘗試輸入在使用者存放區不存在的使用者名稱。 如 圖 2 所示，Provider 控制項就會顯示訊息，指出 無法存取使用者資訊。 您可以透過控制項的自訂訊息的文字[`UserNameFailureText`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.usernamefailuretext.aspx)。
 
-
 [![如果輸入無效的使用者名稱，就會顯示一則錯誤訊息](recovering-and-changing-passwords-vb/_static/image5.png)](recovering-and-changing-passwords-vb/_static/image4.png)
 
 **圖 2**:如果輸入無效的使用者名稱，就會顯示一則錯誤訊息 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-vb/_static/image6.png))
 
-
 現在，請輸入使用者名稱。 知道使用者的電子郵件地址，您可以存取，以及其安全性回答您的系統中的帳戶名稱使用。 輸入使用者名稱，然後按一下 [送出之後, Provider 控制項會顯示其問題] 檢視。 為使用使用者名稱 檢視中，如果您輸入不正確回答 Provider 控制項會顯示的錯誤訊息 （請參閱 圖 3）。 使用[`QuestionFailureText`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.questionfailuretext.aspx)來自訂此錯誤訊息。
-
 
 [![如果使用者輸入無效的安全性解答，就會顯示一則錯誤訊息](recovering-and-changing-passwords-vb/_static/image8.png)](recovering-and-changing-passwords-vb/_static/image7.png)
 
 **圖 3**:如果使用者輸入無效的安全性解答，就會顯示一則錯誤訊息 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-vb/_static/image9.png))
 
-
 最後，輸入正確的安全性解答，然後按一下 提交。 在幕後，Provider 控制產生的隨機密碼，將它指派給使用者帳戶，傳送電子郵件通知使用者的新密碼 （請參閱 圖 4），然後顯示 成功 檢視。
-
 
 [![使用者會傳送一封電子郵件與他的新密碼](recovering-and-changing-passwords-vb/_static/image11.png)](recovering-and-changing-passwords-vb/_static/image10.png)
 
 **圖 4**:使用者會傳送一封電子郵件與他的新密碼 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-vb/_static/image12.png))
-
 
 ### <a name="customizing-the-email"></a>自訂電子郵件
 
@@ -144,11 +131,9 @@ Provider 控制項所傳送的預設電子郵件是而晦暗，而且 （請參�
 
 進行這些變更重新審視之後`RecoverPassword.aspx`頁面，然後輸入您使用者名稱和安全性的答案。 您會收到應該看起來像圖 5 中的電子郵件。 請注意， `webmaster@example.com` CC 會和，已更新的主旨和本文。
 
-
 [![更新主旨、 主體和 [副本] 清單](recovering-and-changing-passwords-vb/_static/image14.png)](recovering-and-changing-passwords-vb/_static/image13.png)
 
 **圖 5**:主旨、 主體和 [副本] 已更新清單 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-vb/_static/image15.png))
-
 
 若要傳送 HTML 格式的電子郵件設定[ `IsBodyHtml` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.isbodyhtml.aspx) True （預設值為 False） 和更新電子郵件範本，以包含 HTML。
 
@@ -156,7 +141,6 @@ Provider 控制項所傳送的預設電子郵件是而晦暗，而且 （請參�
 
 > [!NOTE]
 > 目前沒有任何連結在左側導覽中用來觸達`RecoverPassword.aspx`頁面。 如果她無法成功登入此網站，瀏覽此頁面只會在意使用者。 因此，更新`Login.aspx`頁面，即可包含的連結`RecoverPassword.aspx`頁面。
-
 
 ### <a name="programmatically-resetting-a-users-password"></a>以程式設計方式重設使用者的密碼
 
@@ -183,7 +167,6 @@ Provider 控制項所傳送的預設電子郵件是而晦暗，而且 （請參�
 > [!NOTE]
 > `SqlMembershipProvider`類別一律會產生隨機密碼，至少 14 個字元，因此如果`MinRequiredPasswordLength`是小於 14，則會忽略其值。
 
-
 ## <a name="step-2-changing-passwords"></a>步驟 2：變更密碼
 
 隨機產生密碼難以記住。 [圖 4] 所示的密碼，請考慮： `WWGUZv(f2yM:Bd`。 嘗試認可的記憶體 ！ 不用說，這類的隨機產生密碼傳送給使用者之後，她會想要將密碼變更為更令人印象深刻的項目。
@@ -193,14 +176,11 @@ Provider 控制項所傳送的預設電子郵件是而晦暗，而且 （請參�
 > [!NOTE]
 > ChangePassword 控制項修改使用者的密碼，藉由叫用`MembershipUser`物件的[`ChangePassword`方法](https://msdn.microsoft.com/library/system.web.security.membershipuser.changepassword.aspx)。 ChangePassword 方法接受兩個`String`輸入參數- *oldPassword*並*newPassword*-並更新使用者的帳戶具有*newPassword*，假設所提供*oldPassword*正確無誤。
 
-
 開啟`ChangePassword.aspx`頁面上，並將 ChangePassword 控制項新增至頁面上，將它命名為`ChangePwd`。 此時，設計 檢視應該會顯示 變更密碼 （請參閱 圖 6） 的檢視。 例如與 Provider 控制項，您可以切換透過控制項的智慧標籤的檢視。 此外，這些檢視的外觀會透過各種的樣式屬性，或將它們轉換成範本，將可自訂的。
-
 
 [![ChangePassword 控制項加入頁面](recovering-and-changing-passwords-vb/_static/image17.png)](recovering-and-changing-passwords-vb/_static/image16.png)
 
 **圖 6**:ChangePassword 控制項加入頁面 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-vb/_static/image18.png))
-
 
 ChangePassword 控制項可以更新目前登入使用者的密碼*或*另一個，指定使用者的密碼。 如 [圖 6] 所示，預設的 [變更密碼] 檢視會呈現只需要三個文字方塊控制項： 一個用於舊的密碼，兩個新的密碼。 此預設介面用來更新目前登入使用者的密碼。
 
@@ -211,14 +191,11 @@ ChangePassword 控制項可以更新目前登入使用者的密碼*或*另一個
 > [!NOTE]
 > 看起來好像沒，`DisplayUserName`屬性可用於讓系統管理員能夠變更其他使用者的密碼。 不過，即使`DisplayUserName`設為 True，必須知道並輸入正確的舊密碼。 我們會討論可讓系統管理員變更使用者的密碼，在步驟 3 中的技術。
 
-
 請瀏覽`ChangePassword.aspx`透過瀏覽器頁面，並變更您的密碼。 請注意，是否您輸入新的密碼無法滿足密碼長度和成員資格設定中指定的非英數的字元需求，會顯示一則錯誤訊息 （請參閱 圖 7）。
-
 
 [![ChangePassword 控制項加入頁面](recovering-and-changing-passwords-vb/_static/image20.png)](recovering-and-changing-passwords-vb/_static/image19.png)
 
 **圖 7**:ChangePassword 控制項加入頁面 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-vb/_static/image21.png))
-
 
 在輸入正確的舊密碼和有效新密碼，登入使用者的密碼變更，並顯示 [成功] 檢視。
 
@@ -234,11 +211,9 @@ ChangePassword 控制項可以更新目前登入使用者的密碼*或*另一個
 
 進行這些變更之後，重新瀏覽的頁面，並再次變更您的密碼。 此時，ChangePassword 控制項就會將自訂的 HTML 格式的電子郵件傳送檔案的使用者的電子郵件地址 （請參閱 圖 8）。
 
-
 [![電子郵件訊息，通知使用者，其密碼已經變更](recovering-and-changing-passwords-vb/_static/image23.png)](recovering-and-changing-passwords-vb/_static/image22.png)
 
 **圖 8**:電子郵件訊息會通知使用者，其密碼已經變更 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-vb/_static/image24.png))
-
 
 ## <a name="step-3-allowing-administrators-to-change-users-passwords"></a>步驟 3：可讓系統管理員變更使用者的密碼
 
@@ -267,20 +242,16 @@ ChangePassword 控制項可以更新目前登入使用者的密碼*或*另一個
 > [!NOTE]
 > 藉由直接使用資料庫，是大家所提供的成員資格架構的封裝。 這項決定繫結在我們`SqlMembershipProvider`，讓我們較可攜式的程式碼。 此外，此程式碼可能無法如預期般在未來版本的 ASP.NET 成員資格結構描述變更。 這個方法會因應措施，和大部分的因應措施，例如不是最佳作法的範例。
 
-
 程式碼有一些不討喜的位元，並會相當冗長。 因此，我不想干擾本教學課程，深入檢驗它。 如果您有興趣進一步了解更多資訊，請針對此教學課程和瀏覽下載程式碼`~/Administration/ManageUsers.aspx`頁面。 此頁面上，我們在中建立<a id="_msoanchor_5"> </a>[前述教學課程](building-an-interface-to-select-one-user-account-from-many-vb.md)，列出每位使用者。 我已更新要包含的連結 GridView`UserInformation.aspx`頁面上，將傳遞查詢字串透過所選的使用者的使用者名稱。 `UserInformation.aspx`頁面會顯示選取的使用者和文字方塊的相關資訊，變更其密碼 （請參閱 圖 9）。
 
 之後，輸入新的密碼、 確認在第二個文字方塊中，然後按一下更新的 [使用者] 按鈕，回傳是兩邊彼此乾瞪眼和`aspnet_Membership_SetPassword`預存程序會叫用，更新使用者的密碼。 我非常鼓勵以更加熟悉程式碼，然後再試擴充功能，以包括傳送電子郵件給使用者的密碼已變更這項功能有興趣的讀者。
-
 
 [![系統管理員可以變更使用者的密碼](recovering-and-changing-passwords-vb/_static/image26.png)](recovering-and-changing-passwords-vb/_static/image25.png)
 
 **圖 9**:系統管理員可以變更使用者的密碼 ([按一下以檢視完整大小的影像](recovering-and-changing-passwords-vb/_static/image27.png))
 
-
 > [!NOTE]
 > `UserInformation.aspx`頁面目前僅適用於如果成員資格架構設定為清除或雜湊格式儲存密碼。 雖然我們誠邀您加入這項功能，它會缺少加密新的密碼，程式碼。 建議您將必要的程式碼的方式是使用為解編程式，例如[Reflector](http://www.aisto.com/roeder/dotnet/)來檢查在.NET Framework 中; 方法的原始程式碼先檢查`SqlMembershipProvider`類別的`ChangePassword`方法。 這是密碼的我用來撰寫的程式碼建立雜湊的技術。
-
 
 ## <a name="summary"></a>總結
 

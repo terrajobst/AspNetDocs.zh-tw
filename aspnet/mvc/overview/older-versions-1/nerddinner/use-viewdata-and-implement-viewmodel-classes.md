@@ -8,12 +8,12 @@ ms.date: 07/27/2010
 ms.assetid: 5755ec4c-60f1-4057-9ec0-3a5de3a20e23
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-viewdata-and-implement-viewmodel-classes
 msc.type: authoredcontent
-ms.openlocfilehash: a27f895d80e92686c9f1d7339b51185694661f78
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ca9775417c2e25952511a73096fb76d5d4edaea2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389540"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125453"
 ---
 # <a name="use-viewdata-and-implement-viewmodel-classes"></a>使用 ViewData 和實作 ViewModel 類別
 
@@ -26,7 +26,6 @@ by [Microsoft](https://github.com/microsoft)
 > 步驟 6 顯示如何啟用更豐富的格式編輯案例中，支援，同時也討論可用來將資料從控制器傳遞至檢視的兩種方法：ViewData 和 ViewModel。
 > 
 > 如果您使用 ASP.NET MVC 3，我們建議您遵循[取得開始使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或是[MVC Music 市集](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教學課程。
-
 
 ## <a name="nerddinner-step-6-viewdata-and-viewmodel"></a>NerdDinner 步驟 6:ViewData 和 ViewModel
 

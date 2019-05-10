@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: c85ec591-f8d7-4882-b763-de6ab9f3df7a
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
 msc.type: authoredcontent
-ms.openlocfilehash: 58f3ec28914a604aa911cc3cb73733f0d58fd49f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 678eb7089e95e3d221d6b2d82034a62aefa75757
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390411"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131828"
 ---
 # <a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>ASP.NET Web Pages 簡介-建立一致的版面配置
 
@@ -26,7 +26,6 @@ ms.locfileid: "59390411"
 > - 版面配置頁。
 > - 如何將版面配置頁具有動態內容。
 > - 如何將值傳遞至版面配置頁。
-
 
 ## <a name="about-layouts"></a>關於配置
 
@@ -167,7 +166,6 @@ ASP.NET 已合併到 Movies.cshtml 頁面的內容 *\_Layout.cshtml*頁面上正
 > 您可以將任意數目的值傳遞使用`Page`物件。 如果您想要將影片資訊傳遞至版面配置頁，您無法將值傳遞藉由使用像是`Page.MovieTitle`並`Page.Genre`和`Page.MovieYear`。 （或任何其他您發明了以儲存資訊的名稱。）唯一的需求，這是可能明顯 — 是您必須使用相同的名稱，在 [內容] 頁面和 [配置] 頁面中。
 > 
 > 您傳遞使用的資訊`Page`物件並不限於只是要顯示在 [配置] 頁面上的文字。 您可以將值傳遞至版面配置 頁面中，，然後在 配置 頁面中的程式碼可以使用值來決定是否要顯示在頁面中，區段什麼 *.css*檔案使用，並依此類推。 您傳入的值`Page`物件會像任何其他值，您使用程式碼。 它只是值源自在 [內容] 頁面中，且會傳遞至版面配置頁。
-
 
 開啟*AddMovie.cshtml*頁面上，並新增一行至提供的標題的程式碼頂端*AddMovie.cshtml*頁面：
 

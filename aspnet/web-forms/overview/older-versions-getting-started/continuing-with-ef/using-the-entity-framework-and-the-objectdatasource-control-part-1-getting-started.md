@@ -8,12 +8,12 @@ ms.date: 01/26/2011
 ms.assetid: 244278c1-fec8-4255-8a8a-13bde491c4f5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: c0f11019c7410b756d592066a7fe33b3e26fd383
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2f14707eb058d438495dd2bc4c17b976c471fc97
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407194"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131345"
 ---
 # <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>使用 Entity Framework 4.0 和 ObjectDataSource 控制項，第 1 部分：快速入門
 
@@ -45,7 +45,6 @@ ms.locfileid: "59407194"
 > ## <a name="questions"></a>問題
 > 
 > 如果您有不直接相關的教學課程中的問題，您可以張貼他們[ASP.NET Entity Framework 論壇](https://forums.asp.net/1227.aspx)，則[Entity Framework 和 LINQ to Entities 論壇](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/)，或[StackOverflow.com](http://stackoverflow.com/)。
-
 
 `EntityDataSource`控制項可讓您非常快速地建立應用程式，但它通常會要求您保留一段很長的商務邏輯和資料存取邏輯，在您 *.aspx*頁面。 如果您希望應用程式變得更複雜，並在需要持續維護，您可以投入更多的開發時間事先創造*多層式架構*或是*分層*應用程式結構這是更容易維護。 若要實作此架構，您分開的展示層商務邏輯層 (BLL) 和資料存取層 (DAL)。 若要實作這種結構的一個方式是使用`ObjectDataSource`控制項，而非`EntityDataSource`控制項。 當您使用`ObjectDataSource`控制項，您實作自己的資料存取程式碼，然後將它在叫用 *.aspx*頁面使用具有許多相同的控制項功能的其他資料來源控制項。 這可讓您使用 Web Form 控制項進行資料存取的優點結合多層式架構方法的優點。
 
@@ -102,7 +101,6 @@ ms.locfileid: "59407194"
 > 
 > 儲存變更之後，您將無法刪除資料列從`Person`資料表如果該人員是部門管理員。 在生產環境應用程式中，您會提供特定的錯誤訊息，資料庫條件約束可防止刪除，或您可以指定串聯刪除時。 如需如何指定串聯刪除的範例，請參閱 < [Entity Framework 和 ASP.NET – 取得啟動第 2 部分](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2.md)。
 
-
 ### <a name="adding-a-view-to-the-database"></a>將檢視新增至資料庫
 
 在新*Departments.aspx*您將建立的頁面上，您想要提供的講師，下拉式清單中 「 姓氏，名字"格式的名稱，讓使用者可以選取部門系統管理員。 若要讓您更輕鬆地這麼做，您會在資料庫中建立檢視。 檢視將會包含所需的下拉式清單資料： 全名 （格式正確）] 和 [記錄索引鍵。
@@ -136,7 +134,6 @@ ms.locfileid: "59407194"
 > [!NOTE]
 > 在 **輸出**並**錯誤清單**新的 windows，您可能會看到警告訊息，通知您此工具會自動建立主要金鑰`vInstructorName`檢視。 這是正常的現象。
 
-
 當您參考新`vInstructorName`程式碼中的實體，您不想使用小寫"v"，前面加上的資料庫慣例。 因此，您將會重新命名的實體和模型中實體集。
 
 開啟**模型瀏覽器**。 您會看到`vInstructorName`列為 實體類型和檢視。
@@ -159,7 +156,6 @@ ms.locfileid: "59407194"
 
 > [!NOTE]
 > 常見的作法是建立每個實體類型的儲存機制類別。 在本教學課程中，會使用多個實體類型的一個儲存機制類別。 如需儲存機制模式的詳細資訊，請參閱中的文章[Entity Framework 小組的部落格](https://blogs.msdn.com/b/adonet/archive/2009/06/16/using-repository-and-unit-of-work-patterns-with-entity-framework-4-0.aspx)並[Julie Lerman 的部落格](http://thedatafarm.com/blog/data-access/agile-ef4-repository-part-3-fine-tuning-the-repository/)。
-
 
 `GetDepartments`方法會傳回`IEnumerable`物件，而非`IQueryable`以確保傳回的集合是可使用，即使在存放庫物件本身已處置的物件。 `IQueryable`物件可能會導致資料庫存取權，只要存取，但儲存機制物件可能會處置資料繫結控制項嘗試轉譯資料的時間。 您也可以傳回另一個集合的型別，例如`IList`物件，而不是`IEnumerable`物件。 不過，傳回`IEnumerable`物件可確保您可以執行一般的唯讀清單處理工作是這類`foreach`迴圈與 LINQ 查詢，但是您無法加入或移除項目在集合中，可能暗示會是這類變更保存到資料庫。
 
@@ -309,7 +305,6 @@ ms.locfileid: "59407194"
 
 > [!NOTE]
 > 您無法編輯不是由您加入的資料列 (也就是，均已存在於資料庫)，因為在資料庫中有無效的資料已由資料庫所建立的資料列的系統管理員是學生。 如果您嘗試編輯其中一個，就會報告類似的錯誤的錯誤頁面 `'InstructorsDropDownList' has a SelectedValue which is invalid because it does not exist in the list of items.`
-
 
 [![Image10](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image36.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image35.png)
 

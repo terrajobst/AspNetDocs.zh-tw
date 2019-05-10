@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: a7f3c1b5-69d9-4261-b082-19ffafa5f16a
 msc.legacyurl: /web-api/overview/advanced/sending-html-form-data-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 70e150a32f208cf75086f959d484d86e8501c6bd
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f5aaebb96f631dfb6b0da1fbca96cd93a6a7fe2d
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59419921"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126233"
 ---
 # <a name="sending-html-form-data-in-aspnet-web-api-file-upload-and-multipart-mime"></a>ASP.NET Web API 中傳送 HTML 表單資料：檔案上傳與多部分 MIME
 
@@ -26,7 +26,6 @@ ms.locfileid: "59419921"
 
 > [!NOTE]
 > [下載已完成的專案](https://code.msdn.microsoft.com/ASPNET-Web-API-File-Upload-a8c0fb0d)。
-
 
 將檔案上傳之 HTML 表單的範例如下：
 
@@ -44,7 +43,6 @@ ms.locfileid: "59419921"
 
 > [!NOTE]
 > 組件界限會包含隨機的元件 (&quot;41184676334&quot;) 以確保界限字串不小心不顯示訊息部分內。
-
 
 每個訊息組件包含一或多個標頭，後面接著組件的內容。
 

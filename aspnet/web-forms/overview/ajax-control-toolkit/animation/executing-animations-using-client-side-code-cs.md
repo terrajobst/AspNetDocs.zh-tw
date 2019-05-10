@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 0270e0df-6fde-4a8f-a2cb-2cacc55143f2
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 45a3d42d9e58469c789acfdc8cdaaf88b7920892
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 23727e8f34afdd073b21aa1e7381237c48e699c4
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387085"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132713"
 ---
 # <a name="executing-animations-using-client-side-code-c"></a>使用用戶端程式碼執行動畫 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59387085"
 [下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation10.cs.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation10CS.pdf)
 
 > 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 動畫執行也可能使用自訂用戶端 JavaScript 程式碼會觸發。
-
 
 ## <a name="overview"></a>總覽
 
@@ -61,7 +60,6 @@ ms.locfileid: "59387085"
 以下是 頁面完全載入後，模擬面板上的按一下 完成用戶端 JavaScript 程式碼，請注意，`pageLoad()`函式名稱可由呼叫 ASP.NET AJAX 一次頁面和所有包含的 JavaScript 程式庫已載入。
 
 [!code-html[Main](executing-animations-using-client-side-code-cs/samples/sample8.html)]
-
 
 [![動畫會立即執行，而不需要按下滑鼠](executing-animations-using-client-side-code-cs/_static/image2.png)](executing-animations-using-client-side-code-cs/_static/image1.png)
 

@@ -8,12 +8,12 @@ ms.date: 06/10/2008
 ms.assetid: 43d1e83c-0092-4dcf-977c-e709c4dce7c3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 35fcf02c20e3d20f9cb75f6a25aeb1ddac016b4e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 856d0c588535838c73d52ee47648fcb5928cf5b7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59393765"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128612"
 ---
 # <a name="urls-in-master-pages-vb"></a>主版頁面中的 URL (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59393765"
 [下載程式碼](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_04_VB.zip)或[下載 PDF](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_04_VB.pdf)
 
 > 解決方式中的主版頁面的 Url 可能會中斷由於在不同於 [內容] 頁面相對目錄中的主版頁面檔案。 查看 重定基底 Url，透過 ~ 的宣告式語法和以程式設計方式使用 ResolveUrl ResolveClientUrl 中。 （也請看
-
 
 ## <a name="introduction"></a>簡介
 
@@ -36,13 +35,11 @@ ms.locfileid: "59393765"
 
 比方說，我們的網站有`~/Images/`資料夾中的，使用單一影像檔， `PoweredByASPNET.gif`。 主版頁面檔案`Site.master`已經`<img>`中的項目`footerContent`區域，以下列標記：
 
-
 [!code-html[Main](urls-in-master-pages-vb/samples/sample1.html)]
 
 `src`屬性中的值`<img>`項目是相對的 URL，因為它不是以開頭`/`或`http://`。 簡單來說，`src`屬性值會告知瀏覽器中呈現的外觀`Images`子資料夾，名為的檔案`PoweredByASPNET.gif`。
 
 瀏覽時內容的頁面，上述標記會直接傳送至瀏覽器。 請花一點時間瀏覽`About.aspx`以及檢視傳送至瀏覽器的 HTML 原始檔。 您會發現主版頁面中完全相同的標記已傳送至瀏覽器。
-
 
 [!code-html[Main](urls-in-master-pages-vb/samples/sample2.html)]
 
@@ -51,17 +48,13 @@ ms.locfileid: "59393765"
 > [!NOTE]
 > 在  [*指定主版頁面的標題、 中繼標籤及其他 HTML 標頭*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)教學課程中我們建立名為自訂的基底頁面類別`BasePage`，自動設定 [內容] 頁面的標題 (如果它未明確指派給）。 別忘了有新建立的網頁程式碼後置類別衍生自`BasePage`以便讓它能夠利用這項功能。
 
-
 您已建立此內容的頁面之後，您的方案總管] 中看起來應該類似於 [圖 1。
-
 
 ![新的資料夾和 ASP.NET 網頁加入至專案](urls-in-master-pages-vb/_static/image1.png)
 
 **圖 01**:新的資料夾和 ASP.NET 網頁加入至專案
 
-
 接下來，更新`Web.sitemap`檔案，以包含新`<siteMapNode>`這一課中的項目。 下列 XML 會顯示完整`Web.sitemap`標記，現在包含加入的第三個`<siteMapNode>`項目。
-
 
 [!code-xml[Main](urls-in-master-pages-vb/samples/sample3.xml)]
 
@@ -69,16 +62,13 @@ ms.locfileid: "59393765"
 
 `~/Admin/Default.aspx`內容頁面會傳送相同的 HTML`footerContent`區域一樣`About.aspx`頁面：
 
-
 [!code-html[Main](urls-in-master-pages-vb/samples/sample4.html)]
 
 因為`<img>`項目的`src`屬性為相對 URL，瀏覽器會嘗試尋找`Images`相對於網頁的資料夾位置的資料夾。 換句話說，在瀏覽器正在尋找映像檔`Admin/Images/PoweredByASPNET.gif`。
 
-
 [![找不到 PoweredByASPNET.gif 映像檔](urls-in-master-pages-vb/_static/image3.png)](urls-in-master-pages-vb/_static/image2.png)
 
 **圖 02**:`PoweredByASPNET.gif`映像找不到檔案 ([按一下以檢視完整大小的影像](urls-in-master-pages-vb/_static/image4.png))
-
 
 ### <a name="replacing-relative-urls-with-absolute-urls"></a>相對的 Url 取代為絕對 Url
 
@@ -91,11 +81,9 @@ ms.locfileid: "59393765"
 
 請花一點時間更新`<img>`項目的`src`屬性設定為使用其中一種形式，如上所示的絕對 URL，然後瀏覽`~/Admin/Default.aspx`透過瀏覽器的頁面。 目前瀏覽器會正確地尋找並顯示`PoweredByASPNET.gif`映像檔案 （請參閱 [圖 3]）。
 
-
 [![PoweredByASPNET.gif 映像會現在顯示](urls-in-master-pages-vb/_static/image6.png)](urls-in-master-pages-vb/_static/image5.png)
 
 **圖 03**:`PoweredByASPNET.gif`影像是顯示 ([按一下以檢視完整大小的影像](urls-in-master-pages-vb/_static/image7.png))
-
 
 硬式編碼絕對的 URL 中的運作方式，而它緊密結合您的 HTML 網站的伺服器和資料夾位置，可能會變更。 使用格式的絕對 URL`http://localhost:3908/...`是很容易損毀，因為前面 localhost 的連接埠號碼就會自動選取每次啟動 Visual Studio 的內建 ASP.NET 開發 Web 伺服器時。 同樣地，`http://localhost`本機測試時，才有效組件。 程式碼部署至實際執行伺服器之後, 的 URL 基底會變更為其他項目，例如`http://www.yourserver.com`。 在表單中的絕對 URL`/ASPNET_MasterPages_Tutorial_04_VB/...`因為此應用程式路徑通常與開發和生產環境的伺服器之間也有相同的脆弱度。
 
@@ -110,7 +98,6 @@ ms.locfileid: "59393765"
 > [!NOTE]
 > 因為所有的 ASP.NET 伺服器控制項是衍生自`Control`類別，所有伺服器控制項都可以存取`ResolveClientUrl`方法。 甚至`Page`類別衍生自`Control`類別，這表示您可以使用這個方法，直接從您的 ASP.NET 網頁的程式碼後置類別。
 
-
 ### <a name="usingin-the-declarative-markup"></a>使用`~`宣告式標記中
 
 數個 ASP.NET Web 控制項，包含 URL 相關的屬性： 超連結控制項具有`NavigateUrl`屬性，且控制項的映像`ImageUrl`屬性; 等等。 這些控制項進行轉譯時，傳遞至其 URL 相關的屬性值`ResolveClientUrl`。 因此，如果這些屬性包含`~`表示 web 應用程式的根目錄，URL 將會修改以有效的相對 URL。
@@ -119,29 +106,24 @@ ms.locfileid: "59393765"
 
 若要修正的映像標記`Site.master`，取代現有`<img>`與 ASP.NET 映像的 Web 控制項的項目。 將映像的 Web 控制項的`ID`要`PoweredByImage`、 其`ImageUrl`屬性設`~/Images/PoweredByASPNET.gif`，並將其`AlternateText`」 提供的 ASP.NET ！"的屬性
 
-
 [!code-aspx[Main](urls-in-master-pages-vb/samples/sample5.aspx)]
 
 這項變更的主版頁面後，重新瀏覽`~/Admin/Default.aspx`頁面上一次。 這次`PoweredByASPNET.gif`映像檔案會出現在頁面 （請參閱 [圖 3]）。 映像的 Web 控制項呈現時它會使用`ResolveClientUrl`方法來解析其`ImageUrl`屬性值。 在  `~/Admin/Default.aspx` `ImageUrl`會轉換成適當的相對 URL，為下列程式碼片段的 HTML 原始檔所示：
-
 
 [!code-html[Main](urls-in-master-pages-vb/samples/sample6.html)]
 
 > [!NOTE]
 > 除了以 URL 為基礎的 Web 控制項的屬性，用`~`也可以用時呼叫`Response.Redirect`和`Server.MapPath`方法，其他項目。 此外，`ResolveClientUrl`可能會叫用方法直接從 ASP.NET 或主版頁面的宣告式標記，如有需要請參閱[Fritz Onion](https://www.pluralsight.com/blogs/fritz/)的部落格文章[Using`ResolveClientUrl`標記中](https://www.pluralsight.com/blogs/fritz/archive/2006/02/06/18596.aspx)。
 
-
 ## <a name="fixing-the-master-pages-remaining-relative-urls"></a>修正主版頁面的剩餘的相對 Url
 
 除了`<img>`中的項目`footerContent`，我們只是修正，主版頁面包含一個更相對的 URL 需要我們的注意。 `topContent`區域包含連結 「 主版頁面教學課程，」 指向`Default.aspx`。
-
 
 [!code-html[Main](urls-in-master-pages-vb/samples/sample7.html)]
 
 此 URL 是相對的因為它會傳送使用者`Default.aspx`資料夾中的 [內容] 頁面，他們造訪的頁面。 若要將一律指向此連結`Default.aspx`我們要取代的根資料夾中`<a>`項目與超連結 Web 控制項，讓我們可以使用`~`標記法。
 
 移除`<a>`項目標記，並在其位置新增超連結控制項。 設定超連結`ID`要`lnkHome`、 其`NavigateUrl`屬性設`~/Default.aspx`，並將其`Text`屬性，以 「 主版頁面教學課程 」。
-
 
 [!code-aspx[Main](urls-in-master-pages-vb/samples/sample8.aspx)]
 
@@ -151,13 +133,11 @@ ms.locfileid: "59393765"
 
 在[*建立全網站的版面配置使用主版頁面*](creating-a-site-wide-layout-using-master-pages-vb.md)教學課程，我們已新增`<link>`來`Styles.css`中的檔案`<head>`區域：
 
-
 [!code-aspx[Main](urls-in-master-pages-vb/samples/sample9.aspx)]
 
 雖然`<link>`項目的`href`屬性相對的它會自動轉換為適當的路徑，在執行階段。 如我們所述[*指定主版頁面的標題、 中繼標籤及其他 HTML 標頭*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)教學課程中，`<head>`區域是實際的伺服器端控制項，讓它能夠修改其內部的控制項呈現時的內容。
 
 若要確認，請再次造訪`~/Admin/Default.aspx`頁面，並檢視傳送至瀏覽器的 HTML 原始檔。 下列程式碼片段所示，`<link>`項目的`href`屬性會自動修改適當的相對 url， `../Styles.css`。
-
 
 [!code-html[Main](urls-in-master-pages-vb/samples/sample10.html)]
 

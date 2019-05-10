@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: d65c5c2b-a039-463f-ad29-25cf9fb7a1ba
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-9
 msc.type: authoredcontent
-ms.openlocfilehash: c7151351b087439f17457b254cd9e373af21cae3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 040bc0ccef889fb9a7c3d9b5ce88c75b7b754248
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380895"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129629"
 ---
 # <a name="part-9-registration-and-checkout"></a>第 9 部分：註冊和簽出
 
@@ -24,7 +24,6 @@ ms.locfileid: "59380895"
 > MVC Music 市集是銷售線上音樂 album 和實作基本的網站管理、 使用者登入時，和 「 購物車 」 功能的輕量級的範例存放區實作。  
 >   
 > 本教學課程系列會詳細說明所有建置 ASP.NET MVC Music 市集範例應用程式所採取的步驟。 第 9 涵蓋註冊和簽出。
-
 
 在本節中，我們將建立 CheckoutController 來收集購物者的地址和付款資訊。 我們將需要向我們的網站前簽出，所以此控制器將會需要授權的使用者。
 
@@ -158,7 +157,6 @@ CheckoutController 將會有下列控制器動作：
 由於這是一般錯誤頁面時，內容就非常簡單。 我們將會包含訊息和連結，以便瀏覽至歷程記錄中的上一頁，如果使用者想要重試其動作。
 
 [!code-cshtml[Main](mvc-music-store-part-9/samples/sample13.cshtml)]
-
 
 > [!div class="step-by-step"]
 > [上一頁](mvc-music-store-part-8.md)

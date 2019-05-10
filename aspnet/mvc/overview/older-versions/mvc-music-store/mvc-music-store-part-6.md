@@ -8,12 +8,12 @@ ms.date: 04/21/2011
 ms.assetid: b3193d33-2d0b-4d98-9712-58bd897c62ec
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: b1e7bd0b16190b00e0e78a01ef71475e1c8d048a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: bc031dd5be61cc6707c522f85f6af77a420c8b31
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59394818"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129660"
 ---
 # <a name="part-6-using-data-annotations-for-model-validation"></a>第 6 部分：使用資料註解進行模型驗證
 
@@ -24,7 +24,6 @@ ms.locfileid: "59394818"
 > MVC Music 市集是銷售線上音樂 album 和實作基本的網站管理、 使用者登入時，和 「 購物車 」 功能的輕量級的範例存放區實作。  
 >   
 > 本教學課程系列會詳細說明所有建置 ASP.NET MVC Music 市集範例應用程式所採取的步驟。 第 6 節涵蓋了使用資料註解的模型驗證。
-
 
 我們透過我們建立和編輯表單的主要問題： 他們不用做任何驗證。 我們可以進行像是將必要的欄位空白或型別字母留在 [價格] 欄位中，我們會看到的第一個錯誤是來自資料庫，
 
@@ -76,7 +75,6 @@ ms.locfileid: "59394818"
 輸入 [標題] 欄位中的單一字母，符合驗證需求，因此驗證訊息會立即移除。
 
 ![](mvc-music-store-part-6/_static/image3.png)
-
 
 > [!div class="step-by-step"]
 > [上一頁](mvc-music-store-part-5.md)

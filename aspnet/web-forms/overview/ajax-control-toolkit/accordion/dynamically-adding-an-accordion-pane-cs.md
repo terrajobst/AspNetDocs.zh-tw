@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 66d88cfa-f26f-46b1-ad52-1c9e03c04a48
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ea526ce8abdf6f7013e8dd832824c21448878e0b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7134c95845ec7f22b5216e10b50ab8f81cd24806
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416840"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131243"
 ---
 # <a name="dynamically-adding-an-accordion-pane-c"></a>以動態方式新增 Accordion 窗格 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59416840"
 [下載程式碼](http://download.microsoft.com/download/5/6/d/56d50cef-2011-4c8f-9891-7edc6dc57df9/Accordion2.cs.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/accordion2CS.pdf)
 
 > 在 AJAX Control Toolkit Accordion 控制項提供多個窗格，並可讓使用者一次顯示其中一個。 面板通常會宣告本身，在頁面中，但伺服器端程式碼可用來達到相同的結果。
-
 
 ## <a name="overview"></a>總覽
 
@@ -53,7 +52,6 @@ Accordion 控制項公開 （expose) 所有重要的屬性，以伺服器端程�
 若要完成此範例，兩個 Accordion 控制項中所參考的 CSS 類別會提供瀏覽器的樣式資訊：
 
 [!code-css[Main](dynamically-adding-an-accordion-pane-cs/samples/sample6.css)]
-
 
 [![伺服器端程式碼已以動態方式新增 accordion 中的資料](dynamically-adding-an-accordion-pane-cs/_static/image2.png)](dynamically-adding-an-accordion-pane-cs/_static/image1.png)
 

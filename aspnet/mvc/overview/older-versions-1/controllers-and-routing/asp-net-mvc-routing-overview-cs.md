@@ -8,19 +8,18 @@ ms.date: 08/19/2008
 ms.assetid: 5b39d2d5-4bf9-4d04-94c7-81b84dfeeb31
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e2f2246e2126bd6e648f861bcb296fab62a748bb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5e1155ca676e7a25b5bfc63e251c6387a010eb34
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380102"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123663"
 ---
 # <a name="aspnet-mvc-routing-overview-c"></a>ASP.NET MVC 路由概觀 (C#)
 
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > 在本教學課程中，Stephen Walther 會示範如何 ASP.NET MVC 架構將瀏覽器要求對應至控制器動作。
-
 
 您會在本教學課程中，引進了一項重要功能的每個呼叫的 ASP.NET MVC 應用程式*ASP.NET 路由*。 ASP.NET 路由模組負責將傳入的瀏覽器要求對應至特定的 MVC 控制器動作。 本教學課程結束時，您將了解標準的路由表如何將要求對應至控制器動作。
 
@@ -94,11 +93,9 @@ URL /Home 也會比對 HomeController 類別，在 列表 4 中的 index （） 
 
 [!code-csharp[Main](asp-net-mvc-routing-overview-cs/samples/sample5.cs)]
 
-
 [![叫用控制器動作，以參數值](asp-net-mvc-routing-overview-cs/_static/image1.jpg)](asp-net-mvc-routing-overview-cs/_static/image1.png)
 
 **圖 01**:叫用控制器動作，以參數值 ([按一下以檢視完整大小的影像](asp-net-mvc-routing-overview-cs/_static/image2.png))
-
 
 URL /Home/索引/3，相反地，會使用索引控制器動作，在 列表 5 中正常運作。 要求 /Home/Index/3 會導致使用 Id 參數，其值為 3 會呼叫 index （） 方法。
 

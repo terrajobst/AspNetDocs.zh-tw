@@ -8,19 +8,18 @@ ms.date: 02/27/2014
 ms.assetid: 69fb02e0-f5b7-4c35-878c-fa87164fc785
 msc.legacyurl: /mvc/overview/security/preventing-open-redirection-attacks
 msc.type: authoredcontent
-ms.openlocfilehash: 1d83ede97ec37166d8dec32ff9e21c65423f3fc5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cfa635d4fd14d031993c5b452325cbe334f82dc2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408481"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126441"
 ---
 # <a name="preventing-open-redirection-attacks-c"></a>預防開啟重新導向攻擊 (C#)
 
 藉由[Jon Galloway](https://github.com/jongalloway)
 
 > 本教學課程說明如何防止開啟重新導向攻擊，以及在您的 ASP.NET MVC 應用程式中。 本教學課程會討論在 ASP.NET MVC 3 中 AccountController 所做的變更，並示範如何套用這些變更，以及在您現有的 ASP.NET MVC 1.0 和 2 個應用程式中。
-
 
 ## <a name="what-is-an-open-redirection-attack"></a>什麼是開啟重新導向攻擊？
 

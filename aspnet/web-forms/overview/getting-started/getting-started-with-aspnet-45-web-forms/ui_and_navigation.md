@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 5c76891d-e515-4885-b576-76bd2c494efe
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
 msc.type: authoredcontent
-ms.openlocfilehash: 7834b5c418de9d05ee870641cfd7c7f9956ab210
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 06816f3555a806d41caf562b910a4ec4427b13bd
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402995"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134226"
 ---
 # <a name="ui-and-navigation"></a>UI 和瀏覽
 
@@ -22,7 +22,6 @@ ms.locfileid: "59402995"
 [下載 Wingtip Toys 範例專案 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下載電子書 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > 本系列教學課程將教導您建置使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 的 ASP.NET Web Forms 應用程式的基本概念。 Visual Studio 2013[含有 C# 原始程式碼專案](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)隨附了本教學課程系列。
-
 
 在本教學課程中，您將修改的預設 Web 應用程式，以支援功能，Wingtip Toys store 前端應用程式的 UI。 此外，您將會以簡單的方式加入，並瀏覽的資料繫結。 此教學課程的上一個教學課程 」 建立資料存取層 」，並且是 Wingtip Toys 教學課程系列的一部分。
 
@@ -75,7 +74,6 @@ ASP.NET Web Form 通常會包含可讓您指定頁面的頁面內容和組態資
 > [!NOTE] 
 > 
 > *Machine.config*也提供所有可能的組態設定的詳細資訊。
-
 
 ### <a name="web-server-controls"></a>Web 伺服器控制項
 
@@ -181,7 +179,6 @@ Visual Studio 2013 專案範本會使用[Bootstrap](http://getbootstrap.com/)，
 > 
 > ASP.NET Web 應用程式範本會使用*Bundle.config*專案來儲存啟動載入 CSS 檔案的路徑根目錄的檔案。
 
-
 ### <a name="modifying-the-default-navigation"></a>修改預設的巡覽
 
 變更未排序的瀏覽清單項目。 也可以修改預設的瀏覽應用程式中的每一頁*Site.Master*頁面。
@@ -196,7 +193,6 @@ Visual Studio 2013 專案範本會使用[Bootstrap](http://getbootstrap.com/)，
 > [!NOTE] 
 > 
 > 波狀符號 (`~`) 字元用來指定`href`開始專案根目錄的路徑。
-
 
 ### <a name="adding-a-data-control-to-display-navigation-data"></a>將資料控制項加入顯示瀏覽資料
 
@@ -215,7 +211,6 @@ Visual Studio 2013 專案範本會使用[Bootstrap](http://getbootstrap.com/)，
 > **祕訣**
 > 
 > 當您將在開發期間所輸入的程式碼時，您就可以確定該物件的有效成員位於因為強型別資料控制項顯示可用的成員為基礎的 IntelliSense。 當您輸入程式碼，例如屬性、 方法和物件，IntelliSense 會提供適當的內容的程式碼選擇。
-
 
 在下一個步驟中，您將實作`GetCategories`方法來擷取資料。
 
@@ -253,7 +248,6 @@ Visual Studio 2013 專案範本會使用[Bootstrap](http://getbootstrap.com/)，
 > [!NOTE] 
 > 
 > 如果*應用程式\_資料*看不到資料夾，或如果是空的資料夾，選取**重新整理**圖示，然後**顯示所有檔案**頂端的圖示**方案總管 中**視窗。 展開的寬度**方案總管 中**windows 可能需要以顯示所有可用的圖示。
-
 
 現在您可以檢查所包含的資料*wingtiptoys.mdf*使用的資料庫檔案**伺服器總管**視窗。
 

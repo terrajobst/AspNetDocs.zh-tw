@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 0d6fb83b-71f7-425d-8dec-981197d7ec42
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: f86212c1cb559c164342997fb0e4208339b5e3cc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: cc629f84bbf8c271780a8e7deba3d04d23d5fbb1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421117"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129825"
 ---
 # <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-5-of-10"></a>讀取相關資料，使用 Entity Framework 中的 ASP.NET MVC 應用程式 (5 為 10)
 
@@ -26,7 +26,6 @@ ms.locfileid: "59421117"
 > > [!NOTE] 
 > > 
 > > 如果您遇到的問題，您無法解決，請[下載已完成的一章](building-the-ef5-mvc4-chapter-downloads.md)並嘗試重現您的問題。 您通常可以找到問題的解決方案，藉由比較您的程式碼的完整程式碼。 一些常見錯誤及如何解決這些問題，請參閱[錯誤和因應措施。](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 在上一個教學課程，您已完成 School 資料模型的內容。 在本教學課程中，您將讀取並顯示相關的資料-也就是 Entity Framework 載入到導覽屬性的資料。
 
@@ -176,7 +175,6 @@ Instructor 索引 頁面會顯示三個不同的資料表。 因此，您將建�
 > 
 > [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cshtml)]
 
-
 此程式碼是從建立檢視模型的執行個體，並將其置於講師清單開始。 程式碼會指定積極式載入`Instructor.OfficeAssignment`而`Instructor.Courses`導覽屬性。
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample12.cs?highlight=3-4)]
@@ -237,7 +235,6 @@ Instructor 索引 頁面會顯示三個不同的資料表。 因此，您將建�
 
 > [!NOTE]
 > *.Css*由瀏覽器快取檔案。 如果您沒有看到所做的變更，當您執行應用程式時，執行硬碟重新整理 (按住 CTRL 鍵同時按一下**重新整理**按鈕，或按 CTRL + F5)。
-
 
 執行網頁，然後選取講師。 現在您會看到一個方格，其中顯示指派給所選取講師的課程，而且在每個課程中，您可以看到指派的部門名稱。
 

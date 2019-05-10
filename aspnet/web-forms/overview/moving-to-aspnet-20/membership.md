@@ -8,19 +8,18 @@ ms.date: 02/20/2005
 ms.assetid: f2339485-5d78-4c5e-8c0a-dc9b8a315345
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/membership
 msc.type: authoredcontent
-ms.openlocfilehash: f3f8c649932682fd96e0640ddf4595c19c755909
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: da6fc205bd852a818d65425586cec38fdb08d310
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408182"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131060"
 ---
 # <a name="membership"></a>成員資格
 
 by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET 成員資格的表單驗證模型的成功組建從 ASP.NET 1.x。 ASP.NET 表單驗證會提供便利的方式來併入您的 ASP.NET 應用程式的登入表單，並驗證使用者針對資料庫或其他資料存放區。
-
 
 ASP.NET 成員資格的表單驗證模型的成功組建從 ASP.NET 1.x。 ASP.NET 表單驗證會提供便利的方式來併入您的 ASP.NET 應用程式的登入表單，並驗證使用者針對資料庫或其他資料存放區。 FormsAuthentication 類別的成員可使您能夠處理驗證的 cookie、 檢查有有效的登入、 記錄將使用者登出等。不過，在 ASP.NET 1.x 應用程式中實作表單驗證，可能需要相當多的程式碼。
 
@@ -48,11 +47,9 @@ ASP.NET 成員資格的表單驗證模型的成功組建從 ASP.NET 1.x。 ASP.N
 
 一旦您執行該命令時，您會看到使用 ASP.NET SQL Server 安裝精靈，如下所示。
 
-
 ![](membership/_static/image1.jpg)
 
 **圖 1**
-
 
 ASP.NET SQL Server 安裝精靈會建立網站，您在精靈中指定的執行個體中。 不過，ASP.NET 會使用連接字串在 machine.config 檔案中連接到您的資料庫。 根據預設，此連接字串會指向的 SQL Server 2005 執行個體，因此如果您使用的 SQL Server 2000 或 SQL Server 7.0 執行個體，您必須修改 machine.config 檔案中的連接字串。 該連接字串可以在以下：
 
@@ -66,11 +63,9 @@ ASP.NET SQL Server 安裝精靈會建立網站，您在精靈中指定的執行�
 
 您可以按一下 [方案總管] 工具列，如下所示的 [ASP.NET 組態] 按鈕來啟動 Web 介面。 您也可以啟動 Web 介面，透過插入登入控制項時顯示快顯視窗。
 
-
 ![](membership/_static/image2.jpg)
 
 **圖 2**
-
 
 這會啟動 ASP.NET 網站管理工具如下所示。 ASP.NET 網站管理是四個索引標籤介面，可讓您輕鬆地管理應用程式設定。 可使用下列索引標籤：
 
@@ -83,21 +78,17 @@ Web Site Administration Tool 可讓您輕鬆地建立新的使用者，建立新
 
 若要啟動的 Windows 介面，開啟 Internet Information Services 嵌入式管理單元，以滑鼠右鍵按一下您的應用程式，並選擇屬性。 按一下 [ASP.NET] 索引標籤，然後按一下 [編輯設定] 按鈕。 （應用程式必須在啟用 [編輯設定] 按鈕的 ASP.NET 2.0 下執行。 您可以設定的 ASP.NET 版本在 [ASP.NET] 對話方塊。）[ASP.NET 組態設定] 對話方塊隨即出現，如下所示。
 
-
 ![](membership/_static/image3.jpg)
 
 **圖 3**
-
 
 在 [一般] 索引標籤上會列出連接字串和應用程式設定。 斜體的任何設定父組態檔 （machine.config 或更高層級的 web.config） 中定義及設定不會以斜體顯示從應用程式組態檔。 如果設定已加入，已移除或編輯應用程式層級，ASP.NET 會新增、 移除或修改在應用程式層級 web.config，而不是從組態檔，從中繼承移除設定的設定。
 
 [驗證] 索引標籤如下所示。 這是您將在其中設定您的成員資格設定。 表單驗證設定，成員資格提供者，，和角色提供者可以在此設定。
 
-
 ![](membership/_static/image4.jpg)
 
 **圖 4**
-
 
 ## <a name="implementing-membership-in-your-application"></a>在 您的應用程式中實作成員資格
 
@@ -133,11 +124,9 @@ LoginName 控制項顯示之使用者的目前登入網站的使用者名稱。
 
 CreateUserWizard 控制項提供便利的方式來註冊您的成員資格系統使用者。 您可以透過如下所示的介面新增 （實作為 v kolekci WizardSteps 的集合） 的步驟。
 
-
 ![](membership/_static/image5.jpg)
 
 **圖 5**
-
 
 CreateUserWizard 是樣板化控制項衍生自精靈類別，並提供下列範本：
 
@@ -167,29 +156,23 @@ ChangePassword 控制項允許使用者變更其密碼。 如果 DisplayUserName
 
 當**cacheRolesInCookie**屬性設為 true，ASP.NET 會快取在 cookie 中的用戶端上的使用者角色成員資格。 這可讓角色查閱 RoleProvider 呼叫的情況下發生。 當使用這個屬性時，開發人員都以確保**cookieProtection**屬性會設定為 All。 （這是預設值）。這可確保 cookie 資料會加密，並協助確保 cookie 內容未遭到變更。 可以使用 Web Site Administration Tool 加入角色。 它可讓您輕鬆地定義角色、 設定這些角色為基礎的站台的組件的存取，並將使用者指派給角色。
 
-
 ![](membership/_static/image6.jpg)
 
 **圖 6**
-
 
 如上所示，可以加入新的角色，只要輸入角色的名稱，然後按一下 新增角色。 可以管理或在現有的角色清單中的適當連結，即可刪除現有的角色。
 
 當您管理角色時，您可以新增或移除使用者，如下所示。
 
-
 ![](membership/_static/image7.jpg)
 
 **圖 7**
 
-
 藉由檢查使用者在角色的核取方塊，您可以輕鬆地將使用者加入特定的角色。 ASP.NET 會自動使用適當的項目更新成員資格資料庫。 您也會想要設定您的應用程式的存取規則。 透過這項操作的 ASP.NET 1.x 開發人員熟悉&lt;授權&gt;在 web.config 檔案中，以及該選項的項目是 ASP.NET 2.0 中仍然可用。 不過，其更容易管理的存取規則使用 Web Site Administration Tool 所示下方。
-
 
 ![](membership/_static/image8.jpg)
 
 **圖 8**
-
 
 在此情況下，管理資料夾會反白顯示 （難以查看，因為此工具會反白顯示它以淺灰色） 和系統管理員角色授與存取權。 會拒絕所有其他使用者。 您可以按一下標頭的圖示，以選取的規則，然後使用往上移和下移按鈕排列的規則。 使用 ASP.NET&lt;授權&gt;項目，以其出現的順序處理規則。 換句話說，如果在上述螢幕擷取規則的順序反轉，沒有人必須存取管理資料夾因為 ASP.NET 會遇到的第一個規則的規則，拒絕每個人的資料夾。
 
@@ -209,19 +192,15 @@ ASP.NET 也會建立目前內容的成員身分的 RolePrincipal 執行個體。
 
 既然您已了解角色管理和成員資格，可讓簡短討論 LoginView 控制項如何在 ASP.NET 2.0 會充分利用這項功能。 如先前所述，LoginView 控制項是包含兩個範本預設情況下，樣板化控制項AnonymousTemplate 和 LoggedInTemplate。 內 LoginView 工作對話方塊是連結 （如下所示），可讓您 upravit kolekci RoleGroups。
 
-
 ![](membership/_static/image9.jpg)
 
 **圖 9**
 
-
 每個 RoleGroup 物件包含字串陣列，定義 RoleGroup 適用於哪些角色。 若要加入新的 RoleGroup LoginView 控制項，按一下 編輯 kolekci RoleGroups 連結。 在上圖中，您可以看到我已新增新的 RoleGroup 系統管理員。 選取該 RoleGroup （RoleGroup[0]) 檢視下拉式清單中的，我可以設定的範本，則只會顯示系統管理員角色的成員。 在下圖中，我已新增新的 RoleGroup 適用於 「 銷售 」 角色和發佈角色的成員。 這會將第二個 RoleGroup 加入 LoginView 工作對話方塊中的 檢視 下拉式清單和任何項目加入至該範本會顯示 Sales 或 通訊群組中的任何使用者角色。
-
 
 ![](membership/_static/image10.jpg)
 
 **圖 10**
-
 
 ## <a name="overriding-the-existing-membership-provider"></a>覆寫現有的成員資格提供者
 

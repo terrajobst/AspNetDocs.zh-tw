@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 9ef2c4f1-a305-4e0a-9fb8-bfbd9ef331d9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
 msc.type: authoredcontent
-ms.openlocfilehash: 307719f30c9efc8001f63f3ab068e50f82e1c5c0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b0a66cf62c34a59ca5c89c2f380093165e765100
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59399615"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129893"
 ---
 # <a name="adding-a-new-field-to-the-movie-model-and-table"></a>將新欄位新增至電影模型和資料表
 
@@ -21,7 +21,6 @@ ms.locfileid: "59399615"
 
 > > [!NOTE]
 > > 本教學課程中的更新的版本可[此處](../../getting-started/introduction/getting-started.md)使用 ASP.NET MVC 5 和 Visual Studio 2013。 它更安全、 更容易遵循，並示範更多的功能。
-
 
 在本節中，您將使用 Entity Framework Code First 移轉來移轉到模型類別的一些變更，因此變更套用至資料庫。
 
@@ -69,7 +68,6 @@ Visual Studio 會開啟*Configuration.cs*檔案。 取代`Seed`方法中的*Conf
 > 
 > 程式碼 First Migrations 會呼叫`Seed`方法之後每個移轉 (也就呼叫**更新資料庫**在套件管理員主控台)，這個方法會更新具有已插入，或將其插入，如果資料列和它們不存在。
 
-
 **按 CTRL-SHIFT-B 來建置專案。**(下列步驟將會失敗，如果您不要在此時建置。)
 
 下一個步驟是建立`DbMigration`類別初始移轉。 此移轉建立的新資料庫，就是為什麼您刪除*movie.mdf*上一個步驟中的檔案。
@@ -102,7 +100,7 @@ Code First 移轉會建立另一個類別檔案中的*移轉*資料夾 (同名 *
 
 建置應用程式使用**建置** &gt;**建置電影**功能表命令，或是按 CTRL shift 鍵。
 
-既然您已更新`Model`類別，您也需要更新*\Views\Movies\Index.cshtml*並*\Views\Movies\Create.cshtml*檢視範本，以顯示新`Rating`瀏覽器檢視中的屬性。
+既然您已更新`Model`類別，您也需要更新 *\Views\Movies\Index.cshtml* 並 *\Views\Movies\Create.cshtml* 檢視範本，以顯示新`Rating`瀏覽器檢視中的屬性。
 
 開啟<em>\Views\Movies\Index.cshtml</em>檔案，並新增`<th>Rating</th>`資料行標題後方<strong>價格</strong>資料行。 然後新增`<td>`要呈現的範本結尾附近的資料行`@item.Rating`值。 以下是 哪些更新<em>Index.cshtml</em>檢視範本看起來像：
 
@@ -122,13 +120,11 @@ Code First 移轉會建立另一個類別檔案中的*移轉*資料夾 (同名 *
 
 您之所以看到此錯誤，因為已更新`Movie`應用程式中的模型類別現在是不同的結構描述`Movie`現有資料庫的資料表。 (資料庫資料表中沒有任何 `Rating` 資料行)。
 
-
 有幾個方法可以解決這個錯誤：
 
 1. 讓 Entity Framework 自動卸除資料庫，並重新依據新的模型類別結構描述來建立資料庫。 這個方法會很方便，當測試資料庫上進行開發它可讓您一併調整更加快速的模型和資料庫結構描述。 它的缺點是您在資料庫中現有的資料遺失，因此您 *不* 想要在生產資料庫上使用這種方法 ！ 使用初始設定式，將自動植入測試資料的資料庫，通常是開發應用程式的有效方式。 如需有關 Entity Framework 資料庫初始設定式的詳細資訊，請參閱 Tom Dykstra [ASP.NET MVC/Entity Framework 教學課程](../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。
 2. 您可明確修改現有資料庫的結構描述，使其符合模型類別。 這種方法的優點是可以保留您的資料。 您可以手動方式或藉由建立資料庫變更指令碼來進行這項變更。
 3. 使用 Code First 移轉來更新資料庫結構描述。
-
 
 在本教學課程中，我們將使用 Code First 移轉。
 

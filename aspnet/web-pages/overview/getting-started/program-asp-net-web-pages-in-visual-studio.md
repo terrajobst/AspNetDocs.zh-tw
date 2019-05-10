@@ -8,12 +8,12 @@ ms.date: 02/13/2014
 ms.assetid: 0acfec5a-48f2-4766-a801-a0f426966f0a
 msc.legacyurl: /web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 6d25eb99f87c4c3d2c96e021e79a13c90da4a035
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1a76098779d05912bf7bdf2de5fdce024770752c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414487"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134615"
 ---
 # <a name="programming-aspnet-web-pages-razor-using-visual-studio"></a>程式設計使用 Visual Studio 的 ASP.NET Web Pages (Razor)
 
@@ -37,7 +37,6 @@ ms.locfileid: "59414487"
 >
 >
 > 本教學課程也適用於 ASP.NET Web Pages 2、 與 Visual Studio 2012、 Visual Studio 2010，WebMatrix 2。
-
 
 您可以使用 Razor 語法使用 WebMatrix 或許多其他程式碼編輯器進行程式設計的 ASP.NET Web pages。 您也可以使用 Microsoft Visual Studio 也就是功能完整的整合式的開發環境 (IDE)，提供一組強大的工具建立的多種應用程式 （不只是網站）。 若要使用 ASP.NET Razor 頁面，您可以使用[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)。
 

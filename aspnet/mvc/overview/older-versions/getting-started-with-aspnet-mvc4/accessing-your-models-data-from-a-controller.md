@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 61e0206d-7f32-4018-992d-0a51b48b37dc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 45683fc2b40f58a6344ec8670e6a93df89b587fe
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b40bb8b06ae7c89a33ae2aead9578cf507503531
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59402904"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129954"
 ---
 # <a name="accessing-your-models-data-from-a-controller"></a>從控制器存取模型資料
 
@@ -21,7 +21,6 @@ ms.locfileid: "59402904"
 
 > > [!NOTE]
 > > 本教學課程中的更新的版本可[此處](../../getting-started/introduction/getting-started.md)使用 ASP.NET MVC 5 和 Visual Studio 2013。 它更安全、 更容易遵循，並示範更多的功能。
-
 
 在本節中，您將建立新`MoviesController`類別，並撰寫程式碼會擷取電影資料，並顯示在瀏覽器中使用檢視範本。
 
@@ -120,7 +119,6 @@ Entity Framework Code First 偵測到所提供的資料庫連接字串指向`Mov
 > [!NOTE]
 > 如果未顯示 [資料庫總管] 中，從**工具**功能表上，選取**連接到資料庫**，然後取消**選擇資料來源**對話方塊。 這會強制開啟 [資料庫總管] 中。
 
-
 > [!NOTE]
 > 如果您使用的 VWD 或 Visual Studio 2010，並出現類似下列的下列任何一個錯誤：
 > 
@@ -128,7 +126,6 @@ Entity Framework Code First 偵測到所提供的資料庫連接字串指向`Mov
 > - &quot;InvalidOperation 例外狀況未處理使用者程式碼&quot;提供的 SqlConnection 未指定初始目錄。
 > 
 > 您必須安裝[SQL Server Data Tools](https://blogs.msdn.com/b/rickandy/archive/2012/08/02/installing-and-using-sql-server-data-tools-ssdt-on-visual-studio-2010-and-vwd.aspx)並[LocalDB](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLLocalDBOnly_11_0)。 確認`MovieDBContext`前一頁上指定的連接字串。
-
 
 以滑鼠右鍵按一下`Movies`資料表，然後選取**顯示資料表資料**以查看您所建立的資料。
 

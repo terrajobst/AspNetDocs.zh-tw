@@ -8,12 +8,12 @@ ms.date: 01/14/2008
 ms.assetid: de2d65b9-aadc-42ba-abe1-4e87e66521a0
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5bb3cf45e50e480d81a441280842c1eec58f4877
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0dd7c88bb001d326bf415dc3d3e8df0d4e5c77ed
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406869"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133258"
 ---
 # <a name="an-overview-of-forms-authentication-c"></a>表單驗證概觀 (C#)
 
@@ -24,7 +24,6 @@ ms.locfileid: "59406869"
 > 在本教學課程中我們將會開啟從只討論實作;特別是，我們將探討實作表單驗證。 我們一開始建構在此教學課程中的 web 應用程式會繼續在後續的教學課程，建置在當我們從簡單的表單驗證移至成員資格和角色。
 > 
 > 請在本主題，參閱這段影片，如需詳細資訊：[使用基本 asp.net 表單驗證](../../../videos/authentication/using-basic-forms-authentication-in-aspnet.md)。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -47,11 +46,9 @@ ms.locfileid: "59406869"
 
 登入頁面的責任是判斷使用者的認證是否有效以及，若是如此，若要建立表單驗證票證，並將使用者重新導向回到頁面他們嘗試瀏覽。 在網站中，網頁的後續要求中包含驗證票證的`FormsAuthenticationModule`用來識別使用者。
 
-
 ![表單驗證工作流程](an-overview-of-forms-authentication-cs/_static/image1.png)
 
 **圖 1**:表單驗證工作流程
-
 
 ### <a name="remembering-the-authentication-ticket-across-page-visits"></a>在網頁瀏覽記住驗證票證
 
@@ -61,7 +58,6 @@ Cookie 的其中一個層面是其到期時間，也就是瀏覽器會捨棄 coo
 
 > [!NOTE]
 > 可以用來登入網站的使用者代理程式可能不支援 cookie。 在此情況下，ASP.NET 可以使用 cookieless 表單驗證票證。 在此模式中，驗證票證會編碼為 URL。 我們將探討使用 cookieless 驗證票證時，以及它們如何建立及管理在下一個教學課程中。
-
 
 ### <a name="the-scope-of-forms-authentication"></a>表單驗證領域
 
@@ -78,27 +74,22 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 > [!NOTE]
 > 每個教學課程中使用的示範 web 應用程式是可供下載。 這個可下載的應用程式是以目標為.NET Framework 3.5 版的 Visual Web Developer 2008 建立的。 應用程式適用於.NET 3.5 為目標，因為其 Web.config 檔案會包含其他的 3.5 特有的組態項目。 長話短說，如果您有尚未安裝.NET 3.5，然後下載的 web 應用程式在電腦上未先移除 3.5 專屬標記從 Web.config，將無法運作。
 
-
 我們可以設定表單驗證之前，我們首先需要 ASP.NET 網站。 開始建立新檔案系統架構 ASP.NET 網站。 若要這麼做，請啟動 Visual Web Developer 然後移至 [檔案] 功能表，並選擇新的網站上，顯示 [新的網站] 對話方塊。 選擇 ASP.NET 網站範本、 到檔案系統設定 位置 下拉式清單、 選擇要放置 web 站台的資料夾和設定的語言為 C#。 這會建立新的網站與 Default.aspx ASP.NET 網頁，應用程式\_資料資料夾和 Web.config 檔案。
 
 > [!NOTE]
 > Visual Studio 支援兩種專案管理模式：網站專案和 Web 應用程式專案。 網站專案會缺少專案檔中，而 Web 應用程式專案模擬專案架構在 Visual Studio.NET 2002年/2003年 – 它們包含在專案檔和專案的原始程式碼編譯成單一組件，都會放在 /bin 資料夾。 Visual Studio 2005 一開始只支援的網站專案，雖然 Web 應用程式專案模型已重新引入含 Service Pack 1;Visual Studio 2008 提供了這兩個專案模型。 Visual Web Developer 2005 和 2008年版本，不過，僅支援網站專案。 我將使用的網站專案模型。 如果您正在使用非 Express edition，而且想要使用[Web 應用程式專案模型](https://msdn.microsoft.com/library/aa730880%28vs.80%29.aspx)相反地，請隨意這樣做，但您看到您的畫面和必須與所採取的步驟之間可能會有些不一致螢幕擷取畫面所示，在這些教學課程中提供的指示。
 
-
 [![建立新檔案系統為基礎的網站](an-overview-of-forms-authentication-cs/_static/image3.png)](an-overview-of-forms-authentication-cs/_static/image2.png)
 
 **圖 2**:建立 New File System-Based 網站 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image4.png))
-
 
 ### <a name="adding-a-master-page"></a>加入主版頁面
 
 接下來，加入名為 Site.master 的根目錄中的站台的新主版頁面。 [主版頁面](https://msdn.microsoft.com/library/wtxbf3hh.aspx)讓網頁開發人員定義可套用至 ASP.NET 網頁的全站台的範本。 主版頁面的主要優點是，站台的整體外觀可以定義在單一位置，藉此讓您輕鬆地更新，或調整網站的版面配置。
 
-
 [![加入主版頁面名稱為 Site.master 網站](an-overview-of-forms-authentication-cs/_static/image6.png)](an-overview-of-forms-authentication-cs/_static/image5.png)
 
 **圖 3**:將主版頁面名稱為 Site.master 新增至網站 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image7.png))
-
 
 主版頁面中定義的整個網站的頁面配置。 您可以使用 [設計] 檢視，並新增任何版面配置] 或 [Web 控制項，您需要或您可以手動在原始碼檢視中手動新增標記。 我結構化我主版頁面的版面配置，來模擬所使用的配置我*[使用 ASP.NET 2.0 中的資料](../../data-access/index.md)* 教學課程系列 （請參閱 圖 4）。 主版頁面會使用[階層式樣式表](http://www.w3schools.com/css/default.asp)來定位和樣式 （這包含在本教學課程中的相關聯的下載） 的 Style.css 檔案中定義的 CSS 設定。 雖然您無法分辨從下方所顯示的標記，定義的 CSS 規則，瀏覽&lt;div&gt;的內容絕對位置，使其出現在左邊，並已在固定的寬度為 200 像素。
 
@@ -108,11 +99,9 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 
 使用上面輸入的標記，切換至 [設計] 檢視會顯示主版頁面的版面配置。 使用此主版頁面的任何 ASP.NET 頁面會有這個統一的版面配置，讓您指定的標記有`MainContent`區域。
 
-
 [![主版頁面，檢視透過 [設計] 檢視時](an-overview-of-forms-authentication-cs/_static/image9.png)](an-overview-of-forms-authentication-cs/_static/image8.png)
 
 **圖 4**:主版頁面時檢視透過 設計檢視 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image10.png))
-
 
 ### <a name="creating-content-pages"></a>建立內容頁面
 
@@ -120,20 +109,16 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 
 接下來，在 [方案總管] 中的專案名稱上按一下滑鼠右鍵，然後選擇加入新的 Web 表單名為 Default.aspx。 此時，選取 [選取主版頁面] 核取方塊，並從清單中選擇 Site.master 主版頁面。
 
-
 [![加入新的 Default.aspx 頁面，選擇 選取主版頁面](an-overview-of-forms-authentication-cs/_static/image12.png)](an-overview-of-forms-authentication-cs/_static/image11.png)
 
 **圖 5**:加入新 Default.aspx 頁面選擇 選取主版頁面 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image13.png))
-
 
 ![使用 Site.master 主版頁面](an-overview-of-forms-authentication-cs/_static/image14.png)
 
 **圖 6**:使用 Site.master 主版頁面
 
-
 > [!NOTE]
 > 如果您使用 Web 應用程式專案模型加入新項目 對話方塊不包含 選取主版頁面 核取方塊。 相反地，您需要新增項目類型 [Web 內容表單]。 之後，選擇 Web 內容表單 選項，然後按一下 新增，Visual Studio 會顯示相同的 Select Master 圖 6 所示的對話方塊。
-
 
 新的 Default.aspx 頁面宣告式標記只包含@Page指示詞指定的路徑至主機的主版頁面的 MainContent ContentPlaceHolder 頁面檔案和內容的控制項。
 
@@ -157,11 +142,9 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 
 如果您的專案尚未包含 Web.config 檔案，新增一個現在藉由以滑鼠右鍵按一下 方案總管 中的專案名稱，選擇 加入新項目，然後加入 Web 組態檔。
 
-
 [![如果您的專案尚未包含 Web.config，立即加入它](an-overview-of-forms-authentication-cs/_static/image16.png)](an-overview-of-forms-authentication-cs/_static/image15.png)
 
 **圖 7**:如果您的專案不會不尚未包含 Web.config，現在新增 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image17.png))
-
 
 接下來，找出`<authentication>`項目和更新為使用表單驗證。 此變更後，您的 Web.config 檔案標記看起來應該如下所示：
 
@@ -169,7 +152,6 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 
 > [!NOTE]
 > 由於 Web.config XML 檔案，大小寫很重要。 請確定您將 mode 屬性設表單以大寫"F"。 如果您使用不同的大小寫，例如 「 表單 」，您會在瀏覽的網站，透過瀏覽器時，收到組態錯誤。
-
 
 `<authentication>`項目可選擇性地包含`<forms>`子元素，其中包含表單驗證特定的設定。 現在，我們只要使用預設表單驗證設定。 我們將探討`<forms>`在下一個教學課程中詳細的子項目。
 
@@ -189,11 +171,9 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 
 讓我們開始進行第一項工作。 將新的 ASP.NET 網頁新增至名為 Login.aspx 的站台的根目錄，並將它與 Site.master 主版頁面產生關聯。
 
-
 [![加入新的 ASP.NET 頁面命名為 Login.aspx](an-overview-of-forms-authentication-cs/_static/image19.png)](an-overview-of-forms-authentication-cs/_static/image18.png)
 
 **圖 8**:加入新 ASP.NET 頁面上名為 Login.aspx ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image20.png))
-
 
 典型的登入網頁介面是由兩個文字方塊 – 一個用於使用者的名稱、 密碼 – 和送出表單按鈕的其中一個所組成。 網站通常會包含 [記住我] 核取方塊，若選取此選項，則在跨瀏覽器會重新啟動保存產生的驗證票證。
 
@@ -203,11 +183,9 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 
 [!code-aspx[Main](an-overview-of-forms-authentication-cs/samples/sample4.aspx)]
 
-
 [![登入頁面包含兩個文字方塊、 核取方塊、 按鈕和標籤](an-overview-of-forms-authentication-cs/_static/image22.png)](an-overview-of-forms-authentication-cs/_static/image21.png)
 
 **圖 9**:登入頁面包含兩個文字方塊、 核取方塊、 按鈕和標籤 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image23.png))
-
 
 最後，建立事件處理常式，LoginButton 的 click 事件。 從設計工具中，只要按兩下按鈕控制項以建立這個事件處理常式。
 
@@ -249,11 +227,9 @@ FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked);
 
 若要測試登入頁面，請在瀏覽器中造訪。 開始輸入無效的認證，例如"有一天"的使用者名稱和密碼是 「 錯誤 」。 按一下 [登入] 按鈕後會發生回傳和 InvalidCredentialsMessage 標籤將會顯示。
 
-
 [![InvalidCredentialsMessage 標籤會顯示當輸入不正確的認證](an-overview-of-forms-authentication-cs/_static/image25.png)](an-overview-of-forms-authentication-cs/_static/image24.png)
 
 **圖 10**:InvalidCredentialsMessage 標籤會顯示當輸入不正確的認證 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image26.png))
-
 
 接下來，輸入有效的認證，然後按一下 [登入] 按鈕。 在回傳發生表單驗證票證這次會建立並將您自動重新導向回 Default.aspx。 現在您已登入網站，雖然有沒有視覺提示，可指出您目前登入。 在步驟 4 中我們將了解如何以程式設計方式判斷使用者是否已登入，或不以及如何識別使用者瀏覽的頁面。
 
@@ -267,7 +243,6 @@ FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked);
 
 > [!NOTE]
 > 許多金融和醫療網站已設定為使用上的 SSL*所有*頁面可以存取已驗證的使用者。 如果您要建置這類網站，讓表單驗證票證只會傳輸透過安全連線，您可以設定表單驗證系統。 我們將在下一個教學課程中，探討各種的表單驗證組態選項*[表單驗證組態和進階主題](forms-authentication-configuration-and-advanced-topics-cs.md)*。
-
 
 ## <a name="step-4-detecting-authenticated-visitors-and-determining-their-identity"></a>步驟 4：偵測已驗證的訪客，並判斷其身分識別
 
@@ -285,16 +260,13 @@ FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked);
 
 使用此程式碼就緒之後，請透過瀏覽器瀏覽 Default.aspx。 假設您沒有登入，您會看到登入頁面的連結 （請參閱 圖 11）。 按一下此連結，登入網站。 如我們所見在步驟 3 中，輸入您的認證之後會傳回 default.aspx，但這次頁面會顯示 「 歡迎回到 ！ 訊息 （請參閱 圖 12）。
 
-
 ![當瀏覽以匿名方式，登入 連結顯示](an-overview-of-forms-authentication-cs/_static/image27.png)
 
 **[圖 11**:當瀏覽以匿名方式，登入] 連結顯示
 
-
 ![顯示已驗證的使用者](an-overview-of-forms-authentication-cs/_static/image28.png)
 
 **圖 12**:已驗證的使用者會顯示 「 歡迎回到"！ 訊息
-
 
 我們可以判斷目前登入使用者的身分識別，透過[HttpContext 物件](https://msdn.microsoft.com/library/system.web.httpcontext.aspx)的[使用者屬性](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx)。 HttpContext 物件代表目前的要求的相關資訊，以及其他項目是做為回應、 要求和工作階段中，這類通用 ASP.NET 物件的首頁。 [使用者] 屬性表示目前 HTTP 要求和實作的安全性內容[IPrincipal 介面](https://msdn.microsoft.com/library/system.security.principal.iprincipal.aspx)。
 
@@ -321,11 +293,9 @@ WelcomeBackMessage.Text = "Welcome back, " + User.Identity.Name + "!";
 
 [圖 13] 顯示這項修改的效果 （當使用者 Scott 身分登入）。
 
-
 ![歡迎訊息包含目前記錄中使用者的名稱](an-overview-of-forms-authentication-cs/_static/image29.png)
 
 **圖 13**:歡迎訊息包含目前記錄中使用者的名稱
-
 
 ### <a name="using-the-loginview-and-loginname-controls"></a>使用 LoginView 和 LoginName 控制項
 
@@ -341,7 +311,6 @@ WelcomeBackMessage.Text = "Welcome back, " + User.Identity.Name + "!";
 > [!NOTE]
 > 除了 AnonymousTemplate 和 LoggedInTemplate，LoginView 控制項可以包含特定角色的範本。 特定角色的範本會顯示標記，只讓屬於指定角色的使用者。 我們將在未來的教學課程中，檢視 LoginView 控制項的以角色為基礎的功能。
 
-
 首先新增名為 LoginContent 轉換成主版頁面內巡覽 ContentPlaceHolder &lt;div&gt;項目。 您只需從 [工具箱] 拖曳至來源檢視中，將放置產生的標記拖曳 ContentPlaceHolder 控制項上面 「 待辦事項：功能表放在這裡...」文字。
 
 [!code-aspx[Main](an-overview-of-forms-authentication-cs/samples/sample9.aspx)]
@@ -350,11 +319,9 @@ WelcomeBackMessage.Text = "Welcome back, " + User.Identity.Name + "!";
 
 LoginView 與其他登入相關的控制項位於 工具箱 中的登入 索引標籤中。
 
-
 ![LoginView 控制項，在 [工具箱]](an-overview-of-forms-authentication-cs/_static/image30.png)
 
 **圖 14**:LoginView 控制項，在 工具箱
-
 
 接下來，新增兩個&lt;b /&gt;立即 LoginView 控制項之後，但仍在 ContentPlaceHolder 內的項目。 此時，瀏覽&lt;div&gt;項目的標記應該看起來如下所示：
 
@@ -370,33 +337,26 @@ LoginView 的範本可以定義從設計工具或宣告式標記。 從 Visual S
 
 添加這 Site.master 主版頁面，在我們的網站中的每個頁面會顯示不同的訊息取決於是否已驗證使用者。 圖 15 顯示當使用者 Jisun 透過瀏覽器瀏覽的 Default.aspx 頁面。 「 歡迎回來，Jisun 」 訊息會重複兩次： 一次是在 （透過我們剛才加入的 LoginView 控制項） 在左側的主版頁面的 [導覽] 區段，一次在 Default.aspx 的內容 （透過面板控制項和程式設計邏輯） 的區域。
 
-
 ![LoginView 控制項顯示](an-overview-of-forms-authentication-cs/_static/image31.png)
 
 **圖 15**:LoginView 控制項顯示 「 歡迎回來，Jisun。 」
 
-
 因為我們新增 LoginView 主版頁面時，它可以出現在我們網站上的每個頁面。 不過，可能有網頁我們不想再顯示此訊息。 一個這類頁面是登入頁面上，，因為登入頁面的連結看起來有位置不對。 因為我們會將 LoginView 控制項置於 ContentPlaceHolder 主版頁面中，我們可以在我們的內容頁來覆寫此預設標記。 開啟 Login.aspx 並移至設計工具。 因為我們未明確定義的內容控制項中的主版頁面中 LoginContent ContentPlaceHolder Login.aspx，登入頁面會針對此 ContentPlaceHolder 顯示主版頁面的預設標記。 您可以看到這透過設計工具-LoginContent ContentPlaceHolder 顯示的預設標記 （LoginView 控制項）。
-
 
 [![登入頁面顯示的預設內容的主版頁面的 LoginContent ContentPlaceHolder](an-overview-of-forms-authentication-cs/_static/image33.png)](an-overview-of-forms-authentication-cs/_static/image32.png)
 
 **圖 16**:登入頁面會顯示預設內容的主版頁面的 LoginContent ContentPlaceHolder ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image34.png))
-
 
 覆寫預設標記 LoginContent ContentPlaceHolder 的只要以滑鼠右鍵按一下設計工具中的區域，並從內容功能表中選擇 [建立自訂內容] 選項。 (當使用 Visual Studio 2008 ContentPlaceHolder 包含智慧標籤，選取時，提供相同的選項。)這會將新增新的內容控制項到網頁的標記，以便讓我們來定義此頁面的自訂內容。 您可以新增自訂訊息，例如 「 請登入...」，但是我們只將此保留空白。
 
 > [!NOTE]
 > 在 Visual Studio 2005 中，建立自訂內容建立空內容 ASP.NET 網頁中的控制項。 在 Visual Studio 2008 中，不過，建立自訂的內容將複製的主版頁面的預設內容到新建立的內容控制項。 如果您使用 Visual Studio 2008，然後建立新的內容控制項之後請務必清除 從主版頁面複製的內容。
 
-
 [圖 17] 顯示當進行這項變更後，從瀏覽器瀏覽的 Login.aspx 頁面。 請注意，有沒有"Hello，陌生人"或"歡迎回來，*使用者名稱*"在左側導覽中的訊息&lt;div&gt;因為沒有瀏覽 Default.aspx 時。
-
 
 [![登入頁面會隱藏預設 LoginContent ContentPlaceHolder 標記](an-overview-of-forms-authentication-cs/_static/image36.png)](an-overview-of-forms-authentication-cs/_static/image35.png)
 
 **圖 17**:登入頁面會隱藏預設 LoginContent ContentPlaceHolder 的標記 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image37.png))
-
 
 ## <a name="step-5-logging-out"></a>步驟 5：登出
 
@@ -423,20 +383,16 @@ LoginStatus 超出 LoginView 控制項，因為它會顯示匿名和已驗證的
 
 圖 18.顯示 Default.aspx，當 Jisun 造訪。 請注意，左側資料行，將會顯示訊息，「 歡迎回來，Jisun 」 以及登出的連結。按一下 LinkButton 登出造成回傳 Jisun 登出系統，然後將其重新導向至 Logout.aspx。 如圖 19 所示，Jisun 達到的 Logout.aspx 她已簽署，因此屬於匿名的時間。 因此，左側資料行顯示的文字 「 歡迎，陌生人"，並登入頁面的連結。
 
-
 [![Default.aspx 顯示](an-overview-of-forms-authentication-cs/_static/image39.png)](an-overview-of-forms-authentication-cs/_static/image38.png)
 
 **圖 18**:Default.aspx 顯示 「 歡迎回來，Jisun"以及"Logout"LinkButton ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image40.png))
-
 
 [![Logout.aspx Shows](an-overview-of-forms-authentication-cs/_static/image42.png)](an-overview-of-forms-authentication-cs/_static/image41.png)
 
 **圖 19**:Logout.aspx 顯示 「 歡迎陌生人 」 以及 「 登入 」 LinkButton ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image43.png))
 
-
 > [!NOTE]
 > 建議您自訂 Logout.aspx 頁面，即可隱藏主版頁面的 LoginContent ContentPlaceHolder （就像我們在步驟 4 中的 Login.aspx）。 原因是因為 LoginStatus 控制項所呈現的 「 登入 」 LinkButton (下的一個"Hello，陌生人") 會將 ReturnUrl 查詢字串參數中傳遞目前 URL 的登入頁面的使用者。 簡單地說，如果已登出的使用者按一下此 LoginStatus"Login"LinkButton，然後的登入，他們將回到 Logout.aspx，可以輕鬆地會混淆使用者重新導向。
-
 
 ## <a name="summary"></a>總結
 

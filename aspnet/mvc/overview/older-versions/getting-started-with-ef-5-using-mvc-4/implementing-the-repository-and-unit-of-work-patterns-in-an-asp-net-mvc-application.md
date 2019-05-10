@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 44761193-04ba-4990-9f90-145d3c10a716
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 71ff3c269c5d1ed43a67d19442eda8e9d4728295
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d0d6c9dd5234c8085b5c1dea5552854486314010
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59405699"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129779"
 ---
 # <a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>ASP.NET MVC 應用程式 (10 個 9) 中實作存放庫和工作單元模式
 
@@ -26,7 +26,6 @@ ms.locfileid: "59405699"
 > > [!NOTE] 
 > > 
 > > 如果您遇到的問題，您無法解決，請[下載已完成的一章](building-the-ef5-mvc4-chapter-downloads.md)並嘗試重現您的問題。 您通常可以找到問題的解決方案，藉由比較您的程式碼的完整程式碼。 一些常見錯誤及如何解決這些問題，請參閱[錯誤和因應措施。](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
-
 
 您可以先前的教學課程中使用繼承來減少多餘的程式碼中`Student`和`Instructor`實體類別。 在本教學課程中，您會看到一些方法，若要使用的儲存機制和工作單元模式的 CRUD 作業。 如同先前的教學課程中，在這一個您要變更您的程式碼的運作的方式與頁面您已經建立，而非建立新的頁面。
 
@@ -51,7 +50,6 @@ ms.locfileid: "59405699"
 
 > [!NOTE]
 > 有許多方式可實作的存放庫和工作單元模式。 您可以使用儲存機制類別，無論工作類別的單位。 您可以實作所有實體類型，或另一個用於每種類型的單一儲存機制。 如果您實作每種類型一個，您可以使用個別的類別、 泛型基底類別衍生的類別，或抽象的基底類別和衍生的類別。 您可以納入您的存放庫中的商務邏輯，或將其限制資料存取邏輯。 您也可以建置到您的資料庫內容類別的抽象層，使用[IDbSet](https://msdn.microsoft.com/library/gg679233(v=vs.103).aspx)那里介面而非[DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=vs.103).aspx)類型的實體集。 若要實作的抽象層，本教學課程中，方法是您應考慮，不建議所有的案例和環境的其中一個選項。
-
 
 ## <a name="creating-the-student-repository-class"></a>建立學生儲存機制類別
 
@@ -142,7 +140,6 @@ ms.locfileid: "59405699"
 > [!code-sql[Main](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application/samples/sample16.sql)]
 > 
 > （下列教學課程說明如何檢查傳送至 SQL Server 的查詢）。
-
 
 下一節示範如何實作存放庫方法，讓您指定資料庫應該完成此工作。
 

@@ -8,12 +8,12 @@ ms.date: 07/21/2010
 ms.assetid: f70a310c-9557-4743-82cb-655265676d39
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 34c8776636478e8c40064bb29ae0311ee4fdc8d8
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b0caa89dc9ffb5bb7451fa2d9d346c7db2bf1466
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59409781"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130877"
 ---
 # <a name="part-6-aspnet-membership"></a>第 6 部分：ASP.NET 成員資格
 
@@ -22,7 +22,6 @@ ms.locfileid: "59409781"
 > Tailspin Spyworks 示範建立功能強大、 可擴充的應用程式，適用於.NET 平台是如何富含簡單。 它會展示如何在 ASP.NET 4 中使用最棒的新功能，建置線上商店，包括購物、 簽出，以及系統管理。
 > 
 > 本教學課程系列會詳細說明所有建置 Tailspin Spyworks 範例應用程式所採取的步驟。 第 6 部分加入 ASP.NET 成員資格。
-
 
 ## <a id="_Toc260221672"></a>  使用 ASP.NET 成員資格
 
@@ -99,7 +98,6 @@ SubmitOrder 將會：
 - 購物車中採取所有明細項目，並使用它們來建立新的訂單記錄和相關聯的 OrderDetails 記錄。
 - 計算出貨日期。
 - 清除 購物車。
-
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample10.cs)]
 

@@ -8,12 +8,12 @@ ms.date: 06/27/2014
 ms.assetid: 0e6fb03c-b16d-4bb0-ab0b-552bd2b6ece1
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-actions-and-functions
 msc.type: authoredcontent
-ms.openlocfilehash: 6b0388c0e60f4a81ddb52a13fe2d05c2c7d27313
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f5af94e93e5b7f2351d40febbf1a468d635c9db1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59380856"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133156"
 ---
 # <a name="actions-and-functions-in-odata-v4-using-aspnet-web-api-22"></a>動作和函式在 OData v4 中的使用 ASP.NET Web API 2.2
 
@@ -49,7 +49,6 @@ ms.locfileid: "59380856"
 
 > [!NOTE]
 > 本教學課程是根據本教學課程[建立 OData v4 端點使用 ASP.NET Web API 2](create-an-odata-v4-endpoint.md)
-
 
 首先，新增`ProductRating`來表示評等模型。
 

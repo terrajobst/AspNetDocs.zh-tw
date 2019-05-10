@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: f949aafa-fe57-43b0-b722-f0dd33a900be
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a9a3bf12b721c8f5eec21f3090142e40e74b0b9c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 31319e0ad15825acead2b7e8b619985272fb8eaa
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395637"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131463"
 ---
 # <a name="filling-a-list-using-cascadingdropdown-c"></a>使用 CascadingDropDown 填滿清單 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59395637"
 [下載程式碼](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown0.cs.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown0CS.pdf)
 
 > 在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。 （比方說，一份清單會提供一份我們狀態，而且下一個清單則填入該狀態中主要城市）。若要解決的第一個挑戰是實際填入下拉式清單中使用這個控制項。
-
 
 ## <a name="overview"></a>總覽
 
@@ -59,7 +58,6 @@ JavaScript 程式碼來自`CascadingDropDown`擴充項會呼叫 web 服務方法
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample5.aspx)]
 
 載入瀏覽器頁面，將會觸發要填入三個廠商的清單。
-
 
 [![清單會自動填入](filling-a-list-using-cascadingdropdown-cs/_static/image2.png)](filling-a-list-using-cascadingdropdown-cs/_static/image1.png)
 

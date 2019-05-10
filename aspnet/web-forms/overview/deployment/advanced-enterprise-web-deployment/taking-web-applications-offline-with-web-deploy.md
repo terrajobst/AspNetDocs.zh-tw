@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 3e9f6e7d-8967-4586-94d5-d3a122f12529
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy
 msc.type: authoredcontent
-ms.openlocfilehash: 017eceb8567859fdbe28bb87af844eee20dfa525
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ba54454bcb6f5e4ceb269b128a6b72a4b75f64be
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59415475"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131403"
 ---
 # <a name="taking-web-applications-offline-with-web-deploy"></a>使用 Web Deploy 讓 Web 應用程式離線
 
@@ -22,7 +22,6 @@ ms.locfileid: "59415475"
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主題描述如何將 web 應用程式離線期間的自動化的部署使用 Internet Information Services (IIS) Web Deployment Tool (Web Deploy)。 瀏覽至 web 應用程式的使用者重新導向至*應用程式\_offline.htm*檔案直到部署完成為止。
-
 
 本主題是構成一系列以名為 Fabrikam，Inc.的虛構公司的企業部署需求為基礎的教學課程的一部分本教學課程系列會使用範例解決方案&#x2014;[連絡管理員解決方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;來代表實際的層級的複雜性，包括 ASP.NET MVC 3 應用程式時，Windows Communication 的 web 應用程式Foundation (WCF) 服務與資料庫專案。
 
@@ -70,18 +69,13 @@ ms.locfileid: "59415475"
 > [!NOTE]
 > 下一個程序假設您使用自訂的 MSBuild 專案檔來控制您的部署程序中所述[了解專案檔](../web-deployment-in-the-enterprise/understanding-the-project-file.md)。 如果您要部署直接從 Visual Studio，您必須使用不同的方式。 Sayed Ibrahim Hashimi 描述中的其中一個這類方法[如何取得您 Web 應用程式離線期間發行](http://sedodream.com/2012/01/08/HowToTakeYourWebAppOfflineDuringPublishing.aspx)。
 
-
 若要部署*應用程式\_離線*檔案到目的地的 IIS 網站，您必須叫用使用 MSDeploy.exe [Web Deploy **contentPath**提供者](https://technet.microsoft.com/library/dd569034(WS.10).aspx)。 **ContentPath**提供者支援的實體目錄路徑和 IIS 網站或應用程式路徑，因此同步處理 Visual Studio 專案資料夾與 IIS web 應用程式之間的檔案的理想選擇。 若要部署的檔案，MSDeploy 命令看起來應該像這樣：
-
 
 [!code-console[Main](taking-web-applications-offline-with-web-deploy/samples/sample1.cmd)]
 
-
 若要移除目的地站台的部署程序結尾的檔案，MSDeploy 命令看起來應該像這樣：
 
-
 [!code-console[Main](taking-web-applications-offline-with-web-deploy/samples/sample2.cmd)]
-
 
 若要將這些命令自動化建置和部署程序的一部分，您需要將它們整合到您自訂的 MSBuild 專案檔。 下一個程序描述如何執行這項操作。
 
@@ -129,9 +123,7 @@ Web 發行管線 (WPP) 會使用名為的項目清單**FilesForPackagingFromProj
 
 *.Wpp.targets*檔案看起來應該像這樣：
 
-
 [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample8.xml)]
-
 
 請注意，在此範例的重點如下：
 
@@ -160,7 +152,6 @@ Web 發行管線 (WPP) 會使用名為的項目清單**FilesForPackagingFromProj
 
 > [!NOTE]
 > 如果您的部署失敗，*應用程式\_offline.htm*檔案會留在原處，和您的應用程式會保持離線狀態。 這通常是所要的行為。 若要讓您的應用程式恢復上線，您可以刪除*應用程式\_offline.htm*從您的 web 伺服器的檔案。 或者，如果您更正任何錯誤，並執行部署成功*應用程式\_offline.htm*檔案將會移除。
-
 
 ## <a name="conclusion"></a>結論
 

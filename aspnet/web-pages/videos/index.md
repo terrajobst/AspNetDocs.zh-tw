@@ -8,15 +8,14 @@ ms.date: 05/18/2012
 ms.assetid: febf2824-4e3d-4dc6-84c5-f99777ec6144
 msc.legacyurl: /web-pages/videos
 msc.type: book
-ms.openlocfilehash: 86b90a21f59ee0ad52a3e6f7db19d4714282105c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 4c22b024240740d971740e9f043231ccbcdc47fb
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401136"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127692"
 ---
 # <a name="videos"></a>視訊
-
 
 > [!NOTE] 
 > WebMatrix 不再建議使用整合式的開發環境適用於 ASP.NET 網頁。 使用[Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio)或是[Visual Studio Code](https://code.visualstudio.com/)。

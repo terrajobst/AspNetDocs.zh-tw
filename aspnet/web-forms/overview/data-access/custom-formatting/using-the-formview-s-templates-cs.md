@@ -8,12 +8,12 @@ ms.date: 03/31/2010
 ms.assetid: d3f062af-88cf-426d-af44-e41f32c41672
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d275e3b154ca3397294d6cd0924cb6a50bbcef9a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 59687ffb4d3319b55cc980b72af1084ca0288793
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59395533"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65133920"
 ---
 # <a name="using-the-formviews-templates-c"></a>使用 FormView 的範本 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59395533"
 [下載範例應用程式](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_14_CS.exe)或[下載 PDF](using-the-formview-s-templates-cs/_static/datatutorial14cs1.pdf)
 
 > 不同 DetailsView 中，於 FormView 不包含的欄位。 相反地，FormView 轉譯使用範本。 在本教學課程中我們將檢驗使用 FormView 控制項來呈現較不嚴格的顯示的資料。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -39,21 +38,17 @@ ms.locfileid: "59395533"
 
 在本教學課程中我們將檢驗使用 FormView 控制項來呈現以較不嚴格的顯示的產品。 而不是讓名稱、 類別、 供應商，並依此類推，FormView 的欄位`ItemTemplate`會顯示使用的標頭項目組合這些值和`<table>`（請參閱 圖 1）。
 
-
 [![在 DetailsView 中看到的類似方格的版面配置的 FormView 會中斷](using-the-formview-s-templates-cs/_static/image2.png)](using-the-formview-s-templates-cs/_static/image1.png)
 
 **圖 1**:FormView 中斷 Grid-Like 配置出現在 DetailsView 中 ([按一下以檢視完整大小的影像](using-the-formview-s-templates-cs/_static/image3.png))
-
 
 ## <a name="step-1-binding-the-data-to-the-formview"></a>步驟 1：資料繫結至 FormView
 
 開啟`FormView.aspx`頁面上，然後從 [工具箱] 拖曳至設計工具拖曳 FormView。 第一次新增 FormView 時它會顯示為灰色方塊，指示我們，`ItemTemplate`需要。
 
-
 [![FormView 無法轉譯設計工具中，提供一個 ItemTemplate 之前](using-the-formview-s-templates-cs/_static/image5.png)](using-the-formview-s-templates-cs/_static/image4.png)
 
 **圖 2**:FormView 無法呈現在設計工具之前`ItemTemplate`提供 ([按一下以檢視完整大小的影像](using-the-formview-s-templates-cs/_static/image6.png))
-
 
 `ItemTemplate` （透過宣告式語法中） 可以用手動方式建立，也可以藉由繫結至資料來源控制項透過設計工具的 FormView 是自動建立。 這個自動建立`ItemTemplate`包含 HTML，清單的每個欄位和標籤名稱控制其`Text`屬性繫結至該欄位的值。 這個方法也自動-建立`InsertItemTemplate`和`EditItemTemplate`，這兩者都針對每個傳回的資料來源控制項的資料欄位填入輸入控制項。
 
@@ -62,7 +57,6 @@ ms.locfileid: "59395533"
 如果您可能會相當建置`ItemTemplate`以手動的方式，您可以加入，並將它從 [工具箱] 拖曳至設計工具設定 ObjectDataSource。 不過，不需要設定 FormView 的資料來源從設計工具。 相反地，請移至來源檢視，並手動設定 FormView`DataSourceID`屬性設`ID`ObjectDataSource 的值。 接下來，以手動方式新增`ItemTemplate`。
 
 無論何種方法，您決定採取，此時 FormView 的宣告式標記應該看起來像：
-
 
 [!code-aspx[Main](using-the-formview-s-templates-cs/samples/sample1.aspx)]
 
@@ -76,7 +70,6 @@ ms.locfileid: "59395533"
 
 下列標記顯示 FormView 宣告式標記之後`ItemTemplate`的結構已完成：
 
-
 [!code-aspx[Main](using-the-formview-s-templates-cs/samples/sample2.aspx)]
 
 請注意，資料繫結語法- `<%# Eval("ProductName") %>`，範例可以直接插入至範本的輸出。 也就是需要不將它指派給 Label 控制項`Text`屬性。 比方說，我們有`ProductName`中顯示的值`<h3>`項目使用`<h3><%# Eval("ProductName") %></h3>`，其中產品 Chai 會轉譯為`<h3>Chai</h3>`。
@@ -87,16 +80,13 @@ ms.locfileid: "59395533"
 
 使用`ItemTemplate`完成時，會顯示產品資訊更流暢的方式。 在本教學課程 (圖 4) 產生 FormView 的輸出比較 DetailsView 輸出從最後一個教學課程 (圖 3)。
 
-
 [![固定的 DetailsView 輸出](using-the-formview-s-templates-cs/_static/image8.png)](using-the-formview-s-templates-cs/_static/image7.png)
 
 **圖 3**:固定的 DetailsView 輸出 ([按一下以檢視完整大小的影像](using-the-formview-s-templates-cs/_static/image9.png))
 
-
 [![流暢的 FormView 輸出](using-the-formview-s-templates-cs/_static/image11.png)](using-the-formview-s-templates-cs/_static/image10.png)
 
 **圖 4**:流體 FormView 輸出 ([按一下以檢視完整大小的影像](using-the-formview-s-templates-cs/_static/image12.png))
-
 
 ## <a name="summary"></a>總結
 

@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: 82b8dea0-f062-4ee4-8784-3ffa30fbb1ca
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: c9aadec642837953dde4cf3e89ec9a7d484b380e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: e6fc995ca812a461247989204caff580d06e2343
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401331"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65134273"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-command-line-deployment"></a>使用 Visual Studio 的 ASP.NET Web 部署：命令列部署
 
@@ -22,7 +22,6 @@ ms.locfileid: "59401331"
 [下載入門專案](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > 本系列教學課程會示範如何部署 （發行） 的 ASP.NET web 應用程式至 Azure App Service Web Apps 或協力廠商裝載提供者，使用 Visual Studio 2012 或 Visual Studio 2010。 這個系列的相關資訊，請參閱[系列的第一個教學課程](introduction.md)。
-
 
 ## <a name="overview"></a>總覽
 

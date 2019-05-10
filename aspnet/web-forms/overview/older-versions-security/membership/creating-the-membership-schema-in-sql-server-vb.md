@@ -8,12 +8,12 @@ ms.date: 01/18/2008
 ms.assetid: 112a674d-716f-41a6-99b8-4074d65a54c0
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 17fbc85ab1be16e2b4a5c179db3c24645a6a0a64
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8e4feb864d8586024ded0f71eb854f15e7c233e1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404165"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131330"
 ---
 # <a name="creating-the-membership-schema-in-sql-server-vb"></a>在 SQL Server 中建立成員資格結構描述 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59404165"
 [下載程式碼](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/ASPNET_Security_Tutorial_04_VB.zip)或[下載 PDF](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/aspnet_tutorial04_MembershipSetup_vb.pdf)
 
 > 本教學課程一開始會檢查加入資料庫中的必要的結構描述，才能使用 SqlMembershipProvider 的技術。 接下來，我們會檢查結構描述中的索引鍵的資料表，並討論其用途和重要性。 本教學課程中了解如何判斷成員資格架構應該使用哪一個提供者的 ASP.NET 應用程式的結尾。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -56,19 +55,15 @@ ASP.NET 應用程式的資料通常儲存在資料庫中的資料表數目。 �
 
 從 方案總管 中，以滑鼠右鍵按一下`App_Data`資料夾，然後選擇 加入新項目。 (如果您看不見`App_Data`資料夾中您的專案，以滑鼠右鍵按一下方案總管] 中的專案，選取加入 ASP.NET 資料夾，並挑選`App_Data`。)從 [加入新項目] 對話方塊中，選擇 [加入新的 SQL Database，名為`SecurityTutorials.mdf`。 在本教學課程中我們將增加`SqlMembershipProvider`到此資料庫; 在後續教學課程中，我們將建立其他的結構描述來擷取應用程式資料的資料表。
 
-
 [![新增名為 SecurityTutorials.mdf 資料庫 [App_Data] 資料夾的新 SQL 資料庫](creating-the-membership-schema-in-sql-server-vb/_static/image2.png)](creating-the-membership-schema-in-sql-server-vb/_static/image1.png)
 
 **圖 1**:加入新的 SQL 資料庫 Named`SecurityTutorials.mdf`資料庫`App_Data`資料夾 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image3.png))
 
-
 加入至資料庫`App_Data`資料夾會自動包含它在 [資料庫總管] 檢視中。 （在非-Express Edition 版本的 Visual Studio 中，[資料庫總管] 中被稱為 [伺服器總管] 中）。請移至 [資料庫總管] 中，展開剛`SecurityTutorials`資料庫。 如果您看不見 [資料庫總管] 畫面上，移至 [檢視] 功能表並選擇 [資料庫總管] 中，或按 Ctrl + Alt + S。 如 [圖 2] 所示，`SecurityTutorials`資料庫是空的-它包含任何資料表，沒有任何檢視中，沒有預存程序。
-
 
 [![SecurityTutorials 資料庫目前是空的](creating-the-membership-schema-in-sql-server-vb/_static/image5.png)](creating-the-membership-schema-in-sql-server-vb/_static/image4.png)
 
 **圖 2**:`SecurityTutorials`資料庫目前是空的 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image6.png))
-
 
 ## <a name="step-2-adding-thesqlmembershipproviderschema-to-the-database"></a>步驟 2：新增`SqlMembershipProvider`到資料庫的結構描述
 
@@ -99,34 +94,27 @@ ASP.NET 應用程式的資料通常儲存在資料庫中的資料表數目。 �
 
 開始關閉 Visual Studio，以確保資料庫檔案上的 Visual Studio 所加諸任何鎖定都已關閉。 接下來，啟動 SQL Server Management Studio 並連接到`localhost\InstanceName`適用於 SQL Server 2005 Express Edition 資料庫。 如先前所述，可能是執行個體名稱是`SQLExpress`。 針對 [驗證] 選項中，選取 [Windows 驗證]。
 
-
 [![連接到 SQL Server 2005 Express Edition 執行個體](creating-the-membership-schema-in-sql-server-vb/_static/image8.png)](creating-the-membership-schema-in-sql-server-vb/_static/image7.png)
 
 **圖 3**:連接到 SQL Server 2005 Express Edition 執行個體 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image9.png))
-
 
 連接到 SQL Server 2005 Express Edition 執行個體之後，Management Studio 會顯示資料夾，如資料庫、 安全性設定、 伺服器物件等等。 如果您展開 [資料庫] 索引標籤則您會發現`SecurityTutorials.mdf`資料庫是*不*註冊中的資料庫執行個體-我們需要將資料庫附加到第一次。
 
 以滑鼠右鍵按一下 資料庫 資料夾，並從操作功能表中選擇 附加。 這會顯示 [附加資料庫] 對話方塊。 從這裡開始，請按一下 [新增] 按鈕，瀏覽至`SecurityTutorials.mdf`資料庫，然後按一下 [確定]。 [圖 4] 顯示 [附加資料庫] 對話方塊中之後,`SecurityTutorials.mdf`已選取資料庫。 [圖 5 顯示 Management Studio 物件總管] 中之後已成功附加資料庫。
 
-
 [![附加 SecurityTutorials.mdf 資料庫](creating-the-membership-schema-in-sql-server-vb/_static/image11.png)](creating-the-membership-schema-in-sql-server-vb/_static/image10.png)
 
 **圖 4**:附加`SecurityTutorials.mdf`資料庫 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image12.png))
-
 
 [![SecurityTutorials.mdf 資料庫會出現在 [資料庫] 資料夾](creating-the-membership-schema-in-sql-server-vb/_static/image14.png)](creating-the-membership-schema-in-sql-server-vb/_static/image13.png)
 
 **圖 5**:`SecurityTutorials.mdf`資料庫會出現在 [資料庫] 資料夾中 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image15.png))
 
-
 如 [圖 5] 所示，`SecurityTutorials.mdf`資料庫有而 abstruse 的名稱。 讓我們變更它，以更令人印象深刻 （和輸入的工作變得更容易） 名稱。 以滑鼠右鍵按一下資料庫，從操作功能表中，選擇 重新命名並將它重新命名`SecurityTutorialsDatabase`。 這不會變更檔案名稱，只是名稱的資料庫使用的識別到 SQL Server。
-
 
 [![將資料庫重新命名 SecurityTutorialsDatabase](creating-the-membership-schema-in-sql-server-vb/_static/image17.png)](creating-the-membership-schema-in-sql-server-vb/_static/image16.png)
 
 **圖 6**:重新命名資料庫， `SecurityTutorialsDatabase`([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image18.png))
-
 
 此時我們知道的伺服器和資料庫名稱`SecurityTutorials.mdf`資料庫檔案：`localhost\InstanceName`和`SecurityTutorialsDatabase`分別。 我們現在已準備好安裝應用程式服務，透過`aspnet_regsql.exe`工具。
 
@@ -136,19 +124,15 @@ ASP.NET 應用程式的資料通常儲存在資料庫中的資料表數目。 �
 
 執行`aspnet_regsql.exe`不含任何命令列引數的工具會啟動 ASP.NET SQL Server 安裝精靈圖形化使用者介面。 精靈可讓您更輕鬆地新增或移除指定的資料庫上的 ASP.NET 應用程式服務。 精靈中，[圖 7] 所示的第一個畫面說明這個工具的用途。
 
-
 [![使用 ASP.NET SQL Server 安裝精靈可使新增的成員資格結構描述](creating-the-membership-schema-in-sql-server-vb/_static/image20.png)](creating-the-membership-schema-in-sql-server-vb/_static/image19.png)
 
 **圖 7**:使用 ASP.NET SQL Server 安裝精靈可將成員資格結構描述 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image21.png))
 
-
 在精靈中的第二個步驟會詢問我們是否我們要新增應用程式服務，或將它們移除。 因為我們想要新增資料表、 檢視和預存程序所需的`SqlMembershipProvider`，選擇 [設定 SQL Server 的應用程式服務] 選項。 稍後，如果您想要從您的資料庫中移除此結構描述，重新執行此精靈中，但改為選擇從現有的資料庫選項的 移除應用程式的服務資訊。
-
 
 [![選擇 [設定 SQL Server 的應用程式服務] 選項](creating-the-membership-schema-in-sql-server-vb/_static/image23.png)](creating-the-membership-schema-in-sql-server-vb/_static/image22.png)
 
 **圖 8**:為應用程式服務] 選項中選擇 [設定 SQL Server ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image24.png))
-
 
 第三個步驟會提示輸入的資料庫資訊： 伺服器名稱、 驗證資訊及資料庫名稱。 如果您遵循本教學課程，並已新增`SecurityTutorials.mdf`資料庫`App_Data`，附加至`localhost\InstanceName`，以及它重新命名為`SecurityTutorialsDatabase`，然後使用下列值：
 
@@ -156,11 +140,9 @@ ASP.NET 應用程式的資料通常儲存在資料庫中的資料表數目。 �
 - Windows 驗證
 - 資料庫： `SecurityTutorialsDatabase`
 
-
 [![輸入資料庫資訊](creating-the-membership-schema-in-sql-server-vb/_static/image26.png)](creating-the-membership-schema-in-sql-server-vb/_static/image25.png)
 
 **圖 9**:輸入資料庫資訊 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image27.png))
-
 
 輸入資料庫資訊後，按一下 [下一步]。 最後一個步驟摘要說明所要採取的步驟。 若要安裝應用程式服務，以完成以完成精靈，請按下一步。
 
@@ -169,11 +151,9 @@ ASP.NET 應用程式的資料通常儲存在資料庫中的資料表數目。 �
 
 完成精靈的詳細資訊，請返回 Visual Studio 和瀏覽至 [資料庫總管] 中。 展開 [資料表] 資料夾。 您應該會看到一系列的資料表名稱開頭為前置詞`aspnet_`。 同樣地，可以檢視和預存程序資料夾下找到各種不同的檢視和預存程序。 這些資料庫物件組成的應用程式服務結構描述。 我們將檢查步驟 3 中的成員資格和角色特定資料庫物件。
 
-
 [![資料庫已新增各種不同的資料表、 檢視和預存程序](creating-the-membership-schema-in-sql-server-vb/_static/image29.png)](creating-the-membership-schema-in-sql-server-vb/_static/image28.png)
 
 **圖 10**:各種不同的資料表、 檢視和預存程序已新增至資料庫 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image30.png))
-
 
 > [!NOTE]
 > `aspnet_regsql.exe`工具的圖形化使用者介面安裝整個應用程式服務結構描述。 執行時，但`aspnet_regsql.exe`從命令列中您可以指定哪些特定的應用程式服務來安裝 （或移除） 的元件。 因此，如果您想要將只是資料表、 檢視、 預存程序所需`SqlMembershipProvider`並`SqlRoleProvider`提供者，執行`aspnet_regsql.exe`從命令列。 或者，您可以手動執行適當的 T-SQL 子集建立所使用的指令碼`aspnet_regsql.exe`。 這些指令碼檔案位於`WINDIR%\Microsoft.Net\Framework\v2.0.50727\`資料夾名稱可能類似`InstallCommon.sql`， `InstallMembership.sql`， `InstallRoles.sql`， `InstallProfile.sql`， `InstallSqlState.sql`，依此類推。
@@ -190,11 +170,9 @@ ASP.NET 應用程式的資料通常儲存在資料庫中的資料表數目。 �
 
 成員資格與角色架構被設計，可在許多不同的應用程式之間共用單一的使用者和角色存放區。 使用成員資格或角色架構的 ASP.NET 應用程式必須指定要使用哪些應用程式磁碟分割。 簡單地說，多個 web 應用程式可以使用相同的使用者和角色存放區。 圖 11 顯示分割成三個應用程式的使用者和角色存放區：HRSite、 CustomerSite 和 SalesSite。 下列三個 web 應用程式分別有自己的唯一使用者和角色，但它們都在相同的資料庫資料表中，實際儲存其使用者帳戶和角色資訊。
 
-
 [![使用者帳戶可能會分割到多個應用程式](creating-the-membership-schema-in-sql-server-vb/_static/image32.png)](creating-the-membership-schema-in-sql-server-vb/_static/image31.png)
 
 **圖 11**:使用者帳戶可能是分割跨多個應用程式 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image33.png))
-
 
 `aspnet_Applications`資料表是如何定義這些磁碟分割。 使用資料庫來儲存使用者帳戶資訊的每個應用程式被以這個資料表中的資料列。 `aspnet_Applications`資料表有四個資料行： `ApplicationId`， `ApplicationName`， `LoweredApplicationName`，和`Description`。`ApplicationId` 屬於類型[ `uniqueidentifier` ](https://msdn.microsoft.com/library/ms187942.aspx)和資料表的主索引鍵;`ApplicationName`提供唯一的人類看得易記名稱，每個應用程式。
 

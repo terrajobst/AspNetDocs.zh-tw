@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 0bbf7a6e-d7eb-4091-91e4-fff892777f32
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
 msc.type: authoredcontent
-ms.openlocfilehash: bc91eba17938de15f03ecc1e745aac57c7eac7a1
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 61a9dae22efed9cb7e8957a8c131396cbdeea3c9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419492"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131347"
 ---
 # <a name="create-the-data-access-layer"></a>建立資料存取層
 
@@ -22,7 +22,6 @@ ms.locfileid: "59419492"
 [下載 Wingtip Toys 範例專案 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下載電子書 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
 > 本系列教學課程將教導您建置使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 的 ASP.NET Web Forms 應用程式的基本概念。 Visual Studio 2013[含有 C# 原始程式碼專案](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)隨附了本教學課程系列。
-
 
 本教學課程說明如何建立、 存取和檢閱使用 ASP.NET Web Form 和 Entity Framework Code First 資料庫中的資料。 此教學課程的上一個教學課程 [建立專案]，並且是 Wingtip 玩具店教學課程系列的一部分。 當您完成本教學課程中時，您就會建置中的資料存取類別的一群*模型*專案的資料夾。
 
@@ -119,7 +118,6 @@ Entity Framework 支援呼叫開發架構*Code First*。 程式碼第一次可�
 > 
 > 如果您想要的資料庫重新建立每次執行應用程式，您可以使用`DropCreateDatabaseAlways`類別而不是`DropCreateDatabaseIfModelChanges`類別。 不過本教學課程系列中，使用`DropCreateDatabaseIfModelChanges`類別。
 
-
 此時在本教學課程中，您必須*模型*資料夾中，使用四個新的類別和一個預設類別：
 
 ![建立資料存取層-Models 資料夾](create_the_data_access_layer/_static/image3.png)
@@ -136,7 +134,6 @@ Entity Framework 支援呼叫開發架構*Code First*。 程式碼第一次可�
 > 
 > 在 [方案總管] 中，您可以選取*Global.asax*檔案或*Global.asax.cs*若要編輯的檔案*Global.asax.cs*檔案。
 
-
 1. 新增下列程式碼中以黃色反白顯示`Application_Start`方法中的*Global.asax.cs*檔案。   
 
     [!code-csharp[Main](create_the_data_access_layer/samples/sample5.cs?highlight=9-10,22-23)]
@@ -144,7 +141,6 @@ Entity Framework 支援呼叫開發架構*Code First*。 程式碼第一次可�
 > [!NOTE] 
 > 
 > 您的瀏覽器必須支援 HTML5 檢視瀏覽器中檢視此教學課程系列時，以黃色醒目提示的程式碼。
-
 
 如上述程式碼所示，當應用程式啟動時，應用程式會指定初始設定式執行期間第一次資料存取。 若要存取的兩個額外的命名空間所`Database`物件和`ProductDatabaseInitializer`物件。
 

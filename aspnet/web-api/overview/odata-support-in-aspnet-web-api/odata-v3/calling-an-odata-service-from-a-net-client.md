@@ -8,12 +8,12 @@ ms.date: 02/26/2014
 ms.assetid: 6f448917-ad23-4dcc-9789-897fad74051b
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: d35c0057f5c29e399e45d0a58467de7f106d9994
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6b5ab979518615356baaeeb824e0a621eb59a38f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389969"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130775"
 ---
 # <a name="calling-an-odata-service-from-a-net-client-c"></a>從 .NET 用戶端呼叫 OData 服務 (C#)
 
@@ -29,7 +29,6 @@ ms.locfileid: "59389969"
 > - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013) （適用於 Visual Studio 2012）
 > - [WCF Data Services 用戶端程式庫](https://msdn.microsoft.com/library/cc668772.aspx)
 > - Web API 2。 （使用 Web API 2 中，所建置 OData 服務的範例，但用戶端應用程式不相依於 Web API）。
-
 
 在本教學課程中，我將逐步建立呼叫 OData 服務的用戶端應用程式。 OData 服務會公開下列實體：
 
@@ -57,7 +56,6 @@ ms.locfileid: "59389969"
 
 > [!NOTE]
 > 其餘的步驟，請參閱主控台專案。
-
 
 在 [方案總管] 中，以滑鼠右鍵按一下**參考**，然後選取**加入服務參考**。
 
@@ -201,7 +199,6 @@ Select 子句可以包含相關的實體。 在此情況下，請勿呼叫**展�
 
 > [!NOTE]
 > 為什麼修補程式與合併？ 原始的 HTTP 1.1 規格 ([RCF 2616](http://tools.ietf.org/html/rfc2616)) 未定義任何 HTTP 方法，以 「 部分更新 」 語意。 若要支援部分更新，OData 規格會定義合併式方法。 在 2010年[RFC 5789](http://tools.ietf.org/html/rfc5789)定義部分更新的 PATCH 方法。 您可以讀取此歷程記錄的一些[部落格文章](https://blogs.msdn.com/b/astoriateam/archive/2008/05/20/merge-vs-replace-semantics-for-update-operations.aspx)WCF Data Services 部落格。 現在，修補程式，最好透過合併。 Web API scaffolding 所建立的 OData 控制器支援這兩種方法。
-
 
 如果您想要取代整個實體 （PUT 語意），指定**ReplaceOnUpdate**選項。 這會導致傳送 HTTP PUT 要求的 WCF。
 

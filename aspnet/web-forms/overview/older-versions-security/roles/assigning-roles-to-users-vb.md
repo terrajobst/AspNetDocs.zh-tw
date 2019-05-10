@@ -8,12 +8,12 @@ ms.date: 03/24/2008
 ms.assetid: fd208ee9-69cc-4467-9783-b4e039bdd1d3
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/assigning-roles-to-users-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6bedfd2b6ff0b50b3b863d26dccaacf687ed5907
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9efe20a1e8a5982d7494914a0ed865db0ab0f52e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59403268"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130201"
 ---
 # <a name="assigning-roles-to-users-vb"></a>將角色指派給使用者 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59403268"
 [下載程式碼](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/VB.10.zip)或[下載 PDF](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/aspnet_tutorial10_AssigningRoles_vb.pdf)
 
 > 在本教學課程中，我們將建置兩個 ASP.NET 網頁，以協助管理哪些使用者屬於哪些角色。 第一頁會包含功能若要查看哪些使用者屬於指定的角色，具備特定的使用者所屬的角色和指派或移除特定角色中的特定使用者的能力。 在第二個頁面中，我們會擴大 CreateUserWizard 控制項使其包含的步驟，以指定新建立的使用者屬於哪些角色。 這是系統管理員能夠建立新的使用者帳戶的案例中很有用。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -43,7 +42,6 @@ ms.locfileid: "59403268"
 > [!NOTE]
 > 使用下拉式清單加入至清單的使用者帳戶不是網站的理想選擇，可能有數百個使用者帳戶。 下拉式清單可讓使用者選擇的選項在相對較短的清單中的一個項目。 快速地變得難以隨著清單項目數目。 如果您要建置的網站，將會有可能很大的數字的使用者帳戶，您可能要考慮使用替代的使用者介面，例如可分頁的 GridView 或列出的可篩選介面會提示選擇字母的訪客，然後只顯示使用者名稱開頭為所選的字母這些使用者。
 
-
 ## <a name="step-1-building-the-by-user-user-interface"></a>步驟 1：建置 「 依使用者 」 使用者介面
 
 開啟`UsersAndRoles.aspx`頁面。 在頁面頂端，新增名為的 Label Web 控制項`ActionStatus`並清除其`Text`屬性。 我們將使用此標籤來顯示這類訊息上執行的動作提供意見反應，「 使用者 Tito 已加入到系統管理員角色，「 或者 」 使用者 Jisun 都已獲得 「 主管 」 角色。 」 若要讓這些訊息脫穎而出，將標籤的`CssClass`"Important"的屬性。
@@ -56,11 +54,9 @@ ms.locfileid: "59403268"
 
 這個 CSS 定義會指示瀏覽器顯示使用大型、 紅色字型的標籤。 [圖 1] 顯示此效果，透過 Visual Studio 設計工具。
 
-
 [![標籤的 CssClass 屬性會導致大型的紅色字型](assigning-roles-to-users-vb/_static/image2.png)](assigning-roles-to-users-vb/_static/image1.png)
 
 **圖 1**:標籤`CssClass`導致大 」，紅色字型的屬性 ([按一下以檢視完整大小的影像](assigning-roles-to-users-vb/_static/image3.png))
-
 
 接下來，將 DropDownList 新增至頁面上，設定其`ID`屬性，以`UserList`，並設定其`AutoPostBack`屬性設為 True。 若要列出的所有使用者在系統中，我們將使用此 DropDownList。 將繫結此 DropDownList MembershipUser 物件的集合。 因為我們希望 DropDownList 以顯示 MembershipUser 物件的使用者名稱屬性 （並使用它做為清單項目的值），設定 DropDownList`DataTextField`和`DataValueField`屬性為"UserName"。
 
@@ -83,7 +79,6 @@ ms.locfileid: "59403268"
 > [!NOTE]
 > `Membership.GetAllUsers`方法有兩個多載︰ 一個可接受任何輸入的參數且傳回的所有使用者，以及其中的頁面索引和頁面大小的整數值會採用並傳回使用者的指定的子集。 大量的可分頁的使用者介面項目中所顯示的使用者帳戶時，第二個多載可用來更有效率地逐頁查看使用者因為它會傳回只是使用者帳戶而非所有人都精確子集。
 
-
 `BindRolesToList`方法會呼叫`Roles`類別的[`GetAllRoles`方法](https://msdn.microsoft.com/library/system.web.security.roles.getallroles.aspx)，它會傳回字串陣列，包含系統中的角色。 此字串陣列，然後繫結至 Repeater。
 
 最後，我們需要呼叫這兩種方法，當第一次載入此頁面。 將下列程式碼加入至 `Page_Load` 事件處理常式：
@@ -92,11 +87,9 @@ ms.locfileid: "59403268"
 
 使用此程式碼就緒之後，請花一點時間瀏覽的頁面，透過瀏覽器;您的畫面看起來應該類似於圖 2。 所有使用者帳戶會填入下拉式清單中，和下方，每個角色會顯示為核取方塊。 因為我們設定`AutoPostBack`DropDownList 和屬性的核取方塊設為 True，變更選取的使用者，或是檢查或取消勾選角色造成回傳。 不執行任何動作，不過，因為我們尚未撰寫程式碼來處理這些動作時。 我們將會處理這些工作，接下來兩節中。
 
-
 [![此頁面會顯示使用者和角色](assigning-roles-to-users-vb/_static/image5.png)](assigning-roles-to-users-vb/_static/image4.png)
 
 **圖 2**:此頁面會顯示使用者和角色 ([按一下以檢視完整大小的影像](assigning-roles-to-users-vb/_static/image6.png))
-
 
 ### <a name="checking-the-roles-the-selected-user-belongs-to"></a>檢查角色選取的使用者屬於
 
@@ -108,7 +101,6 @@ ms.locfileid: "59403268"
 
 > [!NOTE]
 > `Linq.Enumerable.Contains(Of String)(...)`語法不會編譯，如果您使用 ASP.NET 2.0 版。 `Contains(Of String)`方法屬於[LINQ 文件庫](http://en.wikipedia.org/wiki/Language_Integrated_Query)，這是新 ASP.NET 3.5。 如果您仍在使用 ASP.NET 2.0 版中，使用[`Array.IndexOf(Of String)`方法](https://msdn.microsoft.com/library/eha9t187.aspx)改。
-
 
 `CheckRolesForSelectedUser`需要在兩個情況下呼叫方法： 第一次載入頁面時，只要使用`UserList`DropDownList 的選取的索引變更。 因此，呼叫這個方法從`Page_Load`事件處理常式 (呼叫之後`BindUsersToUserList`和`BindRolesToList`)。 此外，建立事件處理常式的 DropDownList`SelectedIndexChanged`事件，並從該處呼叫這個方法。
 
@@ -134,19 +126,15 @@ ms.locfileid: "59403268"
 
 請花一點時間來測試此頁面，透過瀏覽器。 選取使用者 Tito，然後將 Tito 加入系統管理員 」 和 「 監督員 」 角色。
 
-
 [![Tito 已新增至系統管理員和監督員的角色](assigning-roles-to-users-vb/_static/image8.png)](assigning-roles-to-users-vb/_static/image7.png)
 
 **圖 3**:系統管理員和監督員角色已新增 Tito ([按一下以檢視完整大小的影像](assigning-roles-to-users-vb/_static/image9.png))
 
-
 接下來，從下拉式清單中選取使用者 Bruce。 沒有回傳和 Repeater 的核取方塊會透過更新`CheckRolesForSelectedUser`。 Bruce 不尚未屬於任何角色，因為兩個核取方塊未勾選。 接下來，Bruce 加入 「 主管 」 角色。
-
 
 [![Bruce 已新增至 「 主管 」 角色](assigning-roles-to-users-vb/_static/image11.png)](assigning-roles-to-users-vb/_static/image10.png)
 
 **圖 4**:Bruce 已新增至 「 主管 」 角色 ([按一下以檢視完整大小的影像](assigning-roles-to-users-vb/_static/image12.png))
-
 
 若要進一步驗證功能`CheckRolesForSelectedUser`方法中，選取一個 Tito 或 Bruce 以外的使用者。 請注意情況下，核取方塊會自動取消核取的方式，用來表示，它們不屬於任何角色。 返回 Tito。 應檢查的系統管理員 」 和 「 監督員內的核取方塊。
 
@@ -166,11 +154,9 @@ ms.locfileid: "59403268"
 
 中的最後兩行`BindRolesToList`方法已加入至繫結之一組角色`RoleList`DropDownList 控制項。 圖 5 顯示檢視透過瀏覽器 – 下拉式清單，填入 系統角色時的最終結果。
 
-
 [![角色會顯示在 RoleList DropDownList](assigning-roles-to-users-vb/_static/image14.png)](assigning-roles-to-users-vb/_static/image13.png)
 
 **圖 5**:角色會顯示在`RoleList`DropDownList ([按一下以檢視完整大小的影像](assigning-roles-to-users-vb/_static/image15.png))
-
 
 ### <a name="displaying-the-users-that-belong-to-the-selected-role"></a>顯示屬於所選角色的使用者
 
@@ -186,11 +172,9 @@ ms.locfileid: "59403268"
 
 此程式碼的位置， `RolesUserList` GridView 應該會顯示屬於所選角色的使用者。 如 [圖 6] 所示，監督員角色包含兩個成員：Bruce 和 Tito。
 
-
 [![GridView 會列出這些屬於所選角色的使用者](assigning-roles-to-users-vb/_static/image17.png)](assigning-roles-to-users-vb/_static/image16.png)
 
 **圖 6**:GridView 會列出這些使用者屬於選取的角色 ([按一下以檢視完整大小的影像](assigning-roles-to-users-vb/_static/image18.png))
-
 
 ### <a name="removing-users-from-the-selected-role"></a>從選取的角色移除使用者
 
@@ -198,11 +182,9 @@ ms.locfileid: "59403268"
 
 開始刪除按鈕欄位加入至 GridView。 讓這個欄位會顯示為已歸檔最左邊，並變更其`DeleteText`屬性從 [刪除] （預設值） 為 「 移除 」。
 
-
 [![新增](assigning-roles-to-users-vb/_static/image20.png)](assigning-roles-to-users-vb/_static/image19.png)
 
 **圖 7**:[移除] 按鈕新增至 GridView ([按一下以檢視完整大小的影像](assigning-roles-to-users-vb/_static/image21.png))
-
 
 按一下 [移除] 按鈕時回傳接踵而來和 GridView`RowDeleting`就會引發事件。 我們需要建立此事件的事件處理常式撰寫程式碼，從選取的角色移除使用者。 建立事件處理常式，然後加入下列程式碼：
 
@@ -213,14 +195,11 @@ ms.locfileid: "59403268"
 > [!NOTE]
 > [移除] 按鈕不需要任何類型的使用者從角色移除使用者之前，先確認。 歡迎您加入某種程度的使用者確認。 其中一個最簡單的方式，可確認動作是透過用戶端確認對話方塊。 如需有關這項技術的詳細資訊，請參閱 <<c0> [ 正在刪除時新增用戶端確認](https://asp.net/learn/data-access/tutorial-42-vb.aspx)。
 
-
 從 主管 群組中移除使用者 Tito 後，圖 8 顯示頁面。
-
 
 [![可惜的是，Tito 不再監督員](assigning-roles-to-users-vb/_static/image23.png)](assigning-roles-to-users-vb/_static/image22.png)
 
 **圖 8**:可惜的是，Tito 不再監督員 ([按一下以檢視完整大小的影像](assigning-roles-to-users-vb/_static/image24.png))
-
 
 ### <a name="adding-new-users-to-the-selected-role"></a>將新的使用者新增至選取的角色
 
@@ -241,22 +220,17 @@ ms.locfileid: "59403268"
 > [!NOTE]
 > 若要確保指定的使用者已經不隸屬於所選的角色，我們使用[`Roles.IsUserInRole(userName, roleName)`方法](https://msdn.microsoft.com/library/system.web.security.roles.isuserinrole.aspx)，它會傳回布林值，指出是否*userName* 隸屬*roleName*。 我們將使用中的，這個方法一次<a id="_msoanchor_2"> </a>[下一個教學課程](role-based-authorization-vb.md)當我們查看以角色為基礎的授權。
 
-
 瀏覽透過瀏覽器頁面，然後選取從 「 監督員角色`RoleList`DropDownList。 請嘗試輸入無效的使用者名稱，您應該會看到訊息，說明使用者不存在於系統。
-
 
 [![您無法將不存在的使用者加入角色](assigning-roles-to-users-vb/_static/image26.png)](assigning-roles-to-users-vb/_static/image25.png)
 
 **圖 9**:您無法加入角色中的非存在的使用者 ([按一下以檢視完整大小的影像](assigning-roles-to-users-vb/_static/image27.png))
 
-
 現在，嘗試新增有效的使用者。 請繼續並重新加入 Tito 監督員的角色。
-
 
 [![Tito 同樣是監督員 ！](assigning-roles-to-users-vb/_static/image29.png)](assigning-roles-to-users-vb/_static/image28.png)
 
 **圖 10**:Tito 同樣是監督員 ！  ([按一下以檢視完整大小的影像](assigning-roles-to-users-vb/_static/image30.png))
-
 
 ## <a name="step-3-cross-updating-the-by-user-and-by-role-interfaces"></a>步驟 3：跨更新 「 使用者 」 和 「 角色 」 介面
 
@@ -289,11 +263,9 @@ ms.locfileid: "59403268"
 
 接下來，選取 「 新增/移除`WizardSteps`...」 選項從 CreateUserWizard 的智慧標籤，然後新增新`WizardStep`，將其`ID`至`SpecifyRolesStep`。 移動`SpecifyRolesStep WizardStep`以便說 「 登註冊您新帳戶 」 的步驟之後，但 「 完成 」 步驟之前。 設定`WizardStep`的`Title`屬性，以 「 指定角色 」，其`StepType`屬性設`Step`，並將其`AllowReturn`屬性設定為 False。
 
-
 [![新增](assigning-roles-to-users-vb/_static/image32.png)](assigning-roles-to-users-vb/_static/image31.png)
 
 **圖 11**:新增 「 指定角色 」 `WizardStep` CreateUserWizard 到 ([按一下以檢視完整大小的影像](assigning-roles-to-users-vb/_static/image33.png))
-
 
 這項變更之後 CreateUserWizard 的宣告式標記看起來應該如下所示：
 
@@ -317,27 +289,21 @@ ms.locfileid: "59403268"
 
 請瀏覽此頁面，透過瀏覽器。 CreateUserWizard 的第一個步驟是標準的 [登註冊您新增帳戶] 步驟，也會提示您輸入新使用者的使用者名稱、 密碼、 電子郵件和其他重要資訊。 輸入要建立名為 Wanda 的新使用者的資訊。
 
-
 [![建立名為 Wanda 新使用者](assigning-roles-to-users-vb/_static/image35.png)](assigning-roles-to-users-vb/_static/image34.png)
 
 **圖 12**:建立新的使用者名稱為 Wanda ([按一下以檢視完整大小的影像](assigning-roles-to-users-vb/_static/image36.png))
 
-
 按一下 [建立使用者] 按鈕。 在內部呼叫 CreateUserWizard`Membership.CreateUser`方法，建立新的使用者帳戶，並接著會前進到下一個步驟中，「 指定的角色。 」 這裡會列出系統角色。 檢查各有核取方塊，然後按一下 [下一步]。
-
 
 [![請 Wanda 監督員角色的成員](assigning-roles-to-users-vb/_static/image38.png)](assigning-roles-to-users-vb/_static/image37.png)
 
 **圖 13**:請 Wanda 監督員角色的成員 ([按一下以檢視完整大小的影像](assigning-roles-to-users-vb/_static/image39.png))
 
-
 按一下 下一步，回傳和更新會導致`ActiveStep`「 完成 」 步驟。 在 `ActiveStepChanged`事件處理常式，最近建立的使用者帳戶指派給 「 監督員 」 角色。 若要確認這點，傳回到`UsersAndRoles.aspx`頁面上，選取監督員內，從`RoleList`DropDownList。 如 [圖 14] 所示，監督員內現在組成三個使用者：Bruce、 Tito 和 Wanda。
-
 
 [![Bruce、 Tito 和 Wanda 是所有的監督員](assigning-roles-to-users-vb/_static/image41.png)](assigning-roles-to-users-vb/_static/image40.png)
 
 **圖 14**:Bruce、 Tito 和 Wanda 是所有的監督員 ([按一下以檢視完整大小的影像](assigning-roles-to-users-vb/_static/image42.png))
-
 
 ## <a name="summary"></a>總結
 

@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 06a776fe-7c73-4ca7-8e02-5260a86edc03
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/picking-one-animation-out-of-a-list-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1cbb60431824ce642625c06cba6b5194aa547b1b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: dd22d80775ebe3571fcf9d3225135766669ef85b
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59419700"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128708"
 ---
 # <a name="picking-one-animation-out-of-a-list-c"></a>從清單中挑選一張動畫 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59419700"
 [下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation5.cs.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation5CS.pdf)
 
 > 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 架構也可讓程式設計人員挑選一張動畫從清單的動畫，根據一些 JavaScript 程式碼的評估結果。
-
 
 ## <a name="overview"></a>總覽
 
@@ -51,7 +50,6 @@ ms.locfileid: "59419700"
 下列標記會定義三個 subanimations:調整大小的寬度，調整大小的高度和淡出。JavaScript 程式碼 (`Math.floor(3 * Math.random())`)，讓其中的三種動畫會執行，然後選擇 0 和 2 之間的數字：
 
 [!code-aspx[Main](picking-one-animation-out-of-a-list-cs/samples/sample5.aspx)]
-
 
 [![其中一種可能的三個動畫：[面板] 中取得更多](picking-one-animation-out-of-a-list-cs/_static/image2.png)](picking-one-animation-out-of-a-list-cs/_static/image1.png)
 

@@ -8,19 +8,18 @@ ms.date: 02/10/2010
 ms.assetid: d601c540-f86b-4feb-890c-20c806b3da6c
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: a6ae18529afc4df799d95d8b7a98f9bc5add9485
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 65b13065ae5324ce64ec1b87b2127e5277542fb8
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385536"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125667"
 ---
 # <a name="aspnet-4-breaking-changes"></a>ASP.NET 4 重大變更
 
 > 本文件說明已針對.NET Framework 版本可能會影響使用較早的版本，包括 ASP.NET 4 Beta 1 和 Beta 2 版本所建立的應用程式的月 4 日發行的變更。
 > 
 > [下載此白皮書](https://download.microsoft.com/download/7/1/A/71A105A9-89D6-4201-9CC5-AD6A3B7E2F22/ASP_NET_4_Breaking_Changes.pdf)
-
 
 <a id="0.1__Toc256768952"></a><a id="0.1__Toc256770056"></a>
 
@@ -112,7 +111,6 @@ ASP.NET 網頁的頁面剖析器 (`.aspx`檔案) 和使用者控制項 (`.ascx`�
 > [!NOTE]
 > **HttpBrowserCapabilities**物件 (這由頁面的**Request.Browser**屬性) 由瀏覽器定義檔案所驅動。 因此，存取此物件在 ASP.NET 4 中的屬性所傳回的資訊可能會不同於在舊版 ASP.NET 中傳回的資訊。
 
-
 您可以複製下列資料夾中的瀏覽器定義檔案，就可還原為舊的瀏覽器定義檔案：
 
 [!code-console[Main](breaking-changes/samples/sample5.cmd)]
@@ -195,7 +193,6 @@ ASP.NET 使用加密和雜湊演算法來協助保護資料，例如表單驗證
 中的應用程式`childwebapp`資料夾將無法啟動在 IIS 7 或 IIS 7.5 上，並會回報組態錯誤。 錯誤文字將包含類似下面的訊息：
 
 - `The requested page cannot be accessed because the related configuration data for the page is invalid.`
-  
 
 - `The configuration section 'configSections' cannot be read because it is missing a section declaration.`
 
@@ -227,7 +224,6 @@ ASP.NET 使用加密和雜湊演算法來協助保護資料，例如表單驗證
 
 > [!NOTE]
 > 在下列範例中，已包裝行以提高可讀性。
-
 
 [!code-xml[Main](breaking-changes/samples/sample8.xml)]
 
@@ -315,7 +311,6 @@ ASP.NET 使用加密和雜湊演算法來協助保護資料，例如表單驗證
 > [!NOTE]
 > 設定**EnableExtensionlessUrls**為 1 啟用無副檔名 URL 行為。 這是未不指定任何值時的預設值。
 
-
 <a id="0.1__Toc252995494"></a><a id="0.1__Toc255587643"></a><a id="0.1__Toc256770154"></a><a id="0.1__Toc245724862"></a>
 
 ## <a name="event-handlers-might-not-be-not-raised-in-a-default-document-in-iis-7-or-iis-75-integrated-mode"></a>事件處理常式可能不會不引發中的預設文件，在 IIS 7 或 IIS 7.5 整合模式
@@ -372,7 +367,6 @@ ASP.NET 2.0 中，並由延伸模組在 3.5 中，已新增的 ASP.NET 功能會
 > [!NOTE]
 > **HtmlEncode**並**HtmlDecode**的功能**System.Web.HttpUtility**類別已移至新的.NET Framework 4 **System.Net.WebUtility**類別。 如果這是所使用的只有 ASP.NET 功能，修改應用程式的程式碼，以使用新**WebUtility**類別。
 
-
 在 ASP.NET 4 中的預設 CA 實作變更的高階摘要如下：
 
 - ASP.NET 應用程式定義域已同質性的應用程式定義域。 只有部分信任和完全信任授與集合可用於應用程式定義域。
@@ -399,7 +393,6 @@ ASP.NET 2.0 中，並由延伸模組在 3.5 中，已新增的 ASP.NET 功能會
 不過，類別庫，使用特定的成員資格類型，而且已從舊版 ASP.NET 升級，將無法編譯的 ASP.NET 4 專案中使用時。 例如，類別庫專案可能會無法編譯，並回報錯誤，如下所示：
 
 - `The type 'System.Web.Security.MembershipUser' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Web.ApplicationServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'.`
-  
 
 - `The type name 'MembershipUser' could not be found. This type has been forwarded to assembly 'System.Web.ApplicationServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'. Consider adding a reference to that assembly.`
 

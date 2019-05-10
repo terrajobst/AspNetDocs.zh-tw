@@ -8,12 +8,12 @@ ms.date: 07/01/2015
 ms.assetid: 2a7517a0-b88c-4162-ade3-9bf6ca7062fd
 msc.legacyurl: /signalr/overview/deployment/using-signalr-with-azure-web-sites
 msc.type: authoredcontent
-ms.openlocfilehash: 531aba3753bf97b8bf1763a22615fb811b375286
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0e6a18bdbe9cc47e89b5a458753845afb53595f1
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379140"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128148"
 ---
 # <a name="using-signalr-with-web-apps-in-azure-app-service"></a>在 Azure App Service 中搭配 Web 應用程式使用 SignalR
 
@@ -36,7 +36,6 @@ ms.locfileid: "59379140"
 > ## <a name="questions-and-comments"></a>提出問題或意見
 >
 > 您喜歡本教學課程中的方式，和我們可以改善在頁面底部的註解中，歡迎留下意見反應。 如果您有不直接相關的教學課程中的問題，您可以張貼他們[ASP.NET SignalR 論壇](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)， [StackOverflow.com](http://stackoverflow.com/)，或[Microsoft Azure 論壇](https://social.msdn.microsoft.com/Forums/windowsazure/home?category=windowsazureplatform).
-
 
 ## <a name="table-of-contents"></a>目錄
 

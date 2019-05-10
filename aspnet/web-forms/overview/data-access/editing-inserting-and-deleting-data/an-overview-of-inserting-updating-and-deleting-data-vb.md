@@ -8,12 +8,12 @@ ms.date: 07/17/2006
 ms.assetid: 35b40b8f-2ca8-4ab3-9c19-f361a91a3647
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3e6917a056ef5be5f11d48b4e5bc012855225923
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 484465d9de618a8d1e00ac2f157e29513055a77e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396742"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128105"
 ---
 # <a name="an-overview-of-inserting-updating-and-deleting-data-vb"></a>插入、 更新和刪除資料 (VB) 的概觀
 
@@ -23,7 +23,6 @@ ms.locfileid: "59396742"
 
 > 在本教學課程中我們將了解如何將 ObjectDataSource 的 insert （），update （），對應，方法的 BLL delete （） 方法的類別，以及如何設定 GridView、 DetailsView 和 FormView 控制項，可提供資料修改功能。
 
-
 ## <a name="introduction"></a>簡介
 
 移轉過去的幾個教學課程中，我們已討論過如何在 ASP.NET 網頁使用 GridView、 DetailsView 和 FormView 控制項中顯示資料。 這些控制項只會使用提供給它們的資料。 通常，這些控制項存取透過 ObjectDataSource 等資料來源控制項使用的資料。 我們已了解如何將 ObjectDataSource 做為 ASP.NET 網頁和基礎資料之間的 proxy。 當 GridView 需要顯示資料時，它會叫用其 ObjectDataSource`Select()`方法，它會接著叫用的方法從我們商務邏輯層 (BLL)，會呼叫的方法，在適當的資料存取圖層 (DAL) 中的 TableAdapter，繼而再傳送`SELECT` Northwind 資料庫的查詢。
@@ -32,11 +31,9 @@ ms.locfileid: "59396742"
 
 除了其`Select()`方法，也有 ObjectDataSource `Insert()`， `Update()`，和`Delete()`方法。 例如`Select()`方法，這三種方法可以對應至基礎物件中的方法。 當設定為插入、 更新或刪除資料，GridView、 DetailsView 和 FormView 控制項提供使用者介面修改基礎資料。 此使用者介面會呼叫`Insert()`， `Update()`，和`Delete()`方法的 ObjectDataSource]，然後叫用基礎物件的相關聯 （請參閱 [圖 1） 的方法。
 
-
 [![ObjectDataSource 的 insert （）、 update （） 和 delete （） 方法做為 Proxy 到 BLL](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image2.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image1.png)
 
 **圖 1**:ObjectDataSource `Insert()`， `Update()`，並`Delete()`方法做為 Proxy 到 BLL ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image3.png))
-
 
 在本教學課程中，我們會看到如何將對應的 ObjectDataSource `Insert()`， `Update()`，和`Delete()`BLL，以及如何設定 GridView、 DetailsView 和 FormView 控制項來提供資料修改類別的方法的方法功能。
 
@@ -54,32 +51,25 @@ ms.locfileid: "59396742"
 - `ConfirmationOnDelete.aspx`
 - `UserLevelAccess.aspx`
 
-
 ![加入 ASP.NET 網頁的資料修改相關教學課程](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image4.png)
 
 **圖 2**:加入 ASP.NET 網頁的資料修改相關教學課程
 
-
 在其他資料夾，例如`Default.aspx`在`EditInsertDelete`資料夾會列出其一節中的教學課程。 請記得，`SectionLevelTutorialListing.ascx`使用者控制項提供這項功能。 因此，新增此使用者控制項`Default.aspx`藉由將它拖曳到頁面的 [設計] 檢視上的 [方案總管] 中。
-
 
 [![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image6.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image5.png)
 
 **圖 3**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image7.png))
 
-
 最後，將頁面新增項目，以作為`Web.sitemap`檔案。 具體來說，自訂格式化之後新增下列標記`<siteMapNode>`:
-
 
 [!code-xml[Main](an-overview-of-inserting-updating-and-deleting-data-vb/samples/sample1.xml)]
 
 在更新之後`Web.sitemap`，花點時間檢視教學課程網站，透過瀏覽器。 在左側功能表現在包含編輯、 插入及刪除教學課程的項目。
 
-
 ![網站導覽現在包含項目編輯、 插入及刪除教學課程](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image8.png)
 
 **圖 4**:網站導覽現在包含項目編輯、 插入及刪除教學課程
-
 
 ## <a name="step-2-adding-and-configuring-the-objectdatasource-control"></a>步驟 2：加入和設定 ObjectDataSource 控制項
 
@@ -87,40 +77,31 @@ ms.locfileid: "59396742"
 
 開啟`Basics.aspx`頁面上，從 [工具箱] 拖曳至設計工具中，拖曳 ObjectDataSource，然後按一下 [設定資料來源] 連結，從它的智慧標籤。 因為`ProductsBLL`是唯一提供編輯、 插入和刪除方法，設定要使用這個類別的 ObjectDataSource 的 BLL 類別。
 
-
 [![設定使用 ProductsBLL 類別 ObjectDataSource](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image10.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image9.png)
 
 **圖 5**:設定要使用 ObjectDataSource`ProductsBLL`類別 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image11.png))
 
-
 在下一個畫面中，我們可以指定哪些方法的`ProductsBLL`類別會對應到 ObjectDataSource `Select()`， `Insert()`， `Update()`，和`Delete()`選取適當的索引標籤，然後從下拉式清單中選擇的方法。 圖 6，這應該看起來很熟悉到目前為止，對應的 ObjectDataSource`Select()`方法，以`ProductsBLL`類別的`GetProducts()`方法。 `Insert()`， `Update()`，和`Delete()`來設定方法，請從上方清單中選取適當的索引標籤。
-
 
 [![ObjectDataSource 已傳回的所有產品](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image13.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image12.png)
 
 **圖 6**:有 ObjectDataSource 傳回所有的產品 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image14.png))
 
-
 圖 7、 8 和 9 顯示 ObjectDataSource 的更新、 插入和刪除索引標籤。 設定這些索引標籤，讓`Insert()`， `Update()`，並`Delete()`方法叫用`ProductsBLL`類別的`UpdateProduct`， `AddProduct`，和`DeleteProduct`方法，分別。
-
 
 [![將 ObjectDataSource 的 update （） 方法對應至 ProductBLL 類別的 UpdateProduct 方法](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image16.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image15.png)
 
 **圖 7**:對應的 ObjectDataSource`Update()`方法，以`ProductBLL`類別的`UpdateProduct`方法 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image17.png))
 
-
 [![將 ObjectDataSource 的 insert （） 方法對應至 ProductBLL 類別的 AddProduct 方法](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image19.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image18.png)
 
 **圖 8**:對應的 ObjectDataSource`Insert()`方法，以`ProductBLL`類別的 Add`Product`方法 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image20.png))
-
 
 [![將 ObjectDataSource 的 delete （） 方法對應至 ProductBLL 類別的 DeleteProduct 方法](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image22.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image21.png)
 
 **圖 9**:對應的 ObjectDataSource`Delete()`方法，以`ProductBLL`類別的`DeleteProduct`方法 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image23.png))
 
-
 您可能已經注意到在更新、 插入和刪除索引標籤的下拉式清單中已經有這些選取的方法。 這是因為我們使用`DataObjectMethodAttribute`裝飾的方法`ProductsBLL`。 比方說，DeleteProduct 方法具有下列簽章：
-
 
 [!code-vb[Main](an-overview-of-inserting-updating-and-deleting-data-vb/samples/sample2.vb)]
 
@@ -131,7 +112,6 @@ ms.locfileid: "59396742"
 ## <a name="examining-the-objectdatasources-markup"></a>檢查 ObjectDataSource 的標記
 
 設定之後透過其精靈 ObjectDataSource，移至來源檢視來檢查產生的宣告式標記。 `<asp:ObjectDataSource>`標記會指定基礎物件和方法來叫用。 此外，還有`DeleteParameters`， `UpdateParameters`，並`InsertParameters`會對應到輸入參數`ProductsBLL`類別的`AddProduct`， `UpdateProduct`，和`DeleteProduct`方法：
-
 
 [!code-aspx[Main](an-overview-of-inserting-updating-and-deleting-data-vb/samples/sample3.aspx)]
 
@@ -149,7 +129,6 @@ ObjectDataSource 包含參數的每一個輸入參數，為其相關聯的方法
 > [!NOTE]
 > 如果您只需清除`OldValuesParameterFormatString`屬性值從 [屬性] 視窗，在 [設計] 檢視中，屬性仍會存在於宣告式語法中，但設定為空字串。 這樣一來，不幸的是，仍會相同上面所討論的問題。 因此，請移除屬性完全宣告式語法，或從 [屬性] 視窗中，將值設定為預設值， `{0}`。
 
-
 ## <a name="step-3-adding-a-data-web-control-and-configuring-it-for-data-modification"></a>步驟 3：加入資料 Web 控制項，並為資料修改設定
 
 一旦已新增至頁面並設定 ObjectDataSource，我們就要資料 Web 控制項加入頁面，即可同時顯示資料，並提供方法，讓使用者進行修改。 我們將探討 GridView、 DetailsView 和 FormView 分開，因為這些資料 Web 控制項的差異在於其資料修改功能和組態。
@@ -159,7 +138,6 @@ ObjectDataSource 包含參數的每一個輸入參數，為其相關聯的方法
 ## <a name="deleting-data-from-the-gridview"></a>從 GridView 中刪除資料
 
 開始拖曳的 GridView，從 [工具箱] 拖曳至設計工具。 接下來，繫結 ObjectDataSource 至 GridView 藉由從 GridView 的智慧標籤中的下拉式清單中選取。 此時，系統將會是 GridView 的宣告式標記：
-
 
 [!code-aspx[Main](an-overview-of-inserting-updating-and-deleting-data-vb/samples/sample4.aspx)]
 
@@ -181,53 +159,42 @@ GridView 控制項提供資料列層級編輯和刪除的內建支援。 設定 
 > [!NOTE]
 > `DataKeys`集合會儲存在 GridView 的控制項狀態，表示`DataKeys`值將會記住跨越回傳，即使已停用的 GridView 的檢視狀態。 不過，它是非常重要的檢視狀態的支援編輯或刪除 （預設行為） 的 Gridview 會維持啟用。 如果您將設定 GridView s`EnableViewState`屬性設`false`、 編輯和刪除行為將會正常運作的單一使用者，但如果沒有刪除資料的並行使用者，有可能發生這些並行的使用者可能不小心刪除或編輯它們無意的記錄。 請參閱我的部落格項目[警告：並行處理問題與 ASP.NET 2.0 Gridview/DetailsView/FormViews 該支援編輯和/或刪除和的檢視狀態已停用](http://scottonwriting.net/sowblog/posts/10054.aspx)，如需詳細資訊。
 
-
 這個相同的警告也適用於 DetailsViews 和 FormViews。
 
 若要刪除的功能加入 GridView，只要移至它的智慧標籤，並核取方塊啟用刪除。
-
 
 ![核取 啟用刪除核取方塊](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image24.png)
 
 **圖 10**:核取 啟用刪除核取方塊
 
-
 正在檢查啟用刪除 核取方塊的智慧標籤將 CommandField 加入至 GridView。 CommandField 呈現按鈕執行下列其中一個或多個下列工作與 GridView 中的資料行： 選取的記錄、 編輯記錄，並刪除記錄。 我們先前曾看過在選取資料錄中的動作中 CommandField[主要/詳細說明使用具有詳細資料 detailview 之可選取主要 GridView](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md)教學課程。
 
 CommandField 包含數個`ShowXButton`指出哪些系列的按鈕會顯示在 CommandField 屬性。 核取啟用刪除 CommandField 其`ShowDeleteButton`屬性是`True`已新增至 GridView 的資料行集合。
-
 
 [!code-aspx[Main](an-overview-of-inserting-updating-and-deleting-data-vb/samples/sample5.aspx)]
 
 此時，信不信由您，我們已完成刪除的支援新增至 GridView ！ 如 [圖 11] 所示，瀏覽此頁面，透過瀏覽器的刪除按鈕資料行時出現。
 
-
 [![CommandField 加入資料行的刪除按鈕](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image26.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image25.png)
 
 **圖 11**:CommandField 加入資料行的刪除按鈕 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image27.png))
-
 
 如果您建立本教學課程從頭自行測試此頁面，按一下 [刪除] 按鈕將會引發例外狀況。 繼續閱讀以了解為什麼引發這些例外狀況，以及如何加以修正。
 
 > [!NOTE]
 > 如果您有依照上述指示使用下載隨附本教學課程中，這些問題有已被佔用。 不過，建議您閱讀下面所列，以協助識別可能發生之問題和適當的因應措施的詳細資料。
 
-
 如果您嘗試將刪除產品時，您會收到例外狀況的訊息會類似於 「*ObjectDataSource 'ObjectDataSource1' 找不到 přepisuje neobecnou metodu 具有參數的 ' DeleteProduct': productID，原始\_ProductID*，「 您可能忘了移除`OldValuesParameterFormatString`從 ObjectDataSource 的屬性。 與`OldValuesParameterFormatString`屬性指定，ObjectDataSource 會嘗試傳入兩者`productID`並`original_ProductID`輸入參數`DeleteProduct`方法。 `DeleteProduct`不過，只接受單一輸入的參數，因此例外狀況。 移除`OldValuesParameterFormatString`屬性 (或將它設定為`{0}`) 會嘗試不在原始的輸入參數中傳遞的 ObjectDataSource 的指示。
-
 
 [![請確定已清除 [Where] 屬性](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image29.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image28.png)
 
 **圖 12**:請確認`OldValuesParameterFormatString`屬性具有已清除 Out ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image30.png))
 
-
 即使您移除`OldValuesParameterFormatString`屬性，仍會得到例外狀況嘗試刪除具有訊息之產品的：「*DELETE 陳述式與參考條件約束 ' FK\_順序\_詳細資料\_產品的*。 」Northwind 資料庫包含之間的外部索引鍵條件約束`Order Details`並`Products`資料表，這表示從系統無法刪除的產品，如果有一或多個記錄中的`Order Details`資料表。 因為 Northwind 資料庫中的每個產品具有至少一個記錄`Order Details`，直到我們第一次刪除產品的相關聯的訂單詳細資料記錄，所以無法刪除任何產品。
-
 
 [![外部索引鍵條件約束會禁止刪除產品](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image32.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image31.png)
 
 **圖 13**:外部索引鍵條件約束會禁止刪除的產品 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image33.png))
-
 
 教學課程中，我們只是刪除所有記錄的`Order Details`資料表。 在真實世界應用程式中，我們必須為：
 
@@ -237,17 +204,14 @@ CommandField 包含數個`ShowXButton`指出哪些系列的按鈕會顯示在 Co
 
 讓我們只要刪除所有記錄的`Order Details`規避的外部索引鍵條件約束的資料表。 請移至 Visual Studio 中的 [伺服器總管] 中，以滑鼠右鍵按一下`NORTHWND.MDF`] 節點，然後選擇 [新增查詢。 然後，在 [查詢] 視窗中，執行下列 SQL 陳述式： `DELETE FROM [Order Details]`
 
-
 [![從訂單明細資料表刪除所有記錄](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image35.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image34.png)
 
 **圖 14**:刪除所有資料錄`Order Details`資料表 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image36.png))
-
 
 之後清除`Order Details`資料表按一下 [刪除] 按鈕將會刪除不會發生錯誤的產品。 如果按一下 [刪除] 按鈕不會刪除產品，請檢查以確定的 GridView`DataKeyNames`屬性設定為主要索引鍵欄位 (`ProductID`)。
 
 > [!NOTE]
 > 按一下 [刪除] 按鈕時回傳是兩邊彼此乾瞪眼並刪除該記錄。 這可能會造成危險，因為很容易不小心按錯誤資料列的 [刪除] 按鈕。 在未來的教學課程中，我們會看到如何刪除記錄時，加入用戶端確認。
-
 
 ## <a name="editing-data-with-the-gridview"></a>編輯資料的 GridView
 
@@ -269,24 +233,19 @@ CommandField 包含數個`ShowXButton`指出哪些系列的按鈕會顯示在 Co
 
 只要選取 [啟用編輯] 核取方塊在 GridView 的智慧標籤，就可以啟動編輯功能。
 
-
 ![核取 [啟用編輯] 核取方塊](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image37.png)
 
 **圖 15**:核取 啟用編輯 核取方塊
 
-
 檢查 [啟用編輯] 核取方塊 （如有需要），將會新增 CommandField 和設定其`ShowEditButton`屬性設`True`。 如稍早所見，CommandField 包含數個`ShowXButton`指出哪些系列的按鈕會顯示在 CommandField 屬性。 檢查 [啟用編輯] 核取方塊加入`ShowEditButton`現有 CommandField 屬性：
-
 
 [!code-aspx[Main](an-overview-of-inserting-updating-and-deleting-data-vb/samples/sample6.aspx)]
 
 這就是沒有新增基本編輯的支援。 Figure16 示編輯介面也很粗糙每 BoundField 其`ReadOnly`屬性設定為`False`（預設值） 會轉譯為文字方塊。 這包括像是欄位`CategoryID`和`SupplierID`，這是與其他資料表的索引鍵。
 
-
 [![按一下 [Chai 的編輯] 按鈕顯示的資料列處於編輯模式](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image39.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image38.png)
 
 **圖 16**:按一下 Chai s [編輯] 按鈕顯示在編輯模式中的資料列 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image40.png))
-
 
 除了會要求使用者直接編輯外部索引鍵值，編輯介面的介面缺少下列方式：
 
@@ -303,24 +262,19 @@ CommandField 包含數個`ShowXButton`指出哪些系列的按鈕會顯示在 Co
 
 若要示範 GridView 的資料修改功能，先新增至 DetailsView`Basics.aspx`現有 GridView 上方頁面上，並將它繫結至現有的 ObjectDataSource 透過 DetailsView 的智慧標籤。 下一步，清除 DetailsView`Height`和`Width`屬性，並檢查的智慧標籤的 啟用分頁 選項。 若要啟用編輯，插入及刪除支援，只會檢查中的智慧標籤，啟用編輯、 啟用插入及啟用刪除核取方塊。
 
-
 ![設定支援編輯、 插入及刪除 DetailsView](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image41.png)
 
 **圖 17**:設定支援編輯、 插入及刪除 DetailsView
 
-
 做為使用 GridView，新增編輯、 插入或刪除支援加入 CommandField DetailsView，下列宣告式語法所示：
-
 
 [!code-aspx[Main](an-overview-of-inserting-updating-and-deleting-data-vb/samples/sample7.aspx)]
 
 請注意，DetailsView CommandField 依預設會出現在資料行集合的結尾。 因為 DetailsView 的欄位會轉譯為資料列，CommandField 顯示為資料列，使用 Insert、 編輯和刪除 DetailsView 底部的按鈕。
 
-
 [![設定支援編輯、 插入及刪除 DetailsView](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image43.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image42.png)
 
 **圖 18**:設定支援編輯、 插入及刪除 DetailsView ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image44.png))
-
 
 按一下 [刪除] 按鈕啟動事件的相同順序如同 GridView: a 回傳;後面接著填入其 ObjectDataSource DetailsView`DeleteParameters`根據`DataKeyNames`值，並已完成，但呼叫其 ObjectDataSource`Delete()`方法，這個方法會實際從資料庫移除產品。 在 DetailsView 中編輯也適用於以相同的 GridView 的方式。
 
@@ -328,31 +282,24 @@ CommandField 包含數個`ShowXButton`指出哪些系列的按鈕會顯示在 Co
 
 當繫結 DetailsView 透過智慧標籤的資料來源，Visual Studio 會將`InsertVisible`屬性設`False`只適用於自動遞增欄位。 唯讀欄位，例如`CategoryName`並`SupplierName`，將會顯示在 「 插入模式 」 使用者介面中，除非他們`InsertVisible`屬性明確設定為`False`。 請花一點時間來設定這兩個欄位`InsertVisible`屬性，以`False`，透過 DetailsView 的宣告式語法，或透過 [編輯] 欄位中的智慧標籤連結。 [圖 19] 顯示設定`InsertVisible`屬性，以`False`的編輯欄位上按一下連結。
 
-
 [![Northwind Traders 現在提供 Acme 茶](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image46.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image45.png)
 
 **圖 19**:Northwind Traders 現在提供 Acme 茶 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image47.png))
 
-
 在設定後`InsertVisible`屬性、 檢視`Basics.aspx`頁面在瀏覽器，然後按一下 [新增] 按鈕。 [圖 20] 顯示 DetailsView 時加入新的飲料，Acme 茶，至我們的產品線。
-
 
 [![Northwind Traders 現在提供 Acme 茶](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image49.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image48.png)
 
 **圖 20**:Northwind Traders 現在提供 Acme 茶 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image50.png))
 
-
 之後如 Acme 茶輸入詳細資料，並按一下 [插入] 按鈕，回傳是兩邊彼此乾瞪眼和新的記錄新增至`Products`資料庫資料表。 因為此 DetailsView 列出的順序與它們存在於資料庫資料表中的產品，我們必須頁面上的最後一個產品才能看到新的產品。
-
 
 [![Acme 茶的詳細資料](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image52.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image51.png)
 
 **圖 21**:Acme 茶的詳細資料 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image53.png))
 
-
 > [!NOTE]
 > DetailsView [CurrentMode 屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.currentmode(VS.80).aspx)指出所顯示的介面，而且可以是下列值之一： `Edit`， `Insert`，或`ReadOnly`。 [DefaultMode 屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.defaultmode(VS.80).aspx)指出 DetailsView 之後編輯傳回，或插入的模式已完成，而且是適用於顯示 DetailsView 永久處於編輯或插入模式。
-
 
 點並按一下 插入和編輯功能 DetailsView 苦 GridView 相同的限制： 使用者必須輸入現有`CategoryID`和`SupplierID`透過文字方塊的值; 介面缺少任何驗證邏輯，不允許的產品欄位`NULL`值，或沒有預設值在資料庫層級指定的值必須包含在插入介面，依此類推。
 
@@ -366,16 +313,13 @@ FormView 提供內建支援插入、 編輯和刪除資料，但因為它會使�
 
 以下顯示的宣告式標記為 FormView 的`ItemTemplate`FormView 已經繫結到 ObjectDataSource 之後。 根據預設，每個非布林值的產品 欄位繫結至`Text`Label Web 控制項時每個布林值欄位的屬性 (`Discontinued`) 繫結至`Checked`已停用的核取方塊 Web 控制項的屬性。 為了新增、 編輯和刪除按鈕來觸發特定 FormView 行為，按下時，務必，其`CommandName`值設定為`New`， `Edit`，和`Delete`分別。
 
-
 [!code-aspx[Main](an-overview-of-inserting-updating-and-deleting-data-vb/samples/sample8.aspx)]
 
 [圖 22] 顯示 FormView 的`ItemTemplate`透過瀏覽器檢視時。 每個產品 欄位會列出底部新增、 編輯和刪除按鈕。
 
-
 [![預設 FormView ItemTemplate 列出每個產品 欄位，以及新增、 編輯和刪除按鈕](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image55.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image54.png)
 
 **圖 22**:預設 FormView`ItemTemplate`列出每個產品欄位以及新增、 編輯及刪除按鈕 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image56.png))
-
 
 使用 GridView 和 DetailsView，按一下 [刪除] 按鈕，或任何按鈕、 LinkButton 或 ImageButton 其`CommandName`屬性設定為刪除，導致回傳，填入 ObjectDataSource 的`DeleteParameters`根據 FormView 的`DataKeyNames`值，並叫用的 ObjectDataSource`Delete()`方法。
 
@@ -384,11 +328,9 @@ FormView 提供內建支援插入、 編輯和刪除資料，但因為它會使�
 > [!NOTE]
 > FormView 的自動產生的一個小問題`EditItemTemplate`是它呈現 TextBox Web 控制項是唯讀，例如這些欄位`CategoryName`和`SupplierName`。 我們會了解如何說明這一點短時間內。
 
-
 TextBox 控制項中`EditItemTemplate`有其`Text`屬性繫結至其對應的資料欄位使用的值*雙向資料繫結*。 雙向資料繫結，以表示`<%# Bind("dataField") %>`，當資料繫結至範本，並填入插入或編輯記錄的 ObjectDataSource 的參數時，會執行資料繫結這兩個。 也就是說，當使用者按一下 [編輯] 按鈕時，才`ItemTemplate`，則`Bind()`方法會傳回指定的資料欄位值。 值的使用者進行變更，然後按一下 更新之後，張貼至使用指定的資料欄位對應的後`Bind()`會套用到 ObjectDataSource 的`UpdateParameters`。 單向資料繫結，或者，以表示`<%# Eval("dataField") %>`只擷取資料欄位值，資料繫結至範本時，未*不*返回資料來源的參數中的使用者輸入的值，在回傳。
 
 下列宣告式標記會顯示 FormView 的`EditItemTemplate`。 請注意，`Bind()`方法是否會在資料繫結語法，以及更新和取消按鈕 Web 控制項有其`CommandName`據以設定的屬性。
-
 
 [!code-aspx[Main](an-overview-of-inserting-updating-and-deleting-data-vb/samples/sample9.aspx)]
 
@@ -396,16 +338,13 @@ TextBox 控制項中`EditItemTemplate`有其`Text`屬性繫結至其對應的資
 
 [圖 23] 顯示 FormView 瀏覽器中之後 Chai 的已按下 [編輯] 按鈕。 請注意，`SupplierName`並`CategoryName`欄位中所示`ItemTemplate`不再存在，因為我們只是移除從`EditItemTemplate`。 按一下 [更新] 按鈕時 FormView 會流經的 GridView 和 DetailsView 控制項相同的步驟順序。
 
-
 [![根據預設 EditItemTemplate 會顯示為文字方塊或核取方塊的每個可編輯的產品 欄位](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image58.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image57.png)
 
 **圖 23**:依預設`EditItemTemplate`會顯示每個可編輯產品的欄位做為文字方塊或核取方塊 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image59.png))
 
-
 [插入] 按鈕按一下 FormView 的時`ItemTemplate`回傳是兩邊彼此乾瞪眼。 不過，沒有資料繫結至 FormView 由於正在加入新的記錄。 `InsertItemTemplate`介面包含 Web 控制項，加入新的記錄，以及 [插入] 和 [取消] 按鈕。 預設值`InsertItemTemplate`產生的 Visual Studio 包含每個非布林值欄位的文字方塊和核取方塊，每個布林值欄位，類似於自動產生`EditItemTemplate`的介面。 將文字方塊控制項有其`Text`屬性繫結至其對應的資料欄位，使用雙向資料繫結的值。
 
 下列宣告式標記會顯示 FormView 的`InsertItemTemplate`。 請注意，`Bind()`方法是否會在資料繫結語法，以及 Insert 和取消按鈕 Web 控制項有其`CommandName`據以設定的屬性。
-
 
 [!code-aspx[Main](an-overview-of-inserting-updating-and-deleting-data-vb/samples/sample10.aspx)]
 
@@ -413,22 +352,18 @@ TextBox 控制項中`EditItemTemplate`有其`Text`屬性繫結至其對應的資
 
 [圖 24] 顯示 FormView 瀏覽器中新增新的產品，Acme 咖啡時。 請注意，`SupplierName`並`CategoryName`欄位中所示`ItemTemplate`不再存在，因為我們只是移除。 按一下 插入 按鈕時透過 DetailsView 控制項相同的步驟順序 FormView 進行，新增至記錄`Products`資料表。 圖 25 在 FormView 中顯示 Acme 咖啡產品詳細資料之後已插入。
 
-
 [![InsertItemTemplate 規定 FormView 的插入介面](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image61.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image60.png)
 
 **圖 24**:`InsertItemTemplate`規定 FormView 的插入介面 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image62.png))
-
 
 [![在 FormView 中顯示新的產品，Acme 咖啡的詳細資料](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image64.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image63.png)
 
 **圖 25**:新的產品，Acme 咖啡的詳細資料會顯示在 FormView 中 ([按一下以檢視完整大小的影像](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image65.png))
 
-
 藉由分隔出唯讀，編輯和介面插入三個不同的範本，FormView 用來控制這些介面比 GridView 與 DetailsView 精細的細微程度。
 
 > [!NOTE]
 > 例如 DetailsView FormView 的`CurrentMode`屬性會指出所顯示的介面和其`DefaultMode`屬性會指出模式 FormView 返回編輯之後，或已完成插入。
-
 
 ## <a name="summary"></a>總結
 

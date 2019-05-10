@@ -8,12 +8,12 @@ ms.date: 01/02/2018
 ms.assetid: ac86ec9c-6b69-485b-b9e0-8b9127b13e6b
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 4542ad3ac3e321629bb4de3cd4df12c22ff6cb20
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8f8bcfb7d9d2416a2699776cadbdaae8e12415ba
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59414617"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131794"
 ---
 # <a name="introducing-aspnet-web-pages---updating-database-data"></a>ASP.NET Web Pages 簡介-更新資料庫資料
 
@@ -37,7 +37,6 @@ ms.locfileid: "59414617"
 > - SQL`Update`命令。
 > - `Database.Execute` 方法
 > - 隱藏的欄位 (`<input type="hidden">`)。
-
 
 ## <a name="what-youll-build"></a>您將建置
 
@@ -129,7 +128,6 @@ ms.locfileid: "59414617"
 > 
 > 很明顯地，若要使用具名的參數，您必須知道參數的名稱。 WebMatrix IntelliSense 可以*顯示*您的名稱，但它無法目前他們為您填入。
 
-
 ## <a name="creating-the-edit-page"></a>建立 [編輯] 頁面
 
 現在您可以建立*EditMovie*頁面。 當使用者按一下**編輯**連結，他們就可以得到此頁面上。
@@ -206,7 +204,6 @@ ms.locfileid: "59414617"
 > 
 > **重要**`Where`識別碼子句是很重要，因為這是資料庫如何知道哪一個資料庫記錄您想要更新。 如果您離開`Where`子句中，資料庫會更新*每個*記錄資料庫中。 在大部分情況下，是嚴重損壞。
 
-
 在程式碼中，若要更新的值會傳遞至 SQL 陳述式使用預留位置。 若要重複我們剛才說過： 基於安全性理由*只*使用預留位置來將值傳遞至 SQL 陳述式。
 
 程式碼會使用後`db.Execute`執行`Update`陳述式，它會重新導向回到清單頁面上，您可以在其中看到所做的變更。
@@ -222,7 +219,6 @@ ms.locfileid: "59414617"
 > 當然，`Query`方法可能會傳回只有一個資料庫的資料列。 不過，ASP.NET 一律會將結果`Query`為集合的方法。 即使方法傳回只有一個資料列，您必須從集合擷取該單一資料列。 因此，在情況下，您*知道*您會得到只有一個資料列，更方便使用的位元`QuerySingle`。
 > 
 > 有幾個其他執行特定類型的資料庫作業的方法。 您可以找到資料庫中的方法清單[ASP.NET Web Pages API 的快速參考](../../api-reference/asp-net-web-pages-api-reference.md#Data)。
-
 
 ## <a name="making-validation-for-the-id-more-robust"></a>讓穩固，識別碼越多的驗證
 

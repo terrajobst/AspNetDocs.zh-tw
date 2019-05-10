@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: c120187e-963e-4439-bb85-32771bc7f1f4
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c55bbeb383b15f4dc9cb95d25905cade1e8c5c29
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: edc80db42c7b1adf25214e1d6ae6d8a938a4be12
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418894"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130770"
 ---
 # <a name="adding-animation-to-a-control-vb"></a>將動畫新增至控制項 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59418894"
 [下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation1.vb.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation1VB.pdf)
 
 > 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 本教學課程會示範如何設定這類動畫。
-
 
 ## <a name="overview"></a>總覽
 
@@ -70,7 +69,6 @@ ms.locfileid: "59418894"
 [!code-aspx[Main](adding-animation-to-a-control-vb/samples/sample5.aspx)]
 
 當您執行此指令碼時，面板會顯示，而且在一個半秒內淡出。
-
 
 [![面板淡出](adding-animation-to-a-control-vb/_static/image2.png)](adding-animation-to-a-control-vb/_static/image1.png)
 

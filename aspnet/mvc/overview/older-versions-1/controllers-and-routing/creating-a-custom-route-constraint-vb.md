@@ -8,19 +8,18 @@ ms.date: 02/16/2009
 ms.assetid: 892edb27-1cc2-4eaf-8314-dbc2efc6228a
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-vb
 msc.type: authoredcontent
-ms.openlocfilehash: febba98be86f0151724af6d6c00fb14760ce1b91
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 2330708cf4a28180ce8a05f4696bf7a7a32092d6
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59378945"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65123410"
 ---
 # <a name="creating-a-custom-route-constraint-vb"></a>建立自訂的路由條件約束 (VB)
 
 藉由[Stephen Walther](https://github.com/StephenWalther)
 
 > Stephen Walther 會示範如何建立自訂路由條件約束。 我們會實作簡單的自訂條件約束，可防止瀏覽器要求從遠端電腦時要比對路由。
-
 
 本教學課程的目的在於示範如何建立自訂路由條件約束。 自訂路由條件約束可讓您防止某些自訂的條件會比對，除非符合路由。
 

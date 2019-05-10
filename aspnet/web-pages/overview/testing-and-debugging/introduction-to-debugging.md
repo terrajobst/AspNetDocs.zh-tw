@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: 68de4326-7611-4b9b-b5f6-79b7adc3069f
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: d4be58f618ed990b1932b4388f84cd743c21f009
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: ae7d871e56326610c043dc20fe6e0919e1b4ac89
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59389605"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127819"
 ---
 # <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>簡介偵錯 ASP.NET Web Pages (Razor) 網站
 
@@ -41,7 +41,6 @@ ms.locfileid: "59389605"
 >
 >
 > 本教學課程也適用於 ASP.NET Web Pages 2。 您可以使用 WebMatrix 3，但不是支援整合式偵錯工具。
-
 
 疑難排解錯誤和您的程式碼中的問題很重要的層面是在第一時間避免使用它們。 您可以這麼做將您的程式碼有可能造成錯誤的各節`try/catch`區塊。 如需詳細資訊，請參閱一節上的錯誤處理[ASP.NET Web 程式設計使用 Razor 語法簡介](https://go.microsoft.com/fwlink/?LinkId=202890)。
 

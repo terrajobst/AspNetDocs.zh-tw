@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: 1cd7525d-de5e-4ab6-94f0-51480d3255d1
 msc.legacyurl: /web-api/overview/formats-and-model-binding/json-and-xml-serialization
 msc.type: authoredcontent
-ms.openlocfilehash: a9e7ed63a55c146976e0221214e722f3a2292fee
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 00fa07f00eabf7e6c883c5e9ceaf9a38a8f49605
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408273"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126161"
 ---
 # <a name="json-and-xml-serialization-in-aspnet-web-api"></a>JSON 和 ASP.NET Web API 中的 XML 序列化
 
@@ -79,7 +79,7 @@ JSON 格式提供**JsonMediaTypeFormatter**類別。 根據預設， **JsonMedia
 <a id="json_dates"></a>
 ### <a name="dates"></a>日期
 
-根據預設，Json.NET 將寫入日期[ISO 8601](http://www.w3.org/TR/NOTE-datetime)格式。 以 UTC （國際標準時間） 的日期是以"Z"後置詞。 當地時間日期包含時區時差。 例如：
+根據預設，Json.NET 將寫入日期[ISO 8601](http://www.w3.org/TR/NOTE-datetime)格式。 以 UTC （國際標準時間） 的日期是以"Z"後置詞。 當地時間日期包含時區時差。 例如: 
 
 [!code-console[Main](json-and-xml-serialization/samples/sample4.cmd)]
 
@@ -221,7 +221,6 @@ XML 格式由提供**XmlMediaTypeFormatter**類別。 根據預設， **XmlMedia
 
 > [!NOTE]
 > 物件參考不是標準 json 格式。 才能使用此功能，請考慮您的用戶端是否都能夠剖析結果。 最好是單純是為了從圖形移除循環。 比方說，回到部門員工的連結是並不真的需要在此範例中。
-
 
 若要保留在 XML 中的物件參考，您會有兩個選項。 更簡單的做法是新增`[DataContract(IsReference=true)]`到您的模型類別。 *IsReference*參數可讓物件參考。 請記住**DataContract**選用功能，可序列化，因此您也必須新增**DataMember**屬性的屬性：
 

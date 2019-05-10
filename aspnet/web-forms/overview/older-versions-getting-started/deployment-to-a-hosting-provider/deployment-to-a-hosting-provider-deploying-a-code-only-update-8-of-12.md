@@ -8,12 +8,12 @@ ms.date: 11/17/2011
 ms.assetid: ddf6252f-9413-4c0c-a360-2cef8d231717
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: f06fd5d28613ba8f881df2d1422fead2fff8c35f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: df6fd11485836345707ac74ec9e97c769e60ac82
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59399888"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132343"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-code-only-update---8-of-12"></a>部署 ASP.NET Web 應用程式與 SQL Server Compact 使用 Visual Studio 或 Visual Web Developer:部署僅限程式碼的更新-12 8
 
@@ -24,7 +24,6 @@ ms.locfileid: "59399888"
 > 這一系列的教學課程會示範如何部署 （發行） 的 ASP.NET web 應用程式專案使用 Visual Studio 2012 RC 或 Visual Studio Express 2012 RC for Web 包含 SQL Server Compact 資料庫。 如果您安裝 Web Publish Update，您也可以使用 Visual Studio 2010。 在數列的簡介，請參閱[系列的第一個教學課程](deployment-to-a-hosting-provider-introduction-1-of-12.md)。
 > 
 > 顯示 Visual Studio 2012 RC 版本之後引入的部署功能，示範如何部署 SQL Server Compact，以外的 SQL Server 版本，並示範如何部署至 Azure App Service Web Apps 的教學課程，請參閱[ASP.NET Web 部署使用 Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md)。
-
 
 ## <a name="overview"></a>總覽
 
@@ -86,7 +85,6 @@ Visual Studio 會部署更新的應用程式和瀏覽器會自動開啟至首頁
 > 
 > [!IMPORTANT]
 > 請確定您沒有**移除目的地上的其他檔案**選取您的發行設定檔中。 如果您選取該選項時，部署程序會刪除您在應用程式的資料庫\_中的已部署的站台，而且資料將會刪除應用程式\_資料資料夾本身。
-
 
 ## <a name="preventing-user-access-to-the-production-site-during-update"></a>防止使用者存取到生產網站，在更新期間
 

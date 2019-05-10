@@ -8,12 +8,12 @@ ms.date: 03/24/2008
 ms.assetid: 83af9f5f-9a00-4f83-8afc-e98bdd49014e
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/creating-and-managing-roles-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ef00ae5ddac44f17aed040db7df04a5c0f896caf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: c6c18e78701ba6a62bf07cc1bc18e4f9e8d2cb3f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386329"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130987"
 ---
 # <a name="creating-and-managing-roles-vb"></a>建立及管理角色 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59386329"
 [下載程式碼](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/VB.09.zip)或[下載 PDF](http://download.microsoft.com/download/6/0/3/6032582f-360d-4739-b935-38721fdb86ea/aspnet_tutorial09_CreatingRoles_vb.pdf)
 
 > 本教學課程會檢查角色架構中設定所需的步驟。 接下來，我們將建置 web 頁面來建立和刪除角色。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -47,11 +46,9 @@ ASP.NET 提供了定義角色，並將它們與使用者帳戶建立關聯的角
 
 此時您專案的方案總管] 看起來應該類似螢幕擷取畫面的 [圖 1 所示。
 
-
 [![[角色] 資料夾已新增四個新的頁面](creating-and-managing-roles-vb/_static/image2.png)](creating-and-managing-roles-vb/_static/image1.png)
 
 **圖 1**:四個新頁面已加入至`Roles`資料夾 ([按一下以檢視完整大小的影像](creating-and-managing-roles-vb/_static/image3.png))
-
 
 每個頁面，到目前為止，有兩個內容控制項，一個用於每個主版頁面的 ContentPlaceHolders:`MainContent`和`LoginContent`。
 
@@ -67,11 +64,9 @@ ASP.NET 提供了定義角色，並將它們與使用者帳戶建立關聯的角
 
 更新站台對應，請瀏覽的網站，透過瀏覽器。 如 [圖 2] 所示，在左側的導覽現在會包含項目角色教學課程。
 
-
 [![[角色] 資料夾已新增四個新的頁面](creating-and-managing-roles-vb/_static/image5.png)](creating-and-managing-roles-vb/_static/image4.png)
 
 **圖 2**:四個新頁面已加入至`Roles`資料夾 ([按一下以檢視完整大小的影像](creating-and-managing-roles-vb/_static/image6.png))
-
 
 ## <a name="step-2-specifying-and-configuring-the-roles-framework-provider"></a>步驟 2：指定及設定角色 Framework 提供者
 
@@ -107,7 +102,6 @@ ASP.NET 提供了定義角色，並將它們與使用者帳戶建立關聯的角
 > [!NOTE]
 > 上述組態標記說明如何使用`<roleManager>`項目的`enabled`和`defaultProvider`屬性。 有多個角色架構將以使用者的使用者為基礎的角色資訊所產生的關聯會影響其他屬性。 我們將檢視中的這些設定<a id="_msoanchor_8"> </a> [ *Role-based Authorization* ](role-based-authorization-vb.md)教學課程。
 
-
 ## <a name="step-3-examining-the-roles-api"></a>步驟 3：檢查角色 API
 
 角色架構的功能可透過公開[`Roles`類別](https://msdn.microsoft.com/library/system.web.security.roles.aspx)，其中包含 13 個共用的方法，來執行以角色為基礎的作業。 當我們看看建立和刪除角色，在步驟 4 和 6 我們將使用[ `CreateRole` ](https://msdn.microsoft.com/library/system.web.security.roles.createrole.aspx)並[ `DeleteRole` ](https://msdn.microsoft.com/library/system.web.security.roles.deleterole.aspx)方法，可以新增或移除系統中的角色。
@@ -121,7 +115,6 @@ ASP.NET 提供了定義角色，並將它們與使用者帳戶建立關聯的角
 > [!NOTE]
 > 請記住，每當其中一種方法會叫用，`Roles`類別會委派呼叫設定的提供者。 在本例中，這表示呼叫正在傳送給`SqlRoleProvider`。 `SqlRoleProvider`然後執行適當的資料庫作業叫用的方法為基礎。 比方說，程式碼`Roles.CreateRole("Administrators")`會導致`SqlRoleProvider`執行`aspnet_Roles_CreateRole`預存程序，會將新記錄到`aspnet_Roles`名為 Administrators 的資料表。
 
-
 本教學課程的其餘部分會探討使用`Roles`類別的`CreateRole`， `GetAllRoles`，和`DeleteRole`方法來管理系統中的角色。
 
 ## <a name="step-4-creating-new-roles"></a>步驟 4：建立新的角色
@@ -130,7 +123,6 @@ ASP.NET 提供了定義角色，並將它們與使用者帳戶建立關聯的角
 
 > [!NOTE]
 > 雖然沒有 CreateRoleWizard Web 控制項，還有[ASP.NET Web Site Administration Tool](https://msdn.microsoft.com/library/ms228053.aspx)，這是本機的 ASP.NET 應用程式，目的是要協助檢視和管理 web 應用程式的組態。 不過，我並不熱衷於 ASP.NET Web Site Administration Tool 的原因有二。 首先，它正在稍微有錯誤，且使用者體驗離開令人滿意。 第二，ASP.NET Web Site Administration Tool 可只在本機工作，這表示，您必須建置您自己的角色管理網頁，如果您需要從遠端管理即時網站上的角色。 這兩個原因，本教學課程，下一步 將著重於建置必要的角色管理工具，在網頁上，而不是依賴 ASP.NET Web Site Administration Tool。
-
 
 開啟`ManageRoles.aspx`頁面中`Roles`資料夾並將文字方塊和按鈕 Web 控制項新增至頁面。 將文字方塊控制項的`ID`屬性，以`RoleName`和按鈕的`ID`並`Text`屬性，以`CreateRoleButton`和建立的角色，分別。 此時，您的頁面宣告式標記看起來應該如下所示：
 
@@ -145,22 +137,17 @@ ASP.NET 提供了定義角色，並將它們與使用者帳戶建立關聯的角
 > [!NOTE]
 > 您可能會發生什麼事會好奇如果使用者未輸入任何值，轉換`RoleName`文字方塊中。 如果值傳入`CreateRole`方法是`Nothing`或空字串，發生例外狀況，就會引發。 同樣地，如果角色名稱包含逗號就會引發例外狀況。 因此，頁面應該包含驗證控制項，以確保使用者輸入的角色，而且它不包含任何逗號。 我保留作為練習的讀取器。
 
-
 讓我們建立名為 Administrators 的角色。 請瀏覽`ManageRoles.aspx`透過瀏覽器頁面上，在文字方塊中輸入 以系統管理員 （請參閱 圖 3），然後按一下 建立角色 按鈕。
-
 
 [![建立系統管理員角色](creating-and-managing-roles-vb/_static/image8.png)](creating-and-managing-roles-vb/_static/image7.png)
 
 **圖 3**:建立系統管理員角色 ([按一下以檢視完整大小的影像](creating-and-managing-roles-vb/_static/image9.png))
 
-
 會發生什麼事？ 回傳，但沒有任何角色存在已有的視覺提示新增至系統。 我們將會更新以包含視覺化回饋的步驟 5 中的此頁面。 現在，不過，您可以確認角色已建立前往`SecurityTutorials.mdf`資料庫，並顯示從資料`aspnet_Roles`資料表。 如 [圖 4] 所示，`aspnet_Roles`資料表包含剛加入系統管理員角色的記錄。
-
 
 [![Aspnet_Roles 資料表有一個資料列，系統管理員](creating-and-managing-roles-vb/_static/image11.png)](creating-and-managing-roles-vb/_static/image10.png)
 
 **圖 4**:`aspnet_Roles`資料表有一個資料列，系統管理員 ([按一下以檢視完整大小的影像](creating-and-managing-roles-vb/_static/image12.png))
-
 
 ## <a name="step-5-displaying-the-roles-in-the-system"></a>步驟 5：顯示系統中的角色
 
@@ -174,11 +161,9 @@ ASP.NET 提供了定義角色，並將它們與使用者帳戶建立關聯的角
 
 使用此程式碼就緒之後，請瀏覽透過瀏覽器頁面。 如 [圖 5] 所示，您應該會看到一個方格，具有單一資料行標示為項目。 方格包含我們在步驟 4 中新增為系統管理員角色的資料列。
 
-
 [![GridView 會顯示單一資料行中的角色](creating-and-managing-roles-vb/_static/image14.png)](creating-and-managing-roles-vb/_static/image13.png)
 
 **圖 5**:GridView 會顯示單一資料行中的角色 ([按一下以檢視完整大小的影像](creating-and-managing-roles-vb/_static/image15.png))
-
 
 GridView 會顯示單一資料行標示為項目，因為 GridView`AutoGenerateColumns`屬性設定為 True （預設值），這會導致 GridView，以自動建立資料行中每一個屬性及其`DataSource`。 陣列具有單一屬性，表示項目，因此陣列中的的 GridView 內的單一資料行。
 
@@ -195,18 +180,15 @@ GridView 會顯示單一資料行標示為項目，因為 GridView`AutoGenerateC
 > [!NOTE]
 > 陣列的內容會顯示使用資料繫結語法`<%# Container.DataItem %>`。 時顯示陣列的內容繫結至 GridView，為什麼要使用此語法的完整描述已超出本教學課程的範圍。 如需有關此問題的詳細資訊，請參閱[繫結至資料 Web 控制項的純量陣列](http://aspnet.4guysfromrolla.com/articles/082504-1.aspx)。
 
-
 目前， `RoleList` GridView 只會繫結至角色的清單時第一次瀏覽的頁面。 我們需要新增新的角色時，請重新整理方格。 若要這麼做，更新`CreateRoleButton`按鈕的`Click`事件處理常式，因此它會呼叫`DisplayRolesInGrid`方法如果在建立新的角色。
 
 [!code-vb[Main](creating-and-managing-roles-vb/samples/sample11.vb)]
 
 現在當使用者將新角色時，才`RoleList`GridView 會顯示剛加入的角色在回傳時，提供角色已成功建立的視覺化回饋。 為了說明這點，請瀏覽`ManageRoles.aspx`透過瀏覽器頁面，然後新增名為監督員的角色。 時按一下 [建立角色] 按鈕，將發生回傳與方格會更新以包含系統管理員，以及新的角色，監督員。
 
-
 [![監督員角色可讓您擁有已加入](creating-and-managing-roles-vb/_static/image17.png)](creating-and-managing-roles-vb/_static/image16.png)
 
 **圖 6**:監督員角色可讓您擁有已加入 ([按一下以檢視完整大小的影像](creating-and-managing-roles-vb/_static/image18.png))
-
 
 ## <a name="step-6-deleting-roles"></a>步驟 6：刪除角色
 
@@ -219,11 +201,9 @@ GridView 會顯示單一資料行標示為項目，因為 GridView`AutoGenerateC
 
 讓我們擴大在 GridView`ManageRoles.aspx`包含刪除按鈕，按一下時，會刪除選取的角色。 藉由將 GridView 中的 [刪除] 按鈕，移至 [欄位] 對話方塊中，並新增 [刪除] 按鈕，位於 [CommandField] 選項啟動。 請刪除按鈕最左側資料行，然後將其`DeleteText`屬性，以刪除角色。
 
-
 [![將 [刪除] 按鈕新增至 RoleList GridView](creating-and-managing-roles-vb/_static/image20.png)](creating-and-managing-roles-vb/_static/image19.png)
 
 **圖 7**:新增至 [刪除] 按鈕`RoleList`GridView ([按一下以檢視完整大小的影像](creating-and-managing-roles-vb/_static/image21.png))
-
 
 新增 [刪除] 按鈕之後, 您 GridView 的宣告式標記看起來應該如下所示：
 
@@ -237,7 +217,6 @@ GridView 會顯示單一資料行標示為項目，因為 GridView`AutoGenerateC
 
 > [!NOTE]
 > [刪除的角色] 按鈕不需要任何一種使用者確認之前刪除的角色。 其中一個最簡單的方式，可確認動作是透過用戶端確認對話方塊。 如需有關這項技術的詳細資訊，請參閱 <<c0> [ 正在刪除時新增用戶端確認](https://asp.net/learn/data-access/tutorial-42-vb.aspx)。
-
 
 ## <a name="summary"></a>總結
 

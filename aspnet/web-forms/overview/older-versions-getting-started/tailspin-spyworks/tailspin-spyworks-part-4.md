@@ -8,12 +8,12 @@ ms.date: 07/21/2010
 ms.assetid: 4fab47d5-a6ec-4fdc-91f0-651a093a24b9
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 63afd25e2ccf22d3c7ae5c5048c80a8cf060d4cf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 7af1b8afa2ecc8df9846f2edd2091b26b93a811c
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59382819"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131009"
 ---
 # <a name="part-4-listing-products"></a>第 4 部分：列出產品
 
@@ -22,7 +22,6 @@ ms.locfileid: "59382819"
 > Tailspin Spyworks 示範建立功能強大、 可擴充的應用程式，適用於.NET 平台是如何富含簡單。 它會展示如何在 ASP.NET 4 中使用最棒的新功能，建置線上商店，包括購物、 簽出，以及系統管理。
 > 
 > 本教學課程系列會詳細說明所有建置 Tailspin Spyworks 範例應用程式所採取的步驟。 第 4 部分涵蓋列出產品使用 GridView 控制項。
-
 
 ## <a id="_Toc260221670"></a>  列出產品使用 GridView 控制項
 

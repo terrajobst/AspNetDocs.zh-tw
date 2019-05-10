@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: 5a2a927b-14cb-40bc-867a-f0680f9febd7
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations
 msc.type: authoredcontent
-ms.openlocfilehash: 15a5984048ba2aca9fedcb7bc4bb77eb440f21ee
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 595723d9c6ea9cc40bb0ae896524ee828c4ebce2
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379452"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128439"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-webconfig-file-transformations"></a>使用 Visual Studio 的 ASP.NET Web 部署：Web.config 檔案轉換
 
@@ -22,7 +22,6 @@ ms.locfileid: "59379452"
 [下載入門專案](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 > 本系列教學課程會示範如何部署 （發行） 的 ASP.NET web 應用程式至 Azure App Service Web Apps 或協力廠商裝載提供者，使用 Visual Studio 2012 或 Visual Studio 2010。 這個系列的相關資訊，請參閱[系列的第一個教學課程](introduction.md)。
-
 
 ## <a name="overview"></a>總覽
 
@@ -106,7 +105,6 @@ Web 部署參數可用來指定許多不同類型的設定必須設定在部署�
 > 
 > **安全性注意事項**永遠不會公開在生產環境應用程式中，顯示錯誤詳細資料，或將該資訊儲存在公用位置。 若要探索的站台中的弱點，攻擊者可以使用資訊時發生錯誤。 如果您在自己的應用程式中使用 ELMAH，設定 ELMAH 安全性風險降到最低。 在本教學課程的 ELMAH 範例不應視為建議的設定。 例如，選擇以說明如何處理應用程式必須能夠在其中建立檔案的資料夾。 如需詳細資訊，請參閱 <<c0> [ 保護的 ELMAH 端點](https://code.google.com/p/elmah/wiki/SecuringErrorLogPages)。
 
-
 ## <a name="a-setting-that-youll-handle-in-publish-profile-transformation-files"></a>您將會處理在設定發行設定檔轉換檔案
 
 常見的案例是有*Web.config*檔案必須在您將部署到每個環境中不同的設定。 例如，呼叫 WCF 服務的應用程式可能需要在測試和生產環境不同的端點。 Contoso 大學應用程式也包含這類的設定。 此設定控制，告訴您哪一個環境，您會在中，例如開發、 測試或生產環境的站台的頁面上的可見指示。 設定值會決定應用程式是否將會附加"(Dev)"或"（測試） 」 的主標題中要*Site.Master*主版頁面：
@@ -131,7 +129,6 @@ Contoso 大學 web 網頁讀取的值中設定`appSettings`中*Web.config*檔案
 
 > [!NOTE]
 > 因為此設定位在`<appSettings>`項目，您有另一個替代方式，在部署 Azure 應用程式服務，請參閱中的 Web 應用程式時，指定轉換[在 Azure 中的指定 Web.config 設定](#watransforms)稍早的本主題中。
-
 
 ## <a name="setting-connection-strings"></a>設定連接字串
 

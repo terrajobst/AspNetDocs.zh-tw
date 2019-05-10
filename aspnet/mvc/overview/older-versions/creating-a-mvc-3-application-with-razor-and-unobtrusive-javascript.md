@@ -8,12 +8,12 @@ ms.date: 11/01/2010
 ms.assetid: 658b149b-d770-46bf-8b4b-4e47cca242f3
 msc.legacyurl: /mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 msc.type: authoredcontent
-ms.openlocfilehash: 91c96cc413e63ad2fc160ffbb473c4f3e1ada3e4
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fb63493ff22c9261fc5746a998a32f2511141f87
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401058"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130393"
 ---
 # <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>使用 Razor 和低調的 JavaScript 建立 MVC 3 應用程式
 
@@ -22,7 +22,6 @@ by [Microsoft](https://github.com/microsoft)
 > 使用者清單的範例 web 應用程式示範如何建立使用 Razor 檢視引擎的 ASP.NET MVC 3 應用程式是簡單。 範例應用程式會示範如何使用新的 Razor 檢視引擎，使用 ASP.NET MVC 3 版和 Visual Studio 2010 建立虛構的使用者清單網站包含功能，例如建立、 顯示、 編輯和刪除的使用者。
 > 
 > 本教學課程說明若要建置的使用者清單的範例 ASP.NET MVC 3 應用程式所採取的步驟。 Visual Studio 專案使用C#和 VB 原始碼是本主題隨附了：[下載](https://code.msdn.microsoft.com/aspnetmvcsamples/Release/ProjectReleases.aspx?ReleaseId=5114)。 如果您有關於本教學課程的問題，請張貼至[MVC 論壇](https://forums.asp.net/1146.aspx)。
-
 
 ## <a name="overview"></a>總覽
 
@@ -185,7 +184,6 @@ by [Microsoft](https://github.com/microsoft)
 
 > [!NOTE]
 > 在 ASP.NET MVC 3 beta 版，您有時需要送出表單時，若要啟動用戶端驗證。 這可能會變更，最終發行版本。
-
 
 ## <a name="creating-the-create-view"></a>建立建立檢視
 

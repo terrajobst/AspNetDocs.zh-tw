@@ -8,12 +8,12 @@ ms.date: 03/27/2007
 ms.assetid: 35798f21-1606-434b-83f8-30166906ef49
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fea82090954fb7ace59b9978e9ce7ec857db60b2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 882da1a321584cf97f826bb08c272ece348679cb
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394909"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132818"
 ---
 # <a name="updating-and-deleting-existing-binary-data-c"></a>更新及刪除現有的二進位資料 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59394909"
 [下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_57_CS.exe)或[下載 PDF](updating-and-deleting-existing-binary-data-cs/_static/datatutorial57cs1.pdf)
 
 > 在先前的教學課程中，我們看到如何在 GridView 控制項輕鬆編輯和刪除文字資料。 在本教學課程中，我們看到如何在 GridView 控制項也讓您能夠編輯和刪除二進位資料，無論該二進位資料是儲存在資料庫或儲存在檔案系統。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -36,24 +35,19 @@ DAL 已自動產生`Insert`， `Update`，並`Delete`方法，但這些方法所
 
 開啟 輸入資料集，並從設計工具中，以滑鼠右鍵按一下`CategoriesTableAdapter`s 標頭，然後從操作功能表來啟動 TableAdapter 查詢組態精靈 中選擇 加入查詢。 此精靈一開始會詢問 TableAdapter 查詢應該如何存取資料庫。 選擇 使用 SQL 陳述式，然後按一下 下一步。 下一個步驟會產生提示的查詢類型。 因為我們重新建立要新增新的記錄，以查詢`Categories`資料表中，選擇 更新並按一下 下一步。
 
-
 [![選取 [更新] 選項](updating-and-deleting-existing-binary-data-cs/_static/image1.gif)](updating-and-deleting-existing-binary-data-cs/_static/image1.png)
 
 **圖 1**:選取 [更新] 選項 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-cs/_static/image2.png))
 
-
 我們現在需要指定`UPDATE`SQL 陳述式。 精靈會自動建議`UPDATE`對應至 TableAdapter s 主查詢的陳述式 (更新的那個`CategoryName`， `Description`，和`BrochurePath`值)。 變更陳述式以便`Picture`資料行是否包含連同`@Picture`參數，就像這樣：
-
 
 [!code-sql[Main](updating-and-deleting-existing-binary-data-cs/samples/sample1.sql)]
 
 在精靈的最後一個畫面會要求我們命名新的 TableAdapter 方法。 輸入`UpdateWithPicture`按一下 [完成]。
 
-
 [![命名新的 TableAdapter 方法 UpdateWithPicture](updating-and-deleting-existing-binary-data-cs/_static/image2.gif)](updating-and-deleting-existing-binary-data-cs/_static/image3.png)
 
 **圖 2**:將新的 TableAdapter 方法`UpdateWithPicture`([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-cs/_static/image4.png))
-
 
 ## <a name="step-2-adding-the-business-logic-layer-methods"></a>步驟 2：新增商務邏輯層方法
 
@@ -61,13 +55,11 @@ DAL 已自動產生`Insert`， `Update`，並`Delete`方法，但這些方法所
 
 正在刪除類別，我們可以使用`CategoriesTableAdapter`自動產生的 s`Delete`方法。 將下列方法加入`CategoriesBLL`類別：
 
-
 [!code-csharp[Main](updating-and-deleting-existing-binary-data-cs/samples/sample2.cs)]
 
 本教學課程中，可讓 s 會建立兩種方法來更新類別目錄-其中預期圖片的二進位資料，並叫用`UpdateWithPicture`我們剛才加入至方法`CategoriesTableAdapter`另一個則接受只`CategoryName`， `Description`，和`BrochurePath`值，並且使用`CategoriesTableAdapter`類別自動產生的 s`Update`陳述式。 使用兩種方法背後的原理是，在某些情況下，使用者可能想要更新分類的圖片，以及其其他欄位，在其中情況下使用者必須上傳新的圖片。 上傳的圖片 s 二進位資料則用於`UPDATE`陳述式。 在其他情況下，使用者可能只在意更新，說出、 名稱和描述。 但若是`UPDATE`陳述式必須要有的二進位資料`Picture`資料行，則我們 d 需要提供相關資訊。 這會需要額外來回存取資料庫正在編輯之資料錄找回圖片資料。 因此，我們希望這兩個`UPDATE`方法。 商務邏輯層將會決定要使用哪一個根據更新類別目錄時，是否提供圖片的資料。
 
 若要達成此目的，將新增兩種方法可以`CategoriesBLL`類別，這兩名為`UpdateCategory`。 第一個應該接受三個`string`s，`byte`的陣列，以及`int`做為輸入參數; 第二、 三`string`s 和`int`。 `string`輸入的參數是類別 s 的名稱、 描述和冊檔案路徑，如`byte`陣列為類別的圖片的二進位內容並`int`識別`CategoryID`来更新的記錄。 請注意，第一個多載會叫用第二個 if 傳入`byte`陣列是`null`:
-
 
 [!code-csharp[Main](updating-and-deleting-existing-binary-data-cs/samples/sample3.cs)]
 
@@ -77,11 +69,9 @@ DAL 已自動產生`Insert`， `Update`，並`Delete`方法，但這些方法所
 
 首先開啟`UploadInDetailsView.aspx`頁面。 複製所有的宣告式語法內`<asp:Content>`項目，如 [圖 3] 所示。 接下來，開啟`UpdatingAndDeleting.aspx`並貼上此標記內其`<asp:Content>`項目。 同樣地，程式碼複製`UploadInDetailsView.aspx`頁面上將程式碼後置類別的`UpdatingAndDeleting.aspx`。
 
-
 [![宣告式標記複製 UploadInDetailsView.aspx](updating-and-deleting-existing-binary-data-cs/_static/image3.gif)](updating-and-deleting-existing-binary-data-cs/_static/image5.png)
 
 **圖 3**:複製從宣告式標記`UploadInDetailsView.aspx`([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-cs/_static/image6.png))
-
 
 之後複製的宣告式標記和程式碼，請瀏覽`UpdatingAndDeleting.aspx`。 您應該會看到相同的輸出和具有相同的使用者經驗如同`UploadInDetailsView.aspx`從上一個教學課程的頁面。
 
@@ -93,43 +83,34 @@ DAL 已自動產生`Insert`， `Update`，並`Delete`方法，但這些方法所
 
 現在，更新 s 索引標籤下拉式清單 （無），但保留刪除 s 索引標籤下拉式清單設為`DeleteCategory`。 我們會返回這個精靈，在步驟 6 來新增更新的支援。
 
-
 [![設定為使用 DeleteCategory 方法的 ObjectDataSource](updating-and-deleting-existing-binary-data-cs/_static/image4.gif)](updating-and-deleting-existing-binary-data-cs/_static/image7.png)
 
 **圖 4**:設定要使用 ObjectDataSource`DeleteCategory`方法 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-cs/_static/image8.png))
 
-
 > [!NOTE]
 > 在完成精靈，Visual Studio 可能會要求是否您想要重新整理欄位和索引鍵，這會重新產生資料 Web 控制項欄位。 選擇 否，因為選擇 是 會覆寫您所做的任何欄位自訂項目。
-
 
 ObjectDataSource 現在將包含的值及其`DeleteMethod`屬性，以及`DeleteParameter`。 您應該記得，使用精靈時指定的方法，Visual Studio 會設定 ObjectDataSource s`OldValuesParameterFormatString`屬性設`original_{0}`，這會造成問題的更新和刪除方法引動過程。 因此，完全清除這個屬性，或重設為預設值， `{0}`。 如果您需要重新整理您在這個 ObjectDataSource 的屬性上的記憶體，請參閱[概觀的插入、 更新和刪除資料](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md)教學課程。
 
 正在完成精靈並修正後`OldValuesParameterFormatString`，ObjectDataSource s 宣告式標記看起來應該類似如下所示：
 
-
 [!code-aspx[Main](updating-and-deleting-existing-binary-data-cs/samples/sample4.aspx)]
 
 設定 ObjectDataSource 之後, 將刪除的功能新增至 GridView，藉由檢查啟用刪除 核取方塊的 GridView s 智慧標籤。 這會新增至 GridView 的 CommandField 其`ShowDeleteButton`屬性設定為`true`。
-
 
 [![啟用適用於在 GridView 中刪除支援](updating-and-deleting-existing-binary-data-cs/_static/image5.gif)](updating-and-deleting-existing-binary-data-cs/_static/image9.png)
 
 **圖 5**:啟用支援在 gridview 裡的刪除 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-cs/_static/image10.png))
 
-
 請花一點時間來測試刪除功能。 沒有外部索引鍵之間`Products`表格 s`CategoryID`並`Categories`表格的`CategoryID`，因此如果您嘗試刪除任何前八個類別，您會收到外部索引鍵條件約束違規的例外狀況。 若要測試這項功能時，新增新的類別，提供手冊和圖片。 [圖 6] 所示我測試類別包含名為測試摺頁冊檔案`Test.pdf`和測試圖片。 圖 7 顯示 GridView 之後已加入測試分類。
-
 
 [![新增使用手冊和影像的測試類別](updating-and-deleting-existing-binary-data-cs/_static/image6.gif)](updating-and-deleting-existing-binary-data-cs/_static/image11.png)
 
 **圖 6**:新增使用手冊和影像的測試類別 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-cs/_static/image12.png))
 
-
 [![在插入之後測試類別，它會顯示在 GridView](updating-and-deleting-existing-binary-data-cs/_static/image7.gif)](updating-and-deleting-existing-binary-data-cs/_static/image13.png)
 
 **圖 7**:在插入之後測試類別，它會顯示在 GridView ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-cs/_static/image14.png))
-
 
 在 Visual Studio 中，重新整理 [方案總管]。 您現在應該會看到新的檔案中`~/Brochures`資料夾， `Test.pdf` （請參閱 圖 8）。
 
@@ -137,11 +118,9 @@ ObjectDataSource 現在將包含的值及其`DeleteMethod`屬性，以及`Delete
 
 雖然刪除工作流程已成功移除從測試分類記錄`Categories`資料表，它並未從 web 伺服器檔案系統中移除其摺頁冊檔案。 重新整理 [方案總管]，然後您會看到`Test.pdf`仍然位於`~/Brochures`資料夾。
 
-
 ![Test.pdf 檔案未刪除從 Web 伺服器檔案系統](updating-and-deleting-existing-binary-data-cs/_static/image8.gif)
 
 **圖 8**:`Test.pdf`檔案未刪除從 Web 伺服器檔案系統
-
 
 ## <a name="step-5-removing-the-deleted-category-s-brochure-file"></a>步驟 5：移除已刪除的分類 s 摺頁冊檔
 
@@ -149,14 +128,12 @@ ObjectDataSource 現在將包含的值及其`DeleteMethod`屬性，以及`Delete
 
 GridView s [ `RowDeleting`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx)引發已叫用 ObjectDataSource s delete 命令之前，而其[`RowDeleted`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleted.aspx)之後，就會引發。 建立使用下列程式碼這兩個事件的事件處理常式：
 
-
 [!code-csharp[Main](updating-and-deleting-existing-binary-data-cs/samples/sample5.cs)]
 
 在`RowDeleting`事件處理常式`CategoryID`的資料列在從 GridView s 抓取正在刪除`DataKeys`集合，可透過此事件處理常式中存取`e.Keys`集合。 下一步`CategoriesBLL`類別的`GetCategoryByCategoryID(categoryID)`會叫用來傳回正在刪除記錄的相關資訊。 如果傳回`CategoriesDataRow`物件具有非`NULL``BrochurePath`值則儲存在頁面變數`deletedCategorysPdfPath`，以便可以刪除該檔案，在`RowDeleted`事件處理常式。
 
 > [!NOTE]
 > 而不是擷取`BrochurePath`詳細資料`Categories`記錄中刪除`RowDeleting`事件處理常式中，我們可以另外新增了`BrochurePath`GridView s`DataKeyNames`屬性和存取記錄的值透過`e.Keys`集合。 這樣會稍微增加 GridView 的檢視狀態大小，但會減少所需的程式碼並將車程儲存至資料庫。
-
 
 已叫用 s 基礎的 delete 命令，ObjectDataSource GridView s 之後`RowDeleted`引發事件處理常式。 如果沒有在刪除資料的例外狀況，而且沒有值`deletedCategorysPdfPath`，則 PDF 會從檔案系統中刪除。 請注意，此額外的程式碼不需要它的相片與相關聯的類別目錄的 s 二進位資料進行清除。 S 因為圖片資料直接在資料庫中儲存的因此刪除`Categories`資料列也會刪除該類別的圖片資料。
 
@@ -170,34 +147,27 @@ GridView s [ `RowDeleting`事件](https://msdn.microsoft.com/library/system.web.
 
 按一下 設定資料來源連結，從 ObjectDataSource 的精靈，請繼續進行第二個步驟。 由於`DataObjectMethodAttribute`用於`CategoriesBLL`，[更新] 下拉式清單應該會自動填入`UpdateCategory`接受四個輸入參數的多載 (所有資料行，但`Picture`)。 使其使用以五個參數的多載，可以變更此選項。
 
-
 [![設定要使用包含參數圖片 UpdateCategory 方法的 ObjectDataSource](updating-and-deleting-existing-binary-data-cs/_static/image9.gif)](updating-and-deleting-existing-binary-data-cs/_static/image15.png)
 
 **圖 9**:設定要使用 ObjectDataSource`UpdateCategory`方法，其中包含的參數`Picture`([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-cs/_static/image16.png))
-
 
 ObjectDataSource 現在將包含的值及其`UpdateMethod`屬性，以及對應`UpdateParameter`s。 步驟 4 所述，Visual Studio 設定 ObjectDataSource s`OldValuesParameterFormatString`屬性設`original_{0}`時使用 [設定資料來源精靈]。 這將會造成問題的更新和刪除方法引動過程。 因此，完全清除這個屬性，或重設為預設值， `{0}`。
 
 正在完成精靈並修正後`OldValuesParameterFormatString`，ObjectDataSource s 宣告式標記應該如下所示：
 
-
 [!code-aspx[Main](updating-and-deleting-existing-binary-data-cs/samples/sample6.aspx)]
 
 若要開啟的 GridView s 內建編輯功能，請檢查 GridView s 智慧標籤的 啟用編輯選項。 這將會設定 CommandField s`ShowEditButton`屬性設`true`，產生的新加入的 編輯 按鈕 （正在編輯之資料列的更新 和 取消 按鈕）。
-
 
 [![設定 GridView，以支援編輯](updating-and-deleting-existing-binary-data-cs/_static/image10.gif)](updating-and-deleting-existing-binary-data-cs/_static/image17.png)
 
 **圖 10**:設定 GridView，以支援編輯 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-cs/_static/image18.png))
 
-
 請瀏覽透過瀏覽器頁面，然後按一下其中一個資料列的編輯按鈕。 `CategoryName`和`Description`BoundFields 會轉譯為文字方塊。 `BrochurePath` TemplateField 缺少`EditItemTemplate`，因此它會繼續顯示其`ItemTemplate`手冊的連結。 `Picture` ImageField 呈現為文字方塊其`Text`ImageField s 的值指派給屬性`DataImageUrlField`值，在此情況下`CategoryID`。
-
 
 [![GridView 缺少 BrochurePath 編輯介面](updating-and-deleting-existing-binary-data-cs/_static/image11.gif)](updating-and-deleting-existing-binary-data-cs/_static/image19.png)
 
 **圖 11**:GridView 缺少的編輯介面`BrochurePath`([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-cs/_static/image20.png))
-
 
 ## <a name="customizing-thebrochurepaths-editing-interface"></a>自訂`BrochurePath`s 編輯介面
 
@@ -217,22 +187,17 @@ ObjectDataSource 現在將包含的值及其`UpdateMethod`屬性，以及對應`
 
 設定第一個`ListItem`s`Selected`屬性設`true`。
 
-
 ![三個 ListItems 加入 RadioButtonList](updating-and-deleting-existing-binary-data-cs/_static/image12.gif)
 
 **圖 12**:新增三個`ListItem`RadioButtonList 的 s
 
-
 RadioButtonList，下方新增 FileUpload 控制項，名為`BrochureUpload`。 設定其`Visible`屬性設`false`。
-
 
 [![新增 EditItemTemplate RadioButtonList 和 FileUpload 控制項](updating-and-deleting-existing-binary-data-cs/_static/image13.gif)](updating-and-deleting-existing-binary-data-cs/_static/image21.png)
 
 **圖 13**:新增 FileUpload 控制項和 RadioButtonList `EditItemTemplate` ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-cs/_static/image22.png))
 
-
 此 RadioButtonList 提供三個使用者的選項。 其概念是最後一個選項，也就是上傳新的手冊，已選取時，才會顯示的 FileUpload 控制項。 若要達成此目的，建立 事件處理常式 RadioButtonList s`SelectedIndexChanged`事件，並新增下列程式碼：
-
 
 [!code-csharp[Main](updating-and-deleting-existing-binary-data-cs/samples/sample7.cs)]
 
@@ -240,16 +205,13 @@ RadioButtonList，下方新增 FileUpload 控制項，名為`BrochureUpload`。 
 
 使用此程式碼就緒之後，花點時間來測試編輯介面。 按一下 [編輯] 按鈕的資料列。 一開始，您應該選取目前使用的手冊選項。 變更選取的索引，就會引發回傳。 如果選取第三個選項，則顯示 FileUpload 控制項，否則它會隱藏。 圖 14 顯示的編輯介面，當第一次按一下 編輯 按鈕;選取上傳新的手冊選項後，圖 15 顯示介面。
 
-
 [![一開始，使用目前摺頁冊選項](updating-and-deleting-existing-binary-data-cs/_static/image14.gif)](updating-and-deleting-existing-binary-data-cs/_static/image23.png)
 
 **圖 14**:一開始，使用目前摺頁冊選項 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-cs/_static/image24.png))
 
-
 [![選擇上傳新摺頁冊選項會顯示 FileUpload 控制項](updating-and-deleting-existing-binary-data-cs/_static/image15.gif)](updating-and-deleting-existing-binary-data-cs/_static/image25.png)
 
 **圖 15**:選擇上傳新摺頁冊選項會顯示 FileUpload 控制項 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-cs/_static/image26.png))
-
 
 ## <a name="saving-the-brochure-file-and-updating-thebrochurepathcolumn"></a>正在儲存摺頁冊檔案和更新`BrochurePath`資料行
 
@@ -266,11 +228,9 @@ RadioButtonList，下方新增 FileUpload 控制項，名為`BrochureUpload`。 
 
 這兩種方法的程式碼會遵循。 請注意之間的相似性`ProcessBrochureUpload`和 DetailsView 的`ItemInserting`從上一個教學課程的事件處理常式。 在本教學課程中，我已更新 DetailsView 的事件處理常式，若要使用這些新方法。 下載此教學課程，請參閱 DetailsView 的事件處理常式中所做的修改相關聯的程式碼。
 
-
 [!code-csharp[Main](updating-and-deleting-existing-binary-data-cs/samples/sample8.cs)]
 
 GridView s`RowUpdating`並`RowUpdated`事件處理常式會使用`ProcessBrochureUpload`和`DeleteRememberedBrochurePath`方法，如下列程式碼所示：
-
 
 [!code-csharp[Main](updating-and-deleting-existing-binary-data-cs/samples/sample9.cs)]
 
@@ -288,32 +248,25 @@ ImageField 可以輕鬆顯示資料庫的資料為基礎的映像，而我們不
 
 若要自訂 ImageField s 編輯介面，我們需要將其轉換為 TemplateField。 從 GridView s 智慧標籤，按一下 [編輯資料行] 連結、 選取 ImageField，並按一下轉換此欄位轉換 TemplateField 連結。
 
-
 ![ImageField 轉換為 TemplateField](updating-and-deleting-existing-binary-data-cs/_static/image16.gif)
 
 **圖 16**:ImageField 轉換為 TemplateField
 
-
 ImageField 轉換為 TemplateField 以這種方式，就會產生為 TemplateField 與兩個範本。 如下列宣告式語法所示`ItemTemplate`包含映像的 Web 控制項`ImageUrl`屬性會被指派使用 ImageField s 為基礎的資料繫結語法`DataImageUrlField`和`DataImageUrlFormatString`屬性。 `EditItemTemplate`包含文字方塊之`Text`屬性繫結至所指定的值`DataImageUrlField`屬性。
-
 
 [!code-aspx[Main](updating-and-deleting-existing-binary-data-cs/samples/sample10.aspx)]
 
 我們需要更新`EditItemTemplate`使用 FileUpload 控制項。 從 GridView s 智慧標籤，按一下 編輯範本連結，然後選取`Picture`TemplateField 的`EditItemTemplate`從下拉式清單。 您應該會看到 TextBox，移除此範本中。 接下來，從 [工具箱] 拖曳 FileUpload 控制項，在範本中，設定其`ID`至`PictureUpload`。 也加入的文字變更的類別目錄的圖片，請指定新的圖片。 若要保留相同類別目錄的圖片，將欄位保留空白範本，以及。
 
-
 [![新增 FileUpload 控制項的 EditItemTemplate](updating-and-deleting-existing-binary-data-cs/_static/image17.gif)](updating-and-deleting-existing-binary-data-cs/_static/image27.png)
 
 **圖 17**:新增 FileUpload 控制項`EditItemTemplate`([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-cs/_static/image28.png))
 
-
 自訂編輯介面之後, 請在瀏覽器中檢視您的進度。 檢視時的資料列在唯讀模式下，類別 s 映像會顯示之前，但按一下 [編輯] 按鈕呈現為使用 FileUpload 控制項文字的圖片資料行。
-
 
 [![編輯介面包含 FileUpload 控制項](updating-and-deleting-existing-binary-data-cs/_static/image18.gif)](updating-and-deleting-existing-binary-data-cs/_static/image29.png)
 
 **圖 18**:編輯介面包含 FileUpload 控制項 ([按一下以檢視完整大小的影像](updating-and-deleting-existing-binary-data-cs/_static/image30.png))
-
 
 還記得 ObjectDataSource 會設定為呼叫`CategoriesBLL`類別 s`UpdateCategory`接受做為輸入為圖片的二進位資料的方法`byte`陣列。 這個陣列是否`null`值，不過，替代`UpdateCategory`多載呼叫時，哪些問題`UPDATE`不會修改的 SQL 陳述式`Picture`資料行，藉此讓類別 s 目前圖片保持不變。 因此，在 GridView s`RowUpdating`事件處理常式，我們需要以程式設計方式參考`PictureUpload`FileUpload 控制項，並判斷檔案已上傳。 如果其中一個未上傳，則我們*未*想要指定的值`picture`參數。 另一方面，如果檔案已上傳中`PictureUpload`FileUpload 控制項中，我們想要確保它是 JPG 檔案。 如果是，則我們可以將其二進位內容傳送至透過 ObjectDataSource`picture`參數。
 
@@ -321,13 +274,11 @@ ImageField 轉換為 TemplateField 以這種方式，就會產生為 TemplateFie
 
 將下列程式碼新增至 GridView 的開頭`RowUpdating`事件處理常式。 其重要這段程式碼前面的程式碼，將儲存摺頁冊檔案，因為我們不想要將摺頁冊儲存到 web 伺服器檔案系統中，如果無效的圖片檔案上傳。
 
-
 [!code-csharp[Main](updating-and-deleting-existing-binary-data-cs/samples/sample11.cs)]
 
 `ValidPictureUpload(FileUpload)` ; 方法會採用 FileUpload 控制項作為其唯一的輸入參數中，並檢查上傳的檔案 s 延伸模組，以確保上傳的檔案是 JPG 上傳圖片檔案時，只會呼叫它。 如果上不傳任何檔案時，則圖片參數未設定，並因此會使用其預設值是`null`。 如果已上傳圖片和`ValidPictureUpload`會傳回`true`，則`picture`參數所屬的上傳的映像; 的二進位資料，如果此方法會傳回`false`、 已取消更新工作流程和事件處理常式結束。
 
 `ValidPictureUpload(FileUpload)`方法程式碼重構從 DetailsView 的`ItemInserting`事件處理常式，如下：
-
 
 [!code-csharp[Main](updating-and-deleting-existing-binary-data-cs/samples/sample12.cs)]
 
@@ -342,12 +293,10 @@ ImageField 轉換為 TemplateField 以這種方式，就會產生為 TemplateFie
 
 編輯類別和之後上傳 JPG 映像，映像不會呈現在瀏覽器因為`DisplayCategoryPicture.aspx`頁面移除前的 78 個位元組的前八個類別中的圖片。 藉由移除 OLE 標頭移除所執行的程式碼修正此問題。 在之後執行此操作，`DisplayCategoryPicture.aspx``Page_Load`事件處理常式應該只是下列的程式碼：
 
-
 [!code-vb[Main](updating-and-deleting-existing-binary-data-cs/samples/sample13.vb)]
 
 > [!NOTE]
 > `UpdatingAndDeleting.aspx`頁面插入和編輯介面無法使用更多的工作。 `CategoryName`和`Description`BoundFields GridView 與 DetailsView 中的應該轉換成 TemplateFields。 由於`CategoryName`不允許`NULL`值，應該加入 RequiredFieldValidator。 和`Description`文字方塊可能應該轉換成多行文字方塊中。 我在練習中保留這些最後的修飾，為您。
-
 
 ## <a name="summary"></a>總結
 

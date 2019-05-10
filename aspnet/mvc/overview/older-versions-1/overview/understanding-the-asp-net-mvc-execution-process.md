@@ -8,12 +8,12 @@ ms.date: 01/27/2009
 ms.assetid: d1608db3-660d-4079-8c15-f452ff01f1db
 msc.legacyurl: /mvc/overview/older-versions-1/overview/understanding-the-asp-net-mvc-execution-process
 msc.type: authoredcontent
-ms.openlocfilehash: 4a47f51b08b66dfe9636b3992786df19d0ad72ad
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 28940947253e0af43886cf1231f8aaf4615526cc
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59414927"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125474"
 ---
 # <a name="understanding-the-aspnet-mvc-execution-process"></a>了解 ASP.NET MVC 執行程序
 
@@ -21,14 +21,12 @@ by [Microsoft](https://github.com/microsoft)
 
 > 了解 ASP.NET MVC framework 如何處理逐步瀏覽器要求。
 
-
 ASP.NET MVC 為基礎的 Web 應用程式的要求先通過**UrlRoutingModule**物件，也就是 HTTP 模組。 此模組會剖析該要求，並執行路由選取。 **UrlRoutingModule**物件會選取符合目前要求的第一個路由物件。 (路由物件是類別可實作**RouteBase**，且通常是的執行個體**路由**類別。)如果沒有路由相符， **UrlRoutingModule**物件不執行任何動作，並讓要求回到標準 ASP.NET 或 IIS 要求處理。
 
 從所選**路由**物件， **UrlRoutingModule**物件取得**IRouteHandler**相關聯的物件**路由**物件。 一般而言，在 MVC 應用程式，這會是的執行個體**MvcRouteHandler**。 **IRouteHandler**執行個體會建立**IHttpHandler**物件，並將它傳遞**IHttpContext**物件。 根據預設， **IHttpHandler**執行個體為 MVC **MvcHandler**物件。 **MvcHandler**物件接著會選取最後會處理要求的控制器。
 
 > [!NOTE]
 > 在 IIS 7.0 中，執行的 ASP.NET MVC Web 應用程式，無副檔名時需要的 MVC 專案。 不過，在 IIS 6.0 中，處理常式需要您將.mvc 副檔名對應至 ASP.NET ISAPI DLL。
-
 
 模組與處理常式是 ASP.NET MVC 架構的進入點。 執行下列動作：
 

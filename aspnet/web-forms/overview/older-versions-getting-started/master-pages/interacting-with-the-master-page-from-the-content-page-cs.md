@@ -8,12 +8,12 @@ ms.date: 07/11/2008
 ms.assetid: 32d54638-71b2-491d-81f4-f7417a13a62f
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 986c4b109fc0e809867853da728bcd12654a80ec
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 52f3563a59647c3bc48c5c4d7e40ce8941d18268
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59394675"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132296"
 ---
 # <a name="interacting-with-the-master-page-from-the-content-page-c"></a>從內容頁與主版頁面互動 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59394675"
 [下載程式碼](http://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_06_CS.zip)或[下載 PDF](http://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_06_CS.pdf)
 
 > 檢驗如何呼叫方法，從 [內容] 頁面中的程式碼中設定屬性等的主版頁面。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -45,7 +44,6 @@ ms.locfileid: "59394675"
 > [!NOTE]
 > 即使您停用 GridView 的檢視狀態，讓它重新繫結至每個回傳上其基礎資料來源時，它仍不會顯示剛加入的資料錄因為資料繫結至 GridView 稍早在網頁生命週期，比新記錄新增至資料庫物件時ase。
 
-
 若要解決這個問題，因此剛加入的記錄會顯示在主版頁面的回傳，我們必須指示重新繫結至其資料來源 GridView GridView*之後*新記錄加入資料庫。 因為加入新的記錄 （和其事件處理常式） 會在 [內容] 頁面，但需要重新整理的 GridView 介面是主版頁面中，這會需要的內容和主版頁面之間的互動。
 
 因為重新整理從 [內容] 頁面中的事件處理常式的主版頁面的顯示是其中一個最常見的需求，內容和主版頁面互動，讓我們來探索此主題的更多詳細資料。 本教學課程中下載包含名為 Microsoft SQL Server 2005 Express 的 Edition 資料庫`NORTHWIND.MDF`中網站的`App_Data`資料夾。 Northwind 資料庫會儲存產品、 員工及針對虛構的公司，Northwind Traders 的銷售資訊。
@@ -55,24 +53,19 @@ ms.locfileid: "59394675"
 > [!NOTE]
 > 本教學課程不會不深入探討在 ASP.NET 中使用資料的詳細資訊。 設定主版頁面，以顯示資料和插入資料的 [內容] 頁面的步驟會完成，尚未 breezy。 如需更深入了解顯示和插入資料並使用 SqlDataSource 和 GridView 控制項，請參閱在本教學課程結尾處的進一步的讀數一節中的資源。
 
-
 ## <a name="step-1-displaying-the-five-most-recently-added-products-in-the-master-page"></a>步驟 1：顯示五個最新加入主版頁面的產品
 
 開啟`Site.master`主版頁面，並新增標籤和 GridView 控制項`leftContent` `<div>`。 清除標籤`Text`屬性，設定其`EnableViewState`屬性設定為 false，並將其`ID`屬性設`GridMessage`; 設定 GridView 的`ID`屬性設`RecentProducts`。 接下來，從設計工具中，展開 GridView 的智慧標籤，然後選擇繫結至新的資料來源。 這會啟動 資料來源組態精靈。 因為 Northwind 資料庫中`App_Data`資料夾是 Microsoft SQL Server 資料庫中，選擇 選取 （請參閱 圖 1） 建立 SqlDataSource; 名稱 SqlDataSource `RecentProductsDataSource`。
-
 
 [![繫結至名為 RecentProductsDataSource SqlDataSource 控制項的 GridView](interacting-with-the-master-page-from-the-content-page-cs/_static/image2.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image1.png)
 
 **圖 01**:SqlDataSource 控制項名為繫結 GridView `RecentProductsDataSource` ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-cs/_static/image3.png))
 
-
 下一個步驟會要求我們指定項目連接到資料庫。 選擇`NORTHWIND.MDF`資料庫檔案，從下拉式清單中，按一下 [下一步]。 因為這是我們使用此資料庫的第一次時，精靈會將提供給連接字串儲存在`Web.config`。 它使用的名稱將連接字串儲存`NorthwindConnectionString`。
-
 
 [![連接到 Northwind 資料庫](interacting-with-the-master-page-from-the-content-page-cs/_static/image5.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image4.png)
 
 **圖 02**:連接到 Northwind 資料庫 ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-cs/_static/image6.png))
-
 
 設定資料來源精靈會提供兩種方法，我們可以指定用來擷取資料的查詢：
 
@@ -81,19 +74,15 @@ ms.locfileid: "59394675"
 
 因為我們想要傳回只是五個最近新增的產品，我們需要指定自訂的 SQL 陳述式。 使用下列的 SELECT 查詢：
 
-
 [!code-sql[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample1.sql)]
 
 `TOP 5`關鍵字的查詢傳回前五筆記錄。 `Products`資料表的主索引鍵`ProductID`，是`IDENTITY`資料行，以確保我們每個新的產品加入至資料表會有較大的值，比先前的項目。 因此，排序結果`ProductID`以遞減順序傳回開頭為最新建立的產品。
-
 
 [![傳回 5 個最近新增的產品](interacting-with-the-master-page-from-the-content-page-cs/_static/image8.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image7.png)
 
 **圖 03**:傳回五個最最近新增的產品 ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-cs/_static/image9.png))
 
-
 完成精靈之後，Visual Studio 會產生如 GridView，以顯示兩個 BoundFields`ProductName`和`UnitPrice`從資料庫傳回的欄位。 目前主版頁面的宣告式標記應包含標記如下所示：
-
 
 [!code-aspx[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample2.aspx)]
 
@@ -101,30 +90,24 @@ ms.locfileid: "59394675"
 
 以此方式建立的 GridView 和設定，其 SqlDataSource 控制項瀏覽的網站，透過瀏覽器。 如 [圖 4] 所示，您會看到在左下角會列出五個最新的方格加入產品。
 
-
 [![GridView 會顯示五個最近新增的產品](interacting-with-the-master-page-from-the-content-page-cs/_static/image11.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image10.png)
 
 **圖 04**:GridView 會顯示五個最最近新增的產品 ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-cs/_static/image12.png))
 
-
 > [!NOTE]
 > 請放心清除 GridView 的外觀。 格式化顯示的一些建議包括`UnitPrice`值做為貨幣，並使用背景色彩和字型來改善格線的外觀。
-
 
 ## <a name="step-2-creating-a-content-page-to-add-new-products"></a>步驟 2：建立內容的頁面，即可加入新的產品
 
 下一步是建立內容頁面，使用者可以從此處新增的新產品`Products`資料表。 加入新的內容頁面，以便`Admin`名為資料夾`AddProduct.aspx`，並確定將它繫結`Site.master`主版頁面。 此頁面已加入至網站之後，圖 5 顯示 方案總管。
 
-
 [![將新的 ASP.NET 網頁新增至 [Admin] 資料夾](interacting-with-the-master-page-from-the-content-page-cs/_static/image14.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image13.png)
 
 **圖 05**:加入新的 ASP.NET 頁面，以便`Admin`資料夾 ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-cs/_static/image15.png))
 
-
 請注意，在[*指定主版頁面的標題、 中繼標籤及其他 HTML 標頭*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)教學課程中我們建立名為自訂的基底頁面類別`BasePage`如果它已產生頁面的標題未明確設定。 移至`AddProduct.aspx`頁面的程式碼後置類別，並讓它衍生自`BasePage`(而不是從`System.Web.UI.Page`)。
 
 最後，更新`Web.sitemap`檔案，以包含這一課中的項目。 加入下列標記下方`<siteMapNode>`控制項識別碼命名的問題一課：
-
 
 [!code-xml[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample3.xml)]
 
@@ -132,11 +115,9 @@ ms.locfileid: "59394675"
 
 返回`AddProduct.aspx`。 在適用於內容的控制項`MainContent`ContentPlaceHolder，新增 DetailsView 控制項並將它命名`NewProduct`。 繫結至新的 SqlDataSource 控制項，名為的 DetailsView `NewProductDataSource`。 例如，以 sqldatasource 進行步驟 1 中，設定精靈，讓它使用 Northwind 資料庫，以及選擇指定自訂的 SQL 陳述式。 因為 DetailsView 會用來將項目加入至資料庫中，我們需要同時指定`SELECT`陳述式和`INSERT`陳述式。 使用下列項目`SELECT`查詢：
 
-
 [!code-sql[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample4.sql)]
 
 然後，從 [插入] 索引標籤中，新增下列`INSERT`陳述式：
-
 
 [!code-sql[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample5.sql)]
 
@@ -144,17 +125,14 @@ ms.locfileid: "59394675"
 
 這樣就全部完成了！ 我們來測試此頁面。 請瀏覽`AddProduct.aspx`透過瀏覽器中，輸入 （請參閱 圖 6） 的名稱和價格。
 
-
 [![將新的產品加入至資料庫](interacting-with-the-master-page-from-the-content-page-cs/_static/image17.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image16.png)
 
 **圖 06**:將新的產品加入至資料庫 ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-cs/_static/image18.png))
-
 
 輸入之後的名稱和新的產品價格中，按一下 [插入] 按鈕。 這會導致表單回傳。 在回傳時，SqlDataSource 控制項的`INSERT`陳述式; 它的兩個參數會填入使用者輸入的值，在兩個文字方塊控制項 DetailsView。 不幸的是，發生插入沒有視覺回應。 它會是可有可無的訊息，確認已新增新的記錄。 我不要更動此練習的讀取器。 此外之後加入新的記錄從 DetailsView, GridView 的主版頁面中仍會顯示五個記錄與相同之前;它不包含剛加入的記錄。 我們將檢驗如何解決這個問題在後續的步驟。
 
 > [!NOTE]
 > 除了新增某種形式的成功插入的視覺化回應，我會建議您一併更新以包含驗證的 DetailsView 插入介面。 目前沒有任何驗證。 如果使用者輸入的值為 「 無效 」`UnitPrice`欄位，例如 「 太昂貴，"將會擲回例外狀況在回傳時，系統會嘗試將該字串轉換成十進位數。 如需有關自訂插入介面，請參閱[*自訂資料修改介面*教學課程](../../data-access/editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs.md)從我[使用資料教學課程系列](../../data-access/index.md).
-
 
 ## <a name="step-3-creating-public-properties-and-methods-in-the-master-page"></a>步驟 3：建立主版頁面的公用屬性和方法
 
@@ -162,11 +140,9 @@ ms.locfileid: "59394675"
 
 因為標籤控制項會實作為內無法直接從內容頁面存取主版頁面的受保護的成員變數中。 若要使用主版頁面的 [內容] 頁面 （或就此而言，主版頁面中的任何 Web 控制項） 中的標籤，我們需要建立主版頁面公開的 Web 控制項，或做為 proxy 的其中一個屬性可以是公用屬性 存取。 將下列語法新增至主版頁面的程式碼後置類別，以公開 （expose） 的標籤`Text`屬性：
 
-
 [!code-csharp[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample6.cs)]
 
 若要新增新的記錄時`Products`資料表從內容頁面`RecentProducts`主版頁面中的 GridView 需要重新繫結至其基礎資料來源。 若要重新繫結 GridView 呼叫其`DataBind`方法。 主版頁面中的 GridView 不是以程式設計方式存取內容的頁面，因為我們需要建立的公用方法主版頁面中，呼叫時，會重新繫結至 GridView 資料。 將下列方法新增至主版頁面的程式碼後置類別：
-
 
 [!code-csharp[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample7.cs)]
 
@@ -174,7 +150,6 @@ ms.locfileid: "59394675"
 
 > [!NOTE]
 > 別忘了將主版頁面的屬性和方法`public`。 如果您不明確地代表這些屬性和方法`public`，他們將無法從 [內容] 頁面。
-
 
 ## <a name="step-4-calling-the-master-pages-public-members-from-a-content-page"></a>步驟 4：從內容頁面呼叫主版頁面的公用成員
 
@@ -193,20 +168,16 @@ ms.locfileid: "59394675"
 
 `Master`屬性會傳回類型的物件[ `MasterPage` ](https://msdn.microsoft.com/library/system.web.ui.masterpage.aspx) (同樣位於`System.Web.UI`命名空間) 這是從中所有主版頁面衍生自的基底類型。 因此，若要使用的公用屬性或方法定義於我們的網站主版頁面，我們必須轉型`MasterPage`所傳回的物件`Master`適當類型的屬性。 因為我們命名為我們的主版頁面檔案`Site.master`，程式碼後置類別命名為`Site`。 因此，下列程式碼轉換`Page.Master`站台 類別的執行個體的內容。
 
-
 [!code-csharp[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample8.cs)]
 
 既然我們已經轉換鬆散型`Page.Master`屬性設`Site`我們可以參考的屬性和方法的特定站台的型別。 如 [圖 7] 所示，公用屬性`GridMessageText`出現在 IntelliSense 下拉式清單中。
-
 
 [![IntelliSense 會顯示我們主頁公用屬性和方法](interacting-with-the-master-page-from-the-content-page-cs/_static/image20.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image19.png)
 
 **圖 07**:IntelliSense 會顯示我們主頁公用屬性和方法 ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-cs/_static/image21.png))
 
-
 > [!NOTE]
 > 如果名為您的主版頁面檔案`MasterPage.master`則主版頁面的程式碼後置類別名稱就是`MasterPage`。 這可能會導致模稜兩可的程式碼從型別轉型時`System.Web.UI.MasterPage`到您`MasterPage`類別。 簡單地說，您需要完整限定的類型為，可能會較難使用網站專案模型時。 我的建議是確認您的主版頁面建立時您將它命名的項目以外的其他`MasterPage.master`或更棒的是，建立主版頁面的強型別參考。
-
 
 ### <a name="creating-a-strongly-typed-reference-with-themastertypedirective"></a>建立強型別參考與`@MasterType`指示詞
 
@@ -216,7 +187,6 @@ ms.locfileid: "59394675"
 
 使用[`@MasterType`指示詞](https://msdn.microsoft.com/library/ms228274.aspx)，告知 ASP.NET 引擎的 [內容] 頁面的主版頁面類型。 `@MasterType`指示詞可接受的類型名稱的主版頁面或檔案路徑。 若要指定`AddProduct.aspx`頁面上使用`Site.master`作為其主版頁面的頂端加入下列指示詞`AddProduct.aspx`:
 
-
 [!code-aspx[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample9.aspx)]
 
 這個指示詞會指示 ASP.NET 引擎加入主版頁面，透過名為屬性的強型別參考`Master`。 與`@MasterType`我們可以呼叫指示詞就地`Site.master`主要頁面上的公用屬性和方法直接透過`Master`屬性，而不需要任何轉換 （cast）。
@@ -224,11 +194,9 @@ ms.locfileid: "59394675"
 > [!NOTE]
 > 如果您省略`@MasterType`指示詞，則語法`Page.Master`和`Master`傳回相同的動作： 在頁面的主版頁面的鬆散型別物件。 如果您納入`@MasterType`指示詞再`Master`傳回指定的主版頁面的強型別參考。 `Page.Master`不過，仍會傳回鬆散型別參考。 針對更徹底的了解為什麼是這樣的情況以及如何`Master`屬性的建構時`@MasterType`指示詞之後，請參閱[K.Scott Allen](http://odetocode.com/blogs/scott/default.aspx)的部落格項目[`@MasterType`在 ASP.NET 2.0](http://odetocode.com/Blogs/scott/archive/2005/07/16/1944.aspx).
 
-
 ### <a name="updating-the-master-page-after-adding-a-new-product"></a>在之後加入新的產品更新主版頁面
 
 既然我們已經知道如何叫用主版頁面的公用屬性和方法，從內容頁面，我們已經準備好更新`AddProduct.aspx`頁面，如此主版頁面會重新整理之後加入新的產品。 在步驟 4 開始，我們建立 DetailsView 控制項的事件處理常式`ItemInserting`事件，它會立即在新產品已經新增到資料庫之後，才執行。 將下列程式碼新增至該事件處理常式中：
-
 
 [!code-csharp[Main](interacting-with-the-master-page-from-the-content-page-cs/samples/sample10.cs)]
 
@@ -236,11 +204,9 @@ ms.locfileid: "59394675"
 
 [圖 8] 顯示`AddProduct.aspx`之後將新的產品-Scott Soda-立即的頁面已加入至資料庫。 請注意，主版頁面的標籤中註明剛加入的產品名稱和 GridView 已經過改版，包括產品，而且其價格。
 
-
 [![主版頁面的標籤和 GridView 會顯示剛加入的產品](interacting-with-the-master-page-from-the-content-page-cs/_static/image23.png)](interacting-with-the-master-page-from-the-content-page-cs/_static/image22.png)
 
 **圖 08**:主版頁面的標籤和 GridView 顯示 Just-Added 產品 ([按一下以檢視完整大小的影像](interacting-with-the-master-page-from-the-content-page-cs/_static/image24.png))
-
 
 ## <a name="summary"></a>總結
 

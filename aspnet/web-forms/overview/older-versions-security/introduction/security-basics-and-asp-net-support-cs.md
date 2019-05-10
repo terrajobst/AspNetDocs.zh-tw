@@ -8,12 +8,12 @@ ms.date: 01/13/2008
 ms.assetid: 07e15538-2f29-40c6-b2e7-e6115075ac83
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8f6fb4348e6ff703d329331b908e41763f24bb1f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 75ed2e2d0d9e15d186cf39ddd376beae99a06b30
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402943"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132270"
 ---
 # <a name="security-basics-and-aspnet-support-c"></a>安全性基本概念與 ASP.NET 支援 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59402943"
 [下載 PDF](http://download.microsoft.com/download/2/F/7/2F705A34-F9DE-4112-BBDE-60098089645E/aspnet_tutorial01_Basics_cs.pdf)
 
 > 這是一系列將探索驗證透過 web 表單的訪客、 授權存取特定頁面和功能，以及管理 ASP.NET 應用程式中的使用者帳戶的技術的教學課程的第一個教學課程。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -45,7 +44,6 @@ ms.locfileid: "59402943"
 
 > [!NOTE]
 > 安全性是很重要的層面跨越實體、 技術、 任何應用程式和原則決策，而且需要較高程度的規劃和網域知識。 本教學課程系列不是作為指南來開發安全的 web 應用程式。 相反地，它特別著重於表單驗證、 授權、 使用者帳戶和角色。 在這一系列討論上方解決這些問題的一些安全性概念，而其他項目會保留未探索。
-
 
 ## <a name="authentication-authorization-user-accounts-and-roles"></a>驗證、 授權、 使用者帳戶和角色
 
@@ -75,11 +73,9 @@ Windows 驗證工作流程會使用下列的驗證技術之一：
 
 這三項技術運作方式大致相同： 當未經授權，匿名要求抵達時，web 伺服器會傳回 HTTP 回應，指出該授權，才能繼續。 瀏覽器，然後顯示強制回應對話方塊，提示使用者輸入其使用者名稱和密碼 （請參閱 圖 1）。 這項資訊接著會傳送至 web 伺服器透過 HTTP 標頭。
 
-
 ![強制回應對話方塊會提示使用者輸入其認證](security-basics-and-asp-net-support-cs/_static/image1.png)
 
 **圖 1**:強制回應對話方塊會提示使用者輸入其認證
-
 
 提供的認證會驗證對 web 伺服器的 Windows 使用者存放區。 這表示 web 應用程式中每個已驗證的使用者必須有您組織中的 Windows 帳戶。 這是在內部網路案例中的老生常談。 事實上，當使用 Windows 整合式驗證，在內部網路設定中，瀏覽器會自動提供 web 伺服器與用來登入網路，藉此隱藏 [圖 1] 所示的對話方塊中的認證。 Windows 驗證適合內部網路應用程式時，它是通常不可行的網際網路應用程式因為您不會想要建立註冊您的站台的每個使用者的 Windows 帳戶。
 
@@ -93,11 +89,9 @@ Windows 驗證工作流程會使用下列的驗證技術之一：
 
 使用者已成功登入之後，後續的 HTTP 要求包含表單驗證票證。 表單驗證系統只會識別使用者-它會決定使用者是否可以存取所要求的資源的授權系統。
 
-
 ![表單驗證工作流程](security-basics-and-asp-net-support-cs/_static/image2.png)
 
 **圖 2**:表單驗證工作流程
-
 
 我們將會更詳細的表單驗證，在下面兩個教學課程中，深入探究[的表單驗證概觀](an-overview-of-forms-authentication-cs.md)並[表單驗證組態和進階主題](forms-authentication-configuration-and-advanced-topics-cs.md)。 如需有關 ASP。NET 的驗證選項，請參閱[ASP.NET 驗證](https://msdn.microsoft.com/library/eeyk640h.aspx)。
 
@@ -113,7 +107,6 @@ ASP.NET 包含兩種方式可判斷特定使用者是否具有特定檔案或目
 以宣告方式或以程式設計方式，就可以完成這類頁面層級調整。 若要顯示不同的內容，針對已驗證的使用者，只要拖曳比匿名[LoginView 控制項](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginview.aspx)拖曳到頁面然後其 AnonymousTemplate 和 LoggedInTemplate 範本中輸入適當的內容。 或者，您可以以程式設計方式判斷是否已驗證目前的要求，身為使用者，以及哪些角色所屬 （如果有的話）。 您可以使用這項資訊，然後顯示或隱藏方格或面板頁面上的資料行。
 
 這一系列包含三個教學課程著重於授權。 ***使用者為基礎的授權***檢驗如何限制存取特定的使用者帳戶; 頁面或在目錄中的頁面***角色型授權***會提供授權規則，在角色層級; 最後，查看***顯示目前已登入使用者的內容以***教學課程會探討修改特定頁面的內容和使用者瀏覽頁面為基礎的功能。 如需有關 ASP。NET 的授權選項，請參閱[ASP.NET 授權](https://msdn.microsoft.com/library/wce3kxhd.aspx)。
-
 
 ## <a name="user-accounts-and-roles"></a>使用者帳戶和角色
 
@@ -139,11 +132,9 @@ Microsoft.NET Framework 中提供兩個成員資格提供者類別：
 
 本教學課程系列專門著重於 SqlMembershipProvider。
 
-
 [![提供者模型可讓不同的實作是順暢地插入到 Framework&lt;/ strong>&gt;](security-basics-and-asp-net-support-cs/_static/image4.png)](security-basics-and-asp-net-support-cs/_static/image3.png)
 
 **圖 03**:提供者模型可讓不同的實作是順暢地插入到的架構 ([按一下以檢視完整大小的影像](security-basics-and-asp-net-support-cs/_static/image5.png))
-
 
 提供者模型的優點是可以由 Microsoft、 協力廠商或個別的開發人員開發替代的實作，並順暢地插入成員資格架構。 例如，Microsoft 已發行[的成員資格提供者，針對 Microsoft Access 資料庫](https://download.microsoft.com/download/5/5/b/55bc291f-4316-4fd7-9269-dbf9edbaada8/sampleaccessproviders.vsi)。 如需有關成員資格提供者的詳細資訊，請參閱[提供者工具組](https://msdn.microsoft.com/asp.net/aa336558.aspx)，其中包含的成員資格提供者範例自訂提供者、 超過 100 個頁面上提供者模型中，文件的逐步解說，完成原始碼的內建成員資格提供者 （也就是 ActiveDirectoryMembershipProvider 和 SqlMembershipProvider）。
 

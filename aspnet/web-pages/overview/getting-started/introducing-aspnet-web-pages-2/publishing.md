@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: 7e85c70e-1a88-4408-8b3d-29611c7713ed
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
-ms.openlocfilehash: ece436d44908497d6cf10017ba1ee285bfb4a5b2
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 49a841dbda183bf1d59153b83f694c9f517e0b94
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59382093"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127753"
 ---
 # <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>ASP.NET Web Pages 簡介-使用 WebMatrix 發佈網站
 
@@ -26,7 +26,6 @@ ms.locfileid: "59382093"
 > - Microsoft Azure
 > - Web 裝載方公司
 
-
 ## <a name="about-publishing-your-site"></a>關於發佈您的網站
 
 到目前為止，您已完成您的本機電腦上，包括測試您的網頁的所有工作。 若要執行您<em>.cshtml</em>頁面，您已使用 WebMatrix，IIS Express 也就是內建的 web 伺服器。 但當然沒有人可以看到您已建立您的網站。 若要讓其他人使用您的網站，您必須將它發佈至網際網路。
@@ -35,7 +34,6 @@ ms.locfileid: "59382093"
 
 > [!NOTE]
 > 您可能必須透過網際網路服務提供者 (ISP)，讓您用來在家裡網際網路服務的公用 web 伺服器的存取權。 不過，您的主機服務提供者必須支援 ASP.NET Web Pages。 許多 Isp 不這麼做，但它一律是值得一查。
-
 
 在本教學課程中，我們將提供您如何發佈的概觀。 它是不實際提供的所有項目，確切的詳細資料，因為程序稍微不同的每個主機服務提供者。 但是，您會了解的程序的運作方式。
 
@@ -142,7 +140,6 @@ WebMatrix 會顯示檔案和將發佈到網站的資料庫。 由於這是您要
 > [!NOTE]
 > 本教學課程中的主機服務提供者的我們選擇不應解譯為該公司的簽署，超過任何其他。 但我們必須挑選一個圖中，而獲得許多公司的支援發佈 ASP.NET Web Pages 和 Web Deploy 通訊協定。
 
-
 一般而言，您已使用主機服務提供者註冊之後，公司會傳送一封電子郵件，其中包含使用者名稱和密碼，web 伺服器，以及等等的 URL。 如果裝載的公司支援 Web Deploy 通訊協定，它們可能會傳送您的檔案，其中包含發行設定，或可讓您下載其中一個。 發行設定檔為您簡化程序。
 
 當您註冊，且準備好要發行時，按一下**發佈**WebMatrix 功能區中的按鈕。 **發佈設定**對話方塊隨即出現。
@@ -196,7 +193,6 @@ WebMatrix 會顯示檔案和將發佈到網站的資料庫。 由於這是您要
 > 
 > 根據預設，WebMatrix 發行您的資料庫 (*.sdf*檔案) 只在第一次發行站台。 一旦您的站台發佈，並與網站互動的人員，即時網站上的資料庫通常會有站台的實際資料。 您一定要非常小心，不要覆寫即時資料庫 *.sdf*位於您的電腦，通常只包含測試資料的檔案。 這就是為什麼您看到警告**發佈將會覆寫任何遠端資料庫**，以及為什麼的核取方塊*WebPagesMovies.sdf*預設為清除。
 
-
 按一下 [ **繼續**]。 WebMatrix 發佈變更的檔案，並顯示成功訊息，就跟您發行的第一次。
 
 移至即時網站 （您可以按一下連結成功訊息中的如果它仍會顯示），並確認您的變更已發行。
@@ -210,7 +206,6 @@ WebMatrix 會顯示檔案和將發佈到網站的資料庫。 由於這是您要
 > 遠端編輯是簡單的方式，對您的即時網站進行變更。 不過，您進行這種方式的變更不同步處理您的本機網站中的檔案。 若要同步的本機檔案與遠端站台，您可以下載遠端檔案。 此程序很像發行，除了以相反的方式。
 > 
 > 我們將不會更多說明關於遠端編輯與遠端下載設施的 WebMatrix 這裡。 它們非常有用，如果多人有不同的電腦上相同的站台上運作。 如需詳細資訊，請參閱 <<c0> [ 發行和編輯與 WebMatrix 2 Beta 的遠端站台](https://go.microsoft.com/fwlink/?LinkId=251591)。
-
 
 ## <a name="additional-resources"></a>其他資源
 

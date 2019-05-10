@@ -8,12 +8,12 @@ ms.date: 08/15/2006
 ms.assetid: 811a6ef2-ec66-4c8e-a089-6f795056e288
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: dc5b2a2888eebb4b812caf3fc11bf109d54bb73d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6828c5c6724c84d84fc3fefa53a1b13da1b3a16f
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420688"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131593"
 ---
 # <a name="paging-and-sorting-report-data-c"></a>分頁和排序報告資料 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59420688"
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_24_CS.exe)或[下載 PDF](paging-and-sorting-report-data-cs/_static/datatutorial24cs1.pdf)
 
 > 分頁和排序是兩個常見的功能，在線上應用程式中顯示資料。 在本教學課程中，我們將率先一睹加入排序和分頁加入我們的報告，我們將在未來的教學課程時建置。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -40,71 +39,55 @@ ms.locfileid: "59420688"
 - `SortParameter.aspx`
 - `CustomSortingUI.aspx`
 
-
 ![建立 PagingAndSorting 資料夾，並新增這些教學課程的 ASP.NET 網頁](paging-and-sorting-report-data-cs/_static/image1.png)
 
 **圖 1**:建立 PagingAndSorting 資料夾，並新增這些教學課程的 ASP.NET 網頁
 
-
 接下來，開啟`Default.aspx`頁面上，並拖曳`SectionLevelTutorialListing.ascx`從使用者控制`UserControls`拖曳至設計介面上的資料夾。 此使用者控制項中，我們在中建立[主版頁面與網站導覽](../introduction/master-pages-and-site-navigation-cs.md)教學課程中，列舉站台對應，並顯示這些教學課程中的項目符號清單中目前的區段。
-
 
 ![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](paging-and-sorting-report-data-cs/_static/image2.png)
 
 **圖 2**:將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx
 
-
 若要有項目符號清單顯示分頁和排序我們將建立的教學課程，我們要將它們新增至站台對應。 開啟`Web.sitemap`檔案，並在編輯、 插入，以及刪除站台對應節點標記之後新增下列標記：
 
-
 [!code-xml[Main](paging-and-sorting-report-data-cs/samples/sample1.xml)]
-
 
 ![更新站台對應，以包含新的 ASP.NET 網頁](paging-and-sorting-report-data-cs/_static/image3.png)
 
 **圖 3**:更新站台對應，以包含新的 ASP.NET 網頁
 
-
 ## <a name="step-2-displaying-product-information-in-a-gridview"></a>步驟 2：在 GridView 中顯示產品資訊
 
 我們實際實作分頁和排序功能之前，讓第一次建立標準的非可排序、 不可分頁 GridView，列出產品資訊。 這是工作我們完成之前多次在此教學課程系列讓這些步驟的 ve 應該很熟悉。 首先開啟`SimplePagingSorting.aspx`頁面上，並將 GridView 控制項從工具箱拖曳至設計工具中，設定其`ID`屬性設`Products`。 接下來，建立新的 ObjectDataSource 使用 ProductsBLL 類別的`GetProducts()`方法傳回的所有產品資訊。
-
 
 ![擷取所有的產品使用 GetProducts() 方法的相關資訊](paging-and-sorting-report-data-cs/_static/image4.png)
 
 **圖 4**:擷取所有的產品使用 GetProducts() 方法的相關資訊
 
-
 因為這是唯讀的報表時，沒有 s 不需要對應的 ObjectDataSource 秒`Insert()`， `Update()`，或`Delete()`方法，以對應`ProductsBLL`方法; 因此，（無） 從清單中選擇下拉式清單的 INSERT、 UPDATE和刪除索引標籤。
-
 
 ![選擇 （無） 選項下拉式清單中更新、 插入和刪除索引標籤](paging-and-sorting-report-data-cs/_static/image5.png)
 
 **圖 5**:選擇 （無） 選項下拉式清單中更新、 插入和刪除索引標籤
 
-
 接下來，讓 s 自訂 GridView 的欄位，以便只有產品名稱、 供應商、 類別、 價格和已停止的狀態會顯示。 此外，隨時進行欄位層級格式變更時，例如調整`HeaderText`內容] 或 [格式化為貨幣的價格。 這些變更之後，請 GridView s 的宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](paging-and-sorting-report-data-cs/samples/sample2.aspx)]
 
 圖 6 顯示我們進行到目前為止透過瀏覽器檢視時。 請注意，頁面會列出所有在一個畫面中，顯示每個產品的名稱、 類別、 供應商、 價格、 產品已停止的狀態。
 
-
 [![每個產品詳列](paging-and-sorting-report-data-cs/_static/image7.png)](paging-and-sorting-report-data-cs/_static/image6.png)
 
 **圖 6**:每個產品詳列 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-cs/_static/image8.png))
-
 
 ## <a name="step-3-adding-paging-support"></a>步驟 3：新增分頁支援
 
 列出*所有*在某個畫面上的產品可能會導致使用者瀏覽資料的資訊負荷過重。 為了讓結果更容易管理，我們可以分割成較小的頁面資料的資料，並允許使用者在一頁資料透過一次。 若要完成，這只是檢查啟用分頁 核取方塊的 GridView s 智慧標籤 (這會將 GridView s [ `AllowPaging`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.allowpaging.aspx)至`true`)。
 
-
 [![請檢查啟用分頁核取方塊，以新增分頁支援](paging-and-sorting-report-data-cs/_static/image10.png)](paging-and-sorting-report-data-cs/_static/image9.png)
 
 **圖 7**:核取方塊啟用分頁的分頁支援 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-cs/_static/image11.png))
-
 
 啟用分頁限制每頁顯示的記錄數目，並將*分頁介面*至 GridView。 [圖 7] 所示的預設分頁介面是一連串的頁面數字，讓使用者能夠從一頁資料快速巡覽至另一個。 此分頁介面應該看起來很熟悉，因為我們已見識過它時在過去的教學課程中，新增 DetailsView 和 FormView 控制項的分頁支援。
 
@@ -124,11 +107,9 @@ ms.locfileid: "59420688"
 
 可讓 s 花一點時間來改善我們的 GridView 的分頁介面的預設外觀。 具體來說，可讓 s 靠右對齊，淺灰色背景分頁介面。 而不是設定這些屬性直接透過 GridView s`PagerStyle`屬性，建立可讓 s 中的 CSS 類別`Styles.css`名為`PagerRowStyle`，然後指派`PagerStyle`s`CssClass`透過我們的佈景主題的屬性。 首先開啟`Styles.css`並新增下列 CSS 類別定義：
 
-
 [!code-css[Main](paging-and-sorting-report-data-cs/samples/sample3.css)]
 
 接下來，開啟`GridView.skin`檔案中`DataWebControls`資料夾內`App_Themes`資料夾。 如我們所述*主版頁面與網站導覽*教學課程，面板檔案可以用來指定網頁控制項的預設屬性值。 因此，增強現有的設定，以包含設定`PagerStyle`s`CssClass`屬性設`PagerRowStyle`。 此外，可讓 s 設定分頁介面，以顯示最多五個數值的頁面按鈕使用`NumericFirstLast`分頁介面。
-
 
 [!code-aspx[Main](paging-and-sorting-report-data-cs/samples/sample4.aspx)]
 
@@ -136,19 +117,15 @@ ms.locfileid: "59420688"
 
 圖 8 顯示當 GridView s 啟用分頁 核取方塊已核取之後，透過瀏覽器瀏覽的網頁和`PagerStyle`並`PagerSettings`設定已透過`GridView.skin`檔案。 請注意如何唯一的十個記錄會顯示，且分頁介面表示我們正在檢視資料的第一頁。
 
-
 [![使用已啟用分頁，一次顯示記錄的子集](paging-and-sorting-report-data-cs/_static/image13.png)](paging-and-sorting-report-data-cs/_static/image12.png)
 
 **圖 8**:使用已啟用分頁，一次顯示記錄的子集 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-cs/_static/image14.png))
 
-
 當使用者按一下其中一個頁面中的數字的分頁介面上時，回傳是兩邊彼此乾瞪眼，頁面會重新載入要求的頁面的記錄的顯示。 選擇要檢視資料的最後一頁之後，[圖 9] 顯示結果。 請注意，最後一頁只會有一筆記錄;這是因為有 81 記錄總數，導致 含有單一記錄在每個頁面，再加上一頁的 10 筆記錄的八個頁面。
-
 
 [![按一下頁碼造成回傳，並顯示適當的記錄的子集](paging-and-sorting-report-data-cs/_static/image16.png)](paging-and-sorting-report-data-cs/_static/image15.png)
 
 **圖 9**:按一下頁碼造成回傳，並顯示適當的資料錄子集 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-cs/_static/image17.png))
-
 
 ## <a name="paging-s-server-side-workflow"></a>工作流程-s 伺服器端分頁
 
@@ -165,7 +142,6 @@ ms.locfileid: "59420688"
 > [!NOTE]
 > 雖然有許多同時使用者透過夠大的結果集或網站翻頁時，預設的分頁功能不適合，了解自訂分頁需要更多的變更和精力來實作，並不簡單，只要選取核取方塊，（因為是預設值分頁）。 因此，預設的分頁功能可能是小型、 低流量網站或相當小的結果進行分頁的設定時，因為它的理想選擇 s 更容易、 更快速地實作。
 
-
 比方說，如果我們知道，我們會在資料庫中，永遠不會有 100 個以上的產品，藉由自訂分頁的最小的效能改善的實作所需的心力可能位移。 如果，不過，我們可能一天有數千或數以萬計的產品*不*實作自訂的分頁會大幅會拖累我們的應用程式的延展性。
 
 ## <a name="step-4-customizing-the-paging-experience"></a>步驟 4：自訂分頁體驗
@@ -174,23 +150,19 @@ ms.locfileid: "59420688"
 
 首先，將 Label Web 控制項新增至您的頁面，設定其`ID`屬性，以`PagingInformation`，並清除其`Text`屬性。 接下來，建立事件處理常式 GridView s`DataBound`事件，並新增下列程式碼：
 
-
 [!code-csharp[Main](paging-and-sorting-report-data-cs/samples/sample5.cs)]
 
 這個事件處理常式指派`PagingInformation`標籤 s`Text`訊息，通知使用者頁面目前瀏覽屬性`Products.PageIndex + 1`多少的總頁數超出`Products.PageCount`(我們將新增 1 至`Products.PageIndex`屬性因為`PageIndex`編製索引從 0 開始)。 我選擇指派此標籤 s`Text`中的屬性`DataBound`事件處理常式，而不是`PageIndexChanged`事件處理常式因為`DataBound`事件引發時，每次資料繫結至 GridView 而`PageIndexChanged`只有事件處理常式頁面索引變更時引發。 當 GridView 一開始會繫結的第一頁上的資料瀏覽`PageIndexChanging`事件不 t 引發 (而`DataBound`事件沒有)。
 
 此步驟中，使用者現在會顯示一則訊息指出他們造訪哪些頁面而的資料有多少的總頁數。
 
-
 [![會顯示目前的頁碼和總頁數](paging-and-sorting-report-data-cs/_static/image19.png)](paging-and-sorting-report-data-cs/_static/image18.png)
 
 **圖 10**:會顯示目前的頁碼和總頁數 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-cs/_static/image20.png))
 
-
 除了標籤控制項，可讓 s 也新增 DropDownList 控制項，與目前所檢視的頁面，選取列出的 GridView 內的頁碼。 這意思是，使用者可以快速跳從目前的頁面之間只需從 DropDownList 中選取新的頁面索引。 開始將 dropdownlist 進行加入至設計工具中，設定其`ID`屬性設`PageList`並檢查它的智慧標籤的 啟用 AutoPostBack 選項。
 
 接下來，回到`DataBound`事件處理常式，並新增下列程式碼：
-
 
 [!code-csharp[Main](paging-and-sorting-report-data-cs/samples/sample6.cs)]
 
@@ -200,16 +172,13 @@ ms.locfileid: "59420688"
 
 最後，我們需要建立事件處理常式 DropDownList s`SelectedIndexChanged`引發的事件，每當使用者選擇不同的項目，從清單中。 若要建立這個事件處理常式，只要按兩下 DropDownList 在設計師中，然後新增下列程式碼：
 
-
 [!code-csharp[Main](paging-and-sorting-report-data-cs/samples/sample7.cs)]
 
 如 [圖 11] 所示，只要變更的 GridView s`PageIndex`屬性會導致資料重新繫結至 GridView。 在 GridView`DataBound`事件處理常式中，適當的 DropDownList`ListItem`已選取。
 
-
 [![使用者會自動前往第六個頁面時選取的頁面 6 下拉式清單項目](paging-and-sorting-report-data-cs/_static/image22.png)](paging-and-sorting-report-data-cs/_static/image21.png)
 
 **圖 11**:使用者會自動前往第六個頁面時選取的頁面 6 下拉式清單項目 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-cs/_static/image23.png))
-
 
 ## <a name="step-5-adding-bi-directional-sorting-support"></a>步驟 5：加入排序的雙向支援
 
@@ -218,11 +187,9 @@ ms.locfileid: "59420688"
 > [!NOTE]
 > 如果您使用自訂的資料存取層，而不是具類型資料集，您不能啟用排序選項中的 GridView s 智慧標籤。 繫結至原生支援 排序的資料來源的 Gridview 有可以使用此核取方塊。 輸入資料集提供的立即可用的排序支援，因為提供 ADO.NET DataTable`Sort`方法，叫用時，排序 s 使用指定之準則的 Datarow 的 DataTable。
 
-
 如果您的 DAL 未傳回 dal 的原生支援可讓您排序您要設定將排序的資訊傳遞至商業邏輯層，可以排序資料或有資料 ObjectDataSource 排序的物件。 我們將探討如何在未來的教學課程中排序資料，商務邏輯和資料存取層級。
 
 排序的 Linkbutton 會轉譯為 HTML 超連結，其目前的色彩 （藍色的未瀏覽的連結，然後瀏覽連結為深紅色） 衝突與標頭資料列的背景色彩。 相反地，可讓 s 具有白色的不論是否在顯示的所有標頭資料列連結它們 ve 已瀏覽與否。 這可藉由將下列內容加入`Styles.css`類別：
-
 
 [!code-css[Main](paging-and-sorting-report-data-cs/samples/sample8.css)]
 
@@ -230,11 +197,9 @@ ms.locfileid: "59420688"
 
 在此 CSS 新增功能之後, 造訪透過瀏覽器頁面時您的畫面看起來應該類似 圖 12。 價格欄位標頭連結已按下之後，特別是，圖 12 顯示結果。
 
-
 [![以遞增順序 UnitPrice 已經排序結果](paging-and-sorting-report-data-cs/_static/image25.png)](paging-and-sorting-report-data-cs/_static/image24.png)
 
 **圖 12**:結果已經排序以遞增順序 UnitPrice ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-cs/_static/image26.png))
-
 
 ## <a name="examining-the-sorting-workflow"></a>檢查 排序的工作流程
 
@@ -250,24 +215,19 @@ ms.locfileid: "59420688"
 
 每個 GridView 欄位繫結時 ObjectDataSource 至 GridView 透過下拉式清單中的 GridView s 智慧標籤，自動擁有其`SortExpression`屬性中的資料欄位的名稱指派`ProductsRow`類別。 例如， `ProductName` BoundField s`SortExpression`設定為`ProductName`，如下列宣告式標記中所示：
 
-
 [!code-aspx[Main](paging-and-sorting-report-data-cs/samples/sample9.aspx)]
 
 您可以設定欄位，讓它 s 不可排序清除其`SortExpression`（將它指派給空字串） 的屬性。 為了說明這一點，假設我們不想讓我們依價格排序產品的客戶。 `UnitPrice` BoundField 的`SortExpression`從宣告式標記，或是透過 [欄位] 對話方塊中 （也就是可存取上的 GridView s 智慧標籤中的 [編輯資料行] 連結即可），就可以移除屬性。
-
 
 ![以遞增順序 UnitPrice 已經排序結果](paging-and-sorting-report-data-cs/_static/image27.png)
 
 **圖 13**:以遞增順序 UnitPrice 已經排序結果
 
-
 一次`SortExpression`屬性已移除`UnitPrice`BoundField 頁首會轉譯為文字而不是連結，藉此防止使用者排序資料的價格。
-
 
 [![藉由移除 SortExpression 屬性，使用者可以不會再排序依價格的產品](paging-and-sorting-report-data-cs/_static/image29.png)](paging-and-sorting-report-data-cs/_static/image28.png)
 
 **圖 14**:藉由移除 SortExpression 屬性，使用者可以不會再排序產品的價格 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-cs/_static/image30.png))
-
 
 ## <a name="programmatically-sorting-the-gridview"></a>以程式設計的方式排序 GridView
 
@@ -277,16 +237,13 @@ ms.locfileid: "59420688"
 
 若要完成這 Button Web 控制項加入頁面上，設定其`ID`屬性，以`SortPriceDescending`，並將其`Text`價格依排序的屬性。 接下來，建立 s 按鈕的 事件處理常式`Click`按兩下按鈕控制項設計工具中的事件。 這個事件處理常式中加入下列程式碼：
 
-
 [!code-csharp[Main](paging-and-sorting-report-data-cs/samples/sample10.cs)]
 
 按一下此按鈕會傳回使用者第一頁從耗費最多的資源成本最低 （請參閱 圖 15） 的價格，依排序的產品。
 
-
 [![按一下按鈕排序的產品成本最高到最低](paging-and-sorting-report-data-cs/_static/image32.png)](paging-and-sorting-report-data-cs/_static/image31.png)
 
 **圖 15**:按一下按鈕排序產品從成本最高到最低 ([按一下以檢視完整大小的影像](paging-and-sorting-report-data-cs/_static/image33.png))
-
 
 ## <a name="summary"></a>總結
 

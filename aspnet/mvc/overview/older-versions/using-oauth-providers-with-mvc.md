@@ -8,12 +8,12 @@ ms.date: 06/19/2013
 ms.assetid: 7a87f16f-0e19-4f15-a88a-094ae866c4a2
 msc.legacyurl: /mvc/overview/older-versions/using-oauth-providers-with-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: c2fe74c3d7b1aa0d230f1893f6ba7dcaa7a88419
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 5dfd1305376a62f4987caea242ca0f6aac1018e9
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396976"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65129640"
 ---
 # <a name="using-oauth-providers-with-mvc-4"></a>使用 OAuth 提供者與 MVC 4
 
@@ -24,7 +24,6 @@ ms.locfileid: "59396976"
 > 若要使用 ASP.NET MVC 5 web 應用程式中的外部認證，請參閱[建立 ASP.NET MVC 5 應用程式使用 Facebook 和 Google OAuth2 和 OpenID 登入](../security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)。
 > 
 > 啟用您的網站中的這些認證提供極大的好處，因為數百萬位使用者已將這些外部提供者的帳戶。 這些使用者可能會更有必要，如果它們不需要建立並記住一組新的認證，登入您的網站。 此外，使用者已透過其中一個提供者登入之後，您可以將社交提供者的作業。
-
 
 ## <a name="what-youll-build"></a>您將建置
 

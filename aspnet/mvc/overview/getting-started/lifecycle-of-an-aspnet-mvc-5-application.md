@@ -8,12 +8,12 @@ ms.date: 02/28/2014
 ms.assetid: 9c1e3a75-b644-4480-8326-11300b1ec4b3
 msc.legacyurl: /mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application
 msc.type: authoredcontent
-ms.openlocfilehash: 952d13fec206bdb8d398cead70d10335731f583d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: f4a9b3fb61552b070db11fba617b5627fcd71cd5
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402215"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65124088"
 ---
 # <a name="lifecycle-of-an-aspnet-mvc-5-application"></a>ASP.NET MVC 5 應用程式生命週期
 
@@ -31,7 +31,6 @@ ms.locfileid: "59402215"
 - 位置與用途上的所有可覆寫方法[控制器](https://msdn.microsoft.com/library/system.web.mvc.controller.aspx)要求處理管線中的物件。 您可能會或可能沒有需要覆寫任何一種方法，但務必了解在應用程式生命週期中的角色，以便您可以撰寫程式碼，在適當的生命週期階段，您想要的效果。
 - 震撼人心向上圖表，顯示每個篩選器類型 （驗證、 授權、 動作和結果） 叫用方式。
 - 從 詳細資料檢視中的每個點，以連結至篇實用的文章或部落格。
-
 
 ## <a name="next-steps"></a>後續步驟
 

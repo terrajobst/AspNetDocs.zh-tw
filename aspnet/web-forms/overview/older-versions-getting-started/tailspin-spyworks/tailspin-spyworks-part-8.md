@@ -8,12 +8,12 @@ ms.date: 07/21/2010
 ms.assetid: 5aeadf8f-39f3-4f07-a78f-1c310c64fb23
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: db8db4e3bff8047b48a7528b5146873ab6d84714
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 707dc9d87ae324a7897c971a451e40bc54c96cb3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59398679"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130596"
 ---
 # <a name="part-8-final-pages-exception-handling-and-conclusion"></a>第 8 部分：最後的頁面、例外狀況處理和結論
 
@@ -22,7 +22,6 @@ ms.locfileid: "59398679"
 > Tailspin Spyworks 示範建立功能強大、 可擴充的應用程式，適用於.NET 平台是如何富含簡單。 它會展示如何在 ASP.NET 4 中使用最棒的新功能，建置線上商店，包括購物、 簽出，以及系統管理。
 > 
 > 本教學課程系列會詳細說明所有建置 Tailspin Spyworks 範例應用程式所採取的步驟。 第 8 節將連絡頁面，頁面上和例外狀況處理相關。 這是系列的結論。
-
 
 ## <a id="_Toc260221680"></a>  連絡人 頁面 （從 ASP.NET 傳送電子郵件）
 

@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: ec61ced7-bbca-4bdd-aa3b-80878f295181
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-entries-with-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6e685d599e3dbc095631e3c28a603ac9c38f799c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b943569f0f10d7f680954e100297973255aab51e
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59385887"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65128756"
 ---
 # <a name="presetting-list-entries-with-cascadingdropdown-vb"></a>使用 CascadingDropDown 預設清單項目 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59385887"
 [下載程式碼](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown2.vb.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/CascadingDropDown2VB.pdf)
 
 > 在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。 加上一些程式碼就可以，以動態方式載入資料之後，已預先選取的清單項目。
-
 
 ## <a name="overview"></a>總覽
 
@@ -51,7 +50,6 @@ CascadingDropDown extender 接著會以非同步方式呼叫 web 服務的下列
 [!code-aspx[Main](presetting-list-entries-with-cascadingdropdown-vb/samples/sample5.aspx)]
 
 載入瀏覽器頁面，將會填滿下拉式清單中的，使用三個廠商，第二個要預先選取。
-
 
 [![清單會填滿，且預設會自動選取](presetting-list-entries-with-cascadingdropdown-vb/_static/image2.png)](presetting-list-entries-with-cascadingdropdown-vb/_static/image1.png)
 

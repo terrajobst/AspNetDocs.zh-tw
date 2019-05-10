@@ -8,12 +8,12 @@ ms.date: 11/28/2017
 ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 5e3c049ba4349301c3c2d173d4311b3d0883bf68
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 3e35c2bc0e46dfdb4544b772775eddd533f27be3
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401740"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65125230"
 ---
 # <a name="get-started-with-aspnet-web-api-2-c"></a>開始使用 ASP.NET Web API 2 (C#)
 
@@ -52,7 +52,6 @@ ASP.NET Web API 是用於建置 web Api 在.NET framework 的架構。
 
 > [!NOTE]
 > 您也可以建立使用 Web API 專案&quot;Web API&quot;範本。 Web API 範本會使用 ASP.NET MVC 提供 API 說明頁面。 我正在使用空白範本本教學課程中，因為我想要顯示沒有 MVC 的 Web API。 一般情況下，您不需要知道要使用 Web API 的 ASP.NET MVC。
-
 
 ## <a name="adding-a-model"></a>新增模型
 
@@ -93,7 +92,6 @@ Scaffolding 會建立名為 ProductsController.cs 在 Controllers 資料夾中�
 
 > [!NOTE]
 > 您不需要將您的控制站放入名為控制器的資料夾。 資料夾名稱只是便利方式來組織您的原始程式檔。
-
 
 如果此檔案尚未開啟，按兩下檔案以開啟它。 您可以將此檔案中的程式碼取代為下列：
 

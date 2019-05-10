@@ -8,12 +8,12 @@ ms.date: 05/21/2008
 ms.assetid: 866a7177-6884-451e-88f4-c934b1dd1af5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/multiple-contentplaceholders-and-default-content-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 488988bbf540cc809579a5ad5f80cb772ed6b1bf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 02d94c340f79299beae77531e87f5c0d65902720
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59408364"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126896"
 ---
 # <a name="multiple-contentplaceholders-and-default-content-vb"></a>多個 ContentPlaceHolder 與預設內容 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59408364"
 [下載程式碼](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_02_VB.zip)或[下載 PDF](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_02_VB.pdf)
 
 > 將探討如何將多個內容中的預留位置新增至主版頁面，以及如何指定內容預留位置的預設內容。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -36,19 +35,15 @@ ms.locfileid: "59408364"
 
 [圖 1] 顯示`Default.aspx`透過瀏覽器檢視時。 以紅色圈起的區域是對應至特定頁面的標記`MainContent`。
 
-
 [![圈選的區域顯示的區域目前可自訂的頁面為基礎](multiple-contentplaceholders-and-default-content-vb/_static/image2.png)](multiple-contentplaceholders-and-default-content-vb/_static/image1.png)
 
 **圖 01**:圓框區域顯示區域目前可自訂的頁面為基礎 ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image3.png))
 
-
 想像一下，除了 [圖 1] 所示的區域，我們也需要將頁面特定的項目新增至下方的課程和新聞的左資料行區段。 若要這麼做，我們將另一個 ContentPlaceHolder 控制項加入主版頁面。 若要跟著做，請開啟`Site.master`主版頁面，在 Visual Web Developer 中，然後將 ContentPlaceHolder 控制項從工具箱拖曳至設計工具 [新聞] 區段之後。 設定 ContentPlaceHolder`ID`至`LeftColumnContent`。
-
 
 [![ContentPlaceHolder 控制項加入主版頁面的左側資料行](multiple-contentplaceholders-and-default-content-vb/_static/image5.png)](multiple-contentplaceholders-and-default-content-vb/_static/image4.png)
 
 **圖 02**:ContentPlaceHolder 控制項加入主版頁面的左側資料行 ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image6.png))
-
 
 加上`LeftColumnContent`ContentPlaceHolder 主版頁面，我們可以定義此區域的內容頁的頁面為基礎所包含的內容控制項中頁面`ContentPlaceHolderID`設定為`LeftColumnContent`。 我們會探討此程序的步驟 2。
 
@@ -66,11 +61,9 @@ ms.locfileid: "59408364"
 
 之後新增此標記，請瀏覽透過瀏覽器頁面。 如 [圖 3] 所示，標記放在`Content3`（以紅色圈起） 的 [新聞] 區段下方的左側資料行中顯示內容的控制項。 標記置於`Content2`隨即出現 （藍色圓框） 的頁面部分。
 
-
 [![左側的資料行現在會包含 [新聞] 區段下方的頁面特定內容](multiple-contentplaceholders-and-default-content-vb/_static/image8.png)](multiple-contentplaceholders-and-default-content-vb/_static/image7.png)
 
-**[圖 03**:左邊資料行現在包含頁面特定內容下方新聞] 區段 ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image9.png))
-
+**圖 03**:左邊資料行現在包含頁面特定內容下方新聞 區段 ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image9.png))
 
 ### <a name="defining-content-in-existing-content-pages"></a>現有的內容頁中定義的內容
 
@@ -80,11 +73,9 @@ ms.locfileid: "59408364"
 
 若要加入內容控制項用於`LeftColumnContent`ContentPlaceHolder 至`About.aspx`、 展開 ContentPlaceHolder 的智慧標籤，然後按一下 建立自訂內容的連結。
 
-
 [![About.aspx 的網頁的 [設計] 檢視顯示 LeftColumnContent ContentPlaceHolder](multiple-contentplaceholders-and-default-content-vb/_static/image11.png)](multiple-contentplaceholders-and-default-content-vb/_static/image10.png)
 
 **圖 04**:[設計] 檢視，如`About.aspx`會顯示`LeftColumnContent`ContentPlaceHolder ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image12.png))
-
 
 按一下 建立自訂內容的連結會產生所需之內容控制項中的頁面並將設定其`ContentPlaceHolderID`ContentPlaceHolder 屬性`ID`。 例如，按一下 建立自訂內容連結以獲得`LeftColumnContent`區域中的`About.aspx`將下列宣告式標記加入網頁：
 
@@ -96,11 +87,9 @@ ASP.NET 不需要所有的內容頁面，包含的主版頁面中定義的每個
 
 目前，`Default.aspx`包含兩個內容控制項`head`並`MainContent`ContentPlaceHolders; 它不需要的內容控制項`LeftColumnContent`。 因此，當`Default.aspx`呈現`LeftColumnContent`用 ContentPlaceHolder 的預設內容。 因為我們尚未為這個 ContentPlaceHolder 定義任何預設內容中，最後的結果是，不需要標記，就會發出此區域。 若要確認這種行為，請瀏覽`Default.aspx`透過瀏覽器。 如 [圖 5] 所示，就會不發出任何標記 [新聞] 區段下方的左側資料行中。
 
-
 [![LeftColumnContent ContentPlaceHolder 呈現沒有內容](multiple-contentplaceholders-and-default-content-vb/_static/image14.png)](multiple-contentplaceholders-and-default-content-vb/_static/image13.png)
 
 **圖 05**:沒有內容呈現`LeftColumnContent`ContentPlaceHolder ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image15.png))
-
 
 ## <a name="step-3-specifying-default-content-in-the-master-page"></a>步驟 3：在 主版頁面中指定預設的內容
 
@@ -113,7 +102,6 @@ ASP.NET 不需要所有的內容頁面，包含的主版頁面中定義的每個
 > [!NOTE]
 > 本教學課程的其餘部分會更新我們的網站所有頁面，但登入頁面的左側資料行中包含登入介面。 不過，本教學課程不會檢查如何設定網站，以支援使用者帳戶。 如需有關本主題的詳細資訊，請參閱我[表單驗證、 授權、 使用者帳戶和角色](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)教學課程。
 
-
 ### <a name="adding-a-contentplaceholder-and-specifying-its-default-content"></a>新增 ContentPlaceHolder 並指定其預設內容
 
 開啟`Site.master`主版頁面，並將下列標記新增至左側的資料行之間`DateDisplay`標籤和課程區段：
@@ -122,11 +110,9 @@ ASP.NET 不需要所有的內容頁面，包含的主版頁面中定義的每個
 
 新增此標記之後主版頁面的 設計 檢視看起來應該類似於 圖 6。
 
-
 [![主版頁面包含登入控制項](multiple-contentplaceholders-and-default-content-vb/_static/image17.png)](multiple-contentplaceholders-and-default-content-vb/_static/image16.png)
 
 **圖 06**:主版頁面包含登入控制項 ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image18.png))
-
 
 此 ContentPlaceHolder， `QuickLoginUI`，已登入 Web 控制項做為其預設內容。 Login 控制項顯示使用者介面會提示使用者輸入其使用者名稱和密碼，以及登入 按鈕。 按一下 [登入] 按鈕，登入控制項在內部驗證使用者的認證，針對成員資格 API。 若要使用此登入控制項，在實務上，然後，您要設定您的站台使用成員資格。 本主題已超出本教學課程; 的範圍請參閱我[表單驗證、 授權、 使用者帳戶和角色](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)如需有關建置支援使用者帳戶的 web 應用程式的教學課程。
 
@@ -144,11 +130,9 @@ ASP.NET 不需要所有的內容頁面，包含的主版頁面中定義的每個
 
 圖 7 顯示此頁面上，當透過瀏覽器檢視。 因為此頁面指定的內容控制項`QuickLoginUI`ContentPlaceHolder，它會覆寫主版頁面中指定的預設內容。 結果是在主版頁面的設計檢視 （請參閱 圖 6） 則不會呈現此頁面中顯示登入控制項。
 
-
 [![登入頁面 Represses QuickLoginUI ContentPlaceHolder 的預設內容](multiple-contentplaceholders-and-default-content-vb/_static/image20.png)](multiple-contentplaceholders-and-default-content-vb/_static/image19.png)
 
 **圖 07**:登入頁面 Represses `QuickLoginUI` ContentPlaceHolder 的預設內容 ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image21.png))
-
 
 ### <a name="using-the-default-content-in-new-pages"></a>在 新頁面中使用的預設內容
 
@@ -160,11 +144,9 @@ ASP.NET 不需要所有的內容頁面，包含的主版頁面中定義的每個
 
 [圖 8] 顯示`Default.aspx`透過瀏覽器檢視時。 請記得，`Default.aspx`只有在其宣告式標記-一個用於指定的兩個內容控制項`head`，另一個用於`MainContent`。 如此一來，預設的內容`LeftColumnContent`和`QuickLoginUI`ContentPlaceHolders 會顯示。
 
-
 [![會顯示預設內容 LeftColumnContent 和 QuickLoginUI ContentPlaceHolders](multiple-contentplaceholders-and-default-content-vb/_static/image23.png)](multiple-contentplaceholders-and-default-content-vb/_static/image22.png)
 
 **圖 08**:預設內容`LeftColumnContent`並`QuickLoginUI`ContentPlaceHolders 顯示 ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image24.png))
-
 
 ## <a name="summary"></a>總結
 

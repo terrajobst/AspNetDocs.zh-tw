@@ -8,12 +8,12 @@ ms.date: 02/20/2007
 ms.assetid: a526f0ec-779e-4a2b-a476-6604090d25ce
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/inserting-updating-and-deleting-data-with-the-sqldatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8a1f0f929e2e2ee01a4567cb502e5fd908d8c90b
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 43b16a8de51a3a67ea87f5d2a1e53b8f655c8f26
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402787"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65132440"
 ---
 # <a name="inserting-updating-and-deleting-data-with-the-sqldatasource-c"></a>使用 SqlDataSource 插入、更新和刪除資料 (C#)
 
@@ -23,7 +23,6 @@ ms.locfileid: "59402787"
 
 > 在先前的教學課程中我們了解如何將 ObjectDataSource 控制項允許插入、 更新和刪除的資料。 SqlDataSource 控制項支援相同的作業，方法是不同，但本教學課程示範如何設定 SqlDataSource 插入、 更新和刪除資料。
 
-
 ## <a name="introduction"></a>簡介
 
 中所述[概觀的插入、 更新和刪除](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md)、 GridView 控制項提供內建的更新和刪除功能，雖然 DetailsView 和 FormView 控制項包含插入支援連同編輯和刪除功能。 這些資料修改功能直接插入資料來源控制項，而不需要撰寫的程式碼行。 [概觀的插入、 更新和刪除](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md)檢查使用 ObjectDataSource 促進插入、 更新和刪除與 GridView、 DetailsView 和 FormView 控制項。 或者，SqlDataSource 可用以取代 ObjectDataSource。
@@ -32,7 +31,6 @@ ms.locfileid: "59402787"
 
 > [!NOTE]
 > 因為我們已討論過插入、 編輯和刪除功能的 GridView、 DetailsView 和 FormView 控制項，此教學課程著重於設定 SqlDataSource 控制項，以支援這些作業。 如果您需要實作 GridView、 DetailsView 和 FormView，回復成編輯、 插入，並刪除資料的教學課程中的這些功能是重溫一下，開頭[概觀的插入、 更新和刪除](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md)。
-
 
 ## <a name="step-1-specifyinginsertupdate-anddeletestatements"></a>步驟 1：指定`INSERT`，`UPDATE`，和`DELETE`陳述式
 
@@ -49,11 +47,9 @@ ms.locfileid: "59402787"
 
 首先開啟`InsertUpdateDelete.aspx`並`Querying.aspx`頁從`SqlDataSource`資料夾。 從設計工具上`Querying.aspx`頁面上，選取 從第一個範例中的 SqlDataSource 和 GridView (`ProductsDataSource`和`GridView1`控制項)。 選取兩個控制項之後, 請移至 [編輯] 功能表並選擇 [複製] （或只按 Ctrl + C）。 接下來，移至設計工具的`InsertUpdateDelete.aspx`並貼上的控制項中。 您已經移動兩個控制項，若要之後`InsertUpdateDelete.aspx`，測試的瀏覽器頁面。 您應該會看到的值`ProductID`， `ProductName`，並`UnitPrice`資料行中的記錄之所有`Products`資料庫資料表。
 
-
 [![所有的產品未列出，請依 ProductID](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image1.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image1.png)
 
 **圖 1**:所有的產品未列出，請按照`ProductID`([按一下以檢視完整大小的影像](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image2.png))
-
 
 ## <a name="adding-the-sqldatasource-sdeletecommandanddeleteparametersproperties"></a>新增 SqlDataSource s`DeleteCommand`和`DeleteParameters`屬性
 
@@ -70,15 +66,12 @@ ms.locfileid: "59402787"
 
 在設計工具`InsertUpdateDelete.aspx`，按一下`ProductsDataSource`SqlDataSource 然後開啟 [屬性] 視窗 （從 [檢視] 功能表中，選擇 [屬性] 視窗中，或只要點按 F4）。 選取 DeleteQuery 屬性，這會顯示一組的省略符號。
 
-
 ![從 [屬性] 視窗中選取 DeleteQuery 屬性](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image2.gif)
 
 **圖 2**:從 屬性 視窗中選取 DeleteQuery 屬性
 
-
 > [!NOTE]
 > SqlDataSource 不 t 具有 DeleteQuery 屬性。 DeleteQuery 反而是組成`DeleteCommand`和`DeleteParameters`屬性和時才會列出在 [屬性] 視窗中檢視透過設計工具視窗。 如果您正在查看來源檢視中的 [屬性] 視窗，您會發現`DeleteCommand`屬性改為。
-
 
 按一下省略符號，以顯示命令及參數編輯器對話方塊的 DeleteQuery 屬性方塊 （請參閱 圖 3）。 您可以從這個對話方塊中指定`DELETE`SQL 陳述式指定的參數。 輸入下列查詢`DELETE`命令 文字方塊 (可能是以手動方式或使用查詢產生器中，如果您偏好):
 
@@ -86,17 +79,14 @@ ms.locfileid: "59402787"
 
 接下來，按一下 [重新整理參數] 按鈕以新增`@ProductID`參數，以下列參數的清單。
 
-
 [![從 [屬性] 視窗中選取 DeleteQuery 屬性](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image3.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image3.png)
 
 **圖 3**:從 [屬性] 視窗中選取 DeleteQuery 屬性 ([按一下以檢視完整大小的影像](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image4.png))
-
 
 請勿*不*提供此參數 （將保留在無來源的參數） 的值。 一旦我們將刪除支援新增至 GridView，GridView 會自動提供這個參數值，使用的值及其`DataKeys`按下的 [刪除] 按鈕的資料列的集合。
 
 > [!NOTE]
 > 中使用的參數名稱`DELETE`查詢*必須*的名稱與相同`DataKeyNames`GridView、 DetailsView 或 FormView 中的值。 也就是中的參數`DELETE`稱為特意不到陳述式`@ProductID`(而不是，說`@ID`)，因為 [產品] 資料表 （以及在 gridview 裡的 DataKeyNames 值） 中的主索引鍵資料行名稱是`ProductID`。
-
 
 如果參數名稱和`DataKeyNames`值不 t 相符項目，GridView 無法自動將參數值從`DataKeys`集合。
 
@@ -110,25 +100,20 @@ ms.locfileid: "59402787"
 
 使用`DeleteCommand`新增屬性，現在包含 GridView s 智慧標籤的 [啟用刪除] 選項。 請繼續進行，並選取此核取方塊。 中所述[概觀的插入、 更新和刪除](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md)，這會導致將與 CommandField GridView 其`ShowDeleteButton`屬性設定為`true`。 如圖 4 所示，當透過瀏覽器瀏覽網頁時就會包含 刪除 按鈕。 測試出這個頁面刪除某些產品。
 
-
 [![每個 GridView 資料列現在包含 [刪除] 按鈕](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image4.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image5.png)
 
 **圖 4**:每個 GridView 資料列現在包含 [刪除] 按鈕 ([按一下以檢視完整大小的影像](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image6.png))
-
 
 按一下 [刪除] 按鈕，回傳，就會發生指派 GridView`ProductID`參數的值的`DataKeys`集合值的資料列的 [刪除] 按鈕已按下，並叫用 SqlDataSource 的`Delete()`方法。 SqlDataSource 控制項連接至資料庫，然後執行`DELETE`陳述式。 GridView 然後重新繫結與 sqldatasource 取回和顯示目前的產品集 （其中不會再包含只是刪除記錄）。
 
 > [!NOTE]
 > 因為 GridView 會使用其`DataKeys`集合來填入 SqlDataSource 參數，它不可或缺的 s，GridView s`DataKeyNames`屬性設定為資料行構成的主索引鍵，SqlDataSource 的`SelectCommand`傳回這些資料行。 此外，它重要的參數名稱中之 SqlDataSource`DeleteCommand`設為`@ProductID`。 如果`DataKeyNames`未設定屬性或參數名稱不是`@ProductsID`，按一下 [刪除] 按鈕會導致回傳，但不會實際刪除任何記錄。
 
-
 圖 5 以圖形方式描繪此類互動。 回頭[檢查與插入、 更新和刪除事件相關聯](../editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)的插入、 更新及刪除資料 Web 控制項相關聯的事件鏈結的詳細說明的教學課程。
-
 
 ![按一下 [刪除] 按鈕，在 gridview 裡會叫用 SqlDataSource s delete （） 方法](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image5.gif)
 
 **圖 5**:按一下 刪除 按鈕，在 gridview 裡會叫用 SqlDataSource 的`Delete()`方法
-
 
 ## <a name="step-2-automatically-generating-theinsertupdate-anddeletestatements"></a>步驟 2：自動產生`INSERT`，`UPDATE`，和`DELETE`陳述式
 
@@ -136,27 +121,21 @@ ms.locfileid: "59402787"
 
 可讓瀏覽這個自動產生選項的 s。 中的設計工具中加入 DetailsView`InsertUpdateDelete.aspx`並將其`ID`屬性設`ManageProducts`。 接下來，從 DetailsView s 智慧標籤，選擇 建立新的資料來源並建立名為 SqlDataSource `ManageProductsDataSource`。
 
-
 [![建立名為 ManageProductsDataSource 新 SqlDataSource](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image6.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image7.png)
 
 **圖 6**:建立新的 SqlDataSource 具名`ManageProductsDataSource`([按一下以檢視完整大小的影像](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image8.png))
 
-
 從 [設定資料來源精靈] 中，選擇使用`NORTHWINDConnectionString`連接字串，並按一下 [下一步]。 從 [設定 Select 陳述式] 畫面中，將指定的資料行從選取的資料表或檢視表選項按鈕，並挑選`Products`從下拉式清單中的資料表。 選取  `ProductID`， `ProductName`， `UnitPrice`，和`Discontinued`核取方塊清單中的資料行。
-
 
 [![使用 [產品] 資料表，傳回 ProductID、 ProductName、 UnitPrice 和已停止的資料行](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image7.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image9.png)
 
 **圖 7**:使用`Products`資料表中，傳回`ProductID`， `ProductName`， `UnitPrice`，並`Discontinued`資料行 ([按一下以檢視完整大小的影像](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image10.png))
 
-
 若要自動產生`INSERT`， `UPDATE`，並`DELETE`陳述式，根據選取的資料表和資料行，按一下 [進階] 按鈕，並檢查產生`INSERT`， `UPDATE`，和`DELETE`陳述式的核取方塊。
-
 
 ![檢查產生 INSERT、 UPDATE 和 DELETE 陳述式 核取方塊](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image8.gif)
 
 **[圖 8**:檢查產生`INSERT`， `UPDATE`，和`DELETE`陳述式] 核取方塊
-
 
 產生`INSERT`， `UPDATE`，和`DELETE`只能可以核取陳述式的核取方塊，如果選取的資料表有主索引鍵和主索引鍵資料行 （或資料行） 都包含在傳回的資料行清單。 使用開放式並行存取核取方塊，這會成為可選取一次產生`INSERT`， `UPDATE`，並`DELETE`陳述式的核取方塊已核取，將會擴大`WHERE`子句中產生`UPDATE`和`DELETE`陳述式，以提供開放式並行存取控制。 現在，請核取此核取方塊;在下一個教學課程中，我們將檢驗使用 SqlDataSource 控制項的開放式並行存取。
 
@@ -172,17 +151,14 @@ ms.locfileid: "59402787"
 
 瀏覽的頁面在瀏覽器，並注意編輯、 刪除和 DetailsView 中包含的新按鈕。 按一下 [編輯] 按鈕變成編輯模式，它會顯示每個 BoundField DetailsView 其`ReadOnly`屬性設定為`false`（預設值） 做為文字方塊中，及其為核取方塊。
 
-
 [![在 DetailsView s 預設編輯介面](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image9.gif)](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image11.png)
 
 **圖 9**:在 DetailsView s 預設編輯介面 ([按一下以檢視完整大小的影像](inserting-updating-and-deleting-data-with-the-sqldatasource-cs/_static/image12.png))
-
 
 同樣地，您可以刪除目前選取的產品，或將新的產品加入至系統。 由於`InsertCommand`陳述式只能搭配`ProductName`， `UnitPrice`，以及`Discontinued`資料行，其他資料行具有其中一個`NULL`或其資料庫在插入時所指派的預設值。 就像使用 ObjectDataSource，如果`InsertCommand`遺漏資料行不允許任何資料庫資料表`NULL`s 和不要有預設值，就會發生 SQL 錯誤時嘗試執行`INSERT`陳述式。
 
 > [!NOTE]
 > DetailsView s 中的插入和編輯介面沒有任何類型的自訂或驗證。 若要將驗證控制項加入或自訂介面，您需要將 BoundFields TemplateFields。 請參閱[將驗證控制項加入編輯和插入介面](../editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md)並[自訂資料修改介面](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-cs.md)教學課程，如需詳細資訊。
-
 
 此外，請記住，更新和刪除，DetailsView 會使用目前的產品 s`DataKey`值時才存在`DataKeyNames`屬性設定。 如果編輯或刪除似乎沒有作用，請確定`DataKeyNames`屬性設定。
 
@@ -198,7 +174,6 @@ ms.locfileid: "59402787"
 
 > [!NOTE]
 > 當加入的參數沒有對應的欄位，資料中的 Web 控制項時，請記住，必須以某種方式的值指派給這些參數值。 這些值可以是： 硬式編碼中直接`InsertCommand`或`UpdateCommand`; 可來自於某些預先定義的來源 （查詢字串、 工作階段狀態、 Web 控制項頁面上，等等）; 或如我們在先前的教學課程中所見可以以程式設計的方式指派。
-
 
 ## <a name="summary"></a>總結
 

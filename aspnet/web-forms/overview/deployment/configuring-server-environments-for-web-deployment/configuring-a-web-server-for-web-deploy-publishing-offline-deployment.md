@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: ba92788f-9f03-44b1-b6b2-af8413e6a35d
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 66a784430de734c8b1387c950382472ce59d5ccc
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 873eb9e350d5fadb017b20c4b6d2889e0df00091
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422131"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65126012"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a>設定 Web Deploy 發行的網頁伺服器 (離線部署)
 
@@ -30,7 +30,6 @@ ms.locfileid: "59422131"
 > - 使用*離線部署*。 這種方法需要最低的網頁伺服器的設定，但伺服器系統管理員必須手動複製到伺服器上的 web 套件並匯入它透過 IIS 管理員。
 > 
 > 如需有關的主要功能、 優點和這些方法的缺點的詳細資訊，請參閱[選擇 Web 部署的權限方法](choosing-the-right-approach-to-web-deployment.md)。
-
 
 是，如果您的網路基礎結構或安全性限制導致無法遠端部署。 這是最可能的情況下，面對網際網路的生產環境中，web 伺服器所在位置，隔離&#x2014;是實體或透過防火牆和子網路&#x2014;伺服器基礎結構的其餘部分。
 
@@ -59,7 +58,6 @@ ms.locfileid: "59422131"
 > [!NOTE]
 > 如需有關如何將電腦加入網域的詳細資訊，請參閱 <<c0> [ 將電腦加入網域並登入](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)。 如需有關如何設定靜態 IP 位址的詳細資訊，請參閱 <<c0> [ 設定靜態 IP 位址](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)。
 
-
 ## <a name="install-products-and-components"></a>安裝的產品和元件
 
 本節將引導您完成 web 伺服器上安裝必要的產品和元件。 在開始之前，理想的作法就是執行 Windows Update，以確保您的伺服器已完全更新。
@@ -73,7 +71,6 @@ ms.locfileid: "59422131"
 
 > [!NOTE]
 > 本逐步解說說明如何使用 Web Platform Installer 來安裝和設定各種元件。 雖然您不需要使用 Web Platform Installer，它可以簡化安裝程序自動偵測相依性，並確保您一律取得最新的產品版本。 如需詳細資訊，請參閱 < [Microsoft Web Platform Installer 3.0](https://go.microsoft.com/?linkid=9805118)。
-
 
 **若要安裝必要的產品和元件**
 
@@ -180,7 +177,6 @@ ms.locfileid: "59422131"
 > [!NOTE]
 > 如需有關在 IIS 7.5 中的應用程式集區身分識別的詳細資訊，請參閱[應用程式集區識別](https://go.microsoft.com/?linkid=9805123)。
 
-
 **若要設定 IIS 網站的資料夾權限**
 
 1. 在 Windows 檔案總管中，瀏覽至您本機資料夾的位置。
@@ -199,7 +195,6 @@ ms.locfileid: "59422131"
 
 > [!NOTE]
 > 您不需要停止遠端代理程式服務，才能匯入，並以手動方式部署網頁套件。 不過，它是個不錯的做法停止並停用服務，如果您不打算使用它。
-
 
 您可以停止並停用服務，以多種方式使用各種命令列公用程式或 Windows PowerShell cmdlet。 此程序描述直接以 UI 為基礎的方法。
 

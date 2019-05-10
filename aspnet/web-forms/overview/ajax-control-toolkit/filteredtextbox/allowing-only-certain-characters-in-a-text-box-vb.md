@@ -8,12 +8,12 @@ ms.date: 06/02/2008
 ms.assetid: 33af23f1-4016-4740-8fb2-37d1773452cd
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 455d62d97808862f70692c46ae223f47270266f9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 6e0f13140fcafd666a89c27acb829e4e762eff29
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387616"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65127451"
 ---
 # <a name="allowing-only-certain-characters-in-a-text-box-vb"></a>文字方塊中只允許特定字元 (VB)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59387616"
 [下載程式碼](http://download.microsoft.com/download/4/c/2/4c2def7a-0d23-4055-91f9-1f18504167d7/FilteredTextBox0.vb.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/filteredtextbox0VB.pdf)
 
 > ASP.NET 驗證控制項可以確保只有特定字元允許在使用者輸入。 不過這仍不會防止使用者輸入無效的字元，並嘗試送出表單。
-
 
 ## <a name="overview"></a>總覽
 
@@ -54,7 +53,6 @@ ASP.NET AJAX Control Toolkit 包含`FilteredTextBox`擴充文字方塊控制項�
 [!code-aspx[Main](allowing-only-certain-characters-in-a-text-box-vb/samples/sample3.aspx)]
 
 執行頁面並嘗試輸入字母，如果已啟用 JavaScript，它將無法運作;數字，不過會出現在頁面上。 不過請注意，保護`FilteredTextBox`提供不是項目符號的使用期限：如果已啟用 JavaScript，任何資料可能會在文字方塊中輸入，因此您必須使用額外的驗證方法，也就是 ASP。NET 的驗證控制項。
-
 
 [![可能會輸入只有數字](allowing-only-certain-characters-in-a-text-box-vb/_static/image2.png)](allowing-only-certain-characters-in-a-text-box-vb/_static/image1.png)
 

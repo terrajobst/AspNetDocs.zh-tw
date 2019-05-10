@@ -8,12 +8,12 @@ ms.date: 04/01/2008
 ms.assetid: 5346aab1-9974-489f-a065-ae3883b8a350
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d4e8591f3090de8f931ffd8eb1dd0a1138674842
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: b27be9dff132989a37eca7d5ef3af7b0e1aaeb74
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410041"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131295"
 ---
 # <a name="unlocking-and-approving-user-accounts-c"></a>解除鎖定及核准使用者帳戶 (C#)
 
@@ -22,7 +22,6 @@ ms.locfileid: "59410041"
 [下載程式碼](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/CS.14.zip)或[下載 PDF](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/aspnet_tutorial14_UnlockAndApprove_cs.pdf)
 
 > 本教學課程示範如何建置網頁，以供系統管理員管理使用者的鎖定，且已核准狀態。 我們也將了解如何在他們驗證電子郵件地址時，才核准新使用者。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -41,18 +40,15 @@ ms.locfileid: "59410041"
 > [!NOTE]
 > 如果您已下載的程式碼<a id="Tutorial13"> </a> [*復原及變更密碼*](recovering-and-changing-passwords-cs.md)教學課程，您可能已經注意到，`ManageUsers.aspx`頁面已經包含一組"管理 」 的連結和`UserInformation.aspx`頁面會提供介面變更所選的使用者的密碼。 我決定不要複寫這項功能的程式碼，本教學課程與相關聯，因為它由規避 Membership API 和操作直接與 SQL Server 資料庫，若要變更使用者的密碼。 本教學課程會使用從頭開始`UserInformation.aspx`頁面。
 
-
 ### <a name="adding-manage-links-to-theuseraccountsgridview"></a>新增 「 管理 」 連結`UserAccounts`GridView
 
 開啟`ManageUsers.aspx`頁面上，並新增至 HyperLinkField `UserAccounts` GridView。 設定 HyperLinkField `Text` [管理] 的屬性並將其`DataNavigateUrlFields`和`DataNavigateUrlFormatString`屬性，以`UserName`和 「 UserInformation.aspx?user={0}"分別。 這些設定會使所有的超連結顯示文字 「 管理 」，但每個連結會將 $ 中適當設定 HyperLinkField *UserName*成查詢字串的值。
 
 加入之後 HyperLinkField GridView，請花一點時間檢視`ManageUsers.aspx`透過瀏覽器的頁面。 如 [圖 1] 所示，每個 GridView 資料列現在會包含 [管理] 連結。 Bruce 的 「 管理 」 連結指向`UserInformation.aspx?user=Bruce`，而 Dave 的 「 管理 」 連結指向`UserInformation.aspx?user=Dave`。
 
-
 [![HyperLinkField 新增](unlocking-and-approving-user-accounts-cs/_static/image2.png)](unlocking-and-approving-user-accounts-cs/_static/image1.png)
 
 **圖 1**:HyperLinkField 新增每個使用者帳戶的 [管理] 連結 ([按一下以檢視完整大小的影像](unlocking-and-approving-user-accounts-cs/_static/image3.png))
-
 
 我們將建立的使用者介面，並為撰寫程式碼`UserInformation.aspx`頁面目前為止，但第一個讓我們來討論有關如何以程式設計方式變更使用者的鎖定，且已核准狀態。 [ `MembershipUser`類別](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx)具有[ `IsLockedOut` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.islockedout.aspx)並[`IsApproved`屬性](https://msdn.microsoft.com/library/system.web.security.membershipuser.isapproved.aspx)。 `IsLockedOut`屬性是唯讀的。 沒有任何機制來以程式設計方式鎖定使用者;若要解除鎖定使用者，請使用`MembershipUser`類別的[`UnlockUser`方法](https://msdn.microsoft.com/library/system.web.security.membershipuser.unlockuser.aspx)。 `IsApproved`屬性可讀取和寫入。 若要儲存這個屬性的任何變更，我們必須呼叫`Membership`類別的[`UpdateUser`方法](https://msdn.microsoft.com/library/system.web.security.membership.updateuser.aspx)，並傳入已修改`MembershipUser`物件。
 
@@ -71,11 +67,9 @@ ms.locfileid: "59410041"
 
 之後加入這些控制項，在 Visual Studio 中的 [設計] 檢視看起來應該類似於圖 2 螢幕擷取畫面。
 
-
 [![建立 UserInformation.aspx 的使用者介面](unlocking-and-approving-user-accounts-cs/_static/image5.png)](unlocking-and-approving-user-accounts-cs/_static/image4.png)
 
 **圖 2**:建立的使用者介面`UserInformation.aspx`([按一下以檢視完整大小的影像](unlocking-and-approving-user-accounts-cs/_static/image6.png))
-
 
 使用者介面完成後下, 一步是設定`IsApproved`核取方塊和其他控制項根據所選的使用者的資訊。 建立網頁的事件處理常式`Load`事件，並新增下列程式碼：
 
@@ -97,29 +91,23 @@ ms.locfileid: "59410041"
 
 在發生這些事件處理常式，重新瀏覽的頁面和未經核准的使用者。 如 [圖 3] 所示，您應該會看到訊息指出此頁面上使用者的簡短`IsApproved`已成功修改屬性。
 
-
 [![Chris 已經未核准](unlocking-and-approving-user-accounts-cs/_static/image8.png)](unlocking-and-approving-user-accounts-cs/_static/image7.png)
 
 **圖 3**:Chris 已經未核准 ([按一下以檢視完整大小的影像](unlocking-and-approving-user-accounts-cs/_static/image9.png))
 
-
 接下來，登出，然後嘗試使用者身分，登入帳戶是只要未經核准。 使用者未獲得核准，因為它們無法登入。 根據預設，登入控制項可顯示相同的訊息，如果使用者無法登入，不論原因為何。 但在<a id="Tutorial6"> </a> [*驗證使用者認證對成員資格使用者存放區*](../membership/validating-user-credentials-against-the-membership-user-store-cs.md)教學課程中我們探討了增強的登入控制項來顯示更適當的訊息。 如 [圖 4] 所示，Chris 會顯示訊息，說明他無法登入因為他的帳戶尚未核准。
-
 
 [![Chris 無法登入因為 His 帳戶是未核准](unlocking-and-approving-user-accounts-cs/_static/image11.png)](unlocking-and-approving-user-accounts-cs/_static/image10.png)
 
 **圖 4**:Chris 無法登入因為 His 帳戶是未核准 ([按一下以檢視完整大小的影像](unlocking-and-approving-user-accounts-cs/_static/image12.png))
 
-
 若要測試鎖定的功能，請嘗試已核准的使用者身分登入，但使用不正確的密碼。 重複此程序所需的次數之前使用者的帳戶已被鎖定。Login 控制項也已更新以顯示自訂訊息，如果嘗試從鎖定的帳戶登入。 您知道該帳戶已被鎖定之後您會開始看到登入頁面的下列訊息：「 您的帳戶已經鎖定時因為無效的登入嘗試次數過多。 請連絡系統管理員將您的帳戶解除鎖定。 」
 
 返回`ManageUsers.aspx`頁面上，按一下 鎖定使用者的 管理 連結。 如 [圖 5] 所示，您應該會看到中的值`LastLockedOutDateLabel`解除鎖定使用者按鈕應會啟用。 按一下 [解除鎖定使用者] 按鈕，以解除鎖定使用者帳戶。 一旦您已解鎖使用者，他們將能夠再次登入。
 
-
 [![Dave 已被鎖定系統](unlocking-and-approving-user-accounts-cs/_static/image14.png)](unlocking-and-approving-user-accounts-cs/_static/image13.png)
 
 **圖 5**:Dave 有已鎖定的系統 ([按一下以檢視完整大小的影像](unlocking-and-approving-user-accounts-cs/_static/image15.png))
-
 
 ## <a name="step-2-specifying-new-users-approved-status"></a>步驟 2：指定新使用者的核准狀態
 
@@ -129,7 +117,6 @@ ms.locfileid: "59410041"
 
 > [!NOTE]
 > 預設 CreateUserWizard 控制項自動登入新的使用者帳戶。 此行為取決於控制項的[`LoginCreatedUser`屬性](https://msdn.microsoft.com/en-gb/library/system.web.ui.webcontrols.createuserwizard.logincreateduser.aspx)。 因為未核准的使用者無法登入網站時`DisableCreatedUser`已`true`新的使用者帳戶未登入站台，不論值`LoginCreatedUser`屬性。
-
 
 如果您要以程式設計方式建立新的使用者帳戶，透過`Membership.CreateUser`方法中，建立未經核准的使用者帳戶使用其中一個多載會接受新使用者的`IsApproved`做為輸入參數的屬性值。
 
@@ -148,7 +135,6 @@ ms.locfileid: "59410041"
 > [!NOTE]
 > 若要使用`MailDefinition`中的屬性，您必須指定郵件的傳遞選項`Web.config`。 如需詳細資訊，請參閱[在 ASP.NET 中的 傳送電子郵件](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)。
 
-
 建立名為的新電子郵件範本著手`CreateUserWizard.txt`在`EmailTemplates`資料夾。 範本中使用下列文字：
 
 [!code-aspx[Main](unlocking-and-approving-user-accounts-cs/samples/sample3.aspx)]
@@ -165,15 +151,12 @@ ms.locfileid: "59410041"
 
 實質效果是新的使用者未經核准，這表示它們無法登入網站。 此外，它們會自動傳送電子郵件，內含連結至驗證 URL （請參閱 圖 6）。
 
-
 [![新的使用者會收到一封電子郵件驗證 URL 的連結](unlocking-and-approving-user-accounts-cs/_static/image17.png)](unlocking-and-approving-user-accounts-cs/_static/image16.png)
 
 **圖 6**:新的使用者會收到一封電子郵件驗證 URL 的連結 ([按一下以檢視完整大小的影像](unlocking-and-approving-user-accounts-cs/_static/image18.png))
 
-
 > [!NOTE]
 > CreateUserWizard 控制項的預設 CreateUserWizard 步驟會顯示訊息，通知的使用者他們的帳戶已建立，並顯示 [繼續] 按鈕。 按一下這會將使用者帶至由控制項的指定的 URL`ContinueDestinationPageUrl`屬性。 在 CreateUserWizard`EnhancedCreateUserWizard.aspx`設定為傳送給新使用者`~/Membership/AdditionalUserInfo.aspx`，這時系統會提示使用者輸入他們的出生地、 首頁 URL 和簽章。 因為這項資訊可以只新增登入的使用者，所以合理更新這個屬性，以將使用者傳送回站台的首頁 (`~/Default.aspx`)。 此外，`EnhancedCreateUserWizard.aspx`頁面或 CreateUserWizard 步驟應該予以增加以通知使用者已傳送驗證電子郵件，以及它們遵循這封電子郵件中的指示之前，不會啟用其帳戶。 我可以作為練習，保留這些修改來讀取器。
-
 
 ### <a name="creating-the-verification-page"></a>建立 [驗證] 頁面
 
@@ -187,11 +170,9 @@ ms.locfileid: "59410041"
 
 [圖 7] 顯示`Verification.aspx`頁面上，當透過瀏覽器瀏覽。
 
-
 [![新的使用者帳戶是現在核准](unlocking-and-approving-user-accounts-cs/_static/image20.png)](unlocking-and-approving-user-accounts-cs/_static/image19.png)
 
 **圖 7**:新的使用者帳戶是現在核准 ([按一下以檢視完整大小的影像](unlocking-and-approving-user-accounts-cs/_static/image21.png))
-
 
 ## <a name="summary"></a>總結
 

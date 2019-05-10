@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 0bf0959b-4ca8-45de-bd13-b15347543b5a
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 86ea4a2e17ec44a3716e1570e51a224144f1369c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 073161ce4faa3b7ba6749d7dfbaa5309eeca4f74
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386966"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65130688"
 ---
 # <a name="configuring-server-environments-for-web-deployment"></a>設定 Web 部署的伺服器環境
 
@@ -26,7 +26,6 @@ ms.locfileid: "59386966"
 > 本教學課程會使用 Fabrikam，Inc.部署案例中所述[企業 Web 部署：案例概觀](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md)作為參考點，如需範例和網路基礎結構。
 > 
 > 這些教學課程義大利文翻譯，請瀏覽[ http://www.lucamorelli.it ](http://www.lucamorelli.it)。
-
 
 本教學課程包含下列主題：
 

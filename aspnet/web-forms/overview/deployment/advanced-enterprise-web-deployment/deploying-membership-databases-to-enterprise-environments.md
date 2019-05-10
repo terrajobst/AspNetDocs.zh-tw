@@ -8,12 +8,12 @@ ms.date: 05/04/2012
 ms.assetid: 3cf765df-d311-4f68-a295-c9685ceea830
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments
 msc.type: authoredcontent
-ms.openlocfilehash: eea0761ac85693553808e581a8712c822d19c226
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 50f49af502b75aa5ad52756a76a5e7340aca53f7
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390476"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131953"
 ---
 # <a name="deploying-membership-databases-to-enterprise-environments"></a>將成員資格資料庫部署到企業環境
 
@@ -22,7 +22,6 @@ ms.locfileid: "59390476"
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
 > 本主題說明的重要考量和挑戰必須克服您佈建的 ASP.NET 應用程式服務 （通常稱為 「 成員資格資料庫 」） 的測試、 預備或生產環境中的資料庫時。 此外，本文也將說明您可用來克服這些挑戰的方法。
-
 
 本主題是構成一系列以名為 Fabrikam，Inc.的虛構公司的企業部署需求為基礎的教學課程的一部分本教學課程系列會使用範例解決方案&#x2014;[連絡管理員解決方案](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;來代表實際的層級的複雜性，包括 ASP.NET MVC 3 應用程式時，Windows Communication 的 web 應用程式Foundation (WCF) 服務與資料庫專案。
 

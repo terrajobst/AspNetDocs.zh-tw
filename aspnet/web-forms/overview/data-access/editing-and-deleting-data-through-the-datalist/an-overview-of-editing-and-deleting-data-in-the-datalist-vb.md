@@ -8,12 +8,12 @@ ms.date: 10/30/2006
 ms.assetid: 9410a23c-9697-4f07-bd71-e62b0ceac655
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4bea4e70dd0c06fbcb0374d1c6a869c06d7e68b7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 196d567f294aa4da927689a056454696bf2306af
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59387941"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65131621"
 ---
 # <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-vb"></a>編輯和刪除 DataList (VB) 中的資料的概觀
 
@@ -22,7 +22,6 @@ ms.locfileid: "59387941"
 [下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_36_VB.exe)或[下載 PDF](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/datatutorial36vb1.pdf)
 
 > 雖然 DataList 缺少內建的編輯和刪除功能，在本教學課程中我們會看到如何建立支援編輯和刪除其基礎資料的 DataList。
-
 
 ## <a name="introduction"></a>簡介
 
@@ -34,7 +33,6 @@ ms.locfileid: "59387941"
 
 > [!NOTE]
 > 像 DataList 和 Repeater 控制項缺少外的插入、 更新或刪除預設功能。 雖然這類功能，可以加入 DataList 會包含屬性和事件中繼器中找不到可簡化新增這類功能。 因此，本教學課程和查看編輯和刪除的未來的焦點嚴格來說，資料清單。
-
 
 ## <a name="step-1-creating-the-editing-and-deleting-tutorials-web-pages"></a>步驟 1：建立編輯和刪除教學課程的 Web 網頁
 
@@ -50,32 +48,25 @@ ms.locfileid: "59387941"
 - `ConfirmationOnDelete.aspx`
 - `UserLevelAccess.aspx`
 
-
 ![如需教學課程加入 ASP.NET 網頁](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image1.png)
 
 **圖 1**:如需教學課程加入 ASP.NET 網頁
 
-
 在其他資料夾，例如`Default.aspx`在`EditDeleteDataList`資料夾 > 一節中列出的教學課程。 請記得，`SectionLevelTutorialListing.ascx`使用者控制項提供這項功能。 因此，新增此使用者控制項`Default.aspx`從拖曳到頁面的設計 檢視中的 方案總管 中拖曳。
-
 
 [![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image3.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image2.png)
 
 **圖 2**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image4.png))
 
-
 最後，將頁面新增項目，以作為`Web.sitemap`檔案。 具體來說，在使用 DataList 與重複項的主版/詳細報告之後新增下列標記`<siteMapNode>`:
-
 
 [!code-xml[Main](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/samples/sample1.xml)]
 
 在更新之後`Web.sitemap`，花點時間檢視教學課程網站，透過瀏覽器。 在左側功能表現在包含 DataList 編輯和刪除教學課程的項目。
 
-
 ![網站導覽現在包含項目 DataList 編輯和刪除教學課程](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image5.png)
 
 **圖 3**:網站導覽現在包含項目 DataList 編輯和刪除教學課程
-
 
 ## <a name="step-2-examining-techniques-for-updating-and-deleting-data"></a>步驟 2：檢查更新和刪除資料的技術
 
@@ -106,49 +97,39 @@ ms.locfileid: "59387941"
 
 首先開啟`Basics.aspx`頁面中`EditDeleteDataList`資料夾並從 設計 檢視中，加入至頁面的 DataList。 接下來，從 DataList s 智慧標籤，建立新的 ObjectDataSource。 因為我們正與產品資料，將它設定為使用`ProductsBLL`類別。 若要擷取*所有*產品中，選擇`GetProducts()`選取索引標籤中的方法。
 
-
 [![設定使用 ProductsBLL 類別 ObjectDataSource](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image7.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image6.png)
 
 **圖 4**:設定要使用 ObjectDataSource`ProductsBLL`類別 ([按一下以檢視完整大小的影像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image8.png))
-
 
 [![傳回使用 GetProducts() 方法的產品資訊](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image10.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image9.png)
 
 **圖 5**:傳回產品資訊使用`GetProducts()`方法 ([按一下以檢視完整大小的影像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image11.png))
 
-
 DataList，像是 GridView，不是插入新的資料;因此，請選取 （無）] 選項從下拉式清單中 [插入] 索引標籤。也選擇 （無） 更新和刪除索引標籤，因為會透過 BLL 以程式設計方式執行 [更新與刪除。
-
 
 [![確認下拉式清單會列出在 Sqldatasource 插入、 更新和刪除索引標籤設為 （無）](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image13.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image12.png)
 
 **圖 6**:確認 ObjectDataSource 的插入、 更新和刪除索引標籤中的下拉式清單是否設定為 （無） ([按一下以檢視完整大小的影像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image14.png))
-
 
 設定 ObjectDataSource 之後, 按一下 完成，返回 設計工具。 為我們建立時自動完成的 ObjectDataSource 組態時，Visual Studio，在過去的範例中，看到 ve`ItemTemplate`的下拉式清單中，顯示每個資料欄位。 取代此項`ItemTemplate`與其中一個會顯示只有產品的名稱和價格。 此外，設定`RepeatColumns`屬性設為 2。
 
 > [!NOTE]
 > 中所述*概觀的插入、 更新和刪除的資料*教學課程中，修改資料使用我們的架構需要我們移除 ObjectDataSource 時`OldValuesParameterFormatString`從 ObjectDataSource 的屬性宣告式標記 (或其重設為其預設值`{0}`)。 在本教學課程中，不過，我們會使用 ObjectDataSource 僅適用於擷取資料。 因此，我們不需要修改 ObjectDataSource 的`OldValuesParameterFormatString`屬性值 (雖然它不 t 會降低，若要這樣做)。
 
-
 取代預設 DataList 後`ItemTemplate`一個自訂頁面上的宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/samples/sample2.aspx)]
 
 請花一點時間檢閱我們透過瀏覽器的進度。 如 [圖 7] 所示，DataList 會顯示在兩個資料行中的每個產品的產品名稱和單位價格。
 
-
 [![產品名稱和優惠的價格會顯示在兩個資料行的資料清單](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image16.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image15.png)
 
 **圖 7**:產品名稱和優惠的價格會顯示在兩個資料行 DataList ([按一下以檢視完整大小的影像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image17.png))
-
 
 > [!NOTE]
 > DataList 的所需的更新和刪除處理程序的屬性數目，這些值會儲存檢視狀態中。 因此，當建置 DataList 支援編輯或刪除資料，很重要，啟用 DataList 的檢視狀態。  
 >   
 > 精明的讀者可能還記得我們才能夠建立可編輯的 Gridview、 DetailsViews 和 FormViews 時停用檢視狀態。 這是因為 ASP.NET 2.0 Web 控制項可以包含*控制狀態*，它會在類似的檢視狀態，但會被視為必要回傳間保存狀態。
-
 
 停用檢視 GridView 內的狀態只是省略了簡單的狀態資訊，但維持控制狀態 （其中包含所需的編輯和刪除的狀態）。 DataList，已經建立在 ASP.NET 1.x 時間範圍內，不會使用控制項狀態，因此必須啟用檢視狀態。 請參閱[vs 控制項狀態。檢視狀態](https://msdn.microsoft.com/library/1whwt1k7.aspx)如用途的控制項狀態，並從檢視狀態的不同方式的詳細資訊。
 
@@ -160,30 +141,24 @@ DataList，相反地，會呈現其使用範本的項目。 唯讀項目會使�
 
 `EditItemTemplate`可以建立以宣告方式或透過設計工具 （從 DataList s 智慧標籤中選取 [編輯範本] 選項）。 若要使用 編輯範本 選項，請先按一下 編輯範本中的 連結的智慧標籤，然後按`EditItemTemplate`從下拉式清單中的項目。
 
-
 [![使用 DataList 的 EditItemTemplate 選擇](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image19.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image18.png)
 
 **圖 8**:使用 DataList s 選擇`EditItemTemplate`([按一下以檢視完整大小的影像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image20.png))
 
-
 接下來，輸入產品名稱： 和價格:，然後拖曳兩個 TextBox 控制項，從工具箱拖曳到`EditItemTemplate`設計工具上的介面。 設定文字方塊`ID`屬性，以`ProductName`和`UnitPrice`。
-
 
 [![產品名稱和價格加入文字方塊](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image22.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image21.png)
 
 **圖 9**:新增文字方塊中的產品名稱和價格 ([按一下以檢視完整大小的影像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image23.png))
-
 
 我們要繫結到對應的產品資料欄位值`Text`兩個文字方塊的屬性。 從文字方塊的智慧標籤，按一下 [編輯資料繫結] 連結，並將關聯的適當的資料欄位`Text`屬性，如 [圖 10] 所示。
 
 > [!NOTE]
 > 當繫結`UnitPrice`價格文字方塊 s 的資料欄位`Text`欄位中，您可能會將它格式化為貨幣值 (`{0:C}`)，一般數字 (`{0:N}`)，或將它保留為未格式化。
 
-
 ![將 ProductName 和 UnitPrice 資料欄位繫結到文字方塊的 Text 屬性](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image24.png)
 
 **圖 10**:繫結`ProductName`並`UnitPrice`資料欄位加入`Text`文字方塊的屬性
-
 
 請注意圖 10 中的 編輯資料繫結 對話方塊是怎麼*不*包含編輯為 TemplateField GridView 或 DetailsView 或 FormView 的範本時顯示的雙向資料繫結核取方塊。 雙向資料繫結功能允許自動指派給對應的 ObjectDataSource s 的輸入 Web 控制項的輸入值`InsertParameters`或`UpdateParameters`插入或更新資料時。 DataList 不支援雙向資料繫結，因為我們將於稍後看到在本教學課程中，使用者可讓她變更，並已準備好更新的資料之後，我們必須以程式設計方式存取這些文字方塊`Text`屬性，並傳入其值適當`UpdateProduct`方法中的`ProductsBLL`類別。
 
@@ -197,14 +172,11 @@ DataList，相反地，會呈現其使用範本的項目。 唯讀項目會使�
 
 若要新增`EditItemTemplate`兩個按鈕 Web 控制項、 一個其`CommandName`設定為 更新和其他 s 設定為 取消。 在之後加入這兩個按鈕 Web 控制項設計工具看起來應該如下所示：
 
-
 [![新增更新和取消 EditItemTemplate 的按鈕](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image26.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image25.png)
 
 **圖 11**:新增更新和取消按鈕`EditItemTemplate`([按一下以檢視完整大小的影像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image27.png))
 
-
 使用`EditItemTemplate`完整 DataList s 宣告式標記看起來應該如下所示：
-
 
 [!code-aspx[Main](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/samples/sample3.aspx)]
 
@@ -214,11 +186,9 @@ DataList，相反地，會呈現其使用範本的項目。 唯讀項目會使�
 
 您加入此 [編輯] 按鈕之後，請花一點時間檢視透過瀏覽器頁面。 此步驟中，每個產品清單應包含 [編輯] 按鈕。
 
-
 [![新增更新和取消 EditItemTemplate 的按鈕](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image29.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image28.png)
 
 **圖 12**:新增更新和取消按鈕`EditItemTemplate`([按一下以檢視完整大小的影像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image30.png))
-
 
 按一下按鈕會導致回傳，但卻*不*將進入編輯模式中列出的產品。 若要讓產品可供編輯，我們需要：
 
@@ -227,18 +197,15 @@ DataList，相反地，會呈現其使用範本的項目。 唯讀項目會使�
 
 因為 DataList s`EditCommand`時會引發事件，按一下 [編輯] 按鈕時，建立`EditCommand`為下列程式碼的事件處理常式：
 
-
 [!code-vb[Main](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/samples/sample4.vb)]
 
 `EditCommand`型別的物件傳遞的事件處理常式`DataListCommandEventArgs`做為其第二個輸入參數，其中包含的參考`DataListItem`按下的 [編輯] 按鈕 (`e.Item`)。 事件處理常式會先設定 DataList s`EditItemIndex`要`ItemIndex`的可編輯`DataListItem`，然後會重新繫結至 DataList 的資料藉由呼叫 DataList 的`DataBind()`方法。
 
 加入這個事件處理常式之後, 重新瀏覽的瀏覽器頁面。 現在按一下 編輯 按鈕，讓已按下的產品可以讓您編輯 （請參閱 圖 13）。
 
-
 [![按一下 [編輯] 按鈕可讓產品可編輯](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image32.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image31.png)
 
 **圖 13**:按一下 [編輯] 按鈕，讓產品可編輯 ([按一下以檢視完整大小的影像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image33.png))
-
 
 ## <a name="step-6-saving-the-user-s-changes"></a>步驟 6：儲存使用者的變更
 
@@ -250,7 +217,6 @@ DataList，相反地，會呈現其使用範本的項目。 唯讀項目會使�
 2. 重新繫結至 DataList 的資料。 因為沒有`DataListItem` `ItemIndex` es 對應至 DataList 的`EditItemIndex`，整個 DataList 會呈現在唯讀模式。
 
 下列事件處理常式程式碼就可完成下列步驟：
-
 
 [!code-vb[Main](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/samples/sample5.vb)]
 
@@ -269,7 +235,6 @@ DataList，相反地，會呈現其使用範本的項目。 唯讀項目會使�
 
 下列程式碼會實作四個步驟：
 
-
 [!code-vb[Main](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/samples/sample6.vb)]
 
 事件處理常式一開始會讀取已編輯的產品 s`ProductID`從`DataKeys`集合。 下一步，在兩個文字方塊`EditItemTemplate`參考和其`Text`屬性儲存在區域變數`productNameValue`和`unitPriceValue`。 我們會使用`Decimal.Parse()`方法來讀取的值從`UnitPrice`文字方塊中，因此，如果輸入的值有貨幣符號，它仍然正確可轉換為`Decimal`值。
@@ -277,26 +242,21 @@ DataList，相反地，會呈現其使用範本的項目。 唯讀項目會使�
 > [!NOTE]
 > 將值從`ProductName`和`UnitPrice`的文字方塊只會指派給在 productNameValue 和 unitPriceValue 變數如果文字方塊的 Text 屬性具有指定的值。 否則，值為`Nothing`用於變數中，使用資料庫來更新資料的效果`NULL`值。 也就是我們的程式碼會將空字串，以資料庫`NULL`是 GridView、 DetailsView 和 FormView 控制項的編輯介面的預設行為的值。
 
-
 在讀取值之後`ProductsBLL`類別 s`UpdateProduct`呼叫方法，傳入 s 產品名稱、 價格和`ProductID`。 事件處理常式完成藉由使用完全相同的邏輯中做為其預先編輯狀態傳回 DataList`CancelCommand`事件處理常式。
 
 具有`EditCommand`， `CancelCommand`，和`UpdateCommand`事件處理常式完成，訪客可以編輯的名稱和產品的價格。 圖 14-16 會顯示作用中的此編輯工作流程。
-
 
 [![當第一次瀏覽頁面、 所有產品是在唯讀模式中](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image35.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image34.png)
 
 **圖 14**:所有產品時第一次瀏覽的頁面，都會在唯讀模式中 ([按一下以檢視完整大小的影像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image36.png))
 
-
 [![若要更新的產品名稱的價格，請按一下 [編輯] 按鈕](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image38.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image37.png)
 
 **圖 15**:若要更新的產品名稱或價格，請按一下 [編輯] 按鈕 ([按一下以檢視完整大小的影像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image39.png))
 
-
 [![在之後變更的值中，按一下 更新以唯讀模式返回](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image41.png)](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image40.png)
 
 **圖 16**:在之後變更的值，按一下 [更新]，以回復成唯讀模式 ([按一下以檢視完整大小的影像](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/_static/image42.png))
-
 
 ## <a name="step-7-adding-delete-capabilities"></a>步驟 7：加入刪除功能
 
@@ -312,11 +272,9 @@ DataList，相反地，會呈現其使用範本的項目。 唯讀項目會使�
 
 新增在 [編輯] 按鈕旁邊的 [刪除] 按鈕`ItemTemplate`，將其`CommandName`要刪除的屬性。 之後新增此按鈕會控制您 DataList 的`ItemTemplate`宣告式語法應該看起來像：
 
-
 [!code-aspx[Main](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/samples/sample7.aspx)]
 
 接下來，建立事件處理常式，如 DataList 的`DeleteCommand`事件，使用下列程式碼：
-
 
 [!code-vb[Main](an-overview-of-editing-and-deleting-data-in-the-datalist-vb/samples/sample8.vb)]
 
