@@ -8,17 +8,16 @@ ms.date: 11/08/2011
 ms.assetid: c4b945de-bb5c-4858-8a36-7662e02887fe
 msc.legacyurl: /mvc/overview/older-versions-1/movie-database
 msc.type: chapter
-ms.openlocfilehash: a3f501a7e46e39609e4669c034cc70e8f88993a5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 9e03f7a60a42ae53f6b1454cc39378439a243374
+ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379088"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65122237"
 ---
-# <a name="movie-database"></a><span data-ttu-id="29d30-103">影片資料庫</span><span class="sxs-lookup"><span data-stu-id="29d30-103">Movie Database</span></span>
+# <a name="movie-database"></a><span data-ttu-id="87474-103">影片資料庫</span><span class="sxs-lookup"><span data-stu-id="87474-103">Movie Database</span></span>
 
-> <span data-ttu-id="29d30-104">如何建立影片資料庫應用程式在 15 分鐘內。</span><span class="sxs-lookup"><span data-stu-id="29d30-104">How to build a Movie database application in 15 minutes.</span></span>
+> <span data-ttu-id="87474-104">如何建立影片資料庫應用程式在 15 分鐘內。</span><span class="sxs-lookup"><span data-stu-id="87474-104">How to build a Movie database application in 15 minutes.</span></span>
 
-
-- [<span data-ttu-id="29d30-105">使用 ASP.NET MVC 在 15 分鐘內建立影片資料庫應用程式 (C#)</span><span class="sxs-lookup"><span data-stu-id="29d30-105">Create a Movie Database Application in 15 Minutes with ASP.NET MVC (C#)</span></span>](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs.md)
-- [<span data-ttu-id="29d30-106">使用 ASP.NET MVC 在 15 分鐘內建立影片資料庫應用程式 (VB)</span><span class="sxs-lookup"><span data-stu-id="29d30-106">Create a Movie Database Application in 15 Minutes with ASP.NET MVC (VB)</span></span>](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb.md)
+- [<span data-ttu-id="87474-105">使用 ASP.NET MVC 在 15 分鐘內建立影片資料庫應用程式 (C#)</span><span class="sxs-lookup"><span data-stu-id="87474-105">Create a Movie Database Application in 15 Minutes with ASP.NET MVC (C#)</span></span>](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs.md)
+- [<span data-ttu-id="87474-106">使用 ASP.NET MVC 在 15 分鐘內建立影片資料庫應用程式 (VB)</span><span class="sxs-lookup"><span data-stu-id="87474-106">Create a Movie Database Application in 15 Minutes with ASP.NET MVC (VB)</span></span>](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb.md)
