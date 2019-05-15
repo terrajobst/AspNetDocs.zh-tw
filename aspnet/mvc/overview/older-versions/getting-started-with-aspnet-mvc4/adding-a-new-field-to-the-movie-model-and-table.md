@@ -106,7 +106,7 @@ Code First 移轉會建立另一個類別檔案中的*移轉*資料夾 (同名 *
 
 [!code-cshtml[Main](adding-a-new-field-to-the-movie-model-and-table/samples/sample5.cshtml?highlight=26-28,46-48)]
 
-接下來，開啟*\Views\Movies\Create.cshtml*檔案，並新增下列標記表單的結尾附近。 這會呈現文字方塊中，如此當您建立新的電影時，您可以指定評等。
+接下來，開啟 *\Views\Movies\Create.cshtml* 檔案，並新增下列標記表單的結尾附近。 這會呈現文字方塊中，如此當您建立新的電影時，您可以指定評等。
 
 [!code-cshtml[Main](adding-a-new-field-to-the-movie-model-and-table/samples/sample6.cshtml)]
 
