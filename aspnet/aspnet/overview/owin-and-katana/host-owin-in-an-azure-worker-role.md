@@ -40,7 +40,7 @@ ms.locfileid: "65118265"
 
 [![](host-owin-in-an-azure-worker-role/_static/image2.png)](host-owin-in-an-azure-worker-role/_static/image1.png)
 
-在 [**新的 Windows Azure 雲端服務**] 對話方塊中，按兩下**背景工作角色**。 保留預設名稱 ("WorkerRole1")。 此步驟會將背景工作角色加入至方案。 按一下 [確定] 。
+在 [**新的 Windows Azure 雲端服務**] 對話方塊中，按兩下**背景工作角色**。 保留預設名稱 ("WorkerRole1")。 此步驟會將背景工作角色加入至方案。 按一下 [確定]  。
 
 [![](host-owin-in-an-azure-worker-role/_static/image4.png)](host-owin-in-an-azure-worker-role/_static/image3.png)
 
@@ -101,7 +101,7 @@ ms.locfileid: "65118265"
 
 **WebApp.Start**方法會啟動 OWIN 主機。 名稱`Startup`類別是型別參數的方法。 依照慣例，主機會呼叫`Configure`這個類別的方法。
 
-覆寫`OnStop`處置*\_應用程式*執行個體：
+覆寫`OnStop`處置 *\_應用程式* 執行個體：
 
 [!code-csharp[Main](host-owin-in-an-azure-worker-role/samples/sample6.cs)]
 
@@ -123,7 +123,7 @@ ms.locfileid: "65118265"
 
 此步驟中，您必須有 Azure 帳戶。 如果您還沒有做，您可以建立免費的試用帳戶，只需要幾分鐘的時間。 如需詳細資訊，請參閱 < [Microsoft Azure 免費試用](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F)。
 
-在 [方案總管] 中，以滑鼠右鍵按一下 AzureApp 專案。 選取 [發行]。
+在 [方案總管] 中，以滑鼠右鍵按一下 AzureApp 專案。 選取 [發行]。 
 
 ![](host-owin-in-an-azure-worker-role/_static/image12.png)
 
@@ -135,11 +135,11 @@ ms.locfileid: "65118265"
 
 [![](host-owin-in-an-azure-worker-role/_static/image16.png)](host-owin-in-an-azure-worker-role/_static/image15.png)
 
-輸入雲端服務的名稱，然後選擇的區域。 按一下 [建立] 。
+輸入雲端服務的名稱，然後選擇的區域。 按一下 [建立]  。
 
 ![](host-owin-in-an-azure-worker-role/_static/image17.png)
 
-按一下 [發行] 。
+按一下 [發行]  。
 
 [![](host-owin-in-an-azure-worker-role/_static/image19.png)](host-owin-in-an-azure-worker-role/_static/image18.png)
 

@@ -42,7 +42,7 @@ AJAX 是新奇，但今天很輕鬆地建置及維護的大型複雜的 SPA 應�
 
 啟動 Visual Studio，然後選取**新的專案**從 [開始] 頁面。 或從**檔案**功能表上，選取**新增**，然後**專案**。
 
-在 **範本**窗格中，選取**已安裝的範本**展開**Visual C#** 節點。 底下**Visual C#**，選取**Web**。 在專案範本清單中，選取**ASP.NET MVC 4 Web 應用程式**。 將專案命名，然後按一下**確定**。
+在 **範本**窗格中，選取**已安裝的範本**展開**Visual C#** 節點。 底下**Visual C#** ，選取**Web**。 在專案範本清單中，選取**ASP.NET MVC 4 Web 應用程式**。 將專案命名，然後按一下**確定**。
 
 ![](knockoutjs-template/_static/image2.png)
 
@@ -210,14 +210,14 @@ SPA 範本會將用戶端 JavaScript 組織成三個層級：
 
 [!code-html[Main](knockoutjs-template/samples/sample8.html)]
 
-在此範例中，Knockout 更新的內容**&lt;跨越&gt;** 的值的項目`myItems.count()`。 此值變更時，每當 Knockout 更新的文件。
+在此範例中，Knockout 更新的內容 **&lt;跨越&gt;** 的值的項目`myItems.count()`。 此值變更時，每當 Knockout 更新的文件。
 
 油墨廓清提供數種不同的繫結類型。 以下是一些使用 SPA 範本中的繫結：
 
 - **foreach**:可讓您逐一查看迴圈，並將相同的標記套用至清單中的每個項目。 這用來呈現的待辦事項清單 」 和 「 待辦事項項目。 內**foreach**，繫結會套用至清單的項目。
 - **可見**:用來切換可見性。 當集合是空的、 隱藏的標記，或顯示錯誤訊息。
 - **值**:用來填入表單值。
-- **按一下 **:將 click 事件的繫結至檢視模型中的函式。
+- **按一下**:將 click 事件的繫結至檢視模型中的函式。
 
 ## <a name="anti-csrf-protection"></a>防 CSRF 防護
 

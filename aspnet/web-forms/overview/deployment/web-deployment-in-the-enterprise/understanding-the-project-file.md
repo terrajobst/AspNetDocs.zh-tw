@@ -83,7 +83,7 @@ MSBuild 專案檔根據[MSBuild XML 結構描述](https://msdn.microsoft.com/lib
 
 [!code-xml[Main](understanding-the-project-file/samples/sample2.xml)]
 
-若要擷取的屬性值，您可以使用格式 **$(***PropertyName***) * * *。* 例如，若要擷取的值**ServerName**屬性，您會輸入：
+若要擷取的屬性值，您可以使用格式 * *$(***PropertyName***)***。* 例如，若要擷取的值**ServerName**屬性，您會輸入：
 
 [!code-powershell[Main](understanding-the-project-file/samples/sample3.ps1)]
 
@@ -130,7 +130,7 @@ MSBuild 專案檔根據[MSBuild XML 結構描述](https://msdn.microsoft.com/lib
 
 ### <a name="targets-and-tasks"></a>目標和工作
 
-在 MSBuild 結構描述[任務](https://msdn.microsoft.com/library/77f2hx1s.aspx)項目代表的個別組建指令 （或工作）。 MSBuild 包含許多預先定義的工作。 例如: 
+在 MSBuild 結構描述[任務](https://msdn.microsoft.com/library/77f2hx1s.aspx)項目代表的個別組建指令 （或工作）。 MSBuild 包含許多預先定義的工作。 例如:
 
 - **複製**工作將檔案複製到新位置。
 - **Csc**工作叫用 Visual C# 編譯器。
@@ -161,8 +161,8 @@ MSBuild 專案檔根據[MSBuild XML 結構描述](https://msdn.microsoft.com/lib
 
 一般而言，當您建立有用的工作和目標，您必須參考的屬性和您已在專案檔中其他地方定義的項目：
 
-- 若要使用的屬性值，請輸入 **$(***PropertyName***)**，其中*PropertyName*名稱**屬性**項目或名稱參數。
-- 若要使用的項目，輸入 **@(***ItemName***)**，其中*ItemName*名稱**項目**項目。
+- 若要使用的屬性值，請輸入 **$(***PropertyName***)** ，其中*PropertyName*名稱**屬性**項目或名稱參數。
+- 若要使用的項目，輸入 **@(***ItemName***)** ，其中*ItemName*名稱**項目**項目。
 
 > [!NOTE]
 > 請記住，是否您建立多個項目具有相同名稱時，您要建置清單。 相反地，如果您建立多個屬性具有相同名稱時，您所提供的最後一個屬性值會覆寫任何先前的屬性具有相同名稱&#x2014;屬性只能包含單一值。

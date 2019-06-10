@@ -83,7 +83,7 @@ ms.locfileid: "65114993"
 
 [![從選取類別 DropDownList 取得 categoryID 參數值](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image22.png)
 
-**圖 8**:取得*`categoryID`* 從 選取類別 DropDownList 的參數值 ([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))
+**圖 8**:取得 *`categoryID`* 從 選取類別 DropDownList 的參數值 ([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))
 
 完成精靈之後 GridView 將會有 BoundField 每個產品的屬性。 讓我們清除這些 BoundFields 使得只有`ProductName`， `UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`BoundFields 會顯示。 歡迎您將任何欄位層級設定新增至其餘 BoundFields (格式化等`UnitPrice`為貨幣)。 進行這些變更之後，GridView 的宣告式標記看起來應該如下所示：
 
@@ -93,7 +93,7 @@ ms.locfileid: "65114993"
 
 [![從選取類別 DropDownList 取得 categoryID 參數值](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image25.png)
 
-**圖 9**:取得*`categoryID`* 從 選取類別 DropDownList 的參數值 ([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))
+**圖 9**:取得 *`categoryID`* 從 選取類別 DropDownList 的參數值 ([按一下以檢視完整大小的影像](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))
 
 ## <a name="step-2-displaying-a-footer-in-the-gridview"></a>步驟 2：在 GridView 中顯示頁尾
 

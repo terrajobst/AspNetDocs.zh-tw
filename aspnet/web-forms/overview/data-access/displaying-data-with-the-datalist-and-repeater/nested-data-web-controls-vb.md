@@ -79,13 +79,13 @@ ms.locfileid: "65108338"
 
 ## <a name="accessing-the-data-declaratively-with-an-objectdatasource-control-and-theitemdataboundevent-handler"></a>存取的資料使用 ObjectDataSource 控制項以宣告方式和`ItemDataBound`事件處理常式
 
-因為我們使用廣泛地在本教學課程系列，最自然的選擇，以存取資料，如這個範例是要堅持使用 ObjectDataSource ObjectDataSource。 `ProductsBLL`類別具有`GetProductsByCategoryID(categoryID)`方法會傳回屬於指定這些產品的相關資訊*`categoryID`*。 因此，我們可以在其中新增到 ObjectDataSource `CategoryList` Repeater 的`ItemTemplate`並將它設定為從這個類別的方法存取其資料。
+因為我們使用廣泛地在本教學課程系列，最自然的選擇，以存取資料，如這個範例是要堅持使用 ObjectDataSource ObjectDataSource。 `ProductsBLL`類別具有`GetProductsByCategoryID(categoryID)`方法會傳回屬於指定這些產品的相關資訊 *`categoryID`* 。 因此，我們可以在其中新增到 ObjectDataSource `CategoryList` Repeater 的`ItemTemplate`並將它設定為從這個類別的方法存取其資料。
 
 不幸的是，重複項不允許其範本，因此我們需要以手動方式加入這個 ObjectDataSource 控制項宣告式語法，透過 [設計] 檢視進行編輯。 下列語法會顯示`CategoryList`Repeater s`ItemTemplate`之後新增此新的 ObjectDataSource (`ProductsByCategoryDataSource`):
 
 [!code-aspx[Main](nested-data-web-controls-vb/samples/sample3.aspx)]
 
-使用 ObjectDataSource 方法時，我們需要設定`ProductsByCategoryList`Repeater s`DataSourceID`屬性設`ID`的 objectdatasource (`ProductsByCategoryDataSource`)。 另請注意，我們的 ObjectDataSource 已`<asp:Parameter>`項目，指定*`categoryID`* 值，會傳遞至`GetProductsByCategoryID(categoryID)`方法。 但是，我們該如何指定此值？ 在理想情況下，d 我們可以只設定`DefaultValue`屬性`<asp:Parameter>`項目使用資料繫結語法，就像這樣：
+使用 ObjectDataSource 方法時，我們需要設定`ProductsByCategoryList`Repeater s`DataSourceID`屬性設`ID`的 objectdatasource (`ProductsByCategoryDataSource`)。 另請注意，我們的 ObjectDataSource 已`<asp:Parameter>`項目，指定 *`categoryID`* 值，會傳遞至`GetProductsByCategoryID(categoryID)`方法。 但是，我們該如何指定此值？ 在理想情況下，d 我們可以只設定`DefaultValue`屬性`<asp:Parameter>`項目使用資料繫結語法，就像這樣：
 
 [!code-aspx[Main](nested-data-web-controls-vb/samples/sample4.aspx)]
 
@@ -113,7 +113,7 @@ ms.locfileid: "65108338"
 
 Repeater s`DataSource`屬性會使用資料繫結語法來表示其資料是來自`GetProductsInCategory(categoryID)`方法。 由於`Eval("CategoryID")`傳回值的型別`Object`，我們將物件轉換成`Integer`，然後將傳遞到`GetProductsInCategory(categoryID)`方法。 請注意，`CategoryID`存取透過資料繫結語法如下`CategoryID`中*外部*Repeater (`CategoryList`)，則該 s 繫結中的記錄`Categories`資料表。 因此，我們知道`CategoryID`不可為資料庫`NULL`值，這就是為什麼我們可以盲目地轉型`Eval`方法，而不檢查是否我們重新處理`DBNull`。
 
-使用此方法時，我們需要建立`GetProductsInCategory(categoryID)`方法並擷取適當的產品提供提供一組*`categoryID`*。 我們可以這樣做只是傳回`ProductsDataTable`所傳回`ProductsBLL`類別的`GetProductsByCategoryID(categoryID)`方法。 可讓建立`GetProductsInCategory(categoryID)`方法的程式碼後置類別中我們`NestedControls.aspx`頁面。 會使用下列程式碼進行存取：
+使用此方法時，我們需要建立`GetProductsInCategory(categoryID)`方法並擷取適當的產品提供提供一組 *`categoryID`* 。 我們可以這樣做只是傳回`ProductsDataTable`所傳回`ProductsBLL`類別的`GetProductsByCategoryID(categoryID)`方法。 可讓建立`GetProductsInCategory(categoryID)`方法的程式碼後置類別中我們`NestedControls.aspx`頁面。 會使用下列程式碼進行存取：
 
 [!code-vb[Main](nested-data-web-controls-vb/samples/sample7.vb)]
 

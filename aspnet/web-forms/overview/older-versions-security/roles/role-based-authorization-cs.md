@@ -141,7 +141,7 @@ ms.locfileid: "65133831"
 讓我們建立 GridView 中系統中列出的所有使用者帳戶的頁面。 GridView 會包含每個使用者的使用者名稱、 電子郵件地址、 上次登入的日期和使用者的相關註解。 除了顯示每個使用者的資訊，GridView 會包含編輯和刪除功能。 我們一開始會建立此頁面，以編輯和刪除功能可供所有使用者。 「 使用 LoginView 控制項 」 和 「 以程式設計的方式限制功能 」 區段中，我們會看到如何啟用或停用根據造訪的使用者角色的這些功能。
 
 > [!NOTE]
-> 我們即將建置的 ASP.NET 網頁會使用 GridView 控制項來顯示使用者帳戶。 本教學課程中 > 系列聚焦於表單驗證、 授權、 使用者帳戶和角色，因為我不想花太多時間討論 GridView 控制項的內部運作方式。 雖然本教學課程提供特定的逐步指示，設定此頁面，它不會不探討為什麼做特定選擇，或轉譯的輸出上有的效果的特定屬性的詳細資料。 如 GridView 控制項徹底的檢查，請參閱我*[使用 ASP.NET 2.0 中的資料](../../data-access/index.md)* 教學課程系列。
+> 我們即將建置的 ASP.NET 網頁會使用 GridView 控制項來顯示使用者帳戶。 本教學課程中 > 系列聚焦於表單驗證、 授權、 使用者帳戶和角色，因為我不想花太多時間討論 GridView 控制項的內部運作方式。 雖然本教學課程提供特定的逐步指示，設定此頁面，它不會不探討為什麼做特定選擇，或轉譯的輸出上有的效果的特定屬性的詳細資料。 如 GridView 控制項徹底的檢查，請參閱我 *[使用 ASP.NET 2.0 中的資料](../../data-access/index.md)* 教學課程系列。
 
 首先開啟`RoleBasedAuthorization.aspx`頁面中`Roles`資料夾。 拖曳的 GridView 從拖曳至設計工具和設定頁面及其`ID`至`UserGrid`。 稍後我們會撰寫程式碼會呼叫`Membership.GetAllUsers`方法，並繫結所產生的`MembershipUserCollection`物件至 GridView。 `MembershipUserCollection`包含`MembershipUser`系統; 中的每個使用者帳戶的物件`MembershipUser`物件具有屬性，例如`UserName`， `Email`， `LastLoginDate`，依此類推。
 
@@ -343,7 +343,7 @@ GridView 資料繫結至 GridView，每當列舉中的記錄及其`DataSource`�
 
 ### <a name="about-the-author"></a>關於作者
 
-Scott Mitchell，多個 ASP 書籍的作者，他是 4GuysFromRolla.com 的創辦人，從事 Microsoft Web 技術工作自 1998 年。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是 *[Sams 教導您自己 ASP.NET 2.0 在 24 小時內](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 Scott 要聯絡[ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或透過他的部落格[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+Scott Mitchell，多個 ASP 書籍的作者，他是 4GuysFromRolla.com 的創辦人，從事 Microsoft Web 技術工作自 1998 年。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是 *[Sams 教導您自己 ASP.NET 2.0 在 24 小時內](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 。 Scott 要聯絡[ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或透過他的部落格[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特別感謝...
 

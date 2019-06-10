@@ -131,7 +131,7 @@ Contoso 大學 web 網頁讀取的值中設定`appSettings`中*Web.config*檔案
 
 ## <a name="setting-connection-strings"></a>設定連接字串
 
-在大部分情況下您不需要設定連接字串的轉換，因為您可以在發行設定檔中指定連接字串。 但沒有例外狀況時，您要部署的 SQL Server Compact 資料庫，而且您使用 Entity Framework Code First 移轉來更新目的地伺服器上的資料庫。 此案例中，您必須指定將用於在伺服器更新資料庫結構描述的其他連接字串。 若要設定此轉換，將**&lt;connectionStrings&gt;** 項目開頭之後立即**&lt;configuration&gt;** 中的標記*Web.Test.config*並*Web.Production.config*轉換檔案：
+在大部分情況下您不需要設定連接字串的轉換，因為您可以在發行設定檔中指定連接字串。 但沒有例外狀況時，您要部署的 SQL Server Compact 資料庫，而且您使用 Entity Framework Code First 移轉來更新目的地伺服器上的資料庫。 此案例中，您必須指定將用於在伺服器更新資料庫結構描述的其他連接字串。 若要設定此轉換，將 **&lt;connectionStrings&gt;** 項目開頭之後立即 **&lt;configuration&gt;** 中的標記 *Web.Test.config* 並*Web.Production.config*轉換檔案：
 
 [!code-xml[Main](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12/samples/sample7.xml)]
 

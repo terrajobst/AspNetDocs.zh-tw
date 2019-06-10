@@ -51,7 +51,7 @@ ms.locfileid: "65109580"
 
 ## <a name="step-2-turning-the-category-name-into-a-link-to-the-details-page"></a>步驟 2：將類別目錄名稱轉換成詳細資料頁面的連結
 
-若要允許的使用者以顯示指定的類別目錄的 [詳細資料] 資訊，我們需要加入至每個項目符號清單項目，當按下時，會將使用者帶到第二個頁面的連結 (`ProductsForCategoryDetails.aspx`)。 此第二個的頁面就會顯示選取之類別目錄使用 DataList 的產品。 若要判斷其連結已按下的分類，我們要傳遞已按下 類別目錄的`CategoryID`至第二個頁面，透過一些機制。 從一頁的純量的資料傳輸至另一個簡單且最直接的方式是透過查詢字串中，我們將在本教學課程使用的選項。 特別是， `ProductsForCategoryDetails.aspx`  頁面就會預期收到所選*`categoryID`* 通過一個名為的 querystring 欄位的值`CategoryID`。 例如，若要檢視產品的飲料類別目錄，其中包含`CategoryID`為 1，使用者會瀏覽`ProductsForCategoryDetails.aspx?CategoryID=1`。
+若要允許的使用者以顯示指定的類別目錄的 [詳細資料] 資訊，我們需要加入至每個項目符號清單項目，當按下時，會將使用者帶到第二個頁面的連結 (`ProductsForCategoryDetails.aspx`)。 此第二個的頁面就會顯示選取之類別目錄使用 DataList 的產品。 若要判斷其連結已按下的分類，我們要傳遞已按下 類別目錄的`CategoryID`至第二個頁面，透過一些機制。 從一頁的純量的資料傳輸至另一個簡單且最直接的方式是透過查詢字串中，我們將在本教學課程使用的選項。 特別是， `ProductsForCategoryDetails.aspx`  頁面就會預期收到所選 *`categoryID`* 通過一個名為的 querystring 欄位的值`CategoryID`。 例如，若要檢視產品的飲料類別目錄，其中包含`CategoryID`為 1，使用者會瀏覽`ProductsForCategoryDetails.aspx?CategoryID=1`。
 
 我們要將超連結 Web 控制項或 HTML 錨定項目加入的中繼器中建立每個項目符號清單項目的超連結 (`<a>`) 以`ItemTemplate`。 中的情況下超連結會顯示相同的每個資料列中，兩種方法就夠了。 對於重複項，我想使用錨定項目。 若要使用錨定項目，更新 Repeater 的 ItemTemplate:
 
@@ -79,7 +79,7 @@ ms.locfileid: "65109580"
 
 **圖 4**:設定要使用 ObjectDataSource`ProductsBLL`類別的`GetProductsByCategoryID(categoryID)`方法 ([按一下以檢視完整大小的影像](master-detail-filtering-acess-two-pages-datalist-cs/_static/image12.png))
 
-由於`GetProductsByCategoryID(categoryID)`方法會接受輸入的參數 (*`categoryID`*)，[選擇資料來源精靈] 可讓我們得以指定參數的來源。 設定參數來源至查詢字串使用 QueryStringField `CategoryID`。
+由於`GetProductsByCategoryID(categoryID)`方法會接受輸入的參數 ( *`categoryID`* )，[選擇資料來源精靈] 可讓我們得以指定參數的來源。 設定參數來源至查詢字串使用 QueryStringField `CategoryID`。
 
 [![Querystring 欄位 CategoryID 做為參數的來源](master-detail-filtering-acess-two-pages-datalist-cs/_static/image14.png)](master-detail-filtering-acess-two-pages-datalist-cs/_static/image13.png)
 

@@ -101,7 +101,7 @@ ms.locfileid: "65109260"
 
 **圖 9**:按一下 屬性 視窗，列出 Web 控制項的事件中的閃電圖示
 
-這三種方法的 ObjectDataSource 的加入新的事件處理常式`Selecting`頁面的程式碼後置類別的事件。 這個事件處理常式中，我們可以讀取和寫入使用的參數值`e.InputParameters(parameterName)`，其中*`parameterName`* 的值`Name`屬性中`<asp:Parameter>`標記 (`InputParameters`集合也可以是索引序數，如同在`e.InputParameters(index)`)。 若要設定`month`參數，以目前的月份中，將下列內容加入`Selecting`事件處理常式：
+這三種方法的 ObjectDataSource 的加入新的事件處理常式`Selecting`頁面的程式碼後置類別的事件。 這個事件處理常式中，我們可以讀取和寫入使用的參數值`e.InputParameters(parameterName)`，其中 *`parameterName`* 的值`Name`屬性中`<asp:Parameter>`標記 (`InputParameters`集合也可以是索引序數，如同在`e.InputParameters(index)`)。 若要設定`month`參數，以目前的月份中，將下列內容加入`Selecting`事件處理常式：
 
 [!code-vb[Main](programmatically-setting-the-objectdatasource-s-parameter-values-vb/samples/sample3.vb)]
 

@@ -74,7 +74,7 @@ ms.locfileid: "65126941"
 
 [!code-html[Main](the-entity-framework-and-aspnet-getting-started-part-1/samples/sample1.html)]
 
-尋找* 功能表*控制項，名為`NavigationMenu`並取代為下列的標記中，加入您要建立之頁面的功能表項目。
+尋找 *功能表* 控制項，名為`NavigationMenu`並取代為下列的標記中，加入您要建立之頁面的功能表項目。
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-1/samples/sample2.aspx)]
 
@@ -132,7 +132,7 @@ ms.locfileid: "65126941"
 
 [![Image06](the-entity-framework-and-aspnet-getting-started-part-1/_static/image28.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image27.png)
 
-在 [**選擇資料連接**步驟，保留預設值，然後按一下**下一步]**。 預設會選取 School 資料庫，並將連線設定會儲存在*Web.config*檔案作為**SchoolEntities**。
+在 [**選擇資料連接**步驟，保留預設值，然後按一下**下一步]** 。 預設會選取 School 資料庫，並將連線設定會儲存在*Web.config*檔案作為**SchoolEntities**。
 
 [![Image07](the-entity-framework-and-aspnet-getting-started-part-1/_static/image30.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image29.png)
 

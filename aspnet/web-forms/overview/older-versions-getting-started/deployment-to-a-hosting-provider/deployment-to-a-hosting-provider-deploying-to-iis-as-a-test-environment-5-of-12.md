@@ -116,7 +116,7 @@ ms.locfileid: "65132318"
 
 ![Publish_Web_wizard_Profile_tab](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image9.png)
 
-在下拉式清單中，選取**&lt;新增...&gt;**.
+在下拉式清單中，選取 **&lt;新增...&gt;** .
 
 在 [**新的設定檔**] 對話方塊中，輸入"Test"，然後按一下**確定**。
 
@@ -172,7 +172,7 @@ ms.locfileid: "65132318"
 
 ![Publish_Web_wizard_Preview_tab_Test_with_file_list](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image15.png)
 
-按一下 [發行] 。
+按一下 [發行]  。
 
 如果 Visual Studio 不在系統管理員模式中，您可能會收到錯誤訊息，指出權限錯誤。 在此情況下，關閉 Visual Studio，在系統管理員模式中開啟它並再次嘗試發行。
 
