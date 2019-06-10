@@ -104,7 +104,7 @@ ObjectDataSource 的宣告式標記會稍有不同第一個範例中，使用[Co
 
 ## <a name="showing-all-suppliers-by-default"></a>顯示預設的所有供應商
 
-而是超過第一次檢視頁面時顯示任何供應商我們可能會想要顯示*所有*供應商一開始，可讓使用者在文字方塊中輸入國家/地區名稱削減清單。 文字方塊是空的當`SuppliersBLL`類別的`GetSuppliersByCountry(country)`方法會傳入`Nothing`針對其*`country`* 輸入的參數。 這`Nothing`值接著會向下傳遞至 DAL`GetSupplierByCountry(country)`方法，它就會轉譯到資料庫`NULL`值`@Country`在下列查詢中的參數：
+而是超過第一次檢視頁面時顯示任何供應商我們可能會想要顯示*所有*供應商一開始，可讓使用者在文字方塊中輸入國家/地區名稱削減清單。 文字方塊是空的當`SuppliersBLL`類別的`GetSuppliersByCountry(country)`方法會傳入`Nothing`針對其 *`country`* 輸入的參數。 這`Nothing`值接著會向下傳遞至 DAL`GetSupplierByCountry(country)`方法，它就會轉譯到資料庫`NULL`值`@Country`在下列查詢中的參數：
 
 [!code-sql[Main](declarative-parameters-vb/samples/sample3.sql)]
 

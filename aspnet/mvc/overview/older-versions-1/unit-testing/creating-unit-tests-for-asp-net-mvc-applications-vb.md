@@ -67,7 +67,7 @@ ms.locfileid: "65117268"
 
 ## <a name="testing-the-view-data-returned-by-a-controller"></a>測試檢視資料傳回的控制站
 
-此 MVC 控制器會將資料傳遞至檢視使用所謂*`View Data`*。 例如，假設您想要顯示特定產品的詳細資料，當您叫用`ProductController Details()`動作。 在此情況下，您可以在其中建立的執行個體`Product`（在模型中定義） 的類別，並傳遞要的執行個體`Details`利用檢視`View Data`。
+此 MVC 控制器會將資料傳遞至檢視使用所謂 *`View Data`* 。 例如，假設您想要顯示特定產品的詳細資料，當您叫用`ProductController Details()`動作。 在此情況下，您可以在其中建立的執行個體`Product`（在模型中定義） 的類別，並傳遞要的執行個體`Details`利用檢視`View Data`。
 
 已修改`ProductController`包含 列表 3 中的 更新`Details()`傳回產品的動作。
 

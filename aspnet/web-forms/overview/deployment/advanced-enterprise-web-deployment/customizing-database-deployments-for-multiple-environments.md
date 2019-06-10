@@ -88,7 +88,7 @@ ms.locfileid: "65108318"
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image1.png)
 3. 中**新的部署組態檔**對話方塊方塊中，為檔案提供有意義的名稱 (例如**TestEnvironment.sqldeployment**)，然後按一下 **儲存**。
-4. 在  *[Filename] * * *.sqldeployment** 頁面設定部署屬性，以符合您的目的地環境的需求，然後儲存檔案。
+4. 在  *[Filename]* **.sqldeployment** 頁面設定部署屬性，以符合您的目的地環境的需求，然後儲存檔案。
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image2.png)
 5. 請注意新的檔案加入資料庫專案中的 [屬性] 資料夾。
