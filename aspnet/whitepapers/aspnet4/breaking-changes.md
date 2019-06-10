@@ -449,7 +449,7 @@ ASP.NET 2.0 內建的 Passport 支援已過時，不支援幾年，因為 Passpo
 
 [!code-aspx[Main](breaking-changes/samples/sample11.aspx)]
 
-因 ASP.NET 4 中的設計變更，而沒有輸出轉譯*PopOutImageUrl*如果屬性設定為*MenuItem*類別。 相反地，您必須指定影像 URL 直接在* 功能表*控制使用*StaticPopOutImageUrl*屬性或有*DynamicPopOutImageUrl*屬性。 當您使用靜態功能表中， *Menu.StaticPopOutImageUrl*屬性指定的 URL，該影像顯示以表示靜態功能表項目具有子功能表，如下列範例所示：
+因 ASP.NET 4 中的設計變更，而沒有輸出轉譯*PopOutImageUrl*如果屬性設定為*MenuItem*類別。 相反地，您必須指定影像 URL 直接在  *功能表* 控制使用 *StaticPopOutImageUrl* 屬性或有 *DynamicPopOutImageUrl* 屬性。 當您使用靜態功能表中， *Menu.StaticPopOutImageUrl*屬性指定的 URL，該影像顯示以表示靜態功能表項目具有子功能表，如下列範例所示：
 
 [!code-aspx[Main](breaking-changes/samples/sample12.aspx)]
 
@@ -467,7 +467,7 @@ ASP.NET 2.0 內建的 Passport 支援已過時，不支援幾年，因為 Passpo
 
 在 ASP.NET 4 中，使用指定的映像*Menu.StaticPopOutImageUrl*並*Menu.DynamicPopOutImageUrl*屬性不會呈現，如果路徑包含 backlashes (\)。 這是從舊版 ASP.NET 的變更。
 
-下列範例* 功能表*控制項會顯示標記*StaticPopOutImageUrl*屬性設定使用的路徑包含反斜線。 在 ASP.NET 4 中，將不會呈現在屬性中指定的映像。
+下列範例  *功能表* 控制項會顯示標記 *StaticPopOutImageUrl* 屬性設定使用的路徑包含反斜線。 在 ASP.NET 4 中，將不會呈現在屬性中指定的映像。
 
 [!code-aspx[Main](breaking-changes/samples/sample14.aspx)]
 

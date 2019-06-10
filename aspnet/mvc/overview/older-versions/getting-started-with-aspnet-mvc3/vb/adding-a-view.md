@@ -51,7 +51,7 @@ ms.locfileid: "65129981"
 
 [!code-vbhtml[Main](adding-a-view/samples/sample2.vbhtml)]
 
-執行應用程式，並瀏覽至&quot;hello world&quot;控制站 (`http://localhost:xxxx/HelloWorld`)。 `Index`在控制器方法並沒有進行太多工作; 它只會執行陳述式`return View()`，這表示我們想要使用檢視範本檔案來呈現給用戶端的回應。 因為我們未明確指定要使用的檢視範本檔案的名稱，預設使用 ASP.NET MVC *Index.vbhtml*檢視檔案內*\Views\HelloWorld*資料夾。 下圖顯示字串硬式編碼在檢視中。
+執行應用程式，並瀏覽至&quot;hello world&quot;控制站 (`http://localhost:xxxx/HelloWorld`)。 `Index`在控制器方法並沒有進行太多工作; 它只會執行陳述式`return View()`，這表示我們想要使用檢視範本檔案來呈現給用戶端的回應。 因為我們未明確指定要使用的檢視範本檔案的名稱，預設使用 ASP.NET MVC *Index.vbhtml*檢視檔案內 *\Views\HelloWorld* 資料夾。 下圖顯示字串硬式編碼在檢視中。
 
 [![3HelloWorld](adding-a-view/_static/image8.png "3HelloWorld")](adding-a-view/_static/image7.png)
 
@@ -61,7 +61,7 @@ ms.locfileid: "65129981"
 
 首先，讓我們變更文字&quot;我的 MVC 應用程式。&quot;該文字會共用，並出現在每一頁。 它實際上不會顯示只有一個位置，在專案中，即使是在我們的應用程式中的每個頁面上。 移至 */檢視/Shared*資料夾中的**方案總管**，然後開啟 *\_Layout.vbhtml*檔案。 這個檔案稱為版面配置頁面，而且共用&quot;shell&quot;所有其他頁面使用。
 
-請注意`@RenderBody()`檔案底部附近的程式碼行。 `RenderBody` 是，您所建立的所有頁面的都顯示位置的預留位置&quot;包裝&quot;版面配置頁。 變更`<h1>`標題從**&quot;** 我的 MVC 應用程式&quot;來&quot;MVC 電影應用程式&quot;。
+請注意`@RenderBody()`檔案底部附近的程式碼行。 `RenderBody` 是，您所建立的所有頁面的都顯示位置的預留位置&quot;包裝&quot;版面配置頁。 變更`<h1>`標題從 **&quot;** 我的 MVC 應用程式&quot;來&quot;MVC 電影應用程式&quot;。
 
 [!code-html[Main](adding-a-view/samples/sample3.html)]
 

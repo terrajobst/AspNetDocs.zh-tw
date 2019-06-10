@@ -91,7 +91,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 
 **圖 03**:將主版頁面名稱為 Site.master 新增至網站 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-vb/_static/image9.png))
 
-主版頁面中定義的整個網站的頁面配置。 您可以使用 [設計] 檢視，並新增任何版面配置] 或 [Web 控制項，您需要或您可以手動在原始碼檢視中手動新增標記。 我結構化我主版頁面的版面配置，來模擬所使用的配置我*[使用 ASP.NET 2.0 中的資料](../../data-access/index.md)* 教學課程系列 （請參閱 圖 4）。 主版頁面會使用[階層式樣式表](http://www.w3schools.com/css/default.asp)來定位和樣式 （這包含在本教學課程中的相關聯的下載） 的 Style.css 檔案中定義的 CSS 設定。 雖然您無法分辨從下方所顯示的標記，定義的 CSS 規則，瀏覽&lt;div&gt;的內容絕對位置，使其出現在左邊，並已在固定的寬度為 200 像素。
+主版頁面中定義的整個網站的頁面配置。 您可以使用 [設計] 檢視，並新增任何版面配置] 或 [Web 控制項，您需要或您可以手動在原始碼檢視中手動新增標記。 我結構化我主版頁面的版面配置，來模擬所使用的配置我 *[使用 ASP.NET 2.0 中的資料](../../data-access/index.md)* 教學課程系列 （請參閱 圖 4）。 主版頁面會使用[階層式樣式表](http://www.w3schools.com/css/default.asp)來定位和樣式 （這包含在本教學課程中的相關聯的下載） 的 Style.css 檔案中定義的 CSS 設定。 雖然您無法分辨從下方所顯示的標記，定義的 CSS 規則，瀏覽&lt;div&gt;的內容絕對位置，使其出現在左邊，並已在固定的寬度為 200 像素。
 
 [!code-aspx[Main](an-overview-of-forms-authentication-vb/samples/sample1.aspx)]
 
@@ -195,7 +195,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 
 ASP.NET 2.0 中，開發人員之前，負責實作兩個自己的使用者存放區及撰寫程式碼來驗證對存放區提供的認證。 大部分的開發人員會實作使用者存放區在資料庫中，建立名為使用者與資料行，例如使用者名稱、 密碼、 電子郵件、 LastLoginDate，等資料表。 然後，此資料表中，會有一筆記錄，每個使用者帳戶。 查詢資料庫中的比對的使用者名稱，以及確保資料庫中的密碼會對應至所提供的密碼，則會包含驗證的使用者提供的認證。
 
-利用 ASP.NET 2.0，開發人員應該使用其中一個成員資格提供者來管理使用者存放區。 在本教學課程系列中，我們將使用 SqlMembershipProvider，用於使用者存放區中的 SQL Server 資料庫。 當使用 SqlMembershipProvider 我們需要實作特定的資料庫結構描述，其中包含資料表、 檢視和預存程序提供者所預期。 我們將檢驗如何實作在這個結構描述*[在 SQL Server 中建立成員資格結構描述](../membership/creating-the-membership-schema-in-sql-server-vb.md)* 教學課程。 使用就地成員資格提供者，若要驗證使用者的認證很簡單，只要呼叫[Membership 類別](https://msdn.microsoft.com/library/system.web.security.membership.aspx)的[ValidateUser (*使用者名稱*，*密碼*)方法](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)，它會傳回布林值，指出是否的有效性*使用者名稱*並*密碼*組合。 因為我們還沒有實作 SqlMembershipProvider 的使用者存放區，我們無法使用 Membership 類別 ValidateUser 方法，這一次。
+利用 ASP.NET 2.0，開發人員應該使用其中一個成員資格提供者來管理使用者存放區。 在本教學課程系列中，我們將使用 SqlMembershipProvider，用於使用者存放區中的 SQL Server 資料庫。 當使用 SqlMembershipProvider 我們需要實作特定的資料庫結構描述，其中包含資料表、 檢視和預存程序提供者所預期。 我們將檢驗如何實作在這個結構描述 *[在 SQL Server 中建立成員資格結構描述](../membership/creating-the-membership-schema-in-sql-server-vb.md)* 教學課程。 使用就地成員資格提供者，若要驗證使用者的認證很簡單，只要呼叫[Membership 類別](https://msdn.microsoft.com/library/system.web.security.membership.aspx)的[ValidateUser (*使用者名稱*，*密碼*)方法](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)，它會傳回布林值，指出是否的有效性*使用者名稱*並*密碼*組合。 因為我們還沒有實作 SqlMembershipProvider 的使用者存放區，我們無法使用 Membership 類別 ValidateUser 方法，這一次。
 
 而不是花時間來建立自己自訂的使用者資料庫資料表 （這會是已過時，我們實作 SqlMembershipProvider 之後），讓我們改為硬式編碼有效的認證，在 登入頁面本身。 在 LoginButton 的 Click 事件處理常式，加入下列程式碼：
 
@@ -242,7 +242,7 @@ FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked)
 除非您的網站包含機密資訊，您只必須使用 SSL 登入頁面和其他頁面上，否則會傳送使用者的密碼以純文字格式在網路上。 您不需要擔心如何保護表單驗證票證，因為根據預設，它會加密和數位簽章 （若要避免資料遭到竄改）。 下列教學課程中，會顯示表單驗證票證安全性的深入討論。
 
 > [!NOTE]
-> 許多金融和醫療網站已設定為使用上的 SSL*所有*頁面可以存取已驗證的使用者。 如果您要建置這類網站，讓表單驗證票證只會傳輸透過安全連線，您可以設定表單驗證系統。 我們將在下一個教學課程中，探討各種的表單驗證組態選項*[表單驗證組態和進階主題](../membership/creating-the-membership-schema-in-sql-server-vb.md)*。
+> 許多金融和醫療網站已設定為使用上的 SSL*所有*頁面可以存取已驗證的使用者。 如果您要建置這類網站，讓表單驗證票證只會傳輸透過安全連線，您可以設定表單驗證系統。 我們將在下一個教學課程中，探討各種的表單驗證組態選項 *[表單驗證組態和進階主題](../membership/creating-the-membership-schema-in-sql-server-vb.md)* 。
 
 ## <a name="step-4-detecting-authenticated-visitors-and-determining-their-identity"></a>步驟 4：偵測已驗證的訪客，並判斷其身分識別
 
@@ -422,7 +422,7 @@ LoginStatus 超出 LoginView 控制項，因為它會顯示匿名和已驗證的
 
 ### <a name="about-the-author"></a>關於作者
 
-Scott Mitchell，多個 ASP 書籍的作者，他是 4GuysFromRolla.com 的創辦人，從事 Microsoft Web 技術工作自 1998 年。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是 *[Sams 教導您自己 ASP.NET 2.0 在 24 小時內](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 Scott 要聯絡[ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或透過他的部落格[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+Scott Mitchell，多個 ASP 書籍的作者，他是 4GuysFromRolla.com 的創辦人，從事 Microsoft Web 技術工作自 1998 年。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是 *[Sams 教導您自己 ASP.NET 2.0 在 24 小時內](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 。 Scott 要聯絡[ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或透過他的部落格[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特別感謝
 

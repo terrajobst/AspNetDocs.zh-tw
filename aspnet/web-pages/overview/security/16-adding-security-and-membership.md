@@ -130,7 +130,7 @@ ms.locfileid: "65112369"
 您的網站包含其他功能，可讓使用者管理他們的帳戶。 使用者可以執行下列作業：
 
 - 變更其密碼。 登入之後，他們可以按一下 使用者名稱 （這是連結）。 這會讓它們進入頁面他們可以在其中建立新的密碼 (*Account/ChangePassword.cshtml*)。
-- 復原遺忘的密碼。 在 [登入] 頁面中，沒有連結 (**您是否忘記您的密碼？**)，會帶領使用者前往一個頁面 (*Account/ForgotPassword.cshtml*) 可以在其中輸入電子郵件地址。 站台將它們傳送電子郵件訊息，他們可以點選來設定新密碼的連結 (*Account/PasswordReset.cshtml*)。
+- 復原遺忘的密碼。 在 [登入] 頁面中，沒有連結 (**您是否忘記您的密碼？** )，會帶領使用者前往一個頁面 (*Account/ForgotPassword.cshtml*) 可以在其中輸入電子郵件地址。 站台將它們傳送電子郵件訊息，他們可以點選來設定新密碼的連結 (*Account/PasswordReset.cshtml*)。
 
 您也可以讓使用者也可以登入使用外部網站，如稍後所說明。
 
@@ -166,7 +166,7 @@ ms.locfileid: "65112369"
 若要保護多個頁面的存取權，您可以這樣做：
 
 - 加入每個頁面中的安全性檢查。
-- 建立 *\_PageStart.cshtml*供您保留受保護的頁面，以及新增的安全性檢查的資料夾中的頁面。  *\_PageStart.cshtml*頁面做為一種通用資料夾中的所有頁面的頁面。 這項技術會更詳細地說明[自訂全網站行為適用於 ASP.NET 網頁](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access)。
+- 建立 *\_PageStart.cshtml*供您保留受保護的頁面，以及新增的安全性檢查的資料夾中的頁面。 *\_PageStart.cshtml* 頁面做為一種通用資料夾中的所有頁面的頁面。 這項技術會更詳細地說明[自訂全網站行為適用於 ASP.NET 網頁](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access)。
 
 ## <a name="creating-security-for-groups-of-users-roles"></a>建立群組的使用者 （角色） 的安全性
 

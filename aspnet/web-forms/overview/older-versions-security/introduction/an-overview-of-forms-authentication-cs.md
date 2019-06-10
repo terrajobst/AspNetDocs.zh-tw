@@ -91,7 +91,7 @@ IIS 7 中，不過，用來整合的 IIS 和 ASP.NET 管線。 有一些組態�
 
 **圖 3**:將主版頁面名稱為 Site.master 新增至網站 ([按一下以檢視完整大小的影像](an-overview-of-forms-authentication-cs/_static/image7.png))
 
-主版頁面中定義的整個網站的頁面配置。 您可以使用 [設計] 檢視，並新增任何版面配置] 或 [Web 控制項，您需要或您可以手動在原始碼檢視中手動新增標記。 我結構化我主版頁面的版面配置，來模擬所使用的配置我*[使用 ASP.NET 2.0 中的資料](../../data-access/index.md)* 教學課程系列 （請參閱 圖 4）。 主版頁面會使用[階層式樣式表](http://www.w3schools.com/css/default.asp)來定位和樣式 （這包含在本教學課程中的相關聯的下載） 的 Style.css 檔案中定義的 CSS 設定。 雖然您無法分辨從下方所顯示的標記，定義的 CSS 規則，瀏覽&lt;div&gt;的內容絕對位置，使其出現在左邊，並已在固定的寬度為 200 像素。
+主版頁面中定義的整個網站的頁面配置。 您可以使用 [設計] 檢視，並新增任何版面配置] 或 [Web 控制項，您需要或您可以手動在原始碼檢視中手動新增標記。 我結構化我主版頁面的版面配置，來模擬所使用的配置我 *[使用 ASP.NET 2.0 中的資料](../../data-access/index.md)* 教學課程系列 （請參閱 圖 4）。 主版頁面會使用[階層式樣式表](http://www.w3schools.com/css/default.asp)來定位和樣式 （這包含在本教學課程中的相關聯的下載） 的 Style.css 檔案中定義的 CSS 設定。 雖然您無法分辨從下方所顯示的標記，定義的 CSS 規則，瀏覽&lt;div&gt;的內容絕對位置，使其出現在左邊，並已在固定的寬度為 200 像素。
 
 [!code-aspx[Main](an-overview-of-forms-authentication-cs/samples/sample1.aspx)]
 
@@ -242,7 +242,7 @@ FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked);
 除非您的網站包含機密資訊，您只必須使用 SSL 登入頁面和其他頁面上，否則會傳送使用者的密碼以純文字格式在網路上。 您不需要擔心如何保護表單驗證票證，因為根據預設，它會加密和數位簽章 （若要避免資料遭到竄改）。 下列教學課程中，會顯示表單驗證票證安全性的深入討論。
 
 > [!NOTE]
-> 許多金融和醫療網站已設定為使用上的 SSL*所有*頁面可以存取已驗證的使用者。 如果您要建置這類網站，讓表單驗證票證只會傳輸透過安全連線，您可以設定表單驗證系統。 我們將在下一個教學課程中，探討各種的表單驗證組態選項*[表單驗證組態和進階主題](forms-authentication-configuration-and-advanced-topics-cs.md)*。
+> 許多金融和醫療網站已設定為使用上的 SSL*所有*頁面可以存取已驗證的使用者。 如果您要建置這類網站，讓表單驗證票證只會傳輸透過安全連線，您可以設定表單驗證系統。 我們將在下一個教學課程中，探討各種的表單驗證組態選項 *[表單驗證組態和進階主題](forms-authentication-configuration-and-advanced-topics-cs.md)* 。
 
 ## <a name="step-4-detecting-authenticated-visitors-and-determining-their-identity"></a>步驟 4：偵測已驗證的訪客，並判斷其身分識別
 

@@ -130,7 +130,7 @@ ASP.NET Web API 包括下列功能的支援：
 
 新的顯示模式功能可讓應用程式選取根據提出要求的瀏覽器的檢視。 例如，如果桌面瀏覽器要求首頁上，應用程式可能使用 Views\Home\Index.cshtml 範本。 如果在行動瀏覽器要求首頁上，應用程式可能會傳回 Views\Home\Index.mobile.cshtml 範本。
 
-版面配置和部分可以也覆寫特定瀏覽器類型。 例如: 
+版面配置和部分可以也覆寫特定瀏覽器類型。 例如:
 
 - 如果您的 Views\Shared 資料夾同時包含\_Layout.cshtml 和\_Layout.mobile.cshtml 範本，根據預設，應用程式會使用\_Layout.mobile.cshtml與行動瀏覽器要求期間\_Layout.cshtml 期間其他要求。
 - 如果資料夾同時包含\_MyPartial.cshtml 和\_MyPartial.mobile.cshtml，指示@Html.Partial(「\_MyPartial") 會轉譯\_MyPartial.mobile.cshtml 期間從行動裝置的要求瀏覽器和\_MyPartial.cshtml 期間其他要求。
@@ -149,7 +149,7 @@ ASP.NET Web API 包括下列功能的支援：
 <a id="_Toc303253813"></a>
 ### <a name="task-support-for-asynchronous-controllers"></a>非同步控制器的的工作支援
 
-您現在可以撰寫非同步動作方法傳回的型別物件的單一方法*任務*或是*工作&lt;ActionResult&gt;*。
+您現在可以撰寫非同步動作方法傳回的型別物件的單一方法*任務*或是*工作&lt;ActionResult&gt;* 。
 
  如需詳細資訊，請參閱[ASP.NET MVC 4 中使用非同步方法](../mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4.md)。
 
@@ -224,11 +224,11 @@ ASP.NET MVC 4 Release Candidate 版本資訊可以在這裡找到：
 
 - **每個控制站組態：** ASP.NET Web API 控制器可以屬性具有自訂屬性，以實作*IControllerConfiguration*設定他們自己的格式器、 動作選取器和參數繫結器。 *HttpControllerConfigurationAttribute*已移除。
 - **每個路由訊息處理常式：** 您現在可以指定在指定的路由的要求鏈結中的最後一個訊息處理常式。 這可讓支援使用路由來分派到他們自己的賽車沿著架構 (非*IHttpController*) 端點。
-- **進度通知：***ProgressMessageHandler*產生要求實體正在上傳和下載的回應實體的進度通知。 使用這個處理常式就可以持續多久您要上傳的要求內文，或正在下載回應內文追蹤。
-- **推送內容：***PushStreamContent*類別可讓您的資料產生者，想要直接寫入要求或回應 （同步或非同步方式） 使用的資料流的案例。 當*PushStreamContent*已準備好接受它會呼叫外面動作委派與輸出資料流的資料。 開發人員可以再寫入資料流的資料流寫入時只要必要和關閉已完成。 *PushStreamContent*偵測到資料流的結尾，並完成基礎非同步*工作*寫出內容。
+- **進度通知：** *ProgressMessageHandler* 產生要求實體正在上傳和下載的回應實體的進度通知。 使用這個處理常式就可以持續多久您要上傳的要求內文，或正在下載回應內文追蹤。
+- **推送內容：** *PushStreamContent* 類別可讓您的資料產生者，想要直接寫入要求或回應 （同步或非同步方式） 使用的資料流的案例。 當*PushStreamContent*已準備好接受它會呼叫外面動作委派與輸出資料流的資料。 開發人員可以再寫入資料流的資料流寫入時只要必要和關閉已完成。 *PushStreamContent*偵測到資料流的結尾，並完成基礎非同步*工作*寫出內容。
 - **建立錯誤回應：** 使用*HttpError*型別來以一致的方式表示錯誤的資訊從例如驗證錯誤和例外狀況而且仍然承認*IncludeErrorDetailPolicy*。 使用新*CreateErrorResponse*擴充方法，以輕鬆地建立具有錯誤回應*HttpError*做為內容。 *HttpError*內容是完整的內容交涉。
 - **MediaRangeMapping 移除：** 預設器現在會處理媒體類型的範圍。
-- **簡單的型別參數的預設參數繫結現在是 [FromUri]:** 在舊版 ASP.NET Web API 的簡單的型別參數的預設參數繫結會使用模型繫結。 簡單的型別參數的預設參數繫結現 *[FromUri]*。
+- **簡單的型別參數的預設參數繫結現在是 [FromUri]:** 在舊版 ASP.NET Web API 的簡單的型別參數的預設參數繫結會使用模型繫結。 簡單的型別參數的預設參數繫結現 *[FromUri]* 。
 - **動作選取接受必要的參數：** 若未提供來自 URI 的所有必要的參數，則 ASP.NET Web API 中的動作選取會現在只有選取的動作。 參數可以指定為選擇性，藉由提供動作方法簽章中的引數的預設值。
 - **自訂 HTTP 參數繫結：** 使用  *ParameterBindingAttribute*來自訂特定動作參數的參數繫結，或使用*ParameterBindingRules*上*HttpConfiguration*自訂參數繫結更廣泛。
 - **MediaTypeFormatter 改進：** 格式器現在可以存取完整*HttpContent*執行個體。
@@ -238,7 +238,7 @@ ASP.NET MVC 4 Release Candidate 版本資訊可以在這裡找到：
 - **支援傳回 「 406 無法接受的回應：** 您現在可以傳回 406 無法接受的回應 ASP.NET Web API 中藉由建立找不到適合的格式器時*DefaultContentNegotiator*具有*excludeMatchOnTypeOnly*參數設定為 *，則為 true*。
 - **讀取為 NameValueCollection 或 JToken 的表單資料：** 您可以讀取的 URI 查詢字串中或做為要求主體中的表單資料*NameValueCollection*使用*ParseQueryString*並*ReadAsFormDataAsync*延伸模組方法分別。 同樣地，您可以在其中讀取 URI 查詢字串中或做為要求主體中的表單資料*JToken*使用*TryReadQueryAsJson*並*ReadAsAsync*&lt;T&gt;擴充方法分別。
 - **多部分的增強功能：** 現在便能夠撰寫*MultipartStreamProvider*可完全量身打造的 MIME 多組件資料它可以用來讀取，並以最佳方式，向使用者呈現結果的型別。 您也可以攔截的後續處理步驟上*MultipartStreamProvider* ，允許實作進行任何處理它想要在 MIME 多組件主體組件上的文章。 例如， *MultipartFormDataStreamProvider*實作讀取 HTML 表單資料組件，並將其加入*NameValueCollection*使其能夠輕鬆地在從呼叫者。
-- **連結產生的增強功能：***UrlHelper*不再相依於*HttpControllerContext*。 您現在可以存取*UrlHelper*從任何內容位置*HttpRequestMessage*可用。
+- **連結產生的增強功能：** *UrlHelper* 不再相依於 *HttpControllerContext*。 您現在可以存取*UrlHelper*從任何內容位置*HttpRequestMessage*可用。
 - **訊息處理常式執行順序變更：** 訊息處理常式現在會以反向順序設定而不是為了執行。
 - **針對連接訊息處理常式的協助程式：** 新*HttpClientFactory* ，可以接通*Delegatinghandlerelementcollection* ，並建立*HttpClient*與準備好開始所需的管線。 它也提供連接使用替代的內部處理常式的功能 (預設值是*HttpClientHandler*)，以及使用時，請勿將連接*HttpMessageInvoker*或其他*DelegatingHandler*而非*HttpClient*做為 top 啟動程式。
 - **ASP.NET Web 最佳化的 Cdn 支援：** ASP.NET Web 最佳化現在 CDN 替代的路徑，讓您指定的每一個套件組合，因此其他的 URL 指向該相同的資源，在內容傳遞網路提供支援。 支援 Cdn 可讓您以您指令碼和樣式套組地理上靠近前往 Web 應用程式的取用者。 無法使用 CDN 時，生產環境應用程式應該實作後援。 測試此後援。
@@ -271,7 +271,7 @@ ASP.NET MVC 4 Release Candidate 版本資訊可以在這裡找到：
 
     **必要的更新**
 
-  1. 在根 Web.config 檔案中，加入新*&lt;appSettings&gt;* 與索引鍵的項目*webPages:Version* ，而*1.0.0.0*。 
+  1. 在根 Web.config 檔案中，加入新 *&lt;appSettings&gt;* 與索引鍵的項目*webPages:Version* ，而*1.0.0.0*。 
 
       [!code-xml[Main](mvc4-release-notes/samples/sample7.xml)]
   2. 在 方案總管 中，以滑鼠右鍵按一下專案名稱，然後選取 卸載專案 然後再次以滑鼠右鍵按一下名稱，然後選取 編輯*ProjectName*.csproj。

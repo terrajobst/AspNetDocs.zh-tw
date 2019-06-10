@@ -47,13 +47,13 @@ ms.locfileid: "65130183"
 
 重新編譯應用程式使用**偵錯** &gt;**建置電影**功能表命令。
 
-既然您已更新`Model`類別，您也需要更新*\Views\Movies\Index.cshtml*並*\Views\Movies\Create.cshtml*檢視範本，以支援新`Rating`屬性。
+既然您已更新`Model`類別，您也需要更新 *\Views\Movies\Index.cshtml* 並 *\Views\Movies\Create.cshtml* 檢視範本，以支援新`Rating`屬性。
 
 開啟 *\Views\Movies\Index.cshtml* 檔案，並新增`<th>Rating</th>`資料行標題後方**價格**資料行。 然後新增`<td>`要呈現的範本結尾附近的資料行`@item.Rating`值。 以下是 哪些更新*Index.cshtml*檢視範本看起來像：
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample3.cshtml)]
 
-接下來，開啟*\Views\Movies\Create.cshtml*檔案，並新增下列標記表單的結尾附近。 這會呈現文字方塊中，如此當您建立新的電影時，您可以指定評等。
+接下來，開啟 *\Views\Movies\Create.cshtml* 檔案，並新增下列標記表單的結尾附近。 這會呈現文字方塊中，如此當您建立新的電影時，您可以指定評等。
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample4.cshtml)]
 
@@ -118,11 +118,11 @@ ms.locfileid: "65130183"
 
 ![7_MyMovieList_SM](adding-a-new-field/_static/image5.png)
 
-按一下 新建連結，可新增一部新電影。 請注意，您可以新增評分。
+按一下 新建  連結，可新增一部新電影。 請注意，您可以新增評分。
 
 [![7_CreateRioII](adding-a-new-field/_static/image7.png)](adding-a-new-field/_static/image6.png)
 
-按一下 [建立] 。 新的影片，包括評等，現在會出現電影清單：
+按一下 [建立]  。 新的影片，包括評等，現在會出現電影清單：
 
 [![7_ourNewMovie_SM](adding-a-new-field/_static/image9.png)](adding-a-new-field/_static/image8.png)
 
