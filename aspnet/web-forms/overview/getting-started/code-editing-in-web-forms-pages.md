@@ -51,7 +51,7 @@ ms.locfileid: "65134244"
 ### <a name="to-create-a-web-application-project"></a>若要建立的 Web 應用程式專案
 
 1. 開啟 Microsoft Visual Studio。
-2. 在 [檔案] 功能表上，選取 [新增專案]。  
+2. 在 [檔案] 功能表上，選取 [新增專案]。    
     ![[檔案] 功能表](code-editing-in-web-forms-pages/_static/image1.png)
 
     [ **新增專案** ] 對話方塊隨即出現。
@@ -71,7 +71,7 @@ ms.locfileid: "65134244"
 ### <a name="to-add-a-page-to-the-web-application"></a>將頁面新增至 Web 應用程式
 
 1. 在**方案總管**，以滑鼠右鍵按一下 Web 應用程式名稱 (在應用程式名稱是本教學課程**BasicWebSite**)，然後按一下 **新增** - &gt;**新的項目**。   
-隨即顯示 [ 新增項目] 對話方塊。
+隨即顯示 [ 新增項目]  對話方塊。
 2. 選取  **Visual C#**  - &gt; **Web**左側的 範本 群組。 然後，選取**Web Form**從中間清單並將它命名*FirstWebPage.aspx*。   
     ![加入新項目對話方塊](code-editing-in-web-forms-pages/_static/image4.png)
 3. 按一下 **新增**將 Web Form 頁面新增至您的專案。  
@@ -119,12 +119,12 @@ ms.locfileid: "65134244"
 
 1. 若要切換**設計**檢視。
 2. 在 **工具箱**，從**標準**索引標籤，拖曳[按鈕](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)拖曳至網頁。
-3. 按兩下** 按鈕**控制項來建立的處理常式及其[按一下](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx)事件，然後加入下列反白顯示的程式碼：
+3. 按兩下  **按鈕** 控制項來建立的處理常式及其[按一下](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx)事件，然後加入下列反白顯示的程式碼：
 
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample2.cs?highlight=3-16)]
 
    程式碼會建立**ArrayList**物件，載入的值，會使用迴圈，然後再使用另一個迴圈顯示的內容**ArrayList**物件。
-4. 按下**CTRL + F5**來執行頁面，然後按一下** 按鈕**藉此確定您會看到下列輸出：   
+4. 按下**CTRL + F5**來執行頁面，然後按一下  **按鈕** 藉此確定您會看到下列輸出：   
 
     [!code-html[Main](code-editing-in-web-forms-pages/samples/sample3.html)]
 5. 返回 程式碼編輯器，，，然後選取 事件處理常式中的 下列幾行。   
@@ -138,7 +138,7 @@ ms.locfileid: "65134244"
     程式碼編輯器中建立名為的新方法`DisplayArray`，並將放在新的方法呼叫**按一下**迴圈的最初的處理常式。
 
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample5.cs?highlight=12)]
-8. 按下**CTRL + F5**頁面上再次執行，然後按一下** 按鈕**。
+8. 按下**CTRL + F5**頁面上再次執行，然後按一下  **按鈕** 。
 
     網頁的運作與以前一樣。 `DisplayArray`方法現在可以從任何地方的呼叫，頁面類別中。
 
