@@ -215,7 +215,7 @@ jQuery Mobile 是開放原始碼程式庫建置觸控最佳化的 web UI。 如�
 
 如果造訪者按一下連結時，它們被切換到桌面版本的同一個頁面。
 
-因為您桌面的配置不會包含檢視切換器，根據預設，訪客不會有行動模式取得的方法。 若要啟用此功能，加入下列參考 *\_ViewSwitcher*至您的桌面配置，只是內部*&lt;主體&gt;* 項目：
+因為您桌面的配置不會包含檢視切換器，根據預設，訪客不會有行動模式取得的方法。 若要啟用此功能，加入下列參考 *\_ViewSwitcher*至您的桌面配置，只是內部 *&lt;主體&gt;* 項目：
 
 [!code-cshtml[Main](mvc4-beta-release-notes/samples/sample7.cshtml)]
 
@@ -239,7 +239,7 @@ jQuery Mobile 是開放原始碼程式庫建置觸控最佳化的 web UI。 如�
 <a id="_Toc303253813"></a>
 ### <a name="task-support-for-asynchronous-controllers"></a>非同步控制器的的工作支援
 
-您現在可以撰寫非同步動作方法傳回的型別物件的單一方法*任務*或是*工作&lt;ActionResult&gt;*。
+您現在可以撰寫非同步動作方法傳回的型別物件的單一方法*任務*或是*工作&lt;ActionResult&gt;* 。
 
 例如，如果您使用 Visual C# 5 (或使用[Async CTP](https://msdn.microsoft.com/vstudio/async.aspx))，您可以建立非同步動作方法看起來如下所示：
 
@@ -301,7 +301,7 @@ ASP.NET MVC 4 Beta 支援年 9 月 2011 1.5 版的 Windows Azure SDK。
 
     **必要的更新**
 
-  1. 在根 Web.config 檔案中，加入新*&lt;appSettings&gt;* 與索引鍵的項目*webPages:Version* ，而*1.0.0.0*。
+  1. 在根 Web.config 檔案中，加入新 *&lt;appSettings&gt;* 與索引鍵的項目*webPages:Version* ，而*1.0.0.0*。
 
       [!code-xml[Main](mvc4-beta-release-notes/samples/sample14.xml)]
   2. 在 方案總管 中，以滑鼠右鍵按一下專案名稱，然後選取 卸載專案 然後再次以滑鼠右鍵按一下名稱，然後選取 編輯*ProjectName*.csproj。
