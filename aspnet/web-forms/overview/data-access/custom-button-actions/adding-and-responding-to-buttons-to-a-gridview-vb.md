@@ -82,7 +82,7 @@ Visual Studio 會產生之後設定 ObjectDataSource `InsertItemTemplate`， `Ed
 
 [圖 7] 顯示 CustomButtons.aspx 頁面上，當透過瀏覽器檢視。
 
-[![FormView 列出 [CompanyName] 和 [從目前選取的供應商的電話欄位](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image16.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image15.png)
+[![FormView 列出 [CompanyName] 和 從目前選取的供應商的電話欄位](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image16.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image15.png)
 
 **圖 7**:FormView 列出`CompanyName`並`Phone`從目前選取的供應商的欄位 ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image17.png))
 
@@ -104,7 +104,7 @@ Visual Studio 會產生之後設定 ObjectDataSource `InsertItemTemplate`， `Ed
 
 [![表示讓 supplierID 參數應該都來自供應商 FormView 控制項](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image25.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image24.png)
 
-**圖 10**:表示*`supplierID`* 參數應該來自於`Suppliers`FormView 控制項 ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image26.png))
+**圖 10**:表示 *`supplierID`* 參數應該來自於`Suppliers`FormView 控制項 ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image26.png))
 
 完成 ObjectDataSource 精靈之後，GridView 會包含 BoundField 或 CheckBoxField 每個產品的資料欄位。 可讓 s 精簡這顯示只`ProductName`並`UnitPrice`BoundFields 連同`Discontinued`CheckBoxField; 此外，可讓 s 格式`UnitPrice`BoundField 使其文字格式化為貨幣。 您的 GridView 和`SuppliersProductsDataSource`ObjectDataSource s 宣告式標記看起來應該類似下列標記：
 
