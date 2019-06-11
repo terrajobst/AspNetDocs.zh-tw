@@ -25,7 +25,7 @@ ms.locfileid: "65108550"
 
 ## <a name="introduction"></a>簡介
 
-Microsoft SQL Server 是用來*[計算資料行](https://msdn.microsoft.com/library/ms191250.aspx)*，這是其值的計算方式，通常參考相同資料表中的其他資料行中的 值運算式的資料行。 舉例來說，追蹤資料模型的時間可能有一個名為資料表`ServiceLog`包括的資料行`ServicePerformed`， `EmployeeID`， `Rate`，和`Duration`，其他項目。 雖然金額每項服務項目 （速率乘以持續時間） 可能會計算透過網頁或其他程式設計介面，則可能包含的資料行中方便`ServiceLog`名為資料表`AmountDue`，回報這資訊。 無法建立此資料行，做為一般的資料行，但它必須隨時更新`Rate`或`Duration`變更的資料行值。 好的做法是讓`AmountDue`資料行使用運算式的計算資料行`Rate * Duration`。 這樣做會導致 SQL Server，即可自動計算`AmountDue`每當它在查詢中參考的資料行值。
+Microsoft SQL Server 是用來 *[計算資料行](https://msdn.microsoft.com/library/ms191250.aspx)* ，這是其值的計算方式，通常參考相同資料表中的其他資料行中的 值運算式的資料行。 舉例來說，追蹤資料模型的時間可能有一個名為資料表`ServiceLog`包括的資料行`ServicePerformed`， `EmployeeID`， `Rate`，和`Duration`，其他項目。 雖然金額每項服務項目 （速率乘以持續時間） 可能會計算透過網頁或其他程式設計介面，則可能包含的資料行中方便`ServiceLog`名為資料表`AmountDue`，回報這資訊。 無法建立此資料行，做為一般的資料行，但它必須隨時更新`Rate`或`Duration`變更的資料行值。 好的做法是讓`AmountDue`資料行使用運算式的計算資料行`Rate * Duration`。 這樣做會導致 SQL Server，即可自動計算`AmountDue`每當它在查詢中參考的資料行值。
 
 計算資料行的值取決於運算式，因為這類資料行是唯讀，因此不能有值指派給在`INSERT`或`UPDATE`陳述式。 不過，當計算資料行是使用特定 SQL 陳述式的 TableAdapter 的主查詢的一部分，它們會自動包含在自動產生`INSERT`和`UPDATE`陳述式。 因此，tableadapter`INSERT`並`UPDATE`查詢並`InsertCommand`和`UpdateCommand`必須更新屬性，以移除任何計算資料行的參考。
 

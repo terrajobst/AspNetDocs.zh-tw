@@ -110,7 +110,7 @@ DetailsView 有一個資料列`UnitPrice`， `UnitsInStock`，和`UnitsOnOrder`�
 新增靜態標記標籤 Web 控制項，資料繫結語法，以便為價格與清查 TemplateField 顯示的價格和清查資訊就像這樣：
 
 *UnitPrice*  
-(**庫存 / 順序：***UnitsInStock* / *UnitsOnOrder*)
+( **庫存 / 順序：** *UnitsInStock*  /  *UnitsOnOrder*)
 
 在執行這項工作之後 DetailsView 的宣告式標記看起來應該如下所示：
 

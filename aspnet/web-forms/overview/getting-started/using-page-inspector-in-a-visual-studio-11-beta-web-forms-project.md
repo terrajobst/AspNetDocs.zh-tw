@@ -58,11 +58,11 @@ Page Inspector 隨附於 Microsoft Web Developer Tools。 1.3 為最新版本。
 
 ## <a name="create-a-web-application"></a>建立 Web 應用程式
 
-首先，您將建立您將會使用 Page Inspector 與 web 應用程式。 在 Visual Studio 中，選擇**檔案** &gt; **新專案**。 在左側，展開**Visual C#**，選取**Web**，然後選取**ASP.NET Web Forms 應用程式**。
+首先，您將建立您將會使用 Page Inspector 與 web 應用程式。 在 Visual Studio 中，選擇**檔案** &gt; **新專案**。 在左側，展開**Visual C#** ，選取**Web**，然後選取**ASP.NET Web Forms 應用程式**。
 
 ![新 Web Forms 應用程式](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image1.png)
 
-按一下 [確定] 。
+按一下 [確定]  。
 
 在應用程式中開啟**來源**檢視。
 
@@ -243,7 +243,7 @@ CSS 自動同步處理功能可讓您直接編輯 CSS 檔案並查看立即在 P
 
 ![Intellisense 篩選值](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image24.png)
 
-現在，請輸入一個冒號。 當您這樣做時，則會插入完整的背景色彩屬性名稱。 型別**#** 或是**rgb (**，並會出現色彩選擇器列：
+現在，請輸入一個冒號。 當您這樣做時，則會插入完整的背景色彩屬性名稱。 型別 **#** 或是 **rgb (** ， 並會出現色彩選擇器列：
 
 ![CSS 色彩選擇器列](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image25.png)
 

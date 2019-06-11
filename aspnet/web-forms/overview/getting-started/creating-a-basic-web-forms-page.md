@@ -54,7 +54,7 @@ ms.locfileid: "65134667"
 ### <a name="to-create-a-web-application-project"></a>若要建立的 Web 應用程式專案
 
 1. 開啟 Microsoft Visual Studio。
-2. 在 [檔案] 功能表上，選取 [新增專案]。  
+2. 在 [檔案] 功能表上，選取 [新增專案]。    
     ![[檔案] 功能表](creating-a-basic-web-forms-page/_static/image1.png)
 
     [ **新增專案** ] 對話方塊隨即出現。
@@ -100,7 +100,7 @@ ms.locfileid: "65134667"
 
 1. 關閉*Default.aspx*頁面。 若要這樣做，請按一下顯示的檔案名稱的索引標籤，然後按一下 [關閉] 選項。
 2. 在**方案總管**，以滑鼠右鍵按一下 Web 應用程式名稱 (在應用程式名稱是本教學課程**BasicWebSite**)，然後按一下 **新增** - &gt;**新的項目**。   
-隨即顯示 [ 新增項目] 對話方塊。
+隨即顯示 [ 新增項目]  對話方塊。
 3. 選取  **Visual C#**  - &gt; **Web**左側的 範本 群組。 然後，選取**Web Form**從中間清單並將它命名*FirstWebPage.aspx*。   
     ![加入新項目對話方塊](creating-a-basic-web-forms-page/_static/image6.png)
 4. 按一下 **新增**將網頁新增至您的專案。  
@@ -175,14 +175,14 @@ Visual Studio 提供各種設定頁面上控制項的屬性。 在這個部分�
     ![設定按鈕文字](creating-a-basic-web-forms-page/_static/image10.png "設定按鈕文字")
 3. 若要切換**來源**檢視。
 
-    **來源**檢視會顯示的 HTML 頁面上，包括 Visual Studio 建立伺服器控制項的項目。 控制項使用宣告 HTML 的類似語法，不同之處在於標籤使用的前置詞**asp:** ，並包含屬性**runat =&quot;server&quot;**。
+    **來源**檢視會顯示的 HTML 頁面上，包括 Visual Studio 建立伺服器控制項的項目。 控制項使用宣告 HTML 的類似語法，不同之處在於標籤使用的前置詞**asp:** ，並包含屬性**runat =&quot;server&quot;** 。
 
     控制項的屬性會宣告為屬性。 例如，當您設定[文字](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.text.aspx)屬性[ 按鈕](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控制項，在步驟 1 中，您已實際設定**文字**中控制項的標記屬性。
 
     > [!NOTE] 
     > 
-    > 所有控制項都位於**表單**項目，也具有屬性**runat =&quot;server&quot;**。 **Runat =&quot;伺服器&quot;** 屬性和**asp:** 的前置詞控制標籤標記的控制項，以便處理 ASP.NET 伺服器上網頁執行時。 外部程式碼**&lt;m runat =&quot;伺服器&quot;&gt;** 並**&lt;指令碼 runat =&quot;server&quot; &gt;** 項目會傳送至瀏覽器，這就是為什麼 ASP.NET 程式碼必須在其開頭標記中包含的項目內不變**runat =&quot;伺服器&quot;** 屬性。
-4. 接下來，您將在其中加入一個額外的屬性，來[標籤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控制項。 將直接插入點後的放**asp: Label**中**&lt;asp: Label&gt;** 標記，並再按**空格鍵**。
+    > 所有控制項都位於**表單**項目，也具有屬性**runat =&quot;server&quot;** 。 **Runat =&quot;伺服器&quot;** 屬性和**asp:** 的前置詞控制標籤標記的控制項，以便處理 ASP.NET 伺服器上網頁執行時。 外部程式碼 **&lt;m runat =&quot;伺服器&quot;&gt;** 並 **&lt;指令碼 runat =&quot;server&quot;&gt;** 項目會傳送至瀏覽器，這就是為什麼 ASP.NET 程式碼必須在其開頭標記中包含的項目內不變 **runat =&quot;伺服器&quot;** 屬性。
+4. 接下來，您將在其中加入一個額外的屬性，來[標籤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控制項。 將直接插入點後的放 **asp: Label** 中 **&lt;asp: Label&gt;** 標記，並再按 **空格鍵** 。
 
     下拉式清單隨即出現，顯示您可以設定的可用屬性的清單[標籤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控制項。 這項功能，稱為**IntelliSense**，可協助您在**來源**語法的伺服器控制項、 HTML 項目和其他項目 頁面上的檢視。 如下圖所示**IntelliSense**下拉式清單，如[標籤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控制項。
 
@@ -194,7 +194,7 @@ Visual Studio 提供各種設定頁面上控制項的屬性。 在這個部分�
     > [!NOTE] 
     > 
     > 您可以顯示**IntelliSense**下拉式清單，隨時按下**CTRL + J**檢視程式碼時。
-6. 選取的色彩**[標籤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)** 控制項的文字。 請確定您選取濃，讀取在白色背景的色彩。
+6. 選取的色彩 **[標籤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)** 控制項的文字。 請確定您選取濃，讀取在白色背景的色彩。
 
     **ForeColor**屬性已完成，但您已選取，包括右括號的色彩。
 
@@ -213,7 +213,7 @@ Visual Studio 提供各種設定頁面上控制項的屬性。 在這個部分�
     > [!NOTE] 
     > 
     > 按兩下中的控制項**設計**檢視只是數種方式，您可以建立事件處理常式。
-3. 內部**Button1\_按一下 **事件處理常式中，輸入**Label1**後面接著句號 (**。**)。
+3. 內部**Button1\_按一下** 事件處理常式中，輸入**Label1**後面接著句號 ( **。** )。
 
     當您輸入超過此時限後的**識別碼**的標籤 (**Label1**)，Visual Studio 會顯示一份可用的成員，如[標籤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控制項，如下列所示圖。 成員通常是屬性、 方法或事件。
 
@@ -224,7 +224,7 @@ Visual Studio 提供各種設定頁面上控制項的屬性。 在這個部分�
 
     [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample2.vb?highlight=2)]
 5. 切換回 [檢視**來源**檢視您的 HTML 標記，以滑鼠右鍵按一下*FirstWebPage.aspx*中**方案總管] 中**，然後選取**檢視標記**。
-6. 若要捲動**&lt;p: Button&gt;** 項目。 請注意， **&lt;p: Button&gt;** 項目現在具有屬性**onclick =&quot;Button1\_按一下&quot;**。
+6. 若要捲動 **&lt;p: Button&gt;** 項目。 請注意， **&lt;p: Button&gt;** 項目現在具有屬性 **onclick =&quot;Button1\_按一下&quot;** 。
 
     這個屬性繫結的按鈕[按一下](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx)您在上一個步驟中自動程式化的處理常式方法的事件。
 
@@ -242,7 +242,7 @@ Visual Studio 提供各種設定頁面上控制項的屬性。 在這個部分�
     您輸入的名稱會顯示在[標籤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控制項。 請注意，當您按一下按鈕時，頁面張貼至 Web 伺服器。 ASP.NET 然後重新建立頁面時，便會執行您的程式碼 (在此情況下， [] 按鈕](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx)控制項的[按一下](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx)事件處理常式的執行)，然後傳送至瀏覽器的 [新的頁面。 如果您觀察瀏覽器中的 [狀態] 列，您可以看到的頁面對往返 Web 伺服器每次您按一下按鈕。
 3. 在瀏覽器中檢視您正在執行的頁面上按一下滑鼠右鍵，然後選取的頁面的來源**檢視原始檔**。
 
-    頁面在原始程式碼中，您會看到 HTML 而不需要任何伺服器程式碼。 具體來說，您看不見**&lt;asp:&gt;** 中所使用的項目**來源**檢視。 頁面執行時，ASP.NET 會處理伺服器控制項，並轉譯頁面執行的函式，表示控制項的 HTML 元素。 例如， **&lt;p: Button&gt;** 控制項呈現為 HTML **&lt;輸入類型 =&quot;提交&quot;&gt;** 項目。
+    頁面在原始程式碼中，您會看到 HTML 而不需要任何伺服器程式碼。 具體來說，您看不見 **&lt;asp:&gt;** 中所使用的項目 **來源** 檢視。 頁面執行時，ASP.NET 會處理伺服器控制項，並轉譯頁面執行的函式，表示控制項的 HTML 元素。 例如， **&lt;p: Button&gt;** 控制項呈現為 HTML **&lt;輸入類型 =&quot;提交&quot;&gt;** 項目。
 4. 關閉瀏覽器。
 
 ## <a name="working-with-additional-controls"></a>使用其他控制項
@@ -269,7 +269,7 @@ Visual Studio 提供各種設定頁面上控制項的屬性。 在這個部分�
 4. 從**選取配置**清單中，選取**簡單**，然後按一下 **確定**。
 5. 若要切換**來源**檢視。
 
-    您所見 **&lt;asp： 行事曆&gt;** 項目。 此元素會遠超過簡單的控制項，您稍早建立的項目。 它也包含子元素，例如 **&lt;WeekEndDayStyle&gt;**，其代表各種不同的格式設定。 如下圖所示[行事曆](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx)控制中**來源**檢視。 (您在中看到的確切標記**來源**檢視可能會稍有不同的圖。)
+    您所見 **&lt;asp： 行事曆&gt;** 項目。 此元素會遠超過簡單的控制項，您稍早建立的項目。 它也包含子元素，例如 **&lt;WeekEndDayStyle&gt;** ，其代表各種不同的格式設定。 如下圖所示[行事曆](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx)控制中**來源**檢視。 (您在中看到的確切標記**來源**檢視可能會稍有不同的圖。)
 
     ![月曆控制項在原始碼檢視](creating-a-basic-web-forms-page/_static/image15.png "月曆控制項在原始碼檢視")
 

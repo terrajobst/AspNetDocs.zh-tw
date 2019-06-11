@@ -80,7 +80,7 @@ GridView 提供 TemplateField，會呈現使用以容納此程度的彈性*範�
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample2.aspx)]
 
-TemplateField 如您所見，包含兩個範本`ItemTemplate`具有標籤的`Text`屬性設定的值為`FirstName`資料欄位，和`EditItemTemplate`搭配 TextBox 控制項`Text`屬性也設定若要`FirstName`資料欄位。 資料繫結語法- `<%# Bind("fieldName") %>` -指出資料欄位*`fieldName`* 繫結至指定的 Web 控制項屬性。
+TemplateField 如您所見，包含兩個範本`ItemTemplate`具有標籤的`Text`屬性設定的值為`FirstName`資料欄位，和`EditItemTemplate`搭配 TextBox 控制項`Text`屬性也設定若要`FirstName`資料欄位。 資料繫結語法- `<%# Bind("fieldName") %>` -指出資料欄位 *`fieldName`* 繫結至指定的 Web 控制項屬性。
 
 若要新增`LastName`資料欄位值為此我們需要加入另一個 Label Web 控制項中的 TemplateField`ItemTemplate`並繫結其`Text`屬性設`LastName`。 這可以是以手動方式或透過設計工具完成。 若要以手動方式執行，只要新增適當的宣告式語法， `ItemTemplate`:
 
