@@ -133,7 +133,7 @@ ASP.NET 已合併到 Movies.cshtml 頁面的內容 *\_Layout.cshtml*頁面上正
 
 ## <a name="passing-title-information-to-the-layout-page"></a>傳遞至版面配置頁的標題資訊
 
- *\_Layout.cshtml*您所建立的頁面具有`<title>`設為 「 我的影片網站 」 的項目。 大部分的瀏覽器會顯示此項目的內容 索引標籤上的文字為：
+*\_Layout.cshtml* 您所建立的頁面具有`<title>`設為 「 我的影片網站 」 的項目。 大部分的瀏覽器會顯示此項目的內容 索引標籤上的文字為：
 
 ![在頁面的&lt;title&gt;瀏覽器索引標籤中顯示的項目](layouts/_static/image8.png)
 

@@ -164,7 +164,7 @@ MSBuild 建置名為的項目清單，處理這個指示**ProjectsToBuild**。 �
 
 [!code-xml[Main](understanding-the-build-process/samples/sample10.xml)]
 
-這是範例*目標批次處理*。 在 MSBuild 專案檔中，批次處理是一種技術，用於逐一查看集合。 值**輸出**屬性， **"%(DbPublishPackages.Identity)"**，是指**識別**中繼資料屬性**DbPublishPackages**項目清單。 此表示法，**Outputs=%***(ItemList.ItemMetadataName)*，會轉譯成：
+這是範例*目標批次處理*。 在 MSBuild 專案檔中，批次處理是一種技術，用於逐一查看集合。 值**輸出**屬性， **"%(DbPublishPackages.Identity)"** ，是指**識別**中繼資料屬性**DbPublishPackages**項目清單。 此表示法，**Outputs=%** *(ItemList.ItemMetadataName)* ，會轉譯成：
 
 - 分割中的項目**DbPublishPackages**到包含相同的項目批次**識別**中繼資料值。
 - 執行一次每個批次的目標。
@@ -178,7 +178,7 @@ MSBuild 建置名為的項目清單，處理這個指示**ProjectsToBuild**。 �
 
 [!code-xml[Main](understanding-the-build-process/samples/sample11.xml)]
 
-在此情況下， **%(DbPublishPackages.DatabaseConnectionString)**， **%(DbPublishPackages.TargetDatabase)**，並 **%(DbPublishPackages.FullPath)** 所有參考中繼資料值**DbPublishPackages**項目集合。  **\_Cmd**屬性由**Exec**工作中，叫用命令。
+在此情況下， **%(DbPublishPackages.DatabaseConnectionString)** ， **%(DbPublishPackages.TargetDatabase)** ，並 **%(DbPublishPackages.FullPath)** 所有參考中繼資料值**DbPublishPackages**項目集合。 **\_Cmd** 屬性由 **Exec** 工作中，叫用命令。
 
 [!code-xml[Main](understanding-the-build-process/samples/sample12.xml)]
 
