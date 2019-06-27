@@ -8,12 +8,12 @@ ms.date: 05/18/2012
 ms.assetid: 79eca52c-e7ad-44ab-a3e4-d8093e9da5a7
 msc.legacyurl: /web-pages/pluralsight
 msc.type: content
-ms.openlocfilehash: 5485b68f8ed87952a6d09e1880e6d8ce39eea73a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: ce6d8a678e07945eff05baa080bb877bf06f6c6e
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108575"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411234"
 ---
 # <a name="webmatrix-and-web-pages-video-training-from-pluralsight"></a>Pluralsight 提供的 WebMatrix 與網頁訓練影片
 
@@ -39,4 +39,4 @@ Scott Hanselman、 首席專案經理、 Web 平台和 Azure 的工具，Microso
 
 解除鎖定存取 3000 + 開發人員，IT 和創意隨時隨地，您可以觀看的課程。
 
-**起價為 29 美元/mo.**[開始免費試用](https://pluralsight.com/microsoft/olt/subscribe/SubscriptionRedirector.aspx?freetrial=true&amp;utm_source=microsoft&amp;utm_medium=sponsored-page&amp;utm_content=webmatrix&amp;utm_campaign=microsoft-sponsored-course)[立即訂閱](https://pluralsight.com/microsoft/OLT/subscriptions.aspx?utm_source=microsoft&amp;utm_medium=sponsored-page&amp;utm_content=webmatrix&amp;utm_campaign=microsoft-sponsored-course)
+**啟動在 $ 35/mo.** [開始免費試用版或立即訂閱](https://www.pluralsight.com/pricing&amp;utm_source=microsoft&amp;utm_medium=sponsored-page&amp;utm_content=webmatrix&amp;utm_campaign=microsoft-sponsored-course)

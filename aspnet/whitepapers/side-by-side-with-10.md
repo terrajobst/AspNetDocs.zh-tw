@@ -8,12 +8,12 @@ ms.date: 02/10/2010
 ms.assetid: bdea2003-e964-4db5-9092-d56cc7560616
 msc.legacyurl: /whitepapers/side-by-side-with-10
 msc.type: content
-ms.openlocfilehash: d03919e8465c28cf00bf057193452396523cb1af
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: c123545099013af71569bce4707f2b3eb732c344
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125618"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411218"
 ---
 # <a name="aspnet-side-by-side-execution-of-net-framework-10-and-11"></a>ASP.NET 並存執行 .NET Framework 1.0 與 1.1
 
@@ -50,10 +50,10 @@ ms.locfileid: "65125618"
 1. 移至**啟動**。
 2. 按一下 **執行**。
 3. 輸入 **cmd**。
-4. 按一下 [確定] 。  
+4. 按一下 [確定]  。  
   
     ![](side-by-side-with-10/_static/image1.gif)
-5. 從命令提示字元中，輸入下列命令以啟動安裝的.NET framework:**Dotnetfx.exe /c: 「 安裝 /noaspupgrade 嗎？**.  
+5. 從命令提示字元中，輸入下列命令以啟動安裝的.NET framework:**Dotnetfx.exe /c: 「 安裝 /noaspupgrade 嗎？** .  
   
     ![](side-by-side-with-10/_static/image2.gif)
 6. 按一下 **是**中 Microsoft.NET Framework 1.1 版安裝程式。 這會啟動安裝程序的.NET Framework 1.1。  
@@ -68,11 +68,11 @@ ms.locfileid: "65125618"
 
 Aspnet\_1.0 版的 regiis.exe 位於：
 
-- C:\WINDOWS\Microsoft.NET\Framework\**v1.0.3705**\aspnet\_regiis
+- C:\WINDOWS\Microsoft.NET\Framework\\**v1.0.3705**\aspnet\_regiis
 
 Aspnet\_regiis.exe 版本 1，1 是位於：
 
-- C:\WINDOWS\Microsoft.NET\Framework\**v1.1.4322**\aspnet\_regiis
+- C:\WINDOWS\Microsoft.NET\Framework\\**v1.1.4322**\aspnet\_regiis
 
 Aspnet\_regiis.exe 提供兩個對應的 Web 應用程式的指令碼選項：
 

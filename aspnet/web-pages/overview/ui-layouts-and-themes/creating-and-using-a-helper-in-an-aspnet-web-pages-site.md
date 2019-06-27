@@ -8,12 +8,12 @@ ms.date: 02/17/2014
 ms.assetid: 46bff772-01e0-40f0-9ae6-9e18c5442ee6
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/creating-and-using-a-helper-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 1f5109324ff3ce919e88fe976587a179eeaa5a5d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 380663951094c9fc7d5f0601e30995fa073a204b
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116041"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410971"
 ---
 # <a name="creating-and-using-a-helper-in-an-aspnet-web-pages-razor-site"></a>建立和使用 ASP.NET Web Pages (Razor) 網站中的協助程式
 
@@ -71,7 +71,7 @@ ms.locfileid: "65116041"
     若要呼叫您所建立的協助程式，使用`@`後面接著檔案名稱，協助程式所在位置，一個點，然後按一下 是協助程式名稱。 (如果您有多個資料夾*應用程式\_程式碼*資料夾中，您可以使用語法`@FolderName.FileName.HelperName`呼叫您的協助專家內任何巢狀資料夾層級)。 您加入以引號括號內的文字是協助程式會顯示過程中網頁的附註文字。
 3. 儲存頁面，並在瀏覽器中執行它。 協助程式會產生附註項目直接呼叫的協助程式的位置： 這兩個段落。
 
-    ![在瀏覽器，並協助程式產生的標記，將指定的文字周圍方塊的方式顯示頁面的螢幕擷取畫面。](creating-and-using-a-helper-in-an-aspnet-web-pages-site/_static/image1.jpg)
+    ![在瀏覽器，並協助程式產生的標記，將指定的文字周圍方塊的方式顯示頁面的螢幕擷取畫面。](creating-and-using-a-helper-in-an-aspnet-web-pages-site/_static/image1.png)
 
 ## <a name="additional-resources"></a>其他資源
 

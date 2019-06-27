@@ -8,12 +8,12 @@ ms.date: 02/20/2005
 ms.assetid: 2bb109d2-e299-46ea-9054-fa0263b59165
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
-ms.openlocfilehash: 39f4eb7b0859cf52fe3ed2531e9c349b465b9327
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 4f0b021ca6ca151544dd9fb0587ed9e0cf14ff65
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116861"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411244"
 ---
 # <a name="caching"></a>快取
 
@@ -94,7 +94,7 @@ SQL Server 7 和 2000年使用 SQL 快取相依性輪詢為基礎的模型。 �
 | AspNet\_SqlCacheUnRegisterTableStoredProcedure | 藉由移除通知資料表中的項目會取消註冊 SQL 快取相依性的資料表，並移除觸發程序。 |
 | AspNet\_SqlCacheUpdateChangeIdStoredProcedure | 藉由遞增已變更的資料表 changeId 更新通知資料表。 ASP.NET 會使用此值來判斷資料是否已變更。 如下所示，此預存程序會執行觸發程序啟用資料表時建立。 |
 
-- SQL Server 觸發程序呼叫 ***表格\_名稱 *\_AspNet\_SqlCacheNotification\_觸發程序**建立資料表。 此觸發程序執行 AspNet\_SqlCacheUpdateChangeIdStoredProcedure 資料表上執行的 INSERT、 UPDATE 或 DELETE 時。
+- SQL Server 觸發程序稱為 **_表格\_名稱_\_AspNet\_SqlCacheNotification\_觸發程序**建立資料表。 此觸發程序執行 AspNet\_SqlCacheUpdateChangeIdStoredProcedure 資料表上執行的 INSERT、 UPDATE 或 DELETE 時。
 - SQL Server 角色稱為**aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess**加入至資料庫。
 
 **Aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess** SQL Server 角色具有 EXEC 權限，以 AspNet\_SqlCachePollingStoredProcedure。 為了讓輪詢模型才能正常運作，必須將您的處理序帳戶新增至 aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess 角色。 Aspnet\_regsql.exe 工具不會為您完成。

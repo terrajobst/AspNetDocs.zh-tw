@@ -9,12 +9,12 @@ ms.assetid: 0f78aec2-f509-46fa-b20f-d5208425d8ec
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-recommended-resources
 msc.type: authoredcontent
-ms.openlocfilehash: 8e476f8a4172ebbe55819cda1ceb5458426243bd
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: fa4b22438fffe4f5b95a877e96eb4ec26b6de8d9
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381896"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410886"
 ---
 # <a name="aspnet-identity-recommended-resources"></a>ASP.NET Identity 建議資源
 
@@ -147,7 +147,6 @@ ms.locfileid: "59381896"
 - 部落格：[實作 ASP.NET 身分識別](http://odetocode.com/blogs/scott/archive/2014/01/20/implementing-asp-net-identity.aspx)
 - 教學課程︰[設定基本的身分識別帳戶，並將它們指向外部的 DB](http://typecastexception.com/post/2013/10/27/Configuring-Db-Connection-and-Code-First-Migration-for-Identity-Accounts-in-ASPNET-MVC-5-and-Visual-Studio-2013.aspx)。 藉由[ @xivSolutions ](https://twitter.com/xivSolutions)。
 - 教學課程[:實作自訂的 MySQL ASP.NET Identity 儲存體提供者](../extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider.md)
-- [CodeFluent 實體](http://blog.codefluententities.com/2014/04/30/asp-net-identity-v2-and-codefluent-entities/)由[SoftFluent](http://www.softfluent.com/)
 - [Azure 資料表儲存體](https://www.nuget.org/packages/accidentalfish.aspnet.identity.azure/)>，作者 James Randall。
 - Azure 資料表儲存體：[AspNet.Identity.TableStorage](https://github.com/stuartleeks/leeksnet.AspNet.Identity.TableStorage)所[ @stuartleeks ](https://twitter.com/stuartleeks)。
 - [CouchDB / Cloudant 由 Daniel Wertheim。](https://github.com/danielwertheim/mycouch.aspnet.identity)
@@ -170,14 +169,14 @@ ms.locfileid: "59381896"
 ## <a name="qampa-questionanswer"></a>問：&amp;（問題/答案）
 
 - 問：鎖定已啟用 [記住我] （讓他們不必自己在該電腦/瀏覽器通過 2FA） 的使用者不會鎖定。原因和方式防止的？ 答案[此處](http://stackoverflow.com/questions/24312247/locked-out-users-can-login-if-they-have-auth-cookie)。
-- **問：**:如何將自訂的宣告，例如使用者的實際名稱，儲存在 ASP.NET 身分識別 cookie，以避免不必要的資料庫查詢，在每次要求。 答案[此處](http://stackoverflow.com/questions/23622047/identity-cookie-loses-custom-claim-information-after-a-period-of-time)。
+- **問：** :如何將自訂的宣告，例如使用者的實際名稱，儲存在 ASP.NET 身分識別 cookie，以避免不必要的資料庫查詢，在每次要求。 答案[此處](http://stackoverflow.com/questions/23622047/identity-cookie-loses-custom-claim-information-after-a-period-of-time)。
 - **問：更新 AspNetUser 密碼雜湊**:我有 2 個專案。 其中一個使用 ASP.NET 驗證，其他使用 Windows 驗證，也就是管理方面。 我想要能夠管理其他使用者的系統管理員專案。 我可以修改密碼以外的所有內容。 [回答以下](http://stackoverflow.com/questions/23880666/updating-aspnetuser-password-hash)。
-- **問：**:如何重做為其他使用者的系統管理員密碼？ 答案[此處](http://stackoverflow.com/questions/23783249/identity-2-0-reset-password-by-admin/24211766#24211766)。
-- **問：**:我可以變更在 ASP.NET MVC IdentityUser 中 [使用者名稱] 欄位的顯示的名稱嗎？ 答案[此處](http://stackoverflow.com/questions/23256650/can-i-change-the-displayed-name-of-the-username-field-in-asp-net-mvc-identityuse)。
-- **問：**:如何將其他使用者新增至特定角色的 gran 使用者權限？ 答案[此處](http://stackoverflow.com/questions/23695373/allow-users-to-grant-permissions-to-other-users-for-their-account-in-asp-net-ide)。
-- **問：**:將設定檔資訊儲存在 AspNetUsers 資料表與 AspNetUserClaims 資料表中。 答案[此處](http://stackoverflow.com/questions/23215727/is-there-any-benefit-to-storing-user-information-in-aspnetuserclaims-with-asp-ne)。
-- **問：**:使用外部驗證提供者時，請記住我。 答案[此處](http://stackoverflow.com/questions/23180896/how-to-remember-the-login-in-mvc5-when-an-external-provider-is-used)。
-- **問：**:為什麼每個要求需要 ApplicationDBContext，不會太多的額外負荷？。 問題的答案，否，額外負荷會低。
+- **問：** :如何重做為其他使用者的系統管理員密碼？ 答案[此處](http://stackoverflow.com/questions/23783249/identity-2-0-reset-password-by-admin/24211766#24211766)。
+- **問：** :我可以變更在 ASP.NET MVC IdentityUser 中 [使用者名稱] 欄位的顯示的名稱嗎？ 答案[此處](http://stackoverflow.com/questions/23256650/can-i-change-the-displayed-name-of-the-username-field-in-asp-net-mvc-identityuse)。
+- **問：** :如何將其他使用者新增至特定角色的 gran 使用者權限？ 答案[此處](http://stackoverflow.com/questions/23695373/allow-users-to-grant-permissions-to-other-users-for-their-account-in-asp-net-ide)。
+- **問：** :將設定檔資訊儲存在 AspNetUsers 資料表與 AspNetUserClaims 資料表中。 答案[此處](http://stackoverflow.com/questions/23215727/is-there-any-benefit-to-storing-user-information-in-aspnetuserclaims-with-asp-ne)。
+- **問：** :使用外部驗證提供者時，請記住我。 答案[此處](http://stackoverflow.com/questions/23180896/how-to-remember-the-login-in-mvc5-when-an-external-provider-is-used)。
+- **問：** :為什麼每個要求需要 ApplicationDBContext，不會太多的額外負荷？。 問題的答案，否，額外負荷會低。
 - 問：如何取得已登入的使用者清單？ 答案[此處](http://stackoverflow.com/questions/22995653/getting-a-list-of-logged-in-users-in-asp-net-identity/)。
 - 問：如何偵測當使用者登入時 Microsoft.AspNet.Identity？ 答案[此處](http://stackoverflow.com/questions/22956486/how-can-i-detect-when-a-user-logs-in-with-microsoft-aspnet-identity/22970698#22970698)。
 - 問：如何在身分識別取得當地語系化的錯誤訊息？ 答案[此處](http://stackoverflow.com/questions/22835981/asp-net-identity-localization-publickeytoken/22845864#22845864)。

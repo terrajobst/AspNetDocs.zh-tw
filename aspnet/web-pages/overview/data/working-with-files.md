@@ -8,12 +8,12 @@ ms.date: 02/20/2014
 ms.assetid: eee916e4-ba4c-439a-a24e-68df7d45a569
 msc.legacyurl: /web-pages/overview/data/working-with-files
 msc.type: authoredcontent
-ms.openlocfilehash: 3ff852232212ddda4930597731911be60c092667
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 684c47a8a8480dc040e5144144577c94c35d39e5
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108952"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411193"
 ---
 # <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a>使用 ASP.NET Web Pages (Razor) 網站中的檔案
 
@@ -22,7 +22,7 @@ ms.locfileid: "65108952"
 > 這篇文章說明如何讀取、 寫入、 附加、 刪除和上傳的 ASP.NET Web Pages (Razor) 網站中的檔案。
 > 
 > > [!NOTE]
-> > 如果您想要將影像上傳及管理它們 （例如，翻轉或調整其大小），請參閱[使用 ASP.NET Web Pages 網站中的映像](https://go.microsoft.com/fwlink/?LinkId=202897)。
+> > 如果您想要將影像上傳及管理它們 （例如，翻轉或調整其大小），請參閱[使用 ASP.NET Web Pages 網站中的映像](/aspnet/web-pages/overview/ui-layouts-and-themes/9-working-with-images)。
 > 
 > 
 > **您將學到什麼：** 
@@ -72,7 +72,7 @@ ms.locfileid: "65108952"
 
     接著，您建立的變數 (`dataFile`)，其中包含要將資料儲存在檔案名稱與位置。 設定位置需要一些特殊處理。 在網站中，並不適合在程式碼中參考為絕對路徑，例如*C:\Folder\File.txt* web 伺服器上的檔案。 如果移動網站時，絕對路徑會是錯誤。 此外，裝載站台 （而非您自己的電腦上） 您通常不甚至知道正確的路徑為何您要編寫指令碼時。
 
-    但有時 （如 now、 寫入檔案)，您需要完整的路徑。 解決方法是使用`MapPath`方法的`Server`物件。 這是您的網站傳回的完整路徑。 若要取得的網站根目錄中，您的使用者路徑`~`運算子 (represen 站台的虛擬根) 到`MapPath`。 (您也可以傳遞給它，子資料夾名稱，例如 *~/App\_Data /*，以取得該資料夾的路徑。)然後，您可以串連至任何方法以建立完整的路徑會傳回的其他資訊。 在此範例中，您可以新增的檔案名稱。 (您可以深入了解如何使用中的檔案和資料夾路徑[ASP.NET Web Pages 程式設計使用 Razor 語法簡介](https://go.microsoft.com/fwlink/?LinkId=195205#ID_WorkingWithFileAndFolderPaths)。)
+    但有時 （如 now、 寫入檔案)，您需要完整的路徑。 解決方法是使用`MapPath`方法的`Server`物件。 這是您的網站傳回的完整路徑。 若要取得的網站根目錄中，您的使用者路徑`~`運算子 (represen 站台的虛擬根) 到`MapPath`。 (您也可以傳遞給它，子資料夾名稱，例如 *~/App\_Data /* ，以取得該資料夾的路徑。)然後，您可以串連至任何方法以建立完整的路徑會傳回的其他資訊。 在此範例中，您可以新增的檔案名稱。 (您可以深入了解如何使用中的檔案和資料夾路徑[ASP.NET Web Pages 程式設計使用 Razor 語法簡介](https://go.microsoft.com/fwlink/?LinkId=195205#ID_WorkingWithFileAndFolderPaths)。)
 
     檔案會儲存在*應用程式\_資料*資料夾。 這個資料夾是用來儲存資料檔案中所述的 ASP.NET 中的特殊資料夾[使用 ASP.NET Web Pages 網站中的資料庫簡介](https://go.microsoft.com/fwlink/?LinkId=195209)。
 
@@ -142,12 +142,12 @@ ms.locfileid: "65108952"
 > 
 > **顯示從 Microsoft Excel 以逗號分隔檔案的資料**
 > 
-> 您可以使用 Microsoft Excel 來儲存為逗號分隔檔案的試算表中所包含的資料 (*.csv*檔案)。 這麼做之後，檔案會以純文字，不是以 Excel 格式儲存。 在試算表中的每個資料列分隔文字檔中的分行符號，每個資料項目以逗號分隔。 您可以使用上述範例所示的程式碼讀取 Excel 以逗號分隔的檔案，只要變更您的程式碼中的資料檔案的名稱。
+> 您可以使用 Microsoft Excel 來儲存為逗號分隔檔案的試算表中所包含的資料 ( *.csv*檔案)。 這麼做之後，檔案會以純文字，不是以 Excel 格式儲存。 在試算表中的每個資料列分隔文字檔中的分行符號，每個資料項目以逗號分隔。 您可以使用上述範例所示的程式碼讀取 Excel 以逗號分隔的檔案，只要變更您的程式碼中的資料檔案的名稱。
 
 <a id="Deleting_Files"></a>
 ## <a name="deleting-files"></a>刪除檔案
 
-若要刪除的檔案，從您的網站，您可以使用`File.Delete`方法。 此程序示範如何讓使用者能夠刪除映像 (*.jpg*檔案) 從*映像*資料夾如果他們知道檔案的名稱。
+若要刪除的檔案，從您的網站，您可以使用`File.Delete`方法。 此程序示範如何讓使用者能夠刪除映像 ( *.jpg*檔案) 從*映像*資料夾如果他們知道檔案的名稱。
 
 > [!NOTE] 
 > 
@@ -211,7 +211,7 @@ ms.locfileid: "65108952"
     文字方塊旁的**瀏覽**按鈕將包含路徑和檔案的位置。
 
     ![[image]](working-with-files/_static/image9.jpg)
-7. 按一下 [上傳] 。
+7. 按一下 [上傳]  。
 8. 在網站中，以滑鼠右鍵按一下專案資料夾，並再按**重新整理**。
 9. 開啟*UploadedFiles*資料夾。 您上傳的檔案是在資料夾中。 
 
@@ -246,7 +246,7 @@ ms.locfileid: "65108952"
 6. 按一下 **加入另一個檔案**。 此頁面會顯示新的 [上傳] 方塊。 
 
     ![[image]](working-with-files/_static/image12.jpg)
-7. 按一下 [上傳] 。
+7. 按一下 [上傳]  。
 8. 在網站中，以滑鼠右鍵按一下專案資料夾，並再按**重新整理**。
 9. 開啟*UploadedFiles*資料夾，以查看已成功上傳的檔案。
 

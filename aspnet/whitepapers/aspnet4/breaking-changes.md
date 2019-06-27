@@ -8,12 +8,12 @@ ms.date: 02/10/2010
 ms.assetid: d601c540-f86b-4feb-890c-20c806b3da6c
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: 65b13065ae5324ce64ec1b87b2127e5277542fb8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 8ccad3b40a723c92a3164de082e1f94577141008
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125667"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411204"
 ---
 # <a name="aspnet-4-breaking-changes"></a>ASP.NET 4 重大變更
 
@@ -317,11 +317,11 @@ ASP.NET 使用加密和雜湊演算法來協助保護資料，例如表單驗證
 
 ASP.NET 4 包含變更的修改方式**動作**屬性的 html**表單**項目會呈現時的無副檔名 URL 解析為預設文件。 會解析為預設文件的無副檔名 URL 的範例[ http://contoso.com/ ](http://contoso.com/)，產生的要求[ http://contoso.com/Default.aspx ](http://contoso.com/Default.aspx)。
 
-ASP.NET 4 現在會呈現 HTML**表單**項目的**動作**已對應到它的預設文件的無副檔名 url 提出要求時，屬性值為空字串。 例如，在舊版 ASP.NET 中，要求[ http://contoso.com ](http://contoso.com)的要求會導致`Default.aspx`。 在文件中開啟**表單**會呈現標記，如下列範例所示：
+ASP.NET 4 現在會呈現 HTML**表單**項目的**動作**已對應到它的預設文件的無副檔名 url 提出要求時，屬性值為空字串。 例如，在舊版 ASP.NET 中，要求[ http://contoso.com ](http://contoso.com)的要求會導致`Default.aspx` 。 在文件中開啟**表單**會呈現標記，如下列範例所示：
 
 `<form action="Default.aspx" />`
 
-在 ASP.NET 4 中，要求[ http://contoso.com ](http://contoso.com)也會導致要求`Default.aspx`。 不過，ASP.NET 現在會轉譯 HTML 開啟**表單**標記，如下列範例所示：
+在 ASP.NET 4 中，要求[ http://contoso.com ](http://contoso.com)也會導致要求`Default.aspx` 。 不過，ASP.NET 現在會轉譯 HTML 開啟**表單**標記，如下列範例所示：
 
 `<form action="" />`
 
@@ -362,7 +362,7 @@ ASP.NET 2.0 中，並由延伸模組在 3.5 中，已新增的 ASP.NET 功能會
 - 允許在單一應用程式定義域中的多個不同的權限集。
 - 不需要的組件在 GAC 中，在堆疊上只有 ASP.NET 或其他.NET Framework 程式碼時，會叫用明確的權限判斷提示。
 
-無法還原其中一個案例，在.NET Framework 4： 非 Web 部分信任應用程式不會再呼叫 System.Web.dll 和 System.Web.Extensions.dll 中的某些 Api。 在舊版的.NET Framework 中，已被明確授與非 Web 部分信任應用程式<strong>AspNetHostingPermission</strong>權限。 接著可以使用這些應用程式<strong>System.Web.HttpUtility</strong>中的型別<strong>System.Web.ClientServices。\</ s t > * 命名空間和類型與成員資格、 角色和設定檔。 在.NET Framework 4 中不再支援從非 Web 部分信任應用程式呼叫這些類型。
+無法還原其中一個案例，在.NET Framework 4： 非 Web 部分信任應用程式不會再呼叫 System.Web.dll 和 System.Web.Extensions.dll 中的某些 Api。 在舊版的.NET Framework 中，已被明確授與非 Web 部分信任應用程式**AspNetHostingPermission**權限。 接著可以使用這些應用程式**System.Web.HttpUtility**中的型別**System.Web.ClientServices。\*** 命名空間和類型與成員資格、 角色和設定檔。 在.NET Framework 4 中不再支援從非 Web 部分信任應用程式呼叫這些類型。
 
 > [!NOTE]
 > **HtmlEncode**並**HtmlDecode**的功能**System.Web.HttpUtility**類別已移至新的.NET Framework 4 **System.Net.WebUtility**類別。 如果這是所使用的只有 ASP.NET 功能，修改應用程式的程式碼，以使用新**WebUtility**類別。

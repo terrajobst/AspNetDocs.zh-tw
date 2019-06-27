@@ -8,12 +8,12 @@ ms.date: 02/10/2014
 ms.assetid: f3f4b8c8-e8f6-4474-ad94-69228a6c01ee
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
-ms.openlocfilehash: ec5ad784978b2d5191d59398fc4b5ed25ae516fb
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: c7d4802063c8610a246afe67bd15eea429f7304a
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128396"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67410836"
 ---
 # <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>使用 ASP.NET Web Pages (Razor) 網站中的 HTML 表單
 
@@ -51,7 +51,7 @@ ms.locfileid: "65128396"
     [!code-html[Main](4-working-with-forms/samples/sample1.html)]
 3. 啟動您的瀏覽器頁面。 (在 WebMatrix 中，在**檔案**工作區中，以滑鼠右鍵按一下檔案，然後選取**在瀏覽器中啟動**。)簡單的表單，具有三個輸入欄位，以及**送出**按鈕會顯示。
 
-    ![有三個文字方塊的表單螢幕擷取畫面。](4-working-with-forms/_static/image1.jpg)
+    ![有三個文字方塊的表單螢幕擷取畫面。](4-working-with-forms/_static/image1.png)
 
     此時，如果您按一下**送出**按鈕時，會發生任何事。 若要讓表單很有用，您必須新增一些將會在伺服器執行的程式碼。
 
@@ -67,7 +67,7 @@ ms.locfileid: "65128396"
 
     當您提交頁面這次時，您輸入的值會顯示在表單的正上方：
 
-    ![如果螢幕擷取畫面顯示在頁面上顯示您輸入的值。](4-working-with-forms/_static/image2.jpg)
+    ![如果螢幕擷取畫面顯示在頁面上顯示您輸入的值。](4-working-with-forms/_static/image2.png)
 
     看看頁面的程式碼。 您先使用`IsPost`方法，以判斷是否要張貼頁面&#8212;也就是是否使用者已按下**提交**按鈕。 如果這是 post `IsPost` ，則傳回 true。 這是標準方式 ASP.NET Web Pages 中，以判斷是否使用初始要求 （GET 要求） 或回傳 （POST 要求）。 (GET 和 POST 有關的詳細資訊，請參閱資訊看板 「 HTTP GET 和 POST 和 IsPost 屬性的 「，在[ASP.NET Web Pages 程式設計使用 Razor 語法簡介](https://go.microsoft.com/fwlink/?LinkId=202890#SB_HttpGetPost)。)
 

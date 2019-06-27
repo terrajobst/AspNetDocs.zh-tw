@@ -8,12 +8,12 @@ ms.date: 06/09/2009
 ms.assetid: cb061642-faf3-41b2-9372-69e13444d458
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f56241a6a3d1d54f917d366b08edb4a1a43bbce8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 2b84b4e0f57bdddb83fc79494b66be76edcad664
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134452"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411116"
 ---
 # <a name="displaying-a-custom-error-page-c"></a>顯示自訂的錯誤頁面 (C#)
 
@@ -55,7 +55,7 @@ ms.locfileid: "65134452"
 
 另一種 YSOD 是執行階段錯誤 YSOD 中，與所示**圖 2**。 執行階段錯誤 YSOD 通知發生執行階段錯誤，訪客，但是它不包含任何擲回的例外狀況的相關資訊。 (它，不過，提供有關如何進行修改的可檢視錯誤詳細資料的指示`Web.config`檔案，這是屬於讓這類 YSOD 看起來不夠專業。)
 
-根據預設，執行階段錯誤 YSOD 顯示給使用者瀏覽遠端 (透過 http://www.yoursite.com) ，在瀏覽器的網址列中的 URL，證明**圖 2**: `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo`。 在兩個不同 YSOD 畫面存在，因為開發人員有興趣了解錯誤詳細資料，但是因為它可能會揭露潛在的安全性弱點或其他機密資訊来造訪的任何人，這類資訊應該顯示即時站台的程式站台。
+根據預設，執行階段錯誤 YSOD 顯示給使用者瀏覽遠端 (透過 http://www.yoursite.com) ，在瀏覽器的網址列中的 URL，證明**圖 2**: `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo` 。 在兩個不同 YSOD 畫面存在，因為開發人員有興趣了解錯誤詳細資料，但是因為它可能會揭露潛在的安全性弱點或其他機密資訊来造訪的任何人，這類資訊應該顯示即時站台的程式站台。
 
 > [!NOTE]
 > 如果您有並獲得使用與您的 web 主機時，您可能會發現瀏覽即時的網站時，不會不會顯示執行階段錯誤 YSOD。 這是因為獲得的預設設定來顯示例外狀況詳細資料 YSOD 其伺服器。 好消息是，您可以覆寫此預設行為加入`<customErrors>`陳述式，以您`Web.config`檔案。 「 設定的錯誤頁面顯示 」 一節將探討`<customErrors>`詳細資料中的一節。
@@ -137,8 +137,10 @@ ms.locfileid: "65134452"
 > [!NOTE]
 > 請參閱[404 錯誤網頁，一個更多時間](http://www.smashingmagazine.com/2009/01/29/404-error-pages-one-more-time/)如需建立有效的 404 錯誤頁面的指引。
 
-[![](displaying-a-custom-error-page-cs/_static/image19.png)](displaying-a-custom-error-page-cs/_static/image18.png)**圖 7**:自訂 404 錯誤頁面會顯示更具針對性的訊息比 `Oops.aspx`  
- ([按一下以檢視完整大小的影像](displaying-a-custom-error-page-cs/_static/image20.png)) 
+[![](displaying-a-custom-error-page-cs/_static/image19.png)](displaying-a-custom-error-page-cs/_static/image18.png)
+
+**圖 7**:自訂 404 錯誤頁面會顯示更具針對性的訊息比 `Oops.aspx`  
+([按一下以檢視完整大小的影像](displaying-a-custom-error-page-cs/_static/image20.png)) 
 
 因為您知道`404.aspx`時使用者提出要求的頁面，找不到，就只能到達頁面，您可以增強這個自訂錯誤頁面，以包含可協助使用者解決這種錯誤的特定類型的功能。 比方說，您可以在其中建置資料庫對應的資料表已知良好的 Url 不正確的 Url 並再有`404.aspx`執行針對查詢的資料表，並建議使用者可能會嘗試連線到的頁面自訂錯誤頁面。
 

@@ -8,12 +8,12 @@ ms.date: 03/10/2014
 ms.assetid: d7bd001b-6db2-4422-9b78-f3d08b743b00
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/3-creating-a-consistent-look
 msc.type: authoredcontent
-ms.openlocfilehash: 7d580b3812c4a09d6bc8d34c46dc82339ba40ee8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 3f63ce68ae4c13970ac0df196167ace0b22b592c
+ms.sourcegitcommit: dd0dc556a3d99a31d8fdbc763e9a2e53f3441b70
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133378"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67411261"
 ---
 # <a name="creating-a-consistent-layout-in-aspnet-web-pages-razor-sites"></a>在 ASP.NET Web Pages (Razor) 網站中建立一致的版面配置
 
@@ -53,7 +53,7 @@ ms.locfileid: "65133378"
 
 在此程序中，您將建立會參考兩個內容區塊 （標頭和頁尾） 位於不同的檔案中的頁面。 在您的網站中的任何網頁中，您可以使用這些相同的內容區塊。 當您完成時，您會收到如下的頁面：
 
-![在執行一個網頁，內含 RenderPage 方法的呼叫而產生的瀏覽器中顯示頁面的螢幕擷取畫面。](3-creating-a-consistent-look/_static/image2.jpg)
+![在執行一個網頁，內含 RenderPage 方法的呼叫而產生的瀏覽器中顯示頁面的螢幕擷取畫面。](3-creating-a-consistent-look/_static/image2.png)
 
 1. 在您的網站根資料夾中，建立名為*Index.cshtml*。
 2. 以下列內容取代現有的標記：
@@ -118,7 +118,7 @@ ms.locfileid: "65133378"
     這是將使用版面配置頁的頁面。 在頁面頂端的程式碼區塊會指出要用來格式化此內容的 [配置] 頁面。
 7. 執行*Content1.cshtml*瀏覽器中。 呈現的網頁使用的格式和樣式表中定義 *\_Layout1.cshtml*中定義的文字 （內容） 及*Content1.cshtml*。
 
-    ![[image]](3-creating-a-consistent-look/_static/image4.jpg)
+    ![[image]](3-creating-a-consistent-look/_static/image4.png)
 
     您可以重複步驟 6 以建立其他的內容頁面，然後就可以共用相同的 [配置] 頁面。
 
@@ -148,7 +148,7 @@ ms.locfileid: "65133378"
     此內容的頁面會包含在頁面頂端的程式碼區塊。 每個具名的區段包含區段區塊中。 頁面的其餘部分包含的預設 （未命名） 的內容一節。
 4. 執行*Content2.cshtml*瀏覽器中。
 
-    ![在執行一個網頁，內含 RenderSection 方法的呼叫而產生的瀏覽器中顯示頁面的螢幕擷取畫面。](3-creating-a-consistent-look/_static/image6.jpg)
+    ![在執行一個網頁，內含 RenderSection 方法的呼叫而產生的瀏覽器中顯示頁面的螢幕擷取畫面。](3-creating-a-consistent-look/_static/image6.png)
 
 ## <a name="making-content-sections-optional"></a>進行選擇性的內容區段
 
@@ -165,7 +165,7 @@ ms.locfileid: "65133378"
     [!code-cshtml[Main](3-creating-a-consistent-look/samples/sample12.cshtml)]
 2. 儲存頁面，然後執行它在瀏覽器中。 顯示一則錯誤訊息，因為 [內容] 頁面並不提供版面配置頁面，也就是標頭區段中定義的區段的內容。
 
-    ![螢幕擷取畫面顯示如果您執行頁面，就會發生此錯誤的呼叫 RenderSection 方法，但未提供對應的章節。](3-creating-a-consistent-look/_static/image7.jpg)
+    ![螢幕擷取畫面顯示如果您執行頁面，就會發生此錯誤的呼叫 RenderSection 方法，但未提供對應的章節。](3-creating-a-consistent-look/_static/image7.png)
 3. 在  *Shared*資料夾中，開啟 *\_Layout2.cshtml*頁面上，然後取代這一行：
 
     [!code-javascript[Main](3-creating-a-consistent-look/samples/sample13.js)]
@@ -210,10 +210,10 @@ ms.locfileid: "65133378"
     [!code-html[Main](3-creating-a-consistent-look/samples/sample18.html)]
 4. 執行*Content3.cshtml*瀏覽器中的頁面。 頁面會顯示頁面的左側顯示的清單和**隱藏清單**底部的按鈕。
 
-    ![顯示包含清單和一個按鈕，叫做 「 隱藏清單 」 頁面的螢幕擷取畫面。](3-creating-a-consistent-look/_static/image10.jpg)
+    ![顯示包含清單和一個按鈕，叫做 「 隱藏清單 」 頁面的螢幕擷取畫面。](3-creating-a-consistent-look/_static/image10.png)
 5. 按一下 **隱藏清單**。 清單消失，按鈕會變成**顯示清單**。
 
-    ![顯示不包含清單和一個按鈕，叫做 「 顯示清單 」 頁面的螢幕擷取畫面。](3-creating-a-consistent-look/_static/image11.jpg)
+    ![顯示不包含清單和一個按鈕，叫做 「 顯示清單 」 頁面的螢幕擷取畫面。](3-creating-a-consistent-look/_static/image11.png)
 6. 按一下 **顯示清單**按鈕和清單就會再次顯示。
 
 ## <a name="additional-resources"></a>其他資源
