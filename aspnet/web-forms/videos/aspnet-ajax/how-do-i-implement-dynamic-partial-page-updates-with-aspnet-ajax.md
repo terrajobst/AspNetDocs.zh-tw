@@ -2,18 +2,18 @@
 uid: web-forms/videos/aspnet-ajax/how-do-i-implement-dynamic-partial-page-updates-with-aspnet-ajax
 title: '[How Do i:]實作動態的部分頁面更新與 ASP.NET AJAX？ | Microsoft Docs'
 author: JoeStagner
-description: 在這段影片中，您會了解如何使用 Microsoft ASP.NET AJAX 的 ASP.NET 應用程式中加入動態的部分頁面更新。 特別是，您會看到如何...
+description: 在這段影片中，您會了解如何使用 Microsoft ASP.NET AJAX 的 ASP.NET 應用程式中加入動態的部分頁面更新。
 ms.author: riande
 ms.date: 01/25/2007
 ms.assetid: 7559a912-2753-4866-a140-a4c6cefee00c
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-dynamic-partial-page-updates-with-aspnet-ajax
 msc.type: video
-ms.openlocfilehash: c032609a440ea8cb0d6e11759994581011daf70c
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 8d8258e90b107e09c2f7328907b080fb0f9f9f6b
+ms.sourcegitcommit: a256895f6160acc28d75424b8ab5d03b4e74412e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410197"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67471377"
 ---
 # <a name="how-do-i-implement-dynamic-partial-page-updates-with-aspnet-ajax"></a>[How Do i:]實作動態的部分頁面更新與 ASP.NET AJAX？
 

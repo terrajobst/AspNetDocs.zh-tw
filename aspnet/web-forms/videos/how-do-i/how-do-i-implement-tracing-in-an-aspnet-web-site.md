@@ -2,18 +2,18 @@
 uid: web-forms/videos/how-do-i/how-do-i-implement-tracing-in-an-aspnet-web-site
 title: '[How Do i:] 在 ASP.NET 網站中實作追蹤？ | Microsoft Docs'
 author: rick-anderson
-description: 在這段影片 Chris Pels 將示範如何實作 ASP.NET 網站中監視或測量效能，以及診斷錯誤的追蹤。 了解如何...
+description: 在這段影片 Chris Pels 將示範如何實作 ASP.NET 網站中監視或測量效能，以及診斷錯誤的追蹤。
 ms.author: riande
 ms.date: 11/05/2007
 ms.assetid: b3abbbef-ddac-4c8e-a068-5bab31db5931
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-tracing-in-an-aspnet-web-site
 msc.type: video
-ms.openlocfilehash: b3c38ef329f4b6b2afe5ba0cbb13b615b1580590
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 0a17b2f73cde4e4d6914c38486d19438138e21cd
+ms.sourcegitcommit: a256895f6160acc28d75424b8ab5d03b4e74412e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397587"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67471411"
 ---
 # <a name="how-do-i--implement-tracing-in-an-aspnet-web-site"></a>[How Do i:] 在 ASP.NET 網站中實作追蹤？
 
