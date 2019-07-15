@@ -25,7 +25,7 @@ ms.locfileid: "65134158"
 
 ## <a name="introduction"></a>簡介
 
-設計良好的一個屬性是網站的一致的整個網站的頁面配置。 www.asp.net 網站後，為例。 在撰寫本文時，每一頁會有相同的內容，在頂端和底部的頁面。 如 [圖 1] 所示，每個頁面最上方會顯示一份 Microsoft 社群的灰色列。 下方也就是為網站標誌，所在的站台已轉譯，語言和核心區段的清單：首頁，取得已啟動、 學習、 下載等。 同樣地，頁面底部包含 www.asp.net 、 的著作權陳述式，以及隱私權聲明連結廣告的相關資訊。
+設計良好的一個屬性是網站的一致的整個網站的頁面配置。 [www.asp.net](www.asp.net) 網站後，為例。 在撰寫本文時，每一頁會有相同的內容，在頂端和底部的頁面。 如 [圖 1] 所示，每個頁面最上方會顯示一份 Microsoft 社群的灰色列。 下方也就是為網站標誌，所在的站台已轉譯，語言和核心區段的清單：首頁，取得已啟動、 學習、 下載等。 同樣地，頁面底部包含 www.asp.net 、 的著作權陳述式，以及隱私權聲明連結廣告的相關資訊。
 
 [![Www.asp.net 網站所有頁面採用一致的外觀與風格](creating-a-site-wide-layout-using-master-pages-vb/_static/image2.png)](creating-a-site-wide-layout-using-master-pages-vb/_static/image1.png)
 
