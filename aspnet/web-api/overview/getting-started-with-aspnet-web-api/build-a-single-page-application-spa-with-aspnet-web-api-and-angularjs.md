@@ -115,12 +115,12 @@ Web API 架構是 ASP.NET 堆疊的一部分，旨在讓您輕鬆地實作 HTTP 
     ![使用 MVC 範本，包括 Web API 元件建立新的專案](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image3.png)
 
     *使用 MVC 範本，包括 Web API 元件建立新的專案*
-4. 在 [**方案總管] 中**，以滑鼠右鍵按一下**模型**資料夾**GeekQuiz**專案，然後選取**新增 |現有的項目...**.
+4. 在 [**方案總管] 中**，以滑鼠右鍵按一下**模型**資料夾**GeekQuiz**專案，然後選取**新增 |現有的項目...** .
 
     ![加入現有項目](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image4.png "加入現有項目")
 
     *加入現有項目*
-5. 在 **加入現有項目**對話方塊方塊中，瀏覽至**來源/資產/模型**資料夾，然後選取所有檔案。 按一下 [加入] 。
+5. 在 **加入現有項目**對話方塊方塊中，瀏覽至**來源/資產/模型**資料夾，然後選取所有檔案。 按一下 [加入]  。
 
     ![新增模型資產](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image5.png "加入模型資產")
 
@@ -156,7 +156,7 @@ Web API 架構是 ASP.NET 堆疊的一部分，旨在讓您輕鬆地實作 HTTP 
 10. 在相同的檔案中，更新導覽列藉由移除*關於*並*連絡人*連結和重新命名*首頁*連結至*播放*。 此外，重新命名*應用程式名稱*連結至*Geek 測驗*。 在導覽列 HTML 看起來應該類似下列的程式碼。
 
     [!code-cshtml[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample5.cshtml)]
-11. 藉由取代更新的版面配置頁的頁尾*My ASP.NET Application*具有*Geek 測驗*。 若要這樣做，請將取代的內容**&lt;頁尾&gt;** 具有下列醒目提示的程式碼項目。
+11. 藉由取代更新的版面配置頁的頁尾*My ASP.NET Application*具有*Geek 測驗*。 若要這樣做，請將取代的內容 **&lt;頁尾&gt;** 具有下列醒目提示的程式碼項目。
 
     [!code-html[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample6.html)]
 
@@ -180,7 +180,7 @@ Web API 架構是 ASP.NET 堆疊的一部分，旨在讓您輕鬆地實作 HTTP 
 
     > [!NOTE]
     > **CamelCasePropertyNamesContractResolver**會自動轉換到的屬性名稱*依照 camel 命名法*情況下，也就是在 JavaScript 中的屬性名稱的一般慣例。
-4. 在 [**方案總管] 中**，以滑鼠右鍵按一下**控制站**資料夾**GeekQuiz**專案，然後選取**新增 |新增 Scaffold 項目...**.
+4. 在 [**方案總管] 中**，以滑鼠右鍵按一下**控制站**資料夾**GeekQuiz**專案，然後選取**新增 |新增 Scaffold 項目...** .
 
     ![建立新的 scaffold 項目](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image6.png "建立新的 scaffold 項目")
 
@@ -315,7 +315,7 @@ Web API 架構是 ASP.NET 堆疊的一部分，旨在讓您輕鬆地實作 HTTP 
     ![建立新的 JavaScript 檔案](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image17.png)
 
     *建立新的 JavaScript 檔案*
-5. 在 [**指定項目的名稱**] 對話方塊中，輸入*測驗控制器*中**項目名稱**文字方塊中，然後按一下 **[確定]**。
+5. 在 [**指定項目的名稱**] 對話方塊中，輸入*測驗控制器*中**項目名稱**文字方塊中，然後按一下 **[確定]** 。
 
     ![命名新的 JavaScript 檔案](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image18.png)
 
@@ -399,12 +399,12 @@ Web API 架構是 ASP.NET 堆疊的一部分，旨在讓您輕鬆地實作 HTTP 
 
 在這項工作中，您會使用 CSS3 屬性來加入翻頁動畫的效果，以及擷取下一個問題時在解答的問題，以執行豐富的動畫。
 
-1. 在 [**方案總管] 中**，以滑鼠右鍵按一下**內容**資料夾**GeekQuiz**專案，然後選取**新增 |現有的項目...**.
+1. 在 [**方案總管] 中**，以滑鼠右鍵按一下**內容**資料夾**GeekQuiz**專案，然後選取**新增 |現有的項目...** .
 
     ![將現有的項目新增至內容的資料夾](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image22.png "Content 資料夾加入現有項目")
 
     *將現有的項目新增至 [Content] 資料夾*
-2. 在 **加入現有項目**對話方塊方塊中，瀏覽至**來源/資產**資料夾，然後選取**Flip.css**。 按一下 [加入] 。
+2. 在 **加入現有項目**對話方塊方塊中，瀏覽至**來源/資產**資料夾，然後選取**Flip.css**。 按一下 [加入]  。
 
     ![從資產新增 Flip.css 檔案](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/_static/image23.png "從資產新增 Flip.css 檔案")
 
@@ -416,7 +416,7 @@ Web API 架構是 ASP.NET 堆疊的一部分，旨在讓您輕鬆地實作 HTTP 
 5. 找出**flip 期間隱藏窗格背面**註解。 當面臨遠離檢視器藉由設定時，下方的註解的樣式會隱藏臉部在後端**背面可視性**CSS 屬性*隱藏*。
 
     [!code-css[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample23.css)]
-6. 開啟**BundleConfig.cs**檔案內**應用程式\_開始**資料夾並將參考加入**Flip.css**檔案**&quot;~/Content/css&quot;** 樣式套件組合
+6. 開啟**BundleConfig.cs**檔案內**應用程式\_開始**資料夾並將參考加入**Flip.css**檔案 **&quot;~/Content/css&quot;** 樣式套件組合
 
     [!code-csharp[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample24.cs)]
 7. 按下**F5**執行方案，然後登入您的認證。

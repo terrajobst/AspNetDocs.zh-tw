@@ -83,11 +83,11 @@ ms.locfileid: "65134057"
 
 **圖 9**:設定要使用 ObjectDataSource`GetProductsByCategoryID(categoryID)`方法 ([按一下以檢視完整大小的影像](master-detail-filtering-with-two-dropdownlists-cs/_static/image27.png))
 
-我們需要在精靈的最後一個步驟中指定的值*`categoryID`* 參數。 將此參數指派給選取的項目從`Categories`DropDownList。
+我們需要在精靈的最後一個步驟中指定的值 *`categoryID`* 參數。 將此參數指派給選取的項目從`Categories`DropDownList。
 
 [![從類別 DropDownList 提取 categoryID 參數值](master-detail-filtering-with-two-dropdownlists-cs/_static/image29.png)](master-detail-filtering-with-two-dropdownlists-cs/_static/image28.png)
 
-**圖 10**:提取*`categoryID`* 參數值，從`Categories`DropDownList ([按一下以檢視完整大小的影像](master-detail-filtering-with-two-dropdownlists-cs/_static/image30.png))
+**圖 10**:提取 *`categoryID`* 參數值，從`Categories`DropDownList ([按一下以檢視完整大小的影像](master-detail-filtering-with-two-dropdownlists-cs/_static/image30.png))
 
 使用 ObjectDataSource 設定，全都是指定哪些資料來源欄位用於顯示和 DropDownList 項目的值。 顯示`ProductName`欄位，並使用`ProductID`欄位的值。
 
@@ -113,7 +113,7 @@ ms.locfileid: "65134057"
 
 ## <a name="step-3-using-a-detailsview-to-display-details-for-the-selected-product"></a>步驟 3：使用 DetailsView 來顯示所選產品的詳細資料
 
-最後一個步驟是在 DetailsView 中顯示所選產品的詳細資料。 若要達成此目的，新增至網頁的 DetailsView，設定其`ID`屬性設`ProductDetails`，並為它建立新的 ObjectDataSource。 設定提取其資料從 ObjectDataSource`ProductsBLL`類別的`GetProductByProductID(productID)`使用所選的值的方法`ProductsByCategory`DropDownList 值*`productID`* 參數。
+最後一個步驟是在 DetailsView 中顯示所選產品的詳細資料。 若要達成此目的，新增至網頁的 DetailsView，設定其`ID`屬性設`ProductDetails`，並為它建立新的 ObjectDataSource。 設定提取其資料從 ObjectDataSource`ProductsBLL`類別的`GetProductByProductID(productID)`使用所選的值的方法`ProductsByCategory`DropDownList 值 *`productID`* 參數。
 
 [![選擇使用 ProductsBLL 類別](master-detail-filtering-with-two-dropdownlists-cs/_static/image44.png)](master-detail-filtering-with-two-dropdownlists-cs/_static/image43.png)
 
@@ -125,7 +125,7 @@ ms.locfileid: "65134057"
 
 [![從 ProductsByCategory DropDownList 提取 productID 參數值](master-detail-filtering-with-two-dropdownlists-cs/_static/image50.png)](master-detail-filtering-with-two-dropdownlists-cs/_static/image49.png)
 
-**圖 17**:提取*`productID`* 參數值，從`ProductsByCategory`DropDownList ([按一下以檢視完整大小的影像](master-detail-filtering-with-two-dropdownlists-cs/_static/image51.png))
+**圖 17**:提取 *`productID`* 參數值，從`ProductsByCategory`DropDownList ([按一下以檢視完整大小的影像](master-detail-filtering-with-two-dropdownlists-cs/_static/image51.png))
 
 您可以選擇在 DetailsView 中顯示任何可用的欄位。 我選擇移除`ProductID`， `SupplierID`，和`CategoryID`欄位和重新排列及格式化其餘的欄位。 此外，我清除 DetailsView`Height`和`Width`屬性，可讓 DetailsView 展開至最佳顯示效果所需的寬度，其資料，而不需要它限制為指定的大小。 以下顯示完整的標記：
 

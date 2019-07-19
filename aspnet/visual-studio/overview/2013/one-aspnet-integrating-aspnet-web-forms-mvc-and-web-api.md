@@ -154,7 +154,7 @@ ms.locfileid: "65113073"
     *易記 Url*
 
     > [!NOTE]
-    > 如您所見，URL 變更為 **/連絡**。 從開始**ASP.NET 4**、 URL 路由的功能已新增至 Web Form、 Url，您可以撰寫喜歡*[ http://www.mysite.com/products/software ](http://www.mysite.com/products/software)* 而不是 *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)*. 如需詳細資訊請參閱[URL 路由](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md)。
+    > 如您所見，URL 變更為 **/連絡**。 從開始**ASP.NET 4**、 URL 路由的功能已新增至 Web Form、 Url，您可以撰寫喜歡 *[ http://www.mysite.com/products/software ](http://www.mysite.com/products/software)* 而不是 *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)* . 如需詳細資訊請參閱[URL 路由](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md)。
 3. 現在，您將探索整合到應用程式的驗證流程。 若要這樣做，請按一下**註冊**頁面右上角。
 
     ![註冊新的使用者](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image8.png)
@@ -192,7 +192,7 @@ Entity Framework Code First 模型化工作流程可讓您使用您自己的網�
 您現在將會定義**人員**類別，將會用來建立 MVC 控制器和檢視的 scaffolding 程序的模型。 您會先建立**人員**模型類別，在控制器中的 CRUD 作業將會自動建立和使用 scaffolding 功能。
 
 1. 開啟**Visual Studio Express 2013 for Web**並**MyHybridSite.sln**解決方案位於**來源/Ex2-MvcScaffolding/開始**資料夾。 或者，您可以繼續使用解決方案您在前一個練習中取得。
-2. 在 [**方案總管] 中**，以滑鼠右鍵按一下**模型**資料夾**MyHybridSite**專案，然後選取**新增 |類別...**.
+2. 在 [**方案總管] 中**，以滑鼠右鍵按一下**模型**資料夾**MyHybridSite**專案，然後選取**新增 |類別...** .
 
     ![新增人員模型類別](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image11.png)
 
@@ -214,7 +214,7 @@ Entity Framework Code First 模型化工作流程可讓您使用您自己的網�
 
 既然**Person**建立模型，您將使用 Entity Framework 使用 ASP.NET MVC scaffolding，若要建立的 CRUD 控制器動作和檢視**人員**。
 
-1. 在 [**方案總管] 中**，以滑鼠右鍵按一下**控制站**資料夾**MyHybridSite**專案，然後選取**新增 |新增 Scaffold 項目...**.
+1. 在 [**方案總管] 中**，以滑鼠右鍵按一下**控制站**資料夾**MyHybridSite**專案，然後選取**新增 |新增 Scaffold 項目...** .
 
     ![建立新的 scaffold 的控制器](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image13.png)
 
@@ -229,7 +229,7 @@ Entity Framework Code First 模型化工作流程可讓您使用您自己的網�
     ![新增 scaffolding MVC 控制器](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image15.png)
 
     *新增 scaffolding MVC 控制器*
-4. 底下**資料內容類別**，按一下 **新資料內容...**.
+4. 底下**資料內容類別**，按一下 **新資料內容...** .
 
     ![建立新的資料內容](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image16.png)
 
@@ -296,7 +296,7 @@ Web API 架構是 ASP.NET 堆疊的一部分，並可輕鬆實作 HTTP 服務，
 
     > [!NOTE]
     > 如果您開始從練習 3 開始方案時，請按**CTRL + SHIFT + B**建置方案。
-2. 在 [**方案總管] 中**，以滑鼠右鍵按一下**控制站**資料夾**MyHybridSite**專案，然後選取**新增 |新增 Scaffold 項目...**.
+2. 在 [**方案總管] 中**，以滑鼠右鍵按一下**控制站**資料夾**MyHybridSite**專案，然後選取**新增 |新增 Scaffold 項目...** .
 
     ![建立新的 scaffold 的控制器](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image23.png)
 
@@ -306,7 +306,7 @@ Web API 架構是 ASP.NET 堆疊的一部分，並可輕鬆實作 HTTP 服務，
     ![選取 Web API 2 控制器與動作和 Entity Framework](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image24.png "Entity Framework 與動作選取 Web API 2 控制器")
 
     *選取 Web API 2 控制器與動作和 Entity Framework*
-4. 設定*ApiPersonController*作為**控制站名稱**，選取**使用非同步控制器動作**選項，然後選取**人員 (MyHybridSite.Models)** 並**PersonContext (MyHybridSite.Models)** 作為**模型**並**資料內容**分別為類別。 然後按一下 [加入] 。
+4. 設定*ApiPersonController*作為**控制站名稱**，選取**使用非同步控制器動作**選項，然後選取**人員 (MyHybridSite.Models)** 並**PersonContext (MyHybridSite.Models)** 作為**模型**並**資料內容**分別為類別。 然後按一下 [加入]  。
 
     ![新增 scaffolding Web API 控制器](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image25.png "新增 scaffolding Web API 控制器")
 

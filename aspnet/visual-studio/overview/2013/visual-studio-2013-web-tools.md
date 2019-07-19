@@ -100,7 +100,7 @@ ms.locfileid: "65115902"
 
 1. 開啟**Microsoft Visual Studio**。
 2. 在 **檔案**功能表上，選取**開啟 |專案/方案...** 並瀏覽至**Ex1 WorkingwithBrowserLinkandWebEssentials\Begin**中**來源**實驗室 (C:\WebCampsTK\HOL\VSWebTooling\Source) 的資料夾。 選取  **Begin.sln**然後按一下**開啟**。
-3. 在 Visual Studio 工具列中，展開 [瀏覽器] 功能表，然後選取**瀏覽方式...**.
+3. 在 Visual Studio 工具列中，展開 [瀏覽器] 功能表，然後選取**瀏覽方式...** .
 
     ![瀏覽方式 功能表選項](visual-studio-2013-web-tools/_static/image1.png "...功能表瀏覽器中瀏覽")
 
@@ -137,7 +137,7 @@ ms.locfileid: "65115902"
 
 1. 切換回到 Visual Studio。
 2. 開啟**Index.cshtml**檔案位於**檢視** | **首頁**資料夾。
-3. 取代**&lt;！-TODO： 加入選項-&gt;** 註解與下列程式碼，然後按 **索引標籤**。
+3. 取代 **&lt;！-TODO： 加入選項-&gt;** 註解與下列程式碼，然後按 **索引標籤**。
 
     [!code-css[Main](visual-studio-2013-web-tools/samples/sample1.css)]
 4. 程式碼應該擴展成 HTML。
@@ -215,7 +215,7 @@ ms.locfileid: "65115902"
     ![Visual Studio HTML 編輯器中選取的 HTML 項目的](visual-studio-2013-web-tools/_static/image15.png "Visual Studio HTML 編輯器中選取的 HTML 項目")
 
     *在 Visual Studio HTML 編輯器中選取的 HTML 項目*
-4. 您現在將會更新**front**以變更選取項目的樣式的 CSS 類別。 若要這樣做，請按**CTRL** + **，** 開啟**巡覽至**搜尋方塊。 型別**site.css**然後按**ENTER**開啟檔案。
+4. 您現在將會更新**front**以變更選取項目的樣式的 CSS 類別。 若要這樣做，請按**CTRL** +  **，** 開啟**巡覽至**搜尋方塊。 型別**site.css**然後按**ENTER**開啟檔案。
 
     ![開啟檔案 Site.css](visual-studio-2013-web-tools/_static/image16.png "開啟檔案 Site.css")
 
@@ -250,7 +250,7 @@ ms.locfileid: "65115902"
 
     *-webkit 框線半徑 btn 選取器屬性*
 14. 在號 **-webkit 框線半徑**屬性。 藍線應該會出現在屬性的第一個單字的第一個字母。 這是**智慧標籤**。
-15. 按下**CTRL** + **。** 若要開啟 [建議] 功能表，然後按一下**新增遺失的標準屬性 （框線半徑）**。
+15. 按下**CTRL** +  **。** 若要開啟 [建議] 功能表，然後按一下**新增遺失的標準屬性 （框線半徑）** 。
 
     ![新增遺漏的標準屬性的建議](visual-studio-2013-web-tools/_static/image22.png "新增遺失的標準屬性的建議")
 
@@ -295,12 +295,12 @@ ms.locfileid: "65115902"
     ![編輯問題](visual-studio-2013-web-tools/_static/image28.png "編輯問題")
 
     *編輯問題*
-3. 資料指標應該會出現。 取代原始的文字，與*什麼它實際看起來時我撰寫更長的問題？*，然後按**ESC**若要結束設計模式。
+3. 資料指標應該會出現。 取代原始的文字，與*什麼它實際看起來時我撰寫更長的問題？* ，然後按**ESC**若要結束設計模式。
 
     ![編輯的問題](visual-studio-2013-web-tools/_static/image29.png "編輯的問題")
 
     *編輯的問題*
-4. 切換回到 Visual Studio 並開啟**Index.cshtml**，如果尚未開啟。 請注意，內部文字**&lt;p&gt;** 已更新項目。
+4. 切換回到 Visual Studio 並開啟**Index.cshtml**，如果尚未開啟。 請注意，內部文字 **&lt;p&gt;** 已更新項目。
 
     ![已更新 HTML 網頁中問題的答案](visual-studio-2013-web-tools/_static/image30.png "HTML 網頁中的更新問題")
 
@@ -316,7 +316,7 @@ ms.locfileid: "65115902"
     ![錯誤清單檢視中功能表](visual-studio-2013-web-tools/_static/image31.png "檢視功能表中的錯誤清單")
 
     *錯誤清單檢視功能表*
-2. 請注意，通知的 SEO 警告**&lt;meta&gt;** 標記的頁面描述遺漏。 按兩下 SEO 警告項目，若要修正此問題。
+2. 請注意，通知的 SEO 警告 **&lt;meta&gt;** 標記的頁面描述遺漏。 按兩下 SEO 警告項目，若要修正此問題。
 
     ![錯誤清單 視窗](visual-studio-2013-web-tools/_static/image32.png "錯誤清單 視窗")
 
@@ -326,7 +326,7 @@ ms.locfileid: "65115902"
     ![Web Essentials 對話方塊](visual-studio-2013-web-tools/_static/image33.png "Web Essentials 對話方塊")
 
     *Web Essentials 對話方塊*
-4. 編輯器 **\_Layout.cshtml**隨即開啟並**&lt;中繼&gt;** 標記會自動新增至**標頭**區段HTML 檔。
+4. 編輯器 **\_Layout.cshtml**隨即開啟並 **&lt;中繼&gt;** 標記會自動新增至**標頭**區段HTML 檔。
 
     ![自動配置 （_l） 頁面中加入的中繼標籤](visual-studio-2013-web-tools/_static/image34.png "自動配置 （_l） 頁面中加入的中繼標籤")
 
@@ -355,19 +355,19 @@ ms.locfileid: "65115902"
 4. 輸入的標記應該加上有一些描述之欄位的標籤。 新增下列標籤輸入標記之前。
 
     [!code-html[Main](visual-studio-2013-web-tools/samples/sample5.html)]
-5. **For**屬性**&lt;標籤&gt;** 指定的標籤的表單項目繫結至。 屬性的值應該等於相關項目的 id。 新增**for**屬性設定為**&lt;標籤&gt;** 項目。 下圖所示&quot;名稱&quot;值出現在 [IntelliSense] 方塊中，根據在相同範圍內項目的 id (封閉式**&lt;表單&gt;**)。
+5. **For**屬性 **&lt;標籤&gt;** 指定的標籤的表單項目繫結至。 屬性的值應該等於相關項目的 id。 新增**for**屬性設定為 **&lt;標籤&gt;** 項目。 下圖所示&quot;名稱&quot;值出現在 [IntelliSense] 方塊中，根據在相同範圍內項目的 id (封閉式 **&lt;表單&gt;** )。
 
     ![顯示在 IntelliSense 中的識別碼](visual-studio-2013-web-tools/_static/image35.png "在 IntelliSense 中顯示的識別碼")
 
     *顯示在 IntelliSense 中的識別碼*
-6. 刪除最近新增**&lt;表單&gt;** 項目和其內容。
+6. 刪除最近新增 **&lt;表單&gt;** 項目和其內容。
 
 <a id="Ex2Task2"></a>
 #### <a name="task-2---using-html-code-snippets"></a>工作 2-使用 HTML 程式碼片段
 
 HTML5 引進了超過 25 個新的語意標記。 已經有 visual Studio 的 IntelliSense 支援，這些標記，但 Visual Studio 2013 可以更快速且輕鬆地撰寫藉由新增新的程式碼片段的標記。 雖然這些標記不是複雜的但是需要付出一些小微妙之處，例如新增的正確轉碼器後援*音訊*標記。 在這個工作中，您會看到音訊的標記的 HTML 程式碼片段。
 
-1. 在  **Index.cshtml**檔案中，輸入 **&lt;aud**內**&lt;區段&gt;** 項目，如下列圖所示。
+1. 在  **Index.cshtml**檔案中，輸入 **&lt;aud**內 **&lt;區段&gt;** 項目，如下列圖所示。
 
     ![音訊的項目插入](visual-studio-2013-web-tools/_static/image36.png "插入音訊元素")
 
@@ -410,7 +410,7 @@ HTML5 引進了超過 25 個新的語意標記。 已經有 visual Studio 的 In
     (Code Snippet - *VisualStudio2013WebTooling* - *Ex2* - *ReadyFunction*)
 
     [!code-javascript[Main](visual-studio-2013-web-tools/samples/sample9.js)]
-3. 在號**指令碼**標記，然後按**CTRL** + **。** 若要開啟 [建議] 功能表。
+3. 在號**指令碼**標記，然後按**CTRL** +  **。** 若要開啟 [建議] 功能表。
 4. 按一下 **擷取至檔案**。
 
     ![JavaScript 擷取至檔案的建議](visual-studio-2013-web-tools/_static/image39.png "JavaScript 擷取至檔案的建議")

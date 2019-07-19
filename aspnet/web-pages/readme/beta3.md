@@ -311,10 +311,10 @@ ms.locfileid: "65124106"
 > 1. 資料庫引擎組件，以複製*Bin*目標電腦上的應用程式的資料夾 （和子資料夾）： 
 > 
 >     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll* **to** *\Bin*
->     - 複製*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **來** *\Bin\x86*
->     - 複製*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **來** *\Bin\amd64*
+>     - 複製*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\* * **來** *\Bin\x86*
+>     - 複製*C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\* * **來** *\Bin\amd64*
 > 2. 在網站的根資料夾中，建立或開啟*Web.config*檔案。 (在 WebMatrix Beta 3 中，這種檔案類型是如果您按一下可用**所有**中**選擇 [檔案類型**] 對話方塊。)
-> 3. 將下列項目新增為子系 **&lt;configuration&gt;** 項目 (不是在內**&lt;system.web&gt;** 項目):
+> 3. 將下列項目新增為子系 **&lt;configuration&gt;** 項目 (不是在內 **&lt;system.web&gt;** 項目):
 > 
 > 
 > [!code-xml[Main](beta3/samples/sample10.xml)]

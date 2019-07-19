@@ -39,7 +39,7 @@ ASP.NET 網頁會分配到宣告式標記和來源的程式碼。 宣告式標�
 
 為了讓 ASP.NET 引擎要求此頁面，頁面的程式碼部分 (`WebPage.aspx.cs`檔案) 必須先編譯。 明確或自動，則可能會發生這個編譯。
 
-如果編譯會明確地發生，則整個應用程式的原始程式碼會編譯成一或多個組件 (`.dll`檔案) 位於應用程式的`Bin`目錄。 如果編譯會自動發生，則所產生的自動產生組件時，根據預設，會變成`Temporary ASP.NET`Files 資料夾，位於`%WINDOWS%\Microsoft.NET\Framework\` *&lt;版本&gt;*，雖然這個位置是可透過設定[`<compilation>`項目](https://msdn.microsoft.com/library/s10awwz0.aspx)在`Web.config`。 使用明確的編譯中，您必須採取某些動作到 ASP.NET 應用程式的程式碼編譯成組件，並在部署之前，會發生這個步驟。 自動編譯與編譯程序，就會發生在 web 伺服器上時第一次存取資源。
+如果編譯會明確地發生，則整個應用程式的原始程式碼會編譯成一或多個組件 (`.dll`檔案) 位於應用程式的`Bin`目錄。 如果編譯會自動發生，則所產生的自動產生組件時，根據預設，會變成`Temporary ASP.NET`Files 資料夾，位於`%WINDOWS%\Microsoft.NET\Framework\` *&lt;版本&gt;* ，雖然這個位置是可透過設定[`<compilation>`項目](https://msdn.microsoft.com/library/s10awwz0.aspx)在`Web.config`。 使用明確的編譯中，您必須採取某些動作到 ASP.NET 應用程式的程式碼編譯成組件，並在部署之前，會發生這個步驟。 自動編譯與編譯程序，就會發生在 web 伺服器上時第一次存取資源。
 
 不論哪一種編譯模型使用，所有的 ASP.NET 網頁的標記部分 (`WebPage.aspx`檔案) 必須複製到生產環境。 使用明確的編譯，您需要註冊中的組件複製`Bin`資料夾，但您不需要複製設定 ASP.NET 網頁的程式碼部分 (`WebPage.aspx.cs`檔案)。 自動編譯與您要複製的程式碼的部分檔案，以便將程式碼存在，且當瀏覽網頁時可自動編譯。 每個 ASP.NET 網頁的標記部分包含`@Page`與屬性，指出是否已明確編譯網頁的相關聯的程式碼，或者是否必須自動編譯指示詞。 如此一來，生產環境可以緊密地與其中一種編譯模型，您不需要套用任何特殊組態設定，以表示用於明確或自動編譯。
 
@@ -102,7 +102,7 @@ Microsoft 發行的 Visual Studio 2005 時它們會卸除對 Web 應用程式專
 
 本教學課程下載具有 web 應用程式的兩個複本，每一個實作為不同的 Visual Studio 專案類型：BookReviewsWAP、 Web 應用程式專案和 BookReviewsWSP，網站專案。 這兩個專案使用 Visual Web Developer 2008 SP1 所建立，並使用 ASP.NET 3.5 SP1。 若要使用這些專案開始解壓縮到您的桌面內容。 若要開啟 Web 應用程式專案 (BookReviewsWAP)，瀏覽至 BookReviewsWAP 資料夾，按兩下方案檔、 `BookReviewsWAP.sln`。 若要開啟的網站專案 (BookReviewsWSP)，啟動 Visual Studio 然後，從 [檔案] 功能表中，選擇 [開啟網站] 選項，瀏覽至`BookReviewsWSP`資料夾在桌面上，按一下 [確定]。
 
-在本教學課程的看看哪些檔案中剩餘的兩個區段必須部署應用程式時，將複製到實際執行環境。 下面兩個教學課程- *[部署您的網站使用 FTP](deploying-your-site-using-an-ftp-client-cs.md)* 並*[部署您的網站使用的 Visual Studio](deploying-your-site-using-visual-studio-cs.md)*  -顯示不同的方式將這些檔案複製到 web 主機提供者。
+在本教學課程的看看哪些檔案中剩餘的兩個區段必須部署應用程式時，將複製到實際執行環境。 下面兩個教學課程- *[部署您的網站使用 FTP](deploying-your-site-using-an-ftp-client-cs.md)* 並 *[部署您的網站使用的 Visual Studio](deploying-your-site-using-visual-studio-cs.md)*  -顯示不同的方式將這些檔案複製到 web 主機提供者。
 
 ## <a name="determining-the-files-to-deploy-for-the-web-application-project"></a>決定要為 Web 應用程式專案部署檔案
 

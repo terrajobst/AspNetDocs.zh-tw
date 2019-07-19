@@ -162,7 +162,7 @@ ms.locfileid: "65133560"
     ![選取項目](using-page-inspector-in-visual-studio-2012/_static/image10.png "選取項目")
 
     *選取項目*
-12. 在 [樣式] 窗格中，找出**背景影像**項目底下 **.main 內容**群組。 **取消核取****背景影像**，看看結果。 您會發現瀏覽器將會立即反映所做的變更，並隱藏圓形。
+12. 在 [樣式] 窗格中，找出**背景影像**項目底下 **.main 內容**群組。 **取消核取** **背景影像**，看看結果。 您會發現瀏覽器將會立即反映所做的變更，並隱藏圓形。
 
     > [!NOTE]
     > 您在頁面偵測器樣式 索引標籤套用的變更不會影響原始的樣式表。 您可以取消核取樣式，或變更其值做為許多次，但它們會還原之後重新整理頁面。
@@ -237,7 +237,7 @@ ms.locfileid: "65133560"
     ![更新後的頁面](using-page-inspector-in-visual-studio-2012/_static/image18.png)
 
     *更新後的頁面*
-6. 使用檢查模式中，選取任一**&lt;li&gt;** 包含的項目&quot;註冊&quot;並&quot;登入&quot;連結。 然後，按一下 **&lt; 區段&gt;#login**項目來存取**Styles.css**程式碼。
+6. 使用檢查模式中，選取任一 **&lt;li&gt;** 包含的項目&quot;註冊&quot;並&quot;登入&quot;連結。 然後，按一下 **&lt; 區段&gt;#login**項目來存取**Styles.css**程式碼。
 
     ![尋找樣式](using-page-inspector-in-visual-studio-2012/_static/image19.png "尋找樣式")
 
@@ -353,7 +353,7 @@ ms.locfileid: "65133560"
     ![選取項目](using-page-inspector-in-visual-studio-2012/_static/image33.png "選取項目")
 
     *選取項目*
-12. 在 [樣式] 窗格中，找出**背景影像**項目底下 **.main 內容**群組。 **取消核取****背景影像**，看看結果。 您會發現瀏覽器將會立即反映所做的變更，並隱藏圓形。
+12. 在 [樣式] 窗格中，找出**背景影像**項目底下 **.main 內容**群組。 **取消核取** **背景影像**，看看結果。 您會發現瀏覽器將會立即反映所做的變更，並隱藏圓形。
 
     > [!NOTE]
     > 您在頁面偵測器樣式 索引標籤套用的變更不會影響原始的樣式表。 您可以取消核取樣式，或變更其值做為許多次，但它們會還原之後重新整理頁面。
@@ -361,7 +361,7 @@ ms.locfileid: "65133560"
     ![啟用和停用 CSS styles2](using-page-inspector-in-visual-studio-2012/_static/image34.png "啟用和停用 CSS 樣式")
 
     *啟用和停用 CSS 樣式*
-13. 現在，按一下 '**您****標誌的位置'** 上使用檢查模式中的標頭的文字。
+13. 現在，按一下 '**您** **標誌的位置'** 上使用檢查模式中的標頭的文字。
 14. 在 **樣式**索引標籤上，找出**字型大小**CSS 屬性底下 **.site 標題**群組。 按兩下以編輯其值的屬性一次。 值取代 2.3em **3em**，然後按 ENTER 鍵。 請注意，標題看起來更大。
 
     ![變更頁面 Inspector2 中的 CSS 值](using-page-inspector-in-visual-studio-2012/_static/image35.png "Page Inspector 中的變更的 CSS 值")
@@ -428,7 +428,7 @@ ms.locfileid: "65133560"
     ![更新後的頁面](using-page-inspector-in-visual-studio-2012/_static/image41.png)
 
     *更新後的頁面*
-6. 使用檢查模式中，選取任一**&lt;li&gt;** 包含的項目&quot;註冊&quot;並&quot;登入&quot;連結。 然後，按一下 **&lt; 區段&gt;#login**項目來存取**Styles.css**程式碼。
+6. 使用檢查模式中，選取任一 **&lt;li&gt;** 包含的項目&quot;註冊&quot;並&quot;登入&quot;連結。 然後，按一下 **&lt; 區段&gt;#login**項目來存取**Styles.css**程式碼。
 
     ![尋找樣式](using-page-inspector-in-visual-studio-2012/_static/image42.png "尋找樣式")
 
@@ -469,7 +469,7 @@ ms.locfileid: "65133560"
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>附錄 a:安裝 Visual Studio Express 2012 for Web
 
-您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
+您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)** . 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
 
 1. 移至[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果您已安裝 Web Platform Installer，您可以開啟它，並搜尋產品&quot; <em>Visual Studio Express 2012 for Web 含 Windows Azure SDK</em>&quot;。
 2. 按一下 **立即安裝**。 如果您不需要**Web Platform Installer**您將會重新導向至下載並安裝第一次。

@@ -250,7 +250,7 @@ ASP.NET MVC 4 可加速開發行動裝置的網站和平板電腦瀏覽器。 �
 
 > **@media 螢幕和 (最小寬度：400px) 和 (最大寬度：700px) {...}:** 只針對螢幕。 解決方法必須是介於 400 到 700px。
 > 
-> **@media 掌上型和 (最小寬度：20em) 畫面和 (最小寬度：20em) {...}:**（行動裝置和裝置） 的掌上型和畫面。 最小寬度必須大於 20em。
+> **@media 掌上型和 (最小寬度：20em) 畫面和 (最小寬度：20em) {...}:** （行動裝置和裝置） 的掌上型和畫面。 最小寬度必須大於 20em。
 > 
 > 您可以找到相關的詳細資訊，在[W3C 網站](http://www.w3.org/TR/css3-mediaqueries/)。
 
@@ -258,7 +258,7 @@ ASP.NET MVC 4 可加速開發行動裝置的網站和平板電腦瀏覽器。 �
 
 1. 開啟**PhotoGallery.sln**方案，您已在工作 1 中建立，並選取**PhotoGallery**專案。 按下**F5**執行方案。
 2. 調整瀏覽器的寬度，設定 windows，一半或小於其原始大小的四分之一。 請注意，標頭中的項目會發生什麼事：某些項目不會出現在標頭的可見區域。
-3. 開啟**Site.css**檔案，從 Visual Studio 方案總管 中，位於**內容**專案資料夾。 按下**CTRL + F**以開啟 Visual Studio 整合式的搜尋，並撰寫**@media**找出**CSS 媒體查詢**。
+3. 開啟**Site.css**檔案，從 Visual Studio 方案總管 中，位於**內容**專案資料夾。 按下**CTRL + F**以開啟 Visual Studio 整合式的搜尋，並撰寫 **@media** 找出**CSS 媒體查詢**。
 
     此範本中定義的媒體查詢條件的運作方式以這種方式：當瀏覽器視窗大小低於**850 px**，套用的 CSS 規則是定義在這個媒體區塊中的項目。
 
@@ -538,7 +538,7 @@ jQuery Mobile 的預設佈景主題包含 5 個樣本指定字母 (a、 b、 c�
     ![檢視切換器在桌面檢視中呈現](whats-new-in-aspnet-mvc-4/_static/image32.png "在桌面檢視中呈現的檢視切換器")
 
     *在桌面檢視中呈現的檢視切換器*
-7. 再次切換至 行動裝置檢視，然後瀏覽至**關於**網頁 (http://localhost[連接埠] / Home/有關)。 請注意，即使您沒有建立 About.Mobile.cshtml 檢視，[關於] 頁面會顯示使用行動配置 (\_Layout.Mobile.cshtml)。
+7. 再次切換至 行動裝置檢視，然後瀏覽至**關於**網頁 (http://localhost [連接埠] / Home/有關)。 請注意，即使您沒有建立 About.Mobile.cshtml 檢視，[關於] 頁面會顯示使用行動配置 (\_Layout.Mobile.cshtml)。
 
     ![有關頁面](whats-new-in-aspnet-mvc-4/_static/image33.png "關於頁面")
 
@@ -568,7 +568,7 @@ jQuery Mobile 的預設佈景主題包含 5 個樣本指定字母 (a、 b、 c�
 
     [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample16.cs)]
 
-您已註冊的新**DefaultDisplayMode 名為&quot;iPhone&quot;**，在靜態**DisplayModeProvider.Instance.Modes**靜態清單，會比對每個傳入的要求。 如果連入要求包含字串&quot;iPhone&quot;，ASP.NET MVC 會尋找其名稱包含檢視&quot;iPhone&quot;後置詞。 0 的參數會指出特定的是新的模式;比方說，此檢視會比一般更明確&quot;.mobile&quot;符合要求，從行動裝置的規則。
+您已註冊的新**DefaultDisplayMode 名為&quot;iPhone&quot;** ，在靜態**DisplayModeProvider.Instance.Modes**靜態清單，會比對每個傳入的要求。 如果連入要求包含字串&quot;iPhone&quot;，ASP.NET MVC 會尋找其名稱包含檢視&quot;iPhone&quot;後置詞。 0 的參數會指出特定的是新的模式;比方說，此檢視會比一般更明確&quot;.mobile&quot;符合要求，從行動裝置的規則。
 
 此程式碼執行，iPhone 瀏覽器就會產生要求之後，將使用您的應用程式**Views\Shared\\_Layout.iPhone.cshtml**您將在接下來的步驟建立的配置。
 
@@ -577,7 +577,7 @@ jQuery Mobile 的預設佈景主題包含 5 個樣本指定字母 (a、 b、 c�
 
 4. 建立一份 **\_Layout.Mobile.cshtml**中的檔案**Views\Shared**資料夾，並重新命名複製到&quot;  **\_Layout.iPhone.cshtml**&quot;.
 5. 開啟 **\_Layout.iPhone.cshtml**您在上一個步驟中建立。
-6. 資料角色屬性設定為尋找 div 項目**網頁**並變更**資料佈景主題**屬性設定為&quot; &quot;。
+6. 資料角色屬性設定為尋找 div 項目**網頁**並變更**資料佈景主題**屬性設定為&quot;  &quot;。
 
 [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample17.cshtml)]
 
@@ -620,7 +620,7 @@ Microsoft.NET Framework 4.5 引進了新的語言功能，在 C# 和 Visual Basi
 4. 更新**HomeController**類別繼承自**AsyncController**。 衍生自 AsyncController 的控制站可讓 ASP.NET 處理非同步要求，並仍然可以服務同步動作方法。
 
     [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample19.cs)]
-5. 新增**非同步**關鍵字來**Index**方法，並使其傳回型別**工作&lt;ActionResult&gt;**。
+5. 新增**非同步**關鍵字來**Index**方法，並使其傳回型別**工作&lt;ActionResult&gt;** 。
 
     [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample20.cs)]
 
@@ -755,7 +755,7 @@ Microsoft.NET Framework 4.5 引進了新的語言功能，在 C# 和 Visual Basi
 <a id="Appendix_B_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-b-installing-visual-studio-express-2012-for-web"></a>附錄 b:安裝 Visual Studio Express 2012 for Web
 
-您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
+您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)** . 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
 
 1. 移至[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果您已安裝 Web Platform Installer，您可以開啟它，並搜尋產品&quot; *Visual Studio Express 2012 for Web 含 Windows Azure SDK*&quot;。
 2. 按一下 **立即安裝**。 如果您不需要**Web Platform Installer**您將會重新導向至下載並安裝第一次。
@@ -1010,7 +1010,7 @@ Microsoft.NET Framework 4.5 引進了新的語言功能，在 C# 和 Visual Basi
     ![建立資料庫](whats-new-in-aspnet-mvc-4/_static/image78.png "建立的資料庫字串")
 
     *建立資料庫*
-7. 您將用來連接至 Windows Azure 中的 SQL 資料庫的連接字串會顯示在文字方塊中的預設連線。 然後按 [下一步] 。
+7. 您將用來連接至 Windows Azure 中的 SQL 資料庫的連接字串會顯示在文字方塊中的預設連線。 然後按 [下一步]  。
 
     ![連接字串指向 SQL Database](whats-new-in-aspnet-mvc-4/_static/image79.png "連接字串指向 SQL Database")
 

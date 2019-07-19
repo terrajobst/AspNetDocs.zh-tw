@@ -114,7 +114,7 @@ ms.locfileid: "65112498"
 
       > [!NOTE]
       > 使用 NuGet 的優點之一是，您不需要寄送您的專案中的所有程式庫專案縮小。 NuGet Power tools，藉由指定封裝版本在 Packages.config 檔案中，您將能夠下載所有必要的程式庫第一次執行專案。 這就是為什麼您必須在您開啟現有的方案從這個實驗室之後，執行這些步驟。
-2. 加入新的控制器。 若要這樣做，請以滑鼠右鍵按一下**控制器**在 [方案總管] 中選取的資料夾**新增**，然後**控制器**命令。 變更**控制器****名稱**來**StoreManagerController** ，並確定選擇**MVC 控制器具有空白讀取/寫入動作**已選取。 按一下 [加入] 。
+2. 加入新的控制器。 若要這樣做，請以滑鼠右鍵按一下**控制器**在 [方案總管] 中選取的資料夾**新增**，然後**控制器**命令。 變更**控制器** **名稱**來**StoreManagerController** ，並確定選擇**MVC 控制器具有空白讀取/寫入動作**已選取。 按一下 [加入]  。
 
     ![新增控制器 對話方塊](aspnet-mvc-4-helpers-forms-and-validation/_static/image1.png "新增控制器 對話方塊")
 
@@ -179,7 +179,7 @@ ms.locfileid: "65112498"
 1. 檢閱建立的程式碼。 產生的欄位清單將會屬於下列 HTML 資料表，其中**Scaffolding**用來顯示表格式資料。
 
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample4.cshtml)]
-2. 取代**&lt;表格&gt;** 只顯示為下列程式碼的程式碼**Genre**，**演出者**，**專輯標題**，並**價格**欄位。 這會刪除**AlbumId**並**專輯封面 URL**資料行。 此外，它會變更 GenreId 和 ArtistId 資料行以顯示其連結的類別屬性**Artist.Name**並**Genre.Name**，並移除**詳細資料**連結。
+2. 取代 **&lt;表格&gt;** 只顯示為下列程式碼的程式碼**Genre**，**演出者**，**專輯標題**，並**價格**欄位。 這會刪除**AlbumId**並**專輯封面 URL**資料行。 此外，它會變更 GenreId 和 ArtistId 資料行以顯示其連結的類別屬性**Artist.Name**並**Genre.Name**，並移除**詳細資料**連結。
 
     [!code-cshtml[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample5.cshtml)]
 3. 變更下列的描述。
@@ -269,9 +269,9 @@ StoreManager 索引頁面有一項潛在的問題：標題和演出者名稱的�
 
 在此練習中，您將學習如何建立表單，以允許編輯 Album 的存放區管理員。 將會在瀏覽 **/StoreManager/Edit/id** URL (**識別碼**正在編輯專輯的唯一識別碼)，因而讓伺服器的 HTTP GET 呼叫。
 
-編輯控制器動作方法會從資料庫擷取適當的專輯，建立**StoreManagerViewModel**物件封裝 （以及演出者和內容類型的清單），並再將它，傳遞至檢視範本轉譯的 HTML 網頁傳回給使用者。 此頁面將包含**&lt;表單&gt;** 具有文字方塊和下拉式清單編輯專輯屬性的項目。
+編輯控制器動作方法會從資料庫擷取適當的專輯，建立**StoreManagerViewModel**物件封裝 （以及演出者和內容類型的清單），並再將它，傳遞至檢視範本轉譯的 HTML 網頁傳回給使用者。 此頁面將包含 **&lt;表單&gt;** 具有文字方塊和下拉式清單編輯專輯屬性的項目。
 
-一旦使用者更新專輯表單值並按**儲存** 按鈕，變更會提交透過 HTTP POST 回呼 **/StoreManager/Edit/id**。雖然 URL 會保留最後一次呼叫相同，ASP.NET MVC 識別，這次它是 HTTP POST，因此會執行不同的編輯動作方法 (其中附有 **[HttpPost]**)。
+一旦使用者更新專輯表單值並按**儲存** 按鈕，變更會提交透過 HTTP POST 回呼 **/StoreManager/Edit/id**。雖然 URL 會保留最後一次呼叫相同，ASP.NET MVC 識別，這次它是 HTTP POST，因此會執行不同的編輯動作方法 (其中附有 **[HttpPost]** )。
 
 <a id="Ex3Task1"></a>
 
@@ -342,7 +342,7 @@ StoreManager 索引頁面有一項潛在的問題：標題和演出者名稱的�
     > [!NOTE]
     > **Html.DropDownList**協助程式已新增至呈現下拉式清單選擇演出者和內容類型。 參數傳遞給**Html.DropDownList**是：
     > 
-    > 1. 表單欄位的名稱 (**&quot;ArtistId&quot;**)。
+    > 1. 表單欄位的名稱 ( **&quot;ArtistId&quot;** )。
     > 2. **SelectList**的下拉箭號的值。
 
 <a id="Ex3Task5"></a>
@@ -774,7 +774,7 @@ StoreManager 索引頁面有一項潛在的問題：標題和演出者名稱的�
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>附錄 a:安裝 Visual Studio Express 2012 for Web
 
-您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
+您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)** . 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
 
 1. 移至[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果您已安裝 Web Platform Installer，您可以開啟它，並搜尋產品&quot; <em>Visual Studio Express 2012 for Web 含 Windows Azure SDK</em>&quot;。
 2. 按一下 **立即安裝**。 如果您不需要**Web Platform Installer**您將會重新導向至下載並安裝第一次。

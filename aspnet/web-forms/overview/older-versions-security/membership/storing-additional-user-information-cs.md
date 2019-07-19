@@ -114,7 +114,7 @@ Foreign key 條件約束可以設定為父記錄已刪除時，自動刪除相�
 
 有各種不同的方式讓目前登入的使用者，來檢視和編輯其首頁的城鎮、 首頁和簽章資訊。 我們可以使用文字方塊中手動建立使用者介面和 Label 控制項，或者我們可以使用其中一種 Web 控制項，例如 DetailsView 控制項的資料。 若要執行的資料庫`SELECT`和`UPDATE`我們可以撰寫 ADO.NET 的陳述式會在我們的網頁程式碼後置類別中的程式碼，或或者，使用以 sqldatasource 進行的宣告式方法。 在理想情況下我們的應用程式會包含的階層式的架構，我們無法叫用程式設計方式從網頁的程式碼後置類別，或以宣告方式透過 ObjectDataSource 控制項。
 
-因為本教學課程系列，著重於表單驗證、 授權、 使用者帳戶和角色，就不會討論這些不同的資料存取選項或階層式的架構為何偏好透過直接執行 SQL 陳述式從 [ASP.NET] 頁面中。 我要逐步解說使用 DetailsView 和 SqlDataSource – 最快速而且簡單選項 – 但所討論的概念絕對可以套用至替代 Web 控制項和資料存取邏輯。 如需有關使用 ASP.NET 中的資料的詳細資訊，請參閱我*[使用 ASP.NET 2.0 中的資料](../../data-access/index.md)* 教學課程系列。
+因為本教學課程系列，著重於表單驗證、 授權、 使用者帳戶和角色，就不會討論這些不同的資料存取選項或階層式的架構為何偏好透過直接執行 SQL 陳述式從 [ASP.NET] 頁面中。 我要逐步解說使用 DetailsView 和 SqlDataSource – 最快速而且簡單選項 – 但所討論的概念絕對可以套用至替代 Web 控制項和資料存取邏輯。 如需有關使用 ASP.NET 中的資料的詳細資訊，請參閱我 *[使用 ASP.NET 2.0 中的資料](../../data-access/index.md)* 教學課程系列。
 
 開啟`AdditionalUserInfo.aspx`頁面中`Membership`資料夾和 DetailsView 控制項加入頁面上，設定其`ID`屬性設`UserProfile`並清除其`Width`和`Height`屬性。 展開 DetailsView 的智慧標籤，然後選擇 繫結至新的資料來源控制項。 這會啟動 資料來源組態精靈 （請參閱 圖 7）。 第一個步驟會要求您指定的資料來源類型。 因為我們將直接連接到`SecurityTutorials`資料庫，請選擇 [資料庫] 圖示，指定`ID`做為`UserProfileDataSource`。
 
@@ -467,7 +467,7 @@ CreateUserWizard 控制項的預設標記會定義兩個`WizardSteps`:`CreateUse
 
 ### <a name="about-the-author"></a>關於作者
 
-Scott Mitchell，多個 ASP 書籍的作者，他是 4GuysFromRolla.com 的創辦人，從事 Microsoft Web 技術工作自 1998 年。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是 *[Sams 教導您自己 ASP.NET 2.0 在 24 小時內](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 Scott 要聯絡[ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或透過他的部落格[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+Scott Mitchell，多個 ASP 書籍的作者，他是 4GuysFromRolla.com 的創辦人，從事 Microsoft Web 技術工作自 1998 年。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是 *[Sams 教導您自己 ASP.NET 2.0 在 24 小時內](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 。 Scott 要聯絡[ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或透過他的部落格[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特別感謝...
 

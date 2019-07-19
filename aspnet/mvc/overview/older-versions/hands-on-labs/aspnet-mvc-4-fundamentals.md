@@ -44,7 +44,7 @@ ms.locfileid: "65117255"
 <a id="ASPNET_MVC_4_Essentials"></a>
 ### <a name="aspnet-mvc-4-essentials"></a>ASP.NET MVC 4 基本資訊
 
-音樂市集 」 應用程式會使用來建置**模型檢視控制器 (MVC)**，分隔成三個主要元件的應用程式的架構模式：
+音樂市集 」 應用程式會使用來建置**模型檢視控制器 (MVC)** ，分隔成三個主要元件的應用程式的架構模式：
 
 - **模型**:模型物件屬於實作網域邏輯應用程式的組件。 通常，模型物件也擷取，並將模型狀態儲存在資料庫中。
 - **檢視：** 檢視是顯示應用程式的使用者介面 (UI) 元件。 一般而言，此 UI 是從模型資料的方式建立。 範例會顯示文字方塊和依相簿物件的目前狀態的下拉式清單編輯檢視的專輯。
@@ -123,15 +123,15 @@ MVC 模式可協助您建立不同的應用程式 （輸入的邏輯、 商務�
 #### <a name="task-1---creating-the-aspnet-mvc-web-application-project"></a>工作 1-建立 ASP.NET MVC Web 應用程式專案
 
 1. 在這個工作中，您將建立空白 ASP.NET MVC 應用程式專案中使用 MVC 的 Visual Studio 範本。 開始**VS Express for Web**。
-2. 按一下 [檔案] 功能表上的 [新增專案]。
+2. 按一下 [檔案] 功能表上的 [新增專案]。  
 3. 在 [**新的專案**] 對話方塊中選取**ASP.NET MVC 4 Web 應用程式**專案類型，位於**Visual C#** **Web**範本清單。
 4. 變更**名稱**要*MvcMusicStore*。
-5. 設定內的新方案的位置**開始**在這個練習中的來源資料夾中，如範例的資料夾 **[您-HOL-PATH] \Source\Ex01-CreatingMusicStoreProject\Begin**。 按一下 [確定] 。
+5. 設定內的新方案的位置**開始**在這個練習中的來源資料夾中，如範例的資料夾 **[您-HOL-PATH] \Source\Ex01-CreatingMusicStoreProject\Begin**。 按一下 [確定]  。
 
     ![建立新專案 對話方塊](aspnet-mvc-4-fundamentals/_static/image2.png "建立新專案 對話方塊")
 
     *建立新專案 對話方塊*
-6. 在 [**新的 ASP.NET MVC 4 專案**] 對話方塊中選取**基本**範本並確定**檢視引擎**選取**Razor**。 按一下 [確定] 。
+6. 在 [**新的 ASP.NET MVC 4 專案**] 對話方塊中選取**基本**範本並確定**檢視引擎**選取**Razor**。 按一下 [確定]  。
 
     ![新 ASP.NET MVC 4 專案 對話方塊](aspnet-mvc-4-fundamentals/_static/image3.png "新 ASP.NET MVC 4 專案 對話方塊")
 
@@ -269,9 +269,9 @@ ASP.NET MVC 架構包括 Visual Studio 專案範本，可協助您建立支援 M
 1. 按下**F5**執行應用程式。
 2. 在專案開始**首頁**頁面。 變更 URL，以確認每個動作的實作。
 
-    1. **/ 儲存**。 您會看到 **&quot;Hello from Store.Index()&quot;**。
-    2. **/ Store/瀏覽**。 您會看到 **&quot;Hello from Store.Browse()&quot;**。
-    3. **/ Store/Details**。 您會看到 **&quot;Hello from Store.Details()&quot;**。
+    1. **/ 儲存**。 您會看到 **&quot;Hello from Store.Index()&quot;** 。
+    2. **/ Store/瀏覽**。 您會看到 **&quot;Hello from Store.Browse()&quot;** 。
+    3. **/ Store/Details**。 您會看到 **&quot;Hello from Store.Details()&quot;** 。
 
         ![瀏覽 StoreBrowse](aspnet-mvc-4-fundamentals/_static/image9.png "瀏覽 StoreBrowse")
 
@@ -309,7 +309,7 @@ ASP.NET MVC 架構包括 Visual Studio 專案範本，可協助您建立支援 M
     [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample4.cs)]
 
 > [!NOTE]
-> 您使用**HttpUtility.HtmlEncode**公用程式方法，以防止使用者插入檢視中的 Javascript，例如連結  **/Store/瀏覽？內容類型 =&lt;指令碼&gt;window.location = '[http://hackersite.com](http://hackersite.com)'&lt;/script&gt;**。
+> 您使用**HttpUtility.HtmlEncode**公用程式方法，以防止使用者插入檢視中的 Javascript，例如連結  **/Store/瀏覽？內容類型 =&lt;指令碼&gt;window.location = '[http://hackersite.com](http://hackersite.com)'&lt; /script&gt;** 。
 > 
 > 如需進一步說明，請瀏覽[這篇 msdn 文章](https://msdn.microsoft.com/library/a2a4yykt(v=VS.80).aspx)。
 
@@ -393,7 +393,7 @@ ASP.NET MVC 架構包括 Visual Studio 專案範本，可協助您建立支援 M
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample8.cshtml)]
 
     > [!NOTE]
-    > 您知道嗎？ Visual Studio 2012 有程式碼片段，讓您輕鬆將常用的程式碼加入 HTML、 程式碼檔案和更多功能 ！ 請試著輸入**&lt;div&gt;** 並按下**索引標籤**兩次來插入完整**div**標記。
+    > 您知道嗎？ Visual Studio 2012 有程式碼片段，讓您輕鬆將常用的程式碼加入 HTML、 程式碼檔案和更多功能 ！ 請試著輸入 **&lt;div&gt;** 並按下**索引標籤**兩次來插入完整**div**標記。
 
 <a id="Ex4Task2"></a>
 
@@ -418,7 +418,7 @@ ASP.NET MVC 架構包括 Visual Studio 專案範本，可協助您建立支援 M
 
 在這個工作中，您將檢視範本來產生將使用的版面配置的主版頁面的 HTML 回應，並在這個練習中，新增 CSS。
 
-1. 若要瀏覽網站的首頁時，請使用檢視範本，您首先需要而不是傳回字串，表示**HomeController 索引**方法會傳回**檢視**。 開啟**HomeController**類別，並變更其**Index**方法，以傳回**ActionResult**，並且會傳回**View()**。
+1. 若要瀏覽網站的首頁時，請使用檢視範本，您首先需要而不是傳回字串，表示**HomeController 索引**方法會傳回**檢視**。 開啟**HomeController**類別，並變更其**Index**方法，以傳回**ActionResult**，並且會傳回**View()** 。
 
     (程式碼片段- *ASP.NET MVC 4 基本概念-Ex4 HomeController 索引*)
 
@@ -428,7 +428,7 @@ ASP.NET MVC 架構包括 Visual Studio 專案範本，可協助您建立支援 M
     ![加入從索引方法內的檢視](aspnet-mvc-4-fundamentals/_static/image13.png "加入從索引方法內的檢視")
 
     *加入從索引方法內的檢視*
-3. **加入檢視**對話方塊隨即出現，產生的檢視範本檔案。 根據預設，此對話方塊會預先填入檢視範本的名稱，使其符合使用它的動作方法。 因為您使用**加入檢視**內的操作功能表**索引**HomeController，動作方法**加入檢視**對話方塊具有做為預設檢視名稱的索引。 按一下 [加入] 。
+3. **加入檢視**對話方塊隨即出現，產生的檢視範本檔案。 根據預設，此對話方塊會預先填入檢視範本的名稱，使其符合使用它的動作方法。 因為您使用**加入檢視**內的操作功能表**索引**HomeController，動作方法**加入檢視**對話方塊具有做為預設檢視名稱的索引。 按一下 [加入]  。
 
     ![新增檢視 對話方塊](aspnet-mvc-4-fundamentals/_static/image14.png "新增檢視對話方塊")
 
@@ -459,8 +459,8 @@ ASP.NET MVC 架構包括 Visual Studio 專案範本，可協助您建立支援 M
 
 在瀏覽器中開啟應用程式時，您應該注意到：
 
-1. HomeController 的索引動作方法找到並顯示**\Views\Home\Index.cshtml**檢視範本，即使呼叫的程式碼**傳回 View()**，因為檢視範本，然後再標準的命名慣例。
-2. 首頁會顯示歡迎訊息內定義**\Views\Home\Index.cshtml**檢視範本。
+1. HomeController 的索引動作方法找到並顯示 **\Views\Home\Index.cshtml**檢視範本，即使呼叫的程式碼**傳回 View()** ，因為檢視範本，然後再標準的命名慣例。
+2. 首頁會顯示歡迎訊息內定義 **\Views\Home\Index.cshtml**檢視範本。
 3. 使用首頁 **\_layout.cshtml**範本，因此歡迎訊息內含 HTML 的標準網站的版面配置。
 
     ![首頁使用的定義 LayoutPage 和樣式的索引檢視](aspnet-mvc-4-fundamentals/_static/image16.png "首頁索引檢視，使用定義 LayoutPage 和樣式")
@@ -581,7 +581,7 @@ ASP.NET MVC 架構包括 Visual Studio 專案範本，可協助您建立支援 M
     ![新增檢視](aspnet-mvc-4-fundamentals/_static/image23.png "新增檢視")
 
     *新增檢視*
-3. 因為**新增檢視 對話方塊**從叫用**StoreController**，它會將檢視範本新增預設會在**\Views\Store\Index.cshtml**檔案。 請檢查**建立強型別-檢視**核取方塊，然後選取**StoreIndexViewModel**作為**模型類別**。 此外，請確定選取的檢視引擎**Razor**。 按一下 [加入] 。
+3. 因為**新增檢視 對話方塊**從叫用**StoreController**，它會將檢視範本新增預設會在 **\Views\Store\Index.cshtml**檔案。 請檢查**建立強型別-檢視**核取方塊，然後選取**StoreIndexViewModel**作為**模型類別**。 此外，請確定選取的檢視引擎**Razor**。 按一下 [加入]  。
 
     ![新增檢視 對話方塊](aspnet-mvc-4-fundamentals/_static/image24.png "新增檢視對話方塊")
 
@@ -726,7 +726,7 @@ A **StoreBrowseViewModel**將這項工作中用來顯示符合所選的內容類
 
 1. 之前建立新的檢視範本，您應該會建置專案，讓**加入檢視** 對話方塊之 snmp v1 **ViewModel**類別使用。 建置專案，方法是選取**建置**功能表項目，然後**建置 MvcMusicStore**。
 2. 新增**瀏覽**檢視。 若要這樣做，以滑鼠右鍵按一下**瀏覽**動作方法的**StoreController**然後按一下**加入檢視**。
-3. 在 **加入檢視**對話方塊方塊中，確認檢視名稱**瀏覽**。 請檢查**建立強型別檢視**核取方塊，然後選取**StoreBrowseViewModel**從**模型類別**下拉式清單。 其他欄位保留其預設值。 然後按一下 [加入] 。
+3. 在 **加入檢視**對話方塊方塊中，確認檢視名稱**瀏覽**。 請檢查**建立強型別檢視**核取方塊，然後選取**StoreBrowseViewModel**從**模型類別**下拉式清單。 其他欄位保留其預設值。 然後按一下 [加入]  。
 
     ![加入瀏覽檢視](aspnet-mvc-4-fundamentals/_static/image29.png "加入瀏覽檢視")
 
@@ -757,7 +757,7 @@ A **StoreBrowseViewModel**將這項工作中用來顯示符合所選的內容類
 在這個工作中，您將實作**存放區/詳細資料**檢視，以顯示特定專輯的相關資訊。 在這個實際操作實驗室中，您將會顯示關於專輯的所有項目已經包含在**檢視**範本。 是的而不是建立**StoreDetailsViewModel**類別，您將使用目前**StoreBrowseViewModel**將專輯傳遞給它的範本。
 
 1. 關閉瀏覽器，如有需要若要返回 Visual Studio 視窗。 加入新**詳細資料**檢視**StoreController**的**詳細資料**動作方法。 若要這樣做，請以滑鼠右鍵按一下**詳細資料**方法中的**StoreController**類別，然後按一下**加入檢視**。
-2. 在 [**加入檢視**] 對話方塊中，確認**檢視名稱**是**詳細資料**。 請檢查**建立強型別檢視**核取方塊，然後選取**專輯**從**模型類別**下拉式清單。 其他欄位保留其預設值。 然後按一下 [加入] 。 這會建立並開啟**\Views\Store\Details.cshtml**檔案。
+2. 在 [**加入檢視**] 對話方塊中，確認**檢視名稱**是**詳細資料**。 請檢查**建立強型別檢視**核取方塊，然後選取**專輯**從**模型類別**下拉式清單。 其他欄位保留其預設值。 然後按一下 [加入]  。 這會建立並開啟 **\Views\Store\Details.cshtml**檔案。
 
     ![加入詳細資料檢視](aspnet-mvc-4-fundamentals/_static/image31.png "加入詳細資料檢視")
 
@@ -788,7 +788,7 @@ A **StoreBrowseViewModel**將這項工作中用來顯示符合所選的內容類
 在這個工作中，您將加入在存放區檢視中，將連結放在適當的每個內容類型名稱的連結 **/Store/瀏覽**URL。 如此一來，當您按一下 內容類型，例如**Disco**，它會瀏覽至**存放區/瀏覽？ 內容類型 = Disco** URL。
 
 1. 關閉瀏覽器，如有需要若要返回 Visual Studio 視窗。 更新**Index**新增至連結的頁面**瀏覽**頁面。 若要這樣做，請在**方案總管**展開**檢視**資料夾，則**存放區**資料夾，然後按兩下**Index.cshtml**頁面。
-2. 表示內容類型選取 [瀏覽] 檢視中加入的連結。 若要這樣做，請取代下列反白顯示的程式碼，傳入**&lt;li&gt;** 標記：(C#)
+2. 表示內容類型選取 [瀏覽] 檢視中加入的連結。 若要這樣做，請取代下列反白顯示的程式碼，傳入 **&lt;li&gt;** 標記：(C#)
 
     [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample25.cshtml)]
 
@@ -834,7 +834,7 @@ A **StoreBrowseViewModel**將這項工作中用來顯示符合所選的內容類
 
     > [!NOTE]
     > 您也可以使用語法**ViewBag [&quot;Starred&quot;]** 來存取屬性。
-2. 星狀圖示**&quot;starred.png&quot;** 納入**Source\Assets\Images**本實驗室的資料夾。 若要將它新增至應用程式中，拖曳其內容從**Windows 檔案總管**到視窗**方案總管 中**在 Visual Web Developer Express，如下所示：
+2. 星狀圖示 **&quot;starred.png&quot;** 納入**Source\Assets\Images**本實驗室的資料夾。 若要將它新增至應用程式中，拖曳其內容從**Windows 檔案總管**到視窗**方案總管 中**在 Visual Web Developer Express，如下所示：
 
     ![加入至方案的星型映像](aspnet-mvc-4-fundamentals/_static/image34.png "星星的影像加入至方案")
 
@@ -969,7 +969,7 @@ A **StoreBrowseViewModel**將這項工作中用來顯示符合所選的內容類
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>附錄 a:安裝 Visual Studio Express 2012 for Web
 
-您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
+您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)** . 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
 
 1. 移至[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果您已安裝 Web Platform Installer，您可以開啟它，並搜尋產品&quot; <em>Visual Studio Express 2012 for Web 含 Windows Azure SDK</em>&quot;。
 2. 按一下 **立即安裝**。 如果您不需要**Web Platform Installer**您將會重新導向至下載並安裝第一次。
@@ -1128,7 +1128,7 @@ A **StoreBrowseViewModel**將這項工作中用來顯示符合所選的內容類
     ![建立資料庫](aspnet-mvc-4-fundamentals/_static/image65.png "建立的資料庫字串")
 
     *建立資料庫*
-7. 您將用來連接至 Windows Azure 中的 SQL 資料庫的連接字串會顯示在文字方塊中的預設連線。 然後按 [下一步] 。
+7. 您將用來連接至 Windows Azure 中的 SQL 資料庫的連接字串會顯示在文字方塊中的預設連線。 然後按 [下一步]  。
 
     ![連接字串指向 SQL Database](aspnet-mvc-4-fundamentals/_static/image66.png "連接字串指向 SQL Database")
 

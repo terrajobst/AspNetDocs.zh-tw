@@ -71,11 +71,11 @@ ms.locfileid: "65124247"
 
 **圖 7**:選取 `GetProductsByCategoryID(categoryID)`方法 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-vb/_static/image21.png))
 
-選擇這個方法之後, ObjectDataSource 精靈會提示我們輸入方法的值*`categoryID`* 參數。 若要使用選取的值`categories`DropDownList 項目設定參數來源控制與以 ControlID `Categories`。
+選擇這個方法之後, ObjectDataSource 精靈會提示我們輸入方法的值 *`categoryID`* 參數。 若要使用選取的值`categories`DropDownList 項目設定參數來源控制與以 ControlID `Categories`。
 
 [![設定為值的分類 DropDownList categoryID 參數](master-detail-filtering-with-a-dropdownlist-vb/_static/image23.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image22.png)
 
-**圖 8**:設定*`categoryID`* 參數的值`Categories`DropDownList ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-vb/_static/image24.png))
+**圖 8**:設定 *`categoryID`* 參數的值`Categories`DropDownList ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-vb/_static/image24.png))
 
 花點時間查看我們的瀏覽器中的進度。 當第一次瀏覽的頁面，這些產品屬於所選取的類別 （如 圖 9 所示），顯示 （飲料），但變更 DropDownList 不會更新資料。 這是因為更新 GridView 會因發生回傳。 若要這麼做，我們會有兩個選項 （兩者都不需要撰寫任何程式碼）：
 
@@ -118,11 +118,11 @@ ms.locfileid: "65124247"
 
 **圖 13**:顯示的初始頁面載入無產品上 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-vb/_static/image37.png))
 
-因為"--選擇類別目錄-」 清單項目被選取時顯示任何產品的原因是因為它的值是`-1`並在資料庫中，沒有產品`CategoryID`的`-1`。 如果這是您想在此時完成時的行為 ！ 不過，如果您想要顯示*所有*一個類別目錄選取的 「-選擇類別目錄-」 清單項目時，返回`ProductsBLL`類別，並自訂`GetProductsByCategoryID(categoryID)`方法，讓它叫用`GetProducts()`方法如果傳遞中*`categoryID`* 參數小於零：
+因為"--選擇類別目錄-」 清單項目被選取時顯示任何產品的原因是因為它的值是`-1`並在資料庫中，沒有產品`CategoryID`的`-1`。 如果這是您想在此時完成時的行為 ！ 不過，如果您想要顯示*所有*一個類別目錄選取的 「-選擇類別目錄-」 清單項目時，返回`ProductsBLL`類別，並自訂`GetProductsByCategoryID(categoryID)`方法，讓它叫用`GetProducts()`方法如果傳遞中 *`categoryID`* 參數小於零：
 
 [!code-vb[Main](master-detail-filtering-with-a-dropdownlist-vb/samples/sample2.vb)]
 
-此處所使用的技巧是類似於我們用來顯示所有的供應商方法回到[宣告式的參數](../basic-reporting/declarative-parameters-cs.md)教學課程中，雖然此範例中我們使用值為`-1`表示應該所有記錄擷取相對於`Nothing`。 這是因為*`categoryID`* 參數`GetProductsByCategoryID(categoryID)`方法應為整數值通過，而在宣告式參數教學課程中我們所傳入的字串輸入參數。
+此處所使用的技巧是類似於我們用來顯示所有的供應商方法回到[宣告式的參數](../basic-reporting/declarative-parameters-cs.md)教學課程中，雖然此範例中我們使用值為`-1`表示應該所有記錄擷取相對於`Nothing`。 這是因為 *`categoryID`* 參數`GetProductsByCategoryID(categoryID)`方法應為整數值通過，而在宣告式參數教學課程中我們所傳入的字串輸入參數。
 
 [圖 14] 顯示的螢幕擷取畫面`FilterByDropDownList.aspx`時 「-選擇類別目錄-」 選項。 這裡的所有產品依預設，會顯示，而使用者可以選擇特定類別目錄來縮小顯示。
 

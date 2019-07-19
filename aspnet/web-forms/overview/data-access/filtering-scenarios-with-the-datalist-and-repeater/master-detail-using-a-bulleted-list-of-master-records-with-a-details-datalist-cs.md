@@ -63,7 +63,7 @@ ms.locfileid: "65130424"
 
 與周圍的標記完成 Repeater 和 DataList s，我們準備好的類別目錄資料繫結至 Repeater 控制項。 不過，如 [圖 1] 中的類別目錄項目符號清單所示，除了每個類別目錄名稱，我們也需要顯示類別目錄相關聯的產品數目。 若要存取此資訊，我們可以：
 
-- **判斷從 ASP.NET 頁面 s 程式碼後置類別的這項資訊。** 指定特定*`categoryID`* 我們可以呼叫來判斷相關聯的產品數目`ProductsBLL`類別的`GetProductsByCategoryID(categoryID)`方法。 這個方法會傳回`ProductsDataTable`物件，其`Count`屬性會指出多少`ProductsRow`s 已存在，但這是指定的產品數目*`categoryID`*。 我們可以建立`ItemDataBound`Repeater 的繫結至 Repeater，每個類別會呼叫事件處理常式`ProductsBLL`類別的`GetProductsByCategoryID(categoryID)`方法，並在輸出中包含其計數。
+- **判斷從 ASP.NET 頁面 s 程式碼後置類別的這項資訊。** 指定特定 *`categoryID`* 我們可以呼叫來判斷相關聯的產品數目`ProductsBLL`類別的`GetProductsByCategoryID(categoryID)`方法。 這個方法會傳回`ProductsDataTable`物件，其`Count`屬性會指出多少`ProductsRow`s 已存在，但這是指定的產品數目 *`categoryID`* 。 我們可以建立`ItemDataBound`Repeater 的繫結至 Repeater，每個類別會呼叫事件處理常式`ProductsBLL`類別的`GetProductsByCategoryID(categoryID)`方法，並在輸出中包含其計數。
 - **更新`CategoriesDataTable`輸入資料集中要包含`NumberOfProducts`資料行。** 我們可以接著更新`GetCategories()`方法中的`CategoriesDataTable`若要包含這項資訊或，或者，將`GetCategories()`做為-並建立新`CategoriesDataTable`方法呼叫`GetCategoriesAndNumberOfProducts()`。
 
 可讓 s 探索這兩種技巧。 第一種方法是比較容易實作方式，因為我們不 t 需要更新資料的存取層級;不過，它需要多個資料庫通訊。 若要在呼叫`ProductsBLL`類別 s`GetProductsByCategoryID(categoryID)`方法中的`ItemDataBound`事件處理常式會將每個類別顯示中繼器中額外的資料庫呼叫。 使用這項技術有*N* + 1 個資料庫呼叫，其中*N*是中繼器中顯示的類別數目。 會使用第二個方法時，從每個類別目錄的相關資訊傳回產品計數`CategoriesBLL`類別 s `GetCategories()` (或`GetCategoriesAndNumberOfProducts()`) 方法，進而導致只一次往返資料庫。
@@ -186,13 +186,13 @@ ms.locfileid: "65130424"
 
 **圖 12**:設定要使用 ObjectDataSource`ProductsBLL`類別 s`GetProductsByCategoryID(categoryID)`方法 ([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image34.png))
 
-由於`GetProductsByCategoryID(categoryID)`方法所預期的輸入的參數 (*`categoryID`*)，設定資料來源精靈可讓我們指定的參數 s 的來源。 已分類已列在 GridView 或 DataList，d 我們設定參數來源下拉式清單控制項和到 ControlID `ID` Web 控制項的資料。 不過，由於 Repeater 缺少`SelectedValue`屬性不能做為參數的來源。 如果您核取，您會發現 [ControlID] 下拉式清單只包含一個控制項`ID``CategoryProducts`，則`ID`的 DataList。
+由於`GetProductsByCategoryID(categoryID)`方法所預期的輸入的參數 ( *`categoryID`* )，設定資料來源精靈可讓我們指定的參數 s 的來源。 已分類已列在 GridView 或 DataList，d 我們設定參數來源下拉式清單控制項和到 ControlID `ID` Web 控制項的資料。 不過，由於 Repeater 缺少`SelectedValue`屬性不能做為參數的來源。 如果您核取，您會發現 [ControlID] 下拉式清單只包含一個控制項`ID``CategoryProducts`，則`ID`的 DataList。
 
 現在，設定參數來源下拉式清單為 None。 就會出現以程式設計方式將指派此參數值，當按一下 LinkButton 中繼器中的類別。
 
 [![請勿指定 categoryID 參數參數來源](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image36.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image35.png)
 
-**圖 13**:對未指定參數的來源*`categoryID`* 參數 ([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image37.png))
+**圖 13**:對未指定參數的來源 *`categoryID`* 參數 ([按一下以檢視完整大小的影像](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs/_static/image37.png))
 
 完成設定資料來源精靈之後，Visual Studio 會自動產生 DataList 的`ItemTemplate`。 取代此預設值`ItemTemplate`範本與我們先前的教學課程中使用; 此外，設定 DataList 的`RepeatColumns`屬性設為 2。 進行這些變更後您 DataList 和其相關聯的 ObjectDataSource 的宣告式標記看起來應該如下所示：
 

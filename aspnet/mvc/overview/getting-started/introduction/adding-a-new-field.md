@@ -79,7 +79,7 @@ Visual Studio 會開啟*Configuration.cs*檔案。 取代`Seed`方法中的*Conf
 > 
 > 如需詳細資訊[AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx)方法，請參閱[負責使用 EF 4.3 AddOrUpdate 方法](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)...
 
-**按 CTRL-SHIFT-B 來建置專案。**（如果您不要在此時建置會失敗的下列步驟）。
+**按 CTRL-SHIFT-B 來建置專案。** （如果您不要在此時建置會失敗的下列步驟）。
 
 下一個步驟是建立`DbMigration`類別初始移轉。 此移轉建立的新資料庫，就是為什麼您刪除*movie.mdf*上一個步驟中的檔案。
 
@@ -121,7 +121,7 @@ Code First 移轉會建立另一個類別檔案中的*移轉*資料夾 (同名 *
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample8.cshtml?highlight=31-33,52-54)]
 
-接下來，開啟*\Views\Movies\Create.cshtml*檔案，並新增`Rating`欄位以下列反白顯示標記。 這會呈現文字方塊中，如此當您建立新的電影時，您可以指定評等。
+接下來，開啟 *\Views\Movies\Create.cshtml*檔案，並新增`Rating`欄位以下列反白顯示標記。 這會呈現文字方塊中，如此當您建立新的電影時，您可以指定評等。
 
 [!code-cshtml[Main](adding-a-new-field/samples/sample9.cshtml?highlight=9-15)]
 
@@ -131,7 +131,7 @@ Code First 移轉會建立另一個類別檔案中的*移轉*資料夾 (同名 *
 
 ![](adding-a-new-field/_static/image9.png)  
   
-備份 'MovieDBContext' 內容的模型已變更，因為所建立的資料庫。 請考慮使用 Code First 移轉更新資料庫 (https://go.microsoft.com/fwlink/?LinkId=238269)。
+備份 'MovieDBContext' 內容的模型已變更，因為所建立的資料庫。 請考慮使用 Code First 移轉更新資料庫 (https://go.microsoft.com/fwlink/?LinkId=238269) 。
 
 ![](adding-a-new-field/_static/image10.png)
 
@@ -169,11 +169,11 @@ Code First 移轉會建立另一個類別檔案中的*移轉*資料夾 (同名 *
 
 ![](adding-a-new-field/_static/image12.png)
 
-按一下 新建連結，可新增一部新電影。 請注意，您可以新增評分。
+按一下 新建  連結，可新增一部新電影。 請注意，您可以新增評分。
 
 ![7_CreateRioII](adding-a-new-field/_static/image13.png)
 
-按一下 [建立] 。 新的影片，包括評等，現在會出現電影清單：
+按一下 [建立]  。 新的影片，包括評等，現在會出現電影清單：
 
 ![7_ourNewMovie_SM](adding-a-new-field/_static/image14.png)
 

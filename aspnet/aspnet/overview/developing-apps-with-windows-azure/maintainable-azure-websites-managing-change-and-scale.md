@@ -230,7 +230,7 @@ ms.locfileid: "65118303"
     ![Alter column SQL 陳述式產生](maintainable-azure-websites-managing-change-and-scale/_static/image11.png "Alter 資料行的 SQL 陳述式產生")
 
     *Alter column SQL 陳述式產生*
-11. 在  **SQL Server 物件總管**，重新整理**dbo。TriviaQuestions**資料表，並檢查**提示**資料行類型是**nvarchar(150)**。
+11. 在  **SQL Server 物件總管**，重新整理**dbo。TriviaQuestions**資料表，並檢查**提示**資料行類型是**nvarchar(150)** 。
 
     ![顯示新的條件約束](maintainable-azure-websites-managing-change-and-scale/_static/image12.png "顯示新的條件約束")
 
@@ -421,7 +421,7 @@ ms.locfileid: "65118303"
     > 當您將內容部署至的 FTP 主機或 GIT 儲存機制的 web 應用程式時，您必須使用進行驗證**部署認證**您從 web 應用程式的建立**快速入門**或**儀表板**管理頁面。 如果您不知道您的部署認證可以輕鬆地重設它們使用管理入口網站。 開啟 web 應用程式**儀表板**頁面，然後按一下**重設您的部署認證**連結。 提供新密碼，然後按**確定**。 是部署認證都適用於使用與您訂用帳戶相關聯的所有 web 應用程式。
 10. 若要確認 web 應用程式已成功推送至 Azure，請回到管理入口網站，並按一下**網站**。
 11. 找出您的 web 應用程式，然後展開以顯示預備網站位置的項目。 按一下它**名稱**移至 [管理] 頁面。
-12. 按一下 **部署**若要查看**部署歷程記錄**。 確認沒有**現用部署**與您*&quot;初始認可&quot;*。
+12. 按一下 **部署**若要查看**部署歷程記錄**。 確認沒有**現用部署**與您 *&quot;初始認可&quot;* 。
 
     ![作用中的部署](maintainable-azure-websites-managing-change-and-scale/_static/image40.png)
 
@@ -497,12 +497,12 @@ ms.locfileid: "65118303"
     ![選取的程式碼](maintainable-azure-websites-managing-change-and-scale/_static/image47.png)
 
     *選取的程式碼*
-4. 以滑鼠右鍵按一下選取的程式碼中，展開**重構**功能表，然後選取**擷取方法...**.
+4. 以滑鼠右鍵按一下選取的程式碼中，展開**重構**功能表，然後選取**擷取方法...** .
 
     ![擷取程式碼做為新的方法](maintainable-azure-websites-managing-change-and-scale/_static/image48.png)
 
     *選取 擷取方法*
-5. 在 [**擷取方法**] 對話方塊中，名稱的新方法*MatchesOption*然後按一下 **[確定]**。
+5. 在 [**擷取方法**] 對話方塊中，名稱的新方法*MatchesOption*然後按一下 **[確定]** 。
 
     ![指定方法名稱](maintainable-azure-websites-managing-change-and-scale/_static/image49.png)
 
@@ -616,18 +616,18 @@ ms.locfileid: "65118303"
 
 1. 切換至 Visual Studio 執行個體**GeekQuiz**從上一個練習的解決方案。
 2. 從功能表列中，選取**檢視**，然後按一下**伺服器總管**。
-3. 在 **伺服器總管**，以滑鼠右鍵按一下**Azure**節點，然後選取**連線到 Azure...**.使用您的訂用帳戶相關聯的 Microsoft 帳戶登入。
+3. 在 **伺服器總管**，以滑鼠右鍵按一下**Azure**節點，然後選取**連線到 Azure...** .使用您的訂用帳戶相關聯的 Microsoft 帳戶登入。
 
     ![連接到 Windows Azure](maintainable-azure-websites-managing-change-and-scale/_static/image62.png)
 
     *連接到 Azure*
-4. 依序展開**Azure**節點，以滑鼠右鍵按一下**儲存體**，然後選取**附加外部儲存體...**.
+4. 依序展開**Azure**節點，以滑鼠右鍵按一下**儲存體**，然後選取**附加外部儲存體...** .
 5. 在**加入新的儲存體帳戶**對話方塊方塊中，輸入**帳戶名稱**並**帳戶金鑰**您在上一個工作並按一下 取得**確定**.
 
     ![加入新的儲存體帳戶對話方塊](maintainable-azure-websites-managing-change-and-scale/_static/image63.png)
 
     *加入新的儲存體帳戶對話方塊*
-6. 您的儲存體帳戶應該會出現下**儲存體**節點。 展開您的儲存體帳戶，以滑鼠右鍵按一下**Blob** ，然後選取**建立 Blob 容器...**.
+6. 您的儲存體帳戶應該會出現下**儲存體**節點。 展開您的儲存體帳戶，以滑鼠右鍵按一下**Blob** ，然後選取**建立 Blob 容器...** .
 
     ![建立 Blob 容器](maintainable-azure-websites-managing-change-and-scale/_static/image64.png "建立 Blob 容器")
 
@@ -679,7 +679,7 @@ ms.locfileid: "65118303"
 
 在這個工作中，您會設定**GeekQuiz**解決方案，以使用映像上傳至 Azure Blob 儲存體 （而不是位於 web 應用程式中的映像） 新增中的 ASP.NET URL 重寫規則**web.config**檔案。
 
-1. 在 Visual Studio 中開啟**Web.config**檔案內**GeekQuiz**專案，然後找出**&lt;system.webServer&gt;** 項目。
+1. 在 Visual Studio 中開啟**Web.config**檔案內**GeekQuiz**專案，然後找出 **&lt;system.webServer&gt;** 項目。
 2. 加入下列程式碼，將 URL 重寫規則，更新您的儲存體帳戶名稱的預留位置。
 
     (程式碼片段- *WebSitesInProduction-Ex4-UrlRewriteRule*)
@@ -776,12 +776,12 @@ ms.locfileid: "65118303"
     ![將要求加入至 WebTest1](maintainable-azure-websites-managing-change-and-scale/_static/image81.png "WebTest1 中加入要求")
 
     *將要求加入至 WebTest1*
-4. 在 [**屬性**] 視窗的 [新要求] 節點中，更新**Url**屬性以指向您的 web 應用程式的 URL (例如*[ http://geek-quiz.azurewebsites.net/ ](http://geek-quiz.azurewebsites.net/)*).
+4. 在 [**屬性**] 視窗的 [新要求] 節點中，更新**Url**屬性以指向您的 web 應用程式的 URL (例如 *[ http://geek-quiz.azurewebsites.net/ ](http://geek-quiz.azurewebsites.net/)* ).
 
     ![變更 Url 屬性](maintainable-azure-websites-managing-change-and-scale/_static/image82.png "變更 Url 屬性")
 
     *變更 Url 屬性*
-5. 在  **WebTest1.webtest**  視窗中，以滑鼠右鍵按一下**WebTest1** ，按一下 **加入迴圈...**.
+5. 在  **WebTest1.webtest**  視窗中，以滑鼠右鍵按一下**WebTest1** ，按一下 **加入迴圈...** .
 
     ![將迴圈加入至 WebTest1](maintainable-azure-websites-managing-change-and-scale/_static/image83.png "將迴圈加入至 WebTest1")
 
@@ -800,7 +800,7 @@ ms.locfileid: "65118303"
     ![選取此迴圈的第一個和最後一個項目](maintainable-azure-websites-managing-change-and-scale/_static/image85.png "選取迴圈的第一個和最後一個項目")
 
     *選取此迴圈的第一個和最後一個項目*
-8. 在 [**方案總管] 中**，以滑鼠右鍵按一下**WebAndLoadTestProject**專案中，展開**新增**功能表，然後選取**負載測試...**.
+8. 在 [**方案總管] 中**，以滑鼠右鍵按一下**WebAndLoadTestProject**專案中，展開**新增**功能表，然後選取**負載測試...** .
 
     ![WebAndLoadTestProject 專案中加入負載測試](maintainable-azure-websites-managing-change-and-scale/_static/image86.png "WebAndLoadTestProject 專案中加入負載測試")
 
@@ -810,17 +810,17 @@ ms.locfileid: "65118303"
     ![新增負載測試精靈](maintainable-azure-websites-managing-change-and-scale/_static/image87.png "新增負載測試精靈")
 
     *新增負載測試精靈*
-10. 在 [**案例**頁面上，選取**不使用考慮時間**然後按一下**下一步]**。
+10. 在 [**案例**頁面上，選取**不使用考慮時間**然後按一下**下一步]** 。
 
     ![選取不想使用考慮時間](maintainable-azure-websites-managing-change-and-scale/_static/image88.png "選取不想使用考慮時間")
 
     *選擇不使用考慮時間*
-11. 在 **負載模式**頁面上，請確定**常數負載**選項。 變更**使用者計數**設為**250**使用者，然後按一下 [**下一步]**。
+11. 在 **負載模式**頁面上，請確定**常數負載**選項。 變更**使用者計數**設為**250**使用者，然後按一下 [**下一步]** 。
 
     ![變更使用者計數設為 250](maintainable-azure-websites-managing-change-and-scale/_static/image89.png "變更的使用者計數設為 250")
 
     *變更為 250 的使用者計數*
-12. 在 [**測試混合模型**頁面上，選取**依據循序測試順序**然後按一下**下一步]**。
+12. 在 [**測試混合模型**頁面上，選取**依據循序測試順序**然後按一下**下一步]** 。
 
     ![選取的測試混合模型](maintainable-azure-websites-managing-change-and-scale/_static/image90.png "選取的測試混合模型")
 
@@ -840,17 +840,17 @@ ms.locfileid: "65118303"
     ![完成測試混合 頁面](maintainable-azure-websites-managing-change-and-scale/_static/image93.png "完成測試混合 頁面")
 
     *完成測試混合 頁面*
-16. 在 [**網路混合**頁面上，按一下**下一步]**。
+16. 在 [**網路混合**頁面上，按一下**下一步]** 。
 
     ![按一下 [網路混合] 頁面中的下一個](maintainable-azure-websites-managing-change-and-scale/_static/image94.png "按一下網路混合 頁面中的下一個")
 
     *網路混合 頁面中按一下 下一步*
-17. 在 [**瀏覽器混合**頁面上，選取**Internet Explorer 10.0**作為瀏覽器類型，然後按一下**下一步]**。
+17. 在 [**瀏覽器混合**頁面上，選取**Internet Explorer 10.0**作為瀏覽器類型，然後按一下**下一步]** 。
 
     ![選取 瀏覽器類型](maintainable-azure-websites-managing-change-and-scale/_static/image95.png "選取瀏覽器類型")
 
     *選取 瀏覽器類型*
-18. 在 [**計數器集合**頁面上，按一下**下一步]**。
+18. 在 [**計數器集合**頁面上，按一下**下一步]** 。
 
     ![在 計數器集合 頁面中按一下 下一步](maintainable-azure-websites-managing-change-and-scale/_static/image96.png "按一下 下一步 在 計數器集合 頁面")
 

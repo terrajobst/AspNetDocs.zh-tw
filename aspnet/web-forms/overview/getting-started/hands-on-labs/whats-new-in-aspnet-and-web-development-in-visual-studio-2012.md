@@ -143,7 +143,7 @@ Visual Studio 現在包含可協助開發人員存取、 工作及有效地組�
     *色彩選擇器不透明度*
 
     > [!NOTE]
-    > CSS3 中增加 RGBA （紅色、 綠色、 藍色、 Alpha） 色彩定義，可讓您定義的色彩不透明度值的單一項目。 不同於**不透明度-** 類似的 CSS 屬性**-** RGBA 色彩也會與最新的瀏覽器相容。
+    > CSS3 中增加 RGBA （紅色、 綠色、 藍色、 Alpha） 色彩定義，可讓您定義的色彩不透明度值的單一項目。 不同於**不透明度-** 類似的 CSS 屬性 **-** RGBA 色彩也會與最新的瀏覽器相容。
 
 <a id="Ex1Task3"></a>
 
@@ -171,7 +171,7 @@ Visual Studio 現在包含可協助開發人員存取、 工作及有效地組�
     *圓的角*
 4. 關閉瀏覽器，並返回 Visual Studio。
 5. 開啟**Custom.css**下的檔案**樣式**資料夾，並將游標放在內**div.images ul li i m g**類別定義。
-6. 按 enter 鍵以顯示 IntelliSense 清單中，型別** 方塊陰影**按下** 索引標籤**兩次來插入預設陰影的程式碼片段的類別定義中的索引鍵。 若要設定陰影值**10px 10px 5px>< #888**。 然後，輸入**框線半徑**和插入程式碼片段。 型別**15px**若要設定 radius 大小，然後按**ENTER**。
+6. 按 enter 鍵以顯示 IntelliSense 清單中，型別 **方塊陰影**按下 **索引標籤**兩次來插入預設陰影的程式碼片段的類別定義中的索引鍵。 若要設定陰影值**10px 10px 5px>< #888**。 然後，輸入**框線半徑**和插入程式碼片段。 型別**15px**若要設定 radius 大小，然後按**ENTER**。
 
     ![圓角以陰影](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image19.png "圓角以陰影")
 
@@ -184,7 +184,7 @@ Visual Studio 現在包含可協助開發人員存取、 工作及有效地組�
     CSS
 
     [!code-css[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample3.css)]
-8. 型別**轉換**然後按** 索引標籤**兩次以插入的轉換程式碼片段的索引鍵。 然後，輸入**rotate(-15deg)** 變更映像會動態顯示時的旋轉角度值。
+8. 型別**轉換**然後按 **索引標籤**兩次以插入的轉換程式碼片段的索引鍵。 然後，輸入**rotate(-15deg)** 變更映像會動態顯示時的旋轉角度值。
 
     CSS
 
@@ -293,7 +293,7 @@ Visual Studio 現在包含數個 HTML5 的程式碼片段。 在這個工作中�
 
     > [!NOTE]
     > 您也可以嘗試更多的程式碼片段包含在 Visual Studio 中，例如影片、 圖等等。
-5. 現在，請嘗試以插入控制項中頁面的某些部分。 例如，嘗試插入**GridView**控制項，而不是輸入，但**&lt;貼齊格線，** 開始鍵入 **&lt;GV**。 請注意，[IntelliSense] 清單會顯示**asp: GridView**控制項。
+5. 現在，請嘗試以插入控制項中頁面的某些部分。 例如，嘗試插入**GridView**控制項，而不是輸入，但 **&lt;貼齊格線，** 開始鍵入 **&lt;GV**。 請注意，[IntelliSense] 清單會顯示**asp: GridView**控制項。
 
     IntelliSense 的 HTML 編輯器現在提供標題大小寫搜尋，以及部分比對 （擷取包含詞彙的所有項目）。
 
@@ -301,7 +301,7 @@ Visual Studio 現在包含數個 HTML5 的程式碼片段。 在這個工作中�
 
     *插入 IntelliSense 清單的 GridView*
 
-    如果您鍵入**&lt;格線**就會比對的詞彙的所有項目，但 Visual Studio 會建議**gridview**控制項：
+    如果您鍵入 **&lt;格線**就會比對的詞彙的所有項目，但 Visual Studio 會建議**gridview**控制項：
 
     ![插入與 IntelliSense 清單部分比對的 GridView](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image31.png "插入與 IntelliSense 清單部分比對的 GridView")
 
@@ -397,7 +397,7 @@ Visual Studio 有更新的承諾，讓程式碼模式，可供存取且妥善管
 
     *頁面計數器*
 3. 關閉瀏覽器並移回至 Visual Studio。
-4. 開啟**JavaScript.aspx**頁面上，並找出**&lt;指令碼&gt;** 區塊 （如下所示）。
+4. 開啟**JavaScript.aspx**頁面上，並找出 **&lt;指令碼&gt;** 區塊 （如下所示）。
 
     下列程式碼會使用 HTML5 本機儲存體來儲存*pageLoadCount*儲存目前的使用者已瀏覽網頁次數的變數。 本機儲存體是 HTML5 標準導入的用戶端索引鍵 / 值資料庫。 資料會儲存使用者的瀏覽器內的本機電腦上。
 
@@ -410,7 +410,7 @@ Visual Studio 有更新的承諾，讓程式碼模式，可供存取且妥善管
     ![在 JavaScript 中的 HTML5 JavaScript 功能](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image39.png "JavaScript HTML5 JavaScript 功能")
 
     *在 JavaScript 中的 HTML5 JavaScript 功能*
-6. 按一下任何左括號 (**{**) 從指令碼程式碼，並請注意，在方括號會反白顯示。
+6. 按一下任何左括號 ( **{** ) 從指令碼程式碼，並請注意，在方括號會反白顯示。
 
     ![方括號會反白顯示](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image40.png "方括號會反白顯示")
 
@@ -441,8 +441,8 @@ Visual Studio 有更新的承諾，讓程式碼模式，可供存取且妥善管
     ![JavaScript 驗證錯誤訊息](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image42.png "JavaScript 驗證錯誤訊息")
 
     *JavaScript 驗證錯誤訊息*
-3. 標記為註解**&quot;使用嚴格&quot;** 方向，請注意，錯誤消失，但出現的警告會保留。
-4. 檔案的最後一行，在寫入任何字串，例如**&quot;測試&quot;** （包含引號，以指出它是字串形式）。 寫入期間來顯示 [IntelliSense] 清單中，選取字串旁邊**修剪**選項。
+3. 標記為註解 **&quot;使用嚴格&quot;** 方向，請注意，錯誤消失，但出現的警告會保留。
+4. 檔案的最後一行，在寫入任何字串，例如 **&quot;測試&quot;** （包含引號，以指出它是字串形式）。 寫入期間來顯示 [IntelliSense] 清單中，選取字串旁邊**修剪**選項。
 
     ECMAScript5 標準中的字串值和變數也會有定義，例如修剪、 大寫、 搜尋和取代的字串方法。
 
@@ -684,7 +684,7 @@ Visual Studio 有更新的承諾，讓程式碼模式，可供存取且妥善管
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>附錄 a:安裝 Visual Studio Express 2012 for Web
 
-您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
+您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)** . 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
 
 1. 移至[ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)。 或者，如果您已安裝 Web Platform Installer，您可以開啟它，並搜尋產品&quot; <em>Visual Studio Express 2012 for Web 含 Windows Azure SDK</em>&quot;。
 2. 按一下 **立即安裝**。 如果您不需要**Web Platform Installer**您將會重新導向至下載並安裝第一次。
@@ -845,7 +845,7 @@ Visual Studio 有更新的承諾，讓程式碼模式，可供存取且妥善管
     ![建立資料庫](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image81.png "建立的資料庫字串")
 
     *建立資料庫*
-7. 您將用來連接至 Windows Azure 中的 SQL 資料庫的連接字串會顯示在文字方塊中的預設連線。 然後按 [下一步] 。
+7. 您將用來連接至 Windows Azure 中的 SQL 資料庫的連接字串會顯示在文字方塊中的預設連線。 然後按 [下一步]  。
 
     ![連接字串指向 SQL Database](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image82.png "連接字串指向 SQL Database")
 

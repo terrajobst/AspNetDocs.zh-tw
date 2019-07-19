@@ -131,7 +131,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 > 
 > 由衍生類別覆寫任何一種方法時，您可以執行自己的篩選程式碼。
 
-1. 開啟**開始**解決方案位於**\Source\Ex01-LoggingActions\Begin**資料夾。
+1. 開啟**開始**解決方案位於 **\Source\Ex01-LoggingActions\Begin**資料夾。
 
    1. 您必須下載某些缺少的 NuGet 封裝，然後再繼續。 若要這樣做，請按一下**專案**功能表，然後選取**管理 NuGet 套件**。
    2. 在 [**管理 NuGet 套件**] 對話方塊中，按一下**還原**才能下載遺漏的套件。
@@ -235,7 +235,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 
 在這個工作中，您將建立新的自訂動作篩選條件，將插入 StoreController 類別中，了解如何管理篩選器的執行順序。
 
-1. 開啟**開始**解決方案位於**\Source\Ex02-ManagingMultipleActionFilters\Begin**資料夾。 否則，您可能會繼續使用**結束**方案取得完成前一個練習。
+1. 開啟**開始**解決方案位於 **\Source\Ex02-ManagingMultipleActionFilters\Begin**資料夾。 否則，您可能會繼續使用**結束**方案取得完成前一個練習。
 
     1. 如果您開啟提供**開始**解決方案中，您必須下載某些缺少的 NuGet 封裝才能繼續。 若要這樣做，請按一下**專案**功能表，然後選取**管理 NuGet 套件**。
     2. 在 [**管理 NuGet 套件**] 對話方塊中，按一下**還原**才能下載遺漏的套件。
@@ -258,7 +258,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample9.cs)]
 
     > [!NOTE]
-    > 此自訂動作篩選條件會比您在前一個練習中建立一個幾乎完全相同。 主要差異在於它有*&quot;記錄所&quot;* 屬性更新這個新類別的名稱來識別哪一個篩選條件註冊記錄檔。
+    > 此自訂動作篩選條件會比您在前一個練習中建立一個幾乎完全相同。 主要差異在於它有 *&quot;記錄所&quot;* 屬性更新這個新類別的名稱來識別哪一個篩選條件註冊記錄檔。
 
 <a id="Ex2Task2"></a>
 
@@ -324,7 +324,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 
 在這個工作中，您將會更新方案，以註冊新的篩選器 (**MyNewCustomActionFilter**) 做為全域篩選條件。 如此一來，就會觸發應用程式中，而不只是在 StoreController 項目，如同先前的工作執行的所有動作。
 
-1. 在  **StoreController**類別中，移除 **[MyNewCustomActionFilter]** 屬性和 [順序] 屬性從 **[CustomActionFilter]**。 它看起來應該如下所示：
+1. 在  **StoreController**類別中，移除 **[MyNewCustomActionFilter]** 屬性和 [順序] 屬性從 **[CustomActionFilter]** 。 它看起來應該如下所示：
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample13.cs)]
 2. 開啟**Global.asax**檔案，並找出**應用程式\_啟動**方法。 請注意，每次啟動應用程式它正在註冊全域篩選器，藉由呼叫**RegisterGlobalFilters**方法內**FilterConfig**類別。
@@ -369,7 +369,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>附錄 a:安裝 Visual Studio Express 2012 for Web
 
-您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
+您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)** . 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
 
 1. 移至 [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)。 或者，如果您已安裝 Web Platform Installer，您可以開啟它，並搜尋產品&quot; <em>Visual Studio Express 2012 for Web 含 Windows Azure SDK</em>&quot;。
 2. 按一下 **立即安裝**。 如果您不需要**Web Platform Installer**您將會重新導向至下載並安裝第一次。
@@ -528,7 +528,7 @@ ASP.NET MVC 提供動作篩選條件之前或之後呼叫動作方法執行篩�
     ![建立資料庫](aspnet-mvc-4-custom-action-filters/_static/image34.png "建立的資料庫字串")
 
     *建立資料庫*
-7. 您將用來連接至 Windows Azure 中的 SQL 資料庫的連接字串會顯示在文字方塊中的預設連線。 然後按 [下一步] 。
+7. 您將用來連接至 Windows Azure 中的 SQL 資料庫的連接字串會顯示在文字方塊中的預設連線。 然後按 [下一步]  。
 
     ![連接字串指向 SQL Database](aspnet-mvc-4-custom-action-filters/_static/image35.png "連接字串指向 SQL Database")
 

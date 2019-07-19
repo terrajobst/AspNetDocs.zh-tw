@@ -197,7 +197,7 @@ URL 授權可讓您輕鬆地指定粗略的授權規則。 如我們所見在步
 讓我們建立頁面，其中列出 GridView 內的特定目錄中的檔案。 GridView 會列出每個檔案的名稱、 大小和其他資訊，以及包含 Linkbutton 的兩個資料行： 其中一個標題為檢視和一個標題為的刪除。 如果檢視 LinkButton 已按下，將會顯示所選檔案的內容;如果刪除 LinkButton 已按下，就會刪除檔案。 讓我們一開始建立，此頁面使其檢視和刪除功能可供所有使用者。 < 使用 LoginView 控制項和以程式設計的方式限制功能章節我們將了解如何啟用或停用這些功能，以瀏覽頁面的使用者。
 
 > [!NOTE]
-> 我們即將建置的 ASP.NET 網頁會使用 GridView 控制項來顯示檔案清單。 本教學課程中 > 系列聚焦於表單驗證、 授權、 使用者帳戶和角色，因為我不想花太多時間討論 GridView 控制項的內部運作方式。 雖然本教學課程提供特定的逐步指示，設定此頁面，它不會不探討為什麼做特定選擇，或轉譯的輸出上有的效果的特定屬性的詳細資料。 如 GridView 控制項徹底的檢查，請參閱我*[使用 ASP.NET 2.0 中的資料](../../data-access/index.md)* 教學課程系列。
+> 我們即將建置的 ASP.NET 網頁會使用 GridView 控制項來顯示檔案清單。 本教學課程中 > 系列聚焦於表單驗證、 授權、 使用者帳戶和角色，因為我不想花太多時間討論 GridView 控制項的內部運作方式。 雖然本教學課程提供特定的逐步指示，設定此頁面，它不會不探討為什麼做特定選擇，或轉譯的輸出上有的效果的特定屬性的詳細資料。 如 GridView 控制項徹底的檢查，請參閱我 *[使用 ASP.NET 2.0 中的資料](../../data-access/index.md)* 教學課程系列。
 
 首先開啟`UserBasedAuthorization.aspx`檔案中`Membership`資料夾，然後將 GridView 控制項新增至名為頁面`FilesGrid`。 從 GridView 的智慧標籤上，按一下 編輯資料行連結以啟動 欄位 對話方塊。 從這裡開始，取消核取自動產生欄位核取方塊左下角。 接下來，新增 選取 按鈕、 刪除 按鈕和兩個 BoundFields 從左上角 （CommandField 類型之下可以找到 選取和刪除按鈕）。 設定 [選取] 按鈕`SelectText`屬性，以檢視與第一個的 BoundField`HeaderText`和`DataField`屬性名稱。 設定第二個的 BoundField`HeaderText`屬性，以位元組為單位的大小及其`DataField`屬性的長度，以其`DataFormatString`屬性設{0:N0}及其`HtmlEncode`屬性設定為 False。
 
@@ -369,7 +369,7 @@ URL 授權架構會套用授權規則 頁面的頁面為基礎。 使用 URL 授
 
 ### <a name="about-the-author"></a>關於作者
 
-Scott Mitchell，多個 ASP 書籍的作者，他是 4GuysFromRolla.com 的創辦人，從事 Microsoft Web 技術工作自 1998 年。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是 *[Sams 教導您自己 ASP.NET 2.0 在 24 小時內](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 Scott 要聯絡[ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或透過他的部落格[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+Scott Mitchell，多個 ASP 書籍的作者，他是 4GuysFromRolla.com 的創辦人，從事 Microsoft Web 技術工作自 1998 年。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是 *[Sams 教導您自己 ASP.NET 2.0 在 24 小時內](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 。 Scott 要聯絡[ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或透過他的部落格[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
 
 ### <a name="special-thanks-to"></a>特別感謝
 

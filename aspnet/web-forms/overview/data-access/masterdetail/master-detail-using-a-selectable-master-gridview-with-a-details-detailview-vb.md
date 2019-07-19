@@ -107,11 +107,11 @@ GridView 的最後一個標記是：
 
 **圖 9**:叫用`ProductsBLL`類別的`GetProductByProductID(productID)`方法 ([按一下以檢視完整大小的影像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image27.png))
 
-已*`productID`* 參數的值取自 GridView 控制項`SelectedValue`屬性。 我們稍早所述，GridView 的`SelectedValue`屬性會傳回第一個資料機碼的所選資料列的值。 因此，務必，GridView`DataKeyNames`屬性設定為`ProductID`，以便選取的資料列`ProductID`所傳回值`SelectedValue`。
+已 *`productID`* 參數的值取自 GridView 控制項`SelectedValue`屬性。 我們稍早所述，GridView 的`SelectedValue`屬性會傳回第一個資料機碼的所選資料列的值。 因此，務必，GridView`DataKeyNames`屬性設定為`ProductID`，以便選取的資料列`ProductID`所傳回值`SelectedValue`。
 
 [![將 [productID 參數] 設定 GridView 的 SelectedValue 屬性](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image29.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image28.png)
 
-**圖 10**:設定*`productID`* GridView 的參數`SelectedValue`屬性 ([按一下以檢視完整大小的影像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image30.png))
+**圖 10**:設定 *`productID`* GridView 的參數`SelectedValue`屬性 ([按一下以檢視完整大小的影像](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image30.png))
 
 一次`productDetailsDataSource`ObjectDataSource 已正確設定和繫結至 DetailsView，本教學課程已完成 ！ 當第一次瀏覽的頁面已選取任何資料列，因此 GridView 的`SelectedValue`屬性會傳回`Nothing`。 因為沒有與產品`NULL``ProductID`的值，由，會傳回任何記錄`GetProductByProductID(productID)`方法，這表示未顯示 DetailsView （請參閱 圖 11）。 按下 GridView 資料列的 [選取] 按鈕時回傳是兩邊彼此乾瞪眼並 DetailsView 重新整理為止。 這次的 GridView`SelectedValue`屬性會傳回`ProductID`所選取的資料列，`GetProductByProductID(productID)`方法會傳回`ProductsDataTable`該特定的產品和 DetailsView 的相關資訊會顯示這些詳細資料 （請參閱 圖 12）。
 

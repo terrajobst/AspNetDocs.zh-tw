@@ -125,7 +125,7 @@ ms.locfileid: "65130479"
 - 如果路徑包含索引鍵轉換為導覽屬性，動作應該有一個名為參數*relatedKey*。
 - 裝飾*金鑰*並*relatedKey*參數搭配 **[FromODataUri]** 參數。
 - POST 和 PUT 要求需要一個實體型別的參數。
-- PATCH 要求採用參數的型別**差異&lt;T&gt;**，其中*T*是實體類型。
+- PATCH 要求採用參數的型別**差異&lt;T&gt;** ，其中*T*是實體類型。
 
 如需參考，以下是範例，並顯示每個內建的 OData 路由慣例的方法簽章。
 
@@ -143,7 +143,7 @@ ms.locfileid: "65130479"
 
 如需這兩個方法中，如果慣例不適用於該要求，方法應該傳回 null。
 
-**ODataPath**參數代表的已剖析的 OData 資源路徑。 它包含一份**[ODataPathSegment](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatapathsegment.aspx)** 執行個體，其中每個區段的資源路徑。 **ODataPathSegment**是抽象類別，每個區段的類型由衍生自類別**ODataPathSegment**。
+**ODataPath**參數代表的已剖析的 OData 資源路徑。 它包含一份 **[ODataPathSegment](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatapathsegment.aspx)** 執行個體，其中每個區段的資源路徑。 **ODataPathSegment**是抽象類別，每個區段的類型由衍生自類別**ODataPathSegment**。
 
 **ODataPath.TemplatePath**屬性是字串，表示串連所有路徑區段。 例如，URI 是否`/Products(1)/Supplier`，路徑範本&quot;~/entityset/key/navigation&quot;。 請注意，這些區段不會直接對應至 URI 區段。 例如，將實體索引鍵 (1) 表示為其自身**ODataPathSegment**。
 

@@ -85,11 +85,11 @@ ms.locfileid: "65134434"
 
 **圖 7**:選取 `GetProductsByCategoryID(categoryID)`方法 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image17.png))
 
-按一下 [下一步] 之後, ObjectDataSource 精靈會提示我們輸入之值的來源`GetProductsByCategoryID(categoryID)`方法的*`categoryID`* 參數。 若要使用選取的值`categories`DropDownList 項目設定參數來源控制與以 ControlID `Categories`。
+按一下 [下一步] 之後, ObjectDataSource 精靈會提示我們輸入之值的來源`GetProductsByCategoryID(categoryID)`方法的 *`categoryID`* 參數。 若要使用選取的值`categories`DropDownList 項目設定參數來源控制與以 ControlID `Categories`。
 
 [![設定為值的分類 DropDownList categoryID 參數](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image19.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image18.png)
 
-**圖 8**:設定*`categoryID`* 參數的值`Categories`DropDownList ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image20.png))
+**圖 8**:設定 *`categoryID`* 參數的值`Categories`DropDownList ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image20.png))
 
 完成後設定資料來源精靈，Visual Studio 會自動產生`ItemTemplate`的 DataList 顯示的名稱和每個資料欄位的值。 讓我們來增強改用 DataList `ItemTemplate` ，顯示只是產品的名稱、 類別、 供應商、 每單位和價格以及數量`SeparatorTemplate`，會插入`<hr>`各個項目之間的項目。 我要使用`ItemTemplate`中的範例[使用 DataList 與重複項控制項顯示的資料](../displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb.md)教學課程中，但是可以隨意使用任何範本標記您找到最美觀。
 
@@ -135,7 +135,7 @@ ms.locfileid: "65134434"
 
 **圖 13**:選取 「-選擇類別目錄-」 清單項目時，會顯示沒有產品 ([按一下以檢視完整大小的影像](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image31.png))
 
-而是會顯示如果*所有*的產品時選取 「-選擇類別目錄-」 的選項時，使用值`-1`改。 精明的讀者應該還記得該回溯*主版/詳細篩選使用 DropDownList*我們已更新的教學課程`ProductsBLL`類別的`GetProductsByCategoryID(categoryID)`方法，讓如果*`categoryID`* 值為`-1`傳入，傳回的記錄的所有產品。
+而是會顯示如果*所有*的產品時選取 「-選擇類別目錄-」 的選項時，使用值`-1`改。 精明的讀者應該還記得該回溯*主版/詳細篩選使用 DropDownList*我們已更新的教學課程`ProductsBLL`類別的`GetProductsByCategoryID(categoryID)`方法，讓如果 *`categoryID`* 值為`-1`傳入，傳回的記錄的所有產品。
 
 ## <a name="summary"></a>總結
 

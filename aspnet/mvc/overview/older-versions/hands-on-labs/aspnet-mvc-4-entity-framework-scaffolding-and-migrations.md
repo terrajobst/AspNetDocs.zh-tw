@@ -89,12 +89,12 @@ ASP.NET MVC scaffolding 提供快速的方式，以產生標準化的方式，�
 #### <a name="task-1--creating-a-new-aspnet-mvc-4-project-using-scaffolding"></a>工作 1-建立新的 ASP.NET MVC 4 專案使用 Scaffolding
 
 1. 如果尚未開啟，啟動**Visual Studio 2012**。
-2. 選取**檔案 |新的專案**。 在 [新專案] 對話方塊中，在**Visual C# |Web**區段中，選取**ASP.NET MVC 4 Web 應用程式**。 若要將專案命名**MVC4andEFMigrations**並將位置設定為**Source\Ex1 UsingMVC4ScaffoldingEFMigrations**本實驗室的資料夾。 設定**方案名稱**要**開始**，並確保**為方案建立目錄**已核取。 按一下 [確定] 。
+2. 選取**檔案 |新的專案**。 在 [新專案] 對話方塊中，在**Visual C# |Web**區段中，選取**ASP.NET MVC 4 Web 應用程式**。 若要將專案命名**MVC4andEFMigrations**並將位置設定為**Source\Ex1 UsingMVC4ScaffoldingEFMigrations**本實驗室的資料夾。 設定**方案名稱**要**開始**，並確保**為方案建立目錄**已核取。 按一下 [確定]  。
 
     ![新 ASP.NET MVC 4 專案 對話方塊](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image1.png "新 ASP.NET MVC 4 專案 對話方塊")
 
     *新 ASP.NET MVC 4 專案 對話方塊*
-3. 在 [**新的 ASP.NET MVC 4 專案**] 對話方塊中選取**網際網路應用程式**範本，並確定**Razor**是選取**檢視引擎**. 按一下 [確定] 建立專案。
+3. 在 [**新的 ASP.NET MVC 4 專案**] 對話方塊中選取**網際網路應用程式**範本，並確定**Razor**是選取**檢視引擎**. 按一下 [確定]  建立專案。
 
     ![新的 ASP.NET MVC 4 網際網路應用程式](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image2.png "新的 ASP.NET MVC 4 網際網路應用程式")
 
@@ -115,7 +115,7 @@ ASP.NET MVC scaffolding 提供快速的方式，以產生標準化的方式，�
 
    1. 在 **樣板**下拉式清單中，選取**讀取/寫入動作和檢視、 使用 Entity Framework 的 MVC 控制器**選項。
    2. 在 **模型類別**下拉式清單中，選取**人員**類別。
-   3. 在 **的資料內容類別**清單中，選取**&lt;新資料內容...&gt;**. 選擇任何名稱，然後按一下**確定**。
+   3. 在 **的資料內容類別**清單中，選取 **&lt;新資料內容...&gt;** . 選擇任何名稱，然後按一下**確定**。
    4. 在 **檢視**下拉式清單中，請確定**Razor**已選取。
 
       ![新增人員控制站，使用 scaffolding](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image4.png "新增 scaffolding 人員控制器")
@@ -238,7 +238,7 @@ ASP.NET MVC scaffolding 提供快速的方式，以產生標準化的方式，�
     ![新增控制器更新](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image18.png "新增控制器更新")
 
     *更新控制器*
-10. 按一下 [加入] 。 然後，選取 值**覆寫 PersonController.cs**而**覆寫相關聯的檢視**，按一下 **確定**。
+10. 按一下 [加入]  。 然後，選取 值**覆寫 PersonController.cs**而**覆寫相關聯的檢視**，按一下 **確定**。
 
    ![新增控制器覆寫](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image19.png)
 
@@ -273,7 +273,7 @@ ASP.NET MVC scaffolding 提供快速的方式，以產生標準化的方式，�
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>附錄 a:安裝 Visual Studio Express 2012 for Web
 
-您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)**. 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
+您可以安裝**Microsoft Visual Studio Express 2012 for Web**或另一個&quot;Express&quot;使用版本 **[Microsoft Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)** . 下列指示會引導您完成安裝所需的步驟*Visual studio Express 2012 for Web*使用*Microsoft Web Platform Installer*。
 
 1. 移至 [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)。 或者，如果您已安裝 Web Platform Installer，您可以開啟它，並搜尋產品&quot; <em>Visual Studio Express 2012 for Web 含 Windows Azure SDK</em>&quot;。
 2. 按一下 **立即安裝**。 如果您不需要**Web Platform Installer**您將會重新導向至下載並安裝第一次。

@@ -100,9 +100,9 @@ Try / catch 陳述式包含在 try 區塊後面接著一個或多個 catch 子�
 然後再加入錯誤處理 「 Wingtip Toys 範例應用程式，您會新增錯誤記錄支援加上`ExceptionUtility`類別，即可*邏輯*資料夾。 透過這種方式，每次應用程式處理錯誤，錯誤詳細資料會加入錯誤記錄檔。
 
 1. 以滑鼠右鍵按一下*邏輯*資料夾，然後選取**新增** - &gt; **新項目**。   
-   隨即顯示 [ 新增項目] 對話方塊。
+   隨即顯示 [ 新增項目]  對話方塊。
 2. 選取  **Visual C#**  - &gt; **程式碼**左側的 範本 群組。 然後，選取**類別**從中間清單並將它命名**ExceptionUtility.cs**。
-3. 選擇 [新增]。 會顯示新的類別檔案。
+3. 選擇 [新增]  。 會顯示新的類別檔案。
 4. 將現有的程式碼取代為下列程式碼：  
 
     [!code-csharp[Main](aspnet-error-handling/samples/sample5.cs)]
@@ -114,9 +114,9 @@ Try / catch 陳述式包含在 try 區塊後面接著一個或多個 catch 子�
 在 Wingtip Toys 範例應用程式中，一頁將用於顯示的錯誤。 [錯誤] 頁面可向網站的使用者顯示安全的錯誤訊息。 不過，如果使用者是開發人員提出 HTTP 要求正在電腦上本機服務的程式碼位於何處，其他錯誤詳細資料會顯示在 [錯誤] 頁面。
 
 1. 以滑鼠右鍵按一下專案名稱 (**Wingtip Toys**) 中**方案總管**，然後選取**新增** - &gt; **新項目**.   
-   隨即顯示 [ 新增項目] 對話方塊。
+   隨即顯示 [ 新增項目]  對話方塊。
 2. 選取  **Visual C#**  - &gt; **Web**左側的 範本 群組。 從清單的中間，選取**使用主版頁面的 Web Form**，並將它命名**ErrorPage.aspx**。
-3. 按一下 [加入] 。
+3. 按一下 [加入]  。
 4. 選取  *Site.Master*主版頁面中，為檔案，然後再選擇**確定**。
 5. 以下列內容取代現有的標記：   
 
@@ -309,7 +309,7 @@ ELMAH 現在就來儲存任何未處理發生的錯誤。
 
 ## <a name="tutorial-series-conclusion"></a>教學課程系列的結論
 
-*跟著感謝。我希望這套教學課程可協助您更加熟悉 ASP.NET Web Form。如果您需要提供在 ASP.NET 4.5 和 Visual Studio 2013 中的 Web Form 功能的詳細資訊，請參閱* [ *ASP.NET 及 Web Tools for Visual Studio 2013 版本資訊*](../../../../visual-studio/overview/2013/release-notes.md) *.此外，請務必看看教學課程中所述* ***接下來的步驟 * * * 區段和 defintely 試用* [*免費 Azure 試用*](https://azure.microsoft.com/pricing/free-trial/)*.*
+*跟著感謝。我希望這套教學課程可協助您更加熟悉 ASP.NET Web Form。如果您需要提供在 ASP.NET 4.5 和 Visual Studio 2013 中的 Web Form 功能的詳細資訊，請參閱* [ *ASP.NET 及 Web Tools for Visual Studio 2013 版本資訊*](../../../../visual-studio/overview/2013/release-notes.md) *.此外，請務必看看教學課程中所述* * **接下來的步驟 * * * 區段和 defintely 試用* [*免費 Azure 試用*](https://azure.microsoft.com/pricing/free-trial/)* .*
 
 ![感謝您-Erik](aspnet-error-handling/_static/image10.png)  
 
