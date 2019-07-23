@@ -112,7 +112,7 @@ HyperLinkField 可以設定為使用相同的文字或 URL 值中每個 GridView
 
 [![填入 supplierID SupplierID Querystring 值的參數值](master-detail-filtering-across-two-pages-cs/_static/image30.png)](master-detail-filtering-across-two-pages-cs/_static/image29.png)
 
-**圖 11**:填入*`supplierID`* 參數值，從`SupplierID`查詢字串值 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-cs/_static/image31.png))
+**圖 11**:填入 *`supplierID`* 參數值，從`SupplierID`查詢字串值 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-cs/_static/image31.png))
 
 這樣就全部完成了！ [圖 12] 顯示`ProductsForSupplierDetails.aspx`頁面上，當從東京 Traders 連結，即可瀏覽`SupplierListMaster.aspx`。
 
@@ -138,7 +138,7 @@ HyperLinkField 可以設定為使用相同的文字或 URL 值中每個 GridView
 
 [![填入 supplierID SupplierID Querystring 值的參數值](master-detail-filtering-across-two-pages-cs/_static/image42.png)](master-detail-filtering-across-two-pages-cs/_static/image41.png)
 
-**圖 15**:填入*`supplierID`* 參數值，從`SupplierID`查詢字串值 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-cs/_static/image43.png))
+**圖 15**:填入 *`supplierID`* 參數值，從`SupplierID`查詢字串值 ([按一下以檢視完整大小的影像](master-detail-filtering-across-two-pages-cs/_static/image43.png))
 
 當繫結 [設計] 檢視內的 ObjectDataSource FormView，Visual Studio 會自動建立 FormView `ItemTemplate`， `InsertItemTemplate`，和`EditItemTemplate`與每個傳回的資料欄位的標籤和文字方塊 Web 控制項ObjectDataSource。 因為我們只想要顯示供應商資訊自由移除`InsertItemTemplate`和`EditItemTemplate`。 接著，編輯 ItemTemplate，使其顯示中的供應商的公司名稱`<h3>`項目和地址、 縣 （市）、 國家/地區、 和公司名稱下方的電話號碼。 或者，您可以手動設定 FormView 的`DataSourceID`並建立`ItemTemplate`標記，如同我們在上一步 」[顯示的資料與 ObjectDataSource](../basic-reporting/displaying-data-with-the-objectdatasource-cs.md)」 教學課程。
 
