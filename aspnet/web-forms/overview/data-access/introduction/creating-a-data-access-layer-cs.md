@@ -334,7 +334,7 @@ TableAdapter 會根據預設，會使用批次更新模式，但也支援 DB 直
 
 目前為止，我們只探討了使用單一資料庫資料表的單一 TableAdapter。 不過，Northwind 資料庫包含數個相關的資料表，我們必須在我們的 web 應用程式中使用。 輸入資料集可以包含多個相關的 Datatable。 因此，若要完成我們的 DAL 我們需要加入 Datatable，我們將使用這些教學課程中的其他資料表。 新增新的 TableAdapter 具類型資料集，請開啟 DataSet 設計工具、 在設計師中，以滑鼠右鍵按一下並選擇 [新增] / TableAdapter。 這會建立新的 DataTable 和 TableAdapter，並逐步引導您完成精靈中稍早在本教學課程中，我們檢查。
 
-需要幾分鐘的時間來建立下列的 TableAdapters 和使用下列查詢的方法。 請注意，在查詢**ProductsTableAdapter**包含子查詢，擷取每個產品類別目錄和供應商的名稱。 此外，如果您已遵循，您已新增**ProductsTableAdapter**類別的**GetProducts()** 並**GetProductsByCategoryID (*categoryID*)** 方法。
+需要幾分鐘的時間來建立下列的 TableAdapters 和使用下列查詢的方法。 請注意，在查詢**ProductsTableAdapter**包含子查詢，擷取每個產品類別目錄和供應商的名稱。 此外，如果您已遵循，您已新增 **ProductsTableAdapter** 類別的 **GetProducts()** 並 **GetProductsByCategoryID(*categoryID*)** 方法。
 
 - **ProductsTableAdapter**
 
