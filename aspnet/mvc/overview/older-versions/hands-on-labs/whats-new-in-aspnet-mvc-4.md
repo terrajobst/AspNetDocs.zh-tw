@@ -269,13 +269,13 @@ ASP.NET MVC 4 可加速開發行動裝置的網站和平板電腦瀏覽器。 �
 
     ![套用頁面左側@media樣式，請在右邊的樣式省略](whats-new-in-aspnet-mvc-4/_static/image17.png "方，頁面會將套用@media樣式，請在右邊的樣式省略")
 
-    *在左邊，將套用頁面@media省略了樣式，請在右側，樣式*
+    *在左邊，將套用頁面\@media省略了樣式，請在右側，樣式*
 
     現在，讓我們查看行動裝置上發生的狀況：
 
     ![套用頁面左側@media樣式，請在右邊的樣式省略](whats-new-in-aspnet-mvc-4/_static/image18.png "方，頁面會將套用@media樣式，請在右邊的樣式省略")
 
-    *在左邊，將套用頁面@media省略了樣式，請在右側，樣式*
+    *在左邊，將套用頁面\@media省略了樣式，請在右側，樣式*
 
     雖然您會注意到，在網頁瀏覽器中呈現的頁面時，會變更時，不非常重要的是，使用行動裝置的差異變得更明顯。 左邊的映像，我們可以看到自訂樣式改善可讀性。
 
@@ -577,7 +577,7 @@ jQuery Mobile 的預設佈景主題包含 5 個樣本指定字母 (a、 b、 c�
 
 4. 建立一份 **\_Layout.Mobile.cshtml**中的檔案**Views\Shared**資料夾，並重新命名複製到&quot;  **\_Layout.iPhone.cshtml**&quot;.
 5. 開啟 **\_Layout.iPhone.cshtml**您在上一個步驟中建立。
-6. 資料角色屬性設定為尋找 div 項目**網頁**並變更**資料佈景主題**屬性設定為&quot;  &quot;。
+6. 資料角色屬性設定為尋找 div 項目**網頁**並變更**資料佈景主題**屬性設定為&quot; &quot;。
 
 [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample17.cshtml)]
 
@@ -1005,12 +1005,12 @@ Microsoft.NET Framework 4.5 引進了新的語言功能，在 C# 和 Visual Basi
      ![設定目的地連接字串](whats-new-in-aspnet-mvc-4/_static/image77.png "設定目的地連接字串")
 
      *設定目的地連接字串*
-6. 然後按一下 [確定]。  當系統提示您建立資料庫時，按一下**是**。
+6. 然後按一下 [確定]。 當系統提示您建立資料庫時，按一下**是**。
 
     ![建立資料庫](whats-new-in-aspnet-mvc-4/_static/image78.png "建立的資料庫字串")
 
     *建立資料庫*
-7. 您將用來連接至 Windows Azure 中的 SQL 資料庫的連接字串會顯示在文字方塊中的預設連線。 然後按 [下一步]  。
+7. 您將用來連接至 Windows Azure 中的 SQL 資料庫的連接字串會顯示在文字方塊中的預設連線。 然後按 [下一步] 。
 
     ![連接字串指向 SQL Database](whats-new-in-aspnet-mvc-4/_static/image79.png "連接字串指向 SQL Database")
 
