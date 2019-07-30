@@ -63,18 +63,18 @@ Visual Studio 執行時 web 專案，它會指派通訊埠編號。 下圖中的
 
 | 作者 |  |
 | --- | -- |
-| 取得 api/作者 | 取得所有的作者。 |
-| 取得 api/作者 / {id} | 取得作者的識別碼。 |
-| POST/api/作者 | 建立新的作者。 |
-| PUT /api/作者 / {id} | 更新現有的作者。 |
+| GET api/authors | 取得所有的作者。 |
+| GET api/authors/{id} | 取得作者的識別碼。 |
+| POST /api/authors | 建立新的作者。 |
+| PUT /api/authors/{id} | 更新現有的作者。 |
 | DELETE /api/authors/{id} | 刪除的作者。 |
 
 | 書籍 |  |
 | --- | -- |
-| 取得 /api/books | 取得所有書籍。 |
-| 取得 /api/叢書 / {id} | 取得活頁簿的識別碼。 |
-| 張貼/api/書籍 | 建立新的書籍。 |
-| PUT /api 叢書 / {id} | 更新現有的書籍。 |
+| GET /api/books | 取得所有書籍。 |
+| GET /api/books/{id} | 取得活頁簿的識別碼。 |
+| POST /api/books | 建立新的書籍。 |
+| PUT /api/books/{id} | 更新現有的書籍。 |
 | DELETE /api/books/{id} | 刪除活頁簿。 |
 
 ## <a name="view-the-database-optional"></a>檢視資料庫 （選擇性）
@@ -83,7 +83,7 @@ Visual Studio 執行時 web 專案，它會指派通訊埠編號。 下圖中的
 
 ![](part-3/_static/image5.png)
 
-在 [**連接到伺服器**] 對話方塊中**伺服器名稱**編輯方塊中，輸入"(localdb) \v11.0"。 離開**驗證**選項設定為 「 Windows 驗證 」。 按一下 **[Connect]**(連線)。
+在 [**連接到伺服器**] 對話方塊中**伺服器名稱**編輯方塊中，輸入"(localdb) \v11.0"。 離開**驗證**選項設定為 「 Windows 驗證 」。 按一下 **[Connect]** (連線)。
 
 ![](part-3/_static/image6.png)
 
