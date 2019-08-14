@@ -309,7 +309,7 @@ ELMAH 現在就來儲存任何未處理發生的錯誤。
 
 ## <a name="tutorial-series-conclusion"></a>教學課程系列的結論
 
-*跟著感謝。我希望這套教學課程可協助您更加熟悉 ASP.NET Web Form。如果您需要提供在 ASP.NET 4.5 和 Visual Studio 2013 中的 Web Form 功能的詳細資訊，請參閱* [ *ASP.NET 及 Web Tools for Visual Studio 2013 版本資訊*](../../../../visual-studio/overview/2013/release-notes.md) *.此外，請務必看看教學課程中所述* * **接下來的步驟 * * * 區段和 defintely 試用* [*免費 Azure 試用*](https://azure.microsoft.com/pricing/free-trial/)* .*
+*跟著感謝。我希望這套教學課程可協助您更加熟悉 ASP.NET Web Form。如果您需要提供在 ASP.NET 4.5 和 Visual Studio 2013 中的 Web Form 功能的詳細資訊，請參閱* [ *ASP.NET 及 Web Tools for Visual Studio 2013 版本資訊*](../../../../visual-studio/overview/2013/release-notes.md) *.此外，請務必看看教學課程中所述 ** **接下來的步驟** **區段和 defintely 試用* [*免費 Azure 試用*](https://azure.microsoft.com/pricing/free-trial/)* .*
 
 ![感謝您-Erik](aspnet-error-handling/_static/image10.png)  
 
