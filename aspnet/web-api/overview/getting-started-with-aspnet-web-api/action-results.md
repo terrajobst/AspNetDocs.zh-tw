@@ -1,121 +1,119 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/action-results
-title: 動作會導致 Web API 2-ASP.NET 4.x
+title: Web API 2-ASP.NET 4.x 中的動作結果
 author: MikeWasson
-description: 描述如何 ASP.NET Web API 將傳回的值轉換從控制器動作至 HTTP 回應訊息中 ASP.NET 4.x。
+description: 描述 ASP.NET Web API 如何將控制器動作的傳回值轉換成 ASP.NET 4.x 中的 HTTP 回應訊息。
 ms.author: riande
 ms.date: 02/03/2014
 ms.custom: seoapril2019
 ms.assetid: 2fc4797c-38ef-4cc7-926c-ca431c4739e8
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/action-results
 msc.type: authoredcontent
-ms.openlocfilehash: 87f71938a5c5f38d3a456ba9339540f67e236e1a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 1eaaf8e87168096683212fa66d3ddf415ad6b22b
+ms.sourcegitcommit: b95316530fa51087d6c400ff91814fe37e73f7e8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400889"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70000723"
 ---
-# <a name="action-results-in-web-api-2"></a><span data-ttu-id="51e33-103">Web API 2 中的動作結果</span><span class="sxs-lookup"><span data-stu-id="51e33-103">Action Results in Web API 2</span></span>
+# <a name="action-results-in-web-api-2"></a><span data-ttu-id="2b1b8-103">Web API 2 中的動作結果</span><span class="sxs-lookup"><span data-stu-id="2b1b8-103">Action Results in Web API 2</span></span>
 
-<span data-ttu-id="51e33-104">藉由[Mike Wasson](https://github.com/MikeWasson)</span><span class="sxs-lookup"><span data-stu-id="51e33-104">by [Mike Wasson](https://github.com/MikeWasson)</span></span>
+<span data-ttu-id="2b1b8-104">本主題描述 ASP.NET Web API 如何將控制器動作的傳回值轉換為 HTTP 回應訊息。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-104">This topic describes how ASP.NET Web API converts the return value from a controller action into an HTTP response message.</span></span>
 
-<span data-ttu-id="51e33-105">本主題說明 ASP.NET Web API 將傳回的值轉換從控制器動作至 HTTP 回應訊息的方式。</span><span class="sxs-lookup"><span data-stu-id="51e33-105">This topic describes how ASP.NET Web API converts the return value from a controller action into an HTTP response message.</span></span>
+<span data-ttu-id="2b1b8-105">Web API 控制器動作可以傳回下列任何一項:</span><span class="sxs-lookup"><span data-stu-id="2b1b8-105">A Web API controller action can return any of the following:</span></span>
 
-<span data-ttu-id="51e33-106">Web API 控制器動作可以傳回下列其中一項：</span><span class="sxs-lookup"><span data-stu-id="51e33-106">A Web API controller action can return any of the following:</span></span>
+1. <span data-ttu-id="2b1b8-106">void</span><span class="sxs-lookup"><span data-stu-id="2b1b8-106">void</span></span>
+2. <span data-ttu-id="2b1b8-107">**HttpResponseMessage**</span><span class="sxs-lookup"><span data-stu-id="2b1b8-107">**HttpResponseMessage**</span></span>
+3. <span data-ttu-id="2b1b8-108">**IHttpActionResult**</span><span class="sxs-lookup"><span data-stu-id="2b1b8-108">**IHttpActionResult**</span></span>
+4. <span data-ttu-id="2b1b8-109">其他類型</span><span class="sxs-lookup"><span data-stu-id="2b1b8-109">Some other type</span></span>
 
-1. <span data-ttu-id="51e33-107">void</span><span class="sxs-lookup"><span data-stu-id="51e33-107">void</span></span>
-2. <span data-ttu-id="51e33-108">**HttpResponseMessage**</span><span class="sxs-lookup"><span data-stu-id="51e33-108">**HttpResponseMessage**</span></span>
-3. <span data-ttu-id="51e33-109">**IHttpActionResult**</span><span class="sxs-lookup"><span data-stu-id="51e33-109">**IHttpActionResult**</span></span>
-4. <span data-ttu-id="51e33-110">其他類型</span><span class="sxs-lookup"><span data-stu-id="51e33-110">Some other type</span></span>
+<span data-ttu-id="2b1b8-110">根據傳回的是哪一個, Web API 會使用不同的機制來建立 HTTP 回應。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-110">Depending on which of these is returned, Web API uses a different mechanism to create the HTTP response.</span></span>
 
-<span data-ttu-id="51e33-111">根據這些傳回時，Web API 會使用不同的機制來建立 HTTP 回應。</span><span class="sxs-lookup"><span data-stu-id="51e33-111">Depending on which of these is returned, Web API uses a different mechanism to create the HTTP response.</span></span>
-
-| <span data-ttu-id="51e33-112">傳回類型</span><span class="sxs-lookup"><span data-stu-id="51e33-112">Return type</span></span> | <span data-ttu-id="51e33-113">Web API 建立回應的方式</span><span class="sxs-lookup"><span data-stu-id="51e33-113">How Web API creates the response</span></span> |
+| <span data-ttu-id="2b1b8-111">傳回類型</span><span class="sxs-lookup"><span data-stu-id="2b1b8-111">Return type</span></span> | <span data-ttu-id="2b1b8-112">Web API 如何建立回應</span><span class="sxs-lookup"><span data-stu-id="2b1b8-112">How Web API creates the response</span></span> |
 | --- | --- |
-| <span data-ttu-id="51e33-114">void</span><span class="sxs-lookup"><span data-stu-id="51e33-114">void</span></span> | <span data-ttu-id="51e33-115">傳回空 204 （沒有內容）</span><span class="sxs-lookup"><span data-stu-id="51e33-115">Return empty 204 (No Content)</span></span> |
-| <span data-ttu-id="51e33-116">**HttpResponseMessage**</span><span class="sxs-lookup"><span data-stu-id="51e33-116">**HttpResponseMessage**</span></span> | <span data-ttu-id="51e33-117">直接將轉換的 HTTP 回應訊息。</span><span class="sxs-lookup"><span data-stu-id="51e33-117">Convert directly to an HTTP response message.</span></span> |
-| <span data-ttu-id="51e33-118">**IHttpActionResult**</span><span class="sxs-lookup"><span data-stu-id="51e33-118">**IHttpActionResult**</span></span> | <span data-ttu-id="51e33-119">呼叫**ExecuteAsync**來建立**HttpResponseMessage**，然後將轉換為 HTTP 回應訊息。</span><span class="sxs-lookup"><span data-stu-id="51e33-119">Call **ExecuteAsync** to create an **HttpResponseMessage**, then convert to an HTTP response message.</span></span> |
-| <span data-ttu-id="51e33-120">其他類型</span><span class="sxs-lookup"><span data-stu-id="51e33-120">Other type</span></span> | <span data-ttu-id="51e33-121">將序列化的傳回值寫入至回應主體中;傳回 200 （確定）。</span><span class="sxs-lookup"><span data-stu-id="51e33-121">Write the serialized return value into the response body; return 200 (OK).</span></span> |
+| <span data-ttu-id="2b1b8-113">void</span><span class="sxs-lookup"><span data-stu-id="2b1b8-113">void</span></span> | <span data-ttu-id="2b1b8-114">傳回空的 204 (沒有內容)</span><span class="sxs-lookup"><span data-stu-id="2b1b8-114">Return empty 204 (No Content)</span></span> |
+| <span data-ttu-id="2b1b8-115">**HttpResponseMessage**</span><span class="sxs-lookup"><span data-stu-id="2b1b8-115">**HttpResponseMessage**</span></span> | <span data-ttu-id="2b1b8-116">直接轉換為 HTTP 回應訊息。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-116">Convert directly to an HTTP response message.</span></span> |
+| <span data-ttu-id="2b1b8-117">**IHttpActionResult**</span><span class="sxs-lookup"><span data-stu-id="2b1b8-117">**IHttpActionResult**</span></span> | <span data-ttu-id="2b1b8-118">呼叫**ExecuteAsync**以建立**HttpResponseMessage**, 然後轉換為 HTTP 回應訊息。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-118">Call **ExecuteAsync** to create an **HttpResponseMessage**, then convert to an HTTP response message.</span></span> |
+| <span data-ttu-id="2b1b8-119">其他類型</span><span class="sxs-lookup"><span data-stu-id="2b1b8-119">Other type</span></span> | <span data-ttu-id="2b1b8-120">將序列化的傳回值寫入回應主體;傳回 200 (確定)。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-120">Write the serialized return value into the response body; return 200 (OK).</span></span> |
 
-<span data-ttu-id="51e33-122">本主題的其餘部分描述更詳細的每個選項。</span><span class="sxs-lookup"><span data-stu-id="51e33-122">The rest of this topic describes each option in more detail.</span></span>
+<span data-ttu-id="2b1b8-121">本主題的其餘部分將更詳細地說明每個選項。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-121">The rest of this topic describes each option in more detail.</span></span>
 
-## <a name="void"></a><span data-ttu-id="51e33-123">void</span><span class="sxs-lookup"><span data-stu-id="51e33-123">void</span></span>
+## <a name="void"></a><span data-ttu-id="2b1b8-122">void</span><span class="sxs-lookup"><span data-stu-id="2b1b8-122">void</span></span>
 
-<span data-ttu-id="51e33-124">如果傳回的型別`void`，Web API 只會傳回空的 HTTP 回應狀態碼 204 （沒有內容）。</span><span class="sxs-lookup"><span data-stu-id="51e33-124">If the return type is `void`, Web API simply returns an empty HTTP response with status code 204 (No Content).</span></span>
+<span data-ttu-id="2b1b8-123">如果傳回型別為`void`, Web API 只會傳回空的 HTTP 回應, 狀態碼為 204 (沒有內容)。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-123">If the return type is `void`, Web API simply returns an empty HTTP response with status code 204 (No Content).</span></span>
 
-<span data-ttu-id="51e33-125">範例控制器：</span><span class="sxs-lookup"><span data-stu-id="51e33-125">Example controller:</span></span>
+<span data-ttu-id="2b1b8-124">範例控制器:</span><span class="sxs-lookup"><span data-stu-id="2b1b8-124">Example controller:</span></span>
 
 [!code-csharp[Main](action-results/samples/sample1.cs)]
 
-<span data-ttu-id="51e33-126">HTTP 回應：</span><span class="sxs-lookup"><span data-stu-id="51e33-126">HTTP response:</span></span>
+<span data-ttu-id="2b1b8-125">HTTP 回應:</span><span class="sxs-lookup"><span data-stu-id="2b1b8-125">HTTP response:</span></span>
 
 [!code-console[Main](action-results/samples/sample2.cmd)]
 
-## <a name="httpresponsemessage"></a><span data-ttu-id="51e33-127">HttpResponseMessage</span><span class="sxs-lookup"><span data-stu-id="51e33-127">HttpResponseMessage</span></span>
+## <a name="httpresponsemessage"></a><span data-ttu-id="2b1b8-126">HttpResponseMessage</span><span class="sxs-lookup"><span data-stu-id="2b1b8-126">HttpResponseMessage</span></span>
 
-<span data-ttu-id="51e33-128">如果此動作會傳回[HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx)，Web API 轉換為傳回值直接 HTTP 回應訊息使用的屬性**HttpResponseMessage**來填入的物件回應。</span><span class="sxs-lookup"><span data-stu-id="51e33-128">If the action returns an [HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx), Web API converts the return value directly into an HTTP response message, using the properties of the **HttpResponseMessage** object to populate the response.</span></span>
+<span data-ttu-id="2b1b8-127">如果動作傳回[HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx), Web API 會使用**HttpResponseMessage**物件的屬性來填入回應, 將傳回值直接轉換為 HTTP 回應訊息。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-127">If the action returns an [HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx), Web API converts the return value directly into an HTTP response message, using the properties of the **HttpResponseMessage** object to populate the response.</span></span>
 
-<span data-ttu-id="51e33-129">此選項可讓您控制回應訊息很多。</span><span class="sxs-lookup"><span data-stu-id="51e33-129">This option gives you a lot of control over the response message.</span></span> <span data-ttu-id="51e33-130">例如，下列控制器動作設定 Cache-control 標頭。</span><span class="sxs-lookup"><span data-stu-id="51e33-130">For example, the following controller action sets the Cache-Control header.</span></span>
+<span data-ttu-id="2b1b8-128">此選項可讓您對回應訊息有很大的控制權。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-128">This option gives you a lot of control over the response message.</span></span> <span data-ttu-id="2b1b8-129">例如, 下列控制器動作會設定快取控制標頭。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-129">For example, the following controller action sets the Cache-Control header.</span></span>
 
 [!code-csharp[Main](action-results/samples/sample3.cs)]
 
-<span data-ttu-id="51e33-131">回應：</span><span class="sxs-lookup"><span data-stu-id="51e33-131">Response:</span></span>
+<span data-ttu-id="2b1b8-130">回應：</span><span class="sxs-lookup"><span data-stu-id="2b1b8-130">Response:</span></span>
 
 [!code-console[Main](action-results/samples/sample4.cmd?highlight=2)]
 
-<span data-ttu-id="51e33-132">如果您傳遞至網域模型**CreateResponse**方法中，Web API 會使用[媒體格式器](../formats-and-model-binding/media-formatters.md)寫入回應主體中序列化的模型。</span><span class="sxs-lookup"><span data-stu-id="51e33-132">If you pass a domain model to the **CreateResponse** method, Web API uses a [media formatter](../formats-and-model-binding/media-formatters.md) to write the serialized model into the response body.</span></span>
+<span data-ttu-id="2b1b8-131">如果您將領域模型傳遞至**CreateResponse**方法, Web API 會使用[媒體格式](../formats-and-model-binding/media-formatters.md)器將序列化的模型寫入回應主體。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-131">If you pass a domain model to the **CreateResponse** method, Web API uses a [media formatter](../formats-and-model-binding/media-formatters.md) to write the serialized model into the response body.</span></span>
 
 [!code-csharp[Main](action-results/samples/sample5.cs)]
 
-<span data-ttu-id="51e33-133">若要選擇的格式器，web API 會使用 Accept 標頭在要求中。</span><span class="sxs-lookup"><span data-stu-id="51e33-133">Web API uses the Accept header in the request to choose the formatter.</span></span> <span data-ttu-id="51e33-134">如需詳細資訊，請參閱 <<c0> [ 內容交涉](../formats-and-model-binding/content-negotiation.md)。</span><span class="sxs-lookup"><span data-stu-id="51e33-134">For more information, see [Content Negotiation](../formats-and-model-binding/content-negotiation.md).</span></span>
+<span data-ttu-id="2b1b8-132">Web API 會在要求中使用 Accept 標頭來選擇格式器。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-132">Web API uses the Accept header in the request to choose the formatter.</span></span> <span data-ttu-id="2b1b8-133">如需詳細資訊, 請參閱[內容協商](../formats-and-model-binding/content-negotiation.md)。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-133">For more information, see [Content Negotiation](../formats-and-model-binding/content-negotiation.md).</span></span>
 
-## <a name="ihttpactionresult"></a><span data-ttu-id="51e33-135">IHttpActionResult</span><span class="sxs-lookup"><span data-stu-id="51e33-135">IHttpActionResult</span></span>
+## <a name="ihttpactionresult"></a><span data-ttu-id="2b1b8-134">IHttpActionResult</span><span class="sxs-lookup"><span data-stu-id="2b1b8-134">IHttpActionResult</span></span>
 
-<span data-ttu-id="51e33-136">**IHttpActionResult** Web API 2 中引進了介面。</span><span class="sxs-lookup"><span data-stu-id="51e33-136">The **IHttpActionResult** interface was introduced in Web API 2.</span></span> <span data-ttu-id="51e33-137">基本上，它會定義**HttpResponseMessage** factory。</span><span class="sxs-lookup"><span data-stu-id="51e33-137">Essentially, it defines an **HttpResponseMessage** factory.</span></span> <span data-ttu-id="51e33-138">以下是使用的一些優點**IHttpActionResult**介面：</span><span class="sxs-lookup"><span data-stu-id="51e33-138">Here are some advantages of using the **IHttpActionResult** interface:</span></span>
+<span data-ttu-id="2b1b8-135">**應傳回 iHTTPactionresult**介面是在 Web API 2 中引進。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-135">The **IHttpActionResult** interface was introduced in Web API 2.</span></span> <span data-ttu-id="2b1b8-136">基本上, 它會定義**HttpResponseMessage** factory。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-136">Essentially, it defines an **HttpResponseMessage** factory.</span></span> <span data-ttu-id="2b1b8-137">以下是使用**應傳回 iHTTPactionresult**介面的一些優點:</span><span class="sxs-lookup"><span data-stu-id="2b1b8-137">Here are some advantages of using the **IHttpActionResult** interface:</span></span>
 
-- <span data-ttu-id="51e33-139">可簡化[單元測試](../testing-and-debugging/unit-testing-controllers-in-web-api.md)控制器。</span><span class="sxs-lookup"><span data-stu-id="51e33-139">Simplifies [unit testing](../testing-and-debugging/unit-testing-controllers-in-web-api.md) your controllers.</span></span>
-- <span data-ttu-id="51e33-140">將移到另一個類別建立 HTTP 回應的一般邏輯。</span><span class="sxs-lookup"><span data-stu-id="51e33-140">Moves common logic for creating HTTP responses into separate classes.</span></span>
-- <span data-ttu-id="51e33-141">藉由隱藏建構回應的低層級的詳細資料可更清楚，控制器動作的意圖。</span><span class="sxs-lookup"><span data-stu-id="51e33-141">Makes the intent of the controller action clearer, by hiding the low-level details of constructing the response.</span></span>
+- <span data-ttu-id="2b1b8-138">簡化控制器的[單元測試](../testing-and-debugging/unit-testing-controllers-in-web-api.md)。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-138">Simplifies [unit testing](../testing-and-debugging/unit-testing-controllers-in-web-api.md) your controllers.</span></span>
+- <span data-ttu-id="2b1b8-139">將建立 HTTP 回應的常見邏輯移至不同的類別。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-139">Moves common logic for creating HTTP responses into separate classes.</span></span>
+- <span data-ttu-id="2b1b8-140">藉由隱藏用來建立回應的低層級詳細資料, 讓控制器動作的意圖更清楚。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-140">Makes the intent of the controller action clearer, by hiding the low-level details of constructing the response.</span></span>
 
-<span data-ttu-id="51e33-142">**IHttpActionResult**包含單一方法**ExecuteAsync**，以非同步方式建立**HttpResponseMessage**執行個體。</span><span class="sxs-lookup"><span data-stu-id="51e33-142">**IHttpActionResult** contains a single method, **ExecuteAsync**, which asynchronously creates an **HttpResponseMessage** instance.</span></span>
+<span data-ttu-id="2b1b8-141">**應傳回 iHTTPactionresult**包含單一方法**ExecuteAsync**, 它會以非同步方式建立**HttpResponseMessage**實例。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-141">**IHttpActionResult** contains a single method, **ExecuteAsync**, which asynchronously creates an **HttpResponseMessage** instance.</span></span>
 
 [!code-csharp[Main](action-results/samples/sample6.cs)]
 
-<span data-ttu-id="51e33-143">如果控制器動作傳回**IHttpActionResult**，Web API 會呼叫**ExecuteAsync**方法，以建立**HttpResponseMessage**。</span><span class="sxs-lookup"><span data-stu-id="51e33-143">If a controller action returns an **IHttpActionResult**, Web API calls the **ExecuteAsync** method to create an **HttpResponseMessage**.</span></span> <span data-ttu-id="51e33-144">然後它會將轉換**HttpResponseMessage**至 HTTP 回應訊息。</span><span class="sxs-lookup"><span data-stu-id="51e33-144">Then it converts the **HttpResponseMessage** into an HTTP response message.</span></span>
+<span data-ttu-id="2b1b8-142">如果控制器動作傳回**應傳回 iHTTPactionresult**, Web API 會呼叫**ExecuteAsync**方法來建立**HttpResponseMessage**。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-142">If a controller action returns an **IHttpActionResult**, Web API calls the **ExecuteAsync** method to create an **HttpResponseMessage**.</span></span> <span data-ttu-id="2b1b8-143">然後, 它會將**HttpResponseMessage**轉換為 HTTP 回應訊息。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-143">Then it converts the **HttpResponseMessage** into an HTTP response message.</span></span>
 
-<span data-ttu-id="51e33-145">以下是簡單的實作**IHttpActionResult**所建立的純文字回應：</span><span class="sxs-lookup"><span data-stu-id="51e33-145">Here is a simple implementation of **IHttpActionResult** that creates a plain text response:</span></span>
+<span data-ttu-id="2b1b8-144">以下是簡單的**應傳回 iHTTPactionresult**執行, 可建立純文字回應:</span><span class="sxs-lookup"><span data-stu-id="2b1b8-144">Here is a simple implementation of **IHttpActionResult** that creates a plain text response:</span></span>
 
 [!code-csharp[Main](action-results/samples/sample7.cs)]
 
-<span data-ttu-id="51e33-146">範例控制器動作：</span><span class="sxs-lookup"><span data-stu-id="51e33-146">Example controller action:</span></span>
+<span data-ttu-id="2b1b8-145">範例控制器動作:</span><span class="sxs-lookup"><span data-stu-id="2b1b8-145">Example controller action:</span></span>
 
 [!code-csharp[Main](action-results/samples/sample8.cs)]
 
-<span data-ttu-id="51e33-147">回應：</span><span class="sxs-lookup"><span data-stu-id="51e33-147">Response:</span></span>
+<span data-ttu-id="2b1b8-146">回應：</span><span class="sxs-lookup"><span data-stu-id="2b1b8-146">Response:</span></span>
 
 [!code-console[Main](action-results/samples/sample9.cmd)]
 
-<span data-ttu-id="51e33-148">通常您會使用**IHttpActionResult**中所定義的實作**[System.Web.Http.Results](https://msdn.microsoft.com/library/system.web.http.results.aspx)** 命名空間。</span><span class="sxs-lookup"><span data-stu-id="51e33-148">More often, you will use the **IHttpActionResult** implementations defined in the **[System.Web.Http.Results](https://msdn.microsoft.com/library/system.web.http.results.aspx)** namespace.</span></span> <span data-ttu-id="51e33-149">**ApiController**類別定義會傳回這些內建動作結果的 helper 方法。</span><span class="sxs-lookup"><span data-stu-id="51e33-149">The **ApiController** class defines helper methods that return these built-in action results.</span></span>
+<span data-ttu-id="2b1b8-147">通常, 您會使用在 **[system.web. HTTP.sys](https://msdn.microsoft.com/library/system.web.http.results.aspx)** 命名空間中定義的**應傳回 iHTTPactionresult**部署。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-147">More often, you use the **IHttpActionResult** implementations defined in the **[System.Web.Http.Results](https://msdn.microsoft.com/library/system.web.http.results.aspx)** namespace.</span></span> <span data-ttu-id="2b1b8-148">**ApiController**類別會定義可傳回這些內建動作結果的 helper 方法。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-148">The **ApiController** class defines helper methods that return these built-in action results.</span></span>
 
-<span data-ttu-id="51e33-150">在下列範例中，如果要求不符合現有的產品識別碼，控制器會呼叫[ApiController.NotFound](https://msdn.microsoft.com/library/system.web.http.apicontroller.notfound.aspx)建立 404 （找不到） 回應。</span><span class="sxs-lookup"><span data-stu-id="51e33-150">In the following example, if the request does not match an existing product ID, the controller calls [ApiController.NotFound](https://msdn.microsoft.com/library/system.web.http.apicontroller.notfound.aspx) to create a 404 (Not Found) response.</span></span> <span data-ttu-id="51e33-151">否則，控制器會呼叫[ApiController.OK](https://msdn.microsoft.com/library/dn314591.aspx)，這會建立 200 （確定） 回應，包含產品。</span><span class="sxs-lookup"><span data-stu-id="51e33-151">Otherwise, the controller calls [ApiController.OK](https://msdn.microsoft.com/library/dn314591.aspx), which creates a 200 (OK) response that contains the product.</span></span>
+<span data-ttu-id="2b1b8-149">在下列範例中, 如果要求不符合現有的產品識別碼, 則控制器會呼叫[ApiController NotFound](https://msdn.microsoft.com/library/system.web.http.apicontroller.notfound.aspx)以建立 404 (找不到) 回應。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-149">In the following example, if the request does not match an existing product ID, the controller calls [ApiController.NotFound](https://msdn.microsoft.com/library/system.web.http.apicontroller.notfound.aspx) to create a 404 (Not Found) response.</span></span> <span data-ttu-id="2b1b8-150">否則, 控制器會呼叫[ApiController](https://msdn.microsoft.com/library/dn314591.aspx), 這會建立包含產品的 200 (確定) 回應。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-150">Otherwise, the controller calls [ApiController.OK](https://msdn.microsoft.com/library/dn314591.aspx), which creates a 200 (OK) response that contains the product.</span></span>
 
 [!code-csharp[Main](action-results/samples/sample10.cs)]
 
-## <a name="other-return-types"></a><span data-ttu-id="51e33-152">其他傳回型別</span><span class="sxs-lookup"><span data-stu-id="51e33-152">Other Return Types</span></span>
+## <a name="other-return-types"></a><span data-ttu-id="2b1b8-151">其他傳回類型</span><span class="sxs-lookup"><span data-stu-id="2b1b8-151">Other Return Types</span></span>
 
-<span data-ttu-id="51e33-153">對於所有其他傳回類型，Web API 會使用[媒體格式器](../formats-and-model-binding/media-formatters.md)序列化傳回的值。</span><span class="sxs-lookup"><span data-stu-id="51e33-153">For all other return types, Web API uses a [media formatter](../formats-and-model-binding/media-formatters.md) to serialize the return value.</span></span> <span data-ttu-id="51e33-154">Web API 會寫入回應主體中序列化的值。</span><span class="sxs-lookup"><span data-stu-id="51e33-154">Web API writes the serialized value into the response body.</span></span> <span data-ttu-id="51e33-155">回應狀態碼為 200 （確定）。</span><span class="sxs-lookup"><span data-stu-id="51e33-155">The response status code is 200 (OK).</span></span>
+<span data-ttu-id="2b1b8-152">針對所有其他傳回類型, Web API 會使用[媒體格式](../formats-and-model-binding/media-formatters.md)器來序列化傳回值。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-152">For all other return types, Web API uses a [media formatter](../formats-and-model-binding/media-formatters.md) to serialize the return value.</span></span> <span data-ttu-id="2b1b8-153">Web API 會將序列化的值寫入回應主體。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-153">Web API writes the serialized value into the response body.</span></span> <span data-ttu-id="2b1b8-154">回應狀態碼為 200 (確定)。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-154">The response status code is 200 (OK).</span></span>
 
 [!code-csharp[Main](action-results/samples/sample11.cs)]
 
-<span data-ttu-id="51e33-156">這種方法的缺點是您不能直接傳回錯誤碼 404 等。</span><span class="sxs-lookup"><span data-stu-id="51e33-156">A disadvantage of this approach is that you cannot directly return an error code, such as 404.</span></span> <span data-ttu-id="51e33-157">不過，您可以擲回**HttpResponseException**錯誤代碼。</span><span class="sxs-lookup"><span data-stu-id="51e33-157">However, you can throw an **HttpResponseException** for error codes.</span></span> <span data-ttu-id="51e33-158">如需詳細資訊，請參閱 < [ASP.NET Web API 中的例外狀況處理](../error-handling/exception-handling.md)。</span><span class="sxs-lookup"><span data-stu-id="51e33-158">For more information, see [Exception Handling in ASP.NET Web API](../error-handling/exception-handling.md).</span></span>
+<span data-ttu-id="2b1b8-155">這種方法的缺點是您無法直接傳回錯誤碼, 例如404。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-155">A disadvantage of this approach is that you cannot directly return an error code, such as 404.</span></span> <span data-ttu-id="2b1b8-156">不過, 您可以擲回錯誤碼的**HttpResponseException** 。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-156">However, you can throw an **HttpResponseException** for error codes.</span></span> <span data-ttu-id="2b1b8-157">如需詳細資訊, 請參閱[ASP.NET Web API 中的例外狀況處理](../error-handling/exception-handling.md)。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-157">For more information, see [Exception Handling in ASP.NET Web API](../error-handling/exception-handling.md).</span></span>
 
-<span data-ttu-id="51e33-159">若要選擇的格式器，web API 會使用 Accept 標頭在要求中。</span><span class="sxs-lookup"><span data-stu-id="51e33-159">Web API uses the Accept header in the request to choose the formatter.</span></span> <span data-ttu-id="51e33-160">如需詳細資訊，請參閱 <<c0> [ 內容交涉](../formats-and-model-binding/content-negotiation.md)。</span><span class="sxs-lookup"><span data-stu-id="51e33-160">For more information, see [Content Negotiation](../formats-and-model-binding/content-negotiation.md).</span></span>
+<span data-ttu-id="2b1b8-158">Web API 會在要求中使用 Accept 標頭來選擇格式器。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-158">Web API uses the Accept header in the request to choose the formatter.</span></span> <span data-ttu-id="2b1b8-159">如需詳細資訊, 請參閱[內容協商](../formats-and-model-binding/content-negotiation.md)。</span><span class="sxs-lookup"><span data-stu-id="2b1b8-159">For more information, see [Content Negotiation](../formats-and-model-binding/content-negotiation.md).</span></span>
 
-<span data-ttu-id="51e33-161">範例要求</span><span class="sxs-lookup"><span data-stu-id="51e33-161">Example request</span></span>
+<span data-ttu-id="2b1b8-160">範例要求</span><span class="sxs-lookup"><span data-stu-id="2b1b8-160">Example request</span></span>
 
 [!code-console[Main](action-results/samples/sample12.cmd)]
 
-<span data-ttu-id="51e33-162">範例回應：</span><span class="sxs-lookup"><span data-stu-id="51e33-162">Example response:</span></span>
+<span data-ttu-id="2b1b8-161">範例回應</span><span class="sxs-lookup"><span data-stu-id="2b1b8-161">Example response</span></span>
 
 [!code-console[Main](action-results/samples/sample13.cmd)]
