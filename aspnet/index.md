@@ -1,18 +1,18 @@
 ---
 uid: index
 layout: HubPage
-ms.topic: conceptual
+ms.topic: hub-page
 author: Rick-Anderson
 ms.author: riande
 title: ASP.NET 文件
 ms.date: 08/24/2018
-description: 了解如何開發 ASP.NET 與 ASP.NET Web 應用程式。 取得文件、程式碼範例、教學課程等。
-ms.openlocfilehash: 4bfa5b2a161cdf67f3d2df0057bd68958d8a5769
-ms.sourcegitcommit: f774732a3960fca079438a88a5472c37cf7be08a
+description: 了解如何開發 ASP.NET 與 ASP.NET Web 應用程式。 取得文件、程式碼範例、教學課程等資訊。
+ms.openlocfilehash: 6309704444d60d42d49c3a8f1683045dc503e761
+ms.sourcegitcommit: cd35be4b25eb05724a5f074214bbdf6573349eda
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68810748"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70161686"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">
@@ -80,7 +80,7 @@ ms.locfileid: "68810748"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>應用程式開發介面參考</h3>
+                                                    <h3>API 參考</h3>
                                                     <p>探索 ASP.NET Core 類別庫。</p>
                                                 </div>
                                             </div>
@@ -118,7 +118,7 @@ ms.locfileid: "68810748"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Fundamentals</h3>
+                                                    <h3>基礎</h3>
                                                     <p>了解 ASP.NET Core 的基礎。</p>
                                                 </div>
                                             </div>
