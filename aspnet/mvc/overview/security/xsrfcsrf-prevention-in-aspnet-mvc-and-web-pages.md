@@ -1,190 +1,190 @@
 ---
 uid: mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
-title: 在 ASP.NET MVC 和 Web Pages 中的 XSRF/CSRF 防護 |Microsoft Docs
+title: ASP.NET MVC 和 Web Pages 中的 XSRF/CSRF 防護 |Microsoft Docs
 author: Rick-Anderson
-description: 跨網站偽造要求 （也稱為 XSRF 或 CSRF） 攻擊會將對 web 裝載的應用程式讓惡意網站可能會影響 interacti...
+description: 跨網站偽造要求（也稱為 XSRF 或 CSRF）是對 web 託管應用程式的攻擊，而惡意網站可能會影響 interacti 。
 ms.author: riande
 ms.date: 03/14/2013
 ms.assetid: aadc5fa4-8215-4fc7-afd5-bcd2ef879728
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: a6e10c52d83dc3c29ab2f9f6bb0c05cfbbf6aad1
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 6fcfcda5b95e5844f7d357ac0cbb6d1fd2e215ac
+ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126356"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73445769"
 ---
 # <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>ASP.NET MVC 和 ASP.NET Web Pages 中的 XSRF/CSRF 防護
 
-藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
+依[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
-> 跨網站要求偽造 （也稱為 XSRF 或 CSRF） 攻擊會將對 web 裝載的應用程式讓惡意網站可能會影響用戶端瀏覽器和該瀏覽器信任的網站之間的互動。 這些攻擊會進行可能的因為網頁瀏覽器會將驗證權杖，會自動隨著每個要求傳送至網站。 標準範例是驗證 cookie，例如 ASP。NET 的表單驗證票證。 不過，這些攻擊可以被目標網站使用 （例如 Windows 驗證、 基本及其他等等） 的任何持續驗證機制。
+> 跨網站偽造要求（也稱為 XSRF 或 CSRF）是對 web 裝載應用程式的攻擊，因此惡意網站可能會影響用戶端瀏覽器與該瀏覽器信任的網站之間的互動。 由於網頁瀏覽器會在每次要求網站時自動傳送驗證權杖，因此可以進行這些攻擊。 標準範例是驗證 cookie，例如 ASP。NET 的表單驗證票證。 不過，使用任何持續性驗證機制（例如 Windows 驗證、基本等等）的網站，都可以受到這些攻擊的目標。
 > 
-> XSRF 攻擊是網路釣魚攻擊不同。 網路釣魚攻擊需要與受害者互動。 在網路釣魚攻擊，惡意網站會模擬目標網站，然後受害者因受騙而到機密資訊提供給攻擊者。 XSRF 攻擊時，則通常不需要互動需要與受害者。 相反地，攻擊者就信賴憑證者會自動將所有相關的 cookie 傳送至目的地網站的瀏覽器上。
+> XSRF 攻擊與網路釣魚攻擊不同。 網路釣魚攻擊需要來自犧牲者的互動。 在網路釣魚攻擊中，惡意網站會模擬目標網站，而受害者會愚弄為攻擊者提供機密資訊。 在 XSRF 攻擊中，犧牲者通常不需要進行任何互動。 相反地，攻擊者會依賴瀏覽器自動將所有相關的 cookie 傳送至目的地網站。
 > 
-> 如需詳細資訊，請參閱 < [Open Web Application Security Project](https://www.owasp.org/index.php/Main_Page)(OWASP) [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF))。
+> 如需詳細資訊，請參閱[Open Web Application Security Project](https://www.owasp.org/index.php/Main_Page)（OWASP） [XSRF](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF))。
 
 ## <a name="anatomy-of-an-attack"></a>攻擊的剖析
 
-若要逐步解說 XSRF 攻擊，請考慮使用者想要執行的某些線上銀行交易。 此使用者第一次造訪 WoodgroveBank.com 並登入，屆時，回應標頭將包含驗證 cookie:
+若要逐步完成 XSRF 攻擊，請考慮想要執行一些線上銀行交易的使用者。 此使用者會先造訪 WoodgroveBank.com 和登入，此時回應標頭會包含她的驗證 cookie：
 
 [!code-console[Main](xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages/samples/sample1.cmd)]
 
-驗證 cookie 是工作階段 cookie，因為它會自動清除瀏覽器的瀏覽器處理序結束時。 不過，這段時間，直到瀏覽器就會自動包含與 WoodgroveBank.com 的每個要求的 cookie。 使用者現在想要傳輸到另一個帳戶，$1000，因此她填寫銀行網站上的表單和瀏覽器對伺服器提出此要求：
+因為驗證 cookie 是會話 cookie，所以瀏覽器會在瀏覽器進程結束時自動清除。 不過，在該時間之前，瀏覽器會自動包含每個要求到 WoodgroveBank.com 的 cookie。 使用者現在想要將 $1000 轉移到另一個帳戶，因此她會在銀行網站上填滿表單，而瀏覽器會對伺服器提出此要求：
 
 [!code-console[Main](xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages/samples/sample2.cmd)]
 
-這項作業有副作用 （它會起始金錢交易），因為已選擇銀行網站，才能初始化這項作業需要 HTTP POST。 伺服器會讀取要求的驗證權杖、 查閱目前使用者的帳戶號碼、 驗證足夠的款項存在，而且起始的異動插入目的地帳戶。
+由於這項作業有副作用（它會起始貨幣交易），因此銀行網站已選擇要求 HTTP POST，以起始這項操作。 伺服器會從要求讀取驗證權杖、查詢目前使用者的帳戶號碼、確認有足夠的資金存在，然後在目的地帳戶中起始交易。
 
-她線上銀行 完整使用者瀏覽離開銀行網站，並在網站上造訪其他位置。 其中一個這些站台 – fabrikam.com – 包括內嵌在頁面上的下列標記&lt;iframe&gt;:
+她的線上銀行完成後，使用者離開銀行網站，流覽網站上的其他位置。 其中一個網站– fabrikam.com –在內嵌于 &lt;iframe&gt;的頁面上包含下列標記：
 
 [!code-html[Main](xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages/samples/sample3.html)]
 
-然後讓瀏覽器提出此要求：
+這會導致瀏覽器提出此要求：
 
 [!code-console[Main](xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages/samples/sample4.cmd)]
 
-攻擊者會利用使用者仍然可能會有目標網站，有效的驗證權杖，而且她使用 Javascript 的小型程式碼片段來導致瀏覽器會自動將 HTTP POST 對目標站台。 如果仍然有效的驗證權杖，銀行網站就會起始美金 250 元的傳輸到攻擊者所選擇的帳戶。
+攻擊者利用的事實是，使用者對於目標網站可能還是會有有效的驗證權杖，而她使用一小部分的 JAVAscript 讓瀏覽器自動對目標網站進行 HTTP POST。 如果驗證權杖仍然有效，銀行網站將會起始 $250 傳輸到攻擊者選擇的帳戶。
 
-### <a name="ineffective-mitigations"></a>無效的緩和措施
+### <a name="ineffective-mitigations"></a>不正確緩和措施
 
-值得注意，在上述案例中，WoodgroveBank.com 所透過 SSL 存取，而且有僅限 SSL 驗證 cookie 不足，無法阻止攻擊。 攻擊者就能夠指定[URI 配置](http://en.wikipedia.org/wiki/URI_scheme)(https) 在她&lt;表單&gt;項目，並在瀏覽器會繼續傳送到目標站台未過期的 cookie，只要這些 cookie 是一致的 uri預期的目標的配置。
+值得注意的是，在上述案例中，WoodgroveBank.com 是透過 SSL 存取，而且具有僅限 SSL 的驗證 cookie 並不足以阻止攻擊。 攻擊者可以在她的 &lt;表單&gt; 元素中指定[URI 配置](http://en.wikipedia.org/wiki/URI_scheme)（HTTPs），而瀏覽器會繼續將未到期的 cookie 傳送至目標網站，只要那些 cookie 與預定目標的 URI 配置一致即可。
 
-我們可以說，使用者應該只要不瀏覽不受信任的網站，為只有信任的網站是可協助您仍然可以保持安全線上瀏覽。 某些說老實話，但不幸的是這項建議不一定總是可行。 可能是使用者 「 信任 」 的地方新聞網站 ConsolidatedMessenger。 ConsolidatedMessenger.com 和會移至相反地，網站，請瀏覽，但該網站已 XSS 的安全性弱點讓攻擊者將 fabrikam.com 執行的程式碼的相同程式碼片段。
+其中一個人可能會認為，使用者不應該直接造訪不受信任的網站，因為只造訪信任的網站有助於在線上保持安全。 事實上，這種做法並不一定可行。 可能是使用者「信任」當地新聞網站 ConsolidatedMessenger。 ConsolidatedMessenger.com 並改為造訪該網站，但該網站具有 XSS 弱點，可讓攻擊者插入在 fabrikam.com 上執行的相同程式碼片段。
 
-您可以確認傳入的要求有[推薦者標頭](http://www.w3.org/Protocols/HTTP/HTRQ_Headers.html#z14)參考您的網域。 這會停止從第三方網域不自覺地提交的要求。 不過，有些人停用其瀏覽器的推薦者標頭，基於隱私原因，而且如果受害者有某些不安全的軟體安裝，攻擊者可以有時假冒該標頭。 正在驗證[推薦者標頭](http://www.w3.org/Protocols/HTTP/HTRQ_Headers.html#z14)不是安全的方法，以防止 XSRF 攻擊。
+您可以確認傳入要求的[推薦者標頭](http://www.w3.org/Protocols/HTTP/HTRQ_Headers.html#z14)參考您的網域。 這會停止從協力廠商網域中不知情提交的要求。 不過，有些人會因為隱私權的緣故而停用其瀏覽器的推薦者標頭，而攻擊者有時可能會在受害者已安裝特定不安全軟體時偽造該標頭。 驗證[推薦者標頭](http://www.w3.org/Protocols/HTTP/HTRQ_Headers.html#z14)不會被視為防止 XSRF 攻擊的安全方法。
 
-## <a name="web-stack-runtime-xsrf-mitigations"></a>Web 堆疊執行階段 XSRF 緩和措施
+## <a name="web-stack-runtime-xsrf-mitigations"></a>Web Stack 執行時間 XSRF 緩和措施
 
-ASP.NET Web 堆疊執行階段會使用的變化[同步器 token 模式](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet#General_Recommendation:_Synchronizer_Token_Pattern)防禦 XSRF 攻擊。 同步處理程式 token 模式的一般形式是兩個防 XSRF 權杖會提交到伺服器 （除了驗證權杖） 的每個 HTTP POST： 一個權杖當做 cookie 中，而另一個則做為表單值。 ASP.NET 執行階段所產生的語彙基元值不具決定性或攻擊者可預測。 當提交權杖時，伺服器會允許這兩個語彙基元傳遞比較核取時，才進行處理的要求。
+ASP.NET Web Stack 執行時間會使用[同步器權杖模式](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html#synchronizer-token-pattern)的變體，來防禦 XSRF 攻擊。 同步器權杖模式的一般形式是，兩個反 XSRF 權杖會連同每個 HTTP POST （除了驗證 token）提交至伺服器：一個權杖做為 cookie，另一個則當做表單值。 ASP.NET 執行時間所產生的權杖值不具決定性，也不能由攻擊者預測。 提交權杖時，只有在兩個權杖通過比較檢查時，伺服器才會允許要求繼續進行。
 
-XSRF 要求驗證*工作階段權杖*會儲存為 HTTP cookie 和目前包含其承載中的下列資訊：
+XSRF 要求驗證*會話權杖*會儲存為 HTTP cookie，而且目前在其承載中包含下列資訊：
 
-- 安全性權杖，其中包含隨機的 128 位元識別碼。   
- 下圖顯示使用 Internet Explorer F12 開發人員工具的 XSRF 要求驗證工作階段權杖：(請注意，這是目前的實作，而且，即使有可能變更。)
+- 由隨機128位識別碼組成的安全性權杖。   
+ 下圖顯示使用 Internet Explorer F12 開發人員工具顯示的 XSRF 要求驗證會話權杖：（請注意，這是目前的執行，甚至可能會變更）。
 
 ![](xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages/_static/image1.png)
 
-*欄位的語彙基元*會儲存為`<input type="hidden" />`且包含其承載中的下列資訊：
+*欄位 token*會儲存為 `<input type="hidden" />`，並在其裝載中包含下列資訊：
 
-- 登入的使用者的使用者名稱 （如果已驗證）。
-- 所提供的任何其他資料[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)。
+- 登入使用者的使用者名稱（如果已驗證的話）。
+- [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)提供的任何其他資料。
 
-防 XSRF 權杖的內容會經過加密及簽署，所以使用工具來檢查權杖時，您無法檢視的使用者名稱。 當 web 應用程式以 ASP.NET 4.0 為目標時，會提供密碼編譯服務[MachineKey.Encode](https://msdn.microsoft.com/library/system.web.security.machinekey.encode.aspx)常式。 當 web 應用程式的目標 ASP.NET 4.5 或更高版本，密碼編譯服務提供所[MachineKey.Protect](https://msdn.microsoft.com/library/system.web.security.machinekey.protect(v=vs.110))常式，可提供更好的效能、 擴充性和安全性。 請參閱下列部落格文章以取得詳細資料：
+反 XSRF token 的裝載會經過加密和簽署，因此當您使用工具檢查權杖時，就無法查看使用者名稱。 當 web 應用程式以 ASP.NET 4.0 為目標時，密碼編譯服務會由[MachineKey 提供。編碼](https://msdn.microsoft.com/library/system.web.security.machinekey.encode.aspx)常式。 當 web 應用程式的目標為 ASP.NET 4.5 或更高版本時，MachineKey 會提供密碼編譯服務[。保護](https://msdn.microsoft.com/library/system.web.security.machinekey.protect(v=vs.110))常式，以提供更佳的效能、擴充性和安全性。 如需更多詳細資料，請參閱下列 blog 文章：
 
-- [ASP.NET 4.5 中的密碼編譯增強功能、 pt。1](https://blogs.msdn.com/b/webdev/archive/2012/10/22/cryptographic-improvements-in-asp-net-4-5-pt-1.aspx)
-- [ASP.NET 4.5 中的密碼編譯增強功能、 pt。2](https://blogs.msdn.com/b/webdev/archive/2012/10/23/cryptographic-improvements-in-asp-net-4-5-pt-2.aspx)
-- [ASP.NET 4.5 中的密碼編譯增強功能、 pt。3](https://blogs.msdn.com/b/webdev/archive/2012/10/24/cryptographic-improvements-in-asp-net-4-5-pt-3.aspx)
+- [ASP.NET 4.5 中的密碼編譯改善，pt. 1](https://blogs.msdn.com/b/webdev/archive/2012/10/22/cryptographic-improvements-in-asp-net-4-5-pt-1.aspx)
+- [ASP.NET 4.5 中的密碼編譯改良功能，pt. 2](https://blogs.msdn.com/b/webdev/archive/2012/10/23/cryptographic-improvements-in-asp-net-4-5-pt-2.aspx)
+- [ASP.NET 4.5 的密碼編譯增強功能，pt. 3](https://blogs.msdn.com/b/webdev/archive/2012/10/24/cryptographic-improvements-in-asp-net-4-5-pt-3.aspx)
 
 ## <a name="generating-the-tokens"></a>產生權杖
 
-若要產生的防 XSRF 權杖，呼叫[ @Html.AntiForgeryToken ](https://msdn.microsoft.com/library/dd470175.aspx) MVC 檢視的方法或@AntiForgery.GetHtml從 Razor 頁面 （)。 然後，執行階段會執行下列步驟：
+若要產生反 XSRF token，請從 MVC 視圖呼叫[@Html.AntiForgeryToken](https://msdn.microsoft.com/library/dd470175.aspx)方法，或從 Razor 頁面 @AntiForgery.GetHtml（）。 執行時間接著會執行下列步驟：
 
-1. 如果目前的 HTTP 要求已包含的防 XSRF 工作階段權杖 (防 XSRF cookie \_ \_RequestVerificationToken)，從它擷取安全性權杖。 如果 HTTP 要求未包含的防 XSRF 工作階段權杖或安全性權杖的擷取失敗，就會產生新的隨機的 ANTI-XSRF 權杖。
-2. 使用從上個步驟 (1) 和目前的登入的使用者的身分識別的安全性權杖產生的防 XSRF 欄位語彙基元。 (如需有關如何判斷使用者的身分識別的詳細資訊，請參閱 < **[特殊支援的案例](#_Scenarios_with_special)** 下一節。)此外，如果[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/jj158328(v=vs.111).aspx)是設定，執行階段會呼叫其[GetAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx)方法並將傳回的字串包含在欄位的語彙基元。 (請參閱 **[組態和擴充性](#_Configuration_and_extensibility)** 節的詳細資訊。)
-3. 如果在步驟 (1) 中產生新的防 XSRF 權杖，新的工作階段權杖將會建立包含該，並會新增至輸出的 HTTP cookie 集合。 從步驟 (2) 欄位的語彙基元會包裝在`<input type="hidden" />`項目及這個 HTML 標記會傳回值`Html.AntiForgeryToken()`或`AntiForgery.GetHtml()`。
+1. 如果目前的 HTTP 要求已經包含反 XSRF 會話權杖（反 XSRF cookie \_\_RequestVerificationToken），則會從它解壓縮安全性權杖。 如果 HTTP 要求不包含反 XSRF 會話 token，或如果安全性權杖的解壓縮失敗，則會產生新的隨機反 XSRF token。
+2. 會使用上述步驟（1）中的安全性權杖，以及目前登入使用者的身分識別，來產生反 XSRF 欄位 token。 （如需有關判斷使用者身分識別的詳細資訊，請參閱下面的「 **[具有特殊支援的案例](#_Scenarios_with_special)** 」一節）。此外，如果已設定[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/jj158328(v=vs.111).aspx) ，執行時間會呼叫其[GetAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx)方法，並在欄位 token 中包含傳回的字串。 （如需詳細資訊，請參閱設定 **[和](#_Configuration_and_extensibility)** 擴充性一節）。
+3. 如果在步驟（1）中產生新的反 XSRF token，則會建立新的會話權杖以包含它，並將其新增至輸出 HTTP cookie 集合。 步驟（2）中的欄位 token 將會包裝在 `<input type="hidden" />` 元素中，而此 HTML 標籤會是 `Html.AntiForgeryToken()` 或 `AntiForgery.GetHtml()`的傳回值。
 
 ## <a name="validating-the-tokens"></a>驗證權杖
 
-若要驗證連入的防 XSRF 權杖，包括開發人員[ValidateAntiForgeryToken](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute(VS.108).aspx)屬性，在她的 MVC 動作或控制器或她呼叫`@AntiForgery.Validate()`從她的 Razor 頁面。 執行階段會執行下列步驟：
+若要驗證傳入的防 XSRF token，開發人員在其 MVC 動作或控制器上包含[ValidateAntiForgeryToken](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute(VS.108).aspx)屬性，或她從 Razor 頁面呼叫 `@AntiForgery.Validate()`。 執行時間將會執行下列步驟：
 
-1. 會讀取內送工作階段權杖和欄位的語彙基元，並從每個擷取的防 XSRF 權杖。 ANTI-XSRF 權杖必須每一層代常式中的步驟 (2) 相同。
-2. 如果目前的使用者驗證時，她的使用者名稱進行比較與儲存在欄位的語彙基元中的使用者名稱。 使用者名稱必須相符。
-3. 如果[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)設定，執行階段呼叫其*ValidateAdditionalData*方法。 此方法必須傳回布林值 *，則為 true*。
+1. 系統會讀取傳入會話權杖和欄位權杖，並從每個權杖提取反 XSRF token。 XSRF 權杖在世代常式中的每個步驟（2）都必須相同。
+2. 如果目前的使用者已通過驗證，則會與欄位權杖中儲存的使用者名稱進行比較。 使用者名稱必須相符。
+3. 如果已設定[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) ，執行時間會呼叫其*ValidateAdditionalData*方法。 此方法必須傳回布林值*true*。
 
-如果驗證成功，要求允許繼續執行。 如果驗證失敗，此架構將會擲回*HttpAntiForgeryException*。
+如果驗證成功，則允許要求繼續進行。 如果驗證失敗，架構將會擲回*HttpAntiForgeryException*。
 
 ## <a name="failure-conditions"></a>失敗狀況
 
-任何從 ASP.NET Web 堆疊執行階段 v2 *HttpAntiForgeryException*期間擲回驗證將會包含有關錯誤的詳細的資訊。 目前定義的失敗的條件如下︰
+從 ASP.NET Web Stack 執行時間 v2 開始，驗證期間擲回的任何*HttpAntiForgeryException*都會包含錯誤發生的詳細資訊。 目前定義的失敗狀況如下：
 
-- 表單語彙基元的工作階段權杖不存在的要求中。
-- 表單語彙基元的工作階段權杖是無法讀取。 最可能的原因，這是執行 ASP.NET Web 堆疊執行階段或伺服陣列的版本不相符的伺服器陣列所在&lt;machineKey&gt; Web.config 中的項目與不同電腦之間。 您可以使用 Fiddler 等工具，以強制這個例外狀況，藉由篡改任一 ANTI-XSRF 權杖。
-- 交換工作階段權杖和欄位的語彙基元。
-- 工作階段權杖和欄位的語彙基元包含不相符的安全性權杖。
-- 欄位的語彙基元中內嵌使用者名稱不符合目前已登入使用者的使用者名稱。
-- *[IAntiForgeryAdditionalDataProvider.ValidateAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.validateadditionaldata(v=vs.111).aspx)* 方法會傳回*false*。
+- 會話權杖或表單權杖不存在於要求中。
+- 會話權杖或表單 token 無法讀取。 最有可能的原因是執行 ASP.NET Web Stack 執行時間不相符的伺服器陣列，或在 web.config 中的 &lt;machineKey&gt; 元素與電腦之間不同的伺服器陣列。 您可以使用 Fiddler 之類的工具來強制執行此例外狀況，方法是利用反 XSRF token 來進行篡改。
+- 已交換會話權杖和欄位 token。
+- 會話權杖和欄位權杖包含不相符的安全性權杖。
+- 內嵌在欄位 token 內的使用者名稱不符合目前登入的使用者名稱。
+- *[IAntiForgeryAdditionalDataProvider. ValidateAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.validateadditionaldata(v=vs.111).aspx)* 方法傳回*false*。
 
-防 XSRF 設施可能也會執行額外的檢查，權杖產生或驗證期間，這些檢查期間發生的失敗可能會導致擲回例外狀況。 請參閱[WIF / ACS / 宣告式驗證](#_WIF_ACS) 並 **[組態和擴充性](#_Configuration_and_extensibility)** 區段，如需詳細資訊。
+防 XSRF 設施也可能在權杖產生或驗證期間執行額外檢查，而這些檢查期間的失敗可能會導致擲回例外狀況。 如需詳細資訊，請參閱[WIF/ACS/以宣告為基礎的驗證](#_WIF_ACS)和設定 **[和](#_Configuration_and_extensibility)** 擴充性章節。
 
 <a id="_Scenarios_with_special"></a>
 
-## <a name="scenarios-with-special-support"></a>使用特殊的支援案例
+## <a name="scenarios-with-special-support"></a>具有特殊支援的案例
 
 ### <a name="anonymous-authentication"></a>匿名驗證
 
-防 XSRF 系統包含 「 匿名 」 定義是以使用者的匿名使用者的特殊支援所在*IIdentity.IsAuthenticated*屬性會傳回*false*。 案例包括提供的登入頁面 （在之前驗證使用者） 和自訂驗證配置： 應用程式使用一種機制以外的 XSRF 保護*IIdentity*來識別使用者。
+反 XSRF 系統包含匿名使用者的特殊支援，其中「匿名」定義為使用者，其中*IIdentity. IsAuthenticated*屬性會傳回*false*。 案例包括提供登入頁面的 XSRF 保護（在使用者經過驗證之前）和自訂驗證配置，其中應用程式會使用*IIdentity*以外的機制來識別使用者。
 
-若要支援這些案例中，您應該記得工作階段和欄位的語彙基元會加入由安全性權杖，也就是 128 位元隨機產生不透明的識別碼。 這個安全性權杖用來追蹤個別使用者的工作階段，她瀏覽網站，讓它實際上有匿名識別項的用途。 取代使用者名稱會使用空的字串，如上面所述的產生和驗證常式。
+若要支援這些案例，請記得會話和欄位權杖是由安全性權杖聯結，這是128位隨機產生的不透明識別碼。 此安全性權杖會在流覽網站時用來追蹤個別使用者的會話，因此它會有效地提供匿名識別碼的用途。 空字串是用來取代上述產生和驗證常式的使用者名稱。
 
 <a id="_WIF_ACS"></a>
 
-### <a name="wif--acs--claims-based-authentication"></a>WIF / ACS / 宣告式驗證
+### <a name="wif--acs--claims-based-authentication"></a>WIF/ACS/以宣告為基礎的驗證
 
-通常*IIdentity*內建於.NET Framework 的類別具有屬性， *IIdentity.Name*就足以唯一識別特定的應用程式內的特定使用者。 例如， *FormsIdentity.Name*會傳回成員資格資料庫 （這是唯一的根據該資料庫的所有應用程式） 中儲存之 username *WindowsIdentity.Name*傳回網域限定識別使用者，依此類推。 系統所提供的不只是驗證;它們也*識別*應用程式的使用者。
+一般來說，.NET Framework 內建的*IIdentity*類別具有*IIdentity.Name*足夠的屬性，可唯一識別特定應用程式內的特定使用者。 例如， *FormsIdentity.Name*會傳回儲存在成員資格資料庫中的使用者名稱（這對於根據該資料庫的所有應用程式而言是唯一的）， *WindowsIdentity.Name*會傳回使用者的網域限定身分識別等等。 這些系統不僅提供驗證，他們也會將使用者*識別*為應用程式。
 
-宣告式驗證，相反地，不一定需要識別特定的使用者。 相反地， *ClaimsPrincipal*並*ClaimsIdentity*型別是一組相關聯*宣告*執行個體，其中的個別宣告可能會是"is 18 + 歲"或"是系統管理員 」 以任何其他項目。 由於尚未一定已經識別使用者，不能使用執行階段*ClaimsIdentity.Name*屬性做為這個特定使用者的唯一識別碼。 小組從未見過真實世界範例所在*ClaimsIdentity.Name*會傳回*null*、 傳回 （顯示器） 的易記名稱，或否則會傳回不適合做為唯一的識別項的字串針對目前的使用者。
+另一方面，以宣告為基礎的驗證不一定需要識別特定的使用者。 相反地， *ClaimsPrincipal*和*ClaimsIdentity*類型會與一組*宣告實例相關*聯，其中個別宣告可能是「為18個以上的年齡」或「系統管理員」。 由於不一定會識別使用者，因此執行時間無法使用*ClaimsIdentity.Name*屬性做為這個特定使用者的唯一識別碼。 小組已看過真實世界的範例，其中*ClaimsIdentity.Name*會傳回*null*、傳回易記（顯示）名稱，否則會傳回不適合做為使用者唯一識別碼使用的字串。
 
-許多使用宣告式驗證的部署使用[Azure 存取控制服務](https://msdn.microsoft.com/library/windowsazure/gg429786.aspx)(ACS) 特別。 ACS 可讓開發人員設定個別*身分識別提供者*（例如 ADFS，Microsoft 帳戶提供者中，OpenID 提供者如 yahoo ！ 等），和身分識別提供者傳回*命名識別項*. 這些名稱識別項可能包含個人識別資訊 (PII)，像是電子郵件地址，或它們可以匿名像私密個人識別碼 (PPID)。 不論如何，(名稱識別碼中的 身分識別提供者） 的 tuple 夠作為特定的使用者適當的追蹤 token，而她瀏覽網站，讓 ASP.NET Web 堆疊執行階段產生時，可以使用取代使用者名稱的元組和驗證 ANTI-XSRF 欄位的權杖。 身分識別提供者和名稱識別項的特定 Uri 是：
+許多使用以宣告為基礎的驗證的部署，特別是使用[Azure 存取控制服務](https://msdn.microsoft.com/library/windowsazure/gg429786.aspx)（ACS）。 ACS 可讓開發人員設定個別身分*識別提供者*（例如 ADFS、Microsoft 帳戶提供者、OpenID 提供者，例如 yahoo！等），而身分識別提供者會傳回*名稱識別碼*。 這些名稱識別碼可能包含個人識別資訊（PII）（例如電子郵件地址），或者可以像私人個人識別碼（PPID）一樣匿名。 無論是什麼，在流覽網站時，元組（識別提供者、名稱識別碼）可充分做為特定使用者的適當追蹤權杖，因此在產生和時，ASP.NET Web Stack 執行時間可以使用元組來取代使用者名稱正在驗證反 XSRF 欄位標記。 識別提供者的特定 Uri 和名稱識別碼如下：
 
 - `http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider`
 - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier`
 
-(請參閱此[ACS 文件頁面](https://msdn.microsoft.com/library/windowsazure/gg185971.aspx)如需詳細資訊。)
+（如需詳細資訊，請參閱此[ACS 檔頁面](https://msdn.microsoft.com/library/windowsazure/gg185971.aspx)）。
 
-當產生或驗證權杖時，ASP.NET Web 堆疊執行階段會在執行階段嘗試繫結至類型：
+產生或驗證權杖時，ASP.NET Web Stack 執行時間會在執行時間嘗試系結至類型：
 
-- `Microsoft.IdentityModel.Claims.IClaimsIdentity, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35` （適用於 WIF SDK。)
-- `System.Security.Claims.ClaimsIdentity` （適用於.NET 4.5)。
+- `Microsoft.IdentityModel.Claims.IClaimsIdentity, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35` （適用于 WIF SDK）。
+- `System.Security.Claims.ClaimsIdentity` （適用于 .NET 4.5）。
 
-如果這些型別存在，而且目前的使用者*IIIIdentity*實作或子類別其中一種都已型別、 防 XSRF 設備將會使用身分識別提供者 （名稱識別項） 來取代產生時的使用者名稱的元組和驗證的權杖。 如果沒有這類 tuple 存在，則要求會失敗並說明開發人員如何設定來了解使用中的特定宣告為基礎的驗證機制的防 XSRF 系統發生錯誤。 請參閱 **[組態和擴充性](#_Configuration_and_extensibility)** 節的詳細資訊。
+如果這些類型存在，而且目前使用者的*IIIIdentity*會執行或子類別其中一種類型，反 XSRF 設施將會在產生和驗證權杖時，使用（識別提供者，名稱識別碼）元組來取代使用者名稱。 如果沒有這類元組，要求將會失敗，並顯示錯誤，說明開發人員如何設定防 XSRF 系統，以瞭解使用中的特定宣告式驗證機制。 如需詳細資訊，請參閱設定 **[和](#_Configuration_and_extensibility)** 擴充性一節。
 
-### <a name="oauth--openid-authentication"></a>OAuth / OpenID 驗證
+### <a name="oauth--openid-authentication"></a>OAuth/OpenID 驗證
 
-最後，防 XSRF 設備已使用 OAuth 或 OpenID 驗證的應用程式的特殊支援。 這項支援是啟發學習法為基礎： 如果目前*IIdentity.Name*開頭為 http:// 或 https:// ，然後將完成的使用者名稱比較使用序數比較子，而不是預設 OrdinalIgnoreCase 比較子。
+最後，防 XSRF 設施對於使用 OAuth 或 OpenID 驗證的應用程式具有特殊支援。 這種支援是以啟發學習法為基礎：如果目前*IIdentity.Name*的開頭是 HTTP://或 HTTPs://，則會使用序數比較子（而不是預設的 OrdinalIgnoreCase 比較子）來完成使用者名稱比較。
 
 <a id="_Configuration_and_extensibility"></a>
 
-## <a name="configuration-and-extensibility"></a>組態和擴充性
+## <a name="configuration-and-extensibility"></a>設定和擴充性
 
-有時候，開發人員可以更緊密地控制的防 XSRF 產生和驗證行為。 比方說，或許是將 MVC 和網頁的協助程式的預設行為，自動將 HTTP cookie 加入回應中的不適當，，和開發人員可能會想要保存在其他地方的權杖。 有兩個 Api，來協助進行此設定：
+有時候，開發人員可能會想要更嚴密地控制反 XSRF 的產生和驗證行為。 例如，可能是 MVC 和網頁協助程式的預設行為，會自動將 HTTP cookie 新增到回應中，而開發人員可能會想要在其他地方保存權杖。 有兩個 Api 可協助您：
 
 `AntiForgery.GetTokens(string oldCookieToken, out string newCookieToken, out string formToken);`  
 `AntiForgery.Validate(string cookieToken, string formToken);`
 
-*GetTokens*方法當成輸入現有 XSRF 要求驗證工作階段權杖 （這可能是 null） 和產生做為輸出的新 XSRF 要求驗證工作階段權杖和欄位的語彙基元。 權杖是無裝飾; 只是不透明的字串*formToken*值執行個體不會包裝在&lt;輸入&gt;標記。 *NewCookieToken*值可能為 null; 如果發生這種情況，則*oldCookieToken*值仍然有效，而且需要設定任何新的回應 cookie。 呼叫端*GetTokens*負責保存任何必要的回應 cookie 或產生任何必要的標記; *GetTokens*方法本身並不會更改副作用的回應。 *驗證*方法會採用傳入工作階段和欄位語彙基元，並透過它們執行上述的驗證邏輯。
+*GetTokens*方法會以現有的 XSRF 要求驗證會話權杖（可能是 null）做為輸入，並產生新的 XSRF 要求驗證會話權杖和欄位 token 作為輸出。 標記只是不透明的字串，沒有裝飾，實例的*formToken*值不會包裝在 &lt;輸入&gt; 標記中。 *NewCookieToken*值可以是 null;如果發生這種情況，則*oldCookieToken*值仍然有效，而且不需要設定新的回應 cookie。 *GetTokens*的呼叫者會負責保存任何必要的回應 cookie，或產生任何必要的標記;*GetTokens*方法本身不會將回應改變為副作用。 *Validate*方法會接受傳入的會話和欄位權杖，並對它們執行上述驗證邏輯。
 
 ### <a name="antiforgeryconfig"></a>AntiForgeryConfig
 
-開發人員可以設定從應用程式的防 XSRF 系統\_開始。 以程式設計方式設定。 靜態屬性*AntiForgeryConfig*類型如下所述。 使用宣告的大部分使用者都想要設定 UniqueClaimTypeIdentifier 屬性。
+開發人員可以從應用程式\_開始設定防 XSRF 系統。 以程式設計方式設定。 靜態*AntiForgeryConfig*類型的屬性如下所述。 大部分使用宣告的使用者會想要設定 UniqueClaimTypeIdentifier 屬性。
 
-| **Property** | **描述** |
+| **Property** | **說明** |
 | --- | --- |
-| **AdditionalDataProvider** | [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)權杖產生期間提供的其他資料，在 權杖驗證期間耗用額外的資料。 預設值是*null*。 如需詳細資訊，請參閱 < [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)一節。 |
-| **CookieName** | 提供用來儲存的防 XSRF 工作階段權杖的 HTTP cookie 名稱的字串。 如果未設定此值，產生的名稱會自動根據應用程式的已部署的虛擬路徑。 預設值是*null*。 |
-| **RequireSsl** | 布林值，指出 ANTI-XSRF 權杖是否需要透過 SSL 安全通道傳送。 如果這個值是 *，則為 true*、 任何自動產生的 cookie 會有 「 安全 」 的旗標設定，及防 XSRF Api 將會擲回，如果從呼叫中不會透過 SSL 提交的要求。 預設值為 *false*。 |
-| **SuppressIdentityHeuristicChecks** | 布林值，指出防 XSRF 系統是否應該停用宣告式身分識別支援。 如果這個值是 *，則為 true*，系統會假設*IIdentity.Name*很適合作為每個使用者的唯一識別碼，並不會嘗試將特殊大小寫*IClaimsIdentity*或是*ClClaimsIdentity*中所述[WIF / ACS / 宣告式驗證](#_WIF_ACS)一節。 預設值為 `false`。 |
-| **UniqueClaimTypeIdentifier** | 字串，表示此宣告類型很適合作為每個使用者的唯一識別碼。 如果這個值是設定和目前*IIdentity*宣告為基礎，系統會嘗試擷取之宣告的型別所指定*UniqueClaimTypeIdentifier*，便使用對應的值取代產生欄位的語彙基元時，使用者的使用者名稱。 如果找不到宣告類型，系統會讓要求失敗。 預設值是*null*，這表示系統應該使用身分識別提供者 （名稱識別項） 如先前所述來取代使用者的使用者名稱的元組。 |
+| **AdditionalDataProvider** | 在權杖產生期間提供額外資料，並在權杖驗證期間耗用額外資料的[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) 。 預設值為*null*。 如需詳細資訊，請參閱[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)一節。 |
+| **CookieName** | 提供用來儲存反 XSRF 會話權杖之 HTTP cookie 名稱的字串。 如果未設定此值，系統就會根據應用程式的已部署虛擬路徑自動產生名稱。 預設值為*null*。 |
+| **RequireSsl** | 布林值，指出是否需要透過 SSL 保護的通道提交防 XSRF token。 如果此值為*true*，任何自動產生的 cookie 都會設定 "secure" 旗標，而如果從不是透過 SSL 提交的要求中呼叫，則會擲回反 XSRF api。 預設值為 *false*。 |
+| **SuppressIdentityHeuristicChecks** | 布林值，指定反 XSRF 系統是否應停用對宣告式身分識別的支援。 如果此值為*true*，則系統會假設*IIdentity.Name*適合做為每個使用者的唯一識別碼，而且不會嘗試使用 WIF/ACS/中所述的特殊案例*IClaimsIdentity*或*ClClaimsIdentity* [以宣告為基礎的驗證](#_WIF_ACS)一節。 預設值是 `false`。 |
+| **UniqueClaimTypeIdentifier** | 字串，指出哪個宣告類型適合做為唯一的每一使用者識別碼使用。 如果設定了這個值，而目前的*IIdentity*是以宣告為基礎，則系統會嘗試解壓縮*UniqueClaimTypeIdentifier*所指定之類型的宣告，而在下列情況下，將會使用對應的值來取代使用者的使用者名稱。正在產生欄位 token。 如果找不到宣告類型，系統就會讓要求失敗。 預設值為*null*，表示系統應該使用先前描述的（識別提供者名稱識別碼）元組來取代使用者的使用者名稱。 |
 
 <a id="_IAntiForgeryAdditionalDataProvider"></a>
 
 ### <a name="iantiforgeryadditionaldataprovider"></a>IAntiForgeryAdditionalDataProvider
 
-*[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)* 類型可讓開發人員來回行程中每個語彙基元的其他資料來擴充防 XSRF 系統的行為。 *GetAdditionalData*每次呼叫方法會產生欄位的語彙基元，並傳回值內嵌在產生的權杖。 實作者可以從這個方法傳回時間戳記、 nonce 或她希望的任何其他值。
+*[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)* 類型可讓開發人員在每個權杖中來回往返額外的資料，以擴充反 XSRF 系統的行為。 每次產生欄位標記時，會呼叫*GetAdditionalData*方法，而傳回值會內嵌在產生的權杖中。 實施者可能會從這個方法傳回時間戳記、nonce 或任何其他值。
 
-同樣地， *ValidateAdditionalData*每次呼叫方法驗證欄位的權杖時，並已內嵌在權杖中的 [詳細資料] 字串傳遞至方法。 驗證常式可以實作逾時 （藉由檢查目前的時間，與建立權杖時所儲存的時間）、 nonce 檢查常式，或任何其他所需的邏輯。
+同樣地，每次驗證欄位 token 時都會呼叫*ValidateAdditionalData*方法，而在標記中內嵌的「其他資料」字串則會傳遞至方法。 驗證常式可能會執行超時（藉由檢查目前時間與建立權杖時所儲存的時間）、nonce 檢查常式或任何其他所需的邏輯。
 
-## <a name="design-decisions-and-security-considerations"></a>設計決策和安全性考量
+## <a name="design-decisions-and-security-considerations"></a>設計決策和安全性考慮
 
-連結的工作階段和欄位的語彙基元的安全性權杖時，就技術上而言才需要時嘗試匿名 / 未經驗證的使用者，避免 XSRF 攻擊。 當驗證使用者時，可用來驗證權杖本身 （大概是形式送出的 cookie） 做為其中一個同步處理程式的下半部 k 組。 不過，有效的情況下保護未經授權的使用者，所叫用的登入頁面和防 XSRF 邏輯是一律產生和驗證安全性權杖，即使已驗證的使用者進行更簡單。 它也提供一些額外的保護，攻擊者，設定或是猜測的工作階段權杖會攻擊者克服的另一個障礙入侵欄位語彙基元。
+在技術上，只有在嘗試保護匿名/未驗證的使用者以防止 XSRF 攻擊時，才需要提供連結會話和欄位權杖的安全性權杖。 當使用者通過驗證時，驗證權杖本身（可能是以 cookie 形式提交）可以用來作為同步器權杖組的一半。 不過，有有效的案例可保護未驗證的使用者所叫用的登入頁面，而且即使是已驗證的使用者，一律會產生及驗證安全性權杖，而使反 XSRF 邏輯變得更簡單。 它也會在欄位權杖遭攻擊者洩露時提供一些額外的保護，因為設定或猜測會話權杖會是攻擊者解決的另一個障礙。
 
-在單一網域裝載多個應用程式時，開發人員應謹慎小心。 比方說，即使 *example1.cloudapp.net* 並 *example2.cloudapp.net* 是不同的主控件下的所有主機之間沒有隱含的信任關係 *\*.cloudapp.net* 網域。 這個隱含的信任關係[可讓可能不受信任的主機，以影響彼此的 cookie](http://stackoverflow.com/questions/9636857/how-can-asp-net-or-asp-net-mvc-be-protected-from-related-domain-cookie-attacks) （控管 AJAX 要求的相同原始原則不一定會套用至 HTTP cookie）。 ASP.NET Web 堆疊執行階段會提供一些移轉工作，因此即使惡意的子網域是可以覆寫工作階段權杖它將無法產生使用者的有效欄位 token，將會內嵌至欄位的語彙基元的使用者名稱。 不過，當裝載這類環境中的內建的防 XSRF 常式仍然無法防禦工作階段攔截或登入 XSRF。
+當多個應用程式裝載于單一網域時，開發人員應該小心使用。 例如，雖然*example1.cloudapp.net*和*example2.cloudapp.net*是不同的主機，但在 cloudapp.net 網域下 *\** 的所有主機之間，都有隱含的信任關係。 此隱含信任關係[允許可能不受信任的主機影響彼此的 cookie](http://stackoverflow.com/questions/9636857/how-can-asp-net-or-asp-net-mvc-be-protected-from-related-domain-cookie-attacks) （控管 AJAX 要求的相同來源原則不一定會套用至 HTTP cookie）。 ASP.NET Web Stack 執行時間提供了一些緩和措施，因為使用者名稱會內嵌到欄位 token 中，因此即使惡意子域能夠覆寫會話權杖，也無法為使用者產生有效的欄位 token。 不過，在這種環境中裝載時，內建的反 XSRF 常式仍然無法防禦會話劫持或登入 XSRF。
 
-防 XSRF 常式目前執行無法防禦[點擊劫持](https://www.owasp.org/index.php/Clickjacking)。 想要自行防禦點擊劫持的應用程式可能會輕易地執行傳送 X 框架選項：Sameorigin 所標頭，以及每個回應。 所有新的瀏覽器都支援此標頭。 如需詳細資訊，請參閱 < [IE 部落格](https://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx)，則[SDL 的部落格](https://blogs.msdn.com/b/sdl/archive/2009/02/05/clickjacking-defense-in-ie8.aspx)，並[OWASP](https://www.owasp.org/index.php/Clickjacking)。 ASP.NET Web 堆疊執行階段可能會在某些未來的版本進行 MVC 和 Web 網頁的防 XSRF 協助程式會自動將此標頭，以便應用程式會自動受到保護防止此攻擊。
+反 XSRF 常式目前不會抵禦[點擊劫持](https://www.owasp.org/index.php/Clickjacking)。 想要自行防禦點擊劫持的應用程式，可以藉由傳送每個回應的 X 框架選項： SAMEORIGIN 標頭，輕鬆地執行此動作。 所有最近的瀏覽器都支援此標頭。 如需詳細資訊，請參閱[IE blog](https://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx)、 [SDL blog](https://blogs.msdn.com/b/sdl/archive/2009/02/05/clickjacking-defense-in-ie8.aspx)和[OWASP](https://www.owasp.org/index.php/Clickjacking)。 在未來的版本中，ASP.NET Web Stack 執行時間可能會讓 MVC 和網頁反 XSRF helper 自動設定此標頭，讓應用程式得以自動保護以防止此攻擊。
 
-Web 開發人員應該繼續以確保其站台不是很容易遭受 XSS 攻擊。 XSS 攻擊非常強大，而成功的攻擊也會中斷 XSRF 攻擊的防禦 ASP.NET Web 堆疊執行階段。
+Web 開發人員應該繼續確保其網站不容易遭受 XSS 攻擊。 XSS 攻擊的功能非常強大，而成功的惡意探索也會破壞 ASP.NET Web Stack 執行時間防禦 XSRF 攻擊。
 
-## <a name="acknowledgment"></a>通知
+## <a name="acknowledgment"></a>確認
 
-[@LeviBroderick](https://twitter.com/LeviBroderick)是誰撰寫大部分的 ASP.NET 安全性程式碼大部分的這項資訊。
+[@LeviBroderick](https://twitter.com/LeviBroderick)，他寫了大部分的 ASP.NET 安全性程式碼，這是大部分的資訊。
