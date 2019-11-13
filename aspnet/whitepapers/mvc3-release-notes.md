@@ -1,6 +1,6 @@
 ---
 uid: whitepapers/mvc3-release-notes
-title: ASP.NET MVC 3 | Microsoft Docs
+title: ASP.NET MVC 3 |Microsoft Docs
 author: rick-anderson
 description: ''
 ms.author: riande
@@ -8,83 +8,83 @@ ms.date: 10/06/2010
 ms.assetid: f44c166e-7e91-48a0-a6f8-d9285f3594e5
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: 36bc314c6709c34863d86158419257be99f4084f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: 46d051a5eba6501cf36910b7674ce6400597de8a
+ms.sourcegitcommit: 295cf898a4c87e264b0c35c7254b0fa4169f2278
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407103"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74057022"
 ---
 # <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 
 - [概觀](#overview)
 - [安裝注意事項](#installation-notes)
 - [軟體需求](#software-requirements)
-- [文件](#documentation)
+- [文件 (英文)](#documentation)
 - [支援](#support)
 - [將 ASP.NET MVC 2 專案升級至 ASP.NET MVC 3 工具更新](#upgrading)
-- [ASP.NET MVC 3 Tools Update (2011 年 4 月 12 日)](#tu-changes)
+- [ASP.NET MVC 3 工具更新（2011年4月12日）](#tu-changes)
 
-    - [[加入控制器] 對話方塊現在可以 scaffold 控制器使用檢視和資料存取程式碼](#tu-AddControllerDialog)
-    - [改善 「 ASP.NET MVC 3 新增專案 」 對話方塊](#tu-ImprovementsNewDialogBox)
-    - [專案範本現在包含 Modernizr 1.7](#tu-Modernizr)
-    - [專案範本包含 jQuery、 jQuery UI 和 jQuery 的更新的版本驗證](#tu-UpdatedJQuery)
-    - [專案範本現在包含 ADO.NET Entity Framework 4.1 的預先安裝的 NuGet 封裝](#tu-EF)
-    - [專案範本會納入預先安裝的 NuGet 套件中的 JavaScript 程式庫](#tu-JavaScriptLibsNuget)
+    - [[新增控制器] 對話方塊現在可以使用 views 和資料存取程式碼 scaffold 控制器](#tu-AddControllerDialog)
+    - [[ASP.NET MVC 3 新增專案] 對話方塊的改善](#tu-ImprovementsNewDialogBox)
+    - [專案範本現在包含 Modernizr 1。7](#tu-Modernizr)
+    - [專案範本包含 jQuery、jQuery UI 和 jQuery 驗證的更新版本](#tu-UpdatedJQuery)
+    - [專案範本現在包含 ADO.NET Entity Framework 4.1，做為預先安裝的 NuGet 套件](#tu-EF)
+    - [專案範本以預先安裝的 NuGet 套件形式包含 JavaScript 程式庫](#tu-JavaScriptLibsNuget)
     - [已知問題](#tu-KI)
-- [ASP.NET MVC 3 RTM (2011 年 1 月 13 日)](#MVC3RTM)
+- [ASP.NET MVC 3 RTM （2011年1月13日）](#MVC3RTM)
 
-    - [變更：更新版本的 jQuery UI 1.8.7](#RTM-1)
-    - [變更：變更預設值 ModelMetadataProvider 回到 DataAnnotationsModelMetadataProvider](#RTM-2)
-    - [已修正：貼上含有空白結果，裡面要反轉的 Razor 運算式的一部分](#RTM-3)
-    - [已修正：重新命名 Razor 檔案在編輯器中開啟時，會停用語法顏色標示和 IntelliSense](#RTM-4)
+    - [變更：將 jQuery UI 的版本更新為1.8。7](#RTM-1)
+    - [變更：將預設 ModelMetadataProvider 變更回 DataAnnotationsModelMetadataProvider](#RTM-2)
+    - [已修正：貼上包含空白字元的 Razor 運算式部分，會導致它被反轉](#RTM-3)
+    - [已修正：重新命名在編輯器中開啟的 Razor 檔案時，會停用語法顏色標示和 IntelliSense](#RTM-4)
     - [已知問題](#RTM-KI)
     - [重大變更](#RTM-BC)
-- [ASP.NET MVC 3 的候選版 2 (2010 年 12 月 10 日)](#_Toc2)
+- [ASP.NET MVC 3 候選版2（2010年12月10日）](#_Toc2)
 
-    - [專案範本變更為包括 jQuery 1.4.4、 jQuery 驗證 1.7 和 jQuery UI 1.8.6y UI 1.8.6](#_Toc2_1)
-    - [已新增 「 AdditionalMetadataAttribute"類別](#_Toc2_2)
-    - [改善的檢視 Scaffolding](#_Toc2_3)
-    - [加入的 Html.Raw 方法](#_Toc2_3)
-    - [已重新命名 「 Controller.ViewModel"屬性，「 檢視 」 屬性設定為"ViewBag 」](#_Toc2_4)
-    - [已重新命名 「 ControllerSessionStateAttribute 「 類別 」 SessionStateAttribute"](#_Toc2_5)
-    - [已重新命名的 RemoteAttribute 「 欄位 」 屬性，以 「 AdditionalFields"](#_Toc2_6)
-    - [重新命名為"SkipRequestValidationAttribute"到"AllowHtmlAttribute 」](#_Toc2_7)
-    - [已變更 」 Html.ValidationMessage 」 方法，以顯示第一個的實用錯誤訊息](#_Toc2_8)
-    - [固定@model宣告，以將空白新增至文件](#_Toc2_9)
-    - [已新增 「 FileExtensions"屬性，以支援特定引擎的檔案名稱的檢視引擎](#_Toc2_10)
-    - [要發出的"For"屬性的正確值的固定"LabelFor 」 協助程式](#_Toc2_11)
-    - [已修正 「 RenderAction"的方法，讓模型繫結期間明確的值優先順序](#_Toc2_12)
+    - [專案範本已變更為包含 jQuery 1.4.4、jQuery 驗證1.7 和 jQuery UI 1.8.6 y UI 1.8。6](#_Toc2_1)
+    - [已新增 "AdditionalMetadataAttribute" 類別](#_Toc2_2)
+    - [改良的視圖樣板](#_Toc2_3)
+    - [已新增 Html。 Raw 方法](#_Toc2_3)
+    - [將 "Controller. ViewModel" 屬性和 "View" 屬性重新命名為 "ViewBag"](#_Toc2_4)
+    - [將 "ControllerSessionStateAttribute" 類別重新命名為 "SessionStateAttribute"](#_Toc2_5)
+    - [將 RemoteAttribute "Fields" 屬性重新命名為 "AdditionalFields"](#_Toc2_6)
+    - [已將 "SkipRequestValidationAttribute" 重新命名為 "AllowHtmlAttribute"](#_Toc2_7)
+    - [已將 "ValidationMessage" 方法變更為顯示第一個有用的錯誤訊息](#_Toc2_8)
+    - [已修正 @model 宣告，不要在檔中加入空白字元](#_Toc2_9)
+    - [已新增 "Microsoft.extensions.configuration fileextensions" 屬性來查看引擎，以支援引擎特定的檔案名](#_Toc2_10)
+    - [已修正 "LabelFor" Helper 以發出 "For" 屬性的正確值](#_Toc2_11)
+    - [已修正 "RenderAction" 方法，以在模型系結期間提供明確值的優先順序](#_Toc2_12)
     - [重大變更](#_Toc2_BC)
     - [已知問題](#_Toc2_KI)
-- [ASP.NET MVC 3 的候選版 (2010 年 11 月 9 日)](#TOC_ASP_NET_3_RC)
+- [ASP.NET MVC 3 發行候選版本（2010年11月9日）](#TOC_ASP_NET_3_RC)
 
-    - [在 ASP.NET MVC 3 RC 的新功能](#_Toc276711785)
-    - [NuGet Package Manager](#_Toc276711786)
-    - [改善 [新增專案] 對話方塊](#_Toc276711787)
-    - [無工作階段的控制站](#_Toc276711788)
+    - [ASP.NET MVC 3 RC 中的新功能](#_Toc276711785)
+    - [NuGet 套件管理員](#_Toc276711786)
+    - [改良的 [新增專案] 對話方塊](#_Toc276711787)
+    - [無會話控制器](#_Toc276711788)
     - [新的驗證屬性](#_Toc276711789)
-    - [新的多載，如 「 LabelFor"和"LabelForModel 」 方法](#_Toc276711790)
-    - [子系動作的輸出快取](#_Toc276711791)
-    - [[新增檢視] 對話方塊改進](#_Toc276711792)
-    - [詳細的要求驗證](#_Toc276711793)
+    - ["LabelFor" 和 "LabelForModel" 方法的新多載](#_Toc276711790)
+    - [子動作輸出快取](#_Toc276711791)
+    - [[加入視圖] 對話方塊的改善](#_Toc276711792)
+    - [細微要求驗證](#_Toc276711793)
     - [重大變更](#_Toc276711794)
     - [已知問題](#_Toc276711795)
-- [ASP。MVC 3 Beta 資訊 (2010 年 10 月 6 日)](#TOC_ASP_NET_3_Beta)
+- [ASP.MVC 3 Beta 附注（2010年10月6日）](#TOC_ASP_NET_3_Beta)
 
-    - [ASP.NET MVC 3 beta 版的新功能](#0.1__Toc274034215)
+    - [ASP.NET MVC 3 Beta 的新功能](#0.1__Toc274034215)
     - [NuPack 套件管理員](#0.1__Toc274034216)
-    - [改善 [新增專案] 對話方塊](#0.1__Toc274034217)
-    - [簡化的方式，來指定強型別在 Razor 檢視中的模型](#0.1__Toc274034218)
-    - [支援新的 ASP.NET Web 網頁的 Helper 方法](#0.1__Toc274034219)
+    - [改良的 [新增專案] 對話方塊](#0.1__Toc274034217)
+    - [在 Razor Views 中指定強型別模型的簡化方式](#0.1__Toc274034218)
+    - [支援新的 ASP.NET Web Pages Helper 方法](#0.1__Toc274034219)
     - [其他相依性插入支援](#0.1__Toc274034220)
-    - [新的支援不顯眼的 Jquery ajax](#0.1__Toc274034221)
-    - [新的支援，適用於不顯眼的 jQuery 驗證](#0.1__Toc274034222)
-    - [新應用程式範圍的旗標，用戶端驗證和不顯眼的 JavaScript](#0.1__Toc274034223)
-    - [新的支援，針對檢視執行前執行的程式碼](#0.1__Toc274034224)
-    - [新 VBHTML Razor 語法的支援](#0.1__Toc274034225)
-    - [Validateinputattribute 套用更精細地控制](#0.1__Toc274034226)
-    - [協助程式將底線轉換為連字號使用匿名物件指定的 HTML 屬性名稱](#0.1__Toc274034227)
+    - [不顯眼的 jQuery 型 Ajax 的新支援](#0.1__Toc274034221)
+    - [不顯眼 jQuery 驗證的新支援](#0.1__Toc274034222)
+    - [適用于用戶端驗證和不顯眼 JavaScript 的新全應用程式旗標](#0.1__Toc274034223)
+    - [新支援在 Views 執行之前執行的程式碼](#0.1__Toc274034224)
+    - [VBHTML Razor 語法的新支援](#0.1__Toc274034225)
+    - [更精細地控制 Validateinputattribute 套用](#0.1__Toc274034226)
+    - [協助程式將底線轉換為使用匿名物件指定之 HTML 屬性名稱的連字號](#0.1__Toc274034227)
     - [Bug 修正](#0.1__Toc274034228)
     - [重大變更](#0.1__Toc274034229)
     - [已知問題](#0.1__Toc274034230)
@@ -93,38 +93,38 @@ ms.locfileid: "59407103"
 <a id="overview"></a>
 ## <a name="overview"></a>總覽
 
-本文件說明適用於 Visual Studio 2010 版本的 ASP.NET MVC 3 RTM。 ASP.NET MVC 是使用 「 模型-檢視-控制器 (MVC) 模式開發 Web 應用程式架構。 ASP.NET MVC 3 安裝程式包含下列元件：
+本檔說明適用于 Visual Studio 2010 的 ASP.NET MVC 3 RTM 版本。 ASP.NET MVC 是一種架構，可用於開發使用模型視圖控制器（MVC）模式的 Web 應用程式。 ASP.NET MVC 3 安裝套裝程式含下列元件：
 
-- ASP.NET MVC 3 執行階段元件
+- ASP.NET MVC 3 執行時間元件
 - ASP.NET MVC 3 Visual Studio 2010 工具
-- ASP.NET 網頁的執行階段元件
+- ASP.NET Web Pages 執行時間元件
 - ASP.NET Web Pages Visual Studio 2010 工具
-- Microsoft Package Manager for.NET (NuGet)
-- Visual Studio 2010，可讓 Razor 語法的支援更新。 （如需詳細資訊，請參閱知識庫文件 2483190）。
+- 適用于 .NET 的 Microsoft 套件管理員（NuGet）
+- Visual Studio 2010 的更新，可支援 Razor 語法。 （如需詳細資訊，請參閱知識庫文章2483190。）
 
-完整的每個發行前版本的 ASP.NET MVC 3 版本資訊可在 ASP.NET 網站，下列 URL:
+ASP.NET MVC 3 的每個發行前版本的完整版本資訊，可在 ASP.NET 網站上找到，網址如下：
 
 https://www.asp.net/learn/whitepapers/mvc3-release-notes
 
 <a id="installation-notes"></a>
 ## <a name="installation-notes"></a>安裝注意事項
 
-若要安裝 ASP.NET MVC 3 RTM 使用 Web Platform Installer (Web PI)，請瀏覽下列網頁：
+若要使用 Web Platform Installer （Web PI）安裝 ASP.NET MVC 3 RTM，請造訪下列頁面：
 
 [https://www.microsoft.com/web/gallery/install.aspx?appid=MVC3](https://www.microsoft.com/web/gallery/install.aspx?appid=MVC3)
 
-或者，您可以下載適用於 Visual Studio 2010 的 ASP.NET MVC 3 rtm 安裝程式，從下列頁面：
+或者，您可以從下列頁面下載適用于 Visual Studio 2010 的 ASP.NET MVC 3 RTM 安裝程式：
 
 https://go.microsoft.com/fwlink/?LinkID=208140
 
-ASP.NET MVC 3 可以安裝，而且可以執行並排顯示使用 ASP.NET MVC 2。
+ASP.NET MVC 3 可以安裝，而且可以與 ASP.NET MVC 2 並存執行。
 
 <a id="software-requirements"></a>
 ## <a name="software-requirements"></a>軟體需求
 
-ASP.NET MVC 3 執行階段元件需要下列軟體：
+ASP.NET MVC 3 執行時間元件需要下列軟體：
 
-- .NET framework 第 4 版。 
+- .NET Framework 第4版。 
 
     ASP.NET MVC 3 Visual Studio 2010 工具需要下列軟體：
 - Visual Studio 2010 或 Visual Web Developer 2010 Express。
@@ -132,397 +132,397 @@ ASP.NET MVC 3 執行階段元件需要下列軟體：
 <a id="documentation"></a>
 ## <a name="documentation"></a>文件
 
-ASP.NET mvc 的文件可在 MSDN 網站上下列 url:
+您可以在 MSDN 網站上取得 ASP.NET MVC 的檔，網址如下：
 
 [https://go.microsoft.com/fwlink/?LinkId=205717](https://go.microsoft.com/fwlink/?LinkId=205717)
 
-教學課程和 ASP.NET MVC 的其他資訊可在下列 URL 在 ASP.NET 網站的 [MVC] 頁面上：
+如需有關 ASP.NET MVC 的教學課程和其他資訊，請在 ASP.NET 網站的 MVC 頁面上找到，網址如下：
 
 [https://www.asp.net/mvc/](../mvc/index.md)
 
 <a id="support"></a>
 ## <a name="support"></a>支援
 
-這是受到完整支援的版本。 取得技術支援的相關資訊可從[Microsoft 支援服務網站](https://support.microsoft.com/)。
+這是完全支援的版本。 您可以在[Microsoft 支援服務網站](https://support.microsoft.com/)中找到取得技術支援的相關資訊。
 
-也請隨意關於此版本的問題在 ASP.NET MVC 論壇張貼，其中的 ASP.NET 社群成員可經常提供非正式的支援：
+您也可以自由地將此版本的相關問題張貼到 ASP.NET MVC 論壇，其中 ASP.NET 社區的成員經常能夠提供非正式支援：
 
 [https://forums.asp.net/1146.aspx](https://forums.asp.net/1146.aspx)
 
 <a id="upgrading"></a>
 ## <a name="upgrading-an-aspnet-mvc-2-project-to-aspnet-mvc-3-tools-update"></a>將 ASP.NET MVC 2 專案升級至 ASP.NET MVC 3 工具更新
 
-ASP.NET MVC 3 可以與 ASP.NET MVC 2 並存安裝在同一部電腦，讓您彈性地選擇何時要升級至 ASP.NET MVC 3 的 ASP.NET MVC 2 應用程式。
+ASP.NET MVC 3 可以與 ASP.NET MVC 2 並存安裝在同一部電腦上，讓您有彈性選擇何時將 ASP.NET MVC 2 應用程式升級為 ASP.NET MVC 3。
 
-若要手動升級至版本 3 中現有的 ASP.NET MVC 2 應用程式，執行下列作業：
+若要將現有的 ASP.NET MVC 2 應用程式手動升級至第3版，請執行下列動作：
 
-1. 在您的電腦上建立新的空白 ASP.NET MVC 3 專案。 這個專案會包含所需的升級某些檔案。
-2. 將下列檔案從 ASP.NET MVC 3 專案複製到您的 ASP.NET MVC 2 專案的對應位置。 您將需要更新任何參考 jQuery 程式庫，以說明新的檔案名稱 (jQuery-1.5.1.js): 
+1. 在您的電腦上建立新的空白 ASP.NET MVC 3 專案。 此專案將包含升級所需的一些檔案。
+2. 將下列檔案從 ASP.NET MVC 3 專案複製到 ASP.NET MVC 2 專案的對應位置。 您必須更新 jQuery 程式庫的任何參考，以考慮新的檔案名（Jquery-1.7.2.min.js 1.5.1）： 
 
     - /Views/Web.config
     - /packages.config
     - /scripts/\*.js
-    - /內容/主題/\*。\*
-3. 複製*封裝*資料夾根目錄中的空白 ASP.NET MVC 3 專案方案，您的方案，方案的.sln 檔案所在的目錄中的根目錄。
-4. 如果您的 ASP.NET MVC 2 專案會包含任何區域，/Views/Web.config 檔案複製到*檢視*的每個區域的資料夾。
-5. 在這兩個 Web.config 檔案在 ASP.NET MVC 2 專案中，全域搜尋和取代 ASP.NET MVC 版本。 發現下列項目： 
+    - /Content/themes/\*。\*
+3. 將空白 ASP.NET MVC 3 專案方案根目錄中的 [*套件*] 資料夾複製到方案的根目錄中，這位於方案的 .sln 檔案所在的目錄中。
+4. 如果您的 ASP.NET MVC 2 專案包含任何區域，請將/Views/Web.config 檔案複製到每個區域的*Views*資料夾。
+5. 在 ASP.NET MVC 2 專案中的兩個 web.config 檔案中，全域搜尋並取代 ASP.NET MVC 版本。 尋找下列各項： 
 
     [!code-console[Main](mvc3-release-notes/samples/sample1.cmd)]
 
-    您可以將它取代為下列：
+    將它取代為下列內容：
 
     [!code-console[Main](mvc3-release-notes/samples/sample2.cmd)]
-6. 在 [方案總管] 中，刪除其參考*System.Web.Mvc* （指向 DLL 從第 2 版），然後將參考加入*System.Web.Mvc* (v3.0.0.0)。
-7. 將參考加入至 System.Web.WebPages.dll 和 system.web.helpers.dll 的參考。 這些組件位於下列資料夾： 
+6. 在方案總管中，刪除*system.web*的參考（指向第2版的 DLL），然後加入*system.web*的參考（v 3.0.0.0）。
+7. 加入 System.web 的參考，然後再新增 system.web. system.web。 這些元件位於下列資料夾： 
 
-    - %ProgramFiles%\ Microsoft ASP.NET\ASP.NET MVC 3\Assemblies
-    - %ProgramFiles%\ Microsoft ASP.NET\ASP.NET Web Pages\v1.0\Assemblies
-8. 在 方案總管 中，以滑鼠右鍵按一下專案名稱，並選取 卸載專案。 然後再次以滑鼠右鍵按一下專案名稱，然後選取 編輯*ProjectName*.csproj。
-9. 找出*ProjectTypeGuids*項目，並取代 {F85E285D-A4E0-4152-9332-AB1D724D3325} 與 {E53F8FEA-EAE0-44A6-8774-FFD645390401}。
-10. 儲存變更，以滑鼠右鍵按一下專案，，然後選取 重新載入專案。
-11. 在應用程式的根 Web.config 檔案中，新增下列設定，才能*組件*一節。 
+    - % ProgramFiles% \Microsoft ASP. NET\ASP.NET MVC 3 \ 元件
+    - % ProgramFiles% \Microsoft ASP. NET\ASP.NET Web Pages\v1.0\Assemblies
+8. 在方案總管中，以滑鼠右鍵按一下專案名稱，然後選取 [卸載專案]。 然後再次以滑鼠右鍵按一下專案名稱，並選取 [編輯*專案*名稱 .csproj]。
+9. 找出*ProjectTypeGuids*元素，並將 {F85E285D-A4E0-4152-9332-AB1D724D3325} 取代為 {E53F8FEA-EAE0-44A6-8774-FFD645390401}。
+10. 儲存變更，以滑鼠右鍵按一下專案，然後選取 [重載專案]。
+11. 在應用程式的根 web.config 檔案中，將下列設定新增至 [*元件*] 區段。 
 
     [!code-xml[Main](mvc3-release-notes/samples/sample3.xml)]
-12. 如果專案參考使用 ASP.NET MVC 2 編譯的任何協力廠商程式庫，新增下列醒目提示*bindingRedirect*下的應用程式根目錄中的 Web.config 檔案的項目*設定*區段： 
+12. 如果專案參考使用 ASP.NET MVC 2 編譯的任何協力廠商程式庫，請將下列反白顯示的*bindingRedirect*元素新增至應用程式根目錄的 web.config 檔案中設定*區段底下*： 
 
     [!code-xml[Main](mvc3-release-notes/samples/sample4.xml)]
 
 <a id="tu-changes"></a>
-## <a name="changes-in-aspnet-mvc-3-tools-update"></a>變更在 ASP.NET MVC 3 工具更新
+## <a name="changes-in-aspnet-mvc-3-tools-update"></a>ASP.NET MVC 3 工具更新中的變更
 
-本章節說明自 ASP.NET MVC 3 RTM 發行以來，在 ASP.NET MVC 3 Tools Update 版本中所做的變更。
+本節說明自 ASP.NET MVC 3 RTM 版本以來，在 ASP.NET MVC 3 工具更新版本中所做的變更。
 
 <a id="tu-AddControllerDialog"></a>
-### <a name="add-controller-dialog-box-can-now-scaffold-controllers-with-views-and-data-access-code"></a>[加入控制器] 對話方塊現在可以 scaffold 控制器使用檢視和資料存取程式碼
+### <a name="add-controller-dialog-box-can-now-scaffold-controllers-with-views-and-data-access-code"></a>[新增控制器] 對話方塊現在可以使用 views 和資料存取程式碼 scaffold 控制器
 
-Scaffolding 可用來快速產生控制器和檢視您的應用程式。 在產生的程式碼之後，您可以加以編輯以符合您的專案需求。
+「架構」是一種快速產生應用程式之控制器和視圖的方式。 程式碼產生之後，您可以進行編輯，以符合您的專案需求。
 
-若要啟動*新增控制器*對話方塊中，在 ASP.NET MVC 3 中，以滑鼠右鍵按一下*控制站*資料夾中的*方案總管] 中*，按一下 [*新增*，然後按一下*控制器*。 已增強 [] 對話方塊中提供額外的 scaffolding 選項。
+若要啟動 ASP.NET MVC 3 中的 [*新增控制器*] 對話方塊，請以滑鼠右鍵按一下*方案總管*中的 [*控制器*] 資料夾，按一下 [*新增*]，然後按一下 [*控制器*]。 對話方塊已經過增強，可提供其他的 [樣板] 選項。
 
 ![](mvc3-release-notes/_static/image1.png)
 
-預設情況下有三個 scaffolding 範本可用。
+根據預設，有三個可用的樣板範本。
 
 #### <a name="empty-controller"></a>空白控制器
 
-此範本會產生空白的控制器檔案。 此範本就相當於不勾選*新增建立、 編輯、 詳細資料的動作，請刪除案例*在舊版的 ASP.NET MVC。 如果您選擇此選項，沒有還有其他選項可用。
+此範本會產生空的控制器檔案。 此範本等同于在舊版 ASP.NET MVC 中，不會*針對 [建立]、[編輯]、[詳細資料]、[刪除] 案例檢查新增動作*。 如果您選擇此選項，則不會有任何進一步的選項可供使用。
 
 #### <a name="controller-with-empty-readwrite-actions"></a>具有空白讀取/寫入動作的控制器
 
-此範本會產生具有所有必要的動作方法，但沒有實作程式碼的方法中的控制器檔案。 此範本就相當於檢查*新增建立、 編輯、 詳細資料的動作，請刪除案例*在舊版的 ASP.NET MVC。 如果您選擇此選項，沒有還有其他選項可用。
+此範本會產生一個控制器檔案，其中包含所有必要的動作方法，但方法中沒有任何執行程式碼。 此範本相當於針對舊版 ASP.NET MVC 中*的 [建立]、[編輯]、[詳細資料]、[刪除] 案例檢查 [加入動作*]。 如果您選擇此選項，則不會有任何進一步的選項可供使用。
 
-#### <a name="controller-with-readwrite-actions-and-views-using-entity-framework"></a>具有讀取/寫入動作和檢視，使用 Entity Framework 的控制器
+#### <a name="controller-with-readwrite-actions-and-views-using-entity-framework"></a>具有讀取/寫入動作和視圖的控制器，使用 Entity Framework
 
-此範本可讓您快速建立工作的資料輸入的使用者介面。 它會產生處理一組通用需求和案例，如下所示的程式碼：
+此範本可讓您快速建立工作中的資料輸入使用者介面。 它會產生程式碼來處理一系列的常見需求和案例，如下所示：
 
-- *資料存取*。 產生的程式碼會讀取並寫入資料庫中的實體。 它使用 Entity Framework Code First 方法如果您選擇現有的資料內容類別，或是讓範本產生的新*DbContext*類別。 它也可以使用 Entity Framework 資料庫優先 」 或 「 模型優先方法如果您選擇的現有*ObjectContext*類別。
-- *驗證*。 產生的程式碼使用以 ASP.NET MVC 模型繫結和中繼資料功能，讓表單提交作業會根據您的模型類別上宣告的規則進行驗證。 這包括內建驗證規則，例如*所需*並*StringLength*屬性和自訂驗證規則。
-- *一對多關聯性*。 如果您的模型類別之間定義一對多外部索引鍵關聯性，則產生的程式碼會產生下拉式清單中選取相關的實體。 例如，您可以定義下列模型類別遵循 Entity Framework Code First 慣例： 
+- *資料存取*。 產生的程式碼會讀取和寫入資料庫中的實體。 如果您選擇現有的資料內容類別，或如果您讓範本產生新的*DbCoNtext*類別，它就會與 Entity Framework Code First 方法搭配使用。 如果您選擇現有的*ObjectCoNtext*類別，它也適用于 Entity Framework Database First 或 Model First 方法。
+- *驗證*。 產生的程式碼會使用 ASP.NET MVC 模型系結和中繼資料功能，以便根據您的模型類別所宣告的規則來驗證表單提交。 這包括內建的驗證規則，例如*Required*和*StringLength*屬性，以及自訂驗證規則。
+- *一對多關聯性*。 如果您在模型類別之間定義一對多的外鍵關聯性，則產生的程式碼會產生下拉式清單，供您選取相關的實體。 例如，您可能會在 Entity Framework Code First 慣例之後定義下列模型類別： 
 
     [!code-csharp[Main](mvc3-release-notes/samples/sample5.cs)]
 
-    當您接著 scaffold 控制器*產品*類別，它的檢視可讓使用者選擇*分類*物件給每個*產品*執行個體。
+    當您接著 scaffold *product*類別的控制器時，其 views 可讓使用者為每個*產品*實例選擇*Category*物件。
 
-    此範本可讓其他選項中的*新增控制器* 對話方塊。 針對*模型類別*，您可以選擇任何模型類別，在您方案中，用來決定使用者將能夠建立或編輯的資料類型：
-- 如果您想要使用 Entity Framework Code First 時，您可以選擇任何模型類別。
-- 如果您使用 Entity Framework 資料庫優先 」 或 「 Entity Framework 模型優先，請務必選擇您概念模型中定義的實體類別。
+    此範本會啟用 [*新增控制器*] 對話方塊中的其他選項。 針對*模型類別*，您可以在方案中選擇任何模型類別，這會決定使用者可以建立或編輯的資料類型：
+- 如果您想要使用 Entity Framework Code First，可以選擇任何模型類別。
+- 如果您使用 Entity Framework Database First 或 Entity Framework Model First，請務必選擇在您的概念模型中定義的實體類別。
 
-針對*的資料內容類別*，您可進行下列選擇：
+針對*資料內容類別*，您可以進行下列選擇：
 
-- 如果您想要使用的程式碼優先 」 而沒有現有的資料內容類別中，選擇 新的資料內容 * *。 然後會為您產生的資料內容類別。
-- 如果您想要使用 Code First 與現有的資料內容類別，它在這裡選擇。 它會更新以保存您選取的模型類別。
-- 如果您使用 Database First 或 Model First，選擇您的物件內容類別。
+- 如果您想要使用 Code First，而且沒有現有的資料內容類別，請選擇 [新增資料內容]。 接著會為您產生資料內容類別。
+- 如果您想要使用 Code First 並擁有現有的資料內容類別，請在這裡選擇。 它將會更新，以保存您所選取的模型類別。
+- 如果您使用 Database First 或 Model First，請在這裡選擇您的物件內容類別。
 
-對於檢視，請選擇您要使用的檢視引擎，或如果您不要 scaffold 任何檢視，請選擇 None。
+針對 [Views]，選擇您想要使用的 view engine，如果您不想要 scaffold 任何視圖，請選擇 [無]。
 
-您可以選取進階你指定其他選項來產生的檢視表。 例如，您可以選擇要使用的主版頁面的版面配置。
+您可以選取 [Advanced Optionsto]，為產生的視圖指定進一步的選項。 例如，您可以選擇要使用的版面配置或主版頁面。
 
 <a id="tu-ImprovementsNewDialogBox"></a>
-### <a name="improvements-to-the-aspnet-mvc-3-new-project-dialog-box"></a>改善 「 ASP.NET MVC 3 新增專案 」 對話方塊
+### <a name="improvements-to-the-aspnet-mvc-3-new-project-dialog-box"></a>[ASP.NET MVC 3 新增專案] 對話方塊的改善
 
-您用來建立新的 ASP.NET MVC 3 專案的對話方塊會包含多項改良，如下所示。
+您用來建立新 ASP.NET MVC 3 專案的對話方塊包含多項改良功能，如下所示。
 
 ![](mvc3-release-notes/_static/image2.png)
 
-#### <a name="new-intranet-project-template"></a>新的 「 內部網路專案 」 範本
+#### <a name="new-intranet-project-template"></a>新的「內部網路專案」範本
 
-專案範本清單中包含新的內部網路應用程式範本。 此範本包含建置 web 應用程式使用 Windows 驗證，而不表單驗證的設定。 因為內部網路應用程式需要一些無法封裝專案範本中的 IIS 設定，所以範本包含讀我檔案說明如何讓工作在 IIS 中的專案範本。 文件新的內部網路應用程式範本可在 MSDN 網站，下列 URL:
+專案範本清單包含新的內部網路應用程式範本。 此範本包含使用 Windows 驗證來建立 web 應用程式的設定，而不是表單驗證。 因為內部網路應用程式需要一些無法封裝在專案範本中的 IIS 設定，所以範本會包含讀我檔案，其中包含如何讓專案範本在 IIS 中工作的指示。 您可以在 MSDN 網站上找到新的內部網路應用程式範本的檔，網址如下：
 
 [https://msdn.microsoft.com/library/gg703322(VS.98).aspx](https://msdn.microsoft.com/library/gg703322(VS.98).aspx)
 
-#### <a name="project-templates-are-now-html5-enabled"></a>已啟用 HTML5 專案範本。
+#### <a name="project-templates-are-now-html5-enabled"></a>專案範本現在已啟用 HTML5
 
-[新增專案] 對話方塊現在包含將 HTML5 專屬功能加入至專案範本的選項。 選取的選項可讓要產生的檢視包含新的 HTML5 `<header>`， `<footer>`，和`<navigation>`項目。
+[新增專案] 對話方塊現在包含一個選項，可將 HTML5 特有的功能加入專案範本。 選取此選項會產生包含新 HTML5 `<header>`、`<footer>`和 `<navigation>` 元素的 views。
 
-請注意，舊版的瀏覽器不支援 HTML5 專屬標記。 若要解決這項限制，HTML5 專案範本會包含 Modernizr 程式庫的參考。 （請參閱下一節。）
+請注意，舊版的瀏覽器不支援 HTML5 特定的標記。 為了解決這項限制，HTML5 專案範本包含 Modernizr 程式庫的參考。 （請參閱下一節）。
 
 <a id="tu-Modernizr"></a>
-### <a name="project-templates-now-include-modernizr-17"></a>專案範本現在包含 Modernizr 1.7
+### <a name="project-templates-now-include-modernizr-17"></a>專案範本現在包含 Modernizr 1。7
 
-Modernizr 是 JavaScript 程式庫，可讓 CSS 3 和 HTML5 中尚不支援這些功能的瀏覽器的支援。 包含預先安裝的 NuGet 套件，適用於 ASP.NET MVC 3 專案範本中為此文件庫。 如需 Modernizr 的詳細資訊，請參閱[ http://www.modernizr.com/ ](http://www.modernizr.com/)。
+Modernizr 是一種 JavaScript 程式庫，可支援瀏覽器中尚未支援這些功能的 CSS 3 和 HTML5。 此程式庫是以預先安裝的 NuGet 套件形式包含在 ASP.NET MVC 3 專案的範本中。 如需 Modernizr 的詳細資訊，請參閱[http://www.modernizr.com/](http://www.modernizr.com/)。
 
 <a id="tu-UpdatedJQuery"></a>
-### <a name="project-templates-include-updated-versions-of-jquery-jquery-ui-and-jquery-validation"></a>專案範本包含 jQuery、 jQuery UI 和 jQuery 的更新的版本驗證
+### <a name="project-templates-include-updated-versions-of-jquery-jquery-ui-and-jquery-validation"></a>專案範本包含 jQuery、jQuery UI 和 jQuery 驗證的更新版本
 
-專案範本現在包含下列 jQuery 指令碼版本：
+專案範本現在包含下列的 jQuery 腳本版本：
 
-- jQuery 1.5.1
-- jQuery 驗證 1.8
+- jQuery 1.5。1
+- jQuery 驗證1。8
 - jQuery UI 1.8.11
 
-這些程式庫會以預先安裝的 NuGet 套件形式包含項目。
+這些程式庫會以預先安裝的 NuGet 套件形式包含。
 
 <a id="tu-EF"></a>
-### <a name="project-templates-now-include-adonet-entity-framework-41-as-a-pre-installed-nuget-package"></a>專案範本現在包含 ADO.NET Entity Framework 4.1 的預先安裝的 NuGet 封裝
+### <a name="project-templates-now-include-adonet-entity-framework-41-as-a-pre-installed-nuget-package"></a>專案範本現在包含 ADO.NET Entity Framework 4.1，做為預先安裝的 NuGet 套件
 
-ADO.NET Entity Framework 4.1 包含的 Code First 功能。 程式碼第一次是 ADO.NET Entity Framework 提供的現有的 Database First 和 Model First 模式的替代方案的新開發模式。
+ADO.NET Entity Framework 4.1 包含 Code First 功能。 Code First 是 ADO.NET Entity Framework 的新開發模式，可提供現有 Database First 和 Model First 模式的替代方式。
 
-程式碼第一次是把焦點放在定義模型使用以 Visual Basic 或 C# 撰寫的 POCO 類別 （「 純舊 CLR 物件 」）。 這些類別接著可以對應至現有的資料庫，或用來產生資料庫結構描述。 可以使用提供額外的組態*DataAnnotations*屬性，或使用 fluent Api。
+Code First 著重于使用以 Visual Basic 或C#撰寫的 POCO 類別（「單純的 CLR 物件」）來定義您的模型。 這些類別接著可以對應到現有的資料庫，或用來產生資料庫架構。 您可以使用*DataAnnotations*屬性或使用流暢的 api 來提供額外的設定。
 
-使用程式碼 Firstwith ASP.NET MVC 的文件位於 ASP.NET 網站，在下列 Url:
+如需使用程式碼 Firstwith ASP.NET MVC 的檔，請參閱 ASP.NET 網站上的下列 Url：
 
 [https://www.asp.net/mvc/tutorials/getting-started-with-mvc3-part1-cs](../mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) [https://www.asp.net/entity-framework/tutorials/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application](../mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)
 
 <a id="tu-JavaScriptLibsNuget"></a>
-### <a name="project-templates-include-javascript-libraries-as-pre-installed-nuget-packages"></a>專案範本會納入預先安裝的 NuGet 套件中的 JavaScript 程式庫
+### <a name="project-templates-include-javascript-libraries-as-pre-installed-nuget-packages"></a>專案範本以預先安裝的 NuGet 套件形式包含 JavaScript 程式庫
 
-當您建立新的 ASP.NET MVC 3 專案時，專案會包含先前所述的 JavaScript 檔案 （例如 Modernizr 程式庫） 組件安裝使用 NuGet 而非直接在專案範本中的指令碼 資料夾中新增指令碼內容。 這可讓您使用的指令碼的新版本發行時，將指令碼更新為最新版本的 NuGet。
+當您建立新的 ASP.NET MVC 3 專案時，專案會包含先前所述的 JavaScript 檔案（例如，Modernizr 程式庫），方法是使用 NuGet 安裝它們，而不是直接將腳本新增至專案範本中的 Scripts 資料夾。編制. 這可讓您在發行新版本的腳本時，使用 NuGet 將腳本更新為最新版本。
 
-比方說，假設新的 jQuery 版本的頻率，專案範本中所包含的 jQuery 版本在某個時間點會過期。 不過，因為 jQuery 是隨附安裝的 NuGet 套件，將會通知您在 [NuGet] 對話方塊中的 jQuery 的較新版本可用時。
+例如，由於新的 jQuery 版本的頻率，專案範本中包含的 jQuery 版本會在某個時間點過期。 不過，由於 jQuery 已包含為已安裝的 NuGet 套件，因此當有較新版本的 jQuery 可用時，您會在 [NuGet] 對話方塊中收到通知。
 
-因為 jQuery 在檔案名稱中包含的版本號碼，jQuery 更新為最新版本也需要更新`<script>`參考 jQuery 檔案，以便使用新的檔案名稱的標記。 其他內含的指令碼程式庫不包含版本號碼在指令碼名稱中，因此他們可以更輕鬆地為其最新版本更新。
+因為 jQuery 在檔案名中包含版本號碼，所以將 jQuery 更新為最新版本也需要更新參考 jQuery 檔案的 `<script>` 標記，以使用新的檔案名。 其他內含的腳本程式庫不會在腳本名稱中包含版本號碼，因此可以更輕鬆地更新為最新版本。
 
 <a id="tu-KI"></a>
 ## <a name="known-issues"></a>已知問題
 
-- 在某些情況下，安裝可能無法使用錯誤訊息 「 安裝失敗，錯誤碼為 (0x80070643) 」。 如需有關如何解決此問題的資訊，請參閱 <<c0> [ 知識庫文件 2531566](https://support.microsoft.com/kb/2531566)。
-- 用於加入控制器的 scaffolding 不會 scaffold 利用 Entity Framework 實體繼承支援的實體。 例如，假設基底*Person*類別，繼承自*學生*類別，scaffolding*學生*類別將會導致產生的程式碼無法編譯。
-- 建立新的 ASP.NET MVC 3 專案的方案資料夾內的原因*NullReferenceException*時發生錯誤。 因應措施是解決方案的根目錄中建立 ASP.NET MVC 3 專案，然後將它移入方案資料夾。
-- 時已安裝 ReSharper，Razor 語法的 IntelliSense 不會無法運作。 如果您已安裝 ReSharper 且想要利用 ASP.NET MVC 3 中的 Razor IntelliSense 支援，請參閱文章[Razor Intellisense 和 ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) Hadi Hariri 部落格，其中討論了如何一起搭配使用今天。
-- 在安裝期間，EULA 接受對話方塊會顯示在視窗比預期較小授權條款。
-- 當您要在其中編輯 Razor 檢視 (.cshtml 或。*vbhtml*檔案)，檢視。 ASP.NET MVC 3 不包含 Razor 檢視的任何程式碼片段...aspxselecting ASP.NET MVC 的程式碼片段會顯示程式碼的片段
-- 如果您安裝 ASP.NET MVC 3 for Visual Web Developer Express，其中未安裝 Visual Studio，在電腦上，然後再安裝 Visual Studio，您必須重新安裝 ASP.NET MVC 3。 Visual Studio 和 Visual Web Developer Express 共用的 ASP.NET MVC 3 安裝程式會升級的元件。 如果您沒有 Visual Web Developer Express，然後再安裝 Visual Web Developer Express 的電腦上安裝適用於 Visual Studio ASP.NET MVC 3，則會套用相同的問題。
+- 在某些情況下，安裝可能會失敗，並出現錯誤訊息「安裝失敗，錯誤碼為（0x80070643）」。 如需有關如何解決此問題的詳細資訊，請參閱[知識庫文章 2531566](https://support.microsoft.com/kb/2531566)。
+- 新增控制器的架構不會 scaffold 利用 Entity Framework 內之實體繼承支援的實體。 例如，假設有一個由*student*類別繼承的基礎*Person*類別，則*student*類別會產生未編譯的程式碼。
+- 在方案資料夾中建立新的 ASP.NET MVC 3 專案會造成*NullReferenceException*錯誤。 因應措施是在方案的根目錄中建立 ASP.NET MVC 3 專案，然後將它移至方案資料夾。
+- 安裝 ReSharper 時，適用于 Razor 語法的 IntelliSense 無法運作。 如果您已安裝 ReSharper，而且想要利用 ASP.NET MVC 3 中的 Razor IntelliSense 支援，請參閱 Hadi Hariri 的 blog 中的專案[Razor intellisense 和 ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) ，其中會討論今日使用它們的方式。
+- 在安裝期間，[接受 EULA] 對話方塊會在小於預期的視窗中顯示授權條款。
+- 當您編輯 Razor view （. cshtml 或）時。*vbhtml*檔案）、views。 ASP.NET MVC 3 不包含 Razor views 的任何程式碼片段。aspxselecting ASP.NET MVC 的程式碼片段會顯示的程式碼片段
+- 如果您在未安裝 Visual Studio 的電腦上安裝 ASP.NET MVC 3 for Visual Web Developer Express，然後在稍後安裝 Visual Studio，則必須重新安裝 ASP.NET MVC 3。 Visual Studio 和 Visual Web Developer Express 共用 ASP.NET MVC 3 安裝程式所升級的元件。 如果您在沒有 Visual Web Developer Express 的電腦上安裝 ASP.NET MVC Visual Studio 3，然後再安裝 Visual Web Developer Express，則適用相同的問題。
 
 <a id="MVC3RTM"></a>
-## <a name="changes-in-aspnet-mvc-3-rtm"></a>在 ASP.NET MVC 3 rtm 版本中的變更
+## <a name="changes-in-aspnet-mvc-3-rtm"></a>ASP.NET MVC 3 RTM 中的變更
 
-本章節描述的變更和 RC2 版本之後，在 ASP.NET MVC 3 RTM 版本中所做的 bug 修正。
+本節說明自 RC2 版本開始，在 ASP.NET MVC 3 RTM 版本中所做的變更和 bug 修正。
 
 <a id="RTM-1"></a>
-### <a name="change-updated-the-version-of-jquery-ui-to-187"></a>變更：更新版本的 jQuery UI 1.8.7
+### <a name="change-updated-the-version-of-jquery-ui-to-187"></a>變更：將 jQuery UI 的版本更新為1.8。7
 
-適用於 Visual Studio 的 ASP.NET MVC 專案範本已更新以包含最新版本的 jQuery UI 程式庫。 範本也包含最少的 jQuery UI，例如相關聯的 CSS 和影像檔所需的資源檔案。
+Visual Studio 的 ASP.NET MVC 專案範本已更新為包含最新版的 jQuery UI 程式庫。 這些範本也包含 jQuery UI 所需的最小資源檔集，例如相關聯的 CSS 和影像檔案。
 
 <a id="RTM-2"></a>
-### <a name="change-changed-the-default-modelmetadataprovider-back-to-dataannotationsmodelmetadataprovider"></a>變更：變更預設值 ModelMetadataProvider 回到 DataAnnotationsModelMetadataProvider
+### <a name="change-changed-the-default-modelmetadataprovider-back-to-dataannotationsmodelmetadataprovider"></a>變更：將預設 ModelMetadataProvider 變更回 DataAnnotationsModelMetadataProvider
 
-導入的 ASP.NET MVC 3 的 RC2 版本*CachedDataAnnotationsMetadataProvider*類別，提供快取上的現有*DataAnnotationsModelMetadataProvider*類別做為效能改善。 不過，某些 bug 回報與這個實作中，因此變更已還原並移至 MVC Futures 專案中，將會位於[ASP.NET WebStack](https://github.com/aspnet/AspNetWebStack)。
+ASP.NET MVC 3 的 RC2 版本引進了*CachedDataAnnotationsMetadataProvider*類別，它會在現有*DataAnnotationsModelMetadataProvider*類別上提供快取，以改善效能。 不過，某些 bug 是使用此實作為回報，因此變更已還原並移至 MVC 先期專案中，可在[ASP.NET WebStack](https://github.com/aspnet/AspNetWebStack)取得。
 
 <a id="RTM-3"></a>
-### <a name="fixed-pasting-part-of-a-razor-expression-that-contains-whitespace-results-in-it-being-reversed"></a>已修正：貼上含有空白結果，裡面要反轉的 Razor 運算式的一部分
+### <a name="fixed-pasting-part-of-a-razor-expression-that-contains-whitespace-results-in-it-being-reversed"></a>已修正：貼上包含空白字元的 Razor 運算式部分，會導致它被反轉
 
-中的 ASP.NET MVC 3 的發行前版本，當您貼上至 Razor 檔案中，包含空白字元的 Razor 運算式的一部分會反轉所產生的運算式。 例如，請考慮下列 Razor 程式碼區塊：
+在 ASP.NET MVC 3 的發行前版本中，當您將包含空白字元的 Razor 運算式部分貼入 Razor 檔案時，產生的運算式會反轉。 例如，請考慮下列 Razor 程式碼區塊：
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample6.cshtml)]
 
-如果您選取的文字 「 第一個參數 「 第一種方法，並將其做為引數，第二個方法，結果如下所示：
+如果您在第一個方法中選取「第一個參數」文字，並將它當做引數貼入第二個方法中，則結果會如下所示：
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample7.cshtml)]
 
-正確的行為是，貼上作業應該會導致下列：
+正確的行為是貼上作業應該會產生下列結果：
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample8.cshtml)]
 
-以便正確地貼上作業期間保留運算式已在 RTM 版本中修正此問題。
+此問題已在 RTM 版本中修正，以便在貼上作業期間正確地保留運算式。
 
 <a id="RTM-4"></a>
-### <a name="fixed-renaming-a-razor-file-that-is-opened-in-the-editor-disables-syntax-colorization-and-intellisense"></a>已修正：重新命名 Razor 檔案在編輯器中開啟時，會停用語法顏色標示和 IntelliSense
+### <a name="fixed-renaming-a-razor-file-that-is-opened-in-the-editor-disables-syntax-colorization-and-intellisense"></a>已修正：重新命名在編輯器中開啟的 Razor 檔案時，會停用語法顏色標示和 IntelliSense
 
-重新命名 Razor 檔案在編輯器視窗中開啟檔案時，請使用方案總管 中，會導致語法醒目提示和 IntelliSense 停止運作，該檔案。 這個問題已修正，以便反白顯示，而 IntelliSense 將會保留在重新命名後。
+在編輯器視窗中開啟檔案時，使用方案總管重新命名 Razor 檔案，會導致語法醒目提示和 IntelliSense 停止處理該檔案。 已修正此問題，以便在重新命名之後維護反白顯示和 IntelliSense。
 
 <a id="RTM-KI"></a>
 ## <a name="known-issues"></a>已知問題
 
-- 如果您關閉 Visual Studio 2010 SP1 beta 版，開啟 NuGet 套件管理員主控台時，Visual Studio 會損毀，並嘗試重新啟動。 這將會修正 RTM 版本的 Visual Studio 2010 SP1 中。
-- ASP.NET MVC 3 安裝程式才能夠安裝 NuGet 套件管理員的初始版本。 您已安裝的初始版本之後，可以安裝 NuGet，並使用 Visual Studio 延伸模組管理員來更新。 如果您已經有安裝 NuGet，請移至 Visual Studio 延伸模組組件庫更新至最新版的 NuGet。
-- 建立新的 ASP.NET MVC 3 專案的方案資料夾內的原因*NullReferenceException*時發生錯誤。 因應措施是解決方案的根目錄中建立 ASP.NET MVC 3 專案，然後將它移入方案資料夾。
-- 安裝程式可能會花更長的時間比舊版 ASP.NET MVC 到完成的。 這是因為它會更新 Visual Studio 2010 的元件。
-- 時已安裝 ReSharper，Razor 語法的 IntelliSense 不會無法運作。 如果您已安裝 ReSharper 且想要利用 ASP.NET MVC 3 中的 Razor IntelliSense 支援，請參閱文章[Razor Intellisense 和 ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) Hadi Hariri 部落格，其中討論了如何一起搭配使用今天。
-- 使用 ASP.NET MVC 3 的 Beta 版建立的 CCSHTML 」 和 「 VBHTML 檢視並沒有正確設定其建置動作，與這些檢視的結果在發行專案時，會省略類型。 這些檔案的建置動作值應該設定為 「 內容 」 中。 ASP.NET MVC 3 RTM 修正此問題的新檔案，但不會更正現有的檔案，使用發行前版本所建立之專案的設定。
+- 如果您在 NuGet 套件管理員主控台開啟時關閉 Visual Studio 2010 SP1 Beta 版，Visual Studio 損毀並嘗試重新開機。 這會在 Visual Studio 2010 SP1 的 RTM 版本中修正。
+- ASP.NET MVC 3 安裝程式只可以安裝 NuGet 套件管理員的初始版本。 安裝初始版本之後，您可以使用 Visual Studio 擴充管理員來安裝和更新 NuGet。 如果您已安裝 NuGet，請移至 Visual Studio 擴充功能庫，以更新為最新版本的 NuGet。
+- 在方案資料夾中建立新的 ASP.NET MVC 3 專案會造成*NullReferenceException*錯誤。 因應措施是在方案的根目錄中建立 ASP.NET MVC 3 專案，然後將它移至方案資料夾。
+- 安裝程式所需的時間可能比先前版本的 ASP.NET MVC 還長，因此無法完成。 這是因為它會更新 Visual Studio 2010 的元件。
+- 安裝 ReSharper 時，適用于 Razor 語法的 IntelliSense 無法運作。 如果您已安裝 ReSharper，而且想要利用 ASP.NET MVC 3 中的 Razor IntelliSense 支援，請參閱 Hadi Hariri 的 blog 中的專案[Razor intellisense 和 ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) ，其中會討論今日使用它們的方式。
+- 使用 ASP.NET MVC 3 Beta 版所建立的 CCSHTML 和 VBHTML 視圖並未正確設定其組建動作，結果是在發行專案時，會省略這些檢視類型。 這些檔案的 [組建動作] 值應該設定為 [內容]。 ASP.NET MVC 3 RTM 會針對新檔案修正此問題，但不會針對使用發行前版本所建立之專案的現有檔案更正其設定。
 - ![](mvc3-release-notes/_static/image3.png)
-- 在安裝期間，EULA 接受對話方塊會顯示在視窗比預期較小授權條款。
-- 當您在編輯 Razor 檢視 （.cshtml 檔案） 時，請移至控制器中功能表項目，在 Visual Studio 中的將無法使用，而且有任何程式碼片段。
-- 如果您安裝 ASP.NET MVC 3 for Visual Web Developer Express，其中未安裝 Visual Studio，在電腦上，然後再安裝 Visual Studio，您必須重新安裝 ASP.NET MVC 3。 Visual Studio 和 Visual Web Developer Express 共用的 ASP.NET MVC 3 安裝程式會升級的元件。 如果您沒有 Visual Web Developer Express，然後再安裝 Visual Web Developer Express 的電腦上安裝適用於 Visual Studio ASP.NET MVC 3，則會套用相同的問題。
+- 在安裝期間，[接受 EULA] 對話方塊會在小於預期的視窗中顯示授權條款。
+- 當您編輯 Razor view （cshtml 檔案）時，Visual Studio 中的 [移至控制器] 功能表項目將無法使用，而且不會有程式碼片段。
+- 如果您在未安裝 Visual Studio 的電腦上安裝 ASP.NET MVC 3 for Visual Web Developer Express，然後在稍後安裝 Visual Studio，則必須重新安裝 ASP.NET MVC 3。 Visual Studio 和 Visual Web Developer Express 共用 ASP.NET MVC 3 安裝程式所升級的元件。 如果您在沒有 Visual Web Developer Express 的電腦上安裝 ASP.NET MVC Visual Studio 3，然後再安裝 Visual Web Developer Express，則適用相同的問題。
 
 <a id="RTM-BC"></a>
 ## <a name="breaking-changes"></a>重大變更
 
-- 在舊版 ASP.NET MVC 中，動作篩選條件會建立每個要求除了在少數情況下。 此行為是永遠不會保證的行為，但只是實作詳細資料，並篩選條件的合約，就是將它們視為無狀態。 在 ASP.NET MVC 3 中，篩選會更積極地快取。 因此，您可能會中斷任何自訂動作篩選條件未正確儲存執行個體的狀態。
-- 執行例外狀況篩選條件的順序已變更為具有相同的例外狀況篩選條件*順序*值。 在 ASP.NET MVC 2 和舊版中，例外狀況的篩選具有相同的控制器*順序*值上執行的動作方法上的動作方法的例外狀況篩選條件之前執行時。 這通常會發生這個狀況，例外狀況篩選條件套用時沒有指定之*順序*值。 在 ASP.NET MVC 3 中，此順序已顛倒，因此最特定的例外狀況處理常式會先執行。 如同舊版本中，如果*順序*屬性明確指定，則篩選條件會執行指定的順序。
-- 名為的新屬性*FileExtensions*已加入至*VirtualPathProviderViewEngine*基底類別。 當 ASP.NET 尋找檢視的路徑 （不是依名稱） 時，會被視為唯一的檢視，以這個新屬性所指定的清單中所包含的副檔名。 若要讓 Web 表單檢視的自訂副檔名註冊自訂的組建提供者，而且提供者使用的完整路徑，而不是名稱參考這些檢視，這是在應用程式中的重大變更。 因應措施是要修改的值*FileExtensions*屬性，以加入自訂的副檔名。
-- 直接實作的自訂控制器 factory 實作*IControllerFactory*介面必須提供新的實作*GetControllerSessionBehavior*方法加入此版本中的介面。 一般情況下，建議，不直接實作此介面，並改為衍生您的類別，從*DefaultControllerFactory*。
+- 在舊版的 ASP.NET MVC 中，動作篩選準則會針對每個要求建立，但在少數情況下除外。 這種行為絕對不是保證的行為，而是只有執行詳細資料，而篩選準則的合約是將其視為無狀態。 在 ASP.NET MVC 3 中，篩選會更積極地快取。 因此，任何不正確儲存實例狀態的自訂動作篩選可能會中斷。
+- 例外狀況篩選準則的執行順序已針對具有相同*順序*值的例外狀況篩選準則進行變更。 在 ASP.NET MVC 2 和更早版本中，控制器上的例外狀況篩選準則會在例外狀況篩選動作方法之前執行，其*順序*值會與動作方法上的相同。 這通常是沒有指定*順序*值的例外狀況篩選準則套用時的情況。 在 ASP.NET MVC 3 中，此順序已被反轉，因此最特定的例外狀況處理常式會先執行。 如同在舊版中，如果已明確指定*order*屬性，則會以指定的循序執行篩選。
+- 已將名為*microsoft.extensions.configuration fileextensions*的新屬性新增至*VirtualPathProviderViewEngine*基類。 當 ASP.NET 依路徑（而不是名稱）查詢檢視時，只會考慮包含在此新屬性所指定清單中具有副檔名的 views。 這是應用程式的重大變更，其中已註冊自訂群組建提供者以啟用 Web 表單檢視的自訂副檔名，以及提供者使用完整路徑（而非名稱）來參考這些視圖。 解決方法是修改*microsoft.extensions.configuration fileextensions*屬性的值，以包含自訂副檔名。
+- 直接執行*IControllerFactory*介面的自訂控制器 factory 預建必須提供新*GetControllerSessionBehavior*方法的實作為，這會在此版本中新增至介面。 一般來說，建議您不要直接執行此介面，而改為從*DefaultControllerFactory*衍生您的類別。
 
 <a id="_Toc2"></a>
 ## <a name="changes-in-aspnet-mvc-3-rc2"></a>ASP.NET MVC 3 RC2 中的變更
 
-本章節描述 （新功能和 bug 修正） 所做的變更在 ASP.NET MVC 3 RC2 版本自從 RC 版本。
+本節說明自 RC 版本以來 ASP.NET MVC 3 RC2 版本中所做的變更（新功能和 bug 修正）。
 
 <a id="_Toc2_1"></a>
-### <a name="project-templates-changed-to-include-jquery-144-jquery-validation-17-and-jquery-ui-186"></a>專案範本變更為包括 jQuery 1.4.4、 jQuery 驗證 1.7 和 jQuery UI 1.8.6
+### <a name="project-templates-changed-to-include-jquery-144-jquery-validation-17-and-jquery-ui-186"></a>專案範本已變更為包含 jQuery 1.4.4、jQuery 驗證1.7 和 jQuery UI 1.8。6
 
-ASP.NET MVC 3 專案範本現在包含最新版的 jQuery、 jQuery 驗證和 jQuery UI。 jQuery UI 是新的專案範本，並提供實用的使用者介面小工具。 如需有關的 jQuery UI 的詳細資訊，請瀏覽其首頁： [ http://jqueryui.com/ ](http://jqueryui.com/)。
+ASP.NET MVC 3 的專案範本現在包含 jQuery、jQuery 驗證和 jQuery UI 的最新版本。 jQuery UI 是專案範本的新功能，並提供實用的使用者介面小工具。 如需 jQuery UI 的詳細資訊，請造訪其首頁： [http://jqueryui.com/](http://jqueryui.com/)。
 
 <a id="_Toc2_2"></a>
-### <a name="added-additionalmetadataattribute-class"></a>已新增 「 AdditionalMetadataAttribute"類別
+### <a name="added-additionalmetadataattribute-class"></a>已新增 "AdditionalMetadataAttribute" 類別
 
-您可以使用*AdditionalMetadataAttribute*類別，以填入*ModelMetadata.AdditionalValues*模型屬性的字典。
+您可以使用*AdditionalMetadataAttribute*類別來填入模型屬性的*ModelMetadata. AdditionalValues*字典。
 
-例如，假設檢視模型有應該僅向系統管理員顯示的屬性。 該模型可以標註，以作為索引鍵和 true 使用 AdminOnly，做為值，如下列範例所示的新屬性：
+例如，假設視圖模型具有應該只顯示給系統管理員的屬性。 該模型可以使用 AdminOnly 做為索引鍵的新屬性加上批註，並以 true 作為值，如下列範例所示：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample9.cs)]
 
-此中繼資料開放給任何的顯示器或編輯器範本呈現產品檢視模型時。 您可以決定為應用程式開發人員若要解譯的中繼資料資訊。
+當呈現產品視圖模型時，任何顯示或編輯器範本都會提供此中繼資料。 身為應用程式開發人員，您可以用它來解讀中繼資料資訊。
 
 <a id="_Toc2_3"></a>
-### <a name="improved-view-scaffolding"></a>改善的檢視 Scaffolding
+### <a name="improved-view-scaffolding"></a>改良的視圖樣板
 
-現在使用 scaffolding 檢視的 T4 範本產生範本協助程式方法的呼叫這類*EditorFor*而不是協助程式，例如*TextBoxFor*。 [新增檢視] 對話方塊產生的檢視時，這項變更可改善支援中的資料註解屬性形式的模型上的中繼資料。
+用於樣板視圖的 T4 範本現在會產生對範本協助程式方法的呼叫，例如*EditorFor* ，而不是像是*TextBoxFor*的協助程式。 這項變更會在 [加入視圖] 對話方塊產生視圖時，以資料批註屬性的形式改善模型上的中繼資料支援。
 
-新增檢視 scaffolding 也包含改良的偵測和慣例為基礎的模型上的主索引鍵資訊的使用方式。 例如，[新增檢視] 對話方塊中會使用此資訊，以確保主索引鍵值不會包含 scaffold 的可編輯的表單欄位。
+[加入視圖] 樣板也會根據慣例，在模型上包含改善的主要金鑰資訊偵測和使用方式。 例如，[加入視圖] 對話方塊會使用這項資訊來確保主要索引鍵值不會 scaffold 為可編輯的表單欄位。
 
-預設編輯和建立範本包括 jQuery 指令碼，用戶端驗證所需的參考。
+預設的 [編輯] 和 [建立] 範本包含用戶端驗證所需之 jQuery 腳本的參考。
 
 <a id="_Toc2_4"></a>
-### <a name="added-htmlraw-method"></a>加入的 Html.Raw 方法
+### <a name="added-htmlraw-method"></a>已新增 Html。 Raw 方法
 
-根據預設，Razor 檢視引擎將 HTML 編碼所有的值。 比方說，下列程式碼片段會將編碼的問候語變數內的 HTML，以便顯示在頁面中做`<strong>Hello World!</strong>`。
+根據預設，Razor view 引擎會對所有值進行 HTML 編碼。 例如，下列程式碼片段會將問候語變數中的 HTML 編碼，使其在頁面中顯示為 `<strong>Hello World!</strong>`。
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample10.cshtml)]
 
-新*Html.Raw*方法提供簡單的方式，已知為安全的內容時，顯示未編碼的 HTML。 下列範例會顯示相同的字串，但是字串會轉譯為標記：
+新的 *.html*方法提供簡單的方式，在已知內容安全時顯示未編碼的 Html。 下列範例會顯示相同的字串，但字串會轉譯為標記：
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample11.cshtml)]
 
 <a id="_Toc2_5"></a>
-### <a name="renamed-controllerviewmodel-property-and-the-view-property-to-viewbag"></a>已重新命名 「 Controller.ViewModel"屬性，「 檢視 」 屬性設定為"ViewBag 」
+### <a name="renamed-controllerviewmodel-property-and-the-view-property-to-viewbag"></a>將 "Controller. ViewModel" 屬性和 "View" 屬性重新命名為 "ViewBag"
 
-先前*ViewModel*屬性*控制站*採納*檢視*檢視的屬性。 這兩個屬性可用來存取值*ViewDataDictionary*物件使用動態屬性存取子的語法。 已重新命名這兩個屬性必須相同，以避免混淆，並更加一致。
+在過去，*控制器*的*ViewModel*屬性會雖然該值至視圖的*view*屬性。 這兩個屬性都提供使用動態屬性存取子語法來存取*ViewDataDictionary*物件值的方式。 這兩個屬性都已重新命名為相同，以避免混淆並使其更一致。
 
 <a id="_Toc2_6"></a>
-### <a name="renamed-controllersessionstateattribute-class-to-sessionstateattribute"></a>已重新命名 「 ControllerSessionStateAttribute 「 類別 」 SessionStateAttribute"
+### <a name="renamed-controllersessionstateattribute-class-to-sessionstateattribute"></a>將 "ControllerSessionStateAttribute" 類別重新命名為 "SessionStateAttribute"
 
-*ControllerSessionStateAttribute*類別 ASP.NET MVC 3 RC 版本中引進。 屬性已重新命名為更簡潔。
+*ControllerSessionStateAttribute*類別是在 ASP.NET MVC 3 的 RC 版本中引進。 屬性已重新命名為更簡潔。
 
 <a id="_Toc2_7"></a>
-### <a name="renamed-remoteattribute-fields-property-to-additionalfields"></a>已重新命名的 RemoteAttribute 「 欄位 」 屬性，以 「 AdditionalFields"
+### <a name="renamed-remoteattribute-fields-property-to-additionalfields"></a>將 RemoteAttribute "Fields" 屬性重新命名為 "AdditionalFields"
 
-*RemoteAttribute*類別的*欄位*屬性造成了些許混淆，在使用者之間。 重新命名這個屬性，以*AdditionalFields*釐清其意圖。
+*RemoteAttribute*類別的*Fields*屬性會在使用者之間造成一些混淆。 將此屬性重新命名為*AdditionalFields* ，表示其意圖。
 
 <a id="_Toc2_8"></a>
-### <a name="renamed-skiprequestvalidationattribute-to-allowhtmlattribute"></a>重新命名為"SkipRequestValidationAttribute"到"AllowHtmlAttribute 」
+### <a name="renamed-skiprequestvalidationattribute-to-allowhtmlattribute"></a>已將 "SkipRequestValidationAttribute" 重新命名為 "AllowHtmlAttribute"
 
-*SkipRequestValidationAttribute*屬性已重新命名為*AllowHtmlAttribute*為了更能代表其預定使用方式。
+*SkipRequestValidationAttribute*屬性已重新命名為*AllowHtmlAttribute* ，以更好的方式表示其預期的使用方式。
 
 <a id="_Toc2_9"></a>
-### <a name="changed-htmlvalidationmessage-method-to-display-the-first-useful-error-message"></a>已變更 」 Html.ValidationMessage 」 方法，以顯示第一個的實用錯誤訊息
+### <a name="changed-htmlvalidationmessage-method-to-display-the-first-useful-error-message"></a>已將 "ValidationMessage" 方法變更為顯示第一個有用的錯誤訊息
 
-*Html.ValidationMessage*方法已修正顯示第一個有用的錯誤訊息，而不是只顯示第一個錯誤。
+已修正*ValidationMessage*方法來顯示第一個有用的錯誤訊息，而不是只顯示第一個錯誤。
 
-模型繫結，期間*ModelState*字典可以填入多個來源的屬性，包括從模型本身相關的錯誤訊息 (如果它會實作*IValidatableObject*)，從驗證屬性套用至屬性，以及在存取屬性時擲回例外狀況。
+在模型系結期間，可以從多個來源填入*ModelState*字典，其中包含有關屬性的錯誤訊息，包括從模型本身（如果它會執行*IValidatableObject*）、從套用至屬性的驗證屬性，以及存取屬性時擲回的例外狀況。
 
-當*Html.ValidationMessage*方法會顯示驗證訊息，它會略過包含例外狀況的模型狀態項目，因為這些通常不適合的使用者。 相反地，此方法會尋找所關聯的例外狀況，並顯示該訊息的第一個驗證訊息。 如果不找到任何這類訊息時，它會預設為第一個例外狀況相關聯的一般錯誤訊息。
+當*ValidationMessage*方法顯示驗證訊息時，它會略過包含例外狀況的模型狀態專案，因為這通常不是供使用者使用。 相反地，方法會尋找未與例外狀況相關聯的第一個驗證訊息，並顯示該訊息。 如果找不到這類訊息，則會預設為與第一個例外狀況相關聯的一般錯誤訊息。
 
 <a id="_Toc2_10"></a>
-### <a name="fixed-model-declaration-to-not-add-whitespace-to-the-document"></a>固定@model宣告，以將空白新增至文件
+### <a name="fixed-model-declaration-to-not-add-whitespace-to-the-document"></a>已修正 @model 宣告，不要在檔中加入空白字元
 
-在舊版中， *@model*檢視頂端的宣告會加入呈現的 HTML 輸出中的空白行。 這個問題已修正，以便宣告不會產生空白字元。
+在舊版中，在視圖頂端的 `@model` 宣告，已將空白行新增至轉譯的 HTML 輸出。 已修正此問題，因此宣告不會引進空白字元。
 
 <a id="_Toc2_11"></a>
-### <a name="added-fileextensions-property-to-view-engines-to-support-engine-specific-file-names"></a>已新增 「 FileExtensions"屬性，以支援特定引擎的檔案名稱的檢視引擎
+### <a name="added-fileextensions-property-to-view-engines-to-support-engine-specific-file-names"></a>已新增 "Microsoft.extensions.configuration fileextensions" 屬性來查看引擎，以支援引擎特定的檔案名
 
-檢視引擎可以傳回檢視，使用明確的檢視路徑，如下列範例所示：
+視圖引擎可以使用明確的視圖路徑來傳回視圖，如下列範例所示：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample12.cs)]
 
-第一個檢視引擎一律會嘗試將檢視呈現。 根據預設，Web Form 檢視引擎是第一次的檢視引擎;Web Form 引擎無法轉譯 Razor 檢視，因為發生錯誤。 檢視引擎已經*FileExtensions*它們支援的屬性，用來指定哪些檔案副檔名。 ASP.NET 會判斷是否檢視引擎可以轉譯檔案時，會檢查這個屬性。 這是一項重大變更，而且包含更多詳細資料[的重大變更](#_Toc2_BC)這份文件的區段。
+第一個 view 引擎一律會嘗試呈現視圖。 根據預設，Web form view engine 是第一個 view 引擎;因為 Web 表單引擎無法轉譯 Razor 視圖，所以會發生錯誤。 View engine 現在有一個*microsoft.extensions.configuration fileextensions*屬性，用來指定支援的副檔名。 當 ASP.NET 判斷視圖引擎是否可以轉譯檔案時，會檢查這個屬性。 這是一項重大變更，此檔的[重大變更](#_Toc2_BC)一節包含更多詳細資料。
 
 <a id="_Toc2_12"></a>
-### <a name="fixed-labelfor-helper-to-emit-the-correct-value-for-the-for-attribute"></a>要發出的"For"屬性的正確值的固定"LabelFor 」 協助程式
+### <a name="fixed-labelfor-helper-to-emit-the-correct-value-for-the-for-attribute"></a>已修正 "LabelFor" Helper 以發出 "For" 屬性的正確值
 
-已修正的 bug 的位置*LabelFor*方法轉譯*如*符合的屬性*輸入*項目的*名稱*屬性改為識別碼 根據 W3C， *for*屬性應該符合*輸入*項目的識別碼。
+修正了 bug，其中*LabelFor*方法呈現了符合*輸入*專案之*name*屬性（而非其 ID）的*for*屬性。 根據 W3C， *for*屬性應符合*輸入*元素的識別碼。
 
 <a id="_Toc2_13"></a>
-### <a name="fixed-renderaction-method-to-give-explicit-values-precedence-during-model-binding"></a>已修正 「 RenderAction"的方法，讓模型繫結期間明確的值優先順序
+### <a name="fixed-renderaction-method-to-give-explicit-values-precedence-during-model-binding"></a>已修正 "RenderAction" 方法，以在模型系結期間提供明確值的優先順序
 
-在舊版中，明確的值已傳遞給*RenderAction*方法已由目前的表單值的子系動作內的模型繫結期間忽略。 此修正可確保明確的值優先模型繫結期間。
+在舊版中，傳遞至*RenderAction*方法的明確值，會在子動作內的模型系結期間忽略目前的表單值。 修正可確保明確的值在模型系結期間會優先。
 
 <a id="_Toc2_BC"></a>
 ## <a name="breaking-changes"></a>重大變更
 
-- 在舊版的 ASP.NET MVC 中，每個要求除了在少數情況下建立動作篩選條件。 此行為是永遠不會保證的行為，但只是實作詳細資料，並篩選條件的合約，就是將它們視為無狀態。 在 ASP.NET MVC 3 中，篩選會更積極地快取。 因此，您可能會中斷任何自訂動作篩選條件未正確儲存執行個體的狀態。
-- 執行例外狀況篩選條件的順序已變更為具有相同的例外狀況篩選條件*順序*值。 在 ASP.NET MVC 2 和舊版中，例外狀況的篩選具有相同的控制器*順序*值，在動作方法上所執行的動作方法的例外狀況篩選條件之前。 這通常會發生這個狀況，例外狀況篩選條件已套用時沒有指定之*順序*值。 在 ASP.NET MVC 3 中，此順序已顛倒，因此最特定的例外狀況處理常式會先執行。 如同舊版本中，如果*順序*屬性明確指定，則篩選條件會執行指定的順序。
-- 名為的新屬性*FileExtensions*已加入至*VirtualPathProviderViewEngine*基底類別。 當 ASP.NET 尋找檢視的路徑 （不是依名稱） 時，會被視為唯一的檢視，以這個新屬性所指定的清單中所包含的副檔名。 若要讓 Web 表單檢視的自訂副檔名註冊自訂的組建提供者，而且提供者使用的完整路徑，而不是名稱參考這些檢視，這是在應用程式中的重大變更。 因應措施是要修改的值*FileExtensions*屬性，以加入自訂的副檔名。
-- 直接實作的自訂控制器 factory 實作*IControllerFactory*介面必須提供新的實作*GetControllerSessionBehavior*方法加入此版本中的介面。 一般情況下，建議，不直接實作此介面，並改為衍生您的類別，從*DefaultControllerFactory*。
+- 在舊版的 ASP.NET MVC 中，除了少數情況以外，每個要求都會建立動作篩選準則。 這種行為絕對不是保證的行為，而是只有執行詳細資料，而篩選準則的合約是將其視為無狀態。 在 ASP.NET MVC 3 中，篩選會更積極地快取。 因此，任何不正確儲存實例狀態的自訂動作篩選可能會中斷。
+- 例外狀況篩選準則的執行順序已針對具有相同*順序*值的例外狀況篩選準則進行變更。 在 ASP.NET MVC 2 和更早版本中，控制器上的例外狀況篩選準則會在例外狀況篩選動作方法之前執行，其*順序*值與動作方法上的相同。 這通常是未使用指定的*順序*值來套用例外狀況篩選時的情況。 在 ASP.NET MVC 3 中，此順序已被反轉，因此最特定的例外狀況處理常式會先執行。 如同在舊版中，如果已明確指定*order*屬性，則會以指定的循序執行篩選。
+- 已將名為*microsoft.extensions.configuration fileextensions*的新屬性新增至*VirtualPathProviderViewEngine*基類。 當 ASP.NET 依路徑（而不是名稱）查詢檢視時，只會考慮包含在此新屬性所指定清單中具有副檔名的 views。 這是應用程式的重大變更，其中已註冊自訂群組建提供者以啟用 Web 表單檢視的自訂副檔名，以及提供者使用完整路徑（而非名稱）來參考這些視圖。 解決方法是修改*microsoft.extensions.configuration fileextensions*屬性的值，以包含自訂副檔名。
+- 直接執行*IControllerFactory*介面的自訂控制器 factory 預建必須提供新*GetControllerSessionBehavior*方法的實作為，這會在此版本中新增至介面。 一般來說，建議您不要直接執行此介面，而改為從*DefaultControllerFactory*衍生您的類別。
 
 <a id="_Toc2_KI"></a>
 ## <a name="known-issues"></a>已知問題
 
-- ASP.NET MVC 3 安裝程式才能夠安裝 NuGet 套件管理員的初始版本。 您已安裝的初始版本之後，可以安裝 NuGet，並使用 Visual Studio 延伸模組管理員來更新。 如果您已經有安裝 NuGet，請移至 Visual Studio 延伸模組組件庫更新至最新版的 NuGet。
-- 建立新的 ASP.NET MVC 3 專案的方案資料夾內的原因*NullReferenceException*時發生錯誤。 因應措施是解決方案的根目錄中建立 ASP.NET MVC 3 專案，然後將它移入方案資料夾。
-- 安裝程式可能會花更長的時間比舊版 ASP.NET MVC 到完成的。 這是因為它會更新 Visual Studio 2010 的元件。
-- 時已安裝 ReSharper，Razor 語法的 IntelliSense 不會無法運作。 如果您已安裝 ReSharper 且想要利用 ASP.NET MVC 3 RC2 中的 Razor IntelliSense 支援，請參閱文章[Razor Intellisense 和 ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) Hadi Hariri 部落格，其中討論了如何一起搭配使用今天。
-- 使用 ASP.NET MVC 3 的 Beta 版建立的 CSHTML 與 VBHTML 檢視並沒有正確設定其建置動作，與這些檢視的結果在發行專案時，會省略類型。 *建置動作*值這些檔案應該設定為內容 」。 ASP.NET MVC 3 RC2 修正此問題的新檔案，但不修正與搶鮮版所建立之專案的現有檔案的設定。![](mvc3-release-notes/_static/image4.png)
-- 在安裝期間，EULA 接受對話方塊會顯示在視窗比預期較小授權條款。
-- 當您在編輯 Razor 檢視 （.cshtml 檔案） 時，請移至控制器中功能表項目，在 Visual Studio 中的將無法使用，而且有任何程式碼片段。
-- 如果您安裝 ASP.NET MVC 3 for Visual Web Developer Express，其中未安裝 Visual Studio，在電腦上，然後再安裝 Visual Studio，您必須重新安裝 ASP.NET MVC 3。 Visual Studio 和 Visual Web Developer Express 共用的 ASP.NET MVC 3 安裝程式會升級的元件。 如果您沒有 Visual Web Developer Express，然後再安裝 Visual Web Developer Express 的電腦上安裝適用於 Visual Studio ASP.NET MVC 3，則會套用相同的問題。
-- 如果您已經安裝，安裝 ASP.NET MVC 3 RC 2 並不會更新 NuGet。 若要升級 NuGet，請移至 Visual Studio 擴充功能管理員和它應該顯示為可用的更新。 您可以從該處的最新發行版本升級 NuGet。
+- ASP.NET MVC 3 安裝程式只可以安裝 NuGet 套件管理員的初始版本。 安裝初始版本之後，您可以使用 Visual Studio 擴充管理員來安裝和更新 NuGet。 如果您已安裝 NuGet，請移至 Visual Studio 擴充功能庫，以更新為最新版本的 NuGet。
+- 在方案資料夾中建立新的 ASP.NET MVC 3 專案會造成*NullReferenceException*錯誤。 因應措施是在方案的根目錄中建立 ASP.NET MVC 3 專案，然後將它移至方案資料夾。
+- 安裝程式所需的時間可能比先前版本的 ASP.NET MVC 還長，因此無法完成。 這是因為它會更新 Visual Studio 2010 的元件。
+- 安裝 ReSharper 時，適用于 Razor 語法的 IntelliSense 無法運作。 如果您已安裝 ReSharper，而且想要利用 ASP.NET MVC 3 RC2 中的 Razor IntelliSense 支援，請參閱 Hadi Hariri 的 blog 中的專案[Razor intellisense 和 ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) ，其中會討論今日使用它們的方式。
+- 以 ASP.NET MVC 3 的 Beta 版建立的 CSHTML 和 VBHTML views 並未正確設定其組建動作，結果是在發行專案時，會省略這些檢視類型。 這些檔案的 [*組建動作*] 值應該設定為 [內容]。 ASP.NET MVC 3 RC2 會修正新檔案的這個問題，但不會更正以 Beta 版所建立之專案的現有檔案設定。![](mvc3-release-notes/_static/image4.png)
+- 在安裝期間，[接受 EULA] 對話方塊會在小於預期的視窗中顯示授權條款。
+- 當您編輯 Razor view （cshtml 檔案）時，Visual Studio 中的 [移至控制器] 功能表項目將無法使用，而且不會有程式碼片段。
+- 如果您在未安裝 Visual Studio 的電腦上安裝 ASP.NET MVC 3 for Visual Web Developer Express，然後在稍後安裝 Visual Studio，則必須重新安裝 ASP.NET MVC 3。 Visual Studio 和 Visual Web Developer Express 共用 ASP.NET MVC 3 安裝程式所升級的元件。 如果您在沒有 Visual Web Developer Express 的電腦上安裝 ASP.NET MVC Visual Studio 3，然後再安裝 Visual Web Developer Express，則適用相同的問題。
+- 如果您已安裝 ASP.NET MVC 3 RC 2，則不會更新 NuGet。 若要升級 NuGet，請移至 Visual Studio 擴充管理員，它應該會顯示為可用的更新。 您可以從該處將 NuGet 升級至最新版本。
 
 <a id="TOC_ASP_NET_3_RC"></a>
-## <a name="aspnet-mvc-3-release-candidate"></a>ASP.NET MVC 3 的候選版
+## <a name="aspnet-mvc-3-release-candidate"></a>ASP.NET MVC 3 發行候選版本
 
-ASP.NET MVC 發行候選版本已於 2010 年 11 月 9 日發行。
+ASP.NET MVC 發行候選版本已于2010年11月9日發行。
 
 <a id="_Toc276711785"></a>
-## <a name="new-features-in-aspnet-mvc-3-rc"></a>在 ASP.NET MVC 3 RC 的新功能
+## <a name="new-features-in-aspnet-mvc-3-rc"></a>ASP.NET MVC 3 RC 中的新功能
 
-本節說明已引進的功能在 beta 版發行以來的 ASP.NET MVC 3 RC 版本。
+本節說明自 Beta 版以來，已在 ASP.NET MVC 3 RC 版本中引進的功能。
 
 <a id="_Toc276711786"></a>
 ### <a name="nuget-package-manager"></a>NuGet 封裝管理員
 
-ASP.NET MVC 3 包含 NuGet 套件管理員 （前身為 NuPack），也就是 Visual Studio 專案中加入程式庫和工具的整合式的套件管理工具。 此工具會自動執行開發人員需要採取立即進入其來源樹狀結構中的文件庫的步驟。
+ASP.NET MVC 3 包含 NuGet 套件管理員（之前稱為 NuPack），這是整合的封裝管理工具，可用來將程式庫和工具新增至 Visual Studio 專案。 這種工具可讓開發人員立即採取的步驟，將程式庫帶入其來源樹狀結構中。
 
-您可以使用 NuGet 命令列工具、 整合式的主控台視窗在 Visual Studio 2010 內，從 Visual Studio 內容功能表中，和一組 PowerShell cmdlet。
+您可以使用 NuGet 做為命令列工具，作為 Visual Studio 2010 內的整合式主控台視窗，從 [Visual Studio] 內容功能表，以及一組 PowerShell Cmdlet。
 
-如需 NuGet 的詳細資訊，請參閱[Nuget 文件](https://docs.microsoft.com/nuget/)。
+如需 NuGet 的詳細資訊，請參閱[Nuget 檔](https://docs.microsoft.com/nuget/)。
 
 <a id="_Toc276711787"></a>
-### <a name="improved-new-project-dialog-box"></a>改善 [新增專案] 對話方塊
+### <a name="improved-new-project-dialog-box"></a>改良的 [新增專案] 對話方塊
 
-當您建立新的專案時，[新增專案] 對話方塊現在可讓您指定的檢視引擎，以及 ASP.NET MVC 專案類型。
+當您建立新的專案時，[新增專案] 對話方塊現在可讓您指定 view engine 以及 ASP.NET MVC 專案類型。
 
 ![](mvc3-release-notes/_static/image5.png)
 
-支援修改的範本和對話方塊中的引擎所列出的檢視清單包含在此版本中。
+此版本包含修改範本清單和對話方塊中所列之視圖引擎的支援。
 
-預設範本，如下所示：
+預設範本如下所示：
 
-空白。 包含最基本的 ASP.NET MVC 專案中，包括預設的目錄結構針對 ASP.NET MVC 專案，包含 ASP.NET MVC 樣式的預設值，而且包含預設 JavaScript 檔案的指令碼目錄 Site.css 檔案的檔案。
+空白。 包含 ASP.NET MVC 專案的最小檔案集，包括 ASP.NET MVC 專案的預設目錄結構、包含預設 ASP.NET MVC 樣式的 .css 檔案，以及包含預設 JavaScript 檔案的腳本目錄。
 
-網際網路應用程式。 包含範例示範如何使用 ASP.NET MVC 中的成員資格提供者的功能。
+網際網路應用程式。 包含範例功能，示範如何搭配使用成員資格提供者與 ASP.NET MVC。
 
-在 Windows 登錄中指定，會顯示在對話方塊中的專案範本清單。
+對話方塊中顯示的專案範本清單會在 Windows 登錄中指定。
 
 <a id="_Toc276711788"></a>
-### <a name="sessionless-controllers"></a>無工作階段的控制站
+### <a name="sessionless-controllers"></a>無會話控制器
 
-新*ControllerSessionStateAttribute*讓您進一步控制工作階段狀態行為的控制站藉由指定[System.Web.SessionState.SessionStateBehavior](https://msdn.microsoft.com/library/system.web.sessionstate.sessionstatebehavior.aspx)列舉值。
+新的*ControllerSessionStateAttribute*會藉由指定[SessionState SessionStateBehavior](https://msdn.microsoft.com/library/system.web.sessionstate.sessionstatebehavior.aspx)列舉值，讓您更充分掌控控制器的會話狀態行為。
 
-下列範例示範如何關閉控制站的所有要求的工作階段狀態。
+下列範例顯示如何關閉對控制器之所有要求的會話狀態。
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample13.cs)]
 
-下列範例示範如何將所有要求的唯讀工作階段狀態設定為一個控制站。
+下列範例顯示如何設定對控制器之所有要求的唯讀會話狀態。
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample14.cs)]
 
@@ -531,15 +531,15 @@ ASP.NET MVC 3 包含 NuGet 套件管理員 （前身為 NuPack），也就是 Vi
 
 #### <a name="compareattribute"></a>CompareAttribute
 
-新*CompareAttribute*驗證屬性可讓您比較兩個不同的模型屬性的值。 在下列範例中， *ComparePassword*屬性必須符合*密碼*欄位才會生效。
+新的*CompareAttribute*驗證屬性可讓您比較模型中兩個不同屬性的值。 在下列範例中， *ComparePassword*屬性必須符合*密碼*欄位，才會生效。
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample15.cs)]
 
 #### <a name="remoteattribute"></a>RemoteAttribute
 
-新*RemoteAttribute*驗證屬性會充分利用 jQuery 驗證外掛程式中的遠端驗證程式，可讓用戶端驗證，以呼叫執行實際的驗證邏輯的伺服器上的方法。
+新的*RemoteAttribute*驗證屬性會利用 jQuery 驗證外掛程式的遠端驗證程式，這可讓用戶端驗證在執行實際驗證邏輯的伺服器上呼叫方法。
 
-在下列範例中，*使用者名稱*屬性具有*RemoteAttribute*套用。 編輯這個屬性，在 編輯檢視中的，用戶端驗證將會呼叫名為動作*UserNameAvailable*上*UsersController*以驗證這個欄位的類別。
+在下列範例中， *UserName*屬性已套用*RemoteAttribute* 。 在編輯檢視中編輯此屬性時，用戶端驗證會在*UsersController*類別上呼叫名為*UserNameAvailable*的動作，以便驗證此欄位。
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample16.cs)]
 
@@ -547,114 +547,114 @@ ASP.NET MVC 3 包含 NuGet 套件管理員 （前身為 NuPack），也就是 Vi
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample17.cs)]
 
-根據預設，屬性會套用至屬性名稱會做為查詢字串參數傳送至動作方法。
+根據預設，套用屬性的屬性名稱會以查詢字串參數的形式傳送至動作方法。
 
 <a id="_Toc276711790"></a>
-### <a name="new-overloads-for-labelfor-and-labelformodel-methods"></a>新的多載，如 「 LabelFor"和"LabelForModel 」 方法
+### <a name="new-overloads-for-labelfor-and-labelformodel-methods"></a>"LabelFor" 和 "LabelForModel" 方法的新多載
 
-已新增新的多載*LabelFor*並*LabelForModel*方法可讓您指定的標籤文字。 下列範例示範如何使用這些多載。
+已新增*LabelFor*和*LabelForModel*方法的新多載，可讓您指定標籤文字。 下列範例顯示如何使用這些多載。
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample18.cshtml)]
 
 <a id="_Toc276711791"></a>
-### <a name="child-action-output-caching"></a>子系動作的輸出快取
+### <a name="child-action-output-caching"></a>子動作輸出快取
 
-*OutputCacheAttribute*支援的使用會呼叫的子系動作的輸出快取*Html.RenderAction*或是*Html.Action* helper 方法。 下列範例會顯示呼叫另一個動作的檢視。
+*OutputCacheAttribute*支援使用*RenderAction*或*html. 動作*協助程式方法所呼叫之子動作的輸出快取。 下列範例顯示呼叫另一個動作的視圖。
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample19.cshtml)]
 
-*GetDate*附註動作*OutputCacheAttribute*:
+*GetDate*動作會以*OutputCacheAttribute*標注：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample20.cs)]
 
-此程式碼執行時，會快取 100 秒 Html.Action("GetDate") 呼叫的結果。
+當此程式碼執行時，會快取呼叫 Html. Action （"GetDate"）的結果100秒。
 
 <a id="_Toc276711792"></a>
-### <a name="add-view-dialog-box-improvements"></a>[新增檢視] 對話方塊改進
+### <a name="add-view-dialog-box-improvements"></a>[加入視圖] 對話方塊的改善
 
-當您新增的強型別的檢視時，[新增檢視] 對話方塊現在會篩選出多個不適用類型比在舊版中，例如許多核心.NET Framework 型別。 此外，清單現在會排序類別名稱，而不是完整限定的類型名稱，讓您更輕鬆地尋找類型。 例如，型別名稱現在會顯示如下列範例所示：
+當您加入強型別視圖時，[加入視圖] 對話方塊現在會篩選出比舊版更不適用的類型，例如許多核心 .NET Framework 類型。 此外，此清單現在會依類別名稱排序，而不是完整的類型名稱，讓您更輕鬆地尋找類型。 例如，現在會顯示類型名稱，如下列範例所示：
 
-類別名稱 （命名空間）
+ClassName （命名空間）
 
-在舊版中，這會顯示如下所示：
+在先前的版本中，這會顯示如下：
 
-Namespace.ClassName
+Namespace. ClassName
 
 <a id="_Toc276711793"></a>
-### <a name="granular-request-validation"></a>詳細的要求驗證
+### <a name="granular-request-validation"></a>細微要求驗證
 
-*排除*屬性*validateinputattribute 套用*已不存在。 相反地，若要在模型繫結期間略過之模型的特定屬性的要求驗證，請使用 新*SkipRequestValidationAttribute*。
+*Validateinputattribute 套用*的*Exclude*屬性不再存在。 相反地，若要在模型系結期間略過模型特定屬性的要求驗證，請使用新的*SkipRequestValidationAttribute*。
 
-例如，假設動作方法用來編輯部落格文章：
+例如，假設有一個動作方法用來編輯 blog 文章：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample21.cs)]
 
-下列範例顯示的檢視模型的部落格文章。
+下列範例顯示 blog 文章的視圖模型。
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample22.cs)]
 
-當使用者送出某些描述屬性的標記時，模型繫結會因要求驗證。 若要停用要求驗證的部落格文章描述的模型繫結期間，套用*SkipRequpestValidationAttribute*屬性，在此範例中所示:。
+當使用者提交 Description 屬性的某些標記時，模型系結會因為要求驗證而失敗。 若要在進行 blog 文章描述的模型系結期間停用要求驗證，請將*SkipRequpestValidationAttribute*套用至屬性，如下列範例所示：。
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample23.cs)]
 
-或者，若要關閉之模型的每個屬性的要求驗證，套用*validateinputattribute 套用*值是*false*至動作方法：
+或者，若要關閉模型的每個屬性的要求驗證，請將值為*false*的*validateinputattribute 套用*套用至動作方法：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample24.cs)]
 
 <a id="_Toc276711794"></a>
 ## <a name="breaking-changes"></a>重大變更
 
-- 執行例外狀況篩選條件的順序已變更為具有相同的例外狀況篩選條件*順序*值。 在 ASP.NET MVC 2 和舊版中，例外狀況的篩選具有相同的控制器*順序*動作方法上所執行的動作方法的例外狀況篩選條件之前。 這通常會發生這個狀況，例外狀況篩選條件已套用時沒有指定之*順序*值。 在 ASP.NET MVC 3 中，此順序已顛倒，因此最特定的例外狀況處理常式會先執行。 如同舊版本中，如果*順序*屬性明確指定，則篩選條件會執行指定的順序。
-- 新增名為的新屬性*FileExtensions*要*VirtualPathProviderViewEngine*基底類別。 當查詢檢視的路徑 （而不是名稱），只檢視中所包含的檔案副檔名為視為這個新屬性所指定的清單。 這是一項重大變更的人註冊自訂的組建提供者若要啟用 web 表單檢視的自訂副檔名，並會使用完整路徑，而不是名稱來參考這些檢視表。 因應措施是要修改的值*FileExtensions*屬性，以加入自訂的副檔名。
+- 例外狀況篩選準則的執行順序已針對具有相同*順序*值的例外狀況篩選準則進行變更。 在 ASP.NET MVC 2 和更早版本中，控制器上的例外狀況篩選準則會在例外狀況篩選動作方法之前執行，其*順序*與動作方法上的相同。 這通常是未使用指定的*順序*值來套用例外狀況篩選時的情況。 在 ASP.NET MVC 3 中，此順序已被反轉，因此最特定的例外狀況處理常式會先執行。 如同在舊版中，如果已明確指定*order*屬性，則會以指定的循序執行篩選。
+- 將名為*microsoft.extensions.configuration fileextensions*的新屬性新增至*VirtualPathProviderViewEngine*基類。 依路徑（而不是依名稱）查閱 view 時，只會考慮使用此新屬性所指定之清單中包含副檔名的 views。 這是針對註冊自訂群組建提供者以啟用 web 表單檢視之自訂副檔名，並使用完整路徑（而非名稱）來參考這些視圖的使用者的重大變更。 解決方法是修改*microsoft.extensions.configuration fileextensions*屬性的值，以包含自訂副檔名。
 
 <a id="_Toc276711795"></a>
 ## <a name="known-issues"></a>已知問題
 
-- 安裝程式可能會花更長的時間比舊版 ASP.NET MVC 到完成，因為它會更新 Visual Studio 2010 元件的。
-- 選取 astrongly 時加入檢視樣板型別檢視表會 scaffold 唯寫屬性。 這些應該一律 scaffolding 所忽略。 [新增檢視] 對話方塊產生的 [編輯] 或 [建立] 檢視時，也則唯讀屬性。 唯讀屬性應該只包含 scaffold 的 顯示 和 清單檢視。
-- ASP.NET MVC 3 會連同 Async CTP 安裝時，無法運作偵錯。 ASP.NET MVC 3 不能是已安裝的並行與非同步版 CTP。 解除安裝 Async CTP 修復偵錯。 如需詳細資訊，請參閱[此部落格文章](http://drew-prog.blogspot.com/2010/11/how-to-uninstall-microsoft-aspnet-mvc-3.html)需解除安裝 ASP.NET MVC 3 rc 的所有項目。
-- 時已安裝 Resharper，razor Intellisense 不會無法運作。 如果您已安裝 ReSharper 且想要利用 Razor intellisense 支援在 ASP.NET MVC 3 RC，請閱讀[此部落格文章](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/)jetbrains 其中討論如何一起搭配使用今天。
-- 使用 ASP.NET MVC 3 的 beta 版建立的 CSHTML 與 VBHTML 檢視並沒有其建置動作正確會省略它們發佈。 *建置動作*這些檔案應該設定為 「 內容 」。 ASP.NET MVC 3 RC 修正此問題的新檔案，但不修正與 beta 版所建立之專案的現有檔案的設定。
-- 安裝程式可能會花更長的時間比舊版 ASP.NET MVC 到完成，因為它會更新 Visual Studio 2010 元件的。
-- 新增檢視 scaffolding 時選取 編輯，強型別 檢視會 scaffold 唯讀屬性。 同樣地，唯寫屬性會包含 scaffold 的 「 顯示 」 檢視。
-- 在安裝期間，EULA 接受對話方塊會顯示在視窗比預期較小授權條款。
-- 安裝 Visual Studio Async CTP 包含的工具安裝 ASP.NET MVC 3 Razor 隨著導致衝突。 請確定您未嘗試在同一部電腦上安裝 Visual Studio Async CTP 和 Razor 版本。
-- 當您在編輯 Razor 檢視 （.cshtml 檔案） 時，請移至控制器中功能表項目，在 Visual Studio 中的將無法使用，而且有任何程式碼片段。
+- 安裝程式所需的時間可能比舊版的 ASP.NET MVC 更長，因為它會更新 Visual Studio 2010 的元件。
+- 選取 astrongly 具類型的 view scaffold 僅限寫入屬性時的加入視圖。 這些樣板應一律予以忽略。 當產生「編輯」或「建立」視圖時，[加入視圖] 對話方塊也會 scaffold 唯讀屬性。 唯讀屬性只應針對顯示和列出視圖進行 scaffold。
+- 當 ASP.NET MVC 3 與非同步 CTP 一起安裝時，不能進行調試。 ASP.NET MVC 3 無法與非同步 CTP 並存安裝。 卸載非同步 CTP 以修復調試。 如需詳細資訊，請閱讀[這篇](http://drew-prog.blogspot.com/2010/11/how-to-uninstall-microsoft-aspnet-mvc-3.html)關於卸載 ASP.NET MVC 3 RC 所有部分的文章。
+- 安裝 Resharper 時，Razor Intellisense 無法運作。 如果您已安裝 ReSharper，而且想要利用 ASP.NET MVC 3 RC 中的 Razor intellisense 支援，請閱讀來自 JetBrains 的[這篇 blog 文章](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/)，其中會討論今天使用這些專案的方法。
+- 以 ASP.NET MVC 3 搶鮮版建立的 CSHTML 和 VBHTML views，其組建動作不會正確地使其無法發行。 這些檔案的*組建動作*應設定為 [內容]。 ASP.NET MVC 3 RC 會針對新檔案修正此問題，但不會更正以 Beta 版所建立之專案的現有檔案設定。
+- 安裝程式所需的時間可能比舊版的 ASP.NET MVC 更長，因為它會更新 Visual Studio 2010 的元件。
+- 選取 [編輯] [強型別視圖] scaffold 唯讀屬性時的 [加入視圖] 樣板。 同樣地，[顯示] 視圖也會 scaffold 僅限寫入的屬性。
+- 在安裝期間，[接受 EULA] 對話方塊會在小於預期的視窗中顯示授權條款。
+- 安裝 Visual Studio 非同步 CTP 會與 ASP.NET MVC 3 工具安裝中包含的 Razor 版本發生衝突。 請確定您未嘗試在同一部電腦上安裝 Visual Studio 非同步 CTP 和 Razor 版本。
+- 當您編輯 Razor view （cshtml 檔案）時，Visual Studio 中的 [移至控制器] 功能表項目將無法使用，而且不會有程式碼片段。
 
 <a id="TOC_ASP_NET_3_Beta"></a>
-## <a name="aspnet-mvc-3-beta"></a>ASP.NET MVC 3 beta 版
+## <a name="aspnet-mvc-3-beta"></a>ASP.NET MVC 3 Beta
 
-ASP.NET MVC 3 Beta 已於 2010 年 10 月 6 日發行。 下列資訊僅供 Beta 版本中，並受到任何更新或參考 ASP.NET MVC 3 Release Candidate 節中的變更。
+ASP.NET MVC 3 Beta 已于2010年10月6日發行。 下列是 Beta 版特有的附注，受限於上述 ASP.NET MVC 3 發行候選章節中所參考的任何更新或變更。
 
-## <a id="0.1__Toc274034215"></a>  新的 Featuresin ASP.NET MVC 3 beta 版
+## <a id="0.1__Toc274034215"></a>新的 Featuresin ASP.NET MVC 3 Beta
 
-<a id="0.1__Default_validation_system"></a>本節說明已引進的功能的 ASP.NET MVC 3 Beta 版。
+<a id="0.1__Default_validation_system"></a>本節說明 ASP.NET MVC 3 Beta 版本中引進的功能。
 
-### <a id="0.1__Toc274034216"></a>  NuGet Package Manager
+### <a id="0.1__Toc274034216"></a>NuGet 套件管理員
 
-ASP.NET MVC 3 包含 NuGet 套件管理員，也就是新增程式庫的整合式的套件管理工具和 Visual Studio 專案的工具。 大部分的情況下，它會自動化開發人員需要採取立即進入其來源樹狀結構中的文件庫的步驟。
+ASP.NET MVC 3 包含 NuGet 套件管理員，這是一個整合的封裝管理工具，可用來將程式庫和工具新增至 Visual Studio 專案。 在大部分的情況下，它會將開發人員立即採取的步驟自動化，以將程式庫帶入其來源樹狀結構。
 
-您可以使用 NuGet 命令列工具、 整合式的主控台視窗在 Visual Studio 2010 內，從 Visual Studio 內容功能表中，和一組 PowerShell cmdlet。
+您可以使用 NuGet 做為命令列工具，做為 Visual Studio 2010 內的整合式主控台視窗，從 [Visual Studio] 內容功能表，以及一組 PowerShell Cmdlet。
 
-如需 NuGet 的詳細資訊，請參閱[NuGet 文件](https://docs.microsoft.com/nuget/)。
+如需 NuGet 的詳細資訊，請參閱[Nuget 檔](https://docs.microsoft.com/nuget/)。
 
-### <a id="0.1__Toc274034217"></a>  改善 [新增專案] 對話方塊
+### <a id="0.1__Toc274034217"></a>改良的 [新增專案] 對話方塊
 
-當您建立新的專案時，[新增專案] 對話方塊現在可讓您指定的檢視引擎，以及 ASP.NET MVC 專案類型。
+當您建立新的專案時，[新增專案] 對話方塊現在可讓您指定 view engine 以及 ASP.NET MVC 專案類型。
 
 ![](mvc3-release-notes/_static/image6.png)
 
-在此版本中不包含修改範本清單檢視引擎的對話方塊中所列出的支援。
+此版本不包含修改對話方塊中所列的範本清單和視圖引擎的支援。
 
-預設範本，如下所示：
+預設範本如下所示：
 
-空白。 包含最基本的 ASP.NET MVC 專案中，包括預設的目錄結構針對 ASP.NET MVC 專案中，小型的 Site.css 檔案，其中包含 ASP.NET MVC 樣式的預設值和指令碼目錄的預設 JavaScript 檔案所在的檔案。
+空白。 包含 ASP.NET MVC 專案的最小檔案集，包括 ASP.NET MVC 專案的預設目錄結構、包含預設 ASP.NET MVC 樣式的小型網站 .css 檔案，以及包含預設 JavaScript 檔案的腳本目錄。
 
-網際網路應用程式。 包含範例示範如何使用 ASP.NET MVC 中的成員資格提供者的功能。
+網際網路應用程式。 包含範例功能，示範如何在 ASP.NET MVC 中使用成員資格提供者。
 
-### <a id="0.1__Toc274034218"></a>  簡化的方式，來指定強型別在 Razor 檢視中的模型
+### <a id="0.1__Toc274034218"></a>在 Razor Views 中指定強型別模型的簡化方式
 
-指定強型別 Razor 檢視的模型類型的方法已經過簡化，使用新@modelCSHTML 檢視指示詞和@ModelTypeVBHTML 檢視指示詞。 在舊版的 ASP.NET MVC 中，您將指定的強型別的模型的 Razor 檢視這種方式：
+為強型別 Razor views 指定模型類型的方法，已經使用適用于 CSHTML views 的新 @model 指示詞和 VBHTML 視圖的 @ModelType 指示詞來簡化。 在舊版的 ASP.NET MVC 中，您會以這種方式指定 Razor views 的強型別模型：
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample25.cshtml)]
 
@@ -662,205 +662,205 @@ ASP.NET MVC 3 包含 NuGet 套件管理員，也就是新增程式庫的整合�
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample26.cshtml)]
 
-### <a id="0.1__Toc274034219"></a>  支援新的 ASP.NET Web 網頁的 Helper 方法
+### <a id="0.1__Toc274034219"></a>支援新的 ASP.NET Web Pages Helper 方法
 
-新的 ASP.NET Web Pages 技術包含一組可用於加入檢視及控制器的常用的功能的協助程式方法。 ASP.NET MVC 3 支援使用這些 helper 方法，在控制器和檢視 （適當的話）。 這些方法都包含在 System.Web.Helpers 組件。 下表列出數個 ASP.NET Web Pages helper 方法。
+新的 ASP.NET Web Pages 技術包含一組協助程式方法，適用于將常用的功能新增至視圖和控制器。 ASP.NET MVC 3 支援在控制器和瀏覽器中使用這些協助程式方法（適當時）。 這些方法包含在 System.web. helper 元件中。 下表列出幾個 ASP.NET Web Pages helper 方法。
 
-| **Helper** | **描述** |
+| **輔助** | **說明** |
 | --- | --- |
-| 圖表 | 呈現的圖表檢視中。 包含 Chart.ToWebImage、 Chart.Save，等 Chart.Write 的方法。 |
-| 密碼編譯 | 它使用雜湊演算法，以建立正確 salted 和雜湊密碼。 |
-| WebGrid | 以方格呈現物件 （一般而言，資料庫中的資料） 的集合。 分頁和排序的支援。 |
+| 圖表 | 呈現視圖中的圖表。 包含 ToWebImage、Chart、Save 和 Chart 之類的方法。 |
+| Ipp | 會使用雜湊演算法來建立適當的 salted 和雜湊密碼。 |
+| WebGrid | 將物件的集合（通常是資料庫的資料）當做方格呈現。 支援分頁和排序。 |
 | WebImage | 呈現影像。 |
 | WebMail | 傳送電子郵件訊息。 |
 
-快速參考主題將列出的協助程式 」 和 「 基本語法是使用 ASP.NET Razor 語法會位於下列 URL 的一部分：
+列出協助程式和基本語法的快速參考主題可在 ASP.NET Razor 語法檔中取得，網址為下列 URL：
 
 [https://www.asp.net/webmatrix/tutorials/asp-net-web-pages-api-reference](../web-pages/overview/api-reference/asp-net-web-pages-api-reference.md)
 
-### <a id="0.1__Toc274034220"></a>  其他相依性插入支援
+### <a id="0.1__Toc274034220"></a>其他相依性插入支援
 
-建置 ASP.NET MVC 3 Preview 1 版本上，目前的版本會包含已新增兩個新的服務和四個現有的服務，支援並改善對相依性解析和通用服務定位程式支援。
+目前的版本是以 ASP.NET MVC 3 Preview 1 版本為基礎，其中包括新增了兩項新服務和四個現有服務的支援，並改善了對相依性解析和一般服務定位器的支援。
 
-#### <a name="new-icontrolleractivator-interface-for-fine-grained-controller-instantiation"></a>更細緻的控制站的具現化新 IControllerActivator 介面
+#### <a name="new-icontrolleractivator-interface-for-fine-grained-controller-instantiation"></a>用於微調控制器具現化的新 IControllerActivator 介面
 
-新的 IControllerActivator 介面會提供更細微的控制，透過控制器會執行個體化的方式透過相依性插入。 下列範例顯示的介面：
+新的 IControllerActivator 介面可讓您更精細地控制透過相依性插入來具現化控制器的方式。 下列範例顯示介面：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample27.cs)]
 
-與此相反角色的控制器 factory。 控制器 factory 會負責尋找控制器類型和具現化該控制器型別的執行個體的 IControllerFactory 介面的實作。
+這與控制器 factory 的角色相反。 控制器 factory 是 IControllerFactory 介面的實作為，負責尋找控制器類型，以及具現化該控制器類型的實例。
 
-控制器啟動項會只負責具現化控制器型別的執行個體。 它們不會執行查閱控制器類型。 找到適當的控制器類型之後, 控制器 factory 應該委派 IControllerActivator 的執行個體，以處理實際的具現化控制器。
+控制器啟動程式只負責具現化控制器類型的實例。 它們不會執行控制器類型查閱。 找出適當的控制器類型之後，控制器 factory 應委派給 IControllerActivator 的實例，以處理控制器的實際具現化。
 
-DefaultControllerFactory 類別具有新的建構函式可接受 IControllerFactory 執行個體。 這可讓您套用管理控制站建立的這個部分，而不需要覆寫預設的控制器類型查閱行為的相依性插入。
+DefaultControllerFactory 類別具有接受 IControllerFactory 實例的新函式。 這可讓您套用相依性插入，以管理控制器建立的這個層面，而不需要覆寫預設的控制器類型查閱行為。
 
-#### <a name="iservicelocator-interface-replaced-with-idependencyresolver"></a>IServiceLocator 介面取代 IDependencyResolver
+#### <a name="iservicelocator-interface-replaced-with-idependencyresolver"></a>IServiceLocator 介面已取代為 IDependencyResolver
 
-根據社群意見反應，ASP.NET MVC 3 Beta 版已取代 IServiceLocator 介面使用特定的 ASP.NET MVC 需求精簡 IDependencyResolver 介面。 下列範例示範新的介面：
+根據社區的意見反應，ASP.NET MVC 3 Beta 版已將 IServiceLocator 介面的使用取代為 ASP.NET MVC 需求特有的簡式 IDependencyResolver 介面。 下列範例顯示新的介面：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample28.cs)]
 
-隨著這項變更的詳細資訊，也已取代 dependencyresolver 來註冊類別的 servicelocator，使其類別。 註冊相依性解析程式的作業類似於舊版的 ASP.NET MVC:
+做為這項變更的一部分，ServiceLocator 類別也會取代為 DependencyResolver 類別。 相依性解析程式的註冊類似于舊版的 ASP.NET MVC：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample29.cs)]
 
-要註冊為提供服務要求的型別，這個介面的實作只應該委派到基礎的相依性插入容器。
+此介面的執行應直接委派至基礎相依性插入容器，以提供所要求類型的已註冊服務。
 
-所要求型別的任何註冊的服務時，ASP.NET MVC 預期會實作這個介面從 GetService 傳回 null，並從 GetServices 傳回空集合。
+當沒有所要求類型的已註冊服務時，ASP.NET MVC 會預期此介面的執行會從 GetService 傳回 null，並從 GetServices 傳回空集合。
 
-新的 dependencyresolver 來註冊類別可讓您註冊新的 IDependencyResolver 介面或通用服務定位程式介面 (IServiceLocator) 實作的類別。 如需有關通用服務定位程式的詳細資訊，請參閱[GitHub 上的 CommonServiceLocator](https://github.com/unitycontainer/commonservicelocator)。
+新的 DependencyResolver 類別可讓您註冊用來執行新 IDependencyResolver 介面或泛型服務定位器介面（IServiceLocator）的類別。 如需有關一般服務定位器的詳細資訊，請參閱[GitHub 上的 CommonServiceLocator](https://github.com/unitycontainer/commonservicelocator)。
 
 <a id="0.1__Breaking_Changes"></a>
 
-#### <a name="new-iviewactivator-interface-for-fine-grained-view-page-instantiation"></a>更細緻的檢視頁面具現化新 IViewActivator 介面
+#### <a name="new-iviewactivator-interface-for-fine-grained-view-page-instantiation"></a>微調視圖頁面具現化的新 IViewActivator 介面
 
-新的 IViewPageActivator 介面會提供更細微的控制，透過檢視頁面會執行個體化的方式透過相依性插入。 這適用於 WebFormView 執行個體和 RazorView 執行個體。 下列範例示範新的介面：
+新的 IViewPageActivator 介面可讓您更精細地控制透過相依性插入來具現化視圖頁面的方式。 這同時適用于 WebFormView 實例和 RazorView 實例。 下列範例顯示新的介面：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample30.cs)]
 
-這些類別現在接受 IViewPageActivator 建構函式引數，可讓您使用相依性插入來控制 ViewPage、 ViewUserControl 和 WebViewPage 類型執行個體化的方式。
+這些類別現在接受 IViewPageActivator 的函式引數，可讓您使用相依性插入來控制 ViewPage、ViewUserControl 和 WebViewPage 類型的具現化方式。
 
-#### <a name="new-dependency-resolver-support-for-existing-services"></a>新的現有服務的相依性解析程式支援
+#### <a name="new-dependency-resolver-support-for-existing-services"></a>現有服務的新相依性解析程式支援
 
-新的版本包括相依性解析支援下列服務：
+新版本包含下列服務的相依性解析支援：
 
-- 模型驗證提供者。 類別可實作 ModelValidatorProvider 可以註冊相依性解析程式中，系統會使用它們來支援用戶端和伺服器端驗證。
-- 模型中繼資料提供者。 單一類別可實作 ModelMetadataProvider 可以註冊相依性解析程式中，系統會使用它來提供中繼資料範本化和驗證系統。
-- 值提供者。 類別可實作 ValueProviderFactory 可以註冊相依性解析程式中，系統會使用它們來建立控制器和模型繫結期間所使用的值提供者。
-- 模型繫結器。 類別可實作 Bytearraymodelbinderprovider 可以註冊相依性解析程式中，系統會使用它們來建立模型繫結器所使用的模型繫結系統。
+- 模型驗證提供者。 執行 ModelValidatorProvider 的類別可以在相依性解析程式中註冊，而且系統會使用它們來支援用戶端和伺服器端驗證。
+- 模型中繼資料提供者。 實 ModelMetadataProvider 的單一類別可以在相依性解析程式中註冊，而且系統會使用它來提供範本化和驗證系統的中繼資料。
+- 值提供者。 實 ValueProviderFactory 的類別可以在相依性解析程式中註冊，而且系統會使用它們來建立控制器和模型系結期間所使用的值提供者。
+- 模型系結器。 實 IModelBinderProvider 的類別可以在相依性解析程式中註冊，而且系統會使用它們來建立模型系結系統所使用的模型系結器。
 
-### <a id="0.1__Toc274034221"></a>  新的支援不顯眼的 Jquery ajax
+### <a id="0.1__Toc274034221"></a>不顯眼的 jQuery 型 Ajax 的新支援
 
-ASP.NET MVC 包括 Ajax helper 方法，如下所示：
+ASP.NET MVC 包含 Ajax helper 方法，如下所示：
 
-- Ajax.ActionLink
-- Ajax.RouteLink
-- Ajax.BeginForm
-- Ajax.BeginRouteForm
+- Ajax Html.actionlink
+- Ajax. RouteLink
+- Ajax. Html.beginform
+- Ajax. BeginRouteForm
 
-這些方法會使用 JavaScript 來叫用動作方法上的伺服器，而不是使用完整的回傳。 這項功能已更新為利用 jQuery 低調的方式。 而不干擾的方式發出內嵌用戶端指令碼，這些 helper 方法不同的行為從標記發出使用 HTML5 屬性*資料 ajax*前置詞。 然後行為會套用至該標記以藉由參考適當的 JavaScript 檔案。 請確定會參考下列 JavaScript 檔案：
+這些方法會使用 JavaScript 在伺服器上叫用動作方法，而不是使用完整回傳。 這項功能已更新為以不顯眼的方式利用 jQuery。 這些 helper 方法會使用*data ajax*前置詞發出 HTML5 屬性，而不是發出內嵌用戶端腳本干擾。 然後藉由參考適當的 JavaScript 檔案，將行為套用至標記。 請確定已參考下列 JavaScript 檔案：
 
-- jquery-1.4.1.js
-- jquery.unobtrusive.ajax.js
+- jquery-1.7.2.min.js 1.4.1 .js
+- jquery. 不顯眼的 .js
 
-中的 Web.config 檔案中的 ASP.NET MVC 3 新專案範本，預設會啟用此功能，但對於現有的專案預設會停用。 如需詳細資訊，請參閱 <<c0> [ 加入應用程式範圍的旗標，用戶端驗證和不顯眼的 JavaScript](#0.1_AddedApplicationWideFlagsForClientValida)本文件稍後的。
+在 ASP.NET MVC 3 新專案範本的 web.config 檔案中，預設會啟用這項功能，但現有專案預設會停用。 如需詳細資訊，請參閱本檔稍後的[針對用戶端驗證和不顯眼的 JavaScript 新增應用程式範圍的旗標](#0.1_AddedApplicationWideFlagsForClientValida)。
 
-### <a id="0.1__Toc274034222"></a>  新的支援，適用於不顯眼的 jQuery 驗證
+### <a id="0.1__Toc274034222"></a>不顯眼 jQuery 驗證的新支援
 
-根據預設，ASP.NET MVC 3 beta 版會使用 jQuery 驗證以執行用戶端驗證以不顯眼的方式。 若要啟用不顯眼的用戶端驗證，請如下所示從檢視中的呼叫：
+根據預設，ASP.NET MVC 3 Beta 會以不顯眼的方式使用 jQuery 驗證，來執行用戶端驗證。 若要啟用不顯眼的用戶端驗證，請從視圖內部進行呼叫，如下所示：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample31.cs)]
 
-這需要 ViewContext.UnobtrusiveJavaScriptEnabled 屬性設為 true 時，您可以這麼做，請執行下列呼叫：
+這會要求 ViewCoNtext. UnobtrusiveJavaScriptEnabled 屬性設定為 true，您可以藉由進行下列呼叫來執行此動作：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample32.cs)]
 
-也請確定下列 JavaScript 檔案參考。
+此外，請確定已參考下列 JavaScript 檔案。
 
-- jquery-1.4.1.js
-- jquery.validate.js
-- jquery.validate.unobtrusive.js
+- jquery-1.7.2.min.js 1.4.1 .js
+- jquery. validate .js
+- jquery. validate. 不顯眼的 .js
 
-這項功能預設會在 Web.config 檔案中的 ASP.NET MVC 3 新專案範本，在已啟用，但對於現有的專案預設會停用。 如需詳細資訊，請參閱 <<c0> [ 新的應用程式範圍的旗標，用戶端驗證和不顯眼的 JavaScript](#0.1_AddedApplicationWideFlagsForClientValida)本文件稍後的。
+在 ASP.NET MVC 3 新專案範本的 web.config 檔案中，預設會啟用這項功能，但現有專案預設會停用。 如需詳細資訊，請參閱本檔稍後的[適用于用戶端驗證的新應用程式範圍旗標和不顯眼的 JavaScript](#0.1_AddedApplicationWideFlagsForClientValida) 。
 
 <a id="0.1__Toc274034223"></a>
 
-### <a id="0.1_AddedApplicationWideFlagsForClientValida"></a>  新應用程式範圍的旗標，用戶端驗證和不顯眼的 JavaScript
+### <a id="0.1_AddedApplicationWideFlagsForClientValida"></a>適用于用戶端驗證和不顯眼 JavaScript 的新全應用程式旗標
 
-您可以啟用或停用用戶端驗證和不顯眼的 JavaScript 全域使用 HtmlHelper 類別，如下列範例所示的靜態成員：
+您可以使用 HtmlHelper 類別的靜態成員，全域啟用或停用用戶端驗證和不顯眼的 JavaScript，如下列範例所示：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample33.cs)]
 
-預設專案範本預設會啟用不顯眼的 JavaScript。 您也可以啟用或停用這些功能在您使用下列設定的應用程式的根 Web.config 檔案中：
+預設的專案範本預設會啟用不顯眼的 JavaScript。 您也可以使用下列設定，在應用程式的根 Web.config 檔案中啟用或停用這些功能：
 
 [!code-xml[Main](mvc3-release-notes/samples/sample34.xml)]
 
-因為您可以啟用這些功能，根據預設，新的多載引進 HtmlHelper 類別，可讓您覆寫預設設定，如下列範例所示：
+因為根據預設，您可以啟用這些功能，所以新的多載會引進 HtmlHelper 類別，讓您覆寫預設設定，如下列範例所示：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample35.cs)]
 
-回溯相容性，這兩種功能預設為停用。
+為了回溯相容性，預設會停用這兩項功能。
 
-### <a id="0.1__Toc274034224"></a>  新的支援，針對檢視執行前執行的程式碼
+### <a id="0.1__Toc274034224"></a>新支援在 Views 執行之前執行的程式碼
 
-您現在可以將名為的檔案\_viewstart.cshtml (或\_viewstart.vbhtml) Views 目錄並將該目錄及其子目錄中的 在多個檢視之間共用，以在新增程式碼。 例如，將下列程式碼可能會將放\_viewstart.cshtml ~/Views 資料夾中的頁面：
+您現在可以將名為 \_viewstart 的檔案（或 \_viewstart）放在 Views 目錄中，並將程式碼新增至該目錄及其子目錄中的多個視圖之間共用。 例如，您可能會將下列程式碼放入 ~/Views 資料夾中的 \_viewstart. cshtml 頁面：
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample36.cshtml)]
 
-這會設定 [Views] 資料夾內的每個檢視和其所有子資料夾遞迴的版面配置頁面。 檢視正在呈現時中的程式碼\_viewstart.cshtml 檔案執行檢視程式碼執行之前。 \_Viewstart.cshtml 程式碼套用至該資料夾中的每個檢視。
+這會以遞迴方式設定 Views 資料夾及其所有子資料夾中每個視圖的版面配置頁。 當正在呈現視圖時，\_viewstart 中的程式碼會在視圖程式碼執行之前執行。 \_viewstart 的程式碼會套用到該資料夾中的每個視圖。
 
-根據預設中的程式碼\_viewstart.cshtml 檔案也會套用至任何子資料夾中的檢視。 不過，個別的子資料夾可以有其自己的版本\_viewstart.cshtml 檔案;，因為案例中，本機版本會優先。 例如，若要執行通用於所有檢視 HomeController 的程式碼，放入\_viewstart.cshtml ~/Views/Home 資料夾中的檔案。
+根據預設，\_viewstart 檔案中的程式碼也適用于任何子資料夾中的 views。 不過，個別的子資料夾可以有自己的 \_viewstart 檔版本;在此情況下，會優先使用本機版本。 例如，若要執行 HomeController 的所有視圖通用的程式碼，請在 ~/Views/Home 資料夾中放入 \_viewstart. cshtml 檔案。
 
-### <a id="0.1__Toc274034225"></a>  新 VBHTML Razor 語法的支援
+### <a id="0.1__Toc274034225"></a>VBHTML Razor 語法的新支援
 
-先前的 ASP.NET MVC preview 包含支援使用以 C# Razor 語法的檢視。 這些檢視會使用.cshtml 檔案的副檔名。 進行中的工作，以支援 Razor 的一部分，ASP.NET MVC 3 beta 版導入了使用.vbhtml 檔擴充功能的 Visual Basic 中的 Razor 語法的支援。
+先前的 ASP.NET MVC preview 包含使用以 Razor 語法為基礎的視圖C#支援。 這些視圖會使用. # 副檔名。 為支援 Razor 的持續性工作，ASP.NET MVC 3 Beta 引進了使用. vbhtml 副檔名之 Visual Basic 中 Razor 語法的支援。
 
-如需使用 Visual Basic 語法 VBHTML 頁面中，請參閱教學課程中的，下列 url:
+如需在 VBHTML 頁面中使用 Visual Basic 語法的簡介，請參閱下列 URL 的教學課程：
 
 [https://www.asp.net/webmatrix/tutorials/asp-net-web-pages-visual-basic](../web-pages/overview/getting-started/introducing-razor-syntax-vb.md)
 
-### <a id="0.1__Toc274034226"></a>  Validateinputattribute 套用更精細地控制
+### <a id="0.1__Toc274034226"></a>更精細地控制 Validateinputattribute 套用
 
-ASP.NET MVC 一定會包含 validateinputattribute 套用類別，這會叫用核心 ASP.NET 要求驗證基礎結構，藉此確定傳入的要求不包含可能是惡意的輸入。 根據預設，會啟用輸入的驗證。 您可停用要求驗證，使用 validateinputattribute 套用屬性，如下列範例所示：
+ASP.NET MVC 一律包含 Validateinputattribute 套用類別，它會叫用核心 ASP.NET 要求驗證基礎結構，以確保連入要求不會包含可能的惡意輸入。 根據預設，會啟用輸入驗證。 您可以使用 Validateinputattribute 套用屬性來停用要求驗證，如下列範例所示：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample37.cs)]
 
-不過，許多 web 應用程式有需要可讓 HTML，而其餘的欄位不應該個別表單欄位。 Validateinputattribute 套用類別現在可讓您指定應該不會包含在要求驗證的欄位清單。
+不過，許多 web 應用程式都有個別的表單欄位，需要允許 HTML，而其餘欄位則不應該。 Validateinputattribute 套用類別現在可讓您指定不應包含在要求驗證中的欄位清單。
 
-比方說，如果您正在開發的部落格引擎，您可能想要允許在主體和摘要欄位的標記。 這些欄位可能會以兩個輸入項目，每個都有對應的屬性名稱 （「 主體 」 和 「 摘要 」） 的名稱屬性。 若要停用要求驗證這些欄位，指定 （以逗號分隔） 在 ValidateInput 類別，如下列範例所示的 [排除] 屬性的名稱：
+例如，如果您正在開發 blog engine，您可能會想要在 [內文] 和 [摘要] 欄位中允許標記。 這些欄位可能會以兩個 input 元素表示，每個專案都有一個對應至屬性名稱（「本文」和「摘要」）的名稱屬性。 若只要停用這些欄位的要求驗證，請在 ValidateInput 類別的 Exclude 屬性中指定名稱（以逗號分隔），如下列範例所示：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample38.cs)]
 
-### <a id="0.1__Toc274034227"></a>  協助程式將底線轉換為連字號使用匿名物件指定的 HTML 屬性名稱
+### <a id="0.1__Toc274034227"></a>協助程式將底線轉換為使用匿名物件指定之 HTML 屬性名稱的連字號
 
-協助程式方法可讓您指定屬性名稱/值組，使用匿名物件，如下列範例所示：
+Helper 方法可讓您使用匿名物件指定屬性名稱/值組，如下列範例所示：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample39.cs)]
 
-這個方法不會讓您使用連字號，屬性名稱，因為連字號不能用在 ASP.NET 中的屬性名稱。 不過，連字號是很重要的自訂 HTML5 屬性;比方說，HTML5 會使用"的資料-"前置詞。
+這種方法不會讓您在屬性名稱中使用連字號，因為 ASP.NET 中的屬性名稱不能使用連字號。 不過，連字號對自訂 HTML5 屬性而言很重要;例如，HTML5 會使用 "data-" 前置詞。
 
-在此同時，底線不能用於在 HTML 中，屬性名稱，但會在屬性名稱中有效。 因此，如果您指定使用的匿名物件的屬性和屬性名稱包含底線、 helper 方法會將轉換的底線連字號。 例如，下列協助程式語法會使用底線：
+同時，底線無法用於 HTML 中的屬性名稱，但是在屬性名稱中是有效的。 因此，如果您使用匿名物件指定屬性，而且如果屬性名稱包含底線，則 helper 方法會將底線轉換為連字號。 例如，下列 helper 語法會使用底線：
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample40.cs)]
 
-協助程式執行時前, 一個範例就會呈現下列標記：
+上一個範例會在 helper 執行時呈現下列標記：
 
 [!code-html[Main](mvc3-release-notes/samples/sample41.html)]
 
-## <a id="0.1__Toc274034228"></a>  Bug 修正
+## <a id="0.1__Toc274034228"></a>Bug 修正
 
-EditorFor 和 DisplayFor 範本協助程式的預設物件範本現在支援 DisplayAttribute.Order 屬性中指定的順序。 （在舊版中，順序設定未使用。）
+EditorFor 和 DisplayFor 範本協助程式的預設物件範本現在支援 DisplayAttribute. Order 屬性中所指定的順序。 （在舊版中，不會使用訂單設定）。
 
-用戶端驗證現在支援驗證覆寫已套用的驗證屬性的屬性。
+用戶端驗證現在支援驗證已套用驗證屬性的已覆寫屬性。
 
-JsonValueProviderFactory 現在已註冊的預設值。
+JsonValueProviderFactory 現在預設為已註冊。
 
-## <a id="0.1__Toc274034229"></a>  重大變更
+## <a id="0.1__Toc274034229"></a>重大變更
 
-具有相同的順序值的例外狀況篩選條件已變更的例外狀況篩選條件的執行順序。 在 ASP.NET MVC 2 和舊版中，例外狀況篩選，控制站相同的順序與動作方法上所執行的動作方法的例外狀況篩選條件之前。 例外狀況篩選條件已套用指定的順序值時，這通常會是大小寫。 在 ASP.NET MVC 3 中，此順序已顛倒，因此最特定的例外狀況處理常式會先執行。 和較舊的版本，如果明確指定 Order 屬性，篩選會執行指定的順序。
+例外狀況篩選準則的執行順序已針對具有相同順序值的例外狀況篩選準則進行變更。 在 ASP.NET MVC 2 （含）以前版本中，控制器上的例外狀況篩選準則會在例外狀況篩選動作方法之前執行，其順序與動作方法上的相同。 這通常是未使用指定的順序值來套用例外狀況篩選時的情況。 在 ASP.NET MVC 3 中，此順序已被反轉，因此最特定的例外狀況處理常式會先執行。 如同在舊版中，如果已明確指定 Order 屬性，則會以指定的循序執行篩選。
 
-## <a id="0.1__Toc274034230"></a>  已知的問題
+## <a id="0.1__Toc274034230"></a>已知問題
 
-在安裝期間，EULA 接受對話方塊會顯示在視窗比預期較小授權條款。
+在安裝期間，[接受 EULA] 對話方塊會在小於預期的視窗中顯示授權條款。
 
-Razor 檢視沒有 IntelliSense 支援和語法反白顯示。 預期在 Visual Studio 中的 Razor 語法的支援，是較新版本的一部分。
+Razor views 沒有 IntelliSense 支援或語法反白顯示。 預期 Visual Studio 中的 Razor 語法支援將會納入為較新版本的一部分。
 
-當您在編輯 Razor 檢視 （CSHTML 檔案）， <a id="0.1__Toc224729061"> </a> <a id="0.1__Toc238051347"> </a>移至控制器在 Visual Studio 中的功能表項目將無法使用，而且有任何程式碼片段。
+當您編輯 Razor 視圖（CSHTML 檔案）時，Visual Studio 中<a id="0.1__Toc224729061"></a> <a id="0.1__Toc238051347"></a>的 [移至控制器] 功能表項目將無法使用，而且不會有程式碼片段。
 
-當使用@model語法來指定強型別的 CSHTML 檢視中，無法辨識的類型的特定語言的快速鍵。 例如， @model int 將無法運作，但@modelInt32 會運作。 這個錯誤的因應措施是當您指定的模型型別時使用的實際型別名稱。
+使用 @model 語法來指定強型別 CSHTML 視圖時，無法辨識類型的語言特定快捷方式。 例如，@model int 將無法使用，但 @model Int32 會生效。 這個 bug 的因應措施是在您指定模型類型時，使用實際的類型名稱。
 
-使用時@model語法來指定強型別的 CSHTML 檢視 (或@ModelType指定強型別的 VBHTML 檢視)，不支援可為 null 的型別和陣列宣告。 比方說， @model int？ 不支援。 請改用`@model Nullable<Int32>`。 語法@modelstring [] 也不支援，請改用`@model IList<string>`。
+使用 @model 語法來指定強型別 CSHTML 視圖（或 @ModelType 指定強型別 VBHTML 視圖）時，不支援可為 null 的類型和陣列宣告。 例如，@model int？不受支援。 請改用 `@model Nullable<Int32>`。 也不支援 @model string [] 語法;請改用 `@model IList<string>`。
 
-當您將 ASP.NET MVC 2 專案升級至 ASP.NET MVC 3 時，請確定 Web.config 檔的 appSettings 區段新增下列內容：
+當您將 ASP.NET MVC 2 專案升級為 ASP.NET MVC 3 時，請務必將下列內容新增至 web.config 檔案的 appSettings 區段：
 
 [!code-xml[Main](mvc3-release-notes/samples/sample42.xml)]
 
-沒有會造成永遠將未經驗證的使用者重新導向至 ~/Account/登入，並忽略在 Web.config 中使用表單驗證設定的表單驗證的已知的問題。因應措施是將下列應用程式設定。
+有一個已知的問題會導致表單驗證一律將未驗證的使用者重新導向至 ~/Account/Login，而忽略 Web.config 中使用的表單驗證設定。解決方法是新增下列應用程式設定。
 
 [!code-xml[Main](mvc3-release-notes/samples/sample43.xml)]
 
-## <a id="0.1__Toc274034231"></a>  免責聲明
+## <a id="0.1__Toc274034231"></a>免責聲明
 
-© 2011 Microsoft Corporation. 著作權所有，並保留一切權利。 本文件係依 「 做為-是。 」 資訊和檢視，以表示此文件，包括 URL 及其他網際網路網站參考資料，可能會變更恕不另行通知。 貴用戶須自行承擔使用風險。
+© 2011 Microsoft Corporation。 著作權所有，並保留一切權利。 本檔是以「原樣」提供。 本檔中所表示的資訊和觀點（包括 URL 和其他網際網路網站參考資料）可能會變更，恕不另行通知。 貴用戶須自行承擔使用風險。
 
 本文件不提供　貴用戶任何 Microsoft 產品之智慧財產權的法定權利。 貴用戶可以複製本文件供內部參考之用。
