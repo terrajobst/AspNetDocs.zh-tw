@@ -117,7 +117,7 @@ MSBuild 專案檔是以[MSBUILD XML 架構](/visualstudio/msbuild/msbuild-projec
 
 [!code-xml[Main](understanding-the-project-file/samples/sample7.xml)]
 
-如此一來，專案檔會指示 MSBuild 建立檔案清單，這些檔案的處理方式&#x2014;必須與**參考**清單所包含的元件相同，而這些檔案的建立需要要準備成功的組建，**編譯**清單包含程式碼必須編譯的檔案，且**內容**清單包含必須原封不動地複製的資源。 我們將在本主題稍後探討組建程式如何參考和使用這些專案。
+如此一來，專案檔會指示 MSBuild 建立檔案清單，這些檔案必須以**參考**清單所含的相同方式&#x2014;來處理，而此清單中包含必須針對成功組建準備就緒的元件、**編譯**清單包含必須編譯的程式碼檔案，且**內容**清單包含必須原封不動地複製的資源。 我們將在本主題稍後探討組建程式如何參考和使用這些專案。
 
 專案元素也可以包含[ItemMetadata](https://msdn.microsoft.com/library/ms164284.aspx)的子項目。 這些是使用者定義的索引鍵/值組，基本上代表該專案特有的屬性。 例如，專案檔中的許多**編譯**專案元素都包含**DependentUpon**的子項目。
 
@@ -130,7 +130,7 @@ MSBuild 專案檔是以[MSBUILD XML 架構](/visualstudio/msbuild/msbuild-projec
 
 ### <a name="targets-and-tasks"></a>目標和工作
 
-在 MSBuild 架構中， [Task](https://msdn.microsoft.com/library/77f2hx1s.aspx)元素代表個別的組建指令（或工作）。 MSBuild 包含許多預先定義的工作。 例如:
+在 MSBuild 架構中， [Task](https://msdn.microsoft.com/library/77f2hx1s.aspx)元素代表個別的組建指令（或工作）。 MSBuild 包含許多預先定義的工作。 例如：
 
 - **複製**工作會將檔案複製到新的位置。
 - **Csc**工作會叫用 Visual C#編譯器。
