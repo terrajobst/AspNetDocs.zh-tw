@@ -15,15 +15,15 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2019
 ms.locfileid: "73445559"
 ---
-# <a name="creating-a-consistent-look-part-2"></a><span data-ttu-id="2b259-103">建立一致的外觀 (第 2 部分)</span><span class="sxs-lookup"><span data-stu-id="2b259-103">Creating a Consistent Look (Part 2)</span></span>
+# <a name="creating-a-consistent-look-part-2"></a><span data-ttu-id="03cf3-103">建立一致的外觀 (第 2 部分)</span><span class="sxs-lookup"><span data-stu-id="03cf3-103">Creating a Consistent Look (Part 2)</span></span>
 
-<span data-ttu-id="2b259-104">依[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="2b259-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="03cf3-104">依[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="03cf3-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="2b259-105">影片 accompaniment 至建立一致的外觀教學課程（第2部分）</span><span class="sxs-lookup"><span data-stu-id="2b259-105">Video accompaniment to the Creating a Consistent Look tutorial (Part 2)</span></span>
+<span data-ttu-id="03cf3-105">影片 accompaniment 至建立一致的外觀教學課程（第2部分）</span><span class="sxs-lookup"><span data-stu-id="03cf3-105">Video accompaniment to the Creating a Consistent Look tutorial (Part 2)</span></span>
 
-<span data-ttu-id="2b259-106">[&#9654;觀看影片（5分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-a-consistent-look-(part-2))</span><span class="sxs-lookup"><span data-stu-id="2b259-106">[&#9654; Watch video (5 minutes)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-a-consistent-look-(part-2))</span></span>
+<span data-ttu-id="03cf3-106">[&#9654;觀看影片（5分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-a-consistent-look-(part-2))</span><span class="sxs-lookup"><span data-stu-id="03cf3-106">[&#9654; Watch video (5 minutes)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-a-consistent-look-(part-2))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="2b259-107">[上一頁](creating-a-consistent-look-part-1.md)
-> [下一頁](working-with-forms-part-1.md)</span><span class="sxs-lookup"><span data-stu-id="2b259-107">[Previous](creating-a-consistent-look-part-1.md)
+> <span data-ttu-id="03cf3-107">[上一頁](creating-a-consistent-look-part-1.md)
+> [下一頁](working-with-forms-part-1.md)</span><span class="sxs-lookup"><span data-stu-id="03cf3-107">[Previous](creating-a-consistent-look-part-1.md)
 [Next](working-with-forms-part-1.md)</span></span>

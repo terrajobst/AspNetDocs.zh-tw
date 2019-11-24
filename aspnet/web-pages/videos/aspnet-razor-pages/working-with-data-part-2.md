@@ -15,15 +15,15 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2019
 ms.locfileid: "73445580"
 ---
-# <a name="working-with-data-part-2"></a><span data-ttu-id="bc1fe-103">使用資料 (第 2 部分)</span><span class="sxs-lookup"><span data-stu-id="bc1fe-103">Working with Data (Part 2)</span></span>
+# <a name="working-with-data-part-2"></a><span data-ttu-id="f29b7-103">使用資料 (第 2 部分)</span><span class="sxs-lookup"><span data-stu-id="f29b7-103">Working with Data (Part 2)</span></span>
 
-<span data-ttu-id="bc1fe-104">依[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="bc1fe-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="f29b7-104">依[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="f29b7-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="bc1fe-105">影片 accompaniment 至使用資料教學課程（第2部分）</span><span class="sxs-lookup"><span data-stu-id="bc1fe-105">Video accompaniment to the Working with Data tutorial (Part 2)</span></span>
+<span data-ttu-id="f29b7-105">影片 accompaniment 至使用資料教學課程（第2部分）</span><span class="sxs-lookup"><span data-stu-id="f29b7-105">Video accompaniment to the Working with Data tutorial (Part 2)</span></span>
 
-<span data-ttu-id="bc1fe-106">[&#9654;觀看影片（6分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/working-with-data-(part-2))</span><span class="sxs-lookup"><span data-stu-id="bc1fe-106">[&#9654; Watch video (6 minutes)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/working-with-data-(part-2))</span></span>
+<span data-ttu-id="f29b7-106">[&#9654;觀看影片（6分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/working-with-data-(part-2))</span><span class="sxs-lookup"><span data-stu-id="f29b7-106">[&#9654; Watch video (6 minutes)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/working-with-data-(part-2))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="bc1fe-107">[上一頁](working-with-data-part-1.md)
-> [下一頁](displaying-data-in-a-grid.md)</span><span class="sxs-lookup"><span data-stu-id="bc1fe-107">[Previous](working-with-data-part-1.md)
+> <span data-ttu-id="f29b7-107">[上一頁](working-with-data-part-1.md)
+> [下一頁](displaying-data-in-a-grid.md)</span><span class="sxs-lookup"><span data-stu-id="f29b7-107">[Previous](working-with-data-part-1.md)
 [Next](displaying-data-in-a-grid.md)</span></span>
