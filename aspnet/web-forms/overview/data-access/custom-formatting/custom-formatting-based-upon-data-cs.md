@@ -1,285 +1,285 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-cs
-title: 根據自訂格式設定資料 (C#) |Microsoft Docs
+title: 以資料為基礎的自C#定義格式（） |Microsoft Docs
 author: rick-anderson
-description: 以多種方式可以完成 GridView、 DetailsView 或 FormView 繫結至該資料為基礎的格式調整。 在本教學課程中，我們將 l...
+description: 根據系結的資料來調整 GridView、DetailsView 或 FormView 的格式，可以透過多種方式來完成。 在本教學課程中，我們將 。
 ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 871a4574-f89c-4214-b786-79253ed3653b
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 96003d3e93fc92aaaf39f39f1bb6512d687dc451
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: d8f3fa337eda0ceed041475ecb52f8b378b9fbba
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108243"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74600770"
 ---
 # <a name="custom-formatting-based-upon-data-c"></a>根據資料自訂格式設定 (C#)
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載範例應用程式](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_11_CS.exe)或[下載 PDF](custom-formatting-based-upon-data-cs/_static/datatutorial11cs1.pdf)
+[下載範例應用程式](https://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_11_CS.exe)或[下載 PDF](custom-formatting-based-upon-data-cs/_static/datatutorial11cs1.pdf)
 
-> 以多種方式可以完成 GridView、 DetailsView 或 FormView 繫結至該資料為基礎的格式調整。 在本教學課程中我們將探討如何完成資料繫結格式透過使用 DataBound 和 RowDataBound 事件處理常式。
+> 根據系結的資料來調整 GridView、DetailsView 或 FormView 的格式，可以透過多種方式來完成。 在本教學課程中，我們將探討如何透過使用資料系結和 RowDataBound 事件處理常式來完成資料系結格式設定。
 
 ## <a name="introduction"></a>簡介
 
-透過大量的樣式相關屬性，您可以自訂 GridView、 DetailsView 和 FormView 控制項的外觀。 屬性，例如`CssClass`， `Font`， `BorderWidth`， `BorderStyle`， `BorderColor`， `Width`，和`Height`，其他項目，指定一般轉譯的控制項的外觀。 屬性，包括`HeaderStyle`， `RowStyle`， `AlternatingRowStyle`，和其他項目允許這些相同的樣式設定来套用至特定區段。 同樣地，可以在欄位層級套用這些樣式設定。
+GridView、DetailsView 和 FormView 控制項的外觀，可以透過許多與樣式相關的屬性來自訂。 `CssClass`、`Font`、`BorderWidth`、`BorderStyle`、`BorderColor`、`Width`和 `Height`等屬性會指示呈現控制項的一般外觀。 包括 `HeaderStyle`、`RowStyle`、`AlternatingRowStyle`和其他屬性，都允許將這些相同的樣式設定套用到特定區段。 同樣地，您也可以在欄位層級套用這些樣式設定。
 
-在許多情況下，格式需求取決於所顯示資料的值。 例如，以強調出的內建的產品，報告，列出產品資訊可能會設定背景色彩設為黃色，這些產品的`UnitsInStock`和`UnitsOnOrder`欄位都等於 0。 反白顯示的昂貴的產品，我們可能想要顯示的成本超過美金 75.00 以粗體字這些產品的價格。
+不過，在許多情況下，格式化需求取決於所顯示資料的值。 例如，若要將注意力吸引出存貨產品，列出產品資訊的報表可能會將 `UnitsInStock` 和 `UnitsOnOrder` 欄位都等於0的產品的背景色彩設定為黃色。 為了強調較昂貴的產品，我們可能會想要以粗體字型顯示這些產品的價格超過 $75.00 的成本。
 
-以多種方式可以完成 GridView、 DetailsView 或 FormView 繫結至該資料為基礎的格式調整。 在本教學課程中我們將探討如何完成資料繫結使用的格式`DataBound`和`RowDataBound`事件處理常式。 在下一個教學課程中，我們將探討一個替代方法。
+根據系結的資料來調整 GridView、DetailsView 或 FormView 的格式，可以透過多種方式來完成。 在本教學課程中，我們將探討如何使用 `DataBound` 和 `RowDataBound` 事件處理常式來完成資料系結格式設定。 在下一個教學課程中，我們將探討另一種方法。
 
 ## <a name="using-the-detailsview-controlsdataboundevent-handler"></a>使用 DetailsView 控制項的`DataBound`事件處理常式
 
-當資料繫結至 DetailsView 中，從資料來源控制項，或是透過程式設計方式將資料指派給控制項的`DataSource`屬性，並呼叫其`DataBind()`方法，下列步驟順序發生：
+當資料系結至 DetailsView 時（從資料來源控制項，或透過程式設計方式將資料指派給控制項的 `DataSource` 屬性並呼叫其 `DataBind()` 方法），會發生下列一系列的步驟：
 
-1. 資料 Web 控制項`DataBinding`引發事件。
-2. 資料繫結至資料 Web 控制項。
-3. 資料 Web 控制項`DataBound`引發事件。
+1. 會引發資料 Web 控制項的 `DataBinding` 事件。
+2. 資料會系結至資料 Web 控制項。
+3. 會引發資料 Web 控制項的 `DataBound` 事件。
 
-可透過事件處理常式的步驟 1 和 3 之後，立即插入自訂邏輯。 藉由建立的事件處理常式`DataBound`我們以程式設計方式決定已資料繫結至資料 Web 控制項和調整格式所需的事件。 為了說明這點我們建立會列出產品的一般資訊，但會顯示 DetailsView`UnitPrice`中的值***粗體、 斜體字型***如果它超過美金 75.00。
+自訂邏輯可以緊接在步驟1和3之後，透過事件處理常式插入。 藉由建立 `DataBound` 事件的事件處理常式，我們可以程式設計方式判斷已系結至資料 Web 控制項的資料，並視需要調整格式。 為了說明這一點，讓我們建立一個 DetailsView，其中會列出產品的一般資訊，但會以***粗體的斜體字型***顯示 `UnitPrice` 值（如果超過 $75.00）。
 
-## <a name="step-1-displaying-the-product-information-in-a-detailsview"></a>步驟 1：在 DetailsView 中顯示的產品資訊
+## <a name="step-1-displaying-the-product-information-in-a-detailsview"></a>步驟1：在 DetailsView 中顯示產品資訊
 
-開啟`CustomColors.aspx`頁面中`CustomFormatting`資料夾中，將 DetailsView 控制項從工具箱拖曳至設計工具，將其`ID`屬性值設`ExpensiveProductsPriceInBoldItalic`，並將它繫結至叫用的新 ObjectDataSource 控制項`ProductsBLL`類別的`GetProducts()`方法。 為求簡潔，因為我們這些詳細檢查的先前教學課程中完成這項作業的詳細的步驟會這裡省略。
+開啟 [`CustomFormatting`] 資料夾中的 [`CustomColors.aspx`] 頁面，將 [DetailsView] 控制項從 [工具箱] 拖曳至設計工具，將其 [`ID`] 屬性值設定為 [`ExpensiveProductsPriceInBoldItalic`]，並將它系結至叫用 `ProductsBLL` 類別之 `GetProducts()` 方法的新 ObjectDataSource 控制項。 為了簡單起見，我們在此省略了完成這項操作的詳細步驟，因為我們會在先前的教學課程中詳細地檢查它們。
 
-一旦您已受限於 DetailsView ObjectDataSource，花點時間修改的欄位清單。 我選擇移除`ProductID`， `SupplierID`， `CategoryID`， `UnitsInStock`， `UnitsOnOrder`， `ReorderLevel`，和`Discontinued`BoundFields 和重新命名，並重新格式化剩餘 BoundFields。 我也清除`Width`和`Height`設定。 DetailsView 顯示單一記錄，因為我們需要啟用分頁功能，以允許使用者檢視的所有產品。 達到此目的的 DetailsView 的智慧標籤的 啟用分頁核取方塊。
+將 ObjectDataSource 系結至 DetailsView 之後，請花一點時間修改欄位清單。 我選擇移除 `ProductID`、`SupplierID`、`CategoryID`、`UnitsInStock`、`UnitsOnOrder`、`ReorderLevel`和 `Discontinued` BoundFields，然後重新命名並重新格式化其餘 BoundFields。 我也清除了 `Width` 並 `Height` 設定。 因為 DetailsView 只會顯示一筆記錄，所以我們需要啟用分頁，才能讓終端使用者查看所有產品。 若要這麼做，請勾選 DetailsView 的智慧標籤中的 [啟用分頁] 核取方塊。
 
-[![檢查 DetailsView 的智慧標籤啟用分頁核取方塊](custom-formatting-based-upon-data-cs/_static/image2.png)](custom-formatting-based-upon-data-cs/_static/image1.png)
+[![核取 DetailsView 的智慧標籤中的 [啟用分頁] 核取方塊](custom-formatting-based-upon-data-cs/_static/image2.png)](custom-formatting-based-upon-data-cs/_static/image1.png)
 
-**圖 1**:核取方塊啟用分頁 DetailsView 的智慧標籤中 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image3.png))
+**圖 1**：核取 DetailsView 的智慧標籤中的 [啟用分頁] 核取方塊（[按一下以查看完整大小的影像](custom-formatting-based-upon-data-cs/_static/image3.png)）
 
-這些變更之後，請將 DetailsView 標記：
+這些變更之後，DetailsView 標記會是：
 
 [!code-aspx[Main](custom-formatting-based-upon-data-cs/samples/sample1.aspx)]
 
-請花一點時間來測試您的瀏覽器中的此頁面。
+請花點時間在瀏覽器中測試此頁面。
 
-[![在 DetailsView 控制項一次顯示一項產品](custom-formatting-based-upon-data-cs/_static/image5.png)](custom-formatting-based-upon-data-cs/_static/image4.png)
+[![DetailsView 控制項一次顯示一項產品](custom-formatting-based-upon-data-cs/_static/image5.png)](custom-formatting-based-upon-data-cs/_static/image4.png)
 
-**圖 2**:DetailsView 控制項顯示一個產品一次 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image6.png))
+**圖 2**： DetailsView 控制項一次顯示一項產品（[按一下以觀看完整大小的影像](custom-formatting-based-upon-data-cs/_static/image6.png)）
 
-## <a name="step-2-programmatically-determining-the-value-of-the-data-in-the-databound-event-handler"></a>步驟 2：以程式設計方式判斷資料繫結事件處理常式中的資料值
+## <a name="step-2-programmatically-determining-the-value-of-the-data-in-the-databound-event-handler"></a>步驟2：在資料系結事件處理常式中以程式設計方式決定資料的值
 
-若要顯示的價格以粗體、 斜體的字型，這些產品的`UnitPrice`值超過美金 75.00，我們必須先能夠以程式設計方式判斷`UnitPrice`值。 針對 DetailsView，這可以透過完成`DataBound`事件處理常式。 若要建立事件處理常式會 DetailsView 設計工具中按一下，然後瀏覽至 [屬性] 視窗。 按 f4 鍵以啟動它，如果它不是可見的或移至 [檢視] 功能表，然後選取 [屬性視窗] 功能表選項。 從 [屬性] 視窗中，按一下閃電圖示來列出 DetailsView 的事件。 接下來，請按兩下`DataBound`事件或輸入您想要建立的事件處理常式的名稱。
+為了以粗體、斜體字型顯示其 `UnitPrice` 值超過 $75.00 的價格，我們必須先能夠以程式設計方式判斷 `UnitPrice` 值。 針對 DetailsView，可以在 `DataBound` 事件處理常式中完成這項作業。 若要建立事件處理常式，請在設計工具中按一下 [DetailsView]，然後流覽至 [屬性視窗]。 如果看不到，請按 F4，或移至 [View] 功能表，然後選取 [屬性視窗] 功能表選項。 從 屬性視窗中，按一下閃電圖示來列出 DetailsView 的事件。 接下來，按兩下 [`DataBound`] 事件，或輸入您想要建立的事件處理常式名稱。
 
-![建立資料繫結事件的事件處理常式](custom-formatting-based-upon-data-cs/_static/image7.png)
+![建立資料系結事件的事件處理常式](custom-formatting-based-upon-data-cs/_static/image7.png)
 
-**圖 3**:建立事件處理常式`DataBound`事件
+**圖 3**：建立 `DataBound` 事件的事件處理常式
 
-這樣會自動建立事件處理常式，並帶您前往的程式碼部分加入其中。 此時您會看到：
+這麼做會自動建立事件處理常式，並帶您前往已加入它的程式碼部分。 此時您會看到：
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample2.cs)]
 
-DetailsView 繫結的資料可透過存取`DataItem`屬性。 回想一下，我們會將我們的控制項繫結至強型別的 DataTable，是由強型別 DataRow 執行個體的集合所組成。 DataTable 繫結至 DetailsView，第一個 DataRow 的 DataTable 中會指派給 DetailsView`DataItem`屬性。 具體而言，`DataItem`屬性會被指派`DataRowView`物件。 我們可以使用`DataRowView`的`Row`屬性來取得存取基礎的 DataRow 物件，也就是實際上`ProductsRow`執行個體。 一旦我們有了這個`ProductsRow`我們可以讓我們的決策，只要檢查物件的屬性值的執行個體。
+系結至 DetailsView 的資料可以透過 `DataItem` 屬性來存取。 回想一下，我們會將控制項系結至強型別 DataTable，這是由強型別 DataRow 實例的集合所組成。 當 DataTable 系結至 DetailsView 時，DataTable 中的第一個 DataRow 會指派給 DetailsView 的 `DataItem` 屬性。 具體而言，`DataItem` 屬性會指派 `DataRowView` 物件。 我們可以使用 `DataRowView`的 `Row` 屬性來取得基礎 DataRow 物件的存取權，這實際上是 `ProductsRow` 實例。 一旦有了這個 `ProductsRow` 實例，我們就可以直接檢查物件的屬性值來做出決定。
 
-下列程式碼說明如何判斷是否`UnitPrice`繫結至 DetailsView 控制項的值是否大於美金 75.00:
+下列程式碼說明如何判斷系結至 DetailsView 控制項的 `UnitPrice` 值是否大於 $75.00：
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample3.cs)]
 
 > [!NOTE]
-> 由於`UnitPrice`可以有`NULL`資料庫中的值，我們先檢查以確定我們要未處理的`NULL`值，才能存取`ProductsRow`的`UnitPrice`屬性。 這項檢查，請務必因為如果我們嘗試存取`UnitPrice`屬性具有時`NULL`值`ProductsRow`物件將會擲回[StrongTypingException 例外狀況](https://msdn.microsoft.com/library/system.data.strongtypingexception.aspx)。
+> 由於 `UnitPrice` 在資料庫中可以有 `NULL` 值，因此我們會先檢查並確定我們不會處理 `NULL` 值，然後才存取 `ProductsRow`的 `UnitPrice` 屬性。 這項檢查很重要，因為如果我們在具有 `NULL` 值時嘗試存取 `UnitPrice` 屬性，`ProductsRow` 物件將會擲回[system.data.strongtypingexception 例外](https://msdn.microsoft.com/library/system.data.strongtypingexception.aspx)狀況。
 
-## <a name="step-3-formatting-the-unitprice-value-in-the-detailsview"></a>步驟 3：格式化在 DetailsView 中 UnitPrice 值
+## <a name="step-3-formatting-the-unitprice-value-in-the-detailsview"></a>步驟3：格式化 DetailsView 中的單價值
 
-此時我們可以判斷是否`UnitPrice`繫結至 DetailsView 值超過美金 75.00，但我們尚未以了解如何以程式設計方式調整 DetailsView 的據以格式化。 若要修改在 DetailsView 中整個資料列的格式，以程式設計方式存取資料列使用`DetailsViewID.Rows[index]`; 若要修改特定的資料格，存取使用`DetailsViewID.Rows[index].Cells[index]`。 一旦我們擁有之資料列或資料格的參考我們接著可以藉由設定其樣式相關屬性來調整它的外觀。
+此時，我們可以判斷系結至 DetailsView 的 `UnitPrice` 值是否有超過 $75.00 的值，但我們還不知道如何以程式設計方式調整 DetailsView 的格式。 若要修改 DetailsView 中整個資料列的格式，請使用 `DetailsViewID.Rows[index]`以程式設計方式存取資料列。若要修改特定的資料格，請使用 `DetailsViewID.Rows[index].Cells[index]`的存取權。 一旦有了資料列或資料格的參考之後，就可以藉由設定其樣式相關的屬性來調整其外觀。
 
-以程式設計方式存取資料列，您需要知道的資料列的索引，從 0 開始。 `UnitPrice` DetailsView，提供 4 的索引，並且讓它以程式設計方式存取的第五個資料列資料列為使用`ExpensiveProductsPriceInBoldItalic.Rows[4]`。 此時我們可以使用下列程式碼顯示粗體、 斜體字型中的整個資料列的內容：
+以程式設計方式存取資料列時，您必須知道資料列的索引，其開頭為0。 `UnitPrice` 的資料列是 DetailsView 中的第五個數據列，並提供索引4，讓它以程式設計方式使用 `ExpensiveProductsPriceInBoldItalic.Rows[4]`來存取。 此時，我們可以使用下列程式碼，以粗體的斜體字型顯示整個資料列的內容：
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample4.cs)]
 
-不過，這會讓*兩者*標籤 （價格） 和粗體和斜體的值。 如果我們想要只是值粗體和斜體我們要將此套用的第二個資料格中的資料列，即可使用下列格式：
+不過，這會讓標籤（價格）和*值為粗體*和斜體。 如果我們只想要將值設為粗體和斜體，我們必須將此格式套用到資料列中的第二個數據格，這可以使用下列方式來完成：
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample5.cs)]
 
-由於我們的教學課程到目前為止已使用樣式表維持清楚的分隔，呈現的標記與樣式相關的資訊之間，而不是設定特定的樣式屬性，如上所示讓我們改為使用 CSS 類別。 開啟`Styles.css`樣式表並加入新的 CSS 類別，名為`ExpensivePriceEmphasis`具有下列定義：
+由於我們的教學課程已經使用樣式表單來維護轉譯的標記和樣式相關資訊之間的清楚分隔，而不是設定特定樣式屬性（如上所示），而是改用 CSS 類別。 開啟 `Styles.css` 樣式表單，並使用下列定義加入名為 `ExpensivePriceEmphasis` 的新 CSS 類別：
 
 [!code-css[Main](custom-formatting-based-upon-data-cs/samples/sample6.css)]
 
-然後，在`DataBound`事件處理常式中設定的儲存格`CssClass`屬性設`ExpensivePriceEmphasis`。 下列程式碼示範`DataBound`完整的事件處理常式：
+然後，在 `DataBound` 事件處理常式中，將儲存格的 `CssClass` 屬性設定為 [`ExpensivePriceEmphasis`]。 下列程式碼會顯示完整的 `DataBound` 事件處理常式：
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample7.cs)]
 
-時檢視 Chai，成本小於 $75.00，價格會以一般字型顯示 （請參閱 圖 4）。 不過，當檢視 Mishi Kobe Niku，其具有價格為美金 97.00，價格會顯示在粗體、 斜體字型 （請參閱 [圖 5]）。
+當您觀看 Chai （成本低於 $75.00）時，價格會以一般字型顯示（請參閱 [圖 4]）。 不過，當您在 Mishi Kobe Niku （其價格為 $97.00）時，價格會以粗體的斜體字型顯示（請參閱 [圖 5]）。
 
-[![價格低於美金 75.00 會以一般字型顯示](custom-formatting-based-upon-data-cs/_static/image9.png)](custom-formatting-based-upon-data-cs/_static/image8.png)
+[低於 $75.00 的 ![價格會以一般字型顯示](custom-formatting-based-upon-data-cs/_static/image9.png)](custom-formatting-based-upon-data-cs/_static/image8.png)
 
-**圖 4**:價格低於美金 75.00 會以一般字型顯示 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image10.png))
+**圖 4**：小於 $75.00 的價格會以一般字型顯示（[按一下以觀看完整大小的影像](custom-formatting-based-upon-data-cs/_static/image10.png)）
 
-[![昂貴的產品價格會顯示在粗體、 斜體字型](custom-formatting-based-upon-data-cs/_static/image12.png)](custom-formatting-based-upon-data-cs/_static/image11.png)
+[![昂貴的產品價格會以粗體的斜體字型顯示](custom-formatting-based-upon-data-cs/_static/image12.png)](custom-formatting-based-upon-data-cs/_static/image11.png)
 
-**圖 5**:昂貴的產品價格會顯示在粗體、 斜體字型 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image13.png))
+**圖 5**：昂貴的產品價格會以粗體的斜體字型顯示（[按一下以觀看完整大小的影像](custom-formatting-based-upon-data-cs/_static/image13.png)）
 
-## <a name="using-the-formview-controlsdataboundevent-handler"></a>使用 FormView 控制項`DataBound`事件處理常式
+## <a name="using-the-formview-controlsdataboundevent-handler"></a>使用 FormView 控制項的`DataBound`事件處理常式
 
-DetailsView 建立，會完全一樣的步驟，以判斷基礎資料繫結至 FormView`DataBound`事件處理常式，轉型`DataItem`適當的物件類型的屬性繫結至控制項，並判斷如何繼續進行。 FormView 和 DetailsView 不同，不過，在更新其使用者介面的外觀的方式。
+判斷系結至 FormView 之基礎資料的步驟，與 DetailsView 建立 `DataBound` 事件處理常式、將 `DataItem` 屬性轉換成系結至控制項的適當物件類型，以及決定如何繼續。 不過，FormView 和 DetailsView 在其使用者介面外觀的更新方式上有所不同。
 
-FormView 不包含任何 BoundFields，因此缺少`Rows`集合。 相反地，FormView 組成範本，其中可以包含混合的靜態 HTML，Web 控制項及資料繫結語法。 調整的 FormView 樣式通常牽涉到調整一或多個 FormView 的範本內的 Web 控制項的樣式。
+FormView 不包含任何 BoundFields，因此缺少 `Rows` 集合。 取而代之的是，FormView 是由樣板組成，這些範本可以混合使用靜態 HTML、Web 控制項和資料系結語法。 調整 FormView 的樣式通常牽涉到調整 FormView 範本內一個或多個 Web 控制項的樣式。
 
-為了說明這點，讓我們使用 FormView 產品清單類似在上述範例中，但這次我們顯示產品名稱和單位庫存與紅色字型顯示，如果它小於或等於 10 的庫存單位數。
+為了說明這一點，讓我們使用 FormView 來列出上述範例中的產品，但這次讓我們只顯示產品名稱和庫存單位，其中包含以紅色字型顯示的單位（如果小於或等於10）。
 
-## <a name="step-4-displaying-the-product-information-in-a-formview"></a>步驟 4：在 FormView 中顯示的產品資訊
+## <a name="step-4-displaying-the-product-information-in-a-formview"></a>步驟4：在 FormView 中顯示產品資訊
 
-新增至 FormView`CustomColors.aspx`頁面下方的 DetailsView 和設定其`ID`屬性設`LowStockedProductsInRed`。 將 FormView 的繫結至從上一個步驟建立的 ObjectDataSource 控制項。 這會建立`ItemTemplate`， `EditItemTemplate`，和`InsertItemTemplate`FormView 的。 移除`EditItemTemplate`並`InsertItemTemplate`並簡化`ItemTemplate`包含只`ProductName`和`UnitsInStock`值各自位於自己適當地命名為 Label 控制項。 如同 DetailsView 來自先前範例中，也請檢查 FormView 的智慧標籤的 啟用分頁核取方塊。
+將 FormView 加入至 DetailsView 底下的 [`CustomColors.aspx`] 頁面，並將其 [`ID`] 屬性設定為 [`LowStockedProductsInRed`]。 將 FormView 系結至上一個步驟所建立的 ObjectDataSource 控制項。 這會建立 FormView 的 `ItemTemplate`、`EditItemTemplate`和 `InsertItemTemplate`。 移除 `EditItemTemplate` 並 `InsertItemTemplate` 並簡化 `ItemTemplate`，使其僅包含 `ProductName` 和 `UnitsInStock` 值，每個都在各自適當命名的標籤控制項中。 如同先前範例中的 DetailsView，另請核取 FormView 的智慧標籤中的 [啟用分頁] 核取方塊。
 
-這些編輯之後 FormView 的標記看起來應該如下所示：
+在這些編輯之後，您的 FormView 標記看起來應該如下所示：
 
 [!code-aspx[Main](custom-formatting-based-upon-data-cs/samples/sample8.aspx)]
 
-請注意，`ItemTemplate`包含：
+請注意，`ItemTemplate` 包含：
 
-- **靜態 HTML**文字 」 產品: 」 及 「 庫存單位數:"連同`<br />`和`<b>`項目。
-- **Web 控制項**兩個 Label 控制項中，`ProductNameLabel`和`UnitsInStockLabel`。
-- **資料繫結語法**`<%# Bind("ProductName") %>`並`<%# Bind("UnitsInStock") %>`語法，從這些欄位的值指定給 Label 控制項`Text`屬性。
+- **靜態 HTML** ：「產品：」和「庫存中的單位」文字，以及 `<br />` 和 `<b>` 元素。
+- **Web 控制**兩個標籤控制項，`ProductNameLabel` 和 `UnitsInStockLabel`。
+- **資料**系結語法： `<%# Bind("ProductName") %>` 和 `<%# Bind("UnitsInStock") %>` 語法，會將這些欄位中的值指派給 Label 控制項的 `Text` 屬性。
 
-## <a name="step-5-programmatically-determining-the-value-of-the-data-in-the-databound-event-handler"></a>步驟 5：以程式設計方式判斷資料繫結事件處理常式中的資料值
+## <a name="step-5-programmatically-determining-the-value-of-the-data-in-the-databound-event-handler"></a>步驟5：在資料系結事件處理常式中以程式設計方式決定資料的值
 
-使用 FormView 的標記完成下, 一個步驟是以程式設計方式判斷如果`UnitsInStock`值是否小於或等於 10。 這是與 DetailsView 完成使用 FormView 完全相同的方式。 開始建立事件處理常式，如 FormView 的`DataBound`事件。
+完成 FormView 的標記後，下一個步驟是以程式設計方式判斷 `UnitsInStock` 值是否小於或等於10。 這是以 FormView 的相同方式來完成，如同使用 DetailsView 一樣。 首先，建立 FormView 的 `DataBound` 事件的事件處理常式。
 
-![建立資料繫結事件處理常式](custom-formatting-based-upon-data-cs/_static/image14.png)
+![建立資料系結事件處理常式](custom-formatting-based-upon-data-cs/_static/image14.png)
 
-**圖 6**:建立`DataBound`事件處理常式
+**圖 6**：建立 `DataBound` 事件處理常式
 
-在事件處理常式轉型的 FormView`DataItem`屬性，以`ProductsRow`執行個體，並判斷是否`UnitsInPrice`值是，我們要顯示紅色字型。
+在事件處理常式中，將 FormView 的 `DataItem` 屬性轉換成 `ProductsRow` 實例，並判斷 `UnitsInPrice` 值是否需要以紅色字型顯示。
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample9.cs)]
 
-## <a name="step-6-formatting-the-unitsinstocklabel-label-control-in-the-formviews-itemtemplate"></a>步驟 6：格式化在 FormView 的 ItemTemplate 的 UnitsInStockLabel 標籤控制項
+## <a name="step-6-formatting-the-unitsinstocklabel-label-control-in-the-formviews-itemtemplate"></a>步驟6：格式化 FormView 的 ItemTemplate 中的 UnitsInStockLabel Label 控制項
 
-最後一個步驟是設定格式顯示`UnitsInStock`紅色字型值，如果值為 10 或更少。 若要這麼做我們要以程式設計方式存取`UnitsInStockLabel`控制在`ItemTemplate`並設定其樣式屬性，使其文字會以紅色顯示。 若要存取 Web 控制項範本中的，使用`FindControl("controlID")`方法如下：
+最後一個步驟是將顯示的 `UnitsInStock` 值格式化為紅色字型（如果值小於或等於10）。 若要完成這項操作，我們需要以程式設計方式存取 `ItemTemplate` 中的 `UnitsInStockLabel` 控制項，並設定其樣式屬性，使其文字以紅色顯示。 若要存取範本中的 Web 控制項，請使用 `FindControl("controlID")` 方法，如下所示：
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample10.cs)]
 
-針對我們的範例中我們想要存取標籤控制項`ID`值是`UnitsInStockLabel`，因此，我們會使用：
+在我們的範例中，我們想要存取 `ID` 值 `UnitsInStockLabel`的標籤控制項，因此我們將使用：
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample11.cs)]
 
-一旦我們擁有 Web 控制項的程式設計參考，我們可以視需要修改它的樣式相關屬性。 如先前範例中，我建立了中的 CSS 類別`Styles.css`名為`LowUnitsInStockEmphasis`。 若要將此樣式套用至標籤 Web 控制項中，設定其`CssClass`屬性據此。
+一旦有了 Web 控制項的程式設計參考，我們就可以視需要修改其樣式相關的屬性。 如同先前的範例，我已在名為 `LowUnitsInStockEmphasis`的 `Styles.css` 中建立 CSS 類別。 若要將此樣式套用至標籤 Web 控制項，請據以設定其 `CssClass` 屬性。
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample12.cs)]
 
 > [!NOTE]
-> 格式化以程式設計方式存取 使用您建立 Web 控制項範本的語法`FindControl("controlID")`，然後設定其樣式相關屬性也可用時使用[TemplateFields](https://msdn.microsoft.com/library/system.web.ui.webcontrols.templatefield(VS.80).aspx) DetailsView 或 GridView控制項。 在我們的下一個教學課程中，我們將檢驗 TemplateFields。
+> 在 DetailsView 或 GridView 控制項中使用[TemplateFields](https://msdn.microsoft.com/library/system.web.ui.webcontrols.templatefield(VS.80).aspx)時，也可以使用以程式設計方式來格式化範本，並使用 `FindControl("controlID")` 然後設定其樣式相關屬性的語法。 我們會在下一個教學課程中檢查 TemplateFields。
 
-圖 7] 顯示 FormView 檢視產品時其`UnitsInStock`值大於 10，而 [圖 8 中的產品有其值小於 10。
+[圖 7] 顯示 FormView 在觀看產品時，其 `UnitsInStock` 值大於10，而 [圖 8] 中的產品值小於10。
 
-[![針對產品使用夠大庫存單位，套用無自訂格式](custom-formatting-based-upon-data-cs/_static/image16.png)](custom-formatting-based-upon-data-cs/_static/image15.png)
+[![在庫存中具有夠大單位的產品，則不會套用任何自訂格式](custom-formatting-based-upon-data-cs/_static/image16.png)](custom-formatting-based-upon-data-cs/_static/image15.png)
 
-**圖 7**:針對產品使用夠大庫存單位，套用無自訂格式 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image17.png))
+**圖 7**：對於具有足夠大單位庫存的產品，不會套用任何自訂格式（[按一下以觀看完整大小的影像](custom-formatting-based-upon-data-cs/_static/image17.png)）
 
-[![內建數字的單位是以紅色顯示這些產品與值的 10 或更少](custom-formatting-based-upon-data-cs/_static/image19.png)](custom-formatting-based-upon-data-cs/_static/image18.png)
+[![值為10（含）以下的產品的庫存號碼單位會以紅色顯示](custom-formatting-based-upon-data-cs/_static/image19.png)](custom-formatting-based-upon-data-cs/_static/image18.png)
 
-**圖 8**:內建數字的單位以紅色顯示這些產品與值的 10 或更少 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image20.png))
+**圖 8**：庫存號碼中的單位會以紅色顯示，這些產品的值為10或更小（[按一下以觀看完整大小的影像](custom-formatting-based-upon-data-cs/_static/image20.png)）
 
-## <a name="formatting-with-the-gridviewsrowdataboundevent"></a>使用 GridView 的格式化`RowDataBound`事件
+## <a name="formatting-with-the-gridviewsrowdataboundevent"></a>使用 GridView 的`RowDataBound`事件進行格式設定
 
-稍早我們檢查一連串步驟 DetailsView 和 FormView 控制項進行資料繫結期間。 讓我們透過下列步驟再次複習一下。
+我們稍早在資料系結期間檢查了 DetailsView 和 FormView 控制進度的步驟順序。 讓我們再次檢查一下這些步驟，做為重新整理程式。
 
-1. 資料 Web 控制項`DataBinding`引發事件。
-2. 資料繫結至資料 Web 控制項。
-3. 資料 Web 控制項`DataBound`引發事件。
+1. 會引發資料 Web 控制項的 `DataBinding` 事件。
+2. 資料會系結至資料 Web 控制項。
+3. 會引發資料 Web 控制項的 `DataBound` 事件。
 
-這三個簡單步驟已足夠完成 DetailsView 和 FormView 的因為它們會顯示單一記錄。 Gridview，其中顯示*所有*記錄繫結至該 （不只是第一個），步驟 2 會稍微複雜一點。
+這三個簡單的步驟就足以進行 DetailsView 和 FormView，因為它們只會顯示一筆記錄。 針對 GridView，會顯示系結至它的*所有*記錄（而不只是第一個），步驟2則比較複雜。
 
-在步驟的 2 的 GridView 會列舉資料來源，並每一筆記錄，建立`GridViewRow`執行個體，並繫結至它的目前資料錄。 每個`GridViewRow`新增至 GridView，會引發兩個事件：
+在步驟2中，GridView 會列舉資料來源，而針對每一筆記錄，會建立一個 `GridViewRow` 實例，並將目前的記錄系結至它。 針對加入至 GridView 的每個 `GridViewRow`，會引發兩個事件：
 
-- **`RowCreated`** 之後，就會引發`GridViewRow`已建立
-- **`RowDataBound`** 已繫結至的目前記錄之後，就會引發`GridViewRow`。
+- 建立 `GridViewRow` 之後， **`RowCreated`** 引發
+- **`RowDataBound`** 在目前的記錄已系結至 `GridViewRow`之後引發。
 
-Gridview，接著，資料繫結是更精確地將描述下列一連串步驟：
+就 GridView 而言，資料系結會更準確地由下列一系列的步驟來描述：
 
-1. GridView 的`DataBinding`引發事件。
-2. 資料繫結至 GridView。   
+1. GridView 的 `DataBinding` 事件會引發。
+2. 資料會系結至 GridView。   
   
-   資料來源中的每一筆記錄 
+   針對資料來源中的每筆記錄 
 
-    1. 建立`GridViewRow`物件
-    2. 引發`RowCreated`事件
-    3. 繫結至資料錄 `GridViewRow`
-    4. 引發`RowDataBound`事件
-    5. 新增`GridViewRow`至`Rows`集合
-3. GridView 的`DataBound`引發事件。
+    1. 建立 `GridViewRow` 物件
+    2. 引發 `RowCreated` 事件
+    3. 將記錄系結至 `GridViewRow`
+    4. 引發 `RowDataBound` 事件
+    5. 將 `GridViewRow` 新增至 `Rows` 集合
+3. GridView 的 `DataBound` 事件會引發。
 
-若要自訂的 GridView 的個別記錄格式，然後，我們需要建立的事件處理常式`RowDataBound`事件。 為了說明這點，讓我們新增到 GridView`CustomColors.aspx`列出名稱、 類別和每個產品，反白顯示的價格不超過 $10.00 以黃色背景色彩的產品價格頁面。
+若要自訂 GridView 個別記錄的格式，我們必須建立 `RowDataBound` 事件的事件處理常式。 為了說明這一點，讓我們將 GridView 新增至 [`CustomColors.aspx`] 頁面，其中列出每個產品的名稱、類別和價格，並以黃色的背景色彩反白顯示價格小於 $10.00 的產品。
 
-## <a name="step-7-displaying-product-information-in-a-gridview"></a>步驟 7：在 GridView 中顯示產品資訊
+## <a name="step-7-displaying-product-information-in-a-gridview"></a>步驟7：在 GridView 中顯示產品資訊
 
-新增 GridView 下方 FormView 上一個範例中並設定其`ID`屬性設`HighlightCheapProducts`。 由於我們已經有 ObjectDataSource 會傳回所有產品頁面上，將該繫結 GridView。 最後，編輯的 GridView BoundFields 包含只是產品的名稱、 分類和價格。 這些編輯之後 GridView 的標記應該看起來像：
+在先前範例中的 FormView 底下新增 GridView，並將其 `ID` 屬性設為 `HighlightCheapProducts`。 因為我們已經有一個會傳回頁面上所有產品的 ObjectDataSource，所以請將 GridView 系結至該頁面。 最後，編輯 GridView 的 BoundFields，只包含產品的名稱、類別和價格。 在這些編輯之後，GridView 的標記看起來應該像這樣：
 
 [!code-aspx[Main](custom-formatting-based-upon-data-cs/samples/sample13.aspx)]
 
-[圖 9] 顯示我們到目前為止透過瀏覽器檢視時的進度。
+[圖 9] 顯示透過瀏覽器觀看此點的進度。
 
-[![GridView 會列出名稱、 類別和每項產品的價格](custom-formatting-based-upon-data-cs/_static/image22.png)](custom-formatting-based-upon-data-cs/_static/image21.png)
+[![GridView 會列出每個產品的名稱、類別和價格](custom-formatting-based-upon-data-cs/_static/image22.png)](custom-formatting-based-upon-data-cs/_static/image21.png)
 
-**圖 9**:GridView 會列出名稱、 類別和每個產品的價格 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image23.png))
+**圖 9**： GridView 會列出每個產品的名稱、類別和價格（[按一下以查看完整大小的影像](custom-formatting-based-upon-data-cs/_static/image23.png)）
 
-## <a name="step-8-programmatically-determining-the-value-of-the-data-in-the-rowdatabound-event-handler"></a>步驟 8：以程式設計方式判斷 RowDataBound 事件處理常式中的資料值
+## <a name="step-8-programmatically-determining-the-value-of-the-data-in-the-rowdatabound-event-handler"></a>步驟8：以程式設計方式判斷 RowDataBound 事件處理常式中的資料值
 
-當`ProductsDataTable`繫結至 GridView 其`ProductsRow`執行個體均列舉的且每個`ProductsRow``GridViewRow`建立。 `GridViewRow`的`DataItem`屬性會指派給特定`ProductRow`之後, GridView 的`RowDataBound`事件處理常式，就會引發。 若要判斷`UnitPrice`針對每個產品的值繫結至 GridView，則我們需要建立事件處理常式，如 GridView 的`RowDataBound`事件。 這個事件處理常式中，我們可以檢查`UnitPrice`目前的值`GridViewRow`和格式化決定該資料列。
+當 `ProductsDataTable` 系結至 GridView 時，會列舉其 `ProductsRow` 實例，並針對每個 `ProductsRow` 建立 `GridViewRow`。 `GridViewRow`的 `DataItem` 屬性會指派給特定的 `ProductRow`，在此之後，會引發 GridView 的 `RowDataBound` 事件處理常式。 若要判斷系結至 GridView 之每個產品的 `UnitPrice` 值，則需要為 GridView 的 `RowDataBound` 事件建立事件處理常式。 在這個事件處理常式中，我們可以檢查目前 `GridViewRow` 的 `UnitPrice` 值，並針對該資料列進行格式設定決策。
 
-可以使用 FormView 和 DetailsView 中使用相同的一系列步驟為建立這個事件處理常式。
+您可以使用與 FormView 和 DetailsView 相同的一系列步驟來建立這個事件處理常式。
 
-![GridView 的 RowDataBound 事件建立事件處理常式](custom-formatting-based-upon-data-cs/_static/image24.png)
+![建立 GridView RowDataBound 事件的事件處理常式](custom-formatting-based-upon-data-cs/_static/image24.png)
 
-**圖 10**:建立事件處理常式，如 GridView 的`RowDataBound`事件
+**圖 10**：為 GridView 的 `RowDataBound` 事件建立事件處理常式
 
-以這種方式建立事件處理常式將會導致下列的程式碼，以自動新增至 ASP.NET 網頁的程式碼部分：
+以這種方式建立事件處理常式，會將下列程式碼自動新增至 ASP.NET 網頁的程式碼部分：
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample14.cs)]
 
-當`RowDataBound`事件引發時，事件處理常式傳遞做為其第二個參數類型的物件`GridViewRowEventArgs`，其具有名為`Row`。 這個屬性會傳回參考`GridViewRow`是只是資料繫結。 若要存取`ProductsRow`執行個體繫結至`GridViewRow`我們會使用`DataItem`屬性就像這樣：
+當 `RowDataBound` 事件引發時，事件處理常式會當做第二個參數類型的物件傳遞 `GridViewRowEventArgs`，其具有名為 `Row`的屬性。 這個屬性會傳回只是資料系結之 `GridViewRow` 的參考。 若要存取系結至 `GridViewRow` 的 `ProductsRow` 實例，我們使用 `DataItem` 屬性，如下所示：
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample15.cs)]
 
-使用時`RowDataBound`很重要要牢記在心 GridView 由不同類型的資料列所組成且為引發此事件的事件處理常式*所有*資料列型別。 A`GridViewRow`的型別由其`RowType`屬性，而且可以有其中一個可能的值：
+使用 `RowDataBound` 事件處理常式時，請務必記住 GridView 是由不同類型的資料列所組成，而且會針對*所有*資料列類型引發此事件。 `GridViewRow`的型別可以透過其 `RowType` 屬性來決定，而且可以有其中一個可能的值：
 
-- `DataRow` 從 GridView 的繫結至資料錄的資料列 `DataSource`
-- `EmptyDataRow` 如果顯示的資料列的 GridView`DataSource`是空的
-- `Footer` 頁尾資料列;顯示的如果 GridView 的`ShowFooter`屬性設定為 `true`
-- `Header` 標頭資料列，顯示是否 GridView 的 ShowHeader 屬性會設定為`true`（預設值）
-- `Pager` 如 GridView 的實作分頁，顯示分頁介面的資料列
-- `Separator` 不使用 GridView，但是所使用`RowType`屬性 DataList 與重複項控制項、 兩個資料 Web 控制項，我們在未來將討論教學課程
+- `DataRow` 從 GridView 的 `DataSource` 系結至記錄的資料列
+- `EmptyDataRow` GridView 的 `DataSource` 為空白時所顯示的資料列
+- `Footer` 頁尾資料列;當 GridView 的 `ShowFooter` 屬性設定為時顯示 `true`
+- `Header` 標頭資料列;如果 GridView 的 ShowHeader 屬性設定為 `true` （預設值），則會顯示
+- 適用于執行分頁之 GridView 的 `Pager`，顯示分頁介面的資料列
+- `Separator` 不是用於 GridView，而是由 DataList 和重複項控制項的 `RowType` 屬性使用，我們將在未來的教學課程中討論兩個數據 Web 控制項
 
-由於`EmptyDataRow`， `Header`， `Footer`，和`Pager`與相關聯的資料列不`DataSource`記錄，它們一定會`null`值及其`DataItem`屬性。 基於這個理由，然後再嘗試使用目前`GridViewRow`的`DataItem` 屬性中，我們首先必須確定我們要處理的`DataRow`。 這可藉由檢查`GridViewRow`的`RowType`屬性就像這樣：
+由於 `EmptyDataRow`、`Header`、`Footer`和 `Pager` 資料列不會與 `DataSource` 記錄相關聯，因此它們的 `null` 屬性一律會有 `DataItem` 的值。 基於這個理由，在嘗試使用目前 `GridViewRow`的 `DataItem` 屬性之前，我們必須先確定我們正在處理 `DataRow`。 這可以藉由檢查 `GridViewRow`的 `RowType` 屬性來完成，如下所示：
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample16.cs)]
 
-## <a name="step-9-highlighting-the-row-yellow-when-the-unitprice-value-is-less-than-1000"></a>步驟 9：反白顯示黃色時 UnitPrice 資料列值會小於 $10.00
+## <a name="step-9-highlighting-the-row-yellow-when-the-unitprice-value-is-less-than-1000"></a>步驟9：當單價值小於 $10.00 時，將資料列反白顯示為黃色
 
-最後一個步驟是以程式設計的方式反白顯示整個`GridViewRow`如果`UnitPrice`該資料列是不超過 $10.00 的值。 存取 GridView 的資料列或資料格的語法是如同 DetailsView`GridViewID.Rows[index]`存取整個資料列中，`GridViewID.Rows[index].Cells[index]`存取特定的資料格。 不過，當`RowDataBound`事件處理常式，就會引發資料繫結`GridViewRow`尚未加入至 GridView 的`Rows`集合。 因此，您無法存取目前`GridViewRow`執行個體`RowDataBound`使用資料列集合的事件處理常式。
+最後一個步驟是，如果該資料列的 `UnitPrice` 值小於 $10.00，以程式設計方式反白顯示整個 `GridViewRow`。 存取 GridView 的資料列或資料格的語法與 DetailsView `GridViewID.Rows[index]` 用來存取整個資料列，`GridViewID.Rows[index].Cells[index]` 存取特定的資料格。 不過，當 `RowDataBound` 事件處理常式引發資料系結 `GridViewRow` 尚未加入 GridView 的 `Rows` 集合。 因此，您無法使用 Rows 集合，從 `RowDataBound` 事件處理常式存取目前的 `GridViewRow` 實例。
 
-而不是`GridViewID.Rows[index]`，我們可以參考目前`GridViewRow`執行個體中`RowDataBound`事件處理常式使用`e.Row`。 也就是為了反白顯示目前`GridViewRow`執行個體`RowDataBound`我們要使用的事件處理常式：
+我們可以使用 `e.Row`來參考 `RowDataBound` 事件處理常式中目前的 `GridViewRow` 實例，而不是 `GridViewID.Rows[index]`。 也就是說，若要從我們要使用的 `RowDataBound` 事件處理常式中反白顯示目前的 `GridViewRow` 實例：
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample17.cs)]
 
-而不是設定`GridViewRow`的`BackColor`屬性直接，讓我們繼續使用 CSS 類別。 我建立了名為的 CSS 類別`AffordablePriceEmphasis`所設定的背景色彩為黃色。 已完成`RowDataBound`事件處理常式會遵循：
+我們不會直接設定 `GridViewRow`的 `BackColor` 屬性，而是使用 CSS 類別。 我建立了一個名為 `AffordablePriceEmphasis` 的 CSS 類別，將背景色彩設定為黃色。 完成的 `RowDataBound` 事件處理常式如下：
 
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample18.cs)]
 
-[![最實惠的產品為黃色反白顯示](custom-formatting-based-upon-data-cs/_static/image26.png)](custom-formatting-based-upon-data-cs/_static/image25.png)
+[![最實惠的產品會以黃色反白顯示](custom-formatting-based-upon-data-cs/_static/image26.png)](custom-formatting-based-upon-data-cs/_static/image25.png)
 
-**圖 11**:最實惠的產品為黃色反白顯示 ([按一下以檢視完整大小的影像](custom-formatting-based-upon-data-cs/_static/image27.png))
+**圖 11**：最經濟實惠的產品會以黃色反白顯示（[按一下以觀看完整大小的影像](custom-formatting-based-upon-data-cs/_static/image27.png)）
 
 ## <a name="summary"></a>總結
 
-在本教學課程中，我們看到如何設定 GridView、 DetailsView 和 FormView 控制項繫結的資料為基礎的格式。 若要這麼做我們建立的事件處理常式`DataBound`或`RowDataBound`其中基礎資料已檢查的格式設定的變更，以及如有需要的事件。 若要存取的資料繫結至 DetailsView 或 FormView，我們使用`DataItem`中的屬性`DataBound`事件處理常式; 如 GridView，每個`GridViewRow`執行個體的`DataItem`屬性包含該資料列位於繫結的資料`RowDataBound`事件處理常式。
+在本教學課程中，我們已瞭解如何根據系結至控制項的資料來格式化 GridView、DetailsView 和 FormView。 為了達成此目的，我們建立了 `DataBound` 或 `RowDataBound` 事件的事件處理常式，其中基礎資料會與格式變更一起檢查（如有需要）。 若要存取系結至 DetailsView 或 FormView 的資料，我們會在 `DataBound` 事件處理常式中使用 `DataItem` 屬性;就 GridView 而言，每個 `GridViewRow` 實例的 `DataItem` 屬性都會包含系結至該資料列的資料，而這可在 `RowDataBound` 事件處理常式中使用。
 
-以程式設計方式調整資料 Web 控制項格式的語法，取決於 Web 控制項和格式化資料的顯示方式。 DetailsView 和 GridView 控制項、 資料列和資料格可以存取由循序的索引。 FormView，它會使用範本，如`FindControl("controlID")`方法通常用來找出範本內的 Web 控制項。
+以程式設計方式調整資料 Web 控制項的格式的語法，取決於 Web 控制項以及如何顯示要格式化的資料。 對於 DetailsView 和 GridView 控制項，資料列和資料格可以透過序數索引來存取。 針對使用範本的 FormView，`FindControl("controlID")` 方法通常用來從範本內尋找 Web 控制項。
 
-在下一個教學課程中我們將探討如何使用 GridView 和 DetailsView 中使用範本。 此外，我們會看到自訂根據基礎資料的格式設定的另一種技術。
+在下一個教學課程中，我們將探討如何使用具有 GridView 和 DetailsView 的範本。 此外，我們還會看到另一項技術，可讓您根據基礎資料自訂格式。
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ## <a name="about-the-author"></a>關於作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七個 ASP 書籍和的創辦人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年從事 Microsoft Web 技術工作。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是[ *Sams 教導您自己 ASP.NET 2.0 在 24 小時內*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在觸達[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或透過他的部落格，這位於 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，自1998起，有七個 ASP/ASP. NET 書籍和創辦人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是[*在24小時內讓自己的 ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在mitchell@4GuysFromRolla.com觸達[。](mailto:mitchell@4GuysFromRolla.com) 或者透過他的 blog，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 ## <a name="special-thanks-to"></a>特別感謝
 
-本教學課程系列是由許多實用的檢閱者檢閱。 本教學課程中的潛在客戶檢閱者已 E.R. Gilmore，Dennis Patterson 和 Dan Jagers。 有興趣檢閱我即將推出的 MSDN 文章嗎？ 如果是這樣，psychic 在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
+本教學課程系列已由許多有用的審核者所審查。 本教學課程的潛在客戶審核者已 E.R。 Gilmore、Dennis Patterson 和 Dan Jagers。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [下一步](using-templatefields-in-the-gridview-control-cs.md)

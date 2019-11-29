@@ -1,123 +1,123 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-vb
-title: 了解動作篩選 (VB) |Microsoft Docs
+title: 瞭解動作篩選（VB） |Microsoft Docs
 author: microsoft
-description: 本教學課程的目標在於說明動作篩選條件。 動作篩選條件是屬性，您可以套用至控制器動作或整個控制器...
+description: 本教學課程的目的是要說明動作篩選準則。 動作篩選準則是可套用至控制器動作或整個控制器的屬性 。
 ms.author: riande
 ms.date: 10/16/2008
 ms.assetid: e83812f2-c53e-4a43-a7c1-d64c59ecf694
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fb3ed252a9232a2f5a1ad4257156a142bbe5b174
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 263658231ccaa7863508c691a3570bc00b9e8039
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65123170"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74590051"
 ---
 # <a name="understanding-action-filters-vb"></a>了解動作篩選 (VB)
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-[下載 PDF](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_14_VB.pdf)
+[下載 PDF](https://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_14_VB.pdf)
 
-> 本教學課程的目標在於說明動作篩選條件。 動作篩選條件是屬性，您可以套用至控制器動作或整個 controller--修改 執行動作的方式。
+> 本教學課程的目的是要說明動作篩選準則。 動作篩選準則是一種屬性，可套用至控制器動作或整個控制器--修改動作的執行方式。
 
-## <a name="understanding-action-filters"></a>了解動作篩選條件
+## <a name="understanding-action-filters"></a>瞭解動作篩選準則
 
-本教學課程的目標在於說明動作篩選條件。 動作篩選條件是屬性，您可以套用至控制器動作或整個 controller--修改 執行動作的方式。 ASP.NET MVC 架構包括數個動作篩選條件：
+本教學課程的目的是要說明動作篩選準則。 動作篩選準則是一種屬性，可套用至控制器動作或整個控制器--修改動作的執行方式。 ASP.NET MVC 架構包含數個動作篩選準則：
 
-- OutputCache – 此動作篩選條件會快取一段指定時間的控制器動作的輸出。
-- HandleError – 此動作篩選條件處理控制器動作執行時引發的錯誤。
-- 授權-此動作篩選條件可讓您限制存取特定使用者或角色。
+- OutputCache –此動作篩選準則會在一段指定的時間內快取控制器動作的輸出。
+- HandleError –此動作篩選準則會處理控制器動作執行時引發的錯誤。
+- 授權–此動作篩選準則可讓您限制對特定使用者或角色的存取。
 
-您也可以建立您自己的自訂動作篩選條件。 例如，您可能要建立自訂動作篩選條件，以實作自訂驗證系統。 或者，您可能想要建立動作篩選條件，以修改控制器動作所傳回的檢視資料。
+您也可以建立自己的自訂動作篩選準則。 例如，您可能會想要建立自訂動作篩選準則，以便執行自訂驗證系統。 或者，您可能會想要建立動作篩選準則，以修改控制器動作所傳回的視圖資料。
 
-在本教學課程中，您會學習如何建立動作篩選條件所打造的。 我們會建立記錄至 Visual Studio [輸出] 視窗的不同階段的處理程序的動作記錄動作篩選條件。
+在本教學課程中，您將瞭解如何從頭開始建立動作篩選準則。 我們會建立記錄動作篩選，將動作處理的不同階段記錄到 Visual Studio 的 [輸出] 視窗。
 
-### <a name="using-an-action-filter"></a>使用動作篩選條件
+### <a name="using-an-action-filter"></a>使用動作篩選準則
 
-動作篩選條件是屬性。 您可以將大部分的動作篩選條件套用至個別的控制器動作或整個控制器。
+動作篩選準則是一個屬性。 您可以將大部分的動作篩選準則套用至個別的控制器動作或整個控制器。
 
-比方說，在 列表 1 中的資料控制者會公開名為動作`Index()`，傳回目前的時間。 此動作以裝飾`OutputCache`動作篩選條件。 此篩選條件會導致快取為 10 秒的動作所傳回的值。
+例如，[清單 1] 中的資料控制站會公開名為 `Index()` 的動作，以傳回目前的時間。 此動作會使用 [`OutputCache` 動作] 篩選準則裝飾。 此篩選會使動作所傳回的值快取10秒。
 
-**列表 1 – `Controllers\DataController.vb`**
+**清單1– `Controllers\DataController.vb`**
 
 [!code-vb[Main](understanding-action-filters-vb/samples/sample1.vb)]
 
-如果您重複叫用`Index()`由您的瀏覽器的網址列中輸入 URL/資料/索引，然後按 重新整理動作按鈕多次，，然後您會看到相同的時間為 10 秒。 輸出`Index()`動作的快取 （請參閱 圖 1） 的 10 秒。
+如果您藉由在瀏覽器的網址列中輸入 URL/Data/Index，重複叫用 `Index()` 動作，並多次按下 [重新整理] 按鈕，則會看到10秒的相同時間。 `Index()` 動作的輸出會快取10秒（請參閱 [圖 1]）。
 
-[![快取的時間](understanding-action-filters-vb/_static/image2.png)](understanding-action-filters-vb/_static/image1.png)
+[![快取時間](understanding-action-filters-vb/_static/image2.png)](understanding-action-filters-vb/_static/image1.png)
 
-**圖 01**:快取時間 ([按一下以檢視完整大小的影像](understanding-action-filters-vb/_static/image3.png))
+**圖 01**：快取的時間（[按一下以觀看完整大小的影像](understanding-action-filters-vb/_static/image3.png)）
 
-在列表 1 中，單一動作篩選條件 –`OutputCache`套用至動作篩選條件 –`Index()`方法。 如果您需要您可以套用多個動作篩選條件至相同的動作。 例如，您可能想要套用這兩`OutputCache`和`HandleError`動作篩選條件至相同的動作。
+在 [清單 1] 中，單一動作篩選準則– `OutputCache` 動作篩選準則–套用至 `Index()` 方法。 如有需要，您可以將多個動作篩選準則套用至相同的動作。 例如，您可能會想要將 `OutputCache` 和 `HandleError` 動作篩選準則套用至相同的動作。
 
-在 [列表 1]`OutputCache`動作篩選條件會套用至`Index()`動作。 您也可以套用至這個屬性`DataController`類別本身。 在此情況下，任何由控制器的動作所傳回的結果會快取 10 秒的時間。
+在 [清單 1] 中，[`OutputCache` 動作] 篩選準則會套用至 [`Index()`] 動作。 您也可以將此屬性套用至 `DataController` 類別本身。 在此情況下，控制器所公開的任何動作所傳回的結果會快取10秒。
 
-### <a name="the-different-types-of-filters"></a>不同類型的篩選器
+### <a name="the-different-types-of-filters"></a>不同類型的篩選準則
 
-ASP.NET MVC 架構支援四種不同類型的篩選：
+ASP.NET MVC 架構支援四種不同類型的篩選準則：
 
-1. 授權篩選條件 – 實作`IAuthorizationFilter`屬性。
-2. 動作篩選條件 – 實作`IActionFilter`屬性。
-3. 結果篩選條件 – 實作`IResultFilter`屬性。
-4. 例外狀況篩選條件 – 實作`IExceptionFilter`屬性。
+1. 授權篩選–會執行 `IAuthorizationFilter` 屬性。
+2. 動作篩選–執行 `IActionFilter` 屬性。
+3. 結果篩選–執行 `IResultFilter` 屬性。
+4. 例外狀況篩選準則–執行 `IExceptionFilter` 屬性。
 
-篩選條件的執行上面所列的順序。 例如，授權篩選條件永遠會在動作篩選條件之前執行，而例外狀況篩選條件一律會執行篩選器的型別之後。
+篩選器會依照上列循序執行。 例如，授權篩選準則一律會在動作篩選準則之前執行，而例外狀況篩選準則一律會在每個其他類型的篩選器之後執行。
 
-授權篩選條件會用來實作驗證和授權適用於控制器動作。 比方說，授權篩選條件是為授權篩選條件的範例。
+授權篩選器用來執行控制器動作的驗證和授權。 例如，授權篩選準則就是授權篩選準則的範例。
 
-動作篩選條件包含之前和之後的控制器動作執行時，才會執行的邏輯。 您可以修改控制器動作傳回檢視資料，比方說，使用動作篩選條件。
+動作篩選包含在控制器動作執行前後執行的邏輯。 例如，您可以使用動作篩選準則來修改控制器動作所傳回的視圖資料。
 
-結果篩選條件包含之前和之後執行檢視結果時，才會執行的邏輯。 例如，您可能想要修改檢視結果 檢視呈現至瀏覽器之前，以滑鼠右鍵。
+結果篩選包含在執行視圖結果之前和之後執行的邏輯。 例如，您可能會想要在將視圖轉譯至瀏覽器之前修改視圖結果。
 
-例外狀況篩選條件會篩選條件執行的最後一個類型。 您可以使用例外狀況篩選條件來處理您的控制器動作或控制器動作結果所引發的錯誤。 您也可以使用例外狀況篩選條件，來記錄錯誤。
+例外狀況篩選是要執行的最後一個篩選準則類型。 您可以使用例外狀況篩選器來處理控制器動作或控制器動作結果所引發的錯誤。 您也可以使用例外狀況篩選來記錄錯誤。
 
-各種不同類型的篩選器會以特定順序執行。 如果您想要控制在其中執行相同類型的篩選條件的順序，您可以設定篩選條件的順序屬性。
+每個不同類型的篩選準則都會以特定循序執行。 如果您想要控制執行相同類型篩選準則的順序，您可以設定篩選的 Order 屬性。
 
-所有動作篩選條件的基底類別是`System.Web.Mvc.FilterAttribute`類別。 如果您想要實作特定類型的篩選條件，則您需要建立的類別，繼承自基底的篩選條件類別並實作一或多個 IAuthorizationFilter、 IActionFilter、 IResultFilter，或 ExceptionFilter 介面。
+所有動作篩選準則的基類都是 `System.Web.Mvc.FilterAttribute` 類別。 如果您想要實作為特定類型的篩選準則，則需要建立繼承自基底篩選準則類別的類別，並執行一或多個 IAuthorizationFilter、IActionFilter、IResultFilter 或 Setunhandledexceptionfilter 介面。
 
-### <a name="the-base-actionfilterattribute-class"></a>基底的 Actionfilterattribut 類別
+### <a name="the-base-actionfilterattribute-class"></a>基底 Actionfilterattribut 類別
 
-為了讓您更輕鬆地實作自訂動作篩選條件，ASP.NET MVC 架構包括基底`ActionFilterAttribute`類別。 這個類別會實作`IActionFilter`並`IResultFilter`介面，並繼承自`Filter`類別。
+為了讓您更輕鬆地執行自訂動作篩選準則，ASP.NET MVC 架構包含基底 `ActionFilterAttribute` 類別。 這個類別會同時執行 `IActionFilter` 和 `IResultFilter` 介面，並繼承自 `Filter` 類別。
 
-無法完全一致的術語。 技術上來說，從 Actionfilterattribut 類別繼承的類別是動作篩選條件和結果篩選條件。 不過，鬆散的意義而言，文字的動作篩選條件用來參考任何類型的 ASP.NET MVC 架構中的篩選條件。
+此處的術語並不完全一致。 就技術上而言，繼承自 Actionfilterattribut 類別的類別同時是動作篩選準則和結果篩選準則。 不過，在鬆散的意義下，word 動作篩選準則是用來參考 ASP.NET MVC 架構中的任何類型篩選。
 
-基底的 Actionfilterattribut 類別具有可以覆寫下列方法：
+基底 Actionfilterattribut 類別具有下列可覆寫的方法：
 
-- OnActionExecuting – 執行控制器動作之前，會呼叫這個方法。
-- OnActionExecuted – 控制器動作執行之後，會呼叫這個方法。
-- OnResultExecuting – 控制器動作結果執行之前，會呼叫這個方法。
-- OnResultExecuted – 控制器動作結果執行之後，會呼叫這個方法。
+- OnActionExecuting –在執行控制器動作之前，會呼叫這個方法。
+- OnActionExecuted –在執行控制器動作之後，會呼叫這個方法。
+- OnResultExecuting –在執行控制器動作結果之前，會呼叫這個方法。
+- OnResultExecuted –在執行控制器動作結果之後，會呼叫這個方法。
 
-在下一步 區段中，我們會看到如何實作每一種不同的方法。
+在下一節中，我們將瞭解如何執行這兩種不同的方法。
 
-### <a name="creating-a-log-action-filter"></a>建立記錄的動作篩選條件
+### <a name="creating-a-log-action-filter"></a>建立記錄動作篩選準則
 
-若要說明如何建置自訂動作篩選條件，我們將建立自訂動作篩選條件的記錄處理 Visual Studio 輸出 視窗的控制器動作的階段。 我們`LogActionFilter`列表 2 中包含。
+為了說明您可以如何建立自訂動作篩選準則，我們將建立自訂動作篩選準則，將處理控制器動作的階段記錄到 Visual Studio 的輸出視窗。 我們的 `LogActionFilter` 包含在 [清單 2] 中。
 
-**列表 2 – `ActionFilters\LogActionFilter.vb`**
+**清單2– `ActionFilters\LogActionFilter.vb`**
 
 [!code-vb[Main](understanding-action-filters-vb/samples/sample2.vb)]
 
-在列表 2 中， `OnActionExecuting()`， `OnActionExecuted()`， `OnResultExecuting()`，以及`OnResultExecuted()`方法的所有呼叫`Log()`方法。 方法的名稱和目前的路由資料傳遞至`Log()`方法。 `Log()`方法會將訊息寫入 Visual Studio 輸出 視窗 （請參閱 圖 2）。
+在 [清單 2] 中，`OnActionExecuting()`、`OnActionExecuted()`、`OnResultExecuting()`和 `OnResultExecuted()` 方法全都會呼叫 `Log()` 方法。 方法的名稱和目前的路由資料會傳遞至 `Log()` 方法。 `Log()` 方法會將訊息寫入 Visual Studio 的 [輸出] 視窗（請參閱 [圖 2]）。
 
-[![寫入至 Visual Studio [輸出] 視窗](understanding-action-filters-vb/_static/image5.png)](understanding-action-filters-vb/_static/image4.png)
+[![寫入 Visual Studio 輸出視窗](understanding-action-filters-vb/_static/image5.png)](understanding-action-filters-vb/_static/image4.png)
 
-**圖 02**:寫入至 Visual Studio [輸出] 視窗 ([按一下以檢視完整大小的影像](understanding-action-filters-vb/_static/image6.png))
+**圖 02**：寫入 Visual Studio 的輸出視窗（[按一下以查看完整大小的影像](understanding-action-filters-vb/_static/image6.png)）
 
-在 列表 3 中的主控制器會說明如何將記錄的動作篩選條件套用至整個控制器類別。 每當任何由主控制器的動作會叫用 – 請`Index()`方法或`About()`方法 – 動作都會記錄到 Visual Studio [輸出] 視窗的處理階段。
+[清單 3] 中的 Home 控制器說明如何將記錄動作篩選套用至整個控制器類別。 每當叫用 Home 控制器所公開的任何動作時（`Index()` 方法或 `About()` 方法），處理動作的階段就會記錄到 [Visual Studio 輸出] 視窗中。
 
-**列表 3 – `Controllers\HomeController.vb`**
+**清單3– `Controllers\HomeController.vb`**
 
 [!code-vb[Main](understanding-action-filters-vb/samples/sample3.vb)]
 
 ### <a name="summary"></a>總結
 
-在本教學課程中，已向您介紹 ASP.NET MVC 動作篩選條件。 您已了解四種不同類型的篩選： 授權篩選條件、 動作篩選條件、 結果篩選條件和例外狀況篩選條件。 您也學會了基底`ActionFilterAttribute`類別。
+在本教學課程中，您已引進 ASP.NET MVC 動作篩選器。 您已瞭解四種不同類型的篩選準則：授權篩選準則、動作篩選準則、結果篩選準則和例外狀況篩選器。 您也已瞭解基底 `ActionFilterAttribute` 類別的相關資訊。
 
-最後，您已了解如何實作簡單動作篩選條件。 我們會建立記錄檔的處理 Visual Studio 輸出 視窗的控制器動作階段記錄動作篩選條件。
+最後，您已瞭解如何執行簡單的動作篩選準則。 我們已建立記錄動作篩選器，將處理控制器動作的階段記錄到 Visual Studio 的輸出視窗。
 
 > [!div class="step-by-step"]
 > [上一頁](asp-net-mvc-routing-overview-vb.md)

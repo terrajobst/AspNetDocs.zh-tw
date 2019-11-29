@@ -1,63 +1,63 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-vb
-title: 使用自動回傳與 CascadingDropDown (VB) |Microsoft Docs
+title: 使用自動回傳與 CascadingDropDown （VB） |Microsoft Docs
 author: wenz
-description: 在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯 anoth 中的值...
+description: AJAX 控制項工具組中的 CascadingDropDown 控制項會擴充 DropDownList 控制項，讓一個 DropDownList 中的變更載入 anoth 中的相關聯值 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 0b34f7f6-a0cc-4b9f-9761-643fb0bb3ece
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e2374f05fb471c2b35a851eadb8c9f4a98f61e11
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 5dea23a20aba00af5109f05f18365b89e409a131
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126081"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74574448"
 ---
 # <a name="using-auto-postback-with-cascadingdropdown-vb"></a>使用自動回傳與 CascadingDropDown (VB)
 
-藉由[Christian Wenz](https://github.com/wenz)
+依[Christian Wenz](https://github.com/wenz)
 
-[下載程式碼](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown3.vb.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown3VB.pdf)
+[下載程式代碼](https://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown3.vb.zip)或[下載 PDF](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown3VB.pdf)
 
-> 在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。 不過使用 CascadingDropDown 控制，ASP 時。NET 的 DropDownList 控制項的 AutoPostBack 功能無法運作，因為會以非同步方式將資料載入清單產生本身 （非必要） 回傳。 使用一些 JavaScript 程式碼中，您可以避免這種效果。
+> AJAX 控制項工具組中的 CascadingDropDown 控制項會擴充 DropDownList 控制項，讓一個 DropDownList 中的變更載入另一個 DropDownList 中的關聯值。 不過，使用 CascadingDropDown 控制項時，ASP。NET 的 DropDownList 控制項的 AutoPostBack 功能無法運作，因為以非同步方式將資料載入清單中會產生（不必要）回傳本身。 有了一些 JavaScript 程式碼，就可以避免這種效果。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。 （比方說，一份清單會提供一份我們狀態，而且下一個清單則填入該狀態中主要城市）。不過使用 CascadingDropDown 控制，ASP 時。NET 的 DropDownList 控制項的 AutoPostBack 功能無法運作，因為會以非同步方式將資料載入清單產生本身 （非必要） 回傳。 使用一些 JavaScript 程式碼中，您可以避免這種效果。
+AJAX 控制項工具組中的 CascadingDropDown 控制項會擴充 DropDownList 控制項，讓一個 DropDownList 中的變更載入另一個 DropDownList 中的關聯值。 （例如，一個清單提供美國州的清單，而下一個清單則會填入該州的主要城市）。不過，使用 CascadingDropDown 控制項時，ASP。NET 的 DropDownList 控制項的 AutoPostBack 功能無法運作，因為以非同步方式將資料載入清單中會產生（不必要）回傳本身。 有了一些 JavaScript 程式碼，就可以避免這種效果。
 
 ## <a name="steps"></a>步驟
 
-若要啟動的 ASP.NET AJAX Control Toolkit 中，功能`ScriptManager`控制項必須放置在任何位置上 (但內&lt; `form` &gt;項目):
+若要啟用 ASP.NET AJAX 和控制項工具組的功能，必須將 `ScriptManager` 控制項放在頁面上的任何位置（但在 &lt;`form`&gt; 專案中）：
 
 [!code-aspx[Main](using-auto-postback-with-cascadingdropdown-vb/samples/sample1.aspx)]
 
-DropDownList 控制項則需要：
+然後，需要 DropDownList 控制項：
 
 [!code-aspx[Main](using-auto-postback-with-cascadingdropdown-vb/samples/sample2.aspx)]
 
-此清單中，會加入 CascadingDropDown 擴充項，提供 web 服務 URL 和方法資訊：
+針對這份清單，會加入 CascadingDropDown 擴充項，並提供 web 服務 URL 和方法資訊：
 
 [!code-aspx[Main](using-auto-postback-with-cascadingdropdown-vb/samples/sample3.aspx)]
 
-CascadingDropDown extender 接著會以非同步方式呼叫 web 服務的下列方法簽章：
+然後，CascadingDropDown 擴充項會以非同步方式呼叫具有下列方法簽章的 web 服務：
 
 [!code-vb[Main](using-auto-postback-with-cascadingdropdown-vb/samples/sample4.vb)]
 
-方法會傳回類型 CascadingDropDown 值的陣列。 類型的建構函式必須要有先清單項目的標題，然後此值 (HTML`value`屬性)。
+方法會傳回 CascadingDropDown 數值型別的陣列。 類型的函式需要先有清單專案的標題，然後才是值（HTML `value` 屬性）。
 
 [!code-aspx[Main](using-auto-postback-with-cascadingdropdown-vb/samples/sample5.aspx)]
 
-載入瀏覽器頁面，將會填滿下拉式清單中的，使用三個廠商，第二個要預先選取。 此外，ASP.NET 會定義`__doPostBack()`JavaScript 方法。 頁面載入之後，此 JavaScript 呼叫將會加入下拉式清單中，但只能有項目中。 如果在清單中不有任何項目，Control Toolkit 目前正在載入它們，讓 JavaScript 程式碼會使用逾時和在半秒後重新嘗試。
+在瀏覽器中載入頁面，會在下拉式清單中填入三個廠商，第二個是預先選取的。 此外，ASP.NET 也會定義 `__doPostBack()` 的 JavaScript 方法。 載入頁面之後，此 JavaScript 呼叫就會新增至下拉式清單，但只有在其中有元素時才會加入。 如果清單中沒有任何專案，則控制項工具組目前正在載入它們，因此 JavaScript 程式碼會使用超時，並在半秒後再試一次。
 
 [!code-html[Main](using-auto-postback-with-cascadingdropdown-vb/samples/sample6.html)]
 
-如此一來，當清單中有實際的項目，而且使用者選取一個項目只執行回傳。
+如此一來，只有在清單中有實際元素，且使用者選取專案時，才會執行回傳。
 
-[![選取清單項目造成回傳](using-auto-postback-with-cascadingdropdown-vb/_static/image2.png)](using-auto-postback-with-cascadingdropdown-vb/_static/image1.png)
+[選取清單元素 ![會導致回傳](using-auto-postback-with-cascadingdropdown-vb/_static/image2.png)](using-auto-postback-with-cascadingdropdown-vb/_static/image1.png)
 
-選取清單項目造成回傳 ([按一下以檢視完整大小的影像](using-auto-postback-with-cascadingdropdown-vb/_static/image3.png))
+選取清單元素會導致回傳（[按一下以查看完整大小的影像](using-auto-postback-with-cascadingdropdown-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [上一步](presetting-list-entries-with-cascadingdropdown-vb.md)
+> [上一篇](presetting-list-entries-with-cascadingdropdown-vb.md)

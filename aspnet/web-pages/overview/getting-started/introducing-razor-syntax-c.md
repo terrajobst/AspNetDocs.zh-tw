@@ -1,57 +1,57 @@
 ---
 uid: web-pages/overview/getting-started/introducing-razor-syntax-c
-title: 使用 Razor 語法 (C#) 的 ASP.NET Web 程式設計簡介 |Microsoft Docs
+title: 使用 Razor 語法 ASP.NET Web 程式設計的簡介（C#） |Microsoft Docs
 author: Rick-Anderson
-description: 本章概述您程式設計的 ASP.NET 網頁使用 Razor 語法。 ASP.NET 是 Microsoft 的技術，用於執行動態 web 的 pa...
+description: 這一章可讓您大致瞭解如何使用 Razor 語法的 ASP.NET Web Pages 進行程式設計。 ASP.NET 是 Microsoft 用來執行動態 web pa 的技術 。
 ms.author: riande
 ms.date: 02/07/2014
 ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: d9edcd61e52941c0fd69e645da7e2cf467a632ac
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: c2f420bb7c2f7d2e31654c20fb9ec7497a30a9f7
+ms.sourcegitcommit: 6f0e10e4ca61a1e5534b09c655fd35cdc6886c8a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131788"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74564879"
 ---
-# <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 語法 (C#) 的 ASP.NET Web 程式設計簡介
+# <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 語法 ASP.NET Web 程式設計的簡介（C#）
 
-藉由[Tom FitzMacken](https://github.com/tfitzmac)
+由[Tom FitzMacken](https://github.com/tfitzmac)
 
-> 這篇文章概述您程式設計的 ASP.NET 網頁使用 Razor 語法。 ASP.NET 是 Microsoft 的技術，用於在 web 伺服器上執行動態網頁。 本文章著重於使用 C# 程式設計語言中。
+> 本文可讓您瞭解如何使用 Razor 語法 ASP.NET Web Pages 進行程式設計。 ASP.NET 是 Microsoft 在網頁伺服器上執行動態網頁的技術。 這篇文章著重于使用C#程式設計語言。
 > 
-> **您將學到什麼**:
+> **您將瞭解的內容**：
 > 
-> - 前 8 的程式設計入門程式設計使用 Razor 語法的 ASP.NET Web Pages 的提示。
+> - 使用 Razor 語法開始進行程式設計 ASP.NET Web Pages 的前8個程式設計秘訣。
 > - 您需要的基本程式設計概念。
-> - ASP.NET server 程式碼和 Razor 語法是有關。
+> - 什麼是 ASP.NET 伺服器程式碼和 Razor 語法的相關資訊。
 >   
 > 
 > ## <a name="software-versions"></a>軟體版本
 > 
 > 
-> - ASP.NET Web Pages (Razor) 3
+> - ASP.NET Web Pages （Razor）3
 >   
 > 
-> 本教學課程也適用於 ASP.NET Web Pages 2。
+> 本教學課程也適用于 ASP.NET Web Pages 2。
 
-## <a name="the-top-8-programming-tips"></a>最佳的 8 程式設計秘訣
+## <a name="the-top-8-programming-tips"></a>前8個程式設計提示
 
-此區段會列出您一定要知道當您開始撰寫使用 Razor 語法的 ASP.NET 伺服器程式碼的一些秘訣。
+本節列出當您使用 Razor 語法開始撰寫 ASP.NET 伺服器程式碼時，您絕對需要知道的幾個秘訣。
 
 > [!NOTE]
-> 根據 Razor 語法的 C# 程式設計語言，以及這最常使用以 ASP.NET Web Pages 的語言。 不過，Razor 語法也支援 Visual Basic 語言，以及您會看到您也可以執行在 Visual Basic 中的所有項目。 如需詳細資訊，請參閱附錄[Visual Basic 語言與語法](https://go.microsoft.com/fwlink/?LinkId=202908)。
+> Razor 語法是以程式C#設計語言為基礎，這是最常用於 ASP.NET Web Pages 的語言。 不過，Razor 語法也支援 Visual Basic 語言，而且您看到的所有內容也可以在 Visual Basic 中執行。 如需詳細資訊，請參閱附錄[Visual Basic 語言和語法](https://go.microsoft.com/fwlink/?LinkId=202908)。
 
-在本文稍後，您可以找到大部分的這些程式設計技術的更多詳細。
+您稍後可以在本文中找到更多有關這些程式設計技巧的詳細資料。
 
-### <a name="1-you-add-code-to-a-page-using-the--character"></a>1.您將程式碼新增至頁面上，使用 @ 字元
+### <a name="1-you-add-code-to-a-page-using-the--character"></a>1. 使用 @ 字元將程式碼加入至頁面
 
-`@`字元開始內嵌運算式、 單一陳述式區塊和多重陳述式區塊：
+`@` 字元會啟動內嵌運算式、單一語句區塊和多重語句區塊：
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample1.html)]
 
-這是這些陳述式如下所示在網頁瀏覽器中執行時：
+當頁面在瀏覽器中執行時，這就是這些語句的樣子：
 
 ![Razor-Img1](introducing-razor-syntax-c/_static/image1.jpg)
 
@@ -59,286 +59,286 @@ ms.locfileid: "65131788"
 > 
 > **HTML 編碼**
 > 
-> 當您在頁面上，使用顯示的內容時`@`字元 ASP.NET HTML 編碼的輸出，如上述範例中，所示。 這會取代 HTML 的保留的字元 (例如`<`並`>`和`&`) 與啟用顯示網頁，而不會轉譯為 HTML 標記或實體中的字元為字元的代碼。 而不進行 HTML 編碼，從伺服器程式碼的輸出可能不正確，會顯示，並可能會暴露於安全性風險的頁面。
+> 當您使用 `@` 字元在頁面中顯示內容時（如上述範例所示），ASP.NET 會以 HTML 編碼輸出。 這會將保留的 HTML 字元（例如 `<` 和 `>` 和 `&`）取代為程式碼，讓字元在網頁中顯示為字元，而不是被轉譯為 HTML 標籤或實體。 如果沒有 HTML 編碼，來自您的伺服器程式碼的輸出可能無法正確顯示，而且可能會讓頁面暴露于安全性風險下。
 > 
-> 如果您的目標是要輸出轉譯為標記的標記的 HTML 標記 (例如`<p></p>`段落或`<em></em>`來強調文字)，請參閱節[結合文字、 標記和程式碼區塊中的程式碼](#BM_CombiningTextMarkupAndCode)本文稍後的。
+> 如果您的目標是要輸出將標記轉譯為標記的 HTML 標籤（例如 `<p></p>` 用於段落或 `<em></em>` 強調文字），請參閱本文稍後的在程式[代碼區塊中結合文字、標記和程式碼](#BM_CombiningTextMarkupAndCode)一節。
 > 
-> 您可以深入了解中的 HTML 編碼[使用表單](https://go.microsoft.com/fwlink/?LinkId=202892)。
+> 您可以閱讀更多有關[使用表單](https://go.microsoft.com/fwlink/?LinkId=202892)的 HTML 編碼方式。
 
-### <a name="2-you-enclose-code-blocks-in-braces"></a>2.大括號括住程式碼區塊
+### <a name="2-you-enclose-code-blocks-in-braces"></a>2. 以大括弧括住程式碼區塊
 
-A*程式碼區塊*包含一或多個程式碼陳述式和大括號括住。
+程式*代碼區塊*包含一或多個程式碼語句，並以大括弧括住。
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample2.html)]
 
-在瀏覽器中顯示結果：
+在瀏覽器中顯示的結果：
 
 ![Razor-Img2](introducing-razor-syntax-c/_static/image2.jpg)
 
-### <a name="3-inside-a-block-you-end-each-code-statement-with-a-semicolon"></a>3.區塊中，您最後使用分號的每個程式碼陳述式
+### <a name="3-inside-a-block-you-end-each-code-statement-with-a-semicolon"></a>3. 在區塊內，以分號結束每個程式碼語句
 
-程式碼區塊中，每個完整的程式碼陳述式必須以分號結尾。 內嵌運算式不以分號結尾。
+在程式碼區塊內，每個完整的程式碼語句都必須以分號結尾。 內嵌運算式的結尾不是分號。
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample3.html)]
 
-### <a name="4-you-use-variables-to-store-values"></a>4.您可以使用變數來儲存值
+### <a name="4-you-use-variables-to-store-values"></a>4. 您可以使用變數來儲存值
 
-您可以儲存中的值*變數*，包括字串、 數字和日期等。您建立新變數使用`var`關鍵字。 您可以直接在頁面上，使用中插入變數的值`@`。
+您可以將值儲存在*變數*中，包括字串、數位和日期等等。您可以使用 `var` 關鍵字來建立新的變數。 您可以使用 `@`，直接在頁面中插入變數值。
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample4.html)]
 
-在瀏覽器中顯示結果：
+在瀏覽器中顯示的結果：
 
 ![Razor-Img3](introducing-razor-syntax-c/_static/image3.jpg)
 
 <a id="ID_StringLiterals"></a>
-### <a name="5-you-enclose-literal-string-values-in-double-quotation-marks"></a>5.您將常值字串值括在雙引號中
+### <a name="5-you-enclose-literal-string-values-in-double-quotation-marks"></a>5. 用雙引號括住常值字串
 
-A*字串*是會被視為文字的字元序列。 若要指定為字串，您將它括在雙引號中：
+*字串*是視為文字的字元序列。 若要指定字串，請將其括在雙引號內：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample5.cshtml)]
 
-如果您想要顯示的字串包含反斜線字元 ( `\` ) 或雙引號 ( `"` )，使用*逐字字串常值*，前面會加上`@`運算子。 (在 C# 中，\ 字元具有特殊意義，除非您使用逐字字串常值。)
+如果您想要顯示的字串包含反斜線字元（`\`）或雙引號（`"`），請使用前面加上 `@` 運算子的*逐字字串常*值。 （在C#中，\ 字元具有特殊意義，除非您使用逐字字串常值）。
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample6.html)]
 
-若要內嵌雙引號，請使用逐字字串常值並重複引號：
+若要內嵌雙引號，請使用逐字字串常值，並重複引號：
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample7.html)]
 
-以下是在網頁中使用這兩個範例的結果：
+以下是在頁面中使用這兩個範例的結果：
 
 ![Razor-Img4](introducing-razor-syntax-c/_static/image4.jpg)
 
 > [!NOTE]
-> 請注意，`@`字元用來將標記在 C# 中逐字字串常值，以及將 ASP.NET 頁面的程式碼。
+> 請注意，`@` 字元會用來標記中C#的逐字字串常值，並在 ASP.NET 網頁中標記程式碼。
 
-### <a name="6-code-is-case-sensitive"></a>6.程式碼會區分大小寫
+### <a name="6-code-is-case-sensitive"></a>6. 程式碼區分大小寫
 
-以 C# 關鍵字 (例如`var`， `true`，和`if`) 和變數名稱會區分大小寫。 下列程式碼會建立兩個不同的變數，`lastName`和 `LastName.`
+在C#中，關鍵字（例如 `var`、`true`和 `if`）和變數名稱會區分大小寫。 下列幾行程式碼會建立兩個不同的變數，`lastName` 和 `LastName.`
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample8.cshtml)]
 
-如果您宣告一個變數`var lastName = "Smith";`如果您嘗試參考該變數做為頁面中的`@LastName`，會發生錯誤，因為`LastName`無法辨識。
+如果您將變數宣告為 `var lastName = "Smith";`，並嘗試在頁面中以 `@LastName`的形式參考該變數，您會得到 `"Jones"` 的值，而不是 `"Smith"`。
 
 > [!NOTE]
-> 在 Visual Basic 中的關鍵字而變數則屬於*不*區分大小寫。
+> 在 Visual Basic 中，關鍵字和變數*不*區分大小寫。
 
-### <a name="7-much-of-your-coding-involves-objects"></a>7.大部分您撰寫程式碼牽涉到物件
+### <a name="7-much-of-your-coding-involves-objects"></a>7. 您的程式碼大部分牽涉到物件
 
-*物件*代表您可以使用程式設計的項目&#8212;頁面、 文字方塊、 檔案、 影像、 web 要求、 電子郵件訊息、 客戶記錄 （資料庫資料列） 等等。物件具有描述其特性的屬性，以及您可以用來讀取，或變更&#8212;的文字 方塊中的物件具有`Text`（還有其他） 的屬性，要求物件具有`Url`屬性，電子郵件訊息已`From`屬性，與客戶物件都有`FirstName`屬性。 物件也有方法&quot;動詞&quot;他們可以執行。 範例包括將檔案物件的`Save`方法中，映像物件的`Rotate`方法，以及電子郵件物件的`Send`方法。
+*物件*代表您可以使用&#8212;頁面、文字方塊、檔案、影像、web 要求、電子郵件訊息、客戶記錄（資料庫資料列）等進行程式設計的東西。物件具有描述其特性的屬性，而且您可以讀取或變更&#8212;文字方塊物件具有 `Text` 屬性（其中還有一個），要求物件具有 `Url` 屬性，電子郵件訊息具有 `From` 屬性，而 customer 物件則具有 `FirstName` 屬性。 物件也有 &quot;動詞&quot; 可以執行的方法。 範例包括 file 物件的 `Save` 方法、影像物件的 `Rotate` 方法，以及電子郵件物件的 `Send` 方法。
 
-您會經常使用`Request`物件，例如值的文字方塊 （表單欄位） 的資訊讓您在頁面上，進行要求的頁面、 使用者身分識別等 URL 的瀏覽器的何種類型。下列範例示範如何存取的屬性`Request`物件，以及如何呼叫`MapPath`方法`Request`物件，可讓您在伺服器的頁面上的絕對路徑：
+您通常會使用 `Request` 物件，這會提供頁面上文字方塊（表單欄位）的值、提出要求的瀏覽器類型、頁面的 URL、使用者身分識別等資訊。下列範例示範如何存取 `Request` 物件的屬性，以及如何呼叫 `Request` 物件的 `MapPath` 方法，這會提供您伺服器上頁面的絕對路徑：
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample9.html)]
 
-在瀏覽器中顯示結果：
+在瀏覽器中顯示的結果：
 
 ![Razor-Img5](introducing-razor-syntax-c/_static/image5.jpg)
 
-### <a name="8-you-can-write-code-that-makes-decisions"></a>8.您可以撰寫程式碼，讓決策
+### <a name="8-you-can-write-code-that-makes-decisions"></a>8. 您可以撰寫程式碼來做出決策
 
-動態網頁的重要功能是，您可以決定如何根據條件。 若要這樣做最常見的方法是使用`if`陳述式 (和選擇性`else`陳述式)。
+動態網頁的主要功能是，您可以根據條件來決定要執行的動作。 最常見的做法是使用 `if` 語句（和選擇性的 `else` 語句）。
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample10.cshtml)]
 
-陳述式`if(IsPost)`是本文撰寫的簡略方法`if(IsPost == true)`。 連同`if`陳述式，有各種不同的方式來測試條件，重複程式碼區塊，並依此類推，這是本文稍後所述。
+語句 `if(IsPost)` 是撰寫 `if(IsPost == true)`的簡寫方式。 除了 `if` 語句之外，還有各種不同的方法可以測試條件、重複的程式碼區塊等等，本文稍後會加以說明。
 
-在瀏覽器中顯示結果 (按一下後**送出**):
+在瀏覽器中顯示的結果（按一下 [**提交**] 之後）：
 
 ![Razor-Img6](introducing-razor-syntax-c/_static/image6.jpg)
 
 > [!TIP] 
 > 
 > <a id="SB_HttpGetPost"></a>
-> ### <a name="http-get-and-post-methods-and-the-ispost-property"></a>HTTP GET 和 POST 方法與 IsPost 屬性
+> ### <a name="http-get-and-post-methods-and-the-ispost-property"></a>HTTP GET 和 POST 方法和 IsPost 屬性
 > 
-> 用於 web 網頁 (HTTP) 的通訊協定支援非常有限的用來對伺服器提出要求的方法 （動詞命令）。 最常見的兩個為 GET，會用來讀取的頁面和文章，用來提交頁面。 一般情況下，使用者要求的頁面上，第一次要求頁面時使用 GET。 如果使用者在表單中填入，然後再按一下 [提交] 按鈕，瀏覽器會對伺服器提出 POST 要求。
+> 網頁（HTTP）所使用的通訊協定支援非常有限的方法（動詞）數目，用來對伺服器提出要求。 最常見的兩個是 GET，用來讀取頁面和 POST （用來提交頁面）。 一般情況下，使用者第一次要求頁面時，會使用 GET 來要求頁面。 如果使用者填滿表單，然後按一下 [提交] 按鈕，則瀏覽器會對伺服器提出 POST 要求。
 > 
-> 在 web 程式設計中，通常很有用知道是否要求網頁時正在為 GET 或 POST，讓您知道如何處理頁面。 ASP.NET Web Pages 中，您可以使用`IsPost`屬性，以查看要求是 GET 或 POST。 如果要求是某篇文章，`IsPost`屬性會傳回 true，而且您可以執行像是讀取表單上的文字方塊的值。 您會看到的許多範例會示範如何處理值的方式而定頁面`IsPost`。
+> 在 web 程式設計中，知道頁面是否以 GET 或 POST 的方式要求，讓您知道如何處理頁面，通常會很有説明。 在 ASP.NET Web Pages 中，您可以使用 [`IsPost`] 屬性來查看要求是 GET 或 POST。 如果要求是 POST，`IsPost` 屬性會傳回 true，而您可以執行讀取表單上文字方塊值之類的動作。 您會看到的許多範例會告訴您如何根據 `IsPost`的值，以不同的方式處理頁面。
 
 ## <a name="a-simple-code-example"></a>簡單的程式碼範例
 
-此程序會示範如何建立一個網頁，說明基本的程式設計技術。 在範例中，您可以建立讓使用者輸入兩個數字，然後再將它們加入，並顯示結果頁面。
+此程式說明如何建立說明基本程式設計技術的頁面。 在此範例中，您會建立可讓使用者輸入兩個數字的頁面，然後將其加入並顯示結果。
 
-1. 在編輯器中，建立新的檔案並將它命名*AddNumbers.cshtml*。
-2. 將下列程式碼和標記複製到頁面上，而且要取代已經在頁面中的任何項目中。  
+1. 在您的編輯器中，建立新的檔案，並將它命名為*AddNumbers*。
+2. 將下列程式碼和標記複製到頁面中，並取代頁面中已存在的任何專案。  
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample11.cshtml)]
 
-    以下是您必須注意的事項：
+    以下是您要注意的一些事項：
 
-    - `@`字元會在頁面中，啟動程式碼的第一個區塊，而且它前面出現`totalMessage`內嵌頁面底部附近的變數。
-    - 位於頁面頂端的區塊會括在大括弧。
-    - 在頂端的區塊，每一行都會以分號結尾。
-    - 變數`total`， `num1`， `num2`，和`totalMessage`儲存數個數字和字串。
-    - 常值字串值，指派給`totalMessage`變數是雙引號括住。
-    - 由於程式碼時區分大小寫，`totalMessage`頁面底部附近，會使用變數，其名稱必須完全符合在上方的變數。
-    - 運算式`num1.AsInt() + num2.AsInt()`示範如何使用物件和方法。 `AsInt`上每個變數的方法會將轉換使用者輸入的數字 （整數），以便您可以在其上執行算術運算的字串。
-    - `<form>`標記會包括`method="post"`屬性。 這表示當使用者按一下**新增**，頁面將會傳送到伺服器使用 HTTP POST 方法。 當提交頁面時，`if(IsPost)`測試評估為 true，條件式程式碼執行時，顯示個數字相加的結果。
-3. 儲存頁面，並在瀏覽器中執行它。 (請確定中選取頁面**檔案**才能執行這個工作區。)輸入兩個整數數字，然後按一下**新增** 按鈕。 
+    - `@` 字元會啟動頁面中第一個程式碼區塊，並在靠近頁面底部的 `totalMessage` 變數之前。
+    - 頁面頂端的區塊會以大括弧括住。
+    - 在頂端的區塊中，所有行的結尾都是分號。
+    - `total`、`num1`、`num2`和 `totalMessage` 的變數會儲存數個數字和一個字串。
+    - 指派給 `totalMessage` 變數的常值字串值是以雙引號括住。
+    - 由於程式碼區分大小寫，因此當 `totalMessage` 變數使用接近頁面底部時，其名稱必須完全符合頂端的變數。
+    - 運算式 `num1.AsInt() + num2.AsInt()` 顯示如何使用物件和方法。 每個變數上的 `AsInt` 方法會將使用者輸入的字串轉換成數位（整數），以便您在其上執行算數運算。
+    - `<form>` 標記包含 `method="post"` 屬性。 這會指定當使用者按一下 [**新增**] 時，會使用 HTTP POST 方法將頁面傳送至伺服器。 提交頁面時，`if(IsPost)` 測試會評估為 true，且會執行條件式程式碼，以顯示加入數位的結果。
+3. 儲存頁面，並在瀏覽器中執行。 （在執行之前，請確定已在 [檔案 **] 工作區**中選取頁面。）輸入兩個整數，然後按一下 [**新增**] 按鈕。 
 
     ![Razor-Img7](introducing-razor-syntax-c/_static/image7.jpg)
 
 ## <a name="basic-programming-concepts"></a>基本程式設計概念
 
-這篇文章為您提供 ASP.NET web 程式設計的概觀。 它不是詳盡的檢查，只是透過將最常使用的程式設計概念的快速教學。 即便如此，它涵蓋了幾乎所有您要開始使用 ASP.NET Web Pages。
+本文提供 ASP.NET web 程式設計的總覽。 這不是詳盡的檢查，只要快速導覽一下您最常使用的程式設計概念即可。 就算如此，它還涵蓋了您開始使用 ASP.NET Web Pages 所需的幾乎所有專案。
 
-但首先，小小的技術背景。
+但首先，有點的技術背景。
 
-### <a name="the-razor-syntax-server-code-and-aspnet"></a>Razor 語法、 伺服端程式碼和 ASP.NET
+### <a name="the-razor-syntax-server-code-and-aspnet"></a>Razor 語法、伺服器程式碼和 ASP.NET
 
-Razor 語法是一個簡單的程式設計語法，將伺服器為基礎的程式碼內嵌在網頁中。 使用 Razor 語法的網頁，在中，有兩種類型的內容： 用戶端內容和伺服器程式碼。 用戶端內容是您要用來在網頁中的項目：HTML 的標記 （項目），例如 CSS，或許有些用戶端指令碼，如下 JavaScript 和純文字的樣式資訊。
+Razor 語法是簡單的程式設計語法，用於在網頁中內嵌以伺服器為基礎的程式碼。 在使用 Razor 語法的網頁中，有兩種內容：用戶端內容和伺服器程式碼。 用戶端內容是您在網頁中使用的專案： HTML 標籤（元素）、樣式資訊（例如 CSS）可能是某些用戶端腳本，例如 JavaScript 和純文字。
 
-Razor 語法可讓您將伺服器程式碼新增至這個用戶端內容。 如果網頁沒有伺服端程式碼，在伺服器執行該程式碼第一次後, 才會傳送至瀏覽器的頁面。 藉由在伺服器上執行，程式碼可以執行可能更複雜使用單獨的情況，就像是存取伺服器端資料庫的用戶端內容來執行動作的工作。 伺服端程式碼以動態方式可以建立用戶端內容的最重要的是，&#8212;它可以產生 HTML 標記或其他內容，即時並再將它傳送至以及頁面可能會包含任何靜態 HTML 瀏覽器。 瀏覽器的觀點而言，伺服器程式碼所產生的用戶端內容並沒什麼兩樣任何其他的用戶端內容。 如您所見，所需的伺服器程式碼都非常簡單。
+Razor 語法可讓您將伺服器程式碼新增到此用戶端內容。 如果頁面中有伺服器程式碼，伺服器會先執行該程式碼，然後再將頁面傳送至瀏覽器。 藉由在伺服器上執行，程式碼可以執行工作，使其更複雜，只使用用戶端內容，例如存取以伺服器為基礎的資料庫。 最重要的是，伺服器程式碼可以動態&#8212;建立用戶端內容，它可以即時產生 HTML 標籤或其他內容，然後將它連同頁面可能包含的任何靜態 HTML 傳送到瀏覽器。 從瀏覽器的觀點來看，您的伺服器程式碼所產生的用戶端內容與其他用戶端內容並無不同。 如您已見過，所需的伺服器程式碼相當簡單。
 
-包含 Razor 語法的 ASP.NET web pages 有特殊的檔案副檔名 (*.cshtml*或是 *.vbhtml*)。 伺服器會辨識這些擴充功能，執行含有 Razor 語法標記，然後再將網頁傳送至瀏覽器的程式碼。
+包含 Razor 語法的 ASP.NET 網頁具有特殊的副檔名（*cshtml*或*vbhtml*）。 伺服器會辨識這些擴充功能、執行標記為 Razor 語法的程式碼，然後將頁面傳送至瀏覽器。
 
-### <a name="where-does-aspnet-fit-in"></a>沒有 ASP.NET 適用於什麼情況？
+### <a name="where-does-aspnet-fit-in"></a>ASP.NET 適用於何處？
 
-Razor 語法是以呼叫為基礎的 Microsoft.NET Framework 的 ASP.NET 的 microsoft 技術為基礎。 .Net Framework 是大型的完整程式設計架構，microsoft 開發幾乎任何類型的電腦應用程式。 ASP.NET 是專為建立 web 應用程式的.NET framework 組件。 開發人員使用 ASP.NET 來建立許多最大和最高流量網站的世界中。 (每當您看到的檔案名稱副檔名 *.aspx*中站台的 URL 的一部分，就會知道使用 ASP.NET 撰寫的網站。)
+Razor 語法是以 Microsoft 的技術為基礎，稱為 ASP.NET，也就是以 Microsoft .NET Framework 為基礎。 The.NET Framework 是一個龐大的完整程式設計架構，可供 Microsoft 開發幾乎任何類型的電腦應用程式。 ASP.NET 是專為建立 web 應用程式而設計的 .NET Framework 部分。 開發人員使用 ASP.NET，在世界各地建立許多最大且最高的流量網站。 （當您在網站中的 URL 中看到副檔名為 *.aspx*時，您會知道網站是以 ASP.NET 撰寫的）。
 
-Razor 語法可讓您的 ASP.NET 中，但使用簡化的語法，可以更輕鬆地瞭解您是否專家如果您是新手，就能讓您更具生產力的所有功能。 即使這種語法用法很簡單，系列 ASP.NET 和.NET Framework 關係表示隨著您的網站變得更複雜的您會有較大的架構可供您的能力。
+Razor 語法為您提供 ASP.NET 的所有威力，但使用簡化的語法，如果您是新手，就能更輕鬆地學習，如果您是專家，也能讓您更具生產力。 雖然此語法很容易使用，它與 ASP.NET 的系列關係和 .NET Framework 表示當您的網站變得更精密時，您可以使用較大的架構。
 
 ![Razor-Img8](introducing-razor-syntax-c/_static/image8.jpg)
 
 > [!TIP] 
 > 
-> **類別和執行個體**
+> **類別和實例**
 > 
-> ASP.NET server 程式碼會使用物件，會依次組建於類別的概念。 此類別是定義或範本物件。 例如，應用程式可能會包含`Customer`類別來定義的屬性和任何客戶物件所需的方法。
+> ASP.NET 伺服器程式碼會使用物件，而這些物件則是以類別的概念為基礎。 類別是物件的定義或範本。 例如，應用程式可能會包含一個 `Customer` 類別，以定義任何客戶物件所需的屬性和方法。
 > 
-> 當應用程式必須使用實際的客戶資訊時，它會建立的執行個體 (或*具現化*) customer 物件。 每個個別的客戶是獨立執行個體`Customer`類別。 每個執行個體支援相同的屬性和方法，但每個執行個體的屬性值是通常不同，因為每個客戶物件都是唯一。 一位客戶物件中`LastName`屬性可能是"Smith"，另一個客戶物件，在`LastName`屬性可能是"Jones"。
+> 當應用程式需要處理實際的客戶資訊時，它會建立一個（或具現*化*） customer 物件的實例。 每一位客戶都是 `Customer` 類別的個別實例。 每個實例都支援相同的屬性和方法，但每個實例的屬性值通常不同，因為每個客戶物件都是唯一的。 在一個客戶物件中，`LastName` 屬性可能是 "Smith";在另一個客戶物件中，`LastName` 屬性可能是「張」。
 > 
-> 同樣地，是在您的網站中任何個別網頁`Page`的執行個體的物件`Page`類別。 在頁面上的按鈕`Button`的執行個體的物件`Button`類別，並依此類推。 每個執行個體具有其本身的特性，但它們全都以基礎物件的類別定義中指定的內容。
+> 同樣地，您網站中的任何個別網頁都是 `Page` 物件，這是 `Page` 類別的實例。 頁面上的按鈕是 `Button` 物件，它是 `Button` 類別的實例，依此類推。 每個實例都有自己的特性，但它們都是以物件的類別定義中指定的內容為基礎。
 
 ## <a name="basic-syntax"></a>基本語法
 
-先前您已看到如何建立 ASP.NET Web Pages 頁面，以及如何將伺服器程式碼新增至 HTML 標記的基本範例。 這裡您將了解撰寫使用 Razor 語法的 ASP.NET 伺服器程式碼的基本概念&#8212;也就是程式設計語言規則。
+稍早您會看到如何建立 ASP.NET Web Pages 頁面的基本範例，以及如何將伺服器程式碼加入至 HTML 標籤。 在這裡，您將瞭解使用 Razor 語法&#8212; （也就是程式設計語言規則）撰寫 ASP.NET 伺服器程式碼的基本概念。
 
-如果您是經驗豐富的程式設計 (特別是當您使用 C， C++， C#，Visual Basic 或 JavaScript)，大多什麼您閱讀這裡應該不陌生。 您可能需要在自己熟悉只伺服端程式碼新增至標記中的如何 *.cshtml*檔案。
+如果您對程式設計有經驗（特別是使用 C、 C++、 C#、Visual Basic 或 JavaScript），您在這裡閱讀的大部分內容都很熟悉。 您可能只需要熟悉如何將伺服器程式碼加入至*cshtml*檔案中的標記。
 
 <a id="BM_CombiningTextMarkupAndCode"></a>
-### <a name="combining-text-markup-and-code-in-code-blocks"></a>結合文字、 標記和程式碼區塊中的程式碼
+### <a name="combining-text-markup-and-code-in-code-blocks"></a>結合程式碼區塊中的文字、標記和程式碼
 
-在伺服器程式碼區塊，您通常會想要輸出的文字或標記 （或兩者） 頁面。 如果伺服器程式碼區塊包含的文字，不是程式碼，而是應轉譯為是，ASP.NET 必須能夠區別該文字與程式碼。 有幾個方式可做到這點。
+在 [伺服器程式碼區塊] 中，您通常會想要將文字或標記（或兩者）輸出至頁面。 如果伺服器程式碼區塊包含不是程式碼的文字，而應該改為轉譯，則 ASP.NET 必須能夠區別該文字與程式碼。 有幾個方式可做到這點。
 
-- 在類似 HTML 元素括住文字`<p></p>`或`<em></em>`:   
+- 將文字括在 HTML 元素中，例如 `<p></p>` 或 `<em></em>`：   
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample12.cshtml)]
 
-    HTML 項目可以包含文字、 其他 HTML 項目和伺服器程式碼運算式。 當 ASP.NET 看到 HTML 開頭標記 (例如`<p>`)，它會呈現所有項目包括項目且其內容做為解決伺服器程式碼運算式，因為它會在瀏覽器。
-- 使用`@:`運算子或`<text>`項目。 `@:`輸出內容包含純文字] 或 [無對應的 HTML 標記。 單行`<text>`元素會括住要輸出的多行。 當您不想要呈現的 HTML 項目作為輸出的一部分，則這些選項會很有用。  
+    HTML 元素可以包含文字、其他 HTML 專案和伺服器程式碼運算式。 當 ASP.NET 看到開頭的 HTML 標籤（例如 `<p>`）時，它會將專案及其內容在內的一切轉譯為瀏覽器，並在伺服器程式碼運算式發生時加以解析。
+- 請使用 `@:` 運算子或 `<text>` 元素。 `@:` 輸出包含純文字或不相符 HTML 標籤的單一行內容;`<text>` 元素會將多行括住以輸出。 當您不想要將 HTML 元素轉譯為輸出的一部分時，這些選項會很有用。  
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample13.cshtml)]
 
-    如果您想要輸出多個文字行或不相符的 HTML 標記，您可以在前面上使用的每一行`@:`，或您可以用括號中的一行`<text>`項目。 像是`@:`運算子，`<text>`標記由 ASP.NET 識別的文字內容，而且永遠不會在網頁輸出中轉譯。
+    如果您想要輸出多行文字或不相符的 HTML 標籤，您可以在每一行前面加上 `@:`，或者將該行括在 `<text>` 元素中。 就像 `@:` 運算子一樣，ASP.NET 會使用`<text>` 標記來識別文字內容，而且永遠不會呈現在頁面輸出中。
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample14.cshtml)]
 
-    第一個範例會重複上一個範例，但是會使用一對`<text>`標記括住要轉譯的文字。 在第二個範例中，`<text>`並`</text>`標記括住三行，全部都有部分未包含的文字和不相符的 HTML 標記 (`<br />`)，以及伺服器程式碼和相符的 HTML 標記。 同樣地，您也無法在個別使用每一行`@:`運算子; 其中一個的方式運作。
+    第一個範例會重複上一個範例，但會使用一對 `<text>` 標記來括住要轉譯的文字。 在第二個範例中，`<text>` 和 `</text>` 標記會括住三行，其中所有的程式碼都有一些非內含性文字和不相符的 HTML 標籤（`<br />`），以及伺服器程式碼和相符的 HTML 標籤。 同樣地，您也可以分別在每一行的前面加上 `@:` 運算子;任一種方法都可行。
 
     > [!NOTE]
-    > 當您輸出文字，這一節所示&#8212;使用 HTML 元素，`@:`運算子，或`<text>`項目&#8212;ASP.NET 不進行 HTML 編碼的輸出。 (如先前所述，ASP.NET 未編碼的伺服器程式碼運算式和伺服器程式碼區塊，前面都會加上輸出`@`，除非在這一節所述的特殊案例。)
+    > 當您&#8212;使用 HTML 專案（如本節所示）輸出文字時，`@:` 運算子或 `<text>` 元素&#8212; ASP.NET 不會對輸出進行 HTML 編碼。 （如先前所述，ASP.NET 會對前面加上 `@`的伺服器程式碼運算式和伺服器程式碼區塊的輸出進行編碼，但本節中所述的特殊情況除外）。
 
 ### <a name="whitespace"></a>Whitespace
 
-額外的空格，陳述式 （內部和外部字串常值），就不會影響陳述式：
+語句（和字串常值外部）中的額外空格不會影響語句：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample15.cshtml)]
 
-陳述式中的分行符號陳述式上的沒有作用，而且您可以包裝陳述式，以提高可讀性。 下列陳述式都相同：
+語句中的分行符號不會影響語句，而且您可以包裝語句以方便閱讀。 下列陳述式是相同的：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample16.cshtml)]
 
-不過，您無法包裝字串常值的中間一條線。 下列範例無法運作︰
+不過，您無法在字串常值的中間換行。 下列範例無法使用：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample17.cshtml)]
 
-若要結合換行至類似上述的程式碼的多行的長字串，有兩個選項。 您可以使用串連運算子 (`+`)，您將在本文稍後看到。 您也可以使用`@`建立逐字字串常值，如您稍早在本文中所見的字元。 您可以跨行中斷逐字字串常值：
+若要結合一個長字串，以包裝到多行（如上述程式碼），有兩個選項。 您可以使用串連運算子（`+`），這會在本文稍後看到。 您也可以使用 `@` 字元來建立逐字字串常值，如您稍早在本文中所見。 您可以跨行中斷逐字字串常值：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample18.cshtml)]
 
-### <a name="code-and-markup-comments"></a>程式碼 （和標記） 的註解
+### <a name="code-and-markup-comments"></a>程式碼（和標記）批註
 
-註解可讓您為您自己或其他保留資訊。 它們也可讓您停用 (*標記為註解*) 程式碼或標記，您不想要執行，但想要保留您目前的頁面中的區段。
+批註可讓您為自己或其他人留下筆記。 它們也可讓您停用（*批註*）您不想執行的程式碼或標記區段，但想要保留在頁面中的時間。
 
-沒有其他註解的 Razor 程式碼和 HTML 標記的語法。 如同所有 Razor 程式碼中，Razor 註解會處理 （然後移除） 之前的網頁傳送到瀏覽器在伺服器上。 因此，Razor 註解語法可讓您將註解放在程式碼 （或甚至到標記），您可以看到當您編輯檔案，但使用者沒有看到，即使是在網頁原始檔。
+Razor 程式碼和 HTML 標籤有不同的批註語法。 就像所有的 Razor 程式碼一樣，在頁面傳送至瀏覽器之前，會先處理 Razor 批註，然後再將其移除。 因此，Razor 批註語法可讓您將批註放入程式碼中（甚至是標記），您可以在編輯檔案時看到，但即使在頁面原始檔中，也不會看到該使用者。
 
-ASP.NET Razor 註解，您開始的註解`@*`，且結尾必須與`*@`。 註解可以在一行或多行︰
+針對 ASP.NET Razor 批註，您可以使用 `@*` 開始批註，並以 `*@`結束。 批註可以位於一行或多行：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample19.cshtml)]
 
-以下是程式碼區塊中的註解：
+以下是程式碼區塊中的批註：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample20.cshtml)]
 
-以下相同的程式碼區塊，使用程式碼行標記為註解，讓它不會執行：
+以下是相同的程式碼區塊，並將程式程式碼標記為批註，使其不會執行：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample21.cshtml)]
 
-程式碼區塊中，若要使用 Razor 註解語法，或者您可以使用註解您使用，例如 C# 的程式設計語言的語法：
+在程式碼區塊內，做為使用 Razor 批註語法的替代方法，您可以使用您所使用之程式設計語言的批註語法， C#例如：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample22.cshtml)]
 
-在 C# 中，單行註解前面會加上`//`字元和多行註解開頭`/*`結尾`*/`。 （如同 Razor 註解，C# 註解不會轉譯至瀏覽器。）
+在C#中，單行批註的前面會加上 `//` 個字元，而多行批註則以 `/*` 開頭，並以 `*/`結尾。 （如同 Razor 批註， C#批註不會轉譯至瀏覽器）。
 
-標記，您可能也知道，您可以建立於 HTML 註解：
+針對標記，您可能已經知道，您可以建立 HTML 批註：
 
 [!code-xml[Main](introducing-razor-syntax-c/samples/sample23.xml)]
 
-HTML 註解開頭`<!--`字元，並以結尾`-->`。 您可以使用 HTML 註解來括住的文字，不僅也任何 HTML 標記，您可能想要保留的頁面中，但不想要呈現。 此 HTML 註解會隱藏的標記和其所包含的文字的整個內容：
+HTML 批註的開頭為 `<!--` 個字元，並以 `-->`結尾。 您可以使用 HTML 批註來括住文字，但您可能會想要保留在頁面中，但不想呈現的任何 HTML 標籤。 此 HTML 批註會隱藏標記的全部內容及其包含的文字：
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample24.html)]
 
-不同於 Razor 註解，HTML 註解*是*在網頁上呈現和使用者可以檢視網頁原始檔來查看它們。
+不同于 Razor 批註，HTML 批註*會*轉譯成頁面，使用者可以藉由查看頁面來源來查看它們。
 
-Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[名為 C# 變數和巢狀區塊產生中斷程式碼](http://aspnetwebstack.codeplex.com/workitem/1914)
+Razor 在的C#嵌套區塊上有限制。 如需詳細資訊[， C#請參閱命名變數和嵌套區塊產生中斷](http://aspnetwebstack.codeplex.com/workitem/1914)的程式碼
 
 ## <a name="variables"></a>變數
 
-變數是您用來儲存資料的具名的物件。 您可以任何項目，名稱變數名稱必須以字母字元開頭但不能包含空格或保留的字元。
+變數是您用來儲存資料的已命名物件。 您可以將變數命名為任何名稱，但名稱必須以字母字元開頭，而且不能包含空格或保留字元。
 
 ### <a name="variables-and-data-types"></a>變數和資料類型
 
-變數可以有特定的資料類型，表示何種資料儲存在變數中。 您可以儲存字串值的字串變數 (例如&quot;Hello world&quot;)，儲存整數值 （例如 3 或 79） 的整數變數和日期值儲存在各種不同的格式 （例如 2012 年 4 月 12 日或 2009 年 3 月的日期變數). 而且有許多您可以使用其他資料型別。
+變數可以具有特定的資料類型，以指出變數中儲存的資料種類。 您可以擁有儲存字串值的字串變數（例如 &quot;Hello world&quot;）、儲存整數值（例如3或79）的整數變數，以及以各種格式（例如4/12/2012 或3月2009）儲存日期值的日期變數。 而且還有許多其他資料類型可供您使用。
 
-不過，您通常不需要指定變數的類型。 大部分的情況下，ASP.NET 可以找出如何使用變數中的資料為基礎的類型。 （有時候您必須指定一個類型，您會看到範例即為 true）。
+不過，您通常不需要指定變數的類型。 大部分的情況下，ASP.NET 都可以根據變數中的資料使用方式來找出型別。 （有時候您必須指定類型，您將會看到這是 true 的範例）。
 
-您宣告變數使用`var`關鍵字 （如果您不想要指定型別） 或使用型別名稱：
+您可以使用 `var` 關鍵字（如果您不想指定類型）或使用類型的名稱來宣告變數：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample25.cshtml)]
 
-下列範例會顯示變數的部分典型用途，在網頁中：
+下列範例顯示網頁中變數的一些一般用法：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample26.cshtml)]
 
-如果您結合先前的範例，在頁面中，您會看到瀏覽器中顯示：
+如果您在頁面中結合前面的範例，您會看到這會顯示在瀏覽器中：
 
 ![Razor-Img9](introducing-razor-syntax-c/_static/image9.jpg)
 
 ### <a name="converting-and-testing-data-types"></a>轉換和測試資料類型
 
-雖然 ASP.NET 通常可以自動判斷資料型別，有時它不可轉換。 因此，您可能需要協助 ASP.NET 執行的明確轉換。 即使您沒有轉換的型別，有時候很有幫助測試以查看何種資料類型您可能會使用。
+雖然 ASP.NET 通常可以自動判斷資料類型，但有時卻不能。 因此，您可能需要執行明確轉換來協助 ASP.NET。 即使您不需要轉換類型，有時還是可以測試以查看您可能使用的資料類型。
 
-最常見的情況是，您必須將字串轉換成其他類型，例如整數或日期。 下列範例示範一般的情況下，您必須將字串轉換為數字。
+最常見的情況是，您必須將字串轉換成另一種類型，例如整數或日期。 下列範例顯示您必須將字串轉換成數位的一般情況。
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample27.cshtml)]
 
-因此，使用者輸入來到您為字串。 即使您已提示使用者輸入數字，即使它們已送出使用者輸入和您在程式碼中讀取時所輸入數字、 資料的格式字串。 因此，您必須將字串轉換為數字。 在範例中，如果您嘗試對值執行算術運算，而不需要轉換，會產生下列錯誤，因為 ASP.NET 無法新增兩個字串：
+就規則而言，使用者輸入會以字串的形式提供給您。 即使您已提示使用者輸入數位，而且即使他們輸入了數位，當使用者輸入提交，而且您在程式碼中讀取時，資料仍會是字串格式。 因此，您必須將字串轉換成數位。 在此範例中，如果您嘗試對值執行算術而不加以轉換，則會產生下列錯誤，因為 ASP.NET 無法加入兩個字串：
 
-*無法隱含地轉換成 'int'，' string' 類型。*
+*無法將類型 ' string ' 隱含轉換為 ' int '。*
 
-若要轉換成整數的值，請呼叫`AsInt`方法。 如果轉換成功，然後您可以加入數字。
+若要將值轉換為整數，您可以呼叫 `AsInt` 方法。 如果轉換成功，您可以接著加入數位。
 
-下表列出一些常見的轉換和測試方法的變數。
+下表列出一些常見的變數轉換和測試方法。
 
 :::row:::
     :::column:::
     <strong>方法</strong>
     :::column-end:::
     :::column:::
-    <strong>描述</strong>
+    <strong>說明</strong>
     :::column-end:::
     :::column:::
     <strong>範例</strong>
@@ -352,7 +352,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `AsInt(), IsInt()`
     :::column-end:::
     :::column:::
-    將轉換成整數表示 （例如"593 」) 之間的整數的字串。
+    將代表整數（例如 "593"）的字串轉換為整數。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]
@@ -366,7 +366,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `AsBool(), IsBool()`
     :::column-end:::
     :::column:::
-    將轉換的字串，例如&quot;，則為 true&quot;或是&quot;false&quot;布林型別。
+    將 &quot;true&quot; 或 &quot;false&quot; 之類的字串轉換成布林值類型。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]
@@ -380,7 +380,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `AsFloat(), IsFloat()`
     :::column-end:::
     :::column:::
-    將具有類似的十進位值的字串轉換&quot;1.3&quot;或是&quot;7.439&quot;浮點數。
+    將具有十進位值（例如 &quot;1.3&quot; 或 &quot;7.439&quot; 的字串轉換為浮點數。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]
@@ -394,7 +394,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `AsDecimal(), IsDecimal()`
     :::column-end:::
     :::column:::
-    將具有類似的十進位值的字串轉換&quot;1.3&quot;或是&quot;7.439&quot;十進位數字。 （在 ASP.NET 中，十進位數字是更精確比浮點數）。
+    將具有十進位值（例如 &quot;1.3&quot; 或 &quot;7.439&quot; 的字串轉換為十進位數。 （在 ASP.NET 中，十進位數比浮點數更精確）。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]
@@ -408,7 +408,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `AsDateTime(), IsDateTime()`
     :::column-end:::
     :::column:::
-    將 asp.net 代表的日期和時間值的字串轉換`DateTime`型別。
+    將表示日期和時間值的字串轉換為 ASP.NET `DateTime` 類型。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]
@@ -431,14 +431,14 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
 
 ## <a name="operators"></a>運算子
 
-運算子是關鍵字或字元，會告訴 ASP.NET 在運算式中執行命令的類型。 C# 語言 （和 Razor 語法為基礎） 支援許多運算子，但您只需要識別一些開始使用。 下表摘要說明最常見的運算子。
+「運算子」是一個關鍵字或字元，告訴 ASP.NET 要在運算式中執行哪一種命令。 C#語言（以及以它為基礎的 Razor 語法）支援許多運算子，但您只需要辨識幾個，即可開始使用。 下表摘要說明最常見的運算子。
 
 :::row:::
     :::column:::
     <strong>Operator</strong>
     :::column-end:::
     :::column:::
-    <strong>描述</strong>
+    <strong>說明</strong>
     :::column-end:::
     :::column:::
     <strong>範例</strong>
@@ -452,7 +452,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `+` `-` `*` `/`
     :::column-end:::
     :::column:::
-    用在數值運算式的數學運算子。
+    數值運算式中使用的數學運算子。
     :::column-end:::
     :::column:::
         [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]
@@ -466,7 +466,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `=`
     :::column-end:::
     :::column:::
-    指派。 將陳述式的右邊的值指派給左邊的物件中。
+    指派。 將語句右邊的值指派給左邊的物件。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]
@@ -480,7 +480,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `==`
     :::column-end:::
     :::column:::
-    相等。 傳回`true`值是否相等。 (請注意區分`=`運算子和`==`運算子。)
+    相等。 如果值相等，則傳回 `true`。 （請注意 `=` 運算子和 `==` 運算子之間的區別）。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]
@@ -494,7 +494,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `!=`
     :::column-end:::
     :::column:::
-    不等。 傳回`true`值是否不相等。
+    不等。 如果值不相等，則傳回 `true`。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]
@@ -508,7 +508,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `< > <= >=`
     :::column-end:::
     :::column:::
-    較少-相比，大於-小於-或-等於、 與大於或等於比。
+    小於、大於、小於或等於，且大於或等於的情況下。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]
@@ -522,7 +522,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `+`
     :::column-end:::
     :::column:::
-    串連，用來聯結字串。 ASP.NET 會知道此運算子和運算式的資料類型的加法運算子之間的差異。
+    串連，用來聯結字串。 ASP.NET 會根據運算式的資料類型，知道這個運算子和加號之間的差異。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]
@@ -536,7 +536,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `+=` `-=`
     :::column-end:::
     :::column:::
-    遞增和遞減運算子，以新增和從變數 （分別） 減 1。
+    遞增和遞減運算子，會從變數相加和減去1（分別為）。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]
@@ -550,7 +550,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `.`
     :::column-end:::
     :::column:::
-    點。 用來區別物件及其屬性和方法。
+    網點. 用來區別物件及其屬性和方法。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]
@@ -564,7 +564,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `()`
     :::column-end:::
     :::column:::
-    括號。 用來群組運算式，並將參數傳遞給方法。
+    後. 用來將運算式分組，並將參數傳遞給方法。
     :::column-end:::
     :::column:::
         [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)]
@@ -578,7 +578,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `[]`
     :::column-end:::
     :::column:::
-    方括號。 用來存取陣列或集合中的值。
+    內. 用來存取陣列或集合中的值。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]
@@ -592,7 +592,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `!`
     :::column-end:::
     :::column:::
-    不。 反轉`true`值`false`，反之亦然。 常用縮寫來測試`false`(也就是針對不`true`)。
+    並非. 將 `true` 值反轉為 `false`，反之亦然。 通常用來做為測試 `false` 的簡短方式（也就是不 `true`）。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]
@@ -606,7 +606,7 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
         `&&` `||`
     :::column-end:::
     :::column:::
-    邏輯 AND 和 OR，這用來連結條件一起。
+    邏輯 AND 和 OR，用來將條件連結在一起。
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]
@@ -614,219 +614,219 @@ Razor 會對 C# 的巢狀區塊中的限制。 如需詳細資訊，請參閱[�
 :::row-end:::
 
 <a id="ID_WorkingWithFileAndFolderPaths"></a>
-## <a name="working-with-file-and-folder-paths-in-code"></a>使用檔案和程式碼中的資料夾路徑
+## <a name="working-with-file-and-folder-paths-in-code"></a>在程式碼中使用檔案和資料夾路徑
 
-您通常會在您的程式碼中使用檔案和資料夾的路徑。 以下是網站實體資料夾結構的範例，可能出現在您的開發電腦上：
+您通常會使用程式碼中的檔案和資料夾路徑。 以下是網站的實體資料夾結構範例，因為它可能會出現在您的開發電腦上：
 
 `C:\WebSites\MyWebSite default.cshtml datafile.txt \images Logo.jpg \styles Styles.css`
 
-以下是一些關於 Url 和路徑的基本詳細資料：
+以下是一些有關 Url 和路徑的基本詳細資料：
 
-- 開始使用的網域名稱的 URL (`http://www.example.com`) 或伺服器名稱 (`http://localhost`， `http://mycomputer`)。
-- URL 對應至主機電腦上的實體路徑。 例如，`http://myserver`可能會對應至資料夾*C:\websites\mywebsite*伺服器上。
-- 虛擬路徑是以代表在程式碼中的路徑，而不需要指定完整路徑。 它包含的 url 的網域或伺服器名稱後面的部分。 當您使用虛擬路徑時，您可以移動至不同的網域或伺服器程式碼而不需要更新的路徑。
+- URL 的開頭是功能變數名稱（`http://www.example.com`）或伺服器名稱（`http://localhost`，`http://mycomputer`）。
+- URL 會對應至主機電腦上的實體路徑。 例如，`http://myserver` 可能對應到伺服器上的*C:\websites\mywebsite*資料夾。
+- 虛擬路徑是用來在程式碼中表示路徑的速記，而不需要指定完整路徑。 它包含在網域或伺服器名稱後面的 URL 部分。 當您使用虛擬路徑時，您可以將程式碼移至不同的網域或伺服器，而不需要更新路徑。
 
-以下是範例，以協助您了解的差異：
+以下是可協助您瞭解差異的範例：
 
-| 完整的 URL | `http://mycompanyserver/humanresources/CompanyPolicy.htm` |
+| 完成 URL | `http://mycompanyserver/humanresources/CompanyPolicy.htm` |
 | --- | --- |
 | 伺服器名稱 | *mycompanyserver* |
 | 虛擬路徑 | */humanresources/CompanyPolicy.htm* |
 | 實體路徑 | *C:\mywebsites\humanresources\CompanyPolicy.htm* |
 
-虛擬根目錄是 /，就像根目錄的 c： 磁碟機 \。 （虛擬資料夾路徑永遠使用正斜線）。資料夾的虛擬路徑不需要有相同的名稱做為實體的資料夾;它可以是一個別名。 （在實際執行伺服器上的虛擬路徑很少比對確切的實體路徑。）
+虛擬根目錄是/，就像 C：磁片磁碟機的根目錄一樣。 （虛擬資料夾路徑一律使用正斜線）。資料夾的虛擬路徑不一定要有與實體資料夾相同的名稱;它可以是別名。 （在實際執行伺服器上，虛擬路徑很少會符合確切的實體路徑）。
 
-當您使用中的程式碼檔案和資料夾時，有時候您需要參考的實體路徑或按一下 虛擬路徑，視您正在使用哪些物件而定。 ASP.NET 讓您知道這些工具使用程式碼中的檔案和資料夾路徑：`Server.MapPath`方法，而`~`運算子和`Href`方法。
+當您在程式碼中使用檔案和資料夾時，有時候您必須參考實體路徑，有時也需要參照虛擬路徑，視您使用的物件而定。 ASP.NET 提供這些工具，讓您在程式碼中使用檔案和資料夾路徑： `Server.MapPath` 方法，以及 `~` 運算子和 `Href` 方法。
 
-### <a name="converting-virtual-to-physical-paths-the-servermappath-method"></a>轉換虛擬與實體路徑： Server.MapPath 方法
+### <a name="converting-virtual-to-physical-paths-the-servermappath-method"></a>將虛擬轉換成實體路徑：伺服器. MapPath 方法
 
-`Server.MapPath`方法會將轉換的虛擬路徑 (例如 */default.cshtml*) 成絕對實體路徑 (例如*C:\WebSites\MyWebSiteFolder\default.cshtml*)。 每當您需要完整的實體路徑使用這個方法。 當您讀取或寫入的文字檔或 web 伺服器上的映像檔，就會是一個典型的例子。
+`Server.MapPath` 方法會將虛擬路徑（例如 */default.cshtml*）轉換為絕對實體路徑（例如*C:\WebSites\MyWebSiteFolder\default.cshtml*）。 每當您需要完整的實體路徑時，都可以使用這個方法。 典型的範例是當您在 web 伺服器上讀取或寫入文字檔或影像檔案時。
 
-您通常不知道您的網站裝載站台伺服器上的絕對實體路徑，因此這個方法可以將路徑轉換您知道 — 虛擬路徑，來為您在伺服器上對應的路徑。 您將虛擬路徑傳遞至檔案或資料夾的方法，並傳回的實體路徑：
+您通常不知道網站在主控網站伺服器上的絕對實體路徑，因此這個方法可以將您知道的路徑（虛擬路徑）轉換成伺服器上的對應路徑。 您會將檔案或資料夾的虛擬路徑傳遞至方法，並傳回實體路徑：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample46.cshtml)]
 
-### <a name="referencing-the-virtual-root-the--operator-and-href-method"></a>參考的虛擬根目錄： ~ 運算子和 Href 方法
+### <a name="referencing-the-virtual-root-the--operator-and-href-method"></a>參考虛擬根目錄： ~ 運算子和 Href 方法
 
-在  *.cshtml*或 *.vbhtml*檔案中，您可以參考虛擬根目錄的路徑使用`~`運算子。 這是非常好用，因為您可以移動的頁面，在網站中，而且它們包含其他頁面的任何連結不會中斷。 如果您曾經將您的網站移至不同的位置還有好用。 以下是一些範例：
+在*cshtml*或*vbhtml*檔案中，您可以使用 `~` 運算子來參考虛擬根路徑。 這非常方便，因為您可以在網站中移動頁面，而其包含的任何連結也不會中斷。 如果您將網站移至不同的位置，這也很方便。 以下是一些範例：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample47.cshtml)]
 
-如果網站是`http://myserver/myapp`，以下是 ASP.NET 如何處理此頁面會執行的這些路徑：
+如果網站 `http://myserver/myapp`，以下是當頁面執行時，ASP.NET 會如何處理這些路徑：
 
 - `myImagesFolder`: `http://myserver/myapp/images`
 - `myStyleSheet` : `http://myserver/myapp/styles/Stylesheet.css`
 
-（您實際上不會看到這些路徑做為變數的值，但，是它們的是，ASP.NET 會將路徑）。
+（您實際上不會看到這些路徑做為變數的值，但是 ASP.NET 會將這些路徑視為其本身）。
 
-您可以使用`~`運算子伺服端程式碼 （如上所述） 並在標記中，像這樣：
+您可以在伺服器程式碼（如上）和標記中使用 `~` 運算子，如下所示：
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample48.html)]
 
-在標記中，您可以使用`~`運算子來建立資源，例如映像檔案、 其他網頁和 CSS 檔案的路徑。 ASP.NET 頁面執行時，尋找整個頁面 （程式碼和標記），並解決所有`~`參考適當的路徑。
+在標記中，您可以使用 `~` 運算子來建立資源的路徑，例如影像檔、其他網頁和 CSS 檔案。 當頁面執行時，ASP.NET 會查看頁面（程式碼和標記），並將所有 `~` 參考解析為適當的路徑。
 
 ## <a name="conditional-logic-and-loops"></a>條件式邏輯和迴圈
 
-ASP.NET server 程式碼可讓您執行以條件為基礎的工作，並撰寫重複陳述式的程式碼次數 （也就是程式碼會執行迴圈）。
+ASP.NET 伺服器程式碼可讓您根據條件執行工作，並撰寫會重複語句的程式碼特定次數（也就是執行迴圈的程式碼）。
 
 ### <a name="testing-conditions"></a>測試條件
 
-若要測試您所使用的簡單條件`if`陳述式，此傳回 true 或 false 取決於您所指定的測試：
+若要測試簡單的條件，請使用 `if` 語句，這會根據您指定的測試傳回 true 或 false：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample49.cshtml)]
 
-`if`關鍵字開始區塊。 實際的測試 （條件） 是括號括住，並傳回 true 或 false。 執行測試結果為 true 的陳述式會括在大括號。 `if`陳述式可包含`else`，指定當條件為 false 時要執行的陳述式區塊：
+`if` 關鍵字會啟動區塊。 實際測試（條件）在括弧中，並傳回 true 或 false。 如果測試為 true，則執行的語句會以大括弧括住。 `if` 語句可以包含 `else` 區塊，指定當條件為 false 時要執行的語句：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample50.cshtml)]
 
-您可以加入多個條件使用`else if`區塊：
+您可以使用 `else if` 區塊來新增多個條件：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample51.cshtml)]
 
-在此範例中，如果第一個條件，在 if 區塊不是 true，`else if`在檢查條件。 如果符合該條件中的陳述式`else if`區塊會執行。 如果條件符合中的陳述式`else`區塊會執行。 您可以新增任意數目的 else 的 if 區塊中使用，並關閉與`else`封鎖&quot;一切&quot;條件。
+在此範例中，如果 if 區塊中的第一個條件不是 true，則會核取 [`else if`] 條件。 如果符合該條件，就會執行 `else if` 區塊中的語句。 如果沒有符合任何條件，則會執行 `else` 區塊中的語句。 您可以新增任意數目的 if 區塊，然後以 `else` 區塊關閉，因為 &quot;所有其他專案&quot; 條件。
 
-若要測試大量的條件，請使用`switch`區塊：
+若要測試大量的條件，請使用 `switch` 組塊：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample52.cshtml)]
 
-要測試的值位於括號內 (在範例中，`weekday`變數)。 每個個別的測試會使用`case`陳述式的結尾是冒號 （:）。 如果值`case`陳述式符合測試值，該案例區塊中的程式碼會執行。 關閉與每個 case 陳述式`break`陳述式。 (如果您忘記在每個包含中斷`case`封鎖，請從下一個程式碼`case`陳述式也會執行。)A`switch`區塊通常會有`default`陳述式的最後一個案例作為&quot;一切&quot;執行如果沒有任何其他情況下，則為 true 的選項。
+要測試的值是以括弧括住（在範例中為 `weekday` 變數）。 每個個別測試都會使用以冒號（:) 結尾的 `case` 語句。 如果 `case` 語句的值符合測試值，則會執行該案例區塊中的程式碼。 您可以使用 `break` 語句來關閉每個 case 語句。 （如果您忘了在每個 `case` 區塊中包含 break，則下一個 `case` 語句的程式碼也會執行）。`switch` 區塊通常會有 `default` 的語句做為 &quot;所有其他情況的&quot; 選項（如果沒有其他情況成立）。
 
 在瀏覽器中顯示的最後兩個條件式區塊的結果：
 
 ![Razor-Img10](introducing-razor-syntax-c/_static/image10.jpg)
 
-### <a name="looping-code"></a>迴圈的程式碼
+### <a name="looping-code"></a>迴圈程式碼
 
-您通常需要重複執行相同的陳述式。 您可以進行迴圈。 例如，您經常執行相同的陳述式，每個項目集合中的資料。 如果您知道確實多少次您想要執行迴圈，您可以使用`for`迴圈。 這種迴圈是特別適用於計算或向下計數：
+您通常需要重複執行相同的語句。 您可以藉由迴圈來完成這項操作。 例如，您通常會針對資料集合中的每個專案執行相同的語句。 如果您確切知道您想要迴圈的次數，可以使用 `for` 迴圈。 這種迴圈特別適合用來計算或計數：
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample53.html)]
 
-迴圈開頭`for`每個以分號結束關鍵字，後面接著括號中的三個陳述式。
+迴圈會以 `for` 關鍵字開頭，後面接著以括弧括住的三個語句，每個都以分號結束。
 
-- 在括弧內，第一個陳述式 (`var i=10;`) 建立計數器，並且將它初始化為 10。 您不需要名稱計數器`i`&#8212;您可以使用任何變數。 當`for`迴圈執行時，會自動遞增的計數器。
-- 第二個陳述式 (`i < 21;`) 設定條件，以您想要計算的幅度。 您想在此情況下，請移至最多 20 個 （也就繼續執行時的計數器是小於 21）。
-- 第三個陳述式 (`i++` ) 會使用遞增運算子，只需指定 計數器應有 1 加入至它在每次執行迴圈。
+- 在括弧內，第一個語句（`var i=10;`）會建立一個計數器，並將它初始化為10個。 您不需要將計數器命名 `i` &#8212;您可以使用任何變數。 當 `for` 迴圈執行時，計數器會自動遞增。
+- 第二個語句（`i < 21;`）會設定您想要計算的距離條件。 在此情況下，您想要將它移到最多20個（也就是，在計數器小於21時繼續進行）。
+- 第三個語句（`i++`）使用遞增運算子，這只會指定在每次執行迴圈時，計數器應該加入1。
 
-括號內是迴圈的每個反覆項目，就會執行的程式碼。 標記會建立新的段落 (`<p>`項目) 每次，且輸出中顯示的值中加入一行`i`（計數器）。 當您執行此頁面時，此範例會建立 11 行顯示輸出，表示項目數目每一行中的文字。
+括弧內的程式碼會針對迴圈的每個反復專案執行。 標記會每次建立新的段落（`<p>` 元素），並在輸出中加入一行，顯示 `i` （計數器）的值。 當您執行此頁面時，此範例會建立顯示輸出的11行，而每一行中的文字會指出專案編號。
 
 ![Razor-Img11](introducing-razor-syntax-c/_static/image11.jpg)
 
-如果您正在使用集合或陣列，您經常使用`foreach`迴圈。 集合是一組類似的物件，而`foreach`迴圈可讓您執行的工作集合中的每個項目上。 這種類型的迴圈是方便的集合，因為不像`for`迴圈中，您不需要遞增計數器，或設定限制。 相反地，`foreach`迴圈的程式碼會繼續透過集合直到完成為止。
+如果您使用的是集合或陣列，通常會使用 `foreach` 迴圈。 集合是一組類似的物件，而 `foreach` 迴圈可讓您在集合中的每個專案上執行工作。 這種類型的迴圈對集合很方便，因為與 `for` 迴圈不同的是，您不需要遞增計數器或設定限制。 相反地，`foreach` 迴圈程式碼只會繼續完成集合，直到完成為止。
 
-例如，下列程式碼會傳回中的項目`Request.ServerVariables`集合，也就是物件，包含 web 伺服器的相關資訊。 它會使用`foreac`h 的迴圈，以顯示每個項目的名稱來建立新`<li>`HTML 項目符號清單中的項目。
+例如，下列程式碼會傳回 `Request.ServerVariables` 集合中的專案，這是包含您的 web 伺服器相關資訊的物件。 它會使用 `foreac` h 迴圈來顯示每個專案的名稱，方法是在 HTML 項目符號清單中建立新的 `<li>` 元素。
 
 [!code-html[Main](introducing-razor-syntax-c/samples/sample54.html)]
 
-`foreach`關鍵字後面接著括號您用來宣告變數，表示集合中的單一項目 (在範例中， `var item`)，後面接著`in`關鍵字，後面接著您要循環的集合。 本文的`foreach`迴圈中，您可以存取目前的項目使用您稍早宣告的變數。
+`foreach` 關鍵字後面加上括弧，您可以在其中宣告代表集合中單一專案的變數（在範例中，`var item`），後面接著 `in` 關鍵字，後面接著您要迴圈執行的集合。 在 `foreach` 迴圈的主體中，您可以使用先前宣告的變數來存取目前的專案。
 
 ![Razor-Img12](introducing-razor-syntax-c/_static/image12.jpg)
 
-若要建立更通用的迴圈，請使用`while`陳述式：
+若要建立更一般用途的迴圈，請使用 `while` 語句：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample55.cshtml)]
 
-A`while`迴圈開頭`while`關鍵字，後面接著括號，您可以指定迴圈繼續的時間長度 (這裡，只要`countNum`小於 50)，然後重複的區塊。 迴圈通常遞增 （加入） 或遞減 （減去） 的變數或用於計算的物件。 在範例中，`+=`運算子會加入至 1`countNum`每次執行迴圈。 (以遞減的向下計數的迴圈中的變數，您會使用遞減運算子`-=`)。
+`while` 迴圈是以 `while` 關鍵字開頭，後面接著括弧，您可以在其中指定迴圈繼續的時間（在這裡，只要 `countNum` 小於50），就會重複區塊。 迴圈通常會遞增（加入）或遞減（減去）用來計算的變數或物件。 在此範例中，`+=` 運算子會在每次執行迴圈時，將1新增至 `countNum`。 （若要遞減迴圈中計數的變數，您可以使用遞減運算子 `-=`）。
 
 ## <a name="objects-and-collections"></a>物件和集合
 
-幾乎在 ASP.NET 網站中所有項目是物件，包括網頁本身。 本章節將討論一些重要的物件，您將使用經常在您的程式碼。
+ASP.NET 網站中幾乎所有內容都是物件，包括網頁本身。 本節討論您在程式碼中經常使用的一些重要物件。
 
 ### <a name="page-objects"></a>頁面物件
 
-在 ASP.NET 中最基本的物件是頁面。 您可以存取任何合格的物件不直接的 page 物件的屬性。 下列程式碼會取得頁面的檔案路徑，使用`Request`頁面物件：
+ASP.NET 中最基本的物件是頁面。 您可以直接存取頁面物件的屬性，而不需要任何限定的物件。 下列程式碼會使用頁面的 `Request` 物件，取得頁面的檔案路徑：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample56.cshtml)]
 
-要取消選取您要參考的屬性和目前的頁面物件上的方法，您可以選擇性地使用關鍵字`this`來代表您的程式碼中的頁面物件。 以下是上述的程式碼範例中，使用`this`新增至代表的頁面：
+若要清楚指出您是在目前頁面物件上參考屬性和方法，您可以選擇性地使用關鍵字 `this` 來代表程式碼中的頁面物件。 以下是先前的程式碼範例，加上 `this` 以代表該頁面：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample57.cshtml)]
 
-您可以使用屬性`Page`物件，以取得大量資訊，例如：
+您可以使用 `Page` 物件的屬性來取得大量資訊，例如：
 
-- `Request`. 如您所見，這是目前的要求，包括進行要求的頁面、 使用者身分識別等 URL 的瀏覽器的何種類型的相關資訊的集合。
-- `Response`. 這是會在伺服器程式碼執行完成時傳送到瀏覽器的回應 （頁面） 的相關資訊的集合。 例如，您可以使用此屬性寫入至回應的資訊。 
+- `Request`。 如您所見，這是目前要求的相關資訊集合，包括提出要求的瀏覽器類型、頁面的 URL、使用者身分識別等。
+- `Response`。 這是在伺服器程式碼完成執行時，將會傳送至瀏覽器的回應（頁面）相關資訊集合。 例如，您可以使用這個屬性將資訊寫入至回應。 
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample58.cshtml)]
 
 <a id="ID_CollectionsAndObjects"></a>
-### <a name="collection-objects-arrays-and-dictionaries"></a>（陣列和字典） 的集合物件
+### <a name="collection-objects-arrays-and-dictionaries"></a>集合物件（陣列和字典）
 
-A*集合*是一組相同的類型，例如的集合物件`Customer`資料庫的物件。 ASP.NET 包含許多的內建集合，例如`Request.Files`集合。
+*集合*是一組相同類型的物件，例如從資料庫 `Customer` 物件的集合。 ASP.NET 包含許多內建集合，例如 `Request.Files` 集合。
 
-您通常會使用在集合中的資料。 兩個常見的集合類型*陣列*並*字典*。 當您想要儲存一組類似的項目，但不想要建立個別的變數來保存每個項目時，陣列是很有用：
+您通常會使用集合中的資料。 有兩個常見的集合類型是*陣列*和*字典*。 當您想要儲存類似專案的集合，但不想要建立個別的變數來保存每個專案時，陣列會很有用：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample59.cshtml)]
 
-使用陣列時，您宣告特定的資料類型，例如`string`， `int`，或`DateTime`。 若要指出變數可以包含陣列，您將加入宣告的方括號 (例如`string[]`或`int[]`)。 您可以存取項目中使用它們的位置 （索引） 的陣列，或使用`foreach`陳述式。 陣列索引以零為起始&#8212;也就是第一個項目是在位置 0，第二個項目位於位置 1，依此類推。
+使用陣列，您可以宣告特定的資料類型，例如 `string`、`int`或 `DateTime`。 若要指出變數可以包含陣列，您可以在宣告中加上括弧（例如 `string[]` 或 `int[]`）。 您可以使用物件的位置（索引），或使用 `foreach` 語句來存取陣列中的專案。 陣列索引以零&#8212;為起始，亦即，第一個專案位於位置0，第二個專案位於位置1，依此類推。
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample60.cshtml)]
 
-您可以判斷陣列中的項目數，藉由取得其`Length`屬性。 若要取得特定項目的陣列中 （如果您要搜尋的陣列） 的位置，請使用`Array.IndexOf`方法。 您也可以執行像是反向陣列的內容 (`Array.Reverse`方法) 或排序內容 (`Array.Sort`方法)。
+您可以藉由取得 `Length` 屬性來判斷陣列中的專案數。 若要取得陣列中特定專案的位置（以搜尋陣列），請使用 `Array.IndexOf` 方法。 您也可以執行一些動作，像是反轉陣列的內容（`Array.Reverse` 方法）或排序內容（`Array.Sort` 方法）。
 
-在瀏覽器中顯示的字串陣列程式碼的輸出：
+在瀏覽器中顯示的字串陣列程式碼輸出：
 
 ![Razor-Img13](introducing-razor-syntax-c/_static/image13.jpg)
 
-字典是索引鍵/值組的集合，您可在此提供金鑰 （或名稱），以設定或擷取對應的值：
+字典是索引鍵/值組的集合，您可以在其中提供用來設定或抓取對應值的索引鍵（或名稱）：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample61.cshtml)]
 
-若要建立字典，您使用`new`關鍵字指出您要建立新的字典物件。 您可以將字典指派給變數使用`var`關鍵字。 指出資料類型的字典使用角括弧中的項目 ( `< >` )。 宣告的結尾，在中，您必須新增一組括號，因為這是實際的方法，建立新的字典。
+若要建立字典，您可以使用 `new` 關鍵字來表示您要建立新的字典物件。 您可以使用 `var` 關鍵字，將字典指派給變數。 您可以使用角括弧（`< >`）來指示字典中專案的資料類型。 在宣告的結尾，您必須加入一對括弧，因為這實際上是建立新字典的方法。
 
-若要新增至字典的項目，您可以呼叫`Add`字典變數的方法 (`myScores`在此情況下)，然後指定 索引鍵和值。 或者，您可以使用方括號表示索引鍵，並執行簡單的指派，如下列範例所示：
+若要將專案加入至字典，您可以呼叫 dictionary 變數的 `Add` 方法（在此案例中為`myScores`），然後指定索引鍵和值。 或者，您可以使用方括弧來表示金鑰，並執行簡單的指派，如下列範例所示：
 
 [!code-csharp[Main](introducing-razor-syntax-c/samples/sample62.cs)]
 
-若要從字典取得值，指定金鑰括號括住：
+若要從字典取得值，請在括弧中指定索引鍵：
 
 [!code-csharp[Main](introducing-razor-syntax-c/samples/sample63.cs)]
 
-## <a name="calling-methods-with-parameters"></a>呼叫具有參數的方法
+## <a name="calling-methods-with-parameters"></a>使用參數呼叫方法
 
-如同您稍早在本文中，您使用程式設計物件的方法。 例如，`Database`物件可能會有`Database.Connect`方法。 許多的方法也會有一或多個參數。 A*參數*是一個值傳遞至方法，若要啟用以完成其工作的方法。 例如，看看的宣告`Request.MapPath`方法，後者會採用三個參數：
+如您稍早在本文中所閱讀，使用進行程式設計的物件可以有方法。 例如，`Database` 物件可能會有 `Database.Connect` 的方法。 許多方法也有一或多個參數。 *參數*是您傳遞給方法的值，可讓方法完成其工作。 例如，查看 `Request.MapPath` 方法的宣告，其採用三個參數：
 
 [!code-csharp[Main](introducing-razor-syntax-c/samples/sample64.cs)]
 
-（行已換行，讓它更容易閱讀。 請記住，您可以將幾乎任何放置除了內部字串換行符號包含在引號中。)
+（這一行已包裝，使其更容易閱讀。 請記住，除了括在引號中的字串之外，您幾乎可以在任何地方放置分行符號）。
 
-這個方法會傳回對應的伺服器上的實體路徑，以指定的虛擬路徑。 方法的三個參數都`virtualPath`， `baseVirtualDir`，和`allowCrossAppMapping`。 （請注意，在宣告中，列出參數的資料類型，它們會接受的資料）。當您呼叫這個方法時，您必須提供所有的三個參數的值。
+這個方法會傳回伺服器上對應至指定虛擬路徑的實體路徑。 方法的三個參數是 `virtualPath`、`baseVirtualDir`和 `allowCrossAppMapping`。 （請注意，在宣告中，參數會列出其接受的資料類型）。當您呼叫這個方法時，您必須提供所有三個參數的值。
 
-Razor 語法可讓您將參數傳遞至方法的兩個選項：*位置參數*並*具名參數*。 若要呼叫使用位置參數的方法，您會以嚴格的順序，指定在方法宣告中傳遞參數。 （您將通常知道此順序，請閱讀文件的方法）。您必須遵循的順序，以及您不能略過的任何參數&#8212;如果有必要，您傳遞空字串 (`""`) 或`null`您不需要的值為位置參數。
+Razor 語法提供兩個選項，讓您將參數傳遞給方法：*位置參數*和*具名引數*。 若要使用位置參數呼叫方法，請以方法宣告中指定的嚴格順序來傳遞參數。 （您通常會藉由閱讀方法的檔來得知此順序）。您必須遵循順序，而且如果有必要，就無法略過&#8212;任何參數，您可以為沒有值的位置參數傳遞空字串（`""`）或 `null`。
 
-下列範例假設您有一個名為的資料夾*指令碼*在您的網站。 程式碼會呼叫`Request.MapPath`方法，並傳遞正確的順序的三個參數值。 然後，它會顯示產生的對應的路徑。
+下列範例假設您的網站上有一個名為 [*腳本*] 的資料夾。 程式碼會呼叫 `Request.MapPath` 方法，並以正確的順序傳遞三個參數的值。 然後，它會顯示所產生的對應路徑。
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample65.cshtml)]
 
-當方法有許多參數時，您可以使用具名參數，讓您的程式碼更容易閱讀。 若要呼叫方法，使用具名的參數，您可以指定參數名稱後面接著冒號 （:），然後按一下 值。 具名參數的優點是，您就可以將其傳遞任何您想要的順序。 （一項缺點是，在方法呼叫並不會精簡）。
+當方法有許多參數時，您可以使用具名引數，讓您的程式碼更容易閱讀。 若要使用具名引數來呼叫方法，請指定參數名稱，後面接著冒號（:)，然後是值。 具名引數的優點是您可以依照您想要的任何順序傳遞它們。 （缺點是方法呼叫不是精簡的）。
 
-下列範例會呼叫與上述相同的方法，但使用具名參數，以提供值：
+下列範例會呼叫與上述相同的方法，但會使用具名引數來提供值：
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample66.cshtml)]
 
-如您所見，參數會傳遞不同的順序。 不過，如果您執行先前的範例和此範例中，它們會傳回相同的值。
+如您所見，參數會以不同的順序傳遞。 不過，如果您執行上述範例和此範例，則會傳回相同的值。
 
 <a id="ID_HandlingErrors"></a>
 ## <a name="handling-errors"></a>處理錯誤
 
-### <a name="try-catch-statements"></a>Try Catch 陳述式
+### <a name="try-catch-statements"></a>Try-catch 語句
 
-陳述式通常必須在程式碼中可能會失敗的原因，您無法控制。 例如：
+您的程式碼中通常會有語句，可能會因為控制項以外的原因而失敗。 例如：
 
-- 如果您的程式碼會嘗試建立或存取的檔案，可能會發生各種錯誤。 您想要的檔案可能不存在，它可能會遭到鎖定，程式碼可能不具有權限，等等。
-- 同樣地，如果您的程式碼會嘗試更新資料庫中的記錄，可以有權限問題，可能會卸除資料庫的連接，要儲存的資料可能無效，依此類推。
+- 如果您的程式碼嘗試建立或存取檔案，可能會發生各種錯誤。 您想要的檔案可能不存在、可能被鎖定、程式碼可能沒有許可權等等。
+- 同樣地，如果您的程式碼嘗試更新資料庫中的記錄，可能會有許可權問題，可能會卸載與資料庫的連接、要儲存的資料可能無效等等。
 
-在程式設計的詞彙中，這些情況下則稱為*例外狀況*。 如果您的程式碼發生例外狀況，則會產生 （擲回） 的錯誤訊息，最惱人的使用者：
+在程式設計的詞彙中，這些情況稱為*例外*狀況。 如果您的程式碼遇到例外狀況，它會產生（擲回）一則錯誤訊息，其中最棒的是使用者很討厭：
 
 ![Razor-Img14](introducing-razor-syntax-c/_static/image14.jpg)
 
-在您的程式碼可能會遇到例外狀況的情況下，並以避免此類型的錯誤訊息，您可以使用`try/catch`陳述式。 在 `try`陳述式中，執行您的程式碼。 在一或多個`catch`陳述式，您可以尋找特定可能發生的錯誤 （特定類型的例外狀況）。 您可以包含更多`catch`陳述式，為您要尋找您預期的錯誤。
+在您的程式碼可能會遇到例外狀況的情況下，為了避免這種類型的錯誤訊息，您可以使用 `try/catch` 語句。 在 `try` 語句中，您會執行您要檢查的程式碼。 在一或多個 `catch` 語句中，您可以尋找可能發生的特定錯誤（特定類型的例外狀況）。 您可以視需要包含多個 `catch` 語句，以尋找您預期的錯誤。
 
 > [!NOTE]
-> 我們建議您避免使用`Response.Redirect`方法中的`try/catch`陳述式，因為它會在網頁中造成例外狀況。
+> 我們建議您避免在 `try/catch` 語句中使用 `Response.Redirect` 方法，因為它可能會在您的頁面中造成例外狀況。
 
-下列範例顯示建立第一個要求上的文字檔案，然後顯示按鈕，讓使用者可以開啟檔案的頁面。 此範例刻意使用不正確的檔案名稱，如此會導致例外狀況。 程式碼包含`catch`陳述式中的兩個可能的例外狀況： `FileNotFoundException`，就會出現錯誤，檔案名稱是否與`DirectoryNotFoundException`，發生於 ASP.NET 即使找不到資料夾。 （您可以取消此範例中的陳述式以查看一切正常運作時，它的執行方式註解）。
+下列範例顯示的頁面會在第一個要求上建立文字檔，然後顯示一個按鈕，讓使用者開啟檔案。 此範例刻意使用錯誤的檔案名，因此會造成例外狀況。 此程式碼包含兩個可能例外狀況的 `catch` 語句： `FileNotFoundException`，如果檔案名不正確，就會發生這種情況，如果 ASP.NET 找不到資料夾，就會發生 `DirectoryNotFoundException`。 （您可以將範例中的語句取消批註，以便在所有專案正常運作時查看其執行方式）。
 
-如果您的程式碼未處理例外狀況，您會看到先前的螢幕擷取畫面類似的錯誤頁面。 不過，`try/catch`一節可協助避免使用者看到這些錯誤類型。
+如果您的程式碼未處理例外狀況，您會看到如先前螢幕擷取畫面所示的錯誤頁面。 不過，`try/catch` 區段有助於防止使用者看到這些類型的錯誤。
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample67.cshtml)]
 
@@ -834,10 +834,10 @@ Razor 語法可讓您將參數傳遞至方法的兩個選項：*位置參數*並
 
 **使用 Visual Basic 進行程式設計**
 
-[附錄：Visual Basic 語言和語法](https://go.microsoft.com/fwlink/?LinkId=202908)
+[附錄： Visual Basic 語言和語法](https://go.microsoft.com/fwlink/?LinkId=202908)
 
-**參考文件**
+**參考檔**
 
 [ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
 
-[C# 語言](https://msdn.microsoft.com/library/kx37x362.aspx)
+[C#語言](https://msdn.microsoft.com/library/kx37x362.aspx)

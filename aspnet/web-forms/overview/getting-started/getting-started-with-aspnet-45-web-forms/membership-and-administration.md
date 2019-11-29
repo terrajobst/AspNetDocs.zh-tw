@@ -2,277 +2,277 @@
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
 title: 成員資格和管理 |Microsoft Docs
 author: Erikre
-description: 本系列教學課程將教導您建置使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for 我們的 ASP.NET Web Forms 應用程式的基本概念...
+description: 本教學課程系列將教您使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 為我們建立 ASP.NET Web Forms 應用程式的基本概念 。
 ms.author: riande
 ms.date: 09/08/2014
 ms.assetid: 732a2316-e49f-4f72-becd-0cd72f14457e
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
 msc.type: authoredcontent
-ms.openlocfilehash: 59f859ea30572fbe66184f29555ac2c5c2f22f82
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: ab00bc90bfc767d06e747be6dfb973245b5aae88
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132128"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74615463"
 ---
 # <a name="membership-and-administration"></a>成員資格及系統管理
 
-藉由[Erik Reitan](https://github.com/Erikre)
+依[Erik Reitan](https://github.com/Erikre)
 
-[下載 Wingtip Toys 範例專案 (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下載電子書 (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
+[下載 Wingtip 玩具範例專案（C#）](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)或[下載電子書（PDF）](https://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
-> 本系列教學課程將教導您建置使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 的 ASP.NET Web Forms 應用程式的基本概念。 Visual Studio 2013[含有 C# 原始程式碼專案](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)隨附了本教學課程系列。
+> 本教學課程系列將教您使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 建立 ASP.NET Web Forms 應用程式的基本概念。 本教學課程系列隨附有[ C#原始程式碼](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)的 Visual Studio 2013 專案。
 
-本教學課程會示範如何更新 Wingtip Toys 範例應用程式，來新增自訂角色，並使用 ASP.NET 身分識別。 它也示範如何實作的自訂角色的使用者可以新增和移除網站中的產品管理頁面。
+本教學課程說明如何更新 Wingtip 玩具範例應用程式，以新增自訂角色並使用 ASP.NET Identity。 它也會示範如何執行系統管理頁面，其中具有自訂角色的使用者可以從網站新增和移除產品。
 
-[ASP.NET Identity](../../../../identity/overview/getting-started/introduction-to-aspnet-identity.md)是用來建置 ASP.NET web 應用程式的成員資格系統，並且使用 ASP.NET 4.5 中。 在 Visual Studio 2013 Web Form 專案範本，以及適用於的範本會使用 ASP.NET 身分識別[ASP.NET MVC](../../../../mvc/index.md)， [ASP.NET Web API](../../../../web-api/index.md)，和[ASP.NET 單一頁面應用程式](../../../../single-page-application/index.md). 您還會特別可以安裝與空的 Web 應用程式啟動時，使用 NuGet 的 ASP.NET 身分識別系統。 不過，在本教學課程系列中您使用**Web Form**projecttemplate，其中包含 ASP.NET 身分識別系統。 ASP.NET 身分識別可讓您更輕鬆地整合應用程式資料的特定使用者設定檔資料。 此外，ASP.NET 身分識別可讓您選擇 您的應用程式中的 使用者設定檔的持續性模型。 您可以將資料儲存在 SQL Server 資料庫或其他資料存放區，包括*NoSQL*資料存放區，例如 Windows Azure 儲存體資料表。
+[ASP.NET Identity](../../../../identity/overview/getting-started/introduction-to-aspnet-identity.md)是用來建立 ASP.NET web 應用程式的成員資格系統，並可在 ASP.NET 4.5 中取得。 ASP.NET Identity 用於 Visual Studio 2013 Web form 專案範本，以及用來[ASP.NET MVC](../../../../mvc/index.md)、 [ASP.NET Web API](../../../../web-api/index.md)和[ASP.NET 單一頁面應用程式](../../../../single-page-application/index.md)的範本。 當您開始使用空白 Web 應用程式時，也可以使用 NuGet 來特別安裝 ASP.NET Identity 系統。 不過，在本教學課程系列中，您會使用**Web Forms**projecttemplate，其中包含 ASP.NET Identity 系統。 ASP.NET Identity 可讓您輕鬆地整合使用者特定的設定檔資料與應用程式資料。 此外，ASP.NET Identity 可讓您選擇應用程式中使用者設定檔的持續性模型。 您可以將資料儲存在 SQL Server 資料庫或其他資料存放區中，包括*NoSQL*資料存放區，例如 Windows Azure 儲存體資料表。
 
-本教學課程是根據先前的教學課程，Wingtip Toys 教學課程系列中標題為 「 簽出和付款使用 PayPal"。
+本教學課程是以先前的教學課程為基礎，在 Wingtip 玩具教學課程系列中的「簽出與使用 PayPal 付款」。
 
-## <a name="what-youll-learn"></a>您將學到什麼：
+## <a name="what-youll-learn"></a>您將瞭解的內容：
 
-- 如何將自訂的角色和使用者新增至應用程式中使用程式碼。
-- 如何限制對管理資料夾，以及頁面存取。
-- 如何提供隸屬於自訂的角色之使用者的瀏覽。
-- 如何使用模型繫結來填入[DropDownList](https://msdn.microsoft.com/library/system.web.ui.webcontrols.dropdownlist(v=vs.110).aspx)與產品類別目錄的控制項。
-- 如何將檔案上傳至 web 應用程式使用[FileUpload](https://msdn.microsoft.com/library/system.web.ui.webcontrols.fileupload(v=vs.110).aspx)控制項。
-- 如何使用驗證控制項來實作輸入的驗證。
-- 如何新增和移除應用程式中的產品。
+- 如何使用程式碼將自訂角色和使用者新增至應用程式。
+- 如何限制對管理資料夾和頁面的存取。
+- 如何為屬於自訂角色的使用者提供導覽。
+- 如何使用模型系結來填入具有產品類別目錄的[DropDownList](https://msdn.microsoft.com/library/system.web.ui.webcontrols.dropdownlist(v=vs.110).aspx)控制項。
+- 如何使用[FileUpload](https://msdn.microsoft.com/library/system.web.ui.webcontrols.fileupload(v=vs.110).aspx)控制項將檔案上傳至 web 應用程式。
+- 如何使用驗證控制項來執行輸入驗證。
+- 如何在應用程式中新增和移除產品。
 
-## <a name="these-features-are-included-in-the-tutorial"></a>在本教學課程中包含這些功能：
+## <a name="these-features-are-included-in-the-tutorial"></a>這些功能包含在教學課程中：
 
 - ASP.NET Identity
-- 組態和授權
+- 設定和授權
 - 模型繫結
-- 低調驗證
+- 不顯眼的驗證
 
-ASP.NET Web Forms 提供成員資格功能。 藉由使用預設範本，您會有內建的成員資格功能，您可以立即使用應用程式執行時。 本教學課程會示範如何使用 ASP.NET 身分識別來加入自訂角色，並將使用者指派給該角色。 您將了解如何限制對管理資料夾的存取。 您將新增頁面可讓使用者使用自訂角色來新增和移除的產品，以及預覽產品之後已新增, 的系統管理 資料夾。
+ASP.NET Web Forms 提供成員資格功能。 藉由使用預設範本，您可以在應用程式執行時立即使用內建的成員資格功能。 本教學課程說明如何使用 ASP.NET Identity 新增自訂角色，並將使用者指派給該角色。 您將瞭解如何限制系統管理資料夾的存取權。 您將會在 [系統管理] 資料夾中新增一個頁面，讓具有自訂角色的使用者新增和移除產品，以及在新增產品後進行預覽。
 
 ## <a name="adding-a-custom-role"></a>新增自訂角色
 
-使用 ASP.NET 身分識別，新增自訂角色，並將使用者指派給該角色使用的程式碼。
+使用 ASP.NET Identity，您可以加入自訂角色，並使用程式碼將使用者指派給該角色。
 
-1. 在**方案總管**，以滑鼠右鍵按一下*邏輯*資料夾，並建立新的類別。
-2. 新類別命名*RoleActions.cs*。
-3. 修改程式碼，讓它看起來像這樣：  
+1. 在**方案總管**中，以滑鼠右鍵按一下*邏輯*資料夾，然後建立新的類別。
+2. 將新類別命名為*RoleActions.cs*。
+3. 修改程式碼，使其看起來如下所示：  
 
     [!code-csharp[Main](membership-and-administration/samples/sample1.cs?highlight=8)]
-4. 在 **方案總管**，開啟*Global.asax.cs*檔案。
-5. 修改*Global.asax.cs*檔案中新增，使其出現，如下所示，以黃色醒目提示的程式碼：  
+4. 在**方案總管**中，開啟*Global.asax.cs*檔案。
+5. 藉由新增黃色反白顯示的程式碼來修改*Global.asax.cs*檔案，讓它看起來如下所示：  
 
     [!code-csharp[Main](membership-and-administration/samples/sample2.cs?highlight=11,26-28)]
-6. 請注意，`AddUserAndRole`會以紅色加上底線。 按兩下 AddUserAndRole 程式碼。  
-   字母"A"（反白顯示方法的開頭會加上底線。
-7. 停留在字母"A"，然後按一下 UI，可讓您產生方法虛設常式`AddUserAndRole`方法。 
+6. 請注意，`AddUserAndRole` 會以紅色加上底線。 按兩下 [AddUserAndRole] 程式碼。  
+   反白顯示方法開頭的字母 "A" 會加上底線。
+7. 將滑鼠停留在字母 "A" 上，然後按一下 UI，讓您為 `AddUserAndRole` 方法產生方法 stub。 
 
-    ![成員資格和系統管理-產生方法虛設常式](membership-and-administration/_static/image1.png)
+    ![成員資格和管理-產生方法 Stub](membership-and-administration/_static/image1.png)
 8. 按一下標題為的選項：  
     `Generate method stub for "AddUserAndRole" in "WingtipToys.Logic.RoleActions"`
-9. 開啟*RoleActions.cs*檔案*邏輯*資料夾。  
-   `AddUserAndRole`方法已加入至類別檔案。
-10. 修改*RoleActions.cs*檔案，藉由移除`NotImplementedException`和新增以黃色反白顯示的程式碼，使它看起來像這樣：  
+9. 從*邏輯*資料夾中開啟*RoleActions.cs*檔案。  
+   `AddUserAndRole` 方法已新增至類別檔案。
+10. 移除 `NotImplementedException` 並新增以黃色反白顯示的程式碼，以修改*RoleActions.cs*檔，使其看起來如下所示：  
 
     [!code-csharp[Main](membership-and-administration/samples/sample3.cs?highlight=5-7,15-51)]
 
-上述程式碼會先建立成員資格資料庫的資料庫內容。 成員資格資料庫也會儲存成 *.mdf*中的檔案*應用程式\_資料*資料夾。 您可以檢視此資料庫之後第一位使用者已登入此 web 應用程式。 
+上述程式碼會先建立成員資格資料庫的資料庫內容。 成員資格資料庫也會儲存為*應用程式\_Data*資料夾中的 *.mdf*檔案。 當第一位使用者登入此 web 應用程式之後，您就能夠看到此資料庫。 
 
 > [!NOTE] 
 > 
-> 如果您想要儲存成員資格資料，以及產品資料，您可以考慮使用相同**DbContext**您用來將產品的資料儲存在上述程式碼。
+> 如果您想要儲存成員資格資料和產品資料，您可以考慮使用您用來在上述程式碼中儲存產品資料的相同**DbCoNtext** 。
 
- *內部*關鍵字是類型 （例如類別） 和類型成員 （例如方法或屬性） 的存取修飾詞。 內部類型或成員都只能包含在相同的組件的檔案內存取 *(.dll*檔案)。 當您建置您的應用程式組件檔案 *(.dll*) 會建立包含您執行應用程式時所執行的程式碼。 
+ *Internal*關鍵字是類型（例如類別）和類型成員（例如方法或屬性）的存取修飾詞。 內部類型或成員只能在包含于相同元件 *（.dll*檔案）中的檔案內進行存取。 當您建立應用程式時，會建立元件檔 *（.dll*），其中包含執行應用程式時所執行的程式碼。 
 
-A`RoleStore`物件，可提供角色管理，會根據資料庫的內容建立。
-
-> [!NOTE] 
-> 
-> 請注意，當`RoleStore`會建立物件，它會使用泛型`IdentityRole`型別。 這表示`RoleStore`只可包含`IdentityRole`物件。 也藉由使用泛型時，在記憶體中的資源會處理更好。
-
-下一步`RoleManager`物件，會根據建立`RoleStore`您剛才建立的物件。 `RoleManager`物件會公開角色相關的 API，可用來自動將變更儲存到`RoleStore`。 `RoleManager`只可包含`IdentityRole`物件，因為程式碼會使用`<IdentityRole>`泛型型別。
-
-您呼叫`RoleExists`方法，以判斷是否"canEdit"角色成員資格資料庫中存在。 如果不是，您會建立角色。
-
-建立`UserManager`物件似乎是單純`RoleManager`控制，不過它是幾乎完全相同。 它只會在同一行而不是數個編碼。 在這裡，您傳遞的參數具現化作為新的物件，包含在括號中。
-
-接下來您建立 「 canEditUser"使用者藉由建立新`ApplicationUser`物件。 然後，如果您已成功建立使用者，您將使用者新增至新的角色。
+提供角色管理的 `RoleStore` 物件會根據資料庫內容來建立。
 
 > [!NOTE] 
 > 
-> 稍後在本教學課程系列中的 「 ASP.NET 錯誤處理 」 教學課程期間，將會更新錯誤處理。
+> 請注意，建立 `RoleStore` 物件時，它會使用泛型 `IdentityRole` 類型。 這表示 `RoleStore` 只允許包含 `IdentityRole` 物件。 此外，藉由使用泛型，記憶體中的資源會以更好的方式處理。
 
-下一次應用程式啟動時，名為"canEditUser 」 的使用者會新增為名為"canEdit"的應用程式的角色。 稍後在本教學課程中，您將使用者身分登入 」 canEditUser 」 以顯示您將在本教學課程期間新增的其他功能。 如需 ASP.NET 身分識別的 API 詳細資訊，請參閱 < [Microsoft.AspNet.Identity 命名空間](https://msdn.microsoft.com/library/microsoft.aspnet.identity(v=vs.111).aspx)。 如需初始化 ASP.NET 身分識別系統的詳細資訊，請參閱 < [AspnetIdentitySample](https://github.com/rustd/AspnetIdentitySample/blob/master/AspnetIdentitySample/App_Start/IdentityConfig.cs)。
+接下來，會根據您剛才建立的 `RoleStore` 物件來建立 `RoleManager` 物件。 `RoleManager` 物件會公開角色相關的 API，可用來自動將變更儲存至 `RoleStore`。 `RoleManager` 只允許包含 `IdentityRole` 物件，因為程式碼會使用 `<IdentityRole>` 的泛型型別。
 
-### <a name="restricting-access-to-the-administration-page"></a>限制存取的管理頁面
+您可以呼叫 `RoleExists` 方法，判斷成員資格資料庫中是否有 "canEdit" 角色。 如果不是，您可以建立角色。
 
-Wingtip Toys 範例應用程式可讓匿名使用者和登入的使用者檢視及購買產品。 不過，有自訂"canEdit"角色的登入的使用者可以存取受限制的頁面，以新增和移除產品。
+建立 `UserManager` 物件比 `RoleManager` 控制項更複雜，但幾乎相同。 它只會在一行上進行編碼，而不是數個。 在這裡，您要傳遞的參數會具現化為括弧中包含的新物件。
 
-#### <a name="add-an-administration-folder-and-page"></a>新增管理資料夾和頁面
+接下來，建立新的 `ApplicationUser` 物件來建立 "canEditUser" 使用者。 然後，如果您成功建立使用者，請將使用者新增至新角色。
 
-接下來，您將建立名為的資料夾*Admin* "canEditUser 」 使用者屬於 Wingtip Toys 的自訂角色的範例應用程式。
+> [!NOTE] 
+> 
+> 錯誤處理將會在本教學課程系列稍後的「ASP.NET 錯誤處理」教學課程中更新。
 
-1. 以滑鼠右鍵按一下專案名稱 (**Wingtip Toys**) 中**方案總管**，然後選取**新增** - &gt; **新資料夾**.
-2. 將新資料夾命名*Admin*。
-3. 以滑鼠右鍵按一下*系統管理員*資料夾，然後選取**新增** - &gt; **新項目**。   
+下次應用程式啟動時，名為 "canEditUser" 的使用者會新增為應用程式名稱為 "canEdit" 的角色。 稍後在本教學課程中，您將以「canEditUser」使用者的身分登入，以顯示您將在本教學課程中新增的其他功能。 如需有關 ASP.NET Identity 的 API 詳細資料，請參閱[Microsoft AspNet. Identity 命名空間](https://msdn.microsoft.com/library/microsoft.aspnet.identity(v=vs.111).aspx)。 如需有關初始化 ASP.NET Identity 系統的其他詳細資訊，請參閱[AspnetIdentitySample](https://github.com/rustd/AspnetIdentitySample/blob/master/AspnetIdentitySample/App_Start/IdentityConfig.cs)。
+
+### <a name="restricting-access-to-the-administration-page"></a>限制系統管理頁面的存取權
+
+Wingtip 玩具範例應用程式可讓匿名使用者和已登入的使用者查看和購買產品。 不過，具有自訂 "canEdit" 角色的登入使用者可以存取受限制的頁面，以便新增和移除產品。
+
+#### <a name="add-an-administration-folder-and-page"></a>新增系統管理資料夾和頁面
+
+接下來，您將為屬於 Wingtip 玩具範例應用程式自訂角色的 "canEditUser" 使用者建立名為*Admin*的資料夾。
+
+1. 在**方案總管**中，以滑鼠右鍵按一下專案名稱（**Wingtip 玩具**），**然後選取 [** 新增 -&gt;**新資料夾**]。
+2. 將新資料夾命名為*Admin*。
+3. 在 [系統*管理*] 資料夾上按一下滑鼠右鍵，**然後選取 [** 新增 -&gt;**新專案**]。   
    隨即顯示 [ 新增項目] 對話方塊。
-4. 選取  <strong>Visual C#</strong> - &gt; <strong>Web</strong>左側的 範本 群組。 從清單的中間，選取<strong>使用主版頁面的 Web Form</strong>，其命名<em>AdminPage.aspx</em><strong>，</strong> ，然後選取<strong>新增</strong>。
-5. 選取  *Site.Master*主版頁面中，為檔案，然後再選擇**確定**。
+4. 選取左側的 [ <strong>Visual C#</strong> -&gt; <strong>Web</strong>範本] 群組。 從中間清單中，選取 [<strong>具有主版的 Web 表單</strong>]，將它命名為<em>AdminPage .aspx</em><strong>，</strong>然後選取 [<strong>新增</strong>]。
+5. 選取*網站*檔案作為主版頁面，然後選擇 **[確定]** 。
 
-#### <a name="add-a-webconfig-file"></a>加入 Web.config 檔案
+#### <a name="add-a-webconfig-file"></a>新增 Web.config 檔案
 
-藉由新增*Web.config*的檔案*管理員*資料夾中，您可以限制存取包含在資料夾中的頁面。
+藉由將*web.config*檔案新增至*Admin*資料夾，您可以限制對資料夾中所含頁面的存取。
 
-1. 以滑鼠右鍵按一下*系統管理員*資料夾，然後選取**新增** - &gt; **新項目**。  
+1. 以滑鼠右鍵按一下 [系統*管理*] 資料夾，**然後選取 [** 新增 -&gt;**新專案**]。  
    隨即顯示 [ 新增項目] 對話方塊。
-2. 從 Visual C# web 範本的清單中，選取<strong>Web 組態檔</strong>從中間清單中，接受預設名稱<em>Web.config</em><strong>，</strong> ，然後選取<strong>新增</strong>。
-3. 取代現有的 XML 中的內容*Web.config*以下列檔案：  
+2. 從C#視覺 web 範本清單中，從中間清單選取 [ <strong>web 設定檔</strong>]，接受 web.config 的預設名稱<strong>，然後</strong>選取 [<strong>新增</strong>]。
+3. 將*web.config*檔案中的現有 XML 內容取代為下列各項：  
 
     [!code-xml[Main](membership-and-administration/samples/sample4.xml)]
 
-儲存*Web.config*檔案。 *Web.config*檔案會指定屬於"canEdit"角色的應用程式的唯一使用者可以存取包含在頁面*管理員*資料夾。
+儲存 web.config*檔案*。 Web.config*檔案*會指定只有屬於應用程式 "canEdit" 角色的使用者才能存取*Admin*資料夾中包含的頁面。
 
-### <a name="including-custom-role-navigation"></a>包括自訂角色瀏覽
+### <a name="including-custom-role-navigation"></a>包括自訂角色導覽
 
-若要啟用自訂"canEdit"角色的使用者，以瀏覽至 [管理] 區段中的應用程式，您必須新增連結*Site.Master*頁面。 只有屬於"canEdit"角色的使用者將能夠看到**Admin**連結和存取管理 區段中的色彩。
+若要讓自訂 "canEdit" 角色的使用者流覽至應用程式的 [管理] 區段，您必須新增 [*網站*] 頁面的連結。 只有屬於 "canEdit" 角色的使用者才能夠看到系統**管理員**連結並存取 [管理] 區段。
 
-1. 在 [方案總管] 中，尋找並開啟*Site.Master*頁面。
-2. 若要建立的連結"canEdit"角色的使用者，加入下列的未排序清單的黃色反白顯示的標記`<ul>`項目，讓清單會顯示為如下：  
+1. 在方案總管中，尋找並開啟 [*網站*] 頁面。
+2. 若要為 "canEdit" 角色的使用者建立連結，請將以黃色反白顯示的標記新增至下列未排序清單 `<ul>` 元素，讓清單顯示如下：  
 
     [!code-html[Main](membership-and-administration/samples/sample5.html?highlight=2-3)]
-3. 開啟*Site.Master.cs*檔案。 製作**系統管理員**只加入程式碼中以黃色反白顯示"canEditUser 」 使用者可看見的連結`Page_Load`處理常式。 `Page_Load`處理常式將會出現，如下所示：   
+3. 開啟*Site.Master.cs*檔案。 將以黃色反白顯示的程式碼新增至 `Page_Load` 處理常式，讓系統**管理員**連結只對 "canEditUser" 使用者顯示。 `Page_Load` 處理常式將會如下所示：   
 
     [!code-csharp[Main](membership-and-administration/samples/sample6.cs?highlight=3-6)]
 
-當頁面載入的程式碼會檢查登入的使用者是否具有"canEdit"角色。 如果使用者屬於"canEdit"角色，而範圍的項目，包含的連結*AdminPage.aspx*網頁 （且因此是在範圍內連結） 設為可見。
+當頁面載入時，程式碼會檢查登入的使用者是否具有 "canEdit" 的角色。 如果使用者屬於 "canEdit" 角色，則會顯示包含*AdminPage*頁面連結的 span 元素（以及範圍內的連結）。
 
-### <a name="enabling-product-administration"></a>啟用的產品管理
+### <a name="enabling-product-administration"></a>啟用產品管理
 
-到目前為止，您已建立"canEdit"角色，並加入 「 canEditUser 」 使用者、 系統管理 資料夾，以及管理頁面。 您已設定 頁面上，與管理資料夾的存取權限和應用程式中新增"canEdit"角色的使用者之瀏覽連結。 接下來，您會將標記新增至*AdminPage.aspx*頁面上，並以程式碼*AdminPage.aspx.cs*程式碼後置檔案，可讓具有"canEdit"角色的使用者，新增和移除產品。
+到目前為止，您已建立「canEdit」角色，並新增了「canEditUser」使用者、「管理」資料夾和管理頁面。 您已設定 [系統管理] 資料夾和頁面的存取權限，並已將 "canEdit" 角色的使用者導覽連結新增至應用程式。 接下來，您會將標記加入至*AdminPage* ，並將程式碼新增至*AdminPage.aspx.cs*程式碼後置檔案，讓具有 "canEdit" 角色的使用者可以新增和移除產品。
 
-1. 中**方案總管**，開啟*AdminPage.aspx*從檔案*管理員*資料夾。
+1. 在**方案總管**中，從 [系統*管理*] 資料夾開啟*AdminPage .aspx*檔案。
 2. 以下列內容取代現有的標記：  
 
     [!code-aspx[Main](membership-and-administration/samples/sample7.aspx)]
-3. 接下來，開啟*AdminPage.aspx.cs*程式碼後置檔案，以滑鼠右鍵按一下*AdminPage.aspx* ，然後按一下**檢視程式碼**。
-4. 取代現有的程式碼中*AdminPage.aspx.cs*為下列程式碼的程式碼後置檔案：  
+3. 接下來，開啟*AdminPage.aspx.cs*程式碼後置檔案，方法是以滑鼠右鍵按一下*AdminPage* ，然後按一下 [ **View code**]。
+4. 將*AdminPage.aspx.cs*程式碼後置檔案中的現有程式碼取代為下列程式碼：  
 
     [!code-csharp[Main](membership-and-administration/samples/sample8.cs)]
 
-在您所輸入的程式碼*AdminPage.aspx.cs*程式碼後置檔案，稱為類別`AddProducts`將產品加入至資料庫的實際的工作。 這個類別還不存在，因此會立即建立。
+在您為*AdminPage.aspx.cs*程式碼後置檔案輸入的程式碼中，名為 `AddProducts` 的類別會執行將產品新增至資料庫的實際工作。 此類別尚不存在，因此您現在將會建立它。
 
-1. 在 [**方案總管] 中**，以滑鼠右鍵按一下*邏輯*資料夾，然後選取**新增** - &gt; **新項目**。   
+1. 在**方案總管**中，以滑鼠右鍵按一下*邏輯*資料夾，然後**選取 [** 新增 -&gt;**新專案**]。   
    隨即顯示 [ 新增項目] 對話方塊。
-2. 選取  **Visual C#**  - &gt; **程式碼**左側的 範本 群組。 然後，選取**類別**從中間清單並將它命名*AddProducts.cs*。   
-   會顯示新的類別檔案。
+2. 選取左側的 [ **Visual C#**  -&gt; 程式**代碼**範本] 群組。 然後，從中間清單中選取 [**類別**]，並將其命名為*AddProducts.cs*。   
+   隨即顯示新的類別檔案。
 3. 將現有的程式碼取代為下列程式碼：  
 
     [!code-csharp[Main](membership-and-administration/samples/sample9.cs)]
 
-*AdminPage.aspx*  頁面可讓屬於"canEdit"角色的使用者，新增和移除產品。 當加入新的產品時，產品的相關詳細資料已經過驗證，並接著將其輸入至資料庫。 Web 應用程式的所有使用者立即使用新的產品。
+*AdminPage*可以讓屬於 "canEdit" 角色的使用者新增和移除產品。 新增產品時，會驗證產品的詳細資料，然後將其輸入至資料庫。 新產品會立即提供給 web 應用程式的所有使用者使用。
 
-#### <a name="unobtrusive-validation"></a>低調驗證
+#### <a name="unobtrusive-validation"></a>不顯眼的驗證
 
-使用者提供的產品詳細資料*AdminPage.aspx*頁面會使用驗證控制項進行驗證 (`RequiredFieldValidator`和`RegularExpressionValidator`)。 這些控制項，會自動使用低調驗證。 低調驗證可讓使用 JavaScript 的用戶端驗證邏輯，這表示頁面不需要往返於伺服器要驗證的驗證控制項。 根據預設，低調驗證會包含在*Web.config*檔案會根據下列的組態設定：
+使用者在*AdminPage .aspx*頁面上提供的產品詳細資料，會使用驗證控制項（`RequiredFieldValidator` 和 `RegularExpressionValidator`）進行驗證。 這些控制項會自動使用不顯眼的驗證。 不顯眼的驗證可讓驗證控制項針對用戶端驗證邏輯使用 JavaScript，這表示頁面不需要通過伺服器的驗證。 根據預設，不顯眼的驗證會包含*在 web.config 檔案*中，以下列設定為基礎：
 
 [!code-xml[Main](membership-and-administration/samples/sample10.xml)]
 
 #### <a name="regular-expressions"></a>規則運算式
 
-產品價格*AdminPage.aspx*使用驗證頁面**RegularExpressionValidator**控制項。 這個控制項驗證是否相關聯的輸入控制項 （"AddProductPrice 」 文字方塊） 的值符合規則運算式所指定的模式。 規則運算式是可讓您快速找出並符合特定的字元模式的模式比對標記法。 **RegularExpressionValidator**控制項包含一個名為屬性`ValidationExpression`，其中包含用來驗證價格輸入，如下所示的規則運算式：
+[ *AdminPage* ] 頁面上的產品價格會使用**RegularExpressionValidator**控制項進行驗證。 此控制項會驗證相關聯的輸入控制項值（"AddProductPrice" TextBox）是否符合正則運算式所指定的模式。 正則運算式是模式比對標記法，可讓您快速尋找並比對特定的字元模式。 **RegularExpressionValidator**控制項包含名為 `ValidationExpression` 的屬性，其中包含用來驗證價格輸入的正則運算式，如下所示：
 
 [!code-aspx[Main](membership-and-administration/samples/sample11.aspx)]
 
 #### <a name="fileupload-control"></a>FileUpload 控制項
 
-在您加入的輸入與驗證控制項，除了**FileUpload**若要控制*AdminPage.aspx*頁面。 這個控制項提供的功能，將檔案上傳。 在此情況下，您只允許上傳的映像檔。 在程式碼後置檔案 (*AdminPage.aspx.cs*)，當`AddProductButton`按一下時，程式碼會檢查`HasFile`屬性**FileUpload**控制項。 如果控制項有一個檔案，而且如果允許檔案類型 （根據副檔名而定），則影像會儲存到*映像*資料夾並*映像/個大拇指朝*應用程式的資料夾。
+除了 [輸入] 和 [驗證] 控制項以外，您還將**FileUpload**控制項新增至 [ *AdminPage* ] 頁面。 此控制項提供上傳檔案的功能。 在此情況下，您只允許上傳影像檔案。 在程式碼後置檔案（*AdminPage.aspx.cs*）中，按一下 `AddProductButton` 時，程式碼會檢查**FileUpload**控制項的 `HasFile` 屬性。 如果控制項有檔案，而且允許檔案類型（以副檔名為依據），則會將影像儲存至應用程式的*images*資料夾和*images/拇指*資料夾。
 
 #### <a name="model-binding"></a>模型繫結
 
-稍早在本教學課程系列中您用來填入模型繫結**ListView**控制**FormsView**控制**GridView**控制項，和**DetailView**控制項。 在本教學課程中，您可以使用模型繫結填入**DropDownList**具有產品類別目錄的清單控制項。
+稍早在本教學課程中，您已使用模型系結來填入**ListView**控制項、 **FormsView**控制項、 **GridView**控制項和**detailview 之**控制項。 在本教學課程中，您會使用模型系結，以產品類別目錄清單填入**DropDownList**控制項。
 
-您新增至標記*AdminPage.aspx*檔案包含**DropDownList**控制項稱為`DropDownAddCategory`:
+您新增至*AdminPage .aspx*檔案的標記包含名為 `DropDownAddCategory`的**DropDownList**控制項：
 
 [!code-aspx[Main](membership-and-administration/samples/sample12.aspx)]
 
-您可以使用模型繫結來填入這**DropDownList**藉由設定`ItemType`屬性和`SelectMethod`屬性。 `ItemType`屬性會指定您使用`WingtipToys.Models.Category`輸入填入控制項時。 您藉由建立定義此類型在開始本教學課程系列`Category`類別 （如下所示）。 `Category`類別位於*模型*資料夾內*Category.cs*檔案。
+您可以使用模型系結來填入這個**DropDownList** ，方法是設定 `ItemType` 屬性和 `SelectMethod` 屬性。 `ItemType` 屬性指定在填入控制項時使用 `WingtipToys.Models.Category` 類型。 您已在本教學課程系列的開頭定義此型別，方法是建立 `Category` 類別（如下所示）。 `Category` 類別位於*Category.cs*檔案內的 [*模型*] 資料夾中。
 
 [!code-csharp[Main](membership-and-administration/samples/sample13.cs)]
 
-`SelectMethod`的屬性**DropDownList**控制項可讓您指定您使用`GetCategories`方法 （如下所示） 也就是包含在程式碼後置檔案 (*AdminPage.aspx.cs*)。
+**DropDownList**控制項的 `SelectMethod` 屬性會指定您使用程式碼後置檔案（*AdminPage.aspx.cs*）中所包含的 `GetCategories` 方法（如下所示）。
 
 [!code-csharp[Main](membership-and-administration/samples/sample14.cs)]
 
-這個方法會指定`IQueryable`介面用來評估查詢，以針對`Category`型別。 傳回的值會用來填入**DropDownList**在網頁標記中 (*AdminPage.aspx*)。
+這個方法會指定使用 `IQueryable` 介面來評估 `Category` 類型的查詢。 傳回的值會用來填入頁面標記中的**DropDownList** （*AdminPage .aspx*）。
 
-顯示在清單中的每個項目是藉由設定所指定的文字`DataTextField`屬性。 `DataTextField`屬性會使用`CategoryName`的`Category`（如上所示） 以顯示每個類別目錄中的類別**DropDownList**控制項。 選取一個項目時所傳遞的實際值**DropDownList**控制根據`DataValueField`屬性。 `DataValueField`屬性設定為`CategoryID`中定義`Category`類別 （如上所示）。
+針對清單中的每個專案所顯示的文字，是藉由設定 `DataTextField` 屬性來指定。 `DataTextField` 屬性會使用 `Category` 類別（如上所示）的 `CategoryName`，在**DropDownList**控制項中顯示每個類別目錄。 在**DropDownList**控制項中選取專案時所傳遞的實際值是以 `DataValueField` 屬性為基礎。 `DataValueField` 屬性會設定為 `CategoryID`，做為 `Category` 類別中的定義（如上所示）。
 
-### <a name="how-the-application-will-work"></a>應用程式如何運作
+### <a name="how-the-application-will-work"></a>應用程式的工作方式
 
-當第一次，屬於"canEdit"角色的使用者瀏覽至網頁`DropDownAddCategory` **DropDownList**上面所述，控制會填入。 `DropDownRemoveProduct` **DropDownList**控制項也會填入產品使用相同的方法。 選取類別目錄類型屬於"canEdit"角色的使用者，並加上產品詳細資料 (**名稱**，**描述**，**價格**，和**映像檔**). 當使用者屬於"canEdit"角色按一下**新增產品** 按鈕，`AddProductButton_Click`事件處理常式，就會觸發。 `AddProductButton_Click`事件處理常式位於程式碼後置檔案中 (*AdminPage.aspx.cs*) 會檢查以確定它符合允許的檔案類型的映像檔 *(.gif*， *.png*， *.jpeg*，或 *.jpg*)。 然後，映像檔會儲存至資料夾，Wingtip Toys 範例應用程式。 接下來，將新的產品加入至資料庫。 若要完成新增新的產品的新執行個體`AddProducts`類別會建立並命名為產品。 `AddProducts`類別具有名為方法`AddProduct`，產品物件呼叫這個方法，以將產品加入至資料庫。
+當屬於 "canEdit" 角色的使用者第一次流覽至頁面時，會如上面所述填入 `DropDownAddCategory`**DropDownList**控制項。 `DropDownRemoveProduct`**DropDownList**控制項也會使用相同的方法填入產品。 屬於 "canEdit" 角色的使用者會選取類別目錄類型，並新增產品詳細資料（**名稱**、**描述**、**價格**和**影像檔**案）。 當屬於 "canEdit" 角色的使用者按一下 [**加入產品**] 按鈕時，就會觸發 `AddProductButton_Click` 事件處理常式。 位於程式碼後置檔案（*AdminPage.aspx.cs*）中的 `AddProductButton_Click` 事件處理常式會檢查影像檔案，確認它符合允許的檔案類型 *（.gif*、 *.png*、 *jpeg*或 *.jpg*）。 然後，影像檔案會儲存到 Wingtip 玩具範例應用程式的資料夾中。 接下來，新的產品會新增至資料庫。 為了完成新產品的加入，會建立 `AddProducts` 類別的新實例，並將其命名為 products。 `AddProducts` 類別具有名為 `AddProduct`的方法，而 products 物件會呼叫這個方法，將產品加入至資料庫。
 
 [!code-csharp[Main](membership-and-administration/samples/sample15.cs)]
 
-如果程式碼已成功將新的產品加入資料庫中，頁面會重新查詢字串值載入`ProductAction=add`。
+如果程式碼成功將新產品加入至資料庫，則會使用查詢字串值 `ProductAction=add`重載該頁面。
 
 [!code-csharp[Main](membership-and-administration/samples/sample16.cs)]
 
-當頁面重新載入時，查詢字串會包含在 URL 中。 藉由重新載入頁面，屬於"canEdit"角色的使用者可以立即查看中的更新**DropDownList**上的控制項*AdminPage.aspx*頁面。 此外，藉由包含查詢字串的 url，網頁可以顯示成功的訊息屬於"canEdit"角色的使用者。
+當頁面重載時，查詢字串會包含在 URL 中。 藉由重載頁面，屬於 "canEdit" 角色的使用者可以立即在*AdminPage*頁面上看到**DropDownList**控制項中的更新。 此外，藉由包含 URL 的查詢字串，頁面可以向屬於 "canEdit" 角色的使用者顯示成功訊息。
 
-當*AdminPage.aspx*頁面上 重新載入，`Page_Load`事件被呼叫。
+當*AdminPage 載入 .aspx*頁面時，會呼叫 `Page_Load` 事件。
 
 [!code-csharp[Main](membership-and-administration/samples/sample17.cs)]
 
-`Page_Load`事件處理常式會檢查查詢字串值，並決定是否要顯示成功訊息。
+`Page_Load` 事件處理常式會檢查查詢字串值，並決定是否要顯示成功訊息。
 
 ## <a name="running-the-application"></a>執行應用程式
 
-購物車 」 中，您可以執行的應用程式現在以查看您可以新增、 刪除和更新項目。 購物車總計將會反映在購物車中的所有項目的總成本。
+您可以立即執行應用程式，以瞭解如何在「購物車」中新增、刪除及更新專案。 購物車總計會反映購物車中所有專案的總成本。
 
-1. 在 [方案總管] 中，按下**F5**執行 Wingtip Toys 範例應用程式。  
-   瀏覽器隨即開啟並顯示*Default.aspx*頁面。
-2. 按一下 **登入**在頁面頂端的連結。 
+1. 在方案總管中，按**F5**執行 Wingtip 玩具範例應用程式。  
+   瀏覽器會開啟並顯示*default.aspx*頁面。
+2. 按一下頁面頂端的 [**登入**] 連結。 
 
-    ![成員資格和系統管理-登入連結](membership-and-administration/_static/image2.png)
+    ![成員資格和管理-登入連結](membership-and-administration/_static/image2.png)
 
-   *Login.aspx*頁面隨即顯示。
-3. 使用下列的使用者名稱和密碼：  
+   [*登入 .aspx* ] 頁面隨即顯示。
+3. 使用下列使用者名稱和密碼：  
    使用者名稱： canEditUser@wingtiptoys.com  
-   密碼:Pa$$word1 
+   密碼： Pa $ $word 1 
 
-    ![成員資格和系統管理-登入頁面](membership-and-administration/_static/image3.png)
-4. 按一下 **登入**靠近頁面底部的按鈕。
-5. 在下一個頁面頂端，選取**系統管理員**連結以瀏覽至*AdminPage.aspx*頁面。 
+    ![成員資格和管理-登入頁面](membership-and-administration/_static/image3.png)
+4. 按一下靠近頁面底部的 [**登入**] 按鈕。
+5. 在下一個頁面的頂端，選取 [**管理**] 連結以流覽至 [ *AdminPage* ] 頁面。 
 
-    ![成員資格和系統管理-系統管理員連結](membership-and-administration/_static/image4.png)
-6. 若要測試輸入的驗證，請按一下**新增產品**而不加入任何產品詳細資料 按鈕。 
+    ![成員資格和管理-系統管理員連結](membership-and-administration/_static/image4.png)
+6. 若要測試輸入驗證，請按一下 [**新增產品**] 按鈕，而不新增任何產品詳細資料。 
 
-    ![成員資格和系統管理-系統管理 頁面](membership-and-administration/_static/image5.png)
+    ![成員資格和管理-系統管理頁面](membership-and-administration/_static/image5.png)
 
-   請注意，必要的欄位會顯示訊息。
-7. 新增新的產品的詳細資料，然後按一下**新增產品** 按鈕。 
+   請注意，會顯示必要的欄位訊息。
+7. 新增新產品的詳細資料，然後按一下 [**新增產品**] 按鈕。 
 
-    ![成員資格和系統管理-新增產品](membership-and-administration/_static/image6.png)
-8. 選取 **產品**加入從頂端導覽功能表，若要檢視新的產品。 
+    ![成員資格和管理-新增產品](membership-and-administration/_static/image6.png)
+8. 從頂端導覽功能表中選取 [**產品**]，以查看您新增的新產品。 
 
-    ![成員資格和系統管理-顯示新的產品](membership-and-administration/_static/image7.png)
-9. 按一下  **Admin**連結以返回 管理 頁面。
-10. 在 **移除產品**一節的頁面上，選取您在加入新的產品**DropDownListBox**。
-11. 按一下 **移除產品**按鈕即可移除應用程式中的新產品。 
+    ![成員資格和管理-顯示新產品](membership-and-administration/_static/image7.png)
+9. 按一下 [系統**管理員**] 連結以返回 [管理] 頁面。
+10. 在頁面的 [**移除產品**] 區段中，選取您在**DropDownListBox**中新增的新產品。
+11. 按一下 [**移除產品**] 按鈕，從應用程式中移除新的產品。 
 
-    ![成員資格和系統管理-移除產品](membership-and-administration/_static/image8.png)
-12. 選取 **產品**從頂端導覽功能表，確認已移除產品。
-13. 按一下 **登出**存在於管理模式。   
-    請注意，不會再顯示頂端瀏覽窗格**Admin**功能表項目。
+    ![成員資格和管理-移除產品](membership-and-administration/_static/image8.png)
+12. 從頂端導覽功能表中選取 [**產品**]，確認已移除產品。
+13. 按一下 **[登出]** 以存在系統管理模式。   
+    請注意，上方流覽窗格不會再顯示 [**管理**] 功能表項目。
 
 ## <a name="summary"></a>總結
 
-在本教學課程中，您可以加入自訂的角色和使用者屬於自訂角色，也就是受限制的存取權管理資料夾，以及頁面上，並提供自訂的角色為屬於使用者的瀏覽。 您用來填入的模型繫結**DropDownList**控制項資料。 您已實作**FileUpload**控制項和驗證控制項。 此外，您已了解如何新增和移除資料庫中的產品。 在下一個教學課程中，您將了解如何實作 ASP.NET 路由。
+在本教學課程中，您已新增自訂角色和屬於自訂角色的使用者、限制存取管理資料夾和頁面，並為屬於自訂角色的使用者提供導覽。 您已使用模型系結來填入具有資料的**DropDownList**控制項。 您已執行**FileUpload**控制項和驗證控制項。 此外，您也已瞭解如何從資料庫新增和移除產品。 在下一個教學課程中，您將瞭解如何執行 ASP.NET 路由。
 
 ## <a name="additional-resources"></a>其他資源
 
-[Web.config 的 authorization 項目](https://msdn.microsoft.com/library/8d82143t(v=vs.100).aspx)  
+[Web.config-authorization 元素](https://msdn.microsoft.com/library/8d82143t(v=vs.100).aspx)  
 [ASP.NET Identity](../../../../identity/overview/getting-started/introduction-to-aspnet-identity.md)  
-[將使用成員資格、 OAuth 和 SQL Database 的安全 ASP.NET Web Forms 應用程式部署至 Azure 網站](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)  
-[Microsoft Azure-免費試用版](https://azure.microsoft.com/pricing/free-trial/)
+[將具有成員資格、OAuth 和 SQL Database 的安全 ASP.NET Web Forms 應用程式部署至 Azure 網站](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)  
+[Microsoft Azure 免費試用](https://azure.microsoft.com/pricing/free-trial/)
 
 > [!div class="step-by-step"]
 > [上一頁](checkout-and-payment-with-paypal.md)

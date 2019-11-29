@@ -1,230 +1,230 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-vb
-title: 從主版頁面 (VB) 的 [內容] 頁面與互動 |Microsoft Docs
+title: 從主版頁面與內容頁互動（VB） |Microsoft Docs
 author: rick-anderson
-description: 檢驗如何呼叫方法時，由主版頁面的程式碼中設定屬性的 [內容] 頁面等等。
+description: 檢查如何從主版頁面中的程式碼呼叫內容頁面的方法、設定屬性等等。
 ms.author: riande
 ms.date: 07/11/2008
 ms.assetid: a6e2e1a0-c925-43e9-b711-1f178fdd72d7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2b3cc02a170deabdd6248bacc9dab8a17b04e2b5
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 5367ad1b7f2fa11c635ad95754c9bcc1edcb6c1d
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134113"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74615721"
 ---
 # <a name="interacting-with-the-content-page-from-the-master-page-vb"></a>從主版頁面與內容頁互動 (VB)
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載程式碼](http://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_07_VB.zip)或[下載 PDF](http://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_07_VB.pdf)
+[下載程式代碼](https://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_07_VB.zip)或[下載 PDF](https://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_07_VB.pdf)
 
-> 檢驗如何呼叫方法時，由主版頁面的程式碼中設定屬性的 [內容] 頁面等等。
+> 檢查如何從主版頁面中的程式碼呼叫內容頁面的方法、設定屬性等等。
 
 ## <a name="introduction"></a>簡介
 
-前述教學課程檢驗如何讓 [內容] 頁面，以程式設計方式與其主版頁面互動。 我們已更新以包含列出五個最近的 GridView 控制項的主版頁面的重新叫用加入產品。 然後，我們會建立內容頁面的使用者可以加入新的產品。 在新的產品，[內容] 頁面所需以指示主版頁面重新整理其 GridView，使它會包含剛加入的產品。 這項功能被透過將公用方法新增至主版頁面，重新整理資料繫結至 GridView，，然後叫用該方法，從 [內容] 頁面。
+先前的教學課程已檢查如何讓內容頁面以程式設計方式與主版頁面互動。 回想一下，我們更新了主版頁面，使其包含一個 GridView 控制項，其中列出五個最近新增的產品。 接著，我們建立了一個內容頁面，使用者可以從中加入新產品。 加入新產品時，需要指示主版頁面重新整理其 GridView，使其包含剛新增的產品。 這項功能的完成方式是將公用方法新增至主版頁面，以重新整理系結至 GridView 的資料，然後從 [內容] 頁面叫用該方法。
 
-最常見的內容和主版頁面互動形式源自於 [內容] 頁面。 不過，可能成可採取行動，rouse 目前的內容頁面的主版頁面，而且可能需要這類功能，如果主版頁面包含使用者介面項目，讓使用者能夠修改也會顯示在 [內容] 頁面的資料。 請考慮內容頁面，顯示產品資訊，在 GridView 控制項和主版頁面，其中包含一個按鈕控制項，按下時，所有產品的價格將增加一倍。 如同先前的教學課程的範例，GridView 需要重新整理 double 的價格，以顯示新的價格，按下按鈕之後，但在此案例中，它是主版頁面需要 rouse 成可採取行動的 [內容] 頁面。
+最常見的內容和主版頁面互動形式源自于 [內容] 頁面。 不過，主版頁面可以將目前的內容頁面 rouse 為動作，如果主版頁面包含使用者介面專案，讓使用者修改也會顯示在內容頁面上的資料，則可能需要這類功能。 假設有一個 [內容] 頁面，其中顯示 GridView 控制項中的產品資訊，以及一個包含按鈕控制項的主版頁面，當按下時，會將所有產品的價格加倍。 就像上一個教學課程中的範例一樣，GridView 必須在按下 [雙價] 按鈕之後重新整理，才會顯示新的價格，但在此案例中，則是需要 rouse 內容頁面以進行動作的主版頁面。
 
-本教學課程將探討如何叫用功能，在 [內容] 頁面中定義的主版頁面。
+本教學課程會探索如何在 [內容] 頁面中定義主版頁面的叫用功能。
 
-### <a name="instigating-programmatic-interaction-via-an-event-and-event-handlers"></a>透過事件和事件處理常式進行程式設計互動
+### <a name="instigating-programmatic-interaction-via-an-event-and-event-handlers"></a>透過事件和事件處理常式 Instigating 程式設計互動
 
-叫用的主版頁面的內容頁面功能是比反過來要好更具挑戰性。 因為內容頁面時進行程式設計互動，從 [內容] 頁面，具有單一的主版頁面中，我們知道公用方法與屬性，供我們運用。 不過，主版頁面，可以有許多不同內容頁面，各有自己一組屬性和方法。 我們要如何，然後撰寫程式碼主版頁面，以在其內容頁面中執行某些動作，當我們不知道哪些內容的頁面將會叫用，直到執行階段中？
+從主版頁面叫用內容頁面功能比其他方式更具挑戰性。 由於內容頁面具有單一主版頁面，因此在 instigating 內容頁面的程式設計互動時，我們知道有哪些公用方法和屬性是可處置的。 不過，主版頁面可以有許多不同的內容頁面，每個都有自己的一組屬性和方法。 然後，我們可以如何在主版頁面中撰寫程式碼，以便在我們不知道要在執行時間前叫用哪個內容頁面時，在其內容頁面中執行某些動作？
 
-請考慮為 ASP.NET Web 控制項，例如按鈕控制項。 按鈕控制項可以顯示在任意數目的 ASP.NET 網頁，而且需要用它可以警示頁面，它已按下的機制。 這利用完成*事件*。 特別是，按鈕控制項會引發其`Click`事件按一下; 時，包含按鈕的 ASP.NET 網頁 （選擇性） 可以回應透過該通知*事件處理常式*。
+請考慮使用 ASP.NET 的 Web 控制項，例如 Button 控制項。 按鈕控制項可以出現在任意數目的 ASP.NET 網頁上，而且需要一種機制，讓它可以警示頁面已被按一下。 這是使用*事件*來完成的。 特別是，按鈕控制項會在按一下時引發其 `Click` 事件;包含按鈕的 [ASP.NET] 頁面可以選擇性地透過*事件處理常式*來回應該通知。
 
-這個相同的模式可用來在其內容頁面的主版頁面觸發程序功能：
+這個相同的模式可在其內容頁面中使用主版頁面觸發程式功能：
 
-1. 加入主版頁面中的事件。
-2. 引發事件，每當需要其內容的頁面與通訊的主版頁面。 比方說，如果主版頁面需要提醒其內容的頁面使用者加倍價格，其事件就會引發緊接著價格超過一倍。
-3. 在需要採取某些動作的內容頁面中的事件處理常式。
+1. 將事件新增至主版頁面。
+2. 每當主版頁面需要與其內容頁面通訊時，引發事件。 例如，如果主版頁面需要警示其 [內容] 頁面，而使用者已將價格加倍，則其事件會在價格加倍後立即引發。
+3. 在需要採取一些動作的內容頁面中，建立事件處理常式。
 
-本教學課程的其餘部分會實作簡介; 中所述的範例也就是列出資料庫中的產品內容頁面和主版頁面，其中包含一個按鈕控制價格的兩倍。
+本教學課程的其餘部分會執行簡介中所述的範例;也就是 [內容] 頁面，其中列出資料庫中的產品，以及包含按鈕控制項以將價格加倍的主版頁面。
 
-## <a name="step-1-displaying-products-in-a-content-page"></a>步驟 1：在 [內容] 頁面中顯示產品
+## <a name="step-1-displaying-products-in-a-content-page"></a>步驟1：在內容頁面中顯示產品
 
-我們第一要務是建立內容的頁面，其中列出 Northwind 資料庫中的產品。 (我們在先前的教學課程中，加入至專案的 Northwind 資料庫[*與主版頁面，從內容頁互動*](interacting-with-the-master-page-from-the-content-page-vb.md)。)藉由新增新的 ASP.NET 頁面，以啟動`~/Admin`名為資料夾`Products.aspx`，並確定將它繫結`Site.master`主版頁面。 此頁面已加入至網站之後，圖 1 顯示 方案總管。
+我們的第一個企業順序是建立一個內容頁面，其中列出 Northwind 資料庫中的產品。 （我們已在先前的教學課程中，將 Northwind 資料庫新增至專案，[*並從 [內容] 頁面與主版頁面互動*](interacting-with-the-master-page-from-the-content-page-vb.md)）。首先，將新的 ASP.NET 網頁新增至名為 `Products.aspx`的 `~/Admin` 資料夾，並務必將它系結至 `Site.master` 主版頁面。 [圖 1] 顯示此頁面新增至網站後的方案總管。
 
-[![將新的 ASP.NET 網頁新增至 [Admin] 資料夾](interacting-with-the-content-page-from-the-master-page-vb/_static/image2.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image1.png)
+[![將新的 ASP.NET 網頁新增至管理資料夾](interacting-with-the-content-page-from-the-master-page-vb/_static/image2.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image1.png)
 
-**圖 01**:加入新的 ASP.NET 頁面，以便`Admin`資料夾 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image3.png))
+**圖 01**：將新的 ASP.NET 網頁新增至 `Admin` 資料夾（[按一下以觀看完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image3.png)）
 
-請注意，在[*指定主版頁面的標題、 中繼標籤及其他 HTML 標頭*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)教學課程中我們建立名為自訂的基底頁面類別`BasePage`如果不是產生頁面的標題明確地設定。 移至`Products.aspx`頁面的程式碼後置類別，並讓它衍生自`BasePage`(而不是從`System.Web.UI.Page`)。
+回想一下，在[*主版頁面教學課程中指定標題、中繼標記和其他 HTML 標頭*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)時，我們建立了名為 `BasePage` 的自訂基底頁面類別，它會產生頁面的標題（如果未明確設定的話）。 移至 `Products.aspx` 頁面的程式碼後置類別，並讓它衍生自 `BasePage` （而不是從 `System.Web.UI.Page`）。
 
-最後，更新`Web.sitemap`檔案，以包含這一課中的項目。 加入下列標記下方`<siteMapNode>`針對至主版頁面互動課程內容：
+最後，更新 `Web.sitemap` 檔案以包含此課程的專案。 將下列標記新增至 [主要] 頁面互動課程的 [`<siteMapNode>`] 底下：
 
 [!code-xml[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample1.xml)]
 
-這個加法`<siteMapNode>`項目會反映在課程清單 （請參閱 [圖 5]）。
+此 `<siteMapNode>` 專案的加入會反映在課程清單中（請參閱 [圖 5]）。
 
-返回`Products.aspx`。 在適用於內容的控制項`MainContent`，將 GridView 控制項並命名它`ProductsGrid`。 繫結至新的 SqlDataSource 控制項，名為的 GridView `ProductsDataSource`。
+返回 `Products.aspx`。 在 `MainContent`的內容控制項中，新增 GridView 控制項並將其命名為 `ProductsGrid`。 將 GridView 系結至名為 `ProductsDataSource`的新 SqlDataSource 控制項。
 
-[![繫結至新的 SqlDataSource 控制項的 GridView](interacting-with-the-content-page-from-the-master-page-vb/_static/image5.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image4.png)
+[![將 GridView 系結至新的 SqlDataSource 控制項](interacting-with-the-content-page-from-the-master-page-vb/_static/image5.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image4.png)
 
-**圖 02**:將 GridView 繫結至新的 SqlDataSource 控制項 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image6.png))
+**圖 02**：將 GridView 系結至新的 SqlDataSource 控制項（[按一下以查看完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image6.png)）
 
-因此，它會使用 Northwind 資料庫，請設定精靈。 如果您已完成上一個教學課程，則您應該已經有名稱為的連接字串`NorthwindConnectionString`在`Web.config`。 圖 3 所示，請從下拉式清單中，選擇此連接字串。
+設定 wizard，使其使用 Northwind 資料庫。 如果您已完成上一個教學課程，則 `Web.config`中應該已經有一個名為 `NorthwindConnectionString` 的連接字串。 從下拉式清單中選擇這個連接字串，如 [圖 3] 所示。
 
-[![設定為使用 Northwind 資料庫 SqlDataSource](interacting-with-the-content-page-from-the-master-page-vb/_static/image8.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image7.png)
+[![將 SqlDataSource 設定為使用 Northwind 資料庫](interacting-with-the-content-page-from-the-master-page-vb/_static/image8.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image7.png)
 
-**圖 03**:設定為使用 Northwind 資料庫 SqlDataSource ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image9.png))
+**圖 03**：將 SqlDataSource 設定為使用 Northwind 資料庫（[按一下以觀看完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image9.png)）
 
-接下來，指定資料來源控制項的`SELECT`陳述式，從下拉式清單中選擇 產品 資料表，並傳回`ProductName`和`UnitPrice`（請參閱 圖 4） 的資料行。 按一下 下一步，然後完成 以完成設定資料來源精靈
+接下來，從下拉式清單中選擇 Products 資料表，然後傳回 [`ProductName`] 和 [`UnitPrice`] 資料行，以指定資料來源控制項的 `SELECT` 語句（請參閱 [圖 4]）。 按 [下一步]，然後按一下 [完成] 以完成 [設定資料來源]。
 
-[![傳回從 Products 資料表的 [ProductName] 和 [UnitPrice 欄位](interacting-with-the-content-page-from-the-master-page-vb/_static/image11.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image10.png)
+[![從 Products 資料表傳回 ProductName 和單價欄位](interacting-with-the-content-page-from-the-master-page-vb/_static/image11.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image10.png)
 
-**圖 04**:傳回`ProductName`並`UnitPrice`欄位從`Products`資料表 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image12.png))
+**圖 04**：傳回 `Products` 資料表中的 `ProductName` 和 `UnitPrice` 欄位（[按一下以查看完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image12.png)）
 
-這樣就全部完成了！ 完成精靈之後 Visual Studio 會將兩個 BoundFields 加入至 GridView，以鏡像 SqlDataSource 控制項所傳回的兩個欄位。 GridView 和 SqlDataSource 控制項的標記會遵循。 [圖 5] 顯示透過瀏覽器檢視時的結果。
+這樣就全部完成了！ 完成 wizard 後 Visual Studio 將兩個 BoundFields 新增至 GridView，以鏡像 SqlDataSource 控制項所傳回的兩個欄位。 GridView 和 SqlDataSource 控制項的標記如下所示。 [圖 5] 顯示透過瀏覽器查看的結果。
 
 [!code-aspx[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample2.aspx)]
 
-[![每個產品而其價格則列於 GridView](interacting-with-the-content-page-from-the-master-page-vb/_static/image14.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image13.png)
+[![每個產品及其價格都列在 GridView 中](interacting-with-the-content-page-from-the-master-page-vb/_static/image14.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image13.png)
 
-**圖 05**:每個產品而其價格則列於 GridView ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image15.png))
+**圖 05**：每個產品及其價格都會列在 GridView 中（[按一下以觀看完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image15.png)）
 
 > [!NOTE]
-> 請放心清除 GridView 的外觀。 一些建議包括格式化為貨幣顯示的 UnitPrice 值和使用背景色彩和字型來改善格線的外觀。 如需有關顯示和設定在 ASP.NET 中的資料格式的詳細資訊，請參閱我[使用資料的教學課程系列](../../data-access/index.md)。
+> 請隨意清除 GridView 的外觀。 某些建議包括將顯示的單價值格式化為貨幣，以及使用背景色彩和字型來改善方格的外觀。 如需有關在 ASP.NET 中顯示及格式化資料的詳細資訊，請參閱我[使用資料教學課程系列](../../data-access/index.md)。
 
-## <a name="step-2-adding-a-double-prices-button-to-the-master-page"></a>步驟 2：將 Double 的價格按鈕新增至主版頁面
+## <a name="step-2-adding-a-double-prices-button-to-the-master-page"></a>步驟2：將雙重價格按鈕新增至主版頁面
 
-下一步是將按鈕 Web 控制項至主要頁面上，按一下時，將兩倍的資料庫中的所有產品的價格。 開啟`Site.master`主版頁面，並從工具箱拖曳至設計工具中，放置下方拖曳一個按鈕`RecentProductsDataSource`我們在上一個教學課程中新增的 SqlDataSource 控制項。 將按鈕的`ID`屬性，以`DoublePrice`及其`Text`"Double 產品價格 」 的屬性。
+我們的下一個工作是將按鈕 Web 控制項新增至主版頁面，當您按一下時，將會加倍資料庫中所有產品的價格。 開啟 `Site.master` 主版頁面，並將按鈕從 [工具箱] 拖曳至設計工具，放在我們在上一個教學課程中新增的 `RecentProductsDataSource` SqlDataSource 控制項底下。 將按鈕的 [`ID`] 屬性設定為 [`DoublePrice`]，並將其 [`Text`] 屬性設為 [雙產品價格]。
 
-接下來，將 SqlDataSource 控制項新增至主版頁面，並將它命名為`DoublePricesDataSource`。 將用來執行此 SqlDataSource`UPDATE`所有價格的兩倍的陳述式。 具體來說，我們要設定其`ConnectionString`並`UpdateCommand`屬性，以適當的連接字串和`UPDATE`陳述式。 然後我們要呼叫此 SqlDataSource 控制項的`Update`方法時`DoublePrice`按一下按鈕時。 若要設定`ConnectionString`和`UpdateCommand`屬性，選取 SqlDataSource 控制項，然後移至 [屬性] 視窗。 `ConnectionString`屬性會列出已儲存在這些連接字串`Web.config`在下拉式清單中，選擇`NorthwindConnectionString`選項，如 [圖 6] 所示。
+接下來，將 SqlDataSource 控制項新增至主版頁面，並將其命名為 `DoublePricesDataSource`。 此 SqlDataSource 將用來執行 `UPDATE` 語句，以將所有價格加倍。 具體而言，我們需要將它的 `ConnectionString` 和 `UpdateCommand` 屬性設定為適當的連接字串和 `UPDATE` 語句。 然後，在按一下 [`DoublePrice`] 按鈕時，我們需要呼叫這個 SqlDataSource 控制項的 `Update` 方法。 若要設定 `ConnectionString` 和 `UpdateCommand` 屬性，請選取 [SqlDataSource] 控制項，然後移至 [屬性視窗]。 [`ConnectionString`] 屬性會列出已儲存在下拉式清單中 `Web.config` 的連接字串。選擇 [`NorthwindConnectionString`] 選項，如 [圖 6] 所示。
 
-[![設定要使用 NorthwindConnectionString SqlDataSource](interacting-with-the-content-page-from-the-master-page-vb/_static/image17.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image16.png)
+[![將 SqlDataSource 設定為使用 NorthwindConnectionString](interacting-with-the-content-page-from-the-master-page-vb/_static/image17.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image16.png)
 
-**圖 06**:設定要使用 SqlDataSource `NorthwindConnectionString` ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image18.png))
+**圖 06**：設定 SqlDataSource 使用 `NorthwindConnectionString` （[按一下以觀看完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image18.png)）
 
-若要設定`UpdateCommand`屬性，在 [屬性] 視窗中找出 UpdateQuery 選項。 選取時，這個屬性會顯示具有省略符號; 的按鈕按一下此按鈕即可顯示 [圖 7] 所示的命令及參數編輯器對話方塊。 輸入下列命令`UPDATE`陳述式，在對話方塊的文字方塊：
+若要設定 `UpdateCommand` 屬性，請在屬性視窗中找出 [UpdateQuery] 選項。 選取此屬性時，會顯示具有省略號的按鈕;按一下此按鈕以顯示 [圖 7] 中所示的 [命令和參數編輯器] 對話方塊。 在對話方塊的文字方塊中輸入下列 `UPDATE` 語句：
 
 [!code-sql[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample3.sql)]
 
-此陳述式，在執行時，將會加倍`UnitPrice`值中的每一筆記錄`Products`資料表。
+執行此語句時，會將 `Products` 資料表中每筆記錄的 `UnitPrice` 值加倍。
 
 [![設定 SqlDataSource 的 UpdateCommand 屬性](interacting-with-the-content-page-from-the-master-page-vb/_static/image20.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image19.png)
 
-**圖 07**:設定的 SqlDataSource`UpdateCommand`屬性 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image21.png))
+**圖 07**：設定 SqlDataSource 的 `UpdateCommand` 屬性（[按一下以查看完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image21.png)）
 
-設定這些屬性之後, 您按鈕和 SqlDataSource 控制項的宣告式標記看起來應該如下所示：
+設定這些屬性之後，您的 Button 和 SqlDataSource 控制項的宣告式標記看起來應該如下所示：
 
 [!code-aspx[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample4.aspx)]
 
-是呼叫其`Update`方法時`DoublePrice`按一下按鈕時。 建立`Click`事件處理常式`DoublePrice` 按鈕，並新增下列程式碼：
+剩下的就是在按一下 [`DoublePrice`] 按鈕時，呼叫它的 `Update` 方法。 為 [`DoublePrice`] 按鈕建立 `Click` 事件處理常式，並加入下列程式碼：
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample5.vb)]
 
-若要測試這項功能，請瀏覽`~/Admin/Products.aspx`我們在步驟 1 中建立，然後按一下 「 雙重產品價格 」 按鈕的頁面。 按一下此按鈕會導致回傳，執行`DoublePrice`按鈕的`Click`事件處理常式，使所有產品的價格加倍。 然後重新轉譯頁面的標記會傳回並重新顯示在瀏覽器中。 GridView，在 [內容] 頁面中，不過，會列出相同的價格為"Double 的產品價格 」 之前所按的按鈕。 這是因為一開始載入 GridView 內的資料必須儲存在檢視狀態，因此除非另有指示否則，它不會在回傳時載入其狀態。 如果您瀏覽不同的頁面，然後再傳回給`~/Admin/Products.aspx`頁面，您會看到更新的價格。
+若要測試這項功能，請造訪我們在步驟1中建立的 [`~/Admin/Products.aspx`] 頁面，然後按一下 [兩倍的產品價格] 按鈕。 按一下此按鈕會導致回傳，並執行 `DoublePrice` 按鈕的 `Click` 事件處理常式，使所有產品的價格加倍。 然後會重新轉譯頁面，並在瀏覽器中傳回並重新顯示標記。 不過，[內容] 頁面中的 GridView 會列出與按下 [雙產品價格] 按鈕之前相同的價格。 這是因為一開始在 GridView 中載入的資料狀態會儲存在 view 狀態中，因此除非另有指示，否則不會在回傳時重載。 如果您流覽不同的頁面，然後返回 [`~/Admin/Products.aspx`] 頁面，您會看到更新的價格。
 
-## <a name="step-3-raising-an-event-when-the-prices-are-doubled"></a>步驟 3：引發事件時的價格會增加一倍
+## <a name="step-3-raising-an-event-when-the-prices-are-doubled"></a>步驟3：當價格加倍時引發事件
 
-因為在 GridView`~/Admin/Products.aspx`頁面不會立即反映價格加倍，使用者可以理解的是認為，它們沒有按一下 「 雙重產品價格 」 按鈕，或無法運作。 它們可能嘗試按一下按鈕多次，一再使價格加倍的幾個。 若要修正此我們要在內容中的方格頁面會顯示新的價格，它們會增加一倍之後，立即。
+因為 [`~/Admin/Products.aspx`] 頁面中的 GridView 並不會立即反映價格，所以使用者可能會更認為他們未按下 [兩倍的產品價格] 按鈕，或其無法運作。 他們可以多次嘗試按下按鈕，再重新加倍價格。 若要修正此問題，我們必須讓 [內容] 頁面中的方格在兩倍之後立即顯示新的價格。
 
-如稍早在本教學課程中所述，我們需要引發事件，主版頁面中的，每當使用者按一下`DoublePrice` 按鈕。 事件是一個類別 （事件發行者） 的方式通知另一組有趣的東西發生其他類別 （事件訂閱者）。 在此範例中，主版頁面是 「 事件發行者 」;這些內容頁面時關心`DoublePrice` 按鈕便是訂閱者。
+如本教學課程稍早所述，當使用者按一下 [`DoublePrice`] 按鈕時，我們必須在主版頁面中引發事件。 事件是一種方式，可讓一個類別（事件發行者）通知另一組有趣的類別（事件訂閱者）。 在此範例中，主版頁面是事件發行者;按一下 [`DoublePrice`] 按鈕時所在意的內容頁面是 [訂閱者]。
 
-藉由建立訂閱事件的類別*事件處理常式*，這是執行以回應所引發的事件的方法。 發行者會定義他藉由定義所引發的事件*事件委派*。 事件委派指定的事件處理常式必須接受輸入的參數。 在.NET Framework 中，事件委派執行不傳回任何值，並接受兩個輸入的參數：
+類別會藉由建立*事件處理常式*來訂閱事件，這是為了回應引發的事件而執行的方法。 發行者會藉由定義*事件委派*來定義他引發的事件。 事件委派會指定事件處理常式必須接受的輸入參數。 在 .NET Framework 中，事件委派不會傳回任何值並接受兩個輸入參數：
 
-- `Object`，這會識別事件來源，以及
+- `Object`，可識別事件來源，而
 - 衍生自的類別 `System.EventArgs`
 
-傳遞給事件處理常式的第二個參數可以包含事件相關的其他資訊。 雖然基底`EventArgs`類別不傳遞任何資訊、.NET Framework 包含數個擴充的類別`EventArgs`並包含其他屬性。 例如，`CommandEventArgs`執行個體傳遞至回應的事件處理常式`Command`事件，並包含兩個參考的屬性：`CommandArgument`和`CommandName`。
+傳遞至事件處理常式的第二個參數可以包含事件的其他相關資訊。 雖然基底 `EventArgs` 類別不會傳遞任何資訊，但 .NET Framework 包含一些擴充 `EventArgs` 並包含額外屬性的類別。 例如，`CommandEventArgs` 實例會傳遞至回應 `Command` 事件的事件處理常式，並包含兩個資訊屬性： `CommandArgument` 和 `CommandName`。
 
 > [!NOTE]
-> 如需有關如何建立的詳細資訊，提高，以及處理事件，請參閱[事件與委派](https://msdn.microsoft.com/library/17sde2xt.aspx)並[簡單 english 的事件委派](http://www.codeproject.com/KB/cs/eventdelegates.aspx)。
+> 如需建立、引發和處理事件的詳細資訊，請參閱[事件和委派](https://msdn.microsoft.com/library/17sde2xt.aspx)和[簡單英文的事件委派](http://www.codeproject.com/KB/cs/eventdelegates.aspx)。
 
 若要定義事件，請使用下列語法：
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample6.vb)]
 
-因為我們只需要時使用者按下 [警示內容] 頁面`DoublePrice`按鈕並不需要傳遞任何額外的資訊，我們可以使用事件委派`EventHandler`，其為第二個定義可接受的事件處理常式參數型別的物件`System.EventArgs`。 若要建立主版頁面中的事件，請將下列程式碼行加入主版頁面的程式碼後置類別：
+由於我們只需要在使用者按下 [`DoublePrice`] 按鈕而不需要傳遞任何其他資訊時，就會對 [內容] 頁面發出警示，因此我們可以使用事件委派 `EventHandler`，它會定義事件處理常式，以接受 `System.EventArgs`類型物件的第二個參數。 若要在主版頁面中建立事件，請將下列程式程式碼新增至主版頁面的程式碼後置類別：
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample7.vb)]
 
-上述程式碼會將名為的主版頁面中的公用事件`PricesDoubled`。 我們現在需要之後會引發這個事件價格超過一倍。 若要引發事件會使用下列語法：
+上述程式碼會將公用事件新增至名為 `PricesDoubled`的主版頁面。 我們現在必須在價格加倍後才引發此事件。 若要引發事件，請使用下列語法：
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample8.vb)]
 
-何處*寄件者*並*eventArgs*是您想要傳遞給訂閱者的事件處理常式的值。
+其中， *sender*和*eventArgs*是您想要傳遞給訂閱者之事件處理常式的值。
 
-更新`DoublePrice``Click`為下列程式碼的事件處理常式：
+使用下列程式碼，更新 `DoublePrice` `Click` 事件處理常式：
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample9.vb)]
 
-同樣地，`Click`事件處理常式會啟動，藉由呼叫`DoublePricesDataSource`SqlDataSource 控制項`Update`方法的所有產品價格的兩倍。 之後，有兩個事件處理常式新增項目。 首先， `RecentProducts` GridView 的資料重新整理。 此 GridView 已新增至主版頁面前述教學課程中，並顯示最新加入的五種產品。 我們需要重新整理此方格，使它顯示這些五種產品的只是兩個價格。 接下來，`PricesDoubled`就會引發事件。 主版頁面本身的參考 (`Me`) 會傳送至事件處理常式，為事件來源，並為空`EventArgs`物件傳送做為事件引數。
+就像之前一樣，`Click` 事件處理常式一開始會先呼叫 `DoublePricesDataSource` SqlDataSource 控制項的 `Update` 方法，以將所有產品的價格加倍。 之後，事件處理常式會新增兩個專案。 首先，`RecentProducts` GridView 的資料會重新整理。 這個 GridView 已新增至上一個教學課程中的主版頁面，並顯示五個最近新增的產品。 我們需要重新整理此方格，使其顯示這五項產品的加倍價格。 之後，就會引發 `PricesDoubled` 事件。 主版頁面本身（`Me`）的參考會當做事件來源傳送到事件處理常式，而空的 `EventArgs` 物件則會當做事件引數傳送。
 
-## <a name="step-4-handling-the-event-in-the-content-page"></a>步驟 4：[內容] 頁面中處理事件
+## <a name="step-4-handling-the-event-in-the-content-page"></a>步驟4：處理 [內容] 頁面中的事件
 
-目前主版頁面會引發其`PricesDoubled`事件時`DoublePrice`按一下按鈕控制項。 不過，這是只有一半-我們仍必須處理 「 訂閱者 」 中的事件。 這牽涉到兩個步驟： 建立事件處理常式，並加入事件連接程式碼，以便在引發事件時執行的事件處理常式。
+此時，只要按一下 `DoublePrice` 按鈕控制項，主版頁面就會引發它的 `PricesDoubled` 事件。 不過，這只是實際的一半，我們仍需要處理「訂閱者」中的事件。 這包含兩個步驟：建立事件處理常式和新增事件連接程式碼，以便在事件引發時執行事件處理常式。
 
-建立名為事件處理常式著手`Master_PricesDoubled`。 因為我們所定義的方式`PricesDoubled`主版頁面中的事件的事件處理常式的兩個輸入的參數必須是類型`Object`和`EventArgs`分別。 在 事件處理常式呼叫`ProductsGrid`GridView 的`DataBind`重新繫結至方格的資料的方法。
+首先，建立名為 `Master_PricesDoubled`的事件處理常式。 由於我們在主版頁面中定義 `PricesDoubled` 事件的方式，事件處理常式的兩個輸入參數必須分別 `Object` 和 `EventArgs`類型。 在事件處理常式中，呼叫 `ProductsGrid` GridView 的 `DataBind` 方法，將資料重新系結至方格。
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample10.vb)]
 
-事件處理常式的程式碼已完成，但我們至今還連線的主版頁面`PricesDoubled`這個事件處理常式的事件。 訂閱者將事件的事件處理常式，透過下列語法：
+事件處理常式的程式碼已完成，但我們尚未將主版頁面的 `PricesDoubled` 事件連接到這個事件處理常式。 「訂閱者」會透過下列語法，將事件線路至事件處理常式：
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample11.vb)]
 
-*發行者*會提供事件物件的參考*eventName*，以及*methodName*是在 「 訂閱者 」 中定義的事件處理常式的名稱。
+*發行者*是*提供事件指定*者的物件參考，而*方法*名稱則是在訂閱者中定義的事件處理常式名稱。
 
-此事件的連接程式碼必須執行的第一個頁面瀏覽和後續回傳時，以及應該在前面可能會引發事件時的頁面週期中的某一點。 加入事件連接程式碼的好時機是在 PreInit 階段中，在網頁生命週期非常早期，就會發生。
+此事件的程式碼必須在第一頁造訪和後續回傳上執行，而且應該在頁面生命週期中的某個時間點發生，然後才會引發事件。 新增事件接線程式碼的好時機是在 PreInit 階段，這會在頁面生命週期初期發生。
 
-開啟`~/Admin/Products.aspx`並建立`Page_PreInit`事件處理常式：
+開啟 `~/Admin/Products.aspx` 並建立 `Page_PreInit` 事件處理常式：
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample12.vb)]
 
-若要完成此連接程式碼中，我們需要從 [內容] 頁面的主版頁面的程式設計參考。 如先前的教學課程中所述，有兩種方式可以執行這項操作：
+為了完成此接線程式碼，我們需要從 [內容] 頁面以程式設計方式參考主版頁面。 如先前的教學課程中所述，有兩種方式可以執行這項操作：
 
-- 轉換鬆散型別`Page.Master`屬性，適當的主版頁面的型別，或
-- 藉由新增`@MasterType`指示詞`.aspx`頁面，然後使用 強型別`Master`屬性。
+- 將鬆散類型的 `Page.Master` 屬性轉換為適當的主版頁面類型，或
+- 藉由在 [`.aspx`] 頁面中加入 `@MasterType` 指示詞，然後使用強型別 `Master` 屬性。
 
-讓我們使用第二種方法。 新增下列`@MasterType`指示詞加入頁面的宣告式標記的頂端：
+讓我們使用第二種方法。 將下列 `@MasterType` 指示詞新增至頁面的宣告式標記的頂端：
 
 [!code-aspx[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample13.aspx)]
 
-然後加入下列事件連接程式碼，在`Page_PreInit`事件處理常式：
+然後，在 `Page_PreInit` 事件處理常式中新增下列事件接線碼：
 
 [!code-vb[Main](interacting-with-the-content-page-from-the-master-page-vb/samples/sample14.vb)]
 
-GridView 內容頁面中的重新整理與此程式碼就緒之後，每當`DoublePrice`按一下按鈕時。
+當此程式碼準備就緒時，每當按一下 [`DoublePrice`] 按鈕時，就會重新整理 [內容] 頁面中的 GridView。
 
-圖 8 和 9 說明這項行為。 圖 8 顯示當第一次瀏覽的頁面。 請注意，在價格值`RecentProducts`（在主版頁面的左側資料行） 的 GridView 和`ProductsGrid`GridView （在 [內容] 頁面中）。 圖 9 顯示相同畫面之後立即`DoublePrice`按下按鈕。 如您所見，這兩個 Gridview 會立即會反映新的價格。
+[圖 8] 和 [9] 說明這種行為。 [圖 8] 顯示第一次造訪時的頁面。 請注意，`RecentProducts` GridView （在主版頁面的左欄中）和 `ProductsGrid` GridView （在 [內容] 頁面中）的價格值。 [圖 9] 在按下 [`DoublePrice`] 按鈕之後，立即顯示相同的畫面。 如您所見，新的價格會立即反映在這兩個 Gridview 中。
 
-[![初始的價格值](interacting-with-the-content-page-from-the-master-page-vb/_static/image23.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image22.png)
+[![初始價格值](interacting-with-the-content-page-from-the-master-page-vb/_static/image23.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image22.png)
 
-**圖 08**:初始的價格值 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image24.png))
+**圖 8**：初始價格值（[按一下以查看完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image24.png)）
 
-[![Just-Doubled 價格會顯示在 Gridview](interacting-with-the-content-page-from-the-master-page-vb/_static/image26.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image25.png)
+[![會在 Gridview 中顯示加倍的價格](interacting-with-the-content-page-from-the-master-page-vb/_static/image26.png)](interacting-with-the-content-page-from-the-master-page-vb/_static/image25.png)
 
-**圖 09**:在 Gridview 中顯示 Just-Doubled 價格 ([按一下以檢視完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image27.png))
+**圖 09**： Gridview （[按一下以觀看完整大小的影像](interacting-with-the-content-page-from-the-master-page-vb/_static/image27.png)）中顯示加倍的價格
 
 ## <a name="summary"></a>總結
 
-在理想情況下，主版頁面和其內容的頁面是完全獨立的另一個，並需要互動的任何層級。 不過，如果您有主版頁面或內容頁面，以顯示可從主版頁面或內容頁面中修改的資料，則您可能需要具有警示內容頁面 （或相反的） 主版頁面的資料修改時，讓您可以更新顯示。 在先前的教學課程中，我們看到如何以程式設計的方式互動其主版頁面; 的內容頁面在本教學課程中，我們討論過如何互動的主版頁面起始。
+在理想情況下，主版頁面和其內容頁面會彼此獨立，而且不需要任何層級的互動。 不過，如果您有 [主版頁面] 或 [內容] 頁面，其中顯示可從主版頁面或 [內容] 頁面修改的資料，則在修改資料以更新顯示畫面時，您可能需要讓主版頁面警示 [內容] 頁面（反之亦然）。 在先前的教學課程中，我們已瞭解如何讓內容頁面以程式設計方式與主版頁面互動;在本教學課程中，我們探討了如何讓主版頁面起始互動。
 
-雖然程式設計內容和主版頁面之間的互動可能來自的內容 」 或 「 主版頁面，使用互動模式取決於原始。 差異是因為，內容頁面具有單一主要頁面，但主版頁面可以有許多不同的內容頁面。 而不需要直接互動內容頁面的主版頁面，更好的方法是能夠引發事件，以表示某些動作都已經發生的主版頁面。 這些動作所關心的內容頁面可以建立事件處理常式。
+雖然內容和主版頁面之間的程式設計互動可能來自內容或主版頁面，但所使用的互動模式則視來源而定。 差異在於內容頁面具有單一主版頁面，但主版頁面可以有許多不同的內容頁面。 較好的方法是讓主版頁面引發事件，以通知已發生某個動作，而不是讓主版頁面直接與內容頁面互動。 關心此動作的內容頁面可以建立事件處理常式。
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ### <a name="further-reading"></a>進一步閱讀
 
-如需有關在本教學課程所討論的主題的詳細資訊，請參閱下列資源：
+如需本教學課程中所討論之主題的詳細資訊，請參閱下列資源：
 
-- [存取及更新在 ASP.NET 中的資料](http://aspnet.4guysfromrolla.com/articles/011106-1.aspx)
-- [事件與委派](https://msdn.microsoft.com/library/17sde2xt.aspx)
-- [內容與主版頁面之間傳遞資訊](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
-- [在 ASP.NET 教學課程中使用的資料](../../data-access/index.md)
+- [存取和更新 ASP.NET 中的資料](http://aspnet.4guysfromrolla.com/articles/011106-1.aspx)
+- [事件和委派](https://msdn.microsoft.com/library/17sde2xt.aspx)
+- [在內容和主版頁面之間傳遞資訊](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
+- [使用 ASP.NET 教學課程中的資料](../../data-access/index.md)
 
 ### <a name="about-the-author"></a>關於作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多個 ASP 本書籍，他是 4GuysFromRolla.com 的創辦人，一直從事 Microsoft Web 技術自 1998 年。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是[ *Sams 教導您自己 ASP.NET 3.5 24 小時內*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 Scott 要聯絡[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或透過他的部落格[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，自1998起，有多個 ASP/ASP. NET 書籍和創辦人的4GuysFromRolla.com。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是[*在24小時內讓自己的 ASP.NET 3.5*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)。 Scott 可以在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)或透過他在[http://ScottOnWriting.NET](http://scottonwriting.net/)的 blog。
 
 ### <a name="special-thanks-to"></a>特別感謝
 
-本教學課程系列是由許多實用的檢閱者檢閱。 本教學課程中的潛在客戶檢閱者已 Suchi Banerjee。 有興趣檢閱我即將推出的 MSDN 文章嗎？ 如果是這樣，psychic 在 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Suchi Banerjee。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)下拉一行
 
 > [!div class="step-by-step"]
 > [上一頁](interacting-with-the-master-page-from-the-content-page-vb.md)
