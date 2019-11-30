@@ -1,53 +1,53 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-vb
-title: 建立互斥的核取方塊 (VB) |Microsoft Docs
+title: 建立互斥的核取方塊（VB） |Microsoft Docs
 author: wenz
-description: 只有其中一組選項可能會被選取時，通常用選項按鈕。 不過，還有一項缺點:一次一個選項按鈕群組中的選取...
+description: 只有一組選項可以選取時，通常會使用選項按鈕。 但有一個缺點，就是在選取群組中的一個選項按鈕之後,。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: e9dd1d5a-a1db-4114-981d-6a91acb1d709
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5bf96cf287f2fe5f394449587c70d9fc6fb33af9
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: f33936dd4d71f6bbf08f02966eefe44c8c152eba
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132545"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74606482"
 ---
-# <a name="creating-mutually-exclusive-checkboxes-vb"></a><span data-ttu-id="08eb9-104">建立互斥的核取方塊 (VB)</span><span class="sxs-lookup"><span data-stu-id="08eb9-104">Creating Mutually Exclusive Checkboxes (VB)</span></span>
+# <a name="creating-mutually-exclusive-checkboxes-vb"></a><span data-ttu-id="2d419-104">建立互斥的核取方塊 (VB)</span><span class="sxs-lookup"><span data-stu-id="2d419-104">Creating Mutually Exclusive Checkboxes (VB)</span></span>
 
-<span data-ttu-id="08eb9-105">藉由[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="08eb9-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="2d419-105">依[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="2d419-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="08eb9-106">[下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/MutuallyExclusiveCheckBox0.vb.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/mutuallyexclusivecheckbox0VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="08eb9-106">[Download Code](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/MutuallyExclusiveCheckBox0.vb.zip) or [Download PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/mutuallyexclusivecheckbox0VB.pdf)</span></span>
+<span data-ttu-id="2d419-106">[下載程式代碼](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/MutuallyExclusiveCheckBox0.vb.zip)或[下載 PDF](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/mutuallyexclusivecheckbox0VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="2d419-106">[Download Code](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/MutuallyExclusiveCheckBox0.vb.zip) or [Download PDF](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/mutuallyexclusivecheckbox0VB.pdf)</span></span>
 
-> <span data-ttu-id="08eb9-107">只有其中一組選項可能會被選取時，通常用選項按鈕。</span><span class="sxs-lookup"><span data-stu-id="08eb9-107">When only one of a set of options may be selected, radio buttons are usually used.</span></span> <span data-ttu-id="08eb9-108">不過，還有一項缺點:一旦選取一個選項按鈕群組中的，不可能取消選取所有選項按鈕。</span><span class="sxs-lookup"><span data-stu-id="08eb9-108">There is a drawback, though: Once one radio button in a group is selected, it is not possible to uncheck all radio buttons.</span></span> <span data-ttu-id="08eb9-109">核取方塊可以隨時取消勾選，不過不會互斥。</span><span class="sxs-lookup"><span data-stu-id="08eb9-109">Check boxes can be unchecked at any time, however are not mutually exclusive.</span></span> <span data-ttu-id="08eb9-110">本教學課程提供最佳的這兩種方法： 互斥的核取方塊。</span><span class="sxs-lookup"><span data-stu-id="08eb9-110">This tutorial provides the best of both approaches: check boxes that are mutually exclusive.</span></span>
+> <span data-ttu-id="2d419-107">只有一組選項可以選取時，通常會使用選項按鈕。</span><span class="sxs-lookup"><span data-stu-id="2d419-107">When only one of a set of options may be selected, radio buttons are usually used.</span></span> <span data-ttu-id="2d419-108">但有一個缺點：選取群組中的一個選項按鈕之後，就無法取消核取所有選項按鈕。</span><span class="sxs-lookup"><span data-stu-id="2d419-108">There is a drawback, though: Once one radio button in a group is selected, it is not possible to uncheck all radio buttons.</span></span> <span data-ttu-id="2d419-109">您可以隨時取消核取核取方塊，但不會互斥。</span><span class="sxs-lookup"><span data-stu-id="2d419-109">Check boxes can be unchecked at any time, however are not mutually exclusive.</span></span> <span data-ttu-id="2d419-110">本教學課程提供兩種方法的最佳選擇：彼此互斥的核取方塊。</span><span class="sxs-lookup"><span data-stu-id="2d419-110">This tutorial provides the best of both approaches: check boxes that are mutually exclusive.</span></span>
 
-## <a name="overview"></a><span data-ttu-id="08eb9-111">總覽</span><span class="sxs-lookup"><span data-stu-id="08eb9-111">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="2d419-111">概觀</span><span class="sxs-lookup"><span data-stu-id="2d419-111">Overview</span></span>
 
-<span data-ttu-id="08eb9-112">只有其中一組選項可能會被選取時，通常用選項按鈕。</span><span class="sxs-lookup"><span data-stu-id="08eb9-112">When only one of a set of options may be selected, radio buttons are usually used.</span></span> <span data-ttu-id="08eb9-113">不過，還有一項缺點:一旦選取一個選項按鈕群組中的，不可能取消選取所有選項按鈕。</span><span class="sxs-lookup"><span data-stu-id="08eb9-113">There is a drawback, though: Once one radio button in a group is selected, it is not possible to uncheck all radio buttons.</span></span> <span data-ttu-id="08eb9-114">核取方塊可以隨時取消勾選，不過不會互斥。</span><span class="sxs-lookup"><span data-stu-id="08eb9-114">Check boxes can be unchecked at any time, however are not mutually exclusive.</span></span> <span data-ttu-id="08eb9-115">本教學課程提供最佳的這兩種方法： 互斥的核取方塊。</span><span class="sxs-lookup"><span data-stu-id="08eb9-115">This tutorial provides the best of both approaches: check boxes that are mutually exclusive.</span></span>
+<span data-ttu-id="2d419-112">只有一組選項可以選取時，通常會使用選項按鈕。</span><span class="sxs-lookup"><span data-stu-id="2d419-112">When only one of a set of options may be selected, radio buttons are usually used.</span></span> <span data-ttu-id="2d419-113">但有一個缺點：選取群組中的一個選項按鈕之後，就無法取消核取所有選項按鈕。</span><span class="sxs-lookup"><span data-stu-id="2d419-113">There is a drawback, though: Once one radio button in a group is selected, it is not possible to uncheck all radio buttons.</span></span> <span data-ttu-id="2d419-114">您可以隨時取消核取核取方塊，但不會互斥。</span><span class="sxs-lookup"><span data-stu-id="2d419-114">Check boxes can be unchecked at any time, however are not mutually exclusive.</span></span> <span data-ttu-id="2d419-115">本教學課程提供兩種方法的最佳選擇：彼此互斥的核取方塊。</span><span class="sxs-lookup"><span data-stu-id="2d419-115">This tutorial provides the best of both approaches: check boxes that are mutually exclusive.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="08eb9-116">步驟</span><span class="sxs-lookup"><span data-stu-id="08eb9-116">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="2d419-116">步驟</span><span class="sxs-lookup"><span data-stu-id="2d419-116">Steps</span></span>
 
-<span data-ttu-id="08eb9-117">ASP.NET AJAX Control Toolkit 包含 MutuallyExclusiveCheckBox 擴充項。</span><span class="sxs-lookup"><span data-stu-id="08eb9-117">The ASP.NET AJAX Control Toolkit contains the MutuallyExclusiveCheckBox extender.</span></span> <span data-ttu-id="08eb9-118">這可讓程式設計人員指派至群組名稱的任何核取方塊 (`Key`屬性)。</span><span class="sxs-lookup"><span data-stu-id="08eb9-118">This enables programmers to assign any checkbox to a group name (`Key` attribute).</span></span> <span data-ttu-id="08eb9-119">從相同群組內的所有核取方塊，只有一個可選取一次。</span><span class="sxs-lookup"><span data-stu-id="08eb9-119">From all check boxes within the same group, only one may be selected at one time.</span></span>
+<span data-ttu-id="2d419-117">ASP.NET AJAX Control 工具組包含 MutuallyExclusiveCheckBox 擴充項。</span><span class="sxs-lookup"><span data-stu-id="2d419-117">The ASP.NET AJAX Control Toolkit contains the MutuallyExclusiveCheckBox extender.</span></span> <span data-ttu-id="2d419-118">這可讓程式設計人員將任何核取方塊指派給組名（`Key` 屬性）。</span><span class="sxs-lookup"><span data-stu-id="2d419-118">This enables programmers to assign any checkbox to a group name (`Key` attribute).</span></span> <span data-ttu-id="2d419-119">從相同群組中的所有核取方塊，一次只能選取一個。</span><span class="sxs-lookup"><span data-stu-id="2d419-119">From all check boxes within the same group, only one may be selected at one time.</span></span>
 
-<span data-ttu-id="08eb9-120">讓我們開始將新的 ASP.NET 網頁上的兩個核取方塊。</span><span class="sxs-lookup"><span data-stu-id="08eb9-120">Let's start with putting two check boxes on a new ASP.NET page.</span></span> <span data-ttu-id="08eb9-121">可以有多個，但其中兩個足以示範原則：</span><span class="sxs-lookup"><span data-stu-id="08eb9-121">There can be more, but two of them suffice to demonstrate the principle:</span></span>
+<span data-ttu-id="2d419-120">讓我們從將兩個核取方塊放在新的 ASP.NET 網頁開始。</span><span class="sxs-lookup"><span data-stu-id="2d419-120">Let's start with putting two check boxes on a new ASP.NET page.</span></span> <span data-ttu-id="2d419-121">有更多，但其中兩個都足以展示原則：</span><span class="sxs-lookup"><span data-stu-id="2d419-121">There can be more, but two of them suffice to demonstrate the principle:</span></span>
 
 [!code-aspx[Main](creating-mutually-exclusive-checkboxes-vb/samples/sample1.aspx)]
 
-<span data-ttu-id="08eb9-122">針對這兩個核取方塊，則必須將 MutuallyExclusiveCheckBoxExtender 控制項放在頁面上。</span><span class="sxs-lookup"><span data-stu-id="08eb9-122">For both checkboxes, a MutuallyExclusiveCheckBoxExtender control must be put on the page.</span></span> <span data-ttu-id="08eb9-123">這兩個索引鍵屬性必須有相同的值，就如同 HTML 選項按鈕項目的屬性必須是代表其所屬的群組相同的值。</span><span class="sxs-lookup"><span data-stu-id="08eb9-123">Both Key attributes need to have the same value, just as the value attributes of HTML radio button elements must be identical to denote the group they belong to.</span></span> <span data-ttu-id="08eb9-124">擴充項的 TargetControlID 屬性指向的核取方塊的識別碼。</span><span class="sxs-lookup"><span data-stu-id="08eb9-124">The TargetControlID property of the extender points to the ID of the check box.</span></span>
+<span data-ttu-id="2d419-122">對於這兩個核取方塊，MutuallyExclusiveCheckBoxExtender 控制項都必須放在頁面上。</span><span class="sxs-lookup"><span data-stu-id="2d419-122">For both checkboxes, a MutuallyExclusiveCheckBoxExtender control must be put on the page.</span></span> <span data-ttu-id="2d419-123">這兩個索引鍵屬性都必須具有相同的值，就像 [HTML] 選項按鈕元素的 [值] 屬性一樣，表示它們所屬的群組。</span><span class="sxs-lookup"><span data-stu-id="2d419-123">Both Key attributes need to have the same value, just as the value attributes of HTML radio button elements must be identical to denote the group they belong to.</span></span> <span data-ttu-id="2d419-124">擴充項的 TargetControlID 屬性會指向核取方塊的識別碼。</span><span class="sxs-lookup"><span data-stu-id="2d419-124">The TargetControlID property of the extender points to the ID of the check box.</span></span>
 
 [!code-aspx[Main](creating-mutually-exclusive-checkboxes-vb/samples/sample2.aspx)]
 
-<span data-ttu-id="08eb9-125">最後，包括 ASP.NET AJAX`ScriptManager`所需的 ASP.NET AJAX Control Toolkit 中的所有項目：</span><span class="sxs-lookup"><span data-stu-id="08eb9-125">Finally, include the ASP.NET AJAX `ScriptManager` which is required by all elements of the ASP.NET AJAX Control Toolkit:</span></span>
+<span data-ttu-id="2d419-125">最後，包含 ASP.NET AJAX 控制項工具組的所有元素所需的 ASP.NET AJAX `ScriptManager`：</span><span class="sxs-lookup"><span data-stu-id="2d419-125">Finally, include the ASP.NET AJAX `ScriptManager` which is required by all elements of the ASP.NET AJAX Control Toolkit:</span></span>
 
 [!code-aspx[Main](creating-mutually-exclusive-checkboxes-vb/samples/sample3.aspx)]
 
-<span data-ttu-id="08eb9-126">儲存並執行的頁面：您可以檢查，並取消核取這兩個核取方塊，但是沒有這兩個核取方塊可檢查。</span><span class="sxs-lookup"><span data-stu-id="08eb9-126">Save and run the page: You can check and uncheck both check boxes, however at no time can both check boxes be checked.</span></span>
+<span data-ttu-id="2d419-126">儲存並執行頁面：您可以勾選和取消核取這兩個核取方塊，不過，您無法同時選取這兩個核取方塊。</span><span class="sxs-lookup"><span data-stu-id="2d419-126">Save and run the page: You can check and uncheck both check boxes, however at no time can both check boxes be checked.</span></span>
 
-<span data-ttu-id="08eb9-127">[![只有一個核取方塊可以檢查一次](creating-mutually-exclusive-checkboxes-vb/_static/image2.png)](creating-mutually-exclusive-checkboxes-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="08eb9-127">[![Only one checkbox can be checked at a time](creating-mutually-exclusive-checkboxes-vb/_static/image2.png)](creating-mutually-exclusive-checkboxes-vb/_static/image1.png)</span></span>
+<span data-ttu-id="2d419-127">[一次只能檢查一個核取方塊 ![](creating-mutually-exclusive-checkboxes-vb/_static/image2.png)](creating-mutually-exclusive-checkboxes-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="2d419-127">[![Only one checkbox can be checked at a time](creating-mutually-exclusive-checkboxes-vb/_static/image2.png)](creating-mutually-exclusive-checkboxes-vb/_static/image1.png)</span></span>
 
-<span data-ttu-id="08eb9-128">只有一個核取方塊可以檢查一次 ([按一下以檢視完整大小的影像](creating-mutually-exclusive-checkboxes-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="08eb9-128">Only one checkbox can be checked at a time ([Click to view full-size image](creating-mutually-exclusive-checkboxes-vb/_static/image3.png))</span></span>
+<span data-ttu-id="2d419-128">一次只能檢查一個核取方塊（[按一下以查看完整大小的影像](creating-mutually-exclusive-checkboxes-vb/_static/image3.png)）</span><span class="sxs-lookup"><span data-stu-id="2d419-128">Only one checkbox can be checked at a time ([Click to view full-size image](creating-mutually-exclusive-checkboxes-vb/_static/image3.png))</span></span>
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="08eb9-129">上一步</span><span class="sxs-lookup"><span data-stu-id="08eb9-129">Previous</span></span>](creating-mutually-exclusive-checkboxes-cs.md)
+> [<span data-ttu-id="2d419-129">上一篇</span><span class="sxs-lookup"><span data-stu-id="2d419-129">Previous</span></span>](creating-mutually-exclusive-checkboxes-cs.md)

@@ -1,53 +1,53 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-cs
-title: 資料繫結滑桿控制項 (C#) |Microsoft Docs
+title: 資料系結滑杆控制項C#（） |Microsoft Docs
 author: wenz
-description: 在 AJAX Control Toolkit 中的滑桿控制項提供的圖形化的滑桿，可以使用滑鼠來控制。 它也可以繫結目前 positio...
+description: AJAX 控制項工具組中的滑杆控制項提供圖形滑杆，可以使用滑鼠來控制。 您可以系結目前的 positio 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: b7f77869-aa1d-4025-924f-622c57112db6
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9613b96612c2799c17bd5633083bb439913b4dc9
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: ef547573f17f3265ad72717d3d3bbc622fd6894e
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65124853"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74598597"
 ---
-# <a name="databinding-the-slider-control-c"></a><span data-ttu-id="4c2a5-104">資料繫結滑桿控制項 (C#)</span><span class="sxs-lookup"><span data-stu-id="4c2a5-104">Databinding the Slider Control (C#)</span></span>
+# <a name="databinding-the-slider-control-c"></a><span data-ttu-id="abbd1-104">資料繫結滑桿控制項 (C#)</span><span class="sxs-lookup"><span data-stu-id="abbd1-104">Databinding the Slider Control (C#)</span></span>
 
-<span data-ttu-id="4c2a5-105">藉由[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="4c2a5-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="abbd1-105">依[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="abbd1-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="4c2a5-106">[下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider0.cs.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/slider0CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="4c2a5-106">[Download Code](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider0.cs.zip) or [Download PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/slider0CS.pdf)</span></span>
+<span data-ttu-id="abbd1-106">[下載程式代碼](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider0.cs.zip)或[下載 PDF](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/slider0CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="abbd1-106">[Download Code](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider0.cs.zip) or [Download PDF](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/slider0CS.pdf)</span></span>
 
-> <span data-ttu-id="4c2a5-107">在 AJAX Control Toolkit 中的滑桿控制項提供的圖形化的滑桿，可以使用滑鼠來控制。</span><span class="sxs-lookup"><span data-stu-id="4c2a5-107">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="4c2a5-108">可以將滑桿的目前位置到另一個的 ASP.NET 控制項繫結。</span><span class="sxs-lookup"><span data-stu-id="4c2a5-108">It is possible to bind the current position of the slider to another ASP.NET control.</span></span>
+> <span data-ttu-id="abbd1-107">AJAX 控制項工具組中的滑杆控制項提供圖形滑杆，可以使用滑鼠來控制。</span><span class="sxs-lookup"><span data-stu-id="abbd1-107">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="abbd1-108">您可以將滑杆的目前位置系結至另一個 ASP.NET 控制項。</span><span class="sxs-lookup"><span data-stu-id="abbd1-108">It is possible to bind the current position of the slider to another ASP.NET control.</span></span>
 
-## <a name="overview"></a><span data-ttu-id="4c2a5-109">總覽</span><span class="sxs-lookup"><span data-stu-id="4c2a5-109">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="abbd1-109">概觀</span><span class="sxs-lookup"><span data-stu-id="abbd1-109">Overview</span></span>
 
-<span data-ttu-id="4c2a5-110">在 AJAX Control Toolkit 中的滑桿控制項提供的圖形化的滑桿，可以使用滑鼠來控制。</span><span class="sxs-lookup"><span data-stu-id="4c2a5-110">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="4c2a5-111">可以將滑桿的目前位置到另一個的 ASP.NET 控制項繫結。</span><span class="sxs-lookup"><span data-stu-id="4c2a5-111">It is possible to bind the current position of the slider to another ASP.NET control.</span></span>
+<span data-ttu-id="abbd1-110">AJAX 控制項工具組中的滑杆控制項提供圖形滑杆，可以使用滑鼠來控制。</span><span class="sxs-lookup"><span data-stu-id="abbd1-110">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="abbd1-111">您可以將滑杆的目前位置系結至另一個 ASP.NET 控制項。</span><span class="sxs-lookup"><span data-stu-id="abbd1-111">It is possible to bind the current position of the slider to another ASP.NET control.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="4c2a5-112">步驟</span><span class="sxs-lookup"><span data-stu-id="4c2a5-112">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="abbd1-112">步驟</span><span class="sxs-lookup"><span data-stu-id="abbd1-112">Steps</span></span>
 
-<span data-ttu-id="4c2a5-113">若要啟動的 ASP.NET AJAX Control Toolkit 中，功能`ScriptManager`控制項必須放置在任何位置上 (但在`<form>`項目):</span><span class="sxs-lookup"><span data-stu-id="4c2a5-113">In order to activate the functionality of ASP.NET AJAX and the Control Toolkit, the `ScriptManager` control must be put anywhere on the page (but within the `<form>` element):</span></span>
+<span data-ttu-id="abbd1-113">若要啟用 ASP.NET AJAX 和控制項工具組的功能，`ScriptManager` 控制項必須放在頁面上的任何位置（但在 `<form>` 元素內）：</span><span class="sxs-lookup"><span data-stu-id="abbd1-113">In order to activate the functionality of ASP.NET AJAX and the Control Toolkit, the `ScriptManager` control must be put anywhere on the page (but within the `<form>` element):</span></span>
 
 [!code-aspx[Main](databinding-the-slider-control-cs/samples/sample1.aspx)]
 
-<span data-ttu-id="4c2a5-114">接下來，新增兩個`TextBox`至網頁的控制項。</span><span class="sxs-lookup"><span data-stu-id="4c2a5-114">Next, add two `TextBox` controls to the page.</span></span> <span data-ttu-id="4c2a5-115">其中一個會轉換成圖形化的滑桿，按住不放，另一個將滑桿的位置。</span><span class="sxs-lookup"><span data-stu-id="4c2a5-115">One will be transformed into a graphical slider, and the other one will hold the position of the slider.</span></span>
+<span data-ttu-id="abbd1-114">接下來，將兩個 `TextBox` 控制項加入至頁面。</span><span class="sxs-lookup"><span data-stu-id="abbd1-114">Next, add two `TextBox` controls to the page.</span></span> <span data-ttu-id="abbd1-115">其中一個會轉換成圖形滑杆，另一個則會保存滑杆的位置。</span><span class="sxs-lookup"><span data-stu-id="abbd1-115">One will be transformed into a graphical slider, and the other one will hold the position of the slider.</span></span>
 
 [!code-aspx[Main](databinding-the-slider-control-cs/samples/sample2.aspx)]
 
-<span data-ttu-id="4c2a5-116">下一個步驟已經是最後一個步驟。</span><span class="sxs-lookup"><span data-stu-id="4c2a5-116">The next step is already the final step.</span></span> <span data-ttu-id="4c2a5-117">`SliderExtender`從 ASP.NET AJAX Control Toolkit 控制項讓滑桿移出第一個文字方塊和滑桿的位置變更時，自動更新第二個文字方塊。</span><span class="sxs-lookup"><span data-stu-id="4c2a5-117">The `SliderExtender` control from the ASP.NET AJAX Control Toolkit makes a slider out of the first text box and automatically updates the second text box when the slider position changes.</span></span> <span data-ttu-id="4c2a5-118">為了使工作時，`SliderExtender`的`TargetControlID`屬性必須設為識別碼的第一個文字方塊;`BoundControlID`屬性必須設為第二個文字方塊的識別碼。</span><span class="sxs-lookup"><span data-stu-id="4c2a5-118">In order for that to work, The `SliderExtender`'s `TargetControlID` attribute must be set to the ID of the first text box; the `BoundControlID` attribute must be set to the ID of the second text box.</span></span>
+<span data-ttu-id="abbd1-116">下一個步驟已經是最後一個步驟。</span><span class="sxs-lookup"><span data-stu-id="abbd1-116">The next step is already the final step.</span></span> <span data-ttu-id="abbd1-117">ASP.NET AJAX 控制項工具組中的 `SliderExtender` 控制項會從第一個文字方塊移出一個滑杆，並在滑杆位置變更時自動更新第二個文字方塊。</span><span class="sxs-lookup"><span data-stu-id="abbd1-117">The `SliderExtender` control from the ASP.NET AJAX Control Toolkit makes a slider out of the first text box and automatically updates the second text box when the slider position changes.</span></span> <span data-ttu-id="abbd1-118">`SliderExtender`的 `TargetControlID` 屬性必須設定為第一個文字方塊的識別碼，才能正常操作。`BoundControlID` 屬性必須設定為第二個文字方塊的識別碼。</span><span class="sxs-lookup"><span data-stu-id="abbd1-118">In order for that to work, The `SliderExtender`'s `TargetControlID` attribute must be set to the ID of the first text box; the `BoundControlID` attribute must be set to the ID of the second text box.</span></span>
 
 [!code-aspx[Main](databinding-the-slider-control-cs/samples/sample3.aspx)]
 
-<span data-ttu-id="4c2a5-119">您可以看到瀏覽器中，資料繫結可以雙向運作： 在文字方塊中輸入新值更新滑桿的位置。</span><span class="sxs-lookup"><span data-stu-id="4c2a5-119">As you can see in the browser, the data binding works in both directions: entering a new value in the text box updates the slider's position.</span></span> <span data-ttu-id="4c2a5-120">如果您進行第二個唯讀的文字方塊中，您可能加入弱式保護的文字欄位，以便讓使用者以手動方式更新裡面的值更難。</span><span class="sxs-lookup"><span data-stu-id="4c2a5-120">If you make the second text box read only, you may add a weak protection to the text field so that it is harder for the user to manually update the value in there.</span></span>
+<span data-ttu-id="abbd1-119">如您在瀏覽器中所見，資料系結會雙向運作：在文字方塊中輸入新的值會更新滑杆的位置。</span><span class="sxs-lookup"><span data-stu-id="abbd1-119">As you can see in the browser, the data binding works in both directions: entering a new value in the text box updates the slider's position.</span></span> <span data-ttu-id="abbd1-120">如果您將第二個文字方塊設為唯讀，您可以在文字欄位中加入弱式保護，讓使用者更難以手動更新該處的值。</span><span class="sxs-lookup"><span data-stu-id="abbd1-120">If you make the second text box read only, you may add a weak protection to the text field so that it is harder for the user to manually update the value in there.</span></span>
 
-<span data-ttu-id="4c2a5-121">[![滑桿和文字方塊都保持同步](databinding-the-slider-control-cs/_static/image2.png)](databinding-the-slider-control-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="4c2a5-121">[![Slider and text box are in sync](databinding-the-slider-control-cs/_static/image2.png)](databinding-the-slider-control-cs/_static/image1.png)</span></span>
+<span data-ttu-id="abbd1-121">[![滑杆和文字方塊已同步](databinding-the-slider-control-cs/_static/image2.png)](databinding-the-slider-control-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="abbd1-121">[![Slider and text box are in sync](databinding-the-slider-control-cs/_static/image2.png)](databinding-the-slider-control-cs/_static/image1.png)</span></span>
 
-<span data-ttu-id="4c2a5-122">滑桿和文字方塊都是同步 ([按一下以檢視完整大小的影像](databinding-the-slider-control-cs/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="4c2a5-122">Slider and text box are in sync ([Click to view full-size image](databinding-the-slider-control-cs/_static/image3.png))</span></span>
+<span data-ttu-id="abbd1-122">滑杆和文字方塊已同步（[按一下以觀看完整大小的影像](databinding-the-slider-control-cs/_static/image3.png)）</span><span class="sxs-lookup"><span data-stu-id="abbd1-122">Slider and text box are in sync ([Click to view full-size image](databinding-the-slider-control-cs/_static/image3.png))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="4c2a5-123">[上一頁](using-the-slider-control-with-auto-postback-cs.md)
-> [下一頁](using-the-slider-control-with-auto-postback-vb.md)</span><span class="sxs-lookup"><span data-stu-id="4c2a5-123">[Previous](using-the-slider-control-with-auto-postback-cs.md)
+> <span data-ttu-id="abbd1-123">[上一頁](using-the-slider-control-with-auto-postback-cs.md)
+> [下一頁](using-the-slider-control-with-auto-postback-vb.md)</span><span class="sxs-lookup"><span data-stu-id="abbd1-123">[Previous](using-the-slider-control-with-auto-postback-cs.md)
 [Next](using-the-slider-control-with-auto-postback-vb.md)</span></span>

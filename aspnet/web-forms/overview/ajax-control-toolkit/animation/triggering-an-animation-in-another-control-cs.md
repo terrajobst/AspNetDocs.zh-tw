@@ -1,65 +1,65 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-cs
-title: 觸發另一個控制項 (C#) 中的動畫 |Microsoft Docs
+title: 觸發另一個控制項中的動畫C#（） |Microsoft Docs
 author: wenz
-description: 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 一般而言，啟動...
+description: ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。 一般來說，啟動 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: e5d99c2b-d8ee-413c-80d5-c120cffb0a4c
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1db5468d3c1d35b25aea0d5ff331a742ce421191
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: e0a1f8986047da04db6fde8e54b6fd0ac6ee2603
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132919"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74599618"
 ---
-# <a name="triggering-an-animation-in-another-control-c"></a><span data-ttu-id="aa02c-104">觸發另一個控制項中的動畫 (C#)</span><span class="sxs-lookup"><span data-stu-id="aa02c-104">Triggering an Animation in another Control (C#)</span></span>
+# <a name="triggering-an-animation-in-another-control-c"></a><span data-ttu-id="40f49-104">觸發另一個控制項中的動畫 (C#)</span><span class="sxs-lookup"><span data-stu-id="40f49-104">Triggering an Animation in another Control (C#)</span></span>
 
-<span data-ttu-id="aa02c-105">藉由[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="aa02c-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="40f49-105">依[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="40f49-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="aa02c-106">[下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation8.cs.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation8CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="aa02c-106">[Download Code](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation8.cs.zip) or [Download PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation8CS.pdf)</span></span>
+<span data-ttu-id="40f49-106">[下載程式代碼](https://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation8.cs.zip)或[下載 PDF](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation8CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="40f49-106">[Download Code](https://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation8.cs.zip) or [Download PDF](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation8CS.pdf)</span></span>
 
-> <span data-ttu-id="aa02c-107">動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。</span><span class="sxs-lookup"><span data-stu-id="aa02c-107">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="aa02c-108">一般而言，啟動動畫時觸發相同的控制項與使用者互動。</span><span class="sxs-lookup"><span data-stu-id="aa02c-108">Generally, launching an animation is triggered by user interaction with the same control.</span></span> <span data-ttu-id="aa02c-109">不過也可以使用一個控制項，然後動畫互動另一個控制項。</span><span class="sxs-lookup"><span data-stu-id="aa02c-109">It is however also possible to interact with one control and then animation another control.</span></span>
+> <span data-ttu-id="40f49-107">ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。</span><span class="sxs-lookup"><span data-stu-id="40f49-107">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="40f49-108">一般來說，啟動動畫是由與相同控制項的使用者互動所觸發。</span><span class="sxs-lookup"><span data-stu-id="40f49-108">Generally, launching an animation is triggered by user interaction with the same control.</span></span> <span data-ttu-id="40f49-109">不過，您也可以與一個控制項互動，然後再動畫另一個控制項。</span><span class="sxs-lookup"><span data-stu-id="40f49-109">It is however also possible to interact with one control and then animation another control.</span></span>
 
-## <a name="overview"></a><span data-ttu-id="aa02c-110">總覽</span><span class="sxs-lookup"><span data-stu-id="aa02c-110">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="40f49-110">概觀</span><span class="sxs-lookup"><span data-stu-id="40f49-110">Overview</span></span>
 
-<span data-ttu-id="aa02c-111">動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。</span><span class="sxs-lookup"><span data-stu-id="aa02c-111">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="aa02c-112">一般而言，啟動動畫時觸發相同的控制項與使用者互動。</span><span class="sxs-lookup"><span data-stu-id="aa02c-112">Generally, launching an animation is triggered by user interaction with the same control.</span></span> <span data-ttu-id="aa02c-113">不過也可以使用一個控制項，然後動畫互動另一個控制項。</span><span class="sxs-lookup"><span data-stu-id="aa02c-113">It is however also possible to interact with one control and then animation another control.</span></span>
+<span data-ttu-id="40f49-111">ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。</span><span class="sxs-lookup"><span data-stu-id="40f49-111">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="40f49-112">一般來說，啟動動畫是由與相同控制項的使用者互動所觸發。</span><span class="sxs-lookup"><span data-stu-id="40f49-112">Generally, launching an animation is triggered by user interaction with the same control.</span></span> <span data-ttu-id="40f49-113">不過，您也可以與一個控制項互動，然後再動畫另一個控制項。</span><span class="sxs-lookup"><span data-stu-id="40f49-113">It is however also possible to interact with one control and then animation another control.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="aa02c-114">步驟</span><span class="sxs-lookup"><span data-stu-id="aa02c-114">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="40f49-114">步驟</span><span class="sxs-lookup"><span data-stu-id="40f49-114">Steps</span></span>
 
-<span data-ttu-id="aa02c-115">首先，包括`ScriptManager`單元頁面; 然後，ASP.NET AJAX 程式庫載入，因此能夠使用控制項工具組：</span><span class="sxs-lookup"><span data-stu-id="aa02c-115">First of all, include the `ScriptManager` in the page; then, the ASP.NET AJAX library is loaded, making it possible to use the Control Toolkit:</span></span>
+<span data-ttu-id="40f49-115">首先，在頁面中包含 `ScriptManager`;然後，會載入 ASP.NET AJAX 程式庫，讓您能夠使用控制項工具組：</span><span class="sxs-lookup"><span data-stu-id="40f49-115">First of all, include the `ScriptManager` in the page; then, the ASP.NET AJAX library is loaded, making it possible to use the Control Toolkit:</span></span>
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-cs/samples/sample1.aspx)]
 
-<span data-ttu-id="aa02c-116">動畫將會套用至面板的文字看起來像這樣：</span><span class="sxs-lookup"><span data-stu-id="aa02c-116">The animation will be applied to a panel of text which looks like this:</span></span>
+<span data-ttu-id="40f49-116">動畫將會套用至文字的面板，如下所示：</span><span class="sxs-lookup"><span data-stu-id="40f49-116">The animation will be applied to a panel of text which looks like this:</span></span>
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-cs/samples/sample2.aspx)]
 
-<span data-ttu-id="aa02c-117">在 [面板] 中相關聯的 CSS 類別，定義好用的背景色彩和也設定面板的固定的寬度：</span><span class="sxs-lookup"><span data-stu-id="aa02c-117">In the associated CSS class for the panel, define a nice background color and also set a fixed width for the panel:</span></span>
+<span data-ttu-id="40f49-117">在面板的相關聯 CSS 類別中，定義良好的背景色彩，同時設定面板的固定寬度：</span><span class="sxs-lookup"><span data-stu-id="40f49-117">In the associated CSS class for the panel, define a nice background color and also set a fixed width for the panel:</span></span>
 
 [!code-css[Main](triggering-an-animation-in-another-control-cs/samples/sample3.css)]
 
-<span data-ttu-id="aa02c-118">若要開始以動畫顯示面板，可使用 HTML 按鈕。</span><span class="sxs-lookup"><span data-stu-id="aa02c-118">In order to start animating the panel, an HTML button is used.</span></span> <span data-ttu-id="aa02c-119">請注意， `<input type="button" />` favoured 透過`<asp:Button />`因為我們不想回傳時使用者按下該按鈕。</span><span class="sxs-lookup"><span data-stu-id="aa02c-119">Note that `<input type="button" />` is favoured over `<asp:Button />` since we do not want a postback when the user clicks on that button.</span></span>
+<span data-ttu-id="40f49-118">為了開始繪製面板的動畫，會使用 HTML 按鈕。</span><span class="sxs-lookup"><span data-stu-id="40f49-118">In order to start animating the panel, an HTML button is used.</span></span> <span data-ttu-id="40f49-119">請注意，`<input type="button" />` 是透過 `<asp:Button />` favoured，因為當使用者按一下該按鈕時，不會進行回傳。</span><span class="sxs-lookup"><span data-stu-id="40f49-119">Note that `<input type="button" />` is favoured over `<asp:Button />` since we do not want a postback when the user clicks on that button.</span></span>
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-cs/samples/sample4.aspx)]
 
-<span data-ttu-id="aa02c-120">然後，新增`AnimationExtender` 頁面上，以提供`ID`，則`TargetControlID`屬性和必要`runat="server"`。</span><span class="sxs-lookup"><span data-stu-id="aa02c-120">Then, add the `AnimationExtender` to the page, providing an `ID`, the `TargetControlID` attribute and the obligatory `runat="server"`.</span></span> <span data-ttu-id="aa02c-121">請務必設定`TargetControlID`id 的按鈕 （項目觸發動畫），不為面板 （正在顯示動畫的元素） 的識別碼</span><span class="sxs-lookup"><span data-stu-id="aa02c-121">It is important to set `TargetControlID` to the ID of the button (the element triggering the animation), not to the ID of the panel (the element being animated)</span></span>
+<span data-ttu-id="40f49-120">然後，將 `AnimationExtender` 新增至頁面，並提供 `ID`、`TargetControlID` 屬性和必要 `runat="server"`。</span><span class="sxs-lookup"><span data-stu-id="40f49-120">Then, add the `AnimationExtender` to the page, providing an `ID`, the `TargetControlID` attribute and the obligatory `runat="server"`.</span></span> <span data-ttu-id="40f49-121">請務必將 `TargetControlID` 設定為按鈕（觸發動畫的元素）的識別碼，而不是將面板的識別碼（要進行動畫的專案）設為</span><span class="sxs-lookup"><span data-stu-id="40f49-121">It is important to set `TargetControlID` to the ID of the button (the element triggering the animation), not to the ID of the panel (the element being animated)</span></span>
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-cs/samples/sample5.aspx)]
 
-<span data-ttu-id="aa02c-122">內`<Animations>`節點，如往常般進行動畫。</span><span class="sxs-lookup"><span data-stu-id="aa02c-122">Within the `<Animations>` node, place animations as usual.</span></span> <span data-ttu-id="aa02c-123">為了讓它們變更 [面板] 中，不是按鈕，設定`AnimationTarget`內的每個動畫項目的屬性`AnimationExtender`。</span><span class="sxs-lookup"><span data-stu-id="aa02c-123">In order to make them change the panel, not the button, set the `AnimationTarget` attribute for every animation element within `AnimationExtender`.</span></span> <span data-ttu-id="aa02c-124">值`AnimationTarget`當然是面板的 ID。</span><span class="sxs-lookup"><span data-stu-id="aa02c-124">The value for `AnimationTarget` is the ID of the panel, of course.</span></span> <span data-ttu-id="aa02c-125">如此一來，動畫會發生的窗格中，不會與觸發按鈕。</span><span class="sxs-lookup"><span data-stu-id="aa02c-125">That way, the animations happen with the panel, not with the triggering button.</span></span> <span data-ttu-id="aa02c-126">以下是`AnimationExtender`此案例中的標記：</span><span class="sxs-lookup"><span data-stu-id="aa02c-126">Here is the `AnimationExtender` markup for this scenario:</span></span>
+<span data-ttu-id="40f49-122">在 [`<Animations>`] 節點內，如往常般放置動畫。</span><span class="sxs-lookup"><span data-stu-id="40f49-122">Within the `<Animations>` node, place animations as usual.</span></span> <span data-ttu-id="40f49-123">為了讓它們變更面板，而不是按鈕，請在 `AnimationExtender`內設定每個動畫元素的 `AnimationTarget` 屬性。</span><span class="sxs-lookup"><span data-stu-id="40f49-123">In order to make them change the panel, not the button, set the `AnimationTarget` attribute for every animation element within `AnimationExtender`.</span></span> <span data-ttu-id="40f49-124">當然，`AnimationTarget` 的值是面板的識別碼。</span><span class="sxs-lookup"><span data-stu-id="40f49-124">The value for `AnimationTarget` is the ID of the panel, of course.</span></span> <span data-ttu-id="40f49-125">如此一來，就會在面板中出現動畫，而不是使用 [觸發] 按鈕。</span><span class="sxs-lookup"><span data-stu-id="40f49-125">That way, the animations happen with the panel, not with the triggering button.</span></span> <span data-ttu-id="40f49-126">以下是此案例的 `AnimationExtender` 標記：</span><span class="sxs-lookup"><span data-stu-id="40f49-126">Here is the `AnimationExtender` markup for this scenario:</span></span>
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-cs/samples/sample6.aspx)]
 
-<span data-ttu-id="aa02c-127">請注意特殊個別動畫顯示的順序。</span><span class="sxs-lookup"><span data-stu-id="aa02c-127">Note the special order in which the individual animations appear.</span></span> <span data-ttu-id="aa02c-128">首先，動畫執行後，便會停用按鈕。</span><span class="sxs-lookup"><span data-stu-id="aa02c-128">First of all, the button gets deactivated once the animation runs.</span></span> <span data-ttu-id="aa02c-129">因為沒有任何`AnimationTarget`屬性中`<EnableAction>`項目，這個動畫會套用至原始的控制項: [] 按鈕。</span><span class="sxs-lookup"><span data-stu-id="aa02c-129">Since there is no `AnimationTarget` attribute in the `<EnableAction>` element, this animation is applied to the originating control: the button.</span></span> <span data-ttu-id="aa02c-130">下面兩個動畫步驟都應該以平行方式執行 (`<Parallel>`項目)。</span><span class="sxs-lookup"><span data-stu-id="aa02c-130">The next two animation steps shall be carried out in parallel (`<Parallel>` element).</span></span> <span data-ttu-id="aa02c-131">兩者都有其`AnimationTarget`屬性設定為`"Panel1"`，因此以動畫顯示的窗格中，不是按鈕。</span><span class="sxs-lookup"><span data-stu-id="aa02c-131">Both have their `AnimationTarget` attributes set to `"Panel1"`, thus animating the panel, not the button.</span></span>
+<span data-ttu-id="40f49-127">請注意個別動畫出現的特殊順序。</span><span class="sxs-lookup"><span data-stu-id="40f49-127">Note the special order in which the individual animations appear.</span></span> <span data-ttu-id="40f49-128">首先，按鈕會在動畫執行後停用。</span><span class="sxs-lookup"><span data-stu-id="40f49-128">First of all, the button gets deactivated once the animation runs.</span></span> <span data-ttu-id="40f49-129">因為 `<EnableAction>` 元素中沒有 `AnimationTarget` 屬性，所以這個動畫會套用至原始控制項：按鈕。</span><span class="sxs-lookup"><span data-stu-id="40f49-129">Since there is no `AnimationTarget` attribute in the `<EnableAction>` element, this animation is applied to the originating control: the button.</span></span> <span data-ttu-id="40f49-130">接下來的兩個動畫步驟應該以平行方式執行（`<Parallel>` 元素）。</span><span class="sxs-lookup"><span data-stu-id="40f49-130">The next two animation steps shall be carried out in parallel (`<Parallel>` element).</span></span> <span data-ttu-id="40f49-131">兩者的 `AnimationTarget` 屬性都設定為 `"Panel1"`，因此會以動畫顯示面板，而不是按鈕。</span><span class="sxs-lookup"><span data-stu-id="40f49-131">Both have their `AnimationTarget` attributes set to `"Panel1"`, thus animating the panel, not the button.</span></span>
 
-<span data-ttu-id="aa02c-132">[![在按鈕上的按一下滑鼠開始面板動畫](triggering-an-animation-in-another-control-cs/_static/image2.png)](triggering-an-animation-in-another-control-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="aa02c-132">[![A mouse click on the button starts the panel animation](triggering-an-animation-in-another-control-cs/_static/image2.png)](triggering-an-animation-in-another-control-cs/_static/image1.png)</span></span>
+<span data-ttu-id="40f49-132">[![滑鼠按一下按鈕時，就會啟動面板動畫](triggering-an-animation-in-another-control-cs/_static/image2.png)](triggering-an-animation-in-another-control-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="40f49-132">[![A mouse click on the button starts the panel animation](triggering-an-animation-in-another-control-cs/_static/image2.png)](triggering-an-animation-in-another-control-cs/_static/image1.png)</span></span>
 
-<span data-ttu-id="aa02c-133">在按鈕上的按一下滑鼠開始面板動畫 ([按一下以檢視完整大小的影像](triggering-an-animation-in-another-control-cs/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="aa02c-133">A mouse click on the button starts the panel animation ([Click to view full-size image](triggering-an-animation-in-another-control-cs/_static/image3.png))</span></span>
+<span data-ttu-id="40f49-133">當滑鼠按一下按鈕時，就會啟動面板動畫（[按一下以查看完整大小的影像](triggering-an-animation-in-another-control-cs/_static/image3.png)）</span><span class="sxs-lookup"><span data-stu-id="40f49-133">A mouse click on the button starts the panel animation ([Click to view full-size image](triggering-an-animation-in-another-control-cs/_static/image3.png))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="aa02c-134">[上一頁](disabling-actions-during-animation-cs.md)
-> [下一頁](modifying-animations-from-the-server-side-cs.md)</span><span class="sxs-lookup"><span data-stu-id="aa02c-134">[Previous](disabling-actions-during-animation-cs.md)
+> <span data-ttu-id="40f49-134">[上一頁](disabling-actions-during-animation-cs.md)
+> [下一頁](modifying-animations-from-the-server-side-cs.md)</span><span class="sxs-lookup"><span data-stu-id="40f49-134">[Previous](disabling-actions-during-animation-cs.md)
 [Next](modifying-animations-from-the-server-side-cs.md)</span></span>

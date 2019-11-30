@@ -1,57 +1,57 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-vb
-title: 使用用戶端程式碼 (VB) 變更動畫 |Microsoft Docs
+title: 使用用戶端程式代碼變更動畫（VB） |Microsoft Docs
 author: wenz
-description: 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 動畫也可以...
+description: ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。 動畫也可以 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: a7fe5de5-a964-4780-ae5e-70821dfb50a0
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 476b807ca48744648b6e2435af6db7b343c0f854
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: cce0a5a901f71edd40eada59ac7eeba93222e2b3
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108771"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74606937"
 ---
-# <a name="changing-an-animation-using-client-side-code-vb"></a><span data-ttu-id="2eb20-104">使用用戶端程式碼變更動畫 (VB)</span><span class="sxs-lookup"><span data-stu-id="2eb20-104">Changing an Animation Using Client-Side Code (VB)</span></span>
+# <a name="changing-an-animation-using-client-side-code-vb"></a><span data-ttu-id="6463d-104">使用用戶端程式碼變更動畫 (VB)</span><span class="sxs-lookup"><span data-stu-id="6463d-104">Changing an Animation Using Client-Side Code (VB)</span></span>
 
-<span data-ttu-id="2eb20-105">藉由[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="2eb20-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="6463d-105">依[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="6463d-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="2eb20-106">[下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation11.vb.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation11VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="2eb20-106">[Download Code](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation11.vb.zip) or [Download PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation11VB.pdf)</span></span>
+<span data-ttu-id="6463d-106">[下載程式代碼](https://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation11.vb.zip)或[下載 PDF](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation11VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="6463d-106">[Download Code](https://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation11.vb.zip) or [Download PDF](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation11VB.pdf)</span></span>
 
-> <span data-ttu-id="2eb20-107">動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。</span><span class="sxs-lookup"><span data-stu-id="2eb20-107">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="2eb20-108">動畫也可以使用自訂用戶端 JavaScript 程式碼會變更。</span><span class="sxs-lookup"><span data-stu-id="2eb20-108">The animation can also be changed using custom client-side JavaScript code.</span></span>
+> <span data-ttu-id="6463d-107">ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。</span><span class="sxs-lookup"><span data-stu-id="6463d-107">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="6463d-108">您也可以使用自訂用戶端 JavaScript 程式碼來變更動畫。</span><span class="sxs-lookup"><span data-stu-id="6463d-108">The animation can also be changed using custom client-side JavaScript code.</span></span>
 
-## <a name="overview"></a><span data-ttu-id="2eb20-109">總覽</span><span class="sxs-lookup"><span data-stu-id="2eb20-109">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="6463d-109">概觀</span><span class="sxs-lookup"><span data-stu-id="6463d-109">Overview</span></span>
 
-<span data-ttu-id="2eb20-110">動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。</span><span class="sxs-lookup"><span data-stu-id="2eb20-110">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="2eb20-111">動畫也可以使用自訂用戶端 JavaScript 程式碼會變更。</span><span class="sxs-lookup"><span data-stu-id="2eb20-111">The animation can also be changed using custom client-side JavaScript code.</span></span>
+<span data-ttu-id="6463d-110">ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。</span><span class="sxs-lookup"><span data-stu-id="6463d-110">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="6463d-111">您也可以使用自訂用戶端 JavaScript 程式碼來變更動畫。</span><span class="sxs-lookup"><span data-stu-id="6463d-111">The animation can also be changed using custom client-side JavaScript code.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="2eb20-112">步驟</span><span class="sxs-lookup"><span data-stu-id="2eb20-112">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="6463d-112">步驟</span><span class="sxs-lookup"><span data-stu-id="6463d-112">Steps</span></span>
 
-<span data-ttu-id="2eb20-113">首先，包括`ScriptManager`單元頁面; 然後，ASP.NET AJAX 程式庫載入，因此能夠使用控制項工具組：</span><span class="sxs-lookup"><span data-stu-id="2eb20-113">First of all, include the `ScriptManager` in the page; then, the ASP.NET AJAX library is loaded, making it possible to use the Control Toolkit:</span></span>
+<span data-ttu-id="6463d-113">首先，在頁面中包含 `ScriptManager`;然後，會載入 ASP.NET AJAX 程式庫，讓您能夠使用控制項工具組：</span><span class="sxs-lookup"><span data-stu-id="6463d-113">First of all, include the `ScriptManager` in the page; then, the ASP.NET AJAX library is loaded, making it possible to use the Control Toolkit:</span></span>
 
 [!code-aspx[Main](changing-an-animation-using-client-side-code-vb/samples/sample1.aspx)]
 
-<span data-ttu-id="2eb20-114">動畫將會套用至面板的文字看起來像這樣：</span><span class="sxs-lookup"><span data-stu-id="2eb20-114">The animation will be applied to a panel of text which looks like this:</span></span>
+<span data-ttu-id="6463d-114">動畫將會套用至文字的面板，如下所示：</span><span class="sxs-lookup"><span data-stu-id="6463d-114">The animation will be applied to a panel of text which looks like this:</span></span>
 
 [!code-aspx[Main](changing-an-animation-using-client-side-code-vb/samples/sample2.aspx)]
 
-<span data-ttu-id="2eb20-115">在 [面板] 中相關聯的 CSS 類別，定義好用的背景色彩和也設定面板的固定的寬度：</span><span class="sxs-lookup"><span data-stu-id="2eb20-115">In the associated CSS class for the panel, define a nice background color and also set a fixed width for the panel:</span></span>
+<span data-ttu-id="6463d-115">在面板的相關聯 CSS 類別中，定義良好的背景色彩，同時設定面板的固定寬度：</span><span class="sxs-lookup"><span data-stu-id="6463d-115">In the associated CSS class for the panel, define a nice background color and also set a fixed width for the panel:</span></span>
 
 [!code-css[Main](changing-an-animation-using-client-side-code-vb/samples/sample3.css)]
 
-<span data-ttu-id="2eb20-116">實際的動畫是由 HTML 按鈕啟動：</span><span class="sxs-lookup"><span data-stu-id="2eb20-116">The actual animation is launched by an HTML button:</span></span>
+<span data-ttu-id="6463d-116">實際的動畫是由 HTML 按鈕啟動：</span><span class="sxs-lookup"><span data-stu-id="6463d-116">The actual animation is launched by an HTML button:</span></span>
 
 [!code-aspx[Main](changing-an-animation-using-client-side-code-vb/samples/sample4.aspx)]
 
-<span data-ttu-id="2eb20-117">然後，新增`AnimationExtender` 頁面上，以提供`ID`，則`TargetControlID`屬性和必要`runat="server"`:</span><span class="sxs-lookup"><span data-stu-id="2eb20-117">Then, add the `AnimationExtender` to the page, providing an `ID`, the `TargetControlID` attribute and the obligatory `runat="server"`:</span></span>
+<span data-ttu-id="6463d-117">然後，將 `AnimationExtender` 新增至頁面，並提供 `ID`、`TargetControlID` 屬性和必要 `runat="server"`：</span><span class="sxs-lookup"><span data-stu-id="6463d-117">Then, add the `AnimationExtender` to the page, providing an `ID`, the `TargetControlID` attribute and the obligatory `runat="server"`:</span></span>
 
 [!code-aspx[Main](changing-an-animation-using-client-side-code-vb/samples/sample5.aspx)]
 
-<span data-ttu-id="2eb20-118">請注意，沒有任何`<Animations>`內的節點`AnimationExtender`控制項。</span><span class="sxs-lookup"><span data-stu-id="2eb20-118">Note that there is no `<Animations>` node within the `AnimationExtender` control.</span></span> <span data-ttu-id="2eb20-119">自訂的 JavaScript 程式碼用來提供要搭配控制項使用的動畫。</span><span class="sxs-lookup"><span data-stu-id="2eb20-119">Custom JavaScript code is used to provide the animations to be used with the control.</span></span>
+<span data-ttu-id="6463d-118">請注意，`AnimationExtender` 控制項內沒有 `<Animations>` 節點。</span><span class="sxs-lookup"><span data-stu-id="6463d-118">Note that there is no `<Animations>` node within the `AnimationExtender` control.</span></span> <span data-ttu-id="6463d-119">自訂 JavaScript 程式碼是用來提供要與控制項搭配使用的動畫。</span><span class="sxs-lookup"><span data-stu-id="6463d-119">Custom JavaScript code is used to provide the animations to be used with the control.</span></span>
 
-<span data-ttu-id="2eb20-120">如同伺服器 API 的`AnimationExtender`，沒有任何簡單的方法，將尚未指派給擴充項的動畫。</span><span class="sxs-lookup"><span data-stu-id="2eb20-120">As with the server API of `AnimationExtender`, there is no easy way to assign an animation to the extender yet.</span></span> <span data-ttu-id="2eb20-121">不過擴充項會公開數種方法來讀取和寫入動畫向各種事件 (`OnClick`，`OnLoad`等等)。</span><span class="sxs-lookup"><span data-stu-id="2eb20-121">However the extender does expose several methods to read and write animations registered with the various events (`OnClick`, `OnLoad`, and so on).</span></span> <span data-ttu-id="2eb20-122">以下是一些範例：</span><span class="sxs-lookup"><span data-stu-id="2eb20-122">Here are some examples:</span></span>
+<span data-ttu-id="6463d-120">就像 `AnimationExtender`的伺服器 API 一樣，也沒有簡單的方法可以將動畫指派給擴充項。</span><span class="sxs-lookup"><span data-stu-id="6463d-120">As with the server API of `AnimationExtender`, there is no easy way to assign an animation to the extender yet.</span></span> <span data-ttu-id="6463d-121">不過，擴充項會公開數個方法來讀取和寫入以各種事件（`OnClick`、`OnLoad`等等）註冊的動畫。</span><span class="sxs-lookup"><span data-stu-id="6463d-121">However the extender does expose several methods to read and write animations registered with the various events (`OnClick`, `OnLoad`, and so on).</span></span> <span data-ttu-id="6463d-122">以下是一些範例：</span><span class="sxs-lookup"><span data-stu-id="6463d-122">Here are some examples:</span></span>
 
 - `get_OnClick()`
 - `set_OnClick()`
@@ -59,21 +59,21 @@ ms.locfileid: "65108771"
 - `set_OnLoad()`
 - `...`
 
-<span data-ttu-id="2eb20-123">傳回值的格式`get_*()`函式和引數的格式`set_*()`函式是 JSON 字串，提供想要的 XML 標記的物件表示。</span><span class="sxs-lookup"><span data-stu-id="2eb20-123">The format of the return value of the `get_*()` functions and the format of the argument for the `set_*()` functions is a JSON string, providing an object representation of what the XML markup would be.</span></span> <span data-ttu-id="2eb20-124">目前沒有任何方法，將物件傳送中，但您可指定動畫從讀取物件 (`get_OnXXXBehavior()`方法)。</span><span class="sxs-lookup"><span data-stu-id="2eb20-124">Currently, there is no way to pass an object in, but it is possible to read an object from a given animation (`get_OnXXXBehavior()` methods).</span></span>
+<span data-ttu-id="6463d-123">`get_*()` 函式的傳回值格式和 `set_*()` 函數的引數格式為 JSON 字串，提供 XML 標記的物件標記法。</span><span class="sxs-lookup"><span data-stu-id="6463d-123">The format of the return value of the `get_*()` functions and the format of the argument for the `set_*()` functions is a JSON string, providing an object representation of what the XML markup would be.</span></span> <span data-ttu-id="6463d-124">目前，沒有任何方法可以在中傳遞物件，但可以從指定的動畫（`get_OnXXXBehavior()` 方法）讀取物件。</span><span class="sxs-lookup"><span data-stu-id="6463d-124">Currently, there is no way to pass an object in, but it is possible to read an object from a given animation (`get_OnXXXBehavior()` methods).</span></span>
 
-<span data-ttu-id="2eb20-125">以下是 JSON 字串 (不含分隔引號和格式化) 表示在按鈕中，所觸發的動畫，但是調整它，並在同一時間淡出動畫面板：</span><span class="sxs-lookup"><span data-stu-id="2eb20-125">Here is a JSON string (without the delimiting quotes and formatted nicely) representing an animation triggered by the button, but animating the panel by resizing it and fading it out at the same time:</span></span>
+<span data-ttu-id="6463d-125">以下是 JSON 字串（不含分隔的引號和格式），代表按鈕所觸發的動畫，但會以動畫顯示面板的方式來調整其大小，並同時淡出它：</span><span class="sxs-lookup"><span data-stu-id="6463d-125">Here is a JSON string (without the delimiting quotes and formatted nicely) representing an animation triggered by the button, but animating the panel by resizing it and fading it out at the same time:</span></span>
 
 [!code-json[Main](changing-an-animation-using-client-side-code-vb/samples/sample6.json)]
 
-<span data-ttu-id="2eb20-126">下列 JavaScript 程式碼會將指派到這個 JSON descripting`OnClick`動畫目前的擴充項，並執行它：</span><span class="sxs-lookup"><span data-stu-id="2eb20-126">The following JavaScript code assigns this JSON descripting to the `OnClick` animation of the current extender and runs it:</span></span>
+<span data-ttu-id="6463d-126">下列 JavaScript 程式碼會將此 JSON descripting 指派給目前擴充項的 `OnClick` 動畫，並加以執行：</span><span class="sxs-lookup"><span data-stu-id="6463d-126">The following JavaScript code assigns this JSON descripting to the `OnClick` animation of the current extender and runs it:</span></span>
 
 [!code-html[Main](changing-an-animation-using-client-side-code-vb/samples/sample7.html)]
 
-<span data-ttu-id="2eb20-127">[![動畫會立即執行，而不需要按下滑鼠 （和以非常少的標記）](changing-an-animation-using-client-side-code-vb/_static/image2.png)](changing-an-animation-using-client-side-code-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="2eb20-127">[![The animation runs immediately, without a mouse click (and with very little markup)](changing-an-animation-using-client-side-code-vb/_static/image2.png)](changing-an-animation-using-client-side-code-vb/_static/image1.png)</span></span>
+<span data-ttu-id="6463d-127">[![動畫立即執行，而不需按下滑鼠（且標記非常少）](changing-an-animation-using-client-side-code-vb/_static/image2.png)](changing-an-animation-using-client-side-code-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="6463d-127">[![The animation runs immediately, without a mouse click (and with very little markup)](changing-an-animation-using-client-side-code-vb/_static/image2.png)](changing-an-animation-using-client-side-code-vb/_static/image1.png)</span></span>
 
-<span data-ttu-id="2eb20-128">動畫會立即執行，沒有滑鼠點選 （和以非常少的標記） ([按一下以檢視完整大小的影像](changing-an-animation-using-client-side-code-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="2eb20-128">The animation runs immediately, without a mouse click (and with very little markup) ([Click to view full-size image](changing-an-animation-using-client-side-code-vb/_static/image3.png))</span></span>
+<span data-ttu-id="6463d-128">動畫會立即執行，而不需要按一下滑鼠（而且標記很少）（[按一下即可觀看完整大小的影像](changing-an-animation-using-client-side-code-vb/_static/image3.png)）</span><span class="sxs-lookup"><span data-stu-id="6463d-128">The animation runs immediately, without a mouse click (and with very little markup) ([Click to view full-size image](changing-an-animation-using-client-side-code-vb/_static/image3.png))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="2eb20-129">[上一頁](executing-animations-using-client-side-code-vb.md)
-> [下一頁](animating-an-updatepanel-control-vb.md)</span><span class="sxs-lookup"><span data-stu-id="2eb20-129">[Previous](executing-animations-using-client-side-code-vb.md)
+> <span data-ttu-id="6463d-129">[上一頁](executing-animations-using-client-side-code-vb.md)
+> [下一頁](animating-an-updatepanel-control-vb.md)</span><span class="sxs-lookup"><span data-stu-id="6463d-129">[Previous](executing-animations-using-client-side-code-vb.md)
 [Next](animating-an-updatepanel-control-vb.md)</span></span>

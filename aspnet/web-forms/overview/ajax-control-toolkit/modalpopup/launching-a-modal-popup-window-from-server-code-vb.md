@@ -1,73 +1,73 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-vb
-title: 啟動強制回應快顯視窗中的，從伺服器程式碼 (VB) |Microsoft Docs
+title: 從伺服器程式碼啟動強制回應快顯視窗（VB） |Microsoft Docs
 author: wenz
-description: AJAX Control Toolkit 之 ModalPopup 控制項提供簡單的方式來建立使用用戶端表示強制回應快顯。 不過有些情況下會需要該 t...
+description: AJAX 控制項工具組中的 ModalPopup 控制項提供一個簡單的方式，讓您使用用戶端的方法來建立強制回應快顯視窗。 不過，有些案例需要 t 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 36ca81d7-906d-4db2-952b-add18a4ff421
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b98546952174bfcf08736195c87d515eda150319
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 1368a78d35ac6461bbc2e852e468f42eef2c0d2c
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132596"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74606580"
 ---
-# <a name="launching-a-modal-popup-window-from-server-code-vb"></a><span data-ttu-id="c8497-104">從伺服器程式碼啟動強制回應快顯視窗 (VB)</span><span class="sxs-lookup"><span data-stu-id="c8497-104">Launching a Modal Popup Window from Server Code (VB)</span></span>
+# <a name="launching-a-modal-popup-window-from-server-code-vb"></a><span data-ttu-id="4d76a-104">從伺服器程式碼啟動強制回應快顯視窗 (VB)</span><span class="sxs-lookup"><span data-stu-id="4d76a-104">Launching a Modal Popup Window from Server Code (VB)</span></span>
 
-<span data-ttu-id="c8497-105">藉由[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="c8497-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="4d76a-105">依[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="4d76a-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="c8497-106">[下載程式碼](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup1.vb.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup1VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="c8497-106">[Download Code](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup1.vb.zip) or [Download PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup1VB.pdf)</span></span>
+<span data-ttu-id="4d76a-106">[下載程式代碼](https://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup1.vb.zip)或[下載 PDF](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup1VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="4d76a-106">[Download Code](https://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup1.vb.zip) or [Download PDF](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup1VB.pdf)</span></span>
 
-> <span data-ttu-id="c8497-107">AJAX Control Toolkit 之 ModalPopup 控制項提供簡單的方式來建立使用用戶端表示強制回應快顯。</span><span class="sxs-lookup"><span data-stu-id="c8497-107">The ModalPopup control in the AJAX Control Toolkit offers a simple way to create a modal popup using client-side means.</span></span> <span data-ttu-id="c8497-108">不過，某些情況下需要開啟強制回應快顯會觸發伺服器端上。</span><span class="sxs-lookup"><span data-stu-id="c8497-108">However some scenarios require that the opening of the modal popup is triggered on the server-side.</span></span>
+> <span data-ttu-id="4d76a-107">AJAX 控制項工具組中的 ModalPopup 控制項提供一個簡單的方式，讓您使用用戶端的方法來建立強制回應快顯視窗。</span><span class="sxs-lookup"><span data-stu-id="4d76a-107">The ModalPopup control in the AJAX Control Toolkit offers a simple way to create a modal popup using client-side means.</span></span> <span data-ttu-id="4d76a-108">不過，有些情況需要在伺服器端觸發強制回應快顯視窗。</span><span class="sxs-lookup"><span data-stu-id="4d76a-108">However some scenarios require that the opening of the modal popup is triggered on the server-side.</span></span>
 
-## <a name="overview"></a><span data-ttu-id="c8497-109">總覽</span><span class="sxs-lookup"><span data-stu-id="c8497-109">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="4d76a-109">概觀</span><span class="sxs-lookup"><span data-stu-id="4d76a-109">Overview</span></span>
 
-<span data-ttu-id="c8497-110">AJAX Control Toolkit 之 ModalPopup 控制項提供簡單的方式來建立使用用戶端表示強制回應快顯。</span><span class="sxs-lookup"><span data-stu-id="c8497-110">The ModalPopup control in the AJAX Control Toolkit offers a simple way to create a modal popup using client-side means.</span></span> <span data-ttu-id="c8497-111">不過，某些情況下需要開啟強制回應快顯會觸發伺服器端上。</span><span class="sxs-lookup"><span data-stu-id="c8497-111">However some scenarios require that the opening of the modal popup is triggered on the server-side.</span></span>
+<span data-ttu-id="4d76a-110">AJAX 控制項工具組中的 ModalPopup 控制項提供一個簡單的方式，讓您使用用戶端的方法來建立強制回應快顯視窗。</span><span class="sxs-lookup"><span data-stu-id="4d76a-110">The ModalPopup control in the AJAX Control Toolkit offers a simple way to create a modal popup using client-side means.</span></span> <span data-ttu-id="4d76a-111">不過，有些情況需要在伺服器端觸發強制回應快顯視窗。</span><span class="sxs-lookup"><span data-stu-id="4d76a-111">However some scenarios require that the opening of the modal popup is triggered on the server-side.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="c8497-112">步驟</span><span class="sxs-lookup"><span data-stu-id="c8497-112">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="4d76a-112">步驟</span><span class="sxs-lookup"><span data-stu-id="4d76a-112">Steps</span></span>
 
-<span data-ttu-id="c8497-113">首先，ASP.NET 按鈕 web 控制項，才能示範 ModalPopup 控制的運作方式。</span><span class="sxs-lookup"><span data-stu-id="c8497-113">First of all, an ASP.NET Button web control is required to demonstrate how the ModalPopup control works.</span></span> <span data-ttu-id="c8497-114">新增這類的按鈕內&lt;表單&gt;新的頁面上的項目：</span><span class="sxs-lookup"><span data-stu-id="c8497-114">Add such a button within the &lt;form&gt; element on a new page:</span></span>
+<span data-ttu-id="4d76a-113">首先，必須要有 ASP.NET 按鈕 web 控制項，才能示範 ModalPopup 控制項的運作方式。</span><span class="sxs-lookup"><span data-stu-id="4d76a-113">First of all, an ASP.NET Button web control is required to demonstrate how the ModalPopup control works.</span></span> <span data-ttu-id="4d76a-114">在新頁面上的 &lt;表單&gt; 元素中加入這類按鈕：</span><span class="sxs-lookup"><span data-stu-id="4d76a-114">Add such a button within the &lt;form&gt; element on a new page:</span></span>
 
 [!code-aspx[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample1.aspx)]
 
-<span data-ttu-id="c8497-115">然後，您需要的標記您想要建立快顯視窗。</span><span class="sxs-lookup"><span data-stu-id="c8497-115">Then, you need the markup for the popup you want to create.</span></span> <span data-ttu-id="c8497-116">它定義為`<asp:Panel>`控制項，並確定它包含按鈕控制項。</span><span class="sxs-lookup"><span data-stu-id="c8497-116">Define it as an `<asp:Panel>` control and make sure that it includes a Button control.</span></span> <span data-ttu-id="c8497-117">ModalPopup 控制項提供的功能，使這類按鈕來關閉快顯視窗;否則會沒有簡單的方法，讓它消失。</span><span class="sxs-lookup"><span data-stu-id="c8497-117">The ModalPopup control offers the functionality to make such a button close the popup; otherwise there is no easy way to let it vanish.</span></span>
+<span data-ttu-id="4d76a-115">然後，您需要您想要建立之快顯的標記。</span><span class="sxs-lookup"><span data-stu-id="4d76a-115">Then, you need the markup for the popup you want to create.</span></span> <span data-ttu-id="4d76a-116">將它定義為 `<asp:Panel>` 控制項，並確定它包含按鈕控制項。</span><span class="sxs-lookup"><span data-stu-id="4d76a-116">Define it as an `<asp:Panel>` control and make sure that it includes a Button control.</span></span> <span data-ttu-id="4d76a-117">ModalPopup 控制項提供讓這類按鈕關閉快顯視窗的功能;否則，沒有任何簡單的方法可以讓它消失。</span><span class="sxs-lookup"><span data-stu-id="4d76a-117">The ModalPopup control offers the functionality to make such a button close the popup; otherwise there is no easy way to let it vanish.</span></span>
 
 [!code-aspx[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample2.aspx)]
 
-<span data-ttu-id="c8497-118">接下來將從 ASP.NET AJAX Toolkit ModalPopup 控制項加入頁面。</span><span class="sxs-lookup"><span data-stu-id="c8497-118">Next add the ModalPopup control from the ASP.NET AJAX Toolkit to the page.</span></span> <span data-ttu-id="c8497-119">設定屬性載入控制項的按鈕、 按鈕，因此會消失，以及實際的快顯視窗的識別碼。</span><span class="sxs-lookup"><span data-stu-id="c8497-119">Set properties for the button which loads the control, the button which makes it disappear, and the ID of the actual popup.</span></span>
+<span data-ttu-id="4d76a-118">接下來，從 ASP.NET AJAX 工具組將 ModalPopup 控制項新增至頁面。</span><span class="sxs-lookup"><span data-stu-id="4d76a-118">Next add the ModalPopup control from the ASP.NET AJAX Toolkit to the page.</span></span> <span data-ttu-id="4d76a-119">設定載入控制項的按鈕屬性、使其消失的按鈕，以及實際快顯視窗的識別碼。</span><span class="sxs-lookup"><span data-stu-id="4d76a-119">Set properties for the button which loads the control, the button which makes it disappear, and the ID of the actual popup.</span></span>
 
 [!code-aspx[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample3.aspx)]
 
-<span data-ttu-id="c8497-120">如同所有 ASP.NET AJAX; 為基礎的 web 網頁指令碼管理員，才能載入必要的 JavaScript 程式庫，針對不同的目標瀏覽器：</span><span class="sxs-lookup"><span data-stu-id="c8497-120">As with all web pages based on ASP.NET AJAX; the Script Manager is required to load the necessary JavaScript libraries for the different target browsers:</span></span>
+<span data-ttu-id="4d76a-120">如同所有以 ASP.NET AJAX 為基礎的網頁，需要腳本管理員，才能為不同的目標瀏覽器載入必要的 JavaScript 程式庫：</span><span class="sxs-lookup"><span data-stu-id="4d76a-120">As with all web pages based on ASP.NET AJAX; the Script Manager is required to load the necessary JavaScript libraries for the different target browsers:</span></span>
 
 [!code-aspx[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample4.aspx)]
 
-<span data-ttu-id="c8497-121">在瀏覽器中執行範例。</span><span class="sxs-lookup"><span data-stu-id="c8497-121">Run the example in the browser.</span></span> <span data-ttu-id="c8497-122">當您按一下按鈕，強制回應快顯視窗隨即出現。</span><span class="sxs-lookup"><span data-stu-id="c8497-122">When you click on the button, the modal popup appears.</span></span> <span data-ttu-id="c8497-123">為了達成使用伺服器端程式碼相同的效果，新的按鈕，則需要：</span><span class="sxs-lookup"><span data-stu-id="c8497-123">In order to achieve the same effect using server-side code, a new button is required:</span></span>
+<span data-ttu-id="4d76a-121">在瀏覽器中執行範例。</span><span class="sxs-lookup"><span data-stu-id="4d76a-121">Run the example in the browser.</span></span> <span data-ttu-id="4d76a-122">當您按一下按鈕時，就會出現強制回應快顯視窗。</span><span class="sxs-lookup"><span data-stu-id="4d76a-122">When you click on the button, the modal popup appears.</span></span> <span data-ttu-id="4d76a-123">若要使用伺服器端程式碼達到相同的效果，則需要新的按鈕：</span><span class="sxs-lookup"><span data-stu-id="4d76a-123">In order to achieve the same effect using server-side code, a new button is required:</span></span>
 
 [!code-aspx[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample5.aspx)]
 
-<span data-ttu-id="c8497-124">如您所見，按一下按鈕會產生回傳，並且執行`ServerButton_Click()`伺服器上的方法。</span><span class="sxs-lookup"><span data-stu-id="c8497-124">As you can see, a click on the button generates a postback and executes the `ServerButton_Click()` method on the server.</span></span> <span data-ttu-id="c8497-125">這種方法的 JavaScript 函式呼叫`launchModal()`執行很精確，JavaScript 函式會執行一次載入頁面：</span><span class="sxs-lookup"><span data-stu-id="c8497-125">In this method, a JavaScript function called `launchModal()` is executed to be exact, the JavaScript function will be executed once the page has been loaded:</span></span>
+<span data-ttu-id="4d76a-124">如您所見，按一下按鈕會產生回傳，並在伺服器上執行 `ServerButton_Click()` 方法。</span><span class="sxs-lookup"><span data-stu-id="4d76a-124">As you can see, a click on the button generates a postback and executes the `ServerButton_Click()` method on the server.</span></span> <span data-ttu-id="4d76a-125">在這個方法中，稱為 `launchModal()` 的 JavaScript 函式會執行成精確的，一旦載入頁面，就會執行 JavaScript 函式：</span><span class="sxs-lookup"><span data-stu-id="4d76a-125">In this method, a JavaScript function called `launchModal()` is executed to be exact, the JavaScript function will be executed once the page has been loaded:</span></span>
 
 [!code-aspx[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample6.aspx)]
 
-<span data-ttu-id="c8497-126">工作`launchModal()`是顯示 ModalPopup。</span><span class="sxs-lookup"><span data-stu-id="c8497-126">The job of `launchModal()` is to display the ModalPopup.</span></span> <span data-ttu-id="c8497-127">`launchModal()`完整的 HTML 頁面載入之後，會執行函式。</span><span class="sxs-lookup"><span data-stu-id="c8497-127">The `launchModal()` function is executed once the complete HTML page has been loaded.</span></span> <span data-ttu-id="c8497-128">在該時間點，不過，ASP.NET AJAX 架構尚未完全載入。</span><span class="sxs-lookup"><span data-stu-id="c8497-128">At that moment, however, the ASP.NET AJAX framework has not been fully loaded yet.</span></span> <span data-ttu-id="c8497-129">因此，`launchModal()`函式只會將 ModalPopup 控制項必須在稍後顯示的變數：</span><span class="sxs-lookup"><span data-stu-id="c8497-129">Therefore, the `launchModal()` function just sets a variable that the ModalPopup control must be shown later on:</span></span>
+<span data-ttu-id="4d76a-126">`launchModal()` 的工作是要顯示 ModalPopup。</span><span class="sxs-lookup"><span data-stu-id="4d76a-126">The job of `launchModal()` is to display the ModalPopup.</span></span> <span data-ttu-id="4d76a-127">一旦載入完整的 HTML 頁面，就會執行 `launchModal()` 函式。</span><span class="sxs-lookup"><span data-stu-id="4d76a-127">The `launchModal()` function is executed once the complete HTML page has been loaded.</span></span> <span data-ttu-id="4d76a-128">不過，目前尚未完全載入 ASP.NET AJAX 架構。</span><span class="sxs-lookup"><span data-stu-id="4d76a-128">At that moment, however, the ASP.NET AJAX framework has not been fully loaded yet.</span></span> <span data-ttu-id="4d76a-129">因此，`launchModal()` 函數只會設定一個變數，ModalPopup 控制項稍後必須顯示：</span><span class="sxs-lookup"><span data-stu-id="4d76a-129">Therefore, the `launchModal()` function just sets a variable that the ModalPopup control must be shown later on:</span></span>
 
 [!code-html[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample7.html)]
 
-<span data-ttu-id="c8497-130">`pageLoad()` JavaScript 函式是 ASP.NET AJAX 完全載入後執行的特殊函式。</span><span class="sxs-lookup"><span data-stu-id="c8497-130">The `pageLoad()` JavaScript function is a special function that gets executed once ASP.NET AJAX has been fully loaded.</span></span> <span data-ttu-id="c8497-131">因此我們將程式碼加入這個函數來顯示 ModalPopup 控制項，但是只有`launchModal()`之前已呼叫：</span><span class="sxs-lookup"><span data-stu-id="c8497-131">Therefore we add code to this function to show the ModalPopup control, but only if `launchModal()` has been called before:</span></span>
+<span data-ttu-id="4d76a-130">`pageLoad()` JavaScript 函式是一種特殊函式，會在 ASP.NET AJAX 完全載入後執行。</span><span class="sxs-lookup"><span data-stu-id="4d76a-130">The `pageLoad()` JavaScript function is a special function that gets executed once ASP.NET AJAX has been fully loaded.</span></span> <span data-ttu-id="4d76a-131">因此，我們將程式碼加入此函式以顯示 ModalPopup 控制項，但只有在之前呼叫過 `launchModal()`：</span><span class="sxs-lookup"><span data-stu-id="4d76a-131">Therefore we add code to this function to show the ModalPopup control, but only if `launchModal()` has been called before:</span></span>
 
 [!code-javascript[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample8.js)]
 
-<span data-ttu-id="c8497-132">`$find()`函式會尋找具名項目頁面上，並預期伺服器端 ID，做為參數。</span><span class="sxs-lookup"><span data-stu-id="c8497-132">The `$find()` function is looking for a named element on the page and expects the server-side ID as a parameter.</span></span> <span data-ttu-id="c8497-133">因此，`$find("mpe")`傳回 ModalPopup 控制項的用戶端表示法，其`show()`方法可讓快顯視窗會出現。</span><span class="sxs-lookup"><span data-stu-id="c8497-133">Therefore, `$find("mpe")` returns the client representation of the ModalPopup control; its `show()` method lets the popup appear.</span></span>
+<span data-ttu-id="4d76a-132">`$find()` 函式會在頁面上尋找名為的專案，而且需要伺服器端識別碼做為參數。</span><span class="sxs-lookup"><span data-stu-id="4d76a-132">The `$find()` function is looking for a named element on the page and expects the server-side ID as a parameter.</span></span> <span data-ttu-id="4d76a-133">因此，`$find("mpe")` 會傳回 ModalPopup 控制項的用戶端標記法;其 `show()` 方法會讓快顯視窗出現。</span><span class="sxs-lookup"><span data-stu-id="4d76a-133">Therefore, `$find("mpe")` returns the client representation of the ModalPopup control; its `show()` method lets the popup appear.</span></span>
 
-<span data-ttu-id="c8497-134">[![強制回應快顯視窗出現時按一下的按鈕](launching-a-modal-popup-window-from-server-code-vb/_static/image2.png)](launching-a-modal-popup-window-from-server-code-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="c8497-134">[![The modal popup appears when either of the buttons is clicked](launching-a-modal-popup-window-from-server-code-vb/_static/image2.png)](launching-a-modal-popup-window-from-server-code-vb/_static/image1.png)</span></span>
+<span data-ttu-id="4d76a-134">[當按一下其中一個按鈕時，就會出現強制回應快顯視窗 ![](launching-a-modal-popup-window-from-server-code-vb/_static/image2.png)](launching-a-modal-popup-window-from-server-code-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="4d76a-134">[![The modal popup appears when either of the buttons is clicked](launching-a-modal-popup-window-from-server-code-vb/_static/image2.png)](launching-a-modal-popup-window-from-server-code-vb/_static/image1.png)</span></span>
 
-<span data-ttu-id="c8497-135">強制回應快顯視窗出現時按一下任一按鈕時 ([按一下以檢視完整大小的影像](launching-a-modal-popup-window-from-server-code-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="c8497-135">The modal popup appears when either of the buttons is clicked ([Click to view full-size image](launching-a-modal-popup-window-from-server-code-vb/_static/image3.png))</span></span>
+<span data-ttu-id="4d76a-135">按一下其中一個按鈕時，就會出現強制回應快顯視窗（[按一下以查看完整大小的影像](launching-a-modal-popup-window-from-server-code-vb/_static/image3.png)）</span><span class="sxs-lookup"><span data-stu-id="4d76a-135">The modal popup appears when either of the buttons is clicked ([Click to view full-size image](launching-a-modal-popup-window-from-server-code-vb/_static/image3.png))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="c8497-136">[上一頁](positioning-a-modalpopup-cs.md)
-> [下一頁](using-modalpopup-with-a-repeater-control-vb.md)</span><span class="sxs-lookup"><span data-stu-id="c8497-136">[Previous](positioning-a-modalpopup-cs.md)
+> <span data-ttu-id="4d76a-136">[上一頁](positioning-a-modalpopup-cs.md)
+> [下一頁](using-modalpopup-with-a-repeater-control-vb.md)</span><span class="sxs-lookup"><span data-stu-id="4d76a-136">[Previous](positioning-a-modalpopup-cs.md)
 [Next](using-modalpopup-with-a-repeater-control-vb.md)</span></span>
