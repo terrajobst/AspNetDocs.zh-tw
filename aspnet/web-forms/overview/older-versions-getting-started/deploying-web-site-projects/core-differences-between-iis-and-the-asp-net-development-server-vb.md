@@ -1,128 +1,128 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-vb
-title: 核心 IIS 與 ASP.NET 程式開發伺服器 (VB) 之間的差異 |Microsoft Docs
+title: IIS 與 ASP.NET 程式開發伺服器之間的核心差異（VB） |Microsoft Docs
 author: rick-anderson
-description: 測試在本機的 ASP.NET 應用程式，可能是您使用 ASP.NET 開發 Web 伺服器。 不過，生產性網站是最有可能 pow...
+description: 在本機測試 ASP.NET 應用程式時，您可能會使用 ASP.NET 開發 Web 服務器。 不過，生產網站很可能 pow 。
 ms.author: riande
 ms.date: 04/01/2009
 ms.assetid: 090e9205-52f3-4d72-ae31-44775b8b8421
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6556935aafa954f83a9efafdf4e0850e7730a947
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 880bb403e671446a77d7eebccf578a1dc714d1f9
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65127125"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74586585"
 ---
 # <a name="core-differences-between-iis-and-the-aspnet-development-server-vb"></a>IIS 與 ASP.NET 程式開發伺服器間的核心差異 (VB)
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載程式碼](http://download.microsoft.com/download/4/5/F/45F815EC-8B0E-46D3-9FB8-2DC015CCA306/ASPNET_Hosting_Tutorial_06_VB.zip)或[下載 PDF](http://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial06_WebServerDiff_vb.pdf)
+[下載程式代碼](https://download.microsoft.com/download/4/5/F/45F815EC-8B0E-46D3-9FB8-2DC015CCA306/ASPNET_Hosting_Tutorial_06_VB.zip)或[下載 PDF](https://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial06_WebServerDiff_vb.pdf)
 
-> 測試在本機的 ASP.NET 應用程式，可能是您使用 ASP.NET 開發 Web 伺服器。 不過，生產性網站是最有可能支援的 IIS。 有一些差異這些 web 伺服器如何處理要求，而且這些差異可以有重要的結果。 本教學課程將探討一些更密切關聯的差異。
+> 在本機測試 ASP.NET 應用程式時，您可能會使用 ASP.NET 開發 Web 服務器。 不過，生產網站很可能是有能力的 IIS。 這些 web 伺服器處理要求的方式有一些差異，而這些差異可能會有重要的後果。 本教學課程將探討一些更無關的差異。
 
 ## <a name="introduction"></a>簡介
 
-每當使用者造訪 ASP.NET 應用程式其瀏覽器會傳送要求至網站。 該要求被由協調 ASP.NET 執行階段產生，並傳回所要求資源的內容與 web 伺服器軟體。 [**我**網際網路**我**nformation **S**理 (IIS)](http://en.wikipedia.org/wiki/Internet_Information_Services)是一套服務提供以網際網路為基礎的常見功能，如Windows 伺服器。 IIS 是在生產環境; 中的 ASP.NET 應用程式的最常用的 web 伺服器它很可能是由您的 web 主機提供者來服務您的 ASP.NET 應用程式的 web 伺服器軟體。 IIS 也可用來當做 web 伺服器軟體，在開發環境中，雖然這需要安裝 IIS 並正確加以設定。
+每當使用者造訪 ASP.NET 應用程式時，他的瀏覽器就會將要求傳送至網站。 Web 服務器軟體會收取該要求，這會與 ASP.NET 執行時間協調，以產生並傳回所要求資源的內容。 [ **I** Nternet **i** nformation (資訊**S** ervices （IIS）](http://en.wikipedia.org/wiki/Internet_Information_Services)是一套服務，可為 Windows 伺服器提供通用的網際網路功能。 IIS 是用來在生產環境中 ASP.NET 應用程式最常用的 web 伺服器;您的 web 主機提供者很可能會使用 web 伺服器軟體來提供您的 ASP.NET 應用程式。 IIS 也可以做為開發環境中的 web 伺服器軟體，不過這牽涉到安裝 IIS 並正確設定它。
 
-ASP.NET 程式開發伺服器是針對開發環境中，替代 web 伺服器 選項它隨附並整合至 Visual Studio。 除非 web 應用程式已設定為使用 IIS，ASP.NET Development Server 會自動啟動及做為 web 伺服器瀏覽網頁從 Visual Studio 中的第一次。 我們在上一步建立的示範 web 應用程式[*判斷哪些檔案需要部署*](determining-what-files-need-to-be-deployed-vb.md)教學課程中所未設定為使用 IIS 的兩個檔案系統為基礎的 web 應用程式。 因此，瀏覽從 Visual Studio 內的這些網站時，會使用 ASP.NET 程式開發伺服器。
+ASP.NET 程式開發伺服器是適用于開發環境的替代 web 伺服器選項;它隨附于，並已整合到 Visual Studio 中。 除非 web 應用程式已設定為使用 IIS，否則當您第一次從 Visual Studio 內流覽網頁時，ASP.NET 程式開發伺服器會自動啟動並當做 web 伺服器使用。 我們在[*判斷需要部署哪些*](determining-what-files-need-to-be-deployed-vb.md)檔案教學課程中所建立的示範 web 應用程式，都是以檔案系統為基礎的 web 應用程式，但未設定為使用 IIS。 因此，從 Visual Studio 流覽其中一個網站時，會使用 ASP.NET 程式開發伺服器。
 
-在完美的世界中開發和生產環境就會相同。 不過，如先前的教學課程所述不常見的環境中有不同的組態設定。 在環境中使用不同的 web 伺服器軟體加上部署應用程式時必須列入考量的另一個變數。 本教學課程涵蓋 IIS 和 ASP.NET 程式開發伺服器的主要差異。 因為有這些差異有能夠完美地執行在開發環境中的程式碼會擲回例外狀況，或在生產環境中執行時，表現的情況。
+在完美的世界中，開發和生產環境會完全相同。 不過，如同我們在先前的教學課程中所討論的，環境在不同的設定中並不常見。 在環境中使用不同的 web 伺服器軟體，會新增在部署應用程式時必須納入考慮的另一個變數。 本教學課程涵蓋 IIS 與 ASP.NET 程式開發伺服器之間的主要差異。 因為有這些差異，所以在開發環境中執行的程式碼會擲回例外狀況，或在生產時以不同的方式運作。
 
-## <a name="security-context-differences"></a>安全性內容的差異
+## <a name="security-context-differences"></a>安全性內容差異
 
-只要 web 伺服器軟體會處理連入要求會將特定的安全性內容和關聯該要求。 此資訊安全內容資訊由作業系統用以判斷哪些動作所允許的要求。 例如，ASP.NET 網頁可能包含一些訊息記錄至磁碟上的檔案的程式碼。 為了讓這個 ASP.NET 網頁的執行不會發生錯誤，必須有適當的檔案系統層級權限，也就是寫入該檔案的權限的安全性內容。
+每當 web 伺服器軟體處理傳入要求時，就會將該要求與特定的安全性內容產生關聯。 作業系統會使用此安全性內容資訊來判斷要求所允許的動作。 例如，ASP.NET 網頁可能包含將一些訊息記錄到磁片上檔案的程式碼。 為了讓此 ASP.NET 網頁執行而不發生錯誤，安全性內容必須具有適當的檔案系統層級許可權，亦即該檔案的寫入權限。
 
-ASP.NET Development Server 會將連入要求關聯的目前登入使用者的安全性內容。 如果您到您的桌面以系統管理員身分登入，由 ASP.NET 程式開發伺服器的 ASP.NET 網頁會有相同的存取權限，以系統管理員身分。 不過，由 IIS 的 ASP.NET 要求會在特定的電腦帳戶相關聯。 根據預設，網路服務的電腦帳戶使用 IIS 6 和 7 版，雖然您的 web 主機提供者可能針對每個客戶設定唯一的帳戶。 除此之外，您的 web 主機提供者也許會給有限的權限到此電腦帳戶。 最後結果就是，您可能會有執行不會在開發環境中，發生錯誤，但在生產環境中產生的授權相關例外狀況時裝載的網頁。
+ASP.NET 程式開發伺服器會將傳入要求與目前登入之使用者的安全性內容產生關聯。 如果您是以系統管理員身分登入您的桌面，則 ASP.NET 程式開發伺服器所提供的 ASP.NET 網頁將會具有與系統管理員相同的存取權限。 不過，IIS 所處理的 ASP.NET 要求會與特定的電腦帳戶相關聯。 根據預設，IIS 版本6和7會使用 Network Service 電腦帳戶，雖然您的 web 主機提供者可能已為每個客戶設定唯一的帳戶。 更多的是，您的 web 主機服務提供者可能會對此電腦帳戶提供有限的許可權。 最後結果是您可能會在開發環境中有執行的網頁，而不會發生錯誤，但在生產環境中裝載時，會產生與授權相關的例外狀況。
 
-為了示範這種錯誤類型的操作我的書籍評論網站中的磁碟上建立檔案，其中儲存的最新的日期和時間某人建立了一個頁面檢視*教導您自己 ASP.NET 3.5 24 小時內*檢閱。 若要跟著做，請開啟`~/Tech/TYASP35.aspx`頁面上，並新增下列程式碼`Page_Load`事件處理常式：
+為了顯示這種類型的錯誤動作，我在「書籍評論」網站建立了一個頁面，該檔案會在磁片上建立一個檔案，其中儲存了在*24 小時內 ASP.NET 3.5*的最近一次觀看的日期和時間。 若要跟著做，請開啟 [`~/Tech/TYASP35.aspx`] 頁面，並將下列程式碼新增至 `Page_Load` 事件處理常式：
 
 [!code-vb[Main](core-differences-between-iis-and-the-asp-net-development-server-vb/samples/sample1.vb)]
 
 > [!NOTE]
-> [ `File.WriteAllText`方法](https://msdn.microsoft.com/library/system.io.file.writealltext.aspx)建立新的檔案，如果它不存在，然後將指定的內容寫入至它。 如果檔案已經存在，則會覆寫其現有內容。
+> [`File.WriteAllText` 方法](https://msdn.microsoft.com/library/system.io.file.writealltext.aspx)會建立新的檔案（如果不存在），然後將指定的內容寫入其中。 如果檔案已經存在，則會覆寫現有的內容。
 
-接下來，請瀏覽*教導您自己 ASP.NET 3.5 24 小時內*在開發環境中使用 ASP.NET 程式開發伺服器的活頁簿檢閱頁面。 假設您已登入您的電腦帳戶具有足夠的權限，即可建立和修改的文字檔中的 web 應用程式的根目錄書籍評論會顯示與之前相同，但每次頁面瀏覽的日期和時間以及使用者的 IP 位址儲存在`LastTYASP35Access.txt`檔案。 將瀏覽器指向這個檔案中;您應該會看到類似 圖 1 中所示的訊息。
+接下來，請造訪使用 ASP.NET 程式開發伺服器在開發環境中，以*24 小時的時間來教您自己的 ASP.NET 3.5* 。 假設您使用具有足夠許可權的帳戶登入您的電腦，以在 web 應用程式的根目錄中建立和修改文字檔，則會顯示與之前相同的書籍，但每次流覽頁面時，會將日期和時間和使用者的 IP 位址儲存在 `LastTYASP35Access.txt` 檔案中。 將瀏覽器指向此檔案;您應該會看到類似 [圖 1] 所示的訊息。
 
-[![文字檔案包含的最後一個日期和時間瀏覽書籍評論&lt;](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image2.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image1.png)
+[![文字檔包含流覽書審閱的最後日期和時間&lt;](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image2.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image1.png)
 
-**圖 1**:文字檔案包含的最後一個日期和時間瀏覽書籍評論 ([按一下以檢視完整大小的影像](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image3.png))
+**圖 1**：文字檔包含流覽書審閱的最後日期和時間（[按一下以觀看完整大小的影像](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image3.png)）
 
-部署至生產環境 web 應用程式，，然後瀏覽託管*教導您自己 ASP.NET 3.5 24 小時內*活頁簿 [檢閱] 頁面。 此時您應該看到活頁簿的 檢閱 頁面為標準模式 或 圖 2 所示的錯誤訊息。 某些 web 主機提供者授與匿名 ASP.NET 電腦帳戶，可以在其中案例頁面將會運作不會發生錯誤的 「 寫入 」 權限。 如果，不過，您的 web 主機提供者會禁止匿名帳戶的寫入權限就[`UnauthorizedAccessException`例外狀況](https://msdn.microsoft.com/library/system.unauthorizedaccessexception.aspx)時引發`TYASP35.aspx`網頁嘗試寫入目前的日期和時間`LastTYASP35Access.txt`檔案。
+將 web 應用程式部署至生產環境，然後在24小時的書籍審查頁面中，造訪託管的*教授 ASP.NET 3.5* 。 此時，您應該會看到 [書籍審查] 頁面是正常的，或如 [圖 2] 所示的錯誤訊息。 某些 web 主機提供者會授與寫入權限給匿名 ASP.NET 電腦帳戶，在此情況下，頁面會正常執行而不會發生錯誤。 不過，如果您的 web 主機提供者禁止匿名帳戶的寫入權限，則當 `TYASP35.aspx` 頁面嘗試將目前的日期和時間寫入 `LastTYASP35Access.txt` 檔案時，就會引發[`UnauthorizedAccessException` 的例外](https://msdn.microsoft.com/library/system.unauthorizedaccessexception.aspx)狀況。
 
-[![IIS 所使用的預設電腦帳戶並沒有寫入檔案系統權限](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image5.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image4.png)
+[![IIS 所使用的預設電腦帳戶沒有寫入檔案系統的許可權](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image5.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image4.png)
 
-**圖 2**:預設電腦帳戶供 IIS 不會不具有權限來寫入至檔案系統 ([按一下以檢視完整大小的影像](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image6.png))
+**圖 2**： IIS 所使用的預設電腦帳戶沒有寫入檔案系統的許可權（[按一下以查看完整大小的影像](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image6.png)）
 
-好消息是工具的，大部分的 web 主機提供者有某種形式的權限，可讓您指定檔案系統權限，在您的網站。 匿名 ASP.NET 帳戶寫入存取權授與的根目錄，然後重新檢視活頁簿的 [檢閱] 頁面。 （如有需要請連絡您的 web 主機提供者如需如何將預設 ASP.NET 帳戶的寫入權限授與協助。）此頁面應該載入不會發生錯誤的時間和`LastTYASP35Access.txt`應該已成功建立檔案。
+好消息是，大部分的 web 主機提供者都具有某種許可權工具，可讓您在網站中指定檔案系統許可權。 將根目錄的 [寫入] 存取權授與匿名 ASP.NET 帳戶，然後再重新流覽 [書籍審查] 頁面。 （如有需要，請洽詢您的 web 主機提供者，以取得如何將寫入權限授與預設 ASP.NET 帳戶的協助）。此時，頁面應該會載入而不會發生錯誤，而且應該成功建立 `LastTYASP35Access.txt` 檔案。
 
-這裡的重點是，因為 ASP.NET 程式開發伺服器的運作於 IIS 在不同的安全性內容下，就可以讀取或寫入至檔案系統中，在 ASP.NET 網頁，讀取或寫入至 Windows 事件記錄檔中，或讀取或寫入至 Windows 登錄會開發上如預期運作，但會產生在生產環境時的例外狀況。 當建置 web 應用程式，將會部署至共用 web 裝載環境時，請勿讀取或寫入事件記錄檔或 Windows 登錄。 也請注意，讀取或寫入至檔案系統，因為您可能需要授與讀取和寫入適當的資料夾上的權限，在生產環境中的任何 ASP.NET 頁面。
+這就是因為 ASP.NET 程式開發伺服器在不同于 IIS 的安全性內容下運作，所以您可以在檔案系統中讀取或寫入的 ASP.NET 網頁、讀取或寫入 Windows 事件記錄檔，或是讀取或寫入 Windows 登錄會在開發時如預期般運作，但在生產環境中會產生例外狀況。 建立將部署至共用 web 主控環境的 web 應用程式時，請勿讀取或寫入事件記錄檔或 Windows 登錄。 也請記下任何讀取或寫入檔案系統的 ASP.NET 網頁，因為您可能需要在生產環境中對適當的資料夾授與讀取和寫入權限。
 
-## <a name="differences-on-serving-static-content"></a>提供靜態內容上的差異
+## <a name="differences-on-serving-static-content"></a>提供靜態內容的差異
 
-IIS 和 ASP.NET Development Server 之間的另一個核心差異是它們如何處理靜態內容的要求。 進入 ASP.NET Development Server，無論是針對 ASP.NET 網頁、 影像或 JavaScript 檔案，每個要求是由 ASP.NET 執行階段處理。 根據預設，IIS 只會叫用 ASP.NET 執行階段，當要求傳入對於 ASP.NET 資源，例如 ASP.NET 網頁、 Web 服務等等。 映像、 CSS 檔案、 JavaScript 檔案、 PDF 檔案、 ZIP 檔案，等位-的靜態內容的要求會在 ASP.NET 執行階段沒有擷取 iis。 （它可能會指示 IIS 可以使用 ASP.NET 執行階段提供靜態內容時，在本教學課程，如需詳細資訊，請參閱 < 執行表單型驗證和上與 IIS 7 的靜態檔案的 URL 驗證 」 一節）。
+IIS 和 ASP.NET 程式開發伺服器之間的另一個核心差異在於它們如何處理靜態內容的要求。 傳入 ASP.NET 程式開發伺服器的每個要求（不論是 ASP.NET 網頁、影像或 JavaScript 檔案）都是由 ASP.NET 執行時間所處理。 根據預設，IIS 只會在要求傳入 ASP.NET 資源（例如 ASP.NET 網頁、Web 服務等等）時，叫用 ASP.NET 執行時間。 IIS 會抓取靜態內容（影像、CSS 檔案、JavaScript 檔案、PDF 檔案、ZIP 檔案和 like）的要求，而不需要 ASP.NET 執行時間的介入。 （在提供靜態內容時，可以指示 IIS 使用 ASP.NET 執行時間; 如需詳細資訊，請參閱本教學課程中的「以 IIS 7 執行靜態檔案的表單架構驗證和 URL 驗證」一節。）
 
-ASP.NET 執行階段會執行一些步驟來產生要求的內容，包括 （用來識別要求者） 的驗證和授權 （決定如果要求者有權檢視要求的內容）。 是受歡迎的形式的驗證*表單型驗證*，在使用者識別在文字方塊中輸入其認證-通常是使用者名稱和密碼-在網頁上。 在驗證其認證，網站會儲存*驗證票證*可用來驗證使用者的每個後續要求傳送到網站，使用者的瀏覽器的 cookie。 此外，它可能會指定*URL 授權*規則，以指定哪些使用者可以或無法存取特定的資料夾。 許多 ASP.NET 網站使用表單型驗證和授權 URL，以支援使用者帳戶，並定義網站的僅供已驗證的使用者或屬於特定角色的使用者存取的部分。
+ASP.NET 執行時間會執行數個步驟來產生要求的內容，包括驗證（識別要求者）和授權（判斷要求者是否有許可權可查看所要求的內容）。 常見的驗證形式是以*表單為基礎的驗證*，使用者可以透過輸入其認證（通常是使用者名稱和密碼）來識別網頁上的文字方塊。 在驗證其認證後，網站會在使用者的瀏覽器上儲存*驗證票證*cookie，並隨著每次後續要求傳送至網站，以及用來驗證使用者。 此外，也可以指定*URL 授權*規則，以指示使用者可以或無法存取特定資料夾的內容。 許多 ASP.NET 網站都使用以表單為基礎的驗證和 URL 授權來支援使用者帳戶，以及定義只能供已驗證的使用者或屬於特定角色之使用者存取的部分網站。
 
 > [!NOTE]
-> 針對 ASP 徹底的檢查。NET 的表單型驗證、 URL 授權和其他使用者帳戶的相關功能，請務必看看我[網站安全性教學課程](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)。
+> 以徹底檢查 ASP。NET 的表單架構驗證、URL 授權和其他與使用者帳戶相關的功能，請務必查看我的[網站安全性教學](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)課程。
 
-請考慮支援使用表單型驗證的使用者帳戶，且具有的資料夾，使用 URL 授權設定為只允許已驗證的使用者的網站。 假設此資料夾包含 ASP.NET 網頁，而 PDF 檔案和其意圖是只有經過驗證的使用者可以檢視這些 PDF 檔案。
+請考慮使用以表單為基礎的授權來支援使用者帳戶的網站，並將使用 URL 授權的資料夾設定為只允許已驗證的使用者。 假設此資料夾包含 ASP.NET 網頁和 PDF 檔案，而其目的是只有經過驗證的使用者才能看到這些 PDF 檔案。
 
-如果在訪客嘗試直接在其瀏覽器的網址列中輸入 URL，其中一個 PDF 檔案檢視發生什麼事？ 若要了解，讓我們的書籍評論網站中建立新的資料夾、 新增一些的 PDF 檔案，，和將網站設定為使用 URL 授權來禁止匿名使用者瀏覽此資料夾。 如果您下載示範應用程式就會看到，我會建立名為的資料夾`PrivateDocs`並新增從 PDF 我[網站安全性教學課程](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)（如何調整 ！）。 `PrivateDocs`資料夾也包含`Web.config`指定 URL 授權規則，拒絕匿名使用者的檔案：
+如果造訪者嘗試直接在他的瀏覽器網址列中輸入 URL 來查看其中一個 PDF 檔案，會發生什麼事？ 若要瞭解，讓我們在書籍審查網站中建立新的資料夾，新增一些 PDF 檔案，並將網站設定為使用 URL 授權，以禁止匿名使用者流覽此資料夾。 如果您下載示範應用程式，就會看到我建立了一個名為 `PrivateDocs` 的資料夾，並從我的[網站安全性教學](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)課程（如何調整！）新增 PDF。 [`PrivateDocs`] 資料夾也包含 `Web.config` 檔案，該檔案會指定要拒絕匿名使用者的 URL 授權規則：
 
 [!code-xml[Main](core-differences-between-iis-and-the-asp-net-development-server-vb/samples/sample2.xml)]
 
-最後，我已設定 web 應用程式使用表單型驗證藉由更新 Web.config 檔案中的根目錄中，取代：
+最後，我將 web 應用程式設定為使用以表單為基礎的驗證，方法是更新根目錄中的 web.config 檔案，並取代：
 
 [!code-xml[Main](core-differences-between-iis-and-the-asp-net-development-server-vb/samples/sample3.xml)]
 
-成為：
+取代成：
 
 [!code-xml[Main](core-differences-between-iis-and-the-asp-net-development-server-vb/samples/sample4.xml)]
 
-使用 ASP.NET 程式開發伺服器，請瀏覽的網站，並輸入 PDF 檔案，您的瀏覽器網址列中的其中一個直接的 URL。 如果您下載本教學課程中的 URL 應該看起來像相關聯的網站： `http://localhost:portNumber/PrivateDocs/aspnet_tutorial01_Basics_vb.pdf`
+使用 ASP.NET 程式開發伺服器，請造訪網站，並在瀏覽器的網址列中輸入其中一個 PDF 檔案的直接 URL。 如果您已下載與本教學課程相關聯的網站，URL 看起來應該像這樣： `http://localhost:portNumber/PrivateDocs/aspnet_tutorial01_Basics_vb.pdf`
 
-在網址列輸入此 URL 會導致將要求傳送至 ASP.NET Development Server，檔案瀏覽器。 ASP.NET 程式開發伺服器會送出 ASP.NET 執行階段進行處理的要求。 因為我們尚未登入，而且`Web.config`中`PrivateDocs`資料夾已設定為拒絕匿名存取，ASP.NET 執行階段將自動重新導向我們登入 頁面中， `Login.aspx` （請參閱 圖 3）。 當將使用者重新導向至登入頁面中，ASP.NET 包含`ReturnUrl`查詢字串參數，指出頁面的使用者嘗試檢視。 已成功登入使用者之後可以傳回至此頁面。
+在網址列中輸入此 URL，會導致瀏覽器將要求傳送至檔案的 ASP.NET 程式開發伺服器。 ASP.NET 程式開發伺服器將要求交給 ASP.NET 執行時間來處理。 因為我們尚未登入，而且因為 `PrivateDocs` 資料夾中的 `Web.config` 設定為拒絕匿名存取，所以 ASP.NET 執行時間會自動將我們重新導向至登入頁面，`Login.aspx` （請參閱 [圖 3]）。 將使用者重新導向至 [登入] 頁面時，ASP.NET 會包含一個 `ReturnUrl` querystring 參數，指出使用者嘗試查看的頁面。 成功登入之後，使用者可以返回此頁面。
 
 [![未經授權的使用者會自動重新導向至登入頁面](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image8.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image7.png)
 
-**圖 3**:未經授權的使用者會自動重新導向至登入頁面 ([按一下以檢視完整大小的影像](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image9.png))
+**圖 3**：未經授權的使用者會自動重新導向至登[入頁面（按一下以觀看完整大小的影像](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image9.png)）
 
-現在讓我們來看看這在生產環境上的運作方式。 部署您的應用程式，並在 Pdf 的其中一個輸入的直接 URL`PrivateDocs`在生產環境中的資料夾。 這會提示您的瀏覽器傳送要求 IIS 的檔案。 因為靜態檔案要求時，IIS 會擷取，並將檔案傳回而不叫用 ASP.NET 執行階段。 如此一來，已執行浮點數。 任何 URL 授權檢查應該私用 PDF 的內容都知道檔案的直接 URL 的任何人可以存取的。
+現在讓我們來看看這在生產環境中的行為。 部署您的應用程式，並在生產環境中的 [`PrivateDocs`] 資料夾中，輸入其中一個 Pdf 的直接 URL。 這會提示您的瀏覽器傳送檔案的要求 IIS。 由於要求的是靜態檔案，因此 IIS 會在不叫用 ASP.NET 執行時間的情況下，抓取並傳回檔案。 因此，不會執行任何 URL 授權檢查;知道檔案的直接 URL 的任何人都可以存取經過的私用 PDF 內容。
 
-[![匿名使用者可以輸入檔案的直接 URL 下載私用的 PDF 檔案](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image11.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image10.png)
+[![匿名使用者可以藉由輸入檔案的直接 URL 來下載私人 PDF 檔案](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image11.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image10.png)
 
-**圖 4**:匿名使用者可以下載私用 PDF 檔案的輸入直接 URL 到檔案 ([按一下以檢視完整大小的影像](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image12.png))
+**圖 4**：匿名使用者可以藉由輸入檔案的直接 URL （[按一下以查看完整大小的影像](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image12.png)）來下載私人 PDF 檔案
 
-### <a name="performing-forms-based-authentication-and-url-authentication-on-static-files-with-iis-7"></a>靜態檔案與 IIS 7 上執行表單型驗證和 URL 驗證
+### <a name="performing-forms-based-authentication-and-url-authentication-on-static-files-with-iis-7"></a>在具有 IIS 7 的靜態檔案上執行表單架構驗證和 URL 驗證
 
-有幾個可用來防範未經授權的使用者的靜態內容的技術。 IIS 7 引進*整合式的管線*，它能結合 IIS 與 ASP.NET 執行階段的工作流程的工作流程。 簡單的說，您可以指示要叫用 ASP.NET 執行階段的驗證和授權模組 （包括 PDF 檔案之類的靜態內容） 的所有連入要求的 IIS。 請連絡您的 web 主機提供者，以了解如何將網站設定成使用整合式的管線。
+有幾種方法可用來保護靜態內容免于未經授權的使用者使用。 IIS 7 引進了*整合式管線*，它會結婚 IIS 的工作流程與 ASP.NET 執行時間的工作流程。 簡言之，您可以指示 IIS 叫用 ASP.NET 執行時間的驗證和授權模組所有傳入的要求（包括如 PDF 檔案的靜態內容）。 請洽詢您的 web 主機提供者，瞭解如何設定您的網站以使用整合式管線。
 
-整合式的管線 IIS 已設定為使用之後新增下列標記來`Web.config`的根目錄中的檔案：
+一旦將 IIS 設定為使用整合式管線，請將下列標記新增至根目錄中的 `Web.config` 檔案：
 
 [!code-xml[Main](core-differences-between-iis-and-the-asp-net-development-server-vb/samples/sample5.xml)]
 
-此標記會指示以使用以 ASP.NET 為基礎的驗證和授權模組的 IIS 7。 重新部署您的應用程式，然後重新瀏覽的 PDF 檔案。 此時，IIS 會處理要求時它會讓 ASP.NET 執行階段的驗證和授權邏輯來檢查要求。 因為只有已驗證的使用者有權檢視的內容`PrivateDocs`匿名訪客] 資料夾，會自動重新導向至登入頁面 （請參閱上一步 [圖 3）。
+此標記會指示 IIS 7 使用以 ASP.NET 為基礎的驗證和授權模組。 重新部署您的應用程式，然後重新流覽 PDF 檔案。 這次 IIS 處理要求時，會讓 ASP.NET 執行時間的驗證和授權邏輯有機會檢查要求。 由於只有經過驗證的使用者才有權查看 `PrivateDocs` 資料夾中的內容，因此會自動將匿名訪客重新導向至登入頁面（請參閱 [圖 3]）。
 
 > [!NOTE]
-> 如果您的 web 主機提供者仍在使用 IIS 6，您無法使用整合式的管線功能。 一個解決方法是在禁止的 HTTP 存取的資料夾中放入您私人的文件 (例如`App_Data`)，然後建立要做這些文件的頁面。 此頁面可能會呼叫`GetPDF.aspx`，並傳遞的 PDF，透過查詢字串參數的名稱。 `GetPDF.aspx`頁面會先確認使用者有權檢視的檔案，如果是的話，會使用[ `Response.WriteFile(filePath)` ](https://msdn.microsoft.com/library/system.web.httpresponse.writefile.aspx)方法將傳回給提出要求的用戶端傳送要求的 PDF 檔案的內容。 如果您不想啟用整合式的管線，則這項技術也會適用於 IIS 7。
+> 如果您的 web 主機提供者仍在使用 IIS 6，則您無法使用整合式管線功能。 其中一個因應措施是將私用檔放在禁止 HTTP 存取的資料夾中（例如 `App_Data`），然後建立頁面來提供這些檔。 此頁面可能會 `GetPDF.aspx`呼叫，而且會透過 querystring 參數傳遞 PDF 的名稱。 [`GetPDF.aspx`] 頁面會先驗證使用者是否有權查看檔案，如果是的話，則會使用[`Response.WriteFile(filePath)`](https://msdn.microsoft.com/library/system.web.httpresponse.writefile.aspx)方法，將要求的 PDF 檔案內容傳回給要求的用戶端。 如果您不想要啟用整合式管線，這項技術也適用于 IIS 7。
 
 ## <a name="summary"></a>總結
 
-在生產環境中的 web 應用程式裝載於 Microsoft 的 IIS web 伺服器軟體。 在開發環境中，不過，應用程式可能裝載使用 IIS 或 ASP.NET 程式開發伺服器。 在理想情況下，相同的 web 伺服器軟體應該能在這兩種環境中因為使用不同的軟體在混合中加入另一個變數。 不過，容易使用的 ASP.NET 程式開發伺服器就很好的選擇開發環境中。 好消息是，只有幾個基本差異 IIS 和 ASP.NET Development Server，而且如果您知道這些差異的您可以採取步驟以協助確保應用程式的運作方式，且函式相同的方式無論環境。
+生產環境中的 Web 應用程式是使用 Microsoft 的 IIS web 伺服器軟體所主控。 不過，在開發環境中，應用程式可能會使用 IIS 或 ASP.NET 程式開發伺服器來裝載。 在理想的情況下，相同的 web 伺服器軟體應該用於這兩種環境中，因為使用不同的軟體會在混合中新增另一個變數。 不過，使用 ASP.NET 程式開發伺服器的便利性，讓它在開發環境中成為一項頗具吸引力的選擇。 好消息是 IIS 與 ASP.NET 程式開發伺服器之間只有幾個基本差異，如果您知道這些差異，您可以採取步驟來確保應用程式的運作和功能相同，而不論環境.
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ### <a name="further-reading"></a>進一步閱讀
 
-如需有關在本教學課程所討論的主題的詳細資訊，請參閱下列資源：
+如需本教學課程中所討論之主題的詳細資訊，請參閱下列資源：
 
-- [與 IIS 7.0 ASP.NET 整合](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
-- [使用所有類型的內容，在 IIS 7 上使用 ASP.NET 論壇驗證](https://blogs.iis.net/bills/archive/2007/05/19/using-asp-net-forms-authentication-with-all-types-of-content-with-iis7-video.aspx)（影片）
-- [Visual Web Developer 中的 web 伺服器](https://msdn.microsoft.com/library/58wxa9w5.aspx)
+- [與 IIS 7.0 的 ASP.NET 整合](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
+- [在 IIS 7 上使用 ASP.NET 論壇驗證與所有類型的內容](https://blogs.iis.net/bills/archive/2007/05/19/using-asp-net-forms-authentication-with-all-types-of-content-with-iis7-video.aspx)（影片）
+- [Visual Web Developer 中的 Web 服務器](https://msdn.microsoft.com/library/58wxa9w5.aspx)
 
 > [!div class="step-by-step"]
 > [上一頁](common-configuration-differences-between-development-and-production-vb.md)

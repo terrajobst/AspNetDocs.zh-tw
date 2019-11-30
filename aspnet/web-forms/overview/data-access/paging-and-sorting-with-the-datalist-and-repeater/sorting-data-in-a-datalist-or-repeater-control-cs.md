@@ -1,339 +1,339 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-cs
-title: 排序資料 DataList 或 Repeater 控制項 (C#) |Microsoft Docs
+title: 在 DataList 或重複項控制項中排序資料C#（） |Microsoft Docs
 author: rick-anderson
-description: 在本教學課程中，我們將檢驗如何納入排序 DataList 和 Repeater 中, 支援，以及如何建構資料可以 DataList 或 Repeater...
+description: 在本教學課程中，我們將探討如何在 DataList 和重複項中包含排序支援，以及如何建立其資料可以的 DataList 或中繼器 。
 ms.author: riande
 ms.date: 11/13/2006
 ms.assetid: f52c302a-1b7c-46fe-8a13-8412c95cbf6d
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e3512758dbfdf43d788eca643fe48ca918c142fe
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 66a09c637d33c812b39e0ce85a552bd71665a2e1
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128058"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74634655"
 ---
 # <a name="sorting-data-in-a-datalist-or-repeater-control-c"></a>DataList 或重複項控制項中的排序資料 (C#)
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_45_CS.exe)或[下載 PDF](sorting-data-in-a-datalist-or-repeater-control-cs/_static/datatutorial45cs1.pdf)
+[下載範例應用程式](https://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_45_CS.exe)或[下載 PDF](sorting-data-in-a-datalist-or-repeater-control-cs/_static/datatutorial45cs1.pdf)
 
-> 在本教學課程中，我們將檢驗如何納入排序 DataList 和 Repeater 中, 支援，以及如何建構 DataList 或 Repeater 可以分頁和排序資料。
+> 在本教學課程中，我們將探討如何在 DataList 和中繼器中包含排序支援，以及如何建立可分頁和排序其資料的 DataList 或中繼器。
 
 ## <a name="introduction"></a>簡介
 
-在 [先前的教學課程](paging-report-data-in-a-datalist-or-repeater-control-cs.md)我們檢查如何將分頁支援新增至 DataList。 我們建立中的新方法`ProductsBLL`類別 (`GetProductsAsPagedDataSource`) 傳回`PagedDataSource`物件。 當繫結至 DataList 或 Repeater、 DataList 或 Repeater 會顯示只是要求的頁面顯示的資料。 這個技術非常類似於用在內部 GridView、 DetailsView 和 FormView 控制項來提供他們的內建的預設分頁功能。
+在[上一個教學](paging-report-data-in-a-datalist-or-repeater-control-cs.md)課程中，我們探討了如何將分頁支援新增至 DataList。 我們已在傳回 `PagedDataSource` 物件的 `ProductsBLL` 類別（`GetProductsAsPagedDataSource`）中建立新的方法。 當系結至 DataList 或中繼器時，DataList 或中繼器只會顯示所要求的資料頁面。 這項技術與 GridView、DetailsView 和 FormView 控制項內部使用的類似，以提供其內建的預設分頁功能。
 
-除了提供分頁支援，GridView 也包含內建排序支援。 DataList 或 Repeater 都不會提供內建排序功能;不過，排序功能可以使用新增的程式碼。 在本教學課程中，我們將檢驗如何納入排序 DataList 和 Repeater 中, 支援，以及如何建構 DataList 或 Repeater 可以分頁和排序資料。
+除了提供分頁支援外，GridView 也包含現成的排序支援。 DataList 和中繼器都不會提供內建的排序功能;不過，您可以使用一些程式碼來加入排序功能。 在本教學課程中，我們將探討如何在 DataList 和中繼器中包含排序支援，以及如何建立可分頁和排序其資料的 DataList 或中繼器。
 
-## <a name="a-review-of-sorting"></a>檢閱排序
+## <a name="a-review-of-sorting"></a>排序的審查
 
-如我們在中所見[分頁和排序報表資料](../paging-and-sorting/paging-and-sorting-report-data-cs.md)教學課程中，提供現成的排序支援的 GridView 控制項。 每個 GridView 欄位可以有相關聯`SortExpression`，表示資料欄位，用來排序資料。 當 GridView s`AllowSorting`屬性設定為`true`，有每個 GridView 欄位`SortExpression`屬性值已轉譯為 LinkButton 標頭。 當使用者按一下特定的 GridView 欄位 s 標頭時，就會發生回傳和資料根據按下 [s] 欄位排序`SortExpression`。
+如我們在[分頁和排序報表資料](../paging-and-sorting/paging-and-sorting-report-data-cs.md)教學課程中所見，GridView 控制項提供現成的排序支援。 每個 GridView 欄位都可以有相關聯的 `SortExpression`，表示用來排序資料的資料欄位。 當 GridView 的 `AllowSorting` 屬性設定為 `true`時，具有 `SortExpression` 屬性值的每個 GridView 欄位都會將其標頭轉譯為 LinkButton。 當使用者按一下特定的 GridView 欄位標頭時，就會發生回傳，並根據按下的欄位 `SortExpression`來排序資料。
 
-GridView 控制項具有`SortExpression`屬性，它會儲存`SortExpression`[GridView] 欄位的資料會依照。 此外，`SortDirection`屬性會指出資料是否以遞增或遞減順序 （如果使用者按一下，就會切換為特定 GridView 的欄位標頭中的連結兩次連續，排序順序） 排序。
+GridView 控制項也有 `SortExpression` 屬性，它會儲存 GridView 欄位的 `SortExpression` 以排序資料。 此外，`SortDirection` 屬性會指出是否要以遞增或遞減順序來排序資料（如果使用者連續按一下特定的 GridView 欄位標題連結兩次，則會切換排序次序）。
 
-在其資料來源控制項繫結 GridView，它將其`SortExpression`和`SortDirection`屬性的資料來源控制項。 資料來源控制項擷取資料，並加以根據所提供排序`SortExpression`和`SortDirection`屬性。 完成排序之後的資料，資料來源控制項它傳回至 GridView。
+當 GridView 系結至其資料來源控制項時，它會將其 `SortExpression` 和 `SortDirection` 屬性交給資料來源控制項。 資料來源控制項會抓取資料，然後根據提供的 `SortExpression` 和 `SortDirection` 屬性加以排序。 排序資料之後，資料來源控制項會將它傳回給 GridView。
 
-若要複寫的 DataList 或 Repeater 控制項的這項功能，我們必須：
+若要使用 DataList 或重複項控制項來複寫這項功能，我們必須：
 
-- 建立排序的介面
+- 建立排序介面
 - 請記住要排序的資料欄位，以及是否要以遞增或遞減順序排序
-- 指示要依特定資料欄位排序資料的 ObjectDataSource
+- 指示 ObjectDataSource 依特定資料欄位排序資料
 
-我們將會處理這些步驟 3 和 4 中的三個工作。 接下來，我們將檢驗如何包含分頁和排序中 DataList 或 Repeater 的支援。
+我們將在步驟3和4中解決這三項工作。 接下來，我們將探討如何在 DataList 或中繼器中包含分頁和排序支援。
 
-## <a name="step-2-displaying-the-products-in-a-repeater"></a>步驟 2：顯示產品中
+## <a name="step-2-displaying-the-products-in-a-repeater"></a>步驟2：在中繼器中顯示產品
 
-我們會擔心實作任何排序相關的功能之前，讓開始要先列出的產品在中繼器控制項中的 s。 首先開啟`Sorting.aspx`頁面中`PagingSortingDataListRepeater`資料夾。 將重複項控制項新增至網頁上，設定其`ID`屬性設`SortableProducts`。 從 Repeater s 智慧標籤，建立名為新 ObjectDataSource`ProductsDataSource`並將它設定為從中擷取資料`ProductsBLL`類別的`GetProducts()`方法。 選取 （無） 選項從下拉式清單中，在 INSERT、 UPDATE 和 DELETE 的索引標籤中。
+在我們擔心如何執行任何排序相關的功能之前，請先讓我們先在中繼器控制項中列出產品。 從開啟 [`PagingSortingDataListRepeater`] 資料夾中的 [`Sorting.aspx`] 頁面開始。 將 [中繼器] 控制項新增至網頁，並將其 `ID` 屬性設定為 [`SortableProducts`]。 從 [中繼器] 智慧標籤中，建立名為 `ProductsDataSource` 的新 ObjectDataSource，並將其設定為從 `ProductsBLL` 類別 s `GetProducts()` 方法中取出資料。 從 [插入]、[更新] 和 [刪除] 索引標籤的下拉式清單中，選取 [（無）] 選項。
 
-[![建立 ObjectDataSource，並將它設定為使用 GetProductsAsPagedDataSource() 方法](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image2.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image1.png)
+[![建立 ObjectDataSource 並將其設定為使用 GetProductsAsPagedDataSource （）方法](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image2.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image1.png)
 
-**圖 1**:建立 ObjectDataSource，並將它設定為使用`GetProductsAsPagedDataSource()`方法 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image3.png))
+**圖 1**：建立 ObjectDataSource 並將其設定為使用 `GetProductsAsPagedDataSource()` 方法（[按一下以查看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image3.png)）
 
-[![設定下拉式清單中更新、 插入和刪除索引標籤為 （無）](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image5.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image4.png)
+[![將 [更新]、[插入] 和 [刪除] 索引標籤中的下拉式清單設定為 [（無）]](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image5.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image4.png)
 
-**圖 2**:設定下拉式清單中更新、 插入和刪除索引標籤為 （無） ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image6.png))
+**圖 2**：將 [更新]、[插入] 和 [刪除] 索引標籤中的下拉式清單設定為 [（無）] （[按一下以查看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image6.png)）
 
-不同於與，Visual Studio 不會自動建立`ItemTemplate`Repeater 控制項繫結至資料來源之後。 此外，我們必須將此新增`ItemTemplate`以宣告方式，如 Repeater 控制項 s 智慧標籤缺少 DataList s 中找到的 [編輯範本] 選項。 可讓 s 使用相同`ItemTemplate`從上一個教學課程中，其中顯示 s 產品名稱、 供應商和類別目錄。
+不同于 DataList，Visual Studio 不會在系結至資料來源之後，自動建立中繼器控制項的 `ItemTemplate`。 此外，我們必須以宣告方式新增此 `ItemTemplate`，因為「中繼器控制項」智慧標籤缺少 DataList s 中的 [編輯範本] 選項。 讓我們使用上一個教學課程中的相同 `ItemTemplate`，這會顯示產品的名稱、供應商和類別目錄。
 
-在新增之後`ItemTemplate`，Repeater 和 ObjectDataSource s 宣告式標記看起來應該如下所示：
+新增 `ItemTemplate`之後，中繼器和 ObjectDataSource 的宣告式標記看起來應該如下所示：
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample1.aspx)]
 
-圖 3 顯示此頁面上，當透過瀏覽器檢視。
+[圖 3] 顯示透過瀏覽器觀看的此頁面。
 
-[![會顯示每項產品 s 的名稱，供應商和類別目錄](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image8.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image7.png)
+[會顯示每個產品的名稱、供應商和類別 ![](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image8.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image7.png)
 
-**圖 3**:顯示每個產品名稱、 供應商和類別目錄 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image9.png))
+**圖 3**：會顯示每個產品的名稱、供應商和類別（[按一下以觀看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image9.png)）
 
-## <a name="step-3-instructing-the-objectdatasource-to-sort-the-data"></a>步驟 3：指示排序資料的 ObjectDataSource
+## <a name="step-3-instructing-the-objectdatasource-to-sort-the-data"></a>步驟3：指示 ObjectDataSource 排序資料
 
-若要排序顯示中繼器中的資料，我們必須通知 ObjectDataSource 的資料應該排序的排序運算式。 ObjectDataSource 擷取其資料之前，它首先會引發其[`Selecting`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting.aspx)，可讓我們指定的排序運算式。 `Selecting`事件處理常式傳遞類型的物件[ `ObjectDataSourceSelectingEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.aspx)，其中包含一個名為屬性[ `Arguments` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.arguments.aspx)型別的[ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx)。 `DataSourceSelectArguments`類別設計來將資料相關的要求資料的取用者從傳遞至資料來源控制項，並包含[`SortExpression`屬性](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.sortexpression.aspx)。
+若要排序在中繼器中顯示的資料，我們必須通知資料應該排序之排序運算式的 ObjectDataSource。 在 ObjectDataSource 抓取其資料之前，它會先引發它的[`Selecting` 事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting.aspx)，讓我們有機會指定排序運算式。 `Selecting` 事件處理常式會傳遞[`ObjectDataSourceSelectingEventArgs`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.aspx)類型的物件，其具有名為[`Arguments`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.arguments.aspx)類型[`DataSourceSelectArguments`](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx)的屬性。 `DataSourceSelectArguments` 類別的設計目的是要將資料相關的要求從資料取用者傳遞到資料來源控制項，並包含[`SortExpression` 屬性](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.sortexpression.aspx)。
 
-若要從 ASP.NET 網頁的排序資訊傳遞到 ObjectDataSource 中，建立 事件處理常式`Selecting`事件並使用下列程式碼：
+若要將排序資訊從 ASP.NET 網頁傳遞至 ObjectDataSource，請建立 `Selecting` 事件的事件處理常式，並使用下列程式碼：
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample2.cs)]
 
-*SortExpression*應將值指派要排序的資料 （例如產品名稱） 的資料欄位的名稱。 沒有任何排序方向相關屬性，因此如果您想要排序的資料，以遞減順序，將字串附加 DESC 來*sortExpression*值 （例如 ProductName DESC)。
+應將資料欄位的名稱指派給*sortExpression*值，以排序資料（例如 ProductName）。 沒有排序方向相關的屬性，因此如果您想要以遞減順序排序資料，請將字串 DESC 附加至*sortExpression*值（例如 ProductName DESC）。
 
-請繼續並嘗試一些不同硬式編碼的值為*sortExpression*和瀏覽器中測試的結果。 如 圖 4 所示，使用做為 ProductName DESC 時*sortExpression*，產品會依其名稱以反向字母順序排序。
+請繼續嘗試一些不同的硬式編碼值，以在瀏覽器中*sortExpression*和測試結果。 如 [圖 4] 所示，使用 ProductName DESC 做為*sortExpression*時，產品會依其名稱以反向字母順序排序。
 
-[![產品會依其名稱以反向字母順序排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image11.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image10.png)
+[![產品依其名稱以反向字母順序排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image11.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image10.png)
 
-**圖 4**:產品會依其名稱以反向字母順序排序 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image12.png))
+**圖 4**：產品依其名稱以相反的字母順序排序（[按一下以觀看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image12.png)）
 
-## <a name="step-4-creating-the-sorting-interface-and-remembering-the-sort-expression-and-direction"></a>步驟 4：建立介面，排序與記住的排序運算式和方向
+## <a name="step-4-creating-the-sorting-interface-and-remembering-the-sort-expression-and-direction"></a>步驟4：建立排序介面，並記住排序運算式和方向
 
-開啟排序 GridView 裡的支援會將每個排序欄位 s 標頭文字轉換成 LinkButton，按一下時，排序的資料依此。 這類排序的介面的合理 gridview，其中資料整齊的版面配置資料行。 DataList 與重複項控制項中，不過，不同的排序介面需要。 排序的通用介面，取得一份資料 （而不是資料方格的），是提供資料可以排序依據的欄位的下拉式清單。 可讓 s 本教學課程中實作這類介面。
+開啟 GridView 中的排序支援時，會將每個可排序的欄位 s 標頭文字轉換成 LinkButton，當按下該按鈕時，會據以排序資料。 這類排序介面對 GridView 很有意義，因為它的資料會在資料行中整齊地配置。 不過，對於 DataList 和中繼器控制項，則需要不同的排序介面。 資料清單的一般排序介面（相對於資料格線）是下拉式清單，提供可供排序資料的欄位使用。 在本教學課程中，我們將會執行此類介面。
 
-新增上述的 DropDownList Web 控制項`SortableProducts`Repeater 並將其`ID`屬性設`SortBy`。 從 [屬性] 視窗中，按一下省略符號，`Items`顯示 ListItem 集合編輯器的屬性。 新增`ListItem`來排序資料所`ProductName`， `CategoryName`，和`SupplierName`欄位。 也將新增`ListItem`依其名稱以反向字母順序排序的產品。
+將 DropDownList Web 控制項新增至 `SortableProducts` 中繼器上方，並將其 `ID` 屬性設定為 [`SortBy`]。 從屬性視窗按一下 [`Items`] 屬性中的省略號，以顯示 [出現內容集合編輯器]。 加入 `ListItem`，以依據 `ProductName`、`CategoryName`和 `SupplierName` 欄位排序資料。 此外，也請新增 `ListItem`，依其名稱以反向字母順序排序產品。
 
-`ListItem` `Text`屬性可以設定為任何值 （例如名稱），但`Value`屬性必須設定為資料欄位的名稱 （例如產品名稱）。 若要排序的結果以遞減順序，將字串附加 DESC 的資料欄位名稱，例如 ProductName DESC。
+`ListItem` `Text` 屬性可以設定為任何值（例如 [名稱]），但 `Value` 屬性必須設定為資料欄位的名稱（例如 ProductName）。 若要以遞減順序排序結果，請將字串 DESC 附加至資料欄位名稱，例如 ProductName DESC。
 
-![每個可排序的資料欄位中新增清單項目](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image13.png)
+![為每個可排序的資料欄位新增資料列](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image13.png)
 
-**圖 5**:新增`ListItem`每個可排序的資料欄位
+**圖 5**：為每個可排序的資料欄位加入 `ListItem`
 
-最後，新增按鈕 Web 控制項右邊的 DropDownList。 設定其`ID`要`RefreshRepeater`及其`Text`屬性，以重新整理。
+最後，在 DropDownList 的右側新增按鈕 Web 控制項。 將其 `ID` 設為 `RefreshRepeater`，並將其 `Text` 屬性設定為 [重新整理]。
 
-在建立之後`ListItem`s，新增 [重新整理] 按鈕的 DropDownList 和按鈕 s 宣告式語法看起來應該如下所示：
+建立 `ListItem` 並新增 [重新整理] 按鈕後，DropDownList 和按鈕的宣告式語法看起來應該如下所示：
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample3.aspx)]
 
-使用排序下拉式清單中完成，我們接下來需要更新 ObjectDataSource s`Selecting`事件處理常式，因此它會使用所選`SortBy``ListItem`s`Value`屬性，而不是硬式編碼的排序運算式。
+當排序 DropDownList 完成時，我們接下來需要更新 ObjectDataSource s `Selecting` 事件處理常式，使其使用所選取的 `SortBy``ListItem` s `Value` 屬性，而不是硬式編碼的排序運算式。
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample4.cs)]
 
-在第一次造訪網頁時，此點產品會一開始依`ProductName`資料欄位，因為它 s `SortBy` `ListItem`預設選取 （請參閱 圖 6）。 選取不同的排序選項，例如類別和按一下 重新整理將會導致回傳，並重新排序資料分類名稱，如 圖 7 所示。
+此時，第一次流覽頁面時，產品一開始會依照 [`ProductName` 資料] 欄位進行排序，因為 `SortBy` 預設 `ListItem` 選取（請參閱 [圖 6]）。 選取不同的排序選項（例如分類和按一下 [重新整理]）將會導致回傳，並依類別目錄名稱重新排序資料，如 [圖 7] 所示。
 
-[![產品現已依其名稱一開始排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image15.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image14.png)
+[![產品一開始依其名稱排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image15.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image14.png)
 
-**圖 6**:產品是一開始會依其名稱 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image16.png))
+**圖 6**：產品一開始依其名稱排序（[按一下以觀看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image16.png)）
 
-[![現在依類別排序的產品現已](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image18.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image17.png)
+[![產品現在依類別目錄排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image18.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image17.png)
 
-**圖 7**:產品現已現在依類別排序 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image19.png))
+**圖 7**：產品現在依類別排序（[按一下以觀看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image19.png)）
 
 > [!NOTE]
-> 按一下 [重新整理] 按鈕會導致資料自動重新排序因為 Repeater 的檢視狀態已停用，因而導致重新繫結至它在每次回傳的資料來源的重複項。 如果您已保留重複項的檢視狀態已啟用，變更排序下拉式清單將不會對任何會影響排序次序。 若要解決此問題，建立 [重新整理] 按鈕 s 的事件處理常式`Click`事件，並重新繫結至其資料來源的重複項 (藉由呼叫 Repeater 的`DataBind()`方法)。
+> 按一下 [重新整理] 按鈕會導致資料自動重新排序，因為已停用中繼器的 view 狀態，因此會導致中繼器在每次回傳時重新系結至其資料來源。 如果您已啟用 [中繼器 s view] 狀態，變更 [排序] 下拉式清單將不會影響排序次序。 若要解決此問題，請為 [重新整理] 按鈕 `Click` 事件建立事件處理常式，並將中繼器重新系結至其資料來源（藉由呼叫 Repeater 的 `DataBind()` 方法）。
 
-## <a name="remembering-the-sort-expression-and-direction"></a>記住的排序運算式和方向
+## <a name="remembering-the-sort-expression-and-direction"></a>記住排序運算式和方向
 
-建立非排序相關，可能會發生回傳時，在頁面上的可排序的 DataList 或 Repeater 時它 s 命令式的排序運算式和方向會記住在回傳之間。 例如，假設我們在本教學課程，以包含每種產品的 [刪除] 按鈕，更新 Repeater。 當使用者按一下 [刪除] 按鈕 d 我們執行一些程式碼來刪除選取的產品，然後重新繫結之資料的重複項。 如果排序詳細資料不會保存在回傳中，螢幕上顯示的資料將會還原成原始的排序順序。
+在可能發生非排序相關回傳的頁面上建立可排序的 DataList 或中繼器時，必須在回傳之間記住排序運算式和方向。 例如，假設我們已更新本教學課程中的中繼器，以包含每個產品的 [刪除] 按鈕。 當使用者按一下 [刪除] 按鈕時，我們會執行一些程式碼來刪除選取的產品，然後將資料重新系結至重複項。 如果未在回傳期間保存排序詳細資料，螢幕上顯示的資料就會還原成原始排序次序。
 
-本教學課程中，DropDownList 以隱含方式儲存排序運算式和方向其檢視狀態中我們。 如果我們使用不同的排序介面其中一個使用所提供的各種不同的排序選項的說，Linkbutton d 我們要請務必記得在回傳之間的排序順序。 這可藉由在頁面的檢視狀態中，儲存排序的參數，藉由在查詢字串，或透過一些其他的狀態持續性技術，包括排序參數。
+在本教學課程中，DropDownList 會隱含地將排序運算式和方向儲存在其檢視狀態中。 如果我們使用不同的排序介面，例如，LinkButtons 提供了各種排序選項，我們就必須小心記住在回傳之間的排序次序。 做法是將排序參數儲存在頁面的 view 狀態中，方法是在 querystring 中包含 sort 參數，或透過一些其他狀態持續性技術來完成這項作業。
 
-未來的範例，在本教學課程會探討如何保存頁面的檢視狀態中的排序詳細資料。
+本教學課程中的未來範例會探索如何在頁面 s 檢視狀態中保存排序詳細資料。
 
-## <a name="step-5-adding-sorting-support-to-a-datalist-that-uses-default-paging"></a>步驟 5：加入排序支援，以使用預設的分頁 DataList
+## <a name="step-5-adding-sorting-support-to-a-datalist-that-uses-default-paging"></a>步驟5：將排序支援新增至使用預設分頁的 DataList
 
-在 [前述教學課程](paging-report-data-in-a-datalist-or-repeater-control-cs.md)我們檢查如何實作具有 DataList 的預設分頁。 可讓 s 延伸此先前的範例，以包含要排序的分頁的資料的能力。 首先開啟`SortingWithDefaultPaging.aspx`並`Paging.aspx`中的分頁`PagingSortingDataListRepeater`資料夾。 從`Paging.aspx`頁面上，按一下 [來源] 按鈕，以檢視 [s] 頁面的宣告式標記。 複製選取的文字 （請參閱 圖 8） 並將它貼到的宣告式標記`SortingWithDefaultPaging.aspx`之間`<asp:Content>`標記。
+在[先前的教學](paging-report-data-in-a-datalist-or-repeater-control-cs.md)課程中，我們探討了如何使用 DataList 來執行預設分頁。 讓 s 擴充這個先前的範例，以包含排序分頁資料的能力。 一開始先開啟 [`SortingWithDefaultPaging.aspx`]，然後 `Paging.aspx` [`PagingSortingDataListRepeater`] 資料夾中的頁面。 從 [`Paging.aspx`] 頁面上，按一下 [來源] 按鈕，以查看頁面的宣告式標記。 複製選取的文字（請參閱 [圖 8]），並將它貼到 `<asp:Content>` 標記之間的 `SortingWithDefaultPaging.aspx` 宣告式標記中。
 
-[![複寫中的宣告式標記&lt;asp: Content&gt; Paging.aspx SortingWithDefaultPaging.aspx 的標記](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image21.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image20.png)
+[![將 &lt;asp： Content&gt; 標記中的宣告式標記，從 default.aspx 分頁複製到 SortingWithDefaultPaging .aspx](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image21.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image20.png)
 
-**圖 8**:複寫中的宣告式標記`<asp:Content>`標籤`Paging.aspx`要`SortingWithDefaultPaging.aspx`([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image22.png))
+**圖 8**：將 `<asp:Content>` 標記中的宣告式標記從 `Paging.aspx` 複寫至 `SortingWithDefaultPaging.aspx` （[按一下以查看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image22.png)）
 
-複製之後宣告式標記，請將複製的方法和屬性中的`Paging.aspx`頁面上的程式碼後置類別 s 程式碼後置類別`SortingWithDefaultPaging.aspx`。 接下來，請花一點時間檢視`SortingWithDefaultPaging.aspx`瀏覽器中的頁面。 它應該會表現相同的功能和外觀`Paging.aspx`。
+複製宣告式標記之後，將 `Paging.aspx` 頁 s 程式碼後置類別中的方法和屬性，複製到 `SortingWithDefaultPaging.aspx`的程式碼後置類別。 接下來，請花一點時間查看瀏覽器中的 [`SortingWithDefaultPaging.aspx`] 頁面。 它應該會呈現與 `Paging.aspx`相同的功能和外觀。
 
-## <a name="enhancing-productsbll-to-include-a-default-paging-and-sorting-method"></a>增強 ProductsBLL 包含預設的分頁和排序方法
+## <a name="enhancing-productsbll-to-include-a-default-paging-and-sorting-method"></a>增強 ProductsBLL 以包含預設分頁和排序方法
 
-我們在上一個教學課程中建立`GetProductsAsPagedDataSource(pageIndex, pageSize)`方法中的`ProductsBLL`類別傳回`PagedDataSource`物件。 這`PagedDataSource`物件已填入*所有*的產品 (經由 BLL s`GetProducts()`方法)，但是當繫結至 DataList 對應到指定的記錄*pageIndex*並*pageSize*顯示輸入的參數。
+在上一個教學課程中，我們在傳回 `PagedDataSource` 物件的 `ProductsBLL` 類別中建立了 `GetProductsAsPagedDataSource(pageIndex, pageSize)` 方法。 這個 `PagedDataSource` 物件已填入*所有*產品（透過 BLL 的 `GetProducts()` 方法），但系結至 DataList 時，只會顯示對應于指定*pageIndex*和*pageSize*輸入參數的記錄。
 
-稍早在本教學課程中加入排序支援藉由指定的排序運算式，從 ObjectDataSource 的`Selecting`事件處理常式。 這非常適合 ObjectDataSource 時傳回的物件，可以進行排序，例如`ProductsDataTable`所傳回`GetProducts()`方法。 不過，`PagedDataSource`所傳回的物件`GetProductsAsPagedDataSource`方法不支援其內部資料來源的排序。 相反地，我們需要從傳回的結果進行排序`GetProducts()`方法*之前*我們將它放`PagedDataSource`。
+稍早在本教學課程中，我們新增了排序支援，方法是指定 ObjectDataSource s `Selecting` 事件處理常式的排序運算式。 當 ObjectDataSource 傳回可排序的物件（例如 `GetProducts()` 方法所傳回的 `ProductsDataTable`）時，這項功能就很好用。 不過，`GetProductsAsPagedDataSource` 方法所傳回的 `PagedDataSource` 物件不支援排序其內部資料來源。 相反地，我們需要先排序從 `GetProducts()` 方法傳回的結果，*然後才*將它放入 `PagedDataSource`中。
 
-若要達成此目的，建立新的方法，在`ProductsBLL`類別， `GetProductsSortedAsPagedDataSource(sortExpression, pageIndex, pageSize)`。 若要排序`ProductsDataTable`所傳回`GetProducts()`方法，指定`Sort`屬性，其預設的`DataTableView`:
+若要完成這項操作，請在 `ProductsBLL` 類別中建立新方法，`GetProductsSortedAsPagedDataSource(sortExpression, pageIndex, pageSize)`。 若要排序 `GetProducts()` 方法所傳回的 `ProductsDataTable`，請指定其預設 `DataTableView`的 `Sort` 屬性：
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample5.cs)]
 
-`GetProductsSortedAsPagedDataSource`方法只會稍微不同從`GetProductsAsPagedDataSource`在上一個教學課程中建立的方法。 特別是，`GetProductsSortedAsPagedDataSource`接受額外的輸入的參數`sortExpression`，並將指派此值可`Sort`屬性`ProductDataTable`s `DefaultView`。 幾行程式碼更新版本中，`PagedDataSource`指派給物件 s 資料來源`ProductDataTable`s `DefaultView`。
+`GetProductsSortedAsPagedDataSource` 方法與在上一個教學課程中建立的 `GetProductsAsPagedDataSource` 方法稍有不同。 特別是，`GetProductsSortedAsPagedDataSource` 會接受額外的輸入參數 `sortExpression`，並將此值指派給 `ProductDataTable` s `DefaultView`的 `Sort` 屬性。 幾行程式碼之後，`PagedDataSource` 物件 s DataSource 會被指派 `ProductDataTable` s `DefaultView`。
 
-## <a name="calling-the-getproductssortedaspageddatasource-method-and-specifying-the-value-for-the-sortexpression-input-parameter"></a>呼叫 GetProductsSortedAsPagedDataSource 方法並指定 SortExpression 輸入參數的值
+## <a name="calling-the-getproductssortedaspageddatasource-method-and-specifying-the-value-for-the-sortexpression-input-parameter"></a>呼叫 GetProductsSortedAsPagedDataSource 方法，並指定 SortExpression 輸入參數的值
 
-使用`GetProductsSortedAsPagedDataSource`方法完成下, 一個步驟是為此參數提供值。 內的 ObjectDataSource`SortingWithDefaultPaging.aspx`目前設定為呼叫`GetProductsAsPagedDataSource`方法，並透過其兩個的兩個輸入參數中傳遞`QueryStringParameters`，指定在`SelectParameters`集合。 這兩個`QueryStringParameters`表示的來源`GetProductsAsPagedDataSource`方法 s *pageIndex*並*pageSize*參數來自的 querystring 欄位`pageIndex`和`pageSize`。
+完成 `GetProductsSortedAsPagedDataSource` 方法之後，下一步就是提供此參數的值。 `SortingWithDefaultPaging.aspx` 中的 ObjectDataSource 目前設定為呼叫 `GetProductsAsPagedDataSource` 方法，並透過它在 `SelectParameters` 集合中指定的兩個 `QueryStringParameters`傳遞兩個輸入參數。 這兩個 `QueryStringParameters` 表示 `GetProductsAsPagedDataSource` 方法 s *pageIndex*和*pageSize*參數的來源來自 `pageIndex` 和 `pageSize`的 querystring 欄位。
 
-更新 ObjectDataSource s`SelectMethod`屬性，因此它會叫用新`GetProductsSortedAsPagedDataSource`方法。 然後，新增`QueryStringParameter`如此*sortExpression*輸入的參數從查詢字串欄位存取`sortExpression`。 設定`QueryStringParameter`s`DefaultValue`到 ProductName。
+更新 ObjectDataSource s `SelectMethod` 屬性，使其叫用新的 `GetProductsSortedAsPagedDataSource` 方法。 然後，加入新的 `QueryStringParameter`，以便從 querystring 欄位 `sortExpression`存取*sortExpression*輸入參數。 將 `QueryStringParameter` s `DefaultValue` 設定為 [ProductName]。
 
-這些變更之後，請 ObjectDataSource s 宣告式標記看起來應該類似：
+這些變更之後，ObjectDataSource 的宣告式標記看起來應該像這樣：
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample6.aspx)]
 
-此時，`SortingWithDefaultPaging.aspx`頁面會依字母順序排序其結果，依產品名稱 （請參閱 圖 9）。 這是因為根據預設，產品名稱的值會當做傳入`GetProductsSortedAsPagedDataSource`方法 s *sortExpression*參數。
+此時，[`SortingWithDefaultPaging.aspx`] 頁面會依產品名稱的字母順序排序其結果（請參閱 [圖 9]）。 這是因為根據預設，ProductName 的值會傳入做為 `GetProductsSortedAsPagedDataSource` 方法 s *sortExpression*參數。
 
-[![根據預設，結果會按照產品名稱](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image24.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image23.png)
+[![根據預設，結果會依 ProductName 排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image24.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image23.png)
 
-**圖 9**:根據預設，結果會依照`ProductName`([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image25.png))
+**圖 9**：根據預設，結果會依 `ProductName` 排序（[按一下以查看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image25.png)）
 
-如果您手動新增`sortExpression`這類的 querystring 欄位`SortingWithDefaultPaging.aspx?sortExpression=CategoryName`將排序結果所指定`sortExpression`。 不過，這`sortExpression`移至不同的資料頁時，查詢字串中不包含參數。 事實上，按一下下一步] 或 [最後一個頁面上的按鈕會讓我們回到`Paging.aspx`！ 此外，有 s 目前未排序的介面。 使用者可以變更分頁的資料的排序次序的唯一方法是藉由直接操作查詢字串。
+如果您手動加入 `sortExpression` querystring 欄位（例如 `SortingWithDefaultPaging.aspx?sortExpression=CategoryName`），結果就會依照指定的 `sortExpression`排序。 不過，在移至不同的資料頁面時，querystring 不會包含這個 `sortExpression` 參數。 事實上，按一下 [下一步] 或 [最後一頁] 按鈕會讓我們回到 `Paging.aspx`！ 此外，目前沒有排序介面。 使用者可以變更分頁資料之排序次序的唯一方式，就是直接操作 querystring。
 
-## <a name="creating-the-sorting-interface"></a>建立排序的介面
+## <a name="creating-the-sorting-interface"></a>建立排序介面
 
-我們必須先更新`RedirectUser`方法，將傳送至使用者`SortingWithDefaultPaging.aspx`(而非`Paging.aspx`)，以及包含`sortExpression`於 querystring 中的值。 我們也應該新增唯讀、 頁面層級名為`SortExpression`屬性。 此屬性，類似於`PageIndex`並`PageSize`先前的教學課程中建立的屬性傳回的值`sortExpression`查詢字串欄位，如果存在，而且預設值 (ProductName) 否則。
+我們必須先更新 `RedirectUser` 方法，以將使用者傳送至 `SortingWithDefaultPaging.aspx` （而不是 `Paging.aspx`），並將 `sortExpression` 值包含在查詢字串中。 我們也應新增名為 `SortExpression` 屬性的唯讀頁面層級。 這個屬性類似于在上一個教學課程中建立的 `PageIndex` 和 `PageSize` 屬性，會傳回 `sortExpression` querystring 欄位的值（如果有的話），否則會傳回預設值（ProductName）。
 
-目前`RedirectUser`方法會接受只有一個輸入的參數來顯示頁面的索引。 不過，可能是我們想要將使用者重新導向到特定的頁面，使用查詢字串中指定何種 s 以外的排序運算式的資料。 稍後我們將建立此頁面上，其中包含一系列按鈕 Web 控制項所指定的資料行排序資料的排序介面。 按一下其中一個這些按鈕時，我們想要傳入適當的排序運算式的值將使用者重新導向。 若要提供這項功能，建立兩個版本`RedirectUser`方法。 第一個應該接受頁面索引顯示，而第二個可接受的頁面索引和排序運算式。
+`RedirectUser` 的方法目前只接受單一輸入參數，即要顯示的頁面索引。 不過，有時候我們會想要使用 querystring 中指定的排序運算式，將使用者重新導向至特定的資料頁面。 我們稍後會建立此頁面的排序介面，其中包含一系列的按鈕 Web 控制項，可依指定的資料行來排序資料。 當按下其中一個按鈕時，我們會想要重新導向傳遞適當排序運算式值的使用者。 若要提供這項功能，請建立兩個版本的 `RedirectUser` 方法。 第一個只應接受要顯示的頁面索引，而第二個則接受頁面索引和排序運算式。
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample7.cs)]
 
-在本教學課程的第一個範例，我們會建立使用 dropdownlist 進行排序介面。 此範例中，讓 s 使用上述其中一個 DataList 定位排序的三個按鈕 Web 控制項`ProductName`，下列其中一個用於`CategoryName`，，另一個用於`SupplierName`。 新增三個按鈕 Web 控制項、 設定其`ID`和`Text`屬性適當地：
+在本教學課程的第一個範例中，我們使用 DropDownList 建立排序介面。 在此範例中，讓我們使用位於 DataList 一個上方的三個按鈕 Web 控制項，依 `ProductName`進行排序，一個用於 `CategoryName`，另一個用於 `SupplierName`。 新增三個按鈕 Web 控制項，適當地設定其 `ID` 和 `Text` 屬性：
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample8.aspx)]
 
-接下來，建立`Click`每個事件處理常式。 事件處理常式應該呼叫`RedirectUser`方法，以使用適當的排序運算式的第一頁已註冊的使用者。
+接下來，為每個建立一個 `Click` 事件處理常式。 事件處理常式應該呼叫 `RedirectUser` 方法，並使用適當的排序運算式將使用者傳回第一頁。
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample9.cs)]
 
-當第一次瀏覽的頁面，資料會依產品名稱依字母順序排序 （請參閱上一步 圖 9）。 按一下 下一步 按鈕，前進到第二個資料頁，然後按一下 依類別目錄按鈕的 排序。 這會傳回我們的資料，依照類別目錄名稱的第一頁 （請參閱 圖 10）。 同樣地，由供應商 按鈕按一下排序會排序從資料的第一頁的供應商提供的資料。 因為資料透過分頁，會記住排序選擇。 圖 11 顯示後依分類排序，然後逐步引導到第十三個資料頁的頁面。
+第一次造訪網頁時，資料會依產品名稱的字母順序排序（請參閱 [圖 9]）。 按 [下一步] 按鈕，前進到第二頁的資料，然後按一下 [依分類排序] 按鈕。 這會讓我們回到第一頁的資料，依類別目錄名稱排序（請參閱 [圖 10]）。 同樣地，按一下 [依供應商排序] 按鈕會根據供應商從資料的第一頁開始排序資料。 當資料經過分頁處理時，會記住排序選擇。 [圖 11] 顯示依類別排序之後的頁面，然後前進到第十三頁的資料。
 
-[![產品會依類別排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image27.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image26.png)
+[![產品依類別排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image27.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image26.png)
 
-**圖 10**:產品會依類別排序 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image28.png))
+**圖 10**：產品依類別排序（[按一下以觀看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image28.png)）
 
-[![排序運算式會記住分頁透過資料的時間](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image30.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image29.png)
+[![分頁流覽資料時，會記住排序運算式](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image30.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image29.png)
 
-**圖 11**:排序運算式會記住分頁透過資料的時間 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image31.png))
+**圖 11**：分頁流覽資料時，會記住排序運算式（[按一下以查看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image31.png)）
 
-## <a name="step-6-custom-paging-through-records-in-a-repeater"></a>步驟 6：透過記錄中的自訂分頁
+## <a name="step-6-custom-paging-through-records-in-a-repeater"></a>步驟6：透過重複項中的記錄自訂分頁
 
-DataList 範例會檢查在步驟 5 的頁面，透過使用效率不佳的預設分頁技術及其資料。 當夠大量的資料進行分頁，務必使用自訂分頁。 回到[有效率地透過大型數量的資料分頁](../paging-and-sorting/efficiently-paging-through-large-amounts-of-data-cs.md)並[排序自訂的分頁資料](../paging-and-sorting/sorting-custom-paged-data-cs.md)教學課程中，我們會檢查的 BLL 預設和自訂分頁與建立的方法之間的差異使用自訂的分頁和排序自訂分頁的資料。 特別是，這些兩個先前的教學課程中我們加入下列三種方法`ProductsBLL`類別：
+DataList 範例會使用沒有效率的預設分頁技術，在步驟5頁面中檢查其資料。 當逐頁查看大量資料時，請務必使用自訂分頁。 回到有效率的[分頁處理大量資料](../paging-and-sorting/efficiently-paging-through-large-amounts-of-data-cs.md)，並[排序自訂的分頁資料](../paging-and-sorting/sorting-custom-paged-data-cs.md)教學課程，我們已檢查了在使用自訂分頁和排序自訂分頁資料的 BLL 中，預設和自訂分頁與已建立方法之間的差異。 特別是在這兩個先前的教學課程中，我們將下列三種方法新增至 `ProductsBLL` 類別：
 
-- `GetProductsPaged(startRowIndex, maximumRows)` 傳回開始記錄的特定子集*startRowIndex*並不超過*maximumRows*。
-- `GetProductsPagedAndSorted(sortExpression, startRowIndex, maximumRows)` 傳回排序所指定的記錄的特定子集*sortExpression*輸入的參數。
-- `TotalNumberOfProducts()` 提供在中的記錄總數`Products`資料庫資料表。
+- `GetProductsPaged(startRowIndex, maximumRows)` 會傳回從*startRowIndex*開始且不超過*maximumRows*的特定記錄子集。
+- `GetProductsPagedAndSorted(sortExpression, startRowIndex, maximumRows)` 會傳回依指定的*sortExpression*輸入參數排序之記錄的特定子集。
+- `TotalNumberOfProducts()` 提供 `Products` 資料庫資料表中的記錄總數。
 
-這些方法可用來有效率地頁面上，並使用 DataList 或 Repeater 控制項的資料進行排序。 為了說明這點，讓開始使用自訂的分頁支援; 建立 Repeater 控制項的 s然後，我們將新增排序功能。
+這些方法可用來有效率地使用 DataList 或重複項控制項來進行資料的分頁和排序。 為了說明這一點，讓我們從建立具有自訂分頁支援的中繼器控制項開始著手;接著，我們會新增排序功能。
 
-開啟`SortingWithCustomPaging.aspx`頁面中`PagingSortingDataListRepeater`資料夾，並將重複項新增至頁面上，設定其`ID`屬性設`Products`。 從 Repeater s 智慧標籤，建立名為新 ObjectDataSource `ProductsDataSource`。 設定以選取資料的來源`ProductsBLL`類別的`GetProductsPaged`方法。
+開啟 [`PagingSortingDataListRepeater`] 資料夾中的 [`SortingWithCustomPaging.aspx`] 頁面，並在頁面中新增中繼器，將其 `ID` 屬性設定為 [`Products`]。 從 [中繼器] 智慧標籤中，建立名為 `ProductsDataSource`的新 ObjectDataSource。 將它設定為從 `ProductsBLL` 類別的 `GetProductsPaged` 方法中選取其資料。
 
-[![設定為使用 ProductsBLL 類別的 GetProductsPaged 方法的 ObjectDataSource](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image33.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image32.png)
+[![將 ObjectDataSource 設定為使用 ProductsBLL 類別的 GetProductsPaged 方法](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image33.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image32.png)
 
-**圖 12**:設定要使用 ObjectDataSource`ProductsBLL`類別 s`GetProductsPaged`方法 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image34.png))
+**圖 12**：設定 ObjectDataSource 使用 `ProductsBLL` 類別的 `GetProductsPaged` 方法（[按一下以查看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image34.png)）
 
-設定下拉式清單中更新、 插入和刪除為 [（無）] 索引標籤，然後按 [下一步] 按鈕。 設定資料來源精靈現在會提示輸入的來源`GetProductsPaged`方法 s *startRowIndex*並*maximumRows*輸入參數。 實際上，會忽略這些輸入的參數。 相反地， *startRowIndex*並*maximumRows*的值將會在傳遞給`Arguments`中之 ObjectDataSource 的屬性`Selecting`事件處理常式，就像我們所指定的方式*sortExpression*在此教學課程 s 第一個示範。 因此，保留參數來源下拉式清單，在精靈中設定為 None。
+將 [更新]、[插入] 和 [刪除] 索引標籤中的下拉式清單設定為 [（無）]，然後按 [下一步] 按鈕。 [設定資料來源] wizard 現在會提示您輸入 `GetProductsPaged` 方法*startRowIndex*和*maximumRows*輸入參數的來源。 實際上，這些輸入參數會被忽略。 相反地， *startRowIndex*和*maximumRows*值會透過 ObjectDataSource s `Selecting` 事件處理常式中的 `Arguments` 屬性傳入，就像我們在本教學課程中指定*sortExpression*的第一個示範一樣。 因此，請將 wizard 中的 [參數來源] 下拉式清單保留為 [無]。
 
-[![保留參數的 [來源] 設定為 None](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image36.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image35.png)
+[![保持參數來源設定為 [無]](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image36.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image35.png)
 
-**圖 13**:將參數的來源設定為 None ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image37.png))
+**圖 13**：讓 [參數來源] 設定為 [無] （[按一下以查看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image37.png)）
 
 > [!NOTE]
-> 請勿*未*設定 ObjectDataSource s`EnablePaging`屬性設`true`。 這會自動包含它自己的 ObjectDataSource *startRowIndex*並*maximumRows*參數`SelectMethod`s 現有的參數清單。 `EnablePaging`屬性時，繫結自訂分頁至 GridView、 DetailsView 或 FormView 控制項的資料，因為這些控制項預期從 ObjectDataSource s 特定行為僅適用於當`EnablePaging`屬性是`true`。 因為我們必須以手動方式新增 DataList 與重複項分頁支援，保留這個屬性設定為`false`（預設值），因為我們將直接在我們的 ASP.NET 頁面內試吃中所需的功能。
+> 請勿將 ObjectDataSource s `EnablePaging`*屬性設為*`true`。 這會導致 ObjectDataSource 自動將自己的*startRowIndex*和*maximumRows*參數包含在 `SelectMethod` 的現有參數清單中。 將自訂分頁資料系結至 GridView、DetailsView 或 FormView 控制項時，`EnablePaging` 屬性會很有用，因為這些控制項會預期只有在 `true``EnablePaging` 屬性時，才可以使用該類型的特定行為。 因為我們必須手動新增 DataList 和中繼器的分頁支援，所以將此屬性設定為 `false` （預設值），因為我們會直接在 ASP.NET 網頁中製作所需的功能。
 
-最後，定義 Repeater 的`ItemTemplate`以便顯示 s 產品名稱、 類別和供應商。 這些變更之後，請重複項與 ObjectDataSource s 宣告式語法看起來應該如下所示：
+最後，定義中繼器 `ItemTemplate`，以便顯示產品的名稱、類別和供應商。 這些變更之後，中繼器和 ObjectDataSource 的宣告式語法看起來應該如下所示：
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample10.aspx)]
 
-請花一點時間瀏覽的頁面，透過瀏覽器，並記下會傳回任何記錄。 這是因為我們尚未以指定 ve *startRowIndex*並*maximumRows*參數值; 因此，值為 0 會傳入兩個。 若要指定這些值，建立事件處理常式 ObjectDataSource s`Selecting`事件及設定這些參數值以程式設計方式將值硬式編碼的 0 到 5，分別：
+請花點時間透過瀏覽器造訪頁面，並注意不會傳回任何記錄。 這是因為我們尚未指定*startRowIndex*和*maximumRows*參數值;因此，會針對兩者傳入0的值。 若要指定這些值，請建立 ObjectDataSource s `Selecting` 事件的事件處理常式，並以程式設計方式將這些參數值設定為0和5的硬式編碼值：
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample11.cs)]
 
-透過這項變更，頁面上，當透過瀏覽器中，檢視會顯示前五個產品。
+透過這種變更，頁面在瀏覽器中查看時，會顯示前五個產品。
 
-[![會顯示前五筆記錄](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image39.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image38.png)
+[顯示前五筆記錄 ![](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image39.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image38.png)
 
-**圖 14**:會顯示前五筆記錄 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image40.png))
+**圖 14**：顯示前五筆記錄（[按一下以觀看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image40.png)）
 
 > [!NOTE]
-> [圖 14] 中所列出之產品剛好排序依產品名稱，因為`GetProductsPaged`會執行有效率的自訂分頁查詢的預存程序來排序結果所`ProductName`。
+> [圖 14] 中所列的產品是依產品名稱排序，因為執行有效率的自訂分頁查詢的 `GetProductsPaged` 預存程式，會 `ProductName`來依排序結果。
 
-若要讓使用者逐步進行頁面，我們要追蹤的起始資料列索引和最大的資料列，並記得在回傳之間的這些值。 預設分頁範例中使用查詢字串欄位來保存這些值;此示範中，讓保存這項資訊頁面的檢視狀態中的 s。 建立下列兩個屬性：
+為了讓使用者可以逐步執行頁面，我們必須追蹤開始列索引和最大資料列，並在回傳之間記住這些值。 在預設分頁範例中，我們使用 querystring 欄位來保存這些值;在此示範中，讓我們將這項資訊保存在頁面 s 檢視狀態。 建立下列兩個屬性：
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample12.cs)]
 
-接下來，更新選取的事件處理常式中的程式碼，使其使用`StartRowIndex`和`MaximumRows`屬性，而不是 0 到 5 的硬式編碼值：
+接下來，更新選取事件處理常式中的程式碼，使其使用 `StartRowIndex` 並 `MaximumRows` 屬性，而不是硬式編碼值0和5：
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample13.cs)]
 
-此時我們網頁仍會顯示前五個的記錄。 不過，具有下列屬性的位置，我們準備好建立我們的分頁介面。
+此時，我們的頁面仍然只會顯示前五筆記錄。 不過，在這些屬性準備就緒之後，我們就可以開始建立分頁介面。
 
 ## <a name="adding-the-paging-interface"></a>新增分頁介面
 
-可讓的使用相同的第一個、 上一步，接下來，最後一個分頁介面用於預設分頁範例中，包括在檢視會顯示哪些資料頁的控制項的標籤 Web 和多少的總頁數存在。 新增四個按鈕 Web 控制項和 Repeater 下方的標籤。
+讓我們使用預設分頁範例中使用的相同第一個、上一個、下一個、最後一個分頁介面，包括標籤 Web 控制項，可顯示要查看的資料頁，以及有多少總頁數。 在中繼器底下新增四個按鈕 Web 控制項和標籤。
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample14.aspx)]
 
-接下來，建立`Click`的四個按鈕的事件處理常式。 按一下其中一個按鈕時，我們需要更新`StartRowIndex`和重新繫結之資料的重複項。 [名字]、 [上一個] 和 [下一步] 按鈕的程式碼相當簡單，但最後一個按鈕執行我們如何判斷資料的最後一頁開始的資料列索引嗎？ 若要計算此索引，以及能夠判斷是否應該啟用下一步和最後一個按鈕我們需要知道總共的多少筆記錄會透過已分頁。 我們可以呼叫來判斷這`ProductsBLL`類別的`TotalNumberOfProducts()`方法。 建立名為唯讀、 頁面層級屬性，可讓 s`TotalRowCount`傳回的結果`TotalNumberOfProducts()`方法：
+接下來，建立四個按鈕 `Click` 事件處理常式。 當按下其中一個按鈕時，我們需要更新 `StartRowIndex`，並將資料重新系結至中繼器。 [第一個]、[上一個] 和 [下一步] 按鈕的程式碼很簡單，但最後一個按鈕如何判斷最後一頁數據的開始列索引？ 若要計算此索引，以及判斷是否應該啟用 [下一步] 和 [最後一個] 按鈕，我們需要知道總共有多少筆記錄正在進行分頁。 我們可以藉由呼叫 `ProductsBLL` 類別的 `TotalNumberOfProducts()` 方法來判斷這一點。 讓 s 建立一個唯讀的頁面層級屬性，名為 `TotalRowCount`，以傳回 `TotalNumberOfProducts()` 方法的結果：
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample15.cs)]
 
-與這個屬性，我們現在可以判斷的最後一個頁面的起始資料列索引。 具體來說，它 s 整數結果的`TotalRowCount`減 1 除以`MaximumRows`乘以`MaximumRows`。 現在我們可以撰寫`Click`四個分頁介面按鈕的事件處理常式：
+我們現在可以使用這個屬性來判斷最後一頁的開始資料列索引。 具體來說，它是 `TotalRowCount` 的整數結果減去1除以 `MaximumRows`，乘以 `MaximumRows`。 我們現在可以為四個分頁介面按鈕撰寫 `Click` 事件處理常式：
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample16.cs)]
 
-最後，我們需要時檢視資料和 下一頁 和 最後一個 按鈕的第一頁，檢視的最後一頁時，停用分頁介面中的第一個 和 上一頁 按鈕。 若要這麼做，請將下列程式碼新增至 ObjectDataSource 的`Selecting`事件處理常式：
+最後，當您在流覽最後一頁時，必須停用分頁介面中的第一個和上一個按鈕，而在觀看最後一頁時，則是 [下一個] 和 [最後一個] 按鈕。 若要完成這項操作，請將下列程式碼新增至 ObjectDataSource s `Selecting` 事件處理常式：
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample17.cs)]
 
-新增這些之後`Click`事件處理常式和程式碼，以啟用或停用介面分頁的項目已根據目前的起始資料列索引，測試網頁瀏覽器中。 如 [圖 15 所示，當第一次瀏覽頁面的第一個和上一步] 按鈕將會停用。 按一下 [下一步] 顯示的資料，第二個頁面，而按一下最後一個會顯示最後一頁 （請參閱圖 16，17）。 檢視資料的最後一頁時就會停用 下一步 和 最後一個按鈕。
+加入這些 `Click` 事件處理常式和程式碼，以根據目前的開始資料列索引來啟用或停用分頁介面元素之後，請在瀏覽器中測試頁面。 如 [圖 15] 所示，第一次造訪網頁時，會停用第一個和上一個按鈕。 按 [下一步] 會顯示第二頁的資料，而按一下 [上次] 則會顯示最後一頁（請參閱圖16和17）。 當觀看最後一頁的資料時，會停用 [下一步] 和 [最後一個] 按鈕。
 
-[![[上一步] 和 [最後一個按鈕就會停用檢視第一個頁面的產品](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image42.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image41.png)
+[![在觀看產品的第一頁時，已停用前一個和最後一個按鈕](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image42.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image41.png)
 
-**圖 15**:[上一步] 和 [最後一個按鈕就會停用檢視第一個頁面的產品 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image43.png))
+**圖 15**：觀看產品的第一頁時，已停用上一個和最後一個按鈕（[按一下以觀看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image43.png)）
 
-[![第二個頁面的產品都會顯示](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image45.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image44.png)
+[顯示產品的第二頁 ![](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image45.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image44.png)
 
-**圖 16**:第二個頁面的產品都會顯示 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image46.png))
+**圖 16**：顯示產品的第二頁（[按一下以觀看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image46.png)）
 
-[![按一下最後一個顯示資料的最後一頁](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image48.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image47.png)
+[![按一下 [上一步] 會顯示最後一頁的資料](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image48.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image47.png)
 
-**圖 17**:按一下最後一個會顯示最後的頁面上的資料 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image49.png))
+**圖 17**：按一下 [上一步] 會顯示最後一頁的資料（[按一下以查看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image49.png)）
 
-## <a name="step-7-including-sorting-support-with-the-custom-paged-repeater"></a>步驟 7：包括排序支援，以自訂分頁 Repeater
+## <a name="step-7-including-sorting-support-with-the-custom-paged-repeater"></a>步驟7：包含使用自訂分頁中繼器的排序支援
 
-既然已實作自訂分頁，我們準備好要包含排序支援。 `ProductsBLL`類別 s`GetProductsPagedAndSorted`方法具有相同*startRowIndex*並*maximumRows*輸入做為參數`GetProductsPaged`，但允許其他*sortExpression*輸入的參數。 若要使用`GetProductsPagedAndSorted`方法從`SortingWithCustomPaging.aspx`，我們需要執行下列步驟：
+既然自訂分頁已經完成，我們就準備好加入排序支援。 `ProductsBLL` 類別的 `GetProductsPagedAndSorted` 方法與 `GetProductsPaged`具有相同的*startRowIndex*和*maximumRows*輸入參數，但允許額外的*sortExpression*輸入參數。 若要使用 `SortingWithCustomPaging.aspx`的 `GetProductsPagedAndSorted` 方法，我們需要執行下列步驟：
 
-1. 變更 ObjectDataSource s`SelectMethod`屬性從`GetProductsPaged`至`GetProductsPagedAndSorted`。
-2. 新增*sortExpression* `Parameter`物件的 ObjectDataSource s`SelectParameters`集合。
-3. 建立私用的頁面層級`SortExpression`在透過 [s] 頁面檢視狀態的回傳之間保存其值的屬性。
-4. 更新 ObjectDataSource s`Selecting`事件處理常式來指派 ObjectDataSource s *sortExpression*參數的值的頁面層級`SortExpression`屬性。
-5. 建立排序的介面。
+1. 將 [ObjectDataSource s `SelectMethod`] 屬性從 `GetProductsPaged` 變更為 [`GetProductsPagedAndSorted`]。
+2. 將*sortExpression* `Parameter` 物件新增至 ObjectDataSource s `SelectParameters` 集合。
+3. 建立私用頁面層級 `SortExpression` 屬性，以透過頁面 s 檢視狀態在回傳期間保存其值。
+4. 更新 ObjectDataSource s `Selecting` 事件處理常式，將頁面層級 `SortExpression` 屬性的值指派給 ObjectDataSource s *sortExpression*參數。
+5. 建立排序介面。
 
-藉由更新 ObjectDataSource s 開始`SelectMethod`屬性，並新增*sortExpression* `Parameter`。 請確定*sortExpression* `Parameter` s`Type`屬性設定為`String`。 完成前兩項工作之後, ObjectDataSource s 宣告式標記看起來應該如下所示：
+從更新 ObjectDataSource s `SelectMethod` 屬性，並新增*sortExpression* `Parameter`開始。 請確定 [ *sortExpression* `Parameter` s `Type`] 屬性已設定為 [`String`]。 完成前兩個工作之後，ObjectDataSource 的宣告式標記看起來應該如下所示：
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample18.aspx)]
 
-接下來，我們需要的頁面層級`SortExpression`其值序列化至檢視狀態的屬性。 如果尚未設定任何排序運算式的值，使用產品名稱做為預設值：
+接下來，我們需要頁面層級 `SortExpression` 屬性，其值會序列化為 view 狀態。 如果未設定排序運算式值，請使用 ProductName 做為預設值：
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample19.cs)]
 
-ObjectDataSource 會叫用之前`GetProductsPagedAndSorted`方法，我們需要設定*sortExpression* `Parameter`的值`SortExpression`屬性。 在 `Selecting`事件處理常式，加入下列程式碼行：
+在 ObjectDataSource 叫用 `GetProductsPagedAndSorted` 方法之前，我們需要將*sortExpression* `Parameter` 設定為 `SortExpression` 屬性的值。 在 `Selecting` 事件處理常式中，新增下列程式程式碼：
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample20.cs)]
 
-所有剩下就是實作排序的介面。 如同我們在上一個範例，可讓 s 已實作 依產品名稱、 類別或供應商的 使用三個按鈕 Web 控制項可讓使用者排序結果的排序介面。
+剩下的就是執行排序介面。 就像我們在上一個範例中所做的一樣，讓我們使用三個按鈕 Web 控制項來實作為排序介面，讓使用者依產品名稱、類別或供應商來排序結果。
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample21.aspx)]
 
-建立`Click`這三個按鈕控制項的事件處理常式。 在事件處理常式中，重設`StartRowIndex`設成 0，設定`SortExpression`適當的值，並重新繫結至 Repeater 資料：
+建立這三個按鈕控制項的 `Click` 事件處理常式。 在事件處理常式中，將 `StartRowIndex` 重設為0，將 `SortExpression` 設定為適當的值，並將資料重新系結至中繼器：
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample22.cs)]
 
-S 就是這麼簡單 ！ 儘管有幾個步驟，以取得自訂的分頁和排序實作，步驟都非常類似於所需的預設分頁。 圖 18.顯示產品，檢視依類別排序的資料的最後一頁時。
+這樣就大功告成了！ 雖然有幾個步驟可取得自訂分頁和排序，但這些步驟與預設分頁所需的步驟非常類似。 [圖 18] 顯示依類別目錄排序時，觀看最後一頁數據的產品。
 
-[![顯示資料的最後一個頁面上，依類別排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image51.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image50.png)
+[會顯示 ![最後一頁的資料，依分類排序](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image51.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image50.png)
 
-**圖 18**:顯示資料的最後一個頁面上，依類別排序 ([按一下以檢視完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image52.png))
+**圖 18**：顯示最後一頁的資料，依分類排序（[按一下以觀看完整大小的影像](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image52.png)）
 
 > [!NOTE]
-> 在上一個範例中，請依供應商供應商名稱當做排序運算式排序時。 不過，自訂的分頁實作中，我們需要使用公司名稱。 這是因為預存程序負責實作自訂分頁`GetProductsPagedAndSorted`傳遞到排序運算式`ROW_NUMBER()`關鍵字，`ROW_NUMBER()`關鍵字需要實際的資料行名稱，而不是別名。 因此，我們必須使用`CompanyName`(在資料行名稱`Suppliers`資料表) 而不是使用中的別名`SELECT`查詢 (`SupplierName`) 的排序運算式。
+> 在先前的範例中，由供應商廠商進行排序時，會使用做為排序運算式。 不過，針對自訂分頁執行，我們需要使用 [公司名稱]。 這是因為負責執行自訂分頁 `GetProductsPagedAndSorted` 將排序運算式傳遞至 `ROW_NUMBER()` 關鍵字的預存程式，`ROW_NUMBER()` 關鍵字需要實際的資料行名稱，而不是別名。 因此，我們必須使用 `CompanyName` （`Suppliers` 資料表中的資料行名稱），而不是排序運算式的 `SELECT` 查詢（`SupplierName`）中所使用的別名。
 
 ## <a name="summary"></a>總結
 
-既不 DataList 或 Repeater 提供內建的排序支援，但可加入一些程式碼和自訂的排序介面，這類功能。 在實作排序，但不是會進行分頁時，可以透過指定的排序運算式`DataSourceSelectArguments`物件傳遞到 ObjectDataSource 的`Select`方法。 這`DataSourceSelectArguments`物件 s`SortExpression`屬性中之 ObjectDataSource 指派`Selecting`事件處理常式。
+DataList 和中繼器都不提供內建的排序支援，但有一些程式碼和自訂排序介面，因此可以加入這類功能。 在執行排序（但不分頁）時，可以透過傳遞至 ObjectDataSource s `Select` 方法的 `DataSourceSelectArguments` 物件來指定排序運算式。 這個 `DataSourceSelectArguments` 物件 `SortExpression` 屬性可以在 ObjectDataSource s `Selecting` 事件處理常式中指派。
 
-若要將排序功能新增至 DataList 或 Repeater 已提供分頁支援，最簡單的方法是自訂商務邏輯層，以納入方法可接受的排序運算式。 這項資訊可以傳入透過 ObjectDataSource s 中的參數`SelectParameters`。
+若要將排序功能加入至已提供分頁支援的 DataList 或重複項，最簡單的方法是自訂商務邏輯層，以包含接受排序運算式的方法。 這項資訊接著可以透過 ObjectDataSource s `SelectParameters`中的參數傳遞。
 
-本教學課程中完成我們的分頁和排序的 DataList 與重複項控制項的檢查。 我們的下一個和最後一個教學課程將探討如何將按鈕 Web 控制項新增至 DataList 與重複項的 「 s 」 範本，以提供每個項目為基礎的一些自訂的使用者啟動的功能。
+本教學課程使用 DataList 和重複項控制項，完成分頁和排序的檢查。 我們的下一個和最後一個教學課程將探討如何將按鈕 Web 控制項新增至 DataList 和 Repeater 的範本，以便為每個專案提供一些自訂、以使用者為基礎的功能。
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ## <a name="about-the-author"></a>關於作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七個 ASP 書籍和的創辦人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年從事 Microsoft Web 技術工作。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是[ *Sams 教導您自己 ASP.NET 2.0 在 24 小時內*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在觸達[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或透過他的部落格，這位於 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，自1998起，有七個 ASP/ASP. NET 書籍和創辦人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是[*在24小時內讓自己的 ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在mitchell@4GuysFromRolla.com觸達[。](mailto:mitchell@4GuysFromRolla.com) 或者透過他的 blog，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 ## <a name="special-thanks-to"></a>特別感謝
 
-本教學課程系列是由許多實用的檢閱者檢閱。 本教學課程中的潛在客戶檢閱者為 David Suru。 有興趣檢閱我即將推出的 MSDN 文章嗎？ 如果是這樣，psychic 在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
+本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者是 David Suru。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [上一頁](paging-report-data-in-a-datalist-or-repeater-control-cs.md)

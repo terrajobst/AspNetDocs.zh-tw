@@ -1,61 +1,61 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-at-the-same-time-cs
-title: 執行數個動畫在相同的時間 (C#) |Microsoft Docs
+title: 同時執行數個動畫（C#） |Microsoft Docs
 author: wenz
-description: 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 它可讓執行 severa...
+description: ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。 它允許執行 severa 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 219149e1-3ee9-4b79-8fe4-7433f6b7d15b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-at-the-same-time-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f6ca48ff8bc4be982e0eff55d8d9c3385176897b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: fe71feccbcbc4ee8e9cdc09d6220de6a53dd2d2b
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108237"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74575369"
 ---
-# <a name="executing-several-animations-at-the-same-time-c"></a>執行數個動畫在相同的時間 (C#)
+# <a name="executing-several-animations-at-the-same-time-c"></a>同時執行數個動畫（C#）
 
-藉由[Christian Wenz](https://github.com/wenz)
+依[Christian Wenz](https://github.com/wenz)
 
-[下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation2.cs.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation2CS.pdf)
+[下載程式代碼](https://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation2.cs.zip)或[下載 PDF](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation2CS.pdf)
 
-> 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 它可讓以平行方式執行數個動畫。
+> ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。 它允許以平行方式執行數個動畫。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 它可讓以平行方式執行數個動畫。
+ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。 它允許以平行方式執行數個動畫。
 
 ## <a name="steps"></a>步驟
 
-首先，包括`ScriptManager`單元頁面; 然後，ASP.NET AJAX 程式庫載入，因此能夠使用控制項工具組：
+首先，在頁面中包含 `ScriptManager`;然後，會載入 ASP.NET AJAX 程式庫，讓您能夠使用控制項工具組：
 
 [!code-aspx[Main](executing-several-animations-at-the-same-time-cs/samples/sample1.aspx)]
 
-動畫將會套用至面板的文字看起來像這樣：
+動畫將會套用至文字的面板，如下所示：
 
 [!code-aspx[Main](executing-several-animations-at-the-same-time-cs/samples/sample2.aspx)]
 
-在 [面板] 中相關聯的 CSS 類別，定義好用的背景色彩和也設定面板的固定的寬度：
+在面板的相關聯 CSS 類別中，定義良好的背景色彩，同時設定面板的固定寬度：
 
 [!code-css[Main](executing-several-animations-at-the-same-time-cs/samples/sample3.css)]
 
-然後，新增`AnimationExtender` 頁面上，以提供`ID`，則`TargetControlID`屬性和必要`runat="server"`:
+然後，將 `AnimationExtender` 新增至頁面，並提供 `ID`、`TargetControlID` 屬性和必要 `runat="server"`：
 
 [!code-aspx[Main](executing-several-animations-at-the-same-time-cs/samples/sample4.aspx)]
 
-內`<Animations>`節點，請使用`<OnLoad>`頁面完全載入後，執行動畫。 一般而言，`<OnLoad>`只接受一個動畫。 動畫架構可讓您加入到另一種使用數個動畫`<Parallel>`項目。 中的所有動畫`<Parallel>`會執行一次。
+在 [`<Animations>`] 節點內，一旦頁面完全載入，請使用 `<OnLoad>` 來執行動畫。 一般來說，`<OnLoad>` 只接受一個動畫。 動畫架構可讓您使用 `<Parallel>` 元素，將數個動畫聯結至其中一個。 `<Parallel>` 內的所有動畫都是在同一時間執行。
 
-以下是可能的標記如`AnimationExtender`控制項、 淡出，以及調整面板大小在相同的時間：
+以下是 `AnimationExtender` 控制項的可能標記、淡出並同時調整面板大小：
 
 [!code-aspx[Main](executing-several-animations-at-the-same-time-cs/samples/sample5.aspx)]
 
-和確實： 當您執行此指令碼，面板會顯示，然後調整大小 （多個增加三倍其寬度和減半來計算其高度） 和淡出，在相同的時間。
+事實上：當您執行此腳本時，會顯示面板，然後調整大小（大於增加三倍其寬度並減半其高度）並同時淡出。
 
-[![面板淡出，調整大小 （包括其內容，因為瀏覽器的轉譯引擎）](executing-several-animations-at-the-same-time-cs/_static/image2.png)](executing-several-animations-at-the-same-time-cs/_static/image1.png)
+[![面板會淡出並根據瀏覽器的轉譯引擎調整大小（包括其內容）](executing-several-animations-at-the-same-time-cs/_static/image2.png)](executing-several-animations-at-the-same-time-cs/_static/image1.png)
 
-面板淡出，調整大小 （包括其內容，因為瀏覽器的轉譯引擎） ([按一下以檢視完整大小的影像](executing-several-animations-at-the-same-time-cs/_static/image3.png))
+由於瀏覽器的轉譯引擎，面板會淡出並調整大小（包括其內容）（請[按一下以觀看完整大小的影像](executing-several-animations-at-the-same-time-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
 > [上一頁](adding-animation-to-a-control-cs.md)

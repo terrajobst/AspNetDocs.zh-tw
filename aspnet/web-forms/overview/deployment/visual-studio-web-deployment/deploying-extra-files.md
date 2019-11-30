@@ -1,104 +1,104 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
-title: 使用 Visual Studio 的 ASP.NET Web 部署：部署其他檔案 |Microsoft Docs
+title: 使用 Visual Studio ASP.NET Web 部署：部署額外的檔案 |Microsoft Docs
 author: tdykstra
-description: 本系列教學課程會示範如何部署 （發行） 的 ASP.NET web 應用程式至 Azure App Service Web Apps 或協力廠商裝載提供者，使用...
+description: 本教學課程系列將示範如何透過互動，將 ASP.NET web 應用程式部署（發佈）至 Azure App Service Web Apps 或協力廠商主機服務提供者。
 ms.author: riande
 ms.date: 03/23/2015
 ms.assetid: 1cd91055-84bc-42c6-9d80-646f41429d4d
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
 msc.type: authoredcontent
-ms.openlocfilehash: 03afcf91b79bc7d7d294eae3dc43a8f780d94e20
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: eaa3141c22980f0c816e2f33b5597ac9fe69c23c
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131910"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74594899"
 ---
-# <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>使用 Visual Studio 的 ASP.NET Web 部署：部署其他檔案
+# <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>使用 Visual Studio ASP.NET Web 部署：部署額外的檔案
 
-藉由[Tom Dykstra](https://github.com/tdykstra)
+由[Tom 作者: dykstra](https://github.com/tdykstra)
 
-[下載入門專案](http://go.microsoft.com/fwlink/p/?LinkId=282627)
+[下載入門專案](https://go.microsoft.com/fwlink/p/?LinkId=282627)
 
-> 本系列教學課程會示範如何部署 （發行） 的 ASP.NET web 應用程式至 Azure App Service Web Apps 或協力廠商裝載提供者，使用 Visual Studio 2012 或 Visual Studio 2010。 這個系列的相關資訊，請參閱[系列的第一個教學課程](introduction.md)。
+> 本教學課程系列說明如何使用 Visual Studio 2012 或 Visual Studio 2010，將 ASP.NET web 應用程式部署（發佈）至 Azure App Service Web Apps 或協力廠商裝載提供者。 如需有關數列的詳細資訊，請參閱[本系列的第一個教學](introduction.md)課程。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-本教學課程會示範如何擴充 Visual Studio web 發行管線，以在部署期間執行額外的工作。 工作是將複製至目的地網站的 [專案] 資料夾中所沒有的額外檔案。
+本教學課程示範如何擴充 Visual Studio web 發佈管線，以在部署期間執行其他工作。 工作是將不在專案資料夾中的額外檔案複製到目的地網站。
 
-在本教學課程中，您將會複製一個額外的檔案： *robots.txt*。 您想要將此檔案部署至預備環境，而非生產環境。 在 [到生產環境部署](deploying-to-production.md)教學課程中，您加入專案中的這個檔案，並設定生產發行設定檔，以將其排除。 在本教學課程中，您會看到使用替代方法來處理這種情況，其中一個是適用於任何您想要部署，但不想要包含在專案中的檔案。
+在本教學課程中，您將複製一個額外的檔案： [*機器人 .txt*]。 您想要將此檔案部署至預備環境，而不是實際執行。 在[部署至生產](deploying-to-production.md)教學課程中，您已將此檔案新增至專案，並已設定生產發行設定檔將其排除。 在本教學課程中，您將會看到處理這種情況的替代方法，其中一種方式適用于您想要部署但不想包含在專案中的任何檔案。
 
-## <a name="move-the-robotstxt-file"></a>移動 robots.txt 檔案
+## <a name="move-the-robotstxt-file"></a>移動機器人 .txt 檔案
 
-若要準備不同的處理方法*robots.txt*，在本教學課程的這一節中您將檔案移至資料夾未包含在專案中，您刪除*robots.txt*從預備環境環境。 必須從預備環境，讓您可以驗證您的檔案部署到該環境的新方法正常運作中刪除檔案。
+若要準備其他處理*機器人*的方法，請在本教學課程的這一節中，將檔案移至未包含在專案中的資料夾，並從預備環境中刪除的 [*機器人]。* 您必須從預備環境中刪除檔案，如此一來，您就可以確認將檔案部署至該環境的新方法是否正常運作。
 
-1. 在 [**方案總管] 中**，以滑鼠右鍵按一下*robots.txt*檔案，然後按一下**從專案移除**。
-2. 使用 Windows 檔案總管，在方案資料夾中建立新的資料夾，並將它命名*ExtraFiles*。
-3. 移動*robots.txt*檔案*ContosoUniversity*專案資料夾*ExtraFiles*資料夾。
+1. 在**方案總管**中，以滑鼠右鍵按一下 [*機器人 .txt* ] 檔案，然後按一下 [**從專案排除**]。
+2. 使用 Windows 檔案瀏覽器，在方案資料夾中建立新資料夾，並將其命名為*ExtraFiles*。
+3. 將*ContosoUniversity*專案資料夾中的*機器人 .txt*檔案移至*ExtraFiles*資料夾。
 
     ![ExtraFiles 資料夾](deploying-extra-files/_static/image1.png)
-4. 使用您的 FTP 工具，刪除*robots.txt*從預備網站的檔案。
+4. 使用您的 FTP 工具，從預備網站刪除*機器人 .txt*檔案。
 
-    或者，您可以選取**移除目的地上的其他檔案**下方**檔案發行選項**上**設定**的預備發行設定檔 索引標籤和重新發佈至預備環境。
+    或者，您可以在預備發行設定檔的 [**設定**] 索引標籤上，選取 [檔案**發佈選項**] 下的 [**移除目的地的其他**檔案]，然後重新發佈至預備環境。
 
 ## <a name="update-the-publish-profile-file"></a>更新發行設定檔
 
-您只需要*robots.txt*在預備環境，以便在預備唯一您需要更新才能將其部署的發行設定檔。
+在預備環境中，您只需要有*機器人 .txt* ，因此，您需要更新才能部署的發行設定檔是預備環境。
 
-1. 在 Visual Studio 中開啟*Staging.pubxml*。
-2. 結尾的檔案，在關閉前`</Project>`標記中加入下列標記：
+1. 在 Visual Studio 中，開啟 *.pubxml*。
+2. 在檔案結尾的結束 `</Project>` 標記之前，新增下列標記：
 
     [!code-xml[Main](deploying-extra-files/samples/sample1.xml)]
 
-    此程式碼會建立新*目標*，將會收集其他一起部署的檔案。 目標組成一或更多的工作將執行 MSBuild，根據您指定的條件。
+    此程式碼會建立新的*目標*，以收集要部署的其他檔案。 目標是由一或多個工作所組成，MSBuild 將根據您指定的條件來執行。
 
-    `Include`屬性會指定在其中尋找檔案的資料夾是*ExtraFiles*，位於專案資料夾相同層級。 MSBuild 會從該資料夾，然後以遞迴方式從 （double 的星號會指定遞迴子資料夾） 的任何子資料夾中收集的所有檔案。 此程式碼您可以將放入多個檔案和檔案內的子資料夾*ExtraFiles*資料夾中，與所有部署。
+    `Include` 屬性指定要在其中尋找檔案的資料夾是*ExtraFiles*，位於與專案資料夾相同的層級。 MSBuild 會收集該資料夾中的所有檔案，並從任何子資料夾以遞迴方式進行（雙星號指定遞迴子資料夾）。 使用此程式碼，您可以將多個檔案和檔案放在*ExtraFiles*資料夾內的子資料夾中，而全部都將會部署。
 
-    `DestinationRelativePath`項目會指定，檔案和資料夾，應該會複製到目的地網站上，在相同的檔案及資料夾結構的根資料夾中找到*ExtraFiles*資料夾。 如果您想要複製*ExtraFiles*本身的資料夾`DestinationRelativePath`的值會是*ExtraFiles\%(RecursiveDir)%(Filename)%(Extension)*。
-3. 結尾的檔案，在關閉前`</Project>`標記中加入下列標記會指定何時要執行新的目標。
+    `DestinationRelativePath` 專案指定應將資料夾和檔案複製到目的地網站的根資料夾，其檔案和資料夾結構與在*ExtraFiles*資料夾中找到的相同。 如果您想要複製*ExtraFiles*資料夾本身，`DestinationRelativePath` 值會是*ExtraFiles\%（RecursiveDir）% （Filename）% （Extension）* 。
+3. 在檔案結尾的結尾 `</Project>` 標記之前，新增下列標記以指定執行新目標的時機。
 
     [!code-xml[Main](deploying-extra-files/samples/sample2.xml)]
 
-    此程式碼會使新`CustomCollectFiles`每當執行目標，將檔案複製到目的地資料夾時要執行的目標。 有個別的目標，如發佈與部署套件建立，以及萬一您決定要使用的部署封裝，而不是發行部署兩個目標中插入新的目標。
+    此程式碼會在執行將檔案複製到目的地資料夾的目標時，執行新的 `CustomCollectFiles` 目標。 發行與部署套件建立有一個不同的目標，如果您決定使用部署套件（而不是發佈）來部署，新的目標就會插入兩個目標。
 
-    *.Pubxml*檔現在看起來如下列範例所示：
+    *.Pubxml*檔案現在看起來如下列範例所示：
 
     [!code-xml[Main](deploying-extra-files/samples/sample3.xml?highlight=53-71)]
-4. 儲存並關閉*Staging.pubxml*檔案。
+4. 儲存並關閉 *.pubxml*檔案。
 
 ## <a name="publish-to-staging"></a>發行至預備環境
 
-使用單鍵發佈或命令列中，使用暫存設定檔來發佈應用程式。
+使用單鍵發佈或命令列，使用暫存設定檔發行應用程式。
 
-如果您使用單鍵發行，您可以在 確認**Preview**視窗， *robots.txt*會被複製。 否則，請使用 FTP 工具來確認*robots.txt*檔案是在部署後網站的根資料夾中。
+如果您使用單鍵發佈，您可以在**預覽**視窗中確認將會複製*機器人 .txt* 。 否則，請使用您的 FTP 工具來確認在部署之後，會在網站的根資料夾中執行*機器人 .txt*檔案。
 
 ## <a name="summary"></a>總結
 
-如此即完成本系列的教學課程將部署到協力廠商裝載提供者的 ASP.NET web 應用程式。 如需任何這些教學課程所涵蓋的主題的詳細資訊，請參閱[ASP.NET 部署內容對應](https://go.microsoft.com/fwlink/p/?LinkId=282413)。
+這會完成這一系列的教學課程，將 ASP.NET web 應用程式部署到協力廠商裝載提供者。 如需這些教學課程中所涵蓋之任何主題的詳細資訊，請參閱[ASP.NET 部署內容對應](https://go.microsoft.com/fwlink/p/?LinkId=282413)。
 
 ## <a name="more-information"></a>詳細資訊
 
-如果您知道如何使用 MSBuild 檔案，您可以自動化許多其他部署工作中撰寫程式碼 *.pubxml* （適用於設定檔的特定工作） 的檔案或專案 *.wpp.targets*檔案 （如工作適用於所有設定檔）。 如需詳細資訊 *.pubxml*並 *.wpp.targets*檔案，請參閱[How to:在 編輯部署設定發佈設定檔 (.pubxml) 檔案而。 Visual Studio Web 專案中的.wpp.targets 檔案](https://msdn.microsoft.com/library/ff398069)。 MSBuild 的程式碼的基本簡介，請參閱**專案檔的剖析**在[企業部署系列：了解專案檔](../web-deployment-in-the-enterprise/understanding-the-project-file.md)。 若要了解如何使用您自己的案例中執行工作的 MSBuild 檔案，請參閱本書：[在 Microsoft Build Engine:使用 MSBuild 和 Team Foundation Build](http://msbuildbook.com) Sayed Ibraham Hashimi 和 William bartholomew< /。
+如果您知道如何使用 MSBuild 檔案，您可以在 *.pubxml*檔（適用于設定檔特定的工作）或專案的*wpp*檔案（適用于所有設定檔的工作）中撰寫程式碼，以自動化許多其他部署工作。 如需 *.pubxml*和*wpp .targets*檔案的詳細資訊，請參閱[如何：在發行設定檔（. .Pubxml）檔案中編輯部署設定和 Visual Studio Web 專案中的 wpp .targets](https://msdn.microsoft.com/library/ff398069)檔。 如需 MSBuild 程式碼的基本簡介，請參閱企業部署系列中的**專案檔案剖析** [：瞭解專案](../web-deployment-in-the-enterprise/understanding-the-project-file.md)檔。 若要瞭解如何使用 MSBuild 檔案在您自己的案例中執行工作，請參閱這本書：在[Microsoft Build Engine：使用 MSBuild 和 Team Foundation Build](http://msbuildbook.com) By Sayed Ibraham Hashimi 和 William Bartholomew。
 
-## <a name="acknowledgements"></a>謝誌
+## <a name="acknowledgements"></a>致謝
 
-我想要感謝下列人士提出重大貢獻的內容，本教學課程系列：
+我想感謝下列人對本教學課程系列的內容做出重大貢獻：
 
-- [Alberto Poblacion、 MVP &amp; MCT，西班牙](https://mvp.microsoft.com/mvp/Alberto%20Poblacion%20Bolano-36772)
-- Jarod Ferguson，資料平台開發 MVP、 美國。
-- Harsh Mittal，Microsoft
-- [Jon Galloway](https://weblogs.asp.net/jgalloway) (twitter: [ @jongalloway ](http://twitter.com/jongalloway))
-- [Kristina Olson, Microsoft](https://blogs.iis.net/krolson/default.aspx)
-- [Mike 主教 Microsoft](http://www.mikepope.com/blog/DisplayBlog.aspx)
-- Mohit Srivastava Microsoft
-- [Raffaele Rialdi 義大利](http://www.iamraf.net/)
-- [Rick Anderson Microsoft](https://blogs.msdn.com/b/rickandy/)
-- [Sayed Hashimi，Microsoft](http://sedodream.com/default.aspx)(twitter: [ @sayedihashimi ](http://twitter.com/sayedihashimi))
-- [Scott Hanselman](http://www.hanselman.com/blog/) (twitter: [ @shanselman ](http://twitter.com/shanselman))
-- [Scott Hunter、 Microsoft](https://blogs.msdn.com/b/scothu/) (twitter: [ @coolcsh ](http://twitter.com/coolcsh))
+- [Alberto Poblacion，MVP &amp; MCT，西班牙](https://mvp.microsoft.com/mvp/Alberto%20Poblacion%20Bolano-36772)
+- Jarod Ferguson，資料平臺開發 MVP，美國
+- Microsoft 的 Mittal
+- [Jon Galloway](https://weblogs.asp.net/jgalloway) （twitter： [@jongalloway](http://twitter.com/jongalloway)）
+- [Kristina Olson，Microsoft](https://blogs.iis.net/krolson/default.aspx)
+- [Mike Pope，Microsoft](http://www.mikepope.com/blog/DisplayBlog.aspx)
+- Mohit Srivastava，Microsoft
+- [Raffaele Rialdi，義大利](http://www.iamraf.net/)
+- [Rick Anderson，Microsoft](https://blogs.msdn.com/b/rickandy/)
+- [Sayed Hashimi，Microsoft](http://sedodream.com/default.aspx)（twitter： [@sayedihashimi](http://twitter.com/sayedihashimi)）
+- [Scott Hanselman](http://www.hanselman.com/blog/) （twitter： [@shanselman](http://twitter.com/shanselman)）
+- [Scott Hunter，Microsoft](https://blogs.msdn.com/b/scothu/) （twitter： [@coolcsh](http://twitter.com/coolcsh)）
 - [Srđan Božović，塞爾維亞](http://msforge.net/blogs/zmajcek/)
-- [Vishal Joshi、 Microsoft](http://vishaljoshi.blogspot.com/) (twitter: [ @vishalrjoshi ](http://twitter.com/vishalrjoshi))
+- [Vishal Joshi，Microsoft](http://vishaljoshi.blogspot.com/) （twitter： [@vishalrjoshi](http://twitter.com/vishalrjoshi)）
 
 > [!div class="step-by-step"]
 > [上一頁](command-line-deployment.md)

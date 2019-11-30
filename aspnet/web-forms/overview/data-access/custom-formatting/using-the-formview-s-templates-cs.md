@@ -1,108 +1,108 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-cs
-title: 使用 FormView 的範本 (C#) |Microsoft Docs
+title: 使用 FormView 的範本（C#） |Microsoft Docs
 author: rick-anderson
-description: 不同 DetailsView 中，於 FormView 不包含的欄位。 相反地，FormView 轉譯使用範本。 在本教學課程中，我們將檢驗使用 F...
+description: 與 DetailsView 不同的是，FormView 不是由欄位所組成。 取而代之的是，會使用範本來轉譯 FormView。 在本教學課程中，我們將使用 F 。
 ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: d3f062af-88cf-426d-af44-e41f32c41672
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 59687ffb4d3319b55cc980b72af1084ca0288793
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 013c6878aad1a2277b0a334c096ff16ed84a95f1
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133920"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74625643"
 ---
-# <a name="using-the-formviews-templates-c"></a>使用 FormView 的範本 (C#)
+# <a name="using-the-formviews-templates-c"></a>使用 FormView 的範本（C#）
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載範例應用程式](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_14_CS.exe)或[下載 PDF](using-the-formview-s-templates-cs/_static/datatutorial14cs1.pdf)
+[下載範例應用程式](https://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_14_CS.exe)或[下載 PDF](using-the-formview-s-templates-cs/_static/datatutorial14cs1.pdf)
 
-> 不同 DetailsView 中，於 FormView 不包含的欄位。 相反地，FormView 轉譯使用範本。 在本教學課程中我們將檢驗使用 FormView 控制項來呈現較不嚴格的顯示的資料。
+> 與 DetailsView 不同的是，FormView 不是由欄位所組成。 取而代之的是，會使用範本來轉譯 FormView。 在本教學課程中，我們將探討如何使用 FormView 控制項來呈現較不嚴格的資料顯示。
 
 ## <a name="introduction"></a>簡介
 
-在最後兩個教學課程中，我們了解如何自訂使用 TemplateFields 的 GridView 和 DetailsView 控制項的輸出的內容。 TemplateFields 允許可高度自訂的特定欄位的內容，但最後 GridView 和 DetailsView 擁有而 boxy、 類似方格的外觀。 許多情況下，這類類似方格的版面配置是理想的做法，但有時需要更流暢、 較不嚴格的顯示。 顯示單一記錄，這類流暢的版面配置時，可以使用 FormView 控制項。
+在最後兩個教學課程中，我們已看到如何使用 TemplateFields 自訂 GridView 和 DetailsView 控制項的輸出。 TemplateFields 允許對特定欄位的內容進行高度自訂，但在同時結束 GridView 和 DetailsView 時，會有相當 boxy、類似方格的外觀。 在許多情況下，這類類似方格的配置是理想的，但有時需要更流暢、較不嚴格的顯示。 顯示單一記錄時，可以使用 FormView 控制項來進行這類流暢的版面配置。
 
-不同 DetailsView 中，於 FormView 不包含的欄位。 您無法加入 BoundField 或 TemplateField FormView。 相反地，FormView 轉譯使用範本。 FormView 視為包含單一的 TemplateField DetailsView 控制項。 FormView 設定支援下列範本：
+與 DetailsView 不同的是，FormView 不是由欄位所組成。 您無法將 BoundField 或 TemplateField 加入至 FormView。 取而代之的是，會使用範本來轉譯 FormView。 將 FormView 視為包含單一 TemplateField 的 DetailsView 控制項。 FormView 支援下列範本：
 
-- `ItemTemplate` 用來呈現特定的記錄顯示在 FormView 中
-- `HeaderTemplate` 用來指定選擇性標頭資料列
+- `ItemTemplate` 用來轉譯 FormView 中所顯示的特定記錄
+- `HeaderTemplate` 用來指定選擇性的標頭資料列
 - `FooterTemplate` 用來指定選擇性的頁尾資料列
-- `EmptyDataTemplate` 當 FormView`DataSource`缺少任何記錄，`EmptyDataTemplate`用來取代`ItemTemplate`來呈現控制項的標記
-- `PagerTemplate` 可用來為已啟用分頁的 FormViews 自訂分頁介面
-- `EditItemTemplate` / `InsertItemTemplate` 用來支援這類功能的 FormViews 自訂編輯介面或插入介面
+- `EmptyDataTemplate` 當 FormView 的 `DataSource` 缺少任何記錄時，會使用 `EmptyDataTemplate` 取代 `ItemTemplate` 來呈現控制項的標記
+- `PagerTemplate` 可以用來自訂已啟用分頁之 FormViews 的分頁介面
+- `EditItemTemplate` / `InsertItemTemplate` 用來自訂編輯介面或為支援這類功能的 FormViews 插入介面
 
-在本教學課程中我們將檢驗使用 FormView 控制項來呈現以較不嚴格的顯示的產品。 而不是讓名稱、 類別、 供應商，並依此類推，FormView 的欄位`ItemTemplate`會顯示使用的標頭項目組合這些值和`<table>`（請參閱 圖 1）。
+在本教學課程中，我們將探討如何使用 FormView 控制項來呈現較不嚴格的產品顯示。 FormView 的 `ItemTemplate` 會使用標頭元素和 `<table>` 的組合來顯示這些值（請參閱 [圖 1]），而不是擁有名稱、類別目錄、供應商等欄位。
 
-[![在 DetailsView 中看到的類似方格的版面配置的 FormView 會中斷](using-the-formview-s-templates-cs/_static/image2.png)](using-the-formview-s-templates-cs/_static/image1.png)
+[![在 DetailsView 中看到的 FormView 分成類似方格的版面配置](using-the-formview-s-templates-cs/_static/image2.png)](using-the-formview-s-templates-cs/_static/image1.png)
 
-**圖 1**:FormView 中斷 Grid-Like 配置出現在 DetailsView 中 ([按一下以檢視完整大小的影像](using-the-formview-s-templates-cs/_static/image3.png))
+**圖 1**： FormView 在 DetailsView 中分成類似方格的版面配置（[按一下以觀看完整大小的影像](using-the-formview-s-templates-cs/_static/image3.png)）
 
-## <a name="step-1-binding-the-data-to-the-formview"></a>步驟 1：資料繫結至 FormView
+## <a name="step-1-binding-the-data-to-the-formview"></a>步驟1：將資料系結至 FormView
 
-開啟`FormView.aspx`頁面上，然後從 [工具箱] 拖曳至設計工具拖曳 FormView。 第一次新增 FormView 時它會顯示為灰色方塊，指示我們，`ItemTemplate`需要。
+開啟 [`FormView.aspx`] 頁面，並將 [FormView] 從 [工具箱] 拖曳至設計工具。 第一次新增 FormView 時，它會顯示為灰色方塊，指示我們需要 `ItemTemplate`。
 
-[![FormView 無法轉譯設計工具中，提供一個 ItemTemplate 之前](using-the-formview-s-templates-cs/_static/image5.png)](using-the-formview-s-templates-cs/_static/image4.png)
+[![在提供 ItemTemplate 之前，無法在設計工具中轉譯 FormView](using-the-formview-s-templates-cs/_static/image5.png)](using-the-formview-s-templates-cs/_static/image4.png)
 
-**圖 2**:FormView 無法呈現在設計工具之前`ItemTemplate`提供 ([按一下以檢視完整大小的影像](using-the-formview-s-templates-cs/_static/image6.png))
+**圖 2**：在提供 `ItemTemplate` 之前，無法在設計工具中轉譯 FormView （[按一下以查看完整大小的影像](using-the-formview-s-templates-cs/_static/image6.png)）
 
-`ItemTemplate` （透過宣告式語法中） 可以用手動方式建立，也可以藉由繫結至資料來源控制項透過設計工具的 FormView 是自動建立。 這個自動建立`ItemTemplate`包含 HTML，清單的每個欄位和標籤名稱控制其`Text`屬性繫結至該欄位的值。 這個方法也自動-建立`InsertItemTemplate`和`EditItemTemplate`，這兩者都針對每個傳回的資料來源控制項的資料欄位填入輸入控制項。
+`ItemTemplate` 可以手動建立（透過宣告式語法），也可以透過設計工具將 FormView 系結至資料來源控制項來自動建立。 這個自動建立的 `ItemTemplate` 包含 HTML，其中列出每個欄位的名稱，以及其 `Text` 屬性系結至域值的標籤控制項。 這個方法也會自動建立 `InsertItemTemplate` 和 `EditItemTemplate`，這兩者都是針對資料來源控制項所傳回的每個資料欄位，以輸入控制項填入。
 
-如果您想要自動建立範本，從 FormView 的智慧標籤加入新的 ObjectDataSource 控制項叫用`ProductsBLL`類別的`GetProducts()`方法。 這會建立使用 FormView `ItemTemplate`， `InsertItemTemplate`，和`EditItemTemplate`。 從原始碼 檢視中，移除`InsertItemTemplate`和`EditItemTemplate`因為我們不想要建立 FormView 支援編輯，或尚未插入。 下一步，清除的標記內`ItemTemplate`，讓我們能夠從任何記錄。
+如果您想要自動建立範本，請從 FormView 的智慧標籤加入一個叫用 `ProductsBLL` 類別之 `GetProducts()` 方法的新 ObjectDataSource 控制項。 這會建立具有 `ItemTemplate`、`InsertItemTemplate`和 `EditItemTemplate`的 FormView。 從來源視圖移除 `InsertItemTemplate` 並 `EditItemTemplate`，因為我們不想要建立支援編輯或插入的 FormView。 接下來，清除 `ItemTemplate` 內的標記，讓我們有一個可供使用的乾淨平板電腦。
 
-如果您可能會相當建置`ItemTemplate`以手動的方式，您可以加入，並將它從 [工具箱] 拖曳至設計工具設定 ObjectDataSource。 不過，不需要設定 FormView 的資料來源從設計工具。 相反地，請移至來源檢視，並手動設定 FormView`DataSourceID`屬性設`ID`ObjectDataSource 的值。 接下來，以手動方式新增`ItemTemplate`。
+如果您想要手動建立 `ItemTemplate`，可以將它從 [工具箱] 拖曳至設計工具來加入和設定 ObjectDataSource。 不過，請不要從設計工具設定 FormView 的資料來源。 改為移至來源視圖，並手動將 FormView 的 `DataSourceID` 屬性設定為 ObjectDataSource 的 `ID` 值。 接下來，手動新增 `ItemTemplate`。
 
-無論何種方法，您決定採取，此時 FormView 的宣告式標記應該看起來像：
+無論您決定採取哪一種方法，此時您的 FormView 宣告式標記看起來應該像這樣：
 
 [!code-aspx[Main](using-the-formview-s-templates-cs/samples/sample1.aspx)]
 
-花點時間檢查啟用分頁 核取方塊在 FormView 的智慧標籤;這會新增`AllowPaging="True"`屬性 FormView 的宣告式語法。 此外，設定`EnableViewState`屬性設定為 False。
+請花點時間檢查 FormView 的智慧標籤中的 [啟用分頁] 核取方塊;這會將 `AllowPaging="True"` 屬性加入至 FormView 的宣告式語法。 此外，請將 `EnableViewState` 屬性設定為 False。
 
-## <a name="step-2-defining-theitemtemplates-markup"></a>步驟 2：定義`ItemTemplate`的標記
+## <a name="step-2-defining-theitemtemplates-markup"></a>步驟2：定義`ItemTemplate`的標記
 
-使用 FormView 繫結至 ObjectDataSource 控制項，並設定，以支援分頁我們已經準備好指定的內容`ItemTemplate`。 本教學課程中，讓我們的產品名稱顯示在`<h3>`標題。 接下來，讓我們使用 HTML`<table>`顯示剩餘的產品內容中的四個資料行資料表，其中的第一個和第三個資料行列出屬性名稱，而第二個和第四個清單及其值。
+當 FormView 系結至 ObjectDataSource 控制項並設定為支援分頁時，我們就可以指定 `ItemTemplate`的內容。 在本教學課程中，讓我們將產品的名稱顯示在 `<h3>` 標題中。 接下來，讓我們使用 HTML `<table>` 將其餘的產品屬性顯示在四個數據行的資料表中，其中第一個和第三個數據行列出屬性名稱，而第二個和第四個欄位列出其值。
 
-這個標記可以透過設計工具中的 [FormView 的範本] 編輯介面中輸入，或透過宣告式語法以手動方式輸入。 使用範本時通常找到更快速地直接使用宣告式語法，但可以自由使用您最熟悉想用的技巧。
+此標記可以透過設計工具中的 FormView 範本編輯介面輸入，或透過宣告式語法手動輸入。 使用範本時，通常會發現直接使用宣告式語法會比較快速，但是您可以隨意使用您最熟悉的任何技術。
 
-下列標記顯示 FormView 宣告式標記之後`ItemTemplate`的結構已完成：
+下列標記顯示在 `ItemTemplate`的結構完成後的 FormView 宣告式標記：
 
 [!code-aspx[Main](using-the-formview-s-templates-cs/samples/sample2.aspx)]
 
-請注意，資料繫結語法- `<%# Eval("ProductName") %>`，範例可以直接插入至範本的輸出。 也就是需要不將它指派給 Label 控制項`Text`屬性。 比方說，我們有`ProductName`中顯示的值`<h3>`項目使用`<h3><%# Eval("ProductName") %></h3>`，其中產品 Chai 會轉譯為`<h3>Chai</h3>`。
+請注意，資料系結語法 `<%# Eval("ProductName") %>`，例如可以直接插入範本的輸出中。 也就是說，它不需要指派給標籤控制項的 `Text` 屬性。 例如，我們的 `ProductName` 值會使用 `<h3><%# Eval("ProductName") %></h3>`顯示在 `<h3>` 元素中，而產品 Chai 會以 `<h3>Chai</h3>`呈現。
 
-`ProductPropertyLabel`並`ProductPropertyValue`CSS 類別用來指定產品的屬性名稱和值中的樣式`<table>`。 這些的 CSS 類別定義在`Styles.css`，而且會導致粗體且靠右對齊，並新增 padding 屬性值右邊的屬性名稱。
+`ProductPropertyLabel` 和 `ProductPropertyValue` CSS 類別是用來指定 `<table>`中的產品屬性名稱和值的樣式。 這些 CSS 類別是在 `Styles.css` 中定義，而且會讓屬性名稱為粗體和靠右對齊，並在屬性值中加上右填補。
 
-因為沒有任何 CheckBoxFields 使用 FormView，以便顯示`Discontinued`值為核取方塊中，我們必須新增我們自己的核取方塊控制項。 `Enabled`屬性設定為 False，將它變成唯讀的並核取方塊`Checked`屬性的值繫結`Discontinued`資料欄位。
+由於 FormView 沒有可用的 CheckBoxFields，為了將 `Discontinued` 值顯示為 checkbox，我們必須新增自己的 CheckBox 控制項。 `Enabled` 屬性設為 False，使其成為唯讀，核取方塊的 `Checked` 屬性會系結至 `Discontinued` 資料欄位的值。
 
-使用`ItemTemplate`完成時，會顯示產品資訊更流暢的方式。 在本教學課程 (圖 4) 產生 FormView 的輸出比較 DetailsView 輸出從最後一個教學課程 (圖 3)。
+`ItemTemplate` 完成後，產品資訊會以更流暢的方式顯示。 比較上一個教學課程（圖3）中的 DetailsView 輸出與 FormView 在本教學課程中產生的輸出（圖4）。
 
-[![固定的 DetailsView 輸出](using-the-formview-s-templates-cs/_static/image8.png)](using-the-formview-s-templates-cs/_static/image7.png)
+[![嚴格的 DetailsView 輸出](using-the-formview-s-templates-cs/_static/image8.png)](using-the-formview-s-templates-cs/_static/image7.png)
 
-**圖 3**:固定的 DetailsView 輸出 ([按一下以檢視完整大小的影像](using-the-formview-s-templates-cs/_static/image9.png))
+**圖 3**：固定 DetailsView 輸出（[按一下以查看完整大小的影像](using-the-formview-s-templates-cs/_static/image9.png)）
 
-[![流暢的 FormView 輸出](using-the-formview-s-templates-cs/_static/image11.png)](using-the-formview-s-templates-cs/_static/image10.png)
+[![流體的 FormView 輸出](using-the-formview-s-templates-cs/_static/image11.png)](using-the-formview-s-templates-cs/_static/image10.png)
 
-**圖 4**:流體 FormView 輸出 ([按一下以檢視完整大小的影像](using-the-formview-s-templates-cs/_static/image12.png))
+**圖 4**：流體的 FormView 輸出（[按一下以觀看完整大小的影像](using-the-formview-s-templates-cs/_static/image12.png)）
 
 ## <a name="summary"></a>總結
 
-雖然 GridView 和 DetailsView 控制項可以具有已經使用 TemplateFields 來自訂其輸出，同時仍會其資料類似方格的 boxy 的格式。 適用於顯示單一記錄的需要時使用較不嚴格的版面配置，FormView 是理想的選擇。 DetailsView，像 FormView 呈現單一資料錄從其`DataSource`，但與 DetailsView 不同方法，它可以只包含範本，並不支援欄位。
+雖然 GridView 和 DetailsView 控制項可以使用 TemplateFields 自訂其輸出，但仍會以類似方格的 boxy 格式呈現其資料。 針對需要使用較不嚴格的配置來顯示單一記錄的時間，FormView 是理想的選擇。 就像 DetailsView 一樣，FormView 會從它的 `DataSource`轉譯一筆記錄，但與 DetailsView 不同的是，它只是由範本組成，不支援欄位。
 
-如我們所見本教學課程中，顯示一筆記錄時更有彈性的版面配置可讓 FormView。 在未來我們將檢驗 DataList 與重複項控制項，提供相同等級的彈性不如 FormsView，但可以顯示多筆記錄 （例如 GridView) 教學課程。
+如我們在本教學課程中所見，FormView 可在顯示單一記錄時提供更有彈性的版面配置。 在未來的教學課程中，我們將檢查 DataList 和重複項控制項，其提供與 FormsView 相同的彈性層級，但是能夠顯示多筆記錄（例如 GridView）。
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ## <a name="about-the-author"></a>關於作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七個 ASP 書籍和的創辦人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年從事 Microsoft Web 技術工作。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是[ *Sams 教導您自己 ASP.NET 2.0 在 24 小時內*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在觸達[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或透過他的部落格，這位於 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，自1998起，有七個 ASP/ASP. NET 書籍和創辦人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是[*在24小時內讓自己的 ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在mitchell@4GuysFromRolla.com觸達[。](mailto:mitchell@4GuysFromRolla.com) 或者透過他的 blog，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 ## <a name="special-thanks-to"></a>特別感謝
 
-本教學課程系列是由許多實用的檢閱者檢閱。 本教學課程中的潛在客戶檢閱者已 E.R. Gilmore。 有興趣檢閱我即將推出的 MSDN 文章嗎？ 如果是這樣，psychic 在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
+本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者已 E.R。 Gilmore. 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [上一頁](using-templatefields-in-the-detailsview-control-cs.md)

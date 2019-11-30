@@ -1,169 +1,169 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-cs
-title: Url 中主版頁面 (C#) |Microsoft Docs
+title: 主版頁面中的C#url （） |Microsoft Docs
 author: rick-anderson
-description: 解決方式中的主版頁面的 Url 可能會中斷由於在不同於 [內容] 頁面相對目錄中的主版頁面檔案。 查看重定基底...
+description: 解決主版頁面中的 Url 如何中斷，因為主版分頁檔案位於與內容頁面不同的相對目錄中。 查看重定基底 。
 ms.author: riande
 ms.date: 06/10/2008
 ms.assetid: 48b58a18-5ea4-468c-b326-f35331b3e1e9
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2679429a6c32e53705905cc234ec92314c7de124
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 2551a5361256234883bb37e46e794037284445a4
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132047"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74640918"
 ---
 # <a name="urls-in-master-pages-c"></a>主版頁面中的 URL (C#)
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載程式碼](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_04_CS.zip)或[下載 PDF](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_04_CS.pdf)
+[下載程式代碼](https://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_04_CS.zip)或[下載 PDF](https://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_04_CS.pdf)
 
-> 解決方式中的主版頁面的 Url 可能會中斷由於在不同於 [內容] 頁面相對目錄中的主版頁面檔案。 查看 重定基底 Url，透過 ~ 的宣告式語法和以程式設計方式使用 ResolveUrl ResolveClientUrl 中。 （也請看
+> 解決主版頁面中的 Url 如何中斷，因為主版分頁檔案位於與內容頁面不同的相對目錄中。 在宣告式語法中透過 ~ 重定基底 Url，並以程式設計方式使用 ResolveUrl 和 ResolveClientUrl。 （另請參閱
 
 ## <a name="introduction"></a>簡介
 
-在所有範例中我們已了解到目前為止，主版頁面和內容頁面必須位於相同的資料夾 （網站的根資料夾）。 但是，沒有的理由為何主版頁面和內容頁面必須位於相同的資料夾。 您當然可以建立子資料夾中的內容頁面。 同樣地，您可以在其中建立`~/MasterPages/`您放置您的網站主版頁面的資料夾。
+在目前為止我們看到的所有範例中，主要和內容頁面都位於相同的資料夾（網站的根資料夾）。 但是主要和內容頁面都必須位於相同的資料夾中，因此沒有理由。 您當然可以在子資料夾中建立內容頁。 同樣地，您可以建立一個 `~/MasterPages/` 資料夾來放置網站的主版頁面。
 
-一個可能的問題，以將主要和內容頁面放入不同的資料夾包含中斷的 Url。 如果主版頁面中包含超連結、 影像或其他項目中的相對 Url，連結將會無效之位於不同的資料夾中的內容頁面。 在本教學課程中，我們檢查此問題，以及因應措施的來源。
+將主要畫面和內容頁面放在不同資料夾的其中一個可能的問題牽涉到的 Url 中斷。 如果主版頁面包含超連結、影像或其他元素中的相對 Url，則該連結將對位於不同資料夾中的內容頁面無效。 在本教學課程中，我們會檢查這個問題的來源和因應措施。
 
-## <a name="the-problem-with-relative-urls"></a>使用相對 Url 的問題
+## <a name="the-problem-with-relative-urls"></a>相對 Url 的問題
 
-在網頁上的 URL 即為*相對的 URL*如果它所指向之資源的位置是相對於網站的資料夾結構中的 web 網頁的位置。 任何不是以正斜線開頭的 URL (`/`) 或通訊協定 (例如`http://`) 是相對的因為它的解決方式根據位置包含 URL 的網頁瀏覽器。
+如果 web 網頁上的 URL 是相對於網頁在網站的資料夾結構中的位置，則會將其視為*相對 url* 。 不是以前置正斜線（`/`）或通訊協定（例如 `http://`）開頭的任何 URL 是相對的，因為瀏覽器會根據包含 URL 之網頁的位置來解析它。
 
-比方說，我們的網站有`~/Images/`資料夾中的，使用單一影像檔， `PoweredByASPNET.gif`。 主版頁面檔案`Site.master`已經`<img>`中的項目`footerContent`區域，以下列標記：
+例如，我們的網站有一個具有單一影像檔案的 `~/Images/` 資料夾，`PoweredByASPNET.gif`。 主版分頁檔 `Site.master` 在 `footerContent` 區域中具有具有下列標記的 `<img>` 元素：
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample1.html)]
 
-`src`屬性中的值`<img>`項目是相對的 URL，因為它不是以開頭`/`或`http://`。 簡單來說，`src`屬性值會告知瀏覽器中呈現的外觀`Images`子資料夾，名為的檔案`PoweredByASPNET.gif`。
+`<img>` 元素中的 `src` 屬性值是相對 URL，因為它的開頭不是 `/` 或 `http://`。 簡單地說，`src` 屬性值會告訴瀏覽器在 `Images` 子資料夾中，尋找名為 `PoweredByASPNET.gif`的檔案。
 
-瀏覽時內容的頁面，上述標記會直接傳送至瀏覽器。 請花一點時間瀏覽`About.aspx`以及檢視傳送至瀏覽器的 HTML 原始檔。 您會發現主版頁面中完全相同的標記已傳送至瀏覽器。
+造訪內容頁面時，會將上述標記直接傳送至瀏覽器。 請花點時間造訪 `About.aspx` 並觀看傳送至瀏覽器的 HTML 來源。 您會發現主版頁面中的標記完全相同，已傳送至瀏覽器。
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample2.html)]
 
-如果是根資料夾中的 [內容] 頁面 (現狀`About.aspx`) 一切都會如預期般運作，因為沒有`Images`相對於根資料夾的子資料夾。 不過，項目細分為 [內容] 頁面是否在主版頁面不同的資料夾。 為了說明這點，建立名為`Admin`。 接下來，新增名為的內容頁面`Default.aspx`要`Admin`資料夾，並確認其繫結至新的頁面`Site.master`主版頁面。
+如果 [內容] 頁面位於根資料夾（如 `About.aspx`），所有專案都會如預期般運作，因為有一個與根資料夾相關的 `Images` 子資料夾。 不過，如果內容頁與主版頁面位於不同的資料夾中，就會發生問題。 為了說明這一點，請建立名為 `Admin`的子資料夾。 接下來，將名為 `Default.aspx` 的內容頁新增至 [`Admin`] 資料夾，並務必將新的頁面系結至 `Site.master` 主版頁面。
 
 > [!NOTE]
-> 在  [*指定主版頁面的標題、 中繼標籤及其他 HTML 標頭*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)教學課程中我們建立名為自訂的基底頁面類別`BasePage`，自動設定 [內容] 頁面的標題 (如果它未明確指派給）。 別忘了有新建立的網頁程式碼後置類別衍生自`BasePage`以便讓它能夠利用這項功能。
+> 在[*主版頁面教學課程中指定標題、中繼標記和其他 HTML 標頭*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)時，我們建立了名為 `BasePage` 的自訂基底頁面類別，它會自動設定內容頁的標題（如果未明確指派）。 別忘了新建立頁面的程式碼後置類別衍生自 `BasePage`，讓它可以利用這種功能。
 
-您已建立此內容的頁面之後，您的方案總管] 中看起來應該類似於 [圖 1。
+建立此內容頁面之後，您的方案總管看起來應該像 [圖 1]。
 
-![新的資料夾和 ASP.NET 網頁加入至專案](urls-in-master-pages-cs/_static/image1.png)
+![已將新的資料夾和 ASP.NET 網頁新增至專案](urls-in-master-pages-cs/_static/image1.png)
 
-**圖 01**:新的資料夾和 ASP.NET 網頁加入至專案
+**圖 01**：已將新的資料夾和 ASP.NET 網頁新增至專案
 
-接下來，更新`Web.sitemap`檔案，以包含新`<siteMapNode>`這一課中的項目。 下列 XML 會顯示完整`Web.sitemap`標記，現在包含加入的第三個`<siteMapNode>`項目。
+接下來，更新 `Web.sitemap` 檔案，以包含這堂課的新 `<siteMapNode>` 專案。 下列 XML 會顯示完整的 `Web.sitemap` 標記，這現在包含了第三個 `<siteMapNode>` 元素的加入。
 
 [!code-xml[Main](urls-in-master-pages-cs/samples/sample3.xml)]
 
-新建`Default.aspx`頁面上應該有四個內容控制項，對應至在四個 ContentPlaceHolders `Site.master`。 將一些文字新增至內容控制項參考`MainContent`ContentPlaceHolder，然後瀏覽透過瀏覽器頁面。 如 [圖 2] 所示，在瀏覽器找不到`PoweredByASPNET.gif`映像檔。 什麼呢？
+新建立的 `Default.aspx` 頁面應該有四個內容控制項對應到 `Site.master`中的四個 ContentPlaceHolders。 將一些文字新增至參考 `MainContent` ContentPlaceHolder 的內容控制項，然後透過瀏覽器造訪頁面。 如 [圖 2] 所示，瀏覽器找不到 `PoweredByASPNET.gif` 的影像檔案。 這是怎麼回事？
 
-`~/Admin/Default.aspx`內容頁面會傳送相同的 HTML`footerContent`區域一樣`About.aspx`頁面：
+[`~/Admin/Default.aspx` 內容] 頁面會與 [`About.aspx`] 頁面一樣，傳送 `footerContent` 區域的相同 HTML：
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample4.html)]
 
-因為`<img>`項目的`src`屬性為相對 URL，瀏覽器會嘗試尋找`Images`相對於網頁的資料夾位置的資料夾。 換句話說，在瀏覽器正在尋找映像檔`Admin/Images/PoweredByASPNET.gif`。
+因為 `<img>` 元素的 `src` 屬性是相對 URL，所以瀏覽器會嘗試尋找相對於網頁資料夾位置的 `Images` 資料夾。 換句話說，瀏覽器會尋找 `Admin/Images/PoweredByASPNET.gif`的影像檔案。
 
-[![找不到 PoweredByASPNET.gif 映像檔](urls-in-master-pages-cs/_static/image3.png)](urls-in-master-pages-cs/_static/image2.png)
+[![找不到 PoweredByASPNET .gif 影像檔案](urls-in-master-pages-cs/_static/image3.png)](urls-in-master-pages-cs/_static/image2.png)
 
-**圖 02**:`PoweredByASPNET.gif`映像找不到檔案 ([按一下以檢視完整大小的影像](urls-in-master-pages-cs/_static/image4.png))
+**圖 02**：找不到 `PoweredByASPNET.gif` 影像檔案（[按一下以觀看完整大小的影像](urls-in-master-pages-cs/_static/image4.png)）
 
-### <a name="replacing-relative-urls-with-absolute-urls"></a>相對的 Url 取代為絕對 Url
+### <a name="replacing-relative-urls-with-absolute-urls"></a>以絕對 Url 取代相對 Url
 
-相對 URL 的情況則相反*絕對 URL*，這是它的開頭是正斜線 (`/`) 或這類通訊協定`http://`。 絕對 URL 指定的資源，以從已知的固定點位置，因為相同的絕對 URL 無效，任何網頁，不論網站的資料夾結構中的網頁所在的位置中。
+相對 URL 的相反之處是*絕對 url*，也就是以正斜線（`/`）或通訊協定（例如 `http://`）開頭的 url。 由於絕對 URL 會從已知的固定點指定資源的位置，因此無論網頁在網站的資料夾結構中的位置為何，相同的絕對 URL 在任何網頁中都是有效的。
 
-若要修復損毀的映像 [圖 2] 所示，我們需要更新`<img>`項目的`src`屬性，讓它使用而不是相對的絕對 URL。 若要判斷正確的絕對 URL，瀏覽的網頁，您的網站中的其中一個，並檢查 [網址] 列。 如圖 2 中的 網址 列所示，web 應用程式的完整的路徑是`http://localhost:3908/ASPNET_MasterPages_Tutorial_04_CS/`。 因此，我們無法更新`<img>`項目的`src`屬性設定為下列兩個絕對的 url:
+為了補救 [圖 2] 所示的中斷影像，我們需要更新 `<img>` 元素的 `src` 屬性，使其使用絕對 URL，而不是相對路徑。 若要判斷正確的絕對 URL，請造訪您網站中的其中一個網頁，並檢查網址列。 如 [圖 2] 中的網址列所示，web 應用程式的完整路徑是 `http://localhost:3908/ASPNET_MasterPages_Tutorial_04_CS/`。 因此，我們可以將 `<img>` 元素的 `src` 屬性更新為下列兩個絕對 Url 的其中一個：
 
 - `/ASPNET_MasterPages_Tutorial_04_CS/Images/PoweredByASPNET.gif`
 - `http://localhost:3908/ASPNET_MasterPages_Tutorial_04_CS/Images/PoweredByASPNET.gif`
 
-請花一點時間更新`<img>`項目的`src`屬性設定為使用其中一種形式，如上所示的絕對 URL，然後瀏覽`~/Admin/Default.aspx`透過瀏覽器的頁面。 目前瀏覽器會正確地尋找並顯示`PoweredByASPNET.gif`映像檔案 （請參閱 [圖 3]）。
+請花點時間使用上述其中一個表單，將 `<img>` 專案的 `src` 屬性更新為絕對 URL，然後透過瀏覽器造訪 [`~/Admin/Default.aspx`] 頁面。 此時，瀏覽器會正確地尋找並顯示 `PoweredByASPNET.gif` 影像檔案（請參閱 [圖 3]）。
 
-[![PoweredByASPNET.gif 映像會現在顯示](urls-in-master-pages-cs/_static/image6.png)](urls-in-master-pages-cs/_static/image5.png)
+[![現在會顯示 PoweredByASPNET 的 gif 影像](urls-in-master-pages-cs/_static/image6.png)](urls-in-master-pages-cs/_static/image5.png)
 
-**圖 03**:`PoweredByASPNET.gif`影像是顯示 ([按一下以檢視完整大小的影像](urls-in-master-pages-cs/_static/image7.png))
+**圖 03**：現在會顯示 `PoweredByASPNET.gif` 影像（[按一下以觀看完整大小的影像](urls-in-master-pages-cs/_static/image7.png)）
 
-硬式編碼絕對的 URL 中的運作方式，而它緊密結合您的 HTML 網站的伺服器和資料夾位置，可能會變更。 使用格式的絕對 URL`http://localhost:3908/...`很容易損毀因為上述的連接埠號碼`localhost`就會自動選取每次啟動 Visual Studio 的內建 ASP.NET 開發 Web 伺服器時。 同樣地，`http://localhost`本機測試時，才有效組件。 程式碼部署至實際執行伺服器之後, 的 URL 基底會變更為其他項目，例如`http://www.yourserver.com`。 在表單中的絕對 URL`/ASPNET_MasterPages_Tutorial_04_CS/...`因為此應用程式路徑通常與開發和生產環境的伺服器之間也有相同的脆弱度。
+雖然絕對 URL 中的硬編碼運作正常，但它會將您的 HTML 緊密結合到網站的伺服器和資料夾位置，這可能會有所變更。 使用表單 `http://localhost:3908/...` 的絕對 URL 會脆弱，因為每次啟動 Visual Studio 內建 ASP.NET 開發 Web 服務器時，會自動選取前面 `localhost` 的埠號碼。 同樣地，只有在本機測試時，`http://localhost` 部分才有效。 將程式碼部署至實際執行伺服器後，URL 基底會變更為其他專案，例如 `http://www.yourserver.com`。 表單 `/ASPNET_MasterPages_Tutorial_04_CS/...` 的絕對 URL 也會受到相同的肯定脆弱度，因為開發和實際伺服器之間的應用程式路徑有時會有所不同。
 
-好消息是 ASP.NET 提供方法，以產生在執行階段的有效相對 URL。
+好消息是，ASP.NET 提供了一個方法，可在執行時間產生有效的相對 URL。
 
 ## <a name="usingandresolveclienturl"></a>使用`~`和`ResolveClientUrl`
 
-而非硬式編碼絕對 URL，ASP.NET 可讓網頁程式開發人員使用波狀符號 (`~`) 表示的 web 應用程式的根目錄。 例如，如稍早在本教學課程中我可以使用標記法`~/Admin/Default.aspx`中的文字，請參閱`Default.aspx`頁面中`Admin`資料夾。 `~`表示`Admin`資料夾是 web 應用程式的根的子資料夾。
+ASP.NET 可讓網頁開發人員使用波狀符號（`~`）來指示 web 應用程式的根目錄，而不是硬程式碼為絕對 URL。 例如，稍早在本教學課程中，我使用文字中的標記法 `~/Admin/Default.aspx` 來參考 `Admin` 資料夾中的 `Default.aspx` 頁面。 `~` 表示 `Admin` 資料夾是 web 應用程式根目錄的子資料夾。
 
-`Control`類別的[`ResolveClientUrl`方法](https://msdn.microsoft.com/library/system.web.ui.control.resolveclienturl.aspx)採用 URL，並修改它適用於控制項所在的網頁的相對 url。 例如，呼叫`ResolveClientUrl("~/Images/PoweredByASPNET.gif")`從`About.aspx`傳回`Images/PoweredByASPNET.gif`。 從呼叫`~/Admin/Default.aspx`，不過，會傳回`../Images/PoweredByASPNET.gif`。
+`Control` 類別的[`ResolveClientUrl` 方法](https://msdn.microsoft.com/library/system.web.ui.control.resolveclienturl.aspx)會取得 URL，並將它修改為適合控制項所在網頁的相對 url。 例如，從 `About.aspx` 呼叫 `ResolveClientUrl("~/Images/PoweredByASPNET.gif")` 會傳回 `Images/PoweredByASPNET.gif`。 不過，從 `~/Admin/Default.aspx`呼叫它，會傳回 `./Images/PoweredByASPNET.gif`。
 
 > [!NOTE]
-> 因為所有的 ASP.NET 伺服器控制項是衍生自`Control`類別，所有伺服器控制項都可以存取`ResolveClientUrl`方法。 甚至`Page`類別衍生自`Control`類別，這表示您可以使用這個方法，直接從您的 ASP.NET 網頁的程式碼後置類別。
+> 因為所有的 ASP.NET 伺服器控制項都是衍生自 `Control` 類別，所以所有伺服器控制項都有 `ResolveClientUrl` 方法的存取權。 即使 `Page` 類別衍生自 `Control` 類別，這表示您可以直接從 ASP.NET 網頁的程式碼後置類別使用此方法。
 
-### <a name="usingin-the-declarative-markup"></a>使用`~`宣告式標記中
+### <a name="usingin-the-declarative-markup"></a>在宣告式標記中使用`~`
 
-數個 ASP.NET Web 控制項，包含 URL 相關的屬性： 超連結控制項具有`NavigateUrl`屬性，且控制項的映像`ImageUrl`屬性; 等等。 這些控制項進行轉譯時，傳遞至其 URL 相關的屬性值`ResolveClientUrl`。 因此，如果這些屬性包含`~`表示 web 應用程式的根目錄，URL 將會修改以有效的相對 URL。
+數個 ASP.NET 的 Web 控制項包含 URL 相關屬性： HyperLink 控制項具有 `NavigateUrl` 屬性;影像控制項具有 `ImageUrl` 屬性;以此類推。 轉譯時，這些控制項會將其 URL 相關的屬性值傳遞至 `ResolveClientUrl`。 因此，如果這些屬性包含 `~` 來指出 web 應用程式的根目錄，則會將 URL 修改為有效的相對 URL。
 
-請記住，ASP.NET 伺服器控制項轉換`~`在其 URL 相關的屬性。 如果`~`會顯示在靜態的 HTML 標記中，例如`<img src="~/Images/PoweredByASPNET.gif" />`，ASP.NET 引擎會將傳送`~`以及剩餘的 HTML 內容的瀏覽器。 瀏覽器假設`~`是 URL 的一部分。 例如，如果瀏覽器會接收標記`<img src="~/Images/PoweredByASPNET.gif" />`它會假設有一個名為子`~`子資料夾`Images`，其中包含映像檔案`PoweredByASPNET.gif`。
+請記住，只有 ASP.NET 伺服器控制項會在其 URL 相關屬性中轉換 `~`。 如果 `~` 出現在靜態 HTML 標籤中（例如 `<img src="~/Images/PoweredByASPNET.gif" />`），則 ASP.NET 引擎會將 `~` 連同其餘的 HTML 內容一起傳送到瀏覽器。 瀏覽器會假設 `~` 是 URL 的一部分。 例如，如果瀏覽器收到標記 `<img src="~/Images/PoweredByASPNET.gif" />` 則會假設有一個名為 `~` 的子資料夾，其中包含 `PoweredByASPNET.gif`的影像檔 `Images` 子資料夾。
 
-若要修正的映像標記`Site.master`，取代現有`<img>`與 ASP.NET 映像的 Web 控制項的項目。 將映像的 Web 控制項的`ID`要`PoweredByImage`、 其`ImageUrl`屬性設`~/Images/PoweredByASPNET.gif`，並將其`AlternateText`」 提供的 ASP.NET ！"的屬性
+若要修正 `Site.master`中的影像標記，請將現有的 `<img>` 元素取代為 ASP.NET 影像 Web 控制項。 將影像 Web 控制項的 `ID` 設定為 [`PoweredByImage`]、其 [`ImageUrl`] 屬性設為 [`~/Images/PoweredByASPNET.gif`]，並將其 [`AlternateText`] 屬性設定為 [由 ASP.NET 所提供技術支援]
 
 [!code-aspx[Main](urls-in-master-pages-cs/samples/sample5.aspx)]
 
-這項變更的主版頁面後，重新瀏覽`~/Admin/Default.aspx`頁面上一次。 這次`PoweredByASPNET.gif`映像檔案會出現在頁面 （請參閱 [圖 3]）。 映像的 Web 控制項呈現時它會使用`ResolveClientUrl`方法來解析其`ImageUrl`屬性值。 在  `~/Admin/Default.aspx` `ImageUrl`會轉換成適當的相對 URL，為下列程式碼片段的 HTML 原始檔所示：
+對主版頁面進行這種變更之後，再次流覽 `~/Admin/Default.aspx` 頁面。 這次 `PoweredByASPNET.gif` 影像檔案會出現在頁面中（請參閱 [圖 3]）。 呈現影像 Web 控制項時，會使用 `ResolveClientUrl` 方法來解析其 `ImageUrl` 屬性值。 在 `~/Admin/Default.aspx` 會將 `ImageUrl` 轉換為適當的相對 URL，如下列 HTML 來原始程式碼段所示：
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample6.html)]
 
 > [!NOTE]
-> 除了以 URL 為基礎的 Web 控制項的屬性，用`~`也可以用時呼叫`Response.Redirect`和`Server.MapPath`方法，其他項目。 此外，`ResolveClientUrl`可能會叫用方法直接從 ASP.NET 或主版頁面的宣告式標記，如有需要請參閱[Fritz Onion](https://www.pluralsight.com/blogs/fritz/)的部落格文章[Using`ResolveClientUrl`標記中](https://www.pluralsight.com/blogs/fritz/archive/2006/02/06/18596.aspx)。
+> 除了用於以 URL 為基礎的 Web 控制項屬性之外，也可以在呼叫 `Response.Redirect` 和 `Server.MapPath` 方法時使用 `~`。 此外，您可以視需要直接從 ASP.NET 或主版頁面的宣告式標記叫用 `ResolveClientUrl` 方法;請參閱[使用標記中的 `ResolveClientUrl`](https://www.pluralsight.com/blogs/fritz/archive/2006/02/06/18596.aspx) [Fritz 繪圖紙](https://www.pluralsight.com/blogs/fritz/)的 blog 專案。
 
-## <a name="fixing-the-master-pages-remaining-relative-urls"></a>修正主版頁面的剩餘的相對 Url
+## <a name="fixing-the-master-pages-remaining-relative-urls"></a>修正主版頁面的剩餘相對 Url
 
-除了`<img>`中的項目`footerContent`，我們只是修正，主版頁面包含一個更相對的 URL 需要我們的注意。 `topContent`區域包含連結 「 主版頁面教學課程，」 指向`Default.aspx`。
+除了我們剛剛修正的 `footerContent` 中的 `<img>` 元素之外，主版頁面還包含一個需要我們注意的相對 URL。 `topContent` 區域包含連結「主版頁面教學課程」，其指向 `Default.aspx`。
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample7.html)]
 
-此 URL 是相對的因為它會傳送使用者`Default.aspx`資料夾中的 [內容] 頁面，他們造訪的頁面。 若要將一律指向此連結`Default.aspx`我們要取代的根資料夾中`<a>`項目與超連結 Web 控制項，讓我們可以使用`~`標記法。
+因為此 URL 是相對的，所以它會將使用者傳送至所造訪內容頁面之資料夾中的 [`Default.aspx`] 頁面。 若要讓這個連結一律指向根資料夾中的 `Default.aspx`，我們必須將 `<a>` 元素取代為 HyperLink Web 控制項，讓我們可以使用 `~` 標記法。
 
-移除`<a>`項目標記，並在其位置新增超連結控制項。 設定超連結`ID`要`lnkHome`、 其`NavigateUrl`屬性設`~/Default.aspx`，並將其`Text`屬性，以 「 主版頁面教學課程 」。
+移除 `<a>` 的元素標記，並在其位置新增超連結控制項。 將超連結的 `ID` 設定為 `lnkHome`、其 `NavigateUrl` 屬性設為 `~/Default.aspx`，並將其 `Text` 屬性設定為 主版頁面
 
 [!code-aspx[Main](urls-in-master-pages-cs/samples/sample8.aspx)]
 
-就這麼容易！ 此時，所有主版頁面和內容頁面，不論資料夾的內容頁面呈現時正確地以我們的主版頁面中的 Url 位於中。
+就這麼容易！ 此時，主版頁面中的所有 Url 都會根據內容頁轉譯，而不論主版頁面和內容頁面位於哪個資料夾，都是正確的。
 
-### <a name="automatic-url-resolution-in-theheadsection"></a>中的自動 URL 解析`<head>`區段
+### <a name="automatic-url-resolution-in-theheadsection"></a>`<head>`區段中的自動 URL 解析
 
-在[*建立全網站的版面配置使用主版頁面*](creating-a-site-wide-layout-using-master-pages-cs.md)教學課程，我們已新增`<link>`來`Styles.css`中的檔案`<head>`區域：
+在[*使用主版頁面建立全網站的版面*](creating-a-site-wide-layout-using-master-pages-cs.md)配置教學課程中，我們將 `<link>` 新增至 `<head>` 區域中的 `Styles.css` 檔案：
 
 [!code-aspx[Main](urls-in-master-pages-cs/samples/sample9.aspx)]
 
-雖然`<link>`項目的`href`屬性相對的它會自動轉換為適當的路徑，在執行階段。 如我們所述[*指定主版頁面的標題、 中繼標籤及其他 HTML 標頭*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)教學課程中，`<head>`區域是實際的伺服器端控制項，讓它能夠修改其內部的控制項呈現時的內容。
+雖然 `<link>` 元素的 `href` 屬性是相對的，但它會在執行時間自動轉換為適當的路徑。 如同我們在[*主版頁面中指定標題、中繼標記和其他 HTML 標頭*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)中所討論，`<head>` 的區域實際上是伺服器端控制項，可讓它在呈現內部控制項時修改其內容。
 
-若要確認，請再次造訪`~/Admin/Default.aspx`頁面，並檢視傳送至瀏覽器的 HTML 原始檔。 下列程式碼片段所示，`<link>`項目的`href`屬性會自動修改適當的相對 url， `../Styles.css`。
+若要確認這一點，請重新流覽 [`~/Admin/Default.aspx`] 頁面，並查看傳送至瀏覽器的 HTML 來源。 如下列程式碼片段所示，`<link>` 元素的 `href` 屬性已自動修改為適當的相對 URL，`./Styles.css`。
 
 [!code-html[Main](urls-in-master-pages-cs/samples/sample10.html)]
 
 ## <a name="summary"></a>總結
 
-主版頁面通常包括連結、 影像和其他外部資源，必須指定透過 URL。 因為主版頁面和內容頁面可能不存在於相同的資料夾中，務必 abstain 使用相對 Url。 雖然您可以使用硬式編碼的絕對 Url，因此嚴格結合的 web 應用程式的絕對 URL。 如果絕對的 URL 變更為它經常這樣做時移動，或部署 web 應用程式-您必須記得要返回並更新絕對 Url。
+主版頁面通常包含連結、影像和其他必須透過 URL 指定的外部資源。 因為主版頁面和內容頁面可能不存在於相同的資料夾中，所以請務必從使用相對 Url abstain。 雖然可以使用硬式編碼的絕對 Url，但這樣做會緊密結合 web 應用程式的絕對 URL。 如果絕對的 URL 變更-通常是在移動或部署 web 應用程式時，您必須記得返回並更新絕對 Url。
 
-理想的方法是使用波狀符號 (`~`) 來表示應用程式根目錄。 ASP.NET Web 控制項的包含 URL 相關的屬性對應`~`在執行階段應用程式根目錄。 就內部而言，Web 控制項使用`Control`類別的`ResolveClientUrl`方法以產生有效的相對 URL。 這個方法是公用的而且可從每個伺服器控制項 (包括`Page`類別)，因此您可以使用它以程式設計方式從您的程式碼後置類別，如有需要。
+理想的方法是使用波狀符號（`~`）來表示應用程式根目錄。 ASP.NET 包含 URL 相關屬性的 Web 控制項，會在執行時間將 `~` 對應至應用程式根目錄。 就內部而言，Web 控制項會使用 `Control` 類別的 `ResolveClientUrl` 方法來產生有效的相對 URL。 這個方法是公用的，而且可從每個伺服器控制項（包括 `Page` 類別）取得，因此您可以視需要從程式碼後置類別以程式設計方式使用它。
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ### <a name="further-reading"></a>進一步閱讀
 
-如需有關在本教學課程所討論的主題的詳細資訊，請參閱下列資源：
+如需本教學課程中所討論之主題的詳細資訊，請參閱下列資源：
 
-- [在 ASP.NET 中的主版頁面](http://www.odetocode.com/Articles/419.aspx)
-- [URL 重訂基底中主版頁面](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/masterpages/default.aspx#urls)
-- [使用`ResolveClientUrl`標記中](https://www.pluralsight.com/blogs/fritz/archive/2006/02/06/18596.aspx)
+- [ASP.NET 中的主版頁面](http://www.odetocode.com/Articles/419.aspx)
+- [主版頁面中的 URL 重定基底](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/masterpages/default.aspx#urls)
+- [在標記中使用 `ResolveClientUrl`](https://www.pluralsight.com/blogs/fritz/archive/2006/02/06/18596.aspx)
 
 ### <a name="about-the-author"></a>關於作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多個 ASP 本書籍，他是 4GuysFromRolla.com 的創辦人，一直從事 Microsoft Web 技術自 1998 年。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是[ *Sams 教導您自己 ASP.NET 3.5 24 小時內*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 Scott 要聯絡[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或透過他的部落格[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，自1998起，有多個 ASP/ASP. NET 書籍和創辦人的4GuysFromRolla.com。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是[*在24小時內讓自己的 ASP.NET 3.5*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 Scott 可以在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)或透過他在[http://ScottOnWriting.NET](http://scottonwriting.net/)的 blog。
 
 ### <a name="special-thanks-to"></a>特別感謝
 
-有興趣檢閱我即將推出的 MSDN 文章嗎？ 如果是這樣，psychic 在[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
+有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)的那一行下拉式。
 
 > [!div class="step-by-step"]
 > [上一頁](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)

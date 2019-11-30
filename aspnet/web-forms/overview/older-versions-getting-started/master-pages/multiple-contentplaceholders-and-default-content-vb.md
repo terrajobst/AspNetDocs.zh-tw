@@ -1,168 +1,168 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/multiple-contentplaceholders-and-default-content-vb
-title: 多個 ContentPlaceHolders 和預設內容 (VB) |Microsoft Docs
+title: 多個 ContentPlaceHolders 和預設內容（VB） |Microsoft Docs
 author: rick-anderson
-description: 將探討如何將多個內容中的預留位置新增至主版頁面，以及如何指定內容預留位置的預設內容。
+description: 檢查如何將多個內容預留位置加入主版頁面，以及如何在內容預留位置中指定預設內容。
 ms.author: riande
 ms.date: 05/21/2008
 ms.assetid: 866a7177-6884-451e-88f4-c934b1dd1af5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/multiple-contentplaceholders-and-default-content-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 02d94c340f79299beae77531e87f5c0d65902720
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: b71cacb143094dcc5cf483c69c2fcc0f10def51c
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126896"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74628618"
 ---
 # <a name="multiple-contentplaceholders-and-default-content-vb"></a>多個 ContentPlaceHolder 與預設內容 (VB)
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載程式碼](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_02_VB.zip)或[下載 PDF](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_02_VB.pdf)
+[下載程式代碼](https://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_02_VB.zip)或[下載 PDF](https://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_02_VB.pdf)
 
-> 將探討如何將多個內容中的預留位置新增至主版頁面，以及如何指定內容預留位置的預設內容。
+> 檢查如何將多個內容預留位置加入主版頁面，以及如何在內容預留位置中指定預設內容。
 
 ## <a name="introduction"></a>簡介
 
-在先前的教學課程中，我們檢查主版頁面啟用的方式來建立一致的全網站的版面配置的 ASP.NET 開發人員。 主版頁面定義通用於所有其內容頁面的標記和可自訂的頁面為基礎的區域。 在上一個教學課程中，我們建立簡單的主版頁面 (`Site.master`) 和兩個內容頁面 (`Default.aspx`和`About.aspx`)。 我們的主版頁面包含名為兩個 ContentPlaceHolders`head`並`MainContent`，其位於`<head>`項目和 Web Form，分別。 內容的頁面都會有兩個內容控制項，而僅指定一個對應至標記`MainContent`。
+在先前的教學課程中，我們探討了主版頁面如何讓 ASP.NET 開發人員建立一致的全網站配置。 主版頁面會定義所有內容頁面和區域通用的標記，這些都可在每頁上進行自訂。 在上一個教學課程中，我們建立了一個簡單的主版頁面（`Site.master`）和兩個內容頁面（`Default.aspx` 和 `About.aspx`）。 主版頁面是由名為 `head` 和 `MainContent`的兩個 ContentPlaceHolders 所組成，分別位於 `<head>` 元素和 Web Form 中。 雖然內容頁面各有兩個內容控制項，但我們只會針對對應至 `MainContent`的標記指定標記。
 
-中的兩個 ContentPlaceHolder 控制項，證明`Site.master`，主版頁面可能包含多個 ContentPlaceHolders。 不僅如此，主版頁面可以指定 ContentPlaceHolder 控制項的預設標記。 內容頁面，然後，可以選擇性地指定自己的標記或使用預設標記。 在本教學課程中我們探討使用主版頁面中的多個內容控制項，並了解如何定義 ContentPlaceHolder 控制項中的預設標記。
+如同 `Site.master`中的兩個 ContentPlaceHolder 控制項所總合，主版頁面可能包含多個 ContentPlaceHolders。 最多，主版頁面可能會指定 ContentPlaceHolder 控制項的預設標記。 然後，[內容] 頁面可以選擇性地指定自己的標記或使用預設標記。 在本教學課程中，我們將探討如何在主版頁面中使用多個內容控制項，並瞭解如何在 ContentPlaceHolder 控制項中定義預設標記。
 
-## <a name="step-1-adding-additional-contentplaceholder-controls-to-the-master-page"></a>步驟 1：將其他 ContentPlaceHolder 控制項加入至主版頁面
+## <a name="step-1-adding-additional-contentplaceholder-controls-to-the-master-page"></a>步驟1：將其他 ContentPlaceHolder 控制項新增至主版頁面
 
-許多網站設計包含在螢幕上自訂頁面的頁面為基礎的數個區域。 `Site.master`我們在先前的教學課程中，建立主版頁面包含名為 Web 表單內的單一 ContentPlaceHolder `MainContent`。 具體來說，是位於此 ContentPlaceHolder `mainContent` `<div>`項目。
+許多網站設計都包含螢幕上的數個區域，每個頁面都有自訂。 `Site.master`，我們在上一個教學課程中建立的主版頁面包含名為 `MainContent`的 Web 表單內的單一 ContentPlaceHolder。 具體而言，這個 ContentPlaceHolder 位於 `mainContent` `<div>` 元素中。
 
-[圖 1] 顯示`Default.aspx`透過瀏覽器檢視時。 以紅色圈起的區域是對應至特定頁面的標記`MainContent`。
+[圖 1] 顯示透過瀏覽器觀看 `Default.aspx`。 以紅色圈起的區域是對應至 `MainContent`的頁面特定標記。
 
-[![圈選的區域顯示的區域目前可自訂的頁面為基礎](multiple-contentplaceholders-and-default-content-vb/_static/image2.png)](multiple-contentplaceholders-and-default-content-vb/_static/image1.png)
+[![圓圈區域會顯示目前每頁可自訂的區域](multiple-contentplaceholders-and-default-content-vb/_static/image2.png)](multiple-contentplaceholders-and-default-content-vb/_static/image1.png)
 
-**圖 01**:圓框區域顯示區域目前可自訂的頁面為基礎 ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image3.png))
+**圖 01**：圓形區域會顯示頁面上目前可自訂的區域（[按一下以觀看完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image3.png)）
 
-想像一下，除了 [圖 1] 所示的區域，我們也需要將頁面特定的項目新增至下方的課程和新聞的左資料行區段。 若要這麼做，我們將另一個 ContentPlaceHolder 控制項加入主版頁面。 若要跟著做，請開啟`Site.master`主版頁面，在 Visual Web Developer 中，然後將 ContentPlaceHolder 控制項從工具箱拖曳至設計工具 [新聞] 區段之後。 設定 ContentPlaceHolder`ID`至`LeftColumnContent`。
+假設除了 [圖 1] 所示的區域之外，我們還需要將頁面特定的專案新增至 [課程和新聞] 區段下方的左欄。 為了達到此目的，我們將另一個 ContentPlaceHolder 控制項新增至主版頁面。 若要跟著做，請在 Visual Web Developer 中開啟 `Site.master` 主版頁面，然後將 [ContentPlaceHolder] 控制項從 [工具箱] 拖曳至 [新聞] 區段後面的設計工具。 將 ContentPlaceHolder 的 `ID` 設定為 `LeftColumnContent`。
 
-[![ContentPlaceHolder 控制項加入主版頁面的左側資料行](multiple-contentplaceholders-and-default-content-vb/_static/image5.png)](multiple-contentplaceholders-and-default-content-vb/_static/image4.png)
+[![將 ContentPlaceHolder 控制項新增至主版頁面的左側資料行](multiple-contentplaceholders-and-default-content-vb/_static/image5.png)](multiple-contentplaceholders-and-default-content-vb/_static/image4.png)
 
-**圖 02**:ContentPlaceHolder 控制項加入主版頁面的左側資料行 ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image6.png))
+**圖 02**：將 ContentPlaceHolder 控制項新增至主版頁面的左側資料行（[按一下以查看完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image6.png)）
 
-加上`LeftColumnContent`ContentPlaceHolder 主版頁面，我們可以定義此區域的內容頁的頁面為基礎所包含的內容控制項中頁面`ContentPlaceHolderID`設定為`LeftColumnContent`。 我們會探討此程序的步驟 2。
+藉由將 `LeftColumnContent` ContentPlaceHolder 新增至主版頁面，我們可以在頁面上包含內容控制項（其 `ContentPlaceHolderID` 設定為 `LeftColumnContent`），以逐頁定義此區域的內容。 我們會在步驟2中檢查此程式。
 
-## <a name="step-2-defining-content-for-the-new-contentplaceholder-in-the-content-pages"></a>步驟 2：內容頁中定義新的 ContentPlaceHolder 的內容
+## <a name="step-2-defining-content-for-the-new-contentplaceholder-in-the-content-pages"></a>步驟2：在內容頁面中定義新 ContentPlaceHolder 的內容
 
-將新的內容頁面加入至網站中，Visual Web Developer 會自動建立的內容控制項中選取的主版頁面中的每個 ContentPlaceHolder 的頁面。 新增`LeftColumnContent`ContentPlaceHolder 我們在步驟 1 中，新 ASP.NET 網頁會立即的主版頁面有三個內容控制項。
+將新的內容頁面加入至網站時，Visual Web Developer 會在頁面中自動為所選主版頁面中的每個 ContentPlaceHolder 建立內容控制項。 在步驟1中，將 `LeftColumnContent` ContentPlaceHolder 新增至主版頁面，新的 ASP.NET 網頁現在會有三個內容控制項。
 
-為了說明這點，將新的內容頁面新增至名為根目錄`MultipleContentPlaceHolders.aspx`繫結至`Site.master`主版頁面。 Visual Web Developer 會使用下列的宣告式標記建立此頁面：
+為了說明這一點，請將新的 [內容] 頁面加入至系結至 `Site.master` 主版頁面的根目錄中名為 `MultipleContentPlaceHolders.aspx`。 Visual Web Developer 會使用下列宣告式標記來建立此頁面：
 
 [!code-aspx[Main](multiple-contentplaceholders-and-default-content-vb/samples/sample1.aspx)]
 
-內容控制項參考時，輸入某些內容`MainContent`ContentPlaceHolders (`Content2`)。 接下來，新增下列標記，即可`Content3`內容控制項 (參考`LeftColumnContent`ContentPlaceHolder):
+在內容控制項中輸入一些內容，參考 `MainContent` ContentPlaceHolders （`Content2`）。 接下來，將下列標記新增至 `Content3` 內容控制項（它會參考 `LeftColumnContent` ContentPlaceHolder）：
 
 [!code-html[Main](multiple-contentplaceholders-and-default-content-vb/samples/sample2.html)]
 
-之後新增此標記，請瀏覽透過瀏覽器頁面。 如 [圖 3] 所示，標記放在`Content3`（以紅色圈起） 的 [新聞] 區段下方的左側資料行中顯示內容的控制項。 標記置於`Content2`隨即出現 （藍色圓框） 的頁面部分。
+新增此標記之後，請造訪瀏覽器中的頁面。 如 [圖 3] 所示，放在 [`Content3` 內容] 控制項中的標記會顯示在 [新聞] 區段下方的左欄中（以紅色圈起）。 放在 `Content2` 中的標記會顯示在頁面的右側部分（以藍色圈起）。
 
-[![左側的資料行現在會包含 [新聞] 區段下方的頁面特定內容](multiple-contentplaceholders-and-default-content-vb/_static/image8.png)](multiple-contentplaceholders-and-default-content-vb/_static/image7.png)
+[![左欄現在包含 [新聞] 區段下方的頁面特定內容](multiple-contentplaceholders-and-default-content-vb/_static/image8.png)](multiple-contentplaceholders-and-default-content-vb/_static/image7.png)
 
-**圖 03**:左邊資料行現在包含頁面特定內容下方新聞 區段 ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image9.png))
+**圖 03**：左側資料行現在包含 [新聞] 區段底下的頁面特定內容（[按一下以觀看完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image9.png)）
 
-### <a name="defining-content-in-existing-content-pages"></a>現有的內容頁中定義的內容
+### <a name="defining-content-in-existing-content-pages"></a>定義現有內容頁面中的內容
 
-建立新的內容頁面會自動納入我們在步驟 1 中新增 ContentPlaceHolder 控制項。 但我們兩個的現有內容頁面-`About.aspx`並`Default.aspx`-不需要的內容控制項`LeftColumnContent`ContentPlaceHolder。 若要指定這些兩個現有的頁面中此 ContentPlaceHolder 內容，我們需要自行加入內容控制項。
+建立新的 [內容] 頁面會自動納入我們在步驟1中新增的 ContentPlaceHolder 控制項。 但我們的兩個現有的內容頁面-`About.aspx` 和 `Default.aspx`-沒有 `LeftColumnContent` ContentPlaceHolder 的內容控制項。 若要在這兩個現有的頁面中指定此 ContentPlaceHolder 的內容，我們需要自行新增內容控制項。
 
-不像大多數的 ASP.NET Web 控制項，Visual Web Developer 工具箱不包含內容控制項的項目。 我們可以手動輸入內容的控制項宣告式標記中原始碼 檢視中，但更容易且更快速的方法是使用 設計 檢視。 開啟`About.aspx`頁面上，並切換至 [設計] 檢視。 圖 4 所示， `LeftColumnContent` ContentPlaceHolder 出現在 設計 檢視中，如果您將滑鼠移它，顯示的標題會讀取：「 LeftColumnContent （主要） 」。 標題中包含的 「 主要 」 表示頁面中定義的這個 ContentPlaceHolder 沒有內容控制項。 ContentPlaceHolder，如所示的案例的內容控制項有`MainContent`，標題會讀取：「*ContentPlaceHolderID* （自訂）。 」
+不同于大部分 ASP.NET 的 Web 控制項，Visual Web Developer 工具箱不包含內容控制項專案。 我們可以在來源視圖中手動輸入內容控制項的宣告式標記，但更簡單且更快速的方法是使用設計檢視。 開啟 [`About.aspx`] 頁面，並切換至 [設計檢視]。 如 [圖 4] 所示，`LeftColumnContent` ContentPlaceHolder 會出現在設計檢視中;如果您將滑鼠停留在其上方，則會顯示標題： "LeftColumnContent （Master）"。 在標題中包含 "Master"，表示此 ContentPlaceHolder 的頁面中未定義內容控制項。 如果有 ContentPlaceHolder 的內容控制項（例如 `MainContent`的案例），標題將會讀取： "*ContentPlaceHolderID* （Custom）"。
 
-若要加入內容控制項用於`LeftColumnContent`ContentPlaceHolder 至`About.aspx`、 展開 ContentPlaceHolder 的智慧標籤，然後按一下 建立自訂內容的連結。
+若要將 `LeftColumnContent` ContentPlaceHolder 的內容控制項新增至 `About.aspx`，請展開 ContentPlaceHolder 的智慧標籤，然後按一下 [建立自訂內容] 連結。
 
-[![About.aspx 的網頁的 [設計] 檢視顯示 LeftColumnContent ContentPlaceHolder](multiple-contentplaceholders-and-default-content-vb/_static/image11.png)](multiple-contentplaceholders-and-default-content-vb/_static/image10.png)
+[![[關於 .aspx] 的設計檢視會顯示 LeftColumnContent ContentPlaceHolder](multiple-contentplaceholders-and-default-content-vb/_static/image11.png)](multiple-contentplaceholders-and-default-content-vb/_static/image10.png)
 
-**圖 04**:[設計] 檢視，如`About.aspx`會顯示`LeftColumnContent`ContentPlaceHolder ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image12.png))
+**圖 04**： `About.aspx` 的設計檢視會顯示 `LeftColumnContent` ContentPlaceHolder （[按一下以觀看完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image12.png)）
 
-按一下 建立自訂內容的連結會產生所需之內容控制項中的頁面並將設定其`ContentPlaceHolderID`ContentPlaceHolder 屬性`ID`。 例如，按一下 建立自訂內容連結以獲得`LeftColumnContent`區域中的`About.aspx`將下列宣告式標記加入網頁：
+按一下 [建立自訂內容] 連結會在頁面中產生必要的內容控制項，並將其 [`ContentPlaceHolderID`] 屬性設為 ContentPlaceHolder 的 `ID`。 例如，按一下 `About.aspx` 中 `LeftColumnContent` 區域的 [建立自訂內容] 連結，就會將下列宣告式標記新增至頁面：
 
 [!code-aspx[Main](multiple-contentplaceholders-and-default-content-vb/samples/sample3.aspx)]
 
-### <a name="omitting-content-controls"></a>略過內容控制項
+### <a name="omitting-content-controls"></a>省略內容控制項
 
-ASP.NET 不需要所有的內容頁面，包含的主版頁面中定義的每個 ContentPlaceHolder 內容控制項。 如果省略內容控制項，則 ASP.NET 引擎會使用主版頁面中 ContentPlaceHolder 內定義的標記。 此標記指 ContentPlaceHolder*預設內容*及其中內容的某些區域是常見的作法大部分的網頁，但其必須是可自訂的一小部分的頁面的案例中很有用。 步驟 3 將探索主版頁面中指定的預設內容。
+ASP.NET 不需要所有內容頁都包含主版頁面中定義之每個 ContentPlaceHolder 的內容控制項。 如果省略內容控制項，ASP.NET 引擎會使用主版頁面中的 ContentPlaceHolder 內所定義的標記。 此標記稱為 ContentPlaceHolder 的*預設內容*，適用于某些區域的內容在大多數頁面中都是通用的案例，但必須針對少量頁面進行自訂。 步驟3探索如何在主版頁面中指定預設內容。
 
-目前，`Default.aspx`包含兩個內容控制項`head`並`MainContent`ContentPlaceHolders; 它不需要的內容控制項`LeftColumnContent`。 因此，當`Default.aspx`呈現`LeftColumnContent`用 ContentPlaceHolder 的預設內容。 因為我們尚未為這個 ContentPlaceHolder 定義任何預設內容中，最後的結果是，不需要標記，就會發出此區域。 若要確認這種行為，請瀏覽`Default.aspx`透過瀏覽器。 如 [圖 5] 所示，就會不發出任何標記 [新聞] 區段下方的左側資料行中。
+目前，`Default.aspx` 包含 `head` 和 `MainContent` ContentPlaceHolders 的兩個內容控制項;它沒有 `LeftColumnContent`的內容控制項。 因此，轉譯 `Default.aspx` 時，會使用 `LeftColumnContent` ContentPlaceHolder 的預設內容。 由於我們尚未定義此 ContentPlaceHolder 的任何預設內容，因此最終的結果就是不會針對此區域發出任何標記。 若要確認此行為，請透過瀏覽器造訪 `Default.aspx`。 如 [圖 5] 所示，[新聞] 區段下方的左欄中不會發出任何標記。
 
-[![LeftColumnContent ContentPlaceHolder 呈現沒有內容](multiple-contentplaceholders-and-default-content-vb/_static/image14.png)](multiple-contentplaceholders-and-default-content-vb/_static/image13.png)
+[![LeftColumnContent ContentPlaceHolder 不會轉譯任何內容](multiple-contentplaceholders-and-default-content-vb/_static/image14.png)](multiple-contentplaceholders-and-default-content-vb/_static/image13.png)
 
-**圖 05**:沒有內容呈現`LeftColumnContent`ContentPlaceHolder ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image15.png))
+**圖 05**： `LeftColumnContent` ContentPlaceHolder 不會轉譯任何內容（[按一下以觀看完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image15.png)）
 
-## <a name="step-3-specifying-default-content-in-the-master-page"></a>步驟 3：在 主版頁面中指定預設的內容
+## <a name="step-3-specifying-default-content-in-the-master-page"></a>步驟3：在主版頁面中指定預設內容
 
-有些網站設計包括其內容是相同的站台，除了一個或兩個例外狀況中的所有頁面的區域。 請考慮支援使用者帳戶的網站。 這類站台都需要其中訪客可以輸入其認證來登入網站的登入頁面。 若要加速登入程序，網站設計人員可能包含使用者名稱和密碼的文字方塊中的每一頁可讓使用者登入，而不需明確地造訪登入頁面的左上角。 雖然這些使用者名稱和密碼的文字方塊很有幫助，大部分的頁面中，它們是在登入頁面中，已經包含使用者的認證的文字方塊備援。
+部分網站設計包括一個區域，其內容對於網站中的所有頁面都相同，但有一或兩個例外。 假設有一個支援使用者帳戶的網站。 這類網站需要一個登入頁面，訪客可以在其中輸入其認證來登入網站。 若要加速登入程式，網站設計工具可能會在每個頁面的左上角包含 [使用者名稱] 和 [密碼] 文字方塊，讓使用者不需要明確流覽登入頁面，即可進行登入。 雖然這些 [使用者名稱] 和 [密碼] 文字方塊在大部分的頁面上都很有用，但在登入頁面中，它們已經包含使用者認證的文字方塊。
 
-若要實作這項設計，您可以建立 ContentPlaceHolder 控制項在主版頁面的左上角。 顯示其左上角的使用者名稱和密碼的文字方塊時所需的每個頁面會建立此 ContentPlaceHolder 內容控制項，並新增必要的介面。 登入頁面上，相反地，可能會省略此 ContentPlaceHolder 加入內容控制項，或會建立內容控制項，以定義任何標記。 這種方法的缺點是，我們必須記住使用者名稱和密碼的文字方塊加入每一頁，我們將新增至站台 （除了 [登入] 頁面中）。 這會招惹麻煩。 我們可能忘了將這些文字方塊加入至頁面或兩個或更糟的是，我們可能未實作介面正確 （可能新增一個文字方塊，而非兩個）。
+若要執行這項設計，您可以在主版頁面的左上角建立 ContentPlaceHolder 控制項。 在其左上角顯示 [使用者名稱] 和 [密碼] 文字方塊所需的每個頁面，都會建立此 ContentPlaceHolder 的內容控制項，並新增必要的介面。 另一方面，登入頁面會省略新增此 ContentPlaceHolder 的內容控制項，或建立未定義任何標記的內容控制項。 這種方法的缺點是，我們必須記得將 [使用者名稱] 和 [密碼] 文字方塊新增至我們新增至網站的每一頁（登入頁面除外）。 這會詢問問題。 我們很可能忘了將這些文字方塊加入到頁面或兩者中，更糟的是，我們可能不會正確地執行介面（或許只會新增一個 textbox，而不是兩個）。
 
-更好的解決方案是做為 ContentPlaceHolder 的預設內容中定義的使用者名稱和密碼的文字方塊。 如此一來，我們只需要覆寫此預設內容，不會顯示使用者名稱和密碼文字方塊的幾個頁面中 （登入頁面上，執行個體）。 為了說明 ContentPlaceHolder 控制項指定的預設內容，讓我們實作剛剛所討論的案例。
+較好的解決方案是將 [使用者名稱] 和 [密碼] 文字方塊定義為 ContentPlaceHolder 的預設內容。 如此一來，我們只需要覆寫這幾頁中不會顯示 [使用者名稱] 和 [密碼] 文字方塊的預設內容（例如，登入頁面）。 為了說明如何指定 ContentPlaceHolder 控制項的預設內容，讓我們來執行剛才討論過的案例。
 
 > [!NOTE]
-> 本教學課程的其餘部分會更新我們的網站所有頁面，但登入頁面的左側資料行中包含登入介面。 不過，本教學課程不會檢查如何設定網站，以支援使用者帳戶。 如需有關本主題的詳細資訊，請參閱我[表單驗證、 授權、 使用者帳戶和角色](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)教學課程。
+> 本教學課程的其餘部分會更新我們的網站，以將登入介面包含在所有頁面的左欄中，但登入頁面。 不過，本教學課程並不會檢查如何設定網站以支援使用者帳戶。 如需本主題的詳細資訊，請參閱我的[表單驗證、授權、使用者帳戶和角色](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)教學課程。
 
 ### <a name="adding-a-contentplaceholder-and-specifying-its-default-content"></a>新增 ContentPlaceHolder 並指定其預設內容
 
-開啟`Site.master`主版頁面，並將下列標記新增至左側的資料行之間`DateDisplay`標籤和課程區段：
+開啟 `Site.master` 主版頁面，並將下列標記新增至 [`DateDisplay` 標籤] 和 [課程] 區段之間的左側資料行：
 
 [!code-aspx[Main](multiple-contentplaceholders-and-default-content-vb/samples/sample4.aspx)]
 
-新增此標記之後主版頁面的 設計 檢視看起來應該類似於 圖 6。
+新增此標記之後，主版頁面的設計檢視看起來應該像 [圖 6]。
 
 [![主版頁面包含登入控制項](multiple-contentplaceholders-and-default-content-vb/_static/image17.png)](multiple-contentplaceholders-and-default-content-vb/_static/image16.png)
 
-**圖 06**:主版頁面包含登入控制項 ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image18.png))
+**圖 06**：主版頁面包含一個登入控制項（[按一下以查看完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image18.png)）
 
-此 ContentPlaceHolder， `QuickLoginUI`，已登入 Web 控制項做為其預設內容。 Login 控制項顯示使用者介面會提示使用者輸入其使用者名稱和密碼，以及登入 按鈕。 按一下 [登入] 按鈕，登入控制項在內部驗證使用者的認證，針對成員資格 API。 若要使用此登入控制項，在實務上，然後，您要設定您的站台使用成員資格。 本主題已超出本教學課程; 的範圍請參閱我[表單驗證、 授權、 使用者帳戶和角色](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)如需有關建置支援使用者帳戶的 web 應用程式的教學課程。
+這個 ContentPlaceHolder （`QuickLoginUI`）具有登入 Web 控制項做為其預設內容。 登入控制項會顯示使用者介面，它會提示使用者輸入其使用者名稱和密碼，以及 [登入] 按鈕。 當您按一下 [登入] 按鈕時，Login 控制項會在內部根據成員資格 API 來驗證使用者的認證。 若要在實務中使用此登入控制，您必須將網站設定為使用成員資格。 本主題已超出本教學課程的範圍;如需建立支援使用者帳戶之 web 應用程式的詳細資訊，請參閱我的[表單驗證、授權、使用者帳戶和角色](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)教學課程。
 
-您可以自訂登入控制項的外觀或行為。 我已設定其兩個屬性：`TitleText`和`FailureAction`。 `TitleText`屬性值，預設為 「 登入 」，會顯示在控制項的使用者介面的頂端。 我已設定這個屬性，使其顯示 [登入] 的文字做為`<h3>`項目。 `FailureAction`屬性會指出如果使用者的認證無效，該怎麼辦。 預設值為`Refresh`，，讓使用者保持在相同頁面上，且會顯示登入控制項內的失敗訊息。 我已將它變更為`RedirectToLoginPage`，其會將使用者傳送至發生無效的認證時登入頁面。 我想要將使用者傳送登入頁面中，當使用者嘗試登入從其他頁面，但失敗，因為登入頁面可以包含額外的指示和選項，輕鬆地不符合左側資料行。 例如，登入頁面可能包含選項來擷取遺忘的密碼，或建立新的帳戶。
+您可以隨意自訂登入控制項的行為或外觀。 我已經設定了兩個屬性： `TitleText` 和 `FailureAction`。 預設為 [登入] 的 `TitleText` 屬性值會顯示在控制項使用者介面的頂端。 我已設定此屬性，使其顯示「登入」文字做為 `<h3>` 元素。 `FailureAction` 屬性指出使用者的認證無效時該怎麼辦。 預設為 `Refresh`的值，這會讓使用者離開相同頁面，並在登入控制項中顯示失敗訊息。 我已將它變更為 `RedirectToLoginPage`，這會在認證無效時將使用者傳送至登入頁面。 我想要在使用者嘗試從其他網頁登入時，將使用者傳送至登入頁面，但卻失敗，因為登入頁面可能包含無法輕易放在左欄中的其他指示和選項。 例如，登入頁面可能包含用來捕獲忘記密碼或建立新帳戶的選項。
 
-### <a name="creating-the-login-page-and-overriding-the-default-content"></a>建立登入頁面，並覆寫預設內容
+### <a name="creating-the-login-page-and-overriding-the-default-content"></a>建立登入頁面並覆寫預設內容
 
-完成的主版頁面中，我們的下一個步驟是建立登入頁面。 將 ASP.NET 網頁新增至名為的站台的根目錄`Login.aspx`，繫結至`Site.master`主版頁面。 這樣會使用四個內容控制項建立頁面，其中每個 ContentPlaceHolders 定義於`Site.master`。
+主版頁面完成後，下一個步驟是建立登入頁面。 將 ASP.NET 網頁新增至名為 `Login.aspx`的網站根目錄，並將其系結至 `Site.master` 主版頁面。 這麼做會建立一個具有四個內容控制項的頁面，分別代表 `Site.master`中定義的每個 ContentPlaceHolders。
 
-將登入控制項，加入`MainContent`內容控制項。 同樣地，請隨意新增任何內容`LeftColumnContent`區域。 不過，請確定保留的內容控制項`QuickLoginUI`ContentPlaceHolder 空白。 這可確保控制項不會出現登入頁面的左側資料行中的登入。
+將登入控制項新增至 `MainContent` 內容控制項。 同樣地，您也可以隨意將任何內容新增至 `LeftColumnContent` 區域。 不過，請務必將 `QuickLoginUI` ContentPlaceHolder 的內容控制項保留空白。 這可確保登入控制項不會出現在登入頁面的左欄中。
 
-在定義的內容之後`MainContent`和`LeftColumnContent`區域，您的登入頁面的宣告式標記看起來應該如下所示：
+定義 `MainContent` 和 `LeftColumnContent` 區域的內容之後，您的登入頁面的宣告式標記看起來應該如下所示：
 
 [!code-aspx[Main](multiple-contentplaceholders-and-default-content-vb/samples/sample5.aspx)]
 
-圖 7 顯示此頁面上，當透過瀏覽器檢視。 因為此頁面指定的內容控制項`QuickLoginUI`ContentPlaceHolder，它會覆寫主版頁面中指定的預設內容。 結果是在主版頁面的設計檢視 （請參閱 圖 6） 則不會呈現此頁面中顯示登入控制項。
+[圖 7] 顯示透過瀏覽器觀看的此頁面。 因為此頁面會指定 `QuickLoginUI` ContentPlaceHolder 的內容控制項，所以會覆寫主版頁面中指定的預設內容。 最後的結果是主頁面的設計檢視中顯示的登入控制項（請參閱 [圖 6]）不會在此頁面中呈現。
 
 [![登入頁面 Represses QuickLoginUI ContentPlaceHolder 的預設內容](multiple-contentplaceholders-and-default-content-vb/_static/image20.png)](multiple-contentplaceholders-and-default-content-vb/_static/image19.png)
 
-**圖 07**:登入頁面 Represses `QuickLoginUI` ContentPlaceHolder 的預設內容 ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image21.png))
+**圖 07**：登入頁面會 Represses `QuickLoginUI` ContentPlaceHolder 的預設內容（[按一下以查看完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image21.png)）
 
-### <a name="using-the-default-content-in-new-pages"></a>在 新頁面中使用的預設內容
+### <a name="using-the-default-content-in-new-pages"></a>使用新頁面中的預設內容
 
-我們想要顯示的登入頁面以外的所有頁面左側的資料行中的 登入控制項。 若要這麼做，請登入頁面除外的所有內容頁面應該省略的內容控制項`QuickLoginUI`ContentPlaceHolder。 藉由略過的內容控制項，將會改為使用 ContentPlaceHolder 的預設內容。
+我們想要針對登入頁面以外的所有頁面，顯示左欄中的 Login 控制項。 為達成此目的，除了登入頁面以外的所有內容頁面，都應省略 `QuickLoginUI` ContentPlaceHolder 的內容控制項。 藉由省略內容控制項，會改為使用 ContentPlaceHolder 的預設內容。
 
-我們現有的內容頁面- `Default.aspx`， `About.aspx`，並`MultipleContentPlaceHolders.aspx`-並包含的內容控制項`QuickLoginUI`因為之前我們該 ContentPlaceHolder 控制項加入至主版頁面建立它們。 因此，這些現有的頁面不需要更新。 不過，新的頁面新增至網站包含的內容控制項`QuickLoginUI`ContentPlaceHolder，根據預設。 因此，我們必須記住要移除這些內容控制項每次我們新增新的內容頁面 （除非我們想要覆寫 ContentPlaceHolder 的預設內容，如果是登入頁面）。
+我們現有的內容頁面-`Default.aspx`、`About.aspx`和 `MultipleContentPlaceHolders.aspx`-請勿包含 `QuickLoginUI` 的內容控制項，因為它們是在我們將 ContentPlaceHolder 控制項新增至主版頁面之前建立的。 因此，這些現有的頁面不需要更新。 不過，新增至網站的新頁面預設會包含 `QuickLoginUI` ContentPlaceHolder 的內容控制項。 因此，我們必須記得在每次新增內容頁面時移除這些內容控制項（除非我們想要覆寫 ContentPlaceHolder 的預設內容，如登入頁面的情況）。
 
-若要移除的內容控制項，您可以手動從來源檢視中刪除其宣告式標記或，從 設計 檢視中，選擇 預設為主版頁面的內容連結來從它的智慧標籤。 兩種方法移除內容控制項的頁面，並會產生相同 net 效果。
+若要移除內容控制項，您可以從來源視圖手動刪除其宣告式標記，或從設計檢視中，從其智慧標籤選擇 [預設為主要的內容] 連結。 任一種方法都會從頁面中移除內容控制項，並產生相同的淨效果。
 
-[圖 8] 顯示`Default.aspx`透過瀏覽器檢視時。 請記得，`Default.aspx`只有在其宣告式標記-一個用於指定的兩個內容控制項`head`，另一個用於`MainContent`。 如此一來，預設的內容`LeftColumnContent`和`QuickLoginUI`ContentPlaceHolders 會顯示。
+[圖 8] 顯示透過瀏覽器觀看 `Default.aspx`。 回想一下，`Default.aspx` 只有在其宣告式標記中指定了兩個內容控制項-一個用於 `head`，另一個用於 `MainContent`。 因此，會顯示 `LeftColumnContent` 和 `QuickLoginUI` ContentPlaceHolders 的預設內容。
 
-[![會顯示預設內容 LeftColumnContent 和 QuickLoginUI ContentPlaceHolders](multiple-contentplaceholders-and-default-content-vb/_static/image23.png)](multiple-contentplaceholders-and-default-content-vb/_static/image22.png)
+[![顯示 LeftColumnContent 和 QuickLoginUI ContentPlaceHolders 的預設內容](multiple-contentplaceholders-and-default-content-vb/_static/image23.png)](multiple-contentplaceholders-and-default-content-vb/_static/image22.png)
 
-**圖 08**:預設內容`LeftColumnContent`並`QuickLoginUI`ContentPlaceHolders 顯示 ([按一下以檢視完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image24.png))
+**圖 08**：顯示 `LeftColumnContent` 和 `QuickLoginUI` ContentPlaceHolders 的預設內容（[按一下以觀看完整大小的影像](multiple-contentplaceholders-and-default-content-vb/_static/image24.png)）
 
 ## <a name="summary"></a>總結
 
-ASP.NET 主版頁面模型可讓任意數目的 ContentPlaceHolders 主版頁面中。 更甚者 ContentPlaceHolders 包含預設內容，就會發出在案例中，沒有對應的內容在 [內容] 頁面中的控制項。 在本教學課程中，我們看到如何納入主版頁面中的其他 ContentPlaceHolder 控制項，以及如何定義這些新的和現有的 ASP.NET 頁面中的新 ContentPlaceHolders 內容控制項。 我們也討論過指定預設內容 ContentPlaceHolder，這是在只有少數的頁面必須自訂被標準化的內容放在特定區域內的案例中有用。
+ASP.NET 主版頁面模型允許在主版頁面中有任意數目的 ContentPlaceHolders。 此外，ContentPlaceHolders 還包含預設內容，這會在內容頁面中沒有對應的內容控制項時發出。 在本教學課程中，我們已瞭解如何將其他 ContentPlaceHolder 控制項包含在主版頁面中，以及如何在新的和現有的 ASP.NET 網頁中定義這些新 ContentPlaceHolders 的內容控制項。 我們也探討了如何在 ContentPlaceHolder 中指定預設內容，這在只有少數幾頁需要在特定區域內自訂標準化內容的案例中很有用。
 
-在下一個教學課程中，我們將檢驗`head`ContentPlaceHolder 的詳細資料，查看如何以宣告方式或以程式設計方式定義的標題、 中繼標籤及其他 HTML 標頭頁的頁面為基礎。
+在下一個教學課程中，我們將更詳細地探討 `head` ContentPlaceHolder，瞭解如何以宣告方式和程式設計方式，逐頁定義標題、中繼標記和其他 HTML 標頭。
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ### <a name="about-the-author"></a>關於作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多個 ASP 本書籍，他是 4GuysFromRolla.com 的創辦人，一直從事 Microsoft Web 技術自 1998 年。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是[ *Sams 教導您自己 ASP.NET 3.5 24 小時內*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 Scott 要聯絡[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或透過他的部落格[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，自1998起，有多個 ASP/ASP. NET 書籍和創辦人的4GuysFromRolla.com。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是[*在24小時內讓自己的 ASP.NET 3.5*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 Scott 可以在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)或透過他在[http://ScottOnWriting.NET](http://scottonwriting.net/)的 blog。
 
 ### <a name="special-thanks-to"></a>特別感謝
 
-本教學課程系列是由許多實用的檢閱者檢閱。 本教學課程中的潛在客戶檢閱者已 Suchi Banerjee。 有興趣檢閱我即將推出的 MSDN 文章嗎？ 如果是這樣，psychic 在[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
+本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Suchi Banerjee。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)的那一行下拉式。
 
 > [!div class="step-by-step"]
 > [上一頁](creating-a-site-wide-layout-using-master-pages-vb.md)

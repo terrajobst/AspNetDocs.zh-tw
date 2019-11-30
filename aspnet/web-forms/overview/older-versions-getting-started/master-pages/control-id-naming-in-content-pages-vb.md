@@ -1,236 +1,236 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
-title: 控制項識別碼命名內容頁面 (VB) |Microsoft Docs
+title: 內容頁中的控制項識別碼命名（VB） |Microsoft Docs
 author: rick-anderson
-description: 說明如何 ContentPlaceHolder 控制項做為命名容器，因此做以程式設計方式使用控制項很困難 （透過 FindControl)...
+description: 說明 ContentPlaceHolder 控制項如何作為命名容器，並因此以程式設計方式使用控制項，而不容易（透過 FindControl） 。
 ms.author: riande
 ms.date: 06/10/2008
 ms.assetid: dbb024a6-f043-4fc5-ad66-56556711875b
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 27ceb8b30aaad2ad0ed7af5cd852af4acf599c31
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 3cb8dec47040bc65f1a024325c91590729ffbdb7
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131686"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74586637"
 ---
 # <a name="control-id-naming-in-content-pages-vb"></a>內容頁中的控制項識別碼命名 (VB)
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載程式碼](http://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_05_VB.zip)或[下載 PDF](http://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_05_VB.pdf)
+[下載程式代碼](https://download.microsoft.com/download/e/e/f/eef369f5-743a-4a52-908f-b6532c4ce0a4/ASPNET_MasterPages_Tutorial_05_VB.zip)或[下載 PDF](https://download.microsoft.com/download/8/f/6/8f6349e4-6554-405a-bcd7-9b094ba5089a/ASPNET_MasterPages_Tutorial_05_VB.pdf)
 
-> 說明如何 ContentPlaceHolder 控制項做為命名容器，因此做以程式設計方式處理困難 （透過 FindControl) 的控制項。 查看這個問題及因應措施。 也會討論如何以程式設計方式存取產生的 ClientID 值。
+> 說明 ContentPlaceHolder 控制項如何作為命名容器，並因此以程式設計方式使用控制項，而不容易（透過 FindControl）。 查看這個問題和因應措施。 同時討論如何以程式設計方式存取產生的 ClientID 值。
 
 ## <a name="introduction"></a>簡介
 
-所有的 ASP.NET 伺服器控制項包括`ID`屬性，可唯一識別控制項，並會用該控制項以程式設計方式存取程式碼後置類別中的方法。 同樣地，在 HTML 文件中的項目可能包括`id`屬性可唯一識別項目; 這些`id`值通常在用戶端指令碼中用來以程式設計方式參考特定的 HTML 項目。 如此一來，您可能會假設，當 ASP.NET 伺服器控制項轉譯為 HTML，其`ID`值作為`id`所呈現的 HTML 項目的值。 這不一定如此因為在某些情況下使用單一來控制單一`ID`值可能會多次出現在呈現的標記。 請考慮 GridView 控制項，其中包含與使用標籤 Web 控制項為 TemplateField`ID`的值`ProductName`。 GridView 繫結至其資料來源，在執行階段，此標籤會針對每個 GridView 資料列重複一次。 每個呈現標籤需求唯一`id`值。
+所有的 ASP.NET 伺服器控制項都包含可唯一識別控制項的 `ID` 屬性，而這是控制項在程式碼後置類別中以程式設計方式存取的方法。 同樣地，HTML 檔案中的元素可能會包含可唯一識別專案的 `id` 屬性;這些 `id` 值通常會在用戶端腳本中用來以程式設計方式參考特定的 HTML 專案。 在此情況下，您可能會假設當 ASP.NET 伺服器控制項轉譯為 HTML 時，它的 `ID` 值會當做轉譯 HTML 專案的 `id` 值使用。 這不一定是這樣的情況，因為在某些情況下，具有單一 `ID` 值的單一控制項可能會出現在轉譯的標記中多次。 假設有一個 GridView 控制項，其中包含具有 `ID` 值 `ProductName`之標籤 Web 控制項的 TemplateField。 當 GridView 在執行時間系結至其資料來源時，此標籤會針對每個 GridView 資料列重複一次。 每個呈現的標籤都需要唯一的 `id` 值。
 
-若要處理這種情況下，ASP.NET 會允許特定的控制項，以表示為命名容器。 做為新的命名容器`ID`命名空間。 會出現在命名容器中任何伺服器控制項有其呈現`id`值前面加上`ID`命名的容器控制項。 例如，`GridView`和`GridViewRow`類別是這兩個命名的容器。 因此，一個 Label 控制項，定義於與 GridView TemplateField `ID` `ProductName`指定呈現`id`的值`GridViewID_GridViewRowID_ProductName`。 因為*GridViewRowID*都是唯一的每個 GridView 資料列，產生`id`值是唯一的。
+為了處理這類案例，ASP.NET 允許將特定控制項表示為命名容器。 命名容器可作為新的 `ID` 命名空間。 出現在命名容器中的任何伺服器控制項，其轉譯的 `id` 值前面會加上命名容器控制項的 `ID`。 例如，`GridView` 和 `GridViewRow` 類別都是命名容器。 因此，在 GridView TemplateField 中使用 `ID` `ProductName` 所定義的標籤控制項，會得到 `GridViewID_GridViewRowID_ProductName`的轉譯 `id` 值。 由於*GridViewRowID*對於每個 GridView 資料列都是唯一的，因此產生的 `id` 值是唯一的。
 
 > [!NOTE]
-> [ `INamingContainer`介面](https://msdn.microsoft.com/library/system.web.ui.inamingcontainer.aspx)用來表示特定的 ASP.NET 伺服器控制項應該做的命名容器。 `INamingContainer`介面不會不會拼出任何伺服器控制項必須實作的方法; 相反地，它用做為標記。 在產生時呈現的標記，如果控制項實作此介面，然後 ASP.NET 引擎自動前置詞，其`ID`子代的值呈現`id`屬性值。 此程序會在步驟 2 中的更詳細討論。
+> [`INamingContainer` 介面](https://msdn.microsoft.com/library/system.web.ui.inamingcontainer.aspx)是用來指出特定的 ASP.NET 伺服器控制項應該當做命名容器來運作。 `INamingContainer` 介面不會將伺服器控制項必須執行的任何方法拼出來;相反地，它是用來做為標記。 在產生轉譯的標記時，如果控制項會執行此介面，則 ASP.NET 引擎會自動將其 `ID` 值前置到其呈現 `id` 屬性值的子代。 在步驟2中，將會更詳細地討論此程式。
 
-命名的容器不只變更轉譯`id`屬性值，但也會影響如何控制項可能會從 ASP.NET 頁面的程式碼後置類別以程式設計方式參考。 `FindControl("controlID")`方法通常用來以程式設計方式參考的 Web 控制項。 不過，`FindControl`無法穿透透過命名容器。 因此，您無法直接使用`Page.FindControl`參考 GridView 或其他命名的容器內控制項的方法。
+命名容器不僅會變更轉譯的 `id` 屬性值，也會影響控制項在 ASP.NET 網頁的程式碼後置類別中，如何以程式設計方式參考。 `FindControl("controlID")` 方法通常用來以程式設計方式參考 Web 控制項。 不過，`FindControl` 不會透過命名容器來進行。 因此，您無法直接使用 `Page.FindControl` 方法來參考 GridView 或其他命名容器中的控制項。
 
-因為您可能會有猜想，主版頁面和 ContentPlaceHolders 會同時實作為命名容器。 在本教學課程中我們將探討如何主版頁面影響 HTML 項目`id`值，以及如何以程式設計方式參考 [內容] 頁面，使用的 Web 控制項`FindControl`。
+您可能有猜得到，主版頁面和 ContentPlaceHolders 都實作為命名容器。 在本教學課程中，我們將探討主版頁面如何影響 HTML 專案的 `id` 值，以及如何使用 `FindControl`以程式設計方式參考內容頁面中的 Web 控制項。
 
-## <a name="step-1-adding-a-new-aspnet-page"></a>步驟 1：加入新的 ASP.NET 網頁
+## <a name="step-1-adding-a-new-aspnet-page"></a>步驟1：加入新的 ASP.NET 網頁
 
-為了示範在本教學課程所討論的概念，讓我們將新的 ASP.NET 網頁新增至我們的網站。 建立名為的新內容頁面`IDIssues.aspx`在根資料夾中，將它繫結至`Site.master`主版頁面。
+為了示範本教學課程中所討論的概念，讓我們將新的 ASP.NET 網頁新增至我們的網站。 在根資料夾中建立名為 `IDIssues.aspx` 的新內容頁面，並將其系結至 `Site.master` 主版頁面。
 
-![新增至根資料夾的內容頁面 IDIssues.aspx](control-id-naming-in-content-pages-vb/_static/image1.png)
+![將內容頁 IDIssues 新增至根資料夾](control-id-naming-in-content-pages-vb/_static/image1.png)
 
-**圖 01**:新增內容頁`IDIssues.aspx`的根資料夾
+**圖 01**：將內容頁面 `IDIssues.aspx` 新增至根資料夾
 
-Visual Studio 會針對每個主版頁面的四個 ContentPlaceHolders，自動建立的內容控制項。 如中所述[*多個 ContentPlaceHolders 和預設內容*](multiple-contentplaceholders-and-default-content-vb.md)教學課程中，如果內容控制項不存在要改為發出主版頁面的預設 ContentPlaceHolder 內容。 因為`QuickLoginUI`並`LeftColumnContent`ContentPlaceHolders 包含適合的預設標記，此頁面，就移除其對應的內容控制項從`IDIssues.aspx`。 此時，[內容] 頁面的宣告式標記看起來應該如下所示：
+Visual Studio 會自動為每個主版頁面的四個 ContentPlaceHolders 建立內容控制項。 如[*多 ContentPlaceHolders 和預設內容*](multiple-contentplaceholders-and-default-content-vb.md)教學課程中所述，如果內容控制項不存在，則會改為發出主版頁面的預設 ContentPlaceHolder 內容。 因為 `QuickLoginUI` 和 `LeftColumnContent` ContentPlaceHolders 包含適用于此頁面的適當預設標記，所以請繼續進行，並從 `IDIssues.aspx`移除其對應的內容控制項。 此時，內容頁面的宣告式標記看起來應該如下所示：
 
 [!code-aspx[Main](control-id-naming-in-content-pages-vb/samples/sample1.aspx)]
 
-在  [*指定主版頁面的標題、 中繼標籤及其他 HTML 標頭*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)教學課程中我們建立自訂的基底頁面類別 (`BasePage`)，會自動設定頁面的標題，如果它是未明確設定。 針對`IDIssues.aspx`頁面，即可採用這項功能，在頁面的程式碼後置類別必須衍生自`BasePage`類別 (而不是`System.Web.UI.Page`)。 修改程式碼後置類別的定義，讓它看起來如下所示：
+在[*主版頁面教學課程中指定標題、中繼標記和其他 HTML 標頭*](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)中，我們建立了自訂的基底頁面類別（`BasePage`），它會自動設定頁面的標題（如果未明確設定）。 若要讓 `IDIssues.aspx` 頁面採用這項功能，頁面的程式碼後置類別必須衍生自 `BasePage` 類別（而不是 `System.Web.UI.Page`）。 修改程式碼後置類別的定義，使其看起來如下所示：
 
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample2.vb)]
 
-最後，更新`Web.sitemap`檔案，以包含這一課中新的項目。 新增`<siteMapNode>`項目並將其`title`並`url`屬性加入 「 控制項識別碼命名問題 」 和`~/IDIssues.aspx`分別。 進行此新增後您`Web.sitemap`檔案的標記看起來應該如下所示：
+最後，更新 `Web.sitemap` 檔案以包含此新課程的專案。 新增 `<siteMapNode>` 專案，並將其 `title` 和 `url` 屬性分別設定為 [控制識別碼命名問題] 和 [`~/IDIssues.aspx`]。 進行這項新增之後，您的 `Web.sitemap` 檔案的標記看起來應該如下所示：
 
 [!code-xml[Main](control-id-naming-in-content-pages-vb/samples/sample3.xml)]
 
-圖 2 所示，在新的站台對應項`Web.sitemap`會立即反映在左側的資料行中的 課程 區段。
+如 [圖 2] 所示，`Web.sitemap` 中的新網站地圖專案會立即反映在左欄的 [課程] 區段中。
 
-![[課程] 區段現在包含連結&quot;控制項識別碼命名的問題&quot;](control-id-naming-in-content-pages-vb/_static/image2.png)
+![[課程] 區段現在包含 &quot;控制項 ID 命名問題的連結&quot;](control-id-naming-in-content-pages-vb/_static/image2.png)
 
-**圖 02**:課程 區段現在包含 「 控制項識別碼命名的問題 」 的連結
+**圖 02**： [課程] 區段現在包含「控制項 ID 命名問題」的連結
 
-## <a name="step-2-examining-the-renderedidchanges"></a>步驟 2：檢查呈現`ID`變更
+## <a name="step-2-examining-the-renderedidchanges"></a>步驟2：檢查呈現的`ID`變更
 
-為了進一步了解修改 ASP.NET 引擎會呈現`id`值的伺服器控制項，讓我們加入一些 Web 控制項`IDIssues.aspx`頁面上，然後再檢視呈現至瀏覽器傳送的標記。 具體來說，在文字中的型別 「 請輸入您的年齡: 」 後面的文字方塊中的 Web 控制項。 進一步向下頁面上加入按鈕 Web 控制項和標籤 Web 控制項。 設定 TextBox`ID`並`Columns`屬性，以`Age`和 3，分別。 將按鈕的`Text`並`ID`屬性，以 「 提交 」 和`SubmitButton`。 清除標籤`Text`屬性並設定其`ID`至`Results`。
+為了進一步瞭解 ASP.NET 引擎對伺服器控制項轉譯的 `id` 值所做的修改，讓我們將幾個 Web 控制項新增至 [`IDIssues.aspx`] 頁面，然後再查看傳送至瀏覽器的轉譯標記。 具體來說，請輸入「請輸入您的年齡：」文字，後面接著 TextBox Web 控制項。 在頁面上進一步向下新增按鈕 Web 控制項和標籤 Web 控制項。 將 TextBox 的 `ID` 和 `Columns` 屬性分別設定為 [`Age`] 和 [3]。 將按鈕的 [`Text`] 和 [`ID` 屬性] 設定為 [提交] 和 [`SubmitButton`]。 清除標籤的 [`Text`] 屬性，並將其 `ID` 設定為 [`Results`]。
 
-此時您內容的控制項宣告式標記看起來應該如下所示：
+此時，內容控制項的宣告式標記看起來應該如下所示：
 
 [!code-aspx[Main](control-id-naming-in-content-pages-vb/samples/sample4.aspx)]
 
-圖 3 顯示頁面上，當透過 Visual Studio 設計工具檢視。
+[圖 3] 顯示透過 Visual Studio 的設計工具觀看的頁面。
 
-[![此頁面包含三個 Web 控制項： 文字方塊、 按鈕和標籤](control-id-naming-in-content-pages-vb/_static/image4.png)](control-id-naming-in-content-pages-vb/_static/image3.png)
+[![頁面包含三個 Web 控制項：文字方塊、按鈕和標籤](control-id-naming-in-content-pages-vb/_static/image4.png)](control-id-naming-in-content-pages-vb/_static/image3.png)
 
-**圖 03**:此頁面包含三個 Web 控制項： 文字方塊、 按鈕和標籤 ([按一下以檢視完整大小的影像](control-id-naming-in-content-pages-vb/_static/image5.png))
+**圖 03**：此頁面包含三個 Web 控制項： [TextBox]、[Button] 和 [標籤] （[按一下以查看完整大小的影像](control-id-naming-in-content-pages-vb/_static/image5.png)）
 
-請瀏覽透過瀏覽器頁面，然後檢視 HTML 原始檔。 為如下所示，標記`id`值的文字方塊、 按鈕和標籤 Web 控制項的 HTML 項目是組合`ID`Web 控制項的值和`ID`頁面中的命名容器的值。
+透過瀏覽器造訪頁面，然後觀看 HTML 原始檔。 如下列標記所示，TextBox、Button 和 Label Web 控制項之 HTML 專案的 `id` 值是 Web 控制項 `ID` 值的組合，以及頁面中命名容器的 `ID` 值。
 
 [!code-html[Main](control-id-naming-in-content-pages-vb/samples/sample5.html)]
 
-如稍早在本教學課程中所述，則主版頁面和其 ContentPlaceHolders 將做為命名容器。 因此，兩者都提供轉譯`ID`其巢狀控制項的值。 取得文字方塊的`id`屬性，例如： `ctl00_MainContent_Age`。 請注意，文字方塊控制項的`ID`的值為`Age`。 這加上其 ContentPlaceHolder 控制項的`ID`值， `MainContent`。 此外，這個值前面會加上的主版頁面`ID`值， `ctl00`。 最後的結果是`id`屬性值組成`ID`主版頁面、 ContentPlaceHolder 控制項和文字方塊本身的值。
+如本教學課程稍早所述，主版頁面和其 ContentPlaceHolders 都作為命名容器。 因此，兩者都會提供其嵌套控制項的呈現 `ID` 值。 採用 TextBox 的 `id` 屬性，例如： `ctl00_MainContent_Age`。 回想一下 TextBox 控制項的 `ID` 值是 `Age`。 其前面會加上其 ContentPlaceHolder 控制項的 `ID` 值，`MainContent`。 此外，此值的前面會加上主版頁面的 `ID` 值，`ctl00`。 淨效果是由主版頁面、ContentPlaceHolder 控制項和 TextBox 本身的 `ID` 值所組成的 `id` 屬性值。
 
-圖 4 說明此行為。 若要判斷呈現`id`的`Age`文字方塊中，開頭`ID`值的文字方塊控制項， `Age`。 接下來，進行控制項階層架構。 在每個命名容器 （這些節點會以桃色色彩），前置詞呈現目前`id`命名的容器使用`id`。
+[圖 4] 說明此行為。 若要判斷 `Age` 文字方塊的轉譯 `id`，請從 TextBox 控制項的 `ID` 值開始，`Age`。 接下來，在控制項階層中往上一步。 在每個命名容器（具有 peach 色彩的節點）上，使用命名容器的 `id`在目前轉譯的 `id` 前面加上前置詞。
 
-![轉譯 id 屬性是基礎上識別碼的值命名的容器](control-id-naming-in-content-pages-vb/_static/image6.png)
+![呈現的 id 屬性是以命名容器的識別碼值為基礎](control-id-naming-in-content-pages-vb/_static/image6.png)
 
-**圖 04**:轉譯`id`屬性是根據`ID`命名容器的值
+**圖 04**：呈現的 `id` 屬性是以命名容器的 `ID` 值為基礎
 
 > [!NOTE]
-> 如我們所討論，`ctl00`部分轉譯`id`屬性會構成`ID`值的主版頁面中，但您可能想知道如何將這個`ID`值產生了。 我們並未指定其任何地方在我們的主要或內容頁面。 大部分的伺服器控制項在 ASP.NET 網頁會明確地新增透過頁面的宣告式標記。 `MainContent`標記中明確指定 ContentPlaceHolder 控制項`Site.master`;`Age`文字方塊中所定義`IDIssues.aspx`的標記。 我們可以指定`ID`針對這些類型的控制項，透過 [屬性] 視窗或從宣告式語法的值。 宣告式標記中未定義其他控制項，例如主版頁面本身。 因此，其`ID`值必須為我們自動產生。 ASP.NET 引擎集`ID`在執行階段識別碼尚未明確設定這些控制項的值。 它會使用命名模式`ctlXX`，其中*XX*是循序遞增的整數值。
+> 如我們所討論，轉譯 `id` 屬性的 `ctl00` 部分會構成主版頁面的 `ID` 值，但您可能會想知道此 `ID` 值的呈現方式。 我們並未在主要或內容頁面中的任何位置指定它。 ASP.NET 網頁中的大部分伺服器控制項都是透過頁面的宣告式標記明確加入。 `MainContent` ContentPlaceHolder 控制項已在 `Site.master`的標記中明確指定;`IDIssues.aspx`的標記已定義 [`Age`] 文字方塊。 我們可以透過屬性視窗或從宣告式語法，指定這些控制項類型的 `ID` 值。 其他控制項（例如主版頁面本身）並未定義于宣告式標記中。 因此，必須為我們自動產生其 `ID` 值。 ASP.NET 引擎會在執行時間為尚未明確設定其識別碼的控制項設定 `ID` 值。 它會使用命名模式 `ctlXX`，其中*XX*是連續增加的整數值。
 
-主版頁面本身可做為命名容器，因為定義中的主版頁面的 Web 控制項也有改變轉譯`id`屬性值。 例如，`DisplayDate`我們新增至主版頁面中的標籤[*使用主版頁面建立全網站的版面配置*](creating-a-site-wide-layout-using-master-pages-vb.md)教學課程包含下列呈現標記：
+因為主版頁面本身會當做命名容器，所以主頁面中定義的 Web 控制項也已改變 `id` 屬性值轉譯。 例如，在[*使用主版頁面建立全網站版面*](creating-a-site-wide-layout-using-master-pages-vb.md)配置教學課程中，我們新增至主版頁面的 `DisplayDate` 標籤具有下列轉譯的標記：
 
 [!code-html[Main](control-id-naming-in-content-pages-vb/samples/sample6.html)]
 
-請注意，`id`屬性包含這兩個主版頁面的`ID`值 (`ctl00`) 和`ID`Label Web 控制項的值 (`DateDisplay`)。
+請注意，`id` 屬性同時包含主版頁面的 `ID` 值（`ctl00`），以及標籤 Web 控制項（`DateDisplay`）的 `ID` 值。
 
-## <a name="step-3-programmatically-referencing-web-controls-viafindcontrol"></a>步驟 3：以程式設計方式參考透過 Web 控制項`FindControl`
+## <a name="step-3-programmatically-referencing-web-controls-viafindcontrol"></a>步驟3：透過`FindControl` 以程式設計方式參考 Web 控制項
 
-每個 ASP.NET 伺服器控制項包括`FindControl("controlID")`方法，會搜尋控制項，名為控制項的下階*controlID*。 如果找到這類控制項，則會傳回此錯誤;如果不找到任何相符的控制項，則`FindControl`傳回`Nothing`。
+每個 ASP.NET 伺服器控制項都包含一個 `FindControl("controlID")` 方法，可在控制項的子代中搜尋名為*controlID*的控制項。 如果找到這類控制項，則會傳回;如果找不到相符的控制項，`FindControl` 會傳回 `Nothing`。
 
-`FindControl` 您需要存取控制項，但您不需要直接參考它的案例中很有用。 當使用資料 Web 控制項，如 GridView，比方說，在宣告式語法中，一次定義 GridView 的欄位內的控制項，但在執行階段建立控制項的執行個體的每個 GridView 資料列。 因此，在執行階段產生的控制項存在，但我們並沒有可從程式碼後置類別的直接參考。 如此一來，我們需要使用`FindControl`以程式設計方式使用 GridView 的欄位內的特定控制項。 (如需有關使用`FindControl`若要存取資料 Web 控制項的範本內的控制項，請參閱[自訂格式設定在資料](../../data-access/custom-formatting/custom-formatting-based-upon-data-vb.md)。)以動態方式將 Web 控制項新增至 Web 表單時，就會發生這種狀況下，主題所述[建立動態資料輸入使用者介面](https://msdn.microsoft.com/library/aa479330.aspx)。
+`FindControl` 在需要存取控制項但沒有直接參考的情況下很有用。 例如，當使用像是 GridView 的資料 Web 控制項時，GridView 的欄位內的控制項會在宣告式語法中定義一次，但在執行時間，會針對每個 GridView 資料列建立控制項的實例。 因此，在執行時間產生的控制項會存在，但我們沒有從程式碼後置類別提供的直接參考。 因此，我們需要使用 `FindControl`，以程式設計方式處理 GridView 欄位內的特定控制項。 （如需使用 `FindControl` 來存取資料 Web 控制項範本內之控制項的詳細資訊，請參閱以[資料為基礎的自訂格式](../../data-access/custom-formatting/custom-formatting-based-upon-data-vb.md)）。當您以動態方式將 Web 控制項新增至 Web 表單時，就會發生這種情況，這是[建立動態資料輸入使用者介面](https://msdn.microsoft.com/library/aa479330.aspx)中所討論的主題。
 
-若要說明如何使用`FindControl`方法來搜尋控制項中內容的頁面上，建立事件處理常式`SubmitButton`的`Click`事件。 事件處理常式中加入下列程式碼，以程式設計方式參考`Age`文字方塊並`Results`加上標籤使用`FindControl`方法，然後顯示中的訊息`Results`根據使用者的輸入。
+為了說明如何使用 `FindControl` 方法來搜尋內容頁面中的控制項，請為 `SubmitButton`的 `Click` 事件建立事件處理常式。 在事件處理常式中，加入下列程式碼，以程式設計方式參考 [`Age`] 文字方塊，並使用 `FindControl` 方法來 `Results` 標籤，然後根據使用者的輸入，在 `Results` 中顯示訊息。
 
 > [!NOTE]
-> 當然，我們不需要使用`FindControl`參考此範例中的標籤和文字方塊控制項。 我們無法參考它們直接透過其`ID`屬性值。 我使用`FindControl`這裡以說明使用時，會發生什麼事`FindControl`從內容頁面。
+> 當然，我們不需要使用 `FindControl` 來參考此範例的標籤和 TextBox 控制項。 我們可以透過其 `ID` 屬性值直接參考它們。 我在這裡使用 `FindControl` 來說明從內容頁面使用 `FindControl` 時，會發生什麼事。
 
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample7.vb)]
 
-雖然用來呼叫的語法`FindControl`方法稍有不同的前兩行`SubmitButton_Click`，這些語意相等。 回想一下，所有的 ASP.NET 伺服器控制項包括`FindControl`方法。 這包括`Page`從哪一個所有 ASP.NET 程式碼後置類別必須衍生自的類別。 因此，呼叫`FindControl("controlID")`相當於呼叫`Page.FindControl("controlID")`，假設您還沒有覆寫`FindControl`方法在您的程式碼後置類別或自訂的基底類別中。
+雖然用來呼叫 `FindControl` 方法的語法在 `SubmitButton_Click`的前兩行中稍有不同，但它們在語義上是相等的。 回想一下，所有的 ASP.NET 伺服器控制項都包含一個 `FindControl` 方法。 這包括 `Page` 類別，所有 ASP.NET 程式碼後置類別都必須從中衍生。 因此，如果您未覆寫程式碼後置類別或自訂基類中的 `FindControl` 方法，則呼叫 `FindControl("controlID")` 相當於呼叫 `Page.FindControl("controlID")`。
 
-輸入此程式碼之後, 請瀏覽`IDIssues.aspx`透過瀏覽器頁面上，輸入您的年齡，然後按一下 [提交] 按鈕。 按一下 [提交] 按鈕後`NullReferenceException`，就會引發 （請參閱 [圖 5]）。
+輸入此程式碼之後，請造訪瀏覽器中的 [`IDIssues.aspx`] 頁面，輸入您的年齡，然後按一下 [提交] 按鈕。 按一下 [提交] 按鈕時，會引發 `NullReferenceException` （請參閱 [圖 5]）。
 
-[![則引發 NullReferenceException](control-id-naming-in-content-pages-vb/_static/image8.png)](control-id-naming-in-content-pages-vb/_static/image7.png)
+[![引發 NullReferenceException](control-id-naming-in-content-pages-vb/_static/image8.png)](control-id-naming-in-content-pages-vb/_static/image7.png)
 
-**圖 05**:A`NullReferenceException`就會引發 ([按一下以檢視完整大小的影像](control-id-naming-in-content-pages-vb/_static/image9.png))
+**圖 05**：引發 `NullReferenceException` （[按一下以觀看完整大小的影像](control-id-naming-in-content-pages-vb/_static/image9.png)）
 
-如果您在中設定中斷點`SubmitButton_Click`您會看到，同時呼叫的事件處理常式`FindControl`傳回`Nothing`。 `NullReferenceException`我們嘗試存取時，會引發`Age`TextBox 的`Text`屬性。
+如果您在 `SubmitButton_Click` 事件處理常式中設定中斷點，您會看到 `FindControl` 的兩個呼叫都會傳回 `Nothing`。 當我們嘗試存取 `Age` TextBox 的 `Text` 屬性時，就會引發 `NullReferenceException`。
 
-問題在於`Control.FindControl`只會搜尋*控制*的相同的命名容器中的下階。 因為主版頁面構成新的命名容器，呼叫`Page.FindControl("controlID")`從未 permeates 主版頁面物件`ctl00`。 (若要檢視的控制項階層架構，它會顯示 圖 4 回頭參考`Page`物件做為物件的父系主版頁面`ctl00`。)因此，`Results`標籤和`Age`找不到文字方塊並`ResultsLabel`並`AgeTextBox`指派的值`Nothing`。
+問題在於，`Control.FindControl` 只會搜尋位於相同命名容器中的*控制項*子代。 因為主版頁面構成新的命名容器，所以 `Page.FindControl("controlID")` 的呼叫永遠不會 permeates 主版頁面物件 `ctl00`。 （請回到 [圖 4] 來觀看控制項階層，其中顯示 `Page` 物件做為主版頁面物件的父系 `ctl00`）。因此，找不到 [`Results` 標籤] 和 [`Age`] 文字方塊，`ResultsLabel` 和 `AgeTextBox` 指派 `Nothing`的值。
 
-有兩種因應措施，這項挑戰： 我們可以向下切入，一個的命名容器一次，以適當的控制項;或者，我們可以建立自己`FindControl`permeates 命名容器的方法。 讓我們檢查每個選項。
+這項挑戰有兩種因應措施：我們可以向下切入，一次一個命名容器，到適當的控制項;或者，我們也可以建立自己的 `FindControl` 方法來 permeates 命名容器。 讓我們來檢查每個選項。
 
-### <a name="drilling-into-the-appropriate-naming-container"></a>深入探索的適當命名的容器
+### <a name="drilling-into-the-appropriate-naming-container"></a>深入探索適當的命名容器
 
-若要使用`FindControl`參考`Results`標籤或`Age`文字方塊中，我們必須呼叫`FindControl`從祖系控制項相同的命名容器中。 圖 4 顯示，如`MainContent`ContentPlaceHolder 控制項是唯一的上階的`Results`或`Age`，是在相同的命名容器中。 換句話說，呼叫`FindControl`方法，從`MainContent`控制項，在下面的程式碼片段所示正確傳回參考`Results`或`Age`控制項。
+若要使用 `FindControl` 來參考 `Results` 標籤或 `Age` TextBox，我們必須從相同命名容器中的祖系控制項呼叫 `FindControl`。 如 [圖 4] 所示，`MainContent` ContentPlaceHolder 控制項是相同命名容器內 `Results` 或 `Age` 的唯一祖系。 換句話說，從 `MainContent` 控制項呼叫 `FindControl` 方法（如下列程式碼片段所示），會正確地傳回 `Results` 或 `Age` 控制項的參考。
 
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample8.vb)]
 
-不過，我們無法使用`MainContent`ContentPlaceHolder 從我們的內容頁面的程式碼後置類別因為 ContentPlaceHolder 定義主版頁面中，使用上述語法。 相反地，我們必須使用`FindControl`以取得參考`MainContent`。 中的程式碼取代`SubmitButton_Click`事件處理常式和下列修改：
+不過，我們無法使用上述語法來處理內容頁面的程式碼後置類別中的 `MainContent` ContentPlaceHolder，因為 ContentPlaceHolder 是在主版頁面中定義。 相反地，我們必須使用 `FindControl` 來取得 `MainContent`的參考。 將 `SubmitButton_Click` 事件處理常式中的程式碼取代為下列修改：
 
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample9.vb)]
 
-如果您瀏覽透過瀏覽器頁面，輸入您的年齡，然後按一下 [提交] 按鈕， `NullReferenceException` ，就會引發。 如果您在中設定中斷點`SubmitButton_Click`您會看到這個例外狀況發生於嘗試呼叫的事件處理常式`MainContent`物件的`FindControl`方法。 `MainContent`物件是否等於`Nothing`因為`FindControl`方法找不到名為"MainContent"的物件。 根本原因是與相同`Results`標籤及`Age`TextBox 控制項：`FindControl`頂端的控制項階層架構中啟動其搜尋，並無法穿透命名容器，但`MainContent`ContentPlaceHolder 是主版頁面內，也就是命名容器。
+如果您透過瀏覽器造訪頁面，請輸入您的年齡，然後按一下 [Submit （提交）] 按鈕，就會引發 `NullReferenceException`。 如果您在 `SubmitButton_Click` 事件處理常式中設定中斷點，您會看到在嘗試呼叫 `MainContent` 物件的 `FindControl` 方法時，會發生這個例外狀況。 `MainContent` 物件等於 `Nothing`，因為 `FindControl` 方法找不到名為 "MainContent" 的物件。 根本原因與 [`Results` 標籤] 和 [`Age` TextBox] 控制項相同： `FindControl` 從控制項階層的頂端開始搜尋，而不會滲透命名容器，但 `MainContent` ContentPlaceHolder 是在主版頁面內，也就是命名容器。
 
-我們可以使用之前`FindControl`以取得參考`MainContent`，我們首先需要主版頁面控制項的參考。 一旦我們擁有主版頁面的參考，我們就可以取得參考`MainContent`透過 ContentPlaceHolder`FindControl`並從該處，參考`Results`標籤並`Age`文字方塊中 (同樣地，透過使用`FindControl`)。 但我們該如何取得主版頁面的參考嗎？ 藉由檢查`id`中呈現的標記屬性很明顯地，主版頁面的`ID`值是`ctl00`。 因此，我們可以使用`Page.FindControl("ctl00")`若要取得主版頁面的參考，然後使用該物件取得的參考`MainContent`，依此類推。 下列程式碼片段說明這個邏輯：
+我們必須先參考主版頁面控制項，才可以使用 `FindControl` 取得 `MainContent`的參考。 參考主版頁面之後，我們就可以透過 `FindControl` 取得 `MainContent` ContentPlaceHolder 的參考，並從該處參考 `Results` 標籤和 `Age` TextBox （同樣地，使用 `FindControl`）。 但是，我們要如何取得主版頁面的參考？ 藉由檢查所轉譯標記中的 `id` 屬性，很明顯地 `ctl00`主版頁面的 `ID` 值。 因此，我們可以使用 `Page.FindControl("ctl00")` 取得主版頁面的參考，然後使用該物件取得 `MainContent`的參考，依此類推。 下列程式碼片段說明此邏輯：
 
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample10.vb)]
 
-雖然此程式碼當然可以，它會假設主版頁面的自動產生`ID`一律為`ctl00`。 它永遠不會是個不錯的主意，讓自動產生值的相關假設。
+雖然這段程式碼肯定可行，但它會假設主版頁面自動產生的 `ID` 一律會 `ctl00`。 最好不要對自動產生的值進行假設。
 
-幸運的是，主版頁面的參考是可透過存取`Page`類別的`Master`屬性。 因此，而不需使用`FindControl("ctl00")`若要取得主版頁面的參考，才能存取`MainContent`ContentPlaceHolder，我們可以改為使用`Page.Master.FindControl("MainContent")`。 更新`SubmitButton_Click`為下列程式碼的事件處理常式：
+幸運的是，主版頁面的參考可透過 `Page` 類別的 `Master` 屬性來存取。 因此，我們可以改為使用 `Page.Master.FindControl("MainContent")`，而不需要使用 `FindControl("ctl00")` 來取得主版頁面的參考，以便存取 `MainContent` ContentPlaceHolder。 使用下列程式碼更新 `SubmitButton_Click` 事件處理常式：
 
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample11.vb)]
 
-此時，瀏覽的頁面，透過瀏覽器中，輸入您的年齡，然後按一下 [提交] 按鈕顯示訊息`Results`加上標籤，如預期般運作。
+此時，透過瀏覽器造訪頁面、輸入您的年齡，然後按一下 [提交] 按鈕，就會如預期般在 [`Results`] 標籤中顯示訊息。
 
-[![在標籤中顯示使用者的年齡](control-id-naming-in-content-pages-vb/_static/image11.png)](control-id-naming-in-content-pages-vb/_static/image10.png)
+[![使用者的年齡會顯示在標籤中](control-id-naming-in-content-pages-vb/_static/image11.png)](control-id-naming-in-content-pages-vb/_static/image10.png)
 
-**圖 06**:使用者的年齡會顯示在 [標籤] ([按一下以檢視完整大小的影像](control-id-naming-in-content-pages-vb/_static/image12.png))
+**圖 06**：使用者的年齡會顯示在標籤中（[按一下以觀看完整大小的影像](control-id-naming-in-content-pages-vb/_static/image12.png)）
 
-### <a name="recursively-searching-through-naming-containers"></a>以遞迴方式搜尋整個命名容器
+### <a name="recursively-searching-through-naming-containers"></a>以遞迴方式搜尋命名容器
 
-參考前一個程式碼範例的原因`MainContent`ContentPlaceHolder 控制項，從主版頁面中，然後`Results`標籤和`Age`TextBox 控制項從`MainContent`，是因為`Control.FindControl`方法只會搜尋內*控制*的命名容器。 擁有`FindControl`命名的容器內保持合理，在大部分情況下因為兩個不同的命名容器中的兩個控制項可能會有相同`ID`值。 請考慮的 GridView 會定義名為的 Label Web 控制項的大小寫`ProductName`其 TemplateFields 的其中一個內。 當資料繫結至在執行階段，GridView`ProductName`建立每個 GridView 資料列的標籤。 如果`FindControl`搜尋到所有的命名容器，我們稱為`Page.FindControl("ProductName")`，哪一個標籤執行個體應該`FindControl`傳回？ `ProductName`中第一個的 GridView 資料列標籤嗎？ 最後一個資料列中的一個嗎？
+先前的程式碼範例從主版頁面參考 `MainContent` ContentPlaceHolder 控制項，然後 `MainContent`的 [`Results` 標籤] 和 [`Age` TextBox] 控制項，是因為 `Control.FindControl` 方法只會在*控制項*的命名容器中搜尋。 在大部分的情況下，讓 `FindControl` 保持在命名容器內是合理的，因為兩個不同的命名容器中的兩個控制項可能會有相同的 `ID` 值。 請考慮 GridView 的案例，其會在其中一個 TemplateFields 中定義名為 `ProductName` 的標籤 Web 控制項。 當資料在執行時間系結至 GridView 時，會為每個 GridView 資料列建立一個 `ProductName` 標籤。 如果 `FindControl` 搜尋所有的命名容器，而我們呼叫 `Page.FindControl("ProductName")`，`FindControl` 會傳回哪個標籤實例？ 第一個 GridView 資料列中的 `ProductName` 標籤？ 最後一個資料列中的那一個？
 
-因此`Control.FindControl`只搜尋*控制*命名容器的意義在大部分情況下。 但有其他的情況下，例如面向我們，我們有一個唯一`ID`所有命名容器，而且想要避免精心參考每個存取控制項的控制項階層架構中的命名容器。 具有`FindControl`太以遞迴方式搜尋所有的命名容器可感知的 variant。 不幸的是，.NET Framework 不包含這種方法。
+因此，讓 `Control.FindControl` 搜尋只是*控制項*的命名容器，在大多數情況下都是合理的。 但還有其他案例，例如，我們在所有命名容器中都有唯一的 `ID`，而且想要避免必須精心參考控制項階層中的每個命名容器來存取控制項。 擁有會以遞迴方式搜尋所有命名容器的 `FindControl` variant 也是合理的。 可惜的是，.NET Framework 不包含這種方法。
 
-好消息是，我們可以建立自己`FindControl`方法，以遞迴方式搜尋所有的命名容器。 事實上，使用*擴充方法*我們可以加上`FindControlRecursive`方法來`Control`伴隨著其現有的類別`FindControl`方法。
+好消息是，我們可以建立自己的 `FindControl` 方法，以遞迴方式搜尋所有的命名容器。 事實上，使用*擴充方法*時，我們可以將 `FindControlRecursive` 方法加到 `Control` 類別，以伴隨其現有的 `FindControl` 方法。
 
 > [!NOTE]
-> 擴充方法是以 C# 3.0 和 Visual Basic 9 的語言與.NET Framework 3.5 版和 Visual Studio 2008 隨附的新的功能。 簡單地說，延伸方法可以讓開發人員建立新的方法，為現有類別類型透過特殊的語法。 如需有關這個實用的功能的詳細資訊，請參閱我文章[擴充方法與擴充基底型別功能](http://aspnet.4guysfromrolla.com/articles/120507-1.aspx)。
+> 擴充方法是C# 3.0 和 Visual Basic 9 的新功能，這是隨附于 .NET Framework 3.5 版和 Visual Studio 2008 的語言。 簡單地說，擴充方法可讓開發人員透過特殊語法，為現有的類別類型建立新的方法。 如需這項實用功能的詳細資訊，請參閱我的文章[使用擴充方法擴充基底類型功能](http://aspnet.4guysfromrolla.com/articles/120507-1.aspx)。
 
-若要建立擴充方法，加入新檔案，以便`App_Code`名為資料夾`PageExtensionMethods.vb`。 新增名為擴充方法`FindControlRecursive`做為輸入採用`String`名為的參數`controlID`。 擴充方法，才能正常運作，是很重要的標示為類別`Module`且前面加上的擴充方法`<Extension()>`屬性。 此外，所有擴充方法必須都接受其第一個參數的型別物件的擴充方法套用至。
+若要建立擴充方法，請將新檔案新增至名為 `PageExtensionMethods.vb`的 `App_Code` 資料夾。 新增名為 `FindControlRecursive` 的擴充方法，以接受名為 `controlID`的 `String` 參數作為輸入。 若要讓擴充方法正常運作，請務必將類別標記為 `Module`，而且擴充方法的前面會加上 `<Extension()>` 屬性。 此外，所有擴充方法都必須接受延伸方法所套用之類型的物件做為其第一個參數。
 
-將下列程式碼加入`PageExtensionMethods.vb`檔案，以定義這`Module`而`FindControlRecursive`擴充方法：
+將下列程式碼新增至 `PageExtensionMethods.vb` 檔案，以定義此 `Module` 和 `FindControlRecursive` 擴充方法：
 
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample12.vb)]
 
-使用此程式碼就緒之後，返回`IDIssues.aspx`頁面的程式碼後置類別和標記為註解目前`FindControl`方法呼叫。 它們取代成呼叫`Page.FindControlRecursive("controlID")`。 最棒的擴充方法是，它們會出現 IntelliSense 下拉式清單中，直接。 如 [圖 7] 所示，當您鍵入`Page`然後按下句號`FindControlRecursive`方法包含在 IntelliSense 下拉式清單，以及其他`Control`類別方法。
+將此程式碼備妥之後，請返回 `IDIssues.aspx` 頁面的程式碼後置類別，並將目前的 `FindControl` 方法呼叫標記為批註。 以 `Page.FindControlRecursive("controlID")`的呼叫來取代它們。 擴充方法的最棒之處在于，它們會直接出現在 IntelliSense 下拉式清單中。 如 [圖 7] 所示，當您輸入 `Page` 然後按下句點時，`FindControlRecursive` 方法會連同其他 `Control` 類別方法一起包含在 IntelliSense 下拉式集中。
 
-[![擴充方法都包含在 IntelliSense 下拉式清單](control-id-naming-in-content-pages-vb/_static/image14.png)](control-id-naming-in-content-pages-vb/_static/image13.png)
+[IntelliSense 下拉式清單中包含 ![擴充方法](control-id-naming-in-content-pages-vb/_static/image14.png)](control-id-naming-in-content-pages-vb/_static/image13.png)
 
-**圖 07**:擴充方法都包含在 IntelliSense 下拉式清單 ([按一下以檢視完整大小的影像](control-id-naming-in-content-pages-vb/_static/image15.png))
+**圖 07**：擴充方法包含在 [IntelliSense] 下拉式清單中（[按一下以觀看完整大小的影像](control-id-naming-in-content-pages-vb/_static/image15.png)）
 
-輸入下列程式碼插入`SubmitButton_Click`事件處理常式，然後瀏覽頁面、 輸入您的年齡，然後按一下 [提交] 按鈕測試它。 在 圖 6 所示，所產生的輸出會顯示，「"您就時代歲 ！
+在 `SubmitButton_Click` 事件處理常式中輸入下列程式碼，然後藉由造訪頁面並輸入您的年齡，然後按一下 [提交] 按鈕進行測試。 如 [圖 6] 所示，產生的輸出將會是「您的年齡年份已過時！」訊息。
 
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample13.vb)]
 
 > [!NOTE]
-> 剛接觸 C# 3.0 和 Visual Basic 9 中，如果您使用 Visual Studio 2005 擴充方法，是因為您無法使用擴充方法。 相反地，您必須實作`FindControlRecursive`協助程式類別中的方法。 [Rick Strahl](http://www.west-wind.com/WebLog/default.aspx)在他的部落格文章中，有這類範例[微波的 ASP.NET 網頁並`FindControl` ](http://www.west-wind.com/WebLog/posts/5127.aspx)。
+> 由於擴充方法是C# 3.0 和 Visual Basic 9 的新功能，因此如果您使用 Visual Studio 2005，就無法使用擴充方法。 相反地，您必須在 helper 類別中執行 `FindControlRecursive` 方法。 [Rick Strahl](http://www.west-wind.com/WebLog/default.aspx)在他的 blog 文章中有這類的範例， [ASP.NET 的微波激頁和 `FindControl`](http://www.west-wind.com/WebLog/posts/5127.aspx)。
 
-## <a name="step-4-using-the-correctidattribute-value-in-client-side-script"></a>步驟 4：使用正確`id`屬性在用戶端指令碼中的值
+## <a name="step-4-using-the-correctidattribute-value-in-client-side-script"></a>步驟4：在用戶端腳本中使用正確的`id`屬性值
 
-本教學課程簡介所述，Web 控制項的呈現`id`屬性通常在用戶端指令碼中用來以程式設計方式參考特定的 HTML 項目。 例如，下列 JavaScript 參考 HTML 項目由其`id`，然後在強制回應的訊息方塊中顯示它的值：
+如本教學課程簡介中所述，在用戶端腳本中，通常會使用 Web 控制項的轉譯 `id` 屬性，以程式設計方式參考特定的 HTML 專案。 例如，下列 JavaScript 會依 `id` 參考 HTML 專案，然後在強制回應訊息框中顯示其值：
 
 [!code-csharp[Main](control-id-naming-in-content-pages-vb/samples/sample14.cs)]
 
-回想一下，在 ASP.NET 頁面，並包含命名容器，轉譯的 HTML 項目的`id`屬性是與 Web 控制項的相同`ID`屬性值。 基於這個原因，您會嘗試硬碟中的程式碼`id`JavaScript 程式碼的屬性值。 也就是說，如果您知道您想要存取`Age`TextBox Web 控制項，透過用戶端指令碼中，執行這項操作，透過對呼叫`document.getElementById("Age")`。
+回想一下，在不包含命名容器的 ASP.NET 網頁中，呈現的 HTML 專案的 `id` 屬性與 Web 控制項的 `ID` 屬性值相同。 因此，在 JavaScript 程式碼中，將 `id` 屬性值中的硬程式碼很吸引人。 也就是說，如果您知道您想要透過用戶端腳本來存取 `Age` TextBox Web 控制項，請藉由呼叫 `document.getElementById("Age")`來執行此動作。
 
-此方法的問題是，當使用主版頁面 （或其他命名的容器控制項），轉譯的 HTML`id`而不是 Web 控制項的`ID`屬性。 您可能會瀏覽透過瀏覽器頁面，並檢視來判斷實際來源`id`屬性。 一旦您知道轉譯`id`值，您可以將它貼到呼叫`getElementById`來存取您要使用透過用戶端指令碼的 HTML 項目。 這種方法是不盡理想，因為網頁的特定變更控制階層架構，或變更`ID`命名的控制項的屬性並更改產生`id`屬性，藉此破壞您的 JavaScript 程式碼。
+這種方法的問題在於，使用主版頁面（或其他命名容器控制項）時，轉譯的 HTML `id` 與 Web 控制項的 `ID` 屬性不同義。 您的第一步可能是透過瀏覽器造訪頁面，並查看來源以判斷實際的 `id` 屬性。 一旦知道轉譯的 `id` 值，您就可以將它貼入 `getElementById` 的呼叫中，以存取您需要透過用戶端腳本使用的 HTML 元素。 這種方法並不理想，因為對頁面的控制項階層進行某些變更，或對命名控制項的 `ID` 屬性所做的變更，將會改變產生的 `id` 屬性，進而中斷您的 JavaScript 程式碼。
 
-好消息是，`id`呈現的屬性值是在透過 Web 控制項的伺服器端程式碼中存取[`ClientID`屬性](https://msdn.microsoft.com/library/system.web.ui.control.clientid.aspx)。 您應該使用這個屬性來判斷`id`屬性用於用戶端指令碼中的值。 例如，若要新增至頁面的 JavaScript 函式，呼叫時，會顯示的值`Age`在強制回應訊息方塊中，文字方塊中，新增下列程式碼`Page_Load`事件處理常式：
+好消息是，您可以透過 Web 控制項的[`ClientID` 屬性](https://msdn.microsoft.com/library/system.web.ui.control.clientid.aspx)，在伺服器端程式碼中存取所呈現的 `id` 屬性值。 您應該使用這個屬性來判斷用戶端腳本中使用的 `id` 屬性值。 例如，若要將 JavaScript 函式加入至頁面，當呼叫時，會在強制回應訊息框中顯示 `Age` 文字方塊的值，將下列程式碼加入 `Page_Load` 事件處理常式：
 
 [!code-vb[Main](control-id-naming-in-content-pages-vb/samples/sample15.vb)]
 
-上述程式碼會插入的值`Age`文字方塊中的`ClientID`屬性的 JavaScript 呼叫插入`getElementById`。 如果您瀏覽此頁面，透過瀏覽器，並檢視的 HTML 原始檔，您會發現下列 JavaScript 程式碼：
+上述程式碼會將 `Age` TextBox 的 `ClientID` 屬性值插入至 `getElementById`的 JavaScript 呼叫中。 如果您透過瀏覽器造訪此頁面並觀看 HTML 原始碼，您會發現下列 JavaScript 程式碼：
 
 [!code-html[Main](control-id-naming-in-content-pages-vb/samples/sample16.html)]
 
-請注意如何正確`id`屬性值， `ctl00_MainContent_Age`，會出現在呼叫`getElementById`。 這個值會計算在執行階段，因為它適用於無論稍後對網頁控制階層架構。
+請注意，在 `getElementById`的呼叫中會出現正確的 `id` 屬性值 `ctl00_MainContent_Age`。 因為這個值是在執行時間計算的，所以不論頁面控制項階層的後續變更為何，都可以運作。
 
 > [!NOTE]
-> 此 JavaScript 範例只示範如何新增 JavaScript 函式會正確地參考伺服器控制項所呈現的 HTML 項目。 若要使用此函式，您必須撰寫額外的 JavaScript，或某些特定的使用者動作瓿文件載入時呼叫的函數。 如需這些的詳細資訊及相關的主題，讀取[使用用戶端指令碼](https://msdn.microsoft.com/library/aa479302.aspx)。
+> 這個 JavaScript 範例只示範如何新增 JavaScript 函式，該函式會正確地參考伺服器控制項所呈現的 HTML 元素。 若要使用此函式，您必須撰寫額外的 JavaScript，以便在檔載入時或特定的使用者動作過大幅簡化時呼叫函式。 如需這些和相關主題的詳細資訊，請參閱[使用用戶端腳本](https://msdn.microsoft.com/library/aa479302.aspx)。
 
 ## <a name="summary"></a>總結
 
-某些 ASP.NET 伺服器控制項做為命名容器，而這會影響轉譯`id`屬性值及其子系的控制項以及 canvassed 由控制項的範圍`FindControl`方法。 關於主版頁面、 主版頁面本身和它的 ContentPlaceHolder 控制項命名容器。 因此，我們需要把闡述更多的工作，以程式設計方式參考內容的頁面使用的控制項`FindControl`。 在本教學課程中，我們檢查兩種技術： 鑽研到 ContentPlaceHolder 控制項並呼叫其`FindControl`方法，和正在復原自己`FindControl`實作，以遞迴方式搜尋所有的命名容器。
+某些 ASP.NET 伺服器控制項的作用是命名容器，這會影響其子控制項的轉譯 `id` 屬性值，以及 `FindControl` 方法所 canvassed 的控制項範圍。 與主版頁面相關的是，主版頁面本身和其 ContentPlaceHolder 控制項都是命名容器。 因此，我們需要使用 `FindControl`，在內容頁面中以程式設計方式參考控制項。 在本教學課程中，我們探討了兩種技術：深入探索 ContentPlaceHolder 控制項並呼叫其 `FindControl` 方法;並輪流執行自己的 `FindControl` 執行，以遞迴方式搜尋所有的命名容器。
 
-除了與參考 Web 控制項的命名容器導入的伺服器端問題，還有用戶端問題。 沒有命名容器的 Web 控制項的`ID`屬性值和呈現`id`屬性值是在相同的其中一個。 但加上命名容器，呈現`id`屬性同時包含`ID`Web 控制項和其控制項階層架構的上階中的命名容器的值。 這些命名問題是問題，只要您使用 Web 控制項的`ClientID`屬性來判斷呈現`id`屬性在用戶端指令碼的值。
+除了參考 Web 控制項的伺服器端問題命名容器之外，也有用戶端問題。 在沒有命名容器的情況下，Web 控制項的 `ID` 屬性值和轉譯的 `id` 屬性值都是同一個。 但是在新增命名容器之後，轉譯的 `id` 屬性會同時包含 Web 控制項的 `ID` 值和其控制項階層上階中的命名容器。 只要您使用 Web 控制項的 `ClientID` 屬性來判斷用戶端腳本中轉譯的 `id` 屬性值，這些命名問題就不會有問題。
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ### <a name="further-reading"></a>進一步閱讀
 
-如需有關在本教學課程所討論的主題的詳細資訊，請參閱下列資源：
+如需本教學課程中所討論之主題的詳細資訊，請參閱下列資源：
 
 - [ASP.NET 主版頁面和 `FindControl`](http://www.west-wind.com/WebLog/posts/5127.aspx)
-- [建立動態資料輸入的使用者介面](https://msdn.microsoft.com/library/aa479330.aspx)
-- [擴充基底型別功能的擴充方法](http://aspnet.4guysfromrolla.com/articles/120507-1.aspx)
+- [建立動態資料輸入使用者介面](https://msdn.microsoft.com/library/aa479330.aspx)
+- [使用擴充方法擴充基底類型功能](http://aspnet.4guysfromrolla.com/articles/120507-1.aspx)
 - [如何：參考 ASP.NET 主版頁面內容](https://msdn.microsoft.com/library/xxwa0ff0.aspx)
-- [主要頁面：秘訣、 技巧和陷阱](http://www.odetocode.com/articles/450.aspx)
-- [使用用戶端指令碼](https://msdn.microsoft.com/library/aa479302.aspx)
+- [宿主頁面：秘訣、訣竅和陷阱](http://www.odetocode.com/articles/450.aspx)
+- [使用用戶端腳本](https://msdn.microsoft.com/library/aa479302.aspx)
 
 ### <a name="about-the-author"></a>關於作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的多個 ASP 本書籍，他是 4GuysFromRolla.com 的創辦人，一直從事 Microsoft Web 技術自 1998 年。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是[ *Sams 教導您自己 ASP.NET 3.5 24 小時內*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 Scott 要聯絡[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)或透過他的部落格[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，自1998起，有多個 ASP/ASP. NET 書籍和創辦人的4GuysFromRolla.com。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是[*在24小時內讓自己的 ASP.NET 3.5*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 Scott 可以在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)或透過他在[http://ScottOnWriting.NET](http://scottonwriting.net/)的 blog。
 
 ### <a name="special-thanks-to"></a>特別感謝
 
-本教學課程系列是由許多實用的檢閱者檢閱。 本教學課程中的潛在客戶檢閱者已 Zack Jones 和 Suchi Barnerjee。 有興趣檢閱我即將推出的 MSDN 文章嗎？ 如果是這樣，psychic 在[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
+本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Zack，Suchi Barnerjee。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)的那一行下拉式。
 
 > [!div class="step-by-step"]
 > [上一頁](urls-in-master-pages-vb.md)

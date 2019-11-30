@@ -1,120 +1,120 @@
 ---
 uid: mvc/overview/older-versions-1/views/creating-custom-html-helpers-vb
-title: 建立自訂的 HTML 協助程式 (VB) |Microsoft Docs
+title: 建立自訂 HTML 協助程式（VB） |Microsoft Docs
 author: microsoft
-description: 本教學課程的目標在於示範如何建立自訂的 HTML 協助程式，您可以使用 MVC 檢視中。 利用 HTML 協助程式...
+description: 本教學課程的目的是要示範如何建立可在 MVC 視圖內使用的自訂 HTML 協助程式。 利用 HTML Helper 。
 ms.author: riande
 ms.date: 10/07/2008
 ms.assetid: f96f4800-19ef-44c0-b457-55e777eb5de8
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 667867647fea75ddfa5881b73ea3c5b28c8135a5
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: aaeadde258a2855343a5bfb1e5ee76000e04f6bd
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65117385"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74593839"
 ---
 # <a name="creating-custom-html-helpers-vb"></a>建立自訂的 HTML 協助程式 (VB)
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-[下載 PDF](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_9_VB.pdf)
+[下載 PDF](https://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_9_VB.pdf)
 
-> 本教學課程的目標在於示範如何建立自訂的 HTML 協助程式，您可以使用 MVC 檢視中。 利用 HTML 協助程式，您可以減少您必須執行才能建立標準的 HTML 網頁的 HTML 標記的 tedious 打字的量。
+> 本教學課程的目的是要示範如何建立可在 MVC 視圖內使用的自訂 HTML 協助程式。 藉由利用 HTML 協助程式，您可以減少在建立標準 HTML 網頁時，必須執行的 HTML 標籤的單調乏味輸入量。
 
-本教學課程的目標在於示範如何建立自訂的 HTML 協助程式，您可以使用 MVC 檢視中。 利用 HTML 協助程式，您可以減少您必須執行才能建立標準的 HTML 網頁的 HTML 標記的 tedious 打字的量。
+本教學課程的目的是要示範如何建立可在 MVC 視圖內使用的自訂 HTML 協助程式。 藉由利用 HTML 協助程式，您可以減少在建立標準 HTML 網頁時，必須執行的 HTML 標籤的單調乏味輸入量。
 
-在本教學課程的第一個部分中，我會說明一些現有 ASP.NET MVC framework 隨附的 HTML 協助程式。 接下來，我先說明兩種建立自訂的 HTML 協助程式方法：我會說明如何建立自訂的 HTML 協助程式所建立的共用的方法，並藉由建立擴充方法。
+在本教學課程的第一個部分中，我將說明 ASP.NET MVC 架構中包含的一些現有 HTML 協助程式。 接下來，我將說明建立自訂 HTML 協助程式的兩種方法：我將說明如何建立共用方法並建立擴充方法，以建立自訂 HTML helper。
 
-## <a name="understanding-html-helpers"></a>了解 HTML 協助程式
+## <a name="understanding-html-helpers"></a>瞭解 HTML 協助程式
 
-HTML 協助程式是只會傳回字串的方法。 字串可以代表任一種您想要的內容。 比方說，您可以使用 HTML Helper 來呈現標準的 HTML 標記，例如 HTML`<input>`和`<img>`標記。 您也可以使用 HTML Helper 來呈現更複雜的內容，例如索引標籤帶或資料庫資料的 HTML 資料表。
+HTML Helper 只是傳回字串的方法。 字串可以代表您想要的任何類型內容。 例如，您可以使用 HTML helper 來呈現標準 HTML 標籤，例如 HTML `<input>` 和 `<img>` 標記。 您也可以使用 HTML helper 來呈現更複雜的內容，例如索引標籤區域或資料庫資料的 HTML 表格。
 
-ASP.NET MVC 架構包括下列設定中 （這不是完整的清單） 的標準 HTML 協助程式：
+ASP.NET MVC 架構包含下列一組標準 HTML 協助程式（這不是完整的清單）：
 
-- Html.ActionLink()
-- Html.BeginForm()
-- Html.CheckBox()
-- Html.DropDownList()
-- Html.EndForm()
-- Html.Hidden()
-- Html.ListBox()
-- Html.Password()
-- Html.RadioButton()
-- Html.TextArea()
-- Html.TextBox()
+- .Html （）
+- Html.beginform （）
+- Html. CheckBox （）
+- DropDownList （）
+- EndForm （）
+- Html. Hidden （）
+- Html. ListBox （）
+- Html. Password （）
+- Html （選項按鈕）（）
+- Html. TextArea （）
+- Html. TextBox （）
 
-例如，請考慮在列表 1 中的表單。 此表單會轉譯兩個標準的 HTML 協助程式 （請參閱 圖 1） 的協助。 這個表單用`Html.BeginForm()`和`Html.TextBox()`Helper 方法。
+例如，請考慮 [清單 1] 中的表單。 這種表單是透過兩個標準 HTML helper 的協助來呈現的（請參閱 [圖 1]）。 這個表單會使用 `Html.BeginForm()` 和 `Html.TextBox()` Helper 方法。
 
-[![頁面呈現與 HTML 協助程式](creating-custom-html-helpers-vb/_static/image2.png)](creating-custom-html-helpers-vb/_static/image1.png)
+[使用 HTML 協助程式轉譯的 ![頁面](creating-custom-html-helpers-vb/_static/image2.png)](creating-custom-html-helpers-vb/_static/image1.png)
 
-**圖 01**:使用 HTML Helper 呈現網頁 ([按一下以檢視完整大小的影像](creating-custom-html-helpers-vb/_static/image3.png))
+**圖 01**：以 HTML 協助程式轉譯的頁面（[按一下以觀看完整大小的影像](creating-custom-html-helpers-vb/_static/image3.png)）
 
-**列表 1 – `Views\Home\Index.aspx`**
+**清單1– `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-vb/samples/sample1.aspx)]
 
-`Html.BeginForm()`協助程式方法用來建立的開頭和結尾的 HTML`<form>`標記。 請注意，`Html.BeginForm()`方法稱為在 using 陳述式。 使用陳述式可以確保`<form>`標記取得關閉使用結尾區塊。
+`Html.BeginForm()` Helper 方法是用來建立開頭和結尾的 HTML `<form>` 標記。 請注意，會在 using 語句中呼叫 `Html.BeginForm()` 方法。 Using 語句可確保在 using 區塊結尾處關閉 `<form>` 標記。
 
-如果您偏好，而不是建立 using 區塊中，您可以呼叫 Html.EndForm() 協助程式方法，以關閉`<form>`標記。 使用任何方法，來建立開啟和關閉`<form>`似乎最直覺的標記。
+如果您想要，而不是建立 using 區塊，您可以呼叫 EndForm （） Helper 方法來關閉 `<form>` 標記。 您可以使用任何方法來建立開頭和結尾的 `<form>` 標記，這對您而言是最直覺的。
 
-`Html.TextBox()` Helper 方法會在 列表 1 中用來呈現 HTML`<input>`標記。 如果您選取檢視原始檔瀏覽器中您會看到列表 2 中的 HTML 原始程式碼。 請注意來源包含標準的 HTML 標記。
+`Html.TextBox()` 的 Helper 方法會在清單1中用來呈現 HTML `<input>` 標記。 如果您在瀏覽器中選取 [view source]，則會在 [清單 2] 中看到 HTML 原始檔。 請注意，來源包含標準 HTML 標籤。
 
 > [!IMPORTANT]
-> 請注意， `Html.TextBox()`HTML 協助程式以呈現`<%= %>`而不是標記`<% %>`標記。 如果您未包含等號，然後執行任何動作取得呈現在瀏覽器。
+> 請注意，`Html.TextBox()`HTML 協助程式是以 `<%= %>` 標記而非 `<% %>` 標記來呈現。 如果您未包含等號，則不會將任何內容轉譯至瀏覽器。
 
-ASP.NET MVC 架構會包含較少的協助程式。 最有可能，您必須擴充 MVC 架構使用自訂 HTML 協助程式。 在本教學課程的其餘部分，您將了解建立自訂的 HTML 協助程式的兩個方法。
+ASP.NET MVC 架構包含一小部分的協助程式。 最有可能的情況是，您必須使用自訂 HTML 協助程式來擴充 MVC 架構。 在本教學課程的其餘部分，您將瞭解建立自訂 HTML 協助程式的兩種方法。
 
-**列表 2 – `Index.aspx Source`**
+**清單2– `Index.aspx Source`**
 
 [!code-aspx[Main](creating-custom-html-helpers-vb/samples/sample2.aspx)]
 
-### <a name="creating-html-helpers-with-shared-methods"></a>建立使用共用方法的 HTML 協助程式
+### <a name="creating-html-helpers-with-shared-methods"></a>使用共用方法建立 HTML 協助程式
 
-若要建立新的 HTML 協助程式的最簡單方式是建立共用的方法會傳回字串。 想像一下，比方說，您決定建立新的 HTML Helper 呈現 HTML`<label>`標記。 您也可以在 列表 2 中使用類別來呈現`<label>`。
+建立新 HTML Helper 的最簡單方式，就是建立可傳回字串的共用方法。 例如，假設您決定要建立新的 HTML Helper，以轉譯 HTML `<label>` 標記。 您可以使用 [清單 2] 中的類別來呈現 `<label>`。
 
-**列表 2 – `Helpers\LabelHelper.vb`**
+**清單2– `Helpers\LabelHelper.vb`**
 
 [!code-vb[Main](creating-custom-html-helpers-vb/samples/sample3.vb)]
 
-沒有特別關於列表 2 中的類別。 `Label()`方法只會傳回字串。
+[清單 2] 中的類別沒有特別的內容。 `Label()` 方法只會傳回字串。
 
-在 列表 3 中修改過的 索引 檢視會使用`LabelHelper`呈現 HTML`<label>`標記。 請注意，此檢視包含`<%@ imports %>`匯入 Application1.Helpers 命名空間的指示詞。
+[清單 3] 中修改過的索引視圖會使用 `LabelHelper` 來呈現 HTML `<label>` 標記。 請注意，此視圖包含匯入 Application1 命名空間的 `<%@ imports %>` 指示詞。
 
-**列表 2 – `Views\Home\Index2.aspx`**
+**清單2– `Views\Home\Index2.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-vb/samples/sample4.aspx)]
 
-### <a name="creating-html-helpers-with-extension-methods"></a>使用擴充方法建立 HTML 協助程式
+### <a name="creating-html-helpers-with-extension-methods"></a>建立具有擴充方法的 HTML 協助程式
 
-如果您想要建立只是工作的 HTML 協助程式，例如標準包含 ASP.NET MVC 架構中，則您需要建立擴充方法的 HTML 協助程式。 擴充方法可讓您將新方法新增至現有的類別。 在建立時的 HTML Helper 方法，您會加入新方法來`HtmlHelper`檢視的 Html 屬性所表示的類別。
+如果您想要建立 HTML 協助程式，其作用就像 ASP.NET MVC 架構中包含的標準 HTML helper，那麼您必須建立擴充方法。 擴充方法可讓您將新的方法加入至現有的類別。 建立 HTML Helper 方法時，您會將新的方法加入至由視圖的 Html 屬性所表示的 `HtmlHelper` 類別。
 
-Visual Basic 模組列表 3 中的新增名為擴充方法`Label()`至`HtmlHelper`類別。 有幾件事，您應該注意到關於此模組。 首先，請注意此模組以裝飾`<Extension()>`屬性。 若要使用這個屬性，您必須匯入`System.Runtime.CompilerServices`命名空間
+[清單 3] 中的 [Visual Basic] 模組會將名為 `Label()` 的擴充方法新增至 `HtmlHelper` 類別。 關於此課程模組，您應該注意幾件事。 首先，請注意模組是以 `<Extension()>` 屬性裝飾。 若要使用這個屬性，您必須匯入 `System.Runtime.CompilerServices` 命名空間
 
-其次，請注意，第一個參數`Label()`方法代表`HtmlHelper`類別。 擴充方法的第一個參數指出的擴充方法要擴充的類別。
+第二，請注意，`Label()` 方法的第一個參數代表 `HtmlHelper` 類別。 擴充方法的第一個參數表示擴充方法擴充的類別。
 
-**列表 3 – `Helpers\LabelExtensions.vb`**
+**清單3– `Helpers\LabelExtensions.vb`**
 
 [!code-vb[Main](creating-custom-html-helpers-vb/samples/sample5.vb)]
 
-擴充方法建立擴充方法，並成功建置您的應用程式之後，會出現在 Visual Studio Intellisense，如同所有其他方法的類別 （請參閱 圖 2）。 唯一的差別是該方法會出現特殊符號旁邊 （向下箭號圖示） 的延伸模組。
+在您建立擴充方法並成功建立應用程式之後，擴充方法會出現在 Visual Studio Intellisense 中，就像類別的所有其他方法一樣（請參閱 [圖 2]）。 唯一的差別在於擴充方法會在其旁邊顯示特殊符號（向下箭號的圖示）。
 
-[![使用 Html.Label() 擴充方法](creating-custom-html-helpers-vb/_static/image5.png)](creating-custom-html-helpers-vb/_static/image4.png)
+[使用 Html. Label （）擴充方法 ![](creating-custom-html-helpers-vb/_static/image5.png)](creating-custom-html-helpers-vb/_static/image4.png)
 
-**圖 02**:使用 Html.Label() 擴充方法 ([按一下以檢視完整大小的影像](creating-custom-html-helpers-vb/_static/image6.png))
+**圖 02**：使用 Html. Label （）擴充方法（[按一下以查看完整大小的影像](creating-custom-html-helpers-vb/_static/image6.png)）
 
-在 列表 4 中已修改的 索引 檢視使用 Html.Label(); 擴充方法來呈現所有其&lt;標籤&gt;標記。
+[清單 4] 中修改過的索引視圖會使用 Html. Label （）擴充方法，將其所有的 &lt;標籤轉譯&gt; 標記。
 
-**列表 4 – `Views\Home\Index3.aspx`**
+**清單4– `Views\Home\Index3.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-vb/samples/sample6.aspx)]
 
 ## <a name="summary"></a>總結
 
-在本教學課程中，您已了解建立自訂的 HTML 協助程式的兩個方法。 首先，您已了解如何建立自訂`Label()`所建立的共用的方法的 HTML 協助程式傳回的字串。 接下來，您已了解如何建立自訂`Label()`上建立擴充方法的 HTML Helper 方法`HtmlHelper`類別。
+在本教學課程中，您已瞭解建立自訂 HTML 協助程式的兩種方法。 首先，您已瞭解如何建立一個會傳回字串的共用方法，以建立自訂的 `Label()` HTML Helper。 接下來，您已瞭解如何在 `HtmlHelper` 類別上建立擴充方法，以建立自訂的 `Label()` HTML Helper 方法。
 
-在本教學課程中，我會著重於建置非常簡單的 HTML Helper 方法。 請注意，HTML 協助程式可以是任意的複雜。 您可以建置 HTML 協助程式呈現豐富的內容，例如樹狀檢視、 功能表或資料庫資料的資料表。
+在本教學課程中，我將重點放在建立非常簡單的 HTML Helper 方法。 請注意，HTML Helper 可以像您想要的一樣複雜。 您可以建立 HTML 協助程式來呈現豐富的內容，例如樹狀檢視、功能表或資料庫資料的資料表。
 
 > [!div class="step-by-step"]
 > [上一頁](asp-net-mvc-views-overview-vb.md)

@@ -1,71 +1,71 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-vb
-title: 啟動強制回應快顯視窗中的，從伺服器程式碼 (VB) |Microsoft Docs
+title: 從伺服器程式碼啟動強制回應快顯視窗（VB） |Microsoft Docs
 author: wenz
-description: AJAX Control Toolkit 之 ModalPopup 控制項提供簡單的方式來建立使用用戶端表示強制回應快顯。 不過有些情況下會需要該 t...
+description: AJAX 控制項工具組中的 ModalPopup 控制項提供一個簡單的方式，讓您使用用戶端的方法來建立強制回應快顯視窗。 不過，有些案例需要 t 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 36ca81d7-906d-4db2-952b-add18a4ff421
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b98546952174bfcf08736195c87d515eda150319
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 1368a78d35ac6461bbc2e852e468f42eef2c0d2c
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132596"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74606580"
 ---
 # <a name="launching-a-modal-popup-window-from-server-code-vb"></a>從伺服器程式碼啟動強制回應快顯視窗 (VB)
 
-藉由[Christian Wenz](https://github.com/wenz)
+依[Christian Wenz](https://github.com/wenz)
 
-[下載程式碼](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup1.vb.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup1VB.pdf)
+[下載程式代碼](https://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup1.vb.zip)或[下載 PDF](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup1VB.pdf)
 
-> AJAX Control Toolkit 之 ModalPopup 控制項提供簡單的方式來建立使用用戶端表示強制回應快顯。 不過，某些情況下需要開啟強制回應快顯會觸發伺服器端上。
+> AJAX 控制項工具組中的 ModalPopup 控制項提供一個簡單的方式，讓您使用用戶端的方法來建立強制回應快顯視窗。 不過，有些情況需要在伺服器端觸發強制回應快顯視窗。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-AJAX Control Toolkit 之 ModalPopup 控制項提供簡單的方式來建立使用用戶端表示強制回應快顯。 不過，某些情況下需要開啟強制回應快顯會觸發伺服器端上。
+AJAX 控制項工具組中的 ModalPopup 控制項提供一個簡單的方式，讓您使用用戶端的方法來建立強制回應快顯視窗。 不過，有些情況需要在伺服器端觸發強制回應快顯視窗。
 
 ## <a name="steps"></a>步驟
 
-首先，ASP.NET 按鈕 web 控制項，才能示範 ModalPopup 控制的運作方式。 新增這類的按鈕內&lt;表單&gt;新的頁面上的項目：
+首先，必須要有 ASP.NET 按鈕 web 控制項，才能示範 ModalPopup 控制項的運作方式。 在新頁面上的 &lt;表單&gt; 元素中加入這類按鈕：
 
 [!code-aspx[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample1.aspx)]
 
-然後，您需要的標記您想要建立快顯視窗。 它定義為`<asp:Panel>`控制項，並確定它包含按鈕控制項。 ModalPopup 控制項提供的功能，使這類按鈕來關閉快顯視窗;否則會沒有簡單的方法，讓它消失。
+然後，您需要您想要建立之快顯的標記。 將它定義為 `<asp:Panel>` 控制項，並確定它包含按鈕控制項。 ModalPopup 控制項提供讓這類按鈕關閉快顯視窗的功能;否則，沒有任何簡單的方法可以讓它消失。
 
 [!code-aspx[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample2.aspx)]
 
-接下來將從 ASP.NET AJAX Toolkit ModalPopup 控制項加入頁面。 設定屬性載入控制項的按鈕、 按鈕，因此會消失，以及實際的快顯視窗的識別碼。
+接下來，從 ASP.NET AJAX 工具組將 ModalPopup 控制項新增至頁面。 設定載入控制項的按鈕屬性、使其消失的按鈕，以及實際快顯視窗的識別碼。
 
 [!code-aspx[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample3.aspx)]
 
-如同所有 ASP.NET AJAX; 為基礎的 web 網頁指令碼管理員，才能載入必要的 JavaScript 程式庫，針對不同的目標瀏覽器：
+如同所有以 ASP.NET AJAX 為基礎的網頁，需要腳本管理員，才能為不同的目標瀏覽器載入必要的 JavaScript 程式庫：
 
 [!code-aspx[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample4.aspx)]
 
-在瀏覽器中執行範例。 當您按一下按鈕，強制回應快顯視窗隨即出現。 為了達成使用伺服器端程式碼相同的效果，新的按鈕，則需要：
+在瀏覽器中執行範例。 當您按一下按鈕時，就會出現強制回應快顯視窗。 若要使用伺服器端程式碼達到相同的效果，則需要新的按鈕：
 
 [!code-aspx[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample5.aspx)]
 
-如您所見，按一下按鈕會產生回傳，並且執行`ServerButton_Click()`伺服器上的方法。 這種方法的 JavaScript 函式呼叫`launchModal()`執行很精確，JavaScript 函式會執行一次載入頁面：
+如您所見，按一下按鈕會產生回傳，並在伺服器上執行 `ServerButton_Click()` 方法。 在這個方法中，稱為 `launchModal()` 的 JavaScript 函式會執行成精確的，一旦載入頁面，就會執行 JavaScript 函式：
 
 [!code-aspx[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample6.aspx)]
 
-工作`launchModal()`是顯示 ModalPopup。 `launchModal()`完整的 HTML 頁面載入之後，會執行函式。 在該時間點，不過，ASP.NET AJAX 架構尚未完全載入。 因此，`launchModal()`函式只會將 ModalPopup 控制項必須在稍後顯示的變數：
+`launchModal()` 的工作是要顯示 ModalPopup。 一旦載入完整的 HTML 頁面，就會執行 `launchModal()` 函式。 不過，目前尚未完全載入 ASP.NET AJAX 架構。 因此，`launchModal()` 函數只會設定一個變數，ModalPopup 控制項稍後必須顯示：
 
 [!code-html[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample7.html)]
 
-`pageLoad()` JavaScript 函式是 ASP.NET AJAX 完全載入後執行的特殊函式。 因此我們將程式碼加入這個函數來顯示 ModalPopup 控制項，但是只有`launchModal()`之前已呼叫：
+`pageLoad()` JavaScript 函式是一種特殊函式，會在 ASP.NET AJAX 完全載入後執行。 因此，我們將程式碼加入此函式以顯示 ModalPopup 控制項，但只有在之前呼叫過 `launchModal()`：
 
 [!code-javascript[Main](launching-a-modal-popup-window-from-server-code-vb/samples/sample8.js)]
 
-`$find()`函式會尋找具名項目頁面上，並預期伺服器端 ID，做為參數。 因此，`$find("mpe")`傳回 ModalPopup 控制項的用戶端表示法，其`show()`方法可讓快顯視窗會出現。
+`$find()` 函式會在頁面上尋找名為的專案，而且需要伺服器端識別碼做為參數。 因此，`$find("mpe")` 會傳回 ModalPopup 控制項的用戶端標記法;其 `show()` 方法會讓快顯視窗出現。
 
-[![強制回應快顯視窗出現時按一下的按鈕](launching-a-modal-popup-window-from-server-code-vb/_static/image2.png)](launching-a-modal-popup-window-from-server-code-vb/_static/image1.png)
+[當按一下其中一個按鈕時，就會出現強制回應快顯視窗 ![](launching-a-modal-popup-window-from-server-code-vb/_static/image2.png)](launching-a-modal-popup-window-from-server-code-vb/_static/image1.png)
 
-強制回應快顯視窗出現時按一下任一按鈕時 ([按一下以檢視完整大小的影像](launching-a-modal-popup-window-from-server-code-vb/_static/image3.png))
+按一下其中一個按鈕時，就會出現強制回應快顯視窗（[按一下以查看完整大小的影像](launching-a-modal-popup-window-from-server-code-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
 > [上一頁](positioning-a-modalpopup-cs.md)

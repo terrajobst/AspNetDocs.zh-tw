@@ -1,59 +1,59 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-entries-with-cascadingdropdown-cs
-title: Cascadingdropdown 預設清單項目與 CascadingDropDown (C#) |Microsoft Docs
+title: 使用 CascadingDropDown （C#）預設清單專案 |Microsoft Docs
 author: wenz
-description: 在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯 anoth 中的值...
+description: AJAX 控制項工具組中的 CascadingDropDown 控制項會擴充 DropDownList 控制項，讓一個 DropDownList 中的變更載入 anoth 中的相關聯值 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 04c79748-0f21-4a3b-aba5-e1ce3161c32e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-entries-with-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 51bbf0d3b15e9107c4388bf12193b488491c8b32
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 3bb4a51092534e6fddbd40f868c53c58d12eef2f
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132207"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74574654"
 ---
 # <a name="presetting-list-entries-with-cascadingdropdown-c"></a>使用 CascadingDropDown 預設清單項目 (C#)
 
-藉由[Christian Wenz](https://github.com/wenz)
+依[Christian Wenz](https://github.com/wenz)
 
-[下載程式碼](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown2.cs.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingDropDown2CS.pdf)
+[下載程式代碼](https://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown2.cs.zip)或[下載 PDF](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingDropDown2CS.pdf)
 
-> 在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。 加上一些程式碼就可以，以動態方式載入資料之後，已預先選取的清單項目。
+> AJAX 控制項工具組中的 CascadingDropDown 控制項會擴充 DropDownList 控制項，讓一個 DropDownList 中的變更載入另一個 DropDownList 中的關聯值。 只要有一些程式碼，當資料已動態載入之後，就可以預先選取清單元素。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。 （比方說，一份清單會提供一份我們狀態，而且下一個清單則填入該狀態中主要城市）。加上一些程式碼就可以，以動態方式載入資料之後，已預先選取的清單項目。
+AJAX 控制項工具組中的 CascadingDropDown 控制項會擴充 DropDownList 控制項，讓一個 DropDownList 中的變更載入另一個 DropDownList 中的關聯值。 （例如，一個清單提供美國州的清單，而下一個清單則會填入該州的主要城市）。只要有一些程式碼，當資料已動態載入之後，就可以預先選取清單元素。
 
 ## <a name="steps"></a>步驟
 
-若要啟動的 ASP.NET AJAX Control Toolkit 中，功能`ScriptManager`控制項必須放置在任何位置上 (但在`<form>`項目):
+若要啟用 ASP.NET AJAX 和控制項工具組的功能，`ScriptManager` 控制項必須放在頁面上的任何位置（但在 `<form>` 元素內）：
 
 [!code-aspx[Main](presetting-list-entries-with-cascadingdropdown-cs/samples/sample1.aspx)]
 
-DropDownList 控制項則需要：
+然後，需要 DropDownList 控制項：
 
 [!code-aspx[Main](presetting-list-entries-with-cascadingdropdown-cs/samples/sample2.aspx)]
 
-此清單中，會加入 CascadingDropDown 擴充項，提供 web 服務 URL 和方法資訊：
+針對這份清單，會加入 CascadingDropDown 擴充項，並提供 web 服務 URL 和方法資訊：
 
 [!code-aspx[Main](presetting-list-entries-with-cascadingdropdown-cs/samples/sample3.aspx)]
 
-CascadingDropDown extender 接著會以非同步方式呼叫 web 服務的下列方法簽章：
+然後，CascadingDropDown 擴充項會以非同步方式呼叫具有下列方法簽章的 web 服務：
 
 [!code-csharp[Main](presetting-list-entries-with-cascadingdropdown-cs/samples/sample4.cs)]
 
-方法會傳回類型 CascadingDropDown 值的陣列。 類型的建構函式必須要有先清單項目的標題，然後此值 (HTML`value`屬性)。 如果第三個引數設定為 true，清單項目會自動選取瀏覽器中。
+方法會傳回 CascadingDropDown 數值型別的陣列。 類型的函式需要先有清單專案的標題，然後才是值（HTML `value` 屬性）。 如果第三個引數設定為 true，則會在瀏覽器中自動選取清單元素。
 
 [!code-aspx[Main](presetting-list-entries-with-cascadingdropdown-cs/samples/sample5.aspx)]
 
-載入瀏覽器頁面，將會填滿下拉式清單中的，使用三個廠商，第二個要預先選取。
+在瀏覽器中載入頁面，會在下拉式清單中填入三個廠商，第二個是預先選取的。
 
-[![清單會填滿，且預設會自動選取](presetting-list-entries-with-cascadingdropdown-cs/_static/image2.png)](presetting-list-entries-with-cascadingdropdown-cs/_static/image1.png)
+[![清單已自動填入和預先選取](presetting-list-entries-with-cascadingdropdown-cs/_static/image2.png)](presetting-list-entries-with-cascadingdropdown-cs/_static/image1.png)
 
-清單會填入，且會自動預先選取 ([按一下以檢視完整大小的影像](presetting-list-entries-with-cascadingdropdown-cs/_static/image3.png))
+系統會自動填入並預先選取清單（[按一下以查看完整大小的影像](presetting-list-entries-with-cascadingdropdown-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
 > [上一頁](using-cascadingdropdown-with-a-database-cs.md)

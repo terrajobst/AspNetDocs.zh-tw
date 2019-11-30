@@ -1,230 +1,230 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-cs
-title: 使用計算資料行 (C#) |Microsoft Docs
+title: 使用計算資料行（C#） |Microsoft Docs
 author: rick-anderson
-description: 建立資料庫資料表時，Microsoft SQL Server 可讓您定義其值會計算從運算式計算資料行，通常 referen...
+description: 建立資料庫資料表時，Microsoft SQL Server 可讓您定義計算資料行，其值是從通常 referen 的運算式計算而來。
 ms.author: riande
 ms.date: 08/03/2007
 ms.assetid: 57459065-ed7c-4dfe-ac9c-54c093abc261
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 91568543496904f3db0146eee4e414eb2c61c49e
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: ad6a96f2721510c2478f707c8eed018ae797f27a
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108550"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74603472"
 ---
 # <a name="working-with-computed-columns-c"></a>使用計算資料行 (C#)
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載程式碼](http://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_71_CS.zip)或[下載 PDF](working-with-computed-columns-cs/_static/datatutorial71cs1.pdf)
+[下載程式代碼](https://download.microsoft.com/download/3/9/f/39f92b37-e92e-4ab3-909e-b4ef23d01aa3/ASPNET_Data_Tutorial_71_CS.zip)或[下載 PDF](working-with-computed-columns-cs/_static/datatutorial71cs1.pdf)
 
-> 建立資料庫資料表時，Microsoft SQL Server 可讓您定義計算資料行，其值會計算從通常參考相同資料庫記錄中的其他值的運算式。 這類的值為唯讀，在資料庫中，使用 Tableadapter 時需要特殊考量。 在本教學課程中，我們了解如何符合計算資料行所帶來的挑戰的內容。
+> 建立資料庫資料表時，Microsoft SQL Server 可讓您定義計算資料行，其值是從通常參考相同資料庫記錄中其他值的運算式計算而來。 這類值在資料庫中是唯讀的，這在使用 Tableadapter 時需要特殊的考慮。 在本教學課程中，我們將學習如何滿足計算資料行所帶來的挑戰。
 
 ## <a name="introduction"></a>簡介
 
-Microsoft SQL Server 是用來 *[計算資料行](https://msdn.microsoft.com/library/ms191250.aspx)* ，這是其值的計算方式，通常參考相同資料表中的其他資料行中的 值運算式的資料行。 舉例來說，追蹤資料模型的時間可能有一個名為資料表`ServiceLog`包括的資料行`ServicePerformed`， `EmployeeID`， `Rate`，和`Duration`，其他項目。 雖然金額每項服務項目 （速率乘以持續時間） 可能會計算透過網頁或其他程式設計介面，則可能包含的資料行中方便`ServiceLog`名為資料表`AmountDue`，回報這資訊。 無法建立此資料行，做為一般的資料行，但它必須隨時更新`Rate`或`Duration`變更的資料行值。 好的做法是讓`AmountDue`資料行使用運算式的計算資料行`Rate * Duration`。 這樣做會導致 SQL Server，即可自動計算`AmountDue`每當它在查詢中參考的資料行值。
+Microsoft SQL Server 允許 *[計算資料行](https://msdn.microsoft.com/library/ms191250.aspx)* ，這是其值是從運算式計算而來，且通常會從相同資料表中的其他資料行參考值的資料行。 例如，時間追蹤資料模型可能會有一個名為 `ServiceLog` 的資料表，其中包含資料行，包括 `ServicePerformed`、`EmployeeID`、`Rate`和 `Duration`等等。 雖然可以透過網頁或其他程式設計介面來計算每個服務專案的應付金額（速率乘以持續時間），但在報告這項資訊的 `ServiceLog` `AmountDue` 資料表中包含資料行，可能會很方便。 此資料行可以建立為一般資料行，但每當 `Rate` 或 `Duration` 資料行值變更時，都必須更新。 較好的方法是使用運算式 `Rate * Duration`，讓 `AmountDue` 資料行成為計算資料行。 這麼做會導致 SQL Server 在查詢中參考 `AmountDue` 的資料行值時，自動計算該值。
 
-計算資料行的值取決於運算式，因為這類資料行是唯讀，因此不能有值指派給在`INSERT`或`UPDATE`陳述式。 不過，當計算資料行是使用特定 SQL 陳述式的 TableAdapter 的主查詢的一部分，它們會自動包含在自動產生`INSERT`和`UPDATE`陳述式。 因此，tableadapter`INSERT`並`UPDATE`查詢並`InsertCommand`和`UpdateCommand`必須更新屬性，以移除任何計算資料行的參考。
+由於計算資料行的值是由運算式決定，因此這類資料行是唯讀的，因此不能在 `INSERT` 或 `UPDATE` 語句中指派值給它們。 不過，當計算資料行屬於使用臨機操作 SQL 語句之 TableAdapter 的主要查詢時，它們會自動包含在自動產生的 `INSERT` 和 `UPDATE` 語句中。 因此，必須更新 TableAdapter s `INSERT` 和 `UPDATE` 查詢和 `InsertCommand` 和 `UpdateCommand` 屬性，才能移除任何計算資料行的參考。
 
-使用其中一項挑戰的計算資料行，以使用特定 SQL 陳述式的 tableadapter 是 tableadapter`INSERT`和`UPDATE`查詢就會自動重新產生完成 [TableAdapter 組態精靈] 的任何時間。 因此，計算資料行中手動移除從`INSERT`和`UPDATE`重新執行精靈時，查詢將會重新出現。 雖然使用預存程序的 TableAdapters 不受到這個脆弱度，它們可以我們將在步驟 3 中將自己 quirks。
+使用計算資料行搭配使用臨機操作 SQL 語句的 TableAdapter 的一項挑戰，就是在完成 TableAdapter 設定向導時，會自動重新產生 TableAdapter s `INSERT` 和 `UPDATE` 查詢。 因此，手動從 `INSERT` 中移除的計算資料行，如果重新執行此嚮導，`UPDATE` 查詢就會再次出現。 雖然使用預存程式的 Tableadapter 不會受到此肯定脆弱度的影響，但它們在步驟3中會有自己的疑慮。
 
-在本教學課程中，我們將增加的計算資料行`Suppliers`Northwind 資料庫中資料表，然後再建立相對應的 TableAdapter，才能使用這個資料表，而且其計算資料行。 我們必須使用預存程序而不是特定 SQL 陳述式中，讓我們的自訂項目時，不會遺失 TableAdapter 組態精靈用我們 TableAdapter。
+在本教學課程中，我們將在 Northwind 資料庫的 `Suppliers` 資料表中加入一個計算資料行，然後建立對應的 TableAdapter 來處理這個資料表及其計算資料行。 我們會將 TableAdapter 使用預存程式，而不是臨機操作 SQL 語句，因此在使用 TableAdapter 設定向導時，不會遺失我們的自訂專案。
 
-讓 s 開始 ！
+讓我們開始吧！
 
-## <a name="step-1-adding-a-computed-column-to-thesupplierstable"></a>步驟 1：加入計算資料行`Suppliers`資料表
+## <a name="step-1-adding-a-computed-column-to-thesupplierstable"></a>步驟1：將計算資料行加入至`Suppliers`資料表
 
-Northwind 資料庫沒有任何計算資料行，因此我們需要新增一個自己。 本教學課程可讓新增計算資料行 s`Suppliers`呼叫的資料表`FullContactName`，以下列格式傳回 s 的連絡人名稱、 標題和它們適用於公司： `ContactName` (`ContactTitle`， `CompanyName`)。 此計算可能會在報表中使用資料行，當顯示供應商的相關資訊。
+Northwind 資料庫沒有任何計算資料行，因此我們需要自己加入一個。 在本教學課程中，我們會將計算的資料行新增至稱為 `FullContactName` 的 `Suppliers` 資料表，以傳回連絡人的名稱、標題和其工作的公司，格式如下： `ContactName` （`ContactTitle`，`CompanyName`）。 當顯示供應商的相關資訊時，可能會在報表中使用這個計算資料行。
 
-首先開啟`Suppliers`表格定義，以滑鼠右鍵按一下`Suppliers`伺服器總管] 中的資料表，並從操作功能表中選擇 [開啟資料表定義。 這就會顯示在資料表和其屬性，例如其資料類型的資料行，無論它們可讓`NULL`s，等等。 若要加入計算資料行，啟動在資料表定義輸入資料行的名稱。 接下來，在資料行屬性 視窗中的計算資料行規格 區段下的 (Formula) 文字方塊中輸入其運算式 （請參閱 圖 1）。 計算資料行命名`FullContactName`，並使用下列運算式：
+一開始先開啟 `Suppliers` 資料表定義，方法是以滑鼠右鍵按一下 伺服器總管中的 `Suppliers` 資料表，然後從內容功能表中選擇 開啟資料表定義。 這會顯示資料表及其屬性的資料行，例如其資料類型、是否允許 `NULL` s 等等。 若要加入計算資料行，請先在資料表定義中輸入資料行的名稱。 接下來，在資料行屬性視窗的 [計算資料行規格] 區段下，將其運算式輸入 [（公式）] 文字方塊中（請參閱 [圖 1]）。 將計算資料行命名為 `FullContactName` 並使用下列運算式：
 
 [!code-sql[Main](working-with-computed-columns-cs/samples/sample1.sql)]
 
-請注意，字串可以串連在 SQL 中使用`+`運算子。 `CASE`陳述式可以當成傳統程式設計語言中的條件。 在上述運算式`CASE`陳述式可讀取為：如果`ContactTitle`不是`NULL`接著輸出`ContactTitle`串連以逗號，否則為值發出執行任何動作。 如需詳細資訊的實用性`CASE`陳述式，請參閱 <<c2> [ 的 SQL Power`CASE`陳述式](http://www.4guysfromrolla.com/webtech/102704-1.shtml)。
+請注意，您可以使用 `+` 運算子，在 SQL 中串連字號串。 `CASE` 語句可以如同傳統程式設計語言中的條件來使用。 在上述運算式中，可以將 `CASE` 語句視為：如果 `ContactTitle` 不 `NULL`，則會輸出以逗號串連的 `ContactTitle` 值，否則不發出任何內容。 如需 `CASE` 語句之實用性的詳細資訊，請參閱[SQL `CASE` 語句的強大功能](http://www.4guysfromrolla.com/webtech/102704-1.shtml)。
 
 > [!NOTE]
-> 而不是使用`CASE`以下陳述式，我們也可以另外使用`ISNULL(ContactTitle, '')`。 [`ISNULL(checkExpression, replacementValue)`](https://msdn.microsoft.com/library/ms184325.aspx) 會傳回*checkExpression*如果非 NULL，否則會傳回*replacementValue*。 當其中一個`ISNULL`或`CASE`能在這種情況中，有更複雜的案例其中的彈性`CASE`陳述式無法比對`ISNULL`。
+> 我們不會在這裡使用 `CASE` 語句，而是也可以使用 `ISNULL(ContactTitle, '')`。 [`ISNULL(checkExpression, replacementValue)`](https://msdn.microsoft.com/library/ms184325.aspx)會傳回非 Null 的*checkExpression* ，否則會傳回*replacementValue*。 雖然 `ISNULL` 或 `CASE` 會在此實例中工作，但有更複雜的情況，也就是 `ISNULL`無法比對 `CASE` 語句的彈性。
 
-新增此計算資料行之後您的畫面看起來應該類似 圖 1 螢幕擷取畫面。
+加入這個計算資料行之後，您的畫面看起來應該像 [圖 1] 中的螢幕擷取畫面。
 
-[![加入名為 [Suppliers] 資料表的 FullContactName 計算資料行](working-with-computed-columns-cs/_static/image2.png)](working-with-computed-columns-cs/_static/image1.png)
+[![將名為 FullContactName 的計算資料行新增至供應商資料表](working-with-computed-columns-cs/_static/image2.png)](working-with-computed-columns-cs/_static/image1.png)
 
-**圖 1**:新增計算資料行名為`FullContactName`要`Suppliers`資料表 ([按一下以檢視完整大小的影像](working-with-computed-columns-cs/_static/image3.png))
+**圖 1**：將名為 `FullContactName` 的計算資料行加入至 `Suppliers` 資料表（[按一下以查看完整大小的影像](working-with-computed-columns-cs/_static/image3.png)）
 
-計算資料行命名，並輸入其運算式之後儲存變更的資料表上，按一下工具列中的 儲存 圖示，按 Ctrl + S，或移至 檔案 功能表並選擇 儲存`Suppliers`。
+在命名計算資料行並輸入其運算式之後，請按一下工具列中的 [儲存] 圖示、按下 Ctrl + S，或前往 [檔案] 功能表，然後選擇 [儲存 `Suppliers`]，將變更儲存至資料表。
 
-儲存資料表應該重新整理伺服器總管 中，包括在剛加入的資料行`Suppliers`資料表 s 資料行清單。 此外，[(Formula)] 文字方塊中輸入的運算式將會自動調整，以去除不必要的空白字元，括住資料行名稱使用方括號的對等運算式 (`[]`)，並包含括號，以更明確地顯示作業的順序：
+儲存資料表應該會重新整理伺服器總管，包括 `Suppliers` 資料表 s 資料行清單中剛加入的資料行。 此外，在 [（公式）] 文字方塊中輸入的運算式會自動調整為對等的運算式，以去除不必要的空白字元、將資料行名稱括在方括弧（`[]`），並包含括弧以更明確地顯示作業順序：
 
 [!code-sql[Main](working-with-computed-columns-cs/samples/sample2.sql)]
 
-如需有關 Microsoft SQL Server 中的計算資料行的詳細資訊，請參閱[技術文件](https://msdn.microsoft.com/library/ms191250.aspx)。 同時請查看[How to:指定計算資料行](https://msdn.microsoft.com/library/ms188300.aspx)針對建立計算資料行的逐步解說。
+如需 Microsoft SQL Server 中計算資料行的詳細資訊，請參閱[技術檔](https://msdn.microsoft.com/library/ms191250.aspx)。 另請參閱[如何：指定計算資料行](https://msdn.microsoft.com/library/ms188300.aspx)，以取得建立計算資料行的逐步解說。
 
 > [!NOTE]
-> 根據預設，計算資料行並未實際儲存在資料表中，但會改為重新計算每個查詢中參考這些一次。 不過，藉由檢查 保存核取方塊，您可以指示來實際儲存在資料表中的 計算資料行的 SQL Server。 這樣做可以改善查詢效能的使用中的計算資料行值的計算資料行上建立索引可讓其`WHERE`子句。 請參閱[在計算資料行上建立索引](https://msdn.microsoft.com/library/ms189292.aspx)如需詳細資訊。
+> 根據預設，計算資料行不會實際儲存在資料表中，而是在每次查詢中參考它們時重新計算。 不過，藉由勾選 [已保存] 核取方塊，您可以指示 SQL Server 實際將計算資料行儲存在資料表中。 這麼做可讓您在計算資料行上建立索引，這樣可以改善在其 `WHERE` 子句中使用計算資料行值之查詢的效能。 如需詳細資訊，請參閱[在計算資料行上建立索引](https://msdn.microsoft.com/library/ms189292.aspx)。
 
-## <a name="step-2-viewing-the-computed-column-s-values"></a>步驟 2：計算資料行的值的檢視
+## <a name="step-2-viewing-the-computed-column-s-values"></a>步驟2：查看計算資料行的值
 
-在 資料存取層上開始工作之前，可讓 s 花點時間檢視`FullContactName`值。 從 [伺服器總管] 中，以滑鼠右鍵按一下`Suppliers`資料表名稱，並從操作功能表中選擇新的查詢。 這會顯示一個查詢視窗，提示我們選擇要包含在查詢中哪些資料表。 新增`Suppliers`資料表，並按一下 [關閉]。 接下來，檢查`CompanyName`， `ContactName`， `ContactTitle`，和`FullContactName`[Suppliers] 資料表中的資料行。 最後，按一下 [執行查詢並檢視結果] 工具列中的紅色驚嘆號圖示。
+開始處理資料存取層之前，讓我們花一分鐘的時間來查看 `FullContactName` 的值。 從 伺服器總管中，以滑鼠右鍵按一下 `Suppliers` 資料表名稱，然後從內容功能表中選擇 新增查詢。 這會顯示一個查詢視窗，提示我們選擇要包含在查詢中的資料表。 新增 `Suppliers` 資料表，然後按一下 [關閉]。 接下來，檢查 [供應商] 資料表中的 `CompanyName`、`ContactName`、`ContactTitle`和 `FullContactName` 資料行。 最後，按一下工具列中的紅色驚嘆號圖示，以執行查詢並查看結果。
 
-結果如 [圖 2] 所示，包括`FullContactName`，列出`CompanyName`， `ContactName`，以及`ContactTitle`資料行使用格式稱`ContactName`(`ContactTitle`, `CompanyName`) .
+如 [圖 2] 所示，結果中會包含 `FullContactName`，其中列出使用「技術」格式的 `CompanyName`、`ContactName`和 `ContactTitle` 資料行。`ContactName` （`ContactTitle`，`CompanyName`）。
 
-[![FullContactName 使用格式 ContactName （連絡人職稱、 公司名稱）](working-with-computed-columns-cs/_static/image5.png)](working-with-computed-columns-cs/_static/image4.png)
+[![FullContactName 使用 [連絡人] 格式（ContactTitle，公司名稱）](working-with-computed-columns-cs/_static/image5.png)](working-with-computed-columns-cs/_static/image4.png)
 
-**圖 2**:`FullContactName`使用格式`ContactName`(`ContactTitle`， `CompanyName`) ([按一下以檢視完整大小的影像](working-with-computed-columns-cs/_static/image6.png))
+**圖 2**： `FullContactName` 使用格式 `ContactName` （`ContactTitle`，`CompanyName`）（[按一下以觀看完整大小的影像](working-with-computed-columns-cs/_static/image6.png)）
 
-## <a name="step-3-adding-thesupplierstableadapterto-the-data-access-layer"></a>步驟 3：新增`SuppliersTableAdapter`資料存取層
+## <a name="step-3-adding-thesupplierstableadapterto-the-data-access-layer"></a>步驟3：將`SuppliersTableAdapter`新增至資料存取層
 
-若要使用的供應商資訊，在我們的應用程式中，我們需要先建立我們的 DAL 中的 TableAdapter 和 DataTable。 在理想情況下，這會使用來完成相同的簡單步驟，在先前的教學課程中檢查。 不過，計算資料行的使用帶來一些縐折的程度，值得討論。
+為了在我們的應用程式中使用供應商資訊，我們必須先在 DAL 中建立 TableAdapter 和 DataTable。 在理想的情況下，您可以使用先前教學課程中所檢查的相同直接步驟來完成這項作業。 不過，使用計算資料行引進了一些 wrinkles，可提供討論。
 
-如果您使用的使用特定 SQL 陳述式的 TableAdapter，您就可以在 TableAdapter s 主查詢，透過 [TableAdapter 組態精靈] 中，只包含計算資料行。 這項目，不過，將會自動產生`INSERT`和`UPDATE`包含計算資料行的陳述式。 如果您嘗試執行其中一種方法中，`SqlException`訊息的資料行*ColumnName*無法修改，因為它是其中一個計算的資料行或等位運算子的結果將會擲回。 雖然`INSERT`並`UPDATE`陳述式可以透過 tableadapter 手動調整`InsertCommand`和`UpdateCommand`屬性，這些自訂項目就會遺失 [TableAdapter 組態精靈] 可重新執行。
+如果您使用的 TableAdapter 使用臨機操作 SQL 語句，您可以透過 [TableAdapter 設定向導]，直接在 TableAdapter s 查詢中包含計算資料行。 不過，這會自動產生包含計算資料行的 `INSERT` 和 `UPDATE` 語句。 如果您嘗試執行其中一種方法，就無法修改具有訊息的資料行*ColumnName*的 `SqlException`，因為它是計算資料行，或是會擲回 UNION 運算子的結果。 雖然 `INSERT` 和 `UPDATE` 語句可以透過 TableAdapter s `InsertCommand` 和 `UpdateCommand` 屬性來手動調整，但是每當重新執行 TableAdapter 設定向導時，這些自訂都會遺失。
 
-由於使用特定 SQL 陳述式的 TableAdapters 的脆弱，建議，我們使用預存程序時使用計算資料行。 如果您使用現有的預存程序，只需要設定 TableAdapter 中所述[使用現有預存程序的輸入資料集 Tableadapter](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)教學課程。 如果您有為您建立的預存程序 [Tabaleadapter 精靈]，不過，務必一開始略過主查詢的任何計算資料行。 如果您在主要的查詢包含計算資料行，[TableAdapter 組態精靈] 會通知您，完成時，它無法建立對應的預存程序。 簡單地說，我們需要一開始設定使用計算的資料行無主查詢的 TableAdapter，並手動更新對應的預存程序和 tableadapter`SelectCommand`包含計算資料行。 這種方法是中使用類似[更新 TableAdapter 以使用](updating-the-tableadapter-to-use-joins-cs.md)`JOIN`*s*教學課程。
+由於使用臨機操作 SQL 語句的 Tableadapter 肯定脆弱度，因此建議在使用計算資料行時使用預存程式。 如果您使用現有的預存程式，只要[針對具類型的資料集 tableadapter 教學課程使用現有的預存程式來](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)設定 TableAdapter 即可。 不過，如果您有 TableAdapter wizard 為您建立預存程式，則一開始請先從主查詢中省略任何計算資料行，這是很重要的。 如果您在主要查詢中包含計算資料行，TableAdapter 設定 wizard 會在完成時通知您，它無法建立對應的預存程式。 簡言之，我們必須一開始使用計算資料行免費的主要查詢來設定 TableAdapter，然後手動更新對應的預存程式和 TableAdapter `SelectCommand` 以包含計算資料行。 此方法類似于將[TableAdapter 更新為使用](updating-the-tableadapter-to-use-joins-cs.md)`JOIN`*s*教學課程中所使用的方法。
 
-本教學課程中，可讓 s 新增新的 TableAdapter，並讓它自動為我們建立的預存程序。 因此，我們需要一開始省略`FullContactName`主查詢的計算資料行。
+在本教學課程中，讓我們新增新的 TableAdapter，並讓它自動為我們建立預存程式。 因此，我們必須一開始就從主查詢中省略 `FullContactName` 計算資料行。
 
-首先開啟`NorthwindWithSprocs`中的資料集`~/App_Code/DAL`資料夾。 以滑鼠右鍵按一下設計工具中，並從操作功能表中，選擇 加入新的 TableAdapter。 這會啟動 [TableAdapter 組態精靈]。 查詢資料，從指定的資料庫 (`NORTHWNDConnectionString`從`Web.config`)，按一下 [下一步]。 因為我們尚未建立任何預存程序的查詢，或修改`Suppliers`資料表中，選取 建立新的預存程序選項，讓精靈將會為我們建立它們，並按一下 下一步。
+從開啟 `~/App_Code/DAL` 資料夾中的 `NorthwindWithSprocs` 資料集開始。 在設計工具中按一下滑鼠右鍵，然後從內容功能表中，加入宣告新的 TableAdapter。 這會啟動 [TableAdapter 設定向導]。 指定要從中查詢資料的資料庫（從 `Web.config``NORTHWNDConnectionString`），然後按 [下一步]。 由於我們尚未建立任何用來查詢或修改 `Suppliers` 資料表的預存程式，因此請選取 [建立新的預存程式] 選項，讓 wizard 為我們建立，然後按 [下一步]。
 
-[![選擇 建立新預存程序選項](working-with-computed-columns-cs/_static/image8.png)](working-with-computed-columns-cs/_static/image7.png)
+[![選擇 [建立新的預存程式] 選項](working-with-computed-columns-cs/_static/image8.png)](working-with-computed-columns-cs/_static/image7.png)
 
-**圖 3**:選擇 建立新預存程序選項 ([按一下以檢視完整大小的影像](working-with-computed-columns-cs/_static/image9.png))
+**圖 3**：選擇 [建立新的預存程式] 選項（[按一下以查看完整大小的影像](working-with-computed-columns-cs/_static/image9.png)）
 
-後續步驟會提示我們輸入主查詢。 輸入下列查詢會傳回`SupplierID`， `CompanyName`， `ContactName`，和`ContactTitle`每個供應商的資料行。 請注意，此查詢會故意省略計算資料行 (`FullContactName`); 我們將會更新在步驟 4 中包含此資料行對應的預存程序。
+後續步驟會提示我們進行主查詢。 輸入下列查詢，以傳回每個供應商的 `SupplierID`、`CompanyName`、`ContactName`和 `ContactTitle` 資料行。 請注意，此查詢特意省略了計算資料行（`FullContactName`）;我們將會更新對應的預存程式，以便在步驟4中包含此資料行。
 
 [!code-sql[Main](working-with-computed-columns-cs/samples/sample3.sql)]
 
-輸入主要的查詢，並按一下 下一步之後, 此精靈可讓我們命名將會產生四個預存程序。 命名這些預存程序`Suppliers_Select`， `Suppliers_Insert`， `Suppliers_Update`，和`Suppliers_Delete`，如 圖 4 所示。
+輸入主要查詢並按 [下一步] 之後，嚮導可讓我們命名所要產生的四個預存程式。 將這些預存程式命名 `Suppliers_Select`、`Suppliers_Insert`、`Suppliers_Update`和 `Suppliers_Delete`，如 [圖 4] 所示。
 
-[![自訂的自動產生的預存程序的名稱](working-with-computed-columns-cs/_static/image11.png)](working-with-computed-columns-cs/_static/image10.png)
+[![自訂自動產生之預存程式的名稱](working-with-computed-columns-cs/_static/image11.png)](working-with-computed-columns-cs/_static/image10.png)
 
-**圖 4**:自訂自動產生預存程序的名稱 ([按一下以檢視完整大小的影像](working-with-computed-columns-cs/_static/image12.png))
+**圖 4**：自訂自動產生的預存程式名稱（[按一下以查看完整大小的影像](working-with-computed-columns-cs/_static/image12.png)）
 
-下一個步驟中，精靈可讓我們命名的 TableAdapter 的方法並指定用來存取及更新資料的模式。 將所有的三個核取方塊已核取，但重新命名`GetData`方法，以`GetSuppliers`。 按一下 完成 以完成精靈。
+下一個 [wizard] 步驟可讓我們命名 TableAdapter s 方法，並指定用來存取和更新資料的模式。 將這三個核取方塊保持核取狀態，但將 `GetData` 方法重新命名為 `GetSuppliers`。 按一下 [完成] 以完成精靈。
 
-[![重新命名 GetSuppliers GetData 方法](working-with-computed-columns-cs/_static/image14.png)](working-with-computed-columns-cs/_static/image13.png)
+[![將 GetSuppliers 方法重新命名為](working-with-computed-columns-cs/_static/image14.png)](working-with-computed-columns-cs/_static/image13.png)
 
-**圖 5**:重新命名`GetData`方法，以`GetSuppliers`([按一下以檢視完整大小的影像](working-with-computed-columns-cs/_static/image15.png))
+**圖 5**：將 `GetData` 方法重新命名為 `GetSuppliers` （[按一下以查看完整大小的影像](working-with-computed-columns-cs/_static/image15.png)）
 
-時按一下 [完成]，精靈會建立四個預存程序，並將 TableAdapter 和對應的資料表加入至具類型資料集。
+按一下 [完成] 之後，嚮導會建立四個預存程式，並將 TableAdapter 和對應的 DataTable 加入至具類型的資料集。
 
-## <a name="step-4-including-the-computed-column-in-the-tableadapter-s-main-query"></a>步驟 4：TableAdapter s 主查詢中包括計算資料行
+## <a name="step-4-including-the-computed-column-in-the-tableadapter-s-main-query"></a>步驟4：在 TableAdapter s 主查詢中包含計算資料行
 
-我們現在需要更新 TableAdapter 和要包含的步驟 3 中建立的 DataTable`FullContactName`計算資料行。 這牽涉到兩個步驟：
+我們現在需要更新在步驟3中建立的 TableAdapter 和 DataTable，以包含 `FullContactName` 計算資料行。 這包含兩個步驟：
 
-1. 更新`Suppliers_Select`預存程序傳回`FullContactName`計算資料行，以及
-2. 更新以包含相對應的 DataTable`FullContactName`資料行。
+1. 更新 `Suppliers_Select` 預存程式以傳回 `FullContactName` 的計算資料行，以及
+2. 更新 DataTable 以包含對應的 `FullContactName` 資料行。
 
-開始瀏覽至 [伺服器總管]，然後向下切入至 [預存程序] 資料夾。 開啟`Suppliers_Select`預存程序，並更新`SELECT`查詢包含`FullContactName`計算資料行：
+首先，流覽至伺服器總管並向下切入至 [預存程式] 資料夾。 開啟 `Suppliers_Select` 預存程式，並更新 `SELECT` 查詢，以包含 `FullContactName` 計算資料行：
 
 [!code-sql[Main](working-with-computed-columns-cs/samples/sample4.sql)]
 
-將所做的變更儲存至預存程序，按一下工具列中的 [儲存] 圖示、 按下 Ctrl + S 鍵，或選擇另存`Suppliers_Select`從 [檔案] 功能表選項。
+按一下工具列中的 [儲存] 圖示、按下 Ctrl + S，或從 [檔案] 功能表選擇 [儲存 `Suppliers_Select`] 選項，將變更儲存至預存程式。
 
-接下來，返回 DataSet 設計工具，請以滑鼠右鍵按一下`SuppliersTableAdapter`，並從操作功能表中選擇設定。 請注意，`Suppliers_Select`資料行現在包含`FullContactName`其資料行集合中的資料行。
+接下來，返回 DataSet 設計工具，以滑鼠右鍵按一下 `SuppliersTableAdapter`，然後從內容功能表中選擇 設定。 請注意，[`Suppliers_Select`] 資料行現在會在其資料行集合中包含 [`FullContactName`] 資料行。
 
-[![執行 TableAdapter 的組態精靈 來更新資料表 s 資料行](working-with-computed-columns-cs/_static/image17.png)](working-with-computed-columns-cs/_static/image16.png)
+[![執行 TableAdapter s 設定向導來更新 DataTable 的資料行](working-with-computed-columns-cs/_static/image17.png)](working-with-computed-columns-cs/_static/image16.png)
 
-**圖 6**:執行 tableadapter 組態精靈以更新 DataTable s 資料行 ([按一下以檢視完整大小的影像](working-with-computed-columns-cs/_static/image18.png))
+**圖 6**：執行 TableAdapter s 設定向導來更新 DataTable 的資料行（[按一下以查看完整大小的影像](working-with-computed-columns-cs/_static/image18.png)）
 
-按一下 完成 以完成精靈。 這會自動新增至對應的資料行`SuppliersDataTable`。 [Tabaleadapter 精靈] 是夠聰明，無法偵測到`FullContactName`資料行是計算資料行，因此是唯讀。 因此，它會設定資料行 s`ReadOnly`屬性設`true`。 若要確認這點，選取 從資料行`SuppliersDataTable`，然後移至 屬性 視窗 （請參閱 圖 7）。 請注意，`FullContactName`資料行 s`DataType`和`MaxLength`屬性也會據以設定。
+按一下 [完成] 以完成精靈。 這會自動將對應的資料行新增至 `SuppliersDataTable`。 TableAdapter wizard 非常聰明，可以偵測 `FullContactName` 的資料行是計算資料行，因此是唯讀的。 因此，它會將資料行的 `ReadOnly` 屬性設定為 `true`。 若要確認這一點，請從 `SuppliersDataTable` 中選取資料行，然後移至屬性視窗（請參閱 [圖 7]）。 請注意，`FullContactName` 資料行 `DataType` 和 `MaxLength` 屬性也會據此進行設定。
 
 [![FullContactName 資料行標示為唯讀](working-with-computed-columns-cs/_static/image20.png)](working-with-computed-columns-cs/_static/image19.png)
 
-**圖 7**:`FullContactName`資料行標示為唯讀 ([按一下以檢視完整大小的影像](working-with-computed-columns-cs/_static/image21.png))
+**圖 7**： `FullContactName` 資料行標示為唯讀（[按一下以查看完整大小的影像](working-with-computed-columns-cs/_static/image21.png)）
 
-## <a name="step-5-adding-agetsupplierbysupplieridmethod-to-the-tableadapter"></a>步驟 5：新增`GetSupplierBySupplierID`TableAdapter 方法
+## <a name="step-5-adding-agetsupplierbysupplieridmethod-to-the-tableadapter"></a>步驟5：將`GetSupplierBySupplierID`方法加入至 TableAdapter
 
-在本教學課程中，我們將建立 ASP.NET 網頁，可更新的方格中顯示供應商。 在過去的教學課程我們更新了商務邏輯層中的單一記錄擷取特定的記錄，從做為強型別的 DataTable，更新其屬性，然後將傳送更新的 DataTable DAL 回到來傳播變更至 DAL在資料庫中。 若要完成第一個步驟-擷取從 DAL 更新的記錄-我們必須先新增`GetSupplierBySupplierID(supplierID)`DAL 的方法。
+在本教學課程中，我們將建立 ASP.NET 網頁，以在可更新的方格中顯示供應商。 在過去的教學課程中，我們已更新來自商務邏輯層的一筆記錄，方法是從 DAL 將該特定記錄抓取為強型別 DataTable，更新其屬性，然後將更新的 DataTable 傳送回 DAL 以將變更傳播至資料庫。 若要完成第一個步驟-從 DAL 中抓取要更新的記錄，我們必須先將 `GetSupplierBySupplierID(supplierID)` 方法新增至 DAL。
 
-以滑鼠右鍵按一下`SuppliersTableAdapter`資料集設計中，然後從操作功能表中選擇 加入查詢選項。 如同我們在步驟 3 中，讓精靈為我們產生新的預存程序，藉由選取 建立新的預存程序選項 （請參閱上一步 圖 3 提供此精靈步驟的螢幕擷取畫面）。 由於這個方法會傳回具有多個資料行的記錄，指出我們想要使用 SQL 查詢是 SELECT 會傳回資料列，然後按一下 [下一步]。
+以滑鼠右鍵按一下資料集設計中的 `SuppliersTableAdapter`，然後從內容功能表中選擇 加入查詢 選項。 如同我們在步驟3中所做的，請選取 [建立新的預存程式] 選項，讓 wizard 為我們產生新的預存程式（請參閱 [圖 3]，以取得此 wizard 步驟的螢幕擷取畫面）。 由於這個方法會傳回具有多個資料行的記錄，因此，請指出我們想要使用 SQL 查詢，這是傳回資料列的 SELECT，然後按 [下一步]。
 
-[![選擇 選取會傳回資料列選項](working-with-computed-columns-cs/_static/image23.png)](working-with-computed-columns-cs/_static/image22.png)
+[![選擇要傳回資料列的 SELECT 選項](working-with-computed-columns-cs/_static/image23.png)](working-with-computed-columns-cs/_static/image22.png)
 
-**圖 8**:選擇 選取會傳回資料列選項 ([按一下以檢視完整大小的影像](working-with-computed-columns-cs/_static/image24.png))
+**圖 8**：選擇 [選擇傳回資料列] 選項（[按一下以查看完整大小的影像](working-with-computed-columns-cs/_static/image24.png)）
 
-後續步驟會提示我們輸入要用於這個方法的查詢。 輸入下列命令，它會傳回相同的資料欄位做為主要的查詢，但特定供應商。
+後續步驟會提示我們輸入此方法所使用的查詢。 輸入下列程式，這會傳回與主要查詢相同的資料欄位，但針對特定供應商。
 
 [!code-sql[Main](working-with-computed-columns-cs/samples/sample5.sql)]
 
-下一個畫面會要求我們命名將會自動產生預存程序。 命名此預存程序`Suppliers_SelectBySupplierID`，按一下 [下一步]。
+下一個畫面會要求我們將自動產生的預存程式命名為。 將此預存程式命名為 `Suppliers_SelectBySupplierID` 然後按 [下一步]。
 
-[![命名預存程序 Suppliers_SelectBySupplierID](working-with-computed-columns-cs/_static/image26.png)](working-with-computed-columns-cs/_static/image25.png)
+[![為預存程式命名 Suppliers_SelectBySupplierID](working-with-computed-columns-cs/_static/image26.png)](working-with-computed-columns-cs/_static/image25.png)
 
-**圖 9**:命名預存程序`Suppliers_SelectBySupplierID`([按一下以檢視完整大小的影像](working-with-computed-columns-cs/_static/image27.png))
+**圖 9**：將預存程式命名 `Suppliers_SelectBySupplierID` （[按一下以查看完整大小的影像](working-with-computed-columns-cs/_static/image27.png)）
 
-最後，精靈的提示我們，好讓資料存取模式和要使用的 TableAdapter 方法名稱。 保留已核取，這兩個核取方塊，但重新命名`FillBy`並`GetDataBy`方法來`FillBySupplierID`和`GetSupplierBySupplierID`分別。
+最後，嚮導會提示我們輸入要用於 TableAdapter 的資料存取模式和方法名稱。 勾選這兩個核取方塊，但將 `FillBy` 和 `GetDataBy` 方法分別重新命名為 `FillBySupplierID` 和 `GetSupplierBySupplierID`。
 
-[![名稱的 TableAdapter 方法 FillBySupplierID 和 GetSupplierBySupplierID](working-with-computed-columns-cs/_static/image29.png)](working-with-computed-columns-cs/_static/image28.png)
+[![命名 TableAdapter 方法 FillBySupplierID 和 GetSupplierBySupplierID](working-with-computed-columns-cs/_static/image29.png)](working-with-computed-columns-cs/_static/image28.png)
 
-**圖 10**:命名的 TableAdapter 方法`FillBySupplierID`並`GetSupplierBySupplierID`([按一下以檢視完整大小的影像](working-with-computed-columns-cs/_static/image30.png))
+**圖 10**：將 TableAdapter 方法命名 `FillBySupplierID` 並 `GetSupplierBySupplierID` （[按一下以查看完整大小的影像](working-with-computed-columns-cs/_static/image30.png)）
 
-按一下 完成 以完成精靈。
+按一下 [完成] 以完成精靈。
 
-## <a name="step-6-creating-the-business-logic-layer"></a>步驟 6：建立商務邏輯層
+## <a name="step-6-creating-the-business-logic-layer"></a>步驟6：建立商務邏輯層
 
-我們建立的 ASP.NET 網頁，會使用在步驟 1 中建立計算資料行之前，我們首先要到 BLL 中新增對應的方法。 我們 ASP.NET 頁面中，我們將建立在步驟 7 中，可讓使用者檢視及編輯供應商。 因此，我們需要我們以最小值，提供方法來取得所有供應商，另一種更新特定的供應商的 BLL。
+在我們建立使用步驟1中所建立之計算資料行的 ASP.NET 網頁之前，我們必須先在 BLL 中新增對應的方法。 我們將在步驟7中建立的 ASP.NET 網頁，可讓使用者查看和編輯供應商。 因此，我們需要 BLL 至少提供一種方法來取得所有供應商，以及另一種方式來更新特定供應商。
 
-建立新的類別檔案，名為`SuppliersBLLWithSprocs`在`~/App_Code/BLL`資料夾並加入下列程式碼：
+在 `~/App_Code/BLL` 資料夾中建立名為 `SuppliersBLLWithSprocs` 的新類別檔案，並新增下列程式碼：
 
 [!code-csharp[Main](working-with-computed-columns-cs/samples/sample6.cs)]
 
-和其他 BLL 類別一樣`SuppliersBLLWithSprocs`已經`protected``Adapter`傳回的執行個體的屬性`SuppliersTableAdapter`類別以及兩個`public`方法：`GetSuppliers`並`UpdateSupplier`。 `GetSuppliers`方法呼叫，並傳回`SuppliersDataTable`傳回的對應`GetSupplier`資料存取層中的方法。 `UpdateSupplier`方法會擷取特定供應商透過對 DAL s 的呼叫正在更新的相關資訊`GetSupplierBySupplierID(supplierID)`方法。 然後更新`CategoryName`， `ContactName`，並`ContactTitle`屬性及這些變更認可到資料庫，藉由呼叫 s 中的資料存取層`Update`方法並傳入已修改`SuppliersRow`物件。
+就像其他 BLL 類別一樣，`SuppliersBLLWithSprocs` 具有 `protected` `Adapter` 屬性，它會傳回 `SuppliersTableAdapter` 類別的實例，以及兩個 `public` 方法： `GetSuppliers` 和 `UpdateSupplier`。 `GetSuppliers` 方法會呼叫並傳回資料存取層中對應 `GetSupplier` 方法所傳回的 `SuppliersDataTable`。 `UpdateSupplier` 方法會透過呼叫 DAL 的 `GetSupplierBySupplierID(supplierID)` 方法，來抓取要更新之特定供應商的相關資訊。 然後，它會更新 `CategoryName`、`ContactName`和 `ContactTitle` 屬性，並藉由呼叫資料存取層的 `Update` 方法（傳入已修改的 `SuppliersRow` 物件）來認可資料庫的這些變更。
 
 > [!NOTE]
-> 除了`SupplierID`並`CompanyName`、 [Suppliers] 資料表中的所有資料行允許`NULL`值。 因此，如果傳入的`contactName`或`contactTitle`參數是`null`我們需要設定對應`ContactName`並`ContactTitle`屬性，以`NULL`資料庫值使用`SetContactNameNull`和`SetContactTitleNull`方法，分別。
+> 除了 `SupplierID` 和 `CompanyName`以外，[供應商] 資料表中的所有資料行都允許 `NULL` 值。 因此，如果傳入的 `contactName` 或 `contactTitle` 參數 `null` 我們必須分別使用 `ContactTitle` 和 `NULL` 方法，將對應的 `ContactName` 和 `SetContactNameNull` 屬性設定為 `SetContactTitleNull` 資料庫值。
 
-## <a name="step-7-working-with-the-computed-column-from-the-presentation-layer"></a>步驟 7：使用計算資料行，從展示層
+## <a name="step-7-working-with-the-computed-column-from-the-presentation-layer"></a>步驟7：使用展示層中的計算資料行
 
-若要新增的計算資料行`Suppliers`資料表的 DAL 和 BLL 隨之更新中，我們已準備好建置適用於 ASP.NET 網頁`FullContactName`計算資料行。 首先開啟`ComputedColumns.aspx`頁面中`AdvancedDAL`資料夾，然後從 [工具箱] 拖曳至設計工具拖曳的 GridView。 設定 GridView s`ID`屬性，以`Suppliers`和它的智慧標籤，從繫結至名為新 ObjectDataSource `SuppliersDataSource`。 設定要使用 ObjectDataSource`SuppliersBLLWithSprocs`類別，我們加入備份在步驟 6 中，按一下 [下一步]。
+將計算資料行新增至 `Suppliers` 資料表，並據以更新 DAL 和 BLL 之後，我們就可以建立可與 `FullContactName` 計算資料行搭配使用的 ASP.NET 網頁。 一開始先開啟 [`AdvancedDAL`] 資料夾中的 [`ComputedColumns.aspx`] 頁面，然後從 [工具箱] 將 [GridView] 拖曳至設計工具。 將 GridView 的 `ID` 屬性設定為 `Suppliers`，並將其從智慧標籤系結至名為 `SuppliersDataSource`的新 ObjectDataSource。 設定 ObjectDataSource 使用我們在步驟6中新增的 `SuppliersBLLWithSprocs` 類別，然後按 [下一步]。
 
-[![設定使用 SuppliersBLLWithSprocs 類別 ObjectDataSource](working-with-computed-columns-cs/_static/image32.png)](working-with-computed-columns-cs/_static/image31.png)
+[![將 ObjectDataSource 設定為使用 SuppliersBLLWithSprocs 類別](working-with-computed-columns-cs/_static/image32.png)](working-with-computed-columns-cs/_static/image31.png)
 
-**圖 11**:設定要使用 ObjectDataSource`SuppliersBLLWithSprocs`類別 ([按一下以檢視完整大小的影像](working-with-computed-columns-cs/_static/image33.png))
+**圖 11**：設定 ObjectDataSource 使用 `SuppliersBLLWithSprocs` 類別（[按一下以查看完整大小的影像](working-with-computed-columns-cs/_static/image33.png)）
 
-只有兩種方法中定義`SuppliersBLLWithSprocs`類別：`GetSuppliers`和`UpdateSupplier`。 請確認這兩種方法會指定在 選取和分別更新索引標籤上，按一下 完成 以完成設定 ObjectDataSource。
+`SuppliersBLLWithSprocs` 類別中只定義了兩個方法： `GetSuppliers` 和 `UpdateSupplier`。 請確定在 [選取和更新] 索引標籤中分別指定這兩個方法，然後按一下 [完成] 以完成 ObjectDataSource 的設定。
 
-完成 資料來源組態精靈的詳細資訊，Visual Studio 會針對每一個傳回的資料欄位加入 BoundField。 移除`SupplierID`BoundField 和變更`HeaderText`的屬性`CompanyName`， `ContactName`， `ContactTitle`，和`FullContactName`BoundFields 公司、 連絡人名稱、 標題和完整的連絡人名稱，以分別。 從智慧標籤，檢查 啟用編輯 核取方塊以開啟 GridView s 內建編輯功能。
+完成資料來源設定 wizard 後，Visual Studio 將會針對每個傳回的資料欄位加入 BoundField。 移除 `SupplierID` BoundField，並分別將 `CompanyName`、`ContactName`、`ContactTitle`和 `FullContactName` BoundFields 的 `HeaderText` 屬性變更為 [公司]、[連絡人姓名]、[標題] 和 [完整連絡人姓名]。 從智慧標籤中，勾選 [啟用編輯] 核取方塊，以開啟 GridView 的內建編輯功能。
 
-除了新增 BoundFields 至 GridView，完成 [資料來源精靈] 也會設定 ObjectDataSource s 的 Visual Studio`OldValuesParameterFormatString`屬性的原始\_{0}。 還原此設定回其預設值， {0} 。
+除了將 BoundFields 加入 GridView 之外，資料來源 Wizard 的完成也會導致 Visual Studio 將 ObjectDataSource s `OldValuesParameterFormatString` 屬性設定為原始\_{0}。 將此設定還原回其預設值 {0}。
 
-之後的 GridView 和 ObjectDataSource 進行這些編輯，其宣告式標記看起來應該如下所示：
+對 GridView 和 ObjectDataSource 進行這些編輯之後，其宣告式標記看起來應該如下所示：
 
 [!code-aspx[Main](working-with-computed-columns-cs/samples/sample7.aspx)]
 
-接下來，請瀏覽此頁面，透過瀏覽器。 如 [圖 12] 所示，每個供應商會列在一個方格，其中包含`FullContactName`格式化為的資料行，其值為其他三個資料行的串連`ContactName`(`ContactTitle`， `CompanyName`)。
+接下來，透過瀏覽器造訪此頁面。 如 [圖 12] 所示，每個供應商都會列在包含 [`FullContactName`] 資料行的方格中，其值只是將其他三個數據行的串連設定為 `ContactName` （`ContactTitle`，`CompanyName`）。
 
-[![方格中會列出每個供應商](working-with-computed-columns-cs/_static/image35.png)](working-with-computed-columns-cs/_static/image34.png)
+[![方格中列出每個供應商](working-with-computed-columns-cs/_static/image35.png)](working-with-computed-columns-cs/_static/image34.png)
 
-**圖 12**:方格中會列出每個供應商 ([按一下以檢視完整大小的影像](working-with-computed-columns-cs/_static/image36.png))
+**圖 12**：每個供應商都會列在方格中（[按一下以查看完整大小的影像](working-with-computed-columns-cs/_static/image36.png)）
 
-按一下 編輯 按鈕，特定供應商造成回傳，並具有該資料列呈現在其編輯介面 （請參閱 圖 13）。 前三個資料行轉譯中其編輯介面的預設值-TextBox 控制項`Text`屬性設定為資料欄位的值。 `FullContactName`資料行，不過，仍會為文字。 當 BoundFields 已新增至 [資料來源組態精靈] 中，完成 GridView `FullContactName` BoundField s`ReadOnly`屬性設定為`true`因為對應`FullContactName`中的資料行`SuppliersDataTable`具有其`ReadOnly`屬性設定為`true`。 步驟 4 中所述`FullContactName`s`ReadOnly`屬性設定為`true`因為 TableAdapter 偵測到的資料行是計算資料行。
+按一下特定供應商的 [編輯] 按鈕會導致回傳，而且該資料列會呈現在其編輯介面中（請參閱 [圖 13]）。 前三個數據行在其預設的編輯介面中轉譯-TextBox 控制項，其 `Text` 屬性設定為資料欄位的值。 不過，`FullContactName` 資料行仍會保留為文字。 當 BoundFields 在資料來源設定 wizard 完成時加入至 GridView 時，`FullContactName` BoundField s `ReadOnly` 屬性會設定為 `true`，因為 `SuppliersDataTable` 中對應的 `FullContactName` 資料行將其 `ReadOnly` 屬性設定為 `true`。 如步驟4所述，`FullContactName` s `ReadOnly` 屬性已設定為 `true`，因為 TableAdapter 偵測到資料行是計算資料行。
 
-[![FullContactName 資料行是無法編輯](working-with-computed-columns-cs/_static/image38.png)](working-with-computed-columns-cs/_static/image37.png)
+[![無法編輯 FullContactName 資料行](working-with-computed-columns-cs/_static/image38.png)](working-with-computed-columns-cs/_static/image37.png)
 
-**圖 13**:`FullContactName`資料行是無法編輯 ([按一下以檢視完整大小的影像](working-with-computed-columns-cs/_static/image39.png))
+**圖 13**：無法編輯 `FullContactName` 資料行（[按一下以查看完整大小的影像](working-with-computed-columns-cs/_static/image39.png)）
 
-繼續並更新一或多個可編輯的資料行的值並按一下 [更新]。 請注意如何`FullContactName`的值會自動更新以反映變更。
+請繼續並更新一個或多個可編輯資料行的值，然後按一下 [更新]。 請注意，`FullContactName` s 值會自動更新以反映變更。
 
 > [!NOTE]
-> GridView 目前使用 BoundFields 可編輯的欄位，導致預設的編輯介面。 因為`CompanyName`欄位是必要的它應該轉換成包含 RequiredFieldValidator TemplateField。 我不要更動此練習中，有興趣的讀者。 請參閱[將驗證控制項加入編輯和插入介面](../editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md)有關將轉換為 TemplateField BoundField 和新增驗證控制項的逐步指示的教學課程。
+> GridView 目前針對可編輯的欄位使用 BoundFields，因此會產生預設的編輯介面。 因為 [`CompanyName`] 欄位是必要的，所以應該轉換成包含 RequiredFieldValidator 的 TemplateField。 我將這個練習留給感興趣的讀者。 如需將 BoundField 轉換為 TemplateField 和加入驗證控制項的逐步指示，請參閱將[驗證控制項新增至編輯和插入介面](../editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md)教學課程。
 
 ## <a name="summary"></a>總結
 
-在定義資料表的結構描述時，Microsoft SQL Server 可讓包含的計算資料行。 這些是通常參考相同的記錄中的其他資料行中的 值運算式會計算其值的資料行。 因為值的計算資料行是根據運算式，它們都是唯讀且無法指派中的值`INSERT`或`UPDATE`陳述式。 嘗試將自動產生對應的 TableAdapter 的主要查詢中使用計算資料行時，這會帶來挑戰`INSERT`， `UPDATE`，和`DELETE`陳述式。
+定義資料表的架構時，Microsoft SQL Server 允許包含計算資料行。 這些資料行的值是從通常參考相同記錄中其他資料行值的運算式計算而來。 由於計算資料行的值是以運算式為基礎，因此它們是唯讀的，而且無法在 `INSERT` 或 `UPDATE` 語句中指派值。 在 TableAdapter 的主查詢中使用計算資料行時，如果嘗試自動產生對應的 `INSERT`、`UPDATE`和 `DELETE` 語句，這就會造成挑戰。
 
-在本教學課程中，我們會討論用來規避計算資料行所帶來的挑戰技巧。 特別是，我們使用預存程序在我們的 TableAdapter 克服使用特定 SQL 陳述式的 TableAdapters 的固有之脆弱度。 使用 TableAdapter 精靈建立新預存程序，很重要，我們有一開始省略任何計算資料行，因為它們的存在可防止資料修改預存程序產生的主查詢。 一開始設定 TableAdapter 之後，其`SelectCommand`可以改裝預存程序，以包含任何計算資料行。
+在本教學課程中，我們已討論規避計算資料行所造成之挑戰的技術。 特別是，我們使用 TableAdapter 中的預存程式，來克服使用臨機操作 SQL 語句之 Tableadapter 中的肯定脆弱度。 當 [TableAdapter wizard] 建立新的預存程式時，請務必讓主查詢一開始省略任何計算資料行，因為它們的存在會防止產生資料修改預存程式。 一開始設定 TableAdapter 之後，可以改良其 `SelectCommand` 預存程式來包含任何計算資料行。
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ## <a name="about-the-author"></a>關於作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七個 ASP 書籍和的創辦人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年從事 Microsoft Web 技術工作。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是[ *Sams 教導您自己 ASP.NET 2.0 在 24 小時內*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在觸達[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或透過他的部落格，這位於 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，自1998起，有七個 ASP/ASP. NET 書籍和創辦人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是[*在24小時內讓自己的 ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在mitchell@4GuysFromRolla.com觸達[。](mailto:mitchell@4GuysFromRolla.com) 或者透過他的 blog，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 ## <a name="special-thanks-to"></a>特別感謝
 
-本教學課程系列是由許多實用的檢閱者檢閱。 本教學課程中的潛在客戶檢閱者已 Hilton Geisenow 和 Teresa murphy 徹底檢驗了。 有興趣檢閱我即將推出的 MSDN 文章嗎？ 如果是這樣，psychic 在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
+本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Hilton Geisenow 和 Teresa Murphy。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [上一頁](adding-additional-datatable-columns-cs.md)

@@ -1,199 +1,199 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-vb
-title: 實作開放式並行存取以 sqldatasource 進行 (VB) |Microsoft Docs
+title: 使用 SqlDataSource 執行開放式平行存取（VB） |Microsoft Docs
 author: rick-anderson
-description: 在本教學課程中我們會檢閱開放式並行存取控制的基本知識，並接著探討如何實作使用 SqlDataSource 控制項。
+description: 在本教學課程中，我們將探討開放式並行存取控制的基本概念，然後探索如何使用 SqlDataSource 控制項來執行它。
 ms.author: riande
 ms.date: 02/20/2007
 ms.assetid: a8fa72ee-8328-4854-a419-c1b271772303
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9d13a991f0eef840dfe25ef2ffa4f6aec0fa299d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 431734b5245c20ac840147cf0827fa7f8d1e4d17
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132460"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74597873"
 ---
 # <a name="implementing-optimistic-concurrency-with-the-sqldatasource-vb"></a>使用 SqlDataSource 實作開放式同步存取 (VB)
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_50_VB.exe)或[下載 PDF](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/datatutorial50vb1.pdf)
+[下載範例應用程式](https://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_50_VB.exe)或[下載 PDF](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/datatutorial50vb1.pdf)
 
-> 在本教學課程中我們會檢閱開放式並行存取控制的基本知識，並接著探討如何實作使用 SqlDataSource 控制項。
+> 在本教學課程中，我們將探討開放式並行存取控制的基本概念，然後探索如何使用 SqlDataSource 控制項來執行它。
 
 ## <a name="introduction"></a>簡介
 
-在先前的教學課程中，我們會檢查如何新增插入、 更新和刪除 SqlDataSource 控制項的功能。 簡單地說，若要提供這些功能我們需要指定對應`INSERT`， `UPDATE`，或`DELETE`控制項 s 中的 SQL 陳述式`InsertCommand`， `UpdateCommand`，或`DeleteCommand`搭配適當的屬性中的參數`InsertParameters`， `UpdateParameters`，和`DeleteParameters`集合。 [設定資料來源精靈 s 進階] 按鈕時可以手動指定這些屬性和集合，提供產生`INSERT`， `UPDATE`，和`DELETE`陳述式核取方塊，將會自動建立這些陳述式為基礎`SELECT`陳述式。
+在先前的教學課程中，我們探討了如何將插入、更新和刪除功能新增至 SqlDataSource 控制項。 簡言之，若要提供這些功能，我們需要在控制項 s `InsertCommand`、`UpdateCommand`或 `DeleteCommand` 屬性中指定對應的 `INSERT`、`UPDATE`或 `DELETE` SQL 語句，以及 `InsertParameters`、`UpdateParameters`和 `DeleteParameters` 集合中的適當參數。 雖然可以手動指定這些屬性和集合，但是 [設定資料來源嚮導] 的 [建立 `INSERT`]、[`UPDATE`] 和 [`DELETE` 語句] 核取方塊會根據 `SELECT` 語句，自動建立這些語句。
 
-以及產生`INSERT`， `UPDATE`，和`DELETE`陳述式] 核取方塊，[進階 SQL 產生選項] 對話方塊中包含使用開放式並行存取選項 （請參閱 [圖 1）。 有選取時，`WHERE`子句中自動產生`UPDATE`和`DELETE`陳述式會修改為只執行更新或刪除基礎資料庫資料尚未被修改，因為使用者最後將資料載入至方格。
+除了 [產生 `INSERT`]、[`UPDATE`] 和 [`DELETE` 語句] 核取方塊，[Advanced SQL 產生選項] 對話方塊還包含 [使用開放式平行存取] 選項（請參閱 [圖 1]）。 若有選取時，自動產生的 `UPDATE` 和 `DELETE` 語句中的 `WHERE` 子句會修改成隻在使用者上次將資料載入方格後未修改基礎資料庫資料時，才執行更新或刪除。
 
-![您可以新增開放式並行存取支援從進階 SQL 產生選項對話方塊](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image1.gif)
+![您可以從 [Advanced SQL 產生選項] 對話方塊新增開放式平行存取支援](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image1.gif)
 
-**圖 1**:您可以新增開放式並行存取支援從進階 SQL 產生選項對話方塊
+**圖 1**：您可以從 [Advanced SQL 產生選項] 對話方塊加入開放式平行存取支援
 
-回到[實作開放式並行存取](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb.md)教學課程中，我們檢查開放式並行存取控制，以及如何將它新增到 ObjectDataSource 的基本概念。 在本教學課程中，我們將潤飾的開放式並行存取控制 essentials 上，然後探索如何使用 SqlDataSource 實作。
+回到[執行開放式並行](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb.md)存取教學課程，我們檢查了開放式並行存取控制的基本概念，以及如何將它加入至 ObjectDataSource。 在本教學課程中，我們將針對開放式並行存取控制的基本概念進行潤色，然後探索如何使用 SqlDataSource 來執行。
 
-## <a name="a-recap-of-optimistic-concurrency"></a>開放式並行存取的回顧
+## <a name="a-recap-of-optimistic-concurrency"></a>開放式平行存取的回顧
 
-Web 應用程式的允許多個同時連接的使用者，若要編輯或刪除相同的資料，有一位使用者可能會不小心覆寫另一個 「 s 」 變更的可能性。 在 [實作開放式並行存取](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb.md)我提供下列範例的教學課程：
+對於允許多個同時使用者編輯或刪除相同資料的 web 應用程式，有可能有一位使用者意外覆寫另一項變更。 在[執行開放式並行](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb.md)存取教學課程中，我提供了下列範例：
 
-想像一下，Jisun 和 Sam，兩位使用者已同時瀏覽允許更新及刪除產品透過 GridView 控制項的訪客的應用程式中的頁面。 兩者 Chai 的中按一下 [編輯] 按鈕，大約在同一時間。 Jisun 產品名稱變更為 Chai 茶，然後按一下 [更新] 按鈕。 最後結果就是`UPDATE`傳送至資料庫，可設定的陳述式*所有*的產品 s 可更新的欄位 (即使 Jisun 只更新一個欄位， `ProductName`)。 在此時間點，資料庫會有值 Chai 好茶，準備類別飲料，供應商山，針對這個特定的產品，依此類推。 不過，Sam 的螢幕上的 GridView 仍會顯示產品名稱中可編輯的 GridView 資料列作為 Chai。 幾秒後 Jisun 的變更已認可，Sam 更新 「 調味品 」 類別目錄，然後按一下 更新。 這會導致`UPDATE`陳述式傳送至資料庫的產品名稱設定於 Chai，`CategoryID`對應 「 調味品 」 類別目錄識別碼，等等。 已覆寫 Jisun 的對產品名稱。
+假設有兩位使用者（Jisun 和 Sam）同時造訪應用程式中的網頁，讓訪客能夠透過 GridView 控制項來更新和刪除產品。 同時按一下 [Chai] 的 [編輯] 按鈕，以在同一時間前後進行。 Jisun 會將產品名稱變更為 Chai 茶，並按一下 [更新] 按鈕。 最終結果是傳送至資料庫的 `UPDATE` 語句，它會設定*所有*產品的可更新欄位（即使 Jisun 只更新一個欄位，`ProductName`）。 在此時間點，資料庫的值為 Chai 茶、類別飲料、供應商外來液體等等。 不過，Sam s 畫面上的 GridView 仍然會在可編輯的 GridView 資料列中，將產品名稱顯示為 Chai。 在 Jisun s 變更之後的幾秒後，Sam 會將類別更新為 Condiments，然後按一下 [更新]。 這會導致 `UPDATE` 語句傳送到資料庫，將產品名稱設定為 Chai，`CategoryID` 對應的 Condiments 分類識別碼等等。 已覆寫對產品名稱所做的 Jisun 變更。
 
 [圖 2] 說明這種互動。
 
-[![當兩位使用者同時更新資料錄那里一位使用者 s 可能會變更為覆寫其他](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image2.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image1.png)
+[![當兩個使用者同時更新記錄時，有一位使用者變更可能會覆寫其他的](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image2.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image1.png)
 
-**圖 2**:當兩位使用者同時更新那里記錄的可能會變更為 覆寫其他的一個使用者 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image2.png))
+**圖 2**：當兩個使用者同時更新記錄時，有一位使用者變更的可能性可能會覆寫其他的（[按一下以觀看完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image2.png)）
 
-若要避免這種情況下展開，一種[並行存取控制](http://en.wikipedia.org/wiki/Concurrency_control)必須實作。 [開放式並行存取](http://en.wikipedia.org/wiki/Optimistic_concurrency_control)本教學課程的焦點的運作方式，雖然有可能是並行衝突，不時假設大部分的時間也不會發生這類衝突。 因此，如果沒有發生衝突，開放式並行存取控制項只會通知使用者，其變更無法儲存，因為其他使用者已修改相同的資料。
+若要防止展開此案例，必須實作為[並行存取控制](http://en.wikipedia.org/wiki/Concurrency_control)的形式。 [開放式並行](http://en.wikipedia.org/wiki/Optimistic_concurrency_control)存取：本教學課程的重點在於假設，雖然每個階段可能會發生並行衝突，但大部分的情況下都不會發生這類衝突。 因此，如果發生衝突，開放式並行存取控制只會通知使用者其變更無法儲存，因為另一個使用者已修改相同的資料。
 
 > [!NOTE]
-> 它會在此假設會有許多並行衝突，或如果這類衝突是不容忍範圍內的應用程式，然後封閉式並行存取控制可以改用。 回頭[實作開放式並行存取](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb.md)封閉式並行存取控制項上的深入討論的教學課程。
+> 對於假設會有許多並行衝突或無法容忍這類衝突的應用程式，則可以改用封閉式並行存取控制。 請回頭[執行開放式並行](../editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb.md)存取教學課程，以深入瞭解封閉式並行存取控制。
 
-開放式並行存取控制的運作方式是確保更新或刪除的記錄有相同的值，更新或刪除處理程序啟動時一樣。 比方說，當按一下可編輯的 GridView 內的 [編輯] 按鈕，記錄的值是從資料庫讀取和文字方塊和其他 Web 控制項中顯示。 GridView 會儲存這些原始值。 更新的版本之後使用者她的變更，然後按一下 [更新] 按鈕，,`UPDATE`陳述式，必須納入考量，原始值加上新的值，並只更新基礎資料庫記錄，如果原始值的使用者開始編輯是仍在資料庫中的值相同。 圖 3 說明這一系列的事件。
+開放式並行存取控制的運作方式是確保更新或刪除的記錄具有與更新或刪除進程啟動時相同的值。 例如，當您在可編輯的 GridView 中按一下 [編輯] 按鈕時，會從資料庫讀取記錄的值，並顯示在文字方塊和其他 Web 控制項中。 這些原始值是由 GridView 儲存。 之後，當使用者進行變更並按一下 [更新] 按鈕之後，所使用的 `UPDATE` 語句就必須考慮原始值加上新的值，而且只有在使用者開始編輯的原始值與資料庫中仍有的值相同時，才更新基礎資料庫記錄。 [圖 3] 描繪了這一系列的事件。
 
-[![更新或刪除才會成功，原始的值必須等於目前的資料庫值](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.png)
+[若要成功更新或刪除 ![，原始值必須等於目前的資料庫值](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image3.png)
 
-**圖 3**:更新或刪除到成功，原始的值必須是等於目前資料庫的值 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image4.png))
+**圖 3**：若要讓 Update 或 Delete 成功，原始值必須等於目前的資料庫值（[按一下以查看完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image4.png)）
 
-有各種方法來實作開放式同步存取 (請參閱[Peter A.Bromberg](http://peterbromberg.net/)的[開放式並行存取更新邏輯](http://www.eggheadcafe.com/articles/20050719.asp)的幾個選項的簡短探討)。 使用 SqlDataSource （以及 ADO.NET 型別資料集用於我們的資料存取層） 的技術擴大`WHERE`子句，以包含所有的原始值的比較。 下列`UPDATE`陳述式，例如，更新的名稱和產品的價格只有當目前資料庫的值會等於原本擷取更新 GridView 中的記錄時的值。 `@ProductName`並`@UnitPrice`參數會包含由使用者輸入的新值，而`@original_ProductName`和`@original_UnitPrice`包含最初載入 GridView 時按下 [編輯] 按鈕的值：
+有各種方法可以執行開放式平行存取（請參閱[Peter A. Bromberg](http://peterbromberg.net/)的[開放式平行存取邏輯](http://www.eggheadcafe.com/articles/20050719.asp)，以瞭解一些選項）。 SqlDataSource 所使用的技術（以及資料存取層中所使用的 ADO.NET 具類型資料集）會增強 `WHERE` 子句，以包含所有原始值的比較。 例如，如果目前的資料庫值等於在 GridView 中更新記錄時原先抓取的值，則下列 `UPDATE` 語句會更新產品的名稱和價格。 `@ProductName` 和 `@UnitPrice` 參數包含使用者輸入的新值，而 `@original_ProductName` 和 `@original_UnitPrice` 包含在按下 [編輯] 按鈕時，原先載入至 GridView 的值：
 
 [!code-sql[Main](implementing-optimistic-concurrency-with-the-sqldatasource-vb/samples/sample1.sql)]
 
-如我們所見本教學課程中，啟用以 sqldatasource 進行的開放式並行存取控制是簡單，只要選取核取方塊。
+如我們在本教學課程中所見，使用 SqlDataSource 來啟用開放式並行存取控制，就像勾選核取方塊一樣簡單。
 
-## <a name="step-1-creating-a-sqldatasource-that-supports-optimistic-concurrency"></a>步驟 1：建立 SqlDataSource 支援開放式並行存取
+## <a name="step-1-creating-a-sqldatasource-that-supports-optimistic-concurrency"></a>步驟1：建立支援開放式平行存取的 SqlDataSource
 
-首先開啟`OptimisticConcurrency.aspx`頁面上，從`SqlDataSource`資料夾。 將 SqlDataSource 控制項從工具箱拖曳至設計工具中，設定其`ID`屬性設`ProductsDataSourceWithOptimisticConcurrency`。 接下來，按一下 從控制項 s 智慧標籤的 設定資料來源 連結。 在精靈中第一個畫面中，選擇要合作`NORTHWINDConnectionString`，按一下 [下一步]。
+從 [`SqlDataSource`] 資料夾開啟 [`OptimisticConcurrency.aspx`] 頁面開始。 從 [工具箱] 將 [SqlDataSource] 控制項拖曳至設計工具，將其 `ID` 屬性設定為 [`ProductsDataSourceWithOptimisticConcurrency`]。 接下來，按一下控制項 s 智慧標籤中的 [設定資料來源] 連結。 從嚮導的第一個畫面中，選擇使用 `NORTHWINDConnectionString`，然後按 [下一步]。
 
 [![選擇使用 NORTHWINDConnectionString](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image4.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image5.png)
 
-**圖 4**:選擇以處理`NORTHWINDConnectionString`([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image6.png))
+**圖 4**：選擇使用 `NORTHWINDConnectionString` （[按一下以觀看完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image6.png)）
 
-此範例中我們會新增可讓使用者編輯的 GridView`Products`資料表。 因此，從 設定 Select 陳述式 畫面中，選擇`Products`資料表從下拉式清單，然後選取`ProductID`， `ProductName`， `UnitPrice`，和`Discontinued`資料行，如 圖 5 所示。
+在此範例中，我們將新增 GridView，讓使用者編輯 `Products` 資料表。 因此，從 [設定 Select 語句] 畫面中，選擇下拉式清單中的 [`Products`] 資料表，然後選取 [`ProductID`]、[`ProductName`]、[`UnitPrice`] 和 [`Discontinued`] 資料行，如 [圖 5] 所示。
 
-[![從 [產品] 資料表中，傳回 ProductID、 ProductName、 UnitPrice 和已停止的資料行](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image5.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.png)
+[從 Products 資料表 ![，傳回 ProductID、ProductName、單價和已停止的資料行](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image5.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.png)
 
-**圖 5**:從`Products`資料表中，傳回`ProductID`， `ProductName`， `UnitPrice`，並`Discontinued`資料行 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image8.png))
+**圖 5**：從 [`Products`] 資料表中，傳回 [`ProductID`]、[`ProductName`]、[`UnitPrice`] 和 [`Discontinued`] 資料行（[按一下以查看完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image8.png)）
 
-挑選資料行後, 按一下 [進階] 按鈕以顯示 [進階 SQL 產生選項] 對話方塊。 檢查產生`INSERT`， `UPDATE`，和`DELETE`陳述式並使用開放式並行存取核取方塊，然後按一下 確定 （請參閱上一步 圖 1 提供螢幕擷取畫面）。 完成精靈，依序按一下 [下一步]，然後完成。
+挑選資料行之後，請按一下 [Advanced] 按鈕以顯示 [Advanced SQL 產生選項] 對話方塊。 核取 [產生 `INSERT`]、[`UPDATE`] 和 [`DELETE` 語句，並使用開放式平行存取] 核取方塊，然後按一下 [確定] （如需螢幕擷取畫面，請參閱 [圖 1] 按 [下一步]，然後按一下 [完成]，以完成嚮導。
 
-完成設定資料來源精靈之後，請花一點時間來檢查產生`DeleteCommand`並`UpdateCommand`屬性並`DeleteParameters`和`UpdateParameters`集合。 若要這樣做最簡單方式是按一下 若要查看頁面 s 宣告式語法左下角的 來源 索引標籤上。 您可以找到`UpdateCommand`的值：
+完成 [設定資料來源] 嚮導之後，請花點時間檢查產生的 `DeleteCommand` 並 `UpdateCommand` 屬性和 `DeleteParameters` 和 `UpdateParameters` 集合。 若要這麼做，最簡單的方法是按一下左下角的 [來源] 索引標籤，以查看頁面的宣告式語法。 您會在這裡找到 `UpdateCommand` 值：
 
 [!code-sql[Main](implementing-optimistic-concurrency-with-the-sqldatasource-vb/samples/sample2.sql)]
 
-中的七個參數`UpdateParameters`集合：
+`UpdateParameters` 集合中有七個參數：
 
 [!code-aspx[Main](implementing-optimistic-concurrency-with-the-sqldatasource-vb/samples/sample3.aspx)]
 
-同樣地，`DeleteCommand`屬性和`DeleteParameters`集合應該如下所示：
+同樣地，`DeleteCommand` 屬性和 `DeleteParameters` 集合看起來應該如下所示：
 
 [!code-sql[Main](implementing-optimistic-concurrency-with-the-sqldatasource-vb/samples/sample4.sql)]
 
 [!code-aspx[Main](implementing-optimistic-concurrency-with-the-sqldatasource-vb/samples/sample5.aspx)]
 
-除了增強`WHERE`子句`UpdateCommand`和`DeleteCommand`屬性 （和個別的參數集合中加入額外參數），選取 使用樂觀並行選項會調整其他兩個屬性：
+除了擴充 `UpdateCommand` 的 `WHERE` 子句和 `DeleteCommand` 屬性（以及將額外的參數新增至個別的參數集合）之外，選取 [使用開放式平行存取] 選項也會調整其他兩個屬性：
 
-- 變更[`ConflictDetection`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx)從`OverwriteChanges`（預設） 至 `CompareAllValues`
-- 變更[`OldValuesParameterFormatString`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.oldvaluesparameterformatstring.aspx)從{0}（預設值） 到原始影像\_{0} 。
+- 將[`ConflictDetection` 屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx)從 `OverwriteChanges` （預設值）變更為 `CompareAllValues`
+- 將[`OldValuesParameterFormatString` 屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.oldvaluesparameterformatstring.aspx)從 {0} （預設值）變更為原始\_{0}。
 
-當資料 Web 控制項叫用 SqlDataSource s`Update()`或`Delete()`方法，它會傳入原始值。 如果 SqlDataSource s`ConflictDetection`屬性設定為`CompareAllValues`，這些原始值加入至命令。 `OldValuesParameterFormatString`屬性會提供用於這些原始值參數的命名模式。 設定資料來源精靈會使用原始\_{0}並將在每個原始參數`UpdateCommand`並`DeleteCommand`屬性和`UpdateParameters`和`DeleteParameters`集合據此。
+當資料 Web 控制項叫用 SqlDataSource s `Update()` 或 `Delete()` 方法時，它會傳入原始值。 如果 [SqlDataSource s `ConflictDetection`] 屬性設為 [`CompareAllValues`]，則會將這些原始值新增至命令。 `OldValuesParameterFormatString` 屬性提供用於這些原始值參數的命名模式。 [設定資料來源] 嚮導會使用原始\_{0} 並在 `DeleteCommand` `UpdateCommand` 中命名每個原始參數，並據以 `UpdateParameters` 和 `DeleteParameters` 集合。
 
 > [!NOTE]
-> 因為我們重新不用 SqlDataSource 控制項 s 插入功能，放心地移除`InsertCommand`屬性並將其`InsertParameters`集合。
+> 由於我們不會使用 SqlDataSource 控制項的插入功能，因此請隨意移除 `InsertCommand` 屬性及其 `InsertParameters` 集合。
 
-## <a name="correctly-handlingnullvalues"></a>正確地處理`NULL`值
+## <a name="correctly-handlingnullvalues"></a>正確處理`NULL`值
 
-不幸的是，擴增`UPDATE`並`DELETE`陳述式自動產生設定資料來源精靈使用開放式並行存取時所執行*不*使用包含記錄`NULL`值。 若要瞭解原因，請考慮我們 SqlDataSource 的`UpdateCommand`:
+可惜的是，使用開放式平行存取時，[設定資料來源] wizard 自動產生的增強型 `UPDATE` 和 `DELETE` 語句*不會*使用包含 `NULL` 值的記錄。 若要瞭解原因，請考慮我們的 SqlDataSource `UpdateCommand`：
 
 [!code-sql[Main](implementing-optimistic-concurrency-with-the-sqldatasource-vb/samples/sample6.sql)]
 
-`UnitPrice`中的資料行`Products`資料表可以有`NULL`值。 如果有特定的資料錄`NULL`值`UnitPrice`，則`WHERE`子句部分`[UnitPrice] = @original_UnitPrice`會*一律*評估為 False，因為`NULL = NULL`一律會傳回 False。 因此，記錄，包含`NULL`值無法編輯或刪除，作為`UPDATE`並`DELETE`陳述式`WHERE`子句不會傳回任何資料列更新或刪除。
+`Products` 資料表中的 `UnitPrice` 資料行可以有 `NULL` 值。 如果特定記錄具有 `UnitPrice`的 `NULL` 值，則 `WHERE` 子句部分 `[UnitPrice] = @original_UnitPrice`*一律*會評估為 false，因為 `NULL = NULL` 一律會傳回 false。 因此，包含 `NULL` 值的記錄無法編輯或刪除，因為 `UPDATE` 和 `DELETE` 語句 `WHERE` 子句不會傳回任何要更新或刪除的資料列。
 
 > [!NOTE]
-> 這個 bug 給 Microsoft 在年 6 月的 2004 年中第一次報告已[SqlDataSource 會產生不正確的 SQL 陳述式](https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=93937)並 stage 排定為在 ASP.NET 中的下一個版本中修正。
+> 此錯誤在2004年6月首次向 Microsoft 回報， [SqlDataSource 會產生不正確的 SQL 語句](https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=93937)，而且據傳排定在下一版的 ASP.NET 中修正。
 
-若要修正此問題，我們必須手動更新`WHERE`子句中同時`UpdateCommand`並`DeleteCommand`屬性**所有**可以具有的資料行`NULL`值。 一般情況下，變更`[ColumnName] = @original_ColumnName`來：
+若要修正此問題，我們必須針對可以有 `NULL` 值的**所有**資料行，以手動方式更新 `UpdateCommand` 和 `DeleteCommand` 屬性中的 `WHERE` 子句。 在 [一般] 中，將 `[ColumnName] = @original_ColumnName` 變更為：
 
 [!code-sql[Main](implementing-optimistic-concurrency-with-the-sqldatasource-vb/samples/sample7.sql)]
 
-這項修改可直接透過宣告式標記，透過 UpdateQuery 或 DeleteQuery 選項，從 屬性 視窗中，或更新和自訂 SQL 陳述式或預存程序選項的設定資料中，刪除在指定的索引標籤來源精靈。 同樣地，這項修改都必須修改*每隔*中的資料行`UpdateCommand`並`DeleteCommand`s`WHERE`子句可以包含`NULL`值。
+這項修改可以直接透過宣告式標記、屬性視窗的 UpdateQuery 或 DeleteQuery 選項，或是透過 [設定資料] 中 [指定自訂 SQL 語句或預存程式] 選項的 [更新] 和 [刪除] 索引標籤來進行。來源 wizard。 同樣地，您必須針對 `UpdateCommand` 和 `DeleteCommand` s `WHERE` 子句中可包含 `NULL` 值的*每個*資料行進行這項修改。
 
-將此套用到我們的範例會產生下列修改`UpdateCommand`和`DeleteCommand`值：
+將此套用到我們的範例會產生下列已修改的 `UpdateCommand` 和 `DeleteCommand` 值：
 
 [!code-sql[Main](implementing-optimistic-concurrency-with-the-sqldatasource-vb/samples/sample8.sql)]
 
-## <a name="step-2-adding-a-gridview-with-edit-and-delete-options"></a>步驟 2：新增 GridView 編輯與刪除選項
+## <a name="step-2-adding-a-gridview-with-edit-and-delete-options"></a>步驟2：使用 [編輯] 和 [刪除] 選項加入 GridView
 
-使用 SqlDataSource 設定為支援開放式並行存取，全都是利用這個並行存取控制的頁面中加入資料 Web 控制項。 本教學課程中，可讓 s 新增的 GridView 會提供這兩個編輯和刪除功能。 若要達成此目的，將 GridView 拖曳從工具箱拖曳至設計工具和設定其`ID`至`Products`。 從 GridView s 智慧標籤，將它繫結`ProductsDataSourceWithOptimisticConcurrency`SqlDataSource 控制項加入在步驟 1 中。 最後，檢查從智慧標籤的 [啟用編輯和啟用刪除] 選項。
+當 SqlDataSource 設定為支援開放式平行存取時，剩下的工作就是將資料 Web 控制項加入至利用此並行存取控制的頁面。 在本教學課程中，我們將新增可同時提供編輯和刪除功能的 GridView。 若要完成此動作，請將 GridView 從 [工具箱] 拖曳至設計工具，並將其 `ID` 設定為 [`Products`]。 從 GridView 的智慧標籤，將它系結至步驟1中新增的 `ProductsDataSourceWithOptimisticConcurrency` SqlDataSource 控制項。 最後，請核取 [啟用編輯] 和 [啟用刪除] 選項（從智慧標籤）。
 
-[![將 GridView 與 sqldatasource 繫結並啟用編輯和刪除](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image6.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.png)
+[![將 GridView 系結至 SqlDataSource，並啟用編輯和刪除](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image6.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.png)
 
-**圖 6**:繫結 GridView SqlDataSource 和啟用編輯和刪除 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image10.png))
+**圖 6**：將 GridView 系結至 SqlDataSource，並啟用編輯和刪除（[按一下以觀看完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image10.png)）
 
-新增 GridView 之後，請藉由移除設定其外觀`ProductID`BoundField 變更`ProductName`BoundField s`HeaderText`屬性設為產品，並更新`UnitPrice`BoundField，讓其`HeaderText`屬性只要價格。 在理想情況下，我們的 d 增強編輯介面，以包含如 RequiredFieldValidator`ProductName`值，如 CompareValidator `UnitPrice` （以確保 s 的正確格式的數值） 的值。 請參閱[自訂資料修改介面](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb.md)更深入的了解自訂編輯介面的 GridView s 的教學課程。
+加入 GridView 之後，請移除 `ProductID` BoundField、將 `ProductName` BoundField s `HeaderText` 屬性變更為 [Product]，然後更新 `UnitPrice` BoundField，使其 [`HeaderText`] 屬性只是價格，以設定其外觀。 在理想的情況下，我們會增強編輯介面，以包含 `ProductName` 值的 RequiredFieldValidator 和 `UnitPrice` 值的 CompareValidator （以確保其格式正確的數值）。 請參閱[自訂資料修改介面](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb.md)教學課程，以深入瞭解自訂 GridView 的編輯介面。
 
 > [!NOTE]
-> 必須啟用 s 檢視狀態，因為原始的值從 GridView 傳遞至 SqlDataSource 是的 GridView 檢視中儲存狀態。
+> 必須啟用 GridView s view 狀態，因為從 GridView 傳遞至 SqlDataSource 的原始值會以檢視狀態儲存。
 
-在 GridView 這些修改之後, 的 GridView 和 SqlDataSource 的宣告式標記看起來應該如下所示：
+對 GridView 進行這些修改之後，GridView 和 SqlDataSource 宣告式標記看起來應該如下所示：
 
 [!code-aspx[Main](implementing-optimistic-concurrency-with-the-sqldatasource-vb/samples/sample9.aspx)]
 
-若要查看作用中的開放式並行存取控制項，請開啟兩個瀏覽器視窗，並載入`OptimisticConcurrency.aspx`中的頁面。 按一下 [編輯] 按鈕，在這兩個瀏覽器中的第一個產品。 在瀏覽器，變更產品名稱，然後按一下 [更新]。 瀏覽器會回傳和 GridView 會傳回其預先編輯模式，其中會顯示新的產品名稱，剛建立的記錄。
+若要查看作用中的開放式並行存取控制，請開啟兩個瀏覽器視窗，並在兩者中載入 [`OptimisticConcurrency.aspx`] 頁面。 在兩個瀏覽器中，按一下第一個產品的 [編輯] 按鈕。 在一個瀏覽器中，變更產品名稱，然後按一下 [更新]。 瀏覽器將回傳，而 GridView 會回到其預先編輯模式，顯示剛編輯之記錄的新產品名稱。
 
-在第二個瀏覽器視窗中，變更 （但保留做為其原始值的產品名稱） 的價格，並按一下 [更新]。 在回傳時，方格傳回給其預先編輯模式，但不是會記錄的價格變更。 第二個瀏覽器會顯示新的產品名稱，與舊的價格與第一個相同的值。 第二個瀏覽器視窗中所做的變更都已中斷。 此外，所做的變更都已中斷而無訊息模式，因為沒有任何例外狀況或訊息，指出並行違規只是發生。
+在第二個瀏覽器視窗中，變更價格（但保留產品名稱作為其原始值），然後按一下 [更新]。 在回傳時，方格會回到其預先編輯模式，但不會記錄價格的變更。 第二個瀏覽器顯示的值與具有舊價格的新產品名稱的第一個相同。 在第二個瀏覽器視窗中所做的變更已遺失。 此外，由於沒有任何例外狀況或訊息指出發生的平行存取違規，因此變更已遺失，而不是安靜。
 
-[![第二個瀏覽器視窗中的變更會以無訊息方式遺失](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image11.png)
+[![第二個瀏覽器視窗中的變更不會以無訊息方式遺失](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image7.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image11.png)
 
-**圖 7**:第二個瀏覽器視窗以無訊息方式遺失的變更 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image12.png))
+**圖 7**：第二個瀏覽器視窗中的變更以無訊息方式遺失（[按一下以觀看完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image12.png)）
 
-為什麼未認可的第二個瀏覽器的變更的原因是因為`UPDATE`陳述式的`WHERE`子句篩選出所有的記錄，並因此不會影響任何資料列。 可讓查看的 s`UPDATE`一次陳述式：
+未認可第二個瀏覽器變更的原因是因為 `UPDATE` 語句 s `WHERE` 子句已篩選掉所有記錄，因此不會影響任何資料列。 讓我們再看一次 `UPDATE` 語句：
 
 [!code-sql[Main](implementing-optimistic-concurrency-with-the-sqldatasource-vb/samples/sample10.sql)]
 
-當第二個瀏覽器視窗中更新記錄時，原始的產品名稱中指定`WHERE`子句不 t 相符項目設定現有的產品名稱 （因為它已變更第一個瀏覽器）。 因此，此陳述式`[ProductName] = @original_ProductName`會傳回 False，而`UPDATE`並不會影響任何記錄。
+當第二個瀏覽器視窗更新記錄時，`WHERE` 子句中指定的原始產品名稱不會與現有的產品名稱相符（因為第一個瀏覽器已變更）。 因此，語句 `[ProductName] = @original_ProductName` 會傳回 False，而 `UPDATE` 不會影響任何記錄。
 
 > [!NOTE]
-> Delete 運作方式相同。 開啟兩個瀏覽器視窗，開始編輯指定的產品，並儲存其變更。 在儲存之後所做的變更一種瀏覽器中，按一下 其他相同產品的 刪除 按鈕。 由於原始的值 don t 匹配`DELETE`陳述式的`WHERE`子句中，刪除以無訊息模式失敗。
+> Delete 的運作方式相同。 在開啟兩個瀏覽器視窗的情況下，一開始先編輯指定的產品，然後再儲存其變更。 在單一瀏覽器中儲存變更之後，請按一下另一個中相同產品的 [刪除] 按鈕。 因為原始值不會在 `DELETE` 語句 s `WHERE` 子句中相符，所以刪除會以無訊息模式失敗。
 
-在第二個瀏覽器視窗之後，按一下方格中的 [更新] 按鈕回到前編輯模式中，但其變更將會遺失使用者 s 觀點。 不過，那里 s 他們的變更不堅持沒有視覺回應。 在理想情況下，如果使用者 s 會失去變更的並行存取違規，我們的 d 通知他們，然後或許保留在編輯模式中的 方格。 可讓 s 看看如何完成這項作業。
+從使用者在第二個瀏覽器視窗中的觀點來看，按一下 [更新] 按鈕之後，方格會回到預先編輯模式，但其變更已遺失。 不過，沒有視覺效果的意見反應，他們的變更不會改變。 在理想的情況下，如果使用者的變更會遺失並行違規，我們會通知他們，而且可能會將方格保持在編輯模式。 讓我們看看如何完成此動作。
 
-## <a name="step-3-determining-when-a-concurrency-violation-has-occurred"></a>步驟 3：判斷何時發生並行存取違規
+## <a name="step-3-determining-when-a-concurrency-violation-has-occurred"></a>步驟3：判斷是否發生並行違規
 
-因為並行存取違規會拒絕其中一個已做的變更，那就天下太平了並行存取違規發生時警示使用者。 若要提醒使用者，可讓 s 將標籤 Web 控制項新增至名為頁面頂端`ConcurrencyViolationMessage`其`Text`屬性會顯示下列訊息：您嘗試更新或刪除另一位使用者同時更新一筆記錄。 請檢閱其他使用者的變更再取消復原您的更新或刪除。 設定 Label 控制項 s`CssClass`為 [警告] 是 CSS 類別屬性中定義`Styles.css`會以紅色、 斜體、 粗體和大字型顯示的文字。 最後，設定標籤 s`Visible`並`EnableViewState`屬性，以`False`。 這樣會隱藏除了我們明確設定的回傳的標籤及其`Visible`屬性設`True`。
+由於並行違規會拒絕所做的變更，因此在發生並行違規時，會很有可能會對使用者發出警示。 若要警示使用者，請將標籤 Web 控制項新增至名為 `ConcurrencyViolationMessage` 的頁面頂端，其 `Text` 屬性會顯示下列訊息：您已嘗試更新或刪除另一位使用者同時更新的記錄。 請檢查其他使用者的變更，然後重做您的更新或刪除。 將 [標籤控制項] `CssClass` 屬性設定為 [警告]，這是在 `Styles.css` 中定義的 CSS 類別，會以紅色、斜體、粗體和大字型顯示文字。 最後，將標籤的 `Visible` 和 `EnableViewState` 屬性設定為 [`False`]。 這會隱藏標籤，但只有那些回傳會明確將其 `Visible` 屬性設為 `True`。
 
-[![將標籤控制項新增至頁面，顯示警告](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image8.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image13.png)
+[![將標籤控制項新增至頁面以顯示警告](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image8.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image13.png)
 
-**圖 8**:將標籤控制項新增至頁面，顯示警告 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image14.png))
+**圖 8**：將標籤控制項新增至頁面以顯示警告（[按一下以查看完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image14.png)）
 
-當執行更新或刪除，s 的 GridView`RowUpdated`和`RowDeleted`事件處理常式引發後其資料來源控制項已執行要求的 update 或 delete。 我們可以判斷這些事件處理常式從作業所影響多少資料列。 零個資料列受到影響，如果我們想要顯示`ConcurrencyViolationMessage`標籤。
+執行更新或刪除時，GridView 的 `RowUpdated` 和 `RowDeleted` 事件處理常式會在其資料來源控制執行要求的更新或刪除之後引發。 我們可以從這些事件處理常式判斷作業所影響的資料列數目。 如果零個數據列受到影響，我們想要顯示 [`ConcurrencyViolationMessage`] 標籤。
 
-針對兩者建立事件處理常式`RowUpdated`和`RowDeleted`事件，並新增下列程式碼：
+建立 `RowUpdated` 和 `RowDeleted` 事件的事件處理常式，並新增下列程式碼：
 
 [!code-vb[Main](implementing-optimistic-concurrency-with-the-sqldatasource-vb/samples/sample11.vb)]
 
-這兩個事件處理常式中我們檢查一下`e.AffectedRows`屬性，然後如果它等於 0 時，設定`ConcurrencyViolationMessage`標籤 s`Visible`屬性設`True`。 在 `RowUpdated`事件處理常式中，我們也指示停留在編輯模式中，藉由設定 GridView`KeepInEditMode`屬性設為 true。 在此情況下，我們需要重新繫結至方格的資料，讓其他使用者的資料載入至編輯介面。 這可以藉由呼叫 GridView 的`DataBind()`方法。
+在這兩個事件處理常式中，我們會檢查 `e.AffectedRows` 屬性，如果它等於0，請將 `ConcurrencyViolationMessage` Label s `Visible` 屬性設定為 `True`。 在 `RowUpdated` 事件處理常式中，我們也會藉由將 `KeepInEditMode` 屬性設定為 true，指示 GridView 保持編輯模式。 在這種情況下，我們需要將資料重新系結到方格，讓其他使用者的資料載入編輯介面中。 這是藉由呼叫 GridView s `DataBind()` 方法來完成。
 
-如 圖 9 所示，這些兩個事件處理常式中，每次發生並行違規時，會顯示非常值得注意的訊息。
+如 [圖 9] 所示，在這兩個事件處理常式中，每當發生並行違規時，就會顯示非常明顯的訊息。
 
-[![並行存取違規時顯示一則訊息](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image15.png)
+[![訊息會在面臨並行違規時顯示](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image9.gif)](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image15.png)
 
-**圖 9**:並行存取違規時顯示一則訊息 ([按一下以檢視完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image16.png))
+**圖 9**：發生並行違規時，會顯示訊息（[按一下以觀看完整大小的影像](implementing-optimistic-concurrency-with-the-sqldatasource-vb/_static/image16.png)）
 
 ## <a name="summary"></a>總結
 
-建立 web 應用程式時，多個並行使用者編輯相同的資料，請務必考慮並行控制選項。 根據預設，ASP.NET 資料 Web 控制項和資料來源控制項不會採用任何並行存取控制。 如我們所見本教學課程中，實作以 sqldatasource 進行的開放式並行存取控制是相當快速及簡單。 SqlDataSource 會處理大部分的跑腿，針對您新增擴增`WHERE`子句，以自動產生`UPDATE`並`DELETE`陳述式，但是會在處理中的一些微妙之處`NULL`值資料行中所述正確地處理`NULL`值區段。
+建立多個並行使用者可能會編輯相同資料的 web 應用程式時，請務必考慮並行控制選項。 根據預設，ASP.NET 資料 Web 控制項和資料來源控制項不會採用任何並行存取控制。 如我們在本教學課程中所見，使用 SqlDataSource 來執行開放式並行存取控制的速度相當快速且簡單。 SqlDataSource 會處理您將擴充的 `WHERE` 子句加入至自動產生的 `UPDATE` 和 `DELETE` 語句的大部分跑腿活兒，但在處理 `NULL` 值資料行時，有幾個微妙差異，如正確處理 `NULL` 值一節中所述。
 
-本教學課程結束時，我們的 sqldatasource 進行的檢查。 我們其餘的教學課程將會回到使用使用 ObjectDataSource 和階層式的架構的資料。
+本教學課程將結束我們的 SqlDataSource 檢查。 其餘的教學課程將會回到使用 ObjectDataSource 和分層架構來處理資料。
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ## <a name="about-the-author"></a>關於作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七個 ASP 書籍和的創辦人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年從事 Microsoft Web 技術工作。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是[ *Sams 教導您自己 ASP.NET 2.0 在 24 小時內*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在觸達[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或透過他的部落格，這位於 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，自1998起，有七個 ASP/ASP. NET 書籍和創辦人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是[*在24小時內讓自己的 ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在mitchell@4GuysFromRolla.com觸達[。](mailto:mitchell@4GuysFromRolla.com) 或者透過他的 blog，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 > [!div class="step-by-step"]
-> [上一步](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)
+> [上一篇](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)

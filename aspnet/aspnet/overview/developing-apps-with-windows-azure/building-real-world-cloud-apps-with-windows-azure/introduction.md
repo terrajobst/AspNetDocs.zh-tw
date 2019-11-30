@@ -1,177 +1,177 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
-title: 建置真實世界的雲端應用程式與 Azure |Microsoft Docs
+title: 使用 Azure 建立真實世界的雲端應用程式 |Microsoft Docs
 author: MikeWasson
-description: 本電子書會引導您透過模式為基礎的方法，用以建置真實世界的雲端解決方案。 這些模式可套用至開發程序也為...
+description: 本電子書將逐步引導您建立以模式為基礎的方法，以建立真實世界的雲端解決方案。 這些模式適用于開發進程以及 。
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 7daf08a88c614288170d676e665403cda244218a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 8a4ef3aa37a9296e92fbeb513968e3abeee072d0
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118659"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74585525"
 ---
-# <a name="building-real-world-cloud-apps-with-azure"></a>使用 Azure 建置真實世界的雲端應用程式
+# <a name="building-real-world-cloud-apps-with-azure"></a>使用 Azure 建立真實世界的雲端應用程式
 
-藉由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
 
-[下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> 本電子書會引導您透過模式為基礎的方法，用以建置真實世界的雲端解決方案。 這些模式可套用至開發程序、 架構及程式碼實作。
+> 本電子書將逐步引導您建立以模式為基礎的方法，以建立真實世界的雲端解決方案。 這些模式適用于開發程式以及架構和程式碼撰寫實務。
 > 
-> 內容以 Scott Guthrie 所開發，由傳遞他在挪威開發人員 Conference (NDC) 在 2013 年 6 月中的簡報為依據 ([第 1 部分](http://vimeo.com/68215538)，[第 2 部分](http://vimeo.com/68215602))，而是在中的 Microsoft Tech Ed 澳洲2013 年 9 月日 ([第 1 部分](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324)，[第 2 部分](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325))。 [許多其他](more-patterns-and-guidance.md#acknowledgments)隨後更新和內容從視訊轉換成書面形式。
+> 內容是以 Scott Guthrie 開發的簡報為基礎，並由他在2013年6月（第[1](http://vimeo.com/68215538)部分，[第 2](http://vimeo.com/68215602)部分）和 Microsoft Tech Ed 2013 澳大利亞（第[1](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324)部，第[2](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325)部分）的「挪威開發人員會議」（NDC）提供。 [許多人](more-patterns-and-guidance.md#acknowledgments)都會更新並增強內容，同時將它從影片轉換成書面形式。
 
 ## <a name="intended-audience"></a>適用對象
 
-Building real-world 定域機組，考慮移轉至雲端，或不熟悉雲端開發的開發人員會發現這裡的最重要的概念和做法，他們需要知道的簡要概觀。 搭配具體範例，以及更深入的資訊的其他資源的每個章節連結，來說明概念。 範例和其他資源連結是以 Microsoft 架構和服務，但說明的原則套用至其他 web 開發架構和雲端環境。
+對於想要針對雲端進行開發的開發人員而言，考慮移至雲端或雲端開發的新手，會大致瞭解他們需要知道的最重要概念和做法。 概念會以具體範例來說明，而每個章節都會連結至其他資源，以取得更深入的資訊。 這些範例和其他資源的連結適用于 Microsoft 架構和服務，但說明的原則也適用于其他 網頁程式開發架構和雲端環境。
 
-已針對雲端開發人員可能會發現這裡的概念將協助使其更大的成就。 數列中的每一章可以獨立地讀取，因此您可以挑選並選擇您感興趣的主題。
+已針對雲端進行開發的開發人員可能會在這裡找到有助於使其更成功的想法。 系列中的每個章節都可以獨立讀取，因此您可以挑選並選擇您感興趣的主題。
 
-觀賞 Scott Guthrie 的任何人*建置真實世界雲端應用程式與 Azure*展示層和更多詳細資料和更新的資訊會發現以下的想。
+有人監看 Scott Guthrie*使用 Azure 簡報建立真實世界的雲端應用程式*，並想要更多詳細資料和更新的資訊，請參閱這裡。
 
 <a id="patterns"></a>
 ## <a name="cloud-development-patterns"></a>雲端開發模式
 
-本電子書會說明十三個建議的雲端開發模式。 「 模式 」 來這裡廣泛表示建議的方法做事： 如何以開發、 設計和撰寫程式碼的雲端應用程式的最佳方式。 這些是可協助您 「 成功的 pit 分為 「 如果您遵循這些索引鍵模式。
+這本電子書會針對雲端開發說明13個建議模式。 在這裡使用「模式」，是指執行事項的建議方式：如何開發、設計和編碼雲端應用程式。 這些是重要的模式，可協助您在後續追蹤「成功」的情況。
 
-- [一切自動化](automate-everything.md)。
+- 將[所有專案自動化](automate-everything.md)。
 
-    - 您可以使用 指令碼效率最大化，然後重複處理序中的錯誤降至最低。
-    - 示範：Azure 管理指令碼。
+    - 使用腳本來最大化效率，並將重複性進程中的錯誤降至最低。
+    - 示範： Azure 管理腳本。
 - [原始檔控制](source-control.md)。 
 
-    - 設定原始檔控制中的分支結構，以加速 DevOps 工作流程。
-    - 示範： 將指令碼新增至原始檔控制。
-    - 示範： 保留出原始檔控制的敏感性資料。
-    - 示範： 在 Visual Studio 中使用 Git。
+    - 在原始檔控制中設定分支結構，以加速 DevOps 工作流程。
+    - 示範：將腳本加入至原始檔控制。
+    - 示範：將敏感性資料從原始檔控制中排除。
+    - 示範：在 Visual Studio 中使用 Git。
 - [持續整合與傳遞](continuous-integration-and-continuous-delivery.md)。 
 
-    - 自動化組建和與每個原始檔控制簽入的部署。
+    - 使用每個原始檔控制簽入，將組建和部署自動化。
 - [Web 開發最佳作法](web-development-best-practices.md)。 
 
-    - 讓 web 層保持無狀態。
-    - 示範： 縮放比例和自動調整 Azure App Service 中的 Web 應用程式中。
-    - 避免工作階段狀態。
-    - 無法使用 CDN 時，則您可以使用後援 CDN。
+    - 保持 web 層無狀態。
+    - 示範： Azure App Service 中的 Web Apps 縮放和自動調整。
+    - 避免會話狀態。
+    - 當 CDN 無法使用時，請將 CDN 與 fallback 搭配使用。
     - 使用非同步程式設計模型。
-    - 示範： 在 ASP.NET MVC 和 Entity Framework 中的非同步。
+    - 示範：在 ASP.NET MVC 和 Entity Framework 中非同步。
 - [單一登入](single-sign-on.md)。 
 
     - Azure Active Directory 簡介。
-    - 示範： 建立使用 Azure Active Directory 的 ASP.NET 應用程式。
-- [資料儲存體選項](data-storage-options.md)。 
+    - 示範：建立使用 Azure Active Directory 的 ASP.NET 應用程式。
+- [資料儲存選項](data-storage-options.md)。 
 
-    - 類型的資料存放區。
+    - 資料存放區的類型。
     - 如何選擇正確的資料存放區。
-    - 示範：Azure SQL Database。
+    - 示範： Azure SQL Database。
 - [資料分割策略](data-partitioning-strategies.md)。 
 
-    - 垂直、 水平分割資料或兩者皆可讓您調整規模的關聯式資料庫。
-- [非結構化的 blob 儲存體](unstructured-blob-storage.md)。 
+    - 以垂直、水準或兩者的方式分割資料，以加速調整關係資料庫。
+- [非結構化 blob 儲存體](unstructured-blob-storage.md)。 
 
-    - 使用 blob 服務，在雲端中儲存檔案。
-    - 示範： 修正其應用程式中使用 blob 儲存體。
-- [設計存留失敗](design-to-survive-failures.md)。 
+    - 使用 blob 服務將檔案儲存在雲端。
+    - 示範：在修正 It 應用程式中使用 blob 儲存體。
+- [設計到存活的失敗](design-to-survive-failures.md)。 
 
-    - 類型的失敗。
-    - 失敗的範圍。
-    - 了解 Sla。
+    - 失敗的類型。
+    - 失敗範圍。
+    - 瞭解 Sla。
 - [監視和遙測](monitoring-and-telemetry.md)。 
 
-    - 為什麼您應該同時購買的遙測的應用程式並撰寫您自己的程式碼，來檢測您的應用程式。
-    - 示範：適用於 Azure 的 new Relic
-    - 示範： 修正其應用程式中的記錄程式碼。
-    - 示範： 修正其應用程式中的相依性插入。
-    - 示範： 在 Azure 中的內建的記錄支援。
+    - 為什麼您應該同時購買遙測應用程式，並撰寫自己的程式碼來檢測您的應用程式。
+    - 示範： Azure 的新 New relic
+    - 示範：在修正 It 應用程式中記錄程式碼。
+    - 示範：修正 It 應用程式中的相依性插入。
+    - 示範： Azure 中的內建記錄支援。
 - [暫時性錯誤處理](transient-fault-handling.md)。 
 
-    - 使用智慧型的重試/撤退邏輯來減少暫時性失敗的影響。
-    - 示範： 重試/退避法在 Entity Framework 6。
-- [分散式快取](distributed-caching.md)。 
+    - 使用智慧型重試/轉型邏輯來減輕暫時性失敗的影響。
+    - 示範： Entity Framework 6 中的 [重試]/[關閉]。
+- [分散式](distributed-caching.md)快取。 
 
-    - 改善延展性，並使用分散式快取來降低資料庫的交易成本。
-- [以佇列為主的工作模式](queue-centric-work-pattern.md)。 
+    - 使用分散式快取來改善擴充性並降低資料庫交易成本。
+- 以[佇列為中心的工作模式](queue-centric-work-pattern.md)。 
 
-    - 啟用高可用性和鬆散結合 web 和背景工作層，藉以改善延展性。
-    - 示範：修正其應用程式中的 azure 儲存體佇列。
-- [更多雲端應用程式模式和指導方針](more-patterns-and-guidance.md)。
-- [附錄：修正範例應用程式](the-fix-it-sample-application.md)
+    - 藉由鬆散結合 web 和背景工作角色層，啟用高可用性並改善擴充性。
+    - 示範：修正 It 應用程式中的 Azure 儲存體佇列。
+- [更多雲端應用程式模式和指導](more-patterns-and-guidance.md)方針。
+- [附錄︰修正範例應用程式](the-fix-it-sample-application.md)
 
     - 已知問題
-    - 最佳作法
-    - 如何下載、 建置、 執行和部署。
+    - 最佳做法
+    - 如何下載、建立、執行和部署。
 
-這些模式可套用到所有的雲端環境，但我們將使用 Microsoft 技術和服務，例如 Visual Studio、 Team Foundation Service、 ASP.NET 和 Azure 為基礎的範例說明它們。
+這些模式適用于所有雲端環境，但我們將使用以 Microsoft 技術和服務為基礎的範例（例如 Visual Studio、Team Foundation Service、ASP.NET 和 Azure）加以說明。
 
-本章的其餘部分會介紹它修正範例應用程式和 Web 應用程式在 Azure App Service 中執行它修正應用程式的雲端環境中。
+本章節的其餘部分將介紹 fix it 應用程式執行所在 Azure App Service 雲端環境中的修正 It 範例應用程式和 Web Apps。
 
 <a id="fixit"></a>
-## <a name="the-fix-it-sample-application"></a>範例應用程式修正程式
+## <a name="the-fix-it-sample-application"></a>修正 it 範例應用程式
 
-大部分的螢幕擷取畫面和本電子書中所顯示的程式碼範例根據它修正應用程式原本由[Scott Guthrie](https://weblogs.asp.net/scottgu/)示範建議的雲端應用程式開發模式和作法。
+本電子書中所顯示的大部分螢幕擷取畫面和程式碼範例，都是以[Scott Guthrie](https://weblogs.asp.net/scottgu/)最初開發的修正 It 應用程式為基礎，以示範建議的雲端應用程式開發模式和實務。
 
-![修正此問題的應用程式首頁](introduction/_static/image1.png)
+![修正 It 應用程式首頁](introduction/_static/image1.png)
 
-範例應用程式是票證系統的簡單工作項目。 當您需要修正的項目時，您會建立票證，並指派它某人，或其他人可以登入，並查看 指派票證給它們，並標示為已完成的工作完成時的票證。
+範例應用程式是簡單的工作專案票證系統。 當您需要固定的專案時，您會建立票證並將它指派給其他人，而其他人可以登入並查看指派給他們的票證，並在工作完成時將票證標示為已完成。
 
-它是標準的 Visual Studio web 專案。 它建置在 ASP.NET MVC，並使用 SQL Server 資料庫。 它可以在 IIS Express 在本機執行，而且可以部署至 Azure 網站在雲端中執行。 您可以記錄中使用表單驗證和本機資料庫，或使用 Google 等社交提供者。 （稍後我們將也說明如何以 Active Directory 組織帳戶登入。）
+這是標準的 Visual Studio Web 專案。 它是以 ASP.NET MVC 為基礎，並使用 SQL Server 資料庫。 它可以在 IIS Express 本機執行，並可部署至 Azure 網站以在雲端中執行。 您可以使用表單驗證和本機資料庫，或使用社交提供者（例如 Google）來登入。 （稍後我們也會示範如何使用 Active Directory 組織帳戶登入。）
 
 ![登入頁面](introduction/_static/image2.png)
 
-一旦您登中建立票證、 將它指派給某個成員，以及上傳您想要修正的圖片。
+登入之後，您可以建立票證，將它指派給其他人，並上傳您想要修正的圖片。
 
-![建立修正它的工作](introduction/_static/image3.png)
+![建立 Fix It 工作](introduction/_static/image3.png)
 
-![修正此問題建立工作](introduction/_static/image4.png)
+![修正已建立的 It 工作](introduction/_static/image4.png)
 
-您可以追蹤您所建立的工作項目的進度，查看指派給您，檢視票證詳細資料，與標記的項目，為已完成的票證。
+您可以追蹤所建立之工作專案的進度、查看指派給您的票證、查看票證詳細資料，以及將專案標示為已完成。
 
-這是非常簡單的應用程式，從功能觀點來看，但您會看到如何建置可調整為數百萬位使用者，使其將會復原資料庫失敗與連接終止數目之類的事項。 您也將了解如何建立自動化且靈活的開發工作流程，可讓您輕鬆入門，並讓應用程式更好且更有效率且快速地反覆開發週期。
+這是從功能觀點來看的一個非常簡單的應用程式，但您會瞭解如何建立它，讓它可以擴充至數百萬名使用者，並可復原資料庫失敗和連接終止等專案。 您也將瞭解如何建立自動化和敏捷式開發工作流程，讓您能夠輕鬆地啟動簡單的應用程式，並以有效率且快速的方式反復執行開發週期。
 
 <a id="waws"></a>
-## <a name="web-apps-in-azure-app-service"></a>在 Azure App Service 中的 web 應用程式
+## <a name="web-apps-in-azure-app-service"></a>Azure App Service 中的 Web Apps
 
-修正其應用程式所使用的雲端環境是 azure 的一種我們呼叫網站服務。 這項服務是方法，您可以裝載您自己在 Azure 中的 web 應用程式，而不需要建立 Vm，並進行更新、 安裝和設定 IIS 等。我們在我們的 Vm 上裝載您的網站，並自動提供備份和復原和其他服務，供您。 Web Sites 服務適用於 ASP.NET、 Node.js、 PHP 和 Python。 它可讓您非常快速地使用 Visual Studio、 Web Deploy、 FTP、 Git 或 TFS 部署。 這通常是在幾秒內開始部署的時間與您的更新功能在網際網路上的時間之間。 若要開始，所有免費且在流量增長時，您可以相應增加。
+用於修正 It 應用程式的雲端環境是我們稱之為「網站」的 Azure 服務。 此服務可讓您在 Azure 中裝載自己的 web 應用程式，而不需要建立 Vm 並保持其更新、安裝和設定 IIS 等。我們會在 Vm 上裝載您的網站，並自動為您提供備份和復原和其他服務。 Web Sites 服務適用于 ASP.NET、node.js、PHP 和 Python。 它可讓您使用 Visual Studio、Web Deploy、FTP、Git 或 TFS，非常快速地進行部署。 在您開始部署的時間和透過網際網路提供更新的時間之間，通常只需要幾秒鐘的時間。 免費開始使用，而且您可以隨著流量成長而相應增加。
 
-在幕後，Azure App Service 中的 Web 應用程式會提供許多架構的元件和功能，您必須自行建置，如果您要裝載您的 Vm 上使用 IIS 的網站。 一個元件是部署結束點，會自動設定 IIS，並且為您想要執行您的網站的多個 Vm 上安裝您的應用程式。
+在幕後，如果您要在自己的 Vm 上使用 IIS 來裝載網站，則 Azure App Service 中的 Web Apps 會提供許多您必須自行建立的架構元件和功能。 其中一個元件是部署端點，會自動設定 IIS，並在您想要執行網站的多個 Vm 上安裝您的應用程式。
 
 ![部署服務](introduction/_static/image5.png)
 
-當使用者叫用 web 站台時，它們不會直接達到 IIS Vm 時，會經歷[Application Request Routing (ARR)](https://www.iis.net/downloads/microsoft/application-request-routing)負載平衡器。 您可以使用這些項目與您自己的伺服器，但此處的優點是，它們為您自動設定。 使用智慧型的啟發學習法會將帳戶因素，例如工作階段親和性，在 IIS 中的佇列深度，以及 CPU 使用量，每個電腦，以將流量導向至虛擬機器裝載您的網站。
+當使用者叫用網站時，他們不會直接叫用 IIS Vm，而是透過[應用程式要求路由（ARR）](https://www.iis.net/downloads/microsoft/application-request-routing)負載平衡器。 您可以在自己的伺服器上使用這些資訊，但此處的優點是它們是自動設定的。 他們使用智慧型啟發學習法來考慮因素，例如會話親和性、IIS 中的佇列深度，以及每部電腦上的 CPU 使用量，以將流量導向裝載您網站的 Vm。
 
 ![ARR 負載平衡器](introduction/_static/image6.png)
 
-如果機器已關閉時，Azure 自動提取從循環，會啟動新的 VM 執行個體，而且會開始將流量導向至新的執行個體--所有與您的應用程式不需要停機。
+如果電腦停止運作，Azure 會自動從輪替中提取該機器、加速新的 VM 實例，並開始將流量導向至新的實例--所有應用程式都不會停機。
 
-![從機器失敗的自動復原](introduction/_static/image7.png)
+![從電腦失敗中自動復原](introduction/_static/image7.png)
 
-這會自動發生。 您要做的就是建立網站及部署您的應用程式，使用 Windows PowerShell、 Visual Studio 中或 Azure 管理入口網站。
+這一切都是自動進行。 您只需要建立網站，然後使用 Windows PowerShell、Visual Studio 或 Azure 管理入口網站，將您的應用程式部署到其中。
 
-如需快速且輕鬆地逐步教學課程示範如何在 Visual Studio 中建立 web 應用程式，並將它部署至 Azure 網站，請參閱 <<c0> [ 開始使用 Azure 和 ASP.NET](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)。
+如需示範如何在 Visual Studio 中建立 web 應用程式並將其部署至 Azure 網站的快速簡單逐步教學課程，請參閱[開始使用 azure 和 ASP.NET](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)。
 
 <a id="summary"></a>
 ## <a name="summary"></a>總結
 
-本簡介提供一份活頁簿將會涵蓋的主題、 螢幕擷取畫面的範例應用程式，並在 Azure App Service 雲端環境中的 Web 應用程式的簡短概觀。 其中一個最大的開發應用程式中，和適用於雲端的優點是，就可以輕鬆地自動化重複性的開發工作，例如建立測試環境，並將您的程式碼部署到它。 如何執行這個動作的主旨[下一步 一章](automate-everything.md)。
+本簡介已提供本書將涵蓋的主題清單、範例應用程式的螢幕擷取畫面，以及 Azure App Service 雲端環境中 Web Apps 的簡短總覽。 在和雲端中開發應用程式的其中一個絕佳優點，就是可以輕鬆地自動化重複的開發工作，例如建立測試環境，並將程式碼部署到其中。 這是[下一章](automate-everything.md)的主題。
 
 ## <a name="resources"></a>資源
 
-如需有關本章節涵蓋之主題的詳細資訊，請參閱下列資源。
+如需本章所涵蓋之主題的詳細資訊，請參閱下列資源。
 
 文件：
 
-- [Web 應用程式在 Azure App Service 中的](https://azure.microsoft.com/services/app-service/web/)。 如需 Web 應用程式的 Azure 文件的入口網站頁面。
-- [Web Apps、 雲端服務和 Vm:使用時機？](https://azure.microsoft.com/documentation/articles/choose-web-site-cloud-service-vm/) 在這一章中所示的 WAWS 只是三種方式，您可以在 Azure 中執行 web 應用程式。 本文說明的三種方式之間的差異，並提供有關如何選擇哪一種適合您案例的指引。 Web Sites 中，例如雲端服務是一項 Azure PaaS 功能。 Vm 是 IaaS 功能。 如需 PaaS 與 IaaS 的說明，請參閱 <<c0> [ 資料選項](data-storage-options.md#paasiaas)一章。
+- [Azure App Service 中的 Web Apps](https://azure.microsoft.com/services/app-service/web/)。 關於 Web Apps 的 Azure 檔入口網站頁面。
+- [Web Apps、雲端服務和 Vm：使用時機？](https://azure.microsoft.com/documentation/articles/choose-web-site-cloud-service-vm/) 如本章所示，WAWS 只是您可以在 Azure 中執行 web 應用程式的三種方法之一。 本文說明三種方式之間的差異，並提供如何選擇哪一個最適合您案例的指引。 就像 Web Sites，雲端服務是 Azure 的 PaaS 功能。 Vm 是 IaaS 功能。 如需 PaaS 與 IaaS 的說明，請參閱[資料選項](data-storage-options.md#paasiaas)一章。
 
 影片：
 
-- [Scott Guthrie 開始步驟 0-什麼是 Azure 雲端作業系統？](https://azure.microsoft.com/documentation/videos/what-is-the-cloud-os-scottgu/)
-- [Web Sites 的架構-Stefan schackow](https://azure.microsoft.com/documentation/videos/why-azure-web-sites-plus-architecture/)。
-- [Azure Web Sites 內部運作 Nir Mashkowski](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski)。
+- [Scott Guthrie 從步驟0開始，什麼是 Azure 雲端 OS？](https://azure.microsoft.com/documentation/videos/what-is-the-cloud-os-scottgu/)
+- [Web Sites 架構-使用 Stefan Schackow](https://azure.microsoft.com/documentation/videos/why-azure-web-sites-plus-architecture/)。
+- [Azure 網站內部的 Nir Mashkowski](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski)。
 
 > [!div class="step-by-step"]
 > [下一步](automate-everything.md)

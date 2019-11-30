@@ -1,122 +1,122 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
-title: 更多的模式和指導方針 （使用 Azure 建置真實世界的雲端應用程式） |Microsoft Docs
+title: 更多模式和指導方針（使用 Azure 建立真實世界的雲端應用程式） |Microsoft Docs
 author: MikeWasson
-description: 建置真實世界雲端應用程式與 Azure 的電子書是以 Scott Guthrie 所開發的簡報為依據。 它說明 13 模式與做法，他可以...
+description: 使用 Azure 電子書建立真實世界的雲端應用程式，是以 Scott Guthrie 所開發的簡報為基礎。 它會說明13個模式和實務，
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: 7e97cfc3-d830-4002-8ff7-5790d1ff49e6
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 42066d4154758fce7ebd1529edf41ba49df07d93
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: afade34477d1136883e7543d09e73dfbe435690e
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118705"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74585353"
 ---
-# <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>更多的模式和指導方針 （使用 Azure 建置真實世界的雲端應用程式）
+# <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>更多模式和指導方針（使用 Azure 建立真實世界的雲端應用程式）
 
-藉由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
 
-[下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> **建置真實世界雲端應用程式與 Azure**電子書以 Scott Guthrie 所開發的簡報為依據。 它說明 13 的模式，並可協助您的作法是成功開發適用於雲端的 web 應用程式。 電子書的相關資訊，請參閱[第 1 章](introduction.md)。
+> **使用 Azure 電子書建立真實世界的雲端應用程式**，是以 Scott Guthrie 所開發的簡報為基礎。 其中說明13種模式和作法，可協助您成功開發雲端 web 應用程式。 如需電子書的相關資訊，請參閱[第一章](introduction.md)。
 
-你現在看到 13 的模式，指導您如何成功在雲端運算。 這些是幾個適用於雲端應用程式的模式。 以下是一些雲端運算主題和資源可協助它們：
+您現在已經看過13種模式，可提供如何在雲端運算中成功的指引。 這些只是幾個適用于雲端應用程式的模式。 以下是一些更多雲端運算主題，以及協助它們的資源：
 
-- 移轉至雲端的現有內部部署應用程式。 
+- 將現有的內部部署應用程式遷移至雲端。 
 
-    - [移至雲端的應用程式](https://msdn.microsoft.com/library/ff728592.aspx)。 由 Microsoft Patterns and Practices 電子書。 同時也隨附[硬平裝本](https://www.amazon.com/dp/1621140202)。
-    - [移轉的 Microsoft ASP.NET 和 IIS.NET](https://go.microsoft.com/fwlink/?LinkId=400656)。 Robert mcmurray 的案例研究。
-    - [移動 4th&amp;至 Azure 網站的市長](http://www.jeff.wilcox.name/2013/04/4thandmayor-azure-websites/)。 部落格文章所 Jeff Wilcox chronicling 他將從 Amazon Web Services 的 web 應用程式移至 Azure App Service 中的 Web 應用程式的經驗。
-    - [將應用程式移至 Azure:哪些變更？](https://azure.microsoft.com/documentation/videos/web-sites-internals-and-the-file-system/) 簡短的影片，由 Stefan Schackow、 說明在 Azure App Service 中的 Web 應用程式中的檔案系統存取權。
-    - [Azure 的混合式雲端](https://www.amazon.com/dp/B00EOP4UQW)。 硬拷貝活頁簿或 Danny Garber、 Jamal Malik，和 Adam Fazio 電子書。
-- 對雲端應用程式唯一的安全性、 驗證和授權問題
+    - 將[應用程式移至雲端](https://msdn.microsoft.com/library/ff728592.aspx)。 依 Microsoft 的模式和實務的電子書。 也可做為[硬式複製的平裝](https://www.amazon.com/dp/1621140202)。
+    - 正在[遷移 Microsoft 的 ASP.NET 和 IIS.NET](https://go.microsoft.com/fwlink/?LinkId=400656)。 Robert McMurray 的案例研究。
+    - [將第 4 &amp; Mayor 移到 Azure 網站](http://www.jeff.wilcox.name/2013/04/4thandmayor-azure-websites/)。 Jeff Wilcox 的 Blog 文章 chronicling 他的經驗，將 web 應用程式從 Amazon Web Services 移至 Azure App Service 的 Web Apps。
+    - [將應用程式移至 Azure：有哪些變更？](https://azure.microsoft.com/documentation/videos/web-sites-internals-and-the-file-system/) Stefan Schackow 的短片說明 Azure App Service 的 Web Apps 中的檔案系統存取。
+    - [Azure 混合式雲端](https://www.amazon.com/dp/B00EOP4UQW)。 Danny Garber、Jamal Malik 和 Adam Fazio 的硬拷貝書籍或電子書。
+- 雲端應用程式獨有的安全性、驗證和授權問題
 
     - [Azure 安全性指引](https://azure.microsoft.com/blog/2014/02/10/best-practices-windows-azure-websites-waws/)
-    - [Microsoft Patterns and Practices-Azure 指引](https://msdn.microsoft.com/library/dn568099.aspx)。 同盟身分識別 」 模式，請參閱閘道管理員模式。
-    - [Azure 網路安全性](https://download.microsoft.com/download/4/3/9/43902EC9-410E-4875-8800-0788BE146A3D/Windows%20Azure%20Network%20Security%20Whitepaper%20-%20FINAL.docx)。 由 Ashin 鞏固詘躩裛。
+    - [Microsoft 模式和實務-Azure 指引](https://msdn.microsoft.com/library/dn568099.aspx)。 請參閱閘道管理員模式，同盟身分識別模式。
+    - [Azure 網路安全性](https://download.microsoft.com/download/4/3/9/43902EC9-410E-4875-8800-0788BE146A3D/Windows%20Azure%20Network%20Security%20Whitepaper%20-%20FINAL.docx)。 白皮書： Ashin Palekar。
 
-請參閱其他的雲端運算模式與指引[Microsoft Patterns and Practices-Azure 指引](https://msdn.microsoft.com/library/dn568099.aspx)。
+另請參閱[Microsoft 模式和實務的](https://msdn.microsoft.com/library/dn568099.aspx)其他雲端運算模式和指引-Azure 指引。
 
 <a id="resources"></a>
 ## <a name="resources"></a>資源
 
-每本電子書的章節會提供該特定主題的詳細資訊的資源的連結。 下列清單會提供連結的最佳作法和建議的模式的概觀，成功的雲端使用 Azure 的開發。
+本電子書中的每一章節都會提供資源的連結，以取得該特定主題的詳細資訊。 下列清單提供最佳作法的連結，以及使用 Azure 成功進行雲端開發的建議模式。
 
-文件
+Documentation
 
-- [Azure 雲端服務上大規模服務設計的最佳作法](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 Mark Simms 和 Michael Thomassy 詘躩裛。
-- [Failsafe:具有恢復功能雲端架構指引](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)。 Marc Mercuri、 Ulrich Homann 和 Andrew Townhill 詘躩裛。 FailSafe 影片系列的網頁版本。
-- [Azure 指引](https://azure.microsoft.com/develop/net/guidance/)官方文件的入口網站頁面與相關開發適用於 Azure 的應用程式。
+- [Azure 上大規模服務設計的最佳作法雲端服務](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 以標記 Simm 和 Michael Thomassy 的技術白皮書。
+- [損毀修復：具有恢復功能的雲端架構指引](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)。 白皮書： Marc Mercuri、Ulrich Homann 和 Andrew Townhill。 網頁版的防安全影片系列。
+- [Azure 指引](https://azure.microsoft.com/develop/net/guidance/)適用于開發 Azure 應用程式相關官方檔的入口網站頁面。
 
-視訊
+Videos
 
-- [建置真實世界雲端應用程式使用 Azure-第 1 部分](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324)並[第 2 部分](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325)。 本電子書為基礎的 Scott guthrie 簡報的影片。 在 2013 年 9 月，顯示在 Tech Ed 澳洲。 較早版本的同一個簡報已在 2013 年 6 月，傳遞在挪威開發人員 Conference (NDC):[NDC 第 1 部分](http://vimeo.com/68215538)， [NDC 第 2 部分](http://vimeo.com/68215602)。
-- [FailSafe:建置可擴充、 彈性的雲端服務](https://channel9.msdn.com/Series/FailSafe)。 Ulrich Homann、 Marc Mercuri 和 Mark Simms、 包含九部部分影片系列。 顯示如何建構雲端應用程式的 400 層級檢視。 這個系列專注於理論上和建議的模式; 背後的原因如需作法的詳細資訊，請參閱 Mark Simms 所建置巨量的系列。
-- [巨量的建置：學到的 Azure 客戶-第 1 部分](https://channel9.msdn.com/Events/Build/2012/3-029)並[第 2 部分](https://channel9.msdn.com/Events/Build/2012/3-030)。 Simon Davies 和 Mark Simms、 保全系列，但方向朝向實際實作的更多類似的兩段影片系列。
+- [使用 Azure 建立真實世界的雲端應用程式-第1部分](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324)和[第2部分](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325)。 Scott Guthrie 的簡報影片，這是本電子書的依據。 提供于2013年9月的 Tech Ed 澳大利亞。 舊版的相同簡報是在2013年6月的挪威開發人員會議（NDC）提供： [NDC 第1部分](http://vimeo.com/68215538)， [NDC 第2部分](http://vimeo.com/68215602)。
+- [防安全功能：建立可擴充、可復原的雲端服務](https://channel9.msdn.com/Series/FailSafe)。 Ulrich Homann、Marc Mercuri 和 Mark Simm 的九個部分影片系列。 提供如何架構雲端應用程式的400層級觀點。 此系列著重于建議模式背後的理論和原因;如需詳細的作法詳細資料，請參閱以標記 Simm 建立大數列。
+- [打造 Big：從 Azure 客戶學習到的經驗-第1部分](https://channel9.msdn.com/Events/Build/2012/3-029)和[第2部分](https://channel9.msdn.com/Events/Build/2012/3-030)。 Simon Davies 並標記 Simm 的兩部分影片系列，類似于防安全系列，但導向至實際執行。
 
 程式碼範例
 
-- [修正其應用程式隨附本電子書](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4?cdn_id=2013-12-03-002)。
-- [雲端服務基本概念，在 Azure 中以 C# for Visual Studio 2012](https://aka.ms/csf)。 可下載的專案，在 Microsoft 的程式碼組件庫網站中，包含程式碼和開發的 Microsoft 客戶諮詢團隊 (CAT) 的文件。 示範許多極力保全和建置巨量的影片系列和保全技術白皮書中的最佳作法。 程式碼庫頁面也會連結至詳盡的文件作者的專案--請參閱特別[雲端服務基本概念 wiki 集合](https://social.technet.microsoft.com/wiki/contents/articles/17987.cloud-service-fundamentals.aspx)專案描述頂端附近的 [藍色] 方塊中的連結。 這個專案和其相關文件仍正在開發，因此可選擇較為理想的許多主題的資訊類似，但較舊的技術白皮書。
+- [本電子書所附的修正 It 應用程式](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4?cdn_id=2013-12-03-002)。
+- [Azure C#中的雲端服務基礎，適用于 Visual Studio 2012](https://aka.ms/csf)。 Microsoft 程式碼庫網站中可下載的專案，包括 Microsoft 客戶諮詢團隊（CAT）所開發的程式碼和檔。 示範許多在安全的極力提倡中的最佳作法，以及建立絕佳的影片系列和安全的技術白皮書。 [程式碼庫] 頁面也會連結到專案作者所提供的廣泛檔，特別是在專案描述頂端附近的藍色方塊中，尤其是 [[雲端服務基礎 wiki 集合](https://social.technet.microsoft.com/wiki/contents/articles/17987.cloud-service-fundamentals.aspx)] 連結。 此專案和其檔集仍在開發中，使其更適合用於許多主題的資訊，而非類似但較舊的白皮書。
 
-硬碟複製活頁簿
+硬複製書籍
 
-- [雲端運算的聖經](https://www.amazon.com/dp/0470903562)。 由 Barrie Sosinsky。
-- [釋放它 ！設計及部署生產就緒軟體](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213)。 由 Michael T Nygard。
-- [雲端架構模式：使用 Microsoft Azure](http://shop.oreilly.com/product/0636920023777.do)。 由 Bill Wilder。
-- [Windows Azure 平台](https://www.amazon.com/dp/1430235632)。 由 Tejaswi Redkar。
-- [新興的程式設計模式的 Windows Azure](https://www.amazon.com/dp/1849685606)。 由 Riccardo Becker。
-- [Microsoft Windows Azure 開發 Cookbook](https://www.amazon.com/dp/1849682224)。 由 Neil Mackenzie。
+- [雲端運算 bible 》](https://www.amazon.com/dp/0470903562)。 依 Barrie Sosinsky。
+- [發行！設計和部署已準備好用於生產環境的軟體](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213)。 由 Michael T. Nygard。
+- [雲端架構模式：使用 Microsoft Azure](http://shop.oreilly.com/product/0636920023777.do)。 依帳單 Wilder。
+- [Windows Azure 平臺](https://www.amazon.com/dp/1430235632)。 依 Tejaswi Redkar。
+- [適用于啟動的 Windows Azure 程式設計模式](https://www.amazon.com/dp/1849685606)。 依 Riccardo Becker。
+- [Microsoft Windows Azure 開發手冊](https://www.amazon.com/dp/1849682224)。 依 Neil Mackenzie。
 
-最後，當您開始建置真實世界應用程式，並在 Azure 中執行它們，遲早您可能需要向專家的協助。 您可以詢問社群網站中的問題，例如[Azure 論壇或 StackOverflow](https://azure.microsoft.com/support/forums/)，或者您可以針對 Azure 支援的直接連絡 Microsoft。 Microsoft 提供數個層級的技術支援 Azure： 如需摘要和比較選項，請參閱[Azure 支援](https://azure.microsoft.com/support/plans/)。
+最後，當您開始建立真實世界的應用程式並在 Azure 中執行時，您可能會需要專家的協助。 您可以在[Azure 論壇或 StackOverflow](https://azure.microsoft.com/support/forums/)之類的社區網站中提出問題，也可以直接與 Microsoft 聯繫以進行 Azure 支援。 Microsoft 提供數個層級的技術支援：如需這些選項的摘要和比較，請參閱[Azure 支援](https://azure.microsoft.com/support/plans/)。
 
 <a id="acknowledgments"></a>
-## <a name="acknowledgments"></a>感謝
+## <a name="acknowledgments"></a>致謝
 
-此內容是由 Tom Dykstra、 Rick Anderson 和 Mike Wasson 寫入。 大部分的原始內容來自[Scott Guthrie](https://weblogs.asp.net/scottgu/)，再他依次繪製資料在 Mark Simms 和 Microsoft 客戶諮詢團隊 (CAT)。
+此內容是由 Tom 作者: dykstra、Rick Anderson 和 Mike Wasson 所撰寫。 大部分的原始內容來自[Scott Guthrie](https://weblogs.asp.net/scottgu/)，而他又從 Mark 和 Microsoft 客戶諮詢團隊（CAT）中的材料中進行繪製。
 
-在 Microsoft 的許多其他同事檢閱，並加上草稿和程式碼註解：
+Microsoft 的許多其他同事已在草稿和程式碼上檢查並加上批註：
 
-- Tim Ammann-檢閱自動化的一章。
-- Christopher Bennage-檢閱並測試其修正程式碼。
-- Ryan Berry-檢閱 CD/CI 一章。
-- Vittorio Bertocci-檢閱 SSO 一章。
-- Chris Clayton-可協助解決技術問題的 PowerShell 指令碼中。
-- Conor Cunningham-檢閱資料的儲存體選項一章。
-- Carlos Farre-檢閱並測試其修正程式碼的安全性問題。
-- Larry Franks-檢閱遙測和監視的章節。
-- Jonathan Gao-檢閱 Hadoop 與 MapReduce 區段之資料的儲存體選項章節。
-- Sidney Higa-檢閱所有章節。
-- Gordon Hogenson-檢閱來源控制一章。
-- Tamra Myers-檢閱過的資料儲存體選項、 blob 和佇列的章節。
-- 請參閱 Pranav Rastogi-檢閱 SSO 一章。
-- June Blender Rogers-新增錯誤處理和 PowerShell 自動化指令碼的說明。
-- Mani Subramanian-檢閱所有章節，並導致程式碼檢閱，並且將它修正程式碼的測試程序。
-- Shaun Tinline-jones-檢閱資料分割一章。
-- Selcin Tukarslan-檢閱涵蓋 SQL Database 和 SQL Server 的章節。
-- 作者： Edward Wu-供 SSO 一章中的範例程式碼。
-- Guang Yang-撰寫 PowerShell 自動化指令碼。
+- Tim Ammann-已複習自動化章節。
+- Christopher Bennage-審查並測試修正程式碼。
+- Ryan Berry-審查 CD/CI 章節。
+- Vittorio Bertocci-已審查 SSO 章節。
+- Chris Clayton-協助解決 PowerShell 腳本中的技術問題。
+- Conor Cunningham-審查資料儲存選項一章。
+- Carlos Farre-審查並測試修正程式碼的安全性問題。
+- Larry Franks-審查遙測和監視一章。
+- Jonathan Gao-已審查資料儲存選項章節的 Hadoop 和 MapReduce 區段。
+- Sidney Higa-審查所有章節。
+- Gordon Hogenson-已審查原始檔控制章節。
+- Tamra Myers-已審核的資料儲存體選項、blob 和佇列章節。
+- Pranav 請參閱 rastogi-已審查 SSO 章節。
+- 6月 Blender Rogers-新增了 PowerShell 自動化腳本的錯誤處理和協助。
+- Mani-ramaswamy Subramanian-審查所有章節，並帶領修正 It 程式碼的程式碼審查和測試流程。
+- Shaun Tinline-jones-第一章-已複習資料分割章節。
+- Selcin Tukarslan 審閱的章節，其中涵蓋 SQL Database 和 SQL Server。
+- Edward 適用于 SSO 章節的 Wu 提供範例程式碼。
+- Guang 停止的高階-撰寫了 PowerShell 自動化腳本。
 
-成員[Microsoft 開發人員指引 Advisory Council](https://aka.ms/DGAC) (DGAC) 也會檢閱，並加上 [草稿] 註解：
+[Microsoft 開發人員指導方針諮詢委員會](https://aka.ms/DGAC)（DGAC）的成員也已在草稿上複習並加上批註：
 
-- : Jean-luc Boucho
+- Jean-L u c Boucho
 - Catalin Gheorghiu
 - Wouter de Kort
 - Carlos dos Santos
 - Neil Mackenzie
-- Dennis 會談
+- Dennis Persson
 - Sunil Sabat
 - [Aleksey Sinyagin](http://www.linkedin.com/in/sinyagin)
 - Bill Wagner
-- Michael Wood
+- Michael 木材
 
-DGAC 的其他成員會檢閱，並加上註解初步的外框輪廓：
+DGAC 的其他成員已在初步大綱中審閱並加上批註：
 
 - Damir Arh
-- 作者： Edward Bakker
+- Edward Bakker
 - Srdjan Bozovic
 - Ming Man Chan
 - Gianni Rosa Gallina
@@ -124,7 +124,7 @@ DGAC 的其他成員會檢閱，並加上註解初步的外框輪廓：
 - Jason Oliveira
 - Alberto Poblacion
 - Ryan Riley
-- Perez Jones Tsisah
+- Perez 的 Tsisah
 - Roger Whitehead
 - Pawel Wilkosz
 

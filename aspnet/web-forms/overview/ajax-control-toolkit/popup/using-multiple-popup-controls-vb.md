@@ -1,55 +1,55 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls-vb
-title: 使用多個快顯視窗控制項 (VB) |Microsoft Docs
+title: 使用多個快顯視窗控制項（VB） |Microsoft Docs
 author: wenz
-description: PopupControl 擴充項在 AJAX Control Toolkit 提供簡單的方式，來啟動任何其他控制項時，觸發快顯視窗。 此外，也可以使用 m...
+description: AJAX 控制項工具組中的 PopupControl 擴充項提供了一種簡單的方式，可在啟用任何其他控制項時觸發快顯。 您也可以使用 m 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 4da43d77-f6c4-43a8-9124-f1e8e1c8f0a2
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6f8097ed64f81d8ad9de27e19195d9a4572a0ae7
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: e1f4ff64e9fdf48ea63b75c97acd53a64b5ab5ce
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115084"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74611606"
 ---
 # <a name="using-multiple-popup-controls-vb"></a>使用多個快顯視窗控制項 (VB)
 
-藉由[Christian Wenz](https://github.com/wenz)
+依[Christian Wenz](https://github.com/wenz)
 
-[下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl1.vb.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol1VB.pdf)
+[下載程式代碼](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl1.vb.zip)或[下載 PDF](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol1VB.pdf)
 
-> PopupControl 擴充項在 AJAX Control Toolkit 提供簡單的方式，來啟動任何其他控制項時，觸發快顯視窗。 它也可使用一個以上的快顯視窗控制項，在單一頁面上。
+> AJAX 控制項工具組中的 PopupControl 擴充項提供了一種簡單的方式，可在啟用任何其他控制項時觸發快顯。 您也可以在單一頁面上使用多個快顯視窗控制項。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-PopupControl 擴充項在 AJAX Control Toolkit 提供簡單的方式，來啟動任何其他控制項時，觸發快顯視窗。 它也可使用一個以上的快顯視窗控制項，在單一頁面上。
+AJAX 控制項工具組中的 PopupControl 擴充項提供了一種簡單的方式，可在啟用任何其他控制項時觸發快顯。 您也可以在單一頁面上使用多個快顯視窗控制項。
 
 ## <a name="steps"></a>步驟
 
-若要啟動的 ASP.NET AJAX Control Toolkit 中，功能`ScriptManager`控制項必須放置在任何位置上 (但在`<form>`項目):
+若要啟用 ASP.NET AJAX 和控制項工具組的功能，`ScriptManager` 控制項必須放在頁面上的任何位置（但在 `<form>` 元素內）：
 
 [!code-aspx[Main](using-multiple-popup-controls-vb/samples/sample1.aspx)]
 
-接下來，新增一個面板，以做為快顯視窗。 在目前的案例中，包含面板`Calendar`控制項。 為了避免因行事曆的回傳的重新整理頁面，面板會放在`UpdatePanel`控制項：
+接下來，新增一個做為快顯視窗的面板。 在目前的案例中，面板包含 `Calendar` 控制項。 為了避免行事曆的回傳所造成的頁面重新整理，面板會放在 `UpdatePanel` 控制項內：
 
 [!code-aspx[Main](using-multiple-popup-controls-vb/samples/sample2.aspx)]
 
-此頁面也包含兩個文字方塊。 針對每個文字方塊中，一旦文字方塊就會啟動，應該會出現快顯行事曆。
+此頁面也包含兩個文字方塊。 針對每個文字方塊，一旦啟動文字方塊之後，行事曆快顯視窗就會出現。
 
 [!code-aspx[Main](using-multiple-popup-controls-vb/samples/sample3.aspx)]
 
-現在來擴充每個使用中的兩個文字方塊`PopupControlExtender`。 `TargetControlID`屬性提供繫結至擴充項控制項的 ID。 `PopupControlID`屬性包含的快顯面板識別碼。 在此情況下，這兩個擴充項會顯示相同的窗格中，但也是可行的不同的面板。
+現在以 `PopupControlExtender`擴充兩個文字方塊。 `TargetControlID` 屬性提供系結至擴充項之控制項的識別碼。 `PopupControlID` 屬性包含快顯面板的識別碼。 在此情況下，這兩個擴充項都會顯示相同的面板，但也可能會有不同的面板。
 
 [!code-aspx[Main](using-multiple-popup-controls-vb/samples/sample4.aspx)]
 
-現在每當您按一下文字欄位中，行事曆會顯示以下欄位，可讓您選取的日期。 （回到選取的日期文字方塊將會說明在不同的教學課程。）
+現在，只要您在文字欄位內按一下，行事曆就會出現在欄位下方，讓您可以選取日期。 （在不同的教學課程中將會涵蓋將選取的日期放回文字方塊中）。
 
-[![當使用者按一下文字方塊，即出現日曆](using-multiple-popup-controls-vb/_static/image2.png)](using-multiple-popup-controls-vb/_static/image1.png)
+[當使用者按一下文字方塊時，就會顯示行事曆 ![](using-multiple-popup-controls-vb/_static/image2.png)](using-multiple-popup-controls-vb/_static/image1.png)
 
-當使用者按一下文字方塊，即出現日曆 ([按一下以檢視完整大小的影像](using-multiple-popup-controls-vb/_static/image3.png))
+當使用者按一下文字方塊時，就會出現行事曆（[按一下以查看完整大小的影像](using-multiple-popup-controls-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
 > [上一頁](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs.md)

@@ -1,59 +1,59 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-vb
-title: 依據條件 (VB) 的動畫 |Microsoft Docs
+title: 視條件而定的動畫（VB） |Microsoft Docs
 author: wenz
-description: 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 動畫是否是...
+description: ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。 動畫是否為 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 1b87d8d6-b3f7-4126-b51c-d41442fbf947
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cfac2d5ac7ea652648db3c11a8357d95c8f78ffe
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 583ebdbf109beb74b9a425020477183067bbb79a
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132254"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74606989"
 ---
 # <a name="animation-depending-on-a-condition-vb"></a>依據條件的動畫 (VB)
 
-藉由[Christian Wenz](https://github.com/wenz)
+依[Christian Wenz](https://github.com/wenz)
 
-[下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation4.vb.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation4VB.pdf)
+[下載程式代碼](https://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation4.vb.zip)或[下載 PDF](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation4VB.pdf)
 
-> 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 動畫執行時是否也取決於一些 JavaScript 程式碼的表單中的條件。
+> ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。 是否執行動畫也可能相依于某種 JavaScript 程式碼形式的條件。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 動畫執行時是否也取決於一些 JavaScript 程式碼的表單中的條件。
+ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。 是否執行動畫也可能相依于某種 JavaScript 程式碼形式的條件。
 
 ## <a name="steps"></a>步驟
 
-首先，包括`ScriptManager`單元頁面; 然後，ASP.NET AJAX 程式庫載入，因此能夠使用控制項工具組：
+首先，在頁面中包含 `ScriptManager`;然後，會載入 ASP.NET AJAX 程式庫，讓您能夠使用控制項工具組：
 
 [!code-aspx[Main](animation-depending-on-a-condition-vb/samples/sample1.aspx)]
 
-動畫將會套用至面板的文字看起來像這樣：
+動畫將會套用至文字的面板，如下所示：
 
 [!code-aspx[Main](animation-depending-on-a-condition-vb/samples/sample2.aspx)]
 
-在 [面板] 中相關聯的 CSS 類別，定義好用的背景色彩和也設定面板的固定的寬度：
+在面板的相關聯 CSS 類別中，定義良好的背景色彩，同時設定面板的固定寬度：
 
 [!code-css[Main](animation-depending-on-a-condition-vb/samples/sample3.css)]
 
-然後，新增`AnimationExtender` 頁面上，以提供`ID`，則`TargetControlID`屬性和必要 `runat="server":`
+然後，將 `AnimationExtender` 新增至頁面，並提供 `ID`、`TargetControlID` 屬性和必要 `runat="server":`
 
 [!code-aspx[Main](animation-depending-on-a-condition-vb/samples/sample4.aspx)]
 
-內`<Animations>`節點，請使用`<OnLoad>`頁面完全載入後，執行動畫。 而不是一個一般的動畫，`<Condition>`元素派上用場。 提供的值為 JavaScript 程式碼`ConditionScript`屬性會在執行階段執行。 如果評估為 true，動畫會執行，否則不。 下列標記會提供兩個動畫，每個正在執行 50%的隨機時的案例。 因為只能有一張動畫內`<OnLoad>`，這兩個`<Condition>`動畫會聯結在一起使用`<Sequence>`項目：
+在 [`<Animations>`] 節點內，一旦頁面完全載入，請使用 `<OnLoad>` 來執行動畫。 `<Condition>` 元素不是其中一個一般動畫，而是會開始播放。 提供做為 `ConditionScript` 屬性值的 JavaScript 程式碼會在執行時間執行。 如果評估為 true，則會執行動畫，否則不會。 下列標記提供兩個動畫，每一個都是隨機執行的50% 案例。 由於 `<OnLoad>`中可能只有一個動畫，因此會使用 `<Sequence>` 元素，將兩個 `<Condition>` 動畫聯結在一起：
 
 [!code-aspx[Main](animation-depending-on-a-condition-vb/samples/sample5.aspx)]
 
-請注意，為小於符號 (`<`) 中`ConditionScript`屬性必須逸出 （）。 當您執行此指令碼，可能是沒有動畫執行時，或兩者的其中一個存在，或兩個的作用。
+請注意，`ConditionScript` 屬性中的小於符號（`<`）必須經過轉義（）。 當您執行此腳本時，不會執行任何動畫，或其中一個動作會執行，或兩者都有。
 
-[![面板淡出但不調整大小，因此未在第二個動畫執行後的第一個](animation-depending-on-a-condition-vb/_static/image2.png)](animation-depending-on-a-condition-vb/_static/image1.png)
+[![面板會淡出而不調整大小，因此第二個動畫會執行，第一個則不會](animation-depending-on-a-condition-vb/_static/image2.png)](animation-depending-on-a-condition-vb/_static/image1.png)
 
-面板淡出但不調整大小，因此未在第二個動畫執行後的第一個 ([按一下以檢視完整大小的影像](animation-depending-on-a-condition-vb/_static/image3.png))
+面板會淡出而不調整大小，因此第二個動畫會執行，第一個則不會（[按一下以查看完整大小的影像](animation-depending-on-a-condition-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
 > [上一頁](executing-several-animations-after-each-other-vb.md)

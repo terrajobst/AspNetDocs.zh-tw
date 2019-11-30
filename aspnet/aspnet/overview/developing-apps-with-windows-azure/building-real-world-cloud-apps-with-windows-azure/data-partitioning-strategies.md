@@ -1,113 +1,113 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
-title: 資料分割策略 （使用 Azure 建置真實世界的雲端應用程式） |Microsoft Docs
+title: 資料分割策略（使用 Azure 建立真實世界的雲端應用程式） |Microsoft Docs
 author: MikeWasson
-description: 建置真實世界雲端應用程式與 Azure 的電子書是以 Scott Guthrie 所開發的簡報為依據。 它說明 13 模式與做法，他可以...
+description: 使用 Azure 電子書建立真實世界的雲端應用程式，是以 Scott Guthrie 所開發的簡報為基礎。 它會說明13個模式和實務，
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: 513837a7-cfea-4568-a4e9-1f5901245d24
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 msc.type: authoredcontent
-ms.openlocfilehash: 3aecd64bc59ffa961aa97dd30b037f9aeb2acdd8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 2f79b1f459aff3e81dab7ea7eb4ebf3f71084463
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118901"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74585809"
 ---
-# <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>資料分割策略 （使用 Azure 建置真實世界的雲端應用程式）
+# <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>資料分割策略（使用 Azure 建立真實世界的雲端應用程式）
 
-藉由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
 
-[下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> **建置真實世界雲端應用程式與 Azure**電子書以 Scott Guthrie 所開發的簡報為依據。 它說明 13 的模式，並可協助您的作法是成功開發適用於雲端的 web 應用程式。 這個系列的相關資訊，請參閱[第 1 章](introduction.md)。
+> **使用 Azure 電子書建立真實世界的雲端應用程式**，是以 Scott Guthrie 所開發的簡報為基礎。 其中說明13種模式和作法，可協助您成功開發雲端 web 應用程式。 如需有關數列的詳細資訊，請參閱[第一章](introduction.md)。
 
-稍早我們看到調整的 web 層的雲端應用程式中，新增和移除網頁伺服器是多麼容易。 但如果它們全部遇到相同的資料存放區，您的應用程式瓶頸將移到前端到後端，然後資料層是最難調整。 在這一章中我們會探討如何讓您的資料層可調整的資料分割成多個關聯式資料庫，或藉由結合關聯式資料庫儲存體與其他資料儲存體選項。
+我們稍早看到，藉由新增和移除網頁伺服器，調整雲端應用程式的 web 層有多容易。 但是，如果它們全都到達相同的資料存放區，您應用程式的瓶頸就會從前端移至後端，而資料層則是最難調整的。 在本章中，我們將探討如何藉由將資料分割成多個關係資料庫，或是結合關係資料庫儲存體與其他資料儲存選項，讓您的資料層可擴充。
 
-設定資料分割配置是最佳完成先前所述的相同原因做好： 它是很難在生產環境中應用程式之後，變更您的資料儲存策略。 如果您思考硬碟最前面位置不同的方法，您可以避免在 「 Twitter 一下 「 當您的應用程式當機或停止長時間時您重新組織您的應用程式資料和資料存取程式碼。
+設定資料分割配置最適合先前所述的相同原因：在應用程式進入生產階段之後，很難以變更您的資料儲存策略。 如果您想要瞭解不同的方法，可以在您重新組織應用程式的資料和資料存取程式碼時，避免在您的應用程式損毀或長時間關閉時出現「Twitter 時刻」。
 
-## <a name="the-three-vs-of-data-storage"></a>在三個 Vs 的資料存放區
+## <a name="the-three-vs-of-data-storage"></a>資料儲存體的三種與
 
-若要判斷您是否需要資料分割策略，而且應該是什麼，請考慮您的資料相關的三個問題：
+若要判斷您是否需要資料分割策略及其應有的內容，請考慮您的資料有三個問題：
 
-- 最終存放區的磁碟區-您將會多少資料？ 幾個 gb 嗎？ 幾個數百 gb 嗎？ Tb 規模嗎？ Pb 規模嗎？
-- 速度 – 在您的資料將會成長的速度為何？ 是內部應用程式，不會產生大量資料嗎？ 將上傳的客戶，影像和影片到外部應用程式嗎？
-- 各種不同 – 什麼類型的資料會儲存嗎？ 關聯式、 影像、 索引鍵 / 值組、 社交圖形？
+- 磁片區–您最終會儲存多少資料？ 有幾 gb？ 數百 gb？ Tb? Pt?
+- 速度–資料成長的速度為何？ 這是不會產生大量資料的內部應用程式嗎？ 客戶將在其中上傳影像和影片的外部應用程式？
+- 各種–您會儲存哪些類型的資料？ 關聯式、影像、索引鍵/值組、社交圖形？
 
-如果您認為你有很多的磁碟區、 速度或各種不同，您必須仔細考慮何種資料分割配置最適合可讓您的應用程式調整有效率且有效地成長，以及以確保您沒有遇到任何瓶頸。
+如果您認為您的磁片區、速度或種類很大，您必須仔細考慮哪種資料分割配置可讓您的應用程式在成長時有效率且有效率地進行調整，並確保不會遇到任何瓶頸。
 
-基本上有三種資料分割的方法：
+基本上，分割的方法有三種：
 
 - 垂直資料分割
 - 水平資料分割
-- 混合資料分割
+- 混合式資料分割
 
 ## <a name="vertical-partitioning"></a>垂直資料分割
 
-垂直 portioning 就像是將資料表分割資料行： 資料行的一個集合分至一個資料存放區，以及資料行的其他集合分至不同的資料存放區。
+垂直 portioning 與依資料行分割資料表：一組資料行會放入一個資料存放區，而另一組資料行則會進入不同的資料存放區。
 
-例如，假設我的應用程式會將儲存的人員，包括映像的相關資料：
+例如，假設我的應用程式儲存人員的相關資料，包括影像：
 
 ![資料表](data-partitioning-strategies/_static/image1.png)
 
-當您代表此資料，為資料表，並看看不同的資料時，您可以看到在左側的三個資料行有可以有效率地儲存關聯式資料庫中，而右邊的兩個資料行則基本上是位元組陣列的字串資料的 come 從映像檔案。 您可在關聯式資料庫中，儲存體映像檔案的資料，很多人這麼做，因為他們不想將資料儲存至檔案系統。 不具備能夠儲存的資料所需的磁碟區的檔案系統，或它們可能不想要管理個別的備份和還原系統。 這種方法適用於內部部署資料庫和少量的雲端資料庫中的資料。 在內部部署環境中，它可能只是讓 DBA 處理好一切變得更容易。
+當您以資料表的形式表示此資料並查看不同的資料時，您可以看到左邊的三個數據行具有可有效率地儲存在關係資料庫中的字串資料，而右邊的兩個數據行則是 c 的位元組陣列。從影像檔案 ome。 在關係資料庫中可能會儲存影像檔案資料，而且有很多人會這麼做，因為他們不想要將資料儲存到檔案系統。 它們可能沒有能夠儲存所需資料量的檔案系統，或不想要管理個別的備份和還原系統。 這種方法適用于內部部署資料庫和雲端資料庫中的少量資料。 在內部部署環境中，只是讓 DBA 處理所有專案，可能比較容易。
 
-在雲端資料庫中，儲存體是相當耗成本，但有大量的映像可以進行成長超過限制的它可以有效率地操作資料庫的大小。 您可以解決這些問題，由分割資料以垂直方式，這表示您選擇最適當的資料存放區中，每個資料行資料的資料表中。 什麼可能最適合用於此範例會將字串資料放在關聯式資料庫和 Blob 儲存體中的映像。
+但是在雲端資料庫中，儲存體的成本相當高，而大量的映射可能會使資料庫的大小增加超過其可有效率地運作的限制。 若要解決這些問題，您可以垂直分割資料，這表示您會針對資料表中的每個資料行，選擇最適當的資料存放區。 在此範例中，最適合使用的是將字串資料放在關係資料庫和 Blob 儲存體中的影像。
 
-![垂直分割的資料表](data-partitioning-strategies/_static/image2.png)
+![以垂直方式分割的資料表](data-partitioning-strategies/_static/image2.png)
 
-將映像儲存在 Blob 儲存體，而非資料庫是定域機組中比在內部部署環境中更為實用，因為您不必擔心如何設定檔案伺服器或管理備份與還原儲存在關聯式資料庫外部的資料： 所有會為您自動處理 Blob 儲存體服務。
+將影像儲存在 Blob 儲存體中，而不是在內部部署環境中，因為您不需要擔心設定檔案伺服器，或管理儲存在關係資料庫外部之資料的備份與還原，因此在雲端中的工作會更實用。Blob 儲存體服務會自動為您處理。
 
-這是資料分割方法，我們實作修正其應用程式中，而且我們將探討程式碼，在[Blob 儲存體章](unstructured-blob-storage.md)。 如果沒有這個資料分割配置，和假設平均的映像的大小 3 mb，它修正應用程式只會能夠儲存約 40,000 個工作之前達到資料庫大小上限為 150 gb 資料。 移除映像之後，資料庫可以儲存 10 倍的工作;您需要思考如何實作水平資料分割配置之前，您即可更長的時間。 而且因為應用程式擴展，補貼速度更慢成長因為大量的儲存體需求會到極低的 Blob 儲存體。
+這是我們在修正 It 應用程式中所實行的分割方式，我們將在[Blob 儲存體一章](unstructured-blob-storage.md)中查看該方法的程式碼。 如果沒有此資料分割配置，而且假設平均映射大小為 3 mb，則修正 It 應用程式只能儲存大約40000個工作，再達到 150 gb 的資料庫大小上限。 移除映射之後，資料庫可以將10倍的工作儲存為許多工作;您可以花更長的時間來思考如何執行水準資料分割配置。 隨著應用程式的調整，您的支出成長會變得更慢，因為您的儲存空間需求將會非常便宜。
 
-## <a name="horizontal-partitioning-sharding"></a>水平資料分割 （分區化）
+## <a name="horizontal-partitioning-sharding"></a>水準資料分割（分區化）
 
-水平 portioning 就像是依資料列分割資料表： 資料列的一個集合分至一個資料存放區，和的資料列的其他集合分至不同的資料存放區。
+水準 portioning 就像是依資料列分割資料表：一組資料列會進入一個資料存放區，而另一組資料列會進入不同的資料存放區。
 
-指定相同的資料集，另一個選項是將不同範圍的客戶名稱儲存在不同的資料庫。
+假設有一組相同的資料，另一個選項是在不同的資料庫中儲存不同的客戶名稱範圍。
 
-![水平分割的資料表](data-partitioning-strategies/_static/image3.png)
+![資料表格水準分割](data-partitioning-strategies/_static/image3.png)
 
-您想要特別小心處理您的分區化配置，請確定資料平均分佈以避免作用點。 此簡單範例中使用的最後一個名稱的第一個字母不符合這項需求，因為很多人有某些常見的字母為開頭的姓氏。 您會早於您可能預期，因為某些資料庫會非常大，而大部分會維持小型達資料表大小限制。
+您想要非常小心分區化配置，以確保資料會平均分散，以避免作用點。 使用姓氏的第一個字母的簡單範例不符合該需求，因為很多人都有一個以特定通用字母開頭的名字。 您所叫用的資料表大小限制早于預期，因為某些資料庫會變得非常大，但大部分的情況下都很小。
 
-項目的水平資料分割的缺點是，它可能難以在所有的資料進行查詢。 在此範例中，查詢必須以繪製於最多 26 個不同的資料庫，若要取得所有的應用程式所儲存的資料。
+水準資料分割的下層在於，在所有資料上執行查詢可能會很困難。 在此範例中，查詢必須從最多26個不同的資料庫中繪製，以取得應用程式所儲存的所有資料。
 
-## <a name="hybrid-partitioning"></a>混合資料分割
+## <a name="hybrid-partitioning"></a>混合式資料分割
 
-您可以結合垂直和水平資料分割。 比方說，在此範例資料中，您可以將影像儲存在 Blob 儲存體並水平資料分割的字串資料。
+您可以結合垂直和水準資料分割。 例如，在範例資料中，您可以將影像儲存在 Blob 儲存體中，並水準分割字串資料。
 
-![資料分割的資料表混合式](data-partitioning-strategies/_static/image4.png)
+![資料表混合式資料分割](data-partitioning-strategies/_static/image4.png)
 
-## <a name="partitioning-a-production-application"></a>資料分割的實際執行應用程式
+## <a name="partitioning-a-production-application"></a>分割生產應用程式
 
-在概念上很容易了解資料分割配置會運作，但任何資料分割配置會增加複雜性，並會引進許多新的複雜性，您需要處理。 如果您要移動到 blob 儲存體的映像，該怎麼辦的儲存體服務已關閉時？ 您要如何處理 blob 安全性？ 如果資料庫和 blob 儲存體取得同步發生什麼事？ 如果您是分區化時，您要如何處理跨所有資料庫都查詢？
+在概念上，很容易就能看出資料分割配置的運作方式，但任何資料分割配置都會增加程式碼的複雜度，而且引進了許多您必須處理的新複雜性。 如果您要將映射移至 blob 儲存體，當儲存體服務關閉時該怎麼做？ 如何處理 blob 安全性？ 如果資料庫和 blob 儲存體不同步，會發生什麼事？ 如果您要分區化，您要如何處理所有資料庫的查詢？
 
-複雜功能是可管理的只要您計劃，您移至生產環境之前。 不這麼做的很多人希望他們有更新版本。 我們的客戶諮詢團隊 (CAT) 小組從客戶的應用程式企業顯然開始採用非常大的方式，取得驚慌失措的電話撥號，約一次一個月的平均和它們並沒有進行此計劃。 然後他們說：「 協助 ！ 我將所有東西放在單一資料存放區，並在 45 天我要在其中執行空間不足 」 ！ 而且如果您有許多的內建於您如何存取您的資料存放區的商務邏輯，而且您必須使用您的應用程式的客戶，沒有任何移轉時需要停機一天的好時機。 我們得到其資料 herculean 致力於協助客戶分割區進行即時而不需要停機。 它非常令人期待且很嚇人，而且非您想要參與能避免 ！ 日復一日提前，並將它整合到您的應用程式可讓工作輕鬆許多如果應用程式增加到更新版本。
+如果您在進入生產環境之前進行規劃，就可以管理複雜的問題。 很多人都不願意這麼做。 我們的客戶諮詢團隊（CAT）團隊平均每個月會從應用程式以非常大的方式處理的客戶驚慌失措電話，而不會進行這項規劃。 而他們說的就是：「說明！ 我將所有專案都放在單一資料存放區中，而且在45天內，我的空間將會用盡！」 而且，如果您在存取資料存放區的過程中內建了許多商務邏輯，而且您有使用應用程式的客戶，則在您遷移時，不會有足夠的時間可讓您一天停機。 我們最終會經歷項的努力，協助客戶在不停機的時間即時分割其資料。 它非常令人興奮，而且非常可怕，如果可以避免，也不是您想要加入的東西！ 事先思考並將它整合到您的應用程式，可以讓應用程式在稍後成長時變得更容易。
 
 ## <a name="summary"></a>總結
 
-有效的資料分割配置可以讓您的雲端應用程式擴充到 pb 的資料在雲端取得，沒有瓶頸。 您不必支付事先大規模的機器或廣泛的基礎結構就像如果您已在內部部署資料中心內執行應用程式。 在雲端中您可以以累加方式新增容量，您需要它，以及只錢就像您使用當您使用它。
+有效的資料分割配置可讓您的雲端應用程式在雲端中擴充至數以 pb 計的資料，而不會產生瓶頸。 如果您在內部部署資料中心內執行應用程式，就不需要支付大規模機器或廣泛基礎結構的正面。 在雲端中，您可以視需要以累加方式新增容量，而您只需支付使用時所使用的數量。
 
-在 [[下一步] 一章](unstructured-blob-storage.md)我們會看到如何修正它應用程式實作垂直資料分割，將映像儲存在 Blob 儲存體。
+在[下一章](unstructured-blob-storage.md)中，我們將瞭解如何藉由將影像儲存在 Blob 儲存體中，來修正 It 應用程式如何執行垂直資料分割。
 
 ## <a name="resources"></a>資源
 
-如需有關資料分割策略的詳細資訊，請參閱下列資源。
+如需資料分割策略的詳細資訊，請參閱下列資源。
 
 文件：
 
-- [Windows Azure 雲端服務上大規模服務設計的最佳作法](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 Mark Simms 和 Michael Thomassy 詘躩裛。
-- [Microsoft Patterns and Practices-雲端設計模式](https://msdn.microsoft.com/library/dn568099.aspx)。 請參閱資料分割指引，分區化模式。
+- [Windows Azure 雲端服務上大規模服務設計的最佳作法](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 以標記 Simm 和 Michael Thomassy 的技術白皮書。
+- [Microsoft 模式和實務-雲端設計模式](https://msdn.microsoft.com/library/dn568099.aspx)。 請參閱資料分割指引，分區化模式。
 
 影片：
 
-- [FailSafe:建置可擴充、 彈性的雲端服務](https://channel9.msdn.com/Series/FailSafe)。 Ulrich Homann、 Marc Mercuri 和 Mark Simms、 包含九部組件系列。 提供高階的概念和架構原則非常可存取且有趣的方式，取自 Microsoft 客戶諮詢團隊 (CAT) 體驗，與實際客戶的劇本。 請參閱資料分割的討論內容，在集中 7。
-- [巨量的建置：從 Windows Azure 客戶-第 I 部分中學習課程](https://channel9.msdn.com/Events/Build/2012/3-029)。Mark Simms 討論資料分割配置，分區化策略如何實作分區化，以及 SQL Database 同盟，開始 19:49。 類似於保全數列但作法的詳細說明。
+- [防安全功能：建立可擴充、可復原的雲端服務](https://channel9.msdn.com/Series/FailSafe)。 Ulrich Homann、Marc Mercuri 和 Mark Simm 的九部分系列。 以非常容易存取且有趣的方式呈現高階概念和架構原則，並提供 Microsoft 客戶諮詢小組（CAT）體驗與實際客戶的故事。 請參閱第7集的資料分割討論。
+- [打造 Big：從 Windows Azure 客戶學習到的經驗-第一部分](https://channel9.msdn.com/Events/Build/2012/3-029)。Mark Simm 討論資料分割配置、分區化策略、如何執行分區化，以及 SQL Database 同盟，從19:49 開始。 類似于防故障的系列，並深入探討如何詳細說明。
 
 範例程式碼：
 
-- [雲端服務基本概念，在 Windows Azure 中的](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)。 包含分區化資料庫的範例應用程式。 如需實作分區化配置的說明，請參閱 < [DAL-分區化的 RDBMS](https://blogs.msdn.com/b/windowsazure/archive/2013/09/05/dal-sharding-of-rdbms.aspx) Windows Azure 部落格上。
+- [Windows Azure 中的雲端服務基本](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)概念。 包含分區化資料庫的範例應用程式。 如需所實分區化配置的說明，請參閱 Windows Azure blog 上的[DAL – RDBMS 分區化](https://blogs.msdn.com/b/windowsazure/archive/2013/09/05/dal-sharding-of-rdbms.aspx)。
 
 > [!div class="step-by-step"]
 > [上一頁](data-storage-options.md)

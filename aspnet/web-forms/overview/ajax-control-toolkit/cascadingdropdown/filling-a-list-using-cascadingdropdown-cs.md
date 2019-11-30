@@ -1,67 +1,67 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-cs
-title: 填滿清單使用 CascadingDropDown (C#) |Microsoft Docs
+title: 使用 CascadingDropDown （C#）填入清單 |Microsoft Docs
 author: wenz
-description: 在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯 anoth 中的值...
+description: AJAX 控制項工具組中的 CascadingDropDown 控制項會擴充 DropDownList 控制項，讓一個 DropDownList 中的變更載入 anoth 中的相關聯值 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: f949aafa-fe57-43b0-b722-f0dd33a900be
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 31319e0ad15825acead2b7e8b619985272fb8eaa
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: b5e9874fb5b6d3e55c8af5b85d12bf1ffacc116b
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131463"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74574825"
 ---
 # <a name="filling-a-list-using-cascadingdropdown-c"></a>使用 CascadingDropDown 填滿清單 (C#)
 
-藉由[Christian Wenz](https://github.com/wenz)
+依[Christian Wenz](https://github.com/wenz)
 
-[下載程式碼](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown0.cs.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown0CS.pdf)
+[下載程式代碼](https://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown0.cs.zip)或[下載 PDF](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown0CS.pdf)
 
-> 在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。 （比方說，一份清單會提供一份我們狀態，而且下一個清單則填入該狀態中主要城市）。若要解決的第一個挑戰是實際填入下拉式清單中使用這個控制項。
+> AJAX 控制項工具組中的 CascadingDropDown 控制項會擴充 DropDownList 控制項，讓一個 DropDownList 中的變更載入另一個 DropDownList 中的關聯值。 （例如，一個清單提供美國州的清單，而下一個清單則會填入該州的主要城市）。首先要解決的挑戰是使用這個控制項來實際填寫下拉式清單。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。 （比方說，一份清單會提供一份我們狀態，而且下一個清單則填入該狀態中主要城市）。若要解決的第一個挑戰是實際填入下拉式清單中使用這個控制項。
+AJAX 控制項工具組中的 CascadingDropDown 控制項會擴充 DropDownList 控制項，讓一個 DropDownList 中的變更載入另一個 DropDownList 中的關聯值。 （例如，一個清單提供美國州的清單，而下一個清單則會填入該州的主要城市）。首先要解決的挑戰是使用這個控制項來實際填寫下拉式清單。
 
 ## <a name="steps"></a>步驟
 
-若要啟動的 ASP.NET AJAX Control Toolkit 中，功能`ScriptManager`控制項必須放置在任何位置上 (但在`<form>`項目):
+若要啟用 ASP.NET AJAX 和控制項工具組的功能，`ScriptManager` 控制項必須放在頁面上的任何位置（但在 `<form>` 元素內）：
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample1.aspx)]
 
-DropDownList 控制項則需要：
+然後，需要 DropDownList 控制項：
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample2.aspx)]
 
-對於此清單中，就會加入 CascadingDropDown 擴充項。 非同步要求會傳送到一項 web 服務，接著會傳回一份要顯示在清單中的項目。 針對此目的，需要設定下列 CascadingDropDown 屬性：
+針對這份清單，會加入 CascadingDropDown 擴充項。 它會將非同步要求傳送至 web 服務，接著會傳回要顯示在清單中的專案清單。 若要讓此作業正常，必須設定下列 CascadingDropDown 屬性：
 
-- `ServicePath`：提供的清單項目之 web 服務的 URL
-- `ServiceMethod`：Web 方法提供的清單項目
-- `TargetControlID`：下拉式清單中的識別碼
-- `Category`：提交給 web 方法的呼叫時的類別目錄資訊
-- `PromptText`：以非同步方式從伺服器載入清單資料時顯示的文字
+- `ServicePath`：傳遞清單專案之 web 服務的 URL
+- `ServiceMethod`：傳遞清單專案的 Web 方法
+- `TargetControlID`：下拉式清單的識別碼
+- `Category`：呼叫時提交至 web 方法的類別資訊
+- `PromptText`：從伺服器以非同步方式載入清單資料時顯示的文字
 
-以下是標記`CascadingDropDown`項目。 C# 和 VB 之間唯一的差別是相關聯的 web 服務的名稱：
+以下是 `CascadingDropDown` 元素的標記。 C#和 VB 的唯一差異在於關聯的 web 服務的名稱：
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample3.aspx)]
 
-JavaScript 程式碼來自`CascadingDropDown`擴充項會呼叫 web 服務方法具有下列簽章：
+來自 `CascadingDropDown` 擴充項的 JavaScript 程式碼會呼叫具有下列簽章的 web 服務方法：
 
 [!code-csharp[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample4.cs)]
 
-因此重要的是，此方法需要傳回類型的陣列`CascadingDropDownNameValue`（由 ASP.NET AJAX Control Toolkit 中定義）。 在 `CascadingDropDownNameValue`建構函式，第一個清單項目的文字，然後其值必須提供，就如同`<option value="VALUE">NAME</option>`在 HTML 中一樣。 以下是一些範例資料：
+因此，重要的層面是方法必須傳回 `CascadingDropDownNameValue` 類型的陣列（由 ASP.NET AJAX 控制項工具組所定義）。 在 `CascadingDropDownNameValue` 的函式中，先列出清單專案的文字，然後再提供它的值，就像 `<option value="VALUE">NAME</option>` 會在 HTML 中這麼做一樣。 以下是一些範例資料：
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample5.aspx)]
 
-載入瀏覽器頁面，將會觸發要填入三個廠商的清單。
+在瀏覽器中載入頁面，會觸發清單填入三個廠商。
 
-[![清單會自動填入](filling-a-list-using-cascadingdropdown-cs/_static/image2.png)](filling-a-list-using-cascadingdropdown-cs/_static/image1.png)
+[系統會自動填入清單 ![](filling-a-list-using-cascadingdropdown-cs/_static/image2.png)](filling-a-list-using-cascadingdropdown-cs/_static/image1.png)
 
-自動填滿清單 ([按一下以檢視完整大小的影像](filling-a-list-using-cascadingdropdown-cs/_static/image3.png))
+系統會自動填入清單（[按一下以查看完整大小的影像](filling-a-list-using-cascadingdropdown-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
 > [下一步](using-cascadingdropdown-with-a-database-cs.md)

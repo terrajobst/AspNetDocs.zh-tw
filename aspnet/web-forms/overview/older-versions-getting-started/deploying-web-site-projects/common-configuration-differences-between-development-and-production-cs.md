@@ -1,130 +1,130 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
-title: 常見組態差異開發和生產環境 (C#) |Microsoft Docs
+title: 開發與生產環境間的常見設定C#差異（） |Microsoft Docs
 author: rick-anderson
-description: 在先前的教學課程中，我們會部署我們的網站所複製的所有相關的檔案從開發環境到生產環境。 不過，我...
+description: 在先前的教學課程中，我們會將所有相關檔案從開發環境複製到生產環境，藉以部署我們的網站。 不過，我 。
 ms.author: riande
 ms.date: 04/01/2009
 ms.assetid: 721a5c37-7e21-48e0-832e-535c6351dcae
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 265243a54eb5ab28a7f76d2df32a9442d61862a5
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 60379c87a8cf58b89066a6070ac659e65930b4fa
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130657"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74620424"
 ---
 # <a name="common-configuration-differences-between-development-and-production-c"></a>開發與生產環境間的常見設定差異 (C#)
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載 PDF](http://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial05_ConfigDifferences_cs.pdf)
+[下載 PDF](https://download.microsoft.com/download/E/8/9/E8920AE6-D441-41A7-8A77-9EF8FF970D8B/aspnet_tutorial05_ConfigDifferences_cs.pdf)
 
-> 在先前的教學課程中，我們會部署我們的網站所複製的所有相關的檔案從開發環境到生產環境。 不過，不可能有組態差異會使得每個環境都有唯一的 Web.config 檔案的環境發生的狀況。 本教學課程會檢查常見組態差異，並探討維護個別的組態資訊的策略。
+> 在先前的教學課程中，我們會將所有相關檔案從開發環境複製到生產環境，藉以部署我們的網站。 不過，環境之間的設定差異並不常見，因為每個環境都有唯一的 Web.config 檔案。 本教學課程會檢查一般設定差異，並查看維護個別設定資訊的策略。
 
 ## <a name="introduction"></a>簡介
 
-最後兩個教學課程會逐步部署簡單的 web 應用程式。 [*部署您的網站使用 FTP 用戶端*](deploying-your-site-using-an-ftp-client-cs.md)教學課程示範了如何使用獨立 FTP 用戶端從開發環境，一直到生產階段複製必要的檔案。 先前的教學課程中， [*部署您的網站使用的 Visual Studio*](deploying-your-site-using-visual-studio-cs.md)、 探討使用 Visual Studio 複製網站工具和發佈選項的部署。 在這兩個教學課程中的生產環境中的每個檔案是一份檔案，以在開發環境。 不過，就經常以不同於在開發環境與生產環境中的組態檔。 Web 應用程式的組態儲存在`Web.config`檔案，並通常包括外部資源，例如資料庫、 web 和電子郵件伺服器的相關資訊。 它也詳細說明，請在某些情況下，例如採取的未處理的例外狀況發生時要採取的動作中的應用程式的行為。
+最後兩個教學課程逐步解說如何部署簡單的 web 應用程式。 [*使用 FTP 用戶端部署您的網站*](deploying-your-site-using-an-ftp-client-cs.md)教學課程示範如何使用獨立的 FTP 用戶端，將所需的檔案從開發環境複製到生產環境。 先前的教學課程[*使用 Visual Studio 部署您的網站*](deploying-your-site-using-visual-studio-cs.md)，並使用 Visual Studio 的複製網站工具和發佈選項來進行部署。 在兩個教學課程中，生產環境中的每個檔案都是開發環境上的檔案複本。 不過，實際執行環境中的設定檔與開發環境中的不同，並不罕見。 Web 應用程式的設定會儲存在 `Web.config` 檔案中，而且通常包含外部資源的相關資訊，例如資料庫、web 和電子郵件伺服器。 在某些情況下，它也會說明應用程式的行為，例如在未處理的例外狀況發生時所採取的動作。
 
-部署 web 應用程式時很重要，正確的設定資訊最後在生產環境中。 在大部分情況下`Web.config`無法在開發環境中的檔案複製到與生產環境-是。 相反地，自訂的版本的`Web.config`需要上傳到生產環境。 本教學課程簡短回顧一些較常見的組態差異;本文件也摘要了維護不同的組態資訊在環境之間的一些技術。
+部署 web 應用程式時，正確的設定資訊必須在生產環境中結束。 在大多數情況下，開發環境中的 `Web.config` 檔案無法依原樣複製到生產環境。 而是必須將自訂版本的 `Web.config` 上傳到生產環境。 本教學課程簡要回顧一些較常見的設定差異;它也會摘要說明在環境之間維護不同設定資訊的一些技術。
 
-## <a name="typical-configuration-differences-between-the-development-and-production-environments"></a>開發和生產環境的常見組態差異
+## <a name="typical-configuration-differences-between-the-development-and-production-environments"></a>開發與生產環境之間的一般設定差異
 
-`Web.config`檔案包含各種 ASP.NET 應用程式的組態資訊。 部分組態資訊，無論是一樣的環境。 比方說，驗證設定和 URL 授權規則拼出`Web.config`檔案的`<authentication>`和`<authorization>`項目通常是相同的環境無關。 但其他組態資訊-例如有關外部資源，通常與不同的環境而定。
+`Web.config` 檔案包含 ASP.NET 應用程式的各種設定資訊。 無論環境為何，這項設定資訊都是相同的。 比方說，不論環境為何，在 `Web.config` 檔案的 `<authentication>` 和 `<authorization>` 元素中拼出的驗證設定和 URL 授權規則通常都相同。 但是其他設定資訊（例如外部資源的相關資訊）通常會因環境而有所不同。
 
-資料庫連接字串是不同的組態資訊的基本範例會根據環境。 當 web 應用程式資料庫與伺服器通訊，它必須先建立連線，並可透過[連接字串](http://www.connectionstrings.com/Articles/Show/what-is-a-connection-string)。 雖然您可以用硬式編碼直接在網頁或連接至資料庫的程式碼中的資料庫連接字串，所以最好先將它放`Web.config`的[`<connectionStrings>`項目](https://msdn.microsoft.com/library/bf7sd233.aspx)以便在連接字串資訊是在單一的集中式位置。 通常不同的資料庫是在開發期間使用非用於生產環境。因此，連接字串資訊必須是唯一的每個環境。
-
-> [!NOTE]
-> 未來的教學課程會探索部署資料導向應用程式，此時我們將探討如何將資料庫連接字串儲存在組態檔中的細節。
-
-開發和生產環境的預期的行為與本質上不同。 在開發環境中的 web 應用程式正在建立、 測試及偵錯的一小群開發人員。 在生產環境中由許多不同的同步使用者所造訪該相同的應用程式。 ASP.NET 包含數項功能，可協助開發人員測試和偵錯應用程式，但這些功能應停用效能和安全性理由，在生產環境中。 讓我們看看一些這類組態設定。
-
-### <a name="configuration-settings-that-impact-performance"></a>會影響效能的組態設定
-
-當瀏覽 ASP.NET 網頁時的第一次 （或第一次變更後），其宣告式標記必須先轉換成類別，這個類別必須編譯。 如果 web 應用程式使用自動編譯網頁的程式碼後置類別就必須重新編譯，太。 您可以設定編譯選項，透過各種`Web.config`檔案的[`<compilation>`項目](https://msdn.microsoft.com/library/s10awwz0.aspx)。
-
-偵錯屬性是其中一個最重要的屬性，在`<compilation>`項目。 如果`debug`屬性設為"true"則表示已編譯的組件包含偵錯 Visual Studio 中的應用程式時所需的偵錯符號。 但是，偵錯符號增加組件的大小，並執行程式碼時，會造成額外的記憶體需求。 此外，當`debug`屬性設定為"true"所傳回的任何內容`WebResource.axd`未快取，這表示，每次使用者瀏覽他們必須重新下載靜態內容所傳回的頁面`WebResource.axd`。
+資料庫連接字串是根據環境而有所不同之設定資訊的主要範例。 當 web 應用程式與資料庫伺服器通訊時，必須先建立連接，並透過[連接字串](http://www.connectionstrings.com/Articles/Show/what-is-a-connection-string)來達成此目的。 雖然可以直接在網頁或連接到資料庫的程式碼中硬式編碼資料庫連接字串，但最好將它放在 `Web.config`的[`<connectionStrings>` 元素](https://msdn.microsoft.com/library/bf7sd233.aspx)，以便連接字串資訊位於單一的集中位置。 在開發期間，通常會使用不同的資料庫，而不是在生產環境中使用;因此，每個環境的連接字串資訊都必須是唯一的。
 
 > [!NOTE]
-> `WebResource.axd` 是內建的 HTTP 處理常式在 ASP.NET 2.0 引進伺服器控制項用來擷取內嵌的資源，例如指令碼檔案、 影像、 CSS 檔案和其他內容。 如需有關如何`WebResource.axd`運作，以及如何使用它來存取內嵌的資源，從您的自訂伺服器控制項，請參閱[存取內嵌的資源透過 URL 使用`WebResource.axd` ](http://aspnet.4guysfromrolla.com/articles/080906-1.aspx)。
+> 未來的教學課程探索如何部署資料驅動應用程式，此時我們將深入探討資料庫連接字串如何儲存在設定檔中的細節。
 
-`<compilation>`項目的`debug`屬性通常設定為"true"在開發環境中。 事實上，此屬性必須設為"true"，才能在 web 應用程式進行偵錯如果您嘗試偵錯 ASP.NET 應用程式從 Visual Studio 和`debug`屬性設定為"false"時，Visual Studio 會顯示訊息，說明無法進行應用程式偵錯，直到`debug`屬性設為"true"，並將若要進行這項變更為您的供應項目。
+開發和生產環境的預期行為差異極大。 開發環境中的 web 應用程式是由一小組開發人員所建立、測試及進行調試。 在生產環境中，有許多不同的並行使用者正在造訪相同的應用程式。 ASP.NET 包含一些可協助開發人員測試和偵測應用程式的功能，但在生產環境中，這些功能應該基於效能和安全性理由而停用。 讓我們來看幾個這類的設定。
 
-您應該**從未**有`debug`屬性設定為"true"，在生產環境中，因為它對效能的影響。 如需本主題的深入討論，請參閱[Scott Guthrie](https://weblogs.asp.net/scottgu/)的部落格文章[不執行生產環境 ASP.NET 應用程式與`debug="true"`Enabled](https://weblogs.asp.net/scottgu/442448)。
+### <a name="configuration-settings-that-impact-performance"></a>會影響效能的設定
 
-### <a name="custom-errors-and-tracing"></a>自訂的錯誤和追蹤
+第一次造訪 ASP.NET 網頁時（或第一次變更之後），其宣告式標記必須轉換成類別，而且必須編譯此類別。 如果 web 應用程式使用自動編譯，則也需要編譯頁面的程式碼後置類別。 您可以透過 `Web.config` 檔案的[`<compilation>` 元素](https://msdn.microsoft.com/library/s10awwz0.aspx)來設定各種編譯選項。
 
-在 ASP.NET 應用程式中處理的例外狀況時它會顯示最多三個事項之一發生在哪個時間點的執行階段：
-
-- 會顯示一般的執行階段錯誤訊息。 此頁面會通知那里的使用者執行階段錯誤，但不提供任何錯誤的詳細資訊。
-- 會顯示例外狀況詳細資料訊息，其中包含剛擲回的例外狀況的資訊。
-- 顯示自訂錯誤頁面，這是 ASP.NET 網頁，您建立可顯示您想要的任何訊息。
-
-發生未處理的例外狀況的情況取決於`Web.config`檔案的[`<customErrors>`一節](https://msdn.microsoft.com/library/h0hfz6fc.aspx)。
-
-開發和測試應用程式時最好先查看瀏覽器中的任何例外狀況的詳細資料。 不過，在生產環境應用程式中顯示例外狀況詳細資料是潛在的安全性風險。 此外，它是 unflattering，並可讓您的網站看起來不夠專業。 在理想情況下，發生未處理的例外狀況時在開發環境中的 web 應用程式會顯示例外狀況的詳細資料而在生產環境中相同的應用程式將會顯示自訂錯誤頁面。
+Debug 屬性是 `<compilation>` 元素中最重要的屬性之一。 如果 `debug` 屬性設定為 "true"，則編譯的元件會包含在 Visual Studio 中對應用程式進行調試時所需的 debug 符號。 但是，在執行程式碼時，debug 符號會增加元件的大小，並強加額外的記憶體需求。 此外，當 `debug` 屬性設定為 "true" 時，`WebResource.axd` 所傳回的任何內容都不會進行快取，這表示每次使用者造訪頁面時，都必須重新下載 `WebResource.axd`所傳回的靜態內容。
 
 > [!NOTE]
-> 預設值`<customErrors>`例外狀況詳細資料訊息的頁面所造訪透過 localhost，且否則顯示一般的執行階段錯誤頁面時，才會顯示區段設定。 這並不理想，但它會確保知道的預設行為並不會顯示非本機訪客的例外狀況詳細資料。 未來的教學課程會檢查`<customErrors>`一節中更多詳細資料，並說明如何將自訂錯誤網頁顯示在生產環境中發生的錯誤。
+> `WebResource.axd` 是在 ASP.NET 2.0 中引進的內建 HTTP 處理常式，伺服器控制項可用來抓取內嵌的資源，例如腳本檔案、影像、CSS 檔案和其他內容。 如需 `WebResource.axd` 的運作方式，以及如何使用它從自訂伺服器控制項存取內嵌資源的詳細資訊，請參閱[使用 `WebResource.axd`透過 URL 存取內嵌資源](http://aspnet.4guysfromrolla.com/articles/080906-1.aspx)。
 
-在開發期間很有用的另一個 ASP.NET 功能追蹤。 追蹤，如果啟用，記錄每個傳入要求的相關資訊，並提供特殊的網頁， `Trace.axd`，來檢視最近的要求詳細資料。 您可以開啟和設定追蹤透過[`<trace>`項目](https://msdn.microsoft.com/library/6915t83k.aspx)在`Web.config`。
+在開發環境中，`<compilation>` 元素的 `debug` 屬性通常會設定為 "true"。 事實上，此屬性必須設定為 "true"，才能進行 web 應用程式的偵錯工具。如果您嘗試從 Visual Studio 中偵測到 ASP.NET 應用程式，而且 `debug` 屬性設定為 "false"，Visual Studio 將會顯示一則訊息，說明在 `debug` 屬性設定為 "true" 之前，應用程式無法進行調試，並會提供給您進行這種變更。
 
-如果您啟用追蹤，請務必確定它已停用在生產環境中。 追蹤資訊包括 cookie、 工作階段資料，以及其他潛在的敏感資訊，因此務必停用在生產環境中的追蹤。 好消息是，根據預設，已停用追蹤和`Trace.axd`檔案就只能透過 localhost 存取。 如果您變更這些預設設定，在開發過程中確定，它們會關閉上一步在生產環境中。
+您**絕對不**應該在生產環境中將 `debug` 屬性設為 "true"，因為它會對效能造成影響。 如需本主題的更完整討論，請參閱[Scott Guthrie](https://weblogs.asp.net/scottgu/)的 blog 文章，[不要執行生產 ASP.NET 應用程式並啟用 `debug="true"`](https://weblogs.asp.net/scottgu/442448)。
 
-## <a name="techniques-for-maintaining-separate-configuration-information"></a>維護個別的組態資訊的技術
+### <a name="custom-errors-and-tracing"></a>自訂錯誤和追蹤
 
-開發和生產環境中有不同的組態設定變得非常複雜的部署程序。 先前的兩個教學課程中的部署程序牽涉到複製所有必要的檔案從開發到生產環境，但此方法僅適用於組態資訊為兩個環境中相同。 有各種不同的部署具有不同的組態資訊的應用程式的技術。 讓我們目錄其中一些託管的 web 應用程式的選項。
+當 ASP.NET 應用程式中發生未處理的例外狀況時，它會反升至執行時間，此時會發生三件事的其中一個：
 
-### <a name="manually-deploying-the-production-environment-configuration-file"></a>手動部署實際執行環境組態檔
+- 隨即顯示一般執行階段錯誤訊息。 此頁面會通知使用者發生執行階段錯誤，但未提供任何有關錯誤的詳細資料。
+- [例外狀況詳細資料] 訊息隨即顯示，其中包含剛剛擲回之例外狀況的資訊。
+- [自訂錯誤] 頁面隨即顯示，這是您建立的 ASP.NET 網頁，會顯示您想要的任何訊息。
 
-最簡單的方法是維護兩個版本`Web.config`檔案： 一個用於開發環境，一個用於生產環境。 部署至生產環境的站台需要的所有檔案複製到實際執行伺服器，在開發環境*除了*如`Web.config`檔案。 相反地，實際執行環境特定`Web.config`檔案將會複製到實際執行環境。
+在發生未處理的例外狀況時，會發生什麼情況，取決於 `Web.config` 檔案的[`<customErrors>` 區段](https://msdn.microsoft.com/library/h0hfz6fc.aspx)。
 
-此方法不是非常複雜，但很容易實作，因為不常變更的組態資訊。 它適合用於應用程式與小型開發團隊，單一的 web 伺服器上裝載，而且不常變更其組態資訊。 手動部署使用獨立 FTP 用戶端應用程式檔案時，它是最 tenable。 使用 Visual Studio 複製網站工具或 [發佈] 選項時您必須先抽換部署特定`Web.config`以在部署之前，生產環境特定的檔案，然後再將其交換部署完成之後。
-
-### <a name="change-the-configuration-during-the-build-or-deployment-process"></a>變更組建或部署程序期間設定
-
-到目前為止的討論被假設特定的建置和部署程序。 許多較大型的軟體專案擁有更正式的程序，讓使用開放原始碼，自產或第三方工具。 這類專案您可能可以自訂推桿推到生產環境之前適當地修改的組態資訊的組建或部署程序。 如果您要建置您的 web 應用程式使用[MSBuild](http://en.wikipedia.org/wiki/MSBuild)， [NAnt](http://nant.sourceforge.net/)，或其他建置工具，您可以有可能加入建置步驟以修改`Web.config`檔案以包含生產環境特定設定。 或您的部署工作流程無法以程式設計方式連接到原始檔控制伺服器並擷取適當`Web.config`檔案。
-
-取得適當的組態資訊到生產環境的實際方法會依據您的工具和工作流程而有所不同。 因此，我們不會探討本主題會進一步。 如果您使用熱門的建置工具 MSBuild 或 NAnt 您可以找到部署文件和教學課程特有這些工具，透過 web 搜尋。
-
-### <a name="managing-configuration-differences-via-the-web-deployment-project-add-in"></a>管理組態差異，透過 Web 部署專案增益集
-
-2006 Microsoft 發行的 Web 開發專案增益集適用於 Visual Studio 2005。 適用於 Visual Studio 2008 增益集是在 2008年發行。 此增益集可讓 ASP.NET 開發人員建立個別的 Web 部署專案和其 web 應用程式專案，建置時、 明確編譯 web 應用程式並將檔案複製到部署到本機的輸出目錄。 Web 應用程式專案會在幕後使用 MSBuild。
-
-根據預設，在開發環境的`Web.config`檔案複製到輸出目錄中，但您可以設定自訂的 Web 部署專案
-
-取得透過下列方式複製到這個目錄的組態資訊：
-
-- 透過`Web.config`檔案區段取代，您可以在其中指定要取代的區段和 XML 檔案，其中包含取代文字。
-- 藉由提供外部組態來源檔的路徑。 選取此選項，Web 部署專案複製特定`Web.config`到輸出目錄的檔案 (而非`Web.config`開發環境中使用的檔案)。
-- 加入 Web 部署專案所使用的 MSBuild 檔案中的自訂規則。
-
-若要部署 web 應用程式建置 Web 部署專案，然後將檔案從專案的輸出資料夾複製到生產環境。
-
-若要了解使用 Web 部署專案的詳細資訊請參閱[Web 部署專案本文](https://msdn.microsoft.com/magazine/cc163448.aspx)2007 年 4 月號的[MSDN Magazine](https://msdn.microsoft.com/magazine/default.aspx)，或請參閱 「 深入閱讀 」 一節中的連結本教學課程的結尾。
+開發和測試應用程式時，它有助於查看瀏覽器中任何例外狀況的詳細資料。 不過，在生產環境中顯示應用程式的例外狀況詳細資料是潛在的安全性風險。 此外，它也是 unflattering，讓您的網站看起來不夠專業。 在理想情況下，在發生未處理的例外狀況時，開發環境中的 web 應用程式將會顯示例外狀況的詳細資料，而生產環境中的相同應用程式將會顯示自訂錯誤頁面。
 
 > [!NOTE]
-> 您無法使用 Web 部署專案使用 Visual Web Developer，因為 Web 部署專案做為 Visual Studio 增益集實作，而且 Visual Studio Express 各版本 （包括 Visual Web Developer） 不支援增益集。
+> 預設 `<customErrors>` 區段設定只會在網頁透過 localhost 流覽時顯示例外狀況詳細資料訊息，否則會顯示 [一般執行時間錯誤] 頁面。 這不是理想的做法，但要知道預設行為並不會向非本機訪客顯示例外狀況詳細資料。 未來的教學課程會更詳細地檢查 `<customErrors>` 區段，並說明在生產環境中發生錯誤時，如何顯示自訂錯誤頁面。
+
+在開發期間，另一個有用的 ASP.NET 功能是追蹤。 追蹤（啟用時）會記錄每個連入要求的相關資訊，並提供 `Trace.axd`的特殊網頁，以用於查看最近的要求詳細資料。 您可以透過 `Web.config`中的[`<trace>` 元素](https://msdn.microsoft.com/library/6915t83k.aspx)來開啟和設定追蹤。
+
+如果您啟用追蹤，請確定它已在生產環境中停用。 由於追蹤資訊包括 cookie、會話資料和其他潛在的敏感性資訊，因此在生產環境中停用追蹤是很重要的。 好消息是，根據預設，會停用追蹤，而且只能透過 localhost 存取 `Trace.axd` 檔案。 如果您在開發中變更這些預設設定，請確定已在生產環境中將它們關閉。
+
+## <a name="techniques-for-maintaining-separate-configuration-information"></a>維護個別設定資訊的技術
+
+在開發和生產環境中擁有不同的設定，會使部署程式變得更複雜。 在前兩個教學課程中，部署程式牽涉到從開發中將所有必要的檔案複製到生產環境，但這種方法僅適用于這兩種環境中的設定資訊相同。 有各種不同的技術可讓您部署應用程式，並具有各種設定資訊。 讓我們為裝載的 web 應用程式，將其中一些選項分類。
+
+### <a name="manually-deploying-the-production-environment-configuration-file"></a>手動部署生產環境設定檔
+
+最簡單的方法是維護兩個版本的 `Web.config` 檔案：一個用於開發環境，另一個用於生產環境。 將網站部署到生產環境時，需要將所有檔案複製到開發環境中的實際執行伺服器，但 `Web.config` 檔案*除外*。 相反地，生產環境特定 `Web.config` 檔案會複製到生產環境。
+
+這種方法並不複雜，但其實很容易實行，因為設定資訊不常變更。 它最適合具有小型開發小組的應用程式，裝載于單一 web 伺服器上，且其設定資訊不常變更。 當您使用獨立的 FTP 用戶端手動部署應用程式檔時，這是最 tenable 的。 使用 Visual Studio 的 [複製網站] 工具或 [發佈] 選項時，您必須先將部署特定的 `Web.config` 檔案與生產環境特定的檔案交換，然後再進行部署，然後在部署完成之後將它們交換回來。
+
+### <a name="change-the-configuration-during-the-build-or-deployment-process"></a>在組建或部署過程中變更設定
+
+到目前為止，我們已假設有臨機操作組建和部署程式。 許多較大型的軟體專案都有更正規化的程式，利用開放原始碼、家用成長或協力廠商工具。 針對這類專案，您可能會自訂群組建或部署程式，以便在將設定資訊推送至生產環境之前，適當地加以修改。 如果您使用[MSBuild](http://en.wikipedia.org/wiki/MSBuild)、 [NAnt](http://nant.sourceforge.net/)或其他組建工具來建立 web 應用程式，您可能會新增組建步驟來修改 `Web.config` 檔案，以包含生產環境特定的設定。 或者，您的部署工作流程可透過程式設計方式連接到原始檔控制伺服器，並取出適當的 `Web.config` 檔案。
+
+取得適當設定資訊到生產環境的實際方法，會根據您的工具和工作流程而有很大的差異。 因此，我們不會進一步深入探討本主題。 如果您使用的是熱門的組建工具（例如 MSBuild 或 NAnt），您可以透過 web 搜尋找到這些工具的特定部署文章和教學課程。
+
+### <a name="managing-configuration-differences-via-the-web-deployment-project-add-in"></a>透過 Web 部署專案增益集管理設定差異
+
+在2006中，Microsoft 發行了適用于 Visual Studio 2005 的 Web 開發專案增益集。 Visual Studio 2008 的增益集已于2008發行。 此增益集可讓 ASP.NET 開發人員建立個別的 Web 部署專案，以及其 web 應用程式專案（在建立時）明確地編譯 web 應用程式，並複製要部署到本機輸出目錄的檔案。 Web 應用程式專案會在幕後使用 MSBuild。
+
+根據預設，開發環境的 `Web.config` 檔案會複製到輸出目錄，但是您可以設定 Web 部署專案來自訂
+
+以下列方式複製到此目錄的設定資訊：
+
+- 透過 `Web.config` 檔案區段取代，您可以在其中指定要取代的區段，以及包含取代文字的 XML 檔案。
+- 提供外部設定來源檔案的路徑。 選取此選項時，Web 部署專案會將特定的 `Web.config` 檔案複製到輸出目錄（而不是開發環境中所使用的 `Web.config` 檔案）。
+- 藉由將自訂規則新增至 Web 部署專案所使用的 MSBuild 檔案。
+
+若要部署 web 應用程式，請建立 Web 部署專案，然後將檔案從專案的輸出檔案夾複製到生產環境。
+
+若要深入瞭解使用 Web 部署專案的詳細資訊，請參閱[這篇 Web 部署](https://msdn.microsoft.com/magazine/cc163448.aspx)專案： [MSDN 雜誌](https://msdn.microsoft.com/magazine/default.aspx)的2007年4月問題，或參考本教學課程結尾的進一步閱讀一節中的連結。
+
+> [!NOTE]
+> 您無法將 Web 部署專案與 Visual Web Developer 搭配使用，因為 Web 部署專案會實作為 Visual Studio 增益集，而 Visual Studio Express 版本（包括 Visual Web Developer）則不支援增益集。
 
 ## <a name="summary"></a>總結
 
-外部資源和 web 應用程式開發中的行為是通常不同於相同的應用程式處於生產環境。 例如，資料庫連接字串、 編譯選項，以及處理的例外狀況通常發生時的行為不同環境之間。 部署程序必須配合這些差異。 如我們在本教學課程所討論的最簡單的方法是手動複製到生產環境的 其他設定檔案。 可能會有更精緻的解決方案或使用更正式的組建或部署程序可容納這類自訂項目時使用 Web 部署專案增益集。
+在開發中，web 應用程式的外部資源和行為通常會與在生產環境中的相同應用程式不同。 例如，當未處理的例外狀況發生時，環境之間通常會有不同的資料庫連接字串、編譯選項和行為。 部署程式必須配合這些差異。 如我們在本教學課程中所討論，最簡單的方法是手動將替代的配置檔案複製到生產環境。 當使用 Web 部署專案增益集，或使用更正式的組建或部署程式來容納這類自訂時，可能會有更精緻的解決方案。
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ### <a name="further-reading"></a>進一步閱讀
 
-如需有關在本教學課程所討論的主題的詳細資訊，請參閱下列資源：
+如需本教學課程中所討論之主題的詳細資訊，請參閱下列資源：
 
-- [連接字串說明](http://www.connectionstrings.com/Articles/Show/what-is-a-connection-string)
+- [已說明的連接字串](http://www.connectionstrings.com/Articles/Show/what-is-a-connection-string)
 - [資料庫連接字串 @ ConnectionStrings.com](http://www.connectionstrings.com/)
-- [不會執行實際執行 ASP.NET 應用程式與`debug="true"`啟用](https://weblogs.asp.net/scottgu/Don_1920_t-run-production-ASP.NET-Applications-with-debug_3D001D20_true_1D20_-enabled)
-- [依正常程序回應未處理的例外狀況-顯示使用者易記的錯誤頁面](http://aspnet.4guysfromrolla.com/articles/090606-1.aspx)
-- [How Do i:使用 Visual Studio 2008 Web 部署專案嗎？](../../../videos/how-do-i/how-do-i-use-a-visual-studio-2008-web-deployment-project.md)
-- [部署資料庫時的重要組態設定](http://aspnet.4guysfromrolla.com/articles/121008-1.aspx)
+- [請勿在啟用 `debug="true"` 的情況下執行生產 ASP.NET 應用程式](https://weblogs.asp.net/scottgu/Don_1920_t-run-production-ASP.NET-Applications-with-debug_3D001D20_true_1D20_-enabled)
+- [正常回應未處理的例外狀況-顯示使用者易記的錯誤頁面](http://aspnet.4guysfromrolla.com/articles/090606-1.aspx)
+- [如何：使用 Visual Studio 2008 Web 部署專案？](../../../videos/how-do-i/how-do-i-use-a-visual-studio-2008-web-deployment-project.md)
+- [部署資料庫時的金鑰設定](http://aspnet.4guysfromrolla.com/articles/121008-1.aspx)
 - [Visual Studio 2008 Web 部署專案下載](https://www.microsoft.com/downloads/details.aspx?FamilyId=0AA30AE8-C73B-4BDD-BB1B-FE697256C459&amp;displaylang=en) | [Visual Studio 2005 Web 部署專案下載](https://download.microsoft.com/download/9/4/9/9496adc4-574e-4043-bb70-bc841e27f13c/WebDeploymentSetup.msi)
-- [VS 2008 Web 部署專案](https://weblogs.asp.net/scottgu/archive/2005/11/06/429723.aspx) | [VS 2008 Web 部署專案支援發行](https://weblogs.asp.net/scottgu/archive/2008/01/28/vs-2008-web-deployment-project-support-released.aspx)
+- [Vs 2008 Web 部署](https://weblogs.asp.net/scottgu/archive/2005/11/06/429723.aspx)專案 | [Vs 2008 Web 部署專案支援已發行](https://weblogs.asp.net/scottgu/archive/2008/01/28/vs-2008-web-deployment-project-support-released.aspx)
 - [Web 部署專案](https://msdn.microsoft.com/magazine/cc163448.aspx)
 
 > [!div class="step-by-step"]

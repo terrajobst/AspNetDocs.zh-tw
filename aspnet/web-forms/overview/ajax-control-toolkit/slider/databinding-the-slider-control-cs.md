@@ -1,51 +1,51 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-cs
-title: 資料繫結滑桿控制項 (C#) |Microsoft Docs
+title: 資料系結滑杆控制項C#（） |Microsoft Docs
 author: wenz
-description: 在 AJAX Control Toolkit 中的滑桿控制項提供的圖形化的滑桿，可以使用滑鼠來控制。 它也可以繫結目前 positio...
+description: AJAX 控制項工具組中的滑杆控制項提供圖形滑杆，可以使用滑鼠來控制。 您可以系結目前的 positio 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: b7f77869-aa1d-4025-924f-622c57112db6
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9613b96612c2799c17bd5633083bb439913b4dc9
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: ef547573f17f3265ad72717d3d3bbc622fd6894e
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65124853"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74598597"
 ---
 # <a name="databinding-the-slider-control-c"></a>資料繫結滑桿控制項 (C#)
 
-藉由[Christian Wenz](https://github.com/wenz)
+依[Christian Wenz](https://github.com/wenz)
 
-[下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider0.cs.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/slider0CS.pdf)
+[下載程式代碼](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider0.cs.zip)或[下載 PDF](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/slider0CS.pdf)
 
-> 在 AJAX Control Toolkit 中的滑桿控制項提供的圖形化的滑桿，可以使用滑鼠來控制。 可以將滑桿的目前位置到另一個的 ASP.NET 控制項繫結。
+> AJAX 控制項工具組中的滑杆控制項提供圖形滑杆，可以使用滑鼠來控制。 您可以將滑杆的目前位置系結至另一個 ASP.NET 控制項。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-在 AJAX Control Toolkit 中的滑桿控制項提供的圖形化的滑桿，可以使用滑鼠來控制。 可以將滑桿的目前位置到另一個的 ASP.NET 控制項繫結。
+AJAX 控制項工具組中的滑杆控制項提供圖形滑杆，可以使用滑鼠來控制。 您可以將滑杆的目前位置系結至另一個 ASP.NET 控制項。
 
 ## <a name="steps"></a>步驟
 
-若要啟動的 ASP.NET AJAX Control Toolkit 中，功能`ScriptManager`控制項必須放置在任何位置上 (但在`<form>`項目):
+若要啟用 ASP.NET AJAX 和控制項工具組的功能，`ScriptManager` 控制項必須放在頁面上的任何位置（但在 `<form>` 元素內）：
 
 [!code-aspx[Main](databinding-the-slider-control-cs/samples/sample1.aspx)]
 
-接下來，新增兩個`TextBox`至網頁的控制項。 其中一個會轉換成圖形化的滑桿，按住不放，另一個將滑桿的位置。
+接下來，將兩個 `TextBox` 控制項加入至頁面。 其中一個會轉換成圖形滑杆，另一個則會保存滑杆的位置。
 
 [!code-aspx[Main](databinding-the-slider-control-cs/samples/sample2.aspx)]
 
-下一個步驟已經是最後一個步驟。 `SliderExtender`從 ASP.NET AJAX Control Toolkit 控制項讓滑桿移出第一個文字方塊和滑桿的位置變更時，自動更新第二個文字方塊。 為了使工作時，`SliderExtender`的`TargetControlID`屬性必須設為識別碼的第一個文字方塊;`BoundControlID`屬性必須設為第二個文字方塊的識別碼。
+下一個步驟已經是最後一個步驟。 ASP.NET AJAX 控制項工具組中的 `SliderExtender` 控制項會從第一個文字方塊移出一個滑杆，並在滑杆位置變更時自動更新第二個文字方塊。 `SliderExtender`的 `TargetControlID` 屬性必須設定為第一個文字方塊的識別碼，才能正常操作。`BoundControlID` 屬性必須設定為第二個文字方塊的識別碼。
 
 [!code-aspx[Main](databinding-the-slider-control-cs/samples/sample3.aspx)]
 
-您可以看到瀏覽器中，資料繫結可以雙向運作： 在文字方塊中輸入新值更新滑桿的位置。 如果您進行第二個唯讀的文字方塊中，您可能加入弱式保護的文字欄位，以便讓使用者以手動方式更新裡面的值更難。
+如您在瀏覽器中所見，資料系結會雙向運作：在文字方塊中輸入新的值會更新滑杆的位置。 如果您將第二個文字方塊設為唯讀，您可以在文字欄位中加入弱式保護，讓使用者更難以手動更新該處的值。
 
-[![滑桿和文字方塊都保持同步](databinding-the-slider-control-cs/_static/image2.png)](databinding-the-slider-control-cs/_static/image1.png)
+[![滑杆和文字方塊已同步](databinding-the-slider-control-cs/_static/image2.png)](databinding-the-slider-control-cs/_static/image1.png)
 
-滑桿和文字方塊都是同步 ([按一下以檢視完整大小的影像](databinding-the-slider-control-cs/_static/image3.png))
+滑杆和文字方塊已同步（[按一下以觀看完整大小的影像](databinding-the-slider-control-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
 > [上一頁](using-the-slider-control-with-auto-postback-cs.md)

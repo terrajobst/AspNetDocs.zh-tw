@@ -1,244 +1,244 @@
 ---
 uid: web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-cs
-title: 建置介面從許多 (C#) 中選取一個使用者帳戶 |Microsoft Docs
+title: 建立介面以從許多（C#）選取一個使用者帳戶 |Microsoft Docs
 author: rick-anderson
-description: 在本教學課程中，我們將建置具有分頁、 可篩選方格的使用者介面。 特別是，我們的使用者介面將包含一系列的 Linkbutton 的...
+description: 在本教學課程中，我們將建立一個具有分頁、可篩選方格的使用者介面。 特別是，我們的使用者介面將由一系列的 LinkButtons for 。
 ms.author: riande
 ms.date: 04/01/2008
 ms.assetid: 9e4e687c-b4ec-434f-a4ef-edb0b8f365e4
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ede2bf737464fde47e304e23255349599c1ea663
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 8057cfbcd33c74376076363bc27940cebd522c08
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116292"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74575809"
 ---
 # <a name="building-an-interface-to-select-one-user-account-from-many-c"></a>建置介面從許多個使用者帳戶中選取一個 (C#)
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載程式碼](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/CS.12.zip)或[下載 PDF](http://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/aspnet_tutorial12_SelectUser_cs.pdf)
+[下載程式代碼](https://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/CS.12.zip)或[下載 PDF](https://download.microsoft.com/download/6/0/e/60e1bd94-e5f9-4d5a-a079-f23c98f4f67d/aspnet_tutorial12_SelectUser_cs.pdf)
 
-> 在本教學課程中，我們將建置具有分頁、 可篩選方格的使用者介面。 特別是，我們的使用者介面將包含一系列的 Linkbutton 來篩選結果的使用者名稱和 GridView 控制項以顯示相符的使用者起始的字母為基礎。 我們一開始先列出所有的 GridView 中的使用者帳戶。 然後，在步驟 3 中，我們會新增 Linkbutton 的篩選條件。 步驟 4 會查看分頁篩選的結果。 建構在步驟 2 到 4 之間的介面將用於後續的教學課程中，執行特定的使用者帳戶的系統管理工作。
+> 在本教學課程中，我們將建立一個具有分頁、可篩選方格的使用者介面。 特別是，我們的使用者介面會包含一系列的 LinkButtons，以便根據使用者名稱的起始字母來篩選結果，並使用 GridView 控制項來顯示相符的使用者。 我們一開始會列出 GridView 中的所有使用者帳戶。 然後，在步驟3中，我們將新增篩選 LinkButtons。 步驟4會查看篩選後的結果分頁。 在後續的教學課程中，將會使用在步驟2到4中所建立的介面，來執行特定使用者帳戶的系統管理工作。
 
 ## <a name="introduction"></a>簡介
 
-在  <a id="_msoanchor_1"> </a> [*將角色指派給使用者*](../roles/assigning-roles-to-users-cs.md)教學課程中，我們會建立系統管理員可以選取使用者，並管理其角色的基本介面。 具體而言，介面顯示下拉式清單中的所有使用者的系統管理員。 如果有，但是約十二個左右的使用者帳戶，但會難以使用數百或數千個帳戶的站台，適合使用這類介面。 分頁、 可篩選的方格是更適合的使用者介面，適用於具有大量使用者基底的網站。
+在將<a id="_msoanchor_1"> </a>[*角色指派給使用者*](../roles/assigning-roles-to-users-cs.md)教學課程中，我們建立了基本介面，讓系統管理員選取使用者並管理她的角色。 具體而言，介面會向系統管理員顯示所有使用者的下拉式清單。 這類介面適用于有數十個或更多使用者帳戶的情況，但對具有數百或數千個帳戶的網站來說很困難。 針對具有大型使用者群的網站，分頁、可篩選的方格較適合使用者介面。
 
-在本教學課程中，我們將建置這類使用者介面。 特別是，我們的使用者介面將包含一系列的 Linkbutton 來篩選結果的使用者名稱和 GridView 控制項以顯示相符的使用者起始的字母為基礎。 我們一開始先列出所有的 GridView 中的使用者帳戶。 然後，在步驟 3 中，我們會新增 Linkbutton 的篩選條件。 步驟 4 會查看分頁篩選的結果。 建構在步驟 2 到 4 之間的介面將用於後續的教學課程中，執行特定的使用者帳戶的系統管理工作。
+在本教學課程中，我們將建立這類使用者介面。 特別是，我們的使用者介面會包含一系列的 LinkButtons，以便根據使用者名稱的起始字母來篩選結果，並使用 GridView 控制項來顯示相符的使用者。 我們一開始會列出 GridView 中的所有使用者帳戶。 然後，在步驟3中，我們將新增篩選 LinkButtons。 步驟4會查看篩選後的結果分頁。 在後續的教學課程中，將會使用在步驟2到4中所建立的介面，來執行特定使用者帳戶的系統管理工作。
 
-讓我們開始吧 ！
+讓我們開始吧！
 
-## <a name="step-1-adding-new-aspnet-pages"></a>步驟 1：加入新的 ASP.NET 網頁
+## <a name="step-1-adding-new-aspnet-pages"></a>步驟1：加入新的 ASP.NET 網頁
 
-在本教學課程，後面兩個我們將檢查各種不同的系統管理相關的功能和功能。 我們需要一系列的 ASP.NET 頁面，來實作檢查在這些教學課程的主題。 讓我們來建立這些頁面，並更新站台對應。
+在本教學課程和接下來的兩個課程中，我們將檢查各種系統管理相關的功能和功能。 我們將需要一系列的 ASP.NET 網頁，以執行整個教學課程中所探討的主題。 讓我們建立這些頁面並更新網站地圖。
 
-藉由建立新的資料夾中名為專案啟動`Administration`。 接下來，將兩個新的 ASP.NET 網頁新增至資料夾中，連結每個頁面`Site.master`主版頁面。 名稱的頁面：
+首先，在名為 `Administration`的專案中建立新的資料夾。 接下來，在資料夾中新增兩個新的 ASP.NET 網頁，並將每個頁面與 `Site.master` 主版頁面連結。 將頁面命名為：
 
 - `ManageUsers.aspx`
 - `UserInformation.aspx`
 
-也將兩個頁面新增至網站的根目錄：`ChangePassword.aspx`和`RecoverPassword.aspx`。
+此外，也請將兩個頁面新增至網站的根目錄： `ChangePassword.aspx` 和 `RecoverPassword.aspx`。
 
-這些四個頁面，到目前為止，應有兩個內容控制項，一個用於每個主版頁面的 ContentPlaceHolders:`MainContent`和`LoginContent`。
+此時，這四個頁面都有兩個內容控制項，每個主版頁面的 ContentPlaceHolders 都有一個： `MainContent` 和 `LoginContent`。
 
 [!code-aspx[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample1.aspx)]
 
-我們想要顯示的主版頁面的預設標記`LoginContent`ContentPlaceHolder 這些頁面。 因此，移除的宣告式標記`Content2`內容控制項。 完成後，頁面的標記應包含一個內容控制項。
+我們想要針對這些頁面的 `LoginContent` ContentPlaceHolder 顯示主版頁面的預設標記。 因此，請移除 `Content2` 內容控制項的宣告式標記。 這麼做之後，頁面的標記應該只包含一個內容控制項。
 
-ASP.NET 頁面`Administration`資料夾主要僅供系統管理使用者。 我們新增至系統中的系統管理員角色<a id="_msoanchor_2"> </a> [*建立和管理角色*](../roles/creating-and-managing-roles-cs.md)教學課程中，這兩個頁面至這個角色限制存取。 若要達成此目的，將`Web.config`的檔案`Administration`資料夾，並設定其`<authorization>`承認的系統管理員角色中的使用者，並拒絕其他所有的項目。
+[`Administration`] 資料夾中的 [ASP.NET] 頁面僅適用于系統管理使用者。 在<a id="_msoanchor_2"> </a>[*建立和管理角色*](../roles/creating-and-managing-roles-cs.md)教學課程中，我們已將系統管理員角色新增至系統;將這兩個頁面的存取許可權制為此角色。 若要完成這項操作，請將 `Web.config` 檔案新增至 `Administration` 資料夾，並設定其 `<authorization>` 元素以授與系統管理員角色的使用者，並拒絕所有其他人。
 
 [!code-xml[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample2.xml)]
 
-此時您專案的方案總管] 看起來應該類似螢幕擷取畫面的 [圖 1 所示。
+此時，專案的方案總管看起來應該像 [圖 1] 所示的螢幕擷取畫面。
 
-[![四個新的網頁和 Web.config 檔案新增至網站](building-an-interface-to-select-one-user-account-from-many-cs/_static/image2.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image1.png)
+[![四個新頁面，而且 Web.config 檔案已新增至網站](building-an-interface-to-select-one-user-account-from-many-cs/_static/image2.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image1.png)
 
-**圖 1**:四個新的頁面並`Web.config`檔案已加入至網站 ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image3.png))
+**圖 1**：有四個新頁面和一個 `Web.config` 檔案已新增至網站（[按一下以觀看完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image3.png)）
 
-最後，更新站台對應 (`Web.sitemap`) 包含一個項目`ManageUsers.aspx`頁面。 新增下列 XML 程式碼之後`<siteMapNode>`我們新增的角色教學課程。
+最後，將網站地圖（`Web.sitemap`）更新為包含 [`ManageUsers.aspx`] 頁面的專案。 在我們為角色教學課程新增的 `<siteMapNode>` 之後，新增下列 XML。
 
 [!code-xml[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample3.xml)]
 
-更新站台對應，請瀏覽的網站，透過瀏覽器。 如 [圖 2] 所示，在左側的導覽現在會包含項目管理教學課程。
+更新網站地圖之後，請透過瀏覽器造訪網站。 如 [圖 2] 所示，左邊的導覽現在包含了管理教學課程的專案。
 
-[![站台地圖包含標題為 [使用者管理] 節點](building-an-interface-to-select-one-user-account-from-many-cs/_static/image5.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image4.png)
+[![網站地圖包含標題為 [使用者管理] 的節點](building-an-interface-to-select-one-user-account-from-many-cs/_static/image5.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image4.png)
 
-**圖 2**:站台對應包含節點標題為 [使用者管理] ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image6.png))
+**圖 2**：網站地圖包含標題為 [使用者管理] 的節點（[按一下以查看完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image6.png)）
 
-## <a name="step-2-listing-all-user-accounts-in-a-gridview"></a>步驟 2：列出 GridView 中的所有使用者帳戶
+## <a name="step-2-listing-all-user-accounts-in-a-gridview"></a>步驟2：列出 GridView 中的所有使用者帳戶
 
-我們在本教學課程的最終目標是要建立分頁、 可篩選格線，讓系統管理員可以選取要管理的使用者帳戶。 讓我們先列出*所有*GridView 中的使用者。 這項操作完成，我們將加入的篩選和分頁介面和功能。
+本教學課程的最終目標是要建立一個分頁的可篩選方格，讓系統管理員可以從中選取要管理的使用者帳戶。 讓我們從列出 GridView 中的*所有*使用者開始。 完成後，我們會新增篩選和分頁介面和功能。
 
-開啟`ManageUsers.aspx`頁面中`Administration`資料夾，並新增一個 GridView，設定其`ID`至`UserAccounts`。 等一下，我們會撰寫程式碼，以使用繫結的使用者帳戶集至 GridView`Membership`類別的`GetAllUsers`方法。 先前的教學課程所述，GetAllUsers 方法會傳回`MembershipUserCollection`物件，它是集合的`MembershipUser`物件。 每個`MembershipUser`集合中包含的屬性，例如`UserName`， `Email`， `IsApproved`，依此類推。
+開啟 [`Administration`] 資料夾中的 [`ManageUsers.aspx`] 頁面，並加入 GridView，將其 `ID` 設定為 [`UserAccounts`]。 我們稍後會撰寫程式碼，使用 `Membership` 類別的 `GetAllUsers` 方法，將使用者帳戶集合系結至 GridView。 如先前的教學課程中所述，GetAllUsers 方法會傳回 `MembershipUserCollection` 物件，這是 `MembershipUser` 物件的集合。 集合中的每個 `MembershipUser` 都包含如 `UserName`、`Email`、`IsApproved`等屬性。
 
-若要在 GridView 中顯示的所需的使用者帳戶資訊，請設定 GridView 的`AutoGenerateColumns`屬性設定為 False，並新增為 BoundFields `UserName`， `Email`，和`Comment`屬性和 CheckBoxFields 的`IsApproved`，`IsLockedOut`，和`IsOnline`屬性。 透過控制項的宣告式標記，或透過 [欄位] 對話方塊中，可以套用此設定。 圖 3 顯示的螢幕擷取畫面的欄位 對話方塊中自動產生欄位核取方塊已取消選取，並 BoundFields 和 CheckBoxFields 加入並設定之後。
+若要在 GridView 中顯示所需的使用者帳戶資訊，請將 GridView 的 `AutoGenerateColumns` 屬性設定為 False，並針對 `IsApproved`、`IsLockedOut`和 `IsOnline` 屬性的 `UserName`、`Email`和 `Comment` 屬性和 CheckBoxFields 加入 BoundFields。 此設定可透過控制項的宣告式標記或 [欄位] 對話方塊來套用。 [圖 3] 顯示 [自動產生欄位] 核取方塊已取消選取，且已新增並設定 BoundFields 和 CheckBoxFields 之後，[欄位] 對話方塊的螢幕擷取畫面。
 
-[![將三個 BoundFields 及三個 CheckBoxFields 新增到 GridView](building-an-interface-to-select-one-user-account-from-many-cs/_static/image8.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image7.png)
+[![在 GridView 中新增三個 BoundFields 和三個 CheckBoxFields](building-an-interface-to-select-one-user-account-from-many-cs/_static/image8.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image7.png)
 
-**圖 3**:將三個 BoundFields 和三個 CheckBoxFields 新增至 GridView ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image9.png))
+**圖 3**：將三個 BoundFields 和三個 CheckBoxFields 加入 GridView （[按一下以查看完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image9.png)）
 
-設定您的 GridView 之後, 請確定其宣告式標記如下所示：
+設定 GridView 之後，請確定其宣告式標記類似如下：
 
 [!code-aspx[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample4.aspx)]
 
-接下來，我們需要撰寫程式碼，將使用者帳戶繫結至 GridView。 建立名為的方法`BindUserAccounts`若要執行這項工作，然後呼叫從`Page_Load`上第一個頁面瀏覽事件處理常式。
+接下來，我們需要撰寫程式碼，將使用者帳戶系結至 GridView。 建立名為 `BindUserAccounts` 的方法來執行這項工作，然後從第一頁上的 `Page_Load` 事件處理常式中呼叫它，造訪。
 
 [!code-csharp[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample5.cs)]
 
-請花一點時間測試透過瀏覽器頁面。 如 [圖 4] 所示， `UserAccounts` GridView 列出系統中的使用者名稱、 電子郵件地址及其他相關的帳戶資訊的所有使用者。
+請花點時間透過瀏覽器來測試頁面。 如 [圖 4] 所示，`UserAccounts` GridView 會列出系統中所有使用者的使用者名稱、電子郵件地址和其他相關的帳戶資訊。
 
-[![在 gridview 裡所列出的使用者帳戶](building-an-interface-to-select-one-user-account-from-many-cs/_static/image11.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image10.png)
+[![使用者帳戶會列在 GridView 中](building-an-interface-to-select-one-user-account-from-many-cs/_static/image11.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image10.png)
 
-**圖 4**:在 gridview 裡所列出的使用者帳戶 ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image12.png))
+**圖 4**：使用者帳戶會列在 GridView 中（[按一下以查看完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image12.png)）
 
-## <a name="step-3-filtering-the-results-by-the-first-letter-of-the-username"></a>步驟 3：篩選結果的第一個字母的使用者名稱
+## <a name="step-3-filtering-the-results-by-the-first-letter-of-the-username"></a>步驟3：依使用者名稱的第一個字母篩選結果
 
-目前`UserAccounts`GridView 會顯示*所有*的使用者帳戶。 使用數百或數千個使用者帳戶的網站，因此務必該使用者就能夠快速地削減顯示的帳戶。 這可透過新增至頁面篩選 Linkbutton。 讓我們新增至頁面的 27 Linkbutton： 其中一個標題為 所有以及一個 LinkButton 的每個字母的字母。 如果訪客按一下所有 LinkButton，GridView 會顯示所有使用者。 如果使用者按一下特定的字母，只在其使用者名稱開頭為所選字母的使用者將會顯示。
+`UserAccounts` GridView 目前會顯示*所有*的使用者帳戶。 針對具有數百或數千個使用者帳戶的網站，使用者必須能夠快速地向下削減所顯示的帳戶。 這可以藉由將篩選 LinkButtons 新增至頁面來完成。 讓我們將 27 LinkButtons 新增至頁面：一個標題為 All，而每個字母都有一個 LinkButton。 如果造訪者按一下 [所有 LinkButton]，GridView 就會顯示所有使用者。 如果他們按一下特定的字母，則只會顯示使用者名稱開頭為所選字母的使用者。
 
-第一個工作是新增 27 LinkButton 控制項。 其中一個選項是以宣告方式建立的 27 Linkbutton 一次。 更有彈性的方法是使用與重複項控制項`ItemTemplate`呈現 LinkButton，然後繫結至做為重複項的篩選選項`string`陣列。
+我們的第一項工作是新增27個 LinkButton 控制項。 其中一個選項是以宣告的方式建立 27 LinkButtons，一次一個。 更有彈性的方法是使用具有轉譯 LinkButton 之 `ItemTemplate` 的重複項控制項，然後將篩選選項系結至中繼器，做為 `string` 陣列。
 
-藉由將頁面上方的重複項控制項開始`UserAccounts`GridView。 設定中繼器`ID`屬性設`FilteringUI`。 設定中繼器的範本，讓其`ItemTemplate`呈現 LinkButton 其`Text`和`CommandName`屬性繫結至目前的陣列項目。 如我們在中所見<a id="_msoanchor_3"> </a> [*將角色指派給使用者*](../roles/assigning-roles-to-users-cs.md)教學課程，即可使用`Container.DataItem`資料繫結語法。 使用 Repeater`SeparatorTemplate`來顯示每個連結之間的垂直線條。
+首先，將 [中繼器] 控制項新增至 `UserAccounts` GridView 上方的頁面。 將中繼器的 `ID` 屬性設定為 [`FilteringUI`]。 設定中繼器的範本，使其 `ItemTemplate` 呈現 `Text` 和 `CommandName` 屬性系結至目前陣列元素的 LinkButton。 如我們在將<a id="_msoanchor_3"> </a>[*角色指派給使用者*](../roles/assigning-roles-to-users-cs.md)教學課程中所見，您可以使用 `Container.DataItem` 資料系結語法來完成這項作業。 使用中繼器的 `SeparatorTemplate` 在每個連結之間顯示一條垂直線。
 
 [!code-aspx[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample6.aspx)]
 
-若要填入這個 Repeater 具有所需的篩選選項，建立名為`BindFilteringUI`。 請務必呼叫這個方法從`Page_Load`上第一次頁面載入事件處理常式。
+若要使用所需的篩選選項填入此中繼器，請建立名為 `BindFilteringUI`的方法。 請務必在第一次載入頁面時，從 `Page_Load` 事件處理常式中呼叫這個方法。
 
 [!code-csharp[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample7.cs)]
 
-這個方法會做為項目中指定的篩選選項`string`陣列`filterOptions`。 陣列中每個項目，如 Repeater 會呈現 LinkButton 及其`Text`和`CommandName`屬性指派給陣列元素的值。
+這個方法會將篩選選項指定為 `string` 陣列 `filterOptions`中的元素。 針對陣列中的每個元素，中繼器會轉譯 `Text` LinkButton，並將 `CommandName` 屬性指派給陣列元素的值。
 
-[圖 5] 顯示`ManageUsers.aspx`頁面上透過瀏覽器檢視時。
+[圖 5] 顯示透過瀏覽器觀看時的 `ManageUsers.aspx` 頁面。
 
-[![中繼器列出 27 篩選 Linkbutton](building-an-interface-to-select-one-user-account-from-many-cs/_static/image14.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image13.png)
+[![中繼器清單27篩選 LinkButtons](building-an-interface-to-select-one-user-account-from-many-cs/_static/image14.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image13.png)
 
-**圖 5**:Repeater 列出 27 篩選 Linkbutton ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image15.png))
+**圖 5**：重複項清單27篩選 LinkButtons （[按一下以查看完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image15.png)）
 
 > [!NOTE]
-> 使用者名稱可能會開始任何字元，包括數字和標點符號。 若要檢視這些帳戶，系統管理員必須使用所有的 LinkButton 選項。 或者，您可以新增 LinkButton 傳回開頭為數字的所有使用者帳戶。 我不要更動此練習的讀取器。
+> 使用者名稱的開頭可能是任何字元，包括數位和標點符號。 若要查看這些帳戶，系統管理員必須使用 [All LinkButton] 選項。 或者，您可以新增 LinkButton，以傳回以數位開頭的所有使用者帳戶。 我將此做為讀者的練習。
 
-按一下任何篩選的 Linkbutton 造成回傳，並引發 Repeater`ItemCommand`事件，但不會在方格中的任何變更，因為我們至今還撰寫任何程式碼，以篩選結果。 `Membership`類別包含[`FindUsersByName`方法](https://technet.microsoft.com/library/system.web.security.membership.findusersbyname.aspx)傳回其使用者名稱符合指定的搜尋模式的使用者帳戶。 我們可以使用這個方法來擷取其使用者名稱以字母開頭的所指定的使用者帳戶`CommandName`的已篩選的 LinkButton 已按下。
+按一下任何篩選 LinkButtons 會導致回傳並引發重複項的 `ItemCommand` 事件，但方格中不會有任何變更，因為我們尚未撰寫任何程式碼來篩選結果。 `Membership` 類別所包含的[`FindUsersByName` 方法](https://technet.microsoft.com/library/system.web.security.membership.findusersbyname.aspx)，會傳回使用者名稱符合指定搜尋模式的使用者帳戶。 我們可以使用這個方法，只取出使用者帳戶，其使用者名稱是以所按下篩選 LinkButton 的 `CommandName` 所指定的字母為開頭。
 
-藉由更新開始`ManageUser.aspx`頁面的程式碼後置類別，使它包含一個名為屬性`UsernameToMatch`。 這個屬性會在回傳之間保存使用者名稱篩選條件字串：
+一開始請先更新 `ManageUser.aspx` 頁面的程式碼後置類別，使其包含名為 `UsernameToMatch`的屬性。 這個屬性會在回傳期間保存使用者名稱篩選字串：
 
 [!code-csharp[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample8.cs)]
 
-`UsernameToMatch`屬性會儲存它的值指派到`ViewState`使用 UsernameToMatch 的索引鍵的集合。 讀取這個屬性的值時，它會檢查值是否存在於`ViewState`集合; 如果沒有，它會傳回預設值為空字串。 `UsernameToMatch`屬性表現出常見的模式，也就保存到檢視狀態，讓屬性的任何變更會在回傳之間保存的值。 如需有關此模式的詳細資訊，請參閱[了解 ASP.NET 檢視狀態](https://msdn.microsoft.com/library/ms972976.aspx)。
+`UsernameToMatch` 屬性會使用索引鍵 UsernameToMatch，將它指派給 `ViewState` 集合的值儲存。 當讀取這個屬性的值時，它會檢查 `ViewState` 集合中是否存在值;如果不是，則會傳回預設值，也就是空字串。 `UsernameToMatch` 屬性展現一般模式，也就是保存值來查看狀態，以便對屬性進行任何變更都會保存在回傳之間。 如需此模式的詳細資訊，請參閱[瞭解 ASP.NET View State](https://msdn.microsoft.com/library/ms972976.aspx)。
 
-接下來，更新`BindUserAccounts`方法的呼叫，因此`Membership.GetAllUsers`，它會呼叫`Membership.FindUsersByName`，並傳入的值`UsernameToMatch`屬性加上 SQL 萬用字元 %。
+接下來，請更新 `BindUserAccounts` 方法，如此一來，就不會呼叫 `Membership.GetAllUsers`，而是會呼叫 `Membership.FindUsersByName`，傳入以 SQL 萬用字元字元（%）附加的 `UsernameToMatch` 屬性值。
 
 [!code-csharp[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample9.cs)]
 
-若要顯示其使用者名稱開頭為字母 A 的使用者，請設定`UsernameToMatch`的屬性，然後呼叫`BindUserAccounts`。 這會導致呼叫`Membership.FindUsersByName("A%")`，這會傳回所有使用者的使用者名稱開頭為 a。 同樣地，傳回*所有*使用者、 指派至空字串`UsernameToMatch`屬性，讓`BindUserAccounts`方法將叫用`Membership.FindUsersByName("%")`，以便傳回所有的使用者帳戶。
+若只要顯示使用者名稱的開頭是字母 A，請將 `UsernameToMatch` 屬性設定為，然後再呼叫 `BindUserAccounts`。 這會導致呼叫 `Membership.FindUsersByName("A%")`，這會傳回其使用者名稱開頭為的所有使用者。同樣地，若要傳回*所有*使用者，請將空字串指派給 `UsernameToMatch` 屬性，如此一來，`BindUserAccounts` 方法就會叫用 `Membership.FindUsersByName("%")`，藉此傳回所有使用者帳戶。
 
-建立事件處理常式，如 Repeater`ItemCommand`事件。 只要按一下其中一個篩選條件 Linkbutton; 時，會引發這個事件它會傳遞按一下的 LinkButton`CommandName`透過值`RepeaterCommandEventArgs`物件。 我們需要指派適當的值，來`UsernameToMatch`屬性，然後呼叫`BindUserAccounts`方法。 如果`CommandName`為 All，將空字串，以指派`UsernameToMatch`以便顯示所有使用者帳戶。 否則，請指派`CommandName`值`UsernameToMatch`。
+為中繼器的 `ItemCommand` 事件建立事件處理常式。 每當按一下其中一個篩選 LinkButtons 時，就會引發這個事件。系統會透過 `RepeaterCommandEventArgs` 物件，將按一下的 LinkButton `CommandName` 值傳遞給它。 我們需要將適當的值指派給 `UsernameToMatch` 屬性，然後呼叫 `BindUserAccounts` 方法。 如果 `CommandName` 是 All，請將空字串指派給 `UsernameToMatch`，以便顯示所有使用者帳戶。 否則，請將 `CommandName` 值指派給 `UsernameToMatch`。
 
 [!code-csharp[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample10.cs)]
 
-使用此程式碼就緒之後，測試篩選的功能。 當第一次瀏覽頁面時，會顯示所有使用者帳戶 （請參閱上一步 圖 5）。 按一下 LinkButton 造成回傳，並篩選結果，顯示開頭為 A 的使用者帳戶。
+在此程式碼準備就緒後，請測試篩選功能。 第一次造訪網頁時，會顯示所有使用者帳戶（請參閱 [圖 5]）。 按一下 LinkButton 會導致回傳並篩選結果，只顯示以為開頭的使用者帳戶。
 
-[![若要顯示這些使用者以特定的字母為開頭的使用者名稱使用的篩選 Linkbutton](building-an-interface-to-select-one-user-account-from-many-cs/_static/image17.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image16.png)
+[![使用 [篩選] LinkButtons，顯示使用者名稱以特定字母開頭](building-an-interface-to-select-one-user-account-from-many-cs/_static/image17.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image16.png)
 
-**圖 6**:使用篩選的 Linkbutton 顯示這些使用者的使用者名稱開頭為特定字元 ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image18.png))
+**圖 6**：使用 [篩選] LinkButtons 來顯示使用者名稱以特定字母開頭的使用者（[按一下以查看完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image18.png)）
 
-## <a name="step-4-updating-the-gridview-to-use-paging"></a>步驟 4：更新使用分頁 GridView
+## <a name="step-4-updating-the-gridview-to-use-paging"></a>步驟4：更新 GridView 以使用分頁
 
-圖 5 和 6 所示的 GridView 會列出所有傳回的記錄`FindUsersByName`方法。 如果有數百或數千個使用者帳戶這可能會導致資訊多載 （在此情況下或一開始瀏覽頁面時按一下 所有 LinkButton） 檢視所有的帳戶時。 為了更容易管理的區塊 （chunk） 中出現的使用者帳戶，讓我們設定 GridView，以一次顯示 10 個使用者帳戶。
+[圖 5] 和 [6] 所示的 GridView 會列出從 `FindUsersByName` 方法傳回的所有記錄。 如果有數百或數千個使用者帳戶，則在查看所有帳戶時，這可能會導致資訊多載（就像是在按一下 [所有 LinkButton] 時，或一開始造訪頁面時的情況）。 為了協助以更容易管理的區塊呈現使用者帳戶，讓我們將 GridView 設定為一次顯示10個使用者帳戶。
 
 GridView 控制項提供兩種類型的分頁：
 
-- **預設的分頁**-容易實作，但效率不佳。 簡單的說，分頁 GridView 的預設值會預期*所有*與其資料來源的記錄。 接著只會顯示適當的頁面的記錄。
-- **自訂分頁**-需要更多工作來實作，但會更有效率，比預設分頁，因為使用自訂分頁的資料來源會傳回精確集顯示的資料錄。
+- **預設分頁**-容易執行，但效率不佳。 簡言之，使用預設分頁時，GridView 會預期其資料來源中的*所有*記錄。 然後，它只會顯示適當的記錄頁面。
+- **自訂分頁**-需要執行更多工作，但比預設分頁更有效率，因為使用自訂分頁時，資料來源只會傳回要顯示的精確記錄集。
 
-逐頁查看數千筆記錄時，預設和自訂分頁的效能差異可能很相當長。 因為我們要建置這個介面，但前提那里可能會有數百或數千個使用者帳戶，讓我們使用自訂分頁。
-
-> [!NOTE]
-> 如需預設和自訂的分頁，以及實作自訂分頁挑戰之間的差異的更完整討論，請參閱[有效率地透過大型數量的資料分頁](https://asp.net/learn/data-access/tutorial-25-cs.aspx)。 預設和自訂分頁的效能差異的一些分析，請參閱[在 ASP.NET 中使用 SQL Server 2005 的自訂分頁](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx)。
-
-若要實作自訂分頁，我們首先需要某種機制，用來擷取精確的 GridView 所要顯示的資料錄子集。 好消息是，`Membership`類別的`FindUsersByName`方法具有多載，可讓我們指定的頁面索引和頁面大小，並傳回該範圍的記錄內的使用者帳戶。
-
-特別是，這個多載具有下列簽章： [ `FindUsersByName(usernameToMatch, pageIndex, pageSize, totalRecords)` ](https://msdn.microsoft.com/library/fa5st8b2.aspx)。
-
-*PageIndex*參數會指定要傳回; 的使用者帳戶頁面*pageSize*指出每頁顯示的多少筆記錄。 *TotalRecords*參數是`out`在使用者存放區傳回的總使用者帳戶數目的參數。
+分頁到數千筆記錄時，預設和自訂分頁的效能差異可能相當大。 因為我們會建立此介面，假設可能有數百個或數千個使用者帳戶，讓我們使用自訂分頁。
 
 > [!NOTE]
-> 所傳回的資料`FindUsersByName`會依照使用者名稱; 無法自訂排序條件。
+> 如需有關預設和自訂分頁之間差異的詳細討論，以及與執行自訂分頁有關的挑戰，請參閱[有效率地分頁處理大量資料](https://asp.net/learn/data-access/tutorial-25-cs.aspx)。 如需預設和自訂分頁之間效能差異的分析，請參閱[ASP.NET 中的自訂分頁與 SQL Server 2005](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx)。
 
-若要使用自訂分頁，但只有當繫結到 ObjectDataSource 控制項，可以設定 GridView。 若要實作自訂分頁 ObjectDataSource 控制項，它需要兩個方法： 一個會傳遞開始的資料列索引和資料錄顯示，最大數目，並傳回該範圍內; 內的記錄的精確子集並透過正在呼叫的方法會傳回的資料錄總數。 `FindUsersByName`多載會接受的頁面索引和頁面大小，並傳回透過的記錄總數`out`參數。 因此會有的介面不相符。
+若要執行自訂分頁，我們首先需要一些機制來抓取 GridView 所顯示的確切記錄子集。 好消息是，`Membership` 類別的 `FindUsersByName` 方法有一個多載，可讓我們指定頁面索引和頁面大小，而且只會傳回落在該記錄範圍內的使用者帳戶。
 
-其中一個選項是建立 proxy 類別會公開介面，介面 ObjectDataSource 預期，並在內部呼叫`FindUsersByName`方法。 另一個選項-以及一個我們將使用這篇文章-是建立自己的分頁介面，並使用，而不是 GridView 的內建的分頁介面。
+特別是，此多載具有下列簽章： [`FindUsersByName(usernameToMatch, pageIndex, pageSize, totalRecords)`](https://msdn.microsoft.com/library/fa5st8b2.aspx)。
 
-### <a name="creating-a-first-previous-next-last-paging-interface"></a>建立第一個、 上一個，接下來，最後一個分頁介面
+*PageIndex*參數會指定要傳回的使用者帳戶頁面。*pageSize*指出每頁要顯示的記錄數目。 *TotalRecords*參數是一個 `out` 參數，會傳回使用者存放區中使用者帳戶的總數。
 
-我們將使用第一個、 上一步下, 一步 和最後一個 Linkbutton 建置分頁介面。 第一個 LinkButton 按一下時，會將使用者帶到第一頁的資料，而上一步前一頁會傳回與他連絡。 同樣地下, 一個] 和 [最後一個會將使用者移至下一個和最後一個頁面中，分別。 新增四個 LinkButton 控制項下方`UserAccounts`GridView。
+> [!NOTE]
+> `FindUsersByName` 所傳回的資料會依使用者名稱排序;無法自訂排序準則。
+
+GridView 可以設定為使用自訂分頁，但僅限於系結至 ObjectDataSource 控制項時。 若要讓 ObjectDataSource 控制項執行自訂分頁，它需要兩個方法：一個傳遞開始資料列索引和要顯示的最大記錄數目，然後傳回落在該範圍內的確切記錄子集;和方法，其會傳回已逐頁查看的記錄總數。 `FindUsersByName` 多載會接受頁面索引和頁面大小，並透過 `out` 參數傳回記錄的總數。 這裡有介面不相符的問題。
+
+其中一個選項是建立 proxy 類別，以公開 ObjectDataSource 所預期的介面，然後在內部呼叫 `FindUsersByName` 方法。 另一個選項-我們將在本文中使用的是建立自己的分頁介面，並使用它來取代 GridView 的內建分頁介面。
+
+### <a name="creating-a-first-previous-next-last-paging-interface"></a>建立第一個、上一個、下一個、最後一個分頁介面
+
+讓我們建立一個分頁介面，其中第一個、上一個、下一個和最後一個 LinkButtons。 第一個 LinkButton 按一下時，會將使用者帶到第一頁的資料，而先前的則會將他傳回上一頁。 同樣地，[下一步] 和 [最後] 會分別將使用者移至下一頁和最後一頁。 將四個 LinkButton 控制項新增至 `UserAccounts` GridView 底下。
 
 [!code-aspx[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample11.aspx)]
 
-接下來，建立事件處理常式，針對每個 LinkButton`Click`事件。
+接下來，為每個 LinkButton 的 `Click` 事件建立事件處理常式。
 
-[圖 7] 顯示的四個 Linkbutton 檢視透過 [Visual Web Developer 設計] 檢視時。
+[圖 7] 顯示透過 Visual Web Developer 設計檢視觀看的四個 LinkButtons。
 
-[![接下來，新增第一個、 上一個和最後一個 GridView 下方的 Linkbutton](building-an-interface-to-select-one-user-account-from-many-cs/_static/image20.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image19.png)
+[![在 GridView 底下新增 First、Previous、Next 和 Last LinkButtons](building-an-interface-to-select-one-user-account-from-many-cs/_static/image20.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image19.png)
 
-**[圖 7**:首先，新增上一步下, 一步] 和最後一個 Linkbutton 下方 GridView ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image21.png))
+**圖 7**：在 GridView 底下新增第一個、上一個、下一個和最後一個 LinkButtons （[按一下以觀看完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image21.png)）
 
-### <a name="keeping-track-of-the-current-page-index"></a>追蹤的目前的頁面索引
+### <a name="keeping-track-of-the-current-page-index"></a>追蹤目前的頁面索引
 
-當使用者第一次瀏覽`ManageUsers.aspx`頁面或按下其中一個篩選按鈕，我們想要在 GridView 中顯示資料的第一頁。 不過，當使用者按一下瀏覽 Linkbutton 的其中一個時，我們需要更新的頁面索引。 若要維護的頁面索引和每頁顯示的記錄數目，加入頁面的程式碼後置類別中的下列兩個屬性：
+當使用者第一次造訪 [`ManageUsers.aspx`] 頁面，或按一下其中一個篩選按鈕時，我們想要顯示 GridView 中的第一頁數據。 不過，當使用者按一下其中一個導覽 LinkButtons 時，我們需要更新頁面索引。 若要維護頁面索引和每頁顯示的記錄數目，請將下列兩個屬性新增至頁面的程式碼後置類別：
 
 [!code-csharp[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample12.cs)]
 
-像是`UsernameToMatch`屬性，`PageIndex`屬性保存其檢視狀態的值。 唯讀`PageSize`屬性會傳回硬式編碼的值，而 10。 我邀請來更新此屬性，以使用與相同的模式有興趣的讀者`PageIndex`，然後再擴大`ManageUsers.aspx`頁面上，瀏覽頁面的人員可以指定多少個使用者帳戶來顯示每個頁面上。
+就像 `UsernameToMatch` 屬性一樣，`PageIndex` 屬性會保存其值以查看狀態。 唯讀 `PageSize` 屬性會傳回硬式編碼的值10。 我邀請感興趣的讀者更新此屬性，以使用與 `PageIndex`相同的模式，然後擴大 `ManageUsers.aspx` 頁面，讓流覽頁面的人可以指定每頁顯示的使用者帳戶數目。
 
-### <a name="retrieving-just-the-current-pages-records-updating-the-page-index-and-enabling-and-disabling-the-paging-interface-linkbuttons"></a>擷取目前網頁的記錄為止，更新頁面索引、 啟用和停用分頁介面 Linkbutton
+### <a name="retrieving-just-the-current-pages-records-updating-the-page-index-and-enabling-and-disabling-the-paging-interface-linkbuttons"></a>只取出目前頁面的記錄、更新頁面索引，以及啟用和停用分頁介面 LinkButtons
 
-與就地分頁介面和`PageIndex`並`PageSize`屬性加入，我們已準備好更新`BindUserAccounts`方法，因此它會使用適當`FindUsersByName`多載。 此外，我們需要有這個方法，啟用或停用分頁介面，取決於所顯示頁面。 當您檢視資料的第一頁，就應該停用的第一個和上一步連結;檢視的最後一頁時，應該停用接下來，並持續。
+使用分頁介面並加入 `PageIndex` 和 `PageSize` 屬性之後，我們就可以更新 `BindUserAccounts` 方法，使其使用適當的 `FindUsersByName` 多載。 此外，我們必須根據顯示的頁面，讓此方法啟用或停用分頁介面。 當您在流覽資料的第一頁時，應該停用第一個和前一個連結;在觀看最後一頁時，應該停用 [下一步] 和 [上次]。
 
-以下列程式碼更新 `BindUserAccounts` 方法：
+以下列程式碼取代 `BindUserAccounts` 方法：
 
 [!code-csharp[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample13.cs)]
 
-請注意，透過正在分頁的記錄總數取決於最後一個參數`FindUsersByName`方法。 這是`out`參數，因此我們必須先宣告變數，以保留此值 (`totalRecords`)，然後將它與前置詞`out`關鍵字。
+請注意，逐頁查看的記錄總數取決於 `FindUsersByName` 方法的最後一個參數。 這是 `out` 參數，因此我們必須先宣告變數來保存此值（`totalRecords`），然後在其前面加上 `out` 關鍵字。
 
-傳回指定的頁面的使用者帳戶之後，四個 Linkbutton 啟用或停用，取決於是否在檢視資料的第一個或最後一頁。
+傳回使用者帳戶的指定頁面之後，系統會根據資料的第一個或最後一頁是否正在查看，而啟用或停用四個 LinkButtons。
 
-最後一個步驟是撰寫程式碼的四個 Linkbutton`Click`事件處理常式。 這些事件處理常式需要更新`PageIndex`屬性然後重新繫結至 GridView，透過對呼叫資料`BindUserAccounts`。 [名字]、 [上一個] 和 [下一步] 的事件處理常式是非常簡單。 `Click`事件處理常式的最後一個 LinkButton，不過，是比較複雜一點因為我們必須決定多少筆記錄會顯示以判斷最後一個頁面索引。
+最後一個步驟是為四個 LinkButtons 的「`Click` 事件處理常式撰寫程式碼。 這些事件處理常式必須更新 `PageIndex` 屬性，然後透過呼叫 `BindUserAccounts`將資料重新系結至 GridView。 第一個、上一個和下一個事件處理常式非常簡單。 不過，最後一個 LinkButton 的 `Click` 事件處理常式比較複雜一點，因為我們必須判斷要顯示多少筆記錄，才能判斷最後一頁的索引。
 
 [!code-csharp[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample14.cs)]
 
-圖 8 和 9 顯示作用中的自訂分頁介面。 [圖 8] 顯示`ManageUsers.aspx`頁面檢視所有使用者帳戶資料的第一頁時。 請注意，只有 10 小時，共 13 的帳戶會顯示出來。 按一下下一個或最後一個連結會導致回傳時，更新`PageIndex`成 1，而第二個頁面的使用者帳戶方格繫結 （請參閱 圖 9）。
+圖8和9顯示自訂分頁介面的實際運作方式。 [圖 8] 顯示為所有使用者帳戶流覽資料的第一頁時的 `ManageUsers.aspx` 頁面。 請注意，只會顯示13個帳戶中的10個。 按一下 [下一步] 或 [最後一個] 連結會導致回傳、將 `PageIndex` 更新為1，並將使用者帳戶的第二頁系結至方格（請參閱 [圖 9]）。
 
-[![會顯示第一個 10 使用者帳戶](building-an-interface-to-select-one-user-account-from-many-cs/_static/image23.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image22.png)
+[顯示前10個使用者帳戶 ![](building-an-interface-to-select-one-user-account-from-many-cs/_static/image23.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image22.png)
 
-**圖 8**:會顯示第一個 10 使用者帳戶 ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image24.png))
+**圖 8**：顯示前10名使用者帳戶（[按一下以觀看完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image24.png)）
 
 [![按一下 [下一步] 連結會顯示使用者帳戶的第二頁](building-an-interface-to-select-one-user-account-from-many-cs/_static/image26.png)](building-an-interface-to-select-one-user-account-from-many-cs/_static/image25.png)
 
-**圖 9**:按一下 [下一步] 連結會顯示第二個頁面的使用者帳戶 ([按一下以檢視完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image27.png))
+**圖 9**：按一下 [下一步] 連結會顯示使用者帳戶的第二頁（[按一下以查看完整大小的影像](building-an-interface-to-select-one-user-account-from-many-cs/_static/image27.png)）
 
 ## <a name="summary"></a>總結
 
-若要從帳戶清單中選取使用者通常需要系統管理員。 在先前的教學課程中我們探討使用下拉式清單，填入使用者，但這種方法無法妥善調整。 在本教學課程中，我們探討更好的替代方案： 可篩選介面，其結果會顯示在分頁的 GridView。 此使用者介面後，系統管理員可以快速且有效地找出並選取一個千分位之間的使用者帳戶。
+系統管理員通常需要從帳戶清單中選取使用者。 在先前的教學課程中，我們探討了如何使用已填入使用者的下拉式清單，但此方法無法妥善調整。 在本教學課程中，我們探討了更好的替代方式：其結果會顯示在分頁 GridView 中的可篩選介面。 系統管理員可以使用此使用者介面，快速且有效率地找出並選取其中的一個使用者帳戶。
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ### <a name="further-reading"></a>進一步閱讀
 
-如需有關在本教學課程所討論的主題的詳細資訊，請參閱下列資源：
+如需本教學課程中所討論之主題的詳細資訊，請參閱下列資源：
 
 - [在 ASP.NET 中使用 SQL Server 2005 的自訂分頁](http://aspnet.4guysfromrolla.com/articles/031506-1.aspx)
-- [有效率地分頁大量資料](https://asp.net/learn/data-access/tutorial-25-cs.aspx)
-- [復原您自己的網站管理工具](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
+- [有效率地分頁處理大量資料](https://asp.net/learn/data-access/tutorial-25-cs.aspx)
+- [推出您自己的網站管理工具](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
 
 ### <a name="about-the-author"></a>關於作者
 
-Scott Mitchell，多個 ASP 書籍的作者，他是 4GuysFromRolla.com 的創辦人，從事 Microsoft Web 技術工作自 1998 年。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是 *[Sams 教導您自己 ASP.NET 2.0 在 24 小時內](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 Scott 要聯絡[ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或透過他的部落格[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+Scott Mitchell，自1998起，有多個 ASP/ASP. NET 書籍和創辦人的4GuysFromRolla.com。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是 *[在24小時內讓自己的 ASP.NET 2.0](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 。 Scott 可以在[mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com)或透過他在[http://ScottOnWriting.NET](http://scottonwriting.net/)的 blog。
 
 ### <a name="special-thanks-to"></a>特別感謝
 
-本教學課程系列是由許多實用的檢閱者檢閱。 本教學課程中的潛在客戶檢閱者已 Alicja Maziarz。 有興趣檢閱我即將推出的 MSDN 文章嗎？ 如果是這樣，psychic 在 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Alicja Maziarz。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)下拉一行
 
 > [!div class="step-by-step"]
 > [下一步](recovering-and-changing-passwords-cs.md)

@@ -1,56 +1,56 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-vb
-title: 繪製 UpdatePanel 控制項 (VB) 的動畫 |Microsoft Docs
+title: 製作 UpdatePanel 控制項的動畫（VB） |Microsoft Docs
 author: wenz
-description: 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 內容...
+description: ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。 適用于 ... 的內容
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 4c306a2c-92b6-4904-b70b-365b847334fe
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b44dfd284ac1ed94e92bd52f4ca426a36bf86825
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: d66dda923940a328c0757049c9d8bfa3b2d2b9fc
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130752"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74607095"
 ---
 # <a name="animating-an-updatepanel-control-vb"></a>繪製 UpdatePanel 控制項的動畫 (VB)
 
-藉由[Christian Wenz](https://github.com/wenz)
+依[Christian Wenz](https://github.com/wenz)
 
-[下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/UpdatePanelAnimation1.vb.zip)或[下載 PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/updatepanelanimation1VB.pdf)
+[下載程式代碼](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/UpdatePanelAnimation1.vb.zip)或[下載 PDF](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/updatepanelanimation1VB.pdf)
 
-> 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 UpdatePanel 的內容，特殊的擴充項會存在，依賴動畫架構：UpdatePanelAnimation。 本教學課程會示範如何設定這類動畫的 UpdatePanel。
+> ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。 對於 UpdatePanel 的內容，有一個特殊的擴充項會高度依賴動畫架構： UpdatePanelAnimation。 本教學課程說明如何設定 UpdatePanel 的這類動畫。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 內容`UpdatePanel`，特殊的擴充性已存在，而且依賴動畫架構： `UpdatePanelAnimation`。 本教學課程示範如何設定這類的動畫`UpdatePanel`。
+ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。 針對 `UpdatePanel`的內容，有一個特殊的擴充項會高度依賴動畫架構： `UpdatePanelAnimation`。 本教學課程說明如何設定 `UpdatePanel`的動畫。
 
 ## <a name="steps"></a>步驟
 
-如往常般的第一個步驟是加入`ScriptManager`頁面中，讓 ASP.NET AJAX 程式庫已載入，並控制工具組可以用於：
+第一個步驟通常是在頁面中包含 `ScriptManager`，以便載入 ASP.NET AJAX 程式庫，並使用控制項工具組：
 
 [!code-aspx[Main](animating-an-updatepanel-control-vb/samples/sample1.aspx)]
 
-在此案例中的動畫將會套用到 ASP.NET`Wizard`中的 web 控制項`UpdatePanel`。 （任意） 的三個步驟會提供足夠的選項，以觸發回傳：
+此案例中的動畫將會套用至位於 `UpdatePanel`的 ASP.NET `Wizard` web 控制項。 三個（任意）步驟提供足夠的選項來觸發回傳：
 
 [!code-aspx[Main](animating-an-updatepanel-control-vb/samples/sample2.aspx)]
 
-所需的標記`UpdatePanelAnimationExtender`控制項是用來標記十分類似`AnimationExtender`。 在 `TargetControlID`我們提供的屬性`ID`的`UpdatePanel`以動畫顯示; 內`UpdatePanelAnimationExtender`控制項，`<Animations>`項目會保存 animation(s) 的 XML 標記。 不過是其中一項差異：事件和事件處理常式的數量僅限於在相`AnimationExtender`。 針對`UpdatePanels`只有兩個，其中存在：
+`UpdatePanelAnimationExtender` 控制項所需的標記與用於 `AnimationExtender`的標記非常類似。 在 [`TargetControlID`] 屬性中，我們提供 `UpdatePanel` 的 `ID` 以建立動畫;在 `UpdatePanelAnimationExtender` 控制項內，`<Animations>` 元素會保存動畫的 XML 標記。 不過，有一項差異：事件和事件處理常式的數量會與 `AnimationExtender`相較之下受到限制。 針對 `UpdatePanels`，其中只有兩個存在：
 
-- `<OnUpdated>` 當已更新 UpdatePanel
-- `<OnUpdating>` 開始更新 UpdatePanel
+- 當 UpdatePanel 已更新時 `<OnUpdated>`
+- 當 UpdatePanel 開始更新時 `<OnUpdating>`
 
-在此案例中，新的內容`UpdatePanel`（之後回傳） 應該會淡入。 這是必要的標記：
+在此案例中，`UpdatePanel` 的新內容（在回傳之後）應會淡入。 這是所需的標記：
 
 [!code-aspx[Main](animating-an-updatepanel-control-vb/samples/sample3.aspx)]
 
-現在每次回傳發生時在 UpdatePanel 中，新的內容面板的淡入順暢。
+現在，每當 UpdatePanel 中出現回傳時，面板的新內容就會順暢地淡入。
 
-[![下一個步驟中，精靈會淡入](animating-an-updatepanel-control-vb/_static/image2.png)](animating-an-updatepanel-control-vb/_static/image1.png)
+[![下一個 wizard 步驟會淡入](animating-an-updatepanel-control-vb/_static/image2.png)](animating-an-updatepanel-control-vb/_static/image1.png)
 
-下一個步驟中，精靈會淡入 ([按一下以檢視完整大小的影像](animating-an-updatepanel-control-vb/_static/image3.png))
+下一個 wizard 步驟已淡入（[按一下以觀看完整大小的影像](animating-an-updatepanel-control-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
 > [上一頁](changing-an-animation-using-client-side-code-vb.md)

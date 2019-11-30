@@ -8,12 +8,12 @@ ms.date: 03/14/2013
 ms.assetid: aadc5fa4-8215-4fc7-afd5-bcd2ef879728
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 6fcfcda5b95e5844f7d357ac0cbb6d1fd2e215ac
-ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
+ms.openlocfilehash: fb7e76101cbe6a874ddf5b3429ca2dc6d474334b
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445769"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74595766"
 ---
 # <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>ASP.NET MVC 和 ASP.NET Web Pages 中的 XSRF/CSRF 防護
 
@@ -128,7 +128,7 @@ XSRF 要求驗證*會話權杖*會儲存為 HTTP cookie，而且目前在其承�
 
 許多使用以宣告為基礎的驗證的部署，特別是使用[Azure 存取控制服務](https://msdn.microsoft.com/library/windowsazure/gg429786.aspx)（ACS）。 ACS 可讓開發人員設定個別身分*識別提供者*（例如 ADFS、Microsoft 帳戶提供者、OpenID 提供者，例如 yahoo！等），而身分識別提供者會傳回*名稱識別碼*。 這些名稱識別碼可能包含個人識別資訊（PII）（例如電子郵件地址），或者可以像私人個人識別碼（PPID）一樣匿名。 無論是什麼，在流覽網站時，元組（識別提供者、名稱識別碼）可充分做為特定使用者的適當追蹤權杖，因此在產生和時，ASP.NET Web Stack 執行時間可以使用元組來取代使用者名稱正在驗證反 XSRF 欄位標記。 識別提供者的特定 Uri 和名稱識別碼如下：
 
-- `http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider`
+- `https://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider`
 - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier`
 
 （如需詳細資訊，請參閱此[ACS 檔頁面](https://msdn.microsoft.com/library/windowsazure/gg185971.aspx)）。

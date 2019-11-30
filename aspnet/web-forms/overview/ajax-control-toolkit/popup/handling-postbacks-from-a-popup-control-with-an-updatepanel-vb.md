@@ -1,59 +1,59 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-vb
-title: 處理有 Updatepanel (VB) 的快顯視窗控制項回傳 |Microsoft Docs
+title: 使用 UpdatePanel 處理快顯視窗控制項的回傳（VB） |Microsoft Docs
 author: wenz
-description: PopupControl 擴充項在 AJAX Control Toolkit 提供簡單的方式，來啟動任何其他控制項時，觸發快顯視窗。 特別注意有進行中...
+description: AJAX 控制項工具組中的 PopupControl 擴充項提供了一種簡單的方式，可在啟用任何其他控制項時觸發快顯。 必須特別小心 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: ec9db57c-9f68-402a-bf4c-0d63d5f6908e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7f7d35035e70c04a1a14213e79bb140c5476bf60
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: dd045ae56696c7944df98cf805ba812fde1bb4ff
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115276"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74598792"
 ---
 # <a name="handling-postbacks-from-a-popup-control-with-an-updatepanel-vb"></a>處理有 UpdatePanel 的快顯視窗控制項回傳 (VB)
 
-藉由[Christian Wenz](https://github.com/wenz)
+依[Christian Wenz](https://github.com/wenz)
 
-[下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl2.vb.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol2VB.pdf)
+[下載程式代碼](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl2.vb.zip)或[下載 PDF](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol2VB.pdf)
 
-> PopupControl 擴充項在 AJAX Control Toolkit 提供簡單的方式，來啟動任何其他控制項時，觸發快顯視窗。 特別注意有進行這類快顯視窗內回傳時發生。
+> AJAX 控制項工具組中的 PopupControl 擴充項提供了一種簡單的方式，可在啟用任何其他控制項時觸發快顯。 當回傳發生在這類快顯視窗內時，必須特別小心。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-PopupControl 擴充項在 AJAX Control Toolkit 提供簡單的方式，來啟動任何其他控制項時，觸發快顯視窗。 特別注意有進行這類快顯視窗內回傳時發生。
+AJAX 控制項工具組中的 PopupControl 擴充項提供了一種簡單的方式，可在啟用任何其他控制項時觸發快顯。 當回傳發生在這類快顯視窗內時，必須特別小心。
 
 ## <a name="steps"></a>步驟
 
-使用時`PopupControl`回傳時，使用`UpdatePanel`導致回傳所造成的重新整理頁面。 下列標記會定義幾個重要的項目：
+當使用 `PopupControl` 與回傳時，`UpdatePanel` 可以防止回傳所造成的頁面重新整理。 下列標記會定義幾個重要的元素：
 
-- A`ScriptManager`控制項，讓 ASP.NET AJAX Control Toolkit 的運作方式
-- 兩個`TextBox`控制項，其會同時觸發快顯視窗
-- A`Panel`將做為快顯視窗的控制項
-- 在面板中，`Calendar`控制項內嵌在`UpdatePanel`控制項
-- 兩個`PopupControlExtender`將面板指派的文字方塊內的控制項
+- `ScriptManager` 控制項，讓 ASP.NET AJAX 控制項工具組可以運作
+- 兩個 `TextBox` 控制項都會觸發快顯視窗
+- 將作為快顯的 `Panel` 控制項
+- 在面板中，`Calendar` 控制項內嵌在 `UpdatePanel` 控制項內
+- 兩個 `PopupControlExtender` 控制項，可將面板指派給文字方塊
 
 [!code-aspx[Main](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb/samples/sample1.aspx)]
 
-請注意，`OnSelectionChanged`屬性的`Calendar`控制項設定。 因此當使用者選取內行事曆的日期，就會發生回傳和伺服器端方法`c1_SelectionChanged()`執行。 在該方法中，目前的日期必須擷取和回寫至文字方塊。
+請注意，已設定 `Calendar` 控制項的 `OnSelectionChanged` 屬性。 因此當使用者選取行事曆內的日期時，就會發生回傳，而且會執行伺服器端方法 `c1_SelectionChanged()`。 在該方法中，必須取出目前的日期，並將其寫回文字方塊。
 
-語法，如下所示：首先，proxy 物件`PopupControlExtender`必須產生頁面上。 ASP.NET AJAX Control Toolkit 提供`GetProxyForCurrentPopup()`方法。 這個方法會傳回的物件支援`Commit()`方法可將值傳送回控制項觸發快顯視窗 （不是控制項觸發方法呼叫 ！）。 下列程式碼提供做為引數所選的日期`Commit()`方法，導致文字方塊中回寫所選的日期的程式碼：
+的語法如下：首先，必須在頁面上產生 `PopupControlExtender` 的 proxy 物件。 ASP.NET AJAX Control 工具組提供 `GetProxyForCurrentPopup()` 方法。 這個方法傳回的物件支援 `Commit()` 方法，其會將值傳回給觸發快顯視窗的控制項（而不是觸發方法呼叫的控制項！）。 下列程式碼會提供選取的日期做為 `Commit()` 方法的引數，使程式碼將選取的日期寫回文字方塊：
 
 [!code-aspx[Main](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb/samples/sample2.aspx)]
 
-現在每當您在行事曆日期，按一下選取的日期會出現在相關聯的文字 方塊中，建立日期選擇器控制項目前可在許多網站上。
+現在當您按一下行事曆日期時，所選取的日期會出現在相關聯的文字方塊中，建立目前可在許多網站上找到的日期選擇器控制項。
 
-[![當使用者按一下文字方塊，即出現日曆](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb/_static/image2.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb/_static/image1.png)
+[當使用者按一下文字方塊時，就會顯示行事曆 ![](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb/_static/image2.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb/_static/image1.png)
 
-當使用者按一下文字方塊，即出現日曆 ([按一下以檢視完整大小的影像](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb/_static/image3.png))
+當使用者按一下文字方塊時，就會出現行事曆（[按一下以查看完整大小的影像](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb/_static/image3.png)）
 
-[![按一下某個日期將它放在文字方塊中](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb/_static/image5.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb/_static/image4.png)
+[![按一下日期會將它放在文字方塊中](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb/_static/image5.png)](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb/_static/image4.png)
 
-按一下某個日期將它放在文字方塊中 ([按一下以檢視完整大小的影像](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb/_static/image6.png))
+按一下日期會將它放在文字方塊中（[按一下以查看完整大小的影像](handling-postbacks-from-a-popup-control-with-an-updatepanel-vb/_static/image6.png)）
 
 > [!div class="step-by-step"]
 > [上一頁](using-multiple-popup-controls-vb.md)

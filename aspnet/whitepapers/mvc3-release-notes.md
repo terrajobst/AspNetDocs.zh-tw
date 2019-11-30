@@ -8,12 +8,12 @@ ms.date: 10/06/2010
 ms.assetid: f44c166e-7e91-48a0-a6f8-d9285f3594e5
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: 46d051a5eba6501cf36910b7674ce6400597de8a
-ms.sourcegitcommit: 295cf898a4c87e264b0c35c7254b0fa4169f2278
+ms.openlocfilehash: 504202068f5db4f8614bba02e8066ffecfd15b48
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74057022"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74619244"
 ---
 # <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 
@@ -91,7 +91,7 @@ ms.locfileid: "74057022"
 - [免責聲明](#0.1__Toc274034231)
 
 <a id="overview"></a>
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 本檔說明適用于 Visual Studio 2010 的 ASP.NET MVC 3 RTM 版本。 ASP.NET MVC 是一種架構，可用於開發使用模型視圖控制器（MVC）模式的 Web 應用程式。 ASP.NET MVC 3 安裝套裝程式含下列元件：
 
@@ -102,7 +102,7 @@ ms.locfileid: "74057022"
 - 適用于 .NET 的 Microsoft 套件管理員（NuGet）
 - Visual Studio 2010 的更新，可支援 Razor 語法。 （如需詳細資訊，請參閱知識庫文章2483190。）
 
-ASP.NET MVC 3 的每個發行前版本的完整版本資訊，可在 ASP.NET 網站上找到，網址如下：
+您可在 ASP.NET 網站上找到 ASP.NET MVC 3 每個預先發行版本之版本資訊的完整集合，其 URL 如下所示：
 
 https://www.asp.net/learn/whitepapers/mvc3-release-notes
 
@@ -130,7 +130,7 @@ ASP.NET MVC 3 執行時間元件需要下列軟體：
 - Visual Studio 2010 或 Visual Web Developer 2010 Express。
 
 <a id="documentation"></a>
-## <a name="documentation"></a>文件
+## <a name="documentation"></a>Documentation
 
 您可以在 MSDN 網站上取得 ASP.NET MVC 的檔，網址如下：
 
@@ -143,9 +143,9 @@ ASP.NET MVC 3 執行時間元件需要下列軟體：
 <a id="support"></a>
 ## <a name="support"></a>支援
 
-這是完全支援的版本。 您可以在[Microsoft 支援服務網站](https://support.microsoft.com/)中找到取得技術支援的相關資訊。
+這是有完整支援的版本。 您可以在[Microsoft 支援服務網站](https://support.microsoft.com/)中找到取得技術支援的相關資訊。
 
-您也可以自由地將此版本的相關問題張貼到 ASP.NET MVC 論壇，其中 ASP.NET 社區的成員經常能夠提供非正式支援：
+您也可隨時在 ASP.NET MVC 論壇張貼對此版本的問題，ASP.NET 社群成員可經常在此提供非正式的支援：
 
 [https://forums.asp.net/1146.aspx](https://forums.asp.net/1146.aspx)
 
@@ -156,8 +156,8 @@ ASP.NET MVC 3 可以與 ASP.NET MVC 2 並存安裝在同一部電腦上，讓您
 
 若要將現有的 ASP.NET MVC 2 應用程式手動升級至第3版，請執行下列動作：
 
-1. 在您的電腦上建立新的空白 ASP.NET MVC 3 專案。 此專案將包含升級所需的一些檔案。
-2. 將下列檔案從 ASP.NET MVC 3 專案複製到 ASP.NET MVC 2 專案的對應位置。 您必須更新 jQuery 程式庫的任何參考，以考慮新的檔案名（Jquery-1.7.2.min.js 1.5.1）： 
+1. 在您的電腦上建立新的空白 ASP.NET MVC 3 專案。 這個專案將會包含升級所需的一些檔案。
+2. 將下列檔案從 ASP.NET MVC 3 專案複製到 ASP.NET MVC 2 專案的對應位置。 您必須更新所有 jQuery 程式庫的參考，以說明新檔案名稱 (jQuery-1.5.1.js)： 
 
     - /Views/Web.config
     - /packages.config
@@ -165,21 +165,21 @@ ASP.NET MVC 3 可以與 ASP.NET MVC 2 並存安裝在同一部電腦上，讓您
     - /Content/themes/\*。\*
 3. 將空白 ASP.NET MVC 3 專案方案根目錄中的 [*套件*] 資料夾複製到方案的根目錄中，這位於方案的 .sln 檔案所在的目錄中。
 4. 如果您的 ASP.NET MVC 2 專案包含任何區域，請將/Views/Web.config 檔案複製到每個區域的*Views*資料夾。
-5. 在 ASP.NET MVC 2 專案中的兩個 web.config 檔案中，全域搜尋並取代 ASP.NET MVC 版本。 尋找下列各項： 
+5. 在 ASP.NET MVC 2 專案中的兩個 web.config 檔案中，全域搜尋並取代 ASP.NET MVC 版本。 搜尋下列文字： 
 
     [!code-console[Main](mvc3-release-notes/samples/sample1.cmd)]
 
-    將它取代為下列內容：
+    然後取代成下列文字：
 
     [!code-console[Main](mvc3-release-notes/samples/sample2.cmd)]
 6. 在方案總管中，刪除*system.web*的參考（指向第2版的 DLL），然後加入*system.web*的參考（v 3.0.0.0）。
-7. 加入 System.web 的參考，然後再新增 system.web. system.web。 這些元件位於下列資料夾： 
+7. 加入 System.web 的參考，然後再新增 system.web. system.web。 這些組件位於下列資料夾： 
 
-    - % ProgramFiles% \Microsoft ASP. NET\ASP.NET MVC 3 \ 元件
-    - % ProgramFiles% \Microsoft ASP. NET\ASP.NET Web Pages\v1.0\Assemblies
-8. 在方案總管中，以滑鼠右鍵按一下專案名稱，然後選取 [卸載專案]。 然後再次以滑鼠右鍵按一下專案名稱，並選取 [編輯*專案*名稱 .csproj]。
+    - %ProgramFiles%\ Microsoft ASP.NET\ASP.NET MVC 3\Assemblies
+    - %ProgramFiles%\ Microsoft ASP.NET\ASP.NET Web Pages\v1.0\Assemblies
+8. 在 [方案總管] 中，以滑鼠右鍵按一下專案名稱，並選取 [卸載專案]。 然後再次以滑鼠右鍵按一下專案名稱，並選取 [編輯*專案*名稱 .csproj]。
 9. 找出*ProjectTypeGuids*元素，並將 {F85E285D-A4E0-4152-9332-AB1D724D3325} 取代為 {E53F8FEA-EAE0-44A6-8774-FFD645390401}。
-10. 儲存變更，以滑鼠右鍵按一下專案，然後選取 [重載專案]。
+10. 儲存變更、以滑鼠右鍵按一下專案，然後選取 [重新載入專案]。
 11. 在應用程式的根 web.config 檔案中，將下列設定新增至 [*元件*] 區段。 
 
     [!code-xml[Main](mvc3-release-notes/samples/sample3.xml)]
@@ -193,52 +193,52 @@ ASP.NET MVC 3 可以與 ASP.NET MVC 2 並存安裝在同一部電腦上，讓您
 本節說明自 ASP.NET MVC 3 RTM 版本以來，在 ASP.NET MVC 3 工具更新版本中所做的變更。
 
 <a id="tu-AddControllerDialog"></a>
-### <a name="add-controller-dialog-box-can-now-scaffold-controllers-with-views-and-data-access-code"></a>[新增控制器] 對話方塊現在可以使用 views 和資料存取程式碼 scaffold 控制器
+### <a name="add-controller-dialog-box-can-now-scaffold-controllers-with-views-and-data-access-code"></a>[加入控制器] 對話方塊現在可以使用檢視和資料存取程式碼 Scaffold 控制器
 
-「架構」是一種快速產生應用程式之控制器和視圖的方式。 程式碼產生之後，您可以進行編輯，以符合您的專案需求。
+Scaffolding 可用來快速產生您應用程式的控制器和檢視。 程式碼產生之後，您可以進行編輯，以符合您的專案需求。
 
-若要啟動 ASP.NET MVC 3 中的 [*新增控制器*] 對話方塊，請以滑鼠右鍵按一下*方案總管*中的 [*控制器*] 資料夾，按一下 [*新增*]，然後按一下 [*控制器*]。 對話方塊已經過增強，可提供其他的 [樣板] 選項。
+若要啟動 ASP.NET MVC 3 中的 [*新增控制器*] 對話方塊，請以滑鼠右鍵按一下*方案總管*中的 [*控制器*] 資料夾，按一下 [*新增*]，然後按一下 [*控制器*]。 此對話方塊功能已增強，可提供額外的 Scaffolding 選項。
 
 ![](mvc3-release-notes/_static/image1.png)
 
-根據預設，有三個可用的樣板範本。
+根據預設，有三個 Scaffolding 範本可供使用。
 
 #### <a name="empty-controller"></a>空白控制器
 
-此範本會產生空的控制器檔案。 此範本等同于在舊版 ASP.NET MVC 中，不會*針對 [建立]、[編輯]、[詳細資料]、[刪除] 案例檢查新增動作*。 如果您選擇此選項，則不會有任何進一步的選項可供使用。
+此範本會產生空白的控制器檔案。 此範本等同于在舊版 ASP.NET MVC 中，不會*針對 [建立]、[編輯]、[詳細資料]、[刪除] 案例檢查新增動作*。 如果您選擇此範本，就不能另外提供選項。
 
 #### <a name="controller-with-empty-readwrite-actions"></a>具有空白讀取/寫入動作的控制器
 
-此範本會產生一個控制器檔案，其中包含所有必要的動作方法，但方法中沒有任何執行程式碼。 此範本相當於針對舊版 ASP.NET MVC 中*的 [建立]、[編輯]、[詳細資料]、[刪除] 案例檢查 [加入動作*]。 如果您選擇此選項，則不會有任何進一步的選項可供使用。
+此範本會產生包含所有必要動作方法的控制器檔案，但方法中沒有實作程式碼。 此範本相當於針對舊版 ASP.NET MVC 中*的 [建立]、[編輯]、[詳細資料]、[刪除] 案例檢查 [加入動作*]。 如果您選擇此範本，就不能另外提供選項。
 
-#### <a name="controller-with-readwrite-actions-and-views-using-entity-framework"></a>具有讀取/寫入動作和視圖的控制器，使用 Entity Framework
+#### <a name="controller-with-readwrite-actions-and-views-using-entity-framework"></a>具有讀取/寫入動作和檢視、使用 Entity Framework 的控制器
 
-此範本可讓您快速建立工作中的資料輸入使用者介面。 它會產生程式碼來處理一系列的常見需求和案例，如下所示：
+此範本可讓您迅速建立有效的資料輸入使用者介面。 它會產生用於處理一組通用需求和案例的程式碼，如下所示：
 
-- *資料存取*。 產生的程式碼會讀取和寫入資料庫中的實體。 如果您選擇現有的資料內容類別，或如果您讓範本產生新的*DbCoNtext*類別，它就會與 Entity Framework Code First 方法搭配使用。 如果您選擇現有的*ObjectCoNtext*類別，它也適用于 Entity Framework Database First 或 Model First 方法。
-- *驗證*。 產生的程式碼會使用 ASP.NET MVC 模型系結和中繼資料功能，以便根據您的模型類別所宣告的規則來驗證表單提交。 這包括內建的驗證規則，例如*Required*和*StringLength*屬性，以及自訂驗證規則。
-- *一對多關聯性*。 如果您在模型類別之間定義一對多的外鍵關聯性，則產生的程式碼會產生下拉式清單，供您選取相關的實體。 例如，您可能會在 Entity Framework Code First 慣例之後定義下列模型類別： 
+- *資料存取*。 產生的程式碼會在資料庫中讀取和寫入實體。 如果您選擇現有的資料內容類別，或如果您讓範本產生新的*DbCoNtext*類別，它就會與 Entity Framework Code First 方法搭配使用。 如果您選擇現有的*ObjectCoNtext*類別，它也適用于 Entity Framework Database First 或 Model First 方法。
+- *驗證*。 產生的程式碼會使用 ASP.NET MVC 模型繫結和中繼資料功能，如此系統會根據模型類別所宣告的規則來驗證表單提交作業。 這包括內建的驗證規則，例如*Required*和*StringLength*屬性，以及自訂驗證規則。
+- *一對多關聯性*。 如果您在模型類別之間定義一對多外部索引鍵關係，則產生的程式碼會產生下拉式清單供您選擇相關的實體。 例如，您可能依循「Entity Framework 程式碼優先」慣例定義下列模型類別： 
 
     [!code-csharp[Main](mvc3-release-notes/samples/sample5.cs)]
 
     當您接著 scaffold *product*類別的控制器時，其 views 可讓使用者為每個*產品*實例選擇*Category*物件。
 
     此範本會啟用 [*新增控制器*] 對話方塊中的其他選項。 針對*模型類別*，您可以在方案中選擇任何模型類別，這會決定使用者可以建立或編輯的資料類型：
-- 如果您想要使用 Entity Framework Code First，可以選擇任何模型類別。
-- 如果您使用 Entity Framework Database First 或 Entity Framework Model First，請務必選擇在您的概念模型中定義的實體類別。
+- 如果您要使用「Entity Framework 程式碼優先」，則可以選擇任何模型類別。
+- 如果您使用的是「Entity Framework 資料庫優先」或「Entity Framework 模型優先」，請務必選擇您概念模型中定義的實體類別。
 
 針對*資料內容類別*，您可以進行下列選擇：
 
-- 如果您想要使用 Code First，而且沒有現有的資料內容類別，請選擇 [新增資料內容]。 接著會為您產生資料內容類別。
-- 如果您想要使用 Code First 並擁有現有的資料內容類別，請在這裡選擇。 它將會更新，以保存您所選取的模型類別。
-- 如果您使用 Database First 或 Model First，請在這裡選擇您的物件內容類別。
+- 如果您想要使用 Code First，而且沒有現有的資料內容類別，請選擇 [新增資料內容]。 系統會為您產生資料內容類別。
+- 如果您要使用「程式碼優先」且具有資料內容類別，則在此選擇此類別。 此類別會進行更新以保存您選取的模型類別。
+- 如果您使用的是「資料庫優先」或「模型優先」，則在此選擇您的物件內容類別。
 
-針對 [Views]，選擇您想要使用的 view engine，如果您不想要 scaffold 任何視圖，請選擇 [無]。
+針對 [檢視]，請選擇您要使用的檢視引擎，或選擇 [無]，如果您不要 Scaffold 任何檢視。
 
-您可以選取 [Advanced Optionsto]，為產生的視圖指定進一步的選項。 例如，您可以選擇要使用的版面配置或主版頁面。
+您可以選取 [Advanced Optionsto]，為產生的視圖指定進一步的選項。 例如，您可以選擇要使用的版面配置頁或主版頁面。
 
 <a id="tu-ImprovementsNewDialogBox"></a>
-### <a name="improvements-to-the-aspnet-mvc-3-new-project-dialog-box"></a>[ASP.NET MVC 3 新增專案] 對話方塊的改善
+### <a name="improvements-to-the-aspnet-mvc-3-new-project-dialog-box"></a>[ASP.NET MVC 3 新增專案] 對話方塊中的改進功能
 
 您用來建立新 ASP.NET MVC 3 專案的對話方塊包含多項改良功能，如下所示。
 
@@ -246,60 +246,60 @@ ASP.NET MVC 3 可以與 ASP.NET MVC 2 並存安裝在同一部電腦上，讓您
 
 #### <a name="new-intranet-project-template"></a>新的「內部網路專案」範本
 
-專案範本清單包含新的內部網路應用程式範本。 此範本包含使用 Windows 驗證來建立 web 應用程式的設定，而不是表單驗證。 因為內部網路應用程式需要一些無法封裝在專案範本中的 IIS 設定，所以範本會包含讀我檔案，其中包含如何讓專案範本在 IIS 中工作的指示。 您可以在 MSDN 網站上找到新的內部網路應用程式範本的檔，網址如下：
+[專案範本] 清單包含新的 [內部網路應用程式] 範本。 此範本包含的設定是用於以 Windows 驗證 (而不是表單驗證) 建置 Web 應用程式。 因為內部網路應用程式需要一些無法封裝在專案範本中的 IIS 設定，所以範本會包含讀我檔案，其中包含如何讓專案範本在 IIS 中工作的指示。 您可以在 MSDN 網站上找到新的內部網路應用程式範本的檔，網址如下：
 
 [https://msdn.microsoft.com/library/gg703322(VS.98).aspx](https://msdn.microsoft.com/library/gg703322(VS.98).aspx)
 
 #### <a name="project-templates-are-now-html5-enabled"></a>專案範本現在已啟用 HTML5
 
-[新增專案] 對話方塊現在包含一個選項，可將 HTML5 特有的功能加入專案範本。 選取此選項會產生包含新 HTML5 `<header>`、`<footer>`和 `<navigation>` 元素的 views。
+[新增專案] 對話方塊現在包含可將 HTML5 專屬功能加入至專案範本的選項。 選取此選項會產生包含新 HTML5 `<header>`、`<footer>`和 `<navigation>` 元素的 views。
 
-請注意，舊版的瀏覽器不支援 HTML5 特定的標記。 為了解決這項限制，HTML5 專案範本包含 Modernizr 程式庫的參考。 （請參閱下一節）。
+請注意舊版瀏覽器不支援 HTML5 專屬標記。 若要解決這項限制，HTML5 專案範本必須加入 Modernizr 程式庫的參考 (請參閱下節)。
 
 <a id="tu-Modernizr"></a>
-### <a name="project-templates-now-include-modernizr-17"></a>專案範本現在包含 Modernizr 1。7
+### <a name="project-templates-now-include-modernizr-17"></a>專案範本現在包含 Modernizr 1.7
 
 Modernizr 是一種 JavaScript 程式庫，可支援瀏覽器中尚未支援這些功能的 CSS 3 和 HTML5。 此程式庫是以預先安裝的 NuGet 套件形式包含在 ASP.NET MVC 3 專案的範本中。 如需 Modernizr 的詳細資訊，請參閱[http://www.modernizr.com/](http://www.modernizr.com/)。
 
 <a id="tu-UpdatedJQuery"></a>
-### <a name="project-templates-include-updated-versions-of-jquery-jquery-ui-and-jquery-validation"></a>專案範本包含 jQuery、jQuery UI 和 jQuery 驗證的更新版本
+### <a name="project-templates-include-updated-versions-of-jquery-jquery-ui-and-jquery-validation"></a>專案範本包含 jQuery、jQuery UI 和 jQuery Validation 的更新版本
 
-專案範本現在包含下列的 jQuery 腳本版本：
+專案範本現在包含下列 jQuery 指令碼版本：
 
-- jQuery 1.5。1
-- jQuery 驗證1。8
+- jQuery 1.5.1
+- jQuery Validation 1.8
 - jQuery UI 1.8.11
 
-這些程式庫會以預先安裝的 NuGet 套件形式包含。
+這些程式庫皆以預先安裝的 NuGet 套件形式內含在專案範本中。
 
 <a id="tu-EF"></a>
-### <a name="project-templates-now-include-adonet-entity-framework-41-as-a-pre-installed-nuget-package"></a>專案範本現在包含 ADO.NET Entity Framework 4.1，做為預先安裝的 NuGet 套件
+### <a name="project-templates-now-include-adonet-entity-framework-41-as-a-pre-installed-nuget-package"></a>專案範本現在包含 ADO.NET Entity Framework 4.1，其以預先安裝的 NuGet 套件形式內含在範本中
 
-ADO.NET Entity Framework 4.1 包含 Code First 功能。 Code First 是 ADO.NET Entity Framework 的新開發模式，可提供現有 Database First 和 Model First 模式的替代方式。
+ADO.NET Entity Framework 4.1 包含 Code First 功能。 「程式碼優先」是 ADO.NET Entity Framework 的新開發模式，提供另一種方法來替代現有「資料庫優先」和「模型優先」模式。
 
-Code First 著重于使用以 Visual Basic 或C#撰寫的 POCO 類別（「單純的 CLR 物件」）來定義您的模型。 這些類別接著可以對應到現有的資料庫，或用來產生資料庫架構。 您可以使用*DataAnnotations*屬性或使用流暢的 api 來提供額外的設定。
+「程式碼優先」的重點是使用以 Visual Basic 或 C# 撰寫的 POCO 類別 (「一般簡單的 CLR 物件」) 定義您的模型。 這些類別接著可以對應至現有資料庫，或用來產生資料庫結構描述。 您可以使用*DataAnnotations*屬性或使用流暢的 api 來提供額外的設定。
 
 如需使用程式碼 Firstwith ASP.NET MVC 的檔，請參閱 ASP.NET 網站上的下列 Url：
 
 [https://www.asp.net/mvc/tutorials/getting-started-with-mvc3-part1-cs](../mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) [https://www.asp.net/entity-framework/tutorials/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application](../mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)
 
 <a id="tu-JavaScriptLibsNuget"></a>
-### <a name="project-templates-include-javascript-libraries-as-pre-installed-nuget-packages"></a>專案範本以預先安裝的 NuGet 套件形式包含 JavaScript 程式庫
+### <a name="project-templates-include-javascript-libraries-as-pre-installed-nuget-packages"></a>專案範本包含 JavaScript 程式庫，其以預先安裝的 NuGet 套件形式內含在範本中
 
-當您建立新的 ASP.NET MVC 3 專案時，專案會包含先前所述的 JavaScript 檔案（例如，Modernizr 程式庫），方法是使用 NuGet 安裝它們，而不是直接將腳本新增至專案範本中的 Scripts 資料夾。編制. 這可讓您在發行新版本的腳本時，使用 NuGet 將腳本更新為最新版本。
+當您建立新的 ASP.NET MVC 3 專案時，專案會包含先前所述的 JavaScript 檔案（例如，Modernizr 程式庫），方法是使用 NuGet 安裝它們，而不是直接將腳本新增至專案範本中的 Scripts 資料夾。編制. 如此可讓您在指令碼新版本發行時，使用 NuGet 將指令碼更新為最新版本。
 
-例如，由於新的 jQuery 版本的頻率，專案範本中包含的 jQuery 版本會在某個時間點過期。 不過，由於 jQuery 已包含為已安裝的 NuGet 套件，因此當有較新版本的 jQuery 可用時，您會在 [NuGet] 對話方塊中收到通知。
+例如，鑑於 jQuery 新版發行的頻率，專案範本內含的 jQuery 版本在某個時間點即會過時。 不過，因為 jQuery 是以已安裝的 NuGet 套件內含在專案範本中，當 jQuery 新版發行時，將會透過 NuGet 對話方塊通知您。
 
-因為 jQuery 在檔案名中包含版本號碼，所以將 jQuery 更新為最新版本也需要更新參考 jQuery 檔案的 `<script>` 標記，以使用新的檔案名。 其他內含的腳本程式庫不會在腳本名稱中包含版本號碼，因此可以更輕鬆地更新為最新版本。
+因為 jQuery 在檔案名中包含版本號碼，所以將 jQuery 更新為最新版本也需要更新參考 jQuery 檔案的 `<script>` 標記，以使用新的檔案名。 其他內含的指令碼程式庫並沒有在指令碼名稱中加入版本編號，所以較易於更新為最新版本。
 
 <a id="tu-KI"></a>
 ## <a name="known-issues"></a>已知問題
 
 - 在某些情況下，安裝可能會失敗，並出現錯誤訊息「安裝失敗，錯誤碼為（0x80070643）」。 如需有關如何解決此問題的詳細資訊，請參閱[知識庫文章 2531566](https://support.microsoft.com/kb/2531566)。
-- 新增控制器的架構不會 scaffold 利用 Entity Framework 內之實體繼承支援的實體。 例如，假設有一個由*student*類別繼承的基礎*Person*類別，則*student*類別會產生未編譯的程式碼。
+- 用於加入控制器的 scaffolding 不會 Scaffold 利用 Entity Framework 實體繼承支援的實體。 例如，假設有一個由*student*類別繼承的基礎*Person*類別，則*student*類別會產生未編譯的程式碼。
 - 在方案資料夾中建立新的 ASP.NET MVC 3 專案會造成*NullReferenceException*錯誤。 因應措施是在方案的根目錄中建立 ASP.NET MVC 3 專案，然後將它移至方案資料夾。
-- 安裝 ReSharper 時，適用于 Razor 語法的 IntelliSense 無法運作。 如果您已安裝 ReSharper，而且想要利用 ASP.NET MVC 3 中的 Razor IntelliSense 支援，請參閱 Hadi Hariri 的 blog 中的專案[Razor intellisense 和 ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) ，其中會討論今日使用它們的方式。
-- 在安裝期間，[接受 EULA] 對話方塊會在小於預期的視窗中顯示授權條款。
+- 電腦若有安裝 ReSharper，Razor 語法的 IntelliSense 即無法運作。 如果您已安裝 ReSharper，而且想要利用 ASP.NET MVC 3 中的 Razor IntelliSense 支援，請參閱 Hadi Hariri 的 blog 中的專案[Razor intellisense 和 ReSharper](https://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) ，其中會討論今日使用它們的方式。
+- 在安裝期間，EULA 接受對話方塊會在視窗中顯示授權條款，此視窗比預期的要小。
 - 當您編輯 Razor view （. cshtml 或）時。*vbhtml*檔案）、views。 ASP.NET MVC 3 不包含 Razor views 的任何程式碼片段。aspxselecting ASP.NET MVC 的程式碼片段會顯示的程式碼片段
 - 如果您在未安裝 Visual Studio 的電腦上安裝 ASP.NET MVC 3 for Visual Web Developer Express，然後在稍後安裝 Visual Studio，則必須重新安裝 ASP.NET MVC 3。 Visual Studio 和 Visual Web Developer Express 共用 ASP.NET MVC 3 安裝程式所升級的元件。 如果您在沒有 Visual Web Developer Express 的電腦上安裝 ASP.NET MVC Visual Studio 3，然後再安裝 Visual Web Developer Express，則適用相同的問題。
 
@@ -347,10 +347,10 @@ ASP.NET MVC 3 的 RC2 版本引進了*CachedDataAnnotationsMetadataProvider*類�
 - ASP.NET MVC 3 安裝程式只可以安裝 NuGet 套件管理員的初始版本。 安裝初始版本之後，您可以使用 Visual Studio 擴充管理員來安裝和更新 NuGet。 如果您已安裝 NuGet，請移至 Visual Studio 擴充功能庫，以更新為最新版本的 NuGet。
 - 在方案資料夾中建立新的 ASP.NET MVC 3 專案會造成*NullReferenceException*錯誤。 因應措施是在方案的根目錄中建立 ASP.NET MVC 3 專案，然後將它移至方案資料夾。
 - 安裝程式所需的時間可能比先前版本的 ASP.NET MVC 還長，因此無法完成。 這是因為它會更新 Visual Studio 2010 的元件。
-- 安裝 ReSharper 時，適用于 Razor 語法的 IntelliSense 無法運作。 如果您已安裝 ReSharper，而且想要利用 ASP.NET MVC 3 中的 Razor IntelliSense 支援，請參閱 Hadi Hariri 的 blog 中的專案[Razor intellisense 和 ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) ，其中會討論今日使用它們的方式。
+- 電腦若有安裝 ReSharper，Razor 語法的 IntelliSense 即無法運作。 如果您已安裝 ReSharper，而且想要利用 ASP.NET MVC 3 中的 Razor IntelliSense 支援，請參閱 Hadi Hariri 的 blog 中的專案[Razor intellisense 和 ReSharper](https://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) ，其中會討論今日使用它們的方式。
 - 使用 ASP.NET MVC 3 Beta 版所建立的 CCSHTML 和 VBHTML 視圖並未正確設定其組建動作，結果是在發行專案時，會省略這些檢視類型。 這些檔案的 [組建動作] 值應該設定為 [內容]。 ASP.NET MVC 3 RTM 會針對新檔案修正此問題，但不會針對使用發行前版本所建立之專案的現有檔案更正其設定。
 - ![](mvc3-release-notes/_static/image3.png)
-- 在安裝期間，[接受 EULA] 對話方塊會在小於預期的視窗中顯示授權條款。
+- 在安裝期間，EULA 接受對話方塊會在視窗中顯示授權條款，此視窗比預期的要小。
 - 當您編輯 Razor view （cshtml 檔案）時，Visual Studio 中的 [移至控制器] 功能表項目將無法使用，而且不會有程式碼片段。
 - 如果您在未安裝 Visual Studio 的電腦上安裝 ASP.NET MVC 3 for Visual Web Developer Express，然後在稍後安裝 Visual Studio，則必須重新安裝 ASP.NET MVC 3。 Visual Studio 和 Visual Web Developer Express 共用 ASP.NET MVC 3 安裝程式所升級的元件。 如果您在沒有 Visual Web Developer Express 的電腦上安裝 ASP.NET MVC Visual Studio 3，然後再安裝 Visual Web Developer Express，則適用相同的問題。
 
@@ -470,9 +470,9 @@ ASP.NET MVC 3 的專案範本現在包含 jQuery、jQuery 驗證和 jQuery UI �
 - ASP.NET MVC 3 安裝程式只可以安裝 NuGet 套件管理員的初始版本。 安裝初始版本之後，您可以使用 Visual Studio 擴充管理員來安裝和更新 NuGet。 如果您已安裝 NuGet，請移至 Visual Studio 擴充功能庫，以更新為最新版本的 NuGet。
 - 在方案資料夾中建立新的 ASP.NET MVC 3 專案會造成*NullReferenceException*錯誤。 因應措施是在方案的根目錄中建立 ASP.NET MVC 3 專案，然後將它移至方案資料夾。
 - 安裝程式所需的時間可能比先前版本的 ASP.NET MVC 還長，因此無法完成。 這是因為它會更新 Visual Studio 2010 的元件。
-- 安裝 ReSharper 時，適用于 Razor 語法的 IntelliSense 無法運作。 如果您已安裝 ReSharper，而且想要利用 ASP.NET MVC 3 RC2 中的 Razor IntelliSense 支援，請參閱 Hadi Hariri 的 blog 中的專案[Razor intellisense 和 ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) ，其中會討論今日使用它們的方式。
+- 電腦若有安裝 ReSharper，Razor 語法的 IntelliSense 即無法運作。 如果您已安裝 ReSharper，而且想要利用 ASP.NET MVC 3 RC2 中的 Razor IntelliSense 支援，請參閱 Hadi Hariri 的 blog 中的專案[Razor intellisense 和 ReSharper](https://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) ，其中會討論今日使用它們的方式。
 - 以 ASP.NET MVC 3 的 Beta 版建立的 CSHTML 和 VBHTML views 並未正確設定其組建動作，結果是在發行專案時，會省略這些檢視類型。 這些檔案的 [*組建動作*] 值應該設定為 [內容]。 ASP.NET MVC 3 RC2 會修正新檔案的這個問題，但不會更正以 Beta 版所建立之專案的現有檔案設定。![](mvc3-release-notes/_static/image4.png)
-- 在安裝期間，[接受 EULA] 對話方塊會在小於預期的視窗中顯示授權條款。
+- 在安裝期間，EULA 接受對話方塊會在視窗中顯示授權條款，此視窗比預期的要小。
 - 當您編輯 Razor view （cshtml 檔案）時，Visual Studio 中的 [移至控制器] 功能表項目將無法使用，而且不會有程式碼片段。
 - 如果您在未安裝 Visual Studio 的電腦上安裝 ASP.NET MVC 3 for Visual Web Developer Express，然後在稍後安裝 Visual Studio，則必須重新安裝 ASP.NET MVC 3。 Visual Studio 和 Visual Web Developer Express 共用 ASP.NET MVC 3 安裝程式所升級的元件。 如果您在沒有 Visual Web Developer Express 的電腦上安裝 ASP.NET MVC Visual Studio 3，然後再安裝 Visual Web Developer Express，則適用相同的問題。
 - 如果您已安裝 ASP.NET MVC 3 RC 2，則不會更新 NuGet。 若要升級 NuGet，請移至 Visual Studio 擴充管理員，它應該會顯示為可用的更新。 您可以從該處將 NuGet 升級至最新版本。
@@ -613,11 +613,11 @@ Namespace. ClassName
 - 安裝程式所需的時間可能比舊版的 ASP.NET MVC 更長，因為它會更新 Visual Studio 2010 的元件。
 - 選取 astrongly 具類型的 view scaffold 僅限寫入屬性時的加入視圖。 這些樣板應一律予以忽略。 當產生「編輯」或「建立」視圖時，[加入視圖] 對話方塊也會 scaffold 唯讀屬性。 唯讀屬性只應針對顯示和列出視圖進行 scaffold。
 - 當 ASP.NET MVC 3 與非同步 CTP 一起安裝時，不能進行調試。 ASP.NET MVC 3 無法與非同步 CTP 並存安裝。 卸載非同步 CTP 以修復調試。 如需詳細資訊，請閱讀[這篇](http://drew-prog.blogspot.com/2010/11/how-to-uninstall-microsoft-aspnet-mvc-3.html)關於卸載 ASP.NET MVC 3 RC 所有部分的文章。
-- 安裝 Resharper 時，Razor Intellisense 無法運作。 如果您已安裝 ReSharper，而且想要利用 ASP.NET MVC 3 RC 中的 Razor intellisense 支援，請閱讀來自 JetBrains 的[這篇 blog 文章](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/)，其中會討論今天使用這些專案的方法。
+- 安裝 Resharper 時，Razor Intellisense 無法運作。 如果您已安裝 ReSharper，而且想要利用 ASP.NET MVC 3 RC 中的 Razor intellisense 支援，請閱讀來自 JetBrains 的[這篇 blog 文章](https://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/)，其中會討論今天使用這些專案的方法。
 - 以 ASP.NET MVC 3 搶鮮版建立的 CSHTML 和 VBHTML views，其組建動作不會正確地使其無法發行。 這些檔案的*組建動作*應設定為 [內容]。 ASP.NET MVC 3 RC 會針對新檔案修正此問題，但不會更正以 Beta 版所建立之專案的現有檔案設定。
 - 安裝程式所需的時間可能比舊版的 ASP.NET MVC 更長，因為它會更新 Visual Studio 2010 的元件。
 - 選取 [編輯] [強型別視圖] scaffold 唯讀屬性時的 [加入視圖] 樣板。 同樣地，[顯示] 視圖也會 scaffold 僅限寫入的屬性。
-- 在安裝期間，[接受 EULA] 對話方塊會在小於預期的視窗中顯示授權條款。
+- 在安裝期間，EULA 接受對話方塊會在視窗中顯示授權條款，此視窗比預期的要小。
 - 安裝 Visual Studio 非同步 CTP 會與 ASP.NET MVC 3 工具安裝中包含的 Razor 版本發生衝突。 請確定您未嘗試在同一部電腦上安裝 Visual Studio 非同步 CTP 和 Razor 版本。
 - 當您編輯 Razor view （cshtml 檔案）時，Visual Studio 中的 [移至控制器] 功能表項目將無法使用，而且不會有程式碼片段。
 
@@ -841,7 +841,7 @@ JsonValueProviderFactory 現在預設為已註冊。
 
 ## <a id="0.1__Toc274034230"></a>已知問題
 
-在安裝期間，[接受 EULA] 對話方塊會在小於預期的視窗中顯示授權條款。
+在安裝期間，EULA 接受對話方塊會在視窗中顯示授權條款，此視窗比預期的要小。
 
 Razor views 沒有 IntelliSense 支援或語法反白顯示。 預期 Visual Studio 中的 Razor 語法支援將會納入為較新版本的一部分。
 
@@ -861,6 +861,6 @@ Razor views 沒有 IntelliSense 支援或語法反白顯示。 預期 Visual Stu
 
 ## <a id="0.1__Toc274034231"></a>免責聲明
 
-© 2011 Microsoft Corporation。 著作權所有，並保留一切權利。 本檔是以「原樣」提供。 本檔中所表示的資訊和觀點（包括 URL 和其他網際網路網站參考資料）可能會變更，恕不另行通知。 貴用戶須自行承擔使用風險。
+© 2011 Microsoft Corporation. All rights reserved. 此文件內容未經修改。 本文件提供的資訊和觀點 (包括 URL 和其他網站參考) 可能變更，恕不另行通知。 貴用戶必須自行承擔使用風險。
 
-本文件不提供　貴用戶任何 Microsoft 產品之智慧財產權的法定權利。 貴用戶可以複製本文件供內部參考之用。
+本文件並不提供您任何 Microsoft 產品之智慧財產權的法定權利。 貴用戶可以複製本文件供內部參考之用。

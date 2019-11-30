@@ -1,61 +1,61 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-cs
-title: 以動態方式新增 Accordion 窗格 (C#) |Microsoft Docs
+title: 動態加入可折疊式窗格C#（） |Microsoft Docs
 author: wenz
-description: 在 AJAX Control Toolkit Accordion 控制項提供多個窗格，並可讓使用者一次顯示其中一個。 面板通常宣告 w...
+description: AJAX 控制項工具組中的 [可折疊式] 控制項提供多個窗格，並允許使用者一次顯示其中一項。 面板通常會宣告為 w 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 66d88cfa-f26f-46b1-ad52-1c9e03c04a48
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7134c95845ec7f22b5216e10b50ab8f81cd24806
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 2834f56bd77c412923f4a8f382e670727f70eae4
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131243"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74607225"
 ---
-# <a name="dynamically-adding-an-accordion-pane-c"></a>以動態方式新增 Accordion 窗格 (C#)
+# <a name="dynamically-adding-an-accordion-pane-c"></a>動態新增 [可折疊式C#] 窗格（）
 
-藉由[Christian Wenz](https://github.com/wenz)
+依[Christian Wenz](https://github.com/wenz)
 
-[下載程式碼](http://download.microsoft.com/download/5/6/d/56d50cef-2011-4c8f-9891-7edc6dc57df9/Accordion2.cs.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/accordion2CS.pdf)
+[下載程式代碼](https://download.microsoft.com/download/5/6/d/56d50cef-2011-4c8f-9891-7edc6dc57df9/Accordion2.cs.zip)或[下載 PDF](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/accordion2CS.pdf)
 
-> 在 AJAX Control Toolkit Accordion 控制項提供多個窗格，並可讓使用者一次顯示其中一個。 面板通常會宣告本身，在頁面中，但伺服器端程式碼可用來達到相同的結果。
+> AJAX 控制項工具組中的 [可折疊式] 控制項提供多個窗格，並允許使用者一次顯示其中一項。 面板通常會在頁面本身內宣告，但伺服器端程式碼可以用來達到相同的結果。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-在 AJAX Control Toolkit Accordion 控制項提供多個窗格，並可讓使用者一次顯示其中一個。 面板通常會宣告本身，在頁面中，但伺服器端程式碼可用來達到相同的結果。
+AJAX 控制項工具組中的 [可折疊式] 控制項提供多個窗格，並允許使用者一次顯示其中一項。 面板通常會在頁面本身內宣告，但伺服器端程式碼可以用來達到相同的結果。
 
 ## <a name="steps"></a>步驟
 
-Accordion 控制項公開 （expose) 所有重要的屬性，以伺服器端程式碼。 除此之外，`Panes`屬性授與存取權的組成 Accordion 窗格集合。 沒有類型的每個窗格`AccordionPane`。 因此，它為 trivial 建立這類的窗格：
+[可折疊] 控制項會公開所有重要的屬性給伺服器端程式碼。 除此之外，`Panes` 屬性也會授與組成可折疊性之窗格集合的存取權。 每個窗格都有 `AccordionPane`類型。 因此，建立這種窗格是很簡單的：
 
 [!code-csharp[Main](dynamically-adding-an-accordion-pane-cs/samples/sample1.cs)]
 
-`HeaderContainer`的屬性`AccordionPane`提供的存取權 窗格中，標頭區段內的 ASP.NET 控制項`ContentContainer`屬性`AccordionPane`對窗格的 內容 區段執行相同作業。 這可讓 ASP.NET 程式碼，將內容新增至窗格：
+`AccordionPane` 的 `HeaderContainer` 屬性，可讓您存取窗格的標頭區段內的 ASP.NET 控制項;`AccordionPane` 的 `ContentContainer` 屬性會對窗格的 [內容] 區段執行相同的工作。 這可讓 ASP.NET 程式碼將內容新增至窗格：
 
 [!code-csharp[Main](dynamically-adding-an-accordion-pane-cs/samples/sample2.cs)]
 
-最後，您必須將窗格新增至`Panes`Accordion 的集合：
+最後，您必須將窗格新增至可折疊的 `Panes` 集合：
 
 [!code-csharp[Main](dynamically-adding-an-accordion-pane-cs/samples/sample3.cs)]
 
-以下是完整的伺服器端程式碼新增至 Accordion 控制項的兩個窗格：
+以下是完整的伺服器端程式碼，它會將兩個窗格加入至 [可折疊] 控制項：
 
 [!code-aspx[Main](dynamically-adding-an-accordion-pane-cs/samples/sample4.aspx)]
 
-唯一的遺漏項目是 Accordion 本身，這取決於是否存在 ASP.NET`ScriptManager`控制項：
+唯一缺少的元素是可折疊性本身，這取決於 ASP.NET `ScriptManager` 控制項是否存在：
 
 [!code-aspx[Main](dynamically-adding-an-accordion-pane-cs/samples/sample5.aspx)]
 
-若要完成此範例，兩個 Accordion 控制項中所參考的 CSS 類別會提供瀏覽器的樣式資訊：
+若要完成此範例，在 [可折疊] 控制項中參考的兩個 CSS 類別會提供瀏覽器的樣式資訊：
 
 [!code-css[Main](dynamically-adding-an-accordion-pane-cs/samples/sample6.css)]
 
-[![伺服器端程式碼已以動態方式新增 accordion 中的資料](dynamically-adding-an-accordion-pane-cs/_static/image2.png)](dynamically-adding-an-accordion-pane-cs/_static/image1.png)
+[![伺服器端程式碼會以動態方式新增可折疊的資料](dynamically-adding-an-accordion-pane-cs/_static/image2.png)](dynamically-adding-an-accordion-pane-cs/_static/image1.png)
 
-伺服器端程式碼已以動態方式新增 accordion 中的資料 ([按一下以檢視完整大小的影像](dynamically-adding-an-accordion-pane-cs/_static/image3.png))
+伺服器端程式碼會以動態方式新增可折疊顯示的資料（[按一下以觀看完整大小的影像](dynamically-adding-an-accordion-pane-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
 > [上一頁](databinding-to-an-accordion-cs.md)

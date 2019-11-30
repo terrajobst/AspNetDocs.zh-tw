@@ -1,210 +1,210 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-cs
-title: 限制資料修改功能會根據使用者 (C#) |Microsoft Docs
+title: 根據使用者（C#）限制資料修改功能 |Microsoft Docs
 author: rick-anderson
-description: 允許使用者編輯資料的 web 應用程式，在不同的使用者帳戶可能有不同的資料編輯權限。 在本教學課程中我們將檢驗如何 t...
+description: 在允許使用者編輯資料的 web 應用程式中，不同的使用者帳戶可能會有不同的資料編輯許可權。 在本教學課程中，我們將探討 t 。
 ms.author: riande
 ms.date: 07/17/2006
 ms.assetid: 2b251c82-77cf-4e36-baa9-b648eddaa394
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3ca9630d2c8409c7f7ed66354a8edcbbaffaa65d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: c3cacaddb7e9b493ba39718f41dcaab360d36fd9
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128655"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74580402"
 ---
 # <a name="limiting-data-modification-functionality-based-on-the-user-c"></a>根據使用者限制資料修改功能 (C#)
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_23_CS.exe)或[下載 PDF](limiting-data-modification-functionality-based-on-the-user-cs/_static/datatutorial23cs1.pdf)
+[下載範例應用程式](https://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_23_CS.exe)或[下載 PDF](limiting-data-modification-functionality-based-on-the-user-cs/_static/datatutorial23cs1.pdf)
 
-> 允許使用者編輯資料的 web 應用程式，在不同的使用者帳戶可能有不同的資料編輯權限。 在本教學課程中，我們將檢驗如何動態調整造訪的使用者為基礎的資料修改功能。
+> 在允許使用者編輯資料的 web 應用程式中，不同的使用者帳戶可能會有不同的資料編輯許可權。 在本教學課程中，我們將探討如何根據造訪的使用者動態調整資料修改功能。
 
 ## <a name="introduction"></a>簡介
 
-許多 web 應用程式支援使用者帳戶，並提供不同的選項、 報表和登入的使用者為基礎的功能。 比方說，與我們的教學課程我們可能會想要允許使用者從供應商公司或許-供應商資訊，例如公司名稱，以及站台和更新的一般資訊及其產品，其名稱和數量，每個單位，來登入地址、 連絡人的資訊等等。 此外，我們也可能會想要從我們的公司的人包含部分使用者帳戶，以便他們可以登入並更新產品資訊，例如股票圖、 單位重新排序層級，等等。 我們的 web 應用程式也可能會允許匿名使用者造訪 （人不登入），但會限制它們只能檢視資料。 與這類使用者帳戶系統，我們會想在我們 ASP.NET 網頁中插入、 編輯和刪除功能適用於目前登入的使用者提供的資料 Web 控制項。
+有一些 web 應用程式支援使用者帳戶，並根據登入的使用者提供不同的選項、報表和功能。 例如，在我們的教學課程中，我們可能會想要讓供應商公司的使用者能夠登入網站，並更新其產品的一般資訊-每個單位的名稱和數量，也許還有供應商資訊，例如公司名稱、位址、連絡人的資訊等等。 此外，我們可能會想要為公司的人員加入一些使用者帳戶，讓他們可以登入並更新產品資訊，例如庫存的單位、重新排序層級等等。 我們的 web 應用程式可能也會允許匿名使用者流覽（未登入的人員），但會限制他們只能查看資料。 有了這類使用者帳戶系統之後，我們會希望 ASP.NET 網頁中的資料 Web 控制項提供適用于目前登入使用者的插入、編輯和刪除功能。
 
-在本教學課程中，我們將檢驗如何動態調整造訪的使用者為基礎的資料修改功能。 特別是，我們將建立的 GridView 會列出供應商所提供的產品以及編輯 DetailsView 中顯示的供應商資訊的頁面。 如果使用者瀏覽的頁面是從我們的公司，他們可以： 可以檢視任何供應商的資訊;編輯其位址;然後編輯任何供應商所提供的產品資訊。 如果，不過，使用者是從某家公司，他們可以只檢視和編輯自己的位址資訊和只能編輯他們未標示為已停用的產品。
+在本教學課程中，我們將探討如何根據造訪的使用者動態調整資料修改功能。 特別是，我們將建立一個頁面，以可編輯的 DetailsView 顯示供應商資訊，以及一個 GridView，其中列出供應商所提供的產品。 如果造訪頁面的使用者是來自我們的公司，他們可以：查看任何供應商的資訊;編輯其位址;並編輯供應商所提供之任何產品的資訊。 不過，如果使用者是來自特定公司，他們只能查看和編輯自己的位址資訊，而且只能編輯尚未標示為已停止的產品。
 
-[![我們公司的使用者可以編輯任何供應商的資訊](limiting-data-modification-functionality-based-on-the-user-cs/_static/image2.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image1.png)
+[![公司的使用者可以編輯任何供應商的資訊](limiting-data-modification-functionality-based-on-the-user-cs/_static/image2.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image1.png)
 
-**圖 1**:我們公司可以編輯任何供應商的資訊的使用者 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image3.png))
+**圖 1**：公司的使用者可以編輯任何供應商的資訊（[按一下以觀看完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image3.png)）
 
-[![從特定的供應商只能檢視和編輯其資訊的使用者](limiting-data-modification-functionality-based-on-the-user-cs/_static/image5.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image4.png)
+[![特定供應商的使用者只能查看和編輯其資訊](limiting-data-modification-functionality-based-on-the-user-cs/_static/image5.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image4.png)
 
-**圖 2**:從特定供應商可以只檢視和編輯其資訊的使用者 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image6.png))
+**圖 2**：來自特定供應商的使用者只能查看和編輯其資訊（[按一下以觀看完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image6.png)）
 
-讓 s 開始 ！
-
-> [!NOTE]
-> ASP.NET 2.0 成員資格系統提供標準化、 可延伸的平台建立、 管理和驗證使用者帳戶。 由於成員資格系統的檢查是這些教學課程的範圍之外，本教學課程中改為 「 fakes"的成員資格允許匿名的使用者選擇是否是特定供應商，或從我們的公司。 如需成員資格的詳細資訊，請參閱我[檢查 ASP.NET 2.0 s 成員資格、 角色和設定檔](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)系列文章。
-
-## <a name="step-1-allowing-the-user-to-specify-their-access-rights"></a>步驟 1：允許使用者指定其存取權限
-
-在真實世界的 web 應用程式，是否他們工作本公司或特定供應商，以及這項資訊會從我們的 ASP.NET 網頁以程式設計方式存取，使用者已登入站台之後，會包含使用者的帳戶資訊。 透過設定檔的系統，或透過一些自訂方法的使用者層級帳戶資訊，可以透過 ASP.NET 2.0 角色系統，擷取此資訊。
-
-因為本教學課程的目的是為了示範調整登入的使用者為基礎的資料修改功能，而不是以 ASP.NET 2.0 的展示 s 成員資格、 角色和設定檔的系統，我們將使用非常簡單的機制來判斷瀏覽頁面-dropdownlist 進行的使用者可以指出是否他們應該能夠檢視及編輯任何供應商資訊，或者哪些使用者的功能也可以檢視和編輯的特定供應商的資訊。 如果使用者表示她可以檢視和編輯所有供應商資訊 （預設值），她可以逐頁瀏覽所有供應商、 編輯任何供應商 s 的位址資訊，並編輯所選取的供應商提供的任何產品的每單位的數量與名稱。 如果使用者表示，她只可檢視和編輯的特定供應商，不過，她可以只檢視該一家供應商的詳細資訊和產品然後只能更新名稱和每單位這些產品的資訊數量*不*停用。
-
-在本教學課程中，我們第一個步驟，則要建立此 DropDownList 並填入供應商中系統中。 開啟`UserLevelAccess.aspx`頁面中`EditInsertDelete`資料夾中，新增 dropdownlist 進行其`ID`屬性設定為`Suppliers`，並將此 DropDownList 繫結至名為新 ObjectDataSource `AllSuppliersDataSource`。
-
-[![建立名為 AllSuppliersDataSource 新 ObjectDataSource](limiting-data-modification-functionality-based-on-the-user-cs/_static/image8.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image7.png)
-
-**圖 3**:建立新的 ObjectDataSource 具名`AllSuppliersDataSource`([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image9.png))
-
-因為我們希望此 DropDownList 以包含所有的供應商，設定要叫用 ObjectDataSource`SuppliersBLL`類別的`GetSuppliers()`方法。 也請確認 ObjectDataSource s`Update()`方法會對應至`SuppliersBLL`類別的`UpdateSupplierAddress`方法，為這個 ObjectDataSource 會也可供我們將加入在步驟 2 中 DetailsView。
-
-完成 ObjectDataSource 精靈之後，完成設定步驟`Suppliers`DropDownList，它會顯示`CompanyName`資料欄位，以及使用`SupplierID`做為每個值的資料欄位`ListItem`。
-
-[![設定供應商 DropDownList 以使用 [CompanyName] 和 SupplierID 資料欄位](limiting-data-modification-functionality-based-on-the-user-cs/_static/image11.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image10.png)
-
-**圖 4**:設定`Suppliers`使用 DropDownList`CompanyName`並`SupplierID`資料欄位 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image12.png))
-
-此時，DropDownList 列出資料庫中的供應商的公司名稱。 不過，我們也必須包含 DropDownList"Show/編輯所有供應商 」 選項。 若要達成此目的，將`Suppliers`DropDownList s`AppendDataBoundItems`屬性設`true`，然後加入`ListItem`其`Text`屬性是 「 Show/編輯所有供應商 」，而其值為`-1`。 這可以加入直接透過宣告式標記，或透過設計工具移至 [屬性] 視窗，然後按一下省略符號，DropDownList 的`Items`屬性。
+讓我們開始吧！
 
 > [!NOTE]
-> 回頭[*主版/詳細篩選使用 DropDownList* ](../masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md)教學課程，如需將所有選取的項目加入資料繫結 DropDownList 的更詳細討論。
+> ASP.NET 2.0 s 成員資格系統提供標準化、可擴充的平臺，可用於建立、管理及驗證使用者帳戶。 由於成員資格系統的檢查已超出這些教學課程的範圍，因此本教學課程會藉由允許匿名訪客選擇其是否來自特定供應商或公司，而改為「fakes」成員資格。 如需成員資格的詳細資訊，請參閱我的[檢查 ASP.NET 2.0 s 成員資格、角色和設定檔](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)一文。
 
-在後`AppendDataBoundItems`屬性已設定和`ListItem`新增，DropDownList s 宣告式標記看起來應該像：
+## <a name="step-1-allowing-the-user-to-specify-their-access-rights"></a>步驟1：允許使用者指定其存取權限
+
+在真實世界的 web 應用程式中，使用者的帳戶資訊會包括其是否適用于公司或特定供應商，而且當使用者登入網站之後，這項資訊就會從我們的 ASP.NET 網頁以程式設計方式存取。 透過 ASP.NET 2.0 s 角色系統，可以透過配置檔案系統中的使用者層級帳戶資訊，或透過一些自訂的方式來捕捉此資訊。
+
+由於本教學課程的目的是要示範如何根據登入的使用者來調整資料修改功能，而不是為了展示 ASP.NET 2.0 s 成員資格、角色和配置檔案系統，因此我們將使用非常簡單的機制來判斷使用者造訪頁面的功能-使用者可以在其中指出是否應該能夠查看和編輯任何供應商資訊，或是他們可以查看和編輯之特定供應商資訊的 DropDownList。 如果使用者指出她可以查看和編輯所有供應商資訊（預設值），她可以逐頁流覽所有供應商，編輯任何供應商的位址資訊，並針對所選供應商所提供的任何產品，編輯每個單位的名稱和數量。 不過，如果使用者指出她只能查看和編輯特定供應商，則她只能查看該供應商的詳細資料和產品，而且只能針對*未*中止的產品更新其名稱和數量。
+
+然後，我們在本教學課程中的第一個步驟是建立此 DropDownList，並在系統中填入供應商。 開啟 [`EditInsertDelete`] 資料夾中的 [`UserLevelAccess.aspx`] 頁面，新增其 `ID` 屬性設定為 [`Suppliers`] 的 DropDownList，然後將此 DropDownList 系結至名為 `AllSuppliersDataSource`的新 ObjectDataSource。
+
+[![建立名為 AllSuppliersDataSource 的新 ObjectDataSource](limiting-data-modification-functionality-based-on-the-user-cs/_static/image8.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image7.png)
+
+**圖 3**：建立名為 `AllSuppliersDataSource` 的新 ObjectDataSource （[按一下以查看完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image9.png)）
+
+因為我們想要讓此 DropDownList 包含所有供應商，所以請設定 ObjectDataSource 來叫用 `SuppliersBLL` 類別的 `GetSuppliers()` 方法。 此外，請確定 ObjectDataSource s `Update()` 方法已對應到 `SuppliersBLL` 類別 s `UpdateSupplierAddress` 方法，因為我們將在步驟2中新增的 DetailsView 也會使用這個 ObjectDataSource。
+
+完成 ObjectDataSource wizard 之後，請設定 `Suppliers` DropDownList 來完成步驟，使其顯示 `CompanyName` 資料欄位，並使用 [`SupplierID` 資料] 欄位做為每個 `ListItem`的值。
+
+[![將供應商 DropDownList 設定為使用 [公司名稱] 和 [已供應商] 資料欄位](limiting-data-modification-functionality-based-on-the-user-cs/_static/image11.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image10.png)
+
+**圖 4**：設定 `Suppliers` DropDownList 使用 `CompanyName` 和 `SupplierID` 資料欄位（[按一下以查看完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image12.png)）
+
+此時，DropDownList 會在資料庫中列出供應商的公司名稱。 不過，我們也需要在 DropDownList 中包含 [顯示/編輯所有供應商] 選項。 若要完成此動作，請將 `Suppliers` DropDownList s `AppendDataBoundItems` 屬性設定為 `true`，然後新增 `ListItem`，其 `Text` 屬性為「顯示/編輯所有供應商」，且其值為 `-1`。 您可以直接透過宣告式標記或透過設計工具新增這項功能，方法是前往屬性視窗，然後按一下 DropDownList s `Items` 屬性中的省略號。
+
+> [!NOTE]
+> 如需將 [全選] 專案新增至資料系結 DropDownList 的詳細討論，請參閱使用 DropDownList 教學課程的[*主要/詳細資料篩選*](../masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md)。
+
+設定 `AppendDataBoundItems` 屬性並新增 `ListItem` 之後，DropDownList 的宣告式標記看起來應該像這樣：
 
 [!code-aspx[Main](limiting-data-modification-functionality-based-on-the-user-cs/samples/sample1.aspx)]
 
-透過瀏覽器檢視時，圖 5 顯示我們目前的進度的螢幕擷取畫面。
+[圖 5] 顯示透過瀏覽器觀看時，目前進度的螢幕擷取畫面。
 
-[![供應商 DropDownList 所有清單項目，再加上另一個用於每個供應商，包含顯示](limiting-data-modification-functionality-based-on-the-user-cs/_static/image14.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image13.png)
+[![[供應商 DropDownList] 包含 [顯示所有] 的所有人，加上每個供應商一個](limiting-data-modification-functionality-based-on-the-user-cs/_static/image14.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image13.png)
 
-**圖 5**:`Suppliers` DropDownList 包含顯示所有`ListItem`，再加上一個每個供應商 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image15.png))
+**圖 5**： [`Suppliers`] DropDownList 包含 [顯示所有 `ListItem`]，加上每個供應商的一個（[按一下以查看完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image15.png)）
 
-因為我們想要使用者已變更其選取項目之後，立即更新的使用者介面，設定`Suppliers`DropDownList s`AutoPostBack`屬性設`true`。 在步驟 2 中，我們將建立會顯示的資訊取決於選擇的 DropDownList supplier(s) DetailsView 控制項。 接著，在步驟 3 中，我們要建立這個 DropDownList s 的事件處理常式`SelectedIndexChanged`事件，在其中我們將新增 DetailsView 所繫結的適當供應商資訊的程式碼會根據選取的供應商。
+因為我們想要在使用者變更其選擇之後立即更新使用者介面，請將 `Suppliers` DropDownList s `AutoPostBack` 屬性設定為 [`true`]。 在步驟2中，我們將建立 DetailsView 控制項，它會根據選取的 DropDownList 顯示供應商的資訊。 然後，在步驟3中，我們將為這個 DropDownList 的 `SelectedIndexChanged` 事件建立事件處理常式，我們會根據選取的供應商，將適當供應商資訊系結至 DetailsView 的程式碼。
 
-## <a name="step-2-adding-a-detailsview-control"></a>步驟 2：加入 DetailsView 控制項
+## <a name="step-2-adding-a-detailsview-control"></a>步驟2：新增 DetailsView 控制項
 
-可讓 s 使用 DetailsView 來顯示供應商的資訊。 可以檢視和編輯所有供應商的使用者，DetailsView 會支援分頁，讓使用者能夠一次逐步供應商資訊一筆記錄。 如果使用者適用於特定的供應商，DetailsView 會顯示該特定供應商的資訊但不會包含分頁介面。 在任一情況下，DetailsView 需要允許使用者編輯供應商的地址、 城市和國家/地區欄位。
+讓 s 使用 DetailsView 來顯示供應商資訊。 對於可以查看和編輯所有供應商的使用者，DetailsView 將支援分頁，讓使用者一次一筆記錄就能逐步執行供應商資訊。 不過，如果使用者適用于特定供應商，則 DetailsView 只會顯示該特定供應商的資訊，且不會包含分頁介面。 不論是哪一種情況，DetailsView 都必須允許使用者編輯供應商的位址、城市和國家（地區）欄位。
 
-加入下方網頁的 DetailsView`Suppliers`下拉式清單中，設定其`ID`屬性設`SupplierDetails`，並將它繫結`AllSuppliersDataSource`上一個步驟中建立的 ObjectDataSource。 接下來，核取方塊啟用分頁，以及啟用編輯從 DetailsView s 智慧標籤。
+將 DetailsView 新增至 [`Suppliers`] DropDownList 底下的頁面，將其 [`ID`] 屬性設定為 [`SupplierDetails`]，並將它系結至在上一個步驟中建立的 `AllSuppliersDataSource` ObjectDataSource。 接下來，核取 [啟用分頁] 和 [啟用編輯] 核取方塊（來自 DetailsView s 智慧標籤）。
 
 > [!NOTE]
-> 如果您不要看到智慧 DetailsView s 中的 [啟用編輯] 選項加以標記 s 因為未對應的 ObjectDataSource 秒`Update()`方法，以`SuppliersBLL`類別的`UpdateSupplierAddress`方法。 請花一點時間返回再做此變更之後，[啟用編輯] 選項應該會出現在 DetailsView s 智慧標籤的設定。
+> 如果您沒有在 DetailsView s 智慧標籤中看到 [啟用編輯] 選項，因為您未將 ObjectDataSource s `Update()` 方法對應到 `SuppliersBLL` 類別 s `UpdateSupplierAddress` 方法。 請花點時間返回並進行這項設定變更，在這之後，[啟用編輯] 選項應該會出現在 DetailsView s 智慧標籤中。
 
-由於`SuppliersBLL`類別 s`UpdateSupplierAddress`方法只會接受四個參數- `supplierID`， `address`， `city`，和`country`-修改 DetailsView 的 BoundFields 以便`CompanyName`和`Phone`BoundFields 處於唯讀狀態。 此外，移除`SupplierID`BoundField 完全。 最後， `AllSuppliersDataSource` ObjectDataSource 目前有其`OldValuesParameterFormatString`屬性設定為`original_{0}`。 花點時間從宣告式語法完全移除此屬性設定值，或將它設定為預設值， `{0}`。
+由於 `SuppliersBLL` 類別的 `UpdateSupplierAddress` 方法只接受四個參數，`supplierID`、`address`、`city`和 `country` 修改 DetailsView s BoundFields，讓 `CompanyName` 和 `Phone` BoundFields 都是唯讀的。 此外，請完全移除 `SupplierID` BoundField。 最後，`AllSuppliersDataSource` ObjectDataSource 目前的 `OldValuesParameterFormatString` 屬性設定為 `original_{0}`。 請花點時間從宣告式語法中移除此屬性設定，或將它設定為預設值 `{0}`。
 
-在設定後`SupplierDetails`DetailsView 和`AllSuppliersDataSource`ObjectDataSource，我們會有下列的宣告式標記：
+設定 `SupplierDetails` DetailsView 並 `AllSuppliersDataSource` ObjectDataSource 之後，我們將會有下列宣告式標記：
 
 [!code-aspx[Main](limiting-data-modification-functionality-based-on-the-user-cs/samples/sample2.aspx)]
 
-DetailsView 此時可以透過分頁，而且選取的供應商的位址資訊可以更新，不論所做的選擇`Suppliers`DropDownList （請參閱 圖 6）。
+此時，DetailsView 可以進行分頁，而且選取的供應商位址資訊可以更新，而不論在 `Suppliers` DropDownList 中所做的選擇為何（請參閱 [圖 6]）。
 
-[![您可以檢視任何供應商資訊，並更新其位址](limiting-data-modification-functionality-based-on-the-user-cs/_static/image17.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image16.png)
+[![可以查看任何供應商資訊，並更新其位址](limiting-data-modification-functionality-based-on-the-user-cs/_static/image17.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image16.png)
 
-**圖 6**:供應商可以檢視資訊，並更新其位址 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image18.png))
+**圖 6**：可以查看任何供應商資訊，並更新其位址（[按一下以觀看完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image18.png)）
 
-## <a name="step-3-displaying-only-the-selected-supplier-s-information"></a>步驟 3：顯示只將所選的供應商的資訊
+## <a name="step-3-displaying-only-the-selected-supplier-s-information"></a>步驟3：只顯示選取的供應商資訊
 
-我們的頁面目前顯示的所有供應商，不論是否已從選取的特定供應商資訊`Suppliers`DropDownList。 若要顯示供應商資訊所選的供應商我們要將另一個的 ObjectDataSource 新增至我們的頁面上，它會擷取特定的供應商的相關資訊。
+我們的頁面目前會顯示所有供應商的資訊，而不論是否已從 `Suppliers` DropDownList 中選取特定供應商。 為了只顯示所選供應商的供應商資訊，我們需要在頁面中新增另一個 ObjectDataSource，以抓取特定供應商的相關資訊。
 
-加入新的 ObjectDataSource 頁面上，將它命名為`SingleSupplierDataSource`。 從它的智慧標籤，按一下 設定資料來源連結，讓它使用`SuppliersBLL`類別的`GetSupplierBySupplierID(supplierID)`方法。 如同`AllSuppliersDataSource`ObjectDataSource，具有`SingleSupplierDataSource`ObjectDataSource s`Update()`方法對應至`SuppliersBLL`類別的`UpdateSupplierAddress`方法。
+將新的 ObjectDataSource 加入至頁面，並將其命名為 `SingleSupplierDataSource`。 從其智慧標籤，按一下 [設定資料來源] 連結，並讓它使用 `SuppliersBLL` 類別的 `GetSupplierBySupplierID(supplierID)` 方法。 如同 `AllSuppliersDataSource` ObjectDataSource，請將 `SingleSupplierDataSource` ObjectDataSource s `Update()` 方法對應到 `SuppliersBLL` 類別的 `UpdateSupplierAddress` 方法。
 
-[![設定為使用 GetSupplierBySupplierID(supplierID) 方法 SingleSupplierDataSource ObjectDataSource](limiting-data-modification-functionality-based-on-the-user-cs/_static/image20.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image19.png)
+[![將 SingleSupplierDataSource ObjectDataSource 設定為使用 GetSupplierBySupplierID （已加入供應商）方法](limiting-data-modification-functionality-based-on-the-user-cs/_static/image20.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image19.png)
 
-**圖 7**:設定`SingleSupplierDataSource`使用 ObjectDataSource`GetSupplierBySupplierID(supplierID)`方法 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image21.png))
+**圖 7**：將 `SingleSupplierDataSource` ObjectDataSource 設定為使用 `GetSupplierBySupplierID(supplierID)` 方法（[按一下以查看完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image21.png)）
 
-接下來，我們重新提示您指定的參數來源`GetSupplierBySupplierID(supplierID)`方法的`supplierID`輸入的參數。 因為我們想要顯示的資訊，從下拉式清單中，使用選取的供應商`Suppliers`DropDownList 的`SelectedValue`做為參數來源屬性。
+接下來，我們會提示您指定 `GetSupplierBySupplierID(supplierID)` 方法 s `supplierID` 輸入參數的參數來源。 因為我們想要顯示從 DropDownList 中選取之供應商的資訊，所以請使用 `Suppliers` DropDownList s `SelectedValue` 屬性作為參數來源。
 
-[![供應商 DropDownList 做 supplierID 參數來源](limiting-data-modification-functionality-based-on-the-user-cs/_static/image23.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image22.png)
+[![使用供應商 DropDownList 作為廠商參數來源](limiting-data-modification-functionality-based-on-the-user-cs/_static/image23.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image22.png)
 
-**圖 8**:使用`Suppliers`做為 DropDownList`supplierID`參數的來源 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image24.png))
+**圖 8**：使用 `Suppliers` DropDownList 作為 `supplierID` 參數來源（[按一下以查看完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image24.png)）
 
-新增第二個 ObjectDataSource，即使有了 DetailsView 控制項目前設定為一律使用`AllSuppliersDataSource`ObjectDataSource。 我們需要加入邏輯，以調整 DetailsView 取決於所使用的資料來源`Suppliers`選取 DropDownList 項目。 若要達成此目的，建立`SelectedIndexChanged`供應商 DropDownList 的事件處理常式。 這最容易建立按兩下設計工具中的 DropDownList。 這個事件處理常式必須決定要使用哪些資料來源，且必須重新繫結至 DetailsView 資料。 這是由下列程式碼來完成：
+即使加入此第二個 ObjectDataSource，DetailsView 控制項目前已設定為一律使用 `AllSuppliersDataSource` ObjectDataSource。 我們需要新增邏輯，以根據選取的 `Suppliers` DropDownList 專案，調整 DetailsView 所使用的資料來源。 若要完成此動作，請建立供應商 DropDownList 的 `SelectedIndexChanged` 事件處理常式。 按兩下設計工具中的 DropDownList，即可輕鬆地建立此功能。 這個事件處理常式必須判斷要使用的資料來源，而且必須將資料重新系結至 DetailsView。 使用下列程式碼即可完成這項作業：
 
 [!code-csharp[Main](limiting-data-modification-functionality-based-on-the-user-cs/samples/sample3.cs)]
 
-事件處理常式一開始會判斷是否已選取 "Show/編輯所有供應商 」 選項。 如果是，它會設定`SupplierDetails`DetailsView s`DataSourceID`要`AllSuppliersDataSource`並傳回給供應商的集合中第一筆記錄的使用者，藉由設定`PageIndex`屬性設為 0。 如果使用者不過，從下拉式清單中，在 DetailsView s 選取特定的供應商`DataSourceID`指派給`SingleSuppliersDataSource`。 無論何種資料來源使用，`SuppliersDetails`模式會還原回唯讀模式，且資料會重新繫結至 DetailsView 藉由呼叫`SuppliersDetails`控制的`DataBind()`方法。
+事件處理常式會從判斷是否已選取 [顯示/編輯所有供應商] 選項開始。 如果是，則會將 `SupplierDetails` DetailsView s `DataSourceID` 設定為 `AllSuppliersDataSource`，並藉由將 `PageIndex` 屬性設定為0，將使用者傳回給供應商集合中的第一筆記錄。 不過，如果使用者已從 DropDownList 中選取特定供應商，則 DetailsView s `DataSourceID` 會指派給 `SingleSuppliersDataSource`。 不論使用何種資料來源，`SuppliersDetails` 模式都會還原成隻讀模式，而資料會藉由呼叫 `SuppliersDetails` 控制項 s `DataBind()` 方法來重新系結至 DetailsView。
 
-使用就地這個事件處理常式，DetailsView 控制項現在會顯示所選的供應商，除非已選取"Show/編輯所有供應商 」 選項，在此情況下檢視所有的供應商透過分頁介面。 圖 9 顯示的頁面為"Show/編輯所有供應商 」 選項;請注意，分頁介面，讓使用者能夠瀏覽，並更新任何供應商。 圖 10 顯示頁面選取錦供應商。 錦的資訊會在此情況下是可檢視和編輯。
+使用此事件處理常式時，除非選取了 [顯示/編輯所有供應商] 選項，否則 DetailsView 控制項現在會顯示選取的供應商，在此情況下，所有供應商都可以透過分頁介面來查看。 [圖 9] 顯示已選取 [顯示/編輯所有供應商] 選項的頁面;請注意，分頁介面存在，可讓使用者造訪和更新任何供應商。 [圖 10] 顯示已選取 Ma Maison 供應商的頁面。 在此情況下，只能看到並編輯 Ma Maison 的資訊。
 
-[![所有的供應商資訊可以檢視和編輯](limiting-data-modification-functionality-based-on-the-user-cs/_static/image26.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image25.png)
+[![可以查看和編輯所有供應商資訊](limiting-data-modification-functionality-based-on-the-user-cs/_static/image26.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image25.png)
 
-**圖 9**:所有的供應商資訊檢視和編輯 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image27.png))
+**圖 9**：可以查看和編輯所有供應商資訊（[按一下以查看完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image27.png)）
 
-[![只有選取的供應商的資訊可以檢視和編輯](limiting-data-modification-functionality-based-on-the-user-cs/_static/image29.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image28.png)
+[只能查看和編輯所選供應商的資訊 ![](limiting-data-modification-functionality-based-on-the-user-cs/_static/image29.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image28.png)
 
-**圖 10**:只有選取的供應商 s 資訊可以是 Viewed 並編輯 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image30.png))
+**圖 10**：只能查看和編輯選取的供應商資訊（[按一下以查看完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image30.png)）
 
 > [!NOTE]
-> 本教學課程中，在 DropDownList 和 DetailsView 控制項 s`EnableViewState`必須設為`true`（預設值） 因為 DropDownList s`SelectedIndex`和 DetailsView 的`DataSourceID`屬性的變更必須記住在回傳之間。
+> 在本教學課程中，DropDownList 和 DetailsView 控制項 `EnableViewState` 都必須設定為 `true` （預設值），因為 DropDownList s `SelectedIndex` 和 DetailsView s `DataSourceID` 屬性 s 變更必須在回傳之間記住。
 
-## <a name="step-4-listing-the-suppliers-products-in-an-editable-gridview"></a>步驟 4：列出供應商產品的可編輯的 GridView
+## <a name="step-4-listing-the-suppliers-products-in-an-editable-gridview"></a>步驟4：在可編輯的 GridView 中列出供應商產品
 
-完成 DetailsView 中，我們下一步是要包含可編輯的 GridView 會列出所選取的供應商提供這些產品。 此 GridView 應該允許編輯為僅限`ProductName`和`QuantityPerUnit`欄位。 此外，如果使用者瀏覽的頁面是來自特定供應商，它應該只允許這些產品的更新*不*停用。 若要這麼做我們需要先將新增的多載`ProductsBLL`類別 s`UpdateProducts`採用的方法只`ProductID`， `ProductName`，和`QuantityPerUnit`做為輸入的欄位。 我們已事先在許多教學課程中，會逐步執行此程序讓 s 不妨看看程式碼，應該會加入到`ProductsBLL`:
+完成 DetailsView 之後，我們的下一步是加入可編輯的 GridView，其中會列出所選供應商所提供的產品。 這個 GridView 應該只允許編輯 `ProductName` 和 `QuantityPerUnit` 欄位。 此外，如果造訪頁面的使用者是來自特定供應商，則只允許更新*未*中止的產品。 若要完成這項工作，我們必須先加入 `ProductsBLL` 類別 s `UpdateProducts` 方法的多載，只接受 `ProductID`、`ProductName`和 `QuantityPerUnit` 欄位做為輸入。 我們會在許多教學課程中事先逐步執行此程式，讓我們來看一下此處的程式碼，這應該新增至 `ProductsBLL`：
 
 [!code-csharp[Main](limiting-data-modification-functionality-based-on-the-user-cs/samples/sample4.cs)]
 
-使用這個多載建立，我們準備好將 GridView 控制項和其相關聯的 ObjectDataSource。 新增至頁面的新 GridView、 設定其`ID`屬性，以`ProductsBySupplier`，並將它設定為使用名為新 ObjectDataSource `ProductsBySupplierDataSource`。 因為我們希望此 GridView，以列出所選的供應商提供的這些產品時，使用`ProductsBLL`類別的`GetProductsBySupplierID(supplierID)`方法。 也將對應`Update()`方法，以新`UpdateProduct`我們剛剛建立的多載。
+建立此多載之後，我們就可以準備加入 GridView 控制項及其相關聯的 ObjectDataSource。 將新的 GridView 新增至頁面，將其 `ID` 屬性設為 `ProductsBySupplier`，並將其設定為使用名為 `ProductsBySupplierDataSource`的新 ObjectDataSource。 因為我們想要讓此 GridView 依據選取的供應商列出這些產品，所以請使用 `ProductsBLL` 類別 `GetProductsBySupplierID(supplierID)` 方法。 也會將 `Update()` 方法對應至我們剛才建立的新 `UpdateProduct` 多載。
 
-[![設定要使用剛才建立的 UpdateProduct 多載 ObjectDataSource](limiting-data-modification-functionality-based-on-the-user-cs/_static/image32.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image31.png)
+[![將 ObjectDataSource 設定為使用剛建立的 UpdateProduct 多載](limiting-data-modification-functionality-based-on-the-user-cs/_static/image32.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image31.png)
 
-**圖 11**:設定要使用 ObjectDataSource`UpdateProduct`多載只會建立 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image33.png))
+**圖 11**：設定 ObjectDataSource 使用剛建立的 `UpdateProduct` 多載（[按一下以查看完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image33.png)）
 
-我們重新提示您選取參數的來源`GetProductsBySupplierID(supplierID)`方法的`supplierID`輸入的參數。 因為我們想要顯示的產品中使用 DetailsView 選取供應商`SuppliersDetails`DetailsView 控制項的`SelectedValue`做為參數來源屬性。
+系統會提示您選取 `GetProductsBySupplierID(supplierID)` 方法 s `supplierID` 輸入參數的參數來源。 因為我們想要顯示在 DetailsView 中所選供應商的產品，所以請使用 [`SuppliersDetails` DetailsView 控制項] `SelectedValue` 屬性作為參數來源。
 
-[![SuppliersDetails DetailsView 的 SelectedValue 屬性做為參數來源](limiting-data-modification-functionality-based-on-the-user-cs/_static/image35.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image34.png)
+[![使用 SuppliersDetails DetailsView s SelectedValue 屬性作為參數來源](limiting-data-modification-functionality-based-on-the-user-cs/_static/image35.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image34.png)
 
-**圖 12**:使用`SuppliersDetails`DetailsView s`SelectedValue`做為參數來源屬性 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image36.png))
+**圖 12**：使用 `SuppliersDetails` DetailsView s `SelectedValue` 屬性做為參數來源（[按一下以查看完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image36.png)）
 
-傳回至 GridView，移除所有的 GridView 欄位除外`ProductName`， `QuantityPerUnit`，並`Discontinued`標記、 `Discontinued` CheckBoxField 以唯讀模式。 此外，檢查 GridView s 智慧標籤的 啟用編輯選項。 在進行這些變更之後，GridView 和 ObjectDataSource 的宣告式標記看起來應該如下所示：
+返回 GridView，移除 `ProductName`、`QuantityPerUnit`和 `Discontinued`以外的所有 GridView 欄位，並將 `Discontinued` CheckBoxField 標記為唯讀。 此外，請檢查 GridView s 智慧標籤的 [啟用編輯] 選項。 進行這些變更之後，GridView 和 ObjectDataSource 的宣告式標記看起來應該如下所示：
 
 [!code-aspx[Main](limiting-data-modification-functionality-based-on-the-user-cs/samples/sample5.aspx)]
 
-如同我們先前的 ObjectDataSources，此一 s`OldValuesParameterFormatString`屬性設定為`original_{0}`，當您嘗試更新產品的名稱或每個單位的數量時，這樣將會造成問題。 從宣告式語法中完全移除此屬性，或將它設定為其預設`{0}`。
+如同先前的 ObjectDataSources，這個 `OldValuesParameterFormatString` 屬性會設定為 `original_{0}`，這會在嘗試更新產品的名稱或每個單位的數量時造成問題。 請將此屬性從宣告式語法全部移除，或將它設定為預設值 `{0}`。
 
-此設定完成後，我們的頁面現在會列出在 GridView 中選取的供應商所提供的產品 （請參閱 圖 13）。 目前*任何*可以更新產品的名稱或每個單位的數量。 不過，我們需要更新我們的網頁邏輯，使這類功能禁止使用的特定供應商相關聯的使用者不再生產的產品。 我們將會處理在步驟 5 中的這個最後一個片段。
+完成此設定後，我們的頁面現在會列出 GridView 中所選供應商所提供的產品（請參閱 [圖 13]）。 目前，每個單位的*任何*產品名稱或數量都可以更新。 不過，我們需要更新頁面邏輯，讓與特定供應商相關聯之使用者的已停止產品可以使用這類功能。 我們會在步驟5中解決這最後這一件。
 
-[![顯示所選取的供應商提供的產品](limiting-data-modification-functionality-based-on-the-user-cs/_static/image38.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image37.png)
+[顯示所選供應商所提供的產品 ![](limiting-data-modification-functionality-based-on-the-user-cs/_static/image38.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image37.png)
 
-**圖 13**:顯示所選取的供應商提供的產品 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image39.png))
+**圖 13**：顯示所選供應商所提供的產品（[按一下以觀看完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image39.png)）
 
 > [!NOTE]
-> 加上此可編輯的 GridView `Suppliers` DropDownList 的`SelectedIndexChanged`應該更新事件處理常式，以恢復 GridView 唯讀狀態。 否則如果仍執行時編輯產品資訊中選取不同的供應商，則在新的供應商的 GridView 中對應的索引也會可編輯。 若要避免這個問題，請設定 GridView s`EditIndex`屬性，以`-1`在`SelectedIndexChanged`事件處理常式。
+> 加入這個可編輯的 GridView 之後，就應該更新 `Suppliers` DropDownList s `SelectedIndexChanged` 事件處理常式，使 GridView 回到唯讀狀態。 否則，如果在編輯產品資訊時選取不同的供應商，則在 GridView 中，新供應商的對應索引也會是可編輯的。 若要避免這種情況，只要將 GridView 的 `EditIndex` 屬性設定為 `SelectedIndexChanged` 事件處理常式中的 `-1` 即可。
 
-此外，您應該記得，是很重要的 GridView 的檢視狀態是已啟用 （預設行為）。 如果您將設定 GridView s`EnableViewState`屬性設`false`，執行並行的使用者不小心刪除或編輯記錄的風險。 請參閱[警告：並行處理問題與 ASP.NET 2.0 Gridview/DetailsView/FormViews 該支援編輯和/或刪除和的檢視狀態已停用](http://scottonwriting.net/sowblog/posts/10054.aspx)如需詳細資訊。
+此外，請記得要啟用 GridView s 檢視狀態（預設行為）是很重要的。 如果您將 GridView 的 `EnableViewState` 屬性設定為 `false`，就會面臨並行使用者不小心刪除或編輯記錄的風險。 如需詳細資訊，請參閱[警告： ASP.NET 2.0 gridview/DetailsView/FormViews 的並行問題，其支援編輯及/或刪除，且已停用檢視狀態](http://scottonwriting.net/sowblog/posts/10054.aspx)。
 
-## <a name="step-5-disallow-editing-for-discontinued-products-when-showedit-all-suppliers-is-not-selected"></a>步驟 5：不允許編輯，已停止的產品時顯示或編輯所有供應商是未選取
+## <a name="step-5-disallow-editing-for-discontinued-products-when-showedit-all-suppliers-is-not-selected"></a>步驟5：未選取 [顯示/編輯所有供應商] 時，不允許編輯已停止的產品
 
-雖然`ProductsBySupplier`GridView 會正常運作，其目前授與過多存取來自特定供應商的使用者。 根據我們的商務規則，這類使用者應該無法更新已停止的產品。 若要強制這種情況，我們可以隱藏 （或停用） 已停止的產品時所瀏覽頁面時由使用者從供應商的 GridView 資料列的 [編輯] 按鈕。
+雖然 `ProductsBySupplier` GridView 完全正常運作，但它目前會授與來自特定供應商的使用者過多的存取權。 根據我們的商務規則，這類使用者應該無法更新已停止的產品。 若要強制執行這項工作，我們可以在使用者從供應商造訪頁面時，隱藏（或停用）那些 GridView 資料列中的 [編輯] 按鈕。
 
-建立事件處理常式 GridView s`RowDataBound`事件。 這個事件處理常式中，我們需要判斷使用者是否為特定的供應商，而這，本教學課程中，可決定藉由檢查供應商 DropDownList s 相關聯`SelectedValue`屬性--如果它是 s 以外的項目-1，則使用者相關聯的特定供應商。 這類使用者，我們再需要判斷產品已停止。 我們可以擷取參考的實際`ProductRow`執行個體繫結至 GridView 資料列，透過`e.Row.DataItem`屬性中所述[ *GridView s 頁尾顯示摘要資訊*](../custom-formatting/displaying-summary-information-in-the-gridview-s-footer-cs.md)本教學課程。 如果產品已經停售，我們可以抓取 GridView s CommandField 使用先前的教學課程中討論的技術中的 [編輯] 按鈕的程式設計參考[*新增用戶端確認時刪除*](adding-client-side-confirmation-when-deleting-cs.md). 一旦我們擁有我們再以隱藏或停用按鈕的參考。
+建立 GridView s `RowDataBound` 事件的事件處理常式。 在此事件處理常式中，我們需要判斷使用者是否與特定供應商相關聯，在本教學課程中，您可以藉由檢查供應商 DropDownList s `SelectedValue` 屬性（如果它不是-1）來決定是否要將使用者與特定供應商相關聯。 針對這類使用者，我們必須判斷產品是否已停止。 我們可以透過 `e.Row.DataItem` 屬性抓取與 GridView 資料列系結的實際 `ProductRow` 實例的參考，如在[*gridview 的頁尾中顯示摘要資訊*](../custom-formatting/displaying-summary-information-in-the-gridview-s-footer-cs.md)教學課程中所述。 如果產品已停產，我們可以使用上一個教學課程中所討論的技巧，在 GridView CommandField 中抓取 [編輯] 按鈕的程式設計參考，並在[*刪除時新增用戶端確認*](adding-client-side-confirmation-when-deleting-cs.md)。 我們有了參考之後，就可以隱藏或停用按鈕。
 
 [!code-csharp[Main](limiting-data-modification-functionality-based-on-the-user-cs/samples/sample6.cs)]
 
-與這個事件處理常式的位置，當瀏覽此頁面的使用者身分從特定的供應商已停用這些產品都不是可編輯的為 [編輯] 按鈕會隱藏這些產品。 比方說，Chef Anton 的 Gumbo 混合是紐奧良印地安 Delights 供應商停產的產品。 當這個特定的供應商，瀏覽的頁面，此產品的 編輯 按鈕隱藏看不到 （請參閱 圖 14）。 不過，瀏覽時使用 「 顯示或編輯所有供應商 」，編輯 按鈕會是 可用 （請參閱 圖 15）。
+當此事件處理常式已就緒時，以特定供應商的使用者身分造訪此頁面時，將無法編輯已停止的產品，因為這些產品的 [編輯] 按鈕已隱藏。 例如，Chef Anton s Gumbo Mix 是新奧爾良 Cajun 樂趣供應商的已中止產品。 造訪此特定供應商的頁面時，會隱藏此產品的 [編輯] 按鈕（請參閱 [圖 14]）。 不過，當您使用 [顯示/編輯所有供應商] 進行流覽時，可以使用 [編輯] 按鈕（請參閱 [圖 15]）。
 
-[![Chef Anton s Gumbo 混用 [編輯] 按鈕會隱藏特定供應商的使用者](limiting-data-modification-functionality-based-on-the-user-cs/_static/image41.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image40.png)
+[適用于供應商專屬使用者的 ![[Chef Anton s Gumbo Mix] 的 [編輯] 按鈕已隱藏](limiting-data-modification-functionality-based-on-the-user-cs/_static/image41.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image40.png)
 
-**圖 14**:Chef Anton s Gumbo 混用 [編輯] 按鈕會隱藏特定供應商的使用者 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image42.png))
+**圖 14**：對於供應商專屬的使用者，[Chef Anton s Gumbo Mix] 的 [編輯] 按鈕是隱藏的（[按一下以觀看完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image42.png)）
 
-[![Chef Anton s Gumbo 混用 [編輯] 按鈕會顯示所有供應商使用者顯示或編輯，](limiting-data-modification-functionality-based-on-the-user-cs/_static/image44.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image43.png)
+[![顯示/編輯所有供應商使用者，會顯示 [Chef Anton s Gumbo Mix] 的 [編輯] 按鈕](limiting-data-modification-functionality-based-on-the-user-cs/_static/image44.png)](limiting-data-modification-functionality-based-on-the-user-cs/_static/image43.png)
 
-**圖 15**:會顯示所有供應商使用者顯示或編輯，Chef Anton s Gumbo 混用 [編輯] 按鈕 ([按一下以檢視完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image45.png))
+**圖 15**：針對 [顯示/編輯所有供應商使用者]，會顯示 [Chef Anton s Gumbo Mix] 的 [編輯] 按鈕（[按一下以查看完整大小的影像](limiting-data-modification-functionality-based-on-the-user-cs/_static/image45.png)）
 
 ## <a name="checking-for-access-rights-in-the-business-logic-layer"></a>檢查商務邏輯層中的存取權限
 
-在本教學課程的 ASP.NET 頁面可處理使用者可以看到哪些資訊與所有邏輯，而且他可以更新哪些產品。 在理想情況下，此邏輯也會出現在商業邏輯層。 例如，`SuppliersBLL`類別 s `GetSuppliers()` （它會傳回所有的供應商） 的方法可能會包含檢查，以確保目前登入的使用者*不*特定供應商相關聯。 同樣地，`UpdateSupplierAddress`方法可能包括檢查，以確認目前登入的使用者請本公司合作 （並因此可以更新供應商的所有位址資訊） 或其資料正在更新供應商相關聯。
+在本教學課程中，ASP.NET 網頁會處理有關使用者可以看到哪些資訊以及可以更新哪些產品的所有邏輯。 在理想的情況下，此邏輯也會出現在商務邏輯層。 例如，`SuppliersBLL` 類別 `GetSuppliers()` 方法（傳回所有供應商）可能包括檢查，以確保目前登入的使用者*沒有*與特定供應商相關聯。 同樣地，`UpdateSupplierAddress` 方法可能會包含檢查，以確保目前登入的使用者可以在公司中運作（因此可以更新所有供應商位址資訊），或與資料正在更新的供應商相關聯。
 
-因為在本教學課程中的使用者 s 權限取決於在頁面上，BLL 類別無法存取 dropdownlist 進行，所以我不包括這類 BLL 層檢查。 使用成員資格系統，或其中一個 （例如 Windows 驗證）、 ASP.NET 所提供的方塊外的驗證配置時，目前登上使用者 s 存取資訊和角色資訊可以從 BLL，因此這類存取權權限檢查可能的簡報和 BLL 層級。
+我在本教學課程中並未包含這類 BLL 層檢查，因為在我們的教學課程中，使用者的權利是由頁面上的 DropDownList （BLL 類別無法存取）所決定。 使用成員資格系統或 ASP.NET 提供的其中一種驗證配置（例如 Windows 驗證）時，可以從 BLL 存取目前登入的使用者資訊和角色資訊，進而進行這類存取在簡報和 BLL 層級都可以進行許可權檢查。
 
 ## <a name="summary"></a>總結
 
-大部分的網站提供的使用者帳戶需要自訂資料修改介面，根據登入的使用者。 系統管理使用者可以刪除和編輯任何記錄，而非系統管理使用者可能會限制為僅更新或刪除自己建立的記錄。 諸如此類的情節可能是的資料 Web 控制項，ObjectDataSource，且商務邏輯層類別可加以擴充，若要新增或拒絕登入的使用者為基礎的特定功能。 在本教學課程中，我們看到如何限制根據使用者是否為特定的供應商相關聯，或如果他們工作本公司可檢視和編輯資料。
+大部分提供使用者帳戶的網站，都必須根據登入的使用者自訂資料修改介面。 系統管理使用者可能可以刪除和編輯任何記錄，而非系統管理使用者可能會受到限制，只能更新或刪除本身自行建立的記錄。 無論是哪種情況，都可以擴充資料 Web 控制項、ObjectDataSource 和商務邏輯層類別，以根據登入的使用者來新增或拒絕特定功能。 在本教學課程中，我們已瞭解如何根據使用者是否與特定供應商相關聯，或是否適用于我們的公司，來限制可查看和可編輯的資料。
 
-本教學課程結束時，我們檢查插入、 更新和刪除使用 GridView、 DetailsView 和 FormView 控制項的資料。 從開始下一個教學課程，我們將把焦點轉到新增分頁和排序支援。
+本教學課程將說明如何使用 GridView、DetailsView 和 FormView 控制項來插入、更新和刪除資料。 從下一個教學課程開始，我們會將我們的注意力轉向新增分頁和排序支援。
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ## <a name="about-the-author"></a>關於作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七個 ASP 書籍和的創辦人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年從事 Microsoft Web 技術工作。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是[ *Sams 教導您自己 ASP.NET 2.0 在 24 小時內*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在觸達[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或透過他的部落格，這位於 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，自1998起，有七個 ASP/ASP. NET 書籍和創辦人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是[*在24小時內讓自己的 ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在mitchell@4GuysFromRolla.com觸達[。](mailto:mitchell@4GuysFromRolla.com) 或者透過他的 blog，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 > [!div class="step-by-step"]
 > [上一頁](adding-client-side-confirmation-when-deleting-cs.md)

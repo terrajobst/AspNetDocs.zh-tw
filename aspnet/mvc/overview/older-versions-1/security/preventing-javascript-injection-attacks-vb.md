@@ -1,115 +1,115 @@
 ---
 uid: mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-vb
-title: 防止 JavaScript 插入式攻擊 (VB) |Microsoft Docs
+title: 防止 JavaScript 插入式攻擊（VB） |Microsoft Docs
 author: StephenWalther
-description: 防止 JavaScript 插入式攻擊和跨網站指令攻擊發生給您。 在本教學課程中，Stephen Walther 會說明如何輕鬆地 de...
+description: 避免發生 JavaScript 插入式攻擊和跨網站腳本攻擊。 在本教學課程中，Stephen Walther 將說明您可以如何輕鬆地取消 。
 ms.author: riande
 ms.date: 08/19/2008
 ms.assetid: 9274a72e-34dd-4dae-8452-ed733ae71377
 msc.legacyurl: /mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 844d7209d3efbe0acf92fbc25e9b06c25c4d269a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: dfe09085f26c62c566649bc6f570aa25367a0f07
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125407"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74594771"
 ---
 # <a name="preventing-javascript-injection-attacks-vb"></a>防止 JavaScript 插入式攻擊 (VB)
 
-藉由[Stephen Walther](https://github.com/StephenWalther)
+依[Stephen Walther](https://github.com/StephenWalther)
 
-[下載 PDF](http://download.microsoft.com/download/8/4/8/84843d8d-1575-426c-bcb5-9d0c42e51416/ASPNET_MVC_Tutorial_06_VB.pdf)
+[下載 PDF](https://download.microsoft.com/download/8/4/8/84843d8d-1575-426c-bcb5-9d0c42e51416/ASPNET_MVC_Tutorial_06_VB.pdf)
 
-> 防止 JavaScript 插入式攻擊和跨網站指令攻擊發生給您。 在本教學課程中，Stephen Walther 會說明如何輕鬆地擊敗這些類型的 HTML 編碼內容的攻擊。
+> 避免發生 JavaScript 插入式攻擊和跨網站腳本攻擊。 在本教學課程中，Stephen Walther 將說明如何透過 HTML 編碼您的內容，輕鬆地對抗這些類型的攻擊。
 
-本教學課程的目標是要說明如何防止 JavaScript 插入式攻擊，以及在您的 ASP.NET MVC 應用程式中。 本教學課程會討論兩種方法來保護您的網站，JavaScript 插入式攻擊。 您了解如何為您顯示的資料進行編碼，以防止 JavaScript 插入式攻擊。 您也了解如何防止 JavaScript 插入式攻擊的編碼方式表示您接受的資料。
+本教學課程的目的是要說明如何防止 ASP.NET MVC 應用程式中的 JavaScript 插入式攻擊。 本教學課程將討論兩種保護您的網站免于遭受 JavaScript 插入式攻擊的方法。 您將瞭解如何藉由編碼所顯示的資料，來防止 JavaScript 插入式攻擊。 您也將瞭解如何藉由編碼您接受的資料，來防止 JavaScript 插入式攻擊。
 
 ## <a name="what-is-a-javascript-injection-attack"></a>什麼是 JavaScript 插入式攻擊？
 
-當您接受使用者輸入，並重新顯示使用者輸入時，您就會開啟您的網站以 JavaScript 插入式攻擊。 讓我們來檢查具象的應用程式開啟 JavaScript 插入式攻擊。
+每當您接受使用者輸入並重新顯示使用者輸入時，您就會開啟您的網站以進行 JavaScript 插入式攻擊。 讓我們來檢查對 JavaScript 插入式攻擊開放的實體應用程式。
 
-假設您已建立客戶的意見反應網站 （請參閱 圖 1）。 客戶可以瀏覽網站，並使用您的產品使用者體驗上輸入意見反應。 當客戶提交他們的意見反應時，意見反應會重新顯示在意見反應 頁面上。
+假設您已建立客戶意見反應網站（請參閱 [圖 1]）。 客戶可以造訪網站，並輸入您的產品使用經驗的意見反應。 當客戶提交意見反應時，意見反應會顯示在 [意見反應] 頁面上。
 
 [![客戶意見反應網站](preventing-javascript-injection-attacks-vb/_static/image2.png)](preventing-javascript-injection-attacks-vb/_static/image1.png)
 
-**圖 01**:客戶意見反應網站 ([按一下以檢視完整大小的影像](preventing-javascript-injection-attacks-vb/_static/image3.png))
+**圖 01**：客戶意見反應網站（[按一下以觀看完整大小的影像](preventing-javascript-injection-attacks-vb/_static/image3.png)）
 
-客戶意見反應網站使用`controller`列表 1 中。 這`controller`包含名為兩個動作`Index()`和`Create()`。
+客戶意見反應網站使用 [清單 1] 中的 `controller`。 此 `controller` 包含兩個名為 `Index()` 和 `Create()`的動作。
 
-**列表 1 – `HomeController.vb`**
+**清單1– `HomeController.vb`**
 
 [!code-vb[Main](preventing-javascript-injection-attacks-vb/samples/sample1.vb)]
 
-`Index()`方法顯示`Index`檢視。 此方法會傳遞所有過去的客戶意見反應，以`Index`（使用 LINQ to SQL 查詢），從資料庫擷取意見反應的檢視。
+`Index()` 方法會顯示 `Index` view。 這個方法會藉由從資料庫中抓取意見反應（使用 LINQ to SQL 查詢），將所有先前的客戶意見反應傳遞至 `Index` view。
 
-`Create()`方法會建立新的意見項目，並將它加入至資料庫。 客戶輸入表單中的訊息會傳遞至`Create()`訊息參數中的方法。 建立意見項目並將訊息指派給意見項目`Message`屬性。 意見項目提交至資料庫`DataContext.SubmitChanges()`方法呼叫。 最後，訪客會被重新導向回到`Index`檢視顯示所有意見反應。
+`Create()` 方法會建立新的意見反應專案，並將其新增至資料庫。 客戶在表單中輸入的訊息會傳遞至 message 參數中的 `Create()` 方法。 隨即建立意見專案，並將訊息指派給意見專案的 [`Message`] 屬性。 意見專案會以 `DataContext.SubmitChanges()` 方法呼叫提交至資料庫。 最後，訪客會重新導向回到 [`Index`] 視圖，其中顯示所有的意見反應。
 
-`Index`檢視包含在 列表 2。
+[`Index`] 視圖包含在 [清單 2] 中。
 
-**列表 2 – `Index.aspx`**
+**清單2– `Index.aspx`**
 
 [!code-aspx[Main](preventing-javascript-injection-attacks-vb/samples/sample2.aspx)]
 
-`Index`檢視有兩個區段。 上方區段會包含實際的客戶意見反應表單。 底部區段包含一個 For...每個迴圈，迴圈的所有先前的客戶意見反應項目，並顯示每個意見項目 EntryDate 和訊息屬性。
+[`Index`] 視圖有兩個區段。 頂端區段包含實際的客戶意見反應表單。 底部區段包含適用于. 的。每個迴圈會逐一查看所有先前的客戶意見反應專案，並顯示每個意見專案的 EntryDate 和訊息屬性。
 
-客戶意見反應網站是一個簡單的網站。 不幸的是，網站會開啟 JavaScript 插入式攻擊。
+客戶意見反應網站是一個簡單的網站。 可惜的是，此網站已開放給 JavaScript 插入式攻擊。
 
-假設在客戶的意見反應表單中輸入下列文字：
+假設您在 [客戶意見反應] 表單中輸入下列文字：
 
 [!code-html[Main](preventing-javascript-injection-attacks-vb/samples/sample3.html)]
 
-這段文字表示的 JavaScript 指令碼，會顯示警示訊息方塊。 有人將此指令碼提交至意見反應之後形成，訊息<em>Boo ！</em>會出現時的任何人造訪客戶意見反應網站未來 （請參閱 圖 2）。
+此文字代表會顯示警示訊息方塊的 JavaScript 腳本。 有人將此腳本提交到意見反應表單之後，訊息<em>Boo！</em>每當有人造訪客戶意見反應網站時，就會出現（請參閱 [圖 2]）。
 
-[![JavaScript 插入式攻擊](preventing-javascript-injection-attacks-vb/_static/image5.png)](preventing-javascript-injection-attacks-vb/_static/image4.png)
+[![JavaScript 插入](preventing-javascript-injection-attacks-vb/_static/image5.png)](preventing-javascript-injection-attacks-vb/_static/image4.png)
 
-**圖 02**:JavaScript 插入式攻擊 ([按一下以檢視完整大小的影像](preventing-javascript-injection-attacks-vb/_static/image6.png))
+**圖 02**： JavaScript 插入（[按一下以查看完整大小的影像](preventing-javascript-injection-attacks-vb/_static/image6.png)）
 
-現在，您 JavaScript 插入式攻擊的初始回應可能會讓您失去動力。 您可能會認為，JavaScript 插入式攻擊是只是一種*竄改*攻擊。 您可能會認為，沒有人可以任何動作真正邪惡認可 JavaScript 插入式攻擊。
+現在，您對 JavaScript 插入式攻擊的初始回應可能會動力。 您可能認為 JavaScript 插入式攻擊只是一*種攻擊的*類型。 您可能會認為沒有人可以藉由認可 JavaScript 插入式攻擊來執行任何真正的麻煩。
 
-不幸的是，駭客就可以進行一些真的很邪惡的項目，藉由插入網站中的 JavaScript。 若要執行跨網站指令碼 (XSS) 攻擊，您可以使用 JavaScript 插入式攻擊。 在跨網站指令攻擊中，您可以竊取機密的使用者資訊，並將資訊傳送給另一個網站。
+可惜的是，駭客可以藉由將 JavaScript 插入網站中，來執行一些真正的惡意專案。 您可以使用 JavaScript 插入式攻擊來執行跨網站腳本（XSS）攻擊。 在跨網站腳本攻擊中，您會竊取機密的使用者資訊，並將資訊傳送至另一個網站。
 
-比方說，駭客就可以使用 JavaScript 插入式攻擊竊取其他使用者的瀏覽器 cookie 的值。 機密資訊，例如密碼、 信用卡號碼或身分證號碼 – 儲存在瀏覽器 cookie，如果駭客可以竊取這項資訊使用 JavaScript 插入式攻擊。 或者，如果使用者輸入具有以 JavaScript 攻擊遭入侵的頁面所包含的表單欄位中的機密資訊，然後駭客可以使用插入的 JavaScript 來抓取表單資料，並將它傳送給另一個網站。
+例如，駭客可以使用 JavaScript 插入式攻擊，竊取其他使用者的瀏覽器 cookie 值。 如果機密資訊（例如密碼、信用卡號碼或社會保險號碼）儲存在瀏覽器 cookie 中，則駭客可以使用 JavaScript 插入式攻擊來竊取這項資訊。 或者，如果使用者在含有 JavaScript 攻擊的頁面中所包含的表單欄位中輸入敏感性資訊，則駭客可以使用插入的 JavaScript 來抓取表單資料，並將它傳送至另一個網站。
 
-*請害怕*。 重視 JavaScript 插入式攻擊，並保護您的使用者機密資訊。 在接下來兩節中，我們會討論兩種技術可供您保護您的 ASP.NET MVC 應用程式，從 JavaScript 插入式攻擊。
+*請害怕*。 認真採取 JavaScript 插入式攻擊，並保護您的使用者機密資訊。 在接下來的兩節中，我們將討論您可以用來保護 ASP.NET MVC 應用程式免于 JavaScript 插入式攻擊的兩項技術。
 
-## <a name="approach-1-html-encode-in-the-view"></a>方法 #1:在檢視中的 HTML 編碼
+## <a name="approach-1-html-encode-in-the-view"></a>方法 #1：在視圖中進行 HTML 編碼
 
-其中一個簡單的方法，防止 JavaScript 插入式攻擊是以 HTML 編碼重新顯示在檢視中的資料時，網站使用者所輸入的任何資料。 已更新`Index`列表 3 中的檢視會遵循這種方法。
+防止 JavaScript 插入式攻擊的一種簡單方法，就是在您重新顯示視圖中的資料時，以 HTML 編碼網站使用者所輸入的任何資料。 [清單 3] 中已更新的 `Index` 視圖會遵循此方法。
 
-**列表 3 – `Index.aspx` (編碼的 HTML)**
+**清單3– `Index.aspx` （HTML 編碼）**
 
 [!code-aspx[Main](preventing-javascript-injection-attacks-vb/samples/sample4.aspx)]
 
-請注意，值`feedback.Message`是 HTML 編碼之前的值會顯示為下列程式碼：
+請注意，在以下列程式碼顯示值之前，`feedback.Message` 的值是 HTML 編碼的：
 
 [!code-aspx[Main](preventing-javascript-injection-attacks-vb/samples/sample5.aspx)]
 
-什麼平均值為 HTML 編碼字串？ 當您以 HTML 編碼字串時，危險字元，例如`<`並`>`這類的 HTML 實體參考會取代`&lt;`和`&gt;`。 因此當字串`<script>alert("Boo!")</script>`是 HTML 編碼，將它轉換成`&lt;script&gt;alert(&quot;Boo!&quot;)&lt;/script&gt;`。 做為解譯的瀏覽器時，JavaScript 指令碼不會再執行編碼的字串。 相反地，您可以取得無害的頁面 [圖 3] 中。
+HTML 編碼字串的意義為何？ 當您以 HTML 編碼字串時，`<` 和 `>` 等危險字元會由 HTML 實體參考（例如 `&lt;` 和 `&gt;`）取代。 因此，當字串 `<script>alert("Boo!")</script>` 以 HTML 編碼時，它會轉換成 `&lt;script&gt;alert(&quot;Boo!&quot;)&lt;/script&gt;`。 已編碼的字串在瀏覽器轉譯時，不再以 JavaScript 腳本的形式執行。 相反地，您會在 [圖 3] 中看到無害的頁面。
 
 [![失效的 JavaScript 攻擊](preventing-javascript-injection-attacks-vb/_static/image8.png)](preventing-javascript-injection-attacks-vb/_static/image7.png)
 
-**圖 03**:擊敗 JavaScript 攻擊 ([按一下以檢視完整大小的影像](preventing-javascript-injection-attacks-vb/_static/image9.png))
+**圖 03**：通過 JavaScript 攻擊（[按一下以觀看完整大小的影像](preventing-javascript-injection-attacks-vb/_static/image9.png)）
 
-請注意，在`Index`檢視中 列表 3 的值`feedback.Message`編碼。 值`feedback.EntryDate`就未編碼。 您只需要將使用者輸入的資料進行編碼。 在控制器中產生 EntryDate 的值，因為您不需要為 HTML 編碼此值。
+請注意，在 [清單 3] 的 [`Index`] 視圖中，只會編碼 `feedback.Message` 的值。 `feedback.EntryDate` 的值未編碼。 您只需要對使用者輸入的資料進行編碼。 因為 EntryDate 的值是在控制器中產生的，所以您不需要對此值進行 HTML 編碼。
 
-## <a name="approach-2-html-encode-in-the-controller"></a>方法 2:在控制器中的 HTML 編碼
+## <a name="approach-2-html-encode-in-the-controller"></a>方法 #2：在控制器中進行 HTML 編碼
 
-而不是 HTML 編碼的資料，當您在檢視中顯示資料時，您可以 HTML 編碼之前您送出至資料庫資料的資料。 此第二種方法會是`controller`列表 4 中。
+您可以在將資料提交至資料庫之前，將資料進行 HTML 編碼，而不是 HTML 編碼資料。 第二種方法是在 [清單 4] 的 `controller` 的情況下採取。
 
-**列表 4 – `HomeController.cs` (編碼的 HTML)**
+**清單4– `HomeController.cs` （HTML 編碼）**
 
 [!code-vb[Main](preventing-javascript-injection-attacks-vb/samples/sample6.vb)]
 
-請注意，訊息的值是 HTML 編碼之前在該值提交至資料庫內`Create()`動作。 當訊息會重新顯示在檢視中時，訊息是 HTML 編碼，而且不會執行任何插入訊息中的 JavaScript。
+請注意，在 `Create()` 動作內將值提交至資料庫之前，Message 的值是 HTML 編碼的。 當訊息在視圖中重新顯示時，訊息會以 HTML 編碼，而且不會執行任何插入訊息中的 JavaScript。
 
-一般而言，您應該偏好使用透過此第二種方法在本教學課程所討論的第一個方法。 此第二個方法的問題是，您得到 HTML 編碼的資料在資料庫中。 換句話說，您資料庫的資料會遇到一些瘋狂的尋找字元時修改。
+一般而言，您應該優先于本教學課程中討論的第一種方法，而不是第二種方法。 第二種方法的問題是，您的資料庫中會有 HTML 編碼的資料。 換句話說，您的資料庫資料會以有趣的字元變動。
 
-為什麼這是不正確？ 如果您需要在 web 網頁以外的項目中顯示的資料庫資料，您會遇到問題。 例如，您可以在 Windows Forms 應用程式中不再那麼容易顯示資料。
+為什麼這不好？ 如果您需要在網頁以外的地方顯示資料庫資料，就會發生問題。 例如，您無法再輕鬆地在 Windows Forms 應用程式中顯示資料。
 
 ## <a name="summary"></a>總結
 
-本教學課程的目的是要把您唬住有關 JavaScript 插入式攻擊的潛在客戶。 本教學課程中討論過防禦您的 ASP.NET MVC 應用程式，防止 JavaScript 插入式攻擊的兩種方法： 可以是 HTML 編碼使用者提交資料的檢視，或者您可以 HTML 編碼使用者提交控制器中的資料。
+本教學課程的目的是要怪嚇人您有關 JavaScript 插入式攻擊的潛在客戶。 本教學課程討論了兩種保護 ASP.NET MVC 應用程式免于 JavaScript 插入式攻擊的方法：您可以在視圖中對使用者提交的資料進行 HTML 編碼，或您可以在控制器中對使用者提交的資料進行 HTML 編碼。
 
 > [!div class="step-by-step"]
-> [上一步](authenticating-users-with-windows-authentication-vb.md)
+> [上一篇](authenticating-users-with-windows-authentication-vb.md)

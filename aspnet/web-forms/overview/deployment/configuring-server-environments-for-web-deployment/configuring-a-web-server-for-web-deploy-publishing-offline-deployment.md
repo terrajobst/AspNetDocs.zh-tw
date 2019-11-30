@@ -1,222 +1,222 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
-title: 設定 Web 伺服器的 Web Deploy 發行 （離線部署） |Microsoft Docs
+title: 設定用於 Web Deploy 發佈的 Web 服務器（離線部署） |Microsoft Docs
 author: jrjlee
-description: 本主題描述如何設定 IIS web 伺服器以支援離線網頁發佈和部署。 當您使用 Internet Information Services (我...
+description: 本主題說明如何設定 IIS web 伺服器，以支援離線 web 發行和部署。 當您使用 Internet Information Services （I 。
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: ba92788f-9f03-44b1-b6b2-af8413e6a35d
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 873eb9e350d5fadb017b20c4b6d2889e0df00091
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: f93cf11085fb19afb97b71aca8f638bd88fe658b
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126012"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74621104"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a>設定 Web Deploy 發行的網頁伺服器 (離線部署)
 
-藉由[Jason Lee](https://github.com/jrjlee)
+[Jason 先生](https://github.com/jrjlee)
 
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> 本主題描述如何設定 IIS web 伺服器以支援離線網頁發佈和部署。
+> 本主題說明如何設定 IIS web 伺服器，以支援離線 web 發行和部署。
 > 
-> 當您使用 Internet Information Services (IIS) Web Deployment Tool (Web Deploy) 2.0 或更新版本時，有三種主要的方法，可用來取得您的應用程式或 web 伺服器上的站台。 您可以：
+> 當您使用 Internet Information Services （IIS） Web 部署工具（Web Deploy）2.0 或更新版本時，您可以使用三種主要方法，將您的應用程式或網站放在 Web 服務器上。 您可以：
 > 
-> - 使用*Web Deploy 遠端代理程式服務*。 此方法需要較少組態的 web 伺服器，但您必須提供本機伺服器系統管理員的認證，以將任何項目部署至伺服器。
-> - 使用*Web Deploy 處理常式*。 這種方法更多複雜，而且需要更多的初步設定 web 伺服器。 不過，當您使用這個方法時，您可以設定 IIS 以允許非系統管理員使用者，進行部署。 只有在 IIS 7 或更新版本中使用 Web 部署處理常式。
-> - 使用*離線部署*。 這種方法需要最低的網頁伺服器的設定，但伺服器系統管理員必須手動複製到伺服器上的 web 套件並匯入它透過 IIS 管理員。
+> - 使用*Web Deploy 的遠端代理程式服務*。 這種方法需要較少的 web 伺服器設定，但您必須提供本機伺服器系統管理員的認證，才能將任何專案部署至伺服器。
+> - 使用*Web Deploy 處理常式*。 這種方法比較複雜，而且需要更多的初始工作來設定 web 伺服器。 不過，當您使用這種方法時，可以設定 IIS 以允許非系統管理員使用者執行部署。 Web Deploy 處理常式僅適用于 IIS 7 版或更新版本。
+> - 使用*離線部署*。 此方法需要最少的 web 伺服器設定，但伺服器管理員必須手動將 web 套件複製到伺服器，並透過 IIS 管理員將其匯入。
 > 
-> 如需有關的主要功能、 優點和這些方法的缺點的詳細資訊，請參閱[選擇 Web 部署的權限方法](choosing-the-right-approach-to-web-deployment.md)。
+> 如需這些方法的主要功能、優點和缺點的詳細資訊，請參閱[選擇正確的 Web 部署方法](choosing-the-right-approach-to-web-deployment.md)。
 
-是，如果您的網路基礎結構或安全性限制導致無法遠端部署。 這是最可能的情況下，面對網際網路的生產環境中，web 伺服器所在位置，隔離&#x2014;是實體或透過防火牆和子網路&#x2014;伺服器基礎結構的其餘部分。
+是，如果您的網路基礎結構或安全性限制阻止遠端部署。 在網際網路對向的生產環境中，這是很可能的情況，其中 web 伺服器會從&#x2014;伺服器基礎結構的其餘部分，&#x2014;實際或由防火牆和子網隔離。
 
-很明顯地，此方法會變得較不建議，如果您的 web 應用程式會定期更新。 如果您的基礎結構允許，您可能要考慮啟用遠端部署，使用 Web 部署處理常式或 Web 部署遠端代理程式服務。
+很明顯地，如果您的 web 應用程式定期更新，這個方法就會變得較不理想。 如果您的基礎結構允許，您可以考慮使用 Web Deploy 處理常式或 Web Deploy 遠端代理程式服務來啟用遠端部署。
 
-## <a name="task-overview"></a>工作概觀
+## <a name="task-overview"></a>工作總覽
 
-若要設定 web 伺服器，以支援離線匯入和 web 封裝的部署，您將需要：
+若要將網頁伺服器設定為支援離線匯入和部署 web 套件，您必須：
 
-- 安裝 IIS 7.5 和 IIS 7 建議組態。
+- 安裝 IIS 7.5 和 IIS 7 建議的設定。
 - 安裝 Web Deploy 2.1 或更新版本。
-- 建立 IIS 網站來裝載部署的內容。
-- 停用 Web 部署代理程式服務。
+- 建立 IIS 網站來裝載已部署的內容。
+- 停用 Web Deployment Agent 服務。
 
-若要特別裝載範例方案，您還需要以：
+若要明確裝載範例解決方案，您也需要：
 
-- 安裝.NET Framework 4.0。
+- 安裝 .NET Framework 4.0。
 - 安裝 ASP.NET MVC 3。
 
-本主題將說明如何執行上述各程序。 工作與本主題中的逐步解說假設您從執行 Windows Server 2008 R2 的全新的伺服器組建。 在繼續之前，請確認：
+本主題將說明如何執行上述每個程式。 本主題中的工作和逐步解說假設您是從執行 Windows Server 2008 R2 的全新伺服器組建開始。 在繼續之前，請確定：
 
-- 安裝 Windows Server 2008 R2 Service Pack 1 和所有可用的更新。
+- Windows Server 2008 R2 Service Pack 1 和所有可用的更新都已安裝。
 - 伺服器已加入網域。
 - 伺服器具有靜態 IP 位址。
 
 > [!NOTE]
-> 如需有關如何將電腦加入網域的詳細資訊，請參閱 <<c0> [ 將電腦加入網域並登入](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)。 如需有關如何設定靜態 IP 位址的詳細資訊，請參閱 <<c0> [ 設定靜態 IP 位址](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)。
+> 如需將電腦加入網域的詳細資訊，請參閱[將電腦加入網域並登](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)入。 如需設定靜態 IP 位址的詳細資訊，請參閱[設定靜態 Ip 位址](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)。
 
-## <a name="install-products-and-components"></a>安裝的產品和元件
+## <a name="install-products-and-components"></a>安裝產品和元件
 
-本節將引導您完成 web 伺服器上安裝必要的產品和元件。 在開始之前，理想的作法就是執行 Windows Update，以確保您的伺服器已完全更新。
+本節將引導您在 web 伺服器上安裝必要的產品和元件。 在開始之前，最好先執行 Windows Update，以確保您的伺服器完全保持在最新狀態。
 
-在此情況下，您需要安裝這些項目：
+在此情況下，您需要安裝下列專案：
 
-- **IIS 7 建議組態**。 這可讓**網頁伺服器 (IIS)** web 伺服器上的角色，並安裝的一組 IIS 模組和元件，您需要以裝載 ASP.NET 應用程式。
-- **.NET framework 4.0**。 如此才能執行這個版本的.NET Framework 所建置的應用程式。
-- **Web Deployment Tool 2.1 或更新版本**。 這會在您的伺服器上安裝 Web Deploy （和其基礎可執行檔，MSDeploy.exe）。 Web Deploy 與 IIS 整合，並讓您匯入和匯出網頁套件。
-- **ASP.NET MVC 3**。 這會安裝您要執行 MVC 3 應用程式的組件。
+- **IIS 7 建議**的設定。 這會啟用 web 伺服器上的**網頁伺服器（iis）** 角色，並安裝您需要的一組 IIS 模組和元件，才能裝載 ASP.NET 應用程式。
+- **.NET Framework 4.0**。 這是執行此版本 .NET Framework 所建立之應用程式的必要項。
+- **Web Deployment Tool 2.1 或更新版本**。 這會在您的伺服器上安裝 Web Deploy （及其基礎可執行檔，Msdeploy.exe）。 Web Deploy 與 IIS 整合，並可讓您匯入和匯出 web 封裝。
+- **ASP.NET MVC 3**。 這會安裝執行 MVC 3 應用程式所需的元件。
 
 > [!NOTE]
-> 本逐步解說說明如何使用 Web Platform Installer 來安裝和設定各種元件。 雖然您不需要使用 Web Platform Installer，它可以簡化安裝程序自動偵測相依性，並確保您一律取得最新的產品版本。 如需詳細資訊，請參閱 < [Microsoft Web Platform Installer 3.0](https://go.microsoft.com/?linkid=9805118)。
+> 本逐步解說說明如何使用 Web Platform Installer 來安裝和設定各種元件。 雖然您不需要使用 Web Platform Installer，但它會自動偵測相依性，並確保您一律取得最新的產品版本，藉此簡化安裝程式。 如需詳細資訊，請參閱[Microsoft Web Platform Installer 3.0](https://go.microsoft.com/?linkid=9805118)。
 
 **若要安裝必要的產品和元件**
 
 1. 下載並安裝[Web Platform Installer](https://go.microsoft.com/?linkid=9805118)。
-2. 安裝完成時，Web Platform Installer 將會自動啟動。
+2. 安裝完成時，Web Platform Installer 會自動啟動。
 
     > [!NOTE]
-    > 您現在可以隨時從啟動 Web Platform Installer**啟動**功能表。 若要這樣做，請在**開始**功能表上，按一下**所有程式**，然後按一下**Microsoft Web Platform Installer**。
-3. 在頂端**Web Platform Installer 3.0**  視窗中，按一下**產品**。
-4. 在左邊視窗中，在導覽窗格中，按一下 **架構**。
-5. 在  **Microsoft.NET Framework 4**資料列，如果尚未安裝.NET Framework，按一下**新增**。
+    > 您現在可以隨時從 [**開始**] 功能表啟動 Web Platform Installer。 若要這樣做，請在 [**開始**] 功能表上，按一下 [**所有程式**]，然後按一下 [ **Microsoft Web Platform Installer**]。
+3. 在 [ **Web Platform Installer 3.0** ] 視窗頂端，按一下 [**產品**]。
+4. 在視窗左側的流覽窗格中 **，按一下 [** 架構]。
+5. 在 [ **Microsoft .NET Framework 4** ] 資料列中，如果尚未安裝 .NET Framework，請按一下 [**新增**]。
 
     > [!NOTE]
-    > 您可能已經安裝.NET Framework 4.0，透過 Windows Update。 如果已安裝的產品或元件，Web Platform Installer 會指出這藉由取代**新增**按鈕，但文字**已安裝**。
+    > 您可能已經透過 Windows Update 安裝了 .NET Framework 4.0。 如果已安裝產品或元件，Web Platform Installer 會以**已安裝**的文字取代 [**新增**] 按鈕來指出這一點。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image1.png)
-6. 在  **ASP.NET MVC 3 (Visual Studio 2010)** 資料列中，按一下**新增**。
-7. 在 [導覽] 窗格中，按一下**Server**。
-8. 在  **IIS 7 建議組態**資料列中，按一下**新增**。
-9. 在  **Web 部署工具 2.1**資料列中，按一下**新增**。
-10. 按一下 [安裝] 。 Web Platform Installer 將會顯示您的產品清單&#x2014;以及任何相關聯相依性&#x2014;安裝就會提示您接受授權條款。
+6. 在 [ **ASP.NET MVC 3 （Visual Studio 2010）** ] 資料列中，按一下 [**新增**]。
+7. 在流覽窗格中，按一下 [**伺服器**]。
+8. 在 [ **IIS 7 建議**的設定] 列中，按一下 [**新增**]。
+9. 在 [ **Web Deployment Tool 2.1** ] 資料列中，按一下 [**新增**]。
+10. 按一下 [安裝]。 Web Platform Installer 將會顯示一份產品&#x2014;清單，其中包含&#x2014;要安裝的相關聯相依性，並會提示您接受授權條款。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image2.png)
-11. 檢閱授權條款，然後如果您同意這些條款，按一下**我接受**。
-12. 安裝完成時，按一下**完成**，然後關閉**Web Platform Installer 3.0**視窗。
+11. 請參閱授權條款，如果您同意這些條款，請按一下 [**我接受**]。
+12. 當安裝完成時，按一下 **[完成]** ，然後關閉 [ **Web Platform Installer 3.0** ] 視窗。
 
-如果您安裝 IIS 之前，您就會安裝.NET Framework 4.0，您必須執行[ASP.NET IIS 註冊工具](https://msdn.microsoft.com/library/k6h9cz8h(v=VS.100).aspx)(aspnet\_regiis.exe) 向 IIS 註冊 ASP.NET 的最新版本。 如果沒有這麼做，您會發現，IIS 會提供靜態內容 （例如 HTML 檔案） 沒有任何問題，但它會傳回**HTTP 錯誤 404.0 – 找不到**當您嘗試瀏覽至 ASP.NET 內容。 您可以使用下一個程序，以確保已註冊 ASP.NET 4.0。
+如果您在安裝 IIS 之前安裝了 .NET Framework 4.0，就必須執行[ASP.NET IIS 註冊工具](https://msdn.microsoft.com/library/k6h9cz8h(v=VS.100).aspx)（aspnet\_regiis），以向 IIS 註冊最新版本的 ASP.NET。 如果您不這麼做，就會發現 IIS 會提供靜態內容（例如 HTML 檔案），而不會有任何問題，但會傳回**HTTP 錯誤404.0 –** 當您嘗試流覽至 ASP.NET 內容時找不到。 您可以使用下一個程式來確保 ASP.NET 4.0 已註冊。
 
-**若要向 IIS 註冊 ASP.NET 4.0**
+**向 IIS 註冊 ASP.NET 4。0**
 
-1. 按一下 **開始**，然後輸入**命令提示字元**。
-2. 在搜尋結果中，以滑鼠右鍵按一下**命令提示字元**，然後按一下**系統管理員身分執行**。
-3. 在 [命令提示字元] 視窗中，瀏覽至 **%WINDIR%\Microsoft.NET\Framework\v4.0.30319**目錄。
-4. 輸入下列命令，並再按 Enter 鍵：
+1. 按一下 [**開始**]，然後輸入**命令提示**字元。
+2. 在搜尋結果中，以滑鼠右鍵按一下 [**命令提示**字元]，然後按一下 [以**系統管理員身分執行**]。
+3. 在 [命令提示字元] 視窗中，流覽至 **%WINDIR%\Microsoft.NET\Framework\v4.0.30319**目錄。
+4. 輸入此命令，然後按 Enter 鍵：
 
     [!code-console[Main](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/samples/sample1.cmd)]
-5. 如果您打算裝載在任何時間點的 64 位元 web 應用程式時，則您也應該向 IIS 註冊 ASP.NET 的 64 位元版本。 若要這樣做，請在 [命令提示字元] 視窗中，巡覽至 **%WINDIR%\Microsoft.NET\Framework64\v4.0.30319**目錄。
-6. 輸入下列命令，並再按 Enter 鍵：
+5. 如果您打算在任何時間點裝載64位的 web 應用程式，您也應該向 IIS 註冊64位版本的 ASP.NET。 若要這麼做，請在 [命令提示字元] 視窗中，流覽至 **%WINDIR%\Microsoft.NET\Framework64\v4.0.30319**目錄。
+6. 輸入此命令，然後按 Enter 鍵：
 
     [!code-console[Main](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/samples/sample2.cmd)]
 
-好的做法是，使用 Windows Update 一次此時下載並安裝任何可用的更新，新的產品及您已安裝的元件。
+建議的作法是，在此時再次使用 Windows Update，下載並安裝您已安裝之新產品和元件的任何可用更新。
 
 ## <a name="configure-the-iis-website"></a>設定 IIS 網站
 
-您可以將 web 內容部署到您的伺服器之前，您需要建立及設定 IIS 網站來裝載內容。 Web Deploy 只可以將 web 套件部署至現有的 IIS 網站;它不能為您建立網站。 概括而言，您將需要完成下列工作：
+您必須先建立並設定 IIS 網站來裝載內容，才能將 web 內容部署到您的伺服器。 Web Deploy 只能將 web 套件部署到現有的 IIS 網站;它無法為您建立網站。 概括而言，您必須完成下列工作：
 
-- 若要將內容裝載在檔案系統上建立資料夾。
-- 建立 IIS 網站提供內容，並將它關聯的本機資料夾。
-- 授與讀取權限的本機資料夾上的應用程式集區識別。
+- 在檔案系統上建立資料夾，以裝載您的內容。
+- 建立 IIS 網站來提供內容，並將它與本機資料夾產生關聯。
+- 授與讀取權限給本機資料夾上的應用程式集區身分識別。
 
-雖然沒有任何阻礙您將內容部署到預設的網站在 IIS 中，這種方法不會建議針對測試或示範的案例以外的任何項目。 若要模擬生產環境中，您應該建立新的 IIS 網站設定專屬於您的應用程式的需求。
+雖然沒有任何動作會阻止您將內容部署到 IIS 中的預設網站，但不建議針對測試或示範案例以外的任何專案使用此方法。 若要模擬生產環境，您應該使用特定于應用程式需求的設定來建立新的 IIS 網站。
 
-**若要建立及設定 IIS 網站**
+**建立和設定 IIS 網站**
 
-1. 在本機檔案系統上，建立資料夾來儲存您的內容 (例如**C:\DemoSite**)。
-2. 在上**開始**功能表上，指向**系統管理工具**，然後按一下**Internet Information Services (IIS) 管理員**。
-3. 在 [IIS 管理員] 中，在**連線**窗格中，展開伺服器節點 (例如**PROWEB1**)。
+1. 在本機檔案系統上，建立用來儲存內容的資料夾（例如， **C:\DemoSite**）。
+2. 在 [**開始**] 功能表上，指向 [系統**管理工具**]，然後按一下 [ **Internet Information Services （IIS）管理員**]。
+3. 在 **[IIS**管理員] 的 [連線] 窗格中，展開伺服器節點（例如， **PROWEB1**）。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image3.png)
-4. 以滑鼠右鍵按一下**站台**節點，然後再按一下**新增網站**。
-5. 在 **站台名稱**方塊中，輸入 IIS 網站的名稱 (例如**DemoSite**)。
-6. 在**實體路徑**方塊中，輸入 （或瀏覽至） 您的本機資料夾的路徑 (例如**C:\DemoSite**)。
-7. 在 **連接埠**方塊中，輸入您要裝載網站的連接埠號碼 (例如**85**)。
+4. 以滑鼠右鍵按一下 [**網站**] 節點，然後按一下 [**新增**網站]。
+5. 在 [**網站名稱**] 方塊中，輸入 IIS 網站的名稱（例如， **DemoSite**）。
+6. 在 [**實體路徑**] 方塊中，輸入（或流覽至）本機資料夾的路徑（例如， **C:\DemoSite**）。
+7. 在 [**埠**] 方塊中，輸入您要用來裝載網站的埠號碼（例如， **85**）。
 
     > [!NOTE]
-    > 標準連接埠號碼是 80 用於 HTTP 和 HTTPS 為 443。 不過，如果您主控此連接埠 80 上的網站，您必須停止預設網站，才能存取您的網站。
-8. 離開**主機名稱**空白，除非您想要設定之網站中，網域名稱系統 (DNS) 記錄，然後按一下方塊**確定**。
+    > 適用于 HTTP 的標準埠號碼為80，HTTPS 則為443。 不過，如果您在埠80上裝載此網站，則必須先停止預設網站，才能存取您的網站。
+8. 除非您要設定網站的網域名稱系統（DNS）記錄，否則請將 [**主機名稱**] 方塊保留空白，然後按一下 **[確定]** 。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image4.png)
 
     > [!NOTE]
-    > 在生產環境中，您可能會想要裝載您的網站連接埠 80 上，並設定主機標頭，以及比對 DNS 記錄。 如需有關如何在 IIS 7 中設定主機標頭的詳細資訊，請參閱 <<c0> [ 網站 (IIS 7) 中設定主機標頭](https://technet.microsoft.com/library/cc753195(WS.10).aspx)。 如需有關 Windows Server 2008 R2 中 DNS 伺服器角色的詳細資訊，請參閱 < [DNS 伺服器概觀](https://technet.microsoft.com/en-gb/library/cc770392.aspx)並[DNS 伺服器](https://technet.microsoft.com/windowsserver/dd448607)。
+    > 在生產環境中，您可能會想要在埠80上裝載您的網站，並設定主機標頭和相符的 DNS 記錄。 如需在 IIS 7 中設定主機標頭的詳細資訊，請參閱[設定網站的主機標頭（iis 7）](https://technet.microsoft.com/library/cc753195(WS.10).aspx)。 如需有關 Windows Server 2008 R2 中 DNS 伺服器角色的詳細資訊，請參閱[Dns 伺服器總覽](https://technet.microsoft.com/library/cc770392.aspx)和[dns 伺服器](https://technet.microsoft.com/windowsserver/dd448607)。
 9. 在 [ **動作** ] 窗格的 [ **編輯站台**] 下方，按一下 [ **繫結**]。
-10. 在 [**站台繫結**] 對話方塊中，按一下**新增**。
+10. 在 [**網站**系結] 對話方塊中，按一下 [**新增**]。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image5.png)
-11. 在**新增網站繫結** 對話方塊中，將**IP 位址**並**連接埠**以符合您現有的站台設定。
-12. 中**主機名稱**方塊中，輸入您的 web 伺服器的名稱 (例如**PROWEB1**)，然後按一下 **確定**。
+11. 在 [**新增網站**系結] 對話方塊中，將 [ **IP 位址**] 和 [**埠**] 設定為符合您現有的網站設定。
+12. 在 [**主機名稱**] 方塊中，輸入您的 web 伺服器名稱（例如， **PROWEB1**），然後按一下 **[確定]** 。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image6.png)
 
     > [!NOTE]
-    > 第一個站台繫結可讓您存取使用的 IP 位址和連接埠，在本機站台或 `http://localhost:85` 。 第二個網站繫結可讓您從使用電腦名稱在網域上其他電腦存取站台 (例如 http://proweb1:85) 。
-13. 在 [**站台繫結**] 對話方塊中，按一下**關閉**。
-14. 在 **連線**窗格中，按一下**應用程式集區**。
-15. 在 **應用程式集區**窗格中，以滑鼠右鍵按一下您的應用程式集區的名稱，然後按一下**基本設定**。 根據預設，應用程式集區的名稱會符合您網站的名稱 (例如**DemoSite**)。
-16. 在  **.NET Framework 版本**清單中，選取 **.NET Framework v4.0.30319**，然後按一下**確定**。
+    > 第一個網站系結可讓您使用 IP 位址和埠或 `http://localhost:85`，在本機存取網站。 第二個網站系結可讓您使用電腦名稱稱（例如 http://proweb1:85) ，從網域中的其他電腦存取網站。
+13. 在 [**網站**系結] 對話方塊中，按一下 [**關閉**]。
+14. **在 [連線**] 窗格中，按一下 [**應用程式**集區]。
+15. 在 [**應用程式**集區] 窗格中，以滑鼠右鍵按一下應用程式集區的名稱，然後按一下 [**基本設定**]。 根據預設，您的應用程式集區名稱會與您的網站名稱相符（例如， **DemoSite**）。
+16. 在 [ **.NET Framework 版本**] 清單中，選取 [ **.NET Framework v 4.0.30319**]，然後按一下 **[確定]** 。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image7.png)
 
     > [!NOTE]
-    > 範例解決方案需要.NET Framework 4.0。 這不是 Web Deploy 的需求在一般情況下。
+    > 範例解決方案需要 .NET Framework 4.0。 這不是一般 Web Deploy 的需求。
 
-為了讓您的網站提供內容，應用程式集區識別必須擁有讀取權限儲存內容的本機資料夾。 在 IIS 7.5 中應用程式集區執行具有唯一的應用程式集區身分識別 （相較於舊版的 IIS，其中應用程式集區會通常執行使用 Network Service 帳戶） 的預設值。 應用程式集區識別不是真正的使用者帳戶，以及未顯示任何使用者或群組的清單上&#x2014;相反地，它會動態建立啟動應用程式集區時。 每個應用程式集區身分識別加入至本機**IIS\_IUSRS**安全性群組做為隱藏的項目。
+為了讓您的網站提供內容，應用程式集區識別必須具有儲存內容之本機資料夾的讀取權限。 在 IIS 7.5 中，應用程式集區預設會以唯一的應用程式集區身分識別執行（相較于舊版的 IIS，應用程式集區通常會使用網路服務帳戶來執行）。 應用程式集區身分識別不是真正的使用者帳戶，也不會顯示在任何使用者或群組&#x2014;清單上，而是在啟動應用程式集區時動態建立的。 每個應用程式集區識別都會新增至本機**IIS\_給 iis-iusrs**安全性群組做為隱藏專案。
 
-若要授與權限到檔案或資料夾上的應用程式集區身分識別，您會有兩個選項：
+若要將許可權授與檔案或資料夾上的應用程式集區身分識別，您有兩個選項：
 
-- 指派的權限的應用程式集區識別，直接使用的格式<strong>IIS AppPool\</ s t ><em>[應用程式集區名稱]</em>(比方說， <strong>IIS AppPool\DemoSite</strong>).
-- 指派權限**IIS\_IUSRS**群組。
+- 使用 <strong>IIS AppPool\</strong ><em>[應用程式集區名稱]</em>（例如<strong>iis AppPool\DemoSite</strong>）的格式，直接將許可權指派給應用程式集區身分識別。
+- 指派許可權給**IIS\_給 iis-iusrs**群組。
 
-最常見的方法是將權限指派給本機**IIS\_IUSRS**群組，因為這種方法可讓您變更應用程式集區，不需要重新設定檔案系統權限。 下一個程序會使用此群組為基礎的方法。
+最常見的方法是將許可權指派給本機**IIS\_給 iis-iusrs**群組，因為這種方法可讓您變更應用程式集區，而不需要重新設定檔案系統許可權。 下一個程式會使用這個以群組為基礎的方法。
 
 > [!NOTE]
-> 如需有關在 IIS 7.5 中的應用程式集區身分識別的詳細資訊，請參閱[應用程式集區識別](https://go.microsoft.com/?linkid=9805123)。
+> 如需 IIS 7.5 中應用程式集區身分識別的詳細資訊，請參閱[應用程式集](https://go.microsoft.com/?linkid=9805123)區身分識別。
 
-**若要設定 IIS 網站的資料夾權限**
+**設定 IIS 網站的資料夾許可權**
 
-1. 在 Windows 檔案總管中，瀏覽至您本機資料夾的位置。
-2. 以滑鼠右鍵按一下資料夾，然後按一下**屬性**。
-3. 在上**安全性**索引標籤上，按一下**編輯**，然後按一下**新增**。
-4. 按一下 **位置**。 在 **位置** 對話方塊中，選取 本機伺服器，然後按一下**確定**。
+1. 在 Windows Explorer 中，流覽至本機資料夾的位置。
+2. 以滑鼠右鍵按一下該資料夾，然後按一下 [**屬性**]。
+3. 在 [**安全性**] 索引標籤上，按一下 [**編輯**]，然後按一下 [**新增**]。
+4. 按一下 [**位置**]。 在 [**位置**] 對話方塊中，選取本機伺服器，然後按一下 **[確定]** 。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image8.png)
-5. 中**選取使用者或群組** 對話方塊中，輸入**IIS\_IUSRS**，按一下**檢查名稱**，然後按一下**確定**。
-6. 在 <strong>權限</strong><em>[資料夾名稱]</em>對話方塊中，請注意，已被指派新的群組<strong>讀取&amp;執行</strong>，<strong>列出資料夾內容</strong>，並<strong>讀取</strong>預設的權限。 保留不變，然後按一下 <strong>確定</strong>。
-7. 按一下 [ <strong>[確定]</strong>以關閉<em>[資料夾名稱]</em><strong>屬性</strong>] 對話方塊。
+5. 在 [**選取使用者或群組**] 對話方塊中，輸入**IIS\_給 iis-iusrs**，按一下 [**檢查名稱**]，然後按一下 **[確定]** 。
+6. 在<em>[資料夾名稱] 的 [</em> <strong>許可權</strong>] 對話方塊中，請注意，預設會將 [<strong>讀取 &amp; 執行</strong>]、[<strong>列出資料夾內容</strong>] 和 [<strong>讀取</strong>] 許可權指派給新的群組。 保持不變，然後按一下<strong>[確定]</strong>。
+7. 按一下 [<strong>確定</strong>] 以關閉<em>[資料夾名稱]</em><strong>屬性</strong>對話方塊。
 
 ## <a name="disable-the-remote-agent-service"></a>停用遠端代理程式服務
 
-當您安裝 Web Deploy 時，Web Deployment Agent Service 安裝中，並自動啟動。 這項服務可讓您部署及發行 web 封裝，從遠端位置。 您不會使用遠端部署功能在此案例中，因此您應該停止並停用服務。
+當您安裝 Web Deploy 時，會自動安裝及啟動 Web Deployment Agent 服務。 此服務可讓您從遠端位置部署和發佈 web 封裝。 在此案例中，您將不會使用遠端部署功能，因此您應該停止並停用服務。
 
 > [!NOTE]
-> 您不需要停止遠端代理程式服務，才能匯入，並以手動方式部署網頁套件。 不過，它是個不錯的做法停止並停用服務，如果您不打算使用它。
+> 您不需要停止遠端代理程式服務，就可以手動匯入和部署 web 封裝。 不過，如果您不打算使用服務，最好是停止並停用它。
 
-您可以停止並停用服務，以多種方式使用各種命令列公用程式或 Windows PowerShell cmdlet。 此程序描述直接以 UI 為基礎的方法。
+您可以使用各種命令列公用程式或 Windows PowerShell Cmdlet，以多種方式停止及停用服務。 此程式描述以 UI 為基礎的簡單方法。
 
-**若要停止並停用遠端代理程式服務**
+**停止和停用遠端代理程式服務**
 
-1. 在 [開始]  功能表上，指向 [系統管理工具] ，然後按一下 [服務] 。
-2. 在 [服務] 主控台中，找出**Web Deployment Agent Service**資料列。
+1. 在 [開始] 功能表上，指向 [系統管理工具]，然後按一下 [服務]。
+2. 在 [服務] 主控台中，找出 [ **Web Deployment Agent 服務**] 資料列。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image9.png)
-3. 以滑鼠右鍵按一下**Web Deployment Agent Service**，然後按一下**屬性**。
-4. 在 [ **Web 部署代理程式服務屬性**] 對話方塊中，按一下**停止**。
-5. 在 **啟動類型**清單中，選取**停用**，然後按一下**確定**。
+3. 以滑鼠右鍵按一下 [ **Web Deployment Agent 服務**]，然後按一下 [**屬性**]。
+4. 在 [ **Web Deployment Agent 服務屬性**] 對話方塊中，按一下 [**停止**]。
+5. 在 [**啟動類型**] 清單中，選取 [**停用**]，然後按一下 **[確定]** 。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image10.png)
 
 ## <a name="conclusion"></a>結論
 
-此時，您的網頁伺服器可供離線 web 套件部署。 您嘗試匯入至 IIS 網站的 web 封裝之前，您可能想要檢查的這些關鍵點：
+此時，您的 web 伺服器已準備好進行離線 web 套件部署。 嘗試將 web 封裝匯入 IIS 網站之前，您可能會想要檢查下列重點：
 
-- 您已向 IIS 註冊 ASP.NET 4.0？
-- 應用程式集區識別是否有讀取權限為您的網站的 [來源] 資料夾？
-- 您已停止 Web Deployment Agent Service？
+- 您是否已向 IIS 註冊 ASP.NET 4.0？
+- 應用程式集區身分識別對您網站的源資料夾具有讀取權限嗎？
+- 您已停止 Web Deployment Agent 服務嗎？
 
 > [!div class="step-by-step"]
 > [上一頁](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)

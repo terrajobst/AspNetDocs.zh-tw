@@ -1,96 +1,96 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-cascadingdropdown-with-a-database-vb
-title: 使用 CascadingDropDown 搭配資料庫 (VB) |Microsoft Docs
+title: 使用 CascadingDropDown 搭配資料庫（VB） |Microsoft Docs
 author: wenz
-description: 在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯 anoth 中的值...
+description: AJAX 控制項工具組中的 CascadingDropDown 控制項會擴充 DropDownList 控制項，讓一個 DropDownList 中的變更載入 anoth 中的相關聯值 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 97a3d33c-c856-43f3-8acb-f1ccbc48221a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-cascadingdropdown-with-a-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9e3f842faea2ec04225d779c1b8d71c62d4c1f35
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 4482aa18c4446ec8f5f160c423008398ea2e1d0d
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108173"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74599502"
 ---
 # <a name="using-cascadingdropdown-with-a-database-vb"></a>使用 CascadingDropDown 搭配資料庫 (VB)
 
-藉由[Christian Wenz](https://github.com/wenz)
+依[Christian Wenz](https://github.com/wenz)
 
-[下載程式碼](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown1.vb.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown1VB.pdf)
+[下載程式代碼](https://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown1.vb.zip)或[下載 PDF](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown1VB.pdf)
 
-> 在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。 為了讓此做法能夠運作，必須先建立特殊的 web 服務。
+> AJAX 控制項工具組中的 CascadingDropDown 控制項會擴充 DropDownList 控制項，讓一個 DropDownList 中的變更載入另一個 DropDownList 中的關聯值。 為了讓此作業正常，必須建立特殊的 web 服務。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-在 AJAX Control Toolkit CascadingDropDown 控制擴充 DropDownList 控制項以讓一個 DropDownList 載入中的變更相關聯的另一個 DropDownList 中的值。 （比方說，一份清單會提供一份我們狀態，而且下一個清單則填入該狀態中主要城市）。為了讓此做法能夠運作，必須先建立特殊的 web 服務。
+AJAX 控制項工具組中的 CascadingDropDown 控制項會擴充 DropDownList 控制項，讓一個 DropDownList 中的變更載入另一個 DropDownList 中的關聯值。 （例如，一個清單提供美國州的清單，而下一個清單則會填入該州的主要城市）。為了讓此作業正常，必須建立特殊的 web 服務。
 
 ## <a name="steps"></a>步驟
 
-首先，資料來源是必要的。 此範例使用 AdventureWorks 資料庫和 Microsoft SQL Server 2005 Express Edition。 資料庫 （包括 express edition） 的 Visual Studio 安裝的選擇性部分作業，因此也會提供個別下載底下[ https://go.microsoft.com/fwlink/?LinkId=64064 ](https://go.microsoft.com/fwlink/?LinkId=64064)。 AdventureWorks 資料庫是 SQL Server 2005 範例和範例資料庫的一部分 (下載網址[ https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp; DisplayLang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp;DisplayLang=en))。 若要設定資料庫的最簡單方式是使用 Microsoft SQL Server Management Studio Express ([https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp; DisplayLang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;DisplayLang=en))，並將附加`AdventureWorks.mdf`資料庫檔案。
+首先，需要資料來源。 這個範例會使用 AdventureWorks 資料庫和 Microsoft SQL Server 2005 Express Edition。 資料庫是 Visual Studio 安裝（包含 express edition）的選擇性部分，而且也可在[https://go.microsoft.com/fwlink/?LinkId=64064](https://go.microsoft.com/fwlink/?LinkId=64064)下個別下載。 AdventureWorks 資料庫是 SQL Server 2005 範例和範例資料庫的一部分（下載于[https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp;D isplaylang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=e719ecf7-9f46-4312-af89-6ad8702e4e6e&amp;DisplayLang=en)）。 設定資料庫最簡單的方式，就是使用 Microsoft SQL Server Management Studio Express （[https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;D isplaylang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;DisplayLang=en)）並附加 `AdventureWorks.mdf` 資料庫檔案。
 
-此範例中，我們假設 SQL Server 2005 Express Edition 的執行個體，會呼叫`SQLEXPRESS`位於與網頁伺服器; 相同的電腦上，這也是預設設定。 如果您的設定不同，您必須調整資料庫的連接資訊。
+在此範例中，我們假設 SQL Server 2005 Express Edition 的實例呼叫 `SQLEXPRESS` 並與 web 伺服器位於同一部電腦上;這也是預設設定。 如果您的安裝程式不同，則必須調整資料庫的連接資訊。
 
-若要啟動的 ASP.NET AJAX Control Toolkit 中，功能`ScriptManager`控制項必須放置在任何位置上 (但內&lt; `form` &gt;項目):
+若要啟用 ASP.NET AJAX 和控制項工具組的功能，必須將 `ScriptManager` 控制項放在頁面上的任何位置（但在 &lt;`form`&gt; 專案中）：
 
 [!code-aspx[Main](using-cascadingdropdown-with-a-database-vb/samples/sample1.aspx)]
 
-在下一個步驟中，兩個 DropDownList 控制項則是必要項目。 在此範例中，我們會使用 AdventureWorks 的廠商和連絡人資訊，因此我們建立一個清單用於可用的供應商，一個用於可用的連絡人：
+在下一個步驟中，需要兩個 DropDownList 控制項。 在此範例中，我們會使用 AdventureWorks 的廠商和連絡人資訊，因此我們會為可用的廠商建立一個清單，並為可用的連絡人建立一個清單：
 
 [!code-aspx[Main](using-cascadingdropdown-with-a-database-vb/samples/sample2.aspx)]
 
-然後，兩個 CascadingDropDown extender 必須新增至頁面。 其中一個填滿第一個 （廠商） 清單中，和另一個填滿第二個 （連絡人） 清單。 必須設定下列屬性：
+然後，必須將兩個 CascadingDropDown 擴充項加入至頁面。 其中一個會填入第一個（廠商）清單，另一個則填滿第二個（連絡人）清單。 必須設定下列屬性：
 
-- `ServicePath`：提供的清單項目之 web 服務的 URL
-- `ServiceMethod`：Web 方法提供的清單項目
-- `TargetControlID`：下拉式清單中的識別碼
-- `Category`：提交給 web 方法的呼叫時的類別目錄資訊
-- `PromptText`：以非同步方式從伺服器載入清單資料時顯示的文字
-- `ParentControlID`: (選擇性) 父下拉式清單會列出該觸發程序的載入目前的清單
+- `ServicePath`：傳遞清單專案之 web 服務的 URL
+- `ServiceMethod`：傳遞清單專案的 Web 方法
+- `TargetControlID`：下拉式清單的識別碼
+- `Category`：呼叫時提交至 web 方法的類別資訊
+- `PromptText`：從伺服器以非同步方式載入清單資料時顯示的文字
+- `ParentControlID`：（選擇性）用來觸發載入目前清單的父項下拉式清單
 
-根據使用的程式設計語言，有問題的 web 服務的名稱會變更，但所有其他屬性值都相同。 以下是第一個下拉式清單中的 CascadingDropDown 項目：
+視所使用的程式設計語言而定，有問題的 web 服務名稱會變更，但其他所有屬性值都相同。 以下是第一個下拉式清單的 CascadingDropDown 元素：
 
 [!code-aspx[Main](using-cascadingdropdown-with-a-database-vb/samples/sample3.aspx)]
 
-控制項擴充項，如第二個清單需要設定`ParentControlID`屬性，讓載入供應商清單觸發程序中選取一個項目相關的連絡人清單中的項目。
+第二個清單的控制項擴充項必須設定 `ParentControlID` 屬性，以便選取廠商清單中的專案時，會觸發載入連絡人清單中相關聯的元素。
 
 [!code-aspx[Main](using-cascadingdropdown-with-a-database-vb/samples/sample4.aspx)]
 
-實際的工作則會以下列方式設定 web 服務中完成。 請注意，`[ScriptService]`屬性時，ASP.NET AJAX 否則無法建立 JavaScript proxy 來存取 web 方法，從用戶端指令碼的程式碼。
+然後，實際的工作會在 web 服務中完成，其設定如下所示。 請注意，會使用 `[ScriptService]` 屬性，否則 ASP.NET AJAX 無法建立 JavaScript proxy 以從用戶端腳本存取 web 方法。
 
 [!code-aspx[Main](using-cascadingdropdown-with-a-database-vb/samples/sample5.aspx)]
 
-CascadingDropDown 呼叫的 web 方法的簽章如下所示：
+CascadingDropDown 所呼叫之 web 方法的簽章如下所示：
 
 [!code-vb[Main](using-cascadingdropdown-with-a-database-vb/samples/sample6.vb)]
 
-因此傳回的值必須是類型的陣列`CascadingDropDownNameValue`定義控制工具組。 `GetVendors()`方法是很容易就能實作：程式碼會連接到 AdventureWorks 資料庫，並查詢前 25 個廠商。 中的第一個參數`CascadingDropDownNameValue`建構函式是標題的清單項目，而第二個它的值 (以 HTML 的 value 屬性&lt; `option` &gt;項目)。 程式碼如下：
+因此，傳回值必須是由控制項工具組所定義 `CascadingDropDownNameValue` 類型的陣列。 `GetVendors()` 方法相當容易執行：程式碼會連接到 AdventureWorks 資料庫，並查詢前25個廠商。 `CascadingDropDownNameValue` 的函式中的第一個參數是清單專案的標題，第二個是其值（HTML 的 &lt;中的值屬性 `option`&gt; 元素）。 以下是程式碼：
 
 [!code-vb[Main](using-cascadingdropdown-with-a-database-vb/samples/sample7.vb)]
 
-取得供應商相關的連絡人 (方法名稱： `GetContactsForVendor()`) 需要一點技巧。 首先，您必須決定廠商的第一個下拉式清單中已選取。 控制工具組定義該工作的 helper 方法：`ParseKnownCategoryValuesString()`方法會傳回`StringDictionary`下拉式清單中資料的項目：
+為廠商取得相關聯的連絡人（方法名稱： `GetContactsForVendor()`）會有點棘手。 首先，您必須決定在第一個下拉式清單中選取的廠商。 控制項工具組會定義該工作的 helper 方法： `ParseKnownCategoryValuesString()` 方法會傳回包含下拉式資料的 `StringDictionary` 元素：
 
 [!code-vb[Main](using-cascadingdropdown-with-a-database-vb/samples/sample8.vb)]
 
-基於安全性理由，必須先驗證這項資料。 因此，如果沒有廠商項目 (因為`Category`的第一個 CascadingDropDown 元素的屬性設定為`"Vendor"`)，可能會擷取所選的廠商識別碼：
+基於安全性理由，必須先驗證此資料。 因此，如果有 [廠商] 專案（因為第一個 CascadingDropDown 元素的 [`Category`] 屬性設為 [`"Vendor"`]），則可能會抓取所選廠商的識別碼：
 
 [!code-vb[Main](using-cascadingdropdown-with-a-database-vb/samples/sample9.vb)]
 
-其餘的方法就相當簡單易懂。 供應商的識別碼可做為參數的 SQL 查詢，該廠商會擷取相關聯的所有連絡人。 同樣地，方法會傳回型別的陣列`CascadingDropDownNameValue`。
+方法的其餘部分相當簡單明瞭，然後。 廠商的識別碼會作為 SQL 查詢的參數，以取得該廠商所有相關聯的連絡人。 同樣地，方法會傳回 `CascadingDropDownNameValue`類型的陣列。
 
 [!code-vb[Main](using-cascadingdropdown-with-a-database-vb/samples/sample10.vb)]
 
-載入 ASP.NET 頁面中，並在一段時間後，供應商清單會填入 25 項目。 挑選一個項目，並注意第二個下拉式清單中填入資料的方式。
+載入 ASP.NET 網頁，在短時間後，廠商清單會填入25個專案。 挑選一個專案，並注意第二個下拉式清單如何填入資料。
 
-[![第一份清單會自動填入](using-cascadingdropdown-with-a-database-vb/_static/image2.png)](using-cascadingdropdown-with-a-database-vb/_static/image1.png)
+[![第一個清單會自動填滿](using-cascadingdropdown-with-a-database-vb/_static/image2.png)](using-cascadingdropdown-with-a-database-vb/_static/image1.png)
 
-第一份清單會自動填入 ([按一下以檢視完整大小的影像](using-cascadingdropdown-with-a-database-vb/_static/image3.png))
+第一個清單會自動填滿（[按一下以查看完整大小的影像](using-cascadingdropdown-with-a-database-vb/_static/image3.png)）
 
-[![第二個清單是根據第一個清單中的選取範圍填滿](using-cascadingdropdown-with-a-database-vb/_static/image5.png)](using-cascadingdropdown-with-a-database-vb/_static/image4.png)
+[![第二個清單是根據第一個清單中的選取專案來填入](using-cascadingdropdown-with-a-database-vb/_static/image5.png)](using-cascadingdropdown-with-a-database-vb/_static/image4.png)
 
-第二個清單根據第一個清單中的選取範圍填滿 ([按一下以檢視完整大小的影像](using-cascadingdropdown-with-a-database-vb/_static/image6.png))
+第二個清單是根據第一個清單中的選取專案來填入（[按一下以查看完整大小的影像](using-cascadingdropdown-with-a-database-vb/_static/image6.png)）
 
 > [!div class="step-by-step"]
 > [上一頁](filling-a-list-using-cascadingdropdown-vb.md)

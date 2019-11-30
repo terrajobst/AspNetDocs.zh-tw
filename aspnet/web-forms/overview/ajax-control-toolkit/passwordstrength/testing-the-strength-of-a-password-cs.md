@@ -1,50 +1,50 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-cs
-title: 測試密碼強度的 (C#) |Microsoft Docs
+title: 測試密碼強度（C#） |Microsoft Docs
 author: wenz
-description: 因此，延遲使用者通常會選擇簡單的密碼，也就是輕而易舉地突破，則幾乎任何地方，需要密碼。 在此 ASP 中 PasswordStrength 控制項。N...
+description: 密碼幾乎都是必要的，因此延遲的使用者通常會選擇容易中斷的簡單密碼。 ASP 中的 PasswordStrength 控制項。N 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: cb4afbae-9b8f-483d-9729-476d4b9f85fc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1aeea5af6fee22a91893e52b6ebe15f9ed00db45
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: e55eab9feebc18f39dd40c59cfb423208296b6c5
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115274"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74598867"
 ---
 # <a name="testing-the-strength-of-a-password-c"></a>測試密碼強度 (C#)
 
-藉由[Christian Wenz](https://github.com/wenz)
+依[Christian Wenz](https://github.com/wenz)
 
-[下載程式碼](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PasswordStrength0.cs.zip)或[下載 PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/passwordstrength0CS.pdf)
+[下載程式代碼](https://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PasswordStrength0.cs.zip)或[下載 PDF](https://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/passwordstrength0CS.pdf)
 
-> 因此，延遲使用者通常會選擇簡單的密碼，也就是輕而易舉地突破，則幾乎任何地方，需要密碼。 PasswordStrength 控制項在 ASP.NET AJAX Control Toolkit 可以檢查是好的密碼。
+> 密碼幾乎都是必要的，因此延遲的使用者通常會選擇容易中斷的簡單密碼。 ASP.NET AJAX 控制項工具組中的 PasswordStrength 控制項可以檢查密碼的有效程度。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-因此，延遲使用者通常會選擇簡單的密碼，也就是輕而易舉地突破，則幾乎任何地方，需要密碼。 `PasswordStrength` ASP.NET AJAX Control Toolkit 中的控制項可以檢查是好的密碼。
+密碼幾乎都是必要的，因此延遲的使用者通常會選擇容易中斷的簡單密碼。 ASP.NET AJAX 控制項工具組中的 `PasswordStrength` 控制項可以檢查密碼的有效程度。
 
 ## <a name="steps"></a>步驟
 
-`PasswordStrength`擴充文字方塊控制項，並檢查密碼是否夠好。 它提供豐富的屬性，透過的選項以下是只是某些：
+`PasswordStrength` 控制項會擴充一個文字方塊，並檢查其中的密碼是否夠好。 它透過屬性提供了豐富的選項;以下只是其中一部分：
 
-- `MinimumNumericCharacters` 密碼所需的數字字元的最小數目
-- `MinimumSymbolCharacters` 密碼所需的符號字元 （不字母和數字） 最小的數目
-- `PreferredPasswordLength` 最小密碼長度
-- `RequiresUpperAndLowerCaseCharacters` 密碼是否必須使用大寫和小寫字元
+- `MinimumNumericCharacters` 密碼中所需的最小數位字元數
+- `MinimumSymbolCharacters` 密碼中所需的最小符號字元數（不是字母和數位）
+- `PreferredPasswordLength` 密碼的最小長度
+- `RequiresUpperAndLowerCaseCharacters` 密碼是否必須同時使用大寫和小寫字元
 
-`StrengthIndicatorType`提供的資訊如何呈現的強度的密碼，以文字 (值`"Text"`) 或為類型的進度列 (值`"BarIndicator"`)。 在 `DisplayPosition`屬性，您將設定資訊出現的位置。 以下是完整的範例，包括 ASP.NET AJAX`ScriptManager`控制項，`PasswordStrength`控制項，當然還有使用者可以在其中輸入密碼 文字方塊。 為了示範，後者的表單欄位是規則的文字欄位並不是密碼欄位，讓您可以查看在開發期間您輸入的內容。
+`StrengthIndicatorType` 提供如何以文字（值 `"Text"`）或一種進度列（值 `"BarIndicator"`）來呈現密碼強度的資訊。 在 [`DisplayPosition`] 屬性中，您可以設定資訊的顯示位置。 以下是完整的範例，包括 ASP.NET AJAX `ScriptManager` 控制項、`PasswordStrength` 控制項，當然還有一個文字方塊，使用者可以在其中輸入密碼。 為了示範，第二個表單欄位是一般文字欄位，而不是密碼欄位，讓您可以在開發期間看到您要輸入的內容。
 
 [!code-aspx[Main](testing-the-strength-of-a-password-cs/samples/sample1.aspx)]
 
-執行此頁面，並立即輸入：只輸入小寫字母、 大寫字母、 數字和符號之後，密碼已被視為為永不中斷。
+執行頁面並輸入離開：只有在您輸入小寫字母、大寫字母、數位和符號之後，密碼才會被視為 unbreakable。
 
-[![現在是 （挺） 好用的密碼](testing-the-strength-of-a-password-cs/_static/image2.png)](testing-the-strength-of-a-password-cs/_static/image1.png)
+[![現在密碼是（相當的）](testing-the-strength-of-a-password-cs/_static/image2.png)](testing-the-strength-of-a-password-cs/_static/image1.png)
 
-現在，密碼是 （挺） 好用的 ([按一下以檢視完整大小的影像](testing-the-strength-of-a-password-cs/_static/image3.png))
+現在密碼是（相當的）好（[按一下以觀看完整大小的影像](testing-the-strength-of-a-password-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
 > [下一步](testing-the-strength-of-a-password-vb.md)

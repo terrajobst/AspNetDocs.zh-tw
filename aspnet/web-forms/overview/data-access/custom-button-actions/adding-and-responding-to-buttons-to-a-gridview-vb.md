@@ -1,263 +1,263 @@
 ---
 uid: web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-vb
-title: 新增與回應 GridView (VB) 的按鈕 |Microsoft Docs
+title: 新增和回應 GridView 的按鈕（VB） |Microsoft Docs
 author: rick-anderson
-description: 在本教學課程中我們將探討如何將自訂按鈕，新增至範本和 GridView 或 DetailsView 控制項的欄位。 特別是，我們將建置...
+description: 在本教學課程中，我們將探討如何將自訂按鈕新增至範本以及 GridView 或 DetailsView 控制項的欄位。 特別是，我們將建置 。
 ms.author: riande
 ms.date: 09/13/2006
 ms.assetid: 06c6bbd2-4bdc-435b-87a3-df2c868f4baa
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1fc042fb72e0bf995759f3a83a44bf8d7773479d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 8727d8faead02340d223c75845bf29f63d1a0834
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109604"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74601350"
 ---
 # <a name="adding-and-responding-to-buttons-to-a-gridview-vb"></a>新增與回應 GridView 的按鈕 (VB)
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載範例應用程式](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_28_VB.exe)或[下載 PDF](adding-and-responding-to-buttons-to-a-gridview-vb/_static/datatutorial28vb1.pdf)
+[下載範例應用程式](https://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_28_VB.exe)或[下載 PDF](adding-and-responding-to-buttons-to-a-gridview-vb/_static/datatutorial28vb1.pdf)
 
-> 在本教學課程中我們將探討如何將自訂按鈕，新增至範本和 GridView 或 DetailsView 控制項的欄位。 特別是，我們將建置具有可讓使用者逐頁瀏覽供應商 FormView 的介面。
+> 在本教學課程中，我們將探討如何將自訂按鈕新增至範本以及 GridView 或 DetailsView 控制項的欄位。 特別是，我們將建立一個具有 FormView 的介面，讓使用者可以逐頁流覽供應商。
 
 ## <a name="introduction"></a>簡介
 
-雖然許多報表案例牽涉到唯讀模式存取報表資料，它顯示的資料為基礎的報表包含執行動作的能力不常見的 s。 通常這牽涉到將按鈕、 LinkButton 或 ImageButton Web 控制項與顯示在報表中每個記錄，按一下時，會導致回傳，並叫用一些伺服器端程式碼。 編輯和刪除記錄的記錄為基礎的資料是最常見的範例。 事實上，如我們所見開頭[概觀的插入、 更新和刪除資料](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md)教學課程中，編輯和刪除它是陳腔 GridView、 DetailsView 和 FormView 控制項可支援這類功能，而不用需要撰寫任何一行程式碼。
+雖然許多報告案例都牽涉到對報表資料的唯讀存取，但是報表並不太罕見，因為它會根據所顯示的資料來包含執行動作的能力。 通常這牽涉到在報表中顯示的每筆記錄加上一個按鈕、LinkButton 或 ImageButton Web 控制項，按一下時，會導致回傳並叫用一些伺服器端程式碼。 逐記錄編輯和刪除資料是最常見的範例。 事實上，如同從[插入、更新和刪除資料](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md)教學課程的總覽開始介紹，編輯和刪除是很常見的，GridView、DetailsView 和 FormView 控制項都可以支援這類功能，而不需要撰寫任何一行程式碼。
 
-除了編輯和刪除按鈕、 GridView、 DetailsView 和 FormView 控制項也可以包含按鈕、 Linkbutton 或 ImageButtons，按一下時，執行一些自訂的伺服器端邏輯。 在本教學課程中我們將探討如何將自訂按鈕，新增至範本和 GridView 或 DetailsView 控制項的欄位。 特別是，我們將建置具有可讓使用者逐頁瀏覽供應商 FormView 的介面。 對於給定的供應商、 FormView 會顯示的按鈕 Web 控制項，如果按下，會標記其相關聯的產品的所有停用以及供應商的相關資訊。 此外，GridView 會列出所選取的供應商，增加的價格與折扣價格的按鈕，如果按下，提高或降低產品 s，其中包含每個資料列提供這些產品`UnitPrice`（請參閱 圖 1） 的 10%。
+除了 [編輯] 和 [刪除] 按鈕之外，GridView、DetailsView 和 FormView 控制項也可以包含按鈕、LinkButtons 或 ImageButtons，當按下時，就會執行一些自訂的伺服器端邏輯。 在本教學課程中，我們將探討如何將自訂按鈕新增至範本以及 GridView 或 DetailsView 控制項的欄位。 特別是，我們將建立一個具有 FormView 的介面，讓使用者可以逐頁流覽供應商。 針對指定的供應商，FormView 會顯示供應商的相關資訊，以及一個按鈕 Web 控制項，如果按一下，就會將其所有相關聯的產品標示為已中止。 此外，GridView 會列出所選供應商所提供的產品，其中每個資料列都包含 [增加價格和折扣價] 按鈕，如果按下，則會提高或減少 `UnitPrice` 10% 的產品（請參閱 [圖 1]）。
 
 [![FormView 和 GridView 包含執行自訂動作的按鈕](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image2.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image1.png)
 
-**圖 1**:在 FormView 和 GridView 包含按鈕，執行自訂動作 ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image3.png))
+**圖 1**： FormView 和 GridView 都包含執行自訂動作的按鈕（[按一下以觀看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image3.png)）
 
-## <a name="step-1-adding-the-button-tutorial-web-pages"></a>步驟 1：新增按鈕教學課程的 Web 網頁
+## <a name="step-1-adding-the-button-tutorial-web-pages"></a>步驟1：新增按鈕教學課程網頁
 
-我們看看如何新增自訂按鈕之前，讓先花點時間在網站專案中，我們需要在此教學課程中建立 ASP.NET 網頁的 s。 藉由新增新的資料夾，名為啟動`CustomButtons`。 接下來，新增到該資料夾，並確認其關聯與每個頁面的下列兩個 ASP.NET 頁面`Site.master`主版頁面：
+在查看如何新增自訂按鈕之前，先讓我們先花點時間在我們的網站專案中建立 ASP.NET 網頁，我們將在本教學課程中需要此功能。 從新增名為 `CustomButtons`的資料夾開始。 接下來，將下列兩個 ASP.NET 網頁新增至該資料夾，並確定每個頁面都與 `Site.master` 主版頁面相關聯：
 
 - `Default.aspx`
 - `CustomButtons.aspx`
 
-![加入 ASP.NET 網頁的自訂按鈕相關教學課程](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image4.png)
+![新增自訂按鈕相關教學課程的 ASP.NET 網頁](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image4.png)
 
-**圖 2**:加入 ASP.NET 網頁的自訂按鈕相關教學課程
+**圖 2**：新增自訂按鈕相關教學課程的 ASP.NET 網頁
 
-在其他資料夾，例如`Default.aspx`在`CustomButtons`資料夾會列出其一節中的教學課程。 請記得，`SectionLevelTutorialListing.ascx`使用者控制項提供這項功能。 因此，新增此使用者控制項`Default.aspx`從拖曳到頁面的設計 檢視中的 方案總管 中拖曳。
+如同在其他資料夾中，[`CustomButtons`] 資料夾中的 `Default.aspx` 會在其區段中列出教學課程。 回想一下，`SectionLevelTutorialListing.ascx` 的使用者控制項會提供這種功能。 因此，請將這個使用者控制項加入至 `Default.aspx`，方法是將它從方案總管拖曳至頁面 s 設計檢視。
 
-[![將 SectionLevelTutorialListing.ascx 使用者控制項新增至 Default.aspx](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image6.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image5.png)
+[![將 SectionLevelTutorialListing 的 .ascx 使用者控制項新增至 default.aspx](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image6.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image5.png)
 
-**圖 3**:新增`SectionLevelTutorialListing.ascx`使用者控制項`Default.aspx`([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image7.png))
+**圖 3**：將 `SectionLevelTutorialListing.ascx` 使用者控制項加入 `Default.aspx` （[按一下以查看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image7.png)）
 
-最後，將頁面新增項目，以作為`Web.sitemap`檔案。 具體來說，在分頁和排序之後新增下列標記`<siteMapNode>`:
+最後，將頁面新增為 `Web.sitemap` 檔案的專案。 具體而言，在分頁和排序 `<siteMapNode>`之後加入下列標記：
 
 [!code-xml[Main](adding-and-responding-to-buttons-to-a-gridview-vb/samples/sample1.xml)]
 
-在更新之後`Web.sitemap`，花點時間檢視教學課程網站，透過瀏覽器。 在左側功能表現在包含編輯、 插入及刪除教學課程的項目。
+更新 `Web.sitemap`之後，請花一點時間透過瀏覽器來觀看教學課程網站。 左側功能表現在包含用於編輯、插入及刪除教學課程的專案。
 
-![網站導覽現在包含項目自訂按鈕教學課程](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image8.png)
+![網站地圖現在包含自訂按鈕教學課程的專案](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image8.png)
 
-**圖 4**:網站導覽現在包含項目自訂按鈕教學課程
+[**圖 4**]：網站地圖現在包含自訂按鈕教學課程的專案
 
-## <a name="step-2-adding-a-formview-that-lists-the-suppliers"></a>步驟 2：加入列出的供應商 FormView
+## <a name="step-2-adding-a-formview-that-lists-the-suppliers"></a>步驟2：加入可列出供應商的 FormView
 
-可讓開始進行本教學課程將會列出供應商 FormView 的 s。 如簡介中所述，此 FormView 可讓使用者逐頁檢視供應商，顯示 GridView 中供應商所提供的產品。 此外，此 FormView 會包含一個按鈕，按一下時，會在標記的所有供應商的產品已停止。 我們考慮自行加入 FormView 的自訂按鈕之前，讓第一次 FormView 只建立，使其顯示供應商資訊。
+藉由新增可列出供應商的 FormView，讓我們開始進行本教學課程。 如簡介中所述，此 FormView 可讓使用者逐頁流覽供應商，並在 GridView 中顯示供應商所提供的產品。 此外，此 FormView 會包含一個按鈕，當您按一下時，會將所有供應商的產品標示為已中止。 在我們考慮如何將自訂按鈕加入至 FormView 之前，先建立 FormView，讓它顯示供應商資訊。
 
-首先開啟`CustomButtons.aspx`頁面中`CustomButtons`資料夾。 加入頁面中的 FormView，藉由拖曳從工具箱拖曳至設計工具和設定其`ID`屬性設`Suppliers`。 從 FormView s 智慧標籤，選擇建立新的 ObjectDataSource 名為`SuppliersDataSource`。
+從開啟 [`CustomButtons`] 資料夾中的 [`CustomButtons.aspx`] 頁面開始。 將 FormView 從 [工具箱] 拖曳至設計工具，並將其 [`ID`] 屬性設為 [`Suppliers`]，將它加入頁面中。 從 FormView s 智慧標籤中，選擇建立名為 `SuppliersDataSource`的新 ObjectDataSource。
 
-[![建立名為 SuppliersDataSource 新 ObjectDataSource](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image10.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image9.png)
+[![建立名為 SuppliersDataSource 的新 ObjectDataSource](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image10.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image9.png)
 
-**圖 5**:建立新的 ObjectDataSource 具名`SuppliersDataSource`([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image11.png))
+**圖 5**：建立名為 `SuppliersDataSource` 的新 ObjectDataSource （[按一下以查看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image11.png)）
 
-它會從查詢，請設定這個新的 ObjectDataSource`SuppliersBLL`類別的`GetSuppliers()`方法 （請參閱 圖 6）。 由於此 FormView 不更新供應商資訊，選取 （無） 選項從下拉式清單中，在 更新 索引標籤中提供的介面。
+設定這個新的 ObjectDataSource，讓它從 `SuppliersBLL` 類別的 `GetSuppliers()` 方法進行查詢（請參閱 [圖 6]）。 由於此 FormView 並未提供更新供應商資訊的介面，因此請從 [更新] 索引標籤的下拉式清單中選取 [（無）] 選項。
 
-[![資料來源設定為使用 SuppliersBLL 類別的 GetSuppliers() 方法](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image13.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image12.png)
+[![將資料來源設定為使用 SuppliersBLL 類別 s GetSuppliers （）方法](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image13.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image12.png)
 
-**圖 6**:設定要使用的資料來源`SuppliersBLL`類別 s`GetSuppliers()`方法 ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image14.png))
+**圖 6**：將資料來源設定為使用 `SuppliersBLL` 類別的 `GetSuppliers()` 方法（[按一下以查看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image14.png)）
 
-Visual Studio 會產生之後設定 ObjectDataSource `InsertItemTemplate`， `EditItemTemplate`，和`ItemTemplate`FormView 的。 移除`InsertItemTemplate`並`EditItemTemplate`，並修改`ItemTemplate`，讓它顯示只是供應商的公司名稱和電話號碼。 最後，開啟 FormView 的分頁支援，藉由檢查它的智慧標籤啟用分頁 核取方塊 (或藉由設定其`AllowPaging`屬性設`True`)。 在這些變更之後頁面 s 的宣告式標記看起來應該如下所示：
+設定 ObjectDataSource 之後，Visual Studio 將會產生 FormView 的 `InsertItemTemplate`、`EditItemTemplate`和 `ItemTemplate`。 移除 `InsertItemTemplate` 並 `EditItemTemplate` 並修改 `ItemTemplate`，使其只顯示供應商的公司名稱和電話號碼。 最後，藉由勾選智慧標籤的 [啟用分頁] 核取方塊（或將其 [`AllowPaging`] 屬性設定為 [`True`]）來開啟 FormView 的分頁支援。 這些變更之後，您的頁面宣告式標記看起來應該如下所示：
 
 [!code-aspx[Main](adding-and-responding-to-buttons-to-a-gridview-vb/samples/sample2.aspx)]
 
-[圖 7] 顯示 CustomButtons.aspx 頁面上，當透過瀏覽器檢視。
+[圖 7] 顯示透過瀏覽器觀看時的 CustomButtons 頁面。
 
-[![FormView 列出 [CompanyName] 和 從目前選取的供應商的電話欄位](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image16.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image15.png)
+[![FormView 會列出目前所選供應商的 [公司名稱] 和 [電話] 欄位](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image16.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image15.png)
 
-**圖 7**:FormView 列出`CompanyName`並`Phone`從目前選取的供應商的欄位 ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image17.png))
+**圖 7**： FormView 會列出目前所選供應商的 `CompanyName` 和 `Phone` 欄位（[按一下以查看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image17.png)）
 
-## <a name="step-3-adding-a-gridview-that-lists-the-selected-supplier-s-products"></a>步驟 3：新增的 GridView 會列出所選的供應商產品
+## <a name="step-3-adding-a-gridview-that-lists-the-selected-supplier-s-products"></a>步驟3：加入一個 GridView，其中列出選取的供應商產品
 
-我們將停止所有的產品 按鈕新增至 FormView 的範本之前，讓第一次新增下方會列出所選取的供應商提供的產品 FormView GridView 的 s。 若要達成此目的，將 GridView 加入頁面中，設定其`ID`屬性，以`SuppliersProducts`，並新增名為新 ObjectDataSource `SuppliersProductsDataSource`。
+在我們將 [停止所有產品] 按鈕新增至 FormView s 範本之前，請先在 FormView 底下新增 GridView，其中會列出所選供應商所提供的產品。 若要完成此動作，請在頁面中新增 GridView、將其 `ID` 屬性設為 `SuppliersProducts`，然後新增名為 `SuppliersProductsDataSource`的新 ObjectDataSource。
 
-[![建立名為 SuppliersProductsDataSource 新 ObjectDataSource](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image19.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image18.png)
+[![建立名為 SuppliersProductsDataSource 的新 ObjectDataSource](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image19.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image18.png)
 
-**圖 8**:建立新的 ObjectDataSource 具名`SuppliersProductsDataSource`([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image20.png))
+**圖 8**：建立名為 `SuppliersProductsDataSource` 的新 ObjectDataSource （[按一下以查看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image20.png)）
 
-設定要使用 ProductsBLL 類別的 ObjectDataSource`GetProductsBySupplierID(supplierID)`方法 （請參閱 圖 9）。 雖然此 GridView 可調整的產品的價格，它將不會使用內建編輯或刪除從 GridView 的功能。 因此，我們可以設定為 （無） 下拉式清單，ObjectDataSource s 的更新、 插入和刪除的索引標籤。
+將此 ObjectDataSource 設定為使用 ProductsBLL 類別 `GetProductsBySupplierID(supplierID)` 方法（請參閱 [圖 9]）。 雖然此 GridView 會允許調整產品價格，但它不會使用 GridView 的內建編輯或刪除功能。 因此，我們可以將 [ObjectDataSource s 更新]、[插入] 和 [刪除] 索引標籤的下拉式清單設定為 [（無）]。
 
-[![資料來源設定為使用 ProductsBLL 類別的 GetProductsBySupplierID(supplierID) 方法](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image22.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image21.png)
+[![將資料來源設定為使用 ProductsBLL 類別 s GetProductsBySupplierID （已加入供應商）方法](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image22.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image21.png)
 
-**圖 9**:設定要使用的資料來源`ProductsBLL`類別 s`GetProductsBySupplierID(supplierID)`方法 ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image23.png))
+**圖 9**：將資料來源設定為使用 `ProductsBLL` 類別的 `GetProductsBySupplierID(supplierID)` 方法（[按一下以查看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image23.png)）
 
-因為`GetProductsBySupplierID(supplierID)`方法會接受輸入的參數、 ObjectDataSource 精靈會提示我們輸入這個參數值的來源。 傳入`SupplierID`FormView 值、 控制項和 ControlID 下拉式清單中的，若要設定參數來源下拉式清單`Suppliers`（在步驟 2 中建立的 FormView 識別碼）。
+由於 `GetProductsBySupplierID(supplierID)` 方法會接受輸入參數，因此 ObjectDataSource wizard 會提示我們提供此參數值的來源。 若要傳入 FormView 的 `SupplierID` 值，請將 參數來源 下拉式清單設定為 控制，並將 ControlID 下拉式清單設為 `Suppliers` （在步驟2中建立之 FormView 的識別碼）。
 
-[![表示讓 supplierID 參數應該都來自供應商 FormView 控制項](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image25.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image24.png)
+[![指出 [供應商] 參數應來自 [供應商 FormView] 控制項](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image25.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image24.png)
 
-**圖 10**:表示 *`supplierID`* 參數應該來自於`Suppliers`FormView 控制項 ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image26.png))
+**圖 10**：指出 *`supplierID`* 參數應該來自 `Suppliers` 的 FormView 控制項（[按一下以查看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image26.png)）
 
-完成 ObjectDataSource 精靈之後，GridView 會包含 BoundField 或 CheckBoxField 每個產品的資料欄位。 可讓 s 精簡這顯示只`ProductName`並`UnitPrice`BoundFields 連同`Discontinued`CheckBoxField; 此外，可讓 s 格式`UnitPrice`BoundField 使其文字格式化為貨幣。 您的 GridView 和`SuppliersProductsDataSource`ObjectDataSource s 宣告式標記看起來應該類似下列標記：
+完成 ObjectDataSource wizard 之後，GridView 會針對每個產品的資料欄位包含 BoundField 或 CheckBoxField。 讓我們修剪此，以只顯示 `ProductName` 和 `UnitPrice` BoundFields，以及 `Discontinued` 的 CheckBoxField;此外，讓 s 格式化 `UnitPrice` BoundField，使其文字格式化為貨幣。 您的 GridView 和 `SuppliersProductsDataSource` ObjectDataSource s 宣告式標記看起來應該類似下列標記：
 
 [!code-aspx[Main](adding-and-responding-to-buttons-to-a-gridview-vb/samples/sample3.aspx)]
 
-此時在教學課程中會顯示主版/詳細資料報表，讓使用者從頂端 FormView 挑選供應商，並檢視底部 GridView 透過該供應商所提供的產品。 [圖 11] 顯示此頁面的螢幕擷取畫面從 FormView 選取東京 Traders 供應商時。
+此時，我們的教學課程會顯示主版/詳細資料包告，讓使用者可以從最上方的 FormView 挑選供應商，並透過底部的 GridView 查看該供應商提供的產品。 [圖 11] 顯示從 FormView 選取東京貿易供應商時，此頁面的螢幕擷取畫面。
 
-[![選取的供應商產品會顯示在 GridView](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image28.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image27.png)
+[![選取的供應商產品會顯示在 GridView 中](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image28.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image27.png)
 
-**圖 11**:選取的供應商產品會顯示在 GridView ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image29.png))
+**圖 11**：選取的供應商產品會顯示在 GridView 中（[按一下以觀看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image29.png)）
 
-## <a name="step-4-creating-dal-and-bll-methods-to-discontinue-all-products-for-a-supplier"></a>步驟 4：建立 DAL 和 BLL 方法，以停止所有產品的供應商
+## <a name="step-4-creating-dal-and-bll-methods-to-discontinue-all-products-for-a-supplier"></a>步驟4：建立 DAL 和 BLL 方法，以停止供應商的所有產品
 
-我們可在 FormView 上加入按鈕之前，按一下時，會中止所有供應商 s 產品中，我們必須先將方法加入的 DAL 」 和 「 不會執行此動作的 BLL。 特別是，這個方法將會命名為`DiscontinueAllProductsForSupplier(supplierID)`。 按一下 FormView 的按鈕時，我們將會叫用這個方法在商務邏輯層中，傳遞中選取的供應商 s `SupplierID`; BLL 會接著呼叫向下對應的資料存取層方法會發出`UPDATE`陳述式停止指定的供應商的產品資料庫。
+在我們可以將按鈕加入至 FormView 之後，當您按一下時，會停止所有供應商的產品，我們必須先將方法新增至執行此動作的 DAL 和 BLL。 特別的是，這個方法會命名為 `DiscontinueAllProductsForSupplier(supplierID)`。 按一下 [FormView s] 按鈕時，我們會在商務邏輯層中叫用此方法，傳入選取的供應商 `SupplierID`;然後，BLL 會向下呼叫對應的資料存取層方法，這將會發出 `UPDATE` 語句給資料庫，使其無法中止指定的供應商產品。
 
-我們已完成之後，我們先前的教學課程中，我們將使用由下往上的方法，開始建立 DAL 方法，然後 BLL 方法，和最後 ASP.NET 網頁中實作的功能。 開啟`Northwind.xsd`型別中的資料集`App_Code/DAL`資料夾，並新增新的方法來`ProductsTableAdapter`(以滑鼠右鍵按一下`ProductsTableAdapter`，然後選擇 新增查詢)。 這樣會帶出 TableAdapter 查詢組態精靈，它將帶領我們新增新方法的程序。 指出我們的 DAL 方法會使用特定 SQL 陳述式開始。
+如同我們在先前的教學課程中所做的，我們將使用最新的方法，一開始先建立 DAL 方法，然後是 BLL 方法，最後在 [ASP.NET] 頁面中執行功能。 在 [`App_Code/DAL`] 資料夾中開啟 `Northwind.xsd` 類型資料集，並將新的方法加入 `ProductsTableAdapter` （以滑鼠右鍵按一下 `ProductsTableAdapter`，然後選擇 [加入查詢]）。 這麼做會顯示 [TableAdapter 查詢設定] wizard，讓我們逐步完成新增方法的程式。 一開始請先指出我們的 DAL 方法將使用臨機操作 SQL 語句。
 
-[![建立使用特定 SQL 陳述式的 DAL 方法](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image31.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image30.png)
+[![使用特定 SQL 語句建立 DAL 方法](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image31.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image30.png)
 
-**圖 12**:建立 DAL 方法使用特定 SQL 陳述式 ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image32.png))
+**圖 12**：使用臨機操作 SQL 語句建立 DAL 方法（[按一下以觀看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image32.png)）
 
-接下來，精靈會提示我們輸入有關何種查詢來建立。 由於`DiscontinueAllProductsForSupplier(supplierID)`方法將需要更新`Products`資料庫資料表中，設定`Discontinued`欄位設為 1，指定所提供的所有產品 *`supplierID`* ，我們需要建立可更新資料的查詢。
+接下來，嚮導會提示我們輸入要建立的查詢類型。 由於 `DiscontinueAllProductsForSupplier(supplierID)` 方法將需要更新 `Products` 資料庫資料表，針對指定 *`supplierID`* 所提供的所有產品，將 `Discontinued` 欄位設定為1，因此我們必須建立可更新資料的查詢。
 
 [![選擇更新查詢類型](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image34.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image33.png)
 
-**圖 13**:選擇更新查詢類型 ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image35.png))
+**圖 13**：選擇更新查詢類型（[按一下以查看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image35.png)）
 
-精靈的下一個畫面會提供現有 TableAdapter s`UPDATE`陳述式，這會更新每個欄位中定義`Products`DataTable。 此查詢的文字取代為下列陳述式：
+下一個 wizard 畫面會提供 TableAdapter 的現有 `UPDATE` 語句，以更新 `Products` DataTable 中定義的每個欄位。 將此查詢文字取代為下列語句：
 
 [!code-sql[Main](adding-and-responding-to-buttons-to-a-gridview-vb/samples/sample4.sql)]
 
-輸入這項查詢，並按一下 [下一步]，精靈的最後一個畫面會要求新的方法的名稱之後使用`DiscontinueAllProductsForSupplier`。 按一下 [完成] 按鈕，以完成精靈。 返回 DataSet 設計工具中，您應該看到中的新方法`ProductsTableAdapter`名為`DiscontinueAllProductsForSupplier(@SupplierID)`。
+輸入此查詢並按 下一步 之後，最後一個 wizard 畫面會要求新的方法 使用 `DiscontinueAllProductsForSupplier`的名稱。 按一下 [完成] 按鈕以完成嚮導。 返回 DataSet 設計工具時，您應該會在名為 `DiscontinueAllProductsForSupplier(@SupplierID)`的 `ProductsTableAdapter` 中看到新的方法。
 
 [![命名新的 DAL 方法 DiscontinueAllProductsForSupplier](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image37.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image36.png)
 
-**圖 14**:將新的 DAL 方法`DiscontinueAllProductsForSupplier`([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image38.png))
+**圖 14**：將新的 DAL 方法命名 `DiscontinueAllProductsForSupplier` （[按一下以查看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image38.png)）
 
-具有`DiscontinueAllProductsForSupplier(supplierID)`在資料存取層中建立的方法下, 一步是建立`DiscontinueAllProductsForSupplier(supplierID)`商業邏輯層中的方法。 若要這麼做，開啟`ProductsBLL`類別檔案，並新增下列：
+在資料存取層中建立 `DiscontinueAllProductsForSupplier(supplierID)` 方法之後，下一項工作是在商務邏輯層中建立 `DiscontinueAllProductsForSupplier(supplierID)` 方法。 若要完成此動作，請開啟 `ProductsBLL` 類別檔案，並新增下列內容：
 
 [!code-vb[Main](adding-and-responding-to-buttons-to-a-gridview-vb/samples/sample5.vb)]
 
-這個方法只會呼叫下`DiscontinueAllProductsForSupplier(supplierID)`方法中傳遞所提供的 DAL *`supplierID`* 參數值。 如果有任何僅允許產品在某些情況下停止供應商的商務規則，這些規則應該在這裡，在實作 BLL。
+這個方法只會向下呼叫 DAL 中的 `DiscontinueAllProductsForSupplier(supplierID)` 方法，並沿著提供的 *`supplierID`* 參數值傳遞。 如果有任何商務規則只允許供應商的產品在某些情況下停止，這些規則應該在此實作為 BLL。
 
 > [!NOTE]
-> 不同於`UpdateProduct`中的多載`ProductsBLL`類別`DiscontinueAllProductsForSupplier(supplierID)`方法簽章不包含`DataObjectMethodAttribute`屬性 (`<System.ComponentModel.DataObjectMethodAttribute(System.ComponentModel.DataObjectMethodType.Update, Boolean)>`)。 這會防止`DiscontinueAllProductsForSupplier(supplierID)`從 ObjectDataSource s 設定資料來源精靈的下拉式清單中 [更新] 索引標籤的方法。我已省略此屬性，因為我們將會呼叫`DiscontinueAllProductsForSupplier(supplierID)`直接從我們的 ASP.NET 網頁中的事件處理常式的方法。
+> 不同于 `ProductsBLL` 類別中的 `UpdateProduct` 多載，`DiscontinueAllProductsForSupplier(supplierID)` 方法簽章不包含 `DataObjectMethodAttribute` 屬性（`<System.ComponentModel.DataObjectMethodAttribute(System.ComponentModel.DataObjectMethodType.Update, Boolean)>`）。 這會在 [更新] 索引標籤中，從 ObjectDataSource s [設定資料來源嚮導] 下拉式清單中排除 `DiscontinueAllProductsForSupplier(supplierID)` 方法。我省略了這個屬性，因為我們會直接從 ASP.NET 網頁中的事件處理常式呼叫 `DiscontinueAllProductsForSupplier(supplierID)` 方法。
 
-## <a name="step-5-adding-a-discontinue-all-products-button-to-the-formview"></a>步驟 5：將停止所有的產品按鈕，以 FormView
+## <a name="step-5-adding-a-discontinue-all-products-button-to-the-formview"></a>步驟5：將 [停止所有產品] 按鈕新增至 FormView
 
-具有`DiscontinueAllProductsForSupplier(supplierID)`BLL 和 DAL 中的方法完成時，加入選取的供應商是 Button Web 控制項加入 FormView s 停止所有產品的能力的最後一個步驟`ItemTemplate`。 讓 s 中加入這類按鈕下方的按鈕文字時，停止所有產品的供應商的電話號碼和`ID`屬性值為`DiscontinueAllProductsForSupplier`。 您可以將此按鈕 Web 控制項透過設計工具中 FormView s 智慧標籤的 編輯範本 連結上即可 （請參閱 圖 15），或直接透過宣告式語法。
+當 BLL 和 DAL 中的 `DiscontinueAllProductsForSupplier(supplierID)` 方法完成時，新增可中斷所選供應商所有產品之能力的最後一個步驟，就是將按鈕 Web 控制項新增至 FormView s `ItemTemplate`。 讓我們在供應商的電話號碼下方新增這類按鈕，並加上按鈕文字、中止所有產品和 `ID` 屬性值 `DiscontinueAllProductsForSupplier`。 您可以透過設計工具加入此按鈕 Web 控制項，方法是按一下 FormView s 智慧標籤中的 [編輯範本] 連結（請參閱 [圖 15]），或直接透過宣告式語法。
 
-[![將停止所有產品按鈕 Web 控制項，以 FormView 的 ItemTemplate](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image40.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image39.png)
+[![將 [停止所有產品] 按鈕 Web 控制項新增至 FormView s ItemTemplate](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image40.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image39.png)
 
-**圖 15**:停止所有產品 Web 將按鈕控制項都加入到 FormView `ItemTemplate` ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image41.png))
+**圖 15**：將 [停止所有產品] 按鈕 Web 控制項新增至 FormView s `ItemTemplate` （[按一下以觀看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image41.png)）
 
-當使用者瀏覽 頁面上，回傳是兩邊彼此乾瞪眼和 FormView s 按一下按鈕[`ItemCommand`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formview.itemcommand.aspx)引發。 若要執行自訂程式碼以回應所按下此按鈕，我們可以建立此事件的事件處理常式。 了解，不過`ItemCommand`就會引發事件時*任何*FormView 內按下按鈕、 LinkButton 或 ImageButton Web 控制項。 這表示當使用者從一頁移到另一個在 FormView，`ItemCommand`事件引發; 相同的動作，當使用者按一下 [新增]，[編輯]，或在支援插入、 更新或刪除的 FormView 中刪除。
+當流覽頁面的使用者按一下按鈕時，就會引發回傳接踵而來和 FormView s [`ItemCommand` 事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formview.itemcommand.aspx)。 若要執行自訂程式碼來回應按一下這個按鈕，我們可以建立這個事件的事件處理常式。 不過，請瞭解，每當在 FormView 內按一下*任何*按鈕、LinkButton 或 ImageButton Web 控制項時，就會引發 `ItemCommand` 事件。 這表示當使用者在 FormView 中從一頁移到另一個頁面時，就會引發 `ItemCommand` 事件;當使用者在支援插入、更新或刪除的 FormView 中按一下 [新增]、[編輯] 或 [刪除] 時，也是一樣。
 
-因為`ItemCommand`引發不論按一下按鈕時，在事件處理常式我們需要方法來判斷是否按下 [停止所有的產品] 按鈕，或如果是其他的按鈕。 若要這麼做，我們可以設定按鈕的 Web 控制項的`CommandName`某些識別值的屬性。 當按一下按鈕時，這`CommandName`值會傳遞至`ItemCommand`事件處理常式，讓我們可以判斷是否停止所有的產品 按鈕已按下按鈕。 設定停止所有的產品按鈕 s `CommandName` DiscontinueProducts 的屬性。
+由於 `ItemCommand` 不論按一下哪個按鈕而引發，因此，在事件處理常式中，我們需要一種方法來判斷是否已按下 [停止所有產品] 按鈕，或者是否為其他按鈕。 為了達成此目的，我們可以將按鈕 Web 控制項的 `CommandName` 屬性設定為一些識別值。 按一下按鈕時，這個 `CommandName` 值會傳遞至 `ItemCommand` 事件處理常式，讓我們判斷是否已按下 [停止所有產品] 按鈕。 將 [中止所有產品] 按鈕 `CommandName` 屬性設定為 DiscontinueProducts。
 
-最後，讓使用用戶端確認對話方塊中，以確保使用者真正想要停止選取的供應商的產品的 s。 如我們在中所見[正在刪除時新增用戶端確認](../editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-vb.md)教學課程中，這可以使用一些 JavaScript 來完成。 特別是，將 Button Web 控制項的 OnClientClick 屬性設定為 `return confirm('This will mark _all_ of this supplier\'s products as discontinued. Are you certain you want to do this?');`
+最後，讓我們使用 [用戶端確認] 對話方塊，以確保使用者真的想要停止選取的供應商產品。 如在刪除教學課程[時新增用戶端確認](../editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-vb.md)中所見，您可以使用一些 JavaScript 來完成這項作業。 特別的是，將 Button Web control s OnClientClick 屬性設定為 `return confirm('This will mark _all_ of this supplier\'s products as discontinued. Are you certain you want to do this?');`
 
-進行這些變更之後，FormView s 宣告式語法看起來應該如下所示：
+進行這些變更之後，FormView 的宣告式語法看起來應該如下所示：
 
 [!code-aspx[Main](adding-and-responding-to-buttons-to-a-gridview-vb/samples/sample6.aspx)]
 
-接下來，建立事件處理常式 FormView s`ItemCommand`事件。 這個事件處理常式中，我們需要先判斷是否已按下 [停止所有的產品] 按鈕。 如果我們想要建立的執行個體的的話`ProductsBLL`類別，並叫用其`DiscontinueAllProductsForSupplier(supplierID)`方法並傳入`SupplierID`選取 FormView 的：
+接下來，建立 FormView s `ItemCommand` 事件的事件處理常式。 在此事件處理常式中，我們必須先判斷是否已按下 [停止所有產品] 按鈕。 若是如此，我們想要建立 `ProductsBLL` 類別的實例，並叫用它的 `DiscontinueAllProductsForSupplier(supplierID)` 方法，並傳入所選 FormView 的 `SupplierID`：
 
 [!code-vb[Main](adding-and-responding-to-buttons-to-a-gridview-vb/samples/sample7.vb)]
 
-請注意， `SupplierID` FormView 中目前選取的供應商可以存取使用 FormView s [ `SelectedValue`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formview.selectedvalue.aspx)。 `SelectedValue`屬性會傳回第一個資料機碼顯示在 FormView 中之資料錄的值。 FormView s [ `DataKeyNames`屬性](https://msdn.microsoft.com/system.web.ui.webcontrols.formview.datakeynames.aspx)，表示的資料欄位的資料索引鍵值取自，自動設定為`SupplierID`時繫結至 FormView 後的 ObjectDataSource 的 Visual studio在步驟 2。
+請注意，您可以使用 FormView s [`SelectedValue` 屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formview.selectedvalue.aspx)來存取 formview 中目前選取之供應商的 `SupplierID`。 `SelectedValue` 屬性會傳回要在 FormView 中顯示之記錄的第一個資料索引鍵值。 FormView s [`DataKeyNames` 屬性](https://msdn.microsoft.com/system.web.ui.webcontrols.formview.datakeynames.aspx)（表示從中提取資料索引鍵值的資料欄位），會在將 ObjectDataSource 系結至步驟2中的 FormView 時，自動設定為 `SupplierID` Visual Studio。
 
-使用`ItemCommand`事件處理常式建立，請花一點時間測試頁面。 瀏覽至 Cooperativa de Quesos ' Las Cabras' 供應商 (它 s 我 FormView 中的第五個供應商)。 此供應商提供兩項產品，Queso Cabrales 和 Queso Manchego La Pastora，這兩者都是*不*停用。
+建立 `ItemCommand` 事件處理常式之後，請花點時間測試頁面。 流覽至 Cooperativa de Quesos ' 內華達 Cabras ' 供應商（這是 FormView for me 中的第五個供應商）。 此供應商提供兩個產品： Queso Cabrales 和 Queso Manchego La Pastora，這兩者都*不*會中止。
 
-假設 Cooperativa de Quesos ' Las Cabras' 已離開公司，因此其產品會停止。 按一下 [停止所有產品] 按鈕。 這會顯示用戶端確認對話方塊 （請參閱 圖 16）。
+假設 Cooperativa de Quesos ' 內華達 Cabras ' 已用盡企業，因此其產品即將淘汰。 按一下 [停止所有產品] 按鈕。 這會顯示 [用戶端確認] 對話方塊（請參閱 [圖 16]）。
 
-[![Cooperativa de Quesos Las Cabras 提供兩個使用中的產品](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image43.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image42.png)
+[![Cooperativa de Quesos 內華達 Cabras 提供兩個有效的產品](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image43.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image42.png)
 
-**圖 16**:Cooperativa de Quesos Las Cabras 提供兩個使用中的產品 ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image44.png))
+**圖 16**： Cooperativa De Quesos 內華達 Cabras 提供兩個使用[中的產品（按一下以觀看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image44.png)）
 
-如果您按一下 [確定]，在用戶端確認對話方塊中，表單送出將會繼續，在其中造成回傳 FormView 的`ItemCommand`事件就會引發。 我們建立的事件處理常式接著會執行，請叫用`DiscontinueAllProductsForSupplier(supplierID)`方法，並停用的 Queso Cabrales 」 和 「 Queso Manchego La Pastora 產品。
+如果您在 [用戶端確認] 對話方塊中按一下 [確定]，就會繼續提交表單，而導致會引發 FormView s `ItemCommand` 事件的回傳。 然後，我們建立的事件處理常式會執行，叫用 `DiscontinueAllProductsForSupplier(supplierID)` 方法，並同時停 Queso Cabrales 和 Queso Manchego La Pastora 產品。
 
-如果您已停用的 GridView 的檢視狀態，GridView 會被重新繫結至基礎資料存放區在每次回傳中，並因此將立即更新以反映，這兩項產品現已停用 （請參閱 圖 17）。 如果，不過，您不停用檢視狀態，在 gridview 裡，您必須以手動方式將重新繫結至 GridView 資料之後進行這項變更。 若要這麼做，只要呼叫到 GridView`DataBind()`方法叫用後，立即`DiscontinueAllProductsForSupplier(supplierID)`方法。
+如果您已停用 GridView 的 view 狀態，GridView 會在每次回傳時重新系結至基礎資料存放區，因此會立即更新以反映這兩項產品現在已停止（請參閱 [圖 17]）。 不過，如果您在 GridView 中未停用 view 狀態，則在進行這項變更之後，您必須手動將資料重新系結至 GridView。 若要完成此動作，只需在叫用 `DiscontinueAllProductsForSupplier(supplierID)` 方法之後，立即呼叫 GridView 的 `DataBind()` 方法。
 
-[![按一下 停止所有產品按鈕後，供應商的產品是據以更新](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image46.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image45.png)
+[![按一下 [中止所有產品] 按鈕之後，供應商的產品會據以更新](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image46.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image45.png)
 
-**圖 17**:按一下 停止所有產品按鈕後，供應商的產品是據以更新 ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image47.png))
+**圖 17**：按一下 [停止所有產品] 按鈕之後，供應商的產品也會隨之更新（[按一下以觀看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image47.png)）
 
-## <a name="step-6-creating-an-updateproduct-overload-in-the-business-logic-layer-for-adjusting-a-product-s-price"></a>步驟 6：建立 UpdateProduct 多載中調整產品的價格的商務邏輯層
+## <a name="step-6-creating-an-updateproduct-overload-in-the-business-logic-layer-for-adjusting-a-product-s-price"></a>步驟6：在商務邏輯層中建立 UpdateProduct 多載以調整產品的價格
 
-像是停止所有產品中的按鈕 FormView，若要加入按鈕的增加和減少 GridView 裡的產品的價格我們都需要先將新增適當的資料存取層和商務邏輯層方法。 由於我們已經有更新單一產品中的資料列的 DAL 的方法，我們可以建立的新多載來提供這類功能`UpdateProduct`到 BLL 中的方法。
+與 FormView 中的 [停止所有產品] 按鈕相同，為了增加和減少 GridView 中產品的價格，我們必須先新增適當的資料存取層和商務邏輯層方法。 因為我們已經有更新 DAL 中單一產品資料列的方法，所以我們可以藉由為 BLL 中的 `UpdateProduct` 方法建立新的多載，提供這類功能。
 
-我們過去`UpdateProduct`多載已在產品欄位的一些組合，做為純量輸入的值，然後更新的欄位指定的產品。 這個多載而言，我們會稍有不同這項標準，改為傳入產品 s`ProductID`以及用來調整百分比`UnitPrice`(而不是在新的傳遞，調整`UnitPrice`本身)。 這個方法會簡化我們需要在 ASP.NET 網頁程式碼後置類別中撰寫的程式碼，因為我們不需要擔心判斷目前的產品 s t `UnitPrice`。
+過去的 `UpdateProduct` 多載已將產品欄位的某種組合納入純量輸入值，然後只針對指定的產品更新這些欄位。 針對此多載，我們將會與此標準略有不同，並改為傳入產品的 `ProductID` 以及調整 `UnitPrice` 的百分比（相對於傳入新的、已調整的 `UnitPrice` 本身）。 這種方法可以簡化我們需要在 ASP.NET 網頁程式碼後置類別中撰寫的程式碼，因為我們不需要在判斷目前的產品 `UnitPrice`。
 
-`UpdateProduct`多載，如本教學課程中所示：
+本教學課程的 `UpdateProduct` 多載如下所示：
 
 [!code-vb[Main](adding-and-responding-to-buttons-to-a-gridview-vb/samples/sample8.vb)]
 
-這個多載擷取透過 DAL s 指定的產品的相關資訊`GetProductByProductID(productID)`方法。 然後它會檢查以查看是否產品 s`UnitPrice`指派資料庫`NULL`值。 如果是，價格會保持不變。 如果，不過，有非`NULL``UnitPrice`值，這個方法會更新產品 s`UnitPrice`所指定的百分比 (`unitPriceAdjustmentPercent`)。
+這個多載會透過 DAL s `GetProductByProductID(productID)` 方法來抓取指定產品的相關資訊。 然後，它會檢查產品的 `UnitPrice` 是否已指派資料庫 `NULL` 值。 如果是，價格會原封不動地保留。 不過，如果有非`NULL` 的 `UnitPrice` 值，方法就會依照指定的百分比（`unitPriceAdjustmentPercent`）來更新 `UnitPrice` 產品。
 
-## <a name="step-7-adding-the-increase-and-decrease-buttons-to-the-gridview"></a>步驟 7：GridView 中加入增加和減少按鈕
+## <a name="step-7-adding-the-increase-and-decrease-buttons-to-the-gridview"></a>步驟7：將 [增加] 和 [減少] 按鈕新增至 GridView
 
-GridView （和 DetailsView） 是兩組成欄位的集合。 除了 BoundFields、 CheckBoxFields 和 TemplateFields，ASP.NET 會包含 ButtonField，其中，正如其名，會轉譯成與按鈕、 LinkButton 或 ImageButton 的資料行，每個資料列。 類似於 FormView，按一下*任何*內 GridView 分頁按鈕、 編輯或刪除按鈕，排序按鈕和等等的按鈕會導致回傳，並引發 GridView s [ `RowCommand`事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowcommand.aspx)。
+GridView （和 DetailsView）都是由欄位集合所組成。 除了 BoundFields、CheckBoxFields 和 TemplateFields，ASP.NET 還包含 ButtonField，其名稱暗示，會轉譯為每個資料列具有按鈕、LinkButton 或 ImageButton 的資料行。 類似于 FormView，在 GridView 分頁按鈕、[編輯] 或 [刪除] 按鈕、[排序按鈕] 等專案中按一下*任何*按鈕，都會導致回傳並引發 GridView 的[`RowCommand` 事件](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowcommand.aspx)。
 
-具有 ButtonField`CommandName`屬性，將指定的值指派給每個其按鈕`CommandName`屬性。 使用 FormView`CommandName`會使用值`RowCommand`事件處理常式，來判斷所按的按鈕。
+ButtonField 具有 `CommandName` 屬性，可將指定的值指派給其每個按鈕 `CommandName` 屬性。 就像 FormView 一樣，`RowCommand` 事件處理常式會使用 `CommandName` 值來判斷所按的按鈕。
 
-可讓 s 新增兩個新 ButtonFields 至 GridView，一個使用的按鈕文字價格 + 10%，而另一個文字價格-10%。 若要新增這些 ButtonFields，按一下 [編輯資料行] 連結，從 GridView s 智慧標籤選取 ButtonField 欄位型別從清單中的左上方，按一下 [新增] 按鈕。
+讓 s 將兩個新的 ButtonFields 新增至 GridView，一個具有按鈕文字價格 + 10%，另一個具有文字價格-10%。 若要加入這些 ButtonFields，請按一下 GridView 的智慧標籤中的 [編輯資料行] 連結，從左上方的清單中選取 [ButtonField] 欄位類型，然後按一下 [新增] 按鈕。
 
-![新增兩個 ButtonFields 至 GridView](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image48.png)
+![將兩個 ButtonFields 新增至 GridView](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image48.png)
 
-**圖 18**:新增兩個 ButtonFields 至 GridView
+**圖 18**：將兩個 ButtonFields 新增至 GridView
 
-移動兩個 ButtonFields，使它們顯示為前兩個 GridView 欄位。 接下來，設定`Text`屬性，這些兩個 ButtonFields 價格 + 10%的價格介於-10%，`CommandName`屬性給 IncreasePrice 和 DecreasePrice，分別。 根據預設，ButtonField 會將其資料行的按鈕呈現為 Linkbutton。 這可以變更，不過，透過 ButtonField s [ `ButtonType`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.buttonfieldbase.buttontype.aspx)。 讓已轉譯為一般的推播按鈕; 這些兩個 ButtonFields s因此，設定`ButtonType`屬性設`Button`。 圖 19 顯示欄位 對話方塊中進行這些變更; 之後接著是 GridView s 宣告式標記。
+移動兩個 ButtonFields，使其顯示為前兩個 GridView 欄位。 接下來，將這兩個 ButtonFields 的 [`Text` 屬性] 設定為 [價格 + 10%] 和 [價格-10%]，並將 `CommandName` 屬性分別設為 IncreasePrice 和 DecreasePrice。 根據預設，ButtonField 會將其按鈕的資料行呈現為 LinkButtons。 不過，您可以透過 ButtonField s [`ButtonType` 屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.buttonfieldbase.buttontype.aspx)來變更此內容。 讓我們將這兩個 ButtonFields 轉譯為一般的 push 按鈕;因此，請將 `ButtonType` 屬性設為 `Button`。 [圖 19] 顯示在進行這些變更之後的 [欄位] 對話方塊;之後是 GridView 的宣告式標記。
 
-![設定 ButtonFields 文字、 CommandName、 和 ButtonType 屬性](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image49.png)
+![設定 ButtonFields Text、CommandName 和 ButtonType 屬性](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image49.png)
 
-**圖 19**:設定 ButtonFields `Text`， `CommandName`，和`ButtonType`屬性
+**圖 19**：設定 ButtonFields `Text`、`CommandName`和 `ButtonType` 屬性
 
 [!code-aspx[Main](adding-and-responding-to-buttons-to-a-gridview-vb/samples/sample9.aspx)]
 
-建立這些 ButtonFields，最後一個步驟是建立事件處理常式 GridView s`RowCommand`事件。 這個事件處理常式中引發，因為如果任一個價格 + 10%或價格-10%按鈕已按下，需求，來決定`ProductID`其按鈕已按下，然後叫用之資料列`ProductsBLL`類別的`UpdateProduct`方法並傳入適當`UnitPrice`連同百分比調整`ProductID`。 下列程式碼會執行下列工作：
+建立這些 ButtonFields 之後，最後一個步驟是建立 GridView s `RowCommand` 事件的事件處理常式。 這個事件處理常式（如果因為已按下 [價格 + 10%] 或 [價格-10%] 按鈕而引發）需要判斷已按一下按鈕之資料列的 `ProductID`，然後再叫用 `ProductsBLL` 類別 s `UpdateProduct` 方法，連同 `ProductID`一起傳遞適當的 `UnitPrice` 百分比調整。 下列程式碼會執行這些工作：
 
 [!code-vb[Main](adding-and-responding-to-buttons-to-a-gridview-vb/samples/sample10.vb)]
 
-若要判斷`ProductID`資料列的價格 + 10%或價格-10% 按鈕已按下，我們需要將 GridView s，請參閱`DataKeys`集合。 這個集合會保存欄位中指定的值`DataKeyNames`每個 GridView 資料列的屬性。 因為 GridView s`DataKeyNames`屬性設定為 ProductID 由 Visual Studio 時繫結至 GridView 的 ObjectDataSource`DataKeys(rowIndex).Value`提供`ProductID`指定*rowIndex*。
+為了判斷已按下 [價格 + 10%] 或 [Price-10%] 按鈕的資料列 `ProductID`，我們需要查閱 GridView 的 `DataKeys` 集合。 這個集合會保存每個 GridView 資料列的 `DataKeyNames` 屬性中所指定的欄位值。 由於 GridView 的 `DataKeyNames` 屬性是在將 ObjectDataSource 系結至 GridView 時 Visual Studio 設定為 ProductID，因此 `DataKeys(rowIndex).Value` 會為指定的*rowIndex*提供 `ProductID`。
 
-在自動傳遞 ButtonField *rowIndex*其按鈕已按下透過資料列的`e.CommandArgument`參數。 因此，若要判斷`ProductID`資料列的價格 + 10%或價格-10% 按鈕已按下，我們使用： `Convert.ToInt32(SuppliersProducts.DataKeys(Convert.ToInt32(e.CommandArgument)).Value)`。
+ButtonField 會自動傳入資料列的*rowIndex* ，其按鈕已透過 `e.CommandArgument` 參數按一下。 因此，若要判斷已按下價格 + 10% 或 Price-10% 按鈕的資料列 `ProductID`，我們使用： `Convert.ToInt32(SuppliersProducts.DataKeys(Convert.ToInt32(e.CommandArgument)).Value)`。
 
-做為 [停止所有產品] 按鈕，如果您已停用 GridView 的檢視狀態，GridView 是正在重新繫結至基礎資料存放區在每次回傳中，與因此將立即更新以反映從按一下，就會發生的價格變更其中一個按鈕。 如果，不過，您不停用檢視狀態，在 gridview 裡，您必須以手動方式將重新繫結至 GridView 資料之後進行這項變更。 若要這麼做，只要呼叫到 GridView`DataBind()`方法叫用後，立即`UpdateProduct`方法。
+如同 [中斷所有產品] 按鈕，如果您已停用 GridView 的 view 狀態，GridView 就會在每次回傳時重新系結至基礎資料存放區，因此會立即更新以反映按一下時發生的價格變更其中一個按鈕。 不過，如果您在 GridView 中未停用 view 狀態，則在進行這項變更之後，您必須手動將資料重新系結至 GridView。 若要完成此動作，只需在叫用 `UpdateProduct` 方法之後，立即呼叫 GridView 的 `DataBind()` 方法。
 
-[圖 20] 顯示頁面檢視祖母 Kelly Homestead 所提供的產品時。 圖 21 顯示的結果之後價格 + 10%按鈕被按兩次的祖母的 Boysenberry 散佈和價格-10%按鈕一次的 Northwoods Cranberry 醬。
+[圖 20] 顯示起來啦阿嬤凱利的 Homestead 所提供的產品時的頁面。 [圖 21] 顯示在起來啦阿嬤的 Boysenberry 散佈後按兩次 [價格 + 10%] 按鈕時的結果，以及 Northwoods Cranberry Sauce 的 [價格-10%] 按鈕。
 
-[![GridView 包含價格 + 10%和價格-10%按鈕](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image51.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image50.png)
+[![GridView 包含價格 + 10% 和價格-10% 按鈕](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image51.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image50.png)
 
-**圖 20**:GridView 包含價格 + 10%和價格-10%按鈕 ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image52.png))
+**圖 20**： GridView 包含價格 + 10% 和 price-10% 按鈕（[按一下以觀看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image52.png)）
 
-[![已更新的第一個和第三個產品的價格透過價格 + 10%和價格-10%按鈕](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image54.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image53.png)
+[![第一個和第三個產品的價格已透過價格 + 10% 和價格-10% 按鈕更新](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image54.png)](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image53.png)
 
-**圖 21**:第一個和第三個產品都已經透過價格 + 10 的價格 %和價格-10%按鈕 ([按一下以檢視完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image55.png))
+**圖 21**：第一個和第三個產品的價格已透過價格 + 10% 和價格-10% 按鈕更新（[按一下以觀看完整大小的影像](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image55.png)）
 
 > [!NOTE]
-> 按鈕、 Linkbutton 或新增至其 TemplateFields ImageButtons，也可以有 GridView （和 DetailsView）。 因為 BoundField 與這些按鈕，按一下時，會引發回傳，引發 GridView 的`RowCommand`事件。 當新增按鈕為 TemplateField，不過，按鈕的`CommandArgument`不會自動設定資料列的索引，即使用 ButtonFields 時。 如果您需要決定內按下按鈕的資料列索引`RowCommand`事件處理常式，您必須手動設定 [s] 按鈕`CommandArgument`TemplateField，類似的程式碼中宣告式語法中的屬性：  
-> `<asp:Button runat="server" ... CommandArgument='<%# CType(Container, GridViewRow).RowIndex %>' />`.
+> GridView （和 DetailsView）也可以將按鈕、LinkButtons 或 ImageButtons 新增至其 TemplateFields。 如同 BoundField，當您按下這些按鈕時，將會引發回傳，並引發 GridView 的 `RowCommand` 事件。 不過，在 TemplateField 中加入按鈕時，`CommandArgument` 的按鈕不會自動設定為數據列的索引，如同使用 ButtonFields 時一樣。 如果您需要決定在 `RowCommand` 事件處理常式中按下按鈕的資料列索引，您必須使用類似的程式碼，以手動方式在 TemplateField 內的宣告式語法中設定按鈕 s `CommandArgument` 屬性：  
+> `<asp:Button runat="server" ... CommandArgument='<%# CType(Container, GridViewRow).RowIndex %>' />`。
 
 ## <a name="summary"></a>總結
 
-所有的 GridView、 DetailsView 和 FormView 控制項可以包含按鈕、 Linkbutton 或 ImageButtons。 這類的按鈕，按一下時，會造成回傳並引發`ItemCommand`FormView 和 DetailsView 控制項中的事件和`RowCommand`GridView 內的事件。 這些資料 Web 控制項有內建的功能，以處理一般與命令相關的動作，例如刪除或編輯記錄。 不過，我們也可以在使用按鈕，按下時，回應與執行自己的自訂程式碼。
+GridView、DetailsView 和 FormView 控制項全都可以包含按鈕、LinkButtons 或 ImageButtons。 按一下這類按鈕時，會導致回傳，並引發 [FormView] 和 [DetailsView] 控制項中的 `ItemCommand` 事件和 GridView 中的 [`RowCommand`] 事件。 這些資料 Web 控制項具有內建功能，可處理常見的命令相關動作，例如刪除或編輯記錄。 不過，我們也可以使用按下的按鈕，以回應執行我們自己的自訂程式碼。
 
-若要達成此目的，我們需要建立的事件處理常式`ItemCommand`或`RowCommand`事件。 這個事件處理常式中，我們先檢查傳入`CommandName`判斷所按的按鈕，然後再採取適當的自訂動作的值。 在本教學課程中，我們看到如何使用按鈕和 ButtonFields 停止指定的供應商的所有產品，或以增加或減少 10%的特定產品的價格。
+若要完成此動作，我們必須建立 `ItemCommand` 或 `RowCommand` 事件的事件處理常式。 在此事件處理常式中，我們會先檢查傳入的 `CommandName` 值，以判斷已按下的按鈕，然後採取適當的自訂動作。 在本教學課程中，我們已瞭解如何使用按鈕和 ButtonFields 來終止指定供應商的所有產品，或將特定產品的價格增加或減少10%。
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ## <a name="about-the-author"></a>關於作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七個 ASP 書籍和的創辦人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年從事 Microsoft Web 技術工作。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是[ *Sams 教導您自己 ASP.NET 2.0 在 24 小時內*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在觸達[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或透過他的部落格，這位於 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，自1998起，有七個 ASP/ASP. NET 書籍和創辦人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是[*在24小時內讓自己的 ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在mitchell@4GuysFromRolla.com觸達[。](mailto:mitchell@4GuysFromRolla.com) 或者透過他的 blog，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 > [!div class="step-by-step"]
-> [上一步](adding-and-responding-to-buttons-to-a-gridview-cs.md)
+> [上一篇](adding-and-responding-to-buttons-to-a-gridview-cs.md)

@@ -1,265 +1,265 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-vb
-title: 使用 SqlDataSource (VB) 中使用參數化的查詢 |Microsoft Docs
+title: 搭配 SqlDataSource 使用參數化查詢（VB） |Microsoft Docs
 author: rick-anderson
-description: 在本教學課程中，我們會繼續我們看看 SqlDataSource 控制項，並了解如何定義參數化的查詢。 參數可以指定這兩個宣告...
+description: 在本教學課程中，我們會繼續查看 SqlDataSource 控制項，並瞭解如何定義參數化查詢。 參數可以同時指定宣告 。
 ms.author: riande
 ms.date: 02/20/2007
 ms.assetid: e322f34c-83b7-41ea-ab65-ab1e0bdcc609
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 70da58fce30dfbb174b502e104190c5940b10c97
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 19b93ff6c0878ae6ed546d347cafef95fd2a01e6
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65124306"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74598043"
 ---
 # <a name="using-parameterized-queries-with-the-sqldatasource-vb"></a>使用以 SqlDataSource 進行的參數化查詢 (VB)
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載範例應用程式](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_48_VB.exe)或[下載 PDF](using-parameterized-queries-with-the-sqldatasource-vb/_static/datatutorial48vb1.pdf)
+[下載範例應用程式](https://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_48_VB.exe)或[下載 PDF](using-parameterized-queries-with-the-sqldatasource-vb/_static/datatutorial48vb1.pdf)
 
-> 在本教學課程中，我們會繼續我們看看 SqlDataSource 控制項，並了解如何定義參數化的查詢。 參數會同時以宣告方式或以程式設計的方式，可以指定，而且可以從數個位置，例如查詢字串、 工作階段狀態，其他控制項和多個提取。
+> 在本教學課程中，我們會繼續查看 SqlDataSource 控制項，並瞭解如何定義參數化查詢。 參數可以用宣告方式和程式設計方式指定，而且可以從數個位置提取，例如 querystring、會話狀態、其他控制項等等。
 
 ## <a name="introduction"></a>簡介
 
-在上一個教學課程中，我們了解如何直接從資料庫擷取資料時，用於 SqlDataSource 控制項的內容。 使用 「 設定資料來源精靈 」，我們可以選擇資料庫，然後將： 挑選要從資料表或檢視中，傳回的資料行輸入自訂的 SQL 陳述式：或使用預存程序。 從資料表或檢視表選取資料行，或輸入自訂的 SQL 陳述式，SqlDataSource 控制項是否 s`SelectCommand`屬性會被指派所產生的特定 SQL`SELECT`陳述式，而且這是此`SELECT`陳述式時執行SqlDataSource 的`Select()`叫用方法時 (以程式設計方式或自動從資料 Web 控制項)。
+在上一個教學課程中，我們已瞭解如何使用 SqlDataSource 控制項直接從資料庫取出資料。 使用 [設定資料來源] 嚮導，我們可以選擇資料庫，然後選取要從資料表或視圖傳回的資料行。輸入自訂 SQL 語句;或使用預存程式。 不論是從資料表或視圖中選取資料行，還是要輸入自訂的 SQL 語句，SqlDataSource 控制項 s `SelectCommand` 屬性都會指派產生的臨機操作 SQL `SELECT` 語句，而這是在叫用 SqlDataSource s `Select()` 方法（以程式設計方式或自動從資料 Web 控制項）時執行的這個 `SELECT` 語句。
 
-SQL`SELECT`陳述式中缺少的上一個教學課程的示範使用`WHERE`子句。 在 `SELECT`陳述式，`WHERE`子句可以用來限制傳回的結果。 例如，若要顯示的成本大於 $50.00 的產品名稱，我們可以使用下列查詢：
+先前的教學課程中所使用的 SQL `SELECT` 語句缺少 `WHERE` 的子句。 在 `SELECT` 語句中，可以使用 `WHERE` 子句來限制傳回的結果。 例如，若要顯示產品名稱超過 $50.00 的成本，我們可以使用下列查詢：
 
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample1.sql)]
 
-一般而言，將使用中的值`WHERE`子句會決定某些外部來源，例如查詢字串值、 工作階段變數或從網頁上的 Web 控制項的使用者輸入。 在理想情況下，使用指定這類輸入*參數*。 使用 Microsoft SQL Server，參數會表示使用`@parameterName`，如下所示：
+一般來說，`WHERE` 子句中使用的值會由某些外部來源決定，例如 querystring 值、會話變數，或網頁上 Web 控制項的使用者輸入。 在理想的情況下，這類輸入是透過使用*參數*來指定。 使用 Microsoft SQL Server，參數會使用 `@parameterName`表示，如下所示：
 
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample2.sql)]
 
-SqlDataSource 支援參數化的查詢，這兩者`SELECT`陳述式並`INSERT`， `UPDATE`，和`DELETE`陳述式。 此外，參數值可以自動從各種來源的查詢字串，工作階段狀態，在頁面上，控制項和等或可以透過程式設計方式指定。 在本教學課程中，我們會看到如何如何以指定參數值以宣告方式和以程式設計方式定義參數化的查詢。
+SqlDataSource 支援參數化查詢，適用于 `SELECT` 語句和 `INSERT`、`UPDATE`和 `DELETE` 語句。 此外，您可以從各種來源自動提取參數值： querystring、會話狀態、頁面上的控制項等等，或可透過程式設計方式指派。 在本教學課程中，我們將瞭解如何定義參數化查詢，以及如何以宣告方式和程式設計方式來指定參數值。
 
 > [!NOTE]
-> 在上一個教學課程中，我們會比較 ObjectDataSource 透過以 sqldatasource 進行，而且要注意的是其概念的相似之處的第一次 46 教學課程已我們選擇的工具。 參數也擴充這些相似之處。 ObjectDataSource 的參數對應到商務邏輯層中的方法的輸入參數。 使用 SqlDataSource，參數會定義直接在 SQL 查詢。 這兩個控制項都有參數的集合，這些他們`Select()`， `Insert()`， `Update()`，和`Delete()`方法以及兩者都可以從預先定義的來源 （查詢字串值、 工作階段變數等等填入這些參數值) 或以程式設計的方式指派。
+> 在上一個教學課程中，我們比較了使用 SqlDataSource 前46教學課程所選擇的 ObjectDataSource，並注意其概念相似之處。 這些相似性也會延伸至參數。 對應至商務邏輯層中方法之輸入參數的 ObjectDataSource s 參數。 使用 SqlDataSource 時，參數會直接定義在 SQL 查詢中。 這兩個控制項都有其 `Select()`、`Insert()`、`Update()`和 `Delete()` 方法的參數集合，而且兩者都可以從預先定義的來源（querystring 值、會話變數等等）填入這些參數值，或以程式設計方式指派。
 
 ## <a name="creating-a-parameterized-query"></a>建立參數型查詢
 
-SqlDataSource 控制項 s 設定資料來源精靈提供三種途徑來定義要擷取資料庫中的記錄執行的命令：
+SqlDataSource 控制項的 [設定資料來源] 會提供三個途徑來定義要執行以抓取資料庫記錄的命令：
 
-- 方法是選擇從現有的資料表或檢視中，資料行
-- 輸入自訂的 SQL 陳述式，或
-- 選擇預存程序
+- 藉由從現有的資料表或視圖中挑選資料行，
+- 輸入自訂 SQL 語句，或
+- 選擇預存程式
 
-當從現有的資料表或檢視表，為參數的資料行中挑選`WHERE`子句必須指定透過 加入`WHERE`子句對話方塊。 當建立自訂的 SQL 陳述式，不過，您可以輸入的參數，直接將`WHERE`子句 (使用`@parameterName`表示每個參數)。 A[預存程序](http://www.awprofessional.com/articles/article.asp?p=25288&amp;rl=1)組成一或多個 SQL 陳述式，而且這些陳述式可以參數化。 SQL 陳述式中使用的參數不過，必須傳遞做為輸入參數的預存程序。
+從現有的資料表或視圖挑選資料行時，必須透過 [加入 `WHERE` 子句] 對話方塊來指定 `WHERE` 子句的參數。 不過，在建立自訂 SQL 語句時，您可以直接在 `WHERE` 子句中輸入參數（使用 `@parameterName` 來表示每個參數）。 [預存](http://www.awprofessional.com/articles/article.asp?p=25288&amp;rl=1)程式是由一或多個 SQL 語句所組成，而且這些語句可以參數化。 不過，在 SQL 語句中使用的參數必須當做預存程式的輸入參數來傳遞。
 
-因為建立參數化的查詢取決於如何 SqlDataSource 的`SelectCommand`已指定，可讓 s 看所有三種方法。 若要開始，開啟`ParameterizedQueries.aspx`頁面中`SqlDataSource`資料夾中，將 SqlDataSource 控制項從工具箱拖曳至設計工具中，並設定其`ID`至`Products25BucksAndUnderDataSource`。 接下來，按一下 設定資料來源連結，從控制項 s 智慧標籤。 選取要使用的資料庫 (`NORTHWINDConnectionString`)，按一下 [下一步]。
+由於建立參數化查詢的方式取決於如何指定 SqlDataSource s `SelectCommand`，讓我們來看一下這三種方法。 若要開始使用，請開啟 [`SqlDataSource`] 資料夾中的 [`ParameterizedQueries.aspx`] 頁面，將 [SqlDataSource] 控制項從 [工具箱] 拖曳至設計工具，並將其 `ID` 設定為 [`Products25BucksAndUnderDataSource`]。 接下來，按一下控制項 s 智慧標籤中的 [設定資料來源] 連結。 選取要使用的資料庫（`NORTHWINDConnectionString`），然後按 [下一步]。
 
-## <a name="step-1-adding-awhereclause-when-picking-the-columns-from-a-table-or-view"></a>步驟 1：新增`WHERE`子句時挑選資料行從資料表或檢視表
+## <a name="step-1-adding-awhereclause-when-picking-the-columns-from-a-table-or-view"></a>步驟1：從資料表或視圖挑選資料行時，加入`WHERE`子句
 
-選取時要傳回從 SqlDataSource 控制項使用資料庫的資料，請設定資料來源精靈可讓我們只要挑選要傳回從現有的資料表或檢視 （請參閱 圖 1） 的資料行。 Sql 自動進行建置`SELECT`陳述式，也就是傳送至資料庫時 SqlDataSource 的`Select()`叫用方法。 如同我們在上一個教學課程，從下拉式清單中選取 [產品] 資料表，並檢查`ProductID`， `ProductName`，和`UnitPrice`資料行。
+當您使用 SqlDataSource 控制項選取要從資料庫傳回的資料時，[設定資料來源] 會讓我們直接挑選要從現有的資料表或視圖傳回的資料行（請參閱 [圖 1]）。 這麼做會自動建立 SQL `SELECT` 語句，這就是叫用 SqlDataSource s `Select()` 方法時，會傳送至資料庫的內容。 如同我們在上一個教學課程中所做的一樣，請從下拉式清單中選取 [Products] 資料表，然後檢查 [`ProductID`]、[`ProductName`] 和 [`UnitPrice`] 資料行。
 
-[![挑選要從資料表或檢視傳回的資料行](using-parameterized-queries-with-the-sqldatasource-vb/_static/image1.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image1.png)
+[![挑選要從資料表或視圖傳回的資料行](using-parameterized-queries-with-the-sqldatasource-vb/_static/image1.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image1.png)
 
-**圖 1**:挑選資料行，從資料表或檢視表傳回 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image2.png))
+**圖 1**：挑選要從資料表或視圖傳回的資料行（[按一下以查看完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image2.png)）
 
-若要包含`WHERE`中的子句`SELECT`陳述式中，按一下`WHERE`按鈕，會顯示 新增`WHERE`子句對話方塊 （請參閱 圖 2）。 若要加入參數來限制所傳回的結果`SELECT`查詢中，第一次選擇 篩選資料的資料行。 接下來，選擇要用於篩選的運算子 (=、 &lt;， &lt;=，&gt;等等)。 最後，選擇來源參數 s 的值，例如從查詢字串或工作階段狀態。 設定參數之後, 按一下 [新增] 按鈕，將它包含在`SELECT`查詢。
+若要在 `SELECT` 的語句中包含 `WHERE` 子句，請按一下 [`WHERE`] 按鈕，這會顯示 [新增 `WHERE` 子句] 對話方塊（請參閱 [圖 2]）。 若要加入參數來限制 `SELECT` 查詢所傳回的結果，請先選擇要用來篩選資料的資料行。 接下來，選擇要用於篩選的運算子（=、&lt;、&lt;=、&gt;等等）。 最後，選擇參數 s 值的來源，例如從 querystring 或會話狀態。 設定參數之後，請按一下 [新增] 按鈕，將它包含在 `SELECT` 查詢中。
 
-針對此範例，可讓 s 只傳回這些結果其中`UnitPrice`值是否小於或等於 $25.00。 因此，挑選`UnitPrice`的資料行的下拉式清單和&lt;= 從 [運算子] 下拉式清單。 使用硬式編碼的參數值 （例如 $25.00) 時，或以程式設計方式指定為參數值，選取 無從 來源 下拉式清單。 接下來，在 25.00 上的 [值] 文字方塊中輸入硬式編碼的參數值，並按一下 [新增] 按鈕以完成程序。
+在此範例中，讓只傳回 `UnitPrice` 值小於或等於 $25.00 的結果。 因此，請從 資料行 下拉式清單中挑選 `UnitPrice`，然後從 運算子 下拉式清單中 &lt;=。 使用硬式編碼的參數值（例如 $25.00），或如果參數值是以程式設計方式指定，請從 [來源] 下拉式清單中選取 [無]。 接下來，在 [值] 25.00 文字方塊中輸入硬式編碼的參數值，然後按一下 [新增] 按鈕來完成程式。
 
-[![限制傳回的結果加入 WHERE 子句對話方塊](using-parameterized-queries-with-the-sqldatasource-vb/_static/image2.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image3.png)
+[![限制從 [加入 WHERE 子句] 對話方塊傳回的結果](using-parameterized-queries-with-the-sqldatasource-vb/_static/image2.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image3.png)
 
-**圖 2**:限制從 新增傳回的結果`WHERE`子句對話方塊 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image4.png))
+**圖 2**：限制從 [加入 `WHERE` 子句] 對話方塊傳回的結果（[按一下以查看完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image4.png)）
 
-加入參數之後, 按一下 [確定] 以返回 [設定資料來源精靈]。 `SELECT`現在應該包含陳述式底部的精靈`WHERE`子句的參數，名為`@UnitPrice`:
+加入參數之後，按一下 [確定] 以返回 [設定資料來源]。 位於 wizard 底部的 `SELECT` 語句現在應該包含具有名為 `@UnitPrice`之參數的 `WHERE` 子句：
 
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample3.sql)]
 
 > [!NOTE]
-> 如果您指定多個條件`WHERE`從 新增子句`WHERE`子句對話方塊中，「 精靈 」 來聯結它們與`AND`運算子。 如果您需要包含`OR`中`WHERE`子句 (例如`WHERE UnitPrice <= @UnitPrice OR Discontinued = 1`)，您需要建置`SELECT`透過自訂的 SQL 陳述式螢幕的陳述式。
+> 如果您從 [加入 `WHERE` 子句] 對話方塊的 [`WHERE`] 子句中指定多個條件，則 wizard 會使用 `AND` 運算子來加入它們。 如果您需要在 `WHERE` 子句（例如 `WHERE UnitPrice <= @UnitPrice OR Discontinued = 1`）中包含 `OR`，則必須透過 [自訂 SQL 語句] 畫面建立 `SELECT` 語句。
 
-完成設定的 SqlDataSource （按 下一步，然後完成），然後檢查 SqlDataSource s 宣告式標記。 標記現在包含`<SelectParameters>`集合，其中詳細說明中的參數的來源`SelectCommand`。
+完成 SqlDataSource 的設定（按 [下一步]，然後按一下 [完成]），然後檢查 SqlDataSource 的宣告式標記。 標記現在包含一個 `<SelectParameters>` 集合，它會將 `SelectCommand`中的參數的來源拼寫出來。
 
 [!code-aspx[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample4.aspx)]
 
-當 SqlDataSource s`Select()`叫用方法時，`UnitPrice`參數值 (25.00) 套用至`@UnitPrice`中的參數`SelectCommand`再傳送至資料庫。 最後結果就是，只有在小於或等於 $25.00 從傳回的產品`Products`資料表。 若要確認這點，將 GridView 加入頁面中，將它繫結到此資料來源，然後檢視該頁面，透過瀏覽器。 您應該只會看到列出的小於或等於 $25.00，如 圖 3 會確認這些產品。
+叫用 SqlDataSource s `Select()` 方法時，`UnitPrice` 參數值（25.00）會在傳送至資料庫之前，套用至 `SelectCommand` 中的 `@UnitPrice` 參數。 最終結果是，只有小於或等於 $25.00 的產品會從 `Products` 資料表傳回。 若要確認這一點，請將 GridView 新增至頁面，並將它系結到此資料來源，然後透過瀏覽器來查看頁面。 您應該只會看到列出的產品小於或等於 $25.00，如 [圖 3] 所示。
 
-[![這些產品的小於或等於 $25.00 才會顯示](using-parameterized-queries-with-the-sqldatasource-vb/_static/image3.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image5.png)
+[只會顯示小於或等於 $25.00 的產品 ![](using-parameterized-queries-with-the-sqldatasource-vb/_static/image3.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image5.png)
 
-**圖 3**:只有那些產品的小於或等於 $25.00 顯示 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image6.png))
+**圖 3**：只顯示小於或等於 $25.00 的產品（[按一下以觀看完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image6.png)）
 
-## <a name="step-2-adding-parameters-to-a-custom-sql-statement"></a>步驟 2：將參數加入至自訂的 SQL 陳述式
+## <a name="step-2-adding-parameters-to-a-custom-sql-statement"></a>步驟2：將參數加入至自訂 SQL 語句
 
-新增自訂的 SQL 陳述式時您可以輸入`WHERE`子句明確或查詢產生器的篩選器儲存格中指定值。 為了示範這點，讓其價格均不超過特定閾值 GridView 中顯示只是這些產品的 s。 新增文字方塊中的，若要開始`ParameterizedQueries.aspx`頁面，即可從使用者收集此臨界值。 設定文字方塊 s`ID`屬性設`MaxPrice`。 將 Button Web 控制項，並設定其`Text`屬性，以顯示比對的產品。
+加入自訂 SQL 語句時，您可以明確地輸入 `WHERE` 子句，或在 [查詢產生器] 的 [篩選] 儲存格中指定值。 為了示範這一點，讓我們只在 GridView 中顯示其價格小於特定閾值的產品。 一開始先將 TextBox 新增至 [`ParameterizedQueries.aspx`] 頁面，以收集使用者的此臨界值。 將 TextBox 的 `ID` 屬性設定為 `MaxPrice`。 新增按鈕 Web 控制項，並設定其 [`Text`] 屬性，以顯示相符的產品。
 
-接下來，拖曳到頁面的 GridView，並從它的智慧標籤中，選擇建立新的 SqlDataSource 名為`ProductsFilteredByPriceDataSource`。 設定資料來源 精靈中，從繼續進行 指定自訂 SQL 陳述式或預存程序畫面 （請參閱 圖 4），並輸入下列查詢：
+接下來，將 GridView 拖曳至頁面上，並從其智慧標籤選擇建立名為 `ProductsFilteredByPriceDataSource`的新 SqlDataSource。 從 [設定資料來源] wizard，繼續進行 [指定自訂 SQL 語句或預存程式] 畫面（請參閱 [圖 4]），然後輸入下列查詢：
 
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample5.sql)]
 
-輸入之後的查詢 （手動或透過 查詢產生器），請按一下 下一步。
+進入查詢（手動或透過查詢產生器）之後，按 [下一步]。
 
-[![只傳回的產品小於或等於參數值](using-parameterized-queries-with-the-sqldatasource-vb/_static/image4.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image7.png)
+[![只傳回小於或等於參數值的產品](using-parameterized-queries-with-the-sqldatasource-vb/_static/image4.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image7.png)
 
-**圖 4**:傳回只有那些產品的小於或等於參數值 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image8.png))
+**圖 4**：只傳回小於或等於參數值的產品（[按一下以查看完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image8.png)）
 
-因為查詢包含參數，請在精靈中的下一個畫面會提示我們輸入參數值的來源。 從參數來源下拉式清單中選擇控制項和`MaxPrice`(TextBox 控制項的`ID`值) 從 [ControlID] 下拉式清單。 您也可以輸入要在其中使用者未輸入任何文字的情況下使用選擇性的預設值`MaxPrice`文字方塊中。 目前，請勿輸入預設值。
+因為查詢包含參數，所以嚮導中的下一個畫面會提示我們輸入參數值的來源。 從 [參數來源] 下拉式清單中選擇 [控制項]，然後從 [ControlID] 下拉式清單中 `MaxPrice` （TextBox 控制項 s `ID` 值）。 如果使用者未在 [`MaxPrice`] 文字方塊中輸入任何文字，您也可以輸入選擇性的預設值來使用。 就時間而言，請勿輸入預設值。
 
-[![MaxPrice 文字方塊的 Text 屬性做為參數來源](using-parameterized-queries-with-the-sqldatasource-vb/_static/image5.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image9.png)
+[![MaxPrice TextBox s Text 屬性會當做參數來源使用](using-parameterized-queries-with-the-sqldatasource-vb/_static/image5.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image9.png)
 
-**圖 5**:`MaxPrice` TextBox s`Text`屬性做為參數的來源 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image10.png))
+**圖 5**： `MaxPrice` TextBox s `Text` 屬性是用來做為參數來源（[按一下以查看完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image10.png)）
 
-接下來，按一下以完成設定資料來源精靈，然後完成。 GridView、 文字方塊、 按鈕和 SqlDataSource 的宣告式標記如下：
+按 [下一步]，然後按一下 [完成]，完成 [設定資料來源]。 [GridView]、[TextBox]、[Button] 和 [SqlDataSource] 的宣告式標記如下所示：
 
 [!code-aspx[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample6.aspx)]
 
-請注意，SqlDataSource s 內的參數`<SelectParameters>`一節`ControlParameter`，其中包含其他屬性，例如`ControlID`和`PropertyName`。 當 SqlDataSource s`Select()`叫用方法時，`ControlParameter`抓取指定的 Web 控制項屬性的值，並將它指派給對應的參數，在`SelectCommand`。 在此範例中， `MaxPrice` s 文字屬性做為`@MaxPrice`參數值。
+請注意，SqlDataSource s `<SelectParameters>` 區段中的參數是 `ControlParameter`，其中包括 `ControlID` 和 `PropertyName`等其他屬性。 叫用 SqlDataSource s `Select()` 方法時，`ControlParameter` 會從指定的 Web 控制項屬性抓取值，並將它指派給 `SelectCommand`中的對應參數。 在此範例中，`MaxPrice` s Text 屬性會用來做為 `@MaxPrice` 參數值。
 
-花點時間檢視此頁面，透過瀏覽器。 第一次造訪網頁時，或每當`MaxPrice`文字方塊缺少任何記錄會顯示在 GridView 的值。
+請花幾分鐘的時間透過瀏覽器觀看此頁面。 第一次造訪網頁時，或每當 `MaxPrice` 文字方塊缺少值時，GridView 中不會顯示任何記錄。
 
-[![沒有記錄會顯示當 MaxPrice 文字方塊是空的](using-parameterized-queries-with-the-sqldatasource-vb/_static/image6.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image11.png)
+[當 [MaxPrice] 文字方塊為空白時，不會顯示任何記錄 ![](using-parameterized-queries-with-the-sqldatasource-vb/_static/image6.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image11.png)
 
-**圖 6**:沒有記錄會顯示當`MaxPrice`文字方塊是空的 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image12.png))
+**圖 6**：當 [`MaxPrice`] 文字方塊為空白時，不會顯示任何記錄（[按一下以查看完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image12.png)）
 
-會顯示任何產品的原因是因為根據預設，參數值為空字串會轉換成資料庫`NULL`值。 因為比較`[UnitPrice] <= NULL`一律評估為 False，未傳回任何結果。
+未顯示任何產品的原因是因為根據預設，參數值的空字串會轉換成資料庫 `NULL` 值。 由於 `[UnitPrice] <= NULL` 的比較一律會評估為 False，因此不會傳回任何結果。
 
-文字方塊中輸入值，例如 5.00，，然後按一下 [顯示比對的產品] 按鈕。 在回傳時，SqlDataSource 會通知 GridView 在於其中一個參數的來源已變更。 因此，GridView 重新繫結至 SqlDataSource，顯示這些產品小於或等於 5.00 美元。
+在文字方塊中輸入一個值，例如5.00，然後按一下 [顯示相符的產品] 按鈕。 在回傳時，SqlDataSource 會通知 GridView 其中一個參數來源已變更。 因此，GridView 會重新系結至 SqlDataSource，顯示那些產品小於或等於 $5.00。
 
-[![顯示產品的小於或等於 $5.00](using-parameterized-queries-with-the-sqldatasource-vb/_static/image7.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image13.png)
+[顯示小於或等於 $5.00 的 ![產品](using-parameterized-queries-with-the-sqldatasource-vb/_static/image7.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image13.png)
 
-**圖 7**:顯示產品的小於或等於 $5.00 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image14.png))
+**圖 7**：顯示小於或等於 $5.00 的產品（[按一下以觀看完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image14.png)）
 
-## <a name="initially-displaying-all-products"></a>一開始顯示 所有產品
+## <a name="initially-displaying-all-products"></a>一開始顯示所有產品
 
-而不是第一次載入頁面時，請顯示任何產品，我們可能想要顯示*所有*產品。 其中一種方式列出所有的產品時`MaxPrice`文字方塊是空的是將參數 s 的預設值設定為一些個人瘋狂高的值，例如 1000000，因為它不太可能，Northwind Traders 將曾有清查單價 s 超過 $1,000,000。 不過，這種方法是 shortsighted，並在其他情況下可能無法運作。
+我們可能會想要顯示*所有*產品，而不是在第一次載入頁面時顯示任何產品。 每當 [`MaxPrice`] 文字方塊為空白時，其中一種列出所有產品的方法是將參數的預設值設定為某個瘋狂高值（例如1000000），因為 Northwind 商貿不太可能會擁有單價超過 $1000000 的庫存。 不過，這種方法是 shortsighted 的，而且在其他情況下可能無法使用。
 
-在先前的教學課程-[宣告式的參數](../basic-reporting/declarative-parameters-vb.md)並[主版/詳細篩選使用 DropDownList](../masterdetail/master-detail-filtering-with-a-dropdownlist-vb.md)我們所面臨了類似的問題。 我們的解決方案是要將此邏輯放在商務邏輯層。 具體來說，BLL 檢查傳入的值，如果它是`NULL`或部分保留值、 呼叫路由至 DAL 方法，以傳回所有記錄。 如果傳入的值是正常的篩選值，已呼叫來執行使用參數化 SQL 陳述式的 DAL 方法`WHERE`子句與所提供的值。
+在先前的教學課程中-[宣告式參數](../basic-reporting/declarative-parameters-vb.md)和[使用 DropDownList 的主要/詳細資料篩選](../masterdetail/master-detail-filtering-with-a-dropdownlist-vb.md)時，會面臨類似的問題。 我們的解決方案是將此邏輯放在商務邏輯層中。 具體而言，BLL 檢查了傳入的值，如果 `NULL` 或某個保留值，則呼叫會路由傳送至傳回所有記錄的 DAL 方法。 如果傳入的值是一般篩選值，則會呼叫 DAL 方法，以執行 SQL 語句，並將參數化 `WHERE` 子句與提供的值搭配使用。
 
-不幸的是，我們會略過架構使用 SqlDataSource 時。 相反地，我們需要自訂 SQL 陳述式，以智慧方式擷取所有記錄，如果`@MaximumPrice`參數是`NULL`或保留的值。 針對此練習，可讓 s 就因此，如果`@MaximumPrice`參數等於`-1.0`，然後*所有*的記錄會傳回 (`-1.0`擔任保留的值，因為沒有產品可以有負`UnitPrice`值)。 若要這麼做，我們可以使用下列 SQL 陳述式：
+可惜的是，在使用 SqlDataSource 時，我們略過架構。 相反地，我們需要自訂 SQL 語句，以便在 `@MaximumPrice` 參數 `NULL` 或某些保留值時，以智慧方式抓取所有記錄。 在此練習中，讓我們將它設為，如果 `@MaximumPrice` 參數等於 `-1.0`，則會傳回*所有*的記錄（`-1.0` 作為保留值，因為沒有任何產品可以有負值的 `UnitPrice` 值）。 為了達成此目的，我們可以使用下列 SQL 語句：
 
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample7.sql)]
 
-這`WHERE`子句會傳回*所有*記錄如果`@MaximumPrice`參數等於`-1.0`。 如果參數值不是`-1.0`，只有那些產品其`UnitPrice`小於或等於`@MaximumPrice`傳回參數值。 藉由設定的預設值`@MaximumPrice`參數來`-1.0`，在第一個頁面載入 (或每當`MaxPrice`文字方塊是空的)，`@MaximumPrice`值為`-1.0`，並且會顯示所有產品。
+如果 `@MaximumPrice` 參數等於 `-1.0`，這個 `WHERE` 子句會傳回*所有*記錄。 如果未 `-1.0`參數值，則只會傳回其 `UnitPrice` 小於或等於 `@MaximumPrice` 參數值的產品。 藉由將 `@MaximumPrice` 參數的預設值設定為 `-1.0`，在第一頁載入（或每當 [`MaxPrice`] 文字方塊是空的）時，`@MaximumPrice` 會有 `-1.0` 的值，而且會顯示所有產品。
 
-[![現在所有產品都會顯示當 MaxPrice 文字方塊是空的](using-parameterized-queries-with-the-sqldatasource-vb/_static/image8.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image15.png)
+[![現在當 [MaxPrice] 文字方塊為空白時，會顯示所有產品](using-parameterized-queries-with-the-sqldatasource-vb/_static/image8.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image15.png)
 
-**圖 8**:現在所有產品都時會顯示`MaxPrice`文字方塊是空的 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image16.png))
+**圖 8**：現在所有產品都是在 [`MaxPrice`] 文字方塊空白時顯示（[按一下以觀看完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image16.png)）
 
-有幾個需要注意的事項来注意這種方法。 首先，了解參數的資料型別由其推斷 s SQL 查詢中的使用方式。 如果您變更`WHERE`子句，從`@MaximumPrice = -1.0`到`@MaximumPrice = -1`，執行階段會將參數視為整數。 如果您隨後嘗試指派`MaxPrice`的十進位值 （例如 5.00) 文字方塊中，會發生錯誤，因為它無法將 5.00 轉換成整數。 若要解決此問題，是請確定您使用`@MaximumPrice = -1.0`中`WHERE`子句或更好的是，設定`ControlParameter`物件的`Type`為十進位數的屬性。
+這種方法有幾個值得注意的事項。 首先，請注意參數 s 資料類型是由 SQL 查詢中的它使用方式所推斷。 如果您將 `WHERE` 子句從 `@MaximumPrice = -1.0` 變更為 `@MaximumPrice = -1`，執行時間會將參數視為整數。 如果您接著嘗試將 [`MaxPrice`] 文字方塊指派為十進位值（例如5.00），就會發生錯誤，因為它無法將5.00 轉換成整數。 若要解決這個問題，請確定您在 `WHERE` 子句中使用 `@MaximumPrice = -1.0`，或者將 `ControlParameter` 物件 s `Type` 屬性設定為 Decimal。
 
-其次，藉由新增`OR @MaximumPrice = -1.0`要`WHERE`子句，查詢引擎無法使用索引上`UnitPrice`（假設其存在），進而導致資料表掃描。 如果沒有夠大的數字中的記錄，這會影響效能`Products`資料表。 好的做法是將此邏輯移至 預存程序所在`IF`陳述式會執行`SELECT`從查詢`Products`資料表而不需要`WHERE`子句時要傳回需要的所有記錄，或其中一個其`WHERE`子句只包含`UnitPrice`準則，以便可以使用索引。
+其次，藉由將 `OR @MaximumPrice = -1.0` 新增至 `WHERE` 子句，查詢引擎就無法在 `UnitPrice` 上使用索引（假設有一個），因此會產生資料表掃描。 如果 `Products` 資料表中有足夠大量的記錄，這可能會影響效能。 較好的方法是將這個邏輯移至預存程式，其中 `IF` 語句會在需要傳回所有記錄時，不使用 `WHERE` 子句從 `Products` 資料表執行 `SELECT` 查詢，或其中一個 `WHERE` 子句只包含 `UnitPrice` 準則，如此就可以使用索引。
 
-## <a name="step-3-creating-and-using-parameterized-stored-procedures"></a>步驟 3：建立和使用參數化預存程序
+## <a name="step-3-creating-and-using-parameterized-stored-procedures"></a>步驟3：建立和使用參數化預存程式
 
-預存程序可以包含一組可用的輸入參數的預存程序中定義的 SQL 陳述式中。 時設定 SqlDataSource 使用接受輸入的參數的預存程序，可以使用相同的技術與特定 SQL 陳述式一樣指定這些參數值。
+預存程式可以包含一組輸入參數，之後可以在預存程式內定義的 SQL 語句中使用。 設定 SqlDataSource 使用接受輸入參數的預存程式時，可以使用與臨機操作 SQL 語句相同的技術來指定這些參數值。
 
-為了說明使用以 sqldatasource 進行的預存程序，可讓 s，請建立名為 Northwind 資料庫中的新的預存程序`GetProductsByCategory`，它會接受名為的參數`@CategoryID`，並傳回所有產品的資料行其`CategoryID`資料行比對`@CategoryID`。 若要建立預存程序，請移至 [伺服器總管] 中，並向下切入至`NORTHWND.MDF`資料庫。 （如果您不要看到 [伺服器總管] 中，使其移至 [檢視] 功能表，然後選取 [伺服器總管] 選項。）
+為了說明如何在 SqlDataSource 中使用預存程式，讓我們在 Northwind 資料庫中建立名為 `GetProductsByCategory`的新預存程式，它會接受名為 `@CategoryID` 的參數，並傳回其 `CategoryID` 資料行符合 `@CategoryID`之產品的所有資料行。 若要建立預存程式，請移至 伺服器總管並向下切入至 `NORTHWND.MDF` 資料庫。 （如果您沒有看到伺服器總管，請移至 [View] 功能表，然後選取 [伺服器總管] 選項）。
 
-從`NORTHWND.MDF`資料庫、 預存程序 資料夾上按一下滑鼠右鍵、 選擇加入新預存程序，並輸入下列語法：
+在 `NORTHWND.MDF` 資料庫中，以滑鼠右鍵按一下 [預存程式] 資料夾，選擇 [加入新的預存程式]，然後輸入下列語法：
 
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample8.sql)]
 
-按一下儲存圖示 （或 Ctrl + S） 以儲存預存程序。 您可以用滑鼠右鍵按一下從預存程序] 資料夾，然後選擇 [執行測試的預存程序。 這會提示您輸入的預存程序的參數 (`@CategoryID`，這個執行個體中) 之後的結果會顯示在 [輸出] 視窗。
+按一下 [儲存] 圖示（或 Ctrl + S）以儲存預存程式。 您可以從 [預存程式] 資料夾以滑鼠右鍵按一下預存程式，然後選擇 [執行]，來進行測試。 這會提示您輸入預存程式的參數（在此例中為`@CategoryID`），之後結果就會顯示在 [輸出] 視窗中。
 
-[![GetProductsByCategory 預存程序執行時未使用@CategoryID為 1](using-parameterized-queries-with-the-sqldatasource-vb/_static/image9.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image17.png)
+[以 @CategoryID 1 執行時，![GetProductsByCategory 預存程式](using-parameterized-queries-with-the-sqldatasource-vb/_static/image9.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image17.png)
 
-**圖 9**:`GetProductsByCategory`預存程序執行時未使用`@CategoryID`為 1 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image18.png))
+**圖 9**：以 `@CategoryID` 1 執行時的 `GetProductsByCategory` 預存程式（[按一下以觀看完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image18.png)）
 
-可讓使用此預存程序顯示在 GridView 中的飲料類別目錄中的所有產品的 s。 加入至頁面的新 GridView 和繫結至名為新 SqlDataSource `BeverageProductsDataSource`。 繼續指定自訂 SQL 陳述式或預存程序 畫面，選取預存程序選項按鈕，然後挑選`GetProductsByCategory`預存程序，從下拉式清單。
+讓我們使用這個預存程式，在 GridView 中顯示飲料類別目錄中的所有產品。 將新的 GridView 新增至頁面，並將它系結至名為 `BeverageProductsDataSource`的新 SqlDataSource。 繼續進行 [指定自訂 SQL 語句或預存程式] 畫面，選取 [預存程式] 選項按鈕，然後從下拉式清單中挑選 `GetProductsByCategory` 預存程式。
 
-[![選取 GetProductsByCategory 預存程序，從下拉式清單](using-parameterized-queries-with-the-sqldatasource-vb/_static/image10.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image19.png)
+[![從下拉式清單中選取 GetProductsByCategory 預存程式](using-parameterized-queries-with-the-sqldatasource-vb/_static/image10.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image19.png)
 
-**圖 10**:選取 `GetProductsByCategory`預存程序，從下拉式清單中 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image20.png))
+**圖 10**：從下拉式清單中選取 [`GetProductsByCategory` 預存程式] （[按一下以查看完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image20.png)）
 
-由於預存程序會接受輸入的參數 (`@CategoryID`)，按一下 [下一步] 會提示我們輸入來指定此參數的值的來源。 飲料`CategoryID`為 1，因此保留無參數來源下拉式清單，然後在 [預設值] 文字方塊中輸入 1。
+由於預存程式會接受輸入參數（`@CategoryID`），因此按一下 [下一步] 會提示我們指定此參數值的來源。 飲料 `CategoryID` 為1，因此，請將 [參數來源] 下拉式清單保留為 [無]，然後在 [DefaultValue] 文字方塊中輸入1。
 
-[![使用硬式編碼的值為 1，以傳回 「 飲料 」 分類中的產品](using-parameterized-queries-with-the-sqldatasource-vb/_static/image11.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image21.png)
+[![使用硬式編碼值1來傳回飲料類別目錄中的產品](using-parameterized-queries-with-the-sqldatasource-vb/_static/image11.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image21.png)
 
-**圖 11**:使用 1 Hard-Coded 值來傳回 「 飲料 」 分類中的產品 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image22.png))
+**圖 11**：使用硬式編碼值1來傳回飲料類別目錄中的產品（[按一下以觀看完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image22.png)）
 
-下列所示宣告式標記，使用預存程序，SqlDataSource s 時`SelectCommand`屬性設定為預存程序名稱和[`SelectCommandType`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.selectcommandtype.aspx)設定為`StoredProcedure`，這表示`SelectCommand`是預存程序，而不是特定 SQL 陳述式的名稱。
+如下列宣告式標記所示，當使用預存程式時，SqlDataSource s `SelectCommand` 屬性會設定為預存程式的名稱，而[`SelectCommandType` 屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.selectcommandtype.aspx)會設定為 `StoredProcedure`，表示 `SelectCommand` 是預存程式的名稱，而不是特定 SQL 語句。
 
 [!code-aspx[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample9.aspx)]
 
-測試瀏覽器頁面。 顯示只屬於 「 飲料 」 分類的產品，雖然*所有*產品的欄位會顯示自`GetProductsByCategory`預存程序會傳回所有的資料行`Products`資料表。 當然，我們可以限制或自訂從 GridView 編輯資料行對話方塊 GridView 中顯示的欄位。
+在瀏覽器中測試頁面。 只會顯示屬於飲料類別目錄的產品，雖然*所有*的產品欄位都會顯示，但因為 `GetProductsByCategory` 預存程式會傳回 `Products` 資料表中的所有資料行。 當然，我們可以限制或自訂 GridView 的 [編輯資料行] 對話方塊中顯示的欄位。
 
-[![會顯示所有飲料的](using-parameterized-queries-with-the-sqldatasource-vb/_static/image12.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image23.png)
+[會顯示所有飲料 ![](using-parameterized-queries-with-the-sqldatasource-vb/_static/image12.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image23.png)
 
-**圖 12**:會顯示所有飲料的 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image24.png))
+**圖 12**：顯示所有飲料（[按一下以觀看完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image24.png)）
 
-## <a name="step-4-programmatically-invoking-a-sqldatasource-sselectstatement"></a>步驟 4：以程式設計方式叫用 SqlDataSource 的`Select()`陳述式
+## <a name="step-4-programmatically-invoking-a-sqldatasource-sselectstatement"></a>步驟4：以程式設計方式叫用 SqlDataSource s`Select()`語句
 
-這些範例我們目前為止在上一個教學課程和本教學課程中所見的 ve 有直接繫結 SqlDataSource 控制項至 GridView。 SqlDataSource 控制項的資料，不過，可以透過程式設計方式存取和列舉程式碼中。 這項功能在您要查詢資料檢查，但不要需要顯示它是特別有用的。 而不需要撰寫所有的未定案 ADO.NET 程式碼，以連接到資料庫、 指定的命令，並擷取結果，您可以讓 SqlDataSource 處理這個單調的程式碼。
+我們在上一個教學課程中看到的範例和本教學課程目前已將 SqlDataSource 控制項直接系結至 GridView。 不過，您可以在程式碼中以程式設計方式存取和列舉 SqlDataSource 控制項的資料。 當您需要查詢資料以進行檢查，但不需要顯示它時，這會特別有用。 您不必撰寫所有的 ADO.NET 程式碼來連接到資料庫、指定命令和抓取結果，而是讓 SqlDataSource 處理這個單調程式碼。
 
-若要說明使用 SqlDataSource 的資料以程式設計的方式，假設您的老闆已接近您並要求建立網頁，顯示的隨機選取的類別和其相關聯的產品名稱。 也就是說，當使用者瀏覽此頁面，我們想要隨機選擇 從類別`Categories`資料表中，顯示類別目錄名稱，並接著列出屬於該類別目錄的產品。
+為了說明如何以程式設計方式使用 SqlDataSource 的資料，假設您的老闆已要求您建立網頁，以顯示隨機選取的類別和其相關產品的名稱。 也就是說，當使用者造訪此頁面時，我們想要從 [`Categories`] 資料表隨機播放類別、顯示 [類別目錄名稱]，然後列出屬於該類別目錄的產品。
 
-若要完成這項作業中，我們必須擷取隨機的類別目錄，從兩個的 SqlDataSource 控制項一`Categories`資料表並使用另一個取得分類的產品。 我們將建置 SqlDataSource 擷取隨機的類別目錄記錄在此步驟中;步驟 5 會查看製作 SqlDataSource 擷取類別的產品。
+若要完成這項操作，我們需要兩個 SqlDataSource 控制項來抓取 `Categories` 資料表的隨機分類，另一個則用來取得類別目錄的產品。 我們將在此步驟中建立可抓取隨機分類記錄的 SqlDataSource;步驟5將探討如何製作可抓取類別目錄產品的 SqlDataSource。
 
-首先新增至 SqlDataSource`ParameterizedQueries.aspx`並設定其`ID`至`RandomCategoryDataSource`。 因此，它會使用下列 SQL 查詢，請設定它：
+首先，將 SqlDataSource 新增至 `ParameterizedQueries.aspx`，並將其 `ID` 設定為 [`RandomCategoryDataSource`]。 加以設定，使其使用下列 SQL 查詢：
 
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample10.sql)]
 
-`ORDER BY NEWID()` 傳回以隨機順序排序的記錄 (請參閱[Using`NEWID()`隨機排序記錄](http://www.sqlteam.com/item.asp?ItemID=8747))。 `SELECT TOP 1` 從結果集傳回第一筆記錄。 將放在一起，則此查詢會傳回`CategoryID`和`CategoryName`從單一的隨機選取的類別目錄的資料行值。
+`ORDER BY NEWID()` 會傳回以隨機順序排序的記錄（請參閱[使用 `NEWID()` 來隨機排序記錄](http://www.sqlteam.com/item.asp?ItemID=8747)）。 `SELECT TOP 1` 會從結果集傳回第一筆記錄。 這個查詢會放在一起，從單一隨機選取的類別傳回 `CategoryID` 和 `CategoryName` 的資料行值。
 
-若要顯示類別目錄 s`CategoryName`值，將標籤 Web 控制項加入頁面，設定其`ID`屬性設`CategoryNameLabel`，並清除其`Text`屬性。 若要以程式設計方式從 SqlDataSource 控制項擷取資料，我們要叫用其`Select()`方法。 [ `Select()`方法](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.select.aspx)預期單一輸入的參數為類型[ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx)，指定如何將資料應該每來就訊息再傳回。 這可以包括有關排序和篩選資料，並正由 Web 控制項的排序，或從 SqlDataSource 控制項的資料進行分頁時的資料。 我們的範例，不過，我們不修改才能被傳回，t 需要資料，因此會傳遞在`DataSourceSelectArguments.Empty`物件。
+若要顯示 [類別] `CategoryName` 值，請將標籤 Web 控制項新增至頁面，將其 [`ID`] 屬性設定為 [`CategoryNameLabel`]，並清除其 [`Text`] 屬性。 若要以程式設計方式從 SqlDataSource 控制項取出資料，我們必須叫用其 `Select()` 方法。 [`Select()` 方法](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.select.aspx)需要類型為[`DataSourceSelectArguments`](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx)的單一輸入參數，以指定資料在傳回之前應如何 messaged。 這可以包含排序和篩選資料的指示，而且資料 Web 控制項會在從 SqlDataSource 控制項的資料進行排序或分頁時使用。 但是在我們的範例中，我們不需要在傳回之前修改資料，因此會傳入 `DataSourceSelectArguments.Empty` 物件。
 
-`Select()`方法會傳回該物件會實作`IEnumerable`。 精確的型別傳回 SqlDataSource 控制項 s 的值而定[`DataSourceMode`屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx)。 如先前的教學課程中所述，這個屬性可以設定的其中一個值`DataSet`或`DataReader`。 如果設定為`DataSet`，則`Select()`方法會傳回[DataView](https://msdn.microsoft.com/library/01s96x0z.aspx)物件; 如果設為`DataReader`，它會傳回該物件會實作[ `IDataReader` ](https://msdn.microsoft.com/library/system.data.idatareader.aspx)。 由於`RandomCategoryDataSource`SqlDataSource 有其`DataSourceMode`屬性設定為`DataSet`（預設值），我們會使用 DataView 物件。
+`Select()` 方法會傳回可執行 `IEnumerable`的物件。 傳回的精確類型取決於 SqlDataSource 控制項 s [`DataSourceMode` 屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx)的值。 如先前教學課程中所討論，此屬性可以設定為 `DataSet` 或 `DataReader`的值。 如果設定為 `DataSet`，`Select()` 方法會傳回[DataView](https://msdn.microsoft.com/library/01s96x0z.aspx)物件;如果設定為 `DataReader`，它會傳回可執行[`IDataReader`](https://msdn.microsoft.com/library/system.data.idatareader.aspx)的物件。 因為 `RandomCategoryDataSource` SqlDataSource 的 `DataSourceMode` 屬性設定為 `DataSet` （預設值），所以我們會使用 DataView 物件。
 
-下列程式碼說明如何擷取的記錄，從`RandomCategoryDataSource`DataView 為 SqlDataSource 以及如何讀取`CategoryName`從第一個 DataView 的資料列的資料行值：
+下列程式碼說明如何從 `RandomCategoryDataSource` SqlDataSource 中取出記錄做為 DataView，以及如何從第一個 DataView 資料列讀取 `CategoryName` 資料行值：
 
 [!code-vb[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample11.vb)]
 
-`randomCategoryView(0)` 傳回第一個`DataRowView`DataView 中。 `randomCategoryView(0)("CategoryName")` 傳回的值`CategoryName`此第一個資料列中的資料行。 請注意，DataView 鬆散型別。 若要參考特定資料行值，我們需要的資料行的名稱傳遞為字串 (在此情況下 CategoryName)。 [圖 13] 顯示中顯示的訊息`CategoryNameLabel`檢視頁面時。 當然，顯示的實際類別名稱會隨機選取`RandomCategoryDataSource`SqlDataSource 在每次造訪 [（包括回傳）] 頁面上的。
+`randomCategoryView(0)` 會傳回 DataView 中的第一個 `DataRowView`。 `randomCategoryView(0)("CategoryName")` 會傳回第一個資料列中 `CategoryName` 資料行的值。 請注意，DataView 是鬆散類型。 若要參考特定的資料行值，我們必須傳入資料行的名稱做為字串（在此案例中為類別名稱）。 [圖 13] 顯示在流覽頁面時，`CategoryNameLabel` 中顯示的訊息。 當然，每次造訪頁面（包括回傳）時，`RandomCategoryDataSource` SqlDataSource 會隨機選取顯示的實體類別名稱。
 
-[![名稱會顯示在隨機選取的類別 s](using-parameterized-queries-with-the-sqldatasource-vb/_static/image13.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image25.png)
+[![會顯示隨機選取的類別目錄名稱](using-parameterized-queries-with-the-sqldatasource-vb/_static/image13.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image25.png)
 
-**圖 13**:名稱會顯示在隨機選取的類別 s ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image26.png))
+**圖 13**：顯示隨機選取的類別目錄名稱（[按一下以查看完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image26.png)）
 
 > [!NOTE]
-> 如果 SqlDataSource 控制項 s`DataSourceMode`屬性已設定為`DataReader`，傳回的值從`Select()`方法將需要轉型為`IDataReader`。 若要讀取`CategoryName`從第一個資料列中，我們的 d 資料行值使用類似的程式碼：
+> 如果 SqlDataSource 控制項 s `DataSourceMode` 屬性已設為 `DataReader`，則 `Select()` 方法的傳回值必須轉換成 `IDataReader`。 若要讀取第一個資料列中的 `CategoryName` 資料行值，我們使用類似以下的程式碼：
 
 [!code-vb[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample12.vb)]
 
-使用 SqlDataSource 隨機選取一個類別，我們準備好將 GridView 列出類別的產品。
+當 SqlDataSource 隨機選取類別時，我們已準備好加入會列出類別目錄產品的 GridView。
 
 > [!NOTE]
-> 而不是使用標籤 Web 控制項來顯示類別 s 的名稱，我們可能已加入 FormView 或 DetailsView 頁面上，繫結至 SqlDataSource。 不過，使用標籤，讓我們將探討如何以程式設計方式叫用 SqlDataSource 的`Select()`陳述式，並使用其程式碼所產生的資料。
+> 我們可以將 FormView 或 DetailsView 新增至頁面，並將其系結至 SqlDataSource，而不是使用標籤 Web 控制項來顯示類別目錄名稱。 不過，使用標籤可讓我們探索如何以程式設計方式叫用 SqlDataSource s `Select()` 語句，並在程式碼中處理其產生的資料。
 
-## <a name="step-5-assigning-parameter-values-programmatically"></a>步驟 5：以程式設計的方式指派參數值
+## <a name="step-5-assigning-parameter-values-programmatically"></a>步驟5：以程式設計方式指派參數值
 
-所有範例中我們目前為止所見，在本教學課程已使用硬式編碼的參數值或一個來自其中一個預先定義的參數來源 （ 頁面上，等等的 Web 控制項中的 查詢字串值）。 不過，SqlDataSource 控制項的參數也可以設定以程式設計的方式。 若要完成我們目前的範例中，我們需要 SqlDataSource 傳回所有屬於指定分類的產品。 將會有此 SqlDataSource`CategoryID`參數，其值必須設為基礎`CategoryID`所傳回的資料行值`RandomCategoryDataSource`SqlDataSource 中的`Page_Load`事件處理常式。
+到目前為止，我們在本教學課程中看到的所有範例，都使用硬式編碼參數值，或取自其中一個預先定義的參數來源（querystring 值、頁面上的 Web 控制項等等）。 不過，您也可以透過程式設計方式設定 SqlDataSource 控制 s 參數。 若要完成目前的範例，我們需要一個 SqlDataSource，以傳回屬於指定分類的所有產品。 這個 SqlDataSource 會有一個 `CategoryID` 參數，其值必須根據 `Page_Load` 事件處理常式中 `RandomCategoryDataSource` SqlDataSource 傳回的 `CategoryID` 資料行值來設定。
 
-啟動新增至頁面的 GridView，並將它繫結至名為新 SqlDataSource `ProductsByCategoryDataSource`。 我們未在步驟 3 中的更像，請設定 SqlDataSource，讓它會叫用`GetProductsByCategory`預存程序。 保留參數來源下拉式清單設定為 [無]，但不是會輸入預設值，因為我們會以程式設計方式設定此預設值。
+首先，將 GridView 新增至頁面，並將它系結至名為 `ProductsByCategoryDataSource`的新 SqlDataSource。 就像我們在步驟3中所做的一樣，設定 SqlDataSource，讓它叫用 `GetProductsByCategory` 預存程式。 將 [參數來源] 下拉式清單設定為 [無]，但不要輸入預設值，因為我們將以程式設計方式設定此預設值。
 
-[![未指定參數的來源或預設值](using-parameterized-queries-with-the-sqldatasource-vb/_static/image14.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image27.png)
+[![未指定參數來源或預設值](using-parameterized-queries-with-the-sqldatasource-vb/_static/image14.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image27.png)
 
-**圖 14**:執行未指定參數的來源或預設值 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image28.png))
+**圖 14**：不要指定參數來源或預設值（[按一下以查看完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image28.png)）
 
-完成 SqlDataSource 精靈之後，產生的宣告式標記看起來應該如下所示：
+完成 SqlDataSource wizard 之後，所產生的宣告式標記看起來應該如下所示：
 
 [!code-aspx[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample13.aspx)]
 
-我們可以指派`DefaultValue`的`CategoryID`參數以程式設計方式在`Page_Load`事件處理常式：
+我們可以在 `Page_Load` 事件處理常式中，以程式設計方式指派 `CategoryID` 參數的 `DefaultValue`：
 
 [!code-vb[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample14.vb)]
 
-此步驟中，此頁面包含的 GridView 會顯示與隨機選取的類別相關聯的產品。
+透過這種新增方式，頁面會包含 GridView，其中顯示與隨機選取的類別相關聯的產品。
 
-[![未指定參數的來源或預設值](using-parameterized-queries-with-the-sqldatasource-vb/_static/image15.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image29.png)
+[![未指定參數來源或預設值](using-parameterized-queries-with-the-sqldatasource-vb/_static/image15.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image29.png)
 
-**圖 15**:執行未指定參數的來源或預設值 ([按一下以檢視完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image30.png))
+**圖 15**：不要指定參數來源或預設值（[按一下以查看完整大小的影像](using-parameterized-queries-with-the-sqldatasource-vb/_static/image30.png)）
 
 ## <a name="summary"></a>總結
 
-SqlDataSource 可讓網頁程式開發人員定義參數化的查詢，其參數值可以是硬式編碼，從預先定義的參數來源提取或以程式設計方式指派。 在本教學課程中，我們看到如何製作特定 SQL 查詢和預存程序的設定資料來源精靈的參數化的查詢。 我們也會探討使用硬式編碼參數的來源，Web 控制項做為參數來源，並以程式設計方式指定的參數值。
+此 SqlDataSource 可讓網頁開發人員定義參數值可以硬式編碼、從預先定義的參數來源提取，或以程式設計方式指派的參數化查詢。 在本教學課程中，我們已瞭解如何針對臨機操作 SQL 查詢和預存程式，從 [設定資料來源] 建立參數化查詢。 我們也探討了如何使用硬式編碼的參數來源、Web 控制項做為參數來源，以及以程式設計方式指定參數值。
 
-例如使用 ObjectDataSource、 SqlDataSource 也提供功能來修改其基礎資料。 在下一個教學課程中我們將探討如何定義`INSERT`， `UPDATE`，和`DELETE`以 sqldatasource 進行的陳述式。 加入這些陳述式之後, 我們可以利用內建的插入、 編輯和刪除功能的 GridView、 DetailsView 和 FormView 控制項本身。
+和 ObjectDataSource 一樣，SqlDataSource 也提供修改其基礎資料的功能。 在下一個教學課程中，我們將探討如何使用 SqlDataSource 來定義 `INSERT`、`UPDATE`和 `DELETE` 語句。 一旦新增這些語句之後，我們就可以利用內建的插入、編輯和刪除功能，並提供給 GridView、DetailsView 和 FormView 控制項。
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ## <a name="about-the-author"></a>關於作者
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，作者的七個 ASP 書籍和的創辦人[4GuysFromRolla.com](http://www.4guysfromrolla.com)，自 1998 年從事 Microsoft Web 技術工作。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是[ *Sams 教導您自己 ASP.NET 2.0 在 24 小時內*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在觸達[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com) 或透過他的部落格，這位於 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)。
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，自1998起，有七個 ASP/ASP. NET 書籍和創辦人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是[*在24小時內讓自己的 ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在mitchell@4GuysFromRolla.com觸達[。](mailto:mitchell@4GuysFromRolla.com) 或者透過他的 blog，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 ## <a name="special-thanks-to"></a>特別感謝
 
-本教學課程系列是由許多實用的檢閱者檢閱。 本教學課程中的潛在客戶檢閱者已 Scott 西與克萊德、 Randell Schmidt 和 Ken Pespisa。 有興趣檢閱我即將推出的 MSDN 文章嗎？ 如果是這樣，psychic 在[ mitchell@4GuysFromRolla.com。](mailto:mitchell@4GuysFromRolla.com)
+本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Scott Clyde、Randell Schmidt 和 Ken Pespisa。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [上一頁](querying-data-with-the-sqldatasource-control-vb.md)

@@ -1,75 +1,75 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
-title: 持續整合與持續傳遞 （使用 Azure 建置真實世界的雲端應用程式） |Microsoft Docs
+title: 持續整合與持續傳遞（使用 Azure 建立真實世界的雲端應用程式） |Microsoft Docs
 author: MikeWasson
-description: 建置真實世界雲端應用程式與 Azure 的電子書是以 Scott Guthrie 所開發的簡報為依據。 它說明 13 模式與做法，他可以...
+description: 使用 Azure 電子書建立真實世界的雲端應用程式，是以 Scott Guthrie 所開發的簡報為基礎。 它會說明13個模式和實務，
 ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 25767303e3a8a3bfd9fc6c7c10cda32d73e9994d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 52c710053feca7872aa6fcc93c99bce90359f8fc
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118855"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74585871"
 ---
-# <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>持續整合與持續傳遞 （使用 Azure 建置真實世界的雲端應用程式）
+# <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>持續整合與持續傳遞（使用 Azure 建立真實世界的雲端應用程式）
 
-藉由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom Dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
 
-[下載修正此問題的專案](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> **建置真實世界雲端應用程式與 Azure**電子書以 Scott Guthrie 所開發的簡報為依據。 它說明 13 的模式，並可協助您的作法是成功開發適用於雲端的 web 應用程式。 電子書的相關資訊，請參閱[第 1 章](introduction.md)。
+> **使用 Azure 電子書建立真實世界的雲端應用程式**，是以 Scott Guthrie 所開發的簡報為基礎。 其中說明13種模式和作法，可協助您成功開發雲端 web 應用程式。 如需電子書的相關資訊，請參閱[第一章](introduction.md)。
 
-前兩個建議的開發程序模式所[自動執行的所有項目](automate-everything.md)並[原始檔控制](source-control.md)，第三個程序模式中將它們合併。 持續整合 (CI) 表示，每當開發人員簽入至來源存放庫的程式碼，會自動觸發建置。 持續傳遞 (CD) 則更進一步： 組建及自動的單元測試都成功之後，您會自動部署應用程式，您可以執行更深入的測試環境。
+前兩個建議的開發程式模式會將[所有專案](automate-everything.md)和[原始檔控制](source-control.md)自動化，而第三個進程模式會將它們結合在一起。 持續整合（CI）表示每當開發人員將程式碼簽入來源存放庫時，就會自動觸發組建。 持續傳遞（CD）更進一步：在組建和自動化單元測試成功之後，您會自動將應用程式部署到可執行更深入測試的環境。
 
-雲端可讓您維護測試環境，因為您只需支付環境資源，只要您使用它們的成本降到最低。 您的 CD 程序可以設定測試環境時需要它，以及當您完成時，您可以採取的環境下測試。
+雲端可讓您將維護測試環境的成本降到最低，因為只有在使用環境資源時才需要付費。 您的 CD 程式可以在需要時設定測試環境，而且當您完成測試時，可以關閉環境。
 
-## <a name="continuous-integration-and-continuous-delivery-workflow"></a>持續整合與持續傳遞的工作流程
+## <a name="continuous-integration-and-continuous-delivery-workflow"></a>持續整合與持續傳遞工作流程
 
-通常我們會建議您連續傳遞至您的開發和預備環境。 大部分的團隊，甚至在 Microsoft，需要手動檢閱及核准程序，針對生產環境部署。 對於實際執行部署，您可能想要確定它時會關鍵人士開發小組可如需支援，或在低流量時段。 但沒有東西可以讓您無法完全自動化開發和測試環境，使所有開發人員只需要簽入變更和環境設定為接受度測試。
+一般來說，我們建議您持續傳遞至您的開發和預備環境。 大部分的小組（甚至是 Microsoft）都需要手動審查和核准，才能進行生產環境部署。 針對生產環境部署，您可能會想要確保開發小組的重要人員可支援，或在低流量期間發生。 但是，沒有任何功能可防止您完全自動化您的開發和測試環境，讓開發人員只需要簽入變更，並設定環境來進行接受度測試。
 
-下圖來自[Microsoft Patterns and Practices 電子書相關持續傳遞](https://aka.ms/ReleasePipeline)說明典型的工作流程。 按一下影像，若要查看其完整的大小，以其原始內容。
+下圖來自[Microsoft 模式和實務電子書關於持續傳遞](https://aka.ms/ReleasePipeline)說明一般工作流程。 按一下影像，以查看其原始內容中的完整大小。
 
 [![持續傳遞工作流程](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/library/dn449955.aspx)
 
-## <a name="how-the-cloud-enables-cost-effective-ci-and-cd"></a>雲端可讓符合成本效益的 CI 和 CD
+## <a name="how-the-cloud-enables-cost-effective-ci-and-cd"></a>雲端如何實現符合成本效益的 CI 和 CD
 
-自動化在 Azure 中的這些程序很簡單。 因為您在雲端中執行的所有項目，表示您不必購買或管理您的組建或測試環境的伺服器。 您不必等待可執行您的測試上的伺服器。 這麼做的每個建置，可以讓使用您的自動化指令碼、 執行接受度測試或更多深入的測試，在 Azure 中的測試環境開始運作，然後當您完成時就將它清除。 如果您只有 2 小時或 8 個小時或一天中執行該伺服器，您不必支付的金額很少，因為您只支付實際執行機器的時間。 例如，環境所需的修正它的應用程式基本上成本大約 1%，每小時，如果您從免費層級向上一層。 在一個月的過程中，如果您只執行一小時環境一次測試環境可能成本小於您買在星巴克咖啡裡 latte。
+在 Azure 中自動化這些程式很簡單。 因為您是在雲端中執行所有專案，所以您不需要為組建或測試環境購買或管理伺服器。 而且您不需要等候伺服器在上執行測試。 在您執行的每個組建中，您可以使用自動化腳本來加速 Azure 中的測試環境、執行接受度測試或對其進行更深入的測試，然後在完成時將它卸載。 而且，如果您只執行了2小時或8小時或一天的伺服器，就必須支付費用，因為您只需支付機器實際執行的時間。 例如，如果您從免費層級往上移一層，則修正 it 應用程式所需的環境基本上會花費大約每小時1美分的成本。 在一個月的過程中，如果您一次只執行一個小時的環境，則您的測試環境可能會比您在星巴克購買的 latte 還便宜。
 
 ## <a name="azure-devops-services"></a>Azure DevOps Services 
 
-Azure 的 DevOps 服務提供多種功能，以協助您進行從規劃到部署的應用程式開發。
+Azure DevOps Services 提供許多功能，可協助您從規劃部署進行應用程式開發。
 
-- 它支援 （散發） 的 Git 和 TFVC （集中式） 的原始檔控制。
-- 它提供彈性的建置服務，這表示它以動態方式在需要時，會建立組建伺服器，並會將他們帶往下當他們完成。 您自動可以開始建置，當有人簽入原始程式碼變更，而且您沒有已配置，並支付您自己的組建伺服器位於閒置大部分的情況。 只要您不會超過特定數目的組建，組建服務是免費的。 如果您預期要有大量的組建，您可以少的額外支付保留的組建伺服器。
-- 它支援連續傳遞至 Azure。
-- 它支援自動化的負載測試。 負載測試很重要的雲端應用程式，但之前已經太遲常會遭到忽視。 負載測試會模擬數千名使用者，讓您找出瓶頸並提高輸送量的應用程式大量使用 — 您發行至生產環境應用程式之前。
-- 它支援小組室共同作業，有助於即時通訊和小型的敏捷式軟體開發團隊的共同作業。
-- 它支援敏捷式專案管理。
+- 它同時支援 Git （分散式）和 TFVC （集中式）原始檔控制。
+- 它提供彈性組建服務，這表示它會在需要時動態建立組建伺服器，並在完成時將其關閉。 當有人簽入原始程式碼變更時，您可以自動啟動組建，而且您不需要為自己的組建伺服器進行配置和付費，而是大部分時間都處於閒置狀態。 只要您未超過特定數目的組建，組建服務就是免費的。 如果您預期會執行大量的組建，您可以為保留的組建伺服器額外支付一些費用。
+- 它支援持續傳遞至 Azure。
+- 它支援自動化的負載測試。 負載測試對雲端應用程式很重要，但通常會被忽略，直到延遲太晚為止。 負載測試會模擬數以千計的使用者大量使用應用程式，讓您在將應用程式發行至生產環境之前，可以找出瓶頸並改善輸送量。
+- 它支援小組室共同作業，可協助小型 agile 團隊進行即時通訊和協同作業。
+- 它支援 agile 專案管理。
 
-如需有關的持續整合與傳遞功能的 Azure DevOps 服務的詳細資訊，請參閱[Azure DevOps 文件](/azure/devops/index)。
+如需 Azure DevOps Services 的持續整合和傳遞功能的詳細資訊，請參閱[Azure DevOps 檔](/azure/devops/index)。
 
-如果您要尋找如周全專案管理、 小組共同作業、 和原始檔控制解決方案，請參閱 Azure DevOps 服務。 在註冊[Azure DevOps 服務](https://dev.azure.com/)。
+如果您要尋找一個關鍵專案管理、小組共同作業和原始檔控制解決方案，請參閱 Azure DevOps Services。 在[Azure DevOps Services](https://dev.azure.com/)註冊。
 
 ## <a name="summary"></a>總結
 
-第三個雲端開發模式是有關如何實作具有低的週期時間可重複、 可靠、 可預測的開發程序。 在 [[下一步] 一章](web-development-best-practices.md)我們先來看看架構和程式碼撰寫模式。
+前三個雲端開發模式是關於如何以低週期時間執行可重複、可靠且可預測的開發流程。 在[下一章](web-development-best-practices.md)中，我們將開始探討架構和程式碼撰寫模式。
 
 ## <a name="resources"></a>資源
 
-如需詳細資訊，請參閱 <<c0> [ 部署 Azure App Service 中的 web 應用程式](https://azure.microsoft.com/documentation/articles/web-sites-deploy/)。
+如需詳細資訊，請參閱[在 Azure App Service 中部署 web 應用程式](https://azure.microsoft.com/documentation/articles/web-sites-deploy/)。
 
 另請參閱下列資源：
 
-- [建置與 Team Foundation Server 2012 的發行管線](https://aka.ms/ReleasePipeline)。 電子書的實際操作實驗室和範例程式碼，藉由 Microsoft Patterns and Practices，提供持續傳遞的深入介紹。 涵蓋使用 Visual Studio Lab Management 和 Visual Studio Release Management。
-- [ALM Ranger DevOps 工具和指引](https://aka.ms/vsarsolutions/)。 ALM Ranger 導入的 DevOps Workbench 範例隨附的方案和共同作業的模式中的實用指引&amp;作法的書籍*建置與 TFS 2012 的發行管線*，做為啟動的絕佳方法學習開發營運的概念&amp;Release Management for TFS 2012，並親身。 本指南示範如何一次建置並部署至多個環境。
-- [Testing for Continuous Delivery with Visual Studio 2012](https://msdn.microsoft.com/library/jj159345.aspx)。 電子書由 Microsoft Patterns and Practices，說明如何整合與持續傳遞的自動化測試。
-- [WindowsAzureDeploymentTracker](https://github.com/RyanTBerry/WindowsAzureDeploymentTracker)。 原始碼工具，設計用來擷取從 TFS （根據標籤而定），組建的建置、 封裝、 DevOps 角色，才能設定它的特定層面，允許某人和推送至 Azure。 工具會追蹤部署程序，若要讓 「 回復 」 到先前部署版本的作業。 此工具沒有外部相依性，並可在獨立使用 TFS 的 Api 和 Azure SDK。
-- [持續傳遞：透過建置、 測試和部署自動化的可靠的軟體發行](https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1377126361)。 由 Jez Humble 的書籍。
-- [釋放它 ！設計及部署生產就緒軟體](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213)。 本書由 Michael T Nygard。
+- [使用 Team Foundation Server 2012 建立發行管線](https://aka.ms/ReleasePipeline)。 電子書、實際操作實驗室，以及 Microsoft 模式與實務的範例程式碼，提供持續傳遞的深入介紹。 涵蓋使用 Visual Studio Lab Management 和 Visual Studio Release Management。
+- [ALM Ranger DevOps 工具和指引](https://aka.ms/vsarsolutions/)。 ALM Ranger 引進了 DevOps 工作臺範例附屬解決方案，以及與使用*tfs 2012 建立發行管線*的 &amp; 模式共同作業的實務指導方針，這是開始學習 tfs 2012 的 DevOps &amp; Release Management 的概念並開始使用的絕佳方法。 本指南將說明如何建立一次，並部署至多個環境。
+- [使用 Visual Studio 2012 來測試持續傳遞](https://msdn.microsoft.com/library/jj159345.aspx)。 Microsoft 的模式和實務電子書，說明如何將自動化測試與持續傳遞整合在一起。
+- [WindowsAzureDeploymentTracker](https://github.com/RyanTBerry/WindowsAzureDeploymentTracker)。 專為從 TFS （根據標籤）來捕獲組建而設計的工具原始程式碼、建立它、封裝它、允許 DevOps 角色中的人員設定 it 的特定層面，並將其推送至 Azure。 此工具會追蹤部署程式，以便讓作業「復原」至先前部署的版本。 此工具沒有外部相依性，可以使用 TFS Api 和 Azure SDK 獨立運作。
+- [持續傳遞：透過組建、測試和部署自動化，可靠的軟體發行](https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1377126361)。 Book by Jez Humble。
+- [發行！設計和部署已準備好用於生產環境的軟體](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213)。 依 Michael T Nygard。
 
 > [!div class="step-by-step"]
 > [上一頁](source-control.md)

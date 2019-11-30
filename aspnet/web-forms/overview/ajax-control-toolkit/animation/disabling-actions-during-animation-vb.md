@@ -1,61 +1,61 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-animation-vb
-title: 動畫 (VB) 期間停用動作 |Microsoft Docs
+title: 動畫期間停用動作（VB） |Microsoft Docs
 author: wenz
-description: 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 它也支援動作...
+description: ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。 它也支援動作 。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: a86c0276-6481-46ee-8b4f-8c2009399ee9
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-animation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fcfa03998778888f2e64a8079d3119ce86de7fc3
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 4924d4f70099255b930d53f6a72e810be7a47485
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108831"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74606823"
 ---
 # <a name="disabling-actions-during-animation-vb"></a>動畫播放期間停用動作 (VB)
 
-藉由[Christian Wenz](https://github.com/wenz)
+依[Christian Wenz](https://github.com/wenz)
 
-[下載程式碼](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation7.vb.zip)或[下載 PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation7VB.pdf)
+[下載程式代碼](https://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation7.vb.zip)或[下載 PDF](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation7VB.pdf)
 
-> 動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 它也支援動作，例如滑鼠點按。 不過當按下滑鼠，開始播放動畫，最好在動畫期間停用滑鼠點按。
+> ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。 它也支援動作，例如滑鼠點擊。 不過，當滑鼠按一下啟動動畫時，最好在動畫期間停用滑鼠點按動作。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-動畫控制項在 ASP.NET AJAX Control Toolkit 中不只是控制項，但若要將動畫加入至控制項的整個架構。 它也支援動作，例如滑鼠點按。 不過當按下滑鼠，開始播放動畫，最好在動畫期間停用滑鼠點按。
+ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。 它也支援動作，例如滑鼠點擊。 不過，當滑鼠按一下啟動動畫時，最好在動畫期間停用滑鼠點按動作。
 
 ## <a name="steps"></a>步驟
 
-首先，包括`ScriptManager`單元頁面; 然後，ASP.NET AJAX 程式庫載入，因此能夠使用控制項工具組：
+首先，在頁面中包含 `ScriptManager`;然後，會載入 ASP.NET AJAX 程式庫，讓您能夠使用控制項工具組：
 
 [!code-aspx[Main](disabling-actions-during-animation-vb/samples/sample1.aspx)]
 
-動畫會套用至 HTML 按鈕如下：
+動畫將會套用至 HTML 按鈕，如下所示：
 
 [!code-aspx[Main](disabling-actions-during-animation-vb/samples/sample2.aspx)]
 
-請注意，HTML 控制項使用而不是 Web 控制項，因為我們不想要的按鈕，以建立回傳;它只應該會啟動我們的用戶端動畫。
+請注意，HTML 控制項是用來取代 Web 控制項，因為我們不想要讓按鈕建立回傳。它應該只為我們啟動用戶端動畫。
 
-然後，新增`AnimationExtender` 頁面上，以提供`ID`，則`TargetControlID`屬性和必要`runat="server"`:
+然後，將 `AnimationExtender` 新增至頁面，並提供 `ID`、`TargetControlID` 屬性和必要 `runat="server"`：
 
 [!code-aspx[Main](disabling-actions-during-animation-vb/samples/sample3.aspx)]
 
-內`<Animations>`節點，`<OnClick>`是正確的項目，來處理滑鼠點選。 不過，動畫播放期間，也可以按一下按鈕。 `<EnableAction>`可以處理項目。 設定`Enabled="false"`動畫的過程中停用按鈕。 因為我們使用數個個別的動畫 （停用按鈕和實際的動畫）`<Parallel>`元素必須結合在一起成一個單一的動畫。 以下是完成標記`AnimationExtender`:
+在 [`<Animations>`] 節點內，`<OnClick>` 是用來處理滑鼠點按的右元素。 不過，在動畫期間也可以按一下按鈕。 `<EnableAction>` 元素可以處理這一點。 設定 `Enabled="false"` 會停用按鈕作為動畫的一部分。 由於我們使用數個個別的動畫（停用按鈕和實際的動畫），因此需要 `<Parallel>` 元素，將單一動畫一併放到一個。 以下是 `AnimationExtender`的完整標記：
 
 [!code-aspx[Main](disabling-actions-during-animation-vb/samples/sample4.aspx)]
 
-它也會重新啟用按鈕動畫，並在清單結尾處使用下列的 XML 項目之後：
+您也可以使用清單結尾的下列 XML 元素，在動畫之後重新啟用 [到] 按鈕：
 
 [!code-xml[Main](disabling-actions-during-animation-vb/samples/sample5.xml)]
 
-不過在特定案例這會是毫無用處自按鈕淡出，並在動畫結束時看不到。
+不過在給定的案例中，這會很無用，因為按鈕會淡出，而且在動畫結束時看不到。
 
-[![動畫執行時，會停用按鈕](disabling-actions-during-animation-vb/_static/image2.png)](disabling-actions-during-animation-vb/_static/image1.png)
+[![在動畫執行時立即停用按鈕](disabling-actions-during-animation-vb/_static/image2.png)](disabling-actions-during-animation-vb/_static/image1.png)
 
-按鈕已停用，只要執行動畫 ([按一下以檢視完整大小的影像](disabling-actions-during-animation-vb/_static/image3.png))
+動畫執行時，按鈕會立即停用（[按一下以觀看完整大小的影像](disabling-actions-during-animation-vb/_static/image3.png)）
 
 > [!div class="step-by-step"]
 > [上一頁](animating-in-response-to-user-interaction-vb.md)
