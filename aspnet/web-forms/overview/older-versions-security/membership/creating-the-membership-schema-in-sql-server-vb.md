@@ -1,140 +1,140 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb
-title: 在 SQL Server (VB) 中建立成員資格結構描述 |Microsoft Docs
+title: 在 SQL Server 中建立成員資格架構（VB） |Microsoft Docs
 author: rick-anderson
-description: 本教學課程一開始會檢查加入資料庫中的必要的結構描述，才能使用 SqlMembershipProvider 的技術。 接下來，我們 wi-fi...
+description: 本教學課程一開始會先檢查將必要的架構加入至資料庫以使用 SqlMembershipProvider 的技巧。 之後，我們會將我們的 。
 ms.author: riande
 ms.date: 01/18/2008
 ms.assetid: 112a674d-716f-41a6-99b8-4074d65a54c0
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8e4feb864d8586024ded0f71eb854f15e7c233e1
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: 96fd72d1f368b1f7947ef0a2293161d97aaf7065
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131330"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74581004"
 ---
 # <a name="creating-the-membership-schema-in-sql-server-vb"></a>在 SQL Server 中建立成員資格結構描述 (VB)
 
-藉由[Scott Mitchell](https://twitter.com/ScottOnWriting)
+由[Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[下載程式碼](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/ASPNET_Security_Tutorial_04_VB.zip)或[下載 PDF](http://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/aspnet_tutorial04_MembershipSetup_vb.pdf)
+[下載程式代碼](https://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/ASPNET_Security_Tutorial_04_VB.zip)或[下載 PDF](https://download.microsoft.com/download/3/f/5/3f5a8605-c526-4b34-b3fd-a34167117633/aspnet_tutorial04_MembershipSetup_vb.pdf)
 
-> 本教學課程一開始會檢查加入資料庫中的必要的結構描述，才能使用 SqlMembershipProvider 的技術。 接下來，我們會檢查結構描述中的索引鍵的資料表，並討論其用途和重要性。 本教學課程中了解如何判斷成員資格架構應該使用哪一個提供者的 ASP.NET 應用程式的結尾。
+> 本教學課程一開始會先檢查將必要的架構加入至資料庫以使用 SqlMembershipProvider 的技巧。 接下來，我們將檢查架構中的重要資料表，並討論其用途和重要性。 本教學課程最後會介紹如何告訴 ASP.NET 應用程式，成員資格架構應該使用哪個提供者。
 
 ## <a name="introduction"></a>簡介
 
-使用表單驗證來識別網站訪客檢查了先前兩個教學課程。 表單驗證架構，簡化開發人員將使用者登入網站，並記住其所有透過驗證票證使用網頁瀏覽。 `FormsAuthentication`類別包含了產生票證，並將它加入訪客的 cookie 的方法。 `FormsAuthenticationModule`會檢查所有連入要求，對於具有有效的驗證票證，建立並關聯`GenericPrincipal`和`FormsIdentity`與目前要求的物件。 表單驗證是只是一種機制讓訪客驗證票證授與登入，然後在後續要求時，剖析該票證，以判斷使用者的身分識別時。 若要支援使用者帳戶是 web 應用程式，我們還是需要實作的使用者存放區，並將功能新增至驗證認證，註冊新的使用者和各種其他與使用者帳戶相關的工作。
+先前的兩個教學課程是使用表單驗證來檢查，以識別網站訪客。 表單驗證架構可讓開發人員輕鬆地將使用者登入網站，並透過使用驗證票證的方式在頁面造訪時記住。 `FormsAuthentication` 類別包含產生票證的方法，並將它新增至訪客的 cookie。 `FormsAuthenticationModule` 會檢查所有傳入的要求，對於具有有效驗證票證的要求，會建立 `GenericPrincipal` 和 `FormsIdentity` 物件與目前要求的關聯。 表單驗證只是一種機制，可在登入時將驗證票證授與給訪客，並在後續要求中剖析該票證以判斷使用者的身分識別。 若要讓 web 應用程式支援使用者帳戶，我們仍需要執行使用者存放區，並新增功能來驗證認證、註冊新使用者，以及其他使用者帳戶相關的工作。
 
-ASP.NET 2.0 中，開發人員之前，在實作所有這些使用者帳戶相關工作的勾點。 幸運的是，ASP.NET 團隊辨識這個缺點，並導入 ASP.NET 2.0 成員資格架構。 成員資格架構是一組.NET Framework 中完成的核心使用者帳戶相關的工作時，提供程式設計介面的類別。 此架構建置在之上[提供者模型](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx)，可讓開發人員的自訂的實作插入標準化的 API。
+在 ASP.NET 2.0 之前，開發人員都是在攔截來執行所有與使用者帳戶相關的工作。 幸運的是，ASP.NET 團隊已辨識這種缺點，並引進了 ASP.NET 2.0 的成員資格架構。 成員資格架構是 .NET Framework 中的一組類別，可提供用來完成核心使用者帳戶相關工作的程式設計介面。 此架構是在[提供者模型](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx)之上建立的，可讓開發人員將自訂的執行插入標準化的 API。
 
-中所述<a id="Tutorial1"> </a> [*安全性基本概念和 ASP.NET 支援*](../introduction/security-basics-and-asp-net-support-vb.md)教學課程中，.NET Framework 隨附兩個內建的成員資格提供者： [ `ActiveDirectoryMembershipProvider` ](https://msdn.microsoft.com/library/system.web.security.activedirectorymembershipprovider.aspx)並[ `SqlMembershipProvider` ](https://msdn.microsoft.com/library/system.web.security.sqlmembershipprovider.aspx)。 正如其名，`SqlMembershipProvider`使用 Microsoft SQL Server 資料庫作為使用者存放區。 若要使用此提供者的應用程式中，我們要告訴提供者使用做為存放區資料庫。 您可以想像得到，`SqlMembershipProvider`預期使用者存放區資料庫，將特定的資料庫資料表、 檢視和預存程序。 我們需要將這個預期的結構描述新增到選取的資料庫。
+如<a id="Tutorial1"> </a>[*安全性基本概念和 ASP.NET 支援*](../introduction/security-basics-and-asp-net-support-vb.md)教學課程中所述，.NET Framework 隨附兩個內建的成員資格提供者： [`ActiveDirectoryMembershipProvider`](https://msdn.microsoft.com/library/system.web.security.activedirectorymembershipprovider.aspx)和[`SqlMembershipProvider`](https://msdn.microsoft.com/library/system.web.security.sqlmembershipprovider.aspx)。 正如其名，`SqlMembershipProvider` 會使用 Microsoft SQL Server 資料庫做為使用者存放區。 為了在應用程式中使用此提供者，我們需要告訴提供者要使用哪個資料庫做為存放區。 您可能會想到，`SqlMembershipProvider` 需要使用者存放區資料庫擁有特定的資料庫資料表、視圖和預存程式。 我們需要將此預期的架構加入至選取的資料庫。
 
-本教學課程一開始會檢查加入資料庫中的必要的結構描述，若要使用的技術`SqlMembershipProvider`。 接下來，我們會檢查結構描述中的索引鍵的資料表，並討論其用途和重要性。 本教學課程中了解如何判斷成員資格架構應該使用哪一個提供者的 ASP.NET 應用程式的結尾。
+本教學課程一開始會先檢查將必要的架構加入至資料庫的技術，以便使用 `SqlMembershipProvider`。 接下來，我們將檢查架構中的重要資料表，並討論其用途和重要性。 本教學課程最後會介紹如何告訴 ASP.NET 應用程式，成員資格架構應該使用哪個提供者。
 
-讓我們開始吧 ！
+讓我們開始吧！
 
-## <a name="step-1-deciding-where-to-place-the-user-store"></a>步驟 1：決定使用者存放區的位置
+## <a name="step-1-deciding-where-to-place-the-user-store"></a>步驟1：決定要放置使用者存放區的位置
 
-ASP.NET 應用程式的資料通常儲存在資料庫中的資料表數目。 當實作`SqlMembershipProvider`我們必須決定是否要將成員資格結構描述放在應用程式資料與相同的資料庫或替代資料庫的資料庫結構描述。
+ASP.NET 應用程式的資料通常會儲存在資料庫中的多個資料表。 在執行 `SqlMembershipProvider` 資料庫架構時，我們必須決定是否要將成員資格架構放在與應用程式資料相同的資料庫或替代資料庫中。
 
-我建議您尋找應用程式資料與相同的資料庫中的成員資格結構描述，原因如下：
+基於下列原因，我建議您在與應用程式資料相同的資料庫中尋找成員資格架構：
 
-- **可維護性**其資料會封裝在一個資料庫應用程式會比較容易了解、 維護和部署應用程式有兩個不同的資料庫比。
-- **關聯式完整性**相同的資料庫中尋找的成員資格相關的資料表，因為應用程式資料表，它就能建立[foreign key 條件約束](http://en.wikipedia.org/wiki/Foreign_key)之間中的主索引鍵成員資格相關的資料表和相關的應用程式資料表。
+- 可**維護性**：將資料封裝在一個資料庫中的應用程式，比有兩個不同資料庫的應用程式更容易瞭解、維護和部署。
+- **關聯式完整性**：藉由在與應用程式資料表相同的資料庫中尋找成員相關的資料表，可以在成員資格相關資料表和相關應用程式資料表中的主鍵之間建立[外鍵條件約束](http://en.wikipedia.org/wiki/Foreign_key)。
 
-將使用者存放區和應用程式資料分離到不同的資料庫才有意義有多個應用程式，每個使用不同的資料庫，但需要共用一般的使用者存放區。
+如果您有多個應用程式使用不同的資料庫，但需要共用一般使用者存放區，則將使用者存放區和應用程式資料分離到不同的資料庫只是合理的。
 
 ### <a name="creating-a-database"></a>建立資料庫
 
-我們已因為第二個教學課程建置的應用程式還不需要資料庫。 我們需要一種，不過，針對使用者存放區。 讓我們建立一個，然後新增給它所需的結構描述`SqlMembershipProvider`提供者 （請參閱步驟 2）。
+我們在第二個教學課程之後所建立的應用程式還不需要資料庫。 不過，我們現在需要一個使用者存放區。 讓我們建立一個，然後將 `SqlMembershipProvider` 提供者所需的架構加入其中（請參閱步驟2）。
 
 > [!NOTE]
-> 在此教學課程系列，我們將使用[Microsoft SQL Server 2005 Express 的 Edition](https://msdn.microsoft.com/sql/Aa336346.aspx)資料庫來儲存我們的應用程式資料表和`SqlMembershipProvider`結構描述。 此決策的原因有二： 第一次，因為其成本-免費-Express Edition 是 SQL Server 2005; 最 readably 可存取版本第二，SQL Server 2005 Express Edition 資料庫可以放在 web 應用程式的直接`App_Data`資料夾，因此輕而易舉地封裝資料庫及一個 ZIP 檔案中，搭配 web 應用程式，並重新部署它，而不需要任何特殊的安裝指示或組態選項。 如果您想要跟著使用非-Express Edition 版本的 SQL Server，可以自由。 步驟都幾乎相同。 `SqlMembershipProvider`結構描述會使用任何版本的 Microsoft SQL Server 2000 和最多。
+> 在此教學課程系列中，我們將使用[Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/sql/Aa336346.aspx)資料庫來儲存應用程式資料表和 `SqlMembershipProvider` 架構。 這項決定的原因有兩個：第一種是因為它是免費的，Express Edition 是最 readably 的可存取版本 SQL Server 2005;其次，SQL Server 2005 Express Edition 資料庫可以直接放在 web 應用程式的 [`App_Data`] 資料夾中，讓它成為將資料庫和 web 應用程式封裝在一個 ZIP 檔案中的標準化，並在沒有任何特殊設定指示或設定選項的情況下重新部署它。 如果您想要遵循 SQL Server 的非 Express Edition 版本，歡迎使用。 步驟幾乎完全相同。 `SqlMembershipProvider` 架構將適用于 Microsoft SQL Server 2000 和更新版本。
 
-從 方案總管 中，以滑鼠右鍵按一下`App_Data`資料夾，然後選擇 加入新項目。 (如果您看不見`App_Data`資料夾中您的專案，以滑鼠右鍵按一下方案總管] 中的專案，選取加入 ASP.NET 資料夾，並挑選`App_Data`。)從 [加入新項目] 對話方塊中，選擇 [加入新的 SQL Database，名為`SecurityTutorials.mdf`。 在本教學課程中我們將增加`SqlMembershipProvider`到此資料庫; 在後續教學課程中，我們將建立其他的結構描述來擷取應用程式資料的資料表。
+在 方案總管中，以滑鼠右鍵按一下 `App_Data` 資料夾，然後選擇 加入新專案。 （如果您在專案中看不到 [`App_Data`] 資料夾，請以滑鼠右鍵按一下方案總管中的專案，選取 [新增] [ASP.NET 資料夾]，然後挑選 [`App_Data`]）。從 [加入新專案] 對話方塊中，加入宣告名為 `SecurityTutorials.mdf`的新 SQL Database。 在本教學課程中，我們會將 `SqlMembershipProvider` 架構新增至此資料庫;在後續的教學課程中，我們將建立額外的資料表來捕捉我們的應用程式資料。
 
-[![新增名為 SecurityTutorials.mdf 資料庫 [App_Data] 資料夾的新 SQL 資料庫](creating-the-membership-schema-in-sql-server-vb/_static/image2.png)](creating-the-membership-schema-in-sql-server-vb/_static/image1.png)
+[![將名為 SecurityTutorials 的新 SQL Database 新增至 App_Data 資料夾](creating-the-membership-schema-in-sql-server-vb/_static/image2.png)](creating-the-membership-schema-in-sql-server-vb/_static/image1.png)
 
-**圖 1**:加入新的 SQL 資料庫 Named`SecurityTutorials.mdf`資料庫`App_Data`資料夾 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image3.png))
+**圖 1**：將名為 `SecurityTutorials.mdf` 資料庫的新 SQL Database 新增至 [`App_Data`] 資料夾（[按一下以查看完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image3.png)）
 
-加入至資料庫`App_Data`資料夾會自動包含它在 [資料庫總管] 檢視中。 （在非-Express Edition 版本的 Visual Studio 中，[資料庫總管] 中被稱為 [伺服器總管] 中）。請移至 [資料庫總管] 中，展開剛`SecurityTutorials`資料庫。 如果您看不見 [資料庫總管] 畫面上，移至 [檢視] 功能表並選擇 [資料庫總管] 中，或按 Ctrl + Alt + S。 如 [圖 2] 所示，`SecurityTutorials`資料庫是空的-它包含任何資料表，沒有任何檢視中，沒有預存程序。
+將資料庫新增至 [`App_Data`] 資料夾時，會自動將它包含在 [資料庫總管] 視圖中。 （在 Visual Studio 的非 Express Edition 版本中，資料庫總管稱為伺服器總管）。移至 [資料庫總管]，然後展開 [剛新增的 `SecurityTutorials`] 資料庫。 如果您在畫面上看不到 資料庫總管，請移至 View 功能表並選擇 資料庫總管，或按 Ctrl + Alt + S。 如 [圖 2] 所示，`SecurityTutorials` 資料庫是空的，它不包含任何資料表、沒有任何觀點，而且沒有任何預存程式。
 
 [![SecurityTutorials 資料庫目前是空的](creating-the-membership-schema-in-sql-server-vb/_static/image5.png)](creating-the-membership-schema-in-sql-server-vb/_static/image4.png)
 
-**圖 2**:`SecurityTutorials`資料庫目前是空的 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image6.png))
+**圖 2**： `SecurityTutorials` 資料庫目前是空的（[按一下以查看完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image6.png)）
 
-## <a name="step-2-adding-thesqlmembershipproviderschema-to-the-database"></a>步驟 2：新增`SqlMembershipProvider`到資料庫的結構描述
+## <a name="step-2-adding-thesqlmembershipproviderschema-to-the-database"></a>步驟2：將`SqlMembershipProvider`架構加入至資料庫
 
-`SqlMembershipProvider`需要一組特定的資料表、 檢視和預存程序，以安裝在使用者存放區資料庫中。 可以使用新增這些必要的資料庫物件[`aspnet_regsql.exe`工具](https://msdn.microsoft.com/library/ms229862.aspx)。 此檔案位於`%WINDIR%\Microsoft.Net\Framework\v2.0.50727\`資料夾。
+`SqlMembershipProvider` 需要在使用者存放區資料庫中安裝一組特定的資料表、視圖和預存程式。 您可以使用[`aspnet_regsql.exe` 工具](https://msdn.microsoft.com/library/ms229862.aspx)來新增這些必要的資料庫物件。 這個檔案位於 [`%WINDIR%\Microsoft.Net\Framework\v2.0.50727\`] 資料夾中。
 
 > [!NOTE]
-> `aspnet_regsql.exe`工具提供圖形化使用者介面和命令列功能。 圖形化介面是易記的多個使用者，我們將檢視在本教學課程。 命令列介面很有用的加法`SqlMembershipProvider`結構描述必須自動化，例如組建指令碼或自動化的測試案例。
+> `aspnet_regsql.exe` 工具提供命令列功能和圖形化使用者介面。 圖形化介面比較方便使用者，我們將在本教學課程中檢查。 當 `SqlMembershipProvider` 架構需要自動化時（例如在組建腳本或自動化測試案例中），命令列介面就很有用。
 
-`aspnet_regsql.exe`工具用來新增或移除*ASP.NET 應用程式服務*到指定的 SQL Server 資料庫。 ASP.NET 應用程式服務包含的結構描述`SqlMembershipProvider`和`SqlRoleProvider`，以及其他 ASP.NET 2.0 架構的 SQL 為基礎提供者的結構描述。 我們需要提供的資訊的兩個位元`aspnet_regsql.exe`工具：
+`aspnet_regsql.exe` 工具是用來在指定的 SQL Server 資料庫中新增或移除*ASP.NET 應用程式服務*。 ASP.NET 應用程式服務包含 `SqlMembershipProvider` 和 `SqlRoleProvider`的架構，以及其他 ASP.NET 2.0 架構之以 SQL 為基礎的提供者架構。 我們需要提供兩個位的資訊給 `aspnet_regsql.exe` 工具：
 
 - 是否要新增或移除應用程式服務，以及
-- 要新增或移除應用程式服務結構描述資料庫
+- 要加入或移除應用程式服務架構的資料庫
 
-在提示資料庫使用，`aspnet_regsql.exe`工具會要求我們提供的安全性認證以連線至資料庫中的資料庫所在的伺服器名稱和資料庫名稱。 如果您使用非 Express Edition 的 SQL Server，您應該已經知道這項資訊，因為它是透過 ASP.NET 網頁上的資料庫使用時，您必須提供連接字串的相同資訊。 使用中的 SQL Server 2005 Express Edition 資料庫時，判斷伺服器和資料庫名稱`App_Data`資料夾中，不過，會稍微複雜一點。
+在提示資料庫使用的情況下，`aspnet_regsql.exe` 工具會要求我們提供資料庫所在的伺服器名稱、用來連接到資料庫的安全性認證，以及資料庫名稱。 如果您使用非 Express 版本的 SQL Server，您應該已經知道這項資訊，因為它是您在透過 ASP.NET 網頁處理資料庫時，必須透過連接字串提供的相同資訊。 不過，在 `App_Data` 資料夾中使用 SQL Server 2005 Express Edition 資料庫時，判斷伺服器和資料庫名稱會比較複雜一點。
 
-下一節探討一個簡單的方式，來指定伺服器和資料庫名稱中的 SQL Server 2005 Express Edition 資料庫`App_Data`資料夾。 如果您不想要使用 SQL Server 2005 Express Edition 編寫哪一方面的直接跳到安裝的應用程式服務一節。
+下一節將探討在 `App_Data` 資料夾中為 SQL Server 2005 Express Edition 資料庫指定伺服器和資料庫名稱的直接方式。 如果您不是使用 SQL Server 2005 Express Edition 請隨意跳到安裝應用程式服務一節。
 
-### <a name="determining-the-server-and-database-name-for-a-sql-server-2005-express-edition-database-in-theappdatafolder"></a>判斷伺服器和 SQL Server 2005 Express Edition 資料庫中的資料庫名稱`App_Data`資料夾
+### <a name="determining-the-server-and-database-name-for-a-sql-server-2005-express-edition-database-in-theapp_datafolder"></a>判斷`App_Data`資料夾中 SQL Server 2005 Express Edition 資料庫的伺服器和資料庫名稱
 
-若要使用`aspnet_regsql.exe`我們需要知道的伺服器和資料庫名稱的工具。 伺服器名稱是`localhost\InstanceName`。 最有可能*InstanceName*是`SQLExpress`。 不過，如果您手動安裝 SQL Server 2005 Express Edition （也就是您未安裝它自動安裝 Visual Studio 時），則很可能您選取不同的執行個體名稱。
+為了使用 `aspnet_regsql.exe` 工具，我們需要知道伺服器和資料庫名稱。 伺服器名稱為 `localhost\InstanceName`。 最有可能的是， *InstanceName*是 `SQLExpress`。 不過，如果您以手動方式安裝 SQL Server 2005 Express Edition （也就是在安裝 Visual Studio 時未自動安裝），則您可以選取不同的實例名稱。
 
-有點複雜，無法判斷資料庫名稱。 中的資料庫`App_Data`資料夾通常會有一個包含的資料庫名稱[全域唯一識別碼](http://en.wikipedia.org/wiki/Globally_Unique_Identifier)以及資料庫檔案的路徑。 我們要確定這個資料庫名稱，以新增應用程式服務結構描述，透過`aspnet_regsql.exe`。
+資料庫名稱比較難判斷。 [`App_Data`] 資料夾中的資料庫通常會有一個資料庫名稱，其中包含[全域唯一識別碼](http://en.wikipedia.org/wiki/Globally_Unique_Identifier)以及資料庫檔案的路徑。 我們必須判斷此資料庫名稱，才能透過 `aspnet_regsql.exe`新增應用程式服務架構。
 
-確定資料庫名稱的最簡單方式是檢查透過 SQL Server Management Studio。 SQL Server Management Studio 提供圖形化介面來管理 SQL Server 2005 資料庫，但它並未隨附 Express Edition 的 SQL Server 2005。 好消息是，[您可以下載](https://www.microsoft.com/downloads/details.aspx?FamilyId=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796&amp;displaylang=en)免費 Express 版本的 SQL Server Management Studio。
+若要確定資料庫名稱，最簡單的方式是透過 SQL Server Management Studio 來檢查它。 SQL Server Management Studio 提供用於管理 SQL Server 2005 資料庫的圖形化介面，但不隨附于 SQL Server 2005 的 Express Edition。 好消息是，[您可以下載](https://www.microsoft.com/downloads/details.aspx?FamilyId=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796&amp;displaylang=en)免費的 Express Edition SQL Server Management Studio。
 
 > [!NOTE]
-> 如果您也可以安裝在您的桌面上，則可能安裝 Management Studio 的完整版本的 SQL Server 2005 的非-Express Edition 版本。 若要判斷資料庫名稱，如下所述的 Express Edition，請遵循相同的步驟，您可以使用完整版。
+> 如果您在桌面上也安裝了非 Express Edition 版本的 SQL Server 2005，則可能會安裝 Management Studio 的完整版本。 您可以使用完整版本來判斷資料庫名稱，遵循與下列 Express 版本相同的步驟。
 
-開始關閉 Visual Studio，以確保資料庫檔案上的 Visual Studio 所加諸任何鎖定都已關閉。 接下來，啟動 SQL Server Management Studio 並連接到`localhost\InstanceName`適用於 SQL Server 2005 Express Edition 資料庫。 如先前所述，可能是執行個體名稱是`SQLExpress`。 針對 [驗證] 選項中，選取 [Windows 驗證]。
+一開始先關閉 Visual Studio，以確保資料庫檔案上 Visual Studio 所加諸的任何鎖定都已關閉。 接下來，啟動 SQL Server Management Studio 並聯機至 SQL Server 2005 Express Edition 的 `localhost\InstanceName` 資料庫。 如先前所述，實例名稱可能 `SQLExpress`。 針對 [驗證] 選項，選取 [Windows 驗證]。
 
-[![連接到 SQL Server 2005 Express Edition 執行個體](creating-the-membership-schema-in-sql-server-vb/_static/image8.png)](creating-the-membership-schema-in-sql-server-vb/_static/image7.png)
+[![連接到 SQL Server 2005 Express Edition 實例](creating-the-membership-schema-in-sql-server-vb/_static/image8.png)](creating-the-membership-schema-in-sql-server-vb/_static/image7.png)
 
-**圖 3**:連接到 SQL Server 2005 Express Edition 執行個體 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image9.png))
+**圖 3**：連接到 SQL Server 2005 Express Edition 實例（[按一下以觀看完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image9.png)）
 
-連接到 SQL Server 2005 Express Edition 執行個體之後，Management Studio 會顯示資料夾，如資料庫、 安全性設定、 伺服器物件等等。 如果您展開 [資料庫] 索引標籤則您會發現`SecurityTutorials.mdf`資料庫是*不*註冊中的資料庫執行個體-我們需要將資料庫附加到第一次。
+連接到 SQL Server 2005 Express Edition 實例之後，Management Studio 會顯示資料庫的資料夾、安全性設定、伺服器物件等等。 如果您展開 [資料庫] 索引標籤，就會看到 `SecurityTutorials.mdf` 資料庫*未*在資料庫實例中註冊-我們需要先附加資料庫。
 
-以滑鼠右鍵按一下 資料庫 資料夾，並從操作功能表中選擇 附加。 這會顯示 [附加資料庫] 對話方塊。 從這裡開始，請按一下 [新增] 按鈕，瀏覽至`SecurityTutorials.mdf`資料庫，然後按一下 [確定]。 [圖 4] 顯示 [附加資料庫] 對話方塊中之後,`SecurityTutorials.mdf`已選取資料庫。 [圖 5 顯示 Management Studio 物件總管] 中之後已成功附加資料庫。
+以滑鼠右鍵按一下 [資料庫] 資料夾，然後從內容功能表選擇 [附加]。 這會顯示 [附加資料庫] 對話方塊。 從這裡按一下 [新增] 按鈕，流覽至 [`SecurityTutorials.mdf`] 資料庫，然後按一下 [確定]。 [圖 4] 顯示選取了 `SecurityTutorials.mdf` 資料庫之後的 [附加資料庫] 對話方塊。 [圖 5] 顯示成功附加資料庫之後 Management Studio 的物件總管。
 
-[![附加 SecurityTutorials.mdf 資料庫](creating-the-membership-schema-in-sql-server-vb/_static/image11.png)](creating-the-membership-schema-in-sql-server-vb/_static/image10.png)
+[![附加 SecurityTutorials .mdf 資料庫](creating-the-membership-schema-in-sql-server-vb/_static/image11.png)](creating-the-membership-schema-in-sql-server-vb/_static/image10.png)
 
-**圖 4**:附加`SecurityTutorials.mdf`資料庫 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image12.png))
+**圖 4**：附加 `SecurityTutorials.mdf` 資料庫（[按一下以觀看完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image12.png)）
 
-[![SecurityTutorials.mdf 資料庫會出現在 [資料庫] 資料夾](creating-the-membership-schema-in-sql-server-vb/_static/image14.png)](creating-the-membership-schema-in-sql-server-vb/_static/image13.png)
+[![SecurityTutorials 出現在 [資料庫] 資料夾中](creating-the-membership-schema-in-sql-server-vb/_static/image14.png)](creating-the-membership-schema-in-sql-server-vb/_static/image13.png)
 
-**圖 5**:`SecurityTutorials.mdf`資料庫會出現在 [資料庫] 資料夾中 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image15.png))
+**圖 5**： `SecurityTutorials.mdf` 資料庫會出現在 [資料庫] 資料夾中（[按一下以查看完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image15.png)）
 
-如 [圖 5] 所示，`SecurityTutorials.mdf`資料庫有而 abstruse 的名稱。 讓我們變更它，以更令人印象深刻 （和輸入的工作變得更容易） 名稱。 以滑鼠右鍵按一下資料庫，從操作功能表中，選擇 重新命名並將它重新命名`SecurityTutorialsDatabase`。 這不會變更檔案名稱，只是名稱的資料庫使用的識別到 SQL Server。
+如 [圖 5] 所示，`SecurityTutorials.mdf` 資料庫有一個 abstruse 名稱。 讓我們將它變更為較易記（且更容易輸入）名稱。 以滑鼠右鍵按一下資料庫，從內容功能表中選擇 [重新命名]，然後將它重新命名 `SecurityTutorialsDatabase`。 這不會變更檔案名，只有資料庫用來識別其本身以 SQL Server 的名稱。
 
-[![將資料庫重新命名 SecurityTutorialsDatabase](creating-the-membership-schema-in-sql-server-vb/_static/image17.png)](creating-the-membership-schema-in-sql-server-vb/_static/image16.png)
+[![將資料庫重新命名為 SecurityTutorialsDatabase](creating-the-membership-schema-in-sql-server-vb/_static/image17.png)](creating-the-membership-schema-in-sql-server-vb/_static/image16.png)
 
-**圖 6**:重新命名資料庫， `SecurityTutorialsDatabase`([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image18.png))
+**圖 6**：將資料庫重新命名為 `SecurityTutorialsDatabase`（[按一下以查看完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image18.png)）
 
-此時我們知道的伺服器和資料庫名稱`SecurityTutorials.mdf`資料庫檔案：`localhost\InstanceName`和`SecurityTutorialsDatabase`分別。 我們現在已準備好安裝應用程式服務，透過`aspnet_regsql.exe`工具。
+此時，我們知道 `SecurityTutorials.mdf` 資料庫檔案的伺服器和資料庫名稱：分別是 `localhost\InstanceName` 和 `SecurityTutorialsDatabase`。 我們現在已準備好透過 `aspnet_regsql.exe` 工具安裝應用程式服務。
 
 ### <a name="installing-the-application-services"></a>安裝應用程式服務
 
-若要啟動`aspnet_regsql.exe`工具，請移至 [開始] 功能表，然後選擇 [執行]。 輸入`%WINDIR%\Microsoft.Net\Framework\v2.0.50727\aspnet_regsql.exe`到文字方塊中按一下 [確定]。 或者，您可以使用 Windows 檔案總管，以向下鑽研至適當的資料夾，然後按兩下`aspnet_regsql.exe`檔案。 兩種方法將 net 相同的結果。
+若要啟動 `aspnet_regsql.exe` 工具，請移至 [開始] 功能表，然後選擇 [執行]。 在文字方塊中輸入 `%WINDIR%\Microsoft.Net\Framework\v2.0.50727\aspnet_regsql.exe`，然後按一下 [確定]。 或者，您可以使用 Windows Explorer 向下切入至適當的資料夾，然後按兩下 `aspnet_regsql.exe` 檔案。 任一種方法都會得到相同的結果。
 
-執行`aspnet_regsql.exe`不含任何命令列引數的工具會啟動 ASP.NET SQL Server 安裝精靈圖形化使用者介面。 精靈可讓您更輕鬆地新增或移除指定的資料庫上的 ASP.NET 應用程式服務。 精靈中，[圖 7] 所示的第一個畫面說明這個工具的用途。
+執行 `aspnet_regsql.exe` 工具而不搭配任何命令列引數，會啟動 ASP.NET SQL Server Setup Wizard 圖形化使用者介面。 此嚮導可讓您輕鬆地在指定的資料庫上新增或移除 ASP.NET 應用程式服務。 Wizard 的第一個畫面（如 [圖 7] 所示）描述工具的用途。
 
-[![使用 ASP.NET SQL Server 安裝精靈可使新增的成員資格結構描述](creating-the-membership-schema-in-sql-server-vb/_static/image20.png)](creating-the-membership-schema-in-sql-server-vb/_static/image19.png)
+[![使用 [ASP.NET SQL Server 安裝精靈] 來新增成員資格架構](creating-the-membership-schema-in-sql-server-vb/_static/image20.png)](creating-the-membership-schema-in-sql-server-vb/_static/image19.png)
 
-**圖 7**:使用 ASP.NET SQL Server 安裝精靈可將成員資格結構描述 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image21.png))
+**圖 7**：使用 ASP.NET SQL Server 安裝程式嚮導新增成員資格架構（[按一下以觀看完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image21.png)）
 
-在精靈中的第二個步驟會詢問我們是否我們要新增應用程式服務，或將它們移除。 因為我們想要新增資料表、 檢視和預存程序所需的`SqlMembershipProvider`，選擇 [設定 SQL Server 的應用程式服務] 選項。 稍後，如果您想要從您的資料庫中移除此結構描述，重新執行此精靈中，但改為選擇從現有的資料庫選項的 移除應用程式的服務資訊。
+Wizard 中的第二個步驟會詢問我們是否要新增應用程式服務或將其移除。 因為我們想要加入 `SqlMembershipProvider`所需的資料表、視圖和預存程式，請選擇 [設定應用程式服務的 SQL Server] 選項。 之後，如果您想要從資料庫中移除此架構，請重新執行此嚮導，但改為選擇 [從現有的資料庫移除應用程式服務資訊] 選項。
 
-[![選擇 [設定 SQL Server 的應用程式服務] 選項](creating-the-membership-schema-in-sql-server-vb/_static/image23.png)](creating-the-membership-schema-in-sql-server-vb/_static/image22.png)
+[![選擇 [設定應用程式服務的 SQL Server] 選項](creating-the-membership-schema-in-sql-server-vb/_static/image23.png)](creating-the-membership-schema-in-sql-server-vb/_static/image22.png)
 
-**圖 8**:為應用程式服務] 選項中選擇 [設定 SQL Server ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image24.png))
+**圖 8**：選擇 [設定應用程式服務的 SQL Server] 選項（[按一下以查看完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image24.png)）
 
-第三個步驟會提示輸入的資料庫資訊： 伺服器名稱、 驗證資訊及資料庫名稱。 如果您遵循本教學課程，並已新增`SecurityTutorials.mdf`資料庫`App_Data`，附加至`localhost\InstanceName`，以及它重新命名為`SecurityTutorialsDatabase`，然後使用下列值：
+第三個步驟會提示您輸入資料庫資訊：伺服器名稱、驗證資訊，以及資料庫名稱。 如果您已遵循本教學課程，並已將 `SecurityTutorials.mdf` 資料庫新增至 `App_Data`，請將其附加至 `localhost\InstanceName`，並將其重新命名為 `SecurityTutorialsDatabase`，然後使用下列值：
 
 - 伺服器： `localhost\InstanceName`
 - Windows 驗證
@@ -142,190 +142,190 @@ ASP.NET 應用程式的資料通常儲存在資料庫中的資料表數目。 �
 
 [![輸入資料庫資訊](creating-the-membership-schema-in-sql-server-vb/_static/image26.png)](creating-the-membership-schema-in-sql-server-vb/_static/image25.png)
 
-**圖 9**:輸入資料庫資訊 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image27.png))
+**圖 9**：輸入資料庫資訊（[按一下以查看完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image27.png)）
 
-輸入資料庫資訊後，按一下 [下一步]。 最後一個步驟摘要說明所要採取的步驟。 若要安裝應用程式服務，以完成以完成精靈，請按下一步。
-
-> [!NOTE]
-> 如果您附加資料庫，並重新命名資料庫檔案使用 Management Studio，請務必以卸離資料庫，然後關閉再重新開啟 Visual Studio 的 Management Studio。 若要卸離`SecurityTutorialsDatabase`資料庫、 以滑鼠右鍵按一下資料庫名稱並從 工作 功能表中，選擇 中斷連結。
-
-完成精靈的詳細資訊，請返回 Visual Studio 和瀏覽至 [資料庫總管] 中。 展開 [資料表] 資料夾。 您應該會看到一系列的資料表名稱開頭為前置詞`aspnet_`。 同樣地，可以檢視和預存程序資料夾下找到各種不同的檢視和預存程序。 這些資料庫物件組成的應用程式服務結構描述。 我們將檢查步驟 3 中的成員資格和角色特定資料庫物件。
-
-[![資料庫已新增各種不同的資料表、 檢視和預存程序](creating-the-membership-schema-in-sql-server-vb/_static/image29.png)](creating-the-membership-schema-in-sql-server-vb/_static/image28.png)
-
-**圖 10**:各種不同的資料表、 檢視和預存程序已新增至資料庫 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image30.png))
+輸入資料庫資訊之後，請按 [下一步]。 最後一個步驟會摘要說明將採取的步驟。 按 [下一步] 以安裝應用程式服務，然後按 [完成] 以完成嚮導。
 
 > [!NOTE]
-> `aspnet_regsql.exe`工具的圖形化使用者介面安裝整個應用程式服務結構描述。 執行時，但`aspnet_regsql.exe`從命令列中您可以指定哪些特定的應用程式服務來安裝 （或移除） 的元件。 因此，如果您想要將只是資料表、 檢視、 預存程序所需`SqlMembershipProvider`並`SqlRoleProvider`提供者，執行`aspnet_regsql.exe`從命令列。 或者，您可以手動執行適當的 T-SQL 子集建立所使用的指令碼`aspnet_regsql.exe`。 這些指令碼檔案位於`WINDIR%\Microsoft.Net\Framework\v2.0.50727\`資料夾名稱可能類似`InstallCommon.sql`， `InstallMembership.sql`， `InstallRoles.sql`， `InstallProfile.sql`， `InstallSqlState.sql`，依此類推。
+> 如果您使用 Management Studio 附加資料庫，並重新命名資料庫檔案，請務必先卸離資料庫並關閉 Management Studio，然後再重新開啟 Visual Studio。 若要卸離 `SecurityTutorialsDatabase` 資料庫，請在資料庫名稱上按一下滑鼠右鍵，然後從 [工作] 功能表中選擇 [卸離]。
 
-此時，我們已經建立所需的資料庫物件`SqlMembershipProvider`。 不過，我們還是需要以指示應該使用的成員資格架構`SqlMembershipProvider`(versus、 說出，則`ActiveDirectoryMembershipProvider`)，`SqlMembershipProvider`應該使用`SecurityTutorials`資料庫。 我們將探討如何指定要使用哪些提供者，以及如何自訂在步驟 4 選取的提供者設定。 但首先，讓我們來看更深入的探討，在剛剛建立的資料庫物件。
+完成嚮導後，請返回 Visual Studio 並流覽至資料庫總管。 展開 [資料表] 資料夾。 您應該會看到一系列的資料表，其名稱開頭為前置詞 `aspnet_`。 同樣地，您可以在 [Views] 和 [預存程式] 資料夾底下找到各種不同的視圖和預存程式。 這些資料庫物件會組成應用程式服務架構。 我們將在步驟3中檢查成員資格和角色特定的資料庫物件。
 
-## <a name="step-3-a-look-at-the-schemas-core-tables"></a>步驟 3：了解結構描述的核心資料表
+[![已將各種資料表、視圖和預存程式新增至資料庫](creating-the-membership-schema-in-sql-server-vb/_static/image29.png)](creating-the-membership-schema-in-sql-server-vb/_static/image28.png)
 
-當使用 ASP.NET 應用程式中的成員資格與角色架構，提供者所封裝的實作詳細資料。 在未來我們會透過.NET Framework 的這些架構與互動的教學課程`Membership`和`Roles`類別。 使用這些高層級的 Api 時我們不需要擔心低階的詳細資訊，例如哪些查詢會執行，或修改資料表如何自行`SqlMembershipProvider`和`SqlRoleProvider`。
+**圖 10**：已將各種資料表、視圖和預存程式新增至資料庫（[按一下以查看完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image30.png)）
 
-有鑑於此，我們可以自信滿滿地使用成員資格與角色架構，而不需要瀏覽步驟 2 中建立的資料庫結構描述。 不過，建立要儲存應用程式資料的資料表時我們可能需要建立關聯到使用者或角色的實體。 最好先熟悉`SqlMembershipProvider`和`SqlRoleProvider`結構描述時建立外部索引鍵之間的應用程式資料的資料表和步驟 2 中建立這些資料表的條件約束。 此外，在某些罕見的情況下我們可能需要與使用者互動，並將直接在資料庫層級的角色 (而不是透過`Membership`或`Roles`類別)。
+> [!NOTE]
+> `aspnet_regsql.exe` 工具的圖形化使用者介面會安裝整個應用程式服務架構。 但從命令列執行 `aspnet_regsql.exe` 時，您可以指定要安裝的特定應用程式服務元件（或移除）。 因此，如果您只想要加入 `SqlMembershipProvider` 和 `SqlRoleProvider` 提供者所需的資料表、視圖和預存程式，請從命令列執行 `aspnet_regsql.exe`。 或者，您也可以手動執行 `aspnet_regsql.exe`所使用的適當 T-sql 建立腳本子集。 這些腳本位於 [`WINDIR%\Microsoft.Net\Framework\v2.0.50727\`] 資料夾中，其名稱如 `InstallCommon.sql`、`InstallMembership.sql`、`InstallRoles.sql`、`InstallProfile.sql`、`InstallSqlState.sql`等等。
 
-### <a name="partitioning-the-user-store-into-applications"></a>分割應用程式的使用者存放區
+此時，我們已建立 `SqlMembershipProvider`所需的資料庫物件。 不過，我們仍然需要指示成員資格架構應該使用 `SqlMembershipProvider` （而不是 `ActiveDirectoryMembershipProvider`），而且 `SqlMembershipProvider` 應該使用 `SecurityTutorials` 資料庫。 我們將探討如何指定要使用的提供者，以及如何在步驟4中自訂所選提供者的設定。 但是首先，讓我們進一步探討剛建立的資料庫物件。
 
-成員資格與角色架構被設計，可在許多不同的應用程式之間共用單一的使用者和角色存放區。 使用成員資格或角色架構的 ASP.NET 應用程式必須指定要使用哪些應用程式磁碟分割。 簡單地說，多個 web 應用程式可以使用相同的使用者和角色存放區。 圖 11 顯示分割成三個應用程式的使用者和角色存放區：HRSite、 CustomerSite 和 SalesSite。 下列三個 web 應用程式分別有自己的唯一使用者和角色，但它們都在相同的資料庫資料表中，實際儲存其使用者帳戶和角色資訊。
+## <a name="step-3-a-look-at-the-schemas-core-tables"></a>步驟3：查看架構的核心資料表
 
-[![使用者帳戶可能會分割到多個應用程式](creating-the-membership-schema-in-sql-server-vb/_static/image32.png)](creating-the-membership-schema-in-sql-server-vb/_static/image31.png)
+在 ASP.NET 應用程式中使用成員資格和角色架構時，會由提供者封裝執行詳細資料。 在未來的教學課程中，我們將透過 .NET Framework 的 `Membership` 和 `Roles` 類別，與這些架構進行介面互動。 使用這些高階 Api 時，我們不需要擔心自己的低層級詳細資料，像是執行哪些查詢，或是 `SqlMembershipProvider` 和 `SqlRoleProvider`修改了哪些資料表。
 
-**圖 11**:使用者帳戶可能是分割跨多個應用程式 ([按一下以檢視完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image33.png))
+為此，我們可以放心地使用成員資格和角色架構，而不需要探索在步驟2中建立的資料庫架構。 不過，建立資料表以儲存應用程式資料時，我們可能需要建立與使用者或角色相關的實體。 在應用程式資料表與步驟2中所建立的資料表之間建立外鍵條件約束時，有助於熟悉 `SqlMembershipProvider` 和 `SqlRoleProvider` 架構。 此外，在某些罕見的情況下，我們可能需要直接在資料庫層級與使用者和角色存放區進行互動（而不是透過 `Membership` 或 `Roles` 類別）。
 
-`aspnet_Applications`資料表是如何定義這些磁碟分割。 使用資料庫來儲存使用者帳戶資訊的每個應用程式被以這個資料表中的資料列。 `aspnet_Applications`資料表有四個資料行： `ApplicationId`， `ApplicationName`， `LoweredApplicationName`，和`Description`。`ApplicationId` 屬於類型[ `uniqueidentifier` ](https://msdn.microsoft.com/library/ms187942.aspx)和資料表的主索引鍵;`ApplicationName`提供唯一的人類看得易記名稱，每個應用程式。
+### <a name="partitioning-the-user-store-into-applications"></a>將使用者存放區分割成應用程式
 
-其他成員資格和角色相關的資料表連結回到`ApplicationId`欄位中`aspnet_Applications`。 例如，`aspnet_Users`資料表，其中包含每個使用者帳戶的記錄，具有`ApplicationId`外部索引鍵欄位，如 ditto`aspnet_Roles`資料表。 `ApplicationId`這些資料表中的欄位指定的應用程式磁碟分割的使用者帳戶，或所屬的角色。
+成員資格和角色架構的設計，讓單一使用者和角色存放區可以在許多不同的應用程式之間共用。 使用成員資格或角色架構的 ASP.NET 應用程式必須指定要使用的應用程式分割。 簡單地說，多個 web 應用程式可以使用相同的使用者和角色存放區。 [圖 11] 說明分割成三個應用程式的使用者和角色存放區： HRSite、CustomerSite 和 SalesSite。 這三個 web 應用程式都有自己獨特的使用者和角色，但它們都是在相同的資料庫資料表中實際儲存其使用者帳戶和角色資訊。
+
+[![的使用者帳戶可能會分割到多個應用程式](creating-the-membership-schema-in-sql-server-vb/_static/image32.png)](creating-the-membership-schema-in-sql-server-vb/_static/image31.png)
+
+**圖 11**：使用者帳戶可能會分割到多個應用程式（[按一下以查看完整大小的影像](creating-the-membership-schema-in-sql-server-vb/_static/image33.png)）
+
+`aspnet_Applications` 資料表會定義這些資料分割。 每個使用資料庫來儲存使用者帳戶資訊的應用程式，都會以此資料表中的資料列來表示。 `aspnet_Applications` 資料表有四個數據行： `ApplicationId`、`ApplicationName`、`LoweredApplicationName`和 `Description`。`ApplicationId` 的類型是[`uniqueidentifier`](https://msdn.microsoft.com/library/ms187942.aspx) ，而是資料表的主鍵;`ApplicationName` 為每個應用程式提供唯一的易記名稱。
+
+其他成員資格和角色相關的資料表會連結回到 `aspnet_Applications`中的 [`ApplicationId`] 欄位。 例如，`aspnet_Users` 資料表（其中包含每個使用者帳戶的記錄）具有 `ApplicationId` 外鍵欄位;`aspnet_Roles` 資料表的 ditto。 這些資料表中的 [`ApplicationId`] 欄位會指定使用者帳戶或角色所屬的應用程式分割。
 
 ### <a name="storing-user-account-information"></a>儲存使用者帳戶資訊
 
-使用者帳戶資訊儲存在兩個資料表：`aspnet_Users`和`aspnet_Membership`。 `aspnet_Users`資料表包含保存重要的使用者帳戶資訊的欄位。 三個最相關的資料行如下：
+使用者帳戶資訊會存放在兩個數據表中： `aspnet_Users` 和 `aspnet_Membership`。 `aspnet_Users` 資料表包含保留重要使用者帳戶資訊的欄位。 三個最相關的資料行為：
 
 - `UserId`
 - `UserName`
 - `ApplicationId`
 
-`UserId` 是主索引鍵 (和型別的`uniqueidentifier`)。 `UserName` 屬於類型`nvarchar(256)`及密碼，讓使用者的認證。 (使用者的密碼會儲存在`aspnet_Membership`資料表。)`ApplicationId`連結中的特定應用程式的使用者帳戶`aspnet_Applications`。 沒有複合[`UNIQUE`條件約束](https://msdn.microsoft.com/library/ms191166.aspx)上`UserName`和`ApplicationId`資料行。 這可確保在指定的應用程式中是唯一的每個使用者名稱，但它可讓相同`UserName`用於不同的應用程式。
+`UserId` 是主要索引鍵（和類型 `uniqueidentifier`）。 `UserName` 的類型 `nvarchar(256)`，而且密碼會構成使用者的認證。 （使用者的密碼會儲存在 `aspnet_Membership` 資料表中）。`ApplicationId` 會將使用者帳戶連結至 `aspnet_Applications`中的特定應用程式。 `UserName` 和 `ApplicationId` 資料行上有複合[`UNIQUE` 條件約束](https://msdn.microsoft.com/library/ms191166.aspx)。 這可確保在指定的應用程式中，每個使用者名稱都是唯一的，但允許在不同的應用程式中使用相同的 `UserName`。
 
-`aspnet_Membership`表包含額外的使用者帳戶資訊，例如使用者的密碼、 電子郵件地址、 上次登入日期和時間，以及其他等等。 在記錄之間沒有一對一的對應關係`aspnet_Users`和`aspnet_Membership`資料表。 此關聯性藉由確保`UserId`欄位中`aspnet_Membership`，做為資料表的主索引鍵。 像是`aspnet_Users`資料表中，`aspnet_Membership`包含`ApplicationId`繫結到特定的應用程式磁碟分割的這項資訊的欄位。
+`aspnet_Membership` 表包含額外的使用者帳戶資訊，例如使用者的密碼、電子郵件地址、上次登入日期和時間等等。 `aspnet_Users` 和 `aspnet_Membership` 資料表中的記錄之間有一對一的對應關係。 這項關聯性是由 `aspnet_Membership`中的 [`UserId`] 欄位所確保，這會當做資料表的主要索引鍵。 就像 `aspnet_Users` 資料表一樣，`aspnet_Membership` 包含將此資訊系結至特定應用程式分割的 `ApplicationId` 欄位。
 
 ### <a name="securing-passwords"></a>保護密碼
 
-密碼資訊會儲存在`aspnet_Membership`資料表。 `SqlMembershipProvider`允許使用下列三項技術的其中一個資料庫中儲存的密碼：
+密碼資訊會儲存在 `aspnet_Membership` 資料表中。 此 `SqlMembershipProvider` 可讓您使用下列三種技術之一，將密碼儲存在資料庫中：
 
-- **清除**-密碼儲存在資料庫中以純文字。 我強烈建議使用此選項。 如果資料庫遭到入侵-由駭客，他發現後門或某位的員工的人員存取資料庫的每個單一使用者的認證是用來執行。
-- **雜湊**-密碼已雜湊，使用單向雜湊演算法和隨機產生的 salt 值。 此雜湊的值 （以及 salt) 會儲存在資料庫中。
-- **加密**-在資料庫中儲存密碼的加密的版本。
+- **Clear** -密碼會以純文字格式儲存在資料庫中。 我強烈不鼓勵使用此選項。 如果資料庫遭到入侵，則是由尋找後端的駭客或具有資料庫存取權的心存不滿員工所提供-每一位使用者的認證都是在此取得。
+- **哈**希-密碼會使用單向雜湊演算法和隨機產生的 salt 值進行雜湊處理。 此雜湊值（連同 salt）會儲存在資料庫中。
+- 已**加密**-密碼的加密版本會儲存在資料庫中。
 
-取決於所使用的密碼儲存體技巧`SqlMembershipProvider`設定中指定`Web.config`。 我們將探討自訂`SqlMembershipProvider`步驟 4 中的設定。 預設行為是儲存密碼的雜湊。
+使用的密碼儲存技術取決於 `Web.config`中指定的 `SqlMembershipProvider` 設定。 我們將在步驟4中探討自訂 `SqlMembershipProvider` 設定。 預設行為是儲存密碼的雜湊。
 
-負責儲存密碼的資料行都`Password`， `PasswordFormat`，和`PasswordSalt`。 `PasswordFormat` 為的型別欄位`int`其值會指出用來儲存密碼的技術：清除; 為 0Hashed; 1加密為 2。 `PasswordSalt` 會指派隨機產生的字串，不論使用的密碼儲存體技術值`PasswordSalt`僅用來計算密碼的雜湊。 最後，`Password`資料行包含實際的密碼資料，可能是純文字密碼，密碼或加密的密碼的雜湊。
+負責儲存密碼的資料行是 `Password`、`PasswordFormat`和 `PasswordSalt`。 `PasswordFormat` 是 `int` 類型的欄位，其值表示用來儲存密碼的技術：0表示清除;1表示雜湊;2表示已加密。 無論所使用的密碼儲存技術為何，都會將隨機產生的字串指派給 `PasswordSalt`。只有在計算密碼的雜湊時，才會使用 `PasswordSalt` 的值。 最後，[`Password`] 欄包含實際的密碼資料，也就是純文字密碼、密碼雜湊或加密的密碼。
 
-表 1 說明這些三個資料行可能如下所示的各種儲存體技術時儲存 MySecret 的密碼 ！ 。
+[表 1] 說明當儲存密碼 MySecret 時，這三個數據行的外觀可能會類似于各種儲存技術！ 。
 
-| **儲存體技術&lt;\_o3a\_p /&gt;** | **密碼&lt;\_o3a\_p /&gt;** | **PasswordFormat&lt;\_o3a\_p /&gt;** | **PasswordSalt&lt;\_o3a\_p /&gt;** |
+| **儲存技術&lt;\_o3a\_p/&gt;** | **密碼&lt;\_o3a\_p/&gt;** | **PasswordFormat&lt;\_o3a\_p/&gt;** | **PasswordSalt&lt;\_o3a\_p/&gt;** |
 | --- | --- | --- | --- |
-| 清除 | MySecret! | 0 | tTnkPlesqissc2y2SMEygA== |
-| 雜湊 | 2oXm6sZHWbTHFgjgkGQsc2Ec9ZM= | 1 | wFgjUfhdUFOCKQiI61vtiQ== |
-| 加密 | 62RZgDvhxykkqsMchZ0Yly7HS6onhpaoCYaRxV8g0F4CW56OXUU3e7Inza9j9BKp | 2 | LSRzhGS/aa/oqAXGLHJNBw== |
+| 清除 | MySecret! | 0 | tTnkPlesqissc2y2SMEygA = = |
+| 進行 | 2oXm6sZHWbTHFgjgkGQsc2Ec9ZM = | 1 | wFgjUfhdUFOCKQiI61vtiQ = = |
+| 加密 | 62RZgDvhxykkqsMchZ0Yly7HS6onhpaoCYaRxV8g0F4CW56OXUU3e7Inza9j9BKp | 2 | LSRzhGS/aa/oqAXGLHJNBw = = |
 
-**表 1**:當儲存密碼 MySecret 的密碼相關欄位的範例值 ！
+**表 1**：儲存密碼時，密碼相關欄位的範例值 MySecret！
 
 > [!NOTE]
-> 特定的加密或使用雜湊演算法`SqlMembershipProvider`中的設定由`<machineKey>`項目。 我們所討論的步驟 3 中的這個組態項目<a id="Tutorial3"> </a> [*表單驗證組態和進階主題*](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)教學課程。
+> `SqlMembershipProvider` 所使用的特定加密或雜湊演算法是由 `<machineKey>` 元素中的設定所決定。 我們在<a id="Tutorial3"> </a>[*表單驗證設定和 Advanced 主題*](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)教學課程的步驟3中討論過此設定元素。
 
 ### <a name="storing-roles-and-role-associations"></a>儲存角色和角色關聯
 
-角色架構可讓開發人員定義一組角色，並指定哪些使用者屬於哪些角色。 透過兩個資料表的資料庫中擷取這項資訊：`aspnet_Roles`和`aspnet_UsersInRoles`。 在每一筆記錄`aspnet_Roles`資料表代表特定的應用程式的角色。 就像是`aspnet_Users`資料表，`aspnet_Roles`資料表有相關討論的三個資料行：
+Roles 架構可讓開發人員定義一組角色，並指定哪些使用者屬於哪些角色。 這項資訊是在資料庫中透過兩個數據表來捕捉： `aspnet_Roles` 和 `aspnet_UsersInRoles`。 `aspnet_Roles` 資料表中的每筆記錄都代表特定應用程式的角色。 與 `aspnet_Users` 資料表非常類似，`aspnet_Roles` 資料表有三個與我們討論相關的資料行：
 
 - `RoleId`
 - `RoleName`
 - `ApplicationId`
 
-`RoleId` 是主索引鍵 (和型別的`uniqueidentifier`)。 `RoleName` 是 `nvarchar(256)` 類型。 並`ApplicationId`連結中的特定應用程式的使用者帳戶`aspnet_Applications`。 沒有複合`UNIQUE`條件約束`RoleName`和`ApplicationId`資料行，確保在指定的應用程式中的每個角色名稱唯一。
+`RoleId` 是主要索引鍵（和類型 `uniqueidentifier`）。 `RoleName` 是 `nvarchar(256)` 類型。 和 `ApplicationId` 會將使用者帳戶連結至 `aspnet_Applications`中的特定應用程式。 `RoleName` 和 `ApplicationId` 資料行上有一個複合 `UNIQUE` 條件約束，確保在給定的應用程式中，每個角色名稱都是唯一的。
 
-`aspnet_UsersInRoles`資料表做為使用者與角色之間的對應。 只有兩個資料行-`UserId`和`RoleId`-以及它們共同組成複合主索引鍵。
+`aspnet_UsersInRoles` 資料表可作為使用者與角色之間的對應。 只有兩個數據行-`UserId` 和 `RoleId`，以及兩者組成複合主鍵。
 
-## <a name="step-4-specifying-the-provider-and-customizing-its-settings"></a>步驟 4：指定提供者，以及自訂其設定
+## <a name="step-4-specifying-the-provider-and-customizing-its-settings"></a>步驟4：指定提供者並自訂其設定
 
-所有的架構，支援提供者模型-例如成員資格與角色架構-缺少本身的實作詳細資料，並改為來委派該項責任的提供者類別。 如果成員資格架構中，是`Membership`類別定義的 API 管理使用者帳戶，但它不會直接與任何使用者存放區互動。 相反地，`Membership`類別的方法遞交到設定的提供者-要求，我們將使用`SqlMembershipProvider`。 當我們叫用中的方法之一`Membership`類別，要怎麼成員資格架構知道委派呼叫`SqlMembershipProvider`？
+所有支援提供者模型的架構（例如成員資格和角色架構）-缺乏執行詳細資料本身，而是改為將該責任委派給提供者類別。 在成員資格架構的情況下，`Membership` 類別會定義用來管理使用者帳戶的 API，但不會直接與任何使用者存放區互動。 相反地，`Membership` 類別的方法會將要求交給已設定的提供者-我們將使用 `SqlMembershipProvider`。 當我們叫用 `Membership` 類別中的其中一個方法時，成員資格架構如何知道如何將呼叫委派給 `SqlMembershipProvider`？
 
-`Membership`類別具有[`Providers`屬性](https://msdn.microsoft.com/library/system.web.security.membership.providers.aspx)成員資格架構所包含的所有已註冊的提供者類別可供使用的參考。 每個已註冊的提供者有相關聯的名稱和型別。 名稱會提供人類易的方式來參考中的特定提供者`Providers`集合，而類型會識別提供者類別。 此外，每個已註冊的提供者可能會包含組態設定。 成員資格架構的組態設定包括`PasswordFormat`和`requiresUniqueEmail`，還有其他更多。 所使用的組態設定的完整清單，請參閱 表 2 `SqlMembershipProvider`。
+`Membership` 類別具有[`Providers` 屬性](https://msdn.microsoft.com/library/system.web.security.membership.providers.aspx)，其中包含可供成員資格架構使用之所有已註冊提供者類別的參考。 每個已註冊的提供者都有相關聯的名稱和類型。 此名稱提供了方便的方式來參考 `Providers` 集合中的特定提供者，而類型則會識別提供者類別。 此外，每個已註冊的提供者都可能包含設定。 成員資格架構的設定值包括 `PasswordFormat` 和 `requiresUniqueEmail`，還有其他許多專案。 如需 `SqlMembershipProvider`所使用之設定設定的完整清單，請參閱表2。
 
-`Providers`透過 web 應用程式的組態設定指定屬性的內容。 根據預設，所有的 web 應用程式具有名為提供者`AspNetSqlMembershipProvider`型別的`SqlMembershipProvider`。 此預設成員資格提供者會在中註冊`machine.config`(位於`%WINDIR%\Microsoft.Net\Framework\v2.0.50727\CONFIG`):
+`Providers` 屬性的內容是透過 web 應用程式的設定來指定。 根據預設，所有 web 應用程式都有一個名為 `AspNetSqlMembershipProvider` 類型為 `SqlMembershipProvider`的提供者。 這個預設成員資格提供者會在 `machine.config` 中註冊（位於 `%WINDIR%\Microsoft.Net\Framework\v2.0.50727\CONFIG`）：
 
 [!code-xml[Main](creating-the-membership-schema-in-sql-server-vb/samples/sample1.xml)]
 
-為上面所示，標記[`<membership>`項目](https://msdn.microsoft.com/library/1b9hw62f.aspx)定義成員資格架構時的組態設定[`<providers>`子項目](https://msdn.microsoft.com/library/6d4936ht.aspx)指定已註冊提供者。 提供者可能會加入或移除使用[ `<add>` ](https://msdn.microsoft.com/library/whae3t94.aspx)或是[ `<remove>` ](https://msdn.microsoft.com/library/aykw9a6d.aspx)項目; 請改用[ `<clear>` ](https://msdn.microsoft.com/library/t062y6yc.aspx)移除所有目前的項目已註冊的提供者。 為上面所示，標記`machine.config`新增名為提供者`AspNetSqlMembershipProvider`型別的`SqlMembershipProvider`。
+如上面的標記所示， [`<membership>` 元素](https://msdn.microsoft.com/library/1b9hw62f.aspx)會定義成員資格架構的設定，而[`<providers>` 子項目](https://msdn.microsoft.com/library/6d4936ht.aspx)則指定已註冊的提供者。 您可以使用[`<add>`](https://msdn.microsoft.com/library/whae3t94.aspx)或[`<remove>`](https://msdn.microsoft.com/library/aykw9a6d.aspx)元素來新增或移除提供者;請使用[`<clear>`](https://msdn.microsoft.com/library/t062y6yc.aspx)元素來移除所有目前註冊的提供者。 如上面的標記所示，`machine.config` 會將名為 `AspNetSqlMembershipProvider` 的提供者加入 `SqlMembershipProvider`類型。
 
-除了`name`並`type`屬性，`<add>`元素包含定義設定的各種設定的值的屬性。 表格 2 列出可用`SqlMembershipProvider`-特定組態設定，以及每個的描述。
+除了 `name` 和 `type` 屬性以外，`<add>` 元素還包含屬性，可定義各種設定的值。 [表 2] 列出可用的 `SqlMembershipProvider`特定的設定，以及每個設定的描述。
 
 > [!NOTE]
-> 在表 2 中記下任何預設值是指中定義的預設值`SqlMembershipProvider`類別。 請注意，並非所有的組態設定`AspNetSqlMembershipProvider`對應至的預設值`SqlMembershipProvider`類別。 例如，如果未指定成員資格提供者中`requiresUniqueEmail`設定預設值為 true。 不過，`AspNetSqlMembershipProvider`藉由明確指定的值，這個預設值會覆寫`false`。
+> [表 2] 中所述的任何預設值都會參考 `SqlMembershipProvider` 類別中定義的預設值。 請注意，`AspNetSqlMembershipProvider` 中的所有設定都不會對應到 `SqlMembershipProvider` 類別的預設值。 例如，如果未在成員資格提供者中指定，`requiresUniqueEmail` 設定會預設為 true。 不過，`AspNetSqlMembershipProvider` 會藉由明確指定 `false`的值來覆寫這個預設值。
 
-| **設定&lt;\_o3a\_p /&gt;** | **描述&lt;\_o3a\_p /&gt;** |
+| **設定&lt;\_o3a\_p/&gt;** | **描述&lt;\_o3a\_p/&gt;** |
 | --- | --- |
-| `ApplicationName` | 您應該記得，成員資格架構是用來分割到多個應用程式的單一使用者存放區。 這個設定表示成員資格提供者所使用的應用程式磁碟分割名稱。 如果此值未明確指定，會設定它，在執行階段，應用程式的虛擬根目錄路徑的值。 |
-| `commandTimeout` | 指定的 SQL 命令逾時值 （以秒為單位）。 預設值為 30。 |
-| `connectionStringName` | 中的連接字串名稱`<connectionStrings>`来用來連線至使用者存放區資料庫的項目。 這是必要的值。 |
-| `description` | 提供已註冊的提供者的人類易描述。 |
-| `enablePasswordRetrieval` | 指定使用者是否可以擷取其遺忘的密碼。 預設值為 `false`。 |
+| `ApplicationName` | 回想一下，成員架構可讓單一使用者存放區分割成多個應用程式。 此設定表示成員資格提供者所使用的應用程式分割區名稱。 如果未明確指定這個值，則會在執行時間將它設定為應用程式虛擬根路徑的值。 |
+| `commandTimeout` | 指定 SQL 命令逾時值（以秒為單位）。 預設值是 30。 |
+| `connectionStringName` | 要用來連接到使用者存放區資料庫之 `<connectionStrings>` 元素中的連接字串名稱。 這是必要值。 |
+| `description` | 提供已註冊提供者的易記描述。 |
+| `enablePasswordRetrieval` | 指定使用者是否可能取得其忘記密碼的密碼。 預設值是 `false`。 |
 | `enablePasswordReset` | 指出是否允許使用者重設其密碼。 預設值為 `true`。 |
-| `maxInvalidPasswordAttempts` | 可能針對指定的使用者會發生在指定的登入失敗嘗試的次數上限`passwordAttemptWindow`使用者遭到鎖定之前。預設值為 5。 |
-| `minRequiredNonalphanumericCharacters` | 必須出現在使用者的密碼的非英數字元數目下限。 此值必須介於 0 到 128;預設值為 1。 |
-| `minRequiredPasswordLength` | 密碼所需的字元數目下限。 此值必須介於 0 到 128;預設值為 7。 |
-| `name` | 已註冊的提供者的名稱。 這是必要的值。 |
-| `passwordAttemptWindow` | 期間的分鐘數會將追蹤嘗試登入失敗。 如果使用者提供了無效的登入認證`maxInvalidPasswordAttempts`在這個時間所指定視窗、 被鎖定。預設值為 10。 |
-| `PasswordFormat` | 密碼儲存格式： `Clear`， `Hashed`，或`Encrypted`。 預設為 `Hashed`。 |
-| `passwordStrengthRegularExpression` | 如果提供，這個規則運算式用來評估強度的所選使用者的密碼時建立新的帳戶，或變更其密碼時。 預設值為空字串。 |
-| `requiresQuestionAndAnswer` | 指定使用者是否必須回答其安全性問題，在擷取或重設其密碼。 預設值為 `true`。 |
-| `requiresUniqueEmail` | 指出是否在指定的應用程式磁碟分割中的所有使用者帳戶必須都具有唯一的電子郵件地址。 預設值為 `true`。 |
-| `type` | 指定提供者的類型。 這是必要的值。 |
+| `maxInvalidPasswordAttempts` | 在使用者遭到鎖定之前，指定的 `passwordAttemptWindow` 可能發生的失敗登入嘗試次數上限。預設值為5。 |
+| `minRequiredNonalphanumericCharacters` | 必須出現在使用者密碼中的非英數位元數目下限。 這個值必須介於0到128之間;預設值為1。 |
+| `minRequiredPasswordLength` | 密碼所需的字元數下限。 這個值必須介於0到128之間;預設值為7。 |
+| `name` | 已註冊之提供者的名稱。 這是必要值。 |
+| `passwordAttemptWindow` | 追蹤登入嘗試失敗的分鐘數。 如果使用者在此指定的視窗內提供不正確登入認證 `maxInvalidPasswordAttempts` 次，就會被鎖定。預設值為10。 |
+| `PasswordFormat` | 密碼儲存格式： `Clear`、`Hashed`或 `Encrypted`。 預設為 `Hashed`。 |
+| `passwordStrengthRegularExpression` | 如果有提供，則在建立新帳戶或變更其密碼時，會使用此正則運算式來評估使用者所選取密碼的強度。 預設值為空字串。 |
+| `requiresQuestionAndAnswer` | 指定使用者在抓取或重設密碼時是否必須回答他的安全性問題。 預設值是 `true`。 |
+| `requiresUniqueEmail` | 指出指定之應用程式分割區中的所有使用者帳戶是否都必須有唯一的電子郵件地址。 預設值是 `true`。 |
+| `type` | 指定提供者的類型。 這是必要值。 |
 
-**表 2**:成員資格和`SqlMembershipProvider`組態設定
+**表 2**：成員資格和 `SqlMembershipProvider` 設定
 
-除了`AspNetSqlMembershipProvider`，其他成員資格提供者可能會註冊應用程式的應用程式為基礎，加上類似的標記，以`Web.config`檔案。
+除了 `AspNetSqlMembershipProvider`以外，其他成員資格提供者也可以藉由將類似的標記新增至 `Web.config` 檔案，逐一註冊應用程式。
 
 > [!NOTE]
-> 角色架構的運作方式大致相同的方式： 沒有在預設已註冊的角色提供者`machine.config`和已註冊的提供者可自訂的應用程式的應用程式為基礎，在`Web.config`。 我們將在未來的教學課程中，檢視角色架構和其組態中的標記詳細資料。
+> 角色架構的運作方式大致相同： `machine.config` 中有預設的已註冊角色提供者，而且可以在 `Web.config`中以應用程式為基礎自訂已註冊的提供者。 在未來的教學課程中，我們將詳細探討角色架構和其設定標記。
 
 ### <a name="customizing-thesqlmembershipprovidersettings"></a>自訂`SqlMembershipProvider`設定
 
-預設值`SqlMembershipProvider`(`AspNetSqlMembershipProvider`) 具有其`connectionStringName`屬性設為`LocalSqlServer`。 像是`AspNetSqlMembershipProvider`提供者]、 [連接字串名稱`LocalSqlServer`中所定義`machine.config`。
+預設 `SqlMembershipProvider` （`AspNetSqlMembershipProvider`）將其 `connectionStringName` 屬性設定為 [`LocalSqlServer`]。 與 `AspNetSqlMembershipProvider` 提供者一樣，連接字串名稱 `LocalSqlServer` 是在 `machine.config`中定義。
 
 [!code-xml[Main](creating-the-membership-schema-in-sql-server-vb/samples/sample2.xml)]
 
-如您所見，此連接字串會定義資料庫位於 SQL 2005 Express Edition |DataDirectory|aspnetdb.mdf。 字串 |DataDirectory |會轉譯在執行階段，以指向`~/App_Data/`目錄中，因此資料庫路徑 |DataDirectory|aspnetdb.mdf 會轉譯成`~/App_Data` / `aspnet.mdf`。
+如您所見，此連接字串會定義位於的 SQL 2005 Express Edition 資料庫 |DataDirectory | aspnetdb.mdf。 字串 |DataDirectory |會在執行時間轉譯以指向 `~/App_Data/` 目錄，因此資料庫路徑 |DataDirectory | aspnetdb.mdf 會轉譯成 `~/App_Data`/`aspnet.mdf`。
 
-如果我們並未指定任何成員資格提供者資訊在我們的應用程式`Web.config`檔案中，應用程式會使用已註冊的預設成員資格提供者， `AspNetSqlMembershipProvider`。 如果`~/App_Data/aspnet.mdf`資料庫不存在時，ASP.NET 執行階段會自動加以建立並新增應用程式服務結構描述。 不過，我們不想要使用`aspnet.mdf`資料庫; 相反地，我們想要使用`SecurityTutorials.mdf`我們在步驟 2 中建立的資料庫。 在下列其中一種，可以完成這項修改：
+如果我們未在應用程式的 `Web.config` 檔中指定任何成員資格提供者資訊，應用程式會使用預設註冊的成員資格提供者，`AspNetSqlMembershipProvider`。 如果 `~/App_Data/aspnet.mdf` 資料庫不存在，ASP.NET 執行時間會自動建立它並加入應用程式服務架構。 不過，我們不想要使用 `aspnet.mdf` 資料庫;相反地，我們想要使用我們在步驟2中建立的 `SecurityTutorials.mdf` 資料庫。 這項修改可以透過下列兩種方式的其中一種來完成：
 
-- <strong>指定的值</strong><strong>`LocalSqlServer`</strong><strong>中的連接字串名稱</strong><strong>`Web.config`</strong><strong>。</strong> 藉由覆寫`LocalSqlServer`中的連接字串名稱值`Web.config`，我們可以使用已註冊的預設成員資格提供者 (`AspNetSqlMembershipProvider`)，並讓它正確使用`SecurityTutorials.mdf`資料庫。 這種方法是沒問題，如果您是內容所指定的組態設定`AspNetSqlMembershipProvider`。 如需有關這項技術的詳細資訊，請參閱 < [Scott Guthrie](https://weblogs.asp.net/scottgu/)的部落格文章[設定 ASP.NET 2.0 應用程式服務使用 SQL Server 2000 或 SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)。
-- <strong>加入新的已註冊提供者的型別</strong><strong>`SqlMembershipProvider`</strong><strong>並設定其</strong><strong>`connectionStringName`</strong><strong>指向設定</strong><strong>`SecurityTutorials.mdf`</strong><strong>資料庫。</strong> 這個方法會在您要自訂其他的組態內容，以及資料庫連接字串的情況下很有用。 在我自己的專案中我一律使用此方法因為其彈性和可讀性。
+- 在<strong>`Web.config`</strong>中<strong>指定</strong><strong>`LocalSqlServer`</strong><strong>連接字串名稱</strong>的值<strong>。</strong> 藉由覆寫 `Web.config`中的 `LocalSqlServer` 連接字串名稱值，我們可以使用預設註冊的成員資格提供者（`AspNetSqlMembershipProvider`），並讓它正確地使用 `SecurityTutorials.mdf` 資料庫。 如果您是具有 `AspNetSqlMembershipProvider`所指定之設定設定的內容，這個方法就沒問題。 如需這項技術的詳細資訊，請參閱[Scott Guthrie](https://weblogs.asp.net/scottgu/)的 blog 文章，[將 ASP.NET 2.0 應用程式服務設定為使用 SQL Server 2000 或 SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)。
+- <strong>新增`SqlMembershipProvider`類型的已註冊提供者</strong> <strong>，並將其</strong><strong>`connectionStringName`</strong><strong>設定設為指向</strong><strong>`SecurityTutorials.mdf`</strong><strong>資料庫。</strong> 當您想要自訂除了資料庫連接字串以外的其他設定屬性時，這個方法很有用。 在我自己的專案中，我一律會使用這種方法，因為它具有彈性和可讀性。
 
-我們可以加入新的已註冊提供者參考之前`SecurityTutorials.mdf`資料庫中，我們必須先將適當的連接字串值中加入`<connectionStrings>`一節中`Web.config`。 下列標記加入新的連接字串，指定`SecurityTutorialsConnectionString`參考 SQL Server 2005 Express Edition`SecurityTutorials.mdf`資料庫中`App_Data`資料夾。
+我們必須先在 `Web.config`的 [`<connectionStrings>`] 區段中新增適當的連接字串值，才可以加入參考 `SecurityTutorials.mdf` 資料庫的新註冊提供者。 下列標記會加入名為 `SecurityTutorialsConnectionString` 的新連接字串，參考 `App_Data` 資料夾中的 SQL Server 2005 Express Edition `SecurityTutorials.mdf` 資料庫。
 
 [!code-xml[Main](creating-the-membership-schema-in-sql-server-vb/samples/sample3.xml)]
 
 > [!NOTE]
-> 如果您使用替代的資料庫檔案，請視需要更新連接字串。 如需有關如何建構正確的連接字串的詳細資訊，請參閱[ConnectionStrings.com](http://www.connectionstrings.com/)。
+> 如果您使用的是替代資料庫檔案，請視需要更新連接字串。 如需有關形成正確連接字串的詳細資訊，請參閱[ConnectionStrings.com](http://www.connectionstrings.com/)。
 
-接下來，新增下列成員資格設定標記，以`Web.config`檔案。 此標記會註冊新的提供者，名為`SecurityTutorialsSqlMembershipProvider`。
+接下來，將下列成員資格設定標記新增至 `Web.config` 檔案。 此標記會註冊名為 `SecurityTutorialsSqlMembershipProvider`的新提供者。
 
 [!code-xml[Main](creating-the-membership-schema-in-sql-server-vb/samples/sample4.xml)]
 
-除了註冊`SecurityTutorialsSqlMembershipProvider`提供者，上述標記會定義`SecurityTutorialsSqlMembershipProvider`做為預設提供者 (透過`defaultProvider`屬性中`<membership>`項目)。 成員資格架構可以有多個已註冊的提供者的重新叫用。 由於`AspNetSqlMembershipProvider`登錄中的第一個提供者為`machine.config`，除非我們否則表示它做為預設的提供者。
+除了註冊 `SecurityTutorialsSqlMembershipProvider` 提供者之外，上述標記也會將 `SecurityTutorialsSqlMembershipProvider` 定義為預設提供者（透過 `<membership>` 元素中的 `defaultProvider` 屬性）。 回想一下，成員資格架構可以有多個已註冊的提供者。 由於 `AspNetSqlMembershipProvider` 會註冊為 `machine.config`中的第一個提供者，因此它會做為預設提供者，除非我們另有指示。
 
-目前，我們的應用程式有兩個已註冊的提供者：`AspNetSqlMembershipProvider`和`SecurityTutorialsSqlMembershipProvider`。 不過，在註冊之前`SecurityTutorialsSqlMembershipProvider`藉由新增提供者，我們可能已清除所有先前已註冊的提供者[`<clear />`項目](https://msdn.microsoft.com/library/t062y6yc.aspx)之前我們`<add>`項目。 這會清除`AspNetSqlMembershipProvider`從清單中的已註冊的提供者，也就是說，`SecurityTutorialsSqlMembershipProvider`會唯一註冊的成員資格提供者。 如果我們使用這種方法，則我們就不需要將標記`SecurityTutorialsSqlMembershipProvider`作為預設提供者，因為它會唯一註冊的成員資格提供者。 如需有關使用`<clear />`，請參閱 < [Using`<clear />`時新增的提供者](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx)。
+目前，我們的應用程式有兩個已註冊的提供者： `AspNetSqlMembershipProvider` 和 `SecurityTutorialsSqlMembershipProvider`。 不過，在註冊 `SecurityTutorialsSqlMembershipProvider` 提供者之前，我們可能已清除所有先前註冊的提供者，方法是在 `<add>` 元素之前新增[`<clear />` 元素](https://msdn.microsoft.com/library/t062y6yc.aspx)。 這會從已註冊的提供者清單中清除 `AspNetSqlMembershipProvider`，這表示 `SecurityTutorialsSqlMembershipProvider` 會是唯一註冊的成員資格提供者。 如果我們使用這種方法，則不需要將 `SecurityTutorialsSqlMembershipProvider` 標示為預設提供者，因為它會是唯一註冊的成員資格提供者。 如需使用 `<clear />`的詳細資訊，請參閱[在新增提供者時使用 `<clear />`](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx)。
 
-請注意，`SecurityTutorialsSqlMembershipProvider`的`connectionStringName`設定參考剛`SecurityTutorialsConnectionString`連接字串名稱，且其`applicationName`已設定為 SecurityTutorials 的值。 此外，`requiresUniqueEmail`設定已設為`true`。 所有其他組態選項都中的值相同`AspNetSqlMembershipProvider`。 請放心地進行任何組態修改，如果您想要。 比方說，您可以加強密碼強度，藉由要求兩個非英數字元，而不是一個，或藉由增加密碼長度，而不是七個八個字元。
+請注意，`SecurityTutorialsSqlMembershipProvider`的 `connectionStringName` 設定會參考剛新增的 `SecurityTutorialsConnectionString` 連接字串名稱，而且其 `applicationName` 設定已設定為 SecurityTutorials 的值。 此外，`requiresUniqueEmail` 設定已設定為 [`true`]。 所有其他設定選項都與 `AspNetSqlMembershipProvider`中的值相同。 如有需要，您可以隨意在此處進行任何設定修改。 例如，您可以藉由要求兩個非英數位元，而不是一個字元，或將密碼長度增加為八個字元，而不是七個字元，藉此加強密碼強度。
 
 > [!NOTE]
-> 您應該記得，成員資格架構是用來分割到多個應用程式的單一使用者存放區。 成員資格提供者的`applicationName`設定指出提供者在使用者存放區使用時所使用之應用程式。 明確設定的值很重要`applicationName`組態設定，因為如果`applicationName`未明確設定，將它指派給 web 應用程式的虛擬根路徑，在執行階段。 這可正常運作，只要應用程式的虛擬根路徑不會變更，但是，如果您移動至不同的路徑，應用程式`applicationName`設定也會變更。 當發生這種情況時，成員資格提供者會開始使用不同的應用程式磁碟分割，與先前未使用。 在移動之前建立的使用者帳戶將會位於不同的應用程式磁碟分割，這些使用者將不再能夠登入網站。 如需這件事的更深入討論，請參閱[一定會設定`applicationName`屬性時設定 ASP.NET 2.0 成員資格和其他提供者](https://weblogs.asp.net/scottgu/443634)。
+> 回想一下，成員架構可讓單一使用者存放區分割成多個應用程式。 成員資格提供者的 `applicationName` 設定會指出提供者在使用使用者存放區時所使用的應用程式。 請務必明確設定 `applicationName` configuration 設定的值，因為如果未明確設定 `applicationName`，它會在執行時間指派給 web 應用程式的虛擬根路徑。 只要應用程式的虛擬根路徑不會變更，這就能正常運作，但如果您將應用程式移到不同的路徑，`applicationName` 設定也會變更。 發生這種情況時，成員資格提供者將會開始使用與先前所用不同的應用程式分割區。 在移動前建立的使用者帳戶會位於不同的應用程式分割區，而那些使用者將無法再登入網站。 如需有關此問題的更深入討論，請參閱[設定 ASP.NET 2.0 成員資格和其他提供者時，一律設定 `applicationName` 屬性](https://weblogs.asp.net/scottgu/443634)。
 
 ## <a name="summary"></a>總結
 
-現在我們已設定的應用程式服務的資料庫 (`SecurityTutorials.mdf`)，且已設定 web 應用程式，讓所有的成員資格架構使用`SecurityTutorialsSqlMembershipProvider`我們剛剛註冊的提供者。 這個已註冊的提供者是型別的`SqlMembershipProvider`，且其`connectionStringName`設定為適當的連接字串 (`SecurityTutorialsConnectionString`) 並將其`applicationName`明確設定值。
+此時，我們有一個資料庫具有已設定的應用程式服務（`SecurityTutorials.mdf`），並已設定 web 應用程式，讓成員資格架構使用我們剛才註冊的 `SecurityTutorialsSqlMembershipProvider` 提供者。 這個已註冊的提供者屬於 `SqlMembershipProvider` 類型，而且其 `connectionStringName` 設定為適當的連接字串（`SecurityTutorialsConnectionString`），且其 `applicationName` 值已明確設定。
 
-我們現在已準備好使用我們的應用程式的成員資格架構。 在下一個教學課程中，我們將檢查如何建立新的使用者帳戶。 之後，我們將探討驗證使用者，執行以使用者為基礎的授權，並在資料庫中儲存的其他使用者相關資訊。
+我們現在已準備好使用應用程式中的成員資格架構。 在下一個教學課程中，我們將探討如何建立新的使用者帳戶。 接下來，我們將探索驗證使用者、執行以使用者為基礎的授權，以及在資料庫中儲存額外的使用者相關資訊。
 
-快樂地寫程式 ！
+快樂的程式設計！
 
 ### <a name="further-reading"></a>進一步閱讀
 
-如需有關在本教學課程所討論的主題的詳細資訊，請參閱下列資源：
+如需本教學課程中所討論之主題的詳細資訊，請參閱下列資源：
 
-- [一律設`applicationName`屬性時設定 ASP.NET 2.0 成員資格和其他提供者](https://weblogs.asp.net/scottgu/443634)
-- [設定 ASP.NET 2.0 應用程式服務使用 SQL Server 2000 或 SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)
+- [設定 ASP.NET 2.0 成員資格和其他提供者時，一律設定 `applicationName` 屬性](https://weblogs.asp.net/scottgu/443634)
+- [將 ASP.NET 2.0 應用程式服務設定為使用 SQL Server 2000 或 SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)
 - [下載 SQL Server Management Studio Express Edition](https://www.microsoft.com/downloads/details.aspx?FamilyId=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796&amp;displaylang=en)
-- [檢查 ASP.NET 2.0 s 成員資格、 角色和設定檔](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
-- [`<add>`成員資格提供者的項目](https://msdn.microsoft.com/library/whae3t94.aspx)
-- [`<membership>`項目](https://msdn.microsoft.com/library/1b9hw62f.aspx)
-- [`<providers>`成員資格的項目](https://msdn.microsoft.com/library/6d4936ht.aspx)
-- [使用`<clear />`時新增的提供者](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx)
+- [檢查 ASP.NET 2.0 s 成員資格、角色和設定檔](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
+- [成員資格提供者的 `<add>` 元素](https://msdn.microsoft.com/library/whae3t94.aspx)
+- [`<membership>` 元素](https://msdn.microsoft.com/library/1b9hw62f.aspx)
+- [成員資格的 `<providers>` 元素](https://msdn.microsoft.com/library/6d4936ht.aspx)
+- [新增提供者時使用 `<clear />`](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx)
 - [直接使用 `SqlMembershipProvider`](http://aspnet.4guysfromrolla.com/articles/091207-1.aspx)
 
-### <a name="video-training-on-topics-contained-in-this-tutorial"></a>在本教學課程中所包含的主題的影片訓練
+### <a name="video-training-on-topics-contained-in-this-tutorial"></a>本教學課程中所含主題的影片訓練
 
 - [了解 ASP.NET 成員資格](../../../videos/authentication/understanding-aspnet-memberships.md)
 - [設定 SQL 使用成員資格結構描述](../../../videos/authentication/configuring-sql-to-work-with-membership-schemas.md)
@@ -333,11 +333,11 @@ ASP.NET 應用程式的資料通常儲存在資料庫中的資料表數目。 �
 
 ### <a name="about-the-author"></a>關於作者
 
-Scott Mitchell，多個 ASP 書籍的作者，他是 4GuysFromRolla.com 的創辦人，從事 Microsoft Web 技術工作自 1998 年。 Scott 會擔任獨立的顧問、 培訓講師和作家。 他最新的著作是 *[Sams 教導您自己 ASP.NET 2.0 在 24 小時內](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*。 Scott 要聯絡[ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)或透過他的部落格[ http://ScottOnWriting.NET ](http://scottonwriting.net/)。
+Scott Mitchell，自1998起，有多個 ASP/ASP. NET 書籍和創辦人的4GuysFromRolla.com。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是 *[在24小時內讓自己的 ASP.NET 2.0](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 。 Scott 可以在[mitchell@4guysfromrolla.com](mailto:mitchell@4guysfromrolla.com)或透過他在[http://ScottOnWriting.NET](http://scottonwriting.net/)的 blog。
 
 ### <a name="special-thanks-to"></a>特別感謝
 
-本教學課程系列是由許多實用的檢閱者檢閱。 本教學課程中的潛在客戶檢閱者已 Alicja Maziarz。 有興趣檢閱我即將推出的 MSDN 文章嗎？ 如果是這樣，psychic 在[ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)。
+本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Alicja Maziarz。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)的那一行下拉式。
 
 > [!div class="step-by-step"]
 > [上一頁](storing-additional-user-information-cs.md)
