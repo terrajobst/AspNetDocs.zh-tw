@@ -2310,7 +2310,7 @@
               items:
                 - name: '第 1 部份：概觀和 [檔案] -> [新增專案]'
                   href: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1.md
-                - name: 第 2 部分：Controllers
+                - name: 第 2 部分：控制器
                   href: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2.md
                 - name: 第 3 部分：檢視和 ViewModels
                   href: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3.md
@@ -2671,7 +2671,7 @@
               items:
                 - name: MVC Music 市集第 1 部分：簡介、工具與專案結構
                   href: mvc/videos/mvc-2/music-store/mvc-music-store-part-1-intro-tools-and-project-structure.md
-                - name: MVC Music 市集第 2 部分：Controllers
+                - name: MVC Music 市集第 2 部分：控制器
                   href: mvc/videos/mvc-2/music-store/mvc-music-store-part-2-controllers.md
                 - name: MVC Music 市集第 3 部分：檢視和 ViewModels
                   href: mvc/videos/mvc-2/music-store/mvc-music-store-part-3-views-and-viewmodels.md
@@ -3768,6 +3768,8 @@
   items:
     - name: 白皮書
       href: whitepapers/overview.md
+    - name: ASP.NET SameSite
+      href: SameSite/system-web-samesite.md
     - name: ASP.NET 4 與 Visual Studio 2010 網頁程式開發概觀
       href: whitepapers/aspnet4/index.md
       items:
