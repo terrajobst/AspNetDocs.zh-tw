@@ -3753,6 +3753,8 @@
       href: aspnet/overview/owin-and-katana/an-overview-of-project-katana.md
     - name: 開始使用 OWIN 與 Katana
       href: aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana.md
+    - name: OWIN SameSite
+      uid: owin-samesite
     - name: Katana 範例
       href: aspnet/overview/owin-and-katana/katana-samples.md
     - name: OWIN 啟動類別偵測
