@@ -8,12 +8,12 @@ ms.date: 01/16/2019
 ms.assetid: 8bf2c4fb-4ee5-4841-bfc2-03462c1f7a7a
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
-ms.openlocfilehash: c45003325832258466a787bc589bf40e844248a2
-ms.sourcegitcommit: 4b324a11131e38f920126066b94ff478aa9927f8
+ms.openlocfilehash: 738318cce442fdc5d58dd1e4c992d4941be2487e
+ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985848"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74591247"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>使用 Visual Studio ASP.NET Web 部署：部署到測試環境
 
@@ -49,7 +49,7 @@ ms.locfileid: "70985848"
 
 下載並安裝 Contoso 大學 Visual Studio starter 解決方案和專案。 此解決方案包含已完成的教學課程。 
 
-[下載入門專案](http://go.microsoft.com/fwlink/p/?LinkId=282627)
+[下載入門專案](https://go.microsoft.com/fwlink/p/?LinkId=282627)
 
 ## <a name="install-iis"></a>安裝 IIS
 
@@ -67,7 +67,7 @@ ms.locfileid: "70985848"
 
      您會看到指出將會安裝 IIS 7 的訊息。 此連結適用于 Windows 8 中的 IIS 8;但是對於 Windows 8 和更新版本，請執行下列步驟，以確定已安裝 ASP.NET 4.7：
 
-   * 開啟 [**控制台** >   > ] [程式] [程式和功能] [開啟或關閉 Windows 功能]。 > 
+   * 開啟 [**控制台**] > **程式** > [**程式和功能**] > **開啟或關閉 Windows 功能**。
 
    * 展開 [ **Internet Information Services**]、[ **World Wide Web 服務**] 和 [**應用程式開發] 功能**。
    
@@ -91,7 +91,7 @@ ms.locfileid: "70985848"
 
 3. 在 [**連線] 窗格**中，展開伺服器節點，然後選取 [**應用程式**集區]。 在 [**應用程式**集區] 窗格中，如果**DefaultAppPool**已指派給 .net framework 第4版（如下圖所示），請跳至下一節。
 
-   ![Inetmgr_showing_4.0_app_pools](deploying-to-iis/_static/image5a.png)
+   ![Inetmgr_showing_4。0_app_pools](deploying-to-iis/_static/image5a.png)
 
 4. 如果您只看到兩個應用程式集區，且兩者都設定為 .NET Framework 2.0，請在 IIS 中安裝 ASP.NET 4。
 
@@ -109,7 +109,7 @@ ms.locfileid: "70985848"
 
 7. 在 [**編輯應用程式集**區] 對話方塊中，將 [ **.net clr 版本**] 變更為 [ **.net clr v 4.0.30319**]。 選取 [確定]。
 
-   ![Selecting_.NET_4_for_DefaultAppPool](deploying-to-iis/_static/image6a.png)
+   ![Selecting_。 NET_4_for_DefaultAppPool](deploying-to-iis/_static/image6a.png)
 
 您現在已準備好將 web 應用程式發佈至 IIS。 不過，首先要建立資料庫來進行測試。
 
@@ -119,7 +119,7 @@ ms.locfileid: "70985848"
 
 LocalDB 並非設計成在 IIS 中工作，因此您的測試環境必須安裝 SQL Server Express。 如果您使用 Visual Studio 2010 SQL Server Express，則預設已安裝。 如果您使用的是 Visual Studio 2012 或更新版本，請安裝 SQL Server Express。
 
-若要安裝 SQL Server Express，請從[下載中心下載並安裝：Microsoft SQL Server 2017 Express edition](https://www.microsoft.com/sql-server/sql-server-editions-express)。 
+若要安裝 SQL Server Express，請從 [下載中心下載並安裝它：Microsoft SQL Server 2017 Express edition](https://www.microsoft.com/sql-server/sql-server-editions-express)。 
 
 在 SQL Server 安裝中心 的第一頁上，選取 新增  **SQL Server 獨立安裝 或 將功能新增至現有安裝**，並依照指示接受預設選項。 在安裝精靈中，接受預設設定。 如需安裝選項的詳細資訊，請參閱[從安裝精靈安裝 SQL Server （安裝程式）](https://msdn.microsoft.com/library/ms143219.aspx)。
 
@@ -144,7 +144,7 @@ Contoso 大學應用程式有兩個資料庫：
 
 ![建立 aspnet-ContosoUniversity](deploying-to-iis/_static/image9.png)
 
-遵循相同的程式，建立名為`ContosoUniversity`的新 SQL Server Express School 資料庫。
+遵循相同的程式，建立名為 `ContosoUniversity`的新 SQL Server Express School 資料庫。
 
 **伺服器總管**會顯示兩個新的資料庫。
 
@@ -164,7 +164,7 @@ Contoso 大學應用程式有兩個資料庫：
 > 此腳本是設計用來搭配 SQL Server Express 2012 或更新版本，以及在本教學課程中指定的 Windows 10、Windows 8 或 Windows 7 中的 IIS 設定。 如果您使用的是不同版本的 SQL Server 或 Windows，或如果您在電腦上以不同的方式設定 IIS，可能就需要變更此腳本。 如需 SQL Server 腳本的詳細資訊，請參閱[SQL Server 線上叢書](https://go.microsoft.com/fwlink/?LinkId=132511)。
 
 > [!NOTE] 
-> **安全性注意事項**此腳本`db_owner`會將許可權授與在執行時間存取資料庫的使用者，這就是您在生產環境中擁有的功能。 在某些情況下，您可能會想要指定具有完整資料庫架構更新許可權的使用者，僅供部署之用，並為執行時間指定僅具有讀取和寫入資料許可權的其他使用者。 如需詳細資訊，請參閱本教學課程稍後的 <<c0>檢查自動的 Web.config 變更 Code First 移轉。
+> **安全性注意事項**此腳本會為在執行時間存取資料庫的使用者提供 `db_owner` 許可權，這就是您在生產環境中擁有的功能。 在某些情況下，您可能會想要指定具有完整資料庫架構更新許可權的使用者，僅供部署之用，並為執行時間指定僅具有讀取和寫入資料許可權的其他使用者。 如需詳細資訊，請參閱本教學課程稍後的 <<c0>檢查自動的 Web.config 變更 Code First 移轉。
 
 <a id="publish"></a>
 
@@ -215,7 +215,7 @@ Contoso 大學應用程式有兩個資料庫：
 
 6. 在 [**網站名稱**] 中，輸入*Default Web Site/ContosoUniversity*。
 
-7. 針對 [**目的地 URL**] *http://localhost/ContosoUniversity* ，輸入。
+7. 在 [**目的地 URL**] 中，輸入 *http://localhost/ContosoUniversity* 。
 
    不需要 [**目的地 URL** ] 設定。 當 Visual Studio 完成部署應用程式時，它會自動開啟此 URL 的預設瀏覽器。 如果您不想要在部署後自動開啟瀏覽器，請將此方塊保留空白。
 
@@ -229,9 +229,9 @@ Contoso 大學應用程式有兩個資料庫：
 
 10. [設定] 下拉式方塊會指定要**部署的組建**設定。 將它設定為預設值 [**發行**]。 在本教學課程中，您將不會部署 Debug build。
 
-11. 展開 [檔案] [**發行選項**]。 **從 [應用程式\_資料] 資料夾中選取 [排除**檔案]。
+11. 展開 [檔案] [**發行選項**]。 選取 **[從應用程式中排除檔案\_資料夾**]。
 
-    在測試環境中，應用程式會存取您在本機 SQL Server Express 實例中建立的資料庫，而不是 *\_應用程式 Data*資料夾中的 .mdf 檔案。
+    在測試環境中，應用程式會存取您在本機 SQL Server Express 實例中建立的資料庫，而不是*應用程式\_Data*資料夾中的 .mdf 檔案。
 
 12. 在 [**發行**及**移除目的地的其他**檔案] 核取方塊中，保留預先編譯的狀態。
 
@@ -246,7 +246,7 @@ Contoso 大學應用程式有兩個資料庫：
     > 
     > 例如，如果您在伺服器上的子資料夾中有 web 應用程式，當您將專案部署至根資料夾時，將會刪除子資料夾。 您在 contoso.com 的主要網站可能會有一個專案，而 contoso.com/blog 的另一個專案則適用于 blog。 Blog 應用程式位於子資料夾中。 如果您在部署主要網站時選取 [**移除目的地的其他**檔案]，則會刪除 blog 應用程式。
     > 
-    > 若是另一個範例，您\_的應用程式資料檔案夾可能會意外刪除。 某些資料庫（例如 SQL Server Compact 會將資料庫檔案儲存在\_App Data 資料夾中）。 在初始部署之後，您不想要在後續部署中繼續複製資料庫檔案，因此您可以選取 [封裝/發行 Web] 索引標籤上的 [**排除應用程式\_資料**]。執行此動作之後，如果您已選取 [**移除目的地的其他**檔案]，則下次發行\_時，將會刪除您的資料庫檔案和應用程式資料檔案夾本身。
+    > 若是另一個範例，您的應用程式\_Data 資料夾可能會意外刪除。 某些資料庫（例如 SQL Server Compact 會將資料庫檔案儲存在應用程式\_的 Data 資料夾中。 在初始部署之後，您不想要繼續在後續部署中複製資料庫檔案，因此您可以選取 [封裝/發行 Web] 索引標籤上的 [**排除應用程式\_資料**]。執行此動作之後，如果您已選取 [**移除目的地的其他**檔案]，則下次發行時，將會刪除您的資料庫檔案和應用程式\_Data 資料夾本身。
 
 ### <a name="configure-deployment-for-the-membership-database"></a>設定成員資格資料庫的部署
 
@@ -258,7 +258,7 @@ Contoso 大學應用程式有兩個資料庫：
 
    部署程式會將此連接字串放在已部署的 Web.config 檔案中，因為已選取 [**在執行時間使用此連接字串**]。
 
-    您也可以從**伺服器總管**取得連接字串。 在**伺服器總管**中，展開 [**資料連線**]  **&lt;並&gt;選取 machinename \sqlexpress.aspnet-ContosoUniversity**資料庫，然後從 [**屬性**] 視窗複製**連接字串**值。 該連接字串將會有一個您可以刪除的額外設定`Pooling=False`：。
+    您也可以從**伺服器總管**取得連接字串。 在**伺服器總管**中，展開 [**資料連線**]，然後選取 **&lt;machinename&gt;\sqlexpress.aspnet-ContosoUniversity**資料庫，然後從 [**屬性**] 視窗複製 [**連接字串**] 值。 該連接字串將會有一個您可以刪除的額外設定： `Pooling=False`。
 
 2. 選取 [**更新資料庫**]。
 
@@ -276,9 +276,9 @@ Contoso 大學應用程式有兩個資料庫：
 
 ### <a name="configure-deployment-for-the-application-database"></a>設定應用程式資料庫的部署
 
-當 Visual Studio 偵測到 Entity Framework `DbContext`類別時，它會在 [**資料庫**] 區段中建立具有 [**執行 Code First 移轉**] 核取方塊的專案，而不是 [**更新資料庫**] 核取方塊。 在本教學課程中，您將使用該核取方塊來指定 Code First 移轉部署。
+當 Visual Studio 偵測到 Entity Framework `DbContext` 類別時，它會在 [**資料庫**] 區段中建立具有 [**執行 Code First 移轉**] 核取方塊的專案，而不是 [**更新資料庫**] 核取方塊。 在本教學課程中，您將使用該核取方塊來指定 Code First 移轉部署。
 
-在某些情況下，您可能會使用`DbContext`資料庫，但是您想要使用 dbDacFx 提供者而不是遷移來部署資料庫。 在此情況下，請參閱 MSDN 上的 ASP.NET Web 部署常見問題中的[如何? 部署 Code First 資料庫而不進行遷移？](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) 。
+在某些情況下，您可能會使用 `DbContext` 的資料庫，但是您想要使用 dbDacFx 提供者而不是遷移來部署資料庫。 在此情況下，請參閱 MSDN 上的 ASP.NET Web 部署常見問題中的[如何? 部署 Code First 資料庫而不進行遷移？](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) 。
 
 下列步驟適用于對話方塊的 [**資料庫**] 區段中的**SchoolCoNtext**資料庫。
 
@@ -292,7 +292,7 @@ Contoso 大學應用程式有兩個資料庫：
 
 2. 選取**執行 Code First 移轉（在應用程式啟動時執行）** 。
 
-   此選項會讓部署程式`MigrateDatabaseToLatestVersion`設定已部署的 web.config 檔案，以指定初始化運算式。 當應用程式在部署後第一次存取資料庫時，這個初始化運算式會自動將資料庫更新為最新版本。
+   此選項會讓部署程式設定已部署的 Web.config 檔案，以指定 `MigrateDatabaseToLatestVersion` 初始化運算式。 當應用程式在部署後第一次存取資料庫時，這個初始化運算式會自動將資料庫更新為最新版本。
 
 ### <a name="configure-publish-profile-transforms"></a>設定發行設定檔轉換
 
@@ -344,7 +344,7 @@ Contoso 大學應用程式有兩個資料庫：
 
 請注意，環境指標會顯示「（測試）」而不是「（Dev）」，這表示環境指標的*web.config 轉換成功*。
 
-執行 [**講師**] 頁面，確認 Code First 以講師資料植入資料庫。 當您選取此頁面時，可能需要幾分鐘的時間才能載入，因為 Code First 會建立資料庫，然後`Seed`執行方法。 （因為應用程式尚未嘗試存取資料庫，所以不會在首頁上這麼做。）
+執行 [**講師**] 頁面，確認 Code First 以講師資料植入資料庫。 當您選取此頁面時，可能需要幾分鐘的時間才能載入，因為 Code First 會建立資料庫，然後執行 `Seed` 方法。 （因為應用程式尚未嘗試存取資料庫，所以不會在首頁上這麼做。）
 
 選取 [**學生**] 索引標籤，確認已部署的資料庫沒有任何學生。
 
@@ -366,9 +366,9 @@ Contoso 大學應用程式有兩個資料庫：
 
 ![Database_Publish 連接字串](deploying-to-iis/_static/image22.png)
 
-這個額外的連接字串可讓您指定資料庫架構更新的一個使用者帳戶，以及不同的使用者帳戶來存取應用程式資料。 例如，您可以將**資料庫\_擁有**者角色指派 **\_** 給 Code First 移轉，並將 db datareader 與**db\_資料寫入元**角色指派給應用程式。 這是常見的深度防禦模式，可防止應用程式中可能的惡意程式碼變更資料庫架構。 （例如，這可能會發生在成功的 SQL 插入式攻擊中）。這些教學課程不會使用此模式。 若要在您的案例中執行此模式，請執行下列步驟：
+這個額外的連接字串可讓您指定資料庫架構更新的一個使用者帳戶，以及不同的使用者帳戶來存取應用程式資料。 例如，您可以將**db\_擁有**者角色指派給 Code First 移轉和**db\_datareader**與**db\_資料寫入元**角色至應用程式。 這是常見的深度防禦模式，可防止應用程式中可能的惡意程式碼變更資料庫架構。 （例如，這可能會發生在成功的 SQL 插入式攻擊中）。這些教學課程不會使用此模式。 若要在您的案例中執行此模式，請執行下列步驟：
 
-1. 在 [**發行 Web** wizard] 的 [**設定**] 索引標籤下，輸入指定具有完整資料庫架構更新許可權之使用者的連接字串。 清除 [**在執行時間使用此連接字串**] 核取方塊。 在已部署的 web.config 檔案中，這會變成`DatabasePublish`連接字串。
+1. 在 [**發行 Web** wizard] 的 [**設定**] 索引標籤下，輸入指定具有完整資料庫架構更新許可權之使用者的連接字串。 清除 [**在執行時間使用此連接字串**] 核取方塊。 在已部署的 Web.config 檔案中，這會變成 `DatabasePublish` 連接字串。
 
 2. 針對您希望應用程式在執行時間使用的連接字串，建立 Web.config 檔案轉換。
 
