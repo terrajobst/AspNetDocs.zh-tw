@@ -43,7 +43,7 @@ AJAX 控制項工具組中的 PopupControl 擴充項提供了一種簡單的方�
 
 [!code-html[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/samples/sample3.html)]
 
-在伺服器端程式碼中，必須讀取隱藏欄位的值。 由於隱藏的表單欄位很容易操作，因此必須使用允許清單驗證隱藏值的白名單方法。 一旦識別出正確的文字方塊之後，就會將行事曆的日期寫入其中。
+在伺服器端程式碼中，必須讀取隱藏欄位的值。 由於隱藏的表單欄位很容易操作，因此必須使用允許清單驗證隱藏值的系統清單方法。 一旦識別出正確的文字方塊之後，就會將行事曆的日期寫入其中。
 
 [!code-aspx[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/samples/sample4.aspx)]
 
