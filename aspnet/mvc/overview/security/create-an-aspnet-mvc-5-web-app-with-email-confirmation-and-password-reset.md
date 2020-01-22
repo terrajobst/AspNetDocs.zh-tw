@@ -8,20 +8,20 @@ ms.date: 03/26/2015
 ms.assetid: d4911cb3-1afb-4805-b860-10818c4b1280
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 07f5b290b73f75000e6f29fe09e4dc25e144452f
-ms.sourcegitcommit: 969e7db924ebad3cc0f0cb0d65d148e8b9221b9a
+ms.openlocfilehash: 6169c972ad0f4ee2079d3638c54a5accc4b8b3de
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74899701"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519345"
 ---
 # <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>使用登入、電子郵件確認和密碼重設建立安全的 ASP.NET MVC 5 Web 應用程式 (C#)
 
-依[Rick Anderson]((https://twitter.com/RickAndMSFT))
+依[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 本教學課程會示範如何使用 ASP.NET Identity 成員資格系統，以電子郵件確認和密碼重設來建立 ASP.NET MVC 5 web 應用程式。
 
-如需本教學課程中使用 .NET Core 的更新版本，請參閱 [ASP.NET Core 中的帳戶確認和密碼復原] [/aspnet/core/security/authentication/accconfirm）。
+如需本教學課程中使用 .NET Core 的更新版本，請參閱[ASP.NET Core 中的帳戶確認和密碼](/aspnet/core/security/authentication/accconfirm)復原。
 
 <a id="createMvc"></a>
 ## <a name="create-an-aspnet-mvc-app"></a>建立 ASP.NET MVC 應用程式

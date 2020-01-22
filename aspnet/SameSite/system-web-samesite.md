@@ -3,18 +3,18 @@ title: 在 ASP.NET 中使用 SameSite cookie
 author: rick-anderson
 description: 瞭解如何在 ASP.NET 中使用 SameSite cookie
 ms.author: riande
-ms.date: 12/03/2019
+ms.date: 1/22/2019
 uid: samesite/system-web-samesite
-ms.openlocfilehash: 47a3d7576edb0e818c39b32fbbcb98475248e18e
-ms.sourcegitcommit: 7b1e1784213dd4c301635f9e181764f3e2f94162
+ms.openlocfilehash: d2160bd9aeb93398b49b3a0e5e7a8a4404a5bc63
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74993060"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519189"
 ---
 # <a name="work-with-samesite-cookies-in-aspnet"></a>在 ASP.NET 中使用 SameSite cookie
 
-由 [Rick Anderson](https://twitter.com/RickAndMSFT) 提供
+作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 SameSite 是一種[IETF](https://ietf.org/about/)草稿，其設計目的是要針對跨網站偽造要求（CSRF）攻擊提供一些保護。 [SameSite 2019 草稿](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)：
 
@@ -25,7 +25,7 @@ SameSite 是一種[IETF](https://ietf.org/about/)草稿，其設計目的是要�
 
 `None` 參數會導致用戶端的相容性問題，而此標準會實作為先前的[2016 草稿標準](https://tools.ietf.org/html/draft-west-first-party-cookies-07)（例如 iOS 12）。 請參閱本檔中的[支援舊版瀏覽器](#sob)。
 
-每個發出 cookie 的 ASP.NET Core 元件都必須決定是否適合 SameSite。
+發出 cookie 的每個 ASP.NET 元件都必須決定 SameSite 是否適當。
 
 ## <a name="api-usage-with-samesite"></a>使用 SameSite 的 API 使用方式
 
@@ -44,6 +44,10 @@ SameSite 支援首次使用[2016 draft 標準](https://tools.ietf.org/html/draft
 * 指定明確判斷提示 `SameSite=None` 以啟用跨網站傳遞的 cookie，應該標示為 `Secure`。 `None` 是退出宣告的新專案。
 * 發行的修補程式支援，如上述 KB 所述。
 * 排定預設會在[2020 年2月](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)由 [Chrome](https://chromestatus.com/feature/5088147346030592) 啟用。 瀏覽器已開始移至2019中的此標準。
+
+### <a name="azure-app-servicesamesite-cookie-handling"></a>Azure App Service-SameSite cookie 處理
+
+如需詳細資訊，請參閱[Azure App Service-SameSite cookie 處理和 .NET Framework 4.7.2 修補程式](https://azure.microsoft.com/updates/app-service-samesite-cookie-update/)。
 
 <a name="sob"></a>
 

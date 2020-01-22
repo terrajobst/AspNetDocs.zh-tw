@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 513837a7-cfea-4568-a4e9-1f5901245d24
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 msc.type: authoredcontent
-ms.openlocfilehash: 2f79b1f459aff3e81dab7ea7eb4ebf3f71084463
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: b8c901ec30b6d37237f80100a2978350ac389b7a
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585809"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519163"
 ---
 # <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>資料分割策略（使用 Azure 建立真實世界的雲端應用程式）
 
@@ -51,7 +51,7 @@ ms.locfileid: "74585809"
 
 ![資料表](data-partitioning-strategies/_static/image1.png)
 
-當您以資料表的形式表示此資料並查看不同的資料時，您可以看到左邊的三個數據行具有可有效率地儲存在關係資料庫中的字串資料，而右邊的兩個數據行則是 c 的位元組陣列。從影像檔案 ome。 在關係資料庫中可能會儲存影像檔案資料，而且有很多人會這麼做，因為他們不想要將資料儲存到檔案系統。 它們可能沒有能夠儲存所需資料量的檔案系統，或不想要管理個別的備份和還原系統。 這種方法適用于內部部署資料庫和雲端資料庫中的少量資料。 在內部部署環境中，只是讓 DBA 處理所有專案，可能比較容易。
+當您以資料表的形式表示此資料並查看不同的資料時，您可以看到左邊的三個數據行具有可有效率地儲存在關係資料庫中的字串資料，而右邊的兩個數據行則是 c 的位元組陣列。從影像檔案 ome。 您可以將影像檔案資料儲存在關係資料庫中，而且有很多人都這麼做，因為他們不想要將資料儲存到檔案系統。 它們可能沒有能夠儲存所需資料量的檔案系統，或不想要管理個別的備份和還原系統。 這種方法適用于內部部署資料庫和雲端資料庫中的少量資料。 在內部部署環境中，只是讓 DBA 處理所有專案，可能比較容易。
 
 但是在雲端資料庫中，儲存體的成本相當高，而大量的映射可能會使資料庫的大小增加超過其可有效率地運作的限制。 若要解決這些問題，您可以垂直分割資料，這表示您會針對資料表中的每個資料行，選擇最適當的資料存放區。 在此範例中，最適合使用的是將字串資料放在關係資料庫和 Blob 儲存體中的影像。
 
@@ -61,7 +61,7 @@ ms.locfileid: "74585809"
 
 這是我們在修正 It 應用程式中所實行的分割方式，我們將在[Blob 儲存體一章](unstructured-blob-storage.md)中查看該方法的程式碼。 如果沒有此資料分割配置，而且假設平均映射大小為 3 mb，則修正 It 應用程式只能儲存大約40000個工作，再達到 150 gb 的資料庫大小上限。 移除映射之後，資料庫可以將10倍的工作儲存為許多工作;您可以花更長的時間來思考如何執行水準資料分割配置。 隨著應用程式的調整，您的支出成長會變得更慢，因為您的儲存空間需求將會非常便宜。
 
-## <a name="horizontal-partitioning-sharding"></a>水準資料分割（分區化）
+## <a name="horizontal-partitioning-sharding"></a>水平資料分割 (分區化)
 
 水準 portioning 就像是依資料列分割資料表：一組資料列會進入一個資料存放區，而另一組資料列會進入不同的資料存放區。
 
@@ -87,7 +87,7 @@ ms.locfileid: "74585809"
 
 ## <a name="summary"></a>總結
 
-有效的資料分割配置可讓您的雲端應用程式在雲端中擴充至數以 pb 計的資料，而不會產生瓶頸。 如果您在內部部署資料中心內執行應用程式，就不需要支付大規模機器或廣泛基礎結構的正面。 在雲端中，您可以視需要以累加方式新增容量，而您只需支付使用時所使用的數量。
+有效的資料分割配置可讓您的雲端應用程式在雲端中擴充至數以 pb 計的資料，而不會產生瓶頸。 如果您在內部部署資料中心內執行應用程式，就不需要支付大規模機器或廣泛基礎結構的正面。 在雲端中，您可以視需要累加地新增容量，而您只需支付使用時所使用的數量。
 
 在[下一章](unstructured-blob-storage.md)中，我們將瞭解如何藉由將影像儲存在 Blob 儲存體中，來修正 It 應用程式如何執行垂直資料分割。
 

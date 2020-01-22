@@ -8,12 +8,12 @@ ms.date: 11/17/2011
 ms.assetid: 2b0df3d9-450b-4ea6-b315-4c9650722cad
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: fe71e6cfb0f4c5f1d99b326e9d90edb6c8c5feee
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 9e7902bcf8a16c154aee1a982824bfaedeea7d9d
+ms.sourcegitcommit: 7b1e1784213dd4c301635f9e181764f3e2f94162
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600502"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76309232"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-webconfig-file-transformations---3-of-12"></a>使用 Visual Studio 或 Visual Web Developer 的 SQL Server Compact 部署 ASP.NET Web 應用程式： Web.config 檔案轉換-12 的3
 
@@ -135,7 +135,7 @@ Contoso 大學網頁會讀取*web.config*檔案 `appSettings` 中設定的值，
 
 [!code-xml[Main](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12/samples/sample7.xml)]
 
-`Transform` 屬性指定此連接字串將會加入至已部署的*web.config*檔案中的*connectionStrings*元素。 （如果發行程式不存在，則會自動為您建立這個額外的連接字串，但根據預設， **providerName**屬性會設定為 `System.Data.SqlClient`，這不適用 SQL Server Compact。 藉由手動新增連接字串，您可以讓部署程式不會建立具有錯誤提供者名稱的連接字串元素）。
+`Transform` 屬性指定此連接字串將會加入至已部署的*web.config*檔案中的*connectionStrings*元素。 （如果發行程式不存在，則會自動為您建立這個額外的連接字串，但根據預設， **providerName**屬性會設定為 `System.Data.SqlClient`，這對 SQL Server Compact 而言並不適用。 藉由手動新增連接字串，您可以讓部署程式不會建立具有錯誤提供者名稱的連接字串元素）。
 
 您現在已指定部署 Contoso 大學應用程式來測試和生產所需的所有*web.config*轉換。 在下列教學課程中，您將會負責需要設定專案屬性的部署設定工作。
 

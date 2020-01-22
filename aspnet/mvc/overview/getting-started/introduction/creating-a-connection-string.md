@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/getting-started/introduction/creating-a-connection-string
-title: 建立連接字串和使用 SQL Server LocalDB |Microsoft Docs
+title: 建立連接字串並使用 SQL Server LocalDB |Microsoft Docs
 author: Rick-Anderson
 description: ''
 ms.author: riande
@@ -8,58 +8,58 @@ ms.date: 10/17/2013
 ms.assetid: 6127804d-c1a9-414d-8429-7f3dd0f56e97
 msc.legacyurl: /mvc/overview/getting-started/introduction/creating-a-connection-string
 msc.type: authoredcontent
-ms.openlocfilehash: e29fe14d2c7fafe2edb9c02029b678090ea83cc5
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.openlocfilehash: d3c6e736c5dcf4a3615e3c72cfc033effc7cc8e6
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59403814"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519306"
 ---
 # <a name="creating-a-connection-string-and-working-with-sql-server-localdb"></a>建立連接字串以及使用 SQL Server LocalDB
 
-藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
+依[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
-[!INCLUDE [Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](index.md)]
 
 ## <a name="creating-a-connection-string-and-working-with-sql-server-localdb"></a>建立連接字串以及使用 SQL Server LocalDB
 
-`MovieDBContext`您所建立的類別會處理連接到資料庫和對應的工作`Movie`資料庫記錄的物件。 您可能會問的一個問題，是如何指定要連線到哪一個資料庫。 您實際上沒有指定要使用哪一個資料庫，Entity Framework 會使用預設[LocalDB](https://docs.microsoft.com/sql/database-engine/configure-windows/sql-server-2016-express-localdb)。 在這一節我們將明確新增中的連接字串*Web.config*應用程式檔案。
+您所建立的 `MovieDBContext` 類別會處理連接到資料庫的工作，並將 `Movie` 物件對應至資料庫記錄。 不過，您可能會問的一個問題，就是如何指定要連接的資料庫。 您實際上不需要指定要使用的資料庫，Entity Framework 會預設為使用[LocalDB](https://docs.microsoft.com/sql/database-engine/configure-windows/sql-server-2016-express-localdb)。 在本節中，我們會在應用*程式的 web.config*檔案中明確新增連接字串。
 
 ## <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-[LocalDB](https://docs.microsoft.com/sql/database-engine/configure-windows/sql-server-2016-express-localdb)是輕量版的 SQL Server Express Database Engine 會視需要啟動，並以使用者模式執行。 LocalDB 以特殊的執行模式執行的 SQL Server Express，可讓您使用資料庫作為 *.mdf*檔案。 一般而言，LocalDB 資料庫檔案會保留在*應用程式\_資料*web 專案的資料夾。
+[LocalDB](https://docs.microsoft.com/sql/database-engine/configure-windows/sql-server-2016-express-localdb)是輕量版的 SQL Server Express 資料庫引擎，會視需要啟動並在使用者模式中執行。 LocalDB 會在 SQL Server Express 的特殊執行模式下執行，可讓您使用資料庫做為 *.mdf*檔案。 LocalDB 資料庫檔案通常會保留在 Web 專案的*應用程式\_Data*資料夾中。
 
-不建議在生產環境 web 應用程式中使用 SQL Server Express。 LocalDB 尤其不應用於生產環境的 web 應用程式因為它不是在搭配 IIS 運作。 不過，LocalDB 資料庫可以輕鬆地移轉至 SQL Server 或 SQL Azure。
+不建議在生產 web 應用程式中使用 SQL Server Express。 LocalDB 不應用於具有 web 應用程式的生產環境，因為它不是設計來與 IIS 搭配使用。 不過，您可以輕鬆地將 LocalDB 資料庫移轉至 SQL Server 或 SQL Azure。
 
-在 Visual Studio 2017 中，使用 Visual Studio 的預設會安裝 LocalDB。
+在 Visual Studio 2017 中，預設會隨 Visual Studio 安裝 LocalDB。
 
-根據預設，Entity Framework 會尋找名為物件內容類別相同的連接字串 (`MovieDBContext`這個專案)。 如需詳細資訊，請參閱[ASP.NET Web 應用程式的 SQL Server 連接字串](https://msdn.microsoft.com/library/jj653752.aspx)。
+根據預設，Entity Framework 會尋找名為的連接字串，與物件內容類別（此專案的`MovieDBContext`）相同。 如需詳細資訊，請參閱[ASP.NET Web 應用程式的 SQL Server 連接字串](https://msdn.microsoft.com/library/jj653752.aspx)。
 
-開啟應用程式根目錄*Web.config*檔案如下所示。 (沒有*Web.config*中的檔案*檢視*資料夾。)
+開啟應用*程式根目錄 web.config*檔案，如下所示。 （不是*Views*資料夾中*的 web.config 檔案*）。
 
 ![](creating-a-connection-string/_static/image1.png)
 
-尋找`<connectionStrings>`項目：
+尋找 `<connectionStrings>` 元素：
 
 ![](creating-a-connection-string/_static/image2.png)
 
-加入下列連接字串`<connectionStrings>`中的項目*Web.config*檔案。
+將下列連接字串新增*至 web.config 檔案*中的 `<connectionStrings>` 元素。
 
 [!code-xml[Main](creating-a-connection-string/samples/sample1.xml)]
 
-下列範例示範的一部分*Web.config*檔案以加入新的連接字串：
+下列範例會顯示已新增連接字串的*web.config*檔案的一部分：
 
 [!code-xml[Main](creating-a-connection-string/samples/sample2.xml)]
 
-兩個連接字串都很相似。 第一個連接字串名為`DefaultConnection`並用它來控制可以存取應用程式的成員資格資料庫。 您已新增連接字串會指定名為 LocalDB 資料庫*Movie.mdf*位於*應用程式\_資料*資料夾。 我們不會使用成員資格資料庫中，請在本教學課程，如需成員資格、 驗證和安全性的詳細資訊，請參閱我的教學課程[使用驗證和 SQL DB 建立 ASP.NET MVC 應用程式並部署至 Azure App Service](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)。
+這兩個連接字串非常類似。 第一個連接字串的名稱為 `DefaultConnection`，並用於成員資格資料庫，以控制可以存取應用程式的人員。 您已新增的連接字串會指定名為*Movie .mdf*的 LocalDB 資料庫，位於*應用程式\_Data*資料夾中。 我們不會在本教學課程中使用成員資格資料庫，如需有關成員資格、驗證和安全性的詳細資訊，請參閱我的教學課程[使用驗證和 SQL DB 建立 ASP.NET MVC 應用程式並部署至 Azure App Service](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)。
 
-連接字串的名稱必須符合的名稱[DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)類別。
+連接字串的名稱必須符合[DbCoNtext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)類別的名稱。
 
 [!code-csharp[Main](creating-a-connection-string/samples/sample3.cs?highlight=15)]
 
-您實際上不需要新增`MovieDBContext`連接字串。 如果您未指定連接字串，Entity Framework 將 LocalDB 資料庫的目錄中建立使用者的完整名稱[DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)類別 (在此情況下`MvcMovie.Models.MovieDBContext`)。 您可以為資料庫命名任何想要的話，只要它擁有 *。MDF*後置詞。 比方說，我們無法為資料庫命名*MyFilms.mdf*。
+您實際上不需要加入 `MovieDBContext` 連接字串。 如果您未指定連接字串，Entity Framework 會在使用者目錄中建立具有[DbCoNtext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)類別之完整名稱的 LocalDB 資料庫（在此案例中為 `MvcMovie.Models.MovieDBContext`）。 只要有，您就可以將資料庫命名為任何您喜歡的名稱 *。MDF*尾碼。 例如，我們可以將資料庫命名為*MyFilms*。
 
-接下來，您將建立新`MoviesController`類別可用來顯示電影資料，並允許使用者建立新的電影清單。
+接下來，您將建立新的 `MoviesController` 類別，您可以用它來顯示電影資料，並允許使用者建立新的電影清單。
 
 > [!div class="step-by-step"]
 > [上一頁](adding-a-model.md)

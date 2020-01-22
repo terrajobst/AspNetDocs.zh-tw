@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 0fab5e35-8c1f-43d4-8635-b8aba8766a71
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 11b494b4839c646b018098c76a8a9ae0a2169757
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 8dbc31a5c8d59fa55dc5b513c1a51d24d18a685f
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600496"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519397"
 ---
 # <a name="introduction-to-signalr"></a>SignalR 簡介
 
@@ -39,11 +39,19 @@ SignalR 提供簡單的 API，可用於建立伺服器對用戶端遠端程序�
 
 ![使用 SignalR 叫用方法](introduction-to-signalr/_static/image1.png)
 
-SignalR 會自動處理連線管理，並可讓您同時將訊息廣播到所有已連接的用戶端，就像聊天室一樣。 您也可以將訊息傳送給特定用戶端。 用戶端與伺服器之間的連接是持續性的，與傳統 HTTP 連線不同，後者會針對每個通訊重新建立。
+SignalR 會自動處理連線管理，讓您能夠將訊息同時廣播到所有連線的用戶端，例如聊天室。 您也可以將訊息傳送給特定的用戶端。 不同於傳統的 HTTP 連線，用戶端與伺服器之間的連線是持續性的，此連線會基於每次通訊重新建立。
 
 SignalR 支援「伺服器推播」功能，其中伺服器程式碼可以使用遠端程序呼叫（RPC）來呼叫瀏覽器中的用戶端程式代碼，而不是現今 web 上通用的要求-回應模型。
 
-SignalR 應用程式可以使用服務匯流排、SQL Server 或[Redis](http://redis.io)向外延展至數以千計的用戶端。
+SignalR 應用程式可以使用內建和協力廠商的向外延展提供者，向外延展至數以千計的用戶端。
+
+內建提供者包括：
+* [服務匯流排](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.ServiceBus3)
+* [SQL Server](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.SqlServer)
+* [Redis](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.Redis)
+
+協力廠商提供者包括：
+* [NCache](https://www.alachisoft.com/ncache/asp-net-core-signalr.html)。
 
 SignalR 是開放原始碼，可透過[GitHub](https://github.com/signalr)存取。
 

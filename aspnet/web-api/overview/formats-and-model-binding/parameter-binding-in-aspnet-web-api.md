@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: e42c8388-04ed-4341-9fdb-41b1b4c06320
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 5386532ab581e023d93d16a5d4107e07f40b986f
-ms.sourcegitcommit: 4b324a11131e38f920126066b94ff478aa9927f8
+ms.openlocfilehash: 032368f94ce32cf6231458649e8fdd42bee685e9
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985810"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519254"
 ---
 # <a name="parameter-binding-in-aspnet-web-api"></a>ASP.NET Web API 中的參數系結
 
@@ -26,14 +26,14 @@ ms.locfileid: "70985810"
 
 根據預設，Web API 會使用下列規則來系結參數：
 
-- 如果參數是「簡單」類型，Web API 會嘗試從 URI 取得值。 簡單類型包括 .NET[基本類型](https://msdn.microsoft.com/library/system.type.isprimitive.aspx)（**int**、 **bool**、 **double**等等），加上**TimeSpan**、 **DateTime**、 **Guid**、 **decimal**和**string**，*再加上*類型為的任何類型可以從字串轉換的轉換器。 （稍後會有關于類型轉換器的詳細資訊）。
+- 如果參數是「簡單」類型，Web API 會嘗試從 URI 取得值。 簡單類型包括 .NET[基本類型](https://msdn.microsoft.com/library/system.type.isprimitive.aspx)（**int**、 **bool**、 **double**等等），加上**TimeSpan**、 **DateTime**、 **Guid**、 **decimal**和**string**，*再加上*具有可從字串轉換之類型轉換器的任何類型。 （稍後會有關于類型轉換器的詳細資訊）。
 - 針對複雜類型，Web API 會嘗試使用[媒體類型格式](media-formatters.md)器，從訊息本文中讀取值。
 
 例如，以下是典型的 Web API 控制器方法：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample1.cs)]
 
-*Id*參數是&quot;簡單&quot;的類型，因此 Web API 會嘗試從要求 URI 取得值。 *Item*參數是複雜型別，因此 Web API 會使用媒體類型格式器來讀取來自要求主體的值。
+*Id*參數是 &quot;簡單&quot; 類型，因此 Web API 會嘗試從要求 URI 取得值。 *Item*參數是複雜型別，因此 Web API 會使用媒體類型格式器來讀取來自要求主體的值。
 
 為了從 URI 取得值，Web API 會在路由資料和 URI 查詢字串中尋找。 當路由系統剖析 URI 並使其符合路由時，就會填入路由資料。 如需詳細資訊，請參閱[路由和動作選取](../web-api-routing-and-actions/routing-and-action-selection.md)。
 
@@ -41,11 +41,11 @@ ms.locfileid: "70985810"
 
 ## <a name="using-fromuri"></a>使用 [FromUri]
 
-若要強制 Web API 從 URI 讀取複雜型別，請將 **[FromUri]** 屬性加入至參數。 下列範例會定義`GeoPoint`型別，以及可從 URI 取得的`GeoPoint`控制器方法。
+若要強制 Web API 從 URI 讀取複雜型別，請將 **[FromUri]** 屬性加入至參數。 下列範例會定義 `GeoPoint` 型別，以及可從 URI 取得 `GeoPoint` 的控制器方法。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample2.cs)]
 
-用戶端可以將緯度和經度值放在查詢字串中，而 Web API 會使用它們來建立`GeoPoint`。 例如：
+用戶端可以將緯度和經度值放在查詢字串中，而 Web API 會使用它們來建立 `GeoPoint`。 例如：
 
 `http://localhost/api/values/?Latitude=47.678558&Longitude=-122.130989`
 
@@ -59,7 +59,7 @@ ms.locfileid: "70985810"
 
 [!code-console[Main](parameter-binding-in-aspnet-web-api/samples/sample4.cmd)]
 
-當參數具有 [FromBody] 時，Web API 會使用 Content-type 標頭來選取格式器。 在此範例中，內容類型為&quot;application/json&quot; ，而要求本文是原始 json 字串（不是 json 物件）。
+當參數具有 [FromBody] 時，Web API 會使用 Content-type 標頭來選取格式器。 在此範例中，內容類型為 &quot;application/json&quot;，而要求本文是原始 JSON 字串（而不是 JSON 物件）。
 
 最多隻能有一個參數讀取訊息本文。 這將無法正常執行：
 
@@ -71,11 +71,11 @@ ms.locfileid: "70985810"
 
 您可以藉由建立**TypeConverter**並提供字串轉換，讓 web api 將類別視為簡單類型（因此 web api 會嘗試從 URI 系結）。
 
-下列程式碼顯示`GeoPoint`代表地理點的類別，以及從字串轉換成`GeoPoint`實例的**TypeConverter** 。 類別會以 **[TypeConverter]** 屬性裝飾，以指定類型轉換器。 `GeoPoint` （此範例是由 Mike 延遲的 blog 文章所靈感，[如何在 MVC/WebAPI](https://blogs.msdn.com/b/jmstall/archive/2012/04/20/how-to-bind-to-custom-objects-in-action-signatures-in-mvc-webapi.aspx)中系結至動作簽章中的自訂物件）。
+下列程式碼顯示代表地理點的 `GeoPoint` 類別，加上從字串轉換成 `GeoPoint` 實例的**TypeConverter** 。 `GeoPoint` 類別會以 **[TypeConverter]** 屬性裝飾，以指定類型轉換器。 （此範例是由 Mike 延遲的 blog 文章所靈感，[如何在 MVC/WebAPI](https://blogs.msdn.com/b/jmstall/archive/2012/04/20/how-to-bind-to-custom-objects-in-action-signatures-in-mvc-webapi.aspx)中系結至動作簽章中的自訂物件）。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample6.cs)]
 
-Web API 現在會視為`GeoPoint`簡單的類型，這表示它會嘗試`GeoPoint`從 URI 系結參數。 您不需要在參數上包含 **[FromUri]** 。
+Web API 現在會將 `GeoPoint` 視為簡單的類型，這表示它會嘗試從 URI 系結 `GeoPoint` 參數。 您不需要在參數上包含 **[FromUri]** 。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample7.cs)]
 
@@ -83,7 +83,7 @@ Web API 現在會視為`GeoPoint`簡單的類型，這表示它會嘗試`GeoPoin
 
 `http://localhost/api/values/?location=47.678558,-122.130989`
 
-## <a name="model-binders"></a>模型系結器
+## <a name="model-binders"></a>模型繫結器
 
 比類型轉換器更有彈性的選項是建立自訂模型系結器。 使用模型系結器時，您可以存取來自路由資料的 HTTP 要求、動作描述和原始值等專案。
 
@@ -91,7 +91,7 @@ Web API 現在會視為`GeoPoint`簡單的類型，這表示它會嘗試`GeoPoin
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample8.cs)]
 
-以下是`GeoPoint`物件的模型系結器。
+以下是 `GeoPoint` 物件的模型系結器。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample9.cs)]
 
@@ -100,14 +100,14 @@ Web API 現在會視為`GeoPoint`簡單的類型，這表示它會嘗試`GeoPoin
 - 值提供者會接受 HTTP 要求，並填入索引鍵/值組的字典。
 - 模型系結器會使用這個字典來填入模型。
 
-Web API 中的預設值提供者會從路由資料和查詢字串中取得值。 例如，如果 URI 為，則`http://localhost/api/values/1?location=48,-122`值提供者會建立下列機碼值組：
+Web API 中的預設值提供者會從路由資料和查詢字串中取得值。 例如，如果 URI 為 `http://localhost/api/values/1?location=48,-122`，則值提供者會建立下列機碼值組：
 
-- id = &quot;1&quot;
-- 位置 = &quot;48122&quot;
+- 識別碼 = &quot;1&quot;
+- location = &quot;48122&quot;
 
-（我假設預設路由範本，也就是&quot;api/{controller}/{id}&quot;）。
+（我假設預設路由範本，也就是 &quot;api/{controller}/{id}&quot;）。
 
-要系結的參數名稱會儲存在**ModelBindingCoNtext. ModelName**屬性中。 模型系結器會在字典中尋找具有此值的索引鍵。 如果值存在，而且可以轉換為`GeoPoint`，則模型系結器會將系結值指派給**ModelBindingCoNtext 模型**屬性。
+要系結的參數名稱會儲存在**ModelBindingCoNtext. ModelName**屬性中。 模型系結器會在字典中尋找具有此值的索引鍵。 如果值存在，而且可以轉換成 `GeoPoint`，則模型系結器會將系結值指派給**ModelBindingCoNtext 模型**屬性。
 
 請注意，模型系結器並不限於簡單的類型轉換。 在此範例中，模型系結器會先在已知位置的資料表中尋找，如果失敗，則會使用類型轉換。
 
@@ -159,11 +159,11 @@ Web API 會撰寫所有的值提供者，因此當模型系結器呼叫**ValuePr
 
 **HttpParameterBinding**會負責將參數系結至值。 在 **[ModelBinder]** 的案例中，屬性會傳回使用**IModelBinder**執行實際系結的**HttpParameterBinding**實值。 您也可以執行自己的**HttpParameterBinding**。
 
-例如，假設您想要從`if-match`要求中的和`if-none-match`標頭取得 etag。 首先，我們會定義一個類別來代表 Etag。
+例如，假設您想要從 `if-match` 取得 Etag，並在要求中 `if-none-match` 標頭。 首先，我們會定義一個類別來代表 Etag。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample19.cs)]
 
-我們也會定義列舉，指出是否要從`if-match`標頭`if-none-match`或標頭取得 ETag。
+我們也會定義列舉，指出是否要從 `if-match` 標頭或 `if-none-match` 標頭取得 ETag。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample20.cs)]
 
@@ -176,19 +176,19 @@ Web API 會撰寫所有的值提供者，因此當模型系結器呼叫**ValuePr
 > [!NOTE]
 > 如果您的**ExecuteBindingAsync**方法會讀取要求訊息的主體，請覆寫**WillReadBody**屬性以傳回 true。 要求主體可能是只能讀取一次的未緩衝資料流程，因此 Web API 會強制執行一個規則，其中最多隻能有一個系結讀取訊息本文。
 
-若要套用自訂**HttpParameterBinding**，您可以定義衍生自**ParameterBindingAttribute**的屬性。 針對`ETagParameterBinding`，我們會定義兩個屬性，一個`if-match`用於標頭， `if-none-match`另一個用於標頭。 兩者都是衍生自抽象基類。
+若要套用自訂**HttpParameterBinding**，您可以定義衍生自**ParameterBindingAttribute**的屬性。 針對 `ETagParameterBinding`，我們將定義兩個屬性，一個用於 `if-match` 標頭，另一個用於 `if-none-match` 標頭。 兩者都是衍生自抽象基類。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample22.cs)]
 
-以下是使用`[IfNoneMatch]`屬性的控制器方法。
+以下是使用 `[IfNoneMatch]` 屬性的控制器方法。
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample23.cs)]
 
-除了**ParameterBindingAttribute**之外，還有另一個加入自訂**HttpParameterBinding**的勾點。 在**HttpConfiguration**物件上， **ParameterBindingRules**屬性是類型（**HttpParameterDescriptor**  - &gt; **HttpParameterBinding**）之匿名函式的集合。 例如，您可以新增規則，GET 方法`ETagParameterBinding` `if-none-match`上的任何 ETag 參數會搭配使用：
+除了**ParameterBindingAttribute**之外，還有另一個加入自訂**HttpParameterBinding**的勾點。 在**HttpConfiguration**物件上， **ParameterBindingRules**屬性是類型（**HttpParameterDescriptor** -&gt; **HttpParameterBinding**）之匿名函式的集合。 例如，您可以新增規則，GET 方法上的任何 ETag 參數都會使用 `ETagParameterBinding` 搭配 `if-none-match`：
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample24.cs)]
 
-函式應該`null`針對系結不適用的參數傳回。
+函式應該會針對不適用系結的參數傳回 `null`。
 
 ## <a name="iactionvaluebinder"></a>IActionValueBinder
 
@@ -205,7 +205,7 @@ Web API 會撰寫所有的值提供者，因此當模型系結器呼叫**ValuePr
 
 ## <a name="additional-resources"></a>其他資源
 
-[自訂參數系結範例](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/CustomParameterBinding/ReadMe.txt)
+[自訂參數系結範例](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/CustomParameterBinding)
 
 Mike 的停止寫了一系列有關 Web API 參數系結的絕佳 blog 文章：
 

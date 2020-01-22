@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 6898c601-6c31-432f-8388-e6843f8a17cb
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
 msc.type: authoredcontent
-ms.openlocfilehash: 46264a0ab2244cff24761ce94b41722e61e3f426
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: d3b619ebd9448d30857ffbaf17fd245b1d54a662
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74614918"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519293"
 ---
 # <a name="shopping-cart"></a>購物車
 
@@ -25,7 +25,7 @@ ms.locfileid: "74614918"
 
 本教學課程說明將購物車新增至 Wingtip 玩具範例 ASP.NET Web Forms 應用程式所需的商務邏輯。 本教學課程是根據上一個教學課程「顯示資料項目和詳細資料」來建立，屬於 Wingtip 玩具商店教學課程系列。 當您完成本教學課程時，您的範例應用程式使用者將能夠在其購物車中新增、移除及修改產品。
 
-## <a name="what-youll-learn"></a>您將瞭解的內容：
+## <a name="what-youll-learn"></a>您將學到什麼：
 
 1. 如何建立 web 應用程式的購物車。
 2. 如何讓使用者將專案新增至購物車。
@@ -62,7 +62,7 @@ ms.locfileid: "74614918"
 3. 將這個新類別命名為*CartItem.cs*。
 4. 按一下 [加入]。  
    新的類別檔案會顯示在編輯器中。
-5. 將預設程式碼取代為下列程式碼：   
+5. 使用下列程式碼來取代預設程式碼：   
 
     [!code-csharp[Main](shopping-cart/samples/sample1.cs)]
 
@@ -109,7 +109,7 @@ ms.locfileid: "74614918"
 1. 在**方案總管**中，以滑鼠右鍵按一下**WingtipToys**專案，然後選取 [**加入**-] &gt;[**新增資料夾**]。 將新資料夾命名為*邏輯*。
 2. 以滑鼠右鍵按一下*邏輯*資料夾，**然後選取 [** 新增 -&gt;**新專案**]。
 3. 新增名為*ShoppingCartActions.cs*的新類別檔案。
-4. 將預設程式碼取代為下列程式碼：   
+4. 使用下列程式碼來取代預設程式碼：   
 
     [!code-csharp[Main](shopping-cart/samples/sample3.cs)]
 
@@ -229,7 +229,7 @@ ms.locfileid: "74614918"
 立即執行應用程式，以瞭解您不能只將產品新增至購物車，但可以查看購物車總計。
 
 1. 按 **F5** 執行應用程式。  
- 瀏覽器將會開啟並顯示*default.aspx*頁面。
+ 瀏覽器便會開啟並顯示 *Default.aspx* 頁面。
 2. 從 [類別] 流覽功能表中選取 [ **Cars** ]。
 3. 按一下第一個產品旁的 [**新增至購物車**] 連結。   
  隨即顯示 [ *ShoppingCart* ] 頁面與 [訂單總計]。 
@@ -312,9 +312,11 @@ ms.locfileid: "74614918"
 
 購物車支援新增、刪除和更新使用者已選取要購買的專案。 除了執行購物車功能以外，您也已瞭解如何在**GridView**控制項中顯示購物車專案，並計算訂單總計。
 
+若要瞭解所述的功能在實際商務應用程式中的運作方式，您可以觀看[nopCommerce](https://github.com/nopSolutions/nopCommerce) -ASP.NET 型開放原始碼電子商務購物車的範例。 原本，它是建立在 Web form 上，而過去幾年來，它會移至 MVC，現在 ASP.NET Core。
+
 ## <a name="addition-information"></a>額外資訊
 
-[ASP.NET 會話狀態總覽](https://msdn.microsoft.com/library/ms178581.aspx)
+[ASP.NET 工作階段狀態概觀](https://msdn.microsoft.com/library/ms178581.aspx)
 
 > [!div class="step-by-step"]
 > [上一頁](display_data_items_and_details.md)

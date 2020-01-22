@@ -1,167 +1,167 @@
 ---
 uid: web-api/overview/security/authentication-filters
-title: ASP.NET Web API 2 中的驗證篩選條件 |Microsoft Docs
+title: ASP.NET Web API 2 中的驗證篩選器 |Microsoft Docs
 author: MikeWasson
-description: 驗證篩選條件是一種元件，會驗證 HTTP 要求。 Web API 2 和 MVC 5 都支援的驗證篩選條件，但他們稍有不同...
+description: 驗證篩選器是驗證 HTTP 要求的元件。 Web API 2 和 MVC 5 都支援驗證篩選，但它們稍有不同 。
 ms.author: riande
 ms.date: 09/25/2014
 ms.assetid: b9882e53-b3ca-4def-89b0-322846973ccb
 msc.legacyurl: /web-api/overview/security/authentication-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 15a343a061c61313141dcb69bd329e08aa902d98
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: b6815baf05303d5f47a14ee5fe0fdfc2836c1868
+ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126018"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519371"
 ---
-# <a name="authentication-filters-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的驗證篩選條件
+# <a name="authentication-filters-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的驗證篩選
 
-藉由[Mike Wasson](https://github.com/MikeWasson)
+由[Mike Wasson](https://github.com/MikeWasson)
 
-> 驗證篩選條件是一種元件，會驗證 HTTP 要求。 Web API 2 和 MVC 5 都支援的驗證篩選條件，但他們稍有不同，大部分是在篩選條件介面的命名慣例。 本主題描述 Web API 驗證篩選條件。
+> 驗證篩選器是驗證 HTTP 要求的元件。 Web API 2 和 MVC 5 都支援驗證篩選，但它們稍有不同，大部分都是在篩選器介面的命名慣例中。 本主題描述 Web API 驗證篩選準則。
 
-驗證篩選條件可讓您針對個別的控制器或動作中設定驗證配置。 這樣一來，您的應用程式可以對不同的 HTTP 資源支援不同的驗證機制。
+驗證篩選器可讓您設定個別控制器或動作的驗證配置。 如此一來，您的應用程式就可以針對不同的 HTTP 資源支援不同的驗證機制。
 
-在本文中，我將示範從程式碼[基本驗證](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/BasicAuthentication/ReadMe.txt)上的範例[ http://aspnet.codeplex.com ](http://aspnet.codeplex.com)。 此範例會示範實作 HTTP 基本存取驗證配置 (RFC 2617) 的驗證篩選條件。 名為類別中實作篩選條件`IdentityBasicAuthenticationAttribute`。 我不會顯示所有的程式碼範例中，從只說明如何撰寫的驗證篩選條件的組件。
+在本文中，我將在[https://github.com/aspnet/samples](https://github.com/aspnet/samples)上顯示[基本驗證](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication)範例中的程式碼。 此範例顯示的驗證篩選準則會執行 HTTP 基本存取驗證配置（RFC 2617）。 此篩選準則會在名為 `IdentityBasicAuthenticationAttribute`的類別中執行。 我不會顯示範例中的所有程式碼，只是說明如何撰寫驗證篩選器的元件。
 
-## <a name="setting-an-authentication-filter"></a>設定的驗證篩選條件
+## <a name="setting-an-authentication-filter"></a>設定驗證篩選準則
 
-其他篩選器，例如驗證篩選條件可以套用每個控制站、 每個動作或全域所有的 Web API 控制器。
+就像其他篩選器一樣，驗證篩選器可以套用至每個控制器、每個動作，或全域套用至所有 Web API 控制器。
 
-若要套用的驗證篩選條件，控制站，來裝飾控制器類別，以篩選條件屬性。 下列程式碼設定`[IdentityBasicAuthentication]`篩選控制器類別，可讓所有控制器動作的基本驗證。
+若要將驗證篩選套用至控制器，請使用 filter 屬性裝飾控制器類別。 下列程式碼會在控制器類別上設定 `[IdentityBasicAuthentication]` 篩選準則，以啟用所有控制器動作的基本驗證。
 
 [!code-csharp[Main](authentication-filters/samples/sample1.cs)]
 
-若要將篩選套用至一個動作，請使用篩選器裝飾的動作。 下列程式碼設定`[IdentityBasicAuthentication]`控制器的篩選`Post`方法。
+若要將篩選套用至一個動作，請使用篩選準則裝飾動作。 下列程式碼會在控制器的 `Post` 方法上設定 `[IdentityBasicAuthentication]` 篩選準則。
 
 [!code-csharp[Main](authentication-filters/samples/sample2.cs)]
 
-若要將篩選套用到所有的 Web API 控制器，將它加入**GlobalConfiguration.Filters**。
+若要將篩選套用至所有 Web API 控制器，請將它新增至**GlobalConfiguration**。
 
 [!code-csharp[Main](authentication-filters/samples/sample3.cs)]
 
-## <a name="implementing-a-web-api-authentication-filter"></a>實作 Web API 驗證篩選條件
+## <a name="implementing-a-web-api-authentication-filter"></a>執行 Web API 驗證篩選
 
-在 Web API 驗證篩選條件會實作[System.Web.Http.Filters.IAuthenticationFilter](https://msdn.microsoft.com/library/system.web.http.filters.iauthenticationfilter.aspx)介面。 它們也應該繼承自**System.Attribute**，才能套用為屬性。
+在 Web API 中，驗證篩選準則會執行[IAuthenticationFilter](https://msdn.microsoft.com/library/system.web.http.filters.iauthenticationfilter.aspx)介面。 它們也應該繼承自**system.object**，以便套用為屬性。
 
-**IAuthenticationFilter**介面有兩種方法：
+**IAuthenticationFilter**介面有兩個方法：
 
-- **AuthenticateAsync**藉由驗證要求中的認證來驗證要求，如果有的話。
-- **ChallengeAsync**將驗證挑戰新增至 HTTP 回應，如有需要。
+- **AuthenticateAsync**會驗證要求中的認證（如果有的話）來驗證要求。
+- **ChallengeAsync**會視需要將驗證挑戰新增至 HTTP 回應。
 
-這些方法會對應至驗證流程中定義[RFC 2612](http://tools.ietf.org/html/rfc2616)並[RFC 2617](http://tools.ietf.org/html/rfc2617):
+這些方法對應于[rfc 2612](http://tools.ietf.org/html/rfc2616)和[rfc 2617](http://tools.ietf.org/html/rfc2617)中定義的驗證流程：
 
-1. 用戶端會將認證傳送授權標頭中。 此外，這通常會發生之後用戶端從伺服器收到 401 （未經授權） 回應。 不過，用戶端可以取得 401 之後，不只是傳送任何要求中，使用的認證。
-2. 如果伺服器未接受認證，則會傳回 401 （未經授權） 回應。 此回應包含 Www-authenticate 標頭，其中包含一或多個挑戰。 每一項挑戰會指定伺服器辨識驗證配置。
+1. 用戶端會在授權標頭中傳送認證。 這通常是在用戶端從伺服器收到401（未經授權）回應之後發生。 不過，用戶端可以使用任何要求來傳送認證，而不只是在取得401之後。
+2. 如果伺服器不接受認證，則會傳回401（未經授權）的回應。 回應包含 Www 驗證標頭，其中包含一或多個挑戰。 每個挑戰都會指定伺服器所能辨識的驗證配置。
 
-伺服器也可以從匿名要求傳回 401。 事實上，這通常是起始驗證程序的方式：
+伺服器也可以從匿名要求傳回401。 事實上，這通常是驗證程式的起始方式：
 
-1. 用戶端傳送匿名要求。
-2. 伺服器會傳回 401。
-3. 用戶端重新傳送認證的要求。
+1. 用戶端會傳送匿名要求。
+2. 伺服器會傳回401。
+3. 用戶端會以認證重新傳送要求。
 
-此流程同時包含*驗證*並*授權*步驟。
+此流程包含*驗證*和*授權*步驟。
 
-- 驗證可證明用戶端的身分識別。
+- 驗證會證明用戶端的身分識別。
 - 授權會決定用戶端是否可以存取特定資源。
 
-在 Web API 驗證篩選條件會處理驗證，但沒有授權。 授權篩選條件或控制器動作內，應該授權。
+在 Web API 中，驗證篩選器會處理驗證，而不是授權。 授權應由授權篩選或在控制器動作內部完成。
 
 以下是 Web API 2 管線中的流程：
 
-1. 之前叫用動作，Web API 會建立一份驗證篩選條件，該動作。 這包括篩選器動作範圍、 控制器範圍與全域範圍。
-2. Web API 呼叫**AuthenticateAsync**清單中的每個篩選器。 每個篩選條件可以驗證要求中的認證。 如果任何篩選器已成功驗證認證，就會建立篩選條件**IPrincipal**並將它附加至要求。 篩選也可以在此時觸發錯誤。 如果是的話，就不會執行管線的其餘部分。
-3. 假設沒有任何錯誤，要求會流經管線的其餘部分。
-4. 最後，Web API 會呼叫每個驗證篩選條件**ChallengeAsync**方法。 如有需要篩選會使用這個方法所做出的回應中加入一項挑戰。 一般而言 （但並非絕對），會發生 401 錯誤回應。
+1. 在叫用動作之前，Web API 會建立該動作的驗證篩選器清單。 這包括具有動作範圍、控制器範圍和全域範圍的篩選準則。
+2. Web API 會針對清單中的每個篩選呼叫**AuthenticateAsync** 。 每個篩選器都可以驗證要求中的認證。 如果有任何篩選成功驗證認證，篩選準則會建立**IPrincipal** ，並將它附加至要求。 篩選準則也會在此時觸發錯誤。 若是如此，管線的其餘部分就不會執行。
+3. 假設沒有發生錯誤，要求會流經管線的其餘部分。
+4. 最後，Web API 會呼叫每個驗證篩選器的**ChallengeAsync**方法。 篩選器會使用此方法，視需要將挑戰新增至回應。 通常（但不一定）會發生以回應401錯誤。
 
-下圖顯示兩個可能的情況。 第一次，驗證篩選已成功驗證要求，授權篩選授權要求，並控制器動作傳回 200 （確定）。
+下圖顯示兩個可能的案例。 在第一種情況下，驗證篩選器會成功驗證要求，授權篩選準則會授權要求，而控制器動作會傳回200（確定）。
 
 ![](authentication-filters/_static/image1.png)
 
-在第二個範例中，驗證篩選條件來驗證要求，但授權篩選條件會傳回 401 （未經授權）。 在此情況下，不會叫用控制器動作。 驗證篩選條件會將 Www-authenticate 標頭加入回應。
+在第二個範例中，驗證篩選器會驗證要求，但授權篩選會傳回401（未經授權）。 在此情況下，不會叫用控制器動作。 驗證篩選準則會將 Www 驗證標頭新增至回應。
 
 ![](authentication-filters/_static/image2.png)
 
-其他組合都有可能&mdash;比方說，如果控制器動作允許匿名要求，您可能會有的驗證篩選條件但沒有授權。
+其他組合也可能&mdash;例如，如果控制器動作允許匿名要求，您可能會有驗證篩選準則，但沒有授權。
 
-## <a name="implementing-the-authenticateasync-method"></a>實作 AuthenticateAsync 方法
+## <a name="implementing-the-authenticateasync-method"></a>執行 AuthenticateAsync 方法
 
 **AuthenticateAsync**方法會嘗試驗證要求。 以下是方法簽章：
 
 [!code-csharp[Main](authentication-filters/samples/sample4.cs)]
 
-**AuthenticateAsync**方法必須執行下列其中一項：
+**AuthenticateAsync**方法必須執行下列其中一項動作：
 
-1. 沒有項目 （無作業）。
-2. 建立**IPrincipal**並將它設定在要求上。
+1. 無（無 op）。
+2. 建立**IPrincipal** ，並在要求上設定它。
 3. 設定錯誤結果。
 
-選項 (1) 表示要求沒有任何篩選了解的認證。 選項 (2) 表示篩選條件成功驗證要求。 選項 (3) 表示要求有無效的認證 （例如錯誤的密碼），這會觸發錯誤回應。
+選項（1）表示要求沒有篩選器所瞭解的任何認證。 選項（2）表示篩選已成功驗證要求。 選項（3）表示要求具有不正確認證（例如錯誤的密碼），這會觸發錯誤回應。
 
-以下是實作的一般概述**AuthenticateAsync**。
+以下是執行**AuthenticateAsync**的一般大綱。
 
-1. 尋找在要求中的認證。
-2. 如果沒有認證，不執行任何動作，並傳回 （無作業）。
-3. 如果沒有認證，但篩選條件無法辨識的驗證配置，不執行任何動作，並傳回 （無作業）。 在管線中的另一個篩選條件可能會了解配置。
-4. 如果篩選了解的認證，請嘗試以進行驗證。
-5. 如果認證不正確，請藉由設定傳回 401 `context.ErrorResult`。
-6. 如果是有效的認證，建立**IPrincipal**並設定`context.Principal`。
+1. 在要求中尋找認證。
+2. 如果沒有任何認證，則不執行任何動作，也不會傳回（無 op）。
+3. 如果有認證，但篩選準則無法辨識驗證配置，則不執行任何動作，也不會傳回（無 op）。 管線中的另一個篩選器可能會瞭解配置。
+4. 如果有篩選器瞭解的認證，請嘗試進行驗證。
+5. 如果認證不正確，請設定 `context.ErrorResult`以傳回401。
+6. 如果認證有效，請建立**IPrincipal** ，並設定 `context.Principal`。
 
-下列程式碼所示**AuthenticateAsync**方法，從[基本驗證](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/BasicAuthentication/ReadMe.txt)範例。 註解每個步驟。 程式碼會示範數種類型的錯誤：授權標頭沒有認證，格式不正確的認證，而且不正確的使用者名稱/密碼。
+下列程式碼顯示[基本驗證](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication)範例中的**AuthenticateAsync**方法。 批註會指出每個步驟。 程式碼會顯示數種類型的錯誤：沒有認證的授權標頭、認證格式不正確，以及使用者名稱/密碼不正確。
 
 [!code-csharp[Main](authentication-filters/samples/sample5.cs)]
 
 ## <a name="setting-an-error-result"></a>設定錯誤結果
 
-如果認證無效，必須設定篩選`context.ErrorResult`要**IHttpActionResult**這樣將會產生錯誤回應。 如需詳細資訊**IHttpActionResult**，請參閱[Web API 2 中的動作結果](../getting-started-with-aspnet-web-api/action-results.md)。
+如果認證無效，則篩選準則必須將 `context.ErrorResult` 設定為會建立錯誤回應的**應傳回 iHTTPactionresult** 。 如需**應傳回 iHTTPactionresult**的詳細資訊，請參閱[Web API 2 中的動作結果](../getting-started-with-aspnet-web-api/action-results.md)。
 
-基本驗證的範例包括`AuthenticationFailureResult`適用於此用途的類別。
+基本驗證範例包含適用于此用途的 `AuthenticationFailureResult` 類別。
 
 [!code-csharp[Main](authentication-filters/samples/sample6.cs)]
 
-## <a name="implementing-challengeasync"></a>實作 ChallengeAsync
+## <a name="implementing-challengeasync"></a>執行 ChallengeAsync
 
-目的**ChallengeAsync**如有需要方法是將驗證挑戰新增至回應。 以下是方法簽章：
+**ChallengeAsync**方法的目的是要在需要時，將驗證挑戰新增至回應。 以下是方法簽章：
 
 [!code-csharp[Main](authentication-filters/samples/sample7.cs)]
 
-每個要求管線中的驗證篩選器上呼叫方法。
+方法是在要求管線中的每個驗證篩選準則上呼叫。
 
-請務必了解**ChallengeAsync**稱為*之前*HTTP 回應便會建立，並甚至還可以在控制器動作執行之前。 當**ChallengeAsync**呼叫時，`context.Result`包含**IHttpActionResult**，稍後用來建立 HTTP 回應。 因此當**ChallengeAsync**是呼叫，您還不知道有關 HTTP 回應的任何項目。 **ChallengeAsync**方法應該取代的原始值`context.Result`的新**IHttpActionResult**。 這**IHttpActionResult**必須包裝原始`context.Result`。
+請務必瞭解， **ChallengeAsync**是在建立 HTTP 回應*之前*呼叫，甚至可能在控制器動作執行之前進行。 呼叫**ChallengeAsync**時，`context.Result` 包含**應傳回 iHTTPactionresult**，稍後用來建立 HTTP 回應。 因此，在呼叫**ChallengeAsync**時，您還不知道 HTTP 回應的任何內容。 **ChallengeAsync**方法應該以新的**應傳回 iHTTPactionresult**取代 `context.Result` 的原始值。 此**應傳回 iHTTPactionresult**必須包裝原始 `context.Result`。
 
 ![](authentication-filters/_static/image3.png)
 
-我稱原始**IHttpActionResult** *內部結果*，和新**IHttpActionResult** *外部結果*。 外部結果必須執行下列作業：
+我會呼叫*內部結果*的原始**應傳回 iHTTPactionresult** ，而新的會**應傳回 iHTTPactionresult** *外部結果*。 外部結果必須執行下列動作：
 
-1. 叫用內部的結果，以建立 HTTP 回應。
+1. 叫用內部結果以建立 HTTP 回應。
 2. 檢查回應。
-3. 如有需要則您可以加入回應驗證挑戰。
+3. 如有需要，請將驗證挑戰新增至回應。
 
-下列範例是取自基本驗證的範例。 它會定義**IHttpActionResult**外部的結果。
+下列範例取自基本驗證範例。 它會定義外部結果的**應傳回 iHTTPactionresult** 。
 
 [!code-csharp[Main](authentication-filters/samples/sample8.cs)]
 
-`InnerResult`屬性會保留內部**IHttpActionResult**。 `Challenge`屬性表示 Www 驗證標頭。 請注意， **ExecuteAsync**會先呼叫`InnerResult.ExecuteAsync`建立 HTTP 回應，如有需要然後加入所面臨的挑戰。
+`InnerResult` 屬性會保存內部**應傳回 iHTTPactionresult**。 `Challenge` 屬性代表 Www 驗證標頭。 請注意， **ExecuteAsync**會先呼叫 `InnerResult.ExecuteAsync` 來建立 HTTP 回應，然後視需要新增挑戰。
 
-檢查回應程式碼之前加入所面臨的挑戰。 大部分的驗證配置只能新增一項挑戰是否回應 401，如下所示。 不過，某些驗證配置進行加入一項挑戰的成功回應。 例如，請參閱[交涉](http://tools.ietf.org/html/rfc4559#section-5)(RFC 4559)。
+請檢查回應碼，然後再新增挑戰。 如果回應為401，大部分的驗證配置只會新增挑戰，如下所示。 不過，某些驗證配置會對成功回應新增挑戰。 例如，請參閱[Negotiate](http://tools.ietf.org/html/rfc4559#section-5) （RFC 4559）。
 
-給定`AddChallengeOnUnauthorizedResult`類別中的實際程式碼**ChallengeAsync**很簡單。 您剛建立的結果，並將其附加至`context.Result`。
+假設有 `AddChallengeOnUnauthorizedResult` 類別，則**ChallengeAsync**中的實際程式碼很簡單。 您只需建立結果，並將其附加至 `context.Result`。
 
 [!code-csharp[Main](authentication-filters/samples/sample9.cs)]
 
-注意:基本驗證範例抽象化此邏輯一下，會將其放在擴充方法。
+注意：基本驗證範例會將此邏輯一併放在擴充方法中，藉此將它抽象化。
 
-## <a name="combining-authentication-filters-with-host-level-authentication"></a>結合使用主機層級驗證的驗證篩選條件
+## <a name="combining-authentication-filters-with-host-level-authentication"></a>將驗證篩選器與主機層級驗證結合
 
-[主控件層級驗證] 是由主應用程式 （例如 IIS) 中，執行驗證之前要求到達 Web API 架構。
+「主機層級驗證」是由主機（例如 IIS）執行的驗證，在要求到達 Web API 架構之前。
 
-通常，您可能要啟用您的應用程式的其餘部分的主機層級驗證，但停用您的 Web API 控制器。 例如，典型的案例是啟用表單驗證，在主機層級，但使用 Web api 的權杖型驗證。
+通常，您可能會想要為應用程式的其餘部分啟用主機層級驗證，但請將它停用於您的 Web API 控制器。 例如，典型的案例是在主機層級啟用表單驗證，但針對 Web API 使用權杖型驗證。
 
-若要停用 Web API 管線內的主機層級驗證，請呼叫`config.SuppressHostPrincipal()`組態中。 這會導致 Web API，可移除**IPrincipal**從輸入 Web API 管線的任何要求。 實際上，它&quot;取消-驗證&quot;要求。
+若要在 Web API 管線內停用主機層級驗證，請在您的設定中呼叫 `config.SuppressHostPrincipal()`。 這會導致 Web API 從輸入 Web API 管線的任何要求中移除**IPrincipal** 。 實際上，它 &quot;取消驗證要求&quot;。
 
 [!code-csharp[Main](authentication-filters/samples/sample10.cs)]
 
 ## <a name="additional-resources"></a>其他資源
 
-[ASP.NET Web API 安全性篩選器](https://msdn.microsoft.com/magazine/dn781361.aspx)(MSDN Magazine)
+[ASP.NET Web API 安全性篩選](https://msdn.microsoft.com/magazine/dn781361.aspx)（MSDN 雜誌）
