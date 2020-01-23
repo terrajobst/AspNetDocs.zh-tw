@@ -3338,11 +3338,10 @@
             - name: SignalR 與 Web 通訊端
               href: signalr/videos/getting-started/signalr-and-web-sockets.md
 - name: 行動訊息
-  href: mobile/index.md
   items:
-    - name: 行動訊息
+    - name: 總覽
       href: mobile/overview.md
-    - name: ASP.NET 行動控制項測試過的裝置
+    - name: 已測試控制項的裝置
       href: mobile/tested-devices.md
     - name: 模擬熱門的行動裝置進行測試
       href: mobile/device-simulators.md
