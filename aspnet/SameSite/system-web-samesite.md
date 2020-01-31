@@ -5,31 +5,62 @@ description: 瞭解如何在 ASP.NET 中使用 SameSite cookie
 ms.author: riande
 ms.date: 1/22/2019
 uid: samesite/system-web-samesite
-ms.openlocfilehash: d2160bd9aeb93398b49b3a0e5e7a8a4404a5bc63
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: c81ca38648609aa5347d2a8cc11889fc85d81711
+ms.sourcegitcommit: 4d439e01c82c7c95b19216fedaf5b1a11a1deb06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519189"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76826610"
 ---
 # <a name="work-with-samesite-cookies-in-aspnet"></a>在 ASP.NET 中使用 SameSite cookie
 
 作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-SameSite 是一種[IETF](https://ietf.org/about/)草稿，其設計目的是要針對跨網站偽造要求（CSRF）攻擊提供一些保護。 [SameSite 2019 草稿](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)：
+SameSite 是一種[IETF](https://ietf.org/about/)草稿標準，旨在針對跨網站偽造要求（CSRF）攻擊提供一些保護。 初稿標準已于[2016](https://tools.ietf.org/html/draft-west-first-party-cookies-07)開始繪製，已于[2019](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)更新。 更新的標準不會與前一個標準回溯相容，下列是最顯著的差異：
 
-* 預設會將 cookie 視為 `SameSite=Lax`。
-* 說明明確判斷提示 `SameSite=None` 以啟用跨網站傳遞的 cookie 應標示為 `Secure`。
+* 預設會將不含 SameSite 標頭的 cookie 視為 `SameSite=Lax`。
+* `SameSite=None` 必須用來允許跨網站 cookie 的使用。
+* 判斷提示 `SameSite=None` 的 cookie 也必須標示為 `Secure`。
+* [2016 標準](https://tools.ietf.org/html/draft-west-first-party-cookies-07)不允許值 SameSite = None，而是讓一些執行方式將這類 Cookie 視為 SameSite = Strict。 請參閱本檔中的[支援舊版瀏覽器](#sob)。
 
-`Lax` 適用于大部分的應用程式 cookie。 某些形式的驗證，例如[OpenID connect](https://openid.net/connect/) （OIDC）和[WS-同盟](https://auth0.com/docs/protocols/ws-fed)，預設為以 POST 為基礎的重新導向。 以 POST 為基礎的重新導向會觸發 SameSite 瀏覽器保護，因此這些元件已停用 SameSite。 大部分的[OAuth](https://oauth.net/)登入都不會受到影響，因為要求的流動方式不同。
+[`SameSite=Lax`] 設定適用于大部分的應用程式 cookie。 某些形式的驗證，例如[OpenID connect](https://openid.net/connect/) （OIDC）和[WS-同盟](https://auth0.com/docs/protocols/ws-fed)，預設為以 POST 為基礎的重新導向。 以 POST 為基礎的重新導向會觸發 SameSite 瀏覽器保護，因此這些元件已停用 SameSite。 大部分的[OAuth](https://oauth.net/)登入都不會受到影響，因為要求的流動方式不同。
 
-`None` 參數會導致用戶端的相容性問題，而此標準會實作為先前的[2016 草稿標準](https://tools.ietf.org/html/draft-west-first-party-cookies-07)（例如 iOS 12）。 請參閱本檔中的[支援舊版瀏覽器](#sob)。
+使用 `iframe` 的應用程式可能會遇到 `SameSite=Lax` 或 `SameSite=Strict` cookie 的問題，因為 iframe 會被視為跨網站案例。
 
 發出 cookie 的每個 ASP.NET 元件都必須決定 SameSite 是否適當。
 
-## <a name="api-usage-with-samesite"></a>使用 SameSite 的 API 使用方式
+在安裝 2019 .Net SameSite 更新之後，請參閱應用程式問題的[已知問題](#known)。
 
-請參閱[HttpCookie. SameSite 屬性](/dotnet/api/system.web.httpcookie.samesite#System_Web_HttpCookie_SameSite)
+## <a name="using-samesite-in-aspnet-472-and-48"></a>在 ASP.NET 4.7.2 和4.8 中使用 SameSite
+
+.Net 4.7.2 和4.8 支援自12月2019的更新發行以來，SameSite 的[2019 draft standard](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00) 。 開發人員可以使用[HttpCookie. SameSite 屬性](/dotnet/api/system.web.httpcookie.samesite#System_Web_HttpCookie_SameSite)，以程式設計方式控制 SameSite 標頭的值。 將 `SameSite` 屬性設定為 `Strict`、`Lax` 或 `None` 會導致在網路上使用 cookie 寫入這些值。 將其設定為等於 `(SameSiteMode)(-1)` 表示不應在具有 cookie 的網路上包含任何 SameSite 標頭。 Config 檔案中的[HttpCookie 屬性](/dotnet/api/system.web.httpcookie.secure)或 ' requireSSL ' 可以用來將 cookie 標記為 `Secure`。
+
+新的 `HttpCookie` 實例會預設為 `SameSite=(SameSiteMode)(-1)` 和 `Secure=false`。 這些預設值可以在 `system.web/httpCookies` 設定區段中覆寫，其中字串 `"Unspecified"` 是適用于 `(SameSiteMode)(-1)`的易記僅限設定語法：
+
+```xml
+<configuration>
+ <system.web>
+  <httpCookies sameSite="[Strict|Lax|None|Unspecified]" requireSSL="[true|false]" />
+ <system.web>
+<configuration>
+```
+
+ASP.Net 也會針對這些功能發行自己的四個特定 cookie：匿名驗證、表單驗證、會話狀態和角色管理。 在執行時間取得的這些 cookie 實例，可以使用 `SameSite` 和 `Secure` 屬性來操作，就像任何其他 HttpCookie 實例一樣。 不過，由於 SameSite 標準的 patchwork 出現，因此這四個功能 cookie 的設定選項不一致。 相關的設定區段和屬性（含預設值）如下所示。 如果沒有 `SameSite` 或 `Secure` 功能的相關屬性，則此功能會切換回前面所討論的 [`system.web/httpCookies`] 區段中所設定的預設值。
+
+```xml
+<configuration>
+ <system.web>
+  <anonymousIdentification cookieRequireSSL="false" /> <!-- No config attribute for SameSite -->
+  <authentication>
+   <forms cookieSameSite="Lax" requireSSL="false" />
+  </authentication>
+  <sessionState cookieSameSite="Lax" /> <!-- No config attribute for Secure -->
+  <roleManager cookieRequiresSSL="false" /> <!-- No config attribute for SameSite -->
+ <system.web>
+<configuration>
+```  
+
+**注意**： ' 未指定 ' 僅適用于目前 `system.web/httpCookies@sameSite`。 我們希望在未來的更新中，將類似的語法新增至先前顯示的 cookieSameSite 屬性。 在程式碼中設定 `(SameSiteMode)(-1)` 仍可在這些 cookie 的實例上運作。 *
 
 ## <a name="history-and-changes"></a>歷程記錄和變更
 
@@ -41,13 +72,25 @@ SameSite 支援首次使用[2016 draft 標準](https://tools.ietf.org/html/draft
 
 * 與2016草稿**不**相容。 如需詳細資訊，請參閱本檔中的[支援舊版瀏覽器](#sob)。
 * 指定預設會將 cookie 視為 `SameSite=Lax`。
-* 指定明確判斷提示 `SameSite=None` 以啟用跨網站傳遞的 cookie，應該標示為 `Secure`。 `None` 是退出宣告的新專案。
+* 指定明確判斷提示 `SameSite=None` 以啟用跨網站傳遞的 cookie，也應該標示為 `Secure`。
 * 發行的修補程式支援，如上述 KB 所述。
 * 排定預設會在[2020 年2月](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)由 [Chrome](https://chromestatus.com/feature/5088147346030592) 啟用。 瀏覽器已開始移至2019中的此標準。
 
+<a name="known"><a/>
+
+## <a name="known-issues"></a>已知問題
+
+由於2016和2019草稿規格不相容，因此 11 2019 月的 .Net Framework 更新會引進一些可能中斷的變更。
+
+* 會話狀態和表單驗證 cookie 現在會以 `Lax` 的方式寫入網路，而不是未指定。
+  * 雖然大部分的應用程式都能使用 `SameSite=Lax` cookie，但在使用 `iframe` 的網站或應用程式之間張貼的應用程式，可能會發現其會話狀態或表單驗證 cookie 未如預期般使用。 若要解決此問題，請變更先前所討論之適當設定區段中的 `cookieSameSite` 值。
+* 在程式碼或設定中明確設定 `SameSite=None` 的 HttpCookies 現在具有以 cookie 撰寫的值，而先前已省略。 這可能會導致舊版瀏覽器的問題僅支援2016草稿標準。
+  * 以 `SameSite=None` cookie 支援2019草稿標準的瀏覽器為目標時，請記得也 `Secure` 將它們標示為，否則可能無法辨識。
+  * 若要還原為不 `SameSite=None`寫入的2016行為，請使用應用程式設定 `aspnet:SupressSameSiteNone=true`。 請注意，這會套用到應用程式中的所有 HttpCookies。
+
 ### <a name="azure-app-servicesamesite-cookie-handling"></a>Azure App Service-SameSite cookie 處理
 
-如需詳細資訊，請參閱[Azure App Service-SameSite cookie 處理和 .NET Framework 4.7.2 修補程式](https://azure.microsoft.com/updates/app-service-samesite-cookie-update/)。
+如需有關 Azure App Service 如何在 .Net 4.7.2 應用程式中設定 SameSite 行為的詳細資訊，請參閱[Azure App Service-SameSite cookie 處理和 .NET Framework 4.7.2 修補程式](https://azure.microsoft.com/updates/app-service-samesite-cookie-update/)。
 
 <a name="sob"></a>
 
@@ -106,5 +149,6 @@ Electron 的版本包含舊版的 Chromium。 例如，小組所使用的 Electr
 
 ## <a name="additional-resources"></a>其他資源
 
+* [ASP.NET 和 ASP.NET Core 即將推出的 SameSite Cookie 變更](https://devblogs.microsoft.com/aspnet/upcoming-samesite-cookie-changes-in-asp-net-and-asp-net-core/)
 * [Chromium Blog：開發人員：準備開始新的 SameSite = None;安全 Cookie 設定](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)
 * [SameSite cookie 說明](https://web.dev/samesite-cookies-explained/)
