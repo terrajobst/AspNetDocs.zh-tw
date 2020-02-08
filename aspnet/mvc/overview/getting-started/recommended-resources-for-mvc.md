@@ -8,12 +8,12 @@ ms.date: 04/10/2014
 ms.assetid: 7958d725-e958-4566-a85b-535eeb985f94
 msc.legacyurl: /mvc/overview/getting-started/recommended-resources-for-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 98089df48550216b50330d9b354168f570d857cd
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: daccaedae0b0e60f5086f270f214f87da564a85d
+ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74583181"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77074926"
 ---
 # <a name="mvc-recommended-resources"></a>MVC 建議資源
 
@@ -26,7 +26,7 @@ ms.locfileid: "74583181"
 
 ## <a name="getting-started-with-aspnet-mvc"></a>ASP.NET MVC 使用者入門
 
-- [ASP.NET MVC 5 簡介](introduction/getting-started.md)
+- [ASP.NET MVC 5 入門](introduction/getting-started.md)
 - [ASP.NET MVC 簡介](https://pluralsight.com/training/Player?author=scott-allen&amp;name=mvc4-building-m1-intro&amp;mode=live&amp;clip=0&amp;course=mvc4-building)（影片 by Pluralsight）
 - [瞭解 ASP.NET MVC 中的模型視圖控制器](http://www.dotnet-tricks.com/Tutorial/mvc/DIYG060113-Understanding-Model-View-Controller-in-Asp.Net-MVC.html)（簡短的 blog 簡介）。
 - [ASP.NET MVC 概觀](../older-versions-1/overview/asp-net-mvc-overview.md)
@@ -99,7 +99,7 @@ ms.locfileid: "74583181"
 - [ASP.NET MVC 中的安全性](http://www.codeproject.com/Articles/654846/Security-In-ASP-NET-MVC)
 - [保護您的 ASP.NET MVC 4 應用程式](https://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx)
 - [安全性實務的 Pluralsight 影片總覽](http://www.pluralsight-training.net/microsoft/players/PSODPlayer?author=scott-allen&amp;name=mvc3-building-security&amp;mode=live&amp;clip=0&amp;course=aspdotnet-mvc3-intro)
-- [ASP.NET MVC 和 ASP.NET Web Pages 中的 XSRF/CSRF 防護](../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)
+- [在 ASP.NET MVC 和網頁中防止 XSRF/CSRF](../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)
 - [適用于 .NET 開發人員的 OWASP 前10名](http://www.troyhunt.com/2010/05/owasp-top-10-for-net-developers-part-1.html)
 - [使用 OAuth 提供者與 MVC 4](../older-versions/using-oauth-providers-with-mvc.md)
 - [ASP.NET 應用程式的防駭客](https://msdn.microsoft.com/magazine/hh580736.aspx)證明2011年12月 MSDN 雜誌，由 Adam Tuliper
@@ -274,7 +274,7 @@ ms.locfileid: "74583181"
 
 <a id="mobile"></a>
 
-## <a name="mobile"></a>適合行動電腦
+## <a name="mobile"></a>行動
 
 - [ASP.NET MVC 4 Mobile 教學課程](../older-versions/aspnet-mvc-4-mobile-features.md)
 - [影片使用 MVC 4 建立行動易記網站](https://www.bitcast.io/v/building-mobile-friendly-websites-with-mvc-4)
@@ -291,7 +291,7 @@ ms.locfileid: "74583181"
 
 <a id="spa"></a>
 
-## <a name="single-page-application-spa"></a>單一頁面應用程式（SPA）
+## <a name="single-page-application-spa"></a>單一頁面應用程式 (SPA)
 
 - [適用于單一頁面應用程式的 .Net 開發人員入門](https://msdn.microsoft.com/magazine/dn605877.aspx)MSDN 雜誌
 - [使用 AngularJS 和 ASP.NET MVC 4 的單一頁面應用程式](http://tarkus.me/post/32121691785/angularjs-with-asp-net-mvc-4)
@@ -315,7 +315,7 @@ ms.locfileid: "74583181"
 - [在 ASP.NET MVC 中建立可測試單元的應用程式-初學者教學課程](http://www.codeproject.com/Articles/579035/Creating-Unit-Testable-Applications-in-ASP-NET-MVC)
 - [適用于初學者的 ASP.NET MVC 控制器相依性插入](http://www.codeproject.com/Articles/560798/ASP-NET-MVC-controller-dependency-injection-for-be)
 - [撰寫 ASP.NET MVC 動作方法的單元測試，以處理 Ajax 要求和一般要求](https://weblogs.asp.net/shijuvarghese/archive/2012/12/09/writing-unit-tests-for-an-asp-net-mvc-action-method-that-handles-ajax-request-and-normal-request.aspx)
-- [橡木：將動態的好壞和順暢開發帶入 ASP.NET MVC](http://amirrajan.github.com/Oak/)
+- [橡木：將動態的好壞和順暢開發帶入 ASP.NET MVC](https://amirrajan.github.com/Oak/)
 - [使用 xUnit 和 Moq 開發適用于 TDD 的 ASP.NET MVC 4 應用程式](http://www.dotnetcurry.com/ShowArticle.aspx?ID=836)
 - [測試 ASP.NET MVC Views （從新專案到組建伺服器](https://channel9.msdn.com/Events/aspConf/aspConf/Testing-ASP-NET-MVC-Views-from-New-Project-to-the-Build-Server)）（影片）
 - [快速入門：測試導向開發](https://channel9.msdn.com/Events/aspConf/aspConf/Quick-Start-Test-Driven-Development)（影片）
@@ -380,7 +380,7 @@ ms.locfileid: "74583181"
 - [ASP.NET MVC 的幕後第5部分](http://www.pieterg.com/2013/4/aspnet-mvc-under-the-hood-part-5)[ActionInvoker](https://msdn.microsoft.com/library/system.web.mvc.controller.actioninvoker(v=vs.108).aspx)
 - [ASP.NET MVC 第6部分](http://www.pieterg.com/2013/5/aspnet-mvc-under-the-hood-part-6)如何探索 ActionFilters 以及如何套用這些應用
 - [為 ASP.NET MVC 建立您自己的自訂 ViewWebPage](http://www.love2dev.com/#!article/Create-Your-Own-Custom-ViewWebPage-for-ASPNET-MVC)
-- [ASP.NET MVC Razor Views 中的追蹤](https://blogs.msdn.com/b/webdev/archive/2013/07/16/tracing-in-asp-net-mvc-razor-views.aspx)
+- [追蹤 ASP.NET MVC Razor 檢視](https://blogs.msdn.com/b/webdev/archive/2013/07/16/tracing-in-asp-net-mvc-razor-views.aspx)
 - [在 MVC 的其他地方轉譯 ASP.NET MVC Razor Views](http://www.west-wind.com/weblog/posts/2013/Jul/15/Rendering-ASPNET-MVC-Razor-Views-outside-of-MVC-revisited)
 - [應搭配現代化 MVC 專案使用的五個基本前端工具](http://www.adamtibi.net/06-2013/five-essential-front-end-tools-that-should-be-used-with-modern-mvc-projects)
 - [ASP.NET MVC 模型系結的功能和反對缺點](https://msdn.microsoft.com/magazine/hh781022.aspx)

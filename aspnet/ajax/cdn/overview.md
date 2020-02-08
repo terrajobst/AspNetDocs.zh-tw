@@ -8,12 +8,12 @@ ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: 51cb8d672139aaebd77bcdbe80bb579d4b3776aa
-ms.sourcegitcommit: 969e7db924ebad3cc0f0cb0d65d148e8b9221b9a
+ms.openlocfilehash: 228194a7b35e116cabae6d819e7a3a8060a3ef6a
+ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74899563"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77074913"
 ---
 # <a name="microsoft-ajax-content-delivery-network"></a>Microsoft Ajax 內容傳遞網路
 
@@ -61,11 +61,11 @@ Microsoft Ajax 內容傳遞網路（CDN）裝載熱門的協力廠商 JavaScript
 
 CDN 會裝載下列協力廠商的腳本程式庫，這些程式庫已上傳，並由這些程式庫的擁有者授權給您：
 
-- jQuery （www.jquery.com）
-- jQuery UI （www.jqueryui.com）
-- jQuery Mobile （www.jquerymobile.com）
-- jQuery 驗證（www.jquery.com）
-- jQuery 迴圈（www.malsup.com/jquery/cycle/）
+- jQuery （ www.jquery.com）
+- jQuery UI （ www.jqueryui.com）
+- jQuery Mobile （ www.jquerymobile.com）
+- jQuery 驗證（ https://jqueryvalidation.org/)
+- jQuery 迴圈（ www.malsup.com/jquery/cycle/）
 - jQuery Datatable （ http://datatables.net/)
 
 Microsoft Ajax CDN 也包含下列已由 Microsoft 上傳的程式庫：
@@ -76,7 +76,7 @@ Microsoft Ajax CDN 也包含下列已由 Microsoft 上傳的程式庫：
 
 Microsoft 不會宣告此 CDN 上主控之任何協力廠商程式庫的擁有權。 程式庫的著作權擁有者會將這些程式庫授權給您。 您可能必須下載並使用這類程式庫的任何權利，僅由個別著作權擁有者授與。 因為這些不是 Microsoft 程式庫，所以 Microsoft 不會針對此 CDN 上所裝載的協力廠商程式庫提供任何擔保或智慧財產權授權（不含默示的專利權利）。
 
-如果您想要提交 JavaScript 程式庫，而您的程式庫是其中一個最上層的 JavaScript 程式庫（如 http://trends.builtwith.com) 或延伸模組/外掛程式上所列出的（a）常用; 或（b）有助於在 ASP.NET 上使用，請洽詢 AjaxCDNSubmission@Microsoft.com 。
+如果您想要提交 JavaScript 程式庫，而您的程式庫是其中一個最上層的 JavaScript 程式庫（如 http://trends.builtwith.com) 或延伸模組/外掛程式上所列出的（a）常用; 或（b）有助於在 ASP.NET 上使用，請洽詢 AjaxCDNSubmission@Microsoft.com。
 
 <a id="ajaxmicrosoftcom_renamed_to_ajaxaspnetcdncom_18"></a>
 
@@ -148,7 +148,7 @@ CDN 也會主控 jQuery UI 程式庫。 JQuery UI 程式庫包含一組豐富的
 - Jquery ui 程式庫 &mdash; 的 jquery ui 程式庫包含所有 jQuery UI 效果和 widget，例如上述頁面中使用的 Datepicker 小工具。
 - &mdash; jQuery UI 的 jQuery UI 主題支援不同的主題。 上一頁包含用來匯入 Redmond 主題的 CSS 檔案連結。
 
-所有標準 jQuery UI 主題都裝載在 CDN 上。 [請造訪此頁面](jquery-ui/cdnjqueryui1910.md "jMicrosoft Ajax CDN 上的查詢 UI 1.8.10)，以查看每個主題的縮圖。
+所有標準 jQuery UI 主題都裝載在 CDN 上。 [請造訪此頁面](jquery-ui/cdnjqueryui1910.md "Microsoft Ajax CDN 上的 jQuery UI 1.8.10")，以查看每個主題的縮圖。
 
 若要深入瞭解 jQuery UI 程式庫，請造訪官方[JQUERY ui 網站](http://jQueryUI.com "jQuery UI 網站")。
 
@@ -617,7 +617,7 @@ jQuery 遷移版本1.2。0
 
 ### <a name="jquery-validation-releases-on-the-cdn"></a>CDN 上的 jQuery 驗證版本
 
-下列的 jQuery 驗證程式庫版本裝載于此 CDN 上。 按一下每個連結，以查看實際的檔案清單。
+下列的[JQuery 驗證](https://jqueryvalidation.org/ "jQuery 驗證外掛程式")外掛程式版本裝載于此 CDN 上。 按一下每個連結，以查看實際的檔案清單。
 
 - [jQuery 驗證1.19。1](jquery-validate/cdnjqueryvalidate1191.md "jQuery 驗證1.19。1")
 - [jQuery 驗證1.19。0](jquery-validate/cdnjqueryvalidate1190.md "jQuery 驗證1.19。0")
@@ -1180,7 +1180,7 @@ jQuery 遷移版本1.2。0
 下列版本的 ASP.NET Ajax 程式庫會裝載于 CDN 上。 按一下每個連結，以查看實際的檔案清單。
 
 - [ASP.NET Web Forms 和 Ajax 版本4.5。2](cdnajax452.md "ASP.NET Web Forms 與 Ajax 4.5.2")
-- [ASP.NET Web Forms 和 Ajax 第4版](cdnajax4.md "ASP.NET Web Forms 與 Ajax 4")
+- [ASP.NET Web Forms 和 Ajax 第4版](cdnajax4.md "ASP.NET Web Form 和 Ajax 4")
 - [ASP.NET Ajax 3.5 版](cdnajax35.md "ASP.NET Ajax 3.5")
 
 <a id="ASPNET_MVC_Releases_on_the_CDN_16"></a>

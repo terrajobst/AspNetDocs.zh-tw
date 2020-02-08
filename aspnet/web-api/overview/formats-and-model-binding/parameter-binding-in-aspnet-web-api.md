@@ -9,12 +9,12 @@ ms.custom: seoapril2019
 ms.assetid: e42c8388-04ed-4341-9fdb-41b1b4c06320
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 032368f94ce32cf6231458649e8fdd42bee685e9
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 464cb9b45dc0b62c4da38b7cf612934808854d32
+ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519254"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77074900"
 ---
 # <a name="parameter-binding-in-aspnet-web-api"></a>ASP.NET Web API 中的參數系結
 
@@ -205,7 +205,7 @@ Web API 會撰寫所有的值提供者，因此當模型系結器呼叫**ValuePr
 
 ## <a name="additional-resources"></a>其他資源
 
-[自訂參數系結範例](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/CustomParameterBinding)
+[自訂參數系結範例](https://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/CustomParameterBinding)
 
 Mike 的停止寫了一系列有關 Web API 參數系結的絕佳 blog 文章：
 

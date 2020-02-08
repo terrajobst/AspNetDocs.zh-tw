@@ -8,12 +8,12 @@ ms.date: 09/25/2014
 ms.assetid: b9882e53-b3ca-4def-89b0-322846973ccb
 msc.legacyurl: /web-api/overview/security/authentication-filters
 msc.type: authoredcontent
-ms.openlocfilehash: b6815baf05303d5f47a14ee5fe0fdfc2836c1868
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 2ef9e62a6c634237e920b6d7aba2127b835f959d
+ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519371"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075069"
 ---
 # <a name="authentication-filters-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的驗證篩選
 
@@ -23,7 +23,7 @@ ms.locfileid: "76519371"
 
 驗證篩選器可讓您設定個別控制器或動作的驗證配置。 如此一來，您的應用程式就可以針對不同的 HTTP 資源支援不同的驗證機制。
 
-在本文中，我將在[https://github.com/aspnet/samples](https://github.com/aspnet/samples)上顯示[基本驗證](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication)範例中的程式碼。 此範例顯示的驗證篩選準則會執行 HTTP 基本存取驗證配置（RFC 2617）。 此篩選準則會在名為 `IdentityBasicAuthenticationAttribute`的類別中執行。 我不會顯示範例中的所有程式碼，只是說明如何撰寫驗證篩選器的元件。
+在本文中，我將在[https://github.com/aspnet/samples](https://github.com/aspnet/samples)上顯示[基本驗證](https://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication)範例中的程式碼。 此範例顯示的驗證篩選準則會執行 HTTP 基本存取驗證配置（RFC 2617）。 此篩選準則會在名為 `IdentityBasicAuthenticationAttribute`的類別中執行。 我不會顯示範例中的所有程式碼，只是說明如何撰寫驗證篩選器的元件。
 
 ## <a name="setting-an-authentication-filter"></a>設定驗證篩選準則
 
@@ -108,7 +108,7 @@ ms.locfileid: "76519371"
 5. 如果認證不正確，請設定 `context.ErrorResult`以傳回401。
 6. 如果認證有效，請建立**IPrincipal** ，並設定 `context.Principal`。
 
-下列程式碼顯示[基本驗證](http://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication)範例中的**AuthenticateAsync**方法。 批註會指出每個步驟。 程式碼會顯示數種類型的錯誤：沒有認證的授權標頭、認證格式不正確，以及使用者名稱/密碼不正確。
+下列程式碼顯示[基本驗證](https://github.com/aspnet/samples/tree/master/samples/aspnet/WebApi/BasicAuthentication)範例中的**AuthenticateAsync**方法。 批註會指出每個步驟。 程式碼會顯示數種類型的錯誤：沒有認證的授權標頭、認證格式不正確，以及使用者名稱/密碼不正確。
 
 [!code-csharp[Main](authentication-filters/samples/sample5.cs)]
 

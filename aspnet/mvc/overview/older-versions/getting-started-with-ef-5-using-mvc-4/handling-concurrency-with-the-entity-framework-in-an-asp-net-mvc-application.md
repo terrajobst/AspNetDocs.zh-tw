@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: b83f47c4-8521-4d0a-8644-e8f77e39733e
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 0383974baa16bb0d5fc588f9303290bdb0fd979c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 9800a313879477f36a730e6a70c79bc06d403ae3
+ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74595341"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77074941"
 ---
 # <a name="handling-concurrency-with-the-entity-framework-in-an-aspnet-mvc-application-7-of-10"></a>使用 ASP.NET MVC 應用程式中的 Entity Framework 處理平行存取（10之7）
 
@@ -85,6 +85,8 @@ John 按一下 [**儲存**]，然後在瀏覽器回到 [索引] 頁面時看到�
 [Timestamp](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx)屬性會指定此資料行將包含在 `Update` 的 `Where` 子句中，以及傳送至資料庫 `Delete` 命令。 屬性稱為[時間戳記](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx)，因為舊版的 SQL SERVER 在 sql [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx)取代它之前使用 sql[時間戳記](https://msdn.microsoft.com/library/ms182776(v=SQL.90).aspx)資料類型。 `rowversion` 的 .Net 類型是位元組陣列。 如果您想要使用 Fluent API，您可以使用[IsConcurrencyToken](https://msdn.microsoft.com/library/gg679501(v=VS.103).aspx)方法來指定追蹤屬性，如下列範例所示：
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
+
+請參閱 GitHub 問題[Replace IsConcurrencyToken By IsRowVersion](https://github.com/aspnet/AspNetDocs/issues/302)。
 
 由於新增屬性之後，您也變更了資料庫模型，因此您必須再一次進行移轉。 請在套件管理員主控台 (PMC) 中輸入下列命令：
 
@@ -224,7 +226,7 @@ John 按一下 [**儲存**]，然後在瀏覽器回到 [索引] 頁面時看到�
 
 若您再按一下 [刪除]，則您將會重新導向至 [索引] 頁面，並且系統將顯示該部門已遭刪除。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 如此即完成了處理並行衝突的簡介。 如需處理各種平行存取案例之其他方式的詳細資訊，請參閱[開放式平行存取模式](https://blogs.msdn.com/b/adonet/archive/2011/02/03/using-dbcontext-in-ef-feature-ctp5-part-9-optimistic-concurrency-patterns.aspx)和使用 Entity Framework 小組 blog 上的[屬性值](https://blogs.msdn.com/b/adonet/archive/2011/01/30/using-dbcontext-in-ef-feature-ctp5-part-5-working-with-property-values.aspx)。 下一個教學課程會示範如何針對 `Instructor` 和 `Student` 實體，執行每個階層的資料表繼承。
 
