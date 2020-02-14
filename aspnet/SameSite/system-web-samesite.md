@@ -5,16 +5,16 @@ description: 瞭解如何在 ASP.NET 中使用 SameSite cookie
 ms.author: riande
 ms.date: 1/22/2019
 uid: samesite/system-web-samesite
-ms.openlocfilehash: c81ca38648609aa5347d2a8cc11889fc85d81711
-ms.sourcegitcommit: 4d439e01c82c7c95b19216fedaf5b1a11a1deb06
+ms.openlocfilehash: c262e300361f33621e8bd126a34b251c23f56e1a
+ms.sourcegitcommit: 6bd0d7581ec36dc32cb85d0d5fc0e51068dd4423
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76826610"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77234758"
 ---
 # <a name="work-with-samesite-cookies-in-aspnet"></a>在 ASP.NET 中使用 SameSite cookie
 
-作者：[Rick Anderson](https://twitter.com/RickAndMSFT)
+由 [Rick Anderson](https://twitter.com/RickAndMSFT) 提供
 
 SameSite 是一種[IETF](https://ietf.org/about/)草稿標準，旨在針對跨網站偽造要求（CSRF）攻擊提供一些保護。 初稿標準已于[2016](https://tools.ietf.org/html/draft-west-first-party-cookies-07)開始繪製，已于[2019](https://tools.ietf.org/html/draft-west-cookie-incrementalism-00)更新。 更新的標準不會與前一個標準回溯相容，下列是最顯著的差異：
 
@@ -55,12 +55,12 @@ ASP.Net 也會針對這些功能發行自己的四個特定 cookie：匿名驗�
    <forms cookieSameSite="Lax" requireSSL="false" />
   </authentication>
   <sessionState cookieSameSite="Lax" /> <!-- No config attribute for Secure -->
-  <roleManager cookieRequiresSSL="false" /> <!-- No config attribute for SameSite -->
+  <roleManager cookieRequireSSL="false" /> <!-- No config attribute for SameSite -->
  <system.web>
 <configuration>
 ```  
 
-**注意**： ' 未指定 ' 僅適用于目前 `system.web/httpCookies@sameSite`。 我們希望在未來的更新中，將類似的語法新增至先前顯示的 cookieSameSite 屬性。 在程式碼中設定 `(SameSiteMode)(-1)` 仍可在這些 cookie 的實例上運作。 *
+**注意**：「未指定」目前僅供 `system.web/httpCookies@sameSite` 使用。 我們希望在未來的更新中，將類似的語法新增至先前顯示的 cookieSameSite 屬性。 在程式碼中設定 `(SameSiteMode)(-1)` 仍可在這些 cookie 的實例上運作。 *
 
 ## <a name="history-and-changes"></a>歷程記錄和變更
 
@@ -150,5 +150,5 @@ Electron 的版本包含舊版的 Chromium。 例如，小組所使用的 Electr
 ## <a name="additional-resources"></a>其他資源
 
 * [ASP.NET 和 ASP.NET Core 即將推出的 SameSite Cookie 變更](https://devblogs.microsoft.com/aspnet/upcoming-samesite-cookie-changes-in-asp-net-and-asp-net-core/)
-* [Chromium Blog：開發人員：準備開始新的 SameSite = None;安全 Cookie 設定](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)
+* [Chromium Blog：開發人員：準備開始新的 SameSite = None;安全的 Cookie 設定](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)
 * [SameSite cookie 說明](https://web.dev/samesite-cookies-explained/)
