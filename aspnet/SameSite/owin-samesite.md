@@ -5,12 +5,12 @@ description: 使用 SameSite cookie 和 Open Web Interface for .NET （OWIN）
 ms.author: riande
 ms.date: 12/6/2019
 uid: owin-samesite
-ms.openlocfilehash: ac5ae24eeb9e8e1cc6296667a4bebef72c3eb62c
-ms.sourcegitcommit: 7b1e1784213dd4c301635f9e181764f3e2f94162
+ms.openlocfilehash: a3353fd0f0332899aaba26b83aea0ff7c3a6d19b
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74993072"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77455733"
 ---
 # <a name="samesite-cookies-and-the-open-web-interface-for-net-owin"></a>SameSite cookie 和 Open Web Interface for .NET （OWIN）
 
@@ -81,7 +81,7 @@ owinContext.Response.Cookies.Append("My Key", "My Value", new CookieOptions()
 ## <a name="supporting-older-browsers"></a>支援舊版瀏覽器
 
 2016 `SameSite` 標準規定必須將未知的值視為 `SameSite=Strict` 值。 從支援 2016 `SameSite` standard 的舊版瀏覽器存取的應用程式，可能會在取得值為 `None`的 `SameSite` 屬性時中斷。 如果 Web 應用程式想要支援較舊的瀏覽器，則必須執行瀏覽器偵測。 ASP.NET 不會實作為瀏覽器偵測，因為使用者代理程式的值會高度變動並經常變更。 [ICookieManager](/previous-versions/aspnet/dn800238(v%3Dvs.113))中的擴充點允許插入使用者代理程式特定的邏輯。
-<!-- https://docs.microsoft.com/en-us/previous-versions/aspnet/dn800238(v%3Dvs.113) -->
+<!-- https://docs.microsoft.com/previous-versions/aspnet/dn800238(v%3Dvs.113) -->
 
 在 `Startup.Configuration`中，新增類似下列的程式碼：
 
@@ -146,6 +146,6 @@ Electron 的版本包含舊版的 Chromium。 例如，小組所使用的 Electr
 
 ## <a name="additional-resources"></a>其他資源
 
-* [Chromium Blog：開發人員：準備開始新的 SameSite = None;安全 Cookie 設定](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)
+* [Chromium Blog：開發人員：準備開始新的 SameSite = None;安全的 Cookie 設定](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)
 * [SameSite cookie 說明](https://web.dev/samesite-cookies-explained/)
 * [OWIN 和 System.web 回應 cookie 整合問題](https://github.com/aspnet/AspNetKatana/wiki/System.Web-response-cookie-integration-issues)
