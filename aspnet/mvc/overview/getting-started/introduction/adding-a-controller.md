@@ -8,16 +8,16 @@ ms.date: 10/17/2013
 ms.assetid: cc764f3b-6921-486a-8f44-c6ccd1249acd
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 80000b366203eff4b9524b7a5995832753b9eed3
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 194a8a7398e163f0c37164a8724f98b16444984b
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519046"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457215"
 ---
 # <a name="adding-a-controller"></a>加入控制器
 
-依[Rick Anderson]((https://twitter.com/RickAndMSFT))
+依[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!INCLUDE [Tutorial Note](index.md)]
 
@@ -80,7 +80,7 @@ URL 的第一個部分會決定要執行的控制器類別。 因此， */HelloW
 
 ![](adding-a-controller/_static/image7.png)
 
-在上述範例中，不會使用 URL 區段（`Parameters`），`name` 和 `numTimes` 參數會當做[查詢字串](http://en.wikipedia.org/wiki/Query_string)傳遞。 ? 上述 URL 中的（問號）是分隔符號，而且查詢字串會跟著。 &amp; 字元可分隔查詢字串。
+在上述範例中，不會使用 URL 區段（`Parameters`），`name` 和 `numTimes` 參數會當做[查詢字串](http://en.wikipedia.org/wiki/Query_string)傳遞。 ？ 上述 URL 中的（問號）是分隔符號，而且查詢字串會跟著。 &amp; 字元可分隔查詢字串。
 
 使用下列程式碼取代歡迎方法：
 

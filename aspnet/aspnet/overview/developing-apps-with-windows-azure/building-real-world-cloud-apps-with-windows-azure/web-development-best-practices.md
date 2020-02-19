@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: 52d6c941-2cd9-442f-9872-2c798d6d90cd
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 msc.type: authoredcontent
-ms.openlocfilehash: 0956aaaf1f6a1a0d2f5d93f98cb6959cec98dbaf
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: dfd8a3ac2328d3f17dfbe36e68b37d181177b0f4
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74582710"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457085"
 ---
 # <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>Web 開發最佳作法（使用 Azure 建立真實世界的雲端應用程式）
 
-由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom 作者: dykstra](https://github.com/tdykstra)
 
 [下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -76,7 +76,7 @@ ms.locfileid: "74582710"
 <a id="sessionstate"></a>
 ## <a name="avoid-session-state"></a>避免會話狀態
 
-在真實世界的雲端應用程式中，若要避免為使用者會話儲存某種形式的狀態，通常並不實用，但某些方法會影響效能和擴充性，而不是其他方式。 如果您必須儲存狀態，最佳的解決方法是將狀態的數量保持為小型，並將其儲存在 cookie 中。 如果這不可行，則下一個最佳解決方案是使用 ASP.NET 會話狀態搭配提供者來處理[分散式的記憶體](distributed-caching.md#sessionstate)內部快取。 從效能和擴充性的角度來看，最差的解決方法是使用資料庫支援的會話狀態提供者。
+在實際的雲端應用程式中，避免儲存使用者工作階段某種形式的狀態通常並非理想做法，但某些方法會比其他方法更加影響效能和延展性。 如果您需要儲存狀態，最好的方法是將狀態的數量控制得較低，並將其儲存在 Cookie 中。 如果這不可行，則下一個最佳解決方案是使用 ASP.NET 會話狀態搭配提供者來處理[分散式的記憶體](distributed-caching.md#sessionstate)內部快取。 從效能和延展性的觀點來看，最差的解決方法是使用資料庫備份的工作階段狀態提供者。
 
 <a id="cdn"></a>
 ## <a name="use-a-cdn-to-cache-static-file-assets"></a>使用 CDN 來快取靜態檔案資產
@@ -126,7 +126,7 @@ Web Forms、MVC 和 Web API 的 ASP.NET 4.5 中包含 .NET 4.5 非同步程式�
 
 `ToList` 方法有 `Async` 版本，因為在這個程式碼中，會導致查詢傳送至資料庫的方法。 `Where` 和 `OrderByDescending` 方法只會設定查詢，而 `ToListAsync` 方法則會執行查詢，並將回應儲存在 `result` 變數中。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 您可以在任何 web 程式設計架構和任何雲端環境中，執行此處所述的 網頁程式開發最佳作法，但我們在 ASP.NET 和 Windows Azure 中有一些工具可讓您輕鬆完成。 如果您遵循這些模式，就可以輕鬆地相應放大您的 web 層，並將您的費用降至最低，因為每部伺服器都可以處理更多的流量。
 

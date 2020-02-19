@@ -8,16 +8,16 @@ ms.date: 08/15/2012
 ms.assetid: 27dc4fc8-1b51-43b0-933f-fc1b52476523
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: 907a16946c93761cd543135b0b226c8696b041f0
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 9716def069ca9f7115af32e16381f41bd4d13342
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74594638"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457644"
 ---
 # <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 行動功能
 
-依[Rick Anderson]((https://twitter.com/RickAndMSFT))
+依[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 > 本教學課程現在有一個 MVC 5 版本，其中包含在[Azure 網站上部署 ASP.NET MVC 5 行動 Web 應用程式中](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/)的程式碼範例。
 
@@ -27,19 +27,19 @@ ms.locfileid: "74594638"
 
 - [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express) （建議）或 Visual Studio Web DEVELOPER Express SP1。 Visual Studio 2012 包含 ASP.NET MVC 4。 如果您使用的是 Visual Web Developer 2010，就必須安裝[ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392)。
 
-您也將需要行動瀏覽器模擬器。 下列任一項都可以使用：
+您還需要一個行動瀏覽器模擬器。 下列任一項目都可使用：
 
 - [Windows 7 Phone 模擬器](https://msdn.microsoft.com/library/ff402563(VS.92).aspx)。 （這是在本教學課程中大部分螢幕擷取畫面中使用的模擬器）。
 - 變更使用者代理程式字串以模擬 iPhone。 請參閱[此](http://www.howtogeek.com/113439/how-to-change-your-browsers-user-agent-without-installing-any-extensions/)blog 專案。
 - [Opera Mobile 模擬器](http://www.opera.com/developer/tools/mobile/)
 - 將使用者代理程式設定為 iPhone 的[Apple Safari](http://www.apple.com/safari/download/) 。 如需有關如何將 Safari 中的使用者代理程式設定為「iPhone」的指示，請參閱[如何讓 safari](http://www.davidalison.com/2008/05/how-to-let-safari-pretend-its-ie.html)在 David Alison 的 blog 上偽裝為 IE。
 
-本主題提供C#具有原始程式碼的 Visual Studio 專案：
+此處提供具有 C\# 原始程式碼的 Visual Studio 專案來幫助您完成本主題：
 
 - [入門專案下載](https://go.microsoft.com/fwlink/?linkid=228307&amp;clcid=0x409)
 - [已完成專案下載](https://go.microsoft.com/fwlink/?linkid=228306&amp;clcid=0x409)
 
-### <a name="what-youll-build"></a>您將建立的內容
+### <a name="what-youll-build"></a>您要建置的內容
 
 在本教學課程中，您會將行動功能新增至[起始專案](https://go.microsoft.com/fwlink/?LinkId=228307)中提供的簡單會議清單應用程式。 下列螢幕擷取畫面顯示已完成應用程式的 [標記] 頁面，如[Windows 7 Phone 模擬器](https://msdn.microsoft.com/library/ff402563(VS.92).aspx)中所示。 請參閱[Windows Phone 模擬器的鍵盤對應](https://msdn.microsoft.com/library/ff754352(v=vs.92).aspx)，以簡化鍵盤輸入。
 
@@ -49,17 +49,17 @@ ms.locfileid: "74594638"
 
 ![](aspnet-mvc-4-mobile-features/_static/image3.png)
 
-### <a name="skills-youll-learn"></a>您將學習的技能
+### <a name="skills-youll-learn"></a>您要學習的技術
 
-以下是您將瞭解的內容：
+以下是您要學習的內容：
 
 - ASP.NET MVC 4 範本如何使用 HTML5 `viewport` 屬性和適應性轉譯來改善行動裝置上的顯示。
 - 如何建立行動裝置特定的視圖。
 - 如何建立可讓使用者在行動視圖和應用程式桌面視圖之間切換的視圖切換器。
 
-### <a name="getting-started"></a>使用者入門
+### <a name="getting-started"></a>開始使用
 
-使用下列連結下載入門專案的會議清單應用程式：[下載](https://go.microsoft.com/fwlink/?LinkId=228307)。 然後在 Windows Explorer 中，以滑鼠右鍵按一下 [ *MvcMobile* ] 檔案，然後選擇 [**屬性**]。 在 [ **MvcMobile 屬性**] 對話方塊中，選擇 [**解除封鎖**] 按鈕。 （解除封鎖會防止在您嘗試使用從網路下載的 *.zip*檔案時發生的安全性警告）。
+使用下列連結下載入門專案的會議清單應用程式：[下載](https://go.microsoft.com/fwlink/?LinkId=228307)。 然後在 Windows Explorer 中，以滑鼠右鍵按一下 [ *MvcMobile* ] 檔案，然後選擇 [**屬性**]。 在 [ **MvcMobile 屬性**] 對話方塊中，選擇 [**解除封鎖**] 按鈕。 (取消封鎖後，當您嘗試使用從網路下載的 .zip 檔案時，就不會出現安全性警告。)
 
 ![p1_unBlock](aspnet-mvc-4-mobile-features/_static/image4.png)
 
@@ -69,13 +69,13 @@ ms.locfileid: "74594638"
 
 [![p1_browseTag](aspnet-mvc-4-mobile-features/_static/image6.png)](aspnet-mvc-4-mobile-features/_static/image5.png)
 
-在行動裝置上顯示的畫面非常容易閱讀。 選擇 [ASP.NET] 連結。
+該顯示內容在行動裝置上非常清楚易讀。 選擇 [ASP.NET] 連結。
 
 [![p1_tagged_ASPNET](aspnet-mvc-4-mobile-features/_static/image8.png)](aspnet-mvc-4-mobile-features/_static/image7.png)
 
 ASP.NET 標記視圖非常雜亂。 例如，[**日期] 資料**行非常難以閱讀。 稍後在本教學課程中，您將會建立專為行動瀏覽器提供的*AllTags* view 版本，並讓顯示可讀取。
 
-注意：行動快取引擎目前有一個 bug。 對於生產應用程式，您必須安裝[Fixed DisplayModes](http://nuget.org/packages/Microsoft.AspNet.Mvc.FixedDisplayModes) nugget 套件。 如需修正的詳細資訊，請參閱 [ASP.NET MVC 4](https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx)行動快取錯誤修正。
+注意：行動快取引擎目前有一個 bug。 對於生產應用程式，您必須安裝[Fixed DisplayModes](http://nuget.org/packages/Microsoft.AspNet.Mvc.FixedDisplayModes) nugget 套件。 如需修正的詳細資訊，請參閱 < [ASP.NET MVC 4](https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx)行動快取錯誤修正。
 
 ## <a name="css-media-queries"></a>CSS 媒體查詢
 
@@ -113,13 +113,13 @@ ASP.NET MVC 4 配置檔案中的 [視口] `<meta>` 標記會將此視口設定�
 
 如需有關視口 `<meta>` 標記的詳細資訊，請參閱[兩個數據區的故事-第二部分](http://www.quirksmode.org/mobile/viewports2.html)。
 
-在下一節中，您將瞭解如何提供行動瀏覽器的特定視圖。
+您將在下一節看到如何提供行動瀏覽器專用的檢視。
 
 ## <a name="overriding-views-layouts-and-partial-views"></a>覆寫視圖、版面配置和部分視圖
 
-ASP.NET MVC 4 中的重要新功能是一種簡單的機制，可讓您針對一般行動瀏覽器、個別行動瀏覽器或任何特定瀏覽器，覆寫任何視圖（包括版面配置和部分觀點）。 若要提供行動特定的視圖，您可以複製視圖檔案並加入 *。移動*到檔案名。 例如，若要建立行動*索引*視圖，請將*Views\Home\Index.cshtml*複製到*Views\Home\Index.Mobile.cshtml*。
+ASP.NET MVC 4 中的重要新功能是一種簡單的機制，可讓您針對一般行動瀏覽器、個別行動瀏覽器或任何特定瀏覽器，覆寫任何視圖（包括版面配置和部分觀點）。 若要提供行動裝置專屬的檢視，您可以複製檢視檔案並將 *.Mobile* 新增至檔案名稱。 例如，若要建立行動*索引*視圖，請將*Views\Home\Index.cshtml*複製到*Views\Home\Index.Mobile.cshtml*。
 
-在本節中，您將建立行動裝置專屬的版面配置檔案。
+本節將建立行動裝置專屬的配置檔案。
 
 若要開始，請將*Views\Shared\\_Layout. cshtml*複製到*Views\Shared\\_Layout。* 開啟 *\_Layout* ，並將標題從  **MVC4 會議** 變更為 **會議（** 行動裝置）。
 
@@ -127,11 +127,11 @@ ASP.NET MVC 4 中的重要新功能是一種簡單的機制，可讓您針對一
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample5.cshtml)]
 
-將*Views\Home\AllTags.cshtml*檔案複製到*Views\Home\AllTags.Mobile.cshtml*。 開啟新檔案，並將 `<h2>` 元素從 "Tags" 變更為 "Tags （M）"：
+將*Views\Home\AllTags.cshtml*檔案複製到*Views\Home\AllTags.Mobile.cshtml*。 開啟新檔案並將 `<h2>` 元素從 "Tags" 變更為 "Tags (M)"：
 
 [!code-html[Main](aspnet-mvc-4-mobile-features/samples/sample6.html)]
 
-使用桌面瀏覽器並使用行動瀏覽器模擬器，流覽至 [標記] 頁面。 行動瀏覽器模擬器會顯示您所做的兩個變更。
+使用桌面瀏覽器及行動瀏覽器模擬器，瀏覽至標籤頁面。 行動瀏覽器模擬器會顯示您所做的兩個變更。
 
 [![p2m_layoutTags。 mobile](aspnet-mvc-4-mobile-features/_static/image12.png)](aspnet-mvc-4-mobile-features/_static/image11.png)
 
@@ -141,19 +141,19 @@ ASP.NET MVC 4 中的重要新功能是一種簡單的機制，可讓您針對一
 
 ## <a name="browser-specific-views"></a>瀏覽器特定的視圖
 
-除了行動裝置特定和桌面特定的視圖之外，您還可以建立個別瀏覽器的視圖。 例如，您可以建立專屬於 iPhone 瀏覽器的視圖。 在本節中，您將建立 iPhone 瀏覽器的配置，以及*AllTags* View 的 iphone 版本。
+除了行動與桌面專用的檢視之外，您還可以為個別瀏覽器建立檢視。 例如，您可以建立專屬於 iPhone 瀏覽器的視圖。 在本節中，您要建立 iPhone 瀏覽器的配置，以及 iPhone 版的 *AllTags* 檢視。
 
 開啟*global.asax*檔案，並將下列程式碼新增至 `Application_Start` 方法。
 
 [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample7.cs)]
 
-此程式碼會定義名為 "iPhone" 的新顯示模式，以符合每個傳入要求。 如果傳入要求符合您定義的條件（也就是，如果使用者代理套裝程式含字串 "iPhone"），則 ASP.NET MVC 會尋找名稱包含 "iPhone" 尾碼的視圖。
+此程式碼會定義要比對每個連入要求且名為 "iPhone" 的新顯示模式。 若連入的要求符合您定義的條件 (亦即使用者代理程式包含 "iPhone" 字串)，則 ASP.NET MVC 會尋找名稱包含 "iPhone" 字尾的檢視。
 
-在程式碼中，以滑鼠右鍵按一下 `DefaultDisplayMode`，選擇 [**解析**]，然後選擇 [`using System.Web.WebPages;`]。 這會加入 `System.Web.WebPages` 命名空間的參考，也就是定義 `DisplayModes` 和 `DefaultDisplayMode` 類型的位置。
+以滑鼠右鍵按一下程式碼的 `DefaultDisplayMode`，選擇 [解析]，然後選擇 `using System.Web.WebPages;`。 這麼做會將參考加入定義 `System.Web.WebPages` 和 `DisplayModes` 類型的 `DefaultDisplayMode` 命名空間。
 
 [![p2_resolve](aspnet-mvc-4-mobile-features/_static/image16.png)](aspnet-mvc-4-mobile-features/_static/image15.png)
 
-或者，您也可以手動將下面這一行新增至檔案的 `using` 區段。
+或者，您可以手動將以下的行加入檔案的 `using` 區段即可。
 
 [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample8.cs)]
 
@@ -163,13 +163,13 @@ ASP.NET MVC 4 中的重要新功能是一種簡單的機制，可讓您針對一
 
 儲存變更。 將*MvcMobile\Views\Shared\\_Layout.* *MvcMobile\Views\Shared\\_Layout. iPhone*。 開啟新檔案，然後將 `h1` 標題從 `Conference (Mobile)` 變更為 [`Conference (iPhone)`]。
 
-將*MvcMobile\Views\Home\AllTags.Mobile.cshtml*檔案複製到*MvcMobile\Views\Home\AllTags.iPhone.cshtml*。 在新檔案中，將 `<h2>` 元素從 "Tags （M）" 變更為 "Tags （iPhone）"。
+將*MvcMobile\Views\Home\AllTags.Mobile.cshtml*檔案複製到*MvcMobile\Views\Home\AllTags.iPhone.cshtml*。 在新檔案中，將 `<h2>` 元素從「Tags (M)」變更為「Tags (iPhone)」。
 
-執行應用程式。 執行行動瀏覽器模擬器，確認其使用者代理程式已設定為 [iPhone]，然後流覽至 [ *AllTags* ] 視圖。 下列螢幕擷取畫面顯示在[Safari](http://www.apple.com/safari/download/)瀏覽器中呈現的*AllTags*視圖。 您可以在[這裡](https://support.apple.com/kb/DL1531)下載適用于 Windows 的 Safari。
+執行應用程式。 執行行動瀏覽器模擬器，請確認其使用者代理程式設為「iPhone」，然後瀏覽至 *AllTags* 檢視。 下列螢幕擷取畫面顯示在[Safari](http://www.apple.com/safari/download/)瀏覽器中呈現的*AllTags*視圖。 您可以在[這裡](https://support.apple.com/kb/DL1531)下載適用于 Windows 的 Safari。
 
 [![p2_iphoneView](aspnet-mvc-4-mobile-features/_static/image18.png)](aspnet-mvc-4-mobile-features/_static/image17.png)
 
-在本節中，我們已瞭解如何建立行動配置和視圖，以及如何為特定裝置（例如 iPhone）建立版面配置和視圖。 在下一節中，您將瞭解如何運用 jQuery Mobile 來提供更吸引人的行動裝置。
+在本節中，我們已了解如何建立行動配置和檢視，以及如何為特定裝置 (例如 iPhone) 建立配置和檢視。 在下一節中，您將瞭解如何運用 jQuery Mobile 來提供更吸引人的行動裝置。
 
 ## <a name="using-jquery-mobile"></a>使用 jQuery Mobile
 
@@ -221,7 +221,7 @@ JQuery NuGet 套件會安裝下列各項：
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample13.cshtml)]
 
-建立應用程式，然後在您的行動瀏覽器模擬器中，流覽至 [ *AllTags* ] 視圖。 您會看到下列內容：
+建立應用程式，然後在您的行動瀏覽器模擬器中，流覽至 [ *AllTags* ] 視圖。 這時會顯示下列項目：
 
 [![p3_afterNuGet](aspnet-mvc-4-mobile-features/_static/image23.png)](aspnet-mvc-4-mobile-features/_static/image22.png)
 
@@ -255,7 +255,7 @@ JQuery NuGet 套件會安裝下列各項：
 
 ## <a name="improving-the-speakers-list"></a>改善喇叭清單
 
-在行動瀏覽器中，選取 [**喇叭**] 連結。 因為沒有 mobile view （*AllSpeakers*），所以會使用行動裝置版面配置視圖（ *\_layout*）來呈現預設的喇叭顯示（*AllSpeakers*）。
+在行動瀏覽器中，選取 [演講者] 連結。 因為沒有 mobile view （*AllSpeakers*），所以會使用行動裝置版面配置視圖（ *\_layout*）來呈現預設的喇叭顯示（*AllSpeakers*）。
 
 [![p3_speakersDeskTop](aspnet-mvc-4-mobile-features/_static/image31.png)](aspnet-mvc-4-mobile-features/_static/image30.png)
 
@@ -273,7 +273,7 @@ JQuery NuGet 套件會安裝下列各項：
 
 ## <a name="creating-a-mobile-speakers-view"></a>建立行動喇叭視圖
 
-就像您剛才看到的，*說話*者可以讀取，但連結很小，而且很容易就能在行動裝置上按一下。 在本節中，您將建立與新式行動應用程式類似的行動裝置特定*說話*者，它會顯示大型、易於分的連結，並包含搜尋方塊來快速尋找喇叭。
+如您適才所見，行動裝置上的 [ *演講者* ] 檢視已可讀取，但是連結卻非常微小而不容易點選。 在本節中，您將建立與新式行動應用程式類似的行動裝置特定*說話*者，它會顯示大型、易於分的連結，並包含搜尋方塊來快速尋找喇叭。
 
 將*AllSpeakers*複製到*AllSpeakers*。 開啟*AllSpeakers*檔案，並移除 `<h2>` 的標題元素。
 
@@ -281,7 +281,7 @@ JQuery NuGet 套件會安裝下列各項：
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample19.cshtml)]
 
-重新整理行動瀏覽器。 更新後的視圖如下所示：
+重新整理行動瀏覽器。 更新的檢視如下所示：
 
 [![p3_updatedSpeakerView1](aspnet-mvc-4-mobile-features/_static/image35.png)](aspnet-mvc-4-mobile-features/_static/image34.png)
 
@@ -347,7 +347,7 @@ JQuery NuGet 套件會安裝下列各項：
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample24.cshtml)]
 
-程式碼會移除 [會議室] 和 [標籤] 資料行，並以垂直方式格式化標題、說話者和日期，以便在行動瀏覽器上閱讀所有資訊。 下圖反映程式碼變更。
+程式碼會移除 [會議室] 和 [標籤] 資料行，並以垂直方式格式化標題、說話者和日期，以便在行動瀏覽器上閱讀所有資訊。 下圖反映了程式碼變更。
 
 [![ps_SessionsByScottHa](aspnet-mvc-4-mobile-features/_static/image51.png)](aspnet-mvc-4-mobile-features/_static/image50.png)
 
@@ -373,7 +373,7 @@ JQuery NuGet 套件會安裝下列各項：
 
 新的標記會使用 `data-role` 屬性來改善視圖的版面配置。
 
-重新整理行動瀏覽器。 下圖會反映您剛才所做的程式碼變更：
+重新整理行動瀏覽器。 下圖反映您剛做的程式碼變更：
 
 [![p3_love2](aspnet-mvc-4-mobile-features/_static/image59.png)](aspnet-mvc-4-mobile-features/_static/image58.png)
 
@@ -386,9 +386,9 @@ JQuery NuGet 套件會安裝下列各項：
 - 行動裝置視圖的視圖切換器 widget 也可以在桌面視圖中顯示。
 - 支援支援特定的瀏覽器，例如 iPhone 瀏覽器。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [JQuery mobile](http://jquerymobile.com)網站。
 - [jQuery Mobile 總覽](http://jquerymobile.com/demos/1.0b3/docs/about/intro.html)
 - [W3C 推薦的行動 Web 應用程式最佳做法](http://www.w3.org/TR/mwabp/)
-- [W3C 針對媒體查詢的候選建議](http://www.w3.org/TR/css3-mediaqueries/)
+- [W3C 針對媒體查詢的候選推薦做法](http://www.w3.org/TR/css3-mediaqueries/)

@@ -1,91 +1,91 @@
 ---
 uid: mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1
-title: 使用 HTML5 與 jQuery UI Datepicker 快顯行事曆搭配 ASP.NET MVC-第 1 部分 |Microsoft Docs
+title: 搭配 ASP.NET MVC 使用 HTML5 和 jQuery UI Datepicker 快顯行事曆-第1部分 |Microsoft Docs
 author: Rick-Anderson
-description: 本教學課程將教導您如何使用編輯器範本、 顯示範本與 jQuery UI datepicker 快顯行事曆，ASP.NET MV 中的基本概念...
+description: 本教學課程將告訴您如何在 ASP.NET MV 中使用編輯器範本、顯示範本和 jQuery UI datepicker 快顯行事曆的基本概念。
 ms.author: riande
 ms.date: 08/29/2011
 ms.assetid: c23d27f7-b0cf-44f2-8445-fb69e045c674
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 6e7d31d96a36b55e2e1a9a475e2d90526cc6a5b2
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: c1c2380f24c72f6aabaaacaf975e95288a384ff1
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65112401"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457618"
 ---
-# <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>ASP.NET MVC： 第 1 部分中使用 HTML5 與 jQuery UI Datepicker 快顯行事曆
+# <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>搭配 ASP.NET MVC 使用 HTML5 和 jQuery UI Datepicker 快顯行事曆-第1部分
 
-藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
+依[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-> 本教學課程將教導您如何使用編輯器範本、 顯示範本與 jQuery UI datepicker 快顯行事曆，ASP.NET MVC Web 應用程式中的基本概念。
+> 本教學課程將告訴您如何在 ASP.NET MVC Web 應用程式中使用編輯器範本、顯示範本和 jQuery UI datepicker 快顯行事曆的基本概念。
 
-本教學課程將教導您如何使用編輯器範本、 顯示範本和 jQuery 的基本概念[UI datepicker 快顯行事曆](http://plugins.jquery.com/project/datepicker)ASP.NET MVC Web 應用程式中。 本教學課程中，您可以使用 Microsoft Visual Web Developer 2010 Express Service Pack 1 (&quot;Visual Web Developer&quot;)，這是免費版本的 Microsoft Visual Studio，或如果您已具備，您可以使用 Visual Studio 2010 SP1。
+本教學課程將告訴您如何在 ASP.NET MVC Web 應用程式中使用編輯器範本、顯示範本和 jQuery [UI datepicker](http://plugins.jquery.com/project/datepicker)快顯行事曆的基本概念。 在本教學課程中，您可以使用 Microsoft Visual Web Developer 2010 Express Service Pack 1 （&quot;Visual Web Developer&quot;），這是 Microsoft Visual Studio 的免費版本，或者您也可以使用 Visual Studio 2010 SP1 （如果您已經有的話）。
 
-在開始之前，請確定您已安裝符合下列先決條件。 您可以安裝所有人都按下列連結：[Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)。 或者，您可以個別安裝所需的軟體，使用下列連結：
+開始之前，請先確定您已安裝下列必要條件。 您可以按一下下列連結來安裝所有這些專案： [Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)。 或者，您可以使用下列連結個別安裝所需的軟體：
 
 - [Visual Studio Web Developer Express SP1 必要條件](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
-- [ASP.NET MVC 3 Tools Update](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
-- [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)（執行階段 + 工具支援）
+- [ASP.NET MVC 3 工具更新](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
+- [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)（執行時間 + 工具支援）
 
-如果您使用 Visual Studio 2010 而不 Visual Web Developer 中，請按一下下列連結安裝必要條件：[Visual Studio 2010 的必要元件](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)。
+如果您使用 Visual Studio 2010，而不是 Visual Web Developer，請按一下下列連結來安裝必要條件： [Visual Studio 2010 必要條件](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)。
 
-本教學課程假設您已完成[Getting Started with MVC 3](../getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)教學課程中，或您已熟悉 ASP.NET MVC 開發。 本教學課程開頭中完成的專案[Getting Started with MVC 3](../getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)教學課程。
+本教學課程假設您已完成[使用 mvc 3](../getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)教學課程的消費者入門，或熟悉 ASP.NET mvc 開發。 本教學課程會從[消費者入門使用 MVC 3](../getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)教學課程中的已完成專案開始。
 
-本教學課程會示範在 C# 程式碼。 不過，[入門專案](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800)和已完成的專案也會提供在 Visual Basic 中。
+本教學課程會顯示C#中的程式碼。 不過，[[起始專案](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800)] 和 [已完成] 專案也會在 Visual Basic 中提供。
 
-Visual Studio 專案使用C#和 Visual Basic 原始程式碼位於本主題隨附了：[下載](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800)。
+本主題提供具有C#和 Visual Basic 原始程式碼的 Visual Studio 專案：[下載](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800)。
 
-### <a name="what-youll-build"></a>您將建置
+### <a name="what-youll-build"></a>您要建置的內容
 
-您將新增範本 （具體而言，編輯和顯示範本） 中建立簡單的電影清單應用程式[Getting Started with MVC 3](../getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)教學課程。 您也會加入[jQuery UI datepicker](http://jqueryui.com/demos/datepicker/)簡化程序的輸入日期的快顯行事曆。 下列螢幕擷取畫面會顯示與 jQuery UI datepicker 快顯行事曆顯示修改過的應用程式。
+您將會在[使用 MVC 3 的消費者入門](../getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)教學課程中，將範本（具體而言，編輯和顯示範本）新增至簡單的電影清單應用程式。 您也會新增[JQUERY UI datepicker](http://jqueryui.com/demos/datepicker/)快顯行事曆，以簡化輸入日期的程式。 下列螢幕擷取畫面顯示已修改的應用程式，其中顯示了 jQuery UI datepicker 快顯行事曆。
 
-![已完成的 jQuery](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image1.png)
+![完成 jQuery](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image1.png)
 
-### <a name="skills-youll-learn"></a>您將學習到的技能
+### <a name="skills-youll-learn"></a>您要學習的技術
 
-以下是您將學到什麼：
+以下是您要學習的內容：
 
-- 如何使用屬性從[DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)來控制資料的格式，顯示時，並處於編輯模式的命名空間。
-- 如何建立範本 （編輯和顯示範本） 來控制資料的格式。
-- 如何新增[jQuery UI datepicker](http://jqueryui.com/demos/datepicker/)做為輸入的日期欄位的方式。
+- 如何使用[DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)命名空間中的屬性來控制顯示的資料格式，以及其是否處於編輯模式。
+- 如何建立範本（編輯和顯示範本）來控制資料的格式。
+- 如何新增[JQUERY UI datepicker](http://jqueryui.com/demos/datepicker/)做為輸入日期欄位的方式。
 
-### <a name="getting-started"></a>快速入門
+### <a name="getting-started"></a>開始使用
 
-如果您還沒有將入門專案的電影清單應用程式，下載： 
+如果您還沒有來自入門專案的電影清單應用程式，請下載： 
 
 * [下載](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)。
-* 在 Windows 檔案總管中，以滑鼠右鍵按一下*MvcMovie.zip*檔案，然後選取**屬性**。 
-* 在  **MvcMovie.zip 屬性**對話方塊中，選取**解除封鎖**。 (解除封鎖可避免安全性警告，當您嘗試使用時，就會發生 *.zip*您已經從 web 下載的檔案。)
+* 在 Windows Explorer 中，以滑鼠右鍵按一下*MvcMovie .zip*檔案，然後選取 [**屬性**]。 
+* 在 [ **MvcMovie 屬性**] 對話方塊中，選取 [**解除封鎖**]。 (取消封鎖後，當您嘗試使用從網路下載的 .zip 檔案時，就不會出現安全性警告。)
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image2.png)
 
-以滑鼠右鍵按一下*MvcMovie.zip*檔案，然後選取**全部解壓縮**來解壓縮檔案。 在 Visual Web Developer] 或 [Visual Studio 2010 中，開啟*MvcMovieCS\_TU.sln*檔案。
+以滑鼠右鍵按一下 [ *MvcMovie* ] 檔案，然後選取 [**解壓縮全部**] 以解壓縮檔案。 在 Visual Web Developer 或 Visual Studio 2010 中，開啟*MvcMovieCS\_TU .sln*檔案。
 
-在 [**方案總管] 中**，按兩下*Views\Shared\\_Layout.cshtml*加以開啟。 變更`H1`標頭**MVC 電影應用程式**要**電影 jQuery**。 按 CTRL + F5 執行應用程式，然後按一下**首頁**索引標籤上，會帶您前往`Index`電影控制器方法。 若要試用應用程式，請選取**編輯**連結並**詳細資料**電影的其中一個連結。 請注意，在索引中，編輯，並適當格式化的詳細資料檢視、 發行日期和價格：
+在**方案總管**中，按兩下*Views\Shared\\_Layout* ，將其開啟。 將 `H1` 標頭從**MVC Movie 應用程式**變更為**Movie jQuery**。 按 CTRL + F5 執行應用程式，然後按一下 [**首頁**] 索引標籤，這會帶您前往電影控制器的 `Index` 方法。 若要試用應用程式，請選取其中一個電影的 [**編輯**] 連結和 [**詳細資料**] 連結。 請注意，在 [索引]、[編輯] 和 [詳細資料] 視圖中，發行日期和價格的格式正確：
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image3.png)
 
-格式化的日期和價格是使用結果[Displayformat.{0](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx)上的內容屬性`Movie`類別。
+日期和價格的格式是在 `Movie` 類別的屬性上使用[DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx)屬性的結果。
 
-開啟*Movie.cs*檔案，並標記為註解`DisplayFormat`屬性`ReleaseDate`和`Price`屬性。 產生`Movie`類別看起來像這樣：
+開啟*Movie.cs*檔案，並將 `ReleaseDate` 上的 `DisplayFormat` 屬性加上批註，並 `Price` 屬性。 產生的 `Movie` 類別看起來像這樣：
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/samples/sample1.cs)]
 
-按 CTRL + F5 以執行應用程式，然後選取**首頁**索引標籤，檢視的電影清單。 這次發行日期顯示日期和時間，以及 [價格] 欄位不會再顯示貨幣符號。 在您變更`Movie`類別已復原不錯的格式，您稍早所見，但您將在稍後修正該問題。
+再按一次 CTRL + F5 執行應用程式，然後選取 [**首頁**] 索引標籤來查看電影清單。 這次發行日期會顯示日期和時間，而 [價格] 欄位則不會再顯示貨幣符號。 您在 `Movie` 類別中的變更已復原您稍早所見的絕佳格式，但很快就會修正此問題。
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image4.png)
 
 ### <a name="using-the-dataannotations-datatype-attribute-to-specify-the-data-type"></a>使用 DataAnnotations DataType 屬性來指定資料類型
 
-取代標記為註解`DisplayFormat`屬性`ReleaseDate`屬性[資料類型](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)屬性，使用`Date`列舉型別。 取代`DisplayFormat`屬性`Price`屬性[資料類型](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)屬性同樣地，這次使用`Currency`列舉型別。 這是完整的程式碼看起來像：
+使用 `Date` 列舉，以[DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)屬性取代 `ReleaseDate` 屬性的已加批註的 `DisplayFormat` 屬性。 再次以[DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)屬性取代 `Price` 屬性的 `DisplayFormat` 屬性，這次使用 `Currency` 列舉。 完成的程式碼如下所示：
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/samples/sample2.cs)]
 
-執行應用程式。 現在在發行日期和價格屬性的格式正確 （也就利用適當的日期和貨幣格式）。 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)屬性提供型別中繼資料內建的 ASP.NET MVC 範本，以便呈現格式正確的欄位。 使用`DataType`屬性時，最好使用`DisplayFormat`屬性，因為原本是在程式碼的`DataType`屬性可讓模型更簡潔且更有彈性國際化等用途。
+執行應用程式。 現在發行日期和價格屬性的格式正確（也就是使用適當的日期和貨幣格式）。 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx)屬性會提供內建 ASP.NET MVC 範本的類型中繼資料，以正確的格式呈現欄位。 使用 `DataType` 屬性較適合使用原本在程式碼中的 `DisplayFormat` 屬性，因為 `DataType` 屬性可讓模型更清楚且更有彈性地用於國際化之類的用途。
 
-下一節中，您會看到如何進行自訂的範本，來顯示日期欄位。
+在下一節中，您將瞭解如何建立自訂範本以顯示日期欄位。
 
 > [!div class="step-by-step"]
-> [下一步](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)
+> [下一個](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)

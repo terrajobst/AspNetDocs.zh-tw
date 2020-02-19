@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: 364ce84e-5af8-4e08-afc9-75a512b01f84
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
-ms.openlocfilehash: 9bf9acb8b4f8521d03c053c124c5fc4a07d6cb9a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 348232af531b5d53dc3cb46d6d2c7931d95a572d
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585658"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457124"
 ---
 # <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>設計到存活的失敗（使用 Azure 建立真實世界的雲端應用程式）
 
-由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom 作者: dykstra](https://github.com/tdykstra)
 
 [下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -58,7 +58,7 @@ ms.locfileid: "74585658"
 
 Azure 的目標是要讓您更輕鬆地處理所有這些失敗類型，而您會看到一些範例，說明如何在下列章節中執行此作業。
 
-## <a name="slas"></a>滿足
+## <a name="slas"></a>SLA
 
 人們經常聽說雲端環境中的服務等級協定（Sla）。 基本上，這些都是公司對其服務的可靠程度所做出的承諾。 99.9% SLA 表示您應該預期服務會正常運作99.9% 的時間。 這是 SLA 的一般價值，而且聽起來像是非常高的值，但您可能不會發現0.1% 實際的金額是多少。 以下表格顯示在一年、一個月和一周內，各種 SLA 百分比的停機時間量。
 
@@ -70,7 +70,7 @@ Azure 的目標是要讓您更輕鬆地處理所有這些失敗類型，而您�
 
 當然，我們一定會渴望比 SLA 更好。通常您會減少很多的時間。 這是因為如果我們停機時間超過最長的停機時間，您可以向後要求金錢。 您所得到的金錢可能無法完全補償您的業務衝擊，但 SLA 的這個層面會作為強制原則，讓您知道我們確實會將它視為非常重要的事。
 
-### <a name="composite-slas"></a>複合 Sla
+### <a name="composite-slas"></a>複合 SLA
 
 當您查看 Sla 時，需要考慮的重要事項是在應用程式中使用多個服務的影響，每個服務都有個別的 SLA。 例如，Fix It 應用程式會使用 Azure App Service Web Apps、Azure 儲存體和 SQL Database。 以下是在2013年12月撰寫此電子書的日期時的 SLA 號碼：
 
@@ -98,7 +98,7 @@ Azure 的目標是要讓您更輕鬆地處理所有這些失敗類型，而您�
 
 如果您的應用程式過度使用，某些雲端服務可能會刻意拒絕服務。 這稱為*節流*。 如果服務有 SLA，它應該會陳述您可能節流的條件，而您的應用程式設計應該避免這些狀況，並在發生時適當地回應節流。 例如，如果當您每秒超過某個數位時，服務的要求開始失敗，您會想要確保自動重試不會快速進行，因為它們會造成節流的繼續。 在[暫時性錯誤處理一章](transient-fault-handling.md)中，我們將會有更多關於節流的資訊。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本章已嘗試協助您瞭解如何將真實世界的雲端應用程式設計成可正常地存活失敗。 從[下一章](monitoring-and-telemetry.md)開始，此系列中的其餘模式會詳細說明一些您可以用來執行此動作的策略：
 

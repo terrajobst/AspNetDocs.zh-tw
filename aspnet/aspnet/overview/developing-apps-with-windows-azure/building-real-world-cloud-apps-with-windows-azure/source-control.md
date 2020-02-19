@@ -8,16 +8,16 @@ ms.date: 06/23/2015
 ms.assetid: 2a0370d3-c2fb-4bf3-88b8-aad5a736c793
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: a6f445e46d41b646cf6c25af2e65bc73e831d5ed
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 5a1e0d7cd3c396d4be79c8958422602055eb3db1
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74583704"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457098"
 ---
 # <a name="source-control-building-real-world-cloud-apps-with-azure"></a>原始檔控制（使用 Azure 建立真實世界的雲端應用程式）
 
-由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom 作者: dykstra](https://github.com/tdykstra)
 
 [下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -147,7 +147,7 @@ Visual Studio 詢問您是否要使用 TFVC （集中式版本控制）或 Git�
 
 當您選取 [Git]，然後按一下 **[確定]** 時，Visual Studio 會在方案資料夾中建立新的本機 Git 存放庫。 新的存放庫尚未提供任何檔案;您必須執行 Git 認可，將它們新增至存放庫。 以滑鼠右鍵按一下**方案總管**中的方案，然後按一下 [**認可**]。
 
-![認可](source-control/_static/image11.png)
+![Commit](source-control/_static/image11.png)
 
 Visual Studio 會自動為認可的所有專案檔案設置階段，並在 [**包含的變更**] 窗格的**Team Explorer**中列出它們。 （如果有一些您不想要包含在認可中，您可以選取它們、按一下滑鼠右鍵，然後按一下 [**排除**]）。
 
@@ -187,7 +187,7 @@ Visual Studio 會自動為認可的所有專案檔案設置階段，並在 [**�
 
 當然，這並不是您可以實現 agile 分支策略的唯一方法。 您可以使用集中式原始檔控制存放庫來啟用相同的 agile 工作流程。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 根據您可進行變更的速度，並以安全且可預測的方式，測量您的原始檔控制系統是否成功。 如果您發現自己的害怕進行變更，因為您必須對其進行一天或兩次的手動測試，您可能會問自己，您必須採取何種方式進行處理或測試，讓您可以在幾分鐘內進行變更，或在最差時間不到一小時。 執行這項作業的其中一個策略是執行持續整合和持續傳遞，我們將在[下一章](continuous-integration-and-continuous-delivery.md)中討論。
 

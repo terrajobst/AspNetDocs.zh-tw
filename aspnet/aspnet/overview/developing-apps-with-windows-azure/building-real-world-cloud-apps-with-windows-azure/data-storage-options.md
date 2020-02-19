@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
-ms.openlocfilehash: f97d973d87db895441f813376d757a8a2e94b255
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 9357ed5aef39bed501cdac9ac26d46c884d4fae0
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585934"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457176"
 ---
 # <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>資料儲存體選項（使用 Azure 建立真實世界的雲端應用程式）
 
-由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom 作者: dykstra](https://github.com/tdykstra)
 
 [下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -37,14 +37,14 @@ ms.locfileid: "74585934"
 
 此表格顯示四種類型的 NoSQL 資料庫：
 
-- 索引[鍵/值資料庫](https://msdn.microsoft.com/library/dn313285.aspx#sec7)會針對每個索引鍵值儲存單一序列化物件。 它們適合用來儲存大量資料，而您想要為指定的索引鍵值取得一個專案，而不需要根據專案的其他屬性進行查詢。
+- 索引[鍵/值資料庫](https://msdn.microsoft.com/library/dn313285.aspx#sec7)會針對每個索引鍵值儲存單一序列化物件。 適合用來儲存大量資料，也就是您要在其中取得指定索引鍵值的一個項目，而且不必根據項目的其他屬性進行查詢。
 
     [Azure Blob 儲存體](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/)是一種索引鍵/值資料庫，其功能類似于雲端中的檔案儲存體，其索引鍵值對應至資料夾和檔案名。 您可以依資料夾和檔案名抓取檔案，而不是搜尋檔案內容中的值。
 
     「 [Azure 資料表儲存體](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-tables/)」也是索引鍵/值資料庫。 每個值都稱為*實體*（類似于資料分割索引鍵和資料列索引鍵所識別的資料列），而且包含多個*屬性*（類似于資料行，但資料表中的所有實體都不需要共用相同的資料行）。 查詢索引鍵以外的資料行非常沒有效率，應予以避免。 例如，您可以儲存使用者設定檔資料，其中有一個分割區儲存單一使用者的相關資訊。 您可以將資料（例如使用者名稱、密碼雜湊、出生日期等等）儲存在單一實體的個別屬性中，或是在相同資料分割的個別實體中。 但是，您不想要查詢具有指定之出生日期範圍的所有使用者，也無法在您的設定檔資料表與另一個資料表之間執行聯結查詢。 資料表儲存體比關係資料庫更具擴充性且成本較低，但不會啟用複雜的查詢或聯結。
 - [Documentdatabases](https://msdn.microsoft.com/library/dn313285.aspx#sec8)是索引鍵/值資料庫，其中的值為*檔*。 此處的「檔」並不是用在 Word 或 Excel 檔的意義上，而是指命名欄位和值的集合，其中任何一項都可以是子檔。 例如，在訂單歷程記錄資料表中，訂單檔可能會有訂單號碼、訂單日期和客戶欄位;而 [customer] 欄位可能會有 [名稱] 和 [位址] 欄位。 資料庫會以 XML、YAML、JSON 或 BSON 之類的格式來編碼欄位資料;或者，它可以使用純文字。 除了索引鍵/值資料庫以外，設定檔資料庫的功能之一，就是能夠查詢非索引鍵欄位並定義次要索引，讓查詢更有效率。 這項功能可讓檔資料庫更適合需要根據比檔索引鍵的值更複雜的準則來抓取資料的應用程式。 例如，在「銷售訂單歷程記錄」檔資料庫中，您可以查詢各種欄位，例如「產品識別碼」、「客戶識別碼」、「客戶名稱」等等。 [MongoDB](http://www.mongodb.org/)是受歡迎的檔資料庫。
 - 資料[行系列資料庫](https://msdn.microsoft.com/library/dn313285.aspx#sec9)是索引鍵/值資料存放區，可讓您將資料儲存體結構為相關資料行的集合，稱為資料行系列。 例如，人口普查資料庫可能有一個使用者名稱的資料行群組（第一個、中間、最後一個）、一個群組用於該人員的位址，以及一個群組用於個人的設定檔資訊（DOB、性別等等）。 然後，資料庫可以將每個資料行系列儲存在個別的分割區，同時保留一個人與相同索引鍵相關的所有資料。 您接著可以讀取所有的設定檔資訊，而不需要同時讀取所有的名稱和位址資訊。 [Cassandra](http://cassandra.apache.org/)是熱門的資料行系列資料庫。
-- [圖形資料庫](https://msdn.microsoft.com/library/dn313285.aspx#sec10)會將資訊儲存成物件和關聯性的集合。 圖形資料庫的目的是要讓應用程式有效率地執行查詢，以跨越物件的網路和兩者之間的關聯性。 例如，物件可能是人力資源資料庫中的員工，而且您可能會想要協助查詢，例如「尋找直接或間接工作于 Scott 的所有員工」。 [Neo4j](http://www.neo4j.org/)是熱門的圖形資料庫。
+- [圖形資料庫](https://msdn.microsoft.com/library/dn313285.aspx#sec10)會將資訊儲存成物件和關聯性的集合。 圖形資料庫的目的是要讓應用程式有效率地執行查詢，以跨越物件的網路和兩者之間的關聯性。 比方說，物件可能是人力資源資料庫中的員工，而您可以進行快速查詢，例如「尋找直接或間接為 Scott 工作的所有員工。」 [Neo4j](http://www.neo4j.org/)是熱門的圖形資料庫。
 
 相較于關係資料庫，NoSQL 選項為儲存和分析非結構化資料提供更高的擴充性和成本效益。 其缺點是它們不會提供關係資料庫的豐富 queryability 和強大的資料完整性功能。 NoSQL 適用于 IIS 記錄檔資料，這牽涉到高容量，而不需要聯結查詢。 NoSQL 不適用於銀行交易，這需要絕對資料完整性，而且牽涉到與其他帳戶相關資料的多個關聯性。
 
@@ -66,7 +66,7 @@ ms.locfileid: "74585934"
     ![記錄至 Blob 儲存體](data-storage-options/_static/image2.png)
 - 當應用程式取得流量時，web 伺服器 IIS 記錄會寫入至 Blob 儲存體。
 
-    ![Web 服務器記錄檔](data-storage-options/_static/image3.png)
+    ![Web 伺服器記錄](data-storage-options/_static/image3.png)
 - 在入口網站中，按一下 **新增** - **資料服務** - **hdinsight** - **快速建立**，並指定 hdinsight 叢集名稱、叢集大小（HDInsight 叢集資料節點數目），以及 hdinsight 叢集的使用者名稱和密碼。
 
     ![HDInsight](data-storage-options/_static/image4.png)
@@ -125,7 +125,7 @@ Azure 會盡可能輕鬆地使用 IaaS 資料儲存體選項，但 PaaS 供應�
 - 您不需要建立 Vm，只需使用入口網站或腳本來設定資料存放區。 如果您想要 200 tb 的資料存放區，可以只按一下按鈕或執行命令，並在幾秒內準備好供您使用。
 - 您不需要管理或修補服務所使用的 Vm;Microsoft 會自動為您執行此程式。-您不需要擔心設定調整規模或高可用性的基礎結構;Microsoft 會為您處理所有的程式。
 - 您不需要購買授權;授權費用會包含在服務費用中。
-- 您只需為使用的部分付費。
+- 您只需依據使用量付費。
 
 Azure 中的 PaaS 資料儲存選項包括協力廠商提供者的供應專案。 例如，您可以從 Azure 市集中選擇[MongoLab 附加](https://azure.microsoft.com/documentation/articles/store-mongolab-web-sites-dotnet-store-data-mongodb/)元件，以提供 MongoDB 資料庫即服務。
 
@@ -143,11 +143,11 @@ Azure 中的 PaaS 資料儲存選項包括協力廠商提供者的供應專案�
 | 功能投射 | -是否可以在伺服器端執行問題、匯總等等？ 如果我從 SQL 中的資料表執行 SELECT COUNT （\*），它會非常有效率地在伺服器上執行所有工作，並傳回我要尋找的數位。 如果我想要從不支援匯總的 NoSQL 資料存放區進行相同的計算，這就是沒有效率的「未系結查詢」，而且可能會超時。即使查詢成功，我還是必須將伺服器上的所有資料都取出到用戶端，並計算用戶端上的資料列。 -可以使用哪些語言或類型的運算式？ 在關係資料庫中，我可以使用 SQL。 使用某些 NoSQL 資料庫（例如 Azure 資料表儲存體）時，我會使用[OData](http://www.odata.org/)，而我可以做的就是對主要索引鍵進行篩選並取得投影（選取可用欄位的子集）。 |
 | 輕鬆擴充性 | -資料需要多長的時間和規模？ -平臺原本就會執行相應放大嗎？ -新增/移除容量（大小和輸送量）有多簡單？ 關係資料庫和資料表不會自動進行分割以使其可調整，因此很容易擴充到超出特定限制。 NoSQL 資料存放區（例如 Azure 資料表儲存體）本質上會分割所有專案，幾乎不會有新增資料分割的限制。 您可以輕鬆地將表格儲存體調整為 200 tb，但 Azure SQL Database 的資料庫大小上限是 500 gb。 您可以藉由將關聯式資料分割成多個資料庫來進行調整，但設定應用程式以支援該模型，這牽涉到許多程式設計工作。 |
 | 檢測與管理能力 | -要檢測、監視和管理的平臺有多簡單？ 您必須持續掌握資料存放區的健全狀況和效能，因此您需要事先知道平臺提供給您的計量，以及您必須自行開發的內容。 |
-| 操作 | -在 Azure 上部署和執行的平臺有多簡單？ PaaS? IaaS? 廠商? 您可以輕鬆地在 Azure 上設定表格儲存體和 SQL Database。 不是內建 Azure PaaS 解決方案的平臺需要更多的人力。 |
+| 作業 | -在 Azure 上部署和執行的平臺有多簡單？ PaaS? IaaS? 廠商? 您可以輕鬆地在 Azure 上設定表格儲存體和 SQL Database。 不是內建 Azure PaaS 解決方案的平臺需要更多的人力。 |
 | API 支援 | -這是可讓您輕鬆使用平臺的 API 嗎？ 針對 Azure 資料表服務，有一個 SDK 具有 .NET API，可支援 .NET 4.5 非同步程式設計模型。 如果您撰寫的是 .NET 應用程式，相較于另一個沒有 API 或較不完整的索引鍵/值資料存放區平臺，撰寫和測試 Azure 資料表服務的程式碼會更容易。 |
 | 交易完整性與資料一致性 | -平臺是否支援交易以確保資料的一致性是非常重要的嗎？ 為了追蹤大量傳送的電子郵件，效能和低資料儲存成本可能比自動支援資料平臺中的交易或參考完整性更重要，因此 Azure 資料表服務是不錯的選擇。 針對追蹤銀行帳戶餘額或採購單，提供強式交易保證的關係資料庫平臺是較佳的選擇。 |
-| 商務持續性 | -備份、還原和嚴重損壞修復有多簡單？ 較早或之後的生產資料將會損毀，而您將需要復原功能。 關係資料庫通常會有更精細的還原功能，例如能夠還原到某個時間點。 瞭解您所考慮的每個平臺中有哪些可用的還原功能是要考慮的重要因素。 |
-| Cost | -如果有多個平臺可支援您的資料工作負載，它們如何比較成本？ 例如，如果您使用 ASP.NET Identity，您可以將使用者設定檔資料儲存在 Azure 資料表服務或 Azure SQL Database 中。 如果您不需要 SQL Database 的豐富查詢功能，您可以選擇 Azure 資料表，因為它的成本會比指定的儲存體數量低。 |
+| 業務持續性 | -備份、還原和嚴重損壞修復有多簡單？ 較早或之後的生產資料將會損毀，而您將需要復原功能。 關係資料庫通常會有更精細的還原功能，例如能夠還原到某個時間點。 瞭解您所考慮的每個平臺中有哪些可用的還原功能是要考慮的重要因素。 |
+| 成本 | -如果有多個平臺可支援您的資料工作負載，它們如何比較成本？ 例如，如果您使用 ASP.NET Identity，您可以將使用者設定檔資料儲存在 Azure 資料表服務或 Azure SQL Database 中。 如果您不需要 SQL Database 的豐富查詢功能，您可以選擇 Azure 資料表，因為它的成本會比指定的儲存體數量低。 |
 
 我們通常建議您在選擇資料儲存體解決方案之前，知道每個類別中問題的答案。
 
@@ -168,7 +168,7 @@ Fix It 應用程式會使用關係資料庫來儲存工作。 [[自動化所有�
 
 按一下 **新增--資料服務** -- **SQL Database** -- **快速建立**，輸入資料庫名稱，選擇您的帳戶中已有的伺服器，或建立一個新的伺服器，然後按一下 **建立 SQL Database**。
 
-![新增 SQL 資料庫](data-storage-options/_static/image9.png)
+![New SQL Database](data-storage-options/_static/image9.png)
 
 請等候數秒，而且您已在 Azure 中備妥可供您使用的資料庫。
 
@@ -243,7 +243,7 @@ SQL Server 和 Azure SQL Database 的一件事，就是兩者的核心程式設�
 
 以下是如何在兩個模型之間進行選擇的一些指導方針。
 
-| Azure SQL Database （PaaS） | 虛擬機器（IaaS）中的 SQL Server |
+| Azure SQL Database (PaaS) | 虛擬機器（IaaS）中的 SQL Server |
 | --- | --- |
 | **優點**：您不需要建立或管理 vm、更新或修補作業系統或 SQL;Azure 會為您執行此程式。 -內建高可用性，具有資料庫層級 SLA。 -低擁有權總成本（TCO），因為您只需支付所使用的部分（不需要授權）。 -適用于處理大量較小的資料庫（&lt;= 500 GB）。 -輕鬆地以動態方式建立新的資料庫以啟用相應放大。 | ***優點***-與內部部署 SQL Server 的功能相容。 -可以透過 VM 層級 SLA，透過 2 + Vm 中的 AlwaysOn 來執行 SQL Server[高可用性](https://www.microsoft.com/sqlserver/solutions-technologies/mission-critical-operations/high-availability.aspx)。 -您可以完整控制 SQL 的管理方式。 -可以重複使用您已經擁有的 SQL 授權，或按小時支付一次。 -適用于處理較少但較大（1 TB 以上）的資料庫。 |
 | **缺點**-相較于內部部署 SQL Server （缺少[CLR 整合](https://technet.microsoft.com/library/ms131102.aspx)、 [TDE](https://technet.microsoft.com/library/bb934049.aspx)、[壓縮支援](https://technet.microsoft.com/library/cc280449.aspx)、 [SQL Server Reporting Services](https://technet.microsoft.com/library/ms159106.aspx)等），其部分功能差距-資料庫大小限制為500gb。 | ***缺點***-更新/修補程式（OS 和 SQL）是您負責建立和管理 db 的責任-磁片 IOPS （每秒輸入/輸出作業）限制為大約8000（經由16個數據磁片磁碟機）。 |
@@ -256,7 +256,7 @@ SQL Server 和 Azure SQL Database 的一件事，就是兩者的核心程式設�
 
 當您建立具有 SQL Server 映射的 VM 時，我們會根據您的 VM 使用量，以小時為單位來費率 SQL Server 授權成本。 如果您的專案只會執行幾個月，則以小時為單位付費會較便宜。 如果您認為您的專案將會持續幾年，則以平常的方式購買授權較便宜。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 雲端運算讓混搭資料儲存的方法更加實用，以符合您應用程式的需求。 如果您要建立新的應用程式，請仔細思考這裡所列的問題，以選擇當您的應用程式成長時，會繼續正常運作的方法。 [下一章](data-partitioning-strategies.md)將說明一些您可以用來結合多個資料儲存方法的分割策略。
 
@@ -282,7 +282,7 @@ SQL Server 和 Azure SQL Database 的一件事，就是兩者的核心程式設�
 在 ASP.NET Web 應用程式中使用 Entity Framework 和 SQL Database
 
 - [使用 MVC 5 與 EF 6 消費者入門](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)。 九個部分的教學課程系列，會逐步引導您建立使用 EF 的 MVC 應用程式，並將資料庫部署至 Azure 和 SQL Database。
-- [使用 Visual Studio ASP.NET Web 部署](../../../../web-forms/overview/deployment/visual-studio-web-deployment/introduction.md)。 十二部分教學課程系列，深入瞭解如何使用 EF Code First 來部署資料庫。
+- [使用 Visual Studio 的 ASP.NET Web 部署](../../../../web-forms/overview/deployment/visual-studio-web-deployment/introduction.md)。 十二部分教學課程系列，深入瞭解如何使用 EF Code First 來部署資料庫。
 - 將[具有成員資格、OAuth 和 SQL Database 的 Secure ASP.NET MVC 5 應用程式部署到 Azure 網站](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)。 逐步教學課程會逐步引導您建立使用驗證的 web 應用程式、將應用程式資料表儲存在成員資格資料庫中、修改資料庫架構，以及將應用程式部署至 Azure。
 - [ASP.NET 資料存取內容對應](https://go.microsoft.com/fwlink/p/?LinkId=282414)。 使用 EF 和 SQL Database 的資源連結。
 

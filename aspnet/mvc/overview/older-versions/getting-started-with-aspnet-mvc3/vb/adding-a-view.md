@@ -1,123 +1,123 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
-title: 新增檢視 (VB) |Microsoft Docs
+title: 加入視圖（VB） |Microsoft Docs
 author: Rick-Anderson
-description: 本教學課程將教導您建置使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，也就是 ASP.NET MVC Web 應用程式的基本概念...
+description: 本教學課程將告訴您使用 Microsoft Visual Web Developer 2010 Express Service Pack 1 建立 ASP.NET MVC Web 應用程式的基本概念，也就是 。
 ms.author: riande
 ms.date: 01/12/2011
 ms.assetid: d3633f64-5d3c-45c9-ae4b-cb1563e3739f
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: cf2e73b4245de6fe702b8c74550e6c7fc701a47f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.openlocfilehash: fa200935d83bb26c07b302449a6eba6fd67b5322
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129981"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457301"
 ---
 # <a name="adding-a-view-vb"></a>新增檢視 (VB)
 
-藉由[Rick Anderson]((https://twitter.com/RickAndMSFT))
+依[Rick Anderson](https://twitter.com/RickAndMSFT)
 
-> 本教學課程將教導您建置使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，也就是 Microsoft Visual Studio 的免費版本的 ASP.NET MVC Web 應用程式的基本概念。 在開始之前，請確定您已安裝符合下列先決條件。 您可以安裝所有人都按下列連結：[Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)。 或者，您可以個別安裝的必要條件，使用下列連結：
+> 本教學課程將告訴您使用 Microsoft Visual Web Developer 2010 Express Service Pack 1 建立 ASP.NET MVC Web 應用程式的基本概念，這是 Microsoft Visual Studio 的免費版本。 開始之前，請先確定您已安裝下列必要條件。 您可以按一下下列連結來安裝所有這些專案： [Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)。 或者，您可以使用下列連結個別安裝必要條件：
 > 
 > - [Visual Studio Web Developer Express SP1 必要條件](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
-> - [ASP.NET MVC 3 Tools Update](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
-> - [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)（執行階段 + 工具支援）
+> - [ASP.NET MVC 3 工具更新](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
+> - [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)（執行時間 + 工具支援）
 > 
-> 如果您使用 Visual Studio 2010，而不 Visual Web Developer 2010，請按一下下列連結安裝必要條件：[Visual Studio 2010 的必要元件](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)。
+> 如果您使用 Visual Studio 2010，而不是 Visual Web Developer 2010，請按一下下列連結來安裝必要條件： [Visual Studio 2010 必要條件](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)。
 > 
-> 使用本主題隨附了 VB.NET 原始程式碼的 Visual Web Developer 專案。 [下載 VB.NET 版本](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)。 如果您偏好 C#，切換至[C# 版本](../cs/adding-a-view.md)本教學課程。
+> 本主題提供具有 VB.NET 原始程式碼的 Visual Web Developer 專案。 [下載 VB.NET 版本](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)。 如果您想C#要的話，請切換到本教學課程的[ C#版本](../cs/adding-a-view.md)。
 
-這一節我們將修改`HelloWorldController`類別，以使用檢視範本檔案，完全封裝產生 HTML 回應給用戶端的程序。
+在本節中，我們將修改 `HelloWorldController` 類別，以使用視圖範本檔案，將產生 HTML 回應的程式完全封裝至用戶端。
 
-讓我們開始使用檢視範本，內含`Index`方法中的`HelloWorldController`類別。 目前`Index`方法會傳回硬式編碼在控制器類別內的訊息字串。 變更`Index`方法來傳回`View`物件，如下列所示：
+讓我們從在 `HelloWorldController` 類別中使用具有 `Index` 方法的視圖範本開始著手。 目前，`Index` 方法會傳回字串，內含在控制器類別中硬式編碼的訊息。 變更 `Index` 方法，以傳回 `View` 物件，如下所示：
 
 [!code-vb[Main](adding-a-view/samples/sample1.vb)]
 
-讓我們現在將檢視範本新增至我們的專案，我們可以叫用`Index`方法。 若要這樣做，以滑鼠右鍵按一下`Index`方法，然後按一下**加入檢視**。
+現在讓我們將一個 view 範本加入至我們可以使用 `Index` 方法叫用的專案。 若要這麼做，請以滑鼠右鍵按一下 `Index` 方法，然後按一下 [**加入視圖**]。
 
 [![IndexAddView](adding-a-view/_static/image2.png "IndexAddView")](adding-a-view/_static/image1.png)
 
-**加入檢視** 對話方塊隨即出現。 保留預設的項目，然後按一下**新增** 按鈕。
+[**加入視圖**] 對話方塊隨即出現。 保留預設專案，然後按一下 [**新增**] 按鈕。
 
 [![3addView](adding-a-view/_static/image4.png "3addView")](adding-a-view/_static/image3.png)
 
-*MvcMovie\Views\HelloWorld*資料夾並*MvcMovie\Views\HelloWorld\Index.vbhtml*建立檔案。 您可以看到它們**方案總管 中**:
+系統會建立*MvcMovie\Views\HelloWorld*資料夾和*MvcMovie\Views\HelloWorld\Index.vbhtml*檔案。 您可以在**方案總管**中看到這些專案：
 
 [![SolnExpHelloWorldIndx](adding-a-view/_static/image6.png "SolnExpHelloWorldIndx")](adding-a-view/_static/image5.png)
 
-將下的一些 HTML`<h2>`標記。 已修改*MvcMovie\Views\HelloWorld\Index.vbhtml*檔案如下所示。
+在 `<h2>` 標記底下新增一些 HTML。 修改過的*MvcMovie\Views\HelloWorld\Index.vbhtml*檔案如下所示。
 
 [!code-vbhtml[Main](adding-a-view/samples/sample2.vbhtml)]
 
-執行應用程式，並瀏覽至&quot;hello world&quot;控制站 (`http://localhost:xxxx/HelloWorld`)。 `Index`在控制器方法並沒有進行太多工作; 它只會執行陳述式`return View()`，這表示我們想要使用檢視範本檔案來呈現給用戶端的回應。 因為我們未明確指定要使用的檢視範本檔案的名稱，預設使用 ASP.NET MVC *Index.vbhtml*檢視檔案內 *\Views\HelloWorld* 資料夾。 下圖顯示字串硬式編碼在檢視中。
+執行應用程式，並流覽至 &quot;hello world&quot; 控制器（`http://localhost:xxxx/HelloWorld`）。 控制器中的 `Index` 方法不會執行太多工做;它只會執行 `return View()`語句，這表示我們想要使用視圖範本檔案來呈現對用戶端的回應。 因為我們並未明確指定要使用的視圖範本檔案的名稱，所以 ASP.NET MVC 會預設為使用 *\Views\HelloWorld*資料夾中的*vbhtml*視圖檔案。 下圖顯示在此視圖中硬式編碼的字串。
 
 [![3HelloWorld](adding-a-view/_static/image8.png "3HelloWorld")](adding-a-view/_static/image7.png)
 
-看起來很好。 不過，請留意到瀏覽器的標題列顯示&quot;Index&quot; ，並大的標題在頁面上顯示&quot;我的 MVC 應用程式。&quot;讓我們將這些變更。
+看起來不錯。 不過，請注意，瀏覽器的標題列會顯示 &quot;索引&quot; 而頁面上的大標題會顯示為 [&quot;我的 MVC 應用程式]。&quot; 讓我們變更這些。
 
 ## <a name="changing-views-and-layout-pages"></a>變更檢視和版面配置頁
 
-首先，讓我們變更文字&quot;我的 MVC 應用程式。&quot;該文字會共用，並出現在每一頁。 它實際上不會顯示只有一個位置，在專案中，即使是在我們的應用程式中的每個頁面上。 移至 */檢視/Shared*資料夾中的**方案總管**，然後開啟 *\_Layout.vbhtml*檔案。 這個檔案稱為版面配置頁面，而且共用&quot;shell&quot;所有其他頁面使用。
+首先，讓我們變更 MVC 應用程式 &quot;的文字。&quot; 該文字會共用並顯示在每個頁面上。 它實際上只會出現在專案中的一個位置，即使它是在應用程式的每個頁面上也一樣。 移至**方案總管**中的 [ */Views/Shared* ] 資料夾，然後開啟 *\_配置 vbhtml*檔案。 這個檔案稱為版面配置頁，它是所有其他頁面都使用的共用 &quot;shell&quot;。
 
-請注意`@RenderBody()`檔案底部附近的程式碼行。 `RenderBody` 是，您所建立的所有頁面的都顯示位置的預留位置&quot;包裝&quot;版面配置頁。 變更`<h1>`標題從 **&quot;** 我的 MVC 應用程式&quot;來&quot;MVC 電影應用程式&quot;。
+請注意靠近檔案底部的 `@RenderBody()` 行程式碼。 `RenderBody` 是一種預留位置，其中會顯示您建立的所有頁面，&quot;包裝在版面配置頁中的&quot;。 將 [`<h1>`] 標題從 [ **&quot;** 我的 MVC 應用&quot; 程式] 變更為 [&quot;Mvc 電影應用程式&quot;]。
 
 [!code-html[Main](adding-a-view/samples/sample3.html)]
 
-執行應用程式，並記下它現在說&quot;MVC 電影應用程式&quot;。 按一下 **關於**連結，且頁面上顯示&quot;MVC 電影應用程式&quot;也。
+執行應用程式，並注意它現在會顯示 &quot;MVC 電影應用程式&quot;。 按一下 [**關於**] 連結，該頁面也會顯示 &quot;MVC 電影應用程式&quot;。
 
-完整 *\_Layout.vbhtml*檔案如下所示：
+完整的 *\_配置的 vbhtml*檔案如下所示：
 
 [!code-cshtml[Main](adding-a-view/samples/sample4.cshtml)]
 
-現在，讓我們變更 （檢視） 中的 [索引] 頁面的標題。
+現在，讓我們變更索引頁面的標題（view）。
 
 [!code-vbhtml[Main](adding-a-view/samples/sample5.vbhtml)]
 
-開啟*MvcMovie\Views\HelloWorld\Index.vbhtml*。 有兩個地方進行變更： 首先，文字，會出現在瀏覽器的標題，然後次要標頭 (`<h2>`項目)。 我們要讓它們稍有不同的位元的程式碼變更應用程式的一部分，您可以看到。
+開啟*MvcMovie\Views\HelloWorld\Index.vbhtml*。 有兩個地方可以進行變更：首先是出現在瀏覽器標題中的文字，然後是次要標頭（`<h2>` 元素）。 我們會讓它們略有不同，讓您可以看到哪一段程式碼變更了哪個部分的應用程式。
 
-執行應用程式，並瀏覽至`http://localhost:xx/HelloWorld`。 請注意，瀏覽器標題、主要標題和次要標題已變更 它很容易就能只進行小變更的應用程式中的重大變更對檢視表。 (如果您在瀏覽器中沒有看到變更，可能檢視的是快取的內容。 請在瀏覽器中按 Ctrl + F5 以強制載入來自伺服器的回應)。
+執行應用程式，並流覽至`http://localhost:xx/HelloWorld`。 請注意，瀏覽器標題、主要標題和次要標題已變更 您可以輕鬆地在應用程式中進行大幅變更，而對視圖進行小幅變更。 (如果您在瀏覽器中沒有看到變更，可能檢視的是快取的內容。 請在瀏覽器中按 Ctrl + F5 以強制載入來自伺服器的回應)。
 
 [![3_MyMovieList](adding-a-view/_static/image10.png "3_MyMovieList")](adding-a-view/_static/image9.png)
 
-我們一點&quot;資料&quot;(在此情況下&quot;Hello World ！&quot;訊息) 是硬式編碼，不過。 MVC 應用程式可能會有 V （檢視），我們有 C （控制站），但沒有 M （模型） 尚未。 不久之後，我們將逐步解說如何建立資料庫，並從其擷取模型資料。
+不過，我們有點 &quot;的資料&quot; （在此案例中，&quot;Hello World！&quot; 訊息）是硬式編碼。 我們的 MVC 應用程式有 V （views），而我們已經有 C （控制器），但沒有 M （模型）。 很快地，我們將逐步解說如何建立資料庫，並從中抓取模型資料。
 
 ## <a name="passing-data-from-the-controller-to-the-view"></a>將資料從控制器傳遞至檢視
 
-我們移至資料庫，並討論模型之前，不過，讓我們先討論將資訊從控制器傳遞至檢視。 我們想要將檢視範本呈現 HTML 回應給用戶端所需要的傳遞。 這些物件是通常建立控制器類別傳遞至檢視範本，而且它們應該包含在檢視範本需要的資料，並不多。
+不過，在我們進入資料庫並討論模型之前，讓我們先討論如何將控制器的資訊傳遞給視圖。 我們想要傳遞「視圖」範本所需的內容，以便向用戶端轉譯 HTML 回應。 這些物件通常是由控制器類別所建立並傳遞給視圖範本，而且它們應該只包含此視圖範本所需的資料，而且不再需要。
 
-與先前`HelloWorldController`類別，`Welcome`動作方法所花費`name`和`numTimes`參數和參數值至瀏覽器然後輸出。 而非讓控制器繼續直接呈現這個回應，讓我們改為我們會將放該資料封包中檢視。 控制器和檢視，可以使用`ViewBag`物件來保存該資料。 會自動傳遞到檢視範本，以及用來呈現 HTML 回應使用封包的內容做為資料。 這樣一來，控制器會關心一件事並與另一個檢視範本，讓我們可以維護乾淨&quot;關注點分離&quot;應用程式中。
+先前使用 `HelloWorldController` 類別，`Welcome` 動作方法會採用 `name` 和 `numTimes` 參數，然後將參數值輸出至瀏覽器。 而不是讓控制器直接轉譯此回應，讓我們改為將該資料放在此視圖的包中。 控制器和 Views 可以使用 `ViewBag` 物件來保存該資料。 這會自動傳遞至視圖範本，並用來呈現 HTML 回應，使用包的內容做為資料。 如此一來，控制器就會關心一件事，並使用另一個視圖範本，讓我們能夠在應用程式中維護 &quot;的顧慮分離&quot;。
 
-或者，我們可以定義的自訂類別，然後建立該物件的執行個體自己、 填入資料並將它傳遞至檢視。 通常稱為 ViewModel，因為它是自訂模型檢視。 若是小量的資料，不過，ViewBag 運作良好。
+或者，我們可以定義自訂類別，然後自行建立該物件的實例，並在其中填入資料並將其傳遞給視圖。 這通常稱為 ViewModel，因為它是 View 的自訂模型。 不過，對於少量的資料，ViewBag 的效果很好。
 
-返回*HelloWorldController.vb*檔案變更`Welcome`NumTimes 與訊息放入 ViewBag 控制器內的方法。 ViewBag 是動態物件。 這表示您可以放置任何內容給它。 ViewBag 有定義的屬性，直到您將其內的項目。
+返回*HelloWorldController* ，將控制器內的 `Welcome` 方法變更為將訊息和 numtimes is 放入 ViewBag 中。 ViewBag 是動態物件。 這表示您可以將任何想要的內容放在其中。 ViewBag 沒有已定義的屬性，除非您在其中放置內容。
 
-完整`HelloWorldController.vb`與新的類別，在相同的檔案。
+在相同檔案中，具有新類別的完整 `HelloWorldController.vb`。
 
 [!code-vb[Main](adding-a-view/samples/sample6.vb)]
 
-現在我們 ViewBag 包含將自動傳遞到檢視的資料。 同樣地，或者我們可以具有傳入我們自己的物件，就像這樣如果我們想：
+現在，我們的 ViewBag 包含將會自動傳遞到 View 的資料。 同樣地，如果我們喜歡，也可以傳入我們自己的物件，如下所示：
 
 [!code-csharp[Main](adding-a-view/samples/sample7.cs)]
 
-現在，我們必須`WelcomeView`範本 ！ 執行應用程式，因此新程式碼會編譯。 關閉瀏覽器，以滑鼠右鍵按一下`Welcome`方法，然後再按一下**加入檢視**。
+現在我們需要一個 `WelcomeView` 範本！ 執行應用程式，以編譯新的程式碼。 關閉瀏覽器，在 `Welcome` 方法內按一下滑鼠右鍵，然後按一下 [**加入視圖**]。
 
-以下是您**加入檢視**對話方塊看起來像。
+[**加入視圖**] 對話方塊的外觀如下所示。
 
 [![3AddWelcomeView](adding-a-view/_static/image12.png "3AddWelcomeView")](adding-a-view/_static/image11.png)
 
-下列程式碼下新增`<h2>`中新項目<em>褖畫惎。</em>vbhtml 檔案。 我們將進行迴圈，並假設&quot;Hello&quot;使用者說我們應該無限次 ！
+將下列程式碼加入至新的歡迎畫面中的 `<h2>` 元素底下<em>。</em>vbhtml 檔案。 我們會建立迴圈，並說 &quot;Hello&quot; 的次數，如同使用者所說的一樣！
 
 [!code-vbhtml[Main](adding-a-view/samples/sample8.vbhtml)]
 
-執行應用程式，並瀏覽至 `http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4`
+執行應用程式，並流覽至 `http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4`
 
-現在資料已從 URL 取得，會自動傳遞到控制器。 控制器會封裝將資料分成`Model`物件並檢視該物件傳遞。 檢視比對使用者顯示為 HTML 的資料。
+現在會從 URL 取得資料，並自動傳遞至控制器。 控制器會將資料封裝成 `Model` 物件，並將該物件傳遞至 view。 視圖會將資料以 HTML 形式顯示給使用者。
 
 [![3Hello_Scott_4](adding-a-view/_static/image14.png "3Hello_Scott_4")](adding-a-view/_static/image13.png)
 
-其實是一種的&quot;M&quot;模型，但不是資料庫類型。 讓我們運用所學的內容，建立電影的資料庫。
+這是一種適用于模型的 &quot;M&quot;，但不是資料庫種類。 讓我們運用所學的內容，建立電影的資料庫。
 
 > [!div class="step-by-step"]
 > [上一頁](adding-a-controller.md)

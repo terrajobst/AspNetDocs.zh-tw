@@ -8,16 +8,16 @@ ms.date: 07/20/2015
 ms.assetid: 406518e9-3817-49ce-8b90-e82bc461e2c0
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 msc.type: authoredcontent
-ms.openlocfilehash: c66187b990a828c53bd2f8115e3c9660fc6022ed
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 87a7516415895e761d1589fd459b93e5c15c0f85
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74582815"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456994"
 ---
 # <a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>分散式快取（使用 Azure 建立真實世界的雲端應用程式）
 
-由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom 作者: dykstra](https://github.com/tdykstra)
 
 [下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -82,7 +82,7 @@ Azure 提供下列快取服務： [Azure Redis](https://msdn.microsoft.com/libra
 
 如[網頁程式開發最佳做法一章](web-development-best-practices.md)所述，最佳作法是避免使用會話狀態。 如果您的應用程式需要會話狀態，則下一個最佳作法是避免預設的記憶體內部提供者，因為這並不會啟用 scale out （web 伺服器的多個實例）。 ASP.NET SQL Server 會話狀態提供者可讓在多部 web 伺服器上執行的網站使用會話狀態，但相較于記憶體內部提供者，它會產生高延遲的成本。 如果您必須使用會話狀態，最好的解決方案是使用快取提供者，例如 Azure 快取的[會話狀態提供者](https://msdn.microsoft.com/library/windowsazure/gg185668.aspx)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 您已瞭解修正 It 應用程式可以如何執行快取以改善回應時間和擴充性，以及讓應用程式在資料庫無法使用時，能夠繼續回應讀取作業。 在[下一章](queue-centric-work-pattern.md)中，我們將示範如何進一步改善擴充性，並讓應用程式繼續回應寫入作業。
 
@@ -90,15 +90,15 @@ Azure 提供下列快取服務： [Azure Redis](https://msdn.microsoft.com/libra
 
 如需快取的詳細資訊，請參閱下列資源。
 
-Documentation
+文件
 
 - [Azure](https://msdn.microsoft.com/library/gg278356.aspx)快取。 關於在 Azure 中快取的官方 MSDN 檔。
 - [Microsoft 模式和實務-Azure 指引](https://msdn.microsoft.com/library/dn568099.aspx)。 請參閱快取指引和另行快取模式。
 - [損毀修復：具有恢復功能的雲端架構指引](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)。 白皮書： Marc Mercuri、Ulrich Homann 和 Andrew Townhill。 請參閱快取一節。
-- [Azure 上大規模服務設計的最佳作法雲端服務](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 寬. 以標記 Simm 和 Michael Thomassy 的技術白皮書。 請參閱分散式快取一節。
+- [Azure 上大規模服務設計的最佳作法雲端服務](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 W. 以標記 Simm 和 Michael Thomassy 的技術白皮書。 請參閱分散式快取一節。
 - 分散式快取，[指向擴充性的路徑](https://msdn.microsoft.com/magazine/dd942840.aspx)。 舊版（2009）的 MSDN 雜誌文章，但已清楚撰寫分散式快取的簡介;更深入探討防安全和最佳做法白皮書的快取區段。
 
-Videos
+影片
 
 - [防安全功能：建立可擴充、可復原的雲端服務](https://channel9.msdn.com/Series/FailSafe)。 Ulrich Homann、Marc Mercuri 和 Mark Simm 的九部分系列。 提供如何架構雲端應用程式的400層級觀點。 這一系列的重點在於理論和原因;如需詳細的作法詳細資料，請參閱以標記 Simm 建立大數列。 從1:24:14 開始，參閱第3集的 caching 討論。
 - [打造 Big：從 Azure 客戶學到的經驗-第一部分](https://channel9.msdn.com/Events/Build/2012/3-029)。Simon Davies 將討論從46:00 開始的分散式快取。 類似于防故障的系列，並深入探討如何詳細說明。 簡報已于2012年10月31日提供，因此不會涵蓋2013中所引進 Azure App Service Web Apps 的快取服務。

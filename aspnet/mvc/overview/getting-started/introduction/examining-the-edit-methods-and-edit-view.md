@@ -8,16 +8,16 @@ ms.date: 01/06/2019
 ms.assetid: 52a4d5fe-aa31-4471-b3cb-a064f82cb791
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 946c88d2b337e3bf634f815c7f1ce045f29d9d84
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 6cef963910b957e8b4ad7c7909385f6dbdff95c1
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76518736"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456059"
 ---
 # <a name="examining-the-edit-methods-and-edit-view"></a>檢查編輯方法與編輯檢視
 
-依[Rick Anderson]((https://twitter.com/RickAndMSFT))
+依[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!INCLUDE [Tutorial Note](index.md)]
 
@@ -83,7 +83,7 @@ Scaffold 程式碼會使用數個*helper 方法*來簡化 HTML 標籤。 [`Html.
 
 [ValidateAntiForgeryToken](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute(v=vs.108).aspx)屬性會驗證在視圖中由 `@Html.AntiForgeryToken()` 呼叫所產生的[XSRF](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md) token。
 
-[ASP.NET MVC 模型](https://msdn.microsoft.com/library/dd410405.aspx)系結器會採用已張貼的表單值，並建立當做 `movie` 參數傳遞的 `Movie` 物件。 `ModelState.IsValid` 會確認表單中提交的資料可以用來修改（編輯或更新） `Movie` 物件。 如果資料有效，則會將電影資料儲存至 `db`（`MovieDBContext` 實例）的 `Movies` 集合。 新的電影資料會藉由呼叫 `MovieDBContext`的 `SaveChanges` 方法，儲存至資料庫。 儲存資料之後，程式碼將使用者重新導向至 `MoviesController` 類別的 `Index` 動作方法，此方法會顯示電影集合，包括剛剛所進行的變更。
+[ASP.NET MVC 模型](https://msdn.microsoft.com/library/dd410405.aspx)系結器會採用已張貼的表單值，並建立當做 `movie` 參數傳遞的 `Movie` 物件。 `ModelState.IsValid` 會確認表單中提交的資料可以用來修改（編輯或更新） `Movie` 物件。 如果資料有效，則會將電影資料儲存至 `db`（`MovieDBContext` 實例）的 `Movies` 集合。 新的電影資料會藉由呼叫 `MovieDBContext`的 `SaveChanges` 方法，儲存至資料庫。 儲存資料之後，程式碼將使用者重新導向至 `Index` 類別的 `MoviesController` 動作方法，此方法會顯示電影集合，包括剛剛所進行的變更。
 
 一旦用戶端驗證判斷欄位的值無效，就會顯示錯誤訊息。 如果 JavaScript 已停用，則會停用用戶端驗證。 不過，伺服器偵測到張貼的值是不正確，而且表單值會重新顯示，並出現錯誤訊息。
 
@@ -100,7 +100,7 @@ Scaffold 程式碼會使用數個*helper 方法*來簡化 HTML 標籤。 [`Html.
 如果您使用美式英文的電腦，可以略過本節並移至下一個教學課程。 您可以在這裡下載本教學[課程](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=16475)的全球化版本。 如需國際化的絕佳兩個部分教學課程，請參閱[Nadeem 的 ASP.NET MVC 5 國際化](http://afana.me/post/aspnet-mvc-internationalization.aspx)。
 
 > [!NOTE]
-> 若要支援對小數點使用逗號（&quot;、&quot;）之非英文地區設定的 jQuery 驗證，以及非英文日期格式，您必須包含*全球化 .js*和您的特定*文化特性/全球化。文化特性 .js*檔案（從[https://github.com/jquery/globalize](https://github.com/jquery/globalize) ）和 JavaScript，以使用 `Globalize.parseFloat` 。 您可以從 NuGet 取得 jQuery 非英文驗證。 （如果您使用英文地區設定，請勿安裝全球化）。
+> 若要支援對小數點使用逗號（&quot;、&quot;）之非英文地區設定的 jQuery 驗證，以及非英文日期格式，您必須包含*全球化 .js*和您的特定*文化特性/全球化。文化特性 .js*檔案（從[https://github.com/jquery/globalize](https://github.com/jquery/globalize) ）和 JavaScript，以使用 `Globalize.parseFloat`。 您可以從 NuGet 取得 jQuery 非英文驗證。 （如果您使用英文地區設定，請勿安裝全球化）。
 
 1. 從 [**工具**] 功能表按一下 [ **NuGet 套件管理員**]，然後按一下 [**管理方案的 NuGet 套件**]。
 

@@ -8,16 +8,16 @@ ms.date: 04/10/2014
 ms.assetid: 7958d725-e958-4566-a85b-535eeb985f94
 msc.legacyurl: /mvc/overview/getting-started/recommended-resources-for-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: daccaedae0b0e60f5086f270f214f87da564a85d
-ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
+ms.openlocfilehash: 11f4a7cae8d425873b1828a9e5f51471def954fb
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77074926"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457150"
 ---
 # <a name="mvc-recommended-resources"></a>MVC 建議資源
 
-依[Rick Anderson]((https://twitter.com/RickAndMSFT))
+依[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 > 本主題提供有關 ASP.NET MVC 5 的檔資源連結。 如果您知道絕佳的 blog 文章、 [stackoverflow](http://stackoverflow.com/)執行緒或任何其他有用的連結，請傳送含有連結的電子郵件給[我](mailto:aspnetue@microsoft.com?subject=Great ASP.NET MVC link)。 此處提供的連結會定期更新。 您可以在[MSDN 內容地圖](https://msdn.microsoft.com/library/gg416514(v=vs.108).aspx)上找到較舊的（但在許多情況下仍有相關的） ASP.NET MVC 連結。
 >

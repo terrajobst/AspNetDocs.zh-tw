@@ -8,16 +8,16 @@ ms.date: 07/09/2015
 ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: 44941c9fd0dcd3223604fc4a4f2836f587578acb
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: f61810ea7b486b2fa0bbb234edea7541eedde835
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585622"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457059"
 ---
 # <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>監視和遙測（使用 Azure 建立真實世界的雲端應用程式）
 
-由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom 作者: dykstra](https://github.com/tdykstra)
 
 [下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -32,7 +32,7 @@ ms.locfileid: "74585622"
 
 雲端環境最棒的其中一件事，就是很容易購買或出租您的勝利。 遙測是一個範例。 如果沒有這麼多工作，您可以將真正好用的遙測系統啟動並執行，以非常符合成本效益的方式運作。 有許多與 Azure 整合的絕佳合作夥伴，其中有些有免費層，因此您可以取得基本遙測資料，而不需要進行任何動作。 以下只是 Azure 上目前可用的幾個：
 
-- [新增 New relic](http://newrelic.com/)
+- [New Relic](http://newrelic.com/)
 - [AppDynamics](http://www.appdynamics.com/)
 - [Dynatrace](https://datamarket.azure.com/application/b4011de2-1212-4375-9211-e882766121ff)
 
@@ -56,9 +56,9 @@ ms.locfileid: "74585622"
 
 按一下 [**連接資訊**]，然後複製授權金鑰。
 
-![連接資訊](monitoring-and-telemetry/_static/image5.png)
+![連線資訊](monitoring-and-telemetry/_static/image5.png)
 
-在入口網站中，移至 web 應用程式的 [**設定**] 索引標籤，將 [**效能監視**] 設定為 [**附加**元件]，然後將 [**選擇附加**元件] 下拉式清單設定為 [**新 new relic**]。 然後按一下 [**儲存**]。
+在入口網站中，移至 web 應用程式的 [**設定**] 索引標籤，將 [**效能監視**] 設定為 [**附加**元件]，然後將 [**選擇附加**元件] 下拉式清單設定為 [**新 new relic**]。 然後按一下 [儲存]。
 
 ![[設定] 索引標籤中的新 New relic](monitoring-and-telemetry/_static/image6.png)
 
@@ -79,7 +79,7 @@ ms.locfileid: "74585622"
     ![回應時間](monitoring-and-telemetry/_static/image10.png)
 - 一天中不同時間的輸送量速率（以每分鐘的要求數計算）。
 
-    ![輸送量](monitoring-and-telemetry/_static/image11.png)
+    ![Throughput](monitoring-and-telemetry/_static/image11.png)
 - 處理不同 HTTP 要求所花費的伺服器 CPU 時間。
 
     ![Web 交易時間](monitoring-and-telemetry/_static/image12.png)
@@ -98,7 +98,7 @@ ms.locfileid: "74585622"
     ![外部服務](monitoring-and-telemetry/_static/image17.png)
 - 有關全球何處或美國 web 應用程式流量來自何處的資訊。
 
-    ![地理位置](monitoring-and-telemetry/_static/image18.png)
+    ![[地理位置]](monitoring-and-telemetry/_static/image18.png)
 
 您也可以設定報表和事件。 例如，您可以在每次開始看到錯誤時，傳送電子郵件給警示支援人員以解決問題。
 
@@ -247,7 +247,7 @@ Fix It 應用程式會使用 System. Diagnostics 追蹤。 您只需要啟用 we
 
 ![伺服器總管中的記錄](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-storagelogs.png)
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 執行現成的遙測系統、在您自己的程式碼中檢測記錄，以及在 Azure 中設定記錄非常簡單。 當您有生產環境問題時，遙測系統和自訂記錄的組合將可協助您快速解決問題，然後才會成為客戶的主要問題。
 

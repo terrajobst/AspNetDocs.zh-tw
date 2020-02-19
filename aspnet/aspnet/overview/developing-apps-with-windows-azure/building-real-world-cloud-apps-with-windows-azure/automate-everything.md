@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: d5c8190d0b0c91bf9e42f6ef03adc5b07a65359a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: e741a753a36ebdaefbff8eee0b38911785c716ac
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74582881"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457163"
 ---
 # <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>自動化所有作業（使用 Azure 建立真實世界的雲端應用程式）
 
-由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom 作者: dykstra](https://github.com/tdykstra)
 
 [下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -114,7 +114,7 @@ ms.locfileid: "74582881"
 
 選擇性參數可讓您指定資料中心位置（預設為「美國西部」）、資料庫伺服器管理員名稱（預設為 "dbuser"），以及資料庫伺服器的防火牆規則。
 
-### <a name="create-the-web-app"></a>建立 web 應用程式
+### <a name="create-the-web-app"></a>建立 Web 應用程式
 
 腳本的第一件事是藉由呼叫 `New-AzureWebsite` Cmdlet 來建立 web 應用程式，並將 web 應用程式名稱和位置參數值傳入其中：
 
@@ -211,7 +211,7 @@ Azure 有一項功能，可讓您儲存設定和連接字串，以在嘗試讀�
 
 [!code-powershell[Main](automate-everything/samples/sample22.ps1)]
 
-## <a name="deployment-script"></a>部署腳本
+## <a name="deployment-script"></a>部署指令碼
 
 *New-AzureWebsiteEnv*腳本在建立環境時所執行的工作， *Publish-AzureWebsite*腳本會進行應用程式部署。
 
@@ -239,7 +239,7 @@ Azure 有一項功能，可讓您儲存設定和連接字串，以在嘗試讀�
 
 ![修正部署至 Windows Azure 的 It 應用程式](automate-everything/_static/image7.png)
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 使用這些腳本，您可以確信相同的步驟一律會使用相同的循序執行相同的訂單。 這有助於確保小組中的每位開發人員都不會錯過任何東西，或在自己的電腦上部署自訂專案，而在另一個小組成員的環境或實際執行時，實際上無法以相同的方式運作。
 
@@ -254,8 +254,8 @@ Azure 有一項功能，可讓您儲存設定和連接字串，以在嘗試讀�
 - [週末腳本：使用 Azure 和 PowerShell 消費者入門](https://blogs.technet.com/b/heyscriptingguy/archive/2013/06/22/weekend-scripter-getting-started-with-windows-azure-and-powershell.aspx)。 在 Windows PowerShell 專用的 blog 中，這篇文章提供了使用 PowerShell 來進行 Azure 管理功能的絕佳簡介。
 - [安裝和設定 Azure 跨平臺命令列介面](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)。 適用于 Mac 和 Linux 以及 Windows 系統的 Azure 腳本架構快速入門教學課程。
 - [命令列工具區段：下載 Azure sdk 和工具主題](https://azure.microsoft.com/downloads/)。 適用于 Azure 命令列工具相關檔和下載的入口網站頁面。
-- [使用 Azure 管理程式庫和 .net 將所有專案自動化](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx)。 Scott Hanselman 引進了適用于 Azure 的 .NET 管理 API。
-- [使用 Windows PowerShell 腳本來發佈至開發和測試環境](https://msdn.microsoft.com/library/azure/dn642480.aspx)。 說明如何使用 Visual Studio 自動為 Web 專案產生之發佈腳本的 MSDN 檔。
+- [使用 Azure 管理庫和 .NET 將一切自動化](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx)。 Scott Hanselman 引進了適用于 Azure 的 .NET 管理 API。
+- [使用 Windows PowerShell 指令碼來發行至開發和測試環境](https://msdn.microsoft.com/library/azure/dn642480.aspx)。 說明如何使用 Visual Studio 自動為 Web 專案產生之發佈腳本的 MSDN 檔。
 - [PowerShell Tools for Visual Studio 2013](https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597)。 Visual Studio 延伸模組，可在 Visual Studio 中新增 Windows PowerShell 的語言支援。
 
 > [!div class="step-by-step"]

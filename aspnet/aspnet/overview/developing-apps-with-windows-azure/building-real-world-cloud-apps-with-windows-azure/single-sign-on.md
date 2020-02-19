@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: 7d82d5e9-0619-4f22-9e03-32a6d52940a5
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: 7e32f444dc38132296cffd45ac658f5abf51f314
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 1ca93cce22487295a24aae95437b3e69dfc5b504
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585273"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457137"
 ---
 # <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>單一登入（使用 Azure 建立真實世界的雲端應用程式）
 
-由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom 作者: dykstra](https://github.com/tdykstra)
 
 [下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -68,7 +68,7 @@ Azure AD 目錄稱為 Azure AD[租](https://technet.microsoft.com/library/jj5736
 
 您的 Azure 帳戶會自動有一個 Azure AD 租使用者，而且您可以按一下頁面底部的 [**新增**] 按鈕，以建立其他目錄。 例如，您可能會想要一個用於測試環境，另一個用於生產環境。 請仔細考慮您為新目錄命名的內容。 如果您使用目錄的名稱，然後再為其中一位使用者再次使用您的名稱，這可能會造成混淆。
 
-![加入目錄](single-sign-on/_static/image6.png)
+![新增目錄](single-sign-on/_static/image6.png)
 
 入口網站具有在此環境內建立、刪除及管理使用者的完整支援。 例如，若要新增使用者，請移至 [**使用者**] 索引標籤，然後按一下 [**新增使用者**] 按鈕。
 
@@ -168,7 +168,7 @@ Visual Studio 可讓您輕鬆地建立使用 Azure AD 進行單一登入的應�
 
 這些螢幕擷取畫面來自完整的逐步教學課程，說明如何建立使用 Azure AD 驗證的應用程式：[使用 Azure Active Directory 開發 ASP.NET 應用程式](../../../../identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 在本章中，您會看到 Azure Active Directory、Visual Studio 和 ASP.NET，可讓您輕鬆地在網際網路應用程式中為貴組織的使用者設定單一登入。 您的使用者可以使用他們用來登入的相同認證（使用內部網路中的 Active Directory）登入網際網路應用程式。
 
@@ -179,7 +179,7 @@ Visual Studio 可讓您輕鬆地建立使用 Azure AD 進行單一登入的應�
 
 如需詳細資訊，請參閱下列資源：
 
-- [Azure Active Directory 檔](https://docs.microsoft.com/azure/active-directory/)。 Windowsazure.com 網站上 Azure AD 檔的入口網站頁面。 如需逐步教學課程，請參閱**開發**一節。
+- [Azure Active Directory 文件](https://docs.microsoft.com/azure/active-directory/)。 Windowsazure.com 網站上 Azure AD 檔的入口網站頁面。 如需逐步教學課程，請參閱**開發**一節。
 - [Azure 多重要素驗證](https://docs.microsoft.com/azure/multi-factor-authentication/)。 適用于 Azure 中多因素驗證之檔的入口網站頁面。
 - [組織帳戶驗證選項](../../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#orgauthoptions)。 [Visual Studio 2013 新增-專案] 對話方塊中 Azure AD 驗證選項的說明。
 - [Microsoft 模式和實務-同盟身分識別模式](https://msdn.microsoft.com/library/dn589790.aspx)。

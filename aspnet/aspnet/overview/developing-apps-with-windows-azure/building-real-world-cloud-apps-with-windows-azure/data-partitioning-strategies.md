@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: 513837a7-cfea-4568-a4e9-1f5901245d24
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 msc.type: authoredcontent
-ms.openlocfilehash: b8c901ec30b6d37237f80100a2978350ac389b7a
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: efc3fa0255aa765e515412c5fa4098303a9d9234
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519163"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457020"
 ---
 # <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>資料分割策略（使用 Azure 建立真實世界的雲端應用程式）
 
-由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom 作者: dykstra](https://github.com/tdykstra)
 
 [下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -85,7 +85,7 @@ ms.locfileid: "76519163"
 
 如果您在進入生產環境之前進行規劃，就可以管理複雜的問題。 很多人都不願意這麼做。 我們的客戶諮詢團隊（CAT）團隊平均每個月會從應用程式以非常大的方式處理的客戶驚慌失措電話，而不會進行這項規劃。 而他們說的就是：「說明！ 我將所有專案都放在單一資料存放區中，而且在45天內，我的空間將會用盡！」 而且，如果您在存取資料存放區的過程中內建了許多商務邏輯，而且您有使用應用程式的客戶，則在您遷移時，不會有足夠的時間可讓您一天停機。 我們最終會經歷項的努力，協助客戶在不停機的時間即時分割其資料。 它非常令人興奮，而且非常可怕，如果可以避免，也不是您想要加入的東西！ 事先思考並將它整合到您的應用程式，可以讓應用程式在稍後成長時變得更容易。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 有效的資料分割配置可讓您的雲端應用程式在雲端中擴充至數以 pb 計的資料，而不會產生瓶頸。 如果您在內部部署資料中心內執行應用程式，就不需要支付大規模機器或廣泛基礎結構的正面。 在雲端中，您可以視需要累加地新增容量，而您只需支付使用時所使用的數量。
 
@@ -105,7 +105,7 @@ ms.locfileid: "76519163"
 - [防安全功能：建立可擴充、可復原的雲端服務](https://channel9.msdn.com/Series/FailSafe)。 Ulrich Homann、Marc Mercuri 和 Mark Simm 的九部分系列。 以非常容易存取且有趣的方式呈現高階概念和架構原則，並提供 Microsoft 客戶諮詢小組（CAT）體驗與實際客戶的故事。 請參閱第7集的資料分割討論。
 - [打造 Big：從 Windows Azure 客戶學習到的經驗-第一部分](https://channel9.msdn.com/Events/Build/2012/3-029)。Mark Simm 討論資料分割配置、分區化策略、如何執行分區化，以及 SQL Database 同盟，從19:49 開始。 類似于防故障的系列，並深入探討如何詳細說明。
 
-範例程式碼：
+程式碼範例：
 
 - [Windows Azure 中的雲端服務基本](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)概念。 包含分區化資料庫的範例應用程式。 如需所實分區化配置的說明，請參閱 Windows Azure blog 上的[DAL – RDBMS 分區化](https://blogs.msdn.com/b/windowsazure/archive/2013/09/05/dal-sharding-of-rdbms.aspx)。
 

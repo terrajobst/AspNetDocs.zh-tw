@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: cc1ad51b-40c3-4c68-8620-9aaa0fd1f6cf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
 msc.type: authoredcontent
-ms.openlocfilehash: c73b070f11366e781bcea70ffc84fd49a47d469a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 1177336b25479c06706227e5c8ff4d027cdaebb8
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74582754"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456981"
 ---
 # <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>以佇列為中心的工作模式（使用 Azure 建立真實世界的雲端應用程式）
 
-由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom 作者: dykstra](https://github.com/tdykstra)
 
 [下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -166,7 +166,7 @@ Web 應用程式通常會受到流量突然激增的影響。 雖然您可以使
 
 在 Web 專案中，新增非同步程式碼可以自動改善效能，因為 IIS 會管理有限的執行緒集區。 背景工作角色專案中不會發生這種情況。 若要改善背景工作角色的擴充性，您可以撰寫多執行緒程式碼，或使用非同步程式碼來執行[平行程式設計](https://msdn.microsoft.com/library/ff963553.aspx)。 此範例不會執行平行程式設計，但會示範如何讓程式碼非同步，讓您可以執行平行程式設計。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 在本章中，您已瞭解如何藉由執行以佇列為中心的工作模式來改善應用程式回應性、可靠性和擴充性。
 
@@ -186,7 +186,7 @@ Web 應用程式通常會受到流量突然激增的影響。 雖然您可以使
 - [Microsoft 模式和實務-Azure 指引](https://msdn.microsoft.com/library/dn568099.aspx)。 請參閱非同步訊息入門、管道和篩選模式、補償交易模式、競爭取用者模式、CQRS 模式。
 - [CQRS 旅程](https://msdn.microsoft.com/library/jj554200)。 電子書，依據 Microsoft 的模式與實務來介紹 CQRS。
 
-影片：
+視訊：
 
 - [防安全功能：建立可擴充、可復原的雲端服務](https://channel9.msdn.com/Series/FailSafe)。 Ulrich Homann、Marc Mercuri 和 Mark Simm 的九個部分影片系列。 以非常容易存取且有趣的方式呈現高階概念和架構原則，並提供 Microsoft 客戶諮詢小組（CAT）體驗與實際客戶的故事。 如需 Azure 儲存體服務和佇列的簡介，請參閱第5集，從35:13 開始。
 

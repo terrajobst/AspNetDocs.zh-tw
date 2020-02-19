@@ -8,16 +8,16 @@ ms.date: 11/03/2015
 ms.assetid: 7ead83bc-c08c-4b26-8617-00e07292e35c
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
-ms.openlocfilehash: fc281e3d8f7c9edd4d98b029a67e58113132a8b3
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: e798cb83cfb97db63fef6dc38c8f62804461d01b
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74583649"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456851"
 ---
 # <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>暫時性錯誤處理（使用 Azure 建立真實世界的雲端應用程式）
 
-由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom 作者: dykstra](https://github.com/tdykstra)
 
 [下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -72,7 +72,7 @@ ms.locfileid: "74583649"
 
 如 SQL Database 重試原則指引，請參閱針對[暫時性錯誤和連接錯誤進行疑難排解，以 SQL Database](https://azure.microsoft.com/documentation/articles/sql-database-connectivity-issues/)。
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 重試/退轉關閉策略可以協助客戶在最短時間內看不到暫時性錯誤，而 Microsoft 提供的架構可讓您在使用 ADO.NET、Entity Framework 或 Azure 儲存體服務時，將執行策略的工作降至最低。
 
@@ -82,7 +82,7 @@ ms.locfileid: "74583649"
 
 如需詳細資訊，請參閱下列資源：
 
-Documentation
+文件
 
 - [Azure 上大規模服務設計的最佳作法雲端服務](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 以標記 Simm 和 Michael Thomassy 的技術白皮書。 類似于防故障的系列，並深入探討如何詳細說明。 請參閱遙測和診斷一節。
 - [損毀修復：具有恢復功能的雲端架構指引](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)。 白皮書： Marc Mercuri、Ulrich Homann 和 Andrew Townhill。 網頁版的防安全影片系列。
@@ -91,14 +91,14 @@ Documentation
 - [Entity Framework-連接恢復/重試邏輯](https://msdn.microsoft.com/data/dn456835)。 如何使用和自訂 Entity Framework 6 的暫時性錯誤處理功能。
 - [在 ASP.NET MVC 應用程式中使用 Entity Framework 的連接恢復功能和命令攔截](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application.md)。 第四個在9部分的教學課程系列中，示範如何設定 SQL Database 的 EF 6 連接恢復功能。
 
-Videos
+影片
 
 - [防安全功能：建立可擴充、可復原的雲端服務](https://channel9.msdn.com/Series/FailSafe)。 Ulrich Homann、Marc Mercuri 和 Mark Simm 的九部分系列。 以非常容易存取且有趣的方式呈現高階概念和架構原則，並提供 Microsoft 客戶諮詢小組（CAT）體驗與實際客戶的故事。 從40:55 開始，請參閱第3集的斷路器討論。
 - [打造 Big：從 Azure 客戶學到的經驗-第二部](https://channel9.msdn.com/Events/Build/2012/3-030)。 Mark Simm 討論如何設計失敗、暫時性錯誤處理和檢測所有專案。
 
 程式碼範例
 
-- [Azure 中的雲端服務基本](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)概念。 Microsoft Azure 客戶諮詢小組所建立的範例應用程式，示範如何使用[企業程式庫暫時性錯誤處理區塊](http://nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/)（TFH）。 如需詳細資訊，請參閱[雲端服務基礎資料存取層–暫時性錯誤處理](https://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx)。 建議使用 TFH （不使用 Entity Framework）直接進行資料庫存取。
+- [Azure 中的雲端服務基本](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)概念。 Microsoft Azure 客戶諮詢小組所建立的範例應用程式，示範如何使用[企業程式庫暫時性錯誤處理區塊](http://nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/)（TFH）。 如需詳細資訊，請參閱 [雲端服務基礎資料存取層 – 暫時性錯誤處理](https://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx)。 建議使用 TFH （不使用 Entity Framework）直接進行資料庫存取。
 
 > [!div class="step-by-step"]
 > [上一頁](monitoring-and-telemetry.md)

@@ -9,22 +9,22 @@ ms.assetid: 053e23c4-13c9-40fa-87cb-3e9b0823b31e
 ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 5f5218ca6c65ed3a2cd39d4e100349efa35d14cd
-ms.sourcegitcommit: 6f0e10e4ca61a1e5534b09c655fd35cdc6886c8a
+ms.openlocfilehash: 527b4392846e60dae0b216fdeabf21fd6618e4d7
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74115097"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456734"
 ---
 # <a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>使用 SMS 的雙因素驗證與 ASP.NET Identity 的電子郵件
 
-by [Hao Kung](https://github.com/HaoK)、 [Pranav 請參閱 rastogi](https://github.com/rustd)、 [Rick Anderson]((https://twitter.com/RickAndMSFT))、 [Suhas Joshi](https://github.com/suhasj)
+by [Hao Kung](https://github.com/HaoK)、 [Pranav 請參閱 rastogi](https://github.com/rustd)、 [Rick Anderson](https://twitter.com/RickAndMSFT)、 [Suhas Joshi](https://github.com/suhasj)
 
 > 本教學課程將說明如何使用 SMS 和電子郵件來設定雙因素驗證（2FA）。
 > 
 > 這篇文章是由 Rick Anderson （[@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)）、Pranav 請參閱 rastogi （[@rustd](https://twitter.com/rustd)）、Hao Kung 和 Suhas Joshi 所撰寫。 NuGet 範例主要是由 Hao Kung 所撰寫。
 
-本主題涵蓋下列各項：
+本主題包含下列項目：
 
 - [建立身分識別範例](#build)
 - [設定 SMS 以進行雙因素驗證](#SMS)
@@ -69,7 +69,7 @@ by [Hao Kung](https://github.com/HaoK)、 [Pranav 請參閱 rastogi](https://git
 2. **安裝其他套件或加入服務參考**  
   
    Twilio  
-   在 [套件管理員主控台] 中，輸入下列命令：  
+   在 [套件管理器主控台] 中，輸入下列命令：  
     `Install-Package Twilio`  
   
    ASPSMS:  
@@ -77,7 +77,7 @@ by [Hao Kung](https://github.com/HaoK)、 [Pranav 請參閱 rastogi](https://git
   
     ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image1.png)  
   
-   位址:  
+   位址：  
     `https://webservice.aspsms.com/aspsmsx2.asmx?WSDL`  
   
    命名空間：  
@@ -119,7 +119,7 @@ by [Hao Kung](https://github.com/HaoK)、 [Pranav 請參閱 rastogi](https://git
 8. 按一下您的使用者識別碼，這會在 `Manage` 控制器中啟用 `Index` 動作方法。  
   
     ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image2.png)
-9. 按一下 [新增]。  
+9. 按一下 [加入]。  
   
     ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image3.png)
 10. 幾秒內，您就會收到包含驗證碼的文字訊息。 輸入該檔案並按下 [**提交**]。  

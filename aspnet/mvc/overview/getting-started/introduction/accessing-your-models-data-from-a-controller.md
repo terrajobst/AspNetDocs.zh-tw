@@ -8,16 +8,16 @@ ms.date: 10/17/2013
 ms.assetid: caa1ba4a-f9f0-4181-ba21-042e3997861d
 msc.legacyurl: /mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: e01953dcfb2abf2db53a8aa869aa75b40485daca
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 5d882d765133d32d3acdba9ffb5d43b69119a273
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519085"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457228"
 ---
 # <a name="accessing-your-models-data-from-a-controller"></a>從控制器存取模型資料
 
-依[Rick Anderson]((https://twitter.com/RickAndMSFT))
+依[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!INCLUDE [Tutorial Note](index.md)]
 
@@ -41,7 +41,7 @@ ms.locfileid: "76519085"
   
 ![](accessing-your-models-data-from-a-controller/_static/image3.png)   
 
-按一下 [加入]。 （如果您收到錯誤，您可能未在開始新增控制器之前建立應用程式）。Visual Studio 會建立下列檔案和資料夾：
+按一下 [新增]。 （如果您收到錯誤，您可能未在開始新增控制器之前建立應用程式）。Visual Studio 會建立下列檔案和資料夾：
 
 - [*控制器*] 資料夾中的*MoviesController.cs*檔案。
 - *Views\Movies*資料夾。
@@ -60,7 +60,7 @@ Visual Studio 為您自動建立[crud](http://en.wikipedia.org/wiki/Create,_read
 ![](accessing-your-models-data-from-a-controller/_static/image5.png)
 
 > [!NOTE]
-> 您可能無法在 [價格] 欄位中輸入小數點或逗號。 若要支援對小數點使用逗號（&quot;、&quot;）之非英文地區設定的 jQuery 驗證，以及非英文日期格式，您必須包含*全球化 .js*和您的特定*文化特性/全球化。文化特性 .js*檔案（從[https://github.com/jquery/globalize](https://github.com/jquery/globalize) ）和 JavaScript，以使用 `Globalize.parseFloat` 。 在下一個教學課程中，我將示範如何執行這項操作。 現在，只要輸入如 10 之類的整數。
+> 您可能無法在 [價格] 欄位中輸入小數點或逗號。 若要支援對小數點使用逗號（&quot;、&quot;）之非英文地區設定的 jQuery 驗證，以及非英文日期格式，您必須包含*全球化 .js*和您的特定*文化特性/全球化。文化特性 .js*檔案（從[https://github.com/jquery/globalize](https://github.com/jquery/globalize) ）和 JavaScript，以使用 `Globalize.parseFloat`。 在下一個教學課程中，我將示範如何執行這項操作。 現在，只要輸入如 10 之類的整數。
 
 按一下 [**建立**] 按鈕會導致表單張貼至伺服器，其中電影資訊會儲存在資料庫中。 接著，您會被重新導向至 [ */Movies* URL]，您可以在清單中看到新建立的電影。
 
@@ -100,7 +100,7 @@ MVC 也提供將*強*型別物件傳遞至視圖範本的能力。 這個強型�
 
 [!code-cshtml[Main](accessing-your-models-data-from-a-controller/samples/sample5.cshtml?highlight=1-2)]
 
-藉由在視圖範本檔案的頂端包含 `@model` 語句，您可以指定此視圖所預期的物件類型。 當您建立電影控制器時，Visual Studio 會在 *Details.cshtml* 檔案的最上方自動包含下列 `@model` 陳述式：
+藉由在視圖範本檔案的頂端包含 `@model` 語句，您可以指定此視圖所預期的物件類型。 當您建立電影控制器時，Visual Studio 會在 `@model`Details.cshtml*檔案的最上方自動包含下列* 陳述式：
 
 [!code-cshtml[Main](accessing-your-models-data-from-a-controller/samples/sample6.cshtml)]
 

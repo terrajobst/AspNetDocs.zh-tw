@@ -8,16 +8,16 @@ ms.date: 08/23/2012
 ms.assetid: 5894dc13-5d45-4dad-8096-136499120f1d
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 239980d747c6e0d6be1e9b4fe0371e276e37cf21
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 61bfe5dbac04b57e1461183b66ead2f01fe0734c
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519280"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457761"
 ---
 # <a name="bundling-and-minification"></a>統合及縮製
 
-依[Rick Anderson]((https://twitter.com/RickAndMSFT))
+依[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 > 配套和縮制是您可以在 ASP.NET 4.5 中用來改善要求載入時間的兩個技術。 組合和縮制藉由減少對伺服器的要求數並減少要求的資產（例如 CSS 和 JavaScript），來改善載入時間。
 
@@ -39,7 +39,7 @@ ms.locfileid: "76519280"
 
 ![](bundling-and-minification/_static/image3.png)
 
-## <a name="minification"></a>縮製
+## <a name="minification"></a>縮制
 
 縮制會對腳本或 css 執行各種不同的程式碼優化，例如移除不必要的空白字元和批註，以及將變數名稱縮短成一個字元。 請考慮下列 JavaScript 函數。
 

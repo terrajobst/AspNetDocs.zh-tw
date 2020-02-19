@@ -8,16 +8,16 @@ ms.date: 03/26/2015
 ms.assetid: f1d2a916-626c-4a54-8df4-77e6b9fff355
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: 4ec8d239377d37d7e27fa23c0b1caef7420046ae
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: da06815b5c1d76a939fdfb77ce11774081dfb881
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519007"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456396"
 ---
 # <a name="examining-the-details-and-delete-methods"></a>檢查 Details 和 Delete 方法
 
-依[Rick Anderson]((https://twitter.com/RickAndMSFT))
+依[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!INCLUDE [Tutorial Note](index.md)]
 
@@ -53,7 +53,7 @@ Code First 可讓您輕鬆地使用 `Find` 方法來搜尋資料。 方法內建
 
 [!code-csharp[Main](examining-the-details-and-delete-methods/samples/sample4.cs)]
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 您現在有一個完整的 ASP.NET MVC 應用程式，可將資料儲存在本機 DB 資料庫中。 您可以建立、讀取、更新、刪除及搜尋電影。
 
@@ -69,4 +69,4 @@ Code First 可讓您輕鬆地使用 `Find` 方法來搜尋資料。 方法內建
 — [Scott Hanselman](http://www.hanselman.com/blog/) twitter： [@shanselman](https://twitter.com/shanselman)
 
 > [!div class="step-by-step"]
-> [上一步](adding-validation.md)
+> [[上一步]](adding-validation.md)

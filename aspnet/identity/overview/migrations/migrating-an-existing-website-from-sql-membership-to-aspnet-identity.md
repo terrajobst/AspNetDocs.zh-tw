@@ -9,22 +9,22 @@ ms.custom: seoapril2019
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: eacfbb8a5b2d1aa3678892bc2077a56185fdebbc
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: 633229cc4311d151121bf6a91b9fa8aeecca1197
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519150"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456149"
 ---
 # <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>將現有的網站從 SQL 成員資格移轉至 ASP.NET Identity
 
-由[Rick Anderson]((https://twitter.com/RickAndMSFT))、 [Suhas Joshi](https://github.com/suhasj)
+由[Rick Anderson](https://twitter.com/RickAndMSFT)、 [Suhas Joshi](https://github.com/suhasj)
 
 > 本教學課程說明將現有 web 應用程式（使用 SQL 成員資格建立的使用者和角色資料）遷移至新 ASP.NET Identity 系統的步驟。 此方法牽涉到將現有的資料庫架構變更為 ASP.NET Identity 所需的架構，並將舊的/新類別連結到它。 在您採用這種方法之後，一旦您的資料庫移轉之後，未來的身分識別更新將可輕鬆地處理。
 
 在本教學課程中，我們將採用使用 Visual Studio 2010 建立的 web 應用程式範本（Web form）來建立使用者和角色資料。 接著，我們將使用 SQL 腳本，將現有的資料庫移轉至身分識別系統所需的資料表。 接下來，我們將安裝必要的 NuGet 套件，並新增使用身分識別系統來進行成員資格管理的新帳戶管理頁面。 作為遷移的測試，使用 SQL 成員資格建立的使用者應該能夠登入，而新的使用者應該能夠註冊。 您可以在[這裡](https://github.com/aspnet/samples/tree/master/samples/aspnet/Identity/SQLMembership-Identity-OWIN/)找到完整的範例。 另請參閱[從 ASP.NET 成員資格遷移至 ASP.NET Identity](http://travis.io/blog/2015/03/24/migrate-from-aspnet-membership-to-aspnet-identity.html)。
 
-## <a name="getting-started"></a>入門
+## <a name="getting-started"></a>開始使用
 
 ### <a name="creating-an-application-with-sql-membership"></a>建立具有 SQL 成員資格的應用程式
 
@@ -83,29 +83,29 @@ ms.locfileid: "76519150"
 
 若要讓 ASP.NET Identity 類別與現有使用者的資料一起使用，我們需要將資料庫架構遷移至 ASP.NET Identity 所需的程式。 我們可以藉由加入新的資料表，並將現有的資訊複製到這些資料表來達到這個目的。 根據預設，ASP.NET Identity 會使用 EntityFramework 將身分識別模型類別對應回資料庫，以儲存/抓取資訊。 這些模型類別會執行定義使用者和角色物件的核心身分識別介面。 資料庫中的資料表和資料行是以這些模型類別為基礎。 Identity v 2.1.0 中的 EntityFramework 模型類別及其屬性如下所定義
 
-| **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
+| **IdentityUser** | **型別** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
-| ID | string | ID | RoleId | ProviderKey | ID |
-| 使用者名稱 | string | Name | UserId | UserId | ClaimType |
-| PasswordHash | string |  |  | LoginProvider | ClaimValue |
-| SecurityStamp | string |  |  |  | 使用者\_識別碼 |
-| Email | string |  |  |  |  |
+| Id | 字串 | Id | RoleId | ProviderKey | Id |
+| 使用者名稱 | 字串 | 名稱 | UserId | UserId | ClaimType |
+| PasswordHash | 字串 |  |  | LoginProvider | ClaimValue |
+| SecurityStamp | 字串 |  |  |  | 使用者\_識別碼 |
+| 電子郵件 | 字串 |  |  |  |  |
 | EmailConfirmed | bool |  |  |  |  |
-| PhoneNumber | string |  |  |  |  |
+| PhoneNumber | 字串 |  |  |  |  |
 | PhoneNumberConfirmed | bool |  |  |  |  |
 | LockoutEnabled | bool |  |  |  |  |
-| LockoutEndDate | DateTime |  |  |  |  |
+| LockoutEndDate | Datetime |  |  |  |  |
 | AccessFailedCount | int |  |  |  |  |
 
 針對每個模型，我們都必須具有對應至屬性之資料行的資料表。 類別和資料表之間的對應是在 `IdentityDBContext`的 `OnModelCreating` 方法中定義。 這就是所謂的設定 Fluent API 方法，您可以在[這裡](https://msdn.microsoft.com/data/jj591617.aspx)找到詳細資訊。 類別的設定如下所述
 
-| **類別** | **資料表** | **主要金鑰** | **外鍵** |
+| **類別** | **Table** | **主要金鑰** | **外鍵** |
 | --- | --- | --- | --- |
-| IdentityUser | AspnetUsers | ID |  |
-| IdentityRole | AspnetRoles | ID |  |
+| IdentityUser | AspnetUsers | Id |  |
+| IdentityRole | AspnetRoles | Id |  |
 | IdentityUserRole | AspnetUserRole | UserId + RoleId | 使用者\_識別碼-&gt;AspnetUsers RoleId-&gt;AspnetRoles |
 | IdentityUserLogin | AspnetUserLogins | ProviderKey + UserId + LoginProvider | UserId-&gt;AspnetUsers |
-| IdentityUserClaim | AspnetUserClaims | ID | 使用者\_識別碼-&gt;AspnetUsers |
+| IdentityUserClaim | AspnetUserClaims | Id | 使用者\_識別碼-&gt;AspnetUsers |
 
 有了這種資訊，我們就可以建立 SQL 語句來建立新的資料表。 我們可以個別寫入每個語句，或使用 EntityFramework PowerShell 命令來產生整個腳本，然後我們可以視需要進行編輯。 若要這樣做，請在 VS 中，從 [**視圖**] 或 [**工具**] 功能表開啟 [**套件管理員主控台**]
 

@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: 7e97cfc3-d830-4002-8ff7-5790d1ff49e6
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: afade34477d1136883e7543d09e73dfbe435690e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 57e32bf7568ecb0eb22f0f2b585310dcab2d5d43
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74585353"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77457072"
 ---
 # <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>更多模式和指導方針（使用 Azure 建立真實世界的雲端應用程式）
 
-由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom 作者: dykstra](https://github.com/tdykstra)
 
 [下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)或[下載電子書](https://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -45,13 +45,13 @@ ms.locfileid: "74585353"
 
 本電子書中的每一章節都會提供資源的連結，以取得該特定主題的詳細資訊。 下列清單提供最佳作法的連結，以及使用 Azure 成功進行雲端開發的建議模式。
 
-Documentation
+文件
 
 - [Azure 上大規模服務設計的最佳作法雲端服務](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)。 以標記 Simm 和 Michael Thomassy 的技術白皮書。
 - [損毀修復：具有恢復功能的雲端架構指引](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)。 白皮書： Marc Mercuri、Ulrich Homann 和 Andrew Townhill。 網頁版的防安全影片系列。
 - [Azure 指引](https://azure.microsoft.com/develop/net/guidance/)適用于開發 Azure 應用程式相關官方檔的入口網站頁面。
 
-Videos
+影片
 
 - [使用 Azure 建立真實世界的雲端應用程式-第1部分](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324)和[第2部分](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325)。 Scott Guthrie 的簡報影片，這是本電子書的依據。 提供于2013年9月的 Tech Ed 澳大利亞。 舊版的相同簡報是在2013年6月的挪威開發人員會議（NDC）提供： [NDC 第1部分](http://vimeo.com/68215538)， [NDC 第2部分](http://vimeo.com/68215602)。
 - [防安全功能：建立可擴充、可復原的雲端服務](https://channel9.msdn.com/Series/FailSafe)。 Ulrich Homann、Marc Mercuri 和 Mark Simm 的九個部分影片系列。 提供如何架構雲端應用程式的400層級觀點。 此系列著重于建議模式背後的理論和原因;如需詳細的作法詳細資料，請參閱以標記 Simm 建立大數列。
@@ -74,7 +74,7 @@ Videos
 最後，當您開始建立真實世界的應用程式並在 Azure 中執行時，您可能會需要專家的協助。 您可以在[Azure 論壇或 StackOverflow](https://azure.microsoft.com/support/forums/)之類的社區網站中提出問題，也可以直接與 Microsoft 聯繫以進行 Azure 支援。 Microsoft 提供數個層級的技術支援：如需這些選項的摘要和比較，請參閱[Azure 支援](https://azure.microsoft.com/support/plans/)。
 
 <a id="acknowledgments"></a>
-## <a name="acknowledgments"></a>致謝
+## <a name="acknowledgments"></a>通知
 
 此內容是由 Tom 作者: dykstra、Rick Anderson 和 Mike Wasson 所撰寫。 大部分的原始內容來自[Scott Guthrie](https://weblogs.asp.net/scottgu/)，而他又從 Mark 和 Microsoft 客戶諮詢團隊（CAT）中的材料中進行繪製。
 
