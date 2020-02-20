@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: e6fda47babd3c2505315f42667c45f09482218c2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.openlocfilehash: 896196bdb6a6b0d12a6c798ead510e37dd38a9fc
+ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74583751"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77456877"
 ---
 # <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>附錄：修正 It 範例應用程式（使用 Azure 建立真實世界的雲端應用程式）
 
-由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson]((https://twitter.com/RickAndMSFT))， [Tom 作者: dykstra](https://github.com/tdykstra)
+由[Mike Wasson](https://github.com/MikeWasson)， [Rick Anderson](https://twitter.com/RickAndMSFT)， [Tom 作者: dykstra](https://github.com/tdykstra)
 
 [下載 Fix It 專案](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)
 
@@ -26,7 +26,7 @@ ms.locfileid: "74583751"
 使用 Azure 電子書建立真實世界雲端應用程式的本附錄包含下列各節，其中提供可供您下載之 Fix It 範例應用程式的其他相關資訊：
 
 - [已知問題](#knownissues)
-- [最佳作法](#bestpractices)
+- [最佳做法](#bestpractices)
 - [如何從本機電腦上的 Visual Studio 執行應用程式](#run-in-vs)
 - [如何使用 Windows PowerShell 腳本將基本應用程式部署至 Azure App Service Web Apps](#deploybase)
 - [疑難排解 Windows PowerShell 腳本](#troubleshooting)
@@ -84,7 +84,7 @@ Fix It 應用程式會將已上傳的影像儲存為公用，這表示任何尋�
 ASP.NET 會在使用者輸入文字方塊中輸入腳本，自動防止惡意使用者嘗試跨網站腳本攻擊的許多方式。 以及用來顯示工作標題和附注的 MVC `DisplayFor` helper，會自動將其傳送至瀏覽器的值進行 HTML 編碼。 但是在生產環境應用程式中，您可能會想要採取其他措施。 如需詳細資訊，請參閱[在 ASP.NET 中要求驗證](https://msdn.microsoft.com/library/hh882339.aspx)。
 
 <a id="bestpractices"></a>
-## <a name="best-practices"></a>最佳做法
+## <a name="best-practices"></a>最佳作法
 
 以下是在程式碼審查和測試修正 It 應用程式的原始版本中探索後已修正的一些問題。 有些是因為原始當中不知道特定的最佳作法，而是因為程式碼是快速撰寫，而不是用於發行的軟體。 我們會在這裡列出問題，以防我們從這項審查和測試中學習到的內容，對於同時也在開發 web 應用程式的其他人可能會有説明。
 
@@ -96,7 +96,7 @@ ASP.NET 會在使用者輸入文字方塊中輸入腳本，自動防止惡意使
 
 請注意，AutoFac 會自動處置 `FixItTaskRepository` 實例，因此我們不需要明確地處置它。
 
-另一個選項是從 `FixItTaskRepository`移除 `DbContext` 成員變數，並改為在 `using` 語句內部的每個存放庫方法中建立本機 `DbContext` 變數。 例如:
+另一個選項是從 `FixItTaskRepository`移除 `DbContext` 成員變數，並改為在 `using` 語句內部的每個存放庫方法中建立本機 `DbContext` 變數。 例如：
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample2.cs)]
 
@@ -215,7 +215,7 @@ ASP.NET 會在使用者輸入文字方塊中輸入腳本，自動防止惡意使
 <a id="runbase"></a>
 ### <a name="run-the-base-application"></a>執行基底應用程式
 
-1. 安裝[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)。
+1. 安裝 [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)。
 2. 安裝[適用于 Visual Studio 的 AZURE SDK for .net](https://azure.microsoft.com/downloads/)。
 3. 從[MSDN 程式碼庫](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)下載 .zip 檔案。
 4. 在 [檔案管理器] 中，以滑鼠右鍵按一下 .zip 檔案，然後按一下 [屬性]，然後在屬性視窗按一下 [解除封鎖]。
@@ -250,7 +250,7 @@ ASP.NET 會在使用者輸入文字方塊中輸入腳本，自動防止惡意使
    4. 選取 [**多個啟始專案**]。
    5. 在 [MyFixIt 和 MyFixItCloudService] 底下的 [**動作**] 下拉式清單中，選取 [**啟動**]。
    6. 按一下 [確定]。
-   7. 按**F5**執行這兩個專案。
+   7. 按 **F5** 執行這兩個專案。
 
       當您執行 MyFixItCloudService 專案時，Visual Studio 會啟動 Azure 計算模擬器。 視您的防火牆設定而定，您可能需要允許模擬器通過防火牆。
 
@@ -263,7 +263,7 @@ ASP.NET 會在使用者輸入文字方塊中輸入腳本，自動防止惡意使
 
 這些指示假設您已在本機下載並執行 Fix It 解決方案，而且您有 Azure 帳戶，或擁有您有權管理的 Azure 訂用帳戶。
 
-1. 安裝**Azure PowerShell**主控台。 如需指示，請參閱[如何安裝和設定 Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-4.3.1)。
+1. 安裝**Azure PowerShell**主控台。 如需指示，請參閱 [如何安裝和設定 Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-4.3.1)。
 
     此自訂的主控台已設定為可與您的 Azure 訂用帳戶搭配使用。 Azure 模組會安裝在*Program Files*目錄中，而且會在每次使用 Azure PowerShell 主控台時自動匯入。
 
@@ -309,7 +309,7 @@ ASP.NET 會在使用者輸入文字方塊中輸入腳本，自動防止惡意使
 
     此名稱在 azurewebsites.net 網域中必須是唯一的，且密碼必須符合密碼複雜性 SQL Database 需求。 （範例 Passw0rd1 符合需求）。
 
-    請注意，命令的開頭是 "。\"。 為了協助防止惡意執行腳本，Windows PowerShell 會要求您在執行腳本時提供腳本檔案的完整路徑。 您可以使用點來表示目前的目錄（"。\"）或提供完整路徑，例如：
+    請注意，命令的開頭是 ".\"。 為了協助防止惡意執行腳本，Windows PowerShell 會要求您在執行腳本時提供腳本檔案的完整路徑。 您可以使用點來表示目前的目錄（"。\"）或提供完整路徑，例如：
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample26.cmd)]
 
@@ -319,10 +319,10 @@ ASP.NET 會在使用者輸入文字方塊中輸入腳本，自動防止惡意使
 
     您可以使用 Get-help Cmdlet 的 `Detailed`、`Full`、`Parameters`和 `Examples` 參數來篩選所傳回的說明。
 
-    如果腳本失敗或產生錯誤，例如 "AzureWebsite：呼叫 Set-azuresubscription 並選取-Set-azuresubscription first，「您可能尚未完成 Azure PowerShell 的設定。
+    如果腳本失敗或產生錯誤（例如「AzureWebsite： Call Set-azuresubscription 和 Select-Set-azuresubscription first」），您可能尚未完成 Azure PowerShell 的設定。
 
     腳本完成之後，您可以使用 Azure 管理入口網站查看已建立的資源，如[自動化所有事項](automate-everything.md)一章所示。
-10. 若要將 FixIt 專案部署到新的 Azure 環境，請使用*AzureWebsite*腳本。 例如:
+10. 若要將 FixIt 專案部署到新的 Azure 環境，請使用*AzureWebsite*腳本。 例如：
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample28.cmd)]
 
@@ -339,7 +339,7 @@ ASP.NET 會在使用者輸入文字方塊中輸入腳本，自動防止惡意使
 
 [!code-console[Main](the-fix-it-sample-application/samples/sample29.cmd)]
 
-### <a name="internalerror-the-server-encountered-an-internal-error"></a>InternalError伺服器發生內部錯誤。
+### <a name="internalerror-the-server-encountered-an-internal-error"></a>InternalError：伺服器發生內部錯誤。
 
 當 azurewebsites.net 網域中的名稱不是唯一時，`New-AzureWebsite` Cmdlet 會傳回內部錯誤。 若要解決此錯誤，請使用不同的名稱值，也就是*New-AzureWebsiteEnv*的 name 參數。
 
@@ -395,4 +395,4 @@ ASP.NET 會在使用者輸入文字方塊中輸入腳本，自動防止惡意使
 現在您已準備好部署雲端服務。 在 [方案探索] 中，以滑鼠右鍵按一下 MyFixItCloudService 專案，然後選取 [**發佈**]。 如需詳細資訊，請參閱[本教學](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36)課程的第2部分中的「將[應用程式部署到 Azure](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)」。
 
 > [!div class="step-by-step"]
-> [上一步](more-patterns-and-guidance.md)
+> [[上一步]](more-patterns-and-guidance.md)
