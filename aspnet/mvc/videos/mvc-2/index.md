@@ -1,6 +1,6 @@
 ---
 uid: mvc/videos/mvc-2/index
-title: ASP.NET MVC 2 | Microsoft Docs
+title: ASP.NET MVC 2 |Microsoft Docs
 author: rick-anderson
 description: ASP.NET MVC 2
 ms.author: riande
@@ -9,11 +9,11 @@ ms.assetid: 68968b8a-4f60-449e-8639-978fc40aed70
 msc.legacyurl: /mvc/videos/mvc-2
 msc.type: chapter
 ms.openlocfilehash: d2ddf52b01b8a1ae0e6c3b8db104d16775d144e6
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65120167"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78537370"
 ---
 # <a name="aspnet-mvc-2"></a>ASP.NET MVC 2
 
@@ -35,10 +35,10 @@ ms.locfileid: "65120167"
     - [顯示資料庫資料的資料表](how-do-i/displaying-a-table-of-database-data.md)
     - [適用於開發人員建置 NerdDinner 的 ASP.NET MVC 80 分鐘技術影片是什麼](how-do-i/what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner.md)
     - [ASP.NET MVC 3 分鐘概觀影片適合決策者的原因](how-do-i/why-aspnet-mvc-3-minute-overview-video-for-decision-makers.md)
-    - [ASP.NET MVC:適用於開發人員的方式 10 分鐘技術影片](how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
+    - [ASP.NET MVC：10 分鐘的技術影片如何幫助開發人員](how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
     - [在 ASP.NET MVC Web 應用程式中傳回 AJAX 呼叫的 JSON 格式化資料](how-do-i/how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application.md)
     - [使用 ASP.NET MVC 部分檢視中的資料](how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
-    - [實作 ASP.NET MVC 檢視管理資料的檢視模型](how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
+    - [執行視圖模型來管理 ASP.NET MVC 視圖的資料](how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
     - [建立 MVC 應用程式的自訂 HTML 協助程式](how-do-i/how-do-i-create-a-custom-html-helper-for-an-mvc-application.md)
     - [使用 MVC 應用程式中的模型繫結器](how-do-i/how-do-i-work-with-model-binders-in-an-mvc-application.md)
     - [在 MVC 應用程式中使用 HttpVerbs 屬性](how-do-i/how-do-i-use-httpverbs-attributes-in-an-mvc-application.md)
@@ -52,12 +52,12 @@ ms.locfileid: "65120167"
     - [深入了解 ASP.NET MVC](how-do-i/how-to-best-learn-asp-net-mvc.md)
 - [適合其他人的 ASP.NET MVC](aspnet-mvc-for-the-rest-of-us/index.md)
 
-    - [針對其他人的 ASP.NET MVC:第 1 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1.md)
-    - [針對其他人的 ASP.NET MVC:第 2 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-2.md)
-    - [針對其他人的 ASP.NET MVC:第 3 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-3.md)
-    - [針對其他人的 ASP.NET MVC:第 4 部分](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-4.md)
+    - [適合其他人的 ASP.NET MVC：第 1 節](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1.md)
+    - [適合其他人的 ASP.NET MVC：第 2 節](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-2.md)
+    - [適合其他人的 ASP.NET MVC：第 3 節](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-3.md)
+    - [適合其他人的 ASP.NET MVC：第 4 節](aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-4.md)
 - [Music 市集](music-store/index.md)
 
-    - [MVC Music 市集第 1 部分：簡介、 工具和專案結構](music-store/mvc-music-store-part-1-intro-tools-and-project-structure.md)
-    - [MVC Music 市集第 2 部分：控制站](music-store/mvc-music-store-part-2-controllers.md)
-    - [MVC Music 市集第 3 部分：檢視和 ViewModels](music-store/mvc-music-store-part-3-views-and-viewmodels.md)
+    - [MVC Music 市集第 1 節：簡介、工具和專案結構](music-store/mvc-music-store-part-1-intro-tools-and-project-structure.md)
+    - [MVC Music 市集第 2 節：控制器](music-store/mvc-music-store-part-2-controllers.md)
+    - [MVC Music 市集第 3 節：檢視和 ViewModels](music-store/mvc-music-store-part-3-views-and-viewmodels.md)

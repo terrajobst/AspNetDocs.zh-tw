@@ -9,11 +9,11 @@ ms.assetid: 1e4c2eb4-b6cf-42ff-8a65-4d71ddca0394
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations
 msc.type: authoredcontent
 ms.openlocfilehash: 726a7d51123805e05f6831ef9cd7eaa84b6c44bd
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600305"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78598739"
 ---
 # <a name="supporting-entity-relations-in-odata-v3-with-web-api-2"></a>使用 Web API 2 支援 OData v3 中的實體關聯
 
@@ -104,7 +104,7 @@ OData 支援建立或移除兩個實體之間的關聯性。 在 OData 術語中
 
 [!code-csharp[Main](working-with-entity-relations/samples/sample11.cs)]
 
-在此範例中，導覽屬性是單一 `Supplier` 實體。 如果導覽屬性是集合，則要刪除連結的 URI 必須包含相關實體的索引鍵。 例如：
+在此範例中，導覽屬性是單一 `Supplier` 實體。 如果導覽屬性是集合，則要刪除連結的 URI 必須包含相關實體的索引鍵。 例如:
 
 [!code-console[Main](working-with-entity-relations/samples/sample12.cmd)]
 

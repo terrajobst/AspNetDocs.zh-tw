@@ -9,11 +9,11 @@ ms.assetid: 423498f7-1a4b-44a1-b342-5f39d0bcf94f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
 ms.openlocfilehash: 9514142ca50b33470a3f4c033e4f8e319a9ee09b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74636461"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78566679"
 ---
 # <a name="aspnet-error-handling"></a>ASP.NET 錯誤處理
 
@@ -25,7 +25,7 @@ ms.locfileid: "74636461"
 
 在本教學課程中，您將修改 Wingtip 玩具範例應用程式，以包含錯誤處理和錯誤記錄。 錯誤處理會讓應用程式正常處理錯誤，並據以顯示錯誤訊息。 錯誤記錄可讓您尋找並修正已發生的錯誤。 本教學課程是以先前的「URL 路由」教學課程為基礎，而且是 Wingtip 玩具教學課程系列的一部分。
 
-## <a name="what-youll-learn"></a>您將瞭解的內容：
+## <a name="what-youll-learn"></a>您將學到什麼：
 
 - 如何將全域錯誤處理新增至應用程式的設定。
 - 如何在應用程式、頁面和程式碼層級加入錯誤處理。
@@ -53,8 +53,8 @@ ASP.NET 應用程式必須能夠以一致的方式處理執行期間所發生的
 
 在 ASP.NET Web Forms 應用程式中，可以根據特定的處理階層來處理例外狀況。 例外狀況可以在下列層級處理：
 
-- 應用層級
-- 頁面層級
+- 應用程式層級
+- 分頁層級
 - 程式碼層級
 
 當應用程式處理例外狀況時，通常會抓取並向使用者顯示繼承自例外狀況類別的例外狀況的其他資訊。 除了應用程式、頁面和程式碼層級之外，您也可以使用 IIS 自訂處理常式來處理 HTTP 模組層級的例外狀況。
@@ -116,7 +116,7 @@ Try-catch 語句是由 try 區塊後面接著一個或多個 catch 子句所組�
 1. 以滑鼠右鍵按一下**方案總管**中的專案名稱（**Wingtip 玩具**），**然後選取 [** 新增 -&gt;**新專案**]。   
    隨即顯示 [ 新增項目] 對話方塊。
 2. 選取左側的 [ **Visual C#**  -&gt; **Web**範本] 群組。 從中間清單中，選取 [**使用主版頁面的 Web 表單**]，並將它命名為**ErrorPage .aspx**。
-3. 按一下 [加入]。
+3. 按一下 [新增]。
 4. 選取*網站*檔案作為主版頁面，然後選擇 **[確定]** 。
 5. 以下列內容取代現有的標記：   
 
@@ -139,7 +139,7 @@ Try-catch 語句是由 try 區塊後面接著一個或多個 catch 子句所組�
 2. 將 `customErrors` 區段新增至 [`<system.web>`] 節點*內的 web.config*檔案，如下所示：   
 
     [!code-xml[Main](aspnet-error-handling/samples/sample8.xml?highlight=3-5)]
-3. 儲存 web.config*檔案*。
+3. 儲存 *Web.config* 檔案。
 
 `customErrors` 區段會指定模式，其設定為 "On"。 它也會指定 `defaultRedirect`，這會告訴應用程式在發生錯誤時要流覽的頁面。 此外，您還加入了特定的錯誤元素，指定當找不到頁面時，如何處理404錯誤。 稍後在本教學課程中，您將會新增其他錯誤處理，以在應用層級上捕捉錯誤的詳細資料。
 
@@ -327,7 +327,7 @@ ELMAH 現在已準備好儲存任何發生的未處理錯誤。
 [使用 ASP.NET 健全狀況監視記錄錯誤詳細資料](../../older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs.md)   
 [ELMAH](https://code.google.com/p/elmah/)
 
-## <a name="acknowledgements"></a>致謝
+## <a name="acknowledgements"></a>通知
 
 我想感謝下列人對本教學課程系列的內容做出重大貢獻：
 
@@ -349,7 +349,7 @@ ELMAH 現在已準備好儲存任何發生的未處理錯誤。
 - [Tim Ammann，Microsoft](https://blogs.iis.net/timamm/default.aspx)
 - [Tom 作者: dykstra，Microsoft](https://blogs.msdn.com/aspnetue)
 
-## <a name="community-contributions"></a>社群參與
+## <a name="community-contributions"></a>社群貢獻
 
 - Graham Mendick （[@grahammendick](http://twitter.com/grahammendick)）  
   MSDN 上 Visual Studio 2012 相關程式碼範例：[導覽 Wingtip 玩具](https://code.msdn.microsoft.com/Navigation-Wingtip-Toys-5f0daba2)

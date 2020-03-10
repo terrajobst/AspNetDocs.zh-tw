@@ -1,362 +1,362 @@
 ---
 uid: whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
-title: 如何：將行動網頁加入 ASP.NET Web Form / MVC 應用程式 |Microsoft Docs
+title: 如何：將行動頁面加入至您的 ASP.NET Web Forms/MVC 應用程式 |Microsoft Docs
 author: rick-anderson
-description: 本 How To 說明會提供適用於行動裝置，從您的 ASP.NET Web Form 網頁的各種方法 / MVC 應用程式，並建議架構和...
+description: 本 how To 說明各種方式來提供針對 ASP.NET Web Forms/MVC 應用程式中的行動裝置優化的頁面，並建議架構和 。
 ms.author: riande
 ms.date: 01/20/2011
 ms.assetid: 3124f28e-cc32-418a-afe3-519fa56f4c36
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
 ms.openlocfilehash: 63c555358d06a9506bb5c8c993800c3307108192
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114437"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78572734"
 ---
-# <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>如何：將行動網頁新增至 ASP.NET Web Forms / MVC 應用程式
+# <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>如何：將行動頁面新增至您的 ASP.NET Web Forms/MVC 應用程式
 
-> **適用於**
+> **適用于**
 > 
-> - ASP.NET Web Form 版本 4.0
-> - ASP.NET MVC 3.0 版
+> - ASP.NET Web Forms 版本4。0
+> - ASP.NET MVC 版本3。0
 > 
 > **摘要**
 > 
-> 本 How To 說明會提供適用於行動裝置，從您的 ASP.NET Web Form 網頁的各種方法 / MVC 應用程式，並建議架構和設計以各種裝置為目標時應該考量的問題。 本文件也說明為何從 ASP.NET 2.0 ASP.NET 行動控制項，為 3.5 已經過時，並討論一些現代的替代方案。
+> 本 how To 說明各種方式來提供針對 ASP.NET Web Forms/MVC 應用程式中的行動裝置優化的頁面，並建議在以各種裝置為目標時應考慮的架構和設計問題。 本檔也會說明為什麼從 ASP.NET 2.0 到3.5 的 ASP.NET Mobile 控制項現在已過時，並討論一些現代化的替代方案。
 
 ## <a name="contents"></a>內容
 
-- 總覽
+- 概觀
 - 架構選項
-- 瀏覽器及裝置的偵測
-- ASP.NET Web Forms 應用程式會如何呈現行動裝置專屬頁面
-- ASP.NET MVC 應用程式會如何呈現行動裝置專屬頁面
+- 瀏覽器和裝置偵測
+- ASP.NET Web form 應用程式如何呈現行動特定的頁面
+- ASP.NET MVC 應用程式如何呈現行動特定的頁面
 - 其他資源
 
-如需可下載的程式碼範例示範針對 ASP.NET Web Form 和 MVC 的這份白皮書的技術，請參閱[行動應用程式和 ASP.NET 網站](https://docs.microsoft.com/aspnet/mobile/overview)。
+如需適用于 ASP.NET Web form 和 MVC 的可下載程式代碼範例，請參閱[使用 ASP.NET Mobile Apps & 網站](https://docs.microsoft.com/aspnet/mobile/overview)。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-行動裝置 – 智慧型手機、 功能手機和平板電腦 – 繼續在受歡迎，做為存取 Web。 對於許多 web 開發人員和 web 導向的企業，這表示它是越來越重要，無法使用這些裝置的訪客提供絕佳的瀏覽經驗。
+行動裝置–智慧型手機、功能電話和平板電腦–會繼續在熱門程度上成長，以作為存取網路的途徑。 對於許多 網頁程式開發人員和 web 導向的企業而言，這表示為使用這些裝置的訪客提供絕佳的流覽體驗變得越來越重要。
 
-### <a name="how-earlier-versions-of-aspnet-supported-mobile-browsers"></a>如何較早版本的 ASP.NET 支援行動瀏覽器
+### <a name="how-earlier-versions-of-aspnet-supported-mobile-browsers"></a>舊版 ASP.NET 支援的行動瀏覽器版本
 
-ASP.NET 版本 2.0 到 3.5，包含*ASP.NET 行動控制項*： 伺服器控制項中的行動裝置的一組*System.Web.Mobile.dll*組件和*System.Web.UI.MobileControls*命名空間。 組件仍會包含在 ASP.NET 4 中，但它已被取代。 開發人員建議移轉至更現代化的方法，例如這份文件中所述。
+ASP.NET 版本2.0 至3.5 包含*ASP.NET Mobile 控制項*：一組適用于行動裝置的伺服器控制項，位於*system.web* .dll 元件和*system.web. UI. MobileControls*命名空間中。 元件仍包含在 ASP.NET 4 中，但已被取代。 建議開發人員遷移到更現代化的方法，例如本文所述。
 
-為什麼 ASP.NET 行動控制項已標示為過時的原因是它們的設計很常見周圍 2005年和更早版本的行動電話周圍導向。 WAP 瀏覽器，那個時代，控制項主要被設計來呈現 WML 或 cHTML 標記 （而不是一般的 HTML)。 但 WAP、 WML 和 cHTML 不再相關的大部分專案，因為 HTML 現在已成為行動和桌面瀏覽器，類似的通用標記語言。
+ASP.NET Mobile 控制項已標示為過時的原因，在於其設計是圍繞在2005和更早版本上常見的行動電話。 這些控制項主要是設計來呈現該紀元之 WAP 瀏覽器的 WML 或 cHTML 標籤（而不是一般 HTML）。 但是 WAP、WML 和 cHTML 已不再與大多數專案相關，因為 HTML 現在已成為行動和桌面瀏覽器的普遍標記語言。
 
-### <a name="the-challenges-of-supporting-mobile-devices-today"></a>目前支援的行動裝置上的挑戰
+### <a name="the-challenges-of-supporting-mobile-devices-today"></a>立即支援行動裝置的挑戰
 
-雖然行動瀏覽器時，現在幾乎都支援 HTML，您仍會在建立絕佳的行動瀏覽體驗為目標時面臨許多挑戰：
+雖然行動瀏覽器現在幾乎普遍支援 HTML，但當您想要建立絕佳的行動流覽體驗時，仍然會面臨許多挑戰：
 
-- ***螢幕大小***-行動裝置明顯不同格式，和他們的螢幕通常是許多小於桌上型監視器。 因此，您可能需要它們的設計完全不同的頁面配置。
-- ***輸入方法***– 有些裝置有提功，某些 styluses，而其他人使用觸控功能。 您可能需要考慮多個導覽機制和資料的輸入的方法。
-- ***標準相容性***– 許多行動瀏覽器不支援的最新的 HTML、 CSS 或 JavaScript 標準。
-- ***頻寬***-行動數據網路效能的變化很大的差異，和某些使用者位於關稅的 mb 數來收取費用。
+- ***螢幕大小***-行動裝置的形式有很大的變化，而且其螢幕通常會比桌面監視器小。 因此，您可能需要為它們設計完全不同的頁面配置。
+- ***輸入法***–有些裝置有鍵盤，有些則有 styluses，其他則使用觸控。 您可能需要考慮多個導覽機制和資料輸入方法。
+- ***標準合規性***–許多行動瀏覽器不支援最新的 HTML、CSS 或 JavaScript 標準。
+- ***頻寬***–行動資料網路的效能會有很高的差異，而某些使用者的關稅會依 mb 收費。
 
-沒有一體適用的解決方案;您的應用程式會有的外觀和行為以不同的方式，根據裝置進行存取。 根據您要何種行動裝置層級，這可以是支援的挑戰更大的 web 開發人員比一直以來桌面 「 瀏覽器大戰 」。
+沒有一體適用的解決方案;您的應用程式將必須根據存取它的裝置，以不同的方式來查看和行為。 視您想要的行動支援層級而定，對於 網頁程式開發人員而言，這可能是比桌上型電腦「瀏覽器星際大戰」更大的挑戰。
 
-一開始通常接近第一次行動瀏覽器支援的開發人員認為務必只支援最新且最精確的 smartphone （例如，Windows Phone 7、 iPhone 或 Android） 時，可能是因為開發人員通常是個人擁有這類裝置。 不過，成本較低的電話仍是很受歡迎，而且其擁有者使用它們來瀏覽網頁 – 特別是在行動電話所在位置，您更輕鬆地取得比寬頻連線的國家/地區。 您的業務需要決定哪些範圍要考慮其可能購買的客戶支援的裝置。 如果您正在建置為 luxury 健全狀況 spa 線上手冊，您可能會進行業務決策才能目標進階的智慧型手機，而如果您要建立杜比劇院效果的票證預約系統，您可能需要較不強大的功能與訪客帳戶電話。
+第一次接近行動瀏覽器支援的開發人員通常會認為只有在支援最新且最複雜的 smartphone （例如，Windows Phone 7、iPhone 或 Android）時，可能是因為開發人員通常是個人擁有的裝置. 不過，較便宜的手機仍然非常受歡迎，而且其擁有者會使用它們來流覽 web，特別是在行動電話比寬頻連線更容易取得的國家/地區。 您的企業必須考慮可能的客戶，以決定要支援哪一系列的裝置。 如果您想要為每個高階的衛生 spa 建立線上手冊，則您可能會決定僅以先進的智慧型手機為目標，而如果您要為電影院建立票證預約系統，您可能需要為具有較不強大功能的訪客進行考慮致電.
 
 ## <a name="architectural-options"></a>架構選項
 
-我們的 ASP.NET Web Form 或 MVC 特定的技術細節之前，請注意，web 開發人員通常會有三個主要的可能選項，可支援行動瀏覽器：
+在取得 ASP.NET Web form 或 MVC 的特定技術細節之前，請注意，Web 開發人員一般有三個可能的選項可支援行動瀏覽器：
 
-1. ***不執行任何動作 –*** 您只可以建立標準的桌面導向的 web 應用程式，並依賴來呈現它接受的行動瀏覽器。 
+1. ***不執行任何動作–*** 您可以直接建立標準的桌面導向 web 應用程式，並依賴行動瀏覽器來呈現它可接受。 
 
-    - **利用**:它是最便宜的選項，來實作和維護 – 不需要額外工作
-    - **缺點**:提供的最差的使用者體驗： 
+    - **優點**：這是執行和維護的最便宜選項–不需額外的工作
+    - **缺點**：提供最差的使用者體驗： 
 
-        - 最新的智慧型手機可能會讓您的 HTML 與桌面瀏覽器，一樣，但縮放，以及水平捲動並以垂直方式取用您在小型螢幕上的內容，仍會強制使用者。 這是遠離最佳。
-        - 較舊的裝置和功能的電話可能無法令人滿意的方式呈現您的標記。
-        - 即使在最新的平板電腦裝置 （其畫面可以是膝上型電腦螢幕的大小），套用不同的互動規則。 觸控式的輸入最適合搭配較大的按鈕連結擴散的進一步，並沒有任何方法可以將滑鼠游標停留在飛出功能表。
-2. ***解決此問題，在用戶端*–** 小心使用 CSS 並[漸進式增強](http://en.wikipedia.org/wiki/Progressive_enhancement)標記、 樣式和適應它們執行的任何瀏覽器的指令碼，您可以建立。 例如，使用[CSS 3 的媒體查詢](http://www.w3.org/TR/2010/CR-css3-mediaqueries-20100727/)，您可以建立多重資料行版面配置，其畫面位於所選的臨界值較窄的裝置上會變成單一資料行版面配置。 
+        - 最新的智慧型手機可能會呈現您的 HTML，以及桌面瀏覽器，但是使用者仍然會被強制縮放並以水準和垂直方式滾動，以在小型螢幕上取用您的內容。 這遠低於最佳。
+        - 較舊的裝置和功能電話可能無法以滿意的方式轉譯您的標記。
+        - 即使是最新的平板電腦裝置（其螢幕可以與筆記本電腦螢幕一樣大），也適用不同的互動規則。 以觸控為基礎的輸入最適用于較大的按鈕和連結，而且沒有任何方法可以將滑鼠游標暫留在飛出功能表上。
+2. ***解決用戶端上的問題*–** 使用 CSS 和[漸進增強功能](http://en.wikipedia.org/wiki/Progressive_enhancement)時，您可以建立標記、樣式和腳本，以適應執行它們的任何瀏覽器。 例如，透過[CSS 3 媒體查詢](http://www.w3.org/TR/2010/CR-css3-mediaqueries-20100727/)，您可以建立多重資料行配置，在其螢幕比所選閾值較窄的裝置上轉換成單一資料行版面配置。 
 
-    - **利用**:最佳化呈現特定裝置使用，甚至是根據它們的任何畫面和輸入的特性有未知的未來裝置
-    - **利用**:輕鬆地可讓您跨所有裝置類型 – 最小的程式碼或工作的重複共用伺服器端邏輯
-    - **缺點**:行動裝置並不讓桌面裝置，您可能希望是完全不同於您桌面的網頁，讓行動網頁顯示不同的資訊。 這類變化可能會沒有效率或不可能達成穩固透過 CSS，尤其考慮一致較舊的裝置解譯 CSS 規則。 這是特別的 CSS 3 屬性。
-    - **缺點**:不提供支援各種不同的伺服器端邏輯和適用於不同裝置的工作流程。 您比方說，不能透過 CSS 單獨實作簡單購物車簽出的工作流程為行動使用者。
-    - **缺點**:使用效率不佳的頻寬。 您的伺服器可能要傳輸的標記和樣式套用至所有可能的裝置，即使目標裝置只會使用該資訊的子集。
-3. ***解決此問題，在伺服器上的*–** 如果您的伺服器可讓您知道哪些裝置存取它-，或在該裝置，例如其螢幕大小和輸入的法，最低的特性，且無論是行動裝置，像是網域控制站可以執行不同的邏輯和輸出不同的 HTML 標記。 
+    - **優點**：針對使用中的特定裝置優化轉譯，即使是根據其所擁有的任何螢幕和輸入特性而定，也是未知的未來裝置
+    - **優點**：輕鬆讓您跨所有裝置類型共用伺服器端邏輯–最少重複的程式碼或花費
+    - **缺點**：行動裝置與桌面裝置不同，您可能會想要讓行動頁面與桌面頁面完全不同，並顯示不同的資訊。 這類變化可能沒有效率，也不可能透過 CSS 單獨達成，特別是考慮較舊的裝置如何解讀 CSS 規則。 這特別適用于 CSS 3 屬性。
+    - **缺點**：不支援不同裝置的各種伺服器端邏輯和工作流程。 例如，您無法透過 CSS 來為行動使用者執行簡化的購物車簽出工作流程。
+    - **缺點**：頻寬使用效率不佳。 您的伺服器可能必須傳輸適用于所有可能裝置的標記和樣式，即使目標裝置只會使用該資訊的子集也一樣。
+3. ***解決伺服器上的問題*–** 如果您的伺服器知道哪些裝置正在存取它（或至少該裝置的特性，例如其螢幕大小和輸入方法），以及它是否為行動裝置–它可以執行不同的邏輯，並輸出不同的 HTML 標籤。 
 
-    - **優點：** 最大的彈性。 沒有多少，您便可以改變您的 asp.net 的伺服器端邏輯上，或最佳化您如有需要，裝置特定配置的標記來無限制。
-    - **優點：** 有效率的頻寬用量。 您只需要傳輸的標記和目標裝置將使用的樣式資訊。
-    - **缺點：** 有時會強制重複的工作或程式碼 （例如，讓您建立 Web Form 頁面或 MVC 檢視類似但稍微不同的複本）。 其中可能會排除一般邏輯為基礎的圖層或服務，但儘管如此，您的 UI 程式碼或標記的某些部分可能重複，並以平行方式加以維護。
-    - **缺點：** 裝置的偵測並非易事。 它需要的已知的裝置類型和它們的特性 （這不一定完全最新狀態） 的資料庫或資料清單，並不保證會精確地符合每個傳入要求。 本文件稍後所述部分選項和其所犯的錯誤。
+    - **優點：** 最大彈性。 您可以根據所需的裝置特定版面配置，將您的伺服器端邏輯行動或優化您的標記，而不會有多少限制。
+    - **優點：** 有效率的頻寬使用。 您只需要傳輸目標裝置即將使用的標記和樣式資訊。
+    - **缺點：** 有時候會強制重複執行工作或程式碼（例如，讓您建立類似但稍微不同的 Web form 頁面或 MVC 視圖複本）。 可能的話，您會將通用邏輯分解成基礎層或服務，但您可能必須複製 UI 程式碼或標記的某些部分，然後以平行方式進行維護。
+    - **缺點：** 裝置偵測並不簡單。 它需要已知裝置類型的清單或資料庫及其特性（可能不一定是完美的最新狀態），而且不保證能正確地比對每個傳入的要求。 本檔稍後會說明一些選項及其陷阱。
 
-若要取得最佳結果，大部分的開發人員會發現他們需要結合選項 (2) 和 (3)。 樣式的細微差異使用 CSS 或甚至是 JavaScript，在用戶端上最可調整，而在伺服器端程式碼中最有效地實作資料、 工作流程或標記中的主要差異。
+為了獲得最佳結果，大部分的開發人員都發現他們需要結合選項（2）和（3）。 在使用 CSS 或甚至是 JavaScript 的用戶端上，次要的樣式差異最合適，而資料、工作流程或標記的主要差異最有效地在伺服器端程式碼中執行。
 
-### <a name="this-paper-focuses-on-server-side-techniques"></a>此白皮書著重於伺服器端技術
+### <a name="this-paper-focuses-on-server-side-techniques"></a>本白皮書著重于伺服器端技術
 
-由於 ASP.NET Web Form 和 MVC 是這兩種主要的伺服器端技術，這份白皮書著重於伺服器端技術，可讓您產生不同的標記和行動瀏覽器的邏輯。 當然，您也可以結合此使用任何用戶端技術 （例如，CSS 3 的媒體查詢，漸進式增強功能的 JavaScript），但，相當多的 web 設計比 ASP.NET 程式開發。
+由於 ASP.NET Web form 和 MVC 主要都是伺服器端技術，這份白皮書將著重于伺服器端技術，讓您為行動瀏覽器產生不同的標記和邏輯。 當然，您也可以將它與任何用戶端技術（例如 CSS 3 媒體查詢、漸進增強 JavaScript）結合，但這比 ASP.NET 開發更是 web 設計。
 
-## <a name="browser-and-device-detection"></a>瀏覽器及裝置的偵測
+## <a name="browser-and-device-detection"></a>瀏覽器和裝置偵測
 
-支援行動裝置的所有伺服器端技術的重要先決條件是知道您的訪客使用哪一種裝置。 事實上，比起了解該裝置的製造商和型號號碼了解更好*特性*的裝置。 特性可能包括：
+支援行動裝置之所有伺服器端技術的主要必要條件是知道您的訪客所使用的裝置。 事實上，甚至比知道裝置的製造商和型號來知道裝置的*特性*來得好。 特性可能包括：
 
-- 它是行動裝置嗎？
-- 輸入的法 （滑鼠] / [鍵盤、 觸控、 數字鍵台、 搖桿，...）
-- 螢幕大小，（實際和像素為單位）
+- 這是行動裝置嗎？
+- 輸入法（滑鼠/鍵盤、觸控、鍵盤、搖桿 ...）
+- 螢幕大小（實際和以圖元為單位）
 - 支援的媒體和資料格式
 - 等。
 
-最好是因為進行特性與模型數目為基礎的決策，然後您就更有能力來處理未來的裝置。
+最好是根據特性來做出決策，而不是模型編號，因為如此一來，您就可以更妥善地處理未來的裝置。
 
-### <a name="using-aspnets-built-in-browser-detection-support"></a>使用 ASP。NET 的內建的瀏覽器偵測支援
+### <a name="using-aspnets-built-in-browser-detection-support"></a>使用 ASP。NET 的內建瀏覽器偵測支援
 
-ASP.NET Web Form 和 MVC 的開發人員立即可以藉由檢查屬性探索正在瀏覽的瀏覽器的重要特性*Request.Browser*物件。 例如，請參閱
+ASP.NET Web form 和 MVC 開發人員可以藉由檢查*要求*的屬性，立即探索造訪瀏覽器的重要特性。 例如，請參閱
 
-- Request.Browser.IsMobileDevice
-- Request.Browser.MobileDeviceManufacturer Request.Browser.MobileDeviceModel
-- Request.Browser.ScreenPixelsWidth
-- Request.Browser.SupportsXmlHttp
-- ...還有許多其他項目
+- IsMobileDevice
+- MobileDeviceManufacturer，要求. 瀏覽器. MobileDeviceModel
+- ScreenPixelsWidth
+- SupportsXmlHttp
+- ...還有許多其他專案
 
-在幕後，ASP.NET 平台符合傳入*User-agent* (UA) 的 HTTP 標頭，針對一組瀏覽器定義 XML 檔案中的規則運算式。 根據預設，此平台包括定義許多常見的行動裝置，以及您可以為您想要辨識的其他項目中新增自訂的瀏覽器定義檔案。 如需詳細資訊，請參閱 MSDN 頁面[ASP.NET Web 伺服器控制項和瀏覽器能力](https://msdn.microsoft.com/library/x3k2ssx2.aspx)。
+在幕後，ASP.NET 平臺會比對傳入的*使用者代理程式*（UA） HTTP 標頭與一組瀏覽器定義 XML 檔案中的正則運算式。 根據預設，平臺會包含許多一般行動裝置的定義，您可以為想要辨識的其他人新增自訂瀏覽器定義檔案。 如需詳細資訊，請參閱 MSDN 網頁[ASP.NET Web 服務器控制項和瀏覽器功能](https://msdn.microsoft.com/library/x3k2ssx2.aspx)。
 
-### <a name="using-the-wurfl-device-database-via-51degreesmobi-foundation"></a>使用 WURFL 裝置資料庫透過 51Degrees.mobi Foundation
+### <a name="using-the-wurfl-device-database-via-51degreesmobi-foundation"></a>透過 51Degrees.mobi Foundation 使用 WURFL 裝置資料庫
 
-雖然 ASP。NET 的內建的瀏覽器偵測支援將足以說明許多應用程式時，有兩種主要的情況下它可能不太夠：
+While ASP。NET 的內建瀏覽器偵測支援對許多應用程式而言都已足夠，但有兩個主要案例可能不夠：
 
-- ***您想要辨識最新的裝置***（而不需要手動建立它們的瀏覽器定義檔案）。 請注意，.NET 4 的瀏覽器定義檔案不是不夠新，無法辨識 Windows Phone 7、 Android 手機、 Opera Mobile 瀏覽器或 Apple Ipad。
-- ***您需要裝置功能的詳細的資訊***。 您可能需要知道裝置的輸入法 （例如觸控與數字鍵台），或哪些音訊格式的瀏覽器支援。 標準的瀏覽器定義檔案中，無法使用這項資訊。
+- ***您想要辨識最新的裝置***（不需要手動建立它們的瀏覽器定義檔）。 請注意，.NET 4 的瀏覽器定義檔案不夠新，無法辨識 Windows Phone 7、Android 手機、Opera Mobile 瀏覽器或 Apple Ipad。
+- ***您需要更多有關裝置功能的詳細資訊***。 您可能需要知道裝置的輸入法（例如，觸控與鍵盤），或瀏覽器支援的音訊格式。 這項資訊無法在標準瀏覽器定義檔案中使用。
 
-[*無線通用資源檔*(WURFL) 專案](http://wurfl.sourceforge.net/)維護更多最新狀態和詳細資訊中使用的行動裝置的相關今天。
+[*無線通用資源檔*（WURFL）專案](http://wurfl.sourceforge.net/)會維護現今使用之行動裝置的最新和詳細資訊。
 
-適用於.NET 開發人員最棒的消息是該 ASP。NET 的瀏覽器偵測功能，所以就可以增強程式碼來克服這些問題。 例如，您可以在其中加入開放原始碼[ *51Degrees.mobi Foundation* ](https://github.com/51Degrees/dotNET-Device-Detection)至您的專案程式庫。 它是 ASP.NET IHttpModule 或瀏覽器功能提供者 （可使用 Web Form 和 MVC 應用程式），會直接讀取 WURFL 資料並將它連結到 ASP。NET 的內建瀏覽器偵測機制。 一旦您安裝該模組，請*Request.Browser*突然將包含許多更精確且更詳細的資訊： 它會正確地辨識許多先前所述的裝置，並列出其功能 （包括其他功能，例如輸入法）。 請參閱專案的文件，如需詳細資訊。
+.NET 開發人員的好消息是 ASP。NET 的瀏覽器偵測功能是可擴充的，因此可以增強它來克服這些問題。 例如，您可以將開放原始碼[*51Degrees.mobi Foundation*](https://github.com/51Degrees/dotNET-Device-Detection)程式庫新增至您的專案。 這是 ASP.NET IHttpModule 或瀏覽器功能提供者（可在 Web form 和 MVC 應用程式上使用），會直接讀取 WURFL 資料並將其連結至 ASP。NET 的內建瀏覽器偵測機制。 當您安裝了模組之後，*要求瀏覽器*會突然包含更精確且詳細的資訊：它會正確辨識先前提到的許多裝置，並列出其功能（包括其他功能，例如輸入法）。 如需詳細資訊，請參閱專案的檔。
 
-## <a name="how-web-forms-applications-can-present-mobile-specific-pages"></a>Web Form 應用程式會如何呈現行動裝置專屬頁面
+## <a name="how-web-forms-applications-can-present-mobile-specific-pages"></a>Web form 應用程式如何顯示行動專用的頁面
 
-根據預設，以下是常見的行動裝置上的全新的 Web Form 應用程式的顯示方式：
+根據預設，以下是在常見行動裝置上顯示全新 Web Forms 應用程式的方式：
 
 ![](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/_static/image1.png)
 
-很明顯地，未配置看起來非常適合行動 – 此頁面專為大型、 橫向的監視器，不適用於小型的直向導向螢幕。 因此可以您做什麼資訊？
+很明顯地，版面配置看起來非常方便使用，此頁面是專為大型的橫向式監視器所設計，不適用於較小的直向畫面。 那麼您該怎麼做呢？
 
-如本文稍早所述，有很多種，量身訂做您的行動裝置的網頁。 有些技術則是伺服器架構，其他用戶端上執行。
+如本文稍早所述，有許多方式可為行動裝置量身打造您的頁面。 有些技術是以伺服器為基礎，其他則是在用戶端上執行。
 
-### <a name="creating-a-mobile-specific-master-page"></a>建立行動專用的主版頁面
+### <a name="creating-a-mobile-specific-master-page"></a>建立行動裝置特定的主版頁面
 
-根據您的需求，您可以為所有訪客，使用相同的 Web Form，但有兩個不同的主版頁面： 一個用於桌面的訪客，另一個用於行動裝置的訪客。 這可讓您彈性地變更 CSS 樣式表或您最上層的 HTML 標記，以符合行動裝置，而不需要強迫您重複的任何網頁邏輯。
+根據您的需求，您可以針對所有訪客使用相同的 Web 表單，但有兩個不同的主版頁面：一個用於桌面訪客，另一個用於行動訪客。 這可讓您彈性地將 CSS 樣式表單或最上層 HTML 標籤變更為符合行動裝置，而不會強迫您複製任何頁面邏輯。
 
-這很簡單。 例如，您可以將如下所示的 PreInit 處理常式加入 Web Form:
+這很容易執行。 例如，您可以將下列等 PreInit 處理常式新增至 Web 表單：
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample1.cs)]
 
-現在，建立您的應用程式的最上層資料夾中稱為 Mobile.Master 主版頁面，並將在偵測到行動裝置時使用。 如有必要，您行動裝置的主版頁面可以參考的行動裝置專屬的 CSS 樣式表。 桌面的訪客仍然會看到您預設主版頁面，不是行動裝置的一個。
+現在，在應用程式的最上層資料夾中，建立名為 Mobile 的主版頁面，並會在偵測到行動裝置時使用。 如有需要，您的行動主版頁面可以參考行動特定的 CSS 樣式表單。 桌面訪客仍然會看到您的預設主版頁面，而不是行動裝置。
 
-### <a name="creating-independent-mobile-specific-web-forms"></a>建立獨立的行動裝置專屬 Web Form
+### <a name="creating-independent-mobile-specific-web-forms"></a>建立獨立的行動特定 Web 表單
 
-最大的彈性，您即可更進一步比有個別的主版頁面，針對不同裝置類型。 您可以實作兩個*完全不同的 Web Form 頁面集*– 一個設定的桌面瀏覽器，另一組行動裝置的 asp.net。 這適用於最適合您想要呈現給行動裝置的訪客的非常不同的資訊或工作流程。 本節的其餘部分將說明這種方式詳細資料。
+為了達到最大彈性，您可以比只針對不同的裝置類型擁有不同的主版頁面，更進一步。 您可以執行兩組*完全不同的 Web Forms 頁面*，一組用於桌面瀏覽器，另一組用於行動。 如果您想要向行動訪客呈現非常不同的資訊或工作流程，這會是最佳的效果。 本節的其餘部分將詳細說明這種方法。
 
-假設您已經有專為桌面瀏覽器的 Web Form 應用程式，繼續進行的最簡單方式是建立在您專案中，名為"Mobile"子資料夾，並建置行動頁面有。 您可以建構整個的子網站時，它自己的主版頁面、 樣式表和頁面，使用完全相同的技巧，您可以使用任何其他 Web Form 應用程式。 您不一定要產生行動裝置對等*每個*在桌面網站頁面上，您可以選擇哪些功能的子集有意義的行動裝置的訪客。
+假設您已經有針對桌面瀏覽器設計的 Web form 應用程式，最簡單的方法就是在您的專案中建立名為 "Mobile" 的子資料夾，並在該處建立您的行動頁面。 您可以使用所有其他 Web Forms 應用程式所使用的相同技術，來建立整個子網站，以及自己的主版頁面、樣式表單和頁面。 您不一定需要針對桌面網站中的*每個*頁面產生對等的行動。您可以選擇適合行動訪客的功能子集。
 
-您的行動網頁可以共用通用的靜態資源 (例如影像、 JavaScript 或 CSS 檔案) 與您一般的頁面，如果您想要。 因為您的 「 行動 」 資料夾將會*不*標示為個別的應用程式裝載在 IIS 中 （它是只是 Web Form 網頁的簡單子資料夾），它也會分享相同的所有設定、 工作階段資料和其他基礎結構即程式桌面的頁面。
+如果您想要的話，您的行動頁面可以與您的一般頁面共用一般靜態資源（例如影像、JavaScript 或 CSS 檔案）。 由於您的「行動」資料夾在裝載于 IIS 時*不*會被標示為個別的應用程式（它只是 Web form 頁面的簡單子資料夾），因此也會共用所有相同的設定、會話資料和其他基礎結構作為您的桌面網頁。
 
 > [!NOTE]
-> 由於這種方法通常會涉及到的程式碼的一些重複項目 （行動網頁可能會將桌面的網頁中分享一些相似之處），請務必將任何一般商務邏輯或資料存取程式碼到共用的基礎層或服務。 否則，您將會兩倍的建立和維護您的應用程式的工作。
+> 由於這種方法通常牽涉到部分程式碼（行動頁面可能與桌面頁面共用一些相似之處），因此請務必將任何常見的商務邏輯或資料存取程式碼，分解成共用的基礎層或服務。 否則，您將會加倍建立和維護應用程式的工作。
 
-#### <a name="redirecting-mobile-visitors-to-your-mobile-pages"></a>重新導向至您的行動頁面的行動訪客
+#### <a name="redirecting-mobile-visitors-to-your-mobile-pages"></a>將行動訪客重新導向至您的行動頁面
 
-通常很方便將行動裝置的訪客的行動裝置的頁面重新導向僅*第一個*要求在其瀏覽工作階段 （而不是在其工作階段中的每個要求上），因為：
+只有在流覽會話中的*第一個*要求（而不是其會話中的每個要求）將行動訪客重新導向至行動頁面，這通常是很方便的動作，因為：
 
-- 您接著可以輕鬆地讓行動裝置的訪客存取您桌面的網頁，如果他們想要 – 只要將連結放在您移至 [桌面版本] 的主版頁面。 訪客不會重新導向回到行動裝置的頁面上，因為它不再第一個要求在其工作階段中。
-- 它可避免干擾要求 （例如，如果您有一個常見的 Web 表單，桌上型電腦和行動裝置的組件，您的網站會顯示在 IFRAME 中或某些 Ajax 處理常式中），您的站台桌上型電腦和行動裝置的組件之間共用的所有動態資源的風險
+- 如此一來，您就可以輕鬆地允許行動訪客存取您的桌面頁面，只要在主版頁面上放入「桌上出版本」的連結即可。 訪客不會重新導向回到行動頁面，因為它不再是其會話中的第一個要求。
+- 它可以避免干擾您網站的桌面和行動裝置元件間共用之任何動態資源的要求（例如，如果您有共同的 Web 表單，而網站的桌面和行動元件都顯示在 IFRAME 中，或特定 Ajax 處理常式）
 
-若要這樣做，您可以將放在您重新導向邏輯**工作階段\_啟動**方法。 比方說，將下列方法新增至 Global.asax.cs 檔案中：
+若要這樣做，您可以將重新導向邏輯放在**會話中\_Start**方法。 例如，將下列方法新增至您的 Global.asax.cs 檔案：
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample2.cs)]
 
-#### <a name="configuring-forms-authentication-to-respect-your-mobile-pages"></a>設定表單驗證，應遵守您的行動裝置頁面
+#### <a name="configuring-forms-authentication-to-respect-your-mobile-pages"></a>設定表單驗證以尊重您的行動頁面
 
-請注意，表單驗證會使某些假設，它可以重新導向訪客期間和之後的驗證程序：
+請注意，表單驗證會針對在驗證程式期間和之後可將訪客重新導向的位置做出一些假設：
 
-- 當使用者需要進行驗證時，表單驗證將會重新導向至您的桌面登入頁面，不論它們位桌面或行動裝置的使用者 (因為它只會有的概念*一個*登入 URL)。 假設您想要以不同的方式設定您的行動裝置的登入頁面的樣式，您需要增強您的桌面登入頁面，讓行動使用者重新導向至不同的行動裝置登入頁面。 例如，加入下列程式碼，您**桌面**登入頁面的程式碼後置： 
+- 當使用者需要驗證時，表單驗證會將他們重新導向至您的桌面登入頁面，不論他們是桌上型電腦或行動使用者（因為它只有*一個*登入 URL 的概念）。 假設您想要以不同的方式為您的行動登入頁面建立樣式，您必須增強桌面登入頁面，使其將行動使用者重新導向至不同的行動登入頁面。 例如，將下列程式碼新增到您的**桌面**登入頁面程式碼後置： 
 
     [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample3.cs)]
-- 使用者成功登入之後，表單驗證會根據預設重新導向至您的桌面首頁 (因為它只會有的概念*一個*預設網頁)。 您要增強您的行動裝置的登入頁面，讓它將重新導向至行動裝置首頁之後成功登入。 例如，加入下列程式碼，您**行動**登入頁面的程式碼後置： 
+- 在使用者成功登入之後，表單驗證預設會將其重新導向至您的桌面首頁（因為它只有*一個*預設頁面的概念）。 您需要增強行動登入頁面，讓它在成功登入之後重新導向至行動首頁。 例如，將下列程式碼新增至行動登入頁面**的程式碼**後置： 
 
     [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample4.cs)]
   
-  此程式碼假設您的網頁有呼叫 LoginUser，如所示的預設專案範本的 Login 伺服器控制項。
+  這段程式碼假設您的頁面具有名為 LoginUser 的登入伺服器控制項，如同預設專案範本中所示。
 
 ### <a name="working-with-output-caching"></a>使用輸出快取
 
-如果您使用輸出快取，請注意，根據預設，它是桌上型電腦的使用者，可以造訪特定 URL （導致快取其輸出），後面則會收到快取的桌面輸出的行動使用者。 無論您只是改變您的裝置類型的主版頁面，或實作完全不同的 Web Form，每種裝置類型，適用於這項警告。
+如果您使用的是輸出快取，請注意，根據預設，桌面使用者可以流覽特定 URL （導致其輸出快取），接著是行動使用者，接著收到快取的桌面輸出。 無論您是依裝置類型來改變主版頁面，或是針對每個裝置類型執行完全不同的 Web 表單，都適用此警告。
 
-若要避免此問題，您可以指示 ASP.NET 來變更快取項目，根據造訪者是否正在使用行動裝置。 Hodnota VaryByCustom 將參數新增至您的頁面 OutputCache 宣告，如下所示：
+若要避免這個問題，您可以指示 ASP.NET 根據訪客是否使用行動裝置來改變快取專案。 將 VaryByCustom 參數新增至頁面的 OutputCache 宣告，如下所示：
 
 [!code-aspx[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample5.aspx)]
 
-接下來，定義*isMobileDevice*做為自訂快取參數，將下列方法新增覆寫至 Global.asax.cs 檔案：
+接下來，將下列方法覆寫新增至您的 Global.asax.cs 檔案，以將*isMobileDevice*定義為自訂快取參數：
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample6.cs)]
 
-這可確保行動裝置的訪客頁面不會收到先前桌面的訪客，以放入快取的輸出。
+這可確保網頁的行動訪客不會收到先前由桌面訪客放入快取中的輸出。
 
-### <a name="a-working-example"></a>實用的範例
+### <a name="a-working-example"></a>一個實用的範例
 
-若要查看作用中的這些技巧，請下載[這份白皮書的程式碼範例](https://docs.microsoft.com/aspnet/mobile/overview)。 Web Form 範例應用程式會自動將行動裝置的使用者一組稱為 「 行動裝置的子資料夾中的行動裝置專屬頁面重新導向。 標記和樣式的那些頁面更適合行動瀏覽器，您可以看到與下列螢幕擷取畫面：
+若要查看這些技術的實際運作方式，請下載[此白皮書的程式碼範例](https://docs.microsoft.com/aspnet/mobile/overview)。 Web form 範例應用程式會自動將行動使用者重新導向至子資料夾中名為 Mobile 的一組行動特定頁面。 這些頁面的標記和樣式較適合用於行動瀏覽器，如下列螢幕擷取畫面所示：
 
 ![](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/_static/image2.png)
 
-更多秘訣行動瀏覽器最佳化您的標記和 CSS 的詳細資訊，請參閱 「 樣式行動頁面的行動瀏覽器 」 在本文件稍後的一節。
+如需有關將行動瀏覽器的標記和 CSS 優化的更多秘訣，請參閱本檔後面的「行動瀏覽器的樣式行動頁面」一節。
 
-## <a name="how-aspnet-mvc-applications-can-present-mobile-specific-pages"></a>ASP.NET MVC 應用程式會如何呈現行動裝置專屬頁面
+## <a name="how-aspnet-mvc-applications-can-present-mobile-specific-pages"></a>ASP.NET MVC 應用程式如何呈現行動特定的頁面
 
-因為 「 模型-檢視-控制器模式以減少從展示邏輯 （在檢視中） 的應用程式邏輯 （在控制站），您可以選擇任何下列其中一個方法來處理伺服器端程式碼中的行動支援：
+由於模型視圖控制器模式會將應用程式邏輯（在控制器中）與展示邏輯（在 views 中）分離，因此您可以選擇下列任何方法來處理伺服器端程式碼中的行動支援：
 
-1. ***桌上型電腦和行動瀏覽器中，使用相同的控制器和檢視，但會呈現不同的 Razor 版面配置，根據裝置類型 檢視*** 如果您在所有的裝置上顯示相同的資料，但只是想要提供不同的 CSS 樣式表，或是變更幾個最上層的 HTML 項目，行動裝置的 asp.net，這個選項最有用。
-2. ***桌上型電腦和行動瀏覽器中，使用相同的控制站，但會呈現每種裝置類型的不同檢視***。 如果您是顯示大致上相同的資料，而且對於使用者，提供相同的工作流程，這個選項最有用，但想要轉譯非常不同的 HTML 標記，以符合所使用的裝置。
-3. ***建立桌面和行動瀏覽器，實作獨立的控制器和檢視每個不同的區域*** 若您使用顯示非常不同的畫面，內含不同資訊而導致使用者透過不同的工作流程適用於其裝置類型，這個選項最有用。 這可能表示部分重複程式碼，但您可以最小化那個隔離一般邏輯為基礎的圖層或服務。
+1. ***針對桌上型電腦和行動瀏覽器使用相同的控制器和 views，但根據裝置類型 * 來轉譯具有不同 Razor 版面配置的視圖。** 如果您要在所有裝置上顯示相同的資料，但只想要提供不同的 CSS 樣式表單，或變更行動的一些最上層 HTML 元素，這個選項的效果最佳。
+2. ***桌面和行動瀏覽器都使用相同的控制器，但根據裝置類型，呈現不同的視圖***。 如果您要顯示大致相同的資料，並為使用者提供相同的工作流程，但想要呈現非常不同的 HTML 標籤以符合所使用的裝置，這個選項的效果最佳。
+3. ***為桌面和行動瀏覽器建立個別的區域，並針對每個 * 執行獨立的控制器和 views。** 如果您要顯示非常不同的畫面，其中包含不同的資訊，並讓使用者透過針對其裝置類型優化的不同工作流程，則此選項的效果最佳。 這可能表示某些程式碼重複，但是您可以將通用邏輯分解成基礎層或服務，以將其降至最低。
 
-如果您想要採取**第一個**選項出入 Razor 版面配置每種裝置類型，它是非常簡單。 只要修改您\_ViewStart.cshtml 檔案，如下所示：
+如果您想要採用**第一個**選項，而且只會改變每一裝置類型的 Razor 版面配置，很容易。 只要修改您的 \_ViewStart. cshtml 檔案，如下所示：
 
 [!code-cshtml[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample7.cshtml)]
 
-現在您可以建立行動專用的配置，稱為\_LayoutMobile.cshtml 頁面結構和 CSS 規則 適用於行動裝置。
+現在您可以使用針對行動裝置優化的頁面結構和 CSS 規則，建立稱為 \_LayoutMobile 的行動特定配置。
 
-如果您想要採取**第二個**選項根據訪客的裝置類型的轉譯完全不同檢視，請參閱[Scott Hanselman 的部落格文章](http://www.hanselman.com/blog/ABetterASPNETMVCMobileDeviceCapabilitiesViewEngine.aspx)。
+如果您想要讓**第二個**選項根據造訪者的裝置類型轉譯完全不同的視圖，請參閱[Scott Hanselman 的 blog 文章](http://www.hanselman.com/blog/ABetterASPNETMVCMobileDeviceCapabilitiesViewEngine.aspx)。
 
-這份文件的其餘部分著重於**第三個**選項 – 建立個別的控制器*和*行動裝置 – 讓您能夠控制其確實提供哪些功能的子集來進行行動裝置的訪客的檢視。
+本檔的其餘部分著重于**第三個**選項–為行動裝置建立個別的控制器*和*視圖，因此您可以完全控制為行動訪客提供的功能子集。
 
-### <a name="setting-up-a-mobile-area-within-your-aspnet-mvc-application"></a>在 ASP.NET MVC 應用程式內的行動裝置區域設定
+### <a name="setting-up-a-mobile-area-within-your-aspnet-mvc-application"></a>在您的 ASP.NET MVC 應用程式內設定移動區
 
-您可以新增以一般方式稱為 「 行動 」，在現有的 ASP.NET MVC 應用程式的區域： 您在 方案總管的專案名稱上按一下滑鼠右鍵，然後選擇 新增相對區域。 以您平常的 ASP.NET MVC 應用程式內的任何其他區域，您可以再新增控制器和檢視。 比方說，新增至您行動裝置的區域稱為 HomeController 作為行動裝置的訪客首頁的新控制器。
+您可以用一般方式，將名為 "Mobile" 的區域新增至現有的 ASP.NET MVC 應用程式：以滑鼠右鍵按一下方案總管中的專案名稱，然後選擇 [新增] [à] [區域]。 接著，您可以像在 ASP.NET MVC 應用程式中的任何其他區域一樣，新增控制器和視圖。 例如，將名為 HomeController 的新控制器新增至您的行動區域，以作為 Mobile 訪客的首頁。
 
-### <a name="ensuring-the-url-mobile-reaches-the-mobile-homepage"></a>確保 URL /Mobile 達到行動裝置的首頁
+### <a name="ensuring-the-url-mobile-reaches-the-mobile-homepage"></a>確保 URL/Mobile 到達 Mobile 首頁
 
-如果您想要連線到您行動裝置的區域內 HomeController 的索引動作 URL /Mobile 時，您必須對路由組態的兩個的小型變更。 首先，更新 MobileAreaRegistration 類別使 HomeController 預設控制器在行動裝置的區域中，如下列程式碼所示：
+如果您想要讓 URL/Mobile 到達您的行動區域內部 HomeController 的 [索引] 動作，您必須對路由設定進行兩個小的變更。 首先，更新您的 MobileAreaRegistration 類別，讓 HomeController 是您的行動區域中的預設控制器，如下列程式碼所示：
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample8.cs)]
 
-這表示在行動裝置的首頁現在即將放置在 /Mobile，而不是行動/首頁，因為 「 首頁 」 現在是隱含預設控制器名稱行動頁面。
+這表示行動首頁現在會位於/Mobile，而不是/Mobile/Home，因為 "Home" 現在是行動頁面的隱含預設控制器名稱。
 
-接下來，請注意，加入您的應用程式 （亦即，行動裝置一，除了現有的桌面一個） 中的第二個 HomeController，您將會中斷您的一般桌面首頁。 它將會失敗並出現錯誤 「*符合控制器名稱為 'Home' 找到多個類型*"。 若要解決此問題，請指定您的桌面 HomeController 在模稜兩可時，應該會優先更新最上層路由組態 （在 Global.asax.cs):
+接下來，請注意，將第二個 HomeController 新增至您的應用程式（亦即，除了現有的桌上型電腦以外的行動裝置），您將會中斷一般的桌面首頁。 它將會失敗，並出現「*找到與名為 ' Home ' 的控制器相符的多個類型*」錯誤。 若要解決此問題，請更新您的頂層路由設定（在 Global.asax.cs 中），以指定當不明確時，您的桌面 HomeController 應優先考慮：
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample9.cs)]
 
-現在錯誤將會淘汰過，和 URL http:\/\/*yoursite*/ 會到達桌面的首頁和 http:\/\/*yoursite*/mobile/ 將連線到行動裝置的首頁。
+現在，錯誤會消失，且 URL HTTP：\/\/*yoursite*/會到達桌面首頁，而 HTTP：\/\/*yoursite*/mobile/會到達行動首頁。
 
-### <a name="redirecting-mobile-visitors-to-your-mobile-area"></a>重新導向至您的行動裝置區域的行動訪客
+### <a name="redirecting-mobile-visitors-to-your-mobile-area"></a>將行動訪客重新導向至您的行動區域
 
-因此有許多可能的方法，將重新導向邏輯在 ASP.NET MVC 中，有許多不同的擴充點。 其中一個不錯的選項是建立一個篩選屬性、 [RedirectMobileDevicesToMobileArea]，執行重新導向，如果符合下列條件：
+ASP.NET MVC 中有許多不同的擴充點，因此有許多可能的方法可以插入重新導向邏輯。 其中一個不錯的選項是建立篩選屬性 [RedirectMobileDevicesToMobileArea]，以在符合下列條件時執行重新導向：
 
-1. 它是使用者工作階段中的第一個要求 （亦即，Session.IsNewSession 等於 true）
-2. 要求來自行動瀏覽器 （亦即，Request.Browser.IsMobileDevice 等於 true）
-3. 使用者已不要求行動裝置的區域中的資源 (亦即*路徑*URL 部分的開頭不是 /Mobile)
+1. 這是使用者會話中的第一個要求（亦即，IsNewSession 等於 true）
+2. 要求來自行動瀏覽器（亦即，IsMobileDevice 等於 true）
+3. 使用者尚未要求行動區域中的資源（亦即，URL 的*路徑*部分不是以/Mobile 開頭）
 
-本白皮書所隨附的可下載範例包含此邏輯的實作。 它會實作為衍生自 AuthorizeAttribute，這表示它在即使您使用輸出快取 （否則如果桌面的訪客第一次存取特定 URL，桌面的輸出可能會快取，並再提供給可以正確運作的授權篩選條件，後續行動訪客）。
+本白皮書隨附的可下載範例包含此邏輯的執行。 它會實作為授權篩選，衍生自 AuthorizeAttribute，這表示即使您使用輸出快取，它也可以正常運作（否則，如果桌面訪客第一次存取特定的 URL，桌面輸出可能會被快取，然後再提供給後續的行動訪客）。
 
-因為它是篩選條件時，您可以選擇要套用至特定的控制器和動作例如
+因為它是一個篩選準則，所以您可以選擇將它套用到特定的控制器和動作，例如
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample10.cs)]
 
-… 或您可以將它套用到所有控制器和動作的 MVC 3*全域篩選*Global.asax.cs 檔案中：
+… 或者，您可以將它套用到所有控制器和動作，做為 Global.asax.cs 檔案中的 MVC 3*全域篩選*條件：
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample11.cs)]
 
-可下載的範例也會示範如何建立此屬性的重新導向至您行動裝置的區域內的特定位置的子類別。 這表示，例如，您可以：
+可下載的範例也會示範如何建立此屬性的子類別，以重新導向至行動區域內的特定位置。 例如，這表示您可以：
 
-- 註冊全域篩選器如下所示上述的預設傳送行動裝置的訪客在行動裝置的首頁。
-- 以採取行動的訪客要求它們有任何產品頁面的行動裝置版本的 「 檢視產品 」 動作，也適用於特殊的 [RedirectMobileDevicesToMobileProductPage] 篩選器。
-- 也適用於特定的動作，重新導向行動訪客的對等的行動頁面的 篩選器的其他特殊子類別
+- 註冊全域篩選器，如上所示，預設會將行動訪客傳送至行動首頁。
+- 此外，也請將特殊的 [RedirectMobileDevicesToMobileProductPage] 篩選準則套用至「觀看產品」動作，以將行動訪客帶到所要求之任何產品頁面的 mobile 版本。
+- 也將篩選準則的其他特殊子類別套用至特定動作，並將行動訪客重新導向至對等的行動電話頁面
 
-### <a name="configuring-forms-authentication-to-respect-your-mobile-pages"></a>設定表單驗證，應遵守您的行動裝置頁面
+### <a name="configuring-forms-authentication-to-respect-your-mobile-pages"></a>設定表單驗證以尊重您的行動頁面
 
-如果您使用表單驗證，您應該注意，當使用者需要登入，它會自動將使用者重新導向至單一特定 「 登入 」 的 URL，其預設值是 **/帳戶/登入**。 這表示行動使用者，可能會重新導向至您的桌面登入 動作。
+如果您是使用表單驗證，請注意，當使用者需要登入時，它會自動將使用者重新導向至單一特定的「登入」 URL，預設為 **/Account/LogOn**。 這表示行動使用者可能會被重新導向至您的桌面「登入」動作。
 
-若要避免這個問題，使它會重新導向行動使用者一次在行動裝置的 「 登入 」 動作，在桌面的登入 動作加入邏輯。 如果您使用預設 ASP.NET MVC 應用程式範本，更新 AccountController 的登入動作，如下所示：
+若要避免這個問題，請將邏輯新增至您的桌面「登入」動作，使其再次將行動使用者重新導向至 mobile 「登入」動作。 如果您使用的是預設的 ASP.NET MVC 應用程式範本，請更新 AccountController 的登入動作，如下所示：
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample12.cs)]
 
-… 取代預設文字，然後再呼叫 AccountController 行動的區域中的控制站上實作適當的行動裝置專屬 「 登入 」 動作。
+… 然後在您的行動區域中，于名為 AccountController 的控制器上，執行適當的特定行動裝置「登入」動作。
 
 ### <a name="working-with-output-caching"></a>使用輸出快取
 
-如果您使用 [OutputCache] 篩選器，您必須強制因裝置類型的快取項目。 比方說，撰寫程式碼：
+如果您使用 [OutputCache] 篩選準則，您必須強制快取專案因裝置類型而異。 例如，撰寫：
 
 [!code-javascript[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample13.js)]
 
-然後，新增至 Global.asax.cs 檔案的下列方法：
+然後，將下列方法新增至您的 Global.asax.cs 檔案：
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample14.cs)]
 
-這可確保行動裝置的訪客頁面不會收到先前桌面的訪客，以放入快取的輸出。
+這可確保網頁的行動訪客不會收到先前由桌面訪客放入快取中的輸出。
 
-### <a name="a-working-example"></a>實用的範例
+### <a name="a-working-example"></a>一個實用的範例
 
-若要查看作用中的這些技巧，請下載[這份白皮書的程式碼相關聯的範例](https://docs.microsoft.com/aspnet/mobile/overview)。 此範例包含 ASP.NET MVC 3 （發行候選版本） 應用程式增強為支援行動裝置使用上面所述的方法。
+若要查看這些技術的實際運作方式，請下載[這份白皮書相關的程式碼範例](https://docs.microsoft.com/aspnet/mobile/overview)。 此範例包含已增強的 ASP.NET MVC 3 （候選版）應用程式，可使用上述方法來支援行動裝置。
 
 ## <a name="further-guidance-and-suggestions"></a>進一步的指引和建議
 
-下列討論適用於 Web Form 和 MVC 的開發人員使用這份文件所述的技巧。
+下列討論適用于使用本檔所涵蓋之技術的 Web form 和 MVC 開發人員。
 
-### <a name="enhancing-your-redirection-logic-using-51degreesmobi-foundation"></a>增強您的重新導向邏輯使用 51Degrees.mobi Foundation
+### <a name="enhancing-your-redirection-logic-using-51degreesmobi-foundation"></a>使用 51Degrees.mobi Foundation 增強重新導向邏輯
 
-這份文件中所示的重新導向邏輯可能是完全滿足您的應用程式，但如果您要停用工作階段，將無法運作或與拒絕的 cookie （這些不能有工作階段），因為它不會知道是否為指定的要求的行動瀏覽器第一個來自該訪客。
+本檔中所顯示的重新導向邏輯對您的應用程式而言可能完全足夠，但如果您需要停用會話，或使用拒絕 cookie 的行動瀏覽器（這些都不能有會話），則無法運作，因為它不會知道指定的要求是否為來自該訪客的第一個。
 
-此外，您已了解開放原始碼 51Degrees.mobi Foundation 如何改善 ASP 的精確度。NET 的瀏覽器偵測。 它也有內建的能力，來重新導向至特定位置，在 Web.config 中設定的行動訪客。就能夠運作，而不根據 ASP.NET 工作階段 (並因此 cookie) 所儲存的訪客的 HTTP 標頭和 IP 位址的雜湊的暫存記錄檔，使它知道每一個要求是否從給定造訪的第一個。
+您已經瞭解開放原始碼 51Degrees.mobi Foundation 如何改善 ASP 的精確度。NET 的瀏覽器偵測。 它也有內建的功能，可將行動訪客重新導向至 web.config 中設定的特定位置。藉由儲存訪客的 HTTP 標頭和 IP 位址之雜湊的暫時記錄，讓它知道每個要求是否是來自指定 vistor 的第一個，就能夠在不依賴 ASP.NET 會話（也就是 cookie）的情況下工作。
 
-下列項目加入至 web.config 檔案 fiftyOne 區段將會重新導向至頁面偵測到的行動裝置的第一個要求 ~ / Mobile/Default.aspx。 頁面 [行動] 資料夾下的任何要求都會*不*重新導向，無論何種裝置類型。 如果行動裝置已經過一段非作用中的 20 分鐘或更多裝置將會被遺忘，後續要求將會被視為新的目的，重新導向。
+在 web.config 檔案的 fiftyOne 區段中新增的下列元素會將第一個要求從偵測到的行動裝置重新導向至頁面 ~/Mobile/Default.aspx。 不論裝置類型為何，行動資料夾底下的任何頁面要求都*不*會重新導向。 如果行動裝置已處於非使用中狀態一段20分鐘以上，則會忘記裝置，並將後續要求視為新的要求，以供重新導向之用。
 
 [!code-xml[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample15.xml)]
 
-如需詳細資訊，請參閱 < [51degrees.mobi Foundation 文件](https://github.com/51Degrees/dotNET-Device-Detection)。
+如需詳細資訊，請參閱[51Degrees.mobi Foundation 檔](https://github.com/51Degrees/dotNET-Device-Detection)。
 
 > [!NOTE]
-> 您*可以*使用 51Degrees.mobi Foundation 的重新導向功能，在 ASP.NET MVC 應用程式，但您必須定義您的重新導向設定，以純文字的 Url，不是由路由參數，或將 MVC 篩選條件上的動作。 這是因為 （在本文撰寫之際） 51Degrees.mobi Foundation 無法辨識或路由篩選器。
+> 您*可以*在 ASP.NET MVC 應用程式上使用 51Degrees.mobi Foundation 的重新導向功能，但您必須根據一般 url 定義重新導向設定，而不是在路由參數或將 MVC 篩選準則放在動作上。 這是因為（在撰寫本文時） 51Degrees.mobi Foundation 無法辨識篩選器或路由。
 
-### <a name="disabling-transcoders-and-proxy-servers"></a>停用的轉碼器和 Proxy 伺服器
+### <a name="disabling-transcoders-and-proxy-servers"></a>停用轉錄器和 Proxy 伺服器
 
-行動網路業者他們行動裝置的網際網路的方法有兩個廣泛的目標：
+行動網路操作員在行動網際網路的方法中有兩個廣泛的目標：
 
-1. 提供做為盡可能更相關內容
-2. 可以共用限制的廣播網路頻寬的客戶數目最大化
+1. 盡可能提供最多相關內容
+2. 最大化可共用有限無線網路頻寬的客戶數目
 
-由於大部分的網頁設計大型桌面大小的螢幕和列快速修正寬頻連線時，許多運算子會使用*轉錄器*或是*proxy 伺服器*，動態變更網頁內容。 他們可能會修改您的 HTML 標記或 CSS 以符合較小的螢幕 （特別是針對 「 功能電話 」 缺少的處理能力來處理複雜的版面配置），和他們可能會重新映像 （大幅降低其品質） 壓縮以改善網頁傳送速度。
+由於大部分的網頁都是針對大型桌上型電腦大小的螢幕和快速的固定線寬頻連線所設計，因此許多操作員會使用動態改變 web 內容的*轉錄器*或*proxy 伺服器*。 他們可以修改您的 HTML 標籤或 CSS，使其符合較小的螢幕（特別是「功能電話」，缺少處理複雜配置的處理能力），而且它們可能會重新壓縮您的影像（大幅降低其品質）以改善頁面傳遞速度。
 
-但是，如果您所採取的工作，以產生您的站台的行動裝置最佳化版本，您可能不想干擾它任何進一步的網路業者。 您可以將下行加入頁面\_任何 ASP.NET Web Form 中的 Load 事件：
+但是，如果您已經致力於產生網站的行動優化版本，您可能不希望網路操作員進一步干擾。 您可以將下列這一行新增至頁面，\_ASP.NET Web Form 中的載入事件：
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample16.cs)]
 
-或者，您也可以針對 ASP.NET MVC 控制站，您可以新增下列方法覆寫，讓它套用至該控制器上的所有動作：
+或者，對於 ASP.NET 的 MVC 控制器，您可以新增下列方法覆寫，以便套用至該控制器上的所有動作：
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample17.cs)]
 
-產生的 HTTP 訊息會通知 W3C 相容轉錄器並不是用來改變內容的 proxy。 當然，則行動網路運算子會遵守此訊息無法保證。
+產生的 HTTP 訊息會通知符合 W3C 規範的轉錄器和 proxy，而不是更改內容。 當然，並不保證行動網路操作員會遵循此訊息。
 
-### <a name="styling-mobile-pages-for-mobile-browsers"></a>行動瀏覽器的樣式設定行動裝置頁面
+### <a name="styling-mobile-pages-for-mobile-browsers"></a>為行動瀏覽器設定行動頁面的樣式
 
-它超出範圍的這份文件中，有詳細描述哪些類型的 HTML 標記工作正確，或哪些 web 設計技術最大化在特定的裝置上的可用性。 它有增加，尋找夠簡單版面配置，讓您適合行動大小 畫面中，而不使用不可靠 HTML 或 CSS 技巧。 不過，是一個重要的技術，值得一提*檢視區的中繼標記*。
+這不在本檔的討論範圍內，非常詳細地說明哪些類型的 HTML 標籤可正確運作，或哪些 web 設計技術可將特定裝置上的可用性最大化。 您可以找出非常簡單的版面配置，針對行動大小的螢幕進行優化，而不需使用不可靠的 HTML 或 CSS 定位技巧。 不過，有一項重要的技術值得一提，那就是「*區中繼」標記*。
 
-某些現代行動瀏覽器，在適用於桌面的監視器，投入時間顯示網頁中呈現的頁面上的虛擬的畫布，也稱為 「 檢視區 」 （例如，虛擬的檢視區為 980 像素寬在 iPhone 上和 850 個像素寬 Opera Mobile 上依預設），然後相應減少的結果，以符合螢幕的實體像素為單位。 使用者可以拉近然後該檢視區前後移動瀏覽。 這樣做的好處，它可讓瀏覽器顯示頁面在其預期的配置中，但也有缺點，它會強制縮放和取景功能不適用於使用者。 如果您要設計適用於行動裝置，最好設計窄的畫面，因此不需要的任何縮放或水平捲動。
+某些現代化行動瀏覽器的工作會顯示適用于桌面監視器的網頁、在虛擬畫布上轉譯頁面，也稱為「視口」（例如，虛擬區在 iPhone 上是980圖元寬，而在預設的 Opera Mobile 上為850圖元寬），然後將結果相應縮小，以符合螢幕的實體圖元。 然後，使用者可以放大和移動該區。 這有一個優點，就是讓瀏覽器在其預期的版面配置中顯示頁面，但它也具有強制縮放和移動的缺點，這對使用者而言並不方便。 如果您要針對行動裝置進行設計，最好是針對縮小畫面進行設計，這樣就不需要縮放或水準滾動。
 
-告訴行動瀏覽器中檢視區應該是寬度的方式是透過使用非標準*viewport*中繼標籤。 例如，如果您將下列新增至您的頁面標頭 區段中，
+一種方法，告訴行動瀏覽器，視口的寬度應透過非標準的*視口*中繼標記。 例如，如果您將下列內容新增至頁面的標頭區段，
 
 [!code-html[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample18.html)]
 
-… 然後支援 smartphone 瀏覽器會配置到 480 像素寬虛擬畫布上的頁面。 這表示，如果您的 HTML 項目會定義其寬度，以百分比表示，百分比會解譯這個 480 像素的寬度，不預設檢視區寬度方面。 如此一來，使用者是比較不可能需要縮放和取景位置調整 水平 – 大幅改善行動瀏覽體驗。
+… 然後支援 smartphone 瀏覽器會在 480-圖元寬的虛擬畫布上配置頁面。 這表示如果您的 HTML 專案定義其寬度（以百分比表示），則會根據這個480圖元寬度來解讀百分比，而不是預設的視窗素寬度。 因此，使用者較不可能必須水準縮放和移動–大幅改善行動流覽體驗。
 
-如果您想檢視區寬度，以符合裝置的實體像素為單位，您可以指定下列項目：
+如果您想要讓視口寬度符合裝置的實體圖元，您可以指定下列各項：
 
 [!code-html[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample19.html)]
 
-這麼做才能正常運作，您必須明確地強制超過該寬度的項目 (例如，使用*寬度*屬性或 CSS 屬性)，否則瀏覽器將會強制在使用較大的檢視區不論。 另請參閱：[非標準的檢視區標記的更多詳細](https://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)。
+若要讓此作業正常運作，您不能明確地強制元素超過該寬度（例如，使用*width*屬性或 CSS 屬性），否則瀏覽器將被迫使用較大的區，而不論。 另請參閱：[有關非標準的視口標記的更多詳細資料](https://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)。
 
-現今大部分的智慧型手機支援*雙向*： 它們可以保留在直向或橫向模式。 因此，務必不要像素為單位的螢幕寬度的相關假設。 不要甚至是假設的螢幕寬度固定的因為使用者可以重新導向他們的裝置，都在頁面上。
+大部分的新式 smartphone 都支援*雙重方向*：它們可以用直向或橫向模式來保留。 因此，請務必不要假設畫面寬度是以圖元為單位。 甚至不會假設螢幕寬度是固定的，因為使用者可以在您的頁面上重新調整其裝置的方向。
 
-下列 meta 標記中，通知他們內容的頁面已經過最佳化，適用於行動裝置，並因此不應該轉換，可能也會接受較舊的 Windows Mobile 和 Blackberry 裝置。
+較舊的 Windows Mobile 和 Blackberry 裝置也可以接受頁首中的下列中繼標記，以通知其內容已針對行動裝置進行優化，因此不應進行轉換。
 
 [!code-html[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample20.html)]
 
 ## <a name="additional-resources"></a>其他資源
 
-如需行動裝置模擬器，模擬器可用來測試行動裝置的 ASP.NET web 應用程式的清單，請參閱網頁[模擬熱門的行動裝置，以測試](../mobile/device-simulators.md)。
+如需您可以用來測試行動 ASP.NET web 應用程式的行動裝置模擬器和模擬器清單，請參閱[模擬熱門的行動裝置進行測試](../mobile/device-simulators.md)一頁。
 
-## <a name="credits"></a>參與名單
+## <a name="credits"></a>學分
 
-- 主要作者：Steven Sanderson
-- 檢閱者 / 其他內容寫入器：James Rosewell, Mikael Söderström, Scott Hanselman, Scott Hunter
+- 主要作者： Steven Sanderson
+- 審核者/其他內容作者： James Rosewell、Mikael Söderström、Scott Hanselman、Scott Hunter

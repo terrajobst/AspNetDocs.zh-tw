@@ -9,11 +9,11 @@ ms.assetid: 675531a7-cb54-4dd6-89ac-2636e4c285a5
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 24ff3645783dabfcdef5ac313a2d4833e4998efc
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74608163"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78532554"
 ---
 # <a name="updating-the-tableadapter-to-use-joins-c"></a>更新 TableAdapter 以使用 JOIN (C#)
 
@@ -68,7 +68,7 @@ ms.locfileid: "74608163"
 
 **圖 2**：輸入包含 `JOIN` s 的主要查詢
 
-按一下 [完成] 以完成精靈。 此時，您的資料集的設計工具會包含一個具有 DataTable 的單一 TableAdapter，其中每個欄位在 `SELECT` query s 資料行清單中傳回。 這包括 `CategoryName` 和 `SupplierName`，如 [圖 3] 所示。
+按一下 [完成] 完成精靈。 此時，您的資料集的設計工具會包含一個具有 DataTable 的單一 TableAdapter，其中每個欄位在 `SELECT` query s 資料行清單中傳回。 這包括 `CategoryName` 和 `SupplierName`，如 [圖 3] 所示。
 
 ![DataTable 會針對資料行清單中傳回的每個欄位包含一個資料行。](updating-the-tableadapter-to-use-joins-cs/_static/image5.png)
 
@@ -92,7 +92,7 @@ TableAdapter s 自動產生的 `INSERT`、`UPDATE`和 `DELETE` 語句的肯定�
 
 在本教學課程中，我們將為 `NorthwindWithSprocs` 資料集中的 `Employees` 資料表加入 TableAdapter 和強型別 DataTable。 `Employees` 資料表包含一個 `ReportsTo` 欄位，其中指定了員工 s 經理的 `EmployeeID`。 例如，employee Anne 劉天具有5的 `ReportTo` 值，也就是 Steven 林丹的 `EmployeeID`。 因此，Anne 報告給 Steven，她的經理。 除了報告每個員工的 `ReportsTo` 值，我們也可能會想要取得其經理的名稱。 您可以使用 `JOIN`來完成這項作業。 但是在最初建立 TableAdapter 時使用 `JOIN`，會阻止嚮導自動產生對應的插入、更新和刪除功能。 因此，我們一開始會建立一個 TableAdapter，其主要查詢不包含任何 `JOIN` s。 然後，在步驟2中，我們將更新主要查詢預存程式，以透過 `JOIN`來抓取管理員的名稱。
 
-從開啟 `~/App_Code/DAL` 資料夾中的 `NorthwindWithSprocs` 資料集開始。 以滑鼠右鍵按一下設計工具，從內容功能表中選取 [新增] 選項，然後挑選 [TableAdapter] 功能表項目。 這會啟動 [TableAdapter 設定向導]。 如 [圖 5] 所示，讓 wizard 建立新的預存程式，然後按 [下一步]。 如需從 TableAdapter s wizard 建立新預存程式的重新整理程式，請參閱
+從開啟 `~/App_Code/DAL` 資料夾中的 `NorthwindWithSprocs` 資料集開始。 以滑鼠右鍵按一下設計工具，從內容功能表中選取 [新增] 選項，然後挑選 [TableAdapter] 功能表項目。 這會啟動 [TableAdapter 設定向導]。 如 [圖 5] 所示，讓 wizard 建立新的預存程式，然後按 [下一步]。 如需從 TableAdapter s wizard 建立新預存程式的重新整理程式，請參閱 < 為具[類型的資料集 Tableadapter 建立新的預存程式](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)教學課程。
 
 [![選取 [建立新的預存程式] 選項](updating-the-tableadapter-to-use-joins-cs/_static/image10.png)](updating-the-tableadapter-to-use-joins-cs/_static/image9.png)
 

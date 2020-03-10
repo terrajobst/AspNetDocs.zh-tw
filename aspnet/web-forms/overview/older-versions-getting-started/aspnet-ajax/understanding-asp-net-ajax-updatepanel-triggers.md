@@ -9,11 +9,11 @@ ms.assetid: faab8503-2984-48a9-8a40-7728461abc50
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
 msc.type: authoredcontent
 ms.openlocfilehash: b1cc869f373d4f8283b4d92af74707c3f11fef61
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74588782"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78547450"
 ---
 # <a name="understanding-aspnet-ajax-updatepanel-triggers"></a>了解 ASP.NET AJAX UpdatePanel 觸發程序
 
@@ -53,7 +53,7 @@ Microsoft 的 ASP.NET 技術引進了物件導向和事件導向的程式設計�
 
 *標記子代：*
 
-| **標記** | **說明** |
+| **Tag** | **說明** |
 | --- | --- |
 | &lt;asp： AsyncPostBackTrigger&gt; | 指定將會對包含此觸發程式參考的 UpdatePanel 引發部分頁面更新的控制項和事件。 |
 | &lt;asp： PostBackTrigger&gt; | 指定會導致完整頁面更新（完整頁面重新整理）的控制項和事件。 當控制項會觸發部分呈現時，可以使用此標記來強制執行完整重新整理。 |

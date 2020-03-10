@@ -9,11 +9,11 @@ ms.assetid: 2da25f6a-757e-4e7b-a812-1575288d8f7a
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
 msc.type: authoredcontent
 ms.openlocfilehash: e35c3d6a98516a07f6119e6cb9dbeb99bc28fe33
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74613860"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78531798"
 ---
 # <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>使用具類型資料集 Tableadapter 現有的預存程序 (VB)
 
@@ -130,7 +130,7 @@ Visual Studio 可讓您輕鬆地將新的預存程式加入至資料庫。 讓 s
 
 **圖 10**：從 `GetProductsByCategoryID(categoryID)` 方法取出資料（[按一下以查看完整大小的影像](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image30.png)）
 
-在 [選取] 索引標籤中選擇的方法需要參數，因此 wizard 的最後一個步驟會提示我們輸入參數 s 來源。 將 [參數來源] 下拉式清單設定為 [控制]，然後從 [ControlID] 下拉式清單中選擇 [`Categories`] 控制項。 按一下 [完成] 以完成精靈。
+在 [選取] 索引標籤中選擇的方法需要參數，因此 wizard 的最後一個步驟會提示我們輸入參數 s 來源。 將 [參數來源] 下拉式清單設定為 [控制]，然後從 [ControlID] 下拉式清單中選擇 [`Categories`] 控制項。 按一下 [完成] 完成精靈。
 
 [![使用分類 DropDownList 做為類別目錄參數的來源](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image32.png)](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb/_static/image31.png)
 

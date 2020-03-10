@@ -9,11 +9,11 @@ ms.assetid: 4d85e9fb-91e6-41f2-9c13-754549b19c27
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 785d62108667fddac42994344cde265e82aca8f4
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74598427"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78553617"
 ---
 # <a name="using-the-slider-control-with-auto-postback-c"></a>使用滑杆控制項搭配自動回傳（C#）
 
@@ -58,4 +58,4 @@ ASP.NET AJAX 控制項工具組中的 `SliderExtender` 控制項，會將滑杆�
 之後，這項變更的日期會寫入標籤（[按一下以查看完整大小的影像](using-the-slider-control-with-auto-postback-cs/_static/image6.png)）
 
 > [!div class="step-by-step"]
-> [下一步](databinding-the-slider-control-cs.md)
+> [下一個](databinding-the-slider-control-cs.md)

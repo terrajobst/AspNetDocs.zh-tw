@@ -2,62 +2,62 @@
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
 title: 從控制器存取模型的資料 |Microsoft Docs
 author: shanselman
-description: 這是初學者教學課程中，將會介紹 ASP.NET MVC 的基本概念。 建立簡單的 web 應用程式，從資料庫讀取與寫入。
+description: 這是初學者教學課程，介紹 ASP.NET MVC 的基本概念。 建立可從資料庫讀取和寫入的簡單 web 應用程式。
 ms.author: riande
 ms.date: 08/14/2010
 ms.assetid: 004703cd-e0e9-4ba7-9974-1b0475c71222
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
 msc.type: authoredcontent
 ms.openlocfilehash: 207ed880977d794d81efdc1ea458d17a68d501d8
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65122884"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78543747"
 ---
 # <a name="accessing-your-models-data-from-a-controller"></a>從控制器存取模型資料
 
-藉由[Scott Hanselman](https://github.com/shanselman)
+由[Scott Hanselman](https://github.com/shanselman)
 
-> 這是初學者教學課程中，將會介紹 ASP.NET MVC 的基本概念。 您將建立簡單 web 應用程式，從資料庫讀取與寫入。 請瀏覽[ASP.NET MVC 學習中心](../../../index.md)來尋找其他 ASP.NET MVC 教學課程和範例。
+> 這是初學者教學課程，介紹 ASP.NET MVC 的基本概念。 您將建立可從資料庫讀取和寫入的簡單 web 應用程式。 請造訪[ASP.NET mvc 學習中心](../../../index.md)，以尋找其他 ASP.NET mvc 教學課程和範例。
 
-這一節我們要建立新的 MoviesController 類別，並撰寫一些程式碼會擷取電影資料，並顯示回瀏覽器使用檢視範本。
+在本節中，我們將建立一個新的 Moviescontroller.cs 類別，並撰寫一些程式碼來抓取電影資料，並使用視圖範本將其顯示回瀏覽器。
 
-以滑鼠右鍵按一下 [控制器] 資料夾，並讓新 MoviesController。
+以滑鼠右鍵按一下 [控制器] 資料夾，並建立新的 Moviescontroller.cs。
 
 [![新增控制器](getting-started-with-mvc-part5/_static/image2.png)](getting-started-with-mvc-part5/_static/image1.png)
 
-這會建立新的 「 MoviesController.cs"檔案，我們的專案中我們 \Controllers 資料夾下。 讓我們更新 MovieController 從我們的新填入資料庫中擷取的電影清單。
+這會在專案內的 \Controllers 資料夾下方建立新的 "MoviesController.cs" 檔案。 讓我們更新 MovieController，以從我們新填入的資料庫中取出電影清單。
 
 [!code-csharp[Main](getting-started-with-mvc-part5/samples/sample1.cs)]
 
-因此，我們只會擷取 1984 年的夏季之後發行的影片，我們要執行 LINQ 查詢。 我們將需要呈現的電影傳回這份清單，因此在方法中以滑鼠右鍵按一下並選取新增的檢視，來建立它的檢視範本。
+我們正在執行 LINQ 查詢，因此我們只會取出1984年夏季之後所發行的電影。 我們需要一個 View 範本來轉譯這份電影清單，因此，請在方法中按一下滑鼠右鍵，然後選取 [新增視圖] 加以建立。
 
-[新增檢視] 對話方塊中我們將指出，我們會將清單傳遞&lt;Movies.Models.Movie&gt;檢視範本。 不同於前一次，我們使用 [新增檢視] 對話方塊，並選擇建立 「 空白 」 範本時，我們會指出這次我們要 Visual Studio 自動"scaffold 」 檢視範本的某些預設的內容。 將執行此作業，選取 「 清單 」 中的項目 」 檢視內容下拉式功能表。
+在 [新增視圖] 對話方塊中，我們會指出我們將清單&lt;電影&gt; 到我們的視圖範本。 與先前使用 [加入視圖] 對話方塊並選擇建立「空白」範本的時間不同，這次我們會指出我們想要 Visual Studio 為我們自動「scaffold」具有一些預設內容的視圖範本。 我們將在 [View content] 下拉式功能表中選取 [清單] 專案來執行此動作。
 
-請記住，如果您已建立新的類別，您必須編譯您的應用程式，它才會顯示在 [新增檢視] 對話方塊。
+請記住，當您建立新的類別時，您必須編譯應用程式，它才會顯示在 [加入視圖] 對話方塊中。
 
-![新增檢視](getting-started-with-mvc-part5/_static/image3.png)
+![加入視圖](getting-started-with-mvc-part5/_static/image3.png)
 
-按一下 [新增]，系統會自動產生的程式碼以檢視我們會顯示我們的電影清單。 這是要變更的好時機&lt;h2&gt;像我們稍早使用 Hello World 的檢視，標題為類似 「 我的電影清單 」。
+按一下 [新增]，系統就會自動為我們產生顯示電影清單的視圖程式碼。 這是將 &lt;h2&gt; 標題變更為「我的電影清單」的好時機，如同我們先前使用 Hello World view 所做的一樣。
 
-[![影片-Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part5/_static/image5.png)](getting-started-with-mvc-part5/_static/image4.png)
+[![電影-Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part5/_static/image5.png)](getting-started-with-mvc-part5/_static/image4.png)
 
-執行您的應用程式，並請 /Movies 瀏覽的網址列中。 現在我們使用控制器內的基本查詢從資料庫擷取資料，並回到知道電影的檢視中的資料。 該檢視會透過的電影清單，然後為我們建立資料的資料表。
+執行您的應用程式，並流覽網址列中的/Movies。 現在，我們已使用控制器內的基本查詢從資料庫中取出資料，並將資料傳回給瞭解電影的視圖。 該視圖接著會旋轉電影清單，並為我們建立資料的資料表。
 
 [![電影清單-Windows Internet Explorer](getting-started-with-mvc-part5/_static/image7.png)](getting-started-with-mvc-part5/_static/image6.png)
 
-我們將不會實作編輯、 詳細資料和刪除功能，與此應用程式-因此我們不需要預設 scaffold 樣板為我們建立的連結。 開啟 /Movies/Index.aspx 檔案，並將它們移除。
+我們不會使用此應用程式來執行編輯、詳細資料和刪除功能，因此我們不需要 scaffold 範本為我們建立的預設連結。 開啟/Movies/Index.aspx 檔案，並將其移除。
 
-以下是我們已更新的檢視範本外觀應該為何我們進行這些變更後的原始程式碼：
+以下是我們進行這些變更之後，更新後的視圖範本應該看起來的原始程式碼：
 
 [!code-aspx[Main](getting-started-with-mvc-part5/samples/sample2.aspx)]
 
-我們會將其刪除此範例中，它會建立我們就不需要的連結。 不過，因為這是下一步，我們會保留我們新建立的連結 ！ 以下是我們的應用程式與已移除該資料行的外觀。
+它會建立我們不需要的連結，因此我們會在此範例中將其刪除。 我們會保留 [建立新的] 連結，如下所示！ 以下是我們的應用程式在移除該資料行時的外觀。
 
 [![電影清單-Windows Internet Explorer](getting-started-with-mvc-part5/_static/image9.png)](getting-started-with-mvc-part5/_static/image8.png)
 
-我們現在有簡單的電影資料清單。 不過，如果我們按一下 [新建] 連結時，我們將會收到錯誤，因為它不連結 ！ 讓我們實作建立動作方法，並讓使用者在資料庫中，輸入新的電影。
+我們現在有簡單的電影資料清單。 不過，如果我們按一下 [建立新的] 連結，就會收到錯誤，因為它並未連接！ 讓我們來執行建立動作方法，並讓使用者在資料庫中輸入新電影。
 
 > [!div class="step-by-step"]
 > [上一頁](getting-started-with-mvc-part4.md)

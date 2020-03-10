@@ -9,11 +9,11 @@ ms.assetid: 28970e1b-1845-4015-86ef-121e52a6c397
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-new-field
 msc.type: authoredcontent
 ms.openlocfilehash: b2b26b6009c55f02c8a4159bda839fe7aefea4c0
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457257"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78540576"
 ---
 # <a name="adding-a-new-field-to-the-movie-model-and-database-table-vb"></a>將新欄位新增至影片模型和資料庫資料表 (VB)
 
@@ -112,7 +112,7 @@ ms.locfileid: "77457257"
 
 [![7_CreateRioII](adding-a-new-field/_static/image5.png)](adding-a-new-field/_static/image4.png)
 
-按一下 **[建立]** 。 新電影（包括評等）現在會顯示在電影清單中：
+按一下 [建立]。 新電影（包括評等）現在會顯示在電影清單中：
 
 ![7_ourNewMovie_SM](adding-a-new-field/_static/image6.png)
 

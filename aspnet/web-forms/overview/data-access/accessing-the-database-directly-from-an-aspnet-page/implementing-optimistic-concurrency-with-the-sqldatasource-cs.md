@@ -9,11 +9,11 @@ ms.assetid: df999966-ac48-460e-b82b-4877a57d6ab9
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 87fca52e2e8be844411b2fff8382c6002eccbe09
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74598106"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78553232"
 ---
 # <a name="implementing-optimistic-concurrency-with-the-sqldatasource-c"></a>使用 SqlDataSource 實作開放式同步存取 (C#)
 

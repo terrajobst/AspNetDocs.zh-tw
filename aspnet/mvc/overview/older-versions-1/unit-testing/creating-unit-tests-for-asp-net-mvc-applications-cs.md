@@ -9,11 +9,11 @@ ms.assetid: d3a270b9-d7b1-47f2-8775-fc3beb518b5c
 msc.legacyurl: /mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 35fd0d85c63e5bd196394ce11b851c822a6405d9
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74595274"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78623939"
 ---
 # <a name="creating-unit-tests-for-aspnet-mvc-applications-c"></a>建立 ASP.NET MVC 應用程式的單元測試 (C#)
 
@@ -112,4 +112,4 @@ MVC 控制器會使用稱為 *`View Data`* 的內容，將資料傳遞給視圖�
 最後，我們會討論如何測試控制器動作是否傳回不同類型的動作結果。 您已瞭解如何測試控制器是否會傳回 `ViewResult` 或 `RedirectToRouteResult`。
 
 > [!div class="step-by-step"]
-> [下一步](creating-unit-tests-for-asp-net-mvc-applications-vb.md)
+> [下一個](creating-unit-tests-for-asp-net-mvc-applications-vb.md)

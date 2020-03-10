@@ -9,11 +9,11 @@ ms.assetid: c76dbc35-a914-4ee3-919c-4f4d1fa05104
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
 msc.type: authoredcontent
 ms.openlocfilehash: 3881833bfe2a50a38a357614f92f434a04a8ab08
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74626785"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78567400"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>使用 Visual Studio ASP.NET Web 部署：部署程式碼更新
 
@@ -53,7 +53,7 @@ ms.locfileid: "74626785"
 
 1. 以滑鼠右鍵按一下 [ContosoUniversity] 專案，然後按一下 [**發佈**]，以開啟 [**發佈 Web** wizard]。
 2. 按一下 [**配置**檔] 下拉式清單中的**測試**設定檔。
-3. 按一下 [**設定**] 索引標籤。
+3. 按一下 [設定] 索引標籤。
 4. 在 [**資料庫**] 區段的 [ **DefaultConnection** ] 下，清除 [**更新資料庫**] 核取方塊。
 5. 按一下 [**設定檔**] 索引標籤，然後按一下 [**配置**檔] 下拉式清單中的**暫存**設定檔。
 6. 當系統詢問您是否要儲存對**測試**設定檔所做的變更時，請按一下 **[是]** 。

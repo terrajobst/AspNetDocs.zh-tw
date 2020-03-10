@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/index
-title: 使用 DataList 與重複項顯示資料 |Microsoft Docs
+title: 使用 DataList 和中繼器顯示資料 |Microsoft Docs
 author: rick-anderson
-description: 這些教學課程會示範使用 DataList 與重複項控制項顯示資料的替代方式。
+description: 這些教學課程會示範使用 DataList 和重複項控制項來顯示資料的替代方式。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 3005174a-ba3d-4937-8b3e-b913ee4172ac
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater
 msc.type: chapter
 ms.openlocfilehash: fc166515eea28a4ee3e9f3ec20f80ebd1976120a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115041"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78595092"
 ---
 # <a name="displaying-data-with-the-datalist-and-repeater"></a>使用 DataList 與重複項顯示資料
 
-> 這些教學課程會示範使用 DataList 與重複項控制項顯示資料的替代方式。
+> 這些教學課程會示範使用 DataList 和重複項控制項來顯示資料的替代方式。
 
 - [使用 DataList 與重複項控制項顯示資料 (C#)](displaying-data-with-the-datalist-and-repeater-controls-cs.md)
 - [根據資料格式化 DataList 和重複項 (C#)](formatting-the-datalist-and-repeater-based-upon-data-cs.md)

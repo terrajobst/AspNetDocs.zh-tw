@@ -9,11 +9,11 @@ ms.assetid: 7d82d5e9-0619-4f22-9e03-32a6d52940a5
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
 ms.openlocfilehash: 1ca93cce22487295a24aae95437b3e69dfc5b504
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457137"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78617443"
 ---
 # <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>單一登入（使用 Azure 建立真實世界的雲端應用程式）
 
@@ -168,7 +168,7 @@ Visual Studio 可讓您輕鬆地建立使用 Azure AD 進行單一登入的應�
 
 這些螢幕擷取畫面來自完整的逐步教學課程，說明如何建立使用 Azure AD 驗證的應用程式：[使用 Azure Active Directory 開發 ASP.NET 應用程式](../../../../identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 在本章中，您會看到 Azure Active Directory、Visual Studio 和 ASP.NET，可讓您輕鬆地在網際網路應用程式中為貴組織的使用者設定單一登入。 您的使用者可以使用他們用來登入的相同認證（使用內部網路中的 Active Directory）登入網際網路應用程式。
 

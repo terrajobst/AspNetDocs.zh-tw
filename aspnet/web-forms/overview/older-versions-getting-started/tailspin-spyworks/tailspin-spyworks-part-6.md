@@ -1,29 +1,29 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6
-title: 第 6 部分：ASP.NET 成員資格 |Microsoft Docs
+title: 第6部分： ASP.NET 成員資格 |Microsoft Docs
 author: JoeStagner
-description: 本教學課程系列會詳細說明所有建置 Tailspin Spyworks 範例應用程式所採取的步驟。 第 6 部分加入 ASP.NET 成員資格。
+description: 本教學課程系列詳細說明建立 Tailspin Spyworks 範例應用程式所採取的所有步驟。 第6部分新增 ASP.NET 成員資格。
 ms.author: riande
 ms.date: 07/21/2010
 ms.assetid: f70a310c-9557-4743-82cb-655265676d39
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6
 msc.type: authoredcontent
 ms.openlocfilehash: b0caa89dc9ffb5bb7451fa2d9d346c7db2bf1466
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130877"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78564180"
 ---
-# <a name="part-6-aspnet-membership"></a>第 6 部分：ASP.NET 成員資格
+# <a name="part-6-aspnet-membership"></a>第6部分： ASP.NET 成員資格
 
-藉由[Joe Stagner](https://github.com/JoeStagner)
+依[Joe Stagner](https://github.com/JoeStagner)
 
-> Tailspin Spyworks 示範建立功能強大、 可擴充的應用程式，適用於.NET 平台是如何富含簡單。 它會展示如何在 ASP.NET 4 中使用最棒的新功能，建置線上商店，包括購物、 簽出，以及系統管理。
+> Tailspin Spyworks 示範為 .NET 平臺建立功能強大、可擴充的應用程式有多麼簡單。 它會說明如何使用 ASP.NET 4 中的絕佳新功能來建立線上商店，包括購物、結帳和管理。
 > 
-> 本教學課程系列會詳細說明所有建置 Tailspin Spyworks 範例應用程式所採取的步驟。 第 6 部分加入 ASP.NET 成員資格。
+> 本教學課程系列詳細說明建立 Tailspin Spyworks 範例應用程式所採取的所有步驟。 第6部分新增 ASP.NET 成員資格。
 
-## <a id="_Toc260221672"></a>  使用 ASP.NET 成員資格
+## <a id="_Toc260221672"></a>使用 ASP.NET 成員資格
 
 ![](tailspin-spyworks-part-6/_static/image1.png)
 
@@ -31,81 +31,81 @@ ms.locfileid: "65130877"
 
 ![](tailspin-spyworks-part-6/_static/image1.jpg)
 
-請確定我們使用表單驗證。
+請確定我們使用的是表單驗證。
 
 ![](tailspin-spyworks-part-6/_static/image2.jpg)
 
-您可以使用 [建立使用者] 連結來建立幾個使用者。
+使用 [建立使用者] 連結來建立幾個使用者。
 
 ![](tailspin-spyworks-part-6/_static/image3.jpg)
 
-完成時，請參閱 [方案總管] 視窗，並重新整理檢視。
+完成時，請參閱 [方案總管] 視窗，並重新整理此視圖。
 
 ![](tailspin-spyworks-part-6/_static/image2.png)
 
-請注意，ASPNETDB。已建立好的 MDF。 此檔案包含的資料表，以支援核心 ASP.NET 服務，例如成員資格。
+請注意，ASPNETDB.MDF。MDF 已建立良好。 此檔案包含支援核心 ASP.NET 服務（例如成員資格）的資料表。
 
-現在我們可以開始實作結帳程序。
+現在我們可以開始執行結帳程式。
 
-藉由建立 CheckOut.aspx 頁面開始。
+一開始先建立一個 [CheckOut] 頁面。
 
-CheckOut.aspx 頁面應僅供已登入，因此我們將會限制存取權登入使用者以及未登入的登入頁面的重新導向使用者的使用者。
+只有登入的使用者才能使用 [CheckOut] 頁面，因此我們會限制登入使用者的存取權，並將未登入的使用者重新導向至登入頁面。
 
-若要這樣做我們會將下列加入我們的 web.config 檔案的組態區段。
+為此，我們會將下列內容新增至 web.config 檔案的 [設定] 區段。
 
 [!code-xml[Main](tailspin-spyworks-part-6/samples/sample1.xml)]
 
-ASP.NET Web Form 應用程式範本會自動加入我們的 web.config 檔案中的 [驗證] 區段，並建立預設登入頁面。
+ASP.NET Web Forms 應用程式的範本會自動將驗證區段新增至我們的 web.config 檔案，並建立預設登入頁面。
 
 [!code-xml[Main](tailspin-spyworks-part-6/samples/sample2.xml)]
 
-我們必須修改 Login.aspx 背後的程式碼移轉匿名的購物車，當使用者登入的檔案。 變更頁面\_載入事件，如下所示。
+當使用者登入時，我們必須修改登入 .aspx 程式碼後置檔案，以遷移匿名購物車。 變更頁面\_載入事件，如下所示。
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample3.cs)]
 
-然後新增"LoggedIn"事件處理常式如下設定新登入的使用者工作階段名稱，並變更使用者的購物車中的暫時工作階段識別碼，我們 MyShoppingCart 類別中呼叫 MigrateCart; 方法。 （在.cs 檔案中實作）
+然後，新增 "LoggedIn" 事件處理常式（如下所示），將會話名稱設定為新登入的使用者，並藉由呼叫 MyShoppingCart 類別中的 MigrateCart 方法，將購物車中的暫時會話識別碼變更為使用者。 （實作為 .cs 檔案）
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample4.cs)]
 
-實作 MigrateCart() 方法如下所示。
+執行 MigrateCart （）方法，如下所示。
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample5.cs)]
 
-在 checkout.aspx 我們將使用 EntityDataSource 和 GridView 中我們查看頁面就像我們在我們購物車 頁面。
+在 checkout 中，我們將使用 [簽出] 頁面中的 EntityDataSource 和 GridView，與我們在 [購物車] 頁面中所做的一樣。
 
 [!code-aspx[Main](tailspin-spyworks-part-6/samples/sample6.aspx)]
 
-請注意，我們的 GridView 控制項指定名為 MyList"ondatabound"事件處理常式\_RowDataBound 現在讓我們來實作該事件處理常式，就像這樣。
+請注意，GridView 控制項會指定名為 MyList\_RowDataBound 的 "ondatabound" 事件處理常式，讓我們來執行此事件處理常式，如下所示。
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample7.cs)]
 
-加總的購物車每個資料列繫結，並更新 GridView 的底端列這個方法會保留。
+此方法會在每個資料列被系結時，保留購物車的執行總計，並更新 GridView 的底部資料列。
 
-在這個階段中，我們已實作放置順序 「 檢閱 」 的簡報。
+在這個階段，我們已針對要放置的訂單，執行「評論」簡報。
 
-讓我們加入我們的頁面中的幾行程式碼處理空白的購物車案例\_Load 事件：
+讓我們藉由將幾行程式碼新增至頁面\_載入事件來處理空的購物車案例：
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample8.cs)]
 
-當使用者按一下 [提交] 按鈕時我們會執行下列程式碼中的提交按鈕 Click 事件處理常式。
+當使用者按一下 [Submit （提交）] 按鈕時，我們會在 [提交] 按鈕的 Click 事件處理常式中執行下列程式碼。
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample9.cs)]
 
-「"訂單提交程序是在 SubmitOrder() 方法中，我們 MyShoppingCart 類別的實作。
+訂單提交程式的「肉」是在我們的 MyShoppingCart 類別的 SubmitOrder （）方法中執行。
 
 SubmitOrder 將會：
 
-- 購物車中採取所有明細項目，並使用它們來建立新的訂單記錄和相關聯的 OrderDetails 記錄。
+- 接受購物車中的所有明細專案，並使用它們來建立新的訂單記錄和相關聯的 OrderDetails 記錄。
 - 計算出貨日期。
-- 清除 購物車。
+- 清除 [購物車]。
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample10.cs)]
 
-基於此範例應用程式的中，我們會計算出貨日期只要目前的日期加上兩天。
+基於此範例應用程式的目的，我們將計算出貨日期，只要在目前日期加上兩天。
 
 [!code-csharp[Main](tailspin-spyworks-part-6/samples/sample11.cs)]
 
-執行應用程式現在將允許我們購物程序從開始到完成的測試。
+現在執行應用程式可讓我們從開始到結束測試購物流程。
 
 > [!div class="step-by-step"]
 > [上一頁](tailspin-spyworks-part-5.md)

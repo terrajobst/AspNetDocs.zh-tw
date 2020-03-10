@@ -9,11 +9,11 @@ ms.assetid: 22ca8efa-7cd1-45a7-b9ce-ce6eb3b3ff95
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
 msc.type: authoredcontent
 ms.openlocfilehash: a0b55b0df1b7843120de284891e16178df23fabe
-ms.sourcegitcommit: fe5c7512383a9b0a05d321ff10d3cca1611556f0
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70386487"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78576906"
 ---
 # <a name="caching-data-at-application-startup-c"></a>在應用程式啟動時快取資料 (C#)
 
@@ -157,7 +157,7 @@ ms.locfileid: "70386487"
 
 **圖 7**：快取的供應商資料會顯示在 GridView 中（[按一下以觀看完整大小的影像](caching-data-at-application-startup-cs/_static/image17.png)）
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 大部分的資料模型都包含相當大量的靜態資料，通常是以查閱資料表的形式來執行。 由於這項資訊是靜態的，因此在每次需要顯示此資訊時，都無法持續存取資料庫。 此外，由於其靜態本質，當快取資料時，不需要到期。 在本教學課程中，我們已瞭解如何採用這類資料，並將它快取到資料快取、應用程式狀態，以及透過靜態成員變數。 這項資訊會在應用程式啟動時快取，並在整個應用程式的存留期間保留在快取中。
 

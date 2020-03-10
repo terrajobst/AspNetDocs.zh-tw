@@ -9,11 +9,11 @@ ms.assetid: ad8dd396-30f7-4abe-ac02-a0b84422e5be
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 15970bee1e990d3a139673efe12486e08f79814c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74573420"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78524735"
 ---
 # <a name="protecting-connection-strings-and-other-configuration-information-c"></a>保護連接字串與其他設定資訊 (C#)
 
@@ -27,7 +27,7 @@ ms.locfileid: "74573420"
 
 ASP.NET 應用程式的設定資訊通常會儲存在名為 `Web.config`的 XML 檔案中。 在這些教學課程中，我們已更新 `Web.config` 幾次。 例如，在[第一個教學](../introduction/creating-a-data-access-layer-cs.md)課程中建立 `Northwind` 型別資料集時，連接字串資訊會自動新增至 [`<connectionStrings>`] 區段中的 `Web.config`。 之後，在[主版頁面和網站導覽](../introduction/master-pages-and-site-navigation-cs.md)教學課程中，我們會手動更新 `Web.config`，並加入 `<pages>` 元素，指出專案中的所有 ASP.NET 網頁都應該使用 `DataWebControls` 主題。
 
-由於 `Web.config` 可能包含機密資料（例如連接字串），因此 `Web.config` 的內容必須保持安全，而且不受未經授權的檢視器影響。 根據預設，具有 `.config` 副檔名之檔案的任何 HTTP 要求都會由 ASP.NET 引擎處理，這會傳回 [圖 1] 所示的 [*不提供這種類型的頁面*] 訊息。 這表示訪客無法藉由直接在瀏覽器的網址列中輸入 http://www.YourServer.com/Web.config ，來查看您 `Web.config` 的檔案內容。
+由於 `Web.config` 可能包含機密資料（例如連接字串），因此 `Web.config` 的內容必須保持安全，而且不受未經授權的檢視器影響。 根據預設，具有 `.config` 副檔名之檔案的任何 HTTP 要求都會由 ASP.NET 引擎處理，這會傳回 [圖 1] 所示的 [*不提供這種類型的頁面*] 訊息。 這表示訪客無法藉由直接在瀏覽器的網址列中輸入 http://www.YourServer.com/Web.config，來查看您 `Web.config` 的檔案內容。
 
 [![透過瀏覽器造訪 web.config，會傳回不提供這種類型的頁面訊息](protecting-connection-strings-and-other-configuration-information-cs/_static/image2.png)](protecting-connection-strings-and-other-configuration-information-cs/_static/image1.png)
 

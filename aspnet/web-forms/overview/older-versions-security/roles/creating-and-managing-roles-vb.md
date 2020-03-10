@@ -9,11 +9,11 @@ ms.assetid: 83af9f5f-9a00-4f83-8afc-e98bdd49014e
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/creating-and-managing-roles-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 825e2afb750925637d308b7ceb35e1b02b708c1d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74586369"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78565384"
 ---
 # <a name="creating-and-managing-roles-vb"></a>建立及管理角色 (VB)
 
@@ -31,7 +31,7 @@ ms.locfileid: "74586369"
 
 ASP.NET 提供角色架構來定義角色，並將它們與使用者帳戶建立關聯。 有了角色架構，我們就可以建立和刪除角色、在角色中新增使用者或移除使用者、判斷屬於特定角色的使用者集合，以及判斷使用者是否屬於特定角色。 一旦設定了角色架構，我們就可以透過 URL 授權規則來限制每個角色對頁面的存取權，並根據目前登入的使用者角色，顯示或隱藏頁面上的其他資訊或功能。
 
-本教學課程會檢查設定角色架構所需的步驟。 之後，我們將建立網頁來建立及刪除角色。 在將<a id="_msoanchor_2"> </a>[*角色指派給使用者*](assigning-roles-to-users-vb.md)教學課程中，我們將探討如何從角色新增和移除使用者。 在以<a id="_msoanchor_3"> </a>[*角色為基礎的授權*](role-based-authorization-vb.md)教學課程中，我們將瞭解如何依角色來限制頁面的存取權，以及如何根據造訪的使用者角色來調整頁面功能。 讓我們開始吧！
+本教學課程會檢查設定角色架構所需的步驟。 之後，我們將建立網頁來建立及刪除角色。 在將<a id="_msoanchor_2"> </a>[*角色指派給使用者*](assigning-roles-to-users-vb.md)教學課程中，我們將探討如何從角色新增和移除使用者。 在以<a id="_msoanchor_3"> </a>[*角色為基礎的授權*](role-based-authorization-vb.md)教學課程中，我們將瞭解如何依角色來限制頁面的存取權，以及如何根據造訪的使用者角色來調整頁面功能。 現在就開始吧！
 
 ## <a name="step-1-adding-new-aspnet-pages"></a>步驟1：加入新的 ASP.NET 網頁
 

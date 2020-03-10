@@ -9,11 +9,11 @@ ms.assetid: e8e0809b-25c4-4c3b-8d12-9a17048148ae
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 16686c7e41926698c0da9c60d3cf26e858f5daca
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74617867"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78620635"
 ---
 # <a name="paging-report-data-in-a-datalist-or-repeater-control-c"></a>DataList 或重複項控制項中的分頁報表資料 (C#)
 
@@ -244,4 +244,4 @@ DataList 頁面會使用沒有效率的預設分頁技術來流覽其資料。 �
 本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Liz Shulok、Ken Pespisa 和 Bernadette Leigh。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一步](sorting-data-in-a-datalist-or-repeater-control-cs.md)
+> [下一個](sorting-data-in-a-datalist-or-repeater-control-cs.md)

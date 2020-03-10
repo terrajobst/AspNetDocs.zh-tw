@@ -9,11 +9,11 @@ ms.assetid: a2d7f33b-8c4a-4b48-9fb1-9139cf9b9878
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: ea88da1e6d510f706fc7ca370cfa32974c1243f8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74587762"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78525631"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>使用 Visual Studio 部署具有 SQL Server Compact 的 ASP.NET Web 應用程式：簡介-12 的1
 
@@ -77,7 +77,7 @@ Contoso 大學是 Visual Studio web 應用程式專案。 本教學課程中所�
 
 歡迎您提供教學課程的批註，而更新教學課程時，將會針對教學課程批註中提供的改進進行修正或建議。
 
-## <a name="prerequisites"></a>必要條件：
+## <a name="prerequisites"></a>Prerequisites
 
 開始之前，請確定您有 Windows 7 或更新版本，以及電腦上安裝的下列其中一項產品：
 
@@ -139,4 +139,4 @@ Contoso 大學是 Visual Studio web 應用程式專案。 本教學課程中所�
 在此系列的第一個教學課程中，您已下載 Visual Studio 專案的範例，以及會影響您如何部署應用程式的網站功能。 在下列教學課程中，您會設定要自動處理的某些專案，以準備進行部署。 您手動處理的其他人。
 
 > [!div class="step-by-step"]
-> [下一步](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
+> [下一個](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

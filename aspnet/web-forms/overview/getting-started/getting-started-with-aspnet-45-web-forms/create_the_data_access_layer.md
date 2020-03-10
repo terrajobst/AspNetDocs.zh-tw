@@ -9,11 +9,11 @@ ms.assetid: 0bbf7a6e-d7eb-4091-91e4-fff892777f32
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
 msc.type: authoredcontent
 ms.openlocfilehash: 0fcf050474a57be9ed53ec0783a6d6b7dde2bf4c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74575756"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78544923"
 ---
 # <a name="create-the-data-access-layer"></a>建立資料存取層
 
@@ -25,7 +25,7 @@ ms.locfileid: "74575756"
 
 本教學課程說明如何使用 ASP.NET Web Forms 和 Entity Framework Code First，從資料庫建立、存取和審核資料。 本教學課程是以上一個教學課程「建立專案」為基礎，屬於 Wingtip 玩具商店教學課程系列。 當您完成本教學課程時，您將會在專案的 [*模型*] 資料夾中，建立一組資料存取類別。
 
-## <a name="what-youll-learn"></a>您將瞭解的內容：
+## <a name="what-youll-learn"></a>您將學到什麼：
 
 - 如何建立資料模型。
 - 如何初始化和植入資料庫。
@@ -69,9 +69,9 @@ Entity Framework 支援稱為*Code First*的開發範例。 Code First 可讓您
 
     ![建立資料存取層-新增專案功能表](create_the_data_access_layer/_static/image2.png)
 3. 從中間窗格選取 [**類別**]，並將此新類別命名為*Product.cs*。
-4. 按一下 [加入]。  
+4. 按一下 [新增]。  
    新的類別檔案會顯示在編輯器中。
-5. 將預設程式碼取代為下列程式碼：   
+5. 使用下列程式碼來取代預設程式碼：   
 
     [!code-csharp[Main](create_the_data_access_layer/samples/sample1.cs)]
 6. 重複步驟1到4來建立另一個類別，不過，將新類別命名為*Category.cs* ，並將預設程式碼取代為下列程式碼：  
@@ -178,7 +178,7 @@ Entity Framework 支援稱為*Code First*的開發範例。 Code First 可讓您
 [ADO.NET Entity Framework 的初學者指南](https://msdn.microsoft.com/data/ee712907)   
 [使用 Entity Framework 進行 Code First 開發](http://www.msteched.com/2010/Europe/DEV212)（影片）   
 [Code First 關聯性流暢的 API](https://msdn.microsoft.com/data/hh134698)   
-[Code First 資料批註](https://msdn.microsoft.com/data/gg193958)  
+[Code First 資料註解](https://msdn.microsoft.com/data/gg193958)  
 [Entity Framework 的生產力改善](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0)
 
 > [!div class="step-by-step"]

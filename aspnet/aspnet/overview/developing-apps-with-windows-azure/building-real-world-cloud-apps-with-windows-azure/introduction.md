@@ -9,11 +9,11 @@ ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
 ms.openlocfilehash: b88573b3702b755b155e8da35f5f8a67931bafc6
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457111"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78617590"
 ---
 # <a name="building-real-world-cloud-apps-with-azure"></a>使用 Azure 建立真實世界的雲端應用程式
 
@@ -25,7 +25,7 @@ ms.locfileid: "77457111"
 > 
 > 內容是以 Scott Guthrie 開發的簡報為基礎，並由他在2013年6月（第[1](http://vimeo.com/68215538)部分，[第 2](http://vimeo.com/68215602)部分）和 Microsoft Tech Ed 2013 澳大利亞（第[1](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324)部，第[2](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325)部分）的「挪威開發人員會議」（NDC）提供。 [許多人](more-patterns-and-guidance.md#acknowledgments)都會更新並增強內容，同時將它從影片轉換成書面形式。
 
-## <a name="intended-audience"></a>目標對象
+## <a name="intended-audience"></a>適用對象
 
 對於想要針對雲端進行開發的開發人員而言，考慮移至雲端或雲端開發的新手，會大致瞭解他們需要知道的最重要概念和做法。 概念會以具體範例來說明，而每個章節都會連結至其他資源，以取得更深入的資訊。 這些範例和其他資源的連結適用于 Microsoft 架構和服務，但說明的原則也適用于其他 網頁程式開發架構和雲端環境。
 
@@ -102,7 +102,7 @@ ms.locfileid: "77457111"
 - [附錄︰修正範例應用程式](the-fix-it-sample-application.md)
 
     - 已知問題
-    - 最佳做法
+    - 最佳作法
     - 如何下載、建立、執行和部署。
 
 這些模式適用于所有雲端環境，但我們將使用以 Microsoft 技術和服務為基礎的範例（例如 Visual Studio、Team Foundation Service、ASP.NET 和 Azure）加以說明。
@@ -154,7 +154,7 @@ ms.locfileid: "77457111"
 如需示範如何在 Visual Studio 中建立 web 應用程式並將其部署至 Azure 網站的快速簡單逐步教學課程，請參閱[開始使用 azure 和 ASP.NET](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)。
 
 <a id="summary"></a>
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本簡介已提供本書將涵蓋的主題清單、範例應用程式的螢幕擷取畫面，以及 Azure App Service 雲端環境中 Web Apps 的簡短總覽。 在和雲端中開發應用程式的其中一個絕佳優點，就是可以輕鬆地自動化重複的開發工作，例如建立測試環境，並將程式碼部署到其中。 這是[下一章](automate-everything.md)的主題。
 

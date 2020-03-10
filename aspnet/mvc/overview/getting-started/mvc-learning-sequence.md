@@ -9,18 +9,18 @@ ms.assetid: 8513a57a-2d45-4d6b-881c-15a01c5cbb1c
 msc.legacyurl: /mvc/overview/getting-started/mvc-learning-sequence
 msc.type: authoredcontent
 ms.openlocfilehash: 46b089a896c6b1b92437ff1f5488214a3a0a9838
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77455928"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78602512"
 ---
 # <a name="mvc-recommended-tutorials-and-articles"></a>MVC 建議教學課程與文章
 
 依[Rick Anderson](https://twitter.com/RickAndMSFT)
 
 <a id="pwd"></a>
-## <a name="getting-started"></a>開始使用
+## <a name="getting-started"></a>快速入門
 
 - [ASP.NET MVC 5 的消費者入門](introduction/getting-started.md)這一系列的11部分是不錯的開端。
 - [Pluralsight ASP.NET MVC 5 基本](https://pluralsight.com/training/Player?author=scott-allen&amp;name=aspdotnet-mvc5-fundamentals-m1-introduction&amp;mode=live&amp;clip=0&amp;course=aspdotnet-mvc5-fundamentals)概念（影片課程）

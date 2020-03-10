@@ -9,11 +9,11 @@ ms.assetid: 9b96eaa1-8ef0-4338-a2e8-e0f970bfaf68
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
 ms.openlocfilehash: 52d5eb7abe4520ebdf6667d299d055fc7619a635
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74615458"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78568219"
 ---
 # <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2017"></a>具有 ASP.NET 4.5 Web Forms 和 Visual Studio 2017 的消費者入門
 
@@ -25,7 +25,7 @@ ms.locfileid: "74615458"
 
 本教學課程系列會引導您使用 Visual Studio 2017 和 ASP.NET 4.5 來建立 ASP.NET Web Forms 應用程式。 您將建立一個名為**Wingtip 玩具**的應用程式，這是一個簡化的店面網站，可在線上銷售專案。 在此系列期間，會反白顯示新的 ASP.NET 4.5 功能。
 
-### <a name="target-audience"></a>目標物件
+### <a name="target-audience"></a>目標對象
 
 ASP.NET Web form 的新開發人員是本教學課程系列的目標物件。
 
@@ -33,7 +33,7 @@ ASP.NET Web form 的新開發人員是本教學課程系列的目標物件。
 
 - 物件導向程式設計（OOP）和語言
 - Web 開發（HTML、CSS、JavaScript）
-- 關係資料庫
+- 關聯式資料庫
 - 多層式架構
 
 若要查看這些區域，請考慮研究下列內容：
@@ -134,7 +134,7 @@ PayPal 會確認您的帳戶、訂購和付款資訊。
 
 ![Wingtip 玩具-訂購評論](introduction-and-overview/_static/image7.png)
 
-## <a name="prerequisites"></a>必要條件：
+## <a name="prerequisites"></a>Prerequisites
 
 開始之前，請確定您的電腦上已安裝下列軟體：
 
@@ -191,4 +191,4 @@ PayPal 會確認您的帳戶、訂購和付款資訊。
 如果發生錯誤，對應的錯誤訊息可能會造成混淆，而不會有如何修正此問題的絕佳說明。 如需協助，您可以查看[ASP.NET 論壇](https://forums.asp.net/)。 另一個不錯的來源是消費者入門中的 Q 和一節[與 ASP.NET 4.5 Web Forms 和 Visual Studio 2013 Wingtip 玩具](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409)（C#）範例頁面。 
 
 > [!div class="step-by-step"]
-> [下一步](create-the-project.md)
+> [下一個](create-the-project.md)

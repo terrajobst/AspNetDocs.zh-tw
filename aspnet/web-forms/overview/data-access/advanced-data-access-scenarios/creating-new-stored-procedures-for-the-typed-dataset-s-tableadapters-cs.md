@@ -9,11 +9,11 @@ ms.assetid: 751282ca-5870-4d66-84e4-6cefae23eb4a
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
 ms.openlocfilehash: db0d83a0fd1f1f175001d20844b298be0cf7e1cd
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74609779"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78533709"
 ---
 # <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>為具類型資料集的 Tableadapter 建立新的預存程序 (C#)
 
@@ -329,4 +329,4 @@ ObjectDataSource wizard 完成後，Visual Studio 會將 BoundFields 和 CheckBo
 本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Hilton Geisenow。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一步](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)
+> [下一個](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)

@@ -1,25 +1,25 @@
 ---
 uid: web-forms/index
-title: ASP.NET Web Form |Microsoft Docs
+title: ASP.NET Web Forms |Microsoft Docs
 author: rick-anderson
-description: 下載 Visual Web Developer Express，並了解如何快速建置的 web 應用程式使用容易瞭解控制項在 ASP.NET Web Forms 上的視覺設計環境...
+description: 下載 Visual Web Developer Express & 瞭解如何在視覺效果設計 environ 中，使用容易瞭解的 ASP.NET Web form 控制項來快速建立 Web 應用程式 。
 ms.author: riande
 ms.date: 08/08/2011
 ms.assetid: 7e4ce5d2-ab22-44f0-9825-c12eed7b8fcb
 msc.legacyurl: /web-forms
 msc.type: categoryindex
 ms.openlocfilehash: 623df5d3ffe357f42d72ee0a33bc50aa60a8c4d0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59397002"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78554856"
 ---
 # <a name="aspnet-web-forms"></a>ASP.NET Web Form
 
 - [指引](overview/index.md)
 
-    - [快速入門](overview/getting-started/index.md)
+    - [使用者入門](overview/getting-started/index.md)
 
         - [ASP.NET 4.5 Web Form 與 Visual Studio 2013 使用者入門](overview/getting-started/getting-started-with-aspnet-45-web-forms/index.md)
 
@@ -132,14 +132,14 @@ ms.locfileid: "59397002"
 
         - [ASP.NET 4 - Tailspin Spyworks](overview/older-versions-getting-started/tailspin-spyworks/index.md)
 
-            - [第 1 部分：檔案]-> [新增專案](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1.md)
-            - [第 2 部分：資料存取層](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2.md)
-            - [第 3 部分：版面配置與分類 功能表](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3.md)
-            - [第 4 部分：列出產品](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4.md)
-            - [第 5 部分：商務邏輯](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5.md)
+            - [第 1 節：[檔案] -> [新增專案]](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1.md)
+            - [第 2 節：資料存取層](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2.md)
+            - [第 3 節：[版面配置與分類] 功能表](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3.md)
+            - [第 4 節：列出產品](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4.md)
+            - [第 5 節：商務邏輯](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5.md)
             - [第 6 節：ASP.NET 成員資格](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6.md)
             - [第 7 節：新增功能](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7.md)
-            - [第 8 節：最後的頁面、 例外狀況處理和結論](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8.md)
+            - [第 8 節：最後的頁面、例外狀況處理和結論](overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8.md)
         - [ASP.NET 4 - Entity Framework 4 和 Web Form 使用者入門](overview/older-versions-getting-started/getting-started-with-ef/index.md)
 
             - [Entity Framework 4.0 Database First 使用者入門](overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)
@@ -152,9 +152,9 @@ ms.locfileid: "59397002"
             - [Entity Framework 4.0 Database First 使用者入門 - 第 8 節](overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8.md)
         - [ASP.NET 4 - 繼續使用 Entity Framework 4 及 Web Form](overview/older-versions-getting-started/continuing-with-ef/index.md)
 
-            - [Entity Framework 4.0 和 ObjectDataSource 控制項，第 1 部分：開始使用](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
-            - [Entity Framework 4.0 和 ObjectDataSource 控制項，第 2 部分：新增商務邏輯層和單元測試](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
-            - [Entity Framework 4.0 和 ObjectDataSource 控制項，第 3 部分：排序和篩選](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+            - [Entity Framework 4.0 和 ObjectDataSource 控制項，第 1 節：使用者入門](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
+            - [Entity Framework 4.0 和 ObjectDataSource 控制項，第 2 節：新增商務邏輯層和單元測試](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+            - [Entity Framework 4.0 和 ObjectDataSource 控制項，第 3 節：排序和篩選](overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
             - [在 ASP.NET 4 中使用 Entity Framework 4.0 處理並行](overview/older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
             - [在 ASP.NET 4 中使用 Entity Framework 4.0 將效能最大化](overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
             - [Entity Framework 4.0 的新功能](overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4.md)
@@ -238,7 +238,7 @@ ms.locfileid: "59397002"
             - [生產環境網站的使用者和角色 (VB)](overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-vb.md)
     - [舊版 - Ajax Control Toolkit](overview/ajax-control-toolkit/index.md)
 
-        - [快速入門](overview/ajax-control-toolkit/getting-started/index.md)
+        - [使用者入門](overview/ajax-control-toolkit/getting-started/index.md)
 
             - [開始使用 AJAX Control Toolkit (C#)](overview/ajax-control-toolkit/getting-started/get-started-with-the-ajax-control-toolkit-cs.md)
             - [使用 AJAX Control Toolkit 控制項及控制項擴充項 (C#)](overview/ajax-control-toolkit/getting-started/using-ajax-control-toolkit-controls-and-control-extenders-cs.md)
@@ -680,7 +680,7 @@ ms.locfileid: "59397002"
         - [在 ASP.NET Web Pages 中偵測瀏覽器功能](videos/how-do-i/how-do-i-detect-browser-capabilities-in-aspnet-web-pages.md)
         - [對應 ASP.NET 伺服器控制項和呈現所用的配接器](videos/how-do-i/how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it.md)
         - [使用查詢字串將資訊從一個頁面傳至另一個頁面](videos/how-do-i/how-do-i-pass-information-from-one-page-to-another-using-a-query-string.md)
-        - [使用 aspnet\_merge.exe 合併組件的公用程式](videos/how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
+        - [使用 aspnet\_merge .exe 公用程式來合併元件](videos/how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
         - [在 ASP.NET 中實作跨網頁回傳](videos/how-do-i/how-do-i-implement-a-cross-page-postback-in-aspnet.md)
         - [以程式設計方式將控制項新增至 ASP.NET 網頁](videos/how-do-i/how-do-i-add-controls-to-an-aspnet-web-page-programmatically.md)
         - [使用隱藏的欄位來儲存及操作用戶端資訊](videos/how-do-i/how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information.md)
@@ -830,14 +830,14 @@ ms.locfileid: "59397002"
         - [從 Classic ASP [移轉] 至 ASP.NET](videos/migrating/migrating-from-classic-asp-to-aspnet.md)
         - [ASP.NET for JSP 開發人員簡介：歡迎使用 ASP.NET 2.0](videos/migrating/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20.md)
         - [ASP.NET for JSP 開發人員簡介：建置應用程式](videos/migrating/intro-to-aspnet-for-jsp-developers-building-applications.md)
-        - [ASP.NET for ColdFusion 開發人員簡介：將 ASP.NET 新增至您的所有產品](videos/migrating/intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
+        - [ASP.NET for ColdFusion 開發人員簡介：將 ASP.NET 新增至所有產品](videos/migrating/intro-to-aspnet-for-coldfusion-developers-adding-aspnet-to-your-repertoire.md)
         - [ASP.NET for ColdFusion 開發人員簡介：建置 ASP.NET 應用程式](videos/migrating/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application.md)
         - [PHP 與 Windows 平台之間的互通性](videos/migrating/interop-between-php-and-the-windows-platform.md)
     - [建置 2.0 應用程式](videos/building-20-applications/index.md)
 
         - [[第 1 課：] Visual Web Developer Express 使用者入門](videos/building-20-applications/lesson-1-getting-started-with-visual-web-developer-express.md)
         - [[第 2 課：] 建立 Web Form 使用者介面](videos/building-20-applications/lesson-2-creating-a-web-forms-user-interface.md)
-        - [[第 3 課:]深入了解事件和回傳的了解](videos/building-20-applications/lesson-3-understanding-more-about-events-and-postback.md)
+        - [[第3課：]深入瞭解事件和回傳](videos/building-20-applications/lesson-3-understanding-more-about-events-and-postback.md)
         - [[第 4 課：] 了解 Web 應用程式狀態](videos/building-20-applications/lesson-4-understanding-web-application-state.md)
         - [[第 5 課：] 偵錯和追蹤網站](videos/building-20-applications/lesson-5-debugging-and-tracing-your-website.md)
         - [[第 6 課：] 使用樣式表和主版頁面](videos/building-20-applications/lesson-6-working-with-stylesheets-and-master-pages.md)
@@ -960,15 +960,15 @@ ms.locfileid: "59397002"
             - [從 ASP 應用程式使用資料集和篩選](videos/data-access/adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application.md)
         - [如何使用 LINQ](videos/data-access/how-do-i-with-linq/index.md)
 
-            - [LINQ to SQL:概觀](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-overview.md)
-            - [LINQ to SQL:資料模型](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-data-model.md)
-            - [LINQ to SQL:查詢資料庫](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-querying-the-database.md)
-            - [LINQ to SQL:更新資料庫](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database.md)
-            - [LINQ to SQL:LinqDataSource](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource.md)
-            - [LINQ to SQL:Custom LinqDataSource](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
-            - [LINQ to SQL:使用預存程序](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
-            - [LINQ to SQL:更新使用預存程序](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
-            - [LINQ to SQL:執行任意的 SQL](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
+            - [LINQ to SQL：概觀](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-overview.md)
+            - [LINQ to SQL：資料模型](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-data-model.md)
+            - [LINQ to SQL：查詢資料庫](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-querying-the-database.md)
+            - [LINQ to SQL：更新資料庫](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database.md)
+            - [LINQ to SQL：LinqDataSource](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource.md)
+            - [LINQ to SQL：自訂 LinqDataSource](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource.md)
+            - [LINQ to SQL：使用預存程序](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-using-stored-procedures.md)
+            - [LINQ to SQL：使用預存程序更新](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures.md)
+            - [LINQ to SQL：執行任意的 SQL](videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-executing-arbitrary-sql.md)
         - [VB 小組提供的 LINQ 影片](videos/data-access/linq-videos-from-the-vb-team/index.md)
 
             - [開始使用 LINQ](videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq.md)
@@ -1017,7 +1017,7 @@ ms.locfileid: "59397002"
             - [Visual Studio 2008 中的 ASP.NET AJAX 支援](videos/aspnet-35/aspnet-ajax/aspnet-ajax-support-in-visual-studio-2008.md)
             - [將 AJAX 功能新增至現有的 ASP.NET 頁面](videos/aspnet-35/aspnet-ajax/adding-ajax-functionality-to-an-existing-aspnet-page.md)
             - [在網站中建立與使用採用 AJAX 的 Web 服務](videos/aspnet-35/aspnet-ajax/creating-and-using-an-ajax-enabled-web-service-in-a-web-site.md)
-            - [ASP.NET AJAX:示範 ASP.NET AJAX](videos/aspnet-35/aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
+            - [ASP.NET AJAX：示範 ASP.NET AJAX](videos/aspnet-35/aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
             - [支援 ASP.NET AJAX 的 ADO.NET Data Services](videos/aspnet-35/aspnet-ajax/adonet-data-services-with-aspnet-ajax-support.md)
             - [ASP.NET Ajax 記錄簡介](videos/aspnet-35/aspnet-ajax/introduction-to-aspnet-ajax-history.md)
             - [使用指令碼結合改善 AJAX 效能](videos/aspnet-35/aspnet-ajax/using-script-combining-to-improve-ajax-performance.md)
@@ -1050,7 +1050,7 @@ ms.locfileid: "59397002"
             - [AJAX 資料範本](videos/net-4/ajax/aspnet-4-quick-hit-ajax-data-templates.md)
         - [圖表](videos/net-4/chart/index.md)
 
-            - [Chart Control](videos/net-4/chart/aspnet-4-quick-hit-chart-control.md)
+            - [圖表控制項](videos/net-4/chart/aspnet-4-quick-hit-chart-control.md)
             - [Visual Studio 2010 的新圖表控制項簡介](videos/net-4/chart/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010.md)
         - [核心](videos/net-4/core/index.md)
 

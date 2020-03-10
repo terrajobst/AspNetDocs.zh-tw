@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/index
-title: 編輯、 插入及刪除資料 |Microsoft Docs
+title: 編輯、插入和刪除資料 |Microsoft Docs
 author: rick-anderson
-description: 在這些教學課程中您會看到如何將 ObjectDataSource 控制項的方法對應到 BLL 方法，以及如何設定 GridView、 DetailsView 和 FormView 共同...
+description: 在這些教學課程中，您會看到如何將 ObjectDataSource 控制項的方法對應到 BLL 方法，以及如何設定 GridView、DetailsView 和 FormView 共同 。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 9fc60498-ced4-47c6-b2cf-8d464e6aeef8
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data
 msc.type: chapter
 ms.openlocfilehash: 4657a52b05c1cf8a991158f212d6b6ce849ef276
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109048"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78607713"
 ---
 # <a name="editing-inserting-and-deleting-data"></a>編輯、插入及刪除資料
 
-> 在這些教學課程中您會看到如何將 ObjectDataSource 控制項的方法對應到 BLL 方法，以及如何設定 GridView、 DetailsView 和 FormView 控制項，讓使用者修改資料。
+> 在這些教學課程中，您會看到如何將 ObjectDataSource 控制項的方法對應到 BLL 方法，以及如何設定 GridView、DetailsView 和 FormView 控制項，讓使用者修改資料。
 
 - [插入、更新及刪除資料的概觀 (C#)](an-overview-of-inserting-updating-and-deleting-data-cs.md)
 - [檢查與插入、更新和刪除建立關聯的事件 (C#)](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)

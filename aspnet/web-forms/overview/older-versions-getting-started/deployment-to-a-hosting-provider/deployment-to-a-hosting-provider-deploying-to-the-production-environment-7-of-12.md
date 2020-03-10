@@ -9,11 +9,11 @@ ms.assetid: b83ab819-2b05-4776-b7b4-79ef78d457a5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: db838633accdedd7c0693b126a007e254ca681e4
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74627347"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78568016"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-the-production-environment---7-of-12"></a>使用 Visual Studio 或 Visual Web Developer SQL Server Compact 部署 ASP.NET Web 應用程式：部署到生產環境-12 的7
 
@@ -99,7 +99,7 @@ Cytanium 歡迎電子郵件包含如何變更 .NET Framework 版本的指示連�
 
 ![控制台 Web 發佈索引標籤](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image21.png)
 
-輸入使用者名稱和密碼，以建立用於網頁發佈的認證。 您可以輸入用來登入 [控制台] 的相同認證。 然後按一下 [**啟用**]。
+輸入使用者名稱和密碼，以建立用於網頁發佈的認證。 您可以輸入用來登入 [控制台] 的相同認證。 接著，按一下 [啟用]。
 
 ![控制台建立發行認證](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image22.png)
 
@@ -129,7 +129,7 @@ Cytanium 歡迎電子郵件包含如何變更 .NET Framework 版本的指示連�
 
 ![憑證錯誤](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image27.png)
 
-按 [ **下一步**]。
+按 [下一步]。
 
 在 [**設定**] 索引標籤的 [**資料庫**] 區段中，輸入您為測試發行設定檔輸入的相同值。 您會在下拉式清單中找到所需的連接字串。
 
@@ -140,7 +140,7 @@ Cytanium 歡迎電子郵件包含如何變更 .NET Framework 版本的指示連�
 
 ![[發行 Web wizard 設定] 索引標籤](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image28.png)
 
-按 [ **下一步**]。
+按 [下一步]。
 
 在 [**預覽**] 索引標籤中，按一下 [**開始預覽**] 以查看將複製的檔案清單。 您會看到稍早在本機電腦上部署到 IIS 時所看到的相同清單。
 
@@ -148,7 +148,7 @@ Cytanium 歡迎電子郵件包含如何變更 .NET Framework 版本的指示連�
 
 ![發行 Web wizard 管理設定檔](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image29.png)
 
-在 [**編輯 Web 發行設定檔**] 對話方塊中，選取 [生產] 設定檔，按一下 [**重新命名**]，然後將設定檔名稱變更為 [生產]。 然後按一下 [**關閉**]。
+在 [**編輯 Web 發行設定檔**] 對話方塊中，選取 [生產] 設定檔，按一下 [**重新命名**]，然後將設定檔名稱變更為 [生產]。 然後按一下 [關閉]。
 
 ![[編輯網頁發行設定檔] 對話方塊](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image30.png)
 

@@ -9,11 +9,11 @@ ms.assetid: 19c4d042-4e34-4b44-9f1d-6bf2253ba366
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 8c07b8a3c36e4863c6d2d356b8483544ac4cafeb
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74576518"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78566875"
 ---
 # <a name="recovering-and-changing-passwords-c"></a>復原及變更密碼 (C#)
 
@@ -144,7 +144,7 @@ PasswordRecovery 控制項所傳送的預設電子郵件相當乏味（請參閱
 
 ### <a name="programmatically-resetting-a-users-password"></a>以程式設計方式重設使用者的密碼
 
-重設使用者的密碼時，PasswordRecovery 控制項會呼叫 `MembershipUser` 物件的[`ResetPassword` 方法](https://msdn.microsoft.com/library/system.web.security.membershipuser.resetpassword.aspx)。 這個方法有兩個多載：
+重設使用者的密碼時，PasswordRecovery 控制項會呼叫 `MembershipUser` 物件的[`ResetPassword` 方法](https://msdn.microsoft.com/library/system.web.security.membershipuser.resetpassword.aspx)。 此方法有兩個多載：
 
 - **[`ResetPassword`](https://msdn.microsoft.com/library/d94bdzz2.aspx)** 重設使用者的密碼。 如果 `RequiresQuestionAndAnswer` 為 False，請使用此多載。
 - **[`ResetPassword(securityAnswer)`](https://msdn.microsoft.com/library/d90zte4w.aspx)** -只有當提供的*securityAnswer*正確時，才重設使用者的密碼。 如果 `RequiresQuestionAndAnswer` 為 True，則使用此多載。

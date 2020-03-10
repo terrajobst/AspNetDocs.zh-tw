@@ -1,130 +1,130 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
-title: 選擇 Web 部署的正確方法 |Microsoft Docs
+title: 選擇正確的 Web 部署方法 |Microsoft Docs
 author: jrjlee
-description: 當您使用 Internet Information Services (IIS) Web Deployment Tool (Web Deploy) 2.0 或更新版本時，有三種主要的方法，可用來取得...
+description: 當您使用 Internet Information Services （IIS） Web 部署工具（Web Deploy）2.0 或更新版本時，您可以使用三種主要方法來取得 。
 ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 787a53fd-9901-4a11-9d58-61e0509cda45
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: 13f784dd8e6404806104d56b026b3c41ca178892
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128477"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78548479"
 ---
 # <a name="choosing-the-right-approach-to-web-deployment"></a>選擇 Web 部署的正確方法
 
-藉由[Jason Lee](https://github.com/jrjlee)
+[Jason 先生](https://github.com/jrjlee)
 
 [下載 PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> 當您使用 Internet Information Services (IIS) Web Deployment Tool (Web Deploy) 2.0 或更新版本時，有三種主要的方法，可用來取得封裝的 web 應用程式到 web 伺服器。 您可以：
+> 當您使用 Internet Information Services （IIS） Web 部署工具（Web Deploy）2.0 或更新版本時，您可以使用三種主要方法，將封裝的 web 應用程式放在 web 伺服器上。 您可以：
 > 
-> - 將從遠端位置的應用程式部署將目標設為*Web Deployment Agent Service* （也稱為 「 遠端代理程式 」） 在目的地伺服器上。
-> - 部署應用程式從遠端位置使用 Web 部署 On Demand （也稱為 「 暫存代理程式 」）。
-> - 將從遠端位置的應用程式部署將目標設為*IIS Web 部署處理常式*目的地伺服器上。
-> - 部署應用程式，以手動方式將 web 套件複製到目的地伺服器，並透過 IIS 管理員匯入。
+> - 以目的地伺服器上的*Web Deployment Agent 服務*（也稱為「遠端代理程式」）為目標，從遠端位置部署應用程式。
+> - 使用 Web Deploy 點播（也稱為「temp 代理程式」）從遠端位置部署應用程式。
+> - 以目的地伺服器上的*IIS Web Deploy 處理常式*為目標，從遠端位置部署應用程式。
+> - 手動將 web 套件複製到目的地伺服器，並透過 IIS 管理員將其匯入，以部署應用程式。
 > 
-> 設定您的目的地 web 伺服器的方式將取決於您想要使用哪種方法來部署。 本主題將協助您決定要部署哪種方法最適合您。
+> 您設定目的地 web 伺服器的方式取決於您想要使用的部署方法。 本主題將協助您決定哪種部署方法最適合您。
 
-下表顯示主要的優點和缺點，每個部署方法，以及最常配合每一種方法的案例。
+下表顯示每種部署方法的主要優點和缺點，以及通常會符合每種方法的案例。
 
-| 方法 | 優點 | 缺點 | 典型的案例 |
+| 方法 | 優點 | 缺點 | 典型案例 |
 | --- | --- | --- | --- |
-| 遠端代理程式 | 它很容易設定。 它是適合 web 應用程式和內容的定期更新。 | 使用者必須是目標伺服器的系統管理員。 使用者無法提供替代的認證。 | 開發環境。 測試環境。 |
-| 暫存的代理程式 | 沒有需要在目標電腦上安裝 Web Deploy。 會自動使用最新版的 Web Deploy。 | 使用者必須是目標伺服器的系統管理員。 使用者無法提供替代的認證。 | 開發環境。 測試環境。 |
-| Web Deploy 處理常式 | 非系統管理員使用者可以將內容部署。 它是適合 web 應用程式和內容的定期更新。 | 它是設為更加複雜。 | 預備環境。 內部網路的實際執行環境。 主控的環境。 |
-| 離線部署 | 它是非常容易設定。 它適合隔離的環境。 | 伺服器系統管理員必須手動複製並匯入 web 封裝每次。 | 網際網路對向的生產環境。 隔離的網路環境。 |
+| 遠端代理程式 | 這很容易設定。 適用于 web 應用程式和內容的定期更新。 | 使用者必須是目標伺服器上的系統管理員。 使用者無法提供替代的認證。 | 開發環境。 測試環境。 |
+| 暫存代理程式 | 不需要在目的電腦上安裝 Web Deploy。 系統會自動使用最新版本的 Web Deploy。 | 使用者必須是目標伺服器上的系統管理員。 使用者無法提供替代的認證。 | 開發環境。 測試環境。 |
+| Web Deploy 處理常式 | 非系統管理員使用者可以部署內容。 適用于 web 應用程式和內容的定期更新。 | 設定變得更複雜。 | 預備環境。 內部網路生產環境。 主控環境。 |
+| 離線部署 | 設定非常容易。 它適用于隔離的環境。 | 伺服器系統管理員必須每次手動複製並匯入 web 封裝。 | 網際網路面向的生產環境。 隔離的網路環境。 |
 
 ## <a name="using-the-remote-agent"></a>使用遠端代理程式
 
-當您安裝 Web Deploy 使用目的地伺服器上的預設設定時，Web Deployment Agent Service （「 遠端代理程式 」） 會自動安裝並啟動。 根據預設，遠端代理程式會公開 HTTP 端點，在此位址：
+當您使用目的地伺服器上的預設設定來安裝 Web Deploy 時，會自動安裝及啟動 Web Deployment Agent 服務（「遠端代理程式」）。 根據預設，遠端代理程式會在此位址公開 HTTP 端點：
 
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample1.cmd)]
 
 > [!NOTE]
-> 您可以取代 [*server*] 與您的 web 伺服器的電腦名稱，您的 web 伺服器或主機名稱的 IP 位址解析為您的 web 伺服器。
+> 您可以使用 web 伺服器的電腦名稱稱、web 伺服器的 IP 位址，或解析為 web 伺服器的主機名稱來取代 [*server*]。
 
-伺服器系統管理員可以部署 web 封裝，從遠端位置，例如開發人員電腦或組建伺服器，藉由指定這個端點位址。 例如，假設 Fabrikam，inc.的 Matt 世昕他的開發人員機器上建置 ContactManager.Mvc web 應用程式專案。 建置程序會產生 web 封裝，並搭配 *。 deploy.cmd*安裝套件所需的檔案，其中包含的 Web Deploy 命令。 如果 Matt 是常青州立大學 TESTWEB1 伺服器上的伺服器管理員，他可以部署來測試 web 伺服器的 web 應用程式開發人員機器上執行下列命令：
+伺服器系統管理員可以藉由指定此端點位址，從遠端位置（例如開發人員電腦或組建伺服器）部署 web 封裝。 例如，假設 Fabrikam，Inc. 的 Matt Hink 已在他的開發人員電腦上建立 ContactManager Mvc web 應用程式專案。 組建程式會產生 web 封裝，以及包含安裝封裝所需之 Web Deploy 命令的 *.deploy .cmd 檔案。* 如果 Matt 是 TESTWEB1 伺服器上的伺服器管理員，他可以在他的開發電腦上執行這個命令，將 web 應用程式部署到測試 web 伺服器：
 
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample2.cmd)]
 
-實際事實上，如果您提供的電腦名稱，因此 Matt 只需要鍵入此 Web Deploy 的可執行檔時，可以推斷遠端代理程式的端點位址：
+實際上，如果您提供電腦名稱稱，Web Deploy 可執行檔可以推斷遠端代理程式的端點位址，因此 Matt 只需要輸入下列內容：
 
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample3.cmd)]
 
 > [!NOTE]
-> 如需有關 Web Deploy 命令列語法和 *。 deploy.cmd*檔，請參閱[How to:安裝部署套件使用 deploy.cmd 檔案](https://msdn.microsoft.com/library/ff356104.aspx)。
+> 如需有關 Web Deploy 命令列語法和*部署 .cmd*檔案的詳細資訊，請參閱[如何：使用 Deploy 檔案安裝部署套件](https://msdn.microsoft.com/library/ff356104.aspx)。
 
-遠端代理程式提供直接的方法，從遠端位置，部署內容，這種方法也可以使用一種單鍵或自動部署。 不過，執行部署命令的使用者也必須是網域系統管理員或目的地伺服器上的本機 administrators 群組的成員。 此外，遠端代理程式不支援基本驗證，因此您無法傳遞命令列上的替代認證。
+遠端代理程式可讓您直接從遠端位置部署內容，此方法適用于單鍵或自動化部署。 不過，執行部署命令的使用者也必須是網域系統管理員，或是目的地伺服器上本機系統管理員群組的成員。 此外，遠端代理程式不支援基本驗證，因此您無法在命令列上傳遞替代認證。
 
-遠端代理程式提供部署在開發或測試案例，其中並不是罕見狀況測試伺服器環境的完整系統管理員控制的開發人員和應用程式通常會重建和重新部署非常有用的方式常見問題。 不過，這種方法是通常較低可接受的預備環境或生產環境。
+遠端代理程式在開發或測試案例中提供了一種實用的方法，讓開發人員在測試伺服器環境上擁有完整的系統管理員控制權，而且通常會重建和重新部署應用程式非常罕見眾. 不過，對於臨時或生產環境而言，這種方法通常較不容易接受。
 
-如需端對端的範例會使用遠端代理程式方法的案例，請參閱[案例：設定 Web 部署的測試環境](scenario-configuring-a-test-environment-for-web-deployment.md)。
+如需使用遠端代理程式方法之案例的端對端範例，請參閱[案例：設定 Web 部署的測試環境](scenario-configuring-a-test-environment-for-web-deployment.md)。
 
-## <a name="using-the-temp-agent"></a>使用暫存的代理程式
+## <a name="using-the-temp-agent"></a>使用 Temp 代理程式
 
-部署暫存的代理程式方法是類似於遠端代理程式的方法。 不過，相較於遠端代理程式的方法，您不需要在目的地 web 伺服器上安裝 Web Deploy。 相反地，當您執行部署時，Web Deploy 會在目的地伺服器上安裝 web deployment agent service 暫存版本並將使用此 url 將內容部署至 IIS。 部署完成時，會移除所有的暫存檔案。
+部署的 temp 代理程式方法類似于遠端代理程式方法。 不過，與遠端代理程式方法不同的是，您不需要在目的地 Web 服務器上安裝 Web Deploy。 相反地，當您執行部署時，Web Deploy 會在目的地伺服器上安裝 Web 部署代理程式服務的暫存版本，並使用這個來將您的內容部署到 IIS。 當部署完成時，就會移除所有的暫存檔案。
 
-如果您想要使用暫存的代理程式提供者設定，請將 **/g**旗標，以您的部署命令：
+如果您想要使用 temp 代理程式提供者設定，請將 **/g**旗標新增至您的部署命令：
 
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample4.cmd)]
 
 > [!NOTE]
-> 您無法使用暫存的代理程式如果 web 部署代理程式服務已安裝的目的地電腦上，即使服務並未執行。
+> 如果 web 部署代理程式服務已安裝在目的地電腦上，即使服務並未執行，您也無法使用 temp 代理程式。
 
-此方法的優點是，您不需要維護您的目的地伺服器上的 Web Deploy 的安裝。 此外，您不需要確定來源和目的地電腦執行相同版本的 Web Deploy。 不過，這種方法有相同的主要限制遠端代理程式的方法，也就是，您必須是目的地伺服器上的本機系統管理員，才能部署內容，而且支援只 NTLM 驗證。 暫存的代理程式的方法也需要更多初始設定目的地環境。
+這種方法的優點是您不需要在目的地伺服器上維護 Web Deploy 的安裝。 此外，您不需要確保來源和目的電腦執行相同版本的 Web Deploy。 不過，此方法與遠端代理程式方法有相同的主體限制，也就是您必須是目的地伺服器上的本機系統管理員，才能部署內容，而且只支援 NTLM 驗證。 暫時代理程式方法也需要更多的目的地環境初始設定。
 
-如需有關如何使用暫存的代理程式的詳細資訊，請參閱[How to:安裝部署套件使用 deploy.cmd 檔案](https://msdn.microsoft.com/library/ff356104.aspx)並[隨選的 Web Deploy](https://technet.microsoft.com/library/ee517345(WS.10).aspx)。
+如需使用 temp 代理程式的詳細資訊，請參閱[如何：使用 deploy 檔案安裝部署套件](https://msdn.microsoft.com/library/ff356104.aspx)和[隨選 Web Deploy](https://technet.microsoft.com/library/ee517345(WS.10).aspx)。
 
 ## <a name="using-the-web-deploy-handler"></a>使用 Web Deploy 處理常式
 
-適用於 IIS 7 及更新版本，Web Deploy 提供其他部署方法，透過 IIS Web 部署處理常式。 與 IIS Web 管理服務 (WMSvc)，其設計目的是要讓使用者從遠端位置管理 IIS 網站緊密整合，Web 部署處理常式。
+針對 IIS 7 和更新版本，Web Deploy 透過 IIS Web Deploy 處理常式提供替代的部署方法。 Web Deploy 處理常式與 IIS Web 管理服務（WMSvc）緊密整合，其設計目的是讓使用者從遠端位置管理 IIS 網站。
 
-根據預設，遠端代理程式會公開 HTTP 端點，在此位址：
+根據預設，遠端代理程式會在此位址公開 HTTP 端點：
 
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample5.cmd)]
 
 > [!NOTE]
-> 您可以取代 [*server*] 與您的 web 伺服器的電腦名稱，您的 web 伺服器或主機名稱的 IP 位址解析為您的 web 伺服器。
+> 您可以使用 web 伺服器的電腦名稱稱、web 伺服器的 IP 位址，或解析為 web 伺服器的主機名稱來取代 [*server*]。
 
-遠端代理程式，以及暫存的代理程式，Web 部署處理常式的最大好處是，您可以設定 IIS 以允許非系統管理員將應用程式和內容部署到特定的 IIS 網站的使用者。 Web 部署處理常式也會支援基本驗證，因此您可以做為參數提供替代的認證，在您的 Web Deploy 命令。 主要的缺點是，Web 部署處理常式一開始更多複雜而無法安裝和設定。
+透過遠端代理程式和 temp 代理程式的 Web Deploy 處理常式，最大的優點是您可以將 IIS 設定為允許非系統管理員使用者將應用程式和內容部署到特定的 IIS 網站。 Web Deploy 處理常式也支援基本驗證，因此您可以在 Web Deploy 命令中提供替代的認證做為參數。 最主要的缺點是，Web Deploy 處理常式一開始會變得很複雜，而無法設定。
 
-在非系統管理員使用者的情況下 Web 管理服務 (WMSvc) 只允許使用者連接到 IIS 使用站台層級的連線，而不是伺服器層級的連線。 若要存取特定的網站，您可以包含站台特有的查詢字串中的端點位址：
+在非系統管理員使用者的情況下，Web 管理服務（WMSvc）只允許使用者使用網站層級連線（而不是伺服器層級連線）連接到 IIS。 若要存取特定網站，您可以在端點位址中包含網站特定的查詢字串：
 
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample6.cmd)]
 
-例如，假設您的建置流程設定為自動部署至預備環境之後每次成功建置 web 應用程式。 如果您使用遠端代理程式的方法，您必須在目的地伺服器上進行建置處理序身分識別系統管理員。 相反地，使用 Web 部署的處理常式方法您可以授與非系統管理員使用者&#x2014;**FABRIKAM\stagingdeployer**在此情況下&#x2014;的特定 IIS 網站和建置程序的權限可以提供這些若要部署網頁套件的認證。
+例如，假設組建程式設定為在每次成功組建之後，自動將 web 應用程式部署至預備環境。 如果您使用遠端代理程式方法，您必須將組建進程識別為目的地伺服器上的系統管理員。 相反地，使用 Web Deploy 處理常式方法時，您可以授與非系統&#x2014;管理員的使用者**FABRIKAM\stagingdeployer**在此情況下&#x2014;僅限特定 IIS 網站的許可權，而組建程式則可以提供這些認證來部署 Web 封裝。
 
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample7.cmd)]
 
 > [!NOTE]
-> 如需有關 Web Deploy 命令列的作業和語法的詳細資訊，請參閱 < [Web 部署的命令列參考](https://technet.microsoft.com/library/dd568991(v=ws.10).aspx)。 如需有關使用 *。 deploy.cmd*檔案，請參閱[How to:安裝部署套件使用 deploy.cmd 檔案](https://msdn.microsoft.com/library/ff356104.aspx)。
+> 如需有關 Web Deploy 命令列作業和語法的詳細資訊，請參閱[Web Deploy 命令列參考](https://technet.microsoft.com/library/dd568991(v=ws.10).aspx)。 如需使用*deploy .cmd*檔案的詳細資訊，請參閱[如何：使用 Deploy 檔案安裝部署套件](https://msdn.microsoft.com/library/ff356104.aspx)。
 
-Web 部署處理常式提供部署在預備環境、 託管的環境和內部網路為基礎的生產環境中，遠端存取伺服器可用，但系統管理員認證不是很實用的方法。
+Web Deploy 處理常式在預備環境、託管環境和以內部網路為基礎的生產環境中提供了一種實用的方法，可從遠端存取服務器，但系統管理員認證則不會。
 
-如需端對端的範例會使用 Web 部署的處理常式方法的案例，請參閱[案例：設定 Web 部署的預備環境](scenario-configuring-a-staging-environment-for-web-deployment.md)。
+如需使用 Web Deploy 處理常式方法之案例的端對端範例，請參閱[案例：設定 Web 部署的預備環境](scenario-configuring-a-staging-environment-for-web-deployment.md)。
 
 ## <a name="using-offline-deployment"></a>使用離線部署
 
-在某些情況下，它是不可行或不合實際從遠端位置中將應用程式和內容部署至 IIS 網站。 比方說，在來源與目的地電腦可能會在隔離的網路或網路區段或防火牆原則可能不會允許遠端存取。
+在某些情況下，從遠端位置將應用程式和內容部署到 IIS 網站並不可行。 例如，來源和目的地電腦可能位於隔離的網路或網路區段，或防火牆原則可能不允許遠端存取。
 
-在這類的情況下，您仍然可以使用封裝和發佈的 Web Deploy; 的功能您只是無法使用它們從遠端位置。 相反地，在目的地伺服器上的系統管理員必須複製到伺服器上的 web 套件，並匯入它透過 IIS 管理員。
+在這類案例中，您仍然可以使用 Web Deploy 的封裝和發行功能;您只能從遠端位置使用它們。 相反地，目的地伺服器上的系統管理員必須將 web 套件複製到伺服器，並透過 IIS 管理員將它匯入。
 
 ![](choosing-the-right-approach-to-web-deployment/_static/image1.png)
 
-離線部署方法是在網際網路對向生產環境中，周邊網路中的伺服器可能有限制的連線與內部網路中的電腦通常很有用。
+離線部署方法通常適用于網際網路對向的生產環境，其中周邊網路中的伺服器可能會限制與內部網路中的電腦之間的連線能力。
 
-如需端對端的範例會使用離線部署方法的案例，請參閱[案例：設定 Web 部署的生產環境](scenario-configuring-a-production-environment-for-web-deployment.md)。
+如需使用離線部署方法之案例的端對端範例，請參閱[案例：設定 Web 部署的生產環境](scenario-configuring-a-production-environment-for-web-deployment.md)。
 
 ## <a name="further-reading"></a>進一步閱讀
 
-如需有關 Web Deploy 命令列的作業和語法的詳細資訊，請參閱 < [Web 部署的命令列參考](https://technet.microsoft.com/library/dd568991(v=ws.10).aspx)。 如需有關使用 *。 deploy.cmd*檔案，請參閱[How to:安裝部署套件使用 deploy.cmd 檔案](https://msdn.microsoft.com/library/ff356104.aspx)。
+如需有關 Web Deploy 命令列作業和語法的詳細資訊，請參閱[Web Deploy 命令列參考](https://technet.microsoft.com/library/dd568991(v=ws.10).aspx)。 如需使用*deploy .cmd*檔案的詳細資訊，請參閱[如何：使用 Deploy 檔案安裝部署套件](https://msdn.microsoft.com/library/ff356104.aspx)。
 
-更多一般指引，您可以在其中部署 web 封裝，從遠端電腦的不同方式的詳細資訊，請參閱 <<c0> [ 使用 Web 部署遠端](https://technet.microsoft.com/library/ee461175(WS.10).aspx)。 如需有關使用 On Demand Web 部署的詳細資訊，請參閱[On Demand Web 部署](https://technet.microsoft.com/library/ee517345(WS.10).aspx)。
+如需有關可從遠端電腦部署網頁封裝之不同方式的一般指引，請參閱從[遠端使用 Web Deploy](https://technet.microsoft.com/library/ee461175(WS.10).aspx)。 如需使用 Web Deploy 隨選安裝的詳細資訊，請參閱[隨選 Web Deploy](https://technet.microsoft.com/library/ee517345(WS.10).aspx)。
 
 > [!div class="step-by-step"]
 > [上一頁](configuring-server-environments-for-web-deployment.md)

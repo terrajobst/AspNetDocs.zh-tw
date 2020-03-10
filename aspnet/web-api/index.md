@@ -1,8 +1,8 @@
 ---
 uid: web-api/index
-title: ASP.NET Web API - ASP.NET 4.x
+title: ASP.NET Web API-ASP.NET 4。x
 author: rick-anderson
-description: 下載 ASP.NET MVC 4，並建置廣大的用戶端的 HTTP 服務。
+description: 下載 ASP.NET MVC 4，並建立可觸及各種用戶端的 HTTP 服務。
 ms.author: riande
 ms.date: 01/17/2012
 ms.custom: seoapril2019
@@ -10,23 +10,23 @@ ms.assetid: f571ca7a-c06b-400d-8051-f62f9f0bcc9b
 msc.legacyurl: /web-api
 msc.type: categoryindex
 ms.openlocfilehash: c04719e06c6c0900c8f8268b73f833b525ea3dd6
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59410834"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78557726"
 ---
 # <a name="aspnet-web-api"></a>ASP.NET Web API
 
 - [指引](overview/index.md)
 
-    - [快速入門](overview/getting-started-with-aspnet-web-api/index.md)
+    - [使用者入門](overview/getting-started-with-aspnet-web-api/index.md)
 
         - [開始使用 Web API 2 (C#)](overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)
         - [Web API 2 中的動作結果](overview/getting-started-with-aspnet-web-api/action-results.md)
         - [使用具有 ASP.NET Web Form 的 Web API](overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms.md)
         - [建立 Web API 說明頁面](overview/getting-started-with-aspnet-web-api/creating-api-help-pages.md)
-        - [實習實驗室：建置使用 ASP.NET Web API 和 Angular.js 的單一頁面應用程式 (SPA)](overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
+        - [實習實驗室：使用 ASP.NET Web API 和 Angular.js 建置單一頁面應用程式 (SPA)](overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
     - [路由傳送](overview/web-api-routing-and-actions/index.md)
 
         - [Web API 中的路由](overview/web-api-routing-and-actions/routing-in-aspnet-web-api.md)
@@ -114,8 +114,8 @@ ms.locfileid: "59410834"
         - [從 .NET 用戶端呼叫 Web API (C#)](overview/advanced/calling-a-web-api-from-a-net-client.md)
         - [Web API 中的 HTTP 訊息處理常式](overview/advanced/http-message-handlers.md)
         - [Web API 中的 HttpClient 訊息處理常式](overview/advanced/httpclient-message-handlers.md)
-        - [傳送 Web API 中的 HTML 表單資料：Form-urlencoded 資料](overview/advanced/sending-html-form-data-part-1.md)
-        - [傳送 Web API 中的 HTML 表單資料：檔案上傳和多個 MIME](overview/advanced/sending-html-form-data-part-2.md)
+        - [傳送 Web API 的 HTML 表單資料：Form-urlencoded 資料](overview/advanced/sending-html-form-data-part-1.md)
+        - [傳送 Web API 的 HTML 表單資料：檔案上傳和多個 MIME](overview/advanced/sending-html-form-data-part-2.md)
         - [ASP.NET Web API 中的 HTTP Cookie](overview/advanced/http-cookies.md)
     - [發行](overview/releases/index.md)
 
@@ -141,10 +141,10 @@ ms.locfileid: "59410834"
     - [概觀與使用者入門](videos/getting-started/index.md)
 
         - [ASP.NET Web API](videos/getting-started/aspnet-web-api.md)
-        - [ASP.NET Web API 第 1 部分：您的第一個 Web API](videos/getting-started/your-first-web-api.md)
-        - [ASP.NET Web API 第 2 部分：取得資料](videos/getting-started/getting-data.md)
-        - [ASP.NET Web API 第 3 部分：Delete 和 Update](videos/getting-started/delete-and-update.md)
-        - [ASP.NET Web API 第 4 部分：分頁和查詢](videos/getting-started/paging-and-querying.md)
-        - [ASP.NET Web API 第 5 部分：自訂驗證](videos/getting-started/custom-validation.md)
-        - [ASP.NET Web API 第 6 部分：Authorization](videos/getting-started/authorization.md)
+        - [ASP.NET Web API 第 1 節：您的第一個 Web API](videos/getting-started/your-first-web-api.md)
+        - [ASP.NET Web API 第 2 節：取得資料](videos/getting-started/getting-data.md)
+        - [ASP.NET Web API 第 3 節：刪除與更新](videos/getting-started/delete-and-update.md)
+        - [ASP.NET Web API 第 4 節：分頁和查詢](videos/getting-started/paging-and-querying.md)
+        - [ASP.NET Web API 第 5 節：自訂驗證](videos/getting-started/custom-validation.md)
+        - [ASP.NET Web API 第 6 節：授權](videos/getting-started/authorization.md)
 - [Web API 範例清單](samples-list.md)

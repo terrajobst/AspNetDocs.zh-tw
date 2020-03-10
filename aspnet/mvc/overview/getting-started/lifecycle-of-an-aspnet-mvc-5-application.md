@@ -2,36 +2,36 @@
 uid: mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application
 title: ASP.NET MVC 5 應用程式的生命週期 |Microsoft Docs
 author: cephalin
-description: 下載圖表上的 ASP.NET MVC 5 應用程式的生命週期的 PDF 文件。 此生命週期文件提供 MVC 生命週期的高層級檢視...
+description: 下載 PDF 檔，以圖表 ASP.NET MVC 5 應用程式的生命週期。 本生命週期檔提供 MVC 生命週期的高階觀點 。
 ms.author: riande
 ms.date: 02/28/2014
 ms.assetid: 9c1e3a75-b644-4480-8326-11300b1ec4b3
 msc.legacyurl: /mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application
 msc.type: authoredcontent
 ms.openlocfilehash: f4a9b3fb61552b070db11fba617b5627fcd71cd5
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65124088"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78582198"
 ---
 # <a name="lifecycle-of-an-aspnet-mvc-5-application"></a>ASP.NET MVC 5 應用程式生命週期
 
-藉由[Cephas 連結](https://github.com/cephalin)
+依[Cephas Lin](https://github.com/cephalin)
 
-[下載 PDF 文件](lifecycle-of-an-aspnet-mvc-5-application/_static/lifecycle-of-an-aspnet-mvc-5-application1.pdf)
+[下載 PDF 檔](lifecycle-of-an-aspnet-mvc-5-application/_static/lifecycle-of-an-aspnet-mvc-5-application1.pdf)
 
-您可以在這裡下載的圖表生命週期的每個 ASP.NET MVC 5 應用程式，從接收 HTTP 要求傳送 HTTP 回應傳回至用戶端的 PDF 文件。 它是作為教育性工具的人不熟悉 ASP.NET MVC 和也需要向下鑽研至應用程式的特定層面的參考。 PDF 文件具有下列功能：
+在這裡，您可以下載一份 PDF 檔，它會將每個 ASP.NET MVC 5 應用程式的生命週期，從接收 HTTP 要求，到將 HTTP 回應傳送回用戶端。 它是設計來做為 ASP.NET MVC 新手的教育工具，也是針對需要深入瞭解應用程式特定層面的人員所做的參考。 PDF 檔具有下列功能：
 
-- 相關[HttpApplication](https://msdn.microsoft.com/library/system.web.httpapplication.aspx)協助您了解 MVC 整合到階段[ASP.NET 應用程式生命週期](https://msdn.microsoft.com/library/bb470252.aspx)。
-- MVC 應用程式生命週期中，您將可以了解每個 MVC 應用程式通過要求處理管線中的主要階段高層級檢視。  
+- 相關的[HttpApplication](https://msdn.microsoft.com/library/system.web.httpapplication.aspx)階段，可協助您瞭解 MVC 與[ASP.NET 應用程式生命週期](https://msdn.microsoft.com/library/bb470252.aspx)的整合位置。
+- MVC 應用程式生命週期的高階觀點，您可以在其中瞭解每個 MVC 應用程式在要求處理管線中傳遞的主要階段。  
     ![](lifecycle-of-an-aspnet-mvc-5-application/_static/image1.jpg)
-- 詳細資料檢視會顯示向下鑽研，要求處理管線的詳細資料。 您可以比較高層級檢視，以查看如何生命週期的詳細資料會收集到的各個階段的詳細資料檢視。 [下載 PDF](lifecycle-of-an-aspnet-mvc-5-application/_static/lifecycle-of-an-aspnet-mvc-5-application1.pdf)若要查看較大的檢視。
+- 詳細資料檢視，顯示向下切入要求處理管線的詳細資料。 您可以比較高階視圖和詳細資料檢視，查看如何將生命週期詳細資料收集到各種階段。 [下載 PDF](lifecycle-of-an-aspnet-mvc-5-application/_static/lifecycle-of-an-aspnet-mvc-5-application1.pdf)以查看較大的視圖。
     ![](lifecycle-of-an-aspnet-mvc-5-application/_static/image2.jpg)
-- 位置與用途上的所有可覆寫方法[控制器](https://msdn.microsoft.com/library/system.web.mvc.controller.aspx)要求處理管線中的物件。 您可能會或可能沒有需要覆寫任何一種方法，但務必了解在應用程式生命週期中的角色，以便您可以撰寫程式碼，在適當的生命週期階段，您想要的效果。
-- 震撼人心向上圖表，顯示每個篩選器類型 （驗證、 授權、 動作和結果） 叫用方式。
-- 從 詳細資料檢視中的每個點，以連結至篇實用的文章或部落格。
+- 在要求處理管線中，[控制器](https://msdn.microsoft.com/library/system.web.mvc.controller.aspx)物件上所有可覆寫方法的位置和用途。 您不一定需要覆寫任何一種方法，但請務必瞭解其在應用程式生命週期中的角色，讓您可以在適當的生命週期階段針對您想要的效果撰寫程式碼。
+- 放大的圖表會顯示每個篩選類型（驗證、授權、動作和結果）的叫用方式。
+- 從詳細資料檢視中每個感興趣的點連結到有用的文章或 blog。
 
 ## <a name="next-steps"></a>後續步驟
 
-這份文件是否符合您的需求？ 我們非常感謝您的意見反應。 如果您有任何問題的 ASP.NET MVC 生命週期中您的應用程式[Stackoverflow](http://stackoverflow.com/help)並[ASP.NET MVC 論壇](https://forums.asp.net/1146.aspx)是很棒的地方，要求。 請遵循[我](https://twitter.com/Cephas_MSFT)twitter，因此您可以取得我最新的教學課程的更新。
+這份檔是否符合您的需求？ 歡迎您提供寶貴的意見。 如果您對應用程式中的 ASP.NET MVC 生命週期有任何疑問， [Stackoverflow](http://stackoverflow.com/help)和[ASP.NET MVC 論壇](https://forums.asp.net/1146.aspx)是很棒的地方。 請在 twitter 上追蹤[我](https://twitter.com/Cephas_MSFT)的最新教學課程，以取得更新。

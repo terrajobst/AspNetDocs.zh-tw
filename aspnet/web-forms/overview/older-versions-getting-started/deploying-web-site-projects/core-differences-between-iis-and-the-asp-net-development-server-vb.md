@@ -9,11 +9,11 @@ ms.assetid: 090e9205-52f3-4d72-ae31-44775b8b8421
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 880bb403e671446a77d7eebccf578a1dc714d1f9
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74586585"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78545623"
 ---
 # <a name="core-differences-between-iis-and-the-aspnet-development-server-vb"></a>IIS 與 ASP.NET 程式開發伺服器間的核心差異 (VB)
 
@@ -79,7 +79,7 @@ ASP.NET 執行時間會執行數個步驟來產生要求的內容，包括驗證
 
 [!code-xml[Main](core-differences-between-iis-and-the-asp-net-development-server-vb/samples/sample3.xml)]
 
-取代成：
+成為：
 
 [!code-xml[Main](core-differences-between-iis-and-the-asp-net-development-server-vb/samples/sample4.xml)]
 

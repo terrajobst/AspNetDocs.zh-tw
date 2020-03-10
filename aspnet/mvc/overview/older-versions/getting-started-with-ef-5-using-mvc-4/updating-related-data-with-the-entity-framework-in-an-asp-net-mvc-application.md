@@ -9,11 +9,11 @@ ms.assetid: 7871dc05-2750-470f-8b4c-3a52511949bc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
 ms.openlocfilehash: d29cb172d642b67947b461d1a7e55d01872bb8c2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74592445"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78579818"
 ---
 # <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>以 ASP.NET MVC 應用程式中的 Entity Framework 更新相關資料（6/10）
 
@@ -105,7 +105,7 @@ ms.locfileid: "74592445"
 
 程式碼會執行下列操作：
 
-- 針對 `OfficeAssignment` 導覽屬性使用積極式載入從資料庫中取得目前的 `Instructor` 實體。 這與您在 `HttpGet` `Edit` 方法中的做法相同。
+- 針對 `Instructor` 導覽屬性使用積極式載入從資料庫中取得目前的 `OfficeAssignment` 實體。 這與您在 `HttpGet` `Edit` 方法中的做法相同。
 - 使用從模型繫結器取得的值更新擷取的 `Instructor` 實體。 使用的[TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.108).aspx)多載可讓您將想要包含的屬性*列入*允許清單。 這可避免過度張貼，如[第二個教學](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)課程中所述。
 
     [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample10.cs)]
@@ -140,7 +140,7 @@ ms.locfileid: "74592445"
 
 [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample14.cs?highlight=5,8,12-27)]
 
-程式碼會為 `Courses` 導覽屬性新增積極式載入，然後使用 `AssignedCourseData` 檢視模型類別來呼叫新的 `PopulateAssignedCourseData` 方法以提供資訊給核取方塊陣列。
+程式碼會為 `Courses` 導覽屬性新增積極式載入，然後使用 `PopulateAssignedCourseData` 檢視模型類別來呼叫新的 `AssignedCourseData` 方法以提供資訊給核取方塊陣列。
 
 `PopulateAssignedCourseData` 方法中的程式碼會讀取所有 `Course` 實體，以便使用 view model 類別載入課程清單。 針對每個課程，程式碼會檢查課程是否存在於講師的 `Courses` 導覽屬性中。 若要在檢查課程是否指派給講師時建立有效率的查閱，指派給講師的課程會放入[HashSet](https://msdn.microsoft.com/library/bb359438.aspx)集合中。 針對指派講師的課程，`Assigned` 屬性設定為 [`true`]。 檢視會使用這個屬性，來判斷哪一個核取方塊必須顯示為已選取。 最後，會將清單傳遞至 `ViewBag` 屬性中的 view。
 

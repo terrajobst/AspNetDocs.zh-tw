@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/net-4/routing/how-do-i-work-with-urls-in-aspnet-routing
-title: How Do i:使用 ASP.NET 路由中的 Url？ | Microsoft Docs
+title: 如何：使用 ASP.NET 路由中的 Url？ | Microsoft Docs
 author: rick-anderson
-description: 在這段影片 Chris Pels 會示範如何使用 ASP.NET 路由的網站中指定的 Url。 首先，在建立網站，且路由定義在 gl...
+description: 在這段影片中，Chris Pels 示範如何在使用 ASP.NET 路由的網站中指定 Url。 首先，會建立網站，並在總帳中定義路由 。
 ms.author: riande
 ms.date: 10/15/2010
 ms.assetid: 08f9d0a7-cfa0-4914-a672-8a64295d7ba8
 msc.legacyurl: /web-forms/videos/net-4/routing/how-do-i-work-with-urls-in-aspnet-routing
 msc.type: video
 ms.openlocfilehash: eb1060fd9cc9469dc2b1d2e918823316c36840cb
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59404815"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78565125"
 ---
-# <a name="how-do-i-work-with-urls-in-aspnet-routing"></a>How Do i:使用 ASP.NET 路由中的 Url？
+# <a name="how-do-i-work-with-urls-in-aspnet-routing"></a>如何：使用 ASP.NET 路由中的 Url？
 
-藉由[Chris Pels](https://twitter.com/chrispels)
+依[Chris Pels](https://twitter.com/chrispels)
 
-在這段影片 Chris Pels 會示範如何使用 ASP.NET 路由的網站中指定的 Url。 首先，在建立網站，並路由定義於全域應用程式類別 (.asax)。 接下來，建立範例網頁，並根據定義的路由的 URL 新增至使用標準 「 硬式編碼 」 方法，例如，"~/Stats/Visitors 」 頁面。 另一個連結然後加入 [動態產生相同的 URL，在標記中使用 RouteValue 方法，這個方法會接受的路由名稱和參數] 頁面。 使用 直接在網頁中的 程式碼，而不是標記，則實作相同的 URL。 然後變更原始的路由和實體頁面的位置，不會再產生硬式編碼連結中使用，而兩者都以動態方式產生連結函式正確。 最後，然後討論動態產生連結的值。
+在這段影片中，Chris Pels 示範如何在使用 ASP.NET 路由的網站中指定 Url。 首先，會建立網站，並在全域應用程式類別（global.asax）中定義路由。 接下來，會建立範例網頁，並使用標準的「硬式編碼」方法（例如 "~/Stats/Visitors"）將以定義的路由為基礎的 URL 加入至頁面。 接著，會將另一個連結新增至頁面，使用接受路由名稱和參數的 RouteValue 方法，以動態方式在標記中產生相同的 URL。 然後使用程式碼（而不是直接在頁面中的標記）來執行相同的 URL。 然後，原始路由和實體頁面位置會變更，導致硬式編碼連結無法再運作，而動態產生的連結也會正常運作。 最後，會討論動態產生之連結的值。
 
-[&#9654;觀看影片 （20 分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-work-with-urls-in-aspnet-routing)
+[&#9654;觀看影片（20分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-work-with-urls-in-aspnet-routing)
 
 > [!div class="step-by-step"]
-> [上一步](how-do-i-use-routing-with-aspnet-web-forms.md)
+> [上一篇](how-do-i-use-routing-with-aspnet-web-forms.md)

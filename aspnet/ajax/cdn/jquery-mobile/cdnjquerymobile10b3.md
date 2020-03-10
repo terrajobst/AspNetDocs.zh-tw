@@ -9,11 +9,11 @@ ms.assetid: f71316df-b4f4-4cf5-8511-c0415391231c
 msc.legacyurl: /ajax/cdn/jquery-mobile/cdnjquerymobile10b3
 msc.type: content
 ms.openlocfilehash: 824b19c77c28d951d75a2f01b7e6f17fe9f8653f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59392497"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78563109"
 ---
 # <a name="jquery-mobile-10-beta-3-on-the-microsoft-ajax-cdn"></a>Microsoft Ajax CDN 上的 jQuery Mobile 1.0 搶鮮版 (Beta) 3
 

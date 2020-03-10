@@ -1,23 +1,23 @@
 ---
 uid: web-forms/videos/iis/index
-title: IIS 的一般提示 |Microsoft Docs
+title: 一般 IIS 秘訣 |Microsoft Docs
 author: rick-anderson
-description: 如何設定 IIS 以使用 ASP.NET 應用程式。
+description: 如何設定 IIS 以與 ASP.NET 應用程式搭配使用。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 0078ceb6-3447-4ce4-90c2-d0e013ebc000
 msc.legacyurl: /web-forms/videos/iis
 msc.type: chapter
 ms.openlocfilehash: 30a6f4f944ba070d02aa8677085b9c7a07f5c162
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114486"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78639857"
 ---
 # <a name="general-iis-tips"></a>IIS 的一般提示
 
-> 如何設定 IIS 以使用 ASP.NET 應用程式。
+> 如何設定 IIS 以與 ASP.NET 應用程式搭配使用。
 
 - [在共用主機中開發和部署](developing-and-deploying-in-a-shared-hosting.md)
 - [使用 IIS7 委派管理員](working-with-iis7-deligated-admin.md)

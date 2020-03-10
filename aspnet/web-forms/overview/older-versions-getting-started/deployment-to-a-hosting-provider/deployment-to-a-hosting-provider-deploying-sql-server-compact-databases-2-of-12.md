@@ -9,11 +9,11 @@ ms.assetid: c3c76516-4c48-4153-bd03-d70e3a3edbb0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: 56ceabc79947967846d342354fd033510be5f05a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74625573"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78568114"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>使用 Visual Studio 或 Visual Web Developer 的 SQL Server Compact 部署 ASP.NET Web 應用程式：部署 SQL Server Compact 資料庫-12 之2
 
@@ -108,7 +108,7 @@ NuGet 套件安裝通常會負責將此軟體部署到應用程式時所需的�
 
 第一個步驟是確保 ContosoUniversity 專案設定為啟始專案。 在**方案總管**中，以滑鼠右鍵按一下 ContosoUniversity 專案，然後選取 [**設定為啟始專案**]。 Code First 移轉會在啟始專案中尋找資料庫連接字串。
 
-從 [**工具**] 功能表中，依序按一下 [ **NuGet 套件管理員**] 和 [**套件管理員主控台**]。
+在 [工具] 功能表中按一下 [NuGet 套件管理員]，然後按一下 [套件管理員主控台]。
 
 ![Selecting_Package_Manager_Console](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image6.png)
 
@@ -234,7 +234,7 @@ Contoso 大學應用程式會使用 ASP.NET 成員資格系統和表單驗證來
 
 SQL Server Compact 資料庫引擎和這兩個資料庫現在已可供部署。 在下列教學課程中，您會針對在開發、測試和生產環境中必須不同的設定，設定自動的*web.config*檔案轉換。 （必須變更的設定是連接字串，但您稍後會在建立發行設定檔時設定這些變更）。
 
-## <a name="more-information"></a>更多資訊
+## <a name="more-information"></a>詳細資訊
 
 如需 NuGet 的詳細資訊，請參閱[使用 nuget 和 Nuget 管理專案程式庫](https://msdn.microsoft.com/magazine/hh547106.aspx)[檔](http://docs.nuget.org/docs/start-here/overview)。 如果您不想要使用 NuGet，您必須瞭解如何分析 NuGet 套件，以判斷它在安裝時的功能。 （例如，它可能會設定*web.config 轉換、設定 PowerShell*腳本在組建階段執行等等）。若要深入瞭解 NuGet 的運作方式，請參閱特別[建立和發行封裝](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package)和[設定檔案和原始程式碼轉換](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations)。
 

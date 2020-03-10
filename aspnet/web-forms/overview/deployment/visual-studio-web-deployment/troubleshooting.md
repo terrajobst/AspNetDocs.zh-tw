@@ -9,11 +9,11 @@ ms.assetid: c0090595-ab3b-4b9b-9e16-7a1891e8cb2f
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
 msc.type: authoredcontent
 ms.openlocfilehash: b42476fca18b04f4557a216ee205cfd9220023e8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74623577"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78576094"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>使用 Visual Studio ASP.NET Web 部署：疑難排解
 
@@ -25,7 +25,7 @@ ms.locfileid: "74623577"
 
 此頁面說明當您使用 Visual Studio 部署 ASP.NET web 應用程式時，可能會發生的一些常見問題。 針對每一個，會提供一或多個可能的原因和對應的解決方案。
 
-所顯示的案例適用于 Azure 和協力廠商主機服務提供者。 如需有關在 Azure App Service 中疑難排解 web 應用程式的詳細資訊，請參閱下列資源：
+所顯示的案例適用于 Azure 和協力廠商主機服務提供者。 如需在 Azure App Service 中疑難排解 Web 應用程式的詳細資訊，請參閱下列資源：
 
 - [使用 Visual Studio 疑難排解 Azure App Service 中的 Web 應用程式](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 - [監視 Azure App Service 中的 Web Apps](https://azure.microsoft.com/documentation/articles/web-sites-monitor//)
@@ -58,7 +58,7 @@ ms.locfileid: "74623577"
 
 當您嘗試在 Visual Studio 中執行專案時，會收到錯誤頁面，其中包含類似下列範例的訊息：
 
-'/' 應用程式中的伺服器錯誤。 當該檔案已存在時，無法建立/陰影複製 ' ContosoUniversity '。
+'/' 應用程式中有伺服器錯誤。 當該檔案已存在時，無法建立/陰影複製 ' ContosoUniversity '。
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解決方案
 
@@ -70,7 +70,7 @@ ms.locfileid: "74623577"
 
 當您部署使用 SQL Server Compact 的網站，並在已部署的網站中執行可存取資料庫的頁面時，您會看到下列錯誤訊息：
 
-存取被拒絕。 （來自 HRESULT 的例外狀況：0x80070005 （E\_ACCESSDENIED））
+存取遭到拒絕。 （來自 HRESULT 的例外狀況：0x80070005 （E\_ACCESSDENIED））
 
 ### <a name="possible-cause-and-solution"></a>可能的原因和解決方案
 

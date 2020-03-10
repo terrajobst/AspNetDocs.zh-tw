@@ -1,78 +1,78 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
-title: 第 6 部分：使用資料註解的模型驗證 |Microsoft Docs
+title: 第6部分：使用資料批註進行模型驗證 |Microsoft Docs
 author: jongalloway
-description: 本教學課程系列會詳細說明所有建置 ASP.NET MVC Music 市集範例應用程式所採取的步驟。 第 6 部分將說明如何使用模型 V 的資料註解...
+description: 本教學課程系列詳細說明建立 ASP.NET MVC 音樂存放區範例應用程式所採取的所有步驟。 第6部分涵蓋使用模型 V 的資料批註 。
 ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: b3193d33-2d0b-4d98-9712-58bd897c62ec
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 msc.type: authoredcontent
 ms.openlocfilehash: bc031dd5be61cc6707c522f85f6af77a420c8b31
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129660"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78539274"
 ---
-# <a name="part-6-using-data-annotations-for-model-validation"></a>第 6 部分：使用資料註解進行模型驗證
+# <a name="part-6-using-data-annotations-for-model-validation"></a>第6部分：使用資料批註進行模型驗證
 
-藉由[Jon Galloway](https://github.com/jongalloway)
+依[Jon Galloway](https://github.com/jongalloway)
 
-> MVC Music 市集是介紹，並逐步說明如何使用 ASP.NET MVC 和 Visual Studio 進行 web 開發的教學課程應用程式。  
+> MVC 音樂存放區是教學課程應用程式，其仲介紹如何使用 ASP.NET MVC 和 Visual Studio 進行 web 程式開發的逐步解說。  
 >   
-> MVC Music 市集是銷售線上音樂 album 和實作基本的網站管理、 使用者登入時，和 「 購物車 」 功能的輕量級的範例存放區實作。  
+> MVC 音樂存放區是輕量的範例商店執行，可在線上銷售音樂專輯，並實行基本的網站管理、使用者登入和購物車功能。  
 >   
-> 本教學課程系列會詳細說明所有建置 ASP.NET MVC Music 市集範例應用程式所採取的步驟。 第 6 節涵蓋了使用資料註解的模型驗證。
+> 本教學課程系列詳細說明建立 ASP.NET MVC 音樂存放區範例應用程式所採取的所有步驟。 第6部分涵蓋使用資料批註進行模型驗證。
 
-我們透過我們建立和編輯表單的主要問題： 他們不用做任何驗證。 我們可以進行像是將必要的欄位空白或型別字母留在 [價格] 欄位中，我們會看到的第一個錯誤是來自資料庫，
+我們的建立和編輯表單有一個重大的問題：它們不會進行任何驗證。 我們可以執行一些動作，像是在 Price 欄位中保留必要欄位空白或輸入字母，而我們看到的第一個錯誤是來自資料庫。
 
-我們可以將資料註解加入至我們的模型類別輕鬆地加入我們的應用程式的驗證。 資料註解，讓我們來描述套用至我們的模型屬性，我們想要的規則和 ASP.NET MVC 會負責強制執行的方式，並向使用者顯示適當的訊息。
+我們可以藉由將資料批註加入至我們的模型類別，輕鬆地將驗證加入至應用程式。 資料批註可讓我們描述要套用至模型屬性的規則，而 ASP.NET MVC 會負責強制執行它們，並向使用者顯示適當的訊息。
 
 ## <a name="adding-validation-to-our-album-forms"></a>將驗證新增至我們的專輯表單
 
-我們將使用下列資料註解屬性：
+我們將使用下列資料批註屬性：
 
-- **需要**– 指出屬性是否為必填的欄位
-- **DisplayName** – 定義我們想要使用的表單欄位和驗證訊息的文字
-- **StringLength** – 定義的字串欄位的最大長度
-- **範圍**– 提供最大和最小值為數值欄位
-- **繫結**-列出要繫結至模型屬性的參數或表單的值時，包含或排除的欄位
-- **ScaffoldColumn** – 允許隱藏於編輯器表單的欄位
+- **Required** –表示屬性為必要欄位
+- **DisplayName** –定義我們想要用於表單欄位和驗證訊息的文字
+- **StringLength** –定義字串欄位的最大長度
+- **範圍**–提供數值欄位的最大和最小值
+- **Bind** –在將參數或表單值系結至模型屬性時，列出要排除或包含的欄位
+- **ScaffoldColumn** –允許隱藏編輯表單中的欄位
 
-*注意：如需有關使用資料註解屬性的模型驗證的詳細資訊，請參閱 MSDN 文件，*[`https://go.microsoft.com/fwlink/?LinkId=159063`](https://go.microsoft.com/fwlink/?LinkId=159063)
+*注意：如需使用資料批註屬性進行模型驗證的詳細資訊，請參閱 MSDN 檔，網址*為[`https://go.microsoft.com/fwlink/?LinkId=159063`](https://go.microsoft.com/fwlink/?LinkId=159063)
 
-開啟專輯類別並新增下列*使用*陳述式。
+開啟專輯類別，並將下列*using*語句加入至頂端。
 
 [!code-csharp[Main](mvc-music-store-part-6/samples/sample1.cs)]
 
-接下來，更新要加入顯示和驗證屬性，如下所示的屬性。
+接下來，更新屬性以新增顯示和驗證屬性，如下所示。
 
 [!code-csharp[Main](mvc-music-store-part-6/samples/sample2.cs)]
 
-雖然我們有，我們也已虛擬屬性來變更內容類型與演出者。 這可讓 Entity Framework 消極式載入它們為必要。
+在這裡，我們也將內容類型和演出者變更為虛擬屬性。 這可讓 Entity Framework 視需要延遲載入它們。
 
 [!code-csharp[Main](mvc-music-store-part-6/samples/sample3.cs)]
 
-在之後需要將這些屬性加入我們專輯的模型，我們建立與編輯畫面，立即開始驗證欄位，並使用顯示名稱我們選擇 (例如專輯封面 Url 而不是 AlbumArtUrl)。 執行應用程式，並瀏覽至 /StoreManager/Create。
+將這些屬性新增至我們的專輯模型之後，我們的 [建立和編輯] 畫面會立即開始驗證欄位，並使用我們選擇的顯示名稱（例如專輯封面 Url，而不是 AlbumArtUrl）。 執行應用程式並流覽至/StoreManager/Create。
 
 ![](mvc-music-store-part-6/_static/image1.png)
 
-接下來，我們將會中斷某些驗證規則。 輸入價格為 0，並將標題保留空白。 當我們按一下 [建立] 按鈕時，我們會看到顯示有驗證錯誤訊息顯示哪些欄位不符合驗證規則，我們已定義的表單。
+接下來，我們會中斷部分驗證規則。 輸入0的價格，並將標題保留空白。 當我們按一下 [建立] 按鈕時，我們會看到表單顯示，其中包含驗證錯誤訊息，顯示哪些欄位不符合我們所定義的驗證規則。
 
 ![](mvc-music-store-part-6/_static/image2.png)
 
 ## <a name="testing-the-client-side-validation"></a>測試用戶端驗證
 
-伺服器端驗證是應用程式的觀點而言，非常重要，因為使用者可以繞過用戶端驗證。 不過，只有實作伺服器端驗證網頁表單會表現出三個重要的問題。
+從應用程式的觀點來看，伺服器端驗證非常重要，因為使用者可以規避用戶端驗證。 不過，只會執行伺服器端驗證的網頁表單呈現了三個重要的問題。
 
-1. 使用者必須等候表單張貼、 驗證的伺服器上，並為傳送至瀏覽器的回應。
-2. 使用者不會立即回應，當它們會校正欄位，使它現在會將傳遞驗證規則。
-3. 我們會浪費伺服器資源，才能執行驗證邏輯，而不是利用使用者的瀏覽器。
+1. 使用者必須等待表單張貼、在伺服器上進行驗證，以及將回應傳送到其瀏覽器。
+2. 當使用者更正欄位，使其立即通過驗證規則時，不會立即收到意見反應。
+3. 我們會浪費伺服器資源來執行驗證邏輯，而不是利用使用者的瀏覽器。
 
-幸運的是，ASP.NET MVC 3 scaffold 樣板有用戶端驗證內建，需要對於任何其他工作。
+幸好，ASP.NET MVC 3 scaffold 範本已內建用戶端驗證，不需要任何額外的工作。
 
-輸入 [標題] 欄位中的單一字母，符合驗證需求，因此驗證訊息會立即移除。
+在 [標題] 欄位中輸入單一字母可滿足驗證需求，因此會立即移除驗證訊息。
 
 ![](mvc-music-store-part-6/_static/image3.png)
 

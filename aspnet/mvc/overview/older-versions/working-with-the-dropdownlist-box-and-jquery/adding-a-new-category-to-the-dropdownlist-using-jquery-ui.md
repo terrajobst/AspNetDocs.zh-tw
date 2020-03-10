@@ -9,11 +9,11 @@ ms.assetid: 44aa1ac4-6ea2-48a2-972d-52710c48eae5
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui
 msc.type: authoredcontent
 ms.openlocfilehash: 3207079ee468232e5f75b081421241c232936baf
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77455720"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78538833"
 ---
 # <a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a>使用 jQuery UI 將新的分類新增至 DropDownList
 
@@ -125,7 +125,7 @@ Rick. Anderson [at] Microsoft .com
 - [ASP.NET MVC –](https://weblogs.asp.net/raduenuca/archive/2011/03/06/asp-net-mvc-cascading-dropdown-lists-tutorial-part-1-defining-the-problem-and-the-context.aspx) [Radu Enuca](https://weblogs.asp.net/raduenuca/default.aspx)的階層式下拉式清單教學課程
 - 已[選擇](https://harvesthq.github.com/chosen/)支援多重選取和篩選的 JavaScript 外掛程式。
 
-### <a name="contributors"></a>參與者
+### <a name="contributors"></a>Contributors
 
 - [Radu Enuca](https://weblogs.asp.net/raduenuca/default.aspx)
 - Jean-Sébastien Goupil
@@ -139,4 +139,4 @@ Rick. Anderson [at] Microsoft .com
 - Tom 作者: dykstra
 
 > [!div class="step-by-step"]
-> [[上一步]](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)
+> [上一篇](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)

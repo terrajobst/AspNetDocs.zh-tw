@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/index
-title: 序列化和模型繫結，在 ASP.NET Web API-ASP.NET 4.x
+title: ASP.NET Web API 中的序列化和模型系結（ASP.NET 4.x）
 author: rick-anderson
-description: 網域模型，ASP.NET Web API 如何繫結 HTTP 訊息，以及如何使用媒體格式在 Web API 中 ASP.NET 4.x。
+description: ASP.NET Web API 如何將 HTTP 訊息系結至網域模型，以及如何在 ASP.NET 4.x 的 Web API 中使用媒體格式。
 ms.author: riande
 ms.date: 01/17/2012
 ms.custom: seoapril2019
@@ -10,15 +10,15 @@ ms.assetid: 2d520763-3860-4b3f-8b99-ac71fb01cf37
 msc.legacyurl: /web-api/overview/formats-and-model-binding
 msc.type: chapter
 ms.openlocfilehash: 4b746140c00456a51c0ca2942b62f11d4dcbc4a0
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65112796"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78557264"
 ---
-# <a name="serialization-and-model-binding-in-aspnet-web-api"></a>序列化和 ASP.NET Web API 中的模型繫結
+# <a name="serialization-and-model-binding-in-aspnet-web-api"></a>ASP.NET Web API 中的序列化和模型系結
 
-> 如何 ASP.NET Web API 繫結的 HTTP 訊息至網域模型，並表示在 Web API 中如何使用媒體格式。
+> ASP.NET Web API 如何將 HTTP 訊息系結至網域模型，以及如何在 Web API 中使用媒體格式。
 
 - [Web API 2 中的媒體格式器](media-formatters.md)
 - [Web API 中的 JSON 和 XML 序列化](json-and-xml-serialization.md)

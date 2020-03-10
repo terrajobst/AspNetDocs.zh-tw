@@ -9,11 +9,11 @@ ms.assetid: 61941e64-0c0d-4996-9270-cb8ccfd0cabc
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
 ms.openlocfilehash: fbb4cd7afa2506879d47bce980bf0164aad40c2c
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519267"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78555220"
 ---
 # <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>在 Visual Studio 2013 中建立 ASP.NET Web 專案
 
@@ -31,7 +31,7 @@ ms.locfileid: "76519267"
 > 如需如何為 Azure 雲端服務或 Azure 行動服務建立 Web 專案的相關資訊，請參閱[開始使用 azure 雲端服務和](https://azure.microsoft.com/documentation/articles/cloud-services-dotnet-get-started/)[使用 azure 行動服務 .Net 後端建立排行榜應用程式](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)ASP.NET。
 
 <a id="prerequisites"></a>
-## <a name="prerequisites"></a>必要條件：
+## <a name="prerequisites"></a>Prerequisites
 
 本文適用于已安裝[Update 3](https://go.microsoft.com/fwlink/?linkid=397827&amp;clcid=0x409)的[Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566) 。
 
@@ -48,7 +48,7 @@ ASP.NET 可讓您選擇兩種 Web 專案： *web 應用程式專案*和*網站�
 1. 在 [**起始**頁] 或 [檔案 **] 功能表中，按一下 [** **新增專案**]。
 2. 在 **新增專案** 對話方塊中，按一下左窗格中的  **web** ，然後在中間窗格中**ASP.NET web 應用程式**。
 
-    ![新增專案對話方塊](creating-web-projects-in-visual-studio/_static/image1.png)
+    ![[新增專案] 對話](creating-web-projects-in-visual-studio/_static/image1.png)
 
     您可以選擇左窗格中的 [**雲端**]，來建立[azure 雲端服務](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-create-deploy)、 [Azure 行動服務](https://msdn.microsoft.com/library/windows/apps/dn629482.aspx)或[azure WebJob](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-webjobs)。 本主題並未涵蓋這些範本。
 3. 如果您想要應用程式的健康情況和使用方式監視，請在右窗格中按一下 [**將 Application Insights 新增至專案**] 核取方塊。 如需詳細資訊，請參閱[監視 Web 應用程式中的效能](https://azure.microsoft.com/documentation/articles/app-insights-web-monitor-performance/)。
@@ -56,7 +56,7 @@ ASP.NET 可讓您選擇兩種 Web 專案： *web 應用程式專案*和*網站�
 
     [**新增 ASP.NET 專案**] 對話方塊隨即出現。
 
-    ![新增專案對話方塊](creating-web-projects-in-visual-studio/_static/image2.png)
+    ![[新增專案] 對話](creating-web-projects-in-visual-studio/_static/image2.png)
 5. 按一下範本。
 
     ![選取範本](creating-web-projects-in-visual-studio/_static/image3.png)
@@ -357,7 +357,7 @@ Visual Studio 2013 為 Web Forms、MVC 和 Web API 範本提供數個驗證選�
 
 如果您想要針對一個 Azure AD[租](https://technet.microsoft.com/library/jj573650.aspx)使用者中定義的使用者帳戶啟用驗證，請選擇此選項。 例如，網站是 contoso.com，它會提供給位在 contoso.onmicrosoft.com 租使用者之 Contoso 公司的員工使用。 您將無法設定 Azure AD，讓其他租使用者的使用者存取應用程式。
 
-#### <a name="domain"></a>網域
+#### <a name="domain"></a>Domain
 
 輸入您要設定應用程式的 Azure AD 網域，例如： `contoso.onmicrosoft.com`。 如果您有[自訂網域](http://www.cloudidentity.com/blog/2013/04/14/adding-a-custom-domain-to-your-windows-azure-ad/)，例如 `contoso.com`，而不是 `contoso.onmicrosoft.com`，您可以在這裡輸入。
 

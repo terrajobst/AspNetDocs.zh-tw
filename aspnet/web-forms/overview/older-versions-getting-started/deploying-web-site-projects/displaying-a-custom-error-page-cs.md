@@ -9,11 +9,11 @@ ms.assetid: cb061642-faf3-41b2-9372-69e13444d458
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
 msc.type: authoredcontent
 ms.openlocfilehash: c1ff4c112b9a489b8fb9ef3443663cd71eda7965
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74625494"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78524203"
 ---
 # <a name="displaying-a-custom-error-page-c"></a>顯示自訂的錯誤頁面 (C#)
 
@@ -55,7 +55,7 @@ ms.locfileid: "74625494"
 
 另一種類型的 YSOD 是執行時間錯誤 YSOD，如 [**圖 2**] 所示。 [執行時間錯誤 YSOD] 會通知訪客發生執行階段錯誤，但不包含所擲回之例外狀況的任何相關資訊。 （不過，它會提供有關如何藉由修改 `Web.config` 檔案來查看錯誤詳細資料的指示，這是這類 YSOD 外觀不夠專業的一部分）。
 
-根據預設，在 [**圖 2**： `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo`] 的瀏覽器網址列中，從遠端存取的使用者（透過 http://www.yoursite.com) ，會顯示 [執行時間錯誤] YSOD。 有兩個不同的 YSOD 畫面存在，是因為開發人員想要知道錯誤詳細資料，但這類資訊不應該顯示在即時網站上，因為它可能會顯示潛在的安全性弱點或其他機密資訊給造訪您的點.
+根據預設，在 [**圖 2**： `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo`] 的瀏覽器網址列中，從遠端存取的使用者（透過 http://www.yoursite.com)，會顯示 [執行時間錯誤] YSOD。 有兩個不同的 YSOD 畫面存在，是因為開發人員想要知道錯誤詳細資料，但這類資訊不應該顯示在即時網站上，因為它可能會顯示潛在的安全性弱點或其他機密資訊給造訪您的點.
 
 > [!NOTE]
 > 如果您遵循並使用 DiscountASP.NET 做為您的 web 主機，您可能會注意到 [執行時間錯誤] YSOD 不會在造訪即時網站時顯示。 這是因為 DiscountASP.NET 預設會將其伺服器設定為顯示例外狀況詳細資料 YSOD。 好消息是，您可以藉由將 `<customErrors>` 區段新增至 `Web.config` 檔案，來覆寫此預設行為。 [設定顯示的錯誤頁面] 區段會詳細檢查 `<customErrors>` 區段。

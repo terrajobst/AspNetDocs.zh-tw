@@ -9,11 +9,11 @@ ms.assetid: c23d27f7-b0cf-44f2-8445-fb69e045c674
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1
 msc.type: authoredcontent
 ms.openlocfilehash: c1c2380f24c72f6aabaaacaf975e95288a384ff1
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457618"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78538987"
 ---
 # <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>搭配 ASP.NET MVC 使用 HTML5 和 jQuery UI Datepicker 快顯行事曆-第1部分
 
@@ -51,7 +51,7 @@ ms.locfileid: "77457618"
 - 如何建立範本（編輯和顯示範本）來控制資料的格式。
 - 如何新增[JQUERY UI datepicker](http://jqueryui.com/demos/datepicker/)做為輸入日期欄位的方式。
 
-### <a name="getting-started"></a>開始使用
+### <a name="getting-started"></a>快速入門
 
 如果您還沒有來自入門專案的電影清單應用程式，請下載： 
 

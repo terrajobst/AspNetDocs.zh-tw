@@ -7,20 +7,20 @@ ms.assetid: fddf8e5e-c055-4f81-b691-78deef871112
 ms.author: riande
 ms.date: 09/20/2017
 ms.openlocfilehash: 106b4b88d2e7de90900b7a73570ecd6140e2db66
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113198"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78558167"
 ---
 # <a name="aspnet-tutorials"></a>ASP.NET 教學課程
 
 [!INCLUDE[](~/includes/rp.md)]
 
-下列的逐步指南，來開發 ASP.NET 應用程式可用。
+開發 ASP.NET 應用程式的下列逐步指南可供使用。
 
 > [!NOTE]
-> 需要 ASP.NET Core 教學課程嗎？  找到它們[此處](https://docs.microsoft.com/aspnet/core/tutorials/)。
+> 尋找 ASP.NET Core 的教學課程嗎？  請[在這裡](https://docs.microsoft.com/aspnet/core/tutorials/)尋找。
 
 ## <a name="web-forms"></a>Web Form
 
@@ -60,7 +60,7 @@ ms.locfileid: "65113198"
 * [開始使用 Web API 2 (C#)](web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)
 * [使用具有 ASP.NET Web Form 的 Web API](web-api/overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms.md)
 * [建立 Web API 說明頁面](web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages.md)
-* [實習實驗室：建置使用 ASP.NET Web API 和 Angular.js 的單一頁面應用程式 (SPA)](web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
+* [實習實驗室：使用 ASP.NET Web API 和 Angular.js 建置單一頁面應用程式 (SPA)](web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
 * [使用 Web API 2 中的屬性路由建立 REST API](web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing.md)
 * [使用 Web API 2 和 Entity Framework 6](web-api/overview/data/using-web-api-with-entity-framework/index.md)
 * [從 Windows Phone 8 應用程式呼叫 Web API (C#)](web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application.md)
@@ -78,8 +78,8 @@ ms.locfileid: "65113198"
 * [將 Web API 2 裝載在 Azure 背景工作角色中](web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role.md)
 * [Web API 2 中的相依性插入](web-api/overview/advanced/dependency-injection.md)
 * [從 .NET 用戶端呼叫 Web API (C#)](web-api/overview/advanced/calling-a-web-api-from-a-net-client.md)
-* [傳送 Web API 中的 HTML 表單資料：Form-urlencoded 資料](web-api/overview/advanced/sending-html-form-data-part-1.md)
-* [傳送 Web API 中的 HTML 表單資料：檔案上傳和多個 MIME](web-api/overview/advanced/sending-html-form-data-part-2.md)
+* [傳送 Web API 的 HTML 表單資料：Form-urlencoded 資料](web-api/overview/advanced/sending-html-form-data-part-1.md)
+* [傳送 Web API 的 HTML 表單資料：檔案上傳和多個 MIME](web-api/overview/advanced/sending-html-form-data-part-2.md)
 
 ## <a name="web-pages"></a>Web Pages
 
@@ -113,10 +113,10 @@ ms.locfileid: "65113198"
 ## <a name="aspnet-signalr"></a>ASP.NET SignalR
 
 * [教學課程：開始使用 SignalR 2](signalr/overview/getting-started/tutorial-getting-started-with-signalr.md)
-* [教學課程：開始使用 SignalR 2 和 MVC 5](signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
+* [教學課程：開始使用 SignalR 2 及 MVC 5](signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
 * [教學課程：高頻率即時與 SignalR 2](signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr.md)
 * [教學課程：伺服器廣播與 SignalR 2](signalr/overview/getting-started/tutorial-server-broadcast-with-signalr.md)
-* [實習實驗室：使用 SignalR 即時 Web 應用程式](signalr/overview/getting-started/real-time-web-applications-with-signalr.md)
+* [實習實驗室：即時 Web 應用程式與 SignalR](signalr/overview/getting-started/real-time-web-applications-with-signalr.md)
 * [對 SignalR 應用程式進行單元測試](signalr/overview/testing-and-debugging/unit-testing-signalr-applications.md)
 * [啟用 SignalR 追蹤](signalr/overview/testing-and-debugging/enabling-signalr-tracing.md)
 * [SignalR 向外延展與 Azure 服務匯流排](signalr/overview/performance/scaleout-with-windows-azure-service-bus.md)
@@ -131,7 +131,7 @@ ms.locfileid: "65113198"
 
 * [將 ASP.NET Identity 新增至空的或現有的 Web Form 專案](identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
 * [使用 Azure Active Dirctory 開發 ASP.NET 應用程式](identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)
-* [ASP.NET 身分識別：使用 EntityFramework MySQL 提供者的 MySQL 儲存體 (C#)](identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider.md)
+* [ASP.NET Identity： 使用具 EntityFramework MySQL 提供者的 MySQL 儲存體 (C#)](identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider.md)
 * [使用 ASP.NET Identity 的帳戶確認和密碼復原](identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
 * [透過 ASP.NET Identity 使用簡訊和電子郵件進行的雙重要素驗證](identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
 * [實作自訂的 MySQL ASP.NET Identity 儲存體提供者](identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider.md)

@@ -9,11 +9,11 @@ ms.assetid: 86a80b35-88bd-4b7c-bd58-f6e7997197d4
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3
 msc.type: authoredcontent
 ms.openlocfilehash: e71275c93558c0b6ca087a145786e8c846b69721
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457520"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78540667"
 ---
 # <a name="intro-to-aspnet-mvc-3-c"></a>ASP.NET MVC 3 簡介 (C#)
 
@@ -53,7 +53,7 @@ ms.locfileid: "77457520"
 - 如何取出和顯示資料。
 - 如何編輯資料並啟用資料驗證。
 
-## <a name="getting-started"></a>開始使用
+## <a name="getting-started"></a>快速入門
 
 一開始先執行 Visual Web Developer 2010 Express （簡稱為「Visual Web Developer」），然後從 [**開始**] 頁面選取 [**新增專案**]。
 

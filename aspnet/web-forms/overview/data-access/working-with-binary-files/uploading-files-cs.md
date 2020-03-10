@@ -9,11 +9,11 @@ ms.assetid: b381b1da-feb3-4776-bc1b-75db53eb90ab
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 4e3e32a829de386a681504c8d5d61dd258b8b2e6
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74581637"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78548794"
 ---
 # <a name="uploading-files-c"></a>上傳檔案 (C#)
 
@@ -151,7 +151,7 @@ ms.locfileid: "74581637"
 
 [!code-sql[Main](uploading-files-cs/samples/sample3.sql)]
 
-最後一個步驟是選擇新方法的名稱。 使用 `FillCategoryWithBinaryDataByCategoryID` 和 `GetCategoryWithBinaryDataByCategoryID` 來填入 DataTable，並分別傳回 DataTable 模式。 按一下 [完成] 以完成精靈。
+最後一個步驟是選擇新方法的名稱。 使用 `FillCategoryWithBinaryDataByCategoryID` 和 `GetCategoryWithBinaryDataByCategoryID` 來填入 DataTable，並分別傳回 DataTable 模式。 按一下 [完成] 完成精靈。
 
 [![選擇 TableAdapter s 方法的名稱](uploading-files-cs/_static/image10.gif)](uploading-files-cs/_static/image15.png)
 
@@ -253,4 +253,4 @@ FileUpload 控制項對於大型檔案上傳而言不切實際。 當檔案的�
 本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Teresa Murphy 和 Bernadette Leigh。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一步](displaying-binary-data-in-the-data-web-controls-cs.md)
+> [下一個](displaying-binary-data-in-the-data-web-controls-cs.md)

@@ -1,6 +1,6 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/index
-title: 建置真實世界使用 Azure 的雲端應用程式 |Microsoft Docs
+title: 使用 Azure 建立真實世界的雲端應用程式 |Microsoft Docs
 author: rick-anderson
 description: 使用 Azure 建置真實世界的雲端應用程式
 ms.author: riande
@@ -9,11 +9,11 @@ ms.assetid: b452a3af-4157-4056-a181-569d1735c239
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure
 msc.type: chapter
 ms.openlocfilehash: 85dea0990364ad9c791c6e2cd632dab644e3575e
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118801"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78617611"
 ---
 # <a name="building-real-world-cloud-apps-with-azure"></a>使用 Azure 建置真實世界的雲端應用程式
 
@@ -34,4 +34,4 @@ ms.locfileid: "65118801"
 - [分散式快取](distributed-caching.md)
 - [以佇列為主的工作模式](queue-centric-work-pattern.md)
 - [更多模式和指導方針](more-patterns-and-guidance.md)
-- [附錄：修正範例應用程式](the-fix-it-sample-application.md)
+- [附錄︰修正範例應用程式](the-fix-it-sample-application.md)

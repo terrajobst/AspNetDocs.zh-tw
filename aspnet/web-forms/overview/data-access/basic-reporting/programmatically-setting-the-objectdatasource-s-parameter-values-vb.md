@@ -9,11 +9,11 @@ ms.assetid: 0ecb03b6-52a0-4731-8c7a-436391d36838
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-vb
 msc.type: authoredcontent
 ms.openlocfilehash: f1dd50f46528e8dd51f85e503604d3f0dbc21ad2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74601963"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78577053"
 ---
 # <a name="programmatically-setting-the-objectdatasources-parameter-values-vb"></a>以程式設計方式設定 ObjectDataSource 的參數值 (VB)
 
@@ -37,7 +37,7 @@ ms.locfileid: "74601963"
 
 在本教學課程中，我們將探討如何將方法新增至我們的 DAL 和 BLL，以接受 `Month``Integer` 類型的單一輸入參數，並傳回 `EmployeesDataTable` 物件，並在指定的 `Month`中，填入其雇用周年的員工。 我們的範例會根據目前月份以程式設計方式設定此參數，並顯示「本月員工周年紀念日」的清單。
 
-讓我們開始吧！
+現在就開始吧！
 
 ## <a name="step-1-adding-a-method-toemployeestableadapter"></a>步驟1：將方法加入至`EmployeesTableAdapter`
 

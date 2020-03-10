@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/sql-2005/what-is-a-database
-title: 資料庫是什麼？ | Microsoft Docs
+title: 什麼是資料庫？ | Microsoft Docs
 author: microsoft
-description: 本簡介說明問題和術語的 SQL Server 初學者，就需要建立和管理資料庫，例如：什麼是 SQL Server 資料庫？ 如何...
+description: 本簡介涵蓋了建立和管理資料庫 SQL Server 初學者所需的問題和術語，例如：什麼是 SQL Server 資料庫？ 如何 。
 ms.author: riande
 ms.date: 03/29/2006
 ms.assetid: 560d2455-ce08-4b2a-900d-7e9ccf82e048
 msc.legacyurl: /web-forms/videos/sql-2005/what-is-a-database
 msc.type: video
 ms.openlocfilehash: 019383897daeb7d8885ea4b9c3609e7f8ef9f827
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59396664"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78637134"
 ---
-# <a name="what-is-a-database"></a>資料庫是什麼？
+# <a name="what-is-a-database"></a>什麼是資料庫？
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-本簡介說明問題和術語的 SQL Server 初學者，就需要建立和管理資料庫，例如：什麼是 SQL Server 資料庫？ SQL Server 資料庫與何不同的 Excel 試算表？ SQL Server 資料庫的作用為何在我的網站或軟體應用程式？ Visual Studio express 的 SQL Server Express 的關聯為何？ 表示 「 ADO.NET 」 之類的詞彙做什麼？
+本簡介涵蓋了建立和管理資料庫 SQL Server 初學者所需的問題和術語，例如：什麼是 SQL Server 資料庫？ SQL Server 資料庫與 Excel 試算表有何不同？ SQL Server 資料庫在我的網站或軟體應用程式中的作用為何？ Visual Studio Express SQL Server Express 的關係為何？ "ADO.NET" 這類詞彙是什麼意思？
 
-[&#9654;觀看影片 （28 分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/what-is-a-database)
+[&#9654;觀看影片（28分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/what-is-a-database)
 
 > [!div class="step-by-step"]
-> [下一步](understanding-database-tables-and-records.md)
+> [下一個](understanding-database-tables-and-records.md)

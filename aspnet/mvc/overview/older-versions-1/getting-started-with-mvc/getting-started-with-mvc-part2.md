@@ -2,76 +2,76 @@
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
 title: 新增控制器 |Microsoft Docs
 author: shanselman
-description: 如果本教學課程，可在此處使用 Visual Studio 2013 更新的版本。 新的教學課程會使用 ASP.NET MVC 5，可提供許多增強功能，透過 t...
+description: 如果本教學課程可在此使用 Visual Studio 2013，則為更新版本。 新的教學課程使用 ASP.NET MVC 5，它提供了許多透過 t 的改良功能 。
 ms.author: riande
 ms.date: 08/14/2010
 ms.assetid: ff03dcc0-da97-458d-838f-0823e7482642
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
 msc.type: authoredcontent
 ms.openlocfilehash: e2a298584473f57c2b14edf507f0f6886d906ea3
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65123056"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78543978"
 ---
 # <a name="adding-a-controller"></a>新增控制器
 
-藉由[Scott Hanselman](https://github.com/shanselman)
+由[Scott Hanselman](https://github.com/shanselman)
 
 > > [!NOTE]
-> > 如果本教學課程中可用的更新的版本[此處](../../getting-started/introduction/getting-started.md)使用[Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)。 新的教學課程會使用 ASP.NET MVC 5，透過本教學課程提供許多增強功能。
+> > 如果本教學[課程](../../getting-started/introduction/getting-started.md)可在此使用[Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)，則為更新版本。 新的教學課程會使用 ASP.NET MVC 5，這在此教學課程中提供了許多改進功能。
 >
 >
-> 這是初學者教學課程中，將會介紹 ASP.NET MVC 的基本概念。 您將建立簡單 web 應用程式，從資料庫讀取與寫入。 請瀏覽[ASP.NET MVC 學習中心](../../../index.md)來尋找其他 ASP.NET MVC 教學課程和範例。
+> 這是初學者教學課程，介紹 ASP.NET MVC 的基本概念。 您將建立可從資料庫讀取和寫入的簡單 web 應用程式。 請造訪[ASP.NET mvc 學習中心](../../../index.md)，以尋找其他 ASP.NET mvc 教學課程和範例。
 
-MVC 代表模型、 檢視、 控制器。 MVC 是開發應用程式，使每個部分都有責任從另一個不同的模式。
+MVC 代表 Model、View、Controller。 MVC 是用來開發應用程式的模式，因此每個部分的責任與另一個元件不同。
 
-- 模型：您的應用程式的資料
-- 檢視：範本檔案，您的應用程式會使用動態產生 HTML 回應。
-- 控制站：類別，可處理傳入的 URL 要求，應用程式、 擷取模型資料，然後指定 將回應傳回給用戶端呈現的檢視範本
+- 模型：應用程式的資料
+- Views：應用程式將用來動態產生 HTML 回應的範本檔案。
+- 控制器：處理應用程式傳入 URL 要求、捕獲模型資料，然後指定將回應轉譯回用戶端的類別
 
-我們就可以在本教學課程涵蓋所有這些概念，並示範如何使用它們來建置應用程式。
+本教學課程將涵蓋所有這些概念，並示範如何使用它們來建立應用程式。
 
-以滑鼠右鍵按一下方案總管中的 控制器 資料夾，然後選取 新增控制器，讓我們來建立新的控制器。
+讓我們建立新的控制器，方法是以滑鼠右鍵按一下 [方案瀏覽器] 中的 [控制器] 資料夾，然後選取 [新增控制器]。
 
 [![AddControllerRightClick](getting-started-with-mvc-part2/_static/image2.png)](getting-started-with-mvc-part2/_static/image1.png)
 
-命名您新的控制站 」 HelloWorldController"，並按一下 [新增]。
+將新的控制器命名為 "HelloWorldController"，然後按一下 [新增]。
 
 [![新增控制器 對話方塊](getting-started-with-mvc-part2/_static/image4.png)](getting-started-with-mvc-part2/_static/image3.png)
 
-請注意，在右邊稱為 HelloWorldController.cs 您已建立新的檔案，該檔案現在會在中開啟 [方案總管] **IDE**。
+請注意，在右邊的方案總管中，已為您建立了名為 HelloWorldController.cs 的新檔案，而該檔案現在已在**IDE**中開啟。
 
 [![HelloWorldControllerCode](getting-started-with-mvc-part2/_static/image6.png)](getting-started-with-mvc-part2/_static/image5.png)
 
-建立新公用類別 HelloWorldController 內看起來像這樣的兩個新方法。 我們會直接從控制器傳回 HTML 的字串，做為範例。
+建立兩個新的方法，在新的公用類別 HelloWorldController 中看起來像這樣。 我們會直接從我們的控制器傳回 HTML 字串，做為範例。
 
 [!code-csharp[Main](getting-started-with-mvc-part2/samples/sample1.cs)]
 
-您的控制器命名為 HelloWorldController 和新方法，稱為索引。 您再次執行應用程式，如同先前一樣 （按一下 [播放] 按鈕或按下 f5 鍵，若要這樣做）。 一旦您的瀏覽器已啟動，變更在網址列中的路徑`http://localhost:xx/HelloWorld`其中 xx 是任何數字您的電腦已選擇。 現在您的瀏覽器看起來應該像下列螢幕擷取畫面。 在上述我們方法我們傳回的字串傳遞至方法，稱為 [內容]。 我們只告訴系統只會傳回一些 HTML，且啟動成功 ！
+您的控制器命名為 HelloWorldController，而您的新方法稱為 Index。 再次執行您的應用程式，就像之前一樣（按一下 [播放] 按鈕，或按 F5 鍵來執行此動作）。 當您的瀏覽器啟動之後，請將網址列中的路徑變更為 `http://localhost:xx/HelloWorld`，其中 xx 是您的電腦所選擇的任何數位。 現在，您的瀏覽器看起來應該像下面的螢幕擷取畫面。 在上述方法中，我們傳回傳遞至稱為「內容」之方法的字串。 我們告訴系統只傳回一些 HTML，而且的確會傳回！
 
-根據傳入 URL 不同的控制器類別 （和其中的不同動作方法），會叫用 ASP.NET MVC。 使用 ASP.NET MVC 的預設對應邏輯來控制哪些程式碼會執行使用的格式如下：
+ASP.NET MVC 會根據傳入的 URL，叫用不同的控制器類別（以及其中的不同動作方法）。 ASP.NET MVC 使用的預設對應邏輯會使用如下的格式來控制要執行的程式碼：
 
-/[Controller]/[ActionName]/[Parameters]
+/[控制器]/[ActionName]/[Parameters]
 
-URL 的第一個部分會判斷要執行的控制器類別。 因此 /HelloWorld 會對應至 HelloWorldController 類別。 URL 的第二部分會判斷要執行的類別上的動作方法。 /HelloWorld/Index 會導致要執行的 HelloWorldController 類別的 index （） 方法。 請注意，我們只有造訪上述 /HelloWorld 和索引隱含的方法。 這是因為名為"Index"的方法是將在控制器呼叫，如果沒有明確指定的預設方法。
+URL 的第一個部分會決定要執行的控制器類別。 因此，/HelloWorld 會對應至 HelloWorldController 類別。 URL 的第二個部分會決定要執行的類別上的動作方法。 因此，/HelloWorld/Index 會導致 HelloWorldController 類別的 Index （）方法執行。 請注意，我們只需要造訪上面的/HelloWorld，並隱含方法索引。 這是因為名為 "Index" 的方法是在控制器上呼叫的預設方法（如果未明確指定的話）。
 
 [![這是我的預設動作](getting-started-with-mvc-part2/_static/image8.png)](getting-started-with-mvc-part2/_static/image7.png)
 
-現在，讓我們來瞧`http://localhost:xx/HelloWorld/Welcome.`現在在執行我們歡迎畫面的方法，並將其傳回它的 HTML 字串。
+現在，讓我們流覽 `http://localhost:xx/HelloWorld/Welcome.` 我們的歡迎方法現在已執行，並傳回其 HTML 字串。
 
-同樣地，/ [Controller] / [ActionName] / [Parameters] 讓控制器是 HelloWorld 和歡迎畫面在此情況下是方法。 我們還參數。
+同樣地，/[控制器]/[ActionName]/[Parameters]，讓控制器 HelloWorld，而歡迎是在此情況下的方法。 尚未完成參數。
 
-[![這是 歡迎使用動作方法](getting-started-with-mvc-part2/_static/image10.png)](getting-started-with-mvc-part2/_static/image9.png)
+[![這是歡迎動作方法](getting-started-with-mvc-part2/_static/image10.png)](getting-started-with-mvc-part2/_static/image9.png)
 
-讓我們的範例中稍微修改，讓我們也可以將部分資訊從 URL 中，傳遞至我們的控制器，例如像這樣: / HelloWorld/歡迎？ 名稱 = Scott&amp;numtimes = 4。 變更您的 歡迎使用方法，以包含兩個參數並更新其如下所示。 請注意，我們使用 C# 選擇性參數功能，表示參數 numTimes 應該預設為 1，是否它不傳入。
+讓我們稍微修改我們的範例，讓我們可以從 URL 將中的某些資訊傳遞至控制器，例如：/HelloWorld/Welcome？ name = Scott&amp;numtimes is = 4。 變更您的 [歡迎使用] 方法以包含兩個參數，並如下所示更新它。 請注意，我們使用了C#選擇性參數功能，表示如果未傳入參數 numtimes is，它應該預設為1。
 
 [!code-csharp[Main](getting-started-with-mvc-part2/samples/sample2.cs)]
 
-執行應用程式，並瀏覽`http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4`任意變更名稱和 numtimes 的值。 系統會自動對應方法中的參數從您的查詢字串，在網址列中的具名的參數。
+執行您的應用程式，並視需要流覽 `http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4` 變更 name 和 numtimes is 的值。 系統會自動將您的查詢字串中的已具名引數對應至方法中的參數。
 
-在這些範例中兩個控制器已執行所有的工作，並具有已直接傳回 HTML。 通常我們不希望我們控制站直接-傳回 HTML，因為結束程式碼很麻煩。 而是我們通常會使用不同的檢視範本檔案協助產生 HTML 回應。 讓我們看看如何我們可以執行這項操作。 關閉瀏覽器，並返回 IDE。
+在這兩個範例中，控制器都已執行所有工作，並已直接傳回 HTML。 一般來說，我們不希望控制器直接傳回 HTML，因為這會使程式碼變得非常繁瑣。 相反地，我們通常會使用個別的視圖範本檔案來協助產生 HTML 回應。 我們來看一下如何做到這一點。 關閉瀏覽器並返回 IDE。
 
 > [!div class="step-by-step"]
 > [上一頁](getting-started-with-mvc-part1.md)

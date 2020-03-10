@@ -9,11 +9,11 @@ ms.assetid: e1fec43e-1daf-49d2-b0c7-7f1b930455cc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 24f88e44e0f878127314774d4e8846f80133413e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599273"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78535802"
 ---
 # <a name="dynamically-populating-a-control-c"></a>以動態方式填入控制項 (C#)
 
@@ -69,4 +69,4 @@ HTML 按鈕（html 控制項，因為我們不需要回傳至伺服器）會接�
 按一下按鈕，就會從伺服器抓取日期（[按一下以查看完整大小的影像](dynamically-populating-a-control-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [下一步](dynamically-populating-a-control-using-javascript-code-cs.md)
+> [下一個](dynamically-populating-a-control-using-javascript-code-cs.md)

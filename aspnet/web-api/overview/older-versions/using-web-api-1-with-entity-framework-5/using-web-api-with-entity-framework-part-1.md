@@ -9,11 +9,11 @@ ms.assetid: 94421d86-68c4-4471-bf5f-82d654a17252
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-1
 msc.type: authoredcontent
 ms.openlocfilehash: a76a18f2bd95969358452085ef342fdca8a386e2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600319"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78556074"
 ---
 # <a name="part-1-overview-and-creating-the-project"></a>第1部分：總覽和建立專案
 
@@ -33,9 +33,9 @@ Entity Framework 是物件/關聯式對應架構。 它會將程式碼中的網�
 
 ![](using-web-api-with-entity-framework-part-1/_static/image2.png)
 
-## <a name="skills-youll-learn"></a>您將學習的技能
+## <a name="skills-youll-learn"></a>您要學習的技術
 
-以下是您將瞭解的內容：
+以下是您要學習的內容：
 
 - 如何搭配 ASP.NET Web API 使用 Entity Framework。
 - 如何使用挖的 .js 建立動態用戶端 UI。
@@ -92,4 +92,4 @@ Entity Framework 是物件/關聯式對應架構。 它會將程式碼中的網�
 [!code-css[Main](using-web-api-with-entity-framework-part-1/samples/sample1.css)]
 
 > [!div class="step-by-step"]
-> [下一步](using-web-api-with-entity-framework-part-2.md)
+> [下一個](using-web-api-with-entity-framework-part-2.md)

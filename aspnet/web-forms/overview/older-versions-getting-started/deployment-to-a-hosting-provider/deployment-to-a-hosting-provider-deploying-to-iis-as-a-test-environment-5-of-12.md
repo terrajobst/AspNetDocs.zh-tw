@@ -9,11 +9,11 @@ ms.assetid: 493b2a66-816c-485c-8315-952ed1085ccc
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: 5d85232ff2cb229d771d517db7173721c9e277bf
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74633394"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78635125"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-iis-as-a-test-environment---5-of-12"></a>使用 Visual Studio 或 Visual Web Developer SQL Server Compact 部署 ASP.NET Web 應用程式：部署至 IIS 作為測試環境-5/12
 
@@ -112,7 +112,7 @@ ms.locfileid: "74633394"
 
 在**方案總管**中，以滑鼠右鍵按一下 ContosoUniversity 專案（而非 ContosoUniversity 專案），然後選取 [**發佈**]。
 
-[**發行 Web** wizard] 隨即出現。
+此時會出現 [發行 Web] 精靈。
 
 ![Publish_Web_wizard_Profile_tab](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image9.png)
 
@@ -233,7 +233,7 @@ Wizard 會自動**前進到 [連線] 索引**標籤。
 
 您現在已將應用程式部署至開發電腦上的 IIS，並在該處進行測試。 這會驗證部署程式是否已將應用程式的內容複寫到正確的位置（不包括您不想要部署的檔案），也會在部署期間正確地 Web Deploy 設定 IIS。 在下一個教學課程中，您將執行一項測試，尋找尚未完成的部署工作：設定*Elmah*資料夾的資料夾許可權。
 
-## <a name="more-information"></a>更多資訊
+## <a name="more-information"></a>詳細資訊
 
 如需在 Visual Studio 中執行 IIS 或 IIS Express 的詳細資訊，請參閱下列資源：
 

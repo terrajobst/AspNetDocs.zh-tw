@@ -1,27 +1,27 @@
 ---
 uid: mvc/overview/getting-started/index
-title: ASP.NET MVC 開始使用 |Microsoft Docs
+title: ASP.NET MVC 消費者入門 |Microsoft Docs
 author: rick-anderson
-description: 了解關於 ASP.NET MVC ASP.NET MVC 可讓您建置動態網站，考量，以及該 g 以清楚分離關注的功能強大、 以模式為基礎的方式...
+description: 瞭解 ASP.NET MVC ASP.NET MVC 提供強大的模式型方式來建立動態網站，讓您能夠清楚區分問題，以及
 ms.author: riande
 ms.date: 08/31/2011
 ms.assetid: d916dbe0-1895-491b-8bb6-93f4594ce757
 msc.legacyurl: /mvc/overview/getting-started
 msc.type: chapter
 ms.openlocfilehash: 8e25c3a01634df6c3d9c81df8ab1738cc079d341
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65121116"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78583010"
 ---
-# <a name="aspnet-mvc-getting-started"></a>ASP.NET MVC 使用者入門
+# <a name="aspnet-mvc-getting-started"></a>ASP.NET MVC 消費者入門
 
-> 下列指導方針說明 ASP.NET MVC 是什麼，示範如何開始使用。
+> 下列指導方針說明 ASP.NET MVC 的內容，並說明如何開始使用。
 
 - [開始使用 ASP.NET MVC 5](introduction/index.md)
 
-    - [快速入門](introduction/getting-started.md)
+    - [使用者入門](introduction/getting-started.md)
     - [新增控制器](introduction/adding-a-controller.md)
     - [新增檢視](introduction/adding-a-view.md)
     - [新增模型](introduction/adding-a-model.md)

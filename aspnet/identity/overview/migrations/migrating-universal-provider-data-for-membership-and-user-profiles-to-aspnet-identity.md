@@ -10,11 +10,11 @@ ms.assetid: 2e260430-d13c-4658-bd05-e256fc0d63b8
 msc.legacyurl: /identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
 msc.type: authoredcontent
 ms.openlocfilehash: 31f02a0cec3c531c45c37b7aad8456e01e80b5ea
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456109"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78616568"
 ---
 # <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a>將成員資格和使用者設定檔的通用提供者資料移轉至 ASP.NET Identity (C#)
 
@@ -41,7 +41,7 @@ by [Pranav 請參閱 rastogi](https://github.com/rustd)、 [Rick Anderson](https
 
 在遷移應用程式以使用新的 ASP.NET Identity 系統之後，會將設定檔資訊還原序列化，並儲存為使用者類別上的屬性。 然後，每個屬性都可以對應到使用者資料表中的資料行。 這裡的優點是，除了每次存取資料資訊時，這些屬性都可以直接使用 user 類別來處理，而不必序列化/還原序列化資料。
 
-## <a name="getting-started"></a>開始使用
+## <a name="getting-started"></a>快速入門
 
 1. 在 Visual Studio 2012 中建立新的 ASP.NET 4.5 Web Forms 應用程式。 目前的範例會使用 Web Forms 範本，但是您也可以使用 MVC 應用程式。  
     ![](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/_static/image1.jpg)

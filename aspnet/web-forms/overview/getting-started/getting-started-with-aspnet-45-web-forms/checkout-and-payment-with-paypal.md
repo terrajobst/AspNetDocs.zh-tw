@@ -9,11 +9,11 @@ ms.assetid: 664ec95e-b0c9-4f43-a39f-798d0f2a7e08
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal
 msc.type: authoredcontent
 ms.openlocfilehash: 62d00a86c6c5845fb894896df65002c7086d039f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74615140"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78565405"
 ---
 # <a name="checkout-and-payment-with-paypal"></a>簽出與使用 PayPal 付款
 
@@ -31,7 +31,7 @@ ms.locfileid: "74615140"
 > 
 > Wingtip 玩具範例應用程式的設計，是為了示範 ASP.NET 網頁程式開發人員所能使用的特定 ASP.NET 概念和功能。 這個範例應用程式未針對擴充性和安全性方面的所有可能情況進行優化。
 
-## <a name="what-youll-learn"></a>您將瞭解的內容：
+## <a name="what-youll-learn"></a>您將學到什麼：
 
 - 如何限制對資料夾中特定頁面的存取。
 - 如何從匿名購物車建立已知的購物車。
@@ -55,7 +55,7 @@ ms.locfileid: "74615140"
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample1.cs)]
 3. 將*OrderDetail.cs*類別新增至 [*模型*] 資料夾。
-4. 將預設程式碼取代為下列程式碼：   
+4. 使用下列程式碼來取代預設程式碼：   
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample2.cs)]
 
@@ -104,77 +104,77 @@ Wingtip 玩具範例應用程式可讓匿名使用者進行審查，並將產品
 1. 以滑鼠右鍵按一下 [*簽出*] 資料夾，**然後選取 [** 新增 -&gt;**新專案**]。  
    隨即顯示 [ 新增項目] 對話方塊。
 2. 選取左側的 [ **Visual C#**  -&gt; **Web**範本] 群組。 然後，在中間窗格中選取 [ **Web 設定檔**]，接受*web.config*的預設名稱，然後選取 [**新增**]。
-3. 將*web.config*檔案中的現有 XML 內容取代為下列各項：  
+3. 使用下列內容來取代 *Web.config* 檔案中的現有 XML 內容：  
 
     [!code-xml[Main](checkout-and-payment-with-paypal/samples/sample4.xml)]
-4. 儲存 web.config*檔案*。
+4. 儲存 *Web.config* 檔案。
 
 Web.config*檔案*會指定 web 應用程式的所有未知使用者都必須被拒絕存取*簽出*資料夾中包含的頁面。 不過，如果使用者已註冊帳戶並登入，他們會是已知的使用者，而且可以存取 [*簽出*] 資料夾中的頁面。
 
 請務必注意，ASP.NET 設定會遵循階層，其中每個*web.config*檔案會將設定值套用至其所在的資料夾，以及其底下的所有子目錄。
 
 <a id="SSLWebForms"></a>
-## <a name="enable-ssl-for-the-project"></a>為專案啟用 SSL
+## <a name="enable-ssl-for-the-project"></a>對專案啟用 SSL
 
- 安全通訊端層（SSL）是定義的通訊協定，可讓網頁伺服器和 Web 用戶端透過使用加密來更安全地進行通訊。 未使用 SSL 時，在用戶端與伺服器之間傳送的資料會開放給具有網路實體存取權的任何人進行封包探查。 此外，數個常見的驗證配置不會受到一般 HTTP 的保護。 特別的是，基本驗證和表單驗證會傳送未加密的認證。 為了安全，這些驗證配置必須使用 SSL。 
+ 安全通訊端層 (SSL) 是一種定義的通訊協定，允許 Web 伺服器和 Web 用戶端透過加密，以更安全的方式進行通訊。 未使用 SSL 時，在用戶端和伺服器之間傳送的資料會開放給任何可實體存取網路的人員進行封包探查。 此外，數種常見驗證結構描述在一般的 HTTP 上並不是很安全。 尤其是，基本驗證和表單驗證會傳送未加密的認證。 為了安全的理由，這些驗證結構描述必須使用 SSL。 
 
 1. 在**方案總管**中，按一下 [ **WingtipToys** ] 專案，然後按**F4**顯示 [**屬性**] 視窗。
 2. 將 [ **SSL 已啟用**] 變更為 `true`。
-3. 複製**SSL URL** ，讓您稍後可以使用它。   
+3. 複製 **SSL URL** ，以便稍後使用。   
  除非您先前已建立 SSL 網站（如下所示），否則 SSL URL 將會 `https://localhost:44300/`。   
     ![專案屬性](checkout-and-payment-with-paypal/_static/image4.png)
 4. 在**方案總管**中，以滑鼠右鍵按一下**WingtipToys**專案，然後按一下 [**屬性**]。
-5. 在左側索引標籤中，按一下 [ **Web**]。
+5. 在左側索引標籤中按一下 [Web]。
 6. 將 [**專案 Url** ] 變更為使用您稍早儲存的**SSL Url** 。   
-    ![Project Web Properties](checkout-and-payment-with-paypal/_static/image5.png)
-7. 按下**CTRL + S**以儲存頁面。
-8. 按 **Ctrl+F5** 執行應用程式。 Visual Studio 會顯示一個選項，讓您避免 SSL 警告。
-9. 按一下 **[是]** 信任 IIS Express SSL 憑證並繼續。   
-    ![IIS Express SSL 憑證詳細資料](checkout-and-payment-with-paypal/_static/image6.png)  
- 隨即會顯示安全性警告。
-10. 按一下 **[是]** ，將憑證安裝到您的 localhost。   
-    ![安全性警告 對話方塊](checkout-and-payment-with-paypal/_static/image7.png)  
- 瀏覽器視窗隨即顯示。
+    ![專案 Web 屬性](checkout-and-payment-with-paypal/_static/image5.png)
+7. 按 **CTRL+S**儲存頁面。
+8. 按 **CTRL+F5** 執行應用程式。 Visual Studio 將會顯示可避開 SSL 警告的選項。
+9. 按一下 [ **是** ] 以信任 IIS Express SSL 憑證並繼續。   
+    ![IIS Express SSL 憑證資訊](checkout-and-payment-with-paypal/_static/image6.png)  
+ 隨即顯示一則安全性警告。
+10. 按一下 [ **是** ] 將憑證安裝到您的 localhost。   
+    ![[安全性警告] 對話方塊](checkout-and-payment-with-paypal/_static/image7.png)  
+ 瀏覽器視窗隨即出現。
 
 您現在可以使用 SSL，輕鬆地在本機測試 Web 應用程式。
 
 <a id="OAuthWebForms"></a>
 ## <a name="add-an-oauth-20-provider"></a>新增 OAuth 2.0 提供者
 
-ASP.NET Web form 提供了增強的成員資格和驗證選項。 這些增強功能包括 OAuth。 OAuth 是一種開放式通訊協定，可讓 web、行動和桌面應用程式以簡單、標準的方法進行安全授權。 ASP.NET Web Forms 範本會使用 OAuth 將 Facebook、Twitter、Google 和 Microsoft 公開為驗證提供者。 雖然本教學課程僅使用 Google 作為驗證提供者，但您可以輕鬆地修改程式碼來使用任何提供者。 執行其他提供者的步驟，與您在本教學課程中將會看到的步驟非常類似。
+ASP.NET Web Forms 提供成員資格和驗證的增強功能選項。 這些增強功能包括 OAuth。 OAuth 是一種開放式通訊協定，可讓 Web、行動和桌面應用程式以簡單、標準的方法執行安全授權。 ASP.NET Web Forms 範本會使用 OAuth 將 Facebook、Twitter、Google 和 Microsoft 公開為驗證提供者。 雖然本教學課程僅使用 Google 作為驗證提供者，但您可以輕易修改程式碼來使用任何提供者。 實作其他提供者的步驟，與您將在本教學課程中看到的步驟極為類似。
 
-除了驗證，本教學課程也會使用角色來執行授權。 只有您新增至 `canEdit` 角色的使用者才能變更資料（建立、編輯或刪除連絡人）。
+除了驗證，本教學課程也會使用角色來實作授權。 只有您新增至 `canEdit` 角色的使用者才能建立、編輯或刪除連絡人。
 
 > [!NOTE] 
 > 
 > Windows Live 應用程式只接受工作網站的即時 URL，因此您無法使用本機網站 URL 來測試登入。
 
-下列步驟可讓您新增 Google 驗證提供者。
+下列步驟可新增 Google 驗證提供者。
 
 1. 開啟*應用程式\_Start\Startup.Auth.cs*檔案。
-2. 移除 `app.UseGoogleAuthentication()` 方法中的批註字元，讓方法顯示如下： 
+2. 移除 `app.UseGoogleAuthentication()` 方法中的註解字元，然後此方法會顯示如下： 
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample5.cs)]
-3. 流覽至[Google 開發人員主控台](https://console.developers.google.com/)。 您也必須使用您的 Google 開發人員電子郵件帳戶（gmail.com）登入。 如果您沒有 Google 帳戶，請選取 [**建立帳戶**] 連結。   
-   接下來，您會看到**Google 開發人員主控台**。   
-    ![Google 開發人員主控台](checkout-and-payment-with-paypal/_static/image8.png)
+3. 瀏覽至 [Google Developers Console](https://console.developers.google.com/)。 您還需要使用您的 Google 開發人員電子郵件帳戶 (gmail.com) 登入。 如果您沒有 Google 帳戶，請選取 [ **建立帳戶** ] 連結。   
+   接下來，您會看到 [ **Google 開發人員主控台**]。   
+    ![Google Developers Console](checkout-and-payment-with-paypal/_static/image8.png)
 4. 按一下 [**建立專案**] 按鈕，然後輸入 [專案名稱] 和 [識別碼] （您可以使用預設值）。 然後按一下 [**合約] 核取方塊**和 [**建立**] 按鈕。  
 
     ![Google-新增專案](checkout-and-payment-with-paypal/_static/image9.png)
 
-   幾秒後，將會建立新的專案，而您的瀏覽器會顯示 [新增專案] 頁面。
+   幾秒鐘內即可建立新的專案，您的瀏覽器便會顯示新的專案頁面。
 5. 在左側索引標籤中，按一下 [ **api &amp; auth**]，然後按一下 [**認證**]。
 6. 按一下 [ **OAuth**] 底下的 [**建立新的用戶端識別碼**]。   
-   [**建立用戶端識別碼**] 對話方塊隨即顯示。   
-    ![Google-建立用戶端識別碼](checkout-and-payment-with-paypal/_static/image10.png)
+   [ **建立用戶端識別碼** ] 對話方塊隨即出現。   
+    ![Google -  建立用戶端識別碼](checkout-and-payment-with-paypal/_static/image10.png)
 7. 在 [**建立用戶端識別碼**] 對話方塊中，保留應用程式類型的預設**Web 應用程式**。
 8. 將**授權的 JavaScript 來源**設定為您稍早在本教學課程中使用的 SSL URL （除非您已建立其他 SSL 專案，否則`https://localhost:44300/`）。   
-   此 URL 是您的應用程式的來源。 在此範例中，您只會輸入 localhost 測試 URL。 不過，您可以輸入多個 Url 來考慮 localhost 和生產環境。
-9. 將授權的重新**導向 URI**設定為下列內容： 
+   此 URL 會是應用程式的原始來源。 在此範例中，您將僅輸入 localhost 測試 URL。 不過，您可以輸入多個 Url 來考慮 localhost 和生產環境。
+9. 將 [Authorized Redirect URI] 設定如下： 
 
     [!code-html[Main](checkout-and-payment-with-paypal/samples/sample6.html)]
 
-   此值是 ASP.NET OAuth 使用者與 google OAuth 伺服器通訊的 URI。 請記住您先前使用的 SSL URL （除非您已建立其他 SSL 專案，否則 `https://localhost:44300/`）。
+   此值是 ASP.NET OAuth 使用者與 Google OAuth 伺服器進行通訊的 URI。 請記住您先前使用的 SSL URL （除非您已建立其他 SSL 專案，否則 `https://localhost:44300/`）。
 10. 按一下 [**建立用戶端識別碼**] 按鈕。
 11. 在 Google 開發人員主控台的左側功能表上，按一下 [**同意畫面**] 功能表項目，然後設定您的電子郵件地址和產品名稱。 當您完成表單時，請按一下 [**儲存**]。
 12. 按一下 [ **api** ] 功能表項目、向下流覽，然後按一下 [ **Google + API**] 旁的 [**關閉**] 按鈕。   
@@ -185,16 +185,16 @@ ASP.NET Web form 提供了增強的成員資格和驗證選項。 這些增強�
 14. 在 Visual Studio 中，將**用戶端識別碼**和**用戶端密碼**複製並貼到方法中，以更新*Startup.Auth.cs*頁面的 `UseGoogleAuthentication` 方法。 以下顯示的**用戶端識別碼**和**用戶端秘密**值為範例，因此無法使用。 
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample7.cs?highlight=64-65)]
-15. 按**CTRL + F5**以建立並執行應用程式。 按一下 [**登入**] 連結。
+15. 按 **CTRL+F5** 以建置並執行應用程式。 按一下 [登入] 連結。
 16. 在 [**使用其他服務登入**] 底下，按一下 [ **Google**]。  
     ![登入](checkout-and-payment-with-paypal/_static/image11.png)
-17. 如果您需要輸入您的認證，系統會將您重新導向至您將在其中輸入認證的 google 網站。  
-    ![Google 登入](checkout-and-payment-with-paypal/_static/image12.png)
+17. 如果您需要輸入認證，您會被重新導向至 Google 網站，您可以在此輸入認證。  
+    ![Google - 登入](checkout-and-payment-with-paypal/_static/image12.png)
 18. 在您輸入認證之後，系統會提示您將許可權授與您剛建立的 web 應用程式。  
     ![專案預設服務帳戶](checkout-and-payment-with-paypal/_static/image13.png)
-19. 按一下 [**接受**]。 您現在會重新導向回到**WingtipToys**應用程式的 [**註冊**] 頁面，您可以在其中註冊 Google 帳戶。  
-    ![向您的 Google 帳戶註冊](checkout-and-payment-with-paypal/_static/image14.png)
-20. 您可以選擇變更 Gmail 帳戶所使用的本機電子郵件註冊名稱，但通常會想要保留預設的電子郵件別名（也就是您用於驗證的人）。 按一下 [**登入**]，如上所示。
+19. 按一下 [接受]。 您現在會重新導向回到**WingtipToys**應用程式的 [**註冊**] 頁面，您可以在其中註冊 Google 帳戶。  
+    ![以您的 Google 帳戶註冊](checkout-and-payment-with-paypal/_static/image14.png)
+20. 您可以選擇變更用於 Gmail 帳戶的本機電子郵件註冊名稱，但您通常會想保留預設電子郵件別名 (也就是，您用來驗證的名稱)。 按一下 [**登入**]，如上所示。
 
 ### <a name="modifying-login-functionality"></a>修改登入功能
 
@@ -290,9 +290,9 @@ PayPal 是以網路為基礎的計費平臺，可接受線上商家的付款。 
    隨即顯示 [ 新增項目] 對話方塊。
 2. 在左側 [**已安裝**] 窗格中的 [**視覺效果C#**  ] 底下，選取 [程式**代碼**]。
 3. 從中間窗格中，選取 [**類別**]。 將這個新類別命名為**PayPalFunctions.cs**。
-4. 按一下 [加入]。  
+4. 按一下 [新增]。  
    新的類別檔案會顯示在編輯器中。
-5. 將預設程式碼取代為下列程式碼：  
+5. 使用下列程式碼來取代預設程式碼：  
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample12.cs)]
 6. 新增您稍早在本教學課程中所顯示的商家 API 認證（使用者名稱、密碼和簽章），讓您可以對 PayPal 測試環境進行函式呼叫。  
@@ -381,7 +381,7 @@ Wingtip 玩具範例應用程式會藉由流覽至 PayPal 測試網站，並返�
 
 > [!NOTE] 
 > 
-> **首先**
+> **秘訣**
 > 
 > 請注意，在*CheckoutReview*的標記中，會使用 `<ItemStyle>` 標記來變更**DetailsView**控制項（接近頁面底部）中的專案樣式。 藉由在 [**設計檢視**] 中查看頁面（在 Visual Studio 的左下角選取 [**設計**]），然後選取 [ **DetailsView** ] 控制項，然後選取 [**智慧標籤**] （控制項右上方的箭號圖示），您就能夠看到**DetailsView**工作。
 > 
@@ -482,7 +482,7 @@ Wingtip 玩具範例應用程式會藉由流覽至 PayPal 測試網站，並返�
  您可能需要選取資料夾的 [**顯示所有**檔案] 圖示。
 4. 以滑鼠右鍵按一下*Wingtiptoys .mdf*資料庫檔案，然後選取 [**開啟**]。  
     隨即顯示 [**伺服器總管**]。
-5. 展開 [**資料表]** 資料夾。
+5. 展開 **[資料表]** 資料夾。
 6. 以滑鼠右鍵按一下**Orders**資料表，然後選取 [**顯示資料表資料**]。  
  [**訂單**] 資料表隨即顯示。
 7. 檢查**PaymentTransactionID**資料行以確認交易成功。 

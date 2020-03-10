@@ -9,11 +9,11 @@ ms.assetid: d522639a-5aca-421e-9a76-d73f95607f57
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/assigning-roles-to-users-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 3346e47cf604ed1d4003ca83203116666e37cb1b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74633731"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78571768"
 ---
 # <a name="assigning-roles-to-users-c"></a>將角色指派給使用者 (C#)
 
@@ -29,7 +29,7 @@ ms.locfileid: "74633731"
 
 在本教學課程中，我們將建立兩個 ASP.NET 網頁，協助管理哪些使用者屬於哪些角色。 第一頁將包含一些設備，可查看哪些使用者屬於指定的角色、特定使用者所屬的角色，以及從特定角色指派或移除特定使用者的能力。 在第二頁中，我們將擴充 CreateUserWizard 控制項，使其包含一個步驟來指定新建立之使用者所屬的角色。 這在系統管理員能夠建立新使用者帳戶的情況下很有用。
 
-讓我們開始吧！
+現在就開始吧！
 
 ## <a name="listing-what-users-belong-to-what-roles"></a>列出哪些使用者屬於哪些角色
 

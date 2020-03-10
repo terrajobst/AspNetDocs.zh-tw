@@ -9,11 +9,11 @@ ms.assetid: 0fd07176-b74b-48f0-9fac-0f02e3ffa213
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-5
 msc.type: authoredcontent
 ms.openlocfilehash: fc0463420207eba764014b8ec7123c5150e38247
-ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445765"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78557348"
 ---
 # <a name="create-data-transfer-objects-dtos"></a>建立資料傳輸物件 (DTO)
 
@@ -21,7 +21,7 @@ ms.locfileid: "73445765"
 
 [下載已完成的專案](https://github.com/MikeWasson/BookService)
 
-現在，我們的 Web API 會向用戶端公開資料庫實體。 用戶端會接收直接對應至資料庫資料表的資料。 不過，這不一定是不錯的主意。 有時候您會想要變更傳送給用戶端之資料的圖形。 例如，您可能會要：
+現在，我們的 Web API 會向用戶端公開資料庫實體。 用戶端會接收直接對應至資料庫資料表的資料。 不過，這不一定是不錯的主意。 有時候您會想要變更傳送給用戶端之資料的圖形。 例如，您可能要：
 
 - 移除迴圈參考（請參閱上一節）。
 - 隱藏用戶端不應查看的特定屬性。

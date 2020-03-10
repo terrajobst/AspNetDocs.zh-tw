@@ -1,23 +1,23 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/index
-title: How-Do-I | Microsoft Docs
+title: How Do-I |Microsoft Docs
 author: rick-anderson
-description: 在本節中的影片涵蓋 ASP.NET MVC 中，包括如何建置 ' Storefront'-從開始到完成整個電子商務應用程式。
+description: 本節中的影片涵蓋 ASP.NET MVC，包括如何建立「店面」-整個電子商務應用程式的開始到完成。
 ms.author: riande
 ms.date: 09/15/2011
 ms.assetid: 9bc6c53a-3e54-4f9d-8bef-0f3359aecf7b
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i
 msc.type: chapter
 ms.openlocfilehash: 7c2fd0d57cdd6775eb027c0dc9b360443bacbfed
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65120518"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78537433"
 ---
 # <a name="how-do-i"></a>如何
 
-> 在本節中的影片涵蓋 ASP.NET MVC 中，包括如何建置 「 Storefront"-從開始到完成整個電子商務應用程式。
+> 本節中的影片涵蓋 ASP.NET MVC，包括如何建立「店面」-整個電子商務應用程式的開始到完成。
 
 - [使用 ASP.NET MVC 建立 Tasklist 應用程式](creating-a-tasklist-application-with-aspnet-mvc.md)
 - [使用 ASP.NET MVC 在 15 分鐘內建立影片資料庫應用程式](creating-a-movie-database-application-in-15-minutes-with-aspnet-mvc.md)
@@ -33,10 +33,10 @@ ms.locfileid: "65120518"
 - [顯示資料庫資料的資料表](displaying-a-table-of-database-data.md)
 - [適用於開發人員建置 NerdDinner 的 ASP.NET MVC 80 分鐘技術影片是什麼](what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner.md)
 - [ASP.NET MVC 3 分鐘概觀影片適合決策者的原因](why-aspnet-mvc-3-minute-overview-video-for-decision-makers.md)
-- [ASP.NET MVC:適用於開發人員的方式 10 分鐘技術影片](aspnet-mvc-how-10-minute-technical-video-for-developers.md)
+- [ASP.NET MVC：10 分鐘的技術影片如何幫助開發人員](aspnet-mvc-how-10-minute-technical-video-for-developers.md)
 - [在 ASP.NET MVC Web 應用程式中傳回 AJAX 呼叫的 JSON 格式化資料](how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application.md)
 - [使用 ASP.NET MVC 部分檢視中的資料](how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
-- [實作 ASP.NET MVC 檢視管理資料的檢視模型](how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
+- [執行視圖模型來管理 ASP.NET MVC 視圖的資料](how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
 - [建立 MVC 應用程式的自訂 HTML 協助程式](how-do-i-create-a-custom-html-helper-for-an-mvc-application.md)
 - [使用 MVC 應用程式中的模型繫結器](how-do-i-work-with-model-binders-in-an-mvc-application.md)
 - [在 MVC 應用程式中使用 HttpVerbs 屬性](how-do-i-use-httpverbs-attributes-in-an-mvc-application.md)

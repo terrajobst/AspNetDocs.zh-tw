@@ -9,11 +9,11 @@ ms.assetid: f1d2a916-626c-4a54-8df4-77e6b9fff355
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-details-and-delete-methods
 msc.type: authoredcontent
 ms.openlocfilehash: da06815b5c1d76a939fdfb77ce11774081dfb881
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456396"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78582506"
 ---
 # <a name="examining-the-details-and-delete-methods"></a>檢查 Details 和 Delete 方法
 
@@ -53,7 +53,7 @@ Code First 可讓您輕鬆地使用 `Find` 方法來搜尋資料。 方法內建
 
 [!code-csharp[Main](examining-the-details-and-delete-methods/samples/sample4.cs)]
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 您現在有一個完整的 ASP.NET MVC 應用程式，可將資料儲存在本機 DB 資料庫中。 您可以建立、讀取、更新、刪除及搜尋電影。
 
@@ -69,4 +69,4 @@ Code First 可讓您輕鬆地使用 `Find` 方法來搜尋資料。 方法內建
 — [Scott Hanselman](http://www.hanselman.com/blog/) twitter： [@shanselman](https://twitter.com/shanselman)
 
 > [!div class="step-by-step"]
-> [[上一步]](adding-validation.md)
+> [上一篇](adding-validation.md)

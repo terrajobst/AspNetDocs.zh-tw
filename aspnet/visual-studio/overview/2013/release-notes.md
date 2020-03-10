@@ -9,11 +9,11 @@ ms.assetid: 08815768-2702-42ae-ae85-0a59934a11d1
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
 ms.openlocfilehash: d8af9c8e7ee1316a5eac90c5959d07c628154e09
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600443"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78557929"
 ---
 # <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>適用於 Visual Studio 2013 的 ASP.NET 和 Web 工具版本資訊
 
@@ -24,7 +24,7 @@ ms.locfileid: "74600443"
 ## <a name="contents"></a>內容
 
 - [安裝注意事項](#TOC1)
-- [文件 (英文)](#TOC2)
+- [文件](#TOC2)
 - [軟體需求](#TOC4)
 
 ### <a name="new-features-in-aspnet-and-web-tools-for-visual-studio-2013"></a>Visual Studio 2013 ASP.NET 和 Web 工具的新功能
@@ -54,7 +54,7 @@ ms.locfileid: "74600443"
 Visual Studio 2013 的 ASP.NET 和 Web 工具會配套在主要安裝程式中，而且可以在[這裡](https://www.asp.net/downloads)下載。
 
 <a id="TOC2"></a>
-## <a name="documentation"></a>Documentation
+## <a name="documentation"></a>文件
 
 有關 Visual Studio 2013 ASP.NET 和 Web 工具的教學課程和其他資訊可從[ASP.NET 網站](https://www.asp.net/)取得。
 
@@ -82,7 +82,7 @@ ASP.NET 和 Web 工具需要 Visual Studio 2013。
 
 新的對話方塊可讓您變更許多範本的預設驗證選項。 例如，當您建立 ASP.NET Web Forms 專案時，您可以選取下列任何選項：
 
-- 無驗證
+- 不需要驗證
 - 個別使用者帳戶（ASP.NET 成員資格或社交提供者登入）
 - 組織帳戶（在網際網路應用程式中 Active Directory）
 - Windows 驗證（在內部網路應用程式中 Active Directory）
@@ -139,7 +139,7 @@ Visual Studio 2013 也隨附內建的 CoffeeScript 和 LESS 編輯器。 較少�
 <a id="publish"></a>
 ## <a name="web-publish-enhancements"></a>Web 發行增強功能
 
-Visual Studio 2013 包含新的和增強的 Web 發佈功能。 以下是其中幾個：
+Visual Studio 2013 包含新的和增強的 Web 發佈功能。 以下提供其中一些範例：
 
 - 輕鬆地[自動化 web.config 檔案加密](https://go.microsoft.com/fwlink/?LinkId=325529)。 （這個連結和下列兩個重點，是 MSDN 上的檔，在10/17 年的第一天之後可能無法使用）。
 - 輕鬆地[在部署期間自動讓應用程式離線](https://go.microsoft.com/fwlink/?LinkId=325530)。
@@ -218,7 +218,7 @@ ASP.NET Web API 現在支援屬性路由，感謝 Tim McCall 的貢獻， [http:
 
 如需屬性路由的詳細資訊，請參閱[WEB API 2 中的屬性路由](../../../web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2.md)。
 
-### <a name="oauth-20"></a>OAuth 2。0
+### <a name="oauth-20"></a>OAuth 2.0
 
 Web API 和單一頁面應用程式專案範本現在支援使用 OAuth 2.0 的授權。 OAuth 2.0 是一種架構，可授權用戶端存取受保護的資源。 它適用于各種用戶端，包括瀏覽器和行動裝置。
 
@@ -280,9 +280,9 @@ Web API 2 可讓您更輕鬆地對 API 控制器進行單元測試。 只要使�
 
 感謝 Brock Allen 的另一個絕佳貢獻，ASP.NET 現在完全支援跨原始來源要求共用（CORS）。
 
-瀏覽器安全性可防止網頁對另一個網域發出 AJAX 要求。 [CORS](http://www.w3.org/TR/cors/)是一種 W3C 標準，可讓伺服器放寬相同的原始原則。 使用 CORS，伺服器可以明確允許某些跨原始來源要求，同時拒絕其他要求。
+瀏覽器安全性可防止網頁對另一個網域提出 AJAX 要求。 [CORS](http://www.w3.org/TR/cors/)是一種 W3C 標準，可讓伺服器放寬相同的原始原則。 使用 CORS，伺服器可以明確允許某些跨源要求，然而拒絕其他要求。
 
-Web API 2 現在支援 CORS，包括自動處理預檢要求。 如需詳細資訊，請參閱[在 ASP.NET Web API 中啟用跨原始來源要求](../../../web-api/overview/security/enabling-cross-origin-requests-in-web-api.md)。
+Web API 2 現在支援 CORS，包括自動處理預檢要求。 如需詳細資訊，請參閱 [在 ASP.NET Web API 中啟用跨原始來源要求](../../../web-api/overview/security/enabling-cross-origin-requests-in-web-api.md)。
 
 ### <a name="authentication-filters"></a>驗證篩選
 
@@ -597,7 +597,7 @@ ASP.NET 應用程式暫停是 .NET Framework 4.5.1 中的遊戲變更功能，�
 - [新的封裝還原不適用於 Wix 專案](https://nuget.codeplex.com/workitem/3598)–將在即將推出的 nuget.exe 下載和[Nuget. 命令列套件](http://www.nuget.org/packages/NuGet.CommandLine/)更新中修正。
 - [自動套件還原不適用於解決方案資料夾下的專案](https://nuget.codeplex.com/workitem/3625)–將在 NuGet 2.8 中修正。
 
-### <a name="aspnet-web-api"></a>ASP.NET Web 應用程式開發介面
+### <a name="aspnet-web-api"></a>ASP.NET Web API
 
 1. `ODataQueryOptions<T>.ApplyTo(IQueryable)` 不會 `IQueryable<T>` 一律傳回，因為我們新增了 `$select` 和 `$expand`的支援。
 
@@ -659,7 +659,7 @@ ASP.NET 應用程式暫停是 .NET Framework 4.5.1 中的遊戲變更功能，�
 
     `@Html.EditorFor(person => person.Age)`
 
-    收件者：
+    收件者:
 
     `@Html.TextBoxFor(person => person.Age)`
 4. ASP.NET MVC 5 不再支援部分信任。 連結至 MVC 或 WebAPI 二進位檔的專案應該會移除[SecurityTransparent](https://msdn.microsoft.com/library/system.security.securitytransparentattribute.aspx)屬性和[AllowPartiallyTrustedCallers](https://msdn.microsoft.com/library/system.security.allowpartiallytrustedcallersattribute.aspx)屬性。 移除這些屬性將會排除編譯器錯誤，如下所示。
@@ -672,13 +672,13 @@ ASP.NET 應用程式暫停是 .NET Framework 4.5.1 中的遊戲變更功能，�
 
 SPA 範本提供使用 Facebook 的外部登入。 當使用範本建立的專案在本機執行時，登入可能會導致 IE 當機。
 
-解決方案：
+解決方案:
 
 1. 在網際網路區域中主控網站;或
 
 2. 在 IE 以外的瀏覽器中測試案例。
 
-### <a name="web-forms-scaffolding"></a>Web Forms 樣板
+### <a name="web-forms-scaffolding"></a>Web Forms Scaffolding
 
 Web form 樣板已從 VS2013 中移除，並將在未來的更新中提供 Visual Studio。 不過，您仍然可以在 Web form 專案中使用樣板，方法是新增 MVC 相依性並產生 MVC 的樣板。 您的專案將包含 Web Forms 和 MVC 的組合。
 

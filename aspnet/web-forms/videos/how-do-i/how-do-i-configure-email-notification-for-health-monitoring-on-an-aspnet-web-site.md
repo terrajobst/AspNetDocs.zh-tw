@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-configure-email-notification-for-health-monitoring-on-an-aspnet-web-site
-title: '[How Do i:]設定 ASP.NET 網站上的健全狀況監視的電子郵件通知 |Microsoft Docs'
+title: '[How Do I：]在 ASP.NET 網站上設定健康情況監控的電子郵件通知 |Microsoft Docs'
 author: rick-anderson
-description: 在此影片的 Chris Pels 示範如何設定 ASP.NET 網站中監視的健全狀況的電子郵件通知。 首先，了解如何設定傳送 e...
+description: 在這段影片中，Chris Pels 示範如何在 ASP.NET 網站中設定健康情況監控的電子郵件通知。 首先，請參閱如何設定電子郵件傳送 。
 ms.author: riande
 ms.date: 09/11/2008
 ms.assetid: 1fa884c0-582e-4dc6-abb6-a5ec70d43ffb
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-configure-email-notification-for-health-monitoring-on-an-aspnet-web-site
 msc.type: video
 ms.openlocfilehash: 8c6512cebfb141dbf2f4c19e614aac99ccd41dac
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59413694"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78624737"
 ---
-# <a name="how-do-i-configure-email-notification-for-health-monitoring-on-an-aspnet-web-site"></a>[How Do i:]設定健全狀況監視的 ASP.NET 網站上的電子郵件通知
+# <a name="how-do-i-configure-email-notification-for-health-monitoring-on-an-aspnet-web-site"></a>[How Do I：]在 ASP.NET 網站上設定健全狀況監視的電子郵件通知
 
-藉由[Chris Pels](https://twitter.com/chrispels)
+依[Chris Pels](https://twitter.com/chrispels)
 
-在此影片的 Chris Pels 示範如何設定 ASP.NET 網站中監視的健全狀況的電子郵件通知。 首先，了解如何設定 ASP.NET 網站使用中的電子郵件傳送&lt;電子郵件設定&gt; web.config 檔案中的項目。 接下來，了解如何新增 SimpleMailWebEventProvider 會傳送健康監視事件做為提供者的電子郵件。 然後請參閱標準健康監視事件，可用於傳送電子郵件通知，藉由檢查機器層級健全狀況監視設定。 檢閱可用的事件之後，請參閱規則實作會將 [所有事件] 都對應到電子郵件提供者。 啟動網站時數個電子郵件會傳送，然後檢查已在 Outlook 中接收。 最後，會討論其中的事件可能會對應至健全狀況監視的電子郵件提供者的一些基本原則。
+在這段影片中，Chris Pels 示範如何在 ASP.NET 網站中設定健康情況監控的電子郵件通知。 首先，請參閱如何使用 web.config 檔案中的 &lt;電子郵件設定&gt; 元素，在 ASP.NET 網站中設定傳送電子郵件。 接下來，請瞭解如何新增 SimpleMailWebEventProvider，以傳送健康情況監控事件的電子郵件作為提供者。 然後查看電腦層級健全狀況監視設定，以查看可與電子郵件通知搭配使用的標準健全狀況監視事件。 在檢查可用的事件之後，請參閱將「所有事件」對應至電子郵件提供者的已執行規則。 啟動網站時，會傳送電子郵件，並在 Outlook 收到時進行檢查。 最後，討論哪些事件可能對應至健全狀況監視電子郵件提供者的一些基本原則。
 
-[&#9654;觀看影片 （25 分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-configure-email-notification-for-health-monitoring-on-an-aspnet-web-site)
+[&#9654;觀看影片（25分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-configure-email-notification-for-health-monitoring-on-an-aspnet-web-site)

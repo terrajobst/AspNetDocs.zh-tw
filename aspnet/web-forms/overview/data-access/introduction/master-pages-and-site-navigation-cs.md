@@ -9,11 +9,11 @@ ms.assetid: 5aee8202-a4e3-4aa9-8a95-cd5d156cea4c
 msc.legacyurl: /web-forms/overview/data-access/introduction/master-pages-and-site-navigation-cs
 msc.type: authoredcontent
 ms.openlocfilehash: e1ddd43524a61ff2e012171eba1a8dc8efbf8f1d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74587712"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78530839"
 ---
 # <a name="master-pages-and-site-navigation-c"></a>主版頁面與網站導覽 (C#)
 
@@ -37,7 +37,7 @@ ms.locfileid: "74587712"
 
 ## <a name="step-1-creating-the-master-page"></a>步驟1：建立主版頁面
 
-第一個步驟是建立網站的主版頁面。 現在，我們的網站只包含具類型的資料集（`Northwind.xsd`、`App_Code` 資料夾中）、BLL 類別（`ProductsBLL.cs`、`CategoriesBLL.cs`等等、全部在 `App_Code` 資料夾中）、設定檔（`NORTHWND.MDF`），以及 CSS 樣式表單檔案（`App_Data`）。 我從前兩個教學課程中，清除了使用 DAL 和 BLL 示範的頁面和檔案，因為我們將在未來的教學課程中更詳細地 reexamining 這些範例。
+第一個步驟是建立網站的主版頁面。 現在，我們的網站只包含具類型的資料集（`Northwind.xsd`、`App_Code` 資料夾中）、BLL 類別（`ProductsBLL.cs`、`CategoriesBLL.cs`等等、全部在 `App_Code` 資料夾中）、設定檔（`NORTHWND.MDF`），以及 CSS 樣式表單檔案（`App_Data`）。`Web.config``Styles.css` 我從前兩個教學課程中，清除了使用 DAL 和 BLL 示範的頁面和檔案，因為我們將在未來的教學課程中更詳細地 reexamining 這些範例。
 
 ![專案中的檔案](master-pages-and-site-navigation-cs/_static/image4.png)
 

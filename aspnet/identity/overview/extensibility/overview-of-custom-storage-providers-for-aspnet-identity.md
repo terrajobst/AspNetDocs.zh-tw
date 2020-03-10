@@ -10,11 +10,11 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
 ms.openlocfilehash: 21baedf6285b411f89627df9ca25d47a2a42e387
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519098"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78584410"
 ---
 # <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>ASP.NET Identity 的自訂儲存體提供者概觀
 
@@ -29,7 +29,7 @@ ms.locfileid: "76519098"
 > ## <a name="software-versions-used-in-the-tutorial"></a>教學課程中使用的軟體版本
 > 
 > 
-> - Visual Studio 2013 (Update 2)
+> - Update 2 的 Visual Studio 2013
 > - ASP.NET Identity 2
 
 ## <a name="introduction"></a>簡介
@@ -68,7 +68,7 @@ ASP.NET Identity 是由稱為「經理」和「商店」的類別所組成。 �
 
 若要執行自訂的儲存提供者，您必須瞭解與 ASP.NET Identity 搭配使用的資料類型，並決定與您的應用程式相關的功能。
 
-| Data | 描述 |
+| 資料 | 說明 |
 | --- | --- |
 | 使用者 | 網站的已註冊使用者。 包含使用者識別碼和使用者名稱。 如果使用者使用您網站特有的認證登入（而不是使用來自外部網站的認證，例如 Facebook），則可能會包含雜湊的密碼，以及用來指出使用者認證是否有任何變更的安全性戳記。 也可能包括電子郵件地址、電話號碼、是否已啟用雙因素驗證、目前的失敗登入次數，以及帳戶是否已鎖定。 |
 | 使用者宣告 | 使用者的一組語句（或宣告），代表使用者的身分識別。 可以啟用使用者身分識別的更大運算式，而不是透過角色來達成。 |
@@ -86,7 +86,7 @@ ASP.NET Identity 是由稱為「經理」和「商店」的類別所組成。 �
 
 在資料存取層中，您會提供將資料從 ASP.NET Identity 儲存至資料來源的邏輯。 您自訂的儲存提供者的資料存取層可能包含下列用來儲存使用者和角色資訊的類別。
 
-| 類別 | 描述 | 範例 |
+| 類別 | 說明 | 範例 |
 | --- | --- | --- |
 | 內容 | 封裝資訊，以連接到您的持續性機制並執行查詢。 此類別是資料存取層的核心。 其他資料類別則需要這個類別的實例，才能執行其作業。 您也會使用此類別的實例來初始化您的存放區類別。 | [MySQLDatabase](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/MySQLDatabase.cs) |
 | 使用者儲存體 | 儲存並抓取使用者資訊（例如使用者名稱和密碼雜湊）。 | [UserTable （MySQL）](https://github.com/aspnet/samples/blob/master/samples/aspnet/Identity/AspNet.Identity.MySQL/UserTable.cs) |

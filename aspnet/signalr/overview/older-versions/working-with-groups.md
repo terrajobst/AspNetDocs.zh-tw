@@ -1,107 +1,107 @@
 ---
 uid: signalr/overview/older-versions/working-with-groups
-title: 使用群組 signalr 1.x |Microsoft Docs
+title: 在 SignalR 1.x 中使用群組 |Microsoft Docs
 author: bradygaster
-description: 本主題描述如何保存中樞 API 使用的群組成員資格資訊。
+description: 本主題說明如何使用中樞 API 來保存群組成員資格資訊。
 ms.author: bradyg
 ms.date: 10/21/2013
 ms.assetid: 22929efd-68c9-4609-b76d-f8ba42fda01e
 msc.legacyurl: /signalr/overview/older-versions/working-with-groups
 msc.type: authoredcontent
 ms.openlocfilehash: 5f50dc162d6cdcfbf2261e6a751f5f99078d5c54
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113682"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78579363"
 ---
 # <a name="working-with-groups-in-signalr-1x"></a>使用 SignalR 1.x 中的群組
 
-藉由[Patrick Fletcher](https://github.com/pfletcher)， [Tom FitzMacken](https://github.com/tfitzmac)
+由一[Fletcher](https://github.com/pfletcher)， [Tom FitzMacken](https://github.com/tfitzmac)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-> 本主題描述如何將使用者新增至群組，並將保存群組成員資格資訊。
+> 本主題說明如何將使用者新增至群組，並保存群組成員資格資訊。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-Signalr 的群組提供一種方法將訊息廣播至連線的用戶端的指定子集。 群組可以有任意數目的用戶端，並在用戶端可以是任意數目的群組成員。 您不需要明確建立群組。 作用中，群組會自動建立第一次您 Groups.Add，呼叫中指定其名稱，並從它的成員資格中移除最後一次連接時，就會刪除。 如需使用群組，請參閱 <<c0> [ 如何管理群組成員資格從中樞類別](index.md)中樞 API-Server 指南中。
+SignalR 中的群組提供一種方法，可將訊息廣播到已連線用戶端的指定子集。 群組可以有任意數目的用戶端，而用戶端可以是任意數目群組的成員。 您不需要明確建立群組。 實際上，當您第一次在群組的呼叫中指定其名稱時，會自動建立群組。 [加入] 會在您從其中的成員資格移除最後一個連接時刪除。 如需使用群組的簡介，請參閱《中樞 API-伺服器指南》中的[如何從中樞類別管理群組成員資格](index.md)。
 
-取得群組成員資格清單或群組的清單中沒有任何 API。 SignalR 將訊息傳送至用戶端和 pub/sub 模型，為基礎的群組，伺服器無法維護的群組或群組成員資格清單。 這可協助最大化擴充性，因為每當您將節點加入至 web 伺服陣列時，SignalR 維護任何狀態傳播到新的節點。
+沒有 API 可取得群組成員資格清單或群組清單。 SignalR 會根據 pub/sub 模型將訊息傳送至用戶端和群組，而伺服器不會維護群組或群組成員資格的清單。 這有助於最大化擴充性，因為每當您將節點加入至 web 伺服陣列時，SignalR 維護的任何狀態都必須傳播到新的節點。
 
-當您將使用者加入群組，使用`Groups.Add`方法，使用者會收到訊息導向至該群組中，目前的連接，持續時間，但該群組中的使用者成員資格不會保存超過目前的連接。 如果您想要永久保留群組和群組成員資格的相關資訊，您必須在存放庫，例如資料庫或 Azure 資料表儲存體中儲存該資料。 然後，使用者連線到您的應用程式中，每次您儲存機制中擷取使用者所屬的群組並手動將該使用者新增至這些群組。
+當您使用 `Groups.Add` 方法將使用者新增至群組時，使用者會在目前的連線期間收到導向該群組的訊息，但該群組中的使用者成員資格不會保存在目前的連線範圍之外。 如果您想要永久保留群組和群組成員資格的相關資訊，您必須將該資料儲存在資料庫或 Azure 資料表儲存體之類的儲存機制中。 然後，每次使用者連線到您的應用程式時，您會從使用者所屬的儲存機制中抓取，並手動將該使用者新增至這些群組。
 
-當重新連線暫時中斷之後，使用者會自動重新加入先前指派的群組。 自動重新加入群組時，才適用重新連接後，不會在建立新的連接。 數位簽章的權杖會傳遞從用戶端，其中包含先前指派的群組清單。 如果您想要確認使用者是否屬於所要求的群組，您可以覆寫預設行為。
+在暫時中斷之後重新連線時，使用者會自動重新加入先前指派的群組。 自動重新加入群組只有在重新連接時才適用，而不是在建立新的連接時使用。 數位簽署的權杖會從用戶端傳遞，其中包含先前指派之群組的清單。 如果您想要確認使用者是否屬於要求的群組，您可以覆寫預設行為。
 
 本主題包含下列章節：
 
 - [新增和移除使用者](#add)
 - [呼叫群組的成員](#call)
-- [儲存在資料庫中的群組成員資格](#storedatabase)
-- [在 Azure 資料表儲存體中儲存的群組成員資格](#storeazuretable)
+- [在資料庫中儲存群組成員資格](#storedatabase)
+- [在 Azure 資料表儲存體中儲存群組成員資格](#storeazuretable)
 - [重新連接時驗證群組成員資格](#verify)
 
 <a id="add"></a>
 
 ## <a name="adding-and-removing-users"></a>新增和移除使用者
 
-若要新增或移除群組中的使用者，請呼叫[新增](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx)或是[移除](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx)方法，並傳入使用者的連線識別碼和群組的名稱，做為參數。 您不需要以手動方式於連線結束時，從群組移除使用者。
+若要新增或移除群組中的使用者，您可以呼叫[add](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx)或[remove](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx)方法，並傳入使用者的連接識別碼和群組的名稱作為參數。 當連接結束時，您不需要手動從群組中移除使用者。
 
-下列範例所示`Groups.Add`和`Groups.Remove`用 Hub 方法中的方法。
+下列範例顯示中樞方法中使用的 `Groups.Add` 和 `Groups.Remove` 方法。
 
 [!code-csharp[Main](working-with-groups/samples/sample1.cs?highlight=5,10)]
 
-`Groups.Add`和`Groups.Remove`方法以非同步方式執行。
+`Groups.Add` 和 `Groups.Remove` 方法會以非同步方式執行。
 
-如果您想要加入群組中的用戶端，並立即將訊息傳送至用戶端使用群組，您必須確定 Groups.Add 方法完成第一次。 下列程式碼範例示範如何這樣做，請使用適用於.NET 4.5 中，並使用.NET 4 中的運作方式的程式碼的程式碼。
+如果您想要將用戶端新增至群組，並使用群組立即將訊息傳送至用戶端，您必須確定群組. Add 方法會先完成。 下列程式碼範例示範如何執行這項作業，其中一個方法是使用在 .NET 4.5 中運作的程式碼，另一個則是使用在 .NET 4 中運作的程式碼。
 
-#### <a name="asynchronous-net-45-example"></a>非同步的.NET 4.5 範例
+#### <a name="asynchronous-net-45-example"></a>非同步 .NET 4.5 範例
 
 [!code-csharp[Main](working-with-groups/samples/sample2.cs?highlight=1,3)]
 
-#### <a name="asynchronous-net-4-example"></a>非同步.NET 4 範例
+#### <a name="asynchronous-net-4-example"></a>非同步 .NET 4 範例
 
 [!code-csharp[Main](working-with-groups/samples/sample3.cs?highlight=3-4)]
 
-一般情況下，您不應該包含`await`呼叫時`Groups.Remove`方法因為您嘗試移除的連線識別碼可能會無法再使用。 在此情況下，`TaskCanceledException`要求逾時之後，就會擲回。如果您的應用程式必須確定使用者已傳送訊息至群組之前移除群組中，您可以加入`await`Groups.Remove，然後 catch 前`TaskCanceledException`可能會擲回的例外狀況。
+一般來說，呼叫 `Groups.Remove` 方法時不應該包含 `await`，因為您嘗試移除的連線識別碼可能無法再使用。 在此情況下，會在要求超時之後擲回 `TaskCanceledException`。如果您的應用程式必須在將訊息傳送至群組之前，確保已從群組中移除使用者，您可以在群組之前加入 `await`。請移除，然後攔截可能會擲回的 `TaskCanceledException` 例外狀況。
 
 <a id="call"></a>
 
 ## <a name="calling-members-of-a-group"></a>呼叫群組的成員
 
-下列範例所示，您可以傳送訊息至所有群組的成員或群組的唯一指定的成員。
+您可以將訊息傳送給群組的所有成員，或只傳送給群組的指定成員，如下列範例所示。
 
-- **所有**連接指定的群組中的用戶端。 
+- 指定群組中**所有**已連線的用戶端。 
 
     [!code-css[Main](working-with-groups/samples/sample4.css)]
-- 所有已連線的指定群組中的用戶端**除了指定的用戶端**所識別的連接識別碼。 
+- 指定群組中所有已連線的用戶端，**但指定的用戶端除外，但**由連接識別碼識別。 
 
     [!code-csharp[Main](working-with-groups/samples/sample5.cs)]
-- 所有已連線的指定群組中的用戶端**除了呼叫用戶端**。 
+- 指定群組中的所有已連線用戶端 **（呼叫用戶端除外**）。 
 
     [!code-css[Main](working-with-groups/samples/sample6.css)]
 
 <a id="storedatabase"></a>
 
-## <a name="storing-group-membership-in-a-database"></a>儲存在資料庫中的群組成員資格
+## <a name="storing-group-membership-in-a-database"></a>在資料庫中儲存群組成員資格
 
-下列範例示範如何保留在資料庫中的群組和使用者資訊。 您可以使用任何的資料存取技術;不過，下列範例會示範如何定義使用 Entity Framework 模型。 這些實體模型會對應至資料庫資料表和欄位。 視您的應用程式需求而定，您的資料結構可以變化相當大。 此範例包含名為類別`ConversationRoom`這絕對是唯一的應用程式，可讓使用者加入有關不同的主體，例如運動或處理的交談。 此範例也包含連接的類別。 Connection 類別不是絕對必要的追蹤群組成員資格，但通常是強固的解決方案，來追蹤使用者的一部分。
+下列範例示範如何在資料庫中保留群組和使用者資訊。 您可以使用任何資料存取技術;不過，下列範例顯示如何使用 Entity Framework 定義模型。 這些實體模型會對應到資料庫資料表和欄位。 視應用程式的需求而定，您的資料結構可能會有很大的差異。 這個範例包含名為 `ConversationRoom` 的類別，這對應用程式而言是唯一的，可讓使用者加入有關不同主題（例如運動或園藝）的交談。 此範例也包含連接的類別。 不一定需要連接類別來追蹤群組成員資格，但通常是追蹤使用者的健全解決方案的一部分。
 
 [!code-csharp[Main](working-with-groups/samples/sample7.cs)]
 
-然後，在中樞中，您可以從資料庫擷取的群組和使用者資訊，而以手動方式將使用者新增至適當的群組。 此範例不包含用於追蹤使用者連接的程式碼。 在此範例中，`await`關鍵字不會套用之前`Groups.Add`因為不會立即傳送訊息給群組的成員。 如果您想要傳送訊息至群組的所有成員，立即新增新的成員之後，您會想要套用`await`關鍵字來確定非同步作業已完成。
+然後，在中樞內，您可以從資料庫中取出群組和使用者資訊，並手動將使用者新增至適當的群組。 此範例不包含用於追蹤使用者連接的程式碼。 在此範例中，`await` 關鍵字不會在 `Groups.Add` 之前套用，因為訊息不會立即傳送給群組的成員。 如果您想要在加入新成員之後立即傳送訊息給群組的所有成員，您會想要套用 `await` 關鍵字，以確保非同步作業已完成。
 
 [!code-csharp[Main](working-with-groups/samples/sample8.cs)]
 
 <a id="storeazuretable"></a>
 
-## <a name="storing-group-membership-in-azure-table-storage"></a>在 Azure 資料表儲存體中儲存的群組成員資格
+## <a name="storing-group-membership-in-azure-table-storage"></a>在 Azure 資料表儲存體中儲存群組成員資格
 
-使用 Azure 資料表儲存體來儲存群組和使用者的資訊是類似於使用的資料庫。 下列範例會顯示儲存的使用者名稱和群組名稱的資料表實體。
+使用 Azure 資料表儲存體來儲存群組和使用者資訊與使用資料庫類似。 下列範例顯示的資料表實體會儲存使用者名稱和組名。
 
 [!code-csharp[Main](working-with-groups/samples/sample9.cs)]
 
-在中樞中，您會擷取指派的群組，當使用者連線。
+在中樞中，您會在使用者連接時，抓取指派的群組。
 
 [!code-csharp[Main](working-with-groups/samples/sample10.cs)]
 
@@ -109,14 +109,14 @@ Signalr 的群組提供一種方法將訊息廣播至連線的用戶端的指定
 
 ## <a name="verifying-group-membership-when-reconnecting"></a>重新連接時驗證群組成員資格
 
-根據預設，SignalR 會自動重新指派使用者給適當的群組從暫時中斷，例如當卸除並重新建立連線逾時之前連線重新連線時。使用者的群組資訊傳入語彙基元，當重新連線，以及該語彙基元經過驗證的伺服器上。 如需重新加入至群組的使用者的驗證程序資訊，請參閱[重新連接時，重新加入群組](index.md)。
+根據預設，SignalR 會在中斷連線時，自動將使用者重新指派給適當的群組，例如在連接逾時之前卸載並重新建立連接。重新連接時，會在權杖中傳遞使用者的群組資訊，而且該權杖會在伺服器上進行驗證。 如需重新加入使用者對群組之驗證程式的相關資訊，請參閱重新[連接時重新加入群組](index.md)。
 
-一般情況下，您應該使用自動重新加入群組重新連接的預設行為。 SignalR 的群組不適合做為安全性機制，來限制機密資料的存取。 不過，如果您的應用程式必須再三檢查使用者的群組成員資格，重新連接時，您可以覆寫預設行為。 變更預設行為可以將負擔加入您的資料庫因為必須擷取使用者的群組成員資格，針對每個重新連線而不只是當使用者連線。
+一般而言，您應該在重新連線時使用自動重新加入群組的預設行為。 SignalR 群組不是用於限制敏感性資料存取的安全性機制。 不過，如果您的應用程式必須在重新連接時再次檢查使用者的群組成員資格，您可以覆寫預設行為。 變更預設行為可能會增加資料庫的負擔，因為必須針對每個重新連線抓取使用者的群組成員資格，而不是只有在使用者連線時才進行。
 
-如果您必須驗證群組成員資格，在重新連線，請建立新的中樞管線模組會傳回一份指派的群組，如下所示。
+如果您必須在重新連接時驗證群組成員資格，請建立新的中樞管線模組，以傳回指派群組的清單，如下所示。
 
 [!code-csharp[Main](working-with-groups/samples/sample11.cs)]
 
-然後，新增至中樞管線，以反白顯示如下的模組。
+然後，將該模組新增至中樞管線，如下所示。
 
 [!code-csharp[Main](working-with-groups/samples/sample12.cs?highlight=10)]

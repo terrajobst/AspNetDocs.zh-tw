@@ -1,33 +1,33 @@
 ---
 uid: signalr/index
-title: SignalR | Microsoft Docs
+title: SignalR |Microsoft Docs
 author: bradygaster
-description: Microsoft ASP.NET SignalR 是 ASP.NET 開發人員適用的程式庫，可簡化將即時 web 功能新增至您的應用程式的程序。
+description: Microsoft ASP.NET SignalR 是 ASP.NET 開發人員的程式庫，可簡化將即時 web 功能新增至應用程式的過程。
 ms.author: bradyg
 ms.date: 10/24/2012
 ms.assetid: 282a521f-2b86-4fac-bcf6-b6d5e0fe969c
 msc.legacyurl: /signalr
 msc.type: categoryindex
 ms.openlocfilehash: fa489c79e175753635d89913aaaa15a832aa16f7
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407584"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78558832"
 ---
 # <a name="signalr"></a>SignalR
 
 - [指引](overview/index.md)
 
-    - [快速入門](overview/getting-started/index.md)
+    - [使用者入門](overview/getting-started/index.md)
 
         - [SignalR 簡介](overview/getting-started/introduction-to-signalr.md)
         - [支援的平台](overview/getting-started/supported-platforms.md)
         - [教學課程：開始使用 SignalR 2](overview/getting-started/tutorial-getting-started-with-signalr.md)
-        - [教學課程：開始使用 SignalR 2 和 MVC 5](overview/getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
+        - [教學課程：開始使用 SignalR 2 及 MVC 5](overview/getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
         - [教學課程：高頻率即時與 SignalR 2](overview/getting-started/tutorial-high-frequency-realtime-with-signalr.md)
         - [教學課程：伺服器廣播與 SignalR 2](overview/getting-started/tutorial-server-broadcast-with-signalr.md)
-        - [實習實驗室：使用 SignalR 即時 Web 應用程式](overview/getting-started/real-time-web-applications-with-signalr.md)
+        - [實習實驗室：即時 Web 應用程式與 SignalR](overview/getting-started/real-time-web-applications-with-signalr.md)
     - [API 指南](overview/guide-to-the-api/index.md)
 
         - [中樞 API 指南 - 伺服器 (C#)](overview/guide-to-the-api/hubs-api-guide-server.md)
@@ -41,7 +41,7 @@ ms.locfileid: "59407584"
         - [SignalR 疑難排解](overview/testing-and-debugging/troubleshooting.md)
         - [對 SignalR 應用程式進行單元測試](overview/testing-and-debugging/unit-testing-signalr-applications.md)
         - [啟用 SignalR 追蹤](overview/testing-and-debugging/enabling-signalr-tracing.md)
-    - [安全性](overview/security/index.md)
+    - [Security](overview/security/index.md)
 
         - [SignalR 安全性簡介](overview/security/introduction-to-security.md)
         - [SignalR 中樞的驗證和授權](overview/security/hub-authorization.md)

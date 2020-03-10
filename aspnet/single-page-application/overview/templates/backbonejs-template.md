@@ -9,11 +9,11 @@ ms.assetid: 00aca413-f067-4108-9bd1-cf21e64a2646
 msc.legacyurl: /single-page-application/overview/templates/backbonejs-template
 msc.type: authoredcontent
 ms.openlocfilehash: 7297db7d5b35a53b40f9d9162960e529a167bd12
-ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77074887"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78558223"
 ---
 # <a name="backbone-template"></a>Backbone 範本
 
@@ -113,7 +113,7 @@ Flashbar 可為使用者提供各種類型的意見反應訊息。 這些方法�
 
 在單一頁面應用程式中，伺服器只會在使用者介面中播放小型角色。 一般來說，伺服器會轉譯初始頁面，然後傳送和接收 JSON 資料。
 
-範本有兩個 MVC 控制器： `HomeController` 會轉譯初始頁面，而 `SupportsController` 則用來確認新的使用者帳戶及重設密碼。 範本中的其他所有控制器都是 ASP.NET Web API 控制器，其會傳送和接收 JSON 資料。 根據預設，控制器會使用新的 `WebSecurity` 類別來執行使用者相關的工作。 不過，它們也有選擇性的函式，可讓您傳入委派以進行這些工作。 這可讓測試更容易，並可讓您使用 IoC 容器來取代 `WebSecurity` 的其他專案。 範例如下：
+範本有兩個 MVC 控制器： `HomeController` 會轉譯初始頁面，而 `SupportsController` 則用來確認新的使用者帳戶及重設密碼。 範本中的其他所有控制器都是 ASP.NET Web API 控制器，其會傳送和接收 JSON 資料。 根據預設，控制器會使用新的 `WebSecurity` 類別來執行使用者相關的工作。 不過，它們也有選擇性的函式，可讓您傳入委派以進行這些工作。 這可讓測試更容易，並可讓您使用 IoC 容器來取代 `WebSecurity` 的其他專案。 請看以下範例：
 
 [!code-csharp[Main](backbonejs-template/samples/sample8.cs)]
 

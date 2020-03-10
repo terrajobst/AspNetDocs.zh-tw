@@ -9,11 +9,11 @@ ms.assetid: f50a5cdb-c06a-46ed-aa14-fc5b049dc8dc
 msc.legacyurl: /mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
 msc.type: authoredcontent
 ms.openlocfilehash: c14149d802bfc0a227a839a2981dc3e8a3849c25
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457592"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78538441"
 ---
 # <a name="aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication"></a>使用 SMS 和電子郵件雙因素驗證的 ASP.NET MVC 5 應用程式
 
@@ -60,7 +60,7 @@ ms.locfileid: "77457592"
   
     ![](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/_static/image2.png)  
   
-   位址：  
+   位址:  
     `https://webservice.aspsms.com/aspsmsx2.asmx?WSDL`  
   
    命名空間：  

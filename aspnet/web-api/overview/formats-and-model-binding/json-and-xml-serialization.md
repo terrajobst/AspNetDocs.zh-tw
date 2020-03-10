@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/json-and-xml-serialization
-title: JSON 和 XML 序列化，在 ASP.NET Web API-ASP.NET 4.x
+title: ASP.NET Web API 中的 JSON 和 XML 序列化-ASP.NET 4。x
 author: MikeWasson
-description: 說明 ASP.NET Web API 中的 JSON 和 XML 格式器適用於 ASP.NET 4.x。
+description: 描述 ASP.NET 4.x 的 ASP.NET Web API 中的 JSON 和 XML 格式器。
 ms.author: riande
 ms.date: 05/30/2012
 ms.custom: seoapril2019
@@ -10,233 +10,233 @@ ms.assetid: 1cd7525d-de5e-4ab6-94f0-51480d3255d1
 msc.legacyurl: /web-api/overview/formats-and-model-binding/json-and-xml-serialization
 msc.type: authoredcontent
 ms.openlocfilehash: 00fa07f00eabf7e6c883c5e9ceaf9a38a8f49605
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65126161"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78557467"
 ---
-# <a name="json-and-xml-serialization-in-aspnet-web-api"></a>JSON 和 ASP.NET Web API 中的 XML 序列化
+# <a name="json-and-xml-serialization-in-aspnet-web-api"></a>ASP.NET Web API 中的 JSON 和 XML 序列化
 
-藉由[Mike Wasson](https://github.com/MikeWasson)
+由[Mike Wasson](https://github.com/MikeWasson)
 
-這篇文章說明 ASP.NET Web API 中的 JSON 和 XML 格式器。
+本文說明 ASP.NET Web API 中的 JSON 和 XML 格式器。
 
-在 ASP.NET Web API 中， *media-type 格式器*是一個物件，可以：
+在 ASP.NET Web API 中，*媒體類型格式*器是一個物件，可以：
 
-- 讀取 CLR 物件，從 HTTP 訊息內文
-- 將 CLR 物件寫入至 HTTP 訊息本文
+- 從 HTTP 訊息內文讀取 CLR 物件
+- 將 CLR 物件寫入 HTTP 訊息內文
 
-Web API 提供以 JSON 和 XML 的媒體類型格式器。 架構會依預設，將這些格式器插入至管線。 用戶端可以在 HTTP 要求的 Accept 標頭中要求 JSON 或 XML。
+Web API 提供適用于 JSON 和 XML 的媒體類型格式器。 根據預設，架構會將這些格式器插入管線中。 用戶端可以在 HTTP 要求的 Accept 標頭中要求 JSON 或 XML。
 
 ## <a name="contents"></a>內容
 
-- [JSON Media-type 格式器](#json_media_type_formatter)
+- [JSON 媒體類型格式器](#json_media_type_formatter)
 
     - [唯讀屬性](#json_readonly)
-    - [日期](#json_dates)
-    - [縮排](#json_indenting)
-    - [駝峰式命名法大小寫](#json_camelcasing)
-    - [匿名和弱型別物件](#json_anon)
+    - [時間](#json_dates)
+    - [進來](#json_indenting)
+    - [Camel 大小寫](#json_camelcasing)
+    - [匿名和弱式類型物件](#json_anon)
 - [XML 媒體類型格式器](#xml_media_type_formatter)
 
     - [唯讀屬性](#xml_readonly)
-    - [日期](#xml_dates)
-    - [縮排](#xml_indenting)
-    - [設定每個類型的 XML 序列化程式](#xml_pertype)
+    - [時間](#xml_dates)
+    - [進來](#xml_indenting)
+    - [設定每一類型的 XML 序列化程式](#xml_pertype)
 - [移除 JSON 或 XML 格式器](#removing_the_json_or_xml_formatter)
-- [處理循環物件參考](#handling_circular_object_references)
+- [處理迴圈物件參考](#handling_circular_object_references)
 - [測試物件序列化](#testing_object_serialization)
 
 <a id="json_media_type_formatter"></a>
-## <a name="json-media-type-formatter"></a>JSON Media-type 格式器
+## <a name="json-media-type-formatter"></a>JSON 媒體類型格式器
 
-JSON 格式提供**JsonMediaTypeFormatter**類別。 根據預設， **JsonMediaTypeFormatter**會使用[Json.NET](https://github.com/JamesNK/Newtonsoft.Json)執行序列化的程式庫。 Json.NET 是第三方開放原始碼專案。
+JSON 格式是由**JsonMediaTypeFormatter**類別所提供。 根據預設， **JsonMediaTypeFormatter**會使用[Json.NET](https://github.com/JamesNK/Newtonsoft.Json)程式庫來執行序列化。 Json.NET 是協力廠商的開放原始碼專案。
 
-如果您想，您可以設定**JsonMediaTypeFormatter**類別，以使用**DataContractJsonSerializer**而不是 Json.NET。 若要這樣做，請設定**UseDataContractJsonSerializer**屬性設 **，則為 true**:
+如果您想要的話，可以將**JsonMediaTypeFormatter**類別設定為使用**DataContractJsonSerializer** ，而不是 Json.NET。 若要這麼做，請將**UseDataContractJsonSerializer**屬性設定為**true**：
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample1.cs)]
 
 ### <a name="json-serialization"></a>JSON 序列化
 
-本章節描述的 JSON 格式器，使用預設的一些特定行為[Json.NET](https://github.com/JamesNK/Newtonsoft.Json)序列化程式。 這不是用來完整的文件的 Json.NET 程式庫;如需詳細資訊，請參閱 < [Json.NET 文件](http://james.newtonking.com/projects/json/help/)。
+本節說明 JSON 格式器的某些特定行為，並使用預設的[Json.NET](https://github.com/JamesNK/Newtonsoft.Json)序列化程式。 這不是 Json.NET 程式庫的完整檔，如需詳細資訊，請參閱[Json.NET 檔](http://james.newtonking.com/projects/json/help/)。
 
-#### <a name="what-gets-serialized"></a>序列化什麼？
+#### <a name="what-gets-serialized"></a>會序列化哪些專案？
 
-根據預設，所有公用屬性和欄位會包含在序列化的 JSON。 若要省略屬性或欄位，裝飾它與**JsonIgnore**屬性。
+根據預設，所有公用屬性和欄位都包含在序列化 JSON 中。 若要省略屬性或欄位，請使用**JsonIgnore**屬性加以裝飾。
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample2.cs)]
 
-如果您偏好&quot;參加&quot;方法，來裝飾類別**DataContract**屬性。 如果此屬性，則會忽略成員，除非**DataMember**。 您也可以使用**DataMember**序列化私用成員。
+如果您偏好 &quot;加入宣告&quot; 方法，請使用**DataContract**屬性來裝飾類別。 如果有這個屬性，除非成員具有**DataMember**，否則會忽略它們。 您也可以使用**DataMember**來序列化私用成員。
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample3.cs)]
 
 <a id="json_readonly"></a>
 ### <a name="read-only-properties"></a>唯讀屬性
 
-根據預設，會序列化唯讀屬性。
+預設會序列化唯讀屬性。
 
 <a id="json_dates"></a>
 ### <a name="dates"></a>日期
 
-根據預設，Json.NET 將寫入日期[ISO 8601](http://www.w3.org/TR/NOTE-datetime)格式。 以 UTC （國際標準時間） 的日期是以"Z"後置詞。 當地時間日期包含時區時差。 例如: 
+根據預設，Json.NET 會以[ISO 8601](http://www.w3.org/TR/NOTE-datetime)格式寫入日期。 UTC 格式的日期（國際標準時間）是以 "Z" 後置字元撰寫。 當地時間的日期包含一個時區時差。 例如:
 
 [!code-console[Main](json-and-xml-serialization/samples/sample4.cmd)]
 
-根據預設，Json.NET 會保留時區。 您可以藉由設定 DateTimeZoneHandling 屬性來覆寫此設定：
+根據預設，Json.NET 會保留時區。 您可以藉由設定 DateTimeZoneHandling 屬性來覆寫此值：
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample5.cs)]
 
-如果您想要使用[Microsoft JSON 日期格式](https://msdn.microsoft.com/library/bb299886.aspx#intro_to_json_sidebarb)(`"\/Date(ticks)\/"`) 設定而不是 ISO 8601 **DateFormatHandling**的序列化程式設定的屬性：
+如果您想要使用[MICROSOFT JSON 日期格式](https://msdn.microsoft.com/library/bb299886.aspx#intro_to_json_sidebarb)（`"\/Date(ticks)\/"`），而不是 ISO 8601，請設定序列化程式設定上的**DateFormatHandling**屬性：
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample6.cs)]
 
 <a id="json_indenting"></a>
 ### <a name="indenting"></a>縮排
 
-若要撰寫縮排的 JSON，設定**格式化**設為**Formatting.Indented**:
+若要寫入縮排的 JSON，請將**格式**設定設定為 [**格式化]。縮排**：
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample7.cs)]
 
 <a id="json_camelcasing"></a>
-### <a name="camel-casing"></a>駝峰式命名法大小寫
+### <a name="camel-casing"></a>Camel 大小寫
 
-若要寫入 JSON 屬性名稱使用駝峰式命名法大小寫，而不需要變更您的資料模型，設定**CamelCasePropertyNamesContractResolver**上序列化程式：
+若要以 camel 大小寫來撰寫 JSON 屬性名稱，而不變更您的資料模型，請在序列化程式上設定**CamelCasePropertyNamesContractResolver** ：
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample8.cs)]
 
 <a id="json_anon"></a>
-### <a name="anonymous-and-weakly-typed-objects"></a>匿名和弱型別物件
+### <a name="anonymous-and-weakly-typed-objects"></a>匿名和弱式類型物件
 
-動作方法可以傳回的匿名物件，並將其序列化為 JSON。 例如: 
+動作方法可以傳回匿名物件，並將它序列化為 JSON。 例如:
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample9.cs)]
 
-回應訊息內文會包含下列 JSON:
+回應訊息主體會包含下列 JSON：
 
 [!code-json[Main](json-and-xml-serialization/samples/sample10.json)]
 
-如果您的 web API 收到的鬆散結構化 JSON 物件，從用戶端，您可以還原序列化的要求內文**Newtonsoft.Json.Linq.JObject**型別。
+如果您的 Web API 從用戶端接收鬆散結構化的 JSON 物件，您可以將要求主體還原序列化為**Newtonsoft**類型。
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample11.cs)]
 
-不過，最好是通常使用強型別的的資料物件。 然後，您不需要剖析資料，並取得模型驗證的優點。
+不過，使用強型別資料物件通常是比較好的做法。 然後您不需要自行剖析資料，並獲得模型驗證的優點。
 
-XML 序列化程式不支援匿名型別或**JObject**執行個體。 如果您使用這些功能，為您的 JSON 資料，您應該移除 XML 格式器管線，在本文稍後所述。
+XML 序列化程式不支援匿名型別或**JObject**實例。 如果您針對 JSON 資料使用這些功能，您應該從管線中移除 XML 格式器，如本文稍後所述。
 
 <a id="xml_media_type_formatter"></a>
 ## <a name="xml-media-type-formatter"></a>XML 媒體類型格式器
 
-XML 格式由提供**XmlMediaTypeFormatter**類別。 根據預設， **XmlMediaTypeFormatter**會使用**DataContractSerializer**執行序列化的類別。
+XML 格式是由**XmlMediaTypeFormatter**類別所提供。 根據預設， **XmlMediaTypeFormatter**會使用**DataContractSerializer**類別來執行序列化。
 
-如果您想，您可以設定**XmlMediaTypeFormatter**使用**XmlSerializer**而非**DataContractSerializer**。 若要這樣做，請設定 **/usexmlserializer**屬性設 **，則為 true**:
+如果您想要的話，可以將**XmlMediaTypeFormatter**設定為使用**XmlSerializer** ，而不是**DataContractSerializer**。 若要這麼做，請將**UseXmlSerializer**屬性設定為**true**：
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample12.cs)]
 
-**XmlSerializer**類別支援一組範圍較小的類型，比**DataContractSerializer**，但提供更充分掌控所產生的 XML。 請考慮使用**XmlSerializer**如果您需要以符合現有的 XML 結構描述。
+**XmlSerializer**類別支援比**DataContractSerializer**更窄的類型集合，但對產生的 XML 提供更多的控制權。 如果您需要符合現有的 XML 架構，請考慮使用**XmlSerializer** 。
 
 ### <a name="xml-serialization"></a>XML 序列化
 
-本章節描述的 XML 格式器，使用預設的一些特定行為**DataContractSerializer**。
+本節使用預設**DataContractSerializer**來描述 XML 格式器的某些特定行為。
 
-根據預設，DataContractSerializer 的行為，如下所示：
+根據預設，DataContractSerializer 的行為如下所示：
 
-- 會序列化所有公用讀取/寫入屬性和欄位。 若要省略屬性或欄位，裝飾它與**IgnoreDataMember**屬性。
-- Private 和 protected 成員不會序列化。
-- 唯讀屬性不會序列化。 （不過，會序列化唯讀集合屬性的內容）。
-- 類別和成員名稱是以 XML 撰寫的完全依照它們出現在類別宣告。
-- 會使用預設 XML 命名空間。
+- 所有公用讀取/寫入屬性和欄位都會進行序列化。 若要省略屬性或欄位，請使用**IgnoreDataMember**屬性加以裝飾。
+- 私用和受保護成員不會序列化。
+- 唯讀屬性不會序列化。 （不過，唯讀集合屬性的內容會序列化）。
+- 類別和成員名稱會以 XML 中的形式，與在類別宣告中所顯示的內容完全相同。
+- 會使用預設的 XML 命名空間。
 
-如果您需要更充分掌控序列化時，您可以裝飾具有類別**DataContract**屬性。 當這個屬性時，類別序列化，如下所示：
+如果您需要更充分掌控序列化，您可以使用**DataContract**屬性來裝飾類別。 當這個屬性存在時，類別會序列化如下：
 
-- &quot;參加&quot;方法：屬性和欄位不會由預設序列化。 若要序列化的屬性或欄位，裝飾它與**DataMember**屬性。
-- 若要序列化的私用或受保護成員，裝飾它與**DataMember**屬性。
+- &quot;加入宣告&quot; 方法：預設不會序列化屬性和欄位。 若要序列化屬性或欄位，請使用**DataMember**屬性來裝飾它。
+- 若要序列化私用或受保護的成員，請使用**DataMember**屬性來裝飾它。
 - 唯讀屬性不會序列化。
-- 若要變更的類別名稱在 XML 中的顯示方式，設定*名稱*中的參數**DataContract**屬性。
-- 若要變更的成員名稱在 XML 中的顯示方式，設定*名稱*中的參數**DataMember**屬性。
-- 若要變更的 XML 命名空間，設定*命名空間*中的參數**DataContract**類別。
+- 若要變更類別名稱在 XML 中的顯示方式，請在**DataContract**屬性中設定*name*參數。
+- 若要變更成員名稱在 XML 中的顯示方式，請在**DataMember**屬性中設定*name*參數。
+- 若要變更 XML 命名空間，請在**DataContract**類別中設定*namespace*參數。
 
 <a id="xml_readonly"></a>
 ### <a name="read-only-properties"></a>唯讀屬性
 
-唯讀屬性不會序列化。 如果唯讀屬性的支援私用欄位，您可以將標記與私用欄位**DataMember**屬性。 這個方法會要求**DataContract**類別上的屬性。
+唯讀屬性不會序列化。 如果唯讀屬性具有支援的私用欄位，您可以使用**DataMember**屬性來標記私用欄位。 這個方法需要類別上的**DataContract**屬性。
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample13.cs)]
 
 <a id="xml_dates"></a>
 ### <a name="dates"></a>日期
 
-日期是以 ISO 8601 格式。 例如， &quot;2012年-05-23T20:21:37.9116538Z&quot;。
+日期是以 ISO 8601 格式撰寫。 例如，&quot;2012-05-23T20：21： 37.9116538 Z&quot;。
 
 <a id="xml_indenting"></a>
 ### <a name="indenting"></a>縮排
 
-若要撰寫時縮排的 XML，將**縮排**屬性設 **，則為 true**:
+若要寫入縮排的 XML，請將 [**縮排**] 屬性設定為**true**：
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample14.cs)]
 
 <a id="xml_pertype"></a>
-## <a name="setting-per-type-xml-serializers"></a>設定每個類型的 XML 序列化程式
+## <a name="setting-per-type-xml-serializers"></a>設定每一類型的 XML 序列化程式
 
-您可以設定不同的 CLR 類型不同的 XML 序列化程式。 例如，您可能需要的特定資料物件**XmlSerializer**回溯相容性。 您可以使用**XmlSerializer**這個物件，並繼續使用**DataContractSerializer**其他類型。
+您可以針對不同的 CLR 類型設定不同的 XML 序列化程式。 例如，您可能有需要**XmlSerializer**以提供回溯相容性的特定資料物件。 您可以針對此物件使用**XmlSerializer** ，並繼續使用其他類型的**DataContractSerializer** 。
 
 若要設定特定類型的 XML 序列化程式，請呼叫**SetSerializer**。
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample15.cs)]
 
-您可以指定**XmlSerializer**或任何衍生自的物件**XmlObjectSerializer**。
+您可以指定**XmlSerializer**或任何衍生自**XmlObjectSerializer**的物件。
 
 <a id="removing_the_json_or_xml_formatter"></a>
 ## <a name="removing-the-json-or-xml-formatter"></a>移除 JSON 或 XML 格式器
 
-您可以移除 JSON 格式器或 XML 格式器清單中的格式器，如果您不想要使用它們。 若要這樣做的主要原因是：
+如果您不想要使用，您可以從格式器清單中移除 JSON 格式器或 XML 格式器。 執行此動作的主要原因包括：
 
-- 若要限制您的 web API 回應特定的媒體類型。 例如，您可能會決定支援只有 JSON 回應，並移除 XML 格式器。
-- 若要使用自訂格式器取代預設的格式器。 例如，您可以將 JSON 格式器取代您自己的 JSON 格式器的自訂實作。
+- 將您的 Web API 回應限制為特定的媒體類型。 例如，您可能會決定僅支援 JSON 回應，並移除 XML 格式器。
+- 以自訂格式器取代預設格式器。 例如，您可以使用 JSON 格式器的自訂執行來取代 JSON 格式器。
 
-下列程式碼示範如何移除預設格式器。 呼叫這個屬性從您**應用程式\_啟動**Global.asax 中所定義的方法。
+下列程式碼顯示如何移除預設的格式器。 從您的應用程式呼叫此項， **\_啟動**方法（定義于 global.asax 中）。
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample16.cs)]
 
 <a id="handling_circular_object_references"></a>
-## <a name="handling-circular-object-references"></a>處理循環物件參考
+## <a name="handling-circular-object-references"></a>處理迴圈物件參考
 
-根據預設，JSON 和 XML 格式器會寫入做為值的所有物件。 如果兩個屬性都指向相同物件，或如果相同的物件會出現兩次在集合中，格式器將會序列化物件兩次。 這是特定的問題如果您的物件圖形包含循環，因為序列化程式將會擲回例外狀況，在圖形中偵測到迴圈。
+根據預設，JSON 和 XML 格式器會將所有物件寫入為值。 如果兩個屬性都參考相同的物件，或如果相同的物件在集合中出現兩次，則格式器會將物件序列化兩次。 如果您的物件圖形包含迴圈，這是一個特別的問題，因為當序列化程式在圖形中偵測到迴圈時，將會擲回例外狀況。
 
 請考慮下列物件模型和控制器。
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample17.cs)]
 
-叫用此動作會導致格式器擲回例外狀況，進而轉譯成狀態碼 500 （內部伺服器錯誤） 回應至用戶端。
+叫用此動作會導致格式器擲回例外狀況，這會轉譯為用戶端的狀態碼500（內部伺服器錯誤）回應。
 
-若要保留 JSON 中的物件參考，新增下列程式碼**應用程式\_啟動**Global.asax 檔案中的方法：
+若要保留 JSON 中的物件參考，請將下列程式碼新增至 global.asax 檔案中的**Application\_Start**方法：
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample18.cs)]
 
-現在控制器動作會傳回 JSON 看起來像這樣：
+現在控制器動作會傳回 JSON，如下所示：
 
 [!code-json[Main](json-and-xml-serialization/samples/sample19.json)]
 
-請注意，序列化程式加入&quot;$id&quot;這兩個物件的屬性。 此外，它會偵測 Employee.Department 屬性建立迴圈，因此會將值取代的物件參考: {&quot;$ref&quot;:&quot;1&quot;}。
+請注意，序列化程式會將 &quot;$id&quot; 屬性新增至這兩個物件。 此外，它會偵測 Employee. 部門屬性會建立迴圈，因此它會將值取代為物件參考： {&quot;$ref&quot;：&quot;1&quot;}。
 
 > [!NOTE]
-> 物件參考不是標準 json 格式。 才能使用此功能，請考慮您的用戶端是否都能夠剖析結果。 最好是單純是為了從圖形移除循環。 比方說，回到部門員工的連結是並不真的需要在此範例中。
+> 物件參考在 JSON 中不是標準。 使用這項功能之前，請考慮您的用戶端是否能夠剖析結果。 最好是從圖表中移除迴圈。 例如，在此範例中，從員工到部門的連結並不是真的必要的。
 
-若要保留在 XML 中的物件參考，您會有兩個選項。 更簡單的做法是新增`[DataContract(IsReference=true)]`到您的模型類別。 *IsReference*參數可讓物件參考。 請記住**DataContract**選用功能，可序列化，因此您也必須新增**DataMember**屬性的屬性：
+若要在 XML 中保留物件參考，您有兩個選項。 較簡單的選項是將 `[DataContract(IsReference=true)]` 新增至您的模型類別。 *IsReference*參數會啟用物件參考。 請記住， **DataContract**會加入宣告序列化，因此您也需要將**DataMember**屬性新增至屬性：
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample20.cs)]
 
-現在，格式器將會產生類似的 XML 如下：
+現在，格式器會產生類似下列的 XML：
 
 [!code-xml[Main](json-and-xml-serialization/samples/sample21.xml)]
 
-如果您想要避免在您的模型類別上的屬性，還有另一個選項：建立新的型別特有**DataContractSerializer**執行個體，並設定*preserveObjectReferences*來**true**建構函式。 在 XML 媒體類型格式器，然後為每個型別序列化程式設定這個執行個體。 下列程式碼示範如何執行這項操作：
+如果您想要避免模型類別上的屬性，還有另一個選項：建立新的類型特定**DataContractSerializer**實例，並在此函式中將*帶有 preserveobjectreferences*設定為**true** 。 然後，將此實例設定為 XML 媒體類型格式器上的每個類型序列化程式。 下列程式碼示範如何執行這項操作：
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample22.cs?highlight=3)]
 
 <a id="testing_object_serialization"></a>
 ## <a name="testing-object-serialization"></a>測試物件序列化
 
-當您設計您的 web API 時，最好要測試您的資料物件序列化的方式。 您可以不需要建立一個控制站，或叫用控制器動作來這樣做。
+當您設計 Web API 時，測試資料物件的序列化方式會很有説明。 您不需要建立控制器或叫用控制器動作，就可以這樣做。
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample23.cs)]

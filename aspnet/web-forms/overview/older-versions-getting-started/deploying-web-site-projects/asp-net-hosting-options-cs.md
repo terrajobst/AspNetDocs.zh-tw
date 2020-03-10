@@ -9,11 +9,11 @@ ms.assetid: 89a1d2bc-fdfd-4c5c-a3b0-49a08baaf63a
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 2eafa750167d89fa996a442633e79dce3d5b85bd
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74620767"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78637169"
 ---
 # <a name="aspnet-hosting-options-c"></a>ASP.NET 裝載選項 (C#)
 
@@ -42,7 +42,7 @@ Web 應用程式通常是在開發環境中設計、建立和測試，只有在�
 - 使用開發期間所做的變更，在生產環境中順利更新資料庫的策略。
 - 用於記錄生產環境中發生之錯誤的技術，以及在發生錯誤時通知開發人員的方式。
 
-這些教學課程的目的是要精簡，並提供逐步指示，讓您能以視覺化方式逐步完成整個流程。 本執筆教學課程提供 ASP.NET 部署程式的總覽，以及尋找 web 主控提供者的建議。 讓我們開始吧！
+這些教學課程的目的是要精簡，並提供逐步指示，讓您能以視覺化方式逐步完成整個流程。 本執筆教學課程提供 ASP.NET 部署程式的總覽，以及尋找 web 主控提供者的建議。 現在就開始吧！
 
 ## <a name="an-overview-of-the-aspnet-deployment-process"></a>ASP.NET 部署流程的總覽
 
@@ -89,4 +89,4 @@ ASP.NET web 應用程式通常是在本機開發環境中設計、建立和測�
 本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Teresa Murphy。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)的那一行下拉式。
 
 > [!div class="step-by-step"]
-> [下一步](determining-what-files-need-to-be-deployed-cs.md)
+> [下一個](determining-what-files-need-to-be-deployed-cs.md)

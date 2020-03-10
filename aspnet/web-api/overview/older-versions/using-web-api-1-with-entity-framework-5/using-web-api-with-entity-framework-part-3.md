@@ -9,11 +9,11 @@ ms.assetid: 6b9ae3c4-0274-4170-a1bb-9df9c546b2a9
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3
 msc.type: authoredcontent
 ms.openlocfilehash: f39be7a84e85db93487d246e9f8cb59c401fe5ce
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600034"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78556046"
 ---
 # <a name="part-3-creating-an-admin-controller"></a>第3部分：建立管理控制器
 
@@ -64,13 +64,13 @@ ms.locfileid: "74600034"
 
 `AdminController` 類別會定義用來執行基本 CRUD 功能的五種方法。 每個方法都會對應至用戶端可以叫用的 URI：
 
-| 控制器方法 | 描述 | URI | HTTP 方法 |
+| 控制器方法 | 說明 | URI | HTTP 方法 |
 | --- | --- | --- | --- |
 | GetProducts | 取得所有產品。 | api/產品 | GET |
 | GetProduct | 依識別碼尋找產品。 | api/產品/*識別碼* | GET |
 | PutProduct | 更新產品。 | api/產品/*識別碼* | PUT |
 | PostProduct | 建立新的產品。 | api/產品 | POST |
-| DeleteProduct | 刪除產品。 | api/產品/*識別碼* | Delete |
+| DeleteProduct | 刪除產品。 | api/產品/*識別碼* | 刪除 |
 
 每個方法都會呼叫 `OrdersContext` 來查詢資料庫。 修改集合（PUT、POST 和 DELETE）呼叫 `db.SaveChanges` 的方法會將變更保存至資料庫。 系統會針對每個 HTTP 要求建立控制器，然後加以處置，因此必須在方法傳回之前保存變更。
 
@@ -78,7 +78,7 @@ ms.locfileid: "74600034"
 
 Entity Framework 有一個很好的功能，可讓您在啟動時填入資料庫，並在每次模型變更時自動重新建立資料庫。 這項功能在開發期間很有用，因為您一律會有一些測試資料，即使您變更模型也一樣。
 
-在方案總管中，以滑鼠右鍵按一下 [模型] 資料夾，然後建立名為 `OrdersContextInitializer`的新類別。 貼上下列執行：
+在方案總管中，以滑鼠右鍵按一下 [模型] 資料夾，然後建立名為 `OrdersContextInitializer`的新類別。 貼上下列實作方式：
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-3/samples/sample4.cs)]
 

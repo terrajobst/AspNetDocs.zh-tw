@@ -1,7 +1,7 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/generating-views
-title: 教學課程：產生檢視 EF Database First 與 ASP.NET MVC 應用程式
-description: 本教學課程著重於使用的 ASP.NET Scaffold 產生控制器和檢視。
+title: 教學課程：使用 ASP.NET MVC 應用程式產生 EF Database First 的視圖
+description: 本教學課程著重于使用 ASP.NET 的架構來產生控制器和 views。
 author: Rick-Anderson
 ms.author: riande
 ms.date: 01/28/2019
@@ -10,25 +10,25 @@ ms.assetid: 669367cf-8e30-4eb6-821d-10a7d9bb906c
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/generating-views
 msc.type: authoredcontent
 ms.openlocfilehash: e71e13e22d8a72e1699cfc70d4d93af603edba5b
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65121232"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78616204"
 ---
-# <a name="tutorial-generate-views-for-ef-database-first-with-aspnet-mvc-app"></a>教學課程：產生檢視 EF Database First 與 ASP.NET MVC 應用程式
+# <a name="tutorial-generate-views-for-ef-database-first-with-aspnet-mvc-app"></a>教學課程：使用 ASP.NET MVC 應用程式產生 EF Database First 的視圖
 
-您可以使用 MVC、 Entity Framework 和 ASP.NET Scaffolding，來建立 web 應用程式，提供介面給現有的資料庫。 本系列教學課程會示範如何自動產生程式碼，可讓使用者顯示、 編輯、 建立及刪除位於資料庫資料表中的資料。 產生的程式碼會對應至資料庫資料表中的資料行。
+使用 MVC、Entity Framework 和 ASP.NET 的樣板，您可以建立 web 應用程式，以提供介面給現有的資料庫。 本教學課程系列會示範如何自動產生程式碼，讓使用者可以顯示、編輯、建立和刪除位於資料庫資料表中的資料。 產生的程式碼會對應至資料庫資料表中的資料行。
 
-本教學課程著重於使用的 ASP.NET Scaffold 產生控制器和檢視。
+本教學課程著重于使用 ASP.NET 的架構來產生控制器和 views。
 
 在本教學課程中，您已：
 
 > [!div class="checklist"]
 > * 新增 scaffold
-> * 將連結新增至新的檢視
-> * 顯示學生檢視
-> * 顯示註冊檢視
+> * 將連結新增至新的視圖
+> * 顯示學生的視圖
+> * 顯示註冊視圖
 
 ## <a name="prerequisite"></a>必要條件
 
@@ -36,70 +36,70 @@ ms.locfileid: "65121232"
 
 ## <a name="add-scaffold"></a>新增 scaffold
 
-您已準備好產生程式碼，將會提供標準資料作業，模型類別。 您可以加入 scaffold 項目，以將程式碼。 有許多類型的樣板，您可以新增;在本教學課程中，控制器和檢視對應至您在上一節中建立的 Student 和註冊模型，會包含 scaffold。
+您已準備好產生可為模型類別提供標準資料作業的程式碼。 您可以藉由新增 scaffold 專案來加入程式碼。 您可以新增的架構類型有許多選項;在本教學課程中，scaffold 會包含與您在上一節中建立的學生和註冊模型對應的控制器和 views。
 
-若要維護您的專案中的一致性，您會將新的控制站加入現有**控制器**資料夾。 以滑鼠右鍵按一下**控制器**資料夾，然後選取**新增** > **新增 Scaffold 項目**。
+為了維持專案的一致性，您會將新的控制器新增至 [現有的**控制器**] 資料夾。 以滑鼠右鍵按一下 [**控制器**] 資料夾，**然後選取 [** 新增 > **新的 scaffold 專案**]。
 
-選取  **MVC 5 控制器與檢視，使用 Entity Framework**選項。 此選項會產生控制器和檢視更新、 刪除、 建立和顯示您的模型中的資料。
+使用 [ **Entity Framework] 選項，選取具有 views 的 MVC 5 控制器**。 此選項會產生控制器和視圖，以更新、刪除、建立和顯示模型中的資料。
 
 ![新增 mvc 控制器](generating-views/_static/image2.png)
 
-選取 **學生 (ContosoSite.Models)** 模型類別，然後選取**ContosoUniversityDataEntities (ContosoSite.Models)** 內容類別。 保留做為控制器名稱**StudentsController**。
+針對 [模型] 類別選取 [**學生（ContosoSite）** ]，然後選取內容類別的**ContosoUniversityDataEntities （ContosoSite）** 。 將控制器名稱保留為**studentscontroller.cs**。
 
-按一下 [加入] 。
+按一下 [新增]。
 
-如果您收到錯誤，可能是因為您並未建置在上一節中的專案。 如果是的話，請嘗試建置專案，，然後再次新增 scaffold 項目。
+如果您收到錯誤，可能是因為您未在上一節中建立專案。 若是如此，請嘗試建立專案，然後再次加入 scaffold 專案。
 
-程式碼產生程序完成之後，您會在您的專案中看到新的控制器和檢視**控制器**並**檢視** > **學生**資料夾.
+程式碼產生程式完成之後，您會在專案的 [**控制器**和**views** ] > [**學生**] 資料夾中看到新的控制器和 views。
 
-同樣地，執行相同的步驟，但將的 scaffold**註冊**類別。 完成後，您會有**EnrollmentsController.cs**檔案和資料夾之下**檢視**名為**註冊**與 Create、 Delete、 詳細資料、 編輯和索引檢視。
+再次執行相同的步驟，但新增**註冊**類別的 scaffold。 完成時，您會有一個**EnrollmentsController.cs**檔案，以及**一個名為** **註冊** 的資料夾，其中包含 建立、刪除、詳細資料、編輯 和 索引
 
-## <a name="add-links-to-new-views"></a>將連結新增至新的檢視
+## <a name="add-links-to-new-views"></a>將連結新增至新的視圖
 
-為了讓您更輕鬆地瀏覽至您新的檢視，您可以為學生和註冊幾個超連結新增至索引檢視。 開啟的檔案**檢視** > **家用** > *Index.cshtml*，這是您網站的 [首頁] 頁面。 下列程式碼下方新增 jumbotron。
+為了讓您更輕鬆地流覽至新的視圖，您可以將幾個超連結新增至學生和註冊的索引視圖。 在 > **Home** > 的**Views**資料夾中開啟檔案，這是您網站的*首頁。* 在 jumbotron 下方新增下列程式碼。
 
 [!code-cshtml[Main](generating-views/samples/sample1.cshtml)]
 
-ActionLink 方法中，第一個參數是要顯示在連結的文字。 第二個參數是動作，第三個參數是控制器的名稱。 比方說，第一個連結會指向 StudentsController 中的索引動作。 實際的超連結會從這些值來建構。 最終的第一個連結會帶領使用者前往**Index.cshtml**檔案內**檢視/學生**資料夾。
+對於 Html.actionlink 方法，第一個參數是要顯示在連結中的文字。 第二個參數是動作，而第三個參數是控制器的名稱。 例如，第一個連結會指向 Studentscontroller.cs 中的索引動作。 實際的超連結是由這些值所構成。 第一個連結最後會將使用者帶到**Views/** student 資料夾中的**Index. cshtml**檔案。
 
-## <a name="display-student-views"></a>顯示學生檢視
+## <a name="display-student-views"></a>顯示學生的視圖
 
-您將驗證新增至您的專案正確的程式碼顯示的學生，清單，並可讓使用者編輯、 建立或刪除資料庫中的學生記錄。
+您會驗證新增至專案的程式碼是否正確地顯示學生清單，並可讓使用者編輯、建立或刪除資料庫中的學生記錄。
 
-以滑鼠右鍵按一下**檢視** > **首頁** > *Index.cshtml*檔案，然後選取**瀏覽器中的檢視**。 在應用程式的首頁上，選取**學生清單**。
+以滑鼠右鍵按一下 > **Home** * > 的* **Views**檔案，然後選取 [**在瀏覽器中查看**]。 在應用程式首頁上，選取 [**學生清單**]。
 
 ![](generating-views/_static/image6.png)
 
-在  **Index**頁面上，注意清單中的學生與連結，以修改此資料。 選取 **新建**連結，並提供一些值給新的學生。 按一下 **建立**，並注意新的學生新增至您的清單。
+在 [**索引**] 頁面上，請注意要修改此資料的學生和連結清單。 選取 [**新建] 連結，並**為新的學生提供一些值。 按一下 [**建立**]，並注意新的 student 已新增至您的清單。
 
-回到**Index**頁面上，選取**編輯**連結，然後變更的某些值的學生。 按一下 **儲存**，並注意學生資料錄已變更。
+回到 [**索引**] 頁面，選取 [**編輯**] 連結，然後變更學生的一些值。 按一下 [**儲存**]，並注意學生記錄已經變更。
 
-最後，選取**刪除**連結，並確認您想要刪除此記錄，依序按一下**刪除** 按鈕。
+最後，選取 [**刪除**] 連結，然後按一下 [**刪除**] 按鈕，確認您想要刪除記錄。
 
-不需要撰寫任何程式碼，您已新增一般對資料執行作業的 Student 資料表中的檢視。
+在不撰寫任何程式碼的情況下，您已新增可對 Student 資料表中的資料執行一般作業的視圖。
 
-您可能已經注意到，欄位的文字標籤為基礎之資料庫屬性 (例如**LastName**) 不一定是您想要顯示在網頁上。 比方說，您可能會想要的標籤**姓氏**。 稍後在本教學課程中，您將會修正這個顯示問題。
+您可能已經注意到，欄位的文字標籤是以資料庫屬性為基礎（例如**LastName**），這不一定是您想要顯示在網頁上的內容。 例如，您可能會偏好將標籤**命名為姓氏**。 您稍後會在本教學課程中修正此顯示問題。
 
-## <a name="display-enrollment-views"></a>顯示註冊檢視
+## <a name="display-enrollment-views"></a>顯示註冊視圖
 
-您的資料庫都包含學生和註冊的資料表，與 Course 與 Enrollment 資料表之間的一對多關聯性之間的一對多關聯性。 註冊的檢視正確處理這些關聯性。 瀏覽至您的網站，並選取首頁**註冊清單**連結，然後**建立新**連結。
+您的資料庫包含 Student 與註冊資料表之間的一對多關聯性，以及課程和註冊資料表之間的一對多關聯性。 註冊的視圖會正確地處理這些關聯性。 流覽至您網站的首頁，然後選取 [註冊] 連結**清單**，再選取 [**建立新**的] 連結。
 
-檢視會顯示用來建立新的註冊記錄的表單。 特別是，請注意，表單就會包含**CourseID**下拉式清單並**StudentID**下拉式清單。 兩者會填入相關的資料表中的值。
+此視圖會顯示一個表單，用來建立新的註冊記錄。 特別要注意的是，表單包含 [ **CourseID** ] 下拉式清單和 [ **StudentID** ] 下拉式清單。 這兩者都會以相關資料表中的值填入。
 
-此外，驗證提供的值會自動套用根據欄位的資料類型。 **級**需要數字，因此如果您嘗試使用不相容的價值，就會顯示一則錯誤訊息：*[等級] 欄位必須是數字。*
+此外，系統會根據欄位的資料類型，自動套用所提供值的驗證。 **等級**需要數位，因此如果您嘗試提供不相容的值，就會顯示錯誤訊息：*欄位等級必須是數位。*
 
-您已驗證的自動產生的檢視，可讓使用者可以使用資料庫中的資料。 在本系列中下一個教學課程中，您會更新資料庫，並在 web 應用程式中進行對應的變更。
+您已確認自動產生的視圖可讓使用者使用資料庫中的資料。 在此系列的下一個教學課程中，您將會更新資料庫，並在 web 應用程式中進行對應的變更。
 
 ## <a name="next-steps"></a>後續步驟
 
 在本教學課程中，您已：
 
 > [!div class="checklist"]
-> * 新增的 scaffold
-> * 已新增新的檢視連結
-> * 顯示的學生檢視
-> * 顯示的註冊檢視
+> * 已新增 scaffold
+> * 已將連結新增至新的視圖
+> * 顯示的學生視圖
+> * 顯示的註冊視圖
 
-請前進到下一個教學課程，以了解如何將資料庫變更。
+請前進到下一個教學課程，以瞭解如何變更資料庫。
 > [!div class="nextstepaction"]
 > [變更資料庫](changing-the-database.md)

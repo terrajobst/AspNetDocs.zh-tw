@@ -1,222 +1,222 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-vb
-title: '反覆項目 #5 – 建立單元測試 (VB) |Microsoft Docs'
+title: '反復專案 #5 –建立單元測試（VB） |Microsoft Docs'
 author: microsoft
-description: 在第五個反覆項目中，我們讓我們的應用程式容易維護及修改藉由新增單元測試。 我們模擬我們的資料模型類別，並建置 o 的單元測試...
+description: 在第五個反復專案中，我們會藉由新增單元測試，讓應用程式更容易維護和修改。 我們會模擬我們的資料模型類別，並建立適用于 o 的單元測試 。
 ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: c6e5c036-2265-4fa7-a9eb-47f197bdc262
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 4ce1c6224a7e9203ff62f136f4f3a43e4561a904
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65123823"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78544293"
 ---
-# <a name="iteration-5--create-unit-tests-vb"></a>反覆項目 #5 – 建立單元測試 (VB)
+# <a name="iteration-5--create-unit-tests-vb"></a>反復專案 #5 –建立單元測試（VB）
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-[下載程式碼](iteration-5-create-unit-tests-vb/_static/contactmanager_5_vb1.zip)
+[下載程式代碼](iteration-5-create-unit-tests-vb/_static/contactmanager_5_vb1.zip)
 
-> 在第五個反覆項目中，我們讓我們的應用程式容易維護及修改藉由新增單元測試。 我們模擬我們的資料模型類別，並建置我們的控制器和驗證邏輯單元測試。
+> 在第五個反復專案中，我們會藉由新增單元測試，讓應用程式更容易維護和修改。 我們會模擬我們的資料模型類別，並為我們的控制器和驗證邏輯建立單元測試。
 
-## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>建立連絡人管理 ASP.NET MVC 應用程式 (VB)
+## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>建立連絡人管理 ASP.NET MVC 應用程式（VB）
 
-在本系列教學課程中，我們會建置整個連絡人管理應用程式從開始到完成。 請連絡系統管理員應用程式可讓您商店連絡資訊的名稱、 電話號碼和電子郵件地址-的人員清單。
+在這一系列的教學課程中，我們從一開始就建立了整個連絡人管理應用程式。 連絡人管理員應用程式可讓您儲存連絡人資訊名稱、電話號碼和電子郵件地址，以取得人員清單。
 
-我們會建置應用程式透過多個反覆項目。 每次反覆運算時，我們會逐漸改善應用程式。 此多個反覆項目方法的目標是要讓您了解每個變更的原因。
+我們會透過多個反復專案來建立應用程式。 在每次反覆運算時，我們會逐漸改善應用程式。 這個多個反復專案方法的目標，是要讓您瞭解每項變更的原因。
 
-- 反覆項目 #1-建立應用程式。 在第一次反覆運算中，我們建立連絡人管理員中的最簡單的方式可能。 我們將新增基本資料庫作業的支援：建立、 讀取、 更新和刪除 (CRUD)。
+- 反復專案 #1-建立應用程式。 在第一個反復專案中，我們會以最簡單的方式建立連絡人管理員。 我們新增對基本資料庫作業的支援：建立、讀取、更新和刪除（CRUD）。
 
-- 反覆項目 #2-讓應用程式看起來不錯。 這個反覆項目，我們以改善應用程式的外觀的修改預設的 ASP.NET MVC 檢視主版頁面和階層式樣式表。
+- 反復專案 #2-讓應用程式看起來不錯。 在此反復專案中，我們藉由修改預設的 ASP.NET MVC view 主版頁面和級聯樣式表，來改善應用程式的外觀。
 
-- 反覆項目 #3-新增表單驗證。 在第三個反覆項目，我們會加入基本表單驗證。 我們可以防止使用者提交表單，而不會完成必要的表單欄位。 此外，我們也會驗證電子郵件地址和電話號碼。
+- 反復專案 #3-新增表單驗證。 在第三個反復專案中，我們會新增基本表單驗證。 我們會防止人們提交表單，而不需要完成必要的表單欄位。 我們也會驗證電子郵件地址和電話號碼。
 
-- 反覆項目 #4-進行鬆散偶合的應用程式。 在這個第四個反覆項目中，我們利用數種軟體設計模式，以讓它更容易維護及修改連絡人管理員應用程式。 比方說，我們可以重構應用程式使用儲存機制模式和相依性插入模式。
+- 反復專案 #4-讓應用程式鬆散結合。 在這第四次的反復專案中，我們會利用數種軟體設計模式，讓您更輕鬆地維護和修改 Contact Manager 應用程式。 例如，我們會重構應用程式，以使用存放庫模式和相依性插入模式。
 
-- 反覆項目 #5-建立單元測試。 在第五個反覆項目中，我們讓我們的應用程式容易維護及修改藉由新增單元測試。 我們模擬我們的資料模型類別，並建置我們的控制器和驗證邏輯單元測試。
+- 反復專案 #5-建立單元測試。 在第五個反復專案中，我們會藉由新增單元測試，讓應用程式更容易維護和修改。 我們會模擬我們的資料模型類別，並為我們的控制器和驗證邏輯建立單元測試。
 
-- 反覆項目 #6-使用測試導向開發。 在這個第六個反覆項目中，我們新功能加入我們的應用程式方法是先撰寫單元測試，並撰寫單元測試的程式碼。 在這個反覆項目，我們會新增連絡人群組。
+- 反復專案 #6-使用以測試為導向的開發。 在此第六個反復專案中，我們會先撰寫單元測試，並針對單元測試撰寫程式碼，以將新功能加入至應用程式。 在此反復專案中，我們會新增連絡人群組。
 
-- 反覆項目 #7-新增 Ajax 功能。 在第七個反覆項目，改善回應性和我們的應用程式的效能透過新增對 Ajax 支援。
+- 反復專案 #7-新增 Ajax 功能。 在第七次的反復專案中，我們藉由新增 Ajax 的支援來改善應用程式的回應性和效能。
 
-## <a name="this-iteration"></a>這個反覆項目
+## <a name="this-iteration"></a>這個反復專案
 
-在連絡人管理員應用程式的上一個反覆項目，我們可以重構應用程式更鬆散結合。 我們會分隔到不同控制器、 服務和儲存機制層應用程式。 每個圖層是由其下方的圖層，透過介面互動。
+在連絡人管理員應用程式的上一個反復專案中，我們重構了應用程式，以進行更鬆散的結合。 我們將應用程式分成不同的控制器、服務和儲存機制層。 每一層都會透過介面與其底下的圖層互動。
 
-我們重構應用程式，讓您更輕鬆地維護及修改應用程式。 例如，如果我們需要使用新的資料存取技術，我們只是可以變更儲存機制層但沒有碰觸的控制器或服務層。 藉由連絡人管理員鬆散偶合的我們已進行應用程式更有彈性，來變更。
+我們已重構應用程式，讓應用程式更容易維護和修改。 例如，如果我們需要使用新的資料存取技術，我們可以直接變更存放庫層，而不需要觸及控制器或服務層。 藉由讓連絡人管理員鬆散結合，我們讓應用程式更有彈性地進行變更。
 
-但是，我們需要將新的功能新增至連絡人管理員應用程式時，會發生什麼事？ 或者，當我們修正 bug 時，會發生什麼事？ Sad，但也經過證實的老實說，撰寫程式碼的是，每當您在同一個程式碼建立新的 bug 的風險。
+但是，當我們需要將新功能加入至 Contact Manager 應用程式時，會發生什麼事？ 或者，當我們修正 bug 時，會發生什麼事？ 不過，只要您接觸程式碼，就會產生新 bug 的風險，但這是一項很好的證明，那就是撰寫程式碼的事實。
 
-比方說，一個美好的一天，您的管理員可能會要求您加入的新功能請連絡管理員。 她想要新增連絡人群組的支援。 她想要讓使用者能夠將他們的連絡人組織成群組，例如朋友、 商務和等等。
+例如，您的經理可能會要求您將新功能新增至連絡人管理員。 她想要加入連絡人群組的支援。 她希望您可以讓使用者將他們的連絡人組織成像是朋友、Business 等等的群組。
 
-若要實作這項新功能，您必須修改連絡人管理員應用程式的所有三個層級。 您必須將新的功能新增至控制器、 服務層和儲存機制。 一旦您開始修改程式碼，可能會中斷運作之前的功能。
+若要執行這項新功能，您必須修改 Contact Manager 應用程式的全部三個層級。 您必須將新功能新增至控制器、服務層和存放庫。 一旦您開始修改程式碼，就會有風險的重大功能。
 
-重整成個別的多層應用程式，如同我們在先前的反覆項目，是一件好事。 它是一件好事，因為它可讓我們將對整個圖層中的變更，但沒有碰觸的應用程式其餘部分。 不過，如果您想要讓您更容易維護及修改圖層內的程式碼，您需要建立的程式碼的單元測試。
+將我們的應用程式重構成不同的層級，如同我們在先前的反復專案中所做的，是個好的。 這是件好事，因為它可讓我們對整個階層進行變更，而不需要觸及應用程式的其餘部分。 不過，如果您想要讓某一層中的程式碼更容易維護和修改，您必須建立程式碼的單元測試。
 
-您使用的單元測試的程式碼的個別單位。 小於整個應用程式層級時，則這些單位的程式碼。 一般而言，您可以使用單元測試來驗證您預期的方式中的行為是否在您的程式碼中的特定方法。 例如，您會建立由 ContactManagerService 類別公開的 CreateContact() 方法的單元測試。
+您可以使用單元測試來測試個別的程式碼單位。 這些程式碼單位小於整個應用層。 一般來說，您會使用單元測試來驗證程式代碼中的特定方法是否以您預期的方式運作。 例如，您可以為 ContactManagerService 類別所公開的 CreateContact （）方法建立單元測試。
 
-只要應用程式工作的單元測試，例如防護機制。 每當您修改應用程式中的程式碼時，您可以執行一組單元測試，以檢查是否修改將會中斷現有的功能。 單元測試可讓您的程式碼安全地修改。 單元測試讓所有的程式碼應用程式中變更更有彈性。
+應用程式的單元測試就像安全的網路一樣。 每當您修改應用程式中的程式碼時，您可以執行一組單元測試，以檢查修改是否會中斷現有的功能。 單元測試可讓您的程式碼安全地進行修改。 單元測試可讓您應用程式中的所有程式碼更有彈性地進行變更。
 
-這個反覆項目，在中，我們會將單元測試加入我們的連絡人管理員應用程式。 這樣一來，在下一個反覆項目中，我們可以將連絡人群組加入我們的應用程式而不需擔心小心破壞現有功能。
-
-> [!NOTE] 
-> 
-> 有各種不同的單元測試架構，包括 NUnit、 xUnit.net 和 MbUnit。 在本教學課程中，我們使用的單元測試架構隨附於 Visual Studio。 不過，您可以輕鬆地使用其中一種替代的架構。
-
-## <a name="what-gets-tested"></a>接受測試的基準
-
-在完美的世界中，會受到您的程式碼的所有單元測試。 在完美的世界中，您會有完美的安全網。 您可以修改任何一行程式碼，在您的應用程式，並立即知道，藉由執行您的單元測試變更是否中斷現有的功能。
-
-不過，我們不完美的世界中的即時 t。 實際上，撰寫單元測試時，您專注於撰寫您的商務邏輯 （例如，驗證邏輯） 的測試。 特別是，您*沒有*撰寫單元測試，為您的資料存取邏輯或檢視邏輯。
-
-若要很有用，單元測試必須非常快速地執行。 您輕鬆地會累積數百個 （或甚至數千個） 的應用程式的單元測試。 如果單元測試需要很長的時間執行，則您將可避免執行它們。 換句話說，長時間執行的單元測試是每日的程式碼撰寫用途沒有幫助的。
-
-基於這個理由，您通常不寫入與資料庫互動的程式碼的單元測試。 針對即時資料庫執行數百個單元測試會太慢。 相反地，您會模擬您的資料庫，並撰寫模擬 （mock） 的資料庫 （我們討論模擬 (mock) 下的資料庫） 進行互動的程式碼。
-
-基於類似的理由，您通常不撰寫檢視的單元測試。 若要測試的檢視，您必須啟動網頁伺服器。 因為分內快速啟動網頁伺服器是一個相當緩慢的程序，不建議為您的檢視建立單元測試。
-
-如果您的檢視包含複雜的邏輯應該考慮將邏輯移至 Helper 方法。 您可以撰寫執行而不會啟動 web 伺服器的協助程式方法的單元測試。
+在此反復專案中，我們會將單元測試新增至連絡人管理員應用程式。 如此一來，在下一個反復專案中，我們可以將連絡人群組新增至應用程式，而不必擔心中斷現有的功能。
 
 > [!NOTE] 
 > 
-> 雖然撰寫測試的資料存取邏輯，或檢視邏輯不是個不錯的主意撰寫單元測試時，這些測試可以是非常重要，建置功能或整合測試時。
+> 有各種單元測試架構，包括 NUnit、xUnit.net 和 MbUnit。 在本教學課程中，我們會使用 Visual Studio 隨附的單元測試架構。 不過，您可以輕鬆地使用其中一個替代架構。
+
+## <a name="what-gets-tested"></a>已測試的內容
+
+在完美的世界中，單元測試會涵蓋所有程式碼。 在完美的世界中，您會有完美的安全網路。 無論變更是否中斷現有的功能，您都可以藉由執行單元測試來修改應用程式中的任何程式程式碼，並立即得知。
+
+不過，我們不會在完美的世界中生活。 實際上，撰寫單元測試時，您會專注于撰寫商務邏輯的測試（例如，驗證邏輯）。 特別的是，您*不會*為數據存取邏輯或您的 view 邏輯撰寫單元測試。
+
+單元測試必須非常快速地執行，才能發揮效用。 您可以輕鬆地累積應用程式的數百個（甚至數千個）單元測試。 如果單元測試需要很長的時間來執行，則您會避免執行它們。 換句話說，長時間執行的單元測試在日常編碼的用途上毫無用處。
+
+因此，您通常不會針對與資料庫互動的程式碼撰寫單元測試。 對即時資料庫執行數百個單元測試的速度太慢。 相反地，您會模擬資料庫，並撰寫與模擬資料庫互動的程式碼（我們會在下面討論模擬資料庫）。
+
+基於類似的理由，您通常不會針對 views 撰寫單元測試。 為了測試檢視，您必須啟動 web 伺服器。 由於啟動網頁伺服器是相當緩慢的程式，因此不建議您為您的視圖建立單元測試。
+
+如果您的視圖包含複雜的邏輯，則您應該考慮將邏輯移至 Helper 方法中。 您可以針對執行的 Helper 方法撰寫單元測試，而不需要啟動 web 伺服器。
 
 > [!NOTE] 
 > 
-> ASP.NET MVC 是 Web Form 檢視引擎。 Web Form 檢視引擎相依於 web 伺服器時，可能不是其他檢視引擎。
+> 在撰寫單元測試時，撰寫資料存取邏輯或 view 邏輯的測試並不是個好主意，而在建立功能或整合測試時，這些測試可能非常有説明。
 
-## <a name="using-a-mock-object-framework"></a>使用模擬 （mock） 物件架構
+> [!NOTE] 
+> 
+> ASP.NET MVC 是 Web Forms View 引擎。 雖然 Web form View 引擎相依于 web 伺服器，但其他視圖引擎可能不是。
 
-當建置單元測試，您幾乎都要利用模擬物件架構。 模擬物件架構可讓您建立應用程式中的模擬 （mock） 和類別的虛設常式。
+## <a name="using-a-mock-object-framework"></a>使用 Mock 物件架構
 
-例如，您可以使用模擬物件架構產生的儲存機制類別的模擬 （mock） 版本。 如此一來，您可以使用模擬 （mock） 的儲存機制類別而不是實際的儲存機制類別在您的單元測試。 使用模擬的儲存機制，可讓您避免執行單元測試時，執行資料庫程式碼。
+在建立單元測試時，您幾乎都需要利用 Mock 物件架構。 Mock 物件架構可讓您在應用程式中建立類別的模擬和 stub。
 
-Visual Studio 不會包含一個模擬物件架構。 不過，有數個商業和開放原始碼模擬物件架構適用於.NET framework:
+例如，您可以使用 Mock 物件架構來產生存放庫類別的模擬版本。 如此一來，您就可以在單元測試中使用模擬儲存機制類別，而不是實際的儲存機制類別。 使用 mock 存放庫可讓您在執行單元測試時，避免執行資料庫程式碼。
 
-1. Moq-此架構是開放原始碼 BSD 授權可用。 您可以下載從 Moq [ https://code.google.com/p/moq/ ](https://code.google.com/p/moq/)。
-2. Rhino Mocks-此架構是開放原始碼 BSD 授權可用。 您可以下載 Rhino Mocks 從[ http://ayende.com/projects/rhino-mocks.aspx ](http://ayende.com/projects/rhino-mocks.aspx)。
-3. Typemock Isolator-這是一個商業的架構。 您可以下載從試用版[ http://www.typemock.com/ ](http://www.typemock.com/)。
+Visual Studio 不包含 Mock 物件架構。 不過，有數個適用于 .NET framework 的商業和開放原始碼模擬物件架構：
 
-在本教學課程中，我決定使用 Moq。 不過，您可以很容易使用 Rhino Mocks 或 Typemock Isolator 建立 Mock 物件，請連絡管理員應用程式。
+1. Moq-此架構適用于開放原始碼 BSD 授權。 您可以從[https://code.google.com/p/moq/](https://code.google.com/p/moq/)下載 Moq。
+2. Rhino 模擬-此架構適用于開放原始碼 BSD 授權。 您可以從[http://ayende.com/projects/rhino-mocks.aspx](http://ayende.com/projects/rhino-mocks.aspx)下載 Rhino 模擬。
+3. Typemock Isolator-這是商業架構。 您可以從[http://www.typemock.com/](http://www.typemock.com/)下載試用版。
 
-您可以使用 Moq 之前，您需要完成下列步驟：
+在本教學課程中，我決定使用 Moq。 不過，您可以輕鬆地使用 Rhino 模擬或 Typemock Isolator 來建立 Contact Manager 應用程式的 Mock 物件。
+
+在您可以使用 Moq 之前，您需要完成下列步驟：
 
 1. 。
-2. 解壓縮下載之前，請確定您以滑鼠右鍵按一下檔案，然後按一下  按鈕**解除封鎖**（請參閱 圖 1）。
-3. 解壓縮下載。
-4. 選取功能表選項將 Moq 組件的參考加入您的測試專案**專案中，加入參考**來開啟**加入參考**對話方塊。 在 [瀏覽] 索引標籤中，瀏覽至您解壓縮 Moq 資料夾並選取 Moq.dll 組件。 按一下 **確定**按鈕 （請參閱 圖 2）。
+2. 在解壓縮下載內容之前，請確定您以滑鼠右鍵按一下檔案，然後按一下標示為 [**解除封鎖**] 的按鈕（請參閱 [圖 1]）。
+3. 將下載解壓縮。
+4. 選取功能表選項 [**專案]、[加入參考**] 以開啟 [**加入參考**] 對話方塊，將 Moq 元件的參考加入至您的測試專案。 在 [流覽] 索引標籤下，流覽至您解壓縮 Moq 的資料夾，然後選取 [Moq] 元件。 按一下 [**確定]** 按鈕（請參閱 [圖 2]）。
 
 [![解除封鎖 Moq](iteration-5-create-unit-tests-vb/_static/image1.jpg)](iteration-5-create-unit-tests-vb/_static/image1.png)
 
-**圖 01**:解除封鎖 Moq ([按一下以檢視完整大小的影像](iteration-5-create-unit-tests-vb/_static/image2.png))
+**圖 01**：解除封鎖 Moq （[按一下以觀看完整大小的影像](iteration-5-create-unit-tests-vb/_static/image2.png)）
 
-[![新增 Moq 之後的參考](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
+[新增 Moq 之後的 ![參考](iteration-5-create-unit-tests-vb/_static/image2.jpg)](iteration-5-create-unit-tests-vb/_static/image3.png)
 
-**圖 02**:新增 Moq 之後的參考 ([按一下以檢視完整大小的影像](iteration-5-create-unit-tests-vb/_static/image4.png))
+**圖 02**：新增 Moq 之後的參考（[按一下以查看完整大小的影像](iteration-5-create-unit-tests-vb/_static/image4.png)）
 
 ## <a name="creating-unit-tests-for-the-service-layer"></a>建立服務層的單元測試
 
-可讓 s 著手建立一組我們連絡人管理員應用程式的服務層的單元測試。 我們將使用這些測試來驗證我們的驗證邏輯。
+讓我們從為我們的 Contact Manager 應用程式服務層建立一組單元測試開始。 我們將使用這些測試來驗證我們的驗證邏輯。
 
-建立名為 Models ContactManager.Tests 專案中的新資料夾。 接下來，以滑鼠右鍵按一下 [模型] 資料夾，然後選取**新增]、 [新的測試**。 **加入新測試**[圖 3] 所示的對話方塊隨即出現。 選取 **單元測試**範本並命名您的新測試 ContactManagerServiceTest.vb。 按一下 **確定**按鈕來測試專案中加入新的測試。
+在 ContactManager 專案中建立名為 [模型] 的新資料夾。 接下來，以滑鼠右鍵按一下 [模型] 資料夾，然後選取 [**加入]、[新增測試**]。 [圖 3] 所示的 [**加入新測試**] 對話方塊隨即出現。 選取 [**單元測試**] 範本，並將新的測試命名為 ContactManagerServiceTest。 按一下 [**確定]** 按鈕，將新的測試加入至測試專案。
 
 > [!NOTE] 
 > 
-> 一般情況下，您會想測試專案，以符合您的 ASP.NET MVC 專案的資料夾結構的資料夾結構。 例如，您將測試控制器放在 Controllers 資料夾中，在 [模型] 資料夾中，模型測試等等。
+> 一般來說，您會想要測試專案的資料夾結構，以符合 ASP.NET MVC 專案的資料夾結構。 例如，您將控制器測試放在 [控制器] 資料夾、[模型] 資料夾中的模型測試等等。
 
 [![Models\ContactManagerServiceTest.cs](iteration-5-create-unit-tests-vb/_static/image3.jpg)](iteration-5-create-unit-tests-vb/_static/image5.png)
 
-**圖 03**:Models\ContactManagerServiceTest.cs([Click to view full-size image](iteration-5-create-unit-tests-vb/_static/image6.png))
+**圖 03**： Models\ContactManagerServiceTest.cs （[按一下以觀看完整大小的影像](iteration-5-create-unit-tests-vb/_static/image6.png)）
 
-一開始，我們想要測試 ContactManagerService 類別所公開的 CreateContact() 方法。 我們將建立下列五個測試：
+一開始，我們想要測試 ContactManagerService 類別所公開的 CreateContact （）方法。 我們將建立下列五項測試：
 
-- CreateContact()-測試該 CreateContact() 值為 true 時傳回有效的連絡人會傳遞至方法。
-- CreateContactRequiredFirstName()-錯誤訊息加入至模型狀態時遺失的第一個名稱與連絡人的測試會傳遞至 CreateContact() 方法。
-- CreateContactRequiredLastName()-錯誤訊息加入至模型狀態時遺失的最後一個名稱與連絡人的測試會傳遞至 CreateContact() 方法。
-- CreateContactInvalidPhone()-錯誤訊息會加入至模型狀態時具有無效電話號碼的連絡人的測試會傳遞至 CreateContact() 方法。
-- CreateContactInvalidEmail()-錯誤訊息會加入至模型狀態時無效的電子郵件地址的連絡人的測試會傳遞至 CreateContact() 方法...
+- CreateContact （）-當有效的連絡人傳遞至方法時，CreateContact （）的測試會傳回 true 值。
+- CreateContactRequiredFirstName （）-當具有遺漏名字的連絡人傳遞至 CreateContact （）方法時，測試是否將錯誤訊息加入至模型狀態。
+- CreateContactRequiredLastName （）-測試將遺失姓氏的連絡人傳遞至 CreateContact （）方法時，會將錯誤訊息加入至模型狀態。
+- CreateContactInvalidPhone （）-當具有無效電話號碼的連絡人傳遞至 CreateContact （）方法時，測試是否將錯誤訊息新增至模型狀態。
+- CreateContactInvalidEmail （）-測試將具有無效電子郵件地址的連絡人傳遞至 CreateContact （）方法時，會將錯誤訊息加入至模型狀態。
 
-第一項測試會驗證有效的連絡人不會產生驗證錯誤。 剩餘的測試會檢查每個驗證規則。
+第一次測試會確認有效的連絡人不會產生驗證錯誤。 其餘的測試會檢查每個驗證規則。
 
-在 列表 1 中包含這些測試的程式碼。
+這些測試的程式碼包含在 [清單 1] 中。
 
-**Listing 1 - Models\ContactManagerServiceTest.vb**
+**清單 1-Models\ContactManagerServiceTest.vb**
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample1.vb)]
 
-因為我們使用列表 1 中的 Contact 類別，我們需要將 Microsoft Entity Framework 的參考新增至我們的測試專案。 加入 System.Data.Entity 組件的參考。
+因為我們使用 [清單 1] 中的 Contact 類別，所以我們需要在測試專案中加入 Microsoft Entity Framework 的參考。 加入 System.object 元件的參考。
 
-列表 1 包含一個名為 [TestInitialize] 屬性裝飾的 initialize （） 方法。 每個單元測試執行之前自動呼叫這個方法 （它每個單元測試之前稱為 5 次）。 Initialize （） 方法會使用下列程式碼行建立模擬的儲存機制：
+[清單 1] 包含名為 Initialize （）的方法，它會以 [TestInitialize] 屬性裝飾。 在執行每個單元測試之前，會自動呼叫這個方法（在每個單元測試之前都會呼叫5次）。 Initialize （）方法會使用下列程式程式碼建立模擬儲存機制：
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample2.vb)]
 
-這行程式碼會使用的 Moq 架構，來產生模擬的儲存機制從 IContactManagerRepository 介面。 模擬儲存機制而不是實際 EntityContactManagerRepository 用以避免存取資料庫，每個單元測試執行時。 模擬儲存機制實作 IContactManagerRepository 介面的方法，但方法 don t 實際執行任何動作。
+這行程式碼會使用 Moq 架構，從 IContactManagerRepository 介面產生 mock 存放庫。 模擬儲存機制會用來取代實際的 EntityContactManagerRepository，以避免在每個單元測試執行時存取資料庫。 Mock 存放庫會實 IContactManagerRepository 介面的方法，但方法不會實際執行任何動作。
 
 > [!NOTE] 
 > 
-> 當使用 Moq 架構，是區分\_mockRepository 和\_mockRepository.Object。 前者是指 Mock (的 IContactManagerRepository) 類別，其中包含方法來指定模擬的儲存機制的行為模式為何。 後者是指實際模擬儲存機制實作 IContactManagerRepository 介面。
+> 使用 Moq 架構時，\_mockRepository 和 \_mockRepository 之間有區別。 前者會參考 Mock （of IContactManagerRepository）類別，其中包含指定模擬儲存機制行為方式的方法。 後者是指實 IContactManagerRepository 介面的實際 mock 存放庫。
 
-模擬儲存機制會在 initialize （） 方法中，建立 ContactManagerService 類別的執行個體時。 所有個別的單元測試使用 ContactManagerService 類別執行個體。
+建立 ContactManagerService 類別的實例時，會在 Initialize （）方法中使用 mock 存放庫。 所有的個別單元測試都會使用這個 ContactManagerService 類別的實例。
 
-列表 1 包含五個對應至每個單元測試的方法。 每一種方法是以 [TestMethod] 屬性裝飾。 當您執行單元測試時，任何包含這個屬性會呼叫方法。 換句話說，以 [TestMethod] 屬性裝飾的任何方法都是單元測試。
+[清單 1] 包含五個對應至每個單元測試的方法。 這些方法都是以 [TestMethod] 屬性裝飾。 當您執行單元測試時，會呼叫具有這個屬性的任何方法。 換句話說，任何以 [TestMethod] 屬性裝飾的方法都是單元測試。
 
-第一個單元測試時，名為 CreateContact()，驗證，呼叫 CreateContact() 時，傳回值 true Contact 類別的有效執行個體傳遞至方法。 測試會建立連絡人類別的執行個體、 呼叫 CreateContact(); 方法，並確認 CreateContact() 傳回值 true。
+第一個單元測試（名為 CreateContact （））會確認當 Contact 類別的有效實例傳遞給方法時，呼叫 CreateContact （）會傳回 true 值。 此測試會建立 Contact 類別的實例，並呼叫 CreateContact （）方法，並確認 CreateContact （）傳回值 true。
 
-剩餘的測試確認 CreateContact() 方法呼叫與無效的連絡人時然後方法會傳回 false，且預期的驗證錯誤訊息加入至模型狀態。 比方說，CreateContactRequiredFirstName() 測試會建立連絡人類別的執行個體，取代其 FirstName 屬性為空字串。 接下來，CreateContact() 方法呼叫無效的連絡人。 最後，測試會驗證 CreateContact() 傳回 false，而且模型狀態包含預期的驗證錯誤訊息 「 名字 」 所需。
+其餘的測試會確認使用不正確連絡人呼叫 CreateContact （）方法時，此方法會傳回 false，而預期的驗證錯誤訊息會加入至模型狀態。 例如，CreateContactRequiredFirstName （）測試會使用其 FirstName 屬性的空字串，建立 Contact 類別的實例。 接下來，使用不正確 Contact 呼叫 CreateContact （）方法。 最後，測試會確認 CreateContact （）傳回 false，而且模型狀態包含預期的驗證錯誤訊息「需要名字。」
 
-您也可以選取功能表選項列表 1 中執行單元測試**測試執行時，解決方案 （CTRL + R、 A） 中的所有測試**。 測試的結果會顯示在 測試結果 視窗 （請參閱 圖 4）。
+您可以選取 [**測試]、[執行]、[方案中的所有測試] （CTRL + R、A）** 中的功能表選項，以執行 [清單 1] 中的單元測試。 測試的結果會顯示在 [測試結果] 視窗中（請參閱 [圖 4]）。
 
 [![測試結果](iteration-5-create-unit-tests-vb/_static/image4.jpg)](iteration-5-create-unit-tests-vb/_static/image7.png)
 
-**圖 04**:測試結果 ([按一下以檢視完整大小的影像](iteration-5-create-unit-tests-vb/_static/image8.png))
+**圖 04**：測試結果（[按一下以觀看完整大小的影像](iteration-5-create-unit-tests-vb/_static/image8.png)）
 
 ## <a name="creating-unit-tests-for-controllers"></a>建立控制器的單元測試
 
-ASP.NET MVC 應用程式來控制流程的使用者互動。 在測試控制器時，您會想要測試是否控制器會傳回正確的動作結果，並檢視資料。 您也可能會想要測試是否與預期的方式中的模型類別互動的控制器。
+ASP.NET MVC 應用程式會控制使用者互動的流程。 測試控制器時，您會想要測試控制器是否傳回正確的動作結果和查看資料。 您也可能想要測試控制器是否以預期的方式與模型類別互動。
 
-例如，列表 2 包含兩個單元測試，請連絡控制器 create （） 方法。 第一次的單元測試會驗證時有效的連絡人傳遞給 create （） 方法，則 create （） 方法會重新導向至 Index 動作。 換句話說，當傳遞有效的連絡人，create （） 方法應該會傳回代表索引動作 RedirectToRouteResult。
+例如，[清單 2] 包含 Contact controller Create （）方法的兩個單元測試。 第一個單元測試會確認當有效的連絡人傳遞至 Create （）方法時，Create （）方法會重新導向至索引動作。 換句話說，當傳遞有效的連絡人時，Create （）方法應該會傳回代表索引動作的 RedirectToRouteResult。
 
-我們不想要測試 ContactManager 服務層，我們會測試在控制器層時。 因此，我們會模擬服務層的 Initialize 方法中的下列程式碼：
+我們不想在測試控制器層時測試 ContactManager 服務層級。 因此，我們會在 Initialize 方法中，使用下列程式碼來模擬服務層：
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample3.vb)]
 
-在 CreateValidContact() 單元測試中，我們會模擬呼叫服務層使用下列程式碼行 CreateContact() 方法的行為：
+在 CreateValidContact （）單元測試中，我們會使用下列程式程式碼來模擬呼叫服務層 CreateContact （）方法的行為：
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample4.vb)]
 
-這行程式碼中，會導致模擬 （mock） ContactManager 服務呼叫其 CreateContact() 方法時傳回 true 值。 藉由模擬服務層，我們可以測試控制器的行為，而不需要在服務層中執行任何程式碼。
+這行程式碼會在呼叫其 CreateContact （）方法時，讓 mock ContactManager 服務傳回值 true。 藉由模擬服務層級，我們可以測試控制器的行為，而不需要在服務層中執行任何程式碼。
 
-第二個單元測試會驗證 create （） 動作在無效的連絡人會傳遞至方法時，會傳回建立檢視。 我們會造成服務層 CreateContact() 方法來傳回其值為 false，使用下列程式碼行：
+第二個單元測試會在將不正確連絡人傳遞至方法時，確認 Create （）動作是否會傳回 Create view。 我們會讓服務層 CreateContact （）方法以下列程式程式碼傳回 false 值：
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample5.vb)]
 
-如果 create （） 方法的行為如我們所預期它應該傳回建立檢視時的服務層會傳回 false 值。 如此一來，控制器可以顯示驗證錯誤訊息中建立檢視和使用者有機會先行修正該無效的連絡人屬性。
+如果 Create （）方法如預期般運作，則當服務層傳回 false 值時，應該會傳回 Create view。 如此一來，控制器就可以在 [建立] 視圖中顯示驗證錯誤訊息，而且使用者有機會更正該不正確連絡人屬性。
 
-如果您打算建置您的控制站的單元測試您需要從控制器動作傳回明確的檢視表名稱。 比方說，不會傳回如下的檢視：
+如果您打算為控制器建立單元測試，則需要從您的控制器動作傳回明確的視圖名稱。 例如，不會傳回如下所示的視圖：
 
-傳回 View()
+Return View （）
 
-相反地，傳回的檢視，像這樣：
+相反地，會傳回如下所示的視圖：
 
-傳回 View("Create")
+返回視圖（"Create"）
 
-如果您不是明確傳回檢視時 ViewResult.ViewName 屬性就會傳回空字串。
+如果您在傳回 view 時不是明確的，則 ViewResult. ViewName 屬性會傳回空字串。
 
-**Listing 2 - Controllers\ContactControllerTest.vb**
+**清單 2-Controllers\ContactControllerTest.vb**
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample6.vb)]
 
 ## <a name="summary"></a>總結
 
-這個反覆項目，在中，我們會建立單元測試我們的連絡人管理員應用程式。 我們可以在任何時間，以確認我們的應用程式仍會以我們所預期的方式來執行這些單元測試。 單元測試做為我們的應用程式讓我們安全地修改應用程式未來的安全網。
+在此反復專案中，我們為連絡人管理員應用程式建立單元測試。 我們可以隨時執行這些單元測試，以確認我們的應用程式仍然以我們預期的方式運作。 單元測試會作為我們應用程式的安全網路，讓我們能夠在未來安全地修改應用程式。
 
-我們建立兩個一組單元測試。 首先，我們會透過建立我們的服務層的單元測試測試我們的驗證邏輯。 接下來，我們會透過建立我們的控制器層的單元測試測試我們的流程控制邏輯。 在測試我們的服務層時，我們隔離我們的測試我們的服務層從我們的儲存機制層模擬 (mock) 我們的儲存機制層。 在測試控制器層時，我們隔離我們的測試我們控制站的圖層的模擬 (mock) 的服務層。
+我們建立了兩組單元測試。 首先，我們會藉由建立服務層的單元測試來測試我們的驗證邏輯。 接下來，我們會藉由建立控制器層的單元測試來測試流程式控制制邏輯。 測試我們的服務層時，我們會模擬我們的存放庫層，將我們的服務層級的測試與我們的存放庫層隔離。 測試控制器層時，我們會藉由模擬服務層級，為控制器層隔離測試。
 
-中的下一個反覆項目中，我們會修改連絡人管理員應用程式，使它支援連絡人群組。 我們會將這項新功能加入我們的應用程式使用稱為 「 測試驅動開發軟體設計程序。
+在下一個反復專案中，我們會修改 Contact Manager 應用程式，使其支援連絡人群組。 我們會使用稱為「測試導向開發」的軟體設計程式，將這種新功能新增至我們的應用程式。
 
 > [!div class="step-by-step"]
 > [上一頁](iteration-4-make-the-application-loosely-coupled-vb.md)

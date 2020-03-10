@@ -9,11 +9,11 @@ ms.date: 08/10/2019
 msc.legacyurl: ''
 msc.type: content
 ms.openlocfilehash: aa4f627bca99f0a7ffbbb53ea45ebdcf0850fd89
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519358"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78537342"
 ---
 # <a name="aspnet-overview"></a>ASP.NET 概觀
 
@@ -33,7 +33,7 @@ ASP.NET 是免費的 web 架構，可用於使用 HTML、CSS 和 JavaScript 建�
 
 以下是每個架構的總覽，以及如何在兩者之間進行選擇的一些概念。 如果您偏好影片簡介，請參閱[建立具有 ASP.NET 的網站](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/Making-Websites-with-ASPNET)和[什麼是 Web 工具？](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/what-is-web-tools)
 
-|   | 如果您的經驗 | 開發風格 | 專業知識 |
+|   | 如果您的經驗 | 開發風格 | 經驗 |
 |-----------|----------------------|-----------------------------------------------------|----------------|
 | Web Form | Win Forms，WPF，.NET | 使用封裝 HTML 標籤的豐富控制項庫進行快速開發 | 中等層級、先進的 RAD |
 | MVC       | Ruby on Rails，.NET  | 完全掌控 HTML 標籤、程式碼和標記分隔，以及輕鬆撰寫測試。 適用于行動和單頁應用程式（SPA）的最佳選擇。 | 中等層級，先進 |
@@ -51,7 +51,7 @@ ASP.NET MVC 可讓您透過功能強大、以模式為準的方式建置動態�
 
 [深入瞭解 MVC](mvc/index.md)
 
-### <a name="aspnet-web-pages"></a>ASP.NET 網頁
+### <a name="aspnet-web-pages"></a>ASP.NET Web Pages
 
 ASP.NET Web Pages 和 Razor 語法提供快速、平易近人且輕量的方式，將伺服器程式碼與 HTML 結合以建立動態 Web 內容。 連接到資料庫、新增影片、連結至社交網站，以及包含更多的功能，可協助您建立符合最新 web 標準的美觀網站。
 
@@ -65,7 +65,7 @@ ASP.NET Web Pages 和 Razor 語法提供快速、平易近人且輕量的方式�
 
 ## <a name="web-apis"></a>Web API
 
-ASP.NET Web API 是一個架構，可輕易建置 HTTP 服務並擴及廣大的用戶端範圍，包括瀏覽器和行動裝置。 ASP.NET Web API 是一個想理平台，用以 .NET Framework 基礎建置 RESTful 應用程式。
+ASP.NET Web API 是一個架構，可輕易建置 HTTP 服務並擴及廣大的用戶端範圍，包括瀏覽器和行動裝置。 ASP.NET Web 應用程式開發介面是在 .NET Framework 上建置 RESTful 應用程式的理想平台。
 
 [深入了解 Web API (英文)](web-api/index.md)
 

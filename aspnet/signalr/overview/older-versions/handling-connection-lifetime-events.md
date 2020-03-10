@@ -1,232 +1,232 @@
 ---
 uid: signalr/overview/older-versions/handling-connection-lifetime-events
-title: 了解和處理 signalr 的連線存留期事件 1.x |Microsoft Docs
+title: 瞭解和處理 SignalR 1.x 中的連接存留期事件 |Microsoft Docs
 author: bradygaster
-description: 本文說明如何使用事件中樞 API 所公開。
+description: 本文說明如何使用中樞 API 所公開的事件。
 ms.author: bradyg
 ms.date: 06/05/2013
 ms.assetid: e608e263-264d-448b-b0eb-6eeb77713b22
 msc.legacyurl: /signalr/overview/older-versions/handling-connection-lifetime-events
 msc.type: authoredcontent
 ms.openlocfilehash: 2fb671e730a1d41c07b350bf1d64ac1d0b1be55c
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128787"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78536901"
 ---
-# <a name="understanding-and-handling-connection-lifetime-events-in-signalr-1x"></a>了解和處理連線存留期事件 SignalR 1.x
+# <a name="understanding-and-handling-connection-lifetime-events-in-signalr-1x"></a>瞭解和處理 SignalR 1.x 中的連接存留期事件
 
-藉由[Patrick Fletcher](https://github.com/pfletcher)， [Tom Dykstra](https://github.com/tdykstra)
+由一[Fletcher](https://github.com/pfletcher)， [Tom 作者: dykstra](https://github.com/tdykstra)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-> 這篇文章提供 SignalR 連線、 重新連線，以及中斷連線事件，您可以控制，以及您可以設定的逾時和 keepalive 設定的總覽。
+> 本文概要說明您可以處理的 SignalR 連線、重新連線和中斷線上活動，以及您可以設定的 timeout 和 keepalive 設定。
 > 
-> 本文假設您已經具備 SignalR 和連線的存留期事件的一些知識。 Signalr 簡介，請參閱[開始使用 SignalR-概觀-](index.md)。 如需連線存留期事件清單，請參閱下列資源：
+> 本文假設您已經瞭解 SignalR 和連線存留期事件。 如需 SignalR 的簡介，請參閱[SignalR-總覽-消費者入門](index.md)。 如需連線存留期事件的清單，請參閱下列資源：
 > 
-> - [如何處理中樞類別中的連線存留期事件](index.md)
-> - [如何處理 JavaScript 用戶端連線存留期事件](index.md)
-> - [如何處理.NET 用戶端連線存留期事件](index.md)
+> - [如何處理中樞類別中的連接存留期事件](index.md)
+> - [如何處理 JavaScript 用戶端中的連接存留期事件](index.md)
+> - [如何處理 .NET 用戶端中的連接存留期事件](index.md)
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 本文包含下列章節：
 
-- [連接的存留期術語和案例](#terminology)
+- [連線存留期術語和案例](#terminology)
 
-    - [SignalR 連線、 傳輸連線和實體的連線](#signalrvstransport)
-    - [傳輸中斷連線的案例](#transportdisconnect)
-    - [用戶端中斷連線的案例](#clientdisconnect)
-    - [伺服器中斷連線的案例](#serverdisconnect)
-- [逾時和 keepalive 設定](#timeoutkeepalive)
+    - [SignalR 連線、傳輸連線和實體連接](#signalrvstransport)
+    - [傳輸中斷連接案例](#transportdisconnect)
+    - [用戶端中斷連接案例](#clientdisconnect)
+    - [伺服器中斷連接案例](#serverdisconnect)
+- [Timeout 和 keepalive 設定](#timeoutkeepalive)
 
     - [ConnectionTimeout](#connectiontimeout)
     - [DisconnectTimeout](#disconnecttimeout)
-    - [KeepAlive](#keepalive)
-    - [如何變更逾時和 keepalive 設定](#changetimeout)
-- [如何通知使用者有關的連線中斷](#notifydisconnect)
-- [如何持續重新連接](#continuousreconnect)
-- [如何中斷連接的伺服器程式碼中的用戶端](#disconnectclientfromserver)
+    - [保](#keepalive)
+    - [如何變更 timeout 和 keepalive 設定](#changetimeout)
+- [如何通知使用者中斷連線](#notifydisconnect)
+- [如何持續重新連線](#continuousreconnect)
+- [如何中斷用戶端與伺服器程式碼的連線](#disconnectclientfromserver)
 
-API 參考主題的連結是 API 的.NET 4.5 版本。 如果您使用.NET 4，請參閱[API 主題的.NET 4 版本](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx)。
+API 參考主題的連結是針對 .NET 4.5 版的 API。 如果您使用的是 .NET 4，請參閱[.net 4 版本的 API 主題](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx)。
 
 <a id="terminology"></a>
 
-## <a name="connection-lifetime-terminology-and-scenarios"></a>連接的存留期術語和案例
+## <a name="connection-lifetime-terminology-and-scenarios"></a>連線存留期術語和案例
 
-`OnReconnected` SignalR 中樞的事件處理常式可以直接在之後執行`OnConnected`但不是晚`OnDisconnected`指定用戶端。 您可以重新連線，而不中斷的原因是，有數個 「 連線 」 這個字用於 SignalR 的方式。
+SignalR 中樞內的 `OnReconnected` 事件處理常式可以在 `OnConnected` 之後直接執行，而不是在指定的用戶端 `OnDisconnected` 之後。 您可以在沒有中斷連線的情況下進行重新連線的原因，就是在 SignalR 中使用「連線」這個字的幾種方式。
 
 <a id="signalrvstransport"></a>
 
-### <a name="signalr-connections-transport-connections-and-physical-connections"></a>SignalR 連線、 傳輸連線和實體的連線
+### <a name="signalr-connections-transport-connections-and-physical-connections"></a>SignalR 連線、傳輸連線和實體連接
 
-這篇文章會區別*SignalR 連線*，*傳輸連線*，並*實體連線*:
+本文將區別*SignalR 連接*、*傳輸*連線和*實體*連線：
 
-- **SignalR 連線**指的用戶端和伺服器 URL、 SignalR API 所維護，而且可以連接 ID 唯一識別之間的邏輯關聯性 此關聯性的相關資料由 SignalR 維護，並用來建立傳輸連接。 SignalR 和關聯性結尾時，處置資料的用戶端呼叫`Stop`SignalR 嘗試重新建立遺失的傳輸連線期間達到方法或逾時限制。
-- **傳輸連線**指的用戶端和伺服器，維護的其中一個四種傳輸 Api 之間的邏輯關聯性：Websocket 伺服器傳送事件、 不限次數的框架或長輪詢。 SignalR 使用傳輸 API 以建立傳輸連接，並傳輸 API 取決於建立傳輸連線的實體網路連線存在。 SignalR 終止它時，或當傳輸 API 偵測到的實體連接已中斷，就會結束傳輸連線。
-- **實體連接**參考的實體網路的連結-線、 無線訊號，路由器等，可簡化用戶端電腦和伺服器電腦之間的通訊。 實體連線必須存在於若要建立傳輸連線，而且必須以建立 SignalR 連線建立傳輸連接。 不過，重大的實體連接不一定會立即結束的傳輸連線或 SignalR 連線，如稍後本主題將說明。
+- **SignalR**連線是指用戶端和伺服器 URL 之間的邏輯關聯性，由 SignalR API 維護，並由連接識別碼唯一識別。 此關聯性的相關資料是由 SignalR 維護，用來建立傳輸連接。 當用戶端呼叫 `Stop` 方法，或當 SignalR 嘗試重新建立遺失的傳輸連線時，當到達時，關聯性會結束並 SignalR 處置資料。
+- **傳輸**連線指的是用戶端與伺服器之間的邏輯關聯性，由四個傳輸 api 的其中一個來維護： websocket、伺服器傳送事件、永久框架或長時間輪詢。 SignalR 使用傳輸 API 來建立傳輸連線，而傳輸 API 則取決於實體網路連線是否存在，以建立傳輸連接。 當 SignalR 終止時，或當傳輸 API 偵測到實體連接中斷時，傳輸連接就會結束。
+- **實體**連線指的是實體網路連結（有線、無線信號、路由器等），可協助用戶端電腦和伺服器電腦之間的通訊。 必須要有實體連接，才能建立傳輸連線，而且必須建立傳輸連線，才能建立 SignalR 連接。 不過，中斷實體連接並不一定會立即結束傳輸連線或 SignalR 連線，如本主題稍後所述。
 
-在下列圖表中，由 SignalR 連線的中樞 API 和 PersistentConnection API SignalR 層級、 傳輸連線由傳輸層和實體連接由伺服器之間的線條和用戶端。
+在下圖中，SignalR 連線是由中樞 API 和 PersistentConnection API SignalR 層代表，傳輸連接是以傳輸層來表示，而實體連接則是由伺服器之間的程式程式碼來表示。和用戶端。
 
 ![SignalR 架構圖](handling-connection-lifetime-events/_static/image1.png)
 
-當您呼叫`Start`SignalR 用戶端中的方法，您會提供 SignalR 用戶端程式碼需才能建立實體連接到伺服器的所有資訊。 SignalR 用戶端程式碼會使用這項資訊來發出 HTTP 要求，並建立使用其中一種四種傳輸方法的實體連接。 如果傳輸連線失敗，或伺服器失敗，SignalR 連線不會消失立即因為用戶端仍然需要自動重新建立新的傳輸連線至相同的 SignalR URL 的資訊。 在此案例中，從使用者的應用程式不需要介入是，而且當 SignalR 用戶端程式碼會建立新的傳輸連線，它不會啟動新的 SignalR 連線。 SignalR 連線的持續性會反映在事實的連線識別碼，這當您呼叫建立`Start`方法，不會變更。
+當您在 SignalR 用戶端中呼叫 `Start` 方法時，您會提供 SignalR 用戶端程式代碼，以及建立與伺服器的實體連接時所需的所有資訊。 SignalR 用戶端程式代碼會使用這項資訊來提出 HTTP 要求，並建立使用四種傳輸方法之一的實體連接。 如果傳輸連線失敗或伺服器失敗，則 SignalR 連線不會立即消失，因為用戶端仍具有自動重新建立連線到相同 SignalR URL 的新傳輸連接所需的資訊。 在此案例中，不涉及使用者應用程式的介入，而且當 SignalR 用戶端程式代碼建立新的傳輸連線時，並不會啟動新的 SignalR 連接。 SignalR 連接的持續性會反映在您呼叫 `Start` 方法時所建立的連線識別碼不會變更的事實中。
 
-`OnReconnected`集線器上的事件處理常式執行時的傳輸連線之後自動重新建立已遺失。 `OnDisconnected`事件處理常式執行 SignalR 連線的結尾。 SignalR 連線可以在下列任一方式結束：
+當傳輸連線在遺失後自動重新建立時，中樞上的 `OnReconnected` 事件處理常式就會執行。 `OnDisconnected` 事件處理常式會在 SignalR 連接結束時執行。 SignalR 連接可以下列任何一種方式結束：
 
-- 如果用戶端呼叫`Stop`方法中，「 停止 」 訊息傳送至伺服器，以及用戶端和伺服器 SignalR 連線立即結束。
-- 用戶端與伺服器之間的連線中斷後，用戶端會嘗試重新連線，以及伺服器等候用戶端重新連線。 如果要重新連線嘗試未成功，而且在中斷連線逾時期間結束，用戶端和伺服器端 SignalR 連線。 用戶端會停止嘗試重新連線，並處置它表示 SignalR 連線的伺服器。
-- 如果用戶端會停止執行，而不需要呼叫有機會`Stop`方法中，伺服器等候用戶端重新連線，然後結束 中斷連線逾時期限之後 SignalR 連線。
-- 如果伺服器停止執行，用戶端會嘗試重新連線 （重新建立傳輸連線），然後結束 中斷連線逾時期限之後 SignalR 連線。
+- 如果用戶端呼叫 `Stop` 方法，就會將停止訊息傳送至伺服器，而且用戶端和伺服器都會立即結束 SignalR 連線。
+- 在用戶端與伺服器之間的連線中斷之後，用戶端會嘗試重新連接，而伺服器會等待用戶端重新連線。 如果嘗試重新連線失敗，而中斷連線超時期間結束，則用戶端和伺服器都會結束 SignalR 連線。 用戶端會停止嘗試重新連線，而伺服器會處置其 SignalR 連接的表示。
+- 如果用戶端在沒有機會呼叫 `Stop` 方法的情況下停止執行，伺服器會等待用戶端重新連線，然後在中斷連線超時時間之後結束 SignalR 連線。
+- 如果伺服器停止執行，用戶端會嘗試重新連線（重新建立傳輸連線），然後在中斷連線超時時間之後結束 SignalR 連接。
 
-沒有連線問題，與使用者應用程式藉由呼叫結束 SignalR 連線時`Stop`方法、 SignalR 連線和傳輸連線在開始與結束大約相同的時間。 下列各節更詳細說明其他案例。
+當沒有連線問題時，如果使用者應用程式藉由呼叫 `Stop` 方法來結束 SignalR 連接，則 SignalR 連接和傳輸連接會在大約相同的時間開始和結束。 下列各節將更詳細地說明其他案例。
 
 <a id="transportdisconnect"></a>
 
-### <a name="transport-disconnection-scenarios"></a>傳輸中斷連線的案例
+### <a name="transport-disconnection-scenarios"></a>傳輸中斷連接案例
 
-實體連線可能會變慢，或可能會有中斷連線。 中斷時間的長度等因素，傳輸連線可能會被捨棄。 SignalR 接著會嘗試重新建立傳輸連線。 有時候傳輸連線 API 偵測到中斷傳輸連線，會卸除和 SignalR 發現立即連線已中斷。 在其他情況下，既不傳輸連線的 API 或 SignalR 察覺立即連線已遺失。 除了長輪詢傳輸所有 SignalR 用戶端會都使用函式，呼叫*keepalive*檢查的傳輸 API 是無法偵測到的連線中斷。 如需長時間輪詢連線資訊，請參閱 <<c0> [ 逾時和 keepalive 設定](#timeoutkeepalive)本主題稍後的。
+實體連接可能很慢，或連線中斷。 視停機時間長度的因素而定，傳輸連接可能會被捨棄。 SignalR 接著會嘗試重新建立傳輸連接。 有時傳輸連線 API 會偵測中斷並卸載傳輸連線，而 SignalR 會立即發現連線已中斷。 在其他情況下，傳輸連線 API 和 SignalR 都不會立即得知連線是否已中斷。 對於長時間輪詢以外的所有傳輸，SignalR 用戶端會使用名為*keepalive*的函數來檢查傳輸 API 無法偵測到的連線中斷。 如需長時間輪詢連接的詳細資訊，請參閱本主題稍後的[Timeout 和 keepalive 設定](#timeoutkeepalive)。
 
-非使用中連接時，會定期伺服器傳送 keepalive 封包到用戶端。 正在寫入這篇文章的日期，從預設的頻率是每隔 10 秒。 藉由接聽這些封包，用戶端就可以知道是否有連線問題。 如果未在預期時，會收到 keepalive 封包，在短時間後用戶端會假設有連線問題，例如速度很慢或中斷。 如果 keepalive 仍未收到較長的時間之後，用戶端會假設此連接已經卸除，，然後開始嘗試重新連線。
+當連接處於非作用中狀態時，伺服器會定期將 keepalive 封包傳送至用戶端。 在撰寫本文的日期起，預設頻率為每10秒一次。 藉由接聽這些封包，用戶端可以判斷是否有連線問題。 如果預期不會收到 keepalive 封包，則在短暫的時間之後，用戶端會假設有連線問題，例如緩慢或中斷。 如果在較長的時間之後仍未收到 keepalive，用戶端會假設已卸載連接，並開始嘗試重新連線。
 
-下圖說明用戶端和伺服器事件不是立即辨識傳輸 API 的實體連接問題時，所引發的一般案例。 圖適用於下列情況：
+下圖說明當傳輸 API 無法立即辨識實體連線問題時，在一般案例中引發的用戶端和伺服器事件。 圖表適用于下列情況：
 
-- 傳輸方式是 WebSockets、 永久框架或伺服器傳送事件。
-- 有不同的期間，在實體網路連線中斷的位置。
-- 傳輸 API 不會知道中斷，因此 SignalR 依賴 keepalive 功能，以偵測到這些控制項。
+- 傳輸是 Websocket、永久框架或伺服器傳送事件。
+- 實體網路連線有不同的中斷期間。
+- 傳輸 API 不會察覺中斷，因此 SignalR 會依賴 keepalive 功能來偵測它們。
 
 ![傳輸中斷連線](handling-connection-lifetime-events/_static/image2.png)
 
-如果用戶端便會進入重新連接模式，但無法建立傳輸連線在中斷連線的逾時限制內，伺服器會終止 SignalR 連線。 當發生這種情況時，伺服器會執行的中樞`OnDisconnected`方法，並將傳送至用戶端，如果用戶端會管理連接稍後中斷連線訊息的佇列。 如果用戶端接著會重新連線，它會收到中斷連接命令和呼叫`Stop`方法。 在此案例中，`OnReconnected`不會執行，當用戶端重新連線，並`OnDisconnected`不會執行，當用戶端呼叫`Stop`。 下圖說明此案例。
+如果用戶端進入重新連線模式，但無法在中斷連線超時限制內建立傳輸連線，伺服器就會終止 SignalR 連接。 發生這種情況時，伺服器會執行中樞的 `OnDisconnected` 方法，並將中斷連線訊息排入佇列，以在用戶端管理以供稍後連線時傳送至用戶端。 如果用戶端接著重新連接，它會接收 disconnect 命令並呼叫 `Stop` 方法。 在此案例中，當用戶端重新連接時，不會執行 `OnReconnected`，而且當用戶端呼叫 `Stop`時，不會執行 `OnDisconnected`。 下圖說明此案例。
 
-![傳輸中斷-伺服器逾時](handling-connection-lifetime-events/_static/image3.png)
+![傳輸中斷-伺服器超時](handling-connection-lifetime-events/_static/image3.png)
 
-在用戶端，可能會引發 SignalR 連線存留期事件，如下所示：
+可能在用戶端上引發的 SignalR 連接存留期事件如下：
 
-- `ConnectionSlow` 用戶端的事件。
+- `ConnectionSlow` 用戶端事件。
 
-    Keepalive 逾時期限的預設的比例過的最後一個訊息，或收到 keepalive ping 時，就會引發。 預設 keepalive 逾時警告期間是 2/3 keepalive 逾時。 Keepalive 逾時為 20 秒，因此在大約 13 秒就會發生警告。
+    當 keepalive 超時期間的預設比例在收到最後一則訊息或 keepalive ping 之後引發。 預設的 keepalive 超時警告期間為2/3 的 keepalive 時間。 Keepalive 超時時間為20秒，因此警告大約會在13秒內發生。
 
-    根據預設，伺服器會傳送 keepalive ping 每隔 10 秒，並在用戶端檢查 keepalive ping 每 2 秒 （三分之一 keepalive 逾時值和 keepalive 逾時的警告值之間的差異） 的相關。
+    根據預設，伺服器每隔10秒會傳送 keepalive ping，而且用戶端會每隔2秒檢查一次 keepalive ping （keepalive 超時值與 keepalive 超時警告值之間的差異三分之一）。
 
-    如果傳輸 API 察覺的中斷，SignalR 可能通知中斷連接之前 keepalive 逾時警告期間傳遞。 在此情況下，`ConnectionSlow`不會引發事件，以及 SignalR 會直接移至`Reconnecting`事件。
-- `Reconnecting` 用戶端的事件。
+    如果傳輸 API 會察覺中斷連線，則在 keepalive 超時警告期間通過之前，SignalR 可能會收到中斷連線的通知。 在此情況下，將不會引發 `ConnectionSlow` 事件，而 SignalR 會直接進入 `Reconnecting` 事件。
+- `Reconnecting` 用戶端事件。
 
-    當 API （a） 傳輸偵測到的連線已中斷，或 （b） 的 keepalive 逾時期限後的最後一個訊息，已經過或 keepalive ping 接收時，就會引發。 SignalR 用戶端程式碼開始嘗試重新連線。 如果您想要您的應用程式的傳輸連線已遺失時採取某個動作，您可以處理這個事件。 20 秒的目前預設 keepalive 逾時期限。
+    當（a）傳輸 API 偵測到連接遺失時引發，或（b）在收到最後一則訊息或 keepalive ping 之後已經過。 SignalR 用戶端程式代碼會開始嘗試重新連線。 如果您想要讓應用程式在傳輸連接中斷時採取某種動作，可以處理這個事件。 預設的 keepalive 超時時間目前為20秒。
 
-    如果您的用戶端程式碼嘗試呼叫中樞方法，而 SignalR 是在重新連線模式，SignalR 會嘗試傳送命令。 大部分的情況下，這類的嘗試都會失敗，但在某些情況下可能會成功。 伺服器傳送事件、 永久框架和長輪詢傳輸，SignalR 使用兩個通訊通道，其中用戶端用來傳送訊息，它會使用來接收訊息的另一個。 用來接收的通道是永遠開啟，而這是實體的連線中斷時，會關閉的一個。 通道用於傳送仍可供使用，因此，接收通道後重新建立實體的連線還原時，如果伺服器的方法呼叫從用戶端可能會成功。 直到 SignalR 重新開啟用來接收的通道，就不會收到傳回的值。
-- `Reconnected` 用戶端的事件。
+    如果您的用戶端程式代碼在 SignalR 處於重新連線模式時嘗試呼叫中樞方法，SignalR 會嘗試傳送命令。 在大部分的情況下，這類嘗試會失敗，但在某些情況下，可能會成功。 對於伺服器傳送的事件、永遠的框架和長輪詢傳輸，SignalR 會使用兩個通道，其中一個是用戶端用來傳送訊息的通道，另一個則是用來接收訊息。 用來接收的通道是永久開啟的通道，這是實體連接中斷時所關閉的通道。 用於傳送的通道仍可供使用，因此，如果還原實體連線，從用戶端到伺服器的方法呼叫可能會在接收通道重新建立之前成功。 在 SignalR 重新開啟用來接收的通道之前，不會收到傳回值。
+- `Reconnected` 用戶端事件。
 
-    當傳輸重新建立連線時，就會引發。 `OnReconnected`在中樞的事件處理常式執行。
-- `Closed` 用戶端事件 (`disconnected`在 JavaScript 中的事件)。
+    重新建立傳輸連接時引發。 中樞內的 `OnReconnected` 事件處理常式會執行。
+- `Closed` 用戶端事件（JavaScript 中的`disconnected` 事件）。
 
-    在中斷連線逾時期限到期時 SignalR 用戶端程式碼嘗試傳輸連線中斷之後重新連線時引發。 預設的中斷連線逾時為 30 秒。 (因為，連線結束時，也會引發這個事件`Stop`呼叫方法。)
+    當 SignalR 用戶端程式代碼在失去傳輸連線後嘗試重新連線時，當中斷連線超時期間過期時引發。 預設的中斷連線超時時間為30秒。 （當連接因為呼叫 `Stop` 方法而結束時，也會引發這個事件）。
 
-未偵測到傳輸 API，且沒有延遲的 keepalive ping 從超過 keepalive 逾時警告期間伺服器接收的傳輸連線中斷可能會不會造成任何連線存留期間来引發的事件。
+傳輸 API 不會偵測到傳輸連線中斷，而且不會延遲從伺服器接收 keepalive ping 的時間超過 keepalive 超時警告期間，可能不會導致任何連線存留期事件引發。
 
-有些網路環境刻意關閉閒置的連接，並 keepalive 封包的另一個函式是為了避免這個問題讓這些網路可讓您知道 SignalR 連線正在使用中。 在極端情況下 keepalive ping 預設頻率不可能不足以防止已關閉的連線。 在此情況下，您可以設定更常傳送 keepalive ping。 如需詳細資訊，請參閱 <<c0> [ 逾時和 keepalive 設定](#timeoutkeepalive)本主題稍後的。
+有些網路環境故意關閉閒置連線，而 keepalive 封包的另一個功能是讓這些網路知道 SignalR 連線正在使用中，藉此避免這種情況。 在極端情況下，keepalive ping 的預設頻率可能不足以防止關閉的連接。 在此情況下，您可以設定讓 keepalive ping 更頻繁地傳送。 如需詳細資訊，請參閱本主題稍後的[Timeout 和 keepalive 設定](#timeoutkeepalive)。
 
 > [!NOTE] 
 > 
 > [!IMPORTANT]
-> 此處所述的事件的順序並不保證。 SignalR 會不斷嘗試以便引發連線存留期事件，此配置中，根據可預測的方式，但有許多變化的網路事件和多種資訊，請在其中基礎的通訊架構，例如傳輸 Api 處理它們。 例如，`Reconnected`可能不會引發事件，當用戶端重新連接，或`OnConnected`建立的連線嘗試不成功時，可能會執行伺服器上的處理常式。 本主題說明某些常見的情況下將通常會產生的效果。
+> 不保證此處所述的事件順序。 SignalR 會根據此配置，以可預測的方式讓每次嘗試引發連線存留期事件，但有許多網路事件的變化，還有許多方法，例如傳輸 Api 處理它們的基礎通訊架構。 例如，當用戶端重新連線時，可能不會引發 `Reconnected` 事件，或者當嘗試建立連線失敗時，伺服器上的 `OnConnected` 處理常式可能會執行。 本主題僅說明某些一般情況下通常會產生的效果。
 
 <a id="clientdisconnect"></a>
 
-### <a name="client-disconnection-scenarios"></a>用戶端中斷連線的案例
+### <a name="client-disconnection-scenarios"></a>用戶端中斷連接案例
 
-在瀏覽器用戶端會維護 SignalR 連線的 SignalR 用戶端程式碼的內容中執行 JavaScript 的網頁。 具有為什麼 SignalR 連線已結束，當您從一個頁面上與另一個，且的為什麼您有多個連線使用多個連線識別碼如果您從多個瀏覽器視窗或索引標籤連線。 當使用者關閉瀏覽器視窗或索引標籤上，或瀏覽至新的頁面或重新整理頁面時，SignalR 連線會立即結束因為 SignalR 用戶端程式碼會處理該瀏覽器事件，寄件者和呼叫`Stop`方法。 在這些情況下，或當您的應用程式呼叫的任何用戶端平台`Stop`方法中，`OnDisconnected`事件處理常式會在伺服器上立即執行，並在用戶端引發`Closed`事件 (事件的名稱為`disconnected`中JavaScript)。
+在瀏覽器用戶端中，維護 SignalR 連接的 SignalR 用戶端程式代碼會在網頁的 JavaScript 內容中執行。 這就是為什麼當您從一頁流覽到另一個頁面時，SignalR 連線必須結束，這就是為什麼當您從多個瀏覽器視窗或索引標籤連接時，如果您有多個連接識別碼的連接，就會有 當使用者關閉瀏覽器視窗或索引標籤，或流覽至新頁面或重新整理頁面時，SignalR 連接會立即結束，因為 SignalR 用戶端程式代碼會為您處理該瀏覽器事件，並呼叫 `Stop` 方法。 在這些情況下，或在任何用戶端平臺中，當您的應用程式呼叫 `Stop` 方法時，`OnDisconnected` 事件處理常式會在伺服器上立即執行，而用戶端會引發 `Closed` 事件（此事件在 JavaScript 中會命名為 `disconnected`）。
 
-如果用戶端應用程式或電腦上執行的損毀或進入睡眠狀態 （例如，當使用者關閉的膝上型電腦），伺服器不會發生了什麼事收到通知。 只要伺服器知道，遺失的用戶端可能是因為連線中斷，用戶端可能會嘗試重新連線。 因此，在這些案例中，伺服器會等待讓用戶端重新連線，有機會和`OnDisconnected`不會執行到中斷連線逾時期限到期為止 （大約 30 秒的預設值）。 下圖說明此案例。
+如果用戶端應用程式或其執行所在的電腦損毀或進入睡眠狀態（例如，當使用者關閉膝上型電腦時），伺服器就不會收到發生什麼情況的通知。 只要伺服器知道，遺失用戶端可能是因為連線中斷，而且用戶端可能嘗試重新連線。 因此，在這些案例中，伺服器會等待讓用戶端有機會重新連線，而且 `OnDisconnected` 在中斷連線超時期間（預設為大約30秒）後才會執行。 下圖說明此案例。
 
-![用戶端電腦的失敗](handling-connection-lifetime-events/_static/image4.png)
+![用戶端電腦失敗](handling-connection-lifetime-events/_static/image4.png)
 
 <a id="serverdisconnect"></a>
 
-### <a name="server-disconnection-scenarios"></a>伺服器中斷連線的案例
+### <a name="server-disconnection-scenarios"></a>伺服器中斷連接案例
 
-當伺服器離線時，它會重新啟動、 失敗，應用程式網域回收，等-結果可能會類似於遺失的連線，或傳輸 API，並使用 SignalR 可能立即得知伺服器不見了，而 SignalR 可能會開始嘗試重新連線，而不需要引發`ConnectionSlow`事件。 如果用戶端會進入重新連接 模式中，而且伺服器復原或重新啟動或新的伺服器處於線上時中斷連線逾時期間到期之前，用戶端會重新連接到已還原或新的伺服器。 在此情況下，SignalR 連線會繼續在用戶端和`Reconnected`就會引發事件。 第一部伺服器中，`OnDisconnected`永遠不會執行，並在新伺服器上，`OnReconnected`雖然執行`OnConnected`永遠不會執行該用戶端之前，該伺服器上。 （效果是相同的用戶端之後重新連線到相同的伺服器重新開機或應用程式網域回收，因為當伺服器重新啟動它，所以如果有先前的連接活動的任何記憶體）。下圖假設，傳輸 API 察覺到連線中斷立即執行，因此`ConnectionSlow`不會引發事件。
+當伺服器離線時--它會重新開機、失敗、應用程式網域回收等等。--結果可能類似于連線中斷，或傳輸 API 和 SignalR 可能會立即得知伺服器已消失，而 SignalR 可能會開始嘗試重新連線，而不會引發 `ConnectionSlow` 事件。 如果用戶端進入重新連線模式，且伺服器復原或重新開機，或是新的伺服器在中斷連接逾時期限到期之前上線，用戶端就會重新連接到已還原或新的伺服器。 在此情況下，SignalR 連接會繼續在用戶端上執行，並引發 `Reconnected` 事件。 在第一部伺服器上，一律不會執行 `OnDisconnected`，而在新的伺服器上，`OnReconnected` 會執行，但在之前，該伺服器上的該用戶端從未執行過 `OnConnected`。 （如果用戶端在重新開機或應用程式域回收後重新連線到相同的伺服器，效果就會相同，因為當伺服器重新開機時，它沒有任何記憶體的先前連線活動）。下圖假設傳輸 API 會立即察覺遺失的連線，因此不會引發 `ConnectionSlow` 事件。
 
-![伺服器失敗和重新連線](handling-connection-lifetime-events/_static/image5.png)
+![伺服器失敗和重新連接](handling-connection-lifetime-events/_static/image5.png)
 
-如果伺服器尚未變成可用的中斷連線逾時期限內，SignalR 連線就會結束。 在此案例中，`Closed`事件 (`disconnected` JavaScript 用戶端中) 會在用戶端上引發，但`OnDisconnected`絕不會呼叫伺服器上。 下圖假設，傳輸 API 不會留意失去連線，因此它會偵測到 SignalR keepalive 功能和`ConnectionSlow`就會引發事件。
+如果伺服器在中斷連線超時時間內無法使用，SignalR 連接就會結束。 在此案例中，`Closed` 事件（在 JavaScript 用戶端中`disconnected`）會在用戶端上引發，但伺服器上永遠不會呼叫 `OnDisconnected`。 下圖假設傳輸 API 不會察覺到連線中斷，因此 SignalR keepalive 功能會偵測到該連接，並引發 `ConnectionSlow` 事件。
 
-![伺服器發生錯誤及逾時](handling-connection-lifetime-events/_static/image6.png)
+![伺服器失敗和超時](handling-connection-lifetime-events/_static/image6.png)
 
 <a id="timeoutkeepalive"></a>
 
-## <a name="timeout-and-keepalive-settings"></a>逾時和 keepalive 設定
+## <a name="timeout-and-keepalive-settings"></a>Timeout 和 keepalive 設定
 
-預設值`ConnectionTimeout`， `DisconnectTimeout`，和`KeepAlive`值適用於大部分的情況下，但如果您的環境具有特殊需求，可以變更。 比方說，如果您的網路環境關閉 5 秒會處於閒置狀態的連線，您可能會降低的 keepalive 值。
+預設 `ConnectionTimeout`、`DisconnectTimeout`和 `KeepAlive` 值適用于大部分的案例，但如果您的環境有特殊需求，則可加以變更。 例如，如果您的網路環境關閉閒置5秒的連線，您可能必須減少 keepalive 值。
 
 <a id="connectiontimeout"></a>
 
 ### <a name="connectiontimeout"></a>ConnectionTimeout
 
-這項設定代表開啟並等待回應，以關閉它，並開啟新連接之前離開的傳輸連線的時間量。 預設值為 110 秒。
+這項設定代表在關閉傳輸連線並等候回應，然後開啟新的連線時，所需的時間量。 預設值為110秒。
 
-此設定適用於僅 keepalive 功能停用時，這通常僅適用於長輪詢傳輸。 下圖說明這項設定在長時間的影響輪詢傳輸連線。
+此設定僅適用于停用 keepalive 功能時，這通常只適用于長時間輪詢傳輸。 下圖說明此設定在長輪詢傳輸連接上的效果。
 
-![長輪詢傳輸的連線](handling-connection-lifetime-events/_static/image7.png)
+![長時間輪詢傳輸連接](handling-connection-lifetime-events/_static/image7.png)
 
 <a id="disconnecttimeout"></a>
 
 ### <a name="disconnecttimeout"></a>DisconnectTimeout
 
-這項設定代表之後的傳輸連線已遺失引發之前等待的時間量`Disconnected`事件。 預設值為 30 秒。 當您設定`DisconnectTimeout`，`KeepAlive`會自動設為 1/3`DisconnectTimeout`值。
+此設定代表在引發 `Disconnected` 事件之前，傳輸連線中斷後所要等待的時間量。 預設值為 30 秒。 當您設定 `DisconnectTimeout`時，`KeepAlive` 會自動設定為1/3 的 `DisconnectTimeout` 值。
 
 <a id="keepalive"></a>
 
 ### <a name="keepalive"></a>KeepAlive
 
-這項設定代表透過閒置連線傳送 keepalive 封包之前等待時間的量。 預設值為 10 秒。 此值不能超過 1/3`DisconnectTimeout`值。
+此設定代表透過閒置連線傳送 keepalive 封包之前要等待的時間量。 預設值為 10 秒。 此值不得超過1/3 的 `DisconnectTimeout` 值。
 
-如果您想要同時設定`DisconnectTimeout`並`KeepAlive`，將`KeepAlive`之後`DisconnectTimeout`。 否則您`KeepAlive`設定將會覆寫時`DisconnectTimeout`會自動設定`KeepAlive`的逾時值的 1/3。
+如果您想要同時設定 `DisconnectTimeout` 和 `KeepAlive`，請在 `DisconnectTimeout`之後設定 `KeepAlive`。 否則，當 `DisconnectTimeout` 自動將 `KeepAlive` 設定為 timeout 值的1/3 時，將會覆寫您的 `KeepAlive` 設定。
 
-如果您想要停用 keepalive 功能，設定`KeepAlive`為 null。 Keepalive 功能會自動停用的長輪詢傳輸。
+如果您想要停用 keepalive 功能，請將 `KeepAlive` 設定為 null。 長期輪詢傳輸會自動停用 Keepalive 功能。
 
 <a id="changetimeout"></a>
 
-### <a name="how-to-change-timeout-and-keepalive-settings"></a>如何變更逾時和 keepalive 設定
+### <a name="how-to-change-timeout-and-keepalive-settings"></a>如何變更 timeout 和 keepalive 設定
 
-若要變更這些設定的預設值，以設定它們`Application_Start`在您*Global.asax*檔案，如下列範例所示。 範例程式碼所示的值是相同的預設值。
+若要變更這些設定的預設值，請在*global.asax*檔案的 `Application_Start` 中設定它們，如下列範例所示。 範例程式碼中所顯示的值與預設值相同。
 
 [!code-csharp[Main](handling-connection-lifetime-events/samples/sample1.cs)]
 
 <a id="notifydisconnect"></a>
 
-## <a name="how-to-notify-the-user-about-disconnections"></a>如何通知使用者有關的連線中斷
+## <a name="how-to-notify-the-user-about-disconnections"></a>如何通知使用者中斷連線
 
-在某些應用程式，您可能要向使用者顯示一則訊息時有連線問題。 您有數個選項，以及何時要執行這項操作。 下列程式碼範例專供 JavaScript 用戶端使用產生的 proxy。
+在某些應用程式中，當發生連線問題時，您可能會想要向使用者顯示訊息。 您有數個選項可用於執行此動作的方式和時機。 下列程式碼範例適用于使用所產生之 proxy 的 JavaScript 用戶端。
 
-- 處理`connectionSlow`事件，以顯示一則訊息，一旦 SignalR 的連線問題，了解之前，它會進入重新連接模式。
+- 處理 `connectionSlow` 事件，以便在 SignalR 知道連線問題，然後進入重新連接模式之前，立即顯示訊息。
 
     [!code-javascript[Main](handling-connection-lifetime-events/samples/sample2.js)]
-- 處理`reconnecting`SignalR 所知的中斷並進入重新連線模式時，顯示一則訊息的事件。
+- 處理 `reconnecting` 事件，以在 SignalR 感知中斷連線且進入重新連接模式時顯示訊息。
 
     [!code-javascript[Main](handling-connection-lifetime-events/samples/sample3.js)]
-- 處理`disconnected`事件，以顯示一則訊息時嘗試重新連線已逾時。在此案例中，重新建立與伺服器連線一次的唯一方式是藉由呼叫重新 SignalR 連線`Start`方法，這將會建立新的連接識別碼。 下列程式碼範例使用旗標，藉此確定您發出的通知後重新連線的逾時，才不晚於藉由呼叫造成 SignalR 連線正常結束`Stop`方法。
+- 處理 `disconnected` 事件，以在嘗試重新連線時顯示訊息。在此案例中，重新建立與伺服器之連線的唯一方法是，藉由呼叫 `Start` 方法來重新開機 SignalR 連接，這會建立新的連線識別碼。 下列程式碼範例會使用旗標，確保您只會在重新連接的超時時間之後發出通知，而不是在正常結束後，透過呼叫 `Stop` 方法所造成的 SignalR 連接。
 
     [!code-javascript[Main](handling-connection-lifetime-events/samples/sample4.js)]
 
 <a id="continuousreconnect"></a>
 
-## <a name="how-to-continuously-reconnect"></a>如何持續重新連接
+## <a name="how-to-continuously-reconnect"></a>如何持續重新連線
 
-在某些應用程式可能會想要已遺失，並嘗試重新連線已逾時之後自動重新建立連線。若要這樣做，您可以呼叫`Start`方法，從您`Closed`事件處理常式 (`disconnected` JavaScript 用戶端上的事件處理常式)。 您可能想要等候一段時間，然後再呼叫`Start`為了避免這樣太頻繁伺服器或實體的連線時無法使用。 下列程式碼範例是 JavaScript 用戶端使用產生的 proxy。
+在某些應用程式中，您可能會想要在連線中斷之後自動重新建立連線，而重新連接的嘗試已超時。若要這麼做，您可以從 `Closed` 事件處理常式（JavaScript 用戶端上的`disconnected` 事件處理常式）呼叫 `Start` 方法。 在呼叫 `Start` 之前，您可能會想要等待一段時間，以避免在伺服器或實體連接無法使用時，過於頻繁地這麼做。 下列程式碼範例適用于使用所產生之 proxy 的 JavaScript 用戶端。
 
 [!code-javascript[Main](handling-connection-lifetime-events/samples/sample5.js)]
 
-要注意的行動用戶端中的潛在問題是連續的重新連線嘗試的伺服器或實體的連線無法使用時，可能會導致不必要的電池清空。
+在行動用戶端中必須注意的一個潛在問題是，當伺服器或實體連線無法使用時，連續重新連線嘗試可能會造成不必要的電池耗盡。
 
 <a id="disconnectclientfromserver"></a>
 
-## <a name="how-to-disconnect-a-client-in-server-code"></a>如何中斷連接的伺服器程式碼中的用戶端
+## <a name="how-to-disconnect-a-client-in-server-code"></a>如何中斷用戶端與伺服器程式碼的連線
 
-SignalR 1.1.1 版並沒有內建的伺服器 API 的用戶端連接中斷。 有[計劃在未來新增這項功能](https://github.com/SignalR/SignalR/issues/2101)。 在目前的 SignalR 版本中，從伺服器中斷連線的用戶端的最簡單方式是實作在用戶端上的 中斷連線方法，並從伺服器呼叫該方法。 下列程式碼範例顯示使用產生的 proxy 的 JavaScript 用戶端中斷連線的方法。
+SignalR 1.1.1 版沒有內建的伺服器 API 可中斷用戶端的連線。 未來會有[新增這項功能的計畫](https://github.com/SignalR/SignalR/issues/2101)。 在目前的 SignalR 版本中，將用戶端與伺服器中斷連線的最簡單方式，就是在用戶端上執行 disconnect 方法，並從伺服器呼叫該方法。 下列程式碼範例會使用產生的 proxy，顯示 JavaScript 用戶端的中斷連接方法。
 
 [!code-javascript[Main](handling-connection-lifetime-events/samples/sample6.js)]
 
 > [!WARNING]
-> 安全性-既不中斷用戶端連接此方法也不建議的內建 API 會處理案例的遭駭客入侵的用戶端執行惡意程式碼，因為用戶端無法重新連線或遭駭客入侵的程式碼可能會移除`stopClient`方法或變更其用途。 實作可設定狀態的阻斷服務 (DOS) 保護的適當位置是不在 framework 或伺服器層中，但前端的基礎結構中，而不是。
+> 安全性-這不是用來中斷用戶端連線的這種方法，也不是建議的內建 API，會解決因為用戶端可能會重新連線，或遭到駭客攻擊的程式碼可能會移除 `stopClient` 方法或變更其用途的攻擊。 執行具狀態的拒絕服務（DOS）保護的適當位置不在架構或伺服器層中，而是在前端基礎結構中。

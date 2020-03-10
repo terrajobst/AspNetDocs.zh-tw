@@ -10,11 +10,11 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
 msc.type: authoredcontent
 ms.openlocfilehash: 0afea8eacfc646f1489b87629fdb2d437815d88c
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519137"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78584459"
 ---
 # <a name="change-primary-key-for-users-in-aspnet-identity"></a>變更 ASP.NET Identity 中的使用者主索引鍵
 
@@ -32,7 +32,7 @@ ms.locfileid: "76519137"
 
 若要執行本教學課程中的步驟，您必須擁有 Visual Studio 2013 Update 2 （或更新版本），以及從 ASP.NET Web 應用程式範本建立的 web 應用程式。 在 Update 3 中變更的範本。 本主題說明如何在 Update 2 和 Update 3 中變更範本。
 
-此主題包括下列章節：
+本主題包含下列各節：
 
 - [變更身分識別使用者類別中的金鑰類型](#userclass)
 - [新增使用金鑰類型的自訂身分識別類別](#customclass)

@@ -9,11 +9,11 @@ ms.assetid: 9c8f0054-e319-46f8-80c0-35b606d2fbd4
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/databinding-to-an-accordion-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 6c28cc958a1de9844627ae16175a5aed153993a8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74607284"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78614552"
 ---
 # <a name="databinding-to-an-accordion-c"></a>資料繫結至 Accordion (C#)
 
@@ -62,4 +62,4 @@ AJAX 控制項工具組中的 [可折疊式] 控制項提供多個窗格，並�
 可折疊中的資料直接來自資料來源（[按一下以查看完整大小的影像](databinding-to-an-accordion-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [下一步](dynamically-adding-an-accordion-pane-cs.md)
+> [下一個](dynamically-adding-an-accordion-pane-cs.md)

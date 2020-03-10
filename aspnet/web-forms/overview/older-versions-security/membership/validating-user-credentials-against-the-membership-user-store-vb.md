@@ -9,11 +9,11 @@ ms.assetid: 17772912-b47b-4557-9ce9-80f22df642f7
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 37574e4cdc86f518d01d12da58cc2862bc77d463
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74643424"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78527927"
 ---
 # <a name="validating-user-credentials-against-the-membership-user-store-vb"></a>針對成員資格使用者存放區驗證使用者認證 (VB)
 
@@ -29,7 +29,7 @@ ms.locfileid: "74643424"
 
 就像建立使用者帳戶一樣，認證可以透過程式設計或宣告方式進行驗證。 成員資格 API 包含一個方法，可讓您以程式設計方式向使用者存放區驗證使用者的認證。 和 ASP.NET 隨附于登入 Web 控制項，它會轉譯使用者介面，其中包含使用者名稱和密碼的文字方塊，以及用來登入的按鈕。
 
-在本教學課程中，我們將探討如何使用程式設計方式和登入控制項，針對成員資格使用者存放區驗證使用者的認證。 我們也將探討如何自訂登入控制項的外觀和行為。 讓我們開始吧！
+在本教學課程中，我們將探討如何使用程式設計方式和登入控制項，針對成員資格使用者存放區驗證使用者的認證。 我們也將探討如何自訂登入控制項的外觀和行為。 現在就開始吧！
 
 ## <a name="step-1-validating-credentials-against-the-membership-user-store"></a>步驟1：根據成員資格使用者存放區驗證認證
 

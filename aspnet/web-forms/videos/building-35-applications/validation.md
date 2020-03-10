@@ -2,23 +2,23 @@
 uid: web-forms/videos/building-35-applications/validation
 title: 驗證 |Microsoft Docs
 author: JoeStagner
-description: 在此影片 Joe 將示範在 ASP.NET 使用 Microsoft Visual Web Developer FormValidation 控制項的使用。
+description: 在這段影片中，Joe 將示範如何在 ASP.NET 中使用 Microsoft Visual Web Developer 來使用 FormValidation 控制項。
 ms.author: riande
 ms.date: 06/04/2009
 ms.assetid: 9b9eb93d-19c6-4933-ab5f-826b427a9ad0
 msc.legacyurl: /web-forms/videos/building-35-applications/validation
 msc.type: video
 ms.openlocfilehash: d8592a65252421752f7201cd2b2d3278d79e272a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59386043"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78563627"
 ---
 # <a name="validation"></a>驗證
 
-藉由[Joe Stagner](https://github.com/JoeStagner)
+依[Joe Stagner](https://github.com/JoeStagner)
 
-在此影片 Joe 將示範在 ASP.NET 使用 Microsoft Visual Web Developer FormValidation 控制項的使用。
+在這段影片中，Joe 將示範如何在 ASP.NET 中使用 Microsoft Visual Web Developer 來使用 FormValidation 控制項。
 
-[&#9654;觀看影片 （16 分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/validation)
+[&#9654;觀看影片（16分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/validation)

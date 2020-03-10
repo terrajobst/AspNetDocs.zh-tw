@@ -9,11 +9,11 @@ ms.assetid: 14d9aa1b-4dca-43a0-aa9d-a6e891fee019
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 9bb39712855c37f5cbcbb447f7691e9451b8dc92
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74642090"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78571845"
 ---
 # <a name="nested-master-pages-vb"></a>巢狀主版頁面 (VB)
 
@@ -185,7 +185,7 @@ ms.locfileid: "74642090"
 
 我們的第一項工作是建立可供 [管理] 區段中的頁面使用的嵌套主版頁面。 如我們在步驟2所見，加入新的嵌套主版頁面時，我們必須指定嵌套主版頁面的父主版頁面。 但我們有兩個最上層主版頁面： `Site.master` 和 `Alternate.master`。 回想一下，我們已在先前的教學課程中建立 `Alternate.master`，並在 `BasePage` 類別中撰寫程式碼，在執行時間將 `Page` 物件的 `MasterPageFile` 屬性設定為 `Site.master` 或 `Alternate.master` （視 `MyMasterPage` 會話變數的值而定）。
 
-如何設定我們的嵌套主版頁面，使其使用適當的頂層主版頁面？ 我們有兩個選項：
+如何設定我們的嵌套主版頁面，使其使用適當的頂層主版頁面？ 我們有兩個選擇：
 
 - 建立兩個嵌套的主版頁面，`AdminNestedSite.master` 和 `AdminNestedAlternate.master`，並分別將它們系結至頂層主版頁面 `Site.master` 和 `Alternate.master`。 在 `BasePage`中，我們會將 `Page` 物件的 `MasterPageFile` 設定為適當的嵌套主版頁面。
 - 建立單一的嵌套主版頁面，並讓內容頁面使用這個特定的主版頁面。 然後，在執行時間，我們需要在執行時間將嵌套主版頁面的 `MasterPageFile` 屬性設定為適當的頂層主版頁面。 （您可能已經知道，主版頁面也有 `MasterPageFile` 的屬性）。
@@ -232,7 +232,7 @@ ms.locfileid: "74642090"
 
 [!code-vb[Main](nested-master-pages-vb/samples/sample12.vb)]
 
-收件者：
+收件者:
 
 [!code-vb[Main](nested-master-pages-vb/samples/sample13.vb)]
 
@@ -252,7 +252,7 @@ ms.locfileid: "74642090"
 
 [!code-vb[Main](nested-master-pages-vb/samples/sample14.vb)]
 
-收件者：
+收件者:
 
 [!code-vb[Main](nested-master-pages-vb/samples/sample15.vb)]
 

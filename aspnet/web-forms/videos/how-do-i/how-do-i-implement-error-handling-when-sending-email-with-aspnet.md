@@ -1,24 +1,24 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-implement-error-handling-when-sending-email-with-aspnet
-title: '[How Do i:]使用 ASP.NET 傳送電子郵件時實作錯誤處理 |Microsoft Docs'
+title: '[How Do I：]使用 ASP.NET 傳送電子郵件時，執行錯誤處理 |Microsoft Docs'
 author: rick-anderson
-description: Chris Pels 將示範如何實作錯誤處理時傳送電子郵件使用 ASP.NET。 他會建立 ASP.NET web 網頁，來傳送電子郵件，說明如何設定 & lt...
+description: Chris Pels 示範如何在傳送含有 ASP.NET 的電子郵件時，執行錯誤處理。 他會建立 ASP.NET 網頁來傳送電子郵件，說明如何設定 & lt 。
 ms.author: riande
 ms.date: 11/06/2008
 ms.assetid: c02ffd50-aa19-4cdc-b1bf-760989979a61
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-error-handling-when-sending-email-with-aspnet
 msc.type: video
 ms.openlocfilehash: faa0daa2ffe71e58cd18bb8bed4e476ffcb1852e
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59379049"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78567743"
 ---
-# <a name="how-do-i-implement-error-handling-when-sending-email-with-aspnet"></a>[How Do i:]使用 ASP.NET 傳送電子郵件時實作錯誤處理
+# <a name="how-do-i-implement-error-handling-when-sending-email-with-aspnet"></a>[How Do I：]使用 ASP.NET 傳送電子郵件時，執行錯誤處理
 
-藉由[Chris Pels](https://twitter.com/chrispels)
+依[Chris Pels](https://twitter.com/chrispels)
 
-Chris Pels 將示範如何實作錯誤處理時傳送電子郵件使用 ASP.NET。 他會建立 ASP.NET web 網頁，來傳送電子郵件，說明如何設定&lt;mailSettings&gt;在 web.config 檔案中，描述 System.Net.Mail 類別，以及如何用來建立和傳送電子郵件訊息。 然後他將新增使用 System.Net.Mail 例外狀況類別，其提供時傳送電子郵件，可能發生的錯誤的相關資訊，並檢閱 SmtpStatusCode 列舉型別，提供一份可能的結果，傳送一封電子郵件時的錯誤處理SmtpClient。 最後，他會傳送測試電子郵件會引發例外狀況，並檢閱錯誤處理 Visual Studio 偵錯工具中的資訊。
+Chris Pels 示範如何在傳送含有 ASP.NET 的電子郵件時，執行錯誤處理。 他會建立 ASP.NET 網頁來傳送電子郵件，示範如何設定 web.config 檔案中的 &lt;mailSettings&gt;、描述系統 .Net. Mail 類別，以及如何用它來建立和傳送電子郵件訊息。 他接著會使用系統 .Net 來新增錯誤處理。 Mail 例外狀況類別提供傳送電子郵件時可能發生之錯誤的相關資訊，並評論 SmtpStatusCode 列舉，以在傳送電子郵件時提供可能的結果清單System.net.mail.smtpclient. 最後，他會傳送測試電子郵件來引發例外狀況，並在 Visual Studio 偵錯工具中檢查錯誤處理資訊。
 
-[&#9654;觀看影片 （24 分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-error-handling-when-sending-email-with-aspnet)
+[&#9654;觀看影片（24分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-error-handling-when-sending-email-with-aspnet)

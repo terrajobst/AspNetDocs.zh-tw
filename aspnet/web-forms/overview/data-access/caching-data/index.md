@@ -2,22 +2,22 @@
 uid: web-forms/overview/data-access/caching-data/index
 title: 快取資料 |Microsoft Docs
 author: rick-anderson
-description: 本教學課程組說明快取，如此可改善網站效能，以及如何套用使用 ObjectDataSource 控制項的展示層快取...
+description: 本教學課程設定說明快取，這可改善網站效能，以及如何使用 ObjectDataSource 控制項將快取套用至展示層 。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 7d7ee56c-a867-4777-9407-ec8f73a605a3
 msc.legacyurl: /web-forms/overview/data-access/caching-data
 msc.type: chapter
 ms.openlocfilehash: 3426a83f0b42d40ee57d4eb40abeecde6fac2985
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109551"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78576717"
 ---
 # <a name="caching-data"></a>快取資料
 
-> 本教學課程組說明快取，如此可改善網站效能，以及如何套用快取使用 ObjectDataSource 控制項的展示層。
+> 本教學課程設定說明快取，這可改善網站效能，以及如何使用 ObjectDataSource 控制項將快取套用至展示層。
 
 - [使用 ObjectDataSource 快取資料 (C#)](caching-data-with-the-objectdatasource-cs.md)
 - [在架構中快取資料 (C#)](caching-data-in-the-architecture-cs.md)

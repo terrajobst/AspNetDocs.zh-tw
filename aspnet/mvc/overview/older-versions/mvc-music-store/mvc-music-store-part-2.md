@@ -1,140 +1,140 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
-title: 第 2 部分：控制器 |Microsoft Docs
+title: 第2部分：控制器 |Microsoft Docs
 author: jongalloway
-description: 本教學課程系列會詳細說明所有建置 ASP.NET MVC Music 市集範例應用程式所採取的步驟。 第 2 部分涵蓋控制站。
+description: 本教學課程系列詳細說明建立 ASP.NET MVC 音樂存放區範例應用程式所採取的所有步驟。 第2部分涵蓋控制器。
 ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: 998ce4e1-9d72-435b-8f1c-399a10ae4360
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
 msc.type: authoredcontent
 ms.openlocfilehash: 9dc2226f4951d4bed122df37d35bbb94730a00ad
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65112417"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78559875"
 ---
-# <a name="part-2-controllers"></a>第 2 部分：Controllers
+# <a name="part-2-controllers"></a>第2部分：控制器
 
-藉由[Jon Galloway](https://github.com/jongalloway)
+依[Jon Galloway](https://github.com/jongalloway)
 
-> MVC Music 市集是介紹，並逐步說明如何使用 ASP.NET MVC 和 Visual Studio 進行 web 開發的教學課程應用程式。  
+> MVC 音樂存放區是教學課程應用程式，其仲介紹如何使用 ASP.NET MVC 和 Visual Studio 進行 web 程式開發的逐步解說。  
 >   
-> MVC Music 市集是銷售線上音樂 album 和實作基本的網站管理、 使用者登入時，和 「 購物車 」 功能的輕量級的範例存放區實作。  
+> MVC 音樂存放區是輕量的範例商店執行，可在線上銷售音樂專輯，並實行基本的網站管理、使用者登入和購物車功能。  
 >   
-> 本教學課程系列會詳細說明所有建置 ASP.NET MVC Music 市集範例應用程式所採取的步驟。 第 2 部分涵蓋控制站。
+> 本教學課程系列詳細說明建立 ASP.NET MVC 音樂存放區範例應用程式所採取的所有步驟。 第2部分涵蓋控制器。
 
-有了傳統的 web 架構，傳入的 Url 通常會對應至磁碟上的檔案。 例如： URL 的要求想"/ Products.aspx"或"/ Products.php 」 可能會由 「 Products.aspx"或"Products.php 」 檔案的方式來處理。
+使用傳統的 web 架構時，連入的 Url 通常會對應到磁片上的檔案。 例如： "/Products.aspx" 或 "/Products.php" 等 URL 的要求可能會由 "Products" 或 "Products. php" 檔案處理。
 
-Web 型 MVC 架構會稍有不同的方式，將 Url 對應至伺服器程式碼。 而不是將傳入的 Url 對應至檔案中，它們改為將 Url 對應至類別的方法。 這些類別稱為 「 控制項 」，他們會負責處理傳入的 HTTP 要求，處理使用者輸入擷取和儲存資料，並判斷要傳送的回應傳回至用戶端 （顯示 HTML、 下載檔案、 重新導向至不同URL 等）。
+以 Web 為基礎的 MVC 架構會以稍有不同的方式將 Url 對應至伺服器程式碼。 與其將傳入 Url 對應至檔案，它們會改為將 Url 對應至類別上的方法。 這些類別稱為「控制器」，負責處理傳入 HTTP 要求、處理使用者輸入、抓取和儲存資料，以及判斷要傳回給用戶端的回應（顯示 HTML、下載檔案、重新導向至不同的URL 等）。
 
-## <a name="adding-a-homecontroller"></a>加入 HomeController
+## <a name="adding-a-homecontroller"></a>新增 HomeController
 
-首先我們 MVC Music 市集應用程式新增至我們的網站的首頁處理 Url 的控制器類別。 我們將遵循的 ASP.NET MVC 的預設命名慣例，並呼叫 HomeController。
+我們將會藉由新增控制器類別來處理我們網站首頁的 Url，以開始使用 MVC 音樂存放區應用程式。 我們將遵循 ASP.NET MVC 的預設命名慣例，並將其稱為 HomeController。
 
-以滑鼠右鍵按一下方案總管] 內的 「 控制項 」 資料夾，然後選取 [新增]，然後按一下 [[控制器] 命令：
+以滑鼠右鍵按一下方案總管中的 [控制器] 資料夾，然後依序選取 [新增] 和 [控制器 ...]命令
 
 ![](mvc-music-store-part-2/_static/image1.jpg)
 
-這會顯示 「 新增控制器 」 對話方塊。 控制器"HomeController"命名，然後按 [新增] 按鈕。
+這會顯示 [新增控制器] 對話方塊。 將控制器命名為 "HomeController"，然後按 [新增] 按鈕。
 
 ![](mvc-music-store-part-2/_static/image1.png)
 
-這會建立新的檔案，HomeController.cs 中，為下列程式碼：
+這會使用下列程式碼建立新的檔案 HomeController.cs：
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample1.cs)]
 
-若要開始以盡可能簡單地，我們取代 Index 方法只會傳回字串的簡單方法。 我們會進行兩項變更：
+為了盡可能地開始，讓我們將 Index 方法取代為只傳回字串的簡單方法。 我們會進行兩個變更：
 
-- 變更要傳回的字串，而不是 ActionResult 方法
-- 變更要傳回"Hello 從 Home"return 的陳述式
+- 變更方法以傳回字串，而不是 ActionResult
+- 變更 return 語句以傳回 "Hello from Home"
 
-此方法現在看起來應該像這樣：
+方法現在看起來應該像這樣：
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample2.cs)]
 
 ## <a name="running-the-application"></a>執行應用程式
 
-現在讓我們執行網站。 我們可以開始我們的 web 伺服器，並試試我們的網站使用下列任一項：
+現在讓我們來執行網站。 我們可以啟動我們的 web 伺服器，並使用下列任何一項來試用網站：
 
-- 選擇偵錯 ⇨ 開始偵錯 功能表項目
+- 選擇 [Debug ⇨] [開始調試] 功能表項目
 - 按一下工具列中的綠色箭號按鈕 ![](mvc-music-store-part-2/_static/image2.jpg)
 - 使用鍵盤快速鍵 F5。
 
-使用任何上述步驟會編譯專案，並則導致是內建於 Visual Web Developer 中啟動 ASP.NET 程式開發伺服器。 通知會出現在表示 ASP.NET Development Server 已啟動，將螢幕的右下角，而且會用來顯示它下執行的連接埠號碼。
+使用上述任何步驟，將會編譯我們的專案，然後讓 Visual Web Developer 內建的 ASP.NET 程式開發伺服器開始。 畫面的右下角會顯示通知，指出 ASP.NET 程式開發伺服器已啟動，並會顯示其執行所在的埠號碼。
 
 ![](mvc-music-store-part-2/_static/image2.png)
 
-Visual Web Developer 會接著會自動開啟瀏覽器視窗中的 URL 會指向我們的 web 伺服器。 這可讓我們快速試用我們的 web 應用程式：
+Visual Web Developer 接著會自動開啟瀏覽器視窗，其 URL 指向我們的 Web 服務器。 這可讓我們快速試用我們的 web 應用程式：
 
 ![](mvc-music-store-part-2/_static/image3.png)
 
-好，是相當快速的 – 我們建立新的網站，加入三價線函式，而且我們已在瀏覽器中的文字。 不我科學中，但它是一個起點。
+好啦，我們建立了新的網站，新增了三行功能，而且在瀏覽器中有文字。 不是 rocket 科學，而是一開始。
 
-*注意：Visual Web Developer 包含 ASP.NET Development Server，將在幾個隨機免費 「 連接埠 」 執行您的網站。在上面的螢幕擷取畫面，在執行站台`http://localhost:26641/`，因此它使用連接埠 26641。您的連接埠號碼將會不同。當我們談到 URL 的 like /Store/Browse 在本教學課程時，可將會移之後的連接埠號碼。假設 26641 的連接埠號碼，瀏覽至存放區/瀏覽表示瀏覽至`http://localhost:26641/Store/Browse`。*
+*注意： Visual Web Developer 包含 ASP.NET 程式開發伺服器，會以隨機免費的「埠」號碼執行您的網站。在上方的螢幕擷取畫面中，網站會在 `http://localhost:26641/`執行，因此它會使用埠26641。您的埠號碼會不同。當我們在本教學課程中討論 URL 的類似/Store/Browse 時，將會在埠號碼之後。假設埠號碼為26641，流覽至/Store/Browse 就表示流覽 `http://localhost:26641/Store/Browse`。*
 
 ## <a name="adding-a-storecontroller"></a>新增 StoreController
 
-我們新增了一個簡單的 HomeController 實作本公司網站的首頁。 讓我們現在就加入我們將使用來實作瀏覽我們的音樂市集功能的另一個控制站。 我們的存放控制器將會支援三種案例：
+我們新增了一個簡單的 HomeController，可實現網站的首頁。 現在讓我們新增另一個控制器，我們將用它來執行音樂存放區的流覽功能。 我們的存放區控制器將支援三種案例：
 
-- 在我們的 music store 中的音樂內容類型的清單頁面
-- 列出所有在特定內容類型中的音樂 album 瀏覽 頁面
-- 詳細資料頁面，其中顯示有關特定音樂專輯資訊
+- 音樂存放區中音樂內容的清單頁面
+- 列出特定內容類型中所有音樂專輯的流覽頁面
+- 顯示特定音樂專輯相關資訊的詳細資料頁面
 
-我們一開始先加入 StoreController 類別... 如果您還沒有這麼做，請停止執行應用程式藉由關閉瀏覽器，或選取偵錯 ⇨ 停止偵錯 功能表項目。
+首先，我們要加入新的 StoreController 類別。 如果您還沒有這麼做，請關閉瀏覽器或選取 [Debug ⇨停止偵錯工具] 功能表項目，以停止執行應用程式。
 
-現在，加入新的 StoreController。 就像我們一樣 HomeController，會執行此作業，以滑鼠右鍵按一下方案總管 內的 「 控制項 」 資料夾，然後選擇 加入-&gt;控制器功能表項目
+現在加入新的 StoreController。 就像我們在 HomeController 中所做的一樣，只要以滑鼠右鍵按一下方案總管中的 [控制器] 資料夾，然後選擇 [加入&gt;控制器] 功能表項目，就可以做到這一點。
 
 ![](mvc-music-store-part-2/_static/image4.png)
 
-我們新 StoreController 已經有 「 索引 」 方法。 我們將使用此 「 索引 」 方法來實作我們列出在我們的 music store 中的所有內容類型的清單頁面。 我們也會新增兩個額外的方法，來實作兩個其他情況下我們想要以處理我們 StoreController:瀏覽和詳細資料。
+我們的新 StoreController 已經有 "Index" 方法。 我們將使用此「索引」方法來執行清單頁面，其中列出我們的音樂存放區中的所有內容類型。 我們也會新增兩個其他方法，以執行我們想要讓 StoreController 處理的其他兩個案例：流覽和詳細資料。
 
-「 控制器動作 」，會呼叫這些方法 （索引、 瀏覽和詳細資料），我們的控制器內，而且您已經看到與 HomeController.Index （） 動作方法，他們的工作回應 URL 的要求，並 （一般而言） 判斷哪些內容應該傳送回瀏覽器或叫用的 URL 的使用者。
+在控制器內的這些方法（索引、流覽和詳細資料）稱為「控制器動作」，而且您已經看到 HomeController （）動作方法，其工作是回應 URL 要求，而（通常是說）決定哪些內容應該傳送回叫用 URL 的瀏覽器或使用者。
 
-我們一開始我們 StoreController 的實作，藉由變更 theIndex() 方法，以傳回字串"Hello 從 Store.Index() 」，我們將新增類似的方法 Browse() 和 Details():
+我們將藉由變更 theIndex （）方法來啟動我們的 StoreController 執行，以傳回字串 "Hello from Store. Index （）"，我們將為 Browse （）和 Details （）新增類似的方法：
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample3.cs)]
 
-再次執行專案，並瀏覽下列 Url:
+再次執行專案，並流覽下列 Url：
 
-- / 存放區
-- / Store/瀏覽
-- / 存放區/詳細資料
+- /Store
+- /Store/Browse
+- /Store/Details
 
-存取這些 Url，將會叫用控制器的動作方法，並傳回字串的回應：
+存取這些 Url 將會叫用控制器中的動作方法，並傳回字串回應：
 
 ![](mvc-music-store-part-2/_static/image5.png)
 
-太棒了，但這些只是常數字串。 我們把它們動態的讓他們從 URL 取得資訊，並在網頁輸出中顯示它。
+這很棒，但這些只是常數位串。 讓我們將其設為動態，讓他們從 URL 中取出資訊，並將它顯示在頁面輸出中。
 
-首先我們要變更瀏覽動作方法，從 URL 擷取查詢字串值。 我們可以將"genre"參數新增至我們的動作方法來執行這項操作。 當我們執行此動作 ASP.NET MVC 會自動將叫用時，名為"genre"至我們的動作方法的任何查詢字串或表單張貼參數傳遞。
+首先，我們將變更 [流覽動作] 方法，以從 URL 抓取 querystring 值。 我們可以藉由將「內容類型」參數新增至動作方法來達到此目的。 當我們執行此 ASP.NET 時，MVC 會在叫用時，自動將名為 "內容類型的任何 querystring 或表單 post 參數傳遞至動作方法。
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample4.cs)]
 
-*注意：我們使用 HttpUtility.HtmlEncode 公用程式方法來處理使用者輸入。這可防止使用者插入檢視中的 Javascript，例如 /Store/Browse 的連結嗎？內容類型 =&lt;指令碼&gt;window.location = 'http://hackersite.com'&lt;/script&gt;。*
+*注意：我們會使用 Httputility.htmlencode. HtmlEncode 公用程式方法來淨化使用者輸入。這可防止使用者使用/Store/Browse 之類的連結將 JAVAscript 插入我們的視圖中？內容類型 =&lt;腳本&gt;視窗。位置 = 'http://hackersite.com'&lt;/script&gt;。*
 
-現在讓我們瀏覽至存放區/瀏覽？內容類型 = Disco
+現在讓我們流覽至/Store/Browse 嗎？內容類型 = Disco
 
 ![](mvc-music-store-part-2/_static/image6.png)
 
-接下來讓我們變更即可讀取並顯示名為識別碼的輸入的參數的詳細資料動作 不同於我們的前一個方法，我們將不會進行內嵌的識別碼值做為查詢字串參數。 而我們會將它內嵌直接在 URL 本身內。 例如： /Store/Details/5。
+接著，讓我們將 [詳細資料] 動作變更為 [讀取]，並顯示名為 ID 的輸入參數。 與先前的方法不同的是，我們不會將識別碼值內嵌為 querystring 參數。 相反地，我們會直接將它內嵌在 URL 本身內。 例如：/Store/Details/5。
 
-ASP.NET MVC 可讓我們輕鬆地執行這項操作不需要設定任何項目。 ASP.NET MVC 的預設路由慣例是將 URL 的區段之後的動作方法名稱視為名為 「 識別碼 」 的參數。 如果動作方法有一個名為 ID 參數然後 ASP.NET MVC 會自動傳遞的 URL 區段您做為參數。
+ASP.NET MVC 可讓我們輕鬆執行此動作，而不需要進行任何設定。 ASP.NET MVC 的預設路由慣例是在動作方法名稱之後，將 URL 的區段視為名為 "ID" 的參數。 如果您的動作方法具有名為 ID 的參數，則 ASP.NET MVC 會自動將 URL 區段當做參數傳遞給您。
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample5.cs)]
 
-執行應用程式，並瀏覽至 /Store/Details/5:
+執行應用程式，並流覽至/Store/Details/5：
 
 ![](mvc-music-store-part-2/_static/image7.png)
 
-讓我們複習一下到目前為止完成的內容：
+我們來回顧到目前為止所做的事：
 
-- 我們在 Visual Web Developer 中建立新的 ASP.NET MVC 專案
-- 我們所討論的 ASP.NET MVC 應用程式的基本的資料夾結構
-- 我們已了解如何執行我們的網站使用 ASP.NET 程式開發伺服器
+- 我們已在 Visual Web Developer 中建立新的 ASP.NET MVC 專案
+- 我們已討論過 ASP.NET MVC 應用程式的基本資料夾結構
+- 我們已瞭解如何使用 ASP.NET 程式開發伺服器來執行我們的網站
 - 我們建立了兩個控制器類別： HomeController 和 StoreController
-- 我們已加入我們控制站會回應 URL 的要求，並傳回至瀏覽器的文字中的動作方法
+- 我們已在控制器上新增動作方法，以回應 URL 要求並將文字傳回瀏覽器
 
 > [!div class="step-by-step"]
 > [上一頁](mvc-music-store-part-1.md)

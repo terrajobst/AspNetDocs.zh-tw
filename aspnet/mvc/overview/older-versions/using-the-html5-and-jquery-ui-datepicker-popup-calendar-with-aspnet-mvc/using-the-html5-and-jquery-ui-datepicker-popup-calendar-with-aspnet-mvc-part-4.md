@@ -9,11 +9,11 @@ ms.assetid: 57666c69-2b0f-423a-a61d-be49547fa585
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4
 msc.type: authoredcontent
 ms.openlocfilehash: 583e782641efea9a9517edb31f7718b28203d756
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457488"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78538945"
 ---
 # <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a>搭配 ASP.NET MVC 使用 HTML5 和 jQuery UI Datepicker 快顯行事曆-第4部分
 
@@ -175,4 +175,4 @@ NuGet 會將 jQuery UI Core 和 jQuery UI 日期選擇器的這些偵錯工具�
 - 如需有關 ASP.NET MVC 範本的詳細資訊，請參閱[ASP.NET mvc 2 範本](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html)上的 Brad Wilson 的 blog 系列。 雖然此系列是針對 ASP.NET MVC 2 而撰寫的，但該材料仍然適用于目前版本的 ASP.NET MVC。
 
 > [!div class="step-by-step"]
-> [[上一步]](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)
+> [上一篇](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)

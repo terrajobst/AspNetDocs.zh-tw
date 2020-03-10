@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/index
-title: Getting Started with ASP.NET 4.5 Web Form 和 Visual Studio 2013 |Microsoft Docs
+title: 使用 ASP.NET 4.5 Web Forms 和 Visual Studio 2013 消費者入門 |Microsoft Docs
 author: rick-anderson
-description: 本系列教學課程將教導您建置使用 ASP.NET 4.5 和 Visual Studio 2013 Express for Web 的 ASP.NET Web Forms 應用程式的基本概念。 Visua...
+description: 本教學課程系列將教您使用 ASP.NET 4.5 和 Visual Studio 2013 Express for Web 建立 ASP.NET Web Forms 應用程式的基本概念。 納入 visua 。
 ms.author: riande
 ms.date: 04/09/2012
 ms.assetid: dc6aa59a-9cb0-4a81-b5f3-ec545a0e958d
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms
 msc.type: chapter
 ms.openlocfilehash: 75ac7d454462a7f7f1e071ce5ee9d892eb329c6f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131381"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78571887"
 ---
 # <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>ASP.NET 4.5 Web Forms 與 Visual Studio 2013 使用者入門
 
-> 本系列教學課程將教導您建置使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 的 ASP.NET Web Forms 應用程式的基本概念。 C# 原始程式碼的 Visual Studio 2013 專案會隨附了本教學課程系列。
+> 本教學課程系列將教您使用 ASP.NET 4.5 和 Microsoft Visual Studio Express 2013 for Web 建立 ASP.NET Web Forms 應用程式的基本概念。 本教學課程系列C#隨附有原始程式碼的 Visual Studio 2013 專案。
 
 - [Web Form 與 Visual Studio 使用者入門](introduction-and-overview.md)
 - [建立專案](create-the-project.md)

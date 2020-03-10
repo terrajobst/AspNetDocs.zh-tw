@@ -9,11 +9,11 @@ ms.assetid: a89d6f32-b71b-4036-8ff7-5f8ac2a6eca8
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: c5281a42596d95e725b32e652c75785abe0fd64e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74640610"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78573462"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>使用 Visual Studio 或 Visual Web Developer SQL Server Compact 部署 ASP.NET Web 應用程式：遷移至 SQL Server-10/12
 
@@ -224,7 +224,7 @@ Entityframework.sqlservercompact NuGet 套件提供 Contoso 大學應用程式�
 
 選取 [**設定檔**] 索引標籤。
 
-按一下 [**管理設定檔**]。
+按一下 [管理設定檔]。
 
 選取 [**測試**]，按一下 [**移除**]，然後按一下 [**關閉**]。
 
@@ -244,7 +244,7 @@ Entityframework.sqlservercompact NuGet 套件提供 Contoso 大學應用程式�
 
 在 [**目的地 URL** ] 方塊中，輸入 `http://localhost/ContosoUniversity/`。
 
-按 [ **下一步**]。
+按 [下一步]。
 
 [**設定**] 索引標籤會警告您已設定 [**封裝/發行 SQL** ] 索引標籤，並可讓您按一下 [啟用新的資料庫發行增強功能] 來覆寫這些索引標籤。 在此部署中，您不想要覆寫 [**封裝/發行 SQL** ] 索引標籤設定，因此只要按 **[下一步**]。
 
@@ -347,7 +347,7 @@ Visual Studio 部署應用程式，並在測試環境中將瀏覽器開啟至網
 
 選取 [**設定檔**] 索引標籤。
 
-按一下 [**管理設定檔**]。
+按一下 [管理設定檔]。
 
 選取 [**生產**]，按一下 [**移除**]，然後按一下 [**關閉**]。
 
@@ -361,7 +361,7 @@ Visual Studio 部署應用程式，並在測試環境中將瀏覽器開啟至網
 
 按一下 [匯**入**]，然後選取您稍早下載的 .publishsettings 檔案。
 
-在 [**連接**] 索引標籤上，將 [**目的地 URL** ] 變更為正確的暫存 url，在此範例中為 http://contosouniversity.com.vserver01.cytanium.com 。
+在 [**連接**] 索引標籤上，將 [**目的地 URL** ] 變更為正確的暫存 url，在此範例中為 http://contosouniversity.com.vserver01.cytanium.com。
 
 將設定檔重新命名為生產環境。 （選取 [**設定檔**] 索引標籤，然後按一下 [**管理設定檔**] 來這麼做）。
 

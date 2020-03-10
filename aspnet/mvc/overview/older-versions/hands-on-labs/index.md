@@ -2,22 +2,22 @@
 uid: mvc/overview/older-versions/hands-on-labs/index
 title: ASP.NET MVC 4 實習實驗室 |Microsoft Docs
 author: rick-anderson
-description: 了解如何開發使用 ASP.NET MVC 與這些實際操作實驗室
+description: 瞭解如何利用這些實習實驗室，以 ASP.NET MVC 進行開發
 ms.author: riande
 ms.date: 02/18/2013
 ms.assetid: eb23eb99-bfca-4043-9b48-2cf7838dd754
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs
 msc.type: chapter
 ms.openlocfilehash: 02ef51cd3320df200920cba19a59d8ab23836c95
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57023145"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78560134"
 ---
 # <a name="aspnet-mvc-4-hands-on-labs"></a>ASP.NET MVC 4 實習實驗室
 
-了解如何開發使用 ASP.NET MVC 與這些實際操作實驗室
+瞭解如何利用這些實習實驗室，以 ASP.NET MVC 進行開發
 
 - [ASP.NET MVC 4 的新功能](whats-new-in-aspnet-mvc-4.md)
 - [ASP.NET MVC 4 基本概念](aspnet-mvc-4-fundamentals.md)

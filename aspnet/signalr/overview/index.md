@@ -9,23 +9,23 @@ ms.assetid: e57da75a-1d98-4e3c-8787-f1d7e1eb2d86
 msc.legacyurl: /signalr/overview
 msc.type: book
 ms.openlocfilehash: 8bef8a53f6d47a9274a984e0650125fb538c23f0
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59380063"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78558552"
 ---
 # <a name="signalr-guidance"></a>SignalR 指引
 
-- [快速入門](getting-started/index.md)
+- [使用者入門](getting-started/index.md)
 
     - [SignalR 簡介](getting-started/introduction-to-signalr.md)
     - [支援的平台](getting-started/supported-platforms.md)
     - [教學課程：開始使用 SignalR 2](getting-started/tutorial-getting-started-with-signalr.md)
-    - [教學課程：開始使用 SignalR 2 和 MVC 5](getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
+    - [教學課程：開始使用 SignalR 2 及 MVC 5](getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
     - [教學課程：高頻率即時與 SignalR 2](getting-started/tutorial-high-frequency-realtime-with-signalr.md)
     - [教學課程：伺服器廣播與 SignalR 2](getting-started/tutorial-server-broadcast-with-signalr.md)
-    - [實習實驗室：使用 SignalR 即時 Web 應用程式](getting-started/real-time-web-applications-with-signalr.md)
+    - [實習實驗室：即時 Web 應用程式與 SignalR](getting-started/real-time-web-applications-with-signalr.md)
 - [API 指南](guide-to-the-api/index.md)
 
     - [中樞 API 指南 - 伺服器 (C#)](guide-to-the-api/hubs-api-guide-server.md)
@@ -39,7 +39,7 @@ ms.locfileid: "59380063"
     - [SignalR 疑難排解](testing-and-debugging/troubleshooting.md)
     - [對 SignalR 應用程式進行單元測試](testing-and-debugging/unit-testing-signalr-applications.md)
     - [啟用 SignalR 追蹤](testing-and-debugging/enabling-signalr-tracing.md)
-- [安全性](security/index.md)
+- [Security](security/index.md)
 
     - [SignalR 安全性簡介](security/introduction-to-security.md)
     - [SignalR 中樞的驗證和授權](security/hub-authorization.md)

@@ -8,12 +8,12 @@ ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: 228194a7b35e116cabae6d819e7a3a8060a3ef6a
-ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
+ms.openlocfilehash: 92fa428608d4ac2bf56d3c6dc9c50f1449295869
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77074913"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78544510"
 ---
 # <a name="microsoft-ajax-content-delivery-network"></a>Microsoft Ajax 內容傳遞網路
 
@@ -22,7 +22,7 @@ ms.locfileid: "77074913"
 >
 > Microsoft Ajax CDN 除了使用 Azure CDN 以外，不提供任何 SLA。
 >
-> 使用[此 GitHub 問題](https://github.com/aspnet/AspNetDocs/issues/116)報告 MICROSOFT Ajax CDN 的問題。
+> 使用[此 GitHub 問題](https://github.com/dotnet/AspNetDocs/issues/116)報告 MICROSOFT Ajax CDN 的問題。
 
 ## <a name="table-of-contents"></a>目錄
 
@@ -1180,7 +1180,7 @@ jQuery 遷移版本1.2。0
 下列版本的 ASP.NET Ajax 程式庫會裝載于 CDN 上。 按一下每個連結，以查看實際的檔案清單。
 
 - [ASP.NET Web Forms 和 Ajax 版本4.5。2](cdnajax452.md "ASP.NET Web Forms 與 Ajax 4.5.2")
-- [ASP.NET Web Forms 和 Ajax 第4版](cdnajax4.md "ASP.NET Web Form 和 Ajax 4")
+- [ASP.NET Web Forms 和 Ajax 第4版](cdnajax4.md "ASP.NET Web Forms 與 Ajax 4")
 - [ASP.NET Ajax 3.5 版](cdnajax35.md "ASP.NET Ajax 3.5")
 
 <a id="ASPNET_MVC_Releases_on_the_CDN_16"></a>

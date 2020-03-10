@@ -1,137 +1,137 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
-title: 重複使用使用主版頁面及部分的 UI |Microsoft Docs
+title: 使用主版頁面和部分重新使用 UI |Microsoft Docs
 author: microsoft
-description: 步驟 7 會探討在我們的檢視範本，以排除程式碼重複，使用部分檢視範本和主版頁面的方式，我們可以套用 ' DRY 準則 '。
+description: 步驟7探討我們可以在我們的視圖範本內套用「幹原則」的方式，使用部分視圖範本和主版頁面來消除程式碼重複。
 ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: d4243a4a-e91c-4116-9ae0-5c08e5285677
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
 msc.type: authoredcontent
 ms.openlocfilehash: 0b17cb6ac14b7f187bf1f175097a37907689d46e
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65128345"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78580329"
 ---
 # <a name="re-use-ui-using-master-pages-and-partials"></a>重複使用使用主版頁面和部分頁面的 UI
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
 [下載 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
-> 這是一套免費的步驟 7 ["NerdDinner 」 應用程式教學課程](introducing-the-nerddinner-tutorial.md)，逐步解說如何建置一個小型的但在完成時，使用 ASP.NET MVC 1 的 web 應用程式。
+> 這是免費「 [NerdDinner」應用程式教學](introducing-the-nerddinner-tutorial.md)課程的步驟7，逐步解說如何使用 ASP.NET MVC 1 建立一個小型但完整的 web 應用程式。
 > 
-> 步驟 7 會探討在我們的檢視範本，以排除程式碼重複，使用部分檢視範本和主版頁面的方式，我們可以套用 「 DRY 準則 」。
+> 步驟7探討我們可以在我們的視圖範本內套用「幹原則」的方式，使用部分視圖範本和主版頁面來消除程式碼重複。
 > 
-> 如果您使用 ASP.NET MVC 3，我們建議您遵循[取得開始使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或是[MVC Music 市集](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教學課程。
+> 如果您使用 ASP.NET MVC 3，建議您遵循[使用 mvc 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或[mvc 音樂存放](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教學課程的消費者入門。
 
-## <a name="nerddinner-step-7-partials-and-master-pages"></a>NerdDinner 步驟 7:部分和主版頁面
+## <a name="nerddinner-step-7-partials-and-master-pages"></a>NerdDinner 步驟7：部分和主版頁面
 
-ASP.NET MVC 應用了絕佳的設計原理的其中一個是 「 執行不自行重複 」 原則 （通常稱為 「 試"）。 DRY 的設計可協助消除重複的程式碼和邏輯，最終讓應用程式更快速地建置和維護變得更容易。
+MVC 所 ASP.NET 的其中一個設計觀念是「不要自行重複」原則（通常稱為「幹」）。 試設計有助於消除重複的程式碼和邏輯，這最終可讓應用程式更快速地建立及維護。
 
-我們已經看過在數個我們 NerdDinner 的案例中套用 DRY 準則。 一些範例： 我們的模型層，讓它能夠跨這兩個編輯強制執行，並建立控制器; 中的案例中實作我們的驗證邏輯我們要重複使用的編輯、 詳細資料和刪除動作方法中，跨"NotFound"檢視範本我們使用我們的檢視範本，就不需要明確指定名稱，當我們呼叫 View() 協助程式方法; 中的慣例-命名模式和我們會重複使用這兩個編輯 DinnerFormViewModel 類別，並建立動作的案例。
+我們已經看過在數個 NerdDinner 案例中套用的試原則。 一些範例：我們的驗證邏輯會在我們的模型層內執行，讓它在控制器的編輯和建立案例中強制執行;我們會在 [編輯]、[詳細資料] 和 [刪除] 動作方法中重複使用 "NotFound" view 範本;我們在我們的視圖範本中使用慣例命名模式，這樣就不需要在我們呼叫 View （） helper 方法時明確指定名稱。而且我們會針對 [編輯] 和 [建立] 動作案例重複使用 DinnerFormViewModel 類別。
 
-現在來看看我們可以套用 「 DRY 準則 」 的方式在我們的檢視範本，以及消除那里程式碼重複。
+現在讓我們來看一下，我們可以在我們的視圖範本內套用「幹原則」，以避免程式碼重複。
 
-### <a name="re-visiting-our-edit-and-create-view-templates"></a>重新瀏覽我們的編輯和建立檢視範本
+### <a name="re-visiting-our-edit-and-create-view-templates"></a>重新造訪我們的編輯和建立視圖範本
 
-目前我們會使用兩個不同的檢視範本 –"Edit.aspx 」 和 「 Create.aspx"– 顯示 Dinner 表單 UI。 快速的視覺比較，其中反白顯示它們是類似。 以下是建立表單的外觀：
+目前我們使用兩個不同的視圖範本– "Edit .aspx" 和 "Create .aspx" –以顯示晚餐表單 UI。 它們的快速視覺化比較會反白顯示其相似之處。 以下是建立表單的樣子：
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image1.png)
 
-此外，以下是我們的 [編輯] 表單的外觀：
+我們的「編輯」表單看起來像這樣：
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image2.png)
 
-不是大的差別有這樣做嗎？ 以外的標題和標頭的文字，表單版面配置和輸入控制項都相同。
+沒有太多差異了嗎？ 除了標題和標題文字之外，表單版面配置和輸入控制項都相同。
 
-如果我們開啟 「 Edit.aspx"和"Create.aspx 」 檢視範本，我們會發現它們包含相同的表單版面配置和輸入控制項的程式碼。 這種重複狀況，表示我們最後會有進行變更，我們導入，或變更新的 Dinner 屬性--也就是不好每當，兩次。
+如果我們開啟「編輯 .aspx」和「建立 .aspx」視圖範本，我們會發現它們包含相同的表單版面配置和輸入控制項程式碼。 這種重複方式表示，每當我們引進或變更新的晚餐屬性時，都必須進行變更兩次-這不是好的。
 
-### <a name="using-partial-view-templates"></a>使用部分檢視範本
+### <a name="using-partial-view-templates"></a>使用部分視圖範本
 
-ASP.NET MVC 支援定義可用來封裝頁面子部分檢視轉譯邏輯的 「 部分檢視 」 範本的能力。 「 部分 」 提供實用的方式，來定義檢視轉譯邏輯一次，然後再重新使用它在多個位置整個應用程式。
+ASP.NET MVC 支援定義「部分視圖」範本的功能，可用來封裝頁面子部分的視圖呈現邏輯。 「部分」提供一個實用的方式來定義 view 轉譯邏輯一次，然後在應用程式的多個位置重複使用它。
 
-為了協助 「 試啟動 」 我們 Edit.aspx 和 Create.aspx 檢視範本重複資料刪除，我們可以建立名為"DinnerForm.ascx 」 封裝的表單版面配置和輸入的項目，同時的部分檢視範本。 我們這樣我們/檢視/Dinners 目錄上按一下滑鼠右鍵，然後選擇 「 Add-&gt;檢視 」 功能表命令：
+為了協助「清理」我們的編輯 .aspx，並建立 .aspx view 範本重複，我們可以建立名為 "DinnerForm" 的部分視圖範本，以封裝兩者通用的表單配置和輸入元素。 若要這麼做，請以滑鼠右鍵按一下/Views/Dinners 目錄，然後選擇 [新增&gt;View] 功能表命令：
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image3.png)
 
-這會顯示 [新增檢視] 對話方塊。 我們將會命名為我們想要建立 「 DinnerForm"，選取 [建立部分檢視] 的核取方塊在對話方塊中，並指出，我們會將它傳遞 DinnerFormViewModel 類別的新檢視：
+這會顯示 [新增視圖] 對話方塊。 我們會將新的視圖命名為 [DinnerForm]，選取對話方塊中的 [建立部分視圖] 核取方塊，並指出我們會將 DinnerFormViewModel 類別傳遞給它：
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image4.png)
 
-當我們按一下 [新增] 按鈕時，Visual Studio 會"\Views\Dinners 」 目錄內就讓我們建立新的 「 DinnerForm.ascx 」 檢視範本。
+當我們按一下 [新增] 按鈕時，Visual Studio 會在 "\Views\Dinners" 目錄中為我們建立新的 "DinnerForm" 視圖範本。
 
-我們可以接著複製/貼上重複的表單版面配置 / 我們新的 「 DinnerForm.ascx 」 部分檢視範本中所輸入的控制碼，從我們 Edit.aspx/ Create.aspx 檢視範本：
+然後，我們可以將重複的表單版面配置/輸入控制項程式碼從編輯 .aspx/Create .aspx view 範本複製/貼上到新的 "DinnerForm" 部分視圖範本：
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample1.aspx)]
 
-然後，我們可以更新我們的編輯和建立檢視範本呼叫 DinnerForm 部分範本，並排除與表單重複。 我們可以執行這項操作所呼叫的 Html.RenderPartial("DinnerForm") 我們檢視的範本內：
+然後，我們可以更新編輯和建立視圖範本來呼叫 DinnerForm 部分範本，並消除表單重複。 我們可以在我們的 view 範本內呼叫 RenderPartial （"DinnerForm"）來完成這項操作：
 
-##### <a name="createaspx"></a>Create.aspx
+##### <a name="createaspx"></a>建立 .aspx
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample2.aspx)]
 
-##### <a name="editaspx"></a>Edit.aspx
+##### <a name="editaspx"></a>編輯 .aspx
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample3.aspx)]
 
-您可以明確地限定時呼叫 Html.RenderPartial 所要的部分範本的路徑 (例如: ~ Views/Dinners/DinnerForm.ascx")。 在上述程式碼，不過，我們利用 ASP.NET MVC 中，以慣例為基礎的命名模式並且僅做為呈現部分的名稱中指定 」 DinnerForm"。 當我們執行此動作 ASP.NET MVC 會尋找以慣例為基礎的檢視目錄中的第一個 （這會是/檢視/Dinners DinnersController)。 如果找不到部分範本那里它會接著尋找它 /Views/Shared 目錄中。
+呼叫 RenderPartial （例如： ~ Views/Dinners/DinnerForm）時，您可以明確限定所需部分範本的路徑。 不過，在上述程式碼中，我們會利用 ASP.NET MVC 中以慣例為基礎的命名模式，並只將 "DinnerForm" 指定為要轉譯之部分的名稱。 當我們執行此 ASP.NET 時，MVC 會先在以慣例為基礎的 views 目錄中尋找（針對 DinnersController，這會是/Views/Dinners）。 如果找不到部分範本，則會在/Views/Shared 目錄中尋找它。
 
-Html.RenderPartial() 呼叫時與部分檢視的名稱，ASP.NET MVC 會將傳遞給部分檢視相同模型和 ViewData 字典所使用的物件呼叫的檢視範本。 或者，有多載可讓您傳遞的替代模型物件和/或要使用的部分檢視的 ViewData 字典 Html.RenderPartial() 版本。 這非常有用的情況下，您只想將完整的模型/ViewModel 的子集。
+以部分視圖的名稱呼叫 RenderPartial （）時，ASP.NET MVC 會傳遞給部分視圖，這是呼叫視圖範本所使用的相同模型和 ViewData 字典物件。 或者，還有 RenderPartial （）的多載版本，可讓您傳遞替代模型物件和/或 ViewData 字典，供部分視圖使用。 這適用于您只想要傳遞完整模型/ViewModel 子集的案例。
 
-| **端主題：為什麼&lt;%%&gt;而不是&lt;%= %&gt;嗎？** |
+| **側邊主題：為什麼 &lt;%%&gt;，而不是 &lt;% =%&gt;？** |
 | --- |
-| 您可能已經注意到上述程式碼難以察覺的事情之一是，我們會使用&lt;%%&gt;而不是封鎖&lt;%= %&gt;封鎖呼叫 Html.RenderPartial() 時。 &lt;%= %&gt;在 ASP.NET 中的區塊表示開發人員想要呈現指定的值 (例如： &lt;%="Hello"%&gt;會轉譯"Hello")。 &lt;%%&gt;區塊，改為指出的開發人員想要執行程式碼，而任何呈現其中的輸出必須明確 (例如： &lt;%response.write("hello")&gt;。 我們將使用的原因&lt;%%&gt;上述 Html.RenderPartial 程式碼區塊是因為 Html.RenderPartial() 方法不會傳回字串，並改為將輸出直接向呼叫端檢視範本內容的輸出資料流。 它會基於效能效率，並藉由讓它可避免需要建立一個 （可能會有極的大型） 的暫存字串物件。 這樣可減少記憶體使用量，並改善整體的應用程式輸送量。 一個常見的錯誤時使用 Html.RenderPartial() 忘記內時，呼叫的結尾加入分號&lt;%%&gt;區塊。 比方說，這段程式碼會造成編譯器錯誤： &lt;%html.renderpartial("dinnerform")&gt;相反地，您需要撰寫： &lt;%html.renderpartial("dinnerform"); %&gt;這是因為&lt;%%&gt;區塊是獨立的程式碼陳述式，以及使用C#程式碼陳述式必須以分號結束。 |
+| 在上述程式碼中，您可能已注意到的其中一項很微妙，就是在呼叫 RenderPartial （）時，使用 &lt;%%&gt; 區塊，而不是 &lt;% =%&gt; 區塊。 &lt;% =%&gt; ASP.NET 中的區塊表示開發人員想要轉譯指定的值（例如： &lt;% = "Hello"%&gt; 會轉譯 "Hello"）。 &lt;%%&gt; 區塊，而不是表示開發人員想要執行程式碼，而且它們內的任何轉譯輸出都必須明確完成（例如： &lt;% Response。 Write （"Hello"）%&gt;。 我們使用 &lt;%%&gt; 區塊的原因是上述的 RenderPartial 程式碼，因為 RenderPartial （）方法不會傳回字串，而是會直接將內容輸出至呼叫視圖範本的輸出資料流程。 這是基於效能效率的理由，這樣做可避免建立（可能非常大）暫存字串物件的需求。 這會減少記憶體使用量，並改善整體應用程式輸送量。 使用 RenderPartial （）時，有一項常見的錯誤是忘了在呼叫結尾處加上分號（當它在 &lt;%%&gt; 區塊內）。 例如，此程式碼會造成編譯器錯誤： &lt;% RenderPartial （"DinnerForm"）%&gt; 您必須寫入： &lt;% Html. RenderPartial （"DinnerForm"）;%&gt; 這是因為 &lt;%%&gt; 區塊是獨立的程式碼語句，而且使用C#程式碼語句時必須以分號結束。 |
 
-### <a name="using-partial-view-templates-to-clarify-code"></a>若要釐清程式碼中使用部分檢視範本
+### <a name="using-partial-view-templates-to-clarify-code"></a>使用部分視圖範本來澄清程式碼
 
-我們建立 「 DinnerForm 」 部分檢視範本，以避免複製多個位置中的檢視轉譯邏輯。 這是最常見的原因，若要建立部分檢視範本。
+我們建立了 "DinnerForm" 部分視圖範本，以避免在多個位置複製 view 轉譯邏輯。 這是建立部分視圖範本最常見的原因。
 
-有時候它仍然可以合理地建立部分檢視，即使他們只會在呼叫在單一位置。 非常複雜的檢視範本很容易就會更容易閱讀時擷取和分割成一或多也名為樣板部分其檢視呈現邏輯。
+有時候，建立部分視圖還是很合理，即使只是在單一位置呼叫也一樣。 當其 view 轉譯邏輯已解壓縮並分割成一個或多個名稱完整的部分範本時，非常複雜的視圖範本通常會變得更容易閱讀。
 
-例如，請考慮下列程式碼片段從 Site.master 檔案，在我們的專案 （這我們將查看短時間內）。 程式碼是相當簡單讀取 – 這是因為頂端的 [邏輯，以顯示登入/登出] 連結時，才在畫面右邊封裝在"LogOnUserControl 」 部分：
+例如，請考慮下列網站中的程式碼片段：我們的專案中的主版檔案（我們很快就會看到）。 程式碼相當簡單明瞭，部分是因為在畫面右上方顯示登入/登出連結的邏輯會封裝在 "Logonusercontrol.ascx" 部分中：
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample4.aspx)]
 
-每當您發現自己知道嘗試了解檢視範本內的 html/程式碼標記，請考慮是否就不能更清楚的某些部分擷取及重構為妥善具名的部分檢視。
+當您發現自己不想要瞭解在視圖範本內的 html/程式碼標記時，請考慮是否要將其中一些元件解壓縮和重構為名稱完整的部分視圖，這樣會變得更清楚。
 
 ### <a name="master-pages"></a>主版頁面
 
-除了支援部分檢視，ASP.NET MVC 也支援建立可用來定義一般版面配置和站台的最上層 html 的 「 主版頁面 」 範本的能力。 內容控制項則可以新增至主版頁面，即可識別可取代的區域，可以覆寫或 「 填入 「 檢視的預留位置。 這提供非常有效 （且 DRY） 的方式，將整個應用程式的常見的版面配置。
+除了支援部分視圖以外，ASP.NET MVC 也支援建立「主版頁面」範本的功能，可用來定義網站的一般版面配置和最上層 html。 接著可以將內容預留位置控制項新增至主版頁面，以識別可由 views 覆寫或「填入」的可取代區域。 這提供了一種非常有效率的方法，讓您在應用程式中套用通用版面配置。
 
-根據預設，新的 ASP.NET MVC 專案會有自動新增至它們的主版頁面範本。 「 Site.master"及生活 \Views\Shared\ 資料夾內名為此主版頁面：
+根據預設，新的 ASP.NET MVC 專案會自動加入主版頁面範本。 此主版頁面會命名為 "\Views\Shared\"，並存在於下列資料夾中：
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image5.png)
 
-預設 Site.master 檔如下所示。 它會定義外部站台，以及在頂端導覽功能表的 html。 它包含兩個可取代內容預留位置控制項 – 一個標題，而另一個則用於其中應該取代主頁面的內容：
+預設的網站. master 檔案如下所示。 它會定義網站的外部 html，以及頂端導覽的功能表。 其中包含兩個可取代的內容預留位置控制項–一個用於標題，另一個則用於頁面的主要內容取代：
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample5.aspx)]
 
-我們建立我們 NerdDinner 的應用程式 （"List"、"Details"、 「 編輯 」、 「 建立 」、"NotFound"等等） 的檢視範本的所有已取決於此 Site.master 範本。 這經由 「 MasterPageFile"屬性，依預設加入至頂端&lt;%@ %頁&gt;指示詞，當我們建立我們使用 [新增檢視] 對話方塊的檢視：
+我們為 NerdDinner 應用程式建立的所有視圖範本（[清單]、[詳細資料]、[編輯]、[建立]、[NotFound] 等等）都是以這個網站為主範本為基礎。 當我們使用 [加入視圖] 對話方塊建立我們的視圖時，會透過預設新增至前 &lt;% @ Page%&gt; 指示詞的 "MasterPageFile" 屬性來表示這種情況：
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample6.aspx)]
 
-意思就是說，我們可以變更 Site.master 內容，而且有所做的變更會自動套用與我們呈現任何我們檢視範本時使用。
+這表示我們可以變更網站的內容，並在轉譯任何視圖範本時，自動套用並使用變更。
 
-讓我們更新我們 Site.master 標頭區段，使我們的應用程式的標頭 」 NerdDinner"，而不是 「 我的 MVC 應用程式 」。 我們也更新我們瀏覽功能表，讓第一個索引標籤是 「 尋找 Dinner"（由 HomeController 的 index （） 動作方法），並讓我們加入新的索引標籤，稱為 「 主機 Dinner 」 （DinnersController create （） 動作方法處理）：
+讓我們更新我們的網站。主要的標頭區段，讓應用程式的標頭是 "NerdDinner"，而不是「我的 MVC 應用程式」。 讓我們也更新導覽功能表，讓第一個索引標籤為「尋找晚餐」（由 HomeController 的 Index （）動作方法處理），並新增名為「主控晚餐」的新索引標籤（由 DinnersController 的 Create （）動作方法處理）：
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample7.aspx)]
 
-當我們儲存 Site.master 檔並重新整理瀏覽器就會看到我們的標頭變更顯現到我們的應用程式內的所有檢視。 例如: 
+當我們儲存網站檔案並重新整理瀏覽器時，我們會看到我們的應用程式內所有視圖的標頭變更會顯示在其中。 例如:
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image6.png)
 
-與 */Dinners/編輯 / [id]* URL:
+並使用 */Dinners/Edit/[id]* URL：
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image7.png)
 
-### <a name="next-step"></a>下一個步驟
+### <a name="next-step"></a>後續步驟
 
-部分及主版頁面提供極具彈性的選項，可讓您完全組織檢視。 您會發現這些報告可協助您避免重複的檢視內容 / 程式碼，並讓您更容易閱讀和維護您的檢視範本。
+部分和主版頁面提供極具彈性的選項，可讓您完全整理視圖。 您會發現它們可協助您避免重複的 view 內容/程式碼，並讓您的視圖範本更容易閱讀和維護。
 
-讓我們現在再次瀏覽我們稍早建立的清單案例，並啟用可調整的分頁支援。
+現在讓我們來回顧我們稍早建立的清單案例，並啟用可調整的分頁支援。
 
 > [!div class="step-by-step"]
 > [上一頁](use-viewdata-and-implement-viewmodel-classes.md)

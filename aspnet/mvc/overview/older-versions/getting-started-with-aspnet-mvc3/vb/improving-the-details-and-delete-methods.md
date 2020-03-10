@@ -9,11 +9,11 @@ ms.assetid: c5c14ef0-c128-4dc1-8c01-7f0fdb09e411
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/improving-the-details-and-delete-methods
 msc.type: authoredcontent
 ms.openlocfilehash: 08d80cac071907e927bb30df53c6f84a28f53156
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456253"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78599950"
 ---
 # <a name="improving-the-details-and-delete-methods-vb"></a>改善 Details 和 Delete 方法 (VB)
 
@@ -75,9 +75,9 @@ Common language runtime （CLR）需要多載的方法，才能擁有唯一的�
 
 現在，我建議您移至中繼層級[建立 Entity Framework 資料模型以取得 ASP.NET Mvc 應用程式](../../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)和[MVC 音樂存放](../../mvc-music-store/mvc-music-store-part-1.md)教學課程、流覽[MSDN 上的 ASP.NET 文章](https://msdn.microsoft.com/library/gg416514(VS.98).aspx)，並查看[https://asp.net/mvc](https://asp.net/mvc)的許多影片和資源，以深入瞭解 ASP.NET MVC！ [ASP.NET MVC 論壇](https://forums.asp.net/1146.aspx)是提出問題的絕佳地方。
 
-盡情享受！
+敬祝您使用愉快！
 
 — Scott Hanselman （在 Twitter 上[http://hanselman.com](http://hanselman.com)和[@shanselman](http://twitter.com/shanselman) ，以及 Rick Anderson [blogs.msdn.com/rickAndy](https://blogs.msdn.com/rickAndy)
 
 > [!div class="step-by-step"]
-> [[上一步]](adding-validation-to-the-model.md)
+> [上一篇](adding-validation-to-the-model.md)

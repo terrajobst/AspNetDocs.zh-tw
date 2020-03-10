@@ -9,11 +9,11 @@ ms.assetid: 4085de68-d243-4378-8a64-86236ea8d2da
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
 ms.openlocfilehash: 5974e53e4610dccc7812df261dc97a9b0327de85
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456682"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78582905"
 ---
 # <a name="adding-a-new-field"></a>新增欄位
 
@@ -173,7 +173,7 @@ Code First 移轉會在 [*遷移*] 資料夾中建立另一個類別檔案（名
 
 ![7_CreateRioII](adding-a-new-field/_static/image13.png)
 
-按一下 **[建立]** 。 新電影（包括評等）現在會顯示在電影清單中：
+按一下 [建立]。 新電影（包括評等）現在會顯示在電影清單中：
 
 ![7_ourNewMovie_SM](adding-a-new-field/_static/image14.png)
 

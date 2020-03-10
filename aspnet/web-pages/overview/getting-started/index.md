@@ -1,23 +1,23 @@
 ---
 uid: web-pages/overview/getting-started/index
-title: 開始使用 ASP.NET Web Pages |Microsoft Docs
+title: ASP.NET Web Pages 的消費者入門 |Microsoft Docs
 author: rick-anderson
-description: 深入了解 ASP.NET Web Pages ASP.NET Web Pages 和全新 Razor 語法提供快速、 容易使用且輕量級的方式結合伺服器程式碼與 HTML t...
+description: 瞭解 ASP.NET Web Pages ASP.NET Web Pages 和新的 Razor 語法提供快速、平易近人且輕量的方式，將伺服器程式碼與 HTML t 結合 。
 ms.author: riande
 ms.date: 05/18/2012
 ms.assetid: 99253c4e-a125-4c21-85e7-a6dd74d93892
 msc.legacyurl: /web-pages/overview/getting-started
 msc.type: chapter
 ms.openlocfilehash: 50a249d0e64cff2a8c4f16f38f530b6d52f755de
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133179"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78640921"
 ---
-# <a name="getting-started-with-aspnet-web-pages"></a>開始使用 ASP.NET Web Pages
+# <a name="getting-started-with-aspnet-web-pages"></a>使用 ASP.NET Web Pages 的消費者入門
 
-> 哪些 Web Pages 及 WebMatrix 是，再加上如何安裝所有元件、 開始使用，以及部署站台。
+> 什麼是網頁和 WebMatrix，以及如何安裝所有專案、開始使用，以及部署網站。
 
 - [在 Visual Studio 中撰寫 ASP.NET Web Pages 程式](program-asp-net-web-pages-in-visual-studio.md)
 - [ASP.NET Web 程式設計 Razor 語法簡介](introducing-razor-syntax-c.md)
@@ -27,7 +27,7 @@ ms.locfileid: "65133179"
 - [將社交網路新增至您的網站](13-adding-social-networking-to-your-web-site.md)
 - [ASP.NET Web Pages 簡介](introducing-aspnet-web-pages-2/index.md)
 
-    - [快速入門](introducing-aspnet-web-pages-2/getting-started.md)
+    - [使用者入門](introducing-aspnet-web-pages-2/getting-started.md)
     - [程式設計基礎](introducing-aspnet-web-pages-2/intro-to-web-pages-programming.md)
     - [顯示資料](introducing-aspnet-web-pages-2/displaying-data.md)
     - [HTML 表單基本概念](introducing-aspnet-web-pages-2/form-basics.md)

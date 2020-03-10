@@ -9,11 +9,11 @@ ms.assetid: 9cad0833-486a-4474-a7f3-7715542ec4ce
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-database-update
 msc.type: authoredcontent
 ms.openlocfilehash: 805eb84c24764cf921291f89054435601dbac48e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74636823"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78547737"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-a-database-update"></a>使用 Visual Studio ASP.NET Web 部署：部署資料庫更新
 
@@ -129,14 +129,14 @@ ms.locfileid: "74636823"
 
 1. 以滑鼠右鍵按一下 [ContosoUniversity] 專案，然後按一下 [**發佈**]，以開啟 [**發佈 Web** wizard]。
 2. 選取**測試**設定檔。
-3. 按一下 [**設定**] 索引標籤。
+3. 按一下 [設定] 索引標籤。
 4. 在 [ **DefaultConnection**] 底下，選取 [**更新資料庫**]。
 5. 停用您設定為初始部署執行的其他腳本：
 
     1. 按一下 [**設定資料庫更新**]。
     2. 在 [**設定資料庫更新**] 對話方塊中，清除 [*授與 .sql* ] 和 [ *aspnet-data-dev*] 旁的核取方塊。
     3. 按一下 [ **關閉**]。
-6. 按一下 [**預覽**] 索引標籤。
+6. 按一下 **預覽** 索引標籤。
 7. 在 [**資料庫**] 底下的 [ **DefaultConnection**] 右邊，按一下 [**預覽資料庫**] 連結。
 
     ![資料庫預覽](deploying-a-database-update/_static/image7.png)

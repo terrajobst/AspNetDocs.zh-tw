@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/getting-started/index
-title: 開始使用 ASP.NET Web Form |Microsoft Docs
+title: 使用 ASP.NET Web Forms 的消費者入門 |Microsoft Docs
 author: rick-anderson
-description: 了解有關 ASP.NET Web Form ASP.NET Web Forms 可讓您使用熟悉的拖放、 事件驅動模型建置動態的網站。 設計介面和 hund 中...
+description: 瞭解 ASP.NET Web form ASP.NET Web Forms 可讓您使用熟悉的拖放、事件驅動模型來建立動態網站。 設計介面和 hund 。
 ms.author: riande
 ms.date: 08/08/2011
 ms.assetid: f645d3b1-1092-43c6-a28a-074b413924b4
 msc.legacyurl: /web-forms/overview/getting-started
 msc.type: chapter
 ms.openlocfilehash: d76e65ae807b1da97d07199e7f0fce21fbf14af6
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133439"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78632717"
 ---
-# <a name="getting-started-with-aspnet-web-forms"></a>開始使用 ASP.NET Web Form
+# <a name="getting-started-with-aspnet-web-forms"></a>使用 ASP.NET Web Forms 消費者入門
 
-> Web Form 模型以及如何建立網頁並使用控制項。
+> Web form 模型，以及如何建立頁面和使用控制項。
 
 - [ASP.NET 4.5 Web Form 與 Visual Studio 2013 使用者入門](getting-started-with-aspnet-45-web-forms/index.md)
 

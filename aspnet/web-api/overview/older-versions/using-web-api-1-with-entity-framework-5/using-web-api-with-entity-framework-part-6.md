@@ -9,11 +9,11 @@ ms.assetid: 91ee29ee-0689-40ee-914a-e7dd733b6622
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-6
 msc.type: authoredcontent
 ms.openlocfilehash: e0bf88e3477acbde910cde956042449bc86ce79a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600019"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78524987"
 ---
 # <a name="part-6-creating-product-and-order-controllers"></a>第6部分：建立產品和訂單控制器
 
@@ -68,7 +68,7 @@ ms.locfileid: "74600019"
 
 ![](using-web-api-with-entity-framework-part-6/_static/image2.png)
 
-按一下 [加入]。 這會新增名為 OrdersController.cs 的檔案。 接下來，我們需要修改控制器的預設執行。
+按一下 [新增]。 這會新增名為 OrdersController.cs 的檔案。 接下來，我們需要修改控制器的預設執行。
 
 首先，刪除 `PutOrder` 和 `DeleteOrder` 方法。 在此範例中，客戶無法修改或刪除現有的訂單。 在實際的應用程式中，您需要許多後端邏輯來處理這些情況。 （例如，訂單是否已出貨？）
 

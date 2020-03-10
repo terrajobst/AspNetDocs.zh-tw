@@ -9,11 +9,11 @@ ms.assetid: 262843d6-43a2-4f1c-82d9-0b90ae6df0cf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
 ms.openlocfilehash: e68a454398f109dfd089be9c9a44d3fe662acc2f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600424"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78556410"
 ---
 # <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>使用 Web API 2 建立 OData v3 端點
 
@@ -66,7 +66,7 @@ ms.locfileid: "74600424"
 
 「模型」是代表應用程式中資料的物件。 在本教學課程中，我們需要代表產品的模型。 模型會對應至我們的 OData 實體類型。
 
-在方案總管中，以滑鼠右鍵按一下 [模型] 資料夾。 從內容功能表中，選取 [**新增**]，然後選取 [**類別**]。
+在 [方案總管] 中，於 Models 資料夾上按一下滑鼠右鍵。 從操作功能表中，選取 [新增]，然後選取 [類別]。
 
 ![](creating-an-odata-endpoint/_static/image3.png)
 
@@ -90,7 +90,7 @@ ID 屬性將會是實體索引鍵。 用戶端可以依識別碼查詢產品。 
 
 *控制器*是處理 HTTP 要求的類別。 您可以針對 OData 服務中的每個實體集定義個別的控制器。 在本教學課程中，我們將建立單一控制器。
 
-在方案總管中，以滑鼠右鍵按一下 [控制器] 資料夾。 選取 [**新增**]，然後選取 [**控制器**]。
+在方案總管中，以滑鼠右鍵按一下 [控制器] 資料夾。 選取 [新增]，然後選取 [控制器]。
 
 ![](creating-an-odata-endpoint/_static/image5.png)
 
@@ -152,7 +152,7 @@ EDM 是資料的抽象模型。 EDM 是用來建立元資料檔案，並定義�
 
 在此步驟中，您將使用 Entity Framework 來植入具有一些測試資料的資料庫。 此步驟是選擇性的，但可讓您立即測試您的 OData 端點。
 
-從 [**工具**] 功能表中，選取 [ **NuGet 套件管理員**]，然後選取 [**套件管理員主控台**]。 在 [套件管理員主控台] 視窗中，輸入下列命令：
+從 [**工具**] 功能表中，選取 [ **NuGet 套件管理員**]，然後選取 [**套件管理員主控台**]。 在 [Package Manager Console] 視窗中，輸入下列命令：
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample5.cmd)]
 
@@ -187,7 +187,7 @@ EDM 是資料的抽象模型。 EDM 是用來建立元資料檔案，並定義�
 
 ![](creating-an-odata-endpoint/_static/image13.png)
 
-按一下 [**執行**] 按鈕。 Fiddler 會將 HTTP GET 要求傳送至您的應用程式。 您應該會在 [Web 會話] 清單中看到回應。 如果所有專案都正常運作，狀態碼將會是200。
+按一下 [執行] 按鈕。 Fiddler 會將 HTTP GET 要求傳送至您的應用程式。 您應該會在 [Web 會話] 清單中看到回應。 如果所有專案都正常運作，狀態碼將會是200。
 
 ![](creating-an-odata-endpoint/_static/image14.png)
 
@@ -240,7 +240,7 @@ OData 支援數種序列化格式：
 
 根據預設，Web API 會使用 AtomPubJSON "light" 格式。
 
-若要取得 AtomPub 格式，請將 Accept 標頭設為 "application/atom + xml"。 以下是範例回應主體：
+若要取得 AtomPub 格式，請將 Accept 標頭設為 "application/atom + xml"。 下列為回應本文的範例：
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample13.cmd)]
 

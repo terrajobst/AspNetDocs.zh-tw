@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/sql-2005/designing-relational-database-tables
-title: 設計關聯式資料庫資料表 |Microsoft Docs
+title: 設計關係資料庫資料表 |Microsoft Docs
 author: microsoft
-description: 為何最受歡迎的關聯式資料庫？ SQL Server 新手將會了解如何區分主要與外部索引鍵中，設計關聯式資料庫...
+description: 為什麼關係資料庫最受歡迎？ SQL Server 的初學者將學習如何區別主要與外鍵、設計關係資料庫 。
 ms.author: riande
 ms.date: 03/29/2006
 ms.assetid: f8ce88a0-bddb-4f29-8d87-b3af40fc5b61
 msc.legacyurl: /web-forms/videos/sql-2005/designing-relational-database-tables
 msc.type: video
 ms.openlocfilehash: 59c015ebd2fafb24f41f8435c62ec1ccfbc67a57
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59421377"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78565027"
 ---
 # <a name="designing-relational-database-tables"></a>設計關聯式資料庫資料表
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-為何最受歡迎的關聯式資料庫？ SQL Server 新手將會了解如何區分主要與外部索引鍵、 設計關聯式資料庫資料表，並了解正規化規則以及取消正規化。
+為什麼關係資料庫最受歡迎？ SQL Server 的初學者將學習如何區別主要和外鍵、設計關係資料庫資料表，以及瞭解正規化規則和消除正規化。
 
-[&#9654;觀看影片 （34 分鐘內）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/designing-relational-database-tables)
+[&#9654;觀看影片（34分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/designing-relational-database-tables)
 
 > [!div class="step-by-step"]
 > [上一頁](more-about-column-data-types-and-other-properties.md)

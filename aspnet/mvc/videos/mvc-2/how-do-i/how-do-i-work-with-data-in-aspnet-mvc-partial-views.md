@@ -1,27 +1,27 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views
-title: How Do i:使用 ASP.NET MVC 部分檢視中的資料嗎？ | Microsoft Docs
+title: 如何：在 ASP.NET MVC 部分視圖中使用資料？ | Microsoft Docs
 author: rick-anderson
-description: 在此影片的 Chris Pels 示範如何組織，並將資料傳遞給部分檢視的 MVC 應用程式中。 MVC 應用程式範例會建立包含網域...
+description: 在這段影片中，Chris Pels 示範如何在 MVC 應用程式中組織和傳遞資料至部分視圖。 建立包含 [網域 ...] 的範例 MVC 應用程式
 ms.author: riande
 ms.date: 12/11/2009
 ms.assetid: 2f0d41d2-2860-4113-8f5e-0efdd29abf7b
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views
 msc.type: video
 ms.openlocfilehash: b407f802dd4afd1de03a485709d87b886e8444e9
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59401318"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78559007"
 ---
-# <a name="how-do-i-work-with-data-in-aspnet-mvc-partial-views"></a>How Do i:使用 ASP.NET MVC 部分檢視中的資料嗎？
+# <a name="how-do-i-work-with-data-in-aspnet-mvc-partial-views"></a>如何：在 ASP.NET MVC 部分視圖中使用資料？
 
-藉由[Chris Pels](https://twitter.com/chrispels)
+依[Chris Pels](https://twitter.com/chrispels)
 
-在此影片的 Chris Pels 示範如何組織，並將資料傳遞給部分檢視的 MVC 應用程式中。 建立 MVC 應用程式範例，其中包含數個商務實體的網域模型，以及檢視模型該封裝類別的執行個體。 全部都強型別，並進行，以及數個部分的檢視，然後建立示範檢視的檢視模型類別使用。 部分檢視加入到 [demo] 檢視，並輕鬆地將部分檢視下適當的資料使用檢視模型的執行個體。 最後，會討論使用更廣泛的 MVC 應用程式中的範例中所實作的概念。
+在這段影片中，Chris Pels 示範如何在 MVC 應用程式中組織和傳遞資料至部分視圖。 建立一個範例 MVC 應用程式，其中包含數個商業實體的領域模型，以及封裝類別實例的視圖模型。 接著會建立一個示範視圖和數個部分視圖，這些都是強型別，並使用 view 模型類別。 然後，部分視圖會加入至示範視圖，而 view 模型的實例則是用來輕鬆地將適當的資料傳遞至部分 views。 最後，討論在更廣泛的 MVC 應用程式中，範例中所實的概念。
 
-[&#9654;觀看影片 （20 分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-work-with-data-in-aspnet-mvc-partial-views)
+[&#9654;觀看影片（20分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-work-with-data-in-aspnet-mvc-partial-views)
 
 > [!div class="step-by-step"]
 > [上一頁](how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application.md)

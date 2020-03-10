@@ -9,11 +9,11 @@ ms.assetid: 2e56a733-5512-48a6-9276-70a65bbe4d5d
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-with-the-objectdatasource-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 16f20d9a0f4f677073174d680418b278dba40b07
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74612169"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78550488"
 ---
 # <a name="caching-data-with-the-objectdatasource-vb"></a>使用 ObjectDataSource 快取資料 (VB)
 
@@ -150,7 +150,7 @@ ASP.NET 2.0 提供各種快取選項。 整個網頁或使用者控制項的呈�
 藉由只設定幾個屬性，可以將 ObjectDataSource 設定為在 ASP.NET 資料快取中自動快取其抓取的資料。 下列清單摘要說明 ObjectDataSource 的快取相關屬性：
 
 - [EnableCaching](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.enablecaching.aspx)必須設定為 `True` 才能啟用快取。 預設為 `False`。
-- [CacheDuration](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cacheduration.aspx)快取資料的時間量（以秒為單位）。 預設為 0。 只有在 `True` `EnableCaching`，且 `CacheDuration` 設定為大於零的值時，ObjectDataSource 才會快取資料。
+- [CacheDuration](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cacheduration.aspx)快取資料的時間量（以秒為單位）。 預設值為 0。 只有在 `True` `EnableCaching`，且 `CacheDuration` 設定為大於零的值時，ObjectDataSource 才會快取資料。
 - [CacheExpirationPolicy](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cacheexpirationpolicy.aspx)可以設定為 `Absolute` 或 `Sliding`。 如果 `Absolute`，ObjectDataSource 會快取其抓取的資料達 `CacheDuration` 秒;如果 `Sliding`，則資料只有在未被存取 `CacheDuration` 秒之後才會到期。 預設為 `Absolute`。
 - [CacheKeyDependency](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cachekeydependency.aspx)使用此屬性，將 ObjectDataSource s 快取專案與現有的快取相依性產生關聯。 ObjectDataSource 的資料項目可以藉由將其相關聯的 `CacheKeyDependency`過期，從快取中提前收回。 此屬性最常用於將 SQL 快取相依性與 ObjectDataSource s 快取建立關聯，我們將在未來[使用 SQL](using-sql-cache-dependencies-vb.md)快取相依性教學課程來探索該主題。
 

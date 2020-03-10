@@ -9,11 +9,11 @@ ms.assetid: 4e849bcc-c557-4bc3-937e-f7453ee87265
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-cs
 msc.type: authoredcontent
 ms.openlocfilehash: baaaf37c47cc57d90ea579a5c20949bf8cfc7a3c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74583620"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78589289"
 ---
 # <a name="batch-updating-c"></a>批次更新 (C#)
 
@@ -60,7 +60,7 @@ ms.locfileid: "74583620"
 
 **圖 3**：使用 `GetProducts` 方法取出產品資料（[按一下以觀看完整大小的影像](batch-updating-cs/_static/image6.png)）
 
-就像 GridView 一樣，ObjectDataSource 的修改功能是設計為以每個資料列為基礎來處理。 若要更新一組記錄，我們必須在 ASP.NET 網頁的程式碼後置類別中撰寫一些程式碼，以批次處理資料並將其傳遞給 BLL。 因此，請將 [ObjectDataSource s 更新]、[插入] 和 [刪除] 索引標籤中的下拉式清單設定為 [（無）]。 按一下 [完成] 以完成精靈。
+就像 GridView 一樣，ObjectDataSource 的修改功能是設計為以每個資料列為基礎來處理。 若要更新一組記錄，我們必須在 ASP.NET 網頁的程式碼後置類別中撰寫一些程式碼，以批次處理資料並將其傳遞給 BLL。 因此，請將 [ObjectDataSource s 更新]、[插入] 和 [刪除] 索引標籤中的下拉式清單設定為 [（無）]。 按一下 [完成] 完成精靈。
 
 [![將 [更新]、[插入] 和 [刪除] 索引標籤中的下拉式清單設定為 [（無）]](batch-updating-cs/_static/image4.gif)](batch-updating-cs/_static/image7.png)
 
@@ -99,7 +99,7 @@ ms.locfileid: "74583620"
 
 針對 `UnitPrice` 編輯介面，從 `EditItemTemplate` 將 TextBox 複製到 `ItemTemplate`開始。 接下來，將 $ 放在文字方塊前面，並將其 [`ID`] 屬性設為 [單價]，並將其 [`Columns`] 屬性設定為8。
 
-此外，也請將 CompareValidator 新增至 `UnitPrice` s `ItemTemplate`，以確保使用者輸入的值是大於或等於 $0.00 的有效貨幣值。 將驗證程式的 `ControlToValidate` 屬性設定為 [單價]，其 `ErrorMessage` 屬性必須輸入有效的貨幣值。 請省略任何貨幣符號。、其 `Text` 屬性來 \*、其 `Type` `Currency`屬性設為 [`Operator`]，而其 [`GreaterThanEqual`] 屬性設為0。
+此外，也請將 CompareValidator 新增至 `UnitPrice` s `ItemTemplate`，以確保使用者輸入的值是大於或等於 $0.00 的有效貨幣值。 將驗證程式的 `ControlToValidate` 屬性設定為 [單價]，其 `ErrorMessage` 屬性必須輸入有效的貨幣值。 請省略任何貨幣符號。、其 `Text` 屬性來 \*、其 `Type` `Currency`屬性設為 [`Operator`]，而其 [`GreaterThanEqual`] 屬性設為0。`ValueToCompare`
 
 [![新增 CompareValidator，以確保輸入的價格是非負值的貨幣值](batch-updating-cs/_static/image7.gif)](batch-updating-cs/_static/image11.png)
 
@@ -124,7 +124,7 @@ ms.locfileid: "74583620"
 
 **圖 9**：使用 `GetCategories` 方法抓取分類資料（[按一下以查看完整大小的影像](batch-updating-cs/_static/image16.png)）
 
-由於只會使用此 ObjectDataSource 來抓取資料，因此請將 [更新] 和 [刪除] 索引標籤中的下拉式清單設定為 [（無）]。 按一下 [完成] 以完成精靈。
+由於只會使用此 ObjectDataSource 來抓取資料，因此請將 [更新] 和 [刪除] 索引標籤中的下拉式清單設定為 [（無）]。 按一下 [完成] 完成精靈。
 
 [![將 [更新] 和 [刪除] 索引標籤中的下拉式清單設定為 [（無）]](batch-updating-cs/_static/image10.gif)](batch-updating-cs/_static/image17.png)
 

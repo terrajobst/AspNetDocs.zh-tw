@@ -9,11 +9,11 @@ ms.assetid: f7c00fbd-652c-433d-8ed3-0e5168a4d4df
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 6e0d57ef2f1e8132f19777a7d14e94611c68adcd
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74615448"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78548563"
 ---
 # <a name="uploading-files-vb"></a>上傳檔案 (VB)
 
@@ -151,7 +151,7 @@ ms.locfileid: "74615448"
 
 [!code-sql[Main](uploading-files-vb/samples/sample3.sql)]
 
-最後一個步驟是選擇新方法的名稱。 使用 `FillCategoryWithBinaryDataByCategoryID` 和 `GetCategoryWithBinaryDataByCategoryID` 來填入 DataTable，並分別傳回 DataTable 模式。 按一下 [完成] 以完成精靈。
+最後一個步驟是選擇新方法的名稱。 使用 `FillCategoryWithBinaryDataByCategoryID` 和 `GetCategoryWithBinaryDataByCategoryID` 來填入 DataTable，並分別傳回 DataTable 模式。 按一下 [完成] 完成精靈。
 
 [![選擇 TableAdapter s 方法的名稱](uploading-files-vb/_static/image10.gif)](uploading-files-vb/_static/image15.png)
 

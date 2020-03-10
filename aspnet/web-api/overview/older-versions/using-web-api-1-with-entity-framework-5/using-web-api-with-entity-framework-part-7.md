@@ -9,11 +9,11 @@ ms.assetid: eb32a17b-626c-4373-9a7d-3387992f3c04
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
 msc.type: authoredcontent
 ms.openlocfilehash: fe4074c701159a137be3644d65ca844f160c2399
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599980"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78598676"
 ---
 # <a name="part-7-creating-the-main-page"></a>第7部分：建立主頁面
 
@@ -72,7 +72,7 @@ ms.locfileid: "74599980"
 
 好的，這是很多程式碼，但是我們會逐步建立它，因此希望設計清楚明瞭。 現在我們可以將一些挖的 .js 系結新增至 HTML。
 
-**Products**
+**產品**
 
 以下是產品清單的系結：
 

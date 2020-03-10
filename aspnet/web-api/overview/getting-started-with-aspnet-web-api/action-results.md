@@ -10,11 +10,11 @@ ms.assetid: 2fc4797c-38ef-4cc7-926c-ca431c4739e8
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/action-results
 msc.type: authoredcontent
 ms.openlocfilehash: f00ac0db453053e53d6d6942dd1557b409f4167b
-ms.sourcegitcommit: 4b324a11131e38f920126066b94ff478aa9927f8
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70985842"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78557054"
 ---
 # <a name="action-results-in-web-api-2"></a>Web API 2 中的動作結果
 
@@ -26,7 +26,7 @@ Web API 控制器動作可以傳回下列任何一項：
 
 1. void
 2. **HttpResponseMessage**
-3. **IHttpActionResult**
+3. **應傳回 iHTTPactionresult**
 4. 其他類型
 
 根據傳回的是哪一個，Web API 會使用不同的機制來建立 HTTP 回應。
@@ -35,14 +35,14 @@ Web API 控制器動作可以傳回下列任何一項：
 | --- | --- |
 | void | 傳回空的204（沒有內容） |
 | **HttpResponseMessage** | 直接轉換為 HTTP 回應訊息。 |
-| **IHttpActionResult** | 呼叫**ExecuteAsync**以建立**HttpResponseMessage**，然後轉換為 HTTP 回應訊息。 |
+| **應傳回 iHTTPactionresult** | 呼叫**ExecuteAsync**以建立**HttpResponseMessage**，然後轉換為 HTTP 回應訊息。 |
 | 其他類型 | 將序列化的傳回值寫入回應主體;傳回200（確定）。 |
 
 本主題的其餘部分將更詳細地說明每個選項。
 
 ## <a name="void"></a>void
 
-如果傳回型別為`void`，Web API 只會傳回空的 HTTP 回應，狀態碼為204（沒有內容）。
+如果傳回型別為 `void`，Web API 只會傳回空的 HTTP 回應，狀態碼為204（沒有內容）。
 
 範例控制器：
 
@@ -52,7 +52,7 @@ HTTP 回應：
 
 [!code-console[Main](action-results/samples/sample2.cmd)]
 
-## <a name="httpresponsemessage"></a>HttpResponseMessage
+## <a name="httpresponsemessage"></a>HTTPResponseMessage
 
 如果動作傳回[HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx)，Web API 會使用**HttpResponseMessage**物件的屬性來填入回應，將傳回值直接轉換為 HTTP 回應訊息。
 
@@ -70,7 +70,7 @@ HTTP 回應：
 
 Web API 會在要求中使用 Accept 標頭來選擇格式器。 如需詳細資訊，請參閱[內容協商](../formats-and-model-binding/content-negotiation.md)。
 
-## <a name="ihttpactionresult"></a>IHttpActionResult
+## <a name="ihttpactionresult"></a>應傳回 iHTTPactionresult
 
 **應傳回 iHTTPactionresult**介面是在 Web API 2 中引進。 基本上，它會定義**HttpResponseMessage** factory。 以下是使用**應傳回 iHTTPactionresult**介面的一些優點：
 

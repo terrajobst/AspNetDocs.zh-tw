@@ -10,11 +10,11 @@ msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-s
 msc.type: authoredcontent
 ms.topic: tutorial
 ms.openlocfilehash: 5671e4f0123ca2b0cb5314336cf4411467feac70
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600477"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78537041"
 ---
 # <a name="tutorial-real-time-chat-with-signalr-2-and-mvc-5"></a>教學課程：使用 SignalR 2 和 MVC 5 進行即時聊天
 
@@ -29,9 +29,9 @@ ms.locfileid: "74600477"
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-## <a name="prerequisites"></a>必要條件：
+## <a name="prerequisites"></a>Prerequisites
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)搭配**ASP.NET 和 網頁程式開發**工作負載。
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)，其中包含 **ASP.NET 和 Web 部署**工作負載。
 
 ## <a name="set-up-the-project"></a>設定專案
 

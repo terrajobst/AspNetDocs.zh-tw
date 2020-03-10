@@ -1,99 +1,99 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
-title: 驗證與服務層 (VB) |Microsoft Docs
+title: 使用服務層進行驗證（VB） |Microsoft Docs
 author: StephenWalther
-description: 了解如何移動您的驗證邏輯出您對控制器動作並進入個別的服務層。 在本教學課程中，Stephen walther 將說明如何您...
+description: 瞭解如何將您的驗證邏輯移出控制器動作並放入個別的服務層。 在本教學課程中，Stephen Walther 將說明您如何 。
 ms.author: riande
 ms.date: 03/02/2009
 ms.assetid: 344bb38e-4965-4c47-bda1-f6d29ae5b83a
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 704657ffe6f50eaf3eb0d91d0d334567003ab7f4
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65122338"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78542823"
 ---
 # <a name="validating-with-a-service-layer-vb"></a>驗證與服務層 (VB)
 
-藉由[Stephen Walther](https://github.com/StephenWalther)
+依[Stephen Walther](https://github.com/StephenWalther)
 
-> 了解如何移動您的驗證邏輯出您對控制器動作並進入個別的服務層。 在本教學課程中，Stephen Walther 會說明如何藉由隔離您的服務層，從您的控制器層級維護 sharp 關注點分離。
+> 瞭解如何將您的驗證邏輯移出控制器動作並放入個別的服務層。 在本教學課程中，Stephen Walther 將說明如何藉由將您的服務層與控制器層隔離，來維持明顯的顧慮分離。
 
-本教學課程的目標是說明 ASP.NET MVC 應用程式中執行驗證的一種方法。 在本教學課程中，您將了解如何移動您的驗證邏輯出您的控制器並進入個別的服務層。
+本教學課程的目的是要說明在 ASP.NET MVC 應用程式中執行驗證的一種方法。 在本教學課程中，您將瞭解如何將您的驗證邏輯移出您的控制器，並將其移至不同的服務層。
 
-## <a name="separating-concerns"></a>區隔的考量
+## <a name="separating-concerns"></a>區分考慮
 
-當您建置 ASP.NET MVC 應用程式時，不應該將您的資料庫邏輯放在您對控制器動作。 混用您的資料庫和控制器邏輯，可讓您的應用程式更難維護一段時間。 建議您將所有資料庫邏輯放在個別的存放庫圖層。
+當您建立 ASP.NET MVC 應用程式時，您不應該將資料庫邏輯放在控制器動作內。 混用您的資料庫和控制器邏輯，會讓您的應用程式在一段時間內更難以維護。 建議您將所有的資料庫邏輯放在個別的存放庫層中。
 
-例如，列表 1 包含名為 ProductRepository 簡單存放庫。 產品存放庫包含所有應用程式的資料存取程式碼。 清單也包含產品存放庫會實作 IProductRepository 介面。
+例如，清單1包含名為 ProductRepository 的簡單存放庫。 產品存放庫包含應用程式的所有資料存取程式碼。 此清單也包含產品存放庫所實行的 IProductRepository 介面。
 
-**Listing 1 - Models\ProductRepository.vb**
+**清單 1-Models\ProductRepository.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample1.vb)]
 
-列表 2 中的控制站會使用其 index （）] 和 [create （） 動作中的儲存機制層。 請注意，此控制器不包含任何資料庫的邏輯。 建立儲存機制層，可讓您維持清楚分離關注點。 控制器負責應用程式的流程控制邏輯，並將存放庫會負責資料存取邏輯。
+[清單 2] 中的控制器會在其索引（）和 Create （）動作中使用儲存機制層。 請注意，此控制器不包含任何資料庫邏輯。 建立存放庫層可讓您維持清楚的關注點分離。 控制器負責應用程式流程式控制制邏輯，而存放庫負責資料存取邏輯。
 
-**Listing 2 - Controllers\ProductController.vb**
+**清單 2-Controllers\ProductController.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample2.vb)]
 
-## <a name="creating-a-service-layer"></a>建立服務層
+## <a name="creating-a-service-layer"></a>建立服務層級
 
-因此，應用程式流程控制邏輯位於控制器，而所屬的存放庫中的資料存取邏輯。 在此情況下，您在其中放置您的驗證邏輯？ 其中一個選項是將您的驗證邏輯，在*服務層*。
+因此，應用程式流程式控制制邏輯屬於控制器，而資料存取邏輯則屬於存放庫。 在這種情況下，您要將驗證邏輯放在哪裡？ 其中一個選項是將您的驗證邏輯放在*服務層*中。
 
-服務層是在 ASP.NET MVC 應用程式，以促成控制站和儲存機制層之間的通訊額外層級。 服務層包含商務邏輯。 特別是，它會包含驗證邏輯。
+服務層是 ASP.NET MVC 應用程式中的另一層，可協調控制器和存放庫層之間的通訊。 服務層包含商務邏輯。 特別是，它包含驗證邏輯。
 
-例如，產品的服務層，在 列表 3 中有 CreateProduct() 方法。 CreateProduct() 方法會呼叫 ValidateProduct() 来驗證的方法將新產品，然後將產品傳遞至產品存放庫。
+例如，[清單 3] 中的產品服務層有一個 CreateProduct （）方法。 CreateProduct （）方法會呼叫 ValidateProduct （）方法來驗證新的產品，然後才將產品傳遞至產品存放庫。
 
-**Listing 3 - Models\ProductService.vb**
+**清單 3-Models\ProductService.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample3.vb)]
 
-若要使用的服務層，而不是儲存機制層的列表 4 中已更新 Product 控制器。 在控制器層與服務層。 服務層與儲存機制層。 每一層都有不同的責任。
+[清單 4] 中的產品控制器已更新為使用服務層，而不是儲存機制層。 控制器層會與服務層交談。 服務層會與存放庫層交談。 每一層都有個別的責任。
 
-**Listing 4 - Controllers\ProductController.vb**
+**清單 4-Controllers\ProductController.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample4.vb)]
 
-請注意，產品中會建立服務產品控制器建構函式。 建立產品服務時，位於模型狀態字典會傳遞至服務。 產品服務會用來通過驗證的設定，錯誤訊息傳回至控制器的模型狀態。
+請注意，產品服務是在產品控制器的程式中建立的。 建立產品服務時，會將模型狀態字典傳遞至服務。 產品服務會使用模型狀態，將驗證錯誤訊息傳回到控制器。
 
-## <a name="decoupling-the-service-layer"></a>減少服務層
+## <a name="decoupling-the-service-layer"></a>將服務層分離
 
-我們無法隔離控制站和服務層，在一個方面。 在控制站和服務層透過模型狀態進行通訊。 換句話說，服務層會將相依性對 ASP.NET MVC 架構的特定功能。
+我們無法將控制器和服務層隔離在一個方面。 控制器和服務層會透過模型狀態進行通訊。 換句話說，服務層級相依于 ASP.NET MVC 架構的特定功能。
 
-我們想要隔離服務層，從我們盡量的控制器層級。 理論上，我們應該能夠使用任何類型的應用程式和不只在 ASP.NET MVC 應用程式的服務層。 比方說，在未來，我們可能會想要建置 WPF 應用程式的前端。 我們應該找出方法來移除對 ASP.NET MVC 的相依性模型狀態，從我們的服務層。
+我們想要盡可能將服務層與控制器層隔離。 理論上，我們應該能夠將服務層與任何類型的應用程式搭配使用，而不只是 ASP.NET 的 MVC 應用程式。 例如，在未來，我們可能會想要為應用程式建立 WPF 前端。 我們應該會找到一種方法，從我們的服務層中移除對 ASP.NET MVC 模型狀態的相依性。
 
-表 5 中，使其不再使用的模型狀態已更新的服務層。 相反地，它會使用任何可實作 IValidationDictionary 介面的類別。
+在 [清單 5] 中，服務層已更新，因此不會再使用模型狀態。 相反地，它會使用任何可執行 IValidationDictionary 介面的類別。
 
-**Listing 5 - Models\ProductService.vb (decoupled)**
+**清單 5-Models\ProductService.vb （分離）**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample5.vb)]
 
-IValidationDictionary 介面被定義在列表 6。 這個簡單的介面具有單一方法和單一屬性。
+IValidationDictionary 介面定義于 [清單 6] 中。 這個簡單介面具有單一方法和單一屬性。
 
-**列表 6-Models\IValidationDictionary.cs**
+**清單 6-Models\IValidationDictionary.cs**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample6.vb)]
 
-列表 7，名為 ModelStateWrapper 類別中的類別會實作 IValidationDictionary 介面。 您可以將模型狀態字典傳遞至建構函式具現化 ModelStateWrapper 類別。
+清單7中名為 ModelStateWrapper 類別的類別會執行 IValidationDictionary 介面。 您可以藉由將模型狀態字典傳遞給此函式，來具現化 ModelStateWrapper 類別。
 
-**Listing 7 - Models\ModelStateWrapper.vb**
+**清單 7-Models\ModelStateWrapper.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample7.vb)]
 
-最後，在 列表 8 更新的控制器會使用 ModelStateWrapper 其建構函式中建立的服務層時。
+最後，在 [清單 8] 中更新的控制器在其「函式」中建立服務層時，會使用 ModelStateWrapper。
 
-**Listing 8 - Controllers\ProductController.vb**
+**清單 8-Controllers\ProductController.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample8.vb)]
 
-使用 IValidationDictionary 介面和 ModelStateWrapper 類別可讓我們完全區隔我們的服務層，從我們的控制器層級。 服務層不再相依於模型狀態。 您可以傳遞任何實作服務層的 IValidationDictionary 介面的類別。 比方說，WPF 應用程式可能會實作簡單的集合類別的 IValidationDictionary 介面。
+使用 IValidationDictionary 介面和 ModelStateWrapper 類別可讓我們將我們的服務層與控制器層完全隔離。 服務層不再相依于模型狀態。 您可以將任何可執行 IValidationDictionary 介面的類別傳遞至服務層。 例如，WPF 應用程式可能會使用簡單的集合類別來執行 IValidationDictionary 介面。
 
 ## <a name="summary"></a>總結
 
-本教學課程的目標是要討論的 ASP.NET MVC 應用程式中執行驗證的其中一種方法。 在本教學課程中，您已了解如何移動所有的驗證邏輯出您的控制器並進入個別的服務層。 您也學到如何建立 ModelStateWrapper 類別，以隔離您的服務層，從您的控制器層級。
+本教學課程的目的是要討論在 ASP.NET MVC 應用程式中執行驗證的一種方法。 在本教學課程中，您已瞭解如何將您的所有驗證邏輯移出控制器，並將其移至不同的服務層。 您也已瞭解如何藉由建立 ModelStateWrapper 類別，將您的服務層與控制器層隔離。
 
 > [!div class="step-by-step"]
 > [上一頁](validating-with-the-idataerrorinfo-interface-vb.md)

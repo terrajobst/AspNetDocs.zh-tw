@@ -9,11 +9,11 @@ ms.assetid: 81ee500f-fc37-40d6-8722-f1b64720fbb6
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
 ms.openlocfilehash: dd2e55d68ceb5a90134e394c00f3a3a231cb27d6
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457683"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78566077"
 ---
 # <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>使用 Facebook、Twitter、LinkedIn 與 Google OAuth2 登入建立 ASP.NET MVC 5 應用程式 (C#)
 
@@ -28,7 +28,7 @@ ms.locfileid: "77457683"
 > 本教學課程也會說明如何為使用者新增設定檔資料，以及如何使用成員資格 API 來新增角色。 本教學課程是由[Rick Anderson](https://blogs.msdn.com/rickAndy)撰寫（請在 Twitter 上追蹤我： [@RickAndMSFT](https://twitter.com/RickAndMSFT) ）。
 
 <a id="start"></a>
-## <a name="getting-started"></a>開始使用
+## <a name="getting-started"></a>快速入門
 
 一開始請先安裝並執行 Web 或[Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566)[的 Visual Studio Express 2013](https://go.microsoft.com/fwlink/?LinkId=299058) 。 安裝 Visual Studio [2013 Update 3 或更新](https://go.microsoft.com/fwlink/?LinkId=390521)版本。 如需 Dropbox、GitHub、Linkedin、Instagram、Buffer、Salesforce、串流、Stack 交換、Tripit、Twitch、Twitter、Yahoo！等的協助，請參閱此[範例專案](https://github.com/matthewdunsdon/oauthforaspnet)。
 

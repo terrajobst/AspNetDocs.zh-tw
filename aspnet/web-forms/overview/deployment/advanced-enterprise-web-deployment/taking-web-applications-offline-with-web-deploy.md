@@ -9,11 +9,11 @@ ms.assetid: 3e9f6e7d-8967-4586-94d5-d3a122f12529
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy
 msc.type: authoredcontent
 ms.openlocfilehash: ba60664a0c3daa0650cd7e7cfc4ab9da08df3440
-ms.sourcegitcommit: e365196c75ce93cd8967412b1cfdc27121816110
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77075134"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78526065"
 ---
 # <a name="taking-web-applications-offline-with-web-deploy"></a>使用 Web Deploy 讓 Web 應用程式離線
 
@@ -157,7 +157,7 @@ Web 發行管線（WPP）使用名為**FilesForPackagingFromProject**的專案�
 
 本主題說明如何在部署期間將 web 應用程式離線，方法是將*應用程式\_離線的 .htm*檔案發佈到目的地伺服器，並在結束時將它移除。 同時也涵蓋了如何在 web 部署套件中包含*應用程式\_離線 .htm*檔案。
 
-## <a name="further-reading"></a>進階閱讀
+## <a name="further-reading"></a>進一步閱讀
 
 如需封裝和部署程式的詳細資訊，請參閱[建立和封裝 Web 應用程式專案](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md)、設定[web 封裝部署的參數](../web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment.md)和[部署 web 封裝](../web-deployment-in-the-enterprise/deploying-web-packages.md)。
 

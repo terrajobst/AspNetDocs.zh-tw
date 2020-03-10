@@ -9,11 +9,11 @@ ms.assetid: 5bb4587f-5bcd-44f5-b368-3c1709162b35
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-vb
 msc.type: authoredcontent
 ms.openlocfilehash: f2e2489ac8455913f55c746dbe05b9fe8272285b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74590803"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78543012"
 ---
 # <a name="displaying-a-table-of-database-data-vb"></a>顯示資料庫資料的資料表 (VB)
 
@@ -35,7 +35,7 @@ ms.locfileid: "74590803"
 | --- | --- | --- |
 | ID | Int | False |
 | 標題 | NVarchar （200） | False |
-| Director | NVarchar （50） | False |
+| 導演 | NVarchar （50） | False |
 | DateReleased | DateTime | False |
 
 為了在 ASP.NET MVC 應用程式中呈現電影資料表，我們需要建立模型類別。 在本教學課程中，我們會使用 Microsoft Entity Framework 來建立我們的模型類別。
@@ -53,7 +53,7 @@ ms.locfileid: "74590803"
 按一下 [新增] 按鈕之後，[實體資料模型 Wizard] 隨即出現（請參閱 [圖 1]）。 請遵循下列步驟來完成嚮導：
 
 1. 在 [**選擇模型內容**] 步驟中，選取 [**從資料庫產生**] 選項。
-2. 在 [**選擇您的資料**連線] 步驟中，使用 [ *MoviesDB* ] 資料連線和 [連線設定] 的名稱*MoviesDBEntities* 。 按 [**下一步]** 按鈕。
+2. 在 [**選擇您的資料**連線] 步驟中，使用 [ *MoviesDB* ] 資料連線和 [連線設定] 的名稱*MoviesDBEntities* 。 按 [下一步] 按鈕。
 3. 在 [**選擇您的資料庫物件**] 步驟中，展開 [資料表] 節點，選取 [電影] 資料表。 輸入命名空間*模型*，然後按一下 [**完成]** 按鈕。
 
 [建立 LINQ to SQL 類別的 ![](displaying-a-table-of-database-data-vb/_static/image1.jpg)](displaying-a-table-of-database-data-vb/_static/image1.png)

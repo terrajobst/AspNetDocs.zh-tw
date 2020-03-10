@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/index
-title: ASP.NET 4-企業部署系列 4 進階主題 |Microsoft Docs
+title: ASP.NET 4-企業部署系列4高級主題 |Microsoft Docs
 author: rick-anderson
-description: 本教學課程會示範如何執行必要或適合在許多企業部署案例的各種工作。
+description: 本教學課程將示範如何在許多企業部署案例中執行所需或需要的各種工作。
 ms.author: riande
 ms.date: 05/16/2012
 ms.assetid: eacf0e3a-c2e9-4f77-a676-249146f393e8
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment
 msc.type: chapter
 ms.openlocfilehash: f72ec780623b4240762f35e479b36895db42cee0
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65127121"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78574967"
 ---
 # <a name="aspnet-4---enterprise-deployment-series-4-advanced-topics"></a>ASP.NET 4 - 企業部署系列 4 進階主題
 
-> 本教學課程會示範如何執行必要或適合在許多企業部署案例的各種工作。
+> 本教學課程將示範如何在許多企業部署案例中執行所需或需要的各種工作。
 
 - [進階的企業 Web 部署](advanced-enterprise-web-deployment.md)
 - [執行 "What If" 部署](performing-a-what-if-deployment.md)

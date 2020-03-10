@@ -7,11 +7,11 @@ ms.author: riande
 ms.date: 10/29/2018
 msc.type: content
 ms.openlocfilehash: 5299d9ab057c3096773955a7461e77a80673ebfe
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74586756"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78584508"
 ---
 # <a name="configuration-builders-for-aspnet"></a>ASP.NET 的設定構建者
 
@@ -34,7 +34,7 @@ By [Stephen Molloy](https://github.com/StephenMolloy)和[Rick Anderson](https://
 
 下列設定適用于 `Microsoft.Configuration.ConfigurationBuilders`中的所有索引鍵/值設定產生器。
 
-### <a name="mode"></a>Mode
+### <a name="mode"></a>模式
 
 設定產生器會使用索引鍵/值資訊的外部來源來填入設定系統的選取索引鍵/值元素。 具體而言，`<appSettings/>` 和 `<connectionStrings/>` 區段會收到設定產生器的特殊處理。 產生器適用于三種模式：
 
@@ -82,7 +82,7 @@ By [Stephen Molloy](https://github.com/StephenMolloy)和[Rick Anderson](https://
 
 * 使用預設 `Strict` 模式中的 `EnvironmentConfigBuilder` 和設定檔中的適當索引鍵名稱。 上述程式碼和標記採用這種方法。 使用這種方法時，`<appSettings/>` 和 `<connectionStrings/>`中都**不**能有相同名稱的索引鍵。
 * 在 `Greedy` 模式中使用兩個 `EnvironmentConfigBuilder`s，並使用不同的前置詞和 `stripPrefix`。 使用此方法，應用程式可以讀取 `<appSettings/>` 和 `<connectionStrings/>`，而不需要更新設定檔。 下一節[stripPrefix](#stripprefix)會示範如何執行此動作。
-* 在具有不同前置詞的 `Greedy` 模式中使用兩個 `EnvironmentConfigBuilder`s。 使用此方法時，您不能有重複的索引鍵名稱，因為索引鍵名稱必須依前置詞而有所不同。  例如：
+* 在具有不同前置詞的 `Greedy` 模式中使用兩個 `EnvironmentConfigBuilder`s。 使用此方法時，您不能有重複的索引鍵名稱，因為索引鍵名稱必須依前置詞而有所不同。  例如:
 
 [!code-xml[Main](config-builder/MyConfigBuilders/WebPrefix.config?name=snippet&highlight=11-99)]
 
@@ -103,7 +103,7 @@ By [Stephen Molloy](https://github.com/StephenMolloy)和[Rick Anderson](https://
 
 例如，使用先前的*web.config*檔案、先前環境編輯器影像中的索引鍵/值，以及先前的程式碼，會設定下列值：
 
-|  索引鍵              | {2&gt;值&lt;2} |
+|  索引鍵              | 值 |
 | ----------------- | ------------ |
 |     AppSetting_ServiceID           | 從 env 變數 AppSetting_ServiceID|
 |    AppSetting_default            | 來自 env 的 AppSetting_default 值 |
@@ -136,11 +136,11 @@ By [Stephen Molloy](https://github.com/StephenMolloy)和[Rick Anderson](https://
 
 例如，使用先前的*web.config*檔案、先前環境編輯器影像中的索引鍵/值，以及先前的程式碼，會設定下列值：
 
-|  索引鍵              | {2&gt;值&lt;2} |
+|  索引鍵              | 值 |
 | ----------------- | ------------ |
 |     ServiceID           | 從 env 變數 AppSetting_ServiceID|
-|    預設            | 來自 env 的 AppSetting_default 值 |
-|    預設         | 從 env ConnStr_default val|
+|    default            | 來自 env 的 AppSetting_default 值 |
+|    default         | 從 env ConnStr_default val|
 
 ### <a name="tokenpattern"></a>tokenPattern
 
@@ -277,10 +277,10 @@ By [Stephen Molloy](https://github.com/StephenMolloy)和[Rick Anderson](https://
 
 * `jsonFile` - 必要項。 指定要從中讀取的 JSON 檔案。 在開始時，可以使用 `~` 字元來參考應用程式根目錄。
 * `optional` 布林值，預設值是 `true`。 如果找不到 JSON 檔案，則防止擲回例外狀況。
-* `jsonMode` - `[Flat|Sectional]`. `Flat` 是預設值。 當 `jsonMode` `Flat`時，JSON 檔案是單一的一般索引鍵/值來源。 `EnvironmentConfigBuilder` 和 `AzureKeyVaultConfigBuilder` 也是單一的一般索引鍵/值來源。 當 `SimpleJsonConfigBuilder` 設定為 `Sectional` 模式時：
+* `jsonMode` - `[Flat|Sectional]`. `Flat` 為預設值。 當 `jsonMode` `Flat`時，JSON 檔案是單一的一般索引鍵/值來源。 `EnvironmentConfigBuilder` 和 `AzureKeyVaultConfigBuilder` 也是單一的一般索引鍵/值來源。 當 `SimpleJsonConfigBuilder` 設定為 `Sectional` 模式時：
 
   * 在概念上，JSON 檔案會分成多個字典，而不是在最上層。
-  * 每個字典只會套用至符合附加至其最上層屬性名稱的設定區段。 例如：
+  * 每個字典只會套用至符合附加至其最上層屬性名稱的設定區段。 例如:
 
 ```json
     {

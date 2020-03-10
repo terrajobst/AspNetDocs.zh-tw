@@ -9,11 +9,11 @@ ms.assetid: ba92788f-9f03-44b1-b6b2-af8413e6a35d
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: f93cf11085fb19afb97b71aca8f638bd88fe658b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74621104"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78547779"
 ---
 # <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a>設定 Web Deploy 發行的網頁伺服器 (離線部署)
 
@@ -145,7 +145,7 @@ ms.locfileid: "74621104"
     > [!NOTE]
     > 在生產環境中，您可能會想要在埠80上裝載您的網站，並設定主機標頭和相符的 DNS 記錄。 如需在 IIS 7 中設定主機標頭的詳細資訊，請參閱[設定網站的主機標頭（iis 7）](https://technet.microsoft.com/library/cc753195(WS.10).aspx)。 如需有關 Windows Server 2008 R2 中 DNS 伺服器角色的詳細資訊，請參閱[Dns 伺服器總覽](https://technet.microsoft.com/library/cc770392.aspx)和[dns 伺服器](https://technet.microsoft.com/windowsserver/dd448607)。
 9. 在 [ **動作** ] 窗格的 [ **編輯站台**] 下方，按一下 [ **繫結**]。
-10. 在 [**網站**系結] 對話方塊中，按一下 [**新增**]。
+10. 在 [站台繫結] 對話方塊中，按一下 [新增]。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image5.png)
 11. 在 [**新增網站**系結] 對話方塊中，將 [ **IP 位址**] 和 [**埠**] 設定為符合您現有的網站設定。
@@ -154,8 +154,8 @@ ms.locfileid: "74621104"
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image6.png)
 
     > [!NOTE]
-    > 第一個網站系結可讓您使用 IP 位址和埠或 `http://localhost:85`，在本機存取網站。 第二個網站系結可讓您使用電腦名稱稱（例如 http://proweb1:85) ，從網域中的其他電腦存取網站。
-13. 在 [**網站**系結] 對話方塊中，按一下 [**關閉**]。
+    > 第一個網站系結可讓您使用 IP 位址和埠或 `http://localhost:85`，在本機存取網站。 第二個網站系結可讓您使用電腦名稱稱（例如 http://proweb1:85)，從網域中的其他電腦存取網站。
+13. 在 [站台繫結] 對話方塊中，按一下 [關閉]。
 14. **在 [連線**] 窗格中，按一下 [**應用程式**集區]。
 15. 在 [**應用程式**集區] 窗格中，以滑鼠右鍵按一下應用程式集區的名稱，然後按一下 [**基本設定**]。 根據預設，您的應用程式集區名稱會與您的網站名稱相符（例如， **DemoSite**）。
 16. 在 [ **.NET Framework 版本**] 清單中，選取 [ **.NET Framework v 4.0.30319**]，然後按一下 **[確定]** 。
@@ -181,8 +181,8 @@ ms.locfileid: "74621104"
 
 1. 在 Windows Explorer 中，流覽至本機資料夾的位置。
 2. 以滑鼠右鍵按一下該資料夾，然後按一下 [**屬性**]。
-3. 在 [**安全性**] 索引標籤上，按一下 [**編輯**]，然後按一下 [**新增**]。
-4. 按一下 [**位置**]。 在 [**位置**] 對話方塊中，選取本機伺服器，然後按一下 **[確定]** 。
+3. 在 [**Security**] 索引標籤上按一下 [**Edit**]，然後按一下 [**Add**]。
+4. 按一下 [位置]。 在 [**位置**] 對話方塊中，選取本機伺服器，然後按一下 **[確定]** 。
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image8.png)
 5. 在 [**選取使用者或群組**] 對話方塊中，輸入**IIS\_給 iis-iusrs**，按一下 [**檢查名稱**]，然後按一下 **[確定]** 。

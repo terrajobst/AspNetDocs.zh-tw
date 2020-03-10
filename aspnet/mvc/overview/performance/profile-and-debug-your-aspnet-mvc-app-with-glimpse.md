@@ -9,11 +9,11 @@ ms.assetid: c205805f-efdd-4fa7-9616-f26eab180611
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
 ms.openlocfilehash: d3689147a3bc3aa1f4180c377d2483a94bdd95a9
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457657"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78538532"
 ---
 # <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>使用 Glimpse 分析 ASP.NET MVC 應用程式以對其進行偵錯
 
@@ -78,7 +78,7 @@ ms.locfileid: "77457657"
 
 上述程式碼可讓我傳入查詢字串（`eager`），以控制資料的積極式或明確載入。 在下圖中，會使用明確載入，而 [計時] 頁面會顯示在 `Index` 動作方法中載入的每個註冊：
 
-![明確式載入](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image8.png)
+![Explicit Loading - 明確載入](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image8.png)
 
 在下列程式碼中，會指定 [積極]，並在呼叫 `Index` view 之後提取每個註冊：
 

@@ -2,22 +2,22 @@
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/index
 title: ASP.NET 4-企業部署系列 1 |Microsoft Docs
 author: rick-anderson
-description: 本教學課程說明如何以符合您管理企業級 web 應用程式部署至開發時會遇到的挑戰的許多...
+description: 本教學課程說明如何在您管理企業級 web 應用程式部署至開發時遇到的許多挑戰：
 ms.author: riande
 ms.date: 05/16/2012
 ms.assetid: 83e0a572-428f-4bea-9638-1a031c6901c0
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise
 msc.type: chapter
 ms.openlocfilehash: 7701f7d73aa8f0bae28f16dc2381317e6e02a4a5
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131753"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78564600"
 ---
 # <a name="aspnet-4---enterprise-deployment-series-1"></a>ASP.NET 4 - 企業部署系列 1
 
-> 本教學課程說明如何符合許多您管理的企業級 web 應用程式開發、 測試、 預備及生產環境部署時會遇到的挑戰。 本教學課程包含參考解決方案以及概念和工作導向的內容，引導您完成各種常見的工作和程序的混合。
+> 本教學課程說明當您管理企業級 web 應用程式部署至開發、測試、預備和生產環境時，如何滿足您會遇到的許多挑戰。 本教學課程包含一個參考解決方案，並結合了概念和工作導向的內容，以引導您完成各種常見的工作和程式。
 
 - [企業中的 Web 部署](web-deployment-in-the-enterprise.md)
 - [連絡管理員解決方案](the-contact-manager-solution.md)

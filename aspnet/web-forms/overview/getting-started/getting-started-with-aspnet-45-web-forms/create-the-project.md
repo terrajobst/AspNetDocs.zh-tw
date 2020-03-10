@@ -9,11 +9,11 @@ ms.assetid: 2ce36f78-8ecb-4ab1-b748-6d0ab633ea3f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
 ms.openlocfilehash: 62918b17f42e54dfe4e45a08927b1039dcbb7012
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74576059"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78571985"
 ---
 # <a name="create-the-project"></a>建立專案
 
@@ -25,7 +25,7 @@ ms.locfileid: "74576059"
 
 在本教學課程中，您將建立、審查和執行 Visual Studio 中的預設專案，這可讓您熟悉 ASP.NET 的功能。 此外，您也會查看 Visual Studio 環境。
 
-## <a name="what-youll-learn"></a>您將瞭解的內容：
+## <a name="what-youll-learn"></a>您將學到什麼：
 
 - 如何建立新的 Web form 專案。
 - Web Forms 專案的檔案結構。
@@ -40,7 +40,7 @@ ms.locfileid: "74576059"
 
     ![建立專案-新增專案功能表項目](create-the-project/_static/image1.png)
 3. 選取左側的 [&gt; **Visual C#**  -&gt; **Web** templates] 群組 -**範本**。
-4. 在中間的資料行中選擇 [ **ASP.NET Web 應用程式**] 範本。  
+4. 選擇中間欄的 [ASP.NET Web 應用程式] 範本。  
  本教學課程系列使用 .NET Framework 4.5.2。
 5. 將專案命名為*WingtipToys* ，然後選擇 [**確定]** 按鈕。 
 
@@ -49,7 +49,7 @@ ms.locfileid: "74576059"
     > [!NOTE]
     > 本教學課程系列中的專案名稱是**WingtipToys**。 建議您使用此專案的*確切*名稱，讓整個教學課程系列中提供的程式碼如預期般運作。
 
-6. 按一下 [**變更驗證**] 按鈕。 選取 [**個別使用者帳戶**]，然後按一下 [**確定]** 按鈕。
+6. 按一下 [變更驗證] 按鈕。 選取 [**個別使用者帳戶**]，然後按一下 [**確定]** 按鈕。
 
 7. 選取 [ **Web** form] 範本，然後按一下 [**確定]** 按鈕。
 

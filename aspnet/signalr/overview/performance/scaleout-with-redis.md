@@ -1,23 +1,23 @@
 ---
 uid: signalr/overview/performance/scaleout-with-redis
-title: SignalR 向外延展與 Redis |Microsoft Docs
+title: 具有 Redis 的 SignalR 向外延展 |Microsoft Docs
 author: bradygaster
-description: 軟體使用本主題的 Visual Studio 2013.NET 4.5 SignalR 本主題的第 2 版上一個版本的版本較早版本的相關資訊...
+description: 本主題中使用的軟體版本 Visual Studio 2013 .NET 4.5 SignalR 第2版本主題的先前版本，以取得舊版的相關資訊 。
 ms.author: bradyg
 ms.date: 06/10/2014
 ms.assetid: 6ecd08c1-e364-4cd7-ad4c-806521911585
 msc.legacyurl: /signalr/overview/performance/scaleout-with-redis
 msc.type: authoredcontent
 ms.openlocfilehash: 58a7affa1769523955adc76455a1c33be6f49751
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114305"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78579223"
 ---
 # <a name="signalr-scaleout-with-redis"></a>使用 Redis 的 SignalR 向外延展
 
-藉由[Mike Wasson](https://github.com/MikeWasson)
+由[Mike Wasson](https://github.com/MikeWasson)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
@@ -26,139 +26,139 @@ ms.locfileid: "65114305"
 >
 > - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
-> - SignalR 2.4 版
+> - SignalR 版本2。4
 >
 >
 >
-> ## <a name="previous-versions-of-this-topic"></a>本主題的上一個版本
+> ## <a name="previous-versions-of-this-topic"></a>本主題的先前版本
 >
-> 如需舊版 SignalR 的資訊，請參閱[SignalR 舊版](../older-versions/index.md)。
+> 如需舊版 SignalR 的詳細資訊，請參閱[SignalR 較舊的版本](../older-versions/index.md)。
 >
-> ## <a name="questions-and-comments"></a>提出問題或意見
+> ## <a name="questions-and-comments"></a>問題與意見
 >
-> 您喜歡本教學課程中的方式，和我們可以改善在頁面底部的註解中，歡迎留下意見反應。 如果您有不直接相關的教學課程中的問題，您可以張貼他們[ASP.NET SignalR 論壇](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或是[StackOverflow.com](http://stackoverflow.com/)。
+> 請留下有關您喜歡本教學課程的意見反應，以及我們可以在頁面底部的批註中改進的內容。 如果您有與本教學課程不直接相關的問題，您可以將其張貼至[ASP.NET SignalR 論壇](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
 
-在本教學課程中，您將使用[Redis](http://redis.io/)將訊息散發到部署兩個個別的 IIS 執行個體的 SignalR 應用程式。
+在本教學課程中，您將使用[Redis](http://redis.io/) ，將訊息散發至部署在兩個不同 IIS 實例上的 SignalR 應用程式。
 
-Redis 是記憶體中索引鍵-值存放區。 它也支援發行/訂閱模型的傳訊系統。 Redis 的 SignalR 後擋板會使用發佈/訂閱功能，將訊息轉送到其他伺服器。
+Redis 是記憶體中的索引鍵/值存放區。 它也支援具有發行/訂閱模型的訊息系統。 SignalR Redis 背板會使用 pub/sub 功能將訊息轉送至其他伺服器。
 
 ![](scaleout-with-redis/_static/image1.png)
 
-本教學課程中，您會使用三部伺服器：
+在本教學課程中，您將使用三部伺服器：
 
-- 執行 Windows，您將使用的 SignalR 應用程式部署的兩部伺服器。
-- 執行 Linux，您將用來執行 Redis 的一部伺服器。 在本教學課程的螢幕擷取畫面，我會使用 Ubuntu 12.04 TLS。
+- 兩部執行 Windows 的伺服器，您將用它來部署 SignalR 應用程式。
+- 一部執行 Linux 的伺服器，您將使用它來執行 Redis。 在本教學課程的螢幕擷取畫面中，我使用了 Ubuntu 12.04 TLS。
 
-如果您沒有要使用的三個實體伺服器，您可以建立在 HYPER-V 上的 Vm。 另一個選項是在 Azure 上建立 Vm。
+如果您沒有三個要使用的實體伺服器，您可以在 Hyper-v 上建立 Vm。 另一個選項是在 Azure 上建立 Vm。
 
-雖然本教學課程使用官方 Redis 實作，另外還有[Windows 連接埠的 Redis](https://github.com/MSOpenTech/redis)從 MSOpenTech。 安裝和設定不同，但除此以外步驟都相同。
+雖然本教學課程使用官方 Redis 實，但也有 MSOpenTech 的[Windows 埠 Redis](https://github.com/MSOpenTech/redis) 。 安裝程式和設定不同，但步驟相同。
 
 > [!NOTE]
 >
-> SignalR 向外的延展與 Redis 不支援 Redis 叢集。
+> 具有 Redis 的 SignalR 向外延展不支援 Redis 叢集。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-我們會詳細的教學課程之前，以下是您將進行的快速概觀。
+在我們開始進行詳細的教學課程之前，請先快速瞭解您將執行的動作。
 
 1. 安裝 Redis 並啟動 Redis 伺服器。
-2. 將這些 NuGet 套件新增至您的應用程式中：
+2. 將下列 NuGet 套件新增至您的應用程式：
 
-    - [Microsoft.AspNet.SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR)
-    - [Microsoft.AspNet.SignalR.StackExchangeRedis](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.StackExchangeRedis)
+    - [SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR)
+    - [SignalR. StackExchangeRedis](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.StackExchangeRedis)
     
 3. 建立 SignalR 應用程式。
-4. 若要設定的後擋板的 Startup.cs 中加入下列程式碼：
+4. 將下列程式碼新增至 Startup.cs 以設定背板：
 
     [!code-csharp[Main](scaleout-with-redis/samples/sample1.cs)]
 
-## <a name="ubuntu-on-hyper-v"></a>HYPER-V 上的 Ubuntu
+## <a name="ubuntu-on-hyper-v"></a>Hyper-v 上的 Ubuntu
 
-使用 Windows HYPER-V，可以在 Windows Server 上輕鬆建立 Ubuntu VM。
+您可以使用 Windows Hyper-v，輕鬆地在 Windows Server 上建立 Ubuntu VM。
 
-下載從 Ubuntu ISO [ http://www.ubuntu.com ](http://www.ubuntu.com/)。
+從[http://www.ubuntu.com](http://www.ubuntu.com/)下載 Ubuntu ISO。
 
-在 HYPER-V 中新增新的 VM。 在 **連接虛擬硬碟**步驟中，選取**建立虛擬硬碟**。
+在 Hyper-v 中，新增 VM。 在 [**連接虛擬硬碟]** 步驟中，選取 [**建立虛擬硬碟**]。
 
 ![](scaleout-with-redis/_static/image2.png)
 
-在 **安裝選項**步驟中，選取**映像檔 (.iso)**，按一下 **瀏覽**，並瀏覽至 Ubuntu 安裝 ISO。
+在 [**安裝選項**] 步驟中，選取 [**影像檔案（.iso）** ]，按一下 **[流覽]** ，然後流覽至 Ubuntu 安裝 iso。
 
 ![](scaleout-with-redis/_static/image3.png)
 
 ## <a name="install-redis"></a>安裝 Redis
 
-請遵循的步驟[ http://redis.io/download ](http://redis.io/download)來下載並建置 Redis。
+遵循[http://redis.io/download](http://redis.io/download)的步驟，下載並建立 Redis。
 
 [!code-console[Main](scaleout-with-redis/samples/sample2.cmd)]
 
-這會建置 Redis 二進位檔`src`目錄。
+這會在 `src` 目錄中建立 Redis 二進位檔。
 
-根據預設，Redis 不需要密碼。 若要設定密碼，請編輯`redis.conf`位於原始碼的根目錄中的檔案。 （請將檔案的備份副本才能進行編輯時） ！新增下列指示詞到`redis.conf`:
+根據預設，Redis 不需要密碼。 若要設定密碼，請編輯位於原始程式碼根目錄中的 `redis.conf` 檔案。 （您必須先製作檔案的備份副本，然後再進行編輯！）將下列指示詞新增至 `redis.conf`：
 
 [!code-powershell[Main](scaleout-with-redis/samples/sample3.ps1)]
 
-現在開始 Redis 伺服器：
+現在啟動 Redis 伺服器：
 
 [!code-css[Main](scaleout-with-redis/samples/sample4.css)]
 
 ![](scaleout-with-redis/_static/image4.png)
 
-開啟連接埠 6379，也就是 Redis 的預設通訊埠接聽時。 （您可以變更組態檔中的連接埠號碼）。
+開啟埠6379，這是 Redis 接聽的預設埠。 （您可以變更設定檔案中的埠號碼）。
 
 ## <a name="create-the-signalr-application"></a>建立 SignalR 應用程式
 
-依照下列其中一個這些教學課程中建立的 SignalR 應用程式：
+遵循下列其中一個教學課程來建立 SignalR 應用程式：
 
-- [開始使用 SignalR 2.0](../getting-started/tutorial-getting-started-with-signalr.md)
-- [開始使用 SignalR 2.0 和 MVC 5](../getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
+- [使用 SignalR 2.0 的消費者入門](../getting-started/tutorial-getting-started-with-signalr.md)
+- [使用 SignalR 2.0 和 MVC 5 的消費者入門](../getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
 
-接下來，我們將修改的聊天應用程式，以支援向外的延展與 Redis。 首先，新增`Microsoft.AspNet.SignalR.StackExchangeRedis`NuGet 封裝加入您的專案。 在 Visual Studio 中，從**工具**功能表上，選取**NuGet 套件管理員**，然後選取**Package Manager Console**。 在 [套件管理員主控台] 視窗中，輸入下列命令：
+接下來，我們將修改聊天應用程式，以支援使用 Redis 的向外延展。 首先，將 `Microsoft.AspNet.SignalR.StackExchangeRedis` NuGet 封裝新增至您的專案。 在 Visual Studio 中，從 [**工具**] 功能表選取 [ **NuGet 套件管理員**]，然後選取 [**套件管理員主控台**]。 在 [Package Manager Console] 視窗中，輸入下列命令：
 
 [!code-powershell[Main](scaleout-with-redis/samples/sample5.ps1)]
 
-接下來，開啟 Startup.cs 檔案。 將下列程式碼加入**組態**方法：
+接下來，開啟 Startup.cs 檔案。 將下列程式碼新增至**Configuration**方法：
 
 [!code-csharp[Main](scaleout-with-redis/samples/sample6.cs)]
 
-- 「 伺服器 」 是正在執行的 Redis 伺服器的名稱。
-- *連接埠*的通訊埠編號
-- 「 密碼 」 是指您在 redis.conf 檔案中定義的密碼。
-- :"AppName"是任何字串。 SignalR 使用此名稱建立 Redis pub/sub 通道。
+- 「伺服器」是正在執行 Redis 的伺服器名稱。
+- *port*是埠號碼
+- 「密碼」是您在 redis 檔案中定義的密碼。
+- "AppName" 為任何字串。 SignalR 會使用此名稱建立 Redis pub/sub 通道。
 
-例如: 
+例如:
 
 [!code-csharp[Main](scaleout-with-redis/samples/sample7.cs)]
 
 ## <a name="deploy-and-run-the-application"></a>部署和執行應用程式
 
-準備您的 Windows Server 執行個體，若要部署的 SignalR 應用程式。
+準備您的 Windows Server 實例以部署 SignalR 應用程式。
 
-新增 IIS 角色。 包含 「 應用程式開發 」 功能，包括 WebSocket 通訊協定。
+新增 IIS 角色。 包含「應用程式開發」功能，包括 WebSocket 通訊協定。
 
 ![](scaleout-with-redis/_static/image5.png)
 
-也包含 「 管理 」 服務 （列在 [管理工具]）。
+也請包含管理服務（列在 [管理工具] 底下）。
 
 ![](scaleout-with-redis/_static/image6.png)
 
-**安裝 Web Deploy 3.0。** 當您執行 IIS 管理員，它會提示您安裝 Microsoft Web Platform，或者您可以[下載安裝程式](https://go.microsoft.com/fwlink/?LinkId=255386)。 在 平台安裝程式中，搜尋 Web Deploy，並安裝 Web Deploy 3.0
+**安裝 Web Deploy 3.0。** 當您執行 IIS 管理員時，它會提示您安裝 Microsoft Web Platform，或者您可以[下載安裝程式](https://go.microsoft.com/fwlink/?LinkId=255386)。 在平臺安裝程式中，搜尋 Web Deploy 並安裝 Web Deploy 3。0
 
 ![](scaleout-with-redis/_static/image7.png)
 
-檢查 Web 管理服務正在執行。 否則，請啟動服務。 （如果您沒有看到 Web 管理服務中的 Windows 服務清單，請確定您新增 IIS 角色時，安裝 「 管理服務。）
+檢查 Web 管理服務是否正在執行。 如果沒有，請啟動服務。 （如果您在 Windows 服務清單中看不到 [Web 管理服務]，請確定您已在新增 IIS 角色時安裝管理服務）。
 
-根據預設，Web 管理服務會接聽 TCP 連接埠 8172。 在 [Windows 防火牆] 中，建立新的輸入的規則，以允許連接埠 8172 上的 TCP 流量。 如需詳細資訊，請參閱 <<c0> [ 設定防火牆規則](https://technet.microsoft.com/library/dd448559(WS.10).aspx)。 （如果您裝載在 Azure 上的 Vm，您可以直接在 Azure 入口網站中。 請參閱[如何設定虛擬機器的端點](https://azure.microsoft.com/documentation/articles/virtual-machines-set-up-endpoints/)。)
+根據預設，Web 管理服務會接聽 TCP 通訊埠8172。 在 Windows 防火牆中，建立新的輸入規則，以允許埠8172上的 TCP 流量。 如需詳細資訊，請參閱設定[防火牆規則](https://technet.microsoft.com/library/dd448559(WS.10).aspx)。 （如果您要在 Azure 上裝載 Vm，您可以直接在 Azure 入口網站中執行此動作。 請參閱[如何設定虛擬機器的端點](https://azure.microsoft.com/documentation/articles/virtual-machines-set-up-endpoints/)。）
 
-現在，您已準備好要部署到伺服器的 從您的開發電腦的 Visual Studio 專案。 在 方案總管 中，以滑鼠右鍵按一下方案，然後按一下 **發佈**。
+現在您已準備好從開發電腦將 Visual Studio 專案部署到伺服器。 在方案總管中，以滑鼠右鍵按一下方案，然後按一下 [**發佈**]。
 
-如需詳細的 web 部署的相關文件，請參閱[Visual Studio 及 ASP.NET 的 Web 部署內容對應](../../../whitepapers/aspnet-web-deployment-content-map.md)。
+如需 web 部署的詳細檔，請參閱[Visual Studio 和 ASP.NET 的 Web 部署內容對應](../../../whitepapers/aspnet-web-deployment-content-map.md)。
 
-如果您部署兩部伺服器應用程式時，您可以在另一個瀏覽器視窗開啟每個執行個體，並查看他們都收到來自其他使用 SignalR 訊息。 （當然，在生產環境中，兩部伺服器會位於負載平衡器後方。）
+如果您將應用程式部署至兩部伺服器，您可以在另一個瀏覽器視窗中開啟每個實例，並查看每個實例都會收到來自另一個的 SignalR 訊息。 （當然，在生產環境中，這兩部伺服器會位於負載平衡器後方）。
 
 ![](scaleout-with-redis/_static/image8.png)
 
-如果您是想要查看傳送訊息至 Redis，您可以使用**redis cli**用戶端，會使用 Redis 進行安裝。
+如果您想要查看傳送至 Redis 的訊息，可以使用**Redis cli**用戶端，它會與 Redis 一起安裝。
 
 [!code-xml[Main](scaleout-with-redis/samples/sample8.xml)]
 

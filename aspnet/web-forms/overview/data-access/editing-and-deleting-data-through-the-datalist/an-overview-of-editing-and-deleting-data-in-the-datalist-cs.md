@@ -9,11 +9,11 @@ ms.assetid: c3b0c86e-fe98-41ee-b26f-ca38cddaa75e
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 481c9a14b1ebfe36ffcddd0237701bc04266e393
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74629260"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78594553"
 ---
 # <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-c"></a>在 DataList 中編輯和刪除資料的總覽（C#）
 
@@ -301,4 +301,4 @@ GridView 控制項是由欄位集合（BoundFields、CheckBoxFields、TemplateFi
 本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Zack，Pespisa 和 Randy Schmidt。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一步](performing-batch-updates-cs.md)
+> [下一個](performing-batch-updates-cs.md)

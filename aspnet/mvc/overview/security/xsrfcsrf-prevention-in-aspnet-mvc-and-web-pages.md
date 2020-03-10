@@ -9,11 +9,11 @@ ms.assetid: aadc5fa4-8215-4fc7-afd5-bcd2ef879728
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
 ms.openlocfilehash: 1965063a9b613d0e2857cddcc2165f5fda64ec0c
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77455525"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78559350"
 ---
 # <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>ASP.NET MVC 和 ASP.NET Web Pages 中的 XSRF/CSRF 防護
 
@@ -164,7 +164,7 @@ XSRF 要求驗證*會話權杖*會儲存為 HTTP cookie，而且目前在其承�
 | **AdditionalDataProvider** | 在權杖產生期間提供額外資料，並在權杖驗證期間耗用額外資料的[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) 。 預設值是 *null*。 如需詳細資訊，請參閱[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)一節。 |
 | **CookieName** | 提供用來儲存反 XSRF 會話權杖之 HTTP cookie 名稱的字串。 如果未設定此值，系統就會根據應用程式的已部署虛擬路徑自動產生名稱。 預設值是 *null*。 |
 | **RequireSsl** | 布林值，指出是否需要透過 SSL 保護的通道提交防 XSRF token。 如果此值為*true*，任何自動產生的 cookie 都會設定 "secure" 旗標，而如果從不是透過 SSL 提交的要求中呼叫，則會擲回反 XSRF api。 預設值為 *false*。 |
-| **SuppressIdentityHeuristicChecks** | 布林值，指定反 XSRF 系統是否應停用對宣告式身分識別的支援。 如果此值為*true*，則系統會假設*IIdentity.Name*適合做為每個使用者的唯一識別碼，而且不會嘗試使用[WIF/ACS/宣告式驗證](#_WIF_ACS)一節中所述的特殊案例*IClaimsIdentity*或*ClClaimsIdentity* 。 預設值是 `false`。 |
+| **SuppressIdentityHeuristicChecks** | 布林值，指定反 XSRF 系統是否應停用對宣告式身分識別的支援。 如果此值為*true*，則系統會假設*IIdentity.Name*適合做為每個使用者的唯一識別碼，而且不會嘗試使用[WIF/ACS/宣告式驗證](#_WIF_ACS)一節中所述的特殊案例*IClaimsIdentity*或*ClClaimsIdentity* 。 預設值為 `false`。 |
 | **UniqueClaimTypeIdentifier** | 字串，指出哪個宣告類型適合做為唯一的每一使用者識別碼使用。 如果設定了這個值，而目前的*IIdentity*是以宣告為基礎，則系統會嘗試解壓縮*UniqueClaimTypeIdentifier*所指定之類型的宣告，而在產生欄位標記時，將會使用對應的值來取代使用者的使用者名稱。 如果找不到宣告類型，系統就會讓要求失敗。 預設值為*null*，表示系統應該使用先前描述的（識別提供者名稱識別碼）元組來取代使用者的使用者名稱。 |
 
 <a id="_IAntiForgeryAdditionalDataProvider"></a>

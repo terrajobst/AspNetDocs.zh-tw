@@ -9,11 +9,11 @@ ms.assetid: 128fdb5f-4c5e-42b5-b485-f3aee90a8e38
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 5c87386e4fe2c53b39162071689f2522dcc6c7ac
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74602768"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78549641"
 ---
 # <a name="adding-and-responding-to-buttons-to-a-gridview-c"></a>新增與回應 GridView 的按鈕 (C#)
 
@@ -245,7 +245,7 @@ ButtonField 會自動傳入資料列的*rowIndex* ，其按鈕已透過 `e.Comma
 
 > [!NOTE]
 > GridView （和 DetailsView）也可以將按鈕、LinkButtons 或 ImageButtons 新增至其 TemplateFields。 如同 BoundField，當您按下這些按鈕時，將會引發回傳，並引發 GridView 的 `RowCommand` 事件。 不過，在 TemplateField 中加入按鈕時，按鈕的 `CommandArgument` 不會自動設定為數據列的索引，如同使用 ButtonFields 時一樣。 如果您需要決定在 `RowCommand` 事件處理常式中按下按鈕的資料列索引，您將需要使用類似下列的程式碼，以手動方式在 TemplateField 內的宣告式語法中設定按鈕的 `CommandArgument` 屬性：  
-> `<asp:Button runat="server" ... CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'`。
+> `<asp:Button runat="server" ... CommandArgument='<%# ((GridViewRow) Container).RowIndex %>'`
 
 ## <a name="summary"></a>總結
 
@@ -260,4 +260,4 @@ GridView、DetailsView 和 FormView 控制項全都可以包含按鈕、LinkButt
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，自1998起，有七個 ASP/ASP. NET 書籍和創辦人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是[*在24小時內讓自己的 ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在mitchell@4GuysFromRolla.com觸達[。](mailto:mitchell@4GuysFromRolla.com) 或者透過他的 blog，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 > [!div class="step-by-step"]
-> [下一步](adding-and-responding-to-buttons-to-a-gridview-vb.md)
+> [下一個](adding-and-responding-to-buttons-to-a-gridview-vb.md)

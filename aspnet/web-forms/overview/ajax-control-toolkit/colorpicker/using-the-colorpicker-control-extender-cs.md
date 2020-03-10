@@ -1,105 +1,105 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-cs
-title: 使用 ColorPicker 控制項擴充項 (C#) |Microsoft Docs
+title: 使用 ColorPicker 控制項擴充項（C#） |Microsoft Docs
 author: microsoft
-description: ColorPicker 是提供 UI 中的用戶端色彩挑選功能，在快顯視窗控制項中的 ASP.NET AJAX 擴充項。 可以將它附加至任何 ASP.NET...
+description: ColorPicker 是一種 ASP.NET 的 AJAX 擴充項，可在 popup 控制項中提供 UI 的用戶端色彩挑選功能。 它可以附加至任何 ASP.NET 。
 ms.author: riande
 ms.date: 05/12/2009
 ms.assetid: 0d86a1e7-a910-4ab2-b85c-7a9ea6906c39
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-cs
 msc.type: authoredcontent
 ms.openlocfilehash: ac510ab353878038c1c7a103bfbf6d32fb1b2686
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65108150"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78614041"
 ---
-# <a name="using-the-colorpicker-control-extender-c"></a>使用 ColorPicker 控制項擴充項 (C#)
+# <a name="using-the-colorpicker-control-extender-c"></a>使用 ColorPicker 控制項擴充項（C#）
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-> ColorPicker 是提供 UI 中的用戶端色彩挑選功能，在快顯視窗控制項中的 ASP.NET AJAX 擴充項。 可以將它附加至任何 ASP.NET TextBox 控制項。 它。
+> ColorPicker 是一種 ASP.NET 的 AJAX 擴充項，可在 popup 控制項中提供 UI 的用戶端色彩挑選功能。 它可以附加至任何 ASP.NET TextBox 控制項。 這樣.
 
-本教學課程的目標是要說明如何使用 AJAX 控制項工具組 ColorPicker 控制項擴充項。 ColorPicker 控制項擴充項會顯示快顯對話方塊中，可讓您選取色彩。 ColorPicker 適合，每當您想要提供直覺式使用者介面來選擇色彩的使用者。
+本教學課程的目的是要說明如何使用 AJAX 控制項工具組 ColorPicker 控制項擴充項。 ColorPicker 控制項擴充項會顯示可讓您選取色彩的快顯對話方塊。 當您想要提供直覺的使用者介面讓使用者挑選色彩時，ColorPicker 就很有用。
 
-## <a name="extending-a-textbox-control-with-the-colorpicker-control-extender"></a>擴充 ColorPicker 控制項擴充項與 TextBox 控制項
+## <a name="extending-a-textbox-control-with-the-colorpicker-control-extender"></a>使用 ColorPicker 控制項擴充項延伸 TextBox 控制項
 
-例如，假設您想要建立網站，可讓訪客建立自訂的名片。 訪客可以輸入文字的名片，挑選色彩。 列表 1 中的 [ASP.NET] 頁面包含兩個名為 txtCardText 和 txtCardColor 的 TextBox 控制項。 當您提交表單時，會顯示選取的值 （請參閱 圖 1）。
+例如，假設您想要建立可讓訪客建立自訂名片的網站。 訪客可以輸入名片的文字並挑選色彩。 [清單 1] 中的 [ASP.NET] 頁面包含兩個名為 txtCardText 和 txtCardColor 的 TextBox 控制項。 當您提交表單時，會顯示選取的值（請參閱 [圖 1]）。
 
 [![簡單的表單建立名片](using-the-colorpicker-control-extender-cs/_static/image1.jpg)](using-the-colorpicker-control-extender-cs/_static/image1.png)
 
-**圖 01**:建立名片的簡單表單 ([按一下以檢視完整大小的影像](using-the-colorpicker-control-extender-cs/_static/image2.png))
+**圖 01**：用來建立名片的簡單表單（[按一下以觀看完整大小的影像](using-the-colorpicker-control-extender-cs/_static/image2.png)）
 
-**列表 1-CreateCard.aspx**
+**清單 1-CreateCard .aspx**
 
 [!code-aspx[Main](using-the-colorpicker-control-extender-cs/samples/sample1.aspx)]
 
-表單的程式碼範例 1 的運作方式，但它不提供絕佳的使用者體驗。 使用者必須在文字方塊中輸入一種色彩。 如果使用者想要的特製化的色彩-比方說，只是右陰影的尖峰綠-然後使用者必須找出 HTML 色彩代碼，而不需任何協助。
+[清單 1] 中的表單可運作，但不提供絕佳的使用者體驗。 使用者必須在文字方塊中輸入色彩。 如果使用者想要使用特定的色彩（例如，尖峰綠色的適當陰影），則使用者必須找出 HTML 色彩代碼，而不需要任何協助。
 
-若要建立較佳使用者體驗，您可以使用 ColorPicker 控制項擴充項。 當您將焦點移至 TextBox 控制項，ColorPicker 顯示色彩對話方塊 （請參閱 圖 2）。
+您可以使用 ColorPicker 控制項擴充項來建立更好的使用者體驗。 當您將焦點移至 TextBox 控制項時，ColorPicker 會顯示色彩對話方塊（請參閱 [圖 2]）。
 
 [![ColorPicker 控制項擴充項](using-the-colorpicker-control-extender-cs/_static/image2.jpg)](using-the-colorpicker-control-extender-cs/_static/image3.png)
 
-**圖 02**:ColorPicker 控制項擴充項 ([按一下以檢視完整大小的影像](using-the-colorpicker-control-extender-cs/_static/image4.png))
+**圖 02**： ColorPicker 控制項擴充項（[按一下以查看完整大小的影像](using-the-colorpicker-control-extender-cs/_static/image4.png)）
 
-您需要完成 ColorPicker 控制項擴充項搭配列表 1 中的表單的兩個步驟：
+您需要完成兩個步驟，才能使用 ColorPicker 控制項擴充項搭配清單1中的表單：
 
-1. ScriptManager 控制項加入頁面
-2. ColorPicker 控制項擴充項新增至頁面
+1. 將 ScriptManager 控制項新增至頁面
+2. 將 ColorPicker 控制項擴充項新增至頁面
 
-您可以使用 ColorPicker 之前，必須以您的頁面加入 ScriptManager。 開啟伺服器端權限低於將 ScriptManager 的好地方&lt;表單&gt;標記。 您可以拖曳到頁面的 ScriptManager，從工具箱 （ScriptManager 位於 AJAX 延伸模組 索引標籤下）。 或者，您可以輸入下列標記原始碼檢視下開啟伺服器端表單標記：
+在您可以使用 ColorPicker 之前，您必須先將 ScriptManager 新增至您的頁面。 新增 ScriptManager 的最佳位置是在開啟伺服器端 &lt;表單&gt; 標記的正下方。 您可以從 [工具箱] 將 ScriptManager 拖曳至頁面（ScriptManager 位於 [AJAX 延伸模組] 索引標籤底下）。 或者，您可以在 [起始伺服器端] 表單標籤底下的 [來源] 視圖中輸入下列標記：
 
-&lt;asp:ScriptManager ID="ScriptManager1" runat="server" /&gt;
+&lt;asp： ScriptManager ID = "ScriptManager1" runat = "server"/&gt;
 
-ColorPicker 控制項擴充項新增至頁面的最簡單方式是在設計檢視中。 如果您將滑鼠停留 txtCardColor 文字方塊時，智慧工作選項，將會出現可讓您將新增 extender （請參閱 [圖 3]）。 如果您選擇此選項時，擴充性精靈] 隨即出現 （請參閱 [圖 4）。
+將 ColorPicker 控制項擴充項加入至頁面的最簡單方式是在設計檢視中。 如果您將滑鼠停留在 [txtCardColor] 文字方塊上，就會出現 [智慧型工作] 選項，讓您加入擴充項（請參閱 [圖 3]）。 如果您選擇此選項，則會出現 [擴充性檢查程式] （請參閱 [圖 4]）。
 
-[![新增 extender](using-the-colorpicker-control-extender-cs/_static/image3.jpg)](using-the-colorpicker-control-extender-cs/_static/image5.png)
+[![加入擴充項](using-the-colorpicker-control-extender-cs/_static/image3.jpg)](using-the-colorpicker-control-extender-cs/_static/image5.png)
 
-**圖 03**:加入擴充項 ([按一下以檢視完整大小的影像](using-the-colorpicker-control-extender-cs/_static/image6.png))
+**圖 03**：加入擴充項（[按一下以查看完整大小的影像](using-the-colorpicker-control-extender-cs/_static/image6.png)）
 
-[![選取 使用 Extender 精靈控制項擴充項](using-the-colorpicker-control-extender-cs/_static/image4.jpg)](using-the-colorpicker-control-extender-cs/_static/image7.png)
+[![選取具有擴充性 Wizard 的控制項擴充項](using-the-colorpicker-control-extender-cs/_static/image4.jpg)](using-the-colorpicker-control-extender-cs/_static/image7.png)
 
-**圖 04**:選取 使用 Extender 精靈控制項擴充項 ([按一下以檢視完整大小的影像](using-the-colorpicker-control-extender-cs/_static/image8.png))
+**圖 04**：使用擴充性檢查程式選取控制項擴充項（[按一下以查看完整大小的影像](using-the-colorpicker-control-extender-cs/_static/image8.png)）
 
-您可以挑選 ColorPicker 擴充項，來擴充 txtCardColor 文字方塊與 ColorPicker 擴充項。 按一下 [確定] 以關閉對話方塊。
+您可以挑選 ColorPicker 擴充項，使用 ColorPicker 擴充項來延伸 [txtCardColor] 文字方塊。 按一下 [確定] 關閉對話方塊。
 
-進行這些變更之後，來源頁面看起來像列表 2 中。
+在您進行這些變更之後，頁面的來源看起來會像 [清單 2]。
 
-列表 2-CreateCard.aspx （含 ColorPicker)
+清單 2-CreateCard .aspx （含 ColorPicker）
 
 [!code-aspx[Main](using-the-colorpicker-control-extender-cs/samples/sample2.aspx)]
 
-請注意頁面現在包含 ColorPickerExtender 控制項 txtCardColor TextBox 控制項的正下方顯示。 ColorPickerExtender 控制延伸 txtCardColor 控制項，讓它會顯示色彩選擇器對話方塊。
+請注意，此頁面現在包含 [txtCardColor TextBox] 控制項正下方的 ColorPickerExtender 控制項。 ColorPickerExtender 控制項會擴充 txtCardColor 控制項，使其顯示色彩選擇器對話方塊。
 
-## <a name="using-a-button-to-launch-the-color-picker-dialog"></a>使用按鈕來啟動色彩選擇器對話方塊
+## <a name="using-a-button-to-launch-the-color-picker-dialog"></a>使用按鈕啟動色彩選擇器對話方塊
 
-ColorPicker extender 支援下列屬性：
+ColorPicker 擴充項支援下列屬性：
 
-- 可利用 PopupButtonId-會導致出現色彩選擇器對話方塊頁面上的按鈕的識別碼。
-- PopupPosition-的位置，相對於目標控制項的 [色彩選擇器] 對話方塊。 可能值為 Absolute、 中心、 BottomLeft、 BottomRight、 TopLeft、 右上方和左側 （預設為 BottomLeft）。
-- SampleControlId-顯示所選取之的色彩的控制項的 ID。
+- PopupButtonId-頁面上導致色彩選擇器對話方塊出現的按鈕識別碼。
+- PopupPosition-色彩選擇器對話方塊的相對於目標控制項的位置。 可能的值為絕對、中間、BottomLeft、BottomRight、TopLeft、右上、Right 和 Left （預設為 BottomLeft）。
+- SampleControlId-顯示所選取色彩之控制項的識別碼。
 - SelectedColor-ColorPicker 所選取的初始色彩。
 
-您可以使用這些屬性來自訂顯示色彩選擇器對話方塊的方式，以及所選取之的色彩的顯示方式。 [列表 3] 頁面會說明您如何使用數個這些屬性。
+您可以使用這些屬性來自訂色彩選擇器對話方塊的顯示方式，以及選取的色彩顯示方式。 [清單 3] 中的頁面說明您可以如何使用其中幾個屬性。
 
-**列表 3-CreateCardButton.aspx**
+**清單 3-CreateCardButton .aspx**
 
 [!code-aspx[Main](using-the-colorpicker-control-extender-cs/samples/sample3.aspx)]
 
-[列表 3] 頁面包含挑選色彩按鈕 （請參閱 [圖 5]）。 當您按一下此按鈕時，色彩選擇器對話方塊上方文字方塊中。 如果您選取色彩對話方塊中選取的色彩就會顯示為 lblSample Label 控制項的背景色彩。
+[清單 3] 中的頁面包含 [挑選色彩] 按鈕（請參閱 [圖 5]）。 當您按一下此按鈕時，[色彩選擇器] 對話方塊會出現在文字方塊的上方。 如果您從對話方塊中選取色彩，則選取的色彩會顯示為 lblSample 標籤控制項的背景色彩。
 
-ColorPicker 可利用 PopupButtonID 屬性用來關聯 ColorPicker 擴充項中的 [挑選顏色] 按鈕。 當您提供可利用 PopupButtonID 屬性的值時，色彩選擇器對話方塊不會再出現目標控制項有焦點時。 您必須按一下按鈕以顯示對話方塊。
+ColorPicker PopupButtonID 屬性是用來將 [選擇色彩] 按鈕與 ColorPicker 擴充項產生關聯。 當您提供 [PopupButtonID] 屬性的值時，當目標控制項有焦點時，[色彩選擇器] 對話方塊就不會再出現。 您必須按一下按鈕，才會顯示對話方塊。
 
-SampleControlID 屬性用來將會顯示所選取的色彩與 ColorPicker 控制項產生關聯。 ColorPicker 會將此控制項的背景色彩變成目前選取的色彩。
+SampleControlID 屬性是用來將顯示所選色彩的控制項與 ColorPicker 建立關聯。 ColorPicker 會將這個控制項的背景色彩變更為目前選取的色彩。
 
 [![顯示具有按鈕的色彩選擇器對話方塊](using-the-colorpicker-control-extender-cs/_static/image5.jpg)](using-the-colorpicker-control-extender-cs/_static/image9.png)
 
-**圖 05**:顯示具有按鈕的色彩選擇器對話方塊 ([按一下以檢視完整大小的影像](using-the-colorpicker-control-extender-cs/_static/image10.png))
+**圖 05**：顯示具有按鈕的色彩選擇器對話方塊（[按一下以觀看完整大小的影像](using-the-colorpicker-control-extender-cs/_static/image10.png)）
 
 ## <a name="summary"></a>總結
 
-在本教學課程中，您已了解如何使用 ColorPicker 控制項擴充項顯示快顯色彩選擇器對話方塊。 首先，我們會檢查焦點會移至 TextBox 控制項時，如何顯示對話方塊。 接下來，您已了解如何建立按鈕，按一下按鈕時，會顯示 [色彩選擇器] 對話方塊。
+在本教學課程中，您已瞭解如何使用 ColorPicker 控制項擴充項來顯示快捷方式色彩選擇器對話方塊。 首先，我們會檢查當焦點移至 TextBox 控制項時，您可以如何顯示對話方塊。 接下來，您已瞭解如何建立按鈕，在按一下按鈕時顯示色彩選擇器對話方塊。
 
 > [!div class="step-by-step"]
-> [下一步](using-the-colorpicker-control-extender-vb.md)
+> [下一個](using-the-colorpicker-control-extender-vb.md)

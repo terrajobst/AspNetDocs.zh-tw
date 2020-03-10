@@ -9,11 +9,11 @@ ms.assetid: 70d5d106-b547-442c-a7fd-3492b3e3d646
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-cs
 msc.type: authoredcontent
 ms.openlocfilehash: f83201fc6fd458e730b6bb5ffee184d303b52e90
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74611410"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78627229"
 ---
 # <a name="using-postbacks-with-reorderlist-c"></a>使用具有 ReorderList 的回傳 (C#)
 
@@ -65,4 +65,4 @@ AJAX 控制項工具組中的 `ReorderList` 控制項提供一個清單，讓使
 每次重新排列都會觸發回傳（[按一下以查看完整大小的影像](using-postbacks-with-reorderlist-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [下一步](drag-and-drop-via-reorderlist-cs.md)
+> [下一個](drag-and-drop-via-reorderlist-cs.md)

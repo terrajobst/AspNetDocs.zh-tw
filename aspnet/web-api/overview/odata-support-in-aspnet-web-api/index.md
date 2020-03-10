@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/index
-title: ASP.NET Web API-ASP.NET 中的 OData 4.x
+title: ASP.NET Web API 中的 OData-ASP.NET 4。x
 author: rick-anderson
-description: 如何建立 ASP.NET Web API 中的 OData 端點，asp.net 4.x
+description: 如何在 ASP.NET 4.x 的 ASP.NET Web API 中建立 OData 端點
 ms.author: riande
 ms.date: 08/17/2012
 ms.custom: seoapril2019
@@ -10,15 +10,15 @@ ms.assetid: 9151c605-e911-4f24-95b5-ca310b105abf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api
 msc.type: chapter
 ms.openlocfilehash: 6d84b458a02b63b24334b137afdb5b710d91c5ee
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133161"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78598760"
 ---
 # <a name="odata-in-aspnet-web-api"></a>ASP.NET Web API 中的 OData
 
-> 如何建立 ASP.NET Web API 中的 OData 端點，asp.net 4.x。 OData 是 web 的資料存取通訊協定。 它提供統一的方式來查詢及操作資料集。 Web API 支援 OData 通訊協定第 4 版和第 3 版。
+> 如何在 ASP.NET 4.x 的 ASP.NET Web API 中建立 OData 端點。 OData 是 web 的資料存取通訊協定。 它會提供統一的方式來查詢和運算元據集。 Web API 同時支援第3版和第4版的 OData 通訊協定。
 
 - [OData v4](odata-v4/index.md)
 

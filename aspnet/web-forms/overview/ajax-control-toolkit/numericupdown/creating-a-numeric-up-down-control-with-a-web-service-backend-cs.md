@@ -9,11 +9,11 @@ ms.assetid: c99bbc72-d4de-41ed-92a4-9a4632368363
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 816a840b9e93b95a049c3a4cb792e9deeab28983
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74598891"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78627348"
 ---
 # <a name="creating-a-numeric-updown-control-with-a-web-service-backend-c"></a>使用 Web 服務後端建立數值向上/向下控制項 (C#)
 
@@ -57,4 +57,4 @@ ASP.NET AJAX 控制項工具組包含 `NumericUpDown` 擴充項，會自動將�
 只有2乘冪的數位才會出現（[按一下以觀看完整大小的影像](creating-a-numeric-up-down-control-with-a-web-service-backend-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [下一步](creating-a-numeric-up-down-control-with-a-web-service-backend-vb.md)
+> [下一個](creating-a-numeric-up-down-control-with-a-web-service-backend-vb.md)

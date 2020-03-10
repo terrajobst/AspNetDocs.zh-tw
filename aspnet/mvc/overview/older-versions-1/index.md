@@ -1,23 +1,23 @@
 ---
 uid: mvc/overview/older-versions-1/index
-title: 舊版-MVC 1 和 2 |Microsoft Docs
+title: 較舊的版本-MVC 1 和 2 |Microsoft Docs
 author: rick-anderson
-description: 學習如何以程式 MVC 1 和 2 的資源。
+description: 學習如何設計 MVC 1 和2的資源。
 ms.author: riande
 ms.date: 10/10/2014
 ms.assetid: 1506f70f-6919-45bd-8c75-a17aff77510c
 msc.legacyurl: /mvc/overview/older-versions-1
 msc.type: chapter
 ms.openlocfilehash: 297f9ce7d16b49ef0f0ff376f57fc414584fc286
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65117627"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78581295"
 ---
 # <a name="older-versions---mvc-1-and-2"></a>舊版 - MVC 1 和 2
 
-> 學習如何以程式 MVC 1 和 2 的資源。
+> 學習如何設計 MVC 1 和2的資源。
 
 - [概觀](overview/index.md)
 
@@ -89,7 +89,7 @@ ms.locfileid: "65117627"
 
     - [使用 ASP.NET MVC 與不同版本的 IIS (C#)](deployment/using-asp-net-mvc-with-different-versions-of-iis-cs.md)
     - [使用 ASP.NET MVC 與不同版本的 IIS (VB)](deployment/using-asp-net-mvc-with-different-versions-of-iis-vb.md)
-- [安全性](security/index.md)
+- [Security](security/index.md)
 
     - [使用表單驗證驗證使用者 (C#)](security/authenticating-users-with-forms-authentication-cs.md)
     - [使用 Windows 驗證驗證使用者 (C#)](security/authenticating-users-with-windows-authentication-cs.md)

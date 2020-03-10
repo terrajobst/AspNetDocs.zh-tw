@@ -9,11 +9,11 @@ ms.assetid: 732a2316-e49f-4f72-becd-0cd72f14457e
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
 msc.type: authoredcontent
 ms.openlocfilehash: ab00bc90bfc767d06e747be6dfb973245b5aae88
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74615463"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78546736"
 ---
 # <a name="membership-and-administration"></a>成員資格及系統管理
 
@@ -25,11 +25,11 @@ ms.locfileid: "74615463"
 
 本教學課程說明如何更新 Wingtip 玩具範例應用程式，以新增自訂角色並使用 ASP.NET Identity。 它也會示範如何執行系統管理頁面，其中具有自訂角色的使用者可以從網站新增和移除產品。
 
-[ASP.NET Identity](../../../../identity/overview/getting-started/introduction-to-aspnet-identity.md)是用來建立 ASP.NET web 應用程式的成員資格系統，並可在 ASP.NET 4.5 中取得。 ASP.NET Identity 用於 Visual Studio 2013 Web form 專案範本，以及用來[ASP.NET MVC](../../../../mvc/index.md)、 [ASP.NET Web API](../../../../web-api/index.md)和[ASP.NET 單一頁面應用程式](../../../../single-page-application/index.md)的範本。 當您開始使用空白 Web 應用程式時，也可以使用 NuGet 來特別安裝 ASP.NET Identity 系統。 不過，在本教學課程系列中，您會使用**Web Forms**projecttemplate，其中包含 ASP.NET Identity 系統。 ASP.NET Identity 可讓您輕鬆地整合使用者特定的設定檔資料與應用程式資料。 此外，ASP.NET Identity 可讓您選擇應用程式中使用者設定檔的持續性模型。 您可以將資料儲存在 SQL Server 資料庫或其他資料存放區中，包括*NoSQL*資料存放區，例如 Windows Azure 儲存體資料表。
+[ASP.NET Identity](../../../../identity/overview/getting-started/introduction-to-aspnet-identity.md)是用來建立 ASP.NET web 應用程式的成員資格系統，並可在 ASP.NET 4.5 中取得。 ASP.NET Identity 用於 Visual Studio 2013 Web form 專案範本，以及用來[ASP.NET MVC](../../../../mvc/index.md)、 [ASP.NET Web API](../../../../web-api/index.md)和[ASP.NET 單一頁面應用程式](../../../../single-page-application/index.md)的範本。 當您開始使用空白 Web 應用程式時，也可以使用 NuGet 來特別安裝 ASP.NET Identity 系統。 不過，在本教學課程系列中，您會使用**Web Forms**projecttemplate，其中包含 ASP.NET Identity 系統。 ASP.NET Identity 可讓您輕鬆地整合使用者特定的設定檔資料與應用程式資料。 另外，ASP.NET 身分識別可讓您選擇應用程式中使用者設定檔的持續性模型。 您可以將資料儲存在 SQL Server 資料庫或其他資料存放區中，包括*NoSQL*資料存放區，例如 Windows Azure 儲存體資料表。
 
 本教學課程是以先前的教學課程為基礎，在 Wingtip 玩具教學課程系列中的「簽出與使用 PayPal 付款」。
 
-## <a name="what-youll-learn"></a>您將瞭解的內容：
+## <a name="what-youll-learn"></a>您將學到什麼：
 
 - 如何使用程式碼將自訂角色和使用者新增至應用程式。
 - 如何限制對管理資料夾和頁面的存取。
@@ -61,7 +61,7 @@ ASP.NET Web Forms 提供成員資格功能。 藉由使用預設範本，您可�
 5. 藉由新增黃色反白顯示的程式碼來修改*Global.asax.cs*檔案，讓它看起來如下所示：  
 
     [!code-csharp[Main](membership-and-administration/samples/sample2.cs?highlight=11,26-28)]
-6. 請注意，`AddUserAndRole` 會以紅色加上底線。 按兩下 [AddUserAndRole] 程式碼。  
+6. 請注意，`AddUserAndRole` 是以紅色加上底線標示的文字。 按兩下 [AddUserAndRole] 程式碼。  
    反白顯示方法開頭的字母 "A" 會加上底線。
 7. 將滑鼠停留在字母 "A" 上，然後按一下 UI，讓您為 `AddUserAndRole` 方法產生方法 stub。 
 
@@ -124,11 +124,11 @@ Wingtip 玩具範例應用程式可讓匿名使用者和已登入的使用者查
 1. 以滑鼠右鍵按一下 [系統*管理*] 資料夾，**然後選取 [** 新增 -&gt;**新專案**]。  
    隨即顯示 [ 新增項目] 對話方塊。
 2. 從C#視覺 web 範本清單中，從中間清單選取 [ <strong>web 設定檔</strong>]，接受 web.config 的預設名稱<strong>，然後</strong>選取 [<strong>新增</strong>]。
-3. 將*web.config*檔案中的現有 XML 內容取代為下列各項：  
+3. 使用下列內容來取代 *Web.config* 檔案中的現有 XML 內容：  
 
     [!code-xml[Main](membership-and-administration/samples/sample4.xml)]
 
-儲存 web.config*檔案*。 Web.config*檔案*會指定只有屬於應用程式 "canEdit" 角色的使用者才能存取*Admin*資料夾中包含的頁面。
+儲存 *Web.config* 檔案。 Web.config*檔案*會指定只有屬於應用程式 "canEdit" 角色的使用者才能存取*Admin*資料夾中包含的頁面。
 
 ### <a name="including-custom-role-navigation"></a>包括自訂角色導覽
 

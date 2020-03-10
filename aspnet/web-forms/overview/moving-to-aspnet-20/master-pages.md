@@ -2,172 +2,172 @@
 uid: web-forms/overview/moving-to-aspnet-20/master-pages
 title: 主版頁面 |Microsoft Docs
 author: microsoft
-description: 其中一個成功的 Web 站台的主要元件是一致的外觀及操作。 在 ASP.NET 1.x 中，開發人員使用使用者控制項來複寫常見頁面 elem。...
+description: 成功網站的其中一個重要元件是一致的外觀與風格。 在 ASP.NET 1.x 中，開發人員使用使用者控制項來複寫一般頁面 elem 。
 ms.author: riande
 ms.date: 02/20/2005
 ms.assetid: 9c0cce4d-efd9-4c14-b0e8-a1a140abb3f4
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/master-pages
 msc.type: authoredcontent
 ms.openlocfilehash: 36f2caf7c2c9bcafd22c8f6681c1d6b19fe5078a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131064"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78567330"
 ---
 # <a name="master-pages"></a>主版頁面
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-> 其中一個成功的 Web 站台的主要元件是一致的外觀及操作。 在 ASP.NET 1.x 中，開發人員用使用者控制項來複寫通用頁面項目之間的 Web 應用程式。 雖然這當然是可行的解決方案，使用使用者控制項也有一些缺點。 比方說，在使用者控制項的位置的變更會在站台需要多個頁面的變更。 使用者控制項也不會呈現之後所插入到網頁上的 [設計] 檢視中。
+> 成功網站的其中一個重要元件是一致的外觀與風格。 在 ASP.NET 1.x 中，開發人員使用使用者控制項來複寫 Web 應用程式中的一般頁面元素。 雖然這當然是可行的解決方案，但使用使用者控制項的確有一些缺點。 例如，使用者控制項的位置變更需要跨網站變更多個頁面。 使用者控制項在插入頁面之後，也不會在設計檢視中呈現。
 
-其中一個成功的 Web 站台的主要元件是一致的外觀及操作。 在 ASP.NET 1.x 中，開發人員用使用者控制項來複寫通用頁面項目之間的 Web 應用程式。 雖然這當然是可行的解決方案，使用使用者控制項也有一些缺點。 比方說，在使用者控制項的位置的變更會在站台需要多個頁面的變更。 使用者控制項也不會呈現之後所插入到網頁上的 [設計] 檢視中。
+成功網站的其中一個重要元件是一致的外觀與風格。 在 ASP.NET 1.x 中，開發人員使用使用者控制項來複寫 Web 應用程式中的一般頁面元素。 雖然這當然是可行的解決方案，但使用使用者控制項的確有一些缺點。 例如，使用者控制項的位置變更需要跨網站變更多個頁面。 使用者控制項在插入頁面之後，也不會在設計檢視中呈現。
 
-ASP.NET 2.0 引進主版頁面的方式來維護一致的外觀及操作，以及您馬上就可以看到，主要頁面代表顯著的改進，透過將使用者控制項的方法。
+ASP.NET 2.0 引進主版頁面做為維護一致外觀與風格的方式，而且您很快就會看到，主版頁面代表使用者控制項方法的大幅改善。
 
-## <a name="why-master-pages"></a>為什麼主版頁面嗎？
+## <a name="why-master-pages"></a>為何選擇主版頁面？
 
-您可能會好奇為什麼主版頁面所需在 ASP.NET 2.0。 畢竟，網站開發人員已經使用使用者控制項在 ASP.NET 1.x 共用內容頁之間的區域。 有實際原因使用者控制項都是較不比最好的解決方案，來建立常用的版面配置的幾個原因。
+您可能想知道為什麼 ASP.NET 2.0 中需要主版頁面。 畢竟，網站開發人員已經使用 ASP.NET 1.x 中的使用者控制項，在頁面之間共用內容區域。 實際上，有幾個原因是使用者控制項是較不理想的方案，無法建立一般版面配置。
 
-使用者控制項未實際定義頁面配置。 相反地，它們定義的配置和頁面的部分功能。 這兩個之間的差異很重要的因為它可讓使用者控制解決方案的管理性更為困難。 比方說，當您想要變更使用者控制項在頁面上的位置，您必須編輯使用者控制項所在的實際頁面。 Thats 精確，如果您只有幾頁，但在大型的網站，它很快就會是站台管理惡夢一場 ！
+使用者控制項實際上不會定義頁面配置。 相反地，它們會定義部分頁面的版面配置和功能。 這兩者的差異很重要，因為它可讓使用者控制解決方案的管理工作更加棘手。 例如，當您想要變更使用者控制項在頁面上的位置時，您必須編輯顯示使用者控制項的實際頁面。 如果您只有幾頁，但在大型網站中，它很快就會變成網站管理的麻煩！
 
-定義常用的版面配置中使用使用者控制項的另一個缺點是 ASP.NET 本身的架構為基礎。 如果變更使用者控制項的任何 public 成員，它會要求您重新編譯所有使用的使用者控制項的頁面。 接著，ASP.NET 會則 opakovanou kompilaci JIT 時第一個頁面存取。 如此一來，同樣地，會產生不可擴充的架構和更大的站台的站台管理的問題。
+使用使用者控制項來定義一般版面配置的另一個缺點是根 ASP.NET 本身的架構。 如果使用者控制項的任何公開成員已變更，您就需要重新編譯所有使用該使用者控制項的頁面。 然後，ASP.NET 會在第一次存取您的頁面時，重新將它們重設為 JIT。 這同樣地，會產生一個無法調整的架構，以及更大的網站的網站管理問題。
 
-這兩個這些問題 （及更多） 會妥善解決在 ASP.NET 2.0 主版頁面。
+ASP.NET 2.0 中的主版頁面會妥善解決這兩個問題（及其他許多）。
 
-## <a name="how-master-pages-work"></a>主版頁面的運作方式
+## <a name="how-master-pages-work"></a>主版頁面的工作方式
 
-主版頁面相當於其他頁面的範本。 應該在其他頁面 （也就是功能表中，框線等） 之間共用的頁面元素會新增至主版頁面。 當新頁面加入至站台時，您可以將它們關聯的主版頁面。 主版頁面與相關聯的頁面會呼叫**內容頁面**。 根據預設，內容頁面會從主版頁面的外觀。 不過，當您建立主版頁面，您可以定義內容頁面可以取代自身的內容頁面上的部分。 這些部分定義時，使用 ASP.NET 2.0; 中導入新的控制項**ContentPlaceHolder**控制項。
+主版頁面類似于其他頁面的範本。 應該在主版頁面中加入其他頁面（也就是功能表、框線等）之間共用的頁面元素。 將新頁面新增至網站時，您可以將它們與主版頁面產生關聯。 與主版頁面相關聯的頁面稱為**內容頁面**。 根據預設，內容頁面會從主版頁面上取得外觀。 不過，當您建立主版頁面時，您可以定義內容頁面可以用自己的內容取代的部分頁面。 這些部分是使用 ASP.NET 2.0 中引進的新控制項所定義;**ContentPlaceHolder**控制項。
 
-主版頁面可以包含任意數目的 ContentPlaceHolder 控制項 （或根本沒有）。在 [內容] 頁面 ContentPlaceHolder 控制項的內容會出現內**內容**控制項、 ASP.NET 2.0 中的另一個新控制項。 根據預設，內容控制項的內容頁面是空的以便您可以提供您自己的內容。 如果您想要使用內容控制項內的主版頁面的內容，則可以因此當您將看到此模組中的更新版本。 內容控制項對應至 ContentPlaceHolder 控制項透過 ContentPlaceHolderID 屬性的內容控制項。 將內容控制項對應以下的程式碼至主版頁面上呼叫 mainBody ContentPlaceHolder 控制項中。
+主版頁面可以包含任意數目的 ContentPlaceHolder 控制項（或完全無）。在 [內容] 頁面上，ContentPlaceHolder 控制項的內容會出現在**內容**控制項的內部，也就是 ASP.NET 2.0 中的另一個新控制項。 根據預設，內容頁內容控制項是空的，因此您可以提供自己的內容。 如果您想要使用內容控制項內主版頁面中的內容，您可以在本課程模組稍後看到。 內容控制項透過內容控制項的 ContentPlaceHolderID 屬性對應至 ContentPlaceHolder 控制項。 下列程式碼會將內容控制項對應至主版頁面上名為 mainBody 的 ContentPlaceHolder 控制項。
 
 [!code-aspx[Main](master-pages/samples/sample1.aspx)]
 
 > [!NOTE]
-> 您通常會聽到描述為其他頁面的基底類別的主版頁面的人員。 Thats 實際上不為 true。 主版頁面和內容頁面之間的關聯性不是其中一個繼承。
+> 您通常會聽到人們將主版頁面描述為其他頁面的基類。 其實不是真的。 主版頁面和內容頁面之間的關聯性不是繼承的其中一個。
 
-**圖 1**濆婞剢謅 Visual Studio 2005 會顯示主版頁面與相關聯的內容頁面。 您可以看到 ContentPlaceHolder 控制項中的主版頁面和對應內容控制項，在 [內容] 頁面中的。 請注意，主版頁面內容超出 ContentPlaceHolder 可見但灰色 [內容] 頁面。 ContentPlaceHolder 內的內容可以取代由內容頁面。 來自主版頁面的所有其他內容永遠不變。
+[**圖 1** ] 顯示主版頁面和相關聯的內容頁面，出現在 Visual Studio 2005 中。 您可以在 [內容] 頁面中的主版頁面和對應的內容控制項中看到 [ContentPlaceHolder] 控制項。 請注意，在 [內容] 頁面中會顯示 ContentPlaceHolder 外的主版頁面內容，但會呈現灰色。 [內容] 頁面只可會 ContentPlaceHolder 內的內容。 來自主版頁面的所有其他內容都是不可變的。
 
 ![主版頁面和其相關聯的內容頁面](master-pages/_static/image1.jpg)
 
-**圖 1**:主版頁面和其相關聯的內容頁面
+**圖 1**：主版頁面和其相關聯的內容頁面
 
 ## <a name="creating-a-master-page"></a>建立主版頁面
 
 若要建立新的主版頁面：
 
-1. 開啟 Visual Studio 2005 並建立新的網站。
-2. 按一下 新增檔案、 檔案。
-3. 從 [加入新項目] 對話方塊選擇主要檔案，如中所示**圖 2**。
-4. 按一下 新增。
+1. 開啟 Visual Studio 2005，並建立新的網站。
+2. 按一下 [檔案]、[新增]、[檔案]。
+3. 從 [新增專案] 對話方塊中選擇 [主要檔案]，如 [**圖 2**] 所示。
+4. 按一下 [加入]。
 
 ![建立新的主版頁面](master-pages/_static/image2.jpg)
 
-**圖 2**:建立新的主版頁面
+**圖 2**：建立新的主版頁面
 
-請注意，主版頁面檔案的副檔名 *.master*。 這是其中一種主版頁面不同於一般的頁面。 其主要的差異在於替代@Page指示詞時，主版頁面包含@Master指示詞。 切換至來源檢視的主要頁面，您剛剛建立，並檢閱程式碼。
+請注意，主版頁面的副檔名為 *. master*。 這是主版頁面與一般頁面不同的其中一種方式。 另一個主要差異在於，在替代 @Page 指示詞的情況下，主版頁面會包含 @Master 的指示詞。 切換至您剛才建立之主版頁面的原始檔視圖，並查看程式碼。
 
-新的主版頁面預設會有一個 ContentPlaceHolder 控制項。 在大部分情況下，較為合理要先建立一般的頁面項目，然後插入 ContentPlaceHolder 控制項自訂內容想要的地方。 在這些情況下，開發人員會想要刪除預設 ContentPlaceHolder 控制項，並插入新的開發頁面。 ContentPlaceHolder 控制項不是可調整大小，儘管它們並顯示調整大小控點事實。 ContentPlaceHolder 控制項的大小會自動根據它有一個例外狀況; 包含的內容如果您將 ContentPlaceHolder 控制項內的區塊項目例如表格儲存格時，它會根據項目的大小的大小。
+新的主版頁面預設會有一個 ContentPlaceHolder 控制項。 在大部分的情況下，先建立一般頁面專案，然後插入需要自訂內容的 ContentPlaceHolder 控制項，會比較合理。 在這些情況下，開發人員會想要刪除預設的 ContentPlaceHolder 控制項，並在開發網頁時插入新的控制項。 雖然 ContentPlaceHolder 控制項會顯示調整大小控點，但不能調整大小。 ContentPlaceHolder 控制項會根據其所包含的內容自動進行調整，但有一個例外狀況;如果您將 ContentPlaceHolder 控制項放在區塊專案（例如資料表單元格）內，它會根據專案的大小來調整大小。
 
-## <a name="lab-1-working-with-master-pages"></a>實驗室 1 使用主版頁面
+## <a name="lab-1-working-with-master-pages"></a>實驗室1使用主版頁面
 
-在此實驗室中，您會建立新的主版頁面，並定義三個 ContentPlaceHolder 控制項。 然後，您會建立新的內容頁面，並將至少其中一個 ContentPlaceHolder 控制項的內容。
+在此實驗室中，您將建立新的主版頁面，並定義三個 ContentPlaceHolder 控制項。 接著，您會建立新的內容頁面，並從至少一個 ContentPlaceHolder 控制項中取代內容。
 
-1. 建立主版頁面，並插入 ContentPlaceHolder 控制項。 
+1. 建立主版頁面並插入 ContentPlaceHolder 控制項。 
 
-    1. 如上面所述，請建立新的主版頁面。
-    2. 刪除預設 ContentPlaceHolder 控制項。
-    3. 選取 ContentPlaceHolder 控制項按一下控制項的陰影的框線，然後加以刪除，請按下鍵盤上的 DEL 鍵。
-    4. 插入新的資料表使用*標頭和側邊*範本，如 圖 3 所示。 90%每個變更的寬度和高度，使整個資料表會顯示在設計工具。
+    1. 如上面所述，建立新的主版頁面。
+    2. 刪除預設的 ContentPlaceHolder 控制項。
+    3. 按一下控制項的陰影上方框線來選取 [ContentPlaceHolder] 控制項，然後按下鍵盤上的 DEL 鍵將其刪除。
+    4. 使用*標頭和側邊*範本插入新的資料表，如 [圖 3] 所示。 將 [寬度] 和 [高度] 變更為 [90%]，以便在設計工具中顯示整個資料表。
 
 ![](master-pages/_static/image3.jpg)
 
 **圖 3**
 
-1. 將游標放在資料表的每個資料格，並設定*valign*屬性設*頂端*。
-2. 從 [工具箱] 中，插入 ContentPlaceHolder 控制項在上方表格的儲存格 （標頭資料格。）
-3. 當您將這個 ContentPlaceHolder 控制項時，您會發現 圖 4 所示，將資料列高度會花費幾乎整個頁面。 別擔心，此時是。
+1. 將游標放入資料表的每個資料格，並將*valign*屬性設定為*top*。
+2. 從 [工具箱] 中，將 ContentPlaceHolder 控制項插入資料表的頂端資料格（標頭儲存格）。
+3. 當您插入此 ContentPlaceHolder 控制項時，您會注意到資料列高度會佔用幾乎整個頁面，如 [圖 4] 所示。 此時請不要擔心。
 
-![空白空間位於相同的儲存格為 ContentPlaceHolder](master-pages/_static/image1.gif)
+![空白空間與 ContentPlaceHolder 位於相同的儲存格](master-pages/_static/image1.gif)
 
-**圖 4**:空白空間位於相同的儲存格為 ContentPlaceHolder
+**圖 4**：空的空間與 ContentPlaceHolder 位於相同的儲存格
 
-1. ContentPlaceHolder 將控制項放置在其他兩個資料格。 一旦已插入其他 ContentPlaceHolder 控制項，如您所預期，應該是表格儲存格的大小。 頁面現在看起來應該像中所顯示的網頁**圖 5**。
+1. 將 ContentPlaceHolder 控制項放在其他兩個數據格中。 插入其他 ContentPlaceHolder 控制項之後，資料表單元格的大小應該就如同您所預期。 頁面現在看起來應該像 [**圖 5**] 中所示的頁面。
 
-![與所有 ContentPlaceHolder 控制項 Master。 請注意，標頭資料格的儲存格高度現在它應該是](master-pages/_static/image2.gif)
+![具有所有 ContentPlaceHolder 控制項的主要複本。 請注意，標頭儲存格的儲存格高度現在應該是](master-pages/_static/image2.gif)
 
-**圖 5**:與所有 ContentPlaceHolder 控制項 Master。 請注意，標頭資料格的儲存格高度現在它應該是
+**圖 5**：具有所有 ContentPlaceHolder 控制項的主要複本。 請注意，標頭儲存格的儲存格高度現在應該是
 
-1. 輸入您選擇的一些文字到三個 ContentPlaceHolder 控制項的每個。
-2. 將主版頁面儲存為 exercise1.master 中。
-3. 建立新的 Web 表單，並將它與 exercise1.master 主版頁面產生關聯。
-4. 選取 新增檔案，Visual Studio 2005 中的檔案。
-5. 選取  **Web Form**在 加入新項目 對話方塊。
-6. 請確定選取的主版頁面的核取方塊已核取，如 圖 6 所示。
+1. 將您選擇的一些文字輸入至三個 ContentPlaceHolder 控制項中的每一個。
+2. 將主版頁面儲存為 exercise1。
+3. 建立新的 Web 表單，並將它與 exercise1 主版頁面建立關聯。
+4. 選取 [檔案]、[新增]、[檔案于 Visual Studio 2005]。
+5. 在 [加入新專案] 對話方塊中選取 [ **Web 表單**]。
+6. 請確定已核取 [選取主版頁面] 核取方塊，如 [圖 6] 所示。
 
-![加入新的 [內容] 頁面](master-pages/_static/image3.gif)
+![加入新的內容頁面](master-pages/_static/image3.gif)
 
-**圖 6**:加入新的 [內容] 頁面
+**圖 6**：新增內容頁面
 
-1. 按一下 新增。
-2. 選取 exercise1.master 在 選取主版頁面對話方塊如 圖 7 所示。
-3. 按一下 [確定] 以加入新的內容頁面。
+1. 按一下 [加入]。
+2. 在 [選取主版頁面] 對話方塊中選取 [exercise1]，如 [圖 7] 所示。
+3. 按一下 [確定] 以新增 [內容] 頁面。
 
-新的內容頁面會出現在 Visual Studio 中，每個 ContentPlaceHolder 控制項在主版頁面的其中一個內容控制項。 根據預設，內容控制項是空的好讓您可以加入自己的內容。 如果您想要使用來自 ContentPlaceHolder 控制項在主版頁面的內容，只要按一下智慧標籤符號 （小型黑色箭號控制項右上角），然後選擇*預設為 主機內容*從智慧標籤所示**圖 8**。 當您這樣做時，功能表項目變更為*建立自訂內容*。 此時，按一下它，是在主版頁面可讓您定義該特定的內容控制項的自訂內容中移除內容。
+新增內容 頁面會出現在 Visual Studio 中，其中包含主版頁面上每個 ContentPlaceHolder 控制項的一個內容控制項。 根據預設，內容控制項是空的，因此您可以新增自己的內容。 如果您想要讓他們使用主版頁面上 ContentPlaceHolder 控制項的內容，只要按一下智慧標籤符號（控制項右上角的小型黑色箭號），然後選擇 [預設] 從智慧標籤中的 [*主目錄內容*]，如 [**圖 8**] 所示。 當您這麼做時，功能表項目會變更以*建立自訂內容*。 按一下該點就會從主版頁面移除內容，讓您定義該特定內容控制項的自訂內容。
 
-![設定預設主版頁面內容的內容控制項](master-pages/_static/image4.gif)
+![將內容控制項設為預設為主版頁面內容](master-pages/_static/image4.gif)
 
-**圖 7**:設定預設主版頁面內容的內容控制項
+**圖 7**：將內容控制項設定為預設為主版頁面內容
 
-## <a name="connecting-master-page-and-content-pages"></a>連線的主版頁面和內容頁面
+## <a name="connecting-master-page-and-content-pages"></a>連接主版頁面和內容頁面
 
-可以使用四種不同方式的其中一個設定主版頁面和內容頁面之間的關聯：
+主版頁面與內容頁面之間的關聯可以透過下列四種不同方式來設定：
 
-- <strong>MasterPageFile</strong>屬性@Page指示詞
-- 設定**Page.MasterPageFile**在程式碼中的屬性。
-- **&lt;頁&gt;** 應用程式組態檔 (web.config 應用程式的根資料夾中) 中的項目
-- **&lt;頁&gt;** 子組態檔 (web.config 的子資料夾中) 中的項目
+- @Page 指示詞的<strong>MasterPageFile</strong>屬性
+- 在程式碼中設定**MasterPageFile**屬性。
+- 應用程式佈建檔中的 **&lt;頁面&gt;** 元素（應用程式根資料夾中的 web.config）
+- 子資料夾設定檔中的 **&lt;頁面&gt;** 元素（子資料夾中的 web.config）
 
 ## <a name="masterpagefile-attribute"></a>MasterPageFile 屬性
 
-MasterPageFile 屬性可讓您能輕鬆套用到特定的 ASP.NET 頁面的主版頁面。 它也是用來套用主版頁面，當您選取的方法**選取主版頁面**核取方塊，當您未在練習 1 中。
+MasterPageFile 屬性可讓您輕鬆地將主版頁面套用至特定的 ASP.NET 網頁。 當您核取 [**選取主版頁面**] 核取方塊時，它也是用來套用主版頁面的方法，就像在練習1中所做的一樣。
 
-## <a name="setting-pagemasterpagefile-in-code"></a>程式碼中設定 Page.MasterPageFile
+## <a name="setting-pagemasterpagefile-in-code"></a>在程式碼中設定頁面 MasterPageFile
 
-藉由在程式碼中設定的 MasterPageFile 屬性，您可以套用特定的主版頁面，您在執行階段的內容。 這種情況下，您可能需要套用特定的主版頁面，根據使用者角色或其他準則。 MasterPageFile 屬性必須設定 PreInit 方法中。 如果它設定為 PreInit 方法之後，將會擲回 InvalidOperationException。 頁面設定這個屬性也必須有內容為頁面的最上層控制項的控制項。 否則 MasterPageFile 屬性設定時，HttpException 就會擲回。
+藉由在程式碼中設定 MasterPageFile 屬性，您可以在執行時間將特定的主版頁面套用至內容。 當您可能需要根據使用者角色或其他準則來套用特定的主版頁面時，這會很有用。 MasterPageFile 屬性必須在 PreInit 方法中設定。 如果它是在 PreInit 方法之後設定，則會擲回 InvalidOperationException。 設定此屬性的頁面也必須有內容控制項，做為頁面的最上層控制項。 否則，當設定 MasterPageFile 屬性時，將會擲回 HttpException。
 
-## <a name="using-the-ltpagesgt-element"></a>使用&lt;頁&gt;項目
+## <a name="using-the-ltpagesgt-element"></a>使用 &lt;頁面&gt; 元素
 
-您可以為您的網頁設定主版頁面中設定的 masterPageFile 屬性&lt;頁&gt;web.config 檔案的項目。 使用此方法時，記住應用程式結構中較低的 web.config 檔案，可以覆寫此設定。 在中設定任何 MasterPageFile 屬性@Page指示詞也會覆寫此設定。 使用&lt;頁&gt;項目會建立簡單*主要*可以覆寫視特定的資料夾或檔案中的主版頁面。
+您可以設定網頁的主版頁面，方法是在 web.config 檔案的 &lt;頁面&gt; 元素中，設定 masterPageFile 屬性。 使用此方法時，請記住，應用程式結構中較低的 web.config 檔案可以覆寫此設定。 在 @Page 指示詞中設定的任何 MasterPageFile 屬性也會覆寫此設定。 使用 &lt;頁面&gt; 專案，可讓您輕鬆地建立*主要*主版頁面，視需要在特定資料夾或檔案中加以覆寫。
 
 ## <a name="properties-in-master-pages"></a>主版頁面中的屬性
 
-主版頁面可以公開屬性，只要讓這些屬性主版頁面內公用。 比方說，下列程式碼會定義名為 SomeProperty 的屬性：
+主版頁面只要在主版頁面中公開這些屬性，就可以公開屬性。 例如，下列程式碼會定義名為 SomeProperty 的屬性：
 
 [!code-csharp[Main](master-pages/samples/sample2.cs)]
 
-若要存取 SomeProperty 屬性從 [內容] 頁面，您必須使用主要屬性如下：
+若要從 [內容] 頁面存取 [SomeProperty] 屬性，您必須使用 Master 屬性，如下所示：
 
 [!code-csharp[Main](master-pages/samples/sample3.cs)]
 
-## <a name="nesting-master-pages"></a>巢狀主版頁面
+## <a name="nesting-master-pages"></a>嵌套主版頁面
 
-主版頁面是完美的解決方案，以確保跨大型的 Web 應用程式的常見的外觀與風格。 不過，它不是常會有大型的站台共用的通用介面的某些部分，而其他部分共用不同的介面。 若要解決這項需求，多個主版頁面是完美的解決方案。 不過，仍然無法解決，大型的應用程式可能會有某些元件 （例如功能表，例如） 可共用的所有頁面和其他元件只在特定區段的站台之間共用的事實。 這樣的情況中，巢狀主版頁面填入需要妥善。 如您所見，一般的主版頁面包含主版頁面和內容頁面。 在巢狀主版頁面的情況下，有兩個主版頁面;父主要和下層主版。 子主版頁面也是內容頁面，其主要是父主版頁面。
+主版頁面是確保跨大型 Web 應用程式的常見外觀與風格的絕佳解決方案。 不過，大型網站的某些部分共用通用介面並不常見，而其他部分則共用不同的介面。 若要解決此需求，有多個主版頁面是完美的解決方案。 不過，仍然無法解決大型應用程式可能會有某些元件（例如功能表）在所有頁面和其他只在網站特定區段共用的元件之間共用的事實。 針對這種情況，嵌套主版頁面會適當地填滿需求。 如您所見，一般主版頁面包含主版頁面和內容頁面。 在嵌套主版頁面的情況下，有兩個主版頁面;父主機和子主機。 子主版頁面也是 [內容] 頁面，而其主要頁面是 [父系] 主版頁面。
 
-以下是典型的主版頁面的程式碼：
+以下是一般主版頁面的程式碼：
 
 [!code-aspx[Main](master-pages/samples/sample4.aspx)]
 
-在巢狀的主要案例中，這會是父 master。 另一個主版頁面會為其主版頁面中，使用此頁面，該程式碼會看起來像這樣：
+在嵌套的主要案例中，這會是父主機。 另一個主版頁面會使用此頁面作為其主版頁面，而該程式碼看起來會像這樣：
 
 [!code-aspx[Main](master-pages/samples/sample5.aspx)]
 
-請注意，在此案例中，子主要也是內容的父主版頁面。 從父代的 ContentPlaceHolder 控制項取得其內容的內容控制項內的所有子主機的內容會出現。
+請注意，在此案例中，子主要複本也是父主機的內容頁面。 所有子主機的內容都會出現在內容控制項的內部，而該控制項會從父系的 ContentPlaceHolder 控制項取得其內容。
 
 > [!NOTE]
-> 找不到適用於巢狀主版頁面的設計工具的支援。 當您開發使用巢狀的主機時，您必須使用來源檢視。
+> 設計工具支援不適用於嵌套主版頁面。 當您使用「嵌套式主機」進行開發時，您必須使用「來源視圖」。
 
-這段影片示範使用巢狀主版頁面的逐步解說。
+這段影片會示範如何使用嵌套主版頁面的逐步解說。
 
 ![](master-pages/_static/image1.png)
 
@@ -175,4 +175,4 @@ MasterPageFile 屬性可讓您能輕鬆套用到特定的 ASP.NET 頁面的主�
 
 ![選取主版頁面](master-pages/_static/image4.jpg)
 
-**圖 8**:選取主版頁面
+**圖 8**：選取主版頁面

@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/index
-title: ASP.NET 3.5-Web Form 主版頁面 |Microsoft Docs
+title: ASP.NET 3.5-Web Forms 主版頁面 |Microsoft Docs
 author: rick-anderson
-description: 如何建立和使用 ASP.NET 主版頁面和 Web Form 應用程式建立一致的版面配置的內容頁面。
+description: 如何建立和使用 ASP.NET 主版頁面和內容頁面，以在 Web Forms 應用程式中建立一致的版面配置。
 ms.author: riande
 ms.date: 11/04/2011
 ms.assetid: bc30f0ec-cf8f-4a33-9eee-513be872ac9c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages
 msc.type: chapter
 ms.openlocfilehash: 3847269a495d54b0986bab245023daff4a43386a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134157"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78585880"
 ---
 # <a name="aspnet-35---web-forms-master-pages"></a>ASP.NET 3.5 - Web Forms主版頁面
 
-> 如何建立和使用 ASP.NET 主版頁面和 Web Form 應用程式建立一致的版面配置的內容頁面。
+> 如何建立和使用 ASP.NET 主版頁面和內容頁面，以在 Web Forms 應用程式中建立一致的版面配置。
 
 - [使用主版頁面建立全網站的版面配置 (C#)](creating-a-site-wide-layout-using-master-pages-cs.md)
 - [多個 ContentPlaceHolders 和預設內容 (C#)](multiple-contentplaceholders-and-default-content-cs.md)

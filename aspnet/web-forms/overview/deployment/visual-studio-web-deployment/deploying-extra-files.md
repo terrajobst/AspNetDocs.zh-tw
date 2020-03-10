@@ -9,11 +9,11 @@ ms.assetid: 1cd91055-84bc-42c6-9d80-646f41429d4d
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
 msc.type: authoredcontent
 ms.openlocfilehash: eaa3141c22980f0c816e2f33b5597ac9fe69c23c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74594899"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78548409"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>使用 Visual Studio ASP.NET Web 部署：部署額外的檔案
 
@@ -81,7 +81,7 @@ ms.locfileid: "74594899"
 
 如果您知道如何使用 MSBuild 檔案，您可以在 *.pubxml*檔（適用于設定檔特定的工作）或專案的*wpp*檔案（適用于所有設定檔的工作）中撰寫程式碼，以自動化許多其他部署工作。 如需 *.pubxml*和*wpp .targets*檔案的詳細資訊，請參閱[如何：在發行設定檔（. .Pubxml）檔案中編輯部署設定和 Visual Studio Web 專案中的 wpp .targets](https://msdn.microsoft.com/library/ff398069)檔。 如需 MSBuild 程式碼的基本簡介，請參閱企業部署系列中的**專案檔案剖析** [：瞭解專案](../web-deployment-in-the-enterprise/understanding-the-project-file.md)檔。 若要瞭解如何使用 MSBuild 檔案在您自己的案例中執行工作，請參閱這本書：在[Microsoft Build Engine：使用 MSBuild 和 Team Foundation Build](http://msbuildbook.com) By Sayed Ibraham Hashimi 和 William Bartholomew。
 
-## <a name="acknowledgements"></a>致謝
+## <a name="acknowledgements"></a>通知
 
 我想感謝下列人對本教學課程系列的內容做出重大貢獻：
 

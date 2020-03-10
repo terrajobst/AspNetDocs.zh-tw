@@ -9,11 +9,11 @@ ms.assetid: 9ef2c4f1-a305-4e0a-9fb8-bfbd9ef331d9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
 msc.type: authoredcontent
 ms.openlocfilehash: d966b95163f64b20a17d2327a12c5d6c44a4a66b
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457696"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78615084"
 ---
 # <a name="adding-a-new-field-to-the-movie-model-and-table"></a>將新欄位新增至電影模型和資料表
 
@@ -156,7 +156,7 @@ Code First 移轉會在 [*遷移*] 資料夾中建立另一個類別檔案（名
 
 ![7_CreateRioII](adding-a-new-field-to-the-movie-model-and-table/_static/image14.png)
 
-按一下 **[建立]** 。 新電影（包括評等）現在會顯示在電影清單中：
+按一下 [建立]。 新電影（包括評等）現在會顯示在電影清單中：
 
 ![7_ourNewMovie_SM](adding-a-new-field-to-the-movie-model-and-table/_static/image15.png)
 

@@ -9,11 +9,11 @@ ms.assetid: 91511b0b-311d-481f-9e7c-73f07b813b79
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 8700fe89af591e8b481e853580b0efa0cddbf1bc
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74611632"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78612648"
 ---
 # <a name="using-multiple-popup-controls-c"></a>使用多個快顯視窗控制項 (C#)
 
@@ -52,4 +52,4 @@ AJAX 控制項工具組中的 PopupControl 擴充項提供了一種簡單的方�
 當使用者按一下文字方塊時，就會出現行事曆（[按一下以查看完整大小的影像](using-multiple-popup-controls-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [下一步](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs.md)
+> [下一個](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs.md)

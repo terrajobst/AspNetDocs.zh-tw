@@ -9,11 +9,11 @@ ms.assetid: dd1be137-91c5-47a8-8137-fecf0789c7f5
 msc.legacyurl: /mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 1be5d135a44feb27626dd26a544b64cfb57b18a9
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74596359"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78541990"
 ---
 # <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-c"></a>使用 ASP.NET MVC 在 15 分鐘內建立影片資料庫應用程式 (C#)
 
@@ -124,7 +124,7 @@ ASP.NET MVC 應用程式具有一組標準的資料夾： [模型]、[Views] 和
 | --- | --- | --- |
 | ID | Int | False |
 | 標題 | NVarchar （100） | False |
-| Director | NVarchar （100） | False |
+| 導演 | NVarchar （100） | False |
 | DateReleased | DateTime | False |
 
 第一個資料行（Id 資料行）有兩個特殊的屬性。 首先，您必須將識別碼資料行標記為主鍵資料行。 選取 [Id] 資料行之後，請按一下 [**設定主要金鑰**] 按鈕（它是看起來像是索引鍵的圖示）。 第二，您必須將 Id 資料行標示為識別欄位。 在屬性視窗的資料行中，向下流覽至 [識別規格] 區段，並將它展開。 將 [ **Is Identity** ] 屬性變更為 [**是]** 值。 當您完成時，資料表看起來應該如 [圖 4] 所示。
@@ -158,7 +158,7 @@ ASP.NET MVC 應用程式具有一組標準的資料夾： [模型]、[Views] 和
 按一下 [新增] 按鈕之後，[實體資料模型 Wizard] 隨即出現（請參閱 [圖 6]）。 請遵循下列步驟來完成嚮導：
 
 1. 在 [**選擇模型內容**] 步驟中，選取 [**從資料庫產生**] 選項。
-2. 在 [**選擇您的資料**連線] 步驟中，使用 [ *MoviesDB* ] 資料連線和 [連線設定] 的名稱*MoviesDBEntities* 。 按 [**下一步]** 按鈕。
+2. 在 [**選擇您的資料**連線] 步驟中，使用 [ *MoviesDB* ] 資料連線和 [連線設定] 的名稱*MoviesDBEntities* 。 按 [下一步] 按鈕。
 3. 在 [**選擇您的資料庫物件**] 步驟中，展開 [資料表] 節點，選取 [電影] 資料表。 輸入命名空間*MovieApp* ，然後按一下 [**完成]** 按鈕。
 
 [![[新增專案] 對話方塊](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image6.jpg)](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image11.png)
@@ -328,4 +328,4 @@ Visual Studio 會自動產生清單5中的視圖。 此視圖包含 HTML 表單�
 在本教學課程中，我們只會檢查 ASP.NET MVC 架構的最基本功能。 在未來的教學課程中，我們將深入探討控制器、控制器動作、視圖、視圖資料和 HTML 協助程式等主題。
 
 > [!div class="step-by-step"]
-> [下一步](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb.md)
+> [下一個](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb.md)

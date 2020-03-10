@@ -1,227 +1,227 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/build-a-model-with-business-rule-validations
-title: 使用商務規則驗證建置模型 |Microsoft Docs
+title: 使用商務規則驗證建立模型 |Microsoft Docs
 author: microsoft
-description: 步驟 3 說明如何建立模型，我們可以使用這兩個查詢，並更新資料庫中我們 NerdDinner 的應用程式。
+description: 步驟3顯示如何建立可用於查詢和更新 NerdDinner 應用程式資料庫的模型。
 ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: 0bc191b2-4311-479a-a83a-7f1b1c32e6fe
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/build-a-model-with-business-rule-validations
 msc.type: authoredcontent
 ms.openlocfilehash: 6ebf1b71c089229ba9139ff7dc788b8978724046
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65117611"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78541661"
 ---
 # <a name="build-a-model-with-business-rule-validations"></a>使用商務規則驗證建置模型
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
 [下載 PDF](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
-> 這是一套免費的步驟 3 ["NerdDinner 」 應用程式教學課程](introducing-the-nerddinner-tutorial.md)，逐步解說如何建置一個小型的但在完成時，使用 ASP.NET MVC 1 的 web 應用程式。
+> 這是免費「 [NerdDinner」應用程式教學](introducing-the-nerddinner-tutorial.md)課程的步驟3，逐步解說如何使用 ASP.NET MVC 1 建立一個小型但完整的 web 應用程式。
 > 
-> 步驟 3 說明如何建立模型，我們可以使用這兩個查詢，並更新資料庫中我們 NerdDinner 的應用程式。
+> 步驟3顯示如何建立可用於查詢和更新 NerdDinner 應用程式資料庫的模型。
 > 
-> 如果您使用 ASP.NET MVC 3，我們建議您遵循[取得開始使用 MVC 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或是[MVC Music 市集](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教學課程。
+> 如果您使用 ASP.NET MVC 3，建議您遵循[使用 mvc 3](../../older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md)或[mvc 音樂存放](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)教學課程的消費者入門。
 
-## <a name="nerddinner-step-3-building-the-model"></a>NerdDinner 步驟 3:建立模型
+## <a name="nerddinner-step-3-building-the-model"></a>NerdDinner 步驟3：建立模型
 
-在 模型檢視控制器架構 「 模型 」 一詞是指代表資料的應用程式，以及與它整合驗證和商務規則的對應網域邏輯的物件。 模型在許多方面 「 核心 」 功能的 MVC 架構的應用程式，並稍後基本上，我們會看到磁碟機的行為。
+在模型視圖控制器架構中，「模型」一詞指的是代表應用程式資料的物件，以及整合驗證和商務規則的對應領域邏輯。 此模型的方式很多，以 MVC 為基礎之應用程式的「核心」，我們將在稍後以根本上驅動它的行為。
 
-ASP.NET MVC 架構支援使用任何資料存取技術和開發人員可以選擇各式各樣的豐富的.NET 資料選項，來實作其模型，包括：LINQ to Entities、 LINQ to SQL、 NHibernate、 LLBLGen Pro，SubSonic、 WilsonORM，或只是原始 ADO.NET Datareader 或資料集。
+ASP.NET MVC 架構支援使用任何資料存取技術，而開發人員可以從各種豐富的 .NET 資料選項中進行選擇，以執行其模型，包括： LINQ to Entities、LINQ to SQL、NHibernate、LLBLGen Pro、SubSonic、WilsonORM，或只是原始 ADO。NET Datareader 或資料集。
 
-我們要建立簡單的模型非常緊密對應至我們的資料庫設計，並將一些自訂的驗證邏輯和商務規則中使用 LINQ to SQL NerdDinner 應用程式。 我們接著會實作儲存機制類別，可協助抽象離開應用程式，並可讓我們輕鬆單元測試的其餘部分的資料持續性實作。
+針對我們的 NerdDinner 應用程式，我們將使用 LINQ to SQL 來建立簡單的模型，使其相當於我們的資料庫設計，並加入一些自訂驗證邏輯和商務規則。 接著，我們將會執行存放庫類別，協助從應用程式的其餘部分來抽象化資料持續性的執行，並讓我們輕鬆地對其進行單元測試。
 
 ### <a name="linq-to-sql"></a>LINQ to SQL
 
-LINQ to SQL 是隨附於.NET 3.5 ORM （物件關聯式對應程式）。
+LINQ to SQL 是在 .NET 3.5 中隨附的 ORM （物件關聯式對應程式）。
 
-LINQ to SQL 提供輕鬆地將資料庫資料表對應到我們可以對撰寫程式碼的.NET 類別。 我們將對應的 Dinners 和 RSVP 資料表為 Dinner 和 RSVP 類別，在資料庫裡面使用我們 NerdDinner 的應用程式。 Dinners 和 RSVP 資料表的資料行就對應至 Dinner 和 RSVP 類別上的屬性。 每個 Dinner 和 RSVP 物件將代表 Dinners 或 RSVP 資料庫中資料表內的個別資料列。
+LINQ to SQL 提供簡單的方法，將資料庫資料表對應至我們可以撰寫程式碼的 .NET 類別。 針對我們的 NerdDinner 應用程式，我們將使用它，將資料庫內的 Dinners 和 RSVP 資料表對應至晚餐和 RSVP 類別。 Dinners 和 RSVP 資料表的資料行將會對應至晚餐和 RSVP 類別的屬性。 每個晚餐和 RSVP 物件將代表資料庫中 Dinners 或 RSVP 資料表內的個別資料列。
 
-LINQ to SQL 可讓我們不必以手動方式建構 SQL 陳述式來擷取和更新 Dinner RSVP 資料庫資料的物件。 相反地，我們會定義 Dinner 和 RSVP 類別，它們所對應的方式，或從資料庫和其間的關聯性。 LINQ to SQL 會接著會負責產生適當的 SQL 執行邏輯，以在執行階段使用，當我們互動，並使用它們。
+LINQ to SQL 可讓我們避免必須手動建立 SQL 語句，以使用資料庫資料來抓取和更新晚餐和 RSVP 物件。 相反地，我們會定義晚餐和 RSVP 類別、它們如何對應到資料庫，以及它們之間的關聯性。 然後 LINQ to SQL 會負責產生適當的 SQL 執行邏輯，以便在我們互動和使用時于執行時間使用。
 
-我們可以使用 LINQ 語言支援，在 VB 和 C# 來撰寫易懂的查詢擷取 Dinner 和 RSVP 資料庫中的物件。 這將我們要寫入的資料程式碼數量降到最低，可讓我們建置全新的應用程式。
+我們可以使用 VB 和C#中的 LINQ 語言支援，撰寫表達查詢，從資料庫中取出晚餐和 RSVP 物件。 這會減少我們需要撰寫的資料程式碼數量，並可讓我們建立真正整潔的應用程式。
 
-### <a name="adding-linq-to-sql-classes-to-our-project"></a>LINQ to SQL 類別加入我們的專案
+### <a name="adding-linq-to-sql-classes-to-our-project"></a>將 LINQ to SQL 類別加入至專案
 
-我們將開始在我們的專案中的 < 模型 > 資料夾上按一下滑鼠右鍵，然後選取**Add-&gt;新的項目**功能表命令：
+首先，以滑鼠右鍵按一下專案中的 [模型] 資料夾，然後選取 [新增 **-&gt;新專案**] 功能表命令：
 
 ![](build-a-model-with-business-rule-validations/_static/image1.png)
 
-這會顯示 新增新的項目 」 對話方塊。 我們會依據 「 資料 」 類別目錄篩選，並選取 「 LINQ 到 SQL 的類別 」 範本，其中：
+這會顯示 [加入新專案] 對話方塊。 我們會依「資料」分類進行篩選，並選取其中的「LINQ to SQL 類別」範本：
 
 ![](build-a-model-with-business-rule-validations/_static/image2.png)
 
-我們會命名為"NerdDinner"的項目，然後按一下 [新增] 按鈕。 Visual Studio 會加入 NerdDinner.dbml 檔案我們 \Models 目錄] 下方，並接著開啟 [LINQ to SQL 物件關聯式設計工具：
+我們會將專案命名為 "NerdDinner"，然後按一下 [新增] 按鈕。 Visual Studio 會在 \Models 目錄下新增 NerdDinner，然後開啟 [LINQ to SQL 物件關聯式設計工具]：
 
 ![](build-a-model-with-business-rule-validations/_static/image3.png)
 
 ### <a name="creating-data-model-classes-with-linq-to-sql"></a>使用 LINQ to SQL 建立資料模型類別
 
-LINQ to SQL 可讓我們快速地從現有的資料庫結構描述中建立資料模型類別。 待辦事項我們想要在其中建立模型的此我們將在 [伺服器總管] 中，開啟 NerdDinner 資料庫，並選取的資料表：
+LINQ to SQL 可以讓我們從現有的資料庫架構快速建立資料模型類別。 為此，我們會在伺服器總管中開啟 NerdDinner 資料庫，並選取我們想要在其中建立模型的資料表：
 
 ![](build-a-model-with-business-rule-validations/_static/image4.png)
 
-我們可以再將資料表拖曳至 LINQ 至 SQL 設計工具介面。 當我們執行這個 LINQ to SQL 將會自動建立 Dinner 和使用 （與類別屬性會對應至資料庫資料表資料行） 資料表的結構描述的 RSVP 類別：
+然後，我們可以將資料表拖曳到 LINQ to SQL 設計工具介面上。 當我們這麼做時 LINQ to SQL 會使用資料表的架構（具有對應至資料庫資料表資料行的類別屬性），自動建立晚餐和 RSVP 類別：
 
 ![](build-a-model-with-business-rule-validations/_static/image5.png)
 
-預設 LINQ to SQL 設計工具會自動 「 複數化 」 資料表和資料行名稱時它會建立資料庫結構描述為基礎的類別。 例如:"Dinners 」 資料表，在上述範例中會導致 「 Dinner 」 類別。 此類別命名可協助讓我們的模型與.NET 命名慣例，一致，並通常找到該設計工具的修正這向上方便 （尤其是在新增時遇到大量資料表）。 如果您不喜歡的類別或設計工具產生，但您一律可以覆寫它，並將它變更為任何您想要的名稱的屬性名稱。 您可以藉由編輯實體/屬性名稱內嵌在設計工具內，或藉由修改透過屬性方格。
+根據預設，LINQ to SQL 設計工具會在根據資料庫架構建立類別時，自動「pluralizes」資料表和資料行名稱。 例如：上述範例中的 "Dinners" 資料表會產生「晚餐」類別。 此類別命名可協助讓我們的模型與 .NET 命名慣例保持一致，而且通常會發現設計工具的修正很方便（尤其是在加入許多資料表時）。 不過，如果您不喜歡設計工具所產生之類別或屬性的名稱，您可以一律覆寫它，並將它變更為您想要的任何名稱。 若要這麼做，您可以在設計工具內以內嵌方式編輯實體/屬性名稱，或透過屬性方格加以修改。
 
-根據預設，LINQ to SQL 設計工具也會檢查主索引鍵/外部索引鍵關聯性的資料表，並根據這些自動會建立預設 」 關聯性的關聯"，它會建立不同的模型類別之間。 例如，當我們拖曳 Dinners 和 RSVP 到 LINQ to SQL 設計工具上一對多關聯性之間的關聯這兩個資料表推斷基礎是以 RSVP 資料表有外部索引鍵 Dinners 資料表 (這會由中的箭號設計工具）：
+根據預設，LINQ to SQL 設計工具也會檢查資料表的主鍵/外鍵關聯性，而且根據它們會在其建立的不同模型類別之間自動建立預設的「關聯性關聯」。 例如，當我們將 [Dinners] 和 [RSVP] 資料表拖曳至 LINQ to SQL 設計工具時，這兩個之間的一對多關聯性關聯是根據 RSVP 資料表具有 Dinners 資料表的外鍵的事實所推斷（這是由設計工具）：
 
 ![](build-a-model-with-business-rule-validations/_static/image6.png)
 
-上述的關聯將會使 LINQ to SQL 將強型別 「 Dinner"屬性新增至開發人員可用來存取指定的 RSVP 相關聯的 Dinner RSVP 類別。 它也會導致 Dinner 類別擁有 「 RSVPs"集合屬性，可讓開發人員，以擷取和更新特定的 Dinner 與相關聯的 RSVP 物件。
+上述關聯會導致 LINQ to SQL 將強型別「晚餐」屬性新增至 RSVP 類別，讓開發人員用來存取與指定之 RSVP 相關聯的晚餐。 它也會導致晚餐類別具有 "RSVPs" 集合屬性，讓開發人員能夠抓取和更新與特定晚餐相關聯的 RSVP 物件。
 
-以下您可以看到範例的 Visual Studio 中的 intellisense，當我們建立新的 RSVP 物件，並將它新增至 Dinner 像是集合。 請注意如何 LINQ to SQL 會自動加入 「 像是 「 集合 Dinner 物件上：
+當我們建立新的 RSVP 物件，並將它新增至晚餐的 RSVPs 集合時，您可以在下方查看 Visual Studio 內的 intellisense 範例。 請注意，LINQ to SQL 如何在晚餐物件上自動新增 "RSVPs" 集合：
 
 ![](build-a-model-with-business-rule-validations/_static/image7.png)
 
-藉由將 Dinner 像是集合中的 RSVP 物件中，我們會告訴 LINQ to SQL 建立外部索引鍵之間的關聯性 Dinner RSVP 資料列，在資料庫中的關聯：
+藉由將「RSVP」物件新增至晚餐的 RSVPs 集合，我們會告訴 LINQ to SQL 在資料庫中建立晚餐和「RSVP」資料列之間的外鍵關聯性：
 
 ![](build-a-model-with-business-rule-validations/_static/image8.png)
 
-如果您不喜歡如何設計工具已建立模型，或名為資料表關聯，您可以覆寫它。 只要按一下設計工具內的關聯箭號，並存取透過屬性方格中，重新命名、 刪除或修改其屬性。 NerdDinner 應用程式，不過，預設關聯規則適用於我們所建置的資料模型類別，我們可以直接使用的預設行為。
+如果您不喜歡設計工具模型化或命名為數據表關聯的方式，您可以覆寫它。 只要在設計工具中按一下 [關聯] 箭號，然後透過屬性方格存取其屬性，即可重新命名、刪除或修改它。 不過，針對我們的 NerdDinner 應用程式，預設關聯規則適用于我們所建立的資料模型類別，而我們只會使用預設行為。
 
-### <a name="nerddinnerdatacontext-class"></a>NerdDinnerDataContext 類別
+### <a name="nerddinnerdatacontext-class"></a>NerdDinnerDataCoNtext 類別
 
-Visual Studio 會自動建立.NET 類別，代表的模型和資料庫使用 LINQ to SQL 設計工具定義的關聯性。 LINQ to SQL DataContext 類別也會產生每個 linq to SQL 設計工具檔案加入至方案。 我們名為我們的 LINQ to SQL 類別項目 」 NerdDinner"，因為建立的 DataContext 類別就會呼叫 「 NerdDinnerDataContext"。 這個 NerdDinnerDataContext 類別是我們將會與資料庫互動的主要方式。
+Visual Studio 會自動建立 .NET 類別，以代表使用 LINQ to SQL 設計工具所定義的模型和資料庫關聯性。 針對加入至方案中的每個 LINQ to SQL 設計工具檔案，也會產生 LINQ to SQL DataCoNtext 類別。 因為我們將 LINQ to SQL 類別專案命名為 "NerdDinner"，所以所建立的 DataCoNtext 類別將稱為 "NerdDinnerDataCoNtext"。 這個 NerdDinnerDataCoNtext 類別是我們將與資料庫互動的主要方式。
 
-我們 NerdDinnerDataContext 類別會公開兩個屬性-"Dinners"和"RSVPs-"，表示我們模型資料庫中的兩個資料表。 我們可以使用 C# 來從資料庫查詢和擷取 Dinner 和 RSVP 的物件寫入 LINQ 查詢，對這些屬性。
+我們的 NerdDinnerDataCoNtext 類別會公開兩個屬性： "Dinners" 和 "RSVPs"，代表我們在資料庫中建立模型的兩個數據表。 我們可以使用C# ，針對這些屬性撰寫 LINQ 查詢，從資料庫查詢和取出晚餐和 RSVP 物件。
 
-下列程式碼示範如何 NerdDinnerDataContext 物件具現化並執行比對以取得一連串的是發生在未來的 Dinners LINQ 查詢。 撰寫 LINQ 查詢時，visual Studio 會提供完整的 intellisense，並從它傳回的物件是強型別，而且還支援 intellisense:
+下列程式碼示範如何具現化 NerdDinnerDataCoNtext 物件，並對其執行 LINQ 查詢，以取得未來發生的 Dinners 序列。 Visual Studio 在撰寫 LINQ 查詢時提供完整的 intellisense，而從它傳回的物件則是強型別，也支援 intellisense：
 
 ![](build-a-model-with-business-rule-validations/_static/image9.png)
 
-讓我們吃晚餐和 RSVP 物件查詢，除了 NerdDinnerDataContext 也會自動追蹤我們接下來我們透過它來擷取 Dinner 和 RSVP 物件所做的任何變更。 若要輕鬆地將變更儲存回資料庫-而不需要撰寫任何明確的 SQL 更新程式碼，我們可以使用這項功能。
+除了可讓我們查詢晚餐和 RSVP 物件之外，NerdDinnerDataCoNtext 也會自動追蹤我們後續對我們透過它取得的晚餐和 RSVP 物件所做的任何變更。 我們可以使用這種功能，輕鬆地將變更儲存回資料庫，而不需要撰寫任何明確的 SQL 更新程式碼。
 
-例如，下列程式碼會示範如何使用 LINQ 查詢來擷取資料庫中的單一 Dinner 物件，更新兩個 Dinner 屬性中，然後將變更儲存回資料庫：
+例如，下列程式碼示範如何使用 LINQ 查詢來抓取資料庫中的單一晚餐物件、更新兩個晚餐屬性，然後將變更儲存回資料庫：
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample1.cs)]
 
-NerdDinnerDataContext 物件，在上述程式碼中的自動追蹤對我們從它擷取 Dinner 物件的屬性變更。 當我們呼叫 「 SubmitChanges() 」 方法時，它會執行適當 SQL 「 更新 」 陳述式的資料庫來保存回更新的值。
+上述程式碼中的 NerdDinnerDataCoNtext 物件會自動追蹤我們從中取得的晚餐物件所做的屬性變更。 當我們呼叫 "SubmitChanges （）" 方法時，它會對資料庫執行適當的 SQL "UPDATE" 語句，以保存更新後的值。
 
 ### <a name="creating-a-dinnerrepository-class"></a>建立 DinnerRepository 類別
 
-對於小型應用程式可能會很只有控制站直接用於 LINQ to SQL DataContext 類別和內嵌控制器中的 LINQ 查詢。 應用程式變得越來越大，不過，這個方法會變得難以維護和測試。 它也可能會導致我們複製相同的 LINQ 查詢，在多個位置。
+針對小型應用程式，有時可以讓控制器直接針對 LINQ to SQL DataCoNtext 類別進行處理，並在控制器內內嵌 LINQ 查詢。 不過隨著應用程式變得更大，這種方法會變得很麻煩，而無法進行維護和測試。 它也會導致我們將相同的 LINQ 查詢複製到多個位置。
 
-可讓您更輕鬆地維護和測試的應用程式的其中一個方法是使用 「 存放庫 」 模式。 儲存機制類別可協助封裝查詢的資料，並持續性邏輯和摘要了從應用程式的資料持續性的實作詳細資料。 除了提供更簡潔的應用程式程式碼，使用儲存機制模式可以讓您更輕鬆地在未來，變更資料儲存區實作，它可協助簡化單元測試應用程式，而不需要實際的資料庫。
+可以讓應用程式更容易維護和測試的方法之一，就是使用「存放庫」模式。 儲存機制類別可協助封裝資料查詢和持續性邏輯，並抽象化應用程式中資料持續性的執行細節。 除了讓應用程式程式碼更簡潔，使用儲存機制模式可讓您更輕鬆地在未來變更資料儲存區，而且它可以協助對應用程式進行單元測試，而不需要實際的資料庫。
 
-NerdDinner 應用程式中，我們會定義 DinnerRepository 類別具有下列簽章：
+針對我們的 NerdDinner 應用程式，我們將定義具有下列簽章的 DinnerRepository 類別：
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample2.cs)]
 
-*注意：在本章稍後我們將從這個類別來擷取 IDinnerRepository 介面，並啟用我們控制站上使用它的相依性插入。一開始，不過，我們要輕鬆入門，並只使用直接 DinnerRepository 類別。*
+*注意：在本章稍後，我們將從這個類別解壓縮 IDinnerRepository 介面，並在我們的控制器上啟用相依性插入。從開始，我們將開始簡單明瞭，只是直接使用 DinnerRepository 類別。*
 
-若要實作此類別，我們將我們的 「 模型 」 資料夾上按一下滑鼠右鍵，然後選擇**Add-&gt;新的項目**功能表命令。 在 「 新增新的項目 對話方塊中，我們會選取 「 類別 」 範本，並將檔案命名為"DinnerRepository.cs 」:
+若要執行這個類別，我們要以滑鼠右鍵按一下 [模型] 資料夾，然後選擇 [**加入-&gt;新專案**] 功能表命令。 在 [新增專案] 對話方塊中，我們將選取 "Class" 範本，並將檔案命名為 "DinnerRepository.cs"：
 
 ![](build-a-model-with-business-rule-validations/_static/image10.png)
 
-然後，我們可以實作 DinnerRepository 類別使用下列程式碼：
+然後，我們可以使用下列程式碼來執行我們的 DinnerRepository 類別：
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample3.cs)]
 
-### <a name="retrieving-updating-inserting-and-deleting-using-the-dinnerrepository-class"></a>擷取、 更新、 插入和刪除使用 DinnerRepository 類別
+### <a name="retrieving-updating-inserting-and-deleting-using-the-dinnerrepository-class"></a>使用 DinnerRepository 類別來抓取、更新、插入及刪除
 
-現在，我們建立我們 DinnerRepository 類別，讓我們看看一些程式碼範例示範常見的工作，我們可以用它做：
+既然我們已經建立了 DinnerRepository 類別，接下來就讓我們來看幾個程式碼範例，示範我們可以用它來執行的一般工作：
 
 #### <a name="querying-examples"></a>查詢範例
 
-下列程式碼會擷取單一的 Dinner 使用 DinnerID 值：
+下列程式碼會使用 DinnerID 值來抓取單一晚餐：
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample4.cs)]
 
-下列程式碼會擷取所有即將推出的 dinners 和迴圈它們：
+下列程式碼會抓取所有即將推出的 dinners 和迴圈：
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample5.cs)]
 
 #### <a name="insert-and-update-examples"></a>插入和更新範例
 
-下列程式碼示範如何將兩個新 dinners。 在其上呼叫"Save"（） 方法之前，加入/修改儲存機制不認可到資料庫。 讓所有的變更發生，或都不執行我們的存放庫儲存時，LINQ to SQL 會將所有變更會自動都包裝在資料庫交易 –:
+下列程式碼示範如何新增兩個新的 dinners。 儲存機制的新增/修改不會認可到資料庫，直到在其上呼叫 "Save （）" 方法為止。 LINQ to SQL 會自動包裝資料庫交易中的所有變更–因此，所有變更都會發生，或在存放庫儲存時都不會這麼做：
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample6.cs)]
 
-下列程式碼會擷取現有的 Dinner 物件，並修改在其上的兩個屬性。 我們的存放庫上呼叫"Save"（） 方法時，會認可回資料庫變更：
+下列程式碼會抓取現有的晚餐物件，並修改其上的兩個屬性。 在我們的存放庫中呼叫 "Save （）" 方法時，會將變更認可回資料庫：
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample7.cs)]
 
-下列程式碼擷取 dinner，然後將加入其中的 RSVP。 它會使用像是集合 （因為兩者在資料庫中沒有主索引鍵/外部索引鍵關聯性） 為我們建立 LINQ to SQL Dinner 物件上。 這項變更會保存回資料庫為新的 RSVP 資料表資料列存放庫上呼叫"Save"（） 方法時：
+下列程式碼會抓取晚餐，然後在其中加上一個 RSVP。 它會使用 LINQ to SQL 為我們建立的晚餐物件上的 RSVPs 集合來執行這項操作（因為資料庫中的兩個之間有主鍵/外鍵關聯性）。 在存放庫上呼叫 "Save （）" 方法時，此變更會保存回資料庫，做為新的 RSVP 資料表資料列：
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample8.cs)]
 
-#### <a name="delete-example"></a>Delete 範例
+#### <a name="delete-example"></a>刪除範例
 
-下列程式碼會擷取現有的 Dinner 物件，並隨後會將標示要刪除它。 存放庫上呼叫"Save"（） 方法時它就會回到資料庫認可刪除：
+下列程式碼會抓取現有的晚餐物件，然後將其標示為已刪除。 在存放庫上呼叫 "Save （）" 方法時，它會將刪除認可回資料庫：
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample9.cs)]
 
-### <a name="integrating-validation-and-business-rule-logic-with-model-classes"></a>驗證和商務規則邏輯整合模型類別
+### <a name="integrating-validation-and-business-rule-logic-with-model-classes"></a>整合驗證和商務規則邏輯與模型類別
 
-整合驗證和商務規則邏輯是任何會使用資料的應用程式的重要部分。
+整合驗證和商務規則邏輯是任何可搭配資料使用之應用程式的重要部分。
 
 #### <a name="schema-validation"></a>結構描述驗證
 
-模型類別定義使用 LINQ to SQL 設計工具，在資料模型類別中屬性的資料型別會對應到資料庫資料表的資料類型。 例如:"datetime"Dinners 資料表中的"EventDate 」 資料行時，LINQ to SQL 所建立的資料模型類別都屬於類型"DateTime"（這是內建的.NET 資料類型）。 這表示如果您嘗試從程式碼中將整數或布林值指派給它，而且它會引發錯誤自動如果您嘗試在執行階段隱含地轉換成它的非有效的字串類型，您會收到編譯錯誤。
+當模型類別是使用 LINQ to SQL 設計工具來定義時，資料模型類別中屬性（property）的資料類型會對應至資料庫資料表的資料類型。 例如：如果 Dinners 資料表中的 "EventDate" 資料行是 "datetime"，則 LINQ to SQL 所建立的資料模型類別會是 "DateTime" 類型（內建的 .NET 資料類型）。 這表示如果您嘗試從程式碼指派整數或布林值給它，就會發生編譯錯誤，如果您嘗試在執行時間將不正確字串型別隱含轉換成它，就會自動引發錯誤。
 
-LINQ to SQL 將也會自動逸出 SQL 值會為您處理時使用的字串，以協助保護您 SQL 資料隱碼攻擊時使用它。
+當您使用字串時，LINQ to SQL 也會自動為您處理已植入的 SQL 值，這可在使用時協助保護您免于遭受 SQL 插入式攻擊。
 
 #### <a name="validation-and-business-rule-logic"></a>驗證和商務規則邏輯
 
-結構描述驗證方法可以當做第一個步驟中，但很少足夠。 大部分的真實世界案例需要能夠指定更豐富的驗證邏輯，可以跨多個屬性、 執行程式碼，並且通常會有意識的模型狀態 (例如： 它正在建立/更新/刪除，或在網域專屬的狀態例如 「 封存 」）。 有各種不同的模式和架構，可用來定義，並將驗證規則套用至模型類別，而且有數個.NET 型架構有可用來協助進行這。 您可以使用幾乎任何的 ASP.NET MVC 應用程式內。
+架構驗證非常適合做為第一個步驟，但很少會用到。 大部分的真實案例都需要能夠指定更豐富的驗證邏輯，以跨越多個屬性、執行程式碼，而且通常會知道模型的狀態（例如，它是在/updated/deleted 中建立，還是在網域特定的狀態（例如「封存」）內。 您可以使用各種不同的模式和架構來定義和套用驗證規則至模型類別，而且有數個 .NET 架構的架構，可以用來協助進行這項工作。 您幾乎可以在 ASP.NET MVC 應用程式中使用其中任何一個。
 
-基於我們 NerdDinner 應用程式的目的，我們將使用相對較簡單且簡單的模式，我們會公開 IsValid 屬性和 GetRuleViolations() 方法在 Dinner 模型物件。 IsValid 屬性會傳回 true 或 false 取決於驗證和商務規則是否有效。 GetRuleViolations() 方法會傳回一份任何規則錯誤。
+基於我們的 NerdDinner 應用程式的目的，我們將使用相當簡單且直接向前的模式，在我們的晚餐模型物件上公開 IsValid 屬性和 GetRuleViolations （）方法。 [IsValid] 屬性會根據驗證和商務規則是否有效而傳回 true 或 false。 GetRuleViolations （）方法會傳回任何規則錯誤的清單。
 
-我們將為我們的 Dinner 模型實作 IsValid 及 GetRuleViolations()，藉由將我們的專案中的 「 部分類別 」。 部分類別可以用來將方法/屬性/事件加入至類別 （例如 LINQ to SQL 設計工具所產生的 Dinner 類別） 的 VS 設計工具所維護，並協助避免弄亂與我們的程式碼的工具。 我們可以將新的部分類別新增至我們的專案中，\Models 資料夾上按一下滑鼠右鍵，然後選取 ["新增新的項目] 功能表命令。 我們可以接著選擇 新增新的項目 」 對話方塊 「 類別 」 範本，並將它命名為 Dinner.cs 中。
+我們會在專案中加入「部分類別」，為晚餐模型實行 IsValid 和 GetRuleViolations （）。 部分類別可以用來將方法/屬性/事件新增至 VS 設計工具所維護的類別（例如，LINQ to SQL 設計工具所產生的晚餐類別），並協助避免使用我們的程式碼因為各家工具。 我們可以在 [\Models] 資料夾上按一下滑鼠右鍵，然後選取 [加入新專案] 功能表命令，將新的部分類別加入至專案中。 然後，我們可以選擇 [新增專案] 對話方塊中的「類別」範本，並將其命名為 Dinner.cs。
 
 ![](build-a-model-with-business-rule-validations/_static/image11.png)
 
-按一下 [新增] 按鈕後，會將 Dinner.cs 檔案新增至我們的專案，並在 IDE 中開啟它。 我們可以實作基本的規則/驗證強制執行 framework 使用下列程式碼：
+按一下 [新增] 按鈕會將 Dinner.cs 檔案加入至專案，並在 IDE 中開啟它。 然後，我們可以使用下列程式碼來執行基本的規則/驗證強制架構：
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample10.cs)]
 
 關於上述程式碼的一些注意事項：
 
-- 晚餐類別開頭處以 「 部分 」 關鍵字 – 這表示其內所含的程式碼會結合的 LINQ to SQL 設計工具的產生和保留的類別，並編譯成單一類別。
-- RuleViolation 類別是協助程式類別，我們會將它新增至專案，讓我們能夠提供更多詳細的規則違規。
-- Dinner.GetRuleViolations() 方法會導致我們的驗證和商務規則，以進行評估 （我們將實作它們很快）。 它接著會傳回上一步一系列提供的任何規則錯誤的更多詳細的 RuleViolation 物件。
-- Dinner.IsValid 屬性提供便利的協助程式屬性，指出 Dinner 物件是否有任何作用中的 RuleViolations。 它可以主動檢查隨時使用 Dinner 物件的開發人員 （並不會引發例外狀況）。
-- Dinner.OnValidate() 部分方法會攔截程序，LINQ to SQL 提供可讓我們將會收到通知，每當 Dinner 物件即將保存在資料庫中。 我們上面的 OnValidate() 實作可確保 Dinner 在儲存之前，會有任何 RuleViolations。 如果它處於無效狀態，便會產生例外狀況，這會導致 LINQ to SQL 中止交易。
+- 晚餐類別前面會加上 "partial" 關鍵字，這表示包含在其中的程式碼將會與 LINQ to SQL 設計工具所產生/維護的類別結合，並編譯成單一類別。
+- RuleViolation 類別是我們將加入至專案的協助程式類別，可讓我們提供有關規則違規的更多詳細資料。
+- GetRuleViolations （）方法會使我們的驗證和商務規則進行評估（我們將在稍後加以執行）。 然後，它會傳回一系列的 RuleViolation 物件，以提供有關任何規則錯誤的詳細資料。
+- 晚餐. IsValid 屬性提供便利的 helper 屬性，指出晚餐物件是否有任何作用中的 RuleViolations。 開發人員可以隨時使用晚餐物件主動檢查它（而且不會引發例外狀況）。
+- OnValidate （）部分方法是 LINQ to SQL 提供的勾點，可讓我們在晚餐物件即將保存在資料庫中時收到通知。 上述的 OnValidate （）執行可確保晚餐在儲存前不會 RuleViolations。 如果它處於無效狀態，會引發例外狀況，這會導致 LINQ to SQL 中止交易。
 
-此方法提供一種簡單的架構，我們可以整合驗證和商務規則到。 現在讓我們加入我們 GetRuleViolations() 方法的規則如下：
+這種方法提供了簡單的架構，讓我們可以將驗證和商務規則整合到其中。 現在，讓我們將下列規則新增至我們的 GetRuleViolations （）方法：
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample11.cs)]
 
-若要傳回的任何 RuleViolations 序列，我們會使用"yield return"C# 功能。 上述的第六個規則檢查只會強制執行字串屬性，在我們吃晚餐不能為 null 或空白。 最後一個規則會更有趣的是，和呼叫，我們可以新增至我們的專案，以確認 ContactPhone PhoneValidator.IsValidNumber() helper 方法的數字格式相符項目 Dinner 的國家/地區。
+我們使用的「yield return」功能C#來傳回任何 RuleViolations 的序列。 前六個規則檢查，只是在晚餐上強制字串屬性不能是 null 或空白。 最後一個規則比較有趣，而且會呼叫 PhoneValidator IsValidNumber （） helper 方法，我們可以將其新增至專案，以確認 ContactPhone 數位格式符合晚餐的國家/地區。
 
-我們可以使用。若要實作此電話驗證支援的 NET 的規則運算式支援。 以下是簡單的 PhoneValidator 實作，我們可以新增至我們的專案，可讓我們新增 國家/地區特定的 Regex 模式檢查：
+我們可以使用。NET 的正則運算式支援，可實現這種電話驗證支援。 以下是一個簡單的 PhoneValidator 實作為，我們可以新增至我們的專案，讓我們新增國家特定的 Regex 模式檢查：
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample12.cs)]
 
 #### <a name="handling-validation-and-business-logic-violations"></a>處理驗證和商務邏輯違規
 
-既然我們已新增上述驗證和商務規則的程式碼，我們嘗試建立或更新 Dinner 任何時候，我們的驗證邏輯規則會進行評估，並強制執行。
+既然我們已新增上述驗證和商務規則程式碼，每當我們嘗試建立或更新晚餐時，就會評估並強制執行我們的驗證邏輯規則。
 
-開發人員可以撰寫程式碼，像下面以主動地判斷 Dinner 物件是否有效，並擷取一份所有違規裡面，而不會引發任何例外狀況：
+開發人員可以撰寫如下的程式碼，以主動判斷晚餐物件是否有效，並抓取其中的所有違規清單，而不引發任何例外狀況：
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample13.cs)]
 
-如果我們嘗試以無效的狀態儲存 Dinner，DinnerRepository 上呼叫 save （） 方法時，就會引發例外狀況。 這是因為 LINQ to SQL 會自動呼叫我們 Dinner.OnValidate() 部分方法，它會將儲存 Dinner 的變更，和我們的程式碼加入引發例外狀況，如果任何規則違規在於 Dinner Dinner.OnValidate() 之前。 我們可以攔截此例外狀況和被動擷取一份的違規情事，若要修正問題：
+如果我們嘗試以不正確狀態儲存晚餐，當我們在 DinnerRepository 上呼叫 Save （）方法時，就會引發例外狀況。 這是因為 LINQ to SQL 會在儲存晚餐的變更之前，自動呼叫 OnValidate （）部分方法，而且我們已將程式碼新增至 OnValidate （），以在晚餐中存在任何規則違規時引發例外狀況。 我們可以攔截這個例外狀況，並被動抓取要修正的違規清單：
 
 [!code-csharp[Main](build-a-model-with-business-rule-validations/samples/sample14.cs)]
 
-在我們的模型層，並不在 UI 層中實作我們驗證和商務規則，因為它們會套用並在所有情況下，我們的應用程式內使用。 我們可以稍後變更或新增商務規則，我們 Dinner 物件適用於接受它們的所有程式碼。
+因為我們的驗證和商務規則是在模型層內執行，而不是在 UI 層內，所以會套用到應用程式內的所有案例並加以使用。 我們稍後可以變更或新增商務規則，並讓所有與晚餐物件搭配使用的程式碼都能接受它們。
 
-有彈性地變更商務規則，在同一個地方，而不需 ripple 在整個應用程式和 UI 邏輯，這些變更是撰寫得當的應用程式，以及的 MVC 架構有助於鼓勵的優點。
+有彈性可以在一處變更商務規則，而不需要在整個應用程式和 UI 邏輯中進行這些變更，而是撰寫完善的應用程式，以及 MVC 架構有助於鼓勵的優點。
 
-### <a name="next-step"></a>下一個步驟
+### <a name="next-step"></a>後續步驟
 
-我們現在有一個模型，我們可以使用查詢和更新資料庫。
+我們現在有一個模型，可以用來查詢和更新我們的資料庫。
 
-讓我們現在新增一些控制器和檢視的專案，我們可以使用來建置其周圍的 HTML UI 體驗。
+現在讓我們在專案中新增一些控制器和視圖，供我們用來建立其周圍的 HTML UI 體驗。
 
 > [!div class="step-by-step"]
 > [上一頁](create-a-database.md)

@@ -10,17 +10,17 @@ ms.assetid: bffd7863-f63b-4b23-a13c-372b5492e9fb
 msc.legacyurl: /web-api/overview/error-handling/web-api-global-error-handling
 msc.type: authoredcontent
 ms.openlocfilehash: 94f2d6d31d0b37f9bb0077e6258c70a2dfb1918d
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457735"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78557278"
 ---
 # <a name="global-error-handling-in-aspnet-web-api-2"></a>ASP.NET Web API 2 中的全域錯誤處理
 
 依[David Matson](https://github.com/davidmatson)、 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-本主題概要說明 ASP.NET 4.x 的 ASP.NET Web API 2 中的全域錯誤處理。 現在，Web API 中沒有簡單的方法可全域記錄或處理錯誤。 某些未處理的例外狀況可以透過[例外狀況篩選器](exception-handling.md)來處理，但是例外狀況篩選無法處理的情況有好幾種。 例如：
+本主題概要說明 ASP.NET 4.x 的 ASP.NET Web API 2 中的全域錯誤處理。 現在，Web API 中沒有簡單的方法可全域記錄或處理錯誤。 某些未處理的例外狀況可以透過[例外狀況篩選器](exception-handling.md)來處理，但是例外狀況篩選無法處理的情況有好幾種。 例如:
 
 1. 從控制器建構函式擲回的例外狀況。
 2. 從訊息處理常式擲回的例外狀況。

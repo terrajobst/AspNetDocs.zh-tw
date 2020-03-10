@@ -9,11 +9,11 @@ ms.assetid: a0b9186c-0912-4fff-916a-6d17e696a50b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-vb
 msc.type: authoredcontent
 ms.openlocfilehash: aaecf77c1d25f2c99ef4e9948d79fc01b837169b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74611707"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78553981"
 ---
 # <a name="handling-postbacks-from-a-popup-control-without-an-updatepanel-vb"></a>處理沒有 UpdatePanel 的快顯視窗控制項回傳 (VB)
 
@@ -43,7 +43,7 @@ AJAX 控制項工具組中的 PopupControl 擴充項提供了一種簡單的方�
 
 [!code-html[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/samples/sample3.html)]
 
-在伺服器端程式碼中，必須讀取隱藏欄位的值。 由於隱藏的表單欄位很容易操作，因此必須使用允許清單驗證隱藏值的系統清單方法。 一旦識別出正確的文字方塊之後，就會將行事曆的日期寫入其中。
+在伺服器端程式碼中，必須讀取隱藏欄位的值。 由於隱藏的表單欄位很容易操作，因此必須使用允許清單驗證隱藏值的白名單方法。 一旦識別出正確的文字方塊之後，就會將行事曆的日期寫入其中。
 
 [!code-aspx[Main](handling-postbacks-from-a-popup-control-without-an-updatepanel-vb/samples/sample4.aspx)]
 

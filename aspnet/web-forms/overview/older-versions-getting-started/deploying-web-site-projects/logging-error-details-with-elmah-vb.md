@@ -9,11 +9,11 @@ ms.assetid: a5f0439f-18b2-4c89-96ab-75b02c616f46
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 46b7fc22807c8cb9f47ff035639815d7b6104735
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74622337"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78525708"
 ---
 # <a name="logging-error-details-with-elmah-vb"></a>使用 ELMAH 記錄錯誤的詳細資料 (VB)
 
@@ -31,7 +31,7 @@ ms.locfileid: "74622337"
 
 健全狀況監視系統的另一個替代方案是錯誤記錄模組和處理常式（ELMAH），這是[Atif Aziz](http://www.raboof.com/)所建立的免費開放原始碼錯誤記錄系統。 這兩個系統之間最明顯的差異在於 ELAMH 能夠從網頁和 RSS 摘要中顯示錯誤清單，以及特定錯誤的詳細資料。 ELMAH 比健全狀況監視更容易設定，因為它只會記錄錯誤。 此外，ELMAH 還支援 ASP.NET 1.x、ASP.NET 2.0 和 ASP.NET 3.5 應用程式，並隨附各種記錄來源提供者。
 
-本教學課程會逐步解說將 ELMAH 新增至 ASP.NET 應用程式所牽涉到的步驟。 讓我們開始吧！
+本教學課程會逐步解說將 ELMAH 新增至 ASP.NET 應用程式所牽涉到的步驟。 現在就開始吧！
 
 > [!NOTE]
 > 健全狀況監視系統和 ELMAH 都有自己的一組優缺點。 我建議您同時嘗試這兩個系統，並決定哪一個最適合您的需求。

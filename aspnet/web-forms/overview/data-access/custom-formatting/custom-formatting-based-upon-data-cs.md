@@ -9,11 +9,11 @@ ms.assetid: 871a4574-f89c-4214-b786-79253ed3653b
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-cs
 msc.type: authoredcontent
 ms.openlocfilehash: d8f3fa337eda0ceed041475ecb52f8b378b9fbba
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600770"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78549312"
 ---
 # <a name="custom-formatting-based-upon-data-c"></a>根據資料自訂格式設定 (C#)
 
@@ -282,4 +282,4 @@ FormView 不包含任何 BoundFields，因此缺少 `Rows` 集合。 取而代�
 本教學課程系列已由許多有用的審核者所審查。 本教學課程的潛在客戶審核者已 E.R。 Gilmore、Dennis Patterson 和 Dan Jagers。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一步](using-templatefields-in-the-gridview-control-cs.md)
+> [下一個](using-templatefields-in-the-gridview-control-cs.md)

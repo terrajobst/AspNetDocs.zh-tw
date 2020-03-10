@@ -1,75 +1,75 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-vb
-title: 建立路由條件約束 (VB) |Microsoft Docs
+title: 建立路由條件約束（VB） |Microsoft Docs
 author: StephenWalther
-description: 在本教學課程中，Stephen Walther 會示範如何控制瀏覽器使用規則運算式中建立路由條件約束所要求的相符項目路由。
+description: 在本教學課程中，Stephen Walther 將示範如何使用正則運算式來建立路由條件約束，以控制瀏覽器要求如何符合路由。
 ms.author: riande
 ms.date: 02/16/2009
 ms.assetid: b7cce113-c82c-45bf-b97b-357e5d9f7f56
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 205742dd8f866c8828008c8aac7ab3f98b173ceb
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65123429"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78601385"
 ---
 # <a name="creating-a-route-constraint-vb"></a>建立路由條件約束 (VB)
 
-藉由[Stephen Walther](https://github.com/StephenWalther)
+依[Stephen Walther](https://github.com/StephenWalther)
 
-> 在本教學課程中，Stephen Walther 會示範如何控制瀏覽器使用規則運算式中建立路由條件約束所要求的相符項目路由。
+> 在本教學課程中，Stephen Walther 將示範如何使用正則運算式來建立路由條件約束，以控制瀏覽器要求如何符合路由。
 
-您可以使用路由條件約束來限制瀏覽器會要求符合特定的路由。 您可以使用規則運算式來指定路由條件約束。
+您可以使用路由條件約束來限制符合特定路由的瀏覽器要求。 您可以使用正則運算式來指定路由條件約束。
 
-例如，假設您已定義的路由清單 1 在 Global.asax 檔案中。
+例如，假設您已在 global.asax 檔案的 [清單 1] 中定義路由。
 
-**Listing 1 - Global.asax.vb**
+**清單 1-global.asax .vb**
 
 [!code-vb[Main](creating-a-route-constraint-vb/samples/sample1.vb)]
 
-列表 1 包含名為 Product 的路由。 您可以使用產品路由以將瀏覽器要求對應至 列表 2 中所包含的 ProductController。
+[清單 1] 包含名為 Product 的路由。 您可以使用產品路線，將瀏覽器要求對應至 [清單 2] 中所包含的 ProductController。
 
-**Listing 2 - Controllers\ProductController.vb**
+**清單 2-Controllers\ProductController.vb**
 
 [!code-vb[Main](creating-a-route-constraint-vb/samples/sample2.vb)]
 
-請注意，Product 控制器所公開的 Details() 動作會接受名為 productId 的單一參數。 這個參數是一個整數參數。
+請注意，產品控制器所公開的詳細資料（）動作會接受名為 productId 的單一參數。 這個參數是整數參數。
 
-在 列表 1 中定義的路由會符合任何下列 url:
+清單1中定義的路由會符合下列任何 Url：
 
 - /Product/23
 - /Product/7
 
-不幸的是，路由也會比對下列 Url:
+可惜的是，路由也會符合下列 Url：
 
-- / 產品/blah
+- /Product/blah
 - /Product/apple
 
-由於 Details() 動作預期整數參數，提出要求，其中包含整數值以外的項目會造成錯誤。 比方說，如果您的瀏覽器中輸入 URL /Product/apple 然後就會出現錯誤頁面 [圖 1] 中。
+由於 Details （）動作需要整數參數，因此，要求若包含整數值以外的專案，將會造成錯誤。 例如，如果您在瀏覽器中輸入 URL/Product/apple，則會出現 [圖 1] 中的錯誤頁面。
 
 [![[新增專案] 對話方塊](creating-a-route-constraint-vb/_static/image1.jpg)](creating-a-route-constraint-vb/_static/image1.png)
 
-**圖 01**:看到頁面，explode ([按一下以檢視完整大小的影像](creating-a-route-constraint-vb/_static/image2.png))
+**圖 01**：查看頁面分解（[按一下以觀看完整大小的影像](creating-a-route-constraint-vb/_static/image2.png)）
 
-您真的要做什麼是只比對包含適當的整數 productId 的 Url。 可以使用條件約束定義的路由時，來限制路由相符的 Url。 修改的產品路由列表 3 中包含的規則運算式條件約束，只會比對整數。
+您真正想要做的只是符合包含適當整數 productId 的 Url。 定義路由以限制符合路由的 Url 時，您可以使用條件約束。 [清單 3] 中已修改的產品路由包含僅符合整數的正則運算式條件約束。
 
-**Listing 3 - Global.asax.vb**
+**清單 3-global.asax .vb**
 
 [!code-vb[Main](creating-a-route-constraint-vb/samples/sample3.vb)]
 
-規則運算式 \d+ 比對一個或多個整數。 此條件約束會造成產品路由，以符合下列 Url:
+正則運算式 \d + 符合一或多個整數。 此條件約束會使產品路由符合下列 Url：
 
 - /Product/3
 - /Product/8999
 
-但下列 Url:
+但不是下列 Url：
 
 - /Product/apple
 - /Product
 
-這些瀏覽器要求交由另一個路由或，如果不有任何相符的路由*找不到資源*便會傳回錯誤。
+這些瀏覽器要求將由另一個路由處理，或者，如果沒有相符的路由，就會傳回「找*不到資源*」錯誤。
 
 > [!div class="step-by-step"]
 > [上一頁](creating-custom-routes-vb.md)

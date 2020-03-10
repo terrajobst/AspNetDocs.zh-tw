@@ -1,28 +1,28 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/index
-title: 舊版-Ajax Control Toolkit |Microsoft Docs
+title: 較舊的版本-Ajax 控制項工具組 |Microsoft Docs
 author: rick-anderson
-description: 如何開始使用 Ajax Control Toolkit 中，以及如何使用一些最常用的控制項。 DevExpress 維護免費的開放原始碼 Ajax Contr....
+description: 如何開始使用 Ajax Control 工具組，以及如何使用一些最受歡迎的控制項。 DevExpress 保有免費且開放的原始碼 Ajax Contr 。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 76242ce9-e611-41d2-95e8-dc5f406d4bfc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit
 msc.type: chapter
 ms.openlocfilehash: d7d0426ed427f3b8fc8c7f9c2fe1518b1887d695
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65115378"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78554142"
 ---
 # <a name="older-versions---ajax-control-toolkit"></a>舊版 - Ajax Control Toolkit
 
-> 如何開始使用 Ajax Control Toolkit 中，以及如何使用一些最常用的控制項。 DevExpress 維護免費的開放原始碼 Ajax Control Toolkit。
+> 如何開始使用 Ajax Control 工具組，以及如何使用一些最受歡迎的控制項。 DevExpress 保有免費且開放的來源 Ajax 控制項工具組。
 > 
 > 
-> ![](index/_static/image1.png) DevExpress，獲獎 ASP.NET WebForms、 MVC 和 HTML5 UI 控制項和架構，開發人員花費了對 ASP.NET AJAX Control Toolkit 維護中，才能讓此高要求的開放原始碼程式庫恢復可靠的狀態。 [了解更多](https://go.devexpress.com/AjaxControlToolkit_ASP_Resources_Tutorials.aspx)。
+> ![](index/_static/image1.png) DevExpress，獲獎 ASP.NET WebForms、MVC 和 HTML5 UI 控制項和架構的開發人員，會接管 ASP.NET AJAX Control 工具組的維護，以將這項高度要求的開放原始碼程式庫回復為可靠的狀態。 [詳細資訊](https://go.devexpress.com/AjaxControlToolkit_ASP_Resources_Tutorials.aspx)。
 
-- [快速入門](getting-started/index.md)
+- [使用者入門](getting-started/index.md)
 
     - [開始使用 AJAX Control Toolkit (C#)](getting-started/get-started-with-the-ajax-control-toolkit-cs.md)
     - [使用 AJAX Control Toolkit 控制項及控制項擴充項 (C#)](getting-started/using-ajax-control-toolkit-controls-and-control-extenders-cs.md)
