@@ -9,11 +9,11 @@ ms.assetid: 6ab4efb6-aab6-45ac-ad2c-bdec5848ef9e
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
 ms.openlocfilehash: cab9acb1ffd75cca87f6c575a6abdd000235828e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74635684"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78640529"
 ---
 # <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>了解 ASP.NET AJAX 驗證與設定檔應用程式服務
 
@@ -39,7 +39,7 @@ Microsoft ASP.NET 設定檔和驗證服務是由 ASP.NET 表單驗證系統提�
 
 設定檔服務可讓您根據驗證服務所提供的成員資格，自動整合和儲存使用者資料。 儲存的資料是由 web.config 檔案所指定，而各種分析服務提供者會處理資料管理。 就像驗證服務一樣，AJAX 設定檔服務與標準的 ASP.NET 設定檔服務相容，因此包含 AJAX 支援的情況不應中斷目前納入 ASP.NET 設定檔服務功能的頁面。
 
-將 ASP.NET Authentication 和分析服務本身合併到應用程式中，不在此白皮書的範圍內。 如需主題的詳細資訊，請參閱 MSDN Library 參考文章使用[https://msdn.microsoft.com/library/tw292whz.aspx](https://msdn.microsoft.com/library/tw292whz.aspx)的成員資格來管理使用者。 ASP.NET 也包含一個公用程式，可自動設定 SQL Server 的成員資格，這是 ASP.NET 成員資格的預設驗證服務提供者。 如需詳細資訊，請參閱[https://msdn.microsoft.com/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/library/ms229862(vs.80).aspx)的 ASP.NET SQL Server 註冊工具（Aspnet\_ regsql 一文）。
+將 ASP.NET Authentication 和分析服務本身合併到應用程式中，不在此白皮書的範圍內。 如需主題的詳細資訊，請參閱 MSDN Library 參考文章使用[https://msdn.microsoft.com/library/tw292whz.aspx](https://msdn.microsoft.com/library/tw292whz.aspx)的成員資格來管理使用者。 ASP.NET 也包含一個公用程式，可自動設定 SQL Server 的成員資格，這是 ASP.NET 成員資格的預設驗證服務提供者。 如需詳細資訊，請參閱[https://msdn.microsoft.com/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/library/ms229862(vs.80).aspx)的 ASP.NET SQL Server 註冊工具（Aspnet\_regsql 一文）。
 
 ## <a name="using-the-aspnet-ajax-authentication-service"></a>*使用 ASP.NET AJAX Authentication 服務*
 
@@ -57,11 +57,11 @@ ASP.NET AJAX Authentication 服務必須在 web.config 檔案中啟用：
 
 Login （）方法會開始驗證使用者認證的要求。 這個方法是非同步，不會封鎖執行。
 
-*參數*
+*參數：*
 
-| **參數名稱** | **含義** |
+| **參數名稱** | **意義** |
 | --- | --- |
-| userName | 必要項。 要驗證的使用者名稱。 |
+| userName | 必要。 要驗證的使用者名稱。 |
 | 密碼 | 選擇性（預設為 null）。 使用者的密碼。 |
 | isPersistent | 選擇性（預設為 false）。 使用者的驗證 cookie 是否應跨會話保存。 若為 false，則使用者會在瀏覽器關閉或會話到期時登出。 |
 | redirectUrl | 選擇性（預設為 null）。驗證成功時，要將瀏覽器重新導向至的 URL。 如果此參數為 null 或空字串，則不會進行重新導向。 |
@@ -82,9 +82,9 @@ Login （）方法會開始驗證使用者認證的要求。 這個方法是非�
 
 登出（）方法會移除認證 cookie，並從 web 應用程式登出目前的使用者。
 
-*參數*
+*參數：*
 
-| **參數名稱** | **含義** |
+| **參數名稱** | **意義** |
 | --- | --- |
 | redirectUrl | 選擇性（預設為 null）。驗證成功時，要將瀏覽器重新導向至的 URL。 如果此參數為 null 或空字串，則不會進行重新導向。 |
 | logoutCompletedCallback | 選擇性（預設為 null）。成功完成登出時要呼叫的函式。 如果指定，這個參數會覆寫 defaultLogoutCompleted 屬性。 |
@@ -107,11 +107,11 @@ Login （）方法會開始驗證使用者認證的要求。 這個方法是非�
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample2.js)]
 
-*參數*
+*參數：*
 
-| **參數名稱** | **含義** |
+| **參數名稱** | **意義** |
 | --- | --- |
-| 個錯誤 | 指定錯誤資訊。 |
+| error | 指定錯誤資訊。 |
 | userCoNtext | 指定呼叫 login 或登出函數時所提供的使用者內容資訊。 |
 | methodName | 呼叫方法的名稱。 |
 
@@ -123,9 +123,9 @@ Login （）方法會開始驗證使用者認證的要求。 這個方法是非�
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample3.js)]
 
-*參數*
+*參數：*
 
-| **參數名稱** | **含義** |
+| **參數名稱** | **意義** |
 | --- | --- |
 | validCredentials | 指定使用者是否提供有效的認證。 `true` 如果使用者成功登入，則為，否則 `false`。 |
 | userCoNtext | 指定呼叫登入函數時所提供的使用者內容資訊。 |
@@ -139,11 +139,11 @@ Login （）方法會開始驗證使用者認證的要求。 這個方法是非�
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample4.js)]
 
-*參數*
+*參數：*
 
-| **參數名稱** | **含義** |
+| **參數名稱** | **意義** |
 | --- | --- |
-| 結果 | 這個參數一律會 `null`。它會保留供日後使用。 |
+| result | 這個參數一律會 `null`。它會保留供日後使用。 |
 | userCoNtext | 指定呼叫登入函數時所提供的使用者內容資訊。 |
 | methodName | 呼叫方法的名稱。 |
 
@@ -203,9 +203,9 @@ ASP.NET 分析服務也會透過 ASP.NET AJAX 延伸模組公開。 由於 ASP.N
 
 從伺服器載入選取的清單或所有屬性。
 
-*參數*
+*參數：*
 
-| **參數名稱** | **含義** |
+| **參數名稱** | **意義** |
 | --- | --- |
 | 之 propertynames | 選擇性（預設為 null）。 要從伺服器載入的屬性。 |
 | loadCompletedCallback | 選擇性（預設為 null）。 載入完成時要呼叫的函式。 |
@@ -220,9 +220,9 @@ Load 函數沒有傳回值。 如果呼叫成功完成，它會呼叫 `loadCompl
 
 Save （）方法會將指定的屬性清單（或所有屬性）儲存至使用者的 ASP.NET 設定檔。
 
-*參數*
+*參數：*
 
-| **參數名稱** | **含義** |
+| **參數名稱** | **意義** |
 | --- | --- |
 | 之 propertynames | 選擇性（預設為 null）。 要儲存至伺服器的屬性。 |
 | saveCompletedCallback | 選擇性（預設為 null）。 完成儲存時要呼叫的函式。 |
@@ -241,9 +241,9 @@ Save 函數沒有傳回值。 如果呼叫成功完成，它會呼叫 `saveCompl
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample9.js)]
 
-*參數*
+*參數：*
 
-| **參數名稱** | **含義** |
+| **參數名稱** | **意義** |
 | --- | --- |
 | 錯誤 | 指定錯誤資訊。 |
 | userCoNtext | 指定呼叫 load 或 save 函數時所提供的使用者內容資訊。 |
@@ -257,9 +257,9 @@ Save 函數沒有傳回值。 如果呼叫成功完成，它會呼叫 `saveCompl
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample10.js)]
 
-*參數*
+*參數：*
 
-| **參數名稱** | **含義** |
+| **參數名稱** | **意義** |
 | --- | --- |
 | numPropsSaved | 指定已儲存的屬性數目。 |
 | userCoNtext | 指定呼叫 load 或 save 函數時所提供的使用者內容資訊。 |
@@ -273,9 +273,9 @@ Save 函數沒有傳回值。 如果呼叫成功完成，它會呼叫 `saveCompl
 
 [!code-javascript[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample11.js)]
 
-*參數*
+*參數：*
 
-| **參數名稱** | **含義** |
+| **參數名稱** | **意義** |
 | --- | --- |
 | numPropsLoaded | 指定已載入的屬性數目。 |
 | userCoNtext | 指定呼叫 load 或 save 函數時所提供的使用者內容資訊。 |

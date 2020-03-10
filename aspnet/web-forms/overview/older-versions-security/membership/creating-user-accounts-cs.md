@@ -9,11 +9,11 @@ ms.assetid: f175278c-6079-4d91-b9b4-2493ed43d9ec
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-user-accounts-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 955592320e7d36c7ae3b9c03a361bee2183f1776
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74625216"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78631975"
 ---
 # <a name="creating-user-accounts-c"></a>建立使用者帳戶 (C#)
 
@@ -29,7 +29,7 @@ ms.locfileid: "74625216"
 
 除了學習如何建立新的使用者帳戶之外，我們還需要更新我們最初在 *<a id="_msoanchor_2"></a>[表單驗證](../introduction/an-overview-of-forms-authentication-cs.md)* 教學課程中建立的示範網站，然後在 *<a id="https://www.asp.net/learn/security/tutorial-03-cs.aspx"></a>表單驗證設定和高級主題*教學課程中加強。 我們的示範 web 應用程式有一個登入頁面，它會驗證使用者的認證，以防止硬式編碼的使用者名稱/密碼配對。 此外，`Global.asax` 還包含可為已驗證的使用者建立自訂 `IPrincipal` 和 `IIdentity` 物件的程式碼。 我們將會更新登入頁面，以根據成員資格架構來驗證使用者的認證，並移除自訂主體和身分識別邏輯。
 
-讓我們開始吧！
+現在就開始吧！
 
 ## <a name="the-forms-authentication-and-membership-checklist"></a>表單驗證和成員資格檢查清單
 

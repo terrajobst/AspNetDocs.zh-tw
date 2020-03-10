@@ -9,11 +9,11 @@ ms.assetid: 9f24fb82-c7ac-48da-b8e2-51b3da17e365
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
 msc.type: authoredcontent
 ms.openlocfilehash: 81cca22cb4752d071d2a68986ae9ac2bed737594
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74633177"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78640193"
 ---
 # <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>使用模型系結和 web forms 來抓取和顯示資料
 
@@ -49,7 +49,7 @@ ms.locfileid: "74633177"
 
    ![建立專案](retrieving-data/_static/image19.png)
 
-2. 選取 [確定]。 選取範本的對話方塊隨即出現。
+2. 選取 **\[確定\]** 。 選取範本的對話方塊隨即出現。
 
    ![選取 web 表單](retrieving-data/_static/image3.png)
 
@@ -57,7 +57,7 @@ ms.locfileid: "74633177"
 
 4. 如有必要，請將驗證變更為**個別使用者帳戶**。 
 
-5. 選取 [確定] 建立專案。
+5. 選取 [確定] 可建立專案。
 
 ## <a name="modify-site-appearance"></a>修改網站外觀
 
@@ -93,7 +93,7 @@ ms.locfileid: "74633177"
    
    4. 在 web 表單的主版頁面上，選取 [**網站. 主機**]。
    
-   5. 選取 [確定]。
+   5. 選取 **\[確定\]** 。
 
 ## <a name="add-the-data-model"></a>加入資料模型
 
@@ -121,7 +121,7 @@ ms.locfileid: "74633177"
 
 本教學課程使用[Code First 移轉](https://docs.microsoft.com/ef/ef6/modeling/code-first/migrations/)來建立物件和資料庫資料表。 這些表格會儲存學生及其課程的相關資訊。
 
-   1. 選取 **工具** > **NuGet 套件管理員** > **套件管理員主控台**。
+   1. 選取 [工具] > [NuGet 套件管理員] > [套件管理員主控台]。
 
    2. 在 [**套件管理員主控台**] 中，執行下列命令：  
       `enable-migrations -ContextTypeName ContosoUniversityModelBinding.Models.SchoolContext`
