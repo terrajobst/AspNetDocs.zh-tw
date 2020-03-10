@@ -9,60 +9,60 @@ ms.assetid: a8367c6d-ef94-4dff-a010-5eff9e6eea96
 msc.legacyurl: /single-page-application/overview/introduction/other-libraries
 msc.type: authoredcontent
 ms.openlocfilehash: 64a4ad1fb411f7291a5cba634afdf4d2fdb16d55
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116074"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78578544"
 ---
 # <a name="know-a-library-other-than-knockout"></a>是否認識 Knockout 以外的程式庫？
 
-藉由[Mads Kristensen](https://github.com/madskristensen)
+依[Mads Kristensen](https://github.com/madskristensen)
 
-[單一頁面應用程式 (SPA) 範本](knockoutjs-template.md)是若要開始撰寫單一頁面應用程式的好方法。 此範本會使用[KnockoutJS](http://knockoutjs.com/)應用程式資料繫結至 DOM 項目。
+[單頁應用程式（SPA）範本](knockoutjs-template.md)是開始撰寫單一頁面應用程式的絕佳方式。 此範本會使用[KnockoutJS](http://knockoutjs.com/)將應用程式資料系結至 DOM 元素。
 
-但 Knockout 不是唯一的 JavaScript 程式庫，來建立豐富型用戶端應用程式。 其他程式庫會以不同的方式解決類似的挑戰。 讓我們了數個社群建立的範本可供下載，您可能會偏好透過另一個程式庫。 每個範本會使用不同的用戶端 JavaScript 程式庫組合。
+但是，挖不是用來建立豐富型用戶端應用程式的唯一 JavaScript 程式庫。 其他程式庫會以不同的方式解決類似的挑戰。 您可能偏好使用一個程式庫，因此我們建立了數個以社區建立的範本供您下載。 這些範本各自使用不同的用戶端 JavaScript 程式庫混合。
 
-若要安裝的社群建立的範本，請造訪的範本頁面下面所列，然後按一下 [下載] 按鈕。 提供的範本為 VSIX 檔案。
+若要安裝已建立社區的範本，請造訪下面所列的其中一個範本頁面，然後按一下 [下載] 按鈕。 範本會以 VSIX 檔案的形式提供。
 
 ## <a name="backbonejs"></a>BackboneJS
 
-[Backbone.js SPA 範本](../templates/backbonejs-template.md)。 此範本會提供初始的基本架構來開發[Backbone.js](http://backbonejs.org/) ASP.NET MVC 應用程式。 根據預設，它會提供基本的使用者登入功能，包括使用者註冊、 登入的密碼重設，以及使用基本的電子郵件範本的使用者確認。
+[骨幹 SPA 範本](../templates/backbonejs-template.md)。 此範本提供在 ASP.NET MVC 中開發[骨幹](http://backbonejs.org/)應用程式的初始基本架構。 它提供基本的使用者登入功能，包括使用者註冊、登入、密碼重設，以及使用基本電子郵件範本的使用者確認。
 
 ## <a name="breezejs"></a>BreezeJS
 
-[BreezeJS](http://www.breezejs.com/?utm_source=ms-spa)是用於管理豐富的資料，JavaScript 用戶端中的開放原始碼程式庫。 幫助您輕鬆處理查詢、 快取、 變更追蹤、 驗證，等等。 兩個範本功能幫助您輕鬆：
+[BreezeJS](http://www.breezejs.com/?utm_source=ms-spa)是一個開放原始碼程式庫，可用於管理 JavaScript 用戶端中的豐富資料。 輕鬆處理查詢、快取、變更追蹤、驗證等。 有兩個範本功能輕鬆：
 
-- [Breeze/Knockout](../templates/breezeknockout-template.md)範本延伸 Knockout SPA 範本中，顯示您可以在如何輕鬆地建置單一頁面應用程式以幫助您輕鬆的資料管理和 KnockoutJS 進行資料繫結。
-- [Breeze/Angular](../templates/breezeangular-template.md)範本也會擴充變得輕而易舉，但是使用 Knockout SPA 範本[AngularJS](http://angularjs.org)適用於資料繫結、 相依性插入和畫面管理程式庫。
+- 「簡單」 [/「挖](../templates/breezeknockout-template.md)後」範本會延伸「挖式 SPA」範本，顯示您可以輕鬆地建立單一頁面應用程式，方便資料管理及 KnockoutJS 資料系結。
+- 「簡單」 [/「角度](../templates/breezeangular-template.md)」範本也會輕鬆擴充挖式 SPA 範本，但使用[AngularJS](http://angularjs.org)程式庫來進行資料系結、相依性插入和螢幕管理。
 
-颾魤 ㄛ[熱毛巾 SPA 範本](../templates/hottowel-template.md)使用 BreezeJS。
+此外，「[熱門紙巾 SPA」範本](../templates/hottowel-template.md)會使用 BreezeJS。
 
 ## <a name="emberjs"></a>EmberJS
 
-[EmberJS SPA 範本](../templates/emberjs-template.md)。 此範本使用[Ember](http://emberjs.com/)，功能強大的 MVC JavaScript 程式庫，可解決各式各樣的建置豐富型用戶端應用程式的挑戰。
+[EMBERJS SPA 範本](../templates/emberjs-template.md)。 此範本使用[ember.js](http://emberjs.com/)，這是功能強大的 MVC JavaScript 程式庫，可解決建立豐富型用戶端應用程式的各種挑戰。
 
-Ember SPA 範本是 Knockout SPA 範本中，使用 EmberJS 和 Handlebars 樣板化的重新實作。
+Ember.js SPA 範本是使用 EmberJS 和 Handlebars 範本化的「挖後 SPA」範本重新執行。
 
-## <a name="hot-towel"></a>最忙碌的毛巾
+## <a name="hot-towel"></a>熱門紙巾
 
-[最忙碌的毛巾 SPA 範本](../templates/hottowel-template.md)。 此範本會在數個 JavaScript 程式庫，包括幫助您輕鬆、 Knockout、 RequireJS 和 Twitter Bootstrap。
+[熱門紙巾 SPA 範本](../templates/hottowel-template.md)。 此範本引進數個 JavaScript 程式庫，包括輕鬆、挖的、RequireJS 和 Twitter 啟動程式。
 
-相較於此處所列的其他範本，最忙碌的 Towel 範本提供的更完整的應用程式，您可以用來建置您自己。 有多個概念要注意的但是一旦您了解它們，此範本可能只是您要尋找。 如果您想要建置 SPA，但無法決定在何處開始，請使用 最忙碌的毛巾以秒為單位，您將會有 SPA 和所有工具，而且您需要在其上建置。
+相較于此處所列的其他範本，「熱門的紙巾」範本提供了更完整的應用程式，讓您可以從中建立。 還有更多要注意的概念，但一旦您瞭解，此範本可能只是您要尋找的專案。 如果您想要建立 SPA，但無法決定要從何處開始，請使用「熱門的紙巾」，並在幾秒內建立您需要的 SPA 和所有工具。
 
 ## <a name="feature-table"></a>功能資料表
 
 以下是每個 SPA 範本所提供的功能：
 
-|                        | ASP.NET SPA | 骨幹 | Breeze/Angular | Breeze/KO |  Ember   | 最忙碌的毛巾 |
+|                        | ASP.NET SPA | 骨幹 | 輕而易舉/角度 | 輕鬆/KO |  Ember.js   | 熱門紙巾 |
 |------------------------|-------------|----------|----------------|-----------|----------|-----------|
-|      待辦事項範例       |  &#10003;   |          |    &#10003;    | &#10003;  | &#10003; |           |
+|      ToDo 範例       |  &#10003;   |          |    &#10003;    | &#10003;  | &#10003; |           |
 |     裸機範本      |             | &#10003; |                |           |          | &#10003;  |
-| 瀏覽和歷程記錄 |             | &#10003; |    &#10003;    |           | &#10003; | &#10003;  |
+| 導覽和歷程記錄 |             | &#10003; |    &#10003;    |           | &#10003; | &#10003;  |
 |        程式庫       |             |          |                |           |          |           |
 |        Angular         |             |          |    &#10003;    |           |          |           |
-|    &#8195;Backbone     |             | &#10003; |                |           |          |           |
-|         幫助您輕鬆         |             |          |    &#10003;    | &#10003;  |          | &#10003;  |
-|        durandal        |             |          |                |           |          | &#10003;  |
-|         Ember          |             |          |                |           | &#10003; |           |
+|    &#8195;骨幹     |             | &#10003; |                |           |          |           |
+|         輕而易舉         |             |          |    &#10003;    | &#10003;  |          | &#10003;  |
+|        durandal 等架構        |             |          |                |           |          | &#10003;  |
+|         Ember.js          |             |          |                |           | &#10003; |           |
 |        Knockout        |  &#10003;   |          |                | &#10003;  |          | &#10003;  |

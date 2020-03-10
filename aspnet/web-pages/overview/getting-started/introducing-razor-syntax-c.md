@@ -9,11 +9,11 @@ ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
 ms.openlocfilehash: c2f420bb7c2f7d2e31654c20fb9ec7497a30a9f7
-ms.sourcegitcommit: 6f0e10e4ca61a1e5534b09c655fd35cdc6886c8a
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74564879"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78641572"
 ---
 # <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>使用 Razor 語法 ASP.NET Web 程式設計的簡介（C#）
 
@@ -221,7 +221,7 @@ Razor 語法為您提供 ASP.NET 的所有威力，但使用簡化的語法，�
 <a id="BM_CombiningTextMarkupAndCode"></a>
 ### <a name="combining-text-markup-and-code-in-code-blocks"></a>結合程式碼區塊中的文字、標記和程式碼
 
-在 [伺服器程式碼區塊] 中，您通常會想要將文字或標記（或兩者）輸出至頁面。 如果伺服器程式碼區塊包含不是程式碼的文字，而應該改為轉譯，則 ASP.NET 必須能夠區別該文字與程式碼。 有幾個方式可做到這點。
+在 [伺服器程式碼區塊] 中，您通常會想要將文字或標記（或兩者）輸出至頁面。 如果伺服器程式碼區塊包含不是程式碼的文字，而應該改為轉譯，則 ASP.NET 必須能夠區別該文字與程式碼。 有數個方式可以執行此動作。
 
 - 將文字括在 HTML 元素中，例如 `<p></p>` 或 `<em></em>`：   
 
@@ -743,8 +743,8 @@ ASP.NET 中最基本的物件是頁面。 您可以直接存取頁面物件的�
 
 您可以使用 `Page` 物件的屬性來取得大量資訊，例如：
 
-- `Request`。 如您所見，這是目前要求的相關資訊集合，包括提出要求的瀏覽器類型、頁面的 URL、使用者身分識別等。
-- `Response`。 這是在伺服器程式碼完成執行時，將會傳送至瀏覽器的回應（頁面）相關資訊集合。 例如，您可以使用這個屬性將資訊寫入至回應。 
+- `Request` 如您所見，這是目前要求的相關資訊集合，包括提出要求的瀏覽器類型、頁面的 URL、使用者身分識別等。
+- `Response` 這是在伺服器程式碼完成執行時，將會傳送至瀏覽器的回應（頁面）相關資訊集合。 例如，您可以使用這個屬性將資訊寫入至回應。 
 
     [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample58.cshtml)]
 
@@ -810,7 +810,7 @@ Razor 語法提供兩個選項，讓您將參數傳遞給方法：*位置參數*
 
 ### <a name="try-catch-statements"></a>Try-catch 語句
 
-您的程式碼中通常會有語句，可能會因為控制項以外的原因而失敗。 例如：
+您的程式碼中通常會有語句，可能會因為控制項以外的原因而失敗。 例如:
 
 - 如果您的程式碼嘗試建立或存取檔案，可能會發生各種錯誤。 您想要的檔案可能不存在、可能被鎖定、程式碼可能沒有許可權等等。
 - 同樣地，如果您的程式碼嘗試更新資料庫中的記錄，可能會有許可權問題，可能會卸載與資料庫的連接、要儲存的資料可能無效等等。
@@ -836,7 +836,7 @@ Razor 語法提供兩個選項，讓您將參數傳遞給方法：*位置參數*
 
 [附錄： Visual Basic 語言和語法](https://go.microsoft.com/fwlink/?LinkId=202908)
 
-**參考檔**
+**參考文件**
 
 [ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
 

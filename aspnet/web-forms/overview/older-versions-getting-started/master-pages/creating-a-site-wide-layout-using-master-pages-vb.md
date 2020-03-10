@@ -9,11 +9,11 @@ ms.assetid: 30945276-8ed9-4b27-8e50-4309244d3559
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-vb
 msc.type: authoredcontent
 ms.openlocfilehash: c0ee6ed9d944b9a8ff2b2996e93706b8416de905
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74584055"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78639262"
 ---
 # <a name="creating-a-site-wide-layout-using-master-pages-vb"></a>使用主版頁面建立全網站的版面配置 (VB)
 
@@ -46,7 +46,7 @@ ms.locfileid: "74584055"
 
 這些教學課程的目的是要精簡，並提供逐步指示，讓您能以視覺化方式逐步完成整個流程。 每個教學課程都C#可在和 Visual Basic 版本中取得，並包含下載所使用的完整程式碼。
 
-本執筆教學課程一開始會介紹主版頁面的基本概念。 我們會討論主版頁面的使用方式、查看使用 Visual Web Developer 建立主版頁面和相關聯的內容頁面，以及查看主版頁面的變更會如何立即反映在其內容頁面中。 讓我們開始吧！
+本執筆教學課程一開始會介紹主版頁面的基本概念。 我們會討論主版頁面的使用方式、查看使用 Visual Web Developer 建立主版頁面和相關聯的內容頁面，以及查看主版頁面的變更會如何立即反映在其內容頁面中。 現在就開始吧！
 
 ## <a name="understanding-how-master-pages-work"></a>瞭解主版頁面的工作方式
 

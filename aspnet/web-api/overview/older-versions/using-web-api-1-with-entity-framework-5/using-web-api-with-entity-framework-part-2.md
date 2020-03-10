@@ -9,11 +9,11 @@ ms.assetid: fe3ef85f-bdc6-4e10-9768-25aa565c01d0
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2
 msc.type: authoredcontent
 ms.openlocfilehash: 7c5ed1bdb4b390c94907b14e208231f16ad42d96
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600364"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78621818"
 ---
 # <a name="part-2-creating-the-domain-models"></a>第2部分：建立領域模型
 
@@ -35,8 +35,8 @@ ms.locfileid: "74600364"
 
 我們將建立下列 Poco：
 
-- 產品
-- 使用
+- Products
+- 順序
 - OrderDetail
 
 若要建立每個類別，請以滑鼠右鍵按一下方案總管中的 [模型] 資料夾。 從內容功能表中，選取 [**新增**]，然後選取 [**類別]。**

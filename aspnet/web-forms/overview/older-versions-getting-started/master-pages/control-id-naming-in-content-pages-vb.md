@@ -9,11 +9,11 @@ ms.assetid: dbb024a6-f043-4fc5-ad66-56556711875b
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 3cb8dec47040bc65f1a024325c91590729ffbdb7
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74586637"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78639276"
 ---
 # <a name="control-id-naming-in-content-pages-vb"></a>內容頁中的控制項識別碼命名 (VB)
 

@@ -9,11 +9,11 @@ ms.assetid: 5776281d-4637-4d1e-a65b-2621d2cade44
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 8edaf1754eddd7b03f1c323d1bee13238582fc99
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74597051"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78588050"
 ---
 # <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>新增記錄時包含檔案上傳選項 (VB)
 
@@ -87,7 +87,7 @@ Wizard 的最後一個畫面會要求我們將新的 TableAdapter 方法命名�
 
 `Categories` GridView 使用的 `CategoriesDataSource` ObjectDataSource 目前不提供插入資料的能力。 為了支援透過這個資料來源控制項插入，我們必須將其 `Insert` 方法對應到其基礎物件中的方法，`CategoriesBLL`。 特別是，我們想要將它對應至我們在步驟 2 `InsertWithPicture`中新增的 `CategoriesBLL` 方法。
 
-從 [ObjectDataSource s] 智慧標籤按一下 [設定資料來源] 連結開始。 第一個畫面會顯示資料來源已設定為使用的物件，`CategoriesBLL`。 將此設定保持原狀，然後按 [下一步] 進入 [定義資料方法] 畫面。 移至 [插入] 索引標籤，然後從下拉式清單中挑選 `InsertWithPicture` 方法。 按一下 [完成] 以完成精靈。
+從 [ObjectDataSource s] 智慧標籤按一下 [設定資料來源] 連結開始。 第一個畫面會顯示資料來源已設定為使用的物件，`CategoriesBLL`。 將此設定保持原狀，然後按 [下一步] 進入 [定義資料方法] 畫面。 移至 [插入] 索引標籤，然後從下拉式清單中挑選 `InsertWithPicture` 方法。 按一下 [完成] 完成精靈。
 
 [![將 ObjectDataSource 設定為使用 InsertWithPicture 方法](including-a-file-upload-option-when-adding-a-new-record-vb/_static/image5.gif)](including-a-file-upload-option-when-adding-a-new-record-vb/_static/image9.png)
 

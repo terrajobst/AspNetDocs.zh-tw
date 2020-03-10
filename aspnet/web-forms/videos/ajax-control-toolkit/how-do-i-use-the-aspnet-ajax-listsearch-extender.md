@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-listsearch-extender
-title: '[How Do i:]使用 ASP.NET AJAX ListSearch 擴充項？ | Microsoft Docs'
+title: '[How Do I：]使用 ASP.NET AJAX ListSearch 擴充項？ | Microsoft Docs'
 author: JoeStagner
-description: 這段影片示範如何從 ASP.NET AJAX Control Toolkit ListSearch 擴充項控制項使用。 ListSearch 擴充項可增強 DropDownList 和 L...
+description: 這段影片示範如何使用 ASP.NET AJAX Control 工具組中的 ListSearch 擴充項控制項。 ListSearch 擴充項會增強 DropDownList 和 L 。
 ms.author: riande
 ms.date: 05/25/2007
 ms.assetid: 459490f0-79cb-4859-9fd2-885dae4d23fd
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-listsearch-extender
 msc.type: video
 ms.openlocfilehash: d4682d3fd960387a633ad39731f9cbc920a2df21
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59411588"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78628860"
 ---
-# <a name="how-do-i-use-the-aspnet-ajax-listsearch-extender"></a>[How Do i:]使用 ASP.NET AJAX ListSearch 擴充項？
+# <a name="how-do-i-use-the-aspnet-ajax-listsearch-extender"></a>[How Do I：]使用 ASP.NET AJAX ListSearch 擴充項？
 
-藉由[Joe Stagner](https://github.com/JoeStagner)
+依[Joe Stagner](https://github.com/JoeStagner)
 
-這段影片示範如何從 ASP.NET AJAX Control Toolkit ListSearch 擴充項控制項使用。 ListSearch 擴充項可增強 DropDownList 和 ListBox 控制項，以便使用者可以選取清單中的項目只要輸入其前幾個字元。 這項增強功能改善使用者體驗所提供的一長串清單中選取項目以直覺的方式。
+這段影片示範如何使用 ASP.NET AJAX Control 工具組中的 ListSearch 擴充項控制項。 ListSearch 擴充項會增強 DropDownList 和 ListBox 控制項，讓使用者只要輸入前幾個字元，就可以選取清單中的專案。 這項增強功能藉由提供從長清單中選取專案的直覺方式，來改善使用者體驗。
 
-[&#9654;觀看影片 （11 分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-listsearch-extender)
+[&#9654;觀看影片（11分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-listsearch-extender)
 
 > [!div class="step-by-step"]
 > [上一頁](how-do-i-use-the-aspnet-ajax-nobot-control.md)

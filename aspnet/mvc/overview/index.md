@@ -9,15 +9,15 @@ ms.assetid: 946574c5-b5cb-423b-a6e1-a2cfb506ecf9
 msc.legacyurl: /mvc/overview
 msc.type: book
 ms.openlocfilehash: 608eb755b00e1e5c9ff4323732ca39c629bc6e30
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59390021"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78582170"
 ---
-# <a name="aspnet-mvc-guidance"></a>ASP.NET MVC 的指引
+# <a name="aspnet-mvc-guidance"></a>ASP.NET MVC 指引
 
-- [快速入門](getting-started/index.md)
+- [使用者入門](getting-started/index.md)
 - [UI、版面配置和佈景主題](views/index.md)
 - [安全性、驗證與授權](security/index.md)
 - [部署](deployment/index.md)

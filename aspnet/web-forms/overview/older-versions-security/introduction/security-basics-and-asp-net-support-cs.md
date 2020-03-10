@@ -9,11 +9,11 @@ ms.assetid: 07e15538-2f29-40c6-b2e7-e6115075ac83
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 1ccaac101a83d0e28b07b220b8b7b61a9039227e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74642426"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78640249"
 ---
 # <a name="security-basics-and-aspnet-support-c"></a>安全性基本概念與 ASP.NET 支援 (C#)
 
@@ -40,7 +40,7 @@ ms.locfileid: "74642426"
 
 這些教學課程的目的是要精簡，並提供逐步指示，讓您能以視覺化方式逐步完成整個流程。 每個教學課程都C#可在和 Visual Basic 版本中取得，並包含下載所使用的完整程式碼。 （第一個教學課程著重于高階觀點的安全性概念，因此不包含任何相關的程式碼）。
 
-在本教學課程中，我們將討論重要的安全性概念，以及 ASP.NET 中可用來協助執行表單驗證、授權、使用者帳戶和角色的功能。 讓我們開始吧！
+在本教學課程中，我們將討論重要的安全性概念，以及 ASP.NET 中可用來協助執行表單驗證、授權、使用者帳戶和角色的功能。 現在就開始吧！
 
 > [!NOTE]
 > 安全性是任何應用程式的重要層面，其中涵蓋實體、技術和原則決策，而且需要高程度的規劃和領域知識。 本教學課程系列並非用於開發安全 web 應用程式的指南。 相反地，它特別著重于表單驗證、授權、使用者帳戶和角色。 雖然此系列中會討論一些關於這些問題的安全性概念，但有些是未探索。
@@ -183,4 +183,4 @@ ASP.NET 2.0 也引進了 Roles 架構。 如同成員資格架構，角色架構
 本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者是由許多有用的審核者所審查的教學課程系列。 本教學課程的領導審查者包括 Alicja Maziarz、John Suru 和 Teresa Murphy。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一步](an-overview-of-forms-authentication-cs.md)
+> [下一個](an-overview-of-forms-authentication-cs.md)

@@ -9,11 +9,11 @@ ms.assetid: 49d8a66c-3ea8-4087-839f-179d1d94512a
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 2b9cdb5af6f33171b191d5a80473c7796eb098d9
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74589194"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78608385"
 ---
 # <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-c"></a>處理 ASP.NET 頁面中 BLL 和 DAL 層級的例外狀況 (C#)
 
@@ -35,7 +35,7 @@ ms.locfileid: "74589194"
 
 我們已檢查步驟1中引發的事件，並瞭解如何使用它們來自訂輸入參數或取消作業。 在本教學課程中，我們會將注意力轉向在作業完成後引發的事件。 有了這些後續層級的事件處理常式之後，就可以判斷作業期間是否發生例外狀況，並正常處理它，在畫面上顯示易記的資訊性錯誤訊息，而不是預設為標準 ASP.NET例外狀況頁面。
 
-為了說明如何使用這些後續層級事件，讓我們建立一個頁面，其中列出可編輯的 GridView 中的產品。 更新產品時，如果引發例外狀況，我們的 ASP.NET 網頁會在 GridView 上方顯示簡短訊息，說明已發生問題。 讓我們開始吧！
+為了說明如何使用這些後續層級事件，讓我們建立一個頁面，其中列出可編輯的 GridView 中的產品。 更新產品時，如果引發例外狀況，我們的 ASP.NET 網頁會在 GridView 上方顯示簡短訊息，說明已發生問題。 現在就開始吧！
 
 ## <a name="step-1-creating-an-editable-gridview-of-products"></a>步驟1：建立可編輯產品的 GridView
 

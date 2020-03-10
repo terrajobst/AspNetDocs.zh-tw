@@ -9,11 +9,11 @@ ms.assetid: 82b8dea0-f062-4ee4-8784-3ffa30fbb1ca
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: 13cfe4492398b59f2c80394689cc113ccb218c60
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74634196"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78630918"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-command-line-deployment"></a>使用 Visual Studio：命令列部署來 ASP.NET Web 部署
 
@@ -119,7 +119,7 @@ Visual Studio 2010 的版本號碼為10.0。 如需詳細資訊，請參閱 Saye
 
     如您稍早在測試環境中所見，您可能必須建立一些學生，才能在 [**關於**] 頁面上查看統計資料。
 
-## <a name="deploy-to-production"></a>部署到生產環境
+## <a name="deploy-to-production"></a>部署至生產環境
 
 部署至生產環境的程式與預備的進程類似。
 

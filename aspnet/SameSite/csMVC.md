@@ -6,11 +6,11 @@ ms.author: riande
 ms.date: 2/15/2019
 uid: samesite/csMVC
 ms.openlocfilehash: dcbd0bee009669fb747d74e6ccef07fbae70a236
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77458452"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78544720"
 ---
 # <a name="samesite-cookie-sample-for-aspnet-472-c-mvc"></a>ASP.NET 4.7.2 C# MVC 的 SameSite cookie 範例
 
@@ -163,7 +163,7 @@ public static void AdjustSpecificCookieSettings()
 }
 ```
 
-### <a name="more-information"></a>相關資訊
+### <a name="more-information"></a>詳細資訊
  
 [Chrome 更新](https://www.chromium.org/updates/same-site)
 

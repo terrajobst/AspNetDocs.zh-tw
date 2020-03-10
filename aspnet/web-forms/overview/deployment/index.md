@@ -2,22 +2,22 @@
 uid: web-forms/overview/deployment/index
 title: 部署 |Microsoft Docs
 author: rick-anderson
-description: 如何將 ASP.NET Web Form 專案部署到伺服器。
+description: 如何將 ASP.NET Web Forms 專案部署至伺服器。
 ms.author: riande
 ms.date: 08/18/2011
 ms.assetid: 05e4c88f-5101-4277-a323-b6774d98f69e
 msc.legacyurl: /web-forms/overview/deployment
 msc.type: chapter
 ms.openlocfilehash: 1483abc212b5f122ad3e2b88474c42b208bb748e
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65134297"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78640606"
 ---
 # <a name="deployment"></a>部署
 
-> 如何將 ASP.NET Web Form 專案部署到伺服器。
+> 如何將 ASP.NET Web Forms 專案部署至伺服器。
 
 - [使用 Visual Studio 的 ASP.NET Web 部署](visual-studio-web-deployment/index.md)
 

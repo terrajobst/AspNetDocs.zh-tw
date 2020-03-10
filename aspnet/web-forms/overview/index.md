@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/index
-title: ASP.NET Web Form 指引 |Microsoft Docs
+title: ASP.NET Web Forms 指引 |Microsoft Docs
 author: rick-anderson
 description: ''
 ms.author: riande
@@ -9,15 +9,15 @@ ms.assetid: b3fb4480-0f41-495b-add6-163ca92dc8a3
 msc.legacyurl: /web-forms/overview
 msc.type: book
 ms.openlocfilehash: 4b38d6b54f53508f7b568207fe7f1a624a7af5f3
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402267"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78639444"
 ---
-# <a name="aspnet-web-forms-guidance"></a>ASP.NET Web Form 指引
+# <a name="aspnet-web-forms-guidance"></a>ASP.NET Web Forms 指引
 
-- [快速入門](getting-started/index.md)
+- [使用者入門](getting-started/index.md)
 
     - [ASP.NET 4.5 Web Form 與 Visual Studio 2013 使用者入門](getting-started/getting-started-with-aspnet-45-web-forms/index.md)
 
@@ -130,14 +130,14 @@ ms.locfileid: "59402267"
 
     - [ASP.NET 4 - Tailspin Spyworks](older-versions-getting-started/tailspin-spyworks/index.md)
 
-        - [第 1 部分：檔案]-> [新增專案](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1.md)
-        - [第 2 部分：資料存取層](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2.md)
-        - [第 3 部分：版面配置與分類 功能表](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3.md)
-        - [第 4 部分：列出產品](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4.md)
-        - [第 5 部分：商務邏輯](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5.md)
+        - [第 1 節：[檔案] -> [新增專案]](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1.md)
+        - [第 2 節：資料存取層](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2.md)
+        - [第 3 節：[版面配置與分類] 功能表](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3.md)
+        - [第 4 節：列出產品](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4.md)
+        - [第 5 節：商務邏輯](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5.md)
         - [第 6 節：ASP.NET 成員資格](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6.md)
         - [第 7 節：新增功能](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7.md)
-        - [第 8 節：最後的頁面、 例外狀況處理和結論](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8.md)
+        - [第 8 節：最後的頁面、例外狀況處理和結論](older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8.md)
     - [ASP.NET 4 - Entity Framework 4 和 Web Form 使用者入門](older-versions-getting-started/getting-started-with-ef/index.md)
 
         - [Entity Framework 4.0 Database First 使用者入門](older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md)
@@ -150,9 +150,9 @@ ms.locfileid: "59402267"
         - [Entity Framework 4.0 Database First 使用者入門 - 第 8 節](older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8.md)
     - [ASP.NET 4 - 繼續使用 Entity Framework 4 及 Web Form](older-versions-getting-started/continuing-with-ef/index.md)
 
-        - [Entity Framework 4.0 和 ObjectDataSource 控制項，第 1 部分：開始使用](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
-        - [Entity Framework 4.0 和 ObjectDataSource 控制項，第 2 部分：新增商務邏輯層和單元測試](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
-        - [Entity Framework 4.0 和 ObjectDataSource 控制項，第 3 部分：排序和篩選](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+        - [Entity Framework 4.0 和 ObjectDataSource 控制項，第 1 節：使用者入門](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
+        - [Entity Framework 4.0 和 ObjectDataSource 控制項，第 2 節：新增商務邏輯層和單元測試](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+        - [Entity Framework 4.0 和 ObjectDataSource 控制項，第 3 節：排序和篩選](older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
         - [在 ASP.NET 4 中使用 Entity Framework 4.0 處理並行](older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
         - [在 ASP.NET 4 中使用 Entity Framework 4.0 將效能最大化](older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
         - [Entity Framework 4.0 的新功能](older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4.md)
@@ -236,7 +236,7 @@ ms.locfileid: "59402267"
         - [生產環境網站的使用者和角色 (VB)](older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-vb.md)
 - [舊版 - Ajax Control Toolkit](ajax-control-toolkit/index.md)
 
-    - [快速入門](ajax-control-toolkit/getting-started/index.md)
+    - [使用者入門](ajax-control-toolkit/getting-started/index.md)
 
         - [開始使用 AJAX Control Toolkit (C#)](ajax-control-toolkit/getting-started/get-started-with-the-ajax-control-toolkit-cs.md)
         - [使用 AJAX Control Toolkit 控制項及控制項擴充項 (C#)](ajax-control-toolkit/getting-started/using-ajax-control-toolkit-controls-and-control-extenders-cs.md)

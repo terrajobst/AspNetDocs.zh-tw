@@ -9,11 +9,11 @@ ms.assetid: b45fede3-c53a-4ea1-824b-20200808dbae
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs
 msc.type: authoredcontent
 ms.openlocfilehash: da69e466a5b506b869dc8fc0624f3e6a479199a8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74624771"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78604332"
 ---
 # <a name="wrapping-database-modifications-within-a-transaction-c"></a>將資料庫修改包裝在交易中 (C#)
 
@@ -226,4 +226,4 @@ ms.locfileid: "74624771"
 本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Dave Gardner、Hilton Giesenow 和 Teresa Murphy。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一步](batch-updating-cs.md)
+> [下一個](batch-updating-cs.md)

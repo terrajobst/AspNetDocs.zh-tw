@@ -10,11 +10,11 @@ ms.assetid: 08834147-77ec-454a-bb7a-d931d2a40dab
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
 ms.openlocfilehash: 73a01ed47b0935a1a9734c197377470defb1fe36
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519384"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78583059"
 ---
 # <a name="tutorial-implement-inheritance-with-ef-in-an-aspnet-mvc-5-app"></a>教學課程：在 ASP.NET MVC 5 應用程式中使用 EF 執行繼承
 
@@ -22,7 +22,7 @@ ms.locfileid: "76519384"
 
 在物件導向程式設計中，您可以使用[繼承](http://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming))來加速程式[代碼重複使用](http://en.wikipedia.org/wiki/Code_reuse)。 在本教學課程中，您將變更 `Instructor` 和 `Student` 類別，讓它們衍生自 `Person` 基底類別，而此基底類別包含講師和學生通用的屬性，例如 `LastName`。 您不會新增或變更任何網頁，但是您將變更一些程式碼，這些變更將會自動反映在資料庫中。
 
-在本教學課程中，您將：
+在本教學課程中，您已：
 
 > [!div class="checklist"]
 > * 瞭解如何將繼承對應至資料庫
@@ -33,7 +33,7 @@ ms.locfileid: "76519384"
 > * 測試實作
 > * 部署到 Azure
 
-## <a name="prerequisites"></a>必要條件：
+## <a name="prerequisites"></a>Prerequisites
 
 * [處理並行](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
 
@@ -169,7 +169,7 @@ TPC 和 TPH 繼承模式通常會在 Entity Framework 中提供比 TPT 繼承模
 
 ## <a name="next-steps"></a>後續步驟
 
-在本教學課程中，您將：
+在本教學課程中，您已：
 
 > [!div class="checklist"]
 > * 瞭解如何將繼承對應至資料庫

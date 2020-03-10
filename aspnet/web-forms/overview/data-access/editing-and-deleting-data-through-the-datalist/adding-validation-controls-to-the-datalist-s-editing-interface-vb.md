@@ -9,11 +9,11 @@ ms.assetid: 6b073fc6-524d-453d-be7c-0c30986de391
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-vb
 msc.type: authoredcontent
 ms.openlocfilehash: f952a7bb95e956a2ad935f8bdef5c3efa7437ecb
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74621866"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78594518"
 ---
 # <a name="adding-validation-controls-to-the-datalists-editing-interface-vb"></a>將驗證控制項新增至 DataList 的編輯介面 (VB)
 
@@ -29,7 +29,7 @@ ms.locfileid: "74621866"
 
 在本教學課程中，我們將瞭解如何輕鬆地將驗證控制項新增至 DataList s `EditItemTemplate`，以便提供更可靠的編輯使用者介面。 具體來說，本教學課程會採用在上一個教學課程中建立的範例，並增強編輯介面以包含適當的驗證。
 
-## <a name="step-1-replicating-the-example-fromhandling-bll--and-dal-level-exceptionshandling-bll-and-dal-level-exceptions-vbmd"></a>步驟1：從[處理 BLL 和 DAL 層級的例外](handling-bll-and-dal-level-exceptions-vb.md)狀況複寫範例
+## <a name="step-1-replicating-the-example-fromhandling-bll--and-dal-level-exceptions"></a>步驟1：從[處理 BLL 和 DAL 層級的例外](handling-bll-and-dal-level-exceptions-vb.md)狀況複寫範例
 
 在[處理 BLL 和 DAL 層級的例外](handling-bll-and-dal-level-exceptions-vb.md)狀況教學課程中，我們建立了一個頁面，其中列出了兩個數據行、可編輯 DataList 中產品的名稱和價格。 本教學課程的目標是要增加 DataList 的編輯介面，以包含驗證控制項。 特別是，我們的驗證邏輯將會：
 

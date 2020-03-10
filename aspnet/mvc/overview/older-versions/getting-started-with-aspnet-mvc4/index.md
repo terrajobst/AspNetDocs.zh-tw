@@ -1,23 +1,23 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/index
-title: 開始使用 ASP.NET MVC 4 |Microsoft Docs
+title: ASP.NET MVC 4 的消費者入門 |Microsoft Docs
 author: rick-anderson
-description: 本系列教學課程將教導您建置使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，w 的 ASP.NET MVC Web 應用程式的基本概念...
+description: 本教學課程系列將教您使用 Microsoft Visual Web Developer 2010 Express Service Pack 1 建立 ASP.NET MVC Web 應用程式的基本概念。
 ms.author: riande
 ms.date: 02/15/2012
 ms.assetid: a35183ac-cbcb-4070-9233-6331cde921ad
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4
 msc.type: chapter
 ms.openlocfilehash: a73935f74d696bad9070c56b506d3aa2dbcceb25
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65129863"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78599649"
 ---
 # <a name="getting-started-with-aspnet-mvc-4"></a>ASP.NET MVC 4 使用者入門
 
-> 本系列教學課程將教導您建置使用 Microsoft Visual Web Developer 2010 Express Service Pack 1，也就是 Microsoft Visual Studio 的免費版本的 ASP.NET MVC Web 應用程式的基本概念。
+> 本教學課程系列將教您使用 Microsoft Visual Web Developer 2010 Express Service Pack 1 建立 ASP.NET MVC Web 應用程式的基本概念，這是 Microsoft Visual Studio 的免費版本。
 
 - [ASP.NET MVC 4 簡介](intro-to-aspnet-mvc-4.md)
 - [新增控制器](adding-a-controller.md)

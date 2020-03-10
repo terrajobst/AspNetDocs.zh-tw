@@ -1,6 +1,6 @@
 ---
 uid: aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana
-title: 開始使用 OWIN 和 Katana |Microsoft Docs
+title: 使用 OWIN 和 Katana 的消費者入門 |Microsoft Docs
 author: MikeWasson
 description: ''
 ms.author: riande
@@ -9,45 +9,45 @@ ms.assetid: 6dae249f-5ac6-4f6e-bc49-13bcd5a54a70
 msc.legacyurl: /aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana
 msc.type: authoredcontent
 ms.openlocfilehash: 4dfd7b8ebb2bb48d7ef800fd522b79a7b4a045c2
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65118334"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78584669"
 ---
 # <a name="getting-started-with-owin-and-katana"></a>開始使用 OWIN 與 Katana
 
-藉由[Mike Wasson](https://github.com/MikeWasson)
+由[Mike Wasson](https://github.com/MikeWasson)
 
-[Open Web Interface for.NET (OWIN)](http://owin.org/)定義.NET web 伺服器和 web 應用程式之間的抽象概念。 藉由將分離應用程式的 web 伺服器，OWIN 可讓您更輕鬆地建立.NET web 程式開發的中介軟體。 此外，OWIN 輕鬆連接至其他主機的 web 應用程式&#8212;，例如自我裝載在 Windows 服務或其他處理序。
+[Open Web Interface for .net （OWIN）](http://owin.org/)會定義 .net Web 服務器和 Web 應用程式之間的抽象概念。 藉由將網頁伺服器與應用程式分離，OWIN 可讓您更輕鬆地建立中介軟體以進行 .NET web 程式開發。 此外，OWIN 可讓您更輕鬆地將 web 應用程式&#8212;移植到其他主機，例如，在 Windows 服務或其他進程中自我裝載。
 
-OWIN 是社群所擁有的規格，而不實作。 Katana 專案是一份由 Microsoft 所開發的開放原始碼 OWIN 元件。 OWIN 和 Katana 的一般概觀，請參閱 <<c0> [ 概觀的 Katana 專案](an-overview-of-project-katana.md)。 在本文中，我會直接跳到程式碼，以開始。
+OWIN 是一種由社區所擁有的規格，而不是實作為。 Katana project 是一組由 Microsoft 開發的開放原始碼 OWIN 元件。 如需 OWIN 和 Katana 的一般總覽，請參閱[專案 Katana 的總覽](an-overview-of-project-katana.md)。 在本文中，我將直接前往程式碼以開始著手。
 
-本教學課程會使用[Visual Studio 2013 Release Candidate](https://go.microsoft.com/fwlink/?LinkId=306566)，但您也可以使用 Visual Studio 2012。 幾個步驟是不同的 Visual Studio 2012，我說明如下。
+本教學課程使用[Visual Studio 2013 候選版](https://go.microsoft.com/fwlink/?LinkId=306566)，但您也可以使用 Visual Studio 2012。 Visual Studio 2012 中有幾個步驟不同，我在下面說明。
 
-## <a name="host-owin-in-iis"></a>將 OWIN 裝載在 IIS
+## <a name="host-owin-in-iis"></a>IIS 中的主機 OWIN
 
-在本節中，我們將會裝載在 IIS 中的 OWIN。 此選項可讓您搭配 IIS 的成熟的功能集 OWIN 管線的編寫性與彈性。 OWIN 應用程式使用此選項，在 ASP.NET 要求管線中執行。
+在本節中，我們會在 IIS 中裝載 OWIN。 此選項可讓您彈性地複合性 OWIN 管線和 IIS 的成熟功能集。 使用此選項時，OWIN 應用程式會在 ASP.NET 要求管線中執行。
 
 首先，建立新的 ASP.NET Web 應用程式專案。 （在 Visual Studio 2012 中，使用 ASP.NET 空白 Web 應用程式專案類型）。
 
 ![](getting-started-with-owin-and-katana/_static/image1.png)
 
-在 **新的 ASP.NET 專案**對話方塊中，選取**空白**範本。
+在 [**新增 ASP.NET 專案**] 對話方塊中，選取 [**空白**] 範本。
 
 ![](getting-started-with-owin-and-katana/_static/image2.png)
 
-### <a name="add-nuget-packages"></a>新增 NuGet 封裝
+### <a name="add-nuget-packages"></a>新增 NuGet 套件
 
-接下來，新增必要的 NuGet 套件。 從**工具**功能表上，選取**NuGet 套件管理員**，然後選取**Package Manager Console**。 在 [套件管理員主控台] 視窗中，輸入下列命令：
+接下來，新增所需的 NuGet 套件。 從 [**工具**] 功能表中，選取 [ **NuGet 套件管理員**]，然後選取 [**套件管理員主控台**]。 在 [套件管理員主控台] 視窗中，輸入下列命令：
 
 `install-package Microsoft.Owin.Host.SystemWeb –Pre`
 
 ![](getting-started-with-owin-and-katana/_static/image3.png)
 
-### <a name="add-a-startup-class"></a>加入 Startup 類別
+### <a name="add-a-startup-class"></a>新增啟動類別
 
-接下來，新增 OWIN 啟動類別。 在 [方案總管] 中，以滑鼠右鍵按一下專案，然後選取**新增**，然後選取**新項目**。 在 **加入新項目**對話方塊中，選取**Owin 啟動類別**。 如需設定啟動類別的詳細資訊，請參閱[OWIN 啟動類別偵測](owin-startup-class-detection.md)。
+接下來，新增 OWIN startup 類別。 在方案總管中，以滑鼠右鍵按一下專案並選取 [**加入**]，然後選取 [**新增專案**]。 在 [**加入新專案**] 對話方塊中，選取 [ **Owin 啟始類別**]。 如需設定 startup 類別的詳細資訊，請參閱[OWIN 啟動類別偵測](owin-startup-class-detection.md)。
 
 ![](getting-started-with-owin-and-katana/_static/image4.png)
 
@@ -55,50 +55,50 @@ OWIN 是社群所擁有的規格，而不實作。 Katana 專案是一份由 Mic
 
 [!code-csharp[Main](getting-started-with-owin-and-katana/samples/sample1.cs?highlight=3)]
 
-此程式碼會將簡單的一種中介軟體新增至 OWIN 管線中，實作為函式來接收**Microsoft.Owin.IOwinContext**執行個體。 當伺服器收到 HTTP 要求時，OWIN 管線叫用中介軟體。 中介軟體會設定回應的內容類型，並寫入回應主體。
+這段程式碼會將簡單的中介軟體新增至 OWIN 管線，並實作為接收**IOwinCoNtext**實例的函式。 當伺服器收到 HTTP 要求時，OWIN 管線會叫用中介軟體。 中介軟體會設定回應的內容類型，並寫入回應主體。
 
 > [!NOTE]
-> Visual Studio 2013 中使用 [OWIN 啟動類別] 範本。 如果您使用 Visual Studio 2012，只是加入新的空類別，名為`Startup1`，並貼上下列程式碼：
+> Visual Studio 2013 中提供 OWIN Startup 類別範本。 如果您使用 Visual Studio 2012，只要加入名為 `Startup1`的新空白類別，然後貼上下列程式碼：
 
 [!code-csharp[Main](getting-started-with-owin-and-katana/samples/sample2.cs)]
 
 ### <a name="run-the-application"></a>執行應用程式
 
-按 F5 開始偵錯。 Visual Studio 會開啟瀏覽器視窗，以`http://localhost:*port*/`。 網頁看起來應該如下所示：
+按 F5 開始偵錯。 Visual Studio 將會開啟瀏覽器視窗來 `http://localhost:*port*/`。 此頁面看起來應該如下所示：
 
 ![](getting-started-with-owin-and-katana/_static/image5.png)
 
-## <a name="self-host-owin-in-a-console-application"></a>將 OWIN 自我裝載的主控台應用程式
+## <a name="self-host-owin-in-a-console-application"></a>主控台應用程式中的自我裝載 OWIN
 
-它很容易從自我裝載的自訂處理序中的 IIS 裝載轉換此應用程式。 使用 IIS 裝載，IIS 會做為 HTTP 伺服器，以及裝載服務的處理序。 與自我裝載，您的應用程式建立程序，並使用**HttpListener**與 HTTP 伺服器的類別。
+在自訂進程中，將此應用程式從 IIS 裝載轉換為自我裝載是很容易的。 使用 IIS 裝載時，IIS 會同時做為 HTTP 伺服器和裝載服務的進程。 使用自我裝載時，您的應用程式會建立進程，並使用**HttpListener**類別做為 HTTP 伺服器。
 
-在 Visual Studio 中建立新的主控台應用程式。 在 [套件管理員主控台] 視窗中，輸入下列命令：
+在 Visual Studio 中，建立新的主控台應用程式。 在 [套件管理員主控台] 視窗中，輸入下列命令：
 
 `Install-Package Microsoft.Owin.SelfHost -Pre`
 
-新增`Startup1`本教學課程的第 1 部分的類別加入專案。 您不需要修改此類別。
+將本教學課程的第1部分中的 `Startup1` 類別加入至專案。 您不需要修改這個類別。
 
-實作應用程式的`Main`方法，如下所示。
+依照下列方式，執行應用程式的 `Main` 方法。
 
 [!code-csharp[Main](getting-started-with-owin-and-katana/samples/sample3.cs)]
 
-當您執行主控台應用程式時，便會開始在伺服器接聽`http://localhost:9000`。 如果您導覽到此位址在網頁瀏覽器中，您會看到"Hello world"頁面。
+當您執行主控台應用程式時，伺服器會開始接聽 `http://localhost:9000`。 如果您在網頁瀏覽器中流覽至此位址，您會看到 [Hello world] 頁面。
 
 ![](getting-started-with-owin-and-katana/_static/image6.png)
 
 ## <a name="add-owin-diagnostics"></a>新增 OWIN 診斷
 
-Microsoft.Owin.Diagnostics 封裝包含中介軟體會攔截未處理例外狀況，並會顯示具有錯誤詳細資料的 HTML 網頁。 此頁面函式十分類似 ASP.NET 錯誤頁面，有時也稱為 「[黃色死亡畫面](http://en.wikipedia.org/wiki/Yellow_Screen_of_Death#Yellow)」 (YSOD)。 如同 YSOD，Katana 錯誤頁面適合用在開發期間，但建議在生產模式中停用它。
+Owin 診斷套件包含的中介軟體會攔截未處理的例外狀況，並顯示包含錯誤詳細資料的 HTML 頁面。 此頁面的運作方式非常類似 ASP.NET 錯誤頁面，有時稱為「[黃色的死亡螢幕](http://en.wikipedia.org/wiki/Yellow_Screen_of_Death#Yellow)」（YSOD）。 就像 YSOD，Katana 錯誤頁面在開發期間很有用，但在生產模式中將它停用是很好的作法。
 
-若要安裝在您的專案中的診斷套件，請在 [套件管理員主控台] 視窗中輸入下列命令：
+若要在您的專案中安裝診斷套件，請在 [套件管理員主控台] 視窗中輸入下列命令：
 
 `install-package Microsoft.Owin.Diagnostics –Pre`
 
-變更程式碼中的您`Startup1.Configuration`方法，如下所示：
+變更 `Startup1.Configuration` 方法中的程式碼，如下所示：
 
 [!code-csharp[Main](getting-started-with-owin-and-katana/samples/sample4.cs?highlight=4,9-12)]
 
-現在使用 CTRL + F5 執行應用程式，但不偵錯，讓 Visual Studio 不會在例外狀況中斷。 應用程式的行為相同，直到您瀏覽至`http://localhost/fail`，此時應用程式擲回例外狀況。 錯誤頁面中介軟體將會攔截例外狀況，並顯示具有錯誤的相關資訊的 HTML 網頁。 您可以按一下索引標籤來查看堆疊、 查詢字串、 cookie、 要求標頭和 OWIN 環境變數。
+現在使用 CTRL + F5 來執行應用程式，而不進行任何偵測，因此 Visual Studio 不會在例外狀況時中斷。 應用程式的行為與之前相同，除非您流覽至 `http://localhost/fail`，此時應用程式會擲回例外狀況。 錯誤頁面中介軟體會攔截例外狀況，並顯示 HTML 頁面，其中包含錯誤的相關資訊。 您可以按一下索引標籤，以查看堆疊、查詢字串、cookie、要求標頭和 OWIN 環境變數。
 
 ![](getting-started-with-owin-and-katana/_static/image7.png)
 

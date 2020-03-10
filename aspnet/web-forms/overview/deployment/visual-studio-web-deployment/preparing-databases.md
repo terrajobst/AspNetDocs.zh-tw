@@ -9,11 +9,11 @@ ms.assetid: ae4def81-fa37-4883-a13e-d9896cbf6c36
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
 ms.openlocfilehash: cdcb3578725c41e3c801afd54e6d34455bc4b281
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74618540"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78636994"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>使用 Visual Studio ASP.NET Web 部署：準備進行資料庫部署
 
@@ -185,7 +185,7 @@ Contoso 大學應用程式會使用 ASP.NET 成員資格系統和表單驗證來
 4. 在 [**產生和發佈腳本**] 對話方塊中，按一下 [**設定腳本編寫選項**]。
 
     您可以略過 [**選擇物件**] 步驟，因為預設值是 [**編寫整個資料庫的腳本] 和 [所有資料庫物件**]，以及您想要的內容。
-5. 按一下 [ **進階**]。
+5. 按一下 **[進階]** 。
 
     ![SSMS 腳本選項](preparing-databases/_static/image12.png)
 6. 在 [ **Advanced 腳本選項**] 對話方塊中，向下流覽至 [**要編寫腳本的資料類型**]，然後按一下下拉式清單中的 [**僅限資料**] 選項。
@@ -197,7 +197,7 @@ Contoso 大學應用程式會使用 ASP.NET 成員資格系統和表單驗證來
 10. 按 **[下一步**] 移至 [**摘要**] 索引標籤，然後再按 **[下一步]** 以建立腳本。
 
     ![已建立 SSMS 腳本](preparing-databases/_static/image14.png)
-11. 按一下 [ **完成**]。
+11. 按一下 [完成] **Walkthrough: Calling Code in an VSTO Add-in from VBA**。
 
 ### <a name="create-the-production-database-script"></a>建立生產環境資料庫腳本
 
@@ -220,7 +220,7 @@ Contoso 大學應用程式會使用 ASP.NET 成員資格系統和表單驗證來
 
 在下列教學課程中，您會設定會影響部署的專案設定，而且您會針對在部署的應用程式中必須不同的設定，設定自動的*web.config*檔案轉換。
 
-## <a name="more-information"></a>更多資訊
+## <a name="more-information"></a>詳細資訊
 
 如需 NuGet 的詳細資訊，請參閱[使用 nuget 和 Nuget 管理專案程式庫](https://msdn.microsoft.com/magazine/hh547106.aspx)[檔](http://docs.nuget.org/docs/start-here/overview)。 如果您不想要使用 NuGet，您必須瞭解如何分析 NuGet 套件，以判斷它在安裝時的功能。 （例如，它可能會設定*web.config 轉換、設定 PowerShell*腳本在組建階段執行等等）。若要深入瞭解 NuGet 的運作方式，請參閱[建立和發行封裝](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package)和[設定檔案和原始程式碼轉換](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations)。
 

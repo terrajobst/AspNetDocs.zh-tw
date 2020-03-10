@@ -9,11 +9,11 @@ ms.assetid: 5e2bb092-cb22-4511-ad0a-22ae12dd99b3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: 0894c0ac24737e66b6960ef3d48aa17f78c6aa1d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74621059"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78528123"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-sql-server-database-update---11-of-12"></a>使用 Visual Studio 或 Visual Web Developer 的 SQL Server Compact 部署 ASP.NET Web 應用程式：部署 SQL Server 資料庫更新-11/12
 
@@ -119,7 +119,7 @@ Visual Studio 會將程式碼變更部署至測試環境，並將瀏覽器開啟
 
 如果您使用的是暫存 URL，請在 [**連接**] 索引標籤上，將 [**目的地 URL** ] 變更為適當的值。
 
-按 [ **下一步**]。
+按 [下一步]。
 
 在 [**設定**] 索引標籤上，按一下 [**啟用新的資料庫發行增強功能**]。
 
@@ -147,11 +147,11 @@ Code First 移轉以在測試環境中的相同方式更新資料庫。 您會�
 
 您現在已成功部署包含資料庫變更的應用程式更新，並使用 SQL Server 資料庫。
 
-## <a name="more-information"></a>更多資訊
+## <a name="more-information"></a>詳細資訊
 
 這會完成這一系列的教學課程，將 ASP.NET web 應用程式部署到協力廠商裝載提供者。 如需這些教學課程中所涵蓋之任何主題的詳細資訊，請參閱 MSDN 網站上的[ASP.NET 部署內容對應](https://msdn.microsoft.com/library/bb386521(v=vs.110).aspx)。
 
-## <a name="acknowledgements"></a>致謝
+## <a name="acknowledgements"></a>通知
 
 我想感謝下列人對本教學課程系列的內容做出重大貢獻：
 

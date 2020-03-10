@@ -8,12 +8,12 @@ ms.date: 06/10/2013
 ms.assetid: 9afe7454-f1bd-4e81-8ecf-12fe54d080c1
 msc.legacyurl: /mvc/overview/getting-started/introduction
 msc.type: chapter
-ms.openlocfilehash: 055142be60257f0917eb22bc08471c0bec54ca2e
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.openlocfilehash: ca751a5b0eb43b9fa2ad26493b4a627bb964332f
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76518737"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78582513"
 ---
 # <a name="getting-started-with-aspnet-mvc-5"></a>開始使用 ASP.NET MVC 5
 
@@ -21,7 +21,7 @@ ms.locfileid: "76518737"
 
 [!INCLUDE [consider RP](../../../../includes/razor.md)]
 
-下列教學課程系列涵蓋位於[GitHub](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie)上的 ASP.NET MVC： Source
+下列教學課程系列涵蓋位於[GitHub](https://github.com/dotnet/AspNetDocs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie)上的 ASP.NET MVC： Source
 
 - [使用者入門](getting-started.md)
 - [新增控制器](adding-a-controller.md)

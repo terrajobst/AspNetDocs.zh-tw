@@ -1,43 +1,43 @@
 ---
 uid: signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
-title: 教學課程：開始使用 SignalR 1.x 及 MVC 4 |Microsoft Docs
+title: 教學課程：使用 SignalR 1.x 和 MVC 4 的消費者入門 |Microsoft Docs
 author: bradygaster
-description: 使用 ASP.NET SignalR 及 ASP.NET MVC 4 建置即時聊天應用程式。
+description: 使用 ASP.NET SignalR 和 ASP.NET MVC 4 來建立即時聊天應用程式。
 ms.author: bradyg
 ms.date: 03/29/2013
 ms.assetid: eeef9f73-6de3-49f9-b50b-9af22108f2ce
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
 ms.openlocfilehash: 9186915df6d5de6bc20dfc0adabc54056d2f3a8c
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113860"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78579566"
 ---
-# <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>教學課程：開始使用 SignalR 1.x 與 MVC 4
+# <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>教學課程：使用 SignalR 1.x 和 MVC 4 消費者入門
 
-藉由[Patrick Fletcher](https://github.com/pfletcher)， [Tim Teebken](https://github.com/timlt)
+[Fletcher](https://github.com/pfletcher)的[Tim Teebken](https://github.com/timlt)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-> 本教學課程會示範如何使用 ASP.NET SignalR 建立即時聊天應用程式。 您會將 SignalR 加入至 MVC 4 應用程式，並建立交談檢視，以傳送和顯示訊息。
+> 本教學課程說明如何使用 ASP.NET SignalR 來建立即時聊天應用程式。 您會將 SignalR 新增至 MVC 4 應用程式，並建立聊天視圖來傳送和顯示訊息。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-本教學課程會向您介紹使用 ASP.NET SignalR 及 ASP.NET MVC 4 的即時 web 應用程式開發。 本教學課程會使用相同的交談應用程式程式碼做為[SignalR 開始使用教學課程](tutorial-getting-started-with-signalr.md)，但會顯示如何將它新增至以網際網路範本為基礎的 MVC 4 應用程式。
+本教學課程將為您介紹如何使用 ASP.NET SignalR 和 ASP.NET MVC 4 進行即時 web 應用程式開發。 本教學課程使用與[SignalR 消費者入門教學](tutorial-getting-started-with-signalr.md)課程相同的聊天應用程式代碼，但會示範如何將它新增至以網際網路範本為基礎的 MVC 4 應用程式。
 
-在本主題中，您將學習下列 SignalR 開發工作：
+在本主題中，您將瞭解下列 SignalR 開發工作：
 
 - 將 SignalR 程式庫新增至 MVC 4 應用程式。
 - 建立中樞類別以將內容推送至用戶端。
-- 使用 SignalR jQuery 程式庫在網頁上傳送訊息，並顯示從中樞的更新。
+- 使用網頁中的 SignalR jQuery 程式庫來傳送訊息，並從中樞顯示更新。
 
-下列螢幕擷取畫面顯示在瀏覽器中執行之已完成的交談應用程式。
+下列螢幕擷取畫面顯示在瀏覽器中執行的已完成聊天應用程式。
 
-![交談執行個體](tutorial-getting-started-with-signalr-and-mvc-4/_static/image2.png)
+![聊天實例](tutorial-getting-started-with-signalr-and-mvc-4/_static/image2.png)
 
-章節：
+各節
 
 - [設定專案](#setup)
 - [執行範例](#run)
@@ -50,49 +50,49 @@ ms.locfileid: "65113860"
 
 必要條件：
 
-- Visual Studio 2010 SP1、 Visual Studio 2012 或 Visual Studio 2012 Express。 如果您沒有 Visual Studio，請參閱[ASP.NET 下載](https://www.asp.net/downloads)取得免費 Visual Studio 2012 Express 開發工具。
-- 針對 Visual Studio 2010 中，安裝[ASP.NET MVC 4](https://www.microsoft.com/download/details.aspx?id=30683)。
+- Visual Studio 2010 SP1、Visual Studio 2012 或 Visual Studio 2012 Express。 如果您沒有 Visual Studio，請參閱[ASP.NET 下載](https://www.asp.net/downloads)以取得免費的 Visual Studio 2012 Express 開發工具。
+- 針對 Visual Studio 2010，請安裝[ASP.NET MVC 4](https://www.microsoft.com/download/details.aspx?id=30683)。
 
-本節說明如何建立 ASP.NET MVC 4 應用程式、 新增 SignalR 程式庫和建立交談應用程式。
+本節說明如何建立 ASP.NET MVC 4 應用程式、新增 SignalR 程式庫，以及建立聊天應用程式。
 
-1. 1. 在 Visual Studio 建立 ASP.NET MVC 4 應用程式、 SignalRChat，將它命名，然後按一下 [確定]。
+1. 1. 在 Visual Studio 建立 ASP.NET MVC 4 應用程式，將其命名為 SignalRChat，然後按一下 [確定]。
 
         > [!NOTE]
-        > 在 VS 2010 中，選取 **.NET Framework 4** Framework 版本下拉式清單控制項中。 SignalR 的程式碼會執行在.NET Framework 4 和 4.5 版。
+        > 在 VS 2010 中，選取 [Framework 版本] 下拉式控制項中的 [ **.NET Framework 4** ]。 SignalR 程式碼會在 .NET Framework 版本4和4.5 上執行。
 
         ![建立 mvc web](tutorial-getting-started-with-signalr-and-mvc-4/_static/image3.png)
-      2. 選取 [網際網路應用程式] 範本，請清除的選項**建立單元測試專案**，按一下 [確定]。
+      2. 選取 [網際網路應用程式] 範本，清除 [**建立單元測試專案**] 選項，然後按一下 [確定]。
 
          ![建立 mvc 網際網路網站](tutorial-getting-started-with-signalr-and-mvc-4/_static/image4.png)
-      3. 開啟**工具 > NuGet 套件管理員 > Package Manager Console**並執行下列命令。 此步驟可將一組指令碼檔案和啟用 SignalR 功能的組件參考加入至專案。
+      3. 開啟 [**工具] > NuGet 套件管理員 > [套件管理員主控台**]，然後執行下列命令。 此步驟會將一組腳本檔案和元件參考加入至專案，以啟用 SignalR 功能。
 
          `install-package Microsoft.AspNet.SignalR -Version 1.1.3`
-      4. 在 **方案總管 中**展開指令碼 資料夾。 請注意 SignalR 的指令碼程式庫已加入至專案。
+      4. 在**方案總管**展開 [腳本] 資料夾。 請注意，SignalR 的腳本程式庫已加入至專案。
 
          ![程式庫參考](tutorial-getting-started-with-signalr-and-mvc-4/_static/image6.png)
-      5. 在 **方案總管**，以滑鼠右鍵按一下專案，然後選取**新增 |新的資料夾**，並新增名為的新資料夾**中樞**。
-      6. 以滑鼠右鍵按一下**集線器**資料夾中，按一下 **新增 |類別**，並建立新 C# 類別名為**ChatHub.cs**。 您將使用這個類別做為 SignalR 伺服器中樞將訊息傳送至所有用戶端。
+      5. 在**方案總管**中，以滑鼠右鍵按一下專案，然後選取 [**新增] |新增資料夾**，然後新增名為**hub**的新資料夾。
+      6. 以滑鼠右鍵按一下 [**中樞**] 資料夾，然後按一下 [**新增] |類別**，並建立名為C# **ChatHub.cs**的新類別。 您將使用此類別做為 SignalR 伺服器中樞，以將訊息傳送至所有用戶端。
 
 > [!NOTE]
-> 如果您使用 Visual Studio 2012，並且已安裝[ASP.NET 和 Web 工具 2012.2 更新](../../../visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw.md#_Installation)，您可以使用新的 SignalR 項目範本建立中樞類別。 若要這樣做，請以滑鼠右鍵按一下**集線器**資料夾中，按一下 **新增 |新的項目**，選取**SignalR Hub 類別 (v1)**，並加以命名**ChatHub.cs**。
+> 如果您使用 Visual Studio 2012，並已安裝[ASP.NET 和 Web 工具2012.2 更新](../../../visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw.md#_Installation)，您可以使用 [新增 SignalR 專案] 範本來建立中樞類別。 若要這麼做，請以滑鼠右鍵按一下 **中樞** 資料夾，然後按一下 **新增 |新增專案**，選取  **SignalR Hub Class （v1）** ，並將類別命名為**ChatHub.cs**。
 
-1. 中的程式碼取代**ChatHub**為下列程式碼的類別。
+1. 將**ChatHub**類別中的程式碼取代為下列程式碼。
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc-4/samples/sample1.cs)]
-2. 開啟**Global.asax**專案的檔案，並新增至方法的呼叫`RouteTable.Routes.MapHubs();`中的程式碼的第一行`Application_Start`方法。 此程式碼會註冊 SignalR 中樞的預設路由，並註冊任何其他路由之前，必須呼叫。 已完成`Application_Start`方法如以下範例所示。
+2. 開啟專案的**global.asax**檔案，並將呼叫新增至方法 `RouteTable.Routes.MapHubs();` 做為 `Application_Start` 方法中的第一行程式碼。 此程式碼會註冊 SignalR 中樞的預設路由，而且必須在註冊任何其他路由之前呼叫。 完成的 `Application_Start` 方法如下列範例所示。
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc-4/samples/sample2.cs)]
-3. 編輯`HomeController`類別中找到**controllers/Homecontroller.cs**並將下列方法新增至類別。 這個方法會傳回**聊天**您將在稍後的步驟建立的檢視。
+3. 編輯在 controller **/HomeController**中找到的 `HomeController` 類別，並將下列方法新增至類別。 這個方法會傳回您將在稍後步驟中建立的**聊天**視圖。
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc-4/samples/sample3.cs)]
-4. 以滑鼠右鍵按一下`Chat`方法剛剛建立，並按一下 **加入檢視**以建立新的檢視檔案。
-5. 在**加入檢視** 對話方塊中，請確定已選取核取方塊**使用版面配置頁或主版頁面**（清除其他核取方塊），然後按一下**新增**。
+4. 以滑鼠右鍵按一下您剛才建立的 `Chat` 方法，然後按一下 [**新增視圖**] 以建立新的視圖檔案。
+5. 在 [**加入視圖**] 對話方塊中，確定已選取核取方塊以**使用版面配置或主版頁面**（清除其他核取方塊），然後按一下 [**新增**]。
 
     ![新增檢視](tutorial-getting-started-with-signalr-and-mvc-4/_static/image8.png)
-6. 編輯新的檢視檔案命名為**Chat.cshtml**。 在後&lt;h2&gt;標記中，貼上下列&lt;div&gt;一節和`@section scripts`到頁面的程式碼區塊。 此指令碼可讓頁面，即可將交談訊息傳送，並顯示從伺服器的訊息。 [聊天室] 檢視的完整程式碼會出現在下列程式碼區塊。
+6. 編輯名為**Chat**的新視圖檔案。 在 &lt;h2&gt; 標記之後，將下列 &lt;div&gt; 區段和 `@section scripts` 程式碼區塊貼到頁面中。 此腳本可讓頁面傳送聊天訊息，並顯示來自伺服器的訊息。 聊天視圖的完整程式碼會出現在下列程式碼區塊中。
 
     > [!IMPORTANT]
-    > 當您將 SignalR 和其他指令碼程式庫加入您的 Visual Studio 專案時，套件管理員可能會安裝比本主題中顯示的版本還新的指令碼的版本。 請確定您的程式碼中的指令碼參考符合安裝在您專案的指令碼程式庫的版本。
+    > 當您將 SignalR 和其他腳本程式庫加入 Visual Studio 專案時，封裝管理員可能會安裝比本主題中所示版本還新的腳本版本。 請確定程式碼中的腳本參考，符合您的專案中所安裝的腳本程式庫版本。
 
     [!code-cshtml[Main](tutorial-getting-started-with-signalr-and-mvc-4/samples/sample4.cshtml)]
 7. **全部儲存**專案。
@@ -101,62 +101,62 @@ ms.locfileid: "65113860"
 
 ## <a name="run-the-sample"></a>執行範例
 
-1. 按 F5 以偵錯模式中執行專案。
-2. 在瀏覽器網址列中，附加 **/home/聊天**專案的預設頁面的 url。 聊天室頁面載入瀏覽器執行個體，並提示輸入使用者名稱。
+1. 按 F5 以在 [調試] 模式中執行專案。
+2. 在瀏覽器位址行中，將 **/home/chat**附加至專案的預設頁面 URL。 聊天頁面會在瀏覽器實例中載入，並提示您輸入使用者名稱。
 
     ![輸入使用者名稱](tutorial-getting-started-with-signalr-and-mvc-4/_static/image9.png)
-3. 輸入使用者名稱。
-4. 從瀏覽器的網址列複製 URL，並使用它來開啟兩個更多的瀏覽器執行個體。 在每個瀏覽器執行個體中，輸入唯一的使用者名稱。
-5. 在每個瀏覽器執行個體中，新增註解，然後按一下**傳送**。 註解應該會顯示在瀏覽器的所有執行個體。
+3. 輸入使用者稱。
+4. 從瀏覽器的位址行複製 URL，並用它來開啟兩個以上的瀏覽器實例。 在每個瀏覽器實例中，輸入唯一的使用者名稱。
+5. 在每個瀏覽器實例中新增批註，然後按一下 [**傳送**]。 批註應該會顯示在所有瀏覽器實例中。
 
     > [!NOTE]
-    > 這個簡單的聊天應用程式不會維護伺服器上的討論內容。 中樞會廣播到所有目前使用者的註解。 稍後加入聊天室使用者會看到訊息的時間加入它們加入。
+    > 這個簡單的聊天應用程式不會維護伺服器上的討論內容。 中樞會將批註廣播給所有目前的使用者。 稍後加入交談的使用者會看到從他們加入的時間新增的訊息。
 6. 下列螢幕擷取畫面顯示在瀏覽器中執行的聊天應用程式。
 
-    ![對談的瀏覽器](tutorial-getting-started-with-signalr-and-mvc-4/_static/image11.png)
-7. 在 **方案總管**，檢查**指令碼文件**節點執行的應用程式。 如果您使用 Internet Explorer 作為您的瀏覽器，此節點會顯示在 偵錯模式。 沒有名為的指令碼檔案**中樞**SignalR 程式庫以動態方式產生在執行階段。 此檔案會管理 jQuery 指令碼和伺服器端程式碼之間的通訊。 如果您使用非 Internet Explorer 的瀏覽器，您也可以存取動態**集線器**瀏覽至它直接，例如檔案 http://mywebsite/signalr/hubs。
+    ![聊天瀏覽器](tutorial-getting-started-with-signalr-and-mvc-4/_static/image11.png)
+7. 在**方案總管**中，檢查執行中應用程式的 [**指令檔**] 節點。 如果您使用 Internet Explorer 作為瀏覽器，此節點會顯示在 [偵錯工具] 模式中。 有一個名為**hub**的腳本檔案，SignalR 程式庫會在執行時間動態產生此檔案。 這個檔案會管理 jQuery 腳本與伺服器端程式碼之間的通訊。 如果您使用 Internet Explorer 以外的瀏覽器，您也可以直接流覽至動態**中樞**檔案（例如 http://mywebsite/signalr/hubs）來存取該檔案。
 
-    ![產生的中樞指令碼](tutorial-getting-started-with-signalr-and-mvc-4/_static/image13.png)
+    ![產生的中樞腳本](tutorial-getting-started-with-signalr-and-mvc-4/_static/image13.png)
 
 <a id="code"></a>
 
 ## <a name="examine-the-code"></a>檢查程式碼
 
-SignalR 交談應用程式將示範兩個基本的 SignalR 開發工作： 建立中樞做為主要協調物件在伺服器上，並使用 SignalR jQuery 程式庫來傳送和接收訊息。
+SignalR chat 應用程式會示範兩個基本的 SignalR 開發工作：建立中樞做為伺服器上的主要協調物件，以及使用 SignalR jQuery 程式庫來傳送和接收訊息。
 
 ### <a name="signalr-hubs"></a>SignalR 中樞
 
-在程式碼範例**ChatHub**類別衍生自**Microsoft.AspNet.SignalR.Hub**類別。 衍生自**中樞**類別是實用的方式，來建置 SignalR 應用程式。 您可以建立中樞類別上的公用方法，並在網頁上的 jQuery 指令碼的方式呼叫它們，以存取這些方法。
+在程式碼範例中， **ChatHub**類別衍生自**SignalR**類別。 從**中樞**類別衍生的是建立 SignalR 應用程式的實用方式。 您可以在中樞類別上建立公用方法，然後從網頁中的 jQuery 腳本呼叫這些方法來存取這些方法。
 
-在對談程式碼中，用戶端呼叫**ChatHub.Send**方法以傳送新訊息。 中樞接著將訊息傳送至所有用戶端藉由呼叫**Clients.All.addNewMessageToPage**。
+在聊天程式碼中，用戶端會呼叫**ChatHub** ，以傳送新的訊息。 接著，中樞會藉由呼叫**addNewMessageToPage**，將訊息傳送至所有用戶端。
 
-**傳送**方法將示範數個中樞概念：
+**Send**方法會示範數個中樞概念：
 
-- 可讓用戶端呼叫，則請在中樞中宣告的公用方法。
-- 使用**Microsoft.AspNet.SignalR.Hub.Clients**屬性來存取所有用戶端連線到此集線器。
-- 在用戶端上呼叫 jQuery 函式 (例如`addNewMessageToPage`函式) 來更新用戶端。
+- 在中樞上宣告公用方法，讓用戶端可以呼叫它們。
+- 使用**SignalR**來存取連線到此中樞的所有用戶端。
+- 呼叫用戶端上的 jQuery 函式（例如 `addNewMessageToPage` 函數）來更新用戶端。
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc-4/samples/sample5.cs)]
 
 ### <a name="signalr-and-jquery"></a>SignalR 和 jQuery
 
-**Chat.cshtml**檢視檔案中的程式碼範例示範如何使用 SignalR jQuery 程式庫與 SignalR 中樞進行通訊。 在程式碼中的重要工作建立自動產生之 proxy 的中樞中，宣告的函式推播內容給用戶端，可以呼叫的伺服器和啟動連線將訊息傳送至中樞的參考。
+程式碼範例中的**Chat**視圖檔示範如何使用 SignalR jQuery 程式庫與 SignalR 中樞進行通訊。 程式碼中的必要工作是建立中樞自動產生的 proxy 參考、宣告伺服器可以呼叫的函式以將內容推送至用戶端，以及啟動連線以將訊息傳送至中樞。
 
-下列程式碼會宣告中樞 proxy。
+下列程式碼會宣告中樞的 proxy。
 
 [!code-javascript[Main](tutorial-getting-started-with-signalr-and-mvc-4/samples/sample6.js)]
 
 > [!NOTE]
-> 在 jQuery 中的伺服器類別和其成員的參考會處於駝峰式大小寫。 程式碼範例會參考 C# **ChatHub**在 jQuery 中做為類別**chatHub**。 如果您想要參考`ChatHub`類別在 jQuery 中使用傳統的 pascal 命名法大小寫，如同在 C# 中，編輯 ChatHub.cs 類別檔案。 新增`using`陳述式來參考`Microsoft.AspNet.SignalR.Hubs`命名空間。 然後新增`HubName`屬性設定為`ChatHub`類別，例如`[HubName("ChatHub")]`。 最後，更新您的 jQuery 參考`ChatHub`類別。
+> 在 jQuery 中，伺服器類別及其成員的參考是 camel 大小寫。 此程式碼範例會C#將 jQuery 中的**ChatHub**類別參考為**ChatHub**。 如果您想要使用傳統 Pascal 大小寫來參考 jQuery 中的 `ChatHub` 類別C#，請編輯 ChatHub.cs 類別檔案。 加入 `using` 語句，以參考 `Microsoft.AspNet.SignalR.Hubs` 命名空間。 然後將 `HubName` 屬性加入 `ChatHub` 類別，例如 `[HubName("ChatHub")]`。 最後，將您的 jQuery 參考更新為 `ChatHub` 類別。
 
-下列程式碼示範如何建立指令碼中的回呼函式。 在伺服器上的中樞類別會呼叫此函式可將內容更新推送至每個用戶端。 選擇性呼叫`htmlEncode`函式會顯示為 HTML 的辦法之前先顯示在頁面中，做為防止指令碼資料隱碼攻擊的方式編碼的訊息內容。
+下列程式碼示範如何在腳本中建立回呼函數。 伺服器上的中樞類別會呼叫此函式，將內容更新推送至每個用戶端。 `htmlEncode` 函式的選擇性呼叫會顯示在頁面中顯示訊息內容的 HTML 編碼方式，以防止腳本插入。
 
 [!code-html[Main](tutorial-getting-started-with-signalr-and-mvc-4/samples/sample7.html)]
 
-下列程式碼示範如何使用中樞開啟的連接。 程式碼啟動連線並再將它傳遞至 click 事件處理函式**傳送**[聊天室] 頁面中的按鈕。
+下列程式碼顯示如何開啟與中樞的連線。 程式碼會啟動連線，然後將函式傳遞至聊天頁面中 [**傳送**] 按鈕上的 [按一下] 事件。
 
 > [!NOTE]
-> 這個方法可確保事件處理常式執行之前，會建立連接。
+> 這種方法可確保在事件處理常式執行之前就已建立連接。
 
 [!code-javascript[Main](tutorial-getting-started-with-signalr-and-mvc-4/samples/sample8.js)]
 
@@ -164,9 +164,9 @@ SignalR 交談應用程式將示範兩個基本的 SignalR 開發工作： 建�
 
 ## <a name="next-steps"></a>後續步驟
 
-您已了解 SignalR 是用來建置即時 web 應用程式的架構。 您也學到幾個 SignalR 開發工作： 如何將 ASP.NET 應用程式中的 SignalR、 如何建立中樞類別，以及如何傳送和接收來自中樞的訊息。
+您已瞭解 SignalR 是用來建立即時 web 應用程式的架構。 您也學到幾個 SignalR 的開發工作：如何將 SignalR 新增至 ASP.NET 應用程式、如何建立中樞類別，以及如何從中樞傳送和接收訊息。
 
-若要深入了更進階的 SignalR 開發概念，請瀏覽下列網站 SignalR 原始碼和資源：
+若要深入瞭解更先進的 SignalR 開發概念，請造訪下列網站以取得 SignalR 原始程式碼和資源：
 
 - [SignalR 專案](http://signalr.net)
 - [SignalR Github 和範例](https://github.com/SignalR/SignalR)

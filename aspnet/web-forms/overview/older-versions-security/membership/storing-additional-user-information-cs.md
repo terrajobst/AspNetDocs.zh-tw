@@ -9,11 +9,11 @@ ms.assetid: 1642132a-1ca5-4872-983f-ab59fc8865d3
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 24b96e86bc93e03d2639b73e35ed1fd1271bac5a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74641592"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78634866"
 ---
 # <a name="storing-additional-user-information-c"></a>儲存其他的使用者資訊 (C#)
 
@@ -29,7 +29,7 @@ ASP.NET 的成員資格架構提供彈性的介面來管理使用者。 成員�
 
 應用程式經常需要儲存成員資格架構中未包含的其他使用者資訊。 例如，線上零售商可能需要讓每位使用者儲存其出貨和帳單位址、付款資訊、傳遞喜好設定和連絡人電話號碼。 此外，系統中的每個訂單都與特定的使用者帳戶相關聯。
 
-`MembershipUser` 類別不包含 `PhoneNumber` 或 `DeliveryPreferences` 或 `PastOrders`等屬性。 那麼，我們要如何追蹤應用程式所需的使用者資訊，並讓它與成員資格架構整合？ 在本教學課程中，我們將建立一個非常基本的留言簿應用程式來回答這個問題。 在這種情況下，我們將探討在資料庫中建立使用者資訊模型的不同選項，然後瞭解如何將此資料與成員資格架構所建立的使用者帳戶產生關聯。 讓我們開始吧！
+`MembershipUser` 類別不包含 `PhoneNumber` 或 `DeliveryPreferences` 或 `PastOrders`等屬性。 那麼，我們要如何追蹤應用程式所需的使用者資訊，並讓它與成員資格架構整合？ 在本教學課程中，我們將建立一個非常基本的留言簿應用程式來回答這個問題。 在這種情況下，我們將探討在資料庫中建立使用者資訊模型的不同選項，然後瞭解如何將此資料與成員資格架構所建立的使用者帳戶產生關聯。 現在就開始吧！
 
 ## <a name="step-1-creating-the-guestbook-applications-data-model"></a>步驟1：建立留言簿應用程式的資料模型
 
@@ -142,7 +142,7 @@ ASP.NET 的成員資格架構提供彈性的介面來管理使用者。 成員�
 
 **圖 10**：在 [`UserId`] 資料行上加入篩選參數（[按一下以查看完整大小的影像](storing-additional-user-information-cs/_static/image30.png)）
 
-按一下 [確定] 之後，就會回到 [圖 9] 所示的畫面。 不過，這次畫面底部的 SQL 查詢應該包含 `WHERE` 子句。 按 [下一步] 以移至 [測試查詢] 畫面。 您可以在這裡執行查詢並查看結果。 按一下 [完成] 以完成精靈。
+按一下 [確定] 之後，就會回到 [圖 9] 所示的畫面。 不過，這次畫面底部的 SQL 查詢應該包含 `WHERE` 子句。 按 [下一步] 以移至 [測試查詢] 畫面。 您可以在這裡執行查詢並查看結果。 按一下 [完成] 完成精靈。
 
 完成資料來源設定 Wizard 時，Visual Studio 會根據 Wizard 中指定的設定來建立 SqlDataSource 控制項。 此外，它也會針對 SqlDataSource 的 `SelectCommand`所傳回的每個資料行，以手動方式將 BoundFields 新增至 DetailsView。 不需要在 DetailsView 中顯示 [`UserId`] 欄位，因為使用者不需要知道此值。 您可以直接從 DetailsView 控制項的宣告式標記中移除此欄位，或按一下其智慧標籤中的 [編輯欄位] 連結。
 

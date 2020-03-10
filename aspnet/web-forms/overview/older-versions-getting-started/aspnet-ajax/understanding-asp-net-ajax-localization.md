@@ -9,11 +9,11 @@ ms.assetid: c1a35f18-bab9-41f7-8497-15530c37a09d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
 msc.type: authoredcontent
 ms.openlocfilehash: 003e7939accd7a68dab97441b3d999bca835b85a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600894"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78566217"
 ---
 # <a name="understanding-aspnet-ajax-localization"></a>了解 ASP.NET AJAX 當地語系化
 
@@ -57,7 +57,7 @@ Microsoft AJAX Framework 腳本管理支援各種選項，可用於部署和測�
 
 下表摘要說明檔案命名慣例與範例：
 
-| {2&gt;檔案名稱&lt;2} | 意義 |
+| Filename | 意義 |
 | --- | --- |
 | Script .js | 發行版本文化特性中性的腳本。 |
 | Script. debug .js | Debug 版本文化特性中性的腳本。 |
@@ -101,7 +101,7 @@ Microsoft AJAX Framework 腳本管理支援各種選項，可用於部署和測�
 
 [!code-aspx[Main](understanding-asp-net-ajax-localization/samples/sample4.aspx)]
 
-1. 請按 F5。 若出現提示，請啟用調試。 載入頁面時，請按下 [刪除] 按鈕。 請注意，系統會提示您輸入英文（除非您的電腦預設設定為偏好西班牙文語言資源）以進行確認。
+1. 按 F5。 若出現提示，請啟用調試。 載入頁面時，請按下 [刪除] 按鈕。 請注意，系統會提示您輸入英文（除非您的電腦預設設定為偏好西班牙文語言資源）以進行確認。
 2. 關閉瀏覽器視窗並返回 default.aspx。 在 @Page 標頭指示詞中，將 Culture 和 UICulture 的 auto 取代為 es。 再按一次 F5，即可在瀏覽器中再次啟動 web 應用程式。 這次請注意，系統會提示您以西班牙文刪除檔案：
 
 [![](understanding-asp-net-ajax-localization/_static/image2.png)](understanding-asp-net-ajax-localization/_static/image1.png)

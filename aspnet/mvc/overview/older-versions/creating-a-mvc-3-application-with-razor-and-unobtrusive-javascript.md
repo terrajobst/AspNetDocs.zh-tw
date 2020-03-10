@@ -1,210 +1,210 @@
 ---
 uid: mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
-title: 建立 MVC 3 應用程式使用 Razor 和不顯眼的 JavaScript |Microsoft Docs
+title: 使用 Razor 和不顯眼的 JavaScript 建立 MVC 3 應用程式 |Microsoft Docs
 author: microsoft
-description: 使用者清單的範例 web 應用程式示範如何建立使用 Razor 檢視引擎的 ASP.NET MVC 3 應用程式是簡單。 範例應用程式 s...
+description: 使用者清單範例 web 應用程式示範使用 Razor view 引擎建立 ASP.NET MVC 3 應用程式有多麼簡單。 範例應用程式 。
 ms.author: riande
 ms.date: 11/01/2010
 ms.assetid: 658b149b-d770-46bf-8b4b-4e47cca242f3
 msc.legacyurl: /mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 msc.type: authoredcontent
 ms.openlocfilehash: fb63493ff22c9261fc5746a998a32f2511141f87
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130393"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78540982"
 ---
 # <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>使用 Razor 和低調的 JavaScript 建立 MVC 3 應用程式
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-> 使用者清單的範例 web 應用程式示範如何建立使用 Razor 檢視引擎的 ASP.NET MVC 3 應用程式是簡單。 範例應用程式會示範如何使用新的 Razor 檢視引擎，使用 ASP.NET MVC 3 版和 Visual Studio 2010 建立虛構的使用者清單網站包含功能，例如建立、 顯示、 編輯和刪除的使用者。
+> 使用者清單範例 web 應用程式示範使用 Razor view 引擎建立 ASP.NET MVC 3 應用程式有多麼簡單。 範例應用程式示範如何使用新的 Razor view 引擎搭配 ASP.NET MVC 第3版和 Visual Studio 2010 來建立虛構的使用者清單網站，其中包含建立、顯示、編輯和刪除使用者等功能。
 > 
-> 本教學課程說明若要建置的使用者清單的範例 ASP.NET MVC 3 應用程式所採取的步驟。 Visual Studio 專案使用C#和 VB 原始碼是本主題隨附了：[下載](https://code.msdn.microsoft.com/aspnetmvcsamples/Release/ProjectReleases.aspx?ReleaseId=5114)。 如果您有關於本教學課程的問題，請張貼至[MVC 論壇](https://forums.asp.net/1146.aspx)。
+> 本教學課程說明建立 MVC 3 應用程式的使用者清單範例時，所採取的步驟。 本主題提供具有C#和 VB 原始程式碼的 Visual Studio 專案：[下載](https://code.msdn.microsoft.com/aspnetmvcsamples/Release/ProjectReleases.aspx?ReleaseId=5114)。 如果您對本教學課程有任何疑問，請將其張貼至[MVC 論壇](https://forums.asp.net/1146.aspx)。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
-您將建置應用程式是一個簡單的使用者清單的網站。 使用者可以輸入、 檢視及更新使用者資訊。
+您將建立的應用程式是簡單的使用者清單網站。 使用者可以輸入、查看及更新使用者資訊。
 
 ![範例網站](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image1.png)
 
-您可以下載 VB 和 C# 已完成的專案[此處](https://code.msdn.microsoft.com/Creating-a-MVC-3-28883c0f)。
+您可以在[這裡](https://code.msdn.microsoft.com/Creating-a-MVC-3-28883c0f)下載 VB C#和已完成的專案。
 
 ## <a name="creating-the-web-application"></a>建立 Web 應用程式
 
-若要開始本教學課程，請開啟 Visual Studio 2010 並建立新的專案使用*ASP.NET MVC 3 Web 應用程式*範本。 應用程式命名&quot;Mvc3Razor&quot;。
+若要開始本教學課程，請開啟 Visual Studio 2010，並使用*ASP.NET MVC 3 Web 應用程式*範本建立新的專案。 將應用程式命名為 &quot;Mvc3Razor&quot;。
 
 [![新的 MVC 3 專案](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image3.png)](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image2.png)
 
-在 **新的 ASP.NET MVC 3 專案**對話方塊中，選取**網際網路應用程式**選取 Razor 檢視引擎，，然後按一下 **確定**。
+在 [**新增 ASP.NET MVC 3 專案**] 對話方塊中，選取 [**網際網路應用程式**]，選取 [Razor 視圖引擎]，然後按一下 **[確定]** 。
 
-![新的 ASP.NET MVC 3 專案 對話方塊](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image4.png)
+![[新增 ASP.NET MVC 3 專案] 對話方塊](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image4.png)
 
-在本教學課程中您將不會使用 ASP.NET 成員資格提供者，因此您可以刪除與登入和成員資格相關聯的所有檔案。 在 [**方案總管] 中**，移除下列檔案和目錄：
+在本教學課程中，您將不會使用 ASP.NET 成員資格提供者，因此您可以刪除與登入和成員資格相關聯的所有檔案。 在**方案總管**中，移除下列檔案和目錄：
 
 - *Controllers\AccountController*
 - *Models\AccountModels*
 - *Views\Shared\\_LogOnPartial*
-- *Views\Account* （及此目錄中的所有檔案）
+- *Views\Account* （以及此目錄中的所有檔案）
 
 ![Soln Exp](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image5.png)
 
-編輯 <em>\_Layout.cshtml</em>檔案，並將內部標記`<div>`名為的項目`logindisplay`訊息 <em>&quot;</em>登入已停用&quot;. 下列範例會顯示新的標記：
+編輯\_的配置<em>cshtml</em>檔案，並將名為 `logindisplay` 的 `<div>` 元素內的標記取代為停用&quot;的 [登入] <em>&quot;</em>訊息。 下列範例會顯示新的標記：
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample1.cshtml)]
 
-## <a name="adding-the-model"></a>新增模型
+## <a name="adding-the-model"></a>加入模型
 
-在 **方案總管 中**，以滑鼠右鍵按一下*模型*資料夾中，選取**新增**，然後按一下 **類別**。
+在**方案總管**中，以滑鼠右鍵按一下 [*模型*] 資料夾，選取 [**新增**]，然後按一下 [**類別**]。
 
-![新的使用者 Mdl 類別](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image6.png)
+![新增使用者 Mdl 類別](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image6.png)
 
-將類別命名為 `UserModel` 。 內容取代*UserModel*為下列程式碼的檔案：
+將類別命名為 `UserModel`。 使用下列程式碼取代*UserModel*檔案的內容：
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample2.cs)]
 
-`UserModel`類別代表使用者。 附註類別之每個成員[所需](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx)屬性從[DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)命名空間。 中的屬性[DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)命名空間提供 web 應用程式的自動用戶端和伺服器端驗證。
+`UserModel` 類別代表使用者。 類別的每個成員都會使用[DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)命名空間中的[必要](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx)屬性來標注。 [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)命名空間中的屬性會為 web 應用程式提供自動用戶端和伺服器端驗證。
 
-開啟`HomeController`類別，然後將`using`指示詞，好讓您可以存取`UserModel`和`Users`類別：
+開啟 `HomeController` 類別並加入 `using` 指示詞，讓您可以存取 `UserModel` 和 `Users` 類別：
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample3.cs)]
 
-後方`HomeController`宣告，新增下列註解以及參考`Users`類別：
+在 `HomeController` 宣告之後，將下列批註和參考新增至 `Users` 類別：
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample4.cs)]
 
-`Users`類別是您將在本教學課程中使用簡化的記憶體中的資料存放區。 在實際的應用程式中，您會使用資料庫來儲存使用者資訊。 前的幾行`HomeController`檔案會在下列範例所示：
+`Users` 類別是簡化的記憶體內部資料存放區，您將在本教學課程中使用。 在實際的應用程式中，您會使用資料庫來儲存使用者資訊。 在下列範例中，會顯示 `HomeController` 檔案的前幾行：
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample5.cs)]
 
-建立應用程式，讓使用者模型將會在下一個步驟中 scaffolding 精靈可使用。
+建立應用程式，以便在下一個步驟中將使用者模型提供給 [樣板]。
 
-## <a name="creating-the-default-view"></a>建立的預設檢視
+## <a name="creating-the-default-view"></a>建立預設的視圖
 
-下一個步驟是加入動作方法和檢視來顯示使用者。
+下一個步驟是新增動作方法和 view 來顯示使用者。
 
-刪除現有*Views\Home\Index*檔案。 您將建立新*Index*來顯示使用者的檔案。
+刪除現有的*Views\Home\Index*檔案。 您將建立新的*索引*檔案來顯示使用者。
 
-在 `HomeController`類別中的內容取代`Index`為下列程式碼的方法：
+在 `HomeController` 類別中，將 `Index` 方法的內容取代為下列程式碼：
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample6.cs)]
 
-以滑鼠右鍵按一下`Index`方法，然後按一下**加入檢視**。
+在 `Index` 方法內按一下滑鼠右鍵，然後按一下 [**加入視圖**]。
 
-![新增檢視](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image7.png)
+![加入視圖](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image7.png)
 
-選取 **建立強型別檢視**選項。 針對**檢視資料類別**，選取**Mvc3Razor.Models.UserModel**。 (如果您沒有看到**Mvc3Razor.Models.UserModel**中**檢視資料類別** 方塊中，您必須先建置專案。)請確定檢視引擎設為**Razor**。 設定**檢視內容**要**清單**，然後按一下 **新增**。
+選取 [**建立強型別視圖**] 選項。 針對**View data class**，選取**Mvc3Razor UserModel**。 （如果您在 [ **View data class** ] 方塊中看不到 [ **Mvc3Razor** ]，則必須建立專案）。請確定 [view engine] 已設定為 [ **Razor**]。 將 [**視圖內容**] 設定為 [**清單**]，然後按一下 [**新增**]。
 
-![新增索引 檢視](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image8.png)
+![新增索引視圖](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image8.png)
 
-新的檢視自動則會傳遞至的使用者資料`Index`檢視。 檢查新產生*Views\Home\Index*檔案。 **新建**，**編輯**，**詳細資料**，以及**刪除**連結沒有作用，但頁面的其餘部分是否正常運作。 執行網頁。 您看到使用者的清單。
+新的視圖會自動 scaffold 傳遞至 `Index` 視圖的使用者資料。 檢查新產生的*Views\Home\Index*檔案。 [**建立新**的]、[**編輯**]、[**詳細資料**] 和 [**刪除**] 連結無法運作，但頁面的其餘部分則會正常運作。 執行頁面。 您會看到使用者清單。
 
-![索引 頁面](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image9.png)
+![[索引] 頁面](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image9.png)
 
-開啟*Index.cshtml*檔案，並將`ActionLink`標記**編輯**，**詳細資料**，並**刪除**為下列程式碼:
+開啟*Index. cshtml*檔案，並以下列程式碼取代 **[編輯**]、[**詳細資料**] 和 [**刪除**] 的 `ActionLink` 標記：
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample7.cshtml)]
 
-使用者名稱來尋找在選取的記錄時，可做為識別碼**編輯**，**詳細資料**，並**刪除**連結。
+使用者名稱會用來作為識別碼，以在 [**編輯**]、[**詳細資料**] 和 [**刪除**] 連結中尋找選取的記錄。
 
 ## <a name="creating-the-details-view"></a>建立詳細資料檢視
 
-下一個步驟是新增`Details`動作方法和檢視以顯示使用者詳細資料。
+下一個步驟是新增 `Details` 動作方法和 view，以便顯示使用者詳細資料。
 
 ![詳細資料](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image10.png)
 
-新增下列`Details`至主控制器的方法：
+將下列 `Details` 方法加入至主控制器：
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample8.cs)]
 
-以滑鼠右鍵按一下`Details`方法，然後選取<strong>加入檢視</strong>。 確認<strong>檢視資料類別</strong>方塊包含<strong>Mvc3Razor.Models.UserModel</strong><em>。</em> 設定<strong>檢視內容</strong>要<strong>詳細資料</strong>，然後按一下 <strong>新增</strong>。
+在 `Details` 方法內按一下滑鼠右鍵，然後選取 [<strong>新增視圖</strong>]。 確認 [ <strong>View data class</strong> ] 方塊包含<strong>Mvc3Razor。 UserModel</strong><em>。</em> 將 [<strong>查看內容</strong>] 設定為<strong>詳細資料</strong>，然後按一下 [<strong>新增</strong>]。
 
-![加入詳細資料檢視](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image11.png)
+![新增詳細資料檢視](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image11.png)
 
-執行應用程式，然後選取 [詳細資料] 連結。 自動 scaffolding 顯示模型中的每一個屬性。
+執行應用程式並選取 [詳細資料] 連結。 自動的範例會顯示模型中的每個屬性。
 
 ![詳細資料](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image12.png)
 
-## <a name="creating-the-edit-view"></a>建立 [編輯] 檢視
+## <a name="creating-the-edit-view"></a>建立編輯檢視
 
-新增下列`Edit`至主控制器的方法。
+將下列 `Edit` 方法新增至 home 控制器。
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample9.cs)]
 
-加入上一個步驟中，檢視，但是設定**檢視內容**要**編輯**。
+如先前的步驟所示新增視圖，但將 [ **view content** ] 設定為 [**編輯**]。
 
-![加入編輯檢視](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image13.png)
+![新增編輯檢視](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image13.png)
 
-執行應用程式，並編輯其中一個使用者的名字和姓氏的名稱。 如果您將任何違反`DataAnnotation`已套用至的條件約束`UserModel`類別，當您提交表單，您會看到伺服器程式碼所產生的驗證錯誤。 比方說，如果您變更名字&quot;Ann&quot;要&quot;A&quot;，當您提交表單，表單上顯示下列錯誤：
+執行應用程式，並編輯其中一個使用者的姓氏和名字。 如果您違反任何已套用至 `UserModel` 類別的 `DataAnnotation` 條件約束，當您提交表單時，您會看到伺服器程式碼所產生的驗證錯誤。 例如，如果您將第一個名稱 &quot;王&quot; 以 &quot;&quot;，則在提交表單時，表單上會顯示下列錯誤：
 
 `The field First Name must be a string with a minimum length of 3 and a maximum length of 8.`
 
-在本教學課程中，您將使用者名稱作為主索引鍵。 因此，無法變更的使用者名稱屬性。 在  *Edit.cshtml*檔案，之後`Html.BeginForm`陳述式中，設定使用者名稱是隱藏的欄位。 這會造成要傳遞模型中的屬性。 下列程式碼片段顯示的位置`Hidden`陳述式：
+在本教學課程中，您會將使用者名稱視為主要金鑰。 因此，無法變更 [使用者名稱] 屬性。 在*編輯的 cshtml*檔案中，緊接在 `Html.BeginForm` 語句之後，將使用者名稱設定為隱藏欄位。 這會導致屬性在模型中傳遞。 下列程式碼片段顯示 `Hidden` 語句的位置：
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample10.cshtml)]
 
-取代`TextBoxFor`並`ValidationMessageFor`標記的使用者名稱與`DisplayFor`呼叫。 `DisplayFor`方法顯示的屬性為唯讀的項目。 下列範例會顯示完整的標記。 原始`TextBoxFor`並`ValidationMessageFor`呼叫標記為註解 Razor 開始註解，並結束註解字元 (`@* *@`)
+使用 `DisplayFor` 呼叫來取代使用者名稱的 `TextBoxFor` 和 `ValidationMessageFor` 標記。 `DisplayFor` 方法會將屬性顯示為唯讀元素。 下列範例顯示完整的標記。 原始的 `TextBoxFor` 和 `ValidationMessageFor` 呼叫會使用 Razor 開始-批註和結束批註字元（`@* *@`）進行批註化
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample11.cshtml)]
 
 ## <a name="enabling-client-side-validation"></a>啟用用戶端驗證
 
-若要啟用用戶端驗證，ASP.NET MVC 3 中的，您必須設定兩個旗標，而且您必須包含三個 JavaScript 檔案。
+若要在 ASP.NET MVC 3 中啟用用戶端驗證，您必須設定兩個旗標，而且必須包含三個 JavaScript 檔案。
 
-開啟應用程式的*Web.config*檔案。 請確認`that ClientValidationEnabled`和`UnobtrusiveJavaScriptEnabled`設為應用程式設定中，則為 true。 下列片段根目錄*Web.config*檔案會顯示正確的設定：
+開啟應用程式的*web.config*檔案。 確認 應用程式設定 中的 `that ClientValidationEnabled` 和 `UnobtrusiveJavaScriptEnabled` 設定為 true。 根*web.config*檔案中的下列片段會顯示正確的設定：
 
 [!code-xml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample12.xml)]
 
-設定`UnobtrusiveJavaScriptEnabled`為 true 啟用不顯眼的 Ajax 和不顯眼的用戶端驗證。 當您使用不顯眼的驗證時，驗證規則會轉變成 HTML5 屬性中。 HTML5 屬性名稱可以包含小寫字母、 數字和連字號。
+將 `UnobtrusiveJavaScriptEnabled` 設定為 true 可啟用不顯眼的 Ajax 和不顯眼的用戶端驗證。 當您使用不顯眼的驗證時，驗證規則會變成 HTML5 屬性。 HTML5 屬性名稱只能包含小寫字母、數位和虛線。
 
-設定`ClientValidationEnabled`，則為 true 可讓用戶端驗證。 藉由在應用程式中設定這些機碼*Web.config*檔案中，您可以啟用用戶端驗證和不顯眼的 JavaScript，整個應用程式。 您也可以啟用或停用這些設定，或使用下列程式碼的控制器方法中的個別檢視：
+將 `ClientValidationEnabled` 設定為 true 會啟用用戶端驗證。 藉由*在應用程式的 web.config 檔案*中設定這些索引鍵，您可以針對整個應用程式啟用用戶端驗證和不顯眼的 JavaScript。 您也可以使用下列程式碼，在個別的 views 或控制器方法中啟用或停用這些設定：
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample13.cs)]
 
-您也需要呈現的檢視中包含數個 JavaScript 檔案。 在所有檢視中包含 JavaScript 的簡單方法是將其新增至*Views\Shared\\_Layout.cshtml*檔案。 取代`<head>`項目 *\_Layout.cshtml*為下列程式碼的檔案：
+您也需要在呈現的視圖中包含數個 JavaScript 檔案。 在所有視圖中包含 JavaScript 的簡單方法，就是將它們新增至*Views\Shared\\_Layout. cshtml*檔案。 以下列程式碼取代 *\_Layout*檔案的 `<head>` 元素：
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample14.cshtml)]
 
-前兩個 jQuery 指令碼會裝載由 Microsoft Ajax 內容傳遞網路 (CDN)。 利用 Microsoft Ajax CDN，您可以大幅改善您的應用程式的第一個命中效能。
+前兩個 jQuery 腳本是由 Microsoft Ajax 內容傳遞網路（CDN）所主控。 藉由利用 Microsoft Ajax CDN，您可以大幅提升應用程式的第一次點擊效能。
 
-執行應用程式，然後按一下 [編輯] 連結。 在瀏覽器中檢視網頁原始檔。 瀏覽器來源顯示格式的許多屬性`data-val`（適用於資料驗證）。 啟用用戶端驗證和不顯眼的 JavaScript 時，與用戶端驗證規則的輸入的欄位包含`data-val="true"`屬性觸發不顯眼的用戶端驗證。 例如，`City`模型中的欄位以裝飾[需要](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx)屬性，會導致在下列範例所示的 HTML:
+執行應用程式，然後按一下 [編輯] 連結。 在瀏覽器中查看頁面的來源。 瀏覽器來源會顯示多個表單 `data-val` 的屬性（用於資料驗證）。 當啟用用戶端驗證和不顯眼的 JavaScript 時，具有用戶端驗證規則的輸入欄位會包含 `data-val="true"` 屬性，以觸發不顯眼的用戶端驗證。 例如，模型中的 [`City`] 欄位是以[必要](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx)的屬性裝飾，這會導致 HTML 顯示在下列範例中：
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample15.cshtml)]
 
-每個用戶端驗證規則，將屬性加入具有表單`data-val-rulename="message"`。 使用`City`欄位先前範例所示，必要的用戶端驗證規則會產生`data-val-required`屬性和訊息&quot;縣 （市） 欄位是必要的&quot;。 執行應用程式、 編輯其中一個使用者，並清除`City`欄位。 當您從欄位 索引標籤時，您會看到用戶端驗證錯誤訊息。
+針對每個用戶端驗證規則，會加入具有 `data-val-rulename="message"`格式的屬性。 使用稍早所示的 `City` 欄位範例時，必要的用戶端驗證規則會產生 `data-val-required` 屬性和訊息 &quot;[City] 欄位必須&quot;。 執行應用程式、編輯其中一個使用者，然後清除 [`City`] 欄位。 當您按 tab 鍵移出欄位時，您會看到用戶端驗證錯誤訊息。
 
-![所需的縣 （市)](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image14.png)
+![需要城市](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image14.png)
 
-同樣地，每個參數的用戶端驗證規則中，屬性就會加入具有表單`data-val-rulename-paramname=paramvalue`。 例如，`FirstName`屬性附註[StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)屬性，指定最小長度為 3 和最大長度為 8。 名為的資料驗證規則`length`具有參數名稱`max`和參數值 8。 下圖顯示產生的 HTML`FirstName`當您編輯其中使用者欄位：
+同樣地，針對用戶端驗證規則中的每個參數，會加入具有 `data-val-rulename-paramname=paramvalue`格式的屬性。 例如，`FirstName` 屬性會加上[StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx)屬性的批註，並指定最小長度3，最大長度為8。 名為 `length` 的資料驗證規則具有參數名稱 `max` 和參數值8。 以下顯示當您編輯其中一個使用者時，為 [`FirstName`] 欄位產生的 HTML：
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample16.cshtml)]
 
-如需有關不顯眼的用戶端驗證的詳細資訊，請參閱文章[ASP.NET MVC 3 中不顯眼的用戶端驗證](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html)Brad Wilson 的部落格中。
+如需不顯眼的用戶端驗證的詳細資訊，請參閱 Brad Wilson 的 blog 中的 ASP.NET MVC 3 中的「不[顯眼的用戶端驗證](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html)」專案。
 
 > [!NOTE]
-> 在 ASP.NET MVC 3 beta 版，您有時需要送出表單時，若要啟動用戶端驗證。 這可能會變更，最終發行版本。
+> 在 ASP.NET MVC 3 Beta 中，您有時需要提交表單，才能啟動用戶端驗證。 這可能會在最終版本中變更。
 
-## <a name="creating-the-create-view"></a>建立建立檢視
+## <a name="creating-the-create-view"></a>建立建立視圖
 
-下一個步驟是新增`Create`動作方法和檢視，若要讓使用者建立新的使用者。 新增下列`Create`至主控制器的方法：
+下一個步驟是新增 `Create` 動作方法和 view，讓使用者能夠建立新的使用者。 將下列 `Create` 方法加入至主控制器：
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample17.cs)]
 
-加入上一個步驟中，檢視，但是設定**檢視內容**要**建立**。
+如先前的步驟所示新增視圖，但將**view content**設定為 **[建立]。**
 
 ![建立檢視](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image15.png)
 
-執行應用程式，請選取**建立**連結，並新增新的使用者。 `Create`方法會自動利用用戶端和伺服器端驗證。 嘗試輸入使用者名稱包含空格，例如&quot;Ben X&quot;。 當您從 [使用者名稱] 欄位，用戶端驗證錯誤的索引標籤 (`White space is not allowed`) 隨即出現。
+執行應用程式，選取 [**建立**] 連結，然後新增新的使用者。 `Create` 方法會自動利用用戶端和伺服器端驗證。 請嘗試輸入包含空白字元的使用者名稱，例如 &quot;Ben X&quot;。 當您使用 tab 鍵移出 [使用者名稱] 欄位時，就會顯示用戶端驗證錯誤（`White space is not allowed`）。
 
 ## <a name="add-the-delete-method"></a>新增 Delete 方法
 
-若要完成本教學課程，新增下列`Delete`至主控制器的方法：
+若要完成本教學課程，請將下列 `Delete` 方法加入至主控制器：
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample18.cs)]
 
-新增`Delete`檢視，如同先前的步驟中，設定**檢視內容**要**刪除**。
+新增 [`Delete`] 視圖，如同先前的步驟，將 [ **view content** ] 設定為 [**刪除**]。
 
 ![刪除檢視](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image16.png)
 
-現在，您會有一個簡單但功能完整 ASP.NET MVC 3 應用程式設定驗證。
+您現在有一個簡單但功能完整的 ASP.NET MVC 3 應用程式，具有驗證。

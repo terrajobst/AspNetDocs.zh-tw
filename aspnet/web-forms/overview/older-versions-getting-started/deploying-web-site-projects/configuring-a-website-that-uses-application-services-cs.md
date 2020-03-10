@@ -9,11 +9,11 @@ ms.assetid: 1e33d1c6-3f9f-4c26-81e2-2a8f8907bb05
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 72aaca84b8c8d6e558d4c946faa57fa999d48bf8
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74570123"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78630575"
 ---
 # <a name="configuring-a-website-that-uses-application-services-c"></a>設定使用應用程式服務的網站 (C#)
 
@@ -127,7 +127,7 @@ ASP.NET 隨附一個絕佳的[*網站管理工具（WSAT）* ](https://msdn.micr
 
 ### <a name="copying-user-accounts-from-development-to-production"></a>將使用者帳戶從開發複製到生產環境
 
-使用 `SqlMembershipProvider` 和 `SqlRoleProvider` 提供者類別將應用程式服務資訊儲存在 SQL Server 資料庫時，使用者帳戶和角色資訊會儲存在各種不同的資料庫資料表中，包括 `aspnet_Users`、`aspnet_Membership`、`aspnet_Roles`和 `aspnet_UsersInRoles`等等。 在開發期間，您會在開發環境中建立使用者帳戶，藉由從適用的資料庫資料表複製對應的記錄，即可在生產環境中複寫這些使用者帳戶。 如果您使用 [資料庫發佈嚮導] 來部署應用程式服務資料庫物件，您可能也已選擇複製記錄，這會導致在開發期間建立的使用者帳戶也會在生產環境中。 但視您的設定而定，您可能會發現那些帳戶在開發中建立並複製到生產環境的使用者無法從生產網站登入。 那該怎麼做呢？
+使用 `SqlMembershipProvider` 和 `SqlRoleProvider` 提供者類別將應用程式服務資訊儲存在 SQL Server 資料庫時，使用者帳戶和角色資訊會儲存在各種不同的資料庫資料表中，包括 `aspnet_Users`、`aspnet_Membership`、`aspnet_Roles`和 `aspnet_UsersInRoles`等等。 在開發期間，您會在開發環境中建立使用者帳戶，藉由從適用的資料庫資料表複製對應的記錄，即可在生產環境中複寫這些使用者帳戶。 如果您使用 [資料庫發佈嚮導] 來部署應用程式服務資料庫物件，您可能也已選擇複製記錄，這會導致在開發期間建立的使用者帳戶也會在生產環境中。 但視您的設定而定，您可能會發現那些帳戶在開發中建立並複製到生產環境的使用者無法從生產網站登入。 為何會這樣呢？
 
 `SqlMembershipProvider` 和 `SqlRoleProvider` 提供者類別的設計，就是單一資料庫可做為多個應用程式的使用者存放區，而每個應用程式在理論上，都有具有相同名稱的使用者和角色重迭。 為了允許此彈性，資料庫會維護 `aspnet_Applications` 資料表中的應用程式清單，而每個使用者都與這些應用程式的其中一個相關聯。 具體而言，`aspnet_Users` 資料表具有 `ApplicationId` 資料行，其會將每個使用者系結至 `aspnet_Applications` 資料表中的記錄。
 

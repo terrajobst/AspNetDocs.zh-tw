@@ -9,11 +9,11 @@ ms.assetid: 58618954-a9ed-4ca0-8c2d-95a5ffd9c03e
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 4e7aaa1701da67aec61505b64a835ef41031bb13
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74613897"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78626361"
 ---
 # <a name="displaying-data-with-the-datalist-and-repeater-controls-vb"></a>使用 DataList 與重複項控制項顯示資料 (VB)
 
@@ -111,7 +111,7 @@ ms.locfileid: "74613897"
 
 如[使用 ObjectDataSource 顯示資料](../basic-reporting/displaying-data-with-the-objectdatasource-vb.md)教學課程中所述，外觀檔案會指定 Web 控制項的預設面板相關屬性。主題是面板、CSS、影像和 JavaScript 檔案的集合，這些檔案會定義網站的特定外觀與風格。 在*使用 ObjectDataSource 顯示資料*教學課程中，我們建立了一個 `DataWebControls` 主題（它會實作為 `App_Themes` 資料夾內的資料夾），其中目前有兩個外觀檔案 `GridView.skin` 和 `DetailsView.skin`。 讓我們加入第三個外觀檔案，以指定 DataList 的預先定義樣式設定。
 
-若要新增面板檔案，請以滑鼠右鍵按一下 [`App_Themes/DataWebControls`] 資料夾，選擇 [加入新專案]，然後從清單中選取 [外觀檔案] 選項。 將檔案命名為 `DataList.skin`。
+若要新增面板檔案，請以滑鼠右鍵按一下 [`App_Themes/DataWebControls`] 資料夾，選擇 [加入新專案]，然後從清單中選取 [外觀檔案] 選項。 開啟 `DataList.skin` 檔案。
 
 [![建立名為 DataList. 面板的新外觀檔案](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image22.png)](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image21.png)
 

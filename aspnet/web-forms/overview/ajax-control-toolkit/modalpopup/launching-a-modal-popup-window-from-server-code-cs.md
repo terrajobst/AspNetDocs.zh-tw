@@ -9,11 +9,11 @@ ms.assetid: 2f67d8ef-73ca-447d-a0cc-6e3168431e6a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-cs
 msc.type: authoredcontent
 ms.openlocfilehash: fec0ce2cdd24333f65201301718440e1a09d930e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599058"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78613292"
 ---
 # <a name="launching-a-modal-popup-window-from-server-code-c"></a>從伺服器程式碼啟動強制回應快顯視窗 (C#)
 
@@ -68,4 +68,4 @@ AJAX 控制項工具組中的 ModalPopup 控制項提供一個簡單的方式，
 按一下其中一個按鈕時，就會出現強制回應快顯視窗（[按一下以查看完整大小的影像](launching-a-modal-popup-window-from-server-code-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [下一步](using-modalpopup-with-a-repeater-control-cs.md)
+> [下一個](using-modalpopup-with-a-repeater-control-cs.md)

@@ -9,11 +9,11 @@ ms.assetid: 4f4bf092-c400-471f-a876-78fda0417890
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing
 msc.type: authoredcontent
 ms.openlocfilehash: 66b727b69ca4f9a3d35b67f492f9a554146e09ef
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74590715"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78587434"
 ---
 # <a name="url-routing"></a>URL 路由
 
@@ -25,7 +25,7 @@ ms.locfileid: "74590715"
 
 在本教學課程中，您將修改 Wingtip 玩具範例應用程式以支援 URL 路由。 路由可讓您的 web 應用程式使用易記、容易記住的 Url，並提供更好的搜尋引擎支援。 本教學課程是以先前的教學課程「成員資格和系統管理」為基礎，而且是 Wingtip 玩具教學課程系列的一部分。
 
-## <a name="what-youll-learn"></a>您將瞭解的內容：
+## <a name="what-youll-learn"></a>您將學到什麼：
 
 - 如何註冊 ASP.NET Web Forms 應用程式的路由。
 - 如何將路由加入至網頁。

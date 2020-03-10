@@ -9,13 +9,13 @@ ms.assetid: 27dc4fc8-1b51-43b0-933f-fc1b52476523
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
 ms.openlocfilehash: 9716def069ca9f7115af32e16381f41bd4d13342
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457644"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78579986"
 ---
-# <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 行動功能
+# <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 Mobile 功能
 
 依[Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -57,7 +57,7 @@ ms.locfileid: "77457644"
 - 如何建立行動裝置特定的視圖。
 - 如何建立可讓使用者在行動視圖和應用程式桌面視圖之間切換的視圖切換器。
 
-### <a name="getting-started"></a>開始使用
+### <a name="getting-started"></a>快速入門
 
 使用下列連結下載入門專案的會議清單應用程式：[下載](https://go.microsoft.com/fwlink/?LinkId=228307)。 然後在 Windows Explorer 中，以滑鼠右鍵按一下 [ *MvcMobile* ] 檔案，然後選擇 [**屬性**]。 在 [ **MvcMobile 屬性**] 對話方塊中，選擇 [**解除封鎖**] 按鈕。 (取消封鎖後，當您嘗試使用從網路下載的 .zip 檔案時，就不會出現安全性警告。)
 

@@ -9,11 +9,11 @@ ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
 ms.openlocfilehash: e741a753a36ebdaefbff8eee0b38911785c716ac
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457163"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78584942"
 ---
 # <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>自動化所有作業（使用 Azure 建立真實世界的雲端應用程式）
 
@@ -84,7 +84,7 @@ ms.locfileid: "77457163"
 
 ![appSettings 和 connectionStrings](automate-everything/_static/image6.png)
 
-[*自動化*] 資料夾現在也包含一個 *&lt;websitename&gt;. .pubxml*檔案。 這個檔案會儲存 MSBuild 將用來將應用程式部署至剛建立之 Azure 環境的設定。 例如：
+[*自動化*] 資料夾現在也包含一個 *&lt;websitename&gt;. .pubxml*檔案。 這個檔案會儲存 MSBuild 將用來將應用程式部署至剛建立之 Azure 環境的設定。 例如:
 
 [!code-xml[Main](automate-everything/samples/sample1.xml)]
 
@@ -239,7 +239,7 @@ Azure 有一項功能，可讓您儲存設定和連接字串，以在嘗試讀�
 
 ![修正部署至 Windows Azure 的 It 應用程式](automate-everything/_static/image7.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 使用這些腳本，您可以確信相同的步驟一律會使用相同的循序執行相同的訂單。 這有助於確保小組中的每位開發人員都不會錯過任何東西，或在自己的電腦上部署自訂專案，而在另一個小組成員的環境或實際執行時，實際上無法以相同的方式運作。
 

@@ -1,23 +1,23 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/index
-title: Ajax Control Toolkit |Microsoft Docs
+title: Ajax 控制項工具組 |Microsoft Docs
 author: rick-anderson
-description: 如何建立極具回應性的 ASP.NET Web 使用 Ajax Control Toolkit 中的頁面。
+description: 如何使用 Ajax 控制項工具組，建立回應迅速的 ASP.NET 網頁。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 6f7b1c74-cc73-42f9-8ef0-8b3d058dabfa
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit
 msc.type: chapter
 ms.openlocfilehash: c92d686cdb7883efbb5e5b2997e4a490f83607f0
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131527"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78638926"
 ---
 # <a name="ajax-control-toolkit"></a>AJAX Control Toolkit
 
-> 如何建立極具回應性的 ASP.NET Web 使用 Ajax Control Toolkit 中的頁面。
+> 如何使用 Ajax 控制項工具組，建立回應迅速的 ASP.NET 網頁。
 
 - [開始使用 ASP.NET AJAX Control Toolkit](how-do-i-get-started-with-the-aspnet-ajax-control-toolkit.md)
 - [ASP.NET AJAX CascadingDropDown 控制擴充項](how-do-i-use-the-aspnet-ajax-cascadingdropdown-control-extender.md)

@@ -9,11 +9,11 @@ ms.assetid: 0f1fc1f5-9dbd-44e7-931e-387d42f0342b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: dd63157fe616c5f6874b7cca11f4ede15018df04
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74607134"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78614447"
 ---
 # <a name="adding-animation-to-a-control-c"></a>將動畫新增至控制項 (C#)
 
@@ -75,4 +75,4 @@ ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是�
 此面板會淡出（[按一下以觀看完整大小的影像](adding-animation-to-a-control-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [下一步](executing-several-animations-at-the-same-time-cs.md)
+> [下一個](executing-several-animations-at-the-same-time-cs.md)

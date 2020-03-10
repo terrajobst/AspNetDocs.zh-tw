@@ -1,109 +1,109 @@
 ---
 uid: single-page-application/overview/templates/breezeknockout-template
-title: Breeze/Knockout 範本 |Microsoft Docs
+title: 輕鬆/挖的範本 |Microsoft Docs
 author: madskristensen
-description: Breeze/Knockout 單一頁面應用程式範本
+description: 輕鬆/挖以單一頁面應用程式範本
 ms.author: riande
 ms.date: 01/30/2013
 ms.assetid: 3bd94827-3c59-448f-abc3-36e6df4858db
 msc.legacyurl: /single-page-application/overview/templates/breezeknockout-template
 msc.type: authoredcontent
 ms.openlocfilehash: 5bb9ee8f758a25afa6baf3ccbaf7d5864754c7df
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113363"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78558188"
 ---
 # <a name="breezeknockout-template"></a>Breeze/Knockout 範本
 
-藉由[Mads Kristensen](https://github.com/madskristensen)
+依[Mads Kristensen](https://github.com/madskristensen)
 
-> Breeze/Knockout MVC 範本所編寫的 Ward Bell
+> 輕鬆/挖加上的 MVC 範本是由 Ward 鐘撰寫的
 > 
-> [下載 Breeze/Knockout MVC 範本](https://go.microsoft.com/fwlink/?LinkId=282649)
+> [下載輕鬆/挖的 MVC 範本](https://go.microsoft.com/fwlink/?LinkId=282649)
 
-您聽過的 「 單一頁面應用程式 」 (SPA) 和想要知道它是什麼。 雖然您無法讀取其相關資訊，您就是它親身體驗。 但誰可以下載範例的時間？ 如果您有 Visual Studio，您必須的範例 SPA 和執行在低於 60 秒為單位 ASP.NET mvc 4 」 Breeze/Knockout 單一頁面應用程式 範本。
+您聽說過「單頁應用程式」（SPA），並想知道它是什麼。 雖然您可以閱讀這方面的資訊，但還是可以親自體驗。 但誰有時間下載範例？ 如果您有 Visual Studio，就會有一個在60秒內啟動並執行的 SPA 範例，其中包含 ASP.NET MVC 4 「輕鬆/挖使單一頁面應用程式」範本。
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/ZephyrRunning.png)
 
-## <a name="what-is-the-breezeknockout-spa-template"></a>何謂 Breeze/Knockout SPA 範本
+## <a name="what-is-the-breezeknockout-spa-template"></a>什麼是「輕鬆/挖空的 SPA」範本？
 
-大部分的專案範本產生應用程式基本架構。 這對於置於這些極簡，加上您的程式碼，並最後提供運作中應用程式。 Breeze/Knockout SPA 範本各不相同。 它會產生要研究的範例應用程式。 它會示範 SPA 應用程式的設計和許多技巧來建置 SPA。
+大部分的專案範本都會產生應用程式基本架構。 您可以藉由新增程式碼，並最終提供可運作的應用程式，來為這些骨骼加上充實。 「輕鬆/挖的 SPA」範本不同。 它會產生一個範例應用程式，供您進行研究。 它示範了 SPA 應用程式設計，以及許多用來建立 SPA 的技術。
 
-Breeze/Knockout 範本上是一種變化[KnockoutJS SPA 範本](../introduction/knockoutjs-template.md)包含在 ASP.NET 和 Web 工具 2012.2 Update。 幫助您輕鬆 SPA 範本會產生具有相同的使用者體驗的應用程式，但有不同的實作中，使用資料管理變得輕而易舉。
+「輕鬆/挖加」範本是 ASP.NET 和 Web 工具2012.2 更新中所包含的[KNOCKOUTJS SPA 範本](../introduction/knockoutjs-template.md)的變化。 「輕而易舉的 SPA」範本會產生具有相同使用者體驗的應用程式，但它有不同的執行方式，使用輕鬆進行資料管理。
 
-KnockoutJS SPA 範本可讓服務要求與原始 jQuery AJAX 中，這是適合簡單的應用程式。 但更複雜的應用程式有更高的資料管理需求。 例如，大部分的應用程式：
+KnockoutJS SPA 範本會使用原始 jQuery AJAX 提出服務要求，這對簡單的應用程式而言是足夠的。 但是更複雜的應用程式會有更嚴苛的資料管理需求。 例如，大部分的應用程式：
 
-- 查詢並重新擴充的使用者工作階段期間查詢伺服器。
-- 新增查詢篩選器、 排序和分頁。
-- 跨多個畫面中共用相同的資料。
-- 累積變更許多物件，然後將它們儲存為單一交易。
-- 驗證用戶端上的變更，因此使用者可以更正錯誤，再認可變更到資料庫。
+- 在擴充的使用者會話期間查詢和重新查詢伺服器。
+- 加入查詢篩選、排序和分頁。
+- 跨多個畫面共用相同的資料。
+- 累積對許多物件所做的變更，然後將其儲存為單一交易。
+- 驗證用戶端上的變更，讓使用者可以在將變更認可到資料庫之前更正錯誤。
 
-BreezeJS 程式庫會為您，您能夠將開發最重要的應用程式邏輯和使用者體驗，來處理這些例行工作。
+BreezeJS 程式庫會為您處理這些工作，讓您能夠開發出最重要的應用程式邏輯和使用者體驗。
 
-[**Breeze** ](http://www.breezejs.com/?utm_source=ms-spa)是開放原始碼程式庫來建置豐富的資料應用程式，以 JavaScript 和 HTML，在過去已傳遞做為獨立的桌面應用程式的應用程式的類型。
+「簡單[ **」是一種開放**](http://www.breezejs.com/?utm_source=ms-spa)原始碼程式庫，可用於以 JAVASCRIPT 和 HTML 建立豐富的資料應用程式，這類應用程式在過去是以獨立桌面應用程式的形式提供。
 
-Breeze/Knockout 範本可協助您執行這個重要的第一個步驟，向更穩固的資料管理基礎結構。 它會產生外表上等同於 KnockoutJS SPA 範本的範例待辦事項應用程式。 在內部，它會以幫助您輕鬆取代 AJAX 資料層，因此您可以比較兩個接近並排顯示。 當然，幾乎沒有碰觸到可能會變得輕而易舉應用程式。 但您會看到變得輕而易舉的運作方式和頻率，才可進行轉換。
+輕鬆/挖使範本可協助您將第一個重要的步驟帶往更穩固的資料管理基礎結構。 它會產生一個與 KnockoutJS SPA 範本相同的範例待辦事項應用程式外表。 在內部，它會以輕鬆的方式取代 AJAX 資料層，因此您可以並排比較這兩個方法。 當然，它幾乎不會觸及應用程式的潛能。 但是，您將會看到多麼簡單，以及需要多少時間才能進行轉換。
 
 我們現在就開始吧。
 
-## <a name="create-a-breezeknockout-template-project"></a>建立 Breeze/Knockout 範本專案
+## <a name="create-a-breezeknockout-template-project"></a>建立輕鬆/挖的範本專案
 
-下載並安裝的範本，按一下上方的 [下載] 按鈕。 範本會封裝成 Visual Studio 擴充功能 (VSIX) 檔案。 您可能需要重新啟動 Visual Studio。
+按一下上方的 [下載] 按鈕，以下載並安裝範本。 此範本會封裝為 Visual Studio 擴充功能（VSIX）檔案。 您可能需要重新開機 Visual Studio。
 
-在 **範本**窗格中，選取**已安裝的範本**展開**Visual C#** 節點。 底下**Visual C#**，選取**Web**。 在專案範本清單中，選取**ASP.NET MVC 4 Web 應用程式**。 將專案命名，然後按一下**確定**。
+在 [**範本**] 窗格中，選取 [**已安裝的範本**]，然後展開 **C#視覺效果**節點。 在 **[ C#視覺效果**] 底下，選取 [ **Web**]。 在專案範本清單中，選取 [ **ASP.NET MVC 4 Web 應用程式**]。 為專案命名，然後按一下 [確定]。
 
-在 **新的專案**精靈中，選取**幫助您輕鬆 Knockout SPA**。
+在 [**新增專案**] 中，選取 [**輕鬆挖對 SPA**]。
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/SelectBreezeKOSpaTemplate.png)
 
-按 Ctrl-F5 以建置並執行應用程式，但不偵錯，或按下 F5 以執行並偵錯。
+按下 Ctrl-F5 以建立並執行應用程式，而不進行任何偵測，或按 F5 執行以進行偵錯工具。
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/ZephyrRunning.png)
 
-當第一次執行應用程式時，它會顯示登入畫面。 按一下 「 註冊 」 連結，新的頁面 glides 到檢視中，您可以在其中輸入使用者名稱和密碼。 （登入] 和 [註冊頁面會建置使用 ASP.NET MVC）。當您提交註冊表單時，伺服器就會產生 TodoList 與您帳戶的兩個項目。 然後它將它們呈現給您在黃色便箋上。
+當應用程式第一次執行時，它會顯示登入畫面。 按一下 [註冊] 連結和新的頁面 glides 至 [觀看]，您可以在其中輸入使用者名稱和密碼。 （登入和註冊頁面會使用 ASP.NET MVC 建立）。當您提交註冊表單時，伺服器會為您的帳戶產生包含兩個專案的 TodoList。 然後，它會以黃色附注呈現給您。
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/TodoList.png)
 
-現在您已經在 land 的 SPA。 所有項目您查看和體驗而操作 Todo 是呈現和管理的 Knockout 和 Breeze 協助用戶端上。 探索應用程式的使用者身分... 但是開發人員的注意。 使用瀏覽器中的開發人員工具，來擷取網路流量。 (在 Internet Explorer:按下 f12 鍵，選取**網路**索引標籤，然後按一下**開始擷取**。)現在請嘗試下列各項：
+現在您已在 SPA 的土地。 您在操作 Todo 時所看到及體驗的所有內容，都是在用戶端上轉譯和管理，並具有挖得的説明。 以使用者身分探索應用程式 。 但是有了開發人員的目光。 使用瀏覽器中的開發人員工具來捕捉網路流量。 （在 Internet Explorer 中：按 F12，選取 [**網路**] 索引標籤，然後按一下 [**開始捕獲**]）。現在請嘗試下列動作：
 
-- 加入新的 Todo 項目。
-- 按一下標籤，然後編輯待辦事項項目標題
-- 核取方塊來標記項目完成。 請注意，已停用的文字方塊中，因此不再是可編輯的標題。
-- 按一下 'x' 標籤的右邊。 項目會消失，而從資料庫中刪除。
-- 挑選另一個項目，並清除它的標題。 您會收到標題是必要的驗證錯誤。 在短暫的暫停之後, 就會還原先前的標題。
-- 輸入在非常長的標題。 您會收到不同的驗證錯誤，標題會太長。
-- 按一下 「 新增待辦事項清單 」 按鈕。 左側的前一份清單會出現新的清單。
-- 播放以 TodoList 標題，觸發其必要和長度驗證。
-- 按一下以清除錯誤訊息的 [標題] 文字方塊中。
-- 按一下 [x] 來刪除 TodoList 和其 todo 右上角圓圈。
+- 新增待辦事項專案。
+- 按一下標籤，然後編輯待辦事項專案標題
+- 核取核取方塊，將專案標示為已完成。 請注意，textbox 已停用，因此標題已無法再編輯。
+- 按一下標籤右邊的 [x]。 專案會消失，並從資料庫中刪除。
+- 挑選另一個專案並清除其標題。 您會收到需要標題的驗證錯誤。 短暫暫停之後，就會還原先前的標題。
+- 輸入非常的長標題。 您會收到不同的驗證錯誤，指出標題太長。
+- 按一下 [新增待辦事項清單] 按鈕。 新的清單就會出現在先前清單的左邊。
+- 播放 TodoList 標題，觸發其必要和長度驗證。
+- 按一下 [標題] 文字方塊，以清除錯誤訊息。
+- 按一下右上角圓形中的 "x"，以刪除 TodoList 及其 todo。
 
-驗證邏輯是由幫助您輕鬆的執行的用戶端。 在伺服器的模型類別上的驗證屬性會傳播至用戶端，並自動執行前用戶端會聯繫伺服器。
+驗證邏輯會輕鬆地在用戶端執行。 伺服器模型類別上的驗證屬性會傳播至用戶端，並在用戶端聯繫伺服器之前自動執行。
 
-檢閱網路流量。 請注意，任何對伺服器的呼叫時沒有幫助您輕鬆偵測到錯誤。 每個有效的變更會導致 POST 要求為"/ api/Todo/SaveChanges"。 幫助您輕鬆組合所做的變更並將其傳送一起做為單一要求 Web API 控制器的`SaveChanges`方法。 這是從 KnockoutJS SPA 範本，可讓 PUT、 POST 和 DELETE 要求每個項目的個別不同。
+檢查網路流量。 請注意，在簡單偵測到錯誤時，並沒有對伺服器的呼叫。 每個有效的變更都會導致 POST 要求「/api/Todo/SaveChanges」。 輕鬆地將變更組合在一起，並以單一要求傳送至 Web API 控制器的 `SaveChanges` 方法。 這與 KnockoutJS SPA 範本不同，它會針對每個專案個別進行 PUT、POST 和 DELETE 要求。
 
-## <a name="peek-inside"></a>眼
+## <a name="peek-inside"></a>查看內部
 
-此應用程式具有用戶端和伺服器端。 用戶端堆疊一些 HTML 和 （在 「 應用程式 」 資料夾中） 的應用程式 JavaScript 模組的組合加上組成第三方 JavaScript 程式庫 （在 「 指令碼 」 資料夾中）。
+此應用程式具有用戶端和伺服器端。 用戶端堆疊包含一些 HTML 和應用程式 JavaScript 模組（在「應用程式」資料夾中）和協力廠商 JavaScript 程式庫（在 [腳本] 資料夾中）的組合。
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/ClientArchitecture.png)
 
-如果您已調查 KnockoutJS SPA 範本，這應該看起來很熟悉。 焦點放在藍色方塊。 UI 架構是 Model View ViewModel (MVVM)，在其中檢視的 HTML widget 完全分開的檢視模型中支援的展示程式碼。 資料繫結系統 (在此情況下 Knockout) 協調的檢視和檢視模型，使每個可以執行其工作，而不需要深入了解其他。
+如果您已經調查過 KnockoutJS SPA 範本，這看起來應該很熟悉。 將焦點放在藍色方塊上。 UI 架構是 ViewModel （MVVM），在此模式中，視圖的 HTML widget 會與視圖模型中支援的呈現程式碼完全分離。 資料系結系統（在此案例中為「挖式」）會協調視圖和視圖模型，讓每個都可以執行其工作，而不需要深入瞭解另一個。
 
-模型封裝 Todo 資料。 模型中的實體會建構方式，幫助您輕鬆使用 Knockout 可觀察的屬性，讓它們可以直接繫結至檢視中的小工具。 檢視模型會要求要取得和儲存模型實體的資料內容。 資料內容委派 (delegate) 大部分的工作變得輕而易舉。
+此模型會封裝 Todo 資料。 模型中的實體是藉由「挖的可觀察屬性」輕鬆地建立的，因此可以直接系結至視圖中的小工具。 視圖模型會要求資料內容取得並儲存模型實體。 資料內容會委派大部分的工作，使其變得輕而易舉。
 
-伺服器端堆疊是由一些開發人員程式碼和三個主要.NET 程式庫所組成：Web API、 Entity Framework 和 Breeze.NET:
+伺服器端堆疊包含一些開發人員程式碼和三個準則 .NET 程式庫： Web API、Entity Framework 和 Breeze.NET：
 
 ![](http://www.breezejs.com/sites/all/images/spa-template/ServerArchitecture.png)
 
-基本架構是 KnockoutJS SPA 範本相同。 不過，實作則更簡單：Dto 已刪除，而且大部分的 Entity Framework 細節已委派給 Breeze.NET。
+基本架構與 KnockoutJS SPA 範本相同。 不過，這種做法很簡單：已刪除 Dto，而且大部分的 Entity Framework 詳細資料都已委派給 Breeze.NET。
 
 ## <a name="next-steps"></a>後續步驟
 
-我們建議您瀏覽程式碼，藉由指引[廣泛討論](http://www.breezejs.com/spa-template?utm_source=ms-spa)的用戶端和伺服器堆疊，幫助您輕鬆網站上的。
+我們建議您流覽程式碼，並在「輕鬆的」網站上深入[討論](http://www.breezejs.com/spa-template?utm_source=ms-spa)用戶端和伺服器堆疊。
 
-您可以嘗試播放使用變得輕而易舉的用戶端查詢;加入一些篩選和排序。 您可以加入更多的模型屬性並取得端對端 SPA 開發更加了解多個實體。 自信的設計時，您可以卸除的 Todo 功能，並取代它們。
+您可以嘗試使用簡單的用戶端查詢來播放;新增一些篩選準則並進行排序。 您可以新增更多模型屬性和更多實體，以便更容易進行端對端 SPA 的開發。 當您確信此設計時，您可以卸載待辦事項功能，並以您自己的方式取代它們。
 
-您很快就準備好進行下一個大的步驟：新增用戶端螢幕，並在它們之間巡覽。 您將此 SPA 範本拋諸腦後，並開啟更完整的 SPA 堆疊中，這類[John Papa 的熱毛巾](https://github.com/johnpapa/HotTowel#readme "熱毛巾")，幫助您輕鬆與 Knockout 在混合加入 Durandal。
+很快地，您就可以開始進行下一個重要步驟：新增用戶端畫面並在其中導覽。 您會將此 SPA 範本留在後方，然後轉變成更完整的 SPA 堆疊，例如[John Papa 的熱門紙巾](https://github.com/johnpapa/HotTowel#readme "熱門紙巾")，這會將 durandal 等架構新增至輕鬆且挖加上的混合。

@@ -9,11 +9,11 @@ ms.assetid: 60512d6a-b572-4b7a-beb3-3e44b4d2020c
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 5bda42965f7d1db71b207c0b76e251b8fff64e31
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74606180"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78626424"
 ---
 # <a name="querying-data-with-the-sqldatasource-control-c"></a>使用 SqlDataSource 控制項查詢資料 (C#)
 
@@ -222,4 +222,4 @@ SqlDataSource 可以設定為傳回 DataReader，而不是資料集，方法是�
 本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Susan Connery、Bernadette Leigh 和 David Suru。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一步](using-parameterized-queries-with-the-sqldatasource-cs.md)
+> [下一個](using-parameterized-queries-with-the-sqldatasource-cs.md)

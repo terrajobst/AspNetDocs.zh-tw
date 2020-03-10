@@ -9,11 +9,11 @@ ms.assetid: ad0f1014-1eff-465f-bdc6-93058de00e44
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 537f8e76bc0cbfa759a014b63ae5f68b5d3ca64d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74630020"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78606418"
 ---
 # <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>使用 DropDownList 進行主要/詳細資料篩選 (VB)
 
@@ -115,7 +115,7 @@ ms.locfileid: "74630020"
 
 若要將新的清單專案加入至 DropDownList，請移至 屬性視窗，然後按一下 `Items` 屬性中的省略號。 加入具有 `Text` "--選擇類別目錄--" 和 `Value` `0`的新清單專案。
 
-![新增。](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image27.png)
+![新增](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image27.png)
 
 **圖 11**：新增「--選擇類別--」清單專案
 

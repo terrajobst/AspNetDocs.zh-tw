@@ -9,11 +9,11 @@ ms.assetid: b9c29865-a34e-48bb-92c0-c443a72cb860
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-cs
 msc.type: authoredcontent
 ms.openlocfilehash: b296f31da1c73df97175d94402b4d618df425d8d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74579435"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78641768"
 ---
 # <a name="forms-authentication-configuration-and-advanced-topics-c"></a>表單驗證組態和進階主題 (C#)
 
@@ -41,14 +41,14 @@ ASP.NET 中的表單驗證系統提供許多設定，可依應用程式逐一進
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         cookie         |                                                                                                                這個屬性會指定在哪些條件下，驗證票證會儲存在 cookie 中，而不是內嵌在 URL 中。 允許的值為： UseCookies;UseUri;檢測和 UseDeviceProfile （預設值）。 步驟2會更詳細地檢查這項設定。                                                                                                                |
 |         defaultUrl         |                                                                                                                                                         指出如果查詢字串中沒有指定 RedirectUrl 值，使用者在登入頁面後重新導向至的 URL。 預設值為 default.aspx。                                                                                                                                                         |
-|           domain           | 使用以 cookie 為基礎的驗證票證時，此設定會指定 cookie 的網域值。 預設值為空字串，這會導致瀏覽器使用其發行所在的網域（例如 www.yourdomain.com）。 在此情況下，對子域進行要求時，<strong>不</strong>會傳送 cookie，例如 admin.yourdomain.com。 如果您想要將 cookie 傳遞給所有子域，您需要自訂網域屬性，將其設定為 yourdomain.com。 |
+|           網域           | 使用以 cookie 為基礎的驗證票證時，此設定會指定 cookie 的網域值。 預設值為空字串，這會導致瀏覽器使用其發行所在的網域（例如 www.yourdomain.com）。 在此情況下，對子域進行要求時，<strong>不</strong>會傳送 cookie，例如 admin.yourdomain.com。 如果您想要將 cookie 傳遞給所有子域，您需要自訂網域屬性，將其設定為 yourdomain.com。 |
 |  enableCrossAppRedirects   |                                                                                                                                                                   布林值，指出當重新導向至相同伺服器上其他 web 應用程式中的 Url 時，是否要記住已驗證的使用者。 預設為 false。                                                                                                                                                                   |
-|          loginUrl          |                                                                                                                                                                                                                      登入頁面的 URL。 預設值為 login .aspx。                                                                                                                                                                                                                      |
-|            {2&gt;名稱&lt;2}            |                                                                                                                                                                                                   使用以 cookie 為基礎的驗證票證時，是 cookie 的名稱。 預設為.ASPXAUTH.                                                                                                                                                                                                   |
-|            path            |                                                                             當使用以 cookie 為基礎的驗證票證時，此設定會指定 cookie 的 path 屬性。 Path 屬性可讓開發人員將 cookie 的範圍限制為特定的目錄階層。 預設值為/，會通知瀏覽器將驗證票證 cookie 傳送至對網域提出的任何要求。                                                                              |
-|         保護 - protection         |                                                                                                                                            指出用來保護表單驗證票證的技術。 允許的值為： All （預設值）;加密無和驗證。 步驟3會詳細討論這些設定。                                                                                                                                            |
+|          loginUrl          |                                                                                                                                                                                                                      登入頁面的 URL。 預設值為 login.aspx。                                                                                                                                                                                                                      |
+|            名稱            |                                                                                                                                                                                                   使用以 cookie 為基礎的驗證票證時，是 cookie 的名稱。 預設為.ASPXAUTH.                                                                                                                                                                                                   |
+|            路徑            |                                                                             當使用以 cookie 為基礎的驗證票證時，此設定會指定 cookie 的 path 屬性。 Path 屬性可讓開發人員將 cookie 的範圍限制為特定的目錄階層。 預設值為/，會通知瀏覽器將驗證票證 cookie 傳送至對網域提出的任何要求。                                                                              |
+|         保護         |                                                                                                                                            指出用來保護表單驗證票證的技術。 允許的值為： All （預設值）;加密無和驗證。 步驟3會詳細討論這些設定。                                                                                                                                            |
 |         requireSSL         |                                                                                                                                                                                布林值，指出是否需要 SSL 連線才能傳輸驗證 cookie。 預設值為 false。                                                                                                                                                                                |
-|     slidingExpiration      |                                                                                                 布林值，指出每次使用者在單一會話中造訪網站時，是否重設驗證 cookie 的超時時間。 預設值為 True。 在指定票證的超時值一節中，將會更詳細地討論驗證票證超時原則。                                                                                                 |
+|     slidingExpiration      |                                                                                                 布林值，指出每次使用者在單一會話中造訪網站時，是否重設驗證 cookie 的超時時間。 預設值為 true。 在指定票證的超時值一節中，將會更詳細地討論驗證票證超時原則。                                                                                                 |
 |          逾時           |                                                                                                                               指定驗證票證 cookie 到期的時間（以分鐘為單位）。 預設值是 30。 在指定票證的超時值一節中，將會更詳細地討論驗證票證超時原則。                                                                                                                               |
 
 **表 1**： &lt;表單&gt; 元素屬性的摘要
@@ -149,7 +149,7 @@ Cookie 是一個自然媒體，可將每個要求中的資訊納入特定網站�
 
 為了讓無 cookie 驗證票證能夠正常執行，系統必須將頁面上的所有 Url 編碼，以包含驗證票證資料，否則當使用者按一下連結時，將會遺失驗證票證。 幸好，此內嵌邏輯會自動執行。 若要示範這種功能，請開啟 default.aspx 頁面並加入 HyperLink 控制項，分別將其 Text 和 NavigateUrl 屬性設定為 Test Link 和 SomePage。 我們的專案中真的沒有一個名為 SomePage 的頁面。
 
-將變更儲存至 default.aspx，然後透過瀏覽器造訪。 登入網站，以將表單驗證票證內嵌在 URL 中。 接下來，從 default.aspx 中，按一下 [測試連結] 連結。 發生了什麼事？ 如果沒有名為 SomePage 的頁面存在，則會發生404錯誤，但這裡並不重要。 相反地，請將焦點放在瀏覽器的網址列上。 請注意，其中包含 URL 中的表單驗證票證！
+將變更儲存至 default.aspx，然後透過瀏覽器造訪。 登入網站，以將表單驗證票證內嵌在 URL 中。 接下來，從 default.aspx 中，按一下 [測試連結] 連結。 發生什麼情況？ 如果沒有名為 SomePage 的頁面存在，則會發生404錯誤，但這裡並不重要。 相反地，請將焦點放在瀏覽器的網址列上。 請注意，其中包含 URL 中的表單驗證票證！
 
 `http://localhost:2448/ASPNET\_Security\_Tutorial\_03\_CS/(F(jaIOIDTJxIr12xYS-VVgkqKCVAuIoW30Bu0diWi6flQC-FyMaLXJfow\_Vd9GZkB2Cv-rfezq0gKadKX0YPZCkA2))/SomePage.aspx`
 

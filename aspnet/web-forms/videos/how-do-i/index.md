@@ -2,22 +2,22 @@
 uid: web-forms/videos/how-do-i/index
 title: 如何？ | Microsoft Docs
 author: rick-anderson
-description: 如何執行各種常見工作。
+description: 如何執行各種常見的工作。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 27591afa-3c14-47e6-8323-573f8f7aa862
 msc.legacyurl: /web-forms/videos/how-do-i
 msc.type: chapter
 ms.openlocfilehash: 12c988e64c5b724e04b6fc5f8eddc6a181764e1d
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114927"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78639983"
 ---
 # <a name="how-do-i"></a>如何？
 
-> 如何執行各種常見工作。
+> 如何執行各種常見的工作。
 
 - [學習專家的祕訣和技巧](how-do-i-learn-the-tips-and-tricks-of-experts.md)
 - [使用當地語系化功能建立多語言網站](how-do-i-create-a-multi-lingual-site-with-localization.md)
@@ -73,7 +73,7 @@ ms.locfileid: "65114927"
 - [在 ASP.NET Web Pages 中偵測瀏覽器功能](how-do-i-detect-browser-capabilities-in-aspnet-web-pages.md)
 - [對應 ASP.NET 伺服器控制項和呈現所用的配接器](how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it.md)
 - [使用查詢字串將資訊從一個頁面傳至另一個頁面](how-do-i-pass-information-from-one-page-to-another-using-a-query-string.md)
-- [使用 aspnet\_merge.exe 合併組件的公用程式](how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
+- [使用 aspnet\_merge .exe 公用程式來合併元件](how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies.md)
 - [在 ASP.NET 中實作跨網頁回傳](how-do-i-implement-a-cross-page-postback-in-aspnet.md)
 - [以程式設計方式將控制項新增至 ASP.NET 網頁](how-do-i-add-controls-to-an-aspnet-web-page-programmatically.md)
 - [使用隱藏的欄位來儲存及操作用戶端資訊](how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information.md)

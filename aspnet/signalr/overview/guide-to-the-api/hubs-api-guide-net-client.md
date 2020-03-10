@@ -9,11 +9,11 @@ ms.assetid: 6d02d9f7-94e5-4140-9f51-5a6040f274f6
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-net-client
 msc.type: authoredcontent
 ms.openlocfilehash: d3536f1c15cd7dad7cd660becf0577e5c131f707
-ms.sourcegitcommit: 295cf898a4c87e264b0c35c7254b0fa4169f2278
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74057013"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78578789"
 ---
 # <a name="aspnet-signalr-hubs-api-guide---net-client-c"></a>ASP.NET SignalR 中樞 API 指南-.NET 用戶端C#（）
 
@@ -42,7 +42,7 @@ ms.locfileid: "74057013"
 >
 > 請留下有關您喜歡本教學課程的意見反應，以及我們可以在頁面底部的批註中改進的內容。 如果您有與本教學課程不直接相關的問題，您可以將其張貼至[ASP.NET SignalR 論壇](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 本文件包含下列章節：
 

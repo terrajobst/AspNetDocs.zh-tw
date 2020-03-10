@@ -9,11 +9,11 @@ ms.assetid: b651dc58-93c7-4f83-a74e-3b99f6d60848
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs
 msc.type: authoredcontent
 ms.openlocfilehash: e26b8e841f86272a158b0c09b62ab2790d01d191
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74571835"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78592740"
 ---
 # <a name="an-overview-of-inserting-updating-and-deleting-data-c"></a>簡介如何插入、更新和刪除資料（C#）
 
@@ -376,4 +376,4 @@ FormView 提供了插入、編輯和刪除資料的內建支援，但是因為�
 [Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml)，自1998起，有七個 ASP/ASP. NET 書籍和創辦人的[4GuysFromRolla.com](http://www.4guysfromrolla.com)。 Scott 以獨立的顧問、訓練員和作者的身分運作。 他的最新著作是[*在24小時內讓自己的 ASP.NET 2.0*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)。 他可以在mitchell@4GuysFromRolla.com觸達[。](mailto:mitchell@4GuysFromRolla.com) 或者透過他的 blog，可以在[http://ScottOnWriting.NET](http://ScottOnWriting.NET)找到。
 
 > [!div class="step-by-step"]
-> [下一步](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)
+> [下一個](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)

@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-discover-application-changes-prior-to-deployment
-title: '[How Do i:]探索應用程式變更再部署？ | Microsoft Docs'
+title: '[How Do I：]在部署前探索應用程式變更嗎？ | Microsoft Docs'
 author: pjhacker
-description: 了解如何使用 Visual Studio Team System 從原始檔控制總管來探索您的 Web 應用程式，以及 ensur 已進行的變更...
+description: 瞭解如何使用來自 Visual Studio Team System 的原始檔控制總管來探索您的 Web 應用程式所做的變更，以及 ensur 。
 ms.author: riande
 ms.date: 07/25/2007
 ms.assetid: 6945a637-cab3-4a13-a678-f6d2d83c2587
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-discover-application-changes-prior-to-deployment
 msc.type: video
 ms.openlocfilehash: 2cedf4dd161751802bf197ee6b96731259bc5c2f
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59402930"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78641222"
 ---
-# <a name="how-do-i-discover-application-changes-prior-to-deployment"></a>[How Do i:]探索應用程式變更再部署？
+# <a name="how-do-i-discover-application-changes-prior-to-deployment"></a>[How Do I：]在部署前探索應用程式變更嗎？
 
-藉由[Paul 駭客](https://github.com/pjhacker)
+作者： [Paul 駭客](https://github.com/pjhacker)
 
-了解如何使用原始檔控制總管，從 Visual Studio Team System，探索 Web 應用程式時，所做的變更，並確保必要的變更，部署到即時網站。 我們也會探討免費的公用程式，可讓您合併在一起，以簡化部署所做的變更。
+瞭解如何使用來自 Visual Studio Team System 的原始檔控制總管來探索您的 Web 應用程式所做的變更，並確保只將必要的變更部署到即時網站。 我們也會探討一個免費的公用程式，可讓您將變更合併在一起，以簡化部署。
 
-[&#9654;觀看影片 （5 分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-discover-application-changes-prior-to-deployment)
+[&#9654;觀看影片（5分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-discover-application-changes-prior-to-deployment)
 
 > [!div class="step-by-step"]
 > [上一頁](how-do-i-publish-and-analyze-test-results.md)

@@ -9,11 +9,11 @@ ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
 ms.openlocfilehash: f61810ea7b486b2fa0bbb234edea7541eedde835
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457059"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78583143"
 ---
 # <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>監視和遙測（使用 Azure 建立真實世界的雲端應用程式）
 
@@ -79,7 +79,7 @@ ms.locfileid: "77457059"
     ![回應時間](monitoring-and-telemetry/_static/image10.png)
 - 一天中不同時間的輸送量速率（以每分鐘的要求數計算）。
 
-    ![Throughput](monitoring-and-telemetry/_static/image11.png)
+    ![輸送量](monitoring-and-telemetry/_static/image11.png)
 - 處理不同 HTTP 要求所花費的伺服器 CPU 時間。
 
     ![Web 交易時間](monitoring-and-telemetry/_static/image12.png)
@@ -98,11 +98,11 @@ ms.locfileid: "77457059"
     ![外部服務](monitoring-and-telemetry/_static/image17.png)
 - 有關全球何處或美國 web 應用程式流量來自何處的資訊。
 
-    ![[地理位置]](monitoring-and-telemetry/_static/image18.png)
+    ![地理位置](monitoring-and-telemetry/_static/image18.png)
 
 您也可以設定報表和事件。 例如，您可以在每次開始看到錯誤時，傳送電子郵件給警示支援人員以解決問題。
 
-![報表](monitoring-and-telemetry/_static/image19.png)
+![報告](monitoring-and-telemetry/_static/image19.png)
 
 新的 New relic 只是遙測系統的其中一個範例;您也可以從其他服務取得所有此項。 雲端的優點是，不需要撰寫任何程式碼，而且最少或完全沒有費用，因此您突然可以取得更多有關應用程式的使用方式，以及您的客戶實際遇到的資訊。
 
@@ -247,7 +247,7 @@ Fix It 應用程式會使用 System. Diagnostics 追蹤。 您只需要啟用 we
 
 ![伺服器總管中的記錄](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-storagelogs.png)
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 執行現成的遙測系統、在您自己的程式碼中檢測記錄，以及在 Azure 中設定記錄非常簡單。 當您有生產環境問題時，遙測系統和自訂記錄的組合將可協助您快速解決問題，然後才會成為客戶的主要問題。
 

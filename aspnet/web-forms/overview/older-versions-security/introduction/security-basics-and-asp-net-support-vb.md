@@ -9,11 +9,11 @@ ms.assetid: ab68a92b-fc81-40a4-a7dc-406625d2c5d4
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 99e986013cb5a923ddb150022013e3a75852ce55
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74621625"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78575338"
 ---
 # <a name="security-basics-and-aspnet-support-vb"></a>安全性基本概念和 ASP.NET 支援 (VB)
 
@@ -40,7 +40,7 @@ ms.locfileid: "74621625"
 
 這些教學課程的目的是要精簡，並提供逐步指示，讓您能以視覺化方式逐步完成整個流程。 每個教學課程都C#可在和 Visual Basic 版本中取得，並包含下載所使用的完整程式碼。 （第一個教學課程著重于高階觀點的安全性概念，因此不包含任何相關的程式碼）。
 
-在本教學課程中，我們將討論重要的安全性概念，以及 ASP.NET 中可用來協助執行表單驗證、授權、使用者帳戶和角色的功能。 讓我們開始吧！
+在本教學課程中，我們將討論重要的安全性概念，以及 ASP.NET 中可用來協助執行表單驗證、授權、使用者帳戶和角色的功能。 現在就開始吧！
 
 > [!NOTE]
 > 安全性是任何應用程式的重要層面，其中涵蓋實體、技術和原則決策，而且需要高程度的規劃和領域知識。 本教學課程系列並非用於開發安全 web 應用程式的指南。 相反地，它特別著重于表單驗證、授權、使用者帳戶和角色。 雖然此系列中會討論一些關於這些問題的安全性概念，但有些是未探索。

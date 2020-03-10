@@ -9,11 +9,11 @@ ms.assetid: af882aef-56f5-4e9a-8f95-3977fde20e74
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/displaying-data-with-the-objectdatasource-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 9419504ace15b39c35a034dda22f2700ee720157
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74608916"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78577473"
 ---
 # <a name="displaying-data-with-the-objectdatasource-c"></a>使用 ObjectDataSource 顯示資料 (C#)
 
@@ -226,4 +226,4 @@ DetailsView 會非常嚴格地顯示從 ObjectDataSource 傳回的每一筆記�
 本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Hilton Giesenow。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一步](declarative-parameters-cs.md)
+> [下一個](declarative-parameters-cs.md)

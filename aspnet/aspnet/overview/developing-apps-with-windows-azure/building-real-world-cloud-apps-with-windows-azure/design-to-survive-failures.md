@@ -9,11 +9,11 @@ ms.assetid: 364ce84e-5af8-4e08-afc9-75a512b01f84
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
 ms.openlocfilehash: 348232af531b5d53dc3cb46d6d2c7931d95a572d
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457124"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78617723"
 ---
 # <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>設計到存活的失敗（使用 Azure 建立真實世界的雲端應用程式）
 
@@ -98,7 +98,7 @@ Azure 的目標是要讓您更輕鬆地處理所有這些失敗類型，而您�
 
 如果您的應用程式過度使用，某些雲端服務可能會刻意拒絕服務。 這稱為*節流*。 如果服務有 SLA，它應該會陳述您可能節流的條件，而您的應用程式設計應該避免這些狀況，並在發生時適當地回應節流。 例如，如果當您每秒超過某個數位時，服務的要求開始失敗，您會想要確保自動重試不會快速進行，因為它們會造成節流的繼續。 在[暫時性錯誤處理一章](transient-fault-handling.md)中，我們將會有更多關於節流的資訊。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本章已嘗試協助您瞭解如何將真實世界的雲端應用程式設計成可正常地存活失敗。 從[下一章](monitoring-and-telemetry.md)開始，此系列中的其餘模式會詳細說明一些您可以用來執行此動作的策略：
 

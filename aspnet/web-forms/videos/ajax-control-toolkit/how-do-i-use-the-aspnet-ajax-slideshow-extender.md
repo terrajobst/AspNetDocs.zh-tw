@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slideshow-extender
-title: '[How Do i:]使用 ASP.NET AJAX 投影片擴充項？ | Microsoft Docs'
+title: '[How Do I：]使用 ASP.NET AJAX 投影片擴充項？ | Microsoft Docs'
 author: JoeStagner
-description: 這段影片會示範如何從 ASP.NET AJAX Control Toolkit 投影片擴充項會轉為標準的 ASP.NET 影像控制項全功能的 sl...
+description: 這段影片示範 ASP.NET AJAX 控制項工具組中的投影器擴充項如何將標準 ASP.NET 影像控制項轉換成全功能的 sl 。
 ms.author: riande
 ms.date: 07/16/2007
 ms.assetid: dfc9f5bb-5e51-46ec-8e1d-2ef9942d258b
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slideshow-extender
 msc.type: video
 ms.openlocfilehash: 960cd6f82909919d07e976a90691c4a7d7fb3686
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59406427"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78628762"
 ---
-# <a name="how-do-i-use-the-aspnet-ajax-slideshow-extender"></a>[How Do i:]使用 ASP.NET AJAX 投影片擴充項？
+# <a name="how-do-i-use-the-aspnet-ajax-slideshow-extender"></a>[How Do I：]使用 ASP.NET AJAX 投影片擴充項？
 
-藉由[Joe Stagner](https://github.com/JoeStagner)
+依[Joe Stagner](https://github.com/JoeStagner)
 
-這部影片示範如何從 ASP.NET AJAX Control Toolkit 投影片擴充項會功能完整的投影片放映標準的 ASP.NET 影像控制項。 我們也會看到如何 ASP.NET Web 服務可以傳回不只文字和 XML 資料，但完整的 AJAX 物件可供 ASP.NET AJAX Web 應用程式。 Joe 還註解將映像儲存在檔案系統，而不是資料庫的優點。
+這段影片示範 ASP.NET AJAX 控制項工具組中的投影器擴充項如何將標準 ASP.NET 影像控制項轉換成全功能的投影片放映。 我們也會瞭解 ASP.NET Web 服務如何傳回文字和 XML 資料，但會傳回 ASP.NET AJAX Web 應用程式所要使用的完整 AJAX 物件。 Joe 也會針對在檔案系統中儲存影像的優點，而不是在資料庫中發表意見。
 
-[&#9654;觀看影片 （19 分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-slideshow-extender)
+[&#9654;觀看影片（19分鐘）](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-slideshow-extender)
 
 > [!div class="step-by-step"]
 > [上一頁](how-do-i-use-the-aspnet-ajax-tabs-control.md)

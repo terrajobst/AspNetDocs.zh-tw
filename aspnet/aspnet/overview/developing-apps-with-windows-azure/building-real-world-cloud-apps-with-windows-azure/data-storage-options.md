@@ -9,11 +9,11 @@ ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
 ms.openlocfilehash: 9357ed5aef39bed501cdac9ac26d46c884d4fae0
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457176"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78617800"
 ---
 # <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>資料儲存體選項（使用 Azure 建立真實世界的雲端應用程式）
 
@@ -151,7 +151,7 @@ Azure 中的 PaaS 資料儲存選項包括協力廠商提供者的供應專案�
 
 我們通常建議您在選擇資料儲存體解決方案之前，知道每個類別中問題的答案。
 
-此外，您的工作負載可能會有某些平臺可支援的特定需求，而無法比其他平臺更好。 例如：
+此外，您的工作負載可能會有某些平臺可支援的特定需求，而無法比其他平臺更好。 例如:
 
 - 您的應用程式需要審核功能嗎？
 - 您的資料壽命需求為何--您需要自動封存或清除功能嗎？
@@ -256,7 +256,7 @@ SQL Server 和 Azure SQL Database 的一件事，就是兩者的核心程式設�
 
 當您建立具有 SQL Server 映射的 VM 時，我們會根據您的 VM 使用量，以小時為單位來費率 SQL Server 授權成本。 如果您的專案只會執行幾個月，則以小時為單位付費會較便宜。 如果您認為您的專案將會持續幾年，則以平常的方式購買授權較便宜。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 雲端運算讓混搭資料儲存的方法更加實用，以符合您應用程式的需求。 如果您要建立新的應用程式，請仔細思考這裡所列的問題，以選擇當您的應用程式成長時，會繼續正常運作的方法。 [下一章](data-partitioning-strategies.md)將說明一些您可以用來結合多個資料儲存方法的分割策略。
 

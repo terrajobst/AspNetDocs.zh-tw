@@ -1,23 +1,23 @@
 ---
 uid: web-forms/videos/aspnet-ajax/index
-title: ASP.NET AJAX | Microsoft Docs
+title: ASP.NET AJAX |Microsoft Docs
 author: rick-anderson
-description: 使用 ASP.NET AJAX 來建立快速回應頁面，即使您不是 JavaScript 專家的方式。
+description: 即使您不是 JavaScript 專家，也能使用 ASP.NET AJAX 來建立高度回應的頁面。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 754b8c66-cefc-42d6-9f02-685efabdfcc6
 msc.legacyurl: /web-forms/videos/aspnet-ajax
 msc.type: chapter
 ms.openlocfilehash: 52cc785a92bc3e902f0f3266333d6157c6a78354
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116124"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78628622"
 ---
 # <a name="aspnet-ajax"></a>ASP.NET AJAX
 
-> 使用 ASP.NET AJAX 來建立快速回應頁面，即使您不是 JavaScript 專家的方式。
+> 即使您不是 JavaScript 專家，也能使用 ASP.NET AJAX 來建立高度回應的頁面。
 
 - [開始使用 ASP.NET AJAX](how-do-i-get-started-with-aspnet-ajax.md)
 - [使用 ASP.NET AJAX 實作動態的部分頁面更新](how-do-i-implement-dynamic-partial-page-updates-with-aspnet-ajax.md)

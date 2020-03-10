@@ -10,11 +10,11 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
 msc.type: authoredcontent
 ms.openlocfilehash: 2f0b47d45bce82c71d1864536309f9e2ffed2d63
-ms.sourcegitcommit: 88fc80e3f65aebdf61ec9414810ddbc31c543f04
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519124"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78616911"
 ---
 # <a name="implementing-a-custom-mysql-aspnet-identity-storage-provider"></a>實作自訂的 MySQL ASP.NET Identity 儲存體提供者
 
@@ -40,7 +40,7 @@ ms.locfileid: "76519124"
 
 ## <a name="the-steps-you-will-perform"></a>您將執行的步驟
 
-在此教學課程中，您將：
+在本教學課程中，您將：
 
 1. 在 Azure 上建立 MySQL 資料庫
 2. 在 MySQL 中建立 ASP.NET Identity 資料表
@@ -121,7 +121,7 @@ ms.locfileid: "76519124"
 5. 以滑鼠右鍵按一下 IdentityMySQLDemo 專案，選取 [**加入**]、[**參考]、[方案]、[專案**]，然後選取 [node.js] 專案，再按一下 **[確定]** 。
 6. 在 IdentityMySQLDemo 專案中，將所有參考取代為  
     `using Microsoft.AspNet.Identity.EntityFramework;`  
-   使用  
+   取代為  
      `using AspNet.Identity.MySQL;`
 7. 在 IdentityModels.cs 中，將 **[applicationdbcoNtext]** 設定為衍生自**MySqlDatabase** ，並包含採用單一參數與連接名稱的函式。  
 

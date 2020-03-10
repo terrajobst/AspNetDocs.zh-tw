@@ -1,19 +1,19 @@
 ---
 uid: whitepapers/index
-title: 技術白皮書 |Microsoft Docs
+title: 白皮書 |Microsoft Docs
 author: rick-anderson
-description: 在此頁面上，您會發現可協助您安裝和設定 ASP.NET，並協助您撰寫安全、 快速且彈性的 ASP.NET 應用程式的技術白皮書。
+description: 在此頁面上，您會找到可協助您安裝及設定 ASP.NET 的白皮書，並協助您撰寫安全、快速且彈性的 ASP.NET 應用程式。
 ms.author: riande
 ms.date: 11/15/2011
 ms.assetid: 3824e2d7-446f-406b-9c8b-5a1634359a78
 msc.legacyurl: ''
 msc.type: content
 ms.openlocfilehash: 6d1251da10705867ad25b53afd69bb70c647fc18
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59388656"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78640858"
 ---
 # <a name="whitepapers"></a>白皮書
 
@@ -28,7 +28,7 @@ ms.locfileid: "59388656"
 - [ASP.NET MVC 3](mvc3-release-notes.md)
 - [ASP.NET MVC 4](mvc4-beta-release-notes.md)
 - [執行 ASP.NET 1.1 與 IIS 6.0](aspnet-and-iis6.md)
-- [如何：將行動網頁加入 ASP.NET Web Form / MVC 應用程式](add-mobile-pages-to-your-aspnet-web-forms-mvc-application.md)
+- [如何：將行動網頁新增至 ASP.NET Web Form / MVC 應用程式](add-mobile-pages-to-your-aspnet-web-forms-mvc-application.md)
 - [套用 IE 的安全性更新之後，修正「無法使用伺服器應用程式」錯誤](ms03-32-issue.md)
 - [ASP.NET 並存執行 .NET Framework 1.0 和 1.1](side-by-side-with-10.md)
 - [ASP.NET MVC 4](mvc4-release-notes.md)

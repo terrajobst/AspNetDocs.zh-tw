@@ -2,199 +2,199 @@
 uid: web-forms/overview/moving-to-aspnet-20/server-controls
 title: 伺服器控制項 |Microsoft Docs
 author: microsoft
-description: ASP.NET 2.0 增強伺服器控制項，在許多方面。 在本單元中，我們將討論一些方式 ASP.NET 2.0 和 Visual Studio 200 的架構變更...
+description: ASP.NET 2.0 以許多方式增強伺服器控制項。 在此課程模組中，我們將探討 ASP.NET 2.0 和 Visual Studio 200 ... 的一些架構變更。
 ms.author: riande
 ms.date: 02/20/2005
 ms.assetid: 43f6ac47-76fc-4cf7-8e9f-c18ce673dfd8
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/server-controls
 msc.type: authoredcontent
 ms.openlocfilehash: c02a633013f061c09141d4f98871848c011a799e
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116717"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78641439"
 ---
 # <a name="server-controls"></a>伺服器控制項
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-> ASP.NET 2.0 增強伺服器控制項，在許多方面。 在這個模組中，我們將討論一些架構的變更，ASP.NET 2.0 的方式，而 Visual Studio 2005 處理的伺服器控制項。
+> ASP.NET 2.0 以許多方式增強伺服器控制項。 在此課程模組中，我們將探討 ASP.NET 2.0 和 Visual Studio 2005 處理伺服器控制項的方式的一些架構變更。
 
-ASP.NET 2.0 增強伺服器控制項，在許多方面。 在這個模組中，我們將討論一些架構的變更，ASP.NET 2.0 的方式，而 Visual Studio 2005 處理的伺服器控制項。
+ASP.NET 2.0 以許多方式增強伺服器控制項。 在此課程模組中，我們將探討 ASP.NET 2.0 和 Visual Studio 2005 處理伺服器控制項的方式的一些架構變更。
 
 ## <a name="view-state"></a>檢視狀態
 
-在檢視狀態中的 ASP.NET 2.0 的主要變更是大小可以大幅減少。 請考慮只在其上的行事曆控制項的頁面。 以下是在 ASP.NET 1.1 中的檢視狀態。
+ASP.NET 2.0 中檢視狀態的主要變更，大小大幅縮減。 假設有一個頁面上只有一個行事曆控制項。 以下是 ASP.NET 1.1 中的檢視狀態。
 
 [!code-css[Main](server-controls/samples/sample1.css)]
 
-現在如下的檢視狀態上完全相同的頁面在 ASP.NET 2.0。
+這現在是 ASP.NET 2.0 中相同頁面的檢視狀態。
 
 [!code-css[Main](server-controls/samples/sample2.css)]
 
-這是重大的變更，並考慮檢視狀態來回傳送透過網路，這項變更可以讓開發人員大幅提升效能。 檢視狀態大小縮減主要是因為我們在內部處理的方式。 請記住，檢視狀態是以 Base64 編碼的字串。 若要進一步了解在檢視狀態中的 ASP.NET 2.0 的變更，讓我們看看從上述範例中的已解碼的值。
+這是相當重要的變更，並考慮到該檢視狀態是透過網路來回執行，這種變更可以讓開發人員大幅提升效能。 減少檢視狀態的大小，主要是因為我們在內部處理它的方式。 請記住，檢視狀態是 Base64 編碼的字串。 為了進一步瞭解 ASP.NET 2.0 中 view 狀態的變更，讓我們先看一下上述範例中的解碼值。
 
-以下是已解碼的 1.1 版的檢視狀態：
+以下是已解碼的 1.1 view 狀態：
 
 [!code-css[Main](server-controls/samples/sample3.css)]
 
-這可能會看起來有點像無意義，但沒有在這裡的模式。 在 ASP.NET 1.x 中，我們用來識別資料類型的單一字元，並分隔使用值&lt;&gt;字元。 在檢視狀態上述範例中的"t"代表 Triplet。 三物件組包含一組 ArrayLists （"l"代表 ArrayList）。其中一個這些 ArrayLists 包含 Int32 ("i") 值是 1，而另一個包含另一個 Triplet。 三物件組包含一組 ArrayLists 等等。要記住的重點是我們會使用包含配對的 Triplet、 我們識別的資料型別是字母，透過和我們會使用&lt;和&gt;做為分隔符號的字元。
+這看起來有點像雜亂的內容，但這裡有一個模式。 在 ASP.NET 1.x 中，我們使用了單一字元來識別資料類型，並使用 &lt;的 &gt; 字元來分隔值。 上述檢視狀態範例中的 "t" 代表三元。 三元包含一對 ArrayLists （"l" 代表 ArrayList）。其中一個 ArrayLists 包含 Int32 （"i"），其值為1，另一個則包含另一個三元。 三元包含一對 ArrayLists 等等。要記住的重點是，我們使用包含配對的 Triplet，我們會透過字母來識別資料類型，而我們會使用 &lt; 並 &gt; 字元做為分隔符號。
 
-在 ASP.NET 2.0 中，已解碼的檢視狀態看起來會有點不同。
+在 ASP.NET 2.0 中，解碼的檢視狀態看起來有點不同。
 
 [!code-powershell[Main](server-controls/samples/sample4.ps1)]
 
-您應該會注意到顯著的不同，已解碼的檢視狀態的外觀。 這項變更會有數個結構性的支援。 檢視狀態在 ASP.NET 1.x 用於 LosFormatter 序列化資料。 在 2.0 中，我們會使用新的 ObjectStateFormatter 類別。 這個類別被專為協助序列化和還原序列化檢視狀態和控制項狀態。 （下一節將說明控制項狀態）。有許多優點，獲得變更的序列化和還原序列化發生的方法。 最明顯的其中一項是不使用 TextWriter LosFormatter，像 ObjectStateFormatter 使用 BinaryWriter 的事實。 這可讓 ASP.NET 2.0，來儲存檢視狀態一系列的位元組，而不是字串。 例如，需要為整數。 在 ASP.NET 1.1 中，整數所需的檢視狀態的 4 個位元組。 在 ASP.NET 2.0 中，該相同的整數，只需要 1 個位元組。 其他增強功能對減少儲存的檢視狀態。 例如，日期時間值現在儲存使用 TickCount 而非字串。
+您應該會注意到解碼檢視狀態的外觀有很大的變化。 這項變更有數個架構結構性支援。 ASP.NET 1.x 中的 View 狀態使用 LosFormatter 來序列化資料。 在2.0 中，我們使用新的 ObjectStateFormatter 類別。 這個類別是特別設計來協助序列化和還原序列化檢視狀態和控制項狀態。 （下一節將涵蓋控制狀態）。藉由變更序列化和還原序列化進行的方法，可以獲得許多好處。 其中一個最顯著的事實是，不同于使用了不正確 LosFormatter，ObjectStateFormatter 會使用 BinaryWriter。 這可讓 ASP.NET 2.0 儲存檢視狀態一系列的位元組，而不是字串。 例如，取得整數。 在 ASP.NET 1.1 中，整數需要4個位元組的檢視狀態。 在 ASP.NET 2.0 中，相同的整數只需要1個位元組。 已進行其他增強，以減少所儲存的檢視狀態量。 例如，日期時間值現在會使用 TickCount （而非字串）來儲存。
 
-如果一切都不足夠，特別注意已付費之事實的 1.x 中的檢視狀態的最大取用者的 DataGrid 和類似的控制項。 控制項，例如 DataGrid 而言檢視狀態的主要缺點是資訊的，它通常會包含大量重複。 在 ASP.NET 1.x 中，重複資訊直接儲存和上一次而造成過大的檢視狀態。 在 ASP.NET 2.0 中，我們會使用新 IndexedString 類別來儲存這類資料。 若重複出現的字串，我們只會儲存權杖 IndexedString 和執行 IndexedString 物件的表格中的索引。
+就像這樣的一切都不夠，因為1.x 的其中一個最大取用者是 DataGrid 和類似的控制項，所以會特別注意。 控制項的主要缺點，像是 DataGrid 的檢視狀態，其中通常包含大量重複的資訊。 在 ASP.NET 1.x 中，重複的資訊會一次直接儲存，而導致膨脹檢視狀態。 在 ASP.NET 2.0 中，我們使用新的 IndexedString 類別來儲存這類資料。 如果字串重複，我們只會將 IndexedString 的 token 和索引儲存在 IndexedString 物件的執行中資料表內。
 
 ## <a name="control-state"></a>控制項狀態
 
-其中一個主要開發人員必須與檢視狀態的牢騷就是它新增至 HTTP 承載的大小。 如先前所述，檢視狀態的最大取用者會在 DataGrid 控制項。 若要避免大量資料格所產生的檢視狀態，許多開發人員只要停用該控制項的檢視狀態。 不幸的是，該方案不一定是一個很好。 檢視狀態在 ASP.NET 1.x 不只包含資料之控制項的正確功能所需。 它也包含有關控制項的 UI 狀態的資訊。 這表示，如果您想要允許分頁上的資料格，您必須先啟用檢視狀態，即使您不需要的所有檢視的 UI 資訊狀態就會包含。 這是孤注一擲的案例。
+開發人員具有「視圖」狀態的主要傾聽牢騷之一，就是它加入至 HTTP 承載的大小。 如先前所述，檢視狀態的最大取用者之一就是 DataGrid 控制項。 為了避免 DataGrid 產生大量的檢視狀態，許多開發人員只會停用該控制項的檢視狀態。 可惜的是，該解決方案並不一定是一個好用的。 ASP.NET 1.x 中的 View 狀態不僅包含控制項的正確功能所需的資料。 其中也包含有關控制項 UI 狀態的資訊。 這表示如果您想要允許在 DataGrid 上進行分頁，即使您不需要所有檢視狀態包含的 UI 資訊，還是必須啟用 view 狀態。 這是一種全有或全無的案例。
 
-在 ASP.NET 2.0 中，控制項狀態會解決該問題，妥善透過控制項狀態的簡介。 控制項狀態會包含控制項的適當功能絕對必要的資料。 不同的檢視狀態，無法停用控制項狀態。 因此，務必小心控制 控制項狀態中所儲存的資料。
+在 ASP.NET 2.0 中，控制狀態會透過引進控制項狀態來解決此問題。 控制項狀態包含控制項適當功能絕對必要的資料。 不同于 view 狀態，控制項狀態無法停用。 因此，請務必小心地控制儲存在控制狀態中的資料。
 
 > [!NOTE]
-> 中的檢視狀態以及保存控制項狀態\_ \_VIEWSTATE 的隱藏的表單欄位。
+> 控制項狀態會隨著檢視狀態保存在 [\_\_VIEWSTATE 隱藏的表單] 欄位中。
 
-這段影片會逐步解說中的檢視狀態和控制項狀態。
+這段影片是觀看狀態和控制狀態的逐步解說。
 
 ![](server-controls/_static/image1.png)
 
 [開啟全螢幕影片](server-controls/_static/state1.wmv)
 
-為了讓伺服器控制項，以讀取和寫入至控制狀態，您必須採取三個步驟。
+為了讓伺服器控制項能夠讀取和寫入控制狀態，您必須執行三個步驟。
 
-## <a name="step-1-call-the-registerrequirescontrolstate-method"></a>步驟 1：呼叫 RegisterRequiresControlState 方法
+## <a name="step-1-call-the-registerrequirescontrolstate-method"></a>步驟1：呼叫 RegisterRequiresControlState 方法
 
-RegisterRequiresControlState 方法會通知 ASP.NET 控制項必須保存控制項狀態。 它會採用一個引數的型別即所註冊之控制項的控制項。
+RegisterRequiresControlState 方法會通知 ASP.NET 控制項需要保存控制項狀態。 它接受一個 type 控制項的引數，也就是要註冊的控制項。
 
-請務必注意註冊不會保存在要求。 因此，這個方法必須呼叫每個要求的控制項是否保存控制項狀態。 建議在 OnInit 會呼叫此方法。
+請務必注意，註冊不會從要求中保存。 因此，如果控制項要保存控制項狀態，就必須在每個要求上呼叫這個方法。 建議您在 OnInit 中呼叫方法。
 
 [!code-csharp[Main](server-controls/samples/sample5.cs)]
 
-## <a name="step-2-override-savecontrolstate"></a>步驟 2：覆寫 SaveControlState
+## <a name="step-2-override-savecontrolstate"></a>步驟2：覆寫 SaveControlState
 
-SaveControlState 方法儲存自上次的回傳控制項的控制項狀態變更。 它會傳回物件，代表控制項的狀態。
+SaveControlState 方法會在最後一次回傳後，儲存控制項的控制項狀態變更。 它會傳回代表控制項狀態的物件。
 
-## <a name="step-3-override-loadcontrolstate"></a>步驟 3：Override LoadControlState
+## <a name="step-3-override-loadcontrolstate"></a>步驟3：覆寫 LoadControlState
 
-LoadControlState 方法會載入控制項中的已儲存的狀態。 此方法會採用一個引數的型別物件，其中包含控制項的已儲存的狀態。
+LoadControlState 方法會將儲存的狀態載入控制項。 方法會接受一個型別物件的引數，以保存控制項的儲存狀態。
 
-## <a name="full-xhtml-compliance"></a>完全符合 XHTML 的規範
+## <a name="full-xhtml-compliance"></a>完整的 XHTML 合規性
 
-任何 Web 開發人員知道 Web 應用程式中的標準的重要性。 若要維護標準為基礎的開發環境，ASP.NET 2.0 是完全符合 XHTML。 因此，所有標記都都呈現根據符合 XHTML 標準，在瀏覽器支援 HTML 4.0 或更新版本。
+任何 Web 開發人員都知道 Web 應用程式中標準的重要性。 為了維護以標準為基礎的開發環境，ASP.NET 2.0 完全符合 XHTML 標準。 因此，所有標記都是根據瀏覽器中支援 HTML 4.0 或更高版本的 XHTML 標準來呈現。
 
-在 ASP.NET 1.1 中的文件類型定義如下所示：
+ASP.NET 1.1 中的 DOCTYPE 定義如下所示：
 
 [!code-html[Main](server-controls/samples/sample6.html)]
 
-在 ASP.NET 2.0 中，預設文件類型定義如下所示：
+在 ASP.NET 2.0 中，預設的 DOCTYPE 定義如下所示：
 
 [!code-html[Main](server-controls/samples/sample7.html)]
 
-如果您選擇，您可以改變預設 XHTML 合規性，透過組態檔中的 [xhtmlConformance] 節點。 比方說，在 web.config 檔案中的下列節點會將符合 XHTML 的規範變更為 XHTML 1.0 Strict:
+如果您選擇，您可以透過設定檔中的 [xhtmlConformance] 節點來改變預設的 XHTML 合規性。 例如，web.config 檔案中的下列節點會將 XHTML 符合性變更為 XHTML 1.0 Strict：
 
 [!code-xml[Main](server-controls/samples/sample8.xml)]
 
-如果您選擇，您也可以設定要使用舊版 ASP.NET 中使用的設定的 ASP.NET 1.x，如下所示：
+如果您選擇，您也可以將 ASP.NET 設定成使用 ASP.NET 1.x 中使用的舊版設定，如下所示：
 
 [!code-xml[Main](server-controls/samples/sample9.xml)]
 
-## <a name="adaptive-rendering-using-adapters"></a>自適性轉譯時使用配接器
+## <a name="adaptive-rendering-using-adapters"></a>使用介面卡的自動調整轉譯
 
-在 ASP.NET 1.x 中，所包含的組態檔案&lt;browserCaps&gt;填入 HttpBrowserCapabilities 物件的區段。 這個物件允許開發人員判斷哪些裝置提出特定要求，並適當地轉譯程式碼。 在 ASP.NET 2.0 中，模型已經改良，現在會使用新的 ControlAdapter 類別 ControlAdapter 類別會覆寫控制項的生命週期中的事件，並控制使用者代理程式的功能為基礎的控制項的呈現。 儲存在 c:\windows\microsoft.net\framework\v2.0 瀏覽器定義檔 （.browser 檔案副檔名的檔案） 會定義特定的使用者代理程式的功能。\* \* \* \*\CONFIG\Browsers 資料夾。
+在 ASP.NET 1.x 中，設定檔包含已填入 HttpBrowserCapabilities 物件的 &lt;browserCaps&gt; 區段。 此物件可讓開發人員判斷哪個裝置正在進行特定的要求，並適當地轉譯程式碼。 在 ASP.NET 2.0 中，模型已經過改良，現在使用新的 ControlAdapter 類別。 ControlAdapter 類別會覆寫控制項生命週期中的事件，並根據使用者代理程式的功能來控制控制項的呈現。 特定使用者代理程式的功能是由儲存在 c:\windows\microsoft.net\framework\v2.0. 中的瀏覽器定義檔案（副檔名為. 瀏覽器）所定義\*\*\*\*\CONFIG\Browsers 資料夾。
 
 > [!NOTE]
 > ControlAdapter 類別是抽象類別。
 
-就像是&lt;browserCaps&gt; 1.x 中，瀏覽器定義檔中的一節會使用規則運算式剖析使用者代理字串來識別要求的瀏覽器。 它它們定義該使用者代理程式的特定功能。 ControlAdapter 呈現 Render 方法透過控制項。 因此，如果您覆寫 Render 方法，您不應該呼叫轉譯的基底類別。 如此一來，可能會造成轉譯發生兩次，一次的配接器，一次是控制項本身。
+瀏覽器定義檔與1.x 中的 &lt;browserCaps&gt; 區段非常類似，它會使用正則運算式來剖析使用者代理字串，以識別要求的瀏覽器。 其會定義該使用者代理程式的特定功能。 ControlAdapter 會透過 Render 方法呈現控制項。 因此，如果您覆寫 Render 方法，則不應該在基類上呼叫 Render。 這麼做可能會導致轉譯出現兩次，一次用於介面卡，一次用於控制項本身。
 
-## <a name="developing-a-custom-adapter"></a>開發自訂配接器
+## <a name="developing-a-custom-adapter"></a>開發自訂介面卡
 
-您可以藉由繼承自 ControlAdapter 開發您自己自訂的配接器。 此外，您可以繼承自抽象類別 PageAdapter 萬一頁面需要配接器的位置。 透過即可完成對應的自訂配接器的控制項&lt;的 controlAdapters&gt;瀏覽器定義檔案中的項目。 例如，下列 XML 程式碼從瀏覽器定義檔案對應功能表控制項 MenuAdapter 類別：
+您可以從 ControlAdapter 繼承，以開發自己的自訂介面卡。 此外，您可以在頁面需要介面卡的情況下，從抽象類別 PageAdapter 繼承。 將控制項對應至自訂介面卡，是透過瀏覽器定義檔中的 &lt;controlAdapters&gt; 元素來完成。 例如，瀏覽器定義檔案中的下列 XML 會將 Menu 控制項對應至 MenuAdapter 類別：
 
 [!code-html[Main](server-controls/samples/sample10.html)]
 
-使用此模型時，會變得很容易就可以針對特定裝置或瀏覽器控制項開發人員。 它也是開發人員能夠完全控制每個裝置上呈現頁面的方式相當簡單。
+使用此模型，控制項開發人員就會變得相當容易，以特定裝置或瀏覽器為目標。 開發人員也可以完全掌控每個裝置上頁面的呈現方式，這也相當簡單。
 
 ## <a name="per-device-rendering"></a>每一裝置轉譯
 
-在 ASP.NET 2.0 中的伺服器控制項屬性可以指定每個裝置使用的瀏覽器特定前置詞。 例如，下列程式碼會變更標籤，視哪一種裝置用來瀏覽網頁的文字。
+ASP.NET 2.0 中的伺服器控制項屬性可以使用瀏覽器特定的前置詞來指定給每一裝置。 例如，下列程式碼將會根據用來流覽頁面的裝置，變更標籤的文字。
 
 [!code-aspx[Main](server-controls/samples/sample11.aspx)]
 
-當從 Internet Explorer，瀏覽包含此標籤的頁面時，標籤會顯示文字指出 「 您正在瀏覽從 Internet Explorer。 」 當從 Firefox 瀏覽網頁時，標籤會顯示文字 「 瀏覽從 Firefox。 」 當從任何其他裝置，瀏覽網頁時，它會顯示 「 您正在瀏覽從未知裝置。 」 可以使用這個特殊的語法來指定任何屬性。
+當包含此標籤的頁面從 Internet Explorer 流覽時，標籤會顯示「您是從 Internet Explorer 流覽」文字。 從 Firefox 流覽頁面時，標籤會顯示「您正從 Firefox 流覽」的文字。 當您從任何其他裝置流覽頁面時，它會顯示「您是從未知的裝置流覽」。 您可以使用這個特殊語法來指定任何屬性。
 
 ## <a name="setting-focus"></a>設定焦點
 
-有關如何在特定的控制項上設定初始焦點的 ASP.NET 1.x 開發人員常見問題集。 比方說，在登入頁面上，最好將 [使用者識別碼] 文字方塊中第一次載入頁面時，取得焦點。 在 ASP.NET 1.x 中，執行此動作會需要撰寫一些用戶端指令碼。 即使這類指令碼是簡單的工作，就不會再感謝 SetFocus 方法必須在 ASP.NET 2.0。 SetFocus 方法會採用一個引數指出應該接收焦點的控制項。 這個引數可以是用戶端控制項的 ID 做為字串或伺服器控制項，以控制物件的名稱。 比方說，若要設定初始焦點至第一次載入頁面時，呼叫 txtUserID 文字方塊控制項，將下列程式碼新增至頁面\_負載：
+ASP.NET 1.x 開發人員經常會詢問如何設定特定控制項的初始焦點。 例如，在登入頁面上，讓 [使用者識別碼] 文字方塊在頁面第一次載入時取得焦點會很有用。 在 ASP.NET 1.x 中，執行這項作業需要撰寫一些用戶端腳本。 雖然這類腳本是一項簡單的工作，但由於 SetFocus 方法，因此在 ASP.NET 2.0 中已不再需要。 SetFocus 方法會採用一個引數，表示應接收焦點的控制項。 這個引數可以是做為字串的控制項的用戶端識別碼，或是做為控制項物件的伺服器控制項名稱。 例如，若要在第一次載入頁面時將初始焦點設定為 TextBox 控制項，請將下列程式碼新增至頁面\_載入：
 
 [!code-csharp[Main](server-controls/samples/sample12.cs)]
 
--或
+--或
 
 [!code-csharp[Main](server-controls/samples/sample13.cs)]
 
-ASP.NET 2.0 使用 Webresource.axd 處理常式 （先前所述），來呈現設定焦點的用戶端功能。 用戶端函式的名稱是 WebForm\_AutoFocus 如下所示：
+ASP.NET 2.0 使用 Webresource 處理常式（先前討論過）來呈現設定焦點的用戶端函式。 用戶端函式的名稱是 WebForm\_自動對焦，如下所示：
 
 [!code-html[Main](server-controls/samples/sample14.html)]
 
-或者，您可以使用控制項的 Focus 方法，若要設定初始焦點的控制項。 焦點方法衍生自 Control 類別，並可用於所有的 ASP.NET 2.0 控制項。 它也可將焦點設定至特定控制項發生驗證錯誤時。 將會在更新版本的模組說明。
+或者，您可以使用控制項的焦點方法，將初始焦點設定為該控制項。 Focus 方法衍生自控制項類別，並可供所有 ASP.NET 2.0 控制項使用。 當發生驗證錯誤時，也可以將焦點設定至特定的控制項。 這將在稍後的課程模組中討論。
 
 ## <a name="new-server-controls-in-aspnet-20"></a>ASP.NET 2.0 中的新伺服器控制項
 
-以下是在 ASP.NET 2.0 的新伺服器控制項。 我們將會進入更多詳細資料，在其中更新版本的模組中一些。
+以下是 ASP.NET 2.0 中的新伺服器控制項。 我們將在稍後的課程模組中深入瞭解其中的部分。
 
 ## <a name="imagemap-control"></a>ImageMap 控制項
 
-ImageMap 控制項可讓您將加入的映像，可初始化回傳，或瀏覽至 URL 中的熱點。 有三種類型的作用點;CircleHotSpot、 RectangleHotSpot 和 PolygonHotSpot。 透過 Visual Studio 中，或以程式設計方式在程式碼中的集合編輯器新增作用點。 不沒有可用於繪製的映像上的作用點的任何使用者介面。 必須以宣告方式指定的座標和大小或作用點的半徑。 另外還有一個作用區設計工具中沒有視覺表示法。 如果作用點設定為巡覽至 URL，透過 NavigateUrl 屬性的作用被指定的 URL。 如果是 post 回熱點，PostBackValue 屬性可讓您在伺服器端程式碼中傳遞回文章中可擷取的字串。
+ImageMap 控制項可讓您將作用區新增至可起始回傳或流覽至 URL 的影像。 有三種可用的熱點類型;[Circlehotspot]、RectangleHotSpot 和 PolygonHotSpot。 在 Visual Studio 中或以程式設計方式，透過程式碼來新增熱點。 沒有任何使用者介面可用來在影像上繪製作用區。 作用點的座標和大小或半徑必須以宣告方式指定。 在設計工具中，熱點也沒有視覺標記法。 如果將作用點設定為流覽至 URL，則會透過作用點的 NavigateUrl 屬性來指定 URL。 在回傳後的熱點案例中，PostBackValue 屬性可讓您傳遞回傳中的字串，以便在伺服器端程式碼中抓取。
 
-![在 Visual Studio 中的作用點集合編輯器](server-controls/_static/image1.jpg)
+![Visual Studio 中的作用點集合編輯器](server-controls/_static/image1.jpg)
 
-**圖 1**:在 Visual Studio 中的作用點集合編輯器
+**圖 1**： Visual Studio 中的作用點集合編輯器
 
 ## <a name="bulletedlist-control"></a>BulletedList 控制項
 
-BulletedList 控制項是可以輕鬆地進行資料繫結項目符號清單。 （編號的） 排序清單或未按順序透過 BulletStyle 屬性。 在清單中的每個項目被以清單項目物件。
+BulletedList 控制項是可輕鬆地系結資料的項目符號清單。 您可以透過 BulletStyle 屬性來排序（編號）或未排序清單。 清單中的每個專案都是以「內容」物件表示。
 
 ![Visual Studio 中的 BulletedList 控制項](server-controls/_static/image1.gif)
 
-**圖 2**:Visual Studio 中的 BulletedList 控制項
+**圖 2**： Visual Studio 中的 BulletedList 控制項
 
-## <a name="hiddenfield-control"></a>Hiddenfield
+## <a name="hiddenfield-control"></a>HiddenField 控制項
 
-HiddenField 控制隱藏的表單將欄位加入至您的頁面上，其值可用於伺服器端程式碼。 隱藏的表單欄位的值通常預期回傳之間保持不變。 但是，它可能是惡意使用者變更值之前，要回傳。 如果發生這種情況，HiddenField 控制項就會引發 ValueChanged 事件。 如果您有 HiddenField 控制項中的機密資訊，您想要確保它會維持不變，您應該處理 ValueChanged 事件，在程式碼中。
+HiddenField 控制項會將隱藏的表單欄位加入至您的頁面中，其值可在伺服器端程式碼中使用。 隱藏的表單欄位值通常會在 post 備份之間保持不變。 不過，惡意使用者可能會在回傳之前變更值。 如果發生這種情況，HiddenField 控制項將會引發 ValueChanged 事件。 如果您在 HiddenField 控制項中有敏感性資訊，而且想要確保它保持不變，您應該在程式碼中處理 ValueChanged 事件。
 
 ## <a name="fileupload-control"></a>FileUpload 控制項
 
-在 ASP.NET 2.0 FileUpload 控制項可讓您能夠將檔案上傳至 Web 伺服器透過 ASP.NET 網頁。 此控制項是相當類似於 ASP.NET 1.x HtmlInputFile 類別有一些例外狀況。 在 ASP.NET 1.x 中，會建議 null 檢查 PostedFile 屬性，以判斷您是否有正確的檔案。 FileUpload 控制項在 ASP.NET 2.0 中的，將新的 HasFile 屬性可用於相同的目的，並會更有效率。
+ASP.NET 2.0 中的 FileUpload 控制項可讓您透過 ASP.NET 網頁，將檔案上傳至 Web 服務器。 此控制項與 ASP.NET 1.x HtmlInputFile 類別非常類似，但有一些例外狀況。 在 ASP.NET 1.x 中，建議您檢查 PostedFile 屬性是否為 null，以便判斷您是否有良好的檔案。 ASP.NET 2.0 中的 FileUpload 控制項加入了新的 HasFile 屬性，可讓您用於相同的目的，而且效率更高。
 
-PostedFile 屬性仍可供存取 HttpPostedFile 物件，但某些 HttpPostedFile 功能現已本質上與 FileUpload 控制項。 例如，若要將上傳的檔案儲存在 ASP.NET 1.x 中，您另存新檔上呼叫方法 HttpPostedFile 物件。 使用 FileUpload 控制項在 ASP.NET 2.0 中，您另存新檔上呼叫方法一樣 FileUpload 控制項本身。
+PostedFile 屬性仍可供存取 HttpPostedFile 物件，但 HttpPostedFile 的某些功能現在已可透過 FileUpload 控制項在本質上使用。 例如，若要在 ASP.NET 1.x 中儲存已上傳的檔案，您可以在 HttpPostedFile 物件上呼叫 SaveAs 方法。 使用 ASP.NET 2.0 中的 FileUpload 控制項，您可以在 FileUpload 控制項本身呼叫 SaveAs 方法。
 
-2.0 的行為 （與可能是最重要的變更） 中的另一個重大變更是，它不再需要載入記憶體中的整個上傳的檔案，然後再將它儲存。 在 1.x 中，已上傳任何檔案會儲存完全讀入記憶體之前寫入至磁碟。 此架構可避免大型檔案上的傳。
+2\.0 行為的另一項重大變更（而且可能是最重要的變更）是不再需要將整個上傳的檔案載入記憶體中，然後再儲存。 在1.x 中，任何已上傳的檔案都會在寫入磁片之前，完全儲存到記憶體中。 此架構會防止上傳大型檔案。
 
-在 ASP.NET 2.0 中，httpRuntime 元素 requestLengthDiskThreshold 屬性可讓您設定多少 Kb 會保留在記憶體中之前寫入緩衝區中到磁碟。
+在 ASP.NET 2.0 中，HTTPRuntime 專案的 requestLengthDiskThreshold 屬性可讓您設定在寫入磁片之前，緩衝區中保留的位元組數。
 
-**重要**:MSDN 文件 （及其他位置的文件），請指定這個值是以位元組為單位 （而不是千位元組） 和預設值是 256。 值實際上以 kb 為單位指定，預設值為 80。 擁有預設值是 80 K，我們會確保大型物件堆積不未抵達緩衝區。
+**重要**事項： MSDN 檔（和其他地方的檔）指定這個值是以位元組為單位（不是 kb），而預設值是256。 這個值實際上是以 Kb 指定，而預設值是80。 藉由將預設值設定為80K，我們可以確保緩衝區不會最後出現在大型物件堆積上。
 
-## <a name="wizard-control"></a>精靈控制項
+## <a name="wizard-control"></a>Wizard 控制項
 
-它會致力於嘗試收集一系列中的資訊的 「 頁面 」 使用面板，或藉由傳送 頁面的 ASP.NET 開發人員相當常見。 多半的努力是令人沮喪，相當耗時。 新的精靈控制項讓使用者熟悉的精靈介面中的線性和非線性步驟解決的問題。 精靈控制項提供輸入的表單中一系列的步驟。 每個步驟是控制項的特定類型; vlastnost StepType 屬性所指定。 可用的步驟類型如下所示：
+當 ASP.NET 的開發人員嘗試使用面板在一系列的「頁面」中收集資訊，或從頁面傳輸到頁面時，這是相當常見的情況。 這項工作通常會令人沮喪，而且非常耗時。 新的 Wizard 控制項可透過在使用者熟悉的 Wizard 介面中允許線性和非線性步驟來解決問題。 Wizard 控制項會以一系列的步驟呈現輸入表單。 每個步驟都是由控制項的 StepType 屬性所指定的特定類型。 可用的步驟類型如下所示：
 
 | **步驟類型** | **說明** |
 | --- | --- |
-| 自動 | 精靈會自動決定根據其位置步驟階層中的步驟的類型。 |
-| 啟動 | 第一個步驟，通常用來呈現簡介的陳述式。 |
-| 步驟 | 一般的步驟。 |
-| 完成 | 最後一個步驟，通常用來呈現按鈕以完成精靈。 |
-| 完成 | 顯示訊息，通訊成功或失敗。 |
+| Auto | Wizard 會根據步驟階層中的位置自動判斷步驟的類型。 |
+| 開始 | 第一個步驟，通常用來呈現簡介語句。 |
+| 步驟 | 一般步驟。 |
+| 完成 | 最後一個步驟，通常用來顯示按鈕以完成嚮導。 |
+| 完成 | 顯示訊息成功或失敗。 |
 
 > [!NOTE]
-> 它使用 ASP.NET 控制項狀態的狀態記錄的精靈控制項。 因此，EnableViewState 屬性可以設定為 false，而不需要任何有利有弊。
+> Wizard 控制項會使用 ASP.NET 控制項狀態來追蹤其狀態。 因此，EnableViewState 屬性可以設定為 false，而不需要任何弊。
 
-這段影片會 Wizard 控制項逐步解說。
+這段影片是 Wizard 控制項的逐步解說。
 
 ![](server-controls/_static/image2.png)
 
@@ -202,98 +202,98 @@ PostedFile 屬性仍可供存取 HttpPostedFile 物件，但某些 HttpPostedFil
 
 ## <a name="localize-control"></a>當地語系化控制項
 
-Localize 控制項很類似常值的控制項。 不過，Localize 控制項具有**模式**控制項加入至它的標記的呈現方式的屬性。 Mode 屬性支援下列值：
+[當地語系化] 控制項類似于 [常值] 控制項。 不過，[當地語系化] 控制項具有 [**模式]** 屬性，可控制如何呈現加入至它的標記。 Mode 屬性支援下列值：
 
 | **模式** | **說明** |
 | --- | --- |
-| 資料轉換 | 標記是根據提出要求的瀏覽器的通訊協定轉換。 |
-| PassThrough | 標記會轉譯成-是。 |
-| 編碼 | 使用 HtmlEncode 編碼新增至控制項的標記。 |
+| 轉換 | 標記會根據提出要求之瀏覽器的通訊協定進行轉換。 |
+| Ssh | 標記會以-is 呈現。 |
+| 編碼 | 加入至控制項的標記會使用 HtmlEncode 進行編碼。 |
 
-## <a name="multiview-and-view-controls"></a>MultiView 和 View 控制項
+## <a name="multiview-and-view-controls"></a>[查看] 和 [視圖] 控制項
 
-MultiView 控制項做為檢視控制項的容器，並檢視控制項做為其他控制項 （如同面板控制項） 的容器。 MultiView 控制項中的每個檢視被以單一的檢視控制項。 第一個檢視中的控制項 MultiView 是檢視 0，第二個是檢視 1，等等。您可以藉由指定 MultiView 控制項的 ActiveViewIndex 切換檢視。
+多型多型控制項的作用是 View 控制項的容器，而 View 控制項則是做為其他控制項的容器（與面板控制項非常類似）。 同一個視圖控制項中的每個視圖都是由單一 View 控制項表示。 同位查看中的第一個 View 控制項是 view 0，第二個是 view 1 等等。您可以藉由指定 [檢視器] 控制項的 ActiveViewIndex 來切換 views。
 
 ## <a name="substitution-control"></a>替代控制項
 
-替代控制項用於搭配 ASP.NET 快取。 當您想要利用的快取，但您有必須更新每個要求 （亦即，頁面上的部分豁免於快取） 的頁面上的部分，替代元件會提供絕佳的解決方案。 控制項未實際呈現本身的任何輸出。 相反地，它會繫結至伺服器端程式碼中的方法。 要求頁面時，會呼叫的方法，並傳回的標記來取代替代控制項呈現。
+替代控制項會與 ASP.NET 快取搭配使用。 在您想要利用快取的情況下，您有部分頁面必須在每個要求上更新（換句話說，非快取的頁面部分），替代元件會提供絕佳的解決方案。 控制項實際上不會自行呈現任何輸出。 相反地，它會系結至伺服器端程式碼中的方法。 當要求頁面時，會呼叫方法，並呈現傳回的標記來取代替代控制項。
 
-替代控制項所繫結的方法，並透過指定**MethodName**屬性。 該方法必須符合下列準則：
+替代控制項所系結的方法是透過 [**方法名稱**] 屬性來指定。 該方法必須符合下列準則：
 
-- 它必須是靜態 (在中共用 VB) 方法。
-- 它會接受一個類型參數的 HttpContext。
-- 它會傳回字串，表示應該取代頁面上的控制項的標記。
+- 它必須是靜態（在 VB 中為 shared）方法。
+- 它接受一個類型為 HttpCoNtext 的參數。
+- 它會傳回代表標記的字串，該標記應取代頁面上的控制項。
 
-替代控制項沒有能夠修改任何其他控制項在頁面上，但它並沒有存取目前的 HttpContext 透過其參數。
+替代控制項無法修改頁面上的任何其他控制項，但它可以透過其參數存取目前的 HttpCoNtext。
 
 ## <a name="gridview-control"></a>GridView 控制項
 
-GridView 控制項是 DataGrid 控制項取代。 這個控制項將會涵蓋在更新版本的模組中的更多詳細資料。
+GridView 控制項是 DataGrid 控制項的取代。 在稍後的課程模組中，將會更詳細地討論此控制項。
 
-## <a name="detailsview-control"></a>在 DetailsView 控制項
+## <a name="detailsview-control"></a>DetailsView 控制項
 
-在 DetailsView 控制項可讓您顯示資料來源的單一記錄，以及編輯或刪除它。 它會在更新版本的模組中的更詳細地討論。
+DetailsView 控制項可讓您從資料來源顯示單一記錄，並加以編輯或刪除。 稍後的課程模組會更詳細地說明。
 
 ## <a name="formview-control"></a>FormView 控制項
 
-FormView 控制項來顯示資料來源中的單一記錄中的可設定的介面。 它會在更新版本的模組中的更詳細地討論。
+FormView 控制項是用來在可設定的介面中顯示資料來源中的單一記錄。 稍後的課程模組會更詳細地說明。
 
 ## <a name="accessdatasource-control"></a>AccessDataSource 控制項
 
-AccessDataSource 控制項是用來將資料繫結的 Access 資料庫。 它會在更新版本的模組中的更詳細地討論。
+AccessDataSource 控制項是用來系結 Access 資料庫的資料。 稍後的課程模組會更詳細地說明。
 
 ## <a name="objectdatasource-control"></a>ObjectDataSource 控制項
 
-ObjectDataSource 控制項用來支援三層式架構，使控制項可以是資料繫結至中介層商務物件而不是兩層的模型會直接與資料來源繫結控制項。 它會在更新版本的模組的詳細討論。
+ObjectDataSource 控制項是用來支援三層式架構，因此控制項可以資料系結至中介層商務物件，而不是直接系結至資料來源的兩層式模型。 稍後的課程模組中將會更詳細地討論。
 
 ## <a name="xmldatasource-control"></a>XmlDataSource 控制項
 
-XmlDataSource 控制項用來資料繫結至 XML 資料來源。 它會在更新版本的模組中的更詳細地討論。
+XmlDataSource 控制項是用來將資料系結至 XML 資料來源。 稍後的課程模組會更詳細地說明。
 
 ## <a name="sitemapdatasource-control"></a>SiteMapDataSource 控制項
 
-SiteMapDataSource 控制項提供站台地圖為基礎的網站巡覽控制項的資料繫結。 它會在更新版本的模組的詳細討論。
+SiteMapDataSource 控制項會根據網站地圖提供網站導覽控制項的資料系結。 稍後的課程模組中將會更詳細地討論。
 
-## <a name="sitemappath-control"></a>SiteMapPath Control
+## <a name="sitemappath-control"></a>SiteMapPath 控制項
 
-SiteMapPath 控制項顯示一系列通常稱為階層連結的導覽連結。 它會在更新版本的模組中的更詳細地討論。
+SiteMapPath 控制項會顯示一系列的導覽連結，通常稱為「階層連結」。 稍後的課程模組會更詳細地說明。
 
 ## <a name="menu-control"></a>功能表控制項
 
-功能表控制項顯示使用 DHTML 的動態功能表。 它會在更新版本的模組中的更詳細地討論。
+功能表控制項會使用 DHTML 顯示動態功能表。 稍後的課程模組會更詳細地說明。
 
 ## <a name="treeview-control"></a>TreeView 控制項
 
-TreeView 控制項來顯示資料的階層式樹狀結構檢視。 它會在更新版本的模組中的更詳細地討論。
+TreeView 控制項是用來顯示資料的階層式樹狀檢視。 稍後的課程模組會更詳細地說明。
 
 ## <a name="login-control"></a>Login 控制項
 
-Login 控制項提供一個機制來登入網站。 它會在更新版本的模組中的更詳細地討論。
+Login 控制項提供登入網站的機制。 稍後的課程模組會更詳細地說明。
 
 ## <a name="loginview-control"></a>LoginView 控制項
 
-LoginView 控制項可讓不同的範本，根據使用者的登入狀態的顯示。 它會在更新版本的模組中的更詳細地討論。
+LoginView 控制項可讓您根據使用者的登入狀態來顯示不同的範本。 稍後的課程模組會更詳細地說明。
 
-## <a name="passwordrecovery-control"></a>Provider 控制項
+## <a name="passwordrecovery-control"></a>PasswordRecovery 控制項
 
-在 ASP.NET 應用程式的使用者，Provider 控制項用來擷取遺忘的密碼。 它會在更新版本的模組中的更詳細地討論。
+PasswordRecovery 控制項是用來抓取 ASP.NET 應用程式的使用者所遺忘的密碼。 稍後的課程模組會更詳細地說明。
 
 ## <a name="loginstatus"></a>LoginStatus
 
-LoginStatus 控制項顯示使用者的登入狀態。 它會在更新版本的模組中的更詳細地討論。
+LoginStatus 控制項會顯示使用者的登入狀態。 稍後的課程模組會更詳細地說明。
 
 ## <a name="loginname"></a>LoginName
 
-LoginName 控制項之後都記錄在 ASP.NET 應用程式顯示使用者的使用者名稱。 它會在更新版本的模組中的更詳細地討論。
+LoginName 控制項會在登入 ASP.NET 應用程式後顯示使用者的使用者名稱。 稍後的課程模組會更詳細地說明。
 
 ## <a name="createuserwizard"></a>CreateUserWizard
 
-CreateUserWizard 是一個可設定的精靈，讓使用者能夠在 ASP.NET 應用程式建立使用 ASP.NET 成員資格帳戶。 它會在更新版本的模組中的更詳細地討論。
+CreateUserWizard 是可設定的 wizard，讓使用者能夠建立 ASP.NET 成員資格帳戶，以便在 ASP.NET 應用程式中使用。 稍後的課程模組會更詳細地說明。
 
 ## <a name="changepassword"></a>ChangePassword
 
-ChangePassword 控制項可讓使用者變更其密碼為 ASP.NET 應用程式。 它會在更新版本的模組中的更詳細地討論。
+ChangePassword 控制項可讓使用者變更 ASP.NET 應用程式的密碼。 稍後的課程模組會更詳細地說明。
 
-## <a name="various-webparts"></a>各種網頁組件
+## <a name="various-webparts"></a>各種 Webpart
 
-ASP.NET 2.0 隨附於各種網頁組件。 這些將會在更新版本的模組中有詳細說明。
+ASP.NET 2.0 隨附各種 Web 組件。 稍後的課程模組中將會詳細說明這些功能。

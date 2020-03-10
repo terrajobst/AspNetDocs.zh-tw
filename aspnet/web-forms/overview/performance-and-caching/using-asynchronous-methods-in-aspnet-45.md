@@ -9,11 +9,11 @@ ms.assetid: a585c9a2-7c8e-478b-9706-90f3739c50d1
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
 ms.openlocfilehash: 7abc3d7acc60d7d868958f2a313bc408f96c95a4
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457566"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78625192"
 ---
 # <a name="using-asynchronous-methods-in-aspnet-45"></a>使用 ASP.NET 4.5 中的非同步方法
 
@@ -204,7 +204,7 @@ Async void 事件的缺點是，開發人員不再具有事件執行時間的完
 - 如果您的應用程式使用 web 服務或 System.NET 透過 HTTP 與後端通訊，您可能需要增加[connectionmanagement 專案/maxconnection](https://msdn.microsoft.com/library/fb6y0fyc(VS.110).aspx)元素。 針對 ASP.NET 應用程式，這會受限於 Cpu 數目12倍的自動設定功能。 這表示在四個處理器上，您最多可以有12個 \* 4 = 48 個對 IP 端點的並行連線。 因為這會系結[至自動](https://msdn.microsoft.com/library/7w2sway1(VS.110).aspx)設定，在 ASP.NET 應用程式中增加 `maxconnection` 最簡單的方式，就是在*global.asax*檔案的 from `Application_Start` 方法中，以程式設計方式設定[ServicePointManager servicepointmanager.defaultconnectionlimit。](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit(VS.110).aspx) 如需範例，請參閱範例下載。
 - 在 .NET 4.5 中， [MaxConcurrentRequestsPerCPU](https://blogs.msdn.com/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)的預設值應該是 [5000]。
 
-## <a name="contributors"></a>參與者
+## <a name="contributors"></a>Contributors
 
 - [Levi Broderick](http://stackoverflow.com/users/59641/levi)
 - [Tom 作者: dykstra](http://www.bing.com/search?q=site%3Aasp.net+%22Tom+Dykstra%22+-forums.asp.net&amp;qs=n&amp;form=QBRE&amp;pq=site%3Aasp.net+%22tom+dykstra%22+-forums.asp.net&amp;sc=8-42&amp;sp=-1&amp;sk=)

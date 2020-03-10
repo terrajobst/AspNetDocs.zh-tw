@@ -9,11 +9,11 @@ ms.assetid: 32377145-ec25-4715-8370-a1c590a331d5
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-radio-buttons-cs
 msc.type: authoredcontent
 ms.openlocfilehash: b59cc64b14c6414e6558fdb8a281644db8386701
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74593674"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78591095"
 ---
 # <a name="adding-a-gridview-column-of-radio-buttons-c"></a>新增 GridView 的選項按鈕欄 (C#)
 
@@ -88,7 +88,7 @@ GridView 控制項提供大量的內建功能。 其中包含一些不同的欄�
 
 **圖 7**：設定 ObjectDataSource 使用 `SuppliersBLL` 類別（[按一下以查看完整大小的影像](adding-a-gridview-column-of-radio-buttons-cs/_static/image10.png)）
 
-由於 `GetSuppliersByCountry(country)` 方法會接受參數，因此 [設定資料來源] wizard 會提示我們輸入該參數的來源。 若要指定硬式編碼值（在此範例中為美國），請將 [參數來源] 下拉式清單設定為 [無]，並在文字方塊中輸入預設值。 按一下 [完成] 以完成精靈。
+由於 `GetSuppliersByCountry(country)` 方法會接受參數，因此 [設定資料來源] wizard 會提示我們輸入該參數的來源。 若要指定硬式編碼值（在此範例中為美國），請將 [參數來源] 下拉式清單設定為 [無]，並在文字方塊中輸入預設值。 按一下 [完成] 完成精靈。
 
 [![使用 USA 作為 country 參數的預設值](adding-a-gridview-column-of-radio-buttons-cs/_static/image8.gif)](adding-a-gridview-column-of-radio-buttons-cs/_static/image11.png)
 
@@ -287,4 +287,4 @@ GridView 控制項提供大量的內建功能。 其中包含一些不同的欄�
 本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者是 David Suru。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一步](adding-a-gridview-column-of-checkboxes-cs.md)
+> [下一個](adding-a-gridview-column-of-checkboxes-cs.md)

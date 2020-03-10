@@ -7,12 +7,12 @@ ms.date: 10/04/2018
 ms.assetid: f3d8adbe-55e7-4fd4-84a8-7155bc45c676
 msc.legacyurl: /mvc/overview/getting-started/introduction/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: c74daa37f68dda641cae97d3b0c19718f62d474d
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.openlocfilehash: ca39bc37c757c0452cf56624c8e37c04df4b41f2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456383"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78602764"
 ---
 # <a name="getting-started-with-aspnet-mvc-5"></a>開始使用 ASP.NET MVC 5
 
@@ -20,7 +20,7 @@ ms.locfileid: "77456383"
 
 [!INCLUDE [consider RP](../../../../includes/razor.md)]
 
-本教學課程會教您使用[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)建立 ASP.NET MVC 5 web 應用程式的基本概念。 本教學課程的最終原始程式碼位於[GitHub](https://github.com/aspnet/AspNetDocs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie)。
+本教學課程會教您使用[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)建立 ASP.NET MVC 5 web 應用程式的基本概念。 本教學課程的最終原始程式碼位於[GitHub](https://github.com/dotnet/AspNetDocs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie)。
 
 本教學課程是由[Scott Guthrie](https://weblogs.asp.net/scottgu/) （twitter[@scottgu](https://twitter.com/scottgu) ）、 [scott Hanselman](http://www.hanselman.com/blog/) （Twitter： [@shanselman](https://twitter.com/shanselman) ）和[Rick Anderson](https://twitter.com/RickAndMSFT) （ [@RickAndMSFT](https://twitter.com/#!/RickAndMSFT) ）所撰寫
 
@@ -51,7 +51,7 @@ Visual Studio 使用您剛建立的 ASP.NET MVC 專案的預設範本，所以�
 
 ![](getting-started/_static/image4.png)
 
-按 **F5** 開始偵錯。 當您按下**F5**時，Visual Studio 會開始[IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)並執行您的 web 應用程式。 Visual Studio 接著會啟動瀏覽器，並開啟應用程式的首頁。 請注意，瀏覽器的網址列會顯示 `localhost:port#`，而不是類似 `example.com`。 這是因為 `localhost` 一定會指向您自己的本機電腦，在此情況下，它會執行您剛建立的應用程式。 當 Visual Studio 執行 Web 專案時，會針對網頁伺服器使用隨機埠。 在下圖中，埠號碼為1234。 當您執行應用程式時，您會看到不同的埠號碼。
+按 **F5** 開始偵錯作業。 當您按下**F5**時，Visual Studio 會開始[IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)並執行您的 web 應用程式。 Visual Studio 接著會啟動瀏覽器，並開啟應用程式的首頁。 請注意，瀏覽器的網址列會顯示 `localhost:port#`，而不是類似 `example.com`。 這是因為 `localhost` 一定會指向您自己的本機電腦，在此情況下，它會執行您剛建立的應用程式。 當 Visual Studio 執行 Web 專案時，會針對網頁伺服器使用隨機埠。 在下圖中，埠號碼為1234。 當您執行應用程式時，您會看到不同的埠號碼。
 
 ![](getting-started/_static/image5.png)
 
@@ -67,7 +67,7 @@ Visual Studio 使用您剛建立的 ASP.NET MVC 專案的預設範本，所以�
 
 您是否想要查看已完成的網站以即時 web 應用程式的形式執行？ 只要按一下下列按鈕，您就可以將應用程式的完整版本部署至您的 Azure 帳戶。
 
-[![](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/?repository=https://github.com/aspnet/AspNetDocs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie&amp;WT.mc_id=deploy_azure_aspnet)
+[![](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/?repository=https://github.com/dotnet/AspNetDocs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie&amp;WT.mc_id=deploy_azure_aspnet)
 
 您需要 Azure 帳戶，才能將此解決方案部署至 Azure。 如果您還沒有帳戶，請使用下列其中一個選項建立一個：
 

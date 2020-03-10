@@ -1,23 +1,23 @@
 ---
 uid: web-forms/overview/data-access/index
-title: 舊版-資料存取 |Microsoft Docs
+title: 較舊的版本-資料存取 |Microsoft Docs
 author: rick-anderson
-description: 如何執行各種不同的資料相關的工作，使用 ASP.NET Web Form 資料控制項。
+description: 如何使用 ASP.NET Web Forms 資料控制項執行各種資料相關工作。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: cf54a6fb-a362-4481-b967-c158b98092f7
 msc.legacyurl: /web-forms/overview/data-access
 msc.type: chapter
 ms.openlocfilehash: 9bdc5cdb3ef3a2289e2f76ae498544d0584f36f5
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109026"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78605627"
 ---
 # <a name="older-versions---data-access"></a>舊版 - 資料存取
 
-> 如何執行各種不同的資料相關的工作，使用 ASP.NET Web Form 資料控制項。
+> 如何使用 ASP.NET Web Forms 資料控制項執行各種資料相關工作。
 
 - [簡介](introduction/index.md)
 

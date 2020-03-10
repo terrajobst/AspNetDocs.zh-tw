@@ -9,11 +9,11 @@ ms.assetid: 48e2a4ae-77ca-4208-a204-c38c690ffb59
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 413a0e209b1899414eaab70aff07ee0d3223f28f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74642756"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78618570"
 ---
 # <a name="batch-inserting-vb"></a>批次插入 (VB)
 
@@ -100,7 +100,7 @@ ms.locfileid: "74642756"
 
 我們現在已準備好將 Web 控制項新增至插入介面。 將兩個 Dropdownlist 進行從 [工具箱] 拖曳到資料表中適用于供應商的適當資料格，而另一個用於類別目錄。
 
-將供應商 DropDownList 的 `ID` 屬性設定為 `Suppliers`，並將它系結至名為 `SuppliersDataSource`的新 ObjectDataSource。 設定新的 ObjectDataSource 以從 `SuppliersBLL` 類別的 `GetSuppliers` 方法取出其資料，並將 [更新] 索引標籤 s 下拉式清單設為 [（無）]。 按一下 [完成] 以完成精靈。
+將供應商 DropDownList 的 `ID` 屬性設定為 `Suppliers`，並將它系結至名為 `SuppliersDataSource`的新 ObjectDataSource。 設定新的 ObjectDataSource 以從 `SuppliersBLL` 類別的 `GetSuppliers` 方法取出其資料，並將 [更新] 索引標籤 s 下拉式清單設為 [（無）]。 按一下 [完成] 完成精靈。
 
 [![將 ObjectDataSource 設定為使用 SuppliersBLL 類別的 GetSuppliers 方法](batch-inserting-vb/_static/image20.png)](batch-inserting-vb/_static/image19.png)
 
@@ -120,7 +120,7 @@ ms.locfileid: "74642756"
 
 **圖 9**：標頭資料列現在包含 `Suppliers` 和 `Categories` Dropdownlist 進行（[按一下以查看完整大小的影像](batch-inserting-vb/_static/image27.png)）
 
-我們現在需要建立文字方塊，以收集每個新產品的名稱和價格。 將 TextBox 控制項從 [工具箱] 拖曳至設計工具中，每個產品名稱和價格資料列各有一個。 將文字方塊的 [`ID` 屬性] 設定為 [`ProductName1`]、[`UnitPrice1`]、[`ProductName2`]、[`UnitPrice2`]、[`ProductName3`] 等等。
+我們現在需要建立文字方塊，以收集每個新產品的名稱和價格。 將 TextBox 控制項從 [工具箱] 拖曳至設計工具中，每個產品名稱和價格資料列各有一個。 將文字方塊的 [`ID` 屬性] 設定為 [`ProductName1`]、[`UnitPrice1`]、[`ProductName2`]、[`UnitPrice2`]、[`ProductName3`] 等等。`UnitPrice3`
 
 在每個 [單價] 文字方塊之後加入 CompareValidator，將 [`ControlToValidate`] 屬性設定為適當的 `ID`。 同時將 `Operator` 屬性設定為 `GreaterThanEqual`、`ValueToCompare` 為 0 和 `Type` 至 `Currency`。 這些設定會指示 CompareValidator 確保輸入的價格是大於或等於零的有效貨幣值。 將 [`Text`] 屬性設定為 [\*]，`ErrorMessage` [價格] 必須大於或等於零。 此外，請省略任何貨幣符號。
 

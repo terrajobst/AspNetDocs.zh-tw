@@ -9,13 +9,13 @@ ms.assetid: 0267d31c-892f-49a1-9e7a-3ae8cc12b2ca
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-controller
 msc.type: authoredcontent
 ms.openlocfilehash: f528c56435976c7f31fce453c834ef9eaebe6244
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456097"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78599838"
 ---
-# <a name="adding-a-controller"></a>加入控制器
+# <a name="adding-a-controller"></a>新增控制器
 
 依[Rick Anderson](https://twitter.com/RickAndMSFT)
 

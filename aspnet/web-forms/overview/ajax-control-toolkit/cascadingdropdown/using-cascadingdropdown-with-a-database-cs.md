@@ -9,11 +9,11 @@ ms.assetid: 684f0c28-a490-4e5b-b5e5-5dfb77464b49
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-cascadingdropdown-with-a-database-cs
 msc.type: authoredcontent
 ms.openlocfilehash: bcf453170d17807b4e3b2d2a8b545cba43139f89
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599799"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78597857"
 ---
 # <a name="using-cascadingdropdown-with-a-database-c"></a>使用 CascadingDropDown 搭配資料庫 (C#)
 
@@ -66,7 +66,7 @@ CascadingDropDown 所呼叫之 web 方法的簽章如下所示：
 
 [!code-csharp[Main](using-cascadingdropdown-with-a-database-cs/samples/sample6.cs)]
 
-因此，傳回值必須是由控制項工具組所定義 `CascadingDropDownNameValue` 類型的陣列。 `GetVendors()` 方法相當容易執行：程式碼會連接到 AdventureWorks 資料庫，並查詢前25個廠商。 `CascadingDropDownNameValue` 的函式中的第一個參數是清單專案的標題，第二個是其值（HTML 的 &lt;中的值屬性 `option`&gt; 元素）。 以下是程式碼：
+因此，傳回值必須是由控制項工具組所定義 `CascadingDropDownNameValue` 類型的陣列。 `GetVendors()` 方法相當容易執行：程式碼會連接到 AdventureWorks 資料庫，並查詢前25個廠商。 `CascadingDropDownNameValue` 的函式中的第一個參數是清單專案的標題，第二個是其值（HTML 的 &lt;中的值屬性 `option`&gt; 元素）。 程式碼如下：
 
 [!code-csharp[Main](using-cascadingdropdown-with-a-database-cs/samples/sample7.cs)]
 

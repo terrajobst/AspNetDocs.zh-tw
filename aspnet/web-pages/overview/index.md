@@ -1,6 +1,6 @@
 ---
 uid: web-pages/overview/index
-title: 網頁指南 |Microsoft Docs
+title: Web Pages 指引 |Microsoft Docs
 author: rick-anderson
 description: ''
 ms.author: riande
@@ -9,15 +9,15 @@ ms.assetid: 1a2ed0e8-63da-4110-9896-e2731d86f7c4
 msc.legacyurl: /web-pages/overview
 msc.type: book
 ms.openlocfilehash: b4c9e9eb85f6ba9a1e2b2d0a1bbaf027ee25bc0d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59381844"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78640816"
 ---
-# <a name="web-pages-guidance"></a>網頁的指引
+# <a name="web-pages-guidance"></a>網頁指引
 
-- [快速入門](getting-started/index.md)
+- [使用者入門](getting-started/index.md)
 
     - [在 Visual Studio 中撰寫 ASP.NET Web Pages 程式](getting-started/program-asp-net-web-pages-in-visual-studio.md)
     - [ASP.NET Web 程式設計 Razor 語法簡介](getting-started/introducing-razor-syntax-c.md)
@@ -27,7 +27,7 @@ ms.locfileid: "59381844"
     - [將社交網路新增至您的網站](getting-started/13-adding-social-networking-to-your-web-site.md)
     - [ASP.NET Web Pages 簡介](getting-started/introducing-aspnet-web-pages-2/index.md)
 
-        - [快速入門](getting-started/introducing-aspnet-web-pages-2/getting-started.md)
+        - [使用者入門](getting-started/introducing-aspnet-web-pages-2/getting-started.md)
         - [程式設計基礎](getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming.md)
         - [顯示資料](getting-started/introducing-aspnet-web-pages-2/displaying-data.md)
         - [HTML 表單基本概念](getting-started/introducing-aspnet-web-pages-2/form-basics.md)
@@ -63,7 +63,7 @@ ms.locfileid: "59381844"
 
     - [偵錯簡介](testing-and-debugging/introduction-to-debugging.md)
     - [ASP.NET Web Pages (Razor) 疑難排解指南](testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide.md)
-- [安全性](security/index.md)
+- [Security](security/index.md)
 
     - [新增安全性及成員資格](security/16-adding-security-and-membership.md)
     - [在 ASP.NET Web Pages 網站中啟用外部網站的登入](security/enabling-login-from-external-sites-in-an-aspnet-web-pages-site.md)

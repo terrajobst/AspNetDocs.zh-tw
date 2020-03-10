@@ -9,11 +9,11 @@ ms.assetid: 52d6c941-2cd9-442f-9872-2c798d6d90cd
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 msc.type: authoredcontent
 ms.openlocfilehash: dfd8a3ac2328d3f17dfbe36e68b37d181177b0f4
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457085"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78583458"
 ---
 # <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>Web 開發最佳作法（使用 Azure 建立真實世界的雲端應用程式）
 
@@ -126,7 +126,7 @@ Web Forms、MVC 和 Web API 的 ASP.NET 4.5 中包含 .NET 4.5 非同步程式�
 
 `ToList` 方法有 `Async` 版本，因為在這個程式碼中，會導致查詢傳送至資料庫的方法。 `Where` 和 `OrderByDescending` 方法只會設定查詢，而 `ToListAsync` 方法則會執行查詢，並將回應儲存在 `result` 變數中。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 您可以在任何 web 程式設計架構和任何雲端環境中，執行此處所述的 網頁程式開發最佳作法，但我們在 ASP.NET 和 Windows Azure 中有一些工具可讓您輕鬆完成。 如果您遵循這些模式，就可以輕鬆地相應放大您的 web 層，並將您的費用降至最低，因為每部伺服器都可以處理更多的流量。
 

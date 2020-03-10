@@ -10,11 +10,11 @@ ms.custom: seoapril2019
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
 ms.openlocfilehash: 527b4392846e60dae0b216fdeabf21fd6618e4d7
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456734"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78616680"
 ---
 # <a name="two-factorauthentication-using-sms-and-email-with-aspnet-identity"></a>使用 SMS 的雙因素驗證與 ASP.NET Identity 的電子郵件
 
@@ -77,7 +77,7 @@ by [Hao Kung](https://github.com/HaoK)、 [Pranav 請參閱 rastogi](https://git
   
     ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image1.png)  
   
-   位址：  
+   位址:  
     `https://webservice.aspsms.com/aspsmsx2.asmx?WSDL`  
   
    命名空間：  

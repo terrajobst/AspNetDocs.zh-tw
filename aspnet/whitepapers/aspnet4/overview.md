@@ -9,11 +9,11 @@ ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
 ms.openlocfilehash: ecde48f6bd88ee5f569bfeb8b70c26a50bc869c2
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74576862"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78630169"
 ---
 # <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 與 Visual Studio 2010 網頁程式開發概觀
 
@@ -787,7 +787,7 @@ ASP.NET *Chart*控制項會展開 .NET Framework 中的資料視覺效果供應�
 
 [!code-aspx[Main](overview/samples/sample61.aspx)]
 
-#### <a name="range"></a>Range
+#### <a name="range"></a>範圍
 
 [範圍] 選項與 [搜尋] 選項相似，但會指定一對值來定義範圍。 在下列範例中， *QueryExtender*控制項會搜尋*LinqDataSource*控制項所傳回之資料中的 `UnitPrice` 資料行。 範圍會從頁面上的 TextBoxFrom 和 TextBoxTo 控制項中讀取。
 
@@ -980,7 +980,7 @@ ASP.NET 2.0 和更新版本會在*div*元素內轉譯系統特定的隱藏欄位
 - *登入*
 - *PasswordRecovery*
 - *ChangePassword*
-- *導向*
+- *精靈*
 - *CreateUserWizard*
 
 已將名為*RenderOuterTable*的新屬性新增至這些控制項，以允許從標記中移除外部資料表。 例如，請考慮使用*FormView*控制項的下列範例：
@@ -1364,18 +1364,18 @@ Visual Studio 2010 也可讓您使用 IIS 遠端系統管理服務，將 Web 應
 
 這是一份初稿，內容在本文所述的軟體於正式商業發行前都可能有所更動。
 
-本文件包含的資訊代表 Microsoft Corporation 在發行日當時對於討論之議題的觀點。 由於 Microsoft 必須回應不斷變動的市場狀況，因此您不應該將這些觀點解讀成 Microsoft 所做的承諾，而且 Microsoft 也無法保證發行日期後提出之任何資訊的正確性。
+本文件中的資訊表示直到文件發行日前 Microsoft Corporation 針對問題的看法。 Microsoft 必須因應不斷變化的市場狀況，因此本文件不代表 Microsoft 的保證，且 Microsoft 不保證這些資訊在文件發行後的正確性。
 
-這份技術白皮書僅供參考之用。 MICROSOFT 對於本文件中的資訊不負任何明示、默示或法定擔保責任。
+本技術白皮書僅供參考。 MICROSOFT 對本文件中的資訊不提供任何明示、暗示或法定擔保。
 
-遵守所有適用之著作權法係使用者的責任。 在不限制任何依著作權本得享有之權利，未經 Microsoft Corporation 書面許可，　貴用戶不得為任何目的使用任何形式或方法 (電子形式、機械形式、影印、記錄或其他方式) 複製或傳送本文件的任何部份，也不得將本文件的任何部份儲存或放入檢索系統 (a retrieval system)。
+承諾遵守所有適用的著作權法是使用者的責任。 著作權法沒有針對某種權利加以限制，但在未獲得 Microsoft Corporation 書面同意的情況下，本文件的任何部分不得複製、以檢索系統存放或擷取、以任何形式或方法傳送 (電子、機械、影像複製、錄音或其他任何方法)、或基於任何其他不良意圖。
 
-Microsoft 可能擁有本文件所提及內容中所含之專利權、專利優先權、商標、著作權，或其他智慧財產權。 除非 Microsoft 書面授權合約所明示規定者外，提供本文件並不授予　貴用戶上述專利權、商標、著作權或其他智慧財產權。
+本文件所提及的主要事務，Microsoft 得擁有專利、專利應用程式、商標、著作權或其他智慧財產權。 除了 Microsoft 於授權合約書中書面提供的之外，本文件所述內容並未賦予您這些專利、商標、著作權、或其他智慧財產的任何授權或使用權利。
 
 除非另有說明，否則此處所描述的範例公司、組織、產品、功能變數名稱、電子郵件地址、商標、人員、地點及事件均屬虛構，而且不會與任何真實的公司、組織、產品、功能變數名稱、電子郵件相關。位址、標誌、人員、地點或事件的預定或應加以推斷。
 
-© 2009 Microsoft Corporation。 All rights reserved.
+© 2009 Microsoft Corporation。 著作權所有，並保留一切權利。
 
 Microsoft 和 Windows 是 Microsoft Corporation 在美國及/或其他國家/地區的註冊商標或商標。
 
-此處提及的真實公司和產品名稱，為個別所有人的商標。
+本文件中所提實際公司和產品，可能為各所有人所有之商標。

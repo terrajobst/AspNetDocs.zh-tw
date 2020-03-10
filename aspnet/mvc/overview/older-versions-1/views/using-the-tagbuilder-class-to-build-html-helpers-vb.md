@@ -1,76 +1,76 @@
 ---
 uid: mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-vb
-title: 使用 TagBuilder 類別可建置 HTML 協助程式 (VB) |Microsoft Docs
+title: 使用 TagBuilder 類別來建立 HTML 協助程式（VB） |Microsoft Docs
 author: StephenWalther
-description: Stephen Walther 會向您介紹在 ASP.NET MVC framework 將 TagBuilder 類別命名為實用的公用程式類別。 您可以輕鬆地使用 TagBuilder 類別可...
+description: Stephen Walther 將為您介紹名為 TagBuilder 類別的 ASP.NET MVC 架構中實用的公用程式類別。 您可以輕鬆地使用 TagBuilder 類別 。
 ms.author: riande
 ms.date: 03/02/2009
 ms.assetid: ec26f264-d0ea-4031-9943-825505a3ac4b
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 3b0aa9816209cc326d3dea4b8dfb1b13cf697fcd
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130367"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78599999"
 ---
-# <a name="using-the-tagbuilder-class-to-build-html-helpers-vb"></a>使用 TagBuilder 類別可建置 HTML 協助程式 (VB)
+# <a name="using-the-tagbuilder-class-to-build-html-helpers-vb"></a>使用 TagBuilder 類別來建立 HTML 協助程式（VB）
 
-藉由[Stephen Walther](https://github.com/StephenWalther)
+依[Stephen Walther](https://github.com/StephenWalther)
 
-> Stephen Walther 會向您介紹在 ASP.NET MVC framework 將 TagBuilder 類別命名為實用的公用程式類別。 您可以使用 TagBuilder 類別，輕鬆地建置 HTML 標記。
+> Stephen Walther 將為您介紹名為 TagBuilder 類別的 ASP.NET MVC 架構中實用的公用程式類別。 您可以使用 TagBuilder 類別，輕鬆地建立 HTML 標籤。
 
-ASP.NET MVC 架構包括名為 TagBuilder 類別可建置 HTML 協助程式時，您可以使用的實用的公用程式類別。 TagBuilder 類別名所示的類別，可讓您輕鬆地建置 HTML 標記。 在這個簡短的教學課程中，為您提供 TagBuilder 類別的概觀和您將了解如何使用這個類別，當建置簡單的 HTML helper 來呈現 HTML &lt;img&gt;標記。
+ASP.NET MVC 架構包含一個有用的公用程式類別，名為 TagBuilder 類別，可讓您在建立 HTML helper 時使用。 TagBuilder 類別，做為類別名稱的建議，可讓您輕鬆地建立 HTML 標籤。 在這個簡短的教學課程中，您會看到 TagBuilder 類別的總覽，並瞭解如何在建立可轉譯 HTML &lt;img&gt; 標記的簡單 HTML helper 時，使用這個類別。
 
-## <a name="overview-of-the-tagbuilder-class"></a>TagBuilder 類別的概觀
+## <a name="overview-of-the-tagbuilder-class"></a>TagBuilder 類別的總覽
 
-TagBuilder 類別包含在 System.Web.Mvc 命名空間中。 它有五個方法：
+TagBuilder 類別包含在 System.web 命名空間中。 它有五個方法：
 
-- AddCssClass() – 可讓您新增的新*類別 =""* 屬性標記。
-- GenerateId() – 可讓您將識別碼屬性新增至標記。 這個方法會自動取代識別碼中的句點 （根據預設，週期會以底線取代）
-- MergeAttribute() – 可讓您將屬性加入至標記。 有多個多載，這個方法。
-- SetInnerText() – 可讓您設定標記的內部文字。 內部文字會自動對 HTML 編碼。
-- Tostring （） – 可讓您呈現標記。 您可以指定是否要建立的標準標記、 開始標記、 結束標記或自我結尾標記。
+- AddCssClass （）–可讓您將新的*class = ""* 屬性新增至標記。
+- GenerateId （）–可讓您將 id 屬性新增至標記。 這個方法會自動取代識別碼中的句號（根據預設，句號會以底線取代）
+- MergeAttribute （）–可讓您將屬性新增至標記。 這個方法有多個多載。
+- SetInnerText （）–可讓您設定標記的內部文字。 內部文字會自動進行 HTML 編碼。
+- ToString （）–可讓您呈現標記。 您可以指定是否要建立一般標記、開始標記、結束標記或自我結束記號。
 
 TagBuilder 類別有四個重要的屬性：
 
-- 屬性 – 代表所有標記的屬性。
-- IdAttributeDotReplacement – 代表 GenerateId() 方法用來取代的期間 （預設值為底線） 的字元。
-- InnerHTML – 表示標記的內部的內容。 將字串指派給這個屬性*則否*HTML 編碼字串。
-- TagName – 表示標記的名稱。
+- 屬性–代表標記的所有屬性。
+- IdAttributeDotReplacement –代表 GenerateId （）方法用來取代句號的字元（預設值為底線）。
+- InnerHTML –代表標記的內部內容。 將字串指派給這個屬性*並不會*對字串進行 HTML 編碼。
+- TagName –代表標記的名稱。
 
-這些方法和屬性提供給您所有的基本的方法和您要建置的 HTML 標記的屬性。 您真的不需要使用 TagBuilder 類別。 您可以改為使用 StringBuilder 類別。 不過，TagBuilder 類別可讓您的生活更輕鬆。
+這些方法和屬性會提供您建立 HTML 標籤所需的所有基本方法和屬性。 您實際上不需要使用 TagBuilder 類別。 您可以改用 StringBuilder 類別。 不過，TagBuilder 類別讓您的生活變得更簡單。
 
-## <a name="creating-an-image-html-helper"></a>建立映像 HTML 協助程式
+## <a name="creating-an-image-html-helper"></a>建立影像 HTML Helper
 
-當您建立 TagBuilder 類別的執行個體時，您會傳遞您想要建置 TagBuilder 建構函式的標記名稱。 接下來，您可以呼叫方法，例如 AddCssClass 和 MergeAttribute() 方法修改標記的屬性。 最後，您會呼叫 tostring （） 方法，來呈現標記。
+當您建立 TagBuilder 類別的實例時，會將您要建立的標記名稱傳遞至 TagBuilder 的函式。 接下來，您可以呼叫方法（例如 AddCssClass 和 MergeAttribute （）方法）來修改標記的屬性。 最後，您可以呼叫 ToString （）方法來呈現標記。
 
-例如，列表 1 包含的映像 HTML 協助程式。 影像協助程式在內部實作代表 HTML TagBuilder &lt;img&gt;標記。
+例如，[清單 1] 包含影像 HTML helper。 影像協助程式會在內部實作為 TagBuilder，表示 HTML &lt;img&gt; 標記。
 
-**列表 1 – Helpers\ImageHelper.vb**
+**清單1– Helpers\ImageHelper.vb**
 
 [!code-vb[Main](using-the-tagbuilder-class-to-build-html-helpers-vb/samples/sample1.vb)]
 
-列表 1 中的模組包含名為 Image() 的兩個多載的方法。 當您呼叫 Image() 方法時，您可以傳遞或不代表一組 HTML 屬性的物件。
+[清單 1] 中的模組包含兩個名為 Image （）的多載方法。 當您呼叫 Image （）方法時，可以傳遞代表一組 HTML 屬性的物件。
 
-請注意 TagBuilder.MergeAttribute() 方法用來將個別的屬性，例如 src 屬性新增至 TagBuilder 的方式。 請注意，此外，將屬性的集合新增至 TagBuilder 用法 TagBuilder.MergeAttributes() 方法。 MergeAttributes() 方法接受字典&lt;string，object&gt;參數。 RouteValueDictionary 類別用來轉換物件，表示為字典的屬性集合&lt;string，object&gt;。
+請注意如何使用 TagBuilder. MergeAttribute （）方法，將個別屬性（例如 src 屬性）新增至 TagBuilder。 此外，請注意如何使用 TagBuilder. MergeAttributes （）方法，將屬性集合加入至 TagBuilder。 MergeAttributes （）方法會接受字典&lt;字串，物件&gt; 參數。 RouteValueDictionary 類別是用來將代表屬性集合的物件，轉換成字典&lt;字串，物件&gt;。
 
-建立影像協助程式之後，您可以使用協助程式，在您的 ASP.NET MVC 檢視就像任何其他標準的 HTML 協助程式。 列表 2 中的檢視使用影像協助程式兩次顯示 Xbox 的相同映像 （請參閱 圖 1）。 Image() 協助程式會呼叫具有和沒有 HTML 屬性集合。
+建立映射協助程式之後，您就可以在 ASP.NET MVC views 中使用 helper，就像任何其他標準 HTML helper 一樣。 [清單 2] 中的視圖使用影像協助程式顯示 Xbox 的相同影像兩次（請參閱 [圖 1]）。 不論是否有 HTML 屬性集合，都會呼叫 Image （）協助程式。
 
-**列表 2 – Home\Index.aspx**
+**清單2– Home\Index.aspx**
 
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-vb/samples/sample2.aspx)]
 
 [![[新增專案] 對話方塊](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.jpg)](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image1.png)
 
-**圖 01**:使用影像協助程式 ([按一下以檢視完整大小的影像](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image2.png))
+**圖 01**：使用影像協助程式（[按一下以觀看完整大小的影像](using-the-tagbuilder-class-to-build-html-helpers-vb/_static/image2.png)）
 
-請注意，您必須匯入影像協助程式頂端的 Index.aspx 檢視相關聯的命名空間。 使用下列指示詞，匯入協助程式：
+請注意，您必須在 [default.aspx] 視圖的頂端匯入與影像協助程式關聯的命名空間。 Helper 會以下列指示詞彙入：
 
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-vb/samples/sample3.aspx)]
 
-在 Visual Basic 應用程式的預設命名空間會是應用程式的名稱相同。
+在 Visual Basic 應用程式中，預設命名空間與應用程式的名稱相同。
 
 > [!div class="step-by-step"]
 > [上一頁](creating-custom-html-helpers-vb.md)

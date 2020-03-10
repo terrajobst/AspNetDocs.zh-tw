@@ -1,43 +1,43 @@
 ---
 uid: web-pages/overview/data/7-displaying-data-in-a-chart
-title: 資料顯示在圖表中的 ASP.NET Web Pages (Razor) |Microsoft Docs
+title: 使用 ASP.NET Web Pages （Razor）在圖表中顯示資料 |Microsoft Docs
 author: microsoft
-description: 本章說明如何在圖表中顯示資料。 在先前章節中，您已了解如何以手動方式和在方格中顯示資料。 本章說明...
+description: 本章說明如何在圖表中顯示資料。 在上一章中，您已瞭解如何以手動方式在方格中顯示資料。 本章將說明 。
 ms.author: riande
 ms.date: 05/22/2012
 ms.assetid: f889fd46-4dac-4ecb-83d8-60e64c22036e
 msc.legacyurl: /web-pages/overview/data/7-displaying-data-in-a-chart
 msc.type: authoredcontent
 ms.openlocfilehash: 6dad67d4e3d38d57a761c567d937d714a3184ea9
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133704"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78627488"
 ---
-# <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>在與 ASP.NET Web Pages (Razor) 圖表中顯示資料
+# <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>使用 ASP.NET Web Pages （Razor）在圖表中顯示資料
 
-by [Microsoft](https://github.com/microsoft)
+由[Microsoft](https://github.com/microsoft)
 
-> 這篇文章說明如何使用圖表來顯示資料在 ASP.NET Web Pages (Razor) 網站中，使用`Chart`協助程式。
+> 本文說明如何使用圖表，在 ASP.NET Web Pages （Razor）網站中，使用 `Chart` helper 來顯示資料。
 > 
-> **您將學到什麼**:
+> **您將瞭解的內容**：
 > 
 > - 如何在圖表中顯示資料。
-> - 如何使用內建的佈景主題樣式圖表。
-> - 如何儲存圖表以及如何快取它們，以提升效能。
+> - 如何使用內建主題來為圖表樣式。
+> - 如何儲存圖表以及如何加以快取，以提升效能。
 > 
-> 這些是 ASP.NET 程式設計文章中所引進的功能：
+> 以下是文章中引進的 ASP.NET 程式設計功能：
 > 
-> - `Chart`協助程式。
+> - `Chart` helper。
 > 
 > > [!NOTE]
-> > 這篇文章中的資訊適用於 ASP.NET Web Pages 1.0 和 Web Pages 2。
+> > 本文中的資訊適用于 ASP.NET Web Pages 1.0 和 Web Pages 2。
 
 <a id="The_Chart_Helper"></a>
-## <a name="the-chart-helper"></a>圖表協助程式
+## <a name="the-chart-helper"></a>圖表 Helper
 
-當您想要的資料顯示在圖形表單中時，您可以使用`Chart`協助程式。 `Chart`協助程式可以呈現影像顯示各種不同的圖表類型的資料。 它支援許多選項，用於格式化及標示。 `Chart`協助程式可以轉譯超過 30 種圖表，包括所有類型的圖表，您可能熟悉的 Microsoft Excel 或其他工具&#8212;區域圖、 橫條圖、 直條圖、 折線圖和圓餅圖，以及更多特製化的圖表，例如股票圖。
+當您想要以圖形形式顯示資料時，可以使用 `Chart` helper。 `Chart` helper 可以轉譯影像，以顯示各種圖表類型的資料。 它支援許多格式設定和標籤的選項。 `Chart` helper 可以轉譯超過30種圖表類型，包括您可能熟悉的 Microsoft Excel 或其他工具&#8212;區域圖、橫條圖、直條圖、折線圖和圓形圖，以及更多特製化圖表，例如股票圖。
 
 | **區域圖**![描述：區域圖類型的圖片](7-displaying-data-in-a-chart/_static/image1.jpg) | **橫條圖**![描述：橫條圖類型的圖片](7-displaying-data-in-a-chart/_static/image2.jpg) |
 | --- | --- |
@@ -46,249 +46,249 @@ by [Microsoft](https://github.com/microsoft)
 
 ### <a name="chart-elements"></a>圖表項目
 
-圖表會顯示資料和其他元素，例如圖例、 軸、 數列和等等。 下圖顯示的圖表元素，當您使用時，您可以自訂許多`Chart`協助程式。 本文說明如何設定一些 （並非全部） 這些項目。
+圖表會顯示資料和其他元素，例如圖例、軸、數列等等。 下圖顯示當您使用 `Chart` helper 時，可以自訂的許多圖表元素。 本文說明如何設定這些元素的部分（而非全部）。
 
-![描述：圖片顯示圖表項目](7-displaying-data-in-a-chart/_static/image7.jpg)
+![描述：顯示圖表元素的圖片](7-displaying-data-in-a-chart/_static/image7.jpg)
 
 <a id="Creating_a_Chart"></a>
 ## <a name="creating-a-chart-from-data"></a>從資料建立圖表
 
-您在圖表中顯示的資料可以是陣列，從結果中傳回，從資料庫或 XML 檔案中的資料。
+您在圖表中顯示的資料可以來自陣列、從資料庫傳回的結果，或 XML 檔案中的資料。
 
 ### <a name="using-an-array"></a>使用陣列
 
-中所述[ASP.NET Web Pages 程式設計使用 Razor 語法簡介](https://go.microsoft.com/fwlink/?LinkId=202890)，陣列可讓您將一組類似的項目儲存在單一變數。 您可以使用陣列來包含您想要併入圖表中的資料。
+如[使用 Razor 語法進行 ASP.NET Web Pages 程式設計簡介](https://go.microsoft.com/fwlink/?LinkId=202890)中所述，陣列可讓您在單一變數中儲存類似專案的集合。 您可以使用陣列來包含您想要包含在圖表中的資料。
 
-此程序示範如何建立圖表資料在陣列中，從使用預設的圖表類型。 它也會示範如何顯示在頁面中的圖表。
+此程式說明如何使用預設圖表類型，從陣列中的資料建立圖表。 它也會顯示如何在頁面中顯示圖表。
 
-1. 建立新的檔案，名為*ChartArrayBasic.cshtml*。
+1. 建立名為*ChartArrayBasic*的新檔案。
 2. 以下列內容取代現有的內容： 
 
     [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample1.cshtml)]
 
-    程式碼第一次建立新的圖表，並設定其寬度和高度。 使用指定圖表標題`AddTitle`方法。 若要新增的資料，您使用`AddSeries`方法。 在此範例中，您可以使用`name`， `xValue`，並`yValues`參數`AddSeries`方法。 `name`參數會顯示在圖表圖例。 `xValue`參數包含圖表的水平軸顯示之資料的陣列。 `yValues`參數會包含用來繪製圖表垂直點的資料陣列。
+    程式碼會先建立新的圖表，並設定其寬度和高度。 您可以使用 `AddTitle` 方法來指定圖表標題。 若要加入資料，您可以使用 `AddSeries` 方法。 在此範例中，您會使用 `AddSeries` 方法的 `name`、`xValue`和 `yValues` 參數。 [`name`] 參數會顯示在圖表圖例中。 `xValue` 參數包含沿著圖表水準軸顯示的資料陣列。 `yValues` 參數包含用來繪製圖表垂直點的資料陣列。
 
-    `Write`方法實際呈現的圖表。 在此情況下，因為您未指定圖表類型， `Chart` helper 會呈現其預設的圖表，也就是直條圖。
-3. 執行網頁瀏覽器中。 瀏覽器會顯示該圖表。 
+    `Write` 方法實際上會呈現圖表。 在此情況下，因為您未指定圖表類型，所以 `Chart` helper 會轉譯其預設圖表，也就是直條圖。
+3. 在瀏覽器中執行頁面。 瀏覽器會顯示圖表。 
 
     ![](7-displaying-data-in-a-chart/_static/image8.jpg)
 
-### <a name="using-a-database-query-for-chart-data"></a>使用圖表資料的資料庫查詢
+### <a name="using-a-database-query-for-chart-data"></a>針對圖表資料使用資料庫查詢
 
-如果您想要繪製的資訊是在資料庫中，您可以執行資料庫查詢，然後使用結果的資料建立圖表。 此程序會示範如何讀取和顯示文件中所建立的資料庫中的資料[使用 ASP.NET Web Pages 網站中的資料庫簡介](https://go.microsoft.com/fwlink/?LinkId=202893)。
+如果您想要建立圖表的資訊是在資料庫中，您可以執行資料庫查詢，然後使用結果中的資料來建立圖表。 此程式說明如何從在[ASP.NET Web Pages 網站中使用資料庫簡介](https://go.microsoft.com/fwlink/?LinkId=202893)中所建立的資料庫中，讀取和顯示資料。
 
-1. 新增*應用程式\_資料*如果資料夾不存在的網站根目錄的資料夾。
-2. 在*應用程式\_資料*資料夾中，加入名為資料庫檔案*SmallBakery.sdf*中所述的[簡介使用 ASP.NET Web Pages 站台中中的資料庫](https://go.microsoft.com/fwlink/?LinkId=202893).
-3. 建立新的檔案，名為*ChartDataQuery.cshtml*。
+1. 如果資料夾不存在，請將*應用程式\_Data*資料夾新增至網站的根目錄。
+2. 在*應用程式\_資料* 資料夾中，新增名為*SmallBakery*的資料庫檔案，其說明請參閱在[ASP.NET Web Pages 網站中使用資料庫簡介](https://go.microsoft.com/fwlink/?LinkId=202893)。
+3. 建立名為*ChartDataQuery*的新檔案。
 4. 以下列內容取代現有的內容：   
 
     [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample2.cshtml)]
 
-    程式碼首先會開啟 SmallBakery 資料庫，並將它指派給變數，名為`db`。 此變數代表`Database`可用來讀取和寫入至資料庫的物件。 接下來，程式碼會執行 SQL 查詢，以取得每個產品價格與名稱。 程式碼會建立新的圖表，並傳遞給它的資料庫查詢，藉由呼叫圖表的`DataBindTable`方法。 這個方法會採用兩個參數：`dataSource`參數是用來查詢資料和`xField`參數可讓您設定資料行用於圖表的 x 軸。
+    程式碼會先開啟 SmallBakery 資料庫，並將它指派給名為 `db`的變數。 這個變數代表可以用來讀取和寫入資料庫的 `Database` 物件。 接下來，程式碼會執行 SQL 查詢，以取得每個產品的名稱和價格。 此程式碼會建立新的圖表，並藉由呼叫圖表的 `DataBindTable` 方法，將資料庫查詢傳遞給它。 這個方法會採用兩個參數： `dataSource` 參數用於查詢中的資料，而 `xField` 參數可讓您設定要用於圖表 X 軸的資料行。
 
-    若要使用替代`DataBindTable`方法，您可以使用`AddSeries`方法`Chart`協助程式。 `AddSeries`方法可讓您設定`xValue`和`yValues`參數。 比方說，而不是使用`DataBindTable`方法如下：
+    除了使用 `DataBindTable` 方法以外，您還可以使用 `Chart` helper 的 `AddSeries` 方法。 `AddSeries` 方法可讓您設定 `xValue` 和 `yValues` 參數。 例如，而不是使用 `DataBindTable` 的方法，如下所示：
 
     [!code-css[Main](7-displaying-data-in-a-chart/samples/sample3.css)]
 
-    您可以使用`AddSeries`方法如下：
+    您可以使用 `AddSeries` 方法，如下所示：
 
     [!code-html[Main](7-displaying-data-in-a-chart/samples/sample4.html)]
 
-    轉譯相同的結果。 `AddSeries`方法會更有彈性，因為您可以更明確地指定的圖表類型和資料但`DataBindTable`方法較為容易使用，如果您不需要額外的彈性。
-5. 執行網頁瀏覽器中。 
+    兩者都會呈現相同的結果。 `AddSeries` 方法更具彈性，因為您可以更明確地指定圖表類型和資料，但如果您不需要額外的彈性，`DataBindTable` 方法會更容易使用。
+5. 在瀏覽器中執行頁面。 
 
     ![](7-displaying-data-in-a-chart/_static/image9.jpg)
 
 ### <a name="using-xml-data"></a>使用 XML 資料
 
-圖表的第三個選項是使用圖表做為資料的 XML 檔案。 這需要的 XML 檔案也具有結構描述檔案 (*.xsd*檔案) 的 XML 結構描述。 此程序會示範如何從 XML 檔案讀取資料。
+圖表的第三個選項是使用 XML 檔案做為圖表的資料。 這需要 XML 檔案也有描述 XML 結構的架構檔案（ *.xsd*檔案）。 此程式說明如何從 XML 檔案讀取資料。
 
-1. 在 *應用程式\_資料*資料夾中，建立新的 XML 檔案，名為*data.xml*。
-2. 下列程式碼，也就是一家虛構公司員工相關的某些 XML 資料取代現有的 XML。 
+1. 在*應用程式\_資料* 資料夾中，建立名為*Data .XML*的新 XML 檔案。
+2. 將現有的 XML 取代為下列，這是關於虛構公司員工的一些 XML 資料。 
 
     [!code-xml[Main](7-displaying-data-in-a-chart/samples/sample5.xml)]
-3. 在 *應用程式\_資料*資料夾中，建立新的 XML 檔案，名為*data.xsd*。 (請注意，擴充功能目前是 *.xsd*。)
-4. 以下列內容取代現有的 XML: 
+3. 在*應用程式\_資料* 資料夾中，建立名為*Data .XSD*的新 XML 檔案。 （請注意，這次的副檔名是 *.xsd*）。
+4. 以下列內容取代現有的 XML： 
 
     [!code-xml[Main](7-displaying-data-in-a-chart/samples/sample6.xml)]
-5. 在網站根目錄中，建立新的檔案，名為*ChartDataXML.cshtml*。
+5. 在網站的根目錄中，建立名為*ChartDataXML*的新檔案。
 6. 以下列內容取代現有的內容： 
 
     [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample7.cshtml)]
 
-    程式碼會先建立`DataSet`物件。 此物件用來管理的資料會從 XML 檔案讀取，並組織根據結構描述檔案中的資訊。 (請注意頂端的程式碼包含陳述式`using SystemData`。 這為了能夠使用必要`DataSet`物件。 如需詳細資訊，請參閱 < [ &quot;Using&quot;陳述式和完整名稱](#SB_UsingStatements)本文稍後。)
+    程式碼會先建立 `DataSet` 物件。 這個物件是用來管理從 XML 檔案讀取的資料，並根據架構檔案中的資訊加以組織。 （請注意，程式碼的頂端會包含 `using SystemData`的語句。 若要能夠使用 `DataSet` 物件，這是必要的。 如需詳細資訊，請參閱本文稍後的[使用&quot; 語句和完整限定名稱的&quot;](#SB_UsingStatements) 。）
 
-    接下來，程式碼會建立`DataView`資料集為基礎的物件。 資料檢視會提供圖表可以繫結至物件&#8212;也就是讀取，並繪製。 圖表繫結至資料`AddSeries`方法，為您稍早時看到這次圖表陣列資料，不同之處在於`xValue`並`yValues`參數會設定為`DataView`物件。
+    接下來，程式碼會根據資料集建立 `DataView` 物件。 資料檢視會提供圖表可以系結&#8212;的物件，也就是 [讀取] 和 [繪製]。 圖表會使用 `AddSeries` 方法系結至資料，如您稍早在建立陣列資料的圖表時所見，但這次 `xValue` 和 `yValues` 參數會設定為 `DataView` 物件。
 
-    此範例也示範如何指定特定圖表類型。 在 新增資料時`AddSeries`方法，`chartType`參數也會設定為顯示圓形圖。
-7. 執行網頁瀏覽器中。 
+    這個範例也會示範如何指定特定的圖表類型。 在 `AddSeries` 方法中加入資料時，`chartType` 參數也會設定為顯示圓形圖。
+7. 在瀏覽器中執行頁面。 
 
     ![](7-displaying-data-in-a-chart/_static/image10.jpg)
 
 > [!TIP]
 > 
 > <a id="SB_UsingStatements"></a>
-> ### <a name="using-statements-and-fully-qualified-names"></a>"Using"陳述式和完整格式的名稱
+> ### <a name="using-statements-and-fully-qualified-names"></a>"Using" 語句和完整限定名稱
 > 
-> 含有 Razor 語法的 ASP.NET Web Pages 根據.NET Framework 是由數千個元件 （類別） 所組成。 若要使用所有這些類別可管理，它們會組織成*命名空間*，這是有點像程式庫。 例如，`System.Web`命名空間包含類別，可支援瀏覽器/伺服器通訊`System.Xml`命名空間包含類別，用來建立和讀取 XML 檔案，和`System.Data`命名空間包含類別，可讓您處理使用資料。
+> 使用 Razor 語法 ASP.NET Web Pages 的 .NET Framework 是由數千個元件（類別）所組成。 為了讓它能夠管理所有的類別，它們會組織成*命名空間*，而這些都有點類似程式庫。 例如，`System.Web` 命名空間包含支援瀏覽器/伺服器通訊的類別，`System.Xml` 命名空間包含用來建立和讀取 XML 檔案的類別，而 `System.Data` 命名空間包含可讓您處理資料的類別。
 > 
-> 若要存取.NET Framework 中的任何特定的類別，程式碼需要知道不只是類別名稱，但也表示類別仍在命名空間。 例如，若要使用`Chart`協助程式，必須先找到的程式碼`System.Web.Helpers.Chart`類別，其結合了命名空間 (`System.Web.Helpers`) 類別名稱 (`Chart`)。 這就所謂的類別*完整*名稱&#8212;其完整的模稜兩可的位置內 vastness 的.NET framework。 在程式碼，這看起來如下所示：
+> 為了在 .NET Framework 中存取任何指定的類別，程式碼必須不只知道類別名稱，也不能知道類別所在的命名空間。 例如，若要使用 `Chart` helper，程式碼必須尋找 `System.Web.Helpers.Chart` 類別，其結合了命名空間（`System.Web.Helpers`）與類別名稱（`Chart`）。 這稱為類別的完整名稱&#8212; ，在 .NET Framework 的 vastness 中，其完整且*明確的位置*。 在程式碼中，這看起來會像下面這樣：
 > 
 > `var myChart = new System.Web.Helpers.Chart(width: 600, height: 400) // etc.`
 > 
-> 不過，很麻煩 （又容易出錯） 能夠使用這些長、 完整的名稱，每次您想要參考類別或協助程式。 因此，若要讓您更輕鬆地使用類別名稱，您可以*匯入*的命名空間您感興趣，這通常是您只在從.NET Framework 中的許多命名空間中。 如果您已匯入命名空間，您可以使用的類別名稱 (`Chart`) 而不是完整限定名稱 (`System.Web.Helpers.Chart`)。 當您的程式碼執行，且遇到類別名稱時，它看起來可能只是您已匯入到該類別的命名空間中。
+> 不過，每次您想要參考類別或協助程式時，都必須使用這些長的完整名稱，這很麻煩（而且容易出錯）。 因此，為了讓您更輕鬆地使用類別名稱，您可以匯*入*您感興趣的命名空間，這通常只是 .NET Framework 的多個命名空間中的少數幾個。 如果您已匯入命名空間，則只能使用類別名稱（`Chart`），而不是完整名稱（`System.Web.Helpers.Chart`）。 當您的程式碼執行並遇到類別名稱時，它只會查看您已匯入以尋找該類別的命名空間。
 > 
-> 當您使用含有 Razor 語法的 ASP.NET Web Pages 建立 web 網頁上時，您通常使用相同的類別集，每次包括`WebPage`類別、 各種不同的協助程式等等。 若要儲存匯入相關的命名空間，每次您建立網站的工作，因此它會自動匯入一組核心命名空間，每個網站設定 ASP.NET。 這就是為什麼您還沒有必須處理命名空間，或匯入為止;您曾經使用過的所有類別都都會在已為您匯入的命名空間中。
+> 當您使用 ASP.NET Web Pages 搭配 Razor 語法來建立網頁時，通常會每次都使用相同的一組類別，包括 `WebPage` 類別、各種協助程式等等。 若要在每次建立網站時儲存匯入相關命名空間的工作，請設定 ASP.NET，讓它自動匯入每個網站的一組核心命名空間。 這就是為什麼您不需要處理命名空間或匯入到目前為止;您所使用的所有類別都是在已為您匯入的命名空間中。
 > 
-> 不過，有時候您會需要使用不會自動為您匯入的命名空間中的類別。 在此情況下，您可以使用該類別的完整名稱，或您手動匯入的命名空間包含的類別。 若要匯入命名空間，您使用`using`陳述式 (`import` Visual Basic 中)，如您稍早在範例中看到一文。
+> 不過，有時候您必須使用不在自動匯入的命名空間中的類別。 在這種情況下，您可以使用該類別的完整名稱，也可以手動匯入包含類別的命名空間。 若要匯入命名空間，您可以使用 `using` 語句（Visual Basic 中的`import`），如您在先前的範例中所見。
 > 
-> 例如，`DataSet`類別位於`System.Data`命名空間。 `System.Data`命名空間不會自動提供給 ASP.NET Razor 頁面。 因此，若要使用`DataSet`類別使用其完整的名稱，您可以使用如下的程式碼：
+> 例如，`DataSet` 類別是在 `System.Data` 命名空間中。 `System.Data` 的命名空間不會自動用於 ASP.NET Razor 頁面。 因此，若要使用其完整名稱來處理 `DataSet` 類別，您可以使用如下的程式碼：
 > 
 > `var dataSet = new System.Data.DataSet();`
 > 
-> 如果您必須使用`DataSet`類別重複您可以匯入像這樣的命名空間，然後使用程式碼中的 類別名稱：
+> 如果您必須重複使用 `DataSet` 類別，您可以像這樣匯入命名空間，然後在程式碼中只使用類別名稱：
 > 
 > [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample8.cshtml)]
 > 
-> 您可以新增`using`陳述式，針對您想要參考的任何其他.NET Framework 命名空間。 不過，如前所述，您不需要這種做法，因為大部分的類別，您將使用的是會自動匯入 asp.net 中使用的命名空間中 *.cshtml*並 *.vbhtml*頁面。
+> 您可以為任何其他您想要參考的 .NET Framework 命名空間加入 `using` 語句。 不過，如上所述，您不需要經常這麼做，因為您所使用的大部分類別都是在 ASP.NET 自動匯入的命名空間中，以用於 *. cshtml*和*vbhtml*頁面。
 
 <a id="Displaying_Charts"></a>
-## <a name="displaying-charts-inside-a-web-page"></a>顯示在 Web 網頁內的圖表
+## <a name="displaying-charts-inside-a-web-page"></a>在網頁內顯示圖表
 
-在範例中您已經看到截至目前為止，您建立的圖表，則圖表會呈現直接在瀏覽器為圖形。 在許多情況下，不過，您想要顯示圖表 頁面上，不只是依本身在瀏覽器中。 若要這樣做需要雙步驟程序。 第一個步驟是建立會產生圖表，頁面，如您所見。
+在您到目前為止所看到的範例中，您會建立圖表，然後圖表會以圖形的形式直接轉譯至瀏覽器。 不過，在許多情況下，您會想要將圖表顯示為頁面的一部分，而不只是在瀏覽器中。 若要這麼做，需要兩個步驟的處理常式。 第一個步驟是建立可產生圖表的頁面，如同您已見過的。
 
-第二個步驟是在另一個網頁中顯示產生的映像。 若要顯示的映像，您可以使用 HTML`<img>`中相同的項目，您通常用來顯示任何映像的方式。 不過，而不是參考 *.jpg*或是 *.png*檔案中，`<img>`項目參考 *.cshtml*檔案，其中包含`Chart`協助程式，建立的圖表。 顯示頁面時執行，則`<img>`項目取得的輸出`Chart`協助程式，並轉譯圖表。
+第二個步驟是在另一個頁面中顯示產生的影像。 若要顯示影像，請使用 HTML `<img>` 專案，就像顯示任何影像一樣。 不過，`<img>` 專案會參考包含建立圖表之 `Chart` 協助程式的*cshtml*檔案，而不是參考 *.jpg*或 *.png*檔案。 當顯示頁面執行時，`<img>` 元素會取得 `Chart` helper 的輸出，並呈現圖表。
 
 ![](7-displaying-data-in-a-chart/_static/image11.jpg)
 
-1. 建立名為*ShowChart.cshtml*。
+1. 建立名為*ShowChart*的檔案。
 2. 以下列內容取代現有的內容： 
 
     [!code-html[Main](7-displaying-data-in-a-chart/samples/sample9.html)]
 
-    程式碼會使用`<img>`項目，以顯示您稍早建立的圖表*ChartArrayBasic.cshtml*檔案。
-3. 在瀏覽器中執行之 web 網頁。 *ShowChart.cshtml*檔案會顯示包含在程式碼為基礎的圖表影像*ChartArrayBasic.cshtml*檔案。
+    程式碼會使用 `<img>` 元素來顯示您稍早在*ChartArrayBasic*中建立的圖表。
+3. 在瀏覽器中執行網頁。 *ShowChart*檔會根據*ChartArrayBasic*中包含的程式碼顯示圖表影像。
 
 <a id="Styling_a_Chart"></a>
 ## <a name="styling-a-chart"></a>設定圖表的樣式
 
-`Chart`協助程式支援大量的選項可讓您自訂圖表的外觀。 您可以設定色彩、 字型、 框線和等等。 自訂圖表的外觀的簡單方法是使用*佈景主題*。 佈景主題是資訊的指定方式來呈現圖表使用的字型、 色彩、 標籤、 調色盤、 框線和效果的集合。 （請注意圖表的樣式不會指出類型的圖表）。
+`Chart` helper 支援大量選項，可讓您自訂圖表的外觀。 您可以設定色彩、字型、框線等等。 自訂圖表外觀的簡單方法是使用*主題*。 佈景主題是指定如何使用字型、色彩、標籤、調色盤、框線和效果來呈現圖表的資訊集合。 （請注意，圖表的樣式並不表示圖表的類型）。
 
-下表列出內建的佈景主題。
+下表列出內建主題。
 
-| 主題 | 描述 |
+| 佈景主題 | 說明 |
 | --- | --- |
-| `Vanilla` | 白色背景上顯示紅色的資料行。 |
-| `Blue` | 顯示藍色上藍色漸層背景的資料行。 |
-| `Green` | 顯示藍色上綠色漸層背景的資料行。 |
-| `Yellow` | 黃色漸層背景上顯示橘色的資料行。 |
-| `Vanilla3D` | 白色背景上顯示 3d 紅色的資料行。 |
+| `Vanilla` | 在白色背景上顯示紅色資料行。 |
+| `Blue` | 在藍色漸層背景上顯示藍色資料行。 |
+| `Green` | 在綠色漸層背景上顯示藍色資料行。 |
+| `Yellow` | 在黃色漸層背景上顯示橙色資料行。 |
+| `Vanilla3D` | 在白色背景上顯示立體紅色資料行。 |
 
-您可以指定要建立新的圖表時所使用之佈景主題。
+您可以指定要在建立新圖表時使用的主題。
 
-1. 建立新的檔案，名為*ChartStyleGreen.cshtml*。
-2. 以下列內容取代現有的內容頁面中：
+1. 建立名為*ChartStyleGreen*的新檔案。
+2. 將頁面中的現有內容取代為下列內容：
 
     [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample10.cshtml)]
 
-    此程式碼等同於先前的範例，會使用資料庫的資料，但會增加`theme`參數時，它會建立`Chart`物件。 下列範例顯示已變更的程式碼：
+    這段程式碼與先前使用資料庫來進行資料的範例相同，但會在建立 `Chart` 物件時加入 `theme` 參數。 以下顯示已變更的程式碼：
 
     [!code-csharp[Main](7-displaying-data-in-a-chart/samples/sample11.cs)]
-3. 執行網頁瀏覽器中。 您會看到與之前相同的資料，但圖表看起來更精良： 
+3. 在瀏覽器中執行頁面。 您會看到與之前相同的資料，但圖表看起來更美觀： 
 
     ![](7-displaying-data-in-a-chart/_static/image12.jpg)
 
 <a id="Saving_a_Chart"></a>
 ## <a name="saving-a-chart"></a>儲存圖表
 
-當您使用`Chart`為您的協助程式為止所看到本文章會協助程式會重新建立從頭圖表每次叫用時。 如有必要，圖表的程式碼也會重新查詢資料庫，或重新讀取 XML 檔案，以取得資料。 在某些情況下，執行此動作可以是複雜的作業，例如您想要查詢的資料庫很大，則 XML 檔案包含大量資料。 即使圖表不需要用到大量資料，以動態方式建立映像的程序佔用伺服器資源，以及如果許多人要求的頁面或頁面會顯示圖表，有可能會影響您的網站的效能。
+當您使用這篇文章中所見到的 `Chart` helper 時，協助專家會在每次叫用時從頭重新建立圖表。 如有必要，圖表的程式碼也會重新查詢資料庫，或重新讀取 XML 檔案以取得資料。 在某些情況下，執行這項作業可能是一項複雜的作業，例如，如果您查詢的資料庫很大，或 XML 檔案包含大量資料。 即使圖表不包含大量資料，以動態方式建立影像的程式還是會佔用伺服器資源，如果有許多人要求顯示圖表的頁面，可能會影響網站的效能。
 
-為了協助您降低建立圖表的潛在效能影響，您可以建立圖表第一次您需要它，然後儲存它。 當圖表需要一次，而不是重新產生它，您也可以擷取已儲存的版本，並呈現的。
+為了協助您減少建立圖表的潛在效能影響，您可以在第一次需要時建立圖表，然後加以儲存。 再次需要圖表時，您可以直接提取已儲存的版本，然後再進行轉譯，而不是重新產生。
 
-您可以透過下列方式來儲存圖表：
+您可以使用下列方式來儲存圖表：
 
-- 快取 （伺服器） 上的電腦記憶體中的圖表。
-- 將圖表儲存為影像檔。
-- 將圖表儲存為 XML 檔案。 此選項可讓您修改圖表，再加以儲存。
+- 將圖表快取在電腦記憶體中（在伺服器上）。
+- 將圖表儲存為影像檔案。
+- 將圖表儲存為 XML 檔案。 此選項可讓您在儲存圖表之前先加以修改。
 
-### <a name="caching-a-chart"></a>快取的圖表
+### <a name="caching-a-chart"></a>快取圖表
 
-建立圖表之後，您就可以將它快取。 快取的圖表，以表示它不一定會再次顯示，需要要重新建立。 當您將圖表儲存在快取時，您指定對該圖表必須是唯一的索引鍵。
+建立圖表之後，您就可以快取它。 快取圖表表示如果需要再次顯示，則不需要重新建立。 當您將圖表儲存在快取中時，您可以為它提供一個對該圖表而言必須是唯一的索引鍵。
 
-如果在伺服器記憶體不足，可能會移除儲存至快取的圖表。 此外，如果因為任何原因而重新啟動您的應用程式，會清除快取。 因此，標準的方式來使用快取的圖表是一律先檢查其是否可快取中，和如果沒有，則建立或重建它。
+如果伺服器的記憶體不足，可能會移除儲存至快取的圖表。 此外，如果您的應用程式因為任何原因而重新開機，則會清除快取。 因此，使用快取圖表的標準方式是一律先檢查它是否可在快取中使用，如果沒有，則建立或重新建立。
 
-1. 在您的網站根目錄中，建立名為*ShowCachedChart.cshtml*。
+1. 在您網站的根目錄中，建立名為*ShowCachedChart*的檔案。
 2. 以下列內容取代現有的內容： 
 
     [!code-html[Main](7-displaying-data-in-a-chart/samples/sample12.html)]
 
-    `<img>`標記會包括`src`屬性，指向*ChartSaveToCache.cshtml*檔案，並將金鑰傳遞至查詢字串的頁面。 索引鍵包含值&quot;myChartKey&quot;。 *ChartSaveToCache.cshtml*檔案包含`Chart`協助程式建立的圖表。 稍後，您將建立此頁面。
+    `<img>` 標記包含指向*ChartSaveToCache*的 `src` 屬性，並將金鑰當做查詢字串傳遞至頁面。 此索引鍵包含 &quot;myChartKey&quot;的值。 *ChartSaveToCache*檔案包含建立圖表的 `Chart` helper。 您稍後會建立此頁面。
 
-    結尾的頁面中，沒有名為頁面的連結*ClearCache.cshtml*。 這是您也會短時間內建立的頁面。 您需要*ClearCache.cshtml*來測試此範例中的快取，它不是連結或使用快取的圖表時，通常會包含的頁面。
-3. 在您的網站根目錄中，建立新的檔案，名為*ChartSaveToCache.cshtml*。
+    頁面結尾有一個名為*ClearCache*的頁面連結。 這也是您很快就會建立的頁面。 在此範例中，您只需要使用*ClearCache*來測試快取，這不是您在使用快取圖表時通常會包含的連結或頁面。
+3. 在您網站的根目錄中，建立名為*ChartSaveToCache*的新檔案。
 4. 以下列內容取代現有的內容：
 
     [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample13.cshtml)]
 
-    程式碼會先檢查是否任何項目傳遞作為查詢字串中的索引鍵值。 因此，此程式碼嘗試讀取從快取的圖表，藉由呼叫如果`GetFromCache`方法，並將金鑰傳遞給它。 事實上，沒有任何快取下該索引鍵 （這會發生第一次要求圖表） 中，如果程式碼會如往常般建立圖表。 圖表完成後，程式碼將它儲存至快取藉由呼叫`SaveToCache`。 該方法需要索引鍵，因此可以在稍後要求圖表） 和圖表應該儲存在快取的時間量。 （您會快取圖表的確切時間會取決於您認為它所代表的資料可能會變更的頻率）。`SaveToCache`方法也需要`slidingExpiration`參數&#8212;如果此值設為 true，在逾時計數器會重設每次存取時的圖表。 在此情況下，它實際上表示圖表的快取項目到期之後有人存取圖表的最後一個時間的 2 分鐘。 （滑動期限的替代方案是絕對期限，這表示快取項目會到期剛好 2 分鐘後已把它放入快取中，不論它有已存取頻率）。
+    程式碼會先檢查是否已將任何內容當做索引鍵值傳遞至查詢字串中。 若是如此，程式碼就會呼叫 `GetFromCache` 方法並傳遞金鑰給它，以嘗試從快取讀取圖表。 如果快取中沒有該索引鍵下的任何內容（這會在第一次要求圖表時發生），則程式碼會如往常般建立圖表。 當圖表完成時，程式碼會藉由呼叫 `SaveToCache`，將它儲存至快取。 該方法需要金鑰（如此一來，您可以稍後再要求圖表）和圖表儲存在快取中的時間量。 （您快取圖表的確切時間取決於您認為它所代表的資料可能會變更的頻率）。如果這是設定為 true，`SaveToCache` &#8212;方法也需要 `slidingExpiration` 參數，則每次存取圖表時，就會重設 timeout 計數器。 在此情況下，其作用表示圖表的快取專案會在上一次有人存取圖表之後的2分鐘後到期。 （滑動到期的替代方案為絕對到期日，這表示快取專案在放入快取後的2分鐘內就會剛好過期，無論存取的頻率為何）。
 
-    最後，程式碼會使用`WriteFromCache`方法來擷取和轉譯來自快取的圖表。 請注意，這個方法是外部`if`檢查快取，因為它會從快取取得圖表，圖表是否有一開始，或必須產生並儲存在快取的區塊。
+    最後，程式碼會使用 `WriteFromCache` 方法，從快取中提取並轉譯圖表。 請注意，這個方法是在檢查快取的 `if` 區塊外，因為它會從快取中取得圖表，無論圖表是從何處開始，還是必須產生並儲存在快取中。
 
-    請注意，在此範例中，`AddTitle`方法包含時間戳記。 (目前的日期和時間，它會新增&#8212; `DateTime.Now` &#8212;標題。)
-5. 建立名為的新頁面*ClearCache.cshtml*和其內容取代為下列：
+    請注意，在此範例中，`AddTitle` 方法包含時間戳記。 （它會將目前的日期和&#8212;時間&#8212; `DateTime.Now` 新增至標題）。
+5. 建立名為*ClearCache*的新頁面，並將其內容取代為下列內容：
 
     [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample14.cshtml)]
 
-    此頁面會使用`WebCache`若要移除圖表中快取的 helper *ChartSaveToCache.cshtml*。 如先前所述，您通常不必像這樣的頁面。 您要建立這裡只是為了讓您更輕鬆地測試快取。
-6. 執行*ShowCachedChart.cshtml*網頁瀏覽器中。 此頁面會顯示圖表影像中所包含的程式碼為基礎*ChartSaveToCache.cshtml*檔案。 記下的圖表標題中顯示的時間戳記。 
+    此頁面會使用 `WebCache` helper 來移除*ChartSaveToCache*中快取的圖表。 如先前所述，您通常不需要像這樣的頁面。 您只需要在這裡建立，就能更輕鬆地測試快取。
+6. 在瀏覽器中執行*ShowCachedChart。* 頁面會根據*ChartSaveToCache*中包含的程式碼顯示圖表影像。 記下 [圖表標題] 中的時間戳記。 
 
-    ![描述：基本的圖表，圖表標題中具有時間戳記的圖片](7-displaying-data-in-a-chart/_static/image13.jpg)
+    ![描述：圖表標題中包含時間戳記之基本圖表的圖片](7-displaying-data-in-a-chart/_static/image13.jpg)
 7. 關閉瀏覽器。
-8. 執行*ShowCachedChart.cshtml*一次。 請注意，時間戳記相同，表示圖表未重新產生，但改為從快取中讀取。
-9. 在  *ShowCachedChart.cshtml*，按一下**清除快取**連結。 這會帶您前往*ClearCache.cshtml*，這會報告已清除快取。
-10. 按一下 **返回 ShowCachedChart.cshtml**連結，或重新執行*ShowCachedChart.cshtml*從 WebMatrix。 請注意，這次的時間戳記已變更，因為在清除快取也一樣。 因此，程式碼，就必須重新產生圖表，並把它放回快取。
+8. 再次執行*ShowCachedChart* 。 請注意，時間戳記與之前相同，這表示圖表並未重新產生，而是改為從快取讀取。
+9. 在 [ *ShowCachedChart*] 中，按一下 [**清除**快取] 連結。 這會帶您前往*ClearCache*，這會報告快取已清除。
+10. 按一下 [**返回 ShowCachedChart** ] 連結，或從 WebMatrix 重新執行*ShowCachedChart。* 請注意，這次時間戳記已變更，因為快取已清除。 因此，程式碼必須重新產生圖表，並將它放回快取中。
 
-### <a name="saving-a-chart-as-an-image-file"></a>將圖表儲存為影像檔
+### <a name="saving-a-chart-as-an-image-file"></a>將圖表儲存為影像檔案
 
-您也可以儲存圖表為影像檔 (例如 *.jpg*檔案) 的伺服器上。 任何映像的方式時，可以使用映像檔。 優點是，檔案會儲存，而不是儲存至暫時快取。 您可以將新的圖表影像儲存在不同的時間 （例如，每隔一小時），並再記錄永久的一段時間的變更。 請注意，您必須先確定您的 web 應用程式已將檔案儲存至資料夾中，您要將映像檔案放在伺服器上的權限。
+您也可以在伺服器上將圖表儲存為影像檔案（例如，做為 *.jpg*檔案）。 接著，您可以用您對任何影像的方式來使用影像檔案。 其優點是儲存檔案，而不是儲存至暫時快取。 您可以在不同的時間儲存新的圖表影像（例如，每小時），然後保留一段時間後所發生變更的永久記錄。 請注意，您必須確定您的 web 應用程式有許可權將檔案儲存至您要放置影像檔的伺服器上的資料夾。
 
-1. 在您的網站根目錄中，建立名為 *\_ChartFiles*如果不存在。
-2. 在您的網站根目錄中，建立新的檔案，名為*ChartSave.cshtml*。
+1. 在您網站的根目錄中，建立名為 *\_ChartFiles*的資料夾（如果尚未存在的話）。
+2. 在您網站的根目錄中，建立名為*ChartSave*的新檔案。
 3. 以下列內容取代現有的內容：
 
     [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample15.cshtml)]
 
-    程式碼會先檢查以查看是否 *.jpg*檔案存在，藉由呼叫`File.Exists`方法。 如果檔案不存在，程式碼會建立新`Chart`從陣列。 此時，程式碼會呼叫`Save`方法，並傳遞`path`參數指定的檔案路徑和檔案名稱儲存圖表的位置。 在頁面中，主體`<img>`項目會使用路徑來指向 *.jpg*檔案來顯示。
-4. 執行*ChartSave.cshtml*檔案。
-5. 傳回至 WebMatrix。 請注意，影像檔名為*chart01.jpg*就已經儲存在 *\_ChartFiles*資料夾。
+    程式碼會先藉由呼叫 `File.Exists` 方法，檢查 *.jpg*檔案是否存在。 如果檔案不存在，則程式碼會從陣列建立新的 `Chart`。 此時，程式碼會呼叫 `Save` 方法並傳遞 `path` 參數，以指定要儲存圖表之位置的檔案路徑和檔案名。 在頁面主體中，`<img>` 元素會使用路徑指向要顯示的 *.jpg*檔案。
+4. 執行*ChartSave。*
+5. 返回 WebMatrix。 請注意，名為*chart01*的影像檔已經儲存在 *\_ChartFiles*資料夾中。
 
 ### <a name="saving-a-chart-as-an-xml-file"></a>將圖表儲存為 XML 檔案
 
-最後，您可以將圖表儲存為 XML 檔案在伺服器上。 透過快取圖表或將圖表儲存至檔案中使用此方法的優點是您無法再顯示圖表，如果您想要修改的 XML。 您的應用程式必須要有您要將映像檔案放在伺服器上資料夾的讀取/寫入權限。
+最後，您可以將圖表儲存為伺服器上的 XML 檔案。 使用此方法來快取圖表或將圖表儲存至檔案的優點是，您可以在需要時修改 XML，然後才顯示圖表。 您的應用程式必須具有您要放置影像檔之伺服器上資料夾的讀取/寫入權限。
 
-1. 在您的網站根目錄中，建立新的檔案，名為*ChartSaveXml.cshtml*。
+1. 在您網站的根目錄中，建立名為*ChartSaveXml*的新檔案。
 2. 以下列內容取代現有的內容：
 
     [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample16.cshtml)]
 
-    此程式碼很類似您稍早看到將圖表儲存在快取中，不同之處在於它會使用 XML 檔案的程式碼。 程式碼會先檢查 XML 檔案是否存在藉由呼叫`File.Exists`方法。 如果檔案不存在，程式碼會建立新`Chart`物件，並傳遞的檔案名稱為`themePath`參數。 這會建立基礎 XML 檔案中的圖表。 如果 XML 檔案不存在，程式碼會建立圖表，以正常的方式，並接著呼叫`SaveXml`將它儲存。 圖表會呈現使用`Write`方法，為您曾看過。
+    此程式碼類似于您稍早在快取中儲存圖表所看到的程式碼，但它使用 XML 檔案。 程式碼會先藉由呼叫 `File.Exists` 方法，檢查 XML 檔案是否存在。 如果檔案存在，則程式碼會建立新的 `Chart` 物件，並將檔案名當做 `themePath` 參數傳遞。 這會根據 XML 檔案中的任何內容來建立圖表。 如果 XML 檔案尚未存在，則程式碼會建立類似一般的圖表，然後呼叫 `SaveXml` 加以儲存。 圖表是使用 `Write` 方法來呈現，如先前所見。
 
-    如同顯示快取的頁面上，此程式碼會在圖表標題中包含時間戳記。
-3. 建立名為的新頁面*ChartDisplayXMLChart.cshtml*並加入下列標記： 
+    如同顯示快取的頁面，此程式碼會在圖表標題中包含時間戳記。
+3. 建立名為*ChartDisplayXMLChart*的新頁面，並在其中加入下列標記： 
 
     [!code-html[Main](7-displaying-data-in-a-chart/samples/sample17.html)]
-4. 執行*ChartDisplayXMLChart.cshtml*頁面。 圖表會顯示。 記下的時間戳記在圖表的標題。
+4. 執行 [ *ChartDisplayXMLChart* ] 頁面。 圖表隨即顯示。 記下圖表標題中的時間戳記。
 5. 關閉瀏覽器。
-6. 在 WebMatrix 中，以滑鼠右鍵按一下 *\_ChartFiles*資料夾中，按一下 **重新整理**，然後再開啟資料夾。 *XMLChart.xml*此資料夾中的檔案由`Chart`協助程式。 
+6. 在 WebMatrix 中，以滑鼠右鍵按一下 [ *\_ChartFiles* ] 資料夾 **，按一下 [** 重新整理]，然後開啟資料夾。 此資料夾中的*XMLChart*是由 `Chart` helper 所建立。 
 
-    ![描述：顯示圖表協助程式 」 所建立的 XMLChart.xml 檔案 _ChartFiles 資料夾。](7-displaying-data-in-a-chart/_static/image14.jpg)
-7. 執行*ChartDisplayXMLChart.cshtml*頁面上一次。 圖表會顯示相同的時間戳記，當做第一次執行的頁面。 這是因為從您稍早儲存的 XML 產生的圖表。
-8. 在 WebMatrix 中開啟 *\_ChartFiles*資料夾，然後刪除*XMLChart.xml*檔案。
-9. 執行*ChartDisplayXMLChart.cshtml*頁面上一次。 這次更新時間戳記，因為`Chart`helper 必須重新建立 XML 檔案。 如果您想，檢查 *\_ChartFiles*資料夾，請注意，XML 檔案已恢復。
+    ![描述：顯示圖表協助程式所建立之 XMLChart 的 [_ChartFiles] 資料夾。](7-displaying-data-in-a-chart/_static/image14.jpg)
+7. 再次執行 [ *ChartDisplayXMLChart* ] 頁面。 圖表會顯示與您第一次執行頁面時相同的時間戳記。 這是因為圖表是從您稍早儲存的 XML 產生的。
+8. 在 WebMatrix 中，開啟 [ *\_ChartFiles* ] 資料夾，並刪除*XMLChart*檔案。
+9. 再次執行*ChartDisplayXMLChart*一頁。 此時，時間戳記會更新，因為 `Chart` helper 必須重新建立 XML 檔案。 如果您想要的話，請檢查 *\_ChartFiles*資料夾，並注意 XML 檔案已回傳。
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他資源
 
-- [簡介使用的資料庫，在 ASP.NET Web Pages 網站](https://go.microsoft.com/fwlink/?LinkId=202893)
-- [使用快取的 ASP.NET Web Pages 站台，以改善效能](https://go.microsoft.com/fwlink/?LinkId=202903)
-- [圖表類別](https://msdn.microsoft.com/library/system.web.helpers.chart(v=vs.99))（MSDN 上的 ASP.NET 網頁 API 參考）
+- [在 ASP.NET Web Pages 網站中使用資料庫的簡介](https://go.microsoft.com/fwlink/?LinkId=202893)
+- [在 ASP.NET Web Pages 的網站中使用快取來改善效能](https://go.microsoft.com/fwlink/?LinkId=202903)
+- [圖表類別](https://msdn.microsoft.com/library/system.web.helpers.chart(v=vs.99))（MSDN 上的 ASP.NET Web Pages API 參考）

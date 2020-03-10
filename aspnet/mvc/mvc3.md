@@ -9,11 +9,11 @@ ms.assetid: dddc8812-a0bc-49f9-aafb-caf2064c2b8c
 msc.legacyurl: /mvc/mvc3
 msc.type: content
 ms.openlocfilehash: 421a06c89d4dbcb05d4080033813cc6558b7c698
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74586742"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78616407"
 ---
 # <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 
@@ -132,11 +132,11 @@ ASP.NET MVC 3 隨附名為 Razor 的新 view engine，可提供下列優點：
 
 Razor 也包含新的 HTML 協助程式，如下所示：
 
-- `Chart`。 呈現圖表，其提供的功能與 ASP.NET 4 中的 chart 控制項相同。
-- `WebGrid`。 使用分頁和排序功能來呈現資料方格。
-- `Crypto`。 會使用雜湊演算法來建立適當的 salted 和雜湊密碼。
-- `WebImage`。 呈現影像。
-- `WebMail`。 傳送電子郵件訊息。
+- `Chart` 呈現圖表，其提供的功能與 ASP.NET 4 中的 chart 控制項相同。
+- `WebGrid` 使用分頁和排序功能來呈現資料方格。
+- `Crypto` 會使用雜湊演算法來建立適當的 salted 和雜湊密碼。
+- `WebImage` 呈現影像。
+- `WebMail` 傳送電子郵件訊息。
 
 如需 Razor 的詳細資訊，請參閱下列資源：
 

@@ -1,222 +1,222 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/9-working-with-images
-title: 使用 ASP.NET Web Pages (Razor) 網站中的映像 |Microsoft Docs
+title: 使用 ASP.NET Web Pages （Razor）網站中的影像 |Microsoft Docs
 author: Rick-Anderson
-description: 本章會示範如何新增、 顯示和操作的映像 （調整大小、 翻轉，再加入浮水印） 在您的網站。
+description: 本章說明如何在您的網站中新增、顯示及操作影像（調整大小、翻轉和新增浮水印）。
 ms.author: riande
 ms.date: 02/20/2014
 ms.assetid: 778c4e58-4372-4d25-bab9-aec4a8d8e38d
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/9-working-with-images
 msc.type: authoredcontent
 ms.openlocfilehash: 53514b3c314fc182a43c82974ffcfa8158a636a1
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114361"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78631856"
 ---
-# <a name="working-with-images-in-an-aspnet-web-pages-razor-site"></a>使用 ASP.NET Web Pages (Razor) 網站中的映像
+# <a name="working-with-images-in-an-aspnet-web-pages-razor-site"></a>使用 ASP.NET Web Pages （Razor）網站中的影像
 
-藉由[Tom FitzMacken](https://github.com/tfitzmac)
+由[Tom FitzMacken](https://github.com/tfitzmac)
 
-> 這篇文章說明如何新增、 顯示和操作的映像 （調整大小、 翻轉，再加入浮水印），ASP.NET Web Pages (Razor) 網站中。
+> 本文說明如何在 ASP.NET Web Pages （Razor）網站中新增、顯示及操作影像（調整大小、翻轉和新增浮水印）。
 > 
 > 您將學到什麼：
 > 
-> - 如何以動態方式新增至頁面的影像。
+> - 如何以動態方式將影像新增至頁面。
 > - 如何讓使用者上傳影像。
 > - 如何調整影像大小。
-> - 若要翻轉或旋轉影像的方式。
-> - 如何將浮水印加入至映像。
-> - 如何使用做為浮水印的影像。
+> - 如何翻轉或旋轉影像。
+> - 如何將浮水印新增至影像。
+> - 如何使用影像做為浮水印。
 > 
-> 這些是 ASP.NET 程式設計文章中所引進的功能：
+> 以下是文章中引進的 ASP.NET 程式設計功能：
 > 
-> - `WebImage`協助程式。
-> - `Path`物件，提供方法，讓您管理的路徑和檔案名稱。
+> - `WebImage` helper。
+> - `Path` 物件，提供可讓您操作路徑和檔案名的方法。
 >   
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>在本教學課程中使用的軟體版本
+> ## <a name="software-versions-used-in-the-tutorial"></a>教學課程中使用的軟體版本
 > 
 > 
-> - ASP.NET Web Pages (Razor) 2
+> - ASP.NET Web Pages （Razor）2
 > - WebMatrix 2
 >   
 > 
-> 本教學課程也適用於 WebMatrix 3。
+> 本教學課程也適用于 WebMatrix 3。
 
 <a id="Adding_an_Image"></a>
-## <a name="adding-an-image-to-a-web-page-dynamically"></a>以動態方式將影像加入至網頁
+## <a name="adding-an-image-to-a-web-page-dynamically"></a>以動態方式將影像新增至網頁
 
-您可以新增映像至您的網站和個別頁面時您正在開發的網站。 您也可以讓使用者上傳映像，這可能是適用於工作，像是讓他們新增個人檔案相片。
+您可以在開發網站時，將影像新增至您的網站和個別頁面。 您也可以讓使用者上傳影像，這可能適用于讓他們新增設定檔相片等工作。
 
-如果映像上已有您的網站，而且只想要顯示在頁面上，您會使用 HTML`<img>`像這樣的項目：
+如果您的網站上已有影像，而您只想要將它顯示在頁面上，您可以使用 HTML `<img>` 元素，如下所示：
 
 [!code-html[Main](9-working-with-images/samples/sample1.html)]
 
-有時候，不過，您必須是能夠以動態方式顯示映像&#8212;也就是您不知道哪些要顯示的頁面會執行直到映像。
+不過，有時候您需要能夠動態&#8212;顯示影像，也就是說，在頁面執行之前，您不知道要顯示的影像。
 
-在本節中的程序示範如何讓使用者指定的映像名稱清單的映像檔案名稱的即時顯示影像。 他們從下拉式清單中，選取影像的名稱，並送出頁面上，顯示他們選取的映像。
+本節中的程式示範如何在使用者從影像名稱清單中指定影像檔案名稱的即時顯示影像。 他們會從下拉式清單中選取影像的名稱，而當他們提交頁面時，就會顯示所選取的影像。
 
-![[影像]](9-working-with-images/_static/image1.jpg "ch9images 1.jpg")
+![包](9-working-with-images/_static/image1.jpg "ch9images-1 .jpg")
 
 1. 在 WebMatrix 中，建立新的網站。
-2. 新增名為頁面*DynamicImage.cshtml*。
-3. 在網站的根資料夾中，加入新的資料夾並將它命名*映像*。
-4. 新增四個映像*映像*您剛才建立的資料夾。 （任何映像有好用的就可以不過它們應該放置於頁面上）。重新命名映像*Photo1.jpg*， *Photo2.jpg*， *Photo3.jpg*，以及*Photo4.jpg*。 (您不會使用*Photo4.jpg*在此程序中，但您將使用它在本文稍後。)
-5. 請確認四個映像會不會標示為唯讀。
-6. 以下列內容取代現有的內容頁面中：
+2. 新增名為*DynamicImage*的新頁面。
+3. 在網站的根資料夾中，加入新的資料夾，並將其命名為*images*。
+4. 將四個影像新增至您剛才建立的*images*資料夾。 （您可以使用的任何影像都會這麼做，但它們應該會放入頁面上）。重新命名影像*Photo1 .jpg*、 *Photo2 .jpg*、 *Photo3*和*Photo4*。 （您不會在此程式中使用*Photo4* ，但稍後會在本文中使用它）。
+5. 確認四個影像未標示為唯讀。
+6. 將頁面中的現有內容取代為下列內容：
 
     [!code-cshtml[Main](9-working-with-images/samples/sample2.cshtml)]
 
-    頁面的主體具有下拉式清單 (`<select>`項目)，名稱為`photoChoice`。 清單中有三種選項，而`value`每個清單選項的屬性具有名稱的其中一個映像，可放入*映像*資料夾。 基本上，清單可讓使用者選取易記的名稱，例如&quot;相片 1&quot;，然後將傳遞 *.jpg*時送出頁面的檔案名稱。
+    頁面的主體具有一個名為 `photoChoice`的下拉式清單（`<select>` 元素）。 清單有三個選項，而且每個清單選項的 `value` 屬性都有一個您放在*images*資料夾中的影像名稱。 基本上，此清單可讓使用者選取易記名稱，例如 &quot;相片 1&quot;，然後在提交頁面時傳遞 *.jpg*檔案名。
 
-    在程式碼中，您可以取得使用者的選取範圍 （也就是說，影像檔名稱） 從清單中，請閱讀`Request["photoChoice"]`。 您先查看是否有選取項目完全。 如果沒有，您會建構映像檔的資料夾名稱和使用者的映像檔案名稱所組成之影像的路徑。 (如果您嘗試建構的路徑，但沒有任何在`Request["photoChoice"]`，您會收到錯誤。)這會導致這類的相對路徑：
+    在程式碼中，您可以藉由閱讀 `Request["photoChoice"]`，從清單中取得使用者的選取範圍（亦即，影像檔案名稱）。 您會先看到是否有任何選取專案。 如果有，您可以為映射建立路徑，其中包含影像的資料夾名稱和使用者的影像檔案名稱。 （如果您嘗試建立路徑，但 `Request["photoChoice"]`中沒有任何內容，就會收到錯誤）。這會產生如下所示的相對路徑：
 
-    *images/Photo1.jpg*
+    *images/Photo1 .jpg*
 
-    路徑儲存在名為變數`imagePath`，您將需要更新版本中的頁面。
+    路徑會儲存在名為 `imagePath` 的變數中，您稍後會在頁面中需要此名稱。
 
-    在本文中，另外還有`<img>`項目，用來顯示使用者選取的映像。 `src`屬性是否設定為 檔案名稱或 URL，像您一樣顯示靜態項目。 相反地，它會設定為`@imagePath`，這表示，它會從您在程式碼中設定的路徑取得其值。
+    在本文中，還有一個 `<img>` 元素，用來顯示使用者挑選的影像。 `src` 屬性未設定為檔案名或 URL，就像您要顯示靜態元素一樣。 相反地，它會設定為 `@imagePath`，這表示它會從您在程式碼中設定的路徑取得其值。
 
-    第一次執行頁面，不過，沒有任何影像顯示，因為使用者尚未選取任何項目。 這通常表示，`src`屬性會是空白，並將映像會顯示為紅色&quot;x&quot; （或任何瀏覽器呈現時找不到映像）。 若要避免這個問題，您將放`<img>`中的項目`if`區塊，來測試是否`imagePath`變數中有任何項目。 如果使用者所做的選擇，`imagePath`包含的路徑。 如果使用者不選擇映像，或如果這是第一次顯示頁面，`<img>`甚至不呈現項目。
-7. 儲存檔案，並在瀏覽器中執行的頁面。 (請確定中選取頁面**檔案**才能執行這個工作區。)
-8. 從下拉式清單中選取映像，然後按一下**範例映像**。 請確定您會看到不同的映像，如需不同的選項。
+    不過，第一次執行頁面時，不會顯示任何影像，因為使用者未選取任何專案。 這通常表示 `src` 屬性會是空的，而且影像會顯示為紅色 &quot;x&quot; （或當瀏覽器找不到影像時所呈現的任何內容）。 若要避免這個情況，請將 `<img>` 元素放在測試的 `if` 區塊中，以查看 `imagePath` 變數是否有任何專案。 如果使用者進行選取，`imagePath` 包含路徑。 如果使用者未選取影像，或這是第一次顯示頁面，則不會轉譯 `<img>` 元素。
+7. 儲存檔案，並在瀏覽器中執行頁面。 （在執行之前，請確定已在 [檔案 **] 工作區**中選取頁面。）
+8. 從下拉式清單中選取映射，然後按一下 [**範例影像**]。 請確定您針對不同的選擇看到不同的映射。
 
 <a id="Uploading_an_Image"></a>
 ## <a name="uploading-an-image"></a>上傳影像
 
-前一個範例會示範如何以動態方式，顯示影像，但它只會使用已經在網站的映像。 此程序示範如何讓使用者上傳的影像，接著會顯示在頁面上。 在 ASP.NET 中，您可以操作影像使用`WebImage`協助程式，有方法可讓您建立、 操作和儲存影像。 `WebImage`協助程式支援所有常見 web 映像檔案類型，包括 *.jpg*， *.png*，和 *.bmp*。 在本文中，您將使用 *.jpg*映像，但是您可以使用任何映像類型。
+先前的範例示範如何以動態方式顯示影像，但只能使用已在您網站上的影像。 此程式說明如何讓使用者上傳影像，然後顯示在頁面上。 在 ASP.NET 中，您可以使用 `WebImage` 協助程式即時操作影像，其中包含可讓您建立、操作和儲存影像的方法。 `WebImage` helper 支援所有常見的 web 圖像檔案類型，包括 *.jpg*、 *.png*和 *.bmp*。 在本文中，您將使用 *.jpg*影像，但是您可以使用任何影像類型。
 
-![[影像]](9-working-with-images/_static/image2.jpg "ch9images 2.jpg")
+![包](9-working-with-images/_static/image2.jpg "ch9images-2 .jpg")
 
-1. 加入新的頁面並將它命名*UploadImage.cshtml*。
-2. 以下列內容取代現有的內容頁面中： 
+1. 新增頁面，並將它命名為*UploadImage*。
+2. 將頁面中的現有內容取代為下列內容： 
 
     [!code-cshtml[Main](9-working-with-images/samples/sample3.cshtml)]
 
-    在文字本文有`<input type="file">`元素，其可讓使用者選取要上傳的檔案。 當使用者按下**送出**，以及表單送出他們所選擇的檔案。
+    文字的主體具有 `<input type="file">` 元素，可讓使用者選取要上傳的檔案。 當他們按一下 [**提交**] 時，所挑選的檔案會連同表單一起提交。
 
-    若要取得已上傳的映像，您使用`WebImage`協助程式，有各式各樣的有用的方法來處理映像。 具體來說，您可以使用`WebImage.GetImageFromRequest`取得已上傳的映像 （如果有的話），並將其儲存在變數中名為`photo`。
+    若要取得已上傳的影像，您可以使用 `WebImage` helper，其具有各種使用影像的實用方法。 具體而言，您會使用 `WebImage.GetImageFromRequest` 來取得已上傳的影像（如果有的話），並將它儲存在名為 `photo`的變數中。
 
-    取得和設定檔案和路徑的名稱，則牽涉到很多工作，在此範例中。 問題是您想要取得使用者上傳，映像的名稱 （與只是名稱），然後再建立您要儲存映像的新路徑。 因為使用者可能無法上傳多個具有相同名稱的映像，您可以使用一些額外的程式碼來建立唯一的名稱，並確定使用者不覆寫現有的圖片。
+    此範例中有很多工作需要取得和設定檔案和路徑名稱。 問題在於，您想要取得使用者所上傳影像的名稱（以及名稱），然後為您要儲存映射的位置建立新的路徑。 因為使用者可能會上傳多個具有相同名稱的影像，所以您可以使用一些額外的程式碼來建立唯一的名稱，並確保使用者不會覆寫現有的圖片。
 
-    如果實際上已上傳影像 (測試`if (photo != null)`)，您取得的映像的映像名稱`FileName`屬性。 當使用者上傳映像，`FileName`包含使用者的原始名稱，其中包含從使用者的電腦的路徑。 它可能會看起來像這樣：
+    如果已上傳影像（測試 `if (photo != null)`），您會從影像的 `FileName` 屬性取得映射名稱。 當使用者上傳影像時，`FileName` 會包含使用者的原始名稱，其中包括使用者電腦的路徑。 看起來可能像這樣：
 
     *C:\Users\Joe\Pictures\SamplePhoto1.jpg*
 
-    您不想該路徑資訊，不過 &#8212;您只想實際的檔案名稱 (*SamplePhoto1.jpg*)。 您可以使用去除只從路徑檔案`Path.GetFileName`方法，就像這樣：
+    雖然您只想要實際的檔案名（ &#8212; *SamplePhoto1 .jpg*），但您不想要所有的路徑資訊。 您可以使用 `Path.GetFileName` 方法來去除路徑中的檔案，如下所示：
 
     [!code-csharp[Main](9-working-with-images/samples/sample4.cs)]
 
-    然後，您會建立新的唯一檔案名稱將 GUID 加入至原始的名稱。 (如需有關 Guid 的詳細資訊，請參閱[有關 Guid](#SB_AboutGUIDs)本文稍後。)然後，您會建構用來儲存影像，您可以使用的完整路徑。 在儲存路徑組成新的檔案名稱、 資料夾 （映像），以及目前的網站位置。
+    接著，您可以藉由將 GUID 加入至原始名稱，來建立新的唯一檔案名。 （如需 Guid 的詳細資訊，請參閱本文稍後的[關於 guid](#SB_AboutGUIDs) ）。然後，您會建立可用來儲存影像的完整路徑。 儲存路徑是由新的檔案名、資料夾（影像）和目前的網站位置所組成。
 
     > [!NOTE]
-    > 為了讓您儲存檔案中的程式碼*映像*資料夾中，應用程式需要讀取-寫入該資料夾的權限。 在您的開發電腦上不通常發生問題。 不過，當您發行您的網站以裝載提供者的 web 伺服器時，您可能需要明確地設定這些權限。 如果您裝載提供者的伺服器上執行此程式碼，而且發生錯誤，請與主機服務提供者，了解如何設定這些權限。
+    > 為了讓您的程式碼將檔案儲存在*images*資料夾中，應用程式需要該資料夾的讀寫許可權。 在您的開發電腦上，這通常不是問題。 不過，當您將網站發佈至主控提供者的 web 伺服器時，您可能需要明確地設定這些許可權。 如果您在主控提供者的伺服器上執行此程式碼，並收到錯誤，請洽詢主機服務提供者，以瞭解如何設定這些許可權。
 
-    最後，您將傳遞儲存通往`Save`方法的`WebImage`協助程式。 這會儲存已上傳的映像的新名稱。 儲存方法看起來像這樣： `photo.Save(@"~\" + imagePath)`。 完整路徑會附加至`@"~\"`，這是目前的網站位置。 (如需`~`運算子，請參閱[ASP.NET Web 程式設計使用 Razor 語法簡介](https://go.microsoft.com/fwlink/?LinkId=202890#ID_WorkingWithFileAndFolderPaths)。)
+    最後，您會將儲存路徑傳遞給 `WebImage` helper 的 `Save` 方法。 這會將所上傳的影像儲存在其新名稱之下。 Save 方法看起來像這樣： `photo.Save(@"~\" + imagePath)`。 完整路徑會附加至 `@"~\"`，也就是目前的網站位置。 （如需 `~` 運算子的詳細資訊，請參閱[使用 Razor 語法 ASP.NET Web 程式設計的簡介](https://go.microsoft.com/fwlink/?LinkId=202890#ID_WorkingWithFileAndFolderPaths)）。
 
-    如同先前的範例中，包含頁面的主體`<img>`來顯示影像的項目。 如果`imagePath`已設定，`<img>`項目會呈現及其`src`屬性設為`imagePath`值。
-3. 執行網頁瀏覽器中。
-4. 上傳的映像，並確定它會顯示在頁面上。
-5. 在您的網站，開啟*映像*資料夾。 您會看到，新的檔案已加入的檔案名稱看起來像這樣： 
+    如先前範例所示，頁面的內文包含一個 `<img>` 元素來顯示影像。 如果已設定 `imagePath`，則會轉譯 `<img>` 元素，且其 `src` 屬性會設定為 `imagePath` 值。
+3. 在瀏覽器中執行頁面。
+4. 上傳影像，並確定它顯示在頁面中。
+5. 在您的網站中，開啟 [ *images* ] 資料夾。 您會看到新的檔案已經加入，其檔案名看起來像這樣：： 
 
-    *45ea4527-7ddd-4965-b9ca-c6444982b342\_MyPhoto.png*
+    *45ea4527-7ddd-4965-b9ca-c6444982b342\_MyPhoto .png*
 
-    這是您使用 GUID 做為前置詞的名稱上傳的映像。 (您自己的檔案會有不同的 GUID，並可能名為以外*MyPhoto.png*。)
+    這是您上傳的映射，其 GUID 前面會加上名稱。 （您自己的檔案將會有不同的 GUID，而且名稱可能會與*MyPhoto*不同）。
 
 > [!TIP] 
 > 
 > <a id="SB_AboutGUIDs"></a>
-> ### <a name="about-guids"></a>有關 Guid
+> ### <a name="about-guids"></a>關於 Guid
 > 
-> GUID （全域唯一識別碼） 是識別碼，通常會轉譯成的格式，就像這樣： `936DA01F-9ABD-4d9d-80C7-02AF85C822A8`。 針對每個 GUID，不同的數字和字母 （A-F)，不過都會遵循使用一組 8-4-4-4 到 12 個字元的模式。 （技術上來說，GUID 是 16 位元組/128 位元數字）。當您需要一個 GUID 時，您可以呼叫特定的程式碼會為您產生的 GUID。 Guid 背後的概念在於之間的數字的極大的大小 (3.4 x 10<sup>38</sup>) 及產生它的演算法，產生的數字實際上保證是其中一種。 Guid，因此是當您必須保證您將不會使用相同的名稱兩次，產生的項目名稱的好方法。 它的缺點當然是，Guid 不特別是使用者易記的因此它們通常用於只能在程式碼中使用名稱。
+> GUID （全域唯一識別碼）是通常以如下格式轉譯的識別碼： `936DA01F-9ABD-4d9d-80C7-02AF85C822A8`。 每個 GUID 的數位和字母（從-F）不同，但全都遵循使用8-4-4-4-12 個字元群組的模式。 （就技術上而言，GUID 是16位元組/128 位的數位）。當您需要 GUID 時，您可以呼叫為您產生 GUID 的特製化程式碼。 Guid 背後的構想是，在數位的龐大大小（3.4 x 10<sup>38</sup>）和產生它的演算法之間，所產生的數位幾乎都一定是其中一種。 因此，當您必須保證不會使用相同的名稱兩次時，Guid 就是產生專案名稱的好方法。 當然，缺點是 Guid 並不特別方便使用者使用，因此當名稱只用于程式碼時，通常會用到。
 
 <a id="Resizing_an_Image"></a>
 ## <a name="resizing-an-image"></a>調整影像大小
 
-如果您的網站會接受來自使用者的映像，您可能想要調整影像的大小，先顯示，或將它們儲存。 您可以再次使用`WebImage`這個協助程式。
+如果您的網站接受來自使用者的影像，您可能會想要在顯示或儲存影像之前調整其大小。 您可以再次使用 `WebImage` helper 來進行此工作。
 
-此程序示範如何調整已上傳的映像建立縮圖，然後儲存在網站的 縮圖和原始的映像的大小。 您的頁面上顯示縮圖，並使用重新導向使用者到完整大小的影像的超連結。
+此程式示範如何調整已上傳影像的大小以建立縮圖，然後將縮圖和原始影像儲存在網站中。 您會在頁面上顯示縮圖，並使用超連結將使用者重新導向至完整大小的影像。
 
-![[影像]](9-working-with-images/_static/image3.jpg "ch9images 3.jpg")
+![包](9-working-with-images/_static/image3.jpg "ch9images-3 .jpg")
 
-1. 新增名為頁面*Thumbnail.cshtml*。
-2. 在 *映像*資料夾中，建立名為*個大拇指朝*。
-3. 以下列內容取代現有的內容頁面中： 
+1. 新增名為 [*微縮圖. cshtml*] 的新頁面。
+2. 在 [ *images* ] 資料夾中，建立名為*大拇指*的子資料夾。
+3. 將頁面中的現有內容取代為下列內容： 
 
     [!code-cshtml[Main](9-working-with-images/samples/sample5.cshtml)]
 
-    此程式碼是類似上一個範例中的程式碼。 差別在於，此程式碼會將影像儲存兩次，一次通常一次之後建立縮圖影像的複本。 首先取得已上傳的映像，並將它儲存在*映像*資料夾。 然後，您會建構的縮圖影像的新路徑。 若要實際建立縮圖，請呼叫`WebImage`協助程式的`Resize`建立 60 像素 x 60 像素映像的方法。 此範例會示範保留長寬比的方式以及如何避免映像 （如果新的大小會實際放大影像） 放大。 調整大小的影像則會儲存在*個大拇指朝*子資料夾。
+    此程式碼與上一個範例中的程式碼類似。 差別在於，此程式碼會在您建立影像的縮圖複本之後，正常地儲存影像兩次。 首先，您會取得已上傳的影像，並將它儲存在*images*資料夾中。 接著，您會為縮圖影像建立新的路徑。 若要實際建立縮圖，您可以呼叫 `WebImage` helper 的 `Resize` 方法，以建立60圖元的60圖元影像。 此範例會示範如何保留外觀比例，以及如何防止影像放大（以防新的大小實際會使影像變大）。 然後，調整大小的影像會儲存在 [*拇指*] 子資料夾中。
 
-    在結束標記時，您可使用`<img>`具有動態項目`src`您看過先前的範例中有條件地顯示影像的屬性。 在此情況下，您還會顯示縮圖。 您也使用`<a>`建立巨量版本的映像的超連結的項目。 如同`src`的屬性`<img>`設定項目`href`屬性`<a>`動態中的項目`imagePath`。 若要確定路徑可做為 URL，您將傳遞`imagePath`至`Html.AttributeEncode`方法，然後將路徑中的保留的字元轉換為 [確定]，在 URL 中的字元。
-4. 執行網頁瀏覽器中。
-5. 將相片上傳，並確認會顯示縮圖。
-6. 按一下以查看完整大小的影像縮圖。
-7. 在*映像*並*映像/個大拇指朝*，請注意，已新增新的檔案。
+    在標記的結尾，您會使用與您在先前範例中看到的動態 `src` 屬性相同的 `<img>` 元素，以有條件地顯示影像。 在此情況下，您會顯示縮圖。 您也可以使用 `<a>` 元素，來建立影像的大型版本超連結。 如同 `<img>` 元素的 `src` 屬性，您可以將 `<a>` 專案的 `href` 屬性動態設定為 `imagePath`中的任何一個。 為確保路徑可以做為 URL，您可以將 `imagePath` 傳遞至 `Html.AttributeEncode` 方法，這會將路徑中的保留字元轉換為 URL 中的正確字元。
+4. 在瀏覽器中執行頁面。
+5. 上傳相片並確認已顯示縮圖。
+6. 按一下縮圖以查看完整大小的影像。
+7. 請注意，在*images*和*images/拇指*中，已新增檔案。
 
 <a id="Rotating_and_Flipping"></a>
 ## <a name="rotating-and-flipping-an-image"></a>旋轉和翻轉影像
 
-`WebImage`協助程式也可讓您翻轉和旋轉的映像。 此程序示範如何從伺服器取得映像、 翻轉影像面朝下 （垂直），並儲存它，然後在頁面上顯示翻轉的影像。 在此範例中，您只使用您已在伺服器的檔案 (*Photo2.jpg*)。 在實際的應用程式中，您可能會翻轉影像像在先前的範例，以動態方式取得其名稱。
+`WebImage` 協助程式也可讓您翻轉和旋轉影像。 此程式顯示如何從伺服器取得影像、反轉影像的倒置（垂直）、儲存，然後在頁面上顯示翻轉的影像。 在此範例中，您只是使用伺服器上已有的檔案（*Photo2 .jpg*）。 在實際的應用程式中，您可能會翻轉以動態方式取得名稱的映射，就像先前範例中所做的一樣。
 
-![[影像]](9-working-with-images/_static/image4.jpg "ch9images 4.jpg")
+![包](9-working-with-images/_static/image4.jpg "ch9images-4 .jpg")
 
-1. 新增名為頁面*FlipImage.cshtml*。
-2. 以下列內容取代現有的內容頁面中： 
+1. 新增名為*FlipImage*的新頁面。
+2. 將頁面中的現有內容取代為下列內容： 
 
     [!code-cshtml[Main](9-working-with-images/samples/sample6.cshtml)]
 
-    此程式碼使用`WebImage`協助程式 」 從伺服器取得映像。 您建立使用相同的技巧，您使用先前範例中，來儲存映像，映像的路徑，而且當您建立的映像使用時，會傳遞該路徑`WebImage`:
+    程式碼會使用 `WebImage` helper 來從伺服器取得影像。 您可以使用先前用來儲存影像的相同技術來建立映射的路徑，並在使用 `WebImage`建立映射時傳遞該路徑：
 
     [!code-javascript[Main](9-working-with-images/samples/sample7.js)]
 
-    如果找到映像，您會建構新路徑和檔案名稱，像在先前的範例。 若要翻轉影像，請呼叫`FlipVertical`方法，然後將影像儲存一次。
+    如果找到影像，您可以建立新的路徑和檔案名，就像您在先前的範例中所做的一樣。 若要翻轉影像，請呼叫 `FlipVertical` 方法，然後再次儲存影像。
 
-    頁面上，將映像使用要再次顯示`<img>`具有項目`src`屬性設為`imagePath`。
-3. 執行網頁瀏覽器中。 影像*Photo2.jpg*面朝下顯示。
-4. 重新整理頁面，或要求頁面，再次以查看映像已翻轉的右端啟動一次。
+    使用 `src` 屬性設定為 `imagePath`的 `<img>` 專案，即可再次在頁面上顯示影像。
+3. 在瀏覽器中執行頁面。 *Photo2*的影像會以倒置顯示。
+4. 重新整理頁面，或再次要求頁面，以查看影像已正確翻轉。
 
-若要旋轉影像時，您會使用相同的程式碼，不過，而不是呼叫`FlipVertical`或是`FlipHorizontal`，您呼叫`RotateLeft`或`RotateRight`。
+若要旋轉影像，您可以使用相同的程式碼，但不會呼叫 `FlipVertical` 或 `FlipHorizontal`，而是呼叫 `RotateLeft` 或 `RotateRight`。
 
 <a id="Adding_a_Watermark"></a>
-## <a name="adding-a-watermark-to-an-image"></a>將浮水印加入至映像
+## <a name="adding-a-watermark-to-an-image"></a>將浮水印新增至影像
 
-當您將影像新增至您的網站時，您可能想要將浮水印加入至映像，才能將它儲存或顯示頁面上。 人們經常會使用浮水印將著作權資訊加入至映像，或通告其商務名稱。
+當您將影像新增至您的網站時，您可能會想要先將浮水印新增至影像，然後將它顯示在頁面上。 人們通常會使用浮水印將著作權資訊新增至影像或廣告其商務名稱。
 
-![[影像]](9-working-with-images/_static/image5.jpg "ch9images 5.jpg")
+![包](9-working-with-images/_static/image5.jpg "ch9images-5 .jpg")
 
-1. 新增名為頁面*Watermark.cshtml*。
-2. 以下列內容取代現有的內容頁面中： 
+1. 新增名為 [*浮水印*] 的新頁面。
+2. 將頁面中的現有內容取代為下列內容： 
 
     [!code-cshtml[Main](9-working-with-images/samples/sample8.cshtml)]
 
-    此程式碼就像中的程式碼*FlipImage.cshtml*稍早的頁面 (雖然這次會使用*Photo3.jpg*檔案)。 若要新增浮水印，請呼叫`WebImage`協助程式的`AddTextWatermark`儲存映像之前的方法。 在呼叫`AddTextWatermark`，傳遞文字&quot;我的浮水印&quot;設定字型色彩為黃色，且新細明體設定的字型系列。 (雖然它未顯示在這裡，`WebImage`協助程式也可讓您指定不透明度、 字型家族和字型的大小和浮水印文字的位置。)當您儲存映像時它不能唯讀狀態。
+    這段程式碼就像是稍早的*FlipImage*中的程式碼（雖然這次是使用*Photo3*檔案）。 若要新增浮水印，您可以先呼叫 `WebImage` helper 的 `AddTextWatermark` 方法，再儲存影像。 在 `AddTextWatermark`的呼叫中，您會將文字 &quot;[我的浮水印]&quot;，將字型色彩設為黃色，並將字型系列設定為 [Arial]。 （雖然此處未顯示，但 `WebImage` 協助程式也可讓您指定不透明度、字型系列和字型大小，以及浮水印文字的位置）。當您儲存映射時，它不得為唯讀。
 
-    如您所見之前，以您使用輸入頁面上顯示的映像`<img>`元素的 src 屬性設定為`@imagePath`。
-3. 執行網頁瀏覽器中。 右下角的 映像，請注意 「 我的浮水印 」 的文字。
+    如先前所見，影像會使用 [src] 屬性設定為 [`@imagePath`] 的 `<img>` 元素顯示在頁面上。
+3. 在瀏覽器中執行頁面。 請注意影像右下角的「我的浮水印」文字。
 
 <a id="Using_an_Image_as_a_Watermark"></a>
-## <a name="using-an-image-as-a-watermark"></a>使用做為浮水印的影像
+## <a name="using-an-image-as-a-watermark"></a>使用影像做為浮水印
 
-而不是使用浮水印文字，您可以使用另一個映像。 人們有時會使用公司標誌等影像做為浮水印，或它們而不是文字浮水印影像用於著作權資訊。
+您可以使用另一個影像，而不是使用浮水印的文字。 人們有時會使用公司標誌之類的影像做為浮水印，或使用浮水印影像而非文字來取得著作權資訊。
 
-![[影像]](9-working-with-images/_static/image6.jpg "ch9images 6.jpg")
+![包](9-working-with-images/_static/image6.jpg "ch9images-6 .jpg")
 
-1. 新增名為頁面*ImageWatermark.cshtml*。
-2. 新增映像*映像*資料夾，您可以用來作為標誌，並重新命名映像*MyCompanyLogo.jpg*。 此映像應該是您可以清楚地查看當它設定為 80 個像素寬且 20 像素高的映像。
-3. 以下列內容取代現有的內容頁面中： 
+1. 新增名為*ImageWatermark*的新頁面。
+2. 將影像新增至 [ *images* ] 資料夾，您可以使用它做為標誌，並重新命名影像*MyCompanyLogo*。 此影像應該是當其設定為80圖元寬和20圖元高時，可以清楚看出的影像。
+3. 將頁面中的現有內容取代為下列內容： 
 
     [!code-cshtml[Main](9-working-with-images/samples/sample9.cshtml)]
 
-    這是從先前的範例程式碼的另一種變化。 在此情況下，您呼叫`AddImageWatermark`將浮水印影像新增至目標映像 (*Photo3.jpg*) 才能儲存映像。 當您呼叫`AddImageWatermark`，您將其寬度設定為 80 的像素、 高度設為 20 個像素。 *MyCompanyLogo.jpg*映像會水平置中對齊和垂直靠下對齊的目標映像。 不透明度設定為 100%和邊框距離設定為 10 個像素。 如果浮水印影像大於目標映像，會發生任何事。 如果浮水印影像大於目標映像，您將設定為零的映像浮水印的邊框距離浮水印會被忽略。
+    這是先前範例中程式碼的另一種變化。 在此情況下，您可以呼叫 `AddImageWatermark`，將浮水印影像新增至目標影像（*Photo3 .jpg*），然後再儲存影像。 當您呼叫 `AddImageWatermark`時，會將其寬度設定為80圖元，並將高度設為20圖元。 *MyCompanyLogo*會水準對齊，並在目標影像底部以垂直方式對齊。 不透明度設定為100%，而填補設定為10圖元。 如果浮水印影像大於目標影像，則不會發生任何事。 如果浮水印影像大於目標影像，而且您將影像浮水印的填補設定為零，則會忽略浮水印。
 
-    因為您之前，顯示映像使用`<img>`項目，並動態`src`屬性。
-4. 執行網頁瀏覽器中。 浮水印影像會出現在主要映像底部的通知。
+    如先前所示，您可以使用 `<img>` 元素和動態 `src` 屬性來顯示影像。
+4. 在瀏覽器中執行頁面。 請注意，浮水印影像會出現在主要影像的底部。
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他資源
 
 [使用 ASP.NET Web Pages 網站中的檔案](https://go.microsoft.com/fwlink/?LinkId=202896)
 
-[程式設計使用 Razor 語法的 ASP.NET Web Pages 簡介](https://go.microsoft.com/fwlink/?LinkID=251587)
+[使用 Razor 語法進行 ASP.NET Web Pages 程式設計的簡介](https://go.microsoft.com/fwlink/?LinkID=251587)

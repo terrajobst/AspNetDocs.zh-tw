@@ -1,23 +1,23 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/index
-title: ASP.NET Web API 中支援 OData v3 |Microsoft Docs
+title: 支援 ASP.NET Web API 中的 OData v3 |Microsoft Docs
 author: rick-anderson
-description: 您可以使用 ASP.NET Web API 來建立支援 OData 第 3 版的端點。
+description: 使用 ASP.NET Web API 來建立支援 OData 第3版的端點。
 ms.author: riande
 ms.date: 06/26/2014
 ms.assetid: 26d43c14-98d8-46fe-ab2e-b7c5998d073d
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3
 msc.type: chapter
 ms.openlocfilehash: eb270fd7cd1e6507df47d9b1296c296eb63bedb2
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65131662"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78622252"
 ---
-# <a name="supporting-odata-v3-in-aspnet-web-api"></a>ASP.NET Web API 中支援 OData v3
+# <a name="supporting-odata-v3-in-aspnet-web-api"></a>支援 ASP.NET Web API 中的 OData v3
 
-> 您可以使用 ASP.NET Web API 來建立支援 OData 第 3 版的端點。
+> 使用 ASP.NET Web API 來建立支援 OData 第3版的端點。
 
 - [建立 OData v3 端點](creating-an-odata-endpoint.md)
 - [支援 OData v3 中的實體關聯性](working-with-entity-relations.md)

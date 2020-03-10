@@ -9,11 +9,11 @@ ms.assetid: bc937e9d-5c14-4fc4-aec7-440da924dd18
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/user-based-authorization-vb
 msc.type: authoredcontent
 ms.openlocfilehash: dfac0c6fa955e59c6ea996533f2447e89ec8d468
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74588210"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78635937"
 ---
 # <a name="user-based-authorization-vb"></a>以使用者為基礎的授權 (VB)
 
@@ -29,7 +29,7 @@ ms.locfileid: "74588210"
 
 ASP.NET 可讓您輕鬆地定義以使用者為基礎的授權規則。 只有在 `Web.config`中的標記，可以鎖定特定的網頁或整個目錄，使其只能供指定的使用者子集存取。 頁面層級功能可以根據目前登入的使用者，透過程式設計和宣告式方式來開啟或關閉。
 
-在本教學課程中，我們將探討如何限制頁面的存取權，並透過各種不同的技術來限制頁面層級的功能。 讓我們開始吧！
+在本教學課程中，我們將探討如何限制頁面的存取權，並透過各種不同的技術來限制頁面層級的功能。 現在就開始吧！
 
 ## <a name="a-look-at-the-url-authorization-workflow"></a>查看 URL 授權工作流程
 
@@ -279,7 +279,7 @@ LoginView 範本中的 Web 控制項無法再從程式碼後置類別中直接�
 
 [!code-aspx[Main](user-based-authorization-vb/samples/sample18.aspx)]
 
- 收件者： 
+ 收件者: 
 
 [!code-aspx[Main](user-based-authorization-vb/samples/sample19.aspx)]
 

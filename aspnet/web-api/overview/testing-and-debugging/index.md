@@ -1,23 +1,23 @@
 ---
 uid: web-api/overview/testing-and-debugging/index
-title: 測試和偵錯 ASP.NET Web API |Microsoft Docs
+title: 測試和調試 ASP.NET Web API |Microsoft Docs
 author: rick-anderson
-description: 測試和偵錯 ASP.NET Web API
+description: 測試和調試 ASP.NET Web API
 ms.author: riande
 ms.date: 05/12/2012
 ms.assetid: 31f2a034-e4d0-401b-be29-209a274a192e
 msc.legacyurl: /web-api/overview/testing-and-debugging
 msc.type: chapter
 ms.openlocfilehash: bfc39f11fa60e1b5e3cefc8b94b24b3c9ea65de4
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65125285"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78598585"
 ---
-# <a name="testing-and-debugging-aspnet-web-api"></a>測試和偵錯 ASP.NET Web API
+# <a name="testing-and-debugging-aspnet-web-api"></a>測試和調試 ASP.NET Web API
 
-> 測試和偵錯 ASP.NET Web API
+> 測試和調試 ASP.NET Web API
 
 - [Web API 2 中的追蹤](tracing-in-aspnet-web-api.md)
 - [Web API 2 中的單元測試](unit-testing-with-aspnet-web-api.md)

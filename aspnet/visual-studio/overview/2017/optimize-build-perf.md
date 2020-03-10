@@ -7,18 +7,18 @@ ms.author: riande
 ms.date: 08/29/2018
 msc.type: authoredcontent
 ms.openlocfilehash: c1a5cf5e59374b4c0dd7150c5dd62fbde42af555
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57050505"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78622637"
 ---
 # <a name="optimize-build-performance-for-solution"></a>將解決方案的建置效能最佳化
 
-Visual Studio 2017 15.8年或更新版本包含功能表項目：**建置** > **ASP.NET 編譯** > **最佳化解決方案的建置效能**。
+Visual Studio 2017 15.8 或更新版本包含功能表項目： **Build** > **ASP.NET 編譯** > 將**解決方案的組建效能優化**。
 
-![新的功能表項目的螢幕擷取畫面](optimize-build-perf/_static/optimize-build-performance-for-solution.png)
+![新功能表項目的螢幕擷取畫面](optimize-build-perf/_static/optimize-build-performance-for-solution.png)
 
-ASP.NET 會編譯它在執行階段，這表示，ASP.NET 專案會有一份編譯器的檢視。 但是開發人員電腦上時，編譯器的複本不符合 Visual Studio 的複本，組建會影響效能大約 1-3 秒累加建置。 這項功能會更新以符合 Visual Studio 的編譯器，通常會加快累加建置的專案的複本。
+ASP.NET 會在執行時間編譯其 views，這表示 ASP.NET 專案會攜帶編譯器的複本。 不過，在開發人員電腦上，當編譯器複本不符合 Visual Studio 的複本時，組建效能會受到每個增量組建1-3 秒的順序影響。 這項功能會更新您專案的編譯器複本，以符合 Visual Studio 的，這通常會加速增量組建。
 
-**這是適用於 ASP.NET Framework 4.7.1 或更新版本僅限專案，它不會套用至 ASP.NET Core。**
+**這僅適用于 ASP.NET Framework 4.7.1 或更新版本的專案，不適用於 ASP.NET Core。**

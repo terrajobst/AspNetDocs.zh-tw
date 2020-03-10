@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/index
-title: Web API Guidance - ASP.NET 4.x
+title: Web API 指導方針-ASP.NET 4。x
 author: rick-anderson
-description: ASP.NET Web API 指引清單適用於 ASP.NET 4.x
+description: ASP.NET 4.x 的 ASP.NET Web API 指引清單
 ms.author: riande
 ms.date: 01/17/2012
 ms.custom: seoapril2019
@@ -10,21 +10,21 @@ ms.assetid: daca6735-b5d3-4ef5-af33-ee682926238b
 msc.legacyurl: /web-api/overview
 msc.type: book
 ms.openlocfilehash: 304c0d71e5e18f9d3f0768464fe39d6e6946600d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59422898"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78556501"
 ---
 # <a name="web-api-guidance"></a>Web API 指引
 
-- [快速入門](getting-started-with-aspnet-web-api/index.md)
+- [使用者入門](getting-started-with-aspnet-web-api/index.md)
 
     - [開始使用 Web API 2 (C#)](getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)
     - [Web API 2 中的動作結果](getting-started-with-aspnet-web-api/action-results.md)
     - [使用具有 ASP.NET Web Form 的 Web API](getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms.md)
     - [建立 Web API 說明頁面](getting-started-with-aspnet-web-api/creating-api-help-pages.md)
-    - [實習實驗室：建置使用 ASP.NET Web API 和 Angular.js 的單一頁面應用程式 (SPA)](getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
+    - [實習實驗室：使用 ASP.NET Web API 和 Angular.js 建置單一頁面應用程式 (SPA)](getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs.md)
 - [路由傳送](web-api-routing-and-actions/index.md)
 
     - [Web API 中的路由](web-api-routing-and-actions/routing-in-aspnet-web-api.md)
@@ -112,8 +112,8 @@ ms.locfileid: "59422898"
     - [從 .NET 用戶端呼叫 Web API (C#)](advanced/calling-a-web-api-from-a-net-client.md)
     - [Web API 中的 HTTP 訊息處理常式](advanced/http-message-handlers.md)
     - [Web API 中的 HttpClient 訊息處理常式](advanced/httpclient-message-handlers.md)
-    - [傳送 Web API 中的 HTML 表單資料：Form-urlencoded 資料](advanced/sending-html-form-data-part-1.md)
-    - [傳送 Web API 中的 HTML 表單資料：檔案上傳和多個 MIME](advanced/sending-html-form-data-part-2.md)
+    - [傳送 Web API 的 HTML 表單資料：Form-urlencoded 資料](advanced/sending-html-form-data-part-1.md)
+    - [傳送 Web API 的 HTML 表單資料：檔案上傳和多個 MIME](advanced/sending-html-form-data-part-2.md)
     - [ASP.NET Web API 中的 HTTP Cookie](advanced/http-cookies.md)
 - [發行](releases/index.md)
 

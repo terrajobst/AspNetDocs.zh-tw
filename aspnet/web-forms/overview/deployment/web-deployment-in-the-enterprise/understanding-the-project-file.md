@@ -9,11 +9,11 @@ ms.assetid: 07978d9d-341c-4524-bcba-62976f390f77
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file
 msc.type: authoredcontent
 ms.openlocfilehash: 419fe51aaf65bddcc2c50380f099f842a8d9439c
-ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445696"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78626228"
 ---
 # <a name="understanding-the-project-file"></a>瞭解專案檔
 
@@ -23,7 +23,7 @@ ms.locfileid: "73445696"
 
 > Microsoft Build Engine （MSBuild）專案檔案位於組建和部署程式的核心。 本主題一開始會概述 MSBuild 和專案檔的概念。 其中描述當您使用專案檔時，您會遇到的主要元件，而且它會透過如何使用專案檔來部署實際應用程式的範例來運作。
 > 
-> 您將瞭解的內容：
+> 您將學到什麼：
 > 
 > - MSBuild 如何使用 MSBuild 專案檔來建立專案。
 > - MSBuild 如何與部署技術整合，例如 Internet Information Services （IIS） Web 部署工具（Web Deploy）。
@@ -130,7 +130,7 @@ MSBuild 專案檔是以[MSBUILD XML 架構](/visualstudio/msbuild/msbuild-projec
 
 ### <a name="targets-and-tasks"></a>目標和工作
 
-在 MSBuild 架構中， [Task](https://msdn.microsoft.com/library/77f2hx1s.aspx)元素代表個別的組建指令（或工作）。 MSBuild 包含許多預先定義的工作。 例如：
+在 MSBuild 架構中， [Task](https://msdn.microsoft.com/library/77f2hx1s.aspx)元素代表個別的組建指令（或工作）。 MSBuild 包含許多預先定義的工作。 例如:
 
 - **複製**工作會將檔案複製到新的位置。
 - **Csc**工作會叫用 Visual C#編譯器。

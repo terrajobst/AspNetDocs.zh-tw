@@ -9,11 +9,11 @@ ms.assetid: ca665073-b379-4239-9404-f597663ca65e
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 319ab44f2e65afc77f6f89ca8aa58c529f40d05c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74624321"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78593664"
 ---
 # <a name="handling-bll--and-dal-level-exceptions-vb"></a>處理 BLL 和 DAL 層級的例外狀況 (VB)
 

@@ -1,49 +1,49 @@
 ---
 uid: mvc/mvc4
-title: ASP.NET MVC 4 | Microsoft Docs
+title: ASP.NET MVC 4 |Microsoft Docs
 author: rick-anderson
-description: ASP.NET MVC 4 的 ASP.NET MVC 4 是一個來建置可調整、 以標準為基礎的 web 應用程式，使用堅實的設計模式和威力 AS....
+description: ASP.NET MVC 4 ASP.NET MVC 4 是一種架構，用來建立可調整且以標準為基礎的 web 應用程式，並使用妥善建立的設計模式和的強大功能 。
 ms.author: riande
 ms.date: 09/12/2011
 ms.assetid: 1279f5b1-390f-4b4b-9e6e-f947cb1ef5f5
 msc.legacyurl: /mvc/mvc4
 msc.type: content
 ms.openlocfilehash: 72719cb9c3aaf03f2b12ff788259fc4927785d05
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65121326"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78616386"
 ---
 # <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 
-### <a name="top-features"></a>精選功能
+### <a name="top-features"></a>熱門功能
 
 - ASP.NET Web API
-- 重新整理和現代化的預設專案範本
-- 新的行動裝置專案範本
-- 若要支援行動應用程式的許多新功能
-- 非同步方法的增強的支援
-- *讀取的完整功能清單中[版本資訊](../whitepapers/mvc4-release-notes.md)*
+- 已重新整理並現代化預設專案範本
+- 新增行動專案範本
+- 支援行動應用程式的許多新功能
+- 增強對非同步方法的支援
+- *閱讀[版本](../whitepapers/mvc4-release-notes.md)資訊中的完整功能清單*
 
 ### <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4 的新功能
 
 - [ASP.NET Web API](../web-api/index.md)
-- 教學課程：[ASP.NET MVC 4 Mobile 功能](overview/older-versions/aspnet-mvc-4-mobile-features.md)
-- [ASP.NET mvc 4 版本資訊](../whitepapers/mvc4-release-notes.md)
-- [新 ASP.NET MVC 4 的教學課程系列](overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4.md)
+- 教學課程： [ASP.NET MVC 4 行動功能](overview/older-versions/aspnet-mvc-4-mobile-features.md)
+- [ASP.NET MVC 4 的版本資訊](../whitepapers/mvc4-release-notes.md)
+- [新的 ASP.NET MVC 4 教學課程系列](overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4.md)
 
-### <a name="install-aspnet-mvc-4-for-visual-studio-2010"></a>安裝適用於 Visual Studio 2010 的 ASP.NET MVC 4
+### <a name="install-aspnet-mvc-4-for-visual-studio-2010"></a>安裝適用于 Visual Studio 2010 的 ASP.NET MVC 4
 
-- 下載獨立 ASP.NET [MVC 4 的可執行安裝程式](https://www.microsoft.com/download/details.aspx?id=30683)
+- 下載獨立 ASP.NET [MVC 4 安裝程式可執行檔](https://www.microsoft.com/download/details.aspx?id=30683)
 
 ### <a name="install-visual-studio-2012-includes-aspnet-mvc-4"></a>安裝 Visual Studio 2012 （包括 ASP.NET MVC 4）
 
-- [Visual Studio 2012 Ultimate](https://go.microsoft.com/fwlink/?linkid=247148)
+- [Visual Studio 2012 旗艦版](https://go.microsoft.com/fwlink/?linkid=247148)
 
-### <a name="getting-help-and-reporting-issues"></a>取得說明和報告問題
+### <a name="getting-help-and-reporting-issues"></a>取得協助和報告問題
 
-- [已知的問題和重大變更清單](../whitepapers/mvc4-release-notes.md#_Toc303253815)
-- 取得說明並討論在 ASP.NET MVC 4[論壇](https://forums.asp.net/1146.aspx)
-- [報告在 ASP.NET MVC 4 中的 bug](https://github.com/aspnet/AspNetWebStack/issues)
+- [已知問題和重大變更清單](../whitepapers/mvc4-release-notes.md#_Toc303253815)
+- 取得協助並討論[論壇](https://forums.asp.net/1146.aspx)中的 ASP.NET MVC 4
+- [在 ASP.NET MVC 4 中報告錯誤](https://github.com/aspnet/AspNetWebStack/issues)
 - [提出功能要求](http://aspnet.uservoice.com/forums/41201-asp-net-mvc)

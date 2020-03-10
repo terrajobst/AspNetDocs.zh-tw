@@ -9,11 +9,11 @@ ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
 ms.openlocfilehash: cf3c65ef95528173eed3fb08984035b2512861c4
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457033"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78617835"
 ---
 # <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>持續整合與持續傳遞（使用 Azure 建立真實世界的雲端應用程式）
 
@@ -54,7 +54,7 @@ Azure DevOps Services 提供許多功能，可協助您從規劃部署進行應�
 
 如果您要尋找一個關鍵專案管理、小組共同作業和原始檔控制解決方案，請參閱 Azure DevOps Services。 在[Azure DevOps Services](https://dev.azure.com/)註冊。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 前三個雲端開發模式是關於如何以低週期時間執行可重複、可靠且可預測的開發流程。 在[下一章](web-development-best-practices.md)中，我們將開始探討架構和程式碼撰寫模式。
 

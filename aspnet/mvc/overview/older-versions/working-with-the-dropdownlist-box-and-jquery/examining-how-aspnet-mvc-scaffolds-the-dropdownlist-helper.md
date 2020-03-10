@@ -9,11 +9,11 @@ ms.assetid: 8921d7f2-21f0-427a-8b27-2df7251174b0
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
 ms.openlocfilehash: 275b20ad964b3e8ddc272a7448f0740ed0891eff
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77457605"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78614902"
 ---
 # <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>檢查 ASP.NET MVC 如何 Scaffold DropDownList 協助程式
 
@@ -99,7 +99,7 @@ HTML `<select>` 專案（由 HTML [DropDownList](https://msdn.microsoft.com/libr
 
 您可以使用[fiddler 工具](http://www.fiddler2.com/fiddler2/)來檢查 ASP.NET MVC 模型系結用來建立專輯物件的已張貼表單值。
 
-![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image7.png)第 1 課：建立 Windows Azure 儲存體物件{2}。
+![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image7.png)
 
 ### <a name="refactoring-the-viewbag-selectlist-creation"></a>重構 ViewBag SelectList 建立
 

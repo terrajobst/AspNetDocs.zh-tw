@@ -1,59 +1,59 @@
 ---
 uid: web-pages/overview/security/enabling-login-from-external-sites-in-an-aspnet-web-pages-site
-title: 登入使用外部網站，在 ASP.NET Web Pages (Razor) 網站 |Microsoft Docs
+title: 使用 ASP.NET Web Pages （Razor）網站中的外部網站登入 |Microsoft Docs
 author: Rick-Anderson
-description: 這篇文章說明如何登入您使用 Facebook、 Google、 Twitter、 Yahoo 和其他站台的 ASP.NET Web Pages (Razor) 網站 — 也就是如何支援...
+description: 本文說明如何使用 Facebook、Google、Twitter、Yahoo 和其他網站登入您的 ASP.NET Web Pages （Razor）網站，也就是如何支援 。
 ms.author: riande
 ms.date: 02/21/2014
 ms.assetid: ef852096-a5bf-47b3-9945-125cde065093
 msc.legacyurl: /web-pages/overview/security/enabling-login-from-external-sites-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
 ms.openlocfilehash: 860b75422c3df1d191ed861344963bfc19270e8f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65124163"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78638751"
 ---
-# <a name="logging-in-using-external-sites-in-an-aspnet-web-pages-razor-site"></a>使用 ASP.NET Web Pages (Razor) 網站中的外部網站登入
+# <a name="logging-in-using-external-sites-in-an-aspnet-web-pages-razor-site"></a>使用 ASP.NET Web Pages （Razor）網站中的外部網站登入
 
-藉由[Tom FitzMacken](https://github.com/tfitzmac)
+由[Tom FitzMacken](https://github.com/tfitzmac)
 
-> 這篇文章說明如何登入您使用 Facebook、 Google、 Twitter、 Yahoo 和其他站台的 ASP.NET Web Pages (Razor) 網站 — 也就是如何在您的站台支援 OAuth 和 OpenID。
+> 本文說明如何使用 Facebook、Google、Twitter、Yahoo 和其他網站登入您的 ASP.NET Web Pages （Razor）網站，也就是如何在您的網站中支援 OAuth 和 OpenID。
 > 
 > 您將學到什麼：
 > 
-> - 如何啟用從其他站台的登入，當您使用 WebMatrix 入門網站範本。
+> - 當您使用 WebMatrix 入門網站範本時，如何啟用其他網站的登入。
 > 
-> 這是發行項中導入的 ASP.NET 功能：
+> 這是本文中引進的 ASP.NET 功能：
 > 
-> - `OAuthWebSecurity`協助程式。
+> - `OAuthWebSecurity` helper。
 >   
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>在本教學課程中使用的軟體版本
+> ## <a name="software-versions-used-in-the-tutorial"></a>教學課程中使用的軟體版本
 > 
 > 
-> - ASP.NET Web Pages (Razor) 2
+> - ASP.NET Web Pages （Razor）2
 > - WebMatrix 3
 
-ASP.NET Web 網頁包含支援[OAuth](http://oauth.net/)並[OpenID](http://openid.net/)提供者。 使用這些提供者，您可以讓使用者登入您的網站使用其利用 Facebook、 Twitter、 Microsoft 和 Google 的現有認證。 比方說，若要登入的 Facebook 帳戶，使用者就可以選擇 [Facebook] 圖示，將它們重新導向至 Facebook 登入頁面，讓他們輸入其使用者資訊。 它們可以再將其帳戶在您的網站上 Facebook 登入關聯。 網頁的成員資格功能相關的增強功能是使用者可以將產生關聯 （包括從社交網路網站的登入） 的多個登入與您的網站上的單一帳戶。
+ASP.NET Web Pages 包含[OAuth](http://oauth.net/)和[OpenID](http://openid.net/)提供者的支援。 使用這些提供者，您可以讓使用者使用他們在 Facebook、Twitter、Microsoft 和 Google 的現有認證來登入您的網站。 例如，若要使用 Facebook 帳戶登入，使用者可以直接選擇 Facebook 圖示，這會將他們重新導向至他們輸入其使用者資訊的 Facebook 登入頁面。 然後，他們可以在您的網站上建立 Facebook 登入與其帳戶的關聯。 網頁成員資格功能的相關加強之處在于，使用者可以在您的網站上建立多個登入（包括來自社交網路網站的登入）與單一帳戶的關聯。
 
-下圖顯示登入頁面**入門網站**範本，使用者可以在其中選擇 Facebook、 Twitter、 Google 或 Microsoft 的圖示，以啟用登入的外部帳戶：
+此圖顯示「**入門網站**」範本的登入頁面，使用者可以在其中選擇 Facebook、Twitter、Google 或 Microsoft 圖示，以使用外部帳戶進行登入：
 
 ![外部提供者](enabling-login-from-external-sites-in-an-aspnet-web-pages-site/_static/image1.png)
 
-您可以啟用 OAuth 和 OpenID 成員資格中的程式碼的幾行取消註解**入門網站**範本。 您的方法和屬性用來處理與 OAuth 和 OpenID 提供者位於`WebMatrix.Security.OAuthWebSecurity`類別。 **入門網站**範本包含完整的成員資格的基礎結構，您需要讓使用者登入您的網站使用本機認證或來自另一個站台完成登入頁面、 成員資格資料庫中，與所有的程式碼.
+您可以藉由在**入門網站**範本中取消批註幾行程式碼，來啟用 OAuth 和 OpenID 成員資格。 您用來處理 OAuth 和 OpenID 提供者的方法和屬性是在 `WebMatrix.Security.OAuthWebSecurity` 類別中。 **入門網站**範本包含完整的成員資格基礎結構、登入頁面、成員資格資料庫，以及您需要的所有程式碼，讓使用者可以使用本機認證或其他網站登入您的網站。
 
-本節提供如何讓使用者登入從外部站台的站台為基礎的範例**入門網站**範本。 建立入門網站之後, 您這樣做，（詳細資料）：
+本節提供一個範例，說明如何讓使用者從外部網站登入以**入門網站**範本為基礎的網站。 建立入門網站之後，您可以執行此動作（詳細資料請遵循）：
 
-- 使用 OAuth 提供者 （Facebook、 Twitter 和 Microsoft） 的網站，您可以建立應用程式外部站台上。 這可讓您將需叫用這些站台的登入功能的應用程式金鑰。
-- 使用 OpenID 提供者 (Google) 的網站，您不必建立應用程式。 針對所有的這些網站，您必須有帳戶才能登入，並建立開發人員應用程式。
+- 針對使用 OAuth 提供者（Facebook、Twitter 和 Microsoft）的網站，您可以在外部網站上建立應用程式。 這會提供您需要的應用程式金鑰，以便叫用這些網站的登入功能。
+- 針對使用 OpenID 提供者（Google）的網站，您不需要建立應用程式。 針對所有這些網站，您必須擁有一個帳戶，才能登入並建立開發人員應用程式。
 
     > [!NOTE]
-    > Microsoft 應用程式只接受即時工作網站 URL，因此您無法使用本機的網站 URL，測試登入。
-- 以指定適當的驗證提供者，並提交至您想要使用的站台的登入，請編輯您的網站中的幾個檔案。
+    > Microsoft 應用程式只接受工作網站的即時 URL，因此您無法使用本機網站 URL 來測試登入。
+- 編輯網站中的一些檔案，以指定適當的驗證提供者，並將登入提交至您要使用的網站。
 
-本文提供不同的指示，來執行下列工作：
+本文提供下列工作的個別指示：
 
 - [啟用 Google 登入](#To_enable_Google_logins)
 - [啟用 Facebook 登入](#To_enable_Facebook_logins)
@@ -62,114 +62,114 @@ ASP.NET Web 網頁包含支援[OAuth](http://oauth.net/)並[OpenID](http://openi
 <a id="To_enable_Google_logins"></a>
 ## <a name="enabling-google-logins"></a>啟用 Google 登入
 
-1. 建立或開啟 WebMatrix 入門網站範本為基礎的 ASP.NET Web Pages 站台。
-2. 開啟 *\_AppStart.cshtml*頁面上，並取消註解下列程式碼行。 
+1. 建立或開啟以 WebMatrix 入門網站範本為基礎的 ASP.NET Web Pages 網站。
+2. 開啟 *\_AppStart*  頁面，並取消批註下列程式程式碼。 
 
     [!code-css[Main](enabling-login-from-external-sites-in-an-aspnet-web-pages-site/samples/sample1.css)]
 
 ### <a name="testing-google-login"></a>測試 Google 登入
 
-1. 執行*default.cshtml*網站頁面，然後選擇**登入** 按鈕。
-2. 上*登入*頁面上，於**使用其他服務進行登入**區段中，選擇  **Google**或是**Yahoo**送出按鈕。 此範例會使用 Google 登入。 
+1. 執行您網站的*預設. cshtml*頁面，然後選擇 [**登入**] 按鈕。
+2. 在 [*登*入] 頁面的 **[使用另一個服務登入**] 區段中，選擇 [ **Google** ] 或 [ **Yahoo** ] [提交] 按鈕。 這個範例會使用 Google 登入。 
 
-    網頁上將要求重新導向至 Google 登入頁面。
+    網頁會將要求重新導向至 Google 登入頁面。
 
     ![Google 登入](enabling-login-from-external-sites-in-an-aspnet-web-pages-site/_static/image2.png)
-3. 輸入現有的 Google 帳戶認證。
-4. 如果 Google 會詢問您是否要允許*Localhost*若要使用來自帳戶的資訊，請按一下 **允許**。
+3. 輸入現有 Google 帳戶的認證。
+4. 如果 Google 詢問您是否要允許*Localhost*使用帳戶中的資訊，請按一下 [**允許**]。
 
-    程式碼會驗證使用者，使用 Google 的權杖，然後回到此頁面，在您的網站。 這個頁面可讓您在網站上，現有的帳戶相關聯其 Google 登入的使用者，或他們可以註冊新的帳戶建立關聯外部登入與您站台上。
+    程式碼會使用 Google 權杖來驗證使用者，然後回到網站上的這個頁面。 此頁面可讓使用者將其 Google 登入與您網站上的現有帳戶產生關聯，或者可以在您的網站上註冊新的帳戶，以將外部登入與建立關聯。
 
     ![oauth-5](enabling-login-from-external-sites-in-an-aspnet-web-pages-site/_static/image3.png)
-5. 選擇**產生關聯** 按鈕。 在瀏覽器會返回您的應用程式首頁。
+5. 選擇 [**關聯**] 按鈕。 瀏覽器會回到您應用程式的首頁。
 
 <a id="To_enable_Facebook_logins"></a>
 ## <a name="enabling-facebook-logins"></a>啟用 Facebook 登入
 
-1. 移至[Facebook 開發人員網站](https://developers.facebook.com/apps)（登入如果您還沒登入）。
-2. 選擇**建立新的應用程式**按鈕，然後依照提示來命名，並建立新的應用程式。
-3. 一節**選取您的應用程式將會如何整合 Facebook**，選擇**網站**一節。
-4. 填寫**站台 URL**欄位與您網站的 URL (例如`http://www.example.com`)。 **網域**欄位是選擇性的; 您可以使用此選項來提供整個網域的驗證 (例如*example.com*)。 
+1. 前往[Facebook 開發人員網站](https://developers.facebook.com/apps)（如果您尚未登入，請登入）。
+2. 選擇 [**建立新的應用程式**] 按鈕，然後遵循提示來命名和建立新的應用程式。
+3. 在 [**選取您的應用程式將如何與 Facebook 整合**] 區段中，選擇 [**網站**] 區段。
+4. 在 [**網站 url** ] 欄位中填入您的網站 url （例如 `http://www.example.com`）。 [**網域**] 欄位是選擇性的;您可以使用這個來提供整個網域（例如*example.com*）的驗證。 
 
     > [!NOTE]
-    > 如果您正在 URL 與您本機電腦上的站台也`http://localhost:12345`（其中數字是本機連接埠號碼），您可以新增此值，以**站台 URL**欄位來測試您的網站。 不過，任何時候您本機站台的變更的通訊埠編號，您必須更新**站台 URL**應用程式的欄位。
-5. 選擇**儲存變更** 按鈕。
-6. 選擇**應用程式**同樣地，索引標籤，然後檢視 應用程式的 開始 頁面。
-7. 複製**應用程式識別碼**並**應用程式祕密**應用程式的值並貼到暫存的文字檔。 網站程式碼中，您將 Facebook 提供者來傳遞這些值。
+    > 如果您是在本機電腦上使用類似 `http://localhost:12345` 的 URL 執行網站（其中數位是本機埠號碼），您可以將此值新增至 [**網站 URL** ] 欄位，以測試您的網站。 不過，每當您本機網站的埠號碼變更時，您都必須更新應用程式的**網站 URL**欄位。
+5. 選擇 [**儲存變更**] 按鈕。
+6. 再次選擇 [**應用**程式] 索引標籤，然後查看應用程式的 [起始頁]。
+7. 複製應用程式的「**應用程式識別碼**」和「**應用程式密碼**」值，並將其貼到暫存的文字檔中。 您會將這些值傳遞至您網站程式碼中的 Facebook 提供者。
 8. 結束 Facebook 開發人員網站。
 
-現在您對變更兩個頁面在您的網站，讓使用者能夠登入使用其 Facebook 帳戶的網站。
+現在您會變更網站中的兩個頁面，讓使用者能夠使用他們的 Facebook 帳戶登入網站。
 
-1. 建立或開啟 WebMatrix 入門網站範本為基礎的 ASP.NET Web Pages 站台。
-2. 開啟 *\_AppStart.cshtml*頁面和程式碼取消註解的 Facebook OAuth 提供者。 取消註解的程式碼區塊看起來如下所示： 
+1. 建立或開啟以 WebMatrix 入門網站範本為基礎的 ASP.NET Web Pages 網站。
+2. 開啟 *\_AppStart*  頁面，並將 Facebook OAuth 提供者的程式碼取消批註。 取消批註程式碼區塊如下所示： 
 
     [!code-csharp[Main](enabling-login-from-external-sites-in-an-aspnet-web-pages-site/samples/sample2.cs)]
-3. 複製**應用程式識別碼**Facebook 應用程式的值介於`appId`參數 （以引號）。
-4. 複製**應用程式祕密**從 Facebook 應用程式，做為值`appSecret`參數值。
+3. 將 Facebook 應用程式的 [**應用程式識別碼**] 值複製為 `appId` 參數的值（在引號內）。
+4. 複製 Facebook 應用程式中的**應用程式密碼**值，做為 `appSecret` 參數值。
 5. 儲存並關閉檔案。
 
 ### <a name="testing-facebook-login"></a>測試 Facebook 登入
 
-1. 執行站台*default.cshtml*頁面上，然後選擇**登入** 按鈕。
-2. 在 *登入*頁面上，於**另一個服務用來登入**區段中，選擇**Facebook**圖示。 
+1. 執行網站的 [*預設. cshtml* ] 頁面，然後選擇 [**登**入] 按鈕。
+2. 在 [*登*入] 頁面的 [**使用另一個服務登入**] 區段中，選擇 [ **Facebook** ] 圖示。 
 
-    網頁上將要求重新導向至 Facebook 登入頁面。
+    網頁會將要求重新導向至 Facebook 登入頁面。
 
-    ![oauth 2](enabling-login-from-external-sites-in-an-aspnet-web-pages-site/_static/image4.png)
-3. 登入的 Facebook 帳戶。 
+    ![oauth-2](enabling-login-from-external-sites-in-an-aspnet-web-pages-site/_static/image4.png)
+3. 登入 Facebook 帳戶。 
 
-    程式碼來驗證您使用 Facebook 權杖，然後返回頁面，您可以讓您的 Facebook 登入關聯站台的登入。 您的使用者名稱或電子郵件地址填入**電子郵件**欄位在表單上。
+    程式碼會使用 Facebook 權杖來驗證您的身分，然後返回頁面，您可以在其中將 Facebook 登入與網站登入產生關聯。 您的使用者名稱或電子郵件地址會填入表單上的 [**電子郵件**] 欄位中。
 
     ![oauth-5](enabling-login-from-external-sites-in-an-aspnet-web-pages-site/_static/image5.png)
-4. 選擇**產生關聯** 按鈕。 
+4. 選擇 [**關聯**] 按鈕。 
 
-    瀏覽器會返回首頁並登入。
+    瀏覽器會回到首頁，而且您已登入。
 
 <a id="To_enable_Twitter_logins"></a>
 ## <a name="enabling-twitter-logins"></a>啟用 Twitter 登入
 
-1. 瀏覽至[Twitter 開發人員網站](https://dev.twitter.com/)。
-2. 選擇**建立應用程式**連結，然後再登入網站。
-3. 在上**建立應用程式**表單中填寫**名稱**並**描述**欄位。
-4. 在 **網站**欄位中，輸入您網站的 URL (例如`http://www.example.com`)。 
+1. 流覽至[Twitter 開發人員網站](https://dev.twitter.com/)。
+2. 選擇 [**建立應用程式**] 連結，然後登入網站。
+3. 在 [**建立應用程式**] 表單上，填寫 [**名稱**] 和 [**描述**] 欄位。
+4. 在 [**網站**] 欄位中，輸入您網站的 URL （例如，`http://www.example.com`）。 
 
     > [!NOTE]
-    > 如果您要測試您的網站，在本機 (使用之類的 URL `http://localhost:12345`)，Twitter 可能不會接受 URL。 不過，您可以使用本機回送 IP 位址 (例如`http://127.0.0.1:12345`)。 這可簡化測試您的應用程式在本機的程序。 不過，每次您的本機網站的連接埠號碼變更時，您將需要更新**網站**應用程式的欄位。
-5. 在 **回呼 URL**欄位中，輸入您要讓使用者之後若要返回登入 Twitter 的網站中的頁面的 URL。 比方說，若要將使用者傳送至 （這會辨識其登入的狀態） 的入門網站的 [首頁] 頁面中，輸入相同 URL 即可中輸入**網站**欄位。
-6. 接受條款，然後選擇**建立 Twitter 應用程式** 按鈕。
-7. 在 **我的應用程式**登陸頁面上，選擇您所建立的應用程式。
-8. 在 [**詳細資料**索引標籤上，捲動到底部，然後選擇**建立我的存取權杖**] 按鈕。
-9. 上**詳細資料**索引標籤上，複製**取用者索引鍵**並**取用者祕密**應用程式的值並貼到暫存的文字檔。 您要傳遞至 Twitter 提供者的這些值，在您的網站程式碼。
+    > 如果您要在本機測試您的網站（使用如 `http://localhost:12345`的 URL），Twitter 可能不會接受 URL。 不過，您可能可以使用本機回送 IP 位址（例如 `http://127.0.0.1:12345`）。 這可簡化在本機測試應用程式的流程。 不過，每次本機網站的埠號碼變更時，您都必須更新應用程式的 [**網站**] 欄位。
+5. 在 [**回呼 URL** ] 欄位中，輸入您的網站中要讓使用者在登入 Twitter 之後返回的頁面 URL。 例如，若要將使用者傳送至入門網站的首頁（可辨識其登入狀態），請輸入您在 [**網站**] 欄位中輸入的相同 URL。
+6. 接受條款，然後選擇 [**建立您的 Twitter 應用程式**] 按鈕。
+7. 在 [**我的應用程式**] 登陸頁面上，選擇您所建立的應用程式。
+8. 在 [**詳細資料**] 索引標籤上，流覽至底部，然後選擇 [**建立我的存取權 Token** ] 按鈕。
+9. 在 [**詳細資料**] 索引標籤上，複製應用程式的取用**者金鑰**和取用**者密碼**值，並將其貼到暫存文字檔中。 您會將這些值傳遞至您網站程式碼中的 Twitter 提供者。
 10. 結束 Twitter 網站。
 
-現在您對變更兩個頁面在您的網站，讓使用者能夠登入使用 Twitter 帳戶的網站。
+現在您會變更網站中的兩個頁面，讓使用者能夠使用其 Twitter 帳戶登入網站。
 
-1. 建立或開啟 WebMatrix 入門網站範本為基礎的 ASP.NET Web Pages 站台。
-2. 開啟 *\_AppStart.cshtml*頁面及 Twitter OAuth 提供者，程式碼取消註解。 取消註解的程式碼區塊看起來像這樣： 
+1. 建立或開啟以 WebMatrix 入門網站範本為基礎的 ASP.NET Web Pages 網站。
+2. 開啟 [ *\_AppStart* ] 頁面，並取消批註 Twitter OAuth 提供者的程式碼。 取消批註程式碼區塊看起來像這樣： 
 
     [!code-csharp[Main](enabling-login-from-external-sites-in-an-aspnet-web-pages-site/samples/sample3.cs)]
-3. 複製**取用者索引鍵**從 Twitter 應用程式，做為值的值`consumerKey`參數 （以引號）。
-4. 複製**取用者祕密**從 Twitter 應用程式，做為值的值`consumerSecret`參數。
+3. 將 Twitter 應用程式的取用**者金鑰**值複製為 `consumerKey` 參數的值（在引號內）。
+4. 將 Twitter 應用程式的取用**者秘密**值複製為 `consumerSecret` 參數的值。
 5. 儲存並關閉檔案。
 
 ### <a name="testing-twitter-login"></a>測試 Twitter 登入
 
-1. 執行*default.cshtml*網站頁面，然後選擇**登入** 按鈕。
-2. 在 *登入*頁面上，於**另一個服務用來登入**區段中，選擇**Twitter**圖示。 
+1. 執行您網站的*預設. cshtml*頁面，然後選擇 [**登**入] 按鈕。
+2. 在 [*登*入] 頁面的 [**使用另一個服務登入**] 區段中，選擇**Twitter**圖示。 
 
-    網頁的要求重新導向至您所建立的應用程式的 Twitter 登入頁面。
+    網頁會將要求重新導向至您所建立之應用程式的 Twitter 登入頁面。
 
-    ![oauth 4](enabling-login-from-external-sites-in-an-aspnet-web-pages-site/_static/image6.png)
+    ![oauth-4](enabling-login-from-external-sites-in-an-aspnet-web-pages-site/_static/image6.png)
 3. 登入 Twitter 帳戶。
-4. 程式碼來驗證使用者使用 Twitter 語彙基元，然後傳回您頁面，您可以將與您網站的帳戶登入。 您的姓名或電子郵件地址填入**電子郵件**欄位在表單上。
+4. 程式碼會使用 Twitter 權杖來驗證使用者，然後將您返回頁面，您可以在其中將登入與您的網站帳戶建立關聯。 您的姓名或電子郵件地址會填入表單上的 [**電子郵件**] 欄位中。
 
     ![oauth-5](enabling-login-from-external-sites-in-an-aspnet-web-pages-site/_static/image7.png)
-5. 選擇**產生關聯** 按鈕。 
+5. 選擇 [**關聯**] 按鈕。 
 
-    瀏覽器會返回首頁並登入。
+    瀏覽器會回到首頁，而且您已登入。
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>其他資源
 
 - [自訂全網站行為](https://go.microsoft.com/fwlink/?LinkId=202906)
-- [加入 ASP.NET Web Pages 網站中的安全性及成員資格](https://go.microsoft.com/fwlink/?LinkID=202904)
+- [新增 ASP.NET Web Pages 網站的安全性和成員資格](https://go.microsoft.com/fwlink/?LinkID=202904)

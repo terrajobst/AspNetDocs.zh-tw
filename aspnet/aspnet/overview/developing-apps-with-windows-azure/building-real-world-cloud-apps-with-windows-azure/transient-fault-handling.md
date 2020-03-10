@@ -9,11 +9,11 @@ ms.assetid: 7ead83bc-c08c-4b26-8617-00e07292e35c
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
 ms.openlocfilehash: e798cb83cfb97db63fef6dc38c8f62804461d01b
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456851"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78617324"
 ---
 # <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>暫時性錯誤處理（使用 Azure 建立真實世界的雲端應用程式）
 
@@ -72,7 +72,7 @@ ms.locfileid: "77456851"
 
 如 SQL Database 重試原則指引，請參閱針對[暫時性錯誤和連接錯誤進行疑難排解，以 SQL Database](https://azure.microsoft.com/documentation/articles/sql-database-connectivity-issues/)。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 重試/退轉關閉策略可以協助客戶在最短時間內看不到暫時性錯誤，而 Microsoft 提供的架構可讓您在使用 ADO.NET、Entity Framework 或 Azure 儲存體服務時，將執行策略的工作降至最低。
 
@@ -91,7 +91,7 @@ ms.locfileid: "77456851"
 - [Entity Framework-連接恢復/重試邏輯](https://msdn.microsoft.com/data/dn456835)。 如何使用和自訂 Entity Framework 6 的暫時性錯誤處理功能。
 - [在 ASP.NET MVC 應用程式中使用 Entity Framework 的連接恢復功能和命令攔截](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application.md)。 第四個在9部分的教學課程系列中，示範如何設定 SQL Database 的 EF 6 連接恢復功能。
 
-影片
+視訊
 
 - [防安全功能：建立可擴充、可復原的雲端服務](https://channel9.msdn.com/Series/FailSafe)。 Ulrich Homann、Marc Mercuri 和 Mark Simm 的九部分系列。 以非常容易存取且有趣的方式呈現高階概念和架構原則，並提供 Microsoft 客戶諮詢小組（CAT）體驗與實際客戶的故事。 從40:55 開始，請參閱第3集的斷路器討論。
 - [打造 Big：從 Azure 客戶學到的經驗-第二部](https://channel9.msdn.com/Events/Build/2012/3-030)。 Mark Simm 討論如何設計失敗、暫時性錯誤處理和檢測所有專案。

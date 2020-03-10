@@ -10,11 +10,11 @@ msc.legacyurl: /signalr/overview/getting-started/tutorial-high-frequency-realtim
 msc.type: authoredcontent
 ms.topic: tutorial
 ms.openlocfilehash: 2503e90735d6cfa445ee08c9e43f8443aa106096
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74600460"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78558622"
 ---
 # <a name="tutorial-create-high-frequency-real-time-app-with-signalr-2"></a>教學課程：使用 SignalR 2 建立高頻率即時應用程式
 
@@ -38,9 +38,9 @@ ms.locfileid: "74600460"
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-## <a name="prerequisites"></a>必要條件：
+## <a name="prerequisites"></a>Prerequisites
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)搭配**ASP.NET 和 網頁程式開發**工作負載。
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)，其中包含 **ASP.NET 和 Web 部署**工作負載。
 
 ## <a name="set-up-the-project"></a>設定專案
 
@@ -62,7 +62,7 @@ ms.locfileid: "74600460"
 
     此步驟會建立*MoveShapeHub.cs*類別檔案。 同時，它會加入一組腳本檔案和元件參考，以支援 SignalR 至專案。
 
-1. 選取 **工具** > **NuGet 套件管理員** > **套件管理員主控台**。
+1. 選取 [工具] > [NuGet 套件管理員] > [套件管理員主控台]。
 
 1. 在 [**套件管理員主控台**] 中，執行下列命令：
 

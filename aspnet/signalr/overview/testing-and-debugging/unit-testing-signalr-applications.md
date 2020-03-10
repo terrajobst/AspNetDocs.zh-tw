@@ -9,103 +9,103 @@ ms.assetid: d1983524-e0d5-4ee6-9d87-1f552f7cb964
 msc.legacyurl: /signalr/overview/testing-and-debugging/unit-testing-signalr-applications
 msc.type: authoredcontent
 ms.openlocfilehash: 2cf2e88f141d89971439dc1fc4979849f8dded47
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113459"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78578670"
 ---
 # <a name="unit-testing-signalr-applications"></a>對 SignalR 應用程式進行單元測試
 
-藉由[Patrick Fletcher](https://github.com/pfletcher)
+由[派翠克 Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-> 這篇文章說明如何使用 SignalR 2 的單元測試功能。
+> 本文說明如何使用 SignalR 2 的單元測試功能。
 >
 > ## <a name="software-versions-used-in-this-topic"></a>本主題中使用的軟體版本
 >
 >
 > - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
-> - SignalR 第 2 版
+> - SignalR 第2版
 >
 >
 >
-> ## <a name="questions-and-comments"></a>提出問題或意見
+> ## <a name="questions-and-comments"></a>問題與意見
 >
-> 您喜歡本教學課程中的方式，和我們可以改善在頁面底部的註解中，歡迎留下意見反應。 如果您有不直接相關的教學課程中的問題，您可以張貼他們[ASP.NET SignalR 論壇](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或是[StackOverflow.com](http://stackoverflow.com/)。
+> 請留下有關您喜歡本教學課程的意見反應，以及我們可以在頁面底部的批註中改進的內容。 如果您有與本教學課程不直接相關的問題，您可以將其張貼至[ASP.NET SignalR 論壇](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR)或[StackOverflow.com](http://stackoverflow.com/)。
 
 <a id="unit"></a>
-## <a name="unit-testing-signalr-applications"></a>單元測試 SignalR 應用程式
+## <a name="unit-testing-signalr-applications"></a>SignalR 應用程式的單元測試
 
-您可以使用 SignalR 2 中的單元測試功能，建立您的 SignalR 應用程式的單元測試。 SignalR 2 包含[IHubCallerConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx)介面，可用來建立模擬 （mock） 物件，以模擬您的中樞方法的測試。
+您可以使用 SignalR 2 中的單元測試功能來建立 SignalR 應用程式的單元測試。 SignalR 2 包含[IHubCallerConnectionCoNtext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx)介面，可用來建立模擬物件，以模擬您的中樞方法以進行測試。
 
-在本節中，您將建立的應用程式的單元測試[快速入門教學課程](../getting-started/tutorial-getting-started-with-signalr.md)使用[XUnit.net](https://github.com/xunit/xunit)並[Moq](https://github.com/Moq/moq4)。
+在本節中，您會使用[XUnit.net](https://github.com/xunit/xunit)和[Moq](https://github.com/Moq/moq4)，為在[消費者入門教學](../getting-started/tutorial-getting-started-with-signalr.md)課程中建立的應用程式新增單元測試。
 
-XUnit.net 會用來控制測試;將用來建立的 Moq[模擬](http://en.wikipedia.org/wiki/Mock_object)進行測試的物件。 如有需要，可以使用其他 （mock） 架構[NSubstitute](http://nsubstitute.github.io/)也是不錯的選擇。 本教學課程會示範如何設定兩種方式的模擬 （mock） 物件：首先，使用`dynamic`物件 （.NET Framework 4 中引入） 和第二，使用的介面。
+XUnit.net 將用來控制測試;Moq 將用來建立用於測試的[mock](http://en.wikipedia.org/wiki/Mock_object)物件。 如有需要，可以使用其他模擬架構;[NSubstitute](http://nsubstitute.github.io/)也是不錯的選擇。 本教學課程示範如何以兩種方式設定模擬物件：第一種是使用 `dynamic` 物件（在 .NET Framework 4 中引進），而第二種則是使用介面。
 
 ### <a name="contents"></a>內容
 
 本教學課程包含下列各節。
 
-- [動態使用單元測試](#dynamic)
-- [單元測試類型](#type)
+- [使用 Dynamic 進行單元測試](#dynamic)
+- [依類型的單元測試](#type)
 
 <a id="dynamic"></a>
-### <a name="unit-testing-with-dynamic"></a>動態使用單元測試
+### <a name="unit-testing-with-dynamic"></a>使用 Dynamic 進行單元測試
 
-在本節中，您將建立的應用程式的單元測試[快速入門教學課程](../getting-started/tutorial-getting-started-with-signalr.md)使用動態物件。
+在本節中，您會使用動態物件，為[消費者入門教學](../getting-started/tutorial-getting-started-with-signalr.md)課程中建立的應用程式新增單元測試。
 
-1. 安裝[XUnit 執行器延伸模組](https://visualstudiogallery.msdn.microsoft.com/463c5987-f82b-46c8-a97e-b1cde42b9099)適用於 Visual Studio 2013。
-2. 請完成[快速入門教學課程](../getting-started/tutorial-getting-started-with-signalr.md)，或下載已完成的應用程式，從[MSDN Code Gallery](https://code.msdn.microsoft.com/SignalR-Getting-Started-b9d18aa9)。
-3. 如果您使用下載的快速入門應用程式版本，開啟**Package Manager Console**然後按一下**還原**SignalR 封裝加入專案。
+1. 安裝適用于 Visual Studio 2013 的 XUnit 執行器[擴充](https://visualstudiogallery.msdn.microsoft.com/463c5987-f82b-46c8-a97e-b1cde42b9099)功能。
+2. 請完成[消費者入門教學](../getting-started/tutorial-getting-started-with-signalr.md)課程，或從[MSDN 程式碼庫](https://code.msdn.microsoft.com/SignalR-Getting-Started-b9d18aa9)下載已完成的應用程式。
+3. 如果您使用的是消費者入門應用程式的下載版本，請開啟 [**套件管理員主控台**]，然後按一下 [**還原**]，將 SignalR 套件新增至專案。
 
     ![還原套件](unit-testing-signalr-applications/_static/image1.png)
-4. 將專案加入至單元測試的方案。 以滑鼠右鍵按一下 在您的解決方案**方案總管**，然後選取**新增**，**新專案...**.底下**C#** 節點中，選取**Windows**節點。 選取 **類別庫**。 將新專案命名**TestLibrary**然後按一下**確定**。
+4. 將專案加入至單元測試的方案。 在**方案總管**中，以滑鼠右鍵按一下您的方案，然後選取 [**加入**]、[**新增專案**]。在**C#** 節點底下，選取 [ **Windows** ] 節點。 選取 [**類別庫**]。 將新專案命名為**TestLibrary** ，然後按一下 **[確定]** 。
 
     ![建立測試程式庫](unit-testing-signalr-applications/_static/image2.png)
-5. 在測試程式庫專案中加入 SignalRChat 專案的參考。 以滑鼠右鍵按一下**TestLibrary**專案，然後選取**新增**，**參考...**.選取 **專案**下方的節點**解決方案**節點，然後核取**SignalRChat**。 按一下 [確定] 。
+5. 將測試程式庫專案中的參考加入至 SignalRChat 專案。 以滑鼠右鍵按一下**TestLibrary**專案，然後選取 [**新增**]、[**參考 ...** ]。選取 [**方案**] 節點底下的 [**專案**] 節點，然後檢查**SignalRChat**。 按一下 [確定]。
 
-    ![加入專案參考](unit-testing-signalr-applications/_static/image3.png)
-6. 將 SignalR、 Moq 和 XUnit 的封裝，加入**TestLibrary**專案。 在  **Package Manager Console**，將**預設專案**下拉式清單來**TestLibrary**。 在主控台視窗中執行下列命令：
+    ![新增專案參考](unit-testing-signalr-applications/_static/image3.png)
+6. 將 SignalR、Moq 和 XUnit 封裝新增至**TestLibrary**專案。 在 [**套件管理員主控台**] 中，將 [**預設專案**] 下拉式清單設定為 [ **TestLibrary**]。 在主控台視窗中執行下列命令：
 
    - `Install-Package Microsoft.AspNet.SignalR`
    - `Install-Package Moq`
    - `Install-Package XUnit`
 
      ![安裝套件](unit-testing-signalr-applications/_static/image4.png)
-7. 建立測試檔案。 以滑鼠右鍵按一下**TestLibrary**專案，然後按一下 **加入...**，**類別**。 新類別命名**Tests.cs**。
-8. Tests.cs 的內容取代為下列程式碼。
+7. 建立測試檔案。 以滑鼠右鍵按一下**TestLibrary**專案，然後按一下 [**加入**]、[**類別**]。 將新類別命名為**Tests.cs**。
+8. 將 Tests.cs 的內容取代為下列程式碼。
 
     [!code-csharp[Main](unit-testing-signalr-applications/samples/sample1.cs)]
 
-    在上述程式碼，測試用戶端會使用建立`Mock`物件從[Moq](https://github.com/Moq/moq4)類型的文件庫[IHubCallerConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) (在 SignalR 2.1 中，指派`dynamic`類型參數。）`IHubCallerConnectionContext`介面是用您叫用方法，用戶端上的 proxy 物件。 `broadcastMessage`函式會接著定義模擬 （mock） 的用戶端，讓它可以呼叫`ChatHub`類別。 測試引擎接著會呼叫`Send`方法`ChatHub`類別，而呼叫模擬 （mock）`broadcastMessage`函式。
-9. 建置方案，藉由按下**F6**。
-10. 執行單元測試。 在 Visual Studio 中，選取**測試**， **Windows**，**測試總管**。 在 [測試總管] 視窗中，以滑鼠右鍵按一下**HubsAreMockableViaDynamic** ，然後選取**執行選取的測試**。
+    在上述程式碼中，會使用[Moq](https://github.com/Moq/moq4)程式庫（屬於[IHubCallerConnectionCoNtext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx)型別）中的 `Mock` 物件建立測試用戶端（在 SignalR 2.1 中，為型別參數指派 `dynamic`）。`IHubCallerConnectionContext` 介面是用來在用戶端上叫用方法的 proxy 物件。 然後會為模擬用戶端定義 `broadcastMessage` 函式，讓 `ChatHub` 類別可以呼叫該函數。 然後，測試引擎會呼叫 `ChatHub` 類別的 `Send` 方法，然後再呼叫模擬 `broadcastMessage` 函數。
+9. 按**F6**以建立方案。
+10. 執行單元測試。 在 Visual Studio 中，選取 [**測試**]、[ **Windows**]、[**測試瀏覽器**]。 在 [測試瀏覽器] 視窗中，以滑鼠右鍵按一下**HubsAreMockableViaDynamic** ，然後選取 [**執行選取的測試**]。
 
     ![測試總管](unit-testing-signalr-applications/_static/image5.png)
-11. 請確認測試成功藉由檢查下方的窗格，在 [測試總管] 視窗中。 視窗會顯示測試成功。
+11. 核取 [測試瀏覽器] 視窗中的下方窗格，確認測試通過。 此視窗會顯示測試已通過。
 
     ![成功的測試](unit-testing-signalr-applications/_static/image6.png)
 
 <a id="type"></a>
-### <a name="unit-testing-by-type"></a>單元測試類型
+### <a name="unit-testing-by-type"></a>依類型的單元測試
 
-在本節中，您將建立的應用程式的測試[快速入門教學課程](../getting-started/tutorial-getting-started-with-signalr.md)使用介面，包含要測試的方法。
+在本節中，您會使用包含要測試之方法的介面，為[消費者入門教學](../getting-started/tutorial-getting-started-with-signalr.md)課程中所建立的應用程式加入測試。
 
-1. 完成步驟 1-7 中[單元測試與 Dynamic](#dynamic)上述的教學課程。
-2. Tests.cs 的內容取代為下列程式碼。
+1. 完成上述使用動態教學課程的[單元測試](#dynamic)中的步驟1-7。
+2. 將 Tests.cs 的內容取代為下列程式碼。
 
     [!code-csharp[Main](unit-testing-signalr-applications/samples/sample2.cs)]
 
-    在上述程式碼會建立介面定義的簽章`broadcastMessage`測試引擎會建立模擬 （mock） 的用戶端的方法。 模擬 （mock） 的用戶端接著會建立使用`Mock`類型的物件[IHubCallerConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) (在 SignalR 2.1 中，指派`dynamic`做為 type 參數。)`IHubCallerConnectionContext`介面是用您叫用方法，用戶端上的 proxy 物件。
+    在上述程式碼中，會建立介面來定義測試引擎將建立模擬用戶端之 `broadcastMessage` 方法的簽章。 然後會使用[IHubCallerConnectionCoNtext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx)類型的 `Mock` 物件建立模擬用戶端（在 SignalR 2.1 中，為類型參數指派 `dynamic`）。`IHubCallerConnectionContext` 介面是用來在用戶端上叫用方法的 proxy 物件。
 
-    測試再建立的執行個體`ChatHub`，然後建立模擬版本`broadcastMessage`方法中，依序叫用呼叫`Send`集線器上的方法。
-3. 建置方案，藉由按下**F6**。
-4. 執行單元測試。 在 Visual Studio 中，選取**測試**， **Windows**，**測試總管**。 在 [測試總管] 視窗中，以滑鼠右鍵按一下**HubsAreMockableViaDynamic** ，然後選取**執行選取的測試**。
+    然後，測試會建立 `ChatHub`的實例，然後建立 `broadcastMessage` 方法的模擬版本，然後藉由呼叫中樞上的 `Send` 方法來叫用。
+3. 按**F6**以建立方案。
+4. 執行單元測試。 在 Visual Studio 中，選取 [**測試**]、[ **Windows**]、[**測試瀏覽器**]。 在 [測試瀏覽器] 視窗中，以滑鼠右鍵按一下**HubsAreMockableViaDynamic** ，然後選取 [**執行選取的測試**]。
 
     ![測試總管](unit-testing-signalr-applications/_static/image7.png)
-5. 請確認測試成功藉由檢查下方的窗格，在 [測試總管] 視窗中。 視窗會顯示測試成功。
+5. 核取 [測試瀏覽器] 視窗中的下方窗格，確認測試通過。 此視窗會顯示測試已通過。
 
     ![成功的測試](unit-testing-signalr-applications/_static/image8.png)

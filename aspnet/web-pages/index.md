@@ -2,27 +2,27 @@
 uid: web-pages/index
 title: ASP.NET Web Pages |Microsoft Docs
 author: rick-anderson
-description: 下載 WebMatrix，並了解如何快速建置輕量型的方式結合伺服器程式碼與 HTML 的網頁。
+description: 下載 WebMatrix & 瞭解如何以輕量的方式快速建立網頁，以結合伺服器程式碼與 HTML。
 ms.author: riande
 ms.date: 05/18/2012
 ms.assetid: 5418ba96-ff49-4a43-9cbb-09dea4949d23
 msc.legacyurl: /web-pages
 msc.type: categoryindex
 ms.openlocfilehash: 56bf82e22b3562893ef842a90d42aa7b6ff5858f
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65114536"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78640949"
 ---
 # <a name="aspnet-web-pages"></a>ASP.NET Web Pages
 
 > [!NOTE] 
-> WebMatrix 不再建議使用整合式的開發環境適用於 ASP.NET 網頁。 使用[Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio)或是[Visual Studio Code](https://code.visualstudio.com/)。
+> 不再建議使用 WebMatrix 做為 ASP.NET Web Pages 的整合式開發環境。 使用[Visual Studio](xref:aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio)或[Visual Studio Code](https://code.visualstudio.com/)。
 
 - [指引](overview/index.md)
 
-    - [快速入門](overview/getting-started/index.md)
+    - [使用者入門](overview/getting-started/index.md)
 
         - [在 Visual Studio 中撰寫 ASP.NET Web Pages 程式](overview/getting-started/program-asp-net-web-pages-in-visual-studio.md)
         - [ASP.NET Web 程式設計 Razor 語法簡介](overview/getting-started/introducing-razor-syntax-c.md)
@@ -32,7 +32,7 @@ ms.locfileid: "65114536"
         - [將社交網路新增至您的網站](overview/getting-started/13-adding-social-networking-to-your-web-site.md)
         - [ASP.NET Web Pages 簡介](overview/getting-started/introducing-aspnet-web-pages-2/index.md)
 
-            - [快速入門](overview/getting-started/introducing-aspnet-web-pages-2/getting-started.md)
+            - [使用者入門](overview/getting-started/introducing-aspnet-web-pages-2/getting-started.md)
             - [程式設計基礎](overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming.md)
             - [顯示資料](overview/getting-started/introducing-aspnet-web-pages-2/displaying-data.md)
             - [HTML 表單基本概念](overview/getting-started/introducing-aspnet-web-pages-2/form-basics.md)
@@ -68,7 +68,7 @@ ms.locfileid: "65114536"
 
         - [偵錯簡介](overview/testing-and-debugging/introduction-to-debugging.md)
         - [ASP.NET Web Pages (Razor) 疑難排解指南](overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide.md)
-    - [安全性](overview/security/index.md)
+    - [Security](overview/security/index.md)
 
         - [新增安全性及成員資格](overview/security/16-adding-security-and-membership.md)
         - [在 ASP.NET Web Pages 網站中啟用外部網站的登入](overview/security/enabling-login-from-external-sites-in-an-aspnet-web-pages-site.md)

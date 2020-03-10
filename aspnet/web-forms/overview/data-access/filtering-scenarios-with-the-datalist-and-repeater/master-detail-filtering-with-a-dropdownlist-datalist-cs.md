@@ -9,11 +9,11 @@ ms.assetid: 07fa47ae-e491-4a2f-b265-d342b9ddef46
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 8289f46fd6d0143802269d5c6196a4c40db9378c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74631231"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78590262"
 ---
 # <a name="masterdetail-filtering-with-a-dropdownlist-c"></a>使用 DropDownList 進行主要/詳細資料篩選 (C#)
 
@@ -115,7 +115,7 @@ ms.locfileid: "74631231"
 
 若要將新的清單專案加入至 DropDownList，請移至 屬性視窗，然後按一下 `Items` 屬性中的省略號。 加入具有 `Text` "--選擇類別目錄--" 和 `Value` `0`的新清單專案。
 
-![新增。](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image27.png)
+![新增](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image27.png)
 
 **圖 11**：新增「--選擇類別--」清單專案
 
@@ -154,4 +154,4 @@ ms.locfileid: "74631231"
 本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Randy Schmidt。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [下一步](master-detail-filtering-acess-two-pages-datalist-cs.md)
+> [下一個](master-detail-filtering-acess-two-pages-datalist-cs.md)

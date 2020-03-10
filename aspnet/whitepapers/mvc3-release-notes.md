@@ -9,18 +9,18 @@ ms.assetid: f44c166e-7e91-48a0-a6f8-d9285f3594e5
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
 ms.openlocfilehash: 504202068f5db4f8614bba02e8066ffecfd15b48
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74619244"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78618045"
 ---
 # <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 
 - [概觀](#overview)
 - [安裝注意事項](#installation-notes)
 - [軟體需求](#software-requirements)
-- [文件 (英文)](#documentation)
+- [文件](#documentation)
 - [支援](#support)
 - [將 ASP.NET MVC 2 專案升級至 ASP.NET MVC 3 工具更新](#upgrading)
 - [ASP.NET MVC 3 工具更新（2011年4月12日）](#tu-changes)
@@ -60,7 +60,7 @@ ms.locfileid: "74619244"
 - [ASP.NET MVC 3 發行候選版本（2010年11月9日）](#TOC_ASP_NET_3_RC)
 
     - [ASP.NET MVC 3 RC 中的新功能](#_Toc276711785)
-    - [NuGet 套件管理員](#_Toc276711786)
+    - [NuGet 套件管理員](#_Toc276711786) (英文)
     - [改良的 [新增專案] 對話方塊](#_Toc276711787)
     - [無會話控制器](#_Toc276711788)
     - [新的驗證屬性](#_Toc276711789)
@@ -85,7 +85,7 @@ ms.locfileid: "74619244"
     - [VBHTML Razor 語法的新支援](#0.1__Toc274034225)
     - [更精細地控制 Validateinputattribute 套用](#0.1__Toc274034226)
     - [協助程式將底線轉換為使用匿名物件指定之 HTML 屬性名稱的連字號](#0.1__Toc274034227)
-    - [Bug 修正](#0.1__Toc274034228)
+    - [錯誤修正](#0.1__Toc274034228)
     - [重大變更](#0.1__Toc274034229)
     - [已知問題](#0.1__Toc274034230)
 - [免責聲明](#0.1__Toc274034231)
@@ -130,7 +130,7 @@ ASP.NET MVC 3 執行時間元件需要下列軟體：
 - Visual Studio 2010 或 Visual Web Developer 2010 Express。
 
 <a id="documentation"></a>
-## <a name="documentation"></a>Documentation
+## <a name="documentation"></a>文件
 
 您可以在 MSDN 網站上取得 ASP.NET MVC 的檔，網址如下：
 
@@ -169,7 +169,7 @@ ASP.NET MVC 3 可以與 ASP.NET MVC 2 並存安裝在同一部電腦上，讓您
 
     [!code-console[Main](mvc3-release-notes/samples/sample1.cmd)]
 
-    然後取代成下列文字：
+    取代為下列內容：
 
     [!code-console[Main](mvc3-release-notes/samples/sample2.cmd)]
 6. 在方案總管中，刪除*system.web*的參考（指向第2版的 DLL），然後加入*system.web*的參考（v 3.0.0.0）。
@@ -488,7 +488,7 @@ ASP.NET MVC 發行候選版本已于2010年11月9日發行。
 本節說明自 Beta 版以來，已在 ASP.NET MVC 3 RC 版本中引進的功能。
 
 <a id="_Toc276711786"></a>
-### <a name="nuget-package-manager"></a>NuGet 封裝管理員
+### <a name="nuget-package-manager"></a>NuGet 套件管理員
 
 ASP.NET MVC 3 包含 NuGet 套件管理員（之前稱為 NuPack），這是整合的封裝管理工具，可用來將程式庫和工具新增至 Visual Studio 專案。 這種工具可讓開發人員立即採取的步驟，將程式庫帶入其來源樹狀結構中。
 
@@ -736,7 +736,7 @@ ASP.NET MVC 包含 Ajax helper 方法，如下所示：
 - Ajax Html.actionlink
 - Ajax. RouteLink
 - Ajax. Html.beginform
-- Ajax. BeginRouteForm
+- Ajax.BeginRouteForm
 
 這些方法會使用 JavaScript 在伺服器上叫用動作方法，而不是使用完整回傳。 這項功能已更新為以不顯眼的方式利用 jQuery。 這些 helper 方法會使用*data ajax*前置詞發出 HTML5 屬性，而不是發出內嵌用戶端腳本干擾。 然後藉由參考適當的 JavaScript 檔案，將行為套用至標記。 請確定已參考下列 JavaScript 檔案：
 
@@ -839,7 +839,7 @@ JsonValueProviderFactory 現在預設為已註冊。
 
 例外狀況篩選準則的執行順序已針對具有相同順序值的例外狀況篩選準則進行變更。 在 ASP.NET MVC 2 （含）以前版本中，控制器上的例外狀況篩選準則會在例外狀況篩選動作方法之前執行，其順序與動作方法上的相同。 這通常是未使用指定的順序值來套用例外狀況篩選時的情況。 在 ASP.NET MVC 3 中，此順序已被反轉，因此最特定的例外狀況處理常式會先執行。 如同在舊版中，如果已明確指定 Order 屬性，則會以指定的循序執行篩選。
 
-## <a id="0.1__Toc274034230"></a>已知問題
+## <a id="0.1__Toc274034230"></a> 已知問題
 
 在安裝期間，EULA 接受對話方塊會在視窗中顯示授權條款，此視窗比預期的要小。
 
@@ -861,6 +861,6 @@ Razor views 沒有 IntelliSense 支援或語法反白顯示。 預期 Visual Stu
 
 ## <a id="0.1__Toc274034231"></a>免責聲明
 
-© 2011 Microsoft Corporation. All rights reserved. 此文件內容未經修改。 本文件提供的資訊和觀點 (包括 URL 和其他網站參考) 可能變更，恕不另行通知。 貴用戶必須自行承擔使用風險。
+© 2011 Microsoft Corporation. 著作權所有，並保留一切權利。 這份文件係依「現狀」提供。 本文件中提供的資訊與畫面 (包括 URL 及其他網際網路網站參考資料) 如有變更，恕不另行通知。 貴用戶須自行承擔使用風險。
 
-本文件並不提供您任何 Microsoft 產品之智慧財產權的法定權利。 貴用戶可以複製本文件供內部參考之用。
+本文件不提供　貴用戶任何 Microsoft 產品之智慧財產權的法定權利。 您可以複製並使用這份文件，供內部參考之用。

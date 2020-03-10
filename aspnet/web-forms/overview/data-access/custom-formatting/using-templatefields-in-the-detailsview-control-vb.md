@@ -9,11 +9,11 @@ ms.assetid: 0b91d5f8-127d-4f6a-b204-f2e2b35ef703
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-vb
 msc.type: authoredcontent
 ms.openlocfilehash: e96f954c27ae1c8ccc18a9c40fe7e541b487c1cc
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74624819"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78595582"
 ---
 # <a name="using-templatefields-in-the-detailsview-control-vb"></a>在 DetailsView 控制項中使用 TemplateFields (VB)
 
@@ -37,7 +37,7 @@ TemplateField 比 BoundField、CheckBoxField、HyperLinkField 和其他資料欄
 
 **圖 1**：兩個 TemplateFields 用於自訂顯示（[按一下以觀看完整大小的影像](using-templatefields-in-the-detailsview-control-vb/_static/image3.png)）
 
-讓我們開始吧！
+現在就開始吧！
 
 ## <a name="step-1-binding-the-data-to-the-detailsview"></a>步驟1：將資料系結至 DetailsView
 

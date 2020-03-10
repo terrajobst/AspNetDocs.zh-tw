@@ -9,11 +9,11 @@ ms.assetid: 969fb28f-2bff-4fc4-b24a-27f5e2534a37
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
 msc.type: authoredcontent
 ms.openlocfilehash: c0bf793406e378321f54f0460031c526a0b41a02
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74611558"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78612340"
 ---
 # <a name="creating-a-rating-control-c"></a>建立評等控制項 (C#)
 
@@ -69,4 +69,4 @@ ms.locfileid: "74611558"
 以最少的程式碼建立分級系統（[按一下以觀看完整大小的影像](creating-a-rating-control-cs/_static/image3.png)）
 
 > [!div class="step-by-step"]
-> [下一步](creating-a-rating-control-vb.md)
+> [下一個](creating-a-rating-control-vb.md)

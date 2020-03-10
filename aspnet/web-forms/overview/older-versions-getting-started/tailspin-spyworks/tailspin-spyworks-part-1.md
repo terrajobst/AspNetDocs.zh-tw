@@ -1,45 +1,45 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
-title: 第 1 部份：檔案新增專案-> |Microsoft Docs
+title: 第1部分：檔案 > 新專案 |Microsoft Docs
 author: JoeStagner
-description: 本教學課程系列會詳細說明所有建置 Tailspin Spyworks 範例應用程式所採取的步驟。 第 1 部分涵蓋概觀和檔案/新增的專案。
+description: 本教學課程系列詳細說明建立 Tailspin Spyworks 範例應用程式所採取的所有步驟。 第1部分涵蓋總覽和檔案/新增專案。
 ms.author: riande
 ms.date: 07/21/2010
 ms.assetid: 15d4652b-d5aa-4172-b186-2c7f96ba316d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
 msc.type: authoredcontent
 ms.openlocfilehash: 05a3ace3d8fef9c1f3593f7948e42b4725d70134
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65130561"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78636126"
 ---
-# <a name="part-1-file--new-project"></a>第 1 部份：[檔案] -> [新增專案]
+# <a name="part-1-file--new-project"></a>第1部分：檔案 > 的新專案
 
-藉由[Joe Stagner](https://github.com/JoeStagner)
+依[Joe Stagner](https://github.com/JoeStagner)
 
-> Tailspin Spyworks 示範建立功能強大、 可擴充的應用程式，適用於.NET 平台是如何富含簡單。 它會展示如何在 ASP.NET 4 中使用最棒的新功能，建置線上商店，包括購物、 簽出，以及系統管理。
+> Tailspin Spyworks 示範為 .NET 平臺建立功能強大、可擴充的應用程式有多麼簡單。 它會說明如何使用 ASP.NET 4 中的絕佳新功能來建立線上商店，包括購物、結帳和管理。
 > 
-> 本教學課程系列會詳細說明所有建置 Tailspin Spyworks 範例應用程式所採取的步驟。 第 1 部分涵蓋概觀和檔案/新增的專案。
+> 本教學課程系列詳細說明建立 Tailspin Spyworks 範例應用程式所採取的所有步驟。 第1部分涵蓋總覽和檔案/新增專案。
 
-## <a id="_Toc260221666"></a>  概觀
+## <a id="_Toc260221666"></a>簡要
 
-本教學課程是 ASP.NET WebForms 的簡介。 我們會慢慢開始，因此層級的 web 開發初學者體驗也沒關係。
+本教學課程是 ASP.NET WebForms 的簡介。 我們會開始變慢，因此新手層級的 網頁程式開發體驗也沒關係。
 
-我們將建置的應用程式是簡單的線上商店。
+我們將建立的應用程式是簡單的線上商店。
 
 ![](tailspin-spyworks-part-1/_static/image1.jpg)
 
-訪客可以瀏覽產品分類：
+訪客可以依類別流覽產品：
 
 ![](tailspin-spyworks-part-1/_static/image2.jpg)
 
-他們可以檢視單一產品，並將它新增至購物車：
+他們可以查看單一產品，並將其新增至其購物車：
 
 ![](tailspin-spyworks-part-1/_static/image3.jpg)
 
-它們可以檢閱其購物車，並移除不再需要的任何項目：
+他們可以審查其購物車，移除任何不再需要的專案：
 
 ![](tailspin-spyworks-part-1/_static/image4.jpg)
 
@@ -49,55 +49,55 @@ ms.locfileid: "65130561"
 
 ![](tailspin-spyworks-part-1/_static/image6.jpg)
 
-之後排序，就會看到簡單的確認畫面：
+排序之後，他們會看到簡單的確認畫面：
 
 ![](tailspin-spyworks-part-1/_static/image7.jpg)
 
-我們一開始先在 Visual Studio 2010 中，建立新的 ASP.NET WebForms 專案，我們會以累加方式新增功能來建立完整的運作應用程式。 過程中，我們將討論資料庫存取權、 清單和格線檢視、 資料更新頁面、 資料驗證、 主版頁面使用一致的頁面配置、 AJAX、 驗證、 使用者成員資格，等等。
+我們將從在 Visual Studio 2010 中建立新的 ASP.NET WebForms 專案開始，並以累加方式新增功能，以建立完整的運作中應用程式。 在此過程中，我們將討論資料庫存取、清單和方格的觀點、資料更新頁面、資料驗證、使用主版頁面進行一致的頁面配置、AJAX、驗證、使用者成員資格等等。
 
-您可以照著逐步進行，或者您可以下載從完成的應用程式 [http://tailspinspyworks.codeplex.com/](http://tailspinspyworks.codeplex.com/)
+您可以依照步驟進行，也可以從[http://tailspinspyworks.codeplex.com/](http://tailspinspyworks.codeplex.com/)下載已完成的應用程式。
 
-您可以使用 Visual Studio 2010 或從可用 Visual Web Developer 2010 [ https://www.microsoft.com/express/Web/ ](https://www.microsoft.com/express/Web/)。 若要建置應用程式，您可以使用 SQL Server 或免費的 SQL Server Express 來裝載資料庫。
+您可以從[https://www.microsoft.com/express/Web/](https://www.microsoft.com/express/Web/)使用 Visual Studio 2010 或免費的 Visual Web Developer 2010。 若要建立應用程式，您可以使用 SQL Server 或免費 SQL Server Express 來裝載資料庫。
 
-## <a id="_Toc260221667"></a>  檔案 / 新增專案
+## <a id="_Toc260221667"></a>檔案/新增專案
 
-我們一開始是從 Visual Studio 中的 [檔案] 功能表中選取新的專案。 這會顯示 [新增專案] 對話方塊。
+我們會從 Visual Studio 的 [檔案] 功能表中選取新的專案開始。 這會顯示 [新增專案] 對話方塊。
 
 ![](tailspin-spyworks-part-1/_static/image8.jpg)
 
-我們將選取的 Visual C# / Web 範本左側的群組，然後選擇 在中間欄中的 「 ASP.NET Web 應用程式 」 範本。 您的專案 TailspinSpyworks 命名，然後按 [確定] 按鈕。
+我們將選取左側的C# [視覺效果/Web 範本] 群組，然後選擇 [中間] 資料行中的 [ASP.NET Web 應用程式] 範本。 將專案命名為 TailspinSpyworks，然後按下 [確定] 按鈕。
 
 ![](tailspin-spyworks-part-1/_static/image9.jpg)
 
-這會建立我們的專案。 讓我們看看我們在右邊的 [方案總管] 中的應用程式中包含的資料夾。
+這會建立我們的專案。 讓我們來看看應用程式中包含在右側方案總管中的資料夾。
 
 ![](tailspin-spyworks-part-1/_static/image10.jpg)
 
-空的方案不是完全空白-它會新增一個基本的資料夾結構：
+空白解決方案不完全空白–它會新增基本資料夾結構：
 
 ![](tailspin-spyworks-part-1/_static/image1.png)
 
-請注意 ASP.NET 4 預設專案範本所實作的慣例。
+請注意 ASP.NET 4 預設專案範本所執行的慣例。
 
-- 「 帳戶 」 資料夾 ASP 實作基本的使用者介面。NET 的成員資格的子系統。
-- 「 指令碼 」 資料夾做為用戶端 JavaScript 檔案的儲存機制和核心 jQuery.js 檔案所能使用預設值。
-- 「 樣式 」 資料夾用來組織我們網站上的視覺效果 （CSS 樣式表）
+- 「帳戶」資料夾會為 ASP 實行基本的使用者介面。NET 的成員資格子系統。
+- 「腳本」資料夾可作為用戶端 JavaScript 檔案的存放庫，而核心 jQuery .js 檔預設為可用。
+- 「樣式」資料夾是用來組織我們的網站視覺效果（CSS 樣式表單）
 
-當我們按下 f5 鍵執行應用程式，並呈現 default.aspx 頁面時看到下列項目。
+當我們按 F5 執行應用程式並轉譯 default.aspx 頁面時，我們會看到下列畫面。
 
 ![](tailspin-spyworks-part-1/_static/image11.jpg)
 
-我們的第一個應用程式增強功能是要取代的 CSS 類別和相關聯的映像檔，會呈現 visual asthetics，我們想我們的 Tailspin Spyworks 應用程式的預設 WebForms 範本中的 Style.css 檔案。
+我們的第一個應用程式增強功能是將預設 WebForms 範本中的 Style .css 檔案取代成 CSS 類別和相關聯的影像檔案，這些檔案將會轉譯我們的 Tailspin Spyworks 應用程式所需的視覺效果 asthetics。
 
-完成之後，我們的 default.aspx 網頁會轉譯如下。
+這麼做之後，default.aspx 頁面就會呈現如下。
 
 ![](tailspin-spyworks-part-1/_static/image12.jpg)
 
-請注意頂端的影像連結權限的頁面和已加入主版頁面的功能表項目。 只有 登入 」 和 「 帳戶 」 連結指向存在 （預設範本所產生） 的頁面和我們建置的應用程式，我們會實作頁面的其餘部分。
+請注意頁面右上方的影像連結，以及已新增至主版頁面的功能表項目。 只有「登入」和「帳戶」連結會指向存在的頁面（由預設範本所產生），以及我們在建立應用程式時將會執行的其餘頁面。
 
-我們也要將主版頁面重新放置到樣式目錄。 但這是喜好設定它可能會讓有點輕鬆地如果我們決定讓我們的應用程式 「 skinable"未來使用。
+我們也要將主版頁面重新放置到 [樣式] 目錄。 雖然這只是偏好的喜好設定，但如果我們決定讓我們的應用程式在未來「skinable」，則可能會變得更容易。
 
-之後這樣我們就必須變更主版頁面中所有的.aspx 檔案的參考所產生的預設 ASP.NET WebForms 頁面。
+這麼做之後，我們需要變更預設 ASP.NET WebForms 頁面所產生之所有 .aspx 檔案中的主版頁面參考。
 
 > [!div class="step-by-step"]
-> [下一步](tailspin-spyworks-part-2.md)
+> [下一個](tailspin-spyworks-part-2.md)

@@ -1,6 +1,6 @@
 ---
 uid: identity/index
-title: ASP.NET Identity | Microsoft Docs
+title: ASP.NET Identity |Microsoft Docs
 author: rick-anderson
 description: ''
 ms.author: riande
@@ -9,11 +9,11 @@ ms.assetid: 0c2df5d4-c2dd-486d-b0ed-fe831c6b596c
 msc.legacyurl: /identity
 msc.type: categoryindex
 ms.openlocfilehash: 48e75d6a2a151befe7ea796b149d2d030712d799
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59418348"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78616974"
 ---
 # <a name="aspnet-identity"></a>ASP.NET Identity
 
@@ -25,7 +25,7 @@ ms.locfileid: "59418348"
         - [ASP.NET Identity 建議資源](overview/getting-started/aspnet-identity-recommended-resources.md)
         - [將 ASP.NET Identity 新增至空的或現有的 Web Form 專案](overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
         - [使用 Azure Active Dirctory 開發 ASP.NET 應用程式](overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)
-        - [ASP.NET 身分識別：使用 EntityFramework MySQL 提供者的 MySQL 儲存體 (C#)](overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider.md)
+        - [ASP.NET Identity： 使用具 EntityFramework MySQL 提供者的 MySQL 儲存體 (C#)](overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider.md)
     - [功能與 API](overview/features-api/index.md)
 
         - [將密碼和其他敏感性資料部署到 ASP.NET 和 Azure App Service 的最佳做法](overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)

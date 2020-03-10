@@ -9,11 +9,11 @@ ms.assetid: 24ad086d-865e-433c-9ac9-05f1a553da16
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
 ms.openlocfilehash: 96dd31d949633e001fc595621bedbf74e98000fc
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74640228"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78642216"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>使用 Visual Studio ASP.NET Web 部署：簡介
 
@@ -39,7 +39,7 @@ ms.locfileid: "74640228"
 
 教學課程的設計是依序執行，而且每個元件都是在上一個部分建立。 您可以略過與您的情況無關的部分，但您可能需要在稍後的教學課程中調整這些程式。
 
-## <a name="intended-audience"></a>目標物件
+## <a name="intended-audience"></a>目標對象
 
 這些教學課程的目標是在下列環境中工作的 ASP.NET 開發人員：
 
@@ -49,7 +49,7 @@ ms.locfileid: "74640228"
 這些教學課程中不涵蓋使用[持續傳遞](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md)程式從[原始檔控制](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control.md)進行部署，除了一個示範如何從命令列部署的教學課程。 如需持續傳遞的詳細資訊，請參閱下列資源：
 
 - [持續整合與持續傳遞（使用 Windows Azure 建立真實世界的雲端應用程式）](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md)
-- [在 Azure App Service 中部署 web 應用程式](https://azure.microsoft.com/documentation/articles/web-sites-deploy/)
+- [在 Azure App Service 中部署 Web 應用程式](https://azure.microsoft.com/documentation/articles/web-sites-deploy/)
 - [在企業案例中部署 Web 應用程式](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)（針對 Visual Studio 2010 撰寫的一組較舊的教學課程，對於企業環境仍然具有有用的資訊）。
 
 ## <a name="using-a-third-party-hosting-provider"></a>使用協力廠商主機服務提供者
@@ -110,13 +110,13 @@ Visual Studio 在部署過程中不會對資料庫執行任何動作。 當部�
 
 <a id="prerequisites"></a>
 
-## <a name="prerequisites"></a>必要條件：
+## <a name="prerequisites"></a>Prerequisites
 
 本教學課程是針對下列產品所撰寫：
 
 - Windows 8 或 Windows 7。
 - Visual Studio 2012 或 Visual Studio 2012 Express for Web 含[最新的更新](https://go.microsoft.com/fwlink/?LinkId=272486)。
-- [適用于 Visual Studio 2012 的 Azure SDK](https://go.microsoft.com/fwlink/?LinkId=254364)
+- [Azure SDK for Visual Studio 2012](https://go.microsoft.com/fwlink/?LinkId=254364)
 
 您可以使用 Visual Studio 2010 SP1 或 Visual Studio 2013 來遵循本教學課程，但某些螢幕擷取畫面會有所不同，而且有些功能會有所不同。
 
@@ -198,4 +198,4 @@ Visual Studio 在部署過程中不會對資料庫執行任何動作。 當部�
 在此系列的第一個教學課程中，您已下載 Visual Studio 專案的範例，以及會影響您如何部署應用程式的網站功能。 在下列教學課程中，您會設定要自動處理的某些專案，以準備進行部署。 您手動處理的其他人。
 
 > [!div class="step-by-step"]
-> [下一步](preparing-databases.md)
+> [下一個](preparing-databases.md)

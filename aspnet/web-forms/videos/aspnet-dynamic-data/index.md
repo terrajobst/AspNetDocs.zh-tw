@@ -1,23 +1,23 @@
 ---
 uid: web-forms/videos/aspnet-dynamic-data/index
-title: ASP.NET Dynamic Data | Microsoft Docs
+title: ASP.NET 動態資料 |Microsoft Docs
 author: rick-anderson
-description: 如何建立包含 scaffold 的應用程式，會自動了解如何執行資料存取使用 ASP.NET 動態資料。
+description: 如何使用 ASP.NET 動態資料建立會自動知道如何執行資料存取的 scaffold 應用程式。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: cd51e6c4-6ff9-419d-8ac8-a39b79d63c78
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data
 msc.type: chapter
 ms.openlocfilehash: 622f4c5243d094d1ab6b58a909795bc5230c62ce
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116405"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78633781"
 ---
 # <a name="aspnet-dynamic-data"></a>ASP.NET Dynamic Data
 
-> 如何建立包含 scaffold 的應用程式，會自動了解如何執行資料存取使用 ASP.NET 動態資料。
+> 如何使用 ASP.NET 動態資料建立會自動知道如何執行資料存取的 scaffold 應用程式。
 
 - [您的第一個 Scaffold 以及動態資料是什麼](your-first-scaffold-and-what-is-dynamic-data.md)
 - [啟用內嵌 GridView 編輯](how-do-i-enable-inline-gridview-editing.md)

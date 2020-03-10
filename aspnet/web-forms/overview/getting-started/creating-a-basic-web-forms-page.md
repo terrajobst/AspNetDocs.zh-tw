@@ -9,11 +9,11 @@ ms.assetid: a2f1c635-0817-4a9a-8c13-d5b5d29727c0
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
 ms.openlocfilehash: 5d13a51128eecd92a82cfd06054448582a348e11
-ms.sourcegitcommit: 84b1681d4e6253e30468c8df8a09fe03beea9309
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73445682"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78629756"
 ---
 # <a name="using-visual-studio-2013-to-create-a-basic-aspnet-45-web-forms-page"></a>使用 Visual Studio 2013 建立基本的 ASP.NET 4.5 Web Forms 網頁
 
@@ -58,11 +58,11 @@ ms.locfileid: "73445682"
 
     [ **新增專案** ] 對話方塊隨即出現。
 3. 選取左側的 [&gt; **Visual C#**  -&gt; **Web** templates] 群組 -**範本**。
-4. 在中間的資料行中選擇 [ **ASP.NET Web 應用程式**] 範本。
+4. 選擇中間欄的 [ASP.NET Web 應用程式] 範本。
 5. 將專案命名為***BasicWebApp*** ，然後按一下 [**確定]** 按鈕。   
-![[新增專案] 對話方塊](creating-a-basic-web-forms-page/_static/image2.png)
+![[New Project] \(新增專案\) 對話方塊](creating-a-basic-web-forms-page/_static/image2.png)
 6. 接下來，選取 [ **Web** form] 範本，然後按一下 [**確定]** 按鈕以建立專案。  
-![新增 ASP.NET 專案 對話方塊](creating-a-basic-web-forms-page/_static/image3.png)  
+![[New ASP.NET Project] 對話方塊](creating-a-basic-web-forms-page/_static/image3.png)  
 
     Visual Studio 會建立新的專案，其中包含根據 Web form 範本預先建立的功能。 它不只會提供您一個*首頁 .aspx* *頁面，* 也就是一個*Contact .aspx*頁面，但也包含成員資格功能，可註冊使用者並儲存其認證，讓他們可以登入您的網站。 建立新的頁面時，根據預設，Visual Studio 會在**原始**檔視圖中顯示頁面，您可以在其中看到頁面的 HTML 元素。 下圖顯示當您建立名為*BasicWebApp*的新網頁時，您會在 [**原始**檔視圖] 中看到的內容。  
     ![原始碼檢視](creating-a-basic-web-forms-page/_static/image4.png)
@@ -101,7 +101,7 @@ ms.locfileid: "73445682"
 2. 在**方案總管**中，以滑鼠**按右鍵 Web**應用程式名稱（在本教學課程中，應用程式名稱是**BasicWebSite**），然後按一下 [新增 -&gt;**新專案**]。   
 隨即顯示 [ 新增項目] 對話方塊。
 3. 選取左側的 [ **Visual C#**  -&gt; **Web**範本] 群組。 然後，從中間清單中選取 [ **Web Form** ]，並將它命名為*FirstWebPage .aspx*。   
-    ![加入新專案 對話方塊](creating-a-basic-web-forms-page/_static/image6.png)
+    ![[加入新項目] 對話方塊](creating-a-basic-web-forms-page/_static/image6.png)
 4. 按一下 [**新增**]，將網頁新增至您的專案。  
 Visual Studio 會建立新的頁面，並開啟它。
 
@@ -180,7 +180,7 @@ Visual Studio 提供各種方式，讓您在頁面上設定控制項的屬性。
 
     > [!NOTE] 
     > 
-    > 所有控制項都是在**form**元素內部，也就是屬性**runat =&quot;server&quot;** 。 **Runat =&quot;server&quot;** 屬性，以及控制項標記的**asp：** 前置詞會標記控制項，以便在頁面執行時由伺服器上的 ASP.NET 處理。 &lt;form runat 以外的程式碼 **&quot;server&quot;&gt;** 和 **&lt;script runat =&quot;server&quot;&gt;** 專案會原封不動地傳送至瀏覽器，這就是為什麼 ASP.NET 程式碼必須位於元素內的原因。其開頭標記包含**runat =&quot;server&quot;** 屬性。
+    > 所有控制項都是在**form**元素內部，也就是屬性**runat =&quot;server&quot;** 。 **Runat =&quot;server&quot;** 屬性，以及控制項標記的**asp：** 前置詞會標記控制項，以便在頁面執行時由伺服器上的 ASP.NET 處理。 &lt;形式的程式碼（ **runat）&quot;server&quot;&gt;** 和 **&lt;script runat =&quot;server&quot;&gt;** 專案會原封不動地傳送給瀏覽器，這就是為什麼 ASP.NET 程式碼必須在開頭標記包含**runat =&quot;server&quot;** 屬性的元素內部。
 4. 接下來，您會將其他屬性新增至[標籤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控制項。 將插入點直接放在 [ **&lt;asp： label]&gt;** 標記中的 [ **asp： label** ] 後面，然後按**空格鍵**。
 
     此時會出現一個下拉式清單，顯示您可以為[標籤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)控制項設定的可用屬性清單。 這項功能稱為**IntelliSense**，可協助您在**原始**檔中，使用伺服器控制項、HTML 元素和頁面上其他專案的語法。 下圖顯示 [[標籤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)] 控制項的 [ **IntelliSense** ] 下拉式清單。

@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/older-versions/signalr-performance
-title: SignalR 效能 (SignalR 1.x) |Microsoft Docs
+title: SignalR 效能（SignalR 1.x） |Microsoft Docs
 author: bradygaster
 description: SignalR 效能
 ms.author: bradyg
@@ -9,94 +9,94 @@ ms.assetid: 9594d644-66b6-4223-acdd-23e29a6e4c46
 msc.legacyurl: /signalr/overview/older-versions/signalr-performance
 msc.type: authoredcontent
 ms.openlocfilehash: 915fd822caae9bbcb0a688c6dd7a5b2bda12c9df
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113892"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78579608"
 ---
 # <a name="signalr-performance-signalr-1x"></a>SignalR 效能 (SignalR 1.x)
 
-藉由[Patrick Fletcher](https://github.com/pfletcher)
+由[派翠克 Fletcher](https://github.com/pfletcher)
 
 [!INCLUDE [Consider ASP.NET Core SignalR](~/includes/signalr/signalr-version-disambiguation.md)]
 
-> 本主題描述如何設計、 測量和改善的 SignalR 應用程式中的效能。
+> 本主題描述如何在 SignalR 應用程式中設計、測量和改善效能。
 
-SignalR 效能和調整的近期簡報，請參閱 <<c0> [ 調整與 ASP.NET SignalR 即時 Web](https://channel9.msdn.com/Events/Build/2013/3-502)。
+如需 SignalR 效能和調整的最新簡報，請參閱[使用 ASP.NET SignalR 調整即時 Web](https://channel9.msdn.com/Events/Build/2013/3-502)。
 
-此主題包括下列章節：
+本主題包含下列各節：
 
 - [設計考量](#design)
-- [微調 SignalR 伺服器效能](#tuning)
+- [調整 SignalR 伺服器的效能](#tuning)
 - [針對效能問題進行疑難排解](#troubleshooting)
 - [使用 SignalR 效能計數器](#perfcounters)
-- [使用其他的效能計數器](#othercounters)
+- [使用其他效能計數器](#othercounters)
 - [其他資源](#otherresources)
 
 <a id="design"></a>
 
 ## <a name="design-considerations"></a>設計考量
 
-本章節描述可實作 SignalR 應用程式，以確保效能，正在降低藉由產生不必要的網路流量的設計期間的模式。
+本節說明可在 SignalR 應用程式設計期間實行的模式，以確保不會產生不必要的網路流量來妨礙運作效能。
 
-### <a name="throttling-message-frequency"></a>節流的訊息頻率
+### <a name="throttling-message-frequency"></a>節流訊息頻率
 
-即使在送出訊息 （例如即時遊戲應用程式） 的高頻率的應用程式，大部分的應用程式不需要傳送第二個的多個訊息。 若要減少每個用戶端產生的流量，訊息迴圈可以實作佇列，並送出訊息不超過經常以固定費率 （也就是特定數目的訊息將會傳送到每秒中，是否在該時間中有訊息terval 傳送)。 節流的訊息，以特定的費率 （從用戶端和伺服器） 的範例應用程式，請參閱[高頻率即時與 SignalR](../getting-started/tutorial-high-frequency-realtime-with-signalr.md)。
+即使是在以較高頻率（例如即時遊戲應用程式）傳送訊息的應用程式中，大部分的應用程式都不需要一次傳送超過幾個訊息。 若要減少每個用戶端產生的流量量，可以將訊息迴圈實作為佇列，並將訊息送出的頻率不會超過固定速率（也就是每秒傳送的訊息數上限，如果當時的訊息位於要傳送的 terval）。 如需將訊息節流為特定速率（來自用戶端和伺服器）的範例應用程式，請參閱[使用 SignalR 的高頻率即時](../getting-started/tutorial-high-frequency-realtime-with-signalr.md)。
 
 ### <a name="reducing-message-size"></a>減少訊息大小
 
-您可以藉由減少您序列化物件的大小減少 SignalR 訊息的大小。 在伺服器程式碼，如果您要傳送的物件，其中包含要傳送不需要的屬性，會阻止這些屬性序列化使用`JsonIgnore`屬性。 屬性名稱也會儲存在訊息;屬性名稱可以使用縮短`JsonProperty`屬性。 下列程式碼範例示範如何排除屬性傳送至用戶端，以及如何縮短屬性名稱：
+您可以減少已序列化物件的大小，以減少 SignalR 訊息的大小。 在伺服器程式碼中，如果您要傳送的物件包含不需要傳輸的屬性，請使用 `JsonIgnore` 屬性來避免序列化這些屬性。 屬性的名稱也會儲存在訊息中;您可以使用 `JsonProperty` 屬性來縮短屬性的名稱。 下列程式碼範例示範如何排除將屬性傳送至用戶端的方法，以及如何縮短屬性名稱：
 
-**.NET 伺服器程式碼，示範 JsonIgnore 屬性，若要排除的資料傳送至用戶端，以及減少訊息大小，JsonProperty 屬性**
+**.NET server 程式碼，它會示範 JsonIgnore 屬性來排除要傳送至用戶端的資料，以及用來減少訊息大小的 JsonProperty 屬性**
 
 [!code-csharp[Main](signalr-performance/samples/sample1.cs?highlight=5,7,10)]
 
-若要保留可讀性 / 用戶端程式碼中的可維護性，在收到訊息之後的縮寫的屬性名稱可能會以人類易重新對應的名稱。 下列程式碼範例示範一個可能方式重新對應的簡短的名稱，以較長的藉由定義訊息合約 （對應），並使用`reMap`来套用的最佳化的訊息類別合約函式：
+為了在用戶端程式代碼中保留可讀性/可維護性，可以在收到訊息之後，將縮寫的屬性名稱重新對應至易記名稱。 下列程式碼範例示範一種可能的方式，藉由定義訊息合約（對應）來重新對應較長的名稱，並使用 `reMap` 函式將合約套用到優化的訊息類別：
 
-**重新對應的用戶端 JavaScript 程式碼已縮短人類看得懂的名稱的屬性名稱**
+**將縮短的屬性名稱重新對應到人類可讀名稱的用戶端 JavaScript 程式碼**
 
 [!code-javascript[Main](signalr-performance/samples/sample2.js)]
 
-名稱可以縮短在用戶端的訊息至伺服器，使用相同的方法。
+也可以使用相同的方法，從用戶端到伺服器的訊息中縮短名稱。
 
-減少記憶體使用量 （也就是訊息所使用的記憶體數量） 訊息的物件也可以改善效能。 例如，如果的全套`int`不需要`short`或`byte`可以改為使用。
+減少 message 物件的記憶體使用量（也就是訊息使用的記憶體數量）也可以改善效能。 例如，如果不需要 `int` 的完整範圍，就可以改用 `short` 或 `byte`。
 
-由於訊息會儲存在伺服器記憶體中，進而減少訊息大小的訊息匯流排也可以處理伺服器的記憶體問題。
+由於訊息會儲存在伺服器記憶體的訊息匯流排中，因此減少訊息的大小也可以解決伺服器記憶體的問題。
 
 <a id="tuning"></a>
 
-### <a name="tuning-your-signalr-server-for-performance"></a>微調 SignalR 伺服器效能
+### <a name="tuning-your-signalr-server-for-performance"></a>調整 SignalR 伺服器的效能
 
-下列組態設定可用來微調您的伺服器中的 SignalR 應用程式更佳的效能。 如需如何在 ASP.NET 應用程式中改善效能的一般資訊，請參閱[提升 ASP.NET 效能](https://msdn.microsoft.com/library/ff647787.aspx)。
+下列設定可用於微調伺服器，以在 SignalR 應用程式中獲得更佳的效能。 如需如何在 ASP.NET 應用程式中改善效能的一般資訊，請參閱[改善 ASP.NET 效能](https://msdn.microsoft.com/library/ff647787.aspx)。
 
-**SignalR 組態設定**
+**SignalR 設定**
 
-- **DefaultMessageBufferSize**:根據預設，SignalR 會保留在記憶體中每個連線的中樞每 1000 則訊息。 如果使用大型訊息時，這可能會產生記憶體問題可以降低此值可以緩解這些問題。 這項設定可以在中設定`Application_Start`事件處理常式在 ASP.NET 應用程式，或`Configuration`的 OWIN 啟動類別中的自我裝載的應用程式的方法。 下列範例示範如何減少此值，以降低您的應用程式，以降低伺服器使用的記憶體數量的記憶體使用量：
+- **DefaultMessageBufferSize**：根據預設，SignalR 會每個連線在每個中樞的記憶體中保留1000訊息。 如果使用的是大型訊息，這可能會造成記憶體問題，藉由減少此值來緩解。 這項設定可在 ASP.NET 應用程式的 `Application_Start` 事件處理常式中設定，或在自我裝載應用程式中 OWIN 啟動類別的 `Configuration` 方法中設定。 下列範例示範如何減少此值，以減少應用程式的記憶體使用量，以減少使用的伺服器記憶體量：
 
-    **.NET 伺服器程式碼在 Global.asax 中的減少預設的訊息緩衝區大小**
+    **Global.asax 中的 .NET server 程式碼，以減少預設的訊息緩衝區大小**
 
     [!code-csharp[Main](signalr-performance/samples/sample3.cs)]
 
-**IIS 組態設定**
+**IIS 設定**
 
-- **每個應用程式的最大並行要求**:增加並行的 IIS 要求將會增加可用的服務要求的伺服器資源。 預設值為 5000。若要增加此設定，請在提升權限的命令提示字元執行下列命令：
+- **每個應用程式的並行要求數上限**：增加同時 IIS 要求的數目會增加可用來提供要求的伺服器資源。 預設值為 5000;若要增加這項設定，請在提升許可權的命令提示字元中執行下列命令：
 
     [!code-console[Main](signalr-performance/samples/sample4.cmd)]
 
-**ASP.NET 組態設定**
+**ASP.NET 設定**
 
-本節包含可在設定的組態設定`aspnet.config`檔案。 這個檔案位於其中一個位置，根據平台：
+本節包含可以在 `aspnet.config` 檔案中設定的配置設定。 此檔案可在下列兩個位置的其中一個找到，視平臺而定：
 
 - `%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet.config`
 - `%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet.config`
 
 可能會改善 SignalR 效能的 ASP.NET 設定包括下列各項：
 
-- **每一 CPU 的最大並行要求**:增加此設定，可能有助於解決效能瓶頸。 若要增加此設定，新增下列組態設定加入`aspnet.config`檔案：
+- **每一 CPU 的並行要求數上限**：增加此設定可減輕效能瓶頸。 若要增加此設定，請將下列設定新增至 `aspnet.config` 檔案：
 
     [!code-xml[Main](signalr-performance/samples/sample5.xml?highlight=4)]
-- **要求佇列限制**:當連線總數超過`maxConcurrentRequestsPerCPU`設定時，ASP.NET 會開始節流使用佇列的要求。 若要增加佇列的大小，您可以增加`requestQueueLimit`設定。 若要這樣做，請新增下列組態設定加入`processModel`中的節點`config/machine.config`(而非`aspnet.config`):
+- **要求佇列限制**：當連線總數超過 `maxConcurrentRequestsPerCPU` 設定時，ASP.NET 會開始使用佇列來節流要求。 若要增加佇列的大小，您可以增加 [`requestQueueLimit`] 設定。 若要這麼做，請將下列設定設為 `config/machine.config` 中的 `processModel` 節點（而不是 `aspnet.config`）：
 
     [!code-xml[Main](signalr-performance/samples/sample6.xml)]
 
@@ -104,118 +104,118 @@ SignalR 效能和調整的近期簡報，請參閱 <<c0> [ 調整與 ASP.NET Sig
 
 ## <a name="troubleshooting-performance-issues"></a>針對效能問題進行疑難排解
 
-本章節描述如何在您的應用程式中，找出效能瓶頸。
+本節說明在您的應用程式中找出效能瓶頸的方式。
 
-### <a name="verifying-that-websocket-is-being-used"></a>驗證正在使用 WebSocket
+### <a name="verifying-that-websocket-is-being-used"></a>正在驗證是否正在使用 WebSocket
 
-雖然 SignalR 可以使用各種傳輸用戶端與伺服器之間的通訊，WebSocket 提供顯著的優勢，並應在用戶端和伺服器支援它。 若要判斷您的用戶端和伺服器是否符合 WebSocket 的需求，請參閱[傳輸和後援](../getting-started/introduction-to-signalr.md#transports)。 若要判斷何種傳輸正用於您的應用程式，您可以使用瀏覽器的開發人員工具，，並檢查記錄，以查看所使用的傳輸用於連接。 如需使用瀏覽器的開發工具，在 Internet Explorer 和 Chrome 中的資訊，請參閱[傳輸和後援](../getting-started/introduction-to-signalr.md#transports)。
+雖然 SignalR 可以使用各種傳輸來進行用戶端與伺服器之間的通訊，但 WebSocket 提供了顯著的效能優勢，如果用戶端和伺服器支援，則應使用它們。 若要判斷您的用戶端和伺服器是否符合 WebSocket 的需求，請參閱[傳輸和回退](../getting-started/introduction-to-signalr.md#transports)。 若要判斷應用程式中所使用的傳輸為何，您可以使用瀏覽器開發人員工具，並檢查記錄檔，以查看連接所使用的傳輸。 如需在 Internet Explorer 和 Chrome 中使用瀏覽器開發工具的相關資訊，請參閱[傳輸和回退](../getting-started/introduction-to-signalr.md#transports)。
 
 <a id="perfcounters"></a>
 
 ## <a name="using-signalr-performance-counters"></a>使用 SignalR 效能計數器
 
-本節說明如何啟用和使用 SignalR 效能計數器、 位於`Microsoft.AspNet.SignalR.Utils`封裝。
+本節說明如何啟用和使用 `Microsoft.AspNet.SignalR.Utils` 封裝中找到的 SignalR 效能計數器。
 
-### <a name="installing-signalrexe"></a>安裝 signalr.exe
+### <a name="installing-signalrexe"></a>安裝 signalr
 
-效能計數器可以加入至使用稱為 SignalR.exe 的公用程式的伺服器。 若要安裝此公用程式，請遵循下列步驟：
+您可以使用稱為 SignalR 的公用程式，將效能計數器新增至伺服器。 若要安裝此公用程式，請遵循下列步驟：
 
-1. 在 Visual Studio 中，選取**工具** > **NuGet 套件管理員** > **管理方案的 NuGet 套件**
-2. 搜尋**signalr.utils**，並選取 [安裝]。
+1. 在 Visual Studio 中，選取 [**工具**] [ > **nuget 套件管理員**] > [**管理解決方案的 nuget 套件**]
+2. 搜尋**signalr utils**，然後選取 [安裝]。
 
     ![](signalr-performance/_static/image1.png)
-3. 接受授權合約，來安裝封裝。
-4. SignalR.exe 將會安裝成`<project folder>/packages/Microsoft.AspNet.SignalR.Utils.<version>/tools`。
+3. 接受授權合約以安裝套件。
+4. SignalR 會安裝到 `<project folder>/packages/Microsoft.AspNet.SignalR.Utils.<version>/tools`。
 
-### <a name="installing-performance-counters-with-signalrexe"></a>使用 SignalR.exe 安裝效能計數器
+### <a name="installing-performance-counters-with-signalrexe"></a>使用 SignalR 安裝效能計數器
 
-若要安裝 SignalR 效能計數器，請在提升權限的命令提示字元使用下列參數執行 SignalR.exe:
+若要安裝 SignalR 效能計數器，請在提升許可權的命令提示字元中，使用下列參數執行 SignalR：
 
 [!code-console[Main](signalr-performance/samples/sample7.cmd)]
 
-若要移除 SignalR 效能計數器，請在提升權限的命令提示字元使用下列參數執行 SignalR.exe:
+若要移除 SignalR 效能計數器，請在提升許可權的命令提示字元中，使用下列參數執行 SignalR：
 
 [!code-console[Main](signalr-performance/samples/sample8.cmd)]
 
 ### <a name="signalr-performance-counters"></a>SignalR 效能計數器
 
-公用程式封裝會安裝下列效能計數器。 自從最後一個應用程式集區或伺服器重新啟動之後，「 總計 」 計數器會測量事件的數目。
+公用程式套件會安裝下列效能計數器。 「總計」計數器會測量自上一個應用程式集區或伺服器重新開機之後的事件數目。
 
-**連線計量**
+**連接計量**
 
-下列度量會測量所發生的連線存留期事件。 如需詳細資訊，請參閱 <<c0> [ 了解和處理連線存留期事件](../guide-to-the-api/handling-connection-lifetime-events.md)。
+下列計量會測量發生的連線存留期事件。 如需詳細資訊，請參閱[瞭解和處理連接存留期事件](../guide-to-the-api/handling-connection-lifetime-events.md)。
 
-- **連線的連線**
-- **重新連線的連線**
-- **連線已中斷連線**
-- **目前的連線**
+- **連接的連線**
+- **連接重新連接**
+- **連線中斷連接**
+- **目前的連線數**
 
 **訊息計量**
 
-下列度量會測量產生 SignalR 的訊息流量。
+下列計量會測量 SignalR 所產生的訊息流量。
 
-- **已接收連線的郵件總數**
-- **連接訊息已傳送總數**
-- **連接訊息 Received/Sec**
-- **連線的訊息傳送/秒**
+- **已接收的連接訊息總數**
+- **已傳送的連接訊息總數**
+- **接收的連接訊息數/秒**
+- **傳送的連接訊息數/秒**
 
 **訊息匯流排計量**
 
-下列度量會測量流量通過內部 SignalR 訊息匯流排，位於所有傳入和傳出的 SignalR 訊息的佇列。 訊息**已發佈**當它是傳送或廣播。 A**訂閱者**在此內容是在訊息匯流排上的訂用帳戶，這應該符合用戶端，再加上伺服器本身的數目。 **配置的背景工作角色**是一種元件，將資料傳送至作用中連線;**忙碌的背景工作角色**是指是否主動傳送一則訊息。
+下列計量會測量透過內部 SignalR 訊息匯流排的流量，這是放置所有傳入和傳出 SignalR 訊息的佇列。 訊息會在傳送或廣播時**發行**。 此內容中的**訂閱者**是訊息匯流排上的訂用帳戶;這應該等於用戶端的數目加上伺服器本身。 配置的背景**工作**是將資料傳送至使用中連線的元件;**忙碌的工作者**就是主動傳送訊息的背景工作。
 
-- **訊息匯流排的訊息接收的總計**
-- **訊息匯流排的訊息數/秒**
-- **已發佈的訊息匯流排訊息總計**
-- **訊息匯流排郵件發佈數/秒**
-- **目前的訊息匯流排的訂閱者**
-- **訊息匯流排的訂閱者總數**
-- **訊息匯流排的訂閱者/Sec**
-- **訊息匯流排配置的背景工作角色**
-- **訊息匯流排忙碌的背景工作角色**
-- **目前的訊息匯流排的主題**
+- **訊息匯流排接收的訊息總數**
+- **訊息匯流排接收訊息數/秒**
+- **訊息匯流排訊息已發佈總數**
+- **已發佈的訊息匯流排訊息數/秒**
+- **訊息匯流排訂閱者目前**
+- **訊息匯流排訂閱者總數**
+- **訊息匯流排訂閱者/秒**
+- **訊息匯流排配置的背景工作**
+- **訊息匯流排忙碌工作者**
+- **訊息匯流排主題目前**
 
-**誤差度量**
+**錯誤計量**
 
-下列度量會測量 SignalR 訊息傳輸所產生的錯誤。 **中樞解析**中樞或中樞方法無法解析時，會發生錯誤。 **中樞叫用**錯誤是在叫用中樞方法時擲回的例外狀況。 **傳輸**錯誤是在 HTTP 要求或回應期間擲回的連線錯誤。
+下列計量會測量 SignalR 訊息流量所產生的錯誤。 無法解析中樞或中樞方法時，會發生**中樞解析**錯誤。 **中樞調用**錯誤是叫用中樞方法時擲回的例外狀況。 **傳輸**錯誤是在 HTTP 要求或回應期間擲回的連接錯誤。
 
 - **錯誤：所有總計**
-- **錯誤：All/Sec**
+- **錯誤：全部/秒**
 - **錯誤：中樞解析總計**
-- **錯誤：每秒中樞解析**
-- **錯誤：中樞叫用總數**
-- **錯誤：Hub Invocation/Sec**
-- **錯誤：傳輸的總數**
+- **錯誤：中樞解析/秒**
+- **錯誤：中樞調用總數**
+- **錯誤：中樞調用/秒**
+- **錯誤：傳輸總數**
 - **錯誤：傳輸/秒**
 
 **向外延展計量**
 
-下列度量會測量流量和向外延展提供者所產生的錯誤。 A **Stream**在此內容中向外延展提供者所使用的縮放單位; 這是資料表，如果使用 SQL Server、 使用服務匯流排時，如果某個主題和訂用帳戶如果使用 Redis。 根據預設，只有一個資料流使用，但可增加透過 SQL Server 和服務匯流排的組態。 A**緩衝處理**資料流是已進入錯誤的狀態; 當資料流處於錯誤狀態，所有傳送至後擋板的訊息將會失敗，資料流不會再判定為失敗之前，立即。 **傳送佇列長度**是張貼但尚未傳送的訊息數目。
+下列計量會測量向外延展提供者所產生的流量和錯誤。 此內容中的**資料流程**是向外延展提供者所使用的縮放單位;這是使用 SQL Server 時的資料表、使用服務匯流排的主題，以及使用 Redis 的訂用帳戶。 根據預設，只會使用一個資料流程，但可透過 SQL Server 和服務匯流排上的設定來增加。 **緩衝**資料流程是進入錯誤狀態的一個，當資料流程處於「錯誤」狀態時，所有傳送至後擋板的訊息都會立即失敗，直到資料流程不再出錯為止。 **傳送佇列長度**是已張貼但尚未傳送的郵件數目。
 
-- **範圍外訊息匯流排的訊息數/秒**
-- **向外延展資料流總數**
-- **向外延展資料流開啟**
-- **向外延展資料流緩衝**
-- **範圍外錯誤總數**
-- **範圍外錯誤數/秒**
-- **範圍外傳送佇列長度**
+- **向外延展接收的訊息匯流排訊息數/秒**
+- **向外延展資料流程總計**
+- **開啟的向外延展資料流程**
+- **向外延展串流緩衝處理**
+- **向外延展錯誤總數**
+- **向外延展錯誤數/秒**
+- **向外延展傳送佇列長度**
 
-如需有關這些計數器會測量的詳細資訊，請參閱[SignalR 向外延展與 Azure 服務匯流排](scaleout-with-windows-azure-service-bus.md)。
+如需這些計數器測量之內容的詳細資訊，請參閱[SignalR 向外延展 with Azure 服務匯流排](scaleout-with-windows-azure-service-bus.md)。
 
 <a id="othercounters"></a>
 
-## <a name="using-other-performance-counters"></a>使用其他的效能計數器
+## <a name="using-other-performance-counters"></a>使用其他效能計數器
 
-下列效能計數器也可能在監視應用程式的效能很有用。
+下列效能計數器可能也有助於監視應用程式的效能。
 
 **記憶體**
 
-- .NET CLR 記憶體中的位元組數全部堆積 （w3wp)
+- 所有堆積中的 .NET CLR 記憶體 # 位元組（適用于 w3wp.exe）
 
 **ASP.NET**
 
-- Asp.net\requests Current
-- ASP.NET\Queued
-- ASP.NET\Rejected
+- ASP. NET\Requests Current
+- ASP. NET\Queued
+- ASP. NET\Rejected
 
 **CPU**
 
@@ -223,25 +223,25 @@ SignalR 效能和調整的近期簡報，請參閱 <<c0> [ 調整與 ASP.NET Sig
 
 **TCP/IP**
 
-- Tcpv6-已/建立的連接
-- TCPv4/建立的連接
+- 已建立 TCPv6/Connections
+- 已建立 Tcpv4 已/Connections
 
 **Web 服務**
 
-- Web Service\Current Connections
-- Web Service\Maximum Connections
+- Web Service\current connections 連接
+- Web Service\Maximum 連接
 
 **執行緒處理**
 
-- .NET CLR LocksAndThreads\#個目前的邏輯執行緒
-- .NET CLR LocksAnd 執行緒\#的目前實體的執行緒
+- 目前邏輯執行緒\# 的 .NET CLR LocksAndThreads
+- 目前實體執行緒\# 的 .NET CLR LocksAnd 執行緒
 
 <a id="otherresources"></a>
 
 ## <a name="other-resources"></a>其他資源
 
-如需有關 ASP.NET 的效能監視和調整的詳細資訊，請參閱下列主題：
+如需有關 ASP.NET 效能監視和微調的詳細資訊，請參閱下列主題：
 
 - [ASP.NET 效能概觀](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
-- [IIS 7.5，IIS 7.0 和 IIS 6.0 的 ASP.NET 執行緒用法](https://blogs.msdn.com/b/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)
-- [&lt;applicationPool&gt;項目 （Web 設定）](https://msdn.microsoft.com/library/dd560842.aspx)
+- [在 IIS 7.5、IIS 7.0 和 IIS 6.0 上 ASP.NET 執行緒使用方式](https://blogs.msdn.com/b/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)
+- [&lt;applicationPool&gt; 元素（Web 設定）](https://msdn.microsoft.com/library/dd560842.aspx)

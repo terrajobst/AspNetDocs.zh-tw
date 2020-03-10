@@ -9,11 +9,11 @@ ms.assetid: 2086cb1a-ab78-49ae-9c0b-03891c69776a
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 110ee08f1d0707664ef6268f34ceab9da30a3e61
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74589989"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78610191"
 ---
 # <a name="adding-validation-controls-to-the-editing-and-inserting-interfaces-c"></a>將驗證控制項新增至編輯和插入介面 (C#)
 
@@ -33,7 +33,7 @@ ms.locfileid: "74589989"
 
 在本教學課程中，我們將瞭解如何輕鬆地將驗證控制項新增至 TemplateField 的 `EditItemTemplate`，並 `InsertItemTemplate` 以提供更可靠的使用者介面。 具體來說，本教學課程會採用在[檢查與插入、更新和刪除教學課程相關聯的事件](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)中所建立的範例，並增強編輯和插入介面以包含適當的驗證。
 
-## <a name="step-1-replicating-the-example-fromexamining-the-events-associated-with-inserting-updating-and-deletingexamining-the-events-associated-with-inserting-updating-and-deleting-csmd"></a>步驟1：複寫範例，[以檢查與插入、更新和刪除相關聯的事件](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)
+## <a name="step-1-replicating-the-example-fromexamining-the-events-associated-with-inserting-updating-and-deleting"></a>步驟1：複寫範例，[以檢查與插入、更新和刪除相關聯的事件](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)
 
 在[檢查與插入、更新和刪除教學課程相關聯的事件中，](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)我們建立了一個頁面，其中列出了可編輯 GridView 中產品的名稱和價格。 此外，此頁面包含一個 DetailsView，其 `DefaultMode` 屬性設定為 `Insert`，因此一律以插入模式呈現。 在此 DetailsView 中，使用者可以輸入新產品的名稱和價格，按一下 [插入]，並將它新增至系統（請參閱 [圖 1]）。
 

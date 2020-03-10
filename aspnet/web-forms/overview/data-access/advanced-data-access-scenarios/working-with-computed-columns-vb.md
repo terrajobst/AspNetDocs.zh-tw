@@ -9,11 +9,11 @@ ms.assetid: 5811b8ff-ed56-40fc-9397-6b69ae09a8f6
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-vb
 msc.type: authoredcontent
 ms.openlocfilehash: e425d7363c2cdea6efb0ba51f3fc2b6a5330bf2a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74603122"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78524483"
 ---
 # <a name="working-with-computed-columns-vb"></a>使用計算資料行 (VB)
 
@@ -101,7 +101,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要自己加入�
 
 **圖 4**：自訂自動產生的預存程式名稱（[按一下以查看完整大小的影像](working-with-computed-columns-vb/_static/image12.png)）
 
-下一個 [wizard] 步驟可讓我們命名 TableAdapter s 方法，並指定用來存取和更新資料的模式。 將這三個核取方塊保持核取狀態，但將 `GetData` 方法重新命名為 `GetSuppliers`。 按一下 [完成] 以完成精靈。
+下一個 [wizard] 步驟可讓我們命名 TableAdapter s 方法，並指定用來存取和更新資料的模式。 將這三個核取方塊保持核取狀態，但將 `GetData` 方法重新命名為 `GetSuppliers`。 按一下 [完成] 完成精靈。
 
 [![將 GetSuppliers 方法重新命名為](working-with-computed-columns-vb/_static/image14.png)](working-with-computed-columns-vb/_static/image13.png)
 
@@ -128,7 +128,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要自己加入�
 
 **圖 6**：執行 TableAdapter s 設定向導來更新 DataTable 的資料行（[按一下以查看完整大小的影像](working-with-computed-columns-vb/_static/image18.png)）
 
-按一下 [完成] 以完成精靈。 這會自動將對應的資料行新增至 `SuppliersDataTable`。 TableAdapter wizard 非常聰明，可以偵測 `FullContactName` 的資料行是計算資料行，因此是唯讀的。 因此，它會將資料行的 `ReadOnly` 屬性設定為 `true`。 若要確認這一點，請從 `SuppliersDataTable` 中選取資料行，然後移至屬性視窗（請參閱 [圖 7]）。 請注意，`FullContactName` 資料行 `DataType` 和 `MaxLength` 屬性也會據此進行設定。
+按一下 [完成] 完成精靈。 這會自動將對應的資料行新增至 `SuppliersDataTable`。 TableAdapter wizard 非常聰明，可以偵測 `FullContactName` 的資料行是計算資料行，因此是唯讀的。 因此，它會將資料行的 `ReadOnly` 屬性設定為 `true`。 若要確認這一點，請從 `SuppliersDataTable` 中選取資料行，然後移至屬性視窗（請參閱 [圖 7]）。 請注意，`FullContactName` 資料行 `DataType` 和 `MaxLength` 屬性也會據此進行設定。
 
 [![FullContactName 資料行標示為唯讀](working-with-computed-columns-vb/_static/image20.png)](working-with-computed-columns-vb/_static/image19.png)
 
@@ -160,7 +160,7 @@ Northwind 資料庫沒有任何計算資料行，因此我們需要自己加入�
 
 **圖 10**：將 TableAdapter 方法命名 `FillBySupplierID` 並 `GetSupplierBySupplierID` （[按一下以查看完整大小的影像](working-with-computed-columns-vb/_static/image30.png)）
 
-按一下 [完成] 以完成精靈。
+按一下 [完成] 完成精靈。
 
 ## <a name="step-6-creating-the-business-logic-layer"></a>步驟6：建立商務邏輯層
 

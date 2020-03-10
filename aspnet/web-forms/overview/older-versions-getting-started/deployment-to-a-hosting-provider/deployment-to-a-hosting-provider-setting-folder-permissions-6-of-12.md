@@ -9,11 +9,11 @@ ms.assetid: cd03a188-e947-4f55-9bda-b8bce201d8c6
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12
 msc.type: authoredcontent
 ms.openlocfilehash: 85a77a196cf3458bbb2e6308838a846936cd070b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74633552"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78630505"
 ---
 # <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-setting-folder-permissions---6-of-12"></a>使用 Visual Studio 或 Visual Web Developer SQL Server Compact 部署 ASP.NET Web 應用程式：設定資料夾許可權-6/12
 
@@ -73,7 +73,7 @@ ms.locfileid: "74633552"
 
 您現在已完成所有必要的工作，讓 Contoso 大學能夠在本機電腦上的 IIS 中正常運作。 在下一個教學課程中，您會將網站部署至主機服務提供者，使其可公開使用。
 
-## <a name="more-information"></a>更多資訊
+## <a name="more-information"></a>詳細資訊
 
 在此範例中，為什麼 Elmah 無法儲存記錄檔的原因相當明顯。 在問題原因不明顯的情況下，您可以使用 IIS 追蹤;請參閱 IIS.net 網站上的[在 IIS 7 中使用追蹤疑難排解失敗的要求](https://www.iis.net/learn/troubleshoot/using-failed-request-tracing/troubleshooting-failed-requests-using-tracing-in-iis)。
 

@@ -1,232 +1,232 @@
 ---
 uid: single-page-application/overview/introduction/knockoutjs-template
-title: 單一頁面應用程式：KnockoutJS 範本 |Microsoft Docs
+title: 單一頁面應用程式： KnockoutJS 範本 |Microsoft Docs
 author: MikeWasson
-description: Knockout 範本
+description: 挖的範本
 ms.author: riande
 ms.date: 01/30/2013
 ms.assetid: f9c07af0-4b20-4b08-af8f-47fc3df169a2
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
 ms.openlocfilehash: 3a551db1caa9636eb7f2e04c287d3ef371263584
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113447"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78578691"
 ---
-# <a name="single-page-application-knockoutjs-template"></a>單一頁面應用程式：KnockoutJS 範本
+# <a name="single-page-application-knockoutjs-template"></a>單一頁面應用程式： KnockoutJS 範本
 
-藉由[Mike Wasson](https://github.com/MikeWasson)
+由[Mike Wasson](https://github.com/MikeWasson)
 
-> Knockout MVC 範本屬於 ASP.NET 和 Web 工具 2012.2
+> 挖的 MVC 範本是 ASP.NET 和 Web 工具2012.2 的一部分
 > 
-> [下載 ASP.NET 和 Web 工具 2012.2](https://go.microsoft.com/fwlink/?LinkId=282650)
+> [下載 ASP.NET 和 Web 工具2012。2](https://go.microsoft.com/fwlink/?LinkId=282650)
 
-ASP.NET 和 Web 工具 2012.2 更新包含 ASP.NET MVC 4 單一頁面應用程式 (SPA) 範本。 此範本被設計來協助您開始快速建置互動式用戶端 web 應用程式。
+ASP.NET 和 Web 工具2012.2 更新包含適用于 ASP.NET MVC 4 的單一頁面應用程式（SPA）範本。 此範本的設計目的是讓您快速開始建立互動式用戶端 web 應用程式。
 
-「 單一頁面應用程式 」 (SPA) 是載入單一 HTML 頁面，並以動態方式，而不是載入新的頁面更新頁面的 web 應用程式的一般詞彙。 在初始網頁載入後，SPA 會與透過 AJAX 要求的伺服器。
+「單頁應用程式」（SPA）是 web 應用程式的一般詞彙，它會載入單一 HTML 頁面，然後動態更新頁面，而不是載入新的頁面。 載入初始頁面之後，SPA 會透過 AJAX 要求與伺服器交談。
 
 ![](knockoutjs-template/_static/image1.png)
 
-AJAX 是新奇，但今天很輕鬆地建置及維護的大型複雜的 SPA 應用程式的 JavaScript 架構。 此外，html5 和 css3 等讓您更輕鬆地建立豐富的 Ui。
+AJAX 是新的，但目前有 JavaScript 架構，可讓您更輕鬆地建立和維護大型的 SPA 應用程式。 此外，HTML 5 和 CSS3 可讓您更輕鬆地建立豐富的 Ui。
 
-若要開始，SPA 範本會建立 「 待辦事項清單 」 應用程式範例。 在本教學課程中，我們將帶導覽的範本。 第一次我們將查看待辦事項清單應用程式本身，並檢查技術項目，讓它運作。
+為了讓您開始使用，SPA 範本會建立範例「待辦事項清單」應用程式。 在本教學課程中，我們將引導您進行範本的導覽。 首先，我們將探討待辦事項清單應用程式本身，然後檢查使其正常工作的技術部分。
 
-## <a name="create-a-new-spa-template-project"></a>建立新的 SPA 專案範本
+## <a name="create-a-new-spa-template-project"></a>建立新的 SPA 範本專案
 
 需求：
 
-- Visual Studio 2012 or Visual Studio Express 2012 for Web
-- ASP.NET Web 工具 2012.2 更新。 您可以安裝更新[此處](https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=ASPDOTNETandWebTools2012_2)。
+- 適用于 Web 的 Visual Studio 2012 或 Visual Studio Express 2012
+- ASP.NET Web 工具2012.2 更新。 您可以在[這裡](https://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=ASPDOTNETandWebTools2012_2)安裝更新。
 
-啟動 Visual Studio，然後選取**新的專案**從 [開始] 頁面。 或從**檔案**功能表上，選取**新增**，然後**專案**。
+啟動 Visual Studio，然後從 [開始] 頁面選取 [**新增專案**]。 或者，**從 [檔案**] 功能表選取 [**新增**]，然後選取 [**專案**]。
 
-在 **範本**窗格中，選取**已安裝的範本**展開**Visual C#** 節點。 底下**Visual C#** ，選取**Web**。 在專案範本清單中，選取**ASP.NET MVC 4 Web 應用程式**。 將專案命名，然後按一下**確定**。
+在 [**範本**] 窗格中，選取 [**已安裝的範本**]，然後展開 **C#視覺效果**節點。 在 **[ C#視覺效果**] 底下，選取 [ **Web**]。 在專案範本清單中，選取 [ **ASP.NET MVC 4 Web 應用程式**]。 為專案命名，然後按一下 [確定]。
 
 ![](knockoutjs-template/_static/image2.png)
 
-在 **新的專案**精靈中，選取**單一頁面應用程式**。
+在 [**新增專案**] 中，選取 [**單一頁面應用程式**]。
 
 ![](knockoutjs-template/_static/image3.png)
 
-按 F5 鍵建置並執行應用程式。 當第一次執行應用程式時，它會顯示登入畫面。
+按 F5 鍵建置並執行應用程式。 當應用程式第一次執行時，它會顯示登入畫面。
 
 ![](knockoutjs-template/_static/image4.png)
 
-按一下 &quot;註冊&quot;連結，並建立新的使用者。
+按一下 [&quot;註冊&quot;] 連結，並建立新的使用者。
 
 ![](knockoutjs-template/_static/image5.png)
 
-登入之後，應用程式會建立預設待辦事項清單與兩個項目。 您可以按一下 [新增待辦事項清單] 以新增新的清單。
+在您登入之後，應用程式會建立含有兩個專案的預設待辦事項清單。 您可以按一下 [新增待辦事項清單] 來加入新的清單。
 
 ![](knockoutjs-template/_static/image6.png)
 
-重新命名清單、 將項目加入清單中，並取消選取這些工作。 您也可以刪除項目，或刪除整個清單。 所做的變更會自動保存至伺服器上的資料庫 (實際 LocalDB 到目前為止，因為您在本機執行應用程式)。
+重新命名清單、將專案新增至清單，然後將它們簽核。 您也可以刪除專案或刪除整個清單。 這些變更會自動儲存到伺服器上的資料庫（此時會實際為 LocalDB，因為您是在本機執行應用程式）。
 
 ![](knockoutjs-template/_static/image7.png)
 
 ## <a name="architecture-of-the-spa-template"></a>SPA 範本的架構
 
-下圖顯示應用程式的主要建置組塊。
+下圖顯示應用程式的主要組建區塊。
 
 ![](knockoutjs-template/_static/image8.png)
 
-在伺服器端，ASP.NET MVC 提供 HTML，並也會處理表單型驗證。
+在伺服器端，ASP.NET MVC 會提供 HTML，並處理以表單為基礎的驗證。
 
-ASP.NET Web API 會處理與 ToDoLists 和 ToDoItems，包括取得、 建立、 更新及刪除相關的所有要求。 用戶端會交換使用 Web API 以 JSON 格式的資料。
+ASP.NET Web API 會處理與 ToDoLists 和 ToDoItems 相關的所有要求，包括取得、建立、更新和刪除。 用戶端會使用 JSON 格式的 Web API 來交換資料。
 
-Entity Framework (EF) 是 O/RM 層。 它會調解物件導向的世界的 ASP.NET 和基礎資料庫之間。 資料庫使用 LocalDB，但您可以變更這個 Web.config 檔案中。 通常您會使用 LocalDB，適用於本機開發，並接著部署至 SQL 資料庫的伺服器上，使用 EF code first 移轉。
+Entity Framework （EF）是 O/RM 層。 它會在 ASP.NET 的物件導向世界和基礎資料庫之間進行協調。 資料庫使用 LocalDB，但是您可以在 web.config 檔案中變更此設定。 通常您會使用 LocalDB 進行本機開發，然後使用 EF code first 的遷移，部署到伺服器上的 SQL database。
 
-在用戶端上，Knockout.js 程式庫會處理從 AJAX 要求的網頁更新。 Knockout 與最新的資料同步處理頁面使用資料繫結。 如此一來，您不需要撰寫任何程式碼，逐步解說的 JSON 資料，並更新 DOM 相反地，您將宣告式屬性放在告訴 Knockout 如何將資料呈現的 HTML。
+在用戶端上，挖的 .js 程式庫會處理來自 AJAX 要求的頁面更新。 [挖加] 會使用資料系結來同步處理頁面與最新的資料。 如此一來，您就不需要撰寫任何逐步解說 JSON 資料並更新 DOM 的程式碼。 相反地，您會將宣告式屬性放在 HTML 中，告訴您如何呈現資料。
 
-此架構中的一大優點是，它會區隔展示層與應用程式邏輯。 您可以建立的 Web API 的部分，而不需要知道任何關於您的網頁的外觀。 在用戶端，您必須建立 「 檢視模型 」 來表示該資料，並檢視模型使用 Knockout 繫結至 HTML。 可讓您輕鬆地變更 HTML，而不需要變更檢視模型。 （我們將探討 Knockout 稍待片刻。）
+此架構的其中一項優點是，它會將展示層與應用程式邏輯隔開。 您可以建立 Web API 部分，而不需要知道網頁的外觀。 在用戶端上，您可以建立「視圖模型」來表示該資料，而視圖模型會使用「挖結」來系結至 HTML。 這可讓您輕鬆地變更 HTML，而不需要變更視圖模型。 （我們稍後會探討挖起來）。
 
 ## <a name="models"></a>模型
 
-在 Visual Studio 專案中，於 Models 資料夾會包含伺服器端所使用的模型。 （用戶端上還有模型，我們會）。
+在 Visual Studio 專案中，[模型] 資料夾包含伺服器端所使用的模型。 （用戶端上也有模型，我們將會取得）。
 
 ![](knockoutjs-template/_static/image9.png)
 
-**TodoItem TodoList**
+**TodoItem、TodoList**
 
-這些是 Entity Framework Code First 的資料庫模型。 請注意，這些模型屬性，指向彼此。 `ToDoList` 包含的 ToDoItems，和每個集合`ToDoItem`ToDoList 其父代參考。 這些屬性稱為導覽屬性，以及它們在待辦事項清單，以及其待辦事項項目代表一個對多關聯性。
+這些是 Entity Framework Code First 的資料庫模型。 請注意，這些模型具有指向彼此的屬性。 `ToDoList` 包含 ToDoItems 的集合，而且每個 `ToDoItem` 都有其父 ToDoList 的參考。 這些屬性稱為「導覽屬性」，它們代表待辦事項清單和其待辦專案的一對多關聯性。
 
-`ToDoItem`類別也會使用 **[ForeignKey]** 屬性來指定`ToDoListId`為外部索引鍵到`ToDoList`資料表。 這會告知 EF 來將外部索引鍵條件約束加入至資料庫。
+`ToDoItem` 類別也會使用 **[ForeignKey]** 屬性，指定 `ToDoListId` 是 `ToDoList` 資料表的外鍵。 這會告訴 EF 將外鍵條件約束加入至資料庫。
 
 [!code-csharp[Main](knockoutjs-template/samples/sample1.cs)]
 
-**TodoItemDto TodoListDto**
+**TodoItemDto, TodoListDto**
 
-這些類別會定義將會傳送至用戶端的資料。 "DTO"代表 「 資料傳輸物件 」。 DTO 會定義實體序列化為 JSON 的方式。 一般情況下，有幾個原因會使用 Dto:
+這些類別會定義將傳送至用戶端的資料。 「DTO」代表「資料傳輸物件」。 DTO 會定義實體如何序列化為 JSON。 一般來說，使用 Dto 的原因有好幾個：
 
-- 若要控制序列化的屬性。 DTO 可以包含從領域模型屬性的子集。 您可能會基於安全性考量 （若要隱藏敏感資料），或只是執行這可減少您所傳送的資料。
-- 若要變更圖形的資料，例如壓平合併的更複雜的資料結構。
-- 若要保留 DTO （關注點分離） 超出任何商務邏輯。
-- 如果基於某些原因，無法序列化您的網域模型。 比方說，循環參考可能會造成問題時您將有的物件的序列化方式來處理此問題，Web API 中的 (請參閱[處理循環物件參考](../../../web-api/overview/formats-and-model-binding/json-and-xml-serialization.md#handling_circular_object_references)); 但即可使用 DTO 完全避免此問題。
+- 控制要序列化的屬性。 DTO 可以包含來自領域模型的屬性子集。 基於安全性理由，您可能會這麼做（隱藏敏感性資料），或只是要減少您傳送的資料量。
+- 若要變更資料的形狀（例如，將更複雜的資料結構壓平合併）。
+- 若要將任何商務邏輯從 DTO 中排除（關注點分離）。
+- 如果您的網域模型因某些原因而無法序列化。 例如，當您序列化物件時，迴圈參考可能會造成問題，方法是在 Web API 中處理這個問題（請參閱[處理迴圈物件參考](../../../web-api/overview/formats-and-model-binding/json-and-xml-serialization.md#handling_circular_object_references)）。但是，使用 DTO 就完全避免此問題。
 
-SPA 範本，在 Dto 會包含與領域模型相同的資料。 不過，它們是仍然有用，因為它們避免循環參考導覽屬性，並示範一般的 DTO 模式。
+在 SPA 範本中，Dto 包含與網域模型相同的資料。 不過，它們仍然很有用，因為它們會避免導覽屬性中的迴圈參考，並示範一般 DTO 模式。
 
 **AccountModels.cs**
 
-此檔案包含模型的站台成員資格。 `UserProfile`類別定義成員資格資料庫中的使用者設定檔的結構描述。 （在此情況下，唯一的資訊是使用者識別碼和使用者名稱）。此檔案中的其他模型類別用來建立使用者註冊和登入表單。
+此檔案包含網站成員資格的模型。 `UserProfile` 類別會定義成員資格資料庫中使用者設定檔的架構。 （在此案例中，唯一的資訊是使用者識別碼和使用者名稱）。此檔案中的其他模型類別是用來建立使用者註冊和登入表單。
 
 ## <a name="entity-framework"></a>Entity Framework
 
-SPA 範本會使用 EF Code First。 在 Code First 開發中，您定義模型，第一次程式碼中，，然後 EF 使用模型來建立資料庫。 您也可以使用 EF 與現有的資料庫 ([Database First](https://msdn.microsoft.com/data/jj206878.aspx))。
+SPA 範本使用 EF Code First。 在 Code First 開發中，您會先在程式碼中定義模型，然後 EF 會使用模型來建立資料庫。 您也可以使用 EF 搭配現有的資料庫（[Database First](https://msdn.microsoft.com/data/jj206878.aspx)）。
 
-`TodoItemContext` Models 資料夾中的類別衍生自**DbContext**。 這個類別會提供 「 黏附 」 模型與 EF 之間。 `TodoItemContext`保存`ToDoItem`集合和`TodoList`集合。 若要查詢資料庫，只要撰寫 LINQ 查詢，針對這些集合。 例如，以下是選取所有的使用者"Alice"的待辦事項清單：
+[模型] 資料夾中的 `TodoItemContext` 類別衍生自**DbCoNtext**。 這個類別會在模型和 EF 之間提供「粘連」。 `TodoItemContext` 包含 `ToDoItem` 集合和 `TodoList` 集合。 若要查詢資料庫，您只需要針對這些集合撰寫 LINQ 查詢即可。 例如，以下是您可以如何選取使用者 "Alice" 的所有待辦事項清單：
 
 [!code-csharp[Main](knockoutjs-template/samples/sample2.cs)]
 
-也可以將新的項目新增至集合、 更新項目，或從集合中，刪除項目和保存資料庫的變更。
+您也可以將新的專案加入至集合、更新專案或刪除集合中的專案，並將變更保存至資料庫。
 
 ## <a name="aspnet-web-api-controllers"></a>ASP.NET Web API 控制器
 
-在 ASP.NET Web API 中，控制器是處理 HTTP 要求的物件。 如前所述，SPA 範本就會使用 Web API，讓上的 CRUD 作業`ToDoList`和`ToDoItem`執行個體。 在 Controllers 資料夾中的方案位於控制器。
+在 ASP.NET Web API 中，控制器是處理 HTTP 要求的物件。 如前所述，SPA 範本會使用 Web API 來啟用 `ToDoList` 和 `ToDoItem` 實例上的 CRUD 作業。 控制器位於解決方案的 [控制器] 資料夾中。
 
 ![](knockoutjs-template/_static/image10.png)
 
-- `TodoController`：處理 HTTP 要求的待辦事項項目
-- `TodoListController`：處理 HTTP 要求的待辦事項清單。
+- `TodoController`：處理待辦事項的 HTTP 要求
+- `TodoListController`：處理待辦事項清單的 HTTP 要求。
 
-因為 Web API 符合控制器名稱的 URI 路徑，是有意義的這些名稱。 (若要深入了解 Web API 將 HTTP 要求路由至控制器的方式，請參閱[ASP.NET Web API 中的路由](../../../web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api.md)。)
+這些名稱很重要，因為 Web API 會比對 URI 路徑與控制器名稱。 （若要瞭解 Web API 如何將 HTTP 要求路由傳送至控制器，請參閱[ASP.NET Web API 中的路由](../../../web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api.md)）。
 
-讓我們看看`ToDoListController`類別。 它包含一個單一的資料成員：
+讓我們看一下 `ToDoListController` 類別。 它包含單一資料成員：
 
 [!code-csharp[Main](knockoutjs-template/samples/sample3.cs)]
 
-`TodoItemContext`用來與 EF，通訊中，如先前所述。 在控制器上的方法實作的 CRUD 作業。 Web API 會對應至控制器方法，從用戶端的 HTTP 要求，如下所示：
+如先前所述，`TodoItemContext` 用來與 EF 通訊。 控制器上的方法會執行 CRUD 作業。 Web API 會將來自用戶端的 HTTP 要求對應到控制器方法，如下所示：
 
-| HTTP 要求 | 控制器方法 | 描述 |
+| HTTP 要求 | 控制器方法 | 說明 |
 | --- | --- | --- |
 | GET /api/todo | `GetTodoLists` | 取得待辦事項清單的集合。 |
-| GET /api/todo/*id* | `GetTodoList` | 取得待辦事項清單識別碼 |
-| PUT /api/todo/*id* | `PutTodoList` | 更新待辦事項清單。 |
+| 取得/api/todo/*識別碼* | `GetTodoList` | 依識別碼取得待辦事項清單 |
+| PUT/api/todo/*id* | `PutTodoList` | 更新待辦事項清單。 |
 | POST /api/todo | `PostTodoList` | 建立新的待辦事項清單。 |
-| DELETE /api/todo/*id* | `DeleteTodoList` | 刪除待辦事項清單。 |
+| 刪除/api/todo/*識別碼* | `DeleteTodoList` | 刪除待辦事項清單。 |
 
-請注意，某些作業的 Uri 包含的識別碼值的預留位置。 例如，若要刪除以清單識別碼為 42，URI 是`/api/todo/42`。
+請注意，某些作業的 Uri 包含識別碼值的預留位置。 例如，若要刪除識別碼為42的清單，URI 為 `/api/todo/42`。
 
-若要深入了解使用 Web API 的 CRUD 作業，請參閱[建立 Web API 的支援 CRUD 作業](../../../web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations.md)。 此控制器的程式碼就相當簡單。 以下是一些有趣的要點：
+若要深入瞭解如何使用 Web API 進行 CRUD 作業，請參閱[建立支援 Crud 作業的 WEB api](../../../web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations.md)。 此控制器的程式碼相當簡單。 以下是一些有趣的點：
 
-- `GetTodoLists`方法使用 LINQ 查詢來篩選結果的識別碼的登入的使用者。 如此一來，使用者只能看到屬於他或她的資料。 另外，請注意，Select 陳述式用來轉換`ToDoList`執行個體到`TodoListDto`執行個體。
-- PUT 和 POST 方法會檢查之前修改資料庫的模型狀態。 如果**ModelState.IsValid**為 false，這些方法會傳回 HTTP 400 不正確的要求。 深入了解在 Web API 中的模型驗證[模型驗證](../../../web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api.md)。
-- 控制器類別也附有 **[Authorize]** 屬性。 這個屬性會檢查是否已驗證的 HTTP 要求。 如果要求未經過驗證，用戶端收到 HTTP 401 未經授權。 深入了解在驗證[ASP.NET Web API 中驗證和授權](../../../web-api/overview/security/authentication-and-authorization-in-aspnet-web-api.md)。
+- `GetTodoLists` 方法會使用 LINQ 查詢，依據登入使用者的識別碼來篩選結果。 如此一來，使用者只會看到屬於他或她的資料。 另請注意，Select 語句是用來將 `ToDoList` 實例轉換成 `TodoListDto` 實例。
+- PUT 和 POST 方法會先檢查模型狀態，然後再修改資料庫。 如果**ModelState**為 false，則這些方法會傳回 HTTP 400，不正確的要求。 在[模型驗證](../../../web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api.md)中深入瞭解 Web API 中的模型驗證。
+- 控制器類別也會以 **[授權]** 屬性裝飾。 這個屬性會檢查 HTTP 要求是否已驗證。 如果要求未通過驗證，用戶端會收到 HTTP 401 （未經授權）。 [在 ASP.NET Web API 中深入瞭解驗證和授權中](../../../web-api/overview/security/authentication-and-authorization-in-aspnet-web-api.md)的驗證。
 
-`TodoController`類別是非常類似於`TodoListController`。 最大的差異是，它並未定義任何的 GET 方法，因為用戶端會取得待辦事項項目，以及每個待辦事項清單。
+`TodoController` 類別非常類似 `TodoListController`。 最大的差別在於它不會定義任何 GET 方法，因為用戶端會取得待辦事項，以及每個待辦事項清單。
 
-## <a name="mvc-controllers-and-views"></a>MVC 控制器和檢視
+## <a name="mvc-controllers-and-views"></a>MVC 控制器和 Views
 
-MVC 控制站也位於 [控制器] 資料夾的解決方案。 `HomeController` 應用程式的主要 HTML 呈現。 主控制器的檢視被定義在 Views/Home/Index.cshtml。 [首頁] 檢視會呈現不同的內容，根據使用者是否登入：
+MVC 控制器也位於解決方案的 [控制器] 資料夾中。 `HomeController` 呈現應用程式的主要 HTML。 Home 控制器的視圖定義于 Views/Home/Index. cshtml 中。 主視圖會根據使用者是否登入，呈現不同的內容：
 
 [!code-cshtml[Main](knockoutjs-template/samples/sample4.cshtml)]
 
-當使用者登入時，他們會看到主要的 UI。 否則，他們會看到登入面板。 請注意，此條件式呈現的作業會在伺服器端。 永遠不會嘗試隱藏敏感的內容，用戶端上&#8212;HTTP 回應中傳送的任何項目會顯示為監看的未經處理的 HTTP 訊息的任何人。
+當使用者登入時，他們會看到主要 UI。 否則，他們會看到登入面板。 請注意，此條件式轉譯會在伺服器端進行。 永遠不會嘗試在用戶端&#8212;上隱藏機密內容。在此情況中，監看未經處理的 HTTP 訊息的人可以看到您在 HTTP 回應中傳送的任何內容。
 
-## <a name="client-side-javascript-and-knockoutjs"></a>用戶端 JavaScript 和 Knockout.js
+## <a name="client-side-javascript-and-knockoutjs"></a>用戶端 JavaScript 和挖式 .js
 
-現在讓我們將從用戶端應用程式的伺服器端。 SPA 範本會使用 jQuery 和 Knockout.js 的組合，來建立平滑的互動式 UI。 Knockout.js 是 JavaScript 程式庫，可讓您輕鬆地繫結至資料的 HTML。 Knockout.js 使用模式，稱為 「 模型-檢視-ViewModel。 」
+現在讓我們從應用程式的伺服器端轉換至用戶端。 SPA 範本會結合 jQuery 和挖式 .js 來建立流暢的互動式 UI。 挖式 .js 是 JavaScript 程式庫，可讓您輕鬆地將 HTML 系結至資料。 挖式 .js 會使用稱為「模型-視圖-ViewModel」的模式。
 
-- 此模型是網域有更多的資料 （「 待辦事項清單 」 和 「 待辦事項項目 」）。
-- HTML 文件的檢視。
-- 檢視模型是可儲存模型資料的 JavaScript 物件。 檢視模型是程式碼的抽象概念的 UI。 它並不知道 HTML 的表示法。 相反地，它代表檢視，例如 「 的待辦事項清單 」 的抽象功能。
+- 此模型是網域資料（ToDo 清單和 ToDo 專案）。
+- 此視圖為 HTML 檔案。
+- 視圖模型是包含模型資料的 JavaScript 物件。 視圖模型是 UI 的程式碼抽象概念。 它不知道 HTML 標記法。 相反地，它代表視圖的抽象功能，例如「待辦事項清單」。
 
-檢視是資料繫結至檢視模型。 檢視模型的更新會自動反映在檢視中。 繫結的另一種方式運作。 （例如按一下） 在 DOM 中的事件是資料繫結至函式檢視模型中，在觸發 AJAX 呼叫。
+此視圖會資料系結至視圖模型。 視圖模型的更新會自動反映在視圖中。 系結也適用于另一個方向。 DOM 中的事件（例如按一下）會將資料系結至視圖模型上的函式，以觸發 AJAX 呼叫。
 
 SPA 範本會將用戶端 JavaScript 組織成三個層級：
 
-- todo.datacontext.js:將 AJAX 要求傳送。
-- todo.model.js:定義模型。
-- todo.viewmodel.js:定義檢視模型。
+- todo. datacoNtext：傳送 AJAX 要求。
+- todo：定義模型。
+- viewmodel .js：定義視圖模型。
 
 ![](knockoutjs-template/_static/image11.png)
 
-這些指令碼檔案位於方案的指令碼/應用程式資料夾中。
+這些腳本檔案位於解決方案的腳本/應用程式資料夾中。
 
 ![](knockoutjs-template/_static/image12.png)
 
-**todo.datacontext**會處理所有的 AJAX 呼叫至 Web API 控制器。 （登入的 AJAX 呼叫會定義其他地方，ajaxlogin.js 中）。
+**todo。 datacoNtext**會處理對 Web API 控制器的所有 AJAX 呼叫。 （在 ajaxlogin 中，會在其他位置定義用於登入的 AJAX 呼叫）。
 
-**todo.model.js**定義待辦事項清單的用戶端 （瀏覽器） 模型。 有兩個模型類別： todoItem 和 todoList。
+**todo。 model .js**會定義待辦事項清單的用戶端（瀏覽器）模型。 有兩個模型類別： todoItem 和 todoList。
 
-許多模型類別中的屬性都屬於類型"ko.observable 」。 可預見值都是 Knockout 發揮它的運作方式。 從[Knockout 文件](http://knockoutjs.com/documentation/introduction.html):可預見值會是 「 JavaScript 物件，可通知有關變更的訂閱者 」。 當可預見值的值變更時，Knockout 會更新繫結至這些可預見值的任何 HTML 項目。 比方說，todoItem 具有可預見值的標題] 和 [作業屬性：
+模型類別中的許多屬性都屬於 "ko. 可觀察" 類型。 可預見值是挖的神奇之處。 從[挖空的檔](http://knockoutjs.com/documentation/introduction.html)：可觀察的是可以通知訂閱者有關變更的「JavaScript 物件」。 當可觀察的值變更時，挖的會更新系結至這些可預見值的任何 HTML 元素。 例如，todoItem 具有 title 和作業屬性的可預見值：
 
 [!code-javascript[Main](knockoutjs-template/samples/sample5.js)]
 
-您也可以訂閱程式碼中的可預見值。 比方說，todoItem 類別訂閱中的 「 作業 」 和 「 title 」 屬性的變更：
+您也可以在程式碼中訂閱可觀察的。 例如，todoItem 類別會訂閱 "作業" 和 "title" 屬性中的變更：
 
 [!code-javascript[Main](knockoutjs-template/samples/sample6.js)]
 
-**檢視模型**
+**視圖模型**
 
-檢視模型被定義在 todo.viewmodel.js。 檢視模型是其中的應用程式會將繫結的 HTML 網頁項目網域資料的中央點。 SPA 範本，在檢視模型會包含可觀察的 todoLists 陣列。 檢視模型中的下列程式碼會告訴 Knockout 套用繫結：
+視圖模型會定義在 viewmodel 中。 視圖模型是應用程式將 HTML 網頁元素系結至網域資料的中心點。 在 SPA 範本中，視圖模型包含 todoLists 的可觀察陣列。 視圖模型中的下列程式碼會告訴「挖對」套用系結：
 
 [!code-javascript[Main](knockoutjs-template/samples/sample7.js)]
 
-## <a name="html-and-data-binding"></a>HTML 和資料繫結
+## <a name="html-and-data-binding"></a>HTML 和資料系結
 
-主要的 HTML 頁面被定義在 Views/Home/Index.cshtml。 因為我們使用資料繫結，HTML 只是一個樣板的項目實際呈現。 使用 knockout*宣告式*繫結。 藉由將項目中的 「 資料繫結 」 屬性，將頁面項目的資料繫結。 以下是一個非常簡單的範例，取自 Knockout 文件：
+頁面的主要 HTML 定義于 Views/Home/Index. cshtml 中。 由於我們使用的是資料系結，因此 HTML 只是實際呈現內容的範本。 挖式會使用*宣告*式系結。 您可以藉由將「資料系結」屬性加入至專案，將頁面元素系結至資料。 以下是一個非常簡單的範例，取自挖的檔：
 
 [!code-html[Main](knockoutjs-template/samples/sample8.html)]
 
-在此範例中，Knockout 更新的內容 **&lt;跨越&gt;** 的值的項目`myItems.count()`。 此值變更時，每當 Knockout 更新的文件。
+在此範例中，「挖加」會以 `myItems.count()`的值更新 **&lt;範圍&gt;** 元素的內容。 每當此值變更時，挖的會更新檔。
 
-油墨廓清提供數種不同的繫結類型。 以下是一些使用 SPA 範本中的繫結：
+挖的會提供數種不同的系結類型。 以下是 SPA 範本中使用的一些系結：
 
-- **foreach**:可讓您逐一查看迴圈，並將相同的標記套用至清單中的每個項目。 這用來呈現的待辦事項清單 」 和 「 待辦事項項目。 內**foreach**，繫結會套用至清單的項目。
-- **可見**:用來切換可見性。 當集合是空的、 隱藏的標記，或顯示錯誤訊息。
-- **值**:用來填入表單值。
-- **按一下**:將 click 事件的繫結至檢視模型中的函式。
+- **foreach**：可讓您逐一查看迴圈，並將相同的標記套用至清單中的每個專案。 這是用來呈現待辦事項清單和待辦事項專案。 在**foreach**中，系結會套用至清單的元素。
+- **visible**：用來切換可見度。 當集合是空的，或讓錯誤訊息顯示時，隱藏標記。
+- **值**：用來填入表單值。
+- **按一下**：將 click 事件系結至視圖模型上的函式。
 
-## <a name="anti-csrf-protection"></a>防 CSRF 防護
+## <a name="anti-csrf-protection"></a>反 CSRF 保護
 
-跨站台要求偽造 (CSRF) 攻擊會將惡意網站傳送要求給使用者目前登入的有弱點網站的位置。 為了協助防止 CSRF 攻擊，使用 ASP.NET MVC*防偽語彙基元*，也稱為要求驗證權杖。 其概念是，伺服器會將隨機產生的語彙基元放入網頁。 當用戶端提交資料給伺服器時，必須在要求訊息中包含此值。
+跨網站偽造要求（CSRF）是一種攻擊，惡意網站會將要求傳送至使用者目前登入的弱點網站。 為了協助防止 CSRF 攻擊，ASP.NET MVC 會使用*防偽權杖*，也稱為要求驗證權杖。 其概念是伺服器會將隨機產生的權杖放入網頁中。 當用戶端將資料提交至伺服器時，它必須在要求訊息中包含此值。
 
-防偽語彙基元運作，因為惡意的頁面無法讀取使用者的權杖，因為同源原則。 （同源原則會防止存取彼此的內容的兩個不同站台上裝載的文件）。
+防偽 token 可以使用，因為由於相同來源的原則，惡意網頁無法讀取使用者的權杖。 （相同來源原則會防止裝載于兩個不同網站的檔存取彼此的內容）。
 
-ASP.NET MVC 提供防偽語彙基元，內建支援，透過[AntiForgery](https://msdn.microsoft.com/library/system.web.helpers.antiforgery.aspx)類別和[[ValidateAntiForgeryToken]](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute.aspx)屬性。 目前，這項功能不會建置到 Web API。 不過，SPA 範本包含 Web API 的自訂實作。 此程式碼定義於`ValidateHttpAntiForgeryTokenAttribute`解決方案的 [篩選器] 資料夾中的類別。 若要深入了解防 CSRF Web API 中，請參閱[防止跨網站要求偽造 （csrf） 等攻擊的攻擊](../../../web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks.md)。
+ASP.NET MVC 透過[AntiForgery](https://msdn.microsoft.com/library/system.web.helpers.antiforgery.aspx)類別和[[ValidateAntiForgeryToken]](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute.aspx)屬性，提供反偽造標記的內建支援。 目前，此功能不會內建在 Web API 中。 不過，SPA 範本包含適用于 Web API 的自訂執行。 這段程式碼定義于 [`ValidateHttpAntiForgeryTokenAttribute`] 類別中，位於解決方案的 [篩選] 資料夾中。 若要深入瞭解 Web API 中的反 CSRF，請參閱[防止跨網站偽造要求（CSRF）攻擊](../../../web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks.md)。
 
 ## <a name="conclusion"></a>結論
 
-SPA 範本可協助您開始快速地撰寫現代化、 互動式 web 應用程式。 它會使用 Knockout.js 文件庫不同的簡報 （HTML 標記） 的資料和應用程式邏輯。 但 Knockout 不是唯一可用來建立 SPA 的 JavaScript 程式庫。 如果您想要探索一些其他選項，看看[社群建立 SPA 範本](../templates/index.md)。
+SPA 範本的設計可讓您快速開始撰寫現代化的互動式 web 應用程式。 它會使用挖的 .js 程式庫來分隔資料和應用程式邏輯的呈現（HTML 標籤）。 但是，挖不是您可以用來建立 SPA 的唯一 JavaScript 程式庫。 如果您想要探索一些其他選項，請查看已[建立社區的 SPA 範本](../templates/index.md)。

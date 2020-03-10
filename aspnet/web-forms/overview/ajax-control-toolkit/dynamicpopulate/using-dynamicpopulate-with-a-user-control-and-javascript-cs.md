@@ -9,11 +9,11 @@ ms.assetid: 38ac8250-8854-444c-b9ab-8998faa41c5a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-cs
 msc.type: authoredcontent
 ms.openlocfilehash: a0e6d04a5f62ab558aceb8302d94d3bf2dc8a39f
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599173"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78613705"
 ---
 # <a name="using-dynamicpopulate-with-a-user-control-and-javascript-c"></a>使用具有使用者控制項的 DynamicPopulate 和 JavaScript (C#)
 

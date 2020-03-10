@@ -2,38 +2,38 @@
 uid: webhooks/receiving/handlers
 title: ASP.NET Webhook 處理常式 |Microsoft Docs
 author: rick-anderson
-description: 如何處理 ASP.NET Webhook 的要求。
+description: 如何處理 ASP.NET Webhook 中的要求。
 ms.author: riande
 ms.date: 01/17/2012
 ms.assetid: a55b0d20-9c90-4bd3-a471-20da6f569f0c
 ms.openlocfilehash: 01c9a283d105c4a0973ff88c8de646c5f49a34db
-ms.sourcegitcommit: 24b1f6decbb17bb22a45166e5fdb0845c65af498
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57030095"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78637869"
 ---
 # <a name="aspnet-webhooks-handlers"></a>ASP.NET Webhook 處理常式
 
-一旦 Webhook 要求由 WebHook 接收器已驗證，就準備好處理使用者程式碼。 這正是*處理常式*進來。 處理常式衍生自[IWebHookHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandler.cs)介面，但通常會使用[WebHookHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandler.cs)而不是直接從介面衍生的類別。
+一旦 WebHook 接收者驗證 Webhook 要求之後，就可以由使用者程式碼進行處理。 這就是*處理常式*的來源。 處理常式衍生自[IWebHookHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandler.cs)介面，但通常會使用[WebHookHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandler.cs)類別，而不是直接衍生自介面。
 
-WebHook 要求可以由一或多個處理常式處理。 根據其各自的順序呼叫處理常式*順序*屬性會從最低到最高順序為簡單整數 （建議為 1 到 100 之間） 的位置：
+WebHook 要求可由一或多個處理常式處理。 處理常式會根據其各自的*order*屬性（從最低到最高）順序來呼叫，其中 order 是簡單的整數（建議介於1到100之間）：
 
-![WebHook 處理常式的順序屬性圖表](_static/Handlers.png)
+![WebHook 處理常式順序屬性圖表](_static/Handlers.png)
 
-可選擇性地設定處理常式*回應*WebHookHandlerContext 停止並回復為 WebHook 的 HTTP 回應傳送回應導致處理上的屬性。 在上述案例中，因為它具有較高的順序，比 B 且 B 設定的回應，將不會取得呼叫處理常式 C。
+處理常式可以選擇性地在 WebHookHandlerCoNtext 上設定*回應*屬性，這會導致處理停止，並將回應傳回為 WEBHOOK 的 HTTP 回應。 在上述情況中，處理常式 C 不會被呼叫，因為它的順序高於 B，而 B 設定回應。
 
-設定回應通常是只與相關的 Webhook 回應可以在其中執行資訊傳回到原始的 API。 比方說，這是傳回給 WebHook 的來源的通道公佈回應 Slack Webhook 的情況。 處理常式可以設定接收者屬性，如果他們只想要接收來自該特定接收者的 Webhook。 如果它們不需要設定的接收者針對它們全部呼叫它們。
+設定回應通常僅與 Webhook 相關，回應會將資訊傳回給原始 API。 這是例如，具有時差的案例 Webhook，其中會將回應回傳至 WebHook 來源的通道。 如果處理常式只想接收來自該特定接收者的 Webhook，則可以設定接收者屬性。 如果未設定接收者，則會對所有使用者呼叫它們。
 
-回應的其他常見用法是使用*410 不存在*回應指出 WebHook 不再為作用中，且應該提交任何進一步的要求。
+回應的另一個常見用法是使用*410 消失*的回應，指出 WebHook 不再作用中，而且不會再提交進一步的要求。
 
-根據預設處理常式會呼叫所有的 WebHook 接收器。 不過，如果*接收者*屬性設定為處理常式的名稱，則該處理常式只會從該接收者收到 WebHook 要求。
+根據預設，所有 WebHook 接收者都會呼叫處理常式。 不過，如果*接收者*屬性設定為處理常式的名稱，則該處理常式只會接收來自該接收者的 WebHook 要求。
 
 ## <a name="processing-a-webhook"></a>處理 WebHook
 
-呼叫處理常式時，它會取得[WebHookHandlerContext](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandlerContext.cs)包含 WebHook 要求的相關資訊。 的資料，通常是 HTTP 要求本文中，可從*資料*屬性。
+呼叫處理常式時，它會取得[WebHookHandlerCoNtext](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookHandlerContext.cs) ，其中包含 WebHook 要求的相關資訊。 資料（通常是 HTTP 要求主體）可從*資料*屬性取得。
 
-資料類型通常是 JSON 或 HTML 表單資料，但可以轉換成更明確的類型，如有需要。 例如，ASP.NET Webhook 所產生的自訂 Webhook 可以轉換成類型[CustomNotifications](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers.Custom/WebHooks/CustomNotifications.cs) ，如下所示：
+資料的類型通常是 JSON 或 HTML 表單資料，但如果需要，可以轉型為更特定的類型。 例如，ASP.NET Webhook 所產生的自訂 Webhook 可以轉換成類型[CustomNotifications](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers.Custom/WebHooks/CustomNotifications.cs) ，如下所示：
 
 ```csharp
 public class MyWebHookHandler : WebHookHandler
@@ -55,13 +55,13 @@ public class MyWebHookHandler : WebHookHandler
 }
 ```
 
-  ## <a name="queued-processing"></a>已排入佇列的處理
+  ## <a name="queued-processing"></a>佇列處理
 
-如果回應不產生在數秒內，大部分的 WebHook 寄件者會重新傳送 WebHook。 這表示您的處理常式必須完成處理，為了不讓它再次呼叫該時間範圍內。
+如果不是在幾秒內產生回應，大部分的 WebHook 傳送者都會重新傳送 WebHook。 這表示您的處理常式必須在該時間範圍內完成處理，才能再次呼叫它。
 
-如果處理所花費的時間，或最好在個別處理然後[WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs)可用來將 WebHook 要求提交至佇列，例如[Azure 儲存體佇列](https://msdn.microsoft.com/library/azure/dd179353.aspx)。
+如果處理需要較長的時間，或分別進行更好的處理，則可以使用[WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs)將 WebHook 要求提交至佇列，例如[Azure 儲存體的佇列](https://msdn.microsoft.com/library/azure/dd179353.aspx)。
 
-概述[WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs)這裡提供實作：
+這裡提供[WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs)執行的大綱：
 
 ```csharp
 public class QueueHandler : WebHookQueueHandler

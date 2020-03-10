@@ -9,11 +9,11 @@ ms.assetid: 5a2a927b-14cb-40bc-867a-f0680f9febd7
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations
 msc.type: authoredcontent
 ms.openlocfilehash: a9d39547c94a63003442ba6fe1257693dde24b05
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74621781"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78632829"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-webconfig-file-transformations"></a>使用 Visual Studio： web.config 檔案轉換來 ASP.NET Web 部署
 
@@ -142,7 +142,7 @@ Contoso 大學網頁會讀取*web.config*檔案 `appSettings` 中設定的值，
 
 在下列教學課程中，您將會負責需要設定專案屬性的部署設定工作。
 
-## <a name="more-information"></a>更多資訊
+## <a name="more-information"></a>詳細資訊
 
 如需本教學課程涵蓋之主題的詳細資訊，請參閱在 Visual Studio 和 ASP.NET 的 Web 部署內容對應中[部署期間，使用 web.config 轉換來變更目的地 web.config 檔案或 app.config 檔案中的設定](https://go.microsoft.com/fwlink/p/?LinkId=282413#transforms)。
 

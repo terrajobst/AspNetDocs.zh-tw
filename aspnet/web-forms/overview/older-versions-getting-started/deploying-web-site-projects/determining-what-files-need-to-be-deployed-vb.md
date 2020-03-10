@@ -9,11 +9,11 @@ ms.assetid: ea918f62-c9d6-4a7f-9bc6-e054d3764b2c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb
 msc.type: authoredcontent
 ms.openlocfilehash: a11dadfda8b6a189acedd7ac723d85f8b2084324
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569951"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78635188"
 ---
 # <a name="determining-what-files-need-to-be-deployed-vb"></a>判斷需要部署哪些檔案 (VB)
 
@@ -47,8 +47,8 @@ ASP.NET 的網頁會分成宣告式標記和原始程式碼。 宣告式標記�
 
 | **編譯模型** | **要部署標記部分檔案嗎？** | **部署原始程式碼檔？** | **在 `Bin` 目錄中部署元件？** |
 | --- | --- | --- | --- |
-| 明確編譯 | 是 | 否 | 是 |
-| 自動編譯 | 是 | 是 | 是（如果存在的話） |
+| 明確編譯 | [是] | 否 | [是] |
+| 自動編譯 | [是] | [是] | 是（如果存在的話） |
 
 **表1：您部署的檔案取決於所使用的編譯模型。**
 
