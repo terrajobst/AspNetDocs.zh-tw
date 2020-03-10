@@ -9,11 +9,11 @@ ms.assetid: 9ef3e893-bebe-4b13-9fe5-8b71720dd85e
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-user-accounts-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 01be198c329f372ddcd529ad8a369f2d3426a9fc
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74628461"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78586818"
 ---
 # <a name="creating-user-accounts-vb"></a>建立使用者帳戶 (VB)
 
@@ -29,14 +29,14 @@ ms.locfileid: "74628461"
 
 除了學習如何建立新的使用者帳戶之外，我們還需要更新我們最初在 *<a id="_msoanchor_2"></a>[表單驗證](../introduction/an-overview-of-forms-authentication-vb.md)* 教學課程中建立的示範網站，然後在 *<a id="_msoanchor_3"></a>[表單驗證設定和高級主題](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)* 教學課程中加強。 我們的示範 web 應用程式有一個登入頁面，它會驗證使用者的認證，以防止硬式編碼的使用者名稱/密碼配對。 此外，`Global.asax` 還包含可為已驗證的使用者建立自訂 `IPrincipal` 和 `IIdentity` 物件的程式碼。 我們將會更新登入頁面，以根據成員資格架構來驗證使用者的認證，並移除自訂主體和身分識別邏輯。
 
-讓我們開始吧！
+現在就開始吧！
 
 ## <a name="the-forms-authentication-and-membership-checklist"></a>表單驗證和成員資格檢查清單
 
 在我們開始使用成員資格架構之前，讓我們花點時間複習一下我們所採取的重要步驟。 在以表單為基礎的驗證案例中，搭配 `SqlMembershipProvider` 使用成員資格架構時，必須先執行下列步驟，才能在 web 應用程式中實作為成員資格功能：
 
-1. **啟用以表單為基礎的驗證。** 如我們在 *<a id="_msoanchor_4">[表單驗證的總覽](../introduction/an-overview-of-forms-authentication-vb.md)</a>* 中所討論，表單驗證是藉由編輯 `Web.config`，並將 `<authentication>` 元素的 `mode` 屬性設定為 `Forms`來啟用。 在啟用表單驗證的情況下，會檢查每個傳入要求的*表單驗證票證*（如果有的話），以識別要求者。
-2. **將應用程式服務架構新增至適當的資料庫。** 使用 `SqlMembershipProvider` 我們需要將應用程式服務架構安裝到資料庫。 通常，此架構會加入至保存應用程式資料模型的相同資料庫中。 在 *<a id="_msoanchor_5"></a>[SQL Server 中建立成員資格架構](creating-the-membership-schema-in-sql-server-vb.md)* 教學課程會探討如何使用 `aspnet_regsql.exe` 工具來完成這項操作。
+1. **啟用以表單為基礎的驗證。** 如我們在 *<a id="_msoanchor_4"></a>[表單驗證的總覽](../introduction/an-overview-of-forms-authentication-vb.md)* 中所討論，表單驗證是藉由編輯 `Web.config`，並將 `<authentication>` 元素的 `mode` 屬性設定為 `Forms`來啟用。 在啟用表單驗證的情況下，會檢查每個傳入要求的*表單驗證票證*（如果有的話），以識別要求者。
+2. **將應用程式服務架構新增至適當的資料庫。** 使用 `SqlMembershipProvider` 我們需要將應用程式服務架構安裝到資料庫。 通常，此架構會加入至保存應用程式資料模型的相同資料庫中。 在 *<a id="_msoanchor_5"> </a>[SQL Server 中建立成員資格架構](creating-the-membership-schema-in-sql-server-vb.md)* 教學課程會探討如何使用 `aspnet_regsql.exe` 工具來完成這項操作。
 3. **自訂 Web 應用程式的設定，以參考步驟2中的資料庫。** 在*SQL Server 中建立成員資格架構*教學課程示範了兩種設定 web 應用程式的方式，讓 `SqlMembershipProvider` 會使用在步驟2：中選取的資料庫來修改 `LocalSqlServer` 連接字串名稱;或者，將新註冊的提供者加入至成員資格架構提供者清單，並自訂新提供者以使用步驟2中的資料庫。
 
 建立使用 `SqlMembershipProvider` 和表單架構驗證的 web 應用程式時，您必須先執行這三個步驟，才能使用 `Membership` 類別或 ASP.NET 登入 Web 控制項。 因為我們已在先前的教學課程中執行這些步驟，所以我們已準備好開始使用成員資格架構！
@@ -63,7 +63,7 @@ ms.locfileid: "74628461"
 
 [!code-aspx[Main](creating-user-accounts-vb/samples/sample1.aspx)]
 
-回想一下，`LoginContent` ContentPlaceHolder 的預設標記會根據使用者是否經過驗證，顯示登入或登出網站的連結。 不過，`Content2` 內容控制項的存在，會覆寫主版頁面的預設標記。 如同我們在 *<a id="_msoanchor_6"></a>[表單驗證的總覽](../introduction/an-overview-of-forms-authentication-vb.md)* 教學課程中所討論的，這在頁面中很有用，因為我們不想要在左欄中顯示登入相關的選項。
+回想一下，`LoginContent` ContentPlaceHolder 的預設標記會根據使用者是否經過驗證，顯示登入或登出網站的連結。 不過，`Content2` 內容控制項的存在，會覆寫主版頁面的預設標記。 如同我們在 *<a id="_msoanchor_6"></a>[表單驗證](../introduction/an-overview-of-forms-authentication-vb.md)* 教學課程中所討論的，這在頁面中很有用，因為我們不想要在左欄中顯示登入相關的選項。
 
 不過，針對這五個頁面，我們想要顯示主版頁面的 `LoginContent` ContentPlaceHolder 的預設標記。 因此，請移除 `Content2` 內容控制項的宣告式標記。 這麼做之後，這五頁的每一個標記都應該只包含一個內容控制項。
 
@@ -149,7 +149,7 @@ ASP.NET 包含許多設計使用者介面的導覽相關 Web 控制項。 其中
 
 這四個多載會因收集的資訊量而有所不同。 例如，第一個多載只需要新使用者帳戶的使用者名稱和密碼，而第二個則需要使用者的電子郵件地址。
 
-這些多載存在的原因是，建立新的使用者帳戶所需的資訊，取決於成員資格提供者的設定。 在 *<a id="_msoanchor_8"> </a>[SQL Server 中建立成員資格架構](creating-the-membership-schema-in-sql-server-vb.md)* 教學課程中，我們已檢查在 `Web.config`中指定成員資格提供者的設定。 [表 2] 包含完整的設定清單。
+這些多載存在的原因是，建立新的使用者帳戶所需的資訊，取決於成員資格提供者的設定。 在 *<a id="_msoanchor_8"></a>[SQL Server 中建立成員資格架構](creating-the-membership-schema-in-sql-server-vb.md)* 教學課程中，我們已檢查在 中指定成員資格提供者的設定`Web.config`。 [表 2] 包含完整的設定清單。
 
 其中一個成員資格提供者設定會影響可能會使用的 `CreateUser` 多載是 `requiresQuestionAndAnswer` 設定。 如果 `requiresQuestionAndAnswer` 設定為 `true` （預設值），則在建立新的使用者帳戶時，我們必須指定安全性問題和答案。 如果使用者需要重設或變更其密碼，稍後會使用此資訊。 具體來說，它們會顯示安全性問題，而且必須輸入正確的答案，才能重設或變更其密碼。 因此，如果 `requiresQuestionAndAnswer` 設定為 `true` 則呼叫前兩個 `CreateUser` 多載會導致例外狀況，因為安全性問題和答案已遺失。 因為我們的應用程式目前設定為需要安全性問題和答案，所以在以程式設計方式建立使用者時，我們必須使用後面兩個多載的其中一個。
 
@@ -207,7 +207,7 @@ ASP.NET 包含許多設計使用者介面的導覽相關 Web 控制項。 其中
 雖然成員資格使用者存放區現在包含 Bruce 和 Tito 的帳戶資訊，但我們尚未執行可讓 Bruce 或 Tito 登入網站的功能。 目前，`Login.aspx` 會針對一組硬式編碼的使用者名稱/密碼配對來驗證使用者的認證，而*不*會對成員資格架構驗證提供的認證。 現在，您會看到 `aspnet_Users` 中的新使用者帳戶，以及 `aspnet_Membership` 資料表的功能就足夠了。 在下一個教學課程中， *<a id="_msoanchor_9"></a>[根據成員資格使用者存放區驗證使用者認證](validating-user-credentials-against-the-membership-user-store-vb.md)* 時，我們會更新登入頁面，以對成員資格存放區進行驗證。
 
 > [!NOTE]
-> 如果您在 `SecurityTutorials.mdf` 資料庫中看不到任何使用者，可能是因為您的 web 應用程式使用預設的成員資格提供者，`AspNetSqlMembershipProvider`，其使用 `ASPNETDB.mdf` 資料庫做為其使用者存放區。 若要判斷這是否為問題，請按一下 方案總管中的 重新整理 按鈕。 如果已將名為 `ASPNETDB.mdf` 的資料庫新增至 `App_Data` 資料夾，這就是問題所在。 回到 *<a id="_msoanchor_10"></a>[SQL Server 教學課程 中建立成員資格架構](creating-the-membership-schema-in-sql-server-vb.md)* 的步驟4，以取得如何正確設定成員資格提供者的指示。
+> 如果您在 `SecurityTutorials.mdf` 資料庫中看不到任何使用者，可能是因為您的 web 應用程式使用預設的成員資格提供者，`AspNetSqlMembershipProvider`，其使用 `ASPNETDB.mdf` 資料庫做為其使用者存放區。 若要判斷這是否為問題，請按一下 方案總管中的 重新整理 按鈕。 如果已將名為 `ASPNETDB.mdf` 的資料庫新增至 `App_Data` 資料夾，這就是問題所在。 回到 *<a id="_msoanchor_10"></a>[SQL Server 教學課程中建立成員資格架構](creating-the-membership-schema-in-sql-server-vb.md)* 的步驟4，以取得如何正確設定成員資格提供者的指示。
 
 在大部分的建立使用者帳戶案例中，訪客會提供一些介面，以輸入其使用者名稱、密碼、電子郵件和其他重要資訊，此時會建立新的帳戶。 在此步驟中，我們探討了如何手動建立這類介面，然後瞭解如何使用 `Membership.CreateUser` 方法，以程式設計方式根據使用者的輸入來加入新的使用者帳戶。 不過，我們的程式碼只是建立新的使用者帳戶。 它不會執行任何後續動作，像是將使用者登入到剛建立的使用者帳戶底下的網站，或傳送確認電子郵件給使用者。 這些額外的步驟會在按鈕的 `Click` 事件處理常式中需要額外的程式碼。
 
@@ -239,8 +239,8 @@ ASP.NET 隨附許多登入 Web 控制項。 這些控制項有助於許多常見
 
 如 [圖 11] 中的宣告式標記所示，CreateUserWizard 控制項的預設介面包含兩個 `WizardStep` s：
 
-- [`CreateUserWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizardstep.aspx)嗎？ 呈現介面，以收集建立新使用者帳戶的資訊。 這是 [圖 11] 所示的步驟。
-- [`CompleteWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.completewizardstep.aspx)嗎？ 呈現訊息，指出已成功建立帳戶。
+- [`CreateUserWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizardstep.aspx) ? 呈現介面，以收集建立新使用者帳戶的資訊。 這是 [圖 11] 所示的步驟。
+- [`CompleteWizardStep`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.completewizardstep.aspx) ? 呈現訊息，指出已成功建立帳戶。
 
 藉由將上述任一步驟轉換成範本，或加入您自己的 `WizardStep`，即可修改 CreateUserWizard 的外觀和行為。 我們將在*儲存額外的使用者資訊*教學課程中，探討如何將 `WizardStep` 新增至註冊介面。
 
