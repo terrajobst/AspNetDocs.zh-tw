@@ -5,12 +5,12 @@ description: 瞭解如何在 ASP.NET 中使用 SameSite cookie
 ms.author: riande
 ms.date: 2/15/2019
 uid: samesite/system-web-samesite
-ms.openlocfilehash: edb368910b24be2d042afe3c19ffa1fb23245443
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.openlocfilehash: 7987a5d6c9b3a82679d42a2d381d471d56f495c2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77455697"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78546743"
 ---
 # <a name="work-with-samesite-cookies-in-aspnet"></a>在 ASP.NET 中使用 SameSite cookie
 
@@ -177,7 +177,7 @@ Microsoft 解決問題的方法是協助您執行瀏覽器偵測元件，以從 
 * 您的應用程式可能會看到我們的測試網站沒有的瀏覽器。
 * 您應該準備好視需要為您的環境新增偵測。
 
-連接偵測的方式會根據您所使用的 .NET 版本和 web 架構而有所不同。 可以在 <xref:HTTP.HttpCookie> 呼叫位置呼叫下列程式碼：
+連接偵測的方式會根據您所使用的 .NET 版本和 web 架構而有所不同。 您可以在[HttpCookie](/dotnet/api/system.web.httpcookie)呼叫位置呼叫下列程式碼：
 
 [!code-csharp[](sample/SameSiteCheck.cs?name=snippet)]
 
@@ -248,6 +248,8 @@ Google 不會提供舊版的 chrome 版本。 請遵循[下載 Chromium](https:/
 * [Chromium 74 Win64](https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Win_x64/638880/)
 * 如果您不是使用64位版本的 Windows，您可以使用[OmahaProxy 檢視器](https://omahaproxy.appspot.com/)來尋找哪個 Chromium 分支與 Chrome 74 （v 74.0.3729.108）對應，使用[Chromium 所提供的指示](https://www.chromium.org/getting-involved/download-chromium)。
 
+從未加上 `80.0.3975.0`的版本開始，您可以使用新的旗標 `--enable-features=SameSiteDefaultChecksMethodRigorously`，針對測試目的停用最寬鬆的 + POST 暫時緩和功能，以允許在已移除緩和措施的最終狀態下測試網站和服務。 如需詳細資訊，請參閱 Chromium Projects [SameSite Updates](https://www.chromium.org/updates/same-site)
+
 #### <a name="test-with-chrome-80"></a>使用 Chrome 80 + 進行測試
 
 [下載](https://www.google.com/chrome/)支援其新屬性的 Chrome 版本。 在撰寫本文時，目前的版本是 Chrome 80。 Chrome 80 必須啟用旗標 `chrome://flags/#same-site-by-default-cookies`，才能使用新的行為。 您也應該啟用（`chrome://flags/#cookies-without-same-site-must-be-secure`），以針對未啟用 sameSite 屬性的 cookie 測試即將推出的行為。 Chrome 80 位於目標上，可讓交換器將沒有屬性的 cookie 視為 `SameSite=Lax`，雖然某些要求的時間寬限期較長。 若要停用計時寬限期 Chrome 80，可以使用下列命令列引數來啟動：
@@ -302,6 +304,7 @@ Electron 的版本包含舊版的 Chromium。 例如，小組所使用的 Electr
 ## <a name="additional-resources"></a>其他資源
 
 * [ASP.NET 和 ASP.NET Core 即將推出的 SameSite Cookie 變更](https://devblogs.microsoft.com/aspnet/upcoming-samesite-cookie-changes-in-asp-net-and-asp-net-core/)
+* [預設 SameSite 和「SameSite = None; 測試和偵錯工具的秘訣安全「cookie」](https://www.chromium.org/updates/same-site/test-debug)
 * [Chromium Blog：開發人員：準備開始新的 SameSite = None;安全的 Cookie 設定](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html)
 * [SameSite cookie 說明](https://web.dev/samesite-cookies-explained/)
 * [Chrome 更新](https://www.chromium.org/updates/same-site)
