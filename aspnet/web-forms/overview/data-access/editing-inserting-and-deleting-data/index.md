@@ -1,37 +1,37 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/index
-title: 編輯、 插入及刪除資料 |Microsoft Docs
+title: 編輯、插入和刪除資料 |Microsoft Docs
 author: rick-anderson
-description: 在這些教學課程中您會看到如何將 ObjectDataSource 控制項的方法對應到 BLL 方法，以及如何設定 GridView、 DetailsView 和 FormView 共同...
+description: 在這些教學課程中，您會看到如何將 ObjectDataSource 控制項的方法對應到 BLL 方法，以及如何設定 GridView、DetailsView 和 FormView 共同 。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 9fc60498-ced4-47c6-b2cf-8d464e6aeef8
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data
 msc.type: chapter
 ms.openlocfilehash: 4657a52b05c1cf8a991158f212d6b6ce849ef276
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65109048"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78607713"
 ---
-# <a name="editing-inserting-and-deleting-data"></a><span data-ttu-id="6f3b7-103">編輯、插入及刪除資料</span><span class="sxs-lookup"><span data-stu-id="6f3b7-103">Editing, Inserting, and Deleting Data</span></span>
+# <a name="editing-inserting-and-deleting-data"></a><span data-ttu-id="4a848-103">編輯、插入及刪除資料</span><span class="sxs-lookup"><span data-stu-id="4a848-103">Editing, Inserting, and Deleting Data</span></span>
 
-> <span data-ttu-id="6f3b7-104">在這些教學課程中您會看到如何將 ObjectDataSource 控制項的方法對應到 BLL 方法，以及如何設定 GridView、 DetailsView 和 FormView 控制項，讓使用者修改資料。</span><span class="sxs-lookup"><span data-stu-id="6f3b7-104">In these tutorials you see how to map methods of the ObjectDataSource control to BLL methods, and how to configure the GridView, DetailsView, and FormView controls to let users modify data.</span></span>
+> <span data-ttu-id="4a848-104">在這些教學課程中，您會看到如何將 ObjectDataSource 控制項的方法對應到 BLL 方法，以及如何設定 GridView、DetailsView 和 FormView 控制項，讓使用者修改資料。</span><span class="sxs-lookup"><span data-stu-id="4a848-104">In these tutorials you see how to map methods of the ObjectDataSource control to BLL methods, and how to configure the GridView, DetailsView, and FormView controls to let users modify data.</span></span>
 
-- [<span data-ttu-id="6f3b7-105">插入、更新及刪除資料的概觀 (C#)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-105">Overview of Inserting, Updating, and Deleting Data (C#)</span></span>](an-overview-of-inserting-updating-and-deleting-data-cs.md)
-- [<span data-ttu-id="6f3b7-106">檢查與插入、更新和刪除建立關聯的事件 (C#)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-106">Examining the Events Associated with Inserting, Updating, and Deleting (C#)</span></span>](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)
-- [<span data-ttu-id="6f3b7-107">處理 ASP.NET 頁面中 BLL 和 DAL 層級的例外狀況 (C#)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-107">Handling BLL- and DAL-Level Exceptions in an ASP.NET Page (C#)</span></span>](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs.md)
-- [<span data-ttu-id="6f3b7-108">將驗證控制項新增至編輯和插入介面 (C#)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-108">Adding Validation Controls to the Editing and Inserting Interfaces (C#)</span></span>](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md)
-- [<span data-ttu-id="6f3b7-109">自訂資料修改介面 (C#)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-109">Customizing the Data Modification Interface (C#)</span></span>](customizing-the-data-modification-interface-cs.md)
-- [<span data-ttu-id="6f3b7-110">實作開放式同步存取 (C#)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-110">Implementing Optimistic Concurrency (C#)</span></span>](implementing-optimistic-concurrency-cs.md)
-- [<span data-ttu-id="6f3b7-111">於刪除時新增用戶端確認 (C#)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-111">Adding Client-Side Confirmation When Deleting (C#)</span></span>](adding-client-side-confirmation-when-deleting-cs.md)
-- [<span data-ttu-id="6f3b7-112">根據使用者限制資料修改功能 (C#)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-112">Limiting Data Modification Functionality Based on the User (C#)</span></span>](limiting-data-modification-functionality-based-on-the-user-cs.md)
-- [<span data-ttu-id="6f3b7-113">插入、更新及刪除資料的概觀 (VB)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-113">Overview of Inserting, Updating, and Deleting Data (VB)</span></span>](an-overview-of-inserting-updating-and-deleting-data-vb.md)
-- [<span data-ttu-id="6f3b7-114">檢查與插入、更新和刪除建立關聯的事件 (VB)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-114">Examining the Events Associated with Inserting, Updating, and Deleting (VB)</span></span>](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)
-- [<span data-ttu-id="6f3b7-115">處理 ASP.NET 頁面中 BLL 和 DAL 層級的例外狀況 (VB)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-115">Handling BLL- and DAL-Level Exceptions in an ASP.NET Page (VB)</span></span>](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb.md)
-- [<span data-ttu-id="6f3b7-116">將驗證控制項新增至編輯和插入介面 (VB)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-116">Adding Validation Controls to the Editing and Inserting Interfaces (VB)</span></span>](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md)
-- [<span data-ttu-id="6f3b7-117">自訂資料修改介面 (VB)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-117">Customizing the Data Modification Interface (VB)</span></span>](customizing-the-data-modification-interface-vb.md)
-- [<span data-ttu-id="6f3b7-118">實作開放式同步存取 (VB)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-118">Implementing Optimistic Concurrency (VB)</span></span>](implementing-optimistic-concurrency-vb.md)
-- [<span data-ttu-id="6f3b7-119">於刪除時新增用戶端確認 (VB)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-119">Adding Client-Side Confirmation When Deleting (VB)</span></span>](adding-client-side-confirmation-when-deleting-vb.md)
-- [<span data-ttu-id="6f3b7-120">根據使用者限制資料修改功能 (VB)</span><span class="sxs-lookup"><span data-stu-id="6f3b7-120">Limiting Data Modification Functionality Based on the User (VB)</span></span>](limiting-data-modification-functionality-based-on-the-user-vb.md)
+- [<span data-ttu-id="4a848-105">插入、更新及刪除資料的概觀 (C#)</span><span class="sxs-lookup"><span data-stu-id="4a848-105">Overview of Inserting, Updating, and Deleting Data (C#)</span></span>](an-overview-of-inserting-updating-and-deleting-data-cs.md)
+- [<span data-ttu-id="4a848-106">檢查與插入、更新和刪除建立關聯的事件 (C#)</span><span class="sxs-lookup"><span data-stu-id="4a848-106">Examining the Events Associated with Inserting, Updating, and Deleting (C#)</span></span>](examining-the-events-associated-with-inserting-updating-and-deleting-cs.md)
+- [<span data-ttu-id="4a848-107">處理 ASP.NET 頁面中 BLL 和 DAL 層級的例外狀況 (C#)</span><span class="sxs-lookup"><span data-stu-id="4a848-107">Handling BLL- and DAL-Level Exceptions in an ASP.NET Page (C#)</span></span>](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs.md)
+- [<span data-ttu-id="4a848-108">將驗證控制項新增至編輯和插入介面 (C#)</span><span class="sxs-lookup"><span data-stu-id="4a848-108">Adding Validation Controls to the Editing and Inserting Interfaces (C#)</span></span>](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md)
+- [<span data-ttu-id="4a848-109">自訂資料修改介面 (C#)</span><span class="sxs-lookup"><span data-stu-id="4a848-109">Customizing the Data Modification Interface (C#)</span></span>](customizing-the-data-modification-interface-cs.md)
+- [<span data-ttu-id="4a848-110">實作開放式同步存取 (C#)</span><span class="sxs-lookup"><span data-stu-id="4a848-110">Implementing Optimistic Concurrency (C#)</span></span>](implementing-optimistic-concurrency-cs.md)
+- [<span data-ttu-id="4a848-111">於刪除時新增用戶端確認 (C#)</span><span class="sxs-lookup"><span data-stu-id="4a848-111">Adding Client-Side Confirmation When Deleting (C#)</span></span>](adding-client-side-confirmation-when-deleting-cs.md)
+- [<span data-ttu-id="4a848-112">根據使用者限制資料修改功能 (C#)</span><span class="sxs-lookup"><span data-stu-id="4a848-112">Limiting Data Modification Functionality Based on the User (C#)</span></span>](limiting-data-modification-functionality-based-on-the-user-cs.md)
+- [<span data-ttu-id="4a848-113">插入、更新及刪除資料的概觀 (VB)</span><span class="sxs-lookup"><span data-stu-id="4a848-113">Overview of Inserting, Updating, and Deleting Data (VB)</span></span>](an-overview-of-inserting-updating-and-deleting-data-vb.md)
+- [<span data-ttu-id="4a848-114">檢查與插入、更新和刪除建立關聯的事件 (VB)</span><span class="sxs-lookup"><span data-stu-id="4a848-114">Examining the Events Associated with Inserting, Updating, and Deleting (VB)</span></span>](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)
+- [<span data-ttu-id="4a848-115">處理 ASP.NET 頁面中 BLL 和 DAL 層級的例外狀況 (VB)</span><span class="sxs-lookup"><span data-stu-id="4a848-115">Handling BLL- and DAL-Level Exceptions in an ASP.NET Page (VB)</span></span>](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb.md)
+- [<span data-ttu-id="4a848-116">將驗證控制項新增至編輯和插入介面 (VB)</span><span class="sxs-lookup"><span data-stu-id="4a848-116">Adding Validation Controls to the Editing and Inserting Interfaces (VB)</span></span>](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md)
+- [<span data-ttu-id="4a848-117">自訂資料修改介面 (VB)</span><span class="sxs-lookup"><span data-stu-id="4a848-117">Customizing the Data Modification Interface (VB)</span></span>](customizing-the-data-modification-interface-vb.md)
+- [<span data-ttu-id="4a848-118">實作開放式同步存取 (VB)</span><span class="sxs-lookup"><span data-stu-id="4a848-118">Implementing Optimistic Concurrency (VB)</span></span>](implementing-optimistic-concurrency-vb.md)
+- [<span data-ttu-id="4a848-119">於刪除時新增用戶端確認 (VB)</span><span class="sxs-lookup"><span data-stu-id="4a848-119">Adding Client-Side Confirmation When Deleting (VB)</span></span>](adding-client-side-confirmation-when-deleting-vb.md)
+- [<span data-ttu-id="4a848-120">根據使用者限制資料修改功能 (VB)</span><span class="sxs-lookup"><span data-stu-id="4a848-120">Limiting Data Modification Functionality Based on the User (VB)</span></span>](limiting-data-modification-functionality-based-on-the-user-vb.md)

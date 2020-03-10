@@ -1,27 +1,27 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/index
-title: DynamicPopulate | Microsoft Docs
+title: DynamicPopulate |Microsoft Docs
 author: rick-anderson
-description: 本教學課程會示範如何使用 DynamicPopulate 控制項，可呼叫 web 服務，並在頁面上的控制項中顯示產生的值。
+description: 本教學課程示範如何使用 DynamicPopulate 控制項，它會呼叫 web 服務，並在頁面上的控制項中顯示產生的值。
 ms.author: riande
 ms.date: 11/14/2011
 ms.assetid: 68c6e54f-87ed-4768-b140-d0e3e76af841
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate
 msc.type: chapter
 ms.openlocfilehash: 66c279647a97f0200f11b4774047a985a7162594
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65132689"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78554254"
 ---
-# <a name="dynamicpopulate"></a><span data-ttu-id="3056c-103">DynamicPopulate</span><span class="sxs-lookup"><span data-stu-id="3056c-103">DynamicPopulate</span></span>
+# <a name="dynamicpopulate"></a><span data-ttu-id="45f80-103">DynamicPopulate</span><span class="sxs-lookup"><span data-stu-id="45f80-103">DynamicPopulate</span></span>
 
-> <span data-ttu-id="3056c-104">本教學課程會示範如何使用 DynamicPopulate 控制項，可呼叫 web 服務，並在頁面上的控制項中顯示產生的值。</span><span class="sxs-lookup"><span data-stu-id="3056c-104">This tutorial shows how to use the DynamicPopulate control, which calls a web service and displays the resulting value in a control on the page.</span></span>
+> <span data-ttu-id="45f80-104">本教學課程示範如何使用 DynamicPopulate 控制項，它會呼叫 web 服務，並在頁面上的控制項中顯示產生的值。</span><span class="sxs-lookup"><span data-stu-id="45f80-104">This tutorial shows how to use the DynamicPopulate control, which calls a web service and displays the resulting value in a control on the page.</span></span>
 
-- [<span data-ttu-id="3056c-105">以動態方式填入控制項 (C#)</span><span class="sxs-lookup"><span data-stu-id="3056c-105">Dynamically Populating a Control (C#)</span></span>](dynamically-populating-a-control-cs.md)
-- [<span data-ttu-id="3056c-106">使用 JavaScript 程式碼以動態方式填入控制項 (C#)</span><span class="sxs-lookup"><span data-stu-id="3056c-106">Dynamically Populating a Control Using JavaScript Code (C#)</span></span>](dynamically-populating-a-control-using-javascript-code-cs.md)
-- [<span data-ttu-id="3056c-107">使用具有使用者控制項的 DynamicPopulate 和 JavaScript (C#)</span><span class="sxs-lookup"><span data-stu-id="3056c-107">Using DynamicPopulate with a User Control And JavaScript (C#)</span></span>](using-dynamicpopulate-with-a-user-control-and-javascript-cs.md)
-- [<span data-ttu-id="3056c-108">以動態方式填入控制項 (VB)</span><span class="sxs-lookup"><span data-stu-id="3056c-108">Dynamically Populating a Control (VB)</span></span>](dynamically-populating-a-control-vb.md)
-- [<span data-ttu-id="3056c-109">使用 JavaScript 程式碼以動態方式填入控制項 (VB)</span><span class="sxs-lookup"><span data-stu-id="3056c-109">Dynamically Populating a Control Using JavaScript Code (VB)</span></span>](dynamically-populating-a-control-using-javascript-code-vb.md)
-- [<span data-ttu-id="3056c-110">使用具有使用者控制項的 DynamicPopulate 和 JavaScript (VB)</span><span class="sxs-lookup"><span data-stu-id="3056c-110">Using DynamicPopulate with a User Control And JavaScript (VB)</span></span>](using-dynamicpopulate-with-a-user-control-and-javascript-vb.md)
+- [<span data-ttu-id="45f80-105">以動態方式填入控制項 (C#)</span><span class="sxs-lookup"><span data-stu-id="45f80-105">Dynamically Populating a Control (C#)</span></span>](dynamically-populating-a-control-cs.md)
+- [<span data-ttu-id="45f80-106">使用 JavaScript 程式碼以動態方式填入控制項 (C#)</span><span class="sxs-lookup"><span data-stu-id="45f80-106">Dynamically Populating a Control Using JavaScript Code (C#)</span></span>](dynamically-populating-a-control-using-javascript-code-cs.md)
+- [<span data-ttu-id="45f80-107">使用具有使用者控制項的 DynamicPopulate 和 JavaScript (C#)</span><span class="sxs-lookup"><span data-stu-id="45f80-107">Using DynamicPopulate with a User Control And JavaScript (C#)</span></span>](using-dynamicpopulate-with-a-user-control-and-javascript-cs.md)
+- [<span data-ttu-id="45f80-108">以動態方式填入控制項 (VB)</span><span class="sxs-lookup"><span data-stu-id="45f80-108">Dynamically Populating a Control (VB)</span></span>](dynamically-populating-a-control-vb.md)
+- [<span data-ttu-id="45f80-109">使用 JavaScript 程式碼以動態方式填入控制項 (VB)</span><span class="sxs-lookup"><span data-stu-id="45f80-109">Dynamically Populating a Control Using JavaScript Code (VB)</span></span>](dynamically-populating-a-control-using-javascript-code-vb.md)
+- [<span data-ttu-id="45f80-110">使用具有使用者控制項的 DynamicPopulate 和 JavaScript (VB)</span><span class="sxs-lookup"><span data-stu-id="45f80-110">Using DynamicPopulate with a User Control And JavaScript (VB)</span></span>](using-dynamicpopulate-with-a-user-control-and-javascript-vb.md)

@@ -1,59 +1,59 @@
 ---
 uid: web-forms/videos/aspnet-35/index
-title: ASP.NET 3.5 | Microsoft Docs
+title: ASP.NET 3.5 |Microsoft Docs
 author: rick-anderson
-description: 如何建置 ASP.NET 3.5 應用程式，並強調新功能。
+description: 如何建立 ASP.NET 3.5 應用程式，並強調新功能。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 2e6e9c24-bb97-446a-b05e-1bd88824d352
 msc.legacyurl: /web-forms/videos/aspnet-35
 msc.type: chapter
 ms.openlocfilehash: 369f3f1516dace0c7d8fc3a87b2d50ec71889de0
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65133781"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78572993"
 ---
-# <a name="aspnet-35"></a><span data-ttu-id="6a2e7-103">ASP.NET 3.5</span><span class="sxs-lookup"><span data-stu-id="6a2e7-103">ASP.NET 3.5</span></span>
+# <a name="aspnet-35"></a><span data-ttu-id="a1c89-103">ASP.NET 3.5</span><span class="sxs-lookup"><span data-stu-id="a1c89-103">ASP.NET 3.5</span></span>
 
-> <span data-ttu-id="6a2e7-104">如何建置 ASP.NET 3.5 應用程式，並強調新功能。</span><span class="sxs-lookup"><span data-stu-id="6a2e7-104">How to build ASP.NET 3.5 applications, with an emphasis on new features.</span></span>
+> <span data-ttu-id="a1c89-104">如何建立 ASP.NET 3.5 應用程式，並強調新功能。</span><span class="sxs-lookup"><span data-stu-id="a1c89-104">How to build ASP.NET 3.5 applications, with an emphasis on new features.</span></span>
 
-- [<span data-ttu-id="6a2e7-105">如何</span><span class="sxs-lookup"><span data-stu-id="6a2e7-105">How Do I</span></span>](how-do-i/index.md)
+- [<span data-ttu-id="a1c89-105">如何</span><span class="sxs-lookup"><span data-stu-id="a1c89-105">How Do I</span></span>](how-do-i/index.md)
 
-    - [<span data-ttu-id="6a2e7-106">在 Visual Studio 2008 中建立主版頁面</span><span class="sxs-lookup"><span data-stu-id="6a2e7-106">Create a Master Page in Visual Studio 2008</span></span>](how-do-i/how-do-i-create-a-master-page-in-visual-studio-2008.md)
-    - [<span data-ttu-id="6a2e7-107">在 Visual Studio 2008 中建立巢狀主版頁面</span><span class="sxs-lookup"><span data-stu-id="6a2e7-107">Create Nested Master Page in Visual Studio 2008</span></span>](how-do-i/how-do-i-create-nested-master-page-in-visual-studio-2008.md)
-    - [<span data-ttu-id="6a2e7-108">Visual Studio 2008 中的階層式樣式表</span><span class="sxs-lookup"><span data-stu-id="6a2e7-108">Cascading Style Sheets in Visual Studio 2008</span></span>](how-do-i/how-do-i-cascading-style-sheets-in-visual-studio-2008.md)
-    - [<span data-ttu-id="6a2e7-109">使用 Visual Studio 2008 .NET Framework</span><span class="sxs-lookup"><span data-stu-id="6a2e7-109">Working with Visual Studio 2008 .NET Framework</span></span>](how-do-i/how-do-i-working-with-visual-studio-2008-net-framework.md)
-    - [<span data-ttu-id="6a2e7-110">將項目新增至 CSS 檔案並立即建立新的 CSS</span><span class="sxs-lookup"><span data-stu-id="6a2e7-110">Adding Elements to a CSS File and Create New CSS on the Fly</span></span>](how-do-i/how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly.md)
-    - [<span data-ttu-id="6a2e7-111">進階的階層式樣式表功能和管理</span><span class="sxs-lookup"><span data-stu-id="6a2e7-111">Advance Cascading Style Sheet Features and Management</span></span>](how-do-i/how-do-i-advance-cascading-style-sheet-features-and-management.md)
-    - [<span data-ttu-id="6a2e7-112">將 .NET 2.0 Windows Form 應用程式轉換成 .NET 3.5</span><span class="sxs-lookup"><span data-stu-id="6a2e7-112">Converting a .NET 2.0 Windows Forms Application to .NET 3.5</span></span>](how-do-i/how-do-i-converting-a-net-20-windows-forms-application-to-net-35.md)
-    - [<span data-ttu-id="6a2e7-113">Entity Framework 使用者入門</span><span class="sxs-lookup"><span data-stu-id="6a2e7-113">Get Started with the Entity Framework</span></span>](how-do-i/how-do-i-get-started-with-the-entity-framework.md)
-    - [<span data-ttu-id="6a2e7-114">使用新的實體資料來源</span><span class="sxs-lookup"><span data-stu-id="6a2e7-114">Use the New Entity Data Source</span></span>](how-do-i/how-do-i-use-the-new-entity-data-source.md)
-    - [<span data-ttu-id="6a2e7-115">使用 Entity Framework 序列化圖形</span><span class="sxs-lookup"><span data-stu-id="6a2e7-115">Serialize a Graph with the Entity Framework</span></span>](how-do-i/how-do-i-serialize-a-graph-with-the-entity-framework.md)
-    - [<span data-ttu-id="6a2e7-116">使用 MSBuild 自動化 ASP.NET 編譯器並合併公用程式</span><span class="sxs-lookup"><span data-stu-id="6a2e7-116">Use MSBuild to Automate the ASP.NET Compiler and Merge Utilities</span></span>](how-do-i/how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities.md)
-- [<span data-ttu-id="6a2e7-117">ASP.NET Ajax</span><span class="sxs-lookup"><span data-stu-id="6a2e7-117">ASP.NET Ajax</span></span>](aspnet-ajax/index.md)
+    - [<span data-ttu-id="a1c89-106">在 Visual Studio 2008 中建立主版頁面</span><span class="sxs-lookup"><span data-stu-id="a1c89-106">Create a Master Page in Visual Studio 2008</span></span>](how-do-i/how-do-i-create-a-master-page-in-visual-studio-2008.md)
+    - [<span data-ttu-id="a1c89-107">在 Visual Studio 2008 中建立巢狀主版頁面</span><span class="sxs-lookup"><span data-stu-id="a1c89-107">Create Nested Master Page in Visual Studio 2008</span></span>](how-do-i/how-do-i-create-nested-master-page-in-visual-studio-2008.md)
+    - [<span data-ttu-id="a1c89-108">Visual Studio 2008 中的階層式樣式表</span><span class="sxs-lookup"><span data-stu-id="a1c89-108">Cascading Style Sheets in Visual Studio 2008</span></span>](how-do-i/how-do-i-cascading-style-sheets-in-visual-studio-2008.md)
+    - [<span data-ttu-id="a1c89-109">使用 Visual Studio 2008 .NET Framework</span><span class="sxs-lookup"><span data-stu-id="a1c89-109">Working with Visual Studio 2008 .NET Framework</span></span>](how-do-i/how-do-i-working-with-visual-studio-2008-net-framework.md)
+    - [<span data-ttu-id="a1c89-110">將項目新增至 CSS 檔案並立即建立新的 CSS</span><span class="sxs-lookup"><span data-stu-id="a1c89-110">Adding Elements to a CSS File and Create New CSS on the Fly</span></span>](how-do-i/how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly.md)
+    - [<span data-ttu-id="a1c89-111">進階的階層式樣式表功能和管理</span><span class="sxs-lookup"><span data-stu-id="a1c89-111">Advance Cascading Style Sheet Features and Management</span></span>](how-do-i/how-do-i-advance-cascading-style-sheet-features-and-management.md)
+    - [<span data-ttu-id="a1c89-112">將 .NET 2.0 Windows Form 應用程式轉換成 .NET 3.5</span><span class="sxs-lookup"><span data-stu-id="a1c89-112">Converting a .NET 2.0 Windows Forms Application to .NET 3.5</span></span>](how-do-i/how-do-i-converting-a-net-20-windows-forms-application-to-net-35.md)
+    - [<span data-ttu-id="a1c89-113">Entity Framework 使用者入門</span><span class="sxs-lookup"><span data-stu-id="a1c89-113">Get Started with the Entity Framework</span></span>](how-do-i/how-do-i-get-started-with-the-entity-framework.md)
+    - [<span data-ttu-id="a1c89-114">使用新的實體資料來源</span><span class="sxs-lookup"><span data-stu-id="a1c89-114">Use the New Entity Data Source</span></span>](how-do-i/how-do-i-use-the-new-entity-data-source.md)
+    - [<span data-ttu-id="a1c89-115">使用 Entity Framework 序列化圖形</span><span class="sxs-lookup"><span data-stu-id="a1c89-115">Serialize a Graph with the Entity Framework</span></span>](how-do-i/how-do-i-serialize-a-graph-with-the-entity-framework.md)
+    - [<span data-ttu-id="a1c89-116">使用 MSBuild 自動化 ASP.NET 編譯器並合併公用程式</span><span class="sxs-lookup"><span data-stu-id="a1c89-116">Use MSBuild to Automate the ASP.NET Compiler and Merge Utilities</span></span>](how-do-i/how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities.md)
+- [<span data-ttu-id="a1c89-117">ASP.NET Ajax</span><span class="sxs-lookup"><span data-stu-id="a1c89-117">ASP.NET Ajax</span></span>](aspnet-ajax/index.md)
 
-    - [<span data-ttu-id="6a2e7-118">Visual Studio 2008 中的 ASP.NET AJAX 支援</span><span class="sxs-lookup"><span data-stu-id="6a2e7-118">ASP.NET AJAX Support in Visual Studio 2008</span></span>](aspnet-ajax/aspnet-ajax-support-in-visual-studio-2008.md)
-    - [<span data-ttu-id="6a2e7-119">將 AJAX 功能新增至現有的 ASP.NET 頁面</span><span class="sxs-lookup"><span data-stu-id="6a2e7-119">Adding AJAX Functionality to an Existing ASP.NET Page</span></span>](aspnet-ajax/adding-ajax-functionality-to-an-existing-aspnet-page.md)
-    - [<span data-ttu-id="6a2e7-120">在網站中建立與使用採用 AJAX 的 Web 服務</span><span class="sxs-lookup"><span data-stu-id="6a2e7-120">Creating and Using an AJAX-enabled Web Service in a Web Site</span></span>](aspnet-ajax/creating-and-using-an-ajax-enabled-web-service-in-a-web-site.md)
-    - [<span data-ttu-id="6a2e7-121">ASP.NET AJAX:示範 ASP.NET AJAX</span><span class="sxs-lookup"><span data-stu-id="6a2e7-121">ASP.NET AJAX: A demonstration of ASP.NET AJAX</span></span>](aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
-    - [<span data-ttu-id="6a2e7-122">支援 ASP.NET AJAX 的 ADO.NET Data Services</span><span class="sxs-lookup"><span data-stu-id="6a2e7-122">ADO.NET Data Services with ASP.NET AJAX Support</span></span>](aspnet-ajax/adonet-data-services-with-aspnet-ajax-support.md)
-    - [<span data-ttu-id="6a2e7-123">ASP.NET Ajax 記錄簡介</span><span class="sxs-lookup"><span data-stu-id="6a2e7-123">Intro to ASP.NET Ajax History</span></span>](aspnet-ajax/introduction-to-aspnet-ajax-history.md)
-    - [<span data-ttu-id="6a2e7-124">使用指令碼結合改善 AJAX 效能</span><span class="sxs-lookup"><span data-stu-id="6a2e7-124">Using Script Combining to improve AJAX performance</span></span>](aspnet-ajax/using-script-combining-to-improve-ajax-performance.md)
-- [<span data-ttu-id="6a2e7-125">資料控制項</span><span class="sxs-lookup"><span data-stu-id="6a2e7-125">Data Controls</span></span>](data-controls/index.md)
+    - [<span data-ttu-id="a1c89-118">Visual Studio 2008 中的 ASP.NET AJAX 支援</span><span class="sxs-lookup"><span data-stu-id="a1c89-118">ASP.NET AJAX Support in Visual Studio 2008</span></span>](aspnet-ajax/aspnet-ajax-support-in-visual-studio-2008.md)
+    - [<span data-ttu-id="a1c89-119">將 AJAX 功能新增至現有的 ASP.NET 頁面</span><span class="sxs-lookup"><span data-stu-id="a1c89-119">Adding AJAX Functionality to an Existing ASP.NET Page</span></span>](aspnet-ajax/adding-ajax-functionality-to-an-existing-aspnet-page.md)
+    - [<span data-ttu-id="a1c89-120">在網站中建立與使用採用 AJAX 的 Web 服務</span><span class="sxs-lookup"><span data-stu-id="a1c89-120">Creating and Using an AJAX-enabled Web Service in a Web Site</span></span>](aspnet-ajax/creating-and-using-an-ajax-enabled-web-service-in-a-web-site.md)
+    - [<span data-ttu-id="a1c89-121">ASP.NET AJAX：示範 ASP.NET AJAX</span><span class="sxs-lookup"><span data-stu-id="a1c89-121">ASP.NET AJAX: A demonstration of ASP.NET AJAX</span></span>](aspnet-ajax/aspnet-ajax-a-demonstration-of-aspnet-ajax.md)
+    - [<span data-ttu-id="a1c89-122">支援 ASP.NET AJAX 的 ADO.NET Data Services</span><span class="sxs-lookup"><span data-stu-id="a1c89-122">ADO.NET Data Services with ASP.NET AJAX Support</span></span>](aspnet-ajax/adonet-data-services-with-aspnet-ajax-support.md)
+    - [<span data-ttu-id="a1c89-123">ASP.NET Ajax 記錄簡介</span><span class="sxs-lookup"><span data-stu-id="a1c89-123">Intro to ASP.NET Ajax History</span></span>](aspnet-ajax/introduction-to-aspnet-ajax-history.md)
+    - [<span data-ttu-id="a1c89-124">使用指令碼結合改善 AJAX 效能</span><span class="sxs-lookup"><span data-stu-id="a1c89-124">Using Script Combining to improve AJAX performance</span></span>](aspnet-ajax/using-script-combining-to-improve-ajax-performance.md)
+- [<span data-ttu-id="a1c89-125">資料控制項</span><span class="sxs-lookup"><span data-stu-id="a1c89-125">Data Controls</span></span>](data-controls/index.md)
 
-    - [<span data-ttu-id="6a2e7-126">ListView 控制項</span><span class="sxs-lookup"><span data-stu-id="6a2e7-126">ListView Control</span></span>](data-controls/the-listview-control.md)
-    - [<span data-ttu-id="6a2e7-127">DataPager 控制項</span><span class="sxs-lookup"><span data-stu-id="6a2e7-127">DataPager Control</span></span>](data-controls/the-datapager-control.md)
-- [<span data-ttu-id="6a2e7-128">Visual Studio 設計工具</span><span class="sxs-lookup"><span data-stu-id="6a2e7-128">Visual Studio Designer</span></span>](visual-studio-designer/index.md)
+    - [<span data-ttu-id="a1c89-126">ListView 控制項</span><span class="sxs-lookup"><span data-stu-id="a1c89-126">ListView Control</span></span>](data-controls/the-listview-control.md)
+    - [<span data-ttu-id="a1c89-127">DataPager 控制項</span><span class="sxs-lookup"><span data-stu-id="a1c89-127">DataPager Control</span></span>](data-controls/the-datapager-control.md)
+- [<span data-ttu-id="a1c89-128">Visual Studio 設計工具</span><span class="sxs-lookup"><span data-stu-id="a1c89-128">Visual Studio Designer</span></span>](visual-studio-designer/index.md)
 
-    - [<span data-ttu-id="6a2e7-129">Visual Studio 2008 與巢狀主版頁面</span><span class="sxs-lookup"><span data-stu-id="6a2e7-129">Visual Studio 2008 and Nested Masterpages</span></span>](visual-studio-designer/visual-studio-2008-and-nested-masterpages.md)
-- [<span data-ttu-id="6a2e7-130">Visual Studio 編輯器</span><span class="sxs-lookup"><span data-stu-id="6a2e7-130">Visual Studio Editor</span></span>](visual-studio-editor/index.md)
+    - [<span data-ttu-id="a1c89-129">Visual Studio 2008 與巢狀主版頁面</span><span class="sxs-lookup"><span data-stu-id="a1c89-129">Visual Studio 2008 and Nested Masterpages</span></span>](visual-studio-designer/visual-studio-2008-and-nested-masterpages.md)
+- [<span data-ttu-id="a1c89-130">Visual Studio 編輯器</span><span class="sxs-lookup"><span data-stu-id="a1c89-130">Visual Studio Editor</span></span>](visual-studio-editor/index.md)
 
-    - [<span data-ttu-id="6a2e7-131">Visual Studio 2008 中的新設計工具支援</span><span class="sxs-lookup"><span data-stu-id="6a2e7-131">New Designer Support in Visual Studio 2008</span></span>](visual-studio-editor/new-designer-support-in-visual-studio-2008.md)
-    - [<span data-ttu-id="6a2e7-132">Visual Studio 2008 的 JavaScript IntelliSense 支援</span><span class="sxs-lookup"><span data-stu-id="6a2e7-132">JavaScript Intellisense Support in Visual Studio 2008</span></span>](visual-studio-editor/javascript-intellisense-support-in-visual-studio-2008.md)
-    - [<span data-ttu-id="6a2e7-133">Visual Studio 2008 的 JavaScript 偵錯</span><span class="sxs-lookup"><span data-stu-id="6a2e7-133">JavaScript Debugging in Visual Studio 2008</span></span>](visual-studio-editor/javascript-debugging-in-visual-studio-2008.md)
-    - [<span data-ttu-id="6a2e7-134">Visual Studio 2008 的多目標支援</span><span class="sxs-lookup"><span data-stu-id="6a2e7-134">Multi Targeting Support in Visual Studio 2008</span></span>](visual-studio-editor/multi-targeting-support-in-visual-studio-2008.md)
-    - [<span data-ttu-id="6a2e7-135">IntelliSense for Jscript 與 ASP.NET AJAX</span><span class="sxs-lookup"><span data-stu-id="6a2e7-135">IntelliSense for Jscript and ASP.NET AJAX</span></span>](visual-studio-editor/intellisense-for-jscript-and-aspnet-ajax.md)
-    - [<span data-ttu-id="6a2e7-136">Visual Studio 2008 整合式開發環境快速導覽</span><span class="sxs-lookup"><span data-stu-id="6a2e7-136">Quick Tour of the Visual Studio 2008 Integrated Development Environment</span></span>](visual-studio-editor/quick-tour-of-the-visual-studio-2008-integrated-development-environment.md)
-    - [<span data-ttu-id="6a2e7-137">建立和修改 CSS 檔</span><span class="sxs-lookup"><span data-stu-id="6a2e7-137">Creating and Modifying a CSS File</span></span>](visual-studio-editor/creating-and-modifying-a-css-file.md)
+    - [<span data-ttu-id="a1c89-131">Visual Studio 2008 中的新設計工具支援</span><span class="sxs-lookup"><span data-stu-id="a1c89-131">New Designer Support in Visual Studio 2008</span></span>](visual-studio-editor/new-designer-support-in-visual-studio-2008.md)
+    - [<span data-ttu-id="a1c89-132">Visual Studio 2008 的 JavaScript IntelliSense 支援</span><span class="sxs-lookup"><span data-stu-id="a1c89-132">JavaScript Intellisense Support in Visual Studio 2008</span></span>](visual-studio-editor/javascript-intellisense-support-in-visual-studio-2008.md)
+    - [<span data-ttu-id="a1c89-133">Visual Studio 2008 的 JavaScript 偵錯</span><span class="sxs-lookup"><span data-stu-id="a1c89-133">JavaScript Debugging in Visual Studio 2008</span></span>](visual-studio-editor/javascript-debugging-in-visual-studio-2008.md)
+    - [<span data-ttu-id="a1c89-134">Visual Studio 2008 的多目標支援</span><span class="sxs-lookup"><span data-stu-id="a1c89-134">Multi Targeting Support in Visual Studio 2008</span></span>](visual-studio-editor/multi-targeting-support-in-visual-studio-2008.md)
+    - [<span data-ttu-id="a1c89-135">IntelliSense for Jscript 與 ASP.NET AJAX</span><span class="sxs-lookup"><span data-stu-id="a1c89-135">IntelliSense for Jscript and ASP.NET AJAX</span></span>](visual-studio-editor/intellisense-for-jscript-and-aspnet-ajax.md)
+    - [<span data-ttu-id="a1c89-136">Visual Studio 2008 整合式開發環境快速導覽</span><span class="sxs-lookup"><span data-stu-id="a1c89-136">Quick Tour of the Visual Studio 2008 Integrated Development Environment</span></span>](visual-studio-editor/quick-tour-of-the-visual-studio-2008-integrated-development-environment.md)
+    - [<span data-ttu-id="a1c89-137">建立和修改 CSS 檔</span><span class="sxs-lookup"><span data-stu-id="a1c89-137">Creating and Modifying a CSS File</span></span>](visual-studio-editor/creating-and-modifying-a-css-file.md)

@@ -2,23 +2,23 @@
 uid: visual-studio/overview/2013/visual-studio-2013-web-editor-features-browser-link
 title: Visual Studio 2013 Web 編輯器功能-瀏覽器連結 |Microsoft Docs
 author: shanselman
-description: Scott Hanselman 示範如何在 Visual Studio 2013，Visual Studio 與多個連線的瀏覽器之間的雙向通訊可讓瀏覽器連結...
+description: Scott Hanselman 示範 Visual Studio 2013 中的瀏覽器連結，可讓 Visual Studio 和多個連線的瀏覽器之間進行雙向通訊 。
 ms.author: riande
 ms.date: 10/17/2013
 ms.assetid: 45bf07c6-145f-435e-a703-3233e710d528
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-editor-features-browser-link
 msc.type: video
 ms.openlocfilehash: 15fba4d22037482d1be2207a3547201e0c74173a
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59407662"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78557768"
 ---
-# <a name="visual-studio-2013-web-editor-features---browser-link"></a><span data-ttu-id="c2de6-103">Visual Studio 2013 Web 編輯器功能 - 瀏覽器連結</span><span class="sxs-lookup"><span data-stu-id="c2de6-103">Visual Studio 2013 Web Editor Features - Browser Link</span></span>
+# <a name="visual-studio-2013-web-editor-features---browser-link"></a><span data-ttu-id="d8445-103">Visual Studio 2013 Web 編輯器功能 - 瀏覽器連結</span><span class="sxs-lookup"><span data-stu-id="d8445-103">Visual Studio 2013 Web Editor Features - Browser Link</span></span>
 
-<span data-ttu-id="c2de6-104">藉由[Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="c2de6-104">by [Scott Hanselman](https://github.com/shanselman)</span></span>
+<span data-ttu-id="d8445-104">由[Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="d8445-104">by [Scott Hanselman](https://github.com/shanselman)</span></span>
 
-<span data-ttu-id="c2de6-105">Scott Hanselman 示範如何在 Visual Studio 2013，Visual Studio 與多個連線的瀏覽器之間的雙向通訊可讓瀏覽器連結。</span><span class="sxs-lookup"><span data-stu-id="c2de6-105">Scott Hanselman demonstrates Browser Link in Visual Studio 2013, which allows for two-way communication between Visual Studio and multiple connected browsers.</span></span>
+<span data-ttu-id="d8445-105">Scott Hanselman 示範 Visual Studio 2013 中的瀏覽器連結，可在 Visual Studio 和多個連線的瀏覽器之間進行雙向通訊。</span><span class="sxs-lookup"><span data-stu-id="d8445-105">Scott Hanselman demonstrates Browser Link in Visual Studio 2013, which allows for two-way communication between Visual Studio and multiple connected browsers.</span></span>
 
-[<span data-ttu-id="c2de6-106">&#9654;觀看影片 （3 分鐘）</span><span class="sxs-lookup"><span data-stu-id="c2de6-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-2013-web-editor-features-browser-link)
+[<span data-ttu-id="d8445-106">&#9654;觀看影片（3分鐘）</span><span class="sxs-lookup"><span data-stu-id="d8445-106">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-2013-web-editor-features-browser-link)

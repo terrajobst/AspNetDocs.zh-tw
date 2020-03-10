@@ -7,12 +7,12 @@ ms.author: riande
 ms.date: 08/25/2018
 msc.type: chapter
 ms.openlocfilehash: 46871b95709ae56c418dc8dd1a4466442da3bf3a
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65113013"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78557733"
 ---
-# <a name="aspnet-and-visual-studio-2017"></a><span data-ttu-id="3d3c9-103">ASP.NET 和 Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="3d3c9-103">ASP.NET and Visual Studio 2017</span></span>
+# <a name="aspnet-and-visual-studio-2017"></a><span data-ttu-id="ce574-103">ASP.NET 和 Visual Studio 2017</span><span class="sxs-lookup"><span data-stu-id="ce574-103">ASP.NET and Visual Studio 2017</span></span>
 
-[<span data-ttu-id="3d3c9-104">將解決方案的建置效能最佳化</span><span class="sxs-lookup"><span data-stu-id="3d3c9-104">Optimize build performance for solution</span></span>](xref:visual-studio/overview/2017/optimize-build-perf)
+[<span data-ttu-id="ce574-104">將解決方案的建置效能最佳化</span><span class="sxs-lookup"><span data-stu-id="ce574-104">Optimize build performance for solution</span></span>](xref:visual-studio/overview/2017/optimize-build-perf)

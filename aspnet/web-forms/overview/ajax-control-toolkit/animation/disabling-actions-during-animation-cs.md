@@ -9,55 +9,55 @@ ms.assetid: 918026b4-2f63-421d-8546-df12856960a8
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-animation-cs
 msc.type: authoredcontent
 ms.openlocfilehash: e91205ad2f9e6ee1fdd869ceb7587c3a82754772
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599753"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78536264"
 ---
-# <a name="disabling-actions-during-animation-c"></a><span data-ttu-id="f18c5-104">動畫播放期間停用動作 (C#)</span><span class="sxs-lookup"><span data-stu-id="f18c5-104">Disabling Actions during Animation (C#)</span></span>
+# <a name="disabling-actions-during-animation-c"></a><span data-ttu-id="24709-104">動畫播放期間停用動作 (C#)</span><span class="sxs-lookup"><span data-stu-id="24709-104">Disabling Actions during Animation (C#)</span></span>
 
-<span data-ttu-id="f18c5-105">依[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="f18c5-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="24709-105">依[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="24709-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="f18c5-106">[下載程式代碼](https://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation7.cs.zip)或[下載 PDF](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation7CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="f18c5-106">[Download Code](https://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation7.cs.zip) or [Download PDF](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation7CS.pdf)</span></span>
+<span data-ttu-id="24709-106">[下載程式代碼](https://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation7.cs.zip)或[下載 PDF](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation7CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="24709-106">[Download Code](https://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation7.cs.zip) or [Download PDF](https://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation7CS.pdf)</span></span>
 
-> <span data-ttu-id="f18c5-107">ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。</span><span class="sxs-lookup"><span data-stu-id="f18c5-107">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="f18c5-108">它也支援動作，例如滑鼠點擊。</span><span class="sxs-lookup"><span data-stu-id="f18c5-108">It also supports actions, like mouse clicks.</span></span> <span data-ttu-id="f18c5-109">不過，當滑鼠按一下啟動動畫時，最好在動畫期間停用滑鼠點按動作。</span><span class="sxs-lookup"><span data-stu-id="f18c5-109">However when a mouse click starts an animation, it is desirable to disable mouse clicks during the animation.</span></span>
+> <span data-ttu-id="24709-107">ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。</span><span class="sxs-lookup"><span data-stu-id="24709-107">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="24709-108">它也支援動作，例如滑鼠點擊。</span><span class="sxs-lookup"><span data-stu-id="24709-108">It also supports actions, like mouse clicks.</span></span> <span data-ttu-id="24709-109">不過，當滑鼠按一下啟動動畫時，最好在動畫期間停用滑鼠點按動作。</span><span class="sxs-lookup"><span data-stu-id="24709-109">However when a mouse click starts an animation, it is desirable to disable mouse clicks during the animation.</span></span>
 
-## <a name="overview"></a><span data-ttu-id="f18c5-110">概觀</span><span class="sxs-lookup"><span data-stu-id="f18c5-110">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="24709-110">概觀</span><span class="sxs-lookup"><span data-stu-id="24709-110">Overview</span></span>
 
-<span data-ttu-id="f18c5-111">ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。</span><span class="sxs-lookup"><span data-stu-id="f18c5-111">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="f18c5-112">它也支援動作，例如滑鼠點擊。</span><span class="sxs-lookup"><span data-stu-id="f18c5-112">It also supports actions, like mouse clicks.</span></span> <span data-ttu-id="f18c5-113">不過，當滑鼠按一下啟動動畫時，最好在動畫期間停用滑鼠點按動作。</span><span class="sxs-lookup"><span data-stu-id="f18c5-113">However when a mouse click starts an animation, it is desirable to disable mouse clicks during the animation.</span></span>
+<span data-ttu-id="24709-111">ASP.NET AJAX 控制項工具組中的動畫控制項不只是控制項，而是可將動畫新增至控制項的整個架構。</span><span class="sxs-lookup"><span data-stu-id="24709-111">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="24709-112">它也支援動作，例如滑鼠點擊。</span><span class="sxs-lookup"><span data-stu-id="24709-112">It also supports actions, like mouse clicks.</span></span> <span data-ttu-id="24709-113">不過，當滑鼠按一下啟動動畫時，最好在動畫期間停用滑鼠點按動作。</span><span class="sxs-lookup"><span data-stu-id="24709-113">However when a mouse click starts an animation, it is desirable to disable mouse clicks during the animation.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="f18c5-114">步驟</span><span class="sxs-lookup"><span data-stu-id="f18c5-114">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="24709-114">步驟</span><span class="sxs-lookup"><span data-stu-id="24709-114">Steps</span></span>
 
-<span data-ttu-id="f18c5-115">首先，在頁面中包含 `ScriptManager`;然後，會載入 ASP.NET AJAX 程式庫，讓您能夠使用控制項工具組：</span><span class="sxs-lookup"><span data-stu-id="f18c5-115">First of all, include the `ScriptManager` in the page; then, the ASP.NET AJAX library is loaded, making it possible to use the Control Toolkit:</span></span>
+<span data-ttu-id="24709-115">首先，在頁面中包含 `ScriptManager`;然後，會載入 ASP.NET AJAX 程式庫，讓您能夠使用控制項工具組：</span><span class="sxs-lookup"><span data-stu-id="24709-115">First of all, include the `ScriptManager` in the page; then, the ASP.NET AJAX library is loaded, making it possible to use the Control Toolkit:</span></span>
 
 [!code-aspx[Main](disabling-actions-during-animation-cs/samples/sample1.aspx)]
 
-<span data-ttu-id="f18c5-116">動畫將會套用至 HTML 按鈕，如下所示：</span><span class="sxs-lookup"><span data-stu-id="f18c5-116">The animation will be applied to an HTML button like this:</span></span>
+<span data-ttu-id="24709-116">動畫將會套用至 HTML 按鈕，如下所示：</span><span class="sxs-lookup"><span data-stu-id="24709-116">The animation will be applied to an HTML button like this:</span></span>
 
 [!code-aspx[Main](disabling-actions-during-animation-cs/samples/sample2.aspx)]
 
-<span data-ttu-id="f18c5-117">請注意，HTML 控制項是用來取代 Web 控制項，因為我們不想要讓按鈕建立回傳。它應該只為我們啟動用戶端動畫。</span><span class="sxs-lookup"><span data-stu-id="f18c5-117">Note that an HTML Control is used instead of a Web Control since we do not want the button to create a postback; it shall just launch the client-side animation for us.</span></span>
+<span data-ttu-id="24709-117">請注意，HTML 控制項是用來取代 Web 控制項，因為我們不想要讓按鈕建立回傳。它應該只為我們啟動用戶端動畫。</span><span class="sxs-lookup"><span data-stu-id="24709-117">Note that an HTML Control is used instead of a Web Control since we do not want the button to create a postback; it shall just launch the client-side animation for us.</span></span>
 
-<span data-ttu-id="f18c5-118">然後，將 `AnimationExtender` 新增至頁面，並提供 `ID`、`TargetControlID` 屬性和必要 `runat="server"`：</span><span class="sxs-lookup"><span data-stu-id="f18c5-118">Then, add the `AnimationExtender` to the page, providing an `ID`, the `TargetControlID` attribute and the obligatory `runat="server"`:</span></span>
+<span data-ttu-id="24709-118">然後，將 `AnimationExtender` 新增至頁面，並提供 `ID`、`TargetControlID` 屬性和必要 `runat="server"`：</span><span class="sxs-lookup"><span data-stu-id="24709-118">Then, add the `AnimationExtender` to the page, providing an `ID`, the `TargetControlID` attribute and the obligatory `runat="server"`:</span></span>
 
 [!code-aspx[Main](disabling-actions-during-animation-cs/samples/sample3.aspx)]
 
-<span data-ttu-id="f18c5-119">在 [`<Animations>`] 節點內，`<OnClick>` 是用來處理滑鼠點按的右元素。</span><span class="sxs-lookup"><span data-stu-id="f18c5-119">Within the `<Animations>` node, `<OnClick>` is the right element to handle the mouse click.</span></span> <span data-ttu-id="f18c5-120">不過，在動畫期間也可以按一下按鈕。</span><span class="sxs-lookup"><span data-stu-id="f18c5-120">However, the button could be clicked during the animation, as well.</span></span> <span data-ttu-id="f18c5-121">`<EnableAction>` 元素可以處理這一點。</span><span class="sxs-lookup"><span data-stu-id="f18c5-121">The `<EnableAction>` element can take care of that.</span></span> <span data-ttu-id="f18c5-122">設定 `Enabled="false"` 會停用按鈕作為動畫的一部分。</span><span class="sxs-lookup"><span data-stu-id="f18c5-122">Setting `Enabled="false"` disables the button as part of the animation.</span></span> <span data-ttu-id="f18c5-123">由於我們使用數個個別的動畫（停用按鈕和實際的動畫），因此需要 `<Parallel>` 元素，將單一動畫一併放到一個。</span><span class="sxs-lookup"><span data-stu-id="f18c5-123">Since we are using several individual animations (disabling the button and the actual animations), the `<Parallel>` element is required to glue the single animations together into one.</span></span> <span data-ttu-id="f18c5-124">以下是 `AnimationExtender`的完整標記：</span><span class="sxs-lookup"><span data-stu-id="f18c5-124">Here is the complete markup for `AnimationExtender`:</span></span>
+<span data-ttu-id="24709-119">在 [`<Animations>`] 節點內，`<OnClick>` 是用來處理滑鼠點按的右元素。</span><span class="sxs-lookup"><span data-stu-id="24709-119">Within the `<Animations>` node, `<OnClick>` is the right element to handle the mouse click.</span></span> <span data-ttu-id="24709-120">不過，在動畫期間也可以按一下按鈕。</span><span class="sxs-lookup"><span data-stu-id="24709-120">However, the button could be clicked during the animation, as well.</span></span> <span data-ttu-id="24709-121">`<EnableAction>` 元素可以處理這一點。</span><span class="sxs-lookup"><span data-stu-id="24709-121">The `<EnableAction>` element can take care of that.</span></span> <span data-ttu-id="24709-122">設定 `Enabled="false"` 會停用按鈕作為動畫的一部分。</span><span class="sxs-lookup"><span data-stu-id="24709-122">Setting `Enabled="false"` disables the button as part of the animation.</span></span> <span data-ttu-id="24709-123">由於我們使用數個個別的動畫（停用按鈕和實際的動畫），因此需要 `<Parallel>` 元素，將單一動畫一併放到一個。</span><span class="sxs-lookup"><span data-stu-id="24709-123">Since we are using several individual animations (disabling the button and the actual animations), the `<Parallel>` element is required to glue the single animations together into one.</span></span> <span data-ttu-id="24709-124">以下是 `AnimationExtender`的完整標記：</span><span class="sxs-lookup"><span data-stu-id="24709-124">Here is the complete markup for `AnimationExtender`:</span></span>
 
 [!code-aspx[Main](disabling-actions-during-animation-cs/samples/sample4.aspx)]
 
-<span data-ttu-id="f18c5-125">您也可以使用清單結尾的下列 XML 元素，在動畫之後重新啟用 [到] 按鈕：</span><span class="sxs-lookup"><span data-stu-id="f18c5-125">It would also be possible to re-enable to button after the animation, using the following XML element at the end of the list:</span></span>
+<span data-ttu-id="24709-125">您也可以使用清單結尾的下列 XML 元素，在動畫之後重新啟用 [到] 按鈕：</span><span class="sxs-lookup"><span data-stu-id="24709-125">It would also be possible to re-enable to button after the animation, using the following XML element at the end of the list:</span></span>
 
 [!code-xml[Main](disabling-actions-during-animation-cs/samples/sample5.xml)]
 
-<span data-ttu-id="f18c5-126">不過在給定的案例中，這會很無用，因為按鈕會淡出，而且在動畫結束時看不到。</span><span class="sxs-lookup"><span data-stu-id="f18c5-126">However in the given scenario this would be useless since the button fades out and is not visible at the end of the animation.</span></span>
+<span data-ttu-id="24709-126">不過在給定的案例中，這會很無用，因為按鈕會淡出，而且在動畫結束時看不到。</span><span class="sxs-lookup"><span data-stu-id="24709-126">However in the given scenario this would be useless since the button fades out and is not visible at the end of the animation.</span></span>
 
-<span data-ttu-id="f18c5-127">[![在動畫執行時立即停用按鈕](disabling-actions-during-animation-cs/_static/image2.png)](disabling-actions-during-animation-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="f18c5-127">[![The button is disabled as soon as the animation runs](disabling-actions-during-animation-cs/_static/image2.png)](disabling-actions-during-animation-cs/_static/image1.png)</span></span>
+<span data-ttu-id="24709-127">[![在動畫執行時立即停用按鈕](disabling-actions-during-animation-cs/_static/image2.png)](disabling-actions-during-animation-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="24709-127">[![The button is disabled as soon as the animation runs](disabling-actions-during-animation-cs/_static/image2.png)](disabling-actions-during-animation-cs/_static/image1.png)</span></span>
 
-<span data-ttu-id="f18c5-128">動畫執行時，按鈕會立即停用（[按一下以觀看完整大小的影像](disabling-actions-during-animation-cs/_static/image3.png)）</span><span class="sxs-lookup"><span data-stu-id="f18c5-128">The button is disabled as soon as the animation runs ([Click to view full-size image](disabling-actions-during-animation-cs/_static/image3.png))</span></span>
+<span data-ttu-id="24709-128">動畫執行時，按鈕會立即停用（[按一下以觀看完整大小的影像](disabling-actions-during-animation-cs/_static/image3.png)）</span><span class="sxs-lookup"><span data-stu-id="24709-128">The button is disabled as soon as the animation runs ([Click to view full-size image](disabling-actions-during-animation-cs/_static/image3.png))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="f18c5-129">[上一頁](animating-in-response-to-user-interaction-cs.md)
-> [下一頁](triggering-an-animation-in-another-control-cs.md)</span><span class="sxs-lookup"><span data-stu-id="f18c5-129">[Previous](animating-in-response-to-user-interaction-cs.md)
+> <span data-ttu-id="24709-129">[上一頁](animating-in-response-to-user-interaction-cs.md)
+> [下一頁](triggering-an-animation-in-another-control-cs.md)</span><span class="sxs-lookup"><span data-stu-id="24709-129">[Previous](animating-in-response-to-user-interaction-cs.md)
 [Next](triggering-an-animation-in-another-control-cs.md)</span></span>

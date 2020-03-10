@@ -1,27 +1,27 @@
 ---
 uid: web-forms/videos/migrating/intro-to-aspnet-20-aspnet-20-fundamentals
-title: '[ASP.NET 2.0 簡介:]ASP.NET 2.0 基本概念 |Microsoft Docs'
+title: '[簡介 ASP.NET 2.0：]ASP.NET 2.0 基本概念 |Microsoft Docs'
 author: microsoft
-description: 開發新手，asp.net 會想要參加此網路廣播可讓您熟悉其基本功能所設計。
+description: ASP.NET 的新開發人員會想要參加此網路廣播，其設計是為了讓您熟悉它的基本功能。
 ms.author: riande
 ms.date: 07/25/2006
 ms.assetid: ff36f242-5f40-44d1-b65d-5ab2fb622742
 msc.legacyurl: /web-forms/videos/migrating/intro-to-aspnet-20-aspnet-20-fundamentals
 msc.type: video
 ms.openlocfilehash: 4fa306d25868ace7d713f968efe083438655f8bf
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59416151"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78624688"
 ---
-# <a name="intro-to-aspnet-20-aspnet-20-fundamentals"></a><span data-ttu-id="9913a-103">[ASP.NET 2.0 簡介：] ASP.NET 2.0 基本概念</span><span class="sxs-lookup"><span data-stu-id="9913a-103">[Intro to ASP.NET 2.0:] ASP.NET 2.0 Fundamentals</span></span>
+# <a name="intro-to-aspnet-20-aspnet-20-fundamentals"></a><span data-ttu-id="bb2b6-103">[ASP.NET 2.0 簡介：] ASP.NET 2.0 基本概念</span><span class="sxs-lookup"><span data-stu-id="bb2b6-103">[Intro to ASP.NET 2.0:] ASP.NET 2.0 Fundamentals</span></span>
 
-<span data-ttu-id="9913a-104">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="9913a-104">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="bb2b6-104">由[Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="bb2b6-104">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="9913a-105">開發新手，asp.net 會想要參加此網路廣播可讓您熟悉其基本功能所設計。</span><span class="sxs-lookup"><span data-stu-id="9913a-105">Developers new to ASP.NET will want to attend this webcast designed to familiarize you with its essential features.</span></span>
+<span data-ttu-id="bb2b6-105">ASP.NET 的新開發人員會想要參加此網路廣播，其設計是為了讓您熟悉它的基本功能。</span><span class="sxs-lookup"><span data-stu-id="bb2b6-105">Developers new to ASP.NET will want to attend this webcast designed to familiarize you with its essential features.</span></span>
 
-[<span data-ttu-id="9913a-106">&#9654;觀看影片 （70 分鐘）</span><span class="sxs-lookup"><span data-stu-id="9913a-106">&#9654; Watch video (70 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/intro-to-aspnet-20-aspnet-20-fundamentals)
+[<span data-ttu-id="bb2b6-106">&#9654;觀看影片（70分鐘）</span><span class="sxs-lookup"><span data-stu-id="bb2b6-106">&#9654; Watch video (70 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/intro-to-aspnet-20-aspnet-20-fundamentals)
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="9913a-107">下一步</span><span class="sxs-lookup"><span data-stu-id="9913a-107">Next</span></span>](intro-to-aspnet-20-user-interface-elements.md)
+> [<span data-ttu-id="bb2b6-107">下一個</span><span class="sxs-lookup"><span data-stu-id="bb2b6-107">Next</span></span>](intro-to-aspnet-20-user-interface-elements.md)
