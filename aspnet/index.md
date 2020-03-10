@@ -6,13 +6,13 @@ author: Rick-Anderson
 ms.author: riande
 title: ASP.NET 文件
 ms.date: 08/24/2018
-description: 了解如何開發 ASP.NET 與 ASP.NET Web 應用程式。 取得文件、程式碼範例、教學課程等資訊。
+description: 了解如何開發 ASP.NET 與 ASP.NET Web 應用程式。 取得文件、程式碼範例、教學課程等。
 ms.openlocfilehash: 6309704444d60d42d49c3a8f1683045dc503e761
-ms.sourcegitcommit: cd35be4b25eb05724a5f074214bbdf6573349eda
-ms.translationtype: HT
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70161686"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78616421"
 ---
 <!-- markdownlint-disable MD033 -->
 <div id="main" class="v2">
@@ -80,7 +80,7 @@ ms.locfileid: "70161686"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>API 參考</h3>
+                                                    <h3>應用程式開發介面參考</h3>
                                                     <p>探索 ASP.NET Core 類別庫。</p>
                                                 </div>
                                             </div>

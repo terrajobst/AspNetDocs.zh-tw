@@ -1,30 +1,30 @@
 ---
 uid: web-forms/videos/aspnet-web-forms-vnext/index
-title: ASP.NET 4.5 | Microsoft Docs
+title: ASP.NET 4.5 |Microsoft Docs
 author: rick-anderson
-description: 關於 ASP.NET 4.5 中引進了新的 Web Form 功能。
+description: 關於 ASP.NET 4.5 引進的新 Web Forms 功能。
 ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 98c78dad-22bf-45cd-807e-c2f3f59011b9
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext
 msc.type: chapter
 ms.openlocfilehash: e791cba586f71ffae251b007b14588e4c1e818f1
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65116132"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78638807"
 ---
-# <a name="aspnet-45"></a><span data-ttu-id="2c565-103">ASP.NET 4.5</span><span class="sxs-lookup"><span data-stu-id="2c565-103">ASP.NET 4.5</span></span>
+# <a name="aspnet-45"></a><span data-ttu-id="452a2-103">ASP.NET 4.5</span><span class="sxs-lookup"><span data-stu-id="452a2-103">ASP.NET 4.5</span></span>
 
-> <span data-ttu-id="2c565-104">關於 ASP.NET 4.5 中引進了新的 Web Form 功能。</span><span class="sxs-lookup"><span data-stu-id="2c565-104">About new Web Forms features introduced in ASP.NET 4.5.</span></span>
+> <span data-ttu-id="452a2-104">關於 ASP.NET 4.5 引進的新 Web Forms 功能。</span><span class="sxs-lookup"><span data-stu-id="452a2-104">About new Web Forms features introduced in ASP.NET 4.5.</span></span>
 
-- [<span data-ttu-id="2c565-105">強型別資料控制項</span><span class="sxs-lookup"><span data-stu-id="2c565-105">Strongly Typed Data Controls</span></span>](aspnet-vnext-videos-strongly-typed-data-controls.md)
-- [<span data-ttu-id="2c565-106">模型繫結第 1 節：選取資料</span><span class="sxs-lookup"><span data-stu-id="2c565-106">Model Binding Part 1 - Selecting Data</span></span>](aspnet-vnext-videos-model-binding-part-1-selecting-data.md)
-- [<span data-ttu-id="2c565-107">模型繫結第 2 節：篩選</span><span class="sxs-lookup"><span data-stu-id="2c565-107">Model Binding Part 2 - Filtering</span></span>](aspnet-vnext-videos-model-binding-part-2-filtering.md)
-- [<span data-ttu-id="2c565-108">模型繫結第 3 節：更新</span><span class="sxs-lookup"><span data-stu-id="2c565-108">Model Binding Part 3 - Updating</span></span>](aspnet-vnext-videos-model-binding-part-3-updating.md)
-- [<span data-ttu-id="2c565-109">ASP.NET 4.5 Web Form 模型繫結</span><span class="sxs-lookup"><span data-stu-id="2c565-109">ASP.NET 4.5 Web Forms Model Binding</span></span>](aspnet-45-web-forms-model-binding.md)
-- [<span data-ttu-id="2c565-110">ASP.NET 4.5 Web Form 強型別資料控制項</span><span class="sxs-lookup"><span data-stu-id="2c565-110">ASP.NET 4.5 Web Forms Strong Typed Data Controls</span></span>](aspnet-45-web-forms-strong-typed-data-controls.md)
-- [<span data-ttu-id="2c565-111">統合和縮製</span><span class="sxs-lookup"><span data-stu-id="2c565-111">Bundling and Minification</span></span>](aspnet-vnext-videos-bundling-and-minification.md)
-- [<span data-ttu-id="2c565-112">開始使用下一版的 ASP.NET</span><span class="sxs-lookup"><span data-stu-id="2c565-112">Getting Started with the Next Version of ASP.NET</span></span>](getting-started-with-the-next-version-of-aspnet.md)
-- [<span data-ttu-id="2c565-113">ASP.NET 和 Web 工具 2012.2</span><span class="sxs-lookup"><span data-stu-id="2c565-113">ASP.NET and Web Tools 2012.2</span></span>](aspnet-and-web-tools-20122.md)
+- [<span data-ttu-id="452a2-105">強型別資料控制項</span><span class="sxs-lookup"><span data-stu-id="452a2-105">Strongly Typed Data Controls</span></span>](aspnet-vnext-videos-strongly-typed-data-controls.md)
+- [<span data-ttu-id="452a2-106">模型繫結第 1 節：選取資料</span><span class="sxs-lookup"><span data-stu-id="452a2-106">Model Binding Part 1 - Selecting Data</span></span>](aspnet-vnext-videos-model-binding-part-1-selecting-data.md)
+- [<span data-ttu-id="452a2-107">模型繫結第 2 節：篩選</span><span class="sxs-lookup"><span data-stu-id="452a2-107">Model Binding Part 2 - Filtering</span></span>](aspnet-vnext-videos-model-binding-part-2-filtering.md)
+- [<span data-ttu-id="452a2-108">模型繫結第 3 節：更新</span><span class="sxs-lookup"><span data-stu-id="452a2-108">Model Binding Part 3 - Updating</span></span>](aspnet-vnext-videos-model-binding-part-3-updating.md)
+- [<span data-ttu-id="452a2-109">ASP.NET 4.5 Web Form 模型繫結</span><span class="sxs-lookup"><span data-stu-id="452a2-109">ASP.NET 4.5 Web Forms Model Binding</span></span>](aspnet-45-web-forms-model-binding.md)
+- [<span data-ttu-id="452a2-110">ASP.NET 4.5 Web Form 強型別資料控制項</span><span class="sxs-lookup"><span data-stu-id="452a2-110">ASP.NET 4.5 Web Forms Strong Typed Data Controls</span></span>](aspnet-45-web-forms-strong-typed-data-controls.md)
+- [<span data-ttu-id="452a2-111">統合和縮製</span><span class="sxs-lookup"><span data-stu-id="452a2-111">Bundling and Minification</span></span>](aspnet-vnext-videos-bundling-and-minification.md)
+- [<span data-ttu-id="452a2-112">開始使用下一版的 ASP.NET</span><span class="sxs-lookup"><span data-stu-id="452a2-112">Getting Started with the Next Version of ASP.NET</span></span>](getting-started-with-the-next-version-of-aspnet.md)
+- [<span data-ttu-id="452a2-113">ASP.NET 和 Web 工具 2012.2</span><span class="sxs-lookup"><span data-stu-id="452a2-113">ASP.NET and Web Tools 2012.2</span></span>](aspnet-and-web-tools-20122.md)

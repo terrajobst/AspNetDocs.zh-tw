@@ -1,22 +1,22 @@
 ---
 uid: ajax/index
-title: ASP.NET Ajax:增強的互動性和回應性 |Microsoft Docs
+title: ASP.NET Ajax：增強的互動性和回應性 |Microsoft Docs
 author: rick-anderson
-description: 將 Ajax 功能新增至 ASP.NET 應用程式與 jQuery 或 Ajax Control Toolkit 中。 改善 Ajax 應用程式與微的效能...
+description: 使用 jQuery 或 Ajax 控制項工具組，將 Ajax 功能新增至您的 ASP.NET 應用程式。 使用微 ...，提升 Ajax 應用程式的效能
 ms.author: riande
 ms.date: 12/15/2009
 ms.assetid: 42b0bd66-bf2f-4993-8b5a-bac3028201fc
 msc.legacyurl: /ajax
 msc.type: content
 ms.openlocfilehash: 43c0593e7e2f8dd8db1a89f57bcaa5dbae2ae00d
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59420857"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78584984"
 ---
-# <a name="aspnet-ajax--enhanced-interactivity-and-responsiveness"></a><span data-ttu-id="1844c-104">ASP.NET Ajax:增強的互動性和回應性</span><span class="sxs-lookup"><span data-stu-id="1844c-104">ASP.NET Ajax : Enhanced Interactivity and Responsiveness</span></span>
+# <a name="aspnet-ajax--enhanced-interactivity-and-responsiveness"></a><span data-ttu-id="412c1-104">ASP.NET Ajax：增強的互動性和回應性</span><span class="sxs-lookup"><span data-stu-id="412c1-104">ASP.NET Ajax : Enhanced Interactivity and Responsiveness</span></span>
 
-- [<span data-ttu-id="1844c-105">AJAX Control Toolkit</span><span class="sxs-lookup"><span data-stu-id="1844c-105">AJAX Control Toolkit</span></span>](https://go.devexpress.com/AjaxControlToolkit_ASP_Resources_ASP_AJAX_Index.aspx)
-- [<span data-ttu-id="1844c-106">jQuery</span><span class="sxs-lookup"><span data-stu-id="1844c-106">jQuery</span></span>](http://jquery.com/)
-- [<span data-ttu-id="1844c-107">Microsoft Ajax CDN</span><span class="sxs-lookup"><span data-stu-id="1844c-107">Microsoft Ajax CDN</span></span>](cdn/overview.md)
+- [<span data-ttu-id="412c1-105">AJAX 控制項工具組</span><span class="sxs-lookup"><span data-stu-id="412c1-105">AJAX Control Toolkit</span></span>](https://go.devexpress.com/AjaxControlToolkit_ASP_Resources_ASP_AJAX_Index.aspx)
+- [<span data-ttu-id="412c1-106">jQuery</span><span class="sxs-lookup"><span data-stu-id="412c1-106">jQuery</span></span>](http://jquery.com/)
+- [<span data-ttu-id="412c1-107">Microsoft Ajax CDN</span><span class="sxs-lookup"><span data-stu-id="412c1-107">Microsoft Ajax CDN</span></span>](cdn/overview.md)

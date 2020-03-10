@@ -9,55 +9,55 @@ ms.assetid: 7963890b-4ea3-4a1c-b65d-6098a3d56f62
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 20073d156b4bd5ce67a47d2511b28594b70ce260
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74599077"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78554058"
 ---
-# <a name="handling-postbacks-from-a-modalpopup-c"></a><span data-ttu-id="ad159-104">處理來自 ModalPopup 的回傳 (C#)</span><span class="sxs-lookup"><span data-stu-id="ad159-104">Handling Postbacks from a ModalPopup (C#)</span></span>
+# <a name="handling-postbacks-from-a-modalpopup-c"></a><span data-ttu-id="2d37a-104">處理來自 ModalPopup 的回傳 (C#)</span><span class="sxs-lookup"><span data-stu-id="2d37a-104">Handling Postbacks from a ModalPopup (C#)</span></span>
 
-<span data-ttu-id="ad159-105">依[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="ad159-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="2d37a-105">依[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="2d37a-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="ad159-106">[下載程式代碼](https://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup3.cs.zip)或[下載 PDF](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup3CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="ad159-106">[Download Code](https://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup3.cs.zip) or [Download PDF](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup3CS.pdf)</span></span>
+<span data-ttu-id="2d37a-106">[下載程式代碼](https://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup3.cs.zip)或[下載 PDF](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup3CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="2d37a-106">[Download Code](https://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup3.cs.zip) or [Download PDF](https://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup3CS.pdf)</span></span>
 
-> <span data-ttu-id="ad159-107">AJAX 控制項工具組中的 ModalPopup 控制項提供一個簡單的方式，讓您使用用戶端的方法來建立強制回應快顯視窗。</span><span class="sxs-lookup"><span data-stu-id="ad159-107">The ModalPopup control in the AJAX Control Toolkit offers a simple way to create a modal popup using client-side means.</span></span> <span data-ttu-id="ad159-108">從快顯視窗內建立回傳時，必須特別小心。</span><span class="sxs-lookup"><span data-stu-id="ad159-108">Special care must be taken when a postback is created from within the popup.</span></span>
+> <span data-ttu-id="2d37a-107">AJAX 控制項工具組中的 ModalPopup 控制項提供一個簡單的方式，讓您使用用戶端的方法來建立強制回應快顯視窗。</span><span class="sxs-lookup"><span data-stu-id="2d37a-107">The ModalPopup control in the AJAX Control Toolkit offers a simple way to create a modal popup using client-side means.</span></span> <span data-ttu-id="2d37a-108">從快顯視窗內建立回傳時，必須特別小心。</span><span class="sxs-lookup"><span data-stu-id="2d37a-108">Special care must be taken when a postback is created from within the popup.</span></span>
 
-## <a name="overview"></a><span data-ttu-id="ad159-109">概觀</span><span class="sxs-lookup"><span data-stu-id="ad159-109">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="2d37a-109">概觀</span><span class="sxs-lookup"><span data-stu-id="2d37a-109">Overview</span></span>
 
-<span data-ttu-id="ad159-110">AJAX 控制項工具組中的 ModalPopup 控制項提供一個簡單的方式，讓您使用用戶端的方法來建立強制回應快顯視窗。</span><span class="sxs-lookup"><span data-stu-id="ad159-110">The ModalPopup control in the AJAX Control Toolkit offers a simple way to create a modal popup using client-side means.</span></span> <span data-ttu-id="ad159-111">從快顯視窗內建立回傳時，必須特別小心。</span><span class="sxs-lookup"><span data-stu-id="ad159-111">Special care must be taken when a postback is created from within the popup.</span></span>
+<span data-ttu-id="2d37a-110">AJAX 控制項工具組中的 ModalPopup 控制項提供一個簡單的方式，讓您使用用戶端的方法來建立強制回應快顯視窗。</span><span class="sxs-lookup"><span data-stu-id="2d37a-110">The ModalPopup control in the AJAX Control Toolkit offers a simple way to create a modal popup using client-side means.</span></span> <span data-ttu-id="2d37a-111">從快顯視窗內建立回傳時，必須特別小心。</span><span class="sxs-lookup"><span data-stu-id="2d37a-111">Special care must be taken when a postback is created from within the popup.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="ad159-112">步驟</span><span class="sxs-lookup"><span data-stu-id="ad159-112">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="2d37a-112">步驟</span><span class="sxs-lookup"><span data-stu-id="2d37a-112">Steps</span></span>
 
-<span data-ttu-id="ad159-113">若要啟用 ASP.NET AJAX 和控制項工具組的功能，`ScriptManager` 控制項必須放在頁面上的任何位置（但在 `<form>` 元素內）：</span><span class="sxs-lookup"><span data-stu-id="ad159-113">In order to activate the functionality of ASP.NET AJAX and the Control Toolkit, the `ScriptManager` control must be put anywhere on the page (but within the `<form>` element):</span></span>
+<span data-ttu-id="2d37a-113">若要啟用 ASP.NET AJAX 和控制項工具組的功能，`ScriptManager` 控制項必須放在頁面上的任何位置（但在 `<form>` 元素內）：</span><span class="sxs-lookup"><span data-stu-id="2d37a-113">In order to activate the functionality of ASP.NET AJAX and the Control Toolkit, the `ScriptManager` control must be put anywhere on the page (but within the `<form>` element):</span></span>
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample1.aspx)]
 
-<span data-ttu-id="ad159-114">接下來，新增可作為強制回應快顯視窗的面板。</span><span class="sxs-lookup"><span data-stu-id="ad159-114">Next, add a panel which serves as the modal popup.</span></span> <span data-ttu-id="ad159-115">使用者可以在那裡輸入名稱和電子郵件地址。</span><span class="sxs-lookup"><span data-stu-id="ad159-115">There, the user can enter a name and an email address.</span></span> <span data-ttu-id="ad159-116">按鈕可用來關閉快顯視窗並儲存資訊。</span><span class="sxs-lookup"><span data-stu-id="ad159-116">A button is used to close the popup and save the information.</span></span> <span data-ttu-id="ad159-117">請注意，[`OnClick`] 屬性已設定為按一下這個按鈕時，就會發生回傳：</span><span class="sxs-lookup"><span data-stu-id="ad159-117">Note that the `OnClick` attribute is set so that a postback occurs when this button is clicked:</span></span>
+<span data-ttu-id="2d37a-114">接下來，新增可作為強制回應快顯視窗的面板。</span><span class="sxs-lookup"><span data-stu-id="2d37a-114">Next, add a panel which serves as the modal popup.</span></span> <span data-ttu-id="2d37a-115">使用者可以在那裡輸入名稱和電子郵件地址。</span><span class="sxs-lookup"><span data-stu-id="2d37a-115">There, the user can enter a name and an email address.</span></span> <span data-ttu-id="2d37a-116">按鈕可用來關閉快顯視窗並儲存資訊。</span><span class="sxs-lookup"><span data-stu-id="2d37a-116">A button is used to close the popup and save the information.</span></span> <span data-ttu-id="2d37a-117">請注意，[`OnClick`] 屬性已設定為按一下這個按鈕時，就會發生回傳：</span><span class="sxs-lookup"><span data-stu-id="2d37a-117">Note that the `OnClick` attribute is set so that a postback occurs when this button is clicked:</span></span>
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample2.aspx)]
 
-<span data-ttu-id="ad159-118">頁面本身包含兩個標籤，以取得完全相同的資訊：名稱和電子郵件地址。</span><span class="sxs-lookup"><span data-stu-id="ad159-118">The page itself consists of two labels for exactly the same information: name and email address.</span></span> <span data-ttu-id="ad159-119">按鈕可用來觸發強制回應快顯視窗：</span><span class="sxs-lookup"><span data-stu-id="ad159-119">A button is used to trigger the modal popup:</span></span>
+<span data-ttu-id="2d37a-118">頁面本身包含兩個標籤，以取得完全相同的資訊：名稱和電子郵件地址。</span><span class="sxs-lookup"><span data-stu-id="2d37a-118">The page itself consists of two labels for exactly the same information: name and email address.</span></span> <span data-ttu-id="2d37a-119">按鈕可用來觸發強制回應快顯視窗：</span><span class="sxs-lookup"><span data-stu-id="2d37a-119">A button is used to trigger the modal popup:</span></span>
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample3.aspx)]
 
-<span data-ttu-id="ad159-120">若要顯示快顯視窗，請加入 `ModalPopupExtender` 控制項。</span><span class="sxs-lookup"><span data-stu-id="ad159-120">In order to make the popup appear, add the `ModalPopupExtender` control.</span></span> <span data-ttu-id="ad159-121">將 `PopupControlID` 屬性設為面板的識別碼，並 `TargetControlID` 至按鈕的識別碼：</span><span class="sxs-lookup"><span data-stu-id="ad159-121">Set the `PopupControlID` attribute to the panel's ID and `TargetControlID` to the button's ID:</span></span>
+<span data-ttu-id="2d37a-120">若要顯示快顯視窗，請加入 `ModalPopupExtender` 控制項。</span><span class="sxs-lookup"><span data-stu-id="2d37a-120">In order to make the popup appear, add the `ModalPopupExtender` control.</span></span> <span data-ttu-id="2d37a-121">將 `PopupControlID` 屬性設為面板的識別碼，並 `TargetControlID` 至按鈕的識別碼：</span><span class="sxs-lookup"><span data-stu-id="2d37a-121">Set the `PopupControlID` attribute to the panel's ID and `TargetControlID` to the button's ID:</span></span>
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample4.aspx)]
 
-<span data-ttu-id="ad159-122">現在只要按一下強制回應快顯視窗中的 [`Save`] 按鈕，就會執行伺服器端 `SaveData()` 方法。</span><span class="sxs-lookup"><span data-stu-id="ad159-122">Now whenever the `Save` button within the modal popup is clicked, the server-side `SaveData()` method is executed.</span></span> <span data-ttu-id="ad159-123">在這裡，您可以將輸入的資料儲存在資料存放區中。</span><span class="sxs-lookup"><span data-stu-id="ad159-123">There, you could save the entered data in a data store.</span></span> <span data-ttu-id="ad159-124">為了簡單起見，新資料只會輸出在標籤中：</span><span class="sxs-lookup"><span data-stu-id="ad159-124">For the sake of simplicity, the new data is just output in the label:</span></span>
+<span data-ttu-id="2d37a-122">現在只要按一下強制回應快顯視窗中的 [`Save`] 按鈕，就會執行伺服器端 `SaveData()` 方法。</span><span class="sxs-lookup"><span data-stu-id="2d37a-122">Now whenever the `Save` button within the modal popup is clicked, the server-side `SaveData()` method is executed.</span></span> <span data-ttu-id="2d37a-123">在這裡，您可以將輸入的資料儲存在資料存放區中。</span><span class="sxs-lookup"><span data-stu-id="2d37a-123">There, you could save the entered data in a data store.</span></span> <span data-ttu-id="2d37a-124">為了簡單起見，新資料只會輸出在標籤中：</span><span class="sxs-lookup"><span data-stu-id="2d37a-124">For the sake of simplicity, the new data is just output in the label:</span></span>
 
 [!code-csharp[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample5.cs)]
 
-<span data-ttu-id="ad159-125">此外，強制回應快顯視窗中的 textbox 控制項應該填入目前的名稱和電子郵件。</span><span class="sxs-lookup"><span data-stu-id="ad159-125">Also, the textbox controls within the modal popup should be filled with the current name and email.</span></span> <span data-ttu-id="ad159-126">不過，只有在沒有發生回傳時，才需要這麼做。</span><span class="sxs-lookup"><span data-stu-id="ad159-126">However this is only necessary when no postback occurs.</span></span> <span data-ttu-id="ad159-127">如果有回傳，ASP.NET viewstate 功能會自動以適當的值填滿文字方塊。</span><span class="sxs-lookup"><span data-stu-id="ad159-127">If there is a postback, the ASP.NET viewstate feature will automatically fill the textboxes with the appropriate values.</span></span>
+<span data-ttu-id="2d37a-125">此外，強制回應快顯視窗中的 textbox 控制項應該填入目前的名稱和電子郵件。</span><span class="sxs-lookup"><span data-stu-id="2d37a-125">Also, the textbox controls within the modal popup should be filled with the current name and email.</span></span> <span data-ttu-id="2d37a-126">不過，只有在沒有發生回傳時，才需要這麼做。</span><span class="sxs-lookup"><span data-stu-id="2d37a-126">However this is only necessary when no postback occurs.</span></span> <span data-ttu-id="2d37a-127">如果有回傳，ASP.NET viewstate 功能會自動以適當的值填滿文字方塊。</span><span class="sxs-lookup"><span data-stu-id="2d37a-127">If there is a postback, the ASP.NET viewstate feature will automatically fill the textboxes with the appropriate values.</span></span>
 
 [!code-csharp[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample6.cs)]
 
-<span data-ttu-id="ad159-128">[![強制回應快顯視窗會導致回傳](handling-postbacks-from-a-modalpopup-cs/_static/image2.png)](handling-postbacks-from-a-modalpopup-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="ad159-128">[![The modal popup causes a postback](handling-postbacks-from-a-modalpopup-cs/_static/image2.png)](handling-postbacks-from-a-modalpopup-cs/_static/image1.png)</span></span>
+<span data-ttu-id="2d37a-128">[![強制回應快顯視窗會導致回傳](handling-postbacks-from-a-modalpopup-cs/_static/image2.png)](handling-postbacks-from-a-modalpopup-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="2d37a-128">[![The modal popup causes a postback](handling-postbacks-from-a-modalpopup-cs/_static/image2.png)](handling-postbacks-from-a-modalpopup-cs/_static/image1.png)</span></span>
 
-<span data-ttu-id="ad159-129">強制回應快顯視窗會導致回傳（[按一下以查看完整大小的影像](handling-postbacks-from-a-modalpopup-cs/_static/image3.png)）</span><span class="sxs-lookup"><span data-stu-id="ad159-129">The modal popup causes a postback ([Click to view full-size image](handling-postbacks-from-a-modalpopup-cs/_static/image3.png))</span></span>
+<span data-ttu-id="2d37a-129">強制回應快顯視窗會導致回傳（[按一下以查看完整大小的影像](handling-postbacks-from-a-modalpopup-cs/_static/image3.png)）</span><span class="sxs-lookup"><span data-stu-id="2d37a-129">The modal popup causes a postback ([Click to view full-size image](handling-postbacks-from-a-modalpopup-cs/_static/image3.png))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="ad159-130">[上一頁](using-modalpopup-with-a-repeater-control-cs.md)
-> [下一頁](positioning-a-modalpopup-cs.md)</span><span class="sxs-lookup"><span data-stu-id="ad159-130">[Previous](using-modalpopup-with-a-repeater-control-cs.md)
+> <span data-ttu-id="2d37a-130">[上一頁](using-modalpopup-with-a-repeater-control-cs.md)
+> [下一頁](positioning-a-modalpopup-cs.md)</span><span class="sxs-lookup"><span data-stu-id="2d37a-130">[Previous](using-modalpopup-with-a-repeater-control-cs.md)
 [Next](positioning-a-modalpopup-cs.md)</span></span>

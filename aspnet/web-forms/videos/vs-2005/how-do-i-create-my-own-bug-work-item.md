@@ -1,29 +1,29 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-create-my-own-bug-work-item
-title: '[How Do i:]建立我自己的 Bug 工作項目嗎？ | Microsoft Docs'
+title: '[How Do I：]建立我自己的 Bug 工作專案？ | Microsoft Docs'
 author: rick-anderson
-description: 這段影片示範如何在 Visual Studio Team System 中建立您自己的 Bug 工作項目定義以供使用。 我們看到工作項目定義的 XML 檔案的方式...
+description: 這部影片示範如何建立您自己的 Bug 工作專案定義，以便在 Visual Studio Team System 中使用。 我們會看到 XML fil 如何定義工作專案 。
 ms.author: riande
 ms.date: 06/12/2007
 ms.assetid: ab0805a3-76ff-4557-8750-a24d0f79a4c9
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-create-my-own-bug-work-item
 msc.type: video
 ms.openlocfilehash: eeb28e327b400dc1c35a70dfcb51ba6842ea4a48
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59417997"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78527122"
 ---
-# <a name="how-do-i-create-my-own-bug-work-item"></a><span data-ttu-id="93a9d-105">[How Do i:]建立我自己的 Bug 工作項目嗎？</span><span class="sxs-lookup"><span data-stu-id="93a9d-105">[How Do I:] Create My Own Bug Work Item?</span></span>
+# <a name="how-do-i-create-my-own-bug-work-item"></a><span data-ttu-id="9f009-105">[How Do I：]建立我自己的 Bug 工作專案？</span><span class="sxs-lookup"><span data-stu-id="9f009-105">[How Do I:] Create My Own Bug Work Item?</span></span>
 
-<span data-ttu-id="93a9d-106">藉由[Chris Menegay](https://twitter.com/CMenegay)</span><span class="sxs-lookup"><span data-stu-id="93a9d-106">by [Chris Menegay](https://twitter.com/CMenegay)</span></span>
+<span data-ttu-id="9f009-106">依[Chris Menegay](https://twitter.com/CMenegay)</span><span class="sxs-lookup"><span data-stu-id="9f009-106">by [Chris Menegay](https://twitter.com/CMenegay)</span></span>
 
-<span data-ttu-id="93a9d-107">這段影片示範如何在 Visual Studio Team System 中建立您自己的 Bug 工作項目定義以供使用。</span><span class="sxs-lookup"><span data-stu-id="93a9d-107">This video demonstrates how to create your own Bug Work Item definition for use in Visual Studio Team System.</span></span> <span data-ttu-id="93a9d-108">我們看到工作項目中的 XML 檔案，我們可以手動編輯以便新增、 移除或修改欄位、 工作流程，以及與特定類型的工作項目相關聯的表單定義的方式。</span><span class="sxs-lookup"><span data-stu-id="93a9d-108">We see how a Work Item is defined by an XML file that we can manually edit in order to add, remove or modify the fields, workflows, and forms associated with a particular type of Work Item.</span></span>
+<span data-ttu-id="9f009-107">這部影片示範如何建立您自己的 Bug 工作專案定義，以便在 Visual Studio Team System 中使用。</span><span class="sxs-lookup"><span data-stu-id="9f009-107">This video demonstrates how to create your own Bug Work Item definition for use in Visual Studio Team System.</span></span> <span data-ttu-id="9f009-108">我們會看到如何以手動方式編輯的 XML 檔案定義工作專案，以便加入、移除或修改與特定工作專案類型相關聯的欄位、工作流程和表單。</span><span class="sxs-lookup"><span data-stu-id="9f009-108">We see how a Work Item is defined by an XML file that we can manually edit in order to add, remove or modify the fields, workflows, and forms associated with a particular type of Work Item.</span></span>
 
-[<span data-ttu-id="93a9d-109">&#9654;觀看影片 （11 分鐘）</span><span class="sxs-lookup"><span data-stu-id="93a9d-109">&#9654; Watch video (11 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-create-my-own-bug-work-item)
+[<span data-ttu-id="9f009-109">&#9654;觀看影片（11分鐘）</span><span class="sxs-lookup"><span data-stu-id="9f009-109">&#9654; Watch video (11 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-create-my-own-bug-work-item)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="93a9d-110">[上一頁](how-do-i-integrate-defect-tracking-with-testing.md)
-> [下一頁](how-do-i-write-code-more-quickly-with-unit-tests.md)</span><span class="sxs-lookup"><span data-stu-id="93a9d-110">[Previous](how-do-i-integrate-defect-tracking-with-testing.md)
+> <span data-ttu-id="9f009-110">[上一頁](how-do-i-integrate-defect-tracking-with-testing.md)
+> [下一頁](how-do-i-write-code-more-quickly-with-unit-tests.md)</span><span class="sxs-lookup"><span data-stu-id="9f009-110">[Previous](how-do-i-integrate-defect-tracking-with-testing.md)
 [Next](how-do-i-write-code-more-quickly-with-unit-tests.md)</span></span>

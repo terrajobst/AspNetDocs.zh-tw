@@ -2,28 +2,28 @@
 uid: mvc/videos/mvc-2/how-do-i/aspnet-mvc-2-render-action
 title: ASP.NET MVC 2-轉譯動作 |Microsoft Docs
 author: jongalloway
-description: 在這段影片中，您將了解如何使用 Html.RenderAction 寫入檢視的控制器動作結果。 我們將探討如何 Html.RenderAction 不同 fr...
+description: 在這段影片中，您將瞭解如何使用 RenderAction 將控制器動作的結果寫入至視圖。 我們將探討 RenderAction 如何不同的 fr 。
 ms.author: riande
 ms.date: 04/22/2010
 ms.assetid: 11906982-0a64-4bc8-be23-6443afee8b88
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/aspnet-mvc-2-render-action
 msc.type: video
 ms.openlocfilehash: 211a8d5e3ce535a641bc3b57c6969ab80e3524df
-ms.sourcegitcommit: 0f1119340e4464720cfd16d0ff15764746ea1fea
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59400876"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78537524"
 ---
-# <a name="aspnet-mvc-2---render-action"></a><span data-ttu-id="929ba-104">ASP.NET MVC 2 - 轉譯動作</span><span class="sxs-lookup"><span data-stu-id="929ba-104">ASP.NET MVC 2 - Render Action</span></span>
+# <a name="aspnet-mvc-2---render-action"></a><span data-ttu-id="2fd4f-104">ASP.NET MVC 2 - 轉譯動作</span><span class="sxs-lookup"><span data-stu-id="2fd4f-104">ASP.NET MVC 2 - Render Action</span></span>
 
-<span data-ttu-id="929ba-105">藉由[Jon Galloway](https://github.com/jongalloway)</span><span class="sxs-lookup"><span data-stu-id="929ba-105">by [Jon Galloway](https://github.com/jongalloway)</span></span>
+<span data-ttu-id="2fd4f-105">依[Jon Galloway](https://github.com/jongalloway)</span><span class="sxs-lookup"><span data-stu-id="2fd4f-105">by [Jon Galloway](https://github.com/jongalloway)</span></span>
 
-<span data-ttu-id="929ba-106">在這段影片中，您將了解如何使用 Html.RenderAction 寫入檢視的控制器動作結果。</span><span class="sxs-lookup"><span data-stu-id="929ba-106">In this video you'll learn how to use Html.RenderAction to write the results of a Controller Action to a View.</span></span> <span data-ttu-id="929ba-107">我們將探討 Html.RenderAction Html.RenderPartial，從不同的方式，而 Html.Action Html.RenderAction 從不同的方式。</span><span class="sxs-lookup"><span data-stu-id="929ba-107">We'll look at how Html.RenderAction differs from Html.RenderPartial, and how Html.Action differs from Html.RenderAction.</span></span>
+<span data-ttu-id="2fd4f-106">在這段影片中，您將瞭解如何使用 RenderAction 將控制器動作的結果寫入至視圖。</span><span class="sxs-lookup"><span data-stu-id="2fd4f-106">In this video you'll learn how to use Html.RenderAction to write the results of a Controller Action to a View.</span></span> <span data-ttu-id="2fd4f-107">我們將探討 RenderAction 與 RenderPartial 的不同之處，以及 Html 的 Action 與 RenderAction 的不同之處。</span><span class="sxs-lookup"><span data-stu-id="2fd4f-107">We'll look at how Html.RenderAction differs from Html.RenderPartial, and how Html.Action differs from Html.RenderAction.</span></span>
 
-[<span data-ttu-id="929ba-108">&#9654;觀看影片 （3 分鐘）</span><span class="sxs-lookup"><span data-stu-id="929ba-108">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-2-render-action)
+[<span data-ttu-id="2fd4f-108">&#9654;觀看影片（3分鐘）</span><span class="sxs-lookup"><span data-stu-id="2fd4f-108">&#9654; Watch video (3 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-2-render-action)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="929ba-109">[上一頁](aspnet-mvc-2-areas.md)
-> [下一頁](5-minute-introduction-to-aspnet-mvc.md)</span><span class="sxs-lookup"><span data-stu-id="929ba-109">[Previous](aspnet-mvc-2-areas.md)
+> <span data-ttu-id="2fd4f-109">[上一頁](aspnet-mvc-2-areas.md)
+> [下一頁](5-minute-introduction-to-aspnet-mvc.md)</span><span class="sxs-lookup"><span data-stu-id="2fd4f-109">[Previous](aspnet-mvc-2-areas.md)
 [Next](5-minute-introduction-to-aspnet-mvc.md)</span></span>

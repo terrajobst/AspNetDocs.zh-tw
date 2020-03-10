@@ -2,29 +2,29 @@
 uid: web-forms/videos/data-access/how-do-i-with-linq/index
 title: 如何使用 LINQ |Microsoft Docs
 author: rick-anderson
-description: 這一系列影片會引導您完成一切變得非常熟悉網頁開發人員使用 LINQ 技能。
+description: 這段影片將逐步引導您瞭解使用 LINQ 做為 網頁程式開發人員所需熟悉的一切。
 ms.author: riande
 ms.date: 02/24/2012
 ms.assetid: 11b3547a-7c4f-4849-8e27-3cfbe255034e
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq
 msc.type: chapter
 ms.openlocfilehash: 2139f8f9a09512fe4267003d4027887102f03335
-ms.sourcegitcommit: 51b01b6ff8edde57d8243e4da28c9f1e7f1962b2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65106768"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78628601"
 ---
-# <a name="how-do-i-with-linq"></a><span data-ttu-id="6d908-103">如何使用 LINQ</span><span class="sxs-lookup"><span data-stu-id="6d908-103">How Do I with LINQ</span></span>
+# <a name="how-do-i-with-linq"></a><span data-ttu-id="3a23a-103">如何使用 LINQ</span><span class="sxs-lookup"><span data-stu-id="3a23a-103">How Do I with LINQ</span></span>
 
-> <span data-ttu-id="6d908-104">這一系列影片會引導您完成一切變得非常熟悉網頁開發人員使用 LINQ 技能。</span><span class="sxs-lookup"><span data-stu-id="6d908-104">This video series walks you through everything you need to know to become proficient in using LINQ as a web developer.</span></span>
+> <span data-ttu-id="3a23a-104">這段影片將逐步引導您瞭解使用 LINQ 做為 網頁程式開發人員所需熟悉的一切。</span><span class="sxs-lookup"><span data-stu-id="3a23a-104">This video series walks you through everything you need to know to become proficient in using LINQ as a web developer.</span></span>
 
-- [<span data-ttu-id="6d908-105">LINQ to SQL:概觀</span><span class="sxs-lookup"><span data-stu-id="6d908-105">LINQ to SQL: Overview</span></span>](how-do-i-linq-to-sql-overview.md)
-- [<span data-ttu-id="6d908-106">LINQ to SQL:資料模型</span><span class="sxs-lookup"><span data-stu-id="6d908-106">LINQ to SQL: Data Model</span></span>](how-do-i-linq-to-sql-data-model.md)
-- [<span data-ttu-id="6d908-107">LINQ to SQL:查詢資料庫</span><span class="sxs-lookup"><span data-stu-id="6d908-107">LINQ to SQL: Querying the Database</span></span>](how-do-i-linq-to-sql-querying-the-database.md)
-- [<span data-ttu-id="6d908-108">LINQ to SQL:更新資料庫</span><span class="sxs-lookup"><span data-stu-id="6d908-108">LINQ to SQL: Updating the Database</span></span>](how-do-i-linq-to-sql-updating-the-database.md)
-- [<span data-ttu-id="6d908-109">LINQ to SQL:LinqDataSource</span><span class="sxs-lookup"><span data-stu-id="6d908-109">LINQ to SQL: LinqDataSource</span></span>](how-do-i-linq-to-sql-linqdatasource.md)
-- [<span data-ttu-id="6d908-110">LINQ to SQL:Custom LinqDataSource</span><span class="sxs-lookup"><span data-stu-id="6d908-110">LINQ to SQL: Custom LinqDataSource</span></span>](how-do-i-linq-to-sql-custom-linqdatasource.md)
-- [<span data-ttu-id="6d908-111">LINQ to SQL:使用預存程序</span><span class="sxs-lookup"><span data-stu-id="6d908-111">LINQ to SQL: Using Stored Procedures</span></span>](how-do-i-linq-to-sql-using-stored-procedures.md)
-- [<span data-ttu-id="6d908-112">LINQ to SQL:更新使用預存程序</span><span class="sxs-lookup"><span data-stu-id="6d908-112">LINQ to SQL: Updating with Stored Procedures</span></span>](how-do-i-linq-to-sql-updating-with-stored-procedures.md)
-- [<span data-ttu-id="6d908-113">LINQ to SQL:執行任意的 SQL</span><span class="sxs-lookup"><span data-stu-id="6d908-113">LINQ to SQL: Executing Arbitrary SQL</span></span>](how-do-i-linq-to-sql-executing-arbitrary-sql.md)
+- [<span data-ttu-id="3a23a-105">LINQ to SQL：概觀</span><span class="sxs-lookup"><span data-stu-id="3a23a-105">LINQ to SQL: Overview</span></span>](how-do-i-linq-to-sql-overview.md)
+- [<span data-ttu-id="3a23a-106">LINQ to SQL：資料模型</span><span class="sxs-lookup"><span data-stu-id="3a23a-106">LINQ to SQL: Data Model</span></span>](how-do-i-linq-to-sql-data-model.md)
+- [<span data-ttu-id="3a23a-107">LINQ to SQL：查詢資料庫</span><span class="sxs-lookup"><span data-stu-id="3a23a-107">LINQ to SQL: Querying the Database</span></span>](how-do-i-linq-to-sql-querying-the-database.md)
+- [<span data-ttu-id="3a23a-108">LINQ to SQL：更新資料庫</span><span class="sxs-lookup"><span data-stu-id="3a23a-108">LINQ to SQL: Updating the Database</span></span>](how-do-i-linq-to-sql-updating-the-database.md)
+- [<span data-ttu-id="3a23a-109">LINQ to SQL：LinqDataSource</span><span class="sxs-lookup"><span data-stu-id="3a23a-109">LINQ to SQL: LinqDataSource</span></span>](how-do-i-linq-to-sql-linqdatasource.md)
+- [<span data-ttu-id="3a23a-110">LINQ to SQL：自訂 LinqDataSource</span><span class="sxs-lookup"><span data-stu-id="3a23a-110">LINQ to SQL: Custom LinqDataSource</span></span>](how-do-i-linq-to-sql-custom-linqdatasource.md)
+- [<span data-ttu-id="3a23a-111">LINQ to SQL：使用預存程序</span><span class="sxs-lookup"><span data-stu-id="3a23a-111">LINQ to SQL: Using Stored Procedures</span></span>](how-do-i-linq-to-sql-using-stored-procedures.md)
+- [<span data-ttu-id="3a23a-112">LINQ to SQL：使用預存程序更新</span><span class="sxs-lookup"><span data-stu-id="3a23a-112">LINQ to SQL: Updating with Stored Procedures</span></span>](how-do-i-linq-to-sql-updating-with-stored-procedures.md)
+- [<span data-ttu-id="3a23a-113">LINQ to SQL：執行任意的 SQL</span><span class="sxs-lookup"><span data-stu-id="3a23a-113">LINQ to SQL: Executing Arbitrary SQL</span></span>](how-do-i-linq-to-sql-executing-arbitrary-sql.md)
