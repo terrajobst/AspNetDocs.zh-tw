@@ -9,11 +9,11 @@ ms.assetid: 59c01998-9326-4ecb-9392-cb9615962140
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-cs
 msc.type: authoredcontent
 ms.openlocfilehash: a3e9562035cb24987b01fcdff5fbfb5fa8a1f894
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74629714"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78589996"
 ---
 # <a name="efficiently-paging-through-large-amounts-of-data-c"></a>有效率地分頁大量資料 (C#)
 
@@ -230,7 +230,7 @@ DAL s `TotalNumberOfProducts` 方法會傳回可為 null 的整數;不過，我�
 若要解決此問題，我們必須將 ObjectDataSource 設定為使用自訂分頁。 這可以在下列步驟中完成：
 
 1. **將 objectdatasource 的 `EnablePaging` 屬性設定為 `true`** 這會向 ObjectDataSource 指出它必須傳遞給 `SelectMethod` 兩個額外的參數：一個用來指定起始資料列索引（[`StartRowIndexParameterName`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.startrowindexparametername.aspx)），另一個則用來指定最大資料列（[`MaximumRowsParameterName`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.maximumrowsparametername.aspx)）。
-2. **設定 ObjectDataSource s `StartRowIndexParameterName` 並適當地 `MaximumRowsParameterName` 屬性**，`StartRowIndexParameterName` 和 `MaximumRowsParameterName` 屬性則會指出傳入 `SelectMethod` 中的輸入參數名稱，以供自訂分頁用途之用。 根據預設，這些參數名稱會 `startIndexRow` 和 `maximumRows`，這就是為什麼在 BLL 中建立 `GetProductsPaged` 方法時，我使用了這些值做為輸入參數。 如果您選擇針對 BLL `GetProductsPaged` 方法（例如 `startIndex` 和 `maxRows`）使用不同的參數名稱，例如，您將需要適當地設定 ObjectDataSource s `StartRowIndexParameterName` 和 `MaximumRowsParameterName` 屬性（例如，針對 `StartRowIndexParameterName` 使用 [startIndex] 和 [maxRows]）。
+2. **設定 ObjectDataSource s `StartRowIndexParameterName` 並適當地 `MaximumRowsParameterName` 屬性**，`StartRowIndexParameterName` 和 `MaximumRowsParameterName` 屬性則會指出傳入 `SelectMethod` 中的輸入參數名稱，以供自訂分頁用途之用。 根據預設，這些參數名稱會 `startIndexRow` 和 `maximumRows`，這就是為什麼在 BLL 中建立 `GetProductsPaged` 方法時，我使用了這些值做為輸入參數。 如果您選擇針對 BLL `GetProductsPaged` 方法（例如 `startIndex` 和 `maxRows`）使用不同的參數名稱，例如，您將需要適當地設定 ObjectDataSource s `StartRowIndexParameterName` 和 `MaximumRowsParameterName` 屬性（例如，針對 `StartRowIndexParameterName` 使用 [startIndex] 和 [maxRows]）。`MaximumRowsParameterName`
 3. **將 [ObjectDataSource s [`SelectCountMethod`] 屬性](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selectcountmethod(VS.80).aspx)設為方法的名稱，此方法會傳回透過**執行 `SELECT COUNT(*) FROM Products` 查詢之 DAL 方法，透過（`TotalNumberOfProducts`）重新分頁的記錄總數，這是 `ProductsBLL` 類別的 `TotalNumberOfProducts` 方法傳回的記錄總數。 ObjectDataSource 需要這項資訊，才能正確呈現分頁介面。
 4. 在透過 wizard 設定 ObjectDataSource 時，**從 objectdatasource s 宣告式標記中移除 `startRowIndex` 和 `maximumRows` `<asp:Parameter>` 元素**，Visual Studio 自動為 `<asp:Parameter>` 方法的輸入參數新增兩個 `GetProductsPaged` 元素。 藉由將 `EnablePaging` 設定為 `true`，將會自動傳遞這些參數;如果它們也出現在宣告式語法中，ObjectDataSource 會嘗試將*四個*參數傳遞給 `GetProductsPaged` 方法，並將兩個參數傳遞給 `TotalNumberOfProducts` 方法。 如果您忘記移除這些 `<asp:Parameter>` 元素，當您透過瀏覽器造訪網頁時，會收到類似下列的錯誤訊息： *ObjectDataSource ' ObjectDataSource1 ' 找不到具有參數的非泛型方法 ' TotalNumberOfProducts '： startRowIndex、maximumRows*。
 

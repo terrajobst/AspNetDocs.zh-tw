@@ -9,11 +9,11 @@ ms.assetid: 48f7feb3-872f-485d-b96f-e30011ff8c4a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
 ms.openlocfilehash: 4235f4fe666cdeb7d0821127a2b349f2ff30cd6e
-ms.sourcegitcommit: 295cf898a4c87e264b0c35c7254b0fa4169f2278
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74057035"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78539435"
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4 的新功能
 
@@ -211,10 +211,10 @@ ASP.NET MVC 4 有助於開發行動和平板電腦瀏覽器的網站。 此範�
         ![Mobile-應用程式-範本-使用-HTML5-標記](whats-new-in-aspnet-mvc-4/_static/image13.png)
 
         *使用 HTML5 標記的行動應用程式範本（Login. cshtml 和 index. cshtml）*
-4. 按**F5**執行方案。
+4. 按 **F5** 執行方案。
 5. 開啟**Windows Phone 7 模擬器**。
 6. 在手機的 [開始] 畫面中，開啟 Internet Explorer。 查看桌面應用程式啟動的 URL，並從電話流覽至該 URL （例如 `http://localhost:[PortNumber]/`）。
-7. 現在您可以進入登入頁面，或查看 [關於] 頁面。 請注意，網站的樣式是以適用於行動裝置的新 Metro 應用程式為基礎。 ASP.NET MVC 4 專案範本會正確地顯示在行動裝置上，確定頁面的所有元素都是可見的，並且已啟用。 請注意，標頭上的連結夠大，可供按一下或點擊。
+7. 現在您可以進入登入頁面，或查看 [關於] 頁面。 請注意，網站的樣式是以適用于 mobile 的新 Metro 應用程式為基礎。 ASP.NET MVC 4 專案範本會正確地顯示在行動裝置上，確定頁面的所有元素都是可見的，並且已啟用。 請注意，標頭上的連結夠大，可供按一下或點擊。
 
     ![行動裝置中的專案範本頁面](whats-new-in-aspnet-mvc-4/_static/image14.png "行動裝置中的專案範本頁面")
 
@@ -256,7 +256,7 @@ ASP.NET MVC 4 有助於開發行動和平板電腦瀏覽器的網站。 此範�
 
 您現在將探索彈性轉譯的運作方式，改善 ASP.NET MVC 4 預設網站範本的可讀性。
 
-1. 開啟您在工作1建立的 [ **PhotoGallery** ] 方案，然後選取 [ **PhotoGallery** ] 專案。 按**F5**執行方案。
+1. 開啟您在工作1建立的 [ **PhotoGallery** ] 方案，然後選取 [ **PhotoGallery** ] 專案。 按 **F5** 執行方案。
 2. 調整瀏覽器寬度的大小，將視窗設定為一半或小於其原始大小的一季。 請注意標頭中的專案會發生什麼情況：部分元素不會出現在標頭的可見區域中。
 3. 從位於 [**內容**] 專案資料夾中的 Visual Studio 方案瀏覽器開啟 [**網站 .css**檔案]。 按**CTRL + F**以開啟 Visual Studio 整合式搜尋，然後撰寫 `@media` 以尋找**CSS 媒體查詢**。
 
@@ -318,7 +318,7 @@ ASP.NET MVC 4 有助於開發行動和平板電腦瀏覽器的網站。 此範�
 
     *測試模擬相片服務*
 
-在實際的執行中，您可以使用[ASP.NET Web API](../../../../web-api/index.md)來執行相片圖庫服務。 ASP.NET Web API 是一種架構，可讓您輕鬆地建立可觸及各種用戶端（包括瀏覽器和行動裝置）的 HTTP 服務。 ASP.NET Web 應用程式開發介面是在 .NET Framework 上建置 RESTful 應用程式的理想平台。
+在實際的執行中，您可以使用[ASP.NET Web API](../../../../web-api/index.md)來執行相片圖庫服務。 ASP.NET Web API 是一個架構，可輕易建置 HTTP 服務並擴及廣大的用戶端範圍，包括瀏覽器和行動裝置。 ASP.NET Web 應用程式開發介面是在 .NET Framework 上建置 RESTful 應用程式的理想平台。
 
 <a id="Task_2_-_Displaying_the_Photo_Gallery"></a>
 #### <a name="task-2---displaying-the-photo-gallery"></a>工作 2-顯示相片圖庫
@@ -354,7 +354,7 @@ ASP.NET MVC 4 有助於開發行動和平板電腦瀏覽器的網站。 此範�
 9. 開啟 [檔案瀏覽器]，然後將位於此實驗室的 [ **Source\Assets** ] 資料夾底下的整個**相片**資料夾，複製到方案總管中專案的根資料夾。
 10. 執行應用程式。 您現在應該會在圖庫中看到顯示相片的首頁。
 
-    ![相片圖庫](whats-new-in-aspnet-mvc-4/_static/image21.png "相片圖庫")
+    ![相片圖庫](whats-new-in-aspnet-mvc-4/_static/image21.png "影像中心")
 
     *相片圖庫*
 11. 在 Visual Studio 中，按**SHIFT** + **F5**停止對應用程式的偵測。
@@ -397,7 +397,7 @@ ASP.NET MVC 4 中的其中一個重要更新是行動裝置開發的支援。 �
 
     - **Views/Shared/\_Layout**：是以 jQuery mobile 為基礎的版面配置，針對較小的螢幕進行優化。 當網站從行動瀏覽器收到要求時，會將原始配置（\_Layout）取代為此配置。
     - View-切換器元件：由**Views/Shared/\_ViewSwitcher**部分視圖和**ViewSwitcherController.cs**控制器所組成。 此元件會在行動瀏覽器上顯示連結，讓使用者切換到桌上出版本的頁面。  
-        ![具有行動支援的相片圖庫專案](whats-new-in-aspnet-mvc-4/_static/image23.png "Ph具有行動支援的 oto 資源庫專案 "）
+        ![具有行動支援的相片圖庫專案](whats-new-in-aspnet-mvc-4/_static/image23.png "具有行動支援的相片圖庫專案")
 
         *具有行動支援的相片圖庫專案*
 4. 註冊行動套件組合。 若要這麼做，請開啟**Global.asax.cs**檔案，並新增下列這一行。
@@ -516,7 +516,7 @@ jQuery Mobile 的預設主題包含5個以字母（a、b、c、d、e）提供的
 
     - **ClearOverriddenBrowser （）** 方法會移除目前要求的任何已覆寫使用者代理程式。
     - **SetOverriddenBrowser （）** 方法會使用指定的使用者代理程式，覆寫要求的實際使用者代理程式值。  
-        ![ViewSwitcher 控制器](whats-new-in-aspnet-mvc-4/_static/image31.png "ViewSwitcher 控制器」）  
+        ![ViewSwitcher 控制器](whats-new-in-aspnet-mvc-4/_static/image31.png "ViewSwitcher 控制器")  
 *ViewSwitcher 控制器*
 
         瀏覽器覆寫是 ASP.NET MVC 4 的核心功能，即使您未安裝 jQuery. node.js 封裝也可以使用。 不過，這項功能只會影響視圖、版面配置和部分查看，而且不會影響任何相依于要求的功能。 Browser 物件。
@@ -538,7 +538,7 @@ jQuery Mobile 的預設主題包含5個以字母（a、b、c、d、e）提供的
     ![桌面視圖中呈現的視圖切換器](whats-new-in-aspnet-mvc-4/_static/image32.png "桌面視圖中呈現的視圖切換器")
 
     *桌面視圖中呈現的視圖切換器*
-7. 再次切換到行動裝置視圖，然後流覽至 [**關於**] 頁面（ http://localhost [埠]/Home/About）。 請注意，即使您尚未建立 About. # view 視圖，[About] 頁面還是會使用行動配置（\_Layout）來顯示。
+7. 再次切換到行動裝置視圖，然後流覽至 [**關於**] 頁面（ http://localhost[埠]/Home/About）。 請注意，即使您尚未建立 About. # view 視圖，[About] 頁面還是會使用行動配置（\_Layout）來顯示。
 
     ![關於頁面](whats-new-in-aspnet-mvc-4/_static/image33.png "About 頁面")
 
@@ -598,7 +598,7 @@ jQuery Mobile 的預設主題包含5個以字母（a、b、c、d、e）提供的
 <a id="Exercise_4_Using_Asynchronous_Controllers"></a>
 ### <a name="exercise-4-using-asynchronous-controllers"></a>練習4：使用非同步控制器
 
-Microsoft .NET Framework 4.5 引進和 Visual Basic 中C#的新語言功能，以在 .net 程式設計中提供非同步新基礎。 這個新的基礎使非同步程式設計類似-，而且與同步程式設計一樣簡單。 您現在可以使用**AsyncController**類別，在 ASP.NET MVC 4 中撰寫非同步動作方法。 您可以針對長時間執行的非 CPU 系結要求使用非同步動作方法。 這可避免在處理要求時，阻止 Web 服務器執行工作。 AsyncController 類別通常用於長時間執行的 Web 服務呼叫。
+Microsoft .NET Framework 4.5 引進和 Visual Basic 中C#的新語言功能，以在 .net 程式設計中提供非同步新基礎。 這個新的基礎使非同步程式設計類似-，而且與同步程式設計一樣簡單。 您現在可以使用**AsyncController**類別，在 ASP.NET MVC 4 中撰寫非同步動作方法。 您可以使用非同步動作方法，處理需長時間執行且不受限於 CPU 的要求。 如此可避免在處理要求時，網頁伺服器無法工作。 AsyncController 類別通常用於長時間執行的 Web 服務呼叫。
 
 此練習說明 ASP.NET MVC 4 中非同步作業的基本概念。 如果您想要深入瞭解，您可以參閱下列文章： [ [https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)
 
@@ -933,7 +933,7 @@ Microsoft .NET Framework 4.5 引進和 Visual Basic 中C#的新語言功能，�
 7. 在 [**儀表板**] 頁面的 [**快速概覽**] 區段下，按一下 [**下載發行設定檔**] 連結。
 
     > [!NOTE]
-    > *發行設定檔*包含將 web 應用程式發佈至 Windows Azure 網站所需的所有資訊，以供每個已啟用的發行方法使用。 發行設定檔包含 Url、使用者認證和資料庫字串，這些都是連接到已啟用發行方法的每個端點並進行驗證所需的。 **Microsoft WebMatrix 2**、 **Microsoft Visual Studio Express for Web**和**Microsoft Visual Studio 2012**支援讀取發行設定檔，以將這些程式的設定自動化，以將 Web 應用程式發佈至 Windows Azure 網站。
+    > *發行設定檔*包含將 web 應用程式發佈至 Windows Azure 網站所需的所有資訊，以供每個已啟用的發行方法使用。 發行設定檔包含 URL、使用者認證和資料庫字串，這些都是用來連接到已啟用發行方法的每個端點並進行驗證的必要資訊。 **Microsoft WebMatrix 2**、 **Microsoft Visual Studio Express for Web**和**Microsoft Visual Studio 2012**支援讀取發行設定檔，以將這些程式的設定自動化，以將 Web 應用程式發佈至 Windows Azure 網站。
 
     ![正在下載網站發行設定檔](whats-new-in-aspnet-mvc-4/_static/image67.png "正在下載網站發行設定檔")
 
@@ -956,7 +956,7 @@ Microsoft .NET Framework 4.5 引進和 Visual Basic 中C#的新語言功能，�
     ![SQL Database Server 儀表板](whats-new-in-aspnet-mvc-4/_static/image69.png "SQL Database Server 儀表板")
 
     *SQL Database Server 儀表板*
-2. 在下一項工作中，您將會從 Visual Studio 測試資料庫連線，因此您必須在伺服器的**允許 IP 位址**清單中包含本機 IP 位址。 若要這麼做，請按一下 **設定**，從**目前的用戶端 IP 位址**中選取 IP 位址，並將它貼入 **起始 Ip 位址**] 和 [**結束 ip 位址**] 文字方塊，然後按一下 [![新增-用戶端-IP-位址-確定 按鈕](whats-new-in-aspnet-mvc-4/_static/image70.png) 按鈕。
+2. 在下一項工作中，您將會從 Visual Studio 測試資料庫連線，因此您必須在伺服器的**允許 IP 位址**清單中包含本機 IP 位址。 若要這麼做，請按一下 **設定**，從**目前的用戶端 IP 位址**中選取 IP 位址，並將它貼入 [**起始 Ip 位址**] 和 [**結束 ip 位址**] 文字方塊，然後按一下 ![新增-用戶端-IP-位址-確定 按鈕](whats-new-in-aspnet-mvc-4/_static/image70.png) 按鈕。
 
     ![正在新增用戶端 IP 位址](whats-new-in-aspnet-mvc-4/_static/image71.png)
 

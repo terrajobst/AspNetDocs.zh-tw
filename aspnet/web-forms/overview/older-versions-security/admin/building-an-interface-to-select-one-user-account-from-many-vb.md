@@ -9,11 +9,11 @@ ms.assetid: da53380c-a16b-41c7-a20d-24343c735c52
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 6c711cdaab113d589d9c2535cb1b422de3f38103
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74614732"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78637540"
 ---
 # <a name="building-an-interface-to-select-one-user-account-from-many-vb"></a>建置介面從許多個使用者帳戶中選取一個 (VB)
 
@@ -29,7 +29,7 @@ ms.locfileid: "74614732"
 
 在本教學課程中，我們將建立這類使用者介面。 特別是，我們的使用者介面會包含一系列的 LinkButtons，以便根據使用者名稱的起始字母來篩選結果，並使用 GridView 控制項來顯示相符的使用者。 我們一開始會列出 GridView 中的所有使用者帳戶。 然後，在步驟3中，我們將新增篩選 LinkButtons。 步驟4會查看篩選後的結果分頁。 在後續的教學課程中，將會使用在步驟2到4中所建立的介面，來執行特定使用者帳戶的系統管理工作。
 
-讓我們開始吧！
+現在就開始吧！
 
 ## <a name="step-1-adding-new-aspnet-pages"></a>步驟1：加入新的 ASP.NET 網頁
 
@@ -196,7 +196,7 @@ GridView 可以設定為使用自訂分頁，但僅限於系結至 ObjectDataSou
 
 使用分頁介面並加入 `PageIndex` 和 `PageSize` 屬性之後，我們就可以更新 `BindUserAccounts` 方法，使其使用適當的 `FindUsersByName` 多載。 此外，我們必須根據顯示的頁面，讓此方法啟用或停用分頁介面。 當您在流覽資料的第一頁時，應該停用第一個和前一個連結;在觀看最後一頁時，應該停用 [下一步] 和 [上次]。
 
-以下列程式碼取代 `BindUserAccounts` 方法：
+以下列程式碼更新 `BindUserAccounts` 方法：
 
 [!code-vb[Main](building-an-interface-to-select-one-user-account-from-many-vb/samples/sample13.vb)]
 

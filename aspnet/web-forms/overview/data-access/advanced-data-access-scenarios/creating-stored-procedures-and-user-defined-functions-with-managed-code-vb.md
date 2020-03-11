@@ -9,11 +9,11 @@ ms.assetid: 8be9a51b-ea6b-46c7-bfa2-476d9b14c24c
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 0ac5f71d519689a9dc84fb82a04196d520cca6e1
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74610255"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78551300"
 ---
 # <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a>使用受控碼建立預存程序和使用者定義函式 (VB)
 
@@ -88,7 +88,7 @@ SQL Server 專案會系結至特定的資料庫。 因此，在建立新的 SQL 
 
 **圖 5**：將 SQL Server 專案與 Northwind 資料庫產生關聯
 
-為了要在此專案中建立 managed 預存程式和 Udf，我們必須啟用連接的 SQL/CLR 偵錯工具支援。 每當 SQL Server 專案與新的資料庫產生關聯時（如 [圖 5] 所示），Visual Studio 會詢問我們是否要在連接上啟用 SQL/CLR 調試（請參閱 [圖 6]）。 請按一下 [是]。
+為了要在此專案中建立 managed 預存程式和 Udf，我們必須啟用連接的 SQL/CLR 偵錯工具支援。 每當 SQL Server 專案與新的資料庫產生關聯時（如 [圖 5] 所示），Visual Studio 會詢問我們是否要在連接上啟用 SQL/CLR 調試（請參閱 [圖 6]）。 按一下 [是]。
 
 ![啟用 SQL/CLR 調試](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image10.png)
 
@@ -190,7 +190,7 @@ SQL Server 專案會系結至特定的資料庫。 因此，在建立新的 SQL 
 
 若要建立可接受輸入參數的 managed 預存程式，只要在方法 s 定義中指定這些參數即可。 為了說明這一點，讓我們將另一個 managed 預存程式新增至名為 `GetProductsWithPriceLessThan`的 `ManagedDatabaseConstructs` 專案。 此 managed 預存程式將會接受指定價格的輸入參數，並傳回其 `UnitPrice` 欄位小於參數 s 值的所有產品。
 
-若要將新的預存程式加入至專案，請以滑鼠右鍵按一下 `ManagedDatabaseConstructs` 專案名稱，然後加入宣告新的預存程式。 將檔案命名為 `GetProductsWithPriceLessThan.vb`。 如我們在步驟3中所見，這會建立新的 Visual Basic 類別檔案，其中包含名為的方法 `GetProductsWithPriceLessThan` 放在 `Partial` 類別 `StoredProcedures`中。
+若要將新的預存程式加入至專案，請以滑鼠右鍵按一下 `ManagedDatabaseConstructs` 專案名稱，然後加入宣告新的預存程式。 開啟 `GetProductsWithPriceLessThan.vb` 檔案。 如我們在步驟3中所見，這會建立新的 Visual Basic 類別檔案，其中包含名為的方法 `GetProductsWithPriceLessThan` 放在 `Partial` 類別 `StoredProcedures`中。
 
 更新 `GetProductsWithPriceLessThan` 方法的定義，使其接受名為 `price` 的[`SqlMoney`](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.aspx)輸入參數，並撰寫程式碼以執行並傳回查詢結果：
 
@@ -231,7 +231,7 @@ SQL Server 專案會系結至特定的資料庫。 因此，在建立新的 SQL 
 
 **圖 17**：選取表格式資料選項（[按一下以查看完整大小的影像](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image37.png)）
 
-最後的 wizard 畫面可讓我們指定所使用的資料存取模式，以及所產生之方法的名稱。 將兩個核取方塊保持為已核取，並將方法命名為 `FillByDiscontinued` 和 `GetDiscontinuedProducts`。 按一下 [完成] 以完成精靈。
+最後的 wizard 畫面可讓我們指定所使用的資料存取模式，以及所產生之方法的名稱。 將兩個核取方塊保持為已核取，並將方法命名為 `FillByDiscontinued` 和 `GetDiscontinuedProducts`。 按一下 [完成] 完成精靈。
 
 [![將方法命名為 FillByDiscontinued 和 GetDiscontinuedProducts](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image39.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image38.png)
 
@@ -468,7 +468,7 @@ Visual Studio 的 SQL Server 專案類型可協助建立、編譯和部署受管
 - [如何：編輯 `Test.sql` 腳本以執行 SQL 物件](https://msdn.microsoft.com/library/ms233682(VS.80).aspx)
 - [使用者定義函數簡介](http://www.sqlteam.com/item.asp?ItemID=1955)
 - [Managed 程式碼和 SQL Server 2005 （影片）](https://channel9.msdn.com/Showpost.aspx?postid=142413)
-- [Transact-sql 參考](https://msdn.microsoft.com/library/aa299742(SQL.80).aspx)
+- [Transact-SQL 參考](https://msdn.microsoft.com/library/aa299742(SQL.80).aspx)
 - [逐步解說：在 Managed 程式碼中建立預存程式](https://msdn.microsoft.com/library/zxsa8hkf(VS.80).aspx)
 
 ## <a name="about-the-author"></a>關於作者

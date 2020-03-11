@@ -2,18 +2,18 @@
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-cs
 title: 使用 FTP 用戶端部署您的網站C#（） |Microsoft Docs
 author: rick-anderson
-description: 部署 ASP.NET 應用程式最簡單的方式，就是將必要的檔案從開發環境手動複製到生產環境。 .。。
+description: 部署 ASP.NET 應用程式最簡單的方式，就是將必要的檔案從開發環境手動複製到生產環境。 .。
 ms.author: riande
 ms.date: 04/01/2009
 ms.assetid: a3599cf7-8474-4006-954a-3bc693736b66
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-cs
 msc.type: authoredcontent
 ms.openlocfilehash: a3474650939ee220b3fd712e9f5a6cf3db11db09
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74621192"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78545588"
 ---
 # <a name="deploying-your-site-using-an-ftp-client-c"></a>使用 FTP 用戶端部署您的網站 (C#)
 
@@ -67,7 +67,7 @@ ms.locfileid: "74621192"
 
 [![使用 FTP 用戶端，將所需的檔案從桌面複製到 web 主機提供者的 Web 服務器](deploying-your-site-using-an-ftp-client-cs/_static/image2.png)](deploying-your-site-using-an-ftp-client-cs/_static/image1.png)
 
-**圖 1**：使用 FTP 用戶端，將所需的檔案從桌面複製到 Web 主機提供者的 Web 服務器（[按一下以觀看完整大小的影像](deploying-your-site-using-an-ftp-client-cs/_static/image3.png)）
+**圖 1**：使用 FTP 用戶端，將所需的檔案從桌面複製到 Web 主機提供者的 web 伺服器（[按一下以觀看完整大小的影像](deploying-your-site-using-an-ftp-client-cs/_static/image3.png)）
 
 部署網站之後，請花點時間測試網站。 如果您已購買功能變數名稱並正確地設定 DNS 設定，則可以輸入您的功能變數名稱以流覽您的網站。 或者，您的 web 主機服務提供者應提供您網站的 URL，看起來會像*accountname*。*webhostprovider*.com 或*webhostprovider*.com/*accountname*。 例如，[我的帳戶折扣] ASP.NET 的 URL 為： `http://httpruntime.web703.discountasp.net`。
 
@@ -117,7 +117,7 @@ ms.locfileid: "74621192"
 
 [![使用 FTP 用戶端，將所需的檔案從桌面複製到 web 主機提供者的 Web 服務器](deploying-your-site-using-an-ftp-client-cs/_static/image8.png)](deploying-your-site-using-an-ftp-client-cs/_static/image7.png)
 
-**圖 3**：使用 FTP 用戶端，將所需的檔案從桌面複製到 Web 主機提供者的 Web 服務器（[按一下以觀看完整大小的影像](deploying-your-site-using-an-ftp-client-cs/_static/image9.png)）
+[**圖 3**]：使用 FTP 用戶端，將所需的檔案從桌面複製到 Web 主機提供者的 web 伺服器（[按一下以觀看完整大小的影像](deploying-your-site-using-an-ftp-client-cs/_static/image9.png)）
 
 應用程式的編譯模型不會影響使用者體驗。 不論是使用 Web 應用程式專案模型或網站專案模型建立網站，都可以存取相同的 ASP.NET 網頁，而且它們的外觀和行為都相同。
 

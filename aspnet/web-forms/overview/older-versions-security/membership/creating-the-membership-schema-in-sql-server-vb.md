@@ -9,11 +9,11 @@ ms.assetid: 112a674d-716f-41a6-99b8-4074d65a54c0
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 96fd72d1f368b1f7947ef0a2293161d97aaf7065
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74581004"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78632052"
 ---
 # <a name="creating-the-membership-schema-in-sql-server-vb"></a>在 SQL Server 中建立成員資格結構描述 (VB)
 
@@ -33,7 +33,7 @@ ms.locfileid: "74581004"
 
 本教學課程一開始會先檢查將必要的架構加入至資料庫的技術，以便使用 `SqlMembershipProvider`。 接下來，我們將檢查架構中的重要資料表，並討論其用途和重要性。 本教學課程最後會介紹如何告訴 ASP.NET 應用程式，成員資格架構應該使用哪個提供者。
 
-讓我們開始吧！
+現在就開始吧！
 
 ## <a name="step-1-deciding-where-to-place-the-user-store"></a>步驟1：決定要放置使用者存放區的位置
 
@@ -208,7 +208,7 @@ Wizard 中的第二個步驟會詢問我們是否要新增應用程式服務或�
 | --- | --- | --- | --- |
 | 清除 | MySecret! | 0 | tTnkPlesqissc2y2SMEygA = = |
 | 進行 | 2oXm6sZHWbTHFgjgkGQsc2Ec9ZM = | 1 | wFgjUfhdUFOCKQiI61vtiQ = = |
-| 加密 | 62RZgDvhxykkqsMchZ0Yly7HS6onhpaoCYaRxV8g0F4CW56OXUU3e7Inza9j9BKp | 2 | LSRzhGS/aa/oqAXGLHJNBw = = |
+| 已加密 | 62RZgDvhxykkqsMchZ0Yly7HS6onhpaoCYaRxV8g0F4CW56OXUU3e7Inza9j9BKp | 2 | LSRzhGS/aa/oqAXGLHJNBw = = |
 
 **表 1**：儲存密碼時，密碼相關欄位的範例值 MySecret！
 
@@ -248,20 +248,20 @@ Roles 架構可讓開發人員定義一組角色，並指定哪些使用者屬�
 | --- | --- |
 | `ApplicationName` | 回想一下，成員架構可讓單一使用者存放區分割成多個應用程式。 此設定表示成員資格提供者所使用的應用程式分割區名稱。 如果未明確指定這個值，則會在執行時間將它設定為應用程式虛擬根路徑的值。 |
 | `commandTimeout` | 指定 SQL 命令逾時值（以秒為單位）。 預設值是 30。 |
-| `connectionStringName` | 要用來連接到使用者存放區資料庫之 `<connectionStrings>` 元素中的連接字串名稱。 這是必要值。 |
+| `connectionStringName` | 要用來連接到使用者存放區資料庫之 `<connectionStrings>` 元素中的連接字串名稱。 這是必要的值。 |
 | `description` | 提供已註冊提供者的易記描述。 |
-| `enablePasswordRetrieval` | 指定使用者是否可能取得其忘記密碼的密碼。 預設值是 `false`。 |
+| `enablePasswordRetrieval` | 指定使用者是否可能取得其忘記密碼的密碼。 預設值為 `false`。 |
 | `enablePasswordReset` | 指出是否允許使用者重設其密碼。 預設值為 `true`。 |
 | `maxInvalidPasswordAttempts` | 在使用者遭到鎖定之前，指定的 `passwordAttemptWindow` 可能發生的失敗登入嘗試次數上限。預設值為5。 |
 | `minRequiredNonalphanumericCharacters` | 必須出現在使用者密碼中的非英數位元數目下限。 這個值必須介於0到128之間;預設值為1。 |
 | `minRequiredPasswordLength` | 密碼所需的字元數下限。 這個值必須介於0到128之間;預設值為7。 |
-| `name` | 已註冊之提供者的名稱。 這是必要值。 |
+| `name` | 已註冊之提供者的名稱。 這是必要的值。 |
 | `passwordAttemptWindow` | 追蹤登入嘗試失敗的分鐘數。 如果使用者在此指定的視窗內提供不正確登入認證 `maxInvalidPasswordAttempts` 次，就會被鎖定。預設值為10。 |
 | `PasswordFormat` | 密碼儲存格式： `Clear`、`Hashed`或 `Encrypted`。 預設為 `Hashed`。 |
 | `passwordStrengthRegularExpression` | 如果有提供，則在建立新帳戶或變更其密碼時，會使用此正則運算式來評估使用者所選取密碼的強度。 預設值為空字串。 |
-| `requiresQuestionAndAnswer` | 指定使用者在抓取或重設密碼時是否必須回答他的安全性問題。 預設值是 `true`。 |
-| `requiresUniqueEmail` | 指出指定之應用程式分割區中的所有使用者帳戶是否都必須有唯一的電子郵件地址。 預設值是 `true`。 |
-| `type` | 指定提供者的類型。 這是必要值。 |
+| `requiresQuestionAndAnswer` | 指定使用者在抓取或重設密碼時是否必須回答他的安全性問題。 預設值為 `true`。 |
+| `requiresUniqueEmail` | 指出指定之應用程式分割區中的所有使用者帳戶是否都必須有唯一的電子郵件地址。 預設值為 `true`。 |
+| `type` | 指定提供者的類型。 這是必要的值。 |
 
 **表 2**：成員資格和 `SqlMembershipProvider` 設定
 
