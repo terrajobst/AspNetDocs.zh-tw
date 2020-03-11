@@ -9,11 +9,11 @@ ms.assetid: 1e8e65f9-fe3e-4250-810b-c90227786bed
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 3a55f8bc4d3508387927ca81674073a001867de7
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74608466"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78534101"
 ---
 # <a name="adding-additional-datatable-columns-vb"></a>新增其他 DataTable 資料行 (VB)
 
@@ -31,9 +31,9 @@ ms.locfileid: "74608466"
 
 如[上傳](../working-with-binary-files/uploading-files-vb.md)檔案教學課程中所述，您必須特別注意使用臨機操作 SQL 語句的 tableadapter，以及其資料欄位不會精確符合主要查詢的方法。 如果重新執行 TableAdapter 設定向導，它會更新所有 TableAdapter 的方法，使其資料欄位清單與主要查詢相符。 因此，任何具有自訂資料行清單的方法都會還原成主要查詢的資料行清單，而不會傳回預期的資料。 使用預存程式時，不會發生這個問題。
 
-在本教學課程中，我們將探討如何擴充 DataTable 架構以包含額外的資料行。 由於在使用臨機操作 SQL 語句時，會肯定脆弱度 TableAdapter，因此在本教學課程中，我們將使用預存程式。 如需有關設定 TableAdapter 以使用預存程式的詳細資訊，請參閱 <<c0>為具類型的資料集 Tableadapter 建立新的預存程式和[使用 Tableadapter 的資料集的現有預存程式](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)教學課程。
+在本教學課程中，我們將探討如何擴充 DataTable 架構以包含額外的資料行。 由於在使用臨機操作 SQL 語句時，會肯定脆弱度 TableAdapter，因此在本教學課程中，我們將使用預存程式。 如需有關設定 TableAdapter 以使用預存程式的詳細資訊，請參閱 <>[為具類型的資料集 Tableadapter 建立新的預存程式和](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md) [使用 Tableadapter 的資料集的現有預存程式](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)教學課程。
 
-## <a name="step-1-adding-apricequartilecolumn-to-theproductsdatatable"></a>步驟 1:將`PriceQuartile`資料行加入至`ProductsDataTable`
+## <a name="step-1-adding-apricequartilecolumn-to-theproductsdatatable"></a>步驟1：將`PriceQuartile`資料行加入至`ProductsDataTable`
 
 在*針對具類型資料集的 Tableadapter 建立新的預存程式*教學課程中，我們建立了名為 `NorthwindWithSprocs`的具類型資料集。 此資料集目前包含兩個 Datatable： `ProductsDataTable` 和 `EmployeesDataTable`。 `ProductsTableAdapter` 具有下列三種方法：
 
@@ -49,29 +49,29 @@ ms.locfileid: "74608466"
 
 [![在 ProductsDataTable 中加入新的資料行](adding-additional-datatable-columns-vb/_static/image2.png)](adding-additional-datatable-columns-vb/_static/image1.png)
 
-**圖 1**：將新的資料行加入至 `ProductsDataTable` （[按一下以查看完整大小的影像](adding-additional-datatable-columns-vb/_static/image3.png)）
+**圖 1**：在 `ProductsDataTable` 中加入新的資料行（[按一下以觀看完整大小的影像](adding-additional-datatable-columns-vb/_static/image3.png)）
 
 這會將新的資料行加入至名為 Column1 的 DataTable，類型為 `System.String`。 我們需要將此資料行的名稱更新為 PriceQuartile，並將其類型更新為 `System.Int32`，因為它將用來保存1到4之間的數位。 在 `ProductsDataTable` 中選取新加入的資料行，然後從屬性視窗，將 `Name` 屬性設為 PriceQuartile，並將 `DataType` 屬性設定為 `System.Int32`。
 
 [![設定新的資料行名稱和資料類型屬性](adding-additional-datatable-columns-vb/_static/image5.png)](adding-additional-datatable-columns-vb/_static/image4.png)
 
-**圖 2**：設定新的資料行 `Name` 並 `DataType` 屬性（[按一下以查看完整大小的影像](adding-additional-datatable-columns-vb/_static/image6.png)）
+**圖 2**：設定新的資料行 `Name` 和 `DataType` 屬性（[按一下以查看完整大小的影像](adding-additional-datatable-columns-vb/_static/image6.png)）
 
 如 [圖 2] 所示，還有其他可設定的屬性，例如，資料行中的值是否必須是唯一的、如果資料行是自動遞增的資料行、是否允許資料庫 `NULL` 值等等。 將這些值設為其預設值。
 
-## <a name="step-2-creating-thegetproductswithpricequartilemethod"></a>步驟 2:建立`GetProductsWithPriceQuartile`方法
+## <a name="step-2-creating-thegetproductswithpricequartilemethod"></a>步驟2：建立`GetProductsWithPriceQuartile`方法
 
 現在 `ProductsDataTable` 已更新為包含 [`PriceQuartile`] 資料行，我們已準備好建立 `GetProductsWithPriceQuartile` 方法。 首先，以滑鼠右鍵按一下 TableAdapter，然後從內容功能表選擇 [加入查詢]。 這會顯示 [TableAdapter 查詢設定向導]，它會先提示我們是否要使用臨機操作 SQL 語句或新的或現有的預存程式。 因為我們還沒有傳回價格四分資料的預存程式，所以讓 TableAdapter 為我們建立這個預存程式。 選取 [建立新的預存程式] 選項，然後按 [下一步]。
 
 [![指示 TableAdapter Wizard 為我們建立預存程式](adding-additional-datatable-columns-vb/_static/image8.png)](adding-additional-datatable-columns-vb/_static/image7.png)
 
-**圖 3**：指示 [TableAdapter 嚮導] 為我們建立預存程式（[按一下以觀看完整大小的影像](adding-additional-datatable-columns-vb/_static/image9.png)）
+**圖 3**：指示 TableAdapter Wizard 為我們建立預存程式（[按一下以觀看完整大小的影像](adding-additional-datatable-columns-vb/_static/image9.png)）
 
 在接下來的畫面（如 [圖 4] 所示）中，嚮導會詢問要加入哪一種類型的查詢。 由於 `GetProductsWithPriceQuartile` 方法會傳回 `Products` 資料表中的所有資料行和記錄，請選取 [選取傳回資料列] 選項，然後按 [下一步]。
 
 [![我們的查詢將會是傳回多個資料列的 SELECT 語句](adding-additional-datatable-columns-vb/_static/image11.png)](adding-additional-datatable-columns-vb/_static/image10.png)
 
-**圖 4**：我們的查詢將會是傳回多個資料列的 `SELECT` 語句（[按一下以查看完整大小的影像](adding-additional-datatable-columns-vb/_static/image12.png)）
+**圖 4**：我們的查詢將是傳回多個資料列的 `SELECT` 語句（[按一下以查看完整大小的影像](adding-additional-datatable-columns-vb/_static/image12.png)）
 
 接下來，系統會提示您輸入 `SELECT` 查詢。 在 wizard 中輸入下列查詢：
 
@@ -88,13 +88,13 @@ ms.locfileid: "74608466"
 
 [![為預存程式命名 Products_SelectWithPriceQuartile](adding-additional-datatable-columns-vb/_static/image14.png)](adding-additional-datatable-columns-vb/_static/image13.png)
 
-**圖 5**：將預存程式命名 `Products_SelectWithPriceQuartile` （[按一下以查看完整大小的影像](adding-additional-datatable-columns-vb/_static/image15.png)）
+**圖 5**：為預存程式命名 `Products_SelectWithPriceQuartile` （[按一下以查看完整大小的影像](adding-additional-datatable-columns-vb/_static/image15.png)）
 
 最後，我們會提示您將 TableAdapter 方法命名為。 將 [填入 DataTable] 和 [傳回 DataTable] 核取方塊保持為已核取，並將方法命名為 `FillWithPriceQuartile` 和 `GetProductsWithPriceQuartile`。
 
 [![命名 TableAdapter s 方法，然後按一下 [完成]](adding-additional-datatable-columns-vb/_static/image17.png)](adding-additional-datatable-columns-vb/_static/image16.png)
 
-**圖 6**：命名 TableAdapter s 方法，然後按一下 [完成] （[按一下以查看完整大小的影像](adding-additional-datatable-columns-vb/_static/image18.png)）
+**圖 6**：命名 TableAdapter s 方法並按一下 [完成] （[按一下以查看完整大小的影像](adding-additional-datatable-columns-vb/_static/image18.png)）
 
 使用指定的 `SELECT` 查詢和名為的預存程式和 TableAdapter 方法，按一下 [完成] 以完成嚮導。 此時，您可能會在嚮導中收到一則警告，指出不支援 `OVER` SQL 結構或語句。 您可以忽略這些警告。
 
@@ -117,7 +117,7 @@ ms.locfileid: "74608466"
 
 此時，我們已執行將額外的資料行新增至 DataTable 的必要步驟。 若要確認此額外資料行是否如預期般運作，請建立 ASP.NET 網頁，以顯示每個產品的名稱、價格和價格四分位。 不過，在這麼做之前，我們必須先更新商務邏輯層，以包含向下呼叫 DAL s `GetProductsWithPriceQuartile` 方法的方法。 我們將在步驟3中更新 BLL，然後在步驟4中建立 [ASP.NET] 頁面。
 
-## <a name="step-3-augmenting-the-business-logic-layer"></a>步驟 3：擴充商務邏輯層
+## <a name="step-3-augmenting-the-business-logic-layer"></a>步驟3：擴充商務邏輯層
 
 從展示層使用新的 `GetProductsWithPriceQuartile` 方法之前，我們應該先將對應的方法新增到 BLL。 開啟 `ProductsBLLWithSprocs` 類別檔案，並新增下列程式碼：
 
@@ -125,7 +125,7 @@ ms.locfileid: "74608466"
 
 如同 `ProductsBLLWithSprocs`中的其他資料抓取方法，`GetProductsWithPriceQuartile` 方法只會呼叫 DAL 的對應 `GetProductsWithPriceQuartile` 方法，並傳回其結果。
 
-## <a name="step-4-displaying-the-price-quartile-information-in-an-aspnet-web-page"></a>步驟 4：在 ASP.NET 的網頁中顯示價格的四分位資訊
+## <a name="step-4-displaying-the-price-quartile-information-in-an-aspnet-web-page"></a>步驟4：在 ASP.NET 的網頁中顯示價格分位資訊
 
 完成 BLL 加法之後，我們就準備好建立一個 ASP.NET 網頁，其中顯示每個產品的四位數。 開啟 [`AdvancedDAL`] 資料夾中的 [`AddingColumns.aspx`] 頁面，並將 GridView 從 [工具箱] 拖曳至設計工具，將其 `ID` 屬性設定為 [`Products`]。 從 GridView 的智慧標籤，將它系結至名為 `ProductsDataSource`的新 ObjectDataSource。 設定 ObjectDataSource 以使用 `ProductsBLLWithSprocs` 類別的 `GetProductsWithPriceQuartile` 方法。 由於這會是唯讀方格，請將 [更新]、[插入] 和 [刪除] 索引標籤中的下拉式清單設定為 [（無）]。
 
@@ -149,7 +149,7 @@ ms.locfileid: "74608466"
 
 [![產品依其價格排序](adding-additional-datatable-columns-vb/_static/image30.png)](adding-additional-datatable-columns-vb/_static/image29.png)
 
-**圖 11**：產品會依其價格排序（[按一下以觀看完整大小的影像](adding-additional-datatable-columns-vb/_static/image31.png)）
+**圖 11**：產品依價格排序（[按一下以觀看完整大小的影像](adding-additional-datatable-columns-vb/_static/image31.png)）
 
 [![產品依其名稱排序](adding-additional-datatable-columns-vb/_static/image33.png)](adding-additional-datatable-columns-vb/_static/image32.png)
 

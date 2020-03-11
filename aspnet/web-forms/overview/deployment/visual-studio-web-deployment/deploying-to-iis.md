@@ -9,13 +9,13 @@ ms.assetid: 8bf2c4fb-4ee5-4841-bfc2-03462c1f7a7a
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
 ms.openlocfilehash: 738318cce442fdc5d58dd1e4c992d4941be2487e
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74591247"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78640599"
 ---
-# <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>使用 Visual Studio ASP.NET Web 部署：部署到測試環境
+# <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>使用 Visual Studio：部署至測試來 ASP.NET Web 部署
 
 由[Tom 作者: dykstra](https://github.com/tdykstra)
 
@@ -23,7 +23,7 @@ ms.locfileid: "74591247"
 
 如需部署至 Azure 的最新版本，請參閱[在 azure 中建立 ASP.NET Core web 應用程式](/azure/app-service/app-service-web-get-started-dotnet)。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 在本教學課程中，您會將 ASP.NET web 應用程式部署到本機電腦上的 Internet information Server （IIS）。
 
@@ -43,7 +43,7 @@ ms.locfileid: "74591247"
 
 如需在 Visual Studio 中使用 web 伺服器的詳細資訊，請參閱[Visual Studio 中 ASP.NET Web 專案的 Web 服務器](https://msdn.microsoft.com/library/58wxa9w5.aspx)。
 
-一下如果您在進行本教學課程時收到錯誤訊息或無法解決問題，請務必查看 [疑難排解][頁面](troubleshooting.md)。
+提醒：如果您在進行本教學課程時收到錯誤訊息或無法解決問題，請務必查看 [疑難排解][頁面](troubleshooting.md)。
 
 ## <a name="download-the-contoso-university-starter-project"></a>下載 Contoso 大學入門專案
 
@@ -119,7 +119,7 @@ ms.locfileid: "74591247"
 
 LocalDB 並非設計成在 IIS 中工作，因此您的測試環境必須安裝 SQL Server Express。 如果您使用 Visual Studio 2010 SQL Server Express，則預設已安裝。 如果您使用的是 Visual Studio 2012 或更新版本，請安裝 SQL Server Express。
 
-若要安裝 SQL Server Express，請從 [下載中心下載並安裝它：Microsoft SQL Server 2017 Express edition](https://www.microsoft.com/sql-server/sql-server-editions-express)。 
+若要安裝 SQL Server Express，請從下載中心下載並安裝[： Microsoft SQL Server 2017 Express edition](https://www.microsoft.com/sql-server/sql-server-editions-express)。 
 
 在 SQL Server 安裝中心 的第一頁上，選取 新增  **SQL Server 獨立安裝 或 將功能新增至現有安裝**，並依照指示接受預設選項。 在安裝精靈中，接受預設設定。 如需安裝選項的詳細資訊，請參閱[從安裝精靈安裝 SQL Server （安裝程式）](https://msdn.microsoft.com/library/ms143219.aspx)。
 
@@ -164,7 +164,7 @@ Contoso 大學應用程式有兩個資料庫：
 > 此腳本是設計用來搭配 SQL Server Express 2012 或更新版本，以及在本教學課程中指定的 Windows 10、Windows 8 或 Windows 7 中的 IIS 設定。 如果您使用的是不同版本的 SQL Server 或 Windows，或如果您在電腦上以不同的方式設定 IIS，可能就需要變更此腳本。 如需 SQL Server 腳本的詳細資訊，請參閱[SQL Server 線上叢書](https://go.microsoft.com/fwlink/?LinkId=132511)。
 
 > [!NOTE] 
-> **安全性注意事項**此腳本會為在執行時間存取資料庫的使用者提供 `db_owner` 許可權，這就是您在生產環境中擁有的功能。 在某些情況下，您可能會想要指定具有完整資料庫架構更新許可權的使用者，僅供部署之用，並為執行時間指定僅具有讀取和寫入資料許可權的其他使用者。 如需詳細資訊，請參閱本教學課程稍後的 <<c0>檢查自動的 Web.config 變更 Code First 移轉。
+> **安全性注意事項**此腳本會為在執行時間存取資料庫的使用者提供 `db_owner` 許可權，這就是您在生產環境中擁有的功能。 在某些情況下，您可能會想要指定具有完整資料庫架構更新許可權的使用者，僅供部署之用，並為執行時間指定僅具有讀取和寫入資料許可權的其他使用者。 如需詳細資訊，請參閱本教學課程稍後的 <>檢查自動的 Web.config 變更 Code First 移轉。[Reviewing the Automatic Web.config Changes for Code First Migrations](#reviewingmigrations)
 
 <a id="publish"></a>
 
@@ -174,13 +174,13 @@ Contoso 大學應用程式有兩個資料庫：
 
 1. 在 Visual Studio 中，開啟您稍早建立的*Grant .sql*檔案。
 
-2. 選取 **[連線]** 。 
+2. 選取 [連接]。 
 
     ![[連線] 按鈕](deploying-to-iis/_static/image11.png)
 
-3. 在 [**連接到伺服器**] 對話方塊中，輸入 *.\SQLExpress*做為**伺服器名稱**。 選取 **[連線]** 。
+3. 在 [**連接到伺服器**] 對話方塊中，輸入 *.\SQLExpress*做為**伺服器名稱**。 選取 [連接]。
 
-4. 在 [資料庫] 下拉式清單中，選取 [ **ContosoUniversity**]。 選取 [**執行**]。 
+4. 在 [資料庫] 下拉式清單中，選取 [ **ContosoUniversity**]。 選取 [執行]。 
 
    ![](deploying-to-iis/_static/image12.png)
 
@@ -205,7 +205,7 @@ Contoso 大學應用程式有兩個資料庫：
 
 2. 選取 [**新增設定檔**]。 [**挑選發行目標**] 對話方塊隨即出現。
 
-3. 選取 [ **IIS]、[FTP] 等等**。選取 [建立設定檔]。 [**發行**嚮導] 隨即出現。
+3. 選取 [ **IIS]、[FTP] 等等**。選取 [**建立設定檔**]。 [**發行**嚮導] 隨即出現。
 
    ![[發行 Web wizard 設定檔] 索引標籤](deploying-to-iis/_static/image26.png)
 

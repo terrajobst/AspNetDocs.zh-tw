@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
-title: 使用 Visual Studio ASP.NET Web 部署：部署至生產環境 |Microsoft Docs
+title: 使用 Visual Studio ASP.NET Web 部署：部署到生產環境 |Microsoft Docs
 author: tdykstra
 description: 本教學課程系列將示範如何透過互動，將 ASP.NET web 應用程式部署（發佈）至 Azure App Service Web Apps 或協力廠商主機服務提供者。
 ms.author: riande
@@ -9,11 +9,11 @@ ms.assetid: 416438a1-3b2f-4d27-bf53-6b76223c33bf
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
 ms.openlocfilehash: ddc3d15f0436c4c3a24491cf0377111768da67df
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74617635"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78632780"
 ---
 # <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>使用 Visual Studio ASP.NET Web 部署：部署到生產環境
 
@@ -23,17 +23,17 @@ ms.locfileid: "74617635"
 
 > 本教學課程系列說明如何使用 Visual Studio 2012 或 Visual Studio 2010，將 ASP.NET web 應用程式部署（發佈）至 Azure App Service Web Apps 或協力廠商裝載提供者。 如需有關數列的詳細資訊，請參閱[本系列的第一個教學](introduction.md)課程。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 在本教學課程中，您會設定 Microsoft Azure 帳戶、建立預備和生產環境，以及使用 Visual Studio 單鍵發佈功能，將您的 ASP.NET web 應用程式部署到預備和生產環境。
 
 如果您想要的話，可以部署到協力廠商主機服務提供者。 本教學課程中所述的大部分程式都與主機服務提供者或 Azure 相同，不同之處在于每個提供者都有自己的帳戶和網站管理使用者介面。 您可以在 Microsoft.com 網站的提供者資源[庫](https://www.microsoft.com/web/hosting)中找到主控提供者。
 
-一下如果您在進行本教學課程時收到錯誤訊息或無法使用，請務必查看本教學課程系列中的 [疑難排解] 頁面。
+提醒：如果您收到錯誤訊息，或在進行本教學課程時無法解決問題，請務必查看本教學課程系列中的 [疑難排解] 頁面。
 
 ## <a name="get-a-microsoft-azure-account"></a>取得 Microsoft Azure 帳戶
 
-如果您還沒有 Azure 帳戶，只需要幾分鐘的時間就可以建立免費試用帳戶。 如需詳細資訊，請參閱[Azure 免費試用](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)。
+如果您還沒有 Azure 帳戶，只需要幾分鐘的時間就可以建立免費試用帳戶。 如需詳細資料，請參閱 [Azure 免費試用](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)。
 
 ## <a name="create-a-staging-environment"></a>建立預備環境
 
@@ -55,7 +55,7 @@ ms.locfileid: "74617635"
     **新網站-自訂建立**嚮導隨即開啟。 **自訂建立**嚮導可讓您同時建立網站和資料庫。
 3. 在嚮導的 [**建立網站**] 步驟中，于 [ **URL** ] 方塊中輸入字串，以作為應用程式預備環境的唯一 URL。 例如，輸入 ContosoUniversity-staging123 （在結尾包含亂數字，以在採用 ContosoUniversity 時讓它成為唯一的）。
 
-    完整的 URL 將包含您在此處輸入的內容，加上您在文字方塊旁看到的尾碼。
+    完整的 URL 將包含您在此處輸入的字串，加上您在文字方塊旁看到的尾碼。
 4. 在 [**區域**] 下拉式清單中，選擇最接近您的區域。
 
     此設定會指定您的 web 應用程式將在哪一個資料中心執行。
@@ -67,12 +67,12 @@ ms.locfileid: "74617635"
 
     ![建立網站步驟](deploying-to-production/_static/image1.png)
 
-    嚮導會前進至 [**指定資料庫設定**] 步驟。
+    精靈隨即前進至 [指定資料庫設定] 步驟。
 8. 在 [**名稱**] 方塊中，輸入*ContosoUniversity*加上一個亂數字，讓它成為唯一的，例如*ContosoUniversity123*。
 9. 在 [**伺服器**] 方塊中，選取 [**新增 SQL Database 伺服器**]。
 10. 輸入系統管理員名稱和密碼。
 
-    您不會在此輸入現有的名稱和密碼。 您正在輸入目前定義的新名稱和密碼，以供稍後存取資料庫時使用。
+    您不會在此輸入現有的名稱和密碼。 而是輸入新的名稱和密碼；您現在定義的名稱和密碼將供未來存取資料庫時使用。
 11. 在 [**區域**] 方塊中，選擇您為 web 應用程式選擇的相同區域。
 
     將網頁伺服器和資料庫伺服器保留在相同的區域，可提供最佳效能，並將費用降至最低。
@@ -110,14 +110,14 @@ ms.locfileid: "74617635"
     ![儲存 .publishsettings 檔案](deploying-to-production/_static/image6.png)
 
     > [!WARNING]
-    > 安全性- *.publishsettings*檔案包含用來管理 Azure 訂用帳戶和服務的認證（未編碼）。 這個檔案的安全性最佳作法是暫時儲存在來原始目錄之外（例如在 Libraries\Documents 資料夾中），然後在匯入完成後刪除它。 取得 *.publishsettings*檔案存取權的惡意使用者可以編輯、建立和刪除您的 Azure 服務。
+    > 安全性- *.publishsettings*檔案包含用來管理 Azure 訂用帳戶和服務的認證（未編碼）。 這個檔案的安全性最佳作法是暫時儲存在來源目錄之外 (例如在 Libraries\Documents 資料夾)，然後在匯入完成後予以刪除。 取得 *.publishsettings*檔案存取權的惡意使用者可以編輯、建立和刪除您的 Azure 服務。
 
 ### <a name="create-a-publish-profile"></a>建立發行設定檔
 
 1. 在 Visual Studio 中，以滑鼠右鍵按一下**方案總管**中的 ContosoUniversity 專案，然後從內容功能表中選取 [**發佈**]。
 
-    [**發行 Web** wizard] 隨即開啟。
-2. 按一下 [**設定檔**] 索引標籤。
+    此時會開啟 [發行 Web] 精靈。
+2. 按一下 [個人資料] 索引標籤。
 3. 按一下 [匯入]。
 4. 流覽至您稍早下載的 *.publishsettings*檔案，然後按一下 [**開啟**]。
 
@@ -127,7 +127,7 @@ ms.locfileid: "74617635"
     當連接經過驗證之後，[**驗證**連線] 按鈕旁會顯示綠色核取記號。
 
     對於某些主控提供者，當您按一下 [**驗證連接**] 時，可能會看到 [**憑證錯誤**] 對話方塊。 如果您這樣做，請確認伺服器名稱是否符合您的預期。 如果伺服器名稱正確，請選取 [**儲存此憑證以供 Visual Studio 的未來會話**]，然後按一下 [**接受**]。 （此錯誤表示主機服務提供者已選擇避免針對您要部署的 URL 購買 SSL 憑證的費用。 如果您想要使用有效的憑證來建立安全連線，請聯絡您的主機服務提供者）。
-6. 按 [ **下一步**]。
+6. 按 [下一步]。
 
     ![連線成功圖示和連線索引標籤中的 [下一步] 按鈕](deploying-to-production/_static/image8.png)
 7. 在 [**設定**] 索引標籤中，展開 [檔案] [**發佈選項**]，然後選取 **[從應用程式中排除檔案\_資料夾**]。
@@ -136,7 +136,7 @@ ms.locfileid: "74617635"
 8. 在 [**資料庫**] 區段的 [ **DefaultConnection** ] 底下，設定成員資格資料庫的資料庫部署。
 9. 1. 選取 [**更新資料庫**]。
 
-        **DefaultConnection**正下方的**遠端連線字串**方塊會填入 .publishsettings 檔案中的連接字串。連接字串包含 SQL Server 認證，會以純文字的形式儲存在 *.pubxml*檔案中。 如果您不想要將它們永久儲存在該處，您可以在部署資料庫之後，從發行設定檔中移除它們，並改為將其儲存在 Azure 中。 如需詳細資訊，請參閱 Scott Hanselman 的 blog 中的 <<c0>如何保護您的 ASP.NET 資料庫連接字串的安全從來源部署至 Azure 。
+        **DefaultConnection**正下方的**遠端連線字串**方塊會填入 .publishsettings 檔案中的連接字串。連接字串包含 SQL Server 認證，會以純文字的形式儲存在 *.pubxml*檔案中。 如果您不想要將它們永久儲存在該處，您可以在部署資料庫之後，從發行設定檔中移除它們，並改為將其儲存在 Azure 中。 如需詳細資訊，請參閱 Scott Hanselman 的 blog 中的 <>如何保護您的 ASP.NET 資料庫連接字串的安全從來源部署至 Azure 。[How to keep your ASP.NET database connection strings secure when deploying to Azure from Source](http://www.hanselman.com/blog/HowToKeepYourASPNETDatabaseConnectionStringsSecureWhenDeployingToAzureFromSource.aspx)
       2. 按一下 [**設定資料庫更新**]。
       3. 在 [**設定資料庫更新**] 對話方塊中，按一下 [**加入 SQL 腳本**]。
       4. 在 [**加入 SQL 腳本**] 方塊中，流覽至您稍早在 [方案] 資料夾中儲存的*aspnet-data-prod*腳本，然後按一下 [**開啟**]。
@@ -204,7 +204,7 @@ ms.locfileid: "74617635"
 2. 請確定已選取 [**暫存**設定檔]。
 3. 按一下 [發行]。
 
-    [**輸出**] 視窗會顯示已採取的部署動作，並報告部署已成功完成。 預設瀏覽器會自動開啟至已部署 web 應用程式的 URL。
+    [輸出] 視窗會顯示已採取的部署動作，並報告部署作業已順利完成。 預設瀏覽器會自動開啟至已部署 web 應用程式的 URL。
 
 ## <a name="test-in-the-staging-environment"></a>在預備環境中測試
 
@@ -224,7 +224,7 @@ ms.locfileid: "74617635"
 
 您所建立的應用程式現在已在雲端中執行，就像您將用於生產環境的 web 應用程式一樣。 因為所有專案都正常運作，下一步就是部署到生產環境。
 
-## <a name="deploy-to-production"></a>部署到生產環境
+## <a name="deploy-to-production"></a>部署至生產環境
 
 建立生產 web 應用程式和部署到生產環境的流程，與預備相同，不同之處在于您需要從部署中排除*機器人 .txt。* 若要這麼做，您將編輯發行設定檔。
 
@@ -248,7 +248,7 @@ ms.locfileid: "74617635"
 
 每個 *.pubxml*檔案都有一個 *.pubxml. user*檔案。 如果您選取 [**儲存密碼**] 選項，則 *.pubxml*檔案會包含加密的密碼，而且預設會從專案中排除。
 
-*.Pubxml*檔案包含特定發行設定檔的相關設定。 如果您想要設定適用于所有設定檔的設定，可以建立一個*wpp .targets*檔案。 組建程式會將這些檔案匯入 *.csproj*或 *. vbproj*專案檔中，因此您可以在專案檔中設定的大部分設定都可以在這些檔案中進行設定。 如需有關 *.pubxml*檔案和*wpp .targets*檔案的詳細資訊，請參閱 [how to：編輯發行設定檔（. .pubxml）檔案中的部署設定，以及 Visual Studio Web 專案](https://msdn.microsoft.com/library/ff398069.aspx)中的 wpp .targets 檔案。
+*.Pubxml*檔案包含特定發行設定檔的相關設定。 如果您想要設定適用于所有設定檔的設定，可以建立一個*wpp .targets*檔案。 組建程式會將這些檔案匯入 *.csproj*或 *. vbproj*專案檔中，因此您可以在專案檔中設定的大部分設定都可以在這些檔案中進行設定。 如需有關 *.pubxml*檔和 *.targets*檔案的詳細資訊，請參閱 How [to：編輯發行設定檔（.Pubxml）檔中的部署設定和 Visual Studio Web 專案中的 wpp .targets](https://msdn.microsoft.com/library/ff398069.aspx)檔。
 
 1. 在**方案總管**中，展開 [**屬性**]，然後展開 [ **PublishProfiles**]。
 2. 以滑鼠右鍵按一下 [ *.pubxml* ]，然後按一下 [**開啟**]。
@@ -265,7 +265,7 @@ ms.locfileid: "74617635"
 
     如需有關如何排除檔案和資料夾的詳細資訊，請參閱 MSDN 上**Visual Studio 和 ASP.NET 的 Web 部署常見問題**中的「[我可以從部署中排除特定檔案或資料夾嗎？](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment) 」。
 
-### <a name="deploy-to-production"></a>部署到生產環境
+### <a name="deploy-to-production"></a>部署至生產環境
 
 1. 開啟 [**發行 Web** wizard]，確認已選取 [**生產**發行] 設定檔，然後按一下 [**預覽**] 索引標籤上的 [**開始預覽**]，確認不會將*機器人 .txt*檔案複製到生產應用程式。
 
@@ -287,7 +287,7 @@ ms.locfileid: "74617635"
 在下一個教學課程中，您將更新應用程式程式碼，並將變更部署到測試、預備和生產環境。
 
 > [!NOTE]
-> 當您的應用程式在生產環境中使用時，您應該執行復原方案。 也就是說，您應該定期從生產應用程式將資料庫備份至安全的儲存位置，而且您應該保留數個層代的這類備份。 當您更新資料庫時，您應該在變更之前立即建立備份複本。 然後，如果您犯了錯誤，而且在將它部署到生產環境之後卻找不到它，您仍然可以將資料庫復原到損毀之前的狀態。 如需詳細資訊，請參閱[Azure SQL Database 備份和還原](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx)。
+> 當您的應用程式在生產環境中使用時，您應該執行復原方案。 也就是說，您應該定期從生產應用程式將資料庫備份至安全的儲存位置，而且您應該保留數個層代的這類備份。 當您更新資料庫時，您應該在變更之前立即建立備份複本。 然後，如果您犯了錯誤，而且在將它部署到生產環境之後卻找不到它，您仍然可以將資料庫復原到損毀之前的狀態。 如需詳細資訊，請參閱 [Azure SQL Database 備份和還原](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx)。
 > 
 > 
 > [!NOTE]
