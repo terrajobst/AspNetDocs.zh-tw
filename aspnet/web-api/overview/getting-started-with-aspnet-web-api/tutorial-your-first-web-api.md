@@ -8,12 +8,12 @@ ms.date: 11/28/2017
 ms.custom: seoapril2019
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 3e35c2bc0e46dfdb4544b772775eddd533f27be3
-ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
+ms.openlocfilehash: 2717d93f47be9d4a6548731d8deeca312b25f39f
+ms.sourcegitcommit: 9e3ca74997a67c18589729d4b7303799905473eb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78556795"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79084050"
 ---
 # <a name="get-started-with-aspnet-web-api-2-c"></a>開始使用 ASP.NET Web API 2 （C#）
 
@@ -55,7 +55,7 @@ ASP.NET Web API 是在 .NET Framework 之上建立 Web Api 的架構。
 
 ## <a name="adding-a-model"></a>新增模型
 
-「模型」是代表應用程式中資料的物件。 ASP.NET Web API 可以自動將您的模型序列化為 JSON、XML 或其他格式，然後將序列化資料寫入 HTTP 回應訊息的本文中。 只要用戶端可以讀取序列化格式，它就可以還原序列化物件。 大部分的用戶端都可以剖析 XML 或 JSON。 此外，用戶端可以藉由設定 HTTP 要求訊息中的 Accept 標頭，來指出所要的格式。
+「模型」 是代表您應用程式中資料的物件。 ASP.NET Web API 可以自動將您的模型序列化為 JSON、XML 或其他格式，然後將序列化資料寫入 HTTP 回應訊息的本文中。 只要用戶端可以讀取序列化格式，它就可以還原序列化物件。 大部分的用戶端都可以剖析 XML 或 JSON。 此外，用戶端可以藉由設定 HTTP 要求訊息中的 Accept 標頭，來指出所要的格式。
 
 讓我們從建立代表產品的簡單模型開始。
 
@@ -67,7 +67,7 @@ ASP.NET Web API 是在 .NET Framework 之上建立 Web Api 的架構。
 
 [!code-csharp[Main](tutorial-your-first-web-api/samples/sample1.cs)]
 
-## <a name="adding-a-controller"></a>新增控制器
+## <a name="adding-a-controller"></a>加入控制器
 
 在 Web API 中，*控制器*是處理 HTTP 要求的物件。 我們會新增可傳回產品清單的控制器，或由識別碼所指定的單一產品。
 
@@ -104,7 +104,7 @@ ASP.NET Web API 是在 .NET Framework 之上建立 Web Api 的架構。
 - `GetAllProducts` 方法會傳回完整的產品清單，做為**IEnumerable&lt;產品&gt;** 類型。
 - `GetProduct` 方法會依識別碼查閱單一產品。
 
-就這麼容易！ 您有一個可運作的 Web API。 控制器上的每個方法都會對應至一或多個 Uri：
+就這麼簡單！ 您有一個可運作的 Web API。 控制器上的每個方法都會對應至一或多個 Uri：
 
 | 控制器方法 | URI |
 | --- | --- |
@@ -137,7 +137,7 @@ ASP.NET Web API 是在 .NET Framework 之上建立 Web Api 的架構。
 
 若要取得產品清單，請將 HTTP GET 要求傳送至 &quot;/api/products&quot;。
 
-JQuery [getJSON](http://api.jquery.com/jQuery.getJSON/)函數會傳送 AJAX 要求。 For response 包含 JSON 物件的陣列。 `done` 函式會指定要求成功時所呼叫的回呼。 在回呼中，我們會使用產品資訊來更新 DOM。
+JQuery [getJSON](http://api.jquery.com/jQuery.getJSON/)函數會傳送 AJAX 要求。 回應包含 JSON 物件的陣列。 `done` 函式會指定要求成功時所呼叫的回呼。 在回呼中，我們會使用產品資訊來更新 DOM。
 
 [!code-html[Main](tutorial-your-first-web-api/samples/sample4.html)]
 
@@ -165,7 +165,7 @@ JQuery [getJSON](http://api.jquery.com/jQuery.getJSON/)函數會傳送 AJAX 要�
 
 ## <a name="using-f12-to-view-the-http-request-and-response"></a>使用 F12 來查看 HTTP 要求和回應
 
-當您使用 HTTP 服務時，查看 HTTP 要求和要求訊息會非常有用。 您可以使用 Internet Explorer 9 中的 F12 開發人員工具來執行這項操作。 從 Internet Explorer 9，按**F12**開啟工具。 按一下 [**網路**] 索引標籤，然後按 [**開始捕獲**]。 現在請回到網頁，然後按**F5**重載網頁。 Internet Explorer 將會在瀏覽器與 web 伺服器之間捕捉 HTTP 流量。 [摘要] 視圖會顯示頁面的所有網路流量：
+當您使用 HTTP 服務時，查看 HTTP 要求和回應訊息會非常有用。 您可以使用 Internet Explorer 9 中的 F12 開發人員工具來執行這項操作。 從 Internet Explorer 9，按**F12**開啟工具。 按一下 [**網路**] 索引標籤，然後按 [**開始捕獲**]。 現在請回到網頁，然後按**F5**重載網頁。 Internet Explorer 將會在瀏覽器與 web 伺服器之間捕捉 HTTP 流量。 [摘要] 視圖會顯示頁面的所有網路流量：
 
 ![](tutorial-your-first-web-api/_static/image14.png)
 
