@@ -9,11 +9,11 @@ ms.assetid: 83267f7d-64d9-41ee-82cf-da91b1bf534d
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb
 msc.type: authoredcontent
 ms.openlocfilehash: d8ceb6b5290300992e52199caa9314c573de1942
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74626742"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78633900"
 ---
 # <a name="an-overview-of-forms-authentication-vb"></a>表單驗證簡介（VB）
 
@@ -48,7 +48,7 @@ ms.locfileid: "74626742"
 
 [![表單驗證工作流程](an-overview-of-forms-authentication-vb/_static/image2.png)](an-overview-of-forms-authentication-vb/_static/image1.png)
 
-**圖 01**：表單驗證工作流程（[按一下以查看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image3.png)）
+**圖 01**：表單驗證工作流程（[按一下以觀看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image3.png)）
 
 ### <a name="remembering-the-authentication-ticket-across-page-visits"></a>跨頁面流覽記住驗證票證
 
@@ -70,7 +70,7 @@ Cookie 的其中一個層面就是其到期日，也就是瀏覽器捨棄 cookie
 
 長時間簡短，在 IIS 7 之前的版本中，您只能使用表單驗證來保護 ASP.NET 執行時間所處理的資源。 同樣地，URL 授權規則只會套用至 ASP.NET 執行時間所處理的資源。 但是有了 IIS 7，就可以將又稱為 formsauthenticationmodule 和 UrlAuthorizationModule 整合到 IIS 的 HTTP 管線中，藉此將此功能延伸至所有要求。
 
-## <a name="step-1-creating-an-aspnet-website-for-this-tutorial-series"></a>步驟 1:建立此教學課程系列的 ASP.NET 網站
+## <a name="step-1-creating-an-aspnet-website-for-this-tutorial-series"></a>步驟1：建立本教學課程系列的 ASP.NET 網站
 
 為了達到最廣泛的可能物件，我們將在此系列中建立的 ASP.NET 網站，會使用 Microsoft 的免費版 Visual Studio 2008、 [Visual Web Developer 2008](https://www.microsoft.com/express/vwd/)來建立。 我們將在[Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/sql/Aa336346.aspx)資料庫中執行 SqlMembershipProvider 使用者存放區。 如果您使用 Visual Studio 2005 或不同版本的 Visual Studio 2008 或 SQL Server，別擔心，這些步驟將會幾乎相同，而且會指出任何非一般的差異。
 
@@ -111,7 +111,7 @@ Cookie 的其中一個層面就是其到期日，也就是瀏覽器捨棄 cookie
 
 [![新增預設的 default.aspx 頁面，選擇選取主版頁面](an-overview-of-forms-authentication-vb/_static/image14.png)](an-overview-of-forms-authentication-vb/_static/image13.png)
 
-**圖 05**：加入新的 default.aspx 頁面選擇以選取主版頁面（[按一下以查看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image15.png)）
+**圖 05**：新增新的 default.aspx 頁面選擇以選取主版頁面（[按一下以查看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image15.png)）
 
 [![使用網站。主要主版頁面](an-overview-of-forms-authentication-vb/_static/image17.png)](an-overview-of-forms-authentication-vb/_static/image16.png)
 
@@ -129,7 +129,7 @@ Cookie 的其中一個層面就是其到期日，也就是瀏覽器捨棄 cookie
 > [!NOTE]
 > 我們的主版頁面包含功能表或其他導覽介面的區段。 我們將在未來的教學課程中建立這類介面。
 
-## <a name="step-2-enabling-forms-authentication"></a>步驟 2:啟用表單驗證
+## <a name="step-2-enabling-forms-authentication"></a>步驟2：啟用表單驗證
 
 建立 ASP.NET 網站之後，我們的下一項工作就是啟用表單驗證。 應用程式的驗證設定是透過 Web.config 中的[&lt;authentication&gt; 元素](https://msdn.microsoft.com/library/532aee0e.aspx)所指定。&lt;authentication&gt; 元素包含名為 mode 的單一屬性，它會指定應用程式所使用的驗證模型。 這個屬性可以有下列四個值的其中一個：
 
@@ -155,7 +155,7 @@ Cookie 的其中一個層面就是其到期日，也就是瀏覽器捨棄 cookie
 
 &lt;authentication&gt; 元素可以選擇性地包含 &lt;forms&gt; 子項目，其中包含表單驗證特有的設定。 現在，讓我們使用預設的表單驗證設定。 在下一個教學課程中，我們將更詳細地探討 &lt;表單&gt; 子項目。
 
-## <a name="step-3-building-the-login-page"></a>步驟 3：建立登入頁面
+## <a name="step-3-building-the-login-page"></a>步驟3：建立登入頁面
 
 為了支援表單驗證，我們的網站需要登入頁面。 如瞭解表單驗證工作流程一節中所述，如果使用者嘗試存取未獲授權觀看的頁面，又稱為 formsauthenticationmodule 會自動將其重新導向至登入頁面。 另外還有 ASP.NET 的 Web 控制項，會向匿名使用者顯示登入頁面的連結。 這接踵而來問題，登入頁面的 URL 為何？
 
@@ -244,7 +244,7 @@ FormsAuthentication. RedirectFromLoginPage （UserName. Text，RememberMe）
 > [!NOTE]
 > 許多財務和醫療網站都設定為在已驗證的使用者可存取的*所有*頁面上使用 SSL。 如果您要建立這類網站，您可以設定表單驗證系統，讓表單驗證票證只能透過安全連線傳輸。 我們將在下一個教學課程 [ *[表單驗證](../membership/creating-the-membership-schema-in-sql-server-vb.md)* 設定] 和 [高級] 主題中查看各種表單驗證設定選項。
 
-## <a name="step-4-detecting-authenticated-visitors-and-determining-their-identity"></a>步驟 4：偵測已驗證的訪客並判斷其身分識別
+## <a name="step-4-detecting-authenticated-visitors-and-determining-their-identity"></a>步驟4：偵測已驗證的訪客並判斷其身分識別
 
 此時，我們已啟用表單驗證，並建立了基本的登入頁面，但我們尚未檢查如何判斷使用者是否已驗證或為匿名。 在某些情況下，我們可能會想要顯示不同的資料或資訊，視已驗證或匿名使用者是否造訪網頁而定。 此外，我們經常需要知道已驗證使用者的身分識別。
 
@@ -262,11 +262,11 @@ FormsAuthentication. RedirectFromLoginPage （UserName. Text，RememberMe）
 
 [![以匿名方式造訪時，會顯示 [登入] 連結](an-overview-of-forms-authentication-vb/_static/image32.png)](an-overview-of-forms-authentication-vb/_static/image31.png)
 
-**圖 11**：以匿名方式造訪時，會顯示 [登入] 連結（[按一下以查看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image33.png)）
+**圖 11**：匿名造訪時，會顯示 [登入] 連結（[按一下以查看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image33.png)）
 
-[![已驗證的使用者會顯示為 [歡迎回來]！訊息](an-overview-of-forms-authentication-vb/_static/image35.png)](an-overview-of-forms-authentication-vb/_static/image34.png)
+[![已驗證的使用者會顯示為歡迎回來！消息](an-overview-of-forms-authentication-vb/_static/image35.png)](an-overview-of-forms-authentication-vb/_static/image34.png)
 
-**圖 12**：已驗證的使用者會顯示為 [歡迎回來]！ 訊息（[按一下以查看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image36.png)）
+**圖 12**：已驗證的使用者會顯示在歡迎畫面上！ 訊息（[按一下以查看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image36.png)）
 
 我們可以透過[HttpCoNtext 物件](https://msdn.microsoft.com/library/system.web.httpcontext.aspx)的[使用者屬性](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx)來判斷目前登入的使用者身分識別。 HttpCoNtext 物件代表目前要求的相關資訊，而這是這類常見 ASP.NET 物件的首頁，做為回應、要求和會話等。 User 屬性代表目前 HTTP 要求的安全性內容，並會執行[IPrincipal 介面](https://msdn.microsoft.com/library/system.security.principal.iprincipal.aspx)。
 
@@ -275,7 +275,7 @@ User 屬性是由又稱為 formsauthenticationmodule 所設定。 具體而言�
 Principal 物件（例如 GenericPrincipal）會提供使用者身分識別及其所屬角色的相關資訊。 IPrincipal 介面會定義兩個成員：
 
 - [IsInRole （](https://msdn.microsoft.com/library/system.security.principal.iprincipal.isinrole.aspx)角色角色）-傳回布林值的方法，指出主體是否屬於指定的角色。
-- [Identity](https://msdn.microsoft.com/library/system.security.principal.iprincipal.identity.aspx) -傳回執行[IIdentity 介面](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx)之物件的屬性。 IIdentity 介面會定義三個屬性：[AuthenticationType](https://msdn.microsoft.com/library/system.security.principal.iidentity.authenticationtype.aspx)、 [IsAuthenticated](https://msdn.microsoft.com/library/system.security.principal.iidentity.isauthenticated.aspx)和[Name](https://msdn.microsoft.com/library/system.security.principal.iidentity.name.aspx)。
+- [Identity](https://msdn.microsoft.com/library/system.security.principal.iprincipal.identity.aspx) -傳回執行[IIdentity 介面](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx)之物件的屬性。 IIdentity 介面會定義三個屬性： [AuthenticationType](https://msdn.microsoft.com/library/system.security.principal.iidentity.authenticationtype.aspx)、 [IsAuthenticated](https://msdn.microsoft.com/library/system.security.principal.iidentity.isauthenticated.aspx)和[Name](https://msdn.microsoft.com/library/system.security.principal.iidentity.name.aspx)。
 
 我們可以使用下列程式碼來判斷目前訪客的名稱：
 
@@ -313,7 +313,7 @@ WelcomeBackMessage。 Text = "歡迎回來" &amp; User.Identity.Name &amp; "！"
 > [!NOTE]
 > 除了 AnonymousTemplate 和 LoggedInTemplate，LoginView 控制項也可以包含角色特定的範本。 角色特定範本只會對屬於指定角色的使用者顯示標記。 我們將在未來的教學課程中，檢查 LoginView 控制項的角色式功能。
 
-首先，將名為 LoginContent 的 ContentPlaceHolder 加入至導覽 &lt;div&gt; 元素中的主版頁面。 您可以直接將 ContentPlaceHolder 控制項從 [工具箱] 拖曳至 [來源] 視圖，將產生的標記放在 TODO 上方：[功能表] 會移至這裡文字。
+首先，將名為 LoginContent 的 ContentPlaceHolder 加入至導覽 &lt;div&gt; 元素中的主版頁面。 您可以直接將 ContentPlaceHolder 控制項從 [工具箱] 拖曳至 [來源] 視圖，將產生的標記放在 [TODO：] 功能表的上方。
 
 [!code-aspx[Main](an-overview-of-forms-authentication-vb/samples/sample8.aspx)]
 
@@ -323,7 +323,7 @@ LoginView 和其他登入相關的控制項位於 [工具箱] 的 [登入] 索�
 
 [![[工具箱] 中的 LoginView 控制項](an-overview-of-forms-authentication-vb/_static/image41.png)](an-overview-of-forms-authentication-vb/_static/image40.png)
 
-**圖 14**：[工具箱] 中的 LoginView 控制項（[按一下以查看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image42.png)）
+**圖 14**： [工具箱] 中的 LoginView 控制項（[按一下以查看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image42.png)）
 
 接下來，在 LoginView 控制項之後立即加入兩個 &lt;br/&gt; 元素，但仍在 ContentPlaceHolder 內。 此時，導覽 &lt;div&gt; 元素的標記應該如下所示：
 
@@ -341,7 +341,7 @@ LoginView 和其他登入相關的控制項位於 [工具箱] 的 [登入] 索�
 
 [![LoginView 控制項會顯示 [歡迎回來]、[Jisun]。](an-overview-of-forms-authentication-vb/_static/image44.png)](an-overview-of-forms-authentication-vb/_static/image43.png)
 
-**圖 15**：LoginView 控制項會顯示 [歡迎回來]、[Jisun]。 （[按一下以查看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image45.png)）
+**圖 15**： LoginView 控制項顯示歡迎回來，Jisun。 （[按一下以查看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image45.png)）
 
 因為我們已將 LoginView 新增至主版頁面，所以它可能會出現在網站上的每個頁面中。 不過，您可能會有不想顯示此訊息的網頁。 其中一個頁面是登入頁面，因為登入頁面的連結似乎不在該處。 由於我們將 LoginView 控制項放在主版頁面的 ContentPlaceHolder 中，因此我們可以在內容頁面中覆寫此預設標記。 開啟 Login .aspx 並移至設計工具。 由於我們尚未在主版頁面中明確定義 LoginContent ContentPlaceHolder 的內容控制項，登入頁面將會顯示此 ContentPlaceHolder 的主版頁面預設標記。 您可以透過設計工具查看這一點-[LoginContent] ContentPlaceHolder 會顯示預設標記（LoginView 控制項）。
 
@@ -360,7 +360,7 @@ LoginView 和其他登入相關的控制項位於 [工具箱] 的 [登入] 索�
 
 **圖 17**：登入頁面會隱藏預設 LoginContent ContentPlaceHolder 的標記（[按一下以查看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image51.png)）
 
-## <a name="step-5-logging-out"></a>步驟 5：登出
+## <a name="step-5-logging-out"></a>步驟5：登出
 
 在步驟3中，我們探討了如何建立登入頁面，將使用者登入網站，但我們還沒看到如何將使用者登出。除了在中記錄使用者的方法之外，FormsAuthentication 類別也會提供[SignOut 方法](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx)。 SignOut 方法只會終結表單驗證票證，因而將使用者登出網站。
 
@@ -387,11 +387,11 @@ LoginView 和其他登入相關的控制項位於 [工具箱] 的 [登入] 索�
 
 [![default.aspx 會顯示 [歡迎回來]、[Jisun] 和 [登出 LinkButton]](an-overview-of-forms-authentication-vb/_static/image53.png)](an-overview-of-forms-authentication-vb/_static/image52.png)
 
-**圖 18**：Default.aspx 會顯示 [歡迎回來]、[Jisun] 和 [登出 LinkButton] （[按一下以觀看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image54.png)）
+**圖 18**： Default.aspx 顯示歡迎回來、Jisun 以及登出 LinkButton （[按一下以觀看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image54.png)）
 
-[![登出] 會顯示 [歡迎使用]、[stranger] 和登入 LinkButton](an-overview-of-forms-authentication-vb/_static/image56.png)(an-overview-of-forms-authentication-vb/_static/image55.png)
+[![登出 會顯示 [歡迎使用]、[stranger] 和登入 LinkButton](an-overview-of-forms-authentication-vb/_static/image56.png)](an-overview-of-forms-authentication-vb/_static/image55.png)
 
-**圖 19**：登出 .aspx 會顯示 [歡迎]、[stranger] 和登入 LinkButton （[按一下以查看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image57.png)）
+**圖 19**：登出 .Aspx 會顯示 [歡迎]、[stranger] 和登入 LinkButton （[按一下以查看完整大小的影像](an-overview-of-forms-authentication-vb/_static/image57.png)）
 
 > [!NOTE]
 > 我建議您自訂 [登出 .aspx] 頁面，以隱藏主版頁面的 LoginContent ContentPlaceHolder （就像我們在步驟4中的 Login .aspx 所做的一樣）。 原因是因為 LoginStatus 控制項所轉譯的登入 LinkButton （Hello、stranger 底下的）會將使用者傳送至登入頁面，並在 ReturnUrl querystring 參數中傳遞目前的 URL。 簡單地說，如果已登出的使用者按一下這個 LoginStatus 的登入 LinkButton，然後登入，則會將他們重新導向回 [登出]，這可能會讓使用者輕鬆混淆。

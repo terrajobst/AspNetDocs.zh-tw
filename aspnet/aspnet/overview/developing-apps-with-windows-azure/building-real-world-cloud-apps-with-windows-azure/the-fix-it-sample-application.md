@@ -9,11 +9,11 @@ ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
 ms.openlocfilehash: 896196bdb6a6b0d12a6c798ead510e37dd38a9fc
-ms.sourcegitcommit: 7709c0a091b8d55b7b33bad8849f7b66b23c3d72
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77456877"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78583444"
 ---
 # <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>附錄：修正 It 範例應用程式（使用 Azure 建立真實世界的雲端應用程式）
 
@@ -96,7 +96,7 @@ ASP.NET 會在使用者輸入文字方塊中輸入腳本，自動防止惡意使
 
 請注意，AutoFac 會自動處置 `FixItTaskRepository` 實例，因此我們不需要明確地處置它。
 
-另一個選項是從 `FixItTaskRepository`移除 `DbContext` 成員變數，並改為在 `using` 語句內部的每個存放庫方法中建立本機 `DbContext` 變數。 例如：
+另一個選項是從 `FixItTaskRepository`移除 `DbContext` 成員變數，並改為在 `using` 語句內部的每個存放庫方法中建立本機 `DbContext` 變數。 例如:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample2.cs)]
 
@@ -309,7 +309,7 @@ ASP.NET 會在使用者輸入文字方塊中輸入腳本，自動防止惡意使
 
     此名稱在 azurewebsites.net 網域中必須是唯一的，且密碼必須符合密碼複雜性 SQL Database 需求。 （範例 Passw0rd1 符合需求）。
 
-    請注意，命令的開頭是 ".\"。 為了協助防止惡意執行腳本，Windows PowerShell 會要求您在執行腳本時提供腳本檔案的完整路徑。 您可以使用點來表示目前的目錄（"。\"）或提供完整路徑，例如：
+    請注意，命令的開頭是 "。\"。 為了協助防止惡意執行腳本，Windows PowerShell 會要求您在執行腳本時提供腳本檔案的完整路徑。 您可以使用點來表示目前的目錄（"。\"）或提供完整路徑，例如：
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample26.cmd)]
 
@@ -322,7 +322,7 @@ ASP.NET 會在使用者輸入文字方塊中輸入腳本，自動防止惡意使
     如果腳本失敗或產生錯誤（例如「AzureWebsite： Call Set-azuresubscription 和 Select-Set-azuresubscription first」），您可能尚未完成 Azure PowerShell 的設定。
 
     腳本完成之後，您可以使用 Azure 管理入口網站查看已建立的資源，如[自動化所有事項](automate-everything.md)一章所示。
-10. 若要將 FixIt 專案部署到新的 Azure 環境，請使用*AzureWebsite*腳本。 例如：
+10. 若要將 FixIt 專案部署到新的 Azure 環境，請使用*AzureWebsite*腳本。 例如:
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample28.cmd)]
 
@@ -395,4 +395,4 @@ ASP.NET 會在使用者輸入文字方塊中輸入腳本，自動防止惡意使
 現在您已準備好部署雲端服務。 在 [方案探索] 中，以滑鼠右鍵按一下 MyFixItCloudService 專案，然後選取 [**發佈**]。 如需詳細資訊，請參閱[本教學](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36)課程的第2部分中的「將[應用程式部署到 Azure](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)」。
 
 > [!div class="step-by-step"]
-> [[上一步]](more-patterns-and-guidance.md)
+> [上一篇](more-patterns-and-guidance.md)

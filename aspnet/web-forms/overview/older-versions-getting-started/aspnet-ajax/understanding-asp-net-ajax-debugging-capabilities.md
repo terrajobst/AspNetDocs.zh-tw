@@ -9,11 +9,11 @@ ms.assetid: 7f9380c6-19f7-4c82-a019-916ec6dffc9c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
 ms.openlocfilehash: 08ced380f3551407d757524dbc84b5feeeb5482b
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74601680"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78629504"
 ---
 # <a name="understanding-aspnet-ajax-debugging-capabilities"></a>了解 ASP.NET AJAX 偵錯功能
 
@@ -75,7 +75,7 @@ Visual Studio 2008 偵錯工具會將 JavaScript 內嵌在與外部 JavaScript �
 
 [清單 1] 顯示使用 `debugger` 關鍵字的範例。 這個範例會強制偵錯工具在進行 update 函式的呼叫之前中斷。
 
-**清單1。使用偵錯工具關鍵字來強制 Visual Studio .NET 偵錯工具中斷。**
+**[清單 1]。使用偵錯工具關鍵字來強制 Visual Studio .NET 偵錯工具中斷。**
 
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample2.js)]
 
@@ -85,9 +85,9 @@ Visual Studio 2008 偵錯工具會將 JavaScript 內嵌在與外部 JavaScript �
 
 啟動 debug 會話並開始使用預設的 F11 鍵來逐步執行程式碼之後，您可能會遇到如 [圖 2] 所示的錯誤對話方塊，除非頁面中使用的所有腳本檔案都已開啟且可供進行偵錯工具。
 
-[當沒有可用於進行偵錯工具的原始程式碼時，會顯示 ![錯誤] 對話方塊。](understanding-asp-net-ajax-debugging-capabilities/_static/image5.png)(understanding-asp-net-ajax-debugging-capabilities/_static/image4.png)
+[當沒有可用於進行偵錯工具的原始程式碼時，會顯示 ![錯誤 對話方塊。](understanding-asp-net-ajax-debugging-capabilities/_static/image5.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image4.png)
 
-**圖 2**：沒有原始程式碼可供偵錯工具時，所顯示的錯誤對話方塊。  （[按一下以查看完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image6.png)）
+**圖 2**：沒有可用來進行偵錯工具的原始程式碼時，所顯示的錯誤對話方塊。  （[按一下以查看完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image6.png)）
 
 這個對話方塊會顯示，因為 Visual Studio .NET 並不確定如何取得頁面所參考之部分腳本的原始程式碼。 雖然這一開始可能很令人沮喪，但還是有一個簡單的修正方法。 當您啟動 debug 會話並叫用中斷點之後，請移至 [Visual Studio 2008] 功能表上的 [Debug Windows Script Explorer] 視窗，或使用 Ctrl + Alt + N 熱鍵。
 
@@ -114,7 +114,7 @@ Web 開發協助程式可以直接在 Internet Explorer 內部使用，方便您
 
 [![Web 開發 Helper](understanding-asp-net-ajax-debugging-capabilities/_static/image11.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image10.png)
 
-**圖 4**：Web 開發 Helper （[按一下以觀看完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image12.png)）
+**圖 4**： Web 開發 Helper （[按一下以觀看完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image12.png)）
 
 Web 開發 helper 不是您將用來逐行執行程式碼的工具，如同 Visual Studio 2008。 不過，它可以用來查看追蹤輸出、輕鬆評估腳本中的變數，或是探索 JSON 物件內的資料。 它也非常適合用來查看傳遞至 ASP.NET AJAX 頁面和伺服器的資料。
 
@@ -128,7 +128,7 @@ Web 開發 helper 不是您將用來逐行執行程式碼的工具，如同 Visu
 
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample3.js)]
 
-如果 LastName 屬性包含 Doe 的值，Web 開發協助程式會顯示訊息「人員名稱：Doe "在腳本主控台的命令視窗中（假設已啟用偵錯工具）。 Web 開發協助程式也會在頁面中新增最上層的 debugService 物件，以用來寫出追蹤資訊或查看 JSON 物件的內容。 [清單 3] 顯示使用 debugService 類別之 trace 函數的範例。
+如果 LastName 屬性包含 Doe 的值，Web 開發協助程式會在腳本主控台的命令視窗中顯示「Person name： Doe」訊息（假設已啟用偵錯工具）。 Web 開發協助程式也會在頁面中新增最上層的 debugService 物件，以用來寫出追蹤資訊或查看 JSON 物件的內容。 [清單 3] 顯示使用 debugService 類別之 trace 函數的範例。
 
 **[清單 3]。使用 Web 開發 Helper 的 debugService 類別來撰寫追蹤訊息。**
 
@@ -156,7 +156,7 @@ DebugService 類別也可讓您使用 Web 開發 Helper 的 [偵測器] 視窗�
 
 [![Web 開發 Helper 的腳本錯誤對話方塊](understanding-asp-net-ajax-debugging-capabilities/_static/image17.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image16.png)
 
-**圖 6**：Web 開發 Helper 的腳本錯誤對話方塊（[按一下以查看完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image18.png)）
+**圖 6**： Web 開發 Helper 的腳本錯誤對話方塊（[按一下以查看完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image18.png)）
 
 *檢查要求和回應訊息*
 
@@ -200,7 +200,7 @@ Firebug 也包含一個主控台視窗，可以用來測試不同的腳本語句
 
 [![使用 Firebug 的 DOM 偵測器。](understanding-asp-net-ajax-debugging-capabilities/_static/image29.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image28.png)
 
-**圖 10**：使用 Firebug 的 DOM 偵測器。  （[按一下以查看完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image30.png)）
+**圖 10**：使用 FIREBUG 的 DOM 偵測器。  （[按一下以查看完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image30.png)）
 
 Firebug 提供了輕量的方法，可直接在 Firefox 中快速地對頁面進行偵錯工具，以及檢查頁面內的不同元素的絕佳工具。
 
@@ -214,9 +214,9 @@ Sys.databases 類別（位於 Sys 命名空間中的 JavaScript 類別）可以�
 
 Sys.databases 類別會公開數個不同的函數，可用來處理追蹤、程式碼判斷提示或失敗，如 [表 1] 所示。
 
-**表1。Sys.databases 類別函式。**
+**[表 1]。Sys.databases 類別函式。**
 
-| **函式名稱** | **描述** |
+| **函式名稱** | **說明** |
 | --- | --- |
 | assert （條件、訊息、displayCaller） | 判斷條件參數為 true 的判斷提示。 如果要測試的條件為 false，則會使用訊息方塊來顯示訊息參數值。 如果 displayCaller 參數為 true，此方法也會顯示呼叫端的相關資訊。 |
 | clearTrace() | 清除追蹤作業的語句輸出。 |
@@ -238,7 +238,7 @@ Sys.databases 類別會公開數個不同的函數，可用來處理追蹤、程
 
 如果您想要查看包含在 JSON 物件中的資料，您可以使用 Sys.databases 類別的 traceDump 函數。 此函式採用兩個參數，包括應傾印到追蹤主控台的物件，以及可用於識別追蹤輸出中物件的名稱。 [清單 6] 顯示使用 traceDump 函數的範例。
 
-**清單6。使用 traceDump 函數。**
+**[清單 6]。使用 traceDump 函數。**
 
 [!code-javascript[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample8.js)]
 
@@ -250,7 +250,7 @@ Sys.databases 類別會公開數個不同的函數，可用來處理追蹤、程
 
 [traceDump 函數的 ![輸出。](understanding-asp-net-ajax-debugging-capabilities/_static/image32.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image31.png)
 
-**圖 11**：TraceDump 函數的輸出。  （[按一下以查看完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image33.png)）
+**圖 11**： traceDump 函數的輸出。  （[按一下以查看完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image33.png)）
 
 **[清單 7]。使用 debug. assert 函數。**
 
@@ -264,7 +264,7 @@ Sys.databases 類別會公開數個不同的函數，可用來處理追蹤、程
 
 [![Sys.databases 失敗訊息。](understanding-asp-net-ajax-debugging-capabilities/_static/image35.png)](understanding-asp-net-ajax-debugging-capabilities/_static/image34.png)
 
-**圖 12**：Sys.databases 失敗訊息。  （[按一下以查看完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image36.png)）
+**圖 12**： sys.databases 失敗訊息。  （[按一下以查看完整大小的影像](understanding-asp-net-ajax-debugging-capabilities/_static/image36.png)）
 
 當腳本執行時遇到 Sys.databases 失敗語句時，message 參數的值將會顯示在 debug 應用程式的主控台中，例如 Visual Studio 2008，而且系統會提示您進行應用程式的偵錯工具。 當您無法在內嵌腳本上設定 Visual Studio 2008 的中斷點，但想要讓程式碼在特定行上停止，以便檢查變數的值時，這種情況會非常有用。
 
@@ -276,13 +276,13 @@ ASP.NET AJAX library 包含預設安裝于 C:\Program Files\Microsoft ASP. NET\A
 
 ScriptMode 預設為 Auto 的值，這表示 ScriptManager 會檢查 web.config 中的 debug 屬性。當 debug 為 false 時，ScriptManager 會載入 ASP.NET AJAX library 腳本的發行版本。 當 debug 為 true 時，將會載入腳本的 debug 版本。 將 [ScriptMode] 屬性變更為 [發行] 或 [Debug]，將會強制 ScriptManager 載入適當的腳本，而不論 Debug 屬性在 web.config 中的值為何。[清單 8] 顯示使用 ScriptManager 控制項從 ASP.NET AJAX 程式庫載入偵錯工具腳本的範例。
 
-**[清單 8]。使用 ScriptManager**載入調試腳本。
+[**清單 8]。使用 ScriptManager 載入調試腳本**。
 
 [!code-aspx[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample11.aspx)]
 
 您也可以使用 ScriptManager 的 [腳本] 屬性以及 ScriptReference 元件（如 [清單 9] 所示），載入您自己的自訂腳本的不同版本（debug 或 release）。
 
-**清單9。使用 ScriptManager 載入自訂腳本。**
+**[清單 9]。使用 ScriptManager 載入自訂腳本。**
 
 [!code-aspx[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample12.aspx)]
 
@@ -295,7 +295,7 @@ ScriptMode 預設為 Auto 的值，這表示 ScriptManager 會檢查 web.config 
 
 如果您想要根據 ScriptManager 控制項上設定的 ScriptMode 屬性值來載入自訂腳本的 debug 或 release 版本，您可以將 ScriptReference 控制項的 ScriptMode 屬性設定為 [繼承]。 這會根據 ScriptManager 的 ScriptMode 屬性載入適當版本的自訂腳本，如 [清單 10] 所示。 由於 ScriptManager 控制項的 ScriptMode 屬性設定為 Debug，因此會在頁面中載入並使用 debug.exe 腳本。
 
-**清單10。從 ScriptManager 繼承自訂腳本的 ScriptMode。**
+**[清單 10]。從 ScriptManager 繼承自訂腳本的 ScriptMode。**
 
 [!code-aspx[Main](understanding-asp-net-ajax-debugging-capabilities/samples/sample14.aspx)]
 
@@ -309,9 +309,9 @@ Microsoft 的 ASP.NET AJAX 技術提供堅實的基礎，可讓您建立具備 A
 
 ## <a name="bio"></a>生物
 
-Dan Wahlin （Microsoft 最有價值的 ASP.NET 和 XML Web 服務專家）是 .NET 開發講師和架構顧問，位於介面技術訓練（[www.interfacett.com）](http://www.interfacett.com)。 Dan 成立了 XML for ASP.NET 開發人員網站（[www.XMLforASP.NET](http://www.XMLforASP.NET)），它是在 INETA 說話者的部門，並在幾場會議中發表。 Dan 共同撰寫的專業 Windows DNA （Wrox）、ASP.NET：秘訣、教學課程和程式碼（Sams）、ASP.NET 1.1 Insider 解決方案、Professional ASP.NET 2.0 AJAX （Wrox）、ASP.NET 2.0 MVP 的駭客和撰寫的 XML for ASP.NET 開發人員（Sam）。 當他不寫程式碼、文章或書籍時，Dan 就能在他的妻子和小孩中撰寫和錄製音樂，以及玩高爾夫球和籃球。
+Dan Wahlin （Microsoft 最有價值的 ASP.NET 和 XML Web 服務專家）是 .NET 開發講師和架構顧問，位於介面技術訓練（[www.interfacett.com）](http://www.interfacett.com)。 Dan 成立了 XML for ASP.NET 開發人員網站（[www.XMLforASP.NET](http://www.XMLforASP.NET)），它是在 INETA 說話者的部門，並在幾場會議中發表。 Dan 共同撰寫的專業 Windows DNA （Wrox）、ASP.NET：秘訣、教學課程和程式碼（Sam）、ASP.NET 1.1 Insider 解決方案、Professional ASP.NET 2.0 AJAX （Wrox）、ASP.NET 2.0 MVP 的駭客和撰寫的 XML for ASP.NET 開發人員（Sam）。 當他不寫程式碼、文章或書籍時，Dan 就能在他的妻子和小孩中撰寫和錄製音樂，以及玩高爾夫球和籃球。
 
 Scott Cate 自1997起開始使用 Microsoft Web 技術，而這是 myKB.com （[www.myKB.com](http://www.myKB.com)）的總裁，他專門撰寫以 ASP.NET 為基礎的應用程式，著重于知識庫軟體解決方案。 Scott 可以透過電子郵件聯絡，位於[scott.cate@myKB.com](mailto:scott.cate@myKB.com)或他的[ScottCate.com](http://ScottCate.com)的 blog
 
 > [!div class="step-by-step"]
-> [上一步](understanding-asp-net-ajax-web-services.md)
+> [上一篇](understanding-asp-net-ajax-web-services.md)

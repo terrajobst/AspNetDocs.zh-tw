@@ -2,18 +2,18 @@
 uid: web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-cs
 title: 調整 DropShadow 的 Z 索引（C#） |Microsoft Docs
 author: wenz
-description: AJAX 控制項工具組中的 DropShadow 控制項會擴充具有陰影的面板。 不過，此陰影有時會與其他控制項衝突，(.。。
+description: AJAX 控制項工具組中的 DropShadow 控制項會擴充具有陰影的面板。 不過，此陰影有時會與其他控制項衝突，(.。
 ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 14133833-e518-4347-87b9-6b6f71f14a77
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 12bc7f0430f1f30ff964cd9547ee1e9b0aa7423c
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74574333"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78613880"
 ---
 # <a name="adjusting-the-z-index-of-a-dropshadow-c"></a>調整 DropShadow 的 Z 軸索引 (C#)
 
@@ -23,7 +23,7 @@ ms.locfileid: "74574333"
 
 > AJAX 控制項工具組中的 DropShadow 控制項會擴充具有陰影的面板。 不過，此陰影有時會與其他控制項衝突，例如 [ASP.NET] 功能表控制項。 當功能表項目出現時，它會顯示在投影后方。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 AJAX 控制項工具組中的 DropShadow 控制項會擴充具有陰影的面板。 不過，此陰影有時會與其他控制項衝突，例如 [ASP.NET] 功能表控制項。 當功能表項目出現時，它會顯示在投影后方。
 
@@ -54,13 +54,13 @@ AJAX 控制項工具組中的 DropShadow 控制項會擴充具有陰影的面板
 
 然後，`DropShadowExtender` 控制項不會與 Menu 控制項有任何較長的衝突。
 
-[![之前：看不到功能表項目](adjusting-the-z-index-of-a-dropshadow-cs/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-cs/_static/image1.png)
+[![之前：不顯示功能表項目](adjusting-the-z-index-of-a-dropshadow-cs/_static/image2.png)](adjusting-the-z-index-of-a-dropshadow-cs/_static/image1.png)
 
-之前：看不到功能表項目（[按一下以觀看完整大小的影像](adjusting-the-z-index-of-a-dropshadow-cs/_static/image3.png)）
+之前：不會顯示功能表項目（[按一下以查看完整大小的影像](adjusting-the-z-index-of-a-dropshadow-cs/_static/image3.png)）
 
-[![之後：功能表項目隨即出現](adjusting-the-z-index-of-a-dropshadow-cs/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-cs/_static/image4.png)
+[![之後：功能表項目出現](adjusting-the-z-index-of-a-dropshadow-cs/_static/image5.png)](adjusting-the-z-index-of-a-dropshadow-cs/_static/image4.png)
 
 之後：功能表項目隨即出現（[按一下以觀看完整大小的影像](adjusting-the-z-index-of-a-dropshadow-cs/_static/image6.png)）
 
 > [!div class="step-by-step"]
-> [下一步](manipulating-dropshadow-properties-from-client-code-cs.md)
+> [下一個](manipulating-dropshadow-properties-from-client-code-cs.md)
