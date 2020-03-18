@@ -9,6 +9,6 @@
 * 以雲端為基礎的環境式設定系統。
 * 內建相依性插入。
 * 輕量型、高效能且模組化的 HTTP 要求管線。
-* 能夠裝載于[Kestrel](/aspnet/core/fundamentals/servers/kestrel)、[IIS] （x：主機和部署/IIS/[索引、HTTP.sys、](xref:fundamentals/servers/httpsys) [Nginx](xref:host-and-deploy/linux-nginx)、 [Apache](xref:host-and-deploy/linux-apache)和[Docker](xref:host-and-deploy/docker/index)。
+* 能夠裝載于[Kestrel](/aspnet/core/fundamentals/servers/kestrel)、 [IIS](xref:host-and-deploy/iis/index)、[Http.sys](xref:fundamentals/servers/httpsys)、 [Nginx](xref:host-and-deploy/linux-nginx)、 [Apache](xref:host-and-deploy/linux-apache)和[Docker](xref:host-and-deploy/docker/index)。
 * 並存版本。
 * 可簡化現代網頁程式開發的工具。
