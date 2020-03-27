@@ -9,11 +9,11 @@ ms.assetid: f904cd2c-a408-4484-9324-8b8d7fe33893
 msc.legacyurl: /web-forms/overview/data-access/database-driven-site-maps/building-a-custom-database-driven-site-map-provider-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 78051696bd75e1d574f55b1c5d5891fe67c3030d
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74630160"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78595365"
 ---
 # <a name="building-a-custom-database-driven-site-map-provider-vb"></a>建置自訂的資料庫驅動網站導覽提供者 (VB)
 
@@ -31,7 +31,7 @@ ASP.NET 2.0 s 網站地圖功能可讓網頁開發人員在某些持續性的媒
 
 [![分類和產品構成網站地圖 s 結構](building-a-custom-database-driven-site-map-provider-vb/_static/image1.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image1.png)
 
-**圖 1**：類別和產品構成網站地圖 s 結構（[按一下以觀看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image2.png)）
+**圖 1**：分類和產品構成網站地圖 s 結構（[按一下以觀看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image2.png)）
 
 雖然這個類別目錄和產品架構的結構可以硬式編碼到 `Web.sitemap` 檔案中，但每次加入、移除或重新命名類別或產品時，都必須更新檔案。 因此，如果從資料庫取出結構，或在理想情況下，從應用程式架構的商務邏輯層來看，網站地圖維護會大幅簡化。 如此一來，當加入、重新命名或刪除產品和類別時，網站地圖會自動更新以反映這些變更。
 
@@ -40,7 +40,7 @@ ASP.NET 2.0 s 網站地圖功能可讓網頁開發人員在某些持續性的媒
 > [!NOTE]
 > 本教學課程中建立的自訂網站地圖提供者，與應用程式的架構和資料模型緊密結合。 Jeff Prosise 會將[網站地圖儲存在 SQL Server 中](https://msdn.microsoft.com/msdnmag/issues/05/06/WickedCode/)，而[您之前正在等待文章的 SQL 網站地圖提供者，會](https://msdn.microsoft.com/msdnmag/issues/06/02/wickedcode/default.aspx)檢查在 SQL Server 中儲存網站地圖資料的一般化方法。
 
-## <a name="step-1-creating-the-custom-site-map-provider-web-pages"></a>步驟 1:建立自訂網站地圖提供者網頁
+## <a name="step-1-creating-the-custom-site-map-provider-web-pages"></a>步驟1：建立自訂網站地圖提供者網頁
 
 開始建立自訂網站地圖提供者之前，請先新增本教學課程所需的 ASP.NET 網頁。 從新增名為 `SiteMapProvider`的資料夾開始。 接下來，將下列 ASP.NET 網頁新增至該資料夾，並確定每個頁面都與 `Site.master` 主版頁面相關聯：
 
@@ -70,7 +70,7 @@ ASP.NET 2.0 s 網站地圖功能可讓網頁開發人員在某些持續性的媒
 
 若要開始，我們必須建立 `Default.aspx`、`ProductsByCategory.aspx`和 `ProductDetails.aspx` 頁面。 這些頁面會分別在步驟2、3和4中完成。 由於本教學課程的天生是在網站地圖提供者上，而且自從過去的教學課程已涵蓋如何建立這類多頁主要/詳細資料包表，因此我們將會在步驟2到4中進行。 如果您需要重新整理程式來建立跨越多個頁面的主要/詳細資料包表，請參閱[跨兩個頁面的主要/詳細資料篩選](../masterdetail/master-detail-filtering-across-two-pages-vb.md)教學課程。
 
-## <a name="step-2-displaying-a-list-of-categories"></a>步驟 2:顯示分類清單
+## <a name="step-2-displaying-a-list-of-categories"></a>步驟2：顯示類別清單
 
 開啟 [`SiteMapProvider`] 資料夾中的 [`Default.aspx`] 頁面，並將 GridView 從 [工具箱] 拖曳至設計工具，將其 `ID` 設定為 [`Categories`]。 從 GridView 的智慧標籤，將它系結至名為 `CategoriesDataSource` 的新 ObjectDataSource 並加以設定，讓它使用 `CategoriesBLL` 類別 s `GetCategories` 方法來抓取其資料。 由於此 GridView 只會顯示類別，而不提供資料修改功能，因此，請將 [更新]、[插入] 和 [刪除] 索引標籤中的下拉式清單設定為 [（無）]。
 
@@ -98,9 +98,9 @@ ASP.NET 2.0 s 網站地圖功能可讓網頁開發人員在某些持續性的媒
 
 [![每個類別都會與 [View Products] 連結一起列出](building-a-custom-database-driven-site-map-provider-vb/_static/image7.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image7.png)
 
-**圖 7**：每個類別都會與 [View Products] 連結一起列出（[按一下以查看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image8.png)）
+**圖 7**：每個類別都會與 [view Products] 連結一併列出（[按一下以觀看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image8.png)）
 
-## <a name="step-3-listing-the-selected-category-s-products"></a>步驟 3：列出選取的類別 s 產品
+## <a name="step-3-listing-the-selected-category-s-products"></a>步驟3：列出選取的類別目錄 s 產品
 
 開啟 [`ProductsByCategory.aspx`] 頁面，並加入 GridView，將其命名為 `ProductsByCategory`。 從其智慧標籤，將 GridView 系結至名為 `ProductsByCategoryDataSource`的新 ObjectDataSource。 將 ObjectDataSource 設定為使用 `ProductsBLL` 類別的 `GetProductsByCategoryID(categoryID)` 方法，並將 [更新]、[插入] 和 [刪除] 索引標籤中的下拉式清單設為（無）。
 
@@ -112,7 +112,7 @@ ASP.NET 2.0 s 網站地圖功能可讓網頁開發人員在某些持續性的媒
 
 [![使用 [類別 Id] 參數的 [類別 Id Querystring] 欄位](building-a-custom-database-driven-site-map-provider-vb/_static/image9.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image11.png)
 
-**圖 9**：針對 [*類別 id* ] 參數使用 [`CategoryID` Querystring] 欄位（[按一下以查看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image12.png)）
+**圖 9**：使用 [*類別*] 參數的 [`CategoryID` Querystring] 欄位（[按一下以查看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image12.png)）
 
 完成 wizard 之後，Visual Studio 會將對應的 BoundFields 和 CheckBoxField 加入至 GridView 中的產品資料欄位。 移除 `ProductName`、`UnitPrice`和 `SupplierName` BoundFields 以外的所有。 將這三個 BoundFields `HeaderText` 屬性自訂為分別讀取產品、價格和供應商。 將 `UnitPrice` BoundField 格式化為貨幣。
 
@@ -120,7 +120,7 @@ ASP.NET 2.0 s 網站地圖功能可讓網頁開發人員在某些持續性的媒
 
 ![新增指向 ProductDetails 的 View Details HyperLinkField](building-a-custom-database-driven-site-map-provider-vb/_static/image10.gif)
 
-**圖 10**：新增指向 `ProductDetails.aspx` 的 [View Details] HyperLinkField
+**圖 10**：加入指向 `ProductDetails.aspx` 的 [View Details] HyperLinkField
 
 進行這些自訂之後，GridView 和 ObjectDataSource 的宣告式標記應該如下所示：
 
@@ -130,21 +130,21 @@ ASP.NET 2.0 s 網站地圖功能可讓網頁開發人員在某些持續性的媒
 
 [![會顯示飲料名稱、價格和供應商](building-a-custom-database-driven-site-map-provider-vb/_static/image11.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image13.png)
 
-**圖 11**：會顯示飲料名稱、價格和供應商（[按一下以查看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image14.png)）
+**圖 11**：顯示飲料名稱、價格和供應商（[按一下以觀看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image14.png)）
 
-## <a name="step-4-showing-a-product-s-details"></a>步驟 4：顯示產品的詳細資料
+## <a name="step-4-showing-a-product-s-details"></a>步驟4：顯示產品的詳細資料
 
 最後一頁 [`ProductDetails.aspx`] 會顯示所選產品的詳細資料。 開啟 `ProductDetails.aspx`，然後從 [工具箱] 將 [DetailsView] 拖曳至設計工具。 將 [DetailsView s `ID`] 屬性設定為 `ProductInfo` 並清除其 `Height` 和 `Width` 屬性值。 從其智慧標籤，將 DetailsView 系結至名為 `ProductDataSource`的新 ObjectDataSource，並設定 ObjectDataSource 從 `ProductsBLL` 類別 s `GetProductByProductID(productID)` 方法提取其資料。 如同先前在步驟2和3中建立的網頁，將 [更新]、[插入] 和 [刪除] 索引標籤中的下拉式清單設定為 [（無）]。
 
 [![將 ObjectDataSource 設定為使用 GetProductByProductID （productID）方法](building-a-custom-database-driven-site-map-provider-vb/_static/image12.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image15.png)
 
-**圖 12**：設定 ObjectDataSource 使用 `GetProductByProductID(productID)` 方法（[按一下以查看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image16.png)）
+**圖 12**：設定 ObjectDataSource 以使用 `GetProductByProductID(productID)` 方法（[按一下以查看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image16.png)）
 
 [設定資料來源] wizard 的最後一個步驟會提示您輸入*productID*參數的來源。 由於此資料是透過 querystring 欄位 `ProductID`，請將下拉式清單設定為 QueryString，並將 QueryStringField 文字方塊設為 ProductID。 最後，按一下 [完成] 按鈕以完成嚮導。
 
 [![設定 productID 參數，從 ProductID Querystring 欄位提取其值](building-a-custom-database-driven-site-map-provider-vb/_static/image13.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image17.png)
 
-**圖 13**：設定*productID*參數，從 [`ProductID` Querystring] 欄位提取其值（[按一下以查看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image18.png)）
+**圖 13**：設定*productID*參數以從 `ProductID` Querystring 欄位提取其值（[按一下以查看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image18.png)）
 
 完成 [設定資料來源] wizard 之後，Visual Studio 將會在 [產品資料] 欄位的 DetailsView 中建立對應的 BoundFields 和 CheckBoxField。 移除 [`ProductID`]、[`SupplierID`] 和 [`CategoryID` BoundFields]，並視需要設定其餘欄位。 在少數美觀設定之後，我的 DetailsView 和 ObjectDataSource 宣告式標記看起來如下所示：
 
@@ -154,9 +154,9 @@ ASP.NET 2.0 s 網站地圖功能可讓網頁開發人員在某些持續性的媒
 
 [會顯示 ![Chai 茶 s 供應商、類別、價格及其他資訊](building-a-custom-database-driven-site-map-provider-vb/_static/image14.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image19.png)
 
-**圖 14**：隨即顯示 Chai 茶的供應商、類別、價格和其他資訊（[按一下以觀看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image20.png)）
+**圖 14**：顯示 Chai 茶 s 供應商、類別、價格和其他資訊（[按一下以觀看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image20.png)）
 
-## <a name="step-5-understanding-the-inner-workings-of-a-site-map-provider"></a>步驟 5：瞭解網站地圖提供者的內部運作
+## <a name="step-5-understanding-the-inner-workings-of-a-site-map-provider"></a>步驟5：瞭解網站地圖提供者的內部運作
 
 網站地圖會在 web 伺服器的記憶體中表示為構成階層之 `SiteMapNode` 實例的集合。 只能有一個根，所有非根節點都只能有一個父節點，而所有節點可能會有任意數目的子系。 每個 `SiteMapNode` 物件都代表網站 s 結構中的一個區段;這些區段通常會有對應的網頁。 因此， [`SiteMapNode` 類別](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx)的屬性如 `Title`、`Url`和 `Description`，可提供 `SiteMapNode` 所代表之區段的資訊。 另外還有一個 `Key` 屬性，可唯一識別階層中的每個 `SiteMapNode`，以及用來建立此階層 `ChildNodes`、`ParentNode`、`NextSibling`、`PreviousSibling`等等的屬性。
 
@@ -164,7 +164,7 @@ ASP.NET 2.0 s 網站地圖功能可讓網頁開發人員在某些持續性的媒
 
 [![每個 SiteMapNode 都有標題、Url、索引鍵等等的屬性](building-a-custom-database-driven-site-map-provider-vb/_static/image16.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image15.gif)
 
-**圖 15**：每個 `SiteMapNode` 都具有如 `Title`、`Url`、`Key`等屬性（[按一下以觀看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image17.gif)）
+**圖 15**：每個 `SiteMapNode` 的屬性如 `Title`、`Url`、`Key`等等（[按一下以觀看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image17.gif)）
 
 網站對應可透過[`System.Web` 命名空間](https://msdn.microsoft.com/library/system.web.aspx)中的[`SiteMap` 類別](https://msdn.microsoft.com/library/system.web.sitemap.aspx)來存取。 這個類別的 `RootNode` 屬性會傳回網站地圖 s 根 `SiteMapNode` 實例;`CurrentNode` 會傳回 `SiteMapNode`，其 `Url` 屬性符合目前要求之網頁的 URL。 這個類別是由 ASP.NET 2.0 s 導覽 Web 控制項在內部使用。
 
@@ -187,7 +187,7 @@ ASP.NET 2.0 s 網站地圖功能可讓網頁開發人員在某些持續性的媒
 > [!NOTE]
 > 網站地圖提供者可以選擇性地覆寫[`Initialize` 方法](https://msdn.microsoft.com/library/system.web.sitemapprovider.initialize.aspx)。 當第一次具現化網站地圖提供者，並在 `<add>` 專案的 `Web.config` 中傳遞任何指派給提供者的自訂屬性時，會叫用 `Initialize`，例如： `<add name="name" type="type" customAttribute="value" />`。 如果您想要讓網頁開發人員指定各種網站地圖提供者相關的設定，而不需要修改提供者的程式碼，這會很有用。 例如，如果我們直接從資料庫讀取類別目錄和產品資料，而不是透過架構，我們可能會想要讓網頁開發人員透過 `Web.config` 來指定資料庫連接字串，而不是在提供者的程式碼中使用硬式編碼值。 我們將在步驟6中建立的自訂網站地圖提供者，並不會覆寫此 `Initialize` 方法。 如需使用 `Initialize` 方法的範例，請參閱[在 SQL Server 文章中儲存網站對應](https://msdn.microsoft.com/msdnmag/issues/05/06/WickedCode/)的[Jeff Prosise](http://www.wintellect.com/Weblogs/CategoryView,category,Jeff%20Prosise.aspx) 。
 
-## <a name="step-6-creating-the-custom-site-map-provider"></a>步驟 6：建立自訂網站地圖提供者
+## <a name="step-6-creating-the-custom-site-map-provider"></a>步驟6：建立自訂網站地圖提供者
 
 若要建立自訂網站地圖提供者，以根據 Northwind 資料庫中的類別和產品建立網站地圖，我們需要建立可延伸 `StaticSiteMapProvider`的類別。 在步驟1中，我要求您在 [`App_Code`] 資料夾中新增一個 `CustomProviders` 資料夾-將新類別新增至名為 `NorthwindSiteMapProvider`的這個資料夾。 將下列程式碼加入 `NorthwindSiteMapProvider` 類別：
 
@@ -220,7 +220,7 @@ ASP.NET 2.0 s 網站地圖功能可讓網頁開發人員在某些持續性的媒
 
 其餘的方法相當簡單。 `GetRootNodeCore` 會負責傳回根節點。 因為 `BuildSiteMap` 會傳回根，`GetRootNodeCore` 只會傳回 `BuildSiteMap` s 傳回值。 當移除快取專案時，`OnSiteMapChanged` 方法會將 `root` 設定回 `Nothing`。 當 root 設定為 `Nothing`，下一次叫用 `BuildSiteMap` 時，將會重建網站地圖結構。 最後，如果有這樣的值，`CachedDate` 屬性會傳回儲存在資料快取中的日期和時間值。 頁面開發人員可以使用這個屬性來判斷上次快取網站對應資料的時間。
 
-## <a name="step-7-registering-thenorthwindsitemapprovider"></a>步驟 7：註冊`NorthwindSiteMapProvider`
+## <a name="step-7-registering-thenorthwindsitemapprovider"></a>步驟7：註冊`NorthwindSiteMapProvider`
 
 為了讓 web 應用程式使用在步驟6中建立的 `NorthwindSiteMapProvider` 網站地圖提供者，我們需要在 `Web.config`的 `<siteMap>` 區段中註冊它。 具體而言，請在 `Web.config`中的 `<system.web>` 元素內新增下列標記：
 
@@ -233,7 +233,7 @@ ASP.NET 2.0 s 網站地圖功能可讓網頁開發人員在某些持續性的媒
 
 更新 `Web.config`之後，請花一點時間從瀏覽器的教學課程中查看任何頁面。 請注意，左邊的導覽介面仍然會顯示 `Web.sitemap`中定義的區段和教學課程。 這是因為我們將 `AspNetXmlSiteMapProvider` 保留為預設提供者。 為了建立使用 `NorthwindSiteMapProvider`的導覽使用者介面專案，我們必須明確指定應使用 Northwind 網站地圖提供者。 我們會在步驟8中瞭解如何完成這項工作。
 
-## <a name="step-8-displaying-site-map-information-using-the-custom-site-map-provider"></a>步驟 8：使用自訂網站對應提供者顯示網站地圖資訊
+## <a name="step-8-displaying-site-map-information-using-the-custom-site-map-provider"></a>步驟8：使用自訂網站地圖提供者顯示網站地圖資訊
 
 在 `Web.config`中建立並註冊自訂網站地圖提供者之後，我們就可以將導覽控制項加入至 [`SiteMapProvider`] 資料夾中的 [`Default.aspx`]、[`ProductsByCategory.aspx`] 和 [`ProductDetails.aspx`] 頁面。 一開始先開啟 [`Default.aspx`] 頁面，並將 `SiteMapPath` 從 [工具箱] 拖曳至設計工具。 SiteMapPath 控制項位於 [工具箱] 的導覽區段中。
 
@@ -253,19 +253,19 @@ SiteMapPath 控制項會顯示階層連結，指出網站地圖內目前的頁�
 
 [![階層連結現在會使用自訂網站地圖提供者 NorthwindSiteMapProvider](building-a-custom-database-driven-site-map-provider-vb/_static/image25.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image24.gif)
 
-**圖 18**：階層連結現在使用自訂網站地圖提供者 `NorthwindSiteMapProvider` （[按一下以觀看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image26.gif)）
+**圖 18**：階層連結現在會使用自訂網站地圖提供者 `NorthwindSiteMapProvider` （[按一下以觀看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image26.gif)）
 
-SiteMapPath 控制項會在 [`ProductsByCategory.aspx`] 和 [`ProductDetails.aspx`] 頁面中顯示功能更多功能的使用者介面。 將 SiteMapPath 新增至這些頁面，並將兩者中的 `SiteMapProvider` 屬性設定為 Northwind。 從 `Default.aspx` 按一下飲料的 [查看產品] 連結，然後在 [Chai 茶] 的 [查看詳細資料] 連結上。 如 [圖 19] 所示，階層連結包括目前的網站地圖區段（Chai 茶）及其上階：飲料和所有類別。
+SiteMapPath 控制項會在 [`ProductsByCategory.aspx`] 和 [`ProductDetails.aspx`] 頁面中顯示功能更多功能的使用者介面。 將 SiteMapPath 新增至這些頁面，並將兩者中的 `SiteMapProvider` 屬性設定為 Northwind。 從 `Default.aspx` 按一下飲料的 [查看產品] 連結，然後在 [Chai 茶] 的 [查看詳細資料] 連結上。 如 [圖 19] 所示，階層連結包括目前的網站地圖區段（Chai 茶）及其祖系：飲料和所有類別。
 
 [![階層連結現在會使用自訂網站地圖提供者 NorthwindSiteMapProvider](building-a-custom-database-driven-site-map-provider-vb/_static/image27.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image21.png)
 
-**圖 19**：階層連結現在使用自訂網站地圖提供者 `NorthwindSiteMapProvider` （[按一下以觀看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image22.png)）
+**圖 19**：階層連結現在會使用自訂網站地圖提供者 `NorthwindSiteMapProvider` （[按一下以觀看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image22.png)）
 
-除了 SiteMapPath 之外，還可以使用其他導覽使用者介面專案，例如功能表和 TreeView 控制項。 本教學課程的下載中的 `Default.aspx`、`ProductsByCategory.aspx`和 `ProductDetails.aspx` 頁面，例如所有包含功能表控制項（請參閱 [圖 20]）。 如需深入瞭解 ASP.NET 2.0 中的導覽控制項和網站地圖系統，請參閱 <<c0>檢查 ASP.NET 2.0 s 網站流覽功能和使用[ASP.NET 2.0 快速入門](https://quickstarts.asp.net/QuickStartv20/aspnet/)的[網站導覽控制項](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/navigation/sitenavcontrols.aspx)一節。
+除了 SiteMapPath 之外，還可以使用其他導覽使用者介面專案，例如功能表和 TreeView 控制項。 本教學課程的下載中的 `Default.aspx`、`ProductsByCategory.aspx`和 `ProductDetails.aspx` 頁面，例如所有包含功能表控制項（請參閱 [圖 20]）。 如需深入瞭解 ASP.NET 2.0 中的導覽控制項和網站地圖系統，請參閱 [檢查 ASP.NET 2.0 s 網站流覽功能](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)和[使用[ASP.NET 2.0 快速入門](https://quickstarts.asp.net/QuickStartv20/aspnet/)的網站導覽控制項](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/navigation/sitenavcontrols.aspx)一節。
 
 [![功能表控制項列出每個類別和產品](building-a-custom-database-driven-site-map-provider-vb/_static/image29.gif)](building-a-custom-database-driven-site-map-provider-vb/_static/image28.gif)
 
-**圖 20**：Menu 控制項會列出每個類別和產品（[按一下以查看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image30.gif)）
+**圖 20**： Menu 控制項列出每個類別和產品（[按一下以觀看完整大小的影像](building-a-custom-database-driven-site-map-provider-vb/_static/image30.gif)）
 
 如本教學課程稍早所述，您可以透過 `SiteMap` 類別，以程式設計方式存取網站地圖結構。 下列程式碼會傳回預設提供者的根 `SiteMapNode`：
 
@@ -310,4 +310,4 @@ ASP.NET 2.0 s 網站地圖功能包括 `SiteMap` 類別、數個內建的導覽 
 本教學課程系列已由許多有用的審核者所審查。 本教學課程的領導審查者為 Dave Gardner、Zack，Teresa Murphy 和 Bernadette Leigh。 有興趣複習我即將發行的 MSDN 文章嗎？ 若是如此，請在mitchell@4GuysFromRolla.com的那一行下拉式[。](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
-> [上一步](building-a-custom-database-driven-site-map-provider-cs.md)
+> [上一篇](building-a-custom-database-driven-site-map-provider-cs.md)

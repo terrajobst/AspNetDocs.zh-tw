@@ -9,11 +9,11 @@ ms.assetid: 6227233a-6254-4b6b-9a89-947efef22330
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 51c9255f80f83a68cf26decf318347752498491a
-ms.sourcegitcommit: 22fbd8863672c4ad6693b8388ad5c8e753fb41a2
+ms.sourcegitcommit: e7e91932a6e91a63e2e46417626f39d6b244a3ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74635430"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78604556"
 ---
 # <a name="creating-a-data-access-layer-vb"></a>建立資料存取層 (VB)
 
@@ -117,7 +117,7 @@ TableAdapter 設定向導一開始會提示您選取要使用的資料庫。 下
 
 接下來，我們需要定義第一個強型別 DataTable 的架構，並提供在擴展強型別資料集時，用於 TableAdapter 的第一個方法。 這兩個步驟的完成方式是建立查詢，以傳回資料表中我們想要反映在 DataTable 中的資料行。 在嚮導的結尾，我們會提供方法名稱給此查詢。 完成之後，就可以從我們的展示層叫用這個方法。 方法會執行已定義的查詢，並填入強型別的 DataTable。
 
-若要開始定義 SQL 查詢，我們必須先指出要如何讓 TableAdapter 發出查詢。 我們可以使用特定 SQL 語句、建立新的預存程式，或使用現有的預存程式。 在這些教學課程中，我們將使用特定 SQL 語句。 如需使用預存程式的範例，請參閱[Brian Noyes](http://briannoyes.net/)的文章
+若要開始定義 SQL 查詢，我們必須先指出要如何讓 TableAdapter 發出查詢。 我們可以使用特定 SQL 語句、建立新的預存程式，或使用現有的預存程式。 在這些教學課程中，我們將使用特定 SQL 語句。 如需使用預存程式的範例，請參閱[Brian Noyes](http://briannoyes.net/)的文章，[使用 Visual Studio 2005 DataSet 設計工具建立資料存取層。](http://www.theserverside.net/articles/showarticle.tss?id=DataSetDesigner)
 
 [![使用特定 SQL 語句來查詢資料](creating-a-data-access-layer-vb/_static/image18.png)](creating-a-data-access-layer-vb/_static/image17.png)
 
